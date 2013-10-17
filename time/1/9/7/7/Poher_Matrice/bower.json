@@ -1,0 +1,28 @@
+{
+    "name": "Matrix",
+    "version": "1.0.0",
+    "description": "Poher's known phenomenon matrix",
+    "main": "index.html",
+    "keywords": [
+        "poher",
+        "matrix",
+        "ufo",
+        "misidentification"
+    ],
+    "authors": [
+        "RR0"
+    ],
+    "license": "MIT",
+    "homepage": "http://rr0.org/time/1/9/7/7/Poher_Matrice",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "1.2.0-rc.2",
+        "angular-resource": "1.2.0-rc.2"
+    }
+}

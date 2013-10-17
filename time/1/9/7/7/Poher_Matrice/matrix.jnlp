@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <jnlp spec="1.0+" codebase="" href="">
+     <information>
+       <title>Matrice de phénomènes connus de Claude Poher (1977)</title>
+       <vendor>RR0</vendor>
+       <offline-allowed />
+     </information>
+     <resources>
+       <j2se version="1.6+"
+             href="http://java.sun.com/products/autodl/j2se" />
+       <jar href="matrix2.jar" main="true" />
+       <!-- Specify if using JNLP extensions
+                                <extension name="SomeExtension"
+                  href="http://some.server.com/some_extension.jnlp" />
+                                -->
+     </resources>
+     <applet-desc
+         name="Matrice de phénomènes connus de Claude Poher (1977)"
+         main-class="org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet"
+         width="550"
+         height="350">
+     </applet-desc>
+	 <update check="background"/>
+ </jnlp>

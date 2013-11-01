@@ -1,0 +1,118 @@
+$menu-font: Verdana, Geneva, sans-serif;
+nav {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  > ul {
+    overflow: auto; /* clearfix */
+    width: 100%; /* clearfix */
+  }
+  ul {
+    background: #f2f2f8; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f8', endColorstr='#ffffff', GradientType=1); /* for IE */
+    background: -webkit-gradient(linear, left top, right top, from(#f2f2f8), to(#ffffff)); /* for webkit browsers */
+    background: -moz-linear-gradient(left top, #f2f2f8, #ffffff);
+    margin: 0;
+    padding: 0;
+    li * {
+      font-family: $menu-font;
+    }
+    li.alternate {
+      color: lightgray;
+    }
+    li:hover {
+      border-right: none;
+    }
+    li {
+      a {
+        text-decoration: none;
+        padding: 0.3em 0.7em;
+        width: 100%;
+      }
+      h1 {
+        padding: 0 0.7em;
+      }
+    }
+    > li {
+      padding-right: 0;
+      border-right: none;
+      float: left;
+      line-height: 2em;
+      font-size: 0.9em;
+      display: inline;
+    }
+    ul {
+      // Outline menu
+      @include bottom-inner-shadow;
+      position: absolute;
+      max-width: 80%;
+      z-index: -5;
+      top: -100em;
+      @include transition(top, 0.3s, ease);
+      li {
+        display: block;
+        position: relative;
+        padding: 0.3em 0.7em;
+        float: none;
+      }
+      li:hover {
+        color: #FFF;
+        background-color: #0b75b2;
+        text-decoration: none;
+      }
+    }
+  }
+  .toggleMap {
+    float: right;
+  }
+}
+
+nav ul li:hover > ul, nav ul li:active > ul, nav ul li:focus > ul {
+  top: 1.9em;
+}
+
+nav ul li a:hover, .menu ul li .current {
+  color: #FFF;
+  background-color: #0b75b2;
+  text-decoration: none;
+}
+
+.menu {
+  overflow: auto; /* clear workaround */
+  width: 100%; /* clear workaround */
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      line-height: 2em;
+      font-size: 0.9em;
+      display: inline;
+      border: none;
+
+      a {
+        text-decoration: none;
+        color: #0b75b2;
+        padding: 0.3em 0.7em;
+        border: none;
+      }
+    }
+  }
+}
+
+.menu ul li a:hover, .menu ul li a:active, .menu ul li a:focus, .menu ul li .current {
+  color: #FFF;
+  background-color: #0b75b2;
+  text-decoration: none;
+  border: none;
+}
+
+.SubMenu {
+  float: right;
+  .title {
+    font-weight: bold;
+    text-indent: 1.4em;
+  }
+}

@@ -1,0 +1,39 @@
+.people {
+}
+
+.Author {
+  margin: 0;
+  font-size: 12px;
+  background-color: #F9F9F9;
+  padding: 5px;
+  color: gray;
+  @include gradient-from-left;
+}
+
+.temoin {
+  display: inline-block;
+  background: -webkit-linear-gradient(left, white, #333333 2%, #333333 98%, white);
+  background: -moz-linear-gradient(left, white, #333333 2%, #333333 98%, white);
+  background: -ms-linear-gradient(left, white, #333333 2%, #333333 98%, white);
+  background: linear-gradient(left, white, #333333 2%, #333333 98%, white);
+  -webkit-transform: rotate(-0.5deg);
+  text-align: center;
+  color: #5d5d5d;
+}
+
+.temoin1 {
+  @extend .temoin;
+  color: #761919;
+}
+
+.temoin2 {
+  @extend .temoin;
+  color: #136113;
+}
+
+.temoin3 {
+  @extend .temoin;
+  background-color: #3333FF;
+  color: #3333FF;
+}
+

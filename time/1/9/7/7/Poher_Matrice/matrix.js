@@ -13,7 +13,7 @@ angular.module('matrix', [])
                 loaded.reject("Could not load '" + localeFile + "': " + status);
             });
         return loaded.promise;
-    }).service('matrixService', function ($log, $rootScope, $http, resourceBundleService) {
+    }).service('matrixService',function ($log, $rootScope, $http, resourceBundleService) {
 
         function Question(t, i) {
             this.title = t;
@@ -103,64 +103,62 @@ angular.module('matrix', [])
                 return explanationsWithoutHoles;
             }
         }
-    });
+    }).controller('FormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
 
-function FormCtrl($log, $scope, matrixService) {
+        $scope.questionIndex = 0;
 
-    $scope.questionIndex = 0;
-
-    $scope.parameterChanged = function () {
-        $scope.questionIndex = $scope.currentQuestion.index;
-        questionChanged();
-    };
-    function questionChanged() {
-        $scope.currentQuestion = $scope.questions[$scope.questionsKeys[$scope.questionIndex]];
-        function Field(type, label) {
-            this.type = type;
-            this.label = label;
-        }
-
-        $scope.fields = {};
-        var choices = $scope.currentQuestion.choices;
-        var keys = Object.keys(choices);
-        for (var i = 0; i < keys.length; i++) {
-            var key = keys[i];
-            $scope.fields[key] = new Field(choices[key].answerType, choices[key].label);
-        }
-    }
-
-    $scope.$on("dataLoaded", function (event, questions) {
-        $scope.questions = questions;
-        $scope.questionsKeys = Object.keys(questions);
-        questionChanged();
-    });
-    $scope.onPrevious = function () {
-        if ($scope.questionIndex >= 0) {
-            $scope.questionIndex--;
+        $scope.parameterChanged = function () {
+            $scope.questionIndex = $scope.currentQuestion.index;
             questionChanged();
-        }
-    };
-    $scope.onNext = function () {
-        if ($scope.questionIndex < $scope.questionsKeys.length) {
-            $scope.questionIndex++;
-            questionChanged();
-        }
-    };
-    $scope.resultsType = "NonProbable";
-    var explanationsZone = document.getElementById("explanations");
-    $scope.compute = function (key) {
-        var changedChoice = $scope.currentQuestion.choices[key];
-        if (changedChoice && changedChoice.answerType == 'radio') {
-            for (c in $scope.currentQuestion.choices) {
-                var choice = $scope.currentQuestion.choices[c];
-                if (choice.answerType == 'radio') {
-                    choice.value = c == key ? key : false;
-                }
+        };
+        function questionChanged() {
+            $scope.currentQuestion = $scope.questions[$scope.questionsKeys[$scope.questionIndex]];
+            function Field(type, label) {
+                this.type = type;
+                this.label = label;
+            }
+
+            $scope.fields = {};
+            var choices = $scope.currentQuestion.choices;
+            var keys = Object.keys(choices);
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                $scope.fields[key] = new Field(choices[key].answerType, choices[key].label);
             }
         }
-        $scope.explanations = matrixService.compute($scope.resultsType == "NonProbable");
-        if (org.debug) {
-            org.walkIt(explanationsZone);
+
+        $scope.$on("dataLoaded", function (event, questions) {
+            $scope.questions = questions;
+            $scope.questionsKeys = Object.keys(questions);
+            questionChanged();
+        });
+        $scope.onPrevious = function () {
+            if ($scope.questionIndex >= 0) {
+                $scope.questionIndex--;
+                questionChanged();
+            }
+        };
+        $scope.onNext = function () {
+            if ($scope.questionIndex < $scope.questionsKeys.length) {
+                $scope.questionIndex++;
+                questionChanged();
+            }
+        };
+        $scope.resultsType = "NonProbable";
+        var explanationsZone = document.getElementById("explanations");
+        $scope.compute = function (key) {
+            var changedChoice = $scope.currentQuestion.choices[key];
+            if (changedChoice && changedChoice.answerType == 'radio') {
+                for (c in $scope.currentQuestion.choices) {
+                    var choice = $scope.currentQuestion.choices[c];
+                    if (choice.answerType == 'radio') {
+                        choice.value = c == key ? key : false;
+                    }
+                }
+            }
+            $scope.explanations = matrixService.compute($scope.resultsType == "NonProbable");
+            if (org.debug) {
+                org.walkIt(explanationsZone);
+            }
         }
-    }
-}
+    }]);

@@ -1,0 +1,33 @@
+footer {
+  margin-right: 1.9em;
+  margin-bottom: 1.9em;
+  iframe {
+    display: inline;
+  }
+}
+
+.footer {
+  font-size: 0.7em;
+  color: #CCC;
+  text-align: right;
+}
+
+.foot:target {
+  background: #bbbbbb;
+  color: white;
+}
+
+#sources {
+  font-size: 0.7em;
+  color: #666666;
+}
+
+#notes {
+  list-style-type: lower-alpha;
+  font-size: 0.7em;
+  color: #666666;
+
+  li.note {
+    margin: 0 0 5px 0;
+  }
+}

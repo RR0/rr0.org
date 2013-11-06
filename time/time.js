@@ -234,7 +234,7 @@ org.rr0.time = (function () {
                 if (this.year != null && number <= 59) {
                     monthReady = monthReady || dString.charAt(i) == '-';
                     if (this.month != null && !monthReady) {
-                        if (this.dayOfMonth != null) {
+                        if (this.dayOfMonth != null || this.hour != null) {
                             if (this.hour != null) {
                                 if (this.minutes != null) {
                                     this.setDayOfMonth(value());     // setHour is processed after ':' only
@@ -258,6 +258,15 @@ org.rr0.time = (function () {
                     monthReady = true;
                 }
                 number = null;
+            }
+
+            function parseEnd() {
+                if (value() != null) {
+                    timeSet.call(this); // End of date
+                }
+                if (txt) {
+                    setTz.call(this);
+                }
             }
 
             for (i = 0; i < dString.length; i++) {
@@ -321,6 +330,7 @@ org.rr0.time = (function () {
                         }
                         break;
                     case '/':
+                        parseEnd.call(this);
                         this.startDate = org.clone(this);
                         resetParse();
                         break;
@@ -328,12 +338,7 @@ org.rr0.time = (function () {
                         txt += c;
                 }
             }
-            if (value() != null) {
-                timeSet.call(this); // End of date
-            }
-            if (txt) {
-                setTz.call(this);
-            }
+            parseEnd.call(this);
             return this;
         };
 
@@ -607,19 +612,16 @@ org.rr0.time = (function () {
     function handleTimeTag(e) {
         var txt = org.text(e);
 
-        var time = this.getTime();
+        var currentTime = org.rr0.time.getTime();
+        var decodedTime = new Moment();
+        decodedTime.year = currentTime.getYear();
+        decodedTime.month = currentTime.getMonth();
+        decodedTime.dayOfMonth = currentTime.getDayOfMonth();
+        decodedTime.hour = currentTime.getHour();
+        decodedTime.minutes = currentTime.getMinutes();
+        decodedTime.fromString(txt);
 
-        var dat = new Moment();
-        dat.year = time.getYear();
-        dat.month = time.getMonth();
-        dat.dayOfMonth = time.getDayOfMonth();
-        dat.hour = time.getHour();
-        dat.minutes = time.getMinutes();
-
-        dat.fromString(txt);
-
-        function toString(someE, from) {
-            someE.setAttribute("datetime", dat.toISOString());
+        function toString(contextTime, time) {
             var timeLink;
             var repYear;
             var titYear;
@@ -628,43 +630,43 @@ org.rr0.time = (function () {
             var repDay;
             var titDay;
             var repHour;
-            var y = dat.getYear();
+            var y = time.getYear();
             if (y != null) {
-                var otherYear = y != from.getYear();
-                timeLink = yearLink(y);
+                var otherYear = y != contextTime.getYear();
+                timeLink = org.rr0.time.yearLink(y);
                 titYear = y;
                 if (otherYear) {
-                    from.setYear(y);
+                    contextTime.setYear(y);
                     repYear = " " + y;
                 }
             }
-            var m = dat.getMonth();
+            var m = time.getMonth();
             if (m != null) {
                 titMonth = org.rr0.time.monthName(m);
                 timeLink += "/" + zero(m);
-                var otherMonth = otherYear || m != from.getMonth();
+                var otherMonth = otherYear || m != contextTime.getMonth();
                 if (otherMonth) {
-                    from.setMonth(m);
+                    contextTime.setMonth(m);
                     repMonth = " " + titMonth;
                 }
             }
-            var d = dat.getDayOfMonth();
+            var d = time.getDayOfMonth();
             if (d != null) {
                 var dayAsNumber = parseInt(d, 10);
                 var otherDay = 0;
                 var dOW;
                 if (!!(dayAsNumber)) {
-                    dOW = org.rr0.time.dayOfWeekNam(this.getDayOfWeek(y, m, d));
+                    dOW = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, m, d));
                     titDay = dOW + " " + d + (d == 1 ? "er" : "");
                     if (otherMonth) otherDay = 30;
-                    else otherDay = d - from.getDayOfMonth();
+                    else otherDay = d - contextTime.getDayOfMonth();
                 } else {
                     titDay = d;
                     otherDay = 1;
                 }
                 if (otherDay != 0) {
                     timeLink += "/" + zero(d);
-                    from.setDayOfMonth(d);
+                    contextTime.setDayOfMonth(d);
                     switch (otherDay) {
                         case -1:
                             repDay = "veille";
@@ -685,7 +687,7 @@ org.rr0.time = (function () {
                 }
             }
             var titHour;
-            var h = dat.getHour();
+            var h = time.getHour();
             if (h != null) {
                 var hourAsNumber = parseInt(h, 10);
                 var otherHour;
@@ -709,25 +711,25 @@ org.rr0.time = (function () {
                         }
                     }
                 }
-                otherHour = otherHour || otherDay || h != from.getHour();
-                titHour = (dat.isApprox() ? 'vers' : 'à') + ' ' + titHour;
+                otherHour = otherHour || otherDay || h != contextTime.getHour();
+                titHour = (time.isApprox() ? 'vers' : 'à') + ' ' + titHour;
                 if (otherHour) {
-                    from.setHour(h);
+                    contextTime.setHour(h);
                     repHour = titHour;
                 }
             }
-            var mn = dat.getMinutes();
+            var mn = time.getMinutes();
             if (mn != null) {
                 var th = ':' + zero(mn);
                 titHour += th;
-                var otherMinutes = otherHour || mn != from.getMinutes();
+                var otherMinutes = otherHour || mn != contextTime.getMinutes();
                 if (otherMinutes) {
-                    from.setMinutes(mn);
+                    contextTime.setMinutes(mn);
                     repHour += th;
                 }
             }
             var titZ;
-            var z = dat.getTimeZone();
+            var z = time.getTimeZone();
             if (z) {
                 titZ = "(UTC" + (z >= 0 ? '+' : "") + z + ")";
             }
@@ -751,14 +753,22 @@ org.rr0.time = (function () {
             }
             if (titHour) title += ", " + titHour;
             if (titZ) title += " " + titZ;
-//        someE.innerHTML = replacement;
-            if (dat.startDate) {
-                replacement = dat.startDate + " au " + replacement;
+            if (time.startDate) {
+                var start = toString(time, time.startDate).replacement;
+                var end = replacement;
+                var betweenWord = repDay ? 'au' : 'à';
+                replacement = start + ' ' + betweenWord + ' ' + end;
+                title = start + ' ' + betweenWord + ' ' + title;
             }
-            checkedLink(someE, txt, timeLink, replacement, false, title);
+            return { "replacement": replacement,
+                "timeLink": timeLink,
+                "title": title};
         }
 
-        toString(e, time);
+        var r = toString(currentTime, decodedTime);
+        e.setAttribute("datetime", decodedTime.toISOString());
+        checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
+
     }
 
     var dateRegex = /(-)?[1-9]\d{3}(-\d{1,2}(-\d{1,2})?)?/g;

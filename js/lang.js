@@ -46,17 +46,21 @@ function checkAlternate(uri, origStatus, transStatus) {
             translation = uri.substr(0, dotPos) + "_" + userLang + uri.substr(dotPos);
         }
     } else {
-        translation = org.addEndingSlash(uri) + "index_" + userLang + ".html";
+        if (docLang != userLang) {
+            translation = org.addEndingSlash(uri) + "index_" + userLang + ".html";
+        }
     }
-    if (docLang != userLang) {
-        notifyTrans(translation, transStatus);
-    } else {
-        var original = org.addEndingSlash(uri.substring(0, uri.lastIndexOf('/'))) + "index.html";
-        notifyTrans(translation, function (trans) {  // If there is a translation it's myself (default priority is to my language)
-            if (trans) {    // If there is an translation (myself), check for original
-                notifyOrig(original, origStatus);
-            }
-        });
+    if (translation) {
+        if (docLang != userLang) {
+            notifyTrans(translation, transStatus);
+        } else {
+            var original = org.addEndingSlash(uri.substring(0, uri.lastIndexOf('/'))) + "index.html";
+            notifyTrans(translation, function (trans) {  // If there is a translation it's myself (default priority is to my language)
+                if (trans) {    // If there is an translation (myself), check for original
+                    notifyOrig(original, origStatus);
+                }
+            });
+        }
     }
 }
 setLang();

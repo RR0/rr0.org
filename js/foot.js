@@ -15,7 +15,9 @@ var sourcesCount = 0;
  * @param {string} t title on the link
  */
 function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
-    l = org.addEndingSlash(l);
+    if (l) {
+        l = org.addEndingSlash(l);
+    }
     if (e.className != constantClass) {
         if (!replacement) replacement = toReplace;
         var newText = org.text(e).replace(toReplace, replacement);  // Replace text early, the link will come later
@@ -25,7 +27,7 @@ function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
             e.innerHTML = newText;
         }
         e.title = t;
-        if (l != org.getUri()) {
+        if (l && l != org.getUri()) {
             toReplace = replacement;
             var failProc = function () {
                 var pLink = org.parentLink(l);

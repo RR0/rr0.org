@@ -659,14 +659,15 @@ org.rr0.time = (function () {
                     dOW = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, m, d));
                     titDay = dOW + " " + d + (d == 1 ? "er" : "");
                     if (otherMonth) otherDay = 30;
-                    else otherDay = d - contextTime.getDayOfMonth();
+                    else {
+                        otherDay = d - contextTime.getDayOfMonth();
+                    }
                 } else {
                     titDay = d;
                     otherDay = 1;
                 }
                 if (otherDay != 0) {
                     timeLink += "/" + zero(d);
-                    contextTime.setDayOfMonth(d);
                     switch (otherDay) {
                         case -1:
                             repDay = "veille";
@@ -678,12 +679,13 @@ org.rr0.time = (function () {
                             repDay = "surlendemain";
                             break;
                         default:
-                            if (otherDay <= 7) {
+                            if (otherDay <= 7 && contextTime.getDayOfMonth()) {
                                 repDay = dOW + " suivant";
                             } else {
                                 repDay = titDay;
                             }
                     }
+                    contextTime.setDayOfMonth(d);
                 }
             }
             var titHour;
@@ -698,25 +700,25 @@ org.rr0.time = (function () {
                     otherHour = true;
                 }
                 var o;
-                var s = h;
-                if (s) {
-                    var timesToUpdate = getTimes();
-                    for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
-                        o = times.getValue(i, 0);
-                        if (o == s) {
-                            var c = timesToUpdate.getValue(i, 1);
-                            c++;
-                            timesToUpdate.setValue(i, 1, c);
-                            break;
-                        }
-                    }
-                }
+//                var s = h;
+//                if (s) {
+//                    var timesToUpdate = getTimes();
+//                    for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
+//                        o = times.getValue(i, 0);
+//                        if (o == s) {
+//                            var c = timesToUpdate.getValue(i, 1);
+//                            c++;
+//                            timesToUpdate.setValue(i, 1, c);
+//                            break;
+//                        }
+//                    }
+//                }
                 otherHour = otherHour || otherDay || h != contextTime.getHour();
                 titHour = (time.isApprox() ? 'vers' : 'à') + ' ' + titHour;
                 if (otherHour) {
                     contextTime.setHour(h);
-                    repHour = titHour;
-                }
+                }// TODO: else manage to display "30 mn later"
+                repHour = titHour;  // For now, always display hours, even if unchanged
             }
             var mn = time.getMinutes();
             if (mn != null) {

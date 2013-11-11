@@ -668,22 +668,23 @@ org.rr0.time = (function () {
                 }
                 if (otherDay != 0) {
                     timeLink += "/" + zero(d);
-                    switch (otherDay) {
-                        case -1:
-                            repDay = "veille";
-                            break;
-                        case 1:
-                            repDay = "lendemain";
-                            break;
-                        case 2:
-                            repDay = "surlendemain";
-                            break;
-                        default:
-                            if (otherDay <= 7 && contextTime.getDayOfMonth()) {
-                                repDay = dOW + " suivant";
-                            } else {
-                                repDay = titDay;
-                            }
+                    repDay = titDay;
+                    if (contextTime.getDayOfMonth()) {
+                        switch (otherDay) {
+                            case -1:
+                                repDay = "veille";
+                                break;
+                            case 1:
+                                repDay = "lendemain";
+                                break;
+                            case 2:
+                                repDay = "surlendemain";
+                                break;
+                            default:
+                                if (otherDay <= 7) {
+                                    repDay = dOW + " suivant";
+                                }
+                        }
                     }
                     contextTime.setDayOfMonth(d);
                 }

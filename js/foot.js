@@ -12,7 +12,7 @@ var sourcesCount = 0;
  * @param l The link address
  * @param replacement The replacement text, if different from toReplace
  * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
- * @param {string} t title on the link
+ * @param {string} [t] title on the link
  */
 function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
     if (l) {
@@ -26,7 +26,9 @@ function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
         } else {
             e.innerHTML = newText;
         }
-        e.title = t;
+        if (t) {
+            e.title = t;
+        }
         if (l && l != org.getUri()) {
             toReplace = replacement;
             var failProc = function () {

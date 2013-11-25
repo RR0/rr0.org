@@ -84,6 +84,72 @@ org.rr0.time = (function () {
         }
     };
 
+
+    function Duration() {
+        var durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/;
+        var minuteValue = 60;
+        var hourValue = minuteValue * 60;
+        var dayValue = hourValue * 24;
+
+        this.fromString = function (txt) {
+            var foundExprs = durationRegex.exec(txt);
+            this.durationInSeconds = 0;
+            for (var i = 1; i < foundExprs.length; i++) {
+                var expr = foundExprs[i];
+                if (expr) {
+                    var lastCharPos = expr.length - 1;
+                    var value = parseInt(expr.substring(0, lastCharPos), 10);
+                    switch (expr.charAt(lastCharPos)) {
+                        case 'D':
+                            this.durationInSeconds += value * dayValue;
+                            break;
+                        case 'H':
+                            this.durationInSeconds += value * hourValue;
+                            break;
+                        case 'M':
+                            this.durationInSeconds += value * minuteValue;
+                            break;
+                        case 'S':
+                            this.durationInSeconds += value;
+                            break;
+                        case 'P':
+                    }
+                }
+            }
+            return this;
+        };
+
+        this.toString = function () {
+            var txt = [];
+            var remaining = this.durationInSeconds;
+            var days = Math.floor(remaining / dayValue);
+            if (days >= 1) {
+                txt.push(days + " j");
+            }
+            remaining = remaining % dayValue;
+            var hours = Math.floor(remaining / hourValue);
+            if (hours >= 1) {
+                txt.push(hours + " h");
+            }
+            remaining = remaining % hourValue;
+            var minutes = Math.floor(remaining / minuteValue);
+            if (minutes >= 1) {
+                txt.push(minutes + " mn");
+            }
+            remaining %= remaining % minuteValue;
+            var seconds = remaining;
+            if (seconds >= 1) {
+                txt.push(seconds + " s");
+            }
+            var last = txt.length - 1;
+            var s = '';
+            for (var i = last; i >= 0; i--) {
+                s = (i === last ? ' et ' : i > 0 ? ', ' : '') + txt[i] + s;
+            }
+            return s;
+        }
+    }
+
     function Moment() {
         function clear() {
             this.decade = false;
@@ -323,6 +389,7 @@ org.rr0.time = (function () {
                         number = null;
                         break;
                     case 'T':
+                    case ' ':
                         if (txt || zReady) {
                             txt += c;
                         } else {
@@ -613,13 +680,13 @@ org.rr0.time = (function () {
         var txt = org.text(e);
 
         var currentTime = org.rr0.time.getTime();
+
         var decodedTime = new Moment();
         decodedTime.year = currentTime.getYear();
         decodedTime.month = currentTime.getMonth();
         decodedTime.dayOfMonth = currentTime.getDayOfMonth();
         decodedTime.hour = currentTime.getHour();
         decodedTime.minutes = currentTime.getMinutes();
-        decodedTime.fromString(txt);
 
         function toString(contextTime, time) {
             var timeLink;
@@ -669,9 +736,10 @@ org.rr0.time = (function () {
                 if (otherDay != 0) {
                     timeLink += "/" + zero(d);
                     repDay = titDay;
-                    if (contextTime.getDayOfMonth()) {
+                    if (!isTimeURL() && contextTime.getDayOfMonth()) {
                         switch (otherDay) {
                             case -1:
+
                                 repDay = "veille";
                                 break;
                             case 1:
@@ -700,7 +768,7 @@ org.rr0.time = (function () {
                     titHour = h;
                     otherHour = true;
                 }
-                var o;
+//                var o;
 //                var s = h;
 //                if (s) {
 //                    var timesToUpdate = getTimes();
@@ -763,15 +831,24 @@ org.rr0.time = (function () {
                 replacement = start + ' ' + betweenWord + ' ' + end;
                 title = start + ' ' + betweenWord + ' ' + title;
             }
-            return { "replacement": replacement,
+            return {
+                "replacement": replacement,
                 "timeLink": timeLink,
-                "title": title};
+                "title": title
+            };
         }
 
-        var r = toString(currentTime, decodedTime);
-        e.setAttribute("datetime", decodedTime.toISOString());
+        var r;
+        if (txt.charAt(0) === 'P') {
+            r = {
+                replacement: new Duration().fromString(txt).toString()
+            };
+        } else {
+            decodedTime.fromString(txt);
+            r = toString(currentTime, decodedTime);
+            e.setAttribute("datetime", decodedTime.toISOString());
+        }
         checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
-
     }
 
     var dateRegex = /(-)?[1-9]\d{3}(-\d{1,2}(-\d{1,2})?)?/g;
@@ -781,12 +858,12 @@ org.rr0.time = (function () {
     }
 
     function timeTextHandler(e) {
-        if (e.tagName == "TIME") {
+        if (e.tagName === "TIME") {
             return handleTimeTag(e);
-        } else if (org.getUri().indexOf("/time/") >= 0 && e.tagName == "LI") {
+        } else if (isTimeURL() && e.tagName == "LI") {
             return handleListItem(e);
         }
-        if (e.parentNode.tagName == "TIME") return;
+        if (e.parentNode.tagName === "TIME") return;
 
         var txt = org.textValue(e);
         var parentNode = e.parentNode;

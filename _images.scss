@@ -1,0 +1,60 @@
+img {
+  margin: 1.25em 1.25em 1.5em 1.25em;
+  max-width: 100%;
+  border-radius: 0.2em;
+}
+
+caption {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: justify;
+  vertical-align: bottom;
+  margin: 0;
+  caption-side: bottom;
+}
+
+figure {
+  display: table;
+  -webkit-transition: width 1s ease, height 1s ease;
+  -moz-transition: width 1s ease, height 1s ease;
+  -ms-transition: width 1s ease, height 1s ease;
+  -o-transition: width 1s ease, height 1s ease;
+  transition: width 1s ease, height 1s ease;
+  transition-property: width, height;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  max-width: 75%;
+  margin: 0 1em 0 1em;
+  img {
+    margin: 0;
+    display: block;
+    width: 100%;
+  }
+  &:hover {
+    width: 40%;
+  }
+  figcaption {
+    margin-top: 0.7em;
+    @extend caption;
+  }
+}
+
+table img {
+  margin: 0;
+}
+
+.image-container {
+  max-width: 75%;
+  margin: 1em;
+  td {
+    height: 100%;
+  }
+}
+
+.leftImage {
+  @extend .left;
+}
+
+.rightImage {
+  @extend .right;
+}

@@ -29,9 +29,10 @@ body {
   overflow-y: scroll;
   overflow-x: auto;
   z-index: 1;
-  width: 100%;
+  line-height: 1.5em;
+  padding: 2vh 2vw;
+  width: 96vw;
   //resize: horizontal;
-  height: 98%;
   @include horiz-trans;
 
   background: /* Shadow covers */ linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */ radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)) 0 100%;
@@ -42,6 +43,19 @@ body {
 
   /* Opera doesn't support this in the shorthand */
   background-attachment: local, local, scroll, scroll;
+
+  ul {
+    text-align: justify;
+    vertical-align: sub;
+    time {
+      font-weight: bold;
+    }
+    li {
+      margin-top: 0.5em;
+      padding-right: 0.8em;
+      border-right: 0.4em solid rgba(255, 255, 255, 0);
+    }
+  }
 }
 
 .divider {
@@ -57,7 +71,7 @@ body {
 @import "js/foot";
 
 /*section#main {*/
-div#main {
+#main {
   /*top: 5em;
   position:relative;*/
   background-color: black;
@@ -134,7 +148,7 @@ abbr {
 
 p {
   text-align: justify;
-  margin: 1.25em 0 1.5em 1.25em;
+  margin: 1.25em 1.5em 1.5em 1.25em;
   padding-right: 0.8em;
   border-right: 0.4em solid rgba(255, 255, 255, 0);
   hyphens: auto;
@@ -151,18 +165,6 @@ a {
 a:hover {
   text-decoration: underline;
   margin-bottom: 0;
-}
-
-ul {
-  text-align: justify;
-  vertical-align: sub;
-  time {
-    font-weight: bold;
-  }
-  li {
-    padding-right: 0.8em;
-    border-right: 0.4em solid rgba(255, 255, 255, 0);
-  }
 }
 
 ol {
@@ -192,7 +194,7 @@ ol li:hover {
 h2 {
   font-size: 1.5em;
   font-weight: normal;
-  margin-top: 1.25em;
+  margin-top: 1.5em;
   margin-right: 0;
   margin-left: 0;
   margin-bottom: 0;
@@ -492,35 +494,39 @@ table {
   }
 }
 
-@mixin embedded {
-  max-width: 100%;
+.side {
+  width: 20%;
+}
+
+.long {
+  height: 300px;
+  height: 80vh;
+}
+
+.wide {
+  margin: auto; /* centering */
+  width: 90%;
 }
 
 iframe {
   display: block;
   overflow: scroll;
-  width: 90%;
-  height: 300px;
-  height: 80vh;
-  margin: auto;
-  border-radius: $border-radius;
-  border-style: ridge;
+  .wide {
+    border-radius: $border-radius;
+    border-style: ridge;
+  }
+}
+
+@mixin embedded {
+  max-width: 100%;
 }
 
 iframe, object, embed {
   @include embedded;
 }
 
-.image-container {
-  max-width: 75%;
-  margin: 1em;
-  td {
-    height: 100%;
-  }
-}
-
-.leftImage {
-  @extend image-container;
+.left {
+  @extend .image-container;
   float: left;
   margin-left: -0.3em;
 
@@ -530,14 +536,22 @@ iframe, object, embed {
   }
 }
 
-.rightImage {
-  @extend image-container;
+.right {
+  @extend .image-container;
   float: right;
   margin-right: -0.3em;
 
   caption {
     padding-left: 0.5em;
     padding-right: 2em;
+  }
+}
+
+.image-container {
+  max-width: 75%;
+  margin: 1em;
+  td {
+    height: 100%;
   }
 }
 

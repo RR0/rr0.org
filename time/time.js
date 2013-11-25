@@ -136,7 +136,7 @@ org.rr0.time = (function () {
             if (minutes >= 1) {
                 txt.push(minutes + " mn");
             }
-            remaining %= remaining % minuteValue;
+            remaining = remaining % minuteValue;
             var seconds = remaining;
             if (seconds >= 1) {
                 txt.push(seconds + " s");
@@ -144,7 +144,7 @@ org.rr0.time = (function () {
             var last = txt.length - 1;
             var s = '';
             for (var i = last; i >= 0; i--) {
-                s = (i === last ? ' et ' : i > 0 ? ', ' : '') + txt[i] + s;
+                s = (i === last && i > 0 ? ' et ' : i > 0 ? ', ' : '') + txt[i] + s;
             }
             return s;
         }
@@ -843,6 +843,7 @@ org.rr0.time = (function () {
             r = {
                 replacement: new Duration().fromString(txt).toString()
             };
+            e.setAttribute("datetime", txt);
         } else {
             decodedTime.fromString(txt);
             r = toString(currentTime, decodedTime);

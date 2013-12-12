@@ -95,8 +95,8 @@ var place = (function () {
 
     function mapRebound(bounds) {
         google.maps.event.trigger(myMap, 'resize');
+        fitBounds(bounds);
         if (!mapToggled) {
-            fitBounds(bounds);
             mapToggled = true;
         }
     }
@@ -170,7 +170,7 @@ var place = (function () {
                 }
                 splitWithMap(org.rr0.leftWidth);
             } else {
-                time.drawChart();
+                org.rr0.time.drawChart();
                 getSwipe().next();
             }
         }

@@ -3,6 +3,7 @@ function NavLink(l, url, t) {
     this.link = url;
     this.title = t;
 }
+
 var startNav;
 var contents, contentsURL;
 var prev, prevLink;
@@ -75,6 +76,9 @@ var starts =
             label: "Politique"
         }
     ];
+function getHeader() {
+    return document.querySelector('header');
+}
 function addRel(l, t) {
     var rel = document.createElement("link");
     rel.setAttribute("rel", t);
@@ -91,7 +95,7 @@ function setContents(c, cLink) {
 function setStart(s, sLink) {
     var ret = null;
     var t;
-    if (window == top) {
+    if (window === top) {
         if (!s) {                       // Look for start induced by URI
             var uri = org.getUri();
             for (var i = 0; i < starts.length; i++) {
@@ -212,13 +216,10 @@ function setAlternates(innerHtml) {
 }
 var titleClass = "label";
 var navTitle;
-function setNavTitle(innerHtml) {
-    navTitle = innerHtml;
-}
 function checkAlt() {
     if (!alternate) {
         alternate = " ";
-        checkAlternate(getUri(),
+        checkAlternate(org.getUri(),
             function (original) {
                 setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
             },
@@ -231,7 +232,7 @@ var navList;
 function getNavList() {
     if (!navList) {
         var n = document.getElementsByTagName("nav")[0];
-        navList = n.childNodes[0];
+        navList = n.querySelector('ul');
     }
     return navList;
 }
@@ -239,7 +240,7 @@ function createNavElement(c) {
     var li = document.getElementsByClassName(c)[0];
     if (!li) {
         li = document.createElement("li");
-        c = !(!c) ? constantClass + " " + c : org.constantClass;
+        c = !(!c) ? org.constantClass + " " + c : org.constantClass;
         li.setAttribute("class", c);
         getNavList().appendChild(li);
     }
@@ -269,81 +270,399 @@ function createNavLink(t, l, tt, c) {
     }
     return li;
 }
-sections = [];
-function navTagHandler(element) {
-    var handled = element.tagName === 'SECTION';
-    if (handled) {
-        var firstChildTag = element.children[0];
-        var tagName = firstChildTag.tagName;
-        if (tagName.charAt(0) === 'H') {
-            var sectionTitle = org.text(firstChildTag);
-            var level = parseInt(tagName.substring(1), 10);
-            var levelSections = sections[level];
-            if (typeof levelSections == "array") {
-            } else {
-                levelSections = sections;
+
+style = null;
+
+//var titleTag;
+angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
+    .filter('unsafe', ['$sce', function ($sce) {
+        return function (val) {
+            return $sce.trustAsHtml(val);
+        };
+    }])
+    .service('navigationService', ['$rootScope', function ($rootScope) {
+        this.currentLevel = 1;
+        this.sections = [];
+        this.menu = [];
+
+        this.addSection = function (l) {
+            this.currentLevel++;
+            var levelSections = this.sections[this.currentLevel];
+            if (typeof levelSections !== "array") {
+                levelSections = this.sections;
             }
-            element.id = "section" + sections.length;
-            levelSections.push(sectionTitle);
+            var index = this.sections.length;
+            levelSections.push(l);
+            var section = {
+                label: l,
+                id: 'section' + index,
+                level: this.currentLevel
+            };
+            $rootScope.$broadcast('sectionAdded', section);
+            return section;
         }
-    }
-    return false;
-}
-var searchResults;
-var searchInput;
-function doSearch() {
-    org.rr0.net.onCorsRequest("https://www.googleapis.com/customsearch/v1?key=AIzaSyCBM8ZUsYyJNdwKTKxoARTr673_8IaWKSo&cx=014557949845581334805:gdnqsazbu8i&q=" + searchInput.value, "GET", function (req) {
-        var response = JSON.parse(req.responseText);
-        searchResults.innerHTML = '';
-        for (var i = 0; i < response.items.length; i++) {
-            var item = response.items[i];
-            var resultItem = document.createElement("li");
-            // in production code, item.htmlTitle should have the HTML entities escaped.
-            var a = document.createElement('a');
-            a.href = item.link;
-            a.innerHTML += item.htmlTitle;
-            a.title += item.snippet;
-            resultItem.appendChild(a);
-            searchResults.appendChild(resultItem);
+    }])
+    .directive('title', [function () {
+        return {
+            restrict: 'E',
+            link: function (scope, elem, attrs) {
+                scope.title = elem.text();
+            }
+        };
+    }])
+    .directive('section', ['navigationService', '$rootScope', function (navigationService, $rootScope) {
+        return {
+            restrict: 'E',
+            transclude: true,
+            scope: {
+                title: '@title'
+            },
+            link: {
+                pre: function (scope, elem, attrs) {
+                    if (attrs.title) {
+                        var section = navigationService.addSection(attrs.title);
+                        scope.level = section.level;
+                        scope.sectionTitle = section.label;
+                        elem[0].id = section.id;
+                    }
+                },
+                post: function (scope, elem, attrs) {
+                    navigationService.currentLevel--;
+                    scope.level = navigationService.currentLevel;
+                }
+            },
+            template: '<h1>{{sectionTitle}}</h1><div ng-transclude></div> '
+        };
+    }])
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', function ($scope, $rootScope, $http, $log) {
+        function getTitle() {
+            if (!$scope.title) {
+                $scope.title = time.getYear();
+                if ($scope.title) {
+                    if (getTime().month) {
+                        $scope.title = time.monthName() + " " + $scope.title;
+                        var dayOfMonth = time.getDayOfMonth();
+                        if (dayOfMonth) {
+                            $scope.title = org.rr0.time.dayOfWeekNam(time.getDayOfWeek()) + " " + dayOfMonth + " " + $scope.title;
+                        }
+                    }
+                } else {
+                    var p = getPeople();
+                    if (p) {
+                        $scope.title = p.toString();
+                    } else {
+                        var uri = getUri();
+                        var ls = uri.lastIndexOf("/");
+                        var htmlExt = uri.lastIndexOf(".html");
+                        if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) != "index") {
+                            $scope.title = uri.substring(ls + 1, htmlExt);
+                        } else if (ls < uri.length - 1) {
+                            var ps = ls - 1;
+                            while (uri.charAt(ps) != '/') ps--;
+                            $scope.title = uri.substring(ps + 1, ls).toUpperCase();  // Accronym assumed
+                        } else {
+                            $scope.title = uri.substring(ls + 1);
+                        }
+                    }
+                }
+            }
+            return $scope.title;
         }
-    });
-}
-function addSearch() {
-    if (window == top) {
-        var searchLi = createNavElement();
 
-        var searchForm = document.createElement("form");
-        searchInput = document.createElement("input");
-        searchInput.setAttribute("type", "search");
-        searchForm.appendChild(searchInput);
-//        var searchSubmit = org.spanElement("iconic magnifying_glass", " ")
-//        searchForm.appendChild(searchSubmit);
-        searchLi.appendChild(searchForm);
+        $scope.initTitle = function (t, u, st) {
+            $scope.title = t;
+            url = u;
+            style = st;
+        };
+        $scope.initPeople = function (p) {
+            setPeopleName(p);
+        };
+        $scope.addNavElement = function (c) {
+            return createNavElement(c);
+        };
+        $scope.ps = [];
+        function addNavLinkBeforeTitle(t, l, tt, c) {
+            $scope.ps.push({
+                label: t,
+                link: l,
+                title: tt,
+                style: c
+            });
+        }
 
-        searchResults = document.createElement("ul");
-    }
-    searchForm.setAttribute("action", "javascript:doSearch()");
-    searchLi.appendChild(searchResults);
-}
+        $scope.ns = [];
+        function addNavLinkAfterTitle(t, l, tt, c) {
+            $scope.ns.push({
+                label: t,
+                link: l,
+                title: tt,
+                style: c
+            });
+        }
 
-function nav() {
-    if (window == top) {
-        createNavLink("RR0", "/", "Home", "home", "");
-        createNavLink(startNav.label, startNav.link, startNav.title, "start");
-        createNavLink(contents, contentsURL, "Table des matières", "toc", "⇇ ");
-        createNavLink(prev, prevLink, "Précédent", "prev", "← ");
-    } else {
-//        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
+        var scrolled = document.getElementById("contents");
+
+        function getNav() {
+            return document.querySelector('nav');
+        }
+
+        function getOutline() {
+            return document.querySelector('#outline');
+        }
+
+        function getHeaderHeight() {
+            return getHeader().offsetHeight;
+        }
+
+        function getNavHeight() {
+            return getNav().offsetHeight;
+        }
+
+        function isHeaderCollapsed() {
+            return scrolled.scrollTop > getHeader().offsetHeight - getNavHeight();
+        }
+
+        function getHeadingHeight() {
+            return getNavHeight();
+        }
+
+        function updateHeading(digesting) {
+            var header = getHeader();
+            var navElement = getNav();
+//            var contents = document.getElementById('contents');
+            if (isHeaderCollapsed()) {
+                navElement.style.position = 'fixed';
+                navElement.style.top = '0';
+                header.style.paddingBottom = getNavHeight() + 'px';
+//                contents.style.position='absolute';
+//                contents.style.top=getNavHeight() + 'px';
+                if (digesting) {
+                    $scope.outline = $scope.title;
+                } else {
+                    $scope.$apply(function () {
+                        $scope.outline = $scope.title;
+                    });
+                }
+            } else {
+                navElement.style.position = 'absolute';
+                var titleHeight = 56;
+                navElement.style.top = titleHeight + 'px';
+                var text = scrolled.querySelector('#text');
+                text.style.position = 'absolute';
+//                contents.style.top='0';
+                text.style.top = titleHeight + getNavHeight() + 'px';
+                if (digesting) {
+                    $scope.outline = 'Sommaire';
+                } else {
+                    $scope.$apply(function () {
+                        $scope.outline = 'Sommaire';
+                    });
+                }
+            }
+        }
+
+        scrolled.onscroll = function (event) {
+            updateHeading();
+        };
+        function showOutline() {
+            getOutline().style.top = getHeadingHeight() + 'px';
+        }
+
+        var hiddenPos = '-100em';
+
+        function hideOutline() {
+            getOutline().style.top = hiddenPos;
+        }
+
+        function getSearch() {
+            return document.querySelector('#search');
+        }
+
+        function isSearchVisible() {
+            return getSearch().style.top === hiddenPos;
+        }
+
+        function showSearch() {
+            getSearch().style.top = getHeadingHeight() + 'px';
+        }
+
+        function hideSearch() {
+            getSearch().style.top = hiddenPos;
+        }
+
+        $scope.searchInput = '';
+        $scope.doSearch = function () {
+            $http.get("https://www.googleapis.com/customsearch/v1?key=AIzaSyCBM8ZUsYyJNdwKTKxoARTr673_8IaWKSo&cx=014557949845581334805:gdnqsazbu8i&q=" + $scope.searchInput)
+                .success(function (data, status, headers, config) {
+                    $scope.searchResults = [];
+                    if (data.searchInformation.totalResults > 0) {
+                        $scope.searchResults = data.items;
+                    } else {
+                        log("No results for '" + $scope.searchInput + "'");
+                    }
+                    showSearch();
+                });
+        };
+        $scope.searchKey = function (event, item) {
+            if (event.keyCode === 40) {
+                if (!isSearchVisible()) {
+                    showSearch();
+                } else {
+                    // Focus next search result
+                }
+                $scope.searchClick(item);
+            }
+        };
+        $scope.searchClick = function (item) {
+            window.location = item.link;
+        };
+        $scope.init = function (s, sLink, c, cLink, p, pLink, n, nLink) {
+            navInit(s, sLink, c, cLink, p, pLink, n, nLink);
+            if (window === top) {
+                addNavLinkBeforeTitle("RR0", "/", "Home", "home");
+                addNavLinkBeforeTitle(startNav.label, startNav.link, startNav.title, "start");
+                addNavLinkBeforeTitle('' + contents, contentsURL, "Table des matières", "toc");
+                addNavLinkBeforeTitle(prev, prevLink, "Précédent", "prev");
+            } else {
+                //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";
-    }
-    org.handleTags.apply(null, [navTagHandler]);
-    createNavElement(titleClass).innerHTML = navTitle;
-    if (window == top) {
-        createNavLink(next, nextLink, "Suivant", "next", "→ ");
-    }
-    createNavElement(alternateClass);
-    addSearch();
-    checkAlt();
-    headResized();
+            }
+            function addTitle() {
+                var headTitle = document.getElementsByTagName('title')[0];
+                if (!headTitle) {
+                    headTitle = document.createElement("title");
+                    var titleText = getTitle();
+                    headTitle.innerHTML = titleText;
+                    org.addToHead(headTitle);
+                    $scope.title = '' + titleText;
+                } else {
+                    $scope.title = org.text(headTitle);
+                }
+                $scope.outline = 'Sommaire';
+            }
+
+            addTitle();
+            if (window === top) {
+                addNavLinkAfterTitle(next, nextLink, "Suivant", "next");
+            }
+            createNavElement(alternateClass);
+            checkAlt();
+        };
+        $scope.$watch('title', function () {
+            updateHeading(true);
+        });
+        $scope.initAuthor = function (a, aLink, c, cLink) {
+            addAuthor(a, aLink, c, cLink);
+        };
+        $scope.sections = [
+            {
+                label: '⤒',
+                id: 'contents'
+            }
+        ];
+        function isOutlineVisible() {
+            return getOutline().style.top !== hiddenPos;
+        }
+
+        $scope.titleClick = function () {
+            if (isOutlineVisible()) {
+                showOutline();
+            } else {
+                hideOutline();
+            }
+        };
+        $scope.titleOver = function () {
+            showOutline();
+        };
+        $scope.titleLeave = function () {
+            hideOutline();
+        };
+        $scope.outlineOver = function () {
+            $log.info('outline over')
+        };
+        $scope.outlineLeave = function () {
+            $log.info('outline leave')
+        };
+        $scope.searchOver = function () {
+            showSearch();
+        };
+        $scope.searchLeave = function () {
+            getSearch().style.top = hiddenPos;
+        };
+        function smoothScroll(anchor, duration, url) {
+            var easingPattern = function (duration) {
+                return duration < 0.5 ? 4 * duration * duration * duration : (duration - 1) * (2 * duration - 2) * (2 * duration - 2) + 1; // acceleration until halfway, then deceleration
+            };
+            var updateURL = function (url, anchor) {
+                if (url === true && history.pushState) {
+                    window.location.hash = '#' + anchor.id;
+                }
+            };
+            // Get the height of a fixed header if one exists
+            var headerHeight = getHeadingHeight();
+
+            // Calculate how far to scroll
+            var startLocation = scrolled.scrollTop;
+            var getEndLocation = function (anchor) {
+                var location = 0;
+                if (anchor.offsetParent) {
+                    do {
+                        location += anchor.offsetTop;
+                        anchor = anchor.offsetParent;
+                    } while (anchor);
+                }
+                location = location - headerHeight;
+                return location >= 0 ? location : 0;
+            };
+            var endLocation = getEndLocation(anchor);
+            var distance = endLocation - startLocation;
+
+            // Function to stop the scrolling animation
+            var stopAnimationIfRequired = function () {
+                var currentLocation = scrolled.scrollTop;
+                if (currentLocation == endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight )) {
+                    clearInterval(runAnimation);
+                    updateURL(url, anchor);
+                }
+            };
+            // Set the animation variables to 0/undefined.
+            var timeLapsed = 0;
+            var percentage, position;
+
+            var animateScroll = function () {
+                timeLapsed += 16;
+                percentage = timeLapsed / duration;
+                percentage = percentage > 1 ? 1 : percentage;
+                position = startLocation + distance * easingPattern(percentage);
+                scrolled.scrollTop = position;
+                stopAnimationIfRequired();
+            };
+            // Loop the animation function
+            var runAnimation = setInterval(animateScroll, 16);
+        }
+
+        $scope.sectionClick = function (section) {
+            var anchor = document.getElementById(section.id);   // anchor.scrollIntoView(true, 'smooth');
+            hideOutline();
+            smoothScroll(anchor, 500, false);
+        };
+        $rootScope.$on('sectionAdded', function (event, section) {
+//            for (var i = 2; i < section.level; i++) {
+//                section.label = '&nbsp;&nbsp;' + section.label;
+//            }
+            $scope.sections.push(section);
+        });
+    }]);
+
+function headResized() {
+//    var headerHeight = getHeader().offsetHeight;
+//    var main = document.getElementById("main");
+//    main.style.marginTop = headerHeight + "px";
+//    document.getElementById("contents").style.height = (main.offsetHeight - headerHeight) + "px";
 }
-org.onContentsLoaded(nav);
+
+if (window.addEventListener) {    // most non-IE browsers and IE9
+    window.addEventListener("resize", headResized, false);
+} else if (window.attachEvent) {  // Internet Explorer 5 or above
+    window.attachEvent("onresize", headResized);
+}

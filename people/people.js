@@ -1,5 +1,8 @@
 var peopleUriPart = "/people/";
 
+var peoples = {
+
+};
 function People(p) {
     var commaPos = p.indexOf(", ");
     if (commaPos > 0) {
@@ -17,20 +20,20 @@ function People(p) {
 function getPeople() {
     return context.people;
 }
-function setPeople(name) {
+function setPeopleName(name) {
     if (name && name.length > 0) {
         context.people = new People(name);
     }
 }
 /**
  * @param {String} p People's name
- * @param {String} pLink a href link, or a symbolic link, or null
+ * @param {String} [pLink] a href link, or a symbolic link, or null
  */
 function peopleLink(p, pLink) {
     if (!pLink) {
         pLink = org.cache[p];
         if (!pLink) {
-            setPeople(p);
+            setPeopleName(p);
             pLink = cache[getPeople().lastName];
             if (!pLink) {
                 p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
@@ -49,28 +52,11 @@ function peopleLink(p, pLink) {
     cache[getPeople().lastName] = pLink;
     return pLink;
 }
-function peopleTagHandler(e) {
-    var handled = org.hasClass(e, "people");
-    if (handled) {
-        var l = e.getAttribute("title");    // Alternate (correct for link) name?
-        var k = text(e);
-        org.linkify(e, k, peopleLink(l ? l : k));
-    } else if (e.nodeType != 3) {
-        handled = org.hasClass(e, "caviar") || org.hasClass(e, "temoin") || org.hasClass(e, "temoin1") || org.hasClass(e, "temoin2" || org.hasClass(e, "temoin3"));
-        if (handled) {
-            e.style.width = text(e).length + "em";
-            e.innerHTML = "témoin";
-            e.title = "Nom du témoin anonymisé";
-            if (e.id) e.innerHTML += ' ' + id;
-        }
-    }
-    return false;
-}
 var authorElement;
 function addAuthor(a, aLink, c, cLink) {
     if (a) {
         var t = document.createTextNode(a);
-        setPeople(a);
+        setPeopleName(a);
         authorElement = org.newElement("p", org.linkElement(peopleLink(a, aLink), t, "Crédit"));
         authorElement.innerHTML += ": ";
     }
@@ -85,22 +71,85 @@ function addAuthor(a, aLink, c, cLink) {
         authorElement.innerHTML += time.addDate(authorElement);
     }
 }
-starts.push({
-        dir: peopleUriPart,
-        label: "<span class='iconic user'></span>",
-        title: "Personnes"
-    }
-);
-function peopleInit() {
-    if (authorElement) {
-        var contentsNode = org.contentsZone;
-        contentsNode.insertBefore(authorElement, contentsNode.firstChild);
-    }
+var handleWitness = function (scope, elem, attrs) {
+    var txt = elem.text();
+    var e = elem[0];
+    e.style.width = txt.length + 'em';
+    e.innerHTML = '<a href="/FAQ.html#privacy">témoin' + (scope.witnessId ? ' ' + scope.witnessId : '') + '</a>';
+    e.title = 'Nom du témoin anonymisé';
+    if (e.id) e.innerHTML += ' ' + id;
+};
 
-    org.nounToLink(peopleUriPart + "pilotes.html", "pilote");
-    org.nounToLink(peopleUriPart + "ufologues.html", "ufologue");
-    org.nounToLink(peopleUriPart + "Astronomes.html", "astronome");
-    org.nounToLink(peopleUriPart + "temoins.html", "temoin");
-    org.handleTags.apply(null, [peopleTagHandler]);
-}
-org.onContentsLoaded(peopleInit);
+angular.module('rr0.people', [])
+    .directive('people', function () {
+        return {
+            restrict: 'C',
+            link: function (scope, elem, attrs) {
+                if (elem[0].tagName !== 'TITLE') {
+                    var txt = elem.text();
+                    var e = elem[0];
+                    var nameKey = attrs.title;    // Alternate (correct for link) name?
+                    var nameDisplay = txt;
+                    if (nameDisplay.length <= 0) {
+                        nameDisplay = nameKey;
+                    }
+                    var linkedPeople = org.linkify(e, nameDisplay, peopleLink(nameKey ? nameKey : nameDisplay));
+                    linkedPeople.setAttribute('translate', 'no');
+                }
+            }
+        }
+    })
+    .directive('temoin', function () {
+        return {
+            restrict: 'C',
+            scope: true,
+            link: handleWitness
+        }
+    })
+    .directive('temoin1', function () {
+        return {
+            restrict: 'C',
+            scope: true,
+            controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
+                $scope.witnessId = '1';
+            }],
+            link: handleWitness
+        }
+    })
+    .directive('temoin2', function () {
+        return {
+            restrict: 'C',
+            scope: true,
+            controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
+                $scope.witnessId = '2';
+            }],
+            link: handleWitness
+        }
+    })
+    .directive('temoin3', function () {
+        return {
+            restrict: 'C',
+            scope: true,
+            controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
+                $scope.witnessId = '3';
+            }],
+            link: handleWitness
+        }
+    })
+    .run(function () {
+        starts.push({
+                dir: peopleUriPart,
+                label: "<span class='iconic user'></span>",
+                title: "Personnes"
+            }
+        );
+        if (authorElement) {
+            var contentsNode = org.contentsZone;
+            contentsNode.insertBefore(authorElement, contentsNode.firstChild);
+        }
+
+        org.nounToLink(peopleUriPart + "pilotes.html", "pilote");
+        org.nounToLink(peopleUriPart + "ufologues.html", "ufologue");
+        org.nounToLink(peopleUriPart + "Astronomes.html", "astronome");
+        org.nounToLink(peopleUriPart + "temoins.html", "temoin");
+    });

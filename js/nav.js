@@ -93,33 +93,34 @@ function setContents(c, cLink) {
     }
 }
 function setStart(s, sLink) {
-    var ret = null;
-    var t;
-    if (window === top) {
-        if (!s) {                       // Look for start induced by URI
-            var uri = org.getUri();
-            for (var i = 0; i < starts.length; i++) {
-                var st = starts[i];
-                var dataPos = uri.indexOf(st.dir);
-                if (dataPos >= 0 && uri != st.dir) {
-                    s = st.label;
-                    t = st.title;
-                    sLink = st.dir;
-                    if (st.css) org.loadCSS(st.css);
-                    if (st.js) org.loadJS(st.js);
-                    if (st.onLoad) ret = st.onLoad;
-                    break;
+    if (!startNav) {
+        var ret = null;
+        var t;
+        if (window === top) {
+            if (!s) {                       // Look for start induced by URI
+                var uri = org.getUri();
+                for (var i = 0; i < starts.length; i++) {
+                    var st = starts[i];
+                    var dataPos = uri.indexOf(st.dir);
+                    if (dataPos >= 0 && uri != st.dir) {
+                        s = st.label;
+                        t = st.title;
+                        sLink = st.dir;
+                        if (st.css) org.loadCSS(st.css);
+                        if (st.js) org.loadJS(st.js);
+                        if (st.onLoad) ret = st.onLoad;
+                        break;
+                    }
                 }
             }
+            if (!t) {
+                t = "Début";
+                s = "⇤ " + s;
+            }
+            startNav = new NavLink(s, sLink, t);
         }
-        if (!t) {
-            t = "Début";
-            s = "⇤ " + s;
-        }
-        startNav = new NavLink(s, sLink, t);
-        addRel(sLink, "Start");
+        return ret;
     }
-    return ret;
 }
 function setP(p, pLink) {
     if (!p) p = prev;
@@ -204,30 +205,16 @@ function setNext(n, nLink) {
 }
 function navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
     var onLoadDo = setStart(s, sLink);
+    if (window === top) {
+        addRel(sLink, "Start");
+    }
 //    if (onLoadDo) domLoadProcs.push(onLoadDo);
     setContents(c, cLink);
     setPrev(p, pLink);
     setNext(n, nLink);
 }
-var alternate;
-var alternateClass = "alternate";
-function setAlternates(innerHtml) {
-    alternate = innerHtml;
-}
 var titleClass = "label";
 var navTitle;
-function checkAlt() {
-    if (!alternate) {
-        alternate = " ";
-        checkAlternate(org.getUri(),
-            function (original) {
-                setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
-            },
-            function (translation) {
-                setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction française</a>" : "&#9888; Pas de traduction disponible");
-            });
-    }
-}
 var navList;
 function getNavList() {
     if (!navList) {
@@ -307,6 +294,36 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             restrict: 'E',
             link: function (scope, elem, attrs) {
                 scope.title = elem.text();
+            }
+        };
+    }])
+    .directive('link', [function () {
+        return {
+            restrict: 'E',
+            link: function (scope, elem, attrs) {
+                var rel = attrs.rel;
+                if (rel) {
+                    rel = rel.toLowerCase();
+                }
+                var linkTitle = attrs.title;
+
+                switch (rel) {
+                    case 'alternate':
+                        var alternatelang = attrs.hreflang;
+                        break;
+                    case 'prev':
+                        var prevLink = attrs.href;
+                        break;
+                    case 'next':
+                        var nextLink = attrs.href;
+                        break;
+                    case 'start':
+                        setStart(linkTitle, attrs.href);
+                        break;
+                    case 'contents':
+                        var contentsLink = attrs.href;
+                        break;
+                }
             }
         };
     }])
@@ -445,7 +462,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 }
             } else {
                 navElement.style.position = 'absolute';
-                var titleHeight = 56;
+                var titleHeight = 80;
                 navElement.style.top = titleHeight + 'px';
                 var text = scrolled.querySelector('#text');
                 text.style.position = 'absolute';
@@ -539,6 +556,26 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                     $scope.title = org.text(headTitle);
                 }
                 $scope.outline = 'Sommaire';
+            }
+
+            var alternate;
+            var alternateClass = "alternate";
+
+            function setAlternates(innerHtml) {
+                alternate = innerHtml;
+            }
+
+            function checkAlt() {
+                if (!alternate) {
+                    alternate = " ";
+                    checkAlternate(org.getUri(),
+                        function (original) {
+                            setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
+                        },
+                        function (translation) {
+                            setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction française</a>" : "&#9888; Pas de traduction disponible");
+                        });
+                }
             }
 
             addTitle();

@@ -30,41 +30,55 @@ function setPeopleName(name) {
  * @param {String} [pLink] a href link, or a symbolic link, or null
  */
 function peopleLink(p, pLink) {
-    if (!pLink) {
-        pLink = org.cache[p];
+    if (p) {
         if (!pLink) {
-            setPeopleName(p);
-            pLink = cache[getPeople().lastName];
+            pLink = org.cache[p];
             if (!pLink) {
-                p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
-                pLink = org.validLink(p);
+                setPeopleName(p);
+                pLink = cache[getPeople().lastName];
+                if (!pLink) {
+                    p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
+                    pLink = org.validLink(p);
+                } else
+                    return pLink;
             } else
                 return pLink;
-        } else
-            return pLink;
+        }
+        var firstLinkChar = pLink.charAt(0);
+        if (firstLinkChar !== '.' && firstLinkChar !== '/') {
+            pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
+        }
+        pLink = org.validLink(pLink);
+        cache[p] = pLink;
+        cache[getPeople().lastName] = pLink;
+    } else {
+        pLink = null;
     }
-    var firstLinkChar = pLink.charAt(0);
-    if (firstLinkChar !== '.' && firstLinkChar !== '/') {
-        pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
-    }
-    pLink = org.validLink(pLink);
-    cache[p] = pLink;
-    cache[getPeople().lastName] = pLink;
     return pLink;
 }
 var authorElement;
-function addAuthor(a, aLink, c, cLink) {
+function setAuthor(a, aLink) {
     if (a) {
         var t = document.createTextNode(a);
         setPeopleName(a);
         authorElement = org.newElement("p", org.linkElement(peopleLink(a, aLink), t, "Crédit"));
         authorElement.innerHTML += ": ";
     }
+}
+function setCopyright(c, cLink) {
+    if (!authorElement) {
+        authorElement = document.createElement("p");
+    }
+    copyright = c;
+    authorElement.appendChild(org.linkElement(cLink, document.createTextNode(c), "Copyright"));
+    authorElement.innerHTML += ", ";
+}
+function addAuthor(a, aLink, c, cLink) {
+    if (a) {
+        setAuthor(a, aLink);
+    }
     if (c) {
-        if (!authorElement) authorElement = document.createElement("p");
-        copyright = c;
-        authorElement.appendChild(org.linkElement(cLink, document.createTextNode(c), "Copyright"));
-        authorElement.innerHTML += ", ";
+        setCopyright(c, cLink);
     }
     if (authorElement) {
         authorElement.setAttribute("class", "Author");
@@ -95,6 +109,36 @@ angular.module('rr0.people', [])
                     }
                     var linkedPeople = org.linkify(e, nameDisplay, peopleLink(nameKey ? nameKey : nameDisplay));
                     linkedPeople.setAttribute('translate', 'no');
+                }
+            }
+        }
+    })
+    .directive('meta', [function () {
+        return {
+            restrict: 'E',
+            link: function (scope, elem, attrs) {
+                var name = attrs.name;
+                var content = attrs.content;
+                var urlPos = content.indexOf(';url=');
+                var link = urlPos > 0 ? content.substring(urlPos) : undefined;
+                switch (name) {
+                    case 'author':
+                        setAuthor(content, link);
+                        break;
+                    case 'copyright':
+                        setCopyright(content, link);
+                        break;
+                }
+            }
+        };
+    }])
+    .directive('body', function () {
+        return {
+            restrict: 'E',
+            link: function (scope, elem, attrs) {
+                if (authorElement) {
+                    var contentsNode = org.contentsZone;
+                    contentsNode.insertBefore(authorElement, contentsNode.firstChild);
                 }
             }
         }
@@ -143,10 +187,6 @@ angular.module('rr0.people', [])
                 title: "Personnes"
             }
         );
-        if (authorElement) {
-            var contentsNode = org.contentsZone;
-            contentsNode.insertBefore(authorElement, contentsNode.firstChild);
-        }
 
         org.nounToLink(peopleUriPart + "pilotes.html", "pilote");
         org.nounToLink(peopleUriPart + "ufologues.html", "ufologue");

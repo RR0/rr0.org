@@ -1,0 +1,46 @@
+</head>
+<body>
+	<div id='slider' class='swipe'>
+		<div id="main" role="main" class="swipe-wrap">
+			<div id="contents">
+				<header ng-controller="HeadCtrl" ng-init="initTitle('<!--#echo var=" title
+				" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('
+				<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->
+				','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->
+				');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','
+				<!--#echo var="copyright.url" -->')">
+				<h1 ng-bind-html="title" ng-style="{'background':'-webkit-linear-gradient(left, rgb(224, 224, 233) 0%,rgb(255, 255, 255) 50%,rgba(255, 255, 255, 0.5) 100%), url('+headImage+')'}">
+					&nbsp;</h1>
+				<nav>
+					<ul>
+						<li ng-repeat="p in ps" class="constant {{p.style}}">
+							<a ng-if="p.link && p.label" href="{{p.link}}">
+								<span ng-bind-html="p.label | unsafe" title="{{p.title}}"></span> </a>
+						</li>
+						<li tabindex="100" ng-click="titleClick()" ng-mouseover="titleOver()" ng-mouseleave="titleLeave()" class="constant">
+							<span class="constant label" ng-bind-html="outline | unsafe" title="Titre de l'article"></span>
+							<ul id="outline" ng-mouseover="outlineOver()" ng-mouseleave="outlineLeave()">
+								<li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)" style="font-size:{{1.4-(0.2*s.level)}}em">
+									<span ng-bind-html="s.label|unsafe"></span>
+								</li>
+							</ul>
+						</li>
+						<li ng-repeat="n in ns" class="constant {{n.style}}">
+							<a ng-if="n.link && n.label" href="{{n.link}}">
+								<span ng-bind-html="n.label | unsafe" title="{{n.title}}"></span> </a>
+						</li>
+						<li class="constant" ng-mouseover="searchOver()">
+							<form ng-submit="doSearch()">
+								<input type="search" ng-model="searchInput" tabindex="200" ng-keydown="searchKey($event)">
+								<span class="iconic magnifying_glass" title="Rechercher" ng-click="doSearch()"></span>
+								<ul id="search" ng-mouseleave="searchLeave()">
+									<li ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{r.snippet}}" ng-click="searchClick(r)">
+										<span ng-bind-html="r.htmlTitle | unsafe"></span>
+									</li>
+								</ul>
+							</form>
+						</li>
+					</ul>
+				</nav>
+				</header>
+				<div id="text">

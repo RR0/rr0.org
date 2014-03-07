@@ -1,111 +1,93 @@
-<script src="/js/head.js"></script>
-<script>setTitle("
-<!--#echo var="title" -->
-", "
-<!--#echo var="url" -->
-", "
-<!--#echo var="style" -->
-");</script>
-<script src="/people/people.js"></script>
-<script>setPeople("
-<!--#echo var="people" -->
-");</script><!--<script>window.flowtype( document.getElementById('contents'), {minFont:16, fontRatio:65} );</script>-->
-<script src="/js/foot.js"></script>
-<script>
-    time.setYear(<!--#echo var="year" -->);
-    time.setMonth(<!--#echo var="month" -->);
-    time.setDayOfMonth(<!--#echo var="day" -->);
-    navInit("
-    <!--#echo var="start" -->
-    ", "
-    <!--#echo var="start.url" -->
-    ", "
-    <!--#echo var="contents" -->
-    ", "
-    <!--#echo var="contents.url" -->
-    ", "
-    <!--#echo var="prev" -->
-    ", "
-    <!--#echo var="prev.url" -->
-    ", "
-    <!--#echo var="next" -->
-    ", "
-    <!--#echo var="next.url" -->
-    ");
-    addTitle();
-    addAuthor("
-    <!--#echo var="author" -->
-    ", "
-    <!--#echo var="author.url" -->
-    ", "
-    <!--#echo var="copyright" -->
-    ", "
-    <!--#echo var="copyright.url" -->
-    ");
-</script><!--#if expr="${QUERY_STRING}=/debug/" -->
+<!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-sanitize.js"></script><!--#else -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-sanitize.min.js"></script><!--#endif -->
+<script src="/bower_components/angular-locale_fr-fr.min.js"></script><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/common.js"></script><!--#else -->
+<script src="/js/common.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/net.js"></script><!--#else -->
+<script src="/js/net.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/lang.js"></script><!--#else -->
+<script src="/js/lang.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/people/people.js"></script><!--#else -->
+<script src="/people/people.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/time/time.js"></script><!--#else -->
+<script src="/time/time.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/nav.js"></script><!--#else -->
+<script src="/js/nav.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/units.js"></script><!--#else -->
+<script src="/js/units.min.js"></script><!--#endif --><!--<script src="/js/flowtype.js"></script>--><!--<script>window.flowtype( document.getElementById('contents'), {minFont:16, fontRatio:65} );</script>--><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/foot.js"></script><!--#else -->
+<script src="/js/foot.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/place/place.js"></script><!--#else -->
-<script src="/place/place.min.js"></script><!--#endif -->
+<script src="/place/place.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/time/1/9/7/7/Poher_Matrice/matrix.js"></script><!--#else -->
+<script src="/time/1/9/7/7/Poher_Matrice/matrix.min.js"></script><!--#endif -->
 <script>place.setPlace("
 <!--#echo var="place" -->
-", document.body);</script>
+", document.body);</script><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/js/index.js"></script><!--#else -->
+<script src="/js/index.min.js"></script><!--#endif -->
 <footer>
-    <ol id="notes"></ol>
-    <ol id="sources"></ol>
-    <script>org.contentsLoaded();</script>
-    <table width="100%" id="footerTable">
-        <tbody>
-        <tr valign="top">
-            <td>
-                <iframe src="http://www.facebook.com/plugins/like.php?href=http://<!--#echo var=" SERVER_NAME
-                " --><!--#echo var="DOCUMENT_URI" -->&show_faces=false&layout=button_count" scrolling="no" frameborder="0" style="border:none; height:20px; width:120px;"></iframe>
-                <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
-                <script type="text/javascript">
-                    window.___gcfg = {lang: 'fr'};
-                    (function () {
-                        var po = document.createElement('script');
-                        po.type = 'text/javascript';
-                        po.async = true;
-                        po.src = 'https://apis.google.com/js/plusone.js';
-                        var s = document.getElementsByTagName('script')[0];
-                        s.parentNode.insertBefore(po, s);
-                    })();
-                </script>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-via="r_r_0" data-lang="fr">Tweeter</a>
-                <script>!function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = "//platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");</script>
-            </td>
-            <td class="footer">
-                Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->
-                <script>if (!copyright) document.write("<a href=''/Copyright.html'>Copyright</a> &copy;") </script>
-                RR0 - <a href="/Contact.html">Contact</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</footer></div></div></div><!--#if expr="${QUERY_STRING}=/debug/" -->
+	<ol id="notes"></ol>
+	<ol id="sources"></ol>
+	<script>org.contentsLoaded();</script>
+	<table width="100%" id="footerTable">
+		<tbody>
+			<tr valign="top">
+				<td>
+					<iframe src="//www.facebook.com/plugins/like.php?href=http://<!--#echo var=" SERVER_NAME
+					" --><!--#echo var="DOCUMENT_URI" -->&show_faces=false&layout=button_count" scrolling="no" frameborder="0"
+					style="border:none; height:20px; width:120px;"></iframe>
+					<div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
+					<script type="text/javascript">
+						window.___gcfg = {lang: 'fr'};
+						(function () {
+							var po = document.createElement('script');
+							po.type = 'text/javascript';
+							po.async = true;
+							po.src = 'https://apis.google.com/js/plusone.js';
+							var s = document.getElementsByTagName('script')[0];
+							s.parentNode.insertBefore(po, s);
+						})();
+					</script>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="r_r_0" data-lang="fr">Tweeter</a>
+					<script>!function (d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = "//platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, "script", "twitter-wjs");</script>
+				</td>
+				<td class="footer">
+					Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->
+					<script>if (!copyright) document.write("<a href=''/Copyright.html'>Copyright</a> &copy;") </script>
+					RR0 - <a href="/Contact.html">Contact</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</footer></div></div></div></div><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/wz_tooltip.js"></script><!--#else -->
 <script src="/js/wz_tooltip.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/swipe.js"></script><!--#else -->
 <script src="/js/swipe.min.js"></script><!--#endif -->
 <script type="text/javascript">
-    var _gaq = _gaq || [];
-    var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-    _gaq.push(['_setAccount', 'UA-541415-1']);
-    _gaq.push(['_trackPageview']);
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+	var _gaq = _gaq || [];
+	var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	_gaq.push(['_setAccount', 'UA-541415-1']);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
 </script></body></html>

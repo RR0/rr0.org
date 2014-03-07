@@ -1,5 +1,5 @@
 img {
-  margin: 1.25em 1.25em 1.5em 1.25em;
+  margin: 1.25vh 1.25vh 1.5vh 1.25vh;
   max-width: 100%;
   border-radius: 0.2em;
 }
@@ -21,17 +21,18 @@ figure {
   -o-transition: width 1s ease, height 1s ease;
   transition: width 1s ease, height 1s ease;
   transition-property: width, height;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
   transition-timing-function: ease;
   max-width: 75%;
-  margin: 0 1em 0 1em;
+  max-height: 90%;
+  margin: 0 2vw 0 2vw;
   img {
     margin: 0;
     display: block;
     width: 100%;
   }
   &:hover {
-    width: 40%;
+    width: 35%;
   }
   figcaption {
     margin-top: 0.7em;
@@ -45,7 +46,8 @@ table img {
 
 .image-container {
   max-width: 75%;
-  margin: 1em;
+  max-height: 75%;
+  margin: 2vh;
   td {
     height: 100%;
   }
@@ -53,8 +55,14 @@ table img {
 
 .leftImage {
   @extend .left;
+  figcaption {
+    text-align: left;
+  }
 }
 
 .rightImage {
   @extend .right;
+  figcaption {
+    text-align: right;
+  }
 }

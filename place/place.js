@@ -41,27 +41,9 @@ var place = (function () {
 
     var places = [];
 
-    function parseForPlaces() {
-        org.handleTags.apply(this, [placeTagHandler]);
-    }
-
-    var onGoogleMapsLoaded = [parseForPlaces];
-    var mapsApiLoaded = function () {
-        for (var i = 0; i < onGoogleMapsLoaded.length; i++) {
-            onGoogleMapsLoaded[i]();
-        }
+    this.parseForPlaces = function () {
+//        org.handleTags.apply(this, [placeTagHandler]);
     };
-
-    function init() {
-        initGoogleMaps(mapsApiLoaded);
-    }
-
-    function initGoogleMaps(mapsApiLoaded) {
-        google.load("maps", "3", {
-            other_params: "sensor=false",
-            callback: mapsApiLoaded
-        });
-    }
 
     /**
      *
@@ -85,7 +67,8 @@ var place = (function () {
         });
     };
 
-    var geocoder, myMap;
+    this.geocoder = null;
+    var myMap;
     var mapZone;
     var placeCount = 0;
     var zoomMin = 1;
@@ -229,47 +212,56 @@ var place = (function () {
 
     var mapUpdateCallbacks = [mapResize];
 
-    function getGeocoder() {
-        if (!geocoder) {
-            place.sideCallbacks = place.sideCallbacks.concat(mapUpdateCallbacks);
-            mapZone = org.getSideZone("map-canvas");
-            onTransitionEnd(org.rr0.contentsZone, mapUpdateCallbacks);
-            mapZone.addEventListener('DOMMouseScroll', function (e) {   // Disable map slide propagation to container sliding zone
-                e.stopPropagation();
-            }, false);
+    function getGeocoder(callback) {
+        if (!this.geocoder) {
+            google.load("maps", "3", {
+                other_params: "sensor=false",
+                callback: function () {
+                    place.sideCallbacks = place.sideCallbacks.concat(mapUpdateCallbacks);
+                    mapZone = org.getSideZone("map-canvas");
+                    onTransitionEnd(org.rr0.contentsZone, mapUpdateCallbacks);
+                    mapZone.addEventListener('DOMMouseScroll', function (e) {   // Disable map slide propagation to container sliding zone
+                        e.stopPropagation();
+                    }, false);
 
-            geocoder = new google.maps.Geocoder();
-            var mapType = "hybrid";
-            var mapOptions = {
-                mapTypeId: mapType, language: "fr"
+                    this.geocoder = new google.maps.Geocoder();
+                    var mapType = "hybrid";
+                    var mapOptions = {
+                        mapTypeId: mapType, language: "fr"
 //                ,minZoom: zoomMin
-            };
-            myMap = new google.maps.Map(document.getElementById(mapZone.id), mapOptions);
-            totalBounds = new google.maps.LatLngBounds();
+                    };
+                    myMap = new google.maps.Map(document.getElementById(mapZone.id), mapOptions);
+                    totalBounds = new google.maps.LatLngBounds();
 
-            createNavLink("<span class='iconic map_pin_fill'></span>", "javascript:place.toggleMap()", "Affiche carte", "toggleMap", "");
-            headResized();
+                    createNavLink("<span class='iconic map_pin_fill'></span>", "javascript:place.toggleMap()", "Affiche carte", "toggleMap", "");
+                    headResized();
+                    callback(this.geocoder);
+                }
+            });
+        } else {
+            callback(this.geocoder);
         }
-        return geocoder;
     }
 
     function geocode(placeName, element) {
-        getGeocoder().geocode({ 'address': placeName}, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var loc = results[0].geometry.location;
-                peoplePoints.push(loc);
-                totalBounds.extend(loc);
-                var latestBounds = new google.maps.LatLngBounds();
-                latestBounds.extend(loc);
-                var newPlace = new Place(placeName, latestBounds);
-                var parent = element.parentElement;
-                if (parent.tagName == "P" || parent.tagName == "LI") {
-                    places.push(newPlace);
-                    element.setAttribute("onclick", "place.focusMap(" + (places.length - 1) + ")");
-                    element.style.cursor = "pointer";
-                    element.title = "Cliquez pour voir la carte";
+        getGeocoder(function (geocoder) {
+            geocoder.geocode({ 'address': placeName}, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var loc = results[0].geometry.location;
+                    peoplePoints.push(loc);
+                    totalBounds.extend(loc);
+                    var latestBounds = new google.maps.LatLngBounds();
+                    latestBounds.extend(loc);
+                    var newPlace = new Place(placeName, latestBounds);
+                    var parent = element.parentElement;
+                    if (parent.tagName == "P" || parent.tagName == "LI") {
+                        places.push(newPlace);
+                        element.setAttribute("onclick", "place.focusMap(" + (places.length - 1) + ")");
+                        element.style.cursor = "pointer";
+                        element.title = "Cliquez pour voir la carte";
+                    }
                 }
-            }
+            });
         });
     }
 
@@ -280,19 +272,18 @@ var place = (function () {
         }
     };
 
-    function placeTagHandler(element) {
-        var handled = element.tagName === "SPAN";
-        if (handled) {
-            handled = element.className === "place" || element.className === "lieu";
-            if (handled) {
-                var placeName = element.title ? element.title : org.text(element);
-                setPlace(placeName, element);
-            }
-        }
-        return false;
-    }
-
-    org.onContentsLoaded(init);
-
     return this;
 }());
+
+angular.module('rr0.place', [])
+    .directive('place', function () { // or lieu
+        return {
+            restrict: 'C',
+            link: function (scope, elem, attrs) {
+                var element = elem[0];
+                var placeName = element.title ? element.title : org.text(element);
+                place.setPlace(placeName, element);
+            }
+        }
+    })
+;

@@ -1,5 +1,5 @@
 angular.module('matrix', [])
-    .service('resourceBundleService',function ($log, $q, $rootScope, $http) {
+    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', function ($log, $q, $rootScope, $http) {
         var uri = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/';
         var bundleName = 'Matrix';
         var localeFile = uri + bundleName + '_' + userLang + '.json';
@@ -13,7 +13,7 @@ angular.module('matrix', [])
                 loaded.reject("Could not load '" + localeFile + "': " + status);
             });
         return loaded.promise;
-    }).service('matrixService',function ($log, $rootScope, $http, resourceBundleService) {
+    }]).service('matrixService', ['$log', '$rootScope', '$http', 'resourceBundleService', function ($log, $rootScope, $http, resourceBundleService) {
 
         function Question(t, i) {
             this.title = t;
@@ -103,7 +103,7 @@ angular.module('matrix', [])
                 return explanationsWithoutHoles;
             }
         }
-    }).controller('FormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
+    }]).controller('FormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
 
         $scope.questionIndex = 0;
 

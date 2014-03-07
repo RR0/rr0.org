@@ -136,7 +136,7 @@ window.org = (function () {
         };
 
         this.initStructure = function () {
-            this.contentsZone = document.getElementById("contents");
+            this.contentsZone = document.getElementById("text");
             this.leftWidth = this.getScreenWidth();
         };
         return this;
@@ -167,6 +167,26 @@ window.org = (function () {
      * @type {String}
      */
     this.constantClass = "constant";
+
+    this.intersect = function (a, b) {
+        var result = [];
+        if (a && b) {
+            var ai = 0, bi = 0;
+            while (ai < a.length && bi < b.length) {
+                var ae = a[ai];
+                if (ae < b[bi]) {
+                    ai++;
+                } else if (ae > b[bi]) {
+                    bi++;
+                } else {    // they're equal
+                    result.push(ae);
+                    ai++;
+                    bi++;
+                }
+            }
+        }
+        return result;
+    };
 
     this.hasClass = function (e, c) {
         var className = e.className;
@@ -431,7 +451,6 @@ window.org = (function () {
         if (l.charAt(l.length - 1) == '/') parentL = parentL.substring(0, parentL.length - 1);
         for (var i = parentL.length - 1; i > 0 && parentL.charAt(i) != '/'; i--) {
         }
-        ;
         if (i > 0) parentL = parentL.substring(0, i);
         return parentL;
     };
@@ -451,14 +470,6 @@ window.org = (function () {
             var style = elements[i].style;
             style.display = (style.display == "" || style.display == "inline" ? "none" : "inline");
         }
-    }
-
-    function versionHandler(e, pNode) {
-        var handled = hasClass(e, "added");
-        if (handled) {
-            setAlternates("<input type=\"checkbox\" checked id=\"added\" onclick=\"toggleVersion('added')\">Ajouts");
-        }
-        return false;
     }
 
     function toLinks(l, kk) {
@@ -491,7 +502,7 @@ window.org = (function () {
      * @param {HTMLElement} e The element containing the text.
      * @param {string} k The text to look for.
      * @param {string} l The URI of the link to create
-     * @param {string} r The text replacement, if any (matched text remains otherwise)
+     * @param {string} [r] The text replacement, if any (matched text remains otherwise)
      * @param {boolean} [cacheIt]
      * @return {HTMLElement}
      */
@@ -601,7 +612,7 @@ window.org = (function () {
         this.nounToLink("/science/crypto/ufo/enquete/meprise/ballon", "ballon");
         this.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "météore");
 
-        this.handleTags.apply(null, [cachedLinksHandler, versionHandler]);
+        this.handleTags.apply(null, [cachedLinksHandler]);
     };
 
     domLoadProcs.push(this.rr0.initStructure);
@@ -611,3 +622,4 @@ window.org = (function () {
     return this;
 }());
 var copyright;
+//# sourceURL=common.js

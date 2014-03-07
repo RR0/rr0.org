@@ -1,5 +1,9 @@
-$menu-font: Verdana, Geneva, sans-serif;
+@import "../variables";
+
 nav {
+  left: 0;
+  top: 0;
+  right: 0;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -8,10 +12,10 @@ nav {
     width: 100%; /* clearfix */
   }
   ul {
-    background: #f2f2f8; /* for non-css3 browsers */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f8', endColorstr='#ffffff', GradientType=1); /* for IE */
-    background: -webkit-gradient(linear, left top, right top, from(#f2f2f8), to(#ffffff)); /* for webkit browsers */
-    background: -moz-linear-gradient(left top, #f2f2f8, #ffffff);
+    background: $header-from-color; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1); /* for IE */
+    background: -webkit-gradient(linear, left top, right top, from($header-from-color), to($header-to-color)); /* for webkit browsers */
+    background: -moz-linear-gradient(left top, $header-from-color, $header-to-color);
     margin: 0;
     padding: 0;
     li * {
@@ -29,13 +33,20 @@ nav {
         padding: 0.3em 0.7em;
         width: 100%;
       }
-      h1 {
+      span.magnifying_glass {
+        padding-left: 0.245em;
+      }
+      .label {
         padding: 0 0.7em;
+        ul li:hover {
+          cursor: pointer;
+        }
       }
     }
     > li {
-      padding-right: 0;
-      border-right: none;
+      padding: 0;
+      border: none;
+      margin: 0;
       float: left;
       line-height: 2em;
       font-size: 0.9em;
@@ -46,6 +57,8 @@ nav {
       @include bottom-inner-shadow;
       position: absolute;
       max-width: 80%;
+      max-height: 99vh;
+      overflow: scroll;
       z-index: -5;
       top: -100em;
       @include transition(top, 0.3s, ease);
@@ -54,21 +67,30 @@ nav {
         position: relative;
         padding: 0.3em 0.7em;
         float: none;
-      }
-      li:hover {
-        color: #FFF;
-        background-color: #0b75b2;
-        text-decoration: none;
+        &:hover, &:focus {
+          color: #FFF;
+          background-color: #0b75b2;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .outline1 {
+          font-size: 1.4em;
+        }
+        .outline2 {
+          font-size: 1.2em;
+        }
+        .outline3 {
+          font-size: 1em;
+        }
+        .outline4 {
+          font-size: 0.8em;
+        }
       }
     }
   }
   .toggleMap {
     float: right;
   }
-}
-
-nav ul li:hover > ul, nav ul li:active > ul, nav ul li:focus > ul {
-  top: 1.9em;
 }
 
 nav ul li a:hover, .menu ul li .current {

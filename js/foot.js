@@ -73,6 +73,7 @@ function footerTagHandler(e) {
                 var footId = footLabel, footContent = e.innerHTML;
 
                 var footItem = document.createElement("li");
+                footItem.setAttribute('translate', 'no');
                 footItem.id = footId;
                 footItem.className = "foot";
                 footItem.innerHTML = footContent;

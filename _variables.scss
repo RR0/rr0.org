@@ -1,0 +1,20 @@
+//font-family: 'Lora', serif;
+//font-family: 'Open Sans', sans-serif;
+//font-family: 'Muli', sans-serif;
+//font-family: 'Raleway', sans-serif;
+//  font-family: 'Roboto Slab', serif;
+//  font-family: 'Istok Web', sans-serif;
+//  font-family: 'Palatino';
+/*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+/*font-family: "Georgia", serif;*/
+$contentFont: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+//$menu-font: Verdana, Geneva, sans-serif;
+//$menu-font: 'Segoe UI', sans-serif;
+$menu-font: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+
+$border-radius: 0.2em;
+$shadow-length: 0.8em;
+
+$header-transparency: 0.95;
+$header-from-color: rgba(242, 242, 248, $header-transparency);
+$header-to-color: rgba(255, 255, 255, $header-transparency);

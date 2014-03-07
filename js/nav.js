@@ -297,6 +297,14 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
         };
     }])
+    .directive('img', [function () {
+        return {
+            restrict: 'E',
+            link: function (scope, elem, attrs) {
+                scope.headImage = attrs.src;
+            }
+        };
+    }])
     .directive('link', [function () {
         return {
             restrict: 'E',

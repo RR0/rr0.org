@@ -988,7 +988,11 @@ angular.module('rr0.time', [])
                     };
                     e.setAttribute("datetime", txt);
                 } else {
-                    decodedTime.fromString(txt);
+                    if (attrs.datetime) {
+                        decodedTime.fromString(attrs.datetime);
+                    } else {
+                        decodedTime.fromString(txt);
+                    }
                     r = toString(currentTime, decodedTime);
                     e.setAttribute("datetime", decodedTime.toISOString());
                 }

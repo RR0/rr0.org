@@ -137,7 +137,7 @@ angular.module('rr0.people', [])
             restrict: 'E',
             link: function (scope, elem, attrs) {
                 if (authorElement) {
-                    var contentsNode = org.contentsZone;
+                    var contentsNode = org.textZone;
                     contentsNode.insertBefore(authorElement, contentsNode.firstChild);
                 }
             }

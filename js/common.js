@@ -136,7 +136,8 @@ window.org = (function () {
         };
 
         this.initStructure = function () {
-            this.contentsZone = document.getElementById("text");
+            this.contentsZone = document.getElementById("contents");
+            this.textZone = document.getElementById("text");
             this.leftWidth = this.getScreenWidth();
         };
         return this;
@@ -580,7 +581,7 @@ window.org = (function () {
      */
     this.handleTags = function () {
         var args = arguments;
-        walk(org.rr0.contentsZone, function (e) {
+        walk(org.rr0.textZone, function (e) {
 //        context.add(e);
             for (var h = 0; h < args.length; h++) {
                 if (e.parentNode) {

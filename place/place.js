@@ -256,7 +256,9 @@ var place = (function () {
                     var parent = element.parentElement;
                     if (parent.tagName == "P" || parent.tagName == "LI") {
                         places.push(newPlace);
-                        element.setAttribute("onclick", "place.focusMap(" + (places.length - 1) + ")");
+                        element.onclick = function () {
+                            place.focusMap(places.length - 1);
+                        };
                         element.style.cursor = "pointer";
                         element.title = "Cliquez pour voir la carte";
                     }

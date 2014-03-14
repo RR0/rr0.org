@@ -89,7 +89,7 @@ function setContents(c, cLink) {
     if (!contents) {
         contents = c;
         contentsURL = cLink;
-        addRel(contentsURL, "Contents");
+//        addRel(contentsURL, "Contents");
     }
 }
 function setStart(s, sLink) {
@@ -124,7 +124,7 @@ function setStart(s, sLink) {
 }
 function setP(p, pLink) {
     if (!p) p = prev;
-    addRel(pLink, "Prev");
+//    addRel(pLink, "Prev");
 
     var pes = document.getElementsByClassName("prev");
     for (var i = 0; i < pes.length; i++) {
@@ -137,7 +137,7 @@ function setP(p, pLink) {
 }
 function setN(n, nLink) {
     if (!n) n = next;
-    addRel(nLink, "Next");
+//    addRel(nLink, "Next");
 
     var nes = document.getElementsByClassName("next");
     for (var i = 0; i < nes.length; i++) {
@@ -320,22 +320,22 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                         var alternatelang = attrs.hreflang;
                         break;
                     case 'prev':
-                        var prevLink = attrs.href;
+                        setPrev(linkTitle, attrs.href);
                         break;
                     case 'next':
-                        var nextLink = attrs.href;
+                        setNext(linkTitle, attrs.href);
                         break;
                     case 'start':
                         setStart(linkTitle, attrs.href);
                         break;
                     case 'contents':
-                        var contentsLink = attrs.href;
+                        setContents(linkTitle, attrs.href);
                         break;
                 }
             }
         };
     }])
-    .directive('section', ['navigationService', '$rootScope', function (navigationService, $rootScope) {
+    .directive('section', ['navigationService', function (navigationService) {
         return {
             restrict: 'E',
             transclude: true,
@@ -359,7 +359,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             template: '<h1>{{sectionTitle}}</h1><div ng-transclude></div> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', function ($scope, $rootScope, $http, $log) {
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', '$timeout', function ($scope, $rootScope, $http, $log, $timeout) {
         function getTitle() {
             if (!$scope.title) {
                 $scope.title = time.getYear();
@@ -423,6 +423,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 title: tt,
                 style: c
             });
+
         }
 
         var scrolled = document.getElementById("contents");
@@ -539,7 +540,10 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
         };
         $scope.searchClick = function (item) {
-            window.location = item.link;
+            document.body.className += ' wait';
+            $timeout(function () {
+                window.location = item.link;
+            }, 10);
         };
         $scope.init = function (s, sLink, c, cLink, p, pLink, n, nLink) {
             navInit(s, sLink, c, cLink, p, pLink, n, nLink);

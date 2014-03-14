@@ -20,6 +20,12 @@ body {
   padding: 0;
   left: 0;
   scroll-behavior: smooth;
+  &.wait {
+    cursor: wait;
+    * {
+      cursor: wait;
+    }
+  }
 }
 
 @import "js/head", "js/common";
@@ -43,7 +49,6 @@ body {
 
   /* Opera doesn't support this in the shorthand */
   background-attachment: local, local, scroll, scroll;
-
 }
 
 #text {
@@ -53,6 +58,10 @@ body {
     vertical-align: sub;
     time {
       font-weight: bold;
+      &.duration {
+        font-weight: normal;
+        font-family: monospace;
+      }
     }
     li {
       margin-top: 0.5em;
@@ -253,6 +262,10 @@ cite {
   font-style: normal;
 }
 
+q {
+  background: rgba(250, 255, 6, 0.1) repeat-x;
+}
+
 th {
   font-size: 16px;
   font-style: normal;
@@ -302,347 +315,347 @@ strong {
   &:hover {
     font-weight: bold;
   }
+}
 
-  .caviar {
-    background-color: #333333;
-    color: #333333;
-  }
+.caviar {
+  background-color: #333333;
+  color: #333333;
+}
 
-  form {
-    margin: 0;
-    padding: 0;
-  }
+form {
+  margin: 0;
+  padding: 0;
+}
 
-  .objection {
-    color: #FF5E5E;
-  }
+.objection {
+  color: #FF5E5E;
+}
 
-  .note {
-    font-size: 0.7em;
-    font-style: normal;
-    line-height: normal;
-    font-weight: normal;
-    font-variant: normal;
-    color: #666666;
-    vertical-align: super;
-  }
+.note {
+  font-size: 0.7em;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  color: #666666;
+  vertical-align: super;
+}
 
-  .selected {
-    background: #e2e2e8;
-    /*color: white;*/
-  }
+.selected {
+  background: #e2e2e8;
+  /*color: white;*/
+}
 
-  .selected a {
-    /*color: white;*/
-  }
+.selected a {
+  /*color: white;*/
+}
 
-  .note a:hover, .note:active {
-    background: #666666;
-    color: white;
-  }
+.note a:hover, .note:active {
+  background: #666666;
+  color: white;
+}
 
-  .source:before {
-    content: " ";
-  }
+.source:before {
+  content: " ";
+}
 
-  .source:after {
-    content: " ";
-  }
+.source:after {
+  content: " ";
+}
 
-  .source {
-    vertical-align: super;
-    font-size: 0.7em;
-    font-style: normal;
-    line-height: normal;
-    font-weight: normal;
-    font-variant: normal;
-    color: #666666;
-  }
+.source {
+  vertical-align: super;
+  font-size: 0.7em;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  color: #666666;
+}
 
-  .source:hover, .source:active {
-    background: #666666;
-  }
+.source:hover, .source:active {
+  background: #666666;
+}
 
-  .source a:hover, .source:active {
-    background: #666666;
-    color: white;
-  }
+.source a:hover, .source:active {
+  background: #666666;
+  color: white;
+}
 
-  .source:before {
-    content: " ";
-  }
+.source:before {
+  content: " ";
+}
 
-  .source:after {
-    content: " ";
-  }
+.source:after {
+  content: " ";
+}
 
-  /*section {*/
-  /*-webkit-column-width:12em;*/
-  /*column-width:12em;*/
-  /*height:10em;*/
-  /*border-top:2em;*/
-  /*}*/
-  section:after {
-    content: "";
+/*section {*/
+/*-webkit-column-width:12em;*/
+/*column-width:12em;*/
+/*height:10em;*/
+/*border-top:2em;*/
+/*}*/
+section:after {
+  content: "";
+  display: block;
+  width: 50%;
+  margin-left: 50%;
+  color: #666666;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1.5em;
+}
+
+//.abstract:before,
+//.abstract:after {
+//  content: "";
+//  position: absolute;
+//  z-index: -2;
+//}
+/* Lifted corners */
+.abstract {
+  font-weight: bold;
+  border-right-style: none;
+  background: rgba(47, 47, 47, 0.10);
+  padding: 0.7em;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  margin-right: 1.25em;
+}
+
+//.abstract:before,
+//.abstract:after {
+//  bottom: $shadow-length;
+//  width: 50%;
+//  max-width: 47%;
+//  height: 20%;
+//  -webkit-box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
+//  -moz-box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
+//  box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
+//}
+//$shadow-rotate: 1deg;
+//.abstract:before {
+//  left: 0.7em;
+//  -webkit-transform: rotate(-$shadow-rotate);
+//  -moz-transform: rotate(-$shadow-rotate);
+//  -ms-transform: rotate(-$shadow-rotate);
+//  -o-transform: rotate(-$shadow-rotate);
+//  transform: rotate(-$shadow-rotate);
+//}
+//
+//.abstract:after {
+//  right: 0.7em;
+//  -webkit-transform: rotate($shadow-rotate);
+//  -moz-transform: rotate($shadow-rotate);
+//  -ms-transform: rotate($shadow-rotate);
+//  -o-transform: rotate($shadow-rotate);
+//  transform: rotate($shadow-rotate);
+//}
+
+.abstract2 {
+  @extend .abstract;
+  font-weight: normal;
+}
+
+.udotted {
+  border-bottom: thin dashed;
+}
+
+.Mini {
+  font-size: 0.5em;
+}
+
+@import "time/time";
+
+.anticode {
+  font-family: monospace;
+  font-size: medium;
+  background-color: #F6F6F6;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+
+.titleCorner {
+  border-top-style: none;
+  border-left-style: none;
+  font-style: italic;
+  background-position: center center;
+  border-right-style: none;
+}
+
+.oui {
+  background-color: #EDFCEB;
+}
+
+.non {
+  background-color: #FCEFED;
+}
+
+.obsolete {
+  background-color: #FFFFFF;
+}
+
+aside {
+  width: 100%;
+  //resize: horizontal;
+  /*float:right;*/
+  /*overflow-y: hidden;*/
+  /*overflow-x: hidden;*/
+  @include horiz-trans;
+}
+
+@mixin left-inner-shadow {
+  box-shadow: 0.8em 0.8em 1.6em $shadow-color;
+}
+
+@import "images";
+table {
+  margin: 1.25em 1.25em 1.5em 1.25em;
+  border: none;
+  table thead {
     display: block;
-    width: 50%;
-    margin-left: 50%;
-    color: #666666;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1.5em;
   }
-
-  //.abstract:before,
-  //.abstract:after {
-  //  content: "";
-  //  position: absolute;
-  //  z-index: -2;
-  //}
-  /* Lifted corners */
-  .abstract {
-    font-weight: bold;
-    border-right-style: none;
-    background: rgba(47, 47, 47, 0.10);
-    padding: 0.7em;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    margin-right: 1.25em;
+  tbody {
+    //    min-height: 300px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    display: block;
   }
+}
 
-  //.abstract:before,
-  //.abstract:after {
-  //  bottom: $shadow-length;
-  //  width: 50%;
-  //  max-width: 47%;
-  //  height: 20%;
-  //  -webkit-box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
-  //  -moz-box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
-  //  box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
-  //}
-  //$shadow-rotate: 1deg;
-  //.abstract:before {
-  //  left: 0.7em;
-  //  -webkit-transform: rotate(-$shadow-rotate);
-  //  -moz-transform: rotate(-$shadow-rotate);
-  //  -ms-transform: rotate(-$shadow-rotate);
-  //  -o-transform: rotate(-$shadow-rotate);
-  //  transform: rotate(-$shadow-rotate);
-  //}
-  //
-  //.abstract:after {
-  //  right: 0.7em;
-  //  -webkit-transform: rotate($shadow-rotate);
-  //  -moz-transform: rotate($shadow-rotate);
-  //  -ms-transform: rotate($shadow-rotate);
-  //  -o-transform: rotate($shadow-rotate);
-  //  transform: rotate($shadow-rotate);
-  //}
+.side {
+  width: 20%;
+}
 
-  .abstract2 {
-    @extend .abstract;
-    font-weight: normal;
+.long {
+  height: 300px;
+  height: 80vh;
+}
+
+.wide {
+  margin: auto; /* centering */
+  width: 90%;
+}
+
+iframe {
+  display: block;
+  overflow: scroll;
+  .wide {
+    border-radius: $border-radius;
+    border-style: ridge;
   }
+}
 
-  .udotted {
-    border-bottom: thin dashed;
+@mixin embedded {
+  max-width: 100%;
+}
+
+iframe, object, embed {
+  @include embedded;
+}
+
+.image-container {
+  max-width: 75%;
+  margin: 2vh 2vw;
+  td {
+    height: 100%;
   }
+}
 
-  .Mini {
-    font-size: 0.5em;
-  }
+.left {
+  @extend .image-container;
+  float: left;
+  //  margin-left: -0.3em;
 
-  @import "time/time";
-
-  .anticode {
-    font-family: monospace;
-    font-size: medium;
-    background-color: #F6F6F6;
-    font-style: normal;
-    font-weight: normal;
+  figcaption {
     text-align: left;
   }
-
-  .titleCorner {
-    border-top-style: none;
-    border-left-style: none;
-    font-style: italic;
-    background-position: center center;
-    border-right-style: none;
+  caption {
+    padding-left: 2em;
+    padding-right: 0.5em;
   }
-
-  .oui {
-    background-color: #EDFCEB;
-  }
-
-  .non {
-    background-color: #FCEFED;
-  }
-
-  .obsolete {
-    background-color: #FFFFFF;
-  }
-
-  aside {
-    width: 100%;
-    //resize: horizontal;
-    /*float:right;*/
-    /*overflow-y: hidden;*/
-    /*overflow-x: hidden;*/
-    @include horiz-trans;
-  }
-
-  @mixin left-inner-shadow {
-    box-shadow: 0.8em 0.8em 1.6em $shadow-color;
-  }
-
-  @import "images";
-  table {
-    margin: 1.25em 1.25em 1.5em 1.25em;
-    border: none;
-    table thead {
-      display: block;
-    }
-    tbody {
-      //    min-height: 300px;
-      max-height: 80vh;
-      overflow-y: scroll;
-      display: block;
-    }
-  }
-
-  .side {
-    width: 20%;
-  }
-
-  .long {
-    height: 300px;
-    height: 80vh;
-  }
-
-  .wide {
-    margin: auto; /* centering */
-    width: 90%;
-  }
-
-  iframe {
-    display: block;
-    overflow: scroll;
-    .wide {
-      border-radius: $border-radius;
-      border-style: ridge;
-    }
-  }
-
-  @mixin embedded {
-    max-width: 100%;
-  }
-
-  iframe, object, embed {
-    @include embedded;
-  }
-
-  .left {
-    @extend .image-container;
-    float: left;
-    margin-left: -0.3em;
-
-    figcaption {
-      text-align: left;
-    }
-    caption {
-      padding-left: 2em;
-      padding-right: 0.5em;
-    }
-  }
-
-  .right {
-    @extend .image-container;
-    float: right;
-    margin-right: -0.3em;
-
-    figcaption {
-      text-align: right;
-    }
-    caption {
-      padding-left: 0.5em;
-      padding-right: 2em;
-    }
-  }
-
-  .image-container {
-    max-width: 75%;
-    margin: 2vh 2vw;
-    td {
-      height: 100%;
-    }
-  }
-
-  .disappeared:after {
-    color: lightgray;
-    font-size: 0.5em;
-    vertical-align: super;
-    content: " disparu";
-  }
-
-  .canular {
-    text-decoration: line-through;
-  }
-
-  .meprise:after {
-    color: lightgray;
-    font-size: 0.5em;
-    vertical-align: super;
-    content: " m\E9prise";
-  }
-
-  .explanation {
-    font-size: 9pt;
-    font-style: normal;
-    line-height: normal;
-    font-weight: normal;
-    font-variant: normal;
-    color: #666666;
-  }
-
-  .org {
-    background-color: #E9FFE5;
-  }
-
-  .personne {
-    background-color: #FEE9EA;
-  }
-
-  .tech {
-    background-color: #E7EFFF;
-  }
-
-  .context {
-    font-size: 12px;
-    font-variant: small-caps;
-  }
-
-  .deprecated {
-    text-decoration: line-through;
-  }
-
-  .swipe {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-  }
-
-  .swipe-wrap {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-  }
-
-  .swipe-wrap > * {
-    float: left;
-    position: relative;
-    height: 100%;
-  }
-
-  @import "place/place";
 }
+
+.right {
+  @extend .image-container;
+  float: right;
+  //  margin-right: -0.3em;
+
+  figcaption {
+    text-align: right;
+  }
+  caption {
+    padding-left: 0.5em;
+    padding-right: 2em;
+  }
+}
+
+.disappeared:after {
+  color: lightgray;
+  font-size: 0.5em;
+  vertical-align: super;
+  content: " disparu";
+}
+
+.canular {
+  text-decoration: line-through;
+}
+
+.meprise:after {
+  color: lightgray;
+  font-size: 0.5em;
+  vertical-align: super;
+  content: " m\E9prise";
+}
+
+.explanation {
+  font-size: 9pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  color: #666666;
+}
+
+.org {
+  background-color: #E9FFE5;
+}
+
+.personne {
+  background-color: #FEE9EA;
+}
+
+.tech {
+  background-color: #E7EFFF;
+}
+
+.context {
+  font-size: 12px;
+  font-variant: small-caps;
+}
+
+.deprecated {
+  text-decoration: line-through;
+}
+
+.swipe {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.swipe-wrap > * {
+  float: left;
+  position: relative;
+  height: 100%;
+}
+
+@import "place/place";

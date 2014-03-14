@@ -111,22 +111,22 @@ org.rr0.time = (function () {
             var remaining = this.durationInSeconds;
             var days = Math.floor(remaining / dayValue);
             if (days >= 1) {
-                txt.push(days + "&nbsp;j");
+                txt.push(days + "&nbsp;jour" + (days > 1 ? 's' : ''));
             }
             remaining = remaining % dayValue;
             var hours = Math.floor(remaining / hourValue);
             if (hours >= 1) {
-                txt.push(hours + "&nbsp;h");
+                txt.push(hours + "&nbsp;heure" + (hours > 1 ? 's' : ''));
             }
             remaining = remaining % hourValue;
             var minutes = Math.floor(remaining / minuteValue);
             if (minutes >= 1) {
-                txt.push(minutes + "&nbsp;mn");
+                txt.push(minutes + "&nbsp;minute" + (minutes > 1 ? 's' : ''));
             }
             remaining = remaining % minuteValue;
             var seconds = remaining;
             if (seconds >= 1) {
-                txt.push(seconds + "&nbsp;s");
+                txt.push(seconds + "&nbsp;seconde" + (seconds > 1 ? 's' : ''));
             }
             var last = txt.length - 1;
             var s = '';
@@ -925,7 +925,9 @@ angular.module('rr0.time', [])
 //                    }
 //                }
                         otherHour = otherHour || otherDay || h != contextTime.getHour();
-                        titHour = (time.isApprox() ? 'vers' : 'à') + ' ' + titHour;
+                        if (d) {
+                            titHour = (time.isApprox() ? 'vers' : 'à') + ' ' + titHour;
+                        }
                         if (otherHour) {
                             contextTime.setHour(h);
                         }// TODO: else manage to display "30 mn later"
@@ -982,21 +984,32 @@ angular.module('rr0.time', [])
 
                 var r;
                 var e = elem[0];
-                if (txt.charAt(0) === 'P') {
-                    r = {
-                        replacement: new org.rr0.time.Duration().fromString(txt).toString()
-                    };
-                    e.setAttribute("datetime", txt);
+                var datetime;
+                var dataStr;
+                if (attrs.datetime) {
+                    datetime = attrs.datetime;
+                    dataStr = datetime;
                 } else {
-                    if (attrs.datetime) {
-                        decodedTime.fromString(attrs.datetime);
-                    } else {
-                        decodedTime.fromString(txt);
-                    }
-                    r = toString(currentTime, decodedTime);
-                    e.setAttribute("datetime", decodedTime.toISOString());
+                    dataStr = txt;
                 }
-                checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
+                if (dataStr.charAt(0) === 'P') {
+                    r = {
+                        replacement: new org.rr0.time.Duration().fromString(dataStr).toString()
+                    };
+                    if (!datetime) {
+                        e.setAttribute("datetime", dataStr);
+                    }
+                    e.innerHTML = r.replacement;
+                    elem.addClass('duration');
+                } else {
+                    decodedTime.fromString(dataStr);
+                    r = toString(currentTime, decodedTime);
+                    dataStr = decodedTime.toISOString();
+                    checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
+                    if (!datetime) {
+                        e.setAttribute("datetime", dataStr);
+                    }
+                }
             }
         }
     })

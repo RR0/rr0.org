@@ -1,7 +1,7 @@
 {
-    "name": "Matrix",
+    "name": "RR0",
     "version": "1.0.0",
-    "description": "Poher's known phenomenon matrix",
+    "description": "RR0",
     "main": "index.html",
     "keywords": [
         "poher",
@@ -12,8 +12,8 @@
     "authors": [
         "RR0"
     ],
-    "license": "MIT",
-    "homepage": "http://rr0.org/time/1/9/7/7/Poher_Matrice",
+    "license": "GDFL",
+    "homepage": "http://rr0.org",
     "ignore": [
         "**/.*",
         "node_modules",
@@ -22,9 +22,13 @@
         "tests"
     ],
     "dependencies": {
-        "angular": "1.2.9",
-        "angular-resource": "1.2.9",
-        "angular-sanitize": "1.2.9"
+        "angular": "*",
+        "angular-resource": "*",
+        "angular-sanitize": "*",
+        "splitter": "*"
 
+    },
+    "resolutions": {
+        "angular": ">=1.3"
     }
 }

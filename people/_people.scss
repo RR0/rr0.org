@@ -1,11 +1,13 @@
+@import "../mixins";
+
 .people {
 }
 
-.Author {
-  margin: 0;
-  font-size: 12px;
+.author {
+  margin: 0 -2.9em;
   background-color: #F9F9F9;
-  padding: 5px;
+  font-size: 0.7em;
+  padding: 0.5em;
   color: gray;
   @include gradient-from-left;
 }

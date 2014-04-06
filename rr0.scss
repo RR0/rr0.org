@@ -27,7 +27,7 @@ body {
   }
 }
 
-@import "js/head", "js/common";
+@import "js/head";
 
 #contents {
   @include bottom-inner-shadow;

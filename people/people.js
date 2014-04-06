@@ -81,7 +81,7 @@ function addAuthor(a, aLink, c, cLink) {
         setCopyright(c, cLink);
     }
     if (authorElement) {
-        authorElement.setAttribute("class", "Author");
+        authorElement.setAttribute("class", "author");
         authorElement.innerHTML += time.addDate(authorElement);
     }
 }

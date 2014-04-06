@@ -2,8 +2,6 @@
  * Foot notes and sources references
  */
 
-var notesCount = 0;
-var sourcesCount = 0;
 
 /**
  *
@@ -52,41 +50,6 @@ function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
     }
 }
 
-function footerTagHandler(e) {
-    var handled = e.tagName === "SPAN";
-    if (handled) {
-        handled = !e.id;
-        if (handled) {
-            var footHolder, footLabel, footCount, spanClass = e.className;
-            if (spanClass === "note") {
-                footHolder = document.getElementById("notes");
-                footCount = ++notesCount;
-                footLabel = String.fromCharCode(96 + footCount);
-            } else if (spanClass === "source") {
-                footHolder = document.getElementById("sources");
-                footCount = ++sourcesCount;
-                footLabel = footCount;
-            } else
-                footHolder = null;
-            handled = footHolder !== null;
-            if (handled) {
-                var footId = footLabel, footContent = e.innerHTML;
-
-                var footItem = document.createElement("li");
-                footItem.setAttribute('translate', 'no');
-                footItem.id = footId;
-                footItem.className = "foot";
-                footItem.innerHTML = footContent;
-                footHolder.appendChild(footItem);
-                /*+ " <a href='#nlink"+count+"' title='retour au texte'>&#8617;</a></li>";*/
-
-                e.id = "see" + footId;
-                e.innerHTML = "<a href='#" + footId + "' title='" + org.strip(e) + "'>" + footLabel + "</a>";
-            }
-        }
-    }
-    return false;
-}
 /*
  var elements = document.body.getElementsByTagName("*");
  for (i = 0; i < elements.length; i++) {
@@ -100,7 +63,59 @@ function footerTagHandler(e) {
 function footsources() {
 }
 function footnotes() {
-    org.handleTags.apply(null, [footerTagHandler]);
-    document.getElementsByTagName("footer").innerHtml += ""
 }
 org.onContentsLoaded(footnotes);
+angular.module('rr0.foot', [])
+    .run(function () {
+        document.getElementsByTagName("footer").innerHtml += "";
+    })
+    .service('footService', [function () {
+        var notesHolder = document.getElementById("notes");
+        var sourcesHolder = document.getElementById("sources");
+        this.notesCount = 0;
+        this.sourcesCount = 0;
+
+        function add(elem, footHolder, footLabel) {
+            var e = elem[0];
+            var footId = footLabel;
+            var footContent = e.innerHTML || e.title;
+//            footContent = e.title = org.stripText(footContent);
+            var footItem = document.createElement("li");
+            footItem.setAttribute('translate', 'no');
+            footItem.id = footId;
+            footItem.className = "foot";
+            footItem.innerHTML = footContent;
+            footHolder.appendChild(footItem);
+            /*+ " <a href='#nlink"+count+"' title='retour au texte'>&#8617;</a></li>";*/
+            e.id = "see" + footId;
+            e.innerHTML = "<a href='#" + footId + "'>" + footLabel + "</a>";
+        }
+
+        this.addNote = function (e) {
+            var footCount = ++this.notesCount;
+            var footLabel = String.fromCharCode(96 + footCount);
+            add(e, notesHolder, footLabel);
+        };
+        this.addSource = function (e) {
+            var footCount = ++this.sourcesCount;
+            var footLabel = '' + footCount;
+            add(e, sourcesHolder, footLabel);
+        };
+    }])
+    .directive('note', ['footService', function (footService) {
+        return {
+            restrict: 'C',
+            link: function (scope, elem, attrs) {
+                footService.addNote(elem);
+            }
+        };
+    }])
+    .directive('source', ['footService', function (footService) {
+        return {
+            restrict: 'C',
+            link: function (scope, elem, attrs) {
+                footService.addSource(elem);
+            }
+        };
+    }])
+;

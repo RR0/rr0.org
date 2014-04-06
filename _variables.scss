@@ -7,14 +7,22 @@
 //  font-family: 'Palatino';
 /*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
 /*font-family: "Georgia", serif;*/
-$contentFont: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+//$contentFont: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+$contentFont: "Raleway";
+$textMargin: 2em;
 //$menu-font: Verdana, Geneva, sans-serif;
 //$menu-font: 'Segoe UI', sans-serif;
-$menu-font: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+$menuFont: "Raleway";
+//$menu-font: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 
-$border-radius: 0.2em;
-$shadow-length: 0.8em;
+$shadowColor: #555;
 
-$header-transparency: 0.95;
-$header-from-color: rgba(242, 242, 248, $header-transparency);
-$header-to-color: rgba(255, 255, 255, $header-transparency);
+$gradientColorStart: rgba(234, 234, 249, 1);
+$highlightColor: rgba(250, 255, 6, 0.1);
+
+$borderRadius: 0.2em;
+$shadowLength: 0.8em;
+
+$headerTransparency: 0.95;
+$headerFromColor: rgba(242, 242, 248, $headerTransparency);
+$headerToColor: rgba(255, 255, 255, $headerTransparency);

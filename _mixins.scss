@@ -1,0 +1,37 @@
+@import "variables";
+
+@mixin left-inner-shadow {
+  box-shadow: 0.8em 0.8em 1.6em $shadowColor;
+}
+
+@mixin embedded {
+  max-width: 100%;
+}
+
+@mixin gradient-from-left {
+  background: $gradientColorStart; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZGZkZmYyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzklIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(-45deg, $gradientColorStart 0%, rgba(255, 255, 255, 0) 79%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, $gradientColorStart), color-stop(79%, rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, $gradientColorStart 0%, rgba(255, 255, 255, 0) 79%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, $gradientColorStart 0%, rgba(255, 255, 255, 0) 79%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, $gradientColorStart 0%, rgba(255, 255, 255, 0) 79%); /* IE10+ */
+  background: linear-gradient(135deg, $gradientColorStart 0%, rgba(255, 255, 255, 0) 79%); /* W3C */
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin horiz-trans {
+  @include transition(width, 0.3s, ease);
+}
+
+@mixin bottom-inner-shadow {
+  box-shadow: 0 0 1.5em $shadowColor;
+}

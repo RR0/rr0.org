@@ -76,9 +76,6 @@ var starts =
             label: "Politique"
         }
     ];
-function getHeader() {
-    return document.querySelector('header');
-}
 function addRel(l, t) {
     var rel = document.createElement("link");
     rel.setAttribute("rel", t);
@@ -427,25 +424,21 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         }
 
         var scrolled = document.getElementById("contents");
-
-        function getNav() {
-            return document.querySelector('nav');
-        }
-
-        function getOutline() {
-            return document.querySelector('#outline');
-        }
+        var header = document.querySelector('header');
+        var nav = document.querySelector('nav');
+        var outline = document.getElementById('outline');
+        var search = document.getElementById('search');
 
         function getHeaderHeight() {
-            return getHeader().offsetHeight;
+            return header.offsetHeight;
         }
 
         function getNavHeight() {
-            return getNav().offsetHeight;
+            return nav.offsetHeight;
         }
 
         function isHeaderCollapsed() {
-            return scrolled.scrollTop > getHeader().offsetHeight - getNavHeight();
+            return scrolled.scrollTop > header.offsetHeight - getNavHeight();
         }
 
         function getHeadingHeight() {
@@ -453,8 +446,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         }
 
         function updateHeading(digesting) {
-            var header = getHeader();
-            var navElement = getNav();
+            var navElement = nav;
 //            var contents = document.getElementById('contents');
             if (isHeaderCollapsed()) {
                 navElement.style.position = 'fixed';
@@ -491,29 +483,25 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             updateHeading();
         };
         function showOutline() {
-            getOutline().style.top = getHeadingHeight() + 'px';
+            outline.style.top = getHeadingHeight() + 'px';
         }
 
         var hiddenPos = '-100em';
 
         function hideOutline() {
-            getOutline().style.top = hiddenPos;
-        }
-
-        function getSearch() {
-            return document.querySelector('#search');
+            outline.style.top = hiddenPos;
         }
 
         function isSearchVisible() {
-            return getSearch().style.top === hiddenPos;
+            return search.style.top === hiddenPos;
         }
 
         function showSearch() {
-            getSearch().style.top = getHeadingHeight() + 'px';
+            search.style.top = getHeadingHeight() + 'px';
         }
 
         function hideSearch() {
-            getSearch().style.top = hiddenPos;
+            search.style.top = hiddenPos;
         }
 
         $scope.searchInput = '';
@@ -610,7 +598,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
         ];
         function isOutlineVisible() {
-            return getOutline().style.top !== hiddenPos;
+            return outline.style.top !== hiddenPos;
         }
 
         $scope.titleClick = function () {
@@ -636,7 +624,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             showSearch();
         };
         $scope.searchLeave = function () {
-            getSearch().style.top = hiddenPos;
+            search.style.top = hiddenPos;
         };
         function smoothScroll(anchor, duration, url) {
             var easingPattern = function (duration) {
@@ -704,7 +692,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
     }]);
 
 function headResized() {
-//    var headerHeight = getHeader().offsetHeight;
+//    var headerHeight = header.offsetHeight;
 //    var main = document.getElementById("main");
 //    main.style.marginTop = headerHeight + "px";
 //    document.getElementById("contents").style.height = (main.offsetHeight - headerHeight) + "px";

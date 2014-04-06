@@ -1,16 +1,15 @@
-@import "variables";
+@import "mixins";
 
 * {
   font-family: $contentFont;
   //  font-size: 22px;
   letter-spacing: .01rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 html {
   height: 100%;
-  overflow-y: hidden;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -52,8 +51,8 @@ body {
 }
 
 #text {
+  margin: 0 $textMargin;
   ul {
-    padding-left: 7vw;
     text-align: justify;
     vertical-align: sub;
     time {
@@ -161,7 +160,7 @@ abbr {
 
 p {
   text-align: justify;
-  margin: 1.25em 4vw 1.5em 5vw;
+  margin: 1.25em 0 1.5em 0;
   padding-right: 0.8em;
   border-right: 0.4em solid rgba(255, 255, 255, 0);
   hyphens: auto;
@@ -170,7 +169,7 @@ p {
 a {
   color: #006699;
   text-decoration: none;
-  border-radius: $border-radius;
+  border-radius: $borderRadius;
   cursor: pointer;
 }
 
@@ -203,59 +202,9 @@ ol li:hover {
 /*content: "]";*/
 /*}*/
 
-h2 {
-  font-family: $contentFont;
-  text-decoration: none;
-  font-size: 1.5em;
-  font-weight: normal;
-  margin-top: 1.5em;
-  margin-right: 0;
-  margin-left: 0;
-  margin-bottom: 0;
-  color: #666666;
-  @include gradient-from-left;
-  padding-top: 0.35em;
-  padding-bottom: 0.4em;
-  padding-left: 5vw;
-  letter-spacing: 1px;
-  width: 50%;
-}
-
-section > h1 {
-  @extend h2;
-}
-
-h3 {
-  font-family: $contentFont;
-  background: transparent;
-  font-size: 1.2em;
-  font-weight: normal;
-  margin: 1.25em 0 0 4vw;
-  color: #666666;
-  letter-spacing: 1px;
-  padding: 5px;
-  border-bottom: thin dotted #DBDBDB;
-}
-
-section section > h1 {
-  @extend h3;
-}
-
-h4 {
-  font-family: $contentFont;
-  font-size: 16px;
-  font-weight: normal;
-  margin: 1.25em 0 0 0.83em;
-  color: #666666;
-  letter-spacing: 1px;
-  padding: 5px;
-  border-bottom: thin dotted #DBDBDB;
-  width: 50%;
-}
-
 cite {
   border: none;
-  background: rgba(250, 255, 6, 0.1) repeat-x;
+  background: $highlightColor repeat-x;
   text-indent: 0;
   text-align: justify;
   vertical-align: baseline;
@@ -263,7 +212,32 @@ cite {
 }
 
 q {
-  background: rgba(250, 255, 6, 0.1) repeat-x;
+  background: $highlightColor repeat-x;
+  &:before {
+    content: "« ";
+  }
+  &:after {
+    content: " »";
+  }
+}
+
+blockquote {
+  p {
+    background: $highlightColor repeat-x;
+    &:before {
+      content: "« ";
+    }
+  }
+  p:last-child {
+    &:after {
+      content: " »";
+    }
+  }
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: left;
 }
 
 th {
@@ -287,20 +261,12 @@ td {
   padding: 5px;
 }
 
-blockquote {
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-align: left;
-}
-
 .exergue {
   margin-top: 1em;
   margin-right: 1em;
   margin-left: 1em;
   margin-bottom: 2.1em;
-  font-family: "Times New Roman", Times, serif;
+  //  font-family: "Times New Roman", Times, serif;
   font-style: italic;
   text-align: right;
   color: #4C4C4C;
@@ -506,11 +472,8 @@ aside {
   @include horiz-trans;
 }
 
-@mixin left-inner-shadow {
-  box-shadow: 0.8em 0.8em 1.6em $shadow-color;
-}
-
 @import "images";
+
 table {
   margin: 1.25em 1.25em 1.5em 1.25em;
   border: none;
@@ -543,13 +506,9 @@ iframe {
   display: block;
   overflow: scroll;
   .wide {
-    border-radius: $border-radius;
+    border-radius: $borderRadius;
     border-style: ridge;
   }
-}
-
-@mixin embedded {
-  max-width: 100%;
 }
 
 iframe, object, embed {
@@ -567,7 +526,7 @@ iframe, object, embed {
 .left {
   @extend .image-container;
   float: left;
-  //  margin-left: -0.3em;
+  margin-left: -0.3em;
 
   figcaption {
     text-align: left;
@@ -581,7 +540,7 @@ iframe, object, embed {
 .right {
   @extend .image-container;
   float: right;
-  //  margin-right: -0.3em;
+  margin-right: -0.3em;
 
   figcaption {
     text-align: right;

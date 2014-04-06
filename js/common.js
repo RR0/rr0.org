@@ -296,13 +296,17 @@ window.org = (function () {
         }
     };
 
-    this.strip = function (e) {
-        var txt = this.text(e);
+    this.stripText = function (txt) {
         txt = txt.replace(/'/g, "'");
         txt = txt.replace(/\"/g, '"');
         txt = txt.replace(/\n/g, '');
         txt = txt.replace(/\s+/g, ' ');
         return txt;
+    };
+
+    this.strip = function (e) {
+        var txt = this.text(e);
+        return stripText(txt);
     };
 
     /**

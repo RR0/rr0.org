@@ -1,6 +1,6 @@
 footer {
-  margin-right: 1.9em;
-  margin-bottom: 1.9em;
+  margin-right: -$textMargin;
+  margin-left: -$textMargin;
   line-height: 1em;
   iframe {
     display: inline;

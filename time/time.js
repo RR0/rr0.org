@@ -16,7 +16,7 @@ org.rr0.time = (function () {
             u = org.getUri();
         }
         return u.indexOf(uriPart) === 0;
-    }
+    };
 
     var dayOfWeekNames = {
         "fr": [ "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" ],

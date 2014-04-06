@@ -12,14 +12,14 @@ nav {
     width: 100%; /* clearfix */
   }
   ul {
-    background: $header-from-color; /* for non-css3 browsers */
+    background: $headerFromColor; /* for non-css3 browsers */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1); /* for IE */
-    background: -webkit-gradient(linear, left top, right top, from($header-from-color), to($header-to-color)); /* for webkit browsers */
-    background: -moz-linear-gradient(left top, $header-from-color, $header-to-color);
+    background: -webkit-gradient(linear, left top, right top, from($headerFromColor), to($headerToColor)); /* for webkit browsers */
+    background: -moz-linear-gradient(left top, $headerFromColor, $headerToColor);
     margin: 0;
     padding: 0;
     li * {
-      font-family: $menu-font;
+      font-family: $menuFont;
     }
     li.alternate {
       color: lightgray;

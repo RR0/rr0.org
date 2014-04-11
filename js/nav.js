@@ -147,7 +147,7 @@ function setN(n, nLink) {
 }
 function setPrev(p, pLink) {
     if (!pLink) {
-        if (!p) {
+        if (!p && !prev) {
             var y = time.getYear();
             if (y) {
                 var t = getTime();
@@ -173,12 +173,16 @@ function setPrev(p, pLink) {
             setP(p, pLink);
         }
     }
-    prevLink = pLink;
-    prev = p;
+    if (pLink) {
+        prevLink = pLink;
+    }
+    if (p) {
+        prev = p;
+    }
 }
 function setNext(n, nLink) {
     if (!nLink) {
-        if (!n) {
+        if (!n && !next) {
             var y = time.getYear();
             if (y) {
                 var t = getTime();
@@ -197,8 +201,12 @@ function setNext(n, nLink) {
             }
         }
     }
-    next = n;
-    nextLink = nLink;
+    if (n) {
+        next = n;
+    }
+    if (nLink) {
+        nextLink = nLink;
+    }
 }
 function navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
     var onLoadDo = setStart(s, sLink);

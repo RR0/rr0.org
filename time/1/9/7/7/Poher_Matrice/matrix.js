@@ -103,7 +103,7 @@ angular.module('matrix', [])
                 return explanationsWithoutHoles;
             }
         }
-    }]).controller('FormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
+    }]).controller('matrixFormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
 
         $scope.questionIndex = 0;
 

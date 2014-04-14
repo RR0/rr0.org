@@ -1,4 +1,5 @@
-<!--#set var="title" value="Matrice de phénomènes connus" --><!--#set var="url" value="http://universons.com/ovni_gbFr/gepan/matrice_phenomenes_connus.html" --><!--#include virtual="/header.html" -->
+<!--#include virtual="/header-start.html" --><title>Matrice de phénomènes connus</title>
+<meta name="url" content="http://universons.com/ovni_gbFr/gepan/matrice_phenomenes_connus.html"><!--#include virtual="/header-end.html" -->
 <p>En 1977, au moment de la création du <a href="/org/eu/fr/cnes/gepan/index.html">GEPAN</a>, <span class="people">Claude Poher</span>
 	réalise un <strong>aide mémoire</strong> destiné à aider les enquêteurs à mettre rapidement en évidence les
 	<a href="/science/crypto/ufo/enquete/meprise">phénomènes connus</a> qui pouvaient être à l'origine d'un témoignage.
@@ -50,7 +51,7 @@
 	<section title="Javascript">
 		<figure class="left static">
 			<figcaption style="padding-left:0.8em"> Evaluation d'explications en terme de phénomènes connus</figcaption>
-			<div ng-controller="FormCtrl" ng-cloak style="display:flex;flex-wrap:wrap">
+			<div ng-controller="matrixFormCtrl" ng-cloak style="display:flex;flex-wrap:wrap">
 				<form>
 					<fieldset id="selectPanel">
 						<div style="margin-bottom:1em">
@@ -94,7 +95,7 @@
 		<!--<tr>--><!--<td>&lt;!&ndash; applet code="org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet" width="550" height="300" archive="matrix.jar"></applet &ndash;&gt;
 		--><!--<script src="http://www.java.com/js/deployJava.js"></script>--><!--<script>-->
 		<!--var attributes = { code: 'org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet.class',-->
-		<!--archive: 'http://rr0.org/time/1/9/7/7/Poher_Matrice/matrix2.jar',--><!--width: 550, height: 350};-->
+		<!--archive: 'http://rr0.orgmatrix2.jar',--><!--width: 550, height: 350};-->
 		<!--var parameters = {fontSize: 16, jnlp_href: 'matrix.jnlp'};--><!--var version = '1.6';-->
 		<!--deployJava.runApplet(attributes, parameters, version);--><!--</script>--><!--</td>--><!--</tr>--><!--</table>-->
 		<p>Une <a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applet</a> est un petit programme
@@ -105,8 +106,9 @@
 </section>
 <p><strong>Références </strong>:</p>
 <ul>
-	<li><a href="/time/1/9/7/7/Poher_Matrice/matrix.jar">JAR exécutable</a> - Si <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a><a href="/tech/info/soft/proj/impl/lang/java"></a>
-		est installé sur votre ordinateur, vous pourrez l'exécuter comme tout autre programme.
+	<li><a href="matrix.jar">JAR exécutable</a> - Si
+		<a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a><a href="/tech/info/soft/proj/impl/lang/java"></a> est installé sur
+		votre ordinateur, vous pourrez l'exécuter comme tout autre programme.
 	</li>
 	<li>Code source
 		<ul>
@@ -121,6 +123,8 @@
 		</ul>
 	</li>
 	<li>
-		<a href="/time/1/9/7/7/Poher_Matrice/PoherMatrix.csv">Le fichier de données utilisé par défaut, reflétant la matrice de Poher</a>
+		<a href="PoherMatrix.csv">Le fichier de données utilisé par défaut, reflétant la matrice de Poher</a>
 	</li>
-</ul><!--#include virtual="/footer.html" -->
+</ul><!--#include virtual="/footer-start.html" --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/time/1/9/7/7/Poher_Matrice/matrix.js"></script><!--#else -->
+<script src="/time/1/9/7/7/Poher_Matrice/matrix.min.js"></script><!--#endif --><!--#include virtual="/footer-end.html" -->

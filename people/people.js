@@ -23,6 +23,7 @@ function getPeople() {
 function setPeopleName(name) {
     if (name && name.length > 0) {
         context.people = new People(name);
+        return context.people;
     }
 }
 /**
@@ -57,14 +58,6 @@ function peopleLink(p, pLink) {
     return pLink;
 }
 var authorElement;
-function setAuthor(a, aLink) {
-    if (a) {
-        var t = document.createTextNode(a);
-        setPeopleName(a);
-        authorElement = org.newElement("p", org.linkElement(peopleLink(a, aLink), t, "Crédit"));
-        authorElement.innerHTML += ": ";
-    }
-}
 function setCopyright(c, cLink) {
     if (!authorElement) {
         authorElement = document.createElement("p");
@@ -72,18 +65,6 @@ function setCopyright(c, cLink) {
     copyright = c;
     authorElement.appendChild(org.linkElement(cLink, document.createTextNode(c), "Copyright"));
     authorElement.innerHTML += ", ";
-}
-function addAuthor(a, aLink, c, cLink) {
-    if (a) {
-        setAuthor(a, aLink);
-    }
-    if (c) {
-        setCopyright(c, cLink);
-    }
-    if (authorElement) {
-        authorElement.setAttribute("class", "author");
-        authorElement.innerHTML += time.addDate(authorElement);
-    }
 }
 var handleWitness = function (scope, elem, attrs) {
     var txt = elem.text();
@@ -95,6 +76,31 @@ var handleWitness = function (scope, elem, attrs) {
 };
 
 angular.module('rr0.people', [])
+    .service('peopleService', function () {
+        var authors = [];
+        return {
+            getAuthors: function () {
+                return authors;
+            },
+            setAuthor: function (a, aLink) {
+                if (a) {
+                    var t = document.createTextNode(a);
+                    var author = setPeopleName(a);
+                    var authorLink = peopleLink(a, aLink);
+                    author.link = authorLink;
+                    authors.push(author);
+                }
+            },
+            addAuthor: function (a, aLink, c, cLink) {
+                if (a) {
+                    this.setAuthor(a, aLink);
+                }
+                if (c) {
+                    setCopyright(c, cLink);
+                }
+            }
+        }
+    })
     .directive('people', function () {
         return {
             restrict: 'C',
@@ -113,7 +119,7 @@ angular.module('rr0.people', [])
             }
         }
     })
-    .directive('meta', [function () {
+    .directive('meta', ['peopleService', function (peopleService) {
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -123,7 +129,7 @@ angular.module('rr0.people', [])
                 var link = urlPos > 0 ? content.substring(urlPos) : undefined;
                 switch (name) {
                     case 'author':
-                        setAuthor(content, link);
+                        peopleService.setAuthor(content, link);
                         break;
                     case 'copyright':
                         setCopyright(content, link);
@@ -180,6 +186,9 @@ angular.module('rr0.people', [])
             link: handleWitness
         }
     })
+    .controller('AuthorCtrl', ['$scope', 'peopleService', function ($scope, peopleService) {
+        $scope.authors = peopleService.getAuthors();
+    }])
     .run(function () {
         starts.push({
                 dir: peopleUriPart,

@@ -23,7 +23,7 @@
 								<li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)" style="font-size:{{1.4-(0.2*s.level)}}em">
 									<span ng-bind-html="s.label|unsafe"></span>
 								</li>
-							</ul>
+								</ul>
 						</li>
 						<li ng-repeat="n in ns" class="constant {{n.style}}">
 							<a ng-if="n.link && n.label" href="{{n.link}}">
@@ -44,3 +44,7 @@
 				</nav>
 				</header>
 				<div id="text">
+					<div class="author" ng-controller="AuthorCtrl" ng-show="authors.length" ng-cloak>
+						<span ng-repeat="aa in authors">{{$first?'':' & '}}<a href="{{aa.link}}">{{aa.lastName}},
+							{{aa.firstName}}</a></span>
+					</div>

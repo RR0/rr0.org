@@ -364,7 +364,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             template: '<h1>{{sectionTitle}}</h1><div ng-transclude></div> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', '$timeout', function ($scope, $rootScope, $http, $log, $timeout) {
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $http, $log, $timeout, peopleService) {
         function getTitle() {
             if (!$scope.title) {
                 $scope.title = time.getYear();
@@ -597,7 +597,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             updateHeading(true);
         });
         $scope.initAuthor = function (a, aLink, c, cLink) {
-            addAuthor(a, aLink, c, cLink);
+            peopleService.addAuthor(a, aLink, c, cLink);
         };
         $scope.sections = [
             {

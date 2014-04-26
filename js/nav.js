@@ -399,6 +399,9 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             return $scope.title;
         }
 
+        $scope.isFramed=function() {
+          return window !== top;
+        };
         $scope.initTitle = function (t, u, st) {
             $scope.title = t;
             url = u;
@@ -446,7 +449,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         }
 
         function isHeaderCollapsed() {
-            return scrolled.scrollTop > header.offsetHeight - getNavHeight();
+            return window !== top || scrolled.scrollTop > header.offsetHeight - getNavHeight();
         }
 
         function getHeadingHeight() {

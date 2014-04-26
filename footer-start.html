@@ -22,8 +22,6 @@
 <script src="/place/place.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/foot.js"></script><!--#else -->
 <script src="/js/foot.min.js"></script><!--#endif -->
-<script>place.setPlace("
-<!--#echo var="place" -->
-", document.body);</script><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script>place.setPlace("<!--#echo var="place" -->", document.body);</script><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/index.js"></script><!--#else -->
 <script src="/js/index.min.js"></script><!--#endif -->

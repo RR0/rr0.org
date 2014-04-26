@@ -118,4 +118,9 @@ angular.module('rr0.foot', [])
             }
         };
     }])
+    .controller('FootCtrl', ['$scope', function($scope) {
+        $scope.isFramed=function() {
+            return window !== top;
+        };
+    }])
 ;

@@ -1,14 +1,12 @@
-<footer>
+<footer ng-controller="FootCtrl">
 	<ol id="notes"></ol>
 	<ol id="sources"></ol>
 	<script>org.contentsLoaded();</script>
-	<table width="100%" id="footerTable">
+	<table width="100%" id="footerTable" ng-show="!isFramed()" ng-cloak>
 		<tbody>
 			<tr valign="top">
 				<td>
-					<iframe src="//www.facebook.com/plugins/like.php?href=http://<!--#echo var=" SERVER_NAME
-					" --><!--#echo var="DOCUMENT_URI" -->&show_faces=false&layout=button_count" scrolling="no" frameborder="0"
-					style="border:none; height:20px; width:120px;"></iframe>
+					<iframe src="//www.facebook.com/plugins/like.php?href=http://<!--#echo var="SERVER_NAME" --><!--#echo var="DOCUMENT_URI" -->&show_faces=false&layout=button_count" scrolling="no" frameborder="0" style="border:none; height:20px; width:120px;"></iframe>
 					<div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
 					<script type="text/javascript">
 						window.___gcfg = {lang: 'fr'};

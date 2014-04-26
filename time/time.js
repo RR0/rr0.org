@@ -419,7 +419,7 @@ org.rr0.time = (function () {
             }
             return s;
         }
-    }
+    };
 
     org.rr0.context.time = new Moment();
 
@@ -781,6 +781,13 @@ org.rr0.time = (function () {
     return this;
 })();
 angular.module('rr0.time', [])
+    .service('timeService', [function() {
+        return {
+            getTime: function() {
+                return org.rr0.time.addDate();
+            }
+        };
+    }])
     .run(function () {
         starts.push({
                 dir: org.rr0.time.uriPart,
@@ -1012,6 +1019,4 @@ angular.module('rr0.time', [])
                 }
             }
         }
-    })
-    .service('timeService', function () {
     });

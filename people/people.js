@@ -57,15 +57,6 @@ function peopleLink(p, pLink) {
     }
     return pLink;
 }
-var authorElement;
-function setCopyright(c, cLink) {
-    if (!authorElement) {
-        authorElement = document.createElement("p");
-    }
-    copyright = c;
-    authorElement.appendChild(org.linkElement(cLink, document.createTextNode(c), "Copyright"));
-    authorElement.innerHTML += ", ";
-}
 var handleWitness = function (scope, elem, attrs) {
     var txt = elem.text();
     var e = elem[0];
@@ -76,31 +67,39 @@ var handleWitness = function (scope, elem, attrs) {
 };
 
 angular.module('rr0.people', [])
-    .service('peopleService', function () {
+    .service('peopleService', ['timeService', function (timeService) {
         var authors = [];
+        var copyright;
         return {
+            getCopyright: function () {
+                return copyright;
+            },
+            getTime: function () {
+                return timeService.getTime();
+            },
             getAuthors: function () {
                 return authors;
             },
             setAuthor: function (a, aLink) {
                 if (a) {
-                    var t = document.createTextNode(a);
                     var author = setPeopleName(a);
-                    var authorLink = peopleLink(a, aLink);
-                    author.link = authorLink;
+                    author.link = peopleLink(a, aLink);
                     authors.push(author);
                 }
+            },
+            setCopyright: function (c, cLink) {
+                copyright = c;
             },
             addAuthor: function (a, aLink, c, cLink) {
                 if (a) {
                     this.setAuthor(a, aLink);
                 }
                 if (c) {
-                    setCopyright(c, cLink);
+                    this.setCopyright(c, cLink);
                 }
             }
         }
-    })
+    }])
     .directive('people', function () {
         return {
             restrict: 'C',
@@ -132,23 +131,12 @@ angular.module('rr0.people', [])
                         peopleService.setAuthor(content, link);
                         break;
                     case 'copyright':
-                        setCopyright(content, link);
+                        peopleService.setCopyright(content, link);
                         break;
                 }
             }
         };
     }])
-    .directive('body', function () {
-        return {
-            restrict: 'E',
-            link: function (scope, elem, attrs) {
-                if (authorElement) {
-                    var contentsNode = org.textZone;
-                    contentsNode.insertBefore(authorElement, contentsNode.firstChild);
-                }
-            }
-        }
-    })
     .directive('temoin', function () {
         return {
             restrict: 'C',
@@ -188,6 +176,8 @@ angular.module('rr0.people', [])
     })
     .controller('AuthorCtrl', ['$scope', 'peopleService', function ($scope, peopleService) {
         $scope.authors = peopleService.getAuthors();
+        $scope.copyright = peopleService.getCopyright();
+        $scope.docTime = peopleService.getTime();
     }])
     .run(function () {
         starts.push({

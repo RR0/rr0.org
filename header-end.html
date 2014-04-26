@@ -41,5 +41,6 @@
 				<div id="text">
 					<div class="author" ng-controller="AuthorCtrl" ng-show="authors.length" ng-cloak>
 						<span ng-repeat="aa in authors">{{$first?'':' & '}}<a href="{{aa.link}}">{{aa.lastName}},
-							{{aa.firstName}}</a></span>
+							{{aa.firstName}}</a></span>:
+						<span ng-bind-html="copyright"></span>, <span ng-bind-html="docTime"></span>
 					</div>

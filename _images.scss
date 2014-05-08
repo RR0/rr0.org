@@ -16,10 +16,6 @@ caption {
 
 figure {
   display: table;
-  -webkit-transition: width 1s ease, height 1s ease;
-  -moz-transition: width 1s ease, height 1s ease;
-  -ms-transition: width 1s ease, height 1s ease;
-  -o-transition: width 1s ease, height 1s ease;
   transition: width 1s ease, height 1s ease;
   transition-property: width, height;
   transition-duration: 0.3s;

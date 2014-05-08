@@ -1,8 +1,12 @@
 <!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/node_modules/traceur/bin/traceur-runtime.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.js"></script><!--#else -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.js"></script>
+<!--#else -->
+<script src="/node_modules/traceur/bin/traceur-runtime.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.min.js"></script><!--#endif -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.min.js"></script>
+<!--#endif -->
 <script src="/bower_components/angular-locale_fr-fr.min.js"></script><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/common.js"></script><!--#else -->
 <script src="/js/common.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
@@ -11,9 +15,15 @@
 <script src="/js/lang.js"></script><!--#else -->
 <script src="/js/lang.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/people/people.js"></script><!--#else -->
-<script src="/people/people.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
-<script src="/time/time.js"></script><!--#else -->
-<script src="/time/time.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/people/people.min.js"></script><!--#endif -->
+<!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/time/time.es5.js"></script>
+<script src="/time/time-module.js"></script>
+<!--#else -->
+<script src="/time/time.es5.min.js"></script>
+<script src="/time/time-module.es5.min.js"></script>
+<!--#endif -->
+<!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/nav.js"></script><!--#else -->
 <script src="/js/nav.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/units.js"></script><!--#else -->

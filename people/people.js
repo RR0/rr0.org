@@ -140,28 +140,29 @@ angular.module('rr0.people', [])
     .directive('temoin', function () {
         return {
             restrict: 'C',
-            scope: true,
             link: handleWitness
         }
     })
     .directive('temoin1', function () {
         return {
             restrict: 'C',
-            scope: true,
             controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
                 $scope.witnessId = '1';
             }],
-            link: handleWitness
+            link: function (scope, elem, attrs) {
+                handleWitness(scope, elem, attrs);
+            }
         }
     })
     .directive('temoin2', function () {
         return {
             restrict: 'C',
-            scope: true,
             controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
                 $scope.witnessId = '2';
             }],
-            link: handleWitness
+            link: function (scope, elem, attrs) {
+                handleWitness(scope, elem, attrs);
+            }
         }
     })
     .directive('temoin3', function () {
@@ -171,7 +172,9 @@ angular.module('rr0.people', [])
             controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
                 $scope.witnessId = '3';
             }],
-            link: handleWitness
+            link: function (scope, elem, attrs) {
+                handleWitness(scope, elem, attrs);
+            }
         }
     })
     .controller('AuthorCtrl', ['$scope', 'peopleService', function ($scope, peopleService) {

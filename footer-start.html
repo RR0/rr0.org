@@ -13,13 +13,13 @@
 <script src="/js/net.js"></script><!--#else -->
 <script src="/js/net.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/lang.js"></script><!--#else -->
-<script src="/js/lang.min.js"></script><!--#endif --><!--#if expr="${QUERY_STRING}=/debug/" -->
-<script src="/people/people.js"></script><!--#else -->
-<script src="/people/people.min.js"></script><!--#endif -->
+<script src="/js/lang.min.js"></script><!--#endif -->
 <!--#if expr="${QUERY_STRING}=/debug/" -->
+<script src="/people/people.es5.js"></script>
 <script src="/time/time.es5.js"></script>
 <script src="/time/time-module.js"></script>
 <!--#else -->
+<script src="/people/people.es5.min.js"></script>
 <script src="/time/time.es5.min.js"></script>
 <script src="/time/time-module.es5.min.js"></script>
 <!--#endif -->

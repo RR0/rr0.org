@@ -4,8 +4,7 @@
 		<div id="main" role="main" class="swipe-wrap">
 			<div id="contents">
 				<header ng-controller="HeadCtrl" ng-init="initTitle('<!--#echo var="title" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->')">
-					<h1 ng-bind-html="title" ng-show="!isFramed()" ng-style="{'background':'-webkit-linear-gradient(left, rgb(224, 224, 233) 0%,rgb(255, 255, 255) 50%,rgba(255, 255, 255, 0.5) 100%), url('+headImage+')'}">
-						&nbsp;</h1>
+					<h1 ng-bind-html="title" ng-show="!isFramed()">&nbsp;</h1>
 					<nav>
 						<ul>
 							<li ng-repeat="p in ps" class="constant {{p.style}}">

@@ -306,7 +306,10 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
-                scope.headImage = attrs.src;
+                var h1 = document.querySelector('header h1');
+                var style = window.getComputedStyle(h1).backgroundImage;
+                style += ', url(\'' + attrs.src + '\')';
+                h1.style.backgroundImage = style;
             }
         };
     }])
@@ -399,8 +402,8 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             return $scope.title;
         }
 
-        $scope.isFramed=function() {
-          return window !== top;
+        $scope.isFramed = function () {
+            return window !== top;
         };
         $scope.initTitle = function (t, u, st) {
             $scope.title = t;

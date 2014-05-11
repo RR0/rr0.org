@@ -61,6 +61,12 @@ var handleWitness = function (scope, elem, attrs) {
     var txt = elem.text();
     var e = elem[0];
     e.style.width = txt.length + 'em';
+    var tint = [50, 50, 50];
+    if (scope.witnessId > 1) {
+        tint[(scope.witnessId - 2) % 3] += 20;
+    }
+    var caviarBackgroundColor = "rgb(" + tint[0] + ", " + tint[1] + ", " + tint[2] + ")";
+    e.style.background = 'linear-gradient(to right, white, ' + caviarBackgroundColor + ' 2%, ' + caviarBackgroundColor + ' 98%, white)';
     e.innerHTML = '<a href="/FAQ.html#privacy">témoin' + (scope.witnessId ? ' ' + scope.witnessId : '') + '</a>';
     e.title = 'Nom du témoin anonymisé';
     if (e.id) e.innerHTML += ' ' + id;

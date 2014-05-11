@@ -1,4 +1,4 @@
-angular.module('matrix', [])
+angular.module('rr0')
     .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', function ($log, $q, $rootScope, $http) {
         var uri = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/';
         var bundleName = 'Matrix';

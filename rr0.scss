@@ -110,7 +110,6 @@ body {
     border-right: 0.4em solid #d3d3d3;
   }
 }
-
 @media (max-width: 720px) {
   /*@media (touch-enabled),(-webkit-touch-enabled),(-moz-touch-enabled),(-o-touch-enabled),(-ms-touch-enabled) {*/
 
@@ -122,7 +121,6 @@ body {
 }
 
 @import "people/people";
-
 abbr {
   border-bottom: 1px dotted #999;
 }
@@ -477,14 +475,24 @@ aside {
 table {
   margin: 1.25em 1.25em 1.5em 1.25em;
   border: none;
-  table thead {
-    display: block;
+  thead {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
   }
   tbody {
-    //    min-height: 300px;
-    max-height: 80vh;
-    overflow-y: scroll;
     display: block;
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    tr {
+      display: table;
+      table-layout:fixed;
+      width: 100%;
+    }
+  }
+  th, td {
+    width: auto;
   }
 }
 

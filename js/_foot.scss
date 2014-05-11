@@ -5,6 +5,11 @@ footer {
   iframe {
     display: inline;
   }
+  table {
+    tbody {
+      height: auto;
+    }
+  }
 }
 
 .footer {

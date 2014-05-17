@@ -1,7 +1,8 @@
 RR0
 ===
 
-RR0 is a client-side library that aims to ease display of testimonial data.
+RR0 is a client-side library that aims to ease the display of testimonial data.
+It is instantiated as the http://rr0.org website, which hosts various data about unexplained phenomena.
 
 It relies on AngularJS
 

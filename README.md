@@ -67,6 +67,33 @@ A click on the rendered element will trigger the display of a Google Map zoomed 
 the Google Geocoding API).
 
 ### people ###
+This is a class-restricted directive that aims to provide a link to a people's bio.
+#### Examples ####
+ `<span class="people">Claude Poher</time>`
+
+ will render as:
+
+   `<a href="/people/p/PoherClaude" translate="no">Poher</a>`.
+
+Any text equal to the rendered last name further in the page will be automatically rendered the same. So only tagging is required 
+only once to handle multiple mentions of the same person.
+
+Also, as names can be expressed in multiple ways, the following patterns are also recognized:
+
+ `<span class="people">Poher, Claude</time>`
+ `<span class="people" title="Claude Poher">Poher</time>`
+
+Note that when more than two words are used to express a people's name, only the latter one will be assumed to be the last name. 
+For example :
+ `<span class="people">Carl Gustav Jung</time>`
+
+ will render as:
+
+   `<a href="/people/p/JungCarlGustav" translate="no">Carl Gustav Jung</a>`.
+
+In case the last name contain multiple words, just write it in camel case, like below:
+ `<span class="people">Werner VonBraun</time>`
+
 ### section ###
 #### Contextual effects ####
  * Adds a hierarchical entry (depending on the depth of the section, possibly in other sections) in the 'Contents' contextual menu.

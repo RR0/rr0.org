@@ -33,9 +33,18 @@ Services
 ### checkedLink ###
 Returns a link towards a page, but only if this page exists.
 
+### toLink (l, [text1, text2]) ###
+Register texts as to be automatically linked to l.
+
+### nounsToLink (l, [text1, text2]) ###
+Register nouns as to be automatically linked to l. 
+That means that the plural of the nouns will be linked as well.
+
 Directives
 ----------
+
 ### time ###
+
 This is an override of the standard `<time>` HTML5 tag that aims to automate rendering of a full human-readable date,
  including day of week.
 

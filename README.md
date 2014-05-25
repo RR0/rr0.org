@@ -53,36 +53,45 @@ For both, a slash `/` can be used to express intervals (starting and end date, m
 
 #### Dates ####
 
- By default, rendered dates add a `checkedLink` towards a possible page documenting this date:
+ By default, rendered dates add a `checkedLink` towards a possible page documenting this date (all examples below using a french locale):
 
  `<time datetime="1952"></time>` renders as `<a href="/time/1/9/5/2/" title="1952">1952</a>`.
 
- `<time datetime="1952-07"></time>` renders as `Juillet 1952` (using a french locale).
+ `<time datetime="1952-07"></time>` renders as `<a href="/time/1/9/5/2/07" title="Juillet 1952">Juillet 1952</a>`.
 
- `<time datetime="1952-07-01"></time>` renders as `Mardi 1er Juillet 1952` (using a french locale).
+ `<time datetime="1952-07-01"></time>` renders as `<a href="/time/1/9/5/2/07/01" title="Mardi 1er Juillet 1952">Mardi 1er Juillet 1952</a>`.
 
- `<time datetime="1952-07-01/03"></time>` will render `Mardi 1er au Jeudi 3 Juillet 1952` (using a french locale).
+ `<time datetime="1952-07-01/03"></time>` will render `Mardi 1er au Jeudi 3 Juillet 1952`.
 
 Once a date as been rendered, it sets the new new current/contextual time. All next times will be interpreted relatively to 
 this new time. For example :
 
- `<time datetime="05"></time>` will be rendered as `Samedi 5 Juillet 1952` (using a french locale), if stated after the latest date above.
+ `<time datetime="1952-07-02"></time>` will render `<a href="/time/1/9/5/2/07/02" title="Mercredi 2 Juillet 1952">la veille</a>`.
+ 
+ `<time datetime="1952-07-04"></time>` will render `<a href="/time/1/9/5/2/07/04" title="Vendredi 4 Juillet 1952">le lendemain</a>`.
+ 
+ `<time datetime="1952-07-05"></time>` will render `<a href="/time/1/9/5/2/07/05" title="Samedi 5 Juillet 1952">le surlendemain</a>`.
+
+ `<time datetime="1952-07-07"></time>` will render `<a href="/time/1/9/5/2/07/07" title="Mardi 7 Juillet 1952">le Mardi suivant</a>`.
+
+ `<time datetime="05"></time>` will be rendered as `<a href="/time/1/9/5/2/07/05" title="Samedi 5 Juillet 1952">Samedi 5 Juillet 
+ 1952</a>`, if stated after the latest date above (which implicitly set context to July 1952).
 
 #### Durations ####
 
 According to the HTML5 specification, Durations can be expressed in the datetime attribute if starting with a `P`.
 
- `<time datetime="P1D"></time>` renders as `<time datetime="P2D" class="duration">1 jour</time>` (using a french locale).
+ `<time datetime="P1D"></time>` renders as `<time datetime="P2D" class="duration">1 jour</time>`.
  
- `<time datetime="P15M"></time>` renders as `<time datetime="P15M" class="duration">15 minutes</time>` (using a french locale).
+ `<time datetime="P15M"></time>` renders as `<time datetime="P15M" class="duration">15 minutes</time>`.
  
- `<time datetime="P20S"></time>` renders as `<time datetime="P20S" class="duration">20 secondes</time>` (using a french locale).
+ `<time datetime="P20S"></time>` renders as `<time datetime="P20S" class="duration">20 secondes</time>`.
 
- `<time datetime="P1D15M20S"></time>` renders as `<time datetime="P15M20S" class="duration">1 jour, 15 minutes et 20 secondes</time>` (using a french locale).
+ `<time datetime="P1D15M20S"></time>` renders as `<time datetime="P15M20S" class="duration">1 jour, 15 minutes et 20 secondes</time>`.
  
- `<time datetime="P30S/1M"></time>` renders as `<time datetime="P30S/1M" class="duration">30 secondes à 1 minute</time>` (using a french locale).
+ `<time datetime="P30S/1M"></time>` renders as `<time datetime="P30S/1M" class="duration">30 secondes à 1 minute</time>`.
 
- `<time datetime="P2H/3H"></time>` renders as `<time datetime="P2H/3H" class="duration">2 à 3 heures</time>` (using a french locale).
+ `<time datetime="P2H/3H"></time>` renders as `<time datetime="P2H/3H" class="duration">2 à 3 heures</time>`.
 
 ### place ###
 This is a class-restricted directive that aims to provide additional information on a given place.

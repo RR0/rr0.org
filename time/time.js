@@ -72,16 +72,22 @@ org.rr0.time = (function () {
     };
 
 
-    class Duration {
-        constructor() {
-            this.durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/;
-            this.minuteValue = 60;
-            this.hourValue = this.minuteValue * 60;
-            this.dayValue = this.hourValue * 24;
-        }
+    this.Duration = function () {
+        this.Unit = function(f, n) {
+            this.factor = f;
+            this.name = n;
+            this.toString=function(value) {
+                return value > 0 ? value + '&nbsp;' + this.name + (value > 1 ? 's' : '') : '';
+            }
+        };
+        this.second = new this.Unit(1, 'seconde');
+        this.minute = new this.Unit(60 * this.second.factor, 'minute');
+        this.hour = new this.Unit(60 * this.minute.factor, 'heure');
+        this.day = new this.Unit(24 * this.hour.factor, 'jour');
 
-        fromString (txt) {
-            var foundExprs = this.durationRegex.exec(txt);
+        var durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/;
+        this.fromString = function(txt) {
+            var foundExprs = durationRegex.exec(txt);
             this.durationInSeconds = 0;
             for (var i = 1; i < foundExprs.length; i++) {
                 var expr = foundExprs[i];
@@ -90,45 +96,47 @@ org.rr0.time = (function () {
                     var value = parseInt(expr.substring(0, lastCharPos), 10);
                     switch (expr.charAt(lastCharPos)) {
                         case 'D':
-                            this.durationInSeconds += value * this.dayValue;
+                            this.unit = this.day;
                             break;
                         case 'H':
-                            this.durationInSeconds += value * this.hourValue;
+                            this.unit = this.hour;
                             break;
                         case 'M':
-                            this.durationInSeconds += value * this.minuteValue;
+                            this.unit = this.minute;
                             break;
                         case 'S':
-                            this.durationInSeconds += value;
+                            this.unit = this.second;
                             break;
                         case 'P':
                     }
+                    this.durationInSeconds += value * this.unit.factor;
                 }
             }
-            return this;
-        }
 
-        toString() {
+            return this;
+        };
+
+        this.toString = function (unitStated) {
             var txt = [];
             var remaining = this.durationInSeconds;
-            var days = Math.floor(remaining / dayValue);
+            var days = Math.floor(remaining / this.day.factor);
             if (days >= 1) {
-                txt.push(days + "&nbsp;jour" + (days > 1 ? 's' : ''));
+                txt.push(unitStated != this.day.name ? this.day.toString(days) : days);
             }
-            remaining = remaining % dayValue;
-            var hours = Math.floor(remaining / hourValue);
+            remaining = remaining % this.day.factor;
+            var hours = Math.floor(remaining / this.hour.factor);
             if (hours >= 1) {
-                txt.push(hours + "&nbsp;heure" + (hours > 1 ? 's' : ''));
+                txt.push(unitStated != this.hour.name ? this.hour.toString(hours) : hours);
             }
-            remaining = remaining % hourValue;
-            var minutes = Math.floor(remaining / minuteValue);
+            remaining = remaining % this.hour.factor;
+            var minutes = Math.floor(remaining / this.minute.factor);
             if (minutes >= 1) {
-                txt.push(minutes + "&nbsp;minute" + (minutes > 1 ? 's' : ''));
+                txt.push(unitStated != this.minute.name ? this.minute.toString(minutes) : minutes);
             }
-            remaining = remaining % minuteValue;
+            remaining = remaining % this.minute.factor;
             var seconds = remaining;
             if (seconds >= 1) {
-                txt.push(seconds + "&nbsp;seconde" + (seconds > 1 ? 's' : ''));
+                txt.push(unitStated != this.second.name ? this.second.toString(seconds) : seconds);
             }
             var last = txt.length - 1;
             var s = '';
@@ -137,7 +145,7 @@ org.rr0.time = (function () {
             }
             return s;
         }
-    }
+    };
 
     this.Moment = function () {
         function clear() {
@@ -423,7 +431,7 @@ org.rr0.time = (function () {
         }
     };
 
-    org.rr0.context.time = new this.Moment();
+    org.rr0.context.time = new Moment();
 
     this.getTime = function () {
         return org.rr0.context.time;

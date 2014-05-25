@@ -9,9 +9,10 @@ It relies on AngularJS
 General principles
 ------------------
  * **Data-centric** : The pages are the data. They contain semantic only, not how to display them.
- Display is implemented in ''directives'', using HTML templates and styling (CSS).
- * **Contextual** : Directives should render data as it is refined by its context. For example a month should be resolved as the month of a
-specific year if a year has been found before.
+ Display is performed automatically once the pages are loaded, by parsing the semantic tags/classes/attributes contained in the page
+ . These can be about places, people, time, etc.
+ * **Contextual** : Display rendering not only takes into account the semantic tags/classes/attributes, 
+ but also the ways they are assembled. For example a month tag can be resolved as in the context of a previous year tag.
 
 Modules
 -------
@@ -45,22 +46,43 @@ Directives
 
 ### time ###
 
-This is an override of the standard `<time>` HTML5 tag that aims to automate rendering of a full human-readable date,
- including day of week.
+This is an override of the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable date (including day 
+of week) or duration.
 
- By default, such rendered dates add a `checkedLink` towards a possible page documenting this date.
+For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration, respectively).
 
-#### Examples ####
- `<time datetime="1952"></time>` will render as `<a href="/time/1/9/5/2/" title=" 1952">1952</a>`.
+#### Dates ####
 
- `<time datetime="07"></time>` will render `Mardi 1er Juillet 1952` with a french locale.
+ By default, rendered dates add a `checkedLink` towards a possible page documenting this date:
 
- `<time datetime="08-"></time>` will render `Mardi 1er Juillet 1952` with a french locale.
+ `<time datetime="1952"></time>` renders as `<a href="/time/1/9/5/2/" title="1952">1952</a>`.
 
- `<time datetime="1952-07-01"></time>` will render `Mardi 1er Juillet 1952` with a french locale.
+ `<time datetime="1952-07"></time>` renders as `Juillet 1952` (using a french locale).
 
-#### Contextual effects ####
- * Sets the new current/contextual time. All next times will be interpreted relatively to this new time.
+ `<time datetime="1952-07-01"></time>` renders as `Mardi 1er Juillet 1952` (using a french locale).
+
+ `<time datetime="1952-07-01/03"></time>` will render `Mardi 1er au Jeudi 3 Juillet 1952` (using a french locale).
+
+Once a date as been rendered, it sets the new new current/contextual time. All next times will be interpreted relatively to 
+this new time. For example :
+
+ `<time datetime="05"></time>` will be rendered as `Samedi 5 Juillet 1952` (using a french locale), if stated after the latest date above.
+
+#### Durations ####
+
+According to the HTML5 specification, Durations can be expressed in the datetime attribute if starting with a `P`.
+
+ `<time datetime="P1D"></time>` renders as `<time datetime="P2D" class="duration">1 jour</time>` (using a french locale).
+ 
+ `<time datetime="P15M"></time>` renders as `<time datetime="P15M" class="duration">15 minutes</time>` (using a french locale).
+ 
+ `<time datetime="P20S"></time>` renders as `<time datetime="P20S" class="duration">20 secondes</time>` (using a french locale).
+
+ `<time datetime="P1D15M20S"></time>` renders as `<time datetime="P15M20S" class="duration">1 jour, 15 minutes et 20 secondes</time>` (using a french locale).
+ 
+ `<time datetime="P30S/1M"></time>` renders as `<time datetime="P30S/1M" class="duration">30 secondes à 1 minute</time>` (using a french locale).
+
+ `<time datetime="P2H/3H"></time>` renders as `<time datetime="P2H/3H" class="duration">2 à 3 heures</time>` (using a french locale).
 
 ### place ###
 This is a class-restricted directive that aims to provide additional information on a given place.

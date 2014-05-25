@@ -2,22 +2,22 @@ angular.module('rr0.time', [])
     .service('timeService', [function() {
         return {
             getTime: function() {
-                return org.rr0.time.addDate();
+                return rr0.time.addDate();
             }
         };
     }])
     .run(function () {
         starts.push({
-                dir: org.rr0.time.uriPart,
+                dir: rr0.time.uriPart,
                 label: "<span class='iconic clock'></span>",
                 title: "Historique"
             }
         );
         function parseForTimes() {
-            org.nounToLink(org.rr0.time.uriPart + "Vagues.html", "vague");
-            org.nounToLink(org.rr0.time.uriPart + "pluies", "pluie");
+            org.nounToLink(rr0.time.uriPart + "Vagues.html", "vague");
+            org.nounToLink(rr0.time.uriPart + "pluies", "pluie");
 
-            org.handleTags.apply(this, [org.rr0.time.timeTextHandler]);
+            org.handleTags.apply(this, [rr0.time.timeTextHandler]);
         }
 
         var onGoogleChartsLoaded = [parseForTimes];
@@ -30,10 +30,10 @@ angular.module('rr0.time', [])
         }
 
         initGoogleCharts(function () {
-            org.rr0.time.chartZone = org.getSideZone("chart");
-            org.rr0.time.setChartsHeight(30);
-            chart = new google.visualization.ColumnChart(org.rr0.time.chartZone);
-            org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([org.rr0.time.drawChart]);
+            rr0.time.chartZone = org.getSideZone("chart");
+            rr0.time.setChartsHeight(30);
+            chart = new google.visualization.ColumnChart(rr0.time.chartZone);
+            rr0.sideCallbacks = rr0.sideCallbacks.concat([rr0.time.drawChart]);
 
             for (var i = 0; i < onGoogleChartsLoaded.length; i++) {
                 onGoogleChartsLoaded[i]();
@@ -46,9 +46,9 @@ angular.module('rr0.time', [])
             link: function (scope, elem, attrs) {
                 var txt = elem.text();
 
-                var currentTime = org.rr0.time.getTime();
+                var currentTime = rr0.time.getTime();
 
-                var decodedTime = new org.rr0.time.Moment();
+                var decodedTime = new rr0.time.Moment();
                 decodedTime.year = currentTime.getYear();
                 decodedTime.month = currentTime.getMonth();
                 decodedTime.dayOfMonth = currentTime.getDayOfMonth();
@@ -67,7 +67,7 @@ angular.module('rr0.time', [])
                     var y = time.getYear();
                     if (y != null) {
                         var otherYear = y != contextTime.getYear();
-                        timeLink = org.rr0.time.yearLink(y);
+                        timeLink = rr0.time.yearLink(y);
                         titYear = y;
                         if (otherYear) {
                             contextTime.setYear(y);
@@ -76,7 +76,7 @@ angular.module('rr0.time', [])
                     }
                     var m = time.getMonth();
                     if (m != null) {
-                        titMonth = org.rr0.time.monthName(m);
+                        titMonth = rr0.time.monthName(m);
                         timeLink += "/" + zero(m);
                         var otherMonth = otherYear || m != contextTime.getMonth();
                         if (otherMonth) {
@@ -90,7 +90,7 @@ angular.module('rr0.time', [])
                         var otherDay = 0;
                         var dOW;
                         if (!!(dayAsNumber)) {
-                            dOW = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, m, d));
+                            dOW = rr0.time.dayOfWeekNam(rr0.time.getDayOfWeek(y, m, d));
                             titDay = dOW + " " + d + (d == 1 ? "er" : "");
                             if (otherMonth) otherDay = 30;
                             else {
@@ -103,7 +103,7 @@ angular.module('rr0.time', [])
                         if (otherDay != 0) {
                             timeLink += "/" + zero(d);
                             repDay = titDay;
-                            if (!org.rr0.time.isTimeURL() && contextTime.getDayOfMonth()) {
+                            if (!rr0.time.isTimeURL() && contextTime.getDayOfMonth()) {
                                 switch (otherDay) {
                                     case -1:
 
@@ -217,8 +217,21 @@ angular.module('rr0.time', [])
                     dataStr = txt;
                 }
                 if (dataStr.charAt(0) === 'P') {
+                    var durationStr;
+                    var durationMax;
+                    var slashPos = dataStr.indexOf('/');
+                    if (slashPos>0) {
+                        var maxString = dataStr.substring(slashPos + 1);
+                        if (maxString.charAt(0) != 'P') maxString = 'P' + maxString;
+                        var durMax = new rr0.time.Duration();
+                        durationMax = durMax.fromString(maxString).toString();
+                        var durationMin = new rr0.time.Duration().fromString(dataStr).toString(durMax.unit.name);
+                        durationStr = durationMin + " à " + durationMax;
+                    } else {
+                        durationStr = new rr0.time.Duration().fromString(dataStr).toString();
+                    }
                     r = {
-                        replacement: new org.rr0.time.Duration().fromString(dataStr).toString()
+                        replacement: durationStr
                     };
                     if (!datetime) {
                         e.setAttribute("datetime", dataStr);

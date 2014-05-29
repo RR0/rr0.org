@@ -226,19 +226,20 @@ angular.module('rr0.place', [])
         return {
             restrict: 'C',
             link: function (scope, elem, attrs) {
-                var element = elem[0];
-                var placeName = element.title ? element.title : org.text(element);
+                var title = elem.attr('title');
+                var placeName = title ? title : elem.text();
                 if (placeName) {
-                    var place = placeService.addPlace(placeName, element);
+                    var place = placeService.addPlace(placeName);
                     attrs['place-id'] = "place" + place.id;
                     mapService.geocode(place, function (placeOnMap) {
-                        var parent = element.parentElement;
-                        if (parent.tagName == "P" || parent.tagName == "LI") {
-                            element.onclick = function () {
+                        var parent = elem.parent();
+                        var parentTagName = parent.prop('tagName');
+                        if (parentTagName == "P" || parentTagName == "LI") {
+                            elem.bind('click', function () {
                                 mapService.focusOn(placeOnMap);
-                            };
-                            element.style.cursor = "pointer";
-                            element.title = "Cliquez pour voir la carte";
+                            });
+                            elem.css('cursor', 'pointer');
+                            elem.attr('title', 'Cliquez pour voir la carte');
                         }
                     });
                 }

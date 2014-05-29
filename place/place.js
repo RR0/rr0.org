@@ -163,8 +163,78 @@ angular.module('rr0.place', [])
         function onceMapIsLoaded() {
             geocodeAll(toGeocode);
             onTransitionEnd(org.rr0.contentsZone, mapUpdateCallbacks);
-            createNavLink("<span class='iconic map_pin_fill'></span>", "javascript:toggleMap()", "Affiche carte", "toggleMap", "");
+            var element = createNavElement('toggleMap');
+            element.innerHTML = "<a href='#'><span><span class='iconic map_pin_fill'></span></span></a>";
+            element.title = 'Affiche carte';
+            element.onclick = toggleMap;
             headResized();
+        }
+
+        function isMapWidthAvailable() {
+            return org.rr0.getScreenWidth() > 320;
+        }
+
+        function isMapVisible() {
+            var visible;
+            if (isMapWidthAvailable()) {
+                visible = org.rr0.leftWidth < org.rr0.getScreenWidth();
+            } else {
+                visible = getSwipe().getPos() != 0;
+            }
+            return visible;
+        }
+
+        function mapShow() {
+            if (!isMapVisible()) {
+                if (isMapWidthAvailable()) {
+                    var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
+                    if (sideWidth <= 0) {
+                        org.rr0.leftWidth = org.rr0.getScreenWidth() * 0.6;
+                    }
+                    splitWithMap(org.rr0.leftWidth);
+                } else {
+                    org.rr0.time.drawChart();
+                    getSwipe().next();
+                }
+            }
+        }
+
+        var mainDiv = document.getElementById("main");
+
+        function splitWithMap(contentWidth) {
+            mainDiv.style.width = org.rr0.getScreenWidth() + "px";
+            org.rr0.leftWidth = contentWidth;
+            org.updateDivision();
+        }
+
+        var mySwipe;
+
+        function getSwipe() {
+            if (!mySwipe) {
+                mySwipe = Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
+                    {
+                        continuous: false,
+                        stopPropagation: true,
+                        callback: mapUpdate
+                    });
+            }
+            return mySwipe;
+        }
+
+        function mapHide() {
+            if (isMapWidthAvailable()) {
+                splitWithMap(org.rr0.getScreenWidth());
+            } else {
+                getSwipe().prev();
+            }
+        }
+
+        function toggleMap() {
+            if (isMapVisible()) {
+                mapHide();
+            } else {
+                mapShow();
+            }
         }
 
         return {
@@ -246,70 +316,3 @@ angular.module('rr0.place', [])
             }
         }
     }]);
-
-function isMapWidthAvailable() {
-    return org.rr0.getScreenWidth() > 320;
-}
-
-function isMapVisible() {
-    var visible;
-    if (isMapWidthAvailable()) {
-        visible = org.rr0.leftWidth < org.rr0.getScreenWidth();
-    } else {
-        visible = getSwipe().getPos() != 0;
-    }
-    return visible;
-}
-
-function mapShow() {
-    if (!isMapVisible()) {
-        if (isMapWidthAvailable()) {
-            var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
-            if (sideWidth <= 0) {
-                org.rr0.leftWidth = org.rr0.getScreenWidth() * 0.6;
-            }
-            splitWithMap(org.rr0.leftWidth);
-        } else {
-            org.rr0.time.drawChart();
-            getSwipe().next();
-        }
-    }
-}
-
-var mainDiv = document.getElementById("main");
-
-function splitWithMap(contentWidth) {
-    mainDiv.style.width = org.rr0.getScreenWidth() + "px";
-    org.rr0.leftWidth = contentWidth;
-    org.updateDivision();
-}
-
-var mySwipe;
-
-function getSwipe() {
-    if (!mySwipe) {
-        mySwipe = Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
-            {
-                continuous: false,
-                stopPropagation: true,
-                callback: mapUpdate
-            });
-    }
-    return mySwipe;
-}
-
-function mapHide() {
-    if (isMapWidthAvailable()) {
-        splitWithMap(org.rr0.getScreenWidth());
-    } else {
-        getSwipe().prev();
-    }
-}
-
-function toggleMap() {
-    if (isMapVisible()) {
-        mapHide();
-    } else {
-        mapShow();
-    }
-}

@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../mixins";
 
 header {
   font-family: $menuFont;
@@ -18,12 +18,13 @@ header {
     background-image: linear-gradient(to right, rgb(224, 224, 233) 0%,rgb(255, 255, 255) 50%,rgba(255, 255, 255, 0.5) 100%);
     font-family: inherit;
     box-sizing: border-box;
-    font-size: 2em;
+    max-height: $headerHeight;
+    min-height: $headerHeight;
+    line-height: $headerHeight;
     letter-spacing: 1px;
+    @include ellipsis;
     color: #666666;
     margin: 0;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
     padding-left: 0.8em;
     //    background: #ddddec;  /*Old browsers*/
     /*IE9 SVG, needs conditional override of 'filter' to 'none'*/

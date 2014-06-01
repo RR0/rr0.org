@@ -35,3 +35,9 @@
 @mixin bottom-inner-shadow {
   box-shadow: 0 0 1.5em $shadowColor;
 }
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -4,8 +4,7 @@ nav {
   left: 0;
   top: 0;
   right: 0;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  z-index:9;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   > ul {
     overflow: auto; /* clearfix */
@@ -14,8 +13,7 @@ nav {
   ul {
     background: $headerFromColor; /* for non-css3 browsers */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1); /* for IE */
-    background: -webkit-gradient(linear, left top, right top, from($headerFromColor), to($headerToColor)); /* for webkit browsers */
-    background: -moz-linear-gradient(left top, $headerFromColor, $headerToColor);
+    background: linear-gradient(left top, $headerFromColor, $headerToColor);
     margin: 0;
     padding: 0;
     li * {
@@ -92,6 +90,15 @@ nav {
     float: right;
   }
 }
+/*@media (min-width: 1024px) {
+  nav {
+    width: $sideWidth;
+    height: 100%;
+  }
+  #text {
+    left: $sideWidth;
+  }
+}*/
 
 nav ul li a:hover, .menu ul li .current {
   color: #FFF;

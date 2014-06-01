@@ -443,10 +443,6 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         var outline = document.getElementById('outline');
         var search = document.getElementById('search');
 
-        function getHeaderHeight() {
-            return header.offsetHeight;
-        }
-
         function getNavHeight() {
             return nav.offsetHeight;
         }

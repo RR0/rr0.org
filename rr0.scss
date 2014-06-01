@@ -98,8 +98,6 @@ body {
 
 .columns {
   column-width: 15em;
-  -moz-column-width: 15em;
-  -webkit-column-width: 15em;
 }
 
 @media (min-width: 720px) {
@@ -212,10 +210,10 @@ cite {
 q {
   background: $highlightColor repeat-x;
   &:before {
-    content: "« ";
+    content:"« ";
   }
   &:after {
-    content: " »";
+    content:" »";
   }
 }
 
@@ -482,7 +480,7 @@ table {
   }
   tbody {
     display: block;
-    height: 80vh;
+    max-height: 80vh;
     overflow-y: scroll;
     overflow-x: hidden;
     tr {

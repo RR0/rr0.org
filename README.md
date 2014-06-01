@@ -41,13 +41,12 @@ Register texts as to be automatically linked to l.
 Register nouns as to be automatically linked to l. 
 That means that the plural of the nouns will be linked as well.
 
-Directives
-----------
+## Content ##
 
 ### time ###
 
-This is an override of the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable date (including day 
-of week) or duration.
+This directive overrides the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable date 
+(including day of week) or duration.
 
 For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration, respectively).
 
@@ -114,7 +113,7 @@ This is a class-restricted directive that aims to provide a link to a people's b
 
  will render as:
 
-   `<a href="/people/p/PoherClaude" translate="no">Poher</a>`.
+   `<a href="/people/p/PoherClaude" translate="no">Claude Poher</a>`.
 
 Any text equal to the rendered last name further in the page will be automatically rendered the same. So only tagging is required 
 only once to handle multiple mentions of the same person.
@@ -140,6 +139,62 @@ In case the last name contain multiple words, just write it in camel case, like 
 ### section ###
 #### Contextual effects ####
  * Adds a hierarchical entry (depending on the depth of the section, possibly in other sections) in the 'Contents' contextual menu.
+
+## Meta and heading ##
+
+### Metadata ###
+
+This directive overrides the standard `<meta>` tag with support for the following properties :
+
+#### author ####
+
+ `<meta name="author" content="Jérôme Beau">` will identify the content as some people name (see people directive above for supported 
+ format) and display a link in the document toward the identified people, followed by the contextual date, if it can be resolved (from the URL scheme or another
+ context). The only rendering difference is that authors are always displayed in the "LastName, FirstName" format.
+
+In case of multiple authors, just repeat such meta author tag multiple times, and additional authors' names will be appended, 
+separated by "&". For example :
+
+ `<meta name="author" content="Baure, Jean-Francois">`
+ `<meta name="author" content="David Clarke">`
+
+will render :
+
+ `<div class="author>`
+ `  <a href="/people/b/BaureJeanFrancois">Baure, Jean-Francois</a> &amp; <a href="/people/c/ClarkeDavid" class="ng-binding">Clarke, 
+ David</a>: Février <a href="/time/2/0/0/8/02">2008</a>`
+`</div>`
+
+if stated in a document under the `"/time/2/0/0/8/02"` URL.
+
+#### copyright ####
+
+ `<meta name="copyright" content="Paratopia n° 51, p. 225-228">` will identify the document as from the mentioned content as a source, 
+ which will be appended in the author credit.
+
+#### url ####
+
+ `<meta url="copyright" content="http://example.com/originalDoc.html">` will identify the document as a copy or translation of the 
+ mentioned URL, which can be followed to get the original document.
+
+### Links ###
+
+This directive overrides the standard `<link>` tag with support for the following relationship (`rel`) types :
+
+#### start ####
+
+ `<link rel="start" href="../../index.html" title="A big document">` will set the navigation "start" menu choice to display the mentioned 
+ `title` with the mentioned `href` as an hyperlink.
+
+#### prev ####
+
+ `<link rel="prev" href=".." title="Previous chapter">` will set the navigation "previous" menu choice to display the 
+ mentioned `title` with the mentioned `href` as an hyperlink.
+
+#### next ####
+
+ `<link rel="next" href="../next/" title="Next chapter">` will set the navigation "next" menu choice to display the 
+ mentioned `title` with the mentioned `href` as an hyperlink.
 
 To do
 -----

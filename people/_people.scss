@@ -4,12 +4,12 @@
 }
 
 .author {
-  margin: 0 -2.9em;
+  margin: 0 -1.9em;
   background-color: #F9F9F9;
   font-size: 0.7em;
   padding: 0.5em;
   color: gray;
-  @include gradient-from-left;
+  @include gradientFromLeft;
 }
 .temoin {
   display: inline-block;

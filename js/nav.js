@@ -444,7 +444,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         var search = document.getElementById('search');
 
         function getNavHeight() {
-            return nav.offsetHeight;
+            return nav.offsetHeight > 100 ? 0 : nav.offsetHeight;
         }
 
         function isHeaderCollapsed() {
@@ -478,7 +478,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 var text = scrolled.querySelector('#text');
                 text.style.position = 'absolute';
 //                contents.style.top='0';
-                text.style.top = titleHeight + getNavHeight() + 'px';
+//                text.style.top = titleHeight + getNavHeight() + 'px';
                 if (digesting) {
                     $scope.outline = 'Sommaire';
                 } else {
@@ -623,12 +623,6 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         };
         $scope.titleLeave = function () {
             hideOutline();
-        };
-        $scope.outlineOver = function () {
-            $log.info('outline over')
-        };
-        $scope.outlineLeave = function () {
-            $log.info('outline leave')
         };
         $scope.searchOver = function () {
             showSearch();

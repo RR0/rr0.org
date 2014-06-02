@@ -30,7 +30,7 @@ body {
 @import "js/head";
 
 #contents {
-  @include bottom-inner-shadow;
+  @include bottomInnerShadow;
   /*float:left;*/
   overflow-y: scroll;
   overflow-x: auto;
@@ -38,7 +38,7 @@ body {
   line-height: 1.5em;
   width: 100%;
   //resize: horizontal;
-  @include horiz-trans;
+  @include horizTrans;
 
   background: /* Shadow covers */ linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */ radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)) 0 100%;
   background: /* Shadow covers */ linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */ radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)) 0 100%;
@@ -52,6 +52,7 @@ body {
 
 #text {
   margin: 0 $textMargin;
+  padding-top: $headerHeight + $navHeight;
   ul {
     text-align: justify;
     vertical-align: sub;
@@ -197,7 +198,6 @@ ol li:hover {
 /*.added:after {*/
 /*content: "]";*/
 /*}*/
-
 cite {
   border: none;
   background: $highlightColor repeat-x;
@@ -392,26 +392,16 @@ section:after {
 //  width: 50%;
 //  max-width: 47%;
 //  height: 20%;
-//  -webkit-box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
-//  -moz-box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
 //  box-shadow: 0 $shadow-length 10px rgba(0, 0, 0, 0.7);
 //}
 //$shadow-rotate: 1deg;
 //.abstract:before {
 //  left: 0.7em;
-//  -webkit-transform: rotate(-$shadow-rotate);
-//  -moz-transform: rotate(-$shadow-rotate);
-//  -ms-transform: rotate(-$shadow-rotate);
-//  -o-transform: rotate(-$shadow-rotate);
 //  transform: rotate(-$shadow-rotate);
 //}
 //
 //.abstract:after {
 //  right: 0.7em;
-//  -webkit-transform: rotate($shadow-rotate);
-//  -moz-transform: rotate($shadow-rotate);
-//  -ms-transform: rotate($shadow-rotate);
-//  -o-transform: rotate($shadow-rotate);
 //  transform: rotate($shadow-rotate);
 //}
 
@@ -465,7 +455,7 @@ aside {
   /*float:right;*/
   /*overflow-y: hidden;*/
   /*overflow-x: hidden;*/
-  @include horiz-trans;
+  @include horizTrans;
 }
 
 @import "images";

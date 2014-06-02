@@ -10,7 +10,7 @@
 /*font-family: "Georgia", serif;*/
 //$contentFont: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
 $contentFont: "Raleway";
-$textMargin: 2em;
+$textMargin: 1.3em;
 //$menu-font: Verdana, Geneva, sans-serif;
 //$menu-font: 'Segoe UI', sans-serif;
 $menuFont: "Raleway";
@@ -29,5 +29,7 @@ $headerFromColor: rgba(242, 242, 248, $headerTransparency);
 $headerToColor: rgba(255, 255, 255, $headerTransparency);
 $headerHeight: 5rem;
 
+$navHeight: 2rem;
+
 $caviarBackgroundColor: #333333;
-$sideWidth: 40%;
+$leftSideWidth: 15rem;

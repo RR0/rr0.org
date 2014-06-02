@@ -53,10 +53,10 @@ h2 {
   font-weight: normal;
   margin-top: 1.5em;
   margin-right: 0;
-  margin-left: -$textMargin;
+  margin-left: -0.85em;
   margin-bottom: 0;
   color: #666666;
-  @include gradient-from-left;
+  @include gradientFromLeft;
   padding-top: 0.35em;
   padding-bottom: 0.4em;
   padding-left: 5vw;

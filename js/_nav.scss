@@ -4,7 +4,7 @@ nav {
   left: 0;
   top: 0;
   right: 0;
-  z-index:9;
+  z-index: 9;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   > ul {
     overflow: auto; /* clearfix */
@@ -52,14 +52,14 @@ nav {
     }
     ul {
       // Outline menu
-      @include bottom-inner-shadow;
+      @include bottomInnerShadow;
       position: absolute;
       max-width: 80%;
       max-height: 99vh;
       overflow: scroll;
       z-index: -5;
       top: -100em;
-      @include transition(top, 0.3s, ease);
+      transition: top 0.3s ease;
       li {
         display: block;
         position: relative;
@@ -90,15 +90,42 @@ nav {
     float: right;
   }
 }
-/*@media (min-width: 1024px) {
+
+@media (min-width: 1024px) {
   nav {
-    width: $sideWidth;
+    width: $leftSideWidth;
     height: 100%;
+    ul {
+      background: none;
+      > li {
+        float: none;
+        display: block;
+        width: 100%;
+        ul {
+          border: 1px ridge;
+          padding-left: 2em;
+          > li {
+            float: none;
+            display: block;
+            > * {
+              width: 100%;
+            }
+          }
+          box-shadow: none;
+          position: static;
+        }
+        > * {
+          width: 100%;
+        }
+      }
+    }
   }
   #text {
-    left: $sideWidth;
+    left: $leftSideWidth;
+    position: absolute;
+    padding-top: $headerHeight;
   }
-}*/
+}
 
 nav ul li a:hover, .menu ul li .current {
   color: #FFF;

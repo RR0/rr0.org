@@ -15,7 +15,7 @@
                             </li>
                             <li tabindex="100" ng-click="titleClick()" ng-mouseover="titleOver()" ng-mouseleave="titleLeave()" class="constant">
                                 <span class="constant label" ng-bind-html="outline | unsafe" title="Titre de l'article"></span>
-                                <ul id="outline" ng-mouseover="outlineOver()" ng-mouseleave="outlineLeave()">
+                                <ul id="outline">
                                     <li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)" style="font-size:{{1.4-(0.2*s.level)}}em">
                                         <span ng-bind-html="s.label|unsafe"></span>
                                     </li>

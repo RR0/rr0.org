@@ -1,11 +1,11 @@
-$place-color: #000066;
+$placeColor: #000066;
 .place {
-  color: $place-color;
+  color: $placeColor;
 }
 
 .place:hover {
-  background-color: lighten($place-color, 78%);
-  color: lighten($place-color, 5%);
+  background-color: lighten($placeColor, 78%);
+  color: lighten($placeColor, 5%);
   border-radius: 0.2em;
 }
 
@@ -33,9 +33,9 @@ $place-color: #000066;
 }
 
 .map {
-  @include transition(width, 1s, ease);
-  @include transition(height, 1s, ease);
-  @include left-inner-shadow;
+  transition: width, 1s, ease;
+  transition: height, 1s, ease;
+  @include leftInnerShadow;
   border: 0;
   height: 0;
   padding: 0;

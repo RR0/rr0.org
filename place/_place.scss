@@ -1,3 +1,5 @@
+@import "../mixins";
+
 $placeColor: #000066;
 .place {
   color: $placeColor;
@@ -24,17 +26,13 @@ $placeColor: #000066;
 
   img {
     max-width: none;
-    -webkit-transition: none;
-    -moz-transition: none;
-    transition-property: none;
-    transition-duration: none;
-    transition-timing-function: none;
+
+    transition: none;
   }
 }
 
 .map {
-  transition: width, 1s, ease;
-  transition: height, 1s, ease;
+  transition: width $transitionDuration ease, height $transitionDuration ease;
   @include leftInnerShadow;
   border: 0;
   height: 0;

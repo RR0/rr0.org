@@ -16,10 +16,7 @@ caption {
 
 figure {
   display: table;
-  transition: width 1s ease, height 1s ease;
-  transition-property: width, height;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
+  transition: width $transitionDuration ease, height $transitionDuration ease;
   max-width: 75%;
   max-height: 90%;
   margin: 0 2vw 0 2vw;

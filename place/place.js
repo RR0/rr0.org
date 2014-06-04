@@ -158,16 +158,23 @@ angular.module('rr0.place', [])
             }
         }
 
-        var mapUpdateCallbacks = [mapResize];
-
-        function onceMapIsLoaded() {
-            geocodeAll(toGeocode);
-            onTransitionEnd(org.rr0.contentsZone, mapUpdateCallbacks);
+        function addMapButton() {
             var element = createNavElement('toggleMap');
             element.innerHTML = "<a href='#'><span><span class='iconic map_pin_fill'></span></span></a>";
             element.title = 'Affiche carte';
             element.onclick = toggleMap;
             headResized();
+        }
+
+        var mapUpdateCallbacks = [mapResize];
+
+        function onceMapIsLoaded() {
+            geocodeAll(toGeocode);
+            addMapButton();
+//            if (org.rr0.getScreenWidth() > 1024) {
+//                mapShow();
+//            }
+            onTransitionEnd(org.rr0.contentsZone, mapUpdateCallbacks);
         }
 
         function isMapWidthAvailable() {
@@ -257,6 +264,9 @@ angular.module('rr0.place', [])
                     placeOnMap.show();
                 }
             },
+            refresh: function() {
+                mapResize();
+            },
             /**
              *
              * @param lat
@@ -311,6 +321,7 @@ angular.module('rr0.place', [])
                             elem.css('cursor', 'pointer');
                             elem.attr('title', 'Cliquez pour voir la carte');
                         }
+                        mapService.refresh();
                     });
                 }
             }

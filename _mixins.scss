@@ -21,7 +21,7 @@
 }
 
 @mixin horizTrans {
-  transition: width, 0.3s, ease;
+  transition: width $transitionDuration ease;
 }
 
 @mixin bottomInnerShadow {

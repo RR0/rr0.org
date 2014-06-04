@@ -343,6 +343,17 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
         };
     }])
+    .directive('a', function () {
+      return {
+          restrict: 'E',
+          link: function(scope, elem, attrs) {
+              var a = elem[0];
+              if (a.hostname != location.host) {
+                  a.target = '_blank';
+              }
+          }
+      }
+    })
     .directive('section', ['navigationService', function (navigationService) {
         function addSec(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);

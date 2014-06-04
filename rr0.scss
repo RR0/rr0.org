@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @import "mixins";
 
 * {
@@ -32,7 +34,7 @@ body {
 #contents {
   @include bottomInnerShadow;
   /*float:left;*/
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: auto;
   z-index: 1;
   line-height: 1.5em;
@@ -471,7 +473,7 @@ table {
   tbody {
     display: block;
     max-height: 80vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     tr {
       display: table;
@@ -500,7 +502,7 @@ table {
 
 iframe {
   display: block;
-  overflow: scroll;
+  overflow: auto;
   .wide {
     border-radius: $borderRadius;
     border-style: ridge;

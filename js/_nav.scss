@@ -56,7 +56,7 @@ nav {
       position: absolute;
       max-width: 80%;
       max-height: 99vh;
-      overflow: scroll;
+      overflow: auto;
       z-index: -5;
       top: -100em;
       transition: top 0.3s ease;

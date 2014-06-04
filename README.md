@@ -41,11 +41,15 @@ Register texts as to be automatically linked to l.
 Register nouns as to be automatically linked to l. 
 That means that the plural of the nouns will be linked as well.
 
+### a ###
+This directive overrides the standard `<a href="someURL">` HTML tag to automatically add a `target="_blank"` attribute if `someURL` is an
+ external URL (containing a different domain name).
+
 ## Content ##
 
 ### time ###
 
-This directive overrides the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable date 
+This directive overrides the standard `<time>` HTML5 tag to automate the rendering of a full human-readable date 
 (including day of week) or duration.
 
 For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration, respectively).

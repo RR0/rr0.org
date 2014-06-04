@@ -344,27 +344,36 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         };
     }])
     .directive('section', ['navigationService', function (navigationService) {
+        function addSec(sectionTitle, scope, elem) {
+            var section = navigationService.addSection(sectionTitle);
+            scope.level = section.level;
+            scope.sectionTitle = section.label;
+            elem[0].id = section.id;
+        }
+
         return {
             restrict: 'E',
             transclude: true,
-            scope: {
-                title: '@title'
-            },
+            scope: {title: '@title'},
             link: {
                 pre: function (scope, elem, attrs) {
-                    if (attrs.title) {
-                        var section = navigationService.addSection(attrs.title);
-                        scope.level = section.level;
-                        scope.sectionTitle = section.label;
-                        elem[0].id = section.id;
+                    var sectionTitle = attrs.title;
+                    if (sectionTitle) {
+                        addSec(sectionTitle, scope, elem);
                     }
                 },
                 post: function (scope, elem, attrs) {
+                    if (!scope.title) {
+                        var titleElem = angular.element(elem.children()[1]).children()[0];
+                        var sectionTitle = titleElem.outerHTML;
+                        angular.element(titleElem).remove();
+                        addSec(sectionTitle, scope, elem);
+                    }
                     navigationService.currentLevel--;
                     scope.level = navigationService.currentLevel;
                 }
             },
-            template: '<h1>{{sectionTitle}}</h1><div ng-transclude></div> '
+            template: '<h1><span ng-bind-html="sectionTitle"></span></h1><div ng-transclude></div> '
         };
     }])
     .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $http, $log, $timeout, peopleService) {

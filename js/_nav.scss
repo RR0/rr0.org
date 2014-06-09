@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../mixins";
 
 nav {
   left: 0;
@@ -26,6 +26,9 @@ nav {
       border-right: none;
     }
     li {
+      * {
+        margin: 0;
+      }
       a {
         text-decoration: none;
         padding: 0.3em 0.7em;
@@ -52,9 +55,11 @@ nav {
     }
     ul {
       // Outline menu
+      font-size: 0.7em;
+      padding: 0;
       @include bottomInnerShadow;
       position: absolute;
-      max-width: 80%;
+      max-width: 90%;
       max-height: 99vh;
       overflow: auto;
       z-index: -5;
@@ -100,10 +105,9 @@ nav {
       > li {
         float: none;
         display: block;
-        width: 100%;
         ul {
           border: 1px ridge;
-          padding-left: 2em;
+          margin-left: 10%;
           > li {
             float: none;
             display: block;

@@ -8,6 +8,7 @@
   letter-spacing: .01rem;
   font-weight: 400;
   line-height: 1.8;
+  box-sizing: 100%;
 }
 
 html {
@@ -66,6 +67,22 @@ body {
       }
     }
     li {
+      margin-top: 0.5em;
+      padding-right: 0.8em;
+      border-right: 0.4em solid rgba(255, 255, 255, 0);
+    }
+  }
+  section {
+    text-align: justify;
+    vertical-align: sub;
+    time {
+      font-weight: bold;
+      &.duration {
+        font-weight: normal;
+        font-family: monospace;
+      }
+    }
+    article {
       margin-top: 0.5em;
       padding-right: 0.8em;
       border-right: 0.4em solid rgba(255, 255, 255, 0);

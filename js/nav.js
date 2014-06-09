@@ -278,6 +278,9 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         this.menu = [];
 
         this.addSection = function (l) {
+            if (l.indexOf('<h') <0) {
+                l = '<h1>' + l + '</h1>';
+            }
             this.currentLevel++;
             var levelSections = this.sections[this.currentLevel];
             if (typeof levelSections !== "array") {
@@ -287,7 +290,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             levelSections.push(l);
             var section = {
                 label: l,
-                id: 'section' + index,
+                id: 's' + index,
                 level: this.currentLevel
             };
             $rootScope.$broadcast('sectionAdded', section);
@@ -384,7 +387,38 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                     scope.level = navigationService.currentLevel;
                 }
             },
-            template: '<h1><span ng-bind-html="sectionTitle"></span></h1><div ng-transclude></div> '
+            template: '<span ng-bind-html="sectionTitle"></span><div ng-transclude></div> '
+        }; 
+    }]).directive('article', ['navigationService', function (navigationService) {
+        function addArt(sectionTitle, scope, elem) {
+            var section = navigationService.addSection(sectionTitle);
+            scope.level = section.level;
+            scope.sectionTitle = section.label;
+            elem[0].id = section.id;
+        }
+
+        return {
+            restrict: 'E',
+            transclude: true,
+            scope: {title: '@title'},
+            link: {
+                pre: function (scope, elem, attrs) {
+                    var sectionTitle = attrs.title;
+                    if (sectionTitle) {
+                        addArt(sectionTitle, scope, elem);
+                    }
+                },
+                post: function (scope, elem, attrs) {
+                    if (!scope.title) {
+                        var titleElem = angular.element(elem.children()[0]).children()[0];
+                        var sectionTitle = titleElem.outerHTML;
+                        addArt(sectionTitle, scope, elem);
+                    }
+                    navigationService.currentLevel--;
+                    scope.level = navigationService.currentLevel;
+                }
+            },
+            template: '<p ng-transclude></p> '
         };
     }])
     .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $http, $log, $timeout, peopleService) {
@@ -678,11 +712,12 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             var endLocation = getEndLocation(anchor);
             var distance = endLocation - startLocation;
 
+            var runAnimation;
             // Function to stop the scrolling animation
             var stopAnimationIfRequired = function () {
                 var currentLocation = scrolled.scrollTop;
                 if (currentLocation == endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight )) {
-                    clearInterval(runAnimation);
+                    cancelAnimationFrame(runAnimation);
                     updateURL(url, anchor);
                 }
             };
@@ -691,6 +726,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             var percentage, position;
 
             var animateScroll = function () {
+                runAnimation = requestAnimationFrame(animateScroll);
                 timeLapsed += 16;
                 percentage = timeLapsed / duration;
                 percentage = percentage > 1 ? 1 : percentage;
@@ -699,13 +735,13 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 stopAnimationIfRequired();
             };
             // Loop the animation function
-            var runAnimation = setInterval(animateScroll, 16);
+            animateScroll();
         }
 
         $scope.sectionClick = function (section) {
             var anchor = document.getElementById(section.id);   // anchor.scrollIntoView(true, 'smooth');
             hideOutline();
-            smoothScroll(anchor, 500, false);
+            smoothScroll(anchor, 500, true);
         };
         $rootScope.$on('sectionAdded', function (event, section) {
 //            for (var i = 2; i < section.level; i++) {

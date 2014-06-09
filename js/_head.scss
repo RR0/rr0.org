@@ -15,7 +15,7 @@ header {
   h1 {
     background-size: cover !important;
     background-position: center !important;
-    background-image: linear-gradient(to right, rgb(224, 224, 233) 0%,rgb(255, 255, 255) 50%,rgba(255, 255, 255, 0.5) 100%);
+    background-image: linear-gradient(to right, rgb(224, 224, 233) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.5) 100%);
     font-family: inherit;
     box-sizing: border-box;
     max-height: $headerHeight;
@@ -64,10 +64,6 @@ h2 {
   width: 50%;
 }
 
-section > h1 {
-  @extend h2;
-}
-
 h3 {
   font-family: $contentFont;
   background: transparent;
@@ -82,10 +78,6 @@ h3 {
   border-bottom: thin dotted #DBDBDB;
 }
 
-section section > h1 {
-  @extend h3;
-}
-
 h4 {
   font-family: $contentFont;
   font-size: 16px;
@@ -97,6 +89,18 @@ h4 {
   border-bottom: thin dotted #DBDBDB;
   width: 50%;
 }
+
+section {
+  h1 {
+    @extend h2;
+  }
+  section {
+    h1 {
+      @extend h3;
+    }
+  }
+}
+
 
 /*header:hover {*/
 /*top:0;*/

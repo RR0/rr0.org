@@ -56,7 +56,13 @@ angular.module('rr0.place', [])
                     };
                     myMap = new google.maps.Map(document.getElementById(mapZone.id), mapOptions);
                     totalBounds = new google.maps.LatLngBounds();
-
+                    peoplePath = new google.maps.Polyline({
+                        path: peoplePoints,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.5,
+                        strokeWeight: 3
+                    });
+                    peoplePath.setMap(myMap);
                     callback(geocoder);
                 }
             });
@@ -68,7 +74,7 @@ angular.module('rr0.place', [])
             geocoder.geocode({ 'address': place.name}, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var loc = results[0].geometry.location;
-                    peoplePoints.push(loc);
+                    peoplePath.getPath().push(loc);
                     totalBounds.extend(loc);
                     var placeBounds = new google.maps.LatLngBounds();
                     placeBounds.extend(loc);
@@ -159,8 +165,8 @@ angular.module('rr0.place', [])
         }
 
         function addMapButton() {
-            var element = createNavElement('toggleMap');
-            element.innerHTML = "<a href='#'><span><span class='iconic map_pin_fill'></span></span></a>";
+            var element = document.querySelector('.toggleMap');
+            element.style.display = 'inline-block';
             element.title = 'Affiche carte';
             element.onclick = toggleMap;
             headResized();
@@ -194,11 +200,11 @@ angular.module('rr0.place', [])
         function mapShow() {
             if (!isMapVisible()) {
                 if (isMapWidthAvailable()) {
-                    var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
-                    if (sideWidth <= 0) {
-                        org.rr0.leftWidth = org.rr0.getScreenWidth() * 0.6;
-                    }
-                    splitWithMap(org.rr0.leftWidth);
+//                    var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
+//                    if (sideWidth <= 0) {
+//                        org.rr0.leftWidth = org.rr0.getScreenWidth() * 0.6;
+//                    }
+//                    splitWithMap(org.rr0.leftWidth);
                 } else {
                     org.rr0.time.drawChart();
                     getSwipe().next();
@@ -286,6 +292,13 @@ angular.module('rr0.place', [])
                     if (zoom) map.setZoom(zoom);
                     var ctaLayer = new google.maps.KmlLayer(kmlUrl);
                     ctaLayer.setMap(map);
+                    peoplePath = new google.maps.Polyline({
+                        path: peoplePoints,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.5,
+                        strokeWeight: 3
+                    });
+                    peoplePath.setMap(map);
                 });
             }
         };

@@ -9,11 +9,12 @@
 /*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
 /*font-family: "Georgia", serif;*/
 //$contentFont: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
-$contentFont: "Raleway";
+//$contentFont: "Raleway";
+$contentFont: 'Open Sans', sans-serif;
 $textMargin: 1.3em;
 //$menu-font: Verdana, Geneva, sans-serif;
 //$menu-font: 'Segoe UI', sans-serif;
-$menuFont: "Raleway";
+$menuFont: $contentFont;
 //$menu-font: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 $transitionDuration: 0.3s;
 
@@ -33,4 +34,9 @@ $headerHeight: 5rem;
 $navHeight: 2rem;
 
 $caviarBackgroundColor: #333333;
-$leftSideWidth: 15rem;
+$hoverColor: rgba(11, 117, 178, 0.4);
+
+$selectionPadding: 0.3rem;
+$selectedColor: rgba(11, 117, 178, 0.2);
+
+$leftSideWidth: 20vw;

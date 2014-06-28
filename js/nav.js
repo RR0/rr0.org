@@ -264,6 +264,7 @@ function createNavLink(t, l, tt, c) {
 }
 
 style = null;
+var hiddenPos = '-100em';
 
 //var titleTag;
 angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
@@ -278,7 +279,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         this.menu = [];
 
         this.addSection = function (l) {
-            if (l.indexOf('<h') <0) {
+            if (l.indexOf('<h') < 0) {
                 l = '<h1>' + l + '</h1>';
             }
             this.currentLevel++;
@@ -295,8 +296,11 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             };
             $rootScope.$broadcast('sectionAdded', section);
             return section;
-        }
+        };
     }])
+/**
+ * Sets controller's title to be displayed from the title header tag.
+ */
     .directive('title', [function () {
         return {
             restrict: 'E',
@@ -305,17 +309,25 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
         };
     }])
+/**
+ * Picks last image from contents to set header background
+ */
     .directive('img', [function () {
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
-                var h1 = document.querySelector('header h1');
-                var style = window.getComputedStyle(h1).backgroundImage;
-                style += ', url(\'' + attrs.src + '\')';
-                h1.style.backgroundImage = style;
+                var pageHeading = document.querySelector('header h1');
+                if (pageHeading) {
+                    var style = window.getComputedStyle(pageHeading).backgroundImage;
+                    style += ', url(\'' + attrs.src + '\')';
+                    pageHeading.style.backgroundImage = style;
+                }
             }
         };
     }])
+/**
+ * Sets navigation menu items from relationship links meta tags.
+ */
     .directive('link', [function () {
         return {
             restrict: 'E',
@@ -346,17 +358,23 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
         };
     }])
-    .directive('a', function () {
-      return {
-          restrict: 'E',
-          link: function(scope, elem, attrs) {
-              var a = elem[0];
-              if (a.hostname != location.host) {
-                  a.target = '_blank';
-              }
-          }
-      }
+/**
+* Adds "target=_blank" to external links so they will be opened in separate tabs
+*/
+.directive('a', function () {
+        return {
+            restrict: 'E',
+            link: function (scope, elem, attrs) {
+                var a = elem[0];
+                if (a.hostname != location.host) {
+                    a.target = '_blank';
+                }
+            }
+        }
     })
+/**
+ * Registers each encountered HTML5 "section" tag as an document outline entry
+ */
     .directive('section', ['navigationService', function (navigationService) {
         function addSec(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);
@@ -388,8 +406,12 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 }
             },
             template: '<span ng-bind-html="sectionTitle"></span><div ng-transclude></div> '
-        }; 
-    }]).directive('article', ['navigationService', function (navigationService) {
+        };
+    }])
+/**
+* Registers each encountered HTML5 "article" tag as an document outline entry
+*/
+.directive('article', ['navigationService', function (navigationService) {
         function addArt(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);
             scope.level = section.level;
@@ -421,7 +443,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             template: '<p ng-transclude></p> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$http', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $http, $log, $timeout, peopleService) {
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $log, $timeout, peopleService) {
         function getTitle() {
             if (!$scope.title) {
                 $scope.title = time.getYear();
@@ -467,6 +489,9 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         $scope.initPeople = function (p) {
             setPeopleName(p);
         };
+        $scope.initLang = function (l) {
+
+        };
         $scope.addNavElement = function (c) {
             return createNavElement(c);
         };
@@ -494,19 +519,11 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         var scrolled = document.getElementById("contents");
         var header = document.querySelector('header');
         var nav = document.querySelector('nav');
-        var outline = document.getElementById('outline');
+        var outline = document.querySelector('.outline');
         var search = document.getElementById('search');
-
-        function getNavHeight() {
-            return nav.offsetHeight > 100 ? 0 : nav.offsetHeight;
-        }
 
         function isHeaderCollapsed() {
             return window !== top || scrolled.scrollTop > header.offsetHeight - getNavHeight();
-        }
-
-        function getHeadingHeight() {
-            return getNavHeight();
         }
 
         function updateHeading(digesting) {
@@ -547,56 +564,21 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             updateHeading();
         };
         function showOutline() {
-            outline.style.top = getHeadingHeight() + 'px';
+            outline.style.top = $scope.getHeadingHeight() + 'px';
         }
-
-        var hiddenPos = '-100em';
 
         function hideOutline() {
             outline.style.top = hiddenPos;
         }
 
-        function isSearchVisible() {
-            return search.style.top === hiddenPos;
+        function getNavHeight() {
+            return nav.offsetHeight > 80 ? 0 : nav.offsetHeight;
         }
 
-        function showSearch() {
-            search.style.top = getHeadingHeight() + 'px';
-        }
+        $scope.getHeadingHeight=function () {
+            return getNavHeight();
+        };
 
-        function hideSearch() {
-            search.style.top = hiddenPos;
-        }
-
-        $scope.searchInput = '';
-        $scope.doSearch = function () {
-            $http.get("https://www.googleapis.com/customsearch/v1?key=AIzaSyCBM8ZUsYyJNdwKTKxoARTr673_8IaWKSo&cx=014557949845581334805:gdnqsazbu8i&q=" + $scope.searchInput)
-                .success(function (data, status, headers, config) {
-                    $scope.searchResults = [];
-                    if (data.searchInformation.totalResults > 0) {
-                        $scope.searchResults = data.items;
-                    } else {
-                        log("No results for '" + $scope.searchInput + "'");
-                    }
-                    showSearch();
-                });
-        };
-        $scope.searchKey = function (event, item) {
-            if (event.keyCode === 40) {
-                if (!isSearchVisible()) {
-                    showSearch();
-                } else {
-                    // Focus next search result
-                }
-                $scope.searchClick(item);
-            }
-        };
-        $scope.searchClick = function (item) {
-            document.body.className += ' wait';
-            $timeout(function () {
-                window.location = item.link;
-            }, 10);
-        };
         $scope.init = function (s, sLink, c, cLink, p, pLink, n, nLink) {
             navInit(s, sLink, c, cLink, p, pLink, n, nLink);
             if (window === top) {
@@ -678,23 +660,12 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         $scope.titleLeave = function () {
             hideOutline();
         };
-        $scope.searchOver = function () {
-            showSearch();
-        };
-        $scope.searchLeave = function () {
-            search.style.top = hiddenPos;
-        };
-        function smoothScroll(anchor, duration, url) {
+        function smoothScroll(anchor, duration) {
             var easingPattern = function (duration) {
                 return duration < 0.5 ? 4 * duration * duration * duration : (duration - 1) * (2 * duration - 2) * (2 * duration - 2) + 1; // acceleration until halfway, then deceleration
             };
-            var updateURL = function (url, anchor) {
-                if (url === true && history.pushState) {
-                    window.location.hash = '#' + anchor.id;
-                }
-            };
             // Get the height of a fixed header if one exists
-            var headerHeight = getHeadingHeight();
+            var headerHeight = $scope.getHeadingHeight();
 
             // Calculate how far to scroll
             var startLocation = scrolled.scrollTop;
@@ -726,7 +697,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             var percentage, position;
 
             var animateScroll = function () {
-                runAnimation = requestAnimationFrame(animateScroll);
+                runAnimation = requestAnimationFrame(animateScroll, scrolled);
                 timeLapsed += 16;
                 percentage = timeLapsed / duration;
                 percentage = percentage > 1 ? 1 : percentage;
@@ -741,7 +712,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         $scope.sectionClick = function (section) {
             var anchor = document.getElementById(section.id);   // anchor.scrollIntoView(true, 'smooth');
             hideOutline();
-            smoothScroll(anchor, 500, true);
+            smoothScroll(anchor, 500);
         };
         $rootScope.$on('sectionAdded', function (event, section) {
 //            for (var i = 2; i < section.level; i++) {

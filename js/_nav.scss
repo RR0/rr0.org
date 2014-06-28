@@ -1,6 +1,10 @@
 @import "../mixins";
 
+.outline {
+  font-size: 0.7em;
+}
 nav {
+  font-size: 0.9em;
   left: 0;
   top: 0;
   right: 0;
@@ -16,46 +20,36 @@ nav {
     background: linear-gradient(left top, $headerFromColor, $headerToColor);
     margin: 0;
     padding: 0;
-    li * {
-      font-family: $menuFont;
-    }
-    li.alternate {
-      color: lightgray;
-    }
-    li:hover {
-      border-right: none;
-    }
     li {
+      padding: $selectionPadding;
       * {
-        margin: 0;
+        font-family: $menuFont;
       }
-      a {
-        text-decoration: none;
-        padding: 0.3em 0.7em;
-        width: 100%;
+      &.alternate {
+        color: lightgray;
+      }
+      &:hover {
+        border-right: none;
       }
       span.magnifying_glass {
         padding-left: 0.245em;
       }
       .label {
-        padding: 0 0.7em;
+        padding: 0 $selectionPadding;
         ul li:hover {
           cursor: pointer;
         }
       }
     }
+//    font-size: 0.9em;
     > li {
-      padding: 0;
-      border: none;
-      margin: 0;
       float: left;
       line-height: 2em;
-      font-size: 0.9em;
+      padding: 0 $selectionPadding;
       display: inline;
     }
     ul {
       // Outline menu
-      font-size: 0.7em;
       padding: 0;
       @include bottomInnerShadow;
       position: absolute;
@@ -64,64 +58,83 @@ nav {
       overflow: auto;
       z-index: -5;
       top: -100em;
-      transition: top 0.3s ease;
+      transition: top $transitionDuration ease;
       li {
+        a {
+          display: block;
+        }
+        h1 {
+          padding: 0;
+          margin: 0;
+        }
         display: block;
         position: relative;
-        padding: 0.3em 0.7em;
+        padding: $selectionPadding;
         float: none;
-        &:hover, &:focus {
+        &:focus {
           color: #FFF;
-          background-color: #0b75b2;
+          background-color: $hoverColor;
           text-decoration: none;
           cursor: pointer;
         }
-        .outline1 {
-          font-size: 1.4em;
-        }
-        .outline2 {
-          font-size: 1.2em;
-        }
-        .outline3 {
-          font-size: 1em;
-        }
-        .outline4 {
-          font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.toggleMap {
+  * {
+    display: inline-block;
+  }
+  float: right;
+  display: none;
+  .label {
+    display: none;
+  }
+}
+
+@import "search/search";
+
+@media (max-width: 768px) {
+  aside {
+    width: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  aside {
+    width: 40%;
+  }
+  .search {
+//    font-size: 1em;
+    label {
+      display: inline;
+    }
+  }
+  nav {
+    overflow: auto;
+    width: $leftSideWidth;
+    height: 100%;
+    * {
+      display: block;
+    }
+    ul {
+      background: none;
+      li {
+        display: block;
+        padding: $selectionPadding;
+        float: none;
+        ul {
+          margin-left: 10%;
+          box-shadow: none;
+          position: static;
         }
       }
     }
   }
   .toggleMap {
-    float: right;
-  }
-}
-
-@media (min-width: 1024px) {
-  nav {
-    width: $leftSideWidth;
-    height: 100%;
-    ul {
-      background: none;
-      > li {
-        float: none;
-        display: block;
-        ul {
-          border: 1px ridge;
-          margin-left: 10%;
-          > li {
-            float: none;
-            display: block;
-            > * {
-              width: 100%;
-            }
-          }
-          box-shadow: none;
-          position: static;
-        }
-        > * {
-          width: 100%;
-        }
-      }
+    .label {
+      display: inline;
     }
   }
   #text {
@@ -131,9 +144,9 @@ nav {
   }
 }
 
-nav ul li a:hover, .menu ul li .current {
+.menu ul li .current {
   color: #FFF;
-  background-color: #0b75b2;
+  background-color: $hoverColor;
   text-decoration: none;
 }
 
@@ -147,24 +160,24 @@ nav ul li a:hover, .menu ul li .current {
 
     li {
       float: left;
-      line-height: 2em;
+//      line-height: 2em;
       font-size: 0.9em;
       display: inline;
       border: none;
 
       a {
         text-decoration: none;
-        color: #0b75b2;
-        padding: 0.3em 0.7em;
+        color: $hoverColor;
+        padding: $selectionPadding;
         border: none;
       }
     }
   }
 }
 
-.menu ul li a:hover, .menu ul li a:active, .menu ul li a:focus, .menu ul li .current {
+.menu ul li a:active, .menu ul li a:focus, .menu ul li .current {
   color: #FFF;
-  background-color: #0b75b2;
+  background-color: $hoverColor;
   text-decoration: none;
   border: none;
 }

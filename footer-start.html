@@ -2,6 +2,10 @@
 <script src="/node_modules/traceur/bin/traceur-runtime.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.js"></script>
+<script src="/js/fb/fb.js"></script>
+<script src="/js/fb/friend/fb-friend.js"></script>
+<script src="/js/fb/friends/fb-friends.js"></script>
+<script src="/js/fb/list/fb-lists.js"></script>
 <!--#else -->
 <script src="/node_modules/traceur/bin/traceur-runtime.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
@@ -19,11 +23,13 @@
 <script src="/time/time.es5.js"></script>
 <script src="/time/time-module.es5.js"></script>
 <script src="/js/nav.es5.js"></script>
+<script src="/js/search/search.es5.js"></script>
 <!--#else -->
 <script src="/people/people.es5.min.js"></script>
 <script src="/time/time.es5.min.js"></script>
 <script src="/time/time-module.es5.min.js"></script>
 <script src="/js/nav.es5.min.js"></script>
+<script src="/js/search/search.es5.min.js"></script>
 <!--#endif -->
 <!--#if expr="${QUERY_STRING}=/debug/" -->
 <script src="/js/units.js"></script><!--#else -->
@@ -38,5 +44,5 @@
 <script src="/js/foot.es5.min.js"></script>
 <!--#endif -->
 <!--#if expr="${QUERY_STRING}=/debug/" -->
-<script src="/js/index.js"></script><!--#else -->
-<script src="/js/index.min.js"></script><!--#endif -->
+<script src="/js/index.es5.js"></script><!--#else -->
+<script src="/js/index.es5.min.js"></script><!--#endif -->

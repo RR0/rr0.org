@@ -83,7 +83,9 @@ window.org = (function () {
                 sidePane = document.getElementsByClassName("aside")[0];
                 if (!sidePane) {
                     sidePane = document.createElement("aside");
-                    this.contentsZone.parentNode.appendChild(sidePane);
+                    if (this.contentsZone) {
+                        this.contentsZone.parentNode.appendChild(sidePane);
+                    }
                     var divider = document.createElement("div");
                     divider.className = "divider";
                     sidePane.appendChild(divider);
@@ -630,27 +632,28 @@ var copyright;
 
 // requestAnimationFrame() shim by Paul Irish
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-(function() {
+(function () {
     var lastTime = 0;
     var vendors = ['webkit', 'moz'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
         window.cancelAnimationFrame =
-            window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+            window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
 
     if (!window.requestAnimationFrame)
-        window.requestAnimationFrame = function(callback, element) {
+        window.requestAnimationFrame = function (callback, element) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-                timeToCall);
+            var id = window.setTimeout(function () {
+                callback(currTime + timeToCall);
+            }, timeToCall);
             lastTime = currTime + timeToCall;
             return id;
         };
 
     if (!window.cancelAnimationFrame)
-        window.cancelAnimationFrame = function(id) {
+        window.cancelAnimationFrame = function (id) {
             clearTimeout(id);
         };
 }());

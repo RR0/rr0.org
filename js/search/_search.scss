@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.search {
+  form {
+    * {
+      display: inline;
+    }
+    label {
+      display: none;
+    }
+    input {
+      width: 80%;
+      max-width: 30em;
+      height: 80%;
+      max-height: 1.5em;
+    }
+    .iconic.magnifying_glass {
+      cursor: pointer;
+    }
+  }
+  ul {
+    transition: height $transitionDuration ease;
+    display: block;
+    li {
+      display: block;
+    }
+  }
+}

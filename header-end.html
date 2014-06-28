@@ -1,46 +1,40 @@
 </head>
 <body>
-	<div id='slider' class='swipe'>
-		<div id="main" role="main" class="swipe-wrap">
-			<div id="contents">
+    <div id='slider' class='swipe'>
+        <div id="main" role="main" class="swipe-wrap">
+            <div id="contents">
                 <div ng-controller="HeadCtrl">
-                    <header ng-init="initTitle('<!--#echo var="title" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->')">
-					    <h1 ng-bind-html="title" ng-show="!isFramed()" title="{{title}}">&nbsp;</h1>
-				    </header>
+                    <header ng-init="initTitle('<!--#echo var="title" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->');initLang('<!--#echo var="HTTP_ACCEPT_LANGUAGE" -->');">
+                    <h1 ng-bind-html="title" ng-show="!isFramed()" title="{{title}}">&nbsp;</h1>
+                    </header>
                     <nav>
                         <ul>
                             <li ng-repeat="p in ps" class="constant {{p.style}}">
                                 <a ng-if="p.link && p.label" href="{{p.link}}">
-                                    <span ng-bind-html="p.label | unsafe" title="{{p.title}}"></span> </a>
+                                    <span ng-bind-html="p.label | unsafe" title="{{p.title}}"></span>
+                                </a>
                             </li>
                             <li tabindex="100" ng-click="titleClick()" ng-mouseover="titleOver()" ng-mouseleave="titleLeave()" class="constant">
                                 <span class="constant label" ng-bind-html="outline | unsafe" title="Titre de l'article"></span>
-                                <ul id="outline">
+                                <ul class="outline">
                                     <li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)" style="font-size:{{1.4-(0.2*s.level)}}em">
-                                        <span ng-bind-html="s.label|unsafe"></span>
+                                        <a href="#{{s.id}}"><span ng-bind-html="s.label|unsafe"></span></a>
                                     </li>
                                 </ul>
                             </li>
                             <li ng-repeat="n in ns" class="constant {{n.style}}">
-                                <a ng-if="n.link && n.label" href="{{n.link}}">
-                                    <span ng-bind-html="n.label | unsafe" title="{{n.title}}"></span> </a>
+                                <a ng-if="n.link && n.label" href="{{n.link}}"><span ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
                             </li>
-                            <li class="constant" ng-mouseover="searchOver()" ng-cloak ng-show="!isFramed()">
-                                <form ng-submit="doSearch()">
-                                    <input type="search" ng-model="searchInput" tabindex="200" ng-keydown="searchKey($event)">
-                                    <span class="iconic magnifying_glass" title="Rechercher" ng-click="doSearch()"></span>
-                                    <ul id="search" ng-mouseleave="searchLeave()">
-                                        <li ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{r.snippet}}" ng-click="searchClick(r)">
-                                            <span ng-bind-html="r.htmlTitle | unsafe"></span>
-                                        </li>
-                                    </ul>
-                                </form>
+                            <li class="constant" ng-cloak ng-show="!isFramed()">
+                                <div class="search"></div>
+                            </li>
+                            <li class="toggleMap constant">
+                                <a href='#'><span class="label">Carte</span> <span><span class='iconic map_pin_fill'></span></span></a>
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <div id="text">
-					<div class="author" ng-controller="AuthorCtrl" ng-show="authors.length" ng-cloak>
-						<span ng-repeat="aa in authors">{{$first?'':' & '}}<a href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>:
-						<span ng-bind-html="copyright"></span>, <span ng-bind-html="docTime"></span>
-					</div>
+                    <div class="author" ng-controller="AuthorCtrl" ng-show="authors.length" ng-cloak>
+                        <span ng-cloak ng-repeat="aa in authors">{{$first?'':' & '}}<a href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>: <span ng-bind-html="copyright"></span>, <span ng-bind-html="docTime"></span>
+                    </div>

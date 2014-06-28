@@ -1,14 +1,15 @@
 @charset "utf-8";
 
+@import "reset";
 @import "mixins";
 
 * {
   font-family: $contentFont;
   //  font-size: 22px;
   letter-spacing: .01rem;
-  font-weight: 400;
-  line-height: 1.8;
-  box-sizing: 100%;
+//  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
 }
 
 html {
@@ -41,6 +42,7 @@ body {
   line-height: 1.5em;
   width: 100%;
   //resize: horizontal;
+
   @include horizTrans;
 
   background: /* Shadow covers */ linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */ radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)) 0 100%;
@@ -185,14 +187,9 @@ p {
 a {
   color: #006699;
   text-decoration: none;
-  border-radius: $borderRadius;
-  cursor: pointer;
+  @include selectable;
 }
 
-a:hover {
-  text-decoration: underline;
-  margin-bottom: 0;
-}
 
 ol {
   list-style: decimal outside;
@@ -331,19 +328,6 @@ form {
   /*color: white;*/
 }
 
-.note a:hover, .note:active {
-  background: #666666;
-  color: white;
-}
-
-.source:before {
-  content: " ";
-}
-
-.source:after {
-  content: " ";
-}
-
 .source {
   vertical-align: super;
   font-size: 0.7em;
@@ -352,23 +336,6 @@ form {
   font-weight: normal;
   font-variant: normal;
   color: #666666;
-}
-
-.source:hover, .source:active {
-  background: #666666;
-}
-
-.source a:hover, .source:active {
-  background: #666666;
-  color: white;
-}
-
-.source:before {
-  content: " ";
-}
-
-.source:after {
-  content: " ";
 }
 
 /*section {*/
@@ -541,7 +508,7 @@ iframe, object, embed {
 .left {
   @extend .image-container;
   float: left;
-  margin-left: -0.3em;
+  margin-left: 0;
 
   figcaption {
     text-align: left;
@@ -555,7 +522,7 @@ iframe, object, embed {
 .right {
   @extend .image-container;
   float: right;
-  margin-right: -0.3em;
+  margin-right: 0;
 
   figcaption {
     text-align: right;
@@ -630,6 +597,10 @@ iframe, object, embed {
   float: left;
   position: relative;
   height: 100%;
+}
+
+code {
+  font-family: monospace;
 }
 
 @import "place/place";

@@ -91,30 +91,34 @@ angular.module('rr0.foot', [])
             e.innerHTML = "<a href='#" + footId + "'>" + footLabel + "</a>";
         }
 
-        this.addNote = function (e) {
-            var footCount = ++this.notesCount;
-            var footLabel = String.fromCharCode(96 + footCount);
-            add(e, notesHolder, footLabel);
-        };
         this.addSource = function (e) {
             var footCount = ++this.sourcesCount;
             var footLabel = '' + footCount;
             add(e, sourcesHolder, footLabel);
         };
     }])
-    .directive('note', ['footService', function (footService) {
+    .directive('note', ['footService', function(footService) {
         return {
             restrict: 'C',
-            link: function (scope, elem, attrs) {
-                footService.addNote(elem);
+            scope: true,
+            transclude: true,
+            template: '<a href="#" title="Cliquez pour voir/cacher" ng-click="visible=!visible"> {{anchor}} </a><span ng-show="visible">– <span ng-transclude></span></span>',
+            link: function(scope, elem, attrs) {
+                var footCount = ++footService.notesCount;
+                scope.anchor = String.fromCharCode(96 + footCount);
+                scope.visible = false;
             }
         };
-    }])
-    .directive('source', ['footService', function (footService) {
+    }]).directive('source', ['footService', function(footService) {
         return {
             restrict: 'C',
-            link: function (scope, elem, attrs) {
-                footService.addSource(elem);
+            scope: true,
+            transclude: true,
+            template: '<a href="#" title="Cliquez pour voir/cacher" ng-click="visible=!visible"> {{anchor}} </a><span ng-show="visible">– <span ng-transclude></span></span>',
+            link: function(scope, elem, attrs) {
+                var footCount = ++footService.sourcesCount;
+                scope.anchor = '' + footCount;
+                scope.visible = false;
             }
         };
     }])

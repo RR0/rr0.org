@@ -526,37 +526,30 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             return window !== top || scrolled.scrollTop > header.offsetHeight - getNavHeight();
         }
 
+        function setOutline(digesting, outlineHTML) {
+            if (digesting) {
+                $scope.outline = outlineHTML;
+            } else {
+                $scope.$apply(function () {
+                    $scope.outline = outlineHTML;
+                });
+            }
+        }
+
         function updateHeading(digesting) {
             var navElement = nav;
-//            var contents = document.getElementById('contents');
             if (isHeaderCollapsed()) {
                 navElement.style.position = 'fixed';
                 navElement.style.top = '0';
                 header.style.paddingBottom = getNavHeight() + 'px';
-//                contents.style.position='absolute';
-//                contents.style.top=getNavHeight() + 'px';
-                if (digesting) {
-                    $scope.outline = $scope.title;
-                } else {
-                    $scope.$apply(function () {
-                        $scope.outline = $scope.title;
-                    });
-                }
+                setOutline(digesting, $scope.title);
             } else {
                 navElement.style.position = 'absolute';
                 var titleHeight = 80;
                 navElement.style.top = titleHeight + 'px';
                 var text = scrolled.querySelector('#text');
                 text.style.position = 'absolute';
-//                contents.style.top='0';
-//                text.style.top = titleHeight + getNavHeight() + 'px';
-                if (digesting) {
-                    $scope.outline = 'Sommaire';
-                } else {
-                    $scope.$apply(function () {
-                        $scope.outline = 'Sommaire';
-                    });
-                }
+                setOutline(digesting, 'Sommaire');
             }
         }
 
@@ -601,7 +594,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 } else {
                     $scope.title = org.text(headTitle);
                 }
-                $scope.outline = 'Sommaire';
+                setOutline(true, 'Sommaire');
             }
 
             var alternate;
@@ -637,12 +630,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         $scope.initAuthor = function (a, aLink, c, cLink) {
             peopleService.addAuthor(a, aLink, c, cLink);
         };
-        $scope.sections = [
-            {
-                label: '⤒',
-                id: 'contents'
-            }
-        ];
+        $scope.sections = [ ];
         function isOutlineVisible() {
             return outline.style.top !== hiddenPos;
         }
@@ -689,7 +677,6 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 var currentLocation = scrolled.scrollTop;
                 if (currentLocation == endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight )) {
                     cancelAnimationFrame(runAnimation);
-                    updateURL(url, anchor);
                 }
             };
             // Set the animation variables to 0/undefined.
@@ -709,10 +696,14 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             animateScroll();
         }
 
-        $scope.sectionClick = function (section) {
-            var anchor = document.getElementById(section.id);   // anchor.scrollIntoView(true, 'smooth');
+        function scrollTo(id) {
+            var anchor = document.getElementById(id);   // anchor.scrollIntoView(true, 'smooth');
             hideOutline();
             smoothScroll(anchor, 500);
+        }
+
+        $scope.sectionClick = function (section) {
+            scrollTo(section.id);
         };
         $rootScope.$on('sectionAdded', function (event, section) {
 //            for (var i = 2; i < section.level; i++) {

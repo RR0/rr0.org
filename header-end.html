@@ -15,9 +15,11 @@
                                 </a>
                             </li>
                             <li tabindex="100" ng-click="titleClick()" ng-mouseover="titleOver()" ng-mouseleave="titleLeave()" class="constant">
-                                <span class="constant label" ng-bind-html="outline | unsafe" title="Titre de l'article"></span>
+                                <a href="#contents" ng-click="sectionClick('#contents')">
+                                    <span class="constant label" ng-bind-html="outline | unsafe" title="Début de l'article"></span>
+                                </a>
                                 <ul class="outline">
-                                    <li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)" style="font-size:{{1.4-(0.2*s.level)}}em">
+                                    <li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)">
                                         <a href="#{{s.id}}"><span ng-bind-html="s.label|unsafe"></span></a>
                                     </li>
                                 </ul>

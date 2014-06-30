@@ -289,9 +289,35 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             }
             var index = this.sections.length;
             levelSections.push(l);
+            function camelize(l) {
+                var camel = '';
+                var wasWord = false;
+                for (var i = 0; i < l.length; i++) {
+                    var s2 = l.charAt(i);
+                    switch (s2) {
+                        case '?':
+                        case '!':
+                        case ',':
+                        case '&':
+                        case '-':
+                        case '\'':
+                        case ' ':
+                            wasWord = true;
+                            break;
+                        default:
+                            if (wasWord) {
+                                s2 = s2.toUpperCase();
+                                wasWord = false;
+                            }
+                            camel += s2;
+                    }
+                }
+                return camel;
+            }
+
             var section = {
                 label: l,
-                id: 's' + index,
+                id: camelize(l),
                 level: this.currentLevel
             };
             $rootScope.$broadcast('sectionAdded', section);
@@ -359,9 +385,9 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         };
     }])
 /**
-* Adds "target=_blank" to external links so they will be opened in separate tabs
-*/
-.directive('a', function () {
+ * Adds "target=_blank" to external links so they will be opened in separate tabs
+ */
+    .directive('a', function () {
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -409,9 +435,9 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         };
     }])
 /**
-* Registers each encountered HTML5 "article" tag as an document outline entry
-*/
-.directive('article', ['navigationService', function (navigationService) {
+ * Registers each encountered HTML5 "article" tag as an document outline entry
+ */
+    .directive('article', ['navigationService', function (navigationService) {
         function addArt(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);
             scope.level = section.level;
@@ -516,7 +542,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
 
         }
 
-        var scrolled = document.getElementById("contents");
+        var scrolled = document.querySelector(".contents");
         var header = document.querySelector('header');
         var nav = document.querySelector('nav');
         var outline = document.querySelector('.outline');
@@ -547,7 +573,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
                 navElement.style.position = 'absolute';
                 var titleHeight = 80;
                 navElement.style.top = titleHeight + 'px';
-                var text = scrolled.querySelector('#text');
+                var text = scrolled.querySelector('.text');
                 text.style.position = 'absolute';
                 setOutline(digesting, 'Sommaire');
             }
@@ -568,7 +594,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             return nav.offsetHeight > 80 ? 0 : nav.offsetHeight;
         }
 
-        $scope.getHeadingHeight=function () {
+        $scope.getHeadingHeight = function () {
             return getNavHeight();
         };
 

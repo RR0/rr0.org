@@ -212,10 +212,7 @@ angular.module('rr0.place', [])
             }
         }
 
-        var mainDiv = document.getElementById("main");
-
         function splitWithMap(contentWidth) {
-            mainDiv.style.width = org.rr0.getScreenWidth() + "px";
             org.rr0.leftWidth = contentWidth;
             org.updateDivision();
         }
@@ -266,7 +263,6 @@ angular.module('rr0.place', [])
                     mapShow();
                 }
                 if (isMapVisible()) {
-                    mainDiv.style.width = org.rr0.getScreenWidth() + "px";
                     placeOnMap.show();
                 }
             },

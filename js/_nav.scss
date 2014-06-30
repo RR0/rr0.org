@@ -95,18 +95,21 @@ nav {
 
 @import "search/search";
 
-@media (max-width: 768px) {
+@media (max-width: $breakPoint1) {
   aside {
     width: 0;
   }
 }
 
-@media (min-width: 1024px) {
-  aside {
-    width: 40%;
+@media (max-width: $breakPoint2) {
+  .contents {
+    width: 100%;
   }
+}
+
+@media (min-width: $breakPoint1) {
   .search {
-//    font-size: 1em;
+    //    font-size: 1em;
     label {
       display: inline;
     }
@@ -137,10 +140,20 @@ nav {
       display: inline;
     }
   }
-  #text {
+  .text {
     left: $leftSideWidth;
     position: absolute;
     padding-top: $headerHeight;
+  }
+}
+
+
+@media (min-width: $breakPoint2) {
+  .contents {
+    width: 100%-$rightSideWidth;
+  }
+  aside {
+    width: $rightSideWidth;
   }
 }
 

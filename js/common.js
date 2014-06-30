@@ -138,8 +138,8 @@ window.org = (function () {
         };
 
         this.initStructure = function () {
-            this.contentsZone = document.getElementById("contents");
-            this.textZone = document.getElementById("text");
+            this.contentsZone = document.querySelector(".contents");
+            this.textZone = document.querySelector(".text");
             this.leftWidth = this.getScreenWidth();
         };
         return this;

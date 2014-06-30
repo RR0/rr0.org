@@ -22,25 +22,40 @@ body {
   margin: 0;
   padding: 0;
   left: 0;
-  scroll-behavior: smooth;
   &.wait {
     cursor: wait;
     * {
       cursor: wait;
     }
   }
+  overflow: hidden;
 }
 
 @import "js/head";
 
-#contents {
+aside {
+  height: 100%;
+  float: right;
+  position: relative;
+  //  width: 0;
+  //  width: 100%;
+  //resize: horizontal;
+  /*float:right;*/
+  /*overflow-y: hidden;*/
+  /*overflow-x: hidden;*/
+  @include horizTrans;
+}
+
+.contents {
   @include bottomInnerShadow;
-  /*float:left;*/
+  float:left;
+  position: relative;
   overflow-y: auto;
   overflow-x: auto;
   z-index: 1;
   line-height: 1.5em;
   width: 100%;
+  height: 100%;
   //resize: horizontal;
 
   @include horizTrans;
@@ -55,7 +70,7 @@ body {
   background-attachment: local, local, scroll, scroll;
 }
 
-#text {
+.text {
   margin: 0 $textMargin;
   padding-top: $headerHeight + $navHeight;
   ul {
@@ -433,15 +448,6 @@ section:after {
 
 .obsolete {
   background-color: #FFFFFF;
-}
-
-aside {
-  width: 100%;
-  //resize: horizontal;
-  /*float:right;*/
-  /*overflow-y: hidden;*/
-  /*overflow-x: hidden;*/
-  @include horizTrans;
 }
 
 @import "images";

@@ -278,9 +278,16 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         this.sections = [];
         this.menu = [];
 
-        this.addSection = function (l) {
-            if (l.indexOf('<h') < 0) {
-                l = '<h1>' + l + '</h1>';
+        this.addSection = function (s) {
+            var l;
+            var outlineL;
+            if (s.indexOf('<h') < 0) {
+                l = '<h1>' + s + '</h1>';
+                var tag = 'h' + (this.currentLevel) + '>';
+                outlineL = '<' + tag + s + '</' + tag;
+            } else {
+                l = s;
+                outlineL = l;
             }
             this.currentLevel++;
             var levelSections = this.sections[this.currentLevel];
@@ -317,7 +324,8 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
 
             var section = {
                 label: l,
-                id: camelize(l),
+                outlineLabel: outlineL,
+                id: camelize(org.validLink(s), this.currentLevel),
                 level: this.currentLevel
             };
             $rootScope.$broadcast('sectionAdded', section);

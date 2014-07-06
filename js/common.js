@@ -342,23 +342,14 @@ window.org = (function () {
     };
 
     this.validLink = function (l) {
-        l = l.replace('\n', ' ');
-        l = l.replace('\u00E0', 'a');
-        l = l.replace('\u00E2', 'a');
-        l = l.replace('\u00E4', 'a');
-        l = l.replace('\u00E7', 'c');
-        l = l.replace('\u00E8', 'e');
-        l = l.replace('\u00E9', 'e');
-        l = l.replace('\u00EA', 'e');
-        l = l.replace('\u00EB', 'e');
-        l = l.replace('\u00EE', 'i');
-        l = l.replace('\u00EF', 'i');
-        l = l.replace('\u00F1', 'n');
-        l = l.replace('\u00F4', 'o');
-        l = l.replace('\u00F6', 'o');
-        l = l.replace('\u00F9', 'u');
-        l = l.replace('\u00FB', 'u');
-        l = l.replace('\u00FC', 'u');
+        l = l.replace(/\n/g, ' ')
+        .replace(/(\u00E0|\u00E2|\u00E4)/g, 'a')
+        .replace(/\u00E7/g, 'c')
+        .replace(/(\u00E8|\u00E9|\u00EA|\u00EB)/g, 'e')
+        .replace(/(\u00EE|\u00EF)/g, 'i')
+        .replace(/\u00F1/g, 'n')
+        .replace(/(\u00F4|\u00F6)/g, 'o')
+        .replace(/(\u00F9|\u00FB|\u00FC)/g, 'u');
         return l;
     };
 

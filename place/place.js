@@ -200,11 +200,11 @@ angular.module('rr0.place', [])
         function mapShow() {
             if (!isMapVisible()) {
                 if (isMapWidthAvailable()) {
-//                    var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
-//                    if (sideWidth <= 0) {
-//                        org.rr0.leftWidth = org.rr0.getScreenWidth() * 0.6;
-//                    }
-//                    splitWithMap(org.rr0.leftWidth);
+                    var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
+                    if (sideWidth <= 0) {
+                        org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100-28)/100);
+                    }
+                    splitWithMap(org.rr0.leftWidth);
                 } else {
                     org.rr0.time.drawChart();
                     getSwipe().next();

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="--no-cache --update $FileName$:$FileNameWithoutExtension$.css --style compressed" />
+    <option name="checkSyntaxErrors" value="false" />
+    <option name="description" value="Compiles .scss files into .css files" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="scss" />
+    <option name="immediateSync" value="true" />
+    <option name="name" value="SCSS" />
+    <option name="output" value="$FileNameWithoutExtension$.css" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="false" />
+    <option name="passParentEnvs" value="true" />
+    <option name="program" value="/usr/bin/scss" />
+    <option name="scopeName" value="Changed Files" />
+    <option name="trackOnlyRoot" value="true" />
+    <option name="workingDir" value="$FileDir$" />
+    <envs />
+  </TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="-gruntfile $ProjectFileDir$/gruntfile.js autoprefixer" />
+    <option name="checkSyntaxErrors" value="true" />
+    <option name="description" value="" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="scss" />
+    <option name="immediateSync" value="true" />
+    <option name="name" value="Autoprefixer" />
+    <option name="output" value="$FileNameWithoutExtension$.css" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="false" />
+    <option name="passParentEnvs" value="true" />
+    <option name="program" value="/usr/local/bin/grunt" />
+    <option name="scopeName" value="Changed Files" />
+    <option name="trackOnlyRoot" value="true" />
+    <option name="workingDir" value="$ProjectFileDir$" />
+    <envs />
+  </TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="--sourcemap --out $FileDir$/$FileNameWithoutExtension$.es5.$FileExt$ $FilePathRelativeToProjectRoot$" />
+    <option name="checkSyntaxErrors" value="false" />
+    <option name="description" value="Transpiles ECMAScript 6 code to ECMAScript 5" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="js" />
+    <option name="immediateSync" value="true" />
+    <option name="name" value="Traceur compiler" />
+    <option name="output" value="out/$FilePathRelativeToProjectRoot$" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="false" />
+    <option name="passParentEnvs" value="true" />
+    <option name="program" value="/Users/javarome/Projet/RR0/node_modules/node-traceur/traceur" />
+    <option name="scopeName" value="Changed Files" />
+    <option name="trackOnlyRoot" value="true" />
+    <option name="workingDir" value="$ProjectFileDir$" />
+    <envs />
+  </TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="--compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$ --create_source_map $FileName$.map --source_map_format=V3" />
+    <option name="checkSyntaxErrors" value="true" />
+    <option name="description" value="Compiles .js files" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="js" />
+    <option name="immediateSync" value="true" />
+    <option name="name" value="Closure Compiler" />
+    <option name="output" value="$FileNameWithoutExtension$.min.js" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="true" />
+    <option name="passParentEnvs" value="true" />
+    <option name="program" value="/Users/javarome/Downloads/compiler-latest/compiler.jar" />
+    <option name="scopeName" value="ES5 files" />
+    <option name="trackOnlyRoot" value="true" />
+    <option name="workingDir" value="$FileDir$" />
+    <envs />
+  </TaskOptions>
+</TaskOptions>
+

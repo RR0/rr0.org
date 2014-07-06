@@ -18,7 +18,7 @@
                         </a>
                         <ul class="outline">
                             <li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)">
-                                <a href="#{{s.id}}"><span ng-bind-html="s.label|unsafe"></span></a>
+                                <a href="#{{s.id}}"><span ng-bind-html="s.outlineLabel|unsafe"></span></a>
                             </li>
                         </ul>
                     </li>

@@ -1,10 +1,28 @@
 angular.module('rr0')
-    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', function ($log, $q, $rootScope, $http) {
+    .run(['$http', function($http) {
+        $http.defaults.headers.common['Access-Control-Expose-Headers'] = 'Accept-Language';
+    }])
+    .factory('sessionInjector', [function () {
+        return {request: function (config) {
+            return config;
+        }};
+    }])
+    .config(['$httpProvider', function ($httpProvider) {
+        $httpProvider.interceptors.push('sessionInjector');
+    }])
+    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', '$locale', function ($log, $q, $rootScope, $http, $locale) {
         var uri = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/';
         var bundleName = 'Matrix';
-        var localeFile = uri + bundleName + '_' + userLang + '.json';
+        var lang = $locale.id.substring(0, 2);
+        var localeFile = uri + bundleName + '_' + lang + '.json';
         var loaded = $q.defer();
-        $http({ method: 'GET', url: localeFile }).
+        $http({
+            method: 'GET',
+            url: localeFile,
+            transformRequest: function (data, headersGetter) {
+                lang = headersGetter['Accept-Language'];
+            }
+        }).
             success(function (data, status, headers, config) {
                 $log.info("Loaded '" + localeFile + "'");
                 loaded.resolve(data);

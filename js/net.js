@@ -1,5 +1,5 @@
 // Network functions
-org.rr0.net = (function () {
+function NetModule() {
 
     function httpRequest() {
         return window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
@@ -53,4 +53,5 @@ org.rr0.net = (function () {
         });
     };
     return this;
-}());
+}
+org.rr0.net = new NetModule();

@@ -18,12 +18,12 @@ function People(p) {
     };
 }
 function getPeople() {
-    return context.people;
+    return org.rr0.context.people;
 }
 function setPeopleName(name) {
     if (name && name.length > 0) {
-        context.people = new People(name);
-        return context.people;
+        org.rr0.context.people = new People(name);
+        return org.rr0.context.people;
     }
 }
 /**
@@ -36,7 +36,7 @@ function peopleLink(p, pLink) {
             pLink = org.cache[p];
             if (!pLink) {
                 setPeopleName(p);
-                pLink = cache[getPeople().lastName];
+                pLink = org.cache[getPeople().lastName];
                 if (!pLink) {
                     p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
                     pLink = org.validLink(p);
@@ -50,8 +50,8 @@ function peopleLink(p, pLink) {
             pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
         }
         pLink = org.validLink(pLink);
-        cache[p] = pLink;
-        cache[getPeople().lastName] = pLink;
+        org.cache[p] = pLink;
+        org.cache[getPeople().lastName] = pLink;
     } else {
         pLink = null;
     }
@@ -61,12 +61,9 @@ var handleWitness = function (scope, elem, attrs) {
     var txt = elem.text();
     var e = elem[0];
     e.style.width = txt.length + 'em';
-    var tint = [50, 50, 50];
-    if (scope.witnessId > 1) {
-        tint[(scope.witnessId - 2) % 3] += 20;
-    }
-    var caviarBackgroundColor = "rgb(" + tint[0] + ", " + tint[1] + ", " + tint[2] + ")";
-    e.style.background = 'linear-gradient(to right, white, ' + caviarBackgroundColor + ' 2%, ' + caviarBackgroundColor + ' 98%, white)';
+    var tint = 50 + (scope.witnessId * 10);
+    var caviarBackgroundColor = "rgb(" + tint + ", " + tint + ", " + tint + ")";
+    e.style.background = 'linear-gradient(left, white, ' + caviarBackgroundColor + ' 2%, ' + caviarBackgroundColor + ' 98%, white);'
     e.innerHTML = '<a href="/FAQ.html#privacy">témoin' + (scope.witnessId ? ' ' + scope.witnessId : '') + '</a>';
     e.title = 'Nom du témoin anonymisé';
     if (e.id) e.innerHTML += ' ' + id;

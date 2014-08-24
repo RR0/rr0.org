@@ -148,10 +148,10 @@ function setN(n, nLink) {
 function setPrev(p, pLink) {
     if (!pLink) {
         if (!p && !prev) {
-            var y = time.getYear();
+            var y = org.rr0.time.getYear();
             if (y) {
                 var t = getTime();
-                time.findTimeSibling(t.year, t.month,
+                org.rr0.time.findTimeSibling(t.year, t.month,
                     function (y, m) {
                         if (m) {
                             if (m > 1) {
@@ -183,10 +183,10 @@ function setPrev(p, pLink) {
 function setNext(n, nLink) {
     if (!nLink) {
         if (!n && !next) {
-            var y = time.getYear();
+            var y = org.rr0.time.getYear();
             if (y) {
                 var t = getTime();
-                time.findTimeSibling(t.year, t.month, function (y, m) {
+                org.rr0.time.findTimeSibling(t.year, t.month, function (y, m) {
                     if (m) {
                         if (m < 12) {
                             m++;
@@ -263,7 +263,7 @@ function createNavLink(t, l, tt, c) {
     return li;
 }
 
-style = null;
+var style = null;
 var hiddenPos = '-100em';
 
 //var titleTag;
@@ -480,13 +480,13 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
     .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $log, $timeout, peopleService) {
         function getTitle() {
             if (!$scope.title) {
-                $scope.title = time.getYear();
+                $scope.title = org.rr0.time.getYear();
                 if ($scope.title) {
                     if (getTime().month) {
-                        $scope.title = time.monthName() + " " + $scope.title;
-                        var dayOfMonth = time.getDayOfMonth();
+                        $scope.title = org.rr0.time.monthName() + " " + $scope.title;
+                        var dayOfMonth = org.rr0.time.getDayOfMonth();
                         if (dayOfMonth) {
-                            $scope.title = org.rr0.time.dayOfWeekNam(time.getDayOfWeek()) + " " + dayOfMonth + " " + $scope.title;
+                            $scope.title = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek()) + " " + dayOfMonth + " " + $scope.title;
                         }
                     }
                 } else {
@@ -517,8 +517,8 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
         };
         $scope.initTitle = function (t, u, st) {
             $scope.title = t;
-            url = u;
-            style = st;
+            $scope.url = u;
+            $scope.style = st;
         };
         $scope.initPeople = function (p) {
             setPeopleName(p);

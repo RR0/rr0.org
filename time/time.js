@@ -1,6 +1,8 @@
 var org = org || {}; // Useless as we depend on org functions
 org.rr0 = org.rr0 || {};
-org.rr0.time = (function () {
+function TimeModule() {
+
+    var timeModuleThis = this;
 
     /**
      * http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element
@@ -67,28 +69,28 @@ org.rr0.time = (function () {
             };
             chart.draw(times, options);
         } else {
-            setChartsHeight(0);
+            timeModuleThis.setChartsHeight(0);
         }
     };
 
-
     this.Duration = function () {
-        this.Unit = function(f, n) {
+        var durationThis = this;
+        this.Unit = function (f, n) {
             this.factor = f;
             this.name = n;
-            this.toString=function(value) {
+            this.toString = function (value) {
                 return value > 0 ? value + '&nbsp;' + this.name + (value > 1 ? 's' : '') : '';
             }
         };
-        this.second = new this.Unit(1, 'seconde');
-        this.minute = new this.Unit(60 * this.second.factor, 'minute');
-        this.hour = new this.Unit(60 * this.minute.factor, 'heure');
-        this.day = new this.Unit(24 * this.hour.factor, 'jour');
+        durationThis.second = new this.Unit(1, 'seconde');
+        durationThis.minute = new this.Unit(60 * durationThis.second.factor, 'minute');
+        durationThis.hour = new this.Unit(60 * durationThis.minute.factor, 'heure');
+        durationThis.day = new this.Unit(24 * durationThis.hour.factor, 'jour');
 
         var durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/;
-        this.fromString = function(txt) {
+        durationThis.fromString = function (txt) {
             var foundExprs = durationRegex.exec(txt);
-            this.durationInSeconds = 0;
+            durationThis.durationInSeconds = 0;
             for (var i = 1; i < foundExprs.length; i++) {
                 var expr = foundExprs[i];
                 if (expr) {
@@ -96,20 +98,20 @@ org.rr0.time = (function () {
                     var value = parseInt(expr.substring(0, lastCharPos), 10);
                     switch (expr.charAt(lastCharPos)) {
                         case 'D':
-                            this.unit = this.day;
+                            durationThis.unit = durationThis.day;
                             break;
                         case 'H':
-                            this.unit = this.hour;
+                            durationThis.unit = durationThis.hour;
                             break;
                         case 'M':
-                            this.unit = this.minute;
+                            durationThis.unit = durationThis.minute;
                             break;
                         case 'S':
-                            this.unit = this.second;
+                            durationThis.unit = durationThis.second;
                             break;
                         case 'P':
                     }
-                    this.durationInSeconds += value * this.unit.factor;
+                    durationThis.durationInSeconds += value * durationThis.unit.factor;
                 }
             }
 
@@ -118,25 +120,25 @@ org.rr0.time = (function () {
 
         this.toString = function (unitStated) {
             var txt = [];
-            var remaining = this.durationInSeconds;
-            var days = Math.floor(remaining / this.day.factor);
+            var remaining = durationThis.durationInSeconds;
+            var days = Math.floor(remaining / durationThis.day.factor);
             if (days >= 1) {
-                txt.push(unitStated != this.day.name ? this.day.toString(days) : days);
+                txt.push(unitStated != durationThis.day.name ? durationThis.day.toString(days) : days);
             }
-            remaining = remaining % this.day.factor;
-            var hours = Math.floor(remaining / this.hour.factor);
+            remaining = remaining % durationThis.day.factor;
+            var hours = Math.floor(remaining / durationThis.hour.factor);
             if (hours >= 1) {
-                txt.push(unitStated != this.hour.name ? this.hour.toString(hours) : hours);
+                txt.push(unitStated != durationThis.hour.name ? this.hour.toString(hours) : hours);
             }
-            remaining = remaining % this.hour.factor;
-            var minutes = Math.floor(remaining / this.minute.factor);
+            remaining = remaining % durationThis.hour.factor;
+            var minutes = Math.floor(remaining / durationThis.minute.factor);
             if (minutes >= 1) {
-                txt.push(unitStated != this.minute.name ? this.minute.toString(minutes) : minutes);
+                txt.push(unitStated != durationThis.minute.name ? durationThis.minute.toString(minutes) : minutes);
             }
-            remaining = remaining % this.minute.factor;
+            remaining = remaining % durationThis.minute.factor;
             var seconds = remaining;
             if (seconds >= 1) {
-                txt.push(unitStated != this.second.name ? this.second.toString(seconds) : seconds);
+                txt.push(unitStated != durationThis.second.name ? durationThis.second.toString(seconds) : seconds);
             }
             var last = txt.length - 1;
             var s = '';
@@ -148,78 +150,80 @@ org.rr0.time = (function () {
     };
 
     this.Moment = function () {
+        var momentSelf = this;
+
         function clear() {
-            this.decade = false;
-            this.dayOfMonth = null;
-            this.timeZone = null;
-            this.year = null;
-            this.month = null;
-            this.hour = null;
-            this.minutes = null;
-            this.seconds = null;
+            momentSelf.decade = false;
+            momentSelf.dayOfMonth = null;
+            momentSelf.timeZone = null;
+            momentSelf.year = null;
+            momentSelf.month = null;
+            momentSelf.hour = null;
+            momentSelf.minutes = null;
+            momentSelf.seconds = null;
         }
 
         clear.call(this);
 
         this.setSeconds = function (s) {
-            this.seconds = s;
+            momentSelf.seconds = s;
         };
 
         this.setMinutes = function (mn) {
-            this.minutes = mn;
-            this.setSeconds();
+            momentSelf.minutes = mn;
+            momentSelf.setSeconds();
         };
 
         this.setHour = function (h) {
-            this.hour = h;
-            this.setMinutes();
+            momentSelf.hour = h;
+            momentSelf.setMinutes();
         };
 
         this.setTimeZone = function (z) {
-            this.timeZone = z;
+            momentSelf.timeZone = z;
         };
 
         this.setDayOfMonth = function (d) {
-            this.dayOfMonth = d;
-            this.setHour();
+            momentSelf.dayOfMonth = d;
+            momentSelf.setHour();
         };
 
         this.setMonth = function (m) {
-            this.month = m;
-            this.setDayOfMonth();
+            momentSelf.month = m;
+            momentSelf.setDayOfMonth();
         };
 
         this.setYear = function (number) {
-            this.year = number;
-            this.setMonth();
+            momentSelf.year = number;
+            momentSelf.setMonth();
         };
 
         this.getYear = function () {
-            return this.year;
+            return momentSelf.year;
         };
 
         this.getMonth = function () {
-            return this.month;
+            return momentSelf.month;
         };
 
         this.getDayOfMonth = function () {
-            return this.dayOfMonth;
+            return momentSelf.dayOfMonth;
         };
 
         this.getHour = function () {
-            return this.hour;
+            return momentSelf.hour;
         };
 
         this.getMinutes = function () {
-            return this.minutes;
+            return momentSelf.minutes;
         };
 
         this.getTimeZone = function () {
-            return this.timeZone;
+            return momentSelf.timeZone;
         };
 
         this.isApprox = function () {
-            return this.approx;
+            return momentSelf.approx;
         };
 
         this.fromString = function (dString) {
@@ -230,7 +234,7 @@ org.rr0.time = (function () {
             var zReady;
 
             function resetParse() {
-                clear.call(this);
+                clear.call(momentSelf);
                 number = null;
                 era = 1;
                 txt = "";
@@ -283,7 +287,7 @@ org.rr0.time = (function () {
                     default:
                         return;
                 }
-                this.setTimeZone(z);
+                momentSelf.setTimeZone(z);
                 txt = null;
             }
 
@@ -294,34 +298,34 @@ org.rr0.time = (function () {
             var i;
 
             function timeSet() {
-                if (this.year != null && number <= 59) {
+                if (momentSelf.year != null && number <= 59) {
                     monthReady = monthReady || dString.charAt(i) == '-';
                     if (!monthReady) {
-                        if (this.month != null) {
-                            if (this.dayOfMonth != null || this.hour != null) {
-                                if (this.hour != null) {
+                        if (momentSelf.month != null) {
+                            if (momentSelf.dayOfMonth != null || momentSelf.hour != null) {
+                                if (momentSelf.hour != null) {
                                     if (this.minutes != null) {
-                                        this.setDayOfMonth(value());     // setHour is processed after ':' only
+                                        momentSelf.setDayOfMonth(value());     // setHour is processed after ':' only
                                     } else {
-                                        this.setMinutes(value());
+                                        momentSelf.setMinutes(value());
                                     }
                                 } else {
-                                    this.setDayOfMonth(value());     // setHour is processed after ':' only
+                                    momentSelf.setDayOfMonth(value());     // setHour is processed after ':' only
                                 }
                             } else {
-                                this.setDayOfMonth(value());
+                                momentSelf.setDayOfMonth(value());
                             }
                         } else {
                             // Probably just text
                         }
                     } else {
-                        this.setMonth(value());
+                        momentSelf.setMonth(value());
                         monthReady = false;
                     }
-                } else if (this.hour != null) {
-                    this.setMinutes(value());
+                } else if (momentSelf.hour != null) {
+                    momentSelf.setMinutes(value());
                 } else {
-                    this.setYear(era * number);
+                    momentSelf.setYear(era * number);
                     monthReady = true;
                 }
                 number = null;
@@ -361,7 +365,7 @@ org.rr0.time = (function () {
                             if (number == null) {
                                 era = -1;
                             }
-                            this.setHour(null);  // Next value cannot be minutes
+                            momentSelf.setHour(null);  // Next value cannot be minutes
                             timeSet.call(this); // End of year or month
                         } else {
                             txt += c;
@@ -369,7 +373,7 @@ org.rr0.time = (function () {
                         break;
                     case 's':
                         if (number != null && txt.charAt(i - 1) != ' ') {
-                            this.decade = true;
+                            momentSelf.decade = true;
                         } else {
                             txt += c;
                         }
@@ -378,13 +382,13 @@ org.rr0.time = (function () {
                         era = 1;
                         break;
                     case '~':
-                        this.approx = true;
+                        momentSelf.approx = true;
                         break;
                     case ':':
-                        if (this.hour != null && zReady) {
-                            this.setTimeZone(number * era);
+                        if (momentSelf.hour != null && zReady) {
+                            momentSelf.setTimeZone(number * era);
                         } else {
-                            this.setHour(value());
+                            momentSelf.setHour(value());
                             zReady = true;
                         }
                         number = null;
@@ -413,25 +417,25 @@ org.rr0.time = (function () {
                 }
             }
             parseEnd.call(this);
-            return this;
+            return momentSelf;
         };
 
         this.toISOString = function () {
-            var s = this.year;
-            if (this.month) {
-                s += '-' + zero(this.month);
+            var s = momentSelf.year;
+            if (momentSelf.month) {
+                s += '-' + org.zero(momentSelf.month);
             }
-            if (this.dayOfMonth) {
-                s += '-' + zero(this.dayOfMonth);
+            if (momentSelf.dayOfMonth) {
+                s += '-' + org.zero(momentSelf.dayOfMonth);
             }
-            if (this.hour) {
-                s += zero(this.hour) + ":" + zero(this.minutes);
+            if (momentSelf.hour) {
+                s += org.zero(momentSelf.hour) + ":" + org.zero(momentSelf.minutes);
             }
             return s;
         }
     };
 
-    org.rr0.context.time = new Moment();
+    org.rr0.context.time = new this.Moment();
 
     this.getTime = function () {
         return org.rr0.context.time;
@@ -485,7 +489,7 @@ org.rr0.time = (function () {
      */
     this.yearLink = function (y, decade) {
         var yString = y.toString();
-        var yLink = uriPart;
+        var yLink = timeModuleThis.uriPart;
         var pos = 0;
         yLink += (y < 1000 ? "0" : yString.substring(pos, ++pos)) + "/";
         yLink += (y < 100 ? "0" : yString.substring(pos, ++pos)) + "/";
@@ -508,7 +512,7 @@ org.rr0.time = (function () {
 
     function addMonth(m) {
         var s = "";
-        var t = this.getTime();
+        var t = timeModuleThis.getTime();
         if (m) t.month = m;
         if (t.month) {
             var mName = monthName();
@@ -519,8 +523,8 @@ org.rr0.time = (function () {
 
     function addYear(y, yLink, t) {
         var s = "";
-        if (!y) y = this.getTime().year;
-        if (!yLink) yLink = this.yearLink(y);
+        if (!y) y = timeModuleThis.getTime().year;
+        if (!yLink) yLink = timeModuleThis.yearLink(y);
         if (!t) {
             var p = getPeople();
             if (p) {
@@ -541,10 +545,10 @@ org.rr0.time = (function () {
      */
     function addDayOfMonth(d, dow) {
         var s = "";
-        var t = this.getTime();
+        var t = timeModuleThis.getTime();
         if (!d) d = t.dayOfMonth;
         if (d) {
-            var dayName = dayOfWeekNam(this.getDayOfWeek(t.year, t.month, d));
+            var dayName = dayOfWeekNam(timeModuleThis.getDayOfWeek(t.year, t.month, d));
             s += dayName + " ";
             s += (d == 1 ? "1<sup>er</sup>" : d);
         }
@@ -552,15 +556,15 @@ org.rr0.time = (function () {
     }
 
     function setHour(h) {
-        if (h) this.getTime().hour = h;
+        if (h) timeModuleThis.getTime().hour = h;
     }
 
     function setMinutes(mn) {
-        if (mn) this.getTime().minutes = mn;
+        if (mn) timeModuleThis.getTime().minutes = mn;
     }
 
     function getHour() {
-        return this.getTime().hour;
+        return timeModuleThis.getTime().hour;
     }
 
     this.setDayOfMonth = function (d) {
@@ -577,18 +581,18 @@ org.rr0.time = (function () {
     };
 
     function getMonth() {
-        return this.getTime().month;
+        return timeModuleThis.getTime().month;
     }
 
     function getDate(y, m, d) {
         var dat;
-        if (!y) y = this.getYear();
+        if (!y) y = timeModuleThis.getYear();
         if (y) {                    // No getTime().year set means no date set
             dat = new Date();
             dat.setFullYear(y);
             if (!m) m = getMonth();
             if (m) dat.setMonth(m - 1);
-            if (!d) d = this.getDayOfMonth();
+            if (!d) d = timeModuleThis.getDayOfMonth();
             dat.setDate(d);
         }
         return dat;
@@ -599,22 +603,22 @@ org.rr0.time = (function () {
     };
 
     this.addDate = function (p, y, m, d) {
-        if (!y) y = this.getTime().year;
+        if (!y) y = timeModuleThis.getTime().year;
         var s = "";
         if (y) {
             if (!m) m = getMonth();
-            if (!d) d = this.getTime().dayOfMonth;
+            if (!d) d = timeModuleThis.getTime().dayOfMonth;
             var newDate = new Date();
             newDate.setFullYear(y);
             var dateLink = this.yearLink(y);
             if (m) {
                 newDate.setMonth(m);
-                dateLink += "/" + zero(m);
+                dateLink += "/" + org.zero(m);
                 if (d) {
                     newDate.setDate(d);
 //                s = "le ";
                     s += addDayOfMonth(d);
-                    dateLink += "/" + zero(d);
+                    dateLink += "/" + org.zero(d);
                 } else {
 //                s = "en ";
                 }
@@ -631,24 +635,24 @@ org.rr0.time = (function () {
     this.findTimeSibling = function (oy, m, changeProc, foundProc) {
         var ret = changeProc(oy, m);
         var y = ret.y;
-        var l = this.yearLink(y);
+        var l = timeModuleThis.yearLink(y);
         m = ret.m;
         var label = y;
         if (m) {
-            setContents(oy, this.yearLink(oy));
-            l += "/" + zero(m);
+            setContents(oy, timeModuleThis.yearLink(oy));
+            l += "/" + org.zero(m);
             label = monthNam(m - 1);
-            if (y != this.getTime().year) label += ' ' + y;
+            if (y != timeModuleThis.getTime().year) label += ' ' + y;
         } else {
-            var cLink = this.yearLink(oy, true);
-            if (cLink != this.getUri()) {
+            var cLink = timeModuleThis.yearLink(oy, true);
+            if (cLink != timeModuleThis.getUri()) {
                 setContents(~~(oy / 10) + "0s", cLink)
             }
         }
         org.onExists(l, function (req) {
             foundProc(label, l);
         }, function (failReq) {
-            this.findTimeSibling(y, m, changeProc, foundProc);
+            timeModuleThis.findTimeSibling(y, m, changeProc, foundProc);
         });
     };
 
@@ -749,7 +753,7 @@ org.rr0.time = (function () {
                             var replacement = toReplace;
                             var dateLink;
                             if (mIndexBefore) {
-                                dateLink = org.rr0.time.yearLink(y) + "/" + zero(mIndexBefore);
+                                dateLink = org.rr0.time.yearLink(y) + "/" + org.zero(mIndexBefore);
                             } else {
                                 dateLink = org.rr0.time.yearLink(y, decade);
                                 if (s.length > 1 && s.length <= 3) {
@@ -757,14 +761,14 @@ org.rr0.time = (function () {
                                     if (affectsCtx) {
                                         org.rr0.time.setMonth(mIndexBefore);
                                     }
-                                    dateLink += "/" + zero(mIndexBefore);
+                                    dateLink += "/" + org.zero(mIndexBefore);
                                     replacement = org.rr0.time.monthName(mIndexBefore) + " " + y;
                                     if (s.length > 2) {
                                         var jIndex = parseInt(s[2], 10);
                                         if (affectsCtx) {
                                             org.rr0.time.setDayOfMonth(jIndex);
                                         }
-                                        dateLink += "/" + zero(jIndex);
+                                        dateLink += "/" + org.zero(jIndex);
                                         replacement = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, mIndexBefore, jIndex)) + " " + jIndex + (jIndex == 1 ? "er" : "") + " " + replacement;
                                     }
                                 }
@@ -786,7 +790,8 @@ org.rr0.time = (function () {
     };
     this.setChartsHeight = function (h) {
         this.chartZone.style.height = h + '%';
-        org.getSideZone("map-canvas").style.height = (100 - h) + '%';
+        org.rr0.getSideZone("map-canvas").style.height = (100 - h) + '%';
     };
     return this;
-})();
+}
+org.rr0.time = new TimeModule();

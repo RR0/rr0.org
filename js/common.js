@@ -1,4 +1,4 @@
-window.org = (function () {
+function OrgModule() {
 
     this.getUri = function () {
         if (!docUri) docUri = window.location.pathname;
@@ -9,9 +9,9 @@ window.org = (function () {
 
     this.debug = window.location.href.indexOf("?debug") >= 0;
 
-    if (this.debug && typeof console !== 'undefined') log = function (m) {
+    if (this.debug && typeof console !== 'undefined') this.log = function (m) {
         console.log(m);
-    }; else log = function (m) {
+    }; else this.log = function (m) {
     };
 
 // Add a getElementsByClassName function if the browser doesn't have one
@@ -51,33 +51,20 @@ window.org = (function () {
 
     var user = new User();
 
-    this.rr0 = (function () {
-
+    function Rr0Module() {
         function Context() {
             this.language = user.language.substring(0, 2);
             this.time = null;
             this.place = null;
             this.people = null;
-
-//    this.elements = [];
-//    add = new function(e) {
-//        if (e.nodeType == Node.TEXT_NODE) {
-//            var words = e.nodeValue.split(/\b\s+/);
-//            for (var i = 0; i < words.length; i++) {
-//                var w = words[i];
-//                elements.push(w);
-//            }
-//        }
-//    };
         }
-
         this.context = new Context();
-
         this.getScreenWidth = function () {
             return document.body.clientWidth;
         };
-
         var sidePane;
+        var rr0This = this;
+        this.contentsZone = null;
         this.getSidePane = function () {
             if (!sidePane) {
                 sidePane = document.getElementsByClassName("aside")[0];
@@ -91,7 +78,6 @@ window.org = (function () {
                     sidePane.appendChild(divider);
                     divider.addEventListener('mousedown', function (e) {
                         e.preventDefault();
-                        var lastX = e.pageX;
                         document.documentElement.addEventListener('mousemove', moveHandler, true);
                         document.documentElement.addEventListener('mouseup', upHandler, true);
                         function moveHandler(e) {
@@ -100,7 +86,6 @@ window.org = (function () {
                             org.rr0.leftWidth = e.pageX;
                             org.rr0.updateDivision();
                         }
-
                         function upHandler(e) {
                             e.preventDefault();
                             e.stopPropagation();
@@ -112,21 +97,17 @@ window.org = (function () {
             }
             return sidePane;
         };
-
         this.sideCallbacks = [];
-
         this.callSideCallbacks = function () {
             for (var i = 0; i < this.sideCallbacks.length; i++) {
                 this.sideCallbacks[i]();
             }
         };
-
         this.updateDivision = function () {
             this.contentsZone.style.width = this.leftWidth + "px";
             this.getSidePane().style.width = (this.getScreenWidth() - this.leftWidth) + "px";
             this.callSideCallbacks();
         };
-
         this.getSideZone = function (id) {
             var sideZone = document.getElementById(id);
             if (!sideZone) {
@@ -136,33 +117,16 @@ window.org = (function () {
             }
             return sideZone;
         };
-
+        this.textZone = null;
         this.initStructure = function () {
-            this.contentsZone = document.querySelector(".contents");
-            this.textZone = document.querySelector(".text");
-            this.leftWidth = this.getScreenWidth();
+            rr0This.contentsZone = document.querySelector(".contents");
+            rr0This.textZone = document.querySelector(".text");
+            rr0This.leftWidth = rr0This.getScreenWidth();
         };
         return this;
-    })();
+    }
 
-    this.StateMachine = function (states) {
-        this.states = states;
-        this.indexes = {}; //just for convinience
-        for (var i = 0; i < this.states.length; i++) {
-            this.indexes[this.states[i].name] = i;
-            if (this.states[i].initial) {
-                this.currentState = this.states[i];
-            }
-        }
-        this.consumeEvent = function (e) {
-            if (this.currentState.events[e]) {
-                this.currentState = this.states[this.indexes[this.currentState.events[e]]];
-            }
-        };
-        this.getStatus = function () {
-            return this.currentState.name;
-        }
-    };
+    this.rr0 = new Rr0Module();
 
     /**
      * Elements of this class won't be modified.
@@ -171,31 +135,11 @@ window.org = (function () {
      */
     this.constantClass = "constant";
 
-    this.intersect = function (a, b) {
-        var result = [];
-        if (a && b) {
-            var ai = 0, bi = 0;
-            while (ai < a.length && bi < b.length) {
-                var ae = a[ai];
-                if (ae < b[bi]) {
-                    ai++;
-                } else if (ae > b[bi]) {
-                    bi++;
-                } else {    // they're equal
-                    result.push(ae);
-                    ai++;
-                    bi++;
-                }
-            }
-        }
-        return result;
-    };
-
     this.hasClass = function (e, c) {
         var className = e.className;
         var found = !!className;
         if (className) {
-            var pos = className.indexOf(constantClass) < 0 && className.indexOf(c);
+            var pos = className.indexOf(org.constantClass) < 0 && className.indexOf(c);
             found = pos >= 0;
             if (found) {
                 var lastChar = className.charCodeAt(pos + c.length);
@@ -271,12 +215,14 @@ window.org = (function () {
 
     var nonPlurals = ["les", "des", "ces", "ses", "dans"/*, "mes", "leur", "son", "sa", "ma", "ta", "ton"*/];
     this.isProNoun = function (w) {
-        return arrayIndex(w, nonPlurals);
+        return org.arrayIndex(w, nonPlurals);
     };
 
     this.clone = function (o) {
         var c = {};
-        for (var k in o) c[k] = o[k];
+        for (var k in o) {
+            c[k] = o[k];
+        }
         return c;
     };
 
@@ -290,14 +236,6 @@ window.org = (function () {
         return txt;
     };
 
-    this.setText = function (e, txt) {
-        if (e.textContent != undefined) {
-            e.textContent = txt;
-        } else {
-            e.innerText = txt;  // IE8-
-        }
-    };
-
     this.stripText = function (txt) {
         txt = txt.replace(/'/g, "'");
         txt = txt.replace(/\"/g, '"');
@@ -308,7 +246,7 @@ window.org = (function () {
 
     this.strip = function (e) {
         var txt = this.text(e);
-        return stripText(txt);
+        return org.stripText(txt);
     };
 
     /**
@@ -343,13 +281,13 @@ window.org = (function () {
 
     this.validLink = function (l) {
         l = l.replace(/\n/g, ' ')
-        .replace(/(\u00E0|\u00E2|\u00E4)/g, 'a')
-        .replace(/\u00E7/g, 'c')
-        .replace(/(\u00E8|\u00E9|\u00EA|\u00EB)/g, 'e')
-        .replace(/(\u00EE|\u00EF)/g, 'i')
-        .replace(/\u00F1/g, 'n')
-        .replace(/(\u00F4|\u00F6)/g, 'o')
-        .replace(/(\u00F9|\u00FB|\u00FC)/g, 'u');
+            .replace(/(\u00E0|\u00E2|\u00E4)/g, 'a')
+            .replace(/\u00E7/g, 'c')
+            .replace(/(\u00E8|\u00E9|\u00EA|\u00EB)/g, 'e')
+            .replace(/(\u00EE|\u00EF)/g, 'i')
+            .replace(/\u00F1/g, 'n')
+            .replace(/(\u00F4|\u00F6)/g, 'o')
+            .replace(/(\u00F9|\u00FB|\u00FC)/g, 'u');
         return l;
     };
 
@@ -383,7 +321,7 @@ window.org = (function () {
         return linkStart(l, t) + contents + "</a>"
     };
 
-    zero = function (v) {
+    this.zero = function (v) {
         return v < 10 ? '0' + v : v;
     };
 
@@ -393,7 +331,8 @@ window.org = (function () {
         for (var i = 0; i < domLoadProcs.length; i++) {
             var c = domLoadProcs[i];
             if (typeof c === 'string') eval(c);
-            else c();
+            else if (typeof c === 'function') c();
+            else this.log('domLoadProc ' + c + ' of type ' + (typeof c) + ' is not supported');
         }
     };
 
@@ -458,16 +397,8 @@ window.org = (function () {
 //var cache = pageCache;
     function toLink(l, k) {
         l = org.addEndingSlash(l);
-        log("caching " + k + " as " + l);
+        window.org.log("caching " + k + " as " + l);
         org.cache[k] = l;
-    }
-
-    function toggleVersion(c) {
-        var elements = document.getElementsByClassName(c);
-        for (var i = 0; i < elements.length; i++) {
-            var style = elements[i].style;
-            style.display = (style.display == "" || style.display == "inline" ? "none" : "inline");
-        }
     }
 
     function toLinks(l, kk) {
@@ -479,7 +410,7 @@ window.org = (function () {
     };
 
     function nounsToLink(l, kk) {
-        for (var k = 0; k < kk.length; k++) this.nounToLink(l, kk[k]);
+        for (var k = 0; k < kk.length; k++) org.nounToLink(l, kk[k]);
     }
 
     this.textValue = function (e) {
@@ -487,7 +418,7 @@ window.org = (function () {
         if (v && e.nodeType == Node.TEXT_NODE) {
             v = v.trim().replace(/\n/g, '');
             v = v.replace(/ +(?= )/g, '');
-            if (v.length == 0 || e.parentNode.nodeName == 'A' || hasClass(e.parentNode, constantClass))
+            if (v.length == 0 || e.parentNode.nodeName == 'A' || org.hasClass(e.parentNode, org.constantClass))
                 v = null;
         }
         /* && !hasClass(e.parentNode, "people") /* && !e.hasChildNodes() && e.className != constantClass && (e.tagName === "P" || e.tagName === "LI" || e.tagName === "CAPTION" || (e.tagName === "TD" && !e.hasChildNodes()));*/
@@ -505,16 +436,16 @@ window.org = (function () {
      * @return {HTMLElement}
      */
     this.linkify = function (e, k, l, r, cacheIt) {
-        if (!org.hasClass(e, org.constantClass) && l !== getUri() && (l + "/") !== getUri()) {
+        if (!org.hasClass(e, org.constantClass) && l !== org.getUri() && (l + "/") !== org.getUri()) {
             var txt = org.text(e);
             if (txt) {
                 var pos = txt.indexOf(k);
                 if (pos >= 0) {
-                    log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
+                    orgThis.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
                     if (!r) r = k;
                     var text1;
                     if (pos > 0) text1 = document.createTextNode(txt.substring(0, pos));
-                    re = document.createTextNode(r);
+                    var re = document.createTextNode(r);
                     var le = this.linkElement(l, re);
                     var endPos = pos + k.length;
                     var text2;
@@ -574,7 +505,6 @@ window.org = (function () {
     };
 
     /**
-     * @param tags handlers functions
      */
     this.handleTags = function () {
         var args = arguments;
@@ -588,6 +518,7 @@ window.org = (function () {
         });
     };
 
+    var orgThis = this;
     this.processTags = function () {
         // Priority order (i.e. "vague belge" before "vague")
         nounsToLink("/science/crypto/ufo", ["ufologique", "ufologie"]);
@@ -595,30 +526,32 @@ window.org = (function () {
         toLink("/place/systeme/solaire/planete/terre", "Terre");
         toLink("/place/systeme/solaire/planete/terre/lune", "Lune");
         toLink("/place/systeme/solaire/Soleil", "Soleil");
-        this.nounToLink("/science/crypto/ufo/OVNI.html", "ovni");
+        orgThis.nounToLink("/science/crypto/ufo/OVNI.html", "ovni");
         toLink("/org/us/dod/af/amc/atic/projet/bluebook", "Blue Book");
         toLink("/org/us/ic/fbi", "FBI");
         toLink("/org/us/ic/cia", "CIA");
         toLink("/org/us/dod/af", "USAF");
         toLink("/org/us/dod/af", "Air Force");
-        this.nounToLink("/science/crypto/ufo/enquete/indice/radar", "radar");
-        this.nounToLink("/science/crypto/ufo/observation/scenario/Abduction.html", "enlèvement");
-        this.nounToLink("/science", "science");
+        orgThis.nounToLink("/science/crypto/ufo/enquete/indice/radar", "radar");
+        orgThis.nounToLink("/science/crypto/ufo/observation/scenario/Abduction.html", "enlèvement");
+        orgThis.nounToLink("/science", "science");
         nounsToLink("/science/crypto/ufo/enquete/indice/temoignage/evaluation/Hypnose.html", ["hypnose", "hypnotique"]);
         //nametolink("scientifique", peopleUriPart + "scientifiques.html");
-        this.nounToLink("/science/crypto/ufo/enquete/indice/temoignage", "témoignage");
-        this.nounToLink("/science/crypto/ufo/enquete/meprise/ballon", "ballon");
-        this.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "météore");
+        orgThis.nounToLink("/science/crypto/ufo/enquete/indice/temoignage", "témoignage");
+        orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/ballon", "ballon");
+        orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "météore");
 
-        this.handleTags.apply(null, [cachedLinksHandler]);
+        orgThis.handleTags.apply(null, [cachedLinksHandler]);
     };
 
-    domLoadProcs.push(this.rr0.initStructure);
-    domLoadProcs.push(this.rr0.processTags);
+    this.onContentsLoaded(this.rr0.initStructure);
+    this.onContentsLoaded(this.processTags);
 //    waitForDOMLoaded();
 
     return this;
-}());
+}
+var org = new OrgModule();
+
 var copyright;
 
 // requestAnimationFrame() shim by Paul Irish
@@ -631,7 +564,6 @@ var copyright;
         window.cancelAnimationFrame =
             window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
-
     if (!window.requestAnimationFrame)
         window.requestAnimationFrame = function (callback, element) {
             var currTime = new Date().getTime();
@@ -641,8 +573,8 @@ var copyright;
             }, timeToCall);
             lastTime = currTime + timeToCall;
             return id;
-        };
 
+        };
     if (!window.cancelAnimationFrame)
         window.cancelAnimationFrame = function (id) {
             clearTimeout(id);

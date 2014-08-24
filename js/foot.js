@@ -2,7 +2,6 @@
  * Foot notes and sources references
  */
 
-
 /**
  *
  * @param e The element to replace into
@@ -16,7 +15,7 @@ function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
     if (l) {
         l = org.addEndingSlash(l);
     }
-    if (e.className != constantClass) {
+    if (e.className != org.constantClass) {
         if (!replacement) replacement = toReplace;
         var newText = org.text(e).replace(toReplace, replacement);  // Replace text early, the link will come later
         if (e.nodeType == Node.TEXT_NODE) {
@@ -32,15 +31,15 @@ function checkedLink(e, toReplace, l, replacement, cacheIt, t) {
             var failProc = function () {
                 var pLink = org.parentLink(l);
                 if (org.getUri().indexOf("/time/") < 0) {
-                    log("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
+                    org.log("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
                     cacheIt = false;
                     checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
                 }
             };
             org.rr0.net.onExists(l, function () {
-                if (l != (time.uriPart + "0/0/")) {
+                if (l != (org.rr0.time.uriPart + "0/0/")) {
                     org.rr0.net.onExists(l + "/index.html", function () {
-                        log("found link " + l + " for e'sparent=" + e.parentNode);
+                        org.log("found link " + l + " for e'sparent=" + e.parentNode);
                         e = org.linkify(e, replacement, l, replacement, cacheIt);
                         if (t) e.title = t;
                     }, failProc);
@@ -70,60 +69,36 @@ angular.module('rr0.foot', [])
         document.getElementsByTagName("footer").innerHtml += "";
     })
     .service('footService', [function () {
-        var notesHolder = document.getElementById("notes");
-        var sourcesHolder = document.getElementById("sources");
         this.notesCount = 0;
         this.sourcesCount = 0;
-
-        function add(elem, footHolder, footLabel) {
-            var e = elem[0];
-            var footId = footLabel;
-            var footContent = e.innerHTML || e.title;
-//            footContent = e.title = org.stripText(footContent);
-            var footItem = document.createElement("li");
-            footItem.setAttribute('translate', 'no');
-            footItem.id = footId;
-            footItem.className = "foot";
-            footItem.innerHTML = footContent;
-            footHolder.appendChild(footItem);
-            /*+ " <a href='#nlink"+count+"' title='retour au texte'>&#8617;</a></li>";*/
-            e.id = "see" + footId;
-            e.innerHTML = "<a href='#" + footId + "'>" + footLabel + "</a>";
-        }
-
-        this.addSource = function (e) {
-            var footCount = ++this.sourcesCount;
-            var footLabel = '' + footCount;
-            add(e, sourcesHolder, footLabel);
-        };
     }])
-    .directive('note', ['footService', function(footService) {
+    .directive('note', ['footService', function (footService) {
         return {
             restrict: 'C',
             scope: true,
             transclude: true,
             template: '<a href="#" title="Cliquez pour voir/cacher" ng-click="visible=!visible"> {{anchor}} </a><span ng-show="visible">– <span ng-transclude></span></span>',
-            link: function(scope, elem, attrs) {
+            link: function (scope, elem, attrs) {
                 var footCount = ++footService.notesCount;
                 scope.anchor = String.fromCharCode(96 + footCount);
                 scope.visible = false;
             }
         };
-    }]).directive('source', ['footService', function(footService) {
+    }]).directive('source', ['footService', function (footService) {
         return {
             restrict: 'C',
             scope: true,
             transclude: true,
             template: '<a href="#" title="Cliquez pour voir/cacher" ng-click="visible=!visible"> {{anchor}} </a><span ng-show="visible">– <span ng-transclude></span></span>',
-            link: function(scope, elem, attrs) {
+            link: function (scope, elem, attrs) {
                 var footCount = ++footService.sourcesCount;
                 scope.anchor = '' + footCount;
                 scope.visible = false;
             }
         };
     }])
-    .controller('FootCtrl', ['$scope', function($scope) {
-        $scope.isFramed=function() {
+    .controller('FootCtrl', ['$scope', function ($scope) {
+        $scope.isFramed = function () {
             return window !== top;
         };
     }])

@@ -184,17 +184,11 @@ angular.module('rr0.place', [])
         }
 
         function isMapWidthAvailable() {
-            return org.rr0.getScreenWidth() > 320;
+            return org.rr0.getScreenWidth() > 319;
         }
 
         function isMapVisible() {
-            var visible;
-            if (isMapWidthAvailable()) {
-                visible = org.rr0.leftWidth < org.rr0.getScreenWidth();
-            } else {
-                visible = getSwipe().getPos() != 0;
-            }
-            return visible;
+            return angular.element('#map-canvas').width() > 0;
         }
 
         function mapShow() {
@@ -214,7 +208,7 @@ angular.module('rr0.place', [])
 
         function splitWithMap(contentWidth) {
             org.rr0.leftWidth = contentWidth;
-            org.updateDivision();
+            org.rr0.updateDivision();
         }
 
         var mySwipe;
@@ -251,7 +245,7 @@ angular.module('rr0.place', [])
             geocode: function (p, c) {
                 if (!geocoder) {
                     if (toGeocode.length == 0) {
-                        init(org.getSideZone("map-canvas"), onceMapIsLoaded);
+                        init(org.rr0.getSideZone("map-canvas"), onceMapIsLoaded);
                     }
                     toGeocode.push({ place: p, callback: c });
                 } else {
@@ -285,7 +279,9 @@ angular.module('rr0.place', [])
                         mapTypeId: mapType
                     };
                     var map = new google.maps.Map(document.getElementById(anchor ? anchor : 'map-canvas'), mapOptions);
-                    if (zoom) map.setZoom(zoom);
+                    if (zoom) {
+                        map.setZoom(zoom);
+                    }
                     var ctaLayer = new google.maps.KmlLayer(kmlUrl);
                     ctaLayer.setMap(map);
                     peoplePath = new google.maps.Polyline({

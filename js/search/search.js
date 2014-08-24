@@ -9,7 +9,9 @@ angular.module('rr0.nav')
             templateUrl: '/js/search/search.html',
             controller: ['$scope', '$element', '$attrs', '$transclude', '$http', '$timeout', function ($scope, $element, $attrs, $transclude, $http, $timeout) {
                 function showSearch() {
-                    search.style.top = $scope.getHeadingHeight() + 'px';
+                    if ($scope.getHeadingHeight) {
+                        search.style.top = $scope.getHeadingHeight() + 'px';
+                    }
                 }
 
                 $scope.doSearch = function () {

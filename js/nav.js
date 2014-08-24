@@ -482,7 +482,7 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
             if (!$scope.title) {
                 $scope.title = org.rr0.time.getYear();
                 if ($scope.title) {
-                    if (getTime().month) {
+                    if (org.rr0.time.getTime().month) {
                         $scope.title = org.rr0.time.monthName() + " " + $scope.title;
                         var dayOfMonth = org.rr0.time.getDayOfMonth();
                         if (dayOfMonth) {

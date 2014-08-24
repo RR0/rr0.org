@@ -292,7 +292,7 @@ function OrgModule() {
     };
 
     function linkStart(l, t) {
-        var sp = "<a href=\"" + validLink(l) + "\"";
+        var sp = "<a href=\"" + orgThis.validLink(l) + "\"";
         if (t) sp += " title=\"" + t + "\"";
         return sp + ">";
     }

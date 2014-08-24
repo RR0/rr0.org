@@ -184,26 +184,20 @@ angular.module('rr0.place', [])
         }
 
         function isMapWidthAvailable() {
-            return org.rr0.getScreenWidth() > 319;
+            return org.rr0.getScreenWidth() > 320;
         }
 
         function isMapVisible() {
-            return angular.element('#map-canvas').width() > 0;
+            return org.rr0.leftWidth < org.rr0.getScreenWidth();
         }
 
         function mapShow() {
-            if (!isMapVisible()) {
-                if (isMapWidthAvailable()) {
-                    var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
-                    if (sideWidth <= 0) {
-                        org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100-28)/100);
-                    }
-                    splitWithMap(org.rr0.leftWidth);
-                } else {
-                    org.rr0.time.drawChart();
-                    getSwipe().next();
-                }
+            var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
+            if (sideWidth <= 0) {
+                org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100 - 28) / 100);
             }
+            splitWithMap(org.rr0.leftWidth);
+            org.rr0.time.drawChart();
         }
 
         function splitWithMap(contentWidth) {
@@ -234,11 +228,11 @@ angular.module('rr0.place', [])
         }
 
         function toggleMap() {
-            if (isMapVisible()) {
+            var mapVisible = isMapVisible();
+            if (mapVisible)
                 mapHide();
-            } else {
+            else
                 mapShow();
-            }
         }
 
         return {
@@ -260,7 +254,7 @@ angular.module('rr0.place', [])
                     placeOnMap.show();
                 }
             },
-            refresh: function() {
+            refresh: function () {
                 mapResize();
             },
             /**

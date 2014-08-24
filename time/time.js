@@ -645,11 +645,11 @@ function TimeModule() {
             if (y != timeModuleThis.getTime().year) label += ' ' + y;
         } else {
             var cLink = timeModuleThis.yearLink(oy, true);
-            if (cLink != timeModuleThis.getUri()) {
+            if (cLink != org.getUri()) {
                 setContents(~~(oy / 10) + "0s", cLink)
             }
         }
-        org.onExists(l, function (req) {
+        org.rr0.net.onExists(l, function (req) {
             foundProc(label, l);
         }, function (failReq) {
             timeModuleThis.findTimeSibling(y, m, changeProc, foundProc);

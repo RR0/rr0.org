@@ -95,6 +95,13 @@ module.exports = function (grunt) {
             },
             uglify: {
                 my_target: {
+                    options: {
+                        sourceMap: true,
+                        sourceMapName: 'js/all.es5.map',
+                        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                            '<%= grunt.template.today("yyyy-mm-dd") %> */',
+                        drop_console: true
+                    },
                     files: {
                         'js/all.es5.min.js': [
                             'js/common.es5.js',

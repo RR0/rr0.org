@@ -150,7 +150,7 @@ function setPrev(p, pLink) {
         if (!p && !prev) {
             var y = org.rr0.time.getYear();
             if (y) {
-                var t = getTime();
+                var t = org.rr0.time.getTime();
                 org.rr0.time.findTimeSibling(t.year, t.month,
                     function (y, m) {
                         if (m) {
@@ -185,7 +185,7 @@ function setNext(n, nLink) {
         if (!n && !next) {
             var y = org.rr0.time.getYear();
             if (y) {
-                var t = getTime();
+                var t = org.rr0.time.getTime();
                 org.rr0.time.findTimeSibling(t.year, t.month, function (y, m) {
                     if (m) {
                         if (m < 12) {

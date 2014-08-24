@@ -68,8 +68,8 @@ function OrgModule() {
         this.getSidePane = function () {
             if (!sidePane) {
                 sidePane = document.getElementsByClassName("aside")[0];
-                if (!sidePane) {
-                    sidePane = document.createElement("aside");
+                /*if (!sidePane) {
+                 sidePane = document.createElement("aside");
                     if (this.contentsZone) {
                         this.contentsZone.parentNode.appendChild(sidePane);
                     }
@@ -93,7 +93,7 @@ function OrgModule() {
                             document.documentElement.removeEventListener('mouseup', upHandler, true);
                         }
                     }, false);
-                }
+                 }*/
             }
             return sidePane;
         };
@@ -105,7 +105,8 @@ function OrgModule() {
         };
         this.updateDivision = function () {
             this.contentsZone.style.width = this.leftWidth + "px";
-            this.getSidePane().style.width = (this.getScreenWidth() - this.leftWidth) + "px";
+            var aside = angular.element("aside");
+            aside.width(this.getScreenWidth() - this.leftWidth);
             this.callSideCallbacks();
         };
         this.getSideZone = function (id) {

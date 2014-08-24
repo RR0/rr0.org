@@ -1,42 +1,41 @@
 {
-  "name": "RR0",
-  "version": "1.0.0",
-  "description": "UFO data for french-reading people",
-  "main": "gruntfile.js",
-  "dependencies": {},
-  "devDependencies": {
-      "bower": "latest",
-      "grunt": "latest",
-      "grunt-autoprefixer": "latest",
-      "grunt-cli": "latest",
-      "grunt-contrib-jasmine": "latest",
-      "grunt-contrib-uglify": "latest",
-      "grunt-ngmin": "latest",
-      "grunt-traceur": "latest",
-      "jasmine-standalone": "latest",
-      "node-cli": "latest",
-      "traceur": "latest"
-  },
-  "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-      //"preinstall": "sudo npm install --unsafe-perm -g grunt-cli"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RR0/RR0"
-  },
-  "keywords": [
-    "UFO",
-    "unexplained",
-    "phenomena",
-    "flying",
-    "saucers",
-    "alien",
-    "conspiracy"
-  ],
-  "author": "Jerome Beau",
-  "license": "GFDL",
-  "bugs": {
-    "url": "https://github.com/RR0/RR0/issues"
-  }
+    "name": "RR0",
+    "version": "1.0.0",
+    "description": "UFO data for french-reading people",
+    "main": "gruntfile.js",
+    "dependencies": {},
+    "devDependencies": {
+        "bower": "latest",
+        "grunt": "latest",
+        "grunt-autoprefixer": "latest",
+        "grunt-cli": "latest",
+        "grunt-contrib-jasmine": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-ngmin": "latest",
+        "grunt-traceur": "latest",
+        "jasmine-standalone": "latest",
+        "node-cli": "latest",
+        "traceur": "latest"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RR0/RR0"
+    },
+    "keywords": [
+        "UFO",
+        "unexplained",
+        "phenomena",
+        "flying",
+        "saucers",
+        "alien",
+        "conspiracy"
+    ],
+    "author": "Jerome Beau",
+    "license": "GFDL",
+    "bugs": {
+        "url": "https://github.com/RR0/RR0/issues"
+    }
 }

@@ -1,34 +1,37 @@
 {
-  "name": "RR0",
-  "version": "1.0.0",
-  "description": "RR0",
-  "main": "index.html",
-  "keywords": [
-    "poher",
-    "matrix",
-    "ufo",
-    "misidentification"
-  ],
-  "authors": [
-    "RR0"
-  ],
-  "license": "GDFL",
-  "homepage": "http://rr0.org",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular": "*",
-    "angular-resource": "*",
-    "angular-sanitize": "*",
-    "splitter": "*",
-    "VirtualSky": "https://github.com/slowe/VirtualSky.git"
-  },
-  "resolutions": {
-    "angular": ">=1.3"
-  }
+    "name": "RR0",
+    "version": "1.0.0",
+    "description": "RR0",
+    "main": "index.html",
+    "keywords": [
+        "poher",
+        "matrix",
+        "ufo",
+        "misidentification"
+    ],
+    "authors": [
+        "RR0"
+    ],
+    "license": "GDFL",
+    "homepage": "http://rr0.org",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "*",
+        "angular-resource": "*",
+        "angular-sanitize": "*",
+        "splitter": "*",
+        "VirtualSky": "https://github.com/slowe/VirtualSky.git"
+    },
+    "resolutions": {
+        "angular": ">=1.3"
+    },
+    "devDependencies": {
+//    "requirejs": "~2.1.14",
+    }
 }

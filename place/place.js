@@ -197,7 +197,7 @@ angular.module('rr0.place', [])
                 org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100 - 28) / 100);
             }
             splitWithMap(org.rr0.leftWidth);
-            org.rr0.time.drawChart();
+            //org.rr0.time.drawChart();
         }
 
         function splitWithMap(contentWidth) {

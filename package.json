@@ -18,8 +18,8 @@
       "traceur": "latest"
   },
   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "preinstall": "sudo npm install --unsafe-perm -g grunt-cli"
+      "test": "echo \"Error: no test specified\" && exit 1"
+      //"preinstall": "sudo npm install --unsafe-perm -g grunt-cli"
   },
   "repository": {
     "type": "git",

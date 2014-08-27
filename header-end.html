@@ -1,40 +1,46 @@
 </head>
 <body>
-    <div class="contents">
-        <div ng-controller="HeadCtrl">
-            <header ng-init="initTitle('<!--#echo var="title" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->');initLang('<!--#echo var="HTTP_ACCEPT_LANGUAGE" -->');">
-                <h1 ng-bind-html="title" ng-show="!isFramed()" title="{{title}}">&nbsp;</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li ng-repeat="p in ps" class="constant {{p.style}}">
-                        <a ng-if="p.link && p.label" href="{{p.link}}">
-                            <span ng-bind-html="p.label | unsafe" title="{{p.title}}"></span>
-                        </a>
-                    </li>
-                    <li tabindex="100" ng-click="titleClick()" ng-mouseover="titleOver()" ng-mouseleave="titleLeave()" class="constant">
-                        <a href="#contents" ng-click="sectionClick('#contents')">
-                            <span class="constant label" ng-bind-html="outline | unsafe" title="Début de l'article"></span>
-                        </a>
-                        <ul class="outline">
-                            <li tabindex="{{101+$index}}" class="constant" ng-repeat="s in sections" ng-click="sectionClick(s)">
-                                <a href="#{{s.id}}"><span ng-bind-html="s.outlineLabel|unsafe"></span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li ng-repeat="n in ns" class="constant {{n.style}}">
-                        <a ng-if="n.link && n.label" href="{{n.link}}"><span ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
-                    </li>
-                    <li class="constant" ng-cloak ng-show="!isFramed()">
-                        <div class="search"></div>
-                    </li>
-                    <li class="toggleMap constant">
-                        <a href='#'><span class="label">Carte</span> <span><span class='iconic map_pin_fill'></span></span></a>
-                    </li>
-                </ul>
-            </nav>
+<div class="contents">
+    <div data-ng-controller="HeadCtrl">
+        <header data-ng-init="initTitle('<!--#echo var=" title
+        " -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('
+        <!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','
+        <!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','
+        <!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','
+        <!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->');initLang('
+        <!--#echo var="HTTP_ACCEPT_LANGUAGE" -->');">
+        <h1 data-ng-bind-html="title" data-ng-show="!isFramed()" title="{{title}}">&nbsp;</h1></header>
+        <nav>
+            <ul>
+                <li data-ng-repeat="p in ps" class="constant {{p.style}}">
+                    <a data-ng-if="p.link && p.label" data-ng-href="{{p.link}}">
+                        <span data-ng-bind-html="p.label | unsafe" title="{{p.title}}"></span> </a>
+                </li>
+                <li tabindex="100" data-ng-click="titleClick()" data-ng-mouseover="titleOver()" data-ng-mouseleave="titleLeave()" class="constant">
+                    <a href="#contents" data-ng-click="sectionClick('#contents')">
+                        <span class="constant label" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span>
+                    </a>
+                    <ul class="outline">
+                        <li data-ng-attr-tabindex="{{101+$index}}" class="constant" data-ng-repeat="s in sections" data-ng-click="sectionClick(s)">
+                            <a data-ng-href="#{{s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-ng-repeat="n in ns" class="constant {{n.style}}">
+                    <a data-ng-if="n.link && n.label" data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
+                </li>
+                <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
+                    <div class="search"></div>
+                </li>
+                <li class="toggleMap constant">
+                    <a href='#'><span class="label">Carte</span> <span><span class='iconic map_pin_fill'></span></span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="text">
+        <div class="author" data-ng-controller="AuthorCtrl" data-ng-show="authors.length" data-ng-cloak>
+            <span data-ng-cloak data-ng-repeat="aa in authors">{{$first?'':' & '}}<a data-ng-href="{{aa.link}}">{{aa.lastName}},
+                {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>,
+            <span data-ng-bind-html="docTime"></span>
         </div>
-        <div class="text">
-            <div class="author" ng-controller="AuthorCtrl" ng-show="authors.length" ng-cloak>
-                <span ng-cloak ng-repeat="aa in authors">{{$first?'':' & '}}<a href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>: <span ng-bind-html="copyright"></span>, <span ng-bind-html="docTime"></span>
-            </div>

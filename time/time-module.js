@@ -48,7 +48,7 @@ angular.module('rr0.time', [])
 
                 var currentTime = org.rr0.time.getTime();
 
-                var decodedTime = new org.rr0.time.Moment();
+                var decodedTime = new org.rr0.time.NewMoment();
                 decodedTime.year = currentTime.getYear();
                 decodedTime.month = currentTime.getMonth();
                 decodedTime.dayOfMonth = currentTime.getDayOfMonth();

@@ -149,100 +149,108 @@ function TimeModule() {
         }
     };
 
-    this.Moment = function () {
-        var momentSelf = this;
+    class Moment {
 
-        function clear() {
-            momentSelf.decade = false;
-            momentSelf.dayOfMonth = null;
-            momentSelf.timeZone = null;
-            momentSelf.year = null;
-            momentSelf.month = null;
-            momentSelf.hour = null;
-            momentSelf.minutes = null;
-            momentSelf.seconds = null;
+        clear() {
+            this.decade = false;
+            this.dayOfMonth = null;
+            this.timeZone = null;
+            this.year = null;
+            this.month = null;
+            this.hour = null;
+            this.minutes = null;
+            this.seconds = null;
         }
 
-        clear.call(this);
+        constructor() {
+            this.decade = false;
+            this.dayOfMonth = null;
+            this.timeZone = null;
+            this.year = null;
+            this.month = null;
+            this.hour = null;
+            this.minutes = null;
+            this.seconds = null;
+        }
 
-        this.setSeconds = function (s) {
-            momentSelf.seconds = s;
-        };
+        setSeconds(s) {
+            this.seconds = s;
+        }
 
-        this.setMinutes = function (mn) {
-            momentSelf.minutes = mn;
-            momentSelf.setSeconds();
-        };
+        setMinutes(mn) {
+            this.minutes = mn;
+            this.setSeconds();
+        }
 
-        this.setHour = function (h) {
-            momentSelf.hour = h;
-            momentSelf.setMinutes();
-        };
+        setHour(h) {
+            this.hour = h;
+            this.setMinutes();
+        }
 
-        this.setTimeZone = function (z) {
-            momentSelf.timeZone = z;
-        };
+        setTimeZone(z) {
+            this.timeZone = z;
+        }
 
-        this.setDayOfMonth = function (d) {
-            momentSelf.dayOfMonth = d;
-            momentSelf.setHour();
-        };
+        setDayOfMonth(d) {
+            this.dayOfMonth = d;
+            this.setHour();
+        }
 
-        this.setMonth = function (m) {
-            momentSelf.month = m;
-            momentSelf.setDayOfMonth();
-        };
+        setMonth(m) {
+            this.month = m;
+            this.setDayOfMonth();
+        }
 
-        this.setYear = function (number) {
-            momentSelf.year = number;
-            momentSelf.setMonth();
-        };
+        setYear(number) {
+            this.year = number;
+            this.setMonth();
+        }
 
-        this.getYear = function () {
-            return momentSelf.year;
-        };
+        getYear() {
+            return this.year;
+        }
 
-        this.getMonth = function () {
-            return momentSelf.month;
-        };
+        getMonth() {
+            return this.month;
+        }
 
-        this.getDayOfMonth = function () {
-            return momentSelf.dayOfMonth;
-        };
+        getDayOfMonth() {
+            return this.dayOfMonth;
+        }
 
-        this.getHour = function () {
-            return momentSelf.hour;
-        };
+        getHour() {
+            return this.hour;
+        }
 
-        this.getMinutes = function () {
-            return momentSelf.minutes;
-        };
+        getMinutes() {
+            return this.minutes;
+        }
 
-        this.getTimeZone = function () {
-            return momentSelf.timeZone;
-        };
+        getTimeZone() {
+            return this.timeZone;
+        }
 
-        this.isApprox = function () {
-            return momentSelf.approx;
-        };
+        isApprox() {
+            return this.approx;
+        }
 
-        this.fromString = function (dString) {
+        fromString(dString) {
             var number;
             var era;
             var txt;
             var monthReady;
             var zReady;
 
-            function resetParse() {
-                clear.call(momentSelf);
+            var resetParse = function() {
+                this.clear();
                 number = null;
                 era = 1;
                 txt = "";
                 monthReady = undefined;
                 zReady = undefined;
-            }
+            };
 
-            resetParse();
+            resetParse.call(this);
 
             function setTz(c) {
                 var z;
@@ -287,7 +295,7 @@ function TimeModule() {
                     default:
                         return;
                 }
-                momentSelf.setTimeZone(z);
+                this.setTimeZone(z);
                 txt = null;
             }
 
@@ -298,34 +306,34 @@ function TimeModule() {
             var i;
 
             function timeSet() {
-                if (momentSelf.year != null && number <= 59) {
+                if (this.year != null && number <= 59) {
                     monthReady = monthReady || dString.charAt(i) == '-';
                     if (!monthReady) {
-                        if (momentSelf.month != null) {
-                            if (momentSelf.dayOfMonth != null || momentSelf.hour != null) {
-                                if (momentSelf.hour != null) {
+                        if (this.month != null) {
+                            if (this.dayOfMonth != null || this.hour != null) {
+                                if (this.hour != null) {
                                     if (this.minutes != null) {
-                                        momentSelf.setDayOfMonth(value());     // setHour is processed after ':' only
+                                        this.setDayOfMonth(value());     // setHour is processed after ':' only
                                     } else {
-                                        momentSelf.setMinutes(value());
+                                        this.setMinutes(value());
                                     }
                                 } else {
-                                    momentSelf.setDayOfMonth(value());     // setHour is processed after ':' only
+                                    this.setDayOfMonth(value());     // setHour is processed after ':' only
                                 }
                             } else {
-                                momentSelf.setDayOfMonth(value());
+                                this.setDayOfMonth(value());
                             }
                         } else {
                             // Probably just text
                         }
                     } else {
-                        momentSelf.setMonth(value());
+                        this.setMonth(value());
                         monthReady = false;
                     }
-                } else if (momentSelf.hour != null) {
-                    momentSelf.setMinutes(value());
+                } else if (this.hour != null) {
+                    this.setMinutes(value());
                 } else {
-                    momentSelf.setYear(era * number);
+                    this.setYear(era * number);
                     monthReady = true;
                 }
                 number = null;
@@ -365,7 +373,7 @@ function TimeModule() {
                             if (number == null) {
                                 era = -1;
                             }
-                            momentSelf.setHour(null);  // Next value cannot be minutes
+                            this.setHour(null);  // Next value cannot be minutes
                             timeSet.call(this); // End of year or month
                         } else {
                             txt += c;
@@ -373,7 +381,7 @@ function TimeModule() {
                         break;
                     case 's':
                         if (number != null && txt.charAt(i - 1) != ' ') {
-                            momentSelf.decade = true;
+                            this.decade = true;
                         } else {
                             txt += c;
                         }
@@ -382,13 +390,13 @@ function TimeModule() {
                         era = 1;
                         break;
                     case '~':
-                        momentSelf.approx = true;
+                        this.approx = true;
                         break;
                     case ':':
-                        if (momentSelf.hour != null && zReady) {
-                            momentSelf.setTimeZone(number * era);
+                        if (this.hour != null && zReady) {
+                            this.setTimeZone(number * era);
                         } else {
-                            momentSelf.setHour(value());
+                            this.setHour(value());
                             zReady = true;
                         }
                         number = null;
@@ -405,7 +413,7 @@ function TimeModule() {
                     case '/':
                         parseEnd.call(this);
                         this.startDate = org.clone(this);
-                        resetParse();
+                        resetParse.call(this);
                         break;
                     default:
                         if (digit) {
@@ -417,25 +425,27 @@ function TimeModule() {
                 }
             }
             parseEnd.call(this);
-            return momentSelf;
+            return this;
         };
 
-        this.toISOString = function () {
-            var s = momentSelf.year;
-            if (momentSelf.month) {
-                s += '-' + org.zero(momentSelf.month);
+        toISOString() {
+            var s = this.year;
+            if (this.month) {
+                s += '-' + org.zero(this.month);
             }
-            if (momentSelf.dayOfMonth) {
-                s += '-' + org.zero(momentSelf.dayOfMonth);
+            if (this.dayOfMonth) {
+                s += '-' + org.zero(this.dayOfMonth);
             }
-            if (momentSelf.hour) {
-                s += org.zero(momentSelf.hour) + ":" + org.zero(momentSelf.minutes);
+            if (this.hour) {
+                s += org.zero(this.hour) + ":" + org.zero(this.minutes);
             }
             return s;
         }
+    }
+    this.NewMoment = function() {
+        return new Moment();
     };
-
-    org.rr0.context.time = new this.Moment();
+    org.rr0.context.time = this.NewMoment();
 
     this.getTime = function () {
         return org.rr0.context.time;

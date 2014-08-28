@@ -114,7 +114,7 @@ function OrgModule() {
             if (!sideZone) {
                 sideZone = document.createElement("div");
                 sideZone.id = id;
-                this.getSidePane().appendChild(sideZone);
+                rr0This.getSidePane().appendChild(sideZone);
             }
             return sideZone;
         };

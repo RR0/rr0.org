@@ -1,0 +1,7 @@
+# Created by .gitignore support plugin (hsz.mobi)
+bower_components
+node_modules
+cgi-bin
+lib
+.sass-cache
+.idea

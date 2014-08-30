@@ -126,9 +126,7 @@ module.exports = function (grunt) {
                 ],
                 options: {
                     specs: 'test/**/*.js',
-                    vendor: 'bower_components/**/*.js',
-                    helpers: 'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.1/**/*.js'
-                    //template: 'custom.tmpl',
+                    vendor: 'bower_components/**/*.js'
                 }
             },
             uglify: {

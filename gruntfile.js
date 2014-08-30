@@ -1,4 +1,8 @@
+/* jshint node: true */
+
 module.exports = function (grunt) {
+    "use strict";
+
     grunt.initConfig(
         {
             pkg: grunt.file.readJSON('package.json'),
@@ -65,6 +69,28 @@ module.exports = function (grunt) {
 //                showAngularDocs: true,
 //                docular_webapp_target: 'doc'
 //            },
+            sass: {
+                dist: {
+                    options: {
+                        style: 'compressed'
+                    },
+                    expand: true,
+                    files: {
+                        'rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss']
+                    }
+                },
+                dev: {
+                    options: {
+                        style: 'expanded',
+                        debugInfo: true,
+                        lineNumbers: true,
+                        require: ['./app/styles/sass/helpers/url64.rb']
+                    },
+                    expand: true,
+                    src: ['**/*.scss'],
+                    ext: '.css'
+                }
+            },
             autoprefixer: {
                 options: {
                     browsers: ['> 1%', 'last 2 versions', 'ie 8', 'ie 9']
@@ -75,31 +101,42 @@ module.exports = function (grunt) {
                     src: '*.css'
                 }
             },
-            ngmin: {
-                controllers: {
-                    src: ['js/*.js'],
-                    dest: 'test/generated/controllers/one.js'
+            ngAnnotate: {
+                options: {
+                    singleQuotes: true
                 },
-                directives: {
-                    expand: true,
-                    cwd: 'js',
-                    src: ['directives/**/*.js'],
-                    dest: 'test/generated'
+                rr0: {
+                    files: {
+                        expand: true,
+                        src: ['time.es5.js'],
+                        ext: '.annotated.js'
+                    }
                 }
             },
+            jshint: {
+                all: [
+                    "gruntfile.js",
+                    "js/**/*.js",
+                    "spec/**/*.js"
+                ]
+            },
             jasmine: {
-                src: ['js/common.js', 'time/time.js'],
+                src: [
+                    'js/all.es5.min.js'
+                ],
                 options: {
-                    specs: 'time/*Spec.js'
+                    specs: 'test/**/*.js',
+                    vendor: 'bower_components/**/*.js',
+                    helpers: 'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.1/**/*.js'
+                    //template: 'custom.tmpl',
                 }
             },
             uglify: {
-                my_target: {
+                rr0: {
                     options: {
                         sourceMap: true,
                         sourceMapName: 'js/all.es5.map',
-                        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                            '<%= grunt.template.today("yyyy-mm-dd") %> */',
+                        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
                         drop_console: true
                     },
                     files: {
@@ -124,11 +161,15 @@ module.exports = function (grunt) {
     );
     //grunt.loadNpmTasks('grunt-docular');
     grunt.loadNpmTasks('grunt-autoprefixer');
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
-    grunt.loadNpmTasks('grunt-ngmin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-traceur');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-    grunt.registerTask('default', ['traceur', 'uglify']);
+    grunt.registerTask('test', ['jasmine']);
+    grunt.registerTask('default', ['traceur', 'uglify', 'css']);
+    grunt.registerTask('css', ['sass:dist', 'autoprefixer']);
 
 };

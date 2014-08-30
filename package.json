@@ -23,7 +23,7 @@
         "postinstall": "bower install",
 
         "pretest": "npm install",
-        "test": "grunt test"
+        "test": "grunt"
     },
     "repository": {
         "type": "git",

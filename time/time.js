@@ -590,9 +590,9 @@ function TimeModule() {
         return this.getTime().dayOfMonth;
     };
 
-    function getMonth() {
+    this.getMonth = function() {
         return timeModuleThis.getTime().month;
-    }
+    };
 
     function getDate(y, m, d) {
         var dat;
@@ -600,7 +600,7 @@ function TimeModule() {
         if (y) {                    // No getTime().year set means no date set
             dat = new Date();
             dat.setFullYear(y);
-            if (!m) m = getMonth();
+            if (!m) m = timeModuleThis.getMonth();
             if (m) dat.setMonth(m - 1);
             if (!d) d = timeModuleThis.getDayOfMonth();
             dat.setDate(d);
@@ -616,7 +616,7 @@ function TimeModule() {
         if (!y) y = timeModuleThis.getTime().year;
         var s = "";
         if (y) {
-            if (!m) m = getMonth();
+            if (!m) m = timeModuleThis.getMonth();
             if (!d) d = timeModuleThis.getTime().dayOfMonth;
             var newDate = new Date();
             newDate.setFullYear(y);

@@ -169,7 +169,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     grunt.registerTask('test', ['jasmine']);
-    grunt.registerTask('default', ['traceur', 'uglify']);
+    grunt.registerTask('default', ['traceur', 'uglify', 'css']);
     grunt.registerTask('css', ['sass:dist', 'autoprefixer']);
 
 };

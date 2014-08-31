@@ -1,5 +1,52 @@
 // Network functions
 function NetModule() {
+    var netThis = this;
+    /**
+     *
+     * @param e The element to replace into
+     * @param toReplace The text to link in the element contents
+     * @param l The link address
+     * @param replacement The replacement text, if different from toReplace
+     * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
+     * @param {string} [t] title on the link
+     */
+    this.checkedLink=function(e, toReplace, l, replacement, cacheIt, t) {
+        if (l) {
+            l = org.addEndingSlash(l);
+        }
+        if (e.className != org.constantClass) {
+            if (!replacement) replacement = toReplace;
+            var newText = org.text(e).replace(toReplace, replacement);  // Replace text early, the link will come later
+            if (e.nodeType == Node.TEXT_NODE) {
+                e.nodeValue = newText;
+            } else {
+                e.innerHTML = newText;
+            }
+            if (t) {
+                e.title = t;
+            }
+            if (l && l != org.getUri()) {
+                toReplace = replacement;
+                var failProc = function () {
+                    var pLink = org.parentLink(l);
+                    if (org.getUri().indexOf("/time/") < 0) {
+                        org.log("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
+                        cacheIt = false;
+                        netThis.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
+                    }
+                };
+                org.rr0.net.onExists(l, function () {
+                    if (l != (org.rr0.time.uriPart + "0/0/")) {
+                        org.rr0.net.onExists(l + "/index.html", function () {
+                            org.log("found link " + l + " for e'sparent=" + e.parentNode);
+                            e = org.linkify(e, replacement, l, replacement, cacheIt);
+                            if (t) e.title = t;
+                        }, failProc);
+                    }
+                }, failProc);
+            }
+        }
+    };
 
     function httpRequest() {
         return window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");

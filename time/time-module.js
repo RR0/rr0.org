@@ -29,16 +29,21 @@ angular.module('rr0.time', [])
             });
         }
 
-        initGoogleCharts(function () {
-            org.rr0.time.chartZone = org.rr0.getSideZone("chart");
-            org.rr0.time.setChartsHeight(30);
-            var chart = new google.visualization.ColumnChart(org.rr0.time.chartZone);
-            org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([org.rr0.time.drawChart]);
+        if (typeof google !== 'undefined') {
+            initGoogleCharts(function () {
+                console.info("rr0timerun8");
+                org.rr0.time.chartZone = org.rr0.getSideZone("chart");
+                org.rr0.time.setChartsHeight(30);
+                var chart = new google.visualization.ColumnChart(org.rr0.time.chartZone);
+                org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([org.rr0.time.drawChart]);
 
-            for (var i = 0; i < onGoogleChartsLoaded.length; i++) {
-                onGoogleChartsLoaded[i]();
-            }
-        });
+                for (var i = 0; i < onGoogleChartsLoaded.length; i++) {
+                    onGoogleChartsLoaded[i]();
+                }
+            });
+        } else {
+            console.warn("Google API is not loaded");
+        }
     })
     .directive('time', function () {
         return {
@@ -217,7 +222,7 @@ angular.module('rr0.time', [])
                 } else {
                     dataStr = txt;
                 }
-                if (dataStr.charAt(0) === 'P') {
+                function handleDuration() {
                     var durationStr;
                     var durationMax;
                     var slashPos = dataStr.indexOf('/');
@@ -239,14 +244,22 @@ angular.module('rr0.time', [])
                     }
                     e.innerHTML = r.replacement;
                     elem.addClass('duration');
-                } else {
+                }
+
+                function handleTime() {
                     decodedTime.fromString(dataStr);
                     r = toString(currentTime, decodedTime);
                     dataStr = decodedTime.toISOString();
-                    checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
+                    org.rr0.net.checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
                     if (!datetime) {
                         e.setAttribute("datetime", dataStr);
                     }
+                }
+
+                if (dataStr.charAt(0) === 'P') {
+                    handleDuration();
+                } else {
+                    handleTime();
                 }
             }
         }

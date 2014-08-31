@@ -127,7 +127,10 @@ module.exports = function (grunt) {
                 options: {
                     specs: 'test/**/*.js',
                     vendor: 'bower_components/**/*.js',
-                    helpers: 'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.1/**/*.js'
+                    helpers: [
+                        'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.1/**/*.js',
+                        'bower_components/angular-mocks/angular-mocks.js'
+                        ]
                     //template: 'custom.tmpl',
                 }
             },

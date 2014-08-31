@@ -3,6 +3,7 @@ describe("Time directive", function () {
     var $rootScope;
 
     beforeEach(angular.mock.module('rr0.time'));
+    org.rr0.context.language = 'fr';
 
     beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_) {
         $compile = _$compile_;

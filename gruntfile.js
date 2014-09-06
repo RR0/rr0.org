@@ -134,6 +134,12 @@ module.exports = function (grunt) {
                     //template: 'custom.tmpl',
                 }
             },
+            karma: {
+                unit: {
+                    configFile: 'karma.conf.js',
+                    singleRun: true
+                }
+            },
             uglify: {
                 rr0: {
                     options: {
@@ -170,8 +176,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('test', ['jasmine']);
+    grunt.registerTask('test', ['karma']);
     grunt.registerTask('default', ['traceur', 'uglify', 'css', 'test']);
     grunt.registerTask('css', ['sass:dist', 'autoprefixer']);
 

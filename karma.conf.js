@@ -49,8 +49,9 @@ module.exports = function (config) {
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: false,
 
-        // start these browsers
-        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        // Firefox only is available on Travis VM : http://docs.travis-ci.com/user/gui-and-headless-browsers/
+        // Current PhantomJS versions fail with traceur : https://github.com/google/traceur-compiler/issues/908
+        //browsers: ['Chrome', 'Firefox'],
         browsers: ['Firefox'],
 
         // Continuous Integration mode

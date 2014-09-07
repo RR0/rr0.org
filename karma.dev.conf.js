@@ -16,7 +16,10 @@ module.exports = function (config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'node_modules/karma-jasmine/**/*.js',
-            'js/all.es5.min.js',
+            'js/**/*.es5.js',
+            'time/*.es5.js',
+            'people/**/*.es5.js',
+            'place/**/*.es5.js',
             'test/**/*Spec.js'
         ],
 
@@ -51,7 +54,8 @@ module.exports = function (config) {
 
         // Firefox only is available on Travis VM : http://docs.travis-ci.com/user/gui-and-headless-browsers/
         // Current PhantomJS versions fail with traceur : https://github.com/google/traceur-compiler/issues/908
-        browsers: ['Firefox'],
+        //browsers: ['Chrome', 'Firefox'],
+        browsers: ['Chrome'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits

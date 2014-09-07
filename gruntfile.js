@@ -83,8 +83,7 @@ module.exports = function (grunt) {
                     options: {
                         style: 'expanded',
                         debugInfo: true,
-                        lineNumbers: true,
-                        require: ['./app/styles/sass/helpers/url64.rb']
+                        lineNumbers: true
                     },
                     expand: true,
                     src: ['**/*.scss'],
@@ -135,9 +134,12 @@ module.exports = function (grunt) {
                 }
             },
             karma: {
-                unit: {
+                int: {
                     configFile: 'karma.conf.js',
                     singleRun: true
+                },
+                dev: {
+                    configFile: 'karma.dev.conf.js'
                 }
             },
             uglify: {
@@ -178,8 +180,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('test', ['karma']);
-    grunt.registerTask('default', ['traceur', 'uglify', 'css', 'test']);
-    grunt.registerTask('css', ['sass:dist', 'autoprefixer']);
-
+    grunt.registerTask('test-dist', ['karma:dist']);
+    grunt.registerTask('test-dev', ['karma:dev']);
+    grunt.registerTask('test-unit', ['jasmine']);
+    grunt.registerTask('css-dev', ['sass:dev', 'autoprefixer']);
+    grunt.registerTask('css-dist', ['sass:dist', 'autoprefixer']);
+    grunt.registerTask('dev', ['traceur', 'css-dev', 'test-dev']);
+    grunt.registerTask('default', ['traceur', 'uglify', 'css-dist', 'test-unit']);
 };

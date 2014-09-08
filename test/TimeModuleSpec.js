@@ -65,7 +65,7 @@ describe("Time directive", function () {
         $rootScope.$digest();
         expect(element.html()).toContain("Samedi 25 Juillet 1998 à 17:20");
     });
-    /*it('display time intervals', function () {
+/*    it('display time intervals', function () {
         spyOn(org.rr0.net, "onExists").and.returnValue(true);
 
         var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);

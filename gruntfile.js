@@ -134,7 +134,7 @@ module.exports = function (grunt) {
                 }
             },
             karma: {
-                int: {
+                dist: {
                     configFile: 'karma.conf.js',
                     singleRun: true
                 },
@@ -186,5 +186,5 @@ module.exports = function (grunt) {
     grunt.registerTask('css-dev', ['sass:dev', 'autoprefixer']);
     grunt.registerTask('css-dist', ['sass:dist', 'autoprefixer']);
     grunt.registerTask('dev', ['traceur', 'css-dev', 'test-dev']);
-    grunt.registerTask('default', ['traceur', 'uglify', 'css-dist', 'test-unit']);
+    grunt.registerTask('default', ['traceur', 'uglify', 'css-dist', 'test-dist']);
 };

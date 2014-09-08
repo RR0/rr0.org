@@ -245,7 +245,7 @@ function TimeModule() {
                 this.clear();
                 number = null;
                 era = 1;
-                txt = "";
+                txt = null;
                 monthReady = undefined;
                 zReady = undefined;
             };
@@ -300,7 +300,7 @@ function TimeModule() {
             }
 
             function value() {
-                return number != null ? zReady ? number : txt + number : txt != null ? txt : null;
+                return number != null ? (zReady ? number : (txt != null ? txt + number : number)) : (txt != null ? txt : null);
             }
 
             var i;
@@ -376,14 +376,14 @@ function TimeModule() {
                             this.setHour(null);  // Next value cannot be minutes
                             timeSet.call(this); // End of year or month
                         } else {
-                            txt += c;
+                            txt = txt ? txt + c : c;
                         }
                         break;
                     case 's':
                         if (number != null && txt.charAt(i - 1) != ' ') {
                             this.decade = true;
                         } else {
-                            txt += c;
+                            txt = txt ? txt + c : c;
                         }
                         break;
                     case '+':
@@ -405,7 +405,7 @@ function TimeModule() {
                         var hourNumber = !isNaN(dString.charAt(i + 1));
                     case ' ':
                         if (!hourNumber && (txt || zReady)) {
-                            txt += c;
+                            txt = txt ? txt + c : c;
                         } else {
                             timeSet.call(this); // End of date
                         }
@@ -413,15 +413,16 @@ function TimeModule() {
                     case '/':
                         parseEnd.call(this);
                         this.startDate = org.clone(this);
+                        org.rr0.context.time = this.startDate;
                         resetParse.call(this);
                         break;
                     default:
                         if (digit) {
-                            txt += digit;
+                            txt = txt ? txt + digit : digit;
                             number = null;
                             digit = null;
                         }
-                        txt += c;
+                        txt = txt ? txt + c : c;
                 }
             }
             parseEnd.call(this);
@@ -437,7 +438,7 @@ function TimeModule() {
                 s += '-' + org.zero(this.dayOfMonth);
             }
             if (this.hour) {
-                s += org.zero(this.hour) + ":" + org.zero(this.minutes);
+                s += 'T' + org.zero(this.hour) + ":" + org.zero(this.minutes);
             }
             return s;
         }
@@ -525,8 +526,7 @@ function TimeModule() {
         var t = timeModuleThis.getTime();
         if (m) t.month = m;
         if (t.month) {
-            var mName = monthName();
-            s += mName;
+            s += monthName();
         }
         return s;
     }
@@ -558,7 +558,7 @@ function TimeModule() {
         var t = timeModuleThis.getTime();
         if (!d) d = t.dayOfMonth;
         if (d) {
-            var dayName = dayOfWeekNam(timeModuleThis.getDayOfWeek(t.year, t.month, d));
+            var dayName = timeModuleThis.dayOfWeekNam(timeModuleThis.getDayOfWeek(t.year, t.month, d));
             s += dayName + " ";
             s += (d == 1 ? "1<sup>er</sup>" : d);
         }
@@ -783,7 +783,7 @@ function TimeModule() {
                                     }
                                 }
                             }
-                            checkedLink(e, toReplace, dateLink, replacement, true);
+                            org.rr0.net.checkedLink(e, toReplace, dateLink, replacement, true);
                         }
                     }
                 }

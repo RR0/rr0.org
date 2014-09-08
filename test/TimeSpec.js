@@ -11,4 +11,31 @@ describe("Time module", function () {
         org.rr0.time.setMonth(2);
         expect(org.rr0.time.getMonth()).toBe(2);
     });
+    it("parses ISO string", function () {
+        var dateMoment = org.rr0.time.NewMoment();
+        var date = dateMoment.fromString('1998-08-31');
+        expect(date.getYear()).toBe(1998);
+        expect(date.getMonth()).toBe(8);
+        expect(date.getDayOfMonth()).toBe(31);
+    });
+    it("find day of week", function () {
+        expect(org.rr0.time.getDayOfWeek(1998, 8, 31)).toBe(1);
+        expect(org.rr0.time.dayOfWeekNam(0)).toBe('Dimanche');
+        expect(org.rr0.time.dayOfWeekNam(1)).toBe('Lundi');
+    });
+    it("displays ISO string", function () {
+        var dateMoment = org.rr0.time.NewMoment();
+        dateMoment.setYear(1998);
+        dateMoment.setMonth(8);
+        dateMoment.setDayOfMonth(31);
+        expect(dateMoment.toISOString()).toBe('1998-08-31');
+
+        var timeMoment = org.rr0.time.NewMoment();
+        timeMoment.setYear(1998);
+        timeMoment.setMonth(8);
+        timeMoment.setDayOfMonth(31);
+        timeMoment.setHour(16);
+        timeMoment.setMinutes(38);
+        expect(timeMoment.toISOString()).toBe('1998-08-31T16:38');
+    });
 });

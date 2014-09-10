@@ -2,13 +2,7 @@
 <body>
 <div class="contents">
     <div data-ng-controller="HeadCtrl">
-        <header data-ng-init="initTitle('<!--#echo var=" title
-        " -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('
-        <!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','
-        <!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','
-        <!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','
-        <!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->');initLang('
-        <!--#echo var="HTTP_ACCEPT_LANGUAGE" -->');">
+        <header data-ng-init="initTitle('<!--#echo var="title" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->');initLang('<!--#echo var="HTTP_ACCEPT_LANGUAGE" -->');">
         <h1 data-ng-bind-html="title" data-ng-show="!isFramed()" title="{{title}}">&nbsp;</h1></header>
         <nav>
             <ul>
@@ -40,7 +34,6 @@
     </div>
     <div class="text">
         <div class="author" data-ng-controller="AuthorCtrl" data-ng-show="authors.length" data-ng-cloak>
-            <span data-ng-cloak data-ng-repeat="aa in authors">{{$first?'':' & '}}<a data-ng-href="{{aa.link}}">{{aa.lastName}},
-                {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>,
+            <span data-ng-cloak data-ng-repeat="aa in authors">{{$first?'':' & '}}<a data-ng-href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>,
             <span data-ng-bind-html="docTime"></span>
         </div>

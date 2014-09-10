@@ -526,7 +526,7 @@ function TimeModule() {
         var t = timeModuleThis.getTime();
         if (m) t.month = m;
         if (t.month) {
-            s += monthName();
+            s += timeModuleThis.monthName();
         }
         return s;
     }

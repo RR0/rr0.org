@@ -67,7 +67,7 @@ function OrgModule() {
         this.contentsZone = null;
         this.getSidePane = function () {
             if (!sidePane) {
-                sidePane = document.getElementsByName("aside")[0];
+                sidePane = document.querySelector('aside');
                 /*if (!sidePane) {
                  sidePane = document.createElement("aside");
                     if (this.contentsZone) {

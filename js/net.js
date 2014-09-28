@@ -10,7 +10,7 @@ function NetModule() {
      * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
      * @param {string} [t] title on the link
      */
-    this.checkedLink=function(e, toReplace, l, replacement, cacheIt, t) {
+    netThis.checkedLink=function(e, toReplace, l, replacement, cacheIt, t) {
         if (l) {
             l = org.addEndingSlash(l);
         }

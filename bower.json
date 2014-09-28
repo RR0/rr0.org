@@ -22,13 +22,14 @@
     "tests"
   ],
   "dependencies": {
-    "traceur-runtime": "*",
-    "angular": "*",
-    "angular-resource": "*",
-    "angular-sanitize": "*",
+    "traceur-runtime": "0.0.58",
+    "angular": "1.2.23",
+    "angular-resource": "1.2.23",
+    "angular-sanitize": "1.2.23",
     "VirtualSky": "https://github.com/slowe/VirtualSky.git"
   },
   "devDependencies": {
+    "angular": "1.2.23",
     "angular-mocks": "1.2.23"
   }
 }

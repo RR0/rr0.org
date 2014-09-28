@@ -267,7 +267,9 @@ var style = null;
 var hiddenPos = '-100em';
 
 //var titleTag;
-angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
+angular
+    .module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
+    .value('host', location.host)
     .filter('unsafe', ['$sce', function ($sce) {
         return function (val) {
             return $sce.trustAsHtml(val);
@@ -395,17 +397,17 @@ angular.module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
 /**
  * Adds "target=_blank" to external links so they will be opened in separate tabs
  */
-    .directive('a', function () {
+    .directive('a', ['host', function (host) {
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
                 var a = elem[0];
-                if (a.hostname != location.host) {
+                if (a.hostname && a.hostname.indexOf('.') >0 && a.hostname != host) {
                     a.target = '_blank';
                 }
             }
         }
-    })
+    }])
 /**
  * Registers each encountered HTML5 "section" tag as an document outline entry
  */

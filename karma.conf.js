@@ -15,6 +15,7 @@ module.exports = function (config) {
             'bower_components/traceur-runtime/traceur-runtime.js',
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
+            'bower_components/angular-sanitize/angular-sanitize.js',
             'node_modules/karma-jasmine/**/*.js',
             'js/all.es5.min.js',
             'test/**/*Spec.js'

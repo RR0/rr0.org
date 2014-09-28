@@ -128,7 +128,8 @@ module.exports = function (grunt) {
                     vendor: 'bower_components/**/*.js',
                     helpers: [
                         'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.1/**/*.js',
-                        'bower_components/angular-mocks/angular-mocks.js'
+                        'bower_components/angular-mocks/angular-mocks.js',
+                        'bower_components/angular-sanitize/angular-sanitize.js'
                         ]
                     //template: 'custom.tmpl',
                 }
@@ -185,6 +186,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test-unit', ['jasmine']);
     grunt.registerTask('css-dev', ['sass:dev', 'autoprefixer']);
     grunt.registerTask('css-dist', ['sass:dist', 'autoprefixer']);
-    grunt.registerTask('dev', ['traceur', 'css-dev', 'test-dev']);
+    grunt.registerTask('dev', ['traceur', 'css-dev', 'test-unit']);
     grunt.registerTask('default', ['traceur', 'uglify', 'css-dist', 'test-dist']);
 };

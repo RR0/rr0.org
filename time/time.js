@@ -75,17 +75,22 @@ function TimeModule() {
 
     this.Duration = function () {
         var durationThis = this;
-        this.Unit = function (f, n) {
-            this.factor = f;
-            this.name = n;
-            this.toString = function (value) {
+
+        class Unit {
+            constructor(f, n) {
+                this.factor = f;
+                this.name = n;
+            }
+
+            toString(value) {
                 return value > 0 ? value + '&nbsp;' + this.name + (value > 1 ? 's' : '') : '';
             }
-        };
-        durationThis.second = new this.Unit(1, 'seconde');
-        durationThis.minute = new this.Unit(60 * durationThis.second.factor, 'minute');
-        durationThis.hour = new this.Unit(60 * durationThis.minute.factor, 'heure');
-        durationThis.day = new this.Unit(24 * durationThis.hour.factor, 'jour');
+        }
+
+        durationThis.second = new Unit(1, 'seconde');
+        durationThis.minute = new Unit(60 * durationThis.second.factor, 'minute');
+        durationThis.hour = new Unit(60 * durationThis.minute.factor, 'heure');
+        durationThis.day = new Unit(24 * durationThis.hour.factor, 'jour');
 
         var durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/;
         durationThis.fromString = function (txt) {
@@ -241,7 +246,7 @@ function TimeModule() {
             var monthReady;
             var zReady;
 
-            var resetParse = function() {
+            var resetParse = function () {
                 this.clear();
                 number = null;
                 era = 1;
@@ -427,7 +432,9 @@ function TimeModule() {
             }
             parseEnd.call(this);
             return this;
-        };
+        }
+
+    ;
 
         toISOString() {
             var s = this.year;
@@ -443,7 +450,7 @@ function TimeModule() {
             return s;
         }
     }
-    this.NewMoment = function() {
+    this.NewMoment = function () {
         return new Moment();
     };
     org.rr0.context.time = this.NewMoment();
@@ -590,7 +597,7 @@ function TimeModule() {
         return this.getTime().dayOfMonth;
     };
 
-    this.getMonth = function() {
+    this.getMonth = function () {
         return timeModuleThis.getTime().month;
     };
 

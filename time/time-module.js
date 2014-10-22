@@ -111,7 +111,6 @@ angular.module('rr0.time', [])
                             if (!org.rr0.time.isTimeURL() && contextTime.getDayOfMonth()) {
                                 switch (otherDay) {
                                     case -1:
-
                                         repDay = "veille";
                                         break;
                                     case 1:
@@ -122,7 +121,7 @@ angular.module('rr0.time', [])
                                         break;
                                     default:
                                         if (otherDay <= 7) {
-                                            repDay = dOW + " suivant";
+                                            repDay = otherDay < 0 ? dOW + " précédent" : dOW + " suivant";
                                         }
                                 }
                             }

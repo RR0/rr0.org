@@ -1,20 +1,15 @@
 footer {
-//  margin-right: -$textMargin;
-  margin-left: -$textMargin;
+  margin-right: 1.29em;
+  margin-bottom: 1.9em;
   line-height: 1em;
   iframe {
     display: inline;
-  }
-  table {
-    tbody {
-      height: auto;
-    }
   }
 }
 
 .footer {
   font-size: 0.7em;
-  line-height: 1.7em;
+  line-height: 1.7em; 
   color: #CCC;
   text-align: right;
 }

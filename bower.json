@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "angular": "1.2.23",
-    "angular-mocks": "1.2.23"
+    "angular-mocks": "1.2.23",
+    "nanoscroller": "~0.8.4",
+    "angular-nanoscroller": "~0.2.1"
   }
 }

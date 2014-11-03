@@ -32,7 +32,7 @@
             </ul>
         </nav>
     </div>
-    <div class="text">
+    <div class="text" scrollable>
         <div class="author" data-ng-controller="AuthorCtrl" data-ng-show="authors.length" data-ng-cloak>
             <span data-ng-cloak data-ng-repeat="aa in authors">{{$first?'':' & '}}<a data-ng-href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>,
             <span data-ng-bind-html="docTime"></span>

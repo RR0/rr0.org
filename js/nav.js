@@ -268,7 +268,7 @@ var hiddenPos = '-100em';
 
 //var titleTag;
 angular
-    .module('rr0.nav', ['ngSanitize', 'rr0.people', 'rr0.time'])
+    .module('rr0.nav', ['ngSanitize', 'sun.scrollable', 'rr0.people', 'rr0.time'])
     .value('host', location.host)
     .filter('unsafe', ['$sce', function ($sce) {
         return function (val) {

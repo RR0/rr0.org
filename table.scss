@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+@import "mixins";
+
+th {
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  background-color: rgba(109, 110, 120, 0.10);
+  color: #666666;
+  text-align: left;
+  padding: 2px 1em;
+}
+
+td {
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: justify;
+  padding: 5px;
+}
+
+table {
+  margin: 1.25em 1.25em 1.5em 1.25em;
+  border: none;
+  thead {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  tbody {
+    box-shadow: inset 0px 0.3em 1em 0px rgba(0, 0, 1, 0.21);
+    display: block;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    tr {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+  }
+  th, td {
+    width: auto;
+  }
+}

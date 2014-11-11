@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+@import "mixins";
+
+/*.added:before {*/
+/*content: "[";*/
+/*}*/
+/*.added:after {*/
+/*content: "]";*/
+/*}*/
+cite {
+  border: none;
+  background: $highlightColor repeat-x;
+  text-indent: 0;
+  text-align: justify;
+  vertical-align: baseline;
+  font-style: normal;
+}
+
+@mixin question() {
+  &:before {
+    content: "— ";
+  }
+  &:after {
+    content: "";
+  }
+}
+
+@mixin answer() {
+  &:before {
+    content: "— ";
+  }
+  &:after {
+    content: "";
+  }
+}
+
+@mixin quoting() {
+  background: $highlightColor repeat-x;
+   &:before {
+    content: "« ";
+  }
+  &:after {
+    content: " »";
+  }
+  &.question {
+    @include question();
+  }
+  &.answer {
+    @include answer();
+  }
+  &.question {
+    font-weight: bolder;
+    margin-bottom: 0;
+  }
+  &.answer {
+    margin-top: 0.5em;
+  }
+}
+
+q {
+  @include quoting();
+}
+
+blockquote {
+  &.answer {
+    display: inline;
+    margin-left: 0;
+    p {
+      &:first-child {
+        @include answer();
+      }
+    }
+  }
+  p {
+    @include quoting();
+    &:after {
+      content: "";
+    }
+  }
+  p:last-child {
+    &:after {
+      content: " »";
+    }
+  }
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: left;
+}

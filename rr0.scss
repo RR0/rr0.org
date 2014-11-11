@@ -226,64 +226,8 @@ ol li:hover {
 /*.added:after {*/
 /*content: "]";*/
 /*}*/
-cite {
-  border: none;
-  background: $highlightColor repeat-x;
-  text-indent: 0;
-  text-align: justify;
-  vertical-align: baseline;
-  font-style: normal;
-}
-
-q {
-  background: $highlightColor repeat-x;
-  &:before {
-    content: "« ";
-  }
-  &:after {
-    content: " »";
-  }
-}
-
-blockquote {
-  p {
-    background: $highlightColor repeat-x;
-    &:before {
-      content: "« ";
-    }
-  }
-  p:last-child {
-    &:after {
-      content: " »";
-    }
-  }
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-align: left;
-}
-
-th {
-  font-size: 16px;
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  background-color: rgba(109, 110, 120, 0.10);
-  color: #666666;
-  text-align: left;
-  padding: 2px 1em;
-}
-
-td {
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-align: justify;
-  padding: 5px;
-}
+@import "quote";
+@import "table";
 
 .exergue {
   margin-top: 1em;
@@ -448,31 +392,6 @@ section:after {
 }
 
 @import "images";
-
-table {
-  margin: 1.25em 1.25em 1.5em 1.25em;
-  border: none;
-  thead {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-  }
-  tbody {
-    box-shadow: inset 0px 0.3em 1em 0px rgba(0, 0, 1, 0.21);
-    display: block;
-    max-height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    tr {
-      display: table;
-      table-layout: fixed;
-      width: 100%;
-    }
-  }
-  th, td {
-    width: auto;
-  }
-}
 
 .side {
   width: 20%;

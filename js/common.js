@@ -288,7 +288,7 @@ function OrgModule() {
             .replace(/(\u00EE|\u00EF)/g, 'i')
             .replace(/\u00F1/g, 'n')
             .replace(/(\u00F4|\u00F6)/g, 'o')
-            .replace(/(\u00F9|\u00FB|\u00FC)/g, 'u');
+            .replace(/(\u00F9|\u00FB|\u00FC|\u00FA)/g, 'u');
         return l;
     };
 

@@ -1,8 +1,6 @@
 var peopleUriPart = "/people/";
 
-var peoples = {
-
-};
+var peoples = {};
 function People(p) {
     var commaPos = p.indexOf(", ");
     if (commaPos > 0) {
@@ -106,17 +104,19 @@ angular.module('rr0.people', [])
     .directive('people', function () {
         return {
             restrict: 'C',
+            transclude: true,
+            scope: true,
+            template: "<a href='{{peopleLink}}' translate='no' ng-transclude></a>",
             link: function (scope, elem, attrs) {
                 if (elem[0].tagName !== 'TITLE') {
                     var txt = elem.text();
-                    var e = elem[0];
                     var nameKey = attrs.title;    // Alternate (correct for link) name?
-                    var nameDisplay = txt;
-                    if (nameDisplay.length <= 0) {
-                        nameDisplay = nameKey;
+                    var peopleName = txt;
+                    if (peopleName.length <= 0) {
+                        peopleName = nameKey;
+                        elem.val(peopleName);
                     }
-                    var linkedPeople = org.linkify(e, nameDisplay, peopleLink(nameKey ? nameKey : nameDisplay));
-                    linkedPeople.setAttribute('translate', 'no');
+                    scope.peopleLink = peopleLink(nameKey ? nameKey : peopleName);
                 }
             }
         }

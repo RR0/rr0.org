@@ -19,10 +19,12 @@
     }
   }
   ul {
+    padding-left: 0;
     transition: height $transitionDuration ease;
     display: block;
     li {
       display: block;
+      width: 100%;
     }
   }
 }

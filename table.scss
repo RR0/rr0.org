@@ -32,7 +32,10 @@ table {
     width: 100%;
   }
   tbody {
-    box-shadow: inset 0px 0.3em 1em 0px rgba(0, 0, 1, 0.21);
+    $blurRadius: 1em;
+    $offsetY: 0.3em;
+
+    box-shadow: inset 0 $offsetY $blurRadius 0 rgba(0, 0, 1, 0.21);
     display: block;
     max-height: 80vh;
     overflow-y: auto;
@@ -41,6 +44,12 @@ table {
       display: table;
       table-layout: fixed;
       width: 100%;
+      &:first-child {
+        border-top: rgb(255, 255, 255) $blurRadius - $offsetY solid;
+      }
+      &:last-child {
+        border-bottom: rgb(255, 255, 255) $blurRadius - $offsetY solid;
+      }
     }
   }
   th, td {

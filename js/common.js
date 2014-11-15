@@ -468,24 +468,6 @@ function OrgModule() {
     };
 
     /**
-     * Processes an element to find text that had been linked and should be linked again.
-     *
-     * @param e The node to inspect. Only text node will be considered for this handler.
-     * @returns {boolean}
-     */
-    function cachedLinksHandler(e) {
-        var txt = org.textValue(e);
-        if (txt) {
-            for (var k in org.cache) {
-                if (org.cache.hasOwnProperty(k)) {
-                    e = org.linkify(e, k, org.cache[k + ""], k, false);
-                }
-            }
-        }
-        return false;
-    }
-
-    /**
      * Walk a node and its child nodes to apply a proc on them.
      *
      * @param e the first node to walk from.
@@ -500,10 +482,6 @@ function OrgModule() {
             proc(e);
         }
     }
-
-    this.walkIt = function (from) {
-        walk(from, cachedLinksHandler);
-    };
 
     /**
      */
@@ -541,8 +519,6 @@ function OrgModule() {
         orgThis.nounToLink("/science/crypto/ufo/enquete/indice/temoignage", "témoignage");
         orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/ballon", "ballon");
         orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "météore");
-
-        orgThis.handleTags.apply(null, [cachedLinksHandler]);
     };
 
     this.onContentsLoaded(this.rr0.initStructure);

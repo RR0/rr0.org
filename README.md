@@ -1,4 +1,4 @@
-RR0  [![Build Status](https://travis-ci.org/RR0/RR0.svg?branch=master)](https://travis-ci.org/RR0/RR0.svg?branch=master) 
+RR0  [![Build Status](https://travis-ci.org/RR0/RR0.svg?branch=master)](https://travis-ci.org/RR0/RR0)
 ===
 
 RR0 is a client-side library that aims to ease the display of testimonial data.

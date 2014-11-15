@@ -1,8 +1,5 @@
 @import "../mixins";
 
-.people {
-}
-
 .author {
   margin: 0 -1.9em;
   background-color: #F9F9F9;
@@ -29,5 +26,19 @@
 
 .temoin3 {
   @extend .temoin;
+}
+
+.people {
+  &.witness {
+    @extend .temoin;
+  }
+
+  &.author {
+    @extend .author;
+  }
+
+  .deceased:after {
+    content: ' †';
+  }
 }
 

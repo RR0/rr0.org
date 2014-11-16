@@ -145,25 +145,28 @@ function setN(n, nLink) {
     }
     headResized();
 }
+function previousFromTime(p) {
+    var t = org.rr0.time.getTime();
+    org.rr0.time.findTimeSibling(t.year, t.month,
+        function (y, m) {
+            if (m) {
+                if (m > 1) {
+                    m--;
+                    return {y: y, m: m};
+                } else
+                    m = 12;
+            }
+            y--;
+            return {y: y, m: m};
+        }, setP);
+    p = "...";
+    return p;
+}
 function setPrev(p, pLink) {
     if (!pLink) {
         if (!p && !prev) {
-            var y = org.rr0.time.getYear();
-            if (y) {
-                var t = org.rr0.time.getTime();
-                org.rr0.time.findTimeSibling(t.year, t.month,
-                    function (y, m) {
-                        if (m) {
-                            if (m > 1) {
-                                m--;
-                                return {y: y, m: m};
-                            } else
-                                m = 12;
-                        }
-                        y--;
-                        return {y: y, m: m};
-                    }, setP);
-                p = "...";
+            if (org.rr0.time.getYear()) {
+                p = previousFromTime(p);
             } else {
                 pLink = "..";   // Default previous is previous directory
                 setP(p, pLink);
@@ -180,24 +183,28 @@ function setPrev(p, pLink) {
         prev = p;
     }
 }
+function nextFromTime(n) {
+    var t = org.rr0.time.getTime();
+    org.rr0.time.findTimeSibling(t.year, t.month,
+        function (y, m) {
+            if (m) {
+                if (m < 12) {
+                    m++;
+                    return {y: y, m: m};
+                } else
+                    m = 1;
+            }
+            y++;
+            return {y: y, m: m};
+        }, setN);
+    n = "...";
+    return n;
+}
 function setNext(n, nLink) {
     if (!nLink) {
         if (!n && !next) {
-            var y = org.rr0.time.getYear();
-            if (y) {
-                var t = org.rr0.time.getTime();
-                org.rr0.time.findTimeSibling(t.year, t.month, function (y, m) {
-                    if (m) {
-                        if (m < 12) {
-                            m++;
-                            return {y: y, m: m};
-                        } else
-                            m = 1;
-                    }
-                    y++;
-                    return {y: y, m: m};
-                }, setN);
-                n = "...";
+            if (org.rr0.time.getYear()) {
+                n = nextFromTime(n);
             }
         }
     }
@@ -402,7 +409,7 @@ angular
             restrict: 'E',
             link: function (scope, elem, attrs) {
                 var a = elem[0];
-                if (a.hostname && a.hostname.indexOf('.') >0 && a.hostname != host) {
+                if (a.hostname && a.hostname.indexOf('.') > 0 && a.hostname != host) {
                     a.target = '_blank';
                 }
             }
@@ -679,7 +686,7 @@ angular
         $scope.initAuthor = function (a, aLink, c, cLink) {
             peopleService.addAuthor(a, aLink, c, cLink);
         };
-        $scope.sections = [ ];
+        $scope.sections = [];
         function isOutlineVisible() {
             return outline.style.top !== hiddenPos;
         }

@@ -401,8 +401,9 @@ function OrgModule() {
         var lastSlash = l.length - 1;
         for (; lastSlash > 0; lastSlash--) {
             var c = l.charAt(lastSlash);
-            if (c === '.')
+            if (c === '.') {
                 break;
+            }
             else if (c === '/') {
                 if (lastSlash !== l.length - 1) {
                     l += '/';
@@ -418,7 +419,8 @@ function OrgModule() {
         if (l.charAt(l.length - 1) === '/') {
             parentL = parentL.substring(0, parentL.length - 1);
         }
-        for (var i = parentL.length - 1; i > 0 && parentL.charAt(i) !== '/'; i--) {
+        for (var i = parentL.length - 1; i > 0 && parentL.charAt(i) !== '/';) {
+            i--;
         }
         if (i > 0) {
             parentL = parentL.substring(0, i);
@@ -437,7 +439,7 @@ function OrgModule() {
 
     function toLinks(l, kk) {
         for (var k = 0; k < kk.length; k++) {
-            toLink(l, kk[k])
+            toLink(l, kk[k]);
         }
     }
 
@@ -456,8 +458,9 @@ function OrgModule() {
         if (v && e.nodeType === Node.TEXT_NODE) {
             v = v.trim().replace(/\n/g, '');
             v = v.replace(/ +(?= )/g, '');
-            if (v.length === 0 || e.parentNode.nodeName === 'A' || org.hasClass(e.parentNode, org.constantClass))
+            if (v.length === 0 || e.parentNode.nodeName === 'A' || org.hasClass(e.parentNode, org.constantClass)) {
                 v = null;
+            }
         }
         /* && !hasClass(e.parentNode, "people") /* && !e.hasChildNodes() && e.className !== constantClass && (e.tagName === "P" || e.tagName === "LI" || e.tagName === "CAPTION" || (e.tagName === "TD" && !e.hasChildNodes()));*/
         return v;
@@ -480,7 +483,9 @@ function OrgModule() {
                 var pos = txt.indexOf(k);
                 if (pos >= 0) {
                     orgThis.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
-                    if (!r) r = k;
+                    if (!r) {
+                        r = k;
+                    }
                     var text1;
                     if (pos > 0) {
                         text1 = document.createTextNode(txt.substring(0, pos));
@@ -495,8 +500,12 @@ function OrgModule() {
                     var pNode = e.parentNode;
                     if (pNode) {    // TODO: Should not occur
                         pNode.replaceChild(le, e);
-                        if (text1) pNode.insertBefore(text1, le);
-                        if (text2) pNode.insertBefore(text2, le.nextSibling);
+                        if (text1) {
+                            pNode.insertBefore(text1, le);
+                        }
+                        if (text2) {
+                            pNode.insertBefore(text2, le.nextSibling);
+                        }
                     }
                     if (cacheIt) {
                         toLink(l, r);
@@ -555,13 +564,13 @@ function OrgModule() {
         toLink("/org/us/dod/af", "USAF");
         toLink("/org/us/dod/af", "Air Force");
         orgThis.nounToLink("/science/crypto/ufo/enquete/indice/radar", "radar");
-        orgThis.nounToLink("/science/crypto/ufo/observation/scenario/Abduction.html", "enlèvement");
+        orgThis.nounToLink("/science/crypto/ufo/observation/scenario/Abduction.html", "enl\xE8vement");
         orgThis.nounToLink("/science", "science");
         nounsToLink("/science/crypto/ufo/enquete/indice/temoignage/evaluation/Hypnose.html", ["hypnose", "hypnotique"]);
         //nametolink("scientifique", peopleUriPart + "scientifiques.html");
-        orgThis.nounToLink("/science/crypto/ufo/enquete/indice/temoignage", "témoignage");
+        orgThis.nounToLink("/science/crypto/ufo/enquete/indice/temoignage", "t\xE9moignage");
         orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/ballon", "ballon");
-        orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "météore");
+        orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "m\xE9t\xE9ore");
     };
 
     this.onContentsLoaded(this.rr0.initStructure);
@@ -571,8 +580,6 @@ function OrgModule() {
     return this;
 }
 var org = new OrgModule();
-
-var copyright;
 
 // requestAnimationFrame() shim by Paul Irish
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -584,7 +591,7 @@ var copyright;
         window.cancelAnimationFrame =
             window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
-    if (!window.requestAnimationFrame)
+    if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = function (callback, element) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
@@ -595,9 +602,11 @@ var copyright;
             return id;
 
         };
-    if (!window.cancelAnimationFrame)
+    }
+    if (!window.cancelAnimationFrame) {
         window.cancelAnimationFrame = function (id) {
             clearTimeout(id);
         };
+    }
 }());
 //# sourceURL=common.js

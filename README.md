@@ -1,4 +1,4 @@
-RR0  [![Build Status](https://travis-ci.org/RR0/RR0.svg?branch=master)](https://travis-ci.org/RR0/RR0) [![Coverage Status](https://coveralls.io/repos/RR0/RR0/badge.png)](https://coveralls.io/r/RR0/RR0)
+RR0  [![Build Status](https://travis-ci.org/RR0/RR0.svg?branch=master)](https://travis-ci.org/RR0/RR0) [![Code Climate](https://codeclimate.com/github/RR0/RR0/badges/gpa.svg)](https://codeclimate.com/github/RR0/RR0) [![Test Coverage](https://codeclimate.com/github/RR0/RR0/badges/coverage.svg)](https://codeclimate.com/github/RR0/RR0)
 ===
 
 RR0 is a client-side library that aims to ease the display of testimonial data.

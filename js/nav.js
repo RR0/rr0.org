@@ -28,7 +28,7 @@ var starts =
         },
         {
             dir: "/science/crypto/archeo/",
-            label: "Cryptoarchéologie"
+            label: "Cryptoarch\xE9ologie"
         },
         {
             dir: "/science/para/psi/",
@@ -44,7 +44,7 @@ var starts =
         },
         {
             dir: "/science/sur/fantome",
-            label: "Fantômes"
+            label: "Fant\xF4mes"
         },
         {
             dir: "/science/sur/",
@@ -111,7 +111,7 @@ function setStart(s, sLink) {
                 }
             }
             if (!t) {
-                t = "Début";
+                t = "D\xE9but";
                 s = "⇤ " + s;
             }
             startNav = new NavLink(s, sLink, t);
@@ -127,7 +127,7 @@ function setP(p, pLink) {
     for (var i = 0; i < pes.length; i++) {
         var pe = pes[i];
         if (pe) {
-            pe.innerHTML = "<a href=\"" + pLink + "\" title='Précédent'>← " + p + "</a>";
+            pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'>← " + p + "</a>";
         }
     }
     headResized();
@@ -634,7 +634,7 @@ angular
                 addNavLinkBeforeTitle("RR0", "/", "Home", "home");
                 addNavLinkBeforeTitle(startNav.label, startNav.link, startNav.title, "start");
                 addNavLinkBeforeTitle('' + contents, contentsURL, "Table des matières", "toc");
-                addNavLinkBeforeTitle(prev, prevLink, "Précédent", "prev");
+                addNavLinkBeforeTitle(prev, prevLink, "Pr\xE9c\xE9dent", "prev");
             } else {
                 //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";

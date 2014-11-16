@@ -18,43 +18,6 @@ function People(p) {
 function getPeople() {
     return org.rr0.context.people;
 }
-function setPeopleName(name) {
-    if (name && name.length > 0) {
-        org.rr0.context.people = new People(name);
-        return org.rr0.context.people;
-    }
-}
-/**
- * @param {String} p People's name
- * @param {String} [pLink] a href link, or a symbolic link, or null
- */
-function peopleLink(p, pLink) {
-    if (p) {
-        if (!pLink) {
-            pLink = org.cache[p];
-            if (!pLink) {
-                setPeopleName(p);
-                pLink = org.cache[getPeople().lastName];
-                if (!pLink) {
-                    p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
-                    pLink = org.validLink(p);
-                } else
-                    return pLink;
-            } else
-                return pLink;
-        }
-        var firstLinkChar = pLink.charAt(0);
-        if (firstLinkChar !== '.' && firstLinkChar !== '/') {
-            pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
-        }
-        pLink = org.validLink(pLink);
-        org.cache[p] = pLink;
-        org.cache[getPeople().lastName] = pLink;
-    } else {
-        pLink = null;
-    }
-    return pLink;
-}
 var handleWitness = function (scope, elem, attrs) {
     var txt = elem.text();
     var e = elem[0];
@@ -68,15 +31,20 @@ var handleWitness = function (scope, elem, attrs) {
 };
 
 angular.module('rr0.people', [])
-    .service('peopleService', ['timeService', function (timeService) {
+    .service('peopleService', function () {
         var authors = [];
         var copyright;
+
+        function setPName(name) {
+            if (name && name.length > 0) {
+                org.rr0.context.people = new People(name);
+                return org.rr0.context.people;
+            }
+        }
+
         return {
             getCopyright: function () {
                 return copyright;
-            },
-            getTime: function () {
-                return timeService.getTime();
             },
             getAuthors: function () {
                 return authors;
@@ -98,15 +66,49 @@ angular.module('rr0.people', [])
                 if (c) {
                     this.setCopyright(c, cLink);
                 }
+            },
+            setPeopleName: function (name) {
+                setPName(name);
+            },
+            /**
+             * @param {String} p People's name
+             * @param {String} [pLink] a href link, or a symbolic link, or null
+             */
+            peopleLink: function (p, pLink) {
+                if (p) {
+                    if (!pLink) {
+                        pLink = org.cache[p];
+                        if (!pLink) {
+                            setPName(p);
+                            pLink = org.cache[getPeople().lastName];
+                            if (!pLink) {
+                                p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
+                                pLink = org.validLink(p);
+                            } else
+                                return pLink;
+                        } else
+                            return pLink;
+                    }
+                    var firstLinkChar = pLink.charAt(0);
+                    if (firstLinkChar !== '.' && firstLinkChar !== '/') {
+                        pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
+                    }
+                    pLink = org.validLink(pLink);
+                    org.cache[p] = pLink;
+                    org.cache[getPeople().lastName] = pLink;
+                } else {
+                    pLink = null;
+                }
+                return pLink;
             }
         }
-    }])
-    .directive('people', function () {
+    })
+    .directive('people', ['peopleService', function (peopleService) {
         return {
             restrict: 'C',
             transclude: true,
             scope: true,
-            template: "<a href='{{peopleLink}}' translate='no' ng-transclude></a>",
+            template: "<a href='{{href}}' translate='no' ng-transclude></a>",
             link: function (scope, elem, attrs) {
                 if (elem[0].tagName !== 'TITLE') {
                     var txt = elem.text();
@@ -116,11 +118,11 @@ angular.module('rr0.people', [])
                         peopleName = nameKey;
                         elem.val(peopleName);
                     }
-                    scope.peopleLink = peopleLink(nameKey ? nameKey : peopleName);
+                    scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
                 }
             }
         }
-    })
+    }])
     .directive('meta', ['peopleService', function (peopleService) {
         return {
             restrict: 'E',
@@ -180,10 +182,10 @@ angular.module('rr0.people', [])
             }
         }
     })
-    .controller('AuthorCtrl', ['$scope', 'peopleService', function ($scope, peopleService) {
+    .controller('AuthorCtrl', ['$scope', 'peopleService', 'timeService', function ($scope, peopleService, timeService) {
         $scope.authors = peopleService.getAuthors();
         $scope.copyright = peopleService.getCopyright();
-        $scope.docTime = peopleService.getTime();
+        $scope.docTime = timeService.getTime();
     }])
     .run(function () {
         starts.push({

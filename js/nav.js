@@ -543,7 +543,7 @@ angular
             $scope.style = st;
         };
         $scope.initPeople = function (p) {
-            setPeopleName(p);
+            peopleService.setPeopleName(p);
         };
         $scope.initLang = function (l) {
 

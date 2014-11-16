@@ -268,7 +268,7 @@ var hiddenPos = '-100em';
 
 //var titleTag;
 angular
-    .module('rr0.nav', ['ngSanitize', 'sun.scrollable', 'rr0.people', 'rr0.time'])
+    .module('rr0.nav', ['ngSanitize', /*'sun.scrollable', */'rr0.people', 'rr0.time'])
     .value('host', location.host)
     .filter('unsafe', ['$sce', function ($sce) {
         return function (val) {
@@ -480,36 +480,49 @@ angular
         };
     }])
     .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $log, $timeout, peopleService) {
-        function getTitle() {
-            if (!$scope.title) {
-                $scope.title = org.rr0.time.getYear();
-                if ($scope.title) {
-                    if (org.rr0.time.getTime().month) {
-                        $scope.title = org.rr0.time.monthName() + " " + $scope.title;
-                        var dayOfMonth = org.rr0.time.getDayOfMonth();
-                        if (dayOfMonth) {
-                            $scope.title = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek()) + " " + dayOfMonth + " " + $scope.title;
-                        }
-                    }
-                } else {
-                    var p = getPeople();
-                    if (p) {
-                        $scope.title = p.toString();
-                    } else {
-                        var uri = getUri();
-                        var ls = uri.lastIndexOf("/");
-                        var htmlExt = uri.lastIndexOf(".html");
-                        if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) != "index") {
-                            $scope.title = uri.substring(ls + 1, htmlExt);
-                        } else if (ls < uri.length - 1) {
-                            var ps = ls - 1;
-                            while (uri.charAt(ps) != '/') ps--;
-                            $scope.title = uri.substring(ps + 1, ls).toUpperCase();  // Accronym assumed
-                        } else {
-                            $scope.title = uri.substring(ls + 1);
-                        }
+        function titleFromTime() {
+            var title = org.rr0.time.getYear();
+            if (title) {
+                if (org.rr0.time.getTime().month) {
+                    title = org.rr0.time.monthName() + " " + title;
+                    var dayOfMonth = org.rr0.time.getDayOfMonth();
+                    if (dayOfMonth) {
+                        title = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek()) + " " + dayOfMonth + " " + title;
                     }
                 }
+            }
+            return title;
+        }
+
+        function titleFromPeople() {
+            var title;
+            var p = getPeople();
+            if (p) {
+                title = p.toString();
+            }
+            return title;
+        }
+
+        function titleFromURI() {
+            var title;
+            var uri = org.getUri();
+            var ls = uri.lastIndexOf("/");
+            var htmlExt = uri.lastIndexOf(".html");
+            if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) != "index") {
+                title = uri.substring(ls + 1, htmlExt);
+            } else if (ls < uri.length - 1) {
+                var ps = ls - 1;
+                while (uri.charAt(ps) != '/') ps--;
+                title = uri.substring(ps + 1, ls).toUpperCase();  // Accronym assumed
+            } else {
+                title = uri.substring(ls + 1);
+            }
+            return title;
+        }
+
+        function getTitle() {
+            if (!$scope.title) {
+                $scope.title = titleFromTime() || titleFromPeople() || titleFromURI();
             }
             return $scope.title;
         }

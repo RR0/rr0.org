@@ -70,8 +70,9 @@ angular.module('rr0.time', [])
                     var titDay;
                     var repHour;
                     var y = time.getYear();
+                    var otherYear;
                     if (y !== null) {
-                        var otherYear = y !== contextTime.getYear();
+                        otherYear = y !== contextTime.getYear();
                         timeLink = org.rr0.time.yearLink(y);
                         titYear = y;
                         if (otherYear) {
@@ -79,28 +80,26 @@ angular.module('rr0.time', [])
                             repYear = " " + y;
                         }
                     }
+                    var otherMonth;
                     var m = time.getMonth();
                     if (m !== null) {
                         titMonth = org.rr0.time.monthName(m);
                         timeLink += "/" + org.zero(m);
-                        var otherMonth = otherYear || m !== contextTime.getMonth();
+                        otherMonth = otherYear || m !== contextTime.getMonth();
                         if (otherMonth) {
                             contextTime.setMonth(m);
                             repMonth = " " + titMonth;
                         }
                     }
+                    var otherDay = 0;
                     var d = time.getDayOfMonth();
                     if (d !== null) {
                         var dayAsNumber = parseInt(d, 10);
-                        var otherDay = 0;
                         var dOW;
                         if (!!(dayAsNumber)) {
                             dOW = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, m, d));
-                            titDay = dOW + " " + d + (d == 1 ? "er" : "");
-                            if (otherMonth) otherDay = 30;
-                            else {
-                                otherDay = d - contextTime.getDayOfMonth();
-                            }
+                            titDay = dOW + " " + d + (d === 1 ? "er" : "");
+                            otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth();
                         } else {
                             titDay = d;
                             otherDay = 1;
@@ -121,7 +120,7 @@ angular.module('rr0.time', [])
                                         break;
                                     default:
                                         if (otherDay <= 7) {
-                                            repDay = otherDay < 0 ? dOW + " précédent" : dOW + " suivant";
+                                            repDay = otherDay < 0 ? dOW + " pr\xE9c\xE9dent" : dOW + " suivant";
                                         }
                                 }
                             }
@@ -145,7 +144,7 @@ angular.module('rr0.time', [])
 //                    var timesToUpdate = getTimes();
 //                    for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
 //                        o = times.getValue(i, 0);
-//                        if (o == s) {
+//                        if (o === s) {
 //                            var c = timesToUpdate.getValue(i, 1);
 //                            c++;
 //                            timesToUpdate.setValue(i, 1, c);
@@ -155,7 +154,7 @@ angular.module('rr0.time', [])
 //                }
                         otherHour = otherHour || otherDay || h !== contextTime.getHour();
                         if (d) {
-                            titHour = (time.isApprox() ? 'vers' : 'à') + ' ' + titHour;
+                            titHour = (time.isApprox() ? 'vers' : '\xE0') + ' ' + titHour;
                         }
                         if (otherHour) {
                             contextTime.setHour(h);
@@ -184,23 +183,37 @@ angular.module('rr0.time', [])
                     }
 //            else {
 //                if (! repMonth) {
-//                    replacement = "même jour";
+//                    replacement = "m\xEAme jour";
 //                }
 //            }
-                    if (titDay) title += titDay;
-                    if (repMonth) replacement += repMonth;
-                    if (titMonth) title += " " + titMonth;
-                    if (repYear) replacement += repYear;
-                    if (titYear) title += " " + titYear;
+                    if (titDay) {
+                        title += titDay;
+                    }
+                    if (repMonth) {
+                        replacement += repMonth;
+                    }
+                    if (titMonth) {
+                        title += " " + titMonth;
+                    }
+                    if (repYear) {
+                        replacement += repYear;
+                    }
+                    if (titYear) {
+                        title += " " + titYear;
+                    }
                     if (repHour) {
                         replacement += " " + repHour;
                     }
-                    if (titHour) title += ", " + titHour;
-                    if (titZ) title += " " + titZ;
+                    if (titHour) {
+                        title += ", " + titHour;
+                    }
+                    if (titZ) {
+                        title += " " + titZ;
+                    }
                     if (time.startDate) {
                         var start = toString(time, time.startDate).replacement;
                         var end = replacement;
-                        var betweenWord = repDay ? 'au' : 'à';
+                        var betweenWord = repDay ? 'au' : '\xE0';
                         replacement = start + ' ' + betweenWord + ' ' + end;
                         title = start + ' ' + betweenWord + ' ' + title;
                     }
@@ -227,11 +240,13 @@ angular.module('rr0.time', [])
                     var slashPos = dataStr.indexOf('/');
                     if (slashPos > 0) {
                         var maxString = dataStr.substring(slashPos + 1);
-                        if (maxString.charAt(0) !== 'P') maxString = 'P' + maxString;
+                        if (maxString.charAt(0) !== 'P') {
+                            maxString = 'P' + maxString;
+                        }
                         var durMax = new org.rr0.time.Duration();
                         durationMax = durMax.fromString(maxString).toString();
                         var durationMin = new org.rr0.time.Duration().fromString(dataStr).toString(durMax.unit.name);
-                        durationStr = durationMin + " à " + durationMax;
+                        durationStr = durationMin + " \xE0 " + durationMax;
                     } else {
                         durationStr = new org.rr0.time.Duration().fromString(dataStr).toString();
                     }
@@ -261,5 +276,5 @@ angular.module('rr0.time', [])
                     handleTime();
                 }
             }
-        }
+        };
     });

@@ -30,10 +30,10 @@ angular.module('rr0.time', [])
         }
 
         if (typeof google !== 'undefined') {
-            initGoogleCharts(function () {
+           initGoogleCharts(function () {
                 console.info("rr0timerun8");
                 org.rr0.time.chartZone = org.rr0.getSideZone("chart");
-                org.rr0.time.setChartsHeight(30);
+                //org.rr0.time.setChartsHeight(30);
                 var chart = new google.visualization.ColumnChart(org.rr0.time.chartZone);
                 org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([org.rr0.time.drawChart]);
 
@@ -70,8 +70,8 @@ angular.module('rr0.time', [])
                     var titDay;
                     var repHour;
                     var y = time.getYear();
-                    if (y != null) {
-                        var otherYear = y != contextTime.getYear();
+                    if (y !== null) {
+                        var otherYear = y !== contextTime.getYear();
                         timeLink = org.rr0.time.yearLink(y);
                         titYear = y;
                         if (otherYear) {
@@ -80,17 +80,17 @@ angular.module('rr0.time', [])
                         }
                     }
                     var m = time.getMonth();
-                    if (m != null) {
+                    if (m !== null) {
                         titMonth = org.rr0.time.monthName(m);
                         timeLink += "/" + org.zero(m);
-                        var otherMonth = otherYear || m != contextTime.getMonth();
+                        var otherMonth = otherYear || m !== contextTime.getMonth();
                         if (otherMonth) {
                             contextTime.setMonth(m);
                             repMonth = " " + titMonth;
                         }
                     }
                     var d = time.getDayOfMonth();
-                    if (d != null) {
+                    if (d !== null) {
                         var dayAsNumber = parseInt(d, 10);
                         var otherDay = 0;
                         var dOW;
@@ -105,7 +105,7 @@ angular.module('rr0.time', [])
                             titDay = d;
                             otherDay = 1;
                         }
-                        if (otherDay != 0) {
+                        if (otherDay !== 0) {
                             timeLink += "/" + org.zero(d);
                             repDay = titDay;
                             if (!org.rr0.time.isTimeURL() && contextTime.getDayOfMonth()) {
@@ -130,7 +130,7 @@ angular.module('rr0.time', [])
                     }
                     var titHour;
                     var h = time.getHour();
-                    if (h != null) {
+                    if (h !== null) {
                         var hourAsNumber = parseInt(h, 10);
                         var otherHour;
                         if (!!(hourAsNumber)) {
@@ -153,7 +153,7 @@ angular.module('rr0.time', [])
 //                        }
 //                    }
 //                }
-                        otherHour = otherHour || otherDay || h != contextTime.getHour();
+                        otherHour = otherHour || otherDay || h !== contextTime.getHour();
                         if (d) {
                             titHour = (time.isApprox() ? 'vers' : 'à') + ' ' + titHour;
                         }
@@ -163,10 +163,10 @@ angular.module('rr0.time', [])
                         repHour = titHour;  // For now, always display hours, even if unchanged
                     }
                     var mn = time.getMinutes();
-                    if (mn != null) {
+                    if (mn !== null) {
                         var th = ':' + org.zero(mn);
                         titHour += th;
-                        var otherMinutes = otherHour || mn != contextTime.getMinutes();
+                        var otherMinutes = otherHour || mn !== contextTime.getMinutes();
                         if (otherMinutes) {
                             contextTime.setMinutes(mn);
                             repHour += th;
@@ -227,7 +227,7 @@ angular.module('rr0.time', [])
                     var slashPos = dataStr.indexOf('/');
                     if (slashPos > 0) {
                         var maxString = dataStr.substring(slashPos + 1);
-                        if (maxString.charAt(0) != 'P') maxString = 'P' + maxString;
+                        if (maxString.charAt(0) !== 'P') maxString = 'P' + maxString;
                         var durMax = new org.rr0.time.Duration();
                         durationMax = durMax.fromString(maxString).toString();
                         var durationMin = new org.rr0.time.Duration().fromString(dataStr).toString(durMax.unit.name);

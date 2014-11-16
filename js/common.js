@@ -1,7 +1,9 @@
 function OrgModule() {
 
     this.getUri = function () {
-        if (!docUri) docUri = window.location.pathname;
+        if (!docUri) {
+            docUri = window.location.pathname;
+        }
         return docUri;
     };
 
@@ -9,10 +11,14 @@ function OrgModule() {
 
     this.debug = window.location.href.indexOf("?debug") >= 0;
 
-    if (this.debug && typeof console !== 'undefined') this.log = function (m) {
-        console.log(m);
-    }; else this.log = function (m) {
-    };
+    if (this.debug && typeof console !== 'undefined') {
+        this.log = function (m) {
+            console.log(m);
+        };
+    } else {
+        this.log = function (m) {
+        };
+    }
 
 // Add a getElementsByClassName function if the browser doesn't have one
 // Limitation: only works with one class name
@@ -40,7 +46,7 @@ function OrgModule() {
                 }
             }
             return results;
-        }
+        };
     }
 
     var docUri;
@@ -58,6 +64,7 @@ function OrgModule() {
             this.place = null;
             this.people = null;
         }
+
         this.context = new Context();
         this.getScreenWidth = function () {
             return document.body.clientWidth;
@@ -70,29 +77,29 @@ function OrgModule() {
                 sidePane = document.querySelector('aside');
                 /*if (!sidePane) {
                  sidePane = document.createElement("aside");
-                    if (this.contentsZone) {
-                        this.contentsZone.parentNode.appendChild(sidePane);
-                    }
-                    var divider = document.createElement("div");
-                    divider.className = "divider";
-                    sidePane.appendChild(divider);
-                    divider.addEventListener('mousedown', function (e) {
-                        e.preventDefault();
-                        document.documentElement.addEventListener('mousemove', moveHandler, true);
-                        document.documentElement.addEventListener('mouseup', upHandler, true);
-                        function moveHandler(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            org.rr0.leftWidth = e.pageX;
-                            org.rr0.updateDivision();
-                        }
-                        function upHandler(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            document.documentElement.removeEventListener('mousemove', moveHandler, true);
-                            document.documentElement.removeEventListener('mouseup', upHandler, true);
-                        }
-                    }, false);
+                 if (this.contentsZone) {
+                 this.contentsZone.parentNode.appendChild(sidePane);
+                 }
+                 var divider = document.createElement("div");
+                 divider.className = "divider";
+                 sidePane.appendChild(divider);
+                 divider.addEventListener('mousedown', function (e) {
+                 e.preventDefault();
+                 document.documentElement.addEventListener('mousemove', moveHandler, true);
+                 document.documentElement.addEventListener('mouseup', upHandler, true);
+                 function moveHandler(e) {
+                 e.preventDefault();
+                 e.stopPropagation();
+                 org.rr0.leftWidth = e.pageX;
+                 org.rr0.updateDivision();
+                 }
+                 function upHandler(e) {
+                 e.preventDefault();
+                 e.stopPropagation();
+                 document.documentElement.removeEventListener('mousemove', moveHandler, true);
+                 document.documentElement.removeEventListener('mouseup', upHandler, true);
+                 }
+                 }, false);
                  }*/
             }
             return sidePane;
@@ -144,7 +151,7 @@ function OrgModule() {
             found = pos >= 0;
             if (found) {
                 var lastChar = className.charCodeAt(pos + c.length);
-                found = isNaN(lastChar) || lastChar == 0x20;
+                found = isNaN(lastChar) || lastChar === 0x20;
             }
         }
         return found;
@@ -180,28 +187,42 @@ function OrgModule() {
     this.arrayIndex = function (w, a) {
         w = w.toLowerCase();
         var u;
-        for (u = 0; u < a.length; u++)
-            if (w == a[u].toLowerCase())
+        for (u = 0; u < a.length; u++) {
+            if (w === a[u].toLowerCase()) {
                 break;
+            }
+        }
         return u < a.length ? u + 1 : null;
     };
 
     var wordSeparators = ".,\':!?;+=\"()[]/°%*&$#\n";
     this.wordBefore = function (txt, b) {
         var c;
-        while (b >= 0 && wordSeparators.indexOf((c = txt.charAt(b))) < 0 && c != ' ') b--;    // Pass current word
-        while (b > 0 && txt.charAt(b) == ' ') b--;                                            // Pass next spaces
+        while (b >= 0 && wordSeparators.indexOf((c = txt.charAt(b))) < 0 && c !== ' ') {    // Pass current word
+            b--;
+        }
+        while (b > 0 && txt.charAt(b) === ' ') {    // Pass next spaces
+            b--;
+        }
         var w = "";
-        while (b >= 0 && wordSeparators.indexOf((c = txt.charAt(b--))) < 0 && c != ' ') w = c + w;      // Add next non separators
+        while (b >= 0 && wordSeparators.indexOf((c = txt.charAt(b--))) < 0 && c !== ' ') {  // Add next non separators
+            w = c + w;
+        }
         return w;
     };
 
     this.wordAfter = function (txt, b) {
         var c;
-        while (b < txt.length && wordSeparators.indexOf((c = txt.charAt(b))) < 0 && c != ' ') b++;    // Pass current word
-        while (b < txt.length && txt.charAt(b) == ' ') b++;                                           // Pass next spaces
+        while (b < txt.length && wordSeparators.indexOf((c = txt.charAt(b))) < 0 && c !== ' ') {    // Pass current word
+            b++;
+        }
+        while (b < txt.length && txt.charAt(b) === ' ') {   // Pass next spaces
+            b++;
+        }
         var w = "";
-        while (b < txt.length && wordSeparators.indexOf((c = txt.charAt(b++))) < 0 && c != ' ') w += c;         // Add next non separators
+        while (b < txt.length && wordSeparators.indexOf((c = txt.charAt(b++))) < 0 && c !== ' ') {  // Add next non separators
+            w += c;
+        }
         return w;
     };
 
@@ -229,7 +250,7 @@ function OrgModule() {
 
     this.text = function (e) {
         var txt = e.textContent;
-        if (txt == undefined) {
+        if (txt === undefined) {
             txt = e.innerText;  // IE8-
         } else {
             txt = txt.replace('\n', ' ');
@@ -294,7 +315,9 @@ function OrgModule() {
 
     function linkStart(l, t) {
         var sp = "<a href=\"" + orgThis.validLink(l) + "\"";
-        if (t) sp += " title=\"" + t + "\"";
+        if (t) {
+            sp += " title=\"" + t + "\"";
+        }
         return sp + ">";
     }
 
@@ -314,12 +337,14 @@ function OrgModule() {
         } else {
             le = this.spanElement(null, e);
         }
-        if (t) le.setAttribute("title", t);
+        if (t) {
+            le.setAttribute("title", t);
+        }
         return le;
     };
 
     this.link = function (l, contents, t) {
-        return linkStart(l, t) + contents + "</a>"
+        return linkStart(l, t) + contents + "</a>";
     };
 
     this.zero = function (v) {
@@ -331,9 +356,13 @@ function OrgModule() {
     this.contentsLoaded = function () {
         for (var i = 0; i < domLoadProcs.length; i++) {
             var c = domLoadProcs[i];
-            if (typeof c === 'string') eval(c);
-            else if (typeof c === 'function') c();
-            else this.log('domLoadProc ' + c + ' of type ' + (typeof c) + ' is not supported');
+            if (typeof c === 'string') {
+                eval(c);
+            } else if (typeof c === 'function') {
+                c();
+            } else {
+                this.log('domLoadProc ' + c + ' of type ' + (typeof c) + ' is not supported');
+            }
         }
     };
 
@@ -347,7 +376,7 @@ function OrgModule() {
 //         @if (@_win32 || @_win64)
 //         document.write('<script id="ieScriptLoad" defer src="//:"><\/script>');
 //         document.getElementById('ieScriptLoad').onreadystatechange = function() {
-//         if (this.readyState == 'complete') {
+//         if (this.readyState === 'complete') {
 //         callbacks();
 //         }
 //         };
@@ -375,7 +404,7 @@ function OrgModule() {
             if (c === '.')
                 break;
             else if (c === '/') {
-                if (lastSlash != l.length - 1) {
+                if (lastSlash !== l.length - 1) {
                     l += '/';
                 }
                 break;
@@ -386,10 +415,14 @@ function OrgModule() {
 
     this.parentLink = function (l) {
         var parentL = l;
-        if (l.charAt(l.length - 1) == '/') parentL = parentL.substring(0, parentL.length - 1);
-        for (var i = parentL.length - 1; i > 0 && parentL.charAt(i) != '/'; i--) {
+        if (l.charAt(l.length - 1) === '/') {
+            parentL = parentL.substring(0, parentL.length - 1);
         }
-        if (i > 0) parentL = parentL.substring(0, i);
+        for (var i = parentL.length - 1; i > 0 && parentL.charAt(i) !== '/'; i--) {
+        }
+        if (i > 0) {
+            parentL = parentL.substring(0, i);
+        }
         return parentL;
     };
 
@@ -403,7 +436,9 @@ function OrgModule() {
     }
 
     function toLinks(l, kk) {
-        for (var k = 0; k < kk.length; k++) toLink(l, kk[k])
+        for (var k = 0; k < kk.length; k++) {
+            toLink(l, kk[k])
+        }
     }
 
     this.nounToLink = function (l, k) {
@@ -411,18 +446,20 @@ function OrgModule() {
     };
 
     function nounsToLink(l, kk) {
-        for (var k = 0; k < kk.length; k++) org.nounToLink(l, kk[k]);
+        for (var k = 0; k < kk.length; k++) {
+            org.nounToLink(l, kk[k]);
+        }
     }
 
     this.textValue = function (e) {
         var v = e.nodeValue;
-        if (v && e.nodeType == Node.TEXT_NODE) {
+        if (v && e.nodeType === Node.TEXT_NODE) {
             v = v.trim().replace(/\n/g, '');
             v = v.replace(/ +(?= )/g, '');
-            if (v.length == 0 || e.parentNode.nodeName == 'A' || org.hasClass(e.parentNode, org.constantClass))
+            if (v.length === 0 || e.parentNode.nodeName === 'A' || org.hasClass(e.parentNode, org.constantClass))
                 v = null;
         }
-        /* && !hasClass(e.parentNode, "people") /* && !e.hasChildNodes() && e.className != constantClass && (e.tagName === "P" || e.tagName === "LI" || e.tagName === "CAPTION" || (e.tagName === "TD" && !e.hasChildNodes()));*/
+        /* && !hasClass(e.parentNode, "people") /* && !e.hasChildNodes() && e.className !== constantClass && (e.tagName === "P" || e.tagName === "LI" || e.tagName === "CAPTION" || (e.tagName === "TD" && !e.hasChildNodes()));*/
         return v;
     };
 
@@ -445,12 +482,16 @@ function OrgModule() {
                     orgThis.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
                     if (!r) r = k;
                     var text1;
-                    if (pos > 0) text1 = document.createTextNode(txt.substring(0, pos));
+                    if (pos > 0) {
+                        text1 = document.createTextNode(txt.substring(0, pos));
+                    }
                     var re = document.createTextNode(r);
                     var le = this.linkElement(l, re);
                     var endPos = pos + k.length;
                     var text2;
-                    if (endPos < txt.length) text2 = document.createTextNode(txt.substring(endPos));
+                    if (endPos < txt.length) {
+                        text2 = document.createTextNode(txt.substring(endPos));
+                    }
                     var pNode = e.parentNode;
                     if (pNode) {    // TODO: Should not occur
                         pNode.replaceChild(le, e);
@@ -491,7 +532,9 @@ function OrgModule() {
 //        context.add(e);
             for (var h = 0; h < args.length; h++) {
                 if (e.parentNode) {
-                    if (args[h](e)) break;
+                    if (args[h](e)) {
+                        break;
+                    }
                 }
             }
         });

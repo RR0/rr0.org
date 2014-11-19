@@ -282,9 +282,9 @@ angular
             return $sce.trustAsHtml(val);
         };
     }])
-    .run(function($rootScope) {
+    .run(['$rootScope', function($rootScope) {
         $rootScope.title = "";
-    })
+    }])
     .service('navigationService', ['$rootScope', function ($rootScope) {
         this.currentLevel = 1;
         this.sections = [];
@@ -411,9 +411,9 @@ angular
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
-                var a = elem[0];
-                if (a.hostname && a.hostname.indexOf('.') > 0 && a.hostname != host) {
-                    a.target = '_blank';
+                var elm0 = elem[0];
+                if (elm0.hostname && elm0.hostname.indexOf('.') > 0 && elm0.hostname != host) {
+                    elm0.target = '_blank';
                 }
             }
         }

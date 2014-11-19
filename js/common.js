@@ -431,20 +431,20 @@ function OrgModule() {
     var pageCache = {};
     this.cache = sessionStorage ? sessionStorage : pageCache;
 //var cache = pageCache;
-    function toLink(l, k) {
+    this.toLink=function(l, k) {
         l = org.addEndingSlash(l);
         window.org.log("caching " + k + " as " + l);
         org.cache[k] = l;
-    }
+    };
 
-    function toLinks(l, kk) {
+    this.toLinks=function (l, kk) {
         for (var k = 0; k < kk.length; k++) {
-            toLink(l, kk[k]);
+            this.toLink(l, kk[k]);
         }
-    }
+    };
 
     this.nounToLink = function (l, k) {
-        toLinks(l, [k + "s", k]);     // Plural as well
+        this.toLinks(l, [k + "s", k]);     // Plural as well
     };
 
     function nounsToLink(l, kk) {
@@ -464,57 +464,6 @@ function OrgModule() {
         }
         /* && !hasClass(e.parentNode, "people") /* && !e.hasChildNodes() && e.className !== constantClass && (e.tagName === "P" || e.tagName === "LI" || e.tagName === "CAPTION" || (e.tagName === "TD" && !e.hasChildNodes()));*/
         return v;
-    };
-
-    /**
-     * Transform some text into a link.
-     *
-     * @param {HTMLElement} e The element containing the text.
-     * @param {string} k The text to look for.
-     * @param {string} l The URI of the link to create
-     * @param {string} [r] The text replacement, if any (matched text remains otherwise)
-     * @param {boolean} [cacheIt]
-     * @return {HTMLElement}
-     */
-    this.linkify = function (e, k, l, r, cacheIt) {
-        if (!org.hasClass(e, org.constantClass) && l !== org.getUri() && (l + "/") !== org.getUri()) {
-            var txt = org.text(e);
-            if (txt) {
-                var pos = txt.indexOf(k);
-                if (pos >= 0) {
-                    orgThis.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
-                    if (!r) {
-                        r = k;
-                    }
-                    var text1;
-                    if (pos > 0) {
-                        text1 = document.createTextNode(txt.substring(0, pos));
-                    }
-                    var re = document.createTextNode(r);
-                    var le = this.linkElement(l, re);
-                    var endPos = pos + k.length;
-                    var text2;
-                    if (endPos < txt.length) {
-                        text2 = document.createTextNode(txt.substring(endPos));
-                    }
-                    var pNode = e.parentNode;
-                    if (pNode) {    // TODO: Should not occur
-                        pNode.replaceChild(le, e);
-                        if (text1) {
-                            pNode.insertBefore(text1, le);
-                        }
-                        if (text2) {
-                            pNode.insertBefore(text2, le.nextSibling);
-                        }
-                    }
-                    if (cacheIt) {
-                        toLink(l, r);
-                    }
-                    e = le;
-                }
-            }
-        }
-        return e;
     };
 
     /**
@@ -553,16 +502,16 @@ function OrgModule() {
     this.processTags = function () {
         // Priority order (i.e. "vague belge" before "vague")
         nounsToLink("/science/crypto/ufo", ["ufologique", "ufologie"]);
-        toLinks("/science/crypto/ufo/FlyingSaucers.html", ["soucoupe volante", "soucoupes volantes"]);
-        toLink("/place/systeme/solaire/planete/terre", "Terre");
-        toLink("/place/systeme/solaire/planete/terre/lune", "Lune");
-        toLink("/place/systeme/solaire/Soleil", "Soleil");
+        org.toLinks("/science/crypto/ufo/FlyingSaucers.html", ["soucoupe volante", "soucoupes volantes"]);
+        org.toLink("/place/systeme/solaire/planete/terre", "Terre");
+        org.toLink("/place/systeme/solaire/planete/terre/lune", "Lune");
+        org.toLink("/place/systeme/solaire/Soleil", "Soleil");
         orgThis.nounToLink("/science/crypto/ufo/OVNI.html", "ovni");
-        toLink("/org/us/dod/af/amc/atic/projet/bluebook", "Blue Book");
-        toLink("/org/us/ic/fbi", "FBI");
-        toLink("/org/us/ic/cia", "CIA");
-        toLink("/org/us/dod/af", "USAF");
-        toLink("/org/us/dod/af", "Air Force");
+        org.toLink("/org/us/dod/af/amc/atic/projet/bluebook", "Blue Book");
+        org.toLink("/org/us/ic/fbi", "FBI");
+        org.toLink("/org/us/ic/cia", "CIA");
+        org.toLink("/org/us/dod/af", "USAF");
+        org.toLink("/org/us/dod/af", "Air Force");
         orgThis.nounToLink("/science/crypto/ufo/enquete/indice/radar", "radar");
         orgThis.nounToLink("/science/crypto/ufo/observation/scenario/Abduction.html", "enl\xE8vement");
         orgThis.nounToLink("/science", "science");

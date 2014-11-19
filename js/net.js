@@ -10,6 +10,57 @@ function NetModule() {
      * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
      * @param {string} [t] title on the link
      */
+    /**
+     * Transform some text into a link.
+     *
+     * @param {HTMLElement} e The element containing the text.
+     * @param {string} k The text to look for.
+     * @param {string} l The URI of the link to create
+     * @param {string} [r] The text replacement, if any (matched text remains otherwise)
+     * @param {boolean} [cacheIt]
+     * @return {HTMLElement}
+     */
+    function linkify(e, k, l, r, cacheIt) {
+        if (!org.hasClass(e, org.constantClass) && l !== org.getUri() && (l + "/") !== org.getUri()) {
+            var txt = org.text(e);
+            if (txt) {
+                var pos = txt.indexOf(k);
+                if (pos >= 0) {
+                    org.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
+                    if (!r) {
+                        r = k;
+                    }
+                    var text1;
+                    if (pos > 0) {
+                        text1 = document.createTextNode(txt.substring(0, pos));
+                    }
+                    var re = document.createTextNode(r);
+                    var le = org.linkElement(l, re);
+                    var endPos = pos + k.length;
+                    var text2;
+                    if (endPos < txt.length) {
+                        text2 = document.createTextNode(txt.substring(endPos));
+                    }
+                    var pNode = e.parentNode;
+                    if (pNode) {    // TODO: Should not occur
+                        pNode.replaceChild(le, e);
+                        if (text1) {
+                            pNode.insertBefore(text1, le);
+                        }
+                        if (text2) {
+                            pNode.insertBefore(text2, le.nextSibling);
+                        }
+                    }
+                    if (cacheIt) {
+                        org.toLink(l, r);
+                    }
+                    e = le;
+                }
+            }
+        }
+        return e;
+    }
+
     netThis.checkedLink=function(e, toReplace, l, replacement, cacheIt, t) {
         if (l) {
             l = org.addEndingSlash(l);
@@ -35,11 +86,12 @@ function NetModule() {
                         netThis.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
                     }
                 };
+
                 org.rr0.net.onExists(l, function () {
                     if (l != (org.rr0.time.uriPart + "0/0/")) {
                         org.rr0.net.onExists(l + "/index.html", function () {
                             org.log("found link " + l + " for e'sparent=" + e.parentNode);
-                            e = org.linkify(e, replacement, l, replacement, cacheIt);
+                            e = linkify(e, replacement, l, replacement, cacheIt);
                             if (t) e.title = t;
                         }, failProc);
                     }

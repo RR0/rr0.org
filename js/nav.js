@@ -282,6 +282,9 @@ angular
             return $sce.trustAsHtml(val);
         };
     }])
+    .run(function($rootScope) {
+        $rootScope.title = "";
+    })
     .service('navigationService', ['$rootScope', function ($rootScope) {
         this.currentLevel = 1;
         this.sections = [];
@@ -538,7 +541,7 @@ angular
             return window !== top;
         };
         $scope.initTitle = function (t, u, st) {
-            $scope.title = t;
+            $scope.title = $scope.title || t;
             $scope.url = u;
             $scope.style = st;
         };
@@ -640,16 +643,6 @@ angular
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";
             }
             function addTitle() {
-                var headTitle = document.getElementsByTagName('title')[0];
-                if (!headTitle) {
-                    headTitle = document.createElement("title");
-                    var titleText = getTitle();
-                    headTitle.innerHTML = titleText;
-                    org.addToHead(headTitle);
-                    $scope.title = '' + titleText;
-                } else {
-                    $scope.title = org.text(headTitle);
-                }
                 setOutline(true, 'Sommaire');
             }
 

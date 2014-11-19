@@ -30,6 +30,7 @@ var handleWitness = function (scope, elem, attrs) {
     if (e.id) e.innerHTML += ' ' + id;
 };
 
+window.copyright = null;
 angular.module('rr0.people', [])
     .service('peopleService', function () {
         var authors = [];
@@ -57,7 +58,7 @@ angular.module('rr0.people', [])
                 }
             },
             setCopyright: function (c, cLink) {
-                copyright = c;
+                copyright = window.copyright = c;
             },
             addAuthor: function (a, aLink, c, cLink) {
                 if (a) {
@@ -110,16 +111,14 @@ angular.module('rr0.people', [])
             scope: true,
             template: "<a href='{{href}}' translate='no' ng-transclude></a>",
             link: function (scope, elem, attrs) {
-                if (elem[0].tagName !== 'TITLE') {
-                    var txt = elem.text();
-                    var nameKey = attrs.title;    // Alternate (correct for link) name?
-                    var peopleName = txt;
-                    if (peopleName.length <= 0) {
-                        peopleName = nameKey;
-                        elem.val(peopleName);
-                    }
-                    scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
+                var txt = elem.text();
+                var nameKey = attrs.title;    // Alternate (correct for link) name?
+                var peopleName = txt;
+                if (peopleName.length <= 0) {
+                    peopleName = nameKey;
+                    elem.val(peopleName);
                 }
+                scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
             }
         }
     }])

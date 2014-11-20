@@ -31,7 +31,7 @@ var handleWitness = function (scope, elem, attrs) {
 };
 
 window.copyright = null;
-angular.module('rr0.people', [])
+angular.module('rr0.people', ['rr0.nav'])
     .service('peopleService', function () {
         var authors = [];
         var copyright;
@@ -186,8 +186,8 @@ angular.module('rr0.people', [])
         $scope.copyright = peopleService.getCopyright();
         $scope.docTime = timeService.getTime();
     }])
-    .run(function () {
-        starts.push({
+    .run(['navigationService', function (navigationService) {
+        navigationService.addStart({
                 dir: peopleUriPart,
                 label: "<span class='iconic user'></span>",
                 title: "Personnes"
@@ -198,4 +198,4 @@ angular.module('rr0.people', [])
         org.nounToLink(peopleUriPart + "ufologues.html", "ufologue");
         org.nounToLink(peopleUriPart + "Astronomes.html", "astronome");
         org.nounToLink(peopleUriPart + "temoins.html", "temoin");
-    });
+    }]);

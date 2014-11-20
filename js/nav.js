@@ -9,73 +9,6 @@ var contents, contentsURL;
 var prev, prevLink;
 var next, nextLink;
 
-var starts =
-    [
-        {
-            dir: "/tech/info/",
-            label: "Informatique",
-            css: "/js/pretty/prettify.css",
-            js: "/js/pretty/prettify.js",
-            onLoad: "prettyPrint()"
-        },
-        {
-            dir: "/science/crypto/ufo/",
-            label: "Ufologie"
-        },
-        {
-            dir: "/science/crypto/zoo/",
-            label: "Cryptozoologie"
-        },
-        {
-            dir: "/science/crypto/archeo/",
-            label: "Cryptoarch\xE9ologie"
-        },
-        {
-            dir: "/science/para/psi/",
-            label: "Parapsychologie"
-        },
-        {
-            dir: "/science/para/",
-            label: "Parasciences"
-        },
-        {
-            dir: "/science/crypto/",
-            label: "Cryptosciences"
-        },
-        {
-            dir: "/science/sur/fantome",
-            label: "Fant\xF4mes"
-        },
-        {
-            dir: "/science/sur/",
-            label: "Surnaturel"
-        },
-        {
-            dir: "/science/",
-            label: "Science"
-        },
-        {
-            dir: "/tech/",
-            label: "Technique"
-        },
-        {
-            dir: "/croyance/conspirationnisme/",
-            label: "Conspirationnisme"
-        },
-        {
-            dir: "/croyance/",
-            label: "Croyance"
-        },
-        {
-            dir: "/org/",
-            label: "<span class='iconic home'></span>",
-            title: "Organisations"
-        },
-        {
-            dir: "/politique/",
-            label: "Politique"
-        }
-    ];
 function addRel(l, t) {
     var rel = document.createElement("link");
     rel.setAttribute("rel", t);
@@ -87,36 +20,6 @@ function setContents(c, cLink) {
         contents = c;
         contentsURL = cLink;
 //        addRel(contentsURL, "Contents");
-    }
-}
-function setStart(s, sLink) {
-    if (!startNav) {
-        var ret = null;
-        var t;
-        if (window === top) {
-            if (!s) {                       // Look for start induced by URI
-                var uri = org.getUri();
-                for (var i = 0; i < starts.length; i++) {
-                    var st = starts[i];
-                    var dataPos = uri.indexOf(st.dir);
-                    if (dataPos >= 0 && uri != st.dir) {
-                        s = st.label;
-                        t = st.title;
-                        sLink = st.dir;
-                        if (st.css) org.loadCSS(st.css);
-                        if (st.js) org.loadJS(st.js);
-                        if (st.onLoad) ret = st.onLoad;
-                        break;
-                    }
-                }
-            }
-            if (!t) {
-                t = "D\xE9but";
-                s = "⇤ " + s;
-            }
-            startNav = new NavLink(s, sLink, t);
-        }
-        return ret;
     }
 }
 function setP(p, pLink) {
@@ -289,6 +192,108 @@ angular
         this.currentLevel = 1;
         this.sections = [];
         this.menu = [];
+
+        var starts =
+            [
+                {
+                    dir: "/tech/info/",
+                    label: "Informatique",
+                    css: "/js/pretty/prettify.css",
+                    js: "/js/pretty/prettify.js",
+                    onLoad: "prettyPrint()"
+                },
+                {
+                    dir: "/science/crypto/ufo/",
+                    label: "Ufologie"
+                },
+                {
+                    dir: "/science/crypto/zoo/",
+                    label: "Cryptozoologie"
+                },
+                {
+                    dir: "/science/crypto/archeo/",
+                    label: "Cryptoarch\xE9ologie"
+                },
+                {
+                    dir: "/science/para/psi/",
+                    label: "Parapsychologie"
+                },
+                {
+                    dir: "/science/para/",
+                    label: "Parasciences"
+                },
+                {
+                    dir: "/science/crypto/",
+                    label: "Cryptosciences"
+                },
+                {
+                    dir: "/science/sur/fantome",
+                    label: "Fant\xF4mes"
+                },
+                {
+                    dir: "/science/sur/",
+                    label: "Surnaturel"
+                },
+                {
+                    dir: "/science/",
+                    label: "Science"
+                },
+                {
+                    dir: "/tech/",
+                    label: "Technique"
+                },
+                {
+                    dir: "/croyance/conspirationnisme/",
+                    label: "Conspirationnisme"
+                },
+                {
+                    dir: "/croyance/",
+                    label: "Croyance"
+                },
+                {
+                    dir: "/org/",
+                    label: "<span class='iconic home'></span>",
+                    title: "Organisations"
+                },
+                {
+                    dir: "/politique/",
+                    label: "Politique"
+                }
+            ];
+
+        this.addStart=function(s) {
+            starts.push(s);
+        };
+        this.setStart=function(s, sLink) {
+            if (!startNav) {
+                var ret = null;
+                var t;
+                if (window === top) {
+                    if (!s) {                       // Look for start induced by URI
+                        var uri = org.getUri();
+                        for (var i = 0; i < starts.length; i++) {
+                            var st = starts[i];
+                            var dataPos = uri.indexOf(st.dir);
+                            if (dataPos >= 0 && uri != st.dir) {
+                                s = st.label;
+                                t = st.title;
+                                sLink = st.dir;
+                                if (st.css) org.loadCSS(st.css);
+                                if (st.js) org.loadJS(st.js);
+                                if (st.onLoad) ret = st.onLoad;
+                                break;
+                            }
+                        }
+                    }
+                    if (!t) {
+                        t = "D\xE9but";
+                        s = "⇤ " + s;
+                    }
+                    startNav = new NavLink(s, sLink, t);
+                }
+                return ret;
+            }
+        };
 
         this.addSection = function (s) {
             var l;

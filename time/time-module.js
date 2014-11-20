@@ -1,4 +1,4 @@
-angular.module('rr0.time', [])
+angular.module('rr0.time', ['rr0.nav'])
     .service('timeService', [function () {
         return {
             getTime: function () {
@@ -6,8 +6,8 @@ angular.module('rr0.time', [])
             }
         };
     }])
-    .run(function () {
-        starts.push({
+    .run(['navigationService', function (navigationService) {
+        navigationService.addStart({
                 dir: org.rr0.time.uriPart,
                 label: "<span class='iconic clock'></span>",
                 title: "Historique"
@@ -44,7 +44,7 @@ angular.module('rr0.time', [])
         } else {
             console.warn("Google API is not loaded");
         }
-    })
+    }])
     .directive('time', function () {
         return {
             restrict: 'E',
@@ -129,9 +129,9 @@ angular.module('rr0.time', [])
                     }
                     var titHour;
                     var h = time.getHour();
+                    var otherHour;
                     if (h !== null) {
                         var hourAsNumber = parseInt(h, 10);
-                        var otherHour;
                         if (!!(hourAsNumber)) {
                             titHour = org.zero(h);
                         } else {

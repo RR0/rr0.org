@@ -51,7 +51,7 @@ angular.module('rr0.place', [])
                     geocoder = new google.maps.Geocoder();
                     var mapType = "hybrid";
                     var mapOptions = {
-                        mapTypeId: mapType, language: "fr"
+                        mapTypeId: mapType
 //                ,minZoom: zoomMin
                     };
                     myMap = new google.maps.Map(document.getElementById(mapZone.id), mapOptions);
@@ -72,7 +72,7 @@ angular.module('rr0.place', [])
 
         function geocodeNow(place, callback) {
             geocoder.geocode({ 'address': place.name}, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
+                if (status === google.maps.GeocoderStatus.OK) {
                     var loc = results[0].geometry.location;
                     peoplePath.getPath().push(loc);
                     totalBounds.extend(loc);
@@ -97,7 +97,9 @@ angular.module('rr0.place', [])
         function fitBounds(bounds) {
             myMap.fitBounds(bounds);
             var z = myMap.getZoom();
-            if (z > zoomMax) z = zoomMax;
+            if (z > zoomMax) {
+                z = zoomMax;
+            }
             myMap.setZoom(z);
         }
 
@@ -209,7 +211,7 @@ angular.module('rr0.place', [])
 
         function getSwipe() {
             if (!mySwipe) {
-                mySwipe = Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
+                mySwipe = new Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
                     {
                         continuous: false,
                         stopPropagation: true,
@@ -229,16 +231,17 @@ angular.module('rr0.place', [])
 
         function toggleMap() {
             var mapVisible = isMapVisible();
-            if (mapVisible)
+            if (mapVisible) {
                 mapHide();
-            else
+            } else {
                 mapShow();
+            }
         }
 
         return {
             geocode: function (p, c) {
                 if (!geocoder) {
-                    if (toGeocode.length == 0) {
+                    if (toGeocode.length === 0) {
                         init(org.rr0.getSideZone("map-canvas"), onceMapIsLoaded);
                     }
                     toGeocode.push({ place: p, callback: c });
@@ -299,7 +302,7 @@ angular.module('rr0.place', [])
                 place.id = places.length;
                 return place;
             }
-        }
+        };
     }])
     .directive('place', ['placeService', 'mapService', function (placeService, mapService) { // or lieu
         return {
@@ -313,7 +316,7 @@ angular.module('rr0.place', [])
                     mapService.geocode(place, function (placeOnMap) {
                         var parent = elem.parent();
                         var parentTagName = parent.prop('tagName');
-                        if (parentTagName == "P" || parentTagName == "LI") {
+                        if (parentTagName === "P" || parentTagName === "LI") {
                             elem.bind('click', function () {
                                 mapService.focusOn(placeOnMap);
                             });
@@ -324,5 +327,5 @@ angular.module('rr0.place', [])
                     });
                 }
             }
-        }
+        };
     }]);

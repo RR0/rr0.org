@@ -23,7 +23,9 @@ function setContents(c, cLink) {
     }
 }
 function setP(p, pLink) {
-    if (!p) p = prev;
+    if (!p) {
+        p = prev;
+    }
 //    addRel(pLink, "Prev");
 
     var pes = document.getElementsByClassName("prev");
@@ -36,7 +38,9 @@ function setP(p, pLink) {
     headResized();
 }
 function setN(n, nLink) {
-    if (!n) n = next;
+    if (!n) {
+        n = next;
+    }
 //    addRel(nLink, "Next");
 
     var nes = document.getElementsByClassName("next");
@@ -56,8 +60,9 @@ function previousFromTime(p) {
                 if (m > 1) {
                     m--;
                     return {y: y, m: m};
-                } else
+                } else {
                     m = 12;
+                }
             }
             y--;
             return {y: y, m: m};
@@ -94,8 +99,9 @@ function nextFromTime(n) {
                 if (m < 12) {
                     m++;
                     return {y: y, m: m};
-                } else
+                } else {
                     m = 1;
+                }
             }
             y++;
             return {y: y, m: m};
@@ -274,13 +280,19 @@ angular
                         for (var i = 0; i < starts.length; i++) {
                             var st = starts[i];
                             var dataPos = uri.indexOf(st.dir);
-                            if (dataPos >= 0 && uri != st.dir) {
+                            if (dataPos >= 0 && uri !== st.dir) {
                                 s = st.label;
                                 t = st.title;
                                 sLink = st.dir;
-                                if (st.css) org.loadCSS(st.css);
-                                if (st.js) org.loadJS(st.js);
-                                if (st.onLoad) ret = st.onLoad;
+                                if (st.css) {
+                                    org.loadCSS(st.css);
+                                }
+                                if (st.js) {
+                                    org.loadJS(st.js);
+                                }
+                                if (st.onLoad) {
+                                    ret = st.onLoad;
+                                }
                                 break;
                             }
                         }
@@ -416,12 +428,12 @@ angular
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
-                var elm0 = elem[0];
-                if (elm0.hostname && elm0.hostname.indexOf('.') > 0 && elm0.hostname != host) {
-                    elm0.target = '_blank';
+                var e = elem[0];
+                if (e.hostname && e.hostname.indexOf('.') > 0 && e.hostname !== host) {
+                    e.target = '_blank';
                 }
             }
-        }
+        };
     }])
 /**
  * Registers each encountered HTML5 "section" tag as an document outline entry
@@ -523,11 +535,13 @@ angular
             var uri = org.getUri();
             var ls = uri.lastIndexOf("/");
             var htmlExt = uri.lastIndexOf(".html");
-            if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) != "index") {
+            if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) !== "index") {
                 title = uri.substring(ls + 1, htmlExt);
             } else if (ls < uri.length - 1) {
                 var ps = ls - 1;
-                while (uri.charAt(ps) != '/') ps--;
+                while (uri.charAt(ps) !== '/') {
+                    ps--;
+                }
                 title = uri.substring(ps + 1, ls).toUpperCase();  // Accronym assumed
             } else {
                 title = uri.substring(ls + 1);
@@ -641,7 +655,7 @@ angular
             if (window === top) {
                 addNavLinkBeforeTitle("RR0", "/", "Home", "home");
                 addNavLinkBeforeTitle(startNav.label, startNav.link, startNav.title, "start");
-                addNavLinkBeforeTitle('' + contents, contentsURL, "Table des matières", "toc");
+                addNavLinkBeforeTitle('' + contents, contentsURL, "Table des mati\xE8res", "toc");
                 addNavLinkBeforeTitle(prev, prevLink, "Pr\xE9c\xE9dent", "prev");
             } else {
                 //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
@@ -666,7 +680,7 @@ angular
                             setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
                         },
                         function (translation) {
-                            setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction française</a>" : "&#9888; Pas de traduction disponible");
+                            setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible");
                         });
                 }
             }
@@ -729,7 +743,7 @@ angular
             // Function to stop the scrolling animation
             var stopAnimationIfRequired = function () {
                 var currentLocation = scrolled.scrollTop;
-                if (currentLocation == endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight )) {
+                if (currentLocation === endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight )) {
                     cancelAnimationFrame(runAnimation);
                 }
             };

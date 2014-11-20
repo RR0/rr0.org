@@ -1,28 +1,10 @@
 angular.module('rr0')
-    .run(['$http', function($http) {
-        $http.defaults.headers.common['Access-Control-Expose-Headers'] = 'Accept-Language';
-    }])
-    .factory('sessionInjector', [function () {
-        return {request: function (config) {
-            return config;
-        }};
-    }])
-    .config(['$httpProvider', function ($httpProvider) {
-        $httpProvider.interceptors.push('sessionInjector');
-    }])
-    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', '$locale', function ($log, $q, $rootScope, $http, $locale) {
+    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', function ($log, $q, $rootScope, $http) {
         var uri = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/';
         var bundleName = 'Matrix';
-        var lang = $locale.id.substring(0, 2);
-        var localeFile = uri + bundleName + '_' + lang + '.json';
+        var localeFile = uri + bundleName + '_' + userLang + '.json';
         var loaded = $q.defer();
-        $http({
-            method: 'GET',
-            url: localeFile,
-            transformRequest: function (data, headersGetter) {
-                lang = headersGetter['Accept-Language'];
-            }
-        }).
+        $http({method: 'GET', url: localeFile}).
             success(function (data, status, headers, config) {
                 $log.info("Loaded '" + localeFile + "'");
                 loaded.resolve(data);
@@ -50,24 +32,26 @@ angular.module('rr0')
 
         var matrixDataFile = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/matrix.json';
         var msg;
-        $http({ method: 'GET', url: matrixDataFile }).
+        $http({method: 'GET', url: matrixDataFile}).
             success(function (data, status, headers, config) {
                 $log.info("Loaded '" + matrixDataFile + "'");
 
                 resourceBundleService.then(function (messages) {
                     msg = messages;
                     var i = 0;
-                    for (d in data) {
-                        var item = data[d];
-                        var dotPos = item.question.indexOf('.');
-                        var questionKey = item.question.substring(0, dotPos);
-                        var choiceKey = item.question.substring(dotPos + 1);
-                        var question = questions[questionKey];
-                        if (!question) {
-                            question = new Question(messages[questionKey], i++);
-                            questions[questionKey] = question;
+                    for (var d in data) {
+                        if (data.hasOwnProperty(d)) {
+                            var item = data[d];
+                            var dotPos = item.question.indexOf('.');
+                            var questionKey = item.question.substring(0, dotPos);
+                            var choiceKey = item.question.substring(dotPos + 1);
+                            var question = questions[questionKey];
+                            if (!question) {
+                                question = new Question(messages[questionKey], i++);
+                                questions[questionKey] = question;
+                            }
+                            question.choices[choiceKey] = new Choice(messages[item.question], item.answertype, item.knownPhenomenaProbabilities);
                         }
-                        question.choices[choiceKey] = new Choice(messages[item.question], item.answertype, item.knownPhenomenaProbabilities);
                     }
                     $rootScope.$broadcast("dataLoaded", questions);
                 }, function (reason) {
@@ -82,19 +66,25 @@ angular.module('rr0')
                 var zerosCount = {};
                 var max = 0;
                 for (var q in questions) {
-                    var question = questions[q];
-                    for (var c in question.choices) {
-                        var choice = question.choices[c];
-                        if (choice.value != false) {
-                            var knownPhenomenaProbabilities = choice.knownPhenomenaProbabilities;
-                            for (p in knownPhenomenaProbabilities) {
-                                if (!zerosCount[p]) {
-                                    zerosCount[p] = 0;
-                                }
-                                if (knownPhenomenaProbabilities[p] == 0) {
-                                    zerosCount[p]++;
-                                    if (zerosCount[p] > max) {
-                                        max = zerosCount[p];
+                    if (questions.hasOwnProperty(q)) {
+                        var question = questions[q];
+                        for (var c in question.choices) {
+                            if (question.choices.hasOwnProperty(c)) {
+                                var choice = question.choices[c];
+                                if (choice.value !== false) {
+                                    var knownPhenomenaProbabilities = choice.knownPhenomenaProbabilities;
+                                    for (p in knownPhenomenaProbabilities) {
+                                        if (knownPhenomenaProbabilities.hasOwnProperty(p)) {
+                                            if (!zerosCount[p]) {
+                                                zerosCount[p] = 0;
+                                            }
+                                            if (knownPhenomenaProbabilities[p] === 0) {
+                                                zerosCount[p]++;
+                                                if (zerosCount[p] > max) {
+                                                    max = zerosCount[p];
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -103,13 +93,15 @@ angular.module('rr0')
                 }
                 var explanations = [];
                 for (var z in zerosCount) {
-                    var count = zerosCount[z];
-                    var index = probable ? max - count : count;
-                    var trad = msg[z];
-                    if (explanations[index]) {
-                        explanations[index] += ", " + trad;
-                    } else {
-                        explanations[index] = trad.charAt(0).toUpperCase() + trad.slice(1);
+                    if (zerosCount.hasOwnProperty(z)) {
+                        var count = zerosCount[z];
+                        var index = probable ? max - count : count;
+                        var trad = msg[z];
+                        if (explanations[index]) {
+                            explanations[index] += ", " + trad;
+                        } else {
+                            explanations[index] = trad.charAt(0).toUpperCase() + trad.slice(1);
+                        }
                     }
                 }
                 var explanationsWithoutHoles = [];
@@ -120,7 +112,7 @@ angular.module('rr0')
                 }
                 return explanationsWithoutHoles;
             }
-        }
+        };
     }]).controller('matrixFormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
 
         $scope.questionIndex = 0;
@@ -166,17 +158,19 @@ angular.module('rr0')
         var explanationsZone = document.getElementById("explanations");
         $scope.compute = function (key) {
             var changedChoice = $scope.currentQuestion.choices[key];
-            if (changedChoice && changedChoice.answerType == 'radio') {
+            if (changedChoice && changedChoice.answerType === 'radio') {
                 for (c in $scope.currentQuestion.choices) {
-                    var choice = $scope.currentQuestion.choices[c];
-                    if (choice.answerType == 'radio') {
-                        choice.value = c == key ? key : false;
+                    if ($scope.currentQuestion.choices.hasOwnProperty(c)) {
+                        var choice = $scope.currentQuestion.choices[c];
+                        if (choice.answerType === 'radio') {
+                            choice.value = c === key ? key : false;
+                        }
                     }
                 }
             }
-            $scope.explanations = matrixService.compute($scope.resultsType == "NonProbable");
+            $scope.explanations = matrixService.compute($scope.resultsType === "NonProbable");
             if (org.debug) {
                 org.walkIt(explanationsZone);
             }
-        }
+        };
     }]);

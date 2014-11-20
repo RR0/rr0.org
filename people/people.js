@@ -27,7 +27,9 @@ var handleWitness = function (scope, elem, attrs) {
     e.style.background = 'linear-gradient(left, white, ' + caviarBackgroundColor + ' 2%, ' + caviarBackgroundColor + ' 98%, white);'
     e.innerHTML = '<a href="/FAQ.html#privacy">témoin' + (scope.witnessId ? ' ' + scope.witnessId : '') + '</a>';
     e.title = 'Nom du témoin anonymisé';
-    if (e.id) e.innerHTML += ' ' + id;
+    if (e.id) {
+        e.innerHTML += ' ' + id;
+    }
 };
 
 window.copyright = null;
@@ -43,6 +45,36 @@ angular.module('rr0.people', ['rr0.nav'])
             }
         }
 
+        function peopleLink(p, pLink) {
+            if (p) {
+                if (!pLink) {
+                    pLink = org.cache[p];
+                    if (!pLink) {
+                        setPName(p);
+                        pLink = org.cache[getPeople().lastName];
+                        if (!pLink) {
+                            p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
+                            pLink = org.validLink(p);
+                        } else {
+                            return pLink;
+                        }
+                    } else {
+                        return pLink;
+                    }
+                }
+                var firstLinkChar = pLink.charAt(0);
+                if (firstLinkChar !== '.' && firstLinkChar !== '/') {
+                    pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
+                }
+                pLink = org.validLink(pLink);
+                org.cache[p] = pLink;
+                org.cache[getPeople().lastName] = pLink;
+            } else {
+                pLink = null;
+            }
+            return pLink;
+        }
+
         return {
             getCopyright: function () {
                 return copyright;
@@ -52,7 +84,7 @@ angular.module('rr0.people', ['rr0.nav'])
             },
             setAuthor: function (a, aLink) {
                 if (a) {
-                    var author = setPeopleName(a);
+                    var author = setPName(a);
                     author.link = peopleLink(a, aLink);
                     authors.push(author);
                 }
@@ -75,34 +107,10 @@ angular.module('rr0.people', ['rr0.nav'])
              * @param {String} p People's name
              * @param {String} [pLink] a href link, or a symbolic link, or null
              */
-            peopleLink: function (p, pLink) {
-                if (p) {
-                    if (!pLink) {
-                        pLink = org.cache[p];
-                        if (!pLink) {
-                            setPName(p);
-                            pLink = org.cache[getPeople().lastName];
-                            if (!pLink) {
-                                p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
-                                pLink = org.validLink(p);
-                            } else
-                                return pLink;
-                        } else
-                            return pLink;
-                    }
-                    var firstLinkChar = pLink.charAt(0);
-                    if (firstLinkChar !== '.' && firstLinkChar !== '/') {
-                        pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
-                    }
-                    pLink = org.validLink(pLink);
-                    org.cache[p] = pLink;
-                    org.cache[getPeople().lastName] = pLink;
-                } else {
-                    pLink = null;
-                }
-                return pLink;
+            getPeopleLink: function (p, pLink) {
+                return peopleLink(p, pLink);
             }
-        }
+        };
     })
     .directive('people', ['peopleService', function (peopleService) {
         return {
@@ -118,9 +126,9 @@ angular.module('rr0.people', ['rr0.nav'])
                     peopleName = nameKey;
                     elem.val(peopleName);
                 }
-                scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
+                scope.href = peopleService.getPeopleLink(nameKey ? nameKey : peopleName);
             }
-        }
+        };
     }])
     .directive('meta', ['peopleService', function (peopleService) {
         return {
@@ -145,7 +153,7 @@ angular.module('rr0.people', ['rr0.nav'])
         return {
             restrict: 'C',
             link: handleWitness
-        }
+        };
     })
     .directive('temoin1', function () {
         return {
@@ -156,7 +164,7 @@ angular.module('rr0.people', ['rr0.nav'])
             link: function (scope, elem, attrs) {
                 handleWitness(scope, elem, attrs);
             }
-        }
+        };
     })
     .directive('temoin2', function () {
         return {
@@ -167,7 +175,7 @@ angular.module('rr0.people', ['rr0.nav'])
             link: function (scope, elem, attrs) {
                 handleWitness(scope, elem, attrs);
             }
-        }
+        };
     })
     .directive('temoin3', function () {
         return {
@@ -179,7 +187,7 @@ angular.module('rr0.people', ['rr0.nav'])
             link: function (scope, elem, attrs) {
                 handleWitness(scope, elem, attrs);
             }
-        }
+        };
     })
     .controller('AuthorCtrl', ['$scope', 'peopleService', 'timeService', function ($scope, peopleService, timeService) {
         $scope.authors = peopleService.getAuthors();

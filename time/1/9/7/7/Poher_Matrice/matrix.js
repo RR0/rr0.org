@@ -73,7 +73,7 @@ angular.module('rr0')
                                 var choice = question.choices[c];
                                 if (choice.value !== false) {
                                     var knownPhenomenaProbabilities = choice.knownPhenomenaProbabilities;
-                                    for (p in knownPhenomenaProbabilities) {
+                                    for (var p in knownPhenomenaProbabilities) {
                                         if (knownPhenomenaProbabilities.hasOwnProperty(p)) {
                                             if (!zerosCount[p]) {
                                                 zerosCount[p] = 0;
@@ -159,7 +159,7 @@ angular.module('rr0')
         $scope.compute = function (key) {
             var changedChoice = $scope.currentQuestion.choices[key];
             if (changedChoice && changedChoice.answerType === 'radio') {
-                for (c in $scope.currentQuestion.choices) {
+                for (var c in $scope.currentQuestion.choices) {
                     if ($scope.currentQuestion.choices.hasOwnProperty(c)) {
                         var choice = $scope.currentQuestion.choices[c];
                         if (choice.answerType === 'radio') {

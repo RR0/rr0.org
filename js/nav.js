@@ -15,115 +15,6 @@ function addRel(l, t) {
     rel.setAttribute("href", l);
     org.addToHead(rel);
 }
-function setContents(c, cLink) {
-    if (!contents) {
-        contents = c;
-        contentsURL = cLink;
-//        addRel(contentsURL, "Contents");
-    }
-}
-function setP(p, pLink) {
-    if (!p) {
-        p = prev;
-    }
-//    addRel(pLink, "Prev");
-
-    var pes = document.getElementsByClassName("prev");
-    for (var i = 0; i < pes.length; i++) {
-        var pe = pes[i];
-        if (pe) {
-            pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'>← " + p + "</a>";
-        }
-    }
-    headResized();
-}
-function setN(n, nLink) {
-    if (!n) {
-        n = next;
-    }
-//    addRel(nLink, "Next");
-
-    var nes = document.getElementsByClassName("next");
-    for (var i = 0; i < nes.length; i++) {
-        var ne = nes[i];
-        if (ne) {
-            ne.innerHTML = "<a href=\"" + nLink + "\" title='Suivant'>→ " + n + "</a>";
-        }
-    }
-    headResized();
-}
-function previousFromTime(p) {
-    var t = org.rr0.time.getTime();
-    org.rr0.time.findTimeSibling(t.year, t.month,
-        function (y, m) {
-            if (m) {
-                if (m > 1) {
-                    m--;
-                    return {y: y, m: m};
-                } else {
-                    m = 12;
-                }
-            }
-            y--;
-            return {y: y, m: m};
-        }, setP);
-    p = "...";
-    return p;
-}
-function setPrev(p, pLink) {
-    if (!pLink) {
-        if (!p && !prev) {
-            if (org.rr0.time.getYear()) {
-                p = previousFromTime(p);
-            } else {
-                pLink = "..";   // Default previous is previous directory
-                setP(p, pLink);
-            }
-        } else {
-            pLink = "..";   // Default previous is previous directory
-            setP(p, pLink);
-        }
-    }
-    if (pLink) {
-        prevLink = pLink;
-    }
-    if (p) {
-        prev = p;
-    }
-}
-function nextFromTime(n) {
-    var t = org.rr0.time.getTime();
-    org.rr0.time.findTimeSibling(t.year, t.month,
-        function (y, m) {
-            if (m) {
-                if (m < 12) {
-                    m++;
-                    return {y: y, m: m};
-                } else {
-                    m = 1;
-                }
-            }
-            y++;
-            return {y: y, m: m};
-        }, setN);
-    n = "...";
-    return n;
-}
-function setNext(n, nLink) {
-    if (!nLink) {
-        if (!n && !next) {
-            if (org.rr0.time.getYear()) {
-                n = nextFromTime(n);
-            }
-        }
-    }
-    if (n) {
-        next = n;
-    }
-    if (nLink) {
-        nextLink = nLink;
-    }
-}
 function navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
     var onLoadDo = setStart(s, sLink);
     if (window === top) {
@@ -191,7 +82,7 @@ angular
             return $sce.trustAsHtml(val);
         };
     }])
-    .run(['$rootScope', function($rootScope) {
+    .run(['$rootScope', function ($rootScope) {
         $rootScope.title = "";
     }])
     .service('navigationService', ['$rootScope', function ($rootScope) {
@@ -267,10 +158,127 @@ angular
                 }
             ];
 
-        this.addStart=function(s) {
+        function setN(n, nLink) {
+            if (!n) {
+                n = next;
+            }
+//    addRel(nLink, "Next");
+
+            var nes = document.getElementsByClassName("next");
+            for (var i = 0; i < nes.length; i++) {
+                var ne = nes[i];
+                if (ne) {
+                    ne.innerHTML = "<a href=\"" + nLink + "\" title='Suivant'>→ " + n + "</a>";
+                }
+            }
+            headResized();
+        }
+
+        function nextFromTime(n) {
+            var t = org.rr0.time.getTime();
+            org.rr0.time.findTimeSibling(t.year, t.month,
+                function (y, m) {
+                    if (m) {
+                        if (m < 12) {
+                            m++;
+                            return {y: y, m: m};
+                        } else {
+                            m = 1;
+                        }
+                    }
+                    y++;
+                    return {y: y, m: m};
+                }, setN);
+            n = "...";
+            return n;
+        }
+
+        this.setNext = function (n, nLink) {
+            if (!nLink) {
+                if (!n && !next) {
+                    if (org.rr0.time.getYear()) {
+                        n = nextFromTime(n);
+                    }
+                }
+            }
+            if (n) {
+                next = n;
+            }
+            if (nLink) {
+                nextLink = nLink;
+            }
+        };
+
+        function setP(p, pLink) {
+            if (!p) {
+                p = prev;
+            }
+//    addRel(pLink, "Prev");
+
+            var pes = document.getElementsByClassName("prev");
+            for (var i = 0; i < pes.length; i++) {
+                var pe = pes[i];
+                if (pe) {
+                    pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'>← " + p + "</a>";
+                }
+            }
+            headResized();
+        }
+
+        function previousFromTime(p) {
+            var t = org.rr0.time.getTime();
+            org.rr0.time.findTimeSibling(t.year, t.month,
+                function (y, m) {
+                    if (m) {
+                        if (m > 1) {
+                            m--;
+                            return {y: y, m: m};
+                        } else {
+                            m = 12;
+                        }
+                    }
+                    y--;
+                    return {y: y, m: m};
+                }, setP);
+            p = "...";
+            return p;
+        }
+
+        this.setPrev = function (p, pLink) {
+            if (!pLink) {
+                if (!p && !prev) {
+                    if (org.rr0.time.getYear()) {
+                        p = previousFromTime(p);
+                    } else {
+                        pLink = "..";   // Default previous is previous directory
+                        setP(p, pLink);
+                    }
+                } else {
+                    pLink = "..";   // Default previous is previous directory
+                    setP(p, pLink);
+                }
+            }
+            if (pLink) {
+                prevLink = pLink;
+            }
+            if (p) {
+                prev = p;
+            }
+        };
+
+        this.addStart = function (s) {
             starts.push(s);
         };
-        this.setStart=function(s, sLink) {
+
+        this.setContents = function (c, cLink) {
+            if (!contents) {
+                contents = c;
+                contentsURL = cLink;
+//        addRel(contentsURL, "Contents");
+            }
+        };
+
+        this.setStart = function (s, sLink) {
             if (!startNav) {
                 var ret = null;
                 var t;
@@ -391,7 +399,7 @@ angular
 /**
  * Sets navigation menu items from relationship links meta tags.
  */
-    .directive('link', [function () {
+    .directive('link', ['navigationService', function (navigationService) {
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -406,16 +414,16 @@ angular
                         var alternatelang = attrs.hreflang;
                         break;
                     case 'prev':
-                        setPrev(linkTitle, attrs.href);
+                        navigationService.setPrev(linkTitle, attrs.href);
                         break;
                     case 'next':
-                        setNext(linkTitle, attrs.href);
+                        navigationService.setNext(linkTitle, attrs.href);
                         break;
                     case 'start':
-                        setStart(linkTitle, attrs.href);
+                        navigationService.setStart(linkTitle, attrs.href);
                         break;
                     case 'contents':
-                        setContents(linkTitle, attrs.href);
+                        navigationService.setContents(linkTitle, attrs.href);
                         break;
                 }
             }

@@ -66,7 +66,9 @@ function NetModule() {
             l = org.addEndingSlash(l);
         }
         if (e.className !== org.constantClass) {
-            if (!replacement) replacement = toReplace;
+            if (!replacement) {
+                replacement = toReplace;
+            }
             var newText = org.text(e).replace(toReplace, replacement);  // Replace text early, the link will come later
             if (e.nodeType === Node.TEXT_NODE) {
                 e.nodeValue = newText;
@@ -92,7 +94,9 @@ function NetModule() {
                         org.rr0.net.onExists(l + "/index.html", function () {
                             org.log("found link " + l + " for e'sparent=" + e.parentNode);
                             e = linkify(e, replacement, l, replacement, cacheIt);
-                            if (t) e.title = t;
+                            if (t) {
+                                e.title = t;
+                            }
                         }, failProc);
                     }
                 }, failProc);
@@ -118,12 +122,14 @@ function NetModule() {
     }
 
     function processRequest(asyncProc, req, address, reqType) {
-        if (asyncProc) req.onreadystatechange = function () {
-            // in case of network errors this might not give reliable results
-            if (this.readyState === 4) {
-                asyncProc(this);
-            }
-        }; else {
+        if (asyncProc) {
+            req.onreadystatechange = function () {
+                // in case of network errors this might not give reliable results
+                if (this.readyState === 4) {
+                    asyncProc(this);
+                }
+            };
+        } else {
             req.timeout = 4000;
         }  // Reduce default 2mn-like timeout if synchronous
         if (org.debug && address.indexOf("http://") === 0) {

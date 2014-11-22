@@ -89,7 +89,7 @@ function NetModule() {
                     }
                 };
 
-                org.rr0.net.onExists(l, function () {
+                netThis.onExists(l, function () {
                     if (l !== (org.rr0.time.uriPart + "0/0/")) {
                         org.rr0.net.onExists(l + "/index.html", function () {
                             org.log("found link " + l + " for e'sparent=" + e.parentNode);
@@ -139,21 +139,21 @@ function NetModule() {
         req.send();
     }
 
-    this.onRequest = function (address, reqType, asyncProc) {
+    netThis.onRequest = function (address, reqType, asyncProc) {
         var req = httpRequest();
         processRequest(asyncProc, req, address, reqType);
     };
 
-    this.onCorsRequest = function (address, reqType, asyncProc) {
+    netThis.onCorsRequest = function (address, reqType, asyncProc) {
         var req = corsHttpRequest();
         processRequest(asyncProc, req, address, reqType);
     };
 
-    this.onHead = function (address, proc) {
+    netThis.onHead = function (address, proc) {
         this.onRequest(address, "HEAD", proc);
     };
 
-    this.onExists = function (address, proc, failProc) {
+    netThis.onExists = function (address, proc, failProc) {
         this.onHead(address, function (req) {
             if (req.status === 200) {
                 proc();
@@ -162,6 +162,17 @@ function NetModule() {
             }
         });
     };
-    return this;
+    return netThis;
 }
 org.rr0.net = new NetModule();
+angular.module('rr0.net', [])
+    .service('netService', function() {
+        return {
+            onExists: function(l, cb, fp) {
+                return org.rr0.net.onExists(l, cb, fp);
+            },
+            checkedLink: function(e, toReplace, l, replacement, cacheIt, t) {
+                return org.rr0.net.checkedLink(e, toReplace, l, replacement, cacheIt, t);
+            }
+        }
+    });

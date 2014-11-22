@@ -37,10 +37,6 @@ module.exports = function (grunt) {
                             dest: 'time/time.es5.js'
                         },
                         {
-                            src: ['time/time-module.js'],
-                            dest: 'time/time-module.es5.js'
-                        },
-                        {
                             src: ['place/place.js'],
                             dest: 'place/place.es5.js'
                         },
@@ -123,7 +119,7 @@ module.exports = function (grunt) {
                 /* As this is launch for dev only, we rely on non-merged files here */
                 src: [
                     'js/common.es5.js', 'js/net.es5.js', 'js/lang.es5.js', 'js/nav.es5.js', 'people/people.es5.js',
-                    'time/time.es5.js', 'time/time-module.es5.js', 'place/place.es5.js', 'js/foot.es5.js',
+                    'time/time.es5.js', 'place/place.es5.js', 'js/foot.es5.js',
                     'js/index.es5.js', 'js/search/search.es5.js', 'js/units.es5.js'
                 ],
                 options: {
@@ -132,7 +128,9 @@ module.exports = function (grunt) {
                     helpers: [
                         'node_modules/grunt-contrib-jasmine/vendor/jasmine-2.0.1/**/*.js',
                         'bower_components/angular-mocks/angular-mocks.js',
-                        'bower_components/angular-sanitize/angular-sanitize.js'
+                        'bower_components/angular-sanitize/angular-sanitize.js',
+                        'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js',
+                        'bower_components/angular-nanoscroller/scrollable.js'
                     ]
                     //template: 'custom.tmpl',
                 }
@@ -162,7 +160,6 @@ module.exports = function (grunt) {
                             'js/nav.es5.js',
                             'people/people.es5.js',
                             'time/time.es5.js',
-                            'time/time-module.es5.js',
                             'place/place.es5.js',
                             'js/foot.es5.js',
                             'js/index.es5.js',

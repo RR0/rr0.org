@@ -1,3 +1,5 @@
+"use strict";
+
 function OrgModule() {
 
     this.getUri = function () {
@@ -13,7 +15,7 @@ function OrgModule() {
 
     if (this.debug && typeof console !== 'undefined') {
         this.log = function (m) {
-            console.log(m);
+            window.console.log(m);
         };
     } else {
         this.log = function (m) {
@@ -431,13 +433,13 @@ function OrgModule() {
     var pageCache = {};
     this.cache = sessionStorage ? sessionStorage : pageCache;
 //var cache = pageCache;
-    this.toLink=function(l, k) {
+    this.toLink = function (l, k) {
         l = org.addEndingSlash(l);
         window.org.log("caching " + k + " as " + l);
         org.cache[k] = l;
     };
 
-    this.toLinks=function (l, kk) {
+    this.toLinks = function (l, kk) {
         for (var k = 0; k < kk.length; k++) {
             this.toLink(l, kk[k]);
         }
@@ -558,4 +560,18 @@ var org = new OrgModule();
         };
     }
 }());
+angular.module('rr0.commons', [])
+    .service('commonsService', function () {
+        return {
+            addEndingSlash: function(l) {
+                return org.addEndingSlash(l);
+            },
+            getUri: function() {
+                return org.getUri();
+            },
+            parentLink: function(l) {
+                return org.parentLink(l);
+            }
+        };
+    });
 //# sourceURL=common.js

@@ -1,3 +1,4 @@
+"use strict";
 // Network functions
 function NetModule() {
     var netThis = this;
@@ -61,49 +62,6 @@ function NetModule() {
         return e;
     }
 
-    netThis.checkedLink = function (e, toReplace, l, replacement, cacheIt, t) {
-        if (l) {
-            l = org.addEndingSlash(l);
-        }
-        if (e.className !== org.constantClass) {
-            if (!replacement) {
-                replacement = toReplace;
-            }
-            var newText = org.text(e).replace(toReplace, replacement);  // Replace text early, the link will come later
-            if (e.nodeType === Node.TEXT_NODE) {
-                e.nodeValue = newText;
-            } else {
-                e.innerHTML = newText;
-            }
-            if (t) {
-                e.title = t;
-            }
-            if (l && l !== org.getUri()) {
-                toReplace = replacement;
-                var failProc = function () {
-                    var pLink = org.parentLink(l);
-                    if (org.getUri().indexOf("/time/") < 0) {
-                        org.log("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
-                        cacheIt = false;
-                        netThis.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
-                    }
-                };
-
-                netThis.onExists(l, function () {
-                    if (l !== (org.rr0.time.uriPart + "0/0/")) {
-                        org.rr0.net.onExists(l + "/index.html", function () {
-                            org.log("found link " + l + " for e'sparent=" + e.parentNode);
-                            e = linkify(e, replacement, l, replacement, cacheIt);
-                            if (t) {
-                                e.title = t;
-                            }
-                        }, failProc);
-                    }
-                }, failProc);
-            }
-        }
-    };
-
     function httpRequest() {
         return window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     }
@@ -165,14 +123,54 @@ function NetModule() {
     return netThis;
 }
 org.rr0.net = new NetModule();
-angular.module('rr0.net', [])
-    .service('netService', function() {
+angular.module('rr0.net', ['rr0.commons'])
+    .service('netService', ['commonsService', '$log', function (commonsService, $log) {
         return {
-            onExists: function(l, cb, fp) {
+            onExists: function (l, cb, fp) {
                 return org.rr0.net.onExists(l, cb, fp);
             },
-            checkedLink: function(e, toReplace, l, replacement, cacheIt, t) {
-                return org.rr0.net.checkedLink(e, toReplace, l, replacement, cacheIt, t);
+            checkedLink: function (e, toReplace, l, replacement, cacheIt, t) {
+                var thisService = this;
+                if (l) {
+                    l = commonsService.addEndingSlash(l);
+                }
+                if (e.className !== org.constantClass) {
+                    if (!replacement) {
+                        replacement = toReplace;
+                    }
+                    var newText = org.text(e).replace(toReplace, replacement);  // Replace text early, the link will come later
+                    if (e.nodeType === Node.TEXT_NODE) {
+                        e.nodeValue = newText;
+                    } else {
+                        e.innerHTML = newText;
+                    }
+                    if (t) {
+                        e.title = t;
+                    }
+                    if (l && l !== commonsService.getUri()) {
+                        toReplace = replacement;
+                        var failProc = function () {
+                            var pLink = commonsService.parentLink(l);
+                            if (commonsService.getUri().indexOf("/time/") < 0) {
+                                $log.debug("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
+                                cacheIt = false;
+                                thisService.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
+                            }
+                        };
+
+                        thisService.onExists(l, function () {
+                            if (l !== (org.rr0.time.uriPart + "0/0/")) {
+                                org.rr0.net.onExists(l + "/index.html", function () {
+                                    $log.debug("found link " + l + " for e'sparent=" + e.parentNode);
+                                    e = org.rr0.net.linkify(e, replacement, l, replacement, cacheIt);
+                                    if (t) {
+                                        e.title = t;
+                                    }
+                                }, failProc);
+                            }
+                        }, failProc);
+                    }
+                }
             }
-        }
-    });
+        };
+    }]);

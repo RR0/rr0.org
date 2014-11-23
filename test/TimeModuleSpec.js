@@ -1,13 +1,15 @@
 describe("Time directive", function () {
     var $compile;
     var $rootScope;
+    var netService;
 
     beforeEach(angular.mock.module('rr0.time'));
     org.rr0.context.language = 'fr';
 
-    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_) {
+    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _netService_) {
         $compile = _$compile_;
         $rootScope = _$rootScope_;
+        netService = _netService_;
     }));
 
     it('display durations in minutes', function () {
@@ -55,14 +57,14 @@ describe("Time directive", function () {
         expect(element.html()).toContain("10&nbsp;jours et 5&nbsp;secondes");
     });
     it('display dates', function () {
-        spyOn(org.rr0.net, "onExists").and.returnValue(true);
+        spyOn(netService, "onExists").and.returnValue(true);
 
         var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
         $rootScope.$digest();
         expect(element.html()).toContain("Dimanche 29 Juin 1997");
     });
     it('display datetimes', function () {
-        spyOn(org.rr0.net, "onExists").and.returnValue(true);
+        spyOn(netService, "onExists").and.returnValue(true);
 
         var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
         $rootScope.$digest();
@@ -76,7 +78,7 @@ describe("Time directive", function () {
         expect(element.html()).toContain("Mardi 29 Juin 1997 au Mercredi 20 Mai 1998");
     });*/
     it('display dates contextually', function () {
-        spyOn(org.rr0.net, "onExists").and.returnValue(true);
+        spyOn(netService, "onExists").and.returnValue(true);
 
         var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
         $rootScope.$digest();

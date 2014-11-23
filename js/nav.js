@@ -1,3 +1,5 @@
+"use strict";
+
 function NavLink(l, url, t) {
     this.label = l;
     this.link = url;
@@ -85,7 +87,7 @@ angular
     .run(['$rootScope', function ($rootScope) {
         $rootScope.title = "";
     }])
-    .service('navigationService', ['$rootScope', function ($rootScope) {
+    .service('navigationService', ['$rootScope', 'commonsService', function ($rootScope, commonsService) {
         this.currentLevel = 1;
         this.sections = [];
         this.menu = [];
@@ -284,7 +286,7 @@ angular
                 var t;
                 if (window === top) {
                     if (!s) {                       // Look for start induced by URI
-                        var uri = org.getUri();
+                        var uri = commonsService.getUri();
                         for (var i = 0; i < starts.length; i++) {
                             var st = starts[i];
                             var dataPos = uri.indexOf(st.dir);
@@ -482,7 +484,7 @@ angular
 /**
  * Registers each encountered HTML5 "article" tag as an document outline entry
  */
-    .directive('article', ['navigationService', function (navigationService) {
+    .directive('article', ['navigationService', function (navigationService, commonsService) {
         function addArt(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);
             scope.level = section.level;
@@ -514,7 +516,7 @@ angular
             template: '<p ng-transclude></p> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'peopleService', function ($scope, $rootScope, $log, $timeout, peopleService) {
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'peopleService', 'commonsService', function ($scope, $rootScope, $log, $timeout, peopleService, commonsService) {
         function titleFromTime() {
             var title = org.rr0.time.getYear();
             if (title) {
@@ -540,7 +542,7 @@ angular
 
         function titleFromURI() {
             var title;
-            var uri = org.getUri();
+            var uri = commonsService.getUri();
             var ls = uri.lastIndexOf("/");
             var htmlExt = uri.lastIndexOf(".html");
             if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) !== "index") {
@@ -683,7 +685,7 @@ angular
             function checkAlt() {
                 if (!alternate) {
                     alternate = " ";
-                    checkAlternate(org.getUri(),
+                    checkAlternate(commonsService.getUri(),
                         function (original) {
                             setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
                         },

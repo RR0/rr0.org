@@ -1,66 +1,8 @@
 "use strict";
+
 // Network functions
 function NetModule() {
     var netThis = this;
-    /**
-     *
-     * @param e The element to replace into
-     * @param toReplace The text to link in the element contents
-     * @param l The link address
-     * @param replacement The replacement text, if different from toReplace
-     * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
-     * @param {string} [t] title on the link
-     */
-    /**
-     * Transform some text into a link.
-     *
-     * @param {HTMLElement} e The element containing the text.
-     * @param {string} k The text to look for.
-     * @param {string} l The URI of the link to create
-     * @param {string} [r] The text replacement, if any (matched text remains otherwise)
-     * @param {boolean} [cacheIt]
-     * @return {HTMLElement}
-     */
-    function linkify(e, k, l, r, cacheIt) {
-        if (!org.hasClass(e, org.constantClass) && l !== org.getUri() && (l + "/") !== org.getUri()) {
-            var txt = org.text(e);
-            if (txt) {
-                var pos = txt.indexOf(k);
-                if (pos >= 0) {
-                    org.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
-                    if (!r) {
-                        r = k;
-                    }
-                    var text1;
-                    if (pos > 0) {
-                        text1 = document.createTextNode(txt.substring(0, pos));
-                    }
-                    var re = document.createTextNode(r);
-                    var le = org.linkElement(l, re);
-                    var endPos = pos + k.length;
-                    var text2;
-                    if (endPos < txt.length) {
-                        text2 = document.createTextNode(txt.substring(endPos));
-                    }
-                    var pNode = e.parentNode;
-                    if (pNode) {    // TODO: Should not occur
-                        pNode.replaceChild(le, e);
-                        if (text1) {
-                            pNode.insertBefore(text1, le);
-                        }
-                        if (text2) {
-                            pNode.insertBefore(text2, le.nextSibling);
-                        }
-                    }
-                    if (cacheIt) {
-                        org.toLink(l, r);
-                    }
-                    e = le;
-                }
-            }
-        }
-        return e;
-    }
 
     function httpRequest() {
         return window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
@@ -125,10 +67,71 @@ function NetModule() {
 org.rr0.net = new NetModule();
 angular.module('rr0.net', ['rr0.commons'])
     .service('netService', ['commonsService', '$log', function (commonsService, $log) {
+        var thisService = this;
+        /**
+         * Transform some text into a link.
+         *
+         * @param {HTMLElement} e The element containing the text.
+         * @param {string} k The text to look for.
+         * @param {string} l The URI of the link to create
+         * @param {string} [r] The text replacement, if any (matched text remains otherwise)
+         * @param {boolean} [cacheIt]
+         * @return {HTMLElement}
+         */
+        function linkify(e, k, l, r, cacheIt) {
+            if (!org.hasClass(e, org.constantClass) && l !== org.getUri() && (l + "/") !== org.getUri()) {
+                var txt = org.text(e);
+                if (txt) {
+                    var pos = txt.indexOf(k);
+                    if (pos >= 0) {
+                        org.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
+                        if (!r) {
+                            r = k;
+                        }
+                        var text1;
+                        if (pos > 0) {
+                            text1 = document.createTextNode(txt.substring(0, pos));
+                        }
+                        var re = document.createTextNode(r);
+                        var le = org.linkElement(l, re);
+                        var endPos = pos + k.length;
+                        var text2;
+                        if (endPos < txt.length) {
+                            text2 = document.createTextNode(txt.substring(endPos));
+                        }
+                        var pNode = e.parentNode;
+                        if (pNode) {    // TODO: Should not occur
+                            pNode.replaceChild(le, e);
+                            if (text1) {
+                                pNode.insertBefore(text1, le);
+                            }
+                            if (text2) {
+                                pNode.insertBefore(text2, le.nextSibling);
+                            }
+                        }
+                        if (cacheIt) {
+                            org.toLink(l, r);
+                        }
+                        e = le;
+                    }
+                }
+            }
+            return e;
+        }
+
         return {
             onExists: function (l, cb, fp) {
                 return org.rr0.net.onExists(l, cb, fp);
             },
+            /**
+             *
+             * @param e The element to replace into
+             * @param toReplace The text to link in the element contents
+             * @param l The link address
+             * @param replacement The replacement text, if different from toReplace
+             * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
+             * @param {string} [t] title on the link
+             */
             checkedLink: function (e, toReplace, l, replacement, cacheIt, t) {
                 var thisService = this;
                 if (l) {
@@ -160,9 +163,9 @@ angular.module('rr0.net', ['rr0.commons'])
 
                         thisService.onExists(l, function () {
                             if (l !== (org.rr0.time.uriPart + "0/0/")) {
-                                org.rr0.net.onExists(l + "/index.html", function () {
+                                thisService.onExists(l + "/index.html", function () {
                                     $log.debug("found link " + l + " for e'sparent=" + e.parentNode);
-                                    e = org.rr0.net.linkify(e, replacement, l, replacement, cacheIt);
+                                    e = linkify(e, replacement, l, replacement, cacheIt);
                                     if (t) {
                                         e.title = t;
                                     }

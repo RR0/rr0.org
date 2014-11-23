@@ -20,10 +20,10 @@ module.exports = function (config) {
             'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js',
             'bower_components/angular-nanoscroller/scrollable.js',
             'node_modules/karma-jasmine/**/*.js',
-            'js/**/*.es5.js',
-            'time/*.es5.js',
-            'people/**/*.es5.js',
-            'place/**/*.es5.js',
+            'out/js/**/*.es5.js',
+            'out/time/*.es5.js',
+            'out/people/**/*.es5.js',
+            'out/place/**/*.es5.js',
             'test/**/*Spec.js'
         ],
 
@@ -59,7 +59,7 @@ module.exports = function (config) {
         // Firefox only is available on Travis VM : http://docs.travis-ci.com/user/gui-and-headless-browsers/
         // Current PhantomJS versions fail with traceur : https://github.com/google/traceur-compiler/issues/908
         //browsers: ['Chrome', 'Firefox'],
-        browsers: ['Chrome'],
+        browsers: ['Firefox'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits

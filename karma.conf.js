@@ -20,7 +20,7 @@ module.exports = function (config) {
             'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js',
             'bower_components/angular-nanoscroller/scrollable.js',
             'node_modules/karma-jasmine/**/*.js',
-            'js/all.es5.min.js',
+            'out/js/all.es5.min.js',
             'test/**/*Spec.js'
         ],
 

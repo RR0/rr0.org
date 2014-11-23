@@ -1,7 +1,7 @@
 /* jshint node: true */
 
+"use strict";
 module.exports = function (grunt) {
-    "use strict";
 
     grunt.initConfig(
         {
@@ -14,47 +14,47 @@ module.exports = function (grunt) {
                     files: [
                         {
                             src: ['js/common.js'],
-                            dest: 'js/common.es5.js'
+                            dest: 'out/js/common.es5.js'
                         },
                         {
                             src: ['js/net.js'],
-                            dest: 'js/net.es5.js'
+                            dest: 'out/js/net.es5.js'
                         },
                         {
                             src: ['js/lang.js'],
-                            dest: 'js/lang.es5.js'
+                            dest: 'out/js/lang.es5.js'
                         },
                         {
                             src: ['js/nav.js'],
-                            dest: 'js/nav.es5.js'
+                            dest: 'out/js/nav.es5.js'
                         },
                         {
                             src: ['people/people.js'],
-                            dest: 'people/people.es5.js'
+                            dest: 'out/people/people.es5.js'
                         },
                         {
                             src: ['time/time.js'],
-                            dest: 'time/time.es5.js'
+                            dest: 'out/time/time.es5.js'
                         },
                         {
                             src: ['place/place.js'],
-                            dest: 'place/place.es5.js'
+                            dest: 'out/place/place.es5.js'
                         },
                         {
                             src: ['js/foot.js'],
-                            dest: 'js/foot.es5.js'
+                            dest: 'out/js/foot.es5.js'
                         },
                         {
                             src: ['js/index.js'],
-                            dest: 'js/index.es5.js'
+                            dest: 'out/js/index.es5.js'
                         },
                         {
                             src: ['js/search/search.js'],
-                            dest: 'js/search/search.es5.js'
+                            dest: 'out/js/search/search.es5.js'
                         },
                         {
                             src: ['js/units.js'],
-                            dest: 'js/units.es5.js'
+                            dest: 'out/js/units.es5.js'
                         }
                     ]
                 }
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                     },
                     expand: true,
                     files: {
-                        'rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss']
+                        'out/rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss']
                     }
                 },
                 dev: {
@@ -103,7 +103,7 @@ module.exports = function (grunt) {
                 rr0: {
                     files: {
                         expand: true,
-                        src: ['time.es5.js'],
+                        src: ['/out/js/time.es5.js'],
                         ext: '.annotated.js'
                     }
                 }
@@ -118,9 +118,9 @@ module.exports = function (grunt) {
             jasmine: {
                 /* As this is launch for dev only, we rely on non-merged files here */
                 src: [
-                    'js/common.es5.js', 'js/net.es5.js', 'js/lang.es5.js', 'js/nav.es5.js', 'people/people.es5.js',
-                    'time/time.es5.js', 'place/place.es5.js', 'js/foot.es5.js',
-                    'js/index.es5.js', 'js/search/search.es5.js', 'js/units.es5.js'
+                    'out/js/common.es5.js', 'out/js/net.es5.js', 'out/js/lang.es5.js', 'out/js/nav.es5.js', 'out/people/people.es5.js',
+                    'time/time.es5.js', 'out/place/place.es5.js', 'out/js/foot.es5.js',
+                    'js/index.es5.js', 'out/js/search/search.es5.js', 'out/js/units.es5.js'
                 ],
                 options: {
                     specs: 'test/**/*.js',
@@ -148,23 +148,23 @@ module.exports = function (grunt) {
                 rr0: {
                     options: {
                         sourceMap: true,
-                        sourceMapName: 'js/all.es5.map',
+                        sourceMapName: 'out/js/all.es5.map',
                         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
                         drop_console: true
                     },
                     files: {
-                        'js/all.es5.min.js': [
-                            'js/common.es5.js',
-                            'js/net.es5.js',
-                            'js/lang.es5.js',
-                            'js/nav.es5.js',
-                            'people/people.es5.js',
-                            'time/time.es5.js',
-                            'place/place.es5.js',
-                            'js/foot.es5.js',
-                            'js/index.es5.js',
-                            'js/search/search.es5.js',
-                            'js/units.es5.js'
+                        'out/js/all.es5.min.js': [
+                            'out/js/common.es5.js',
+                            'out/js/net.es5.js',
+                            'out/js/lang.es5.js',
+                            'out/js/nav.es5.js',
+                            'out/people/people.es5.js',
+                            'out/time/time.es5.js',
+                            'out/place/place.es5.js',
+                            'out/js/foot.es5.js',
+                            'out/js/index.es5.js',
+                            'out/js/search/search.es5.js',
+                            'out/js/units.es5.js'
                         ]
                     }
                 }

@@ -68,6 +68,7 @@ org.rr0.net = new NetModule();
 angular.module('rr0.net', ['rr0.commons'])
     .service('netService', ['commonsService', '$log', function (commonsService, $log) {
         var thisService = this;
+
         /**
          * Transform some text into a link.
          *
@@ -79,12 +80,13 @@ angular.module('rr0.net', ['rr0.commons'])
          * @return {HTMLElement}
          */
         function linkify(e, k, l, r, cacheIt) {
-            if (!org.hasClass(e, org.constantClass) && l !== org.getUri() && (l + "/") !== org.getUri()) {
+            var uri = commonsService.getUri();
+            if (!org.hasClass(e, org.constantClass) && l !== uri && (l + "/") !== uri) {
                 var txt = org.text(e);
                 if (txt) {
                     var pos = txt.indexOf(k);
                     if (pos >= 0) {
-                        org.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
+                        $log.debug("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode);
                         if (!r) {
                             r = k;
                         }
@@ -123,6 +125,7 @@ angular.module('rr0.net', ['rr0.commons'])
             onExists: function (l, cb, fp) {
                 return org.rr0.net.onExists(l, cb, fp);
             },
+
             /**
              *
              * @param e The element to replace into

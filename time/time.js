@@ -1,6 +1,7 @@
-"use strict";
+
 var org = org || {}; // Useless as we depend on org functions
 org.rr0 = org.rr0 || {};
+
 function TimeModule() {
 
     var timeModuleThis = this;
@@ -23,12 +24,12 @@ function TimeModule() {
     };
 
     var dayOfWeekNames = {
-        "fr": [ "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" ],
-        "en": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ]
+        "fr": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+        "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     };
     var monthNames = {
-        "fr": [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ],
-        "en": [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+        "fr": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+        "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     };
 
     function paramLang(lang) {
@@ -39,9 +40,9 @@ function TimeModule() {
         return dayOfWeekNames[paramLang(lang)][d];
     };
 
-    function monthNam(m, lang) {
+    this.monthNam=function (m, lang) {
         return monthNames[paramLang(lang)][m];
-    }
+    };
 
     var times;
 
@@ -129,22 +130,22 @@ function TimeModule() {
             var remaining = durationThis.durationInSeconds;
             var days = Math.floor(remaining / durationThis.day.factor);
             if (days >= 1) {
-                txt.push(unitStated != durationThis.day.name ? durationThis.day.toString(days) : days);
+                txt.push(unitStated !== durationThis.day.name ? durationThis.day.toString(days) : days);
             }
             remaining = remaining % durationThis.day.factor;
             var hours = Math.floor(remaining / durationThis.hour.factor);
             if (hours >= 1) {
-                txt.push(unitStated != durationThis.hour.name ? this.hour.toString(hours) : hours);
+                txt.push(unitStated !== durationThis.hour.name ? this.hour.toString(hours) : hours);
             }
             remaining = remaining % durationThis.hour.factor;
             var minutes = Math.floor(remaining / durationThis.minute.factor);
             if (minutes >= 1) {
-                txt.push(unitStated != durationThis.minute.name ? durationThis.minute.toString(minutes) : minutes);
+                txt.push(unitStated !== durationThis.minute.name ? durationThis.minute.toString(minutes) : minutes);
             }
             remaining = remaining % durationThis.minute.factor;
             var seconds = remaining;
             if (seconds >= 1) {
-                txt.push(unitStated != durationThis.second.name ? durationThis.second.toString(seconds) : seconds);
+                txt.push(unitStated !== durationThis.second.name ? durationThis.second.toString(seconds) : seconds);
             }
             var last = txt.length - 1;
             var s = '';
@@ -524,7 +525,7 @@ function TimeModule() {
     this.monthName = function (m) {
         var t = this.getTime();
         if (!m && t.month) m = t.month;
-        return monthNam(m - 1);
+        return this.monthNam(m - 1);
     };
 
     function addMonth(m) {
@@ -646,30 +647,6 @@ function TimeModule() {
             s += " " + addYear(y, dateLink, t);
         }
         return s;
-    };
-
-    this.findTimeSibling = function (oy, m, changeProc, foundProc) {
-        var ret = changeProc(oy, m);
-        var y = ret.y;
-        var l = timeModuleThis.yearLink(y);
-        m = ret.m;
-        var label = y;
-        if (m) {
-            setContents(oy, timeModuleThis.yearLink(oy));
-            l += "/" + org.zero(m);
-            label = monthNam(m - 1);
-            if (y != timeModuleThis.getTime().year) label += ' ' + y;
-        } else {
-            var cLink = timeModuleThis.yearLink(oy, true);
-            if (cLink != org.getUri()) {
-                setContents(~~(oy / 10) + "0s", cLink)
-            }
-        }
-        org.rr0.net.onExists(l, function (req) {
-            foundProc(label, l);
-        }, function (failReq) {
-            timeModuleThis.findTimeSibling(y, m, changeProc, foundProc);
-        });
     };
 
     var preYearWords = ["en", "de", "à", "dès", "vers", "depuis", "jusqu'en", "année", "années", "fin", "début", "printemps", "été", "automne", "hiver", "avant", "entre", "et", "ou"];
@@ -813,10 +790,35 @@ function TimeModule() {
 org.rr0.time = new TimeModule();
 
 angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
-    .service('timeService', [function () {
+    .service('timeService', ['netService', function (netService) {
+        var thisService = this;
+
         return {
             getTime: function () {
                 return org.rr0.time.addDate();
+            },
+            findTimeSibling: function (oy, m, changeProc, foundProc) {
+                var ret = changeProc(oy, m);
+                var y = ret.y;
+                var l = org.rr0.time.yearLink(y);
+                m = ret.m;
+                var label = y;
+                if (m) {
+                    setContents(oy, org.rr0.time.yearLink(oy));
+                    l += "/" + org.zero(m);
+                    label = org.rr0.time.monthNam(m - 1);
+                    if (y != thisService.getTime().year) label += ' ' + y;
+                } else {
+                    var cLink = org.rr0.time.yearLink(oy, true);
+                    if (cLink != org.getUri()) {
+                        setContents(~~(oy / 10) + "0s", cLink)
+                    }
+                }
+                org.rr0.net.onExists(l, function (req) {
+                    foundProc(label, l);
+                }, function (failReq) {
+                    thisService.findTimeSibling(y, m, changeProc, foundProc);
+                });
             }
         };
     }])

@@ -87,7 +87,7 @@ angular
     .run(['$rootScope', function ($rootScope) {
         $rootScope.title = "";
     }])
-    .service('navigationService', ['$rootScope', 'commonsService', function ($rootScope, commonsService) {
+    .service('navigationService', ['$rootScope', 'commonsService', 'timeService', function ($rootScope, commonsService, timeService) {
         this.currentLevel = 1;
         this.sections = [];
         this.menu = [];
@@ -177,8 +177,8 @@ angular
         }
 
         function nextFromTime(n) {
-            var t = org.rr0.time.getTime();
-            org.rr0.time.findTimeSibling(t.year, t.month,
+            var t = timeService.getTime();
+            timeService.findTimeSibling(t.year, t.month,
                 function (y, m) {
                     if (m) {
                         if (m < 12) {
@@ -228,8 +228,8 @@ angular
         }
 
         function previousFromTime(p) {
-            var t = org.rr0.time.getTime();
-            org.rr0.time.findTimeSibling(t.year, t.month,
+            var t = timeService.getTime();
+            timeService.findTimeSibling(t.year, t.month,
                 function (y, m) {
                     if (m) {
                         if (m > 1) {

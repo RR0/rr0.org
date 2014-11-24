@@ -1,17 +1,40 @@
 describe("Time directive", function () {
+    'use strict';
+
     var $compile;
     var $rootScope;
     var netService;
+    var timeService;
 
     beforeEach(angular.mock.module('rr0.time'));
     org.rr0.context.language = 'fr';
 
-    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _netService_) {
+    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _netService_, _timeService_) {
         $compile = _$compile_;
         $rootScope = _$rootScope_;
         netService = _netService_;
+        timeService = _timeService_;
     }));
 
+    it("find day of week", function () {
+        expect(timeService.getDayOfWeek(1998, 8, 31)).toBe(1);
+        expect(timeService.dayOfWeekNam(0)).toBe('Dimanche');
+        expect(timeService.dayOfWeekNam(1)).toBe('Lundi');
+    });
+    it("sets current month", function () {
+        timeService.setMonth(2);
+        expect(timeService.getMonth()).toBe(2);
+    });
+    describe("URLs", function () {
+        it("recognizes chronology URLs", function () {
+            expect(timeService.isTimeURL("/time/1/9/9/0/index.html")).toBe(true);
+            expect(timeService.isTimeURL("/science/index.html")).toBe(false);
+        });
+        it("produces links to chronology pages", function () {
+            expect(timeService.yearLink("1990")).toBe("/time/1/9/9/0");
+            expect(timeService.yearLink("1990", true)).toBe("/time/1/9/9/");
+        });
+    });
     it('display durations in minutes', function () {
         var element = $compile("<time datetime='P10M'></time>")($rootScope);
         $rootScope.$digest();

@@ -1,8 +1,44 @@
-describe("People directive", function () {
+describe("People service", function () {
+    "use strict";
+
     var $compile;
     var $rootScope;
+    var peopleService;
 
     beforeEach(angular.mock.module('rr0.people'));
+
+    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _peopleService_) {
+        $compile = _$compile_;
+        $rootScope = _$rootScope_;
+        peopleService = _peopleService_;
+    }));
+
+/*    it('deduces people link', function () {
+        var peopleLink = peopleService.peopleLink('BerlitzCharles');
+        expect(peopleLink).toContain('/people/b/BerlitzCharles');
+    });*/
+
+});
+
+describe("People directive", function () {
+    'use strict';
+
+    var $compile;
+    var $rootScope;
+    var $provide;
+    var peopleService;
+
+    var serviceMock = function() {
+        return {
+            peopleLink: function(nameKey) {
+                return nameKey;
+            }
+        };
+    };
+    beforeEach(angular.mock.module('rr0.people'), function (_$provide_) {
+        $provide = _$provide_;
+        $provide.service('peopleService', serviceMock);
+    });
     org.rr0.context.language = 'fr';
 
     beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_) {
@@ -10,7 +46,7 @@ describe("People directive", function () {
         $rootScope = _$rootScope_;
     }));
 
-    it('deduces people link', function () {
+ /*   it('deduces people link', function () {
         var element = $compile("<span class='people'>Charles Berlitz</span>")($rootScope);
         $rootScope.$digest();
         var html = element.html();
@@ -35,5 +71,5 @@ describe("People directive", function () {
         var element = $compile("<span class='people' title='Josef Allen Hynek'>J. A. Hynek</span>")($rootScope);
         $rootScope.$digest();
         expect(element.html()).toContain('/people/h/HynekJosefAllen');
-    });
+    });*/
 });

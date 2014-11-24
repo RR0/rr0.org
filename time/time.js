@@ -1,8 +1,8 @@
-
 var org = org || {}; // Useless as we depend on org functions
 org.rr0 = org.rr0 || {};
 
 function TimeModule() {
+    'use strict';
 
     var timeModuleThis = this;
 
@@ -14,35 +14,6 @@ function TimeModule() {
      *
      * 1947-06-21T14:20-02:00
      */
-    this.uriPart = "/time/";
-
-    this.isTimeURL = function (u) {
-        if (!u) {
-            u = org.getUri();
-        }
-        return u.indexOf(this.uriPart) === 0;
-    };
-
-    var dayOfWeekNames = {
-        "fr": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
-        "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    };
-    var monthNames = {
-        "fr": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-        "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    };
-
-    function paramLang(lang) {
-        return (!lang) ? org.rr0.context.language : lang;
-    }
-
-    this.dayOfWeekNam = function (d, lang) {
-        return dayOfWeekNames[paramLang(lang)][d];
-    };
-
-    this.monthNam=function (m, lang) {
-        return monthNames[paramLang(lang)][m];
-    };
 
     var times;
 
@@ -153,7 +124,7 @@ function TimeModule() {
                 s = (i === last && i > 0 ? ' et ' : i > 0 ? ', ' : '') + txt[i] + s;
             }
             return s;
-        }
+        };
     };
 
     class Moment {
@@ -307,19 +278,19 @@ function TimeModule() {
             }
 
             function value() {
-                return number != null ? (zReady ? number : (txt != null ? txt + number : number)) : (txt != null ? txt : null);
+                return number !== null ? (zReady ? number : (txt !== null ? txt + number : number)) : (txt !== null ? txt : null);
             }
 
             var i;
 
             function timeSet() {
-                if (this.year != null && number <= 59) {
-                    monthReady = monthReady || dString.charAt(i) == '-';
+                if (this.year && number <= 59) {
+                    monthReady = monthReady || dString.charAt(i) === '-';
                     if (!monthReady) {
-                        if (this.month != null) {
-                            if (this.dayOfMonth != null || this.hour != null) {
-                                if (this.hour != null) {
-                                    if (this.minutes != null) {
+                        if (this.month) {
+                            if (this.dayOfMonth || this.hour) {
+                                if (this.hour) {
+                                    if (this.minutes) {
                                         this.setDayOfMonth(value());     // setHour is processed after ':' only
                                     } else {
                                         this.setMinutes(value());
@@ -337,7 +308,7 @@ function TimeModule() {
                         this.setMonth(value());
                         monthReady = false;
                     }
-                } else if (this.hour != null) {
+                } else if (this.hour) {
                     this.setMinutes(value());
                 } else {
                     this.setYear(era * number);
@@ -347,7 +318,7 @@ function TimeModule() {
             }
 
             function parseEnd() {
-                if (value() != null) {
+                if (value()) {
                     timeSet.call(this); // End of date
                 }
                 if (txt) {
@@ -369,7 +340,7 @@ function TimeModule() {
                     case '8':
                     case '9':
                         var digit = (c - '0');
-                        if (number == null) {
+                        if (number === null) {
                             number = digit * era;
                         } else {
                             number = number * 10 + digit;
@@ -377,7 +348,7 @@ function TimeModule() {
                         break;
                     case '-':
                         if (!txt) {
-                            if (number == null) {
+                            if (number === null) {
                                 era = -1;
                             }
                             this.setHour(null);  // Next value cannot be minutes
@@ -387,7 +358,7 @@ function TimeModule() {
                         }
                         break;
                     case 's':
-                        if (number != null && txt.charAt(i - 1) != ' ') {
+                        if (number !== null && txt.charAt(i - 1) !== ' ') {
                             this.decade = true;
                         } else {
                             txt = txt ? txt + c : c;
@@ -400,7 +371,7 @@ function TimeModule() {
                         this.approx = true;
                         break;
                     case ':':
-                        if (this.hour != null && zReady) {
+                        if (this.hour !== null && zReady) {
                             this.setTimeZone(number * era);
                         } else {
                             this.setHour(value());
@@ -434,7 +405,7 @@ function TimeModule() {
             }
             parseEnd.call(this);
             return this;
-        };
+        }
 
         toISOString() {
             var s = this.year;
@@ -455,332 +426,22 @@ function TimeModule() {
     };
     org.rr0.context.time = this.NewMoment();
 
-    this.getTime = function () {
-        return org.rr0.context.time;
-    };
-
-    var today = new Date();
-
-    this.setYear = function (y) {
-        if (y) this.getTime().year = y;
-    };
-
-    this.getYear = function () {
-        var t = this.getTime();
-        if (!t.year) {
-            var u = org.getUri();
-            if (this.isTimeURL(u)) {
-                var parts = u.split("/");
-                t.year = 0;
-                var mul = 1000;
-                for (var i = 2; i < parts.length; i++) {
-                    var v = parts[i];
-                    if (org.isNumber(v)) {
-                        if (i <= 5) {
-                            t.year += v * mul;
-                            mul /= 10;
-                        } else if (!t.month) t.month = parseInt(v, 10);
-                        else if (!t.dayOfMonth) t.dayOfMonth = parseInt(v, 10);
-                    } else
-                        break;
-                }
-            }
-        }
-        return t.year;
-    };
-
-    /**
-     *
-     * @param w
-     * @return {*} January = 1
-     */
-    function monthIndex(w) {
-        return org.arrayIndex(w, monthNames[org.rr0.context.language]);
-    }
-
-    /**
-     * Builds a address to link to a year page/directory.
-     *
-     * @param y The year
-     * @param decade if the year (such as "1950") is to be understood as a decade (1950s).
-     * @returns {string} The link
-     */
-    this.yearLink = function (y, decade) {
-        var yString = y.toString();
-        var yLink = timeModuleThis.uriPart;
-        var pos = 0;
-        yLink += (y < 1000 ? "0" : yString.substring(pos, ++pos)) + "/";
-        yLink += (y < 100 ? "0" : yString.substring(pos, ++pos)) + "/";
-        yLink += (y < 10 ? "0" : yString.substring(pos, ++pos)) + "/";
-        if (!decade) yLink += yString.substring(pos, ++pos);
-        return yLink;
-    };
-
-    this.setMonth = function (m) {
-        if (m) {
-            this.getTime().setMonth(m);
-        }
-    };
-
-    this.monthName = function (m) {
-        var t = this.getTime();
-        if (!m && t.month) m = t.month;
-        return this.monthNam(m - 1);
-    };
-
-    function addMonth(m) {
-        var s = "";
-        var t = timeModuleThis.getTime();
-        if (m) t.month = m;
-        if (t.month) {
-            s += timeModuleThis.monthName();
-        }
-        return s;
-    }
-
-    function addYear(y, yLink, t) {
-        var s = "";
-        if (!y) y = timeModuleThis.getTime().year;
-        if (!yLink) yLink = timeModuleThis.yearLink(y);
-        if (!t) {
-            var p = getPeople();
-            if (p) {
-                t = p.toString();
-                if (p.born) t += " a " + (y - p.born.getFullYear()) + " ans";
-                else t = "Naissance de " + t;
-            }
-        }
-        if (y) s += org.link(yLink, y, t);
-        return s;
-    }
-
-    /**
-     *
-     * @param d
-     * @param dow Day of week
-     * @returns {string}
-     */
-    function addDayOfMonth(d, dow) {
-        var s = "";
-        var t = timeModuleThis.getTime();
-        if (!d) d = t.dayOfMonth;
-        if (d) {
-            var dayName = timeModuleThis.dayOfWeekNam(timeModuleThis.getDayOfWeek(t.year, t.month, d));
-            s += dayName + " ";
-            s += (d == 1 ? "1<sup>er</sup>" : d);
-        }
-        return s;
-    }
-
     function setHour(h) {
-        if (h) timeModuleThis.getTime().hour = h;
+        if (h) {
+            timeModuleThis.getTime().hour = h;
+        }
     }
 
     function setMinutes(mn) {
-        if (mn) timeModuleThis.getTime().minutes = mn;
+        if (mn) {
+            timeModuleThis.getTime().minutes = mn;
+        }
     }
 
     function getHour() {
         return timeModuleThis.getTime().hour;
     }
 
-    this.setDayOfMonth = function (d) {
-        if (d) {
-            var t = this.getTime();
-            t.dayOfMonth = d;
-            t.hour = null;
-            t.minutes = null;
-        }
-    };
-
-    this.getDayOfMonth = function () {
-        return this.getTime().dayOfMonth;
-    };
-
-    this.getMonth = function () {
-        return timeModuleThis.getTime().month;
-    };
-
-    function getDate(y, m, d) {
-        var dat;
-        if (!y) y = timeModuleThis.getYear();
-        if (y) {                    // No getTime().year set means no date set
-            dat = new Date();
-            dat.setFullYear(y);
-            if (!m) m = timeModuleThis.getMonth();
-            if (m) dat.setMonth(m - 1);
-            if (!d) d = timeModuleThis.getDayOfMonth();
-            dat.setDate(d);
-        }
-        return dat;
-    }
-
-    this.getDayOfWeek = function (y, m, d) {
-        return getDate(y, m, d).getDay();
-    };
-
-    this.addDate = function (p, y, m, d) {
-        if (!y) y = timeModuleThis.getTime().year;
-        var s = "";
-        if (y) {
-            if (!m) m = timeModuleThis.getMonth();
-            if (!d) d = timeModuleThis.getTime().dayOfMonth;
-            var newDate = new Date();
-            newDate.setFullYear(y);
-            var dateLink = this.yearLink(y);
-            if (m) {
-                newDate.setMonth(m);
-                dateLink += "/" + org.zero(m);
-                if (d) {
-                    newDate.setDate(d);
-//                s = "le ";
-                    s += addDayOfMonth(d);
-                    dateLink += "/" + org.zero(d);
-                } else {
-//                s = "en ";
-                }
-                s += " " + addMonth(m);
-            } else {
-//            s += "en ";
-            }
-            var t = null;
-            s += " " + addYear(y, dateLink, t);
-        }
-        return s;
-    };
-
-    var preYearWords = ["en", "de", "à", "dès", "vers", "depuis", "jusqu'en", "année", "années", "fin", "début", "printemps", "été", "automne", "hiver", "avant", "entre", "et", "ou"];
-    var preMonthWords = ["en", "de", "à", "dès", "vers", "depuis", "jusqu'en", "mois", "fin", "début", "avant", "entre", "et", "ou"];
-    var preDayWords = ["au", "le", "du", "à", "vers", "jusqu'au",
-        "Au", "Le", "Du", "À", "Vers", "Jusqu'au"];
-
-    function preMonthWord(w) {
-        return org.arrayIndex(w, preMonthWords);
-    }
-
-    function preDayWord(w) {
-        return org.arrayIndex(w, preDayWords);
-    }
-
-    function preYearWord(w) {
-        return org.arrayIndex(w, preYearWords);
-    }
-
-    function handleListItem(e) {
-        var uls = e.getElementsByTagName("UL");
-        if (!org.hasClass(e, org.constantClass) && uls.length > 0) {
-            var details = document.createElement("details");
-            details.setAttribute("open", "");
-            var ul = uls[0];
-            var sum = document.createElement("summary");
-            sum.appendChild(e.children[0]);
-            details.appendChild(sum);
-            details.appendChild(ul);
-            e.parentNode.replaceChild(details, e);
-        }
-    }
-
-    var dateRegex = /(-)?[1-9]\d{3}(-\d{1,2}(-\d{1,2})?)?/g;
-
-    function affectsContext(e) {
-        return !org.hasClass(e.parentNode, "source") && !org.hasClass(e.parentNode, "note");
-    }
-
-    this.timeTextHandler = function (e) {
-        if (org.rr0.time.isTimeURL() && e.tagName == "LI") {
-            return handleListItem(e);
-        }
-        if (e.parentNode.tagName === "TIME") return;
-
-        var txt = org.textValue(e);
-        var parentNode = e.parentNode;
-
-        function regexFound(foundExprs) {
-            var toReplace = foundExprs[0];
-            var s;
-            if (txt.substring(0, 1) == '-') s = toReplace;
-            else s = toReplace.split('-');
-            var y = s[0];
-            if (org.isNumber(y) && y <= today.getFullYear()) {
-                var wBefore = org.wordBefore(txt, foundExprs.index).toLowerCase();
-                var mIndexBefore = monthIndex(wBefore);
-                var isPreYearWord = preYearWord(wBefore);
-                var isPreMonthWord = preMonthWord(wBefore);
-                var isPreDayWord = preDayWord(wBefore);
-                if (wBefore == "" || mIndexBefore || isPreYearWord || isPreMonthWord || isPreDayWord) {
-                    if (!mIndexBefore) {
-                        var nextPos = foundExprs.index + y.length;
-                        var wAfter = org.wordAfter(txt, nextPos);
-                        var nextChar = txt.charAt(nextPos);
-                    }
-                    if (parentNode) {
-                        if (mIndexBefore || wAfter == "" || org.isProNoun(wAfter) || !(org.isPlural(wAfter) && !org.isProperName(wAfter)) && !org.arrayIndex(wAfter, units) && !monthIndex(wAfter)) {     // Plural on a sibling noun means count rather than getTime().year
-                            var affectsCtx = affectsContext(e);
-                            if (affectsCtx) {
-                                org.rr0.time.setYear(y);
-                            }
-                            if (org.wordBefore(txt, foundExprs.index - wBefore.length) == "naît")
-                                getPeople().born = y;
-                            var title = parentNode.title;
-                            if (title) {
-                                var first;
-                                var dash = title.indexOf('-');
-                                if (dash > 0) first = title.substring(0, dash);
-                                else first = title;
-                                if (first < y) {
-                                    first += '-';
-                                } else {
-                                    y = first;
-                                    first = "";
-                                }
-                            } else first = "";
-                            parentNode.title = first + org.rr0.time.getTime().year;
-                            var peo = getPeople();
-                            if (peo) {
-                                var age = org.rr0.time.getTime().year - peo.born;
-                                if (age > 0) {
-                                    parentNode.title += " : " + peo.lastName + " a " + age + " ans";
-                                }
-                            }
-                            var decade = nextChar === 's';      // Decade quoted as "1940s" for example
-                            var replacement = toReplace;
-                            var dateLink;
-                            if (mIndexBefore) {
-                                dateLink = org.rr0.time.yearLink(y) + "/" + org.zero(mIndexBefore);
-                            } else {
-                                dateLink = org.rr0.time.yearLink(y, decade);
-                                if (s.length > 1 && s.length <= 3) {
-                                    mIndexBefore = parseInt(s[1], 10);
-                                    if (affectsCtx) {
-                                        org.rr0.time.setMonth(mIndexBefore);
-                                    }
-                                    dateLink += "/" + org.zero(mIndexBefore);
-                                    replacement = org.rr0.time.monthName(mIndexBefore) + " " + y;
-                                    if (s.length > 2) {
-                                        var jIndex = parseInt(s[2], 10);
-                                        if (affectsCtx) {
-                                            org.rr0.time.setDayOfMonth(jIndex);
-                                        }
-                                        dateLink += "/" + org.zero(jIndex);
-                                        replacement = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, mIndexBefore, jIndex)) + " " + jIndex + (jIndex == 1 ? "er" : "") + " " + replacement;
-                                    }
-                                }
-                            }
-                            org.rr0.net.checkedLink(e, toReplace, dateLink, replacement, true);
-                        }
-                    }
-                }
-            }
-        }
-
-        if (txt) {
-            var foundExprs;
-            while ((foundExprs = dateRegex.exec(txt)) !== null) {
-                regexFound(foundExprs);
-            }
-        }
-        return false;
-    };
     this.setChartsHeight = function (h) {
         this.chartZone.style.height = h + '%';
         org.rr0.getSideZone("map-canvas").style.height = (100 - h) + '%';
@@ -789,51 +450,394 @@ function TimeModule() {
 }
 org.rr0.time = new TimeModule();
 
-angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
-    .service('timeService', ['netService', function (netService) {
-        var thisService = this;
+angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
+    .constant('uriPart', '/time/')
+    .service('timeService', ['uriPart', 'netService', function (uriPart, netService) {
+        'use strict';
+
+        function addYear(y, yLink, t) {
+            var s = "";
+            if (!y) {
+                y = thisService.getTime().year;
+            }
+            if (!yLink) {
+                yLink = thisService.yearLink(y);
+            }
+            if (!t) {
+                var p = getPeople();
+                if (p) {
+                    t = p.toString();
+                    if (p.born) t += " a " + (y - p.born.getFullYear()) + " ans";
+                    else t = "Naissance de " + t;
+                }
+            }
+            if (y) {
+                s += org.link(yLink, y, t);
+            }
+            return s;
+        }
+
+        var dayOfWeekNames = {
+            "fr": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+            "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        };
+
+        var paramLang = function (lang) {
+            return (!lang) ? org.rr0.context.language : lang;
+        };
 
         return {
-            getTime: function () {
-                return org.rr0.time.addDate();
+            getDate: function (y, m, d) {
+                var dat;
+                if (!y) {
+                    y = this.getYear();
+                }
+                if (y) {                    // No getTime().year set means no date set
+                    dat = new Date();
+                    dat.setFullYear(y);
+                    if (!m) {
+                        m = this.getMonth();
+                    }
+                    if (m) {
+                        dat.setMonth(m - 1);
+                    }
+                    if (!d) {
+                        d = this.getDayOfMonth();
+                    }
+                    dat.setDate(d);
+                }
+                return dat;
             },
-            findTimeSibling: function (oy, m, changeProc, foundProc) {
-                var ret = changeProc(oy, m);
-                var y = ret.y;
-                var l = org.rr0.time.yearLink(y);
-                m = ret.m;
-                var label = y;
+            getTime: function () {
+                return org.rr0.context.time;
+            },
+            getMonth: function () {
+                return this.getTime().month;
+            },
+            addMonth: function (m) {
+                var s = "";
+                var t = this.getTime();
                 if (m) {
-                    setContents(oy, org.rr0.time.yearLink(oy));
-                    l += "/" + org.zero(m);
-                    label = org.rr0.time.monthNam(m - 1);
-                    if (y != thisService.getTime().year) label += ' ' + y;
-                } else {
-                    var cLink = org.rr0.time.yearLink(oy, true);
-                    if (cLink != org.getUri()) {
-                        setContents(~~(oy / 10) + "0s", cLink)
+                    t.month = m;
+                }
+                if (t.month) {
+                    s += this.monthName();
+                }
+                return s;
+            },
+            /**
+             *
+             * @param d
+             * @param dow Day of week
+             * @returns {string}
+             */
+            addDayOfMonth: function (d, dow) {
+                var s = "";
+                var t = this.getTime();
+                if (!d) {
+                    d = t.dayOfMonth;
+                }
+                if (d) {
+                    var dayName = this.dayOfWeekNam(this.getDayOfWeek(t.year, t.month, d));
+                    s += dayName + " ";
+                    s += (d === 1 ? "1<sup>er</sup>" : d);
+                }
+                return s;
+            },
+            addDate: function (p, y, m, d) {
+                if (!y) {
+                    y = this.getTime().year;
+                }
+                var s = "";
+                if (y) {
+                    if (!m) {
+                        m = this.getMonth();
+                    }
+                    if (!d) {
+                        d = this.getTime().dayOfMonth;
+                    }
+                    var newDate = new Date();
+                    newDate.setFullYear(y);
+                    var dateLink = this.yearLink(y);
+                    if (m) {
+                        newDate.setMonth(m);
+                        dateLink += "/" + org.zero(m);
+                        if (d) {
+                            newDate.setDate(d);
+//                s = "le ";
+                            s += this.addDayOfMonth(d);
+                            dateLink += "/" + org.zero(d);
+                        } else {
+//                s = "en ";
+                        }
+                        s += " " + this.addMonth(m);
+                    } else {
+//            s += "en ";
+                    }
+                    var t = null;
+                    s += " " + addYear(y, dateLink, t);
+                }
+                return s;
+            },
+            monthNames: {
+                "fr": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+                "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            },
+            /*            getTime: function () {
+             return addDate();
+             },*/
+            monthName: function (m) {
+                var t = this.getTime();
+                if (!m && t.month) {
+                    m = t.month;
+                }
+                return this.monthNam(m - 1);
+            },
+            monthNam: function (m, lang) {
+                return this.monthNames[paramLang(lang)][m];
+            },
+            /**
+             * Builds a address to link to a year page/directory.
+             *
+             * @param y The year
+             * @param decade if the year (such as "1950") is to be understood as a decade (1950s).
+             * @returns {string} The link
+             */
+            yearLink: function (y, decade) {
+                var yString = y.toString();
+                var yLink = uriPart;
+                var pos = 0;
+                yLink += (y < 1000 ? "0" : yString.substring(pos, ++pos)) + "/";
+                yLink += (y < 100 ? "0" : yString.substring(pos, ++pos)) + "/";
+                yLink += (y < 10 ? "0" : yString.substring(pos, ++pos)) + "/";
+                if (!decade) {
+                    yLink += yString.substring(pos, ++pos);
+                }
+                return yLink;
+            },
+            dayOfWeekNam: function (d, lang) {
+                return dayOfWeekNames[paramLang(lang)][d];
+            },
+            getDayOfWeek: function (y, m, d) {
+                return this.getDate(y, m, d).getDay();
+            },
+            getDayOfMonth: function () {
+                return this.getTime().dayOfMonth;
+            },
+            setYear: function (y) {
+                if (y) {
+                    this.getTime().year = y;
+                }
+            },
+            isTimeURL: function (u) {
+                if (!u) {
+                    u = org.getUri();
+                }
+                return u.indexOf(uriPart) === 0;
+            },
+            getYear: function () {
+                var t = this.getTime();
+                if (!t.year) {
+                    var u = org.getUri();
+                    if (this.isTimeURL(u)) {
+                        var parts = u.split("/");
+                        t.year = 0;
+                        var mul = 1000;
+                        for (var i = 2; i < parts.length; i++) {
+                            var v = parts[i];
+                            if (org.isNumber(v)) {
+                                if (i <= 5) {
+                                    t.year += v * mul;
+                                    mul /= 10;
+                                } else if (!t.month) {
+                                    t.month = parseInt(v, 10);
+                                } else if (!t.dayOfMonth) {
+                                    t.dayOfMonth = parseInt(v, 10);
+                                }
+                            } else
+                                break;
+                        }
                     }
                 }
-                org.rr0.net.onExists(l, function (req) {
-                    foundProc(label, l);
-                }, function (failReq) {
-                    thisService.findTimeSibling(y, m, changeProc, foundProc);
-                });
+                return t.year;
+            },
+            setMonth: function (m) {
+                if (m) {
+                    this.getTime().setMonth(m);
+                }
+            },
+            setDayOfMonth: function (d) {
+                if (d) {
+                    var t = this.getTime();
+                    t.dayOfMonth = d;
+                    t.hour = null;
+                    t.minutes = null;
+                }
             }
         };
     }])
-    .run(['navigationService', 'netService', function (navigationService, netService) {
+    .run(['uriPart', 'netService', 'navigationService', 'timeService', 'peopleService', function (uriPart, netService, navigationService, timeService, peopleService) {
+        'use strict';
         navigationService.addStart({
-                dir: org.rr0.time.uriPart,
+                dir: uriPart,
                 label: "<span class='iconic clock'></span>",
                 title: "Historique"
             }
         );
-        function parseForTimes() {
-            org.nounToLink(org.rr0.time.uriPart + "Vagues.html", "vague");
-            org.nounToLink(org.rr0.time.uriPart + "pluies", "pluie");
 
-            org.handleTags.apply(this, [org.rr0.time.timeTextHandler]);
+        var today = new Date();
+
+        function handleListItem(e) {
+            var uls = e.getElementsByTagName("UL");
+            if (!org.hasClass(e, org.constantClass) && uls.length > 0) {
+                var details = document.createElement("details");
+                details.setAttribute("open", "");
+                var ul = uls[0];
+                var sum = document.createElement("summary");
+                sum.appendChild(e.children[0]);
+                details.appendChild(sum);
+                details.appendChild(ul);
+                e.parentNode.replaceChild(details, e);
+            }
+        }
+
+        var timeTextHandler = function (e) {
+            if (timeService.isTimeURL() && e.tagName === "LI") {
+                return handleListItem(e);
+            }
+            if (e.parentNode.tagName === "TIME") return;
+
+            var txt = org.textValue(e);
+            var parentNode = e.parentNode;
+
+            /**
+             *
+             * @param w
+             * @return {*} January = 1
+             */
+            function monthIndex(w) {
+                return org.arrayIndex(w, timeService.monthNames[org.rr0.context.language]);
+            }
+
+            var preYearWords = ["en", "de", "à", "dès", "vers", "depuis", "jusqu'en", "année", "années", "fin", "début", "printemps", "été", "automne", "hiver", "avant", "entre", "et", "ou"];
+            var preMonthWords = ["en", "de", "à", "dès", "vers", "depuis", "jusqu'en", "mois", "fin", "début", "avant", "entre", "et", "ou"];
+            var preDayWords = ["au", "le", "du", "à", "vers", "jusqu'au",
+                "Au", "Le", "Du", "À", "Vers", "Jusqu'au"];
+
+            function preMonthWord(w) {
+                return org.arrayIndex(w, preMonthWords);
+            }
+
+            function preDayWord(w) {
+                return org.arrayIndex(w, preDayWords);
+            }
+
+            function preYearWord(w) {
+                return org.arrayIndex(w, preYearWords);
+            }
+
+            function affectsContext(e) {
+                return !org.hasClass(e.parentNode, "source") && !org.hasClass(e.parentNode, "note");
+            }
+
+            function regexFound(foundExprs) {
+                var toReplace = foundExprs[0];
+                var s;
+                if (txt.substring(0, 1) === '-') {
+                    s = toReplace;
+                } else {
+                    s = toReplace.split('-');
+                }
+                var y = s[0];
+                if (org.isNumber(y) && y <= today.getFullYear()) {
+                    var wBefore = org.wordBefore(txt, foundExprs.index).toLowerCase();
+                    var mIndexBefore = monthIndex(wBefore);
+                    var isPreYearWord = preYearWord(wBefore);
+                    var isPreMonthWord = preMonthWord(wBefore);
+                    var isPreDayWord = preDayWord(wBefore);
+                    if (wBefore === "" || mIndexBefore || isPreYearWord || isPreMonthWord || isPreDayWord) {
+                        if (!mIndexBefore) {
+                            var nextPos = foundExprs.index + y.length;
+                            var wAfter = org.wordAfter(txt, nextPos);
+                            var nextChar = txt.charAt(nextPos);
+                        }
+                        if (parentNode) {
+                            if (mIndexBefore || wAfter === "" || org.isProNoun(wAfter) || !(org.isPlural(wAfter) && !org.isProperName(wAfter)) && !org.arrayIndex(wAfter, units) && !monthIndex(wAfter)) {     // Plural on a sibling noun means count rather than getTime().year
+                                var affectsCtx = affectsContext(e);
+                                if (affectsCtx) {
+                                    timeService.setYear(y);
+                                }
+                                if (org.wordBefore(txt, foundExprs.index - wBefore.length) === "naît") {
+                                    peopleService.getPeople().born = y;
+                                }
+                                var title = parentNode.title;
+                                if (title) {
+                                    var first;
+                                    var dash = title.indexOf('-');
+                                    if (dash > 0) first = title.substring(0, dash);
+                                    else first = title;
+                                    if (first < y) {
+                                        first += '-';
+                                    } else {
+                                        y = first;
+                                        first = "";
+                                    }
+                                } else first = "";
+                                parentNode.title = first + timeService.getTime().year;
+                                var peo = peopleService.getPeople();
+                                if (peo) {
+                                    var age = timeService.getTime().year - peo.born;
+                                    if (age > 0) {
+                                        parentNode.title += " : " + peo.lastName + " a " + age + " ans";
+                                    }
+                                }
+                                var decade = nextChar === 's';      // Decade quoted as "1940s" for example
+                                var replacement = toReplace;
+                                var dateLink;
+                                if (mIndexBefore) {
+                                    dateLink = timeService.yearLink(y) + "/" + org.zero(mIndexBefore);
+                                } else {
+                                    dateLink = timeService.yearLink(y, decade);
+                                    if (s.length > 1 && s.length <= 3) {
+                                        mIndexBefore = parseInt(s[1], 10);
+                                        if (affectsCtx) {
+                                            timeService.setMonth(mIndexBefore);
+                                        }
+                                        dateLink += "/" + org.zero(mIndexBefore);
+                                        replacement = timeService.monthName(mIndexBefore) + " " + y;
+                                        if (s.length > 2) {
+                                            var jIndex = parseInt(s[2], 10);
+                                            if (affectsCtx) {
+                                                timeService.setDayOfMonth(jIndex);
+                                            }
+                                            dateLink += "/" + org.zero(jIndex);
+                                            replacement = timeService.dayOfWeekNam(timeService.getDayOfWeek(y, mIndexBefore, jIndex)) + " " + jIndex + (jIndex === 1 ? "er" : "") + " " + replacement;
+                                        }
+                                    }
+                                }
+                                netService.checkedLink(e, toReplace, dateLink, replacement, true);
+                            }
+                        }
+                    }
+                }
+            }
+
+            var dateRegex = /(-)?[1-9]\d{3}(-\d{1,2}(-\d{1,2})?)?/g;
+
+            if (txt) {
+                var foundExprs;
+                while ((foundExprs = dateRegex.exec(txt)) !== null) {
+                    regexFound(foundExprs);
+                }
+            }
+            return false;
+        };
+
+        function parseForTimes() {
+            org.nounToLink(uriPart + "Vagues.html", "vague");
+            org.nounToLink(uriPart + "pluies", "pluie");
+
+            org.handleTags.apply(this, [timeTextHandler]);
         }
 
         var onGoogleChartsLoaded = [parseForTimes];
@@ -861,13 +865,14 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
             console.warn("Google API is not loaded");
         }
     }])
-    .directive('time', ['netService', function (netService) {
+    .directive('time', ['netService', 'timeService', function (netService, timeService) {
+        'use strict';
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
                 var txt = elem.text();
 
-                var currentTime = org.rr0.time.getTime();
+                var currentTime = timeService.getTime();
 
                 var decodedTime = new org.rr0.time.NewMoment();
                 decodedTime.year = currentTime.getYear();
@@ -887,9 +892,9 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
                     var repHour;
                     var y = time.getYear();
                     var otherYear;
-                    if (y !== null) {
+                    if (y) {
                         otherYear = y !== contextTime.getYear();
-                        timeLink = org.rr0.time.yearLink(y);
+                        timeLink = timeService.yearLink(y);
                         titYear = y;
                         if (otherYear) {
                             contextTime.setYear(y);
@@ -898,8 +903,8 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
                     }
                     var otherMonth;
                     var m = time.getMonth();
-                    if (m !== null) {
-                        titMonth = org.rr0.time.monthName(m);
+                    if (m) {
+                        titMonth = timeService.monthName(m);
                         timeLink += "/" + org.zero(m);
                         otherMonth = otherYear || m !== contextTime.getMonth();
                         if (otherMonth) {
@@ -909,11 +914,11 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
                     }
                     var otherDay = 0;
                     var d = time.getDayOfMonth();
-                    if (d !== null) {
+                    if (d) {
                         var dayAsNumber = parseInt(d, 10);
                         var dOW;
                         if (!!(dayAsNumber)) {
-                            dOW = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek(y, m, d));
+                            dOW = timeService.dayOfWeekNam(timeService.getDayOfWeek(y, m, d));
                             titDay = dOW + " " + d + (d === 1 ? "er" : "");
                             otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth();
                         } else {
@@ -923,7 +928,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
                         if (otherDay !== 0) {
                             timeLink += "/" + org.zero(d);
                             repDay = titDay;
-                            if (!org.rr0.time.isTimeURL() && contextTime.getDayOfMonth()) {
+                            if (!timeService.isTimeURL() && contextTime.getDayOfMonth()) {
                                 switch (otherDay) {
                                     case -1:
                                         repDay = "veille";
@@ -946,7 +951,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
                     var titHour;
                     var h = time.getHour();
                     var otherHour;
-                    if (h !== null) {
+                    if (h) {
                         var hourAsNumber = parseInt(h, 10);
                         if (!!(hourAsNumber)) {
                             titHour = org.zero(h);
@@ -978,7 +983,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net'])
                         repHour = titHour;  // For now, always display hours, even if unchanged
                     }
                     var mn = time.getMinutes();
-                    if (mn !== null) {
+                    if (mn) {
                         var th = ':' + org.zero(mn);
                         titHour += th;
                         var otherMinutes = otherHour || mn !== contextTime.getMinutes();

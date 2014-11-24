@@ -1,4 +1,3 @@
-var peopleUriPart = "/people/";
 
 var peoples = {};
 function People(p) {
@@ -14,9 +13,6 @@ function People(p) {
     this.toString = function () {
         return this.firstName + ' ' + this.lastName;
     };
-}
-function getPeople() {
-    return org.rr0.context.people;
 }
 var handleWitness = function (scope, elem, attrs) {
     var txt = elem.text();
@@ -34,7 +30,10 @@ var handleWitness = function (scope, elem, attrs) {
 
 window.copyright = null;
 angular.module('rr0.people', ['rr0.nav'])
-    .service('peopleService', function () {
+    .constant('peopleUriPart', '/people/')
+    .service('peopleService', ['$log', 'peopleUriPart', function ($log, peopleUriPart) {
+        "use strict";
+
         var authors = [];
         var copyright;
 
@@ -43,36 +42,6 @@ angular.module('rr0.people', ['rr0.nav'])
                 org.rr0.context.people = new People(name);
                 return org.rr0.context.people;
             }
-        }
-
-        function peopleLink(p, pLink) {
-            if (p) {
-                if (!pLink) {
-                    pLink = org.cache[p];
-                    if (!pLink) {
-                        setPName(p);
-                        pLink = org.cache[getPeople().lastName];
-                        if (!pLink) {
-                            p = (getPeople().lastName + getPeople().firstName).replace(/[\. \'\-]/g, "");
-                            pLink = org.validLink(p);
-                        } else {
-                            return pLink;
-                        }
-                    } else {
-                        return pLink;
-                    }
-                }
-                var firstLinkChar = pLink.charAt(0);
-                if (firstLinkChar !== '.' && firstLinkChar !== '/') {
-                    pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
-                }
-                pLink = org.validLink(pLink);
-                org.cache[p] = pLink;
-                org.cache[getPeople().lastName] = pLink;
-            } else {
-                pLink = null;
-            }
-            return pLink;
         }
 
         return {
@@ -85,7 +54,7 @@ angular.module('rr0.people', ['rr0.nav'])
             setAuthor: function (a, aLink) {
                 if (a) {
                     var author = setPName(a);
-                    author.link = peopleLink(a, aLink);
+                    author.link = this.peopleLink(a, aLink);
                     authors.push(author);
                 }
             },
@@ -107,12 +76,41 @@ angular.module('rr0.people', ['rr0.nav'])
              * @param {String} p People's name
              * @param {String} [pLink] a href link, or a symbolic link, or null
              */
-            getPeopleLink: function (p, pLink) {
-                return peopleLink(p, pLink);
+            peopleLink: function (p, pLink) {
+                if (p) {
+                    if (!pLink) {
+                        pLink = org.cache[p];
+                        if (!pLink) {
+                            setPName(p);
+                            pLink = org.cache[this.getPeople().lastName];
+                            if (!pLink) {
+                                p = (this.getPeople().lastName + this.getPeople().firstName).replace(/[\. \'\-]/g, "");
+                                pLink = org.validLink(p);
+                            } else {
+                                return pLink;
+                            }
+                        } else {
+                            return pLink;
+                        }
+                    }
+                    var firstLinkChar = pLink.charAt(0);
+                    if (firstLinkChar !== '.' && firstLinkChar !== '/') {
+                        pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
+                    }
+                    pLink = org.validLink(pLink);
+                    org.cache[p] = pLink;
+                    org.cache[this.getPeople().lastName] = pLink;
+                } else {
+                    pLink = null;
+                }
+            },
+            getPeople: function () {
+                return org.rr0.context.people;
             }
         };
-    })
+    }])
     .directive('people', ['peopleService', function (peopleService) {
+        'use strict';
         return {
             restrict: 'C',
             transclude: true,
@@ -126,7 +124,7 @@ angular.module('rr0.people', ['rr0.nav'])
                     peopleName = nameKey;
                     elem.val(peopleName);
                 }
-                scope.href = peopleService.getPeopleLink(nameKey ? nameKey : peopleName);
+                scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
             }
         };
     }])
@@ -194,7 +192,7 @@ angular.module('rr0.people', ['rr0.nav'])
         $scope.copyright = peopleService.getCopyright();
         $scope.docTime = timeService.getTime();
     }])
-    .run(['navigationService', function (navigationService) {
+    .run(['peopleUriPart', 'navigationService', function (peopleUriPart, navigationService) {
         navigationService.addStart({
                 dir: peopleUriPart,
                 label: "<span class='iconic user'></span>",

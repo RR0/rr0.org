@@ -1,5 +1,3 @@
-"use strict";
-
 function NavLink(l, url, t) {
     this.label = l;
     this.link = url;
@@ -11,22 +9,6 @@ var contents, contentsURL;
 var prev, prevLink;
 var next, nextLink;
 
-function addRel(l, t) {
-    var rel = document.createElement("link");
-    rel.setAttribute("rel", t);
-    rel.setAttribute("href", l);
-    org.addToHead(rel);
-}
-function navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
-    var onLoadDo = setStart(s, sLink);
-    if (window === top) {
-        addRel(sLink, "Start");
-    }
-//    if (onLoadDo) domLoadProcs.push(onLoadDo);
-    setContents(c, cLink);
-    setPrev(p, pLink);
-    setNext(n, nLink);
-}
 var titleClass = "label";
 var navTitle;
 var navList;
@@ -77,20 +59,23 @@ var hiddenPos = '-100em';
 
 //var titleTag;
 angular
-    .module('rr0.nav', ['ngSanitize', /*'sun.scrollable', */'rr0.people', 'rr0.time'])
+    .module('rr0.nav', ['ngSanitize', /*'sun.scrollable', */ 'rr0.lang', 'rr0.people', 'rr0.time'])
     .value('host', location.host)
     .filter('unsafe', ['$sce', function ($sce) {
+        "use strict";
         return function (val) {
             return $sce.trustAsHtml(val);
         };
     }])
     .run(['$rootScope', function ($rootScope) {
+        "use strict";
         $rootScope.title = "";
     }])
-    .service('navigationService', ['$rootScope', 'commonsService', 'timeService', function ($rootScope, commonsService, timeService) {
-        this.currentLevel = 1;
-        this.sections = [];
-        this.menu = [];
+    .service('navigationService', ['$rootScope', 'commonsService', 'netService', 'timeService', function ($rootScope, commonsService, netService, timeService) {
+        "use strict";
+
+        var currentLevel = 1;
+        var sections = [];
 
         var starts =
             [
@@ -176,41 +161,6 @@ angular
             headResized();
         }
 
-        function nextFromTime(n) {
-            var t = timeService.getTime();
-            timeService.findTimeSibling(t.year, t.month,
-                function (y, m) {
-                    if (m) {
-                        if (m < 12) {
-                            m++;
-                            return {y: y, m: m};
-                        } else {
-                            m = 1;
-                        }
-                    }
-                    y++;
-                    return {y: y, m: m};
-                }, setN);
-            n = "...";
-            return n;
-        }
-
-        this.setNext = function (n, nLink) {
-            if (!nLink) {
-                if (!n && !next) {
-                    if (org.rr0.time.getYear()) {
-                        n = nextFromTime(n);
-                    }
-                }
-            }
-            if (n) {
-                next = n;
-            }
-            if (nLink) {
-                nextLink = nLink;
-            }
-        };
-
         function setP(p, pLink) {
             if (!p) {
                 p = prev;
@@ -227,154 +177,228 @@ angular
             headResized();
         }
 
-        function previousFromTime(p) {
-            var t = timeService.getTime();
-            timeService.findTimeSibling(t.year, t.month,
-                function (y, m) {
-                    if (m) {
-                        if (m > 1) {
-                            m--;
-                            return {y: y, m: m};
-                        } else {
-                            m = 12;
-                        }
-                    }
-                    y--;
-                    return {y: y, m: m};
-                }, setP);
-            p = "...";
-            return p;
+        function addRel(l, t) {
+            var rel = document.createElement("link");
+            rel.setAttribute("rel", t);
+            rel.setAttribute("href", l);
+            org.addToHead(rel);
         }
 
-        this.setPrev = function (p, pLink) {
-            if (!pLink) {
-                if (!p && !prev) {
-                    if (org.rr0.time.getYear()) {
-                        p = previousFromTime(p);
+        return {
+            nextFromTime: function (n) {
+                var t = timeService.getTime();
+                this.findTimeSibling(t.year, t.month,
+                    function (y, m) {
+                        if (m) {
+                            if (m < 12) {
+                                m++;
+                                return {y: y, m: m};
+                            } else {
+                                m = 1;
+                            }
+                        }
+                        y++;
+                        return {y: y, m: m};
+                    }, setN);
+                n = "...";
+                return n;
+            },
+            previousFromTime: function (p) {
+                var t = timeService.getTime();
+                this.findTimeSibling(t.year, t.month,
+                    function (y, m) {
+                        if (m) {
+                            if (m > 1) {
+                                m--;
+                                return {y: y, m: m};
+                            } else {
+                                m = 12;
+                            }
+                        }
+                        y--;
+                        return {y: y, m: m};
+                    }, setP);
+                p = "...";
+                return p;
+            },
+            setPrev: function (p, pLink) {
+                if (!pLink) {
+                    if (!p && !prev) {
+                        if (timeService.getYear()) {
+                            p = this.previousFromTime(p);
+                        } else {
+                            pLink = "..";   // Default previous is previous directory
+                            setP(p, pLink);
+                        }
                     } else {
                         pLink = "..";   // Default previous is previous directory
                         setP(p, pLink);
                     }
-                } else {
-                    pLink = "..";   // Default previous is previous directory
-                    setP(p, pLink);
                 }
-            }
-            if (pLink) {
-                prevLink = pLink;
-            }
-            if (p) {
-                prev = p;
-            }
-        };
-
-        this.addStart = function (s) {
-            starts.push(s);
-        };
-
-        this.setContents = function (c, cLink) {
-            if (!contents) {
-                contents = c;
-                contentsURL = cLink;
-//        addRel(contentsURL, "Contents");
-            }
-        };
-
-        this.setStart = function (s, sLink) {
-            if (!startNav) {
-                var ret = null;
-                var t;
-                if (window === top) {
-                    if (!s) {                       // Look for start induced by URI
-                        var uri = commonsService.getUri();
-                        for (var i = 0; i < starts.length; i++) {
-                            var st = starts[i];
-                            var dataPos = uri.indexOf(st.dir);
-                            if (dataPos >= 0 && uri !== st.dir) {
-                                s = st.label;
-                                t = st.title;
-                                sLink = st.dir;
-                                if (st.css) {
-                                    org.loadCSS(st.css);
-                                }
-                                if (st.js) {
-                                    org.loadJS(st.js);
-                                }
-                                if (st.onLoad) {
-                                    ret = st.onLoad;
-                                }
-                                break;
-                            }
+                if (pLink) {
+                    prevLink = pLink;
+                }
+                if (p) {
+                    prev = p;
+                }
+            },
+            setNext: function (n, nLink) {
+                if (!nLink) {
+                    if (!n && !next) {
+                        if (timeService.getYear()) {
+                            n = this.nextFromTime(n);
                         }
                     }
-                    if (!t) {
-                        t = "D\xE9but";
-                        s = "⇤ " + s;
-                    }
-                    startNav = new NavLink(s, sLink, t);
                 }
-                return ret;
-            }
-        };
-
-        this.addSection = function (s) {
-            var l;
-            var outlineL;
-            if (s.indexOf('<h') < 0) {
-                l = '<h1>' + s + '</h1>';
-                var tag = 'h' + (this.currentLevel) + '>';
-                outlineL = '<' + tag + s + '</' + tag;
-            } else {
-                l = s;
-                outlineL = l;
-            }
-            this.currentLevel++;
-            var levelSections = this.sections[this.currentLevel];
-            if (typeof levelSections !== "array") {
-                levelSections = this.sections;
-            }
-            var index = this.sections.length;
-            levelSections.push(l);
-            function camelize(l) {
-                var camel = '';
-                var wasWord = false;
-                for (var i = 0; i < l.length; i++) {
-                    var s2 = l.charAt(i);
-                    switch (s2) {
-                        case '?':
-                        case '!':
-                        case ',':
-                        case '&':
-                        case '-':
-                        case '\'':
-                        case ' ':
-                            wasWord = true;
-                            break;
-                        default:
-                            if (wasWord) {
-                                s2 = s2.toUpperCase();
-                                wasWord = false;
+                if (n) {
+                    next = n;
+                }
+                if (nLink) {
+                    nextLink = nLink;
+                }
+            },
+            addStart: function (s) {
+                starts.push(s);
+            },
+            setContents: function (c, cLink) {
+                if (!contents) {
+                    contents = c;
+                    contentsURL = cLink;
+                    // addRel(contentsURL, "Contents");
+                }
+            },
+            findTimeSibling: function (oy, m, changeProc, foundProc) {
+                var ret = changeProc(oy, m);
+                var y = ret.y;
+                var l = timeService.yearLink(y);
+                m = ret.m;
+                var label = y;
+                if (m) {
+                    this.setContents(oy, timeService.yearLink(oy));
+                    l += "/" + org.zero(m);
+                    label = timeService.monthNam(m - 1);
+                    if (y !== timeService.getTime().year) {
+                        label += ' ' + y;
+                    }
+                } else {
+                    var cLink = timeService.yearLink(oy, true);
+                    if (cLink !== org.getUri()) {
+                        this.setContents(~~(oy / 10) + "0s", cLink);
+                    }
+                }
+                netService.onExists(l, function (req) {
+                    foundProc(label, l);
+                }, function (failReq) {
+                    this.findTimeSibling(y, m, changeProc, foundProc);
+                });
+            },
+            navInit: function (s, sLink, c, cLink, p, pLink, n, nLink) {
+                var onLoadDo = this.setStart(s, sLink);
+                if (window === top) {
+                    addRel(sLink, "Start");
+                }
+//    if (onLoadDo) domLoadProcs.push(onLoadDo);
+                this.setContents(c, cLink);
+                this.setPrev(p, pLink);
+                this.setNext(n, nLink);
+            },
+            setStart: function (s, sLink) {
+                if (!startNav) {
+                    var ret = null;
+                    var t;
+                    if (window === top) {
+                        if (!s) {                       // Look for start induced by URI
+                            var uri = commonsService.getUri();
+                            for (var i = 0; i < starts.length; i++) {
+                                var st = starts[i];
+                                var dataPos = uri.indexOf(st.dir);
+                                if (dataPos >= 0 && uri !== st.dir) {
+                                    s = st.label;
+                                    t = st.title;
+                                    sLink = st.dir;
+                                    if (st.css) {
+                                        org.loadCSS(st.css);
+                                    }
+                                    if (st.js) {
+                                        org.loadJS(st.js);
+                                    }
+                                    if (st.onLoad) {
+                                        ret = st.onLoad;
+                                    }
+                                    break;
+                                }
                             }
-                            camel += s2;
+                        }
+                        if (!t) {
+                            t = "D\xE9but";
+                            s = "⇤ " + s;
+                        }
+                        startNav = new NavLink(s, sLink, t);
                     }
+                    return ret;
                 }
-                return camel;
-            }
+            },
+            addSection: function (s) {
+                var l;
+                var outlineL;
+                if (s.indexOf('<h') < 0) {
+                    l = '<h1>' + s + '</h1>';
+                    var tag = 'h' + (currentLevel) + '>';
+                    outlineL = '<' + tag + s + '</' + tag;
+                } else {
+                    l = s;
+                    outlineL = l;
+                }
+                currentLevel++;
+                var levelSections = sections[currentLevel];
+                if (typeof levelSections !== "array") {
+                    levelSections = sections;
+                }
+                var index = sections.length;
+                levelSections.push(l);
 
-            var section = {
-                label: l,
-                outlineLabel: outlineL,
-                id: camelize(org.validLink(s), this.currentLevel),
-                level: this.currentLevel
-            };
-            $rootScope.$broadcast('sectionAdded', section);
-            return section;
+                function camelize(l) {
+                    var camel = '';
+                    var wasWord = false;
+                    for (var i = 0; i < l.length; i++) {
+                        var s2 = l.charAt(i);
+                        switch (s2) {
+                            case '?':
+                            case '!':
+                            case ',':
+                            case '&':
+                            case '-':
+                            case '\'':
+                            case ' ':
+                                wasWord = true;
+                                break;
+                            default:
+                                if (wasWord) {
+                                    s2 = s2.toUpperCase();
+                                    wasWord = false;
+                                }
+                                camel += s2;
+                        }
+                    }
+                    return camel;
+                }
+
+                var section = {
+                    label: l,
+                    outlineLabel: outlineL,
+                    id: camelize(org.validLink(s), currentLevel),
+                    level: currentLevel
+                };
+                $rootScope.$broadcast('sectionAdded', section);
+                return section;
+            }
         };
     }])
 /**
  * Sets controller's title to be displayed from the title header tag.
  */
     .directive('title', [function () {
+        "use strict";
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -386,6 +410,7 @@ angular
  * Picks last image from contents to set header background
  */
     .directive('img', [function () {
+        "use strict";
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -402,6 +427,7 @@ angular
  * Sets navigation menu items from relationship links meta tags.
  */
     .directive('link', ['navigationService', function (navigationService) {
+        "use strict";
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -435,6 +461,7 @@ angular
  * Adds "target=_blank" to external links so they will be opened in separate tabs
  */
     .directive('a', ['host', function (host) {
+        "use strict";
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -449,6 +476,7 @@ angular
  * Registers each encountered HTML5 "section" tag as an document outline entry
  */
     .directive('section', ['navigationService', function (navigationService) {
+        "use strict";
         function addSec(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);
             scope.level = section.level;
@@ -484,7 +512,8 @@ angular
 /**
  * Registers each encountered HTML5 "article" tag as an document outline entry
  */
-    .directive('article', ['navigationService', function (navigationService, commonsService) {
+    .directive('article', ['navigationService', function (navigationService) {
+        "use strict";
         function addArt(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle);
             scope.level = section.level;
@@ -516,15 +545,16 @@ angular
             template: '<p ng-transclude></p> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'peopleService', 'commonsService', function ($scope, $rootScope, $log, $timeout, peopleService, commonsService) {
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService) {
+        "use strict";
         function titleFromTime() {
-            var title = org.rr0.time.getYear();
+            var title = timeService.getYear();
             if (title) {
-                if (org.rr0.time.getTime().month) {
-                    title = org.rr0.time.monthName() + " " + title;
-                    var dayOfMonth = org.rr0.time.getDayOfMonth();
+                if (timeService.getTime().month) {
+                    title = timeService.monthName() + " " + title;
+                    var dayOfMonth = timeService.getDayOfMonth();
                     if (dayOfMonth) {
-                        title = org.rr0.time.dayOfWeekNam(org.rr0.time.getDayOfWeek()) + " " + dayOfMonth + " " + title;
+                        title = timeService.dayOfWeekNam(timeService.getDayOfWeek()) + " " + dayOfMonth + " " + title;
                     }
                 }
             }
@@ -533,7 +563,7 @@ angular
 
         function titleFromPeople() {
             var title;
-            var p = getPeople();
+            var p = peopleService.getPeople();
             if (p) {
                 title = p.toString();
             }
@@ -559,21 +589,23 @@ angular
             return title;
         }
 
+        $scope.isFramed = function () {
+            return window !== top;
+        };
+
         function getTitle() {
             if (!$scope.title) {
                 $scope.title = titleFromTime() || titleFromPeople() || titleFromURI();
             }
             return $scope.title;
         }
-
-        $scope.isFramed = function () {
-            return window !== top;
-        };
         $scope.initTitle = function (t, u, st) {
             $scope.title = $scope.title || t;
             $scope.url = u;
             $scope.style = st;
         };
+        $scope.title = getTitle();
+
         $scope.initPeople = function (p) {
             peopleService.setPeopleName(p);
         };
@@ -661,7 +693,7 @@ angular
         };
 
         $scope.init = function (s, sLink, c, cLink, p, pLink, n, nLink) {
-            navInit(s, sLink, c, cLink, p, pLink, n, nLink);
+            navigationService.navInit(s, sLink, c, cLink, p, pLink, n, nLink);
             if (window === top) {
                 addNavLinkBeforeTitle("RR0", "/", "Home", "home");
                 addNavLinkBeforeTitle(startNav.label, startNav.link, startNav.title, "start");
@@ -671,6 +703,7 @@ angular
                 //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";
             }
+
             function addTitle() {
                 setOutline(true, 'Sommaire');
             }
@@ -685,7 +718,7 @@ angular
             function checkAlt() {
                 if (!alternate) {
                     alternate = " ";
-                    checkAlternate(commonsService.getUri(),
+                    langService.checkAlternate(commonsService.getUri(),
                         function (original) {
                             setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
                         },

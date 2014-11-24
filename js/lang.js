@@ -1,11 +1,9 @@
 var docLang;
 var userLang = "fr";
-function setLang(l) {
-    if (!l) l = document.documentElement.lang;
-    docLang = l;
-}
 angular.module('rr0.lang', ['rr0.net'])
-    .service('langService', ['netService', function (netService) {
+    .service('langService', ['commonsService', 'netService', function (commonsService, netService) {
+        "use strict";
+
         function notifyOrig(original, origFound) {
             netService.onExists(original, function () {
                 origFound(original);
@@ -36,38 +34,47 @@ angular.module('rr0.lang', ['rr0.net'])
          *
          * @param uri
          */
-        function checkAlternate(uri, origStatus, transStatus) {
-            var dotPos = uri.lastIndexOf(".");
-            var pageSpecified = dotPos > 0;
-            var translation;
-            if (pageSpecified) {    // index.html or index_fr.html
-                var sPos = uri.lastIndexOf('_');
-                if (sPos == dotPos - 3) {
-                    var original = uri.substring(0, sPos) + uri.substring(sPos + 3);
-                    notifyOrig(original, origStatus);
-                    return;
-                } else {
-                    translation = uri.substr(0, dotPos) + "_" + userLang + uri.substr(dotPos);
+        return {
+            setLang: function (l) {
+                if (!l) {
+                    l = document.documentElement.lang;
                 }
-            } else {
-                if (docLang != userLang) {
-                    translation = org.addEndingSlash(uri) + "index_" + userLang + ".html";
+                docLang = l;
+            },
+            checkAlternate: function (uri, origStatus, transStatus) {
+                var dotPos = uri.lastIndexOf(".");
+                var pageSpecified = dotPos > 0;
+                var translation;
+                if (pageSpecified) {    // index.html or index_fr.html
+                    var sPos = uri.lastIndexOf('_');
+                    if (sPos === dotPos - 3) {
+                        var orig1 = uri.substring(0, sPos) + uri.substring(sPos + 3);
+                        notifyOrig(orig1, origStatus);
+                        return;
+                    } else {
+                        translation = uri.substr(0, dotPos) + "_" + userLang + uri.substr(dotPos);
+                    }
+                } else {
+                    if (docLang !== userLang) {
+                        translation = commonsService.addEndingSlash(uri) + "index_" + userLang + ".html";
+                    }
+                }
+                if (translation) {
+                    if (docLang !== userLang) {
+                        notifyTrans(translation, transStatus);
+                    } else {
+                        var orig2 = commonsService.addEndingSlash(uri.substring(0, uri.lastIndexOf('/'))) + "index.html";
+                        notifyTrans(translation, function (trans) {  // If there is a translation it's myself (default priority is to my language)
+                            if (trans) {    // If there is an translation (myself), check for original
+                                notifyOrig(orig2, origStatus);
+                            }
+                        });
+                    }
                 }
             }
-            if (translation) {
-                if (docLang != userLang) {
-                    notifyTrans(translation, transStatus);
-                } else {
-                    var original = org.addEndingSlash(uri.substring(0, uri.lastIndexOf('/'))) + "index.html";
-                    notifyTrans(translation, function (trans) {  // If there is a translation it's myself (default priority is to my language)
-                        if (trans) {    // If there is an translation (myself), check for original
-                            notifyOrig(original, origStatus);
-                        }
-                    });
-                }
-            }
-        }
+        };
     }])
-    .run(function () {
-        setLang();
-    });
+    .run(['langService', function (langService) {
+        'use strict';
+        langService.setLang();
+    }]);

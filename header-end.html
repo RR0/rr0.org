@@ -10,7 +10,7 @@
                     <a data-ng-if="p.link && p.label" data-ng-href="{{p.link}}">
                         <span data-ng-bind-html="p.label | unsafe" title="{{p.title}}"></span> </a>
                 </li>
-                <li tabindex="100" data-ng-click="titleClick()" data-ng-mouseover="titleOver()" data-ng-mouseleave="titleLeave()" class="constant">
+                <li tabindex="100" data-ng-click="titleClick()" data-ng-mouseover="titleOver()" data-ng-mouseleave="titleLeave()" class="constant outline-title">
                     <a href="#contents" data-ng-click="sectionClick('#contents')">
                         <span class="constant label" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span>
                     </a>

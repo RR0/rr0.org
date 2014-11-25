@@ -4,6 +4,8 @@ function Place(n) {
 
 angular.module('rr0.place', [])
     .service('mapService', [function () {
+        "use strict";
+
         var geocoder;
         var myMap;
         var totalBounds;
@@ -293,6 +295,7 @@ angular.module('rr0.place', [])
         };
     }])
     .service('placeService', [function () {
+        'use strict';
         var places = [];
 
         return {
@@ -300,11 +303,13 @@ angular.module('rr0.place', [])
                 var place = new Place(placeName);
                 places.push(place);
                 place.id = places.length;
+                angular.element('.contents').removeClass('no-side');
                 return place;
             }
         };
     }])
     .directive('place', ['placeService', 'mapService', function (placeService, mapService) { // or lieu
+        'use strict';
         return {
             restrict: 'C',
             link: function (scope, elem, attrs) {

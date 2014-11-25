@@ -157,7 +157,7 @@ angular.module('rr0.net', ['rr0.commons'])
                         toReplace = replacement;
                         var failProc = function () {
                             var pLink = commonsService.parentLink(l);
-                            if (commonsService.getUri().indexOf("/time/") < 0) {
+                            if (commonsService.getUri().indexOf("/time/") < 0) {    // TODO: should ask time module
                                 $log.debug("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
                                 cacheIt = false;
                                 thisService.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
@@ -165,7 +165,7 @@ angular.module('rr0.net', ['rr0.commons'])
                         };
 
                         thisService.onExists(l, function () {
-                            if (l !== (org.rr0.time.uriPart + "0/0/")) {
+                            if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
                                 thisService.onExists(l + "/index.html", function () {
                                     $log.debug("found link " + l + " for e'sparent=" + e.parentNode);
                                     e = linkify(e, replacement, l, replacement, cacheIt);

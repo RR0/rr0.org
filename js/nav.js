@@ -74,7 +74,6 @@ angular
     .service('navigationService', ['$rootScope', 'commonsService', 'netService', 'timeService', function ($rootScope, commonsService, netService, timeService) {
         "use strict";
 
-        var currentLevel = 1;
         var sections = [];
 
         var starts =
@@ -185,6 +184,7 @@ angular
         }
 
         return {
+            currentLevel: 1,
             nextFromTime: function (n) {
                 var t = timeService.getTime();
                 this.findTimeSibling(t.year, t.month,
@@ -343,14 +343,14 @@ angular
                 var outlineL;
                 if (s.indexOf('<h') < 0) {
                     l = '<h1>' + s + '</h1>';
-                    var tag = 'h' + (currentLevel) + '>';
+                    var tag = 'h' + (this.currentLevel) + '>';
                     outlineL = '<' + tag + s + '</' + tag;
                 } else {
                     l = s;
                     outlineL = l;
                 }
-                currentLevel++;
-                var levelSections = sections[currentLevel];
+                this.currentLevel++;
+                var levelSections = sections[this.currentLevel];
                 if (typeof levelSections !== "array") {
                     levelSections = sections;
                 }
@@ -386,8 +386,8 @@ angular
                 var section = {
                     label: l,
                     outlineLabel: outlineL,
-                    id: camelize(org.validLink(s), currentLevel),
-                    level: currentLevel
+                    id: camelize(org.validLink(s), this.currentLevel),
+                    level: this.currentLevel
                 };
                 $rootScope.$broadcast('sectionAdded', section);
                 return section;
@@ -599,6 +599,7 @@ angular
             }
             return $scope.title;
         }
+
         $scope.initTitle = function (t, u, st) {
             $scope.title = $scope.title || t;
             $scope.url = u;

@@ -638,7 +638,7 @@ angular
 
         var scrolled = document.querySelector(".contents");
         var header = document.querySelector('header');
-        var nav = document.querySelector('nav');
+        var nav = angular.element('nav');
         var outline = document.querySelector('.outline');
         var search = document.getElementById('search');
 
@@ -656,17 +656,16 @@ angular
             }
         }
 
+        var titleHeight = 80;
+
         function updateHeading(digesting) {
-            var navElement = nav;
             if (isHeaderCollapsed()) {
-                navElement.style.position = 'fixed';
-                navElement.style.top = '0';
+                nav.addClass('collapsed');
                 header.style.paddingBottom = getNavHeight() + 'px';
                 setOutline(digesting, $scope.title);
             } else {
-                navElement.style.position = 'absolute';
-                var titleHeight = 80;
-                navElement.style.top = titleHeight + 'px';
+                var navElement = nav[0];
+                nav.removeClass('collapsed');
                 var text = scrolled.querySelector('.text');
                 text.style.position = 'absolute';
                 setOutline(digesting, 'Sommaire');
@@ -685,7 +684,7 @@ angular
         }
 
         function getNavHeight() {
-            return nav.offsetHeight > 80 ? 0 : nav.offsetHeight;
+            return nav[0].offsetHeight > titleHeight ? 0 : nav[0].offsetHeight;
         }
 
         $scope.getHeadingHeight = function () {

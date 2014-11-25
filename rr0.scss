@@ -206,6 +206,10 @@ a {
   @include selectable;
 }
 
+summary {
+  @extend a;
+}
+
 ol {
   list-style: decimal outside;
   text-align: justify;

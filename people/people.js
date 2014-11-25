@@ -103,6 +103,7 @@ angular.module('rr0.people', ['rr0.nav'])
                 } else {
                     pLink = null;
                 }
+                return pLink;
             },
             getPeople: function () {
                 return org.rr0.context.people;

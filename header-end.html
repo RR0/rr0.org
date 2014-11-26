@@ -16,7 +16,7 @@
                     </a>
                     <ul class="outline">
                         <li data-ng-attr-tabindex="{{101+$index}}" class="constant" data-ng-repeat="s in sections" data-ng-click="sectionClick(s)">
-                            <a data-ng-href="#{{s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+                            <a data-ng-href="#{{s.id}}" id="out-{{s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
                         </li>
                     </ul>
                 </li>

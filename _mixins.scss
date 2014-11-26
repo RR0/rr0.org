@@ -34,16 +34,20 @@
   text-overflow: ellipsis;
 }
 
+.hovered {
+  border: none;
+  background: rgba(184, 197, 212, 0.49);
+  padding: $selectionPadding;
+  margin: -$selectionPadding;
+  -webkit-margin-start: -$selectionPadding;
+  -webkit-margin-end: -$selectionPadding;
+  transition: background 0.2s ease-out;
+}
+
 @mixin selectable {
   border-radius: $borderRadius;
   cursor: pointer;
   &:hover {
-    border: none;
-    background: rgba(184, 197, 212, 0.49);
-    padding: $selectionPadding;
-    margin: -$selectionPadding;
-    -webkit-margin-start: -$selectionPadding;
-    -webkit-margin-end: -$selectionPadding;
-    transition: background 0.2s ease-out;
+    @extend .hovered;
   }
 }

@@ -173,7 +173,6 @@ angular.module('rr0.place', [])
             element.style.display = 'inline-block';
             element.title = 'Affiche carte';
             element.onclick = toggleMap;
-            headResized();
         }
 
         var mapUpdateCallbacks = [mapResize];

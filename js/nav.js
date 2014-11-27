@@ -271,6 +271,7 @@ angular
                 var l = timeService.yearLink(y);
                 m = ret.m;
                 var label = y;
+                var self = this;
                 if (m) {
                     this.setContents(oy, timeService.yearLink(oy));
                     l += "/" + org.zero(m);
@@ -287,7 +288,7 @@ angular
                 netService.onExists(l, function (req) {
                     foundProc(label, l);
                 }, function (failReq) {
-                    this.findTimeSibling(y, m, changeProc, foundProc);
+                    self.findTimeSibling(y, m, changeProc, foundProc);
                 });
             },
             navInit: function (s, sLink, c, cLink, p, pLink, n, nLink) {
@@ -656,9 +657,7 @@ angular
         }
 
         function setOutline(outlineHTML) {
-            $scope.$apply(function () {
-                $scope.outline = outlineHTML;
-            });
+            $scope.outline = outlineHTML;
         }
 
         function updateHeading() {
@@ -667,13 +666,17 @@ angular
                 if (!hasClass) {
                     nav.addClass('collapsed');
                     header.style.paddingBottom = getNavHeight() + 'px';
-                    setOutline($scope.title);
+                    $scope.$apply(function () {
+                        setOutline($scope.title);
+                    });
                     selectOutline(titleSection);
                 }
             } else if (hasClass) {
                 nav.removeClass('collapsed');
                 text.style.position = 'absolute';
-                setOutline('Sommaire');
+                $scope.$apply(function () {
+                    setOutline('Sommaire');
+                });
                 selectOutline(null);
             }
         }
@@ -685,8 +688,8 @@ angular
             if (toSelect) {
                 var toSelectElem = angular.element("#out-" + toSelect.id);
                 /*if (currentSection && toSelectElem[0] === currentSection[0]) {
-                    return;
-                }*/
+                 return;
+                 }*/
                 toSelectElem.addClass('hovered');
                 currentSection = toSelectElem;
             }
@@ -752,7 +755,7 @@ angular
             }
 
             function addTitle() {
-                setOutline(true, 'Sommaire');
+                setOutline('Sommaire');
             }
 
             var alternate;

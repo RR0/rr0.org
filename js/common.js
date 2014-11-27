@@ -1,5 +1,3 @@
-"use strict";
-
 function OrgModule() {
 
     this.getUri = function () {
@@ -254,9 +252,8 @@ function OrgModule() {
         var txt = e.textContent;
         if (txt === undefined) {
             txt = e.innerText;  // IE8-
-        } else {
-            txt = txt.replace('\n', ' ');
         }
+        txt = txt.replace('\n', ' ');
         return txt;
     };
 
@@ -532,9 +529,13 @@ function OrgModule() {
 }
 var org = new OrgModule();
 
-// requestAnimationFrame() shim by Paul Irish
-// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+/**
+ * requestAnimationFrame() shim by Paul Irish.
+ * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+ */
 (function () {
+    'use strict';
+
     var lastTime = 0;
     var vendors = ['webkit', 'moz'];
     for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
@@ -560,8 +561,11 @@ var org = new OrgModule();
         };
     }
 }());
+
 angular.module('rr0.commons', [])
     .service('commonsService', function () {
+        'use strict';
+
         return {
             addEndingSlash: function(l) {
                 return org.addEndingSlash(l);

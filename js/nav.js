@@ -157,7 +157,6 @@ angular
                     ne.innerHTML = "<a href=\"" + nLink + "\" title='Suivant'>→ " + n + "</a>";
                 }
             }
-            headResized();
         }
 
         function setP(p, pLink) {
@@ -173,7 +172,6 @@ angular
                     pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'>← " + p + "</a>";
                 }
             }
-            headResized();
         }
 
         function addRel(l, t) {

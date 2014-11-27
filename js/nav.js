@@ -338,7 +338,7 @@ angular
                     return ret;
                 }
             },
-            addSection: function (s, offY) {
+            addSection: function (s, elem) {
                 var l;
                 var outlineL;
                 if (s.indexOf('<h') < 0) {
@@ -387,7 +387,7 @@ angular
                     outlineLabel: outlineL,
                     id: camelize(org.validLink(s), this.currentLevel),
                     level: this.currentLevel,
-                    outlineY: offY
+                    elem: elem
                 };
                 $rootScope.$broadcast('sectionAdded', section);
                 return section;
@@ -478,7 +478,7 @@ angular
     .directive('section', ['navigationService', function (navigationService) {
         "use strict";
         function addSec(sectionTitle, scope, elem) {
-            var section = navigationService.addSection(sectionTitle, elem[0].offsetTop);
+            var section = navigationService.addSection(sectionTitle, elem);
             scope.level = section.level;
             scope.sectionTitle = section.label;
             elem[0].id = section.id;
@@ -515,7 +515,7 @@ angular
     .directive('article', ['navigationService', function (navigationService) {
         "use strict";
         function addArt(sectionTitle, scope, elem) {
-            var section = navigationService.addSection(sectionTitle);
+            var section = navigationService.addSection(sectionTitle, elem);
             scope.level = section.level;
             scope.sectionTitle = section.label;
             elem[0].id = section.id;
@@ -649,7 +649,7 @@ angular
             outlineLabel: $scope.title,
             id: "top",
             level: 0,
-            outlineY: 0
+            elem: angular.element('#top')
         };
         var currentSection;
 
@@ -701,7 +701,7 @@ angular
                 var newSec;
                 for (var i = 0; i < $scope.sections.length; i++) {
                     newSec = $scope.sections[i];
-                    found = scrolled.scrollTop > newSec.outlineY;
+                    found = scrolled.scrollTop > newSec.elem[0].offsetTop;
                     if (lastSec) {
                         if (!found) {
                             selectOutline(lastSec);

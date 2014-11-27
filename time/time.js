@@ -1,6 +1,6 @@
 angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
-    .constant('uriPart', '/time/')
-    .service('timeService', ['uriPart', 'netService', function (uriPart) {
+    .constant('timeRoot', '/time/')
+    .service('timeService', ['timeRoot', 'netService', function (timeRoot) {
         'use strict';
 
         /**
@@ -13,35 +13,6 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
      */
 
         var times;
-
-        function getTimes() {
-            if (!times) {
-                times = new google.visualization.DataTable();
-                times.addColumn('string', 'Heure');
-                times.addColumn('number');
-                for (var i = 0; i < 24; i++) {
-                    times.addRow([i + "", 0]);
-                }
-            }
-            return times;
-        }
-
-        this.chartZone = null;
-        var chart;
-
-        this.drawChart = function () {
-            if (times) {
-                var options = {
-                    'title': "Heures d'observation",
-                    'width': this.chartZone.offsetWidth,
-                    'height': this.chartZone.offsetHeight - document.getElementById("head").offsetHeight,
-                    legend: {position: 'none'}
-                };
-                chart.draw(times, options);
-            } else {
-                timeModuleThis.setChartsHeight(0);
-            }
-        };
 
         var Duration = function () {
             var durationThis = this;
@@ -435,11 +406,6 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             return timeModuleThis.getTime().hour;
         }
 
-        this.setChartsHeight = function (h) {
-            this.chartZone.style.height = h + '%';
-            org.rr0.getSideZone("map-canvas").style.height = (100 - h) + '%';
-        };
-
         function addYear(y, yLink, t) {
             var s = "";
             if (!y) {
@@ -473,7 +439,33 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
 
         org.rr0.context.time = new Moment();
 
+        var chart;
+
         return {
+            getTimes: function () {
+                if (typeof google !== 'undefined' && typeof google.visualization !== 'undefined' && !times) {
+                    times = createTimesData();
+                }
+                return times;
+            },
+            chartZone: null,
+            setChartsHeight: function (h) {
+                this.chartZone.style.height = h + '%';
+                org.rr0.getSideZone("map-canvas").style.height = (100 - h) + '%';
+            },
+            drawChart: function () {
+                if (times) {
+                    var options = {
+                        'title': "Heures d'observation",
+                        'width': this.chartZone.offsetWidth,
+                        'height': this.chartZone.offsetHeight - document.getElementById("head").offsetHeight,
+                        legend: {position: 'none'}
+                    };
+                    chart.draw(times, options);
+                } else {
+                    this.setChartsHeight(0);
+                }
+            },
             NewDuration: function () {
                 return new Duration();
             },
@@ -598,7 +590,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
              */
             yearLink: function (y, decade) {
                 var yString = y.toString();
-                var yLink = uriPart;
+                var yLink = timeRoot;
                 var pos = 0;
                 yLink += (y < 1000 ? "0" : yString.substring(pos, ++pos)) + "/";
                 yLink += (y < 100 ? "0" : yString.substring(pos, ++pos)) + "/";
@@ -626,7 +618,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                 if (!u) {
                     u = org.getUri();
                 }
-                return u.indexOf(uriPart) === 0;
+                return u.indexOf(timeRoot) === 0;
             },
             getYear: function () {
                 var t = this.getTime();
@@ -669,10 +661,10 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             }
         };
     }])
-    .run(['uriPart', 'netService', 'navigationService', 'timeService', 'peopleService', function (uriPart, netService, navigationService, timeService, peopleService) {
+    .run(['timeRoot', 'netService', 'navigationService', 'timeService', 'peopleService', function (timeRoot, netService, navigationService, timeService, peopleService) {
         'use strict';
         navigationService.addStart({
-                dir: uriPart,
+                dir: timeRoot,
                 label: "<span class='iconic clock'></span>",
                 title: "Historique"
             }
@@ -698,8 +690,9 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             if (timeService.isTimeURL() && e.tagName === "LI") {
                 return handleListItem(e);
             }
-            if (e.parentNode.tagName === "TIME") return;
-
+            if (e.parentNode.tagName === "TIME") {
+                return; // Handled by directive
+            }
             var txt = org.textValue(e);
             var parentNode = e.parentNode;
 
@@ -749,10 +742,12 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                     var isPreMonthWord = preMonthWord(wBefore);
                     var isPreDayWord = preDayWord(wBefore);
                     if (wBefore === "" || mIndexBefore || isPreYearWord || isPreMonthWord || isPreDayWord) {
+                        var wAfter;
+                        var nextChar;
                         if (!mIndexBefore) {
                             var nextPos = foundExprs.index + y.length;
-                            var wAfter = org.wordAfter(txt, nextPos);
-                            var nextChar = txt.charAt(nextPos);
+                            wAfter = org.wordAfter(txt, nextPos);
+                            nextChar = txt.charAt(nextPos);
                         }
                         if (parentNode) {
                             if (mIndexBefore || wAfter === "" || org.isProNoun(wAfter) || !(org.isPlural(wAfter) && !org.isProperName(wAfter)) && !org.arrayIndex(wAfter, units) && !monthIndex(wAfter)) {     // Plural on a sibling noun means count rather than getTime().year
@@ -764,18 +759,19 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                                     peopleService.getPeople().born = y;
                                 }
                                 var title = parentNode.title;
+                                var first;
                                 if (title) {
-                                    var first;
                                     var dash = title.indexOf('-');
-                                    if (dash > 0) first = title.substring(0, dash);
-                                    else first = title;
+                                    first = dash > 0 ? title.substring(0, dash) : title;
                                     if (first < y) {
                                         first += '-';
                                     } else {
                                         y = first;
                                         first = "";
                                     }
-                                } else first = "";
+                                } else {
+                                    first = "";
+                                }
                                 parentNode.title = first + timeService.getTime().year;
                                 var peo = peopleService.getPeople();
                                 if (peo) {
@@ -826,14 +822,25 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             return false;
         };
 
+        var times;
+        function createTimesData() {
+            times = new google.visualization.DataTable();
+            times.addColumn('string', 'Heure');
+            times.addColumn('number');
+            for (var i = 0; i < 24; i++) {
+                times.addRow([i + "", 0]);
+            }
+            return times;
+        }
+
         function parseForTimes() {
-            org.nounToLink(uriPart + "Vagues.html", "vague");
-            org.nounToLink(uriPart + "pluies", "pluie");
+            org.nounToLink(timeRoot + "Vagues.html", "vague");
+            org.nounToLink(timeRoot + "pluies", "pluie");
 
             org.handleTags.apply(this, [timeTextHandler]);
         }
 
-        var onGoogleChartsLoaded = [parseForTimes];
+        var onGoogleChartsLoaded = [createTimesData, parseForTimes];
 
         function initGoogleCharts(chartsApiLoaded) {
             google.load('visualization', '1.0', {
@@ -844,11 +851,9 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
 
         if (typeof google !== 'undefined') {
             initGoogleCharts(function () {
-                console.info("rr0timerun8");
-                this.chartZone = org.rr0.getSideZone("chart");
-                //this.setChartsHeight(30);
-                var chart = new google.visualization.ColumnChart(this.chartZone);
-                org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([this.drawChart]);
+                timeService.chartZone = org.rr0.getSideZone("chart");
+                var chart = new google.visualization.ColumnChart(timeService.chartZone);
+                org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([timeService.drawChart]);
 
                 for (var i = 0; i < onGoogleChartsLoaded.length; i++) {
                     onGoogleChartsLoaded[i]();
@@ -944,7 +949,24 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                     var titHour;
                     var h = time.getHour();
                     var otherHour;
-                    if (h) {
+
+                    function registerTimeToDraw(updatedHour) {
+                        var timesToUpdate = timeService.getTimes();
+                        if (timesToUpdate) {
+                            timeService.setChartsHeight(30);
+                            for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
+                                var iteratedHour = timesToUpdate.getValue(i, 0);
+                                if (iteratedHour === updatedHour) {
+                                    var countForThatHour = timesToUpdate.getValue(i, 1);
+                                    countForThatHour++;
+                                    timesToUpdate.setValue(i, 1, countForThatHour);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    function handleHour() {
                         var hourAsNumber = parseInt(h, 10);
                         if (!!(hourAsNumber)) {
                             titHour = org.zero(h);
@@ -952,20 +974,9 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                             titHour = h;
                             otherHour = true;
                         }
-//                var o;
-//                var s = h;
-//                if (s) {
-//                    var timesToUpdate = getTimes();
-//                    for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
-//                        o = times.getValue(i, 0);
-//                        if (o === s) {
-//                            var c = timesToUpdate.getValue(i, 1);
-//                            c++;
-//                            timesToUpdate.setValue(i, 1, c);
-//                            break;
-//                        }
-//                    }
-//                }
+                        if (h) {
+                            registerTimeToDraw(h);
+                        }
                         otherHour = otherHour || otherDay || h !== contextTime.getHour();
                         if (d) {
                             titHour = (time.isApprox() ? 'vers' : '\xE0') + ' ' + titHour;
@@ -974,6 +985,10 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                             contextTime.setHour(h);
                         }// TODO: else manage to display "30 mn later"
                         repHour = titHour;  // For now, always display hours, even if unchanged
+                    }
+
+                    if (h) {
+                        handleHour();
                     }
                     var mn = time.getMinutes();
                     if (mn) {

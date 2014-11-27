@@ -658,6 +658,180 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                     t.hour = null;
                     t.minutes = null;
                 }
+            },
+            toString: function (contextTime, time) {
+                var timeLink;
+                var repYear;
+                var titYear;
+                var repMonth;
+                var titMonth;
+                var repDay;
+                var titDay;
+                var repHour;
+                var self = this;
+                var y = time.getYear();
+                var otherYear;
+                if (y) {
+                    otherYear = y !== contextTime.getYear();
+                    timeLink = this.yearLink(y);
+                    titYear = y;
+                    if (otherYear) {
+                        contextTime.setYear(y);
+                        repYear = " " + y;
+                    }
+                }
+                var otherMonth;
+                var m = time.getMonth();
+                if (m) {
+                    titMonth = this.monthName(m);
+                    timeLink += "/" + org.zero(m);
+                    otherMonth = otherYear || m !== contextTime.getMonth();
+                    if (otherMonth) {
+                        contextTime.setMonth(m);
+                        repMonth = " " + titMonth;
+                    }
+                }
+                var otherDay = 0;
+                var d = time.getDayOfMonth();
+                if (d) {
+                    var dayAsNumber = parseInt(d, 10);
+                    var dOW;
+                    if (!!(dayAsNumber)) {
+                        dOW = this.dayOfWeekNam(this.getDayOfWeek(y, m, d));
+                        titDay = dOW + " " + d + (d === 1 ? "er" : "");
+                        otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth();
+                    } else {
+                        titDay = d;
+                        otherDay = 1;
+                    }
+                    if (otherDay !== 0) {
+                        timeLink += "/" + org.zero(d);
+                        repDay = titDay;
+                        if (!this.isTimeURL() && contextTime.getDayOfMonth()) {
+                            switch (otherDay) {
+                                case -1:
+                                    repDay = "veille";
+                                    break;
+                                case 1:
+                                    repDay = "lendemain";
+                                    break;
+                                case 2:
+                                    repDay = "surlendemain";
+                                    break;
+                                default:
+                                    if (otherDay <= 7) {
+                                        repDay = otherDay < 0 ? dOW + " pr\xE9c\xE9dent" : dOW + " suivant";
+                                    }
+                            }
+                        }
+                        contextTime.setDayOfMonth(d);
+                    }
+                }
+                var titHour;
+                var h = time.getHour();
+                var otherHour;
+
+                function registerTimeToDraw(updatedHour) {
+                    var timesToUpdate = self.getTimes();
+                    if (timesToUpdate) {
+                        self.setChartsHeight(30);
+                        for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
+                            var iteratedHour = timesToUpdate.getValue(i, 0);
+                            if (iteratedHour === updatedHour) {
+                                var countForThatHour = timesToUpdate.getValue(i, 1);
+                                countForThatHour++;
+                                timesToUpdate.setValue(i, 1, countForThatHour);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                function handleHour() {
+                    var hourAsNumber = parseInt(h, 10);
+                    if (!!(hourAsNumber)) {
+                        titHour = org.zero(h);
+                    } else {
+                        titHour = h;
+                        otherHour = true;
+                    }
+                    if (h) {
+                        registerTimeToDraw(h);
+                    }
+                    otherHour = otherHour || otherDay || h !== contextTime.getHour();
+                    if (d) {
+                        titHour = (time.isApprox() ? 'vers' : '\xE0') + ' ' + titHour;
+                    }
+                    if (otherHour) {
+                        contextTime.setHour(h);
+                    }// TODO: else manage to display "30 mn later"
+                    repHour = titHour;  // For now, always display hours, even if unchanged
+                }
+
+                if (h) {
+                    handleHour();
+                }
+                var mn = time.getMinutes();
+                if (mn) {
+                    var th = ':' + org.zero(mn);
+                    titHour += th;
+                    var otherMinutes = otherHour || mn !== contextTime.getMinutes();
+                    if (otherMinutes) {
+                        contextTime.setMinutes(mn);
+                        repHour += th;
+                    }
+                }
+                var titZ;
+                var z = time.getTimeZone();
+                if (z) {
+                    titZ = "(UTC" + (z >= 0 ? '+' : "") + z + ")";
+                }
+                var replacement = "";
+                var title = "";
+                if (repDay) {
+                    replacement += repDay;
+                }
+//            else {
+//                if (! repMonth) {
+//                    replacement = "m\xEAme jour";
+//                }
+//            }
+                if (titDay) {
+                    title += titDay;
+                }
+                if (repMonth) {
+                    replacement += repMonth;
+                }
+                if (titMonth) {
+                    title += " " + titMonth;
+                }
+                if (repYear) {
+                    replacement += repYear;
+                }
+                if (titYear) {
+                    title += " " + titYear;
+                }
+                if (repHour) {
+                    replacement += " " + repHour;
+                }
+                if (titHour) {
+                    title += ", " + titHour;
+                }
+                if (titZ) {
+                    title += " " + titZ;
+                }
+                if (time.startDate) {
+                    var start = self.toString(time, time.startDate).replacement;
+                    var end = replacement;
+                    var betweenWord = repDay ? 'au' : '\xE0';
+                    replacement = start + ' ' + betweenWord + ' ' + end;
+                    title = start + ' ' + betweenWord + ' ' + title;
+                }
+                return {
+                    "replacement": replacement,
+                    "timeLink": timeLink,
+                    "title": title
+                };
             }
         };
     }])
@@ -823,6 +997,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
         };
 
         var times;
+
         function createTimesData() {
             times = new google.visualization.DataTable();
             times.addColumn('string', 'Heure');
@@ -879,180 +1054,6 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                 decodedTime.hour = currentTime.getHour();
                 decodedTime.minutes = currentTime.getMinutes();
 
-                function toString(contextTime, time) {
-                    var timeLink;
-                    var repYear;
-                    var titYear;
-                    var repMonth;
-                    var titMonth;
-                    var repDay;
-                    var titDay;
-                    var repHour;
-                    var y = time.getYear();
-                    var otherYear;
-                    if (y) {
-                        otherYear = y !== contextTime.getYear();
-                        timeLink = timeService.yearLink(y);
-                        titYear = y;
-                        if (otherYear) {
-                            contextTime.setYear(y);
-                            repYear = " " + y;
-                        }
-                    }
-                    var otherMonth;
-                    var m = time.getMonth();
-                    if (m) {
-                        titMonth = timeService.monthName(m);
-                        timeLink += "/" + org.zero(m);
-                        otherMonth = otherYear || m !== contextTime.getMonth();
-                        if (otherMonth) {
-                            contextTime.setMonth(m);
-                            repMonth = " " + titMonth;
-                        }
-                    }
-                    var otherDay = 0;
-                    var d = time.getDayOfMonth();
-                    if (d) {
-                        var dayAsNumber = parseInt(d, 10);
-                        var dOW;
-                        if (!!(dayAsNumber)) {
-                            dOW = timeService.dayOfWeekNam(timeService.getDayOfWeek(y, m, d));
-                            titDay = dOW + " " + d + (d === 1 ? "er" : "");
-                            otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth();
-                        } else {
-                            titDay = d;
-                            otherDay = 1;
-                        }
-                        if (otherDay !== 0) {
-                            timeLink += "/" + org.zero(d);
-                            repDay = titDay;
-                            if (!timeService.isTimeURL() && contextTime.getDayOfMonth()) {
-                                switch (otherDay) {
-                                    case -1:
-                                        repDay = "veille";
-                                        break;
-                                    case 1:
-                                        repDay = "lendemain";
-                                        break;
-                                    case 2:
-                                        repDay = "surlendemain";
-                                        break;
-                                    default:
-                                        if (otherDay <= 7) {
-                                            repDay = otherDay < 0 ? dOW + " pr\xE9c\xE9dent" : dOW + " suivant";
-                                        }
-                                }
-                            }
-                            contextTime.setDayOfMonth(d);
-                        }
-                    }
-                    var titHour;
-                    var h = time.getHour();
-                    var otherHour;
-
-                    function registerTimeToDraw(updatedHour) {
-                        var timesToUpdate = timeService.getTimes();
-                        if (timesToUpdate) {
-                            timeService.setChartsHeight(30);
-                            for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
-                                var iteratedHour = timesToUpdate.getValue(i, 0);
-                                if (iteratedHour === updatedHour) {
-                                    var countForThatHour = timesToUpdate.getValue(i, 1);
-                                    countForThatHour++;
-                                    timesToUpdate.setValue(i, 1, countForThatHour);
-                                    break;
-                                }
-                            }
-                        }
-                    }
-
-                    function handleHour() {
-                        var hourAsNumber = parseInt(h, 10);
-                        if (!!(hourAsNumber)) {
-                            titHour = org.zero(h);
-                        } else {
-                            titHour = h;
-                            otherHour = true;
-                        }
-                        if (h) {
-                            registerTimeToDraw(h);
-                        }
-                        otherHour = otherHour || otherDay || h !== contextTime.getHour();
-                        if (d) {
-                            titHour = (time.isApprox() ? 'vers' : '\xE0') + ' ' + titHour;
-                        }
-                        if (otherHour) {
-                            contextTime.setHour(h);
-                        }// TODO: else manage to display "30 mn later"
-                        repHour = titHour;  // For now, always display hours, even if unchanged
-                    }
-
-                    if (h) {
-                        handleHour();
-                    }
-                    var mn = time.getMinutes();
-                    if (mn) {
-                        var th = ':' + org.zero(mn);
-                        titHour += th;
-                        var otherMinutes = otherHour || mn !== contextTime.getMinutes();
-                        if (otherMinutes) {
-                            contextTime.setMinutes(mn);
-                            repHour += th;
-                        }
-                    }
-                    var titZ;
-                    var z = time.getTimeZone();
-                    if (z) {
-                        titZ = "(UTC" + (z >= 0 ? '+' : "") + z + ")";
-                    }
-                    var replacement = "";
-                    var title = "";
-                    if (repDay) {
-                        replacement += repDay;
-                    }
-//            else {
-//                if (! repMonth) {
-//                    replacement = "m\xEAme jour";
-//                }
-//            }
-                    if (titDay) {
-                        title += titDay;
-                    }
-                    if (repMonth) {
-                        replacement += repMonth;
-                    }
-                    if (titMonth) {
-                        title += " " + titMonth;
-                    }
-                    if (repYear) {
-                        replacement += repYear;
-                    }
-                    if (titYear) {
-                        title += " " + titYear;
-                    }
-                    if (repHour) {
-                        replacement += " " + repHour;
-                    }
-                    if (titHour) {
-                        title += ", " + titHour;
-                    }
-                    if (titZ) {
-                        title += " " + titZ;
-                    }
-                    if (time.startDate) {
-                        var start = toString(time, time.startDate).replacement;
-                        var end = replacement;
-                        var betweenWord = repDay ? 'au' : '\xE0';
-                        replacement = start + ' ' + betweenWord + ' ' + end;
-                        title = start + ' ' + betweenWord + ' ' + title;
-                    }
-                    return {
-                        "replacement": replacement,
-                        "timeLink": timeLink,
-                        "title": title
-                    };
-                }
-
                 var r;
                 var e = elem[0];
                 var datetime;
@@ -1091,7 +1092,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
 
                 function handleTime() {
                     decodedTime.fromString(dataStr);
-                    r = toString(currentTime, decodedTime);
+                    r = timeService.toString(currentTime, decodedTime);
                     dataStr = decodedTime.toISOString();
                     netService.checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
                     if (!datetime) {

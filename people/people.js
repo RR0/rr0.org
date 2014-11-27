@@ -1,6 +1,7 @@
 
 var peoples = {};
 function People(p) {
+    'use strict';
     var commaPos = p.indexOf(", ");
     if (commaPos > 0) {
         this.lastName = p.substring(0, commaPos);
@@ -15,6 +16,7 @@ function People(p) {
     };
 }
 var handleWitness = function (scope, elem, attrs) {
+    'use strict';
     var txt = elem.text();
     var e = elem[0];
     e.style.width = txt.length + 'em';
@@ -30,8 +32,8 @@ var handleWitness = function (scope, elem, attrs) {
 
 window.copyright = null;
 angular.module('rr0.people', ['rr0.nav'])
-    .constant('peopleUriPart', '/people/')
-    .service('peopleService', ['$log', 'peopleUriPart', function ($log, peopleUriPart) {
+    .constant('peopleRoot', '/people/')
+    .service('peopleService', ['$log', 'peopleRoot', function ($log, peopleRoot) {
         "use strict";
 
         var authors = [];
@@ -95,7 +97,7 @@ angular.module('rr0.people', ['rr0.nav'])
                     }
                     var firstLinkChar = pLink.charAt(0);
                     if (firstLinkChar !== '.' && firstLinkChar !== '/') {
-                        pLink = peopleUriPart + firstLinkChar.toLowerCase() + "/" + pLink;
+                        pLink = peopleRoot + firstLinkChar.toLowerCase() + "/" + pLink;
                     }
                     pLink = org.validLink(pLink);
                     org.cache[p] = pLink;
@@ -130,6 +132,7 @@ angular.module('rr0.people', ['rr0.nav'])
         };
     }])
     .directive('meta', ['peopleService', function (peopleService) {
+        'use strict';
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -149,12 +152,14 @@ angular.module('rr0.people', ['rr0.nav'])
         };
     }])
     .directive('temoin', function () {
+        'use strict';
         return {
             restrict: 'C',
             link: handleWitness
         };
     })
     .directive('temoin1', function () {
+        'use strict';
         return {
             restrict: 'C',
             controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
@@ -166,6 +171,7 @@ angular.module('rr0.people', ['rr0.nav'])
         };
     })
     .directive('temoin2', function () {
+        'use strict';
         return {
             restrict: 'C',
             controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
@@ -177,6 +183,7 @@ angular.module('rr0.people', ['rr0.nav'])
         };
     })
     .directive('temoin3', function () {
+        'use strict';
         return {
             restrict: 'C',
             scope: true,
@@ -189,20 +196,22 @@ angular.module('rr0.people', ['rr0.nav'])
         };
     })
     .controller('AuthorCtrl', ['$scope', 'peopleService', 'timeService', function ($scope, peopleService, timeService) {
+        'use strict';
         $scope.authors = peopleService.getAuthors();
         $scope.copyright = peopleService.getCopyright();
-        $scope.docTime = timeService.getTime();
+        $scope.docTime = timeService.toString(timeService.NewMoment(), timeService.getTime()).replacement;
     }])
-    .run(['peopleUriPart', 'navigationService', function (peopleUriPart, navigationService) {
+    .run(['peopleRoot', 'navigationService', function (peopleRoot, navigationService) {
+        'use strict';
         navigationService.addStart({
-                dir: peopleUriPart,
+                dir: peopleRoot,
                 label: "<span class='iconic user'></span>",
                 title: "Personnes"
             }
         );
 
-        org.nounToLink(peopleUriPart + "pilotes.html", "pilote");
-        org.nounToLink(peopleUriPart + "ufologues.html", "ufologue");
-        org.nounToLink(peopleUriPart + "Astronomes.html", "astronome");
-        org.nounToLink(peopleUriPart + "temoins.html", "temoin");
+        org.nounToLink(peopleRoot + "pilotes.html", "pilote");
+        org.nounToLink(peopleRoot + "ufologues.html", "ufologue");
+        org.nounToLink(peopleRoot + "Astronomes.html", "astronome");
+        org.nounToLink(peopleRoot + "temoins.html", "temoin");
     }]);

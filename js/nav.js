@@ -719,6 +719,12 @@ angular
             requestAnimationFrame(updateOutline);
         };
 
+        if (window.addEventListener) {    // most non-IE browsers and IE9
+            window.addEventListener("resize", scrolled.onscroll, false);
+        } else if (window.attachEvent) {  // Internet Explorer 5 or above
+            window.attachEvent("onresize", scrolled.onscroll);
+        }
+
         function showOutline() {
             outline.style.top = $scope.getHeadingHeight() + 'px';
         }
@@ -863,16 +869,3 @@ angular
             $scope.sections.push(section);
         });
     }]);
-
-function headResized() {
-//    var headerHeight = header.offsetHeight;
-//    var main = document.getElementById("main");
-//    main.style.marginTop = headerHeight + "px";
-//    document.getElementById("contents").style.height = (main.offsetHeight - headerHeight) + "px";
-}
-
-if (window.addEventListener) {    // most non-IE browsers and IE9
-    window.addEventListener("resize", headResized, false);
-} else if (window.attachEvent) {  // Internet Explorer 5 or above
-    window.attachEvent("onresize", headResized);
-}

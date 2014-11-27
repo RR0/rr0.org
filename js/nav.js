@@ -354,7 +354,6 @@ angular
                 if (typeof levelSections !== "array") {
                     levelSections = sections;
                 }
-                var index = sections.length;
                 levelSections.push(l);
 
                 function camelize(l) {
@@ -388,7 +387,7 @@ angular
                     outlineLabel: outlineL,
                     id: camelize(org.validLink(s), this.currentLevel),
                     level: this.currentLevel,
-                    outlineY : offY
+                    outlineY: offY
                 };
                 $rootScope.$broadcast('sectionAdded', section);
                 return section;
@@ -607,6 +606,7 @@ angular
             $scope.style = st;
         };
         $scope.title = getTitle();
+        $scope.outline = 'Sommaire';
 
         $scope.initPeople = function (p) {
             peopleService.setPeopleName(p);
@@ -635,7 +635,6 @@ angular
                 title: tt,
                 style: c
             });
-
         }
 
         var scrolled = document.querySelector(".contents");
@@ -645,66 +644,81 @@ angular
         var outline = document.querySelector('.outline');
         var search = document.getElementById('search');
         var text = scrolled.querySelector('.text');
-        var currentSection = angular.element('.outline-title');
+        var titleSection = {
+            label: $scope.title,
+            outlineLabel: $scope.title,
+            id: "top",
+            level: 0,
+            outlineY: 0
+        };
+        var currentSection;
 
         function isHeaderCollapsed() {
             return window !== top || scrolled.scrollTop > header.offsetHeight - getNavHeight();
         }
 
-        function setOutline(digesting, outlineHTML) {
-            if (digesting) {
+        function setOutline(outlineHTML) {
+            $scope.$apply(function () {
                 $scope.outline = outlineHTML;
-            } else {
-                $scope.$apply(function () {
-                    $scope.outline = outlineHTML;
-                });
-            }
+            });
         }
 
-        function updateHeading(digesting) {
+        function updateHeading() {
+            var hasClass = nav.hasClass('collapsed');
             if (isHeaderCollapsed()) {
-                nav.addClass('collapsed');
-                header.style.paddingBottom = getNavHeight() + 'px';
-                setOutline(digesting, $scope.title);
-            } else {
-                var navElement = nav[0];
+                if (!hasClass) {
+                    nav.addClass('collapsed');
+                    header.style.paddingBottom = getNavHeight() + 'px';
+                    setOutline($scope.title);
+                    selectOutline(titleSection);
+                }
+            } else if (hasClass) {
                 nav.removeClass('collapsed');
                 text.style.position = 'absolute';
-                setOutline(digesting, 'Sommaire');
+                setOutline('Sommaire');
+                selectOutline(null);
             }
         }
 
-        function selectOutline(lastSec) {
-            var lastSecElem = angular.element("#out-" + lastSec.id);
-            if (lastSecElem[0] !== currentSection[0]) {
+        function selectOutline(toSelect) {
+            if (currentSection) {
                 currentSection.removeClass('hovered');
-                lastSecElem.addClass('hovered');
-                currentSection = lastSecElem;
             }
-            return lastSecElem;
+            if (toSelect) {
+                var toSelectElem = angular.element("#out-" + toSelect.id);
+                /*if (currentSection && toSelectElem[0] === currentSection[0]) {
+                    return;
+                }*/
+                toSelectElem.addClass('hovered');
+                currentSection = toSelectElem;
+            }
         }
 
         function updateOutline() {
-            var found;
-            var lastSecElem;
-            var lastSec;
-            var newSec;
-            for (var i = 0; i < $scope.sections.length; i++) {
-                newSec = $scope.sections[i];
-                found = scrolled.scrollTop > newSec.outlineY;
-                if (!found && lastSec) {
-                    lastSecElem = selectOutline(lastSec);
-                    return;
+            if (isHeaderCollapsed()) {
+                var found;
+                var lastSec = titleSection;
+                var newSec;
+                for (var i = 0; i < $scope.sections.length; i++) {
+                    newSec = $scope.sections[i];
+                    found = scrolled.scrollTop > newSec.outlineY;
+                    if (lastSec) {
+                        if (!found) {
+                            selectOutline(lastSec);
+                            return;
+                        }
+                    }
+                    lastSec = newSec;
                 }
-                lastSec = newSec;
+                selectOutline(newSec);
             }
-            selectOutline(newSec);
         }
 
         scrolled.onscroll = function (event) {
-            updateHeading();
-            updateOutline();
+            requestAnimationFrame(updateHeading);
+            requestAnimationFrame(updateOutline);
         };
+
         function showOutline() {
             outline.style.top = $scope.getHeadingHeight() + 'px';
         }
@@ -764,9 +778,6 @@ angular
             createNavElement(alternateClass);
             checkAlt();
         };
-        $scope.$watch('title', function () {
-            updateHeading(true);
-        });
         $scope.initAuthor = function (a, aLink, c, cLink) {
             peopleService.addAuthor(a, aLink, c, cLink);
         };

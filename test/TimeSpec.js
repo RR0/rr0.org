@@ -1,5 +1,6 @@
 describe("Time module", function () {
     'use strict';
+
     beforeEach(angular.mock.module('rr0.time'));
 
     var $rootScope;
@@ -30,17 +31,17 @@ describe("Time module", function () {
             expect(date.getHour()).toBe(17);
             expect(date.getMinutes()).toBe(35);
         });
-/*        describe("contextually", function () {
-            var dateMoment = timeService.NewMoment();
-            var date = dateMoment.fromString('1998-08-30');
+        /*        describe("contextually", function () {
+         var dateMoment = timeService.NewMoment();
+         var date = dateMoment.fromString('1998-08-30');
 
-            it("parses day", function () {
-             date = dateMoment.fromString('31');
-             expect(date.getYear()).toBe(1998);
-             expect(date.getMonth()).toBe(8);
-             expect(date.getDayOfMonth()).toBe(31);
-             });
-        });*/
+         it("parses day", function () {
+         date = dateMoment.fromString('31');
+         expect(date.getYear()).toBe(1998);
+         expect(date.getMonth()).toBe(8);
+         expect(date.getDayOfMonth()).toBe(31);
+         });
+         });*/
     });
     describe("encode", function () {
         it("ISO string", function () {
@@ -155,13 +156,21 @@ describe("Time directive", function () {
         $rootScope.$digest();
         expect(element.html()).toContain("Samedi 25 Juillet 1998 à 17:20");
     });
-    /*    it('display time intervals', function () {
-     spyOn(org.rr0.net, "onExists").and.returnValue(true);
+    it('display time intervals', function () {
+        spyOn(netService, "onExists").and.returnValue(true);
 
-     var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
-     $rootScope.$digest();
-     expect(element.html()).toContain("Mardi 29 Juin 1997 au Mercredi 20 Mai 1998");
-     });*/
+        var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
+        $rootScope.$digest();
+        expect(element.html()).toContain("Dimanche 29 Juin 1997 au Mercredi 20 Mai 1998");
+
+    /*    element = $compile("<time datetime='1997-05-29/1997-06-30'></time>")($rootScope);
+        $rootScope.$digest();
+        expect(element.html()).toContain("Jeudi 29 Mai au Lundi 30 Juin");
+
+/*        element = $compile("<time datetime='1998-05-20/1998-05-25'></time>")($rootScope);
+        $rootScope.$digest();
+        expect(element.html()).toContain("Mercredi 20 Mai 1998 au lendemain");*/
+    });
     it('display dates contextually', function () {
         spyOn(netService, "onExists").and.returnValue(true);
 

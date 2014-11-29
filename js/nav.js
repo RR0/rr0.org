@@ -668,23 +668,20 @@ angular
         }
 
         function updateOutline() {
-            if (isHeaderVisible()) {
-                var found;
-                var lastSec = titleSection;
-                var newSec;
-                for (var i = 0; i < $scope.sections.length; i++) {
-                    newSec = $scope.sections[i];
-                    found = scrolled.scrollTop > newSec.elem[0].offsetTop;
-                    if (lastSec) {
-                        if (!found) {
-                            selectOutline(lastSec);
-                            return;
-                        }
+            var lastSec = titleSection;
+            var newSec;
+            for (var i = 0; i < $scope.sections.length; i++) {
+                newSec = $scope.sections[i];
+                var found; found = scrolled.scrollTop > newSec.elem[0].offsetTop;
+                if (lastSec) {
+                    if (!found) {
+                        selectOutline(lastSec);
+                        return;
                     }
-                    lastSec = newSec;
                 }
-                selectOutline(newSec);
+                lastSec = newSec;
             }
+            selectOutline(newSec);
         }
 
         scrolled.onscroll = function (event) {

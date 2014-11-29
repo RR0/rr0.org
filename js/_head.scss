@@ -56,7 +56,6 @@ h2 {
   @include gradientFromLeft;
   padding-top: 0.35em;
   padding-bottom: 0.4em;
-
   padding-left: $textMargin;
   letter-spacing: 1px;
   width: 50%;
@@ -64,28 +63,18 @@ h2 {
 }
 
 h3 {
-  font-family: $contentFont;
+  @extend h2;
   background: transparent;
   font-size: 1.2em;
-  font-weight: normal;
   margin-top: 1.25em;
-  margin-left: -$textMargin;
-  color: #666666;
-  letter-spacing: 1px;
   border-bottom: thin dotted #DBDBDB;
-  text-align: left;
 }
 
 h4 {
-  font-family: $contentFont;
+  @extend h3;
   font-size: 16px;
-  font-weight: normal;
   margin: 1.25em 0 0 0.83em;
-  color: #666666;
-  letter-spacing: 1px;
   padding: 5px;
-  border-bottom: thin dotted #DBDBDB;
-  width: 50%;
 }
 
 section {

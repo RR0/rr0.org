@@ -141,12 +141,6 @@ aside {
 }
 
 @media (min-width: 720px) {
-  p:hover {
-    border-right: 0.4em solid #d3d3d3;
-  }
-  ul li:hover {
-    border-right: 0.4em solid #d3d3d3;
-  }
 }
 
 @media (max-width: 720px) {
@@ -195,8 +189,6 @@ abbr {
 p {
   text-align: justify;
   margin: 1.25em 0 1.5em 0;
-  padding-right: 0.8em;
-  border-right: 0.4em solid rgba(255, 255, 255, 0);
   hyphens: auto;
 }
 
@@ -227,10 +219,6 @@ ol {
     padding-right: 0.8em;
     border-right: 0.4em solid white;
   }
-}
-
-ol li:hover {
-  border-right: 0.4em solid #d3d3d3;
 }
 
 .added {
@@ -336,13 +324,12 @@ section:after {
 /* Lifted corners */
 .abstract {
   font-weight: bold;
-  border-right-style: none;
+  border-right-style: none ;
   background: rgba(47, 47, 47, 0.10);
   padding: 0.7em;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  margin-right: 1.25em;
 }
 
 //.abstract:before,
@@ -366,7 +353,7 @@ section:after {
 
 .abstract2 {
   @extend .abstract;
-  font-weight: normal;
+  font-weight: normal ;
 }
 
 .udotted {

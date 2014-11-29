@@ -274,14 +274,14 @@ angular
                 var self = this;
                 if (m) {
                     this.setContents(oy, timeService.yearLink(oy));
-                    l += "/" + org.zero(m);
+                    l += "/" + commonsService.zero(m);
                     label = timeService.monthNam(m - 1);
                     if (y !== timeService.getTime().year) {
                         label += ' ' + y;
                     }
                 } else {
                     var cLink = timeService.yearLink(oy, true);
-                    if (cLink !== org.getUri()) {
+                    if (cLink !== commonsService.getUri()) {
                         this.setContents(~~(oy / 10) + "0s", cLink);
                     }
                 }
@@ -316,10 +316,10 @@ angular
                                     t = st.title;
                                     sLink = st.dir;
                                     if (st.css) {
-                                        org.loadCSS(st.css);
+                                        commonsService.loadCSS(st.css);
                                     }
                                     if (st.js) {
-                                        org.loadJS(st.js);
+                                        commonsService.loadJS(st.js);
                                     }
                                     if (st.onLoad) {
                                         ret = st.onLoad;
@@ -355,36 +355,10 @@ angular
                 }
                 levelSections.push(l);
 
-                function camelize(l) {
-                    var camel = '';
-                    var wasWord = false;
-                    for (var i = 0; i < l.length; i++) {
-                        var s2 = l.charAt(i);
-                        switch (s2) {
-                            case '?':
-                            case '!':
-                            case ',':
-                            case '&':
-                            case '-':
-                            case '\'':
-                            case ' ':
-                                wasWord = true;
-                                break;
-                            default:
-                                if (wasWord) {
-                                    s2 = s2.toUpperCase();
-                                    wasWord = false;
-                                }
-                                camel += s2;
-                        }
-                    }
-                    return camel;
-                }
-
                 var section = {
                     label: l,
                     outlineLabel: outlineL,
-                    id: camelize(org.validLink(s), this.currentLevel),
+                    id: commonsService.camelize(commonsService.validLink(s), this.currentLevel),
                     level: this.currentLevel,
                     elem: elem
                 };
@@ -758,22 +732,26 @@ angular
                 setOutline('Sommaire');
             }
 
-            var alternate;
+            $scope.alternate = null;
             var alternateClass = "alternate";
 
             function setAlternates(innerHtml) {
-                alternate = innerHtml;
+                $scope.alternate = innerHtml;
             }
 
             function checkAlt() {
-                if (!alternate) {
-                    alternate = " ";
+                if (!$scope.alternate) {
+                    $scope.alternate = " ";
                     langService.checkAlternate(commonsService.getUri(),
                         function (original) {
-                            setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
+                            $scope.$apply(function () {
+                                setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
+                            });
                         },
                         function (translation) {
-                            setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible");
+                            $scope.$apply(function () {
+                                setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible");
+                            });
                         });
                 }
             }

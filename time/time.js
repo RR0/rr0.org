@@ -11,7 +11,6 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
      *
      * 1947-06-21T14:20-02:00
      */
-
         var times;
 
         var Duration = function () {
@@ -442,18 +441,18 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
         var chart;
 
         return {
-            getTimes: function () {
+            /*getTimes: function () {
                 if (typeof google !== 'undefined' && typeof google.visualization !== 'undefined' && !times) {
                     times = createTimesData();
                 }
                 return times;
-            },
+            },*/
             chartZone: null,
             setChartsHeight: function (h) {
                 this.chartZone.style.height = h + '%';
                 org.rr0.getSideZone("map-canvas").style.height = (100 - h) + '%';
             },
-            drawChart: function () {
+            /*drawChart: function () {
                 if (times) {
                     var options = {
                         'title': "Heures d'observation",
@@ -463,9 +462,9 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                     };
                     chart.draw(times, options);
                 } else {
-                    this.setChartsHeight(0);
+                    self.setChartsHeight(0);
                 }
-            },
+            },*/
             NewDuration: function () {
                 return new Duration();
             },
@@ -732,7 +731,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                 var otherHour;
 
                 function registerTimeToDraw(updatedHour) {
-                    var timesToUpdate = self.getTimes();
+          /*          var timesToUpdate = self.getTimes();
                     if (timesToUpdate) {
                         self.setChartsHeight(30);
                         for (var i = 0; i < timesToUpdate.getNumberOfRows(); i++) {
@@ -744,7 +743,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                                 break;
                             }
                         }
-                    }
+                    }*/
                 }
 
                 function handleHour() {
@@ -998,7 +997,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
 
         var times;
 
-        function createTimesData() {
+/*        function createTimesData() {
             times = new google.visualization.DataTable();
             times.addColumn('string', 'Heure');
             times.addColumn('number');
@@ -1007,7 +1006,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             }
             return times;
         }
-
+*/
         function parseForTimes() {
             org.nounToLink(timeRoot + "Vagues.html", "vague");
             org.nounToLink(timeRoot + "pluies", "pluie");
@@ -1015,7 +1014,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             org.handleTags.apply(this, [timeTextHandler]);
         }
 
-        var onGoogleChartsLoaded = [createTimesData, parseForTimes];
+        var onGoogleChartsLoaded = [/*createTimesData, */parseForTimes];
 
         function initGoogleCharts(chartsApiLoaded) {
             google.load('visualization', '1.0', {
@@ -1024,7 +1023,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             });
         }
 
-        if (typeof google !== 'undefined') {
+        /*if (typeof google !== 'undefined') {
             initGoogleCharts(function () {
                 timeService.chartZone = org.rr0.getSideZone("chart");
                 var chart = new google.visualization.ColumnChart(timeService.chartZone);
@@ -1036,7 +1035,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             });
         } else {
             console.warn("Google API is not loaded");
-        }
+        }*/
     }])
     .directive('time', ['netService', 'timeService', function (netService, timeService) {
         'use strict';

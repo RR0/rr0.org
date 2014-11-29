@@ -565,16 +565,53 @@ var org = new OrgModule();
 angular.module('rr0.commons', [])
     .service('commonsService', function () {
         'use strict';
-
         return {
-            addEndingSlash: function(l) {
+            addEndingSlash: function (l) {
                 return org.addEndingSlash(l);
             },
-            getUri: function() {
+            getUri: function () {
                 return org.getUri();
             },
-            parentLink: function(l) {
+            validLink: function (l) {
+                return org.validLink(l);
+            },
+            zero: function (v) {
+                return org.zero(v);
+            },
+            loadCSS: function (f) {
+                return org.loadCSS(f);
+            },
+            loadJS: function (f) {
+                return org.loadJS(f);
+            },
+            parentLink: function (l) {
                 return org.parentLink(l);
+            },
+            camelize: function (s) {
+                var camelized = '';
+                var wasWord = false;
+                for (var i = 0; i < s.length; i++) {
+                    var c = s.charAt(i);
+                    switch (c) {
+                        case '?':
+                        case '!':
+                        case ',':
+                        case '&':
+                        case '-':
+                        case '\'':
+                        case '.':
+                        case ' ':
+                            wasWord = true;
+                            break;
+                        default:
+                            if (wasWord) {
+                                c = c.toUpperCase();
+                                wasWord = false;
+                            }
+                            camelized += c;
+                    }
+                }
+                return camelized;
             }
         };
     });

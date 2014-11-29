@@ -1,0 +1,35 @@
+{
+  "esnext": true,
+
+  "nonew": true,
+  "curly": true,
+  "noarg": true,
+  "forin": true,
+  "noempty": true,
+  "eqeqeq": true,
+  "strict": true,
+  "undef": true,
+  "bitwise": true,
+  "browser": true,
+
+  "globals": {
+
+    /* MOCHA/Jasmine */
+    "describe": false,
+    "ddescribe": false,
+    "it": false,
+    "iit": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    /* Jasmine */
+    "expect": false,
+    "spyOn": false,
+    /* angular mock */
+    "inject": false,
+
+    /* Angular */
+    "angular": false
+  }
+}

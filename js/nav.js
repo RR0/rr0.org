@@ -626,8 +626,8 @@ angular
         };
         var currentSection;
 
-        function isHeaderCollapsed() {
-            return window !== top || scrolled.scrollTop > header.offsetHeight - getNavHeight();
+        function isHeaderVisible() {
+            return window === top && scrolled.scrollTop <= header.offsetHeight;
         }
 
         function setOutline(outlineHTML) {
@@ -635,23 +635,21 @@ angular
         }
 
         function updateHeading() {
-            var hasClass = nav.hasClass('collapsed');
-            if (isHeaderCollapsed()) {
-                if (!hasClass) {
-                    nav.addClass('collapsed');
-                    header.style.paddingBottom = getNavHeight() + 'px';
+            var hasCollapsedState = nav.hasClass('collapsed');
+            if (isHeaderVisible()) {
+                if (hasCollapsedState) {
+                    nav.removeClass('collapsed');
                     $scope.$apply(function () {
-                        setOutline($scope.title);
+                        setOutline('Sommaire');
                     });
-                    selectOutline(titleSection);
+                    selectOutline(null);
                 }
-            } else if (hasClass) {
-                nav.removeClass('collapsed');
-                text.style.position = 'absolute';
+            } else if (!hasCollapsedState) {
+                nav.addClass('collapsed');
                 $scope.$apply(function () {
-                    setOutline('Sommaire');
+                    setOutline($scope.title);
                 });
-                selectOutline(null);
+                selectOutline(titleSection);
             }
         }
 
@@ -670,7 +668,7 @@ angular
         }
 
         function updateOutline() {
-            if (isHeaderCollapsed()) {
+            if (isHeaderVisible()) {
                 var found;
                 var lastSec = titleSection;
                 var newSec;

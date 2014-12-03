@@ -3,13 +3,28 @@
 .outline {
   font-size: 0.7em;
 }
+
 nav {
+  $titleHeight: 80px;
+
+  position: absolute;
   font-size: 0.9em;
+  transition: width, height $transitionDuration;
   left: 0;
-  top: 0;
+  top: $titleHeight;
   right: 0;
-  z-index: 9;
+  z-index: 100;
+  width: 100%;
+  height: 2em;
+  background: rgba(253, 250, 250, 0.1);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  &.collapsed {
+    top: 0;
+    position: fixed;
+    .outline-title {
+      font-weight: bold;
+    }
+  }
   > ul {
     overflow: auto; /* clearfix */
     width: 100%; /* clearfix */
@@ -41,7 +56,7 @@ nav {
         }
       }
     }
-//    font-size: 0.9em;
+    //    font-size: 0.9em;
     > li {
       float: left;
       line-height: 2em;
@@ -54,7 +69,7 @@ nav {
       @include bottomInnerShadow;
       position: absolute;
       max-width: 90%;
-      max-height: 99vh;
+      max-height: 80vh;
       overflow: auto;
       z-index: -5;
       top: -100em;
@@ -96,6 +111,10 @@ nav {
       }
     }
   }
+  &.collapsed {
+    position: fixed;
+    z-index: 201;
+  }
 }
 
 .toggleMap {
@@ -111,19 +130,24 @@ nav {
 
 @import "search/search";
 
-@media (max-width: $breakPoint1) {
+@media (max-width: $singlePaneBreak) {
   aside {
     width: 0;
   }
+  nav {
+    > ul {
+      overflow: hidden;
+    }
+  }
 }
 
-@media (max-width: $breakPoint2) {
+@media (max-width: $twoPanesBreak) {
   .contents {
     width: 100%;
   }
 }
 
-@media (min-width: $breakPoint1) {
+@media (min-width: $singlePaneBreak) {
   .search {
     //    font-size: 1em;
     label {
@@ -132,7 +156,7 @@ nav {
   }
   nav {
     overflow: auto;
-    width: $leftSideWidth;
+    width: $leftPaneWidth;
     height: 100%;
     * {
       display: block;
@@ -157,19 +181,18 @@ nav {
     }
   }
   .text {
-    left: $leftSideWidth;
+    left: $leftPaneWidth;
     position: absolute;
     padding-top: $headerHeight;
   }
 }
 
-
-@media (min-width: $breakPoint2) {
+@media (min-width: $twoPanesBreak) {
   .contents {
-    width: 100%-$rightSideWidth;
+    width: 100% - $rightPaneWidth;
   }
   aside {
-    width: $rightSideWidth;
+    width: $rightPaneWidth;
   }
 }
 
@@ -189,7 +212,7 @@ nav {
 
     li {
       float: left;
-//      line-height: 2em;
+      //      line-height: 2em;
       font-size: 0.9em;
       display: inline;
       border: none;

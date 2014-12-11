@@ -234,21 +234,6 @@ ol {
 @import "quote";
 @import "table";
 
-.exergue {
-  margin-top: 1em;
-  margin-right: 1em;
-  margin-left: 1em;
-  margin-bottom: 2.1em;
-  //  font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-  text-align: right;
-  color: #4C4C4C;
-}
-
-.exergue + .exergue {
-  margin-top: -0.7em;
-}
-
 strong {
   font-weight: bold;
   &:hover {
@@ -327,8 +312,6 @@ section:after {
   border-right-style: none ;
   background: rgba(47, 47, 47, 0.10);
   padding: 0.7em;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
@@ -399,6 +382,9 @@ section:after {
 
 .side {
   width: 20%;
+  &:hover {
+    width: 40%;
+  }
 }
 
 .long {
@@ -530,5 +516,8 @@ code {
   font-family: monospace;
 }
 
+.option {
+  white-space: nowrap;
+}
 @import "place/place";
 

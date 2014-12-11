@@ -1,4 +1,4 @@
-@import "../../variables";
+@import "../../mixins";
 
 .search {
   form {
@@ -16,12 +16,13 @@
       max-height: 1.5em;
     }
     .iconic.magnifying_glass {
+      @include selectable();
       cursor: pointer;
     }
   }
-  ul {
+  .search-result {
     padding-left: 0;
-    transition: height $transitionDuration ease;
+    transition: all $transitionDuration ease;
     display: block;
     li {
       display: block;

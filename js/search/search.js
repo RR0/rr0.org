@@ -1,16 +1,18 @@
 angular.module('rr0.nav')
-    .directive('search', [function () {
-        function isSearchVisible() {
-            return search.style.top === hiddenPos;
-        }
+    .directive('search', ['hiddenPos', '$log', function (hiddenPos, $log) {
+        'use strict';
 
         return {
             restrict: 'C',
             templateUrl: '/js/search/search.html',
             controller: ['$scope', '$element', '$attrs', '$transclude', '$http', '$timeout', function ($scope, $element, $attrs, $transclude, $http, $timeout) {
+                var searchResults = document.querySelector('.search-result');
+                function isSearchVisible() {
+                    return searchResults.style.top === hiddenPos;
+                }
                 function showSearch() {
                     if ($scope.getHeadingHeight) {
-                        search.style.top = $scope.getHeadingHeight() + 'px';
+                        searchResults.style.top = $scope.getHeadingHeight() + 'px';
                     }
                 }
 
@@ -21,7 +23,7 @@ angular.module('rr0.nav')
                             if (data.searchInformation.totalResults > 0) {
                                 $scope.searchResults = data.items;
                             } else {
-                                log("No results for '" + $scope.searchInput + "'");
+                                $log.info("No results for '" + $scope.searchInput + "'");
                             }
                             showSearch();
                         });
@@ -32,7 +34,7 @@ angular.module('rr0.nav')
                         if (!isSearchVisible()) {
                             showSearch();
                         } else {
-                            // Focus next search result
+                            // TODO: Focus next search result
                         }
                         $scope.searchClick(item);
                     }
@@ -47,8 +49,8 @@ angular.module('rr0.nav')
                     showSearch();
                 };
                 $scope.searchLeave = function () {
-                    search.style.top = hiddenPos;
+                    searchResults.style.top = hiddenPos;
                 };
             }]
-        }
+        };
     }]);

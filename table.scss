@@ -24,6 +24,8 @@ td {
 }
 
 table {
+  $blurRadius: 1em;
+  $offsetY: 0.3em;
   margin: 1.25em 1.25em 1.5em 1.25em;
   border: none;
   thead {
@@ -32,9 +34,6 @@ table {
     width: 100%;
   }
   tbody {
-    $blurRadius: 1em;
-    $offsetY: 0.3em;
-
     box-shadow: inset 0 $offsetY $blurRadius 0 rgba(0, 0, 1, 0.21);
     display: block;
     max-height: 80vh;
@@ -44,6 +43,10 @@ table {
       display: table;
       table-layout: fixed;
       width: 100%;
+    }
+  }
+  &:not(thead) {
+    tbody {
       &:first-child {
         border-top: rgb(255, 255, 255) $blurRadius - $offsetY solid;
       }

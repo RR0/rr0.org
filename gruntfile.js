@@ -8,7 +8,8 @@ module.exports = function (grunt) {
             pkg: grunt.file.readJSON('package.json'),
             traceur: {
                 options: {
-                    sourceMap: true
+                    sourceMaps: true,
+                    sourceRoot: 'http://rr0.org/out/'
                 },
                 custom: {
                     files: [
@@ -55,6 +56,10 @@ module.exports = function (grunt) {
                         {
                             src: ['js/units.js'],
                             dest: 'out/js/units.es5.js'
+                        },
+                        {
+                            src: ['time/1/9/7/7/Poher_Matrice/matrix.js'],
+                            dest: 'time/1/9/7/7/Poher_Matrice/matrix.es5.js'
                         }
                     ]
                 }
@@ -72,7 +77,7 @@ module.exports = function (grunt) {
                     },
                     expand: true,
                     files: {
-                        'out/rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss']
+                        'rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss']
                     }
                 },
                 dev: {
@@ -164,7 +169,8 @@ module.exports = function (grunt) {
                             'out/js/foot.es5.js',
                             'out/js/index.es5.js',
                             'out/js/search/search.es5.js',
-                            'out/js/units.es5.js'
+                            'out/js/units.es5.js',
+                            'time/1/9/7/7/Poher_Matrice/matrix.es5.js'
                         ]
                     }
                 }
@@ -186,6 +192,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test-unit', ['jasmine']);
     grunt.registerTask('css-dev', ['sass:dev', 'autoprefixer']);
     grunt.registerTask('css-dist', ['sass:dist', 'autoprefixer']);
-    grunt.registerTask('dev', ['traceur', 'css-dev', 'test-unit']);
+    grunt.registerTask('dev', ['traceur', 'css-dev', 'test-dev']);
     grunt.registerTask('default', ['traceur', 'uglify', 'css-dist', 'test-dist']);
 };

@@ -1,8 +1,8 @@
-var docLang;
-var userLang = "fr";
 angular.module('rr0.lang', ['rr0.net'])
-    .service('langService', ['commonsService', 'netService', function (commonsService, netService) {
-        "use strict";
+    .value('docLang', null)
+    .value('userLang', 'fr')
+    .service('langService', ['commonsService', 'netService', 'docLang', 'userLang', function (commonsService, netService, docLang, userLang) {
+        'use strict';
 
         function notifyOrig(original, origFound) {
             netService.onExists(original, function () {

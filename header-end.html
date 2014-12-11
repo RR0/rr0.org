@@ -6,9 +6,9 @@
         <h1 data-ng-bind-html="title" data-ng-show="!isFramed()" title="{{title}}">&nbsp;</h1></header>
         <nav>
             <ul>
-                <li data-ng-repeat="p in ps" class="constant {{p.style}}">
-                    <a data-ng-if="p.link && p.label" data-ng-href="{{p.link}}">
-                        <span data-ng-bind-html="p.label | unsafe" title="{{p.title}}"></span> </a>
+                <li data-ng-repeat="p in ps" class="constant {{::p.style}}">
+                    <a data-ng-if="p.link && p.label" data-ng-href="{{::p.link}}">
+                        <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span> </a>
                 </li>
                 <li tabindex="100" data-ng-click="titleClick()" data-ng-mouseover="titleOver()" data-ng-mouseleave="titleLeave()" class="constant">
                     <a href="#contents" data-ng-click="sectionClick('#contents')" class="outline-title" id="out-top">
@@ -16,12 +16,12 @@
                     </a>
                     <ul class="outline">
                         <li data-ng-attr-tabindex="{{101+$index}}" class="constant" data-ng-repeat="s in sections" data-ng-click="sectionClick(s)">
-                            <a data-ng-href="#{{s.id}}" id="out-{{s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+                            <a data-ng-href="#{{::s.id}}" id="out-{{::s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
                         </li>
                     </ul>
                 </li>
-                <li data-ng-repeat="n in ns" class="constant {{n.style}}">
-                    <a data-ng-if="n.link && n.label" data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
+                <li data-ng-repeat="n in ns" class="constant {{::n.style}}">
+                    <a data-ng-if="n.link && n.label" data-ng-href="{{::n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{::n.title}}"></span></a>
                 </li>
                 <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
                     <div class="search"></div>
@@ -36,7 +36,6 @@
         </nav>
     </div>
     <div class="text" scrollable>
-        <div id="top"></div>
         <div class="author" data-ng-controller="AuthorCtrl" data-ng-show="authors.length" data-ng-cloak>
             <span data-ng-cloak data-ng-repeat="aa in authors">{{$first?'':' & '}}<a data-ng-cloak data-ng-href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>,
             <span data-ng-bind-html="docTime"></span>

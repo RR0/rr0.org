@@ -7,9 +7,9 @@
             <span class="iconic magnifying_glass" title="Rechercher" ng-click="doSearch()"></span>
         <!--</button>-->
     </form>
-    <ul id="search" ng-mouseleave="searchLeave()">
-        <li ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{r.snippet}}">
-            <a href="{{r.link}}"><span ng-bind-html="r.htmlTitle | unsafe"></span></a>
+    <ul class="search-result" ng-mouseleave="searchLeave()">
+        <li ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{::r.snippet}}">
+            <a href="{{::r.link}}"><span ng-bind-html="r.htmlTitle | unsafe"></span></a>
         </li>
     </ul>
 </div>

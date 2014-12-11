@@ -111,14 +111,14 @@ angular.module('rr0.people', ['rr0.nav'])
                 return org.rr0.context.people;
             }
         };
-    }])
+    }]) 
     .directive('people', ['peopleService', function (peopleService) {
         'use strict';
         return {
             restrict: 'C',
             transclude: true,
             scope: true,
-            template: "<a href='{{href}}' translate='no' ng-transclude></a>",
+            template: "<a href='{{::href}}' translate='no' ng-transclude></a>",
             link: function (scope, elem, attrs) {
                 var txt = elem.text();
                 var nameKey = attrs.title;    // Alternate (correct for link) name?

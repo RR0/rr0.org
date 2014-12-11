@@ -49,28 +49,28 @@
 		</li>
 	</ul>
 	<section title="Javascript">
-		<figure class="left static">
+		<figure class="left">
 			<figcaption style="padding-left:0.8em"> Evaluation d'explications en terme de phénomènes connus</figcaption>
-			<div ng-controller="matrixFormCtrl" ng-cloak style="display:flex;flex-wrap:wrap">
+			<div ng-controller="matrixFormCtrl" ng-cloak>
 				<form>
 					<fieldset id="selectPanel">
 						<div style="margin-bottom:1em">
-							<input name="previousButton" type="button" value="<" ng-click="onPrevious()" ng-disabled="questionIndex<=0">
-							<select id="combo" ng-model="currentQuestion" ng-options="q as q.title for (title,q) in questions" ng-change="parameterChanged()"></select>
-							<input name="nextButton" type="button" value=">" ng-click="onNext()" ng-disabled="questionIndex>=questionsKeys.length - 1">
+							<input name="previousButton" type="button" value="<" data-ng-click="onPrevious()" data-ng-disabled="questionIndex<=0">
+							<select id="combo" data-ng-model="currentQuestion" data-ng-options="q as q.title for (title,q) in questions" data-ng-change="parameterChanged()"></select>
+							<input name="nextButton" type="button" value=">" data-ng-click="onNext()" data-ng-disabled="questionIndex>=questionsKeys.length - 1">
 						</div>
-						<div ng-repeat="(key, field) in fields">
-							<input type="{{ field.type }}" id="{{ key }}" name="{{ field.type == 'radio' ? 'rad' : 'chk' }}" value="{{ key }}" ng-model="currentQuestion.choices[key].value" ng-change="compute('{{ key }}')">
+						<div data-ng-repeat="(key, field) in fields">
+							<input type="{{ field.type }}" id="{{ key }}" name="{{ field.type == 'radio' ? 'rad' : 'chk' }}" value="{{ key }}" data-ng-model="currentQuestion.choices[key].value" data-ng-change="compute('{{ key }}')">
 							<label for="{{ key }}">{{ field.label }}</label>
 						</div>
 					</fieldset>
-					<div style="margin-top:1em" ng-show="explanations">
+					<div style="margin-top:1em" data-ng-show="explanations">
 						Explications
-						<input type="radio" id="Probable" ng-model="resultsType" value="Probable" name="resultsType" ng-change="compute()"><label for="Probable">probables</label>
-						<input type="radio" id="NonProbable" ng-model="resultsType" value="NonProbable" name="resultsType" ng-change="compute()"><label for="NonProbable" checked="checked">improbables</label>
+						<input type="radio" id="Probable" data-ng-model="resultsType" value="Probable" name="resultsType" data-ng-change="compute()"><label for="Probable">probables</label>
+						<input type="radio" id="NonProbable" data-ng-model="resultsType" value="NonProbable" name="resultsType" data-ng-change="compute()"><label for="NonProbable" checked="checked">improbables</label>
 					</div>
 				</form>
-				<div id="explanations" style="flex-grow:1;flex-basis:40em">
+				<div id="explanations">
 					<ol style="margin:0">
 						<li ng-repeat="(k, p) in explanations">{{ p }}</li>
 					</ol>
@@ -126,10 +126,4 @@
 		<a href="PoherMatrix.csv">Le fichier de données utilisé par défaut, reflétant la matrice de Poher</a>
 	</li>
 </ul>
-<!--#include virtual="/footer-start.html" -->
-<!--#if expr="${QUERY_STRING}=/debug/" -->
-<script src="matrix.es5.js"></script>
-<!--#else -->
-<script src="matrix.es5.min.js"></script>
-<!--#endif -->
-<!--#include virtual="/footer-end.html" -->
+<!--#include virtual="/footer.html" -->

@@ -72,13 +72,13 @@ blockquote {
       }
     }
   }
-  p {
+  p, ol>li, ul>li {
     @include quoting();
     &:after {
       content: "";
     }
   }
-  p:last-child {
+  p:last-child, ul>li:last-child, ol>li:last-child {
     &:after {
       content: " »";
     }
@@ -88,4 +88,10 @@ blockquote {
   font-weight: normal;
   font-variant: normal;
   text-align: left;
+}
+
+.exergue {
+  font-style: italic;
+  text-align: right;
+  color: #4C4C4C;
 }

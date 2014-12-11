@@ -28,6 +28,7 @@ nav {
   > ul {
     overflow: auto; /* clearfix */
     width: 100%; /* clearfix */
+    height: 100%;
   }
   ul {
     background: $headerFromColor; /* for non-css3 browsers */
@@ -55,8 +56,10 @@ nav {
           cursor: pointer;
         }
       }
+      a {
+        display: block;
+      }
     }
-    //    font-size: 0.9em;
     > li {
       float: left;
       line-height: 2em;
@@ -212,7 +215,6 @@ nav {
 
     li {
       float: left;
-      //      line-height: 2em;
       font-size: 0.9em;
       display: inline;
       border: none;

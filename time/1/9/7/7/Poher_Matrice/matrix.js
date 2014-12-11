@@ -1,5 +1,5 @@
 angular.module('rr0')
-    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', function ($log, $q, $rootScope, $http) {
+    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', 'userLang', function ($log, $q, $rootScope, $http, userLang) {
         var uri = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/';
         var bundleName = 'Matrix';
         var localeFile = uri + bundleName + '_' + userLang + '.json';

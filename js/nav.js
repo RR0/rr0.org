@@ -9,8 +9,6 @@ var contents, contentsURL;
 var prev, prevLink;
 var next, nextLink;
 
-var titleClass = "label";
-var navTitle;
 var navList;
 function getNavList() {
     if (!navList) {
@@ -29,50 +27,26 @@ function createNavElement(c) {
     }
     return li;
 }
-/**
- * Creates a choice in the navigation menu.
- *
- * @param t {string} The choice's text
- * @param l {string} The choice's link
- * @param tt {string} The choice's tooltip
- * @param c {string} The choice's styling class
- * @returns {HtmlElement}
- */
-function createNavLink(t, l, tt, c) {
-    var li = createNavElement(c);
-    if (l && t) {
-        var le;
-        if (li.childElementCount <= 0) {
-            var i = document.createElement("span");
-            i.innerHTML = t;
-            le = org.linkElement(l, i, tt);
-        } else {
-            le = li.childNodes[0];
-        }
-        li.appendChild(le);
-    }
-    return li;
-}
 
 var style = null;
-var hiddenPos = '-100em';
 
 //var titleTag;
 angular
     .module('rr0.nav', ['ngSanitize', /*'sun.scrollable', */ 'rr0.lang', 'rr0.people', 'rr0.time'])
     .value('host', location.host)
+    .constant('hiddenPos', '-100em')
     .filter('unsafe', ['$sce', function ($sce) {
-        "use strict";
+        'use strict';
         return function (val) {
             return $sce.trustAsHtml(val);
         };
     }])
     .run(['$rootScope', function ($rootScope) {
-        "use strict";
+        'use strict';
         $rootScope.title = "";
     }])
     .service('navigationService', ['$rootScope', 'commonsService', 'netService', 'timeService', function ($rootScope, commonsService, netService, timeService) {
-        "use strict";
+        'use strict';
 
         var sections = [];
 
@@ -371,7 +345,7 @@ angular
  * Sets controller's title to be displayed from the title header tag.
  */
     .directive('title', [function () {
-        "use strict";
+        'use strict';
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -383,7 +357,7 @@ angular
  * Picks last image from contents to set header background
  */
     .directive('img', [function () {
-        "use strict";
+        'use strict';
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -434,7 +408,7 @@ angular
  * Adds "target=_blank" to external links so they will be opened in separate tabs
  */
     .directive('a', ['host', function (host) {
-        "use strict";
+        'use strict';
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
@@ -449,7 +423,7 @@ angular
  * Registers each encountered HTML5 "section" tag as an document outline entry
  */
     .directive('section', ['navigationService', function (navigationService) {
-        "use strict";
+        'use strict';
         function addSec(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle, elem);
             scope.level = section.level;
@@ -486,7 +460,7 @@ angular
  * Registers each encountered HTML5 "article" tag as an document outline entry
  */
     .directive('article', ['navigationService', function (navigationService) {
-        "use strict";
+        'use strict';
         function addArt(sectionTitle, scope, elem) {
             var section = navigationService.addSection(sectionTitle, elem);
             scope.level = section.level;
@@ -518,8 +492,8 @@ angular
             template: '<p ng-transclude></p> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService) {
-        "use strict";
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, hiddenPos) {
+        'use strict';
         function titleFromTime() {
             var title = timeService.getYear();
             if (title) {
@@ -615,7 +589,6 @@ angular
         var titleHeight = 80;
         var nav = angular.element('nav');
         var outline = document.querySelector('.outline');
-        var search = document.getElementById('search');
         var text = scrolled.querySelector('.text');
         var titleSection = {
             label: $scope.title,
@@ -644,27 +617,40 @@ angular
                     });
                     selectOutline(null);
                 }
-            } else if (!hasCollapsedState) {
-                nav.addClass('collapsed');
-                $scope.$apply(function () {
-                    setOutline($scope.title);
-                });
-                selectOutline(titleSection);
+            } else {
+                if (!hasCollapsedState) {
+                    nav.addClass('collapsed');
+                    $scope.$apply(function () {
+                        setOutline($scope.title);
+                    });
+                    selectOutline(titleSection);
+                } else {
+                    updateOutline();
+                }
             }
         }
 
-        function selectOutline(toSelect) {
-            if (currentSection) {
-                currentSection.removeClass('hovered');
+        function unselect(sec) {
+            if (sec) {
+                sec.removeClass('hovered');
             }
+        }
+
+        function select(toSelect) {
+            var toSelectElem;
             if (toSelect) {
-                var toSelectElem = angular.element("#out-" + toSelect.id);
+                toSelectElem = angular.element("#out-" + toSelect.id);
                 /*if (currentSection && toSelectElem[0] === currentSection[0]) {
                  return;
                  }*/
                 toSelectElem.addClass('hovered');
-                currentSection = toSelectElem;
             }
+            return toSelectElem;
+        }
+
+        function selectOutline(newSelection) {
+            unselect(currentSection);
+            currentSection = select(newSelection);
         }
 
         function updateOutline() {
@@ -672,7 +658,8 @@ angular
             var newSec;
             for (var i = 0; i < $scope.sections.length; i++) {
                 newSec = $scope.sections[i];
-                var found; found = scrolled.scrollTop > newSec.elem[0].offsetTop;
+                var found;
+                found = scrolled.scrollTop > newSec.elem[0].offsetTop;
                 if (lastSec) {
                     if (!found) {
                         selectOutline(lastSec);
@@ -686,7 +673,6 @@ angular
 
         scrolled.onscroll = function (event) {
             requestAnimationFrame(updateHeading);
-            requestAnimationFrame(updateOutline);
         };
 
         if (window.addEventListener) {    // most non-IE browsers and IE9
@@ -739,14 +725,10 @@ angular
                     $scope.alternate = " ";
                     langService.checkAlternate(commonsService.getUri(),
                         function (original) {
-                            $scope.$apply(function () {
-                                setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
-                            });
+                            setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
                         },
                         function (translation) {
-                            $scope.$apply(function () {
-                                setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible");
-                            });
+                            setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible");
                         });
                 }
             }
@@ -803,12 +785,14 @@ angular
             var distance = endLocation - startLocation;
 
             var runAnimation;
+            var lastLocation;
             // Function to stop the scrolling animation
             var stopAnimationIfRequired = function () {
                 var currentLocation = scrolled.scrollTop;
-                if (currentLocation === endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight )) {
+                if (currentLocation === endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight ) || currentLocation === lastLocation) {
                     cancelAnimationFrame(runAnimation);
                 }
+                lastLocation = currentLocation;
             };
             // Set the animation variables to 0/undefined.
             var timeLapsed = 0;

@@ -601,6 +601,8 @@ angular.module('rr0.commons', [])
                         case '\'':
                         case '.':
                         case ' ':
+                        case '(':
+                        case ')':
                             wasWord = true;
                             break;
                         default:

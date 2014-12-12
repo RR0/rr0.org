@@ -57,10 +57,13 @@ angular.module('rr0')
                             $rootScope.$broadcast("dataLoaded", questions);
                         }, function (reason) {
                             $log.error(reason);
+                            $rootScope.$broadcast("dataError", reason);
                         });
                     }).
                     error(function (data, status, headers, config) {
-                        $log.info("Could not load '" + matrixDataFile + "': " + status);
+                        var msg = "Could not load '" + matrixDataFile + "': " + status;
+                        $log.error(msg);
+                        $rootScope.$broadcast("dataError", msg);
                     });
             },
             compute: function (probable) {
@@ -143,25 +146,31 @@ angular.module('rr0')
             }
         }
 
+        $scope.$on("dataError", function (event, msg) {
+            window.alert(msg);
+        });
+
         $scope.$on("dataLoaded", function (event, questions) {
             $scope.questions = questions;
             $scope.questionsKeys = Object.keys(questions);
             questionChanged();
         });
+
         $scope.onPrevious = function () {
             if ($scope.questionIndex >= 0) {
                 $scope.questionIndex--;
                 questionChanged();
             }
         };
+
         $scope.onNext = function () {
             if ($scope.questionIndex < $scope.questionsKeys.length) {
                 $scope.questionIndex++;
                 questionChanged();
             }
         };
+
         $scope.resultsType = "NonProbable";
-        var explanationsZone = document.getElementById("explanations");
         $scope.compute = function (key) {
             var changedChoice = $scope.currentQuestion.choices[key];
             if (changedChoice && changedChoice.answerType === 'radio') {
@@ -175,8 +184,5 @@ angular.module('rr0')
                 }
             }
             $scope.explanations = matrixService.compute($scope.resultsType === "NonProbable");
-            if (org.debug) {
-                org.walkIt(explanationsZone);
-            }
         };
     }]);

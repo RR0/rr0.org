@@ -1,19 +1,6 @@
 angular.module('rr0')
-    .service('resourceBundleService', ['$log', '$q', '$rootScope', '$http', 'userLang', function ($log, $q, $rootScope, $http, userLang) {
-        var uri = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/';
-        var bundleName = 'Matrix';
-        var localeFile = uri + bundleName + '_' + userLang + '.json';
-        var loaded = $q.defer();
-        $http({method: 'GET', url: localeFile}).
-            success(function (data, status, headers, config) {
-                $log.info("Loaded '" + localeFile + "'");
-                loaded.resolve(data);
-            }).
-            error(function (data, status, headers, config) {
-                loaded.reject("Could not load '" + localeFile + "': " + status);
-            });
-        return loaded.promise;
-    }]).service('matrixService', ['$log', '$rootScope', '$http', 'resourceBundleService', function ($log, $rootScope, $http, resourceBundleService) {
+    .service('matrixService', ['$log', '$q', '$rootScope', '$http', function ($log, $q, $rootScope, $http) {
+        'use strict';
 
         function Question(t, i) {
             this.title = t;
@@ -30,38 +17,52 @@ angular.module('rr0')
             this.value = false;
         }
 
-        var matrixDataFile = 'http://rr0.org/time/1/9/7/7/Poher_Matrice/matrix.json';
-        var msg;
-        $http({method: 'GET', url: matrixDataFile}).
-            success(function (data, status, headers, config) {
-                $log.info("Loaded '" + matrixDataFile + "'");
-
-                resourceBundleService.then(function (messages) {
-                    msg = messages;
-                    var i = 0;
-                    for (var d in data) {
-                        if (data.hasOwnProperty(d)) {
-                            var item = data[d];
-                            var dotPos = item.question.indexOf('.');
-                            var questionKey = item.question.substring(0, dotPos);
-                            var choiceKey = item.question.substring(dotPos + 1);
-                            var question = questions[questionKey];
-                            if (!question) {
-                                question = new Question(messages[questionKey], i++);
-                                questions[questionKey] = question;
-                            }
-                            question.choices[choiceKey] = new Choice(messages[item.question], item.answertype, item.knownPhenomenaProbabilities);
-                        }
-                    }
-                    $rootScope.$broadcast("dataLoaded", questions);
-                }, function (reason) {
-                    $log.error(reason);
+        function loadLabels(localeFile) {
+            var loaded = $q.defer();
+            $http({method: 'GET', url: localeFile}).
+                success(function (data, status, headers, config) {
+                    $log.info("Loaded '" + localeFile + "'");
+                    loaded.resolve(data);
+                }).
+                error(function (data, status, headers, config) {
+                    loaded.reject("Could not load '" + localeFile + "': " + status);
                 });
-            }).
-            error(function (data, status, headers, config) {
-                $log.info("Could not load '" + matrixDataFile + "': " + status);
-            });
+            return loaded.promise;
+        }
+
+        var msg;
         return {
+            load: function (matrixDataFile, matrixLabels) {
+                $http({method: 'GET', url: matrixDataFile}).
+                    success(function (data, status, headers, config) {
+                        $log.info("Loaded '" + matrixDataFile + "'");
+
+                        loadLabels(matrixLabels).then(function (messages) {
+                            msg = messages;
+                            var i = 0;
+                            for (var d in data) {
+                                if (data.hasOwnProperty(d)) {
+                                    var item = data[d];
+                                    var dotPos = item.question.indexOf('.');
+                                    var questionKey = item.question.substring(0, dotPos);
+                                    var choiceKey = item.question.substring(dotPos + 1);
+                                    var question = questions[questionKey];
+                                    if (!question) {
+                                        question = new Question(messages[questionKey], i++);
+                                        questions[questionKey] = question;
+                                    }
+                                    question.choices[choiceKey] = new Choice(messages[item.question], item.answertype, item.knownPhenomenaProbabilities);
+                                }
+                            }
+                            $rootScope.$broadcast("dataLoaded", questions);
+                        }, function (reason) {
+                            $log.error(reason);
+                        });
+                    }).
+                    error(function (data, status, headers, config) {
+                        $log.info("Could not load '" + matrixDataFile + "': " + status);
+                    });
+            },
             compute: function (probable) {
                 var zerosCount = {};
                 var max = 0;
@@ -114,6 +115,11 @@ angular.module('rr0')
             }
         };
     }]).controller('matrixFormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
+        'use strict';
+
+        $scope.load = function () {
+            matrixService.load($scope.matrixFile, $scope.matrixLabels);
+        };
 
         $scope.questionIndex = 0;
 

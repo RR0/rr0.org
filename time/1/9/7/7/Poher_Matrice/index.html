@@ -1,129 +1,152 @@
 <!--#include virtual="/header-start.html" --><title>Matrice de phénomènes connus</title>
+<link rel="stylesheet" href="matrix.css" type="text/css"/>
 <meta name="url" content="http://universons.com/ovni_gbFr/gepan/matrice_phenomenes_connus.html"><!--#include virtual="/header-end.html" -->
 <p>En 1977, au moment de la création du <a href="/org/eu/fr/cnes/gepan/index.html">GEPAN</a>, <span class="people">Claude Poher</span>
-	réalise un <strong>aide mémoire</strong> destiné à aider les enquêteurs à mettre rapidement en évidence les
-	<a href="/science/crypto/ufo/enquete/meprise">phénomènes connus</a> qui pouvaient être à l'origine d'un témoignage.
+    réalise un <strong>aide mémoire</strong> destiné à aider les enquêteurs à mettre rapidement en évidence les
+    <a href="/science/crypto/ufo/enquete/meprise">phénomènes connus</a> qui pouvaient être à l'origine d'un témoignage.
 </p>
-<p>A chaque possibilité d'explication en abscisse, est attribué un indice de probabilité en ordonnée pour chaque caractéristique de
-	l'observation :
+<p>A chaque possibilité d'explication en abscisse, est attribué un indice de probabilité en ordonnée pour chaque
+    caractéristique de l'observation :
 </p>
 <ul>
-	<li>1 : Très possible</li>
-	<li>0,5 : Possible avec réserves</li>
-	<li>0,1 : Peu probable</li>
-	<li>0 : Impossible</li>
+    <li>1 : Très possible</li>
+    <li>0,5 : Possible avec réserves</li>
+    <li>0,1 : Peu probable</li>
+    <li>0 : Impossible</li>
 </ul>
 <p>
-	<iframe src="https://docs.google.com/spreadsheet/pub?key=0AsU4pZ5CUINadFQ5Rk02Mkdyd09KelB2ODRQVTdVUlE&single=true&gid=0&output=html" class="wide long"></iframe>
-	<span class="source">Poher, C.: "<a href="http://universons.com/ovni_gbFr/gepan/metodologie_gepan_fr.html">Méthode d'analyse d'une
-		observation</a>", GEPAN, 1978/1979</span></p>
-<p>Lors de l'analyse d'une observation, le <strong>nombre de 0</strong> est comptabilisé pour chaque explication. La ou les explication(s)
-	totalisant le moins de zéros est alors considérée comme la plus probable.
+    <iframe src="https://docs.google.com/spreadsheet/pub?key=0AsU4pZ5CUINadFQ5Rk02Mkdyd09KelB2ODRQVTdVUlE&single=true&gid=0&output=html" class="wide long"></iframe>
+	<span class="source">Poher, C.: "<a href="http://universons.com/ovni_gbFr/gepan/metodologie_gepan_fr.html">Méthode
+        d'analyse d'une observation</a>", GEPAN, 1978/1979</span></p>
+<p>Lors de l'analyse d'une observation, le <strong>nombre de 0</strong> est comptabilisé pour chaque explication. La ou
+    les explication(s) totalisant le moins de zéros est alors considérée comme la plus probable.
 </p>
-<p>Toutefois Poher insiste sur le fait qu'il ne s'agit que d'un aide-mémoire servant à débroussailler une enquête, qui ne remplace en aucun
-	cas le reste du travail d'enquête.
+<p>Toutefois Poher insiste sur le fait qu'il ne s'agit que d'un aide-mémoire servant à débroussailler une enquête, qui
+    ne remplace en aucun cas le reste du travail d'enquête.
 </p>
 <section title="Logiciel">
-	<p>Voici un programme fournissant les résultats de la matrice de Poher. Il calcule la probabilité d'explications en temps réel.</p>
-	<p>Les avantages d'un tel programme sont :</p>
-	<ul>
-		<li>Il <strong>évite les erreurs</strong> en automatisant les calculs et permettant de mieux qualifier les réponses autorisées
-			(choix parmi n, choix multiple).
-		</li>
-		<li>Il peut afficher les <a href="/science/crypto/ufo/enquete/meprise/index.html">méprises</a> exclues <strong>mais aussi
-			l'inverse</strong> (méprises les plus probables).
-		</li>
-		<li>Il peut <strong>prendre divers fichiers de données en entrée </strong>(du moment qu'ils respectent le même format) via le
-			paramètre <code>fileName</code>. Le fichier utilisé ici est celui de M. Poher, mais d'autres matrices (avec d'autres
-			pondérations, voire d'autres libellés, des critères supplémentaires, etc.) sont tout aussi utilisables.
-		</li>
-		<li>Il <strong>peut être exécuté comme programme autonome</strong> (depuis une ligne de commande, ouvrant une fenêtre) ou comme ici
-			être encapsulé dans une page <a href="/tech/info/soft/proj/design/arch/web">Web</a>.
-		</li>
-		<li>Il est <strong>internationalisé</strong>, c'est-à-dire que ses messages s'affichent dans la langue de l'utilisateur (français et
-			anglais par défaut sont supportés ici) telle qu'elle est spécifiée sur votre machine. Ajouter le support d'une nouvelle langue
-			se résume à ajouter un fichier contenant décrivant les versions des messages dans cette langue.
-		</li>
-		<li>Il offre en plus un <strong>calcul de différents facteurs de crédibilité, étrangeté, information</strong>, issus de
-			l'<a href="/science/crypto/ufo/enquete/methode/Ballester-Guasp.html">évaluation Ballester-Guasp</a>.
-		</li>
-	</ul>
-	<section title="Javascript">
-		<figure class="left">
-			<figcaption style="padding-left:0.8em"> Evaluation d'explications en terme de phénomènes connus</figcaption>
-			<div ng-controller="matrixFormCtrl" ng-cloak>
-				<form>
-					<fieldset id="selectPanel">
-						<div style="margin-bottom:1em">
-							<input name="previousButton" type="button" value="<" data-ng-click="onPrevious()" data-ng-disabled="questionIndex<=0">
-							<select id="combo" data-ng-model="currentQuestion" data-ng-options="q as q.title for (title,q) in questions" data-ng-change="parameterChanged()"></select>
-							<input name="nextButton" type="button" value=">" data-ng-click="onNext()" data-ng-disabled="questionIndex>=questionsKeys.length - 1">
-						</div>
-						<div data-ng-repeat="(key, field) in fields">
-							<input type="{{ field.type }}" id="{{ key }}" name="{{ field.type == 'radio' ? 'rad' : 'chk' }}" value="{{ key }}" data-ng-model="currentQuestion.choices[key].value" data-ng-change="compute('{{ key }}')">
-							<label for="{{ key }}">{{ field.label }}</label>
-						</div>
-					</fieldset>
-					<div style="margin-top:1em" data-ng-show="explanations">
-						Explications
-						<input type="radio" id="Probable" data-ng-model="resultsType" value="Probable" name="resultsType" data-ng-change="compute()"><label for="Probable">probables</label>
-						<input type="radio" id="NonProbable" data-ng-model="resultsType" value="NonProbable" name="resultsType" data-ng-change="compute()"><label for="NonProbable" checked="checked">improbables</label>
-					</div>
-				</form>
-				<div id="explanations">
-					<ol style="margin:0">
-						<li ng-repeat="(k, p) in explanations">{{ p }}</li>
-					</ol>
-				</div>
-			</div>
-		</figure>
-		<p>L'avantage d'une version Javascript est d'être exécutable facilement sur pratiquement tous les navigateurs, sans ajout d'un
-			module supplémentaire.
-		</p>
-		<ul>
-			<li>
-				<a href="https://github.com/RR0/KnownPhenomenaMatrix/tree/master/time/1/9/7/7/Poher_Matrice">Code source</a>
-			</li>
-			<li><a href="matrix.json">Données matrice</a></li>
-			<li><a href="Matrix_fr.json">Libellés français</a></li>
-			<li><a href="Matrix_en.json">Libellés anglais</a></li>
-			<li><a href="Matrix_it.json">Libellés italiens</a></li>
-		</ul>
-	</section>
-	<section title="Applet">
-		<!--<figure class="right side">--><!--<caption align="center"> Evaluation d'explications en terme de phénomènes connus</caption>-->
-		<!--<tr>--><!--<td>&lt;!&ndash; applet code="org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet" width="550" height="300" archive="matrix.jar"></applet &ndash;&gt;
+    <p>Voici un programme fournissant les résultats de la matrice de Poher. Il calcule la probabilité d'explications en
+        temps réel.
+    </p>
+    <p>Les avantages d'un tel programme sont :</p>
+    <ul>
+        <li>Il <strong>évite les erreurs</strong> en automatisant les calculs et permettant de mieux qualifier les
+            réponses autorisées (choix parmi n, choix multiple).
+        </li>
+        <li>Il peut afficher les <a href="/science/crypto/ufo/enquete/meprise/index.html">méprises</a> exclues <strong>mais
+            aussi l'inverse</strong> (méprises les plus probables).
+        </li>
+        <li>Il peut <strong>prendre divers fichiers de données en entrée </strong>(du moment qu'ils respectent le même
+            format) via le paramètre <code>fileName</code>. Le fichier utilisé ici est celui de M. Poher, mais d'autres
+            matrices (avec d'autres pondérations, voire d'autres libellés, des critères supplémentaires, etc.) sont tout
+            aussi utilisables.
+        </li>
+        <li>Il <strong>peut être exécuté comme programme autonome</strong> (depuis une ligne de commande, ouvrant une
+            fenêtre) ou comme ici être encapsulé dans une page <a href="/tech/info/soft/proj/design/arch/web">Web</a>.
+        </li>
+        <li>Il est <strong>internationalisé</strong>, c'est-à-dire que ses messages s'affichent dans la langue de
+            l'utilisateur (français et anglais par défaut sont supportés ici) telle qu'elle est spécifiée sur votre
+            machine. Ajouter le support d'une nouvelle langue se résume à ajouter un fichier contenant décrivant les
+            versions des messages dans cette langue.
+        </li>
+        <li>Il offre en plus un <strong>calcul de différents facteurs de crédibilité, étrangeté, information</strong>,
+            issus de l'<a href="/science/crypto/ufo/enquete/methode/Ballester-Guasp.html">évaluation Ballester-Guasp</a>.
+        </li>
+    </ul>
+    <section title="Javascript">
+        <figure class="left">
+            <figcaption style="padding-left:0.8em"> Evaluation d'explications en terme de phénomènes connus</figcaption>
+
+            <div ng-controller="matrixFormCtrl" ng-cloak class="matrix">
+                <details>
+                    <summary>Personnalisation</summary>
+                    <form name="customization">
+                        <div>
+                            <label for="matrixFile">Fichier matrice</label>
+                            <input name="matrix" type="text" id="matrixFile" data-ng-model="matrixFile" data-ng-init="matrixFile='http://rr0.org/time/1/9/7/7/Poher_Matrice/matrix.json'">
+                        </div>
+                        <div>
+                            <label for="matrixLabels">Fichier libellés</label>
+                            <input name="labels" type="text" id="matrixLabels" data-ng-model="matrixLabels" data-ng-init="matrixLabels='http://rr0.org/time/1/9/7/7/Poher_Matrice/Matrix_fr.json'">
+                        </div>
+                        <button data-ng-click="load()">Charger</button>
+                    </form>
+                </details>
+                <form name="questionnaire" data-ng-init="load()">
+                    <fieldset id="selectPanel">
+                        <div style="margin-bottom:1em">
+                            <input name="previousButton" type="button" value="<" data-ng-click="onPrevious()" data-ng-disabled="questionIndex<=0">
+                            <select id="combo" data-ng-model="currentQuestion" data-ng-options="q as q.title for (title,q) in questions" data-ng-change="parameterChanged()"></select>
+                            <input name="nextButton" type="button" value=">" data-ng-click="onNext()" data-ng-disabled="questionIndex>=questionsKeys.length - 1">
+                        </div>
+                        <div data-ng-repeat="(key, field) in fields">
+                            <input type="{{ field.type }}" id="{{ key }}" name="{{ field.type == 'radio' ? 'rad' : 'chk' }}" value="{{ key }}" data-ng-model="currentQuestion.choices[key].value" data-ng-change="compute('{{ key }}')">
+                            <label for="{{ key }}">{{ field.label }}</label>
+                        </div>
+                    </fieldset>
+                    <div style="margin-top:1em" data-ng-show="explanations">
+                        Explications
+                        <input type="radio" id="Probable" data-ng-model="resultsType" value="Probable" name="resultsType" data-ng-change="compute()"><label for="Probable">probables</label>
+                        <input type="radio" id="NonProbable" data-ng-model="resultsType" value="NonProbable" name="resultsType" data-ng-change="compute()"><label for="NonProbable" checked="checked">improbables</label>
+                    </div>
+                </form>
+                <div id="explanations">
+                    <ol style="margin:0">
+                        <li ng-repeat="(k, p) in explanations">{{ p }}</li>
+                    </ol>
+                </div>
+            </div>
+        </figure>
+        <p>L'avantage d'une version Javascript est d'être exécutable facilement sur pratiquement tous les navigateurs,
+            sans ajout d'un module supplémentaire.
+        </p>
+        <ul>
+            <li>
+                <a href="https://github.com/RR0/KnownPhenomenaMatrix/tree/master/time/1/9/7/7/Poher_Matrice">Code
+                    source</a>
+            </li>
+            <li><a href="matrix.json">Données matrice</a></li>
+            <li><a href="Matrix_fr.json">Libellés français</a></li>
+            <li><a href="Matrix_en.json">Libellés anglais</a></li>
+            <li><a href="Matrix_it.json">Libellés italiens</a></li>
+        </ul>
+    </section>
+    <section title="Applet">
+        <!--<figure class="right side">-->
+        <!--<caption align="center"> Evaluation d'explications en terme de phénomènes connus</caption>--><!--<tr>--><!--<td>&lt;!&ndash; applet code="org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet" width="550" height="300" archive="matrix.jar"></applet &ndash;&gt;
 		--><!--<script src="http://www.java.com/js/deployJava.js"></script>--><!--<script>-->
-		<!--var attributes = { code: 'org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet.class',-->
-		<!--archive: 'http://rr0.orgmatrix2.jar',--><!--width: 550, height: 350};-->
-		<!--var parameters = {fontSize: 16, jnlp_href: 'matrix.jnlp'};--><!--var version = '1.6';-->
-		<!--deployJava.runApplet(attributes, parameters, version);--><!--</script>--><!--</td>--><!--</tr>--><!--</table>-->
-		<p>Une <a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applet</a> est un petit programme
-			<a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> pouvant s'exécuter dans un navigateur <span class="note">[les utilisateurs d'une version récente de <a href="/org/us/company/microsoft/MSIE.html">Internet
-				Explorer</a> verront un bandeau jaune en haut de la page sur lequel il faut cliquer pour activer le contenu "actif"]</span>.
-		</p>
-	</section>
+        <!--var attributes = { code: 'org.rr0.is.presentation.view.report.KnownPhenomenonMatrixApplet.class',-->
+        <!--archive: 'http://rr0.orgmatrix2.jar',--><!--width: 550, height: 350};-->
+        <!--var parameters = {fontSize: 16, jnlp_href: 'matrix.jnlp'};--><!--var version = '1.6';-->
+        <!--deployJava.runApplet(attributes, parameters, version);--><!--</script>--><!--</td>--><!--</tr>-->
+        <!--</table>-->
+        <p>Une <a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applet</a> est un petit programme
+            <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> pouvant s'exécuter dans un
+            navigateur <span class="note">[les utilisateurs d'une version récente de <a href="/org/us/company/microsoft/MSIE.html">Internet
+                Explorer</a> verront un bandeau jaune en haut de la page sur lequel il faut cliquer pour activer le contenu "actif"]</span>.
+        </p>
+    </section>
 </section>
 <p><strong>Références </strong>:</p>
 <ul>
-	<li><a href="matrix.jar">JAR exécutable</a> - Si
-		<a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a><a href="/tech/info/soft/proj/impl/lang/java"></a> est installé sur
-		votre ordinateur, vous pourrez l'exécuter comme tout autre programme.
-	</li>
-	<li>Code source
-		<ul>
-			<li>
-				<a href="http://rr0.cvs.sourceforge.net/rr0/Java/ri/org/rr0/is/presentation/view/report/KnownPhenomenonMatrixApplet.java?view=markup">de
-					cette applet Java</a>
-			</li>
-			<li>
-				<a href="http://rr0.cvs.sourceforge.net/viewvc/rr0/Java/android/src/org/rr0/is/presentation/view/science/crypto/ufo/invest/mis/KnownPhenomenonMatrixActivity.java?view=markup">de
-					la version pour les smartphones Android</a>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<a href="PoherMatrix.csv">Le fichier de données utilisé par défaut, reflétant la matrice de Poher</a>
-	</li>
+    <li><a href="matrix.jar">JAR exécutable</a> - Si
+        <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a><a href="/tech/info/soft/proj/impl/lang/java"></a>
+        est installé sur votre ordinateur, vous pourrez l'exécuter comme tout autre programme.
+    </li>
+    <li>Code source
+        <ul>
+            <li>
+                <a href="http://rr0.cvs.sourceforge.net/rr0/Java/ri/org/rr0/is/presentation/view/report/KnownPhenomenonMatrixApplet.java?view=markup">de
+                    cette applet Java</a>
+            </li>
+            <li>
+                <a href="http://rr0.cvs.sourceforge.net/viewvc/rr0/Java/android/src/org/rr0/is/presentation/view/science/crypto/ufo/invest/mis/KnownPhenomenonMatrixActivity.java?view=markup">de
+                    la version pour les smartphones Android</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="PoherMatrix.csv">Le fichier de données utilisé par défaut, reflétant la matrice de Poher</a>
+    </li>
 </ul>
 <!--#include virtual="/footer.html" -->

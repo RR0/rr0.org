@@ -28,7 +28,6 @@ nav {
   > ul {
     overflow: auto; /* clearfix */
     width: 100%; /* clearfix */
-    height: 100%;
   }
   ul {
     background: $headerFromColor; /* for non-css3 browsers */
@@ -67,7 +66,6 @@ nav {
       display: inline;
     }
     ul {
-      // Outline menu
       padding: 0;
       @include bottomInnerShadow;
       position: absolute;
@@ -126,12 +124,15 @@ nav {
   }
   float: right;
   display: none;
+}
+
+@import "search/search";
+
+@media (max-width: $smallSinglePaneBreak) {
   .label {
     display: none;
   }
 }
-
-@import "search/search";
 
 @media (max-width: $singlePaneBreak) {
   aside {
@@ -157,6 +158,9 @@ nav {
       display: inline;
     }
   }
+  .label {
+    display: inline;
+  }
   nav {
     overflow: auto;
     width: $leftPaneWidth;
@@ -176,11 +180,6 @@ nav {
           position: static;
         }
       }
-    }
-  }
-  .toggleMap {
-    .label {
-      display: inline;
     }
   }
   .text {

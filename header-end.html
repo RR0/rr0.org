@@ -12,7 +12,7 @@
                 </li>
                 <li tabindex="100" data-ng-click="titleClick()" data-ng-mouseover="titleOver()" data-ng-mouseleave="titleLeave()" class="constant">
                     <a href="#contents" data-ng-click="sectionClick('#contents')" class="outline-title" id="out-top">
-                        <span class="constant label" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span>
+                        <span class="constant" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span>
                     </a>
                     <ul class="outline">
                         <li data-ng-attr-tabindex="{{101+$index}}" class="constant" data-ng-repeat="s in sections" data-ng-click="sectionClick(s)">

@@ -109,7 +109,7 @@ angular
                 },
                 {
                     dir: "/org/",
-                    label: "<span class='iconic home'></span>",
+                    label: "<span class='iconic home'> <span class='label'>Organisations</span></span>",
                     title: "Organisations"
                 },
                 {

@@ -838,7 +838,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
         'use strict';
         navigationService.addStart({
                 dir: timeRoot,
-                label: "<span class='iconic clock'></span>",
+                label: "<span class='iconic clock'> <span class='label'>Historique</span></span>",
                 title: "Historique"
             }
         );

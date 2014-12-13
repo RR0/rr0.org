@@ -17,54 +17,79 @@ angular.module('rr0')
             this.value = false;
         }
 
-        function loadLabels(localeFile) {
+        function loadURL(u) {
             var loaded = $q.defer();
-            $http({method: 'GET', url: localeFile}).
-                success(function (data, status, headers, config) {
-                    $log.info("Loaded '" + localeFile + "'");
-                    loaded.resolve(data);
+            $http({method: 'GET', url: u}).
+                success(function (labelsData, status, headers, config) {
+                    $log.info("Loaded '" + u + "'");
+                    loaded.resolve(labelsData);
                 }).
                 error(function (data, status, headers, config) {
-                    loaded.reject("Could not load '" + localeFile + "': " + status);
+                    loaded.reject("Could not load '" + u + "': " + status);
                 });
             return loaded.promise;
         }
 
+        function loadFile(f) {
+            var loaded = $q.defer();
+            var matrixFileReader = new FileReader();
+            matrixFileReader.onloadend = function (e) {
+                try {
+                    var matrixData = JSON.parse(e.target.result);
+                    loaded.resolve(matrixData);
+                } catch (err) {
+                    loaded.reject(err);
+                }
+            };
+            matrixFileReader.readAsText(f);
+            return loaded.promise;
+        }
+
+        function loadLabels(labelsInput) {
+            return typeof labelsInput === 'object' ? loadFile(labelsInput) : loadURL(labelsInput);
+        }
+
+        function loadMatrixData(matrixData, labelsInput) {
+            loadLabels(labelsInput).then(function (messages) {
+                msg = messages;
+                var i = 0;
+                for (var d in matrixData) {
+                    if (matrixData.hasOwnProperty(d)) {
+                        var item = matrixData[d];
+                        var dotPos = item.question.indexOf('.');
+                        var questionKey = item.question.substring(0, dotPos);
+                        var choiceKey = item.question.substring(dotPos + 1);
+                        var question = questions[questionKey];
+                        if (!question) {
+                            question = new Question(messages[questionKey], i++);
+                            questions[questionKey] = question;
+                        }
+                        question.choices[choiceKey] = new Choice(messages[item.question], item.answertype, item.knownPhenomenaProbabilities);
+                    }
+                }
+                $rootScope.$broadcast("dataLoaded", questions);
+            }, function (reason) {
+                $log.error(reason);
+                $rootScope.$broadcast("dataError", reason);
+            });
+        }
+
         var msg;
         return {
-            load: function (matrixDataFile, matrixLabels) {
-                $http({method: 'GET', url: matrixDataFile}).
-                    success(function (data, status, headers, config) {
-                        $log.info("Loaded '" + matrixDataFile + "'");
-
-                        loadLabels(matrixLabels).then(function (messages) {
-                            msg = messages;
-                            var i = 0;
-                            for (var d in data) {
-                                if (data.hasOwnProperty(d)) {
-                                    var item = data[d];
-                                    var dotPos = item.question.indexOf('.');
-                                    var questionKey = item.question.substring(0, dotPos);
-                                    var choiceKey = item.question.substring(dotPos + 1);
-                                    var question = questions[questionKey];
-                                    if (!question) {
-                                        question = new Question(messages[questionKey], i++);
-                                        questions[questionKey] = question;
-                                    }
-                                    question.choices[choiceKey] = new Choice(messages[item.question], item.answertype, item.knownPhenomenaProbabilities);
-                                }
-                            }
-                            $rootScope.$broadcast("dataLoaded", questions);
-                        }, function (reason) {
-                            $log.error(reason);
-                            $rootScope.$broadcast("dataError", reason);
-                        });
-                    }).
-                    error(function (data, status, headers, config) {
-                        var msg = "Could not load '" + matrixDataFile + "': " + status;
-                        $log.error(msg);
-                        $rootScope.$broadcast("dataError", msg);
+            load: function (matrixInput, labelsInput) {
+                if (typeof matrixInput === 'object') {
+                    loadFile(matrixInput).then(function (matrixData) {
+                        loadMatrixData(matrixData, labelsInput);
+                    }, function (reason) {
+                        $rootScope.$broadcast("dataError", reason);
                     });
+                } else {
+                    loadURL(matrixInput).then(function (matrixData) {
+                        loadMatrixData(matrixData, labelsInput);
+                    }, function (reason) {
+                        $rootScope.$broadcast("dataError", reason);
+                    });
+                }
             },
             compute: function (probable) {
                 var zerosCount = {};
@@ -117,11 +142,13 @@ angular.module('rr0')
                 return explanationsWithoutHoles;
             }
         };
-    }]).controller('matrixFormCtrl', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
+    }]).controller('MatrixFormController', ['$log', '$scope', 'matrixService', function ($log, $scope, matrixService) {
         'use strict';
 
         $scope.load = function () {
-            matrixService.load($scope.matrixFile, $scope.matrixLabels);
+            var matrixInput = document.getElementById('matrixFile').files[0] || $scope.matrixURL;
+            var labelsInput = document.getElementById('labelsFile').files[0] || $scope.labelsURL;
+            matrixService.load(matrixInput, labelsInput);
         };
 
         $scope.questionIndex = 0;
@@ -147,6 +174,7 @@ angular.module('rr0')
         }
 
         $scope.$on("dataError", function (event, msg) {
+            $log.error(msg);
             window.alert(msg);
         });
 

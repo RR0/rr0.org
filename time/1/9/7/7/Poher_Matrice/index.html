@@ -55,20 +55,36 @@
     </ul>
     <section title="Javascript">
         <figure class="left">
-            <figcaption style="padding-left:0.8em"> Evaluation d'explications en terme de phénomènes connus</figcaption>
+            <figcaption> Evaluation d'explications en terme de phénomènes connus</figcaption>
 
-            <div ng-controller="matrixFormCtrl" ng-cloak class="matrix">
+            <div ng-controller="MatrixFormController" ng-cloak class="matrix">
                 <details>
                     <summary>Personnalisation</summary>
                     <form name="customization">
-                        <div>
-                            <label for="matrixFile">Fichier matrice</label>
-                            <input name="matrix" type="text" id="matrixFile" data-ng-model="matrixFile" data-ng-init="matrixFile='http://rr0.org/time/1/9/7/7/Poher_Matrice/matrix.json'">
-                        </div>
-                        <div>
-                            <label for="matrixLabels">Fichier libellés</label>
-                            <input name="labels" type="text" id="matrixLabels" data-ng-model="matrixLabels" data-ng-init="matrixLabels='http://rr0.org/time/1/9/7/7/Poher_Matrice/Matrix_fr.json'">
-                        </div>
+                        <fieldset class="tabs">
+                            <legend>Fichier matrice</legend>
+                            <div class="tab">
+                                <label for="matrixURL">URL</label>
+                                <input name="matrixURL" type="text" id="matrixURL" data-ng-model="matrixURL" data-ng-init="matrixURL='http://rr0.org/time/1/9/7/7/Poher_Matrice/matrix.json'">
+                            </div>
+                            ou
+                            <div class="tab">
+                                <label for="matrixFile">Upload</label>
+                                <input name="matrixFile" type="file" id="matrixFile" data-ng-model="matrixFile">
+                            </div>
+                        </fieldset>
+                        <fieldset class="tabs">
+                            <legend>Fichier libellés</legend>
+                            <div class="tab">
+                                <label for="labelsURL">URL</label>
+                                <input name="labelsURL" type="text" id="labelsURL" data-ng-model="labelsURL" data-ng-init="labelsURL='http://rr0.org/time/1/9/7/7/Poher_Matrice/Matrix_fr.json'">
+                            </div>
+                            ou
+                            <div class="tab">
+                                <label for="labelsFile">Upload</label>
+                                <input name="labelsFile" type="file" id="labelsFile" data-ng-model="labelsFile">
+                            </div>
+                        </fieldset>
                         <button data-ng-click="load()">Charger</button>
                     </form>
                 </details>

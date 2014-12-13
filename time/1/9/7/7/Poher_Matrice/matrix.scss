@@ -3,9 +3,9 @@
   form {
     width: 100%;
   }
-  form[name="customization"] {
+  .tabs {
     display: table;
-    div {
+   .tab {
       display: table-row;
       > * {
         display: table-cell;

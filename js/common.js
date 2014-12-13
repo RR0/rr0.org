@@ -563,6 +563,7 @@ var org = new OrgModule();
 }());
 
 angular.module('rr0.commons', [])
+    .constant('constantClass', org.constantClass)
     .service('commonsService', function () {
         'use strict';
         return {

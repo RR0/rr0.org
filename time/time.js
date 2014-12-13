@@ -834,7 +834,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             }
         };
     }])
-    .run(['timeRoot', 'netService', 'navigationService', 'timeService', 'peopleService', function (timeRoot, netService, navigationService, timeService, peopleService) {
+    .run(['timeRoot', 'netService', 'navigationService', 'timeService', 'peopleService', 'constantClass', function (timeRoot, netService, navigationService, timeService, peopleService, constantClass) {
         'use strict';
         navigationService.addStart({
                 dir: timeRoot,
@@ -847,7 +847,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
 
         function handleListItem(e) {
             var uls = e.getElementsByTagName("UL");
-            if (!org.hasClass(e, org.constantClass) && uls.length > 0) {
+            if (!org.hasClass(e, constantClass) && uls.length > 0) {
                 var details = document.createElement("details");
                 details.setAttribute("open", "");
                 var ul = uls[0];

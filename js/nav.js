@@ -17,16 +17,6 @@ function getNavList() {
     }
     return navList;
 }
-function createNavElement(c) {
-    var li = document.getElementsByClassName(c)[0];
-    if (!li) {
-        li = document.createElement("li");
-        c = !(!c) ? org.constantClass + " " + c : org.constantClass;
-        li.setAttribute("class", c);
-        getNavList().appendChild(li);
-    }
-    return li;
-}
 
 var style = null;
 
@@ -492,7 +482,7 @@ angular
             template: '<p ng-transclude></p> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, hiddenPos) {
+    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', 'constantClass', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, hiddenPos, constantClass) {
         'use strict';
         function titleFromTime() {
             var title = timeService.getYear();
@@ -506,6 +496,17 @@ angular
                 }
             }
             return title;
+        }
+
+        function createNavElement(c) {
+            var li = document.getElementsByClassName(c)[0];
+            if (!li) {
+                li = document.createElement("li");
+                c = !(!c) ? constantClass + " " + c : constantClass;
+                li.setAttribute("class", c);
+                getNavList().appendChild(li);
+            }
+            return li;
         }
 
         function titleFromPeople() {

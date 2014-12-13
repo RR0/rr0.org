@@ -1,5 +1,5 @@
 angular.module('rr0.net', ['rr0.commons'])
-    .service('netService', ['commonsService', '$log', '$http', function (commonsService, $log, $http) {
+    .service('netService', ['commonsService', '$log', '$http', 'constantClass', function (commonsService, $log, $http, constantClass) {
         'use strict';
 
         /**
@@ -14,7 +14,7 @@ angular.module('rr0.net', ['rr0.commons'])
          */
         function linkify(e, k, l, r, cacheIt) {
             var uri = commonsService.getUri();
-            if (!org.hasClass(e, org.constantClass) && l !== uri && (l + "/") !== uri) {
+            if (!org.hasClass(e, constantClass) && l !== uri && (l + "/") !== uri) {
                 var txt = org.text(e);
                 if (txt) {
                     var pos = txt.indexOf(k);
@@ -73,7 +73,7 @@ angular.module('rr0.net', ['rr0.commons'])
                 if (l) {
                     l = commonsService.addEndingSlash(l);
                 }
-                if (e.className !== org.constantClass) {
+                if (e.className !== constantClass) {
                     if (!replacement) {
                         replacement = toReplace;
                     }

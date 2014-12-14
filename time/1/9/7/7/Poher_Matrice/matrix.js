@@ -8,7 +8,7 @@ angular.module('rr0')
             this.index = i;
         }
 
-        var questions = {};
+        var self = this;
 
         function Choice(l, a, knownPhenomenaProbabilities) {
             this.label = l;
@@ -53,6 +53,7 @@ angular.module('rr0')
             loadLabels(labelsInput).then(function (messages) {
                 msg = messages;
                 var i = 0;
+                var questions = self.questions = {};
                 for (var d in matrixData) {
                     if (matrixData.hasOwnProperty(d)) {
                         var item = matrixData[d];
@@ -94,6 +95,7 @@ angular.module('rr0')
             compute: function (probable) {
                 var zerosCount = {};
                 var max = 0;
+                var questions = self.questions;
                 for (var q in questions) {
                     if (questions.hasOwnProperty(q)) {
                         var question = questions[q];
@@ -148,7 +150,10 @@ angular.module('rr0')
         $scope.load = function () {
             var matrixInput = document.getElementById('matrixFile').files[0] || $scope.matrixURL;
             var labelsInput = document.getElementById('labelsFile').files[0] || $scope.labelsURL;
-            matrixService.load(matrixInput, labelsInput);
+            if (matrixInput && labelsInput) {
+                $scope.questions = [];
+                matrixService.load(matrixInput, labelsInput);
+            }
         };
 
         $scope.questionIndex = 0;

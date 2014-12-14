@@ -4,7 +4,7 @@ RR0  [![Build Status](https://travis-ci.org/RR0/RR0.svg?branch=master)](https://
 RR0 is a client-side library that aims to ease the display of testimonial data.
 It is instantiated as the http://rr0.org website, which hosts various data about unexplained phenomena.
 
-It relies on AngularJS
+It relies on the [AngularJS](https://angularjs.org/) framework.
 
 General principles
 ------------------

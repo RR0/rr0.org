@@ -4,44 +4,51 @@ describe("Time module", function () {
     beforeEach(angular.mock.module('rr0.time'));
 
     var $rootScope;
+    var $compile;
+    var netService;
     var timeService;
-    beforeEach(angular.mock.inject(function (_$rootScope_, _timeService_) {
+
+    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _netService_, _timeService_) {
+        $compile = _$compile_;
+        netService = _netService_;
         $rootScope = _$rootScope_;
         timeService = _timeService_;
     }));
 
-    describe("parse", function () {
-        /*  it("parses ISO date", function () {
-         var dateMoment1 = org.rr0.time.NewMoment();
-         dateMoment1.set
-         });*/
-        it("parses ISO date", function () {
-            var dateMoment1 = timeService.NewMoment();
-            var date1 = dateMoment1.fromString('1998-08-30');
-            expect(date1.getYear()).toBe(1998);
-            expect(date1.getMonth()).toBe(8);
-            expect(date1.getDayOfMonth()).toBe(30);
-        });
-        it("parses ISO datetime", function () {
-            var dateMoment = timeService.NewMoment();
-            var date = dateMoment.fromString('1998-08-31 17:35');
-            expect(date.getYear()).toBe(1998);
-            expect(date.getMonth()).toBe(8);
-            expect(date.getDayOfMonth()).toBe(31);
-            expect(date.getHour()).toBe(17);
-            expect(date.getMinutes()).toBe(35);
-        });
-        /*        describe("contextually", function () {
-         var dateMoment = timeService.NewMoment();
-         var date = dateMoment.fromString('1998-08-30');
+    describe("timeService", function () {
+        describe("parse", function () {
+            /*  it("parses ISO date", function () {
+             var dateMoment1 = org.rr0.time.NewMoment();
+             dateMoment1.set
+             });*/
+            it("parses ISO date", function () {
+                var dateMoment = timeService.NewMoment();
+                var date = dateMoment.fromString('1998-08-30');
+                expect(date.getYear()).toBe(1998);
+                expect(date.getMonth()).toBe(8);
+                expect(date.getDayOfMonth()).toBe(30);
+            });
+            it("parses ISO datetime", function () {
+                var dateMoment = timeService.NewMoment();
+                var date = dateMoment.fromString('1998-08-31 17:35');
+                expect(date.getYear()).toBe(1998);
+                expect(date.getMonth()).toBe(8);
+                expect(date.getDayOfMonth()).toBe(31);
+                expect(date.getHour()).toBe(17);
+                expect(date.getMinutes()).toBe(35);
+            });
+            /*        describe("contextually", function () {
+             var dateMoment = timeService.NewMoment();
+             var date = dateMoment.fromString('1998-08-30');
 
-         it("parses day", function () {
-         date = dateMoment.fromString('31');
-         expect(date.getYear()).toBe(1998);
-         expect(date.getMonth()).toBe(8);
-         expect(date.getDayOfMonth()).toBe(31);
-         });
-         });*/
+             it("parses day", function () {
+             date = dateMoment.fromString('31');
+             expect(date.getYear()).toBe(1998);
+             expect(date.getMonth()).toBe(8);
+             expect(date.getDayOfMonth()).toBe(31);
+             });
+             });*/
+        });
     });
     describe("encode", function () {
         it("ISO string", function () {
@@ -60,138 +67,123 @@ describe("Time module", function () {
             expect(timeMoment.toISOString()).toBe('1998-08-31T16:38');
         });
     });
-});
-describe("Time directive", function () {
-    'use strict';
+    describe("Time directive", function () {
+        org.rr0.context.language = 'fr';
 
-    var $compile;
-    var $rootScope;
-    var netService;
-    var timeService;
-
-    org.rr0.context.language = 'fr';
-    beforeEach(angular.mock.module('rr0.time'));
-
-    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _netService_, _timeService_) {
-        $compile = _$compile_;
-        $rootScope = _$rootScope_;
-        netService = _netService_;
-        timeService = _timeService_;
-    }));
-
-    it("find day of week", function () {
-        expect(timeService.getDayOfWeek(1998, 8, 31)).toBe(1);
-        expect(timeService.dayOfWeekNam(0)).toBe('Dimanche');
-        expect(timeService.dayOfWeekNam(1)).toBe('Lundi');
-    });
-    it("sets current month", function () {
-        timeService.setMonth(2);
-        expect(timeService.getMonth()).toBe(2);
-    });
-    describe("URLs", function () {
-        it("recognizes chronology URLs", function () {
-            expect(timeService.isTimeURL("/time/1/9/9/0/index.html")).toBe(true);
-            expect(timeService.isTimeURL("/science/index.html")).toBe(false);
+        it("find day of week", function () {
+            expect(timeService.getDayOfWeek(1998, 8, 31)).toBe(1);
+            expect(timeService.dayOfWeekNam(0)).toBe('Dimanche');
+            expect(timeService.dayOfWeekNam(1)).toBe('Lundi');
         });
-        it("produces links to chronology pages", function () {
-            expect(timeService.yearLink("1990")).toBe("/time/1/9/9/0");
-            expect(timeService.yearLink("1990", true)).toBe("/time/1/9/9/");
+        it("sets current month", function () {
+            timeService.setMonth(2);
+            expect(timeService.getMonth()).toBe(2);
         });
-    });
-    it('display durations in minutes', function () {
-        var element = $compile("<time datetime='P10M'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("10&nbsp;minutes");
+        describe("URLs", function () {
+            it("recognizes chronology URLs", function () {
+                expect(timeService.isTimeURL("/time/1/9/9/0/index.html")).toBe(true);
+                expect(timeService.isTimeURL("/science/index.html")).toBe(false);
+            });
+            it("produces links to chronology pages", function () {
+                expect(timeService.yearLink("1990")).toBe("/time/1/9/9/0");
+                expect(timeService.yearLink("1990", true)).toBe("/time/1/9/9/");
+            });
+        });
+        it('display durations in minutes', function () {
+            var element = $compile("<time datetime='P10M'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("10&nbsp;minutes");
 
-        element = $compile("<time datetime='P1M'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("1&nbsp;minute");
-    });
-    it('display durations in seconds', function () {
-        var element = $compile("<time datetime='P10S'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("10&nbsp;secondes");
+            element = $compile("<time datetime='P1M'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("1&nbsp;minute");
+        });
+        it('display durations in seconds', function () {
+            var element = $compile("<time datetime='P10S'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("10&nbsp;secondes");
 
-        element = $compile("<time datetime='P1S'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("1&nbsp;seconde");
-    });
-    it('display durations in days', function () {
-        var element = $compile("<time datetime='P10D'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("10&nbsp;jours");
+            element = $compile("<time datetime='P1S'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("1&nbsp;seconde");
+        });
+        it('display durations in days', function () {
+            var element = $compile("<time datetime='P10D'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("10&nbsp;jours");
 
-        element = $compile("<time datetime='P1D'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("1&nbsp;jour");
-    });
-    it('display mixed durations', function () {
-        var element = $compile("<time datetime='P10D12M5S'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("10&nbsp;jours, 12&nbsp;minutes et 5&nbsp;secondes");
+            element = $compile("<time datetime='P1D'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("1&nbsp;jour");
+        });
+        it('display mixed durations', function () {
+            var element = $compile("<time datetime='P10D12M5S'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("10&nbsp;jours, 12&nbsp;minutes et 5&nbsp;secondes");
 
-        element = $compile("<time datetime='P12M5S'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("12&nbsp;minutes et 5&nbsp;secondes");
+            element = $compile("<time datetime='P12M5S'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("12&nbsp;minutes et 5&nbsp;secondes");
 
-        element = $compile("<time datetime='P10D12M'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("10&nbsp;jours et 12&nbsp;minutes");
+            element = $compile("<time datetime='P10D12M'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("10&nbsp;jours et 12&nbsp;minutes");
 
-        element = $compile("<time datetime='P10D5S'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("10&nbsp;jours et 5&nbsp;secondes");
-    });
-    it('display dates', function () {
-        spyOn(netService, "onExists").and.returnValue(true);
+            element = $compile("<time datetime='P10D5S'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("10&nbsp;jours et 5&nbsp;secondes");
+        });
+        it('display dates', function () {
+            spyOn(netService, "onExists").and.returnValue(true);
 
-        var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("Dimanche 29 Juin 1997");
-    });
-    it('display datetimes', function () {
-        spyOn(netService, "onExists").and.returnValue(true);
+            var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("Dimanche 29 Juin 1997");
+        });
+        it('display datetimes', function () {
+            spyOn(netService, "onExists").and.returnValue(true);
 
-        var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("Samedi 25 Juillet 1998 à 17:20");
-    });
-    it('display time intervals', function () {
-        spyOn(netService, "onExists").and.returnValue(true);
+            var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("Samedi 25 Juillet 1998 à 17:20");
+        });
+        it('display time intervals', function () {
+            spyOn(netService, "onExists").and.returnValue(true);
 
-        var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("Dimanche 29 Juin 1997 au Mercredi 20 Mai 1998");
+            var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("Dimanche 29 Juin 1997 au Mercredi 20 Mai 1998");
 
-    /*    element = $compile("<time datetime='1997-05-29/1997-06-30'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("Jeudi 29 Mai au Lundi 30 Juin");
+            /*    element = $compile("<time datetime='1997-05-29/1997-06-30'></time>")($rootScope);
+             $rootScope.$digest();
+             expect(element.html()).toContain("Jeudi 29 Mai au Lundi 30 Juin");
 
-/*        element = $compile("<time datetime='1998-05-20/1998-05-25'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("Mercredi 20 Mai 1998 au lendemain");*/
-    });
-    it('display dates contextually', function () {
-        spyOn(netService, "onExists").and.returnValue(true);
+             /*        element = $compile("<time datetime='1998-05-20/1998-05-25'></time>")($rootScope);
+             $rootScope.$digest();
+             expect(element.html()).toContain("Mercredi 20 Mai 1998 au lendemain");*/
+        });
+        it('display dates contextually', function () {
+            spyOn(netService, "onExists").and.returnValue(true);
 
-        var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("Dimanche 29 Juin 1997");
+            var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("Dimanche 29 Juin 1997");
 
-        element = $compile("<time datetime='1997-06-29 17:20'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("à 17:20");
+            element = $compile("<time datetime='1997-06-29 17:20'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("à 17:20");
 
-        element = $compile("<time datetime='1997-06-30'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("lendemain");
+            element = $compile("<time datetime='1997-06-30'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("lendemain");
 
-        element = $compile("<time datetime='1997-06-31 20:05'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("lendemain à 20:05");
+            element = $compile("<time datetime='1997-06-31 20:05'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("lendemain à 20:05");
 
-        element = $compile("<time datetime='1997-06-30 19:08'></time>")($rootScope);
-        $rootScope.$digest();
-        expect(element.html()).toContain("veille à 19:08");
+            element = $compile("<time datetime='1997-06-30 19:08'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toContain("veille à 19:08");
+        });
     });
 });

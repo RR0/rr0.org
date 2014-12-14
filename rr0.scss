@@ -143,7 +143,9 @@ aside {
 
 @media (max-width: 720px) {
   /*@media (touch-enabled),(-webkit-touch-enabled),(-moz-touch-enabled),(-o-touch-enabled),(-ms-touch-enabled) {*/
-
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 }
 
 @media (max-width: 480px) {

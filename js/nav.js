@@ -118,7 +118,7 @@ angular
             for (var i = 0; i < nes.length; i++) {
                 var ne = nes[i];
                 if (ne) {
-                    ne.innerHTML = "<a href=\"" + nLink + "\" title='Suivant'>→ " + n + "</a>";
+                    ne.innerHTML = "<a href=\"" + nLink + "\" title='Suivant'> " + n + "</a>";
                 }
             }
         }
@@ -133,7 +133,7 @@ angular
             for (var i = 0; i < pes.length; i++) {
                 var pe = pes[i];
                 if (pe) {
-                    pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'>← " + p + "</a>";
+                    pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'> " + p + "</a>";
                 }
             }
         }

@@ -22,8 +22,9 @@
                         </li>
                     </ul>
                 </li>
-                <li data-ng-repeat="n in ns" class="constant {{::n.style}}">
-                    <a data-ng-if="n.link && n.label" data-ng-href="{{::n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{::n.title}}"></span></a>
+                <li data-ng-repeat-start="n in ns" class="collapsed"> &gt; </li>
+                <li data-ng-repeat-end class="constant {{::n.style}}">
+                    <a data-ng-href="{{::n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{::n.title}}"></span></a>
                 </li>
                 <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
                     <div class="search"></div>

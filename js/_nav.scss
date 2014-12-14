@@ -24,10 +24,6 @@ nav {
       font-weight: bold;
     }
   }
-  > ul {
-    overflow: auto; /* clearfix */
-    width: 100%; /* clearfix */
-  }
   ul {
     background: $headerFromColor; /* for non-css3 browsers */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1); /* for IE */
@@ -138,7 +134,7 @@ nav {
   }
   nav {
     > ul {
-      overflow: hidden;
+      overflow: hidden; /* BFC for ul */
     }
   }
 }
@@ -178,6 +174,9 @@ nav {
           position: static;
         }
       }
+    }
+    .collapsed {
+      display: none;
     }
   }
   .text {

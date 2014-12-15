@@ -18,31 +18,31 @@ angular.module('rr0')
         }
 
         function loadURL(u) {
-            var loaded = $q.defer();
-            $http({method: 'GET', url: u}).
-                success(function (labelsData, status, headers, config) {
-                    $log.info("Loaded '" + u + "'");
-                    loaded.resolve(labelsData);
-                }).
-                error(function (data, status, headers, config) {
-                    loaded.reject("Could not load '" + u + "': " + status);
-                });
-            return loaded.promise;
+            return $q(function (resolve, reject) {
+                $http({method: 'GET', url: u}).
+                    success(function (labelsData, status, headers, config) {
+                        $log.info("Loaded '" + u + "'");
+                        resolve(labelsData);
+                    }).
+                    error(function (data, status, headers, config) {
+                        reject("Could not load '" + u + "': " + status);
+                    });
+            });
         }
 
         function loadFile(f) {
-            var loaded = $q.defer();
-            var matrixFileReader = new FileReader();
-            matrixFileReader.onloadend = function (e) {
-                try {
-                    var matrixData = JSON.parse(e.target.result);
-                    loaded.resolve(matrixData);
-                } catch (err) {
-                    loaded.reject(err);
-                }
-            };
-            matrixFileReader.readAsText(f);
-            return loaded.promise;
+            return $q(function (resolve, reject) {
+                var matrixFileReader = new FileReader();
+                matrixFileReader.onloadend = function (e) {
+                    try {
+                        var matrixData = JSON.parse(e.target.result);
+                        resolve(matrixData);
+                    } catch (err) {
+                        reject(err);
+                    }
+                };
+                matrixFileReader.readAsText(f);
+            });
         }
 
         function loadLabels(labelsInput) {

@@ -31,10 +31,6 @@ angular
             return $sce.trustAsHtml(val);
         };
     }])
-    .run(['$rootScope', function ($rootScope) {
-        'use strict';
-        $rootScope.title = "";
-    }])
     .service('navigationService', ['$rootScope', 'commonsService', 'netService', 'timeService', function ($rootScope, commonsService, netService, timeService) {
         'use strict';
 
@@ -482,8 +478,24 @@ angular
             template: '<p ng-transclude></p> '
         };
     }])
-    .controller('HeadCtrl', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', 'constantClass', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, hiddenPos, constantClass) {
+    .controller('HeadController', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', 'constantClass', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, hiddenPos, constantClass) {
         'use strict';
+
+        var scrolled = document.querySelector(".contents");
+        var header = document.querySelector('header');
+        var titleHeight = 80;
+        var nav = angular.element('nav');
+        var outline = document.querySelector('.outline');
+        var text = scrolled.querySelector('.text');
+        var titleSection = {
+            label: $scope.title,
+            outlineLabel: $scope.title,
+            id: "top",
+            level: 0,
+            elem: angular.element('#top')
+        };
+        var currentSection;
+
         function titleFromTime() {
             var title = timeService.getYear();
             if (title) {
@@ -543,7 +555,7 @@ angular
 
         function getTitle() {
             if (!$scope.title) {
-                $scope.title = titleFromTime() || titleFromPeople() || titleFromURI();
+                $scope.title = "" + (titleFromTime() || titleFromPeople() || titleFromURI());
             }
             return $scope.title;
         }
@@ -584,21 +596,6 @@ angular
                 style: c
             });
         }
-
-        var scrolled = document.querySelector(".contents");
-        var header = document.querySelector('header');
-        var titleHeight = 80;
-        var nav = angular.element('nav');
-        var outline = document.querySelector('.outline');
-        var text = scrolled.querySelector('.text');
-        var titleSection = {
-            label: $scope.title,
-            outlineLabel: $scope.title,
-            id: "top",
-            level: 0,
-            elem: angular.element('#top')
-        };
-        var currentSection;
 
         function isHeaderVisible() {
             return window === top && scrolled.scrollTop <= header.offsetHeight;
@@ -657,19 +654,21 @@ angular
         function updateOutline() {
             var lastSec = titleSection;
             var newSec;
-            for (var i = 0; i < $scope.sections.length; i++) {
-                newSec = $scope.sections[i];
-                var found;
-                found = scrolled.scrollTop > newSec.elem[0].offsetTop;
-                if (lastSec) {
-                    if (!found) {
-                        selectOutline(lastSec);
-                        return;
+            if ($scope.sections.length) {
+                for (var i = 0; i < $scope.sections.length; i++) {
+                    newSec = $scope.sections[i];
+                    var found;
+                    found = scrolled.scrollTop > newSec.elem[0].offsetTop;
+                    if (lastSec) {
+                        if (!found) {
+                            selectOutline(lastSec);
+                            return;
+                        }
                     }
+                    lastSec = newSec;
                 }
-                lastSec = newSec;
+                selectOutline(newSec);
             }
-            selectOutline(newSec);
         }
 
         scrolled.onscroll = function (event) {
@@ -710,10 +709,6 @@ angular
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";
             }
 
-            function addTitle() {
-                setOutline('Sommaire');
-            }
-
             $scope.alternate = null;
             var alternateClass = "alternate";
 
@@ -734,16 +729,17 @@ angular
                 }
             }
 
-            addTitle();
             if (window === top) {
                 addNavLinkAfterTitle(next, nextLink, "Suivant", "next");
             }
             createNavElement(alternateClass);
             checkAlt();
         };
+
         $scope.initAuthor = function (a, aLink, c, cLink) {
             peopleService.addAuthor(a, aLink, c, cLink);
         };
+
         $scope.sections = [];
         function isOutlineVisible() {
             return outline.style.top !== hiddenPos;

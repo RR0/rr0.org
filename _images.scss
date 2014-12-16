@@ -1,7 +1,9 @@
+@import "mixins";
+
 img {
   margin: 1.25em 1.25em 1.5em 1.25em;
   max-width: 100%;
-  border-radius: 0.2em;
+  border-radius: $borderRadius;
 }
 
 caption {
@@ -19,7 +21,7 @@ caption {
 }
 
 figure {
-  border-radius: 0.3em;
+  border-radius: $borderRadius;
   display: table;
   transition: all 1s ease;
   max-width: 75%;

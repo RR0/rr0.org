@@ -4,7 +4,6 @@
 @import "mixins";
 
 * {
-  font-family: $contentFont;
   letter-spacing: .01rem;
   //  font-weight: 400;
   line-height: 1.7;
@@ -12,6 +11,7 @@
 }
 
 html {
+  font-family: $contentFont;
   height: 100%;
   -webkit-text-size-adjust: 100%;
 }

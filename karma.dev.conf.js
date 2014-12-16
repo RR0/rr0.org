@@ -17,13 +17,19 @@ module.exports = function (config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'bower_components/angular-sanitize/angular-sanitize.js',
-            'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js',
-            'bower_components/angular-nanoscroller/scrollable.js',
             'node_modules/karma-jasmine/**/*.js',
-            'out/js/**/*.es5.js',
-            'out/time/*.es5.js',
-            'out/people/**/*.es5.js',
-            'out/place/**/*.es5.js',
+            'js/common.es5.js',
+            'js/lang.es5.js',
+            'js/net.es5.js',
+            'people/*.es5.js',
+            'time/*.es5.js',
+            'js/nav/nav.es5.js',
+            'js/nav/nav-service.es5.js',
+            'js/nav/rr0-*.es5.js',
+            'js/nav/HeadController.es5.js',
+            'js/search/*.es5.js',
+            'js/units.es5.js',
+            'place/**/*.es5.js',
             'test/**/*Spec.js'
         ],
 
@@ -33,15 +39,18 @@ module.exports = function (config) {
             'node_modules/**/tests/*.*'
         ],
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        reporters: ['progress', 'coverage'],
+
         preprocessors: {
+            '**/*.js': ['coverage']
         },
 
-        // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        coverageReporter: {
+            reporters: [
+                {type: 'html', subdir: 'html'},
+                {type: 'lcovonly', subdir: 'lcov'}
+            ]
+        },
 
         // web server port
         port: 9876,
@@ -58,7 +67,6 @@ module.exports = function (config) {
 
         // Firefox only is available on Travis VM : http://docs.travis-ci.com/user/gui-and-headless-browsers/
         // Current PhantomJS versions fail with traceur : https://github.com/google/traceur-compiler/issues/908
-        //browsers: ['Chrome', 'Firefox'],
         browsers: ['Firefox'],
 
         // Continuous Integration mode

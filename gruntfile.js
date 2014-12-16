@@ -8,54 +8,85 @@ module.exports = function (grunt) {
             pkg: grunt.file.readJSON('package.json'),
             traceur: {
                 options: {
-                    sourceMaps: true,
-                    sourceRoot: 'http://rr0.org/out/'
+                    sourceMaps: true
                 },
                 custom: {
                     files: [
                         {
                             src: ['js/common.js'],
-                            dest: 'out/js/common.es5.js'
+                            dest: 'js/common.es5.js'
                         },
                         {
                             src: ['js/net.js'],
-                            dest: 'out/js/net.es5.js'
+                            dest: 'js/net.es5.js'
                         },
                         {
                             src: ['js/lang.js'],
-                            dest: 'out/js/lang.es5.js'
+                            dest: 'js/lang.es5.js'
                         },
                         {
-                            src: ['js/nav.js'],
-                            dest: 'out/js/nav.es5.js'
+                            src: ['js/nav/nav.js'],
+                            dest: 'js/nav/nav.es5.js'
+                        },
+                        {
+                            src: ['js/nav/HeadController.js'],
+                            dest: 'js/nav/HeadController.es5.js'
+                        },
+                        {
+                            src: ['js/nav/nav-service.js'],
+                            dest: 'js/nav/nav-service.es5.js'
+                        },
+                        {
+                            src: ['js/nav/rr0-a.js'],
+                            dest: 'js/nav/rr0-a.es5.js'
+                        },
+                        {
+                            src: ['js/nav/rr0-article.js'],
+                            dest: 'js/nav/rr0-article.es5.js'
+                        },
+                        {
+                            src: ['js/nav/rr0-img.js'],
+                            dest: 'js/nav/rr0-img.es5.js'
+                        },
+                        {
+                            src: ['js/nav/rr0-link.js'],
+                            dest: 'js/nav/rr0-link.es5.js'
+                        },
+                        {
+                            src: ['js/nav/rr0-section.js'],
+                            dest: 'js/nav/rr0-section.es5.js'
+                        },
+                        {
+                            src: ['js/nav/rr0-title.js'],
+                            dest: 'js/nav/rr0-title.es5.js'
                         },
                         {
                             src: ['people/people.js'],
-                            dest: 'out/people/people.es5.js'
+                            dest: 'people/people.es5.js'
                         },
                         {
                             src: ['time/time.js'],
-                            dest: 'out/time/time.es5.js'
+                            dest: 'time/time.es5.js'
                         },
                         {
                             src: ['place/place.js'],
-                            dest: 'out/place/place.es5.js'
+                            dest: 'place/place.es5.js'
                         },
                         {
                             src: ['js/foot.js'],
-                            dest: 'out/js/foot.es5.js'
+                            dest: 'js/foot.es5.js'
                         },
                         {
                             src: ['js/index.js'],
-                            dest: 'out/js/index.es5.js'
+                            dest: 'js/index.es5.js'
                         },
                         {
                             src: ['js/search/search.js'],
-                            dest: 'out/js/search/search.es5.js'
+                            dest: 'js/search/search.es5.js'
                         },
                         {
                             src: ['js/units.js'],
-                            dest: 'out/js/units.es5.js'
+                            dest: 'js/units.es5.js'
                         },
                         {
                             src: ['time/1/9/7/7/Poher_Matrice/matrix.js'],
@@ -108,7 +139,7 @@ module.exports = function (grunt) {
                 rr0: {
                     files: {
                         expand: true,
-                        src: ['/out/js/time.es5.js'],
+                        src: ['/js/time.es5.js'],
                         ext: '.annotated.js'
                     }
                 }
@@ -123,9 +154,9 @@ module.exports = function (grunt) {
             jasmine: {
                 /* As this is launch for dev only, we rely on non-merged files here */
                 src: [
-                    'out/js/common.es5.js', 'out/js/net.es5.js', 'out/js/lang.es5.js', 'out/js/nav.es5.js', 'out/people/people.es5.js',
-                    'time/time.es5.js', 'out/place/place.es5.js', 'out/js/foot.es5.js',
-                    'js/index.es5.js', 'out/js/search/search.es5.js', 'out/js/units.es5.js'
+                    'js/common.es5.js', 'js/net.es5.js', 'js/lang.es5.js', 'js/nav.es5.js', 'people/people.es5.js',
+                    'time/time.es5.js', 'place/place.es5.js', 'js/foot.es5.js',
+                    'js/index.es5.js', 'js/search/search.es5.js', 'js/units.es5.js'
                 ],
                 options: {
                     specs: 'test/**/*.js',
@@ -153,23 +184,31 @@ module.exports = function (grunt) {
                 rr0: {
                     options: {
                         sourceMap: true,
-                        sourceMapName: 'out/js/all.es5.map',
+                        sourceMapName: 'js/all.es5.map',
                         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
                         drop_console: true
                     },
                     files: {
-                        'out/js/all.es5.min.js': [
-                            'out/js/common.es5.js',
-                            'out/js/net.es5.js',
-                            'out/js/lang.es5.js',
-                            'out/js/nav.es5.js',
-                            'out/people/people.es5.js',
-                            'out/time/time.es5.js',
-                            'out/place/place.es5.js',
-                            'out/js/foot.es5.js',
-                            'out/js/index.es5.js',
-                            'out/js/search/search.es5.js',
-                            'out/js/units.es5.js',
+                        'js/all.es5.min.js': [
+                            'js/common.es5.js',
+                            'js/net.es5.js',
+                            'js/lang.es5.js',
+                            'js/nav/nav.es5.js',
+                            'js/nav/nav-service.es5.js',
+                            'js/nav/rr0-a.es5.js',
+                            'js/nav/rr0-article.es5.js',
+                            'js/nav/rr0-img.es5.js',
+                            'js/nav/rr0-link.es5.js',
+                            'js/nav/rr0-section.es5.js',
+                            'js/nav/rr0-title.es5.js',
+                            'js/nav/HeadController.es5.js',
+                            'people/people.es5.js',
+                            'time/time.es5.js',
+                            'place/place.es5.js',
+                            'js/foot.es5.js',
+                            'js/index.es5.js',
+                            'js/search/search.es5.js',
+                            'js/units.es5.js',
                             'time/1/9/7/7/Poher_Matrice/matrix.es5.js'
                         ]
                     }

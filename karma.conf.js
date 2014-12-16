@@ -17,10 +17,8 @@ module.exports = function (config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'bower_components/angular-sanitize/angular-sanitize.js',
-            'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js',
-            'bower_components/angular-nanoscroller/scrollable.js',
             'node_modules/karma-jasmine/**/*.js',
-            'out/js/all.es5.min.js',
+            'js/all.es5.min.js',
             'test/**/*Spec.js'
         ],
 
@@ -33,7 +31,7 @@ module.exports = function (config) {
         reporters: ['progress', 'coverage'],
 
         preprocessors: {
-            'out/**/*.js': ['coverage']
+            '**/*.js': ['coverage']
         },
 
         coverageReporter: {

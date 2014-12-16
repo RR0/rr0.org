@@ -5,17 +5,17 @@ angular.module('rr0.lang', ['rr0.net'])
         'use strict';
 
         function notifyOrig(original, origFound) {
-            netService.onExists(original, function () {
+            netService.onExists(original).success(function (req) {
                 origFound(original);
-            }, function () {
+            }).error(function (failReq) {
                 origFound(null);
             });
         }
 
         function notifyTrans(translation, transFound) {
-            netService.onExists(translation, function () {
+            netService.onExists(translation).success(function (req) {
                 transFound(translation);
-            }, function () {
+            }).error(function (failReq) {
                 transFound(null);
             });
         }

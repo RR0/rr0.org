@@ -106,10 +106,10 @@ angular.module('rr0.nav')
         }
 
         $scope.ns = [];
-        function addNext(t, l, tt, c) {
+        function addNext(nn, tt, c) {
             $scope.ns.push({
-                label: t,
-                link: l,
+                label: "" + nn.label,
+                link: nn.link,
                 title: tt,
                 style: c
             });
@@ -236,7 +236,9 @@ angular.module('rr0.nav')
                 addPrev(startNav.label, startNav.link, startNav.title, "start");
                 addPrev('' + navigationService.getContents(), navigationService.getContentsURL(), "Table des mati\xE8res", "toc");
                 addPrev(navigationService.getPrev(), navigationService.getPrevLink(), "Pr\xE9c\xE9dent", "prev");
-                addNext(navigationService.getNext(), navigationService.getNextLink(), "Suivant", "next");
+                navigationService.getNext().then(function(nn) {
+                    addNext(nn, "Suivant", "next");
+                });
             } else {
                 //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";

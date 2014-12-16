@@ -1,5 +1,5 @@
 angular.module('rr0.net', ['rr0.commons'])
-    .service('netService', ['commonsService', '$log', '$http', 'constantClass', function (commonsService, $log, $http, constantClass) {
+    .service('netService', ['commonsService', '$log', '$q', '$http', 'constantClass', function (commonsService, $log, $q, $http, constantClass) {
         'use strict';
 
         /**
@@ -55,8 +55,8 @@ angular.module('rr0.net', ['rr0.commons'])
         }
 
         return {
-            onExists: function (l, cb, fp) {
-                $http.head(l).success(cb).error(fp);
+            onExists: function (l) {
+                return $http.head(l);
             },
 
             /**

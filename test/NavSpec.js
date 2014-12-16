@@ -1,4 +1,6 @@
-describe("Anchor directive", function () {
+describe("Navigation module", function () {
+    'use strict';
+
     var $compile;
     var $rootScope;
     var $provide;

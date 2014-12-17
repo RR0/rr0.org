@@ -7,11 +7,13 @@ describe("Time module", function () {
     var $compile;
     var netService;
     var timeService;
+    var $q;
 
-    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _netService_, _timeService_) {
+    beforeEach(angular.mock.inject(function (_$compile_, _$rootScope_, _$q_, _netService_, _timeService_) {
         $compile = _$compile_;
-        netService = _netService_;
         $rootScope = _$rootScope_;
+        $q = _$q_;
+        netService = _netService_;
         timeService = _timeService_;
     }));
 
@@ -69,6 +71,13 @@ describe("Time module", function () {
     });
     describe("Time directive", function () {
         org.rr0.context.language = 'fr';
+
+        var httpMock = {};
+        httpMock.success = function (req) {
+            return httpMock;
+        };
+        httpMock.error = function (req) {
+        };
 
         it("find day of week", function () {
             expect(timeService.getDayOfWeek(1998, 8, 31)).toBe(1);
@@ -134,21 +143,21 @@ describe("Time module", function () {
             expect(element.html()).toContain("10&nbsp;jours et 5&nbsp;secondes");
         });
         it('display dates', function () {
-            spyOn(netService, "onExists").and.returnValue(true);
+            spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();
             expect(element.html()).toContain("Dimanche 29 Juin 1997");
         });
         it('display datetimes', function () {
-            spyOn(netService, "onExists").and.returnValue(true);
+            spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
             $rootScope.$digest();
             expect(element.html()).toContain("Samedi 25 Juillet 1998 à 17:20");
         });
         it('display time intervals', function () {
-            spyOn(netService, "onExists").and.returnValue(true);
+            spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
             $rootScope.$digest();
@@ -163,7 +172,7 @@ describe("Time module", function () {
              expect(element.html()).toContain("Mercredi 20 Mai 1998 au lendemain");*/
         });
         it('display dates contextually', function () {
-            spyOn(netService, "onExists").and.returnValue(true);
+            spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();

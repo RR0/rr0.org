@@ -69,7 +69,7 @@ angular.module('rr0.net', ['rr0.commons'])
              * @param {string} [t] title on the link
              */
             checkedLink: function (e, toReplace, l, replacement, cacheIt, t) {
-                var thisService = this;
+                var self = this;
                 if (l) {
                     l = commonsService.addEndingSlash(l);
                 }
@@ -93,21 +93,23 @@ angular.module('rr0.net', ['rr0.commons'])
                             if (commonsService.getUri().indexOf("/time/") < 0) {    // TODO: should ask time module
                                 $log.debug("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode);
                                 cacheIt = false;
-                                thisService.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
+                                self.checkedLink(e, toReplace, pLink, replacement, cacheIt, t);
                             }
                         };
 
-                        thisService.onExists(l, function () {
-                            if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
-                                thisService.onExists(l + "/index.html", function () {
-                                    $log.debug("found link " + l + " for e'sparent=" + e.parentNode);
-                                    e = linkify(e, replacement, l, replacement, cacheIt);
-                                    if (t) {
-                                        e.title = t;
-                                    }
-                                }, failProc);
-                            }
-                        }, failProc);
+                        self.onExists(l)
+                            .success(function (req) {
+                                if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
+                                    self.onExists(l + "/index.html")
+                                        .success(function (req) {
+                                            $log.debug("found link " + l + " for e'sparent=" + e.parentNode);
+                                            e = linkify(e, replacement, l, replacement, cacheIt);
+                                            if (t) {
+                                                e.title = t;
+                                            }
+                                        }).error(failProc);
+                                }
+                            }).error(failProc);
                     }
                 }
             }

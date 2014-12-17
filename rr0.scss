@@ -3,6 +3,11 @@
 @import "reset";
 @import "mixins";
 
+[data-ng-cloak]
+{
+  display: none !important;
+}
+
 * {
   letter-spacing: .01rem;
   //  font-weight: 400;
@@ -36,12 +41,7 @@ aside {
   height: 100%;
   float: right;
   position: relative;
-  //  width: 0;
-  //  width: 100%;
   //resize: horizontal;
-  /*float:right;*/
-  /*overflow-y: hidden;*/
-  /*overflow-x: hidden;*/
   @include horizTrans;
 }
 

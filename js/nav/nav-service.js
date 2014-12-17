@@ -91,36 +91,6 @@ angular.module('rr0.nav')
                     }
                 ];
 
-            function setN(n, nLink) {
-                if (!n) {
-                    n = next;
-                }
-//    addRel(nLink, "Next");
-
-                var nes = document.getElementsByClassName("next");
-                for (var i = 0; i < nes.length; i++) {
-                    var ne = nes[i];
-                    if (ne) {
-                        ne.innerHTML = "<a href=\"" + nLink + "\" title='Suivant'> " + n + "</a>";
-                    }
-                }
-            }
-
-            function setP(p, pLink) {
-                if (!p) {
-                    p = prev;
-                }
-//    addRel(pLink, "Prev");
-
-                var pes = document.getElementsByClassName("prev");
-                for (var i = 0; i < pes.length; i++) {
-                    var pe = pes[i];
-                    if (pe) {
-                        pe.innerHTML = "<a href=\"" + pLink + "\" title='Pr\xE9c\xE9dent'> " + p + "</a>";
-                    }
-                }
-            }
-
             return {
                 currentLevel: 1,
                 getNavList: function () {

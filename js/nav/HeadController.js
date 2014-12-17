@@ -316,14 +316,11 @@ angular.module('rr0.nav')
             var distance = endLocation - startLocation;
 
             var runAnimation;
-            var lastLocation;
             // Function to stop the scrolling animation
             var stopAnimationIfRequired = function () {
-                var currentLocation = scrolled.scrollTop;
-                if (currentLocation === endLocation || ( (scrolled.offsetHeight + currentLocation) >= scrolled.scrollHeight ) || currentLocation === lastLocation) {
+                if (scrolled.scrollTop === endLocation) {
                     cancelAnimationFrame(runAnimation);
                 }
-                lastLocation = currentLocation;
             };
             // Set the animation variables to 0/undefined.
             var timeLapsed = 0;
@@ -344,7 +341,7 @@ angular.module('rr0.nav')
 
         function scrollTo(id) {
             var anchor = document.getElementById(id);   // anchor.scrollIntoView(true, 'smooth');
-            hideOutline();
+            //hideOutline();
             smoothScroll(anchor, 500);
         }
 

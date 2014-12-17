@@ -96,10 +96,10 @@ angular.module('rr0.nav')
             return createNavElement(c);
         };
         $scope.ps = [];
-        function addPrev(t, l, tt, c) {
+        function addPrev(pp, tt, c) {
             $scope.ps.push({
-                label: t,
-                link: l,
+                label: "" + pp.label,
+                link: pp.link,
                 title: tt,
                 style: c
             });
@@ -232,10 +232,12 @@ angular.module('rr0.nav')
 
             var startNav = navigationService.getStartNav();
             if (window === top) {
-                addPrev("RR0", "/", "Home", "home");
-                addPrev(startNav.label, startNav.link, startNav.title, "start");
-                addPrev('' + navigationService.getContents(), navigationService.getContentsURL(), "Table des mati\xE8res", "toc");
-                addPrev(navigationService.getPrev(), navigationService.getPrevLink(), "Pr\xE9c\xE9dent", "prev");
+                addPrev({label: "RR0", link:"/"}, "Home", "home");
+                addPrev(startNav, startNav.title, "start");
+                addPrev({label:'' + navigationService.getContents(), link:navigationService.getContentsURL()}, "Table des mati\xE8res", "toc");
+                navigationService.getPrev().then(function(pp) {
+                    addPrev(pp, "Pr\xE9c\xE9dent", "prev");
+                });
                 navigationService.getNext().then(function(nn) {
                     addNext(nn, "Suivant", "next");
                 });

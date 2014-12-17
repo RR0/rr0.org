@@ -139,7 +139,7 @@ angular.module('rr0.nav')
                 nextFromTime: function (n) {
                     var t = timeService.getTime();
                     var self = this;
-                    return $q(function(resolve, reject) {
+                    return $q(function (resolve, reject) {
                         self.findTimeSibling(t.year, t.month,
                             function (y, m) {
                                 if (m) {
@@ -157,36 +157,24 @@ angular.module('rr0.nav')
                 },
                 previousFromTime: function (p) {
                     var t = timeService.getTime();
-                    this.findTimeSibling(t.year, t.month,
-                        function (y, m) {
-                            if (m) {
-                                if (m > 1) {
-                                    m--;
-                                    return {y: y, m: m};
-                                } else {
-                                    m = 12;
+                    var self = this;
+                    return $q(function (resolve, reject) {
+                        self.findTimeSibling(t.year, t.month,
+                            function (y, m) {
+                                if (m) {
+                                    if (m > 1) {
+                                        m--;
+                                        return {y: y, m: m};
+                                    } else {
+                                        m = 12;
+                                    }
                                 }
-                            }
-                            y--;
-                            return {y: y, m: m};
-                        }, setP);
-                    p = "...";
-                    return p;
+                                y--;
+                                return {y: y, m: m};
+                            }, resolve);
+                    });
                 },
                 setPrev: function (p, pLink) {
-                    if (!pLink) {
-                        if (!p && !prev) {
-                            if (timeService.getYear()) {
-                                p = this.previousFromTime(p);
-                            } else {
-                                pLink = "..";   // Default previous is previous directory
-                                setP(p, pLink);
-                            }
-                        } else {
-                            pLink = "..";   // Default previous is previous directory
-                            setP(p, pLink);
-                        }
-                    }
                     if (pLink) {
                         prevLink = pLink;
                     }
@@ -203,22 +191,51 @@ angular.module('rr0.nav')
                     }
                 },
                 getNext: function () {
-                    var nextPromise;
+                    var nn;
                     if (!nextLink) {
                         if (!next) {
                             if (timeService.getYear()) {
-                                nextPromise = this.nextFromTime(next);
+                                nn = this.nextFromTime(next);
+                            } else {
+                                nn = $q(function (resolve, reject) {
+                                    reject();
+                                });
                             }
                         }
                     } else {
-                        nextPromise = $q(function(resolve, reject) {
-                            resolve({
-                                label: next,
-                                link: nextLink
-                            });
-                        });
+                        nn = {
+                            label: next,
+                            link: nextLink
+                        };
                     }
-                    return nextPromise;
+                    return $q.when(nn);
+                },
+                getPrev: function () {
+                    var pp;
+                    if (!prevLink) {
+                        if (!prev) {
+                            if (timeService.getYear()) {
+                                pp = this.previousFromTime(prev);
+                            } else {
+                                pp = $q(function (resolve, reject) {
+                                    reject();
+                                });
+                            }
+                        } else {
+                            prevLink = "..";   // Default previous is previous directory
+                            pp = {
+                                label: prev,
+                                link: prevLink
+                            };
+                        }
+                    }
+                    return $q.when(pp);
+                },
+                getPrevLink: function () {
+                    return prevLink;
+                },
+                getNextLink: function () {
+                    return nextLink;
                 },
                 addStart: function (s) {
                     starts.push(s);
@@ -252,7 +269,7 @@ angular.module('rr0.nav')
                     }
                     netService.onExists(l)
                         .success(function (req) {
-                            foundProc({label:label, link:l});
+                            foundProc({label: label, link: l});
                         }).error(function (failReq) {
                             self.findTimeSibling(y, m, changeProc, foundProc);
                         });
@@ -323,15 +340,6 @@ angular.module('rr0.nav')
                 },
                 getContents: function () {
                     return contents;
-                },
-                getPrev: function () {
-                    return prev;
-                },
-                getPrevLink: function () {
-                    return prevLink;
-                },
-                getNextLink: function () {
-                    return nextLink;
                 },
                 getContentsURL: function () {
                     return contentsURL;

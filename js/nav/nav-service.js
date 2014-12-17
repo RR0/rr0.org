@@ -182,22 +182,20 @@ angular.module('rr0.nav')
                 },
                 getPrev: function () {
                     var pp;
-                    if (!prevLink) {
-                        if (!prev) {
-                            if (timeService.getYear()) {
-                                pp = this.previousFromTime(prev);
-                            } else {
-                                pp = $q(function (resolve, reject) {
-                                    reject();
-                                });
-                            }
-                        } else {
-                            prevLink = "..";   // Default previous is previous directory
-                            pp = {
-                                label: prev,
-                                link: prevLink
-                            };
+                    if (!prevLink && !prev) {
+                        if (timeService.getYear()) {
+                            pp = this.previousFromTime(prev);
                         }
+                    }
+                    if (prev && prevLink) {
+                        pp = {
+                            label: prev,
+                            link: prevLink
+                        };
+                    } else {
+                        pp = $q(function (resolve, reject) {
+                            reject();
+                        });
                     }
                     return $q.when(pp);
                 },

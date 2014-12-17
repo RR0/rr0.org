@@ -162,21 +162,22 @@ angular.module('rr0.nav')
                 },
                 getNext: function () {
                     var nn;
-                    if (!nextLink) {
-                        if (!next) {
-                            if (timeService.getYear()) {
-                                nn = this.nextFromTime(next);
-                            } else {
-                                nn = $q(function (resolve, reject) {
-                                    reject();
-                                });
-                            }
+                    if (!nextLink && !next) {
+                        if (timeService.getYear()) {
+                            nn = this.nextFromTime(next);
                         }
-                    } else {
-                        nn = {
-                            label: next,
-                            link: nextLink
-                        };
+                    }
+                    if (!nn) {
+                        if (next && nextLink) {
+                            nn = {
+                                label: next,
+                                link: nextLink
+                            };
+                        } else {
+                            nn = $q(function (resolve, reject) {
+                                reject();
+                            });
+                        }
                     }
                     return $q.when(nn);
                 },
@@ -187,15 +188,17 @@ angular.module('rr0.nav')
                             pp = this.previousFromTime(prev);
                         }
                     }
-                    if (prev && prevLink) {
-                        pp = {
-                            label: prev,
-                            link: prevLink
-                        };
-                    } else {
-                        pp = $q(function (resolve, reject) {
-                            reject();
-                        });
+                    if (!pp) {
+                        if (prev && prevLink) {
+                            pp = {
+                                label: prev,
+                                link: prevLink
+                            };
+                        } else {
+                            pp = $q(function (resolve, reject) {
+                                reject();
+                            });
+                        }
                     }
                     return $q.when(pp);
                 },
@@ -271,7 +274,6 @@ angular.module('rr0.nav')
                             }
                             if (!t) {
                                 t = "D\xE9but";
-                                s = "⇤ " + s;
                             }
                             startNav = new NavLink(s, sLink, t);
                         }

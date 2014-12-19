@@ -13,6 +13,7 @@ angular.module('rr0.nav')
                 function showSearch() {
                     if ($scope.getHeadingHeight) {
                         searchResults.style.top = $scope.getHeadingHeight() + 'px';
+                        searchResults.style.height = 'auto';
                     }
                 }
 
@@ -49,7 +50,7 @@ angular.module('rr0.nav')
                     showSearch();
                 };
                 $scope.searchLeave = function () {
-                    searchResults.style.top = hiddenPos;
+                    searchResults.style.height = '0';
                 };
             }]
         };

@@ -1,12 +1,10 @@
 angular.module('rr0.nav')
-    .controller('HeadController', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', 'constantClass', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, hiddenPos, constantClass) {
+    .controller('HeadController', ['$scope', '$rootScope', '$log', '$timeout', 'commonsService', 'langService', 'peopleService', 'timeService', 'navigationService', 'hiddenPos', 'constantClass', function ($scope, $rootScope, $log, $timeout, commonsService, langService, peopleService, timeService, navigationService, constantClass) {
         'use strict';
 
         var scrolled = document.querySelector(".contents");
         var header = document.querySelector('header');
-        var titleHeight = 80;
         var nav = angular.element('nav');
-        var outline = document.querySelector('.outline');
         var text = scrolled.querySelector('.text');
         var titleSection = {
             label: $scope.title,
@@ -16,6 +14,14 @@ angular.module('rr0.nav')
             elem: angular.element('#top')
         };
         var currentSection;
+
+        var outline = document.querySelector('.outline');
+        function getNavHeight() {
+            return nav[0].style.height === "100%" ? 0 : nav[0].offsetHeight;
+        }
+        $scope.getHeadingHeight = function () {
+            return nav[0].offsetTop + getNavHeight();
+        };
 
         function titleFromTime() {
             var title = timeService.getYear();
@@ -87,7 +93,6 @@ angular.module('rr0.nav')
             $scope.style = st;
         };
         $scope.title = getTitle();
-        $scope.outline = 'Sommaire';
 
         $scope.initPeople = function (p) {
             peopleService.setPeopleName(p);
@@ -124,24 +129,26 @@ angular.module('rr0.nav')
         }
 
         function updateHeading() {
-            var hasCollapsedState = nav.hasClass('collapsed');
+            var isNavCollapsed = nav.hasClass('collapsed');
             if (isHeaderVisible()) {
-                if (hasCollapsedState) {
+                if (isNavCollapsed || !$scope.outline) {
                     nav.removeClass('collapsed');
                     $scope.$apply(function () {
                         setOutline('Sommaire');
                     });
                     selectOutline(null);
+                    outline.style.top = $scope.getHeadingHeight() + 'px';
                 }
             } else {
-                if (!hasCollapsedState) {
+                if (isNavCollapsed) {
+                    updateOutline();
+                } else {
                     nav.addClass('collapsed');
                     $scope.$apply(function () {
                         setOutline($scope.title);
                     });
                     selectOutline(titleSection);
-                } else {
-                    updateOutline();
+                    outline.style.top = $scope.getHeadingHeight() + 'px';
                 }
             }
         }
@@ -199,20 +206,16 @@ angular.module('rr0.nav')
             window.attachEvent("onresize", scrolled.onscroll);
         }
 
-        function showOutline() {
-            outline.style.top = $scope.getHeadingHeight() + 'px';
+        function isOutlineVisible() {
+            return outline.style.height !== '0px';
         }
 
-        function hideOutline() {
-            outline.style.top = hiddenPos;
-        }
-
-        function getNavHeight() {
-            return nav[0].offsetHeight > titleHeight ? 0 : nav[0].offsetHeight;
-        }
-
-        $scope.getHeadingHeight = function () {
-            return getNavHeight();
+        $scope.titleClick = function () {
+            if (isOutlineVisible()) {
+                outline.classList.add('clicked');
+            } else {
+                outline.classList.remove('clicked');
+            }
         };
 
         $scope.init = function (s, sLink, c, cLink, p, pLink, n, nLink) {
@@ -232,13 +235,16 @@ angular.module('rr0.nav')
 
             var startNav = navigationService.getStartNav();
             if (window === top) {
-                addPrev({label: "RR0", link:"/"}, "Home", "home");
+                addPrev({label: "RR0", link: "/"}, "Home", "home");
                 addPrev(startNav, startNav.title, "start");
-                addPrev({label:'' + navigationService.getContents(), link:navigationService.getContentsURL()}, "Table des mati\xE8res", "toc");
-                navigationService.getPrev().then(function(pp) {
+                addPrev({
+                    label: '' + navigationService.getContents(),
+                    link: navigationService.getContentsURL()
+                }, "Table des mati\xE8res", "toc");
+                navigationService.getPrev().then(function (pp) {
                     addPrev(pp, "Pr\xE9c\xE9dent", "prev");
                 });
-                navigationService.getNext().then(function(nn) {
+                navigationService.getNext().then(function (nn) {
                     addNext(nn, "Suivant", "next");
                 });
             } else {
@@ -275,23 +281,7 @@ angular.module('rr0.nav')
         };
 
         $scope.sections = [];
-        function isOutlineVisible() {
-            return outline.style.top !== hiddenPos;
-        }
 
-        $scope.titleClick = function () {
-            if (isOutlineVisible()) {
-                showOutline();
-            } else {
-                hideOutline();
-            }
-        };
-        $scope.titleOver = function () {
-            showOutline();
-        };
-        $scope.titleLeave = function () {
-            hideOutline();
-        };
         function smoothScroll(anchor, duration) {
             var easingPattern = function (duration) {
                 return duration < 0.5 ? 4 * duration * duration * duration : (duration - 1) * (2 * duration - 2) * (2 * duration - 2) + 1; // acceleration until halfway, then deceleration
@@ -353,5 +343,8 @@ angular.module('rr0.nav')
 //                section.label = '&nbsp;&nbsp;' + section.label;
 //            }
             $scope.sections.push(section);
+        });
+        $timeout(function() {
+           updateHeading();
         });
     }]);

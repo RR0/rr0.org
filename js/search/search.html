@@ -1,15 +1,15 @@
-<div ng-mouseover="searchOver()">
-    <form ng-submit="doSearch()">
+<div data-ng-mouseover="searchOver()">
+    <form data-ng-submit="doSearch()">
         <label for="search-input">Rechercher</label>
-        <input type="search" id="search-input" ng-model="searchInput" tabindex="200" ng-keydown="searchKey($event)">
+        <input type="search" id="search-input" data-ng-model="searchInput" tabindex="200" data-ng-keydown="searchKey($event)">
         <!--<button type="submit">-->
             <!--<span class="label">Rechercher</span>-->
-            <span class="iconic magnifying_glass" title="Rechercher" ng-click="doSearch()"></span>
+            <span class="iconic magnifying_glass" title="Rechercher" data-ng-click="doSearch()"></span>
         <!--</button>-->
     </form>
-    <ul class="search-result" ng-mouseleave="searchLeave()">
-        <li ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{::r.snippet}}">
-            <a href="{{::r.link}}"><span ng-bind-html="r.htmlTitle | unsafe"></span></a>
+    <ul class="search-result" data-ng-mouseleave="searchLeave()">
+        <li data-ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{::r.snippet}}">
+            <a href="{{::r.link}}"><span data-ng-bind-html="r.htmlTitle | unsafe"></span></a>
         </li>
     </ul>
 </div>

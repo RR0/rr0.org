@@ -1,7 +1,5 @@
 function OrgModule() {
 
-    this.isIE = /MSIE (\d+\.\d+);/.test(navigator.userAgent);
-
     this.debug = window.location.href.indexOf("?debug") >= 0;
 
     if (this.debug && typeof console !== 'undefined') {

@@ -1,6 +1,6 @@
 angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
     .constant('timeRoot', '/time/')
-    .service('timeService', ['timeRoot', 'netService', function (timeRoot) {
+    .service('timeService', ['timeRoot', 'commonsService', function (timeRoot, commonsService) {
         'use strict';
 
         /**
@@ -615,14 +615,14 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
             },
             isTimeURL: function (u) {
                 if (!u) {
-                    u = org.getUri();
+                    u = commonsService.getUri();
                 }
                 return u.indexOf(timeRoot) === 0;
             },
             getYear: function () {
                 var t = this.getTime();
                 if (!t.year) {
-                    var u = org.getUri();
+                    var u = commonsService.getUri();
                     if (this.isTimeURL(u)) {
                         var parts = u.split("/");
                         t.year = 0;

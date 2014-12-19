@@ -1,12 +1,5 @@
 function OrgModule() {
 
-    this.getUri = function () {
-        if (!docUri) {
-            docUri = window.location.pathname;
-        }
-        return docUri;
-    };
-
     this.isIE = /MSIE (\d+\.\d+);/.test(navigator.userAgent);
 
     this.debug = window.location.href.indexOf("?debug") >= 0;
@@ -48,8 +41,6 @@ function OrgModule() {
             return results;
         };
     }
-
-    var docUri;
 
     function User() {
         this.language = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage;
@@ -566,12 +557,18 @@ angular.module('rr0.commons', [])
     .constant('constantClass', org.constantClass)
     .service('commonsService', function () {
         'use strict';
+
+        var docUri;
+
         return {
             addEndingSlash: function (l) {
                 return org.addEndingSlash(l);
             },
             getUri: function () {
-                return org.getUri();
+                if (!docUri) {
+                    docUri = window.location.pathname;
+                }
+                return docUri;
             },
             validLink: function (l) {
                 return org.validLink(l);

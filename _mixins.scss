@@ -25,7 +25,7 @@
 }
 
 @mixin bottomInnerShadow {
-  box-shadow: 0 0 1.5em $shadowColor;
+  box-shadow: 0 0.7em 1.5em $shadowColor;
 }
 
 @mixin ellipsis {
@@ -49,4 +49,61 @@
   &:hover {
     @extend .hovered;
   }
+}
+
+@mixin menu {
+  max-width: 90%;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 0;
+  //  transition: height $transitionDuration ease;
+  display: block;
+  li {
+    display: block;
+    width: 100%;
+    a {
+      display: block;
+    }
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+    h2 {
+      background: none;
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+    h3 {
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+    h4 {
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+    position: relative;
+    padding: $selectionPadding;
+    float: none;
+    &:focus {
+      color: #FFF;
+      background-color: $hoverColor;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+@mixin dropdownMenu {
+  @include menu();
+  position: absolute;
+  @include bottomInnerShadow;
+  height: 0;  /* Closed by default */
+}
+@mixin embeddedMenu {
+  @include menu();
+  position: static;
+  box-shadow: none;
+  height: auto;
 }

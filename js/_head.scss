@@ -4,12 +4,6 @@ $headerBackColor: rgb(224, 224, 233);
 header {
   font-family: $menuFont;
   //@include bottom-inner-shadow;
-  position: absolute;
-  /*top: -1.3em;*/
-  /*height:1.4em;*/
-  top: 0;
-  left: 0;
-  z-index: 200;
   display: table;
   width: 100%;
   margin: 0;
@@ -19,15 +13,13 @@ header {
     background-position: center !important;
     background-image: linear-gradient(to right, $headerBackColor 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.5) 100%);
     font-family: inherit;
-    box-sizing: border-box;
-    height: $headerHeight;
     line-height: 100%;
     display: table-cell;
     vertical-align: middle;
     letter-spacing: 1px;
     color: #666666;
     margin: 0;
-    padding: 0 0.8em;
+    padding: 0.8em;
     //    background: #ddddec;  /*Old browsers*/
     /*IE9 SVG, needs conditional override of 'filter' to 'none'*/
     //    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZGRkZGVjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzklIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);

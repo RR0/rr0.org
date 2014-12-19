@@ -1,0 +1,37 @@
+@import "mixins";
+
+code {
+  font-family: monospace;
+}
+
+.obsolete {
+  background-color: #FFFFFF;
+}
+.deprecated {
+  text-decoration: line-through;
+}
+
+.anticode {
+  font-family: monospace;
+  font-size: medium;
+  background-color: #F6F6F6;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+
+.titleCorner {
+  border-top-style: none;
+  border-left-style: none;
+  font-style: italic;
+  background-position: center center;
+  border-right-style: none;
+}
+
+.oui {
+  background-color: #EDFCEB;
+}
+
+.non {
+  background-color: #FCEFED;
+}

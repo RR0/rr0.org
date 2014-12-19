@@ -1,5 +1,13 @@
 @import "mixins";
 
+.image-container {
+  max-width: 75%;
+  margin: 2vh 2vw;
+  td {
+    height: 100%;
+  }
+}
+
 img {
   margin: 1.25em 1.25em 1.5em 1.25em;
   max-width: 100%;

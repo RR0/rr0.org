@@ -129,13 +129,28 @@ angular.module('rr0.nav')
         }
 
         var search;
-        function updateSearch() {
-            if (!search) {
-                search = document.querySelector('.search-result');
+        function updateSearchPos(triggerSelector) {
+            var trigger = document.querySelector(triggerSelector);
+            if (trigger) {
+                if (!search) {
+                    search = document.querySelector('.search-result');
+                }
+                if (search) {
+                    search.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
+                }
             }
-            if (search) {
-                search.style.top = $scope.getHeadingHeight() + 'px';
+        }
+
+        function updateOutlinePos(triggerSelector) {
+            var trigger = document.querySelector(triggerSelector);
+            if (trigger) {
+                outline.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
             }
+        }
+
+        function updatePos() {
+            updateOutlinePos('.outline-title');
+            updateSearchPos('.search form');
         }
 
         function updateHeading() {
@@ -147,8 +162,7 @@ angular.module('rr0.nav')
                         setOutline('Sommaire');
                     });
                     selectOutline(null);
-                    outline.style.top = $scope.getHeadingHeight() + 'px';
-                    updateSearch();
+                    updatePos();
                 }
             } else {
                 if (isNavCollapsed) {
@@ -159,8 +173,7 @@ angular.module('rr0.nav')
                         setOutline($scope.title);
                     });
                     selectOutline(titleSection);
-                    outline.style.top = $scope.getHeadingHeight() + 'px';
-                    updateSearch();
+                    updatePos();
                 }
             }
         }
@@ -212,10 +225,14 @@ angular.module('rr0.nav')
             requestAnimationFrame(updateHeading);
         };
 
-        if (window.addEventListener) {    // most non-IE browsers and IE9
-            window.addEventListener("resize", scrolled.onscroll, false);
-        } else if (window.attachEvent) {  // Internet Explorer 5 or above
-            window.attachEvent("onresize", scrolled.onscroll);
+        function onResize(event) {
+            scrolled.onscroll(event);
+            updatePos();
+        }
+        if (window.addEventListener) {      // most non-IE browsers and IE9
+            window.addEventListener("resize", onResize, false);
+        } else if (window.attachEvent) {    // Internet Explorer 5 or above
+            window.attachEvent("onresize", onResize);
         }
 
         function isOutlineVisible() {

@@ -1,4 +1,4 @@
-<div data-ng-mouseover="searchOver()">
+<div>
     <form data-ng-submit="doSearch()">
         <label for="search-input">Rechercher</label>
         <input type="search" id="search-input" data-ng-model="searchInput" tabindex="200" data-ng-keydown="searchKey($event)">
@@ -7,7 +7,7 @@
             <span class="iconic magnifying_glass" title="Rechercher" data-ng-click="doSearch()"></span>
         <!--</button>-->
     </form>
-    <ul class="search-result" data-ng-mouseleave="searchLeave()">
+    <ul class="search-result">
         <li data-ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{::r.snippet}}">
             <a href="{{::r.link}}"><span data-ng-bind-html="r.htmlTitle | unsafe"></span></a>
         </li>

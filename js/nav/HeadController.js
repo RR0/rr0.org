@@ -128,6 +128,16 @@ angular.module('rr0.nav')
             $scope.outline = outlineHTML;
         }
 
+        var search;
+        function updateSearch() {
+            if (!search) {
+                search = document.querySelector('.search-result');
+            }
+            if (search) {
+                search.style.top = $scope.getHeadingHeight() + 'px';
+            }
+        }
+
         function updateHeading() {
             var isNavCollapsed = nav.hasClass('collapsed');
             if (isHeaderVisible()) {
@@ -138,6 +148,7 @@ angular.module('rr0.nav')
                     });
                     selectOutline(null);
                     outline.style.top = $scope.getHeadingHeight() + 'px';
+                    updateSearch();
                 }
             } else {
                 if (isNavCollapsed) {
@@ -149,6 +160,7 @@ angular.module('rr0.nav')
                     });
                     selectOutline(titleSection);
                     outline.style.top = $scope.getHeadingHeight() + 'px';
+                    updateSearch();
                 }
             }
         }

@@ -1,9 +1,5 @@
 @import "../mixins";
 
-.outline {
-  font-size: 0.7em;
-}
-
 nav {
   font-size: 0.9em;
   transition: width, height $transitionDuration;
@@ -59,7 +55,8 @@ nav {
   }
 }
 .outline {
-  @include dropdownMenu;
+  @include dropdownMenu();
+  font-size: 0.7em;
 }
 
 .toggleMap {
@@ -94,10 +91,8 @@ nav {
       overflow: hidden; /* BFC */
     }
   }
-  .outline {
-    @include dropdownMenu();
-  }
-  .outline-title:hover + .outline, .outline:hover {
+  .outline-title:hover + .outline, .outline:hover,
+  .search form:hover + .search-result, .search-result:hover {
     height: auto;
   }
 }

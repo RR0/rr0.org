@@ -22,5 +22,5 @@
   }
 }
 .search-result {
-  @include dropdownMenu;
+  @include dropdownMenu();
 }

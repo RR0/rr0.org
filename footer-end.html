@@ -2,29 +2,26 @@
     <script>org.contentsLoaded();</script>
     <div id="footerTable" data-ng-show="!isFramed()" data-ng-cloak>
         <div>
-            <iframe src="//www.facebook.com/plugins/like.php?href=http://<!--#echo var="SERVER_NAME" --><!--#echo var="DOCUMENT_URI" -->&amp;show_faces=false&amp;layout=button_count" style="border:none; height:20px; width:120px;"></iframe>
-            <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
+            <div id="fb-root"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
+            <div class="g-plusone" data-size="medium" data-count="true"></div>
+            <div class="fb-like" style="line-height: 0.7em" data-send="false" data-layout="button_count" data-width="1" data-show-faces="false" data-action="recommend"></div>
             <script type="text/javascript">
-                window.___gcfg = {lang: 'fr'};
-                (function () {
-                    var po = document.createElement('script');
-                    po.type = 'text/javascript';
-                    po.async = true;
-                    po.src = 'https://apis.google.com/js/plusone.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(po, s);
-                })();
+                (function(doc, script) {
+                    var js, fjs = doc.getElementsByTagName(script)[0], frag = doc.createDocumentFragment(),
+                        add = function(url, id) {
+                            if (doc.getElementById(id)) {return;}
+                            js = doc.createElement(script);
+                            js.src = url;
+                            id && (js.id = id);
+                            frag.appendChild( js );
+                        };
+                    add('http://apis.google.com/js/plusone.js');
+                    add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
+                    add('//platform.twitter.com/widgets.js');
+                    fjs.parentNode.insertBefore(frag, fjs);
+                }(document, 'script'));
             </script>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-via="r_r_0" data-lang="fr">Tweeter</a>
-            <script>!function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");</script>
         </div>
         <div class="footer">
                 Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" -->

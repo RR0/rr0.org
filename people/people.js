@@ -112,25 +112,6 @@ angular.module('rr0.people', ['rr0.nav'])
             }
         };
     }]) 
-    .directive('people', ['peopleService', function (peopleService) {
-        'use strict';
-        return {
-            restrict: 'C',
-            transclude: true,
-            scope: true,
-            template: "<a href='{{::href}}' translate='no' ng-transclude></a>",
-            link: function (scope, elem, attrs) {
-                var txt = elem.text();
-                var nameKey = attrs.title;    // Alternate (correct for link) name?
-                var peopleName = txt;
-                if (peopleName.length <= 0) {
-                    peopleName = nameKey;
-                    elem.val(peopleName);
-                }
-                scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
-            }
-        };
-    }])
     .directive('meta', ['peopleService', function (peopleService) {
         'use strict';
         return {
@@ -201,7 +182,7 @@ angular.module('rr0.people', ['rr0.nav'])
         $scope.copyright = peopleService.getCopyright();
         $scope.docTime = timeService.toString(timeService.NewMoment(), timeService.getTime()).replacement;
     }])
-    .run(['peopleRoot', 'navigationService', function (peopleRoot, navigationService) {
+    .run(['peopleRoot', 'navigationService', 'commonsService', function (peopleRoot, navigationService, commonsService) {
         'use strict';
         navigationService.addStart({
                 dir: peopleRoot,
@@ -210,8 +191,8 @@ angular.module('rr0.people', ['rr0.nav'])
             }
         );
 
-        org.nounToLink(peopleRoot + "pilotes.html", "pilote");
-        org.nounToLink(peopleRoot + "ufologues.html", "ufologue");
-        org.nounToLink(peopleRoot + "Astronomes.html", "astronome");
-        org.nounToLink(peopleRoot + "temoins.html", "temoin");
+        commonsService.nounToLink(peopleRoot + "pilotes.html", "pilote");
+        commonsService.nounToLink(peopleRoot + "ufologues.html", "ufologue");
+        commonsService.nounToLink(peopleRoot + "Astronomes.html", "astronome");
+        commonsService.nounToLink(peopleRoot + "temoins.html", "temoin");
     }]);

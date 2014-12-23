@@ -1,8 +1,9 @@
 @import "mixins";
 
+$imageTransitionDuration: 1s;
+
 .image-container {
   max-width: 75%;
-  margin: 2vh 2vw;
   td {
     height: 100%;
   }
@@ -12,6 +13,7 @@ img {
   margin: 1.25em 1.25em 1.5em 1.25em;
   max-width: 100%;
   border-radius: $borderRadius;
+  transition: all $imageTransitionDuration ease;
 }
 
 caption {
@@ -25,26 +27,34 @@ caption {
   caption-side: bottom;
   max-height: 0;
   opacity: 0;
-  transition: all 1s ease;
+  transition: all $imageTransitionDuration ease;
 }
 
 figure {
   border-radius: $borderRadius;
   display: table;
-  transition: all 1s ease;
+  transition: all $imageTransitionDuration ease;
   max-width: 75%;
   max-height: 90%;
-  margin: 0 1em 0 1em;
+  margin: 0 0 $sideMargin 0;
   img {
     margin: 0;
     display: block;
     width: 100%;
   }
   &:hover {
+    figcaption + img {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include bottomInnerShadow();
+    }
     figcaption {
-      margin-top: 0.7em;
+      @include hovered(0.5em);
+      margin: 0;
       max-height: 100em;
       opacity: 1;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
     background: rgba(127, 127, 127, 0.2);
   }
@@ -59,7 +69,6 @@ table img {
 
 .image-container {
   max-width: 75%;
-  margin: 1em;
   td {
     height: 100%;
   }

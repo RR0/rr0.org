@@ -15,9 +15,7 @@ nav {
     }
   }
   ul {
-    background: $headerFromColor; /* for non-css3 browsers */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1); /* for IE */
-    background: linear-gradient(left top, $headerFromColor, $headerToColor);
+    @include headerBackground();
     margin: 0;
     padding: 0 0.5em;
     li {

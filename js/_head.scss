@@ -43,7 +43,7 @@ h2 {
   margin-top: 1.5em;
   margin-right: 0;
   margin-left: -$textMargin;
-  margin-bottom: 0;
+  margin-bottom: $shadowLength;
   color: #666666;
   @include gradientFromLeft;
   padding-top: 0.35em;

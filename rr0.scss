@@ -31,7 +31,6 @@ body {
       cursor: wait;
     }
   }
-  overflow: hidden;
 }
 
 aside {
@@ -70,7 +69,6 @@ aside {
 }
 
 .text {
-  left: 0;
   transition: left $transitionDuration;
   margin: $textMargin;
   ul {
@@ -130,14 +128,6 @@ aside {
 
 .columns {
   column-width: 15em;
-}
-
-@media (min-width: 720px) {
-}
-
-@media (max-width: 480px) {
-  /*@media (touch-enabled),(-webkit-touch-enabled),(-moz-touch-enabled),(-o-touch-enabled),(-ms-touch-enabled) {*/
-
 }
 
 /**
@@ -218,28 +208,6 @@ form {
 .context {
   font-size: 12px;
   font-variant: small-caps;
-}
-
-.swipe {
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-}
-
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-}
-
-.swipe-wrap > * {
-  float: left;
-  position: relative;
-  height: 100%;
-}
-
-.option {
-  white-space: nowrap;
 }
 
 @import "js/head";

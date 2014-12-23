@@ -83,15 +83,15 @@ blockquote {
       content: " »";
     }
   }
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-align: left;
+  margin: 0;
+  margin-left: 1.5em;
 }
 
 .exergue {
   font-style: italic;
   text-align: right;
   color: #4C4C4C;
+  .source {
+    display: inline;
+  }
 }

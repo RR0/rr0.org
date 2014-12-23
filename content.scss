@@ -34,27 +34,21 @@ iframe, object, embed {
   @extend .image-container;
   float: left;
   margin-left: 0;
+  margin-right: $sideMargin;
 
   figcaption {
     text-align: left;
-  }
-  caption {
-    padding-left: 2em;
-    padding-right: 0.5em;
   }
 }
 
 .right {
   @extend .image-container;
   float: right;
+  margin-left: $sideMargin;
   margin-right: 0;
 
   figcaption {
     text-align: right;
-  }
-  caption {
-    padding-left: 0.5em;
-    padding-right: 2em;
   }
 }
 
@@ -152,13 +146,40 @@ details {
     @extend a;
   }
   &[open] {
+    border: 1px #000000 dotted;
+    > * {
+      margin: 0;
+      padding: 0.5em;
+    }
     summary {
       color: #000000;
       &:hover {
         background: none;
       }
+      margin: 0;
+      padding: 0;
     }
   }
+}
+
+.text {
+  p:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/**
+ * Avoid line-break between checkbox/radio and its label
+ */
+.option {
+  white-space: nowrap;
+  display: inline-block;
+  margin-right: 1em;
 }
 
 @import "table";

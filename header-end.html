@@ -11,8 +11,8 @@
                         <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span>
                     </a>
                 </li>
-                <li data-ng-repeat-end data-ng-if="p.link && p.label" class="collapsed"> &gt; </li>
-                <li tabindex="100" data-ng-click="titleClick()" data-ng-mouseover="titleOver()" data-ng-mouseleave="titleLeave()" class="constant">
+                <li data-ng-repeat-end data-ng-cloak data-ng-if="p.link && p.label" class="collapsed"> &gt; </li>
+                <li tabindex="100" data-ng-click="titleClick()" class="constant">
                     <a href="#contents" data-ng-click="sectionClick('#contents')" class="outline-title" id="out-top">
                         <span class="constant" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span>
                     </a>
@@ -22,9 +22,9 @@
                         </li>
                     </ul>
                 </li>
-                <li data-ng-repeat-start="n in ns" class="collapsed"> &gt; </li>
-                <li data-ng-repeat-end class="constant {{::n.style}}">
-                    <a data-ng-href="{{::n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{::n.title}}"></span></a>
+                <li data-ng-repeat-start="n in ns" data-ng-cloak data-ng-if="n.link && n.label" class="collapsed"> &gt; </li>
+                <li data-ng-repeat-end class="constant {{n.style}}" data-ng-if="n.link && n.label" >
+                    <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
                 </li>
                 <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
                     <div class="search"></div>
@@ -38,7 +38,7 @@
             </ul>
         </nav>
     </div>
-    <div class="text" scrollable>
+    <div class="text">
         <div class="author" data-ng-controller="AuthorCtrl" data-ng-show="authors.length" data-ng-cloak>
             <span data-ng-cloak data-ng-repeat="aa in authors">{{$first?'':' & '}}<a data-ng-cloak data-ng-href="{{aa.link}}">{{aa.lastName}}, {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>,
             <span data-ng-bind-html="docTime"></span>

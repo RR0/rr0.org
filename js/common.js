@@ -559,6 +559,9 @@ angular.module('rr0.commons', [])
         var docUri;
 
         return {
+            nounToLink: function (l, k) {
+                return org.nounToLink(l, k);
+            },
             addEndingSlash: function (l) {
                 return org.addEndingSlash(l);
             },

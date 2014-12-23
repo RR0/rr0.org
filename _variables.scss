@@ -11,7 +11,7 @@
 //$contentFont: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
 //$contentFont: "Raleway";
 $contentFont: 'Open Sans', sans-serif;
-$textMargin: 1.3em;
+$textMargin: 2.25rem;
 //$menu-font: Verdana, Geneva, sans-serif;
 //$menu-font: 'Segoe UI', sans-serif;
 $menuFont: $contentFont;
@@ -39,8 +39,13 @@ $hoverColor: rgba(11, 117, 178, 0.4);
 $selectionPadding: 0.3rem;
 $selectedColor: rgba(11, 117, 178, 0.2);
 
-$leftSideWidth: 18vw;
-$rightSideWidth: 28%;
+$leftPaneWidth: 18vw;
+$rightPaneWidth: 28%;
+$sideMargin: 1.75em;
 
-$breakPoint1: 60em;
-$breakPoint2: 80em;
+$onePane: 40em;
+$twoPanes: 60em;
+$threePanes: 80em;
+
+$headerLayer: 100;
+$navLayer: 200;

@@ -16,16 +16,18 @@ function footsources() {
 }
 function footnotes() {
 }
-org.onContentsLoaded(footnotes);
 angular.module('rr0.foot', [])
     .run(function () {
+        'use strict';
         document.getElementsByTagName("footer").innerHtml += "";
     })
     .service('footService', [function () {
+        'use strict';
         this.notesCount = 0;
         this.sourcesCount = 0;
     }])
     .directive('note', ['footService', function (footService) {
+        'use strict';
         return {
             restrict: 'C',
             scope: true,
@@ -38,6 +40,7 @@ angular.module('rr0.foot', [])
             }
         };
     }]).directive('source', ['footService', function (footService) {
+        'use strict';
         return {
             restrict: 'C',
             scope: true,
@@ -47,10 +50,12 @@ angular.module('rr0.foot', [])
                 var footCount = ++footService.sourcesCount;
                 scope.anchor = '' + footCount;
                 scope.visible = false;
+                elem[0].style.display = 'inline';
             }
         };
     }])
     .controller('FootCtrl', ['$scope', function ($scope) {
+        'use strict';
         $scope.isFramed = function () {
             return window !== top;
         };

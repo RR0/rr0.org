@@ -43,10 +43,19 @@ figure {
     width: 100%;
   }
   &:hover {
+    @include hovered();
+    transition: all $imageTransitionDuration ease-out;
     figcaption + img {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       @include bottomInnerShadow();
+    }
+    margin-bottom: $sideMargin;
+    &.right {
+      margin-left: $sideMargin;
+    }
+    &.left {
+      margin-right: $sideMargin;
     }
     figcaption {
       @include hovered(0.5em);

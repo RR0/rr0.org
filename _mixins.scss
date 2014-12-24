@@ -40,7 +40,7 @@
   text-overflow: ellipsis;
 }
 
-@mixin hovered($padding) {
+@mixin hovered($padding: $selectionPadding) {
   border: none;
   border-radius: $borderRadius;
   background: rgba(184, 197, 212, 0.49);
@@ -50,7 +50,7 @@
 }
 
 .hovered {
-  @include hovered($selectionPadding);
+  @include hovered();
 }
 
 @mixin selectable {

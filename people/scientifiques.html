@@ -12,18 +12,34 @@
     <thead>
     <tr>
         <td>
-            <span class="option" data-ng-repeat="discipline in disciplines | orderBy:'name'" data-ng-cloak>
-                <input type="checkbox" id="{{::discipline.code}}CheckBox" data-ng-model="discipline.on"/>
-                <label for="{{::discipline.code}}CheckBox">{{::discipline.name}}</label>
-            </span>
+            <fieldset>
+                <legend>Disciplines</legend>
+                <span class="option" data-ng-repeat="discipline in disciplines | orderBy:'name'" data-ng-cloak>
+                    <input type="checkbox" id="{{::discipline.code}}CheckBox" data-ng-model="discipline.on"/>
+                    <label for="{{::discipline.code}}CheckBox">{{::discipline.name}}</label>
+                </span>
+            </fieldset>
         </td>
     </tr>
-    <tr style="margin-top: 1em">
+    <tr>
         <td>
-            <span class="option" data-ng-repeat="country in countries | orderBy:'name'" data-ng-cloak>
-                <input type="checkbox" id="{{::country.code}}CheckBox" data-ng-model="country.on"/>
-                <label for="{{::country.code}}CheckBox">{{::country.name}}</label>
-            </span>
+            <fieldset>
+                <legend>Nationalité</legend>
+                <span class="option" data-ng-repeat="country in countries | orderBy:'name'" data-ng-cloak>
+                    <input type="checkbox" id="{{::country.code}}CheckBox" data-ng-model="country.on"/>
+                    <label for="{{::country.code}}CheckBox">{{::country.name}}</label>
+                </span>
+            </fieldset>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <fieldset>
+                <span class="option">
+                    <label for="filterName">Nom</label>
+                    <input id="filterName" type="text" ng-model="filterName">
+                </span>
+            </fieldset>
         </td>
     </tr>
     </thead>
@@ -33,7 +49,7 @@
             <ul class="multi-list columns">
                 <li class="people {{::scientist.country}} {{::scientist.discipline}}"
                     title="{{::scientist.name}}" data-ng-cloak
-                    data-ng-repeat="scientist in scientists | filter:disciplineFilter | filter:countryFilter | orderBy:'name'">
+                    data-ng-repeat="scientist in scientists | filter:disciplineFilter | filter:countryFilter | filter:filterName | orderBy:'name'">
                     {{::scientist.name}}
                 </li>
                 <li>
@@ -42,76 +58,25 @@
     </tr>
     </tbody>
 </table>
-<section><h2>Altov, Genrikh</h2>
-
-    <p>Astronome soviétique.</p>
-    <p>Au début des années 1970s, Altov et son collègue Valentina Zhuravleva écrivent dans un magazine de Leningrad,
-        repris par l'agence <em>Tass</em>, que :
-    </p>
-    <blockquote><cite>La Terre a reçu des signaux lumineux d'autres habitants de l'espace. Ces gens habitent une planète
-        du 61ème groupe de la constellation du Cygne et leur existence a été prouvée mathématiquement.</cite>
-    </blockquote>
-    <h2>
-        <a name="Carrington"></a>Carrington </h2>
-
-    <p>Astronome renommé ayant signalé des ovnis.</p>
-    <h2><a name="Croste"></a>Croste </h2>
-
-    <p>Astronome renommé ayant signalé des ovnis.</p>
-    <h2><a name="EdisonThomasA"></a>Edison, Thomas A.</h2>
-
-    <p>Edison et <a href="t/TeslaNikola/index.html">Tesla</a> furent employés comme consultants par le
-        <a href="../org/us/dod/NDRC.html">NDRC</a>.
-    </p>
-</section>
-<section><h2><a name="LeeOliver"></a>Lee, Oliver</h2>
-
-    <p>Directeur de la <em>Northwestern University</em> qui fit en 1947 une déclaration similaire à cette du professeur
-        <a href="#KuiperGerard"> Kuiper</a> (à savoir que les ovnis n'étaient certainement pas des
-        <a href="../science/crypto/ufo/enquete/meprise/rentree/meteore/index.html">météores</a> et qu'ils étaient
-        probablements construits par des hommes).
-    </p>
-</section>
-<section><h2><a name="Rostan"></a>Rostan </h2>
-
-    <p>Astronome renommé ayant signalé des ovnis.</p>
-    <h2><a name="Wartmann"></a>Wartmann </h2>
-
-    <p>Astronome renommé ayant signalé des ovnis.</p>
-</section>
-<section><h2><a name="WebbJames"></a>Webb, James</h2>
-
-    <p> Administrateur de la <a href="../org/us/nasa/index.html">NASA</a> en 1966.</p>
-    <p>Webb est cité dans un mémo du président <a href="k/KennedyJohnFitzgerald/index.html">Kennedy</a> de 1963.</p>
-    <h2>
-        <a name="Williamson"></a>Williamson, Charles Hunt</h2>
-
-    <p>Williamson disparu d'une manière étrange après avoir posé le problème de 2 "comètes" qui pénètrèrent dans la
-        ceinture du Soleil et en ressortirent intactes.
-    </p>
-</section>
-<h2>
-    <a name="ZverevMitrofran"></a>Zverev, Mitrofran</h2>
-<p>Détaché à l'observatoire de Cerro Caln (Chili), Zverev déclare :</p>
-<blockquote>
-    <p>Quelque chose que nous ne comprenons pas circule autour de la Terre.</p>
-</blockquote>
 <!--#include virtual="/footer-start.html" -->
 <script>
     angular.module('rr0.people')
-            .controller('ScientistsController', ['$scope', function ($scope) {
+            .controller('ScientistsController', ['$scope', '$log', function ($scope, $log) {
                 $scope.disciplines = [
+                    {code: 'bio', name: 'Biologistes', on: true},
                     {code: 'astro', name: 'Astronomes', on: true},
                     {code: 'astrophys', name: 'Astrophysiciens', on: true},
                     {code: 'geophys', name: 'Géophysiciens', on: true},
+                    {code: 'geolo', name: 'Géologues', on: true},
                     {code: 'meteo', name: 'Météorologues', on: true},
                     {code: 'phys', name: 'Physiciens', on: true},
-                    {code: 'meteo', name: 'Météorologues', on: true},
-                    {code: 'medecins', name: 'Médecins', on: true},
+                    {code: 'medecin', name: 'Médecins', on: true},
                     {code: 'psy', name: 'Psychiatres', on: true},
                     {code: 'socio', name: 'Sociologues', on: true},
                     {code: 'math', name: 'Mathématiciens', on: true},
-                    {code: 'phi', name: 'Philosophes', on: true}
+                    {code: 'phi', name: 'Philosophes', on: true},
+                    {code: 'chi', name: 'Chimistes', on: true},
+                    {code: 'neuro', name: 'Neurologues', on: true}
                 ];
                 $scope.countries = [
                     {code: 'de', name: 'Allemands', on: true},
@@ -129,50 +94,53 @@
                     {code: 'ru', name: 'Russes', on: true},
                     {code: 'se', name: 'Suédois', on: true},
                     {code: 'ch', name: 'Suisses', on: true},
-                    {code: 'gr', name: 'Grecs', on: true}
+                    {code: 'dk', name: 'Danois', on: true}
                 ];
                 $scope.disciplineFilter = function (scientist) {
                     for (var i = 0; i < $scope.disciplines.length; i++) {
                         var discipline = $scope.disciplines[i];
-                        if (discipline.on && (!scientist.discipline || scientist.discipline.indexOf(discipline.code) > 0)) {
+                        if (discipline.on && (!scientist.discipline || scientist.discipline.indexOf(discipline.code) >= 0)) {
+                            $log.debug(scientist.name + " matches disciplines");
                             return true;
                         }
                     }
+                    $log.debug(scientist.name + " doesn't matches disciplines");
                     return false;
                 };
                 $scope.countryFilter = function (scientist) {
                     for (var i = 0; i < $scope.countries.length; i++) {
                         var country = $scope.countries[i];
                         if (country.on && (!scientist.country || scientist.country === country.code)) {
+                            $log.debug(scientist.name + " matches country");
                             return true;
                         }
                     }
+                    $log.debug(scientist.name + " doesn't matches country");
                     return false;
                 };
                 $scope.scientists = [
                     {name: 'Adair, David', country: 'us', discipline: 'phys'},
+                    {name: 'Altov, Genrikh', country: 'ru', discipline: 'astro'},
                     {name: 'Archimède', country: 'gr', discipline: 'phys math'},
                     {name: 'Aristote', country: 'gr', discipline: 'phi'},
                     {name: 'Agrest, Matest', country: 'ru', discipline: 'math phy'},
                     {name: 'Jung, Carl Gustav', country: 'ch', discipline: 'psy'},
                     {name: 'Ziegel, Felix Y.', country: 'ru'},
-                    {name: 'Almeida, Fernando F. M.', country: 'br', discipline: 'geophys'},
-                    {name: 'Agrest, Mikail', country: 'ru'},
-                    {name: 'Altov, Genrikh'},
+                    {name: 'Almeida, Fernando F. M.', country: 'br', discipline: 'geophys geolo'},
+                    {name: 'Agrest, Mikhail', country: 'ru', discipline: 'math phys'},
                     {name: 'Alvarez, Luis W.', country: 'us', discipline: 'phys'},
                     {name: 'Korolev, Sergey', country: 'us', discipline: 'phys'},
                     {name: 'Altschuler, Martin D.', country: 'us', discipline: 'astro phys'},
                     {name: 'Bacon, Francis', country: 'uk'},
                     {name: 'Bacon, Roger', country: 'uk', discipline: 'astro phys'},
                     {name: 'Baker, Robert M. L.', country: 'us', discipline: 'phys'},
-                    {name: 'Beckman, Fred'},
-                    {name: 'Berkner, Lloyd Viel'},
-                    {name: 'Bielek, Alfred D.'},
+                    {name: 'Beckman, Fred', country: 'us', discipline: 'neuro'},
+                    {name: 'Berkner, Lloyd Viel', country: 'us', discipline: 'geophys'},
                     {name: 'Biot, Maurice', country: 'fr'},
-                    {name: 'Blumrich, Josef F.'},
-                    {name: 'Bounias, Michel', country: 'fr'},
-                    {name: 'Brahé, Tycho'},
-                    {name: 'Branscomb, Lewis M.'},
+                    {name: 'Blumrich, Josef F.', country: 'us'},
+                    {name: 'Bounias, Michel', country: 'fr', discipline: 'math chi bio'},
+                    {name: 'Brahé, Tycho', country: 'dk', discipline: 'astro'},
+                    {name: 'Branscomb, Lewis M.', country: 'us', discipline: 'phys'},
                     {name: 'Breguet, Louis', country: 'fr'},
                     {name: 'Bronk, Detlev Wulf'},
                     {name: 'Brown, Thomas Townsend'},
@@ -182,7 +150,7 @@
                     {name: 'Bullard, Thomas E.'},
                     {name: 'Bush, Vannevar'},
                     {name: 'Calvin, Melvin'},
-                    {name: 'Carrington'},
+                    {name: 'Carrington', discipline: 'astro'},
                     {name: 'Carvalho, Wellaide Cecim'},
                     {name: 'Chadwell, H. Marshall'},
                     {name: 'Clarkson'},
@@ -193,7 +161,7 @@
                     {name: 'Copernic, Nicolas'},
                     {name: 'Corliss, William R.', country: 'us'},
                     {name: 'Cross, Howard Clinton'},
-                    {name: 'Croste'},
+                    {name: 'Croste', discipline: 'astro'},
                     {name: 'Craig, Roy F.', country: 'us'},
                     {name: 'Creegan, Robert F.'},
                     {name: 'Curien, Hubert', country: 'fr'},
@@ -202,7 +170,7 @@
                     {name: 'Drake, Frank D.', country: 'us', discipline: 'astro'},
                     {name: 'Dryden, Hugh Latimer'},
                     {name: 'Dyson, Freeman John'},
-                    {name: 'Edison, Thomas A.'},
+                    {name: 'Edison, Thomas A.', country: 'us'},
                     {name: 'Einstein, Albert', country: 'us', discipline: 'phys'},
                     {name: 'Eriksson, Tage O.'},
                     {name: 'Ewing, Maurice William'},
@@ -241,11 +209,11 @@
                     {name: 'Jessup, Morris Ketchum'},
                     {name: 'Katchen, Lee', country: 'us', discipline: 'phys'},
                     {name: 'Kaplan, Joseph'},
-                    {name: 'Kepler, Johannes', country: 'astro'},
+                    {name: 'Kepler, Johannes', country: 'de', discipline: 'astro'},
                     {name: 'Kuettner, Joachim P.'},
                     {name: 'Kuiper, Gerard Pieter', country: 'astro'},
                     {name: 'LaPaz, Lincoln', country: 'astro'},
-                    {name: 'Lee, Oliver'},  // TODO:
+                    {name: 'Lee, Oliver', country: 'us'},  // TODO:
                     {name: 'Leir, Roger K.', country: 'us', discipline: 'medecin'},
                     {name: 'Levengood, William'},
                     {name: 'Levine, Norman E.'},
@@ -288,19 +256,19 @@
                     {name: 'Reiffel, Leonard'},
                     {name: 'Riedel, Walther'},  // TODO:
                     {name: 'Roach, Franklin E.'},
-                    {name: 'Robertson, Howard P.'},
+                    {name: 'Robertson, Howard P.', country: 'us'},
                     {name: 'Robin-Evans, Karyl'},   // TODO: Dropas
                     {name: 'Kuhn, Thomas Samuel', country: 'us', discipline: 'phys'},
                     {name: 'Rodeghier, Mark', country: 'us'},
                     {name: 'Rubtsov, Vladimir', country: 'ru', disappeared: true},
                     {name: 'Rutledge, Harley', country: 'us'},
-                    {name: 'Rostan'},
+                    {name: 'Rostan', discipline: 'astro'},
                     {name: 'Rush, Joseph H.'},  // TODO: Not found
-                    {name: 'Sagan, Carl'},
+                    {name: 'Sagan, Carl', country: 'us', discipline: 'astrophys'},
                     {name: 'Salisbury, Frank B.', country: 'us'},
                     {name: 'Sarbacher, Robert Irving', country: 'us'},
                     {name: 'Sathco, John', country: 'us', discipline: 'astro'},
-                    {name: 'Sauders, David R.'},
+                    {name: 'Sauders, David R.', country: 'us'},
                     {name: 'Shideler, Emerson W.', country: 'us', discipline: 'phi'},
                     {name: 'Seitz, Frederick'},
                     {name: 'Shepard, Roger N.', country: 'us'},
@@ -349,11 +317,13 @@
                     {name: 'Zverev, Mitrofran', country: 'ru'},
                     {name: 'Kurchatov, Igor', country: 'ru'},   // TODO:
                     {name: 'Shklovsky, Josef Samuelovitch', country: 'ru'},
-                    {name: 'Topchiev, Aleksandr</a>', country: 'ru'},
+                    {name: 'Topchiev, Aleksandr', country: 'ru', discipline: 'chi'},
                     {name: 'Erling P. Strand'}, // TODO: http://erling.hiof.no/english/
                     {name: 'Zhang, Zhousheng', country: 'cn', discipline: 'astro'},
                     {name: 'De Samos, Artistarque', country: 'gr', discipline: 'phi'},
-                    {name: 'Huygens, Christiaan', discipline: 'astro'}
+                    {name: 'Huygens, Christiaan', discipline: 'astro'},
+                    {name: 'Webb, James', discipline: 'astro'},
+                    {name: 'Zverev, Mitrofran', discipline: 'astro'}
                 ];
             }]);
 </script>

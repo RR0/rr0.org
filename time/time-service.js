@@ -826,9 +826,9 @@ angular.module('rr0.time')
                     title = start + ' ' + betweenWord + ' ' + title;
                 }
                 return {
-                    "replacement": replacement,
+                    "replacement": replacement.trim(),
                     "timeLink": timeLink,
-                    "title": title
+                    "title": title.trim()
                 };
             }
         };

@@ -18,6 +18,12 @@ describe("Time module", function () {
     }));
 
     describe("timeService", function () {
+        describe("date", function () {
+            it("provides months", function() {
+                expect(timeService.monthNames()[0]).toBe('janvier');
+                expect(timeService.monthNames()[11]).toBe('décembre');
+            });
+        });
         describe("parse", function () {
             /*  it("parses ISO date", function () {
              var dateMoment1 = org.rr0.time.NewMoment();
@@ -81,8 +87,8 @@ describe("Time module", function () {
 
         it("find day of week", function () {
             expect(timeService.getDayOfWeek(1998, 8, 31)).toBe(1);
-            expect(timeService.dayOfWeekNam(0)).toBe('Dimanche');
-            expect(timeService.dayOfWeekNam(1)).toBe('Lundi');
+            expect(timeService.dayOfWeekName(0)).toBe('dimanche');
+            expect(timeService.dayOfWeekName(1)).toBe('lundi');
         });
         it("sets current month", function () {
             timeService.setMonth(2);
@@ -140,28 +146,28 @@ describe("Time module", function () {
 
             element = $compile("<time datetime='P10D5S'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("10&nbsp;jours et 5&nbsp;secondes");
+            expect(element.html()).toBe("10&nbsp;jours et 5&nbsp;secondes");
         });
         it('display dates', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("Dimanche 29 Juin 1997");
+            expect(element.html()).toBe("dimanche 29 juin 1997");
         });
         it('display datetimes', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("Samedi 25 Juillet 1998 à 17:20");
+            expect(element.html()).toBe("samedi 25 juillet 1998 à 17:20");
         });
         it('display time intervals', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("Dimanche 29 Juin 1997 au Mercredi 20 Mai 1998");
+            expect(element.html()).toContain("dimanche 29 juin 1997 au mercredi 20 mai 1998");
 
             /*    element = $compile("<time datetime='1997-05-29/1997-06-30'></time>")($rootScope);
              $rootScope.$digest();
@@ -176,7 +182,7 @@ describe("Time module", function () {
 
             var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("Dimanche 29 Juin 1997");
+            expect(element.html()).toContain("dimanche 29 juin 1997");
 
             element = $compile("<time datetime='1997-06-29 17:20'></time>")($rootScope);
             $rootScope.$digest();

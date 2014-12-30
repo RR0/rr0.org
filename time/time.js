@@ -41,7 +41,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
              * @return {*} January = 1
              */
             function monthIndex(w) {
-                return org.arrayIndex(w, timeService.monthNames[org.rr0.context.language]);
+                return org.arrayIndex(w, timeService.monthNames());
             }
 
             var preYearWords = ["en", "de", "à", "dès", "vers", "depuis", "jusqu'en", "année", "années", "fin", "début", "printemps", "été", "automne", "hiver", "avant", "entre", "et", "ou"];
@@ -139,7 +139,7 @@ angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
                                                 timeService.setDayOfMonth(jIndex);
                                             }
                                             dateLink += "/" + commonsService.zero(jIndex);
-                                            replacement = timeService.dayOfWeekNam(timeService.getDayOfWeek(y, mIndexBefore, jIndex)) + " " + jIndex + (jIndex === 1 ? "er" : "") + " " + replacement;
+                                            replacement = timeService.dayOfWeekName(timeService.getDayOfWeek(y, mIndexBefore, jIndex)) + " " + jIndex + (jIndex === 1 ? "er" : "") + " " + replacement;
                                         }
                                     }
                                 }

@@ -228,7 +228,7 @@ angular.module('rr0.nav')
                     if (m) {
                         this.setContents(oy, timeService.yearLink(oy));
                         l += "/" + commonsService.zero(m);
-                        label = timeService.monthNam(m - 1);
+                        label = timeService.monthName(m - 1);
                         if (y !== timeService.getTime().year) {
                             label += ' ' + y;
                         }

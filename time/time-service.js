@@ -1,5 +1,5 @@
 angular.module('rr0.time')
-    .service('timeService', ['timeRoot', 'commonsService', function (timeRoot, commonsService) {
+    .service('timeService', ['$locale', 'timeRoot', 'commonsService', function ($locale, timeRoot, commonsService) {
         'use strict';
 
         /**
@@ -416,8 +416,11 @@ angular.module('rr0.time')
                 var p = getPeople();
                 if (p) {
                     t = p.toString();
-                    if (p.born) t += " a " + (y - p.born.getFullYear()) + " ans";
-                    else t = "Naissance de " + t;
+                    if (p.born) {
+                        t += " a " + (y - p.born.getFullYear()) + " ans";
+                    } else {
+                        t = "Naissance de " + t;
+                    }
                 }
             }
             if (y) {
@@ -425,11 +428,6 @@ angular.module('rr0.time')
             }
             return s;
         }
-
-        var dayOfWeekNames = {
-            "fr": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
-            "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-        };
 
         var paramLang = function (lang) {
             return (!lang) ? org.rr0.context.language : lang;
@@ -521,7 +519,7 @@ angular.module('rr0.time')
                     d = t.dayOfMonth;
                 }
                 if (d) {
-                    var dayName = this.dayOfWeekNam(this.getDayOfWeek(t.year, t.month, d));
+                    var dayName = this.dayOfWeekName(this.getDayOfWeek(t.year, t.month, d));
                     s += dayName + " ";
                     s += (d === 1 ? "1<sup>er</sup>" : d);
                 }
@@ -562,22 +560,20 @@ angular.module('rr0.time')
                 }
                 return s;
             },
-            monthNames: {
-                "fr": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-                "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            monthNames: function (lang) {
+                return $locale.DATETIME_FORMATS.MONTH;
             },
             /*            getTime: function () {
              return addDate();
              },*/
             monthName: function (m) {
-                var t = this.getTime();
-                if (!m && t.month) {
-                    m = t.month;
+                if (!m) {
+                    var t = this.getTime();
+                    if (t.month) {
+                        m = t.month;
+                    }
                 }
-                return this.monthNam(m - 1);
-            },
-            monthNam: function (m, lang) {
-                return this.monthNames[paramLang(lang)][m];
+                return this.monthNames()[m - 1];
             },
             /**
              * Builds a address to link to a year page/directory.
@@ -598,8 +594,11 @@ angular.module('rr0.time')
                 }
                 return yLink;
             },
-            dayOfWeekNam: function (d, lang) {
-                return dayOfWeekNames[paramLang(lang)][d];
+            dayOfWeekNames: function () {
+                return $locale.DATETIME_FORMATS.DAY;
+            },
+            dayOfWeekName: function (d) {
+                return this.dayOfWeekNames()[d];
             },
             getDayOfWeek: function (y, m, d) {
                 return this.getDate(y, m, d).getDay();
@@ -695,7 +694,7 @@ angular.module('rr0.time')
                     var dayAsNumber = parseInt(d, 10);
                     var dOW;
                     if (!!(dayAsNumber)) {
-                        dOW = this.dayOfWeekNam(this.getDayOfWeek(y, m, d));
+                        dOW = this.dayOfWeekName(this.getDayOfWeek(y, m, d));
                         titDay = dOW + " " + d + (d === 1 ? "er" : "");
                         otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth();
                     } else {

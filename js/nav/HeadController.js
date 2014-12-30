@@ -30,7 +30,7 @@ angular.module('rr0.nav')
                     title = timeService.monthName() + " " + title;
                     var dayOfMonth = timeService.getDayOfMonth();
                     if (dayOfMonth) {
-                        title = timeService.dayOfWeekNam(timeService.getDayOfWeek()) + " " + dayOfMonth + " " + title;
+                        title = timeService.dayOfWeekName(timeService.getDayOfWeek()) + " " + dayOfMonth + " " + title;
                     }
                 }
             }

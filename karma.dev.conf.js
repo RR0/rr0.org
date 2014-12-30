@@ -17,6 +17,7 @@ module.exports = function (config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'bower_components/angular-sanitize/angular-sanitize.js',
+            'bower_components/angular-locale_fr-fr.js',
             'node_modules/karma-jasmine/**/*.js',
             'js/common.es5.js',
             'js/lang.es5.js',

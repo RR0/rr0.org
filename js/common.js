@@ -339,52 +339,6 @@ function OrgModule() {
         return v < 10 ? '0' + v : v;
     };
 
-    var domLoadProcs = [];
-
-    this.contentsLoaded = function () {
-        for (var i = 0; i < domLoadProcs.length; i++) {
-            var c = domLoadProcs[i];
-            if (typeof c === 'string') {
-                eval(c);
-            } else if (typeof c === 'function') {
-                c();
-            } else {
-                this.log('domLoadProc ' + c + ' of type ' + (typeof c) + ' is not supported');
-            }
-        }
-    };
-
-    this.onContentsLoaded = function (f) {
-        domLoadProcs.push(f);
-    };
-
-//    function waitForDOMLoaded(callback) {
-//        /* Internet Explorer */
-//        /*@cc_on
-//         @if (@_win32 || @_win64)
-//         document.write('<script id="ieScriptLoad" defer src="//:"><\/script>');
-//         document.getElementById('ieScriptLoad').onreadystatechange = function() {
-//         if (this.readyState === 'complete') {
-//         callbacks();
-//         }
-//         };
-//         @end @*/
-//        /* Mozilla, Chrome, Opera */
-//        if (document.addEventListener) {
-//            document.addEventListener('DOMContentLoaded', contentsLoaded, false);
-//        } else
-//        /* Safari, iCab, Konqueror */
-//        if (/KHTML|WebKit|iCab/i.test(navigator.userAgent)) {
-//            var DOMLoadTimer = setInterval(function () {
-//                if (/loaded|complete/i.test(document.readyState)) {
-//                    contentsLoaded();
-//                    clearInterval(DOMLoadTimer);
-//                }
-//            }, 10);
-//        } else      // Other web browsers
-//            window.onload = contentsLoaded();
-//    }
-
     this.addEndingSlash = function (l) {
         var lastSlash = l.length - 1;
         for (; lastSlash > 0; lastSlash--) {
@@ -487,32 +441,6 @@ function OrgModule() {
     };
 
     var orgThis = this;
-    this.processTags = function () {
-        // Priority order (i.e. "vague belge" before "vague")
-        nounsToLink("/science/crypto/ufo", ["ufologique", "ufologie"]);
-        org.toLinks("/science/crypto/ufo/FlyingSaucers.html", ["soucoupe volante", "soucoupes volantes"]);
-        org.toLink("/place/systeme/solaire/planete/terre", "Terre");
-        org.toLink("/place/systeme/solaire/planete/terre/lune", "Lune");
-        org.toLink("/place/systeme/solaire/Soleil", "Soleil");
-        orgThis.nounToLink("/science/crypto/ufo/OVNI.html", "ovni");
-        org.toLink("/org/us/dod/af/amc/atic/projet/bluebook", "Blue Book");
-        org.toLink("/org/us/ic/fbi", "FBI");
-        org.toLink("/org/us/ic/cia", "CIA");
-        org.toLink("/org/us/dod/af", "USAF");
-        org.toLink("/org/us/dod/af", "Air Force");
-        orgThis.nounToLink("/science/crypto/ufo/enquete/indice/radar", "radar");
-        orgThis.nounToLink("/science/crypto/ufo/observation/scenario/Abduction.html", "enl\xE8vement");
-        orgThis.nounToLink("/science", "science");
-        nounsToLink("/science/crypto/ufo/enquete/indice/temoignage/evaluation/Hypnose.html", ["hypnose", "hypnotique"]);
-        //nametolink("scientifique", peopleUriPart + "scientifiques.html");
-        orgThis.nounToLink("/science/crypto/ufo/enquete/indice/temoignage", "t\xE9moignage");
-        orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/ballon", "ballon");
-        orgThis.nounToLink("/science/crypto/ufo/enquete/meprise/rentree/meteore", "m\xE9t\xE9ore");
-    };
-
-    this.onContentsLoaded(this.rr0.initStructure);
-    this.onContentsLoaded(this.processTags);
-//    waitForDOMLoaded();
 
     return this;
 }
@@ -586,6 +514,9 @@ angular.module('rr0.commons', [])
             parentLink: function (l) {
                 return org.parentLink(l);
             },
+            initStructure: function () {
+                org.rr0.initStructure();
+            },
             camelize: function (s) {
                 var camelized = '';
                 var wasWord = false;
@@ -615,5 +546,9 @@ angular.module('rr0.commons', [])
                 return camelized;
             }
         };
-    });
+    })
+    .run(['commonsService', function (commonsService) {
+        "use strict";
+        commonsService.initStructure();
+    }]);
 //# sourceURL=common.js

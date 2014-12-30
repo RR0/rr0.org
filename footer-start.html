@@ -1,3 +1,40 @@
+<footer data-ng-controller="FootCtrl">
+    <div id="footerTable" data-ng-show="!isFramed()" data-ng-cloak>
+        <div>
+            <div id="fb-root"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
+            <div class="g-plusone" data-size="medium" data-count="true"></div>
+            <div class="fb-like" style="line-height: 0.7em" data-send="false" data-layout="button_count" data-width="1" data-show-faces="false" data-action="recommend"></div>
+            <script type="text/javascript">
+                (function(doc, script) {
+                    var js, fjs = doc.getElementsByTagName(script)[0], frag = doc.createDocumentFragment(),
+                            add = function(url, id) {
+                                if (doc.getElementById(id)) {return;}
+                                js = doc.createElement(script);
+                                js.src = url;
+                                id && (js.id = id);
+                                frag.appendChild( js );
+                            };
+                    add('http://apis.google.com/js/plusone.js');
+                    add('//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
+                    add('//platform.twitter.com/widgets.js');
+                    fjs.parentNode.insertBefore(frag, fjs);
+                }(document, 'script'));
+            </script>
+        </div>
+        <div class="footer">
+            Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" -->
+            <!--#flastmod virtual="$DOCUMENT_URI" -->
+            <script>if (!window.copyright) document.write("<a href=''/Copyright.html'>Copyright</a> &copy;") </script>
+            RR0 - <a href="/Contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+</div><!--text-->
+</div><!--contents-->
+<aside>
+    <div id="map-canvas"></div>
+</aside>
 <script src="/bower_components/traceur-runtime/traceur-runtime.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <!--#if expr="${QUERY_STRING}=/debug/" -->

@@ -153,25 +153,25 @@ describe("Time module", function () {
 
             var element = $compile("<time>1923-08-06</time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toBe("lundi 6 août 1923");
+            expect(element.html()).toBe("Lundi 6 août 1923");
 
             element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toBe("dimanche 29 juin 1997");
+            expect(element.html()).toBe("Dimanche 29 juin 1997");
         });
         it('display datetimes', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toBe("samedi 25 juillet 1998 à 17:20");
+            expect(element.html()).toBe("Samedi 25 juillet 1998 à 17:20");
         });
         it('display time intervals', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);
 
             var element = $compile("<time datetime='1997-06-29/1998-05-20'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("dimanche 29 juin 1997 au mercredi 20 mai 1998");
+            expect(element.html()).toContain("Dimanche 29 juin 1997 au mercredi 20 mai 1998");
 
             /*    element = $compile("<time datetime='1997-05-29/1997-06-30'></time>")($rootScope);
              $rootScope.$digest();
@@ -186,23 +186,23 @@ describe("Time module", function () {
 
             var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("dimanche 29 juin 1997");
+            expect(element.html()).toContain("Dimanche 29 juin 1997");
 
             element = $compile("<time datetime='1997-06-29 17:20'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("à 17:20");
+            expect(element.html()).toContain("À 17:20");
 
             element = $compile("<time datetime='1997-06-30'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("lendemain");
+            expect(element.html()).toContain("Lendemain");
 
             element = $compile("<time datetime='1997-06-31 20:05'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("lendemain à 20:05");
+            expect(element.html()).toContain("Lendemain à 20:05");
 
             element = $compile("<time datetime='1997-06-30 19:08'></time>")($rootScope);
             $rootScope.$digest();
-            expect(element.html()).toContain("veille à 19:08");
+            expect(element.html()).toContain("Veille à 19:08");
         });
     });
 });

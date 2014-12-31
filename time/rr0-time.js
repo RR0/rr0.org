@@ -1,5 +1,5 @@
 angular.module('rr0.time')
-    .directive('time', ['netService', 'timeService', function (netService, timeService) {
+    .directive('time', ['commonsService', 'netService', 'timeService', function (commonsService, netService, timeService) {
         'use strict';
         return {
             restrict: 'E',
@@ -54,6 +54,10 @@ angular.module('rr0.time')
                 function handleTime() {
                     decodedTime.fromString(dataStr);
                     r = timeService.toString(currentTime, decodedTime);
+                    var previousSibling = elem[0].previousSibling;
+                    if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
+                        r.replacement = commonsService.capitalizeFirstLetter(r.replacement);
+                    }
                     dataStr = decodedTime.toISOString();
                     netService.checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
                     if (!datetime) {

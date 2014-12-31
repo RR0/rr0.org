@@ -517,6 +517,9 @@ angular.module('rr0.commons', [])
             initStructure: function () {
                 org.rr0.initStructure();
             },
+            capitalizeFirstLetter: function (s) {
+                return s.charAt(0).toUpperCase() + s.slice(1);
+            },
             camelize: function (s) {
                 var camelized = '';
                 var wasWord = false;

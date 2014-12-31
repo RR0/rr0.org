@@ -83,6 +83,7 @@ angular.module('rr0.nav')
         function getTitle() {
             if (!$scope.title) {
                 $scope.title = "" + (titleFromTime() || titleFromPeople() || titleFromURI());
+                $scope.title = commonsService.capitalizeFirstLetter($scope.title);
             }
             return $scope.title;
         }
@@ -100,10 +101,11 @@ angular.module('rr0.nav')
         $scope.addNavElement = function (c) {
             return createNavElement(c);
         };
+
         $scope.ps = [];
         function addPrev(pp, tt, c) {
             $scope.ps.push({
-                label: "" + pp.label,
+                label: commonsService.capitalizeFirstLetter("" + pp.label),
                 link: pp.link,
                 title: tt,
                 style: c
@@ -113,7 +115,7 @@ angular.module('rr0.nav')
         $scope.ns = [];
         function addNext(nn, tt, c) {
             $scope.ns.push({
-                label: "" + nn.label,
+                label: commonsService.capitalizeFirstLetter("" + nn.label),
                 link: nn.link,
                 title: tt,
                 style: c

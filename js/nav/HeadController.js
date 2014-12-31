@@ -16,9 +16,11 @@ angular.module('rr0.nav')
         var currentSection;
 
         var outline = document.querySelector('.outline');
+
         function getNavHeight() {
-            return nav[0].style.height === "100%" ? 0 : nav[0].offsetHeight;
+            return nav[0].offsetHeight === scrolled.offsetHeight ? 0 : nav[0].offsetHeight;
         }
+
         $scope.getHeadingHeight = function () {
             return nav[0].offsetTop + getNavHeight();
         };
@@ -160,6 +162,7 @@ angular.module('rr0.nav')
             if (isHeaderVisible()) {
                 if (isNavCollapsed || !$scope.outline) {
                     nav.removeClass('collapsed');
+                    text.style.paddingTop = '0';
                     $scope.$apply(function () {
                         setOutline('Sommaire');
                     });
@@ -171,6 +174,7 @@ angular.module('rr0.nav')
                     updateOutline();
                 } else {
                     nav.addClass('collapsed');
+                    text.style.paddingTop = getNavHeight() + 'px';
                     $scope.$apply(function () {
                         setOutline($scope.title);
                     });

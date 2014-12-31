@@ -476,16 +476,16 @@ angular.module('rr0.time')
                 if (y) {                    // No getTime().year set means no date set
                     dat = new Date();
                     dat.setFullYear(y);
+                    if (!d) {
+                        d = this.getDayOfMonth();
+                    }
+                    dat.setDate(d);
                     if (!m) {
                         m = this.getMonth();
                     }
                     if (m) {
                         dat.setMonth(m - 1);
                     }
-                    if (!d) {
-                        d = this.getDayOfMonth();
-                    }
-                    dat.setDate(d);
                 }
                 return dat;
             },

@@ -151,7 +151,11 @@ describe("Time module", function () {
         it('display dates', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);
 
-            var element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
+            var element = $compile("<time>1923-08-06</time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toBe("lundi 6 août 1923");
+
+            element = $compile("<time datetime='1997-06-29'></time>")($rootScope);
             $rootScope.$digest();
             expect(element.html()).toBe("dimanche 29 juin 1997");
         });

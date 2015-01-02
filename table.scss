@@ -2,32 +2,14 @@
 
 @import "mixins";
 
-th {
-  font-size: 16px;
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  background-color: rgba(109, 110, 120, 0.10);
-  color: #666666;
-  text-align: left;
-  padding: 2px 1em;
-}
-
-td {
-  font-style: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-align: justify;
-  padding: 5px;
-}
+$tablePadding: 0.4em 0.7em;
+$tableBorder: 1px lightgrey solid;
 
 table {
+  border-collapse: collapse;
+  border: none;               /* A global border prevents layout with "non-visible" cells */
   $blurRadius: 1em;
   $offsetY: 0.3em;
-  margin: 1.25em 1.25em 1.5em 1.25em;
-  border: none;
   thead {
     display: table;
     table-layout: fixed;
@@ -45,17 +27,22 @@ table {
       width: 100%;
     }
   }
-  &:not(thead) {
-    tbody {
-      &:first-child {
-        border-top: rgb(255, 255, 255) $blurRadius - $offsetY solid;
-      }
-      &:last-child {
-        border-bottom: rgb(255, 255, 255) $blurRadius - $offsetY solid;
-      }
-    }
-  }
-  th, td {
-    width: auto;
-  }
+}
+
+th, td {
+  width: auto;
+  padding: $tablePadding;
+  font-weight: normal;
+
+  border: $tableBorder;
+}
+
+th {
+  background-color: rgba(109, 110, 120, 0.10);
+  color: #666666;
+  text-align: left;
+}
+
+td {
+  text-align: justify;
 }

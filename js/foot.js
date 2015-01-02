@@ -6,7 +6,7 @@ function footsources() {
 }
 function footnotes() {
 }
-angular.module('rr0.foot', [])
+angular.module('rr0.foot', ['rr0.social'])
     .run(function () {
         'use strict';
         document.getElementsByTagName("footer").innerHtml += "";
@@ -32,7 +32,8 @@ angular.module('rr0.foot', [])
                 elem[0].style.display = 'inline';
             }
         };
-    }]).directive('source', ['footService', function (footService) {
+    }])
+    .directive('source', ['footService', function (footService) {
         'use strict';
         return {
             restrict: 'C',

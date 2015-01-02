@@ -109,6 +109,22 @@ module.exports = function (grunt) {
                             dest: 'js/units.es5.js'
                         },
                         {
+                            src: ['js/social/social.js'],
+                            dest: 'js/social/social.es5.js'
+                        },
+                        {
+                            src: ['js/social/fb/rr0-fb-like.js'],
+                            dest: 'js/social/fb/rr0-fb-like.es5.js'
+                        },
+                        {
+                            src: ['js/social/rr0-tweet.js'],
+                            dest: 'js/social/rr0-tweet.es5.js'
+                        },
+                        {
+                            src: ['js/social/rr0-gplus.js'],
+                            dest: 'js/social/rr0-gplus.es5.js'
+                        },
+                        {
                             src: ['time/1/9/7/7/Poher_Matrice/matrix.js'],
                             dest: 'time/1/9/7/7/Poher_Matrice/matrix.es5.js'
                         }
@@ -235,6 +251,10 @@ module.exports = function (grunt) {
                             'js/index.es5.js',
                             'js/search/search.es5.js',
                             'js/units.es5.js',
+                            'js/social/social.es5.js',
+                            'js/social/fb/rr0-fb-like.es5.js',
+                            'js/social/rr0-tweet.es5.js',
+                            'js/social/rr0-gplus.es5.js',
                             'time/1/9/7/7/Poher_Matrice/matrix.es5.js'
                         ]
                     }

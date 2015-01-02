@@ -93,5 +93,8 @@ blockquote {
   color: #4C4C4C;
   .source {
     display: inline;
+    a:first-of-type {
+      display: none;
+    }
   }
 }

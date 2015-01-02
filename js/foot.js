@@ -2,16 +2,6 @@
  * Foot notes and sources references
  */
 
-/*
- var elements = document.body.getElementsByTagName("*");
- for (i = 0; i < elements.length; i++) {
- for (var h = 0; h < arguments.length; h++) {
- if (arguments[h](elements[i])) break;
- }
- }
- }
- */
-
 function footsources() {
 }
 function footnotes() {
@@ -32,11 +22,14 @@ angular.module('rr0.foot', [])
             restrict: 'C',
             scope: true,
             transclude: true,
-            template: '<a href="#" title="Cliquez pour voir/cacher" ng-click="visible=!visible"> {{anchor}} </a><span ng-show="visible">– <span ng-transclude></span></span>',
+            template: '<a href="#" title="Cliquez pour voir/cacher la note" data-ng-click="visible=!visible"> {{anchor}} </a>' +
+            '<span data-ng-cloak data-ng-show="visible">&nbsp;– <span data-ng-transclude></span>' +
+            '</span>',
             link: function (scope, elem, attrs) {
                 var footCount = ++footService.notesCount;
                 scope.anchor = String.fromCharCode(96 + footCount);
                 scope.visible = false;
+                elem[0].style.display = 'inline';
             }
         };
     }]).directive('source', ['footService', function (footService) {
@@ -45,11 +38,13 @@ angular.module('rr0.foot', [])
             restrict: 'C',
             scope: true,
             transclude: true,
-            template: '<a href="#" title="Cliquez pour voir/cacher" ng-click="visible=!visible"> {{anchor}} </a><span ng-show="visible">– <span ng-transclude></span></span>',
+            template: '<a href="#" title="Cliquez pour voir/cacher la source" data-ng-click="visible=!visible"> {{anchor}} </a>' +
+            '<span data-ng-cloak data-ng-show="visible">&nbsp;– <span data-ng-transclude></span>' +
+            '</span>',
             link: function (scope, elem, attrs) {
                 var footCount = ++footService.sourcesCount;
                 scope.anchor = '' + footCount;
-                scope.visible = false;
+                scope.visible = getComputedStyle(elem[0]).display !== 'none';
                 elem[0].style.display = 'inline';
             }
         };

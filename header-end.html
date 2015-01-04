@@ -6,6 +6,15 @@
         <h1 data-ng-bind-html="title" data-ng-show="!isFramed()" title="{{title}}">&nbsp;</h1></header>
         <nav>
             <ul>
+                <li data-ng-cloak data-ng-if="!isFramed()" class="constant home">
+                    <a data-ng-href="/" href="/">
+                        <span title="Home" class="ng-binding">RR0</span>
+                    </a>
+                </li>
+                <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
+                    <div class="search"></div>
+                </li>
+                <li data-ng-cloak data-ng-if="!isFramed()" class="collapsed"> &gt; </li>
                 <li data-ng-repeat-start="p in ps" data-ng-if="p.link && p.label" class="constant {{::p.style}}">
                     <a data-ng-href="{{::p.link}}">
                         <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span>
@@ -25,9 +34,6 @@
                 <li data-ng-repeat-start="n in ns" data-ng-cloak data-ng-if="n.link && n.label" class="collapsed"> &gt; </li>
                 <li data-ng-repeat-end class="constant {{n.style}}" data-ng-if="n.link && n.label" >
                     <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
-                </li>
-                <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
-                    <div class="search"></div>
                 </li>
                 <li class="constant">
                     <span data-ng-bind-html="alternate"></span>

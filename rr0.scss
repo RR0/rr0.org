@@ -3,7 +3,7 @@
 @import "reset";
 @import "mixins";
 
-[data-ng-cloak] {
+[data-ng-cloak] {             /* Angular early hide */
   display: none !important;
 }
 

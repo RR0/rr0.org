@@ -93,6 +93,7 @@ blockquote {
   color: #4C4C4C;
   .source {
     display: inline;
+    vertical-align: baseline;
     a:first-of-type {
       display: none;
     }

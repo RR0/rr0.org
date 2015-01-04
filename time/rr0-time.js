@@ -58,7 +58,7 @@ angular.module('rr0.time')
                     if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
                         r.replacement = commonsService.capitalizeFirstLetter(r.replacement);
                     }
-                    dataStr = decodedTime.toISOString();
+                    dataStr = timeService.toISOString(decodedTime);
                     netService.checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
                     if (!datetime) {
                         e.setAttribute("datetime", dataStr);

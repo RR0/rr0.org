@@ -81,6 +81,14 @@ module.exports = function (grunt) {
                             dest: 'time/time.es5.js'
                         },
                         {
+                            src: ['time/moment.js'],
+                            dest: 'time/moment.es5.js'
+                        },
+                        {
+                            src: ['time/duration.js'],
+                            dest: 'time/duration.es5.js'
+                        },
+                        {
                             src: ['time/time-service.js'],
                             dest: 'time/time-service.es5.js'
                         },
@@ -244,6 +252,8 @@ module.exports = function (grunt) {
                             'people/rr0-meta.es5.js',
                             'people/rr0-copyright.es5.js',
                             'time/time.es5.js',
+                            'time/moment.es5.js',
+                            'time/duration.es5.js',
                             'time/time-service.es5.js',
                             'time/rr0-time.es5.js',
                             'place/place.es5.js',

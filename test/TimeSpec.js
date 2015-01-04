@@ -64,7 +64,7 @@ describe("Time module", function () {
             dateMoment.setYear(1998);
             dateMoment.setMonth(8);
             dateMoment.setDayOfMonth(31);
-            expect(dateMoment.toISOString()).toBe('1998-08-31');
+            expect(timeService.toISOString(dateMoment)).toBe('1998-08-31');
 
             var timeMoment = timeService.NewMoment();
             timeMoment.setYear(1998);
@@ -72,7 +72,7 @@ describe("Time module", function () {
             timeMoment.setDayOfMonth(31);
             timeMoment.setHour(16);
             timeMoment.setMinutes(38);
-            expect(timeMoment.toISOString()).toBe('1998-08-31T16:38');
+            expect(timeService.toISOString(timeMoment)).toBe('1998-08-31T16:38');
         });
     });
     describe("Time directive", function () {
@@ -165,6 +165,10 @@ describe("Time module", function () {
             var element = $compile("<time datetime='1998-07-25 17:20'></time>")($rootScope);
             $rootScope.$digest();
             expect(element.html()).toBe("Samedi 25 juillet 1998 à 17:20");
+
+            element = $compile("<time datetime='1998-07-25 17:00'></time>")($rootScope);
+            $rootScope.$digest();
+            expect(element.html()).toBe("À 17:00");
         });
         it('display time intervals', function () {
             spyOn(netService, "onExists").and.returnValue(httpMock);

@@ -27,6 +27,8 @@ module.exports = function (config) {
             'people/rr0-meta.es5.js',
             'people/rr0-copyright.es5.js',
             'time/time.es5.js',
+            'time/moment.es5.js',
+            'time/duration.es5.js',
             'time/time-service.es5.js',
             'time/rr0-time.es5.js',
             'js/nav/nav.es5.js',

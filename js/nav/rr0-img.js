@@ -7,7 +7,7 @@ angular.module('rr0.nav')
         return {
             restrict: 'E',
             link: function (scope, elem, attrs) {
-                var pageHeading = document.querySelector('header h1');
+                var pageHeading = document.querySelector('header');
                 if (pageHeading) {
                     var style = window.getComputedStyle(pageHeading).backgroundImage;
                     style += ', url(\'' + attrs.src + '\')';

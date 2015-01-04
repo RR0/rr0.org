@@ -1,7 +1,11 @@
 @import "mixins";
 
 code {
-  font-family: monospace;
+  text-align: left;
+}
+
+pre {
+  overflow: auto;
 }
 
 .obsolete {

@@ -145,13 +145,8 @@ angular.module('rr0.nav')
                     searchResults = document.querySelector('.search-result');
                 }
                 if (searchResults) {
-                    if (isNavLeft()) {
-                        searchResults.style.top = trigger.offsetTop + 'px';
-                        searchResults.style.left = (trigger.offsetLeft + trigger.offsetWidth) + 'px';
-                    } else {
-                        searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
-                        searchResults.style.left = "";
-                    }
+                    searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
+                    searchResults.style.left = "";
                 }
             }
         }

@@ -62,15 +62,14 @@
 }
 
 @mixin menu {
-  max-height: 80vh;
-  overflow: auto;
+  display: block;
+  position: relative;
+  overflow: auto; // Allow menu to scroll if too long
   padding: 0;
   //  transition: height $transitionDuration ease;
-  display: block;
   @include headerBackground();
   li {
     display: block;
-    width: 100%;
     a {
       display: block;
     }
@@ -94,7 +93,6 @@
       padding: 0;
       width: auto;
     }
-    position: relative;
     padding: $selectionPadding;
     float: none;
     &:focus {
@@ -106,10 +104,13 @@
   }
 }
 @mixin dropdownMenu {
+  li {
+    width: 100%;
+  }
   @include menu();
   position: absolute;
   @include bottomInnerShadow;
-  height: 0;  /* Closed by default */
+  height: 0;                    // Closed by default
 }
 @mixin embeddedMenu {
   @include menu();

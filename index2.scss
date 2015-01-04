@@ -1,0 +1,143 @@
+$minSize: 25em;
+@mixin fullScreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #000000;
+  @include fullScreen();
+
+  nav {
+    position: static;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+
+  ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: table;
+      text-align: center;
+      //min-width: $minSize;
+      //min-height: $minSize/2;
+      float: left;
+
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        text-decoration: none;
+        color: darkslategray;
+        font-size: 1.5em;
+        font-family: "Arial", sans-serif;
+        text-shadow: 0 0 10px white;
+      }
+    }
+  }
+}
+
+@function power ($x, $n) {
+  $ret: 1;
+  @if $n > 0 {
+    @for $i from 1 through $n {
+      $ret: $ret * $x;
+    }
+  }
+  @return $ret;
+}
+
+$icons: '/time/1/9/5/0/06/08/TelephoneRegister.jpg',
+'/place/systeme/solaire/planete/terre/Apollo.jpg',
+'/org/us/ic/nsa/nsa-place.jpg',
+'/people/a/AdamsWilliamA/portrait.jpg',
+politics,
+'/croyance/conspirationnisme/TireursDeFicelles.jpg',
+'/people/p/PersingerMichaelA/p040-15.jpg',
+'/tech/aero/appareil/avion/sr71/SR-71_NASA.jpg';
+
+$count: length($icons);
+
+$primes: 2 3 5 7 11 13 17 19;
+$p: 1;
+$fact: 0;
+@while $fact==0 {
+  $f: nth($primes, $p);
+  $remain: $count % $f;
+  $fact: if($remain==0, $f, 0);
+  $p: $p+1;
+}
+
+$totW: 1;
+$pow: 0;
+@while ($totW < $count) {
+  $totW: $totW * $fact;
+  $pow: $pow + 1;
+}
+
+@for $n from 0 through $pow {
+  $gridWidth: power($fact, $n);
+  $gridHeight: power($fact, $pow - $n);
+  @media screen and (min-width: #{$n*$minSize}) and (max-width: #{($n+1)*$minSize}) {
+    li {
+      gridWidth: $gridWidth;
+      gridHeight: $gridHeight;
+      width: #{100%/$gridWidth};
+      height: #{100%/$gridHeight};
+    }
+  }
+}
+
+@for $i from 1 through length($icons) {
+  .chapter#{$i} {
+    $image: nth($icons, $i);
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background 0.3s ease;
+  }
+}
+
+$formHeight: 10%;
+$formWidth: 60%;
+$formPadding: 2%;
+
+.centered {
+  position: absolute;
+  top:50%;
+  left:50%;
+  z-index: 200;
+}
+.search {
+  margin-left:-50%;
+  margin-top:-50%;
+  width: 100%;
+
+  transition: all 1s ease;
+  vertical-align: middle;
+  text-align: center;
+  background: rgba(139, 152, 163, 0.95);
+  box-shadow: black 0 0 8em 01em;
+  border-radius: 0.5em;
+  padding: 1em;
+  form {
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+    input {
+      width: 100%;
+    }
+  }
+}
+

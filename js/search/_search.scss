@@ -1,6 +1,8 @@
 @import "../../mixins";
 
 .search {
+  @include selectable();
+  display: inline-block;
   form {
     * {
       display: inline;
@@ -10,10 +12,8 @@
     }
     input {
       width: 80%;
-      line-height: normal;
       max-width: 30em;
       height: 80%;
-      max-height: 1.5em;
     }
     .iconic.magnifying_glass {
       @include selectable();

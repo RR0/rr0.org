@@ -17,8 +17,12 @@ angular.module('rr0.nav')
 
         var outline = document.querySelector('.outline');
 
+        function isNavLeft() {
+            return nav[0].offsetHeight === scrolled.offsetHeight;
+        }
+
         function getNavHeight() {
-            return nav[0].offsetHeight === scrolled.offsetHeight ? 0 : nav[0].offsetHeight;
+            return isNavLeft() ? 0 : nav[0].offsetHeight;
         }
 
         $scope.getHeadingHeight = function () {
@@ -132,15 +136,22 @@ angular.module('rr0.nav')
             $scope.outline = outlineHTML;
         }
 
-        var search;
+        var searchResults;
+
         function updateSearchPos(triggerSelector) {
             var trigger = document.querySelector(triggerSelector);
             if (trigger) {
-                if (!search) {
-                    search = document.querySelector('.search-result');
+                if (!searchResults) {
+                    searchResults = document.querySelector('.search-result');
                 }
-                if (search) {
-                    search.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
+                if (searchResults) {
+                    if (isNavLeft()) {
+                        searchResults.style.top = trigger.offsetTop + 'px';
+                        searchResults.style.left = (trigger.offsetLeft + trigger.offsetWidth) + 'px';
+                    } else {
+                        searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
+                        searchResults.style.left = "";
+                    }
                 }
             }
         }
@@ -235,6 +246,7 @@ angular.module('rr0.nav')
             scrolled.onscroll(event);
             updatePos();
         }
+
         if (window.addEventListener) {      // most non-IE browsers and IE9
             window.addEventListener("resize", onResize, false);
         } else if (window.attachEvent) {    // Internet Explorer 5 or above
@@ -270,7 +282,6 @@ angular.module('rr0.nav')
 
             var startNav = navigationService.getStartNav();
             if (window === top) {
-                addPrev({label: "RR0", link: "/"}, "Home", "home");
                 addPrev(startNav, startNav.title, "start");
                 addPrev({
                     label: '' + navigationService.getContents(),
@@ -379,7 +390,8 @@ angular.module('rr0.nav')
 //            }
             $scope.sections.push(section);
         });
-        $timeout(function() {
-           updateHeading();
+        $timeout(function () {
+            updateHeading();
+            updatePos();
         });
     }]);

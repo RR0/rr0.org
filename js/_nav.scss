@@ -67,6 +67,11 @@ nav {
 
 @import "search/search";
 
+.outline-title:hover + .outline, .outline:hover,
+.search form:hover + .search-result, .search-result:hover {   // Triggers for drop-down menus
+  height: auto;
+}
+
 /**
  *
  */
@@ -88,10 +93,6 @@ nav {
     > ul {
       overflow: hidden; /* BFC */
     }
-  }
-  .outline-title:hover + .outline, .outline:hover,
-  .search form:hover + .search-result, .search-result:hover {
-    height: auto;
   }
 }
 
@@ -115,13 +116,14 @@ nav {
     }
   }
   .search-result {
-    @include embeddedMenu;
+    min-width: 30em;
+    max-width: 100vw - $leftPaneWidth;
   }
   .label {
     display: inline;
   }
   nav {
-    overflow: auto;
+    overflow: visible;  /* To display search results aside */
     width: $leftPaneWidth;
     position: absolute;
     height: 100%;

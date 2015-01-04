@@ -29,9 +29,6 @@ nav {
       &:hover {
         border-right: none;
       }
-      span.magnifying_glass {
-        padding-left: 0.245em;
-      }
       .label {
         ul li:hover {
           cursor: pointer;
@@ -110,7 +107,7 @@ nav {
  */
 @media (min-width: $twoPanes) {
   .search {
-    //    font-size: 1em;
+    width: 100%;
     label {
       display: inline;
     }

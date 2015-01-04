@@ -11,9 +11,8 @@
       display: none;
     }
     input {
-      width: 80%;
       max-width: 30em;
-      height: 80%;
+      padding-right: 0.245em;
     }
     .iconic.magnifying_glass {
       @include selectable();

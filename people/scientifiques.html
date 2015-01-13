@@ -12,34 +12,26 @@
     <thead>
     <tr>
         <td>
-            <fieldset>
-                <legend>Disciplines</legend>
-                <span class="option" data-ng-repeat="discipline in disciplines | orderBy:'name'" data-ng-cloak>
-                    <input type="checkbox" id="{{::discipline.code}}CheckBox" data-ng-model="discipline.on"/>
-                    <label for="{{::discipline.code}}CheckBox">{{::discipline.name}}</label>
-                </span>
-            </fieldset>
+            <span class="option" data-ng-repeat="discipline in disciplines | orderBy:'name'" data-ng-cloak>
+                <input type="checkbox" id="{{::discipline.code}}CheckBox" data-ng-model="discipline.on"/>
+                <label for="{{::discipline.code}}CheckBox">{{::discipline.name}}</label>
+            </span>
         </td>
     </tr>
     <tr>
         <td>
-            <fieldset>
-                <legend>Nationalité</legend>
-                <span class="option" data-ng-repeat="country in countries | orderBy:'name'" data-ng-cloak>
-                    <input type="checkbox" id="{{::country.code}}CheckBox" data-ng-model="country.on"/>
-                    <label for="{{::country.code}}CheckBox">{{::country.name}}</label>
-                </span>
-            </fieldset>
+            <span class="option" data-ng-repeat="country in countries | orderBy:'name'" data-ng-cloak>
+                <input type="checkbox" id="{{::country.code}}CheckBox" data-ng-model="country.on"/>
+                <label for="{{::country.code}}CheckBox">{{::country.name}}</label>
+            </span>
         </td>
     </tr>
     <tr>
         <td>
-            <fieldset>
-                <span class="option">
-                    <label for="filterName">Nom</label>
-                    <input id="filterName" type="text" ng-model="filterName">
-                </span>
-            </fieldset>
+            <span class="option">
+                <label for="filterName">Nom</label>
+                <input id="filterName" type="text" ng-model="filterName">
+            </span>
         </td>
     </tr>
     </thead>
@@ -58,7 +50,7 @@
     </tr>
     </tbody>
 </table>
-<!--#include virtual="/footer-start.html" -->
+<!--#include virtual="/footer.html" -->
 <script>
     angular.module('rr0.people')
             .controller('ScientistsController', ['$scope', '$log', function ($scope, $log) {
@@ -94,7 +86,8 @@
                     {code: 'ru', name: 'Russes', on: true},
                     {code: 'se', name: 'Suédois', on: true},
                     {code: 'ch', name: 'Suisses', on: true},
-                    {code: 'dk', name: 'Danois', on: true}
+                    {code: 'dk', name: 'Danois', on: true},
+                    {code: 'no', name: 'Norvégien', on: true}
                 ];
                 $scope.disciplineFilter = function (scientist) {
                     for (var i = 0; i < $scope.disciplines.length; i++) {
@@ -196,6 +189,7 @@
                     {name: 'Halstead, Frank'},
                     {name: 'Harder, James A.'},
                     {name: 'Hartmann, William K.'},
+                    {name: 'Hauge, Bjørn Gitle', country: 'no'},
                     {name: 'Hawking, Stephen', discipline: 'astrophys'},
                     {name: 'Henderson, Garry C.'},
                     {name: 'Herschel, William'},
@@ -327,4 +321,3 @@
                 ];
             }]);
 </script>
-<!--#include virtual="/footer-end.html" -->

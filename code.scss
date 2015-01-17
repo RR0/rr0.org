@@ -1,16 +1,31 @@
 @import "mixins";
 
+$codeBackground: rgb(241, 246, 247);
+
 code {
   text-align: left;
+  background-color: $codeBackground;
+  font-size: 1.1em;
 }
 
 pre {
+  $blurRadius: 1em;
+  $offsetY: 0.3em;
+
+  background-color: $codeBackground;
+  code {
+    background-color: initial;
+  }
   overflow: auto;
+  box-shadow: inset 0 $offsetY $blurRadius 0 rgba(0, 0, 1, 0.21);
+  display: block;
+  max-height: 80vh;
 }
 
 .obsolete {
   background-color: #FFFFFF;
 }
+
 .deprecated {
   text-decoration: line-through;
 }

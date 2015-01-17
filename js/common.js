@@ -1,5 +1,5 @@
 function OrgModule() {
-
+    'use strict';
     this.debug = window.location.href.indexOf("?debug") >= 0;
 
     if (this.debug && typeof console !== 'undefined') {
@@ -230,11 +230,7 @@ function OrgModule() {
     };
 
     this.clone = function (o) {
-        var c = {};
-        for (var k in o) {
-            c[k] = o[k];
-        }
-        return c;
+        return angular.copy(o);
     };
 
     this.text = function (e) {
@@ -296,8 +292,9 @@ function OrgModule() {
             .replace(/(\u00E8|\u00E9|\u00EA|\u00EB)/g, 'e')
             .replace(/(\u00EE|\u00EF)/g, 'i')
             .replace(/\u00F1/g, 'n')
-            .replace(/(\u00F4|\u00F6)/g, 'o')
-            .replace(/(\u00F9|\u00FB|\u00FC|\u00FA)/g, 'u');
+            .replace(/(\u00F4|\u00F6|\u00F8)/g, 'o')
+            .replace(/(\u00F9|\u00FB|\u00FC|\u00FA)/g, 'u')
+            .replace(/[\. ,'\-]/g, '');
         return l;
     };
 
@@ -550,6 +547,16 @@ angular.module('rr0.commons', [])
             }
         };
     })
+    .directive('code', [function() {
+        "use strict";
+        return {
+            restrict: 'E',
+            link: function(scope, el, attrs) {
+                var code = el[0];
+                code.innerHTML = prettyPrintOne(code.innerHTML);
+            }
+        };
+    }])
     .run(['commonsService', function (commonsService) {
         "use strict";
         commonsService.initStructure();

@@ -65,6 +65,10 @@ module.exports = function (grunt) {
                             dest: 'people/people.es5.js'
                         },
                         {
+                            src: ['people/people-service.js'],
+                            dest: 'people/people-service.es5.js'
+                        },
+                        {
                             src: ['people/rr0-people.js'],
                             dest: 'people/rr0-people.es5.js'
                         },
@@ -248,6 +252,7 @@ module.exports = function (grunt) {
                             'js/nav/rr0-title.es5.js',
                             'js/nav/HeadController.es5.js',
                             'people/people.es5.js',
+                            'people/people-service.es5.js',
                             'people/rr0-people.es5.js',
                             'people/rr0-meta.es5.js',
                             'people/rr0-copyright.es5.js',

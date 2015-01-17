@@ -23,6 +23,7 @@ module.exports = function (config) {
             'js/lang.es5.js',
             'js/net.es5.js',
             'people/people.es5.js',
+            'people/people-service.es5.js',
             'people/rr0-people.es5.js',
             'people/rr0-meta.es5.js',
             'people/rr0-copyright.es5.js',

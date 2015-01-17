@@ -32,7 +32,10 @@ module.exports = function (config) {
         reporters: ['progress', 'coverage'],
 
         preprocessors: {
-            '**/*.js': ['coverage']
+            '**/*.js': ['coverage'],
+            '!bower_components/**/*': ['coverage'],
+            '!node_modules/**/*': ['coverage'],
+            '!test/**/*': ['coverage']
         },
 
         coverageReporter: {
@@ -53,7 +56,7 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: false,
+        autoWatch: true,
 
         // Firefox only is available on Travis VM : http://docs.travis-ci.com/user/gui-and-headless-browsers/
         // Current PhantomJS versions fail with traceur : https://github.com/google/traceur-compiler/issues/908
@@ -61,6 +64,6 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true
+        singleRun: false
     });
 };

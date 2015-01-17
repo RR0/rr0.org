@@ -14,10 +14,10 @@ nav {
       font-weight: bold;
     }
   }
-  ul {
+  ul { // Nav elements list
     @include headerBackground();
     margin: 0;
-    padding: 0 0.5em;
+    padding: 0;
     li {
       padding: $selectionPadding;
       * {
@@ -108,6 +108,7 @@ nav {
 @media (min-width: $twoPanes) {
   .search {
     width: 100%;
+    box-sizing: content-box;
     label {
       display: inline;
     }
@@ -124,9 +125,6 @@ nav {
     width: $leftPaneWidth;
     position: absolute;
     height: 100%;
-    * {
-      display: block;
-    }
     ul {
       background: none;
       li {

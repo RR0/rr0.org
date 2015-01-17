@@ -28,6 +28,9 @@
     "spyOn": false,
     /* angular mock */
     "inject": false,
+    /* karma */
+    "module": false,
+    "config": false,
 
     /* Angular */
     "angular": false

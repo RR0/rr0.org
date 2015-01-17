@@ -53,11 +53,11 @@
   @include hovered();
 }
 
-@mixin selectable {
+@mixin selectable() {
   display: -webkit-inline-box;
   cursor: pointer;
   &:hover {
-    @extend .hovered;
+    @include hovered();
   }
 }
 

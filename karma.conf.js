@@ -19,7 +19,7 @@ module.exports = function (config) {
             'bower_components/angular-sanitize/angular-sanitize.js',
             'bower_components/angular-i18n/angular-locale_fr-fr.js',
             'node_modules/karma-jasmine/**/*.js',
-            'js/all.js',
+            'rr0.js',
             'test/**/*Spec.js'
         ],
 

@@ -233,11 +233,11 @@ module.exports = function (grunt) {
             },
             useminPrepare: {
                 html: ['footer-end.src.html'],
-                css: ['header-start.src.html'],
+                css: ['header-start.src.html']
             },
             usemin: {
                 html: ['footer-end.html'],
-                css: ['header-start.html'],
+                css: ['header-start.html']
             }
         }
     )
@@ -277,7 +277,7 @@ module.exports = function (grunt) {
         'uglify:generated',
         //'filerev',
         'usemin',
-        //'test-dist'
+        'test-dist'
     ]);
 
     grunt.registerTask('default', ['dist']);

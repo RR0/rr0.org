@@ -19,7 +19,7 @@ module.exports = function (config) {
             'bower_components/angular-sanitize/angular-sanitize.js',
             'bower_components/angular-i18n/angular-locale_fr-fr.js',
             'node_modules/karma-jasmine/**/*.js',
-            'js/all.es5.min.js',
+            'js/all.js',
             'test/**/*Spec.js'
         ],
 
@@ -39,6 +39,7 @@ module.exports = function (config) {
         },
 
         coverageReporter: {
+            dir: 'test/coverage/',
             reporters: [
                 {type: 'html', subdir: 'html'},
                 {type: 'lcovonly', subdir: 'lcov'}

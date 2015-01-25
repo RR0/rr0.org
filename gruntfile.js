@@ -152,13 +152,15 @@ module.exports = function (grunt) {
             sass: {
                 dist: {
                     options: {
-                        outputStyle: 'compressed',
-                        style: 'compressed'
+                        //          outputStyle: 'compressed',
+                        //        style: 'compressed'
                     },
                     expand: true,
-                    files: {
-                        '/rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss', 'iconic/iconic_fill.css']
-                    }
+//                    files: {
+//                        '/rr0.css': ['*.scss', 'js/**/*.scss', 'time/*.scss', 'people/*.scss', 'place/*.scss', 'iconic/iconic_fill.css']
+//                    }
+                    src: ['**/*.scss'],
+                    ext: '.css'
                 },
                 dev: {
                     options: {
@@ -229,55 +231,18 @@ module.exports = function (grunt) {
                     configFile: 'karma.dev.conf.js'
                 }
             },
-            uglify: {
-                rr0: {
-                    options: {
-                        sourceMap: true,
-                        sourceMapName: 'js/all.es5.map',
-                        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
-                        drop_console: true
-                    },
-                    files: {
-                        'js/all.es5.min.js': [
-                            'js/common.es5.js',
-                            'js/net.es5.js',
-                            'js/lang.es5.js',
-                            'js/nav/nav.es5.js',
-                            'js/nav/nav-service.es5.js',
-                            'js/nav/rr0-a.es5.js',
-                            'js/nav/rr0-article.es5.js',
-                            'js/nav/rr0-img.es5.js',
-                            'js/nav/rr0-link.es5.js',
-                            'js/nav/rr0-section.es5.js',
-                            'js/nav/rr0-title.es5.js',
-                            'js/nav/HeadController.es5.js',
-                            'people/people.es5.js',
-                            'people/people-service.es5.js',
-                            'people/rr0-people.es5.js',
-                            'people/rr0-meta.es5.js',
-                            'people/rr0-copyright.es5.js',
-                            'time/time.es5.js',
-                            'time/moment.es5.js',
-                            'time/duration.es5.js',
-                            'time/time-service.es5.js',
-                            'time/rr0-time.es5.js',
-                            'place/place.es5.js',
-                            'js/foot.es5.js',
-                            'js/index.es5.js',
-                            'js/search/search.es5.js',
-                            'js/units.es5.js',
-                            'js/social/social.es5.js',
-                            'js/social/fb/rr0-fb-like.es5.js',
-                            'js/social/rr0-tweet.es5.js',
-                            'js/social/rr0-gplus.es5.js',
-                            'time/1/9/7/7/Poher_Matrice/matrix.es5.js'
-                        ]
-                    }
-                }
+            useminPrepare: {
+                html: ['footer-end.src.html'],
+                css: ['header-start.src.html'],
+            },
+            usemin: {
+                html: ['footer-end.html'],
+                css: ['header-start.html'],
             }
         }
-    );
-    //grunt.loadNpmTasks('grunt-docular');
+    )
+    ;
+//grunt.loadNpmTasks('grunt-docular');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-ng-annotate');
@@ -286,12 +251,35 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-filerev');
+    grunt.loadNpmTasks('grunt-usemin');
 
     grunt.registerTask('test-dist', ['karma:dist']);
     grunt.registerTask('test-dev', ['karma:dev']);
     grunt.registerTask('test-unit', ['jasmine']);
     grunt.registerTask('css-dev', ['sass:dev', 'autoprefixer']);
     grunt.registerTask('css-dist', ['sass:dist', 'autoprefixer']);
-    grunt.registerTask('dev', ['traceur', 'css-dev', 'test-dev']);
-    grunt.registerTask('default', ['traceur', 'uglify', 'css-dist', 'test-dist']);
-};
+
+    grunt.registerTask('dev', [
+        'traceur',
+        'css-dev',
+        'test-dev'
+    ]);
+    grunt.registerTask('dist', [
+        'traceur',
+        'css-dist',
+        'useminPrepare',
+        //'concat',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
+        //'filerev',
+        'usemin',
+        //'test-dist'
+    ]);
+
+    grunt.registerTask('default', ['dist']);
+}
+;

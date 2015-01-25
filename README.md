@@ -1,4 +1,4 @@
-RR0  [![Build Status](https://travis-ci.org/RR0/RR0.svg?branch=master)](https://travis-ci.org/RR0/RR0) [![Code Climate](https://codeclimate.com/github/RR0/RR0/badges/gpa.svg)](https://codeclimate.com/github/RR0/RR0) [![Test Coverage](https://codeclimate.com/github/RR0/RR0/badges/coverage.svg)](https://codeclimate.com/github/RR0/RR0)
+RR0  [![Build Status](https://travis-ci.org/RR0/rr0.org.svg?branch=master)](https://travis-ci.org/RR0/rr0.org) [![Code Climate](https://codeclimate.com/github/RR0/rr0.org/badges/gpa.svg)](https://codeclimate.com/github/RR0/rr0.org) [![Test Coverage](https://codeclimate.com/github/RR0/rr0.org/badges/coverage.svg)](https://codeclimate.com/github/RR0/rr0.org)
 ===
 
 RR0 is a client-side library that aims to ease the display of testimonial data.

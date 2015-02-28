@@ -324,8 +324,8 @@ angular.module('rr0.nav')
         $scope.sections = [];
 
         function smoothScroll(anchor, duration) {
-            var easingPattern = function (duration) {
-                return duration < 0.5 ? 4 * duration * duration * duration : (duration - 1) * (2 * duration - 2) * (2 * duration - 2) + 1; // acceleration until halfway, then deceleration
+            var easingPattern = function (percent) {
+                return percent < 0.5 ? 4 * percent * percent * percent : (percent - 1) * (2 * percent - 2) * (2 * percent - 2) + 1; // acceleration until halfway, then deceleration
             };
             // Get the height of a fixed header if one exists
             var headerHeight = $scope.getHeadingHeight();
@@ -358,7 +358,7 @@ angular.module('rr0.nav')
             var percentage, position;
 
             var animateScroll = function () {
-                runAnimation = requestAnimationFrame(animateScroll, scrolled);
+                runAnimation = requestAnimationFrame(animateScroll);
                 timeLapsed += 16;
                 percentage = timeLapsed / duration;
                 percentage = percentage > 1 ? 1 : percentage;

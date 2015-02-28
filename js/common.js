@@ -458,7 +458,7 @@ var org = new OrgModule();
             window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
     if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function (callback, element) {
+        window.requestAnimationFrame = function (callback) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
             var id = window.setTimeout(function () {
@@ -514,6 +514,9 @@ angular.module('rr0.commons', [])
             initStructure: function () {
                 org.rr0.initStructure();
             },
+            hasClass: function (e, c) {
+                org.hasClass(e, c);
+            },
             capitalizeFirstLetter: function (s) {
                 return s.charAt(0).toUpperCase() + s.slice(1);
             },
@@ -561,4 +564,3 @@ angular.module('rr0.commons', [])
         "use strict";
         commonsService.initStructure();
     }]);
-//# sourceURL=common.js

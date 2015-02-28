@@ -2,7 +2,8 @@
 <meta name="google-site-verification" content="Wg7b7iKlxDPUjBjGOfxm8gv1ITD1m5qkODZZmQmOKiQ"/>
 <meta name="Description" content="UFO research, in french"/>
 <meta name="keywords" lang="fr" content="OVNIS, OVNI, soucoupes volantes, extra-terrestres, ufologie"/>
-<meta name="keywords" lang="en" content="UFOs, UFO, flying saucers, extra-terrestrials, alien, ufology"/><title>RR0</title>
+<meta name="keywords" lang="en" content="UFOs, UFO, flying saucers, extra-terrestrials, alien, ufology"/>
+<title>RR0</title>
 <link href="preambule.html" rel="start"/>
 <link href="science/crypto/ufo/glossair.html" rel="glossary"/>
 <link href="index.html" rel="TOC"/>
@@ -86,7 +87,7 @@
         gcse.type = 'text/javascript';
         gcse.async = true;
         gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                '//www.google.fr/cse/cse.js?cx=' + cx;
+        '//www.google.fr/cse/cse.js?cx=' + cx;
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(gcse, s);
     })();
@@ -125,58 +126,40 @@
         border-radius: 0.5em;
         /*box-shadow: 1em -1em 2em 2em rgba(72, 76, 85, 0.5);*/
     }
+    #fb_login_button {
+        width: 80px;
+    }
+    #fb_login_button span,
+    #fb_login_button iframe {.
+    width: 80px! important;
+        height: 25px! important;
+    }
 </style></head>
 <body class="spotlight-container">
-    <div class="centered">
-        <div class="fb-login"></div>
-        <ul>
-            <li class="topMenuChoice"><a href="time/">Historique</a></li>
-            <li class="topMenuChoice"><a href="place/">Lieux</a></li>
-            <li class="topMenuChoice"><a href="org/">Organisations</a></li>
-            <li class="topMenuChoice"><a href="people/index.html">Personnes</a></li>
-            <li class="topMenuChoice"><a href="politique/">Politique</a></li>
-            <li class="topMenuChoice"><a href="croyance/">Croyance</a></li>
-            <li class="topMenuChoice"><a href="science/">Science</a></li>
-            <li class="topMenuChoice"><a href="tech/">Technique</a></li>
-        </ul>
-        <div class="search">
-        </div>
-        <br/>
+<div class="centered">
+    <div class="fb-login"></div>
+    <ul>
+        <li class="topMenuChoice"><a href="time/">Historique</a></li>
+        <li class="topMenuChoice"><a href="place/">Lieux</a></li>
+        <li class="topMenuChoice"><a href="org/">Organisations</a></li>
+        <li class="topMenuChoice"><a href="people/index.html">Personnes</a></li>
+        <li class="topMenuChoice"><a href="politique/">Politique</a></li>
+        <li class="topMenuChoice"><a href="croyance/">Croyance</a></li>
+        <li class="topMenuChoice"><a href="science/">Science</a></li>
+        <li class="topMenuChoice"><a href="tech/">Technique</a></li>
+    </ul>
+    <div class="search">
     </div>
-    <script src="//connect.facebook.net/fr_FR/all.js"></script>
-    <!--#include virtual="/footer-start.html" -->
-    <footer class="centered">
+    <br/>
+</div>
+<script src="//connect.facebook.net/fr_FR/all.js"></script>
+<footer class="centered">
     <span class="Mini"><a href="preambule.html">Préambule</a> - <a href="FAQ.html">FAQ</a> - <a href="http://www.javarome.org/category/Ufologie">Blog</a> - <a href="http://www.facebook.com/rrzero"><img src="images/facebook.jpg" border="0" align="absmiddle"/></a> - <a href="https://plus.google.com/109521510531702092323/?prsrc=3" style="text-decoration: none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" width="16" align="absmiddle" style="border: 0;"/></a> -
     <g:plusone size="small" count="false"></g:plusone>
      - <a href="https://twitter.com/r_r_0" class="twitter-follow-button" data-show-count="false" data-lang="fr" align="absmiddle">Suivre</a>
-    <script>!function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, "script", "twitter-wjs");</script>
     <br/>
     <a href="http://translate.google.com/translate?u=http://rr0.org&langpair=fr|en&hl=fr&ie=UTF8&oe=UTF8">English
         translation</a>, <a href="http://translate.google.com/translate?u=http:%2F%2Frr0.org&langpair=fr%7Cde&hl=fr&ie=UTF8&oe=UTF8">Deutsche &Uuml;bersetzung</a><br/>
     <a href="Contact.html">Contact</a> - <a href="Copyright.html">Copyright</a></span>
-    </footer>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-        _gaq.push(['_setAccount', 'UA-541415-1']);
-        _gaq.push(['_trackPageview']);
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-</body>
-</html>
+</footer>
+<!--#include virtual="/footer-end.html" -->

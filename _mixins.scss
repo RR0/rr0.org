@@ -44,8 +44,6 @@
   border: none;
   border-radius: $borderRadius;
   background: rgba(184, 197, 212, 0.49);
-  padding: $padding;
-  margin: -$padding;
   transition: background 0.2s ease-out;
 }
 
@@ -54,8 +52,9 @@
 }
 
 @mixin selectable() {
-  display: -webkit-inline-box;
   cursor: pointer;
+  padding: $selectionPadding;
+  margin: -$selectionPadding;
   &:hover {
     @include hovered();
   }

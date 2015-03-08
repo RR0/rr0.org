@@ -105,6 +105,10 @@ module.exports = function (grunt) {
                             dest: 'place/place.es5.js'
                         },
                         {
+                            src: ['place/rr0-place.js'],
+                            dest: 'place/rr0-place.es5.js'
+                        },
+                        {
                             src: ['js/foot.js'],
                             dest: 'js/foot.es5.js'
                         },

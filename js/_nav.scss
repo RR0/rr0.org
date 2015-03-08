@@ -19,7 +19,7 @@ nav {
     margin: 0;
     padding: 0;
     li {
-      padding: $selectionPadding;
+      padding: $selectionPaddingY $selectionPaddingX;
       * {
         font-family: $menuFont;
       }
@@ -40,7 +40,7 @@ nav {
     }
     > li {
       float: left;
-      padding: $selectionPadding;
+      padding: $selectionPaddingY $selectionPaddingX;
       display: inline;
     }
   }
@@ -129,7 +129,7 @@ nav {
       background: none;
       li {
         display: block;
-        padding: $selectionPadding;
+        padding: $selectionPaddingY $selectionPaddingX;
         float: none;
       }
     }
@@ -182,7 +182,7 @@ nav {
       a {
         text-decoration: none;
         color: $hoverColor;
-        padding: $selectionPadding;
+        padding: $selectionPaddingY $selectionPaddingX;
         border: none;
       }
     }

@@ -8,7 +8,7 @@ angular.module('rr0.people')
             template: "<a href='{{::href}}' translate='no' ng-transclude></a>",
             link: function (scope, elem, attrs) {
                 scope.id = 'people' + scope.id;
-                var txt = elem.text();
+                var txt = org.text(elem[0]);
                 var nameKey = attrs.title;    // Alternate (correct for link) name?
                 var peopleName = txt;
                 if (peopleName.length <= 0) {

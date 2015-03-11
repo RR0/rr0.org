@@ -1,7 +1,19 @@
 describe("Time module", function () {
     'use strict';
 
-    beforeEach(angular.mock.module('rr0.time'));
+    beforeEach(angular.mock.module('rr0.time'/*, function($provide) {
+        var mockCommonsService = function() {
+            return {
+                initStructure: function() { },
+                nounToLink: function() { },
+                getUri: function() { return 'http://rr0.org/time/something'; },
+                zero: function() { },
+                capitalizeFirstLetter: function() { },
+                addEndingSlash: function() { }
+            };
+        };
+        $provide.service('commonsService', mockCommonsService);
+    }*/));
 
     var $rootScope;
     var $compile;
@@ -44,6 +56,14 @@ describe("Time module", function () {
                 expect(date.getDayOfMonth()).toBe(31);
                 expect(date.getHour()).toBe(17);
                 expect(date.getMinutes()).toBe(35);
+
+                date = dateMoment.fromString('1998-08-31 17:35EDT');
+                expect(date.getYear()).toBe(1998);
+                expect(date.getMonth()).toBe(8);
+                expect(date.getDayOfMonth()).toBe(31);
+                expect(date.getHour()).toBe(17);
+                expect(date.getMinutes()).toBe(35);
+                expect(date.getTimeZone()).toBe(-4);
             });
             /*        describe("contextually", function () {
              var dateMoment = timeService.NewMoment();

@@ -117,8 +117,12 @@ module.exports = function (grunt) {
                             dest: 'js/index.es5.js'
                         },
                         {
-                            src: ['js/search/search.js'],
-                            dest: 'js/search/search.es5.js'
+                            src: ['js/search/search-service.js'],
+                            dest: 'js/search/search-service.es5.js'
+                        },
+                        {
+                            src: ['js/search/rr0-search.js'],
+                            dest: 'js/search/rr0-search.es5.js'
                         },
                         {
                             src: ['js/units.js'],

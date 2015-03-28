@@ -13,7 +13,7 @@ angular.module('rr0.commons')
       restrict: 'A',
       scope: {},
       replace: true,
-      template: '<span title="{{original}}">{{str}}<span ng-transclude></span></span>',
+      template: '<data title="{{original}}">{{str}}<span ng-transclude></span></data>',
       transclude: true,
       controller: ['$scope', '$element', function ($scope, $element) {
         function QuantitativeItem() {

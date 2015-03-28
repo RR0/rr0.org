@@ -17,6 +17,10 @@ module.exports = function (grunt) {
                             dest: 'js/common.es5.js'
                         },
                         {
+                            src: ['js/rr0-value.js'],
+                            dest: 'js/rr0-value.es5.js'
+                        },
+                        {
                             src: ['js/net.js'],
                             dest: 'js/net.es5.js'
                         },

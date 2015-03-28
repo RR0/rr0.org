@@ -13,7 +13,7 @@ angular.module('rr0.commons')
       restrict: 'A',
       scope: {},
       replace: true,
-      template: '<data title="{{original}}">{{str}}<span ng-transclude></span></data>',
+      template: '<data value="{{data}}" title="{{original}}">{{str}}<span ng-transclude></span></data>',
       transclude: true,
       controller: ['$scope', '$element', function ($scope, $element) {
         function QuantitativeItem() {
@@ -55,6 +55,7 @@ angular.module('rr0.commons')
             var setter = propertyHandlers[property];
             setter.apply(this, [elem]);
             if (this.value && this.unit) {
+              $scope.data = this.value + ' ' + this.unit;
               $scope.str = this.toLocaleString();
             }
           };

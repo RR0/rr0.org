@@ -286,8 +286,9 @@ function OrgModule() {
     };
 
     this.validLink = function (l) {
+      window.org.log('validLink('+l +')');
         l = l.replace(/\n/g, ' ')
-            .replace(/(\u00E0|\u00E2|\u00E4)/g, 'a')
+            .replace(/(\u00E0|\u00E1|\u00E2|\u00E4)/g, 'a')
             .replace(/\u00E7/g, 'c')
             .replace(/(\u00E8|\u00E9|\u00EA|\u00EB)/g, 'e')
             .replace(/(\u00EE|\u00EF)/g, 'i')
@@ -484,6 +485,9 @@ angular.module('rr0.commons', [])
         var docUri;
 
         return {
+            text: function (e) {
+                return org.text(e);
+            },
             nounToLink: function (l, k) {
                 return org.nounToLink(l, k);
             },

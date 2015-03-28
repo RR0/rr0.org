@@ -16,6 +16,7 @@ describe("Common module", function () {
 
     it('convert strings into valid links', function () {
         expect(commonsService.validLink('Bjørn')).toEqual("Bjorn");
+        expect(commonsService.validLink('MaussánJaime')).toEqual("MaussanJaime");
         expect(commonsService.validLink('Jérôme Beau')).toEqual("JeromeBeau");
     });
 });

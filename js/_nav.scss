@@ -1,6 +1,9 @@
 @import "../mixins";
 
 nav {
+  h1 {
+    display: none;  // Heading here is only for accessibility
+  }
   font-size: 0.9em;
   transition: width, height $transitionDuration;
   z-index: 100;

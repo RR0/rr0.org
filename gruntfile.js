@@ -33,6 +33,10 @@ module.exports = function (grunt) {
                             dest: 'js/nav/nav.es5.js'
                         },
                         {
+                            src: ['js/nav/rr0-outline.js'],
+                            dest: 'js/nav/rr0-outline.es5.js'
+                        },
+                        {
                             src: ['js/nav/HeadController.js'],
                             dest: 'js/nav/HeadController.es5.js'
                         },
@@ -45,20 +49,12 @@ module.exports = function (grunt) {
                             dest: 'js/nav/rr0-a.es5.js'
                         },
                         {
-                            src: ['js/nav/rr0-article.js'],
-                            dest: 'js/nav/rr0-article.es5.js'
-                        },
-                        {
                             src: ['js/nav/rr0-img.js'],
                             dest: 'js/nav/rr0-img.es5.js'
                         },
                         {
                             src: ['js/nav/rr0-link.js'],
                             dest: 'js/nav/rr0-link.es5.js'
-                        },
-                        {
-                            src: ['js/nav/rr0-section.js'],
-                            dest: 'js/nav/rr0-section.es5.js'
                         },
                         {
                             src: ['js/nav/rr0-title.js'],

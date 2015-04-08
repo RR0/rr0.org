@@ -44,7 +44,7 @@ angular.module('rr0.commons')
           this.milesPerHourToMetric = function () {
             $scope.original = this.value + ' miles/h';
             var MILE = 1.609344;
-            this.unit = "km";
+            this.unit = "km/h";
             this.value = this.value * MILE;
           };
           this.mileToMetric = function () {

@@ -41,12 +41,27 @@ angular.module('rr0.commons')
             this.unit = "km";
             this.value = this.value * NAUTICAL_MILE;
           };
+          this.milesPerHourToMetric = function () {
+            $scope.original = this.value + ' miles/h';
+            var MILE = 1.609344;
+            this.unit = "km";
+            this.value = this.value * MILE;
+          };
+          this.mileToMetric = function () {
+            $scope.original = this.value + ' miles';
+            var MILE = 1.609344;
+            this.unit = "km";
+            this.value = this.value * MILE;
+          };
           this.toLocaleString = function (locale) {
             if (this.unit === 'FOT') {
               this.footToMetric();
-            } else
-            if (this.unit === 'NMI') {
+            } else if (this.unit === 'NMI') {
               this.nauticalMileToMetric();
+            } else if (this.unit === 'HM') {
+              this.milesPerHourToMetric();
+            } else if (this.unit === 'SMI') {
+              this.mileToMetric();
             }
             return this.value.toLocaleString(locale, {maximumFractionDigits: 2}) + '\u00A0' + this.unit;
           };

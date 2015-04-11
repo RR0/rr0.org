@@ -1,0 +1,9 @@
+<span>
+  <span ng-show="!title">Loading {{bibkeys}}...</span>
+  <span ng-show="title" class="book">
+    <span class="author" ng-repeat="author in authors">
+    <span class="people">{{author.name}}</span> {{$last?":":" & "}} </span>
+    <em>{{title}}</em>,
+    {{publisher}} ({{publishPlace}}), {{publishDate}}
+  </span>
+</span>

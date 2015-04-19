@@ -1,5 +1,5 @@
 angular.module('rr0.commons')
-  .directive('book', function ($http) {
+  .directive('book', ['$http', function ($http) {
     'use strict';
     return {
       restrict: 'EA',
@@ -11,7 +11,7 @@ angular.module('rr0.commons')
       },
       replace: true,
       templateUrl: '/js/rr0-book.html',
-      link: function (scope, elem, attrs) {
+      link: ['scope', 'elem', 'attrs', function (scope, elem, attrs) {
         $http.jsonp('https://openlibrary.org/api/books?callback=JSON_CALLBACK&bibkeys=' + scope.bibkeys + '&jscmd=data')
           .success(function (data) {
             var books = angular.fromJson(data);
@@ -26,10 +26,12 @@ angular.module('rr0.commons')
                 }
                 scope.publishDate = book.publish_date;
                 scope.publisher = book.publishers[0].name;
-                scope.publishPlace = book.publish_places[0].name;
+                if (book.publish_places && book.publish_places.length) {
+                  scope.publishPlace = book.publish_places[0].name;
+                }
               }
             }
           });
-      }
+      }]
     };
-  });
+  }]);

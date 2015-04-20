@@ -11,7 +11,7 @@ angular.module('rr0.commons')
       },
       replace: true,
       templateUrl: '/js/rr0-book.html',
-      link: ['scope', 'elem', 'attrs', function (scope, elem, attrs) {
+      link: function (scope) {
         $http.jsonp('https://openlibrary.org/api/books?callback=JSON_CALLBACK&bibkeys=' + scope.bibkeys + '&jscmd=data')
           .success(function (data) {
             var books = angular.fromJson(data);
@@ -32,6 +32,6 @@ angular.module('rr0.commons')
               }
             }
           });
-      }]
+      }
     };
   }]);

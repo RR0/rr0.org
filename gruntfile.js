@@ -21,8 +21,8 @@ module.exports = function (grunt) {
                             dest: 'js/rr0-value.es5.js'
                         },
                         {
-                            src: ['js/rr0-book.js'],
-                            dest: 'js/rr0-book.es5.js'
+                            src: ['js/note/cite/book/rr0-book.js'],
+                            dest: 'js/note/cite/book/rr0-book.es5.js'
                         },
                         {
                             src: ['js/net.js'],
@@ -113,8 +113,8 @@ module.exports = function (grunt) {
                             dest: 'place/rr0-place.es5.js'
                         },
                         {
-                            src: ['js/foot.js'],
-                            dest: 'js/foot.es5.js'
+                            src: ['js/note/foot.js'],
+                            dest: 'js/note/foot.es5.js'
                         },
                         {
                             src: ['js/index.js'],
@@ -218,7 +218,7 @@ module.exports = function (grunt) {
                 /* As this is launch for dev only, we rely on non-merged files here */
                 src: [
                     'js/common.es5.js', 'js/net.es5.js', 'js/lang.es5.js', 'js/nav.es5.js', 'people/people.es5.js',
-                    'time/time.es5.js', 'place/place.es5.js', 'js/foot.es5.js',
+                    'time/time.es5.js', 'place/place.es5.js', 'js/note/foot.es5.js',
                     'js/index.es5.js', 'js/search/search.es5.js', 'js/units.es5.js'
                 ],
                 options: {

@@ -1,0 +1,13 @@
+.book {
+  a {
+    display: inline-block;
+    &:hover .cover {
+      display: block;
+      z-index: 1;
+    }
+  }
+  .cover {
+    display: none;
+    position: absolute;
+  }
+}

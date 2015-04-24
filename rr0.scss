@@ -35,6 +35,9 @@ body {
 }
 
 aside {
+  h1 {
+    display: none;  // Heading here is only for accessibility
+  }
   height: 100%;
   float: right;
   position: relative;
@@ -129,6 +132,9 @@ aside {
 
 .columns {
   column-width: 15em;
+  a {
+    width: 100%;
+  }
 }
 
 /**
@@ -214,5 +220,5 @@ form {
 @import "js/head";
 @import "js/nav";
 @import "content";
-@import "js/foot";
+@import "js/note/foot";
 

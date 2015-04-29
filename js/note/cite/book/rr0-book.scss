@@ -2,12 +2,14 @@
   a {
     display: inline-block;
     &:hover .cover {
-      display: block;
+      opacity: 1;
       z-index: 1;
+      box-shadow: 0 0.5em 1em -0.1em #555;
     }
   }
   .cover {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s, box-shadow 0.3s;
     position: absolute;
   }
 }

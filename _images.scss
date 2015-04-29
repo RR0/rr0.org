@@ -57,8 +57,10 @@ figure {
     &.left {
       margin-right: $sideMargin;
     }
+    padding: 0.5em;
     figcaption {
       @include hovered(0.666rem);
+      padding: 0 0.5em 0.5em 0.5em;
       margin: 0;
       max-height: 100em;
       opacity: 1;

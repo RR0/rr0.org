@@ -11,11 +11,14 @@ angular.module('rr0.commons')
     'use strict';
     return {
       restrict: 'A',
-      scope: {},
+      scope: {
+        precision: '@?'
+      },
       replace: true,
       template: '<data value="{{data}}" title="{{original}}">{{str}}<span ng-transclude></span></data>',
       transclude: true,
       controller: ['$scope', '$element', function ($scope, $element) {
+        $scope.precision = parseInt($scope.precision || '0', 10);
         function QuantitativeItem() {
           this.unitCodeHandler = function (elem) {
             this.unit = elem.attr('content');
@@ -32,12 +35,17 @@ angular.module('rr0.commons')
           this.footToMetric = function () {
             $scope.original = this.value + ' pieds';
             var FOOT = 0.3048;
-            this.unit = "m";
             this.value = this.value * FOOT;
+            if (this.value > 1000) {
+              this.value = this.value / 1000;
+              this.unit = "km";
+            } else {
+              this.unit = "m";
+            }
           };
+          var NAUTICAL_MILE = 1.852;
           this.nauticalMileToMetric = function () {
             $scope.original = this.value + ' miles nautiques';
-            var NAUTICAL_MILE = 1.852;
             this.unit = "km";
             this.value = this.value * NAUTICAL_MILE;
           };
@@ -53,6 +61,11 @@ angular.module('rr0.commons')
             this.unit = "km";
             this.value = this.value * MILE;
           };
+          this.knotsToMetric = function () {
+            $scope.original = this.value + ' noeuds';
+            this.unit = "km/h";
+            this.value = this.value * NAUTICAL_MILE;
+          };
           this.toLocaleString = function (locale) {
             if (this.unit === 'FOT') {
               this.footToMetric();
@@ -62,8 +75,11 @@ angular.module('rr0.commons')
               this.milesPerHourToMetric();
             } else if (this.unit === 'SMI') {
               this.mileToMetric();
+            } else if (this.unit === 'KTS') {
+              this.knotsToMetric();
             }
-            return this.value.toLocaleString(locale, {maximumFractionDigits: 2}) + '\u00A0' + this.unit;
+            console.log("$scope.precision=%o", $scope.precision);
+            return this.value.toLocaleString(locale, {maximumFractionDigits: $scope.precision}) + '\u00A0' + this.unit;
           };
           this.setProperty = function (elem) {
             var property = elem.attr('itemprop');

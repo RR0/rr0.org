@@ -1,6 +1,8 @@
 <form data-ng-submit="doSearch()">
   <label for="search-input">Rechercher</label>
-  <input type="search" id="search-input" data-ng-model="searchInput" tabindex="200" data-ng-keydown="searchKey($event)">
+  <div class="flexible">
+    <input type="search" id="search-input" data-ng-model="searchInput" tabindex="200" data-ng-keydown="searchKey($event)">
+  </div>
   <!--<button type="submit">--><!--<span class="label">Rechercher</span>-->
   <span class="iconic magnifying_glass" title="Rechercher" data-ng-click="doSearch()"></span>
   <!--</button>-->

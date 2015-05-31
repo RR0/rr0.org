@@ -3,7 +3,11 @@
 <div class="contents no-side">
     <div data-ng-controller="HeadController">
         <header data-ng-init="initTitle('<!--#echo var="title" -->','<!--#echo var="url" -->','<!--#echo var="style" -->');initPeople('<!--#echo var="people" -->');init('<!--#echo var="start" -->','<!--#echo var="start.url" -->','<!--#echo var="contents" -->','<!--#echo var="contents.url" -->','<!--#echo var="prev" -->','<!--#echo var="prev.url" -->','<!--#echo var="next" -->','<!--#echo var="next.url" -->');initAuthor('<!--#echo var="author" -->','<!--#echo var="author.url" -->','<!--#echo var="copyright" -->','<!--#echo var="copyright.url" -->');initLang('<!--#echo var="HTTP_ACCEPT_LANGUAGE" -->');">
-        <h1 data-ng-bind-html="title" data-ng-show="!isFramed()" title="{{title}}">&nbsp;</h1></header>
+        <h1 data-ng-show="!isFramed()">
+            <a ng-if="titleUrl" ng-href="{{titleUrl}}" target="_blank" ng-bind-html="title"></a>
+            <span ng-if="!titleUrl" ng-bind-html="title"></span>
+        </h1>
+        </header>
         <nav>
           <h1>Navigation</h1>
             <ul>

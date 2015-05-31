@@ -9,6 +9,9 @@ angular.module('rr0.people')
                 var urlPos = content.indexOf(';url=');
                 var link = urlPos > 0 ? content.substring(urlPos) : undefined;
                 switch (name) {
+                    case 'url':
+                        scope.titleUrl = content;
+                        break;
                     case 'author':
                         peopleService.setAuthor(content, link);
                         break;

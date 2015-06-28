@@ -55,7 +55,7 @@ var Context = function (space, time) {
   this.time = time;
 };
 
-angular.module('rr0.context',[])
+angular.module('rr0.context', ['rr0.time'])
   .service('contextService', function () {
     'use strict';
 

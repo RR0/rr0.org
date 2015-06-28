@@ -3,9 +3,9 @@ describe("Context service", function () {
 
   var contextService;
 
-  beforeEach(angular.mock.module('rr0'));
+  beforeEach(module('rr0.context'));
 
-  beforeEach(angular.mock.inject(function (_contextService_) {
+  beforeEach(inject(function (_contextService_) {
     contextService = _contextService_;
   }));
 

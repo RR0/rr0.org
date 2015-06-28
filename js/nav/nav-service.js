@@ -78,7 +78,7 @@ angular.module('rr0.nav')
                     },
                     {
                         dir: "/org/",
-                        label: "<span class='iconic home'> <span class='label'>Organisations</span></span>",
+                        label: "<i class='fa fa-sitemap'></i> <span class='label'>Organisations</span></span>",
                         title: "Organisations"
                     },
                     {

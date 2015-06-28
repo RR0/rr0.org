@@ -19,13 +19,13 @@
                 <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
                     <div class="search"></div>
                 </li>
-                <li data-ng-cloak data-ng-if="!isFramed()" class="collapsed"> &gt; </li>
+                <li data-ng-cloak data-ng-if="!isFramed()" class="collapsed"> <i class="fa fa-angle-right"></i> </li>
                 <li data-ng-repeat-start="p in ps" data-ng-if="p.link && p.label" class="constant {{::p.style}}">
                     <a data-ng-href="{{::p.link}}">
                         <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span>
                     </a>
                 </li>
-                <li data-ng-repeat-end data-ng-cloak data-ng-if="p.link && p.label" class="collapsed"> &gt; </li>
+                <li data-ng-repeat-end data-ng-cloak data-ng-if="p.link && p.label" class="collapsed"> <i class="fa fa-angle-right"></i> </li>
                 <li tabindex="100" data-ng-click="titleClick()" class="constant">
                     <a href="#contents" data-ng-click="sectionClick('#contents')" class="outline-title" id="out-top">
                         <span class="constant" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span>
@@ -36,7 +36,7 @@
                         </li>
                     </ul>
                 </li>
-                <li data-ng-repeat-start="n in ns" data-ng-cloak data-ng-if="n.link && n.label" class="collapsed"> &gt; </li>
+                <li data-ng-repeat-start="n in ns" data-ng-cloak data-ng-if="n.link && n.label" class="collapsed"> <i class="fa fa-angle-right"></i> </li>
                 <li data-ng-repeat-end class="constant {{n.style}}" data-ng-if="n.link && n.label" >
                     <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
                 </li>
@@ -44,7 +44,7 @@
                     <span data-ng-bind-html="alternate"></span>
                 </li>
                 <li class="toggleMap constant">
-                    <a href='#'><span class="label">Carte</span> <span><span class='iconic map_pin_fill'></span></span></a>
+                    <a href='#'><span class="label">Carte</span> <span><i class="fa fa-map-marker"></i></span></a>
                 </li>
             </ul>
         </nav>

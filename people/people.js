@@ -87,7 +87,7 @@ angular.module('rr0.people', ['rr0.nav'])
         'use strict';
         navigationService.addStart({
                 dir: peopleRoot,
-                label: "<span class='iconic user'> <span class='label'>Personnes</span></span>",
+                label: "<i class='fa fa-user'></i> <span class='label'>Personnes</span></span>",
                 title: "Personnes"
             }
         );

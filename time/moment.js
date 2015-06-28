@@ -75,6 +75,10 @@ class Moment {
     return this.minutes;
   }
 
+  getSeconds() {
+    return this.seconds;
+  }
+
   getTimeZone() {
     return this.timeZone;
   }
@@ -85,14 +89,18 @@ class Moment {
 
   fromString(dString) {
     var number;
+    var hourNumber;
     var era;
     var txt;
     var monthReady;
     var zReady;
 
+    var self = this;
+
     var resetParse = function () {
       this.clear();
       number = null;
+      hourNumber = null;
       era = 1;
       txt = null;
       monthReady = undefined;
@@ -144,7 +152,7 @@ class Moment {
         default:
           return;
       }
-      this.setTimeZone(z);
+      self.setTimeZone(z);
       txt = null;
     }
 
@@ -155,34 +163,44 @@ class Moment {
     var i;
 
     function timeSet() {
-      if (this.year && number <= 59) {
+      var valueToSet = value();
+      var valueIsNumber = typeof valueToSet === 'number';
+      if (self.year && valueIsNumber && number <= 59) {
         monthReady = monthReady || dString.charAt(i) === '-';
         if (!monthReady) {
-          if (this.month) {
-            if (this.dayOfMonth || this.hour) {
-              if (this.hour) {
-                if (this.minutes) {
-                  this.setDayOfMonth(value());     // setHour is processed after ':' only
+          if (self.month) {
+            if (self.dayOfMonth || self.hour) {
+              if (self.hour) {
+                if (self.minutes) {
+                  if (self.seconds) {
+                    self.setDayOfMonth(valueToSet);     // setHour is processed after ':' only
+                  } else {
+                    self.setSeconds(valueToSet);
+                  }
                 } else {
-                  this.setMinutes(value());
+                  self.setMinutes(valueToSet);
                 }
               } else {
-                this.setDayOfMonth(value());     // setHour is processed after ':' only
+                self.setDayOfMonth(valueToSet);     // setHour is processed after ':' only
               }
             } else {
-              this.setDayOfMonth(value());
+              self.setDayOfMonth(valueToSet);
             }
           } else {
             // Probably just text
           }
         } else {
-          this.setMonth(value());
+          self.setMonth(valueToSet);
           monthReady = false;
         }
-      } else if (this.hour) {
-        this.setMinutes(value());
+      } else if (self.minutes) {
+        if (valueIsNumber) {
+          self.setSeconds(valueToSet);
+        }
+      } else if (self.hour) {
+        self.setMinutes(valueToSet);
       } else {
-        this.setYear(era * number);
+        self.setYear(era * number);
         monthReady = true;
       }
       number = null;
@@ -191,10 +209,10 @@ class Moment {
     function parseEnd() {
       var val = value();
       if (val !== null && val !== undefined) {
-        timeSet.call(this); // End of date
+        timeSet.call(self); // End of date
       }
       if (txt) {
-        setTz.call(this);
+        setTz.call(self);
       }
     }
 
@@ -246,15 +264,20 @@ class Moment {
         case ':':
           if (this.hour !== null && zReady) {
             this.setTimeZone(number * era);
+          } else if (this.minutes) {
+            this.setSeconds(value());
+            zReady = true;
+          } else if (this.hour) {
+            this.setMinutes(value());
+            zReady = true;
           } else {
             this.setHour(value());
-            zReady = true;
           }
           number = null;
           break;
         case 'T':
           if (!txt) {
-            var hourNumber = !isNaN(dString.charAt(i + 1));
+            hourNumber = !isNaN(dString.charAt(i + 1));
           } else {
             txt = txt ? txt + c : c;
             break;
@@ -273,6 +296,9 @@ class Moment {
           resetParse.call(this);
           break;
         default:
+          if (number) {
+            timeSet.call(this); // End of minutes or seconds
+          }
           if (digit) {
             txt = txt ? txt + digit : digit;
             number = null;

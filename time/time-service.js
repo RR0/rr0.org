@@ -12,13 +12,15 @@ angular.module('rr0.time')
      */
     var times;
 
+    var self = this;
+
     function addYear(y, yLink, t) {
       var s = "";
       if (!y) {
-        y = thisService.getTime().year;
+        y = self.getTime().year;
       }
       if (!yLink) {
-        yLink = thisService.yearLink(y);
+        yLink = self.yearLink(y);
       }
       if (!t) {
         var p = getPeople();

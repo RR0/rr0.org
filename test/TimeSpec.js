@@ -224,9 +224,13 @@ describe("Time module", function () {
       $rootScope.$digest();
       expect(element.html()).toContain("Lendemain à 20:05");
 
-      element = $compile("<time datetime='1997-06-30 19:08'></time>")($rootScope);
+      element = $compile("<time>1997-06-30 19:08</time>")($rootScope);
       $rootScope.$digest();
       expect(element.html()).toContain("Veille à 19:08");
+
+      element = $compile("<time>19:10:24</time>")($rootScope);
+      $rootScope.$digest();
+      expect(element.html()).toContain("19:10:24");
     });
   });
 });

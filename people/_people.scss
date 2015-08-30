@@ -8,10 +8,9 @@
 }
 
 .document-author {
-  margin: 0 -1.9em;
   background-color: #F9F9F9;
-  font-size: 0.7em;
-  padding: 0.5em;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
   color: gray;
   @include gradientFromLeft;
 }

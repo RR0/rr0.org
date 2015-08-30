@@ -255,7 +255,10 @@ angular.module('rr0.nav')
               $log.debug('Found sibling %o', foundSibling);
               foundProc(foundSibling);
             }).error(function (failReq) {
-              self.findTimeSibling(y, m, changeProc, foundProc);
+              var currentDate = new Date();
+              if (y < currentDate.getFullYear()) {
+                self.findTimeSibling(y, m, changeProc, foundProc);
+              }
             });
         },
         setStart: function (s, sLink) {

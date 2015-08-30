@@ -17,7 +17,7 @@ data {
 
 .wide {
 //  margin: auto; /* centering */
-//  width: 90%;
+  width: 100%;
 }
 
 iframe {
@@ -183,11 +183,18 @@ details {
   margin-right: 1em;
 }
 
+.metadata {
+  position: relative;
+  left: $leftPaneWidth;
+}
+
 @import "table";
 @import "images";
 @import "quote";
 @import "code";
+@import "context";
 
 @import "time/time";
 @import "people/people";
 @import "place/place";
+@import "investigation";

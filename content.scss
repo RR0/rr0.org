@@ -185,7 +185,8 @@ details {
 
 .metadata {
   position: relative;
-  left: $leftPaneWidth;
+  left: -$textMargin;
+  top: -$textMargin;
 }
 
 @import "table";

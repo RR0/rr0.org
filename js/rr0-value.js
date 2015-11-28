@@ -43,6 +43,17 @@ angular.module('rr0.commons')
               this.unit = "m";
             }
           };
+          this.inchToMetric = function () {
+            $scope.original = this.value + ' pouces';
+            var INCH = 2.54;
+            this.value = this.value * INCH;
+            if (this.value > 100) {
+              this.value = this.value / 100;
+              this.unit = "m";
+            } else {
+              this.unit = "cm";
+            }
+          };
           var NAUTICAL_MILE = 1.852;
           this.nauticalMileToMetric = function () {
             $scope.original = this.value + ' miles nautiques';
@@ -77,6 +88,8 @@ angular.module('rr0.commons')
               this.mileToMetric();
             } else if (this.unit === 'KTS') {
               this.knotsToMetric();
+            } else if (this.unit === 'INH') {
+              this.inchToMetric();
             }
             console.log("$scope.precision=%o", $scope.precision);
             return this.value.toLocaleString(locale, {maximumFractionDigits: $scope.precision}) + '\u00A0' + this.unit;

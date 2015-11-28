@@ -1,0 +1,62 @@
+<!--#include virtual="/header-start.html" -->
+<title>Module Javascript</title>
+<!--#include virtual="/header-end.html" -->
+<section title="Besoin">
+    <p>Structurer le code <a href="..">Javascript</a> en groupes de code isolés.</p>
+</section>
+<section title="Analyse">
+    <p>Un module peut contenir :</p>
+    <ul>
+        <li>Des "classes" d'objets</li>
+        <li>Des "méthodes" statiques</li>
+    </ul>
+</section>
+<section title="Conception">
+    <p>Il existe plusieurs manière d'achever l'équivalent d'un module :</p>
+    <ul>
+        <li><strong>Objet littéral</strong> : le module est un objet contenant des méthodes accessibles.</li>
+        <li><strong>Fonction anonyme</strong> : le module est une <a href="../IIFE.html">IIFE</a> contenant des méthodes
+            accessibles, ainsi qu'une éventuelle initialisation.
+        </li>
+        <li>API
+            <ul>
+                <li><strong>Synchrone</strong>, dans des applications autonomes typiquement</li>
+                <li><strong>Asynchrone</strong> (<abbr title="Asynchronous Module Definition">AMD</abbr>), dans un
+                    client web (navigateur), typiquement.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h1>Implémentation</h1>
+
+    <p>Le module déclare ses points d'entrée via <code>export</code>.</p>
+    <p>L'utilisateur du module peut les voir via <code>import</code>.</p>
+    <section>
+        <h1>Exports nommés</h1>
+        <p>Il s'agit de pouvoir exporter plusieurs éléments d'un module, distingués leur nom.</p>
+        <h1>Exports par défaut</h1>
+        <p>Il s'agit d'exporter qu'un élément d'un module.</p>
+    </section>
+</section>
+<section title="Exemples">
+    <section>
+        <h1>Chargement synchrones</h1>
+        <p>CommonJS, API utilisée par NodeJS.</p>
+    </section>
+    <section>
+        <h1>AMD</h1>
+        <p>RequireJS.</p>
+    </section>
+</section>
+<section title="Notes">
+    <ul>
+        <li></li>
+    </ul>
+</section>
+<section title="Voir">
+    <ul>
+        <li></li>
+</section>
+<!--#include virtual="/footer.html" -->

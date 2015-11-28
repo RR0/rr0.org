@@ -1,0 +1,62 @@
+<!--#include virtual="/header-start.html" -->
+<title>Gulp</title>
+<meta name="url" content="http://gulpjs.com">
+<!--#include virtual="/header-end.html" -->
+<section><h2>Motivation</h2>
+
+    <p>Automatiser des tâches <a href="/tech/info/soft/proj/impl/lang/javascript">Javascript</a>.</p>
+</section>
+<section>
+    <h2>Analyse</h2>
+
+    <p>Un fichier <code>gulpfile.js</code> contient :</p>
+    <ul>
+        <li>Les plugins à utiliser</li>
+        <li>Les tâches pouvant être exécutées, avec leurs tâches dépendantes, utilisant ces plugins</li>
+    </ul>
+</section>
+<section>
+    <h2>Conception</h2>
+
+    <p></p>
+</section>
+<section>
+    <h2>Implémentation</h2>
+
+    <p><pre><code>var gulp = require('gulp');
+
+gulp.task('default', function() {
+  // place code for your default task here
+});</code></pre></p>
+</section>
+<section><h2>Exemples</h2>
+    <pre><code>module.exports = function(grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: 'src/<%= pkg.name %>.js',
+        dest: 'build/<%= pkg.name %>.min.js'
+      }
+    }
+  });
+
+  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Default task(s).
+  grunt.registerTask('default', ['uglify']);
+};</code></pre>
+</section>
+<section><h2>Notes</h2>
+    <ul>
+        <li>Créé avant Gulp</li>
+        <li>Plus grand nombre de plugins</li>
+        <li>Plus lent que Gulp</li>
+    </ul>
+</section><!--#include virtual="/footer.html" -->

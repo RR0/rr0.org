@@ -1,0 +1,34 @@
+<!--#include virtual="/header-start.html" -->
+<title>Module Node.js</title>
+<!--#include virtual="/header-end.html" -->
+<p>Bibliothèque pour <a href="/org/us/company/joyent/product/nodejs">Node</a>.
+</p>
+<section title="Analyse">
+    <section title="Déclaration">
+        <p>Un module Node.js est typiquement implémenté dans un fichier .js à part, contenant une déclaration des fonctions exportées :</p>
+        <ul>
+            <li>soit via <code>export.maFonction = function(params) { ... }</code> </li>
+            <li>soit via <code>module.exports = function(constructorParams) {<br>
+                  var func1 = function (params1) { ... }<br>
+                  var func2 = function (params2) { ... }<br>
+                  return {<br>
+                     api1: func1,<br>
+                     api2: func2<br>
+                  }<br>
+                }</code> </li>
+        </ul>
+    </section>
+    <section title="Utilisation">
+        <p>Un module peut être importé via <code>var mymodule = require('mymodulename');</code></p>
+    </section>
+</section>
+<section title="Conception">
+</section>
+<section title="Implémentation">
+</section>
+<section title="Déploiement">
+</section>
+<section title="Exemples">
+</section>
+<section title="Notes">
+</section><!--#include virtual="/footer.html" -->

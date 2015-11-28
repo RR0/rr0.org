@@ -1,0 +1,86 @@
+<!--#include virtual="/header-start.html" -->
+<title>CoffeeScript</title>
+<meta name="url" content="http://coffeescript.org"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+    <h2>Besoin</h2>
+
+    <p>Permettre un déploiement ce code <a href="../javascript">Javascript</a> avec une syntaxe</p>
+    :
+    <ul>
+        <li>Plus succint</li>
+        <li>Simulant de l'héritage par classes</li>
+    </ul>
+</section>
+<section>
+    <h2>Analyse</h2>
+    <table class="long wide">
+        <thead>
+        <tr>
+            <th>Fonctionnalité</th>
+            <th>CoffeeScript</th>
+            <th>ES6</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Lamba expressions</td>
+            <td><code>square = (x) -> x * x</code></td>
+            <td><code>var square = (x) => { x * x };</code></td>
+        </tr>
+        <tr>
+            <td>Arguments par défaut</td>
+            <td>
+                <pre><code>fill = (container, liquid = "coffee") -> "Filling the #{container} with #{liquid}..."</code></pre>
+            </td>
+            <td><pre><code>var fill = (container, liquid = "coffee") => {
+  "Filling the #{container} with #{liquid}..."
+};</code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Limitation de portée des variables</td>
+            <td><code>outer = 1</code></td>
+            <td><code>let outer = 1;</code></td>
+        </tr>
+        <tr>
+            <td>Varargs</td>
+            <td>
+                <pre><code>awardMedals = (first, second, others...) -> gold = first silver = second rest = others</code></pre>
+            </td>
+            <td><code>awardMedals (first, second, ...others);</code></td>
+        </tr>
+        <tr>
+            <td>Classe</td>
+            <td>
+                <pre><code>class Animal constructor: (@name) -> </code></pre>
+            </td>
+            <td>
+                <pre><code>class Animal constructor (name) => { } </code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Interpolation de chaînes</td>
+            <td>author = "Wittgenstein" quote = "A picture is a fact. -- #{ author }"</td>
+            <td>var author = "Wittgenstein"; var quote = "A picture is a fact. -- ${author}";</td>
+        </tr>
+        <tr>
+            <td>Source maps</td>
+            <td>--map</td>
+            <td>traceur --sourcemap</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<section>
+    <h2>Conception</h2>
+
+    <p>Le code CoffeeScript est compilé en <a href="../javascript">Javascript</a> avant exécution.</p>
+</section>
+<section>
+    <h2>Notes</h2>
+    <ul>
+        <li>Pas compatible avec (pas un sur-ensemble de) <a href="../javascript">Javascript</a></li>
+    </ul>
+</section>
+<!--#include virtual="/footer.html" -->

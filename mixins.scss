@@ -113,7 +113,7 @@
 }
 @mixin embeddedMenu {
   @include menu();
-  position: static;
-  box-shadow: none;
+  position: relative;
   height: auto;
+  box-shadow: none;
 }

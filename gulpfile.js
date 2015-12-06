@@ -20,42 +20,35 @@ var usemin = require('gulp-usemin');
 
 gulp.task('clean', function () {
   'use strict';
-  return del(['dist','css']);
+  return del(['dist/**/*']);
 });
 
-gulp.task('compile', function () {
+gulp.task('compile', ['clean'], function () {
   'use strict';
-  gulp.src([
+  return gulp.src([
       '**/*.scss',
       '!node_modules/**/*', '!bower_components/**/*', '!test/**/*'
     ])
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('inject', ['compile'], function () {
-  'use strict';
-  var target = gulp.src('index2.html');
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src([
-    '**/*.js', 'css/**/*',
-    '!node_modules/**/*', '!bower_components/**/*',
-    '!test/**/*', '!coverage/**/*', '!karma*.*',
-    '!gulpfile*.*', '!gruntfile*.*',
-    '!server.js'
-  ], {read: false});
+var sources = gulp.src([
+  '**/*.js', 'dist/css/**/*',
+  '!node_modules/**/*', '!bower_components/**/*',
+  '!test/**/*', '!coverage/**/*', '!karma*.*',
+  '!gulpfile*.*', '!gruntfile*.*',
+  '!server.js', '!rr0.js', '!dist/*.js'
+], {read: false});
 
-  return target.pipe(injectFiles(sources))
-    .pipe(gulp.dest('injected'));
-});
-
-gulp.task('dist', ['inject'], function () {
+gulp.task('dist', ['compile'], function () {
   'use strict';
 
-  gulp.src('index2.html')
+  return gulp.src('index2.html')
+    .pipe(injectFiles(sources))
     .pipe(usemin({
       css: [minifyCss(), rev()],
-      // html: [minifyHtml({empty: true})],
+      html: [minifyHtml({empty: true})],
       js: [
         sourcemaps.init(),
         es6(),

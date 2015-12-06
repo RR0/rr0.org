@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html data-ng-app="rr0" ng-controller="AppController" lang="fr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" media="print" href="/print.css" type="text/css"/>
+  <link rel="dns-prefetch" href="//google.com">
+  <link rel="dns-prefetch" href="//googleapis.com">
+  <link rel="dns-prefetch" href="//facebook.com">
+  <link rel="dns-prefetch" href="//twitter.com">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- build:css rr0.css -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- endbuild --><!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <base target="_top"/>
+  <title>RR0</title>
+</head>
+<body>
+<div class="contents no-side">
+  <div data-ng-controller="HeadController">
+    <header>
+      <h1 data-ng-show="!isFramed()">
+        <a ng-if="titleUrl" ng-href="{{titleUrl}}" target="_blank" ng-bind-html="title"></a>
+        <span ng-if="!titleUrl" ng-bind-html="title"></span>
+      </h1>
+    </header>
+    <nav>
+      <h1>Navigation</h1>
+      <ul>
+        <li data-ng-cloak data-ng-if="!isFramed()" class="constant">
+          <a data-ng-href="/" href="/" class="home"> <span title="Home" class="label">RR0</span> </a>
+        </li>
+        <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
+          <div class="search"></div>
+        </li>
+        <li data-ng-cloak data-ng-if="!isFramed()" class="collapsed"><i class="fa fa-angle-right"></i></li>
+        <li data-ng-repeat-start="p in ps" data-ng-if="p.link && p.label" class="constant {{::p.style}}">
+          <a data-ng-href="{{::p.link}}"> <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span> </a>
+        </li>
+        <li data-ng-repeat-end data-ng-cloak data-ng-if="p.link && p.label" class="collapsed">
+          <i class="fa fa-angle-right"></i></li>
+        <li tabindex="100" data-ng-click="titleClick()" class="constant">
+          <a href="#contents" data-ng-click="sectionClick('#contents')" class="outline-title" id="out-top">
+            <span class="constant" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span> </a>
+          <ul class="outline">
+            <li data-ng-attr-tabindex="{{101+$index}}" class="constant" data-ng-repeat="s in sections" data-ng-click="sectionClick(s)">
+              <a data-ng-href="#{{::s.id}}" id="out-{{::s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+            </li>
+          </ul>
+        </li>
+        <li data-ng-repeat-start="n in ns" data-ng-cloak data-ng-if="n.link && n.label" class="collapsed">
+          <i class="fa fa-angle-right"></i></li>
+        <li data-ng-repeat-end class="constant {{n.style}}" data-ng-if="n.link && n.label">
+          <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
+        </li>
+        <li class="constant">
+          <span data-ng-bind-html="alternate"></span>
+        </li>
+        <li class="toggleMap constant">
+          <a href='#'><span class="label">Carte</span> <span><i class="fa fa-map-marker"></i></span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="text">
+    <p>Hello</p>
+    <footer data-ng-controller="FootCtrl">
+      <div id="footerTable" data-ng-show="!isFramed()" data-ng-cloak>
+        <div>
+          <span class="rr0-tweet"></span> <span class="rr0-gplus"></span> <span class="rr0-fb-like"></span>
+        </div>
+        <div class="footer">
+          Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" -->
+          <!--#flastmod virtual="$DOCUMENT_URI" -->
+          <span class="copyright" data-url="/Copyright.html" data-default-name="RR0"></span> - <a href="/Contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div><!--text-->
+</div><!--contents-->
+<aside>
+  <h1>Map</h1>
+  <div id="starmap"></div>
+  <div id="map-canvas"></div>
+</aside>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-sanitize.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<!-- build:js rr0.js -->
+<!-- inject:js -->
+<!-- endinject -->
+<!-- endbuild -->
+</body>
+</html>

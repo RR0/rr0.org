@@ -1,0 +1,58 @@
+[
+  {
+    "code": "bio",
+    "name": "Biologistes"
+  },
+  {
+    "code": "astro",
+    "name": "Astronomes"
+  },
+  {
+    "code": "astrophys",
+    "name": "Astrophysiciens"
+  },
+  {
+    "code": "geophys",
+    "name": "Géophysiciens"
+  },
+  {
+    "code": "geolo",
+    "name": "Géologues"
+  },
+  {
+    "code": "meteo",
+    "name": "Météorologues"
+  },
+  {
+    "code": "phys",
+    "name": "Physiciens"
+  },
+  {
+    "code": "medecin",
+    "name": "Médecins"
+  },
+  {
+    "code": "psy",
+    "name": "Psychiatres"
+  },
+  {
+    "code": "socio",
+    "name": "Sociologues"
+  },
+  {
+    "code": "math",
+    "name": "Mathématiciens"
+  },
+  {
+    "code": "phi",
+    "name": "Philosophes"
+  },
+  {
+    "code": "chi",
+    "name": "Chimistes"
+  },
+  {
+    "code": "neuro",
+    "name": "Neurologues"
+  }
+]

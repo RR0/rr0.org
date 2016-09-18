@@ -1,0 +1,79 @@
+<!--#include virtual="/header-start.html" -->
+<title>Virtualisation</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Virtualization</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Simuler un environnement logiciel/matériel.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+</section>
+<section>
+  <h2>Conception</h2>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Type</th>
+      <th>Plate-forme</th>
+      <th>Emule matériel</th>
+      <th>Emule OS</th>
+      <th>Performance</th>
+      <th>Isolation</th>
+      <th>OSS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>LxC</td>
+      <td>Container <span class="note">Basé sur la fonctionnalité Linux des cgroups</span></td>
+      <td>Linux</td>
+      <td>Non</td>
+      <td>Non</td>
+      <td>+++</td>
+      <td>---</td>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Docker</td>
+      <td>Container <span class="note">Basé sur LxC</span></td>
+      <td>Linux <span class="note">Basé sur LxC. La version MacOS souffre de problèmes majeurs de performance</span></td>
+      <td>Non</td>
+      <td>Non</td>
+      <td>+++</td>
+      <td>---</td>
+      <td>2013</td>
+    </tr>
+    <tr>
+      <td>Vagrant</td>
+      <td>VM Manager <span class="note">Par-dessus VirtualBox (defaut) ou VMWare, <a href="/org/us/company/amazon/ws">AWS</a>...</span></td>
+      <td>selon VM</td>
+      <td>via VM</td>
+      <td>via VM</td>
+      <td>selon VM</td>
+      <td>+++</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <td>VirtualBox</td>
+    </tr>
+    <tr>
+      <td>VMWare</td>
+    </tr>
+    <tr>
+      <td><a href="/org/us/company/amazon/ws/ec2">EC2</a></td>
+    </tr>
+    <tr>
+      <td>Puppet</td>
+    </tr>
+    <tr>
+      <td>Chef</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<!--#include virtual="/footer.html" -->

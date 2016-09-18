@@ -1,0 +1,430 @@
+<!--#include virtual="/header-start.html" -->
+<title>Note Technique n° 2 : Etude comparative des résultats statistiques élémentaires relatifs aux observations de
+  phénomènes aérospatiaux non identifiés</title>
+<meta name="author" content="Besse, Philippe">
+<meta name="copyright" content="N° 105 CT/GEPAN, CNES">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Présentation</h2>
+  <p>par <span class="people">Alain Esterle</span>
+  </p>
+  <p>Cette seconde Note Technique s'inscrit dans la perspective définie par la première Note Technique et la première
+    Note d'Information déjà parues.
+  </p>
+  <p>En effet, la première Note Technique explicitait l'ensemble des méthodes utilisées au GEPAN pour l'analyse, la
+    classification et le codage des documents de témoignages d'observations et discutait les problèmes nés des choix
+    faits dans ces domaines. La première Note d'Information présentait un travail effectué et publié en URSS, travail
+    d'études statistiques d'un ensemble d'observations faites dans ce pays.
+  </p>
+  <p>Nous avions alors signalé l'intérêt qu'il pouvait y avoir à comparer des études statistiques similaires faites sur
+    des fichiers de contenus indépendants ( par le lieu, l'époque, … ). C'est pourquoi nous présentons maintenant
+    l'image statistique du fichier construit à partir des procès verbaux de la Gendarmerie nationale française, jusqu'
+    en 1978, ainsi qu'un traitement de comparaison avec d'autres fichiers français, soviétiques et américains.
+  </p>
+  <p>Il ne s'agit encore là que d'une approche partielle. D'autres études et méthodes statistiques plus élaborées seront
+    développées ultérieurement, comme il est expliqué en conclusion du présent travail.
+  </p>
+  <p>Enfin rappelons que l'approche statistique n'est qu'un volet de recherche parmi d'autres. En particulier, on pourra
+    trouver dans les Notes Techniques à venir, quelques études de cas dont les rapports sont actuellement en
+    préparation.
+  </p>
+</section>
+<section>
+  <h2>Introduction</h2>
+  <p>A partir des procès-verbaux établis par la Gendarmerie nationale, a été constitué un fichier contenant actuellement
+    188 observations classées, après expertise, dans la rubrique "D" <span class="note">Sur un ensemble de 700 procès-verbaux examinés, environ.</span>
+    : "rapports pour lesquels il n'est pas possible, malgré les détails décrits, d'identifier le phénomène observé".
+  </p>
+  <p>On se propose alors, dans une première étape, de décrire de façon élémentaire, le contenu de ce fichier en
+    utilisant au mieux les possibilités du codage de ce fichier (version 4 - cf. [Duv 79]) pour compléter l'étude de
+    [Leg 79], et comparer les résultats à ceux obtenus pour d'autres fichiers ([Poh 76] , [GMP 79] et [Hen 79]).
+  </p>
+</section>
+<section>
+  <h2>Démarche</h2>
+  <section>
+    <h3>Remarques générales</h3>
+    <p>L'utilisation d'outils statistiques pour l'étude des phénomènes aérospatiaux non identifiés, a déjà suscité de
+      nombreuses critiques ([Pou 75], [Tou 75], [Hen 79] ...). Ainsi, nécessitant un codage des données et travaillant
+      sur des histogrammes, moyennes, corrélations, ... ils imposent une perte sévère de l'information contenue dans la
+      masse des rapports. Mais, ce moyen d'étude, dont le but est de mettre en évidence des propriétés du ou des
+      phénomènes, parait indispensable (cf [Hen 79J , p. 241), car seul susceptible de considérer globalement les
+      observations accumulées depuis des années. Il doit alors, afin de ne pas l'occulter, rester complémentaire de
+      l'étude individuelle de cas (cf [Ros 78]).
+    </p>
+    <p>Afin d'éviter toute confusion, souvent à l'origine de nombreuses critiques, il est bon de rappeler certaines
+      notions élémentaires indispensables à toute étude statistique. L'usage distingue deux approches :
+    </p>
+    <ul>
+      <li>l'une descriptive fait appel à des outils élémentaires (histogrammes) ou plus élaborés (analyses factorielles,
+        classifications) elle ne nécessite pas d'hypothèse préliminaire et vise à décrire de façon synthétique la
+        structure des données. Ainsi, les termes de population ou d'échantillon désignent exclusivement l'ensemble des
+        individus ou éléments d'information décrits dans le fichier ;
+      </li>
+      <li> l'autre est inférentielle ; elle nécessite un modèle probabiliste (O, a, P) ou O désigne l'ensemble des
+        individus (la population ou population parente), a est l'ensemble des parties de O, et P une loi de probabilité
+        inconnue. A partir d'un échantillon statistique (une suite de variables aléatoires indépendantes et de même loi)
+        on cherche donc à déterminer P et, suivant que l'on admettra ou non des hypothèses sur P, on utilisera des
+        outils nommés paramétriques ou non paramétriques.
+      </li>
+    </ul>
+    <p> Pour plus de clarté, le mot "ensemble" est employé dans la suite pour désigner la "population" d'une étude
+      descriptive. Ce travail présente deux volets :
+    </p>
+    <ul>
+      <li>description brute du fichier national à l'aide d'histogrammes,</li>
+      <li>comparaison avec des fichiers déjà existants.</li>
+    </ul>
+    <p>Il nécessite de définir les concepts utilisés ainsi que :
+    </p>
+    <ul>
+      <li>l'ensemble décrit,</li>
+      <li>la (ou les) population(s) dont sont extraits les échantillons comparés.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Description du fichier national</h3>
+    <section>
+      <h4>Le "phénomène OVNI"</h4>
+      <p>La réalité objective et expérimentale du "phénomène OVNI" n'est pas l'existence d'"objets" volants non
+        identifiés mais celle de témoins. Ceci impose alors de considérer une situation globale définie par différents
+        pôles :
+      </p>
+      <ul>
+        <li>un (ou des) <strong>phénomène</strong>(s) : c'est "ce qui est perçu par les sens" ;</li>
+        <li>un (ou des) <strong>témoin</strong> (s) : c'est une personne qui, faisant une observation et ne pouvant
+          l'identifier è un phénomène connu par elle, a décidé d'en faire un témoignage ;
+        </li>
+        <li> un <strong>environnement</strong> : pris dans un sens large, il est physique ( météo, typographie du lieu,
+          ...) et socio-culturel ( par exemple : importance donnée aux "soucoupes volantes" dans les média ) ;
+        </li>
+        <li> un (ou des) <strong>témoignage</strong>(s) : c'est la relation par le témoin de son observation ;
+        </li>
+        <li> un <strong>canal</strong> de transfert de l'information : pour le fichier considéré, il s'agit de la
+          Gendarmerie nationale qui, à partir des facteurs : témoin - environnement - témoignage, constitue un procès-
+          verbal d'enquête.
+        </li>
+      </ul>
+      <p> La situation ainsi définie peut se représenter par un schéma qui n'a aucune valeur fonctionnelle de
+        modélisation: Il permet juste d'illustrer la complexité dialectique du "phénomène OVNI" qui se présente sous
+        différents aspects.
+      </p>
+    </section>
+    <section>
+      <h4>Complexité du phénomène</h4>
+      <ul>
+        <li> Les "individus" de la "population" étudiée apparaissent donc comme des systèmes dont les mécanismes sont
+          par ailleurs très mal connus. Par exemple :
+          <ul>
+            <li> Quels sont les facteurs déterminants qui décident le témoin à relater son observation ? : campagne de
+              presse sur les "soucoupes volantes", psychologie du témoin, "étrangeté" de l'observation ?
+            </li>
+            <li> Dans quelle mesure un conditionnement culturel, une observation traumatisante peut modifier les
+              perceptions d'un témoin et quelle peut être l'influence du phénomène sur l'environnement ou de
+              l'observateur sur le phénomène ?
+            </li>
+            <li> Les médias jouent le rôle d'un "feed back" et modifient la connaissance a priori et ainsi les
+              conditions de l'interprétation a postériori des phénomènes non identifiés.
+            </li>
+            <li>…</li>
+          </ul>
+        </li>
+        <li>Cette conception systémique imposée par la complexité rapidement survolée du phénomène OVNI, se heurte alors
+          au manque d'information. Chaque élément du puzzle, surtout à travers les rapports d'observation, est peu
+          documenté. Il paraît illusoire de vouloir sérier tous les paramètres et ainsi, le problème majeur, dans la
+          recherche de modèles, et le choix des approximations, est d'isoler des sous systèmes dont on suppose connus
+          tous les facteurs déterminants afin d'en cerner les comportements. <br/><br>La méconnaissance de certains
+          facteurs, habituellement sur ou sous estimés suivant le but poursuivi : psychologie de la perception,
+          phénomènes de rumeurs, impose une prudente réserve dans les interprétations et hypothèses qui accompagnent un
+          travail même descriptif.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Spécificité du fichier étudié</h3>
+      <ul>
+        <li>Définition des individus :<br/> L'objet de l'étude est la population des phénomènes aérospatiaux non
+          identifiés ; mais il est clair que ceci nécessite la connaissance des filtres qui séparent le traitement
+          statistique du ou des phénomènes originels. Ainsi, de même que pour tout fichier ufologique, l'ensemble des
+          individus sera l'ensemble de ce qui est observable c'est à dire l'ensemble des témoignages codés. L'individu
+          de base est donc ce que décrivent (mesurent) les variables considérées par le code, c'est à dire l'entité à 5
+          pôles décrite ci dessus. <br/><br/> Cette approche est rigoureuse mais peu pratique. Aussi, pour simplifier la
+          tâche et rendre le fichier compatible avec ceux existants, en présence de procès-verbaux relatant
+          l'observation de plusieurs phénomènes ou plusieurs témoignages indépendants ou non d'un même phénomène, on est
+          conduit à l'approximation décrite au § 2.1.
+        </li>
+        <li>Les remarques d'ordre général précédentes restent applicables à tous fichiers qui se distinguent entre eux
+          par les modes de collecte et de sélection des témoignages. L'originalité du fichier exploité au GEPAN vient
+          avant tout de l'utilisation des rapports de Gendarmerie comme source d'information. <br/><br/> Deux avantages
+          importants en résultent :
+          <ul>
+            <li> Homogénéité spatio-temporelle des capteurs : Les brigades de Gendarmerie étant réparties sur tout le
+              territoire, on peut espérer, pour des études ultérieures de modélisation spatiale, éviter l'écueil décrit
+              en [Hen 79] où les observations se regroupent très nettement autour des centres de saisie des données ;
+            </li>
+            <li>Homogénéité des procédures d'enquête :<br/> L'établissement du procès-verbal suit une démarche
+              normalisée aussi, contrairement aux fichiers utilisant des sources diverses, on peut supposer que les
+              informations sont certes filtrées mais le sont, en moyenne, de façon constante. Ceci signifie qu'une étude
+              inférentielle admettra l'hypothèse suivante : "les rapports de Gendarmerie introduisent des biais
+              systématiques ( encore à déterminer ) dans les informations concernant les observations d'OVNI mais, les
+              différences inter-brigades ou inter-gendarmes ne superposent qu'un bruit aléatoire.
+            </li>
+          </ul>
+        <li>L'expertise est le filtre suivant dans la chaîne de traitement. Celle-ci peut s'interpréter comme une
+          "mesure" qualitative ( cf [Jim 79] ) mais, conduisant dans le cas présent à une sélection, elle constitue un
+          filtre supplémentaire. Aussi, pour faire intervenir l'expertise comme un facteur externe, il faudra reconduire
+          cette étude en considérant tous les cas lorsque ceux-ci seront codés. <br/><br/> Ceci revient à définir
+          différemment le "phénomène OVNI" ( cf [Ros 79] ) suivant qu'on le considére avant l'expertise :
+          <blockquote>
+            <p>Existence de personnes qui ont rapporté avoir vu des lumières ou des objets inhabituels dans le ciel ou
+              au sol, ou près du sol, accompagnés parfois d'enregistrements physiques ( trace, photo, écho radar, ... ),
+            </p>
+          </blockquote>
+          ou après :
+          <blockquote>
+            <p>Ces témoignages, soumis à une analyse méthodique auprès des témoins, et sur le site de l'observation
+              alléguée ne peuvent être attribués en toute rigueur ni à des affabulations, ni à des mésinterprétations.
+            </p>
+          </blockquote>
+          Ceci est équivalent, dans le schéma du § 1.2.1. à prendre ou non en compte l'expertise dans le canal de
+          transfert de l'information.
+        </li>
+        <li>Le dernier travail préliminaire à l'étude statistique concerne le codage indispensable pour
+          l'informatisation des traitements. Les problèmes que soulève une telle étape sont abondamment commentés en
+          [Ros 78]. Sans revenir sur ceux-ci, deux remarques peuvent être faites :
+          <ul>
+            <li>A ce niveau intervient un grand nombre de choix ( choix des entrées, des variables, des modalités )
+              soumis à des impératifs contradictoires : praticabilité du codage et du fichier, minimisation de la perte
+              d'information ;
+            </li>
+            <li>Ces choix nécessitent une connaissance des traits majeurs des phénomènes ainsi que des objectifs
+              recherchés par l'étude statistique ; ils ne peuvent être définitifs.
+            </li>
+          </ul>
+        </li>
+        <li>
+          En conclusion, la complexité du phénomène OVNI, brièvement décrite ci dessus est telle que l'interprétation
+          des résultats statistiques nécessite des choix parmi toutes les combinaisons possibles entre les différents
+          facteurs ( psychologiques, sociologiques, physiques ). Tant que les mécanismes cités au § 1.2.1. n'auront pas
+          été spécifiquement étudiés, ces choix restent prématurés car soumis à toute la subjectivité, à tout l'a priori
+          du chercheur. <br/><br/> Ces précautions élémentaires doivent également tenir compte de l'influence des canaux
+          de transfert de l'information. En effet, si cette influence peut être évaluée dans une étude de cas
+          approfondie, elle devient très préjudiciable à une étude statistique lorsque sont confondus constantes du (ou
+          des) phénomène (s) et biais introduits par "l'appareil de mesure".
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h3>Comparaison des fichiers</h3>
+    <section>
+      <h4>Problèmes</h4>
+      <p>Les différents fichiers considérés, sont soumis aux même remarques générales ( complexité du problème, filtrage
+        et insuffisance de l'information ) et leur comparaison pose des problèmes à différents niveaux lorsqu'il faut
+        remonter le canal de transfert de l'information.
+      </p>
+      <p>La première question posée concerne la compatibilité des codages. La variable étudiée "mesure t-elle" le même
+        paramétre ? Les modalités sont-elles définies et utilisées de la même manière ?
+      </p>
+      <p>Il s'agit ensuite de discerner la présence probable de biais introduits par les modes de sélection répondant à
+        des critères variés ainsi que ceux amenés par les différentes sources d'information.
+      </p>
+      <p>Enfin, si ces barrages sont franchis, la comparaison des histogrammes devient possible mais aboutit à un
+        faisceau d'interprétations ou d'hypothèses faisant intervenir les différents facteurs déjà cités.
+      </p>
+    </section>
+    <section>
+      <h4>Test d'homogénéité (cf [Sie 56])</h4>
+      <p>Pour dépasser le stade de la ressemblance "visible" de deux histogrammes, on peut utiliser le test du X². Sous
+        deux hypothèses :
+      </p>
+      <ul>
+        <li> les fichiers décrivent des échantillons aléatoires,
+        </li>
+        <li> ils sont indépendants entre eux.
+        </li>
+      </ul>
+      <p> Ce test conduit à accepter ou à réfuter à un certain seuil de signification ( en général 5 % ) l'hypothèse Ho
+        suivante :
+      </p>
+      <p>Ho = "les échantillons considérés sont tirés d'une même population"
+      </p>
+      <p>Comme dans tout cadre inférentiel, la population parente ainsi supposée d'où seraient issus les échantillons
+        doit être définie.
+      </p>
+    </section>
+    <section>
+      <h4>Interprétation</h4>
+      <p>Telle qu'elle est définie ici, la démarche proposée n'a rien d'original puisqu'il s'agit de décrire un fichier
+        d'observations puis, à partir de plusieurs fichiers - échantillons supposés indépendants entre eux, d'induire
+        des hypothèses expérimentables sur une population de plus en plus vaste. L'originalité vient du sujet de l'étude
+        et se caractérise par un rapport complexité quantité d'information peu commun.
+      </p>
+      <p>Les interprétations proposées au § 3 n'ont rien d'absolu et, se situent toujours dans un cadre descriptif,
+        suivent une règle de moindre "coût". En effet, puisque la démarche se propose de remonter la chaîne des filtres,
+        on fait le choix a priori d'interpréter les résultats en fonction du niveau auquel se situe la comparaison.
+      </p>
+      <p>Exemple :
+      </p>
+      <p>On constate que le nombre de témoins isolés est, comparativement, nettement inférieur dans le fichier de GN.
+        Deux interprétations sont possibles :
+      </p>
+      <ul>
+        <li> Depuis 1974, les "extraterrestres" choisissent d'apparaître devant des groupes de témoins jugés plus
+          crédibles qu'un témoin isolé ;
+        </li>
+        <li> Un témoin isolé relate beaucoup plus facilement son observation à la presse, à un groupement privé, qu'à la
+          Gendarmerie.
+        </li>
+      </ul>
+      <p> Ayant remarqué que les codages de cette variable sont compatibles, et supposé qu'une expertise ne tenant pas
+        compte de la crédibilité n'influe pas trop sur la variable, on choisit la deuxième car, au niveau où on se
+        situe, elle explique le plus simplement, jusqu'à preuve du contraire, les différences significatives ( au sens
+        du test du X² ) entre les distributions.
+      </p>
+    </section>
+  </section>
+</section>
+<section>
+  <h2>Fichier des rapports de Gendarmerie</h2>
+  <p> Ce fichier, alors qu'il contenait 106 rapports est déjà décrit en [Leg 79] dans le but de faire apparaître des
+    relations entre les variables psycho-sociales et la description des phénomènes observés. Le fichier contenant
+    maintenant 188 observations, le travail est repris ici de façon plus exhaustive ( histogrammes de toutes les
+    variables ) mais sans aborder les problèmes de corrélation à étudier ultérieurement.
+  </p>
+  <section>
+    <h3>Présentation</h3>
+    <p> Une entrée du fichier n'est ni une observation, ni un procès-verbal mais un témoignage, c'est à dire que
+      plusieurs témoignages, indépendants ou non, d'une observation dans un procès-verbal ou bien plusieurs observations
+      différentes, toujours dans un même procès-verbal, donnent lieu à plusieurs entrées dans le fichier. Les témoins
+      sont numérotés et le numéro 1 est attribué à la version la plus détaillée selon l'appréciation du codeur. Afin de
+      ne pas donner trop d'importance aux cas présentant de nombreux observateurs et obtenir des résultats compatibles
+      avec ceux existants, ne sont sélectionnés pour cette étude que les témoignages "principaux".
+    </p>
+    <p> Les variables et leurs modalités sont décrites en [Duv 79]. Celles prisent en compte ici se divisent en quatre
+      groupes :
+    </p>
+    <ul>
+      <li>Localisation
+        <ul>
+          <li>Année de l'observation</li>
+          <li>mois</li>
+          <li>Jour</li>
+          <li>Heure locale</li>
+          <li>Estimation de l'heure</li>
+          <li>Département</li>
+        </ul>
+      </li>
+      <li>Critères sociologiques
+        <ul>Témoins potentiels ( nature du lieu )
+          <li>Nombre relaté de témoins</li>
+          <li>Profession du témoin</li>
+          <li>Âge en clair</li>
+          <li>Tranche d'âge</li>
+          <li>Sexe</li>
+        </ul>
+      </li>
+      <li>Conditions d'observation
+        <ul>météo
+          <li>Durée (unité de)</li>
+          <li>Distance (unité de)</li>
+          <li>Méthode d'observation</li>
+        </ul>
+      </li>
+      <li>Description
+        <ul>
+          <li>Nombre d'objets</li>
+          <li>Forme de l'objet principal</li>
+          <li>Luminosité principale</li>
+          <li>Luminosité secondaire</li>
+          <li>Couleur</li>
+          <li>Caractère principal de la trajectoire</li>
+          <li>Caractère secondaire de la trajectoire</li>
+          <li>Appréciation de la vitesse</li>
+          <li>Accélération</li>
+          <li>Bruit</li>
+          <li>Hauteur angulaire en début</li>
+          <li>Azimut en début</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Description des histogrammes</h3>
+    <p> Dans la colonne de droite en face de la modalité considérée, on trouve le pourcentage d'éléments satisfaisant à
+      cette modalité par rapport au nombre total d'éléments de l'ensemble étudié ( donné dans le titre ). A l'extrême
+      droite se trouve imprimé verticalement un histogramme sommaire ( une étoile * 2 % ) de la distribution obtenue.
+    </p>
+    <section>
+      <h4>Localisation</h4>
+      <ul>
+        <li>Année de l'observation :<br/> Pas de vague sensible sur si peu d'années considérées. Le fichier est trop
+          restreint pour ce genre d'étude.
+        </li>
+        <li> Mois de l'observation :<br/> Deux pics sensibles, l'un en mars et l'autre en octobre. La répartition
+          mensuelle par année permet de localiser un pic en mars 74 alors que l'importance du mois d'octobre se répartit
+          de façon peu significative. On remarque que le pic de mars 74 suit l'interview de Robert GALLEY par
+          Jean-Claude BOURRET ( 21 février 74 ) et les instructions données aux brigades de Gendarmerie de rédiger des
+          procès-verbaux en cas de témoignages ( 18 février 74 ).
+        </li>
+        <li> Jour de l'observation :<br/> Ne présente que peu d'intérêt.
+        </li>
+        <li> Heure locale - estimation de l'heure :<br/> Importance, déjà signalée (cf. § 3) dans d'autres fichiers, du
+          nombre d'observations aux alentours de 22 h. 60 % des cas ont lieu la nuit.
+        </li>
+        <li> Département :<br/> Un test du X² ( au niveau 5 % ) montre que l'hypothèse : "les rapports d'observation
+          sont distribués selon une loi de Poisson" ne peut être acceptée. Par contre, ce même test ( niveau 5 % )
+          conduit à admettre l'hypothèse d'une loi géométrique. Ceci signifie que, comme il a déjà été remarqué sur
+          d'autres fichiers, la distribution des rapports n'est pas aléatoire mais suit un modèle "contagieux" (cf [Tou
+          75]) ou encore aggrégatif (cf [RoD 77]), Ce résultat est donné à titre indicatif et l'interprétation, faisant
+          intervenir trop de facteurs imparfaitement maîtrisés, est laissée à l'appréciation du lecteur.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h4>Critères sociologiques</h4>
+      <ul>
+        <li>Témoins potentiels : Comme pour la distribution spatiale, ce facteur fait intervenir trop de paramètres pour
+          être interprété simplement (cf. [RoD 77]).
+        </li>
+        <li>Nombre relaté de témoins : Voir étude comparative (§ 3).</li>
+        <li> Profession du témoin principal :<br/> En comparant, les résultats à la population globule (cf. [INS 77]), (
+          sauf enfants de moins de 9 ans ), il apparaît que la catégorie des non-actifs est très nettement
+          sous-représentée. Si on ne tient pas compte des personnes non-actives, on obtient comme en [Leg 79] le tableau
+          comparatif suivant ( calculé à partir du recensement de 1975 ) portant sur les huit premières catégories :
+          <table>CATEGORIES EFFECTIF THEORIQUE EFFECTIF CONSTATE 0 + 1 13,8 23 2 11,6 19 3 16 10 4 18,9 17 5 26,3 13 6
+            56,1 38 7 8,5 11 8 3,6 18
+          </table>
+          On trouve alors le groupe 8 très sur-représenté ( exclusivement Armée & Police ) et les groupes (0 + 1) et 2
+          sur-représentés alors que les groupes des ouvriers et des employés (5), (6) sont sous-représentés.
+        </li>
+        <li> Age : Répartition très dispersée.
+        </li>
+        <li> Sexe : Comparativement très peu de femmes relatent leurs éventuelles observations à la Gendarmerie.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h4>Conditions d'observation</h4>
+      <ul>
+        <li>Météo :<br/> Dans un nombre important de cas (39 %), les témoins ne font pas mention des conditions
+          météorologiques et pour le reste, signalent en général un ciel dégagé (41 %).
+        </li>
+        <li> Durée :<br/> L'étude de ce critère est détaillée au § 3.
+        </li>
+        <li> Distance :<br/> L'étude de ce critère est détaillée au § 3.
+        </li>
+        <li> Méthode :<br/> La plupart des observations sont faites à l'œil nu (91 %).
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h4>Description de l'observation</h4>
+      <p> Une étude distincte pour chacune des variables descriptives présente peu d'intérêt. Les histogrammes ci-après
+        sont suffisamment explicites. Par contre, une étude typographique tenant compte des intercorrélations ( analyse
+        factorielle ) et un essai de classification automatique sont indispensables pour l'approche globule de ces
+        variables.
+    </section>
+  </section>
+  </p></section>
+<!--#include virtual="/footer.html" -->

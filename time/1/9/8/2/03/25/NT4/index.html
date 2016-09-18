@@ -1,0 +1,861 @@
+<!--#include virtual="/header-start.html" -->
+<title>Note Technique n° 4 : Recherche statistique d'une typologie des descriptions de Phénomènes Aérospatiaux Non
+  identifiés</title>
+<meta name="author" content="Besse, Philippe">
+<meta name="copyright" content="N° 085 CT/GEPAN, CNES">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Introduction</h2>
+  <p>Le travail poursuit la démarche abordée en ( BES-80 ) à l'aide d'outils statistiques élémentaires ( histogrammes -
+    tests d'ajustement ) en utilisant cette fois les méthodes classiques mais plus élaborées, de l'analyse des données
+    multidimensionnelles. Rappelons que ces outils permettent une approche synthétique d'un fichier donné ( il s'agit
+    ici des témoignages recueillis par la Gendarmerie nationale ), mais n'autorisent aucune inférence sur l'ensemble des
+    phénomènes.
+  </p>
+  <p>Alors que l'étude précédente n'envisageait que la description de chacune des variables, considérées indépendamment,
+    les outils statistiques, brièvement décrits dans le premier paragraphe, visent cette fois à mettre en évidence les
+    liaisons ( ou "proximités" ou "corrélations" ) présentes dans les données du fichier relatives aux observations de
+    phénomènes aérospatiaux non identifiés ( cas classés D ).
+  </p>
+  <p>Dans cette perspective, trois ensembles sont successivement étudiés :
+  </p>
+  <ul>
+    <li>les variables,</li>
+    <li>les modalités de celles-ci,
+    </li>
+    <li>les observations.</li>
+  </ul>
+  <p>Comme précédemment, ce travail sans résoudre des questions fondamentales, définit ce que seront les prochaines
+    étapes de l'étude en tâchant de cerner au mieux les limites des outils statistiques.
+  </p>
+</section>
+<section>
+  <h2>Mise en oeuvre des analyses</h2>
+  <section>
+    <h3>Les outils</h3>
+    <p>Les fondements théoriques des méthodes employées sont abondamment décrits dans la littérature ( CAP-76 ; SAP-78 ;
+      DAP-76 ; LMT-77 ; ... ) avec des optiques ( géométriques, matricielles, probabilistes, ... ) qui diffèrent selon
+      les habitudes des auteurs. Seuls les principes généraux de ces techniques sont brièvement rappelés ; les logiciels
+      sont ceux diffusés par le <abbr title="CEntre de Statistiques et d'Informatique Appliquées">CESIA</abbr> et
+      décrits en (LMT-77).
+    </p>
+    <section>
+      <h4>Modèle</h4>
+      <p>On considère un ensemble de n individus ( les rapports d'observations ) décrits par p variables numériques ou
+        non. Pour permettre les comparaisons des variables et ainsi les analyses, on commence par recoder toutes les
+        données en des tableaux ( dits disjonctifs complets ) comprenant les valeurs 0 ou 1 suivant la réalisation ou
+        non d'un événement, l'appartenance ou non à une classe.
+      </p>
+      <p>Ainsi, par exemple, la variable "département" est remplacée par 6 variables ( dites indicatrices des modalités
+        ) :
+      </p>
+      <p>(1S-W, 1S-E, 1centre, 1W, 1E, 1N)
+      </p>
+      <p>qui prennent des valeurs 0 ou 1 suivant la région dans laquelle s'est produite l'observation.
+      </p>
+      <p>L'ensemble des méthodes utilisées repose alors sur une représentation vectorielle des données :
+      </p>
+      <ul>
+        <li>chaque modalité d'une variable est ainsi représentée par un vecteur de Rn constitué par une suite de 0 ou de
+          1 suivant l'appartenance ou non de l'individu i ( i = 1, ..., n ) à la classe en question ;
+        </li>
+        <li>inversement, chaque individu est également considéré comme un vecteur comportant cette fois m composantes (
+          m est le nombre total de modalités ) 0 ou 1 suivant les modalités j ( j = 1, ..., m ) que prend l'individu en
+          question.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h4>Analyses factorielles</h4>
+      <p>Les données ainsi modélisées, l'analyse vise alors à une représentation optimum, c'est-à-dire qui modifie le
+        "moins possible" <span class="note">L'emploi des guillemets signifie ici que l'explication précise du sens du terme se trouve dans la bibliographie citée.</span>
+        les structures de ces données. Dans ce but, les vecteurs ( individus ou variables ) sont projetés sur les plans
+        engendrés par les axes principaux d'inertie du nuage <span class="note">Les individus (et les variables) étant munis de poids, et les espaces de métriques, appropriés.</span>
+        ( ce sont aussi les directions associées aux plus grandes "variances" ). On obtient ainsi une représentation "au
+        mieux" des "proximités" entre individus ou entre modalités.
+      </p>
+      <p>L'étude directe des variables ( représentées par des paquets d'indicatrices ) se fait en considérant non plus
+        des vecteurs, mais les sous-espaces vectoriels ( engendrés pour chacun des paquets d'indicatrices ) et les
+        "angles"que ceux-ci admettent entre eux deux à deux ( les cosinus au carré de ces angles sont les coefficients
+        T2 de TCHUPROV - cf. CAP-76 ) <span class="note">Par construction, ces coefficients sont en fait très faibles et leur interprétation ne fait pas l'unanimité parmi les auteurs. Il faut donc se montrer très prudent dans leur emploi.</span>.
+      </p>
+    </section>
+    <section>
+      <h4>Classification automatique</h4>
+      <p>La méthode employée est celle des "nuées dynamiques", elle consiste à exécuter l'algorithme itératif ci-dessous
+        afin de répartir en k classes ( k fixé a priori ) n points d'un espace euclidien.
+      </p>
+      <ol type="a">
+        <li>Sélection a priori de façon aléatoire de k groupes de quelques points comme "noyaux" provisoires des k
+          classes.
+        </li>
+        <li>Chaque point est rangé dans la classe dont le noyau est le plus "rapproché".
+        </li>
+        <li> Les noyaux sont remplacés par d'autres points choisis autour du "centre de gravité" de chaque classe.
+        </li>
+        <li>Les points b et c sont itérés jusqu'à la stabilité des centres de gravité.</li>
+      </ol>
+    </section>
+  </section>
+  <section>
+    <h3>PRÉPARATION DES DONNÉES</h3>
+    <p>Les outils d'analyse employés nécessitant des données de nature homogène, il faut donc procéder à un recodage à
+      partir des descriptions sommaires obtenues précédemment ( cf. BES-80 ) et surtout au regroupement des modalités
+      d'effectifs trop faibles.
+    </p>
+    <p>Ces préliminaires conduisent à l'abandon temporaire du paramètre "estimation de la taille" inexploitable dans
+      l'immédiat car code de façon trop disparate ( taille métrique, taille angulaire, taille par comparaison, ... ).
+      Cette lacune sera comblée ultérieurement dans les études plus spécifiquement orientées vers la psychologie de la
+      perception.
+    </p>
+    <p>A la suite de ce travail, on considérera donc 25 variables toujours réparties en quatre sous-groupes et décrivant
+      207 observations des années 74 à 78. Ces variables prennent les modalités présentées ci-dessous.
+    </p>
+    <section>
+      <h4>Localisation</h4>
+      <iframe style="height:9em;width:50em;margin:1em auto;" src="https://docs.google.com/spreadsheets/d/100b2ZtyVnJd_2U3XBb3rwX5T1AQdokT4Aa5Inp_n0Xg/pubhtml?gid=0&range=A1:D5&single=true&widget=false&chrome=false"></iframe>
+    </section>
+    <section>
+      <h4>Conditions sociologiques</h4>
+      <iframe style="height:10.5em;width:100%;margin:1em auto;" src="https://docs.google.com/spreadsheets/d/100b2ZtyVnJd_2U3XBb3rwX5T1AQdokT4Aa5Inp_n0Xg/pubhtml?gid=1407733295&single=true&widget=false&headers=false&chrome=false"></iframe>
+    </section>
+    <section>
+      <h4>Conditions physiques</h4>
+      <iframe style="height:9em;width:75em;margin:1em auto;" src="https://docs.google.com/spreadsheets/d/100b2ZtyVnJd_2U3XBb3rwX5T1AQdokT4Aa5Inp_n0Xg/pubhtml?gid=260957444&single=true&widget=false&headers=false&chrome=false"></iframe>
+    </section>
+    <section>
+      <h4>Description</h4>
+      <iframe style="height:19.5em;width:100%;margin:1em auto;" src="https://docs.google.com/spreadsheets/d/100b2ZtyVnJd_2U3XBb3rwX5T1AQdokT4Aa5Inp_n0Xg/pubhtml?gid=1458044175&single=true&widget=false&headers=false&chrome=false"></iframe>
+    </section>
+  </section>
+</section>
+<section>
+  <h2>Description des variables et de leurs modalités</h2>
+  <p>D'une manière générale, pour ce travail, on note que les liaisons rencontrées sont faibles ( cf. tableau 1 ) et
+    seules des tendances relativement peu marquées peuvent être relevées à partir des données étudiées.
+  </p>
+  <section>
+    <h3>Description des variables</h3>
+    <p>Une première approche élémentaire du corpus des données consiste à construire à partir du tableau des
+      coefficients de TCHUPROV ( cf. § 1.1.2 et tableau 1 ) un arbre valué ou seules sont représentées les liaisons
+      relativement les plus importantes.
+    </p>
+    <p>(Les libellés en clair des variables sont donnés au § 1.2.).
+    </p>
+    <p>On remarque alors que les regroupements a priori des variables ( localisation - conditions - description ) sont
+      très arbitraires au vu des liaisons rencontrées et que la variable 24 ( hauteur angulaire ) semble jouer un rôle
+      pivot entre ces différents groupes sans qu'il soit pour autant possible d'avancer une quelconque interprétation en
+      termes de causalité.
+    </p>
+    <p>Ce schéma illustre seulement la complexité du problème et montre qu'il serait illusoire de vouloir isoler des
+      sous-systèmes "clos" de variables, indépendants des autres paramètres.
+    </p>
+  </section>
+  <section>
+    <h3>Description des modalités</h3>
+    <p>Mais, comme les natures des variables sont très hétérogènes et leur nombre important ( 25 ), il est préférable,
+      dans un premier temps, d'analyser chacun des groupes séparément avant de chercher à expliciter les liaisons
+      inter-groupes globalement ou plus particulièrement pour certains couples de variables.
+    </p>
+    <p>Pour chacun de ces groupes, les figures suivantes représentent les projections, sur les plans définis par les
+      deux premiers axes factoriels, des "vecteurs" modalités. Le pourcentage entre parenthèse est la "part d'inertie"
+      expliquée par ce plan.
+    </p>
+    <section>
+      <h4>Localisation (figure 1)</h4>
+      <p>Peu de faits marquants sont notables dans ce groupe dont les variables les plus liées ( cf. tableau 1 ) sont
+        l'estimation de l'heure et la région sans qu'il soit possible d'en tirer une signification. On remarque
+        seulement qu'en mars 1974, dans une période favorable aux confusions <span class="note">Le pic de mars 74 a déjà été signalé (cf. BES-80) et suit directement une série d'émissions radio sur le problème "OVNI".</span>,
+        un nombre relativement important d'observations matinales ont été relatées dans le sud-ouest.
+      </p>
+      <p>Voir la figure 1.
+      </p>
+    </section>
+    <section>
+      <h4>Conditions sociologiques (figure 2) </h4>
+      <p>L'étude de ce groupe de variables, dont les plus liées sont la profession et l'âge des témoins, ne réserve
+        aucune surprise. Le premier axe prend en compte cette liaison et discrimine nettement les groupes armée-police
+        et non-actifs.
+      </p>
+      <p>En effet, une proportion importante de femmes, d'adolescents ou de personnes âgées est non-active alors
+        qu'évidemment le groupe armée-police recrute essentiellement des adultes de sexe masculin.
+      </p>
+      <p>Le deuxième axe représente le nombre de témoins. Il oppose les observations faites dans une zone isolée ou
+        déserte par un témoin unique, à celles faites dans les hameaux ou petits villages par plusieurs témoins ( > 4 ).
+        Les agriculteurs se trouvent plus généralement dans la première catégorie alors que les patrons, cadres
+        supérieurs ou titulaires d'une profession libérale sont des témoins principaux dans la deuxième. Dans un
+        troisième cas, on remarque que, parmi les témoins "employés", une majorité font leur observation en banlieue ou
+        dans une ville conjointement à un autre témoin.
+      </p>
+      <p>Il n'est guère possible de pousser l'analyse au-delà de ces évidences. La population étudiée ne semble donc pas
+        présenter de particularité sociologique à ce niveau élémentaire <span class="note">Sans oublier pour autant les sous ou sur représentations (déjà relevées en BES-80) de certaines classes par rapport à la population totale et probablement introduites par le filtre que constitue la saisie des informations.</span>.
+        La liaison qui apparait entre la nature du lieu d'observation et le nombre de témoins <span class="note">Le test du X2 conduit à rejeter l'hypothèse d'indépendance au seuil .05</span>
+        ne présente pas d'interprétation évidente. Le nombre relativement important d'observations multiples ( > 4 ),
+        faites dans un hameau ou une banlieue par rapport au nombre de celles faites en ville, montre que le nombre de
+        témoins n'est pas directement proportionnel à la densité de population. Il serait abusif d'essayer d'interpréter
+        cette "tendance" compte tenu de la complexité des facteurs mis en jeu et du peu de données.
+      </p>
+      <p>Voir la figure 2.
+      </p>
+    </section>
+    <section>
+      <h4>Conditions physiques (figure 3)</h4>
+      <p>Ce groupe, malgré le manque de finesse du codage des modalités ( surtout pour l'estimation de la distance
+        <span class="note">La finesse d'un codage est fonction de la précision des témoignages mais aussi, pour éviter les classes peu fournies, du nombre des obs.</span>)
+        amène des remarques plus originales.
+      </p>
+      <p>Les variables sont relativement peu liées et comme la variable hauteur angulaire est comparativement très liée
+        à l'estimation de la distance, une autre analyse (fig. 4) <span class="note">Ceci anticipe sur le § suivant ( liaisons inter-groupes ) mais comme certaines variables ( durée, distance, hauteur angulaire, ... ) concernent à la fois le phénomène et les conditions dans lesquelles il a été observé, il semble artificiel de conserver une frontière trop stricte entre ces deux groupes.</span>
+        comprenant également la nature du lieu a été effectuée.
+      </p>
+      <p>Dans la première analyse, ( figure 3 ), le premier axe discrimine fortement les observations brèves ( - de 20
+        mn ) de celles plus longues ( + de 20 mn ). Du côté des observations brèves se trouve un regroupement facilement
+        interprétable entre les observations faites dans une voiture en marche ou à l'arrêt et les témoignages moins
+        bien documentés ( pas d'information sur la météo ou sur la distance ).
+      </p>
+      <p> De l'autre côté, on remarque que les observations, dont la distance estimée est très grande, durent
+        relativement longtemps ( 20 mn/h ) alors que l'emploi d'un instrument ( jumelles, appareil photo, ... ) se
+        rencontre plus particulièrement pour des observations longues ( > 1 heure ).
+      </p>
+      <p>Le deuxième axe représente entre autres, la nébulosité croissante et si l'on distingue deux classes
+        d'observations :
+      </p>
+      <ul>
+        <li> à droite de l'axe, celles où la distance estimée est faible,
+        </li>
+        <li> à gauche, celles où la distance est importante.
+        </li>
+      </ul>
+      <p> On remarque que, dans chacune des classes prises séparément, la durée décroît avec la nébulosité.
+      </p>
+      <p>L'estimation de la distance est un paramètre fondamental dont les caractéristiques apparaissent peu dans cette
+        analyse ; il est nécessaire de lui réserver un traitement plus particulier.
+      </p>
+      <p>Voir figure 3.</p>
+    </section>
+    <section>
+      <h4>Estimation de la distance</h4>
+      <p>Les tableaux ci-dessous représentent les "profils horizontaux" <span class="note">Le total de chaque ligne est 100, la dernière ligne représente à titre comparatif la répartition ( toujours en % ) des effectifs dans les classes de la variable hauteur angulaire.</span>
+        des tableaux de fréquences obtenus en croisant deux variables :
+      </p>
+      <table>
+        <thead>
+        <caption>TABLEAU 2 : Distance / hauteur angulaire
+        </caption>
+        <tr>
+          <th>Estimation de la distance \ Hauteur angulaire</th>
+          <th>inconnu</th>
+          <th>au sol</th>
+          <th>0-15°</th>
+          <th>15-30°</th>
+          <th>45-60°</th>
+          <th>30-45°</th>
+          <th>60-90°</th>
+        </tr>
+        </thead>
+        <tr>
+          <td>Inconnue</td>
+          <td>32.4</td>
+          <td>12.7</td>
+          <td>15.5</td>
+          <td>14.1</td>
+          <td>8.5</td>
+          <td>4.2</td>
+          <td>12.7</td>
+        </tr>
+        <tr>
+          <td>en mètres</td>
+          <td>7.1</td>
+          <td>54.5</td>
+          <td>15.2</td>
+          <td>5.1</td>
+          <td>9.1</td>
+          <td>4.0</td>
+          <td>5.1</td>
+        </tr>
+        <tr>
+          <td>en km</td>
+          <td>18.2</td>
+          <td>9.1</td>
+          <td>40.9</td>
+          <td>0</td>
+          <td>22.7</td>
+          <td>9.1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>très grande</td>
+          <td>13.3</td>
+          <td>0</td>
+          <td>13.3</td>
+          <td>26.7</td>
+          <td>20.0</td>
+          <td>6.7</td>
+          <td>20.0</td>
+        </tr>
+        <tr>
+          <td>Répartition de la variable hauteur angulaire</td>
+          <td>17.4</td>
+          <td>31.4</td>
+          <td>17.9</td>
+          <td>9.2</td>
+          <td>11.1</td>
+          <td>4.8</td>
+          <td>8.2</td>
+        </tr>
+      </table>
+      <p>Le test du X2 calculé en regroupant certaines modalités ( 15-45° et 45-90° ) conduit à rejeter l'hypothèse
+        d'indépendance au seuil 0.001 ( X2 calculé = 59,07 avec 8 degrés de liberté ).
+      </p>
+      <p>Les valeurs comparativement les plus significatives se retrouvent sur la diagonale exprimant ainsi la tendance
+        du paramètre "estimation de la distance" à croître avec la hauteur angulaire, site de l'observation.
+      </p>
+      <p>Deux hypothèses peuvent alors être avancées mais sans qu'il soit encore possible de trancher :
+      </p>
+      <ol>
+        <li>en supposant que la distance est correctement estimée et que le phénomène étudié est équi-réparti dans
+          l'espace, il serait logique, en considérant que le champ de vision d'un observateur croit avec la hauteur
+          angulaire, d'obtenir de tels résultats ( voir aussi Note Technique GEPAN N°1 Chapitre 6, paragraphe 4.1. :
+          discussion de la loi de Bouguer ) ;
+        </li>
+        <li>l'estimation de la distance obéit à un mécanisme perceptif en étroite relation avec le cadre de référence
+          dans lequel est perçu le phénomène ( cf. Jim-81 ). Ainsi, par exemple, la distance estimée serait celle du
+          point de référence angulairement le plus proche alors que le phénomène observé pourrait en être, en réalité, à
+          une toute autre distance.
+        </li>
+      </ol>
+      <p>Ces hypothèses <span class="note">La première hypothèse postule implicitement l'existence d'un phénomène alors que la deuxième ne suppose que la bonne foi du témoin qui décrit sa perception.</span>
+        ne sont pas nécessairement exclusives. Il s'agit avant tout de tendances statistiques, à affirmer ou infirmer
+        par d'autres corpus d'observations, et non de lois strictes.
+      </p>
+      <p>Le tableau suivant suggère des remarques allant dans le même sens ( voir tableau n° 3 ).
+      </p>
+      <p>La distance est souvent inconnue en même temps que les conditions météo ou lorsque le ciel est limpide, son
+        estimation en m ne semble pas dépendre de la nébulosité alors qu'une estimation en km nécessiterait un ciel
+        limpide. Le dernier point semble contradictoire puisque c'est surtout par temps plus ou moins couvert que la
+        distance est jugée trop grande pour être précisément estimée.
+      </p>
+      <p>Ces remarques peuvent être interprétées dans le sens de la deuxième hypothèse : c'est la présence des nuages
+        qui permet aux témoins d'estimer très grande la distance. Ainsi celle-ci est très souvent non estimée lorsque la
+        météo n'est pas mentionnée ou lorsque le ciel est limpide.
+      </p>
+      <table>
+        <caption>TABLEAU 3 : Distance . nébulosité <span class="note">L'hypothèse d'indépendance est rejetée au seuil .05 ( X2, calculé = 9.53 avec 4 degrés de liberté ).</span>
+        </caption>
+        <thead>
+        <tr>
+          <th>Estimation de la distance \ Nébulosité</th>
+          <th>inconnue</th>
+          <th>Ciel limpide</th>
+          <th>Nuages épars</th>
+          <th>couvert en alt.</th>
+          <th>ciel bas sans pluie</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>inconnue</td>
+          <td>43.7</td>
+          <td>40.8</td>
+          <td>5.6</td>
+          <td>7.0</td>
+          <td>2.8</td>
+        </tr>
+        <tr>
+          <td>en mètres</td>
+          <td>41.4</td>
+          <td>35.4</td>
+          <td>5.1</td>
+          <td>10.1</td>
+          <td>8.1</td>
+        </tr>
+        <tr>
+          <td>en km</td>
+          <td>27.3</td>
+          <td>45.5</td>
+          <td>4.5</td>
+          <td>13.6</td>
+          <td>9.1</td>
+        </tr>
+        <tr>
+          <td>très grande</td>
+          <td>13.3</td>
+          <td>33.3</td>
+          <td>13.3</td>
+          <td>20.0</td>
+          <td>20.0</td>
+        </tr>
+        <tr>
+          <td>Répartition de la variable nébulosité</td>
+          <td>38.6</td>
+          <td>38.2</td>
+          <td>5.8</td>
+          <td>10.1</td>
+          <td>7.2</td>
+        </tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>TABLEAU 4 : Distance. nature du lieu <span class="note">L'hypothèse d'indépendance est rejetée au seuil .01 ( X2 calculé = 22.06 à 6 degrés de liberté )</span>
+        </caption>
+        <thead>
+        <tr>
+          <th>Estimation de la distance\ Nature du lieu</th>
+          <th>Désert, mer, etc.</th>
+          <th>Habit. isolée</th>
+          <th>Hameau p. village</th>
+          <th>Bourgade Banlieue</th>
+          <th>Ville</th>
+          <th>Métropole Gde ville</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Inconnue</td>
+          <td>8.6</td>
+          <td>15.7</td>
+          <td>18.6</td>
+          <td>32.9</td>
+          <td>15.7</td>
+          <td>8.6</td>
+        </tr>
+        <tr>
+          <td>en mètres</td>
+          <td>12.2</td>
+          <td>24.5</td>
+          <td>30.6</td>
+          <td>16.3</td>
+          <td>12.2</td>
+          <td>4.1</td>
+        </tr>
+        <tr>
+          <td>en km</td>
+          <td>4.3</td>
+          <td>8.7</td>
+          <td>39.1</td>
+          <td>30.4</td>
+          <td>8.7</td>
+          <td>8.7</td>
+        </tr>
+        <tr>
+          <td>très grande</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>43.8</td>
+          <td>50.0</td>
+          <td>6.3</td>
+        </tr>
+        <tr>
+          <td>Répartition de la variable nature du lieu</td>
+          <td>9.2</td>
+          <td>17.9</td>
+          <td>25.1</td>
+          <td>25.6</td>
+          <td>15.9</td>
+          <td>6.3</td>
+        </tr>
+        </tbody>
+      </table>
+      <p>Les estimations exprimées en mètres ou en kilomètres se feraient alors, en général, par rapport à
+        l'environnement terrestre ( faible hauteur angulaire du site du phénomène ) sans tenir compte de la nébulosité.
+      </p>
+      <p>Ceci serait cohérent avec les résultats du tableau 3 mais les effectifs sont trop faibles pour obtenir des
+        résultats significatifs en croisant les trois variables.
+      </p>
+      <p>A l'exception des cas d'observations dans les grandes villes ou métropoles ( dans 46 % de ces cas la distance
+        est inconnue ), le tableau 4 semble cohérent avec celui croisant distance estimée et hauteur angulaire ;
+        l'estimation de la distance croît, avec les possibilités de vision en site qui dépend raisonnablement de la
+        densité d'habitat.
+      </p>
+      <p>Ceci est confirmé par l'analyse factorielle ( figure 4 ) des trois variables : distance, hauteur angulaire et
+        nature du lieu, qui fait apparaître trois groupes de modalités :
+      </p>
+      <ul>
+        <li>zone déserte, habitation isolée, distance en mètres, vu au sol</li>
+        <li>hameau, petit village, distance en km, 0 à 15°
+        </li>
+        <li>reste des modalités.
+        </li>
+      </ul>
+      <p> Ne connaissant pas encore quelle a pu être l'influence de l'expertise des cas, il est inutile de poursuivre
+        plus en détails l'étude de l'estimation de la distance qui sera poursuivie sur le fichier complet puisque
+        l'expertise ne fait que filtrer les témoignages sans, bien sûr, modifier leur contenu.
+      </p>
+      <p>Il est de plus notable que, parmi la faible population de cas d'observations très éloignés ( 7,7 % beaucoup ont
+        dû être éliminés à l'expertise comme confusion probable avec un phénomène astronomique ), aucun ne soit relevé
+        dans une zone à faible densité de population. Ceci invite à rechercher l'influence éventuelle de facteurs
+        anxiogènes ( témoin et/ou lieu isolé, frayeur ressentie... ) sur l'estimation que fait le témoin de la distance
+        du phénomène.
+      </p>
+    </section>
+    <section>
+      <h4>Description de l'observation</h4>
+      <section>
+        <h5>Préliminaire</h5>
+        <p>Ce groupe comprend un nombre de variables ( 12 ) et de modalités (83 ) relativement important en comparaison
+          du nombre de témoignages. Mais, de l'analyse du § 1.1.2. sur les liaisons entre variables, émerge une certaine
+          structuration, rappelée ci-dessous, des variables de ce groupe.
+        </p>
+        <p>Il apparait trois sous-groupes :
+        </p>
+        <ul>
+          <li>description du comportement :<br/> 19 : caractère principal de la trajectoire<br/> 20 : caractère
+            secondaire de la trajectoire<br/> 21 : estimation de la vitesse<br/> 22 : estimation de l'accélération<br/>
+            24 : hauteur angulaire
+          </li>
+          <li>description du phénomène :<br/> 15 : forme de l'objet principal<br/> 16 : luminosité principale<br/> 18 :
+            couleur
+          </li>
+          <li>variables très peu liées :<br/> 14 : nombre d'objets<br/> 17 : luminosité secondaire<br/> 23 : bruit<br/>
+            25 : azimut
+          </li>
+        </ul>
+        <p>incitant ainsi à dichotomiser l'ensemble des variables pour l'étude de leurs modalités.
+        </p>
+        <p> La liaison marquée entre caractère principal de la trajectoire et hauteur angulaire n'est pas significative
+          puisqu'elle provient d'une redondance du codage. La variable 19 contient en effet les modalités
+          "atterrissages" et "station près du sol" calquant les modalités "vu au sol" et "0-15°" de la variable 24.
+        </p>
+        <p>Pour éliminer cette liaison parasite, cette dernière variable est rattachée à celles du groupe "conditions
+          physiques".
+        </p>
+        <p>D'une façon similaire, en étudiant le tableau ci-dessous :
+        </p>
+        <table>
+          <caption>TABLEAU 5</caption>
+          <thead>
+          <tr>
+            <th>Estimation de l'accélération\Estimation de la vitesse</th>
+            <th>inconnue</th>
+            <th>Lent Immobile</th>
+            <th>Rapide</th>
+            <th>Variable</th>
+            <th>Fulgurante</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Inconnue</td>
+            <td>15.6</td>
+            <td>59.6</td>
+            <td>11.0</td>
+            <td>11.0</td>
+            <td>2.8</td>
+          </tr>
+          <tr>
+            <td>Faible</td>
+            <td>7.1</td>
+            <td>78.6</td>
+            <td>0</td>
+            <td>14.3</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Variable</td>
+            <td>0</td>
+            <td>18.8</td>
+            <td>6.3</td>
+            <td>75.0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Élevée</td>
+            <td>4.5</td>
+            <td>13.6</td>
+            <td>40.9</td>
+            <td>9.1</td>
+            <td>31.8</td>
+          </tr>
+          <tr>
+            <td>Répartition de la variable vitesse</td>
+            <td>11.8</td>
+            <td>50.9</td>
+            <td>13.7</td>
+            <td>17.4</td>
+            <td>6.2</td>
+          </tr>
+          </tbody>
+        </table>
+        <p>On remarque que l'estimation de l'accélération qui n'est exprimée que dans 33 % des cas, est très souvent une
+          copie de l'estimation de la vitesse. Ne disposant pas d'information supplémentaire à ce sujet, l'accélération
+          est un paramètre difficilement exploitable car, délicat à estimer, il semble faire l'objet d'une confusion
+          <span class="note">) Remarque déjà développée en (Mar-80) sur les mêmes données.</span> avec la vitesse dans
+          la description des témoins ; Porteur de trop peu "d'information", il est momentanément écarté.
+        </p>
+      </section>
+      <section>
+        <h5>Comportement du phénomène (figure 5)</h5>
+        <p>Les axes factoriels n'admettent pas d'interprétations évidentes, on remarque seulement sur cette figure des
+          directions privilégiées de dispersion des modalités dont les plus significatives ( pour interpréter une
+          direction ) sont celles qui admettent les représentations les plus éloignées de l'origine. En effet les
+          modalités proches de l'origine, formant un angle important avec le plan de projection, sont donc mal
+          représentées et les proximités relevées peuvent n'être que fortuites et sans signification.
+        </p>
+        <p>FIGURE 5 (17.5)
+        </p>
+        <p>D'autre part, on remarque que les variables tp ( caractère principal de la trajectoire ) et ts ( caractère
+          secondaire de la trajectoire ) comportent des modalités identiques rendant la tâche d'autant plus délicate.
+          Ceci provoque en particulier un éparpillement des modalités : près du sol - atterrissages et une opposition
+          sur le deuxième axe entre : trajectoire linéaire principale et secondaire <span class="note">L'évocation de ces différents problèmes est reprise au § 4.2.</span>
+          .
+        </p>
+        <p>En définitive, nous nous limiterons à relever trois tendances de comportement type des phénomènes décrits :
+        </p>
+        <ol type="a">
+          <li> vitesse comparable à celle d'un avion ou lent, immobile, trajectoire non décrite ou linéaire, sans
+            précision supplémentaire ;
+          </li>
+          <li>trajectoire complexe, virages, arabesques et/ou linéaire, vitesse variable ;
+          </li>
+          <li>atterrissage ou station près du sol, vitesse nulle puis lente ou fulgurante, se perd dans les étoiles.
+          </li>
+        </ol>
+        <p>tout en sachant que la plupart des combinaisons sont possibles.
+        </p>
+        <p>Voir figures 5</p>
+      </section>
+      <section>
+        <h5>Description du phénomène (figure 6)</h5>
+        <p>Les remarques précédentes s'appliquent aussi à ce groupe de variables ( redondances entre caractères
+          secondaires et principaux de la luminosité ) quoique cette fois un début d'interprétation peut expliquer le
+          premier axe. En effet, celui-ci discrimine les phénomènes non-lumineux ( à droite ) des phénomènes lumineux.
+          Nous relèverons essentiellement 4 directions de dispersions représentant les tendances les plus marquées :
+        </p>
+        <ol>
+          <li>phénomène en forme de canotier ou couronner non lumineux ou dont la luminosité n'est pas précisée, pouvant
+            présenter des faisceaux. La couleur est grise ou autre que celles choisies pour le codage, et le phénomène
+            peut s'accompagner d'un bruit plutôt aigu ( sifflement, bruit de gaz comprimé ou de moteur électrique ) ;
+          </li>
+          <li>de forme cylindrique, parfois trois objets de luminosité intense, de couleur rouge ou non précisée,
+            accompagné d'un son plutôt grave ( bourdonnement, explosion ) ;
+          </li>
+          <li>de forme sphérique, couleur blanche ou changeante, luminosité, luminosité brillante, peut-être variable
+            non périodique ;
+          </li>
+          <li>la forme n'est pas précisée, 1 ou 4 objets de couleur jaune, luminosité intense, peut-être accompagné d'un
+            bruit non caractérisé.
+          </li>
+        </ol>
+        <p>FIGURE 6 (10.19)
+        </p>
+      </section>
+      <section>
+        <h5>Description conjointe du phénomène et de son comportement</h5>
+        <p>Il s'agit de vérifier si, parmi les différents types de tendances ( comportementales ou descriptives )
+          décrites aux paragraphes précédents, certaines se trouvent conjointement renforcées dans l'analyse réunissant
+          les deux groupes de variables ( voir figure 7 page suivante ).
+        </p>
+        <p>Le résultat est plutôt négatif. Il parait difficile d'associer un comportement à une description type de
+          phénomène. Nous ne pouvons guère que très sommairement couper en deux le plan de projection par la deuxième
+          diagonale qui discrimine donc :
+        </p>
+        <ul>
+          <li> le comportement c associé au groupe 1 ainsi qu'à un nouveau groupe ( 5. couleur orange, croissant disque
+            ou soucoupe, lueur faible ) ;
+          </li>
+          <li>des comportements a et b associés aux groupes 2, 3 et 4.
+          </li>
+        </ul>
+        <p>Le résumé de ces regroupements empiriques des modalités est présenté dans le tableau 6 (voir page suivante).
+        </p>
+        <p>De même qu'ont été comparés les types de tendances ( descriptives et comportementales ) il s'agit de
+          confronter les regroupements de modalités obtenus aux informations apportées par les autres groupes de
+          variables ( localisation, conditions d'observation ). Ces dernières prennent alors le statut de variables
+          "explicatives" dans le sens où elles pourraient "expliquer" ( cf. LMT-77 ) les dispersions rencontrées dans
+          les descriptions des phénomènes ou de leur comportement.
+        </p>
+      </section>
+    </section>
+    <section>
+      <h4>Liaisons inter-groupes</h4>
+      <p>La façon la plus simple de procéder, pour une première approche, consiste à projeter les modalités des
+        variables non considérées pour l'analyse d'un groupe sur les plan factoriels précédemment décrits. On obtient
+        ainsi une représentation des modalités des variables qui "expliquent au mieux" les dispersions rencontrées et
+        les tendances remarquées permettraient d'orienter le travail d'évaluation des liaisons inter-groupes.
+      </p>
+      <p>Description / condition et localisation de l'observation
+      </p>
+      <p>On remarque en fait que ces liaisons sont toujours très faibles : les modalités supplémentaires orthogonales au
+        plan de projection se regroupent essentiellement autour de l'origine. Seules quelques-unes se démarquent de
+        l'agrégat central mais sans pour autant signifier qu'il s'agit des caractéristiques dominantes car elles ne
+        concernent souvent que des nombres restreints d'observations.
+      </p>
+      <p>FIGURE 7 (8.08)
+      </p>
+      <table>
+        <tr>
+          <td>c) Atterrissage ou station près du sol, vitesse nulle puis lente, se perd dans les étoiles.</td>
+        <tr>
+        <tr>
+          <td>Forme de canotier ou couronne, non lumineux ou dont la luminosité n'est pas précisée, pouvant présenter
+            des faisceaux. Couleur grise ou autre que celles codables, le phénomène peut-être accompagné d'un bruit
+            plutôt aigu.
+          </td>
+          </td>
+          <td>Lueur faible, de couleur orange, en forme de disque, ou soucoupe.</td>
+        </tr>
+        </tr>
+        <tr>
+          <td>a) Vitesse comparable à celle d'un avion ou lente, immobile, trajectoire non décrite ou linéaire, sans
+            précision supplémentaire.
+          </td>
+          <td>Forme cyclindrique, parfois 3 objets, luminosité intense, de couleur rouge ou non précisée, accompagné
+            d'un son plutôt grave ( bourdonnement, explosion, ... ).
+          </td>
+        </tr>
+        <tr>
+          <td>b) Trajectoire complexe, virages, arabesques et/ou linéaire, vitesse variable.</td>
+          <td>
+        <tr>
+          <td>Forme sphérique, couleur blanche ou changeante, luminosité brillante, peut-être variable, non périodique.
+          </td>
+        </tr>
+        <tr>
+          <td>1 ou 4 objets de couleur jaune, luminosité intense, peut-être accompagné d'un bruit non caractérisé.</td>
+        </tr>
+        </td></tr>
+        <caption>TABLEAU 6 : Résumé des regroupements des modalités</caption>
+      </table>
+      <p>On trouve ainsi des associations entre :
+      </p>
+      <ul>
+        <li>Groupe 1 (phénomènes non lumineux,...) et : observations diurnes heure, région inconnue témoins de moins de
+          13 ans ciel bas sans pluie trace physique
+        </li>
+        <li>Groupe c (atterrissages,...) et : crépuscule cadre moyen pluie, neige
+        </li>
+        <li>Groupe b (trajectoire complexe,...) et : heure inconnue mois de mai ouvrier</li>
+        <li>Groupe a (trajectoire linéaire,...) et : vu d'avion profession non précisée</li>
+      </ul>
+      <p>De manière identique, on note des rapprochements entre :
+      </p>
+      <ul>
+        <li>Obs. matinales en mars 74 dans le S-W (cf. § 2.1.1.) et :
+          <ul>
+            <li>couleur bleue</li>
+            <li>durée < à 10 s</li>
+          </ul>
+        </li>
+        <li>Obs. brèves faites dans une voiture... (cf. § 2.1.3.) et :
+          <ul>
+            <li>région inconnue</li>
+            <li>heure inconnue</li>
+            <li>vers midi</li>
+          </ul>
+        </li>
+        <li>Obs. brèves ( < 10 s), ... et :
+          <ul>
+            <li>forme de croix</li>
+            <li>témoin de - de 13 ans</li>
+            <li>matin</li>
+          </ul>
+        </li>
+        <li>De 20 à 59 mn, très grande distance, ciel bas sans pluie et :
+          <ul>
+            <li>forme ponctuelle
+            </li>
+          </ul>
+        </li>
+        <li>Plus de 1 h, obs. avec instrument, distance non estimée et :
+          <ul>
+            <li>4 "objets", 2 "objets"</li>
+            <li>non lumineux avec faisceaux
+            </li>
+            <li>lumière variable non périodique</li>
+          </ul>
+        </li>
+      </ul>
+      <p>En définitive, peu de liaisons marquées apparaissent entre chaque groupe de variables et les autres. On peut
+        seulement noter que certaines modalités de faible effectif regroupent des observations présentant des
+        caractéristiques similaires, sans qu'il soit toujours simple de l'interpréter sauf pour certains cas :
+      </p>
+      <ul>
+        <li>traces physiques dans des cas "d'atterrissages"</li>
+        <li>phénomènes non lumineux lors d'observations diurnes
+        </li>
+        <li>longue observation à très grande distance d'un phénomène ponctuel.</li>
+      </ul>
+      <p> Ce travail pourrait être complété par l'étude de certains couples de variables ( l'étude exhaustive de tous
+        les couples serait fastidieuse ) par une analyse classique du tableau des correspondances. Les couples de
+        variables les plus intéressants sur le plan des interprétations, c'est-à-dire ceux correspondant à une hypothèse
+        de travail ( estimation de la distance . hauteur angulaire, profession . forme, etc... ) ont déjà été et/ou vont
+        être étudiés plus spécifiquement ( cf. § 4.4. ). Il resterait alors à analyser les couples présentant les plus
+        fortes liaisons dans le tableau 1 du § 2.1. Ce travail qui ne fait pas émerger d'éléments nouveaux n'est pas
+        décrit ici. On signale seulement quelques correspondances :
+      </p>
+      <ul>
+        <li>obs. diurne - couleur grise ou métallique</li>
+        <li>à partir d'une voiture - zone isolée et une nette opposition
+        </li>
+        <li>observation à l'aide d'un instrument - zone déserte.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>RÉSUME DE L'ANALYSE DESCRIPTIVE DES VARIABLES ET DE LEURS MODALITÉS</h3>
+      <p>L'étude des liaisons entre les variables montre que celles-ci sont faibles et seules quelques tendances ont pu
+        être dégagées sans qu'il soit possible de parler de structures du nuage des observations.
+      </p>
+      <p>Ainsi, la localisation spatiale et temporelle des observations présente une dispersion relativement homogène et
+        ne semble pas avoir d'influence déterminante sur les descriptions de celles-ci, sinon qu'évidemment les
+        phénomènes non-lumineux sont observés de préférence le jour.
+      </p>
+      <p>Les caractéristiques sociologiques des témoins ( âge, profession, sex e) ne se démarquent pas de celles de la
+        population totale à l'exception de la relation observée entre le nombre de témoins et la nature du lieu (
+        équivalente à la densité de population ). Ces résultats vont dans le sens d'une banalité sociologique du fait
+        d'être témoin. Ne sachant rien sur la proportion des témoins connus parmi les observateurs et leurs motivations
+        à témoigner, il est difficile d'en donner une interprétation plus précise.
+      </p>
+      <p>Les liaisons inter-groupes caractéristiques sociologique/description sont plus facilement étudiables. Elles ont
+        déjà été signalées en Leg-79 et concernent plus particulièrement la profession, le nombre de témoins et la forme
+        décrite. La correspondance observée ( cf. § 2.2.6) entre des cas "d'atterrissages" et des témoins de moins de 13
+        ans est ambiguë. Elle suggére au moins deux interprétations :
+      </p>
+      <ul>
+        <li>ce seraient des observateurs facilement suggestibles,</li>
+        <li>parmi les observations relevées par des enfants jugés "peu crédibles", les experts ont surtout retenu les
+          cas les plus "étranges" car "jugés plus intéressants".
+        </li>
+      </ul>
+      <p> Ces relations juste signalées n'ont pas été plus détaillées ici puisqu'elles font l'objet d'une étude
+        spécifique <span class="note">Étude menée dans le cadre d'une convention avec l'Université PARIS V René Descartes.</span>
+        , centrée sur les caractéristiques psychosociales des témoins et de leurs observations ; elles nécessitent une
+        information plus riche que celle retenue par le codage.
+      </p>
+      <p>Parallèlement à un certain nombre de remarques élémentaires concernant les conditions physiques des
+        observations :
+      </p>
+      <ul>
+        <li>- obs. à partir d'une voiture - peu d'information</li>
+        <li>- obs. brèves
+        </li>
+        <li> - obs. à très grande distance - durée importante (20 mn/1 h)
+        </li>
+        <li> - obs. à l'aide d'un instrument - durée très importante (> 1 h)
+        </li>
+        <li> - durée d'obs. - elle décroît avec la nébulosité
+        </li>
+      </ul>
+      <p> une problématique importante est posée autour de l'estimation de la distance et des liens entrevus avec la
+        nature du lieu, la hauteur angulaire, la nébulosité éventuellement des facteurs anxiogènes ( isolement, nature
+        de l'obs., etc... ).
+      </p>
+      <p>Deux types d'hypothèses sont alors en présence ( cf. § 2.2.4), l'une attribuant les caractéristiques
+        rencontrées au phénomène, l'autre aux mécanismes perceptifs associés à l'estimation de la distance. Il est
+        évidemment trop tôt pour se prononcer. Une étude dans ce sens est en cours. Elle devra aussi faire intervenir
+        l'estimation de la taille dans les facteurs à prendre en compte.
+      </p>
+      <p>Les liaisons observées entre les variables décrivant l'observation ont permis de les diviser en deux
+        sous-groupes, l'un décrivant le comportement, l'autre le phénomène. L'analyse de chacun des sous-groupes, ainsi
+        que l'étude globale révèlent, entre les modalités des différentes variables, un certain nombre de
+        correspondances qui sont résumées en une classification empirique des modalités ( cf. tableau 6 ).
+      </p>
+      <p>Le problème qui se pose alors est de connaître la validité d'une telle classification ; correspond-elle à des
+        types bien définis d'observations, et donc à une classification de celles-ci, ou bien est-elle la résultante de
+        tendances plus ou moins marquées et associées à des séries de co-occurence des divers facteurs sur le nuage des
+        observations ? Le peu de dispersion dans les plans factoriels ( sphéricité du nuage ) corrélatif à la faiblesse
+        des liaisons nous oriente vers la deuxième possibilité, confirmée par ailleurs au paragraphe suivant.
+    </section>
+    </p></section>
+</section>
+<!--#include virtual="/footer.html" -->

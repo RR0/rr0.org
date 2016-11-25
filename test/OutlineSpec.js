@@ -1,4 +1,4 @@
-describe("Navigation module", function () {
+describe("Outlining service", function () {
   'use strict';
 
   var $compile;
@@ -17,7 +17,7 @@ describe("Navigation module", function () {
     spyOn($rootScope, '$broadcast');
   }));
 
-  it('detect inner links', function () {
+  it('registers a section', function () {
     var title1Elem = angular.element('<h2 class="ng-scope">Un premier signe</h2>');
     outlineService.addSection('<h2 class="ng-scope">Un premier signe</h2>', title1Elem);
     expect($rootScope.$broadcast).toHaveBeenCalledWith('sectionAdded', {

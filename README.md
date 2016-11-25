@@ -144,3 +144,20 @@ To do
 -----
  * directives to handle measurements (lengths, weights, speed)
  * User settings to customize rendering of directives (i18n, how to display people names, which units to use for expressing measurements)
+ * [SAP Refactoring](SAP refactoring)
+
+# Build
+
+# Test
+
+## Unit tests
+
+## Pre-prod
+
+The build must be tested locally before deployment.
+
+# Deploy
+
+# Debug
+
+Load a page with the `?debug` suffix in the URL.

@@ -4,12 +4,12 @@ angular.module('rr0.nav')
     return {
       restrict: 'C',
       templateUrl: '/js/search/rr0-search.html',
-      controller: ['$scope', '$element', '$attrs', '$transclude', '$timeout', 'searchService', '$log', '$rootScope', function ($scope, $element, $attrs, $transclude, $timeout, searchService, $log, $rootScope) {
+      controller: function ($scope, $element, $attrs, $transclude, $timeout, searchService, $log, $rootScope) {
         $scope.searchInput = '';
         $scope.doSearch = function () {
           searchService.search($scope.searchInput);
         };
-        var searchListener = function (event, data) {
+        const searchListener = function (event, data) {
           // $scope.searchResults = [];
           if (data.searchInformation.totalResults > 0) {
             $scope.searchResults = data.items;
@@ -29,6 +29,6 @@ angular.module('rr0.nav')
             window.location = item.link;
           }, 10);
         };
-      }]
+      }
     };
   });

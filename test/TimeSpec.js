@@ -189,6 +189,10 @@ describe("Time module", function () {
       element = $compile("<time datetime='1998-07-25 17:00'></time>")($rootScope);
       $rootScope.$digest();
       expect(element.html()).toBe("À 17:00");
+
+      element = $compile("<time datetime='1998-08-26 00:32'></time>")($rootScope);
+      $rootScope.$digest();
+      expect(element.html()).toBe("Samedi 26 août à 00:32");
     });
     it('display time intervals', function () {
       spyOn(netService, "onExists").and.returnValue(httpMock);

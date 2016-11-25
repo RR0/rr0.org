@@ -10,8 +10,7 @@ describe("Context service", function () {
   }));
 
   it('reminds current time', function () {
-    var time = new Time('1952-11-24');
-    contextService.setTime(time);
+    contextService.setTime('1952-11-24');
     expect(contextService.getCurrentContext().time).toEqual(time);
   });
   it('reminds current location', function () {

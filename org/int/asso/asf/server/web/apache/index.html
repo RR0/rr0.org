@@ -1,0 +1,66 @@
+<!--#include virtual="/header-start.html" -->
+<title>Serveur Web Apache</title>
+<!--#include virtual="/header-end.html" -->
+<p><em><a href="../../">Apache</a> HTTP Server</em>.</p>
+<figure class="right side">
+  <figcaption>Logo apache</figcaption> <img src="apache-logo.png">
+</figure>
+<section>
+  <h2>Besoin</h2>
+  <p>Server web <a href="/tech/info/OpenSource.html">Open Source</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>modules</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Configuration</h3>
+    <p>Elle est lue à chaque (re)démarrage depuis le fichier <code>httpd.conf</code> (HTTP Daemon), qui comprend des :
+    </p>
+    <ul>
+      <li>Directives :
+        <ul>
+          <li><code>DocumentRoot</code> : répertoire racine des documents à servir.</li>
+          <li><code>Options</code> : options, telles que :
+            <ul>
+              <li><code>FollowSymLinks</code> : suivre les liens symboliques dans le système de fichiers (défaut) ;</li>
+              <li><code>Multiviews</code> : accepter la négotiation de contenu (selon les en-têtes clients
+                <code>Accept</code>, <code>Accept-Language</code>, <code>Accept-Encoding</code>,
+                <code>Accept-Charset</code>) ;
+              </li>
+              <li><code>Indexes</code> : autoriser l'accès automatisé à aux indexes des répertoires ne contenant pas un
+                fichier racine (<code>index.html</code>) ;
+              </li>
+              <li><code>Includes</code> : autoriser les inclusions côté serveur
+                (<abbr title="Server-Side Includes">SSI</abbr>) via le <code>mod_include</code>.
+              </li>
+            </ul>
+          </li>
+          <li><code>AllowOverride</code> : autoriser certaines directives dans le fichier <code>.htaccess</code>.</li>
+          <li><code>Order</code> : .</li>
+          <li><code>Allow</code> : .</li>
+          <li><code>LoadModule</code> : charge un module <code>mod_xxx</code> au (re)démarrage du serveur.</li>
+          <li><code>Include</code> : inclusion d'un autre fichier de configuration.</li>
+        </ul>
+      </li>
+      <li>
+        Sections :
+        <ul>
+          <li><code>Directory</code> :</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Notes</h2>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Créé en <time>1995</time>.</li>
+    <li>Serveur web le plus utilisé depuis <time>1996-04</time>.</li>
+  </ul>
+</section><!--#include virtual="/footer.html" -->

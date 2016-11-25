@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="rr0" lang="<!--#if expr="${lang}" --><!--#echo var="lang" --><!--#else -->fr<!--#endif -->">
+<html data-ng-app="rr0" ng-controller="AppController as app" lang="{{app.lang}}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" media="print" href="/print.css" type="text/css"/>
@@ -7,7 +7,8 @@
     <link rel="dns-prefetch" href="//googleapis.com">
     <link rel="dns-prefetch" href="//facebook.com">
     <link rel="dns-prefetch" href="//twitter.com">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400italic,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/rr0.css" type="text/css"/>
     <!--[if lt IE 9]>

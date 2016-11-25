@@ -26,7 +26,7 @@ angular.module('rr0.nav')
           }
           this.currentLevel++;
           var levelSections = sections[this.currentLevel];
-          if (typeof levelSections !== "array") {
+          if (typeof levelSections !== 'array') {
             levelSections = sections;
           }
           levelSections.push(l);

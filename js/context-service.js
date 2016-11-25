@@ -1,81 +1,77 @@
-var Location = function (latitude, longitude) {
-  'use strict';
-  this.latitude = latitude;
-  this.longitude = longitude;
-};
-/**
- *
- * @param azimuth degrees (ONES)
- * @param elevation degrees
- * @constructor
- */
-var Orientation = function (azimuth, elevation) {
-  'use strict';
-  this.azimuth = azimuth;
-  this.elevation = elevation;
-};
-var FieldOfVue = function (orientation, width, height) {
-  'use strict';
-  this.orientation = orientation;
-  this.width = width;
-  this.height = height;
-};
-/**
- *
- * @param location
- * @param altitude
- * @param orientation
- * @constructor
- */
-var Position = function (location, altitude, orientation) {
-  'use strict';
-  this.location = location;
-  this.altitude = altitude;
-  this.orientation = orientation;
-};
-
-var Dimension = function (width, height, depth) {
-  'use strict';
-  this.width = width;
-  this.height = height;
-  this.depth = depth;
-};
-var Space = function (position, dimension) {
-  'use strict';
-  this.position = position;
-  this.dimension = dimension;
-};
-var Time = function (edtf) {
-  'use strict';
-  this.edtf = edtf;
-};
-var Context = function (space, time) {
-  'use strict';
-  this.space = space;
-  this.time = time;
-};
-
 angular.module('rr0.context', ['rr0.time'])
   .service('contextService', function () {
     'use strict';
+
+    var Location = function (latitude, longitude) {
+      this.latitude = latitude;
+      this.longitude = longitude;
+    };
+    /**
+     *
+     * @param azimuth degrees (ONES)
+     * @param elevation degrees
+     * @constructor
+     */
+    var Orientation = function (azimuth, elevation) {
+      this.azimuth = azimuth;
+      this.elevation = elevation;
+    };
+    var FieldOfVue = function (orientation, width, height) {
+      this.orientation = orientation;
+      this.width = width;
+      this.height = height;
+    };
+    /**
+     *
+     * @param location
+     * @param altitude
+     * @param orientation
+     * @constructor
+     */
+    var Position = function (location, altitude, orientation) {
+      this.location = location;
+      this.altitude = altitude;
+      this.orientation = orientation;
+    };
+
+    var Dimension = function (width, height, depth) {
+      this.width = width;
+      this.height = height;
+      this.depth = depth;
+    };
+    var Space = function (position, dimension) {
+      this.position = position;
+      this.dimension = dimension;
+    };
+    var Time = function (edtf) {
+      this.edtf = edtf;
+    };
+    var Context = function (space, time) {
+      this.space = space;
+      this.time = time;
+    };
 
     var currentPosition = new Position(new Location(), undefined, new Orientation());
     var currentSpace = new Space(currentPosition, new Dimension());
     var currentTime = new Time();
     var currentContext = new Context(currentSpace, currentTime);
+    addContext(currentContext);
 
     var contexts = [];
 
     function setCurrentContext(context) {
       currentContext = context;
     }
+
     function addContext(context) {
       contexts.push(context);
       setCurrentContext(context);
     }
+
     return {
-      setTime: function (newTime) {
+      setTime: function (edtf) {
         var newContext = angular.copy(currentContext);
+        var newTime = new Time(edtf);
         angular.extend(newContext.time, newTime);
         addContext(newContext);
       },

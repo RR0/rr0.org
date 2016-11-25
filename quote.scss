@@ -17,9 +17,15 @@ cite {
   font-style: normal;
 }
 
+p[data-author] {
+  &:before {
+    content: attr(data-author) " : ";
+  }
+}
+
 @mixin question() {
   &:before {
-    content: "— ";
+    content: "—\00a0";
   }
   &:after {
     content: "";
@@ -28,7 +34,7 @@ cite {
 
 @mixin answer() {
   &:before {
-    content: "— ";
+    content: "—\00a0";
   }
   &:after {
     content: "";
@@ -38,10 +44,10 @@ cite {
 @mixin quoting() {
   background: $highlightColor repeat-x;
    &:before {
-    content: "« ";
+    content: "«\00a0";
   }
   &:after {
-    content: " »";
+    content: "\00a0»";
   }
   &.question {
     @include question();
@@ -80,15 +86,33 @@ blockquote {
   }
   p:last-child, ul>li:last-child, ol>li:last-child {
     &:after {
-      content: " »";
+      content: "\00a0»";
     }
   }
   margin: 0;
   margin-left: 1.5em;
 }
+span.question {
+  font-weight: bold;
+  &::before {
+    content: "";
+  }
+  &::after {
+    content: " : ";
+  }
+}
+span.answer {
+  &::before {
+    content: "";
+  }
+  &::after {
+    content: "";
+  }
+}
 
 .exergue {
-  font-style: italic;
+  font-family: 'Libre Baskerville', serif;
+  //font-style: italic;
   text-align: right;
   color: #4C4C4C;
   .source {

@@ -24,6 +24,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  position: absolute;
+  width: 100%;
   left: 0;
   &.wait {
     cursor: wait;
@@ -217,7 +219,20 @@ form {
   font-variant: small-caps;
 }
 
-@import "js/head";
+ui-view {
+  .contents {
+    box-shadow: none;
+    background: transparent;
+  }
+  header, nav, .metadata {
+    display: none;
+  }
+  .text {
+    margin: 0;
+  }
+}
+
+@import "js/head/head";
 @import "js/nav";
 @import "content";
 @import "js/note/foot";

@@ -1,0 +1,135 @@
+<!--#include virtual="/header-start.html" -->
+<title>Analyse</title>
+<meta name="author" content="Marion, André">
+<!--#include virtual="/header-end.html" -->
+<p>La <a href="/science/crypto/ufo/enquete/dossier/PetitRechain">célèbre diapositive de Petit-Rechain</a> a été analysée
+  dans les années 1990 par plusieurs spécialistes de l'imagerie scientifique, en particulier Marc Acheroy
+  (<span class="place">Ecole royale militaire, Bruxelles</span>), <span class="people">François Louange</span> (société
+  Fleximage, Paris) et <span class="people">Richard F. Haines</span> (Los Altos, Californie) ; le <time>2001-10-15</time>,
+  <span class="people">Patrick Ferryn</span>, de la <a href="/org/eu/be/asso/sobeps/index.html">SOBEPS</a>, nous confia
+  cette diapositive afin que nous l'analysions à notre tour à l'aide des dernières techniques de traitement numérique
+  des images utilisées à l'<span class="place">Institut d'optique
+    théorique et appliquée d'Orsay</span>. Le but de sa démarche était de comparer nos résultats avec ceux de nos
+  prédécesseurs, de mettre éventuellement en évidence des informations supplémentaires et, si possible, de tirer des
+  conclusions quant à l'authenticité du document et à la nature de l'objet photographié.
+</p>
+<section>
+  <h2>Observation d'ensemble de la diapositive</h2>
+  <p>Dans une 1ère étape, nous avons procédé à l'observation visuelle du film, après l'avoir extrait de son cache, puis
+    à sa numérisation par transparence à l'aide d'un scanner à plat Agfa Duoscan T1200. Nos constatations recoupent
+    celles de nos prédécesseurs :
+  </p>
+  <ul>
+    <li>Le cadre de la photo est parfaitement net et sans dédoublement, même si on l'observe avec un contraste fortement
+      augmenté ; ceci exclut une manipulation du type double ou multiple exposition lors de la prise de vue.
+    </li>
+    <li>Il paraît difficile d'envisager un trucage fait à l'aide d'une maquette ou de tout autre dispositif analogue.
+      Cela sera confirmé par les traitements numériques (voir plus loin).
+    </li>
+    <li> On ne peut davantage imaginer un montage vidéo ou l'utilisation d'images de synthèse : les caractéristiques
+      propres à de telles images n'apparaissent pas sur la diapositive, même en augmentant considérablement les
+      contrastes.
+    </li>
+  </ul>
+  <p>Bien qu'il ne faille rien exclure, il semble donc très probable que la photo analysée soit bien celle d'un objet
+    matériel vu sur un fond de ciel, objet ou engin d'origine néanmoins non identifiée jusqu'à ce jour.
+  </p>
+</section>
+<section>
+  <h2>Numérisation du cliché</h2>
+  <figure class="right side">
+    <img src="rechainexpertisemarioncs0.jpg" alt="Le météore de Neushwanstein, tel qu'enregistré par une station de détection (en bas à droite)"/>
+    <figcaption> Déroulé des 11 photographies d'analyses complémentaires </figcaption>
+  </figure>
+  <p>Dans une seconde étape, nous avons effectué une numérisation précise de la diapositive à l'aide d'un scanner de
+    films 35 mm Canon offrant une résolution optique de 2720 points/pouce, ce qui équivaut à une taille de pixel de
+    moins de 10 micromètres. Cette dimension est bien supérieure à celle du grain du film (de l'ordre du micromètre),
+    mais largement inférieure à celle des plus petits détails significatifs contenus dans l'image, lesquels ne sont
+    jamais inférieurs à 20 micromètres.
+  </p>
+  <p> En dehors des 4 taches très lumineuses, l'image est presque noire et très peu contrastée. Il était donc
+    indispensable d'avoir, dès la numérisation, un rapport signal à bruit aussi bon que possible afin de saisir les plus
+    faibles nuances, même dans les parties les plus sombres du cliché. Dans ce but, nous avons utilisé une technique
+    consistant à faire la moyenne entre de multiples numérisations successives :
+  </p>
+  <p>En numérisant n fois la diapositive dans les mêmes conditions, on diminue la partie du bruit d'image due à
+    l'électronique de mesure par le facteur (1/sqrt(n)?) .
+  </p>
+  <p>En numérisant la diapositive en position normale, puis tournée de 90°, 180° et 270°, il est possible de moyenner le
+    bruit fixe dû à la structure du CCD (non uniformité de réponse des photosites de la barrette). Pour cela, il faut
+    évidemment recaler les images au pixel près à l'aide d'un logiciel approprié afin qu'elles se superposent
+    parfaitement.
+  </p>
+  <p>On peut également diminuer de façon sensible l'influence du bruit de quantification (les pixels sont codés sur 8
+    bits, c'est-à-dire 256 niveaux, par couleur) en faisant la moyenne des numérisations du film en mode film positif et
+    en mode film négatif (après complémentation des valeurs à 255), car les courbes de réponse du scanner ne sont pas
+    les mêmes dans les 2 modes.
+  </p>
+  <p> Ayant ainsi obtenu une image moyenne finale avec ses 3 composantes rouge, verte et bleue, nous n'avons conservé
+    qu'une zone carrée d'environ 2 cm de côté entourant l'objet, ce carré comportant 2430 x 2430 pixels. Enfin, compte
+    tenu de la taille des plus petits détails visibles (environ 20 micromètres, ainsi qu'il a été dit plus haut), nous
+    avons dimensionné cette zone sur 1024 x 1024 pixels en interpolant entre les pixels (fig. 1), ceci afin de ne pas
+    manipuler de trop grandes images et ne pas augmenter inutilement les temps de calcul.
+  </p>
+</section>
+<section>
+  <h2>Résultats des traitements numériques</h2>
+  <p>1. Une accentuation des contrastes permet de faire apparaître le contour de l'objet (fig. 2), en particulier sur la
+    composante bleue (fig. 3). Ce contour a la forme d'un triangle isocèle ABC quasiment rectangle en A, complété du
+    côté de sa base par un quadrilatère BCED très proche d'un rectangle. Compte tenu de l'angle de prise de vue, il est
+    probable que les angles A, D et E soient des angles droits et que l'objet soit horizontal. Sur l'objet, très sombre,
+    se détachent 4 taches fortement lumineuses que, pour simplifier, nous appellerons "feux". 3 de ces feux sont proches
+    des extrémités A, D et E de l'objet, tandis que le quatrième est situé à peu près au milieu de la hauteur AH
+    abaissée du sommet A sur la base DE (fig. 4). En l'absence de repère, il n'est pas possible d'estimer la taille de
+    l'engin ni sa distance.
+  </p>
+  <p> Certaines régions du contour sont quasiment nettes alors que d'autres sont floues, indiquant un déplacement
+    relatif de l'objet et du film. L'explication qui paraît la plus vraisemblable est que l'objet a effectué un
+    mouvement pendant le temps d'exposition, l'appareil photo étant resté fixe, mais on ne peut exclure un léger bougé
+    de l'appareil. Les 2 positions extrêmes sont représentées sur la figure 5.
+  </p>
+  <p>La forme du flou observé peut s'expliquer par une rotation de l'objet dans l'espace autour d'un axe passant par un
+    point 0 situé pratiquement sur la droite BC et tel que BO = 0,25 BC (fig. 5). L'angle de la rotation est de 5°
+    environ. Nous avons pu reconstituer cet effet de flou par simulation (fig. 6).
+  </p>
+  <p>La même rotation permet également de retrouver le mouvement d'ensemble subi par les 4 feux, supposés circulaires
+    sur la simulation. Toutefois, les 3 feux extérieurs présentent des structures colorées complexes et des déformations
+    que cette rotation globale n'explique pas&nbsp;: les images obtenues impliquent nécessairement des mouvements
+    indépendants pour chacun de ces feux par rapport à l'engin.
+  </p>
+  <p>2. Divers traitements colorés permettent de faire ressortir un halo lumineux autour de l'objet ainsi que des
+    traînées lumineuses entre les feux, particulièrement entre le feu central et ceux des extrémités (fig. 7). Mais ces
+    traitements, en vraies comme en fausses couleurs, ne permettent pas de tirer de conclusion quant à la nature du halo
+    ni de préciser ce que sont les feux : systèmes d'éclairage et/ou de signalisation ou dispositifs de sustentation
+    et/ou de propulsion de l'engin ?
+  </p>
+  <p>3. La décomposition de l'image en luminance, teinte et saturation fait apparaître des informations plus riches,
+    particulièrement sur la composante de saturation. Ces informations sont notablement améliorées par des filtrages de
+    fréquences et des compositions colorées. Les traitements nous ont permis de mettre en évidence des directions
+    privilégiées, surtout dans le halo qui entoure l'objet (fig. 8, 9, 10, 11). Ces directions correspondent aux
+    orientations de petits grains lumineux qui, sur l'image, forment une sorte de mouvement tournant autour de l'engin,
+    un peu à la manière de flocons de neige pris dans un vent tourbillonnant. On peut aussi faire l'analogie avec des
+    grains de limaille de fer qui s'orientent selon les lignes du champ magnétique d'un aimant. S'agit-il de
+    perturbations électro-magnétiques, d'un processus d'ionisation de l'air ? En l'absence d'autres éléments, la nature
+    de ce phénomène est difficile à préciser, d'autant plus qu'il n'est pratiquement pas décelable sur les composantes
+    rouge, verte et bleue de l'image. Ces nouvelles observations sont d'autant plus intéressantes qu'elles semblent
+    susceptibles de conforter certaines théories, comme
+    <a href="../../0/06/Meessen_AnalyseEtImplicationsPhysiques2PhotosVagueBelge_Inforespace/14/index.html">celle des
+      ondes de plasma ioniques, thèse avancée par Auguste Meessen</a>, professeur émérite à l'université de Louvain, et
+    concernant le système de propulsion de l'engin (propulsion de type <a href="/science/discipline/physique/MHD.html">magnétoplasmadynamique</a>).
+  </p>
+  <p>Quoi qu'il en soit, l'existence de ces "lignes de force" est un argument de poids contre la thèse d'un trucage,
+    lequel serait particulièrement perfectionné. De plus, on ne voit pas très bien pour quelle raison un faussaire se
+    serait donné la peine d'imaginer et de réaliser un phénomène aussi complexe, d'autant plus qu'il n'est pas
+    perceptible sans un traitement sophistiqué du cliché.
+  </p>
+</section>
+<section>
+  <h2>Conclusion</h2>
+  <p>Les traitements numériques que nous avons effectués à Orsay sur la diapositive de Petit-Rechain ont confirmé
+    l'essentiel des observations déjà faites. Ils ont également apporté de nouveaux résultats surprenants au sujet du
+    halo lumineux qui entoure l'objet, mettant en évidence un processus d'apparence tourbillonnaire. La nature du
+    phénomène physique correspondant pourrait, selon certains auteurs, être liée au système de propulsion particulier de
+    l'engin. Ce point mériterait d'être approfondi.
+  </p>
+</section><!--#include virtual="/footer.html" -->

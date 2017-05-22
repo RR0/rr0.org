@@ -1,0 +1,619 @@
+<!--#include virtual="/header-start.html" -->
+<title>IDE</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Integrated Development Environment</i>, ou EDI (Environnement de Développement Intégré)</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Faciliter :</p>
+  <ul>
+    <li>(toujours) l'écriture de <a href="../../proj/impl/CodeSource.html">code source</a></li>
+    <li>(toujours) l'exécution</li>
+    <li>(souvent) la <a href="../../proj/impl/Compilation.html">compilation</a></li>
+    <li>(parfois) la mise au point (<i>debugging</i>)</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un IDE intègre dans un même produit :</p>
+  <ul>
+    <li>un éditeur de code (<a href="/org/us/company/oracle/sun/ptf/java">Java</a>, <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>/<a
+        href="/tech/info/soft/data/doc/xml/html">HTML</a>, etc.)
+    </li>
+    <li>un compilateur</li>
+    <li>(souvent) un débogueur</li>
+    <li>(parfois) un module d'assemblage (pour les applications <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> typiquement)
+    </li>
+    <li>(parfois) un module de déploiement (pour les applications <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> typiquement)
+      <ul>
+        <li>(souvent) sur un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur
+          applicatif</a> distinct
+        </li>
+        <li>(parfois) sur un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur
+          applicatif</a> intégré
+        </li>
+      </ul>
+    </li>
+    <li>(parfois) un générateur de documentation</li>
+    <li>(parfois) un module de modélisation (<a href="/tech/info/soft/proj/UML.html">UML</a>)
+    </li>
+    <li>(parfois) un client (navigateur) Web</li>
+    <li>(parfois) un support de <a href="../../proj/conf">gestion de configuration</a></li>
+    <li>(parfois) un module de <a href="../../proj/Test.html">tests</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Certains kits de développement (<i>Software Development Kit</i> ou SDK) ne peuvent être qualifiés d'IDE car ils
+      n'intègrent pas l'ensemble de leurs fonctionnalités dans un environnement. C'est le cas d'environnement de
+      développement constitués d'outils en ligne de commande comme le <a
+          href="/org/us/company/oracle/sun/ptf/java/impl/J2SDK.html">JDK</a>, les outils de développement Unix (cc, gcc,
+      etc.).
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>
+      <table border=1 cellspacing=0 cellpadding=5>
+        <thead>
+        <tr>
+          <td colspan=2 rowspan=2 class="titleCorner"></td>
+          <th colspan="2" valign=top> Produit</th>
+          <th><a href="/org/int/asso/ef/product/eclipse">Eclipse</a></th>
+          <th><a href="/org/eu/cz/company/jetbrains/product/idea"> IDEA</a></th>
+          <th>NetBeans</th>
+          <th rowspan=3> Commentaire</th>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top> Version</th>
+          <th>4</th>
+          <th>12</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th> Module</th>
+          <th> Technologie</th>
+          <th colspan="2" valign=top> Release</th>
+          <th>2</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th valign=top>Fournisseur</th>
+          <th valign=top></th>
+          <th valign=top></th>
+          <th></th>
+          <td><a href="/org/int/asso/ef/">Eclipse Foundation</a></td>
+          <td><span class="deprecated">IntelliJ</span> <a href="/org/eu/cz">JetBrains</a></td>
+          <td><span class="deprecated">Sun/JavaSoft</span> <a href="/org/us/company/oracle">Oracle</a></td>
+          <td></td>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan=38 valign=top>Edition de code</th>
+          <th rowspan="13" valign=top>Syntaxe</th>
+          <th valign=top><a href="../../proj/impl/lang/java">Java</a></th>
+          <th></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="../../proj/impl/lang/c">C</a></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="../../proj/impl/lang/cpp">C++</a></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="/org/us/company/microsoft/windows/dotnet">.Net</a></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>/<a
+              href="/tech/info/soft/data/doc/xml/html">HTML</a>
+          </th>
+          <th>Source</th>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top></th>
+          <th> Visuel</th>
+          <td class="oui">Oui</td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign=top><a href="/tech/info/soft/data/doc/xml">XML</a></th>
+          <th>Syntaxe</th>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Structure</th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Completion</th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td>Aide &agrave; la saisie en fonction de la grammaire (DTD, XSD)</td>
+        </tr>
+        <tr>
+          <th valign=top>VB</th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="../orb/corba/IDL.html">IDL</a></th>
+          <th></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="17" valign=top>Navigation</th>
+          <th colspan="2" valign=top>Ouvre type</th>
+          <td class="oui">Ctrl+&#x21E7+T</td>
+          <td class="oui">Ctrl+N</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Ouvre ressource (fichier</th>
+          <td class="oui"><span class="oui">Ctrl+&#x21E7+R</span></td>
+          <td class="oui">Ctrl+<span class="oui">&#x21E7+N</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Ouvre symbole (méthode, mebre)</th>
+          <td class="oui">Ctrl+O</td>
+          <td class="oui">Ctrl+<span class="oui">&#x21E7+&#x2325;+N</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Saut à membre suivant</th>
+          <td class="oui"><span class="oui">Ctrl+&#x21E7+&#x2193;</span></td>
+          <td><span class="oui">Ctrl+&#x2193;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Saut à membre précédent</th>
+          <td class="oui"><span class="oui">Ctrl+&#x21E7+&#x2191;</span></td>
+          <td><span class="oui">Ctrl+&#x2191;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Aller à ligne n°</th>
+          <td class="oui">Ctrl+L</td>
+          <td class="oui">Ctrl+G</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Aller à dernière édition</th>
+          <td class="oui">Ctrl+Q</td>
+          <td class="oui">Ctrl+&#x21E7+&#x232b;</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Edition precedente</th>
+          <td colspan="2" class="oui">Ctrl+&#x2325;+&#x2190;</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Edition suivante</th>
+          <td colspan="2" class="oui">Ctrl+&#x2325;+&#x2192;</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Hiérarchie du type</th>
+          <td class="oui">Ctrl+T</td>
+          <td class="oui">Ctrl+H</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Aller à supertype</th>
+          <td>Hiérarchie+Sélection</td>
+          <td>Super-méthode (Ctrl+U)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Aller à sous-type</th>
+          <td>Hiérarchie+Sélection</td>
+          <td class="oui">Ctrl+B(+Sélection si plusieurs sous-types)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Problème suivant</th>
+          <td class="oui"><span class="oui">Ctrl + .</span></td>
+          <td class="oui">F2</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Problème précédent</th>
+          <td class="oui"><span class="oui">Ctrl + ,</span></td>
+          <td class="oui">&#x21E7+F2</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Déclaration d'un type</th>
+          <td class="oui">F3 (ou Ctrl+clic)</td>
+          <td class="oui">Ctrl+B (ou Ctrl+clic)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Fichiers récemment visités</th>
+          <td rowspan="2" class="non">Non</td>
+          <td class="oui">Ctrl+E</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Fichiers récemment édiités</th>
+          <td class="oui">Ctrl+&#x21E7+E</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top></th>
+          <th valign=top></th>
+          <th>Tâche</th>
+          <td></td>
+          <td class="non">Ctrl<span class="oui">+&#x21E7</span>+T</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign=top>Refactoring</th>
+          <th>Classe</th>
+          <th>Renommage</th>
+          <td></td>
+          <td class="oui">Renomme aussi les interfaces si besoin</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Méthode</th>
+          <th>Introduire paramètre</th>
+          <td>Via menu</td>
+          <td class="oui">Ctrl+&#x2325;+P</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Migration</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td>Migration des packages d'un ensemble de code (Swing par exemple)</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign=top>Détection code mort</th>
+          <th colspan="2" valign=top>A la frappe</th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign=top>Optimisation des imports</th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign=top>Templates</th>
+          <th valign=top>Code</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Fichier</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Compilation</th>
+          <th valign=top><a href="/org/us/company/oracle/sun/ptf/java">Java</a></th>
+          <th valign=top>Bytecode</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top rowspan=2>Déboguage</th>
+          <th valign=top rowspan=2><a href="/org/us/company/oracle/sun/ptf/java">Java</a></th>
+          <th valign=top>Local</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Distant</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Assemblage</th>
+          <th valign=top><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top rowspan=7><a href="../../proj/Deploiement.html">Déploiement</a></th>
+          <th valign=top rowspan=7><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></th>
+          <th valign=top rowspan="3"><a href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a></th>
+          <th>3.02</th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>3.5</th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>4.0</th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top rowspan="2"><a href="/org/us/company/oracle/bea/wls">WLS</a></th>
+          <th>6</th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="/org/us/company/oracle/sun/ptf/java/impl/J2EE-RI.html">J2EE RI</a></th>
+          <th>1.3</th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>BES</th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top rowspan=6><a href="../../proj/conf">Gestion de configuration</a></th>
+          <th valign=top>Intégré</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign=top><a href="/tech/info/soft/proj/conf/vcs/CVS.html">CVS</a></th>
+          <th valign=top>pserver</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td>CVS standard</td>
+        </tr>
+        <tr>
+          <th valign=top>local</th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td>Historique et diff des modifications sur le poste.</td>
+        </tr>
+        <tr>
+          <th valign=top>SCC</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td>Standard Microsoft pour intégration de divers <a href="../../proj/conf/vcs">VCS</a></td>
+        </tr>
+        <tr>
+          <th valign=top>ClearCase</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign=top>Visual SourceSafe</th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top rowspan=2><a href="../../proj/Qualite.html">Qualité</a></th>
+          <th valign=top>Audit</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="oui">Prédéfini</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Métriques</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top><a href="../../proj/Test.html">Tests</a></th>
+          <th valign=top><a href="../JUnit.html">JUnit</a></th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top rowspan=4>Génération de documentation</th>
+          <th valign=top>JavaDoc</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign=top>Export des sources en HTML</th>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Word</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>RTF</th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Modélisation</th>
+          <th valign=top><a href="/tech/info/soft/proj/UML.html">UML</a></th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign=top>Serveur Web</th>
+          <th valign=top></th>
+          <th valign=top></th>
+          <th></th>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

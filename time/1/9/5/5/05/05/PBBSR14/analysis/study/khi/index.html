@@ -1,0 +1,1278 @@
+<!--#include virtual="/header-start.html" -->
+<title>Test statistique du χ2</title>
+<meta name="url" content="http://bluebookarchive.org">
+<meta name="author" content="BMI">
+<meta name="copyright" content="ATIC">
+<link rel="prev" href=".." title="Advanced data study">
+<link rel="start" href="../.." title="Project Blue Book Special Report n° 14">
+<!--#include virtual="/header-end.html" -->
+<p>Dans le même temps, des graphiques mirroirs ont été construits d'après les tabulations de fréquence qui ont semblé
+  montrer que, lorsque les <em>connus</em> et les <em>inconnus</em> sont regroupés selon 1 des 6 caractéristiques, le
+  pourcentage des <em>connus</em> et le pourcentage des <em>inconnus </em>dans chaque groupe de caractéristique ont
+  montré la même tendance générale. En d'autres mots, sur la base de ces graphiques, il semble qu'il y ait eut une bonne
+  possibilité que les <em>inconnus</em> ne soient pas différents des <em>connus</em>, au moins au sein de l'aggrégat. Il
+  a été décidé d'investiguer ceci en utilisant une procédure statistique nommée "test du χ<sup>2</sup>".
+</p>
+<p>Le test du χ<sup>2</sup> est un test statistique de la probabilité que 2 distributions viennent de la même
+  population, c'est-à-dire qu'il donne la probabilité qu'il n'y ait pas de différence dans le [make-up] des 2
+  distributions mesurées.
+</p>
+<p>Les méthode est dégagée comme suit :</p>
+<ol>
+  <li> Adjuster les distributions en multipliant les <em>connus</em> dans chaque groupe de caractéristique par le ratio
+    du nombre total des <em>inconnus</em> pour le nombre total de <em>connus</em> (le test du χ<sup>2</sup> est
+    applicable seulement aux distributions qui ont le même nombre total d'éléments)
+  </li>
+  <li> Prendre la différence entre le nombre d'<em>inconnus</em> et le nombre ajusté de <em>connus</em> dans chaque
+    groupe de caractéristique.
+  </li>
+  <li> Elever le reste de l'étape 2 au carré.</li>
+  <li> Diviser le résultat de l'étape 3 par le nombre correspondant de <em>connus </em>ajustés.</li>
+</ol>
+<p>Ceci est le χ<sup>2</sup> pour le groupe particulier. Faire la somme des χ<sup>2</sup> individuels par delà des
+  groupes d'une caractéristique donne le chi<sup>2 </sup>pour cette caractéristique. Ce nombre est alors comparé avec un
+  tableau de la distribution du χ<sup>2</sup> qui peut être trouvé dans de nombreux textes sur les statistiques
+  élémentaires.
+</p>
+<p>On notera que ce χ<sup>2</sup> est tabulé en termes de degrés de liberté qui dans ce cas est 1 de moins que le nombre
+  de groupes d'observations pour chaque caractéristique.
+</p>
+<p>Les tabulations des <em>connus</em> et <em>inconnus</em> sur les 6 caractéristiques et le test du χ<sup>2</sup> tel
+  qu'il a été appliqué sont montrés dans les tableaux II à VII. Dans chaque cas, le nombre de degrés de liberté est
+  donné, comme l'est la valeur des χ<sup>2</sup> correspondant aux probabilités de 5 % et 1&nbsp;% que 2 distributions
+  avec ce nombre de degrés de liberté viennent de la même population. Plus grande étant la valeur du χ<sup>2</sup> et
+  plus petite étant la probabilité d'homogénéité de 2 distributions, une valeur calculée du chi<sup>2</sup> supérieure
+  aux valeurs des 5 % ou des 1 % indiquera une probabilité inférieure à 5 % ou à 1 %, respectivement, que les 2
+  distributions soient homogènes. Le terme d'homogénéité est utilisé ici pour indiquer que les 2 distributions puissent
+  être venues de la même population.
+</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 2 - Test du χ<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base de la couleur
+  </caption>
+  <tr>
+    <th>Couleur</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>χ<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Blanc</td>
+    <td>405</td>
+    <td>100</td>
+    <td>112</td>
+    <td>1,44</td>
+  </tr>
+  <tr>
+    <td>Métallique</td>
+    <td>313</td>
+    <td>77</td>
+    <td>76</td>
+    <td>0,01</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>209</td>
+    <td>51</td>
+    <td>62</td>
+    <td>2,37</td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>172</td>
+    <td>42</td>
+    <td>49</td>
+    <td>1,17</td>
+  </tr>
+  <tr>
+    <td>Rouge</td>
+    <td>146</td>
+    <td>36</td>
+    <td>33</td>
+    <td>0,25</td>
+  </tr>
+  <tr>
+    <td>Jaune</td>
+    <td>128</td>
+    <td>31</td>
+    <td>31</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Vert</td>
+    <td>130</td>
+    <td>32</td>
+    <td>14</td>
+    <td>10,13</td>
+  </tr>
+  <tr>
+    <td>Bleu</td>
+    <td>67</td>
+    <td>17</td>
+    <td>26</td>
+    <td>4,76</td>
+  </tr>
+  <tr>
+    <td>Autre</td>
+    <td>195</td>
+    <td>48</td>
+    <td>31</td>
+    <td>6,02</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1765</td>
+    <td>434</td>
+    <td>434</td>
+    <td>26,15</td>
+  </tr>
+  <tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>8</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>15,5</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>20,1</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 3 - Test du χ<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base du nombre
+  </caption>
+  <tr>
+    <th>Nombre d'objets par observation</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>χ<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1339</td>
+    <td>329</td>
+    <td>297</td>
+    <td>3,11</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>159</td>
+    <td>39</td>
+    <td>37</td>
+    <td>0,10</td>
+  </tr>
+  <tr>
+    <td>3-10</td>
+    <td>185</td>
+    <td>46</td>
+    <td>70</td>
+    <td>12,52</td>
+  </tr>
+  <tr>
+    <td>11 ou plus</td>
+    <td>41</td>
+    <td>10</td>
+    <td>25</td>
+    <td>22,50</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>41</td>
+    <td>10</td>
+    <td>5</td>
+    <td>2,50</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1765</td>
+    <td>434</td>
+    <td>434</td>
+    <td>40,73</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>4</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>9,5</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>13,3</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 4 - Test du χ<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base de la forme
+  </caption>
+  <tr>
+    <th>Forme</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>χ<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Elliptique</td>
+    <td>838</td>
+    <td>206</td>
+    <td>195</td>
+    <td>0,59</td>
+  </tr>
+  <tr>
+    <td>Fusée ou <a href="../../../../../../../../../../../tech/aero/appareil">appareil</a></td>
+    <td>80</td>
+    <td>20</td>
+    <td>33</td>
+    <td>8,45</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">Météore</a> ou comète
+    </td>
+    <td>55</td>
+    <td>14</td>
+    <td>4</td>
+    <td>7,14</td>
+  </tr>
+  <tr>
+    <td>Goutte d'eau, lenticulaire ou conique</td>
+    <td>103</td>
+    <td>25</td>
+    <td>22</td>
+    <td>0,36</td>
+  </tr>
+  <tr>
+    <td>Flamme</td>
+    <td>96</td>
+    <td>24</td>
+    <td>10</td>
+    <td>8,17</td>
+  </tr>
+  <tr>
+    <td>Autre</td>
+    <td>193</td>
+    <td>47</td>
+    <td>54</td>
+    <td>1,04</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>400</td>
+    <td>98</td>
+    <td>116</td>
+    <td>3,30</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1765</td>
+    <td>434</td>
+    <td>434</td>
+    <td>29,05</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>6</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>12,6</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>16,8</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 5 - Test du χ<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base de la durée
+    d'observation
+  </caption>
+  <tr>
+    <th>Durée d'observation</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>χ<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>5 s ou moins</td>
+    <td>259</td>
+    <td>64</td>
+    <td>27</td>
+    <td>21,39</td>
+  </tr>
+  <tr>
+    <td>6-10 s <a href="../../../../../../../../../../../tech/aero/appareil"></a></td>
+    <td>92</td>
+    <td>23</td>
+    <td>21</td>
+    <td>0,17</td>
+  </tr>
+  <tr>
+    <td>11-30 s</td>
+    <td>153</td>
+    <td>38</td>
+    <td>33</td>
+    <td>0,66</td>
+  </tr>
+  <tr>
+    <td>31-60 s</td>
+    <td>108</td>
+    <td>26</td>
+    <td>42</td>
+    <td>9,85</td>
+  </tr>
+  <tr>
+    <td>61 s-5 mn</td>
+    <td>269</td>
+    <td>66</td>
+    <td>99</td>
+    <td>16,50</td>
+  </tr>
+  <tr>
+    <td>6-30 mn</td>
+    <td>305</td>
+    <td>75</td>
+    <td>71</td>
+    <td>0,21</td>
+  </tr>
+  <tr>
+    <td>Plus de 30 mn</td>
+    <td>135</td>
+    <td>33</td>
+    <td>37</td>
+    <td>0,48</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>444</td>
+    <td>109</td>
+    <td>104</td>
+    <td>0,23</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1765</td>
+    <td>434</td>
+    <td>434</td>
+    <td>49,49</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>7</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>14,1</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>18,5</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 6 - Test du χ<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base de la vitesse
+  </caption>
+  <tr>
+    <th>Vitesse</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>χ<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Stationnaire</td>
+    <td>249</td>
+    <td>61</td>
+    <td>53</td>
+    <td>1,05</td>
+  </tr>
+  <tr>
+    <td>Moins de 100 miles/h <a href="../../../../../../../../../../../tech/aero/appareil"></a></td>
+    <td>154</td>
+    <td>38</td>
+    <td>26</td>
+    <td>3,79</td>
+  </tr>
+  <tr>
+    <td>100 à 400 miles/h</td>
+    <td>181</td>
+    <td>45</td>
+    <td>58</td>
+    <td>3,76</td>
+  </tr>
+  <tr>
+    <td>Plus de 400 miles/h</td>
+    <td>403</td>
+    <td>99</td>
+    <td>145</td>
+    <td>21,37</td>
+  </tr>
+  <tr>
+    <td>Comme un <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">météore</a>
+    </td>
+    <td>83</td>
+    <td>20</td>
+    <td>16</td>
+    <td>0,80</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>695</td>
+    <td>171</td>
+    <td>136</td>
+    <td>7,16</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1765</td>
+    <td>434</td>
+    <td>434</td>
+    <td>37,93</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>5</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>11,1</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>15,1</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 7 - Test du χ<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base de la brillance
+    lumineuse
+  </caption>
+  <tr>
+    <th>Intensité lumineuse</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>χ<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Lumière du soleil du mirroir</td>
+    <td>47</td>
+    <td>11</td>
+    <td>14</td>
+    <td>0,82</td>
+  </tr>
+  <tr>
+    <td>Lumière du soleil sur aluminium<a href="../../../../../../../../../../../tech/aero/appareil"></a>
+    </td>
+    <td>151</td>
+    <td>37</td>
+    <td>28</td>
+    <td>2,19</td>
+  </tr>
+  <tr>
+    <td>Lumière du soleil sur pl&acirc;tre, pierre ou sol</td>
+    <td>76</td>
+    <td>19</td>
+    <td>16</td>
+    <td>0,47</td>
+  </tr>
+  <tr>
+    <td>Plus brillant que la <a href="../../../../../../../../../../../lieu/systeme/solaire/planete/terre/lune">Lune</a>
+    </td>
+    <td>273</td>
+    <td>67</td>
+    <td>61</td>
+    <td>0,55</td>
+  </tr>
+  <tr>
+    <td>Comme la <a href="../../../../../../../../../../../lieu/systeme/solaire/planete/terre/lune">Lune</a> ou plus mat
+      que la <a href="../../../../../../../../../../../lieu/systeme/solaire/planete/terre/lune">Lune</a>
+    </td>
+    <td>68</td>
+    <td>17</td>
+    <td>22</td>
+    <td>1,47</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>1150</td>
+    <td>283</td>
+    <td>293</td>
+    <td>0,35</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1765</td>
+    <td>434</td>
+    <td>434</td>
+    <td>5,85</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>5</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>11,1</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>15,1</td>
+  </tr>
+</table>
+<p>Dans 5 des 6 cas, la probabilité est de moins de 1 % que les distributions soient les mêmes. Dans le 6ème cas,
+  l'intensité lumineuse, les classifications sont trop nébuleuses pour être de réelle valeur. Cependant, ces tests ne
+  signifient pas nécessairement que les <em>inconnus</em> sont principalement des "soucoupes volantes" et non des
+  <a href="../../../../../../../../../../../tech/aero/appareil">appareils</a>,
+  <a href="/science/crypto/ufo/enquete/meprise/ballon">ballons</a> ou autres objets ou phénomènes naturels connus. Les
+  <em>inconnus</em> pourraient toujours être des <em>connus</em> non identifiés si un des cas suivants arrivait :
+</p>
+<ol>
+  <li> Les caractéristiques qui ont été observées pour les <em>inconnus</em> étaient différentes de celles observées
+    pour les <em>connus</em> en raison de la constitution psychologique de l'observateur ou de la distortion
+    atmosphérique. Ceci suppose que la distribution des objets dans les <em>connus </em>et les <em>inconnus</em> est la
+    même.
+  </li>
+  <li>Les <em>inconnus</em> pourraient être des objets connus dans des proportions différentes de celles du groupe
+    identifié comme les <em>connus</em> (c'est-à-dire qu'un plus grand pourcentage des <em>inconnus</em> pourrait
+    représenter des appareils que le pourcentage des appareils dans les <em>connus</em> identifiés).
+  </li>
+</ol>
+<p>Le 2nd cas est le plus probable. A cet égard, il est intéressant de noter les facteurs qui ont contribué à un grand
+  résultats chi<sup>2</sup> dans les tests effectués ci-dessus :
+</p>
+<ol>
+  <li><strong>Couleur </strong>: La contribution majeur au chi<sup>2</sup> en couleur est la couleur verte. Il y a un
+    grand excès d'observations vertes parmi les <em>connus</em> au-dessus des <em>inconnus</em>. Sur les 130 objets
+    connus dans cette classification, 98 sont astronomiques, et sont en principalement dus aux
+    <a href="/science/crypto/ufo/enquete/dossier/GreenFireballs">boules de feu vertes</a> rapportées dans le Sud-Ouest
+    des U. S.
+  </li>
+  <li><strong>Nombre </strong>: Le grand chi<sup>2</sup> est dû à une plus grande proportion des <em>inconnus</em> dans
+    la classification des objets multiples. Apparemment ils sont plus difficiles à identifier.
+  </li>
+  <li><strong>Forme </strong>: Dans ce cas, il y a un pourcentage plus élevé des <em>inconnus</em> dans la
+    classification de forme fusée-appareil. Il pourrait s'agir d'objets familiers pour lesquels des manoeuvres
+    inhabituelles ont été rapportées.<br> Il y a un pourcentage plus élevé de <em>connus</em> dans la catégorie des
+    forme de <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">météore</a> ou de comète, qui dans les 2 cas
+    semble principalement résulter d'un excès d'observations astronomiques.
+  </li>
+</ol>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 8 - Test du Chi<sup>2</sup> des <em>connus </em>révisés versus les <em>inconnus </em>sur la base de la
+    couleur
+  </caption>
+  <tr>
+    <th>Couleur</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>X<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Blanc</td>
+    <td>281</td>
+    <td>95</td>
+    <td>112</td>
+    <td>3,04</td>
+  </tr>
+  <tr>
+    <td>Métallique</td>
+    <td>298</td>
+    <td>101</td>
+    <td>76</td>
+    <td>6,19</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>189</td>
+    <td>64</td>
+    <td>62</td>
+    <td>0,06</td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>117</td>
+    <td>39</td>
+    <td>49</td>
+    <td>2,56</td>
+  </tr>
+  <tr>
+    <td>Rouge</td>
+    <td>92</td>
+    <td>31</td>
+    <td>33</td>
+    <td>0,13</td>
+  </tr>
+  <tr>
+    <td>Jaune</td>
+    <td>90</td>
+    <td>30</td>
+    <td>31</td>
+    <td>0,03</td>
+  </tr>
+  <tr>
+    <td>Vert</td>
+    <td>32</td>
+    <td>11</td>
+    <td>14</td>
+    <td>0,82</td>
+  </tr>
+  <tr>
+    <td>Bleu</td>
+    <td>29</td>
+    <td>10</td>
+    <td>26</td>
+    <td rowspan="2">0,57</td>
+  </tr>
+  <tr>
+    <td>Autre</td>
+    <td>158</td>
+    <td>53</td>
+    <td>31</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1286</td>
+    <td>434</td>
+    <td>434</td>
+    <td>13,40</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>7</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>14,1</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>18,5</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 9 - Test du Chi<sup>2</sup> des <em>connus </em>revisés versus les <em>inconnus </em>sur la base du nombre
+  </caption>
+  <tr>
+    <th>Nombre d'objets par observation</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>X<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>913</td>
+    <td>308</td>
+    <td>297</td>
+    <td>0,39</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>142</td>
+    <td>48</td>
+    <td>37</td>
+    <td>2,52</td>
+  </tr>
+  <tr>
+    <td>3-10</td>
+    <td>168</td>
+    <td>57</td>
+    <td>70</td>
+    <td>2,96</td>
+  </tr>
+  <tr>
+    <td>11 ou plus</td>
+    <td>34</td>
+    <td>11</td>
+    <td>25</td>
+    <td>15,36</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>29</td>
+    <td>10</td>
+    <td>5</td>
+    <td>2,50</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1286</td>
+    <td>434</td>
+    <td>434</td>
+    <td>23,73</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>4</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>9,5</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>13,3</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 10 - Test du Chi<sup>2</sup> des <em>connus </em>versus les <em>inconnus </em>sur la base de la forme
+  </caption>
+  <tr>
+    <th>Forme</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>X<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Elliptique</td>
+    <td>632</td>
+    <td>213</td>
+    <td>195</td>
+    <td>1,52</td>
+  </tr>
+  <tr>
+    <td>Fusée ou <a href="../../../../../../../../../../../tech/aero/appareil">appareil</a></td>
+    <td>72</td>
+    <td>24</td>
+    <td>33</td>
+    <td>3,37</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">Météore</a> ou comète
+    </td>
+    <td>9</td>
+    <td>3</td>
+    <td>4</td>
+    <td rowspan="2">1,32</td>
+  </tr>
+  <tr>
+    <td>Flamme</td>
+    <td>47</td>
+    <td>16</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Goutte d'eau, lenticulaire ou conique</td>
+    <td>79</td>
+    <td>27</td>
+    <td>22</td>
+    <td>0,93</td>
+  </tr>
+  <tr>
+    <td>Autre</td>
+    <td>151</td>
+    <td>51</td>
+    <td>54</td>
+    <td>1,76</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>296</td>
+    <td>100</td>
+    <td>116</td>
+    <td>2,56</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1286</td>
+    <td>434</td>
+    <td>434</td>
+    <td>11,46</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>6</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>11,1</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>15,1</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 11 - Test du Chi<sup>2</sup> des <em>connus </em>révisés versus les <em>inconnus </em>sur la base de la
+    durée d'observation
+  </caption>
+  <tr>
+    <th>Durée d'observation</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>X<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>5 s ou moins</td>
+    <td>92</td>
+    <td>31</td>
+    <td>27</td>
+    <td>0,52</td>
+  </tr>
+  <tr>
+    <td>6-10 s <a href="../../../../../../../../../../../tech/aero/appareil"></a></td>
+    <td>47</td>
+    <td>16</td>
+    <td>21</td>
+    <td>1,56</td>
+  </tr>
+  <tr>
+    <td>11-30 s</td>
+    <td>118</td>
+    <td>40</td>
+    <td>33</td>
+    <td>1,23</td>
+  </tr>
+  <tr>
+    <td>31-60 s</td>
+    <td>92</td>
+    <td>31</td>
+    <td>42</td>
+    <td>3,90</td>
+  </tr>
+  <tr>
+    <td>61 s-5 mn</td>
+    <td>252</td>
+    <td>85</td>
+    <td>99</td>
+    <td>2,31</td>
+  </tr>
+  <tr>
+    <td>6-30 mn</td>
+    <td>259</td>
+    <td>87</td>
+    <td>71</td>
+    <td>2,94</td>
+  </tr>
+  <tr>
+    <td>Plus de 30 mn</td>
+    <td>91</td>
+    <td>31</td>
+    <td>37</td>
+    <td>1,16</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>335</td>
+    <td>113</td>
+    <td>104</td>
+    <td>0,72</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1286</td>
+    <td>434</td>
+    <td>434</td>
+    <td>14,34</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>7</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>14,1</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>18,5</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 12 - Test du Chi<sup>2</sup> des <em>connus </em>révisés versus les <em>inconnus </em>sur la base de la
+    vitesse
+  </caption>
+  <tr>
+    <th>Vitesse</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>X<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Stationnaire</td>
+    <td>196</td>
+    <td>66</td>
+    <td>53</td>
+    <td>2,56</td>
+  </tr>
+  <tr>
+    <td>Moins de 100 miles/h <a href="../../../../../../../../../../../tech/aero/appareil"></a></td>
+    <td>128</td>
+    <td>43</td>
+    <td>26</td>
+    <td>6,72</td>
+  </tr>
+  <tr>
+    <td>100 à 400 miles/h</td>
+    <td>156</td>
+    <td>53</td>
+    <td>58</td>
+    <td>0,47</td>
+  </tr>
+  <tr>
+    <td>Plus de 400 miles/h</td>
+    <td>291</td>
+    <td>98</td>
+    <td>145</td>
+    <td rowspan="2">28,54</td>
+  </tr>
+  <tr>
+    <td>Comme un <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">météore</a>
+    </td>
+    <td>24</td>
+    <td>8</td>
+    <td>16</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>259</td>
+    <td>87</td>
+    <td>71</td>
+    <td>2,94</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1286</td>
+    <td>434</td>
+    <td>434</td>
+    <td>43,71</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>4</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>9,5</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>13,5</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>
+    Tableau 13 - Test du Chi<sup>2</sup> des <em>connus </em>révisés versus les <em>inconnus </em>sur la base de la
+    brillance lumineuse
+  </caption>
+  <tr>
+    <th>Intensité lumineuse</th>
+    <th>Nombre de <em>connus</em></th>
+    <th>Nombre ajusté de <em>connus </em>(K)</th>
+    <th>Nombre d'<em>inconnus </em>(n)</th>
+    <th>X<sup>2</sup>,<br> (K-n)<sup>2<br> </sup>
+      <hr size="1">
+      <sup></sup>K
+    </th>
+  </tr>
+  <tr>
+    <td>Lumière du soleil du mirroir</td>
+    <td>24</td>
+    <td>8</td>
+    <td>14</td>
+    <td rowspan="2">2,67</td>
+  </tr>
+  <tr>
+    <td>Lumière du soleil sur aluminium<a href="../../../../../../../../../../../tech/aero/appareil"></a>
+    </td>
+    <td>136</td>
+    <td>46</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>Lumière du soleil sur pl&acirc;tre, pierre ou sol</td>
+    <td>63</td>
+    <td>21</td>
+    <td>16</td>
+    <td>1,19</td>
+  </tr>
+  <tr>
+    <td>Plus brillant que la <a href="../../../../../../../../../../../lieu/systeme/solaire/planete/terre/lune">Lune</a>
+    </td>
+    <td>143</td>
+    <td>48</td>
+    <td>61</td>
+    <td>3,52</td>
+  </tr>
+  <tr>
+    <td>Comme la <a href="../../../../../../../../../../../lieu/systeme/solaire/planete/terre/lune">Lune</a> ou plus mat
+      que la <a href="../../../../../../../../../../../lieu/systeme/solaire/planete/terre/lune">Lune</a>
+    </td>
+    <td>42</td>
+    <td>15</td>
+    <td>22</td>
+    <td>3,27</td>
+  </tr>
+  <tr>
+    <td>Non précisé</td>
+    <td>878</td>
+    <td>296</td>
+    <td>293</td>
+    <td>0,03</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1286</td>
+    <td>434</td>
+    <td>434</td>
+    <td>10,68</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+  </tr>
+  <th colspan="4">Degrés de liberté</th>
+  <td>4</td>
+  </tr>
+  <tr>
+    <td colspan="4">5 %</td>
+    <td>9,5</td>
+  </tr>
+  <tr>
+    <td colspan="4">1 %</td>
+    <td>13,3</td>
+  </tr>
+</table>
+<p>Un autre aspect intéressant de ces nouveaux tests est qu'il y a seulement 2 grandes anomalies dans l'ensemble des
+  groupes. Elles sont pour les 11 groupes ou plus dans la classification par <em>nombre d'objets par observation</em> et
+  pour le groupe <em>supérieur à 400 miles/h</em> et <em>comme un
+    <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">météore</a></em> pour la classification par vitesse.
+  La 1ère a été relativement unchangée par suppression des observations astronomiques principalement en raison de la
+  concentration des observations dans la catégorie des objets seuls. La 2nde a été légèrement accrue par la suppression
+  des observations astronomiques de la classification <em>comme un
+    <a href="/science/crypto/ufo/enquete/meprise/rentree/meteore">météore</a></em>. Cependant, la principale anomalie,
+  celle de l'excès des <em>inconnus </em>dans la classe <em>supérieur à 400 miles/h</em>, a été peu changée.
+</p>
+<p>Les résultats de ces tests ne sont pas concluants puisqu'ils ne confirment ni ne nient que les <em>inconnus</em> sont
+  principalement des <em>connus </em>non identifiés, bien qu'ils indiquent que relativement peu des <em>inconnus </em>sont
+  en fait des phénomènes astronomiques.
+</p>
+<p>Il a été décidé que ce processus ne serait pas amené jusqu'à sa conclusion logique (c'est-à-dire, la détermination
+  d'une combinaison linéaire de <em>connus</em> qui donnerait un chi<sup>2</sup> négligeable, comparé aux
+  <em>inconnus</em>), puisqu'il a été considéré que les anomalies dans les rapports donneraient un résultats déformé et
+  non significatif.
+</p>
+<nav>
+  <ul>
+    <li><a href="../../..">PBBSR14</a></li>
+    <li><a href="../..">Analyse des données</a></li>
+    <li><a href="..">Etude avancée des données</a></li>
+  </ul>
+</nav>
+<!--#include virtual="/footer.html" -->

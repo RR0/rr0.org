@@ -224,8 +224,10 @@ Redirect /ColoradoProject.html http://rr0.org/org/us/university/colorado/projet/
 Redirect /CNRS.html http://rr0.org/org/eu/fr/CNRS.html
 Redirect /GEPAN.html http://rr0.org/org/eu/fr/cnes/gepan
 Redirect /SEPRA.html http://rr0.org/org/eu/fr/cnes/sepra
+Redirect /IGY.html http://rr0.org/org/int/igy
 Redirect /ONU.html http://rr0.org/org/int/onu
 Redirect /Bilderberg.html http://rr0.org/org/int/asso/Bilderberg
+Redirect /org/int/association http://rr0.org/org/int/asso
 Redirect /org/int/association/Bilderberg.html http://rr0.org/org/int/asso/Bilderberg
 Redirect /Illuminati.html http://rr0.org/org/int/asso/Illuminati.html
 Redirect /BellLabs.html http://rr0.org/org/us/laboratory/BellLabs.html
@@ -312,6 +314,7 @@ Redirect /personne/c/CharrouxRobert.html http://rr0.org/people/c/CharrouxRobert
 Redirect /ClarkeArthurC.html http://rr0.org/people/c/ClarkeArthurC
 Redirect /people/c/ClarkJeromeE http://rr0.org/people/c/ClarkJerome
 Redirect /personne/c/ClarkeArthurC.html http://rr0.org/people/c/ClarkeArthurC
+Redirect /people/c/Clarkson.html http://rr0.org/people/c/Clarkson
 Redirect /personne/c/CorlissWilliamR http://rr0.org/people/c/CorlissWilliamRoger
 Redirect /people/c/CoutenFrancois.html http://rr0.org/people/c/CoutenFrancois
 Redirect /CrowhurstDonaldC.html http://rr0.org/people/c/CrowhurstDonaldC
@@ -324,6 +327,7 @@ Redirect /CooperLeroyGordon.html http://rr0.org/people/c/CooperLeroyGordon
 Redirect /CooperWilliamMilton.html http://rr0.org/people/c/CooperWilliamMilton
 Redirect /CorsoPhilipJames.html http://rr0.org/people/c/CorsoPhilipJames
 Redirect /people/c/CortileLinda.html http://rr0.org/people/n/NapolitanoLinda
+Redirect /people/n/NeashamRobertS.html http://rr0.org/people/n/NeashamRobertS
 Redirect /CunninghamRWalter.html http://rr0.org/people/c/CunninghamRWalter
 Redirect /CrismanFredLee.html http://rr0.org/people/c/CrismanFredLee
 Redirect /DEscathaYannick.html http://rr0.org/people/d/DEscathaYannick
@@ -341,7 +345,6 @@ Redirect /FortCharlesHoy.html http://rr0.org/people/f/FortCharlesHoy
 Redirect /FouereFrancine.html http://rr0.org/people/f/FouereFrancine
 Redirect /FowlerRaymondE.html http://rr0.org/people/f/FowlerRaymondE
 Redirect /FriedmanStanton.html http://rr0.org/people/f/FriedmanStantonT
-Redirect /GuieuJimmy.html http://rr0.org/people/g/GuieuJimmy
 Redirect /people/f/FullerJohnG.html http://rr0.org/people/f/FullerJohnG
 Redirect /pilotes.html http://rr0.org/people/pilotes.html
 Redirect /personne/p/pilotes.html http://rr0.org/people/pilotes.html
@@ -354,11 +357,13 @@ Redirect /GoodTimothy.html http://rr0.org/people/g/GoodTimothy
 Redirect /personne/g/GoodTimothy.html http://rr0.org/people/g/GoodTimothy
 Redirect /pilotes.html#GiraudRene http://rr0.org/people/g/GiraudRene
 Redirect /GoldwaterBarryM.html  http://rr0.org/people/g/GoldwaterBarryM
+Redirect /GuieuJimmy.html http://rr0.org/people/g/GuieuJimmy
 Redirect /GuerinPierre.html http://rr0.org/people/g/GuerinPierre
 Redirect /GresleJeanGabriel.html http://rr0.org/people/g/GresleJeanGabriel
 Redirect /people/g/GreerStevenM.html http://rr0.org/people/g/GreerStevenM
 Redirect /GrossPatrick.html http://rr0.org/people/g/GrossPatrick
 Redirect /GutierezGregory.html http://rr0.org/people/g/GutierezGregory
+Redirect /people/g/Gustoff.html http://rr0.org/people/g/Gustoff
 Redirect /HainesRichardF.html http://rr0.org/people/h/HainesRichardF
 Redirect /HalletMarc.html http://rr0.org/people/h/HalletMarc
 Redirect /HallRichardH.html http://rr0.org/people/h/HallRichardH
@@ -381,6 +386,7 @@ Redirect /personne/k/Kervandal.html http://rr0.org/people/k/KervendalGuillaume
 Redirect /people/k/KillianPeter.html http://rr0.org/people/k/KillianPeter
 Redirect /people/k/KirtonEdwinE.html http://rr0.org/people/k/KirtonEdwinE
 Redirect /people/k/KissingerHenriAlfred http://rr0.org/people/k/KissingerHenri
+Redirect /people/k/KlassPhilipJulian http://rr0.org/people/k/KlassPhilipJ
 Redirect /people/k/KnowlesHerbert.html http://rr0.org/people/k/KnowlesHerbert
 Redirect /people/k/KorffKalK.html http://rr0.org/people/k/KorffKalK
 Redirect /people/k/KorolevSerguei.html http://rr0.org/people/k/KorolevSerguei
@@ -401,6 +407,7 @@ Redirect /LePoerTrenchBrinsley.html http://rr0.org/people/l/LePoerTrenchBrinsley
 Redirect /people/l/LeirRogerK.html http://rr0.org/people/l/LeirRogerK
 Redirect /LeirRogerK.html http://rr0.org/people/l/LeirRogerK
 Redirect /people/l/LeoneMateo.html http://rr0.org/people/l/LeoneMateo
+Redirect /people/l/Levinson.html http://rr0.org/people/l/LevinsonHenry
 Redirect /LhoteHenri.html http://rr0.org/people/l/LhoteHenri.html
 Redirect /LovellJamesA.html http://rr0.org/people/l/LovellJamesA
 Redirect /people/l/LovellJamesA.html http://rr0.org/people/l/LovellJamesA
@@ -470,7 +477,6 @@ Redirect /PinonGilles.html http://rr0.org/people/p/PinonGilles
 Redirect /PopeNick.html http://rr0.org/people/p/PopeNicholas
 Redirect /PoherClaude.html http://rr0.org/people/p/PoherClaude
 Redirect /RameyRogerM.html http://rr0.org/people/r/RameyRogerM
-Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/SantilliRay.html http://rr0.org/people/s/SantilliRay
 Redirect /ReaganRonaldWilson.html http://rr0.org/people/r/ReaganRonaldWilson
 Redirect /ReichWilhelm.html http://rr0.org/people/r/ReichWilhelm
 Redirect /RibesJeanClaude.html http://rr0.org/people/r/RibesJeanClaude
@@ -486,6 +492,8 @@ Redirect /personne/r/RosparsJeanPierre.html http://rr0.org/people/r/RosparsJeanP
 Redirect /RuppeltEdwardJ.html http://rr0.org/people/r/RuppeltEdwardJ
 Redirect /personne/RuppeltEdwardJ http://rr0.org/people/r/RuppeltEdwardJ
 Redirect /RutledgeHarley.html http://rr0.org/people/r/RutledgeHarley
+Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/SantilliRay.html http://rr0.org/people/s/SantilliRay
+Redirect /people/s/SalisburyFrankB.html http://rr0.org/people/s/SalisburyFrankB
 Redirect /SaganCarlEdward.html http://rr0.org/people/s/SaganCarl
 Redirect /people/s/SaganCarlEdward http://rr0.org/people/s/SaganCarl
 Redirect /SchuesslerJohnF.html http://rr0.org/people/s/SchuesslerJohnF
@@ -551,6 +559,7 @@ Redirect /WhiteEdward.html http://rr0.org/people/w/WhiteEdward
 Redirect /WhiteRobertMichael.html http://rr0.org/people/w/WhiteRobertMichael
 Redirect /people/w/WhiteRobertMichael.html http://rr0.org/people/w/WhiteRobertMichael
 Redirect /people/w/WalkerJosephA.html http://rr0.org/people/w/WalkerJosephA
+Redirect /people/w/WilkinsJohn.html http://rr0.org/people/w/WilkinsJohn
 Redirect /WilliamsonGeorgeHunt.html http://rr0.org/people/h/HuntWilliamsonGeorge
 Redirect /personne/w/WilliamsonGeorgeHunt http://rr0.org/people/h/HuntWilliamsonGeorge
 Redirect /WolfMichael.html http://rr0.org/people/w/WolfMichael
@@ -706,6 +715,7 @@ Redirect /BallLighting.html http://rr0.org/science/crypto/ufo/enquete/meprise/fo
 Redirect /PrankBalloons.html http://rr0.org/science/crypto/ufo/enquete/meprise/ballon/PrankBalloons.html
 Redirect /Gendarmerie.html http://rr0.org/org/eu/fr/dn/gendarmerie
 Redirect /Terre.html http://rr0.org/place/systeme/solaire/planete/terre
+Redirect /place/systeme/solaire/soleil /place/systeme/solaire/Soleil
 Redirect /lieu/systeme/solaire/planete/terre/us/Socorro.html http://rr0.org/place/systeme/solaire/planete/terre/us/nm/Socorro.html
 Redirect /Jupiter.html http://rr0.org/place/systeme/solaire/planete/jupiter
 Redirect /lieu/systeme/solaire/planete/terre/lune/Lune.html http://rr0.org/place/systeme/solaire/planete/terre/lune
@@ -780,6 +790,7 @@ Redirect /enquete/appareil http://rr0.org/tech/aero/appareil
 Redirect /appareils.html http://rr0.org/tech/aero/appareil
 Redirect /Abduction.html http://rr0.org/science/crypto/ufo/observation/scenario/Abduction.html
 Redirect /scientifiques.html http://rr0.org/people/scientifiques.html
+Redirect /people/Scientifiques.html http://rr0.org/people/scientifiques.html
 Redirect /analyse/ http://rr0.org/science/crypto/ufo/analyse/
 Redirect /science/crypto/ufo/analyse/FermiParadoxe.html http://rr0.org/science/crypto/ufo/analyse/hypotheses/intelligence/HET/FermiParadoxe.html
 Redirect /science/crypto/ufo/analyse/hypotheses/intelligence/HET/ETPoilus.html http://rr0.org/science/crypto/ufo/analyse/hypotheses/intelligence/HET/pilosite

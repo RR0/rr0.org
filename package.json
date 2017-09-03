@@ -2,71 +2,17 @@
   "name": "RR0",
   "version": "1.0.0",
   "description": "UFO data for french-reading people",
-  "main": "gruntfile.js",
-  "dependencies": {
-    "connect-ssi": "^1.1.0",
-    "express": "^4.12.3",
-    "node-ssi": "^0.3.0"
-  },
-  "devDependencies": {
-    "babel": "^6.3.13",
-    "babel-preset-es2015": "^6.3.13",
-    "bower": "1.3.9",
-    "del": "^2.1.0",
-    "eslint": "^1.10.3",
-    "eslint-config-angular": "^0.4.0",
-    "eslint-plugin-angular": "^0.14.0",
-    "grunt": "0.4.5",
-    "grunt-autoprefixer": "1.0.1",
-    "grunt-cli": "0.1.13",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.11.0",
-    "grunt-contrib-imagemin": "^0.9.4",
-    "grunt-contrib-jasmine": "^0.8.2",
-    "grunt-contrib-jshint": "0.10.0",
-    "grunt-contrib-sass": "0.8.1",
-    "grunt-contrib-uglify": "0.5.1",
-    "grunt-filerev": "^2.1.2",
-    "grunt-karma": "0.9.0",
-    "grunt-ng-annotate": "0.3.2",
-    "grunt-traceur": "0.2.5",
-    "grunt-usemin": "^3.0.0",
-    "gulp": "^3.9.0",
-    "gulp-angular-filesort": "^1.1.1",
-    "gulp-babel": "^6.1.1",
-    "gulp-clean": "^0.3.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-inject": "^3.0.0",
-    "gulp-minify-css": "^1.2.2",
-    "gulp-minify-html": "^1.0.4",
-    "gulp-ng-annotate": "^1.1.0",
-    "gulp-rev": "^6.0.1",
-    "gulp-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.1",
-    "gulp-usemin": "^0.3.16",
-    "gulp-util": "^3.0.7",
-    "karma": "^0.12.23",
-    "karma-chrome-launcher": "^0.1.4",
-    "karma-coverage": "^0.2.7",
-    "karma-firefox-launcher": "^0.1.3",
-    "karma-ie-launcher": "^0.1.5",
-    "karma-jasmine": "^0.2.2",
-    "karma-ng-html2js-preprocessor": "^0.1.2",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "karma-safari-launcher": "^0.1.1",
-    "node-cli": "0.1.0",
-    "traceur": "0.0.60"
-  },
+  "main": "index.js",
   "scripts": {
     "prestart": "npm install",
-    "postinstall": "bower install",
+    "build": "tsc",
     "pretest": "npm install",
-    "test": "grunt"
+    "test": "mocha",
+    "web": "npm build && ./node_modules/.bin/webpack --config ./webpack.config.js && cp ./index.html ./dist"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RR0/RR0"
+    "url": "git+https://github.com/RR0/RR0.git"
   },
   "keywords": [
     "UFO",
@@ -81,5 +27,18 @@
   "license": "GFDL",
   "bugs": {
     "url": "https://github.com/RR0/RR0/issues"
+  },
+  "homepage": "https://rr0.org",
+  "dependencies": {
+    "angular": "^1.6.4"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.14",
+    "mocha": "^3.2.0",
+    "ng-annotate-loader": "^0.2.0",
+    "tslint": "^5.0.0",
+    "typescript": "^2.2.2",
+    "typings": "^2.1.0",
+    "webpack": "^2.3.3"
   }
 }

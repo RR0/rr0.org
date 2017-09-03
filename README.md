@@ -6,6 +6,8 @@ It is instantiated as the https://rr0.org website, which hosts various data abou
 
 It relies on the [AngularJS](https://angularjs.org/) framework.
 
+Note: It is [being refactored](RR0%20Refactoring.md).
+
 General principles
 ------------------
  * **Data-centric** : The pages are the data. They contain semantic only, not how to display them.

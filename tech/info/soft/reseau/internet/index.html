@@ -1,0 +1,112 @@
+<!--#include virtual="/header-start.html" -->
+<title>Internet</title>
+<!--#include virtual="/header-end.html" -->
+<p><a href="../index.html">Réseau</a> (<em>net</em>) interconnecté.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Interconnecter des <a href="../index.html">réseaux</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>L'internet est notamment constitué de :</p>
+  <ul>
+    <li>clients</li>
+    <li>serveurs (<em>origin servers</em>)</li>
+    <li>passerelles (<em>gateways</em>)</li>
+    <li>proxies</li>
+  </ul>
+  <p>reliés par <a href="../index.html">réseau</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Techniques</h3>
+    <p>Le protocole de l'Internet est IP (<a href="IP.html">Internet Protocol</a>).</p>
+    <p> Divers protocoles ou applications se basent sur IP :</p>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>Application</th>
+        <td><a href="../../proj/design/arch/web/HTTP.html">HTTP</a></td>
+        <td>FTP</td>
+        <td><a href="../DNS.html">DNS</a></td>
+        <td>Traceroute</td>
+        <td>Ping</td>
+      </tr>
+      <tr>
+        <th>Transport</th>
+        <td colspan="2">
+          <div align="center"><a href="../protocole/TCP.html">TCP</a></div>
+        </td>
+        <td><a href="../UDP.html">UDP</a></td>
+        <td colspan="2">
+          <center><a href="ICMP.html">ICMP</a></center>
+        </td>
+      </tr>
+      <tr>
+        <th>Réseau</th>
+        <td colspan="5">
+          <div align="center"><a href="IP.html">IP</a></div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section>
+    <h3>Institutionnels</h3>
+    <ul>
+      <li>Le <a href="http://www.ietf.org">W3C</a> définit les standard du
+        <a href="../../proj/design/arch/web/index.html">Web</a>
+      </li>
+      <li>l'ISOC (anciennement IAB)
+        <ul>
+          <li>produit les <a href="http://www.ietf.org/rfc.html">RFC</a> issues des
+            <ul>
+              <li>brouillons (<em>drafts</em>) de l'<a href="http://www.ietf.org">IETF</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+</section>
+<h2>Notes</h2>
+<ul>
+  <li>Initié en <a href="../../../1972.html">1972</a> avec le Défi Internet (<em>Internet challenge</em>) par
+    l'<a href="/org/us/dod/arpa">ARPA</a> qui identifie le besoin d'interconnexions de réseaux tandis que le nombre de
+    technologies différentes croit. L'<a href="/org/us/dod/arpa">ARPA</a> finance les études, et entre
+    <a href="../../../1977.html">1977</a> et <a href="../../../1979.html">1979</a> les protocoles
+    <a href="../protocole/TCP.html">TCP</a>/<a href="IP.html">IP</a> prennent leur forme définitive. De
+    <a href="../../../1980.html">1980</a> à <a href="../../../1983.html">1983</a> tous les réseaux raccordés à <a href="/org/us/dod/arpa/projet/net">ARPANet</a>.
+    sont convertis à <a href="../protocole/TCP.html">TCP</a>/<a href="IP.html">IP</a>. En <a href="../../../1984.html">1984</a>
+    l'<a href="/org/us/dod/arpa">ARPA</a> stoppe son financement et en <a href="../../../1986.html">1986</a> l'ARPANet
+    est séparé en Milnet et NSFNet. En <a href="../../../1989.html">1989</a> l'<a href="/org/us/dod/arpa/projet/net">ARPANet</a> est arrêté. En
+    <a href="../../../1994.html">1994</a> le réseau n'est plus opéré par la NSF, et en
+    <a href="../../../1995.html">1995</a> NSF Net est arrêté.
+  </li>
+  <li>L'application la plus connue de l'internet est le <a href="/tech/info/soft/proj/design/arch/web">Web</a>.</li>
+  <li><a href="../../proj/design/arch/web/MIME.html">MIME</a> standardise les types de données échangées sur Internet.
+  </li>
+  <li>Les bonnes pratiques de comportement sur Internet sont décrites dans <a href="RFC-1855 _Netiquette.html">La
+    Netiquette</a> (RFC 1855).
+  </li>
+  <li>En <a href="../../../1992.html">1992</a> est créé l'ISOC, le gouvernement de l'Internet.</li>
+  <li>Parallèlement, le DARPA finance l'Université de Berkeley et
+    <a href="../protocole/TCP.html">TCP</a>/<a href="IP.html">IP</a> est intégré dans Unix, ce qui lui vaut une très
+    large expansion.
+  </li>
+  <li>La taille de l'Internet (nombres de postes et population des utilisateurs) double chaque année.</li>
+  <li>Les standard de l'Internet sont définis par les <a href="../../../RFC.html">RFC</a>.</li>
+  <li>Aujourd'hui on peut se connecter à Internet via :
+    <ul>
+      <li>des liaisons spécialisées (ligne louée auprès de FT, 1200 bps à 34 Mbps, tarif forfaitaire fonction de la
+        distance)
+      </li>
+      <li>Numéris ou Transpac (connexion <a href="../protocole/RNIS.html">RNIS</a> ou X25, 64 Kb/s)</li>
+      <li>le réseau téléphonique (modem ADSL ou non)</li>
+      <li>le c&acirc;ble</li>
+      <li>les connexions non <a href="IP.html">IP</a></li>
+    </ul>
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->

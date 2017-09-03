@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>RR0</name>
+  <description><![CDATA[Localisation des sites Echo et Oscar près de la base de Malmstrom]]></description>
+<Style id="blue">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="red">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Malmstrom AFB</name>
+    <description><![CDATA[<div dir="ltr">Base de l'USAF qui aurait été survolée par un ovni le 24 mars 1967. </div>]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-111.188332,47.505257,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alpha Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-110.727081,47.263390,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Charlie Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-110.170898,47.055153,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beta Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-110.409851,47.303448,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Delta Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.948425,47.310898,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mike Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.539185,46.954014,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de Contrôle Echo Flight</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"New Zealand Nuclear Free" d</span>ont&nbsp;<a href="https://rr0.org/science/crypto/ufo/enquete/dossier/EchoFlight">des missiles furent inopérants le 16 mars 1967</a>&nbsp;à 08:45, alors qu'il était occupé par Eric Carlson et Walter Figel Jr.]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.417564,47.453659,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de Contrôle Oscar Flight</name>
+    <description><![CDATA[dont des missiles auraient été inaptes au lancement alors que la base était survolée par un ovni, alors qu'il était occupé par Robert Salas]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-108.927116,47.328629,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>November Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.043427,47.031757,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-11</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Pluto's Bayonet"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.439522,47.582829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-2</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Missouri River Breaks"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.342117,47.645210,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-4</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Cut Bank Creek"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.246521,47.585197,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-3</name>
+    <description><![CDATA["Melting Cities"]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.345894,47.526592,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-10</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Salt Creek Pines"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.515816,47.491543,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-5</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Rolling Hills"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.231613,47.497486,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-8</name>
+    <description><![CDATA[<div dir="ltr">&quot;Unforgivable&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.289055,47.265633,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-7</name>
+    <description><![CDATA["Moulton"]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.361214,47.334751,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-9</name>
+    <description><![CDATA[<div dir="ltr">&quot;Box Elder Creek&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.490219,47.385277,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-8</name>
+    <description><![CDATA[<div dir="ltr">&quot;North Moccasin Mountains&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.547745,47.305607,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-9</name>
+    <description><![CDATA[<div dir="ltr">&quot;Minuteman&#39;s Slaughterhouse&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.174461,47.306835,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-10</name>
+    <description><![CDATA[<div dir="ltr">&quot;Guilded Gas Oven&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.053619,47.338123,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-11</name>
+    <description><![CDATA[<div dir="ltr">&quot;Armells Creek&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.138161,47.402431,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-2</name>
+    <description><![CDATA[<div dir="ltr">&quot;Stomping Nightmare&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.911346,47.420460,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-3</name>
+    <description><![CDATA[<div dir="ltr">&quot;Sacogawea&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.763046,47.426563,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-7</name>
+    <description><![CDATA[<div dir="ltr">&quot;Moral Novocaine&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.983986,47.253078,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-5</name>
+    <description><![CDATA[<div dir="ltr">&quot;Burton K. Wheeler&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.833572,47.261524,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-4</name>
+    <description><![CDATA[<div dir="ltr">&quot;Terrorism&#39;s Icon&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.789192,47.344292,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-6</name>
+    <description><![CDATA[<div dir="ltr">&quot;Indefensible&quot;</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.311333,47.415485,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

@@ -1,0 +1,328 @@
+<!--#include virtual="/header-start.html" -->
+<title>Applet</title>
+<!--#include virtual="/header-end.html" -->
+<p>Appliquette : petite application.</p>
+<h2>Besoin</h2>
+<p>Exécuter du code <a href="/tech/info/soft/prog/oo/java/index.html">Java</a> dans une page
+  <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a>.
+</p>
+<h2>Conception</h2>
+<p>Une applet est insérée dans une page <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a> comme un
+  plugin.
+</p>
+<h2>Implémentation</h2>
+<p>Aujourd'hui la balise <code>&lt;applet&gt;</code> est obsolète. Elle doit
+  &ecirc;tre remplacée par une balise de type <code>&lt;object&gt;</code>.
+</p>
+<h2>Exemples</h2>
+<p>Un exemple de code <a href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a> intégrant une applet est :</p>
+<blockquote>
+  <p><code>&lt;<strong>object codetype</strong>=<span class="codeString">"<strong>application/java</strong>"</span>
+    <strong>classid</strong>=<span class="codeString">"<strong>java</strong>:Bubbles.class"</span>
+    <strong>width</strong>=<span class="codeString">"270"</span>
+    <strong>height</strong>=<span class="codeString">"200"</span>&gt;<br> Exemple d'applet.<br>
+    &lt;/<strong>object</strong></code>&gt;
+  </p>
+</blockquote>
+<p>Un autre exemple de code <a href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a> intégrant une applet est :
+</p>
+<blockquote>
+  <p><code>&lt;<strong>object codetype</strong>=<span class="codeString">"<strong>application/java</strong>"</span>
+    <strong>classid</strong>=<span class="codeString">"Bubbles"</span> <strong>width</strong>=<span class="codeString">"270"</span>
+    <strong>height</strong>=<span class="codeString">"200"</span>&gt;<br>
+    &lt;<strong>param name</strong>=<span class="codeString">"snd"</span>
+    <strong>value</strong>=<span class="codeString">"Hello.au|Welcome.au"</span>&gt;<br> Exemple d'applet.<br>
+    &lt;/<strong>object</strong></code>&gt;
+  </p>
+</blockquote>
+<p>Un exemple obsolète de code <a href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a> intégrant une applet
+  est :
+</p>
+<blockquote>
+  <p><code>&lt;<strong>applet code</strong>=<span class="codeString">"net.javarome.presentation.SlideShowApplet"</span>
+    <strong>width</strong>=<span class="codeString">"270"</span>
+    <strong>height</strong>=<span class="codeString">"200"</span>
+    <strong>hspace</strong>=<span class="codeString">"20"</span>
+    <strong>vspace</strong>=<span class="codeString">"20"</span>
+    <strong>align</strong>=<span class="codeString">"right"</span>&gt;<br> Exemple d'applet.<br>
+    &lt;/<strong>applet</strong>&gt;</code></p>
+</blockquote>
+<h2>Notes</h2>
+<ul>
+  <li>Les applets sont aujourd'hui exécutées via le <a href="/tech/info/soft/prog/oo/java/JPI.html">JPI</a></li>
+  <li>
+    <table border=1 cellspacing=0 cellpadding=5>
+      <tr>
+        <td rowspan=3>Applet</td>
+        <th valign=top> Version</th>
+        <th colspan="7">Toutes</th>
+        <th rowspan=4> Commentaire</th>
+      </tr>
+      <tr>
+        <th valign=top> Implémentation</th>
+        <th><a href="/tech/info/soft/prog/oo/java/JPI.html">JPI</a></th>
+        <th colspan="2"><a href="/tech/info/soft/prog/oo/java/NetscapeNavigator.html">Netscape Navigator</a> 4.x</th>
+        <th colspan="2"><a href="/tech/info/soft/prog/oo/java/MSIE.html">MSIE</a></th>
+        <th colspan="2">AppletViewer 1.x</th>
+      </tr>
+      <tr>
+        <th valign=top> Source applet</th>
+        <th></th>
+        <th>Réseau</th>
+        <th>Système de fichiers</th>
+        <th>Réseau</th>
+        <th>Système de fichiers</th>
+        <th>Réseau</th>
+        <th>Système de fichiers</th>
+      </tr>
+      <tr>
+        <th> Technologie</th>
+        <th valign=top> Service Pack</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th rowspan="15" valign=top>Lecture propriété système Java</th>
+        <th valign=top>Numéro de version de la plate-forme Java</th>
+        <td colspan="3" class="oui">java.version</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Cha&icirc;ne spécifique au fournisseur de la plate-forme Java</th>
+        <td colspan="3" class="oui">java.vendor</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top><a href="/tech/info/soft/reseau/internet/URL.html">URL</a> spécifique au fournisseur de la
+          plate-forme Java
+        </th>
+        <td colspan="3" class="oui">java.vendor.url</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Version du format de classes supporté par la plate-forme Java</th>
+        <td colspan="3" class="oui">java.class.version</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Nom de l'OS</th>
+        <td colspan="3" class="oui">os.name</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Type d'architecture de l'OS</th>
+        <td colspan="3" class="oui">os.arch</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Version de l'OS</th>
+        <td colspan="3" class="oui">os.version</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Séparateur de fichiers</th>
+        <td colspan="3" class="oui">file.separator</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>'/' par exemple</td>
+      </tr>
+      <tr>
+        <th valign=top>Séparateur de chemins</th>
+        <td colspan="3" class="oui">path.separator</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>';' par exemple</td>
+      </tr>
+      <tr>
+        <th valign=top>Séparateur de lignes</th>
+        <td colspan="3" class="oui">line.separator</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td> Retour chariot</td>
+      </tr>
+      <tr>
+        <th valign=top>Localisation de la plate-forme Java</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>java.home</td>
+      </tr>
+      <tr>
+        <th valign=top>Chemin des classes de la plate-forme Java</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>java.class.path</td>
+      </tr>
+      <tr>
+        <th valign=top>Nom de l'utilisateur.</th>
+        <td colspan="2" class="non">user.name</td>
+        <td class="oui">user.name</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Répertoire racine de l'utilisateur.</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>user.home</td>
+      </tr>
+      <tr>
+        <th valign=top>Répertoire courant de l'utilisateur</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>user.dir</td>
+      </tr>
+      <tr>
+        <th colspan="2" valign=top>Ecriture propriété système Java</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2" valign=top>Connexions réseau</th>
+        <th valign=top>Serveur ayant fournit les classes de l'applet</th>
+        <td colspan="3" class="oui">Oui</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Autre serveur</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="4" valign=top>Fichiers locaux</th>
+        <th valign=top>Lecture</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Chargement librairie</th>
+        <td colspan="2" class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>DLL, .SO, etc.</td>
+      </tr>
+      <tr>
+        <th valign=top>Ecriture</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Exécution</th>
+        <td colspan="3" class="non">Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign=top>Fen&ecirc;tre</th>
+        <th valign=top>Popup sans avertissement</th>
+        <td colspan="2" class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+<h2>Limitations</h2>
+<ul>
+  <li>Déploiement sujet aux variations d'implémentation de <a href="/tech/info/soft/prog/oo/java/J2SE.html">J2SE</a>
+    dans les différents <a href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateurs</a>.
+    <ul>
+      <li><a href="/tech/info/soft/prog/oo/java/MSIE.html">MSIE</a> n'est livré qu'avec
+        <a href="/tech/info/soft/prog/oo/java/J2SE.html">J2SE</a> 1.1 par défaut
+      </li>
+      <li>Nécessité d'utiliser le <a href="/tech/info/soft/prog/oo/java/JPI.html">JPI</a></li>
+    </ul>
+  </li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="http://www.w3.org/TR/REC-html40/struct/objects.html#edef-OBJECT">La balise <code>object</code></a> par le
+    <a href="/tech/info/soft/proj/design/arch/web/W3C.html">W3C</a></li>
+  <li><a href="http://www.w3.org/TR/REC-html40/struct/objects.html#edef-APPLET">La balise <code>applet</code></a> par le
+    <a href="/tech/info/soft/proj/design/arch/web/W3C.html">W3C</a></li>
+  <li>JavaSoft - <a href="http://java.sun.com/sfaq/"><em>FAQ - Applet Security</em></a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

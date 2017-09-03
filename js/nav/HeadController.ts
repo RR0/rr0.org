@@ -6,23 +6,23 @@ angular.module('rr0.nav')
               commonsService, langService, peopleService, timeService, navigationService, constantClass) {
       'use strict';
 
-      var scrolled = document.querySelector(".contents");
-      var header = document.querySelector('header');
-      var nav = angular.element('nav');
-      var text = scrolled.querySelector('.text');
-      var titleSection = {
+      const scrolled: HTMLElement = <HTMLElement>document.querySelector(".contents");
+      const header: HTMLElement = <HTMLElement>document.querySelector('header');
+      const nav = angular.element('nav');
+      const text: HTMLElement = <HTMLElement>scrolled.querySelector('.text');
+      const titleSection = {
         label: $scope.title,
         outlineLabel: $scope.title,
         id: "top",
         level: 0,
         elem: angular.element('#top')
       };
-      var currentSection;
+      let currentSection;
 
-      var outline = document.querySelector('.outline');
+      const outline: HTMLElement = <HTMLElement>document.querySelector('.outline');
 
       function isNavLeft() {
-        return nav[0].offsetHeight === scrolled.offsetHeight;
+        return nav[0].offsetHeight === (<HTMLElement>scrolled).offsetHeight;
       }
 
       function getNavHeight() {
@@ -34,11 +34,11 @@ angular.module('rr0.nav')
       };
 
       function titleFromTime() {
-        var title = timeService.getYear();
+        let title = timeService.getYear();
         if (title) {
           if (timeService.getTime().month) {
             title = timeService.monthName() + " " + title;
-            var dayOfMonth = timeService.getDayOfMonth();
+            const dayOfMonth = timeService.getDayOfMonth();
             if (dayOfMonth) {
               title = timeService.dayOfWeekName(timeService.getDayOfWeek()) + " " + dayOfMonth + " " + title;
             }
@@ -48,7 +48,7 @@ angular.module('rr0.nav')
       }
 
       function createNavElement(c) {
-        var li = document.getElementsByClassName(c)[0];
+        let li = document.getElementsByClassName(c)[0];
         if (!li) {
           li = document.createElement("li");
           c = !(!c) ? constantClass + " " + c : constantClass;
@@ -59,8 +59,8 @@ angular.module('rr0.nav')
       }
 
       function titleFromPeople() {
-        var title;
-        var p = peopleService.getPeople();
+        let title;
+        const p = peopleService.getPeople();
         if (p) {
           title = p.toString();
         }
@@ -68,14 +68,14 @@ angular.module('rr0.nav')
       }
 
       function titleFromURI() {
-        var title;
-        var uri = commonsService.getUri();
-        var ls = uri.lastIndexOf("/");
-        var htmlExt = uri.lastIndexOf(".html");
+        let title;
+        const uri = commonsService.getUri();
+        const ls = uri.lastIndexOf("/");
+        const htmlExt = uri.lastIndexOf(".html");
         if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) !== "index") {
           title = uri.substring(ls + 1, htmlExt);
         } else if (ls < uri.length - 1) {
-          var ps = ls - 1;
+          let ps = ls - 1;
           while (uri.charAt(ps) !== '/') {
             ps--;
           }
@@ -129,10 +129,10 @@ angular.module('rr0.nav')
         $scope.outline = outlineHTML;
       }
 
-      var searchResults;
+      let searchResults;
 
       function updateSearchPos(triggerSelector) {
-        var trigger = document.querySelector(triggerSelector);
+        const trigger = document.querySelector(triggerSelector);
         if (trigger) {
           if (!searchResults) {
             searchResults = document.querySelector('.search-result');
@@ -146,9 +146,9 @@ angular.module('rr0.nav')
 
       function updateOutlinePos(triggerSelector) {
         if (isNavLeft()) {
-          outline.style.top = 0;
+          (<HTMLElement>outline).style.top = '0';
         } else {
-          var trigger = document.querySelector(triggerSelector);
+          const trigger = document.querySelector(triggerSelector);
           if (trigger && outline) {
             outline.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
           }
@@ -161,7 +161,7 @@ angular.module('rr0.nav')
       }
 
       function updateHeading() {
-        var isNavCollapsed = nav.hasClass('collapsed');
+        const isNavCollapsed = nav.hasClass('collapsed');
         if (isHeaderVisible()) {
           if (isNavCollapsed || !$scope.outline) {
             nav.removeClass('collapsed');
@@ -198,7 +198,7 @@ angular.module('rr0.nav')
       }
 
       function select(toSelect) {
-        var toSelectElem;
+        let toSelectElem;
         if (toSelect) {
           toSelectElem = angular.element("#out-" + toSelect.id);
           /*if (currentSection && toSelectElem[0] === currentSection[0]) {
@@ -215,12 +215,12 @@ angular.module('rr0.nav')
       }
 
       function updateOutline() {
-        var lastSec = titleSection;
-        var newSec;
+        let lastSec = titleSection;
+        let newSec;
         if ($scope.sections.length) {
-          for (var i = 0; i < $scope.sections.length; i++) {
+          for (let i = 0; i < $scope.sections.length; i++) {
             newSec = $scope.sections[i];
-            var found;
+            let found;
             found = scrolled.scrollTop > newSec.elem[0].offsetTop;
             if (lastSec) {
               if (!found) {
@@ -245,8 +245,8 @@ angular.module('rr0.nav')
 
       if (window.addEventListener) {      // most non-IE browsers and IE9
         window.addEventListener("resize", onResize, false);
-      } else if (window.attachEvent) {    // Internet Explorer 5 or above
-        window.attachEvent("onresize", onResize);
+      } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
+        (<any>window).attachEvent("onresize", onResize);
       }
 
       function isOutlineVisible() {
@@ -264,7 +264,7 @@ angular.module('rr0.nav')
       $scope.init = function (s, sLink, c, cLink, p, pLink, n, nLink) {
 
         function navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
-          var onLoadDo = navigationService.setStart(s, sLink);
+          const onLoadDo = navigationService.setStart(s, sLink);
           if (window === top) {
             navigationService.addRel(sLink, "Start");
           }
@@ -276,7 +276,7 @@ angular.module('rr0.nav')
 
         navInit(s, sLink, c, cLink, p, pLink, n, nLink);
 
-        var startNav = navigationService.getStartNav();
+        const startNav = navigationService.getStartNav();
         if (window === top) {
           addPrev(startNav, startNav.title, "start");
           addPrev({
@@ -295,7 +295,7 @@ angular.module('rr0.nav')
         }
 
         $scope.alternate = null;
-        var alternateClass = "alternate";
+        const alternateClass = "alternate";
 
         function setAlternates(innerHtml) {
           $scope.alternate = innerHtml;
@@ -325,16 +325,16 @@ angular.module('rr0.nav')
       $scope.sections = [];
 
       function smoothScroll(anchor, duration) {
-        var easingPattern = function (percent) {
+        const easingPattern = function (percent) {
           return percent < 0.5 ? 4 * percent * percent * percent : (percent - 1) * (2 * percent - 2) * (2 * percent - 2) + 1; // acceleration until halfway, then deceleration
         };
         // Get the height of a fixed header if one exists
-        var headerHeight = $scope.getHeadingHeight();
+        const headerHeight = $scope.getHeadingHeight();
 
         // Calculate how far to scroll
-        var startLocation = scrolled.scrollTop;
-        var getEndLocation = function (anchor) {
-          var location = 0;
+        const startLocation = scrolled.scrollTop;
+        const getEndLocation = function (anchor) {
+          let location = 0;
           if (anchor.offsetParent) {
             do {
               location += anchor.offsetTop;
@@ -344,21 +344,21 @@ angular.module('rr0.nav')
           location = location - headerHeight;
           return location >= 0 ? location : 0;
         };
-        var endLocation = getEndLocation(anchor);
-        var distance = endLocation - startLocation;
+        const endLocation = getEndLocation(anchor);
+        const distance = endLocation - startLocation;
 
-        var runAnimation;
+        let runAnimation;
         // Function to stop the scrolling animation
-        var stopAnimationIfRequired = function () {
+        const stopAnimationIfRequired = function () {
           if (scrolled.scrollTop === endLocation) {
             cancelAnimationFrame(runAnimation);
           }
         };
         // Set the animation variables to 0/undefined.
-        var timeLapsed = 0;
-        var percentage, position;
+        let timeLapsed = 0;
+        let percentage, position;
 
-        var animateScroll = function () {
+        const animateScroll = function () {
           runAnimation = requestAnimationFrame(animateScroll);
           timeLapsed += 16;
           percentage = timeLapsed / duration;
@@ -372,7 +372,7 @@ angular.module('rr0.nav')
       }
 
       function scrollTo(id) {
-        var anchor = document.getElementById(id);   // anchor.scrollIntoView(true, 'smooth');
+        const anchor = document.getElementById(id);   // anchor.scrollIntoView(true, 'smooth');
         //hideOutline();
         smoothScroll(anchor, 500);
       }

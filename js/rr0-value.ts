@@ -120,8 +120,8 @@ angular.module('rr0.commons')
       restrict: 'A',
       scope: true,
       require: '^itemscope',
-      link: function (scope, elem, attrs, itemscopeCtrl) {
-        var item = itemscopeCtrl.item;
+      link: function (scope, elem, attrs, itemscopeCtrl: any) {
+        const item = itemscopeCtrl.item;
         item.setProperty(elem);
       }
     };

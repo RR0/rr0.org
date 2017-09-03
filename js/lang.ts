@@ -28,9 +28,9 @@ angular.module('rr0.lang', ['rr0.net'])
          * and an original french will be index.html (with html lang="fr") and there will be no translation (or its translation will be index_en.html),
          * If the suffix is not explicit, we need to check.
          *
-         * uri:http://rr0.org/data/a/a/a/a/m/Something/index_fr.html --> original is http://rr0.org/data/a/a/a/a/m/Something/index.html
-         * uri:http://rr0.org/data/a/a/a/a/m/Something/index.fr --> original is the same
-         * uri:http://rr0.org/data/a/a/a/a/m/Something/ --> if http://rr0.org/data/a/a/a/a/m/Something/index_fr.html exists, original is http://rr0.org/data/a/a/a/a/m/Something/index.html
+         * uri:https://rr0.org/data/a/a/a/a/m/Something/index_fr.html --> original is https://rr0.org/data/a/a/a/a/m/Something/index.html
+         * uri:https://rr0.org/data/a/a/a/a/m/Something/index.fr --> original is the same
+         * uri:https://rr0.org/data/a/a/a/a/m/Something/ --> if https://rr0.org/data/a/a/a/a/m/Something/index_fr.html exists, original is https://rr0.org/data/a/a/a/a/m/Something/index.html
          *
          * @param uri
          */

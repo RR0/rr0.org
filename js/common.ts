@@ -1,4 +1,4 @@
-function OrgModule() {
+function OrgModule(): void {
   'use strict';
   this.debug = window.location.href.indexOf("?debug") >= 0;
 
@@ -16,10 +16,14 @@ function OrgModule() {
 // Copyright: Eike Send http://eike.se/nd
 // License: MIT License
   if (!document.getElementsByClassName) {
-    document.getElementsByClassName = function (search) {
-      var d = document, elements, pattern, i, results = [];
+    (<any>document).getElementsByClassName = function (search: string): any[] {
+      const d = document;
+      let elements;
+      let pattern;
+      let i;
+      const results = [];
       if (d.querySelectorAll) { // IE8
-        return d.querySelectorAll("." + search);
+        return <any>d.querySelectorAll("." + search);
       }
       if (d.evaluate) { // IE6, IE7
         pattern = ".//*[contains(concat(' ', @class, ' '), ' " + search + " ')]";
@@ -41,12 +45,12 @@ function OrgModule() {
   }
 
   function User() {
-    this.language = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage;
+    this.language = navigator.language || (<any>navigator).userLanguage || (<any>navigator).browserLanguage || (<any>navigator).systemLanguage;
   }
 
   var user = new User();
 
-  function Rr0Module() {
+  function Rr0Module(): void {
     function Context() {
       this.language = user.language.substring(0, 2);
       this.time = null;
@@ -289,7 +293,7 @@ function OrgModule() {
   };
 
   this.validLink = function (l) {
-    window.org.log('validLink(' + l + ')');
+    org.log('validLink(' + l + ')');
     l = l.replace(/\n/g, ' ')
       .replace(/(\u00E0|\u00E1|\u00E2|\u00E4)/g, 'a')
       .replace(/\u00E7/g, 'c')
@@ -376,7 +380,7 @@ function OrgModule() {
 //var cache = pageCache;
   this.toLink = function (l, k) {
     l = org.addEndingSlash(l);
-    window.org.log("caching " + k + " as " + l);
+    org.log("caching " + k + " as " + l);
     org.cache[k] = l;
   };
 
@@ -445,7 +449,9 @@ function OrgModule() {
 
   return this;
 }
-var org = new OrgModule();
+const org = new OrgModule();
+
+declare var prettyPrintOne: any;
 
 /**
  * requestAnimationFrame() shim by Paul Irish.

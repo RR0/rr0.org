@@ -51,7 +51,6 @@ to generate into the `destination` configuration directory a `build/time/index.j
     <p>...some text </p>
 ```
 
-<a name=build></a>
 ## Build 
 
 Build is the process of:
@@ -62,6 +61,8 @@ Build is the process of:
 It can be run through:
 
     npm build
+    
+which produces an output into the `dist` directory.
 
 ## Deployment
 

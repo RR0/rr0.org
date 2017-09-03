@@ -4,6 +4,14 @@ function NavLink(l, url, t) {
   this.title = t;
 }
 
+interface Start {
+  dir: string;
+  label: string;
+  title?: string;
+  css?: string;
+  js?: string;
+  onLoad?: string;
+}
 angular.module('rr0.nav')
   .service('navigationService', [
     '$rootScope', '$q',
@@ -11,14 +19,14 @@ angular.module('rr0.nav')
     function ($rootScope, $q, commonsService, netService, timeService, $log) {
       'use strict';
 
-      var startNav;
-      var contents, contentsURL;
-      var prev, prevLink;
-      var next, nextLink;
+      let startNav;
+      let contents, contentsURL;
+      let prev, prevLink;
+      let next, nextLink;
 
-      var navList;
+      let navList;
 
-      var starts =
+      const starts: Start[] =
         [
           {
             dir: "/tech/info/",
@@ -90,21 +98,21 @@ angular.module('rr0.nav')
         currentLevel: 1,
         getNavList: function () {
           if (!navList) {
-            var n = document.getElementsByTagName("nav")[0];
+            const n = document.getElementsByTagName("nav")[0];
             navList = n.querySelector('ul');
           }
           return navList;
         },
         addRel: function (l, t) {
-          var rel = document.createElement("link");
+          const rel = document.createElement("link");
           rel.setAttribute("rel", t);
           rel.setAttribute("href", l);
           org.addToHead(rel);
         },
         nextFromTime: function (n) {
-          var t = timeService.getTime();
-          var self = this;
-          var lookAfter = function (y, m) {
+          const t = timeService.getTime();
+          const self = this;
+          const lookAfter = function (y, m) {
             if (m) {
               if (m < 12) {
                 m++;                    // Before December?
@@ -121,9 +129,9 @@ angular.module('rr0.nav')
           });
         },
         previousFromTime: function () {
-          var t = timeService.getTime();
-          var self = this;
-          var lookBefore = function (y, m) {
+          const t = timeService.getTime();
+          const self = this;
+          const lookBefore = function (y, m) {
             if (m) {
               if (m > 1) {            // Month above february?
                 m--;
@@ -156,7 +164,7 @@ angular.module('rr0.nav')
           }
         },
         getNext: function () {
-          var nn;
+          let nn;
           if (!nextLink && !next) {
             if (timeService.getYear()) {
               nn = this.nextFromTime(next);
@@ -182,8 +190,8 @@ angular.module('rr0.nav')
          * @returns {Promise}
          */
         getPrev: function () {
-          var pp;
-          var previousSpecified = prevLink || prev;
+          let pp;
+          let previousSpecified = prevLink || prev;
           if (!previousSpecified) {
             if (timeService.getYear()) {          // If no previous link has been specified, try to devise previous from context time.
               pp = this.previousFromTime();
@@ -230,12 +238,12 @@ angular.module('rr0.nav')
          */
         findTimeSibling: function (oy, m, changeProc, foundProc) {
           $log.debug('Looking for time sibling of %o-%o', oy, m);
-          var ret = changeProc(oy, m);
-          var y = ret.y;
-          var l = timeService.yearLink(y);
+          const ret = changeProc(oy, m);
+          const y = ret.y;
+          let l = timeService.yearLink(y);
           m = ret.m;
-          var label = y;
-          var self = this;
+          let label = y;
+          const self = this;
           if (m) {
             self.setContents(oy, timeService.yearLink(oy));
             l += "/" + commonsService.zero(m);
@@ -244,18 +252,18 @@ angular.module('rr0.nav')
               label += ' ' + y;
             }
           } else {
-            var cLink = timeService.yearLink(oy, true);
+            const cLink = timeService.yearLink(oy, true);
             if (cLink !== commonsService.getUri()) {
               this.setContents(~~(oy / 10) + "0s", cLink);
             }
           }
           netService.onExists(l)
             .success(function (req) {
-              var foundSibling = {label: label, link: l};
+              const foundSibling = {label: label, link: l};
               $log.debug('Found sibling %o', foundSibling);
               foundProc(foundSibling);
             }).error(function (failReq) {
-              var currentDate = new Date();
+              const currentDate = new Date();
               if (y < currentDate.getFullYear()) {
                 self.findTimeSibling(y, m, changeProc, foundProc);
               }
@@ -263,14 +271,14 @@ angular.module('rr0.nav')
         },
         setStart: function (s, sLink) {
           if (!startNav) {
-            var ret = null;
-            var t;
+            let ret = null;
+            let t;
             if (window === top) {
               if (!s) {                       // Look for start induced by URI
-                var uri = commonsService.getUri();
-                for (var i = 0; i < starts.length; i++) {
-                  var st = starts[i];
-                  var dataPos = uri.indexOf(st.dir);
+                const uri = commonsService.getUri();
+                for (let i = 0; i < starts.length; i++) {
+                  const st: Start = starts[i];
+                  const dataPos = uri.indexOf(st.dir);
                   if (dataPos >= 0 && uri !== st.dir) {
                     s = st.label;
                     t = st.title;

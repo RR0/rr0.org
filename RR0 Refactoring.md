@@ -60,7 +60,7 @@ Build is the process of:
 
 It can be run through:
 
-    npm build
+    npm run build
     
 which produces an output into the `dist` directory.
 
@@ -75,4 +75,4 @@ It calls for a [build](#build) as a prerequiste.
 
 It is performed through Webpack (see `webpack.cofig.js`), which is launched through:
 
-    npm web
+    npm run web

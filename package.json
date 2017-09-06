@@ -8,7 +8,7 @@
     "build": "tsc",
     "pretest": "npm install",
     "test": "mocha",
-    "web": "npm build && ./node_modules/.bin/webpack --config ./webpack.config.js && cp ./index.html ./dist"
+    "web": "npm run build && ./node_modules/.bin/webpack --config ./webpack.config.js && cp ./index.new.html ./dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "saucers",
     "alien",
     "conspiracy"
-  ],ts
+  ],
   "author": "Jerome Beau",
   "license": "GFDL-1.3",
   "bugs": {
@@ -34,11 +34,14 @@
   },
   "devDependencies": {
     "@types/angular": "^1.6.14",
+    "@types/node": "^8.0.26",
     "mocha": "^3.2.0",
     "ng-annotate-loader": "^0.2.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "tslint": "^5.0.0",
     "typescript": "^2.5.2",
     "typings": "^2.1.0",
-    "webpack": "^2.3.3"
+    "webpack": "^2.7.0"
   }
 }

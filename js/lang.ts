@@ -1,4 +1,8 @@
-angular.module('rr0.lang', ['rr0.net'])
+const angular = require('angular');
+
+import net from './net';
+
+export default angular.module('rr0.lang', [net])
     .value('docLang', null)
     .value('userLang', 'fr')
     .service('langService', ['commonsService', 'netService', 'docLang', 'userLang', function (commonsService, netService, docLang, userLang) {

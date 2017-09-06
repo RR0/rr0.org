@@ -1,4 +1,12 @@
-angular.module('rr0.time', ['rr0.nav', 'rr0.net', 'rr0.people'])
+const angular = require('angular');
+
+// import nav from '../js/nav/nav';
+import net from '../js/net';
+import people from '../people/people';
+
+declare var google;
+
+export default angular.module('rr0.time', [/*nav, */ net, people])
   .constant('timeRoot', '/time/')
   .run(['timeRoot', 'commonsService', 'netService', 'navigationService', 'timeService', 'peopleService', 'constantClass', function (commonsService, timeRoot, netService, navigationService, timeService, peopleService, constantClass) {
     'use strict';

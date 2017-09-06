@@ -1,3 +1,5 @@
+const angular = require('angular');
+
 
 var peoples = {};
 function People(p) {
@@ -30,8 +32,9 @@ var handleWitness = function (scope, elem, attrs) {
     }
 };
 
-window.copyright = null;
-angular.module('rr0.people', ['rr0.nav'])
+(<any>window).copyright = null;
+
+export default angular.module('rr0.people'/*, [nav]*/)
     .constant('peopleRoot', '/people/')
     .directive('temoin', function () {
         'use strict';

@@ -1,3 +1,5 @@
+const angular = require('angular');
+
 function OrgModule(): void {
   'use strict';
   this.debug = window.location.href.indexOf("?debug") >= 0;
@@ -486,7 +488,7 @@ declare var prettyPrintOne: any;
   }
 }());
 
-angular.module('rr0.commons', [])
+export default angular.module('rr0.commons', [])
   .constant('constantClass', org.constantClass)
   .service('commonsService', function () {
     'use strict';

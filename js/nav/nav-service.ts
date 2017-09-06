@@ -12,6 +12,9 @@ interface Start {
   js?: string;
   onLoad?: string;
 }
+
+declare var org;
+
 angular.module('rr0.nav')
   .service('navigationService', [
     '$rootScope', '$q',

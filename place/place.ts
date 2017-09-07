@@ -1,8 +1,14 @@
+const angular = require('angular');
+
 function Place(n) {
   this.name = n;
 }
 
-angular.module('rr0.place', [])
+declare var google;
+declare var Swipe;
+declare var $;
+
+export default angular.module('rr0.place', [])
   .service('mapService', [function ($timeout) {
     "use strict";
 
@@ -156,7 +162,7 @@ angular.module('rr0.place', [])
             mapRebound(bounds);
           }, 600);
         });
-        if (getPeople()) {
+        if ((<any>window).getPeople()) {
           peoplePath = new google.maps.Polyline({
             path: peoplePoints,
             strokeColor: '#FF0000',
@@ -196,7 +202,7 @@ angular.module('rr0.place', [])
     }
 
     function addMapButton() {
-      var element = document.querySelector('.toggleMap');
+      var element: HTMLElement = <HTMLElement>document.querySelector('.toggleMap');
       element.style.display = 'inline-block';
       element.title = 'Affiche carte';
       element.onclick = toggleMap;
@@ -205,7 +211,7 @@ angular.module('rr0.place', [])
     var mapUpdateCallbacks = [mapResize];
 
     function onceMapIsLoaded() {
-      geocodeAll(toGeocode);
+      geocodeAll();
       addMapButton();
 //            if (org.rr0.getScreenWidth() > 1024) {
 //                mapShow();
@@ -235,8 +241,8 @@ angular.module('rr0.place', [])
     }
 
     function planetariumShow() {
-      $('#starmap').css('height', '25%');
-      $('#map-canvas').css('height', '75%');
+      angular.element('#starmap').css('height', '25%');
+      angular.element('#map-canvas').css('height', '75%');
       planetarium.createSky();
     }
 
@@ -311,7 +317,7 @@ angular.module('rr0.place', [])
        * @param anchor The id of the element that will contain the map. "map-canvas" by default.
        */
       loadMap: function (lat, lng, kmlUrl, zoom, mapType, anchor) {
-        onGoogleMapsLoaded.push(function () {
+        (<any>window).onGoogleMapsLoaded.push(function () {
           var mapOptions = {
             center: new google.maps.LatLng(lat, lng),
             mapTypeId: mapType

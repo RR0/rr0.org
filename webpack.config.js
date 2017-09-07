@@ -4,7 +4,7 @@ const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
 module.exports = {
   context: __dirname + '/dist',
-  entry: './index.js',
+  entry: './js/index.js',
   module: {
     loaders: [
       {test: /\.js$/, loaders: ['ng-annotate-loader']}

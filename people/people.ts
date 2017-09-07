@@ -34,7 +34,7 @@ var handleWitness = function (scope, elem, attrs) {
 
 (<any>window).copyright = null;
 
-export default angular.module('rr0.people'/*, [nav]*/)
+export default angular.module('rr0.people', [/*nav*/])
     .constant('peopleRoot', '/people/')
     .directive('temoin', function () {
         'use strict';

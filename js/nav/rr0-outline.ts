@@ -1,3 +1,8 @@
+interface SectionScope extends ng.IScope {
+  level: number;
+  title: string;
+}
+
 angular.module('rr0.nav')
   .service('outlineService', [
     '$rootScope', '$q',
@@ -63,13 +68,13 @@ angular.module('rr0.nav')
       transclude: true,
       scope: {title: '@'},
       link: {
-        pre: function (scope, elem, attrs) {
+        pre: function (scope: SectionScope, elem, attrs) {
           const sectionTitle = attrs.title;
           if (sectionTitle) {
             addSec(sectionTitle, scope, elem);
           }
         },
-        post: function (scope, elem, attrs) {
+        post: function (scope: SectionScope, elem, attrs) {
           if (!scope.title) {
             const titleElem = angular.element(elem.children()[1]).children()[0];
             const sectionTitle = titleElem.outerHTML;
@@ -106,7 +111,7 @@ angular.module('rr0.nav')
             addArt(sectionTitle, scope, elem);
           }
         },
-        post: function (scope, elem, attrs) {
+        post: function (scope: SectionScope, elem, attrs) {
           if (!scope.title) {
             const titleElem = angular.element(elem.children()[0]).children()[0];
             const sectionTitle = titleElem.outerHTML;

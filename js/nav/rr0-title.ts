@@ -1,5 +1,7 @@
 const angular = require('angular');
 
+import nav from "./nav";
+
 export interface TitleScope extends ng.IScope {
   title: string;
   author: string;
@@ -7,7 +9,7 @@ export interface TitleScope extends ng.IScope {
   setTitle(text): void;
 }
 
-angular.module('rr0.nav')
+angular.module(nav)
 /**
  * Sets controller's title to be displayed from the title header tag.
  */

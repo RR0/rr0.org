@@ -1,4 +1,8 @@
-angular.module('rr0.nav')
+const angular = require('angular');
+
+import nav from '../nav/nav';
+
+angular.module(nav)
   .directive('search', function () {
     'use strict';
     return {
@@ -26,7 +30,7 @@ angular.module('rr0.nav')
         $scope.searchClick = function (item) {
           document.body.className += ' wait';
           $timeout(function () {
-            window.location = item.link;
+            (<any>window).location = item.link;
           }, 10);
         };
       }

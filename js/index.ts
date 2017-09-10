@@ -1,14 +1,25 @@
-import {TitleScope} from "./nav/rr0-title";
-
 const angular = require('angular');
+
+import {TitleScope} from "./nav/rr0-title";
 
 import nav from './nav/nav';
 import place from '../place/place';
 import foot from './note/foot';
 import context from './rr0-context';
 import science from "../science/science";
+import uiRouter from "@uirouter/angularjs";
 
-export default angular.module('rr0', [nav, place, foot, context, 'ui.router', science])
+export interface RR0Window extends Window {
+  copyright: string;
+}
+
+let ngModule = angular.module('rr0', ['rr0.nav', 'rr0.place', 'rr0.foot', 'rr0.context', 'ui.router', 'rr0.science']);
+nav(ngModule);
+place(ngModule);
+foot(ngModule);
+context(ngModule);
+science(ngModule);
+ngModule
   .config(['$logProvider', function ($logProvider) {
     'use strict';
     $logProvider.debugEnabled(false);
@@ -23,3 +34,4 @@ export default angular.module('rr0', [nav, place, foot, context, 'ui.router', sc
     $scope.author = '';
     $scope.copyright = '';
   }]);
+

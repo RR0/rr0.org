@@ -1,4 +1,8 @@
-angular.module('rr0.nav')
+const angular = require('angular');
+
+import nav from './nav';
+
+angular.module(nav)
 /**
  * Adds "target=_blank" to external links so they will be opened in separate tabs
  */

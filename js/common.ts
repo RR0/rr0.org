@@ -451,7 +451,8 @@ function OrgModule(): void {
 
   return this;
 }
-const org = new OrgModule();
+
+export const org = new OrgModule();
 
 declare var prettyPrintOne: any;
 
@@ -488,94 +489,97 @@ declare var prettyPrintOne: any;
   }
 }());
 
-export default angular.module('rr0.commons', [])
-  .constant('constantClass', org.constantClass)
-  .service('commonsService', function () {
-    'use strict';
+export default commonModule => {
+  var commonModule = angular.module('rr0.commons', []);
+  return commonModule
+    .constant('constantClass', org.constantClass)
+    .service('commonsService', function () {
+      'use strict';
 
-    var docUri;
+      var docUri;
 
-    return {
-      text: function (e) {
-        return org.text(e);
-      },
-      nounToLink: function (l, k) {
-        return org.nounToLink(l, k);
-      },
-      addEndingSlash: function (l) {
-        return org.addEndingSlash(l);
-      },
-      getUri: function () {
-        if (!docUri) {
-          docUri = window.location.pathname;
-        }
-        return docUri;
-      },
-      validLink: function (l) {
-        return org.validLink(l);
-      },
-      zero: function (v) {
-        return org.zero(v);
-      },
-      loadCSS: function (f) {
-        return org.loadCSS(f);
-      },
-      loadJS: function (f) {
-        return org.loadJS(f);
-      },
-      parentLink: function (l) {
-        return org.parentLink(l);
-      },
-      initStructure: function () {
-        org.rr0.initStructure();
-      },
-      hasClass: function (e, c) {
-        org.hasClass(e, c);
-      },
-      capitalizeFirstLetter: function (s) {
-        return s.charAt(0).toUpperCase() + s.slice(1);
-      },
-      camelize: function (s) {
-        var camelized = '';
-        var wasWord = false;
-        for (var i = 0; i < s.length; i++) {
-          var c = s.charAt(i);
-          switch (c) {
-            case '?':
-            case '!':
-            case ',':
-            case '&':
-            case '-':
-            case '\'':
-            case '.':
-            case ' ':
-            case '(':
-            case ')':
-              wasWord = true;
-              break;
-            default:
-              if (wasWord) {
-                c = c.toUpperCase();
-                wasWord = false;
-              }
-              camelized += c;
+      return {
+        text: function (e) {
+          return org.text(e);
+        },
+        nounToLink: function (l, k) {
+          return org.nounToLink(l, k);
+        },
+        addEndingSlash: function (l) {
+          return org.addEndingSlash(l);
+        },
+        getUri: function () {
+          if (!docUri) {
+            docUri = window.location.pathname;
           }
+          return docUri;
+        },
+        validLink: function (l) {
+          return org.validLink(l);
+        },
+        zero: function (v) {
+          return org.zero(v);
+        },
+        loadCSS: function (f) {
+          return org.loadCSS(f);
+        },
+        loadJS: function (f) {
+          return org.loadJS(f);
+        },
+        parentLink: function (l) {
+          return org.parentLink(l);
+        },
+        initStructure: function () {
+          org.rr0.initStructure();
+        },
+        hasClass: function (e, c) {
+          org.hasClass(e, c);
+        },
+        capitalizeFirstLetter: function (s) {
+          return s.charAt(0).toUpperCase() + s.slice(1);
+        },
+        camelize: function (s) {
+          var camelized = '';
+          var wasWord = false;
+          for (var i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            switch (c) {
+              case '?':
+              case '!':
+              case ',':
+              case '&':
+              case '-':
+              case '\'':
+              case '.':
+              case ' ':
+              case '(':
+              case ')':
+                wasWord = true;
+                break;
+              default:
+                if (wasWord) {
+                  c = c.toUpperCase();
+                  wasWord = false;
+                }
+                camelized += c;
+            }
+          }
+          return camelized;
         }
-        return camelized;
-      }
-    };
-  })
-  .directive('code', [function () {
-    "use strict";
-    return {
-      restrict: 'E',
-      link: function (scope, el, attrs) {
-        var code = el[0];
-        code.innerHTML = prettyPrintOne(code.innerHTML);
-      }
-    };
-  }])
-  .run(['commonsService', function (commonsService) {
-    "use strict";
-    commonsService.initStructure();
-  }]);
+      };
+    })
+    .directive('code', [function () {
+      "use strict";
+      return {
+        restrict: 'E',
+        link: function (scope, el, attrs) {
+          var code = el[0];
+          code.innerHTML = prettyPrintOne(code.innerHTML);
+        }
+      };
+    }])
+    .run(['commonsService', function (commonsService) {
+      "use strict";
+      commonsService.initStructure();
+    }]);
+}

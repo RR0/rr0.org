@@ -7,7 +7,6 @@ import place from '../place/place';
 import foot from './note/foot';
 import context from './rr0-context';
 import science from "../science/science";
-import uiRouter from "@uirouter/angularjs";
 
 export interface RR0Window extends Window {
   copyright: string;

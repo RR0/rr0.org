@@ -1,4 +1,7 @@
+const path = require("path");
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require('autoprefixer');
 
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
@@ -7,29 +10,34 @@ module.exports = {
   entry: './js/index.js',
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['ng-annotate-loader']}
-    ],
-    rules: [{
-      test: /\.scss$/,
-      use: [{
-        loader: "style-loader" // creates style nodes from JS strings
-      }, {
-        loader: "css-loader" // translates CSS into CommonJS
-      }, {
-        loader: "sass-loader" // compiles Sass to CSS
-      }]
-    }]
+      {
+        test: /\.js$/,
+        loaders: ['ng-annotate-loader']
+      },
+      {
+        test: /\.scss$/, use:
+        ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "sass-loader"]
+        })
+      }],
   },
+  devtool: "source-map",
   externals: {
     'angular': 'angular',
     'google': 'google',
   },
   output: {
-    filename: 'dist/rr0.js'
+    path: path.join(__dirname, "dist"),
+    publicPath: "/",
+    filename: 'rr0.js'
   },
   plugins: PROD ? [
     new webpack.optimize.UglifyJsPlugin({
       compress: {warnings: false}
-    })
-  ] : [],
+    }),
+    new ExtractTextPlugin("rr0.css")
+  ] : [
+    new ExtractTextPlugin("rr0.css")
+  ],
 };

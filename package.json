@@ -8,7 +8,7 @@
     "build": "tsc",
     "pretest": "npm install",
     "test": "mocha",
-    "web": "npm run build && ./node_modules/.bin/webpack --config ./webpack.config.js && cp ./index.new.html ./dist/index.html"
+    "web": "npm run build && ./node_modules/.bin/webpack --config ./webpack.config.js && cp ./*.new.html ./dist"
   },
   "repository": {
     "type": "git",
@@ -37,10 +37,14 @@
   "devDependencies": {
     "@types/angular": "^1.6.14",
     "@types/node": "^8.0.26",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^2.1.2",
     "mocha": "^3.2.0",
     "ng-annotate-loader": "^0.2.0",
     "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
     "tslint": "^5.0.0",
     "typescript": "^2.5.2",
     "typings": "^2.1.0",

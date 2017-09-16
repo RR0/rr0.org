@@ -6,21 +6,17 @@ const autoprefixer = require('autoprefixer');
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
 module.exports = {
-  context: __dirname + '/dist',
-  entry: './js/index.js',
+  entry: './js/index.ts',
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: ['.ts', '.tsx', '.js'] // note if using webpack 1 you'd also need a '' in the array as well
+  },
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        loaders: ['ng-annotate-loader']
-      },
-      {
-        test: /\.scss$/, use:
-        ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
-        })
-      }],
+      {test: /\.tsx?$/, loader: 'ts-loader'},
+      {test: /\.js$/, loaders: ['ng-annotate-loader']},
+      {test: /\.scss$/, use: ExtractTextPlugin.extract({fallback: "style-loader", use: ["css-loader", "sass-loader"]})}
+    ],
   },
   devtool: "source-map",
   externals: {
@@ -28,8 +24,6 @@ module.exports = {
     'google': 'google',
   },
   output: {
-    path: path.join(__dirname, "dist"),
-    publicPath: "/",
     filename: 'rr0.js'
   },
   plugins: PROD ? [

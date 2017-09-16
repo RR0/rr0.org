@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm install",
-    "build": "tsc",
+    "build": "./node_modules/.bin/webpack --config ./webpack.config.js",
     "pretest": "npm install",
-    "test": "mocha",
-    "web": "npm run build && ./node_modules/.bin/webpack --config ./webpack.config.js && cp ./*.new.html ./dist"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -45,6 +44,7 @@
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "ts-loader": "^2.3.7",
     "tslint": "^5.0.0",
     "typescript": "^2.5.2",
     "typings": "^2.1.0",

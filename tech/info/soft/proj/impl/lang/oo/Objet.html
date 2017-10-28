@@ -1,0 +1,82 @@
+<!--#include virtual="/header-start.html" -->
+<title>Objet</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Object</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Associer des données avec les processus qui les manipulent</li>
+    <li>Rapprocher les concepts du <a href="..">langage</a> et de la <a href="../../../design">conception</a> d'une
+      l'application
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>L'objet est le destinataire d'une action. Un objet est une instanciation d'un modèle (<strong>abstraction</strong>
+    ou "<a href="Classe.html"><strong>classe</strong></a>" d'objet).
+  </p>
+  <p>Un objet est caractérisé par :</p>
+  <ul>
+    <li>son <strong>état</strong> : l'ensemble des données qu'il contient. Dans le cas d'objets <em>mutables</em>, cet
+      état peut éventuellement varier dans le temps, de préférence uniquement suite à l'invocation de ses méthodes
+      (encapsulation).
+    </li>
+    <li>son <strong>comportement</strong> : Le code d'un objet est donc constitué par l'ensemble des messages auxquels
+      il peut répondre (par un comportement, un éventuel retour), que l'on appelle <em>méthodes</em> d'utilisation de
+      cet objet.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Un objet occupe une place en mémoire permettant de donner des valeurs aux attributs définis par sa <a
+      href="Classe.html">classe</a>. Cette place est repérée par une <a href="/tech/info/soft/proj/impl/Reference.html">référence</a>
+    sur cet objet.
+  </p>
+  <p>Un objet (instance) d'une <a href="Classe.html">classe</a> donnée est créé par une opération d'<strong>instanciation</strong>,
+    généralement en exécutant une méthode particuliàre de la classe : un <strong>constructeur</strong> d'objet
+    (d'instance).
+  </p>
+  <p>Des caractéristique possibles d'un l'objet sont l'<strong><a href="Heritage.html">héritage</a> et l'<a
+      href="Encapsulation.html">encapsulation</a></strong>.
+  </p>
+  <p>Les objets d'une même <a href="Classe.html">classe</a> peuvent partager des données liées à leur classe (données
+    "statiques")
+  </p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Les langages permettant de définir de tels objets sont qualifiés de <a href=".">OO</a>.
+    </li>
+    <li>Un objet étant une instanciation d'une classe d'objets, on l'appelle également "instance".</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>ne peut changer de type (de <a href="Classe.html">classe</a>) durant l'exécution.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'objets sont :</p>
+  <ul>
+    <li> 307 rouge immatriculée 2002 RM 75</li>
+    <li>Boeing 747 immatriculé GBH-888</li>
+    <li>Jérôme Beau</li>
+    <li>Facture N° 128932</li>
+    <li>Aller chercher du pain avant 19 h</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="/tech/info/soft/proj/design/pattern">Design Patterns</a></li>
+    <li><a href="http://g.oswego.edu/dl/ca/ca/ca.html"><em>An Introduction for Object-Oriented
+      Designers</em></a><em> </em>de Christopher Alexander
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

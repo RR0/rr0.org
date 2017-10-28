@@ -1,0 +1,103 @@
+<!--#include virtual="/header-start.html" -->
+<title>Références</title>
+<!--#include virtual="/header-start.html" -->
+<p><i>Reference.</i></p>
+<section>
+  <h2>Besoin</h2>
+  <p>Réperer des <a href="../../prog/oo/java/Objet.html">objets</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les références peuvent être :</p>
+  <ul>
+    <li><strong>fermes</strong> (<em>strong</em>) car non encapsulées dans des objets Reference.</li>
+    <li><strong>douces</strong> (<em>soft</em>) et réclamables par le <a href="../../prog/oo/java/GC.html">GC</a></li>
+    <li><strong>faibles</strong> (<em>weak</em>) et réclamables par le <a href="../../prog/oo/java/GC.html">GC</a></li>
+    <li><strong>fantômes</strong> (<em>phantom</em>), détruit</li>
+    <li><strong>inatteignables</strong></li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Une référence non fermes n'est pas pointée directement mais au travers d'un objet Reference qui l'encapsule et
+    permet d'y accéder. Cependant cet objet est constant et ne permet pas de modifier l'objet pointé.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>En Java les références ...</p>
+  <p><code>java.lang.ref Reference ReferenceQueue</code></p>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <td rowspan="2" class="titleCorner"></td>
+      <th>Version</th>
+      <th colspan="6">1</th>
+      <th rowspan="3">
+        <div align="center">Commentaire</div>
+      </th>
+    </tr>
+    <tr>
+      <th>Release</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th>Elément</th>
+      <th>Fixpack</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th colspan="2">Ferme</th>
+      <td colspan="6" class="oui">Oui</td>
+      <td><a href="../../prog/oo/java/Thread.html">Thread</a>-safe (synchronisé).</td>
+    </tr>
+    <tr>
+      <th colspan="2">Douce</th>
+      <td colspan="2" class="non">Non</td>
+      <td colspan="4" class="oui">SoftReference</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2">Faible</th>
+      <td colspan="2" class="non">Non</td>
+      <td colspan="4" class="oui">WeakReference</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2">Fantôme</th>
+      <td colspan="2" class="non">Non</td>
+      <td colspan="4" class="oui">PhantomReference</td>
+      <td>Planification des opérations d'avant disparition de manière plus souple qu'avec <code>finalize()</code>.</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'utilisation de références sont :</p>
+  <blockquote>
+    <p><code>{<br/> Object <strong>stronglyReachable</strong> = new Object(); <span class="codeComment"> //
+      Ne pourra disparaître qu'à la fin du bloc</span><br/> <strong> SoftReference</strong> objetCache = new <strong>SoftReference</strong>(data);
+      <span class="codeComment">//
+      data disparaîtra si besoin de mémoire</span><br/> <strong> WeakHashMap</strong> canonicalDictionary = new <strong>WeakHashMap</strong>();
+      <span class="codeComment">//
+      Les clés (et donc valeur) peuvent disparaître</span><br/> } </code></p>
+  </blockquote>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>En Java, pas d'accès brut à la mémoire comme avec les pointeurs (en <a href="../../prog/c">C</a>, <a
+        href="../../prog/cpp/CPP.html">C++</a>, <a href="../../prog/pascal/langage">Pascal</a>, Assembleur, etc.). Ce
+      problème offre l'avantage d'une plus grande robustesse (pas de crash) et sécurité (pas de contournement de
+      l'encapsulation des objets par accès direct à la mémoire).</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,540 @@
+<!--#include virtual="/header-start.html" -->
+<title>Sécurité</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li> Fonctionnel
+      <ul>
+        <li><b><a href="confidentialite/Cryptographie.html">cryptographie </a></b>(<a href="confidentialite">confidentialité</a>,
+          <a href="authentification">authenticité</a>, <a
+              href="/tech/info/soft/data/dbms/tx/Integrite.html">intégrité</a>)
+        </li>
+        <li><b>Audit </b>: la trace des transactions doit être conservée en cas de contestation d'une partie ou pour des
+          statistiques commerciales</li>
+        <li><b>Légalité </b>: les transactions doivent être conformes aux lois des pays impliqués (législation de vente,
+          restrictions cryptographiques)</li>
+      </ul>
+    </li>
+    <li>Technique
+      <ul>
+        <li><b>Evolutivité </b>(ouvertures à de nouvelles solutions de paiement par exemple)</li>
+        <li><b>Intéropérabilité </b> entre les différents prestataires de services commerciaux (boutiques, fournisseurs,
+          banques...)</li>
+        <li><b>Distribution</b> : l'informatique d'aujourd'hui est dominée par le réseau et adopte un modèle coopératif,
+          plus souple. Il implique cependant de nouvelles contraintes de sécurité distribuée. </li>
+        <li><b>Portabilité </b> : les architectures logicielles sont aujourd'hui dynamiques, et dépendent de moins en
+          moins d'une l'architecture matérielle. Une même architecture logicielle peut se déployer sur différentes
+          architectures matérielles (exploitant des postes clients tels que PC, Mac ou NC, des serveurs divers ainsi que
+          d'autres plates-formes telles que les appareils portables) et les exploiter différemment (exploitation de la
+          puissance de traitement, exploitation des périphériques). Cette capacité implique la mobilité du code et donc
+          de nouvelles contraintes de sécurité.</li>
+        <li><b>Simplicité</b> : les opérations techniques, et notamment les opérations de sécurité doivent être
+          transparentes pour l'utilisateur, et non pas constituer une contrainte à l'accès au service</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>La sécurité peut être abordée sous différents angles :</p>
+  <ul>
+    <li>la définition d'une <b><a href="../proj/design/arch">architecture</a> </b>matérielle/<a
+        href="../prog/oo/java/Reseau.html">réseau</a> (<a href="../prog/oo/java/PareFeu.html">firewalls</a>, <a
+        href="../prog/oo/java/ServeurProxy.html">proxies</a>, etc.). La compréhension des problématiques <a
+        href="../prog/oo/java/Reseau.html">réseau</a> liées à la sécurité est effectivement importante dans la mesure où
+      elles ont un impact sur les possibilités des applications développées (un <a
+          href="../prog/oo/java/ServeurProxy.html">serveur proxy</a> peut fortement limiter les possibilités d'une <a
+          href="../Application.html">application</a> par exemple, et il faut savoir comment intégrer une application
+      dans une telle architecture).</li>
+    <li>l'utilisation de procédés <b><a href="confidentialite/Cryptographie.html">cryptographiques</a></b></li>
+    <li>l'utilisation des caractéristiques de sécurité d'un <a href="../prog/Language.html"> <b>langage</b></a> : Cette
+      dernière approche est relativement nouvelle, et trouve un nouvel essort grâce à <a
+          href="../prog/oo/java">Java</a>.</li>
+    <li>le paramétrage de l'<strong>OS</strong></li>
+  </ul>
+  <p>C'est au travers d'une approche par composants qu'il convient de considérer les problématiques de sécurité, chaque
+    composant pouvant se situer dans un des domaines cités. Chacun de ces domaines ne suffit à lui seul à proposer une
+    véritable solution de sécurité, et plus que cela, chacun se doit de fournir une interface avec les autres.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <table border=1 cellspacing=0 cellpadding=5>
+    <thead>
+    <tr>
+      <th><a href="../proj/design/pattern">DP</a></th>
+      <th> Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Session</td>
+      <td>suite d'échanges entre deux objets...</td>
+    </tr>
+    <tr>
+      <td>Proxy</td>
+      <td>objet auquel on délègue l'accès à un autre objet.
+      </td>
+    </tr>
+    <tr>
+      <td>Objet gardé</td>
+      <td>objet encapsulé par un autre, l'objet englobant régissant les opérations autorisées sur l'objet englobé. <p>De
+        manière plus générale l'objet gardé est généralement un objet encapsulant un objet garde et un ou plusieurs
+        objets dont l'accès est contrôlé par le garde.</p>
+        <p>Le principe d'encaspulation des objets gardés permet de transporter un objet avec ses règles d'accès. Ils
+          permettent donc de répondre aux problématiques où l'on doit fournir l'accès à un objet sans connaître le
+          contexte de sécurité du demandeur (celui-ci est distant et ne veut pas transmettre son contexte trop sensible
+          par exemple). Dans ce cas, les objets gardés permettent de déléguer le test de sécurité au demandeur lui-même,
+          en retournant l'objet demandé encapsulé avec son garde. Tout accès à l'objet demandé ne pourra se faire
+          directement, et devra forcément être soumis à l'approbation du garde.</p></td>
+    </tr>
+    <tr>
+      <td>Objets constants</td>
+      <td>Les objets constants (non mutables ou <i>immutables</i>) sont des objets dont l'état n'est accessible qu'en
+        lecture seule On peut voir les objets constants comme un objet gardé n'autorisant que la lecture.
+      </td>
+    </tr>
+    <tr>
+      <td>Objets opaques / transparents</td>
+      <td>objet dont le contenu n'est pas accessible par celui qui le manipule (une clé par exemple).
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>La sécurité au niveau implémentation concerne :</p>
+  <ul>
+    <li>les <a href="../API.html"><strong>API</strong></a> de sécurité disponibles (cryptographie, etc.)</li>
+    <li>la sécurité inhérente au <a href="../prog/Language.html"><strong>langage</strong></a> <strong>et la
+      plate-forme </strong><a href="../prog/oo/java">Java</a> eux-mêmes (accès mémoire, robustesse, etc.)
+    </li>
+  </ul>
+  <section>
+    <h3>API</h3>
+    <p><a href="../prog/oo/java">Java</a> offre des <a href="../API.html">API</a> cryptographiques ainsi que des moyens
+      de s'interfacer avec des composants matériels (réseau typiquement) tels que les <a
+          href="../prog/oo/java/ServeurProxy.html">proxies</a> ou suites cryptographiques via des API adéquates.</p>
+    <p>Les objectifs de <a href="../prog/oo/java">Java</a> en matière de sécurité sont de : </p>
+    <ul>
+      <li><b>Maximiser la sécurité pour le code suspect</b></li>
+      <li><b>Maximiser la souplesse de la configuration pour le code sûr</b>, besoin de plus en plus répandu en raison
+        de l'émergence d'intranets et extranets. Il existe une forte demande pour ce type de fonctionnalité (souplesse
+        de configuration sans trop de contraintes pour l'utilisateur) à laquelle Java doit répondre. A défaut de
+        satisfaire cette demande par un standard, Java sera fragmenté car étendu de manière par des éditeurs fournissant
+        des solutions propriétaires, ou à défaut, son succès sera remis en cause.</li>
+    </ul>
+    <p>Java se donne les moyens de la sécurité qu'il propose au travers de garanties de :</p>
+    <ul>
+      <li><strong>authentification</strong> : vous savez d'où vient le code
+      </li>
+      <li><strong><a href="/tech/info/soft/data/dbms/tx/Integrite.html">intégrité</a></strong> : on vous garantit que le
+        code n'a pas été modifié </li>
+      <li><strong>confidentialité </strong>: le transit a été crypté</li>
+      <li><strong>contrôle d'accès</strong> : la sandbox ou les domaines de protection ont protégé vos ressources
+        locales.
+      </li>
+    </ul>
+    <p>Afin de permettre à tout éditeur de fournir une implémentation d'un ou plusieurs de ces concepts de sécurité, à
+      toute classe de sécurité générique (<i>engine class</i>) est associée une fabrique (<i>factory</i>) retournant les
+      implémentations paramétrées dans la plate-forme (on retrouve là le modèle de <a
+          href="../prog/oo/java/SPI.html">SPI</a>).</p>
+    <p>Tout fournisseur est effectivement susceptible de ne pas implémenter un protocole demandé par une application (il
+      pourra fournir une implémentation de signature RSA/MD2 mais pas de RSA/MD5 par exemple). Il est donc possible
+      d'installer dans la plate-forme plusieurs implémentations des classes de sécurité, avec un ordre de préférence.
+      Pour un algorithme donné, la première implémentation trouvée dans cette liste de préférence sera utilisée. Il est
+      également possible pour une application de spécifier son fournisseur de prédilection par programmation.</p>
+    <p>Les concepts implémentables par un fournisseur sont :</p>
+    <ul>
+      <li>les clés publiques et privées (génération DSA ou RSA, mapping sur une clé abstraite)</li>
+      <li>les <a href="#digest">condensés de message</a> (MD2, MD5, SHA)</li>
+      <li>les <a href="../prog/oo/java/Signature.html">signatures</a> (DSA + SHA, RSA + MD5...)</li>
+      <li>les <a href="authentification/certificat">certificats</a> (<a
+          href="confidentialite/cryptage/X509.html">X.509</a>) et leurs listes de révocation (CRL)</li>
+      <li>la base locale d'informations sur les clés et <a href="authentification/certificat">certificats</a>
+        (permettant différentes implémentation du stockage, sur une carte à puce, sur un Java Ring, par exemple)</li>
+      <li>Paramètres d'algorithme</li>
+      <li>Générateur de paramètres d'algorithme</li>
+      <li>Générateur de nombres aléatoire</li>
+    </ul>
+    <table border=1 cellspacing=0 cellpadding=5>
+      <thead>
+      <tr>
+        <td colspan=2 class="titleCorner"></td>
+        <th valign=top> Version</th>
+        <th colspan="2">1</th>
+        <th width=301 rowspan=2> Commentaire</th>
+      </tr>
+      <tr>
+        <th> Domaine</th>
+        <th>Paradigme</th>
+        <th valign=top>Release</th>
+        <th>1</th>
+        <th>2</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>Architecture</th>
+        <th>Sandbox</th>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td>Bac à sable ou TCB (<em>Trusted Computing Base</em>) = Ligne Maginot : tout ou rien : une fois franchie, la
+          guerre est perdue. Un bug, tout est perdu. Franchir la ligne maginot, attaquer là où on ne s'y attend pas,
+          attaquer d'une manière non prévue par l'auteur du TCB : la guerre est perdue.
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Permission</th>
+        <th valign=top></th>
+        <td>Par nature (fonction de la provenance du code)</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="confidentialite/Cryptographie.html">Cryptographie</a></th>
+        <th>Implémentations</th>
+        <th valign=top></th>
+        <td>JDK</td>
+        <td>Pluggable</td>
+        <td>API cryptographiques standardisées et donc pluggables et interopérables</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Identité</th>
+        <th valign=top></th>
+        <td>Classe <code>java. security. Identity</code></td>
+        <td>Interface <code>java. security. Principal</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="3">Propriétés</th>
+        <th></th>
+        <th valign=top></th>
+        <td class="non">Non</td>
+        <td><code>java. security. manager</code></td>
+        <td>Gestionnaire de sécurité à utiliser par l'application</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th valign=top></th>
+        <td class="non">Non</td>
+        <td><code>java. class. path</code></td>
+        <td>Liste de répertoires ou fichiers JAR d'où charger des classes locales non privilégiées (non système)
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th valign=top></th>
+        <td class="non">Non</td>
+        <td><code>java. security. policy</code></td>
+        <td>URL du fichier de politique de sécurité à utiliser (=) ou ajouter (==) à la politique courante. Avec le JDK
+          1.2, il est possible de l'exprimer facilement à l'aide de l'outil graphique (AWT) <code>%java_home%/bin/policytool.exe</code>.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h3>Langage et plate-forme</h3>
+    <p><a href="../prog/oo/java">Java</a> possède divers atouts pour l'élaboration d'une solution sûre. Parmi ceux-ci,
+      beaucoup sont liés au principe de la <a href="../prog/oo/java/JVM.html">JVM</a>. Il s'agit de :</p>
+    <ul>
+      <li>robustesse
+        <ul>
+          <li><b>l'exécution dans un <a href="../prog/oo/java/Processus.html">processus</a></b> (celui de la <a
+              href="../prog/oo/java/JVM.html">JVM</a>) garantit généralement un espace d'adressage mémoire limité en
+            lecture et en écriture, voire un jeu d'instructions limité. Il offre de plus une protection contre les
+            plantages de la machine (une erreur fatale plante le processus, mais pas l'OS).</li>
+        </ul>
+      </li>
+      <li>contrôle d'accès
+        <ul>
+          <li><b>le typage fort</b> : Un objet ne peut être manipulé qu'au travers de son interface. En interdisant les
+            conversions (transtypage ou <i>cast</i>) sauvage, <a href="../prog/oo/java">Java</a> garantit l'intégrité de
+            l'état (des données) d'un objet (moyennant un développement vertueux, que des attributs privés par exemple).
+            D'une manière générale, l'accès aux données est contrôlé par l'interface du type de ces données, à
+            l'exception malheureuse des classes internes (<i>inner classes</i> du <a
+                href="../prog/oo/java/langage">langage Java</a>). Cette sécurité permet d'autoriser plusieurs flots
+            d'exécutions (code + <a href="../prog/oo/java/Thread.html">threads</a>) à partager le même espace
+            d'adressage, ce qui est plus performant que d'exécuter plusieurs applications dans des espaces d'adressage
+            différents ou d'utiliser une zone d'échange commune.</li>
+          <li><b>Modificateurs d'accès </b>(<code>private</code>, <code>protected</code>, <code>final</code>). Encore
+            une fois, ceci permet à plusieurs applis de coopérer dans le même espace d'adressage de manière sécurisée.
+            Réelles limitations, contrairement au C++.</li>
+          <li><b>Objets constants</b> : Java offre diverses classes d'objets constants (non modifiables ou
+            <i>immutables</i>) tels que les chaînes de caractères (<code>String</code>) ou les <em>wrappers</em> de
+            types simples (<code>Integer</code>, <code>Long</code>, <code>Float</code>, etc.). Ceci permet de retourner
+            un objet en lecture seule (la modification d'une chaîne retournée ne doit pas modifier la chaîne d'origine
+            par exemple). On peut voir les objets constants comme un objet gardé n'autorisant que la lecture.</li>
+        </ul>
+      </li>
+      <li>mémoire
+        <ul>
+          <li><strong><a href="../prog/oo/java/GC.html">GC</a></strong> local et distribué</li>
+          <li><b>pas d'arithmétique de pointeurs</b> - Les références sur des objets Java ne peuvent être déplacées.
+          </li>
+          <li><b>Références constantes </b>(référence <code>final</code> sur un objet)</li>
+          <li><b>Tableaux à limites contrôlées</b> - Un tableau est (presque) un objet, dont la lecture et la
+            modification du contenu sont contrôlés afin d'éviter les accès mémoires illégaux.</li>
+        </ul>
+      </li>
+      <li><b>Pas de préprocesseur</b> - </li>
+      <li><strong><a href="../prog/oo/java/Exception.html">Exceptions</a> </strong>systématiquement remontées, doivent
+        être gérées (compilateur), ou sont gérées par la <a href="../prog/oo/java/JVM.html">JVM</a> (stacktrace output).
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li><b>Il n'y a pas de sécurité absolue</b>. Aucun système n'est inviolable. La mise en place d'une politique de
+      sécurité vise simplement à offrir un niveau de sécurité financièrement acceptable par rapport au coût de l'absence
+      de sécurité.</li>
+    <li>le corrolaire est donc que<b> le coût de la mise en place d'une politique de sécurité ne doit pas dépasser le
+      coût induit par la violation de cette sécurité</b> (vol ou dégradation de service ou d'informations, manque à
+      gagner...). Mettre en place une politique de sécurité consiste toujours en définitive à définir quel niveau de
+      risque est acceptable pour un système donné. Plus vous avez à perdre, plus vous êtes prêt à payer pour le
+      préserver. <span
+          class="note">La sécurité
+    implémentée dans la plate-forme Java se doit donc d'être
+    souple, et non rigide, afin de pouvoir s'adapter aux contraintes de chacun. 
+    Elle ne doit pas (comme dans ses premières versions), imposer <i>par
+    défaut</i> une sécurité trop importante qui ne révélera
+    inutile, voire dommageable (en <a href="../prog/oo/java/Performance.html">performance</a> notamment) dans certains cas de 
+    figure. Cependant, elle doit être capable d'offrir un niveau de sécurité
+    important lorsque cela est nécessaire.</span></li>
+    <li><b>Trop de sécurité nuit à la sécurité</b> : plus les contraintes seront grandes pour les utilisateurs, plus les
+      utilisateurs seront incités à contourner cette infrastructure. <span class="note">Java
+    doit donc pouvoir offrir un grand niveau de sécurité tout en
+    s'efforçant de minimiser les contraintes pour l'utilisateur. Maximiser
+    la transparence des opérations de sécurité passe par
+    l'utilisation de procotoles relativement transparents (comme <a href="../prog/oo/java/SOCKS.html">SOCKS</a>, 
+    le SSO), et par la possibilité de distinguer les rôles des différents
+    utilisateurs du système : administrateur (capable de définir
+    la politique de sécurité d'un poste, à distance par exemple)
+    ou utilisateur simple de la plate-forme Java.</span></li>
+    <li><b>Plus un algorithme est connu, plus il est sûr :</b> il est illusoire de penser qu'une bonne implémentation
+      d'un algorithme de sécurité est une implémentation confidentielle. Au contraire, tout bon algorithme de sécurité
+      (et tout bon système en général) est un algorithme connu de tous, dont chacun peut déceler les failles et les
+      corriger. Nombre d'implémentations d'algorithmes sont disponibles en <a href="../../OpenSource.html">OSS</a>.</li>
+    <li><b>Un modèle de sécurité efficace est un modèle en couches</b>. La responsabilité de la sécurité doit être
+      l'affaire de différentes composantes, et non d'une seule (le modèle de <i>sandbox </i>de Java 1.1 est donc un
+      mauvait modèle, corrigé dans Java 2). Chaque composante à son rôle dans la politique de sécurité, et l'ensemble du
+      système développe une synergie (1+1=3) plus efficace. Chaque couche doit remplir son rôle et ne pas croire
+      aveuglément la couche supérieure (ce n'est pas parce la porte de ma maison est fermée à clé que je laisse la
+      nourriture sur la table de la cuisine).</li>
+  </ul>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Aucune approche de sécurité (architecture, cryptographie, langage, OS) n'est suffisante en elle-même. Chaque
+      spécialiste de ces domaines ne considère trop souvent les problématiques de sécurité qu'au travers de son
+      domaine. </li>
+    <li><b>l'aspect distribué des applications</b> - L'utilisation du réseau augmente les risques d'attaquent par
+      chevaux de Troie (<i>Trojan horse</i>) et par personne interposée (<i>man in the middle</i>).</li>
+    <li><b>les aspects dynamiques et d'extensibilité</b> (édition de liens dynamique comme les capacités croissantes
+      d'extension dynamique de la plate-forme) augmentent les risques d'attaquent par chevaux de Troie (<i>Trojan
+        horse</i>) et par personne interposée (<i>man in the middle</i>).</li>
+    <li><b>le modèle de bac à sable</b> (<em>sandbox</em>) ou TCB (<i>Trusted Computing Base</i>) est un modèle "tout ou
+      rien" n'offrant qu'un garde unique (<em>gatekeeper</em>). Des approches plus sûres exploitent plusieurs gardes
+      indépendants, où la faille d'un garde ne remet pas en cause la sécurité du système dans son ensemble. Ce modèle a
+      été remis en cause depuis Java 2 [J2SE 1.2] avec les <em>permissions</em>.</li>
+    <li><b> l'option visant à fournir une sécurité par le langage et/ou la plate-forme</b> implique que cette sécurité
+      disparaît dès que l'on quitte ce langage et/ou cette plate-forme. Or une application Java doit pouvoir offrir une
+      sécurité à des systèmes non Java, récents ou anciens. La solution d'encapsulation n'est pas toujours suffisante.
+    </li>
+    <li><b>le modèle objet</b> masque l'implémentation derrière une interface, autorisant ainsi le remplacement d'une
+      implémentation par une autre sans que le client n'en soit conscient. Un code hostile peut ainsi être accédé à
+      distance ou téléchargé. De la même manière, l'utilisation de noms symboliques (services d'annuaires tels que <a
+          href="../reseau/DNS.html">DNS</a> ou autres) permet de remplacer une implémentation par une autre et donc de
+      redéfinir des services de confiance. </li>
+    <li><b>la redondance de divers mécanismes de sécurité</b> implémentés dans la plate-forme Java alors qu'ils sont
+      parfois offerts par les couches sous-jacentes (OS, matériel, réseau, cryptographie des communications). Ceci peut
+      nuire à la <a href="../prog/oo/java/Performance.html">performance</a>.
+    </li>
+    <li><b>des implémentations incorrectes, propriétaires ou incomplètes de la plate-forme Java</b> (dans certains
+      anciens <a href="../proj/design/arch/web/client">navigateurs Web</a> par exemple) contenant des bugs connus ou
+      inconnus représentant des failles de sécurité ou représentant des solutions propriétaires de sécurité moins
+      interopérables et moins éprouvées que des standards. Cependant aujourd'hui des extensions standards verticales
+      existent pour le cryptage (<a href="#JCE">JCE</a>).</li>
+    <li><b>le manque de standards de sécurité aboutis, implémentés et largement diffusés</b> (dans les navigateurs
+      notamment), manque comblé par des implémentations propriétaires (par Netscape, Microsoft). Ces implémentations
+      propriétaires de la plate-forme Java sont aujourd'hui contournables grâce au <a href="#plugin">Plugin Java</a>
+    </li>
+    <li>avant Java 1.2 :
+      <ul>
+        <li>la complexité de la mise en oeuvre de mécanismes de sécurité dans Java 1.1 (dérivation de SecurityManagers
+          et de ClassLoaders). Ceci est résolu depuis Java 2 [J2SE 1.2] par l'implémentation de politiques de sécurité
+          est simplifiée (plus besoin de dériver des SecurityManagers ou ClassLoaders).</li>
+        <li>l'immaturité de la plate-forme Java dans le domaine de la sécurité en Java 1.1 : API limitée aux <a
+            href="../prog/oo/java/Signature.html">signatures</a> et <a href="../prog/oo/java/MessageDigest.html">condensés
+          de messages</a> (pas de <a href="authentification/certificat">certificats</a>), absence de permissions fines
+          pour du code téléchargé (logique "tout ou rien" de la <i>sandbox</i> 1.1). Ce manque a été comblé à nouveau
+          par des implémentations propriétaires (<i>Netscape Capabilities API</i> par exemple). Cependant Java 2 [J2SE
+          1.2] a introduit la <a href="../prog/oo/java/JCA.html">JCA</a>, définissant une véritable architecture de
+          sécurité supportant des protocoles importants du monde de la sécurité (<a
+              href="authentification/certificat">certificats</a> <a
+              href="confidentialite/cryptage/X509.html">X.509</a>, etc.).</li>
+      </ul>
+    </li>
+    <li>limitations du <a href="../prog/oo/java/langage">langage Java</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Glossaire</h2>
+  <p><b><a name="Identite"></a>Identité</b></p>
+  <p>Personne ou organisme identifiable par sa <a href="#clepublique">clé publique</a>.</p>
+  <p>Dans Java 2, une identité est représentée par un java.security.Principal.</p>
+  <p><b><a name="JEPI"></a>JEPI</b></p>
+  <p>Acronyme pour <i>Joint Electronic Payment Initiative</i>.</p>
+  <p>Le protocole JEPI défini en 1997 a l'avantage d'être indépendant du protocole de paiement (il le négocie).
+    Cependant, il ne spécifie pas d'interface permettant à l'utilisateur d'exploiter de nouveaux protocoles de
+    paiement.</p>
+  <p>La première implémentation de JEPI est celle de CommerceNet, en Java, mais n'exploite pas la possibilité de Java de
+    télécharger des nouveaux gestionnaires de protocoles (JAF ?) et du code (applications) en général.</p>
+  <p><b><a name="MAC"></a>MAC</b></p>
+  <p>Acronyme pour <i>Message Authentication Code,</i> standard permettant de garantir l'<a
+      href="/tech/info/soft/data/dbms/tx/Integrite.html">intégrité</a> d'un message.</p>
+  <p><b><a name="MOSS"></a>MOSS</b></p>
+  <p>Standard de sécurisation du courrier électronique conçu pour dépasser les limites de <a href="#PEM">PEM</a> en
+    supportant les messages <a href="#MIME">MIME</a>.</p>
+  <p>Parce que MOSS est plus un framework qu'une spécification, et parce qu'il dispose de nombreuses implémentations
+    différentes, deux correspondants MOSS peuvent avoir des difficultés à communiquer. On pourra donc lui préférer <a
+        href="#SMIME">S/MIME</a>, clairement défini.</p>
+  <p><b><a name="RIPEMD"></a>RIPEMD-160</b></p>
+  <p>Acronyme pour <i>RIPE Message Digest,</i> algorithme de hâchage permettant de générer des <a href="#digest">condensés
+    de messages</a>.</p>
+  <p>RIPEMD-160 ou <a href="#SHA">SHA</a> sont considérés comme plus sûr que MD5, dans la mesure ou MD5 a été cassé
+    (pour des messages courts cependant). <a href="#MD5">RSA</a> elle-même ne recommande plus l'utilisation de MD5.</p>
+  <p><b><a name="RNG"></a>RNG</b></p>
+  <p>Acronyme pour <i>Random Number Generation</i>, algorithme sécurisé de génération de nombres aléatoires (non
+    périodiques), utilisés pour la génération de clés.</p>
+  <p>Java 2 ne fournit qu'une implémentation de nombres pseudo-aléatoires (<a href="#PRNG">PRNG</a>).</p>
+  <p><b><a name="PRNG"></a>PRNG</b></p>
+  <p>Acronyme pour <i>Pseudo Random Number Generation</i>, algorithme sécurisé de génération de nombres
+    pseudo-aléatoires (pérodiques), utilisé pour la génération de clés.</p>
+  <p>Java 2 inclut une implémentation de PRNG, via le générateur <span class="code">java.security.SecureRandom</span>.
+  </p>
+  <p><b><a name="SET"></a>SET</b></p>
+  <p>Acronyme pour <i>Secure Electronic Transaction</i>s.</p>
+  <p> Protocole de commerce électronique situé au-dessus de <a href="../prog/oo/java/SSL.html">SSL</a>, permettant les
+    authentifications des clients porteurs de cartes de crédit, des commerçants et des fournisseurs, l'<a
+        href="/tech/info/soft/data/dbms/tx/Integrite.html">intégrité</a> et la confidentialité des informations de
+    paiement (du client vers le commerçant) et de commande (du commerçant vers le fournisseur).</p>
+  <p>Comme <a href="../prog/oo/java/SSL.html">SSL</a>, SET exploite les <a
+      href="authentification/certificat">certificats</a> <a
+      href="confidentialite/cryptage/X509.html">X509</a>.</p>
+  <p><b><a name="SKIP"></a>SKIP</b></p>
+  <p>Acronyme pour <i>Secure Key Internet Protocol</i>.</p>
+  <p><b><a name="SWAN"></a>S/WAN</b></p>
+  <p>Acronyme pour <i>Secure Wide Area Network.</i></p>
+  <p> Permet d'intégrer de la sécurité pour les WAN au sein de réseaux privées virtuels.</p>
+  <p><b><a name="TIPEM"></a>TIPEM</b></p>
+  <p>Acronyme pour <i>Toolkit for Interoperable Privacy Ehanced Mail</i>, librarie de <a href="#RSA">RSA</a> permettant
+    de développer des produits intégrant <a href="#SMIME">S/MIME</a> dans les applications de courrier électronique.</p>
+  <h3 class="titre1"> Le modèle de sécurité ActiveX</h3>
+  <p>Comme pour les plugins, le modèle de sécurité ActiveX :</p>
+  <ul>
+    <li>prétend limiter les possilité du code natif des ActiveX. Or un ActiveX peut construire des pointeurs, etc. </li>
+    <li>autorise tout par défaut (non signé). Java n'autorise rien par défaut.</li>
+    <li>repose entièrement sur le jugement de l'utilisateur. Lorsqu'une fenêtre s'affiche en indiquant que Verisign
+      garantit que Joe Schmoe est bien l'auteur du programme téléchargé, on ne peut prendre de décision raisonnable si
+      l'on ne sais pas qui est Joe Schmoe. </li>
+    <li>fonctionne en mode tout ou rien : si vous acceptez, le programme pourra faire tout ce qu'il veut sur votre
+      machine (définir un sécuritymanager en Java 1.1 ou utiliser java2 permet de spécifier les actions autorisées). Si
+      vous refusez, il ne peut théoriquement rien faire. Mais il s'agit de code natif, donc il peut tout faire (ou
+      presque). Il exite également une option permettant de *tout* accepter systématiqueemnt en provenance d'une
+      identité donnée.</li>
+    <li>les plugins/activeX ne sont pas téléchargés à chaque fois et restent sur votre poste</li>
+  </ul>
+  <p>Evolution de OLE.</p>
+  <p> -&gt; OLE inventé pour rendre Office plus flexible</p>
+  <p>--&gt; Patch way of life</p>
+  <p>Sécurité Windows : non multi-utilsiateur non multisession, non network... etc, C history ; patch way not designed
+    for all this stuff.</p>
+  <p>La sécurité est dans l'OS Windows et non dans les composants (sécurité au niveau du langage comme Java).</p>
+  <h2> Voir</h2>
+  <ul>
+    <li><a href="http://www.ibm.com/java/education/papers-security.html" class="code"> IBM Java Education - White
+      Papers, Tutorial and articles - Security</a></li>
+    <li><a href="http://www.securingjava.com">Securing Java</a></li>
+    <li>Adresses de courrier électronique
+      <ul>
+        <li><a href="mailto:forum@java.sun.com" class="code">JavaSoft Forum</a></li>
+        <li><a href="mailto:java-security@java.sun.com" class="code">Java Security Team</a></li>
+      </ul>
+    </li>
+    <li>FAQ
+      <ul>
+        <li><a href="http://www.w3.org/security/faq" class="code">W3C Security FAQ</a></li>
+        <li><a href="http://java.sun.com/sfaq">JavaSoft Frequently Asked Questions - Applet Security</a></li>
+      </ul>
+    </li>
+    <li>Java Cryptography Architecture
+      <ul>
+        <li><a href="http://java.sun.com/products/jdk/1.2/docs/guide/security/CryptoSpec.html" class="code">Java
+          Cryptography Architecture Security API Specification &amp; Reference</a></li>
+        <li><a href="http://java.sun.com/products/jdk/1.2/docs/guide/security/HowToImplAProvider.html" class="code">How
+          to implement a provider for the Java Cryptography Architecture</a></li>
+        <li><a href="http://java.sun.com/products/jdk/1.2/docs/guide/security/doprivileged.html"><span class="code">API 
+        for Privileged Blocks</span></a></li>
+        <li><a href="http://developper.javasoft.com/developper/technicalArticles/monicap/Security/Crypto/crypto.html"
+               class="code">Cryptography : The Ancien Art of Secret Messages</a></li>
+        <li><a href="http://developper.javasoft.com/developper/technicalArticles/JCE" class="code">Java 2 Cryptography
+          Extension (JCE) : Encrypting and Decrypting Data</a></li>
+      </ul>
+    </li>
+    <li>Firewalls et proxies</li>
+    <ul>
+      <li><a href="http://developer.java.sun.com/developer/javaInDepth/burrow/burrow.html" class="code">Burrowing
+        Through Firewalls</a></li>
+      <li><a href="http://developer.javasoft.com/developer/technicalArticles/jdcpreform.html" class="code">JCC
+        Performance Tips and Firewall Tunneling Techniques</a></li>
+      <li><a href="http://metalab.unc.edu/javafaq/javafaq.html#proxy" class="code">comp.lang.java FAQ - How do I make
+        Java work with a proxy server ?</a></li>
+      <li><a href="http://www.w3.org/Protocols/rfc2068/rfc2068" class="code">W3C Hypertext Transfert Protocol - HTTP/1.1
+        (RFC 2068)</a></li>
+    </ul>
+    <li>Applets signées
+      <ul>
+        <li><a href="http://java.sun.com/security/signExample/" class="code">Exemple d'applet signée</a></li>
+        <li><a href="http://developer.javasoft.com/developer/technicalArticles/monicap/Security/Tools/signed.html"
+               class="code">Applets signées, navigateurs, et accès aux fichiers</a></li>
+      </ul>
+    </li>
+    <li>Formation
+      <ul>
+        <li><a href="http://java.sun.com/docs/books/tutorial/security1.2" class="code">Security in JDK 1.2 - The Java
+          Tutorial</a></li>
+        <li><i>Java Security</i> par Scott Oaks (<i>The Java Series</i>, O'Reilly 1998)</li>
+      </ul>
+    </li>
+    <li>Outils de sécurité Java 2
+      <ul>
+        <li><a href="http://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/keytool.html"><code>keytool</code></a>
+        </li>
+        <li><a href="http://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/jarsigner.html"><code>jarsigner</code></a>
+        </li>
+        <li><code><a
+            href="http://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/policytool.html">policytool</a></code>
+        </li>
+      </ul>
+    </li>
+    <li>Cryptographie
+      <ul>
+        <li><i>La Science du Secret</i> de Jacques Stern (Odile Jacob).</li>
+        <li><a href="http://www.liberation.com/multi/cahier/articles/sem99.05/cah990129i.html">Liberation du 29 janvier
+          1999 - Les Clés du Secret</a></li>
+        <li>RSA Laboratories - <a href="http://www.rsasecurity.com/rsalabs/faq/"><em>FAQ about today's cryptography</em></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

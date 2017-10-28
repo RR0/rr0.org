@@ -1,0 +1,442 @@
+<!--#include virtual="/header-start.html" -->
+<title>AM</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Agile Modeling</em> ou <em>Agile <a href="index.html">Methodologies</a></em>. Egalement lié est le <em>Agile
+  Manifesto</em>.
+</p>
+<p><a href="index.html">Méthodes</a>/<a href="index.html">méthodologies</a>/modélisation agiles.</p>
+<section><h2>Besoin</h2>
+  <p>Définir des processus de développement logiciel légers et plus réactifs que prédictifs.</p>
+</section>
+<section><h2>Analyse</h2>
+  <p>Le but de l'AM est de renverser les priorités habituelles, en privilégieant :</p>
+  <ul>
+    <li><strong>les individus </strong>et les interactions plutôt que les <a href=".">processus</a> et les outils ;
+    </li>
+    <li><strong>le travail sur le logiciel</strong> plutôt qu'une documentation détaillée ;</li>
+    <li><strong>la collaboration avec le client</strong> plutôt que la négociation de contrat ;</li>
+    <li><strong>la réactivité au changement</strong> plutôt que le suivi d'un planning établi ;</li>
+  </ul>
+  <p>L'AM réunit un ensemble de :</p>
+  <ul>
+    <li><b>Valeurs</b>
+      <ul>
+        <li><strong>Communication</strong> : Les modèles promeuvent la communication entre votre équipe et
+          <a href="../MOA.html">MOA</a> comme entre les développeurs de votre équipe.
+        </li>
+        <li><strong>Simplicité</strong> : Les modèles sont critiques pour simplifier le logiciel comme le processus de
+          développement &#151; il est plus facile d'explorer une idée, et de l'améliorer alors que votre compréhension
+          s'améliore, en dessinant un diagramme ou deux au lieu d'écrire des dizaines voire même des centaines de lignes
+          de code.
+        </li>
+        <li><b>Retour</b> (<em>feedback</em>) : <q>L'optimisme est un mal de la programmation, le retour est le
+          traitement</q>. En communiquant vos idées au travers de diagrammes, vous obtenez un retour rapide, vous
+          permettant d'agir sur la base de ces conseils.
+        </li>
+        <li><b>Courage</b> : Prendre des décisions importantes comme changer de direction quitte à perdre ou réécrire
+          votre travail lorsque vos décisions se révèlent avoir été innapropriées ;
+        </li>
+        <li><b>Humilité</b> : Ne pas penser tout connaître, et reconnaître que les autres développeurs, les clients, et
+          l'ensemble des parties impliquées dans un projet ont leurs propres domaines de compétences et une valeur à
+          apporter au projet. Chacun à une valeur égale sur le projet et doit être traité avec le même respect.
+        </li>
+      </ul>
+    </li>
+    <li><b>Principes</b> :
+      <ul>
+        <li><b>Supposez la simplcité</b>. As you develop you should assume that the simplest solution is the best
+          solution. Don't overbuild your software, or in the case of AM don't depict additional features in your models
+          that you don't need today. Have the courage that you don't need to over-model your system today, that you can
+          model based on your existing requirements today and refactor your system in the future when your requirements
+          evolve. Keep your models as simple as possible.
+        </li>
+        <li><b>Accepter le changement</b>. Les besoins comme la compréhension des besoins évoluent au cours du temps. La
+          MOA peut les faire évoluer alors que votre projet avance, de nouvelles personnes peuvent arriver et d'autres
+          peuvent partir. La MOA peut tout aussi bien changer son point de vue, modifiant ainsi potentiellement les
+          objectifs et les critères de succès de votre effort. The implication is that your project's environment
+          changes as your efforts progress, and that as a result your approach to development must reflect this reality.
+        </li>
+        <li><b>Permettre le prochain effort est votre second but</b>. Votre projet peut être considéré comme un échec
+          même si vous livrez un système qui fonctionne &#150; une partie de la réponse aux besoins de la MOA est de
+          s'assurer que votre système est suffisament robuste pour être étendu par la suite. Comme
+          <a href="/people/c/CockburnAlistair.html">Alistair Cockburn</a> aime à le dire, <q>lorsque vous jouez
+            au jeu du développement logiciel, votre second but est de préparer la prochaine partie.</q> Ce prochain
+          effort pourra être la prochaine version majeure du système plus simplement les opérations et le support de la
+          version que vous êtes en train de réaliser. To enable it you will not only want to develop quality software
+          but also create just enough documentation and supporting materials so that the people playing the next game
+          can be effective. Factors that you need to consider include whether members of your existing team will be
+          involved with the next effort, the nature of the next effort itself, and the importance of the next effort to
+          your organization. In short, when you are working on your system you need to keep an eye on the future.
+        </li>
+        <li><b>Changement incrémental </b>: An important concept to understand with respect to modeling is that you
+          don't need to get it right the first time, in fact, it is very unlikely that you could do so even if you
+          tried. Furthermore, you do not need to capture every single detail in your models, you just need to get it
+          good enough at the time. Instead of futilely trying to develop an all encompassing model at the start, you
+          instead can put a stake in the ground by developing a small model, or perhaps a high-level model, and evolve
+          it over time (or simply discard it when you no longer need it) in an incremental manner.
+        </li>
+        <li><strong>Maximiser l'implication de la MOA</strong>. La MOA investit dans des ressources - temps, argent,
+          logistique, etc. - pour obtenir un logiciel qui répond à ses besoins. Stakeholders deserve to invest their
+          resources the best way possible and not to have resources frittered away by your team. Furthermore, they
+          deserve to have the final say in how those resources are invested or not invested. If it was your resources,
+          would you want it any other way?
+        </li>
+        <li><b>Modéliser dans un but</b> : De nombreux développeurs sont attentifs à ce que leurs artefacts - modèles,
+          code source ou documents - soient suffisament détaillés, pas trop détaillés, ou suffisaments précis. Ce qu'ils
+          ne font pas est de prendre du recul et se demander pourquoi et pour qui ils créent cet artefact. With respect
+          to modeling, perhaps you need to understand an aspect of your software better, perhaps you need to communicate
+          your approach to senior management to justify your project, or perhaps you need to create documentation that
+          describes your system to the people who will be operating and/or maintaining/evolving it over time. If you
+          cannot identify why and for whom you are creating a model then why are you bothering to work on it all? Your
+          first step is to identify a valid purpose for creating a model and the audience for that model, then based on
+          that purpose and audience develop it to the point where it is both sufficiently accurate and sufficiently
+          detailed. Once a model has fulfilled its goals you're finished with it for now and should move on to something
+          else, such as writing some code to show that the model works. This principle also applies to a change to an
+          existing model: if you are making a change, perhaps applying a known pattern, then you should have a valid
+          reason to make that change (perhaps to support a new requirement or to refactor your work to something
+          cleaner). An important implication of this principle is that you need to know your audience, even when that
+          audience is yourself. For example, if you are creating a model for maintenance developers, what do they really
+          need ? Do they need a 500 page comprehensive document or would a 10 page overview of how everything works be
+          sufficient ? Don't know ? Go talk to them and find out.
+        </li>
+        <li><b>Plusieurs modèles</b> : You potentially need to use multiple models to develop software because each
+          model describes a single aspect of your software. &#147;What models are potentially required to build
+          modern-day business applications?&#148; Considering the complexity of modern day software, you need to have a
+          wide range of techniques in your intellectual modeling toolkit to be effective. An important point is that you
+          don't need to develop all of these models for any given system, but that depending on the exact nature of the
+          software you are developing you will require at least a subset of the models. Different systems, different
+          subsets. Just like every fixit job at home doesn't require you to use every tool available to you in your
+          toolbox, over time the variety of jobs you perform will require you to use each tool at some point. Just like
+          you use some tools more than others, you will use some types of models more than others.
+        </li>
+        <li><b>Travail de qualité</b> : Nobody likes sloppy work. The people doing the work don't like it because it's
+          something they can't be proud of, the people coming along later to refactor the work (for whatever reason)
+          don't like it because it's harder to understand and to update, and the end users won't like the work because
+          it's likely fragile and/or doesn't meet their expectations.
+        </li>
+        <li><b>Retour rapide</b> : The time between an action and the feedback on that action is critical. By working
+          with other people on a model, particularly when you are working with a shared modeling technology (such as a
+          whiteboard, CRC cards, or essential modeling materials such as sticky notes) you are obtaining near-instant
+          feedback on your ideas. Working closely with your customer, to understand the requirements, to analyze those
+          requirements, or to develop a user interface that meets their needs, provides opportunities for rapid
+          feedback.
+        </li>
+        <li><strong>Le logiciel comme but premier</strong>. L'objectif du développement logiciel est de produire un
+          logiciel qui répond efficacement aux besoins de la MOA. Le but premier n'est pas de produire une documentation
+          extérieurs, des artefacts de gestion de projet extérieurs, ou même des modèles. Toute activité qui ne
+          contribue pas directement à ce but premier doit être mise en question et évitée si elle ne peut être justifiée
+          à cette occasion.
+        </li>
+        <li><b>Travel Light</b>. Every artifact that you create, and then decide to keep, will need to be maintained
+          over time. If you decide to keep seven models, then whenever a change occurs (a new/updated requirement, a new
+          approach is taken by your team, a new technology is adopted, ...) you will need to consider the impact of that
+          change on all seven models and then act accordingly. If you decide to keep only three models then you clearly
+          have less work to perform to support the same change, making you more agile because you are traveling lighter.
+          Similarly, the more complex/detailed your models are, the more likely it is that any given change will be
+          harder to accomplish (the individual model is "heavier" and is therefore more of a burden to maintain). Every
+          time you decide to keep a model you trade-off agility for the convenience of having that information available
+          to your team in an abstract manner (hence potentially enhancing communication within your team as well as with
+          project stakeholders). Never underestimate the seriousness of this trade-off. Someone trekking across the
+          desert will benefit from a map, a hat, good boots, and a canteen of water they likely won't make it if they
+          burden themselves with hundreds of gallons of water, a pack full of every piece of survival gear imaginable,
+          and a collection of books about the desert. Similarly, a development team that decides to develop and maintain
+          a detailed requirements document, a detailed collection of analysis models, a detailed collection of
+          architectural models, and a detailed collection of design models will quickly discover they are spending the
+          majority of their time updating documents instead of writing source code.
+        </li>
+        <li>(optionnel) <b>Le contenu est plus important que la représentation</b>. Any given model could have several
+          ways to represent it. For example, a UI specification could be created using Post-It notes on a large sheet of
+          paper (an essential or low-fidelity prototype), as a sketch on paper or a whiteboard, as a "traditional"
+          prototype built using a prototyping tool or programming language, or as a formal document including both a
+          visual representation as well as a textual description of the UI. An interesting implication is that a model
+          does not need to be a document. Even a complex set of diagrams created using a CASE tool may not become part
+          of a document, instead they are used as inputs into other artifacts, very likely source code, but never
+          formalized as official documentation. The point is that you take advantage of the benefits of modeling without
+          incurring the costs of creating and maintaining documentation.
+        </li>
+        <li>(optionnel) <b>Chacun peut apprendre de l'autre</b> : You can never truly master something, there is always
+          opportunity to learn more and to extend your knowledge. Take the opportunity to work with and learn from
+          others, to try new ways of doing things, to reflect on what seems to work and what doesn't. Technologies
+          change rapidly, existing technologies such as Java evolve at a blinding pace and new technologies such as C#
+          and .NET are introduced regularly. Existing development techniques evolve at a slower pace but they still
+          evolve -- As an industry we've understood the fundamentals of testing for quite awhile although we are
+          constantly improving our understanding through research and practice. The point to be made is that we work in
+          an industry where change is the norm, where you must take every opportunity to learn new ways of doing things
+          through training, education, mentoring, reading, and working with each other.
+        </li>
+        <li>(optionnel) <b>Connaissez vos modèles</b> : Because you have multiple models that you can apply you need to
+          know their strengths and weaknesses to be effective in their use.
+        </li>
+        <li>(optionnel) <b>Connaissez vos outils</b> : Software, such as diagramming tools or modeling tools, have a
+          variety of features. If you are going to use a modeling tool then you should understand its features, knowing
+          when and when not to use them.
+        </li>
+        <li><strong>Local Adaptation</strong>. Your approach to software development must reflect your environment,
+          including the nature of your organization, the nature of your project stakeholders, and the nature of your
+          project itself. Issues that could be affected include: the modeling techniques that you apply (perhaps your
+          users insist on concrete user interfaces instead of initial sketches or essential prototypes); the tools that
+          you use (perhaps there isn't a budget for a digital camera, or you already have licenses for an existing CASE
+          tool); and the software process that you follow (your organization insists on XP, or RUP, or their own
+          process). You will adapt your approach at both the project level as well as the individual level. For example,
+          some developers use one set of tools over another, some focus on coding with very little modeling whereas
+          others prefer to invest a little more time modeling.
+        </li>
+        <li>(optionnel) <b>Communication ouverte et honnête</b> : People need to be free, and to perceive that they are
+          free, to offer suggestions. This includes ideas pertaining to one or more models, perhaps someone has a new
+          way to approach a portion of the design or has a new insight regarding a requirement; the delivery of bad news
+          such as being behind schedule; or simply the current status of their work. Open and honest communication
+          enables people to make better decisions because the quality of the information that they are basing them on is
+          more accurate.
+        </li>
+        <li>(optionnel) <b>Travailler avec l'instinct des gens </b>: When someone feels that something isn't going to
+          work, that a few things are inconsistent with one another, or that something doesn't "smell right" then there
+          is a good chance that that is actually the case. As you gain experience developing software your instincts
+          become sharper, and what your instincts are telling you subconsciously can often be an important input into
+          your modeling efforts. If your instincts tell you that a requirement doesn't make sense or it isn't complete
+          investigate it with your users. If your instincts tell you that a portion of your architecture isn't going to
+          meet your needs build a quick technical end-to-end prototype to test out your theory. If your instincts tell
+          you that design alternative A is better than design alternative B, and there is no compelling reason to choose
+          either one of them, then go with alternative A for now. It's important to understand that the value of courage
+          tells you that should assume you can remedy the situation at some point in the future if you discover your
+          instincts were wrong.
+        </li>
+      </ul>
+    </li>
+    <li><b>Pratiques </b> :
+      <ul>
+        <li><b>Participation active des parties</b> : An expansion of XP's On-Site Customer which describes the need to
+          have on-site access to users that have the authority and ability to provide information pertaining to the
+          system being built and to make pertinent and timely decisions regarding the requirements, and prioritization
+          thereof. AM expands XP's On-Site Customer practice to have project stakeholders -- including direct users,
+          their management, senior management, operations staff, and support (help desk) staff -- actively involved in
+          the project. This includes making timely resourcing decisions by senior management, public and private support
+          for the project by senior management, active participation of operations and support staff in the development
+          of requirements and models pertaining to their respective areas.
+        </li>
+        <li><b>Appliquer les bons artefacts</b> : Each artifact has its own specific applications. For example, a UML
+          activity diagram is useful for describing a business process, whereas the static structure of your database is
+          better represented by a physical data or persistence model. Very often a diagram is a better choice than
+          source code -- If a picture is worth a thousand words then a model is often worth 1024 lines of code when
+          applied in the right circumstances (a term borrowed from Karl Wieger&#146;s Software Requirements) because you
+          can often explore design alternatives more effectively by drawing a couple diagrams on whiteboards with your
+          peers than you can by sitting down and developing code samples. The implication is that you need to know the
+          strengths and weaknesses of each type of artifact so you know when and when not to use them. Note that this
+          can be very difficult because you have Multiple Models available to you, in fact the essay Artifacts For Agile
+          Modeling: The UML and Beyond lists over 30 types of models and it is by no means definitive.
+        </li>
+        <li><b>Propriété collective</b> : Everyone can work on any model, and in fact any artifact on the project, if
+          they need to.
+        </li>
+        <li><b>Considérer la testabilité</b> : When you are modeling you should be constantly asking yourself "How are
+          we going to test this?" because if you can't test the software that you are building you shouldn't be building
+          it. Modern software processes include testing and quality assurance activities throughout the entire project
+          lifecycle, and some even promote the concept of writing tests first before writing software (this is an XP
+          practice).
+        </li>
+        <li><b>Créer plusieurs modèles en parallèle</b> : Parce que chaque type de modèle a ses forces et faiblesses, un
+          seul modèle ne suffit pas à vos besoins de modélisation. Par exemple lorsque vous explorez les besoins vous
+          pouvez avoir besoin de développer des <a href="/tech/info/soft/proj/req/UseCase.html">cas d'utilisation</a> ou <em>user
+            stories</em>, un prototype d'IHM, des règles métiers essentiels. In combination with the practice of
+          iterating to another artifact les modéliseurs agiles découvriront souvent qu'ils sont bien plus productifs
+          lorsqu'ils travaillent sur divers modèles en même temps que s'ils se concentraient sur un seul à chaque fois.
+        </li>
+        <li><b>Créer un contenu simple</b> : You should keep the actual content of your models -- your requirements,
+          your analysis, your architecture, or your design -- as simple as you possibly can while still fulfilling the
+          needs of your project stakeholders. The implication is that you should not add additional aspects to your
+          models unless they are justifiable -- if you do not have a requirement to add system auditing features then
+          don't add that features to your models. Have the courage to trust that you can in fact add this feature when,
+          and if, it is ever asked of you. This is along the lines of XP's practice of Simple Design.
+        </li>
+        <li><b>Dépeindre les modèles simplement</b> : When you consider the potential diagrams that you could apply (UML
+          diagrams, user interface diagrams, data models, and so on) you quickly realize that the majority of the time
+          you only require a subset of the diagramming notation available to you. A simple model that shows the key
+          features that you are trying to understand, perhaps a class model depicting the primary responsibilities of
+          classes and the relationships between them, often proves to be sufficient. Yes, you could model all the
+          scaffolding code that you will need to write, all the getter and setter operations that your coding standards
+          tell you to use, but what value would that add? Very little.
+        </li>
+        <li><strong>Affichez vos modèles à la vue de tous</strong>. Vous devriez montrer vos modèles publiquement,
+          souvent sur ce que l'on appelle un "mur de modélisation" ou "mur des merveilles". Cela soutient le principe de
+          Communication Ouverte et Honnête dans votre équipe parce que l'ensemble des modèles en cours leur sont
+          rapidement accessibles, ainsi qu'à votre MOA parce que vous ne leur cachez rien. Your modeling wall is where
+          you post your models for everyone to see; the modeling wall should be accessible to your development team and
+          other project stakeholders. Your modeling wall may be physical, perhaps a designated whiteboard for your
+          architecture diagram(s) or a place where you tape a printout of your physical data model. Modeling walls can
+          be virtual, such as an internal Web page that is updated with scanned images. See Ellen Gottesdiener's
+          Specifying Requirements With a Wall of Wonder for a similar viewpoint.
+        </li>
+        <li><strong>Itérez sur un autre artefact</strong>. Lorsque vous travaillez sur un artefact de développement --
+          comme un <a href="/tech/info/soft/proj/req/UseCase.html">cas d'utilisation</a>, une carte CRC, un diagramme de
+          séquence ou même du <a href="../impl/CodeSource.html">code source</a> -- and find that you are stuck then you
+          should consider working on another artifact for the time being. Each artifact has its strengths and
+          weaknesses, each artifact is good for a certain type of job. Whenever you find you are having difficulties
+          working on one artifact, perhaps you are working on a <a href="/tech/info/soft/proj/req/UseCase.html">use case</a> and
+          find that you are struggling to describe the business logic, then that's a sign that you should iterate to
+          another artifact. For example, if you are working on an essential use case then you may want to consider
+          changing focus to start working on an essential UI prototype, a CRC model, a business rule, a system use case,
+          or a change case. By iterating to another artifact you immediately become "unstuck" because you are making
+          progress working on that other artifact. Furthermore, by changing your point of view you often discover that
+          you address whatever it was that causing you to be stuck in the first place.
+        </li>
+        <li><b>Modéliser par petits incréments </b>: Le développement incrémental qui organise un vaste effort en plus
+          petites portions diffusées au fil du projet, normalement en incréments de quelques semaines ou d'un mois ou
+          deux, accroit votre agilité en permettant de mettre plus vite le logiciel dans les mains des utilisateurs.
+        </li>
+        <li><b>Modéliser avec les autres</b> : When you Model With a Purpose you often find that you are modeling to
+          understand something, that you are modeling to communicate your ideas to others, or you are seeking to develop
+          a common vision on your project. This is a group activity, one in which you want the input of several people
+          working together effectively. You will often find that your development team needs to work together to create
+          the core set of models critical to your project. For example, to develop the metaphor or architecture for you
+          system, you will often need to model with a group of people to develop a solution everyone agrees on as well
+          as one that is as simple as possible. Most of the time the best way to do this is to talk the issue through
+          with one or more people.
+        </li>
+        <li><b>Prouver par le code </b>: A model is an abstraction, one that should accurately reflect an aspect of
+          whatever you are building. But will it work? To determine so, you should prove your model with code. You've
+          developed a sketch of an HTML page for accepting billing address information? Code it and show the resulting
+          user interface to your users for feedback. You've developed a UML sequence diagram representing the logic to
+          implement a complex business rule? Write the testing code, the business code, and run the tests to ensure that
+          you've gotten it right. Never forget that with an iterative approach to software development, the norm for the
+          vast majority of projects, that modeling is only one of many tasks that you will perform. Do some modeling, do
+          some coding, do some testing (amongst other things).
+        </li>
+        <li><b>Utiliser les outils les plus simples</b> : The vast majority of models can be drawn on a whiteboard, on
+          paper or even the back of a napkin. Whenever you want to save one of these diagrams you can take a picture of
+          it with a digital camera, or even simply transcribe it onto paper. This works because most diagrams are
+          throwaways; their true value comes from drawing them to think through an issue, and once the issue is resolved
+          the diagram doesn&#146;t offer much value. As a result a whiteboard and markers are often your best modeling
+          tool alternative: Use a drawing tool to create diagrams to present to important project stakeholders and
+          occasionally use a modeling tool if and only if they provide value to my programming efforts such as the
+          generation of code. Think of it like this: If you&#146;re creating simple models, often models that are
+          throwaways because if you are modeling to understand you likely don&#146;t need to keep the model(s) around
+          any more once you do understand the issue, then you likely don&#146;t need to apply a complex modeling tool.
+        </li>
+        <li>(optionnel) <b>Apply Modeling Standards</b> : This practice is renamed from XP's Coding Standards, the basic
+          idea is that developers should agree to and follow a common set of modeling standards on a software project.
+          Just like there is value in following common coding conventions, clean code that follows your chosen coding
+          guidelines is easier to understand and evolve than code that doesn't, there is similar value in following
+          common modeling conventions. There is a wide variety of common modeling standards available to you, including
+          the Object Management Group's Unified Modeling Language (UML) which defines the notation and semantics for
+          common object-oriented models. The UML provides a good start but it isn't sufficient -- as you can see in Be
+          Realistic About The UML not all possible modeling artifacts are encompassed by the UML. Furthermore, it says
+          nothing about modeling style guidelines to create clean-looking diagrams. What is the difference between a
+          style guideline and a standards. WRT to source code, a standard would be to name attributes in the format
+          attributeName whereas a style guideline is to indent the code within a control structure (an if statement, a
+          loop, ...) by one unit. WRT to models, a standard would be to use a square rectangle to model a class on a
+          class diagram and a style guideline would be to have subclasses placed on diagrams to the south of their
+          superclasses.
+        </li>
+        <li>(optionnel) <b>Apply Patterns Gently</b> : Effective modelers learn and then appropriately apply common
+          architectural, design and analysis patterns in their models. However, as Martin Fowler points out in Is Design
+          Dead? developers should consider easing into the application of a pattern, to apply it gently. This reflects
+          the value of simplicity. In other words, if you SUSPECT that a pattern applies you should model it in such a
+          way as to implement the minimal amount you need today but that makes it easy to refactor it later when it is
+          clear that applying the full-fledged pattern is in fact the simplest approach possible. In other words, don't
+          over model. For example, you may recognize a good spot in your design to apply the GoF's Strategy pattern, but
+          at the current moment you only have two algorithms to implement. The simplest approach might be to encapsulate
+          each strategy in its own class and build an operation that chooses them appropriately and passes them the
+          appropriate input. This is a partial implementation of Strategy that leaves you in a position to refactor your
+          design if more algorithms need to be implemented, yet does not require you to build all the scaffolding that
+          Strategy requires -- an approach that enables you to ease into application of the pattern.
+        </li>
+        <li>(optionnel) <b>Supprimer les modèles temporaires </b>: The vast majority of the models that you create are
+          temporary/working models -- design sketches, low fidelity prototypes, index cards, potential
+          architecture/design alternatives, and so on -- models that have fulfilled their purpose but no longer add
+          value now that they have done so. Models quickly become out of sync with the code, and there is nothing wrong
+          with that. You must then make the decision to synchronize the models if doing so adds value to your project or
+          to simply discard them because the investment to update the models won't be recouped by the value of having
+          done so (there's negative payback).
+        </li>
+        <li>(optionnel) <b>Formaliser des modèles contractuels</b> : Contract models are often required when an external
+          group controls an information resource that your system requires, such as a database, legacy application or
+          information service. A contract model is something that both parties should mutually agree to and mutually
+          change over time if required. Examples of contract models include the detailed documentation of an application
+          programming interface (API), a file layout description, an XML DTD or a physical data model describing a
+          shared database. As with a legal contract, a contract model often requires you to invest significant resources
+          to develop and maintain the contract to ensure that it&#146;s accurate and sufficiently detailed. Your goal is
+          to minimize the number of contract models for your system to conform to the XP principle of traveling light.
+          Note that you will almost always use an electronic tool to develop a contract model because the model must be
+          maintained over time.
+        </li>
+        <li>(optionnel) <b>Modéliser pour communiquer</b>. A secondary reason to model is to communicate with people
+          external to your team or to create a contract model. Because the customers for some models are outside your
+          team, you may need to invest the time to make your model(s) look &#147;pretty&#148; by using electronic tools
+          such as word processors, drawing packages or even sophisticated CASE tools.
+        </li>
+        <li>(optionnel) <b>Modéliser pour la compréhension </b>: The most important application of modeling is to
+          explore the problem space, to identify and analyze the requirements for the system, or to compare and contrast
+          potential design alternatives to identify the potentially most simple solution that meets the requirements.
+          Following this practice you often develop small, simple diagrams that focuses on one aspect of your software,
+          such as the life cycle of a class or the flow between screens, diagrams that you often throwaway once you are
+          finished with them. <br> Reuse Existing Resources. There is a wealth of information that agile modelers can
+          take advantage from. For example, perhaps some analysis or design patterns are appropriate for you to apply
+          gently to your system. Or perhaps you can take advantage of an existing enterprise requirements model,
+          business process models, physical data models or even models of how systems are currently deployed within your
+          user community. It&#146;s true that these models either don&#146;t exist or are out of date in many
+          organizations, although you&#146;re often likely to uncover reasonably accurate models with a bit of research.
+        </li>
+        <li>(optionnel) <b>Mettre à jour seulement si cela pose problème</b> : You should update a model only when you
+          absolutely need to, when not having the model updated is more painful than the effort of updating it. With
+          this approach you discover that you update a smaller number of models than you would have in the past because
+          the reality is that your models don't have to be perfect to provide value. The street map that I have to my
+          town is over five years old, I know this because my own street doesn't appear on it and it's been in place for
+          a little over five years, yet the map is still useful to me. Yes, I could purchase an updated map, one comes
+          out every year, but why bother? Missing a few streets isn't painful enough to warrant this investment, it
+          simply doesn't make sense to spend the money to purchase a new map every year when the one that I have is good
+          enough. Too much time and money is wasted trying to keep models and documents in sync with source code, an
+          impossible task to begin with, time and money that could be better spent developing new software.
+        </li>
+        <li>(complémentaire) <b>Remaniement </b>(<em>refactoring</em>). C'est une pratique de codage dans laquelle vous
+          effectuez de petits changements, nommés remaniements, sur votre code pour répondre à de nouveaux besoins ou
+          pour maintenir votre conception aussi simple que possible. Du point de vue AM cette pratique garanti que votre
+          conception reste claire et nette lorsque vous travaillez sur votre code. Le remaniement est une partie
+          essentielle de <a href="XP.html">XP</a>.
+        </li>
+        <li>(complémentaire) <b>Conception par tests préliminaires</b> : C'est une pratique de développement où
+          vous considérez en premier puis codez vos cas de tests avant d'écrire votre code métier. Du point de vue AM
+          cette pratique vous force à concevoir avant d'écrire votre code, éliminant le besoin d'une modélisation
+          détaillée. Le conception par tests préliminaires est une partie essentielle de <a href="XP.html">XP</a>.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section><h2>Caractéristiques</h2>
+  <ul>
+    <li>Parfois appelés "processus légers"</li>
+    <li>Réputés adapté aux petits projets seulements, ce que les défenseurs de l'<em>Agile Manifesto </em>contestent ;
+    </li>
+    <li>La force des modèles AM est de ne pas chercher à être parfaits, mais juste corrects. AM peut s'appliquer
+      indifféremment à l'<a href="/tech/info/soft/proj/req/index.html">étude des besoins</a>,
+      l'<a href="/tech/info/soft/proj/design/arch/index.html">architecture</a>, <a href="/tech/info/soft/proj/design/index.html">conception</a>.
+    </li>
+  </ul>
+</section>
+<section><h2>Limitations</h2>
+  <ul>
+    <li>Preuves à faire sur de grands projets.</li>
+  </ul>
+</section>
+<section><h2>Exemples</h2>
+  <p>Des exemples de méthodes agiles sont :</p>
+  <ul>
+    <li><a href="../../Crystal.html">Crystal</a></li>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/ASD.html">ASD</a></li>
+    <li> XBreed (Scrum + XP)
+      <ul>
+        <li><a href="Scrum.html">Scrum</a></li>
+        <li><a href="XP.html">XP</a></li>
+      </ul>
+    </li>
+    <li><a href="../FDD.html">FDD</a></li>
+    <li>DSDM</li>
+    <li>PP</li>
+  </ul>
+</section>
+<section><h2>Voir</h2>
+  <ul>
+    <li><a href="http://www.agilealliance.org">Agile Alliance</a></li>
+    <li><a href="http://www.agilemodeling.com">Agile Modeling (AM) Home Page</a></li>
+    <li>Business Process Partners - <a href="http://www.businessprocesspartner.com/methodes/">Méthodes</a></li>
+  </ul>
+</section><!--#include virtual="/footer.html" -->

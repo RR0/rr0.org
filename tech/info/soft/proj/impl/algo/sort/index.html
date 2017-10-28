@@ -1,0 +1,79 @@
+<!--#include virtual="/header-start.html" -->
+<title>Tri</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Sort</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Ordonner les éléments d'une <a href="../../struct">structure de données</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un <a href="..">algorithme</a> de tri peut être plus ou moins performant en terme de :</p>
+  <ul>
+    <li>rapidité (complexité temporelle) : au mieux en <code>O(n log(n))</code></li>
+    <li>consommation mémoire (complexité spatiale)</li>
+  </ul>
+  <p>suivant l'<a href=".."><strong>algorithme</strong></a> utilisé et son adéquation à l'ensemble à trier,
+    notamment :
+  </p>
+  <ul>
+    <li> sa <strong>taille</strong> : certains <a href="Bubble.html">algorithmes réputés "mauvais"</a> sont plus
+      efficaces sur des petits ensembles par exemple, tandis que d'autres capables de <strong>tris externes</strong>
+      (tris d'ensemble de données
+    </li>
+    énormes car capable de fonctionner <a href="Merge.html">sur des sous-ensembles</a>, l'ensemble total ne tenant pas
+    en mémoire).
+    <li>son état avant tri :
+      <ul>
+        <li><strong>plus ou moins déjà trié</strong> (pratiquement trié, trié à l'envers, ou réellement aléatoire).
+        </li>
+        <li>sa <strong>distribution</strong> (éléments égaux répétés par exemple)<br/>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Il n'y a donc pas d'algorithme idéal, et les meilleures solutions de tri sont <strong>adaptatives</strong>
+    (capables de mobiliser/combiner plusieurs algorithmes en fonction de ces critères).
+  </p>
+  <p>Un <a href="..">algorithme</a> de tri peut aussi est <strong>stable</strong> ou non, à savoir que les
+    éléments égaux ne sont pas réordonnés (leurs positions relatives sont garanties inchangées après le tri).
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Base (radix)</li>
+    <li><a href="Bubble.html">Bulle</a></li>
+    <li><a href="Insertion.html">Insertion</a>
+      <ul>
+        <li><a href="Shell.html">Shell</a></li>
+      </ul>
+    </li>
+    <li><a href="Merge.html">Fusion</a></li>
+    <li><a href="Quick.html">Rapide</a></li>
+    <li><a href="Heap.html">Tas</a>
+      <ul>
+        <li><a href="Smoothsort.html">Smoothsort</a></li>
+      </ul>
+    </li>
+  </ul>
+  <h2>Notes</h2>
+  <ul>
+    <li>Les <a href="../../struct/LinkedList.html">listes chaînées</a> ne sont pas réputées adaptées à un tri efficace,
+      parce qu'elles ne permettent pas d'accès aléatoire (en O(1)) à n'importe quel élément (il faut à chaque fois
+      parcourir la liste en O(n) pour trouver un élément). Elles sont toutefois généralement triées par <a
+          href="Merge.html">fusion</a>.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li><a href="http://www.sorting-algorithms.com/"><em>Sorting Algorithm Animations</em></a><em></em></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

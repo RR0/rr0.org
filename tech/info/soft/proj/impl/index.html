@@ -1,0 +1,63 @@
+<!--#include virtual="/header-start.html" -->
+<title>Implémentation</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Implementation </em>est un terme anglais. Les termes français ne sont que très rarement utilisés, la traduction
+  littérale étant "implantation", et de meilleures traductions étant "mise en oeuvre", "réalisation" ou, par abus de
+  langage, "développement" <span class="note">qui normalement désigne l'activité de production logicielle en générale
+    et ne recouvre pas que la discipline d'implémentation</span>.
+</p>
+<h2>Besoin</h2>
+<p>Traduire une <a href="../design">conception</a> en un langage exécutable par une machine.</p>
+<section>
+  <h2>Analyse</h2>
+  <p>L'implémenteur (ou "développeur") traduit la <a
+      href="../design">conception</a> (notamment exprimée à l'aide d'un formalisme <a href="../UML.html">UML</a> par
+    exemple) en <a href="algo"><strong>algorithmes</strong></a> manipulant des <strong><a
+        href="struct">structures de données</a></strong> <span class="note"><q>algorithm + data
+        structures = programs</q> - Niklaus Wirth</span>, à travers un <strong><a href="CodeSource.html">code source</a>
+    </strong>écrit dans un <a href="lang">langage</a> donné.
+  </p>
+  <p>Ce <a href="CodeSource.html">code source</a> est ensuite traduit à son tour en <strong>code machine</strong>
+    compréhensible par la couche plus primitive/matérielle, soit :
+  </p>
+  <ul>
+    <li>via un <a href="Compilation.html"><strong>compilateur</strong></a>, le traduisant en
+      <ul>
+        <li>virtuelle (<a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a> par exemple)
+        </li>
+        <li>réelle (Pentium 4 par exemple)</li>
+      </ul>
+    </li>
+    <li>via un <strong>interpréteur </strong>(<a href="/tech/info/soft/proj/impl/lang/javascript">JavaScript</a>, <a
+        href="lang/basic">BASIC</a> par exemple) qui le traduit en direct
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Il existe différents paradigmes de programmation, qui ne sont pas tous exclusifs (i.e. certains peuvent être
+    utilisés dans d'autres) :</p>
+  <ul>
+    <li><strong>Impérative</strong> qui consiste à donner des ordres à la machine (fait ceci, affecte telle
+      valeur à telle variable, si ceci alors cela, boucle tant que, etc.).</li>
+    <li><a href="lang/oo">POO</a> (classe, composant, prototype)</li>
+    <li>Déclarative (descriptive, fonctionnelle, logique ou par contraintes)</li>
+    <li>autres (événementielle, réactive, <a href="/tech/info/soft/AOP.html">AOP</a>, etc.)</li>
+  </ul>
+</section>
+<section>
+  <h2>Test</h2>
+  <p>L'activité d'implémentation nécessite toujours des sous-activités régulières de <strong><a href="Debugging.html">mise-au-point</a></strong>
+    permettant de tracer et corriger les erreurs d'implémentation (<em><a href="Debugging.html">debugging</a></em>).
+  </p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Généralement réalisée à l'aide d'un <a
+        href="../../prod/ide">EDI</a></li>
+    <li>Existent également des décompilateurs, capables de générer un code source à partir d'un code machine (Jad par
+      exemple)
+    </li>
+  </ul>
+</section><!--#include virtual="/footer.html" -->

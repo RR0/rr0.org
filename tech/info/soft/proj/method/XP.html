@@ -1,0 +1,161 @@
+<!--#include virtual="/header-start.html" -->
+<title>XP</title>
+<meta name="url" content="http://www.extremeprogramming.org">
+<!--#include virtual="/header-end.html" -->
+<p><i>eXtreme Programming</i> : programmation extrême.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un processus de développement logiciel permettant :</p>
+  <ul>
+    <li>de mettre en avant le travail en équipe</li>
+    <li>de satisfaire les besoins des clients</li>
+    <li>d'être réactif aux changements des besoins</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>XP est une <a href="AM.html">méthode agile</a> réunissant un ensemble de bonnes pratiques de :</p>
+  <ul>
+    <li>Expression des besoins
+      <ul>
+        <li><b>Scénarios écrits par les utilisateurs</b> pour chaque fonctionnalité de l'application, avec leurs propres
+          termes. On les demandes sous forme très grossière, en 2 ou 3 phrases, pour permettre d'évaluer avec un risque
+          mesuré leur temps d'implémentation (entre 1 et 3 semaines). Ce sont ces scénarios qui font servir de base à la
+          réalisation de tests de conformité. Au moment de l'implémentation proprement dite le développeur viendra
+          demander face à face une description plus détaillée.
+        </li>
+      </ul>
+    </li>
+    <li>Gestion de projet
+      <ul>
+        <li>planifier les versions (<em>planning game</em>)</li>
+        <li><strong>livraisons fréquentes </strong>(<em>frequent releases</em>) d'un produit en état de marche</li>
+        <li>mesurer la vélocité du projet</li>
+        <li><b>itérations </b>entre 2 et 3 semaines. Les programmeurs se focalisent sur les objectifs de cette itération
+          et aucun autre
+        </li>
+        <li><strong>client sur site </strong>(<em>on-site customer </em>ou <em>whole team</em>) ou représentant ayant
+          tous pouvoirs
+        </li>
+        <li>contractuels
+          <ul>
+            <li><strong>droit du client à changer d'avis </strong>sur le contenu fonctionnel ou les priorités</li>
+            <li><strong>possibilité pour le client de se dégager </strong>du contrat à tout moment, sur décision motivée
+              et à condition d'avoir rémunéré le prestataire pour, au minimum, toutes les itérations qui ont fait
+              l'objet d'une recette-livraison
+            </li>
+          </ul>
+        </li>
+        <li><strong>réunion debout chaque jour</strong></li>
+        <li> (représentant) <strong>client toujours disponible </strong>pour dialoguer avec l'équipe de développement.
+        </li>
+        <li><strong>rythme raisonnable </strong>(<em>sustainable pace</em>) : pas de journées trop longues qui amènent à
+          décroitre la qualité
+        </li>
+        <li><strong>corriger XP lorsqu'il défaille</strong></li>
+      </ul>
+    </li>
+    <li>Conception
+      <ul>
+        <li><strong>coder les tests d'abord </strong>: il orientent la conception par codage (programmation par
+          intention)
+        </li>
+        <li><strong>simplicité d'abord</strong> : les optimisations viendront plus tard</li>
+        <li><strong>métaphone du système </strong>pour le faire mieux assimiler et comprendre ses tenants et
+          aboutissants
+        </li>
+        <li><strong>cartes CRC</strong></li>
+        <li><strong>créer des prototypes rapides </strong>(<em>spike solutions</em>) pour éliminer les inconnues
+          techniques
+        </li>
+        <li><strong>ne jamais ajouter de fonctionnalité trop tôt</strong></li>
+        <li><strong>remaniement du code </strong>(<em>refactoring</em>) : réarranger/réécrire le code chaque fois que
+          possible
+        </li>
+      </ul>
+    </li>
+    <li>Gestion de configuration
+      <ul>
+        <li><strong>intégration continue </strong>(<em>continous integration</em>) : à chaque itération. Cette
+          intégration doit exploiter des tests unitaires offrant une couverture suffisante du système (rejouer les tests
+          de recette à chaque intégration serait trop long).
+        </li>
+        <li><strong>une intégration à la fois</strong></li>
+      </ul>
+    </li>
+    <li>Implémentation
+      <ul>
+        <li><strong>standards de codage</strong></li>
+        <li><strong>code partagé</strong> : le code n'appartient à personne en particulier, faire tourner les gens sur
+          les différentes parties
+        </li>
+        <li><strong>codage en binôme</strong> : le débat sur la conception et l'implémentation se fait tôt (avant les
+          problèmes), la propriété du code est tout de suite partagée
+        </li>
+        <li><strong>optimisation à la fin</strong></li>
+      </ul>
+    </li>
+    <li>Tests
+      <ul>
+        <li><strong>fourniture par le client et à l'avance de tests </strong>fonctionnels automatiques et utilisation de
+          ces tests comme critère unique de recette de chaque livraison
+        </li>
+        <li>Tout ce qui est codé doit avoir un test unitaire</li>
+        <li>tout les codes doivent avoir passé les tests unitaires avant d'être diffusés</li>
+        <li>ajouter de nouveaux tests lorsqu'un bug est trouvé</li>
+        <li>lancer souvent des tests d'acceptation et en publier le résultat</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Bien adapté aux petits projets</li>
+    <li>Fondé sur les travaux de <a href="/people/b/BeckKent.html">Kent Beck</a>, Ron Jeffries, <a
+        href="/people/c/CunninghamWard.html">Ward Cunningham</a>, Martin Flower.
+    </li>
+    <li>Officiellement apparu en <time>2000-10</time> avec la sortie de <span class="source">[Benk 2000]</span>.
+    </li>
+    <li>Plutôt adapté aux projets en <a href="../Regie.html">régie</a> forfaitée.</li>
+    <li>Vise à réduire les coûts indirects d'un <a href="../index.html">projet</a> en instaurant une relation
+      gagnant-gagnant
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Peu adapté aux grands projets : les diviser en sous-projets.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des projets XP ont été menés à bien pour :</p>
+  <ul>
+    <li>Bayerische Landesbank</li>
+    <li>Credit Swiss Life</li>
+    <li>Daimler Chrysler</li>
+    <li>First Union National Bank</li>
+    <li>Ford Motor Company</li>
+    <li>UBS</li>
+  </ul>
+  <p>Des exemples d'outils pour les projets XP sont :</p>
+  <ul>
+    <li><a href="http://www.xplanner.org">XPlanner</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="http://www.extremeprogramming.org/"><em>Extreme Programming : A gentle introduction</em></a></li>
+    <li><a href="http://www.xprogramming.com/"><em>XProgramming.com - An extreme programming resource</em></a> - XP
+      Magazine, Outils
+    </li>
+    <li><span class="source">[Beck 2000] </span><em>Extreme Programming Explained</em> (Addison Wesley, Octobre 2000)
+    </li>
+    <li><em>Extreme Programming Installed</em></li>
+    <li><em>Planning Extreme Programming</em></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,65 @@
+<!--#include virtual="/header-start.html" -->
+<title>SoC</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Separation of Concerns</em> : Séparation des responsabilités</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Produire une conception modulaire (réutilisable, plus facilement maintenable et évolutive)</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p></p>
+  <ul>
+    <li><strong>fonctionnels</strong> : l'<a href="../Analyse.html">analyse</a> du système</li>
+    <li><strong>techniques</strong> : l'<a href="arch/index.html">architecture</a> adoptée pour le système, qui va
+      naturellement orienter la conception en fonction des contraintes techniques qu'elle engendre (par exemple une
+      conception <a href="/org/us/company/oracle/sun/ptf/java/api/ee/index.html">J2EE</a> ne sera pas identique à une
+      conception <a href="/org/us/company/microsoft/windows/dotnet/index.html">.NET</a>).
+    </li>
+  </ul>
+  <p>On peut donc voir la conception comme une <strong>projection</strong> de l'<a href="../Analyse.html">analyse</a>
+    sur des contraintes techniques.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>La conception peut être facilitée par l'utilisation d'un formalisme commun et connu des différents acteurs du
+    projet, comme <a href="../UML.html">UML</a>. Pourront ainsi être généré lors des activités de conception des
+    diagrammes :
+  </p>
+  <ul>
+    <li><strong>statiques</strong>
+      <ul>
+        <li><strong>classes</strong> : structure statique du système et<b> objets </b>(état donné d'un système)</li>
+      </ul>
+    </li>
+    <li><strong>dynamiques</strong>
+      <ul>
+        <li>interactions : <strong>séquence</strong> ordonnées de messages entre objets ou
+          <strong>collaboration</strong></li>
+        <li><strong>activités</strong> (algorithmes) et <strong>états</strong>/transitions d'un système
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Les <a href="pattern">DP</a> fournissent des solutions de conception typiques à des problèmes de conception
+      typiques.
+    </li>
+    <li>Une classe d'<a href="../Analyse.html">analyse</a> ne correspond pas forcément à une classe de conception (et
+      <em>vice versa</em>)
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'outils de conception sont :</p>
+  <ul>
+    <li><a href="../../../../../java/TCC.html" class="deprecated">TCC</a></li>
+    <li>Rational Rose</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,98 @@
+<!--#include virtual="/header-start.html" -->
+<title>Merise</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une <a href="/tech/info/soft/proj/method">démarche</a> de fabrication du <a
+      href="/tech/info/IS.html">SI</a>.</p>
+</section>
+<section>
+  <h2>Principes</h2>
+  <p>Merise prend en compte :</p>
+  <ul>
+    <li>le cycle de vie du projet (étapes en <strong>cascade</strong>)</li>
+    <li>le suivi du projet : Les choix, les <strong>points de validation</strong> des étapes.</li>
+    <li>la <strong>formalisation</strong> : abstraction des différentes étapes (conceptuelle, organisationnelle/logique,
+      puis opérationnelle/physique).</li>
+  </ul>
+  <p>La démarche Merise propose de suivre les étapes suivantes en cascade :</p>
+  <ul>
+    <li>le <strong>schéma directeur</strong>, transverse et affiné au fil des différents projets
+      <ul>
+        <li>choix d'organisation (définition du <a href="/tech/info/IS.html">SI</a>)</li>
+        <li>choix stratégiques (matériels, logiciels, architecture, SAI) </li>
+      </ul>
+    </li>
+    <li>l'<strong>étude préalable</strong>
+      <ul>
+        <li>référencement des moyens existants</li>
+        <li>système existant, système désiré</li>
+        <li>synthèse des besoins du système désiré via un <abbr title="Modèle Conceptuel de Communication">MCC</abbr>
+        </li>
+        <li>proposition de scénarios pour le système désiré avec matériels et logiciels nécessaires et traitements
+          proposés via <abbr title="Modèle Conceptuel de Traitement">MCT</abbr> et ébauche de <abbr
+              title="Modèle Conceptuel de Données">MCD</abbr></li>
+      </ul>
+    </li>
+    <li>l'<strong>analyse détaillée</strong>, issue d'un choix des scénarios de l'étude préalable selon des critères de
+      coûts, limites, impacts, délais, faisabilité
+      <ul>
+        <li><abbr
+            title="Modèle Conceptuel de Données"></li>
+        <li><abbr title="Modèle Organisationnel de Traitements">MOT</abbr></li>
+        <li>description des traitements (enchaînements, procédures fonctionnelles avec tables de décisions, écrans,
+          états, liens avec le MCD)</li>
+        <li>dictionnaire de données et validation du MCD par rapport aux traitements (entités et relations types,
+          propriétés)</li>
+        <li><abbr title="Modèle Logique de Données">MLD</abbr></li>
+      </ul>
+    </li>
+    <li>l'<strong>analyse technique</strong> décrivant la réalisation à venir et levant ses dernières inconnues
+      <ul>
+        <li><abbr title="Modèle Physique de Données">MPD</abbr></li>
+        <li><abbr title="Modèle OPérationnel des Traitements">MOPT</abbr></li>
+      </ul>
+    </li>
+    <li>la <strong>réalisation</strong>
+      <ul>
+        <li>programmation</li>
+        <li>tests</li>
+        <li>mise en exploitation</li>
+      </ul>
+    </li>
+    <li>la <strong>maintenance </strong>
+      <ul>
+        <li>corrective, corrigeant les anomalies de conception ou de réalisation</li>
+        <li>évolutive, nécessaire suite à une évolution de l'organisation (de son SI)</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Merise dispose de son propre formalisme pour les différents diagrammes (entités-relations d'un MCD, MPD, etc.).</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Méthode issue d'un appel d'offre en <time>1977</time> du Ministère de l'Industrie pour définir une méthode de
+      conception des SI. Les deux principales sociétés sont <abbr title="Centre Technique d'Informatique">CTI</abbr>
+      chargé de gérer le projet et le <abbr title="Centre d'Etudes Techniques de l'Equipement">CETE</abbr> implanté à
+      Aix-en-Provence.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de logiciels supportant Merise sont :</p>
+  <ul>
+    <li>AMC Designer</li>
+    <li>TRAMIS</li>
+    <li>SELECT</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Démarche en cascade : effet tunnel de détection des problèmes (inadéquation technique ou fonctionnelle) qu'à la
+      fin du processus. Corrigé par des <a href="/tech/info/soft/proj/method">méthodes</a> itératives comme <a
+          href="UP.html">UP</a> ou <a href="XP.html">XP</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

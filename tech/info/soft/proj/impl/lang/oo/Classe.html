@@ -1,0 +1,149 @@
+<!--#include virtual="/header-start.html" -->
+<title>Class</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Class</em> : Classe d'objet.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un <strong>modèle</strong> commun pour un ensemble d'<a href="Objet.html">objets</a>.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+
+  <p>Une classe d'objet définit :</p>
+  <ul>
+    <li>la structure de son <strong>état</strong></li>
+    <li> son comportement, c'est-à-dire les <strong>messages </strong>qu'on peut lui envoyer et comment il va y
+      répondre.
+    </li>
+  </ul>
+  <p>De tels attributs ou méthodes membres d'une classes peuvent être rendus plus ou moins accessibles (publics,
+    protégés, privés) du monde extérieur à l'objet.
+  </p>
+  <section><h3>Héritage</h3>
+
+    <p>Une classe peut <a href="Heritage.html"><strong>hériter</strong></a> d'une autre classe. Un objet de la classe
+      fille possède alors implicitement toutes les caractéristiques (attributs et méthodes) de la classe mère, qu'elle
+      peut ensuite affiner.
+    </p>
+  </section>
+</section>
+<section>
+  <h2>Conception</h2>
+
+  <p>Les membres d'un classe d'objet définit ses <strong>membres</strong> :</p>
+  <ul>
+    <li>le nom et le type et la visibilité de ses <strong>attributs</strong></li>
+    <li>le nom, le type, la visibilité et les paramètres de ses <strong>méthodes</strong></li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+
+  <p>L'expression de la définition d'une classe dépendra du <a href="../../../../prog/Language.html">langage</a> de
+    programmation <a href=".">OO</a> employé.
+  </p>
+</section>
+<section>
+  <h2>Exemple</h2>
+
+  <p>Dans un fichier Personne.java :</p>
+  <p><code><strong>public class </strong>Personne {<br/> <strong>private </strong>String nom;<br/>
+    <strong>private</strong> int age; <br/> <strong>private</strong> String profession;<br/> <strong>private</strong>
+    Addresse adresse;<br/> <br/> <span class="codeComment">   /**<br/>
+    * Constructeur<br/>
+    */</span><br/> <strong>public</strong> Personne (String telNom) {<br/> nom = telNom;<br/> } <br/> <br/> <strong>public</strong>
+    String getLibelleCarteVisite() {<br/> return nom + ", " getProfession() + ", " + addresse;<br/> }<br/> <br/>
+    <strong>protected</strong> void anniversaire() {<br/> age++;<br/> }<br/> <br/> <span class="codeComment">   /**<br/>
+    * Accesseur en écriture <br/>
+    */</span><br/> <strong>public</strong> setAddresse (Adresse telleAddresse) {<br/> adresse = telleAdresse;<br/>
+    }<br/> <br/> <span class="codeComment">   /**<br/>
+    * Accesseur en lecture <br/>
+    */</span><br/> <strong>public</strong> String getProfession() {<br/> return profession; <br/> }<br/> } </code></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Un objet (une instance) d'une classe donnée est créé par une opération d'<strong>instanciation</strong>,
+      généralement en exécutant une méthode particulière de la classe : un constructeur d'objet (d'instance).
+    </li>
+    <li>certaines méthodes membres ont pour objectif de donner accès aux attributs (en lecture, écriture ou les deux).
+      Ces méthodes sont appelées <strong>accesseurs</strong> et respectent typiquement des conventions de nommage
+      (getTelAttribut, setTelAttribut).
+    </li>
+    <li>En Java les tableaux sont considérés comme des classes. Leurs noms s'affichent alors en fonction du type de
+      leurs éléments, comme suit (pour un tableau de profondeur 1, le nombre de [ se multipliant si cette profondeur
+      augmente) :
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>Type d'élément</th>
+          <th>Nom affiché de la classe de tableau</th>
+        </tr>
+        <tr>
+          <td><code>boolean</code></td>
+          <td><code>[Z</code></td>
+        </tr>
+        <tr>
+          <td><code>byte</code></td>
+          <td><code>[B</code></td>
+        </tr>
+        <tr>
+          <td><code>char</code></td>
+          <td><code>[C</code></td>
+        </tr>
+        <tr>
+          <td><code>classe</code> ou <code>interface</code> de <em>TelNom</em></td>
+          <td><code>[L<em>TelNom;</em></code></td>
+        </tr>
+        <tr>
+          <td><code>double</code></td>
+          <td><code>[D</code></td>
+        </tr>
+        <tr>
+          <td><code>float</code></td>
+          <td><code>[F</code></td>
+        </tr>
+        <tr>
+          <td><code>int</code></td>
+          <td><code>[I</code></td>
+        </tr>
+        <tr>
+          <td><code>long</code></td>
+          <td><code>[J</code></td>
+        </tr>
+        <tr>
+          <td><code>short</code></td>
+          <td><code>[S</code></td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+
+  <p>Une classe :</p>
+  <ul>
+    <li>ne peut changer de structure à l'exécution</li>
+  </ul>
+</section>
+<section>
+  <h2>Conseils</h2>
+  <ul>
+    <li> Déclarer ses attributs membres privés</li>
+    <li>Déclarer les membres publics d'abord dans le code source de la classe</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+
+  <p>Des exemples de classes d'objet sont :</p>
+  <ul>
+    <li> Voiture</li>
+    <li>Avion</li>
+    <li>Personne</li>
+    <li>Facture</li>
+    <li>Idée</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

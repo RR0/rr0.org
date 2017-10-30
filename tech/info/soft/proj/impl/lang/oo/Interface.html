@@ -1,14 +1,13 @@
 <!--#include virtual="/header-start.html" -->
-<title>Classe</title>
+<title>Interface</title>
 <!--#include virtual="/header-end.html" -->
-<p><em>Class</em> : Classe d'objet.</p>
 <section>
   <h2>Besoin</h2>
-  <p>Définir un <strong>modèle</strong> commun pour un ensemble d'<a href="Objet.html">objets</a>.
-  </p>
+  <p>Décrire le contrat d'utilisation d'un composant.</p>
 </section>
 <section>
   <h2>Analyse</h2>
+
   <p>Une classe d'objet définit :</p>
   <ul>
     <li>la structure de son <strong>état</strong></li>
@@ -19,8 +18,8 @@
   <p>De tels attributs ou méthodes membres d'une classes peuvent être rendus plus ou moins accessibles (publics,
     protégés, privés) du monde extérieur à l'objet.
   </p>
-  <section>
-    <h3>Héritage</h3>
+  <section><h3>Héritage</h3>
+
     <p>Une classe peut <a href="Heritage.html"><strong>hériter</strong></a> d'une autre classe. Un objet de la classe
       fille possède alors implicitement toutes les caractéristiques (attributs et méthodes) de la classe mère, qu'elle
       peut ensuite affiner.
@@ -29,6 +28,7 @@
 </section>
 <section>
   <h2>Conception</h2>
+
   <p>Les membres d'un classe d'objet définit ses <strong>membres</strong> :</p>
   <ul>
     <li>le nom et le type et la visibilité de ses <strong>attributs</strong></li>
@@ -37,12 +37,14 @@
 </section>
 <section>
   <h2>Implémentation</h2>
-  <p>L'expression de la définition d'une classe dépendra du <a href="/tech/info/soft/proj/impl/lang">langage</a> de
+
+  <p>L'expression de la définition d'une classe dépendra du <a href="../../../../prog/Language.html">langage</a> de
     programmation <a href=".">OO</a> employé.
   </p>
 </section>
 <section>
   <h2>Exemple</h2>
+
   <p>Dans un fichier Personne.java :</p>
   <p><code><strong>public class </strong>Personne {<br/> <strong>private </strong>String nom;<br/>
     <strong>private</strong> int age; <br/> <strong>private</strong> String profession;<br/> <strong>private</strong>

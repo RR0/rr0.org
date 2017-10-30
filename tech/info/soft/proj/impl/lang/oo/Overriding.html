@@ -1,0 +1,27 @@
+<!--#include virtual="/header-start.html" -->
+<title>Overriding</title>
+<!--#include virtual="/header-end.html" -->
+<p>Redéfinition <span class="note">Et non "surcharge"</span> .</p>
+<section><h2>Motivation</h2>
+
+    <p>Redéfinir l'implémentation d'une méthode dans une sous-classe.</p>
+</section>
+<section><h2>Exemples</h2>
+
+    <p>Un exemple de redéfinition est :</p>
+    <blockquote>
+        <p>class InputStream<br> {<br>    public close () <br>    { <br>
+            ... <br>    }<br> }<br> <br> class FilterInputStream extends InputStream<br> { <br></p>
+        <q>   public close ()  // Redéfinition de la méthode close()<br>    { <br>
+            ... <br>    }<br> } </q></blockquote>
+</section>
+<section>
+    <h2>Notes</h2>
+    <ul>
+        <li>Une redéfinition peut consister à ajouter un comportement au comportement de l'ancêtre (appel de la méthode
+            <q>super()</q> de cet ancêtre).
+        </li>
+        <li>A ne pas confondre avec surcharge (<em>overloading</em>).</li>
+    </ul>
+</section>
+<!--#include virtual="/footer.html" -->

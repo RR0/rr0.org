@@ -7,7 +7,7 @@
   <ul>
     <li>Associer des données avec les processus qui les manipulent</li>
     <li>Augmenter le niveau d'abstraction : rapprocher les <em>concepts</em> du <a href="..">langage</a> de ceux de la
-      <a href="../../../design"> conception</a> d'une l'application
+      <a href="../../../design">conception</a> d'une l'application
     </li>
   </ul>
 </section>
@@ -27,23 +27,23 @@
       cet objet.
     </li>
   </ul>
-</section>
-<section>
-  <h2>Conception</h2>
-  <p>Un objet occupe une place en mémoire permettant de donner des valeurs aux attributs définis par sa <a
-      href="Classe.html">classe</a>. Cette place est repérée par une <a href="/tech/info/soft/proj/impl/Reference.html">référence</a>
-    sur cet objet.
-  </p>
-  <p>Un objet (instance) d'une <a href="Classe.html">classe</a> donnée est créé par une opération d'<strong>instanciation</strong>,
-    généralement en exécutant une méthode particuliàre de la classe : un <strong>constructeur</strong> d'objet
-    (d'instance).
-  </p>
-  <p>Des caractéristique possibles d'un l'objet sont :</p>
+  <p>Des caractéristiques possibles d'un l'objet sont :</p>
   <ul>
     <li>l'<strong><a href="Abstraction.html">abstraction</a></strong></li>
     <li>l'<strong><a href="Heritage.html">héritage</a></strong></li>
     <li>l'<strong><a href="Encapsulation.html">encapsulation</a></strong></li>
   </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>L'<strong><a href="Abstraction.html">abstraction</a></strong> d'un objet est représentée par sa <a
+      href="Classe.html">classe</a> et son état par un ensemble d'<strong>attributs</strong>.</p>
+  <p>Un objet d'une <a href="Classe.html">classe</a> donnée est créé par une opération d'<strong>instanciation</strong>,
+    généralement en exécutant une méthode particuliàre de la classe : un <strong>constructeur</strong> d'objet
+    (d'instance). Cette opération reserve un espace mémoire permettant de donner les valeurs d'attributs propres à cette
+    instance. Cette place est repérée par une <a href="/tech/info/soft/proj/impl/Reference.html">référence</a> sur cet
+    instance.
+  </p>
   <p>Les objets d'une même <a href="Classe.html">classe</a> peuvent partager des données liées à leur classe (données
     "statiques")
   </p>
@@ -59,18 +59,22 @@
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li>ne peut changer de type (de <a href="Classe.html">classe</a>) durant l'exécution.</li>
+    <li>Généralement le typage est statique, c'est à dire qu'un objet ne peut "muter" vers un autre type (changer de <a
+        href="Classe.html">classe</a>)
+      durant l'exécution.</li>
   </ul>
 </section>
 <section>
   <h2>Exemples</h2>
   <p>Des exemples d'objets sont :</p>
   <ul>
-    <li> 307 rouge immatriculée 2002 RM 75</li>
-    <li>Boeing 747 immatriculé GBH-888</li>
-    <li>Jérôme Beau</li>
-    <li>Facture N° 128932</li>
-    <li>Aller chercher du pain avant 19 h</li>
+    <li>instance de classe "Voiture", aux attributs "modèle" = "307", "couleur" = "rouge" et "immatriculation" = "2002
+      RM 75"</li>
+    <li>instance de classe "Avion", aux attributs "marque" = "Boeing", "modèle" = "747" et "immatriculation" = "GBH-888"</li>
+    <li>instance de classe "Personne" aux attributs "prénom" = "Jérôme" et "nom" = "Beau"</li>
+    <li>instance de classe "Facture" ayant l'attribut "numéro" = "128932"</li>
+    <li>instance de classe "Chose à faire" aux attributs "description" = "chercher du pain" et "horaire" = "avant 19
+      h"</li>
   </ul>
 </section>
 <section>

@@ -2,923 +2,930 @@
 <title>Persistance</title>
 <!--#include virtual="/header-end.html" -->
 <p><em>Persistence.</em></p>
-<h2><a href="../../../besoin/index.html">Besoin</a></h2>
-<p>Enregistrer un état de manière permanente.</p>
-<p>Il n'y aurait pas besoin de persistance si la <a href="../../../../prog/oo/java/Memory.html">mémoire</a> de travail
-    des ordinateurs :
-</p>
-<ul>
+<section>
+  <h2><a href="../../../req">Besoin</a></h2>
+  <p>Enregistrer un état de manière permanente.</p>
+  <p>Il n'y aurait pas besoin de persistance si la <a href="/tech/info/hard/Memory.html">mémoire</a> de travail des
+    ordinateurs :
+  </p>
+  <ul>
     <li>n'était pas volatile (nécessitant une alimentation en courant pour être maintenue)</li>
     <li>avait un coût moindre (permettant de l'augmenter à la taille des disques durs typiquement).</li>
-</ul>
-<section><h2><a href="../../../Analyse.html">Analyse</a></h2>
-
-    <p>Sauvegarder l'état d'un objet consiste à enregistrer la valeur de l'ensemble de ses champs (attributs), qu'ils
-        soient :
-    </p>
-    <ul>
-        <li>simples (numérique, texte, booléen, etc.)</li>
-        <li>objet (référence à un autre objet, collection d'objets, etc.)</li>
-    </ul>
-    <h3><a href="../../../besoin/UseCase.html">Cas d'utilisation</a></h3>
-
-    <p>Il existe plusieurs cas où l'on a besoin d'un mécanisme de persistance. Tous impliquent un <strong>modèle
-        objet</strong> et un <strong>modèle de stockage</strong> :
-    </p>
-    <ul>
-        <li><em><strong>top-down </strong></em>: le modèle objet existe (ou est imposé), et l'on souhaite générer modèle
-            de stockage. Cela aboutit typiquement à une génération de schéma de base relationnelle à partir d'un
-            ensemble de classes Java.
-        </li>
-        <li><em><strong>bottom-up </strong></em>: le modèle de stockage existe (ou est imposé), et l'on souhaite générer
-            le modèle objet. Cela aboutit typiquement à une génération de classes Java à partir d'un schéma relationnel.
-        </li>
-        <li><span class="Style1">meet-in-the-middle</span> : le modèle de stockage et le modèle objet existent (ou sont
-            imposés), et l'on souhaite faire correspondre l'un avec l'autre.
-        </li>
-    </ul>
-    <p>Dans tous les cas, une formalisation de la correspondance (<em><strong>mapping</strong></em>) entre les 2 modèles
-        devra être produite.
-    </p>
+  </ul>
 </section>
-<section><h2><a href="../../../conception/index.html">Conception</a></h2>
+<section>
+  <h2><a href="../../../Analyse.html">Analyse</a></h2>
 
-    <p>Alors que la persistance d'objets est relativement naturelle dans un SGBD utilisant le même paradigme
-        (<a href="../../../../prod/server/sgbd/o/index.html">SGBDO</a>), elle vise la plupart du temps un stockage dans
-        selon un paradigme relationnel (<a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a>). Dans ce dernier
-        cas doit être mis en place une correspondance (<em>mapping</em>) entre le modèle objet et le modèle de la base
-        relationnelle (<em>Object/Relational</em> ou <em>O/R</em>).
-    </p>
-    <section>
-        <h3>Héritage</h3>
+  <p>Sauvegarder l'état d'un <a href="/tech/info/soft/proj/impl/lang/oo/Objet.html">objet</a> consiste à enregistrer la valeur de l'ensemble de ses champs (attributs), qu'ils
+    soient :
+  </p>
+  <ul>
+    <li>simples (numérique, texte, booléen, etc.)</li>
+    <li><a href="/tech/info/soft/proj/impl/lang/oo/Objet.html">objet</a> (<a href="/tech/info/soft/proj/impl/Reference.html">référence</a> à un autre objet, collection d'objets, etc.)</li>
+  </ul>
+  <h3><a href="../../../req/UseCase.html">Cas d'utilisation</a></h3>
 
-        <p>On peut représenter un héritage objet via un mapping relationnel :</p>
-        <table border="1" cellspacing="0" cellpadding="5">
-            <caption>
-                Mappings d'héritage
-            </caption>
-            <tr>
-                <td colspan="2" class="titleCorner"></td>
-                <th>Vertical</th>
-                <th>Horizontal</th>
-                <th>Filtré ou "plat" (<em>flat</em>)</th>
-            </tr>
-            <tr>
-                <th rowspan="2">Contraintes schéma</th>
-                <th>Nombre de tables par hiérarchie</th>
-                <td>3àme forme normale : 1 par <a href="Classe.html">classe</a> (concrète ou
-                    abstraite)
-                </td>
-                <td>1 par <a href="Classe.html">classe</a> concrète</td>
-                <td>1 pour l'ensemble des <a href="Classe.html">classes</a></td>
-            </tr>
-            <tr>
-                <th>Mécanisme de typage</th>
-                <td>Fonction de la table pour les classes concrètes. Stocké dans une colonne discriminante ou dans une
-                    table annexe pour les classes abstraites
-                </td>
-                <td>Fonction de la table</td>
-                <td>Stocké dans par une colonne discriminante</td>
-            </tr>
-            <tr>
-                <th rowspan="2">Evolutivité</th>
-                <th>Modification de classes ancàtres</th>
-                <td class="oui">Modification de la table de la classe ancêtre</td>
-                <td class="non">Modification de toutes les tables</td>
-                <td>Modification de la table unique</td>
-            </tr>
-            <tr>
-                <th>Modification/ajout de classes dérivées</th>
-                <td class="oui">Modification/ajout de tables</td>
-                <td class="oui">Modification/ajout de tables</td>
-                <td>Modification de la table unique</td>
-            </tr>
-            <tr>
-                <th rowspan="2">Performance</th>
-                <th>Lecture sans relation</th>
-                <td class="non">Mauvais</td>
-                <td>Moyen</td>
-                <td class="oui">Bon</td>
-            </tr>
-            <tr>
-                <th>Lecture avec relation</th>
-                <td class="oui">Bon</td>
-                <td class="non">Mauvais</td>
-                <td>Moyen</td>
-            </tr>
-            <tr>
-                <th rowspan="2">Contraintes</th>
-                <th>Espace alloué</th>
-                <td class="oui">Minimal</td>
-                <td>Moyen</td>
-                <td class="non">Grand</td>
-            </tr>
-            <tr>
-                <th>Intégrité</th>
-                <td class="oui">Tràs adapté</td>
-                <td>Moyennement adapté</td>
-                <td class="non">Pas adapté</td>
-            </tr>
-        </table>
-    </section>
-    <section><h3>Relations</h3>
-
-        <p>On peut représenter des relations via un mapping relationnel :</p>
-        <table border="1" cellspacing="0" cellpadding="5">
-            <tr>
-                <td colspan="2">Mapping de relation</td>
-                <th>Simple</th>
-                <th>Entité</th>
-                <th>Inversée</th>
-            </tr>
-            <tr>
-                <th>Contraintes schéma</th>
-                <th>Principe</th>
-                <td>La table source contient une clé étrangàre vers la destination</td>
-                <td>1 Table intermédiaire contient les clés des objets liés</td>
-                <td>La table destination contient une clé étrangàre vers la source</td>
-            </tr>
-            <tr>
-                <th rowspan="3">Performance/ type de relation</th>
-                <th>1-1</th>
-                <td class="oui">Bon</td>
-                <td class="non">Mauvais</td>
-                <td>Moyen</td>
-            </tr>
-            <tr>
-                <th>1-n</th>
-                <td rowspan="2" class="non">Impossible</td>
-                <td>Moyen</td>
-                <td class="oui">Bon</td>
-            </tr>
-            <tr>
-                <th>n-m</th>
-                <td class="oui">Bon</td>
-                <td>Impossible</td>
-            </tr>
-        </table>
-        <p>Cependant le mapping peut se révéler plus complexe lorsqu'il faut garantir des contraintes :</p>
-        <ul>
-            <li>d'intégrité (1-1, 1-n)</li>
-            <li>d'ordre (relation avec collections ordonnées)</li>
-        </ul>
-    </section>
+  <p>Il existe plusieurs cas où l'on a besoin d'un mécanisme de persistance. Tous impliquent un <strong>modèle
+    objet</strong> et un <strong>modèle de stockage</strong> :
+  </p>
+  <ul>
+    <li><em><strong>top-down </strong></em>: le modèle objet existe (ou est imposé), et l'on souhaite générer modèle de
+      stockage. Cela aboutit typiquement à une génération de schéma de base relationnelle à partir d'un ensemble de
+      classes Java.
+    </li>
+    <li><em><strong>bottom-up </strong></em>: le modèle de stockage existe (ou est imposé), et l'on souhaite générer le
+      modèle objet. Cela aboutit typiquement à une génération de classes Java à partir d'un schéma relationnel.
+    </li>
+    <li><span class="Style1">meet-in-the-middle</span> : le modèle de stockage et le modèle objet existent (ou sont
+      imposés), et l'on souhaite faire correspondre l'un avec l'autre.
+    </li>
+  </ul>
+  <p>Dans tous les cas, une formalisation de la correspondance (<em><strong>mapping</strong></em>) entre les 2 modèles
+    devra être produite.
+  </p>
 </section>
-<section><h2>Exemples</h2>
+<section>
+  <h2><a href="../../../design">Conception</a></h2>
 
-    <p>Des exemples de solutions de persistance sont :</p>
-    <table border="1" cellspacing="0" cellpadding="4">
-        <tr>
-            <td rowspan="2">Solutions de persistance</td>
-            <th>Solution</th>
-            <th><a href="http://www.thoughtinc.com/cber_index.html">CocoBase</a></th>
-            <th><a href="../../../../prod/CastorJDO.html">Castor-JDO</a></th>
-            <th colspan="3">Entités <a href="../../../../prog/oo/java/EJB.html">EJB</a></th>
-            <th><a href="http://hibernate.sourceforge.net">Hibernate</a></th>
-            <th><a href="../../../../prog/oo/java/JDBC.html">JDBC</a></th>
-            <th colspan="2"><a href="../../../../prog/oo/java/JDO.html">JDO</a></th>
-            <th>ObjectSpaces</th>
-            <th><a href="../../../../prog/oo/java/ODMG.html">ODMG</a></th>
-            <th><a href="../../../../prog/oo/java/SDO.html">SDO</a></th>
-            <th><a href="../../../../prog/oo/java/Serialisation.html">Serialisation</a></th>
-            <th><a href="http://otn.oracle.com/products/ias/toplink">TopLink</a></th>
-            <th><a href="http://db.apache.org/torque">Torque</a></th>
-            <th><a href="http://www.versant.com">Versant</a></th>
-            <th rowspan="2">Commentaire</th>
-        </tr>
-        <tr>
-            <th>Version</th>
-            <th>4.5</th>
-            <th>0.9</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>2</th>
-            <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>9.0.3</th>
-            <th>3.1</th>
-            <th></th>
-        </tr>
-        <tr>
-            <th rowspan="6"><a href="../../../../prog/oo/java/Transaction.html">Transactions</a></th>
-            <th>Explicites</th>
-            <td class="oui"></td>
-            <td class="oui"><a href="../../../../prog/oo/java/JTA.html">JTA</a></td>
-            <td colspan="3" class="oui">
-                <p><a href="../../../../prog/oo/java/JTA.html">JTA</a></p>
-            </td>
-            <td class="oui"><a href="../../../../prog/oo/java/JTA.html">JTA</a></td>
-            <td class="oui">Oui</td>
-            <td colspan="2" class="oui">javax.jdo. Transaction ou <a href="../../../../prog/oo/java/JTA.html">JTA</a>
-            </td>
-            <td class="oui">Oui</td>
-            <td class="oui">Transaction tx = odmg. newTransaction()</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td>tx.begin, tx.commit</td>
-        </tr>
-        <tr>
-            <th>Implicites</th>
-            <td class="non">Si encapsulsé dans <a href="../../../../prog/oo/java/EJB.html">EJB</a></td>
-            <td class="non">Non</td>
-            <td colspan="3" class="oui">transaction-attribute (Descripteur)</td>
-            <td class="non">Si encapsulsé dans <a href="../../../../prog/oo/java/EJB.html">EJB</a></td>
-            <td class="non">Non</td>
-            <td colspan="2">Oui si en environnement géré (<a href="../../../../../../informatique/soft/java/J2C.html">JCA</a>)
-                et encapsulé dans <a href="../../../../prog/oo/java/EJB.html">EJB</a></td>
-            <td>DataSet ?</td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non">Si encapsulsé dans <a href="../../../../prog/oo/java/EJB.html">EJB</a></td>
-            <td class="non">Si encapsulsé dans <a href="../../../../prog/oo/java/EJB.html">EJB</a></td>
-            <td>Si intégré dans un serveur applicatif et encapsulsé dans
-                <a href="../../../../prog/oo/java/EJB.html">EJB</a>
-            </td>
-            <td>Démarcation, propagation spécifiées en dehors du code.</td>
-        </tr>
-        <tr>
-            <th>Pessimistes</th>
-            <td class="oui"></td>
-            <td class="oui">Exclusive</td>
-            <td colspan="3" class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td>Verrous</td>
-        </tr>
-        <tr>
-            <th>Optimistes</th>
-            <td class="oui">Oui</td>
-            <td class="oui">Shared</td>
-            <td colspan="3" class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td>Sans verrous</td>
-        </tr>
-        <tr>
-            <th>Distribuées</th>
-            <td class="oui"><a href="../../../../prog/oo/java/JTS.html">JTS</a></td>
-            <td class="oui"><a href="../../../../prog/oo/java/JTS.html">JTS</a></td>
-            <td colspan="3" class="oui"><a href="../../../../prog/oo/java/JTS.html">JTS</a></td>
-            <td class="oui"><a href="../../../../prog/oo/java/JTS.html">JTA+JTS</a></td>
-            <td class="oui"><a href="../../../../prog/oo/java/JTS.html">JTS</a></td>
-            <td colspan="2" class="oui"><a href="../../../../prog/oo/java/JTS.html">JTS</a></td>
-            <td class="non">Non</td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td>Support de XA</td>
-        </tr>
-        <tr>
-            <th>Mémoire</th>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td colspan="3" class="non">Non</td>
-            <td class="oui"></td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td>Commit ou rollback d'opérations en mémoire</td>
-        </tr>
-        <tr>
-            <th>Cycle de vie</th>
-            <th>Callbacks</th>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td colspan="3" class="oui"> EntityBean</td>
-            <td class="oui"></td>
-            <td class="oui">API</td>
-            <td class="oui">InstanceCallbacks</td>
-            <td class="oui">InstanceCallbacks extends LoadCallback, StoreCallback,<br> ClearCallback, DeleteCallback
-            </td>
-            <td></td>
-            <td class="non">Non</td>
-            <td class="oui"></td>
-            <td class="oui">readObject, writeObject...</td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td></td>
-            <td>Avant/apràs lecture, mise à jour, suppression</td>
-        </tr>
-        <tr>
-            <th rowspan="5">Requêtes</th>
-            <th>Langage objet</th>
-            <td class="oui">EJB-QL, API CBQuery Builder</td>
-            <td class="oui">Castor OQL</td>
-            <td class="non"><a href="/time/dbms/r/sql/index.html">SQL</a></td>
-            <td colspan="2" class="oui">EJBQL</td>
-            <td class="oui">HQL</td>
-            <td class="non"><a href="/time/dbms/r/sql/index.html">SQL</a></td>
-            <td colspan="2" class="oui">JDOQL</td>
-            <td class="oui">OPath</td>
-            <td class="oui">OQL</td>
-            <td>Non imposé</td>
-            <td class="non">Non</td>
-            <td class="oui">TopLink Expression, EJB QL, PL/SQL</td>
-            <td class="non">API <code>Criteria</code></td>
-            <td class="oui">OQL</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Projections, vues</th>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td colspan="3" class="non">Non</td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td class="oui"><code>query.setResult(this</code> ou champ ou variable, expression navigationnelle,
-                paramàtre)
-            </td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Fonctions aggrégats</th>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td colspan="3" class="non">Non</td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td class="oui"><span class="oui"><code>query.setResult(count</code> ou <code>sum</code> ou <code>min</code> ou <code>max</code> ou <code>avg</code> ou  expression numérique)</span>
-            </td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>SQL possible</th>
-            <td></td>
-            <td class="oui"><code>Database:: getOQLQuery ("CALL SQL ...")</code></td>
-            <td colspan="2">Dépend des implémentations</td>
-            <td class="oui">Oui</td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td>Dépend des implémentations</td>
-            <td class="oui">
-                <p><code>q = pm.newQuery ("javax.jdo.query.SQL", "SELECT ...")</code></p>
-            </td>
-            <td></td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Accàs au code</th>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td colspan="3" class="non">Non</td>
-            <td class="non">Non</td>
-            <td class="non">Non</td>
-            <td colspan="2" class="non">Non</td>
-            <td class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td>Invocation de méthodes dans des requêtes typiquement</td>
-        </tr>
-        <tr>
-            <th rowspan="2"><a href="../../../../prog/oo/java/Performance.html">Performance</a></th>
-            <th>Cache</th>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td colspan="3" class="oui"> Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Managers</td>
-            <td class="oui">Oui</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Détection des modifications</th>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td colspan="2" class="non"> Non</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Proxy</td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Enhancement</td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui"></td>
-            <td class="oui">Via les accesseurs (mutators)</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th rowspan="8">Transparence</th>
-            <th>Accàs aux informations</th>
-            <td>Réflexivité Java</td>
-            <td>Réflexivité Java</td>
-            <td colspan="2">Réflexivité Java</td>
-            <td></td>
-            <td>Réflexivité Java</td>
-            <td>API</td>
-            <td colspan="2"><em>Enhancement</em></td>
-            <td>API</td>
-            <td></td>
-            <td></td>
-            <td>Réflexivité Java</td>
-            <td>Réflexivité Java</td>
-            <td>Code généré</td>
-            <td><em>Enhancement</em></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Relations (1-n, n-m)</th>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td>via accesseurs</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non">N/A</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Héritage</th>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td colspan="2" class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non">N/A</td>
-            <td class="oui">Oui (méthode(s) dépendant de l'implémentation)</td>
-            <td class="oui"><code>&lt;inheritance strategy="new-table" </code>ou <code>"superclass-table"</code>
-                ou <code>"no-table"&gt;</code></td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Plat</td>
-            <td class="oui">Oui</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Collections Java</th>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td colspan="3">Collection, Set</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non"> DBag, DSet, DList, DArray, DMap</td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Persistance de proche en proche</th>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td colspan="2" class="non">Non</td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td class="non">N/A</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td><em>Persistence by reachability</em></td>
-        </tr>
-        <tr>
-            <th>Non intrusion dans le code des objets métier</th>
-            <td class="non"></td>
-            <td class="non">Méthodes d'accàs aux données obligatoires</td>
-            <td colspan="2" class="non">Implémentation de SessionBean, EntityBean, MessageDrivenBean</td>
-            <td class="oui">Oui</td>
-            <td class="non">Méthodes d'accàs aux données obligatoires</td>
-            <td class="non">API JDBC</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="non">Classe abstraite comportant des méthodes OnCreate, etc.</td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non">Implémentation de Serializable</td>
-            <td class="non">Méthodes d'accàs aux données obligatoires</td>
-            <td class="non">Héritage de code généré</td>
-            <td class="oui">Oui</td>
-            <td>Pour maintenabilité et réutilisabilité des objets métier.</td>
-        </tr>
-        <tr>
-            <th>Accàs au graphe d'objets dépendants</th>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td colspan="2" class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="non"></td>
-            <td class="non"></td>
-            <td class="oui">Oui</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Accàs au modèle métier</th>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td colspan="3" class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui">Oui</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th rowspan="4">Mapping</th>
-            <th>Multi-tables</th>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td colspan="3">Dépend de l'implémentation</td>
-            <td></td>
-            <td class="non">Non</td>
-            <td>Dépend de l'implémentation</td>
-            <td class="oui"><code>&lt;join table="DELIV" column="ADDR_STREET"/&gt;</code></td>
-            <td></td>
-            <td></td>
-            <td class="non"></td>
-            <td class="non">Flux (fichier)</td>
-            <td class="oui">Oui</td>
-            <td class="oui"></td>
-            <td>Base objet</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Top-down</th>
-            <td class="oui">Oui</td>
-            <td></td>
-            <td colspan="3">Dépend de l'implémentation</td>
-            <td></td>
-            <td class="non">Non</td>
-            <td colspan="2">Dépend de l'implémentation</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Ecriture de fichier</td>
-            <td></td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td>Génération du schéma de la base à partir du modèle objet</td>
-        </tr>
-        <tr>
-            <th>Bottom-up</th>
-            <td class="oui">Oui</td>
-            <td></td>
-            <td colspan="3">Dépend de l'implémentation</td>
-            <td></td>
-            <td class="non">Non</td>
-            <td colspan="2">Dépend de l'implémentation</td>
-            <td></td>
-            <td></td>
-            <td class="non"></td>
-            <td class="non">Non</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Génération du modèle objet à partir du schéma d'une base existante</td>
-        </tr>
-        <tr>
-            <th>Granularité fine</th>
-            <td></td>
-            <td></td>
-            <td colspan="3" class="non">Objet</td>
-            <td></td>
-            <td class="oui">Via SQL</td>
-            <td colspan="2" class="oui">Champ</td>
-            <td></td>
-            <td></td>
-            <td class="non"></td>
-            <td class="non">Objet</td>
-            <td></td>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th rowspan="2">Stockage</th>
-            <th>Paradigme libre</th>
-            <td class="non"></td>
-            <td class="non"><a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a>,
-                <a href="/time/doc/xml/XML.html">XML</a>,
-                <a href="../../../../prog/oo/java/LDAP.html">LDAP</a>
-            </td>
-            <td colspan="3">Non spécifié (mais généralement
-                <a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a>)
-            </td>
-            <td class="non"><a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a></td>
-            <td class="non"><a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a></td>
-            <td colspan="2" class="oui">Oui (via <a href="../../../../../../informatique/soft/java/J2C.html">JCA</a>)
-            </td>
-            <td class="non"><a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a>,
-                <a href="/time/doc/xml/XML.html">XML</a></td>
-            <td class="non"><a href="../../../../prod/server/sgbd/o/index.html">SGBDO</a>,
-                <a href="../../../../../../../java/SGBDR">SGBDR</a></td>
-            <td class="non"></td>
-            <td class="non">Flux (fichier)</td>
-            <td class="non"><a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a></td>
-            <td class="non"><a href="../../../../prod/server/sgbd/r/index.html">SGBDR</a></td>
-            <td class="non">
-                <p><a href="http://www.versant.com">Versant</a></p>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Support d'une base existante</th>
-            <td></td>
-            <td class="oui">Oui</td>
-            <td colspan="3" class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Manuel</td>
-            <td colspan="2" class="oui">Oui</td>
-            <td></td>
-            <td class="non">Identité imposée</td>
-            <td class="non"></td>
-            <td class="non">Flux (fichier)</td>
-            <td class="oui">Oui</td>
-            <td class="oui">Oui</td>
-            <td class="non"><a href="http://www.versant.com">Versant</a></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th rowspan="5">Portabilité</th>
-            <th>API standard</th>
-            <td class="non">Produit</td>
-            <td class="non">org.exolab.castor</td>
-            <td colspan="3" class="oui"> javax.<a href="../../../../prog/oo/java/EJB.html">ejb</a></td>
-            <td class="non">cirrus.hibernate</td>
-            <td class="oui">java.sql, javax.sql</td>
-            <td colspan="2" class="oui">javax.<a href="../../../../prog/oo/java/JDO.html">jdo</a></td>
-            <td class="non">Microsoft. ObjectSpaces</td>
-            <td class="oui">org.odmg</td>
-            <td class="oui"></td>
-            <td class="oui">java.io</td>
-            <td class="non">Produit</td>
-            <td class="non">Apache DB</td>
-            <td class="non">com.versant</td>
-            <td nowrap>Un standard offre un plus large choix d'implémentations (moins de risque de vendor-locking) et
-                une meilleure perennité
-            </td>
-        </tr>
-        <tr>
-            <th>J2ME</th>
-            <td class="oui"></td>
-            <td></td>
-            <td colspan="3" class="non">Non</td>
-            <td></td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td rowspan="3">Windows .Net</td>
-            <td></td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th><a href="../../../../prog/oo/java/J2SE.html">J2SE</a></th>
-            <td class="oui">1.2</td>
-            <td class="oui"></td>
-            <td colspan="2" class="non">Non</td>
-            <td class="oui">Oui</td>
-            <td class="oui">1.2</td>
-            <td class="oui">1.1</td>
-            <td class="oui">1.2</td>
-            <td class="oui">1.3</td>
-            <td class="oui">1.1</td>
-            <td class="oui"></td>
-            <td class="oui">1.1</td>
-            <td></td>
-            <td></td>
-            <td class="oui">1.2</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th><a href="../../../../prog/oo/java/J2EE.html">J2EE</a></th>
-            <td><a href="../../../../../../../org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>,
-                <a href="../../../../prog/oo/java/WLS.html">WLS</a>, OAS, BES...
-            </td>
-            <td class="oui"></td>
-            <td class="oui">1.2</td>
-            <td class="oui">1.3</td>
-            <td class="oui">1.5</td>
-            <td class="oui"></td>
-            <td class="oui">1.2</td>
-            <td class="oui">1.3 (<a href="../../../../../../informatique/soft/java/J2C.html">JCA</a>)</td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui"></td>
-            <td class="oui">1.2</td>
-            <td><a href="../../../../../../../org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>,
-                <a href="../../../../prog/oo/java/WLS.html">WLS</a>, OAS
-            </td>
-            <td></td>
-            <td><a href="../../../../../../../org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>,
-                <a href="../../../../prog/oo/java/WLS.html">WLS</a>...
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Implémentations</th>
-            <td></td>
-            <td></td>
-            <td colspan="3"><a href="../../../../../../../org/us/company/oracle/bea/index.html">BEA</a>,
-                <a href="../../../../../../../org/us/company/ibm/index.html">IBM</a>,
-                <a href="../../../../../../../org/us/company/oracle/index.html">Oracle</a>...
-            </td>
-            <td></td>
-            <td><a href="../../../../prog/oo/java/Sun.html">Sun</a>,
-                <a href="../../../../../../../org/us/company/ibm/index.html">IBM</a>...
-            </td>
-            <td colspan="2">Xcalia, SolarMetrics, Hemisphere...</td>
-            <td></td>
-            <td>Poet...</td>
-            <td></td>
-            <td>Sun, IBM...</td>
-            <td></td>
-            <td>Apache</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th rowspan="3">Utilisabilité</th>
-            <th>modèle statique</th>
-            <td></td>
-            <td></td>
-            <td colspan="2">EJB</td>
-            <td><span class="oui"><a href="../../../../prog/oo/java/POJO.html">POJO</a></span></td>
-            <td></td>
-            <td class="non">Non</td>
-            <td colspan="2" class="oui"><a href="../../../../prog/oo/java/POJO.html">POJO</a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>modèle dynamique</th>
-            <td></td>
-            <td></td>
-            <td colspan="3" class="non">Non</td>
-            <td></td>
-            <td class="oui">Texte SQL, noms de colonnes, etc.</td>
-            <td colspan="2" class="non">Non</td>
-            <td></td>
-            <td></td>
-            <td class="oui"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Métadonnées</th>
-            <td></td>
-            <td></td>
-            <td colspan="3">Fichier XML</td>
-            <td></td>
-            <td class="oui"><a href="../../../../../../../java/api">API</a></td>
-            <td colspan="2">Introspection Java, métadonnées de persistance XML</td>
-            <td></td>
-            <td></td>
-            <td class="oui">Interrogeables</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Licence</th>
-            <th></th>
-            <td>Thought, Inc.</td>
-            <td>Style BSD</td>
-            <td colspan="3"><a href="../../../../prog/oo/java/J2EE.html">J2EE</a></td>
-            <td>LGPL</td>
-            <td><a href="../../../../prog/oo/java/J2SE.html">J2SE</a></td>
-            <td colspan="2">Variable</td>
-            <td>MicroSoft</td>
-            <td></td>
-            <td><a href="../../../../../../../org/us/company/ibm/index.html">IBM</a>,
-                <a href="../../../../../../../org/us/company/oracle/bea/index.html">BEA</a></td>
-            <td><a href="../../../../prog/oo/java/J2SE.html">J2SE</a></td>
-            <td></td>
-            <td>Apache</td>
-            <td>Versant</td>
-            <td></td>
-        </tr>
+  <p>Alors que la persistance d'objets est relativement naturelle dans un SGBD utilisant le même paradigme (<a
+      href="../../../../prod/server/sgbd/o">SGBDO</a>), elle vise la plupart du temps un stockage dans selon un
+    paradigme relationnel (<a href="../../../../prod/server/sgbd/r">SGBDR</a>). Dans ce dernier cas doit être mis en
+    place une correspondance (<em>mapping</em>) entre le modèle objet et le modèle de la base relationnelle (<em>Object/Relational</em>
+    ou <em>O/R</em>).
+  </p>
+  <section>
+    <h3>Héritage</h3>
+
+    <p>On peut représenter un héritage objet via un mapping relationnel :</p>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <caption>
+        Mappings d'héritage
+      </caption>
+      <tr>
+        <td colspan="2" class="titleCorner"></td>
+        <th>Vertical</th>
+        <th>Horizontal</th>
+        <th>Filtré ou "plat" (<em>flat</em>)</th>
+      </tr>
+      <tr>
+        <th rowspan="2">Contraintes schéma</th>
+        <th>Nombre de tables par hiérarchie</th>
+        <td>3àme forme normale : 1 par <a href="Classe.html">classe</a> (concrète ou abstraite)
+        </td>
+        <td>1 par <a href="Classe.html">classe</a> concrète</td>
+        <td>1 pour l'ensemble des <a href="Classe.html">classes</a></td>
+      </tr>
+      <tr>
+        <th>Mécanisme de typage</th>
+        <td>Fonction de la table pour les classes concrètes. Stocké dans une colonne discriminante ou dans une table
+          annexe pour les classes abstraites
+        </td>
+        <td>Fonction de la table</td>
+        <td>Stocké dans par une colonne discriminante</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Evolutivité</th>
+        <th>Modification de classes ancàtres</th>
+        <td class="oui">Modification de la table de la classe ancêtre</td>
+        <td class="non">Modification de toutes les tables</td>
+        <td>Modification de la table unique</td>
+      </tr>
+      <tr>
+        <th>Modification/ajout de classes dérivées</th>
+        <td class="oui">Modification/ajout de tables</td>
+        <td class="oui">Modification/ajout de tables</td>
+        <td>Modification de la table unique</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Performance</th>
+        <th>Lecture sans relation</th>
+        <td class="non">Mauvais</td>
+        <td>Moyen</td>
+        <td class="oui">Bon</td>
+      </tr>
+      <tr>
+        <th>Lecture avec relation</th>
+        <td class="oui">Bon</td>
+        <td class="non">Mauvais</td>
+        <td>Moyen</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Contraintes</th>
+        <th>Espace alloué</th>
+        <td class="oui">Minimal</td>
+        <td>Moyen</td>
+        <td class="non">Grand</td>
+      </tr>
+      <tr>
+        <th>Intégrité</th>
+        <td class="oui">Tràs adapté</td>
+        <td>Moyennement adapté</td>
+        <td class="non">Pas adapté</td>
+      </tr>
     </table>
-</section>
-<section><h2>Limitations</h2>
+  </section>
+  <section>
+    <h3>Relations</h3>
 
-    <p>La persistance de certaines informations devient problématique lorsque ces informations ne sont :</p>
+    <p>On peut représenter des relations via un mapping relationnel :</p>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <td colspan="2">Mapping de relation</td>
+        <th>Simple</th>
+        <th>Entité</th>
+        <th>Inversée</th>
+      </tr>
+      <tr>
+        <th>Contraintes schéma</th>
+        <th>Principe</th>
+        <td>La table source contient une clé étrangàre vers la destination</td>
+        <td>1 Table intermédiaire contient les clés des objets liés</td>
+        <td>La table destination contient une clé étrangàre vers la source</td>
+      </tr>
+      <tr>
+        <th rowspan="3">Performance/ type de relation</th>
+        <th>1-1</th>
+        <td class="oui">Bon</td>
+        <td class="non">Mauvais</td>
+        <td>Moyen</td>
+      </tr>
+      <tr>
+        <th>1-n</th>
+        <td rowspan="2" class="non">Impossible</td>
+        <td>Moyen</td>
+        <td class="oui">Bon</td>
+      </tr>
+      <tr>
+        <th>n-m</th>
+        <td class="oui">Bon</td>
+        <td>Impossible</td>
+      </tr>
+    </table>
+    <p>Cependant le mapping peut se révéler plus complexe lorsqu'il faut garantir des contraintes :</p>
     <ul>
-        <li>pas directement accessibles par le moteur de persistance (informations mémoires depuis Java par exemple)
-        </li>
-        <li>pas rétablissables par nature (propres à une localisation géographique typiquement)</li>
+      <li>d'intégrité (1-1, 1-n)</li>
+      <li>d'ordre (relation avec collections ordonnées)</li>
     </ul>
+  </section>
 </section>
-<section><h2>Voir</h2>
-    <ul>
-        <li>Object Architects - <a href="http://www.objectarchitects.de/ObjectArchitects/orpatterns/"><em>Patterns for
-            Object/Relational data access layers</em></a></li>
-        <li><em><a href="http://www.agiledata.org/essays/mappingObjects.html">The Fundamentals of Mapping Objects to
-            Relational Databases</a></em> de <a href="http://www.ronin-intl.com/company/scottAmbler.html">Scott W.
-            Ambler</a></li>
-    </ul>
+<section>
+  <h2>Exemples</h2>
+
+  <p>Des exemples de solutions de persistance sont :</p>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <tr>
+      <td rowspan="2">Solutions de persistance</td>
+      <th>Solution</th>
+      <th><a href="http://www.thoughtinc.com/cber_index.html">CocoBase</a></th>
+      <th><a href="../../../../prod/CastorJDO.html">Castor-JDO</a></th>
+      <th colspan="3">Entités <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></th>
+      <th><a href="http://hibernate.sourceforge.net">Hibernate</a></th>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
+      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a></th>
+      <th>ObjectSpaces</th>
+      <th><a href="../../../../prog/oo/java/ODMG.html">ODMG</a></th>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/api/ext/SDO.html">SDO</a></th>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/Serialisation.html">Serialisation</a></th>
+      <th><a href="http://otn.oracle.com/products/ias/toplink">TopLink</a></th>
+      <th><a href="http://db.apache.org/torque">Torque</a></th>
+      <th><a href="http://www.versant.com">Versant</a></th>
+      <th rowspan="2">Commentaire</th>
+    </tr>
+    <tr>
+      <th>Version</th>
+      <th>4.5</th>
+      <th>0.9</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>2</th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>9.0.3</th>
+      <th>3.1</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th rowspan="6"><a href="/tech/info/soft/data/dbms/tx">Transactions</a></th>
+      <th>Explicites</th>
+      <td class="oui"></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTA.html">JTA</a></td>
+      <td colspan="3" class="oui">
+        <p><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTA.html">JTA</a></p>
+      </td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTA.html">JTA</a></td>
+      <td class="oui">Oui</td>
+      <td colspan="2" class="oui">javax.jdo. Transaction ou <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/JTA.html">JTA</a>
+      </td>
+      <td class="oui">Oui</td>
+      <td class="oui">Transaction tx = odmg. newTransaction()</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td>tx.begin, tx.commit</td>
+    </tr>
+    <tr>
+      <th>Implicites</th>
+      <td class="non">Si encapsulsé dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></td>
+      <td class="non">Non</td>
+      <td colspan="3" class="oui">transaction-attribute (Descripteur)</td>
+      <td class="non">Si encapsulsé dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></td>
+      <td class="non">Non</td>
+      <td colspan="2">Oui si en environnement géré (<a href="/tech/info/soft/java/J2C.html">JCA</a>) et encapsulé dans
+        <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></td>
+      <td>DataSet ?</td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non">Si encapsulsé dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></td>
+      <td class="non">Si encapsulsé dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></td>
+      <td>Si intégré dans un serveur applicatif et encapsulsé dans <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>
+      </td>
+      <td>Démarcation, propagation spécifiées en dehors du code.</td>
+    </tr>
+    <tr>
+      <th>Pessimistes</th>
+      <td class="oui"></td>
+      <td class="oui">Exclusive</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td>Verrous</td>
+    </tr>
+    <tr>
+      <th>Optimistes</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Shared</td>
+      <td colspan="3" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td>Sans verrous</td>
+    </tr>
+    <tr>
+      <th>Distribuées</th>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTS</a></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTS</a></td>
+      <td colspan="3" class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTS</a></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTA+JTS</a></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTS</a></td>
+      <td colspan="2" class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTS</a></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td>Support de XA</td>
+    </tr>
+    <tr>
+      <th>Mémoire</th>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td colspan="3" class="non">Non</td>
+      <td class="oui"></td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td>Commit ou rollback d'opérations en mémoire</td>
+    </tr>
+    <tr>
+      <th>Cycle de vie</th>
+      <th>Callbacks</th>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td colspan="3" class="oui"> EntityBean</td>
+      <td class="oui"></td>
+      <td class="oui">API</td>
+      <td class="oui">InstanceCallbacks</td>
+      <td class="oui">InstanceCallbacks extends LoadCallback, StoreCallback,<br> ClearCallback, DeleteCallback
+      </td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+      <td class="oui">readObject, writeObject...</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td>Avant/apràs lecture, mise à jour, suppression</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Requêtes</th>
+      <th>Langage objet</th>
+      <td class="oui">EJB-QL, API CBQuery Builder</td>
+      <td class="oui">Castor OQL</td>
+      <td class="non"><a href="/tech/info/soft/data/dbms/r/sql">SQL</a></td>
+      <td colspan="2" class="oui">EJBQL</td>
+      <td class="oui">HQL</td>
+      <td class="non"><a href="/tech/info/soft/data/dbms/r/sql">SQL</a></td>
+      <td colspan="2" class="oui">JDOQL</td>
+      <td class="oui">OPath</td>
+      <td class="oui">OQL</td>
+      <td>Non imposé</td>
+      <td class="non">Non</td>
+      <td class="oui">TopLink Expression, EJB QL, PL/SQL</td>
+      <td class="non">API <code>Criteria</code></td>
+      <td class="oui">OQL</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Projections, vues</th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td colspan="3" class="non">Non</td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui"><code>query.setResult(this</code> ou champ ou variable, expression navigationnelle, paramàtre)
+      </td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Fonctions aggrégats</th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td colspan="3" class="non">Non</td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui"><span
+          class="oui"><code>query.setResult(count</code> ou <code>sum</code> ou <code>min</code> ou <code>max</code> ou <code>avg</code> ou  expression numérique)</span>
+      </td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SQL possible</th>
+      <td></td>
+      <td class="oui"><code>Database:: getOQLQuery ("CALL SQL ...")</code></td>
+      <td colspan="2">Dépend des implémentations</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td>Dépend des implémentations</td>
+      <td class="oui">
+        <p><code>q = pm.newQuery ("javax.jdo.query.SQL", "SELECT ...")</code></p>
+      </td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Accàs au code</th>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td colspan="3" class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td colspan="2" class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td>Invocation de méthodes dans des requêtes typiquement</td>
+    </tr>
+    <tr>
+      <th rowspan="2"><a href="/tech/info/Performance.html">Performance</a></th>
+      <th>Cache</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td colspan="3" class="oui"> Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Managers</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Détection des modifications</th>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td colspan="2" class="non"> Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Proxy</td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Enhancement</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+      <td class="oui">Via les accesseurs (mutators)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="8">Transparence</th>
+      <th>Accàs aux informations</th>
+      <td>Réflexivité Java</td>
+      <td>Réflexivité Java</td>
+      <td colspan="2">Réflexivité Java</td>
+      <td></td>
+      <td>Réflexivité Java</td>
+      <td>API</td>
+      <td colspan="2"><em>Enhancement</em></td>
+      <td>API</td>
+      <td></td>
+      <td></td>
+      <td>Réflexivité Java</td>
+      <td>Réflexivité Java</td>
+      <td>Code généré</td>
+      <td><em>Enhancement</em></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Relations (1-n, n-m)</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td>via accesseurs</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">N/A</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Héritage</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td colspan="2" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">N/A</td>
+      <td class="oui">Oui (méthode(s) dépendant de l'implémentation)</td>
+      <td class="oui"><code>&lt;inheritance strategy="new-table" </code>ou <code>"superclass-table"</code> ou <code>"no-table"&gt;</code>
+      </td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Plat</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Collections Java</th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td colspan="3">Collection, Set</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non"> DBag, DSet, DList, DArray, DMap</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Persistance de proche en proche</th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td colspan="2" class="non">Non</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non">N/A</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td><em>Persistence by reachability</em></td>
+    </tr>
+    <tr>
+      <th>Non intrusion dans le code des objets métier</th>
+      <td class="non"></td>
+      <td class="non">Méthodes d'accàs aux données obligatoires</td>
+      <td colspan="2" class="non">Implémentation de SessionBean, EntityBean, MessageDrivenBean</td>
+      <td class="oui">Oui</td>
+      <td class="non">Méthodes d'accàs aux données obligatoires</td>
+      <td class="non">API JDBC</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="non">Classe abstraite comportant des méthodes OnCreate, etc.</td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non">Implémentation de Serializable</td>
+      <td class="non">Méthodes d'accàs aux données obligatoires</td>
+      <td class="non">Héritage de code généré</td>
+      <td class="oui">Oui</td>
+      <td>Pour maintenabilité et réutilisabilité des objets métier.</td>
+    </tr>
+    <tr>
+      <th>Accàs au graphe d'objets dépendants</th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td colspan="2" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Accàs au modèle métier</th>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4">Mapping</th>
+      <th>Multi-tables</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td colspan="3">Dépend de l'implémentation</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td>Dépend de l'implémentation</td>
+      <td class="oui"><code>&lt;join table="DELIV" column="ADDR_STREET"/&gt;</code></td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non">Flux (fichier)</td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td>Base objet</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Top-down</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td colspan="3">Dépend de l'implémentation</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td colspan="2">Dépend de l'implémentation</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Ecriture de fichier</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td>Génération du schéma de la base à partir du modèle objet</td>
+    </tr>
+    <tr>
+      <th>Bottom-up</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td colspan="3">Dépend de l'implémentation</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td colspan="2">Dépend de l'implémentation</td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Génération du modèle objet à partir du schéma d'une base existante</td>
+    </tr>
+    <tr>
+      <th>Granularité fine</th>
+      <td></td>
+      <td></td>
+      <td colspan="3" class="non">Objet</td>
+      <td></td>
+      <td class="oui">Via SQL</td>
+      <td colspan="2" class="oui">Champ</td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non">Objet</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2">Stockage</th>
+      <th>Paradigme libre</th>
+      <td class="non"></td>
+      <td class="non"><a href="../../../../prod/server/sgbd/r">SGBDR</a>, <a href="/tech/info/soft/data/doc/xml">XML</a>,
+        <a
+            href="/tech/info/soft/data/dbms/ldap">LDAP</a>
+      </td>
+      <td colspan="3">Non spécifié (mais généralement <a href="../../../../prod/server/sgbd/r">SGBDR</a>)
+      </td>
+      <td class="non"><a href="../../../../prod/server/sgbd/r">SGBDR</a></td>
+      <td class="non"><a href="../../../../prod/server/sgbd/r">SGBDR</a></td>
+      <td colspan="2" class="oui">Oui (via <a href="/tech/info/soft/java/J2C.html">JCA</a>)
+      </td>
+      <td class="non"><a href="../../../../prod/server/sgbd/r">SGBDR</a>, <a href="/tech/info/soft/data/doc/xml">XML</a>
+      </td>
+      <td class="non"><a href="../../../../prod/server/sgbd/o">SGBDO</a>, <a
+          href="../../../../prod/server/sgbd/r">SGBDR</a></td>
+      <td class="non"></td>
+      <td class="non">Flux (fichier)</td>
+      <td class="non"><a href="../../../../prod/server/sgbd/r">SGBDR</a></td>
+      <td class="non"><a href="../../../../prod/server/sgbd/r">SGBDR</a></td>
+      <td class="non">
+        <p><a href="http://www.versant.com">Versant</a></p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Support d'une base existante</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Manuel</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+      <td class="non">Identité imposée</td>
+      <td class="non"></td>
+      <td class="non">Flux (fichier)</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non"><a href="http://www.versant.com">Versant</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="5">Portabilité</th>
+      <th>API standard</th>
+      <td class="non">Produit</td>
+      <td class="non">org.exolab.castor</td>
+      <td colspan="3" class="oui"> javax.<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">ejb</a></td>
+      <td class="non">cirrus.hibernate</td>
+      <td class="oui">java.sql, javax.sql</td>
+      <td colspan="2" class="oui">javax.<a href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">jdo</a></td>
+      <td class="non">Microsoft. ObjectSpaces</td>
+      <td class="oui">org.odmg</td>
+      <td class="oui"></td>
+      <td class="oui">java.io</td>
+      <td class="non">Produit</td>
+      <td class="non">Apache DB</td>
+      <td class="non">com.versant</td>
+      <td nowrap>Un standard offre un plus large choix d'implémentations (moins de risque de vendor-locking) et une
+        meilleure perennité
+      </td>
+    </tr>
+    <tr>
+      <th>J2ME</th>
+      <td class="oui"></td>
+      <td></td>
+      <td colspan="3" class="non">Non</td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td rowspan="3">Windows .Net</td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
+      <td class="oui">1.2</td>
+      <td class="oui"></td>
+      <td colspan="2" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">1.2</td>
+      <td class="oui">1.1</td>
+      <td class="oui">1.2</td>
+      <td class="oui">1.3</td>
+      <td class="oui">1.1</td>
+      <td class="oui"></td>
+      <td class="oui">1.1</td>
+      <td></td>
+      <td></td>
+      <td class="oui">1.2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></th>
+      <td><a href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>, <a
+          href="/org/us/company/oracle/bea/wls">WLS</a>, OAS, BES...
+      </td>
+      <td class="oui"></td>
+      <td class="oui">1.2</td>
+      <td class="oui">1.3</td>
+      <td class="oui">1.5</td>
+      <td class="oui"></td>
+      <td class="oui">1.2</td>
+      <td class="oui">1.3 (<a href="/tech/info/soft/java/J2C.html">JCA</a>)</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui">1.2</td>
+      <td><a href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>, <a
+          href="/org/us/company/oracle/bea/wls">WLS</a>, OAS
+      </td>
+      <td></td>
+      <td><a href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>, <a
+          href="/org/us/company/oracle/bea/wls">WLS</a>...
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Implémentations</th>
+      <td></td>
+      <td></td>
+      <td colspan="3"><a href="/org/us/company/oracle/bea">BEA</a>, <a
+          href="/org/us/company/ibm">IBM</a>, <a
+          href="/org/us/company/oracle">Oracle</a>...
+      </td>
+      <td></td>
+      <td><a href="/org/us/company/oracle/sun">Sun</a>, <a
+          href="/org/us/company/ibm">IBM</a>...
+      </td>
+      <td colspan="2">Xcalia, SolarMetrics, Hemisphere...</td>
+      <td></td>
+      <td>Poet...</td>
+      <td></td>
+      <td>Sun, IBM...</td>
+      <td></td>
+      <td>Apache</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3">Utilisabilité</th>
+      <th>modèle statique</th>
+      <td></td>
+      <td></td>
+      <td colspan="2">EJB</td>
+      <td><span class="oui"><a href="/org/us/company/oracle/sun/ptf/java/POJO.html">POJO</a></span></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><a href="/org/us/company/oracle/sun/ptf/java/POJO.html">POJO</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>modèle dynamique</th>
+      <td></td>
+      <td></td>
+      <td colspan="3" class="non">Non</td>
+      <td></td>
+      <td class="oui">Texte SQL, noms de colonnes, etc.</td>
+      <td colspan="2" class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Métadonnées</th>
+      <td></td>
+      <td></td>
+      <td colspan="3">Fichier XML</td>
+      <td></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api">API</a></td>
+      <td colspan="2">Introspection Java, métadonnées de persistance XML</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Interrogeables</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Licence</th>
+      <th></th>
+      <td>Thought, Inc.</td>
+      <td>Style BSD</td>
+      <td colspan="3"><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></td>
+      <td>LGPL</td>
+      <td><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
+      <td colspan="2">Variable</td>
+      <td>MicroSoft</td>
+      <td></td>
+      <td><a href="/org/us/company/ibm">IBM</a>, <a
+          href="/org/us/company/oracle/bea">BEA</a></td>
+      <td><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
+      <td></td>
+      <td>Apache</td>
+      <td>Versant</td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Limitations</h2>
+
+  <p>La persistance de certaines informations devient problématique lorsque ces informations ne sont :</p>
+  <ul>
+    <li>pas directement accessibles par le moteur de persistance (informations mémoires depuis Java par exemple)
+    </li>
+    <li>pas rétablissables par nature (propres à une localisation géographique typiquement)</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Object Architects - <a href="http://www.objectarchitects.de/ObjectArchitects/orpatterns/"><em>Patterns for
+      Object/Relational data access layers</em></a></li>
+    <li><em><a href="http://www.agiledata.org/essays/mappingObjects.html">The Fundamentals of Mapping Objects to
+      Relational Databases</a></em> de <a href="http://www.ronin-intl.com/company/scottAmbler.html">Scott W. Ambler</a>
+    </li>
+  </ul>
 </section><!--#include virtual="/footer.html" -->

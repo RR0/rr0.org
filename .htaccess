@@ -532,7 +532,8 @@ Redirect /personne/t/ThirouinMarc.html https://rr0.org/people/t/ThirouinMarc
 Redirect /ThouanelBernard.html https://rr0.org/people/t/ThouanelBernard
 Redirect /personne/t/ThouanelBernard.html https://rr0.org/people/t/ThouanelBernard
 Redirect /TombaughClydeWilliam.html https://rr0.org/people/t/TombaughClydeWilliam
-Redirect /people/t/ToddRobert.html https://rr0.org/people/t/ToddRobertGreer
+Redirect /people/t/ToddRobert.html https://rr0.org/people/t/ToddRobert
+Redirect /people/t/ToddRobertGreer https://rr0.org/people/t/ToddRobert
 Redirect /TroadecJeanPierre.html https://rr0.org/people/t/TroadecJeanPierre
 Redirect /TrumanHarryS.html https://rr0.org/people/t/TrumanHarryS
 Redirect /TruzziMarcello.html https://rr0.org/people/t/TruzziMarcello
@@ -812,6 +813,8 @@ Redirect /org/us/association http://rr0.org/org/us/asso
 Redirect /politique/ideologie/conspirationnisme http://rr0.org/croyance/conspirationnisme
 Redirect /science/crypto/ufo/enquete/dossier/1967-07-03_Woonsocket http://rr0.org/science/crypto/ufo/enquete/dossier/Ferriere/
 Redirect /StatistiquesApplet.html http://rr0.org/science/crypto/ufo/analyse/statistique/StatistiquesApplet.html
+Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday.html http://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index.html
+Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html http://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html
 
 # compress certain file types by extension:
 <files *.html>

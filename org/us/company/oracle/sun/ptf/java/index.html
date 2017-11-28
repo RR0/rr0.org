@@ -1,0 +1,180 @@
+<!--#include virtual="/header-start.html" -->
+<title>Java</title>
+<meta name="url" content="http://java.sun.com">
+<!--#include virtual="/header-end.html" -->
+<figure class="right side">
+  <figcaption> Le logo de Java </figcaption>
+  <a href="http://java.sun.com"><img src="/tech/info/images/java.gif" alt="Le logo de Java"/></a>
+</figure>
+<p>Café.</p>
+<h2><a href="http://java.sun.com"></a><a href="/tech/info/soft/proj/req/index.html">Besoin</a></h2>
+<p>Fournir une <a href="/tech/info/soft/proj/design/arch/platform/index.html">plate-forme</a> et un
+  <a href="/tech/info/soft/proj/impl/lang/index.html">langage</a> :
+</p>
+<ul>
+  <li>portables</li>
+  <li>simples</li>
+  <li>légers</li>
+  <li>adaptés au <a href="/tech/info/soft/reseau/index.html">réseau</a></li>
+</ul>
+<h2><a href="/tech/info/soft/proj/Analyse.html">Analyse</a></h2>
+<p>Java est constitué de :</p>
+<ul>
+  <li>un<b> <a href="/tech/info/soft/proj/impl/lang/java/index.html">langage</a> </b>d'écriture des applications</li>
+  <li>des<b> <a href="/tech/info/soft/proj/design/arch/platform/index.html">plates-formes</a> </b>
+    <ul>
+      <li><b>d'exécution</b> (<a href="vm/index.html">JVM</a>) des applications
+        <a href="/tech/info/soft/proj/impl/Compilation.html">compilées</a>, extensible par diverses
+        <a href="/tech/info/soft/API.html">API</a> :
+        <ul>
+          <li>existantes telles que <a href="/tech/info/soft/proj/impl/lang/java/JAI.html">JAI</a>,
+            <a href="/tech/info/soft/proj/impl/lang/java/JMX.html">JMX</a>,
+            <a href="/tech/info/soft/proj/impl/lang/java/JDO.html">JDO</a>,<a href="http://java.sun.com/webservices/webservicespack.html">
+              JWSDP</a>, <a href="/tech/info/soft/proj/impl/lang/java/Jini.html">Jini</a>,
+            <a href="/tech/info/soft/proj/impl/lang/java/Java3D.html">Java 3D</a>, etc.
+          </li>
+          <li>à venir, proposées sous forme de <a href="http://jcp.org/jsr/overview/index.en.jsp">JSR</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <ul>
+    <li><b>de développement</b> (<a href="/tech/info/soft/proj/impl/lang/java/SDK.html">SDK</a>) ajoutant des outils
+      (<a href="/tech/info/soft/proj/impl/Compilation.html">compilateur</a>, débogueur, etc.) à la plate-forme
+      d'exécution.
+    </li>
+  </ul>
+</ul>
+<h2><a href="/tech/info/soft/proj/design">Conception</a></h2>
+<p>Java peut être déployé sur différentes <a href="/tech/info/soft/proj/design/arch/index.html">architectures
+  :</a></p>
+<table border=1 cellspacing=0 cellpadding=5>
+  <caption>
+    Plates-formes Java
+  </caption>
+  <thead>
+  <tr>
+    <td class="titleCorner"> </td>
+    <th rowspan="2" valign=top> Plate-forme d'exécution</th>
+    <th rowspan="2">JavaCard</th>
+    <th rowspan="2"><a href="/tech/info/soft/proj/impl/lang/java/J2ME.html">J2ME</a></th>
+    <th rowspan="2"><a href="/tech/info/soft/proj/impl/lang/java/J2SE.html">J2SE</a> (JRE)</th>
+    <th rowspan="2"><a href="/tech/info/soft/proj/impl/lang/java/J2EE.html">J2EE</a></th>
+    <th width=301 rowspan=2> Commentaire</th>
+  </tr>
+  <tr>
+    <th>Paradigme</th>
+  </tr>
+  <tr>
+    <th colspan="2">1 couche</th>
+    <td colspan="3" class="oui">Oui</td>
+    <td class="non">Non</td>
+    <td>Applications autonomes (<em>standalone</em>)</td>
+  </tr>
+  <tr>
+    <th rowspan="2"><a href="/tech/info/soft/proj/design/arch/ClientServeur.html">C/S</a></th>
+    <th valign=top>2 couches</th>
+    <td colspan="2" class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Non adapté</td>
+    <td><em>2-tier</em>. L4G souvent.</td>
+  </tr>
+  <tr>
+    <th valign=top><a href="/tech/info/soft/proj/design/arch/3Tiers.html">3 couches</a></th>
+    <td> </td>
+    <td>Client</td>
+    <td>Client</td>
+    <td class="oui">Oui</td>
+    <td><em>3-tier</em>. Architectures <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a>
+      typiquement.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="2"><a href="/tech/info/soft/reseau/P2P.html">P2P</a></th>
+    <td> </td>
+    <td> </td>
+    <td>+ <a href="/tech/info/soft/proj/impl/lang/java/Jini.html">Jini</a></td>
+    <td>Non adapté</td>
+    <td> </td>
+  </tr>
+  </thead>
+</table>
+<h2>Déploiement</h2>
+<p>Java peut être déployé sur différents types de <a href="/tech/info/soft/proj/impl/lang/java/PlateForme.html">plates-formes</a>
+  :
+</p>
+<table border=1 cellspacing=0 cellpadding=5>
+  <caption>Plates-formes Java</caption>
+  <thead>
+  <tr>
+    <td class="titleCorner"> </td>
+    <th rowspan="2" valign=top> Plate-forme d'exécution</th>
+    <th rowspan="2">JavaCard</th>
+    <th rowspan="2"><a href="/tech/info/soft/proj/impl/lang/java/J2ME.html">J2ME</a></th>
+    <th rowspan="2"><a href="/tech/info/soft/proj/impl/lang/java/J2SE.html">J2SE</a> (JRE)</th>
+    <th rowspan="2"><a href="/tech/info/soft/proj/impl/lang/java/J2EE.html">J2EE</a></th>
+    <th width=301 rowspan=2> Commentaire</th>
+  </tr>
+  <tr>
+    <th>Paradigme</th>
+  </tr>
+  <tr>
+    <th colspan="2">Poste</th>
+    <td>Smart card</td>
+    <td>Client mobile</td>
+    <td>Client ou serveur</td>
+    <td>Serveur</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <th colspan="2"><a href="/tech/info/soft/proj/impl/lang/java/SDK.html">SDK</a></th>
+    <td valign="top"> </td>
+    <td valign="top"> </td>
+    <td valign="top"><a href="/tech/info/soft/proj/impl/lang/java/J2SDK.html">J2SDK</a> (ex-JDK)</td>
+    <td valign="top">J2SDKEE (<a href="/tech/info/soft/proj/impl/lang/java/J2EE-RI.html">J2EE RI</a>)</td>
+    <td><em>Software Development Kit</em>.</td>
+  </tr>
+  </thead>
+</table>
+<h2>Exemples</h2>
+<p>Des exemples de types d'applications Java sont :</p>
+<ul>
+  <li>déployées
+    <ul>
+      <li><a href="/tech/info/soft/proj/impl/lang/java/J2EE.html">J2EE</a>, déployées dans un
+        <a href="/tech/info/soft/proj/impl/lang/java/ServeurApplicatif.html">serveur applicatif</a></li>
+      <li><a href="/tech/info/soft/proj/impl/lang/java/Applet.html">Applets</a>, déployées dans une page
+        <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a></li>
+    </ul>
+  </li>
+  <li> autonomes (<em>standalone</em>)
+    <ul>
+      <li>EDI
+        <ul>
+          <li><a href="/tech/info/soft/prod/ide/IDEA.html">JetBrains IntelliJ IDEA</a></li>
+          <li><a href="../../../../../../../java/TCC.html">TCC</a></li>
+          <li>JBuilder</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h2>Notes</h2>
+<ul>
+  <li>La plate-forme d'exécution Java est qualifiée de <a href="/tech/info/soft/proj/impl/lang/java/WORA.html">WORA</a>
+  </li>
+  <li>Les plates-formes Java à partir de la version 1.2 font partie de la génération "Java 2".</li>
+  <li>Créé en <a href="/tech/info/1995.html">1995</a> par <a href="http://www.sun.com/">Sun Microsystems</a> qui le gère
+    toujours aujourd'hui via sa filiale <a href="http://java.sun.com">JavaSoft</a>.
+  </li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="http://java.sun.com">JavaSoft</a>
+    <ul>
+      <li><a href="http://java.com/fr/">Get Java</a></li>
+    </ul>
+  </li>
+  <li><a href="http://java.sun.com/docs/books/tutorial/">The Java Tutorial</a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

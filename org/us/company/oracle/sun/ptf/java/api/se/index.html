@@ -1,0 +1,322 @@
+<!--#include virtual="/header-start.html" -->
+<title>J2SE</title>
+<meta name="url" content="http://java.sun.com/j2se">
+<!--#include virtual="/header-end.html" -->
+<figure class="right side">
+  <a href="http://java.com/fr/"><img src="/tech/info/images/get_java_blue-button.gif" width="88" height="31" border="0"
+      alt="Java -- Téléchargez-le"/></a>
+</figure>
+<p><i>Java 2 Standard Edition</i> : édition standard de Java 2.</p>
+<p>Anciennement JRE (<em>Java Runtime Environment</em>).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une plate-forme d'exécution des applications <a href="../..">Java</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+
+  <p>J2SE est la plate-forme <a href="/tech/info/soft/prog/oo/java">Java</a> de base ou "standard".</p>
+
+  <p>Elle inclut :</p>
+
+  <ul>
+    <li>un ensemble d'<a href="/tech/info/soft/prog/oo/java/api"><strong>API standards</strong></a></li>
+    <li>une <strong>configuration</strong> comprenant :
+      <ul>
+        <li>la <a href="/tech/info/soft/prog/oo/java/JVM.html">JVM</a> en cours (<em>HotSpot</em> client ou serveur)
+        </li>
+        <li>une politique de <a href="/tech/info/soft/prog/oo/java/Securite.html">sécurité</a> (fichier <code>.java.policy</code>)
+        </li>
+        <li>des <a href="/tech/info/soft/securite/authentification/certificat">certificats</a> de <a
+            href="/tech/info/soft/prog/oo/java/CA.html">CA</a> (fichier <code>cacerts</code>)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+
+  <ul>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <caption>J2SE</caption>
+        <tr>
+          <td colspan="2" rowspan="2" class="titleCorner"></td>
+          <th valign="top"> Version</th>
+          <th colspan="18"> 1</th>
+          <th rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Release</th>
+          <th> 0</th>
+          <th colspan="8"><a href="http://java.sun.com/products/jdk/1.1/docs">1</a></th>
+          <th colspan="3"><a href="http://java.sun.com/products/jdk/1.2/docs">2</a></th>
+          <th colspan="2"><a href="http://java.sun.com/j2se/1.3/docs">3</a></th>
+          <th colspan="3"><a href="http://java.sun.com/j2se/1.4/docs">4</a></th>
+          <th>5</th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th valign="top"> Fixpack</th>
+          <th>2</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th><a href="http://java.sun.com/products/jdk/1.1/docs">8</a></th>
+          <th></th>
+          <th>1</th>
+          <th><a href="http://java.sun.com/products/jdk/1.2/docs">2</a></th>
+          <th>0</th>
+          <th><a href="http://java.sun.com/j2se/1.3/docs">1</a></th>
+          <th><a href="http://java.sun.com/j2se/1.4/docs">0</a></th>
+          <th><a href="http://java.sun.com/j2se/1.4.1/docs">1</a></th>
+          <th><a href="http://java.sun.com/j2se/1.4.2/docs">2</a></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top"><a href="/tech/info/soft/prog/oo/java/JVM.html">JVM</a></th>
+          <td colspan="9" class="oui">Classic</td>
+          <td colspan="9" class="oui">HotSpot</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="5">Graphisme</th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/AWT.html">AWT</a></th>
+          <td colspan="18" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Java2D</th>
+          <td colspan="9" class="non">Non</td>
+          <td colspan="9" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="3">JFC</th>
+          <th valign="top">Swing</th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">PLF</th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td>Pluggable Look and Feel</td>
+        </tr>
+        <tr>
+          <th valign="top">Dnd</th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td>Drag'n drop</td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="3">Intégration</th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JDBC.html">JDBC</a></th>
+          <td class="non">Non</td>
+          <td colspan="8" class="oui">1.0</td>
+          <td colspan="3" class="oui">2.0</td>
+          <td colspan="6" class="oui">3.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a></th>
+          <td colspan="12" class="non">Non</td>
+          <td colspan="6" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="http://java.sun.com/products/jdk/idl">JavaIDL</a></th>
+          <td colspan="9" class="non">Non</td>
+          <td colspan="9" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Composants</th>
+          <th colspan="2" valign="top"><a href="http://java.sun.com/products/javabeans">JavaBeans</a></th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td>Composants légers</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th colspan="2" valign="top">JNI</th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td><em>Java Native Interface</em></td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="2">Objets distribués</th>
+          <th valign="top" rowspan="2"><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a></th>
+          <th valign="top">JRMP</th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a></th>
+          <td colspan="12" class="non">Non</td>
+          <td colspan="6" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th colspan="2" valign="top">I18N</th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td>Internationalisation</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a></th>
+          <td class="non">Non</td>
+          <td colspan="17" class="oui">Oui</td>
+          <td>Java ARchive (ZIP)</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"><a href="/tech/info/soft/data/doc/xml/XML.html">XML</a></th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a></th>
+          <td colspan="14" class="non">Non</td>
+          <td colspan="4" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAXB.html">JAXB</a></th>
+          <td colspan="18" class="non">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="8"><a href="../../../../../../../../../Securite.html">Sécurité</a></th>
+          <th colspan="2" valign="top"><a href="../../../../../../../../../JCA.html">JCA</a></th>
+          <td colspan="9" class="non">Non</td>
+          <td colspan="9" class="oui">Oui</td>
+          <td><em>Java Cryptography Architecture</em>.</td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top"><a href="/tech/info/soft/prog/oo/java/JCE.html">JCE</a></th>
+          <th valign="top"></th>
+          <td colspan="9" class="non">Non</td>
+          <td colspan="9" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">SHA-256</th>
+          <td colspan="17" class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">SHA-384</th>
+          <td colspan="17" class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"> SHA-512</th>
+          <td colspan="17" class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">AES</th>
+          <td colspan="17" class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JSSE.html">JSSE</a></th>
+          <td colspan="12" class="non">Non</td>
+          <td colspan="2">Optionnel</td>
+          <td colspan="4" class="oui">Oui</td>
+          <td><a href="/tech/info/soft/prog/oo/java/SSL.html">SSL</a></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAAS.html">JAAS</a></th>
+          <td colspan="12" class="non">Non</td>
+          <td colspan="6" class="oui">Oui</td>
+          <td>Authentification et autorisations.</td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/Log.html">Traces</a></th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JLA.html">JLA</a></th>
+          <td colspan="14" class="non">Non</td>
+          <td colspan="4" class="oui">Oui</td>
+          <td>Traces (log)</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/Regex.html">Regex</a></th>
+          <td colspan="14" class="non">Non</td>
+          <td colspan="4" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Gestion</th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JMX.html">JMX</a></th>
+          <td colspan="14" class="non">Non</td>
+          <td colspan="4" class="oui">Oui</td>
+          <td>Administration</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"><a href="/tech/info/soft/proj/design/arch/web">Web</a></th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JPI.html">JPI</a></th>
+          <td colspan="9" class="non">Non</td>
+          <td colspan="9" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JWS.html">JWS</a></th>
+          <td colspan="14" class="non">Non</td>
+          <td colspan="4" class="oui">Oui</td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+    <li>Disponible sur diverses plates-formes (<a href="../../../../../../microsoft/windows">Windows</a>,
+      Solaris, AIX, HP-UX, <a href="/tech/info/soft/prog/oo/java/Linux.html">Linux</a>, etc.)</li>
+    <li>A ne pas confondre avec le <a href="/tech/info/soft/prog/oo/java/J2SDK.html">J2SDK</a>, qui ajoute des outils de
+      développement tels qu'un compilateur, débogueur, etc.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Limitations</h2>
+
+  <ul>
+
+    <li> Les <a href="/tech/info/soft/prog/oo/java/api">API standards</a> varient (ajouts, obsolescences)
+      selon la version.</li>
+
+  </ul>
+</section>
+
+<section>
+  <h2>Voir</h2>
+
+  <ul>
+
+    <li>Téléchargement
+      <ul>
+        <li><a href="http://java.sun.com/products/jdk/1.2/download.html">1.2</a></li>
+        <li><a href="http://java.sun.com/j2se/1.3/download.html">1.3</a></li>
+        <li><a href="http://java.sun.com/j2se/1.4.1/download.html">1.4</a></li>
+      </ul>
+    </li>
+    <li><a href="/tech/info/soft/prog/oo/java/langage">Java en tant que Langage</a></li>
+    <li><a href="http://java.sun.com/j2se/1.4/docs">Documentation</a>
+
+      <ul>
+
+        <li><a href="http://java.sun.com/j2se/1.4.1/docs/api">API</a></li>
+
+      </ul>
+
+    </li>
+
+  </ul>
+</section><!--#include virtual="/footer.html" -->

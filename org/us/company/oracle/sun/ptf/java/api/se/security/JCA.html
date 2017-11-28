@@ -1,0 +1,254 @@
+<!--#include virtual="/header-start.html" -->
+<title>JCA</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Java Cryptography Architecture</i> : architecture de <a
+    href="/tech/info/soft/securite/confidentialite/Cryptographie.html">cryptographie</a> de <a
+    href="/tech/info/soft/prog/oo/java/index.html">Java</a> (JCA est aussi souvent utilisé pour désigner les <a
+    href="/tech/info/soft/java/J2C.html">connecteurs J2EE</a>).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fonctionnalités cryptographiques pour les applications Java.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Dans un esprit d'abstraction des couches propriétaires, la <a href="/tech/info/soft/prog/oo/java/JCA.html">JCA</a>
+    distingue :</p>
+  <ul>
+    <li>les <strong>concepts</strong> de sécurité (identité, clés, <a
+        href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a>...)
+      <ul>
+        <li><strong>généraux </strong>
+          <ul>
+            <li>Condensés de messages</li>
+            <li>Génération de clés asymétriques (privées et publiques)</li>
+            <li>Signatures électroniques</li>
+            <li>Paramètres d'algorithmes</li>
+          </ul>
+        </li>
+        <li><strong>spécifiques à Java</strong></li>
+      </ul>
+    </li>
+    <li>les <strong>implémentations</strong> de ces concepts (RSA, DSA, SHA, MD5)</li>
+  </ul>
+  <p>Il est ainsi possible d'utiliser les implémentations cryptographiques de différents fournisseurs tout en
+    garantissant une interopérabilité entre ces différentes implémentations par le biais d'interfaces standardisées (les
+    concepts).</p>
+  <h2>Implémentation</h2>
+  <p>La JCA est constituée des packages <code>java.security.*</code>.</p>
+  <h3>Implémentation des concepts généraux</h3>
+  <h4>Identité</h4>
+  <p>Les identités sont représentées par des classes implémentant <span
+      class="code"><code>java.security.Principal</code></span>. depuis Java 2 (dans Java 1, la classe <span
+      class="code"><code>java.security.Identity</code></span> implémentait cette interface et fournissait diverses
+    méthodes permettant d'associer des <a href="#cle">clés</a> et <a
+        href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a> à cette identité. Java 2
+    a rendu cette dernière classe obsolète avec l'apparition de la <a href="#keystore">base de clés</a> <span
+        class="code"><code>java.security.Keystore</code></span>, qui permet d'associer clés et <a
+        href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a> à partir d'un alias
+    unique -- alias qu'un objet de type <span class="code"><code>java.security.Principal</code></span> peut fournir via
+    sa méthode <span class="code"><code>getName()</code></span>. La classe <span class="code"><code>java.security.Identity</code></span>
+    est donc obsolète à partir de Java 2, ainsi que ses dérivées <span
+        class="code"><code>java.security.IdentityScope</code></span> et <span
+        class="code"><code>java.security.Signer</code></span>.)</p>
+  <h4> Clés</h4>
+  <p>Le concept de <a href="#cle">clé</a> est représenté par l'interface <span
+      class="code"><code>java.security.Key</code></span>, dont dérivent les interfaces <span class="code"><code>java.security.PublicKey</code></span>
+    (<a href="#clepublique">clé publique</a>) et <span class="code"><code>java.security.PrivateKey</code></span> (<a
+        href="#cleprivee">clé privée</a>).</p>
+  <p>Clé publique et clé privée peuvent être associées dans un objet <span
+      class="code"><code>java.security.KeyPair</code></span>. Ces paires de clés peuvent être générées à l'aide d'un
+    générateur de paires de clés spécifique à un algorithme. Par exemple :</p>
+  <blockquote>
+    <p><span class="code"><code>import java.security.*;</code></span></p>
+    <p><code><span class="code">KeyPairGenerator myKeyPairGenerator = KeyPairGenerator.getInstance
+    ("DSA");</span> </code></p>
+  </blockquote>
+  <p>Toute génération de paire de clé s'effectue sur la base de deux critères :</p>
+  <ul>
+    <li>la <a href="#keystrength">taille de la clé</a> (un entier représentant le nombre de bits sur lesquels coder la
+      clé, compatible avec l'algorithme du générateur de clés).</li>
+    <li>une source aléatoire, permettant de garantir l'unicité de la clé. Cette source est en fait pseudo-aléatoire (<a
+        href="#PRNG">PRNG</a>) et représentée par la classe <span
+        class="code"><code>java.security.SecureRandom</code></span>, dérivable par divers fournisseurs. </li>
+  </ul>
+  <p>Par exemple :</p>
+  <blockquote>
+    <p><span class="code"><code>SecureRandom myPRNG = SecureRandom.getInstance ("SHA1PRNG");</code></span></p>
+    <p><code><span class="code">myKeyPairGenerator.initialize (1024, myPRNG);</span></code></p>
+  </blockquote>
+  <p>La génération s'effectue enfin via la méthode <span class="code">genKeyPair()</span>. Attention, cette opération
+    peut prendre plusieurs secondes (notamment en fonction de la taille de la clé) :</p>
+  <blockquote>
+    <p><code>KeyPair myKeyPair = myKeyPairGenerator.genKeyPair(); </code></p>
+  </blockquote>
+  <p>Ces clés sont <a href="#opaque">opaques</a>. L'accès transparent aux données d'une clé s'effectue via l'interface
+    <span class="code">java.security.spec.KeySpec</span>.</p>
+  <h4>Condensé de message</h4>
+  <p>Un condensé de message est initialisé à partir d'une fabrique, en fonction de son algorithme (SHA, MD5). Par
+    exemple :</p>
+  <blockquote>
+    <p><code>MessageDigest monCondense = MessageDigest.getInstance ("SHA");</code></p>
+  </blockquote>
+  <p>Reste ensuite à fournir les données à soumettre à la fonction de hachâge, sous forme de tableaux d'octets :</p>
+  <blockquote> <span class="code"><span class="codeIdent1"><code>byte[] donnees1
+  = { 1, 21, 3, 4 };<br/>
+  byte[] donnees2 = { 5, 2, 3, 7, 8, 12};<br/>
+  <br/>
+  </code></span></span><code><span class="codeIdent1"><span class="code">monCondense.update
+  (donnees1);<br/>
+  monCondense.update (donnees2);</span></span></code></blockquote>
+  <p>La génération des données du condensé se faisant via sa méthode <span
+      class="code"><code>digest()</code></span><code>.</code></p>
+  <blockquote>
+    <p><code>byte[] donneesCondense = monCondense.digest();</code></p>
+  </blockquote>
+  <p>Il est également possible de générer des condensés à partir de données d'autres condensés. Il suffit pour cela de
+    cloner les condensés afin de ne pas agir sur les mêmes données mais sur des copies de ces données. </p>
+  <p>Par exemple :</p>
+  <blockquote> <span class="codeIdent1"><span class="code"><code>monCondense.update
+  (donnees1);<br/>
+  byte[] donneesCondense1 </code></span></span><code><span class="codeIdent1"><span class="code">=
+  monCondense.clone().digest();</span></span></code> <code><span class="codeIdent1"><span class="code">
+  <br/>
+  <br/>
+  monCondense.update (donnees2);<br/>
+  byte[] donneesCondense1et2 = monCondense.digest();</span></span> </code></blockquote>
+  <h4><a href="/tech/info/soft/prog/oo/java/Signature.html">Signature</a></h4>
+  <h4><a href="/tech/info/ACL.html">ACL</a>/<a href="/tech/info/soft/prog/oo/java/Permission.html">Permissions</a></h4>
+  <h3>Implémentation des concepts spécifiques à Java</h3>
+  <p>Les concepts suivants ont été spécifiquement définis pour s'intégrer dans la plate-forme Java 2.</p>
+  <h4> Objets gardés</h4>
+  <p>Les objets gardés sont représentés par la classe <span class="code"><code>java.security.GuardedObject</code></span>.
+  </p>
+  <p>Dans Java 2, tous les objets <code>Permission</code> sont des gardes, ce qui permet de retourner facilement un
+    objet dont l'accès est soumis à une permission donnée (un ensemble de permissions ?) au travers d'un GuardedObject.
+  </p>
+  <h4><a name="policy"></a>Politique de Sécurité</h4>
+  <p>Java 2 permet de définir une politique de sécurité.<b> </b>Cette nouvelle possibilité offre les avantages suivants
+    :</p>
+  <ul>
+    <li>La définition d'une politique de sécurité offre une expression claire de ce qui est autorisé et interdit à
+      l'acteur définissant cette politique, et éventuellement aux utilisateurs soumis à cette politique.</li>
+    <li>Les permissions peuvent être définies de manière plus fine que dans Java 1 (qui n'offrait qu'une permission
+      "tout ou rien")</li>
+    <li>les politiques de sécurités peuvent être définies à plusieurs niveaux : pour la plate-forme et pour chaque
+      utilisateur. Il est donc possible de définir des Politiques de Sécurité différentes pour les utilisateurs d'une
+      même machine (on pourra par exemple définir des politiques différentes pour l'Administrateur de la machine, pour
+      un compte destiné à tester les logiciels téléchargés potentiellement dangereux, etc.).</li>
+  </ul>
+  <p>Concrètement, ces politiques sont exprimées sous la forme de séquences de <a href="#permission">permissions</a>
+    (comparables au principe des <a href="#ACL">ACL</a>). </p>
+  <h4><b class="titre4">Origine de code</b></h4>
+  <p>Une origine de code (<i>Code Source</i>) représente une identification de l'émetteur d'un code applicatif.</p>
+  <p>Cette identification peut s'effectuer sur la base de :</p>
+  <ul>
+    <li>l'URL de provenance du code</li>
+    <li>le(s) certificat(s) du code s'il est signé</li>
+    <li>les deux</li>
+  </ul>
+  <p>Il s'agit donc d'une extension du concept de CODEBASE, utilisé dans Java 1.1 pour associer du code et un
+    ClassLoader.</p>
+  <p>Lors de l'examen de l'origine d'un code, on procède donc à une comparaison de l'origine du code (télé)chargé et de
+    l'origine de code déclarée comme valide, qui peut comporter des jokers.</p>
+  <p>On peut par exemple décréter qu'une origine de code acceptable (constituée uniquement d'une URL dans ce cas) est
+    :</p>
+  <blockquote>
+    <p><code>http://*.valtech.fr/classes/*</code></p>
+  </blockquote>
+  <p>Ainsi que le code téléchargé à l'aide de l'URL
+    <code>http://javarome.valtech.fr/classes/security/Example.class</code> sera considéré comme valide par exemple.</p>
+  <p>Cette possibilité peut être utilisée au travers de <code>java.security.CodeSource.implies (CodeSource),</code> qui
+    renvoie si l'origine d'un code (URL et certficats) est compatible avec l'origine d'un autre code.</p>
+  <h4><b><a href="/tech/info/soft/prog/oo/java/ClassLoader.html">Chargeur de classe</a></b></h4>
+  <h4><b><a href="/tech/info/soft/prog/oo/java/Verifier.html">Vérifieur de bytecode</a></b></h4>
+  <h4><b><a href="/tech/info/soft/prog/oo/java/SecurityManager.html">Gestionnaire de Sécurité</a></b></h4>
+  <h4><b>Contrôleur d'accès</b></h4>
+  <p>Le rôle du contrôleur d'accès est donc à terme de remplacer le Gestionnaire de Sécurité. Il s'agit d'une classe
+    statique (non-instantiable), contrôlant les accès aux ressources en fonction du Contexte de Sécurité courant.</p>
+  <h6>Exécution privilégiée</h6>
+  <p>Il est possible pour une classe privilégiée (disposant d'une permission donnée) de transmettre momentanément son
+    contexte de protection (les permissions qui lui sont accordées) à une autre classe non privilégiée. </p>
+  <p>Il convient cependant d'être particulièrement précautionneux quant aux opérations effectuées dans de telles zones
+    temporairement privilégiées (attention à ce que l'on fait, ce que l'on permet de faire) et d'une manière générale
+    d'y effectuer le minimum possible d'opérations.</p>
+  <h6>Cliché du contexte </h6>
+  <p>(AccessControlContext / thread) pour examen d'une permission dans un autre contexte : rapport avec le GuardedObject
+    ?</p>
+  <h4><b class="titre4">Domaine de Protection</b></h4>
+  <p>Un domaine de protection représente un modèle similaire à celui de la sanbox de Java 1.1, où l'identification par
+    CODEBASE serait étendue au concept d'<a href="#codesource">origine de code</a>.</p>
+  <p>Un domaine de protection associe un ensemble de <a href="#permission">permissions</a> à une <a href="#codesource">origine
+    de code</a> donnée.</p>
+  <p>Il existe typiquement deux catégories de domaines de protection :</p>
+  <ul>
+    <li>le <b>domaine "système"</b>, capable d'accéder aux ressources de la machine</li>
+    <li>le <b>domaine "applicatif"</b>, nécessitant parfois de recourir momentanément au fonctionnalités offertes au
+      domaine système (de la même manière que sous Unix on passe momentanément "root" pour effectuer certaines
+      opérations utilisateur) au travers d'une <a href="#privileged">exécution privilégiée</a>.
+    </li>
+  </ul>
+  <h4><b class="titre4">Contexte de Sécurité</b></h4>
+  <p>L'exécution du code de plusieurs classes par un même thread implique donc la traversée de plusieurs domaines de
+    protection. On définit le Contexte de Sécurité comme l'<i>intersection</i> des permissions accordées par les
+    Domaines de Protection traversés.</p>
+  <p>Une classe autorisée à écrire des fichiers pourra par exemple appeler une classe non autorisée à écrire de tels
+    fichiers. Dans ce cas, la règle de l'intersection des domaines de protection ne permettra pas au code de la classe
+    non privilégiée de disposer des privilèges de la classe appelante (l'intersection correspond à la permission la plus
+    faible des deux).</p>
+  <p>Il est possible à tout moment de demander au Contrôleur d'Accès quel est le Contexte de Sécurité courant (du thread
+    courant), via la méthode statique AccessControler.getContext(). Cette méthode retourne un objet de type <code>java.security.AccessControlContext</code>
+    ou l'un de ces descendants (il pourra en effet être intéressant de spécialiser le contexte de sécurité pour y
+    inclure de nouveaux paramètres).</p>
+  <h4><b class="titre4">Blocs et actions privilégiés</b></h4>
+  <p>Il peut arriver qu'une classe privilégiée souhaite transmettre temporairement des privilèges à une classe moins
+    privilégiée. Cette opération s'effectue au travers de l'exécution d'un "bloc privilégié".</p>
+  <p>L'exécution d'un Bloc Privilégié consiste à demander l'exécution d'une Action Privilégiée. Une Action Privilégiée
+    est une classe contenant le code devant disposer de privilèges. Une telle classe doit implémenter l'interface <code>java.security.PrivilegedAction</code>,
+    qui impose de fournir le code d'une méthode <code>run()</code>, où doit se trouver le code privilégié.</p>
+  <p>Par exemple :</p>
+  <blockquote><code>class PrivilegedUserNameAccess<br/> implements java.security.PrivilegedAction<br/> {<br/> public
+    Object run()<br/> {<br/> return System.getProperty ("user.name"); <br/> }<br/> }</code></blockquote>
+  <p>L'exécution de cette action privilégiée est alors demandée au Contrôleur d'Accès :</p>
+  <blockquote><code>String userName = (String) AccessControler.doPrivileged (new PrivilegedUserNameAccess());</code>
+  </blockquote>
+  <p>Dans cet exemple, le bloc permet de retourner la valeur d'une propriété qui ne serait pas accessible si la classe
+    appelante ne disposais pas de la permission nécessaire (en l'occurence <code>java.util.PropertyPermission
+      ("user.name", "read")</code>).</p>
+  <p>Cependant, il est possible de faire bénéficier une action privilégiée d'un contexte de sécurité différent de celui
+    de la classe appelante (un contexte plus limité par exemple). Dans ce cas, il suffit de fournir à la méthode
+    doPrivileged() le contexte adéquat :</p>
+  <blockquote><code>String userName = (String) AccessControler.doPrivileged (new PrivilegedUserNameAccess(),
+    someActionContext);</code></blockquote>
+  <h4>Base de clés</h4>
+  <p>Une base de clés (<i>Key Store</i>) constitue un référentiel de clés et certificats.</p>
+  <p>Une entrée de la base de clés peut être :</p>
+  <ul>
+    <li>une <a href="#clesecrete">clé secrète</a></li>
+    <li>une chaînes de <a href="#certificat">certificats</a> associée à une <a href="#cleprivee">clé privée</a></li>
+    <li>un <a href="#certificat">certificat</a> associé à une <a href="#clepublique">clé publique</a></li>
+  </ul>
+  <p>Cette base est représentée par la classe <code>java.security.KeyStore</code> et son mode de persistance peut être
+    fourni par divers fournisseurs implémentant une <code>java.security.KeyStoreSpi</code> (sur une carte à puce par
+    exemple).</p>
+  <h4>Objet Signé</h4>
+  <p>Un objet signé est un objet dont l'état courant a été signé à l'aide d'un <a href="#certificat">certificat</a>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><a href="http://www.gnu.org/software/gnu-crypto"><em>The GNU Crypto project</em></a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>les <a href="#signature">signatures électroniques</a> [1.1]</li>
+    <li>les <a href="#digest">condensés de messages</a> [1.1]</li>
+    <li>Génération de clés asymétriques (privées et publiques)</li>
+    <li>Paramètres d'algorithmes</li>
+    <li>le support des certficats <a href="/tech/info/soft/securite/confidentialite/cryptage/X509.html">X.509</a> V3.
+    </li>
+    <li>peut être étendue par la <a href="/tech/info/soft/prog/oo/java/JCE.html">JCE</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

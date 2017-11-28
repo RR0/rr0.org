@@ -1,0 +1,986 @@
+<!--#include virtual="/header-start.html" -->
+<title>API Java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<meta name="url" content="http://java.sun.com/docs/books/jls/second_edition/html/j.title.doc.html">
+<!--#include virtual="/header-end.html" -->
+<h2>Besoin</h2>
+<p>Fournir un ensemble de librairies de code standard pour les applications <a href="/tech/info/soft/prog/oo/java/index.html">Java</a>. 
+</p>
+<h2>Analyse</h2>
+<p>Le terme "API Java" désigne l'ensemble des libraries standards
+   livrées avec les <a href="/tech/info/soft/prog/oo/java/PlateForme.html">plates-formes</a> Java :</p>
+<ul>
+  <li> <a href="/tech/info/soft/prog/oo/java/J2SE.html">J2SE</a></li>
+  <li><a href="/tech/info/soft/prog/oo/java/J2EE.html">J2EE</a></li>
+</ul>
+<p>Ces libraries peuvent varier en fonction des versions de ces plates-formes.</p>
+<h2>Conception</h2>
+<p>Les libraries standards sont livrées sous formes de JAR dans des répertoires
+  standards des plates-formes.</p>
+<h2>Implémentation</h2>
+<ul>
+  <li> 
+    <table border=1 cellspacing=0 cellpadding=5>
+	<caption>API Java</caption>
+      <thead>
+        <tr> 
+          <td rowspan=2 class="titleCorner"> </td>
+          <td valign=top class="titleCorner"> </td>
+          <th colspan="6">Java</th>
+          <th width=301> Commentaire</th>
+        </tr>
+        <tr> 
+          <th valign=top> Version </th>
+          <th colspan="6">1</th>
+          <td width=301>Compatibilité des classes compilées</td>
+        </tr>
+        <tr> 
+          <th>Technologie</th>
+          <th valign=top> Release</th>
+          <th>0</th>
+          <th width=301>1</th>
+          <th width=301><a href="http://java.sun.com/products/jdk/1.2/docs/api/index.html">2</a></th>
+          <th width=301><a href="http://java.sun.com/j2se/1.3/docs/api/index.html">3</a></th>
+          <th width=301><a href="http://java.sun.com/j2se/1.4.2/docs/api/index.html">4</a></th>
+          <th width=301>5</th>
+          <td width=301>Fonctionnalité</td>
+        </tr>
+      </thead>
+      <tr> 
+        <th rowspan="5" valign=top>Fondamentaux</th>
+        <th valign=top> </th>
+        <td colspan="6" class="oui"><code>java.lang</code></td>
+        <td>Types de bases (String, StringBuffer, Integer, etc.) et conversions
+           associées, <a href="/tech/info/soft/prog/oo/java/SystemProperties.html">propriétés système</a>.</td>
+      </tr>
+      <tr> 
+        <th valign=top><a href="/tech/info/soft/prog/oo/java/Reflexivite.html">Réflexivité</a></th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.lang.reflect</code></td>
+        <td><em><a href="/tech/info/soft/prog/oo/java/Reflexivite.html">Reflection</a> </em>: Découverte et invocation dynamiques des
+          interfaces des objets.</td>
+      </tr>
+      <tr> 
+        <th valign=top><a href="/tech/info/soft/prog/oo/java/Reference.html">Références mémoire</a></th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.lang.ref</code></td>
+        <td>Objets représentant des références mémoire,
+          permettant un interaction limitée avec le <a href="/tech/info/soft/prog/oo/java/GC.html">GC</a>.</td>
+      </tr>
+      <tr> 
+        <th rowspan="2" valign=top><a href="/tech/info/soft/prog/oo/java/JavaBeans.html">JavaBeans</a></th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.beans</code></td>
+        <td>Composants Java simples, notamment adaptés aux <a href="/tech/info/soft/GUI.html">GUI</a>. Intégrables dynamiquement grâce à l'<a href="/tech/info/soft/prog/oo/java/Introspection.html">introspection</a>. </td>
+      </tr>
+      <tr> 
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.beans. beancontext</code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th valign=top><a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a></th>
+        <th valign=top><a href="/tech/info/soft/prog/oo/java/Applet.html">Applets</a></th>
+        <td colspan="6" class="oui"><code>java.applet</code></td>
+        <td>Petites applications insérables dans des pages Web.</td>
+      </tr>
+      <tr> 
+        <th rowspan="6" valign=top>AWT</th>
+        <th valign=top> </th>
+        <td colspan="6" class="oui"><code>java.awt</code></td>
+        <td><em>Abstract Window Toolkit</em> : <a href="/tech/info/soft/GUI.html">GUI</a> avec 
+          widgets natifs (<em>peers</em>).</td>
+      </tr>
+      <tr> 
+        <th valign=top>Espaces de couleurs</th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.awt.color</code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th valign=top>Copier-Coller</th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.awt.datatransfer</code></td>
+        <td>Copier-Coller entre applications.</td>
+      </tr>
+      <tr> 
+        <th valign=top>Glisser-déposer</th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.awt.dnd</code></td>
+        <td><em>Drag and Drop</em> : Manipulation de l'utilisateur permettant 
+          de transférer (copier, déplacer) de l'information.</td>
+      </tr>
+      <tr> 
+        <th valign=top>Evénements</th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.awt.event</code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th valign=top>Polices de caractères</th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.awt.font</code></td>
+        <td>.</td>
+      </tr>
+      <tr> 
+        <th valign=top>Java2D</th>
+        <th valign=top> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.awt.geom</code></td>
+        <td><em>Geometry </em>: Opérations géométriques 2D.</td>
+      </tr>
+      <tr> 
+        <th rowspan="4" valign=top>Image</th>
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.awt.im</code></td>
+        <td><em>Input Method</em></td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>java.awt.im. <a href="/tech/info/soft/prog/oo/java/SPI.html">spi</a></code></td>
+        <td>SPI pour développer des input methods</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="6" class="oui"><code>java.awt.image</code></td>
+        <td>Provides classes for creating and modifying images.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>java.awt.image. renderable</code></td>
+        <td>Provides classes and interfaces for producing rendering-independent 
+          images.</td>
+      </tr>
+      <tr> 
+        <th rowspan="16" valign=top>Swing</th>
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing</code></td>
+        <td>components that, to the maximum degree possible, work the same on 
+          all platforms.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.border</code></td>
+        <td> drawing specialized borders around a Swing component.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing. colorchooser</code></td>
+        <td>used by the JColorChooser component.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.event </code></td>
+        <td>events fired by Swing components.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing. filechooser </code></td>
+        <td>used by the JFileChooser component.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.plaf </code></td>
+        <td><em>Pluggable Look-And-Feel</em>.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.plaf. basic </code></td>
+        <td><em>Look and feel </em>basique.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.plaf. metal</code></td>
+        <td><em>Look and feel </em>par défaut : Java (de nom de code Metal)</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.plaf. multi</code></td>
+        <td> Objets GUI combinant plus de 1 <em>look and feel</em>.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.table</code></td>
+        <td>Tableau.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.text</code></td>
+        <td> Composants textuels éditables ou non.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.text. html </code></td>
+        <td> HTMLEditorKit and supporting classes for creating HTML text editors.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.text. html.parser</code></td>
+        <td> default HTML parser, along with support classes.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing.text. rtf </code></td>
+        <td>RTFEditorKit for creating Rich-Text-Format text editors.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing. tree</code></td>
+        <td>Arborescence graphique.</td>
+      </tr>
+      <tr> 
+        <th><br></th>
+        <td colspan="2" class="non"><code>Non</code></td>
+        <td colspan="4" class="oui"><code>javax.swing. undo</code></td>
+        <td>Annuler/Répéter.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th valign=top> </th>
+        <td class="non"><code>Non</code></td>
+        <td colspan="5" class="oui"><code>java.math</code></td>
+        <td>Provides classes for performing arbitrary-precision integer arithmetic 
+          (BigInteger) and arbitrary-precision decimal arithmetic (BigDecimal).</td>
+      </tr>
+      <tr> 
+        <th rowspan="3" valign=top><a href="/tech/info/soft/prog/oo/java/Reseau.html">Réseau</a></th>
+        <th valign=top> </th>
+        <td colspan="6" class="oui"><code>java.net</code></td>
+        <td>Provides the classes for implementing networking applications.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.net </code></td>
+        <td>for networking applications.</td>
+      </tr>
+      <tr> 
+        <th><br></th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.net. ssl</code></td>
+        <td>secure socket package.</td>
+      </tr>
+      <tr> 
+        <th rowspan="6" valign=top>E/S</th>
+        <th valign=top> </th>
+        <td colspan="6" class="oui">java.io</td>
+        <td><em>Input/Output</em> : Provides for system input and output through 
+          data streams, serialization and the file system.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.nio</code></td>
+        <td><em>New I/O </em>: API pour E/S non-bloquantes.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.nio. channels</code></td>
+        <td>Defines channels, which represent connections to entities that are 
+          capable of performing I/O operations, such as files and sockets; defines 
+          selectors, for multiplexed, non-blocking I/O operations.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.nio. channels.spi</code></td>
+        <td>Service-provider classes for the java.nio.channels package.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.nio. charset</code></td>
+        <td>Defines charsets, decoders, and encoders, for translating between 
+          bytes and Unicode characters.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.nio. charset.spi</code></td>
+        <td>Service-provider classes for the java.nio.charset package.</td>
+      </tr>
+      <tr> 
+        <th rowspan="7" valign=top><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a></th>
+        <th valign=top> </th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.rmi</code></td>
+        <td><em>Remote Method Invocation</em>.</td>
+      </tr>
+      <tr> 
+        <th><a href="/tech/info/soft/prog/oo/java/GC.html">GC</a></th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.rmi.dgc</code></td>
+        <td><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a> et garbage-collection
+           distribuée (DGC)</td>
+      </tr>
+      <tr> 
+        <th>Annuaire</th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.rmi.registry</code></td>
+        <td>Annuaire d'objets <a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>.</td>
+      </tr>
+      <tr> 
+        <th>Côté serveur</th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.rmi.server</code></td>
+        <td><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a> côté serveur.</td>
+      </tr>
+      <tr> 
+        <th>Activation</th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.rmi.activation</code></td>
+        <td>Activation d'objets <a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>.</td>
+      </tr>
+      <tr> 
+        <th rowspan="2"><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>/<a href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a></th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.rmi</code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.rmi. CORBA</code></td>
+        <td>Portabilité <a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>/<a href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a>.</td>
+      </tr>
+      <tr> 
+        <th rowspan="12" valign=top><a href="/tech/info/soft/prog/oo/java/Securite.html">Cryptographie</a></th>
+        <th> </th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.security</code></td>
+        <td>Provides the classes and interfaces for the security framework.</td>
+      </tr>
+      <tr> 
+        <th> <br> </th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.security.acl</code></td>
+        <td>The classes and interfaces in this package have been superseded by 
+          classes in the java.security package.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.security.interfaces</code></td>
+        <td>Génération de clés <a href="/tech/info/soft/prog/oo/java/RSA.html">RSA</a>
+          conformes à la note technique PKCS#1, et <a href="/tech/info/soft/prog/oo/java/DSA.html">DSA</a>
+          conformes au FIPS-186 du NIST</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.security.cert </code></td>
+        <td>Décodage et gestion de <a href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a>,
+          CRLs, et chemins de certification.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>java.security.spec </code></td>
+        <td>Spécification de clés et de paramètres d'algorithmes.</td>
+      </tr>
+      <tr> 
+        <th>Authentification / autorisation</th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax. security. auth </code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.security. auth. callback</code></td>
+        <td>interact with applications in order to retrieve information (authentication 
+          data including usernames or passwords, for example) or to display information 
+          (error and warning messages, for example).</td>
+      </tr>
+      <tr> 
+        <th>Authentification Kerberos</th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.security. auth.kerberos</code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.security. auth.login </code></td>
+        <td>Infrastructure d'authentification pluggable.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.security. auth.spi </code></td>
+        <td>implementing pluggable authentication modules.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.security. auth.x500</code></td>
+        <td>store X500 Principal and X500 Private Crendentials in a Subject.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax. security. cert</code></td>
+        <td>public key certificates.</td>
+      </tr>
+      <tr> 
+        <th rowspan="3" valign=top>JCE</th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td>Optionnel</td>
+        <td class="oui"><code>javax. crypto</code></td>
+        <td>Operations cryptographiques</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td>Optionnel</td>
+        <td class="oui"><code>javax. crypto. interfaces </code></td>
+        <td>Diffie-Hellman keys as defined in RSA Laboratories' PKCS #3.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td>Optionnel</td>
+        <td class="oui"><code>javax. crypto. spec</code></td>
+        <td>key specifications and algorithm parameter specifications.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.ietf.jgss</code></td>
+        <td> make use of security services like authentication, data integrity 
+          and data confidentiality from a variety of underlying security mechanisms 
+          like Kerberos, using a unified API.</td>
+      </tr>
+      <tr> 
+        <th rowspan="2" valign=top><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></th>
+        <th><a href="/tech/info/soft/prog/oo/java/JDBC.html">JDBC</a></th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code><a href="http://java.sun.com/j2se/1.4.1/docs/api/java/sql/package-summary.html">java.sql</a></code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th><br> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.sql</code></td>
+        <td>server side data source access and processing from the JavaTM programming 
+          language. JDBC 3.0</td>
+      </tr>
+      <tr> 
+        <th rowspan="4" valign=top>Utilitaires</th>
+        <th>Collections</th>
+        <td colspan="6" rowspan="4" class="oui"><code>java.util</code></td>
+        <td>Listes, dictionnaires (<a href="/tech/info/soft/prog/oo/java/HashTable.html">tâbles
+            de hâchage</a>,
+           etc.), </td>
+      </tr>
+      <tr>
+        <th>Internationalisation</th>
+        <td> </td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/prog/oo/java/Date.html">Date / heure</a></th>
+        <td> </td>
+      </tr>
+      <tr>
+        <th>Autres</th>
+        <td>événements, décodeur de chaînes, nombres
+        aléatoires, tableau de bits.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.text </code></td>
+        <td> handling text, dates, numbers, and messages in a manner independent 
+          of natural languages.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td class="non">Non</td>
+        <td colspan="5" class="oui"><code>java.util.zip </code></td>
+        <td>reading and writing the standard ZIP and GZIP file formats.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code><a href="http://java.sun.com/j2se/1.4.1/docs/api/java/util/jar/package-summary.html">java.util.jar</a></code></td>
+        <td>Ecriture et lecture de fichiers au format <a href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a>.</td>
+      </tr>
+      <tr> 
+        <th valign=top><a href="/tech/info/soft/prog/oo/java/Log.html">Traces</a></th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.util. logging</code></td>
+        <td> </td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.util. prefs </code></td>
+        <td>Stockage et récupération de données de configuration
+          utilisateur et système.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java.util. regex</code></td>
+        <td>Reconnaissance de séquences de caractères par rapport à des motifs
+          spécifiés par des expressions régulières</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>javax.accessibility</code></td>
+        <td> contract between user-interface components and an assistive technology 
+          that provides access to those components.</td>
+      </tr>
+      <tr> 
+        <th rowspan="6" valign=top>Image</th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax. imageio</code></td>
+        <td> Java Image I/O API.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax. imageio. event</code></td>
+        <td>synchronous notification of events during the reading and writing 
+          of images.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax. imageio. metadata</code></td>
+        <td>reading and writing metadata.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.imageio. plugins. jpeg</code></td>
+        <td>built-in JPEG plug-in.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.imageio. spi </code></td>
+        <td> plug-in interfaces for readers, writers, transcoders, and streams, 
+          and a runtime registry.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.imageio. stream </code></td>
+        <td>A package of the Java Image I/O API dealing with low-level I/O from 
+          files and streams.</td>
+      </tr>
+      <tr> 
+        <th rowspan="5" valign=top><a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a></th>
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.naming </code></td>
+        <td>Accès aux services de nommage.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.naming. directory </code></td>
+        <td>Accès aux annuaires.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.naming. event </code></td>
+        <td>event notification when accessing naming and directory services.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.naming. ldap </code></td>
+        <td>Opérations et contrôles étendus pour LDAPv3.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.naming. spi</code></td>
+        <td>means for dynamically plugging in support for accessing naming and 
+          directory services through the javax.naming and related packages.</td>
+      </tr>
+      <tr> 
+        <th rowspan="5" valign=top>Impression</th>
+        <th valign=top> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="2" class="oui"><code>java. awt. print</code></td>
+        <td colspan="2">Obsolète</td>
+        <td>Provides classes and interfaces for a general printing API.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.print</code></td>
+        <td>JavaTM Print Service API.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.print. attribute</code></td>
+        <td>types of JavaTM Print Service attributes and how they can be collected 
+          into attribute sets.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.print. attribute. standard </code></td>
+        <td>specific printing attributes.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.print. event</code></td>
+        <td>event classes and listener interfaces.</td>
+      </tr>
+      <tr> 
+        <th rowspan="4" valign=top>Audio</th>
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.sound.midi</code></td>
+        <td>I/O, sequencing, and synthesis of MIDI (Musical Instrument Digital 
+          Interface) data.</td>
+      </tr>
+      <tr> 
+        <th><br> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.sound. midi.spi</code></td>
+        <td>for service providers to implement when offering new MIDI devices, 
+          MIDI file readers and writers, or sound bank readers.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.sound. sampled </code></td>
+        <td> capture, processing, and playback of sampled audio data.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.sound. sampled. spi </code></td>
+        <td>service providers to subclass when offering new audio devices, sound 
+          file readers and writers, or audio format converters.</td>
+      </tr>
+      <tr> 
+        <th valign=top> </th>
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax. transaction. xa </code></td>
+        <td> contract between the transaction manager and the resource manager, 
+          which allows the transaction manager to enlist and delist resource objects 
+          (supplied by the resource manager driver) in JTA transactions.</td>
+      </tr>
+      <tr> 
+        <th rowspan="8" valign=top><a href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a></th>
+        <th>Parser</th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.xml. parsers </code></td>
+        <td>Traitement de documents <a href="/tech/info/soft/data/doc/xml/XML.html">XML</a>.</td>
+      </tr>
+      <tr> 
+        <th>XSLT</th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.xml. transform</code></td>
+        <td>generic APIs for processing transformation instructions, and performing 
+          a transformation from source to result.</td>
+      </tr>
+      <tr> 
+        <th rowspan="4"><a href="/tech/info/soft/prog/oo/java/SAX.html">SAX</a></th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.xml. sax </code></td>
+        <td> Interfaces <a href="/tech/info/soft/prog/oo/java/SAX.html">SAX</a></td>
+      </tr>
+      <tr> 
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.xml. transform. sax </code></td>
+        <td>SAX2-specific transformation APIs.<br>
+          javax.xml.transform.stream This package implements stream- and URI- 
+          specific transformation APIs.</td>
+      </tr>
+      <tr> 
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.xml. sax.ext </code></td>
+        <td> Extension pour <a href="/tech/info/soft/prog/oo/java/SAX.html">SAX</a> which is a component of 
+          the Java API for XML Processing.</td>
+      </tr>
+      <tr> 
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.xml. sax. helpers </code></td>
+        <td> Classes utilitaires pour <a href="/tech/info/soft/prog/oo/java/SAX.html">SAX</a></td>
+      </tr>
+      <tr> 
+        <th rowspan="2"><a href="/tech/info/soft/data/doc/xml/DOM.html">DOM</a></th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>javax.xml. transform. dom </code></td>
+        <td>DOM-specific transformation APIs.</td>
+      </tr>
+      <tr> 
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.w3c. dom</code></td>
+        <td> Interfaces <a href="/tech/info/soft/data/doc/xml/DOM.html">DOM</a></td>
+      </tr>
+      <tr> 
+        <th rowspan="29" valign=top><a href="/tech/info/soft/prod/orb/corba/index.html">CORBA</a></th>
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>org.omg.CORBA </code></td>
+        <td>mapping of the OMG CORBA APIs to the JavaTM programming language, 
+          including the class ORB, which is implemented so that a programmer can 
+          use it as a fully-functional Object Request Broker (ORB).</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>org.omg.CORBA. DynAnyPackage</code></td>
+        <td>exceptions used with the DynAny interface (InvalidValue, Invalid, 
+          InvalidSeq, and TypeMismatch).</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>org.omg.CORBA. ORBPackage </code></td>
+        <td> exception InvalidName, which is thrown by the method ORB.resolve_initial_references 
+          and the exception InconsistentTypeCode, which is thrown by the Dynamic 
+          Any creation methods in the ORB class.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>org.omg. CORBA. portable </code></td>
+        <td> portability layer, that is, a set of ORB APIs that makes it possible 
+          for code generated by one vendor to run on another vendor's ORB.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="2" class="non">Non</td>
+        <td colspan="4" class="oui"><code>org.omg.CORBA. TypeCodePackage </code></td>
+        <td> user-defined exceptions BadKind and Bounds, which are thrown by methods 
+          in in the class TypeCode.</td>
+      </tr>
+      <tr> 
+        <th><a href="/tech/info/soft/prog/oo/java/Transaction.html">Transactions</a></th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>javax.transaction</code></td>
+        <td>Juste 3 Exceptions de <a href="/tech/info/soft/prog/oo/java/JTA.html">JTA</a> susceptibles d'être
+          levées par l'ORB lors de l'unmarshalling.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>org.omg. CosNaming </code></td>
+        <td> naming service for Java IDL.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>org.omg. CORBA_2_3 </code></td>
+        <td>additions to existing CORBA interfaces in the Java 2 Standard Edition. 
+          These changes occurred in recent revisions to the CORBA API defined 
+          by the OMG. The new methods were added to interfaces derived from the 
+          corresponding interfaces in the CORBA package. This provides backward 
+          compatibility and avoids breaking the JCK tests.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>org.omg. CORBA_2_3. portable </code></td>
+        <td>methods for the input and output of value types, and contains other 
+          updates to the org/omg/CORBA/portable package.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>org.omg. SendingContext</code></td>
+        <td> marshalling of value types.</td>
+      </tr>
+      <tr> 
+        <th><br> </th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="3" class="oui"><code>org.omg. stub. java. rmi</code></td>
+        <td> RMI-IIOP Stubs for the Remote types that occur in the java.rmi package.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. CosNaming. NamingContextExtPackage</code></td>
+        <td>following classes, which are used in org.omg.CosNaming.NamingContextExt:</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. CosNaming. NamingContextPackage</code></td>
+        <td>Exception classes for the org.omg.CosNaming package.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. Dynamic </code></td>
+        <td>Dynamic module specified in the OMG Portable Interceptor specification, 
+          http://cgi.omg.org/cgi-bin/doc?ptc/2000-08-06, section 21.9.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. DynamicAny </code></td>
+        <td>traversal of the data value associated with an any at runtime, and 
+          extraction of the primitive constituents of the data value.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg.DynamicAny. DynAnyFactoryPackage </code></td>
+        <td>classes and exceptions from the DynAnyFactory interface of the DynamicAny 
+          module specified in the OMG The Common Object Request Broker: Architecture 
+          and Specification, http://cgi.omg.org/cgi-bin/doc?formal/99-10-07, section 
+          9.2.2.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. DynamicAny. DynAnyPackage </code></td>
+        <td>classes and exceptions from the DynAny interface of the DynamicAny 
+          module specified in the OMG The Common Object Request Broker: Architecture 
+          and Specification, http://cgi.omg.org/cgi-bin/doc?formal/99-10-07, section 
+          9.2.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg.IOP </code></td>
+        <td>IOP module specified in the OMG document The Common Object Request 
+          Broker: Architecture and Specification, http://cgi.omg.org/cgi-bin/doc?formal/99-10-07, 
+          section 13.6.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg.IOP. CodecFactoryPackage</code></td>
+        <td> exceptions specified in the IOP::CodeFactory interface (as part of 
+          the Portable Interceptors spec).</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg.IOP. CodecPackage</code></td>
+        <td>generated from the IOP::Codec IDL interface definition.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg.Messaging </code></td>
+        <td> Messaging module specified in the OMG CORBA Messaging specification, 
+          http://cgi.omg.org/cgi-bin/doc?formal/99-10-07.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableInterceptor</code></td>
+        <td> mechanism to register ORB hooks through which ORB services can intercept 
+          the normal flow of execution of the ORB.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableInterceptor. ORBInitInfoPackage</code></td>
+        <td> exceptions and typedefs from the ORBInitInfo local interface of the 
+          PortableInterceptor module specified in the OMG Portable Interceptor 
+          specification, http://cgi.omg.org/cgi-bin/doc?ptc/2000-08-06, section 
+          21.7.2.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableServer</code></td>
+        <td> server side of your applications portable across multivendor ORBs.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableServer. CurrentPackage </code></td>
+        <td>Provides method implementations with access to the identity of the 
+          object on which the method was invoked.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableServer. POAManagerPackage</code></td>
+        <td>Encapsulates the processing state of the POAs it is associated with.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableServer. POAPackage</code></td>
+        <td>Allows programmers to construct object implementations that are portable 
+          between different ORB products.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg.PortableServer. portable </code></td>
+        <td> server side of your applications portable across multivendor ORBs.</td>
+      </tr>
+      <tr> 
+        <th> </th>
+        <td colspan="4" class="non">Non</td>
+        <td colspan="2" class="oui"><code>org.omg. PortableServer. ServantLocatorPackage</code></td>
+        <td> locating the servant.</td>
+      </tr>
+    </table>
+  </li>
+  <li> Créé en <a href="/tech/info/1995.html">1995</a> par <a href="http://www.sun.com/">Sun
+    Microsystems</a> qui le gère toujours aujourd'hui via sa filiale <a href="http://java.sun.com">JavaSoft</a>.</li>
+</ul>
+<h2>Exemples</h2>
+<p><a href="/tech/info/soft/prog/oo/java/J2SE.html">J2SE</a> comporte des libraries standards :</p>
+<ul>
+  <li>Runtime (<code>%JAVA_HOME%/jre/lib/rt.<a href="/tech/info/soft/prog/oo/java/JAR.html">jar</a></code>)</li>
+  <li>d'internationalisation (<code>%JAVA_HOME%/jre/lib/i18n.<a href="/tech/info/soft/prog/oo/java/JAR.html">jar</a></code>)</li>
+</ul>
+<p><a href="/tech/info/soft/prog/oo/java/J2EE.html">J2EE</a> compte les libraries standards dont les <a href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a> 
+  ne sont pas imposés mais devant inclure :</p>
+<ul>
+  <li><a href="/tech/info/soft/prog/oo/java/EJB.html">EJB</a></li>
+  <li><a href="/tech/info/soft/prog/oo/java/Servlets.html">Servlet</a> et <a href="/tech/info/soft/prog/oo/java/JSP.html">JSP</a></li>
+  <li><a href="/tech/informatique/soft/java/J2C.html">J2C</a></li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li> <a href="http://java.sun.com/docs/books/tutorial/">The Java Tutorial</a></li>
+  <li><a href="http://java.sun.com/docs/books/jls/second_edition/html/j.title.doc.html">Java 
+    Language Specification (JLS)</a></li>
+  <li><a href="http://java.sun.com/products/jdk/1.1/docs/guide/innerclasses/spec/innerclasses.doc.html">Inner 
+    classes specification</a></li>
+  <li> <a href="http://wwws.sun.com/software/java2/download.html">Code source</a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

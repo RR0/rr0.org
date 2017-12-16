@@ -3,7 +3,7 @@
 <!--#include virtual="/header-end.html" -->
 <p><i>Java Cryptography Architecture</i> : architecture de <a
     href="/tech/info/soft/securite/confidentialite/Cryptographie.html">cryptographie</a> de <a
-    href="/tech/info/soft/prog/oo/java/index.html">Java</a> (JCA est aussi souvent utilisé pour désigner les <a
+    href="/tech/info/soft/prog/oo/java">Java</a> (JCA est aussi souvent utilisé pour désigner les <a
     href="/tech/info/soft/java/J2C.html">connecteurs J2EE</a>).</p>
 <section>
   <h2>Besoin</h2>
@@ -15,7 +15,7 @@
     distingue :</p>
   <ul>
     <li>les <strong>concepts</strong> de sécurité (identité, clés, <a
-        href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a>...)
+        href="/tech/info/soft/securite/authentification/certificat">certificats</a>...)
       <ul>
         <li><strong>généraux </strong>
           <ul>
@@ -33,86 +33,79 @@
   <p>Il est ainsi possible d'utiliser les implémentations cryptographiques de différents fournisseurs tout en
     garantissant une interopérabilité entre ces différentes implémentations par le biais d'interfaces standardisées (les
     concepts).</p>
+</section>
+<section>
   <h2>Implémentation</h2>
   <p>La JCA est constituée des packages <code>java.security.*</code>.</p>
   <h3>Implémentation des concepts généraux</h3>
   <h4>Identité</h4>
-  <p>Les identités sont représentées par des classes implémentant <span
-      class="code"><code>java.security.Principal</code></span>. depuis Java 2 (dans Java 1, la classe <span
-      class="code"><code>java.security.Identity</code></span> implémentait cette interface et fournissait diverses
+  <p>Les identités sont représentées par des classes implémentant <code>java.security.Principal</code>. depuis Java 2
+    (dans Java 1, la classe <code>java.security.Identity</code> implémentait cette interface et fournissait diverses
     méthodes permettant d'associer des <a href="#cle">clés</a> et <a
-        href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a> à cette identité. Java 2
-    a rendu cette dernière classe obsolète avec l'apparition de la <a href="#keystore">base de clés</a> <span
-        class="code"><code>java.security.Keystore</code></span>, qui permet d'associer clés et <a
-        href="/tech/info/soft/securite/authentification/certificat/index.html">certificats</a> à partir d'un alias
-    unique -- alias qu'un objet de type <span class="code"><code>java.security.Principal</code></span> peut fournir via
-    sa méthode <span class="code"><code>getName()</code></span>. La classe <span class="code"><code>java.security.Identity</code></span>
-    est donc obsolète à partir de Java 2, ainsi que ses dérivées <span
-        class="code"><code>java.security.IdentityScope</code></span> et <span
-        class="code"><code>java.security.Signer</code></span>.)</p>
-  <h4> Clés</h4>
-  <p>Le concept de <a href="#cle">clé</a> est représenté par l'interface <span
-      class="code"><code>java.security.Key</code></span>, dont dérivent les interfaces <span class="code"><code>java.security.PublicKey</code></span>
-    (<a href="#clepublique">clé publique</a>) et <span class="code"><code>java.security.PrivateKey</code></span> (<a
-        href="#cleprivee">clé privée</a>).</p>
-  <p>Clé publique et clé privée peuvent être associées dans un objet <span
-      class="code"><code>java.security.KeyPair</code></span>. Ces paires de clés peuvent être générées à l'aide d'un
-    générateur de paires de clés spécifique à un algorithme. Par exemple :</p>
-  <blockquote>
-    <p><span class="code"><code>import java.security.*;</code></span></p>
-    <p><code><span class="code">KeyPairGenerator myKeyPairGenerator = KeyPairGenerator.getInstance
-    ("DSA");</span> </code></p>
-  </blockquote>
+        href="/tech/info/soft/securite/authentification/certificat">certificats</a> à cette identité. Java 2 a rendu
+    cette dernière classe obsolète avec l'apparition de la <a href="#keystore">base de clés</a> <code>java.security.Keystore</code>,
+    qui permet d'associer clés et <a
+        href="/tech/info/soft/securite/authentification/certificat">certificats</a> à partir d'un alias unique -- alias
+    qu'un objet de type <span class="code"><code>java.security.Principal</code></span> peut fournir via sa méthode
+    <code>getName()</code>. La classe <code>java.security.Identity</code> est donc obsolète à partir de Java 2, ainsi
+    que ses dérivées <code>java.security.IdentityScope</code> et <code>java.security.Signer</code>.)</p>
+  <h4>Clés</h4>
+  <p>Le concept de <a href="#cle">clé</a> est représenté par l'interface <code>java.security.Key</code>, dont dérivent
+    les interfaces <code>java.security.PublicKey</code> (<a href="#clepublique">clé publique</a>) et <code>java.security.PrivateKey</code>
+    (<a href="#cleprivee">clé privée</a>).</p>
+  <p>Clé publique et clé privée peuvent être associées dans un objet <code>java.security.KeyPair</code>. Ces paires de
+    clés peuvent être générées à l'aide d'un générateur de paires de clés spécifique à un algorithme. Par exemple :</p>
+  <pre><code>
+import java.security.*;
+KeyPairGenerator myKeyPairGenerator = KeyPairGenerator.getInstance("DSA");
+  </code></pre>
   <p>Toute génération de paire de clé s'effectue sur la base de deux critères :</p>
   <ul>
     <li>la <a href="#keystrength">taille de la clé</a> (un entier représentant le nombre de bits sur lesquels coder la
       clé, compatible avec l'algorithme du générateur de clés).</li>
     <li>une source aléatoire, permettant de garantir l'unicité de la clé. Cette source est en fait pseudo-aléatoire (<a
-        href="#PRNG">PRNG</a>) et représentée par la classe <span
-        class="code"><code>java.security.SecureRandom</code></span>, dérivable par divers fournisseurs. </li>
+        href="#PRNG">PRNG</a>) et représentée par la classe <code>java.security.SecureRandom</code>, dérivable par
+      divers fournisseurs. </li>
   </ul>
   <p>Par exemple :</p>
-  <blockquote>
-    <p><span class="code"><code>SecureRandom myPRNG = SecureRandom.getInstance ("SHA1PRNG");</code></span></p>
-    <p><code><span class="code">myKeyPairGenerator.initialize (1024, myPRNG);</span></code></p>
-  </blockquote>
+  <pre><code>
+SecureRandom myPRNG = SecureRandom.getInstance("SHA1PRNG");
+myKeyPairGenerator.initialize(1024, myPRNG);
+  </code></pre>
   <p>La génération s'effectue enfin via la méthode <span class="code">genKeyPair()</span>. Attention, cette opération
     peut prendre plusieurs secondes (notamment en fonction de la taille de la clé) :</p>
-  <blockquote>
-    <p><code>KeyPair myKeyPair = myKeyPairGenerator.genKeyPair(); </code></p>
-  </blockquote>
+  <pre><code>
+KeyPair myKeyPair = myKeyPairGenerator.genKeyPair();
+  </code></pre>
   <p>Ces clés sont <a href="#opaque">opaques</a>. L'accès transparent aux données d'une clé s'effectue via l'interface
     <span class="code">java.security.spec.KeySpec</span>.</p>
   <h4>Condensé de message</h4>
   <p>Un condensé de message est initialisé à partir d'une fabrique, en fonction de son algorithme (SHA, MD5). Par
     exemple :</p>
-  <blockquote>
-    <p><code>MessageDigest monCondense = MessageDigest.getInstance ("SHA");</code></p>
-  </blockquote>
+  <pre><code>
+MessageDigest monCondense = MessageDigest.getInstance("SHA");
+  </code></pre>
   <p>Reste ensuite à fournir les données à soumettre à la fonction de hachâge, sous forme de tableaux d'octets :</p>
-  <blockquote> <span class="code"><span class="codeIdent1"><code>byte[] donnees1
-  = { 1, 21, 3, 4 };<br/>
-  byte[] donnees2 = { 5, 2, 3, 7, 8, 12};<br/>
-  <br/>
-  </code></span></span><code><span class="codeIdent1"><span class="code">monCondense.update
-  (donnees1);<br/>
-  monCondense.update (donnees2);</span></span></code></blockquote>
-  <p>La génération des données du condensé se faisant via sa méthode <span
-      class="code"><code>digest()</code></span><code>.</code></p>
-  <blockquote>
-    <p><code>byte[] donneesCondense = monCondense.digest();</code></p>
-  </blockquote>
+  <pre><code>
+byte[] donnees1= { 1, 21, 3, 4 };
+byte[] donnees2 = { 5, 2, 3, 7, 8, 12};
+
+monCondense.update(donnees1);
+monCondense.update(donnees2);
+</code></pre>
+  <p>La génération des données du condensé se faisant via sa méthode <code>digest()</code>.</p>
+  <pre><code>
+byte[] donneesCondense = monCondense.digest();
+</code></pre>
   <p>Il est également possible de générer des condensés à partir de données d'autres condensés. Il suffit pour cela de
     cloner les condensés afin de ne pas agir sur les mêmes données mais sur des copies de ces données. </p>
   <p>Par exemple :</p>
-  <blockquote> <span class="codeIdent1"><span class="code"><code>monCondense.update
-  (donnees1);<br/>
-  byte[] donneesCondense1 </code></span></span><code><span class="codeIdent1"><span class="code">=
-  monCondense.clone().digest();</span></span></code> <code><span class="codeIdent1"><span class="code">
-  <br/>
-  <br/>
-  monCondense.update (donnees2);<br/>
-  byte[] donneesCondense1et2 = monCondense.digest();</span></span> </code></blockquote>
+  <pre><code>
+monCondense.update(donnees1);
+byte[] donneesCondense1 = monCondense.clone().digest();
+
+monCondense.update (donnees2);
+byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
   <h4><a href="/tech/info/soft/prog/oo/java/Signature.html">Signature</a></h4>
   <h4><a href="/tech/info/ACL.html">ACL</a>/<a href="/tech/info/soft/prog/oo/java/Permission.html">Permissions</a></h4>
   <h3>Implémentation des concepts spécifiques à Java</h3>

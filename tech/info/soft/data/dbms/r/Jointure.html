@@ -1,0 +1,54 @@
+<!--#include virtual="/header-start.html" -->
+<title>Jointure</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Join</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Exploiter les relations.</p>
+</section>
+<section>
+  <h2>Principes</h2>
+  <p>Les jointures permettent d'exploiter les relations entre différents éléments (tables d'une base de données
+    relationnelle, objets).</p>
+  <h3>SGBDR</h3>
+  <p>Pour les <a href="../../../prod/server/sgbd/r/index.html">SGBDR</a> on distingue les :</p>
+  <ul>
+    <li><strong>équijointures </strong>(jointures simples), consistant à sélectionner les lignes ayant des valeurs
+      égales entre deux colonnes.</li>
+    <li><strong>non équijointures</strong> effectuant des comparaisons de colonnes sur des critères différents de
+      l'égalité.</li>
+    <li>autojointures</li>
+    <li><strong>jointures internes</strong> (<em>inner join</em>)</li>
+    <li><strong>jointures externes</strong> (<em>outer join</em>), qui incluent les lignes n'ayant pas de correspondance
+      <ul>
+        <li>gauche (<em>left outer join</em>) </li>
+        <li>droite (<em>right outer join</em>)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Voici des exemples de jointures en <a href="/tech/info/soft/data/dbms/r/sql">SQL</a> :</p>
+  <ul>
+    <li><strong>équijointure </strong>: <code>select num_commande from commandes, clients where no_client = num_client</code></li>
+    <li><strong>non équijointure</strong> : <code>select nom from vendeurs where ventes > 350000.00</code></li>
+    <li>autojointures</li>
+    <li><strong>jointure interne</strong>
+      <ul>
+        <li><code>select * from filles inner join garcons on filles.ville = garcons.ville</code> (SQL2) </li>
+        <li><code>select * from filles inner join garcons using (ville)</code> (SQL2 si les noms de
+          colonnes de jointure sont identiques) </li>
+        <li><code>select * from filles, garcons where filles.ville = garcons.ville</code> (SQL1).</li>
+      </ul>
+    </li>
+    <li><strong>jointure externe</strong> : <code>select * from filles full outer join garcons on filles.ville =
+      garcons.ville</code> (SQL2)
+      <ul>
+        <li>gauche : <code>select * from filles left outer join garcons on filles.ville = garcons.ville</code></li>
+        <li>droite : <code>select * from filles right outer join garcons on filles.ville = garcons.ville</code></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

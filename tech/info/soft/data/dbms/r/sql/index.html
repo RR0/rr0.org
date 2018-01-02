@@ -1,0 +1,770 @@
+<!--#include virtual="/header-start.html" -->
+<title>SQL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Structured Query Language </i>: langage de requêtes.</p>
+<h2>Besoin</h2>
+
+<p> Définir un langage standard pour la manipulation de données dans un <a
+    href="../../../../prod/server/sgbd/r/index.html">SGBDR</a>.</p>
+<h2>Analyse</h2>
+
+<p>SQL n'est <em>pas</em> un <a href="../../../../proj/impl/lang/index.html">langage de programmation</a> (il ne
+  comporte pas de structures de contrôle, d'instructions de branchement, de boucles, etc.), mais un <a
+      href="../../../../proj/impl/lang/index.html">langage</a> de requêtes. Il utilise des mots-clés proches du langage
+  naturel (anglais).</p>
+<p>Les <a href="../Jointure.html">jointures</a> permettent d'exploiter les relations définies entre tables.</p>
+<h2>Conception</h2>
+<h3>Exécution</h3>
+<p>Une requête est exécutée dans l'ordre suivant :</p>
+<ol>
+  <li>création de l'ensemble de données : FROM et jointures associées</li>
+  <li>filtrage/restriction: WHERE</li>
+  <li>regroupement : GROUP BY</li>
+  <li>filtrage des groupes : HAVING</li>
+  <li>doublons : DISTINCT</li>
+  <li>tri : ORDER BY</li>
+</ol>
+<h3>Utilisation</h3>
+<p>SQL est utilisable :</p>
+<ul>
+  <li><strong>intégré </strong>directement dans le code source d'une application (<em>embedded SQL</em>)</li>
+  <li>via une <strong><a href="../../../../API.html">API</a> </strong>comme <a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, <a href="../../../../proj/impl/ODBC.html">ODBC</a>,
+    OCI, dblib. </li>
+</ul>
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+  <tr>
+    <td colspan="2" class="titleCorner"></td>
+    <th valign="top"> Version</th>
+    <th> 1</th>
+    <th>SQL89</th>
+    <th>2 (SQL92)</th>
+    <th>3</th>
+    <th rowspan="2"> Commentaire</th>
+  </tr>
+  <tr>
+    <th> Domaine</th>
+    <th> Technologie</th>
+    <th valign="top"> Année</th>
+    <th><a href="../../../../../1986.html">1986</a>/<a href="../../../../../1987.html">1987</a></th>
+    <th><a href="../../../../../1989.html">1989</a></th>
+    <th><a href="../../../../../1992.html">1992</a></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr>
+    <th rowspan="3" valign="top">Niveau de conformité</th>
+    <th valign="top">Entrée</th>
+    <th valign="top"></th>
+    <td colspan="4" class="oui">Oui</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Intermédiaire</th>
+    <th valign="top"></th>
+    <td class="non">Non</td>
+    <td></td>
+    <td colspan="2" class="oui">Oui</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Complet</th>
+    <th valign="top"></th>
+    <td class="non">Non</td>
+    <td></td>
+    <td colspan="2" class="oui">Oui</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">Codes d'erreur standards</th>
+    <th valign="top"></th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">Structure base</th>
+    <th valign="top"></th>
+    <td class="non">Non</td>
+    <td colspan="3" class="oui">Oui</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">Tables système (meta)</th>
+    <th valign="top"></th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">(complet)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="31" valign="top">Types</th>
+    <th rowspan="12" valign="top">Caractères</th>
+    <th valign="top">CHAR (longueur)<br/>
+    </th>
+    <td colspan="4" rowspan="2" class="oui">Oui</td>
+    <td rowspan="2">Chaîne de caractères de longueur fixe. Les délimiteurs sont des cotes simples
+      (<code>'Javarome'</code> par exemple)
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">CHARACTER (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top">VARCHAR (longueur)<br/>
+    </th>
+    <td colspan="2" rowspan="3" class="non">Non</td>
+    <td colspan="2" rowspan="3" class="oui">Oui</td>
+    <td rowspan="3">Chaîne de caractères de longueur variable</td>
+  </tr>
+  <tr>
+    <th valign="top">CHAR VARYING (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top">CHARACTER VARYING (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top">NCHAR (longueur)</th>
+    <td colspan="2" rowspan="3" class="non">Non</td>
+    <td colspan="2" rowspan="3" class="oui">Oui</td>
+    <td rowspan="3">Chaîne de caractères nationaux de longueur fixe</td>
+  </tr>
+  <tr>
+    <th valign="top">NATIONAL CHAR (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top"> NATIONAL CHARACTER (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top">NCHAR VARYING (longueur)<br/>
+    </th>
+    <td colspan="2" rowspan="3" class="non">Non</td>
+    <td colspan="2" rowspan="3" class="oui">Oui</td>
+    <td rowspan="3">Chaîne de caractères nationaux de longueur variable</td>
+  </tr>
+  <tr>
+    <th valign="top">NATIONAL CHAR VARYING (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top">NATIONAL CHARACTER VARYING (longueur)</th>
+  </tr>
+  <tr>
+    <th valign="top">CLOB</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Character Large OBject.</td>
+  </tr>
+  <tr>
+    <th rowspan="8" valign="top">Nombres</th>
+    <th valign="top">INT<br/> INTEGER</th>
+    <td colspan="4" class="oui">Oui</td>
+    <td>Nombre entier</td>
+  </tr>
+  <tr>
+    <th valign="top">SMALLINT</th>
+    <td colspan="4" class="oui">Oui</td>
+    <td>Petit nombre entier</td>
+  </tr>
+  <tr>
+    <th valign="top">NUMERIC (précision, échelle)</th>
+    <td colspan="4" class="oui">Oui</td>
+    <td rowspan="3">Nombre décimal</td>
+  </tr>
+  <tr>
+    <th valign="top">DECIMAL (précision, échelle)</th>
+    <td colspan="4" class="oui">Oui</td>
+  </tr>
+  <tr>
+    <th valign="top">DEC (précision, échelle)</th>
+    <td colspan="4" class="oui">Oui</td>
+  </tr>
+  <tr>
+    <th valign="top">FLOAT (précision</th>
+    <td colspan="4" class="oui">Oui</td>
+    <td>Nombre à virgule flottante</td>
+  </tr>
+  <tr>
+    <th valign="top">REAL</th>
+    <td colspan="4" class="oui">Oui</td>
+    <td>Nombre à virgule flottante à faible précision</td>
+  </tr>
+  <tr>
+    <th valign="top">DOUBLE PRECISION</th>
+    <td colspan="4" class="oui">Oui</td>
+    <td>Nombre à virgule flottante à grande précision</td>
+  </tr>
+  <tr>
+    <th rowspan="3" valign="top">Binaire</th>
+    <th valign="top">BIT (longueur)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Séquence de <a href="../../../Bit.html">bits</a> de longueur fixe</td>
+  </tr>
+  <tr>
+    <th valign="top">BIT VARYING (longueur)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Séquence de <a href="../../../Bit.html">bits</a> de longueur variable</td>
+  </tr>
+  <tr>
+    <th valign="top">BLOB</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><em>Binary Large OBject</em>.</td>
+  </tr>
+  <tr>
+    <th rowspan="4" valign="top">Temps</th>
+    <th valign="top">DATE</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Date. Spécifié sous forme de chaîne variant selon les fournisseurs et les pays (<code>'1972-8-12'</code> au
+      format <a href="/org/int/asso/iso/index.html">ISO</a> par exemple)
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">TIME (précision)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Heure. Spécifié sous forme de chaîne variant selon les fournisseurs et les pays (<code>'02.00.03'</code><q> </q>au
+      format <a href="/org/int/asso/iso/index.html">ISO</a> par exemple)
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">TIMESTAMP (précision)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Date et heure (instant spécifique à la nanoseconde près). Spécifié sous forme de chaîne variant selon les
+      fournisseurs et les pays (<code>'1972-08-12-02.00.03.048632'</code> par exemple)
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">INTERVAL</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Intervalle de temps</td>
+  </tr>
+  <tr>
+    <th rowspan="3" valign="top">Graphiques</th>
+    <th valign="top">IMAGE</th>
+    <td colspan="3" class="non">Non</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">GRAPHIC</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">VARGRAPHIC</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Objets multimédia</th>
+    <th valign="top"></th>
+    <td colspan="3" class="non">Non</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">I(nteractive) SQL</th>
+    <th valign="top"></th>
+    <td colspan="2" class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td></td>
+    <td>Prepared statements</td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">API</th>
+    <th valign="top"></th>
+    <td colspan="2" class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">SQL Dyamique</th>
+    <th valign="top"></th>
+    <td colspan="2" class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="7" valign="top">Manipulation de données</th>
+    <th valign="top">SELECT élément(s) FROM table(s)</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Récupère des données</td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">GROUP BY</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">HAVING</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top"></th>
+    <th valign="top">ORDER BY</th>
+    <td colspan="2" class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">INSERT</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Ajoute des lignes</td>
+  </tr>
+  <tr>
+    <th valign="top">DELETE FROM table</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Supprime des lignes. WHERE possible.</td>
+  </tr>
+  <tr>
+    <th valign="top">UPDATE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Modifie des données</td>
+  </tr>
+  <tr>
+    <th rowspan="13" valign="top">Définition de données</th>
+    <th rowspan="3" valign="top">Table</th>
+    <th valign="top">Création</th>
+    <td colspan="4" class="oui"><code>CREATE TABLE</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Suppression</th>
+    <td colspan="4" class="oui"><code>DROP TABLE</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Modification</th>
+    <td colspan="4" class="oui"><code>ALTER TABLE</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="2" valign="top">Vue</th>
+    <th valign="top">Création</th>
+    <td colspan="4" class="oui"><code>CREATE VIEW</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Suppression</th>
+    <td colspan="4" class="oui"><code>DROP VIEW</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="2" valign="top">Index</th>
+    <th valign="top">Création</th>
+    <td colspan="4" class="oui"><code>CREATE INDEX</code></td>
+    <td> sur une colonne</td>
+  </tr>
+  <tr>
+    <th valign="top">Suppression</th>
+    <td colspan="4" class="oui"><code>DROP INDEX</code></td>
+    <td>sur une colonne</td>
+  </tr>
+  <tr>
+    <th rowspan="2" valign="top">Schéma</th>
+    <th valign="top">Création</th>
+    <td colspan="4" class="oui"><code>CREATE SCHEMA</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Suppression</th>
+    <td colspan="4" class="oui"><code>DROP SCHEMA</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="3" valign="top">Domaine</th>
+    <th valign="top">Création</th>
+    <td colspan="4" class="oui"><code>CREATE DOMAIN</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Modification</th>
+    <td colspan="4" class="oui"><code>ALTER DOMAIN</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Suppression</th>
+    <td colspan="4" class="oui"><code>DROP DOMAIN</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Type structuré</th>
+    <th valign="top">Création</th>
+    <td colspan="3" class="non">Non</td>
+    <td class="oui"><code>CREATE TYPE</code></td>
+    <td>Type "objet"</td>
+  </tr>
+  <tr>
+    <th rowspan="2" valign="top">Contrôle d'accès</th>
+    <th valign="top">GRANT</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Accorde à un utilisateur des privilèges d'accès.</td>
+  </tr>
+  <tr>
+    <th valign="top">REVOKE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Supprime à un utilisateur des privilèges d'accès.</td>
+  </tr>
+  <tr>
+    <th rowspan="3" valign="top">Contrôle de transaction</th>
+    <th valign="top">COMMIT</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Valide la transaction en cours.</td>
+  </tr>
+  <tr>
+    <th valign="top">ROLLBACK</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Annule la transaction en cours.</td>
+  </tr>
+  <tr>
+    <th valign="top">SET TRANSACTION</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Définit les caractéristiques d'accès aux données de la transaction en cours.</td>
+  </tr>
+  <tr>
+    <th rowspan="8" valign="top">Programmation SQL</th>
+    <th valign="top">DECLARE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Définit un curseur pour une requête.</td>
+  </tr>
+  <tr>
+    <th valign="top">EXPLAIN</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Décrit le plan d'accès aux données d'une requête.</td>
+  </tr>
+  <tr>
+    <th valign="top">OPEN</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Ouvre un curseur pour récupérer les résultats de la requête. Equivalent de Statement.getResultSet()</td>
+  </tr>
+  <tr>
+    <th valign="top">FETCH</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Récupère une ligne de résultats de la requête. Equivalent de ResultSet.next()</td>
+  </tr>
+  <tr>
+    <th valign="top">CLOSE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Ferme un curseur. Equivalent de ResultSet.close()</td>
+  </tr>
+  <tr>
+    <th valign="top">PREPARE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Prépare une commande SQL pour une exécution dynamique. Equivalent des PreparedStatement JDBC.</td>
+  </tr>
+  <tr>
+    <th valign="top">EXECUTE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Exécute une commande SQL dynamiquement. Equivalent de Statement.execute</td>
+  </tr>
+  <tr>
+    <th valign="top">DESCRIBE</th>
+    <th valign="top"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Décrit une requête préparée</td>
+  </tr>
+  <tr>
+    <th rowspan="17" valign="top">Fonctions</th>
+    <th valign="top">Binaires</th>
+    <th valign="top">BIT_LENGTH (chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Nombre de <a href="../../../Bit.html">bits</a> d'une séquence BIT ou BIT VARYING</td>
+  </tr>
+  <tr>
+    <th rowspan="10" valign="top">Caractères</th>
+    <th valign="top">CHAR_LENGTH (chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Longueur d'une chaîne de caractères</td>
+  </tr>
+  <tr>
+    <th valign="top">POSITION (cible IN source)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Position où la chaîne cible apparaît dans la chaîne source</td>
+  </tr>
+  <tr>
+    <th valign="top">SUBSTRING (source FROM n FOR longueur)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Position de la chaîne source, commençant au caractère n, d'une longueur donnée</td>
+  </tr>
+  <tr>
+    <th valign="top">TRANSLATE (chaîne USING trans)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne traduite selon une fonction de traduction spécifiée</td>
+  </tr>
+  <tr>
+    <th valign="top">TRIM (BOTH car FROM chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne avec les occurences de car au début et à la fin de la chaîne supprimées.</td>
+  </tr>
+  <tr>
+    <th valign="top">TRIM (LEADING car FROM chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne avec les occurences de car au début de la chaîne supprimées.</td>
+  </tr>
+  <tr>
+    <th valign="top">TRIM (TRAILING car FROM chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne avec les occurences de car à la fin de la chaîne supprimées.</td>
+  </tr>
+  <tr>
+    <th valign="top">UPPER (chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne convertie en majuscules.</td>
+  </tr>
+  <tr>
+    <th valign="top">LOWER (chaîne)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne convertie en minuscules</td>
+  </tr>
+  <tr>
+    <th valign="top">OCTET_LENGTH</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Nombres d'<a href="../../../Byte.html">octets</a> dans une chaîne de caractères.</td>
+  </tr>
+  <tr>
+    <th rowspan="2" valign="top">Conversions</th>
+    <th valign="top">CONVERT (chaîne USING conv)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Chaîne convertie selon une fonction de conversion spécifiée</td>
+  </tr>
+  <tr>
+    <th valign="top">CAST (valeur AS type)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Conversion de type (date en chaîne de caractères par exemple)</td>
+  </tr>
+  <tr>
+    <th rowspan="4" valign="top">Date/Heure</th>
+    <th valign="top">CURRENT_DATE</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Date en cours</td>
+  </tr>
+  <tr>
+    <th valign="top">CURRENT_TIME (précision)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Heure en cours avec la précision souhaitée</td>
+  </tr>
+  <tr>
+    <th valign="top">CURRENT_TIMESTAMP (précision)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Date et heure en cours avec la précision souhaitée</td>
+  </tr>
+  <tr>
+    <th valign="top">EXTRACT (partie FROM source)</th>
+    <td colspan="2" class="non">Non</td>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Partie spécifiée (DAY, HOUR, etc.) d'une valeur DATETIME</td>
+  </tr>
+</table>
+<h2>Exemples</h2>
+
+<p>Création d'une table :</p>
+
+<blockquote><code><strong>CREATE TABLE</strong></code><strong><code></code></strong><code> MA_TABLE <b>(</b>REFERENCE
+  <b>VARCHAR(</b>127<b>) NOT NULL</b>, NOM <b>VARCHAR(127),</b> AUTRE_REF<b> VARCHAR(</b>127<b>), CONSTRAINT</b>
+  PK_ACTOR <b>PRIMARY KEY (</b>REFERENCE<b>))</b></code></blockquote>
+
+<p>Ajout d'un enregistrement dans une table :</p>
+<blockquote><code><strong>INSERT INTO </strong></code><b><code>AGENCES </code></b><code><b>(</b>VILLE, REGION, OBJECTIF,
+  VENTES, AGENCE<b>) VALUES (</b><span class="codeString">'Brest'</span>, <span class="codeString">'Ouest'</span>,
+  275000.00, 0.00, 23<b>)</b></code></blockquote>
+<p>Sélection d'enregistrements :</p>
+<blockquote><code><strong>SELECT FROM</strong></code><b><code> EMPLOYEES emps, AGENCES ags </code></b><code><strong>WHERE</strong></code><b><code> </code></b><code>emps.AGENCE<b>
+  = </b>ags.ID<b> AND </b>emps.NOM<b> LIKE </b>'B%'<b> ORDER BY </b>emps.NOM<b> ASC</b></code></blockquote>
+<p>Supression d'enregistrements d'une table :</p>
+<blockquote><code><strong>DELETE FROM </strong></code><b><code>CLIENTS </code></b><code><b>WHERE </b>SOCIETE<b> =</b>
+  <span class="codeString">'Microsoft'</span> <strong>AND</strong> VENTES<strong> &lt; </strong>QUOTA</code>
+</blockquote>
+<p>Mise à jour d'enregistrements d'une table :</p>
+
+<blockquote><code><strong>UPDATE </strong></code><b><code>VENDEURS </code></b><code><b>SET</b> QUOTA = QUOTA + 15000.0,
+  STATUS = <span class="codeString">'Udpated'</span> <b>WHERE</b> ID<b> &gt;</b> 20</code></blockquote>
+
+<p>Modification d'une table pour spécifier une clé étrangère :</p>
+<blockquote><code><strong>ALTER TABLE</strong></code><strong><code></code></strong><code> MA_TABLE<b> ADD
+  CONSTRAINT </b>MA_RELATION<b> FOREIGN KEY (</b>AUTRE_REF<b>) REFERENCES </b>AUTRE_TABLE<b> (</b>REF<b>)</b> </code>
+</blockquote>
+<p>Protéger l'accès aux données :</p>
+
+<blockquote><code><strong>GRANT UPDATE,SELECT
+  ON </strong></code><b><code>MA_TABLE </code></b><code><b>TO </b>javarome<br/> <br/> <b>REVOKE UPDATE ON </b>MA_TABLE
+  <b>FROM </b>javarome </code></blockquote>
+
+<p>Procédures stockées (non standard) :</p>
+<blockquote>
+  <p><code><strong>procedure</strong> GETAMANAGERINOUT (pname <strong>IN VARCHAR2</strong>, p_cur <strong>OUT
+    refTypes.cursorType</strong>, page <strong>IN number</strong>) <strong>is </strong>v_cur
+    <strong>refTypes.cursorType</strong>;<br/> <strong>BEGIN</strong><br/> <strong>OPEN </strong>v_cur
+    <strong>FOR</strong><br/> <strong>SELECT </strong>name,id <strong>FROM </strong>c_manager <strong>WHERE </strong>pname=name
+    <strong>AND </strong>page=age;<br/> p_cur:=v_cur;<br/> <strong>END </strong>GETAMANAGERINOUT;</code></p>
+</blockquote>
+<p>Fonctions (non standard, Oracle) : </p>
+<blockquote>
+  <p><code><strong>function </strong>GETALLFIRMSAPPK_F <strong>return refTypes.cursorType</strong> <strong>is </strong>v_cur
+    <strong>refTypes.cursorType</strong>;<br/> <strong> BEGIN</strong><br/> <strong>OPEN </strong>v_cur <strong>FOR
+      SELECT </strong>name <strong>FROM </strong>c_firm;<br/> <strong>return </strong>v_cur;<br/> <strong> end</strong>;</code>
+  </p>
+</blockquote>
+<h2>Notes</h2>
+<ul><li>Langage interprété</li>
+  <li>historiquement issu du langage SEQUEL -- <em>Structured English QUEry Language</em> -- en 1986</li>
+  <li>Inventé par <a href="/org/us/company/ibm/index.html">IBM</a></li>
+  <li>Normalisé par
+    <ul>
+      <li>l'ANSI et l'<a href="/org/int/asso/iso/index.html">ISO</a>
+        <ul>
+          <li>SQL1 (1986)</li>
+          <li>SQL2 (1992), </li>
+          <li>SQL3</li>
+        </ul>
+      </li>
+      <li>X/Open</li>
+      <li>SQL Access Group
+        <ul>
+          <li>RDA (1991)</li>
+          <li>CLI (1992)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Aucun produit n'implémente tout SQL2.</li>
+  <li>Le qualificatif <i>Structured </i>indique que l'on peut imbriquer des requêtes dans d'autres (IN par exemple).
+  </li>
+  <li>Utilisable via les API
+    <ul>
+      <li>CLI
+        <ul>
+          <li><a href="../../../../proj/impl/ODBC.html">ODBC</a></li>
+        </ul>
+      </li>
+      <li>Java
+        <ul>
+          <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></li>
+        </ul>
+      </li>
+      <li> Windows
+        <ul>
+          <li>OLE DB</li>
+          <li>ADO</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!--#include virtual="/footer.html" -->

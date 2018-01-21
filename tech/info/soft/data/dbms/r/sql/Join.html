@@ -1,0 +1,48 @@
+<!--#include virtual="/header-start.html" -->
+<title>Join</title>
+<!--#include virtual="/header-end.html" -->
+<p>Jointure.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Joindre les données de 2 tables.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une jointure consiste à faire correspondre les lignes de la 1<sup>ère</sup> table à celles de la 2<sup>nde</sup>,
+    selon un algorithme théorique du type : </p>
+  <p>
+  <pre><code>pour chaque ligne de la table 1 <span class="codeComment">  // Boucle externe</span>
+  pour chaque ligne de la table 2 <span class="codeComment">// Boucle interne</span>
+    retourne table1.*,table2.*</code></pre>
+  <p>On voit que les 2 boucles (externe et interne) pourraient être interchangées que cela ne modifierait pas le
+  résultat, à savoir le <strong>produit cartésien</strong> des 2 tables (les lignes retournées représentent toutes les
+  combinaisons des données de la table 1 avec celles de la table 1). </p>
+  <p>Cependant ce n'est généralement pas ce que l'on souhaite obtenir, mais plutôt un appareillage de données selon un
+    critère précis. Par exemple pour obtenue un résultat contenant l'adresse de chaque personne (et non plus toutes les
+    adresses pour toutes les personnes) :</p>
+  <pre><code>pour chaque ligne de PERSONNE <span
+      class="codeComment">                                      // Boucle externe</span>
+  pour chaque ligne de ADRESSE where ADRESSE.id=PERSONNE.FK_ADRESSE <span class="codeComment">// Boucle interne</span>
+    retourne PERSONNE.*,ADRESSE.*</code></pre>
+  <p>On voit que la même requête pourrait être exprimée en inversant les boucles : </p>
+  <pre><code>pour chaque ligne de ADRESSE <span class="codeComment">                            // Boucle interne</span>
+  pour chaque ligne de PERSONNE where PERSONNE.FK_ADRESSE=ADRESSE.id<span class="codeComment">  // Boucle externe</span>
+    retourne PERSONNE.*,ADRESSE.*</code></pre>
+  <p>Toutefois on voit </p>
+  <ul><li><strong>aucun critère</strong> (<em>cross join</em> ou produit cartésien) : par défaut chaque ligne de la 1ère
+    table est donc dupliquée </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Sélection d'enregistrements :</p>
+<pre><code>SELECT FROM EMPLOYEES emps, AGENCES ags
+WHERE emps.AGENCE = ags.ID AND emps.NOM LIKE 'B%'
+ORDER BY emps.NOM ASC
+</code></pre>
+</section>
+<!--#include virtual="/footer.html" -->

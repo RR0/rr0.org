@@ -1,0 +1,152 @@
+<!--#include virtual="/header-start.html" -->
+<title>Dictionnaire</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Dictionnary, Map.</i></p>
+<section>
+  <h2>Besoin</h2>
+  <p>Associer des valeurs à des clés.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un dictionnaire associe une valeur unique à une clé unique.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Des dictionnaires peuvent être réalisés au travers de :
+  </p>
+  <ul>
+    <li><a href="proj/impl/struct/HashTable.html">tables de hâchage</a></li>
+    <li><a href="/tech/info/soft/proj/impl/struct/graph/tree/binary">arbres binaires</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>En <a href="/org/us/company/oracle/sun/ptf/java">Java</a> les dictionnaires sont représentés par des classes
+    implémentant <code><strong>java.util.Map</strong></code>. fournissant un accès à :</p>
+  <ul>
+    <li>leur <strong>clés</strong> uniques : <code>Set <strong>keySet()</strong></code></li>
+    <li>les <strong>valeurs</strong> associées à ces clés : <code>Collection <strong>values()</strong></code></li>
+  </ul>
+  <p>L'obtention de la valeur d'une clé étant obtenue via <code>myValue = myMap.<strong>get</strong> <strong>(</strong>myKey<strong>)</strong></code>
+  </p>
+  <p>Les clés et valeurs étant des collection, on peut itérer sur chacune d'entre elles. Cependant, si l'on souhaite
+    effectuer un traitement sur chaque couple clé-valeur, il est plus efficace d'itérer sur les entrées
+    (<code>Set<strong> entrySet()</strong></code>) du tableau de hâchage et travailler sur le couple clé-valeur
+    (<code><strong>Map.Entry</strong></code>) plutôt que de rechercher à chaque itération la valeur de chaque clé :</p>
+
+  <pre><code>Iterator mapEntriesIterator = myMap.entrySet().iterator();
+while (mapEntriesIterator.hasNext()) {
+  Map.Entry mapEntry = (Map.Entry) mapEntriesIterator.next();
+  Object entryKey = mapEntry.getKey();
+  Object entryValue = mapEntry.getValue();
+}</code></pre>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+    <tr>
+      <td class="titleCorner" rowspan="2"></td>
+      <th colspan="4">Implémentations de Map</th>
+      <th rowspan="2">Commentaire</th>
+    </tr>
+    <tr>
+      <th colspan="2">Tableau de hâchage</th>
+      <th>Arbre équilibré</th>
+      <th>Tableau de hachâge + liste chaînée</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Type</th>
+      <td><code>Hashtable</code></td>
+      <td><code>HashMap</code></td>
+      <td><code>TreeMap</code></td>
+      <td><code>LinkedHashMap</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Triable</th>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Synchronisé</th>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td>La synchronisation permet à un dictionnaire d'être thread-safe (toujours cohérent en contexte multi-thread).
+        Par contre les dictionnaire non synchronisés sont plus rapides, et donc plus avantageux dans des contextes
+        mono-thread.
+      </td>
+    </tr>
+    <tr>
+      <th>Clés nulles possibles</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td rowspan="2">Dépend du comparateur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Valeurs nulles possibles</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trié</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaire</th>
+      <td>&lt; J2SE 1.2</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Coût accès</th>
+      <td></td>
+      <td></td>
+      <td>log(n)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Des exemples de dictionnaires sont :</p>
+  <ul>
+    <li>les en-têtes <a href="proj/design/arch/web/HTTP.html">HTTP</a></li>
+    <li>en Java
+      <ul>
+        <li>les fichiers Properties
+          <ul>
+            <li>les propriétés système</li>
+            <li>les RessourceBundles</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Un dictionnaire n'est pas une <a href="proj/impl/struct/Collection.html">collection</a>, mais une <strong>application</strong>
+      d'une <a href="proj/impl/struct/Collection.html">collection</a> vers une <a
+          href="proj/impl/struct/Collection.html">autre</a>.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

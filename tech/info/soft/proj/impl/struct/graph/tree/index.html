@@ -1,0 +1,57 @@
+<!--#include virtual="/header-start.html" -->
+<title>Arbre</title><!--#include virtual="/header-end.html" -->
+<p><em>Tree</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href="../..">Structure de données</a> hiérarchique.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un arbre est un <a href="..">graphe</a> particulier (sans cycle, aux <strong>noeuds</strong> sont liés et de degré
+    3 max).
+  </p>
+  <p>Il peut donc être caractérisé par :</p>
+  <ul>
+    <li>un noeud <strong>racine</strong> (<em>root node</em>)
+      <ul>
+        <li>des noeuds intermédiaires
+          <ul>
+            <li>des noeuds "<strong>feuilles</strong>" (<em>leaves</em>) n'ayant plus aucun fils</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Chaque noeud a donc une <strong>profondeur</strong> par rapport la racine.</p>
+  <section>
+    <h2>Parcours</h2>
+    <p>Lors d'un traitement (recherche d'un noeud particulier ou autre), un arbre peut être parcouru de diverses
+      manières :</p>
+    <ul>
+      <li><strong>préfixé</strong>/préordre : noeud d'abord, puis fils gauche et fils droit</li>
+      <li><strong>infixé</strong>/inordre : fils gauche d'abord, puis noeud et fils droit</li>
+      <li><strong>postfixé</strong>/postordre : fils droit d'abord, puis fils gauche et noeud</li>
+      <li><strong><a href="../dfs.html">profondeur d'abord</a></strong>
+      <li><strong><a href="../bfs.html">en largeur d'abord</a></strong></li>
+      <li>ou selon une autre règle spécifique à l'arbre (en fonction de la valeur du noeud par exemple, comme dans un <a
+          href="binary/BST.html">BST</a>)
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><a href="binary">Arbre binaire</a></li>
+    <li><a href="Heap.html">Tas</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

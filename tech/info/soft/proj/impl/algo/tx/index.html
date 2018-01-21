@@ -1,0 +1,54 @@
+<!--#include virtual="/header-start.html" -->
+<title>Transaction</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Garantir la cohérence de données en cas de modifications concurrentes</li>
+    <li>Permettre l'annulation d'un ensemble d'opérations</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une transaction regroupe une série d'opérations.</p>
+  <p>Elle est caractérisée par des propriétés "A. C. I. D." :</p>
+  <ul>
+    <li>(<strong>A</strong>)<strong>tomicité</strong> (<em>Atomicity</em>) : tout réussit, ou rien ne réussit</li>
+    <li>(<strong>C</strong>)<strong>ohérence</strong> (<em>Consistency</em>) : la transaction laisse toujours les
+      données dans un état valide</li>
+    <li>(<a
+        href="/tech/info/soft/data/dbms/tx/Isolation.html"><strong>I</strong>)<strong>solation</strong></a><strong> </strong>(<em>Isolation</em>)
+      : la vision des données durant la transaction est indépendante des opérations d'autres transactions parallèles
+    </li>
+    <li>(<strong>D</strong>)<strong>urabilité</strong> (<em>Durability</em>) : le résultat des opérations de la
+      transaction dure dans le temps (il n'est pas perdu si une machine plante après car <a
+          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistant</a> dans une <a
+          href="/tech/info/soft/prod/server/sgbd">base de données</a> par exemple)</li>
+  </ul>
+  <p>Une transaction peut regrouper des opérations sur :</p>
+  <ul>
+    <li>1 <a href="/tech/info/soft/proj/impl/algo/tx/RM.html">RM</a> (transaction locale)</li>
+    <li> plusieurs <a href="/tech/info/soft/proj/impl/algo/tx/RM.html">RM</a> (<a
+        href="/tech/info/soft/proj/impl/algo/tx/TransactionGlobale.html">transaction globale</a>)</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de transactions sont :</p>
+  <ul>
+    <li>un virement : cette opération est décomposée en un débit sur un compte puis un crédit sur un autre compte. Je ne
+      peux accepter de maintenir le débit si le crédit n'a pu être effectué (en raison d'une règle métier, d'un crash de
+      machine, etc). </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>La durabilité peut être optionnelle. Par exemple pour des opérations sur des ressources <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a> transitoires (transient, transactions en
+      mémoire)</li>
+    <li>Les sbbd de type <a href="/tech/info/soft/prod/server/sgbd/NoSQL">NoSQL</a> ne requièrent pas de transactions
+      aussi classiques.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

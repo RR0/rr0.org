@@ -1,0 +1,31 @@
+<!--#include virtual="/header-start.html" -->
+<title>Tas</title>
+<!--#include virtual="/header-end.html" -->
+<p><em lang="en">Heap</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Conception d'une <a href="../../Queue.html">file</a> de priorité.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p><a href=".">Arbre</a> où les noeuds parents ont des clés supérieures à leurs noeuds fils (<em>max heap</em>), ou
+    l'inverse (<em>min heap</em>).</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Généralement un tas est <strong><a href="binary">binaire</a></strong> (n'a que 2 fils au maximum).</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Les tas sont généralement implémentés sous forme de tableaux (les fils de l'élément n sont à 2n et 2n+1).</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>A ne pas confondre avec le terme "tas" utilisé pour désigner de la mémoire allouée. Cet usage n'est apparu
+      qu'après l'arrivée du tas d'origine, à cause de langages comme le LISP qui représentaient ainsi des allocations
+      mémoire.</li>
+    <li>Utilisé dans le <a href="../../../algo/sort/Heap.html">tris par tas</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

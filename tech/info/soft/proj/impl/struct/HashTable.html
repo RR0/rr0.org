@@ -1,0 +1,162 @@
+<!--#include virtual="/header-start.html" -->
+<title>Table de hâchage</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Hash table</i> : littéralement tableau de hâchage, mais l'anglicisme "table" de hâchage est le plus
+  souvent
+  utilisé.</p>
+<p>Ou "tableau associatif" (<em lang="en">associative array</em>) : associant une clé à une valeur.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Accès rapide aux éléments d'un <a href="../../../Dictionnaire.html">dictionnaire</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une table de hâchage est une structure de données possible pour un <a href="../../../Dictionnaire.html"><strong>dictionnaire</strong></a>.
+  </p>
+  <p>L'hypothèse de base d'un tableau de hâchage est que le moyen le plus rapide pour retrouver des éléments dans un
+    tableau est de connaître leur indice : si je veux savoir si x est dans le tableau, je cherche si l'élement
+    tableau[x] est pris ou non. De même, si je veux insérer x dans le tableau, je remplis tableau [x]. Le principe se
+    révèle particulièrement efficace, avec une <a href="/tech/info/Performance.html">performance</a>de O(1).
+  </p>
+  <p>Les clés d'un dictionnaire n'étant pas forcément des indices de tableau, une <strong>fonction de hâchage </strong>(<em>hash
+    function</em>) est chargée d'associer à toute clé un entier représentant cet indice.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>On associe les clés à des cases du tableau à l'aide d'une <strong>fonction de hâchage </strong>(<em>hash
+    function</em>). Suivant cette fonction, des <strong>collisions </strong>peuvent intervenir entre éléments différents
+    affectés à la même case. La résolution de ces collisions peut être réalisée par un :
+  </p>
+  <ul>
+    <li><strong>adressage ouvert </strong>: toutes les cases possibles sont dans le tableau (consommateur en mémoire)
+    </li>
+    <li><strong>chaînée</strong>: stockage des collisions dans une structure annexe (souvent une liste chaînée)
+    </li>
+  </ul>
+  <p>Un tableau de hâchage utilise généralement une répartition en listes (slots). Le nombre de slots par élément du
+    tableau (élements/slots) détermine alors le facteur de charge (<em>load factor</em>) du tableau de hâchage, qui
+    détermine le compromis <a href="/tech/info/Performance.html">performance</a>/consommation mémoire.
+  </p>
+  <p>Le hâchage peut être dynamique : le tableau grandit au fur et à mesure que l'on y place des éléments (voire
+    rétrécit au fur et à mesure que l'on en enlève). La fonction de hâchage doit alors varier en conséquence.
+  </p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>L'<a href="/org/us/company/oracle/sun/ptf/java/api">API Java</a> propose des classes de tableaux de hâchage depuis
+    ses débuts, au sein de son package <q>java.util</q>. Ces classes examinent sur les objets-clés qu'on leur fournit :
+  </p>
+  <ul>
+    <li>la <strong>fonction de hâchage</strong> implémentée par la méthode <code>hashCode()</code> des clés.
+    </li>
+    <li><code>equals()</code> pour comparer les clés entre elles.</li>
+  </ul>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead><tr>
+      <td rowspan="2">Tableau de hâchage Java</td>
+      <th>Version</th>
+      <th colspan="6">1</th>
+      <th rowspan="3">
+        <div align="center">Commentaire</div>
+      </th>
+    </tr></thead>
+    <tbody><tr>
+      <th>Release</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th>Elément</th>
+      <th>Fixpack</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th colspan="2">Hashtable</th>
+      <td colspan="2" class="oui">Oui</td>
+      <td colspan="4">Obsolète</td>
+      <td> Thread-safe (synchronisé).</td>
+    </tr>
+    <tr>
+      <th colspan="2">HashMap</th>
+      <td colspan="2" class="non">Non</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td>Implémente une interface de dictionnaire (java.util.Map). Non thread-safe par défaut.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">HashSet</th>
+      <td colspan="2" class="non">Non</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td>Ensemble (<em>set</em>) implémenté avec une HashMap. Non thread-safe par défaut.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">WeakHashMap</th>
+      <td colspan="2" class="non">Non</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td>Tableau de hâchage avec des clés faibles (<em>weak</em>). Non thread-safe par défaut.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">IdentityHashMap <br/></th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td>Utilisant l'égalité de références (<code>==</code>) au lieu de l'égalité de contenu (<code>equals()</code>)
+        pour la comparaison des clés (et valeurs). Non thread-safe par défaut.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">LinkedHashMap <br/></th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td>Dictionnaire à ordre d'itération prédictible. Non thread-safe par défaut.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2">LinkedHashSet</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td>Ensemble à ordre d'itération prédictible. Non thread-safe par défaut.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple d'utilisation de tâble de hâchage est :</p>
+  <blockquote><q><code>import <strong>java.util</strong>.*<br/> <br/> <strong>java.util.Map </strong>myMap = new
+    <strong>java.util.HashMap</strong>(10);<br/> <br/> myMap.<strong>put </strong>(someKey1, someValue1);<br/>
+    myMap.<strong>put </strong>(someKey2, someValue2);<br/> <br/> Object foundValue = myMap.<strong>get</strong>
+    (someKey2);</code></q></blockquote>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Rentabilité mémoire peut être faible (dépend du facteur de charge).
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Souvent appellé "table" de hâchage en oubliant de traduire l'anglais "table" par "tableau".
+    </li>
+    <li>Par défaut <code>hashCode()</code> fournit un entier basé sur l'adresse mémoire interne de l'objet.
+    </li>
+    <li>Une fonction de hâchage "parfaite" (ne provoquant jamais de collisions) fait correspondre un entier différent à
+      chaque clé.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

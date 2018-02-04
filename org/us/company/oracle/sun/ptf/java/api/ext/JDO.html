@@ -1,0 +1,2879 @@
+<!--#include virtual="/header-start.html" -->
+<title>JDO</title>
+<meta name="url" content="http://java.sun.com/products/jdo">
+<!--#include virtual="/header-end.html" -->
+<p><i><a href="http://java.sun.com/products/jdo"><img
+    src="/tech/info/images/JDOLogo.gif" alt="Le logo de JDO" width="250" height="248"
+    hspace="20" vspace="20" border="0" align="right"></a>Java Data Objects</i> : <a
+    href="/tech/info/soft/proj/impl/lang/oo/Objet.html">objets</a> de données <a
+    href="/org/us/company/oracle/sun/ptf/java">Java</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Gérer la <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'<a
+      href="/tech/info/soft/proj/impl/lang/oo/Objet.html">objets</a> <a
+      href="/org/us/company/oracle/sun/ptf/java">Java</a> de manière :</p>
+  <ul>
+    <li><strong>transparente</strong> (sans modification du <a
+        href="/tech/info/soft/proj/impl/CodeSource.html">code source</a>)</li>
+    <li><strong>portable</strong> (standard)
+      <ul>
+        <li> sur plusieurs <a
+            href="/org/us/company/oracle/sun/ptf/java/PlateForme.html">plates-formes</a></li>
+        <li> sur divers <a href="/tech/info/soft/Framework.html">frameworks</a> de <a
+            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a></li>
+      </ul>
+    </li>
+    <li><a
+        href="/tech/info/soft/proj/impl/algo/tx"><strong>transactionnelle</strong></a> : un ensemble de modification
+      peut-être annulé, les accès concurrents sont gérés</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>JDO vise à ajouter à des <a href="/org/us/company/oracle/sun/ptf/java/POJO.html">POJO</a> une capacité de
+    persistance de manière "orthogonale", c'est-à-dire sans contraintes pour ces objets (suivant en cela l'approche <a
+        href="/tech/info/soft/AOP.html">AOP</a>, en ajoutant un aspect "<a
+        href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>" aux objets). </p>
+  <p>En particulier il vise à garantir une indépendance :</p>
+  <ul>
+    <li>du <strong>support de stockage</strong> (<em>datastore</em>), qui peut être un <a
+        href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>, un <a
+        href="/tech/info/soft/prod/server/sgbd/o">SGBDO</a>, des fichiers <a
+        href="/tech/info/soft/data/doc/xml">XML</a>, un <a
+        href="/tech/info/hard/computer/mainframe">mainframe</a>, etc.</li>
+    <li>du <strong>fournisseur</strong> de l'implémentation JDO, car l'<a
+        href="/tech/info/soft/API.html">API</a> et l'enrichissement (<em>enhancement</em>) de code sont garanties
+      portables dans d'autres implémentations JDO.</li>
+    <li>de la <strong>plate-forme d'exécution</strong>, également portable sur :
+      <ul>
+        <li>diverses plates-formes natives (<a href="/tech/info/soft/prod/os">OS</a> et machine), grâce et <a
+            href="/org/us/company/oracle/sun/ptf/java">Java</a></li>
+        <li> au sein de <a
+            href="/org/us/company/oracle/sun/ptf/java">Java</a>-même, dans des contextes :
+          <ul>
+            <li><b>non gérés </b>: applications autonomes (<em>standalone</em>)</li>
+            <li><b>gérés </b>(<em>managed</em>) : applications déployées dans un serveur <a
+                href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a>.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>JDO accède au support de stockage (<em>datastore</em>) via le moyen de son choix. Il peut s'agir de pilotes <a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> ou de connecteurs <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a> dans le cas d'applications <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a>.</p>
+  <section>
+    <h3>Cas d'utilisation</h3>
+    <p><img src="/tech/info/images/JDO_API.gif" width="680" height="531" hspace="10"
+        vspace="10" align="right">On peut distinguer 3 types de <a
+        href="/tech/info/soft/proj/impl/lang/oo/Classe.html">classes</a> dans une application utilisant JDO :</p>
+    <ul>
+      <li>non-<em>enhancées</em>, n'ayant aucun lien avec JDO</li>
+      <li><strong><em>persistence capable </em></strong>(PC) : les classes d'objets capables de persister leurs données
+        et/ou de les modifier transactionnellement. Comme indiqué précédemment ces<a
+            href="/org/us/company/oracle/sun/ptf/java/POJO.html"> classes n'ont rien de particulier</a>, hormis le fait
+        que leur code a été enrichi après leur compilation. </li>
+      <li><em><strong>persistence aware</strong></em> : les classes conscientes de la persistance des <em>persistance
+        capable</em>, utilisant l'API JDO pour les manipuler (requêtes de recherches multi-critères, délimitation des
+        transactions, changement d'état JDO, etc.). Ces classes n'ont en fait rien rien de particulier, et persistence
+        aware se réduit plus à un rôle sans conséquence technique. La seule exception est le cas rare (et peu
+        recommandé) où elles souhaiteraint accéder directement (sans passer par des méthodes) aux champs
+        public/package/protected d'une classe <em>persistence capable </em>(elles devront alors être enhancées comme les
+        <em>persistence capable</em> pour assurer la transparence de ces accès).</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Persistence capable</h3>
+    <p>Un objet JDO <em>persistence-capable</em> est un objet Java capable d'être :</p>
+    <ul>
+      <li><strong>transactionnel</strong> : Les modifications depuis le dernier début de <a
+          href="/tech/info/soft/proj/impl/algo/tx">transaction</a> peuvent être annulées (l'état précédent est rétabli)
+        <ul>
+          <li><strong>persistant </strong>de manière transparente (sans que le développeur ait à modifier son code
+            source).
+          </li>
+          <li>transitoire (<em>transient</em>) : en mémoire</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Cette capacité lui est donnée après modification de son code (généralement son code compilé, ou <em>bytecode</em>)
+      par outil. Cette instrumentation du code après compilation est appelée <em><strong>enhancement</strong></em>
+      (enrichissement de code). Cet enhancement se base sur un descriptif des classes à rendre
+      <em>persistence-capable</em> (définissant les classes et champs à rendre persistants, les champs caractérisant
+      l'identité d'un objet, etc.), nommé <em>métadonnées </em>(metadata).</p>
+    <p>L'ensemble des états décrits ci-dessus (transactionnel-persistant, transactionnel-transitoire) est généralement
+      qualifié d'ensembles des états "gérés" (<em>managed</em>), puisque c'est dans ces cas que la gestion JDO apporte
+      une valeur ajoutée. Ceci dit un objet enhancé peut également passer en état transitoire-non transactionnel, c'est
+      à dire ayant un comportement identique à des objets Java classiques ou JDO ne s'interpose plus.</p>
+    <p>Outre sa classe et les champs qui composent son état, un objet Persistence Capable est caractérisé par
+      son<strong> identité</strong> qui peut être : </p>
+    <ul>
+      <li><strong>durable</strong> : quand l'objet est persistant
+        <ul>
+          <li><strong>gérée par JDO </strong>(<em>datastore</em> <em>identity</em>), qui génère et récupère
+            implicitement une identité<a
+                href="/tech/info/soft/proj/impl/algo/tx"></a> pour chaque instance.
+          </li>
+          <li><strong>applicative </strong>(<em>application identity</em>) : le développeur spécifie alors dans ses
+            métadonnées JDO une combinaison de champs de l'objet (qui seront typiquement associés à leurs colonnes
+            équivalentes dans un <a href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>). Un cas particulier et courant
+            de ce type d'identité est celui d'une identité composée d'un seul champ simple. On parle alors d'identité
+            simple (<em>simple identity</em>).</li>
+        </ul>
+      </li>
+      <li><strong>non durable</strong> : pour les transactions en mémoire</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Persistence aware</h3>
+    <p>Les classes manipulant les objets <em>persistence capable</em> effectuent des :</p>
+    <ul>
+      <li><strong>lectures </strong>:
+        <ul>
+          <li>recherche par identifiant unique</li>
+          <li>recherche multi-critères (requête JDO QL), itération sur les résultats, tris, etc.</li>
+          <li>lecture partielles (groupe de champs chargés par défaut, et non pas tous les champs d'un objet)</li>
+          <li>lecture non transactionnelles : plus performantes mais pouvant être incohérentes (un attribut lu n'est pas
+            garanti cohérent avec un autre lu précédement par exemple).</li>
+        </ul>
+      </li>
+      <li><strong>écritures </strong>: modification de l'état
+        <ul>
+          <li>automatiquement répercuté en base lors de la validation de la <a
+              href="/tech/info/soft/proj/impl/algo/tx">transaction</a>
+            <ul>
+              <li><strong>optimiste </strong> :la transaction est gérée par JDO, aucun verrou n'est maintenu, et la
+                vérification de non-concurrent se fait en fin de transaction. Particulièrement adapté aux applications
+                définissant des transactions dépendantes d'actions clients potentiellement longues ("think time" du
+                client incompatible avec le maintient de verrous).</li>
+              <li><strong>pessimistes </strong>: la transaction est gérée par le SGBD, qui maintient des verrous durant
+                celle-ci afin de prévenir des écritures concurrentes.</li>
+            </ul>
+          </li>
+          <li>répercuté uniquement dans le cache, en cas d'écriture non transactionnelle.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Conception</h2>
+  <h3><img src="/tech/info/images/JDO_SPI.gif" width="681" height="581" hspace="10"
+      vspace="10" align="right">Persistence capable
+  </h3>
+  <p>Pour être géré (<em>managed</em>) par JDO, un objet doit implémenter un contrat de Persistence Capable via une
+    instrumentation (<em>enhancement</em>) du bytecode de sa classe. Cette post-compilation ajoute au code des méthodes
+    et champs additionnels, et du code statique permettant d'interragir avec l'infrastructure JDO (de tel ou tel
+    fournisseur, l'enhancement étant standard et n'imposant donc pas de modification des classes métier si l'on change
+    de fournisseur JDO).</p>
+  <p>Comme il s'agit de l'implémentation d'une interface, il est également possible - mais jamais fait en pratique -
+    d'utiliser d'autres techniques que l'enhancement, telle que : </p>
+  <ul>
+    <li><strong>préprocesseur</strong> : la modification du <a
+        href="/tech/info/soft/proj/impl/CodeSource.html">code source</a> avant <a
+        href="/tech/info/soft/proj/impl/Compilation.html">compilation</a>.</li>
+    <li><strong>générateur</strong> : génération du <a
+        href="/tech/info/soft/proj/impl/CodeSource.html">code source</a> des classes métier incluant directement leur
+      enhancement JDO. Peu d'intérêt car l'utilisation d'un enhancer est plus pratique et sûre que d'écrire un
+      générateur de source devant connaître le code d'enhancement de JDO. </li>
+    <li><strong>manuel </strong>: rédaction du <a
+        href="/tech/info/soft/proj/impl/CodeSource.html">code source</a> en implémentant explicitement l'interface
+      PersistenceCapable, les méthodes du contrat JDO, etc. Ceci cette méthode n'a aucun intérêt puisque le code d'un
+      PersistenceCapable est systématiquement le même, et l'écrire soi-même conformément à la spécification JDO laisse
+      toujours la possibilité d'une erreur du rédacteur. </li>
+  </ul>
+  <p>La correspondance (<em>mapping</em>) entre l'état mémoire de l'objet et son état persistant est rédigé dans un
+    descripteur standard, externe au code (fichier <a
+        href="/tech/info/soft/data/doc/xml">XML</a>), pouvant comporter des extensions propriétaires.</p>
+  <p>L'accès aux données peut être :</p>
+  <ul>
+    <li><strong>explicite</strong>, en fournissant à la fabrique de PersistenceManager un ensemble de propriétés (pilote
+      <a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, <a
+          href="/tech/info/soft/reseau/internet/URL.html">URL</a> de connexion <a
+          href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, login et password) similaires à celles
+      requises par un DriverManager <a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>.
+    </li>
+    <li><strong>abstrait</strong> via une fabrique de connexions (<em>connection factory</em>), pouvant correspondre à
+      une DataSource <a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>. Il s'agit alors d'un
+      déploiement en "environnement géré" (J2EE), où l'implémentation JDO utilise <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a> pour s'intégrer avec le serveur
+      applicatif.</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <caption>Etats JDO</caption>
+    <thead>
+    <tr>
+      <td colspan="2" class="titleCorner"></td>
+      <th>Transactionnel</th>
+      <th>Non transactionnel</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th colspan="2">Persistant</th>
+      <td class="oui"></td>
+      <td>Lectures</td>
+    </tr>
+    <tr>
+      <th colspan="2">Transitoire</th>
+      <td></td>
+      <td class="oui">Comportement identique à celui d'un objet non JDO</td>
+    </tr>
+    <tr>
+      <th rowspan="3">Optimisations</th>
+      <th>Ecriture dans le cache</th>
+      <td class="oui"><code><strong>NonTransactionalWrite</strong>=true</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Lecture non synchronisée</th>
+      <td class="oui"><code><strong>NonTransactionalRead</strong>=true</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Recherche dans le cache</th>
+      <td class="oui"><code><strong>ignoreCache</strong>=false</code></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <p></p>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th rowspan="2">Optimisations</th>
+      <th>Conservation du cache après transaction</th>
+      <td class="oui"><code><strong>retainValues</strong>=true</code></td>
+    </tr>
+    <tr>
+      <th>Non-restauration après annulation</th>
+      <td class="oui"><code><strong>restoreValue</strong>=false</code></td>
+    </tr>
+    <tr>
+      <th rowspan="3"></th>
+      <th>Ecriture dans le cache</th>
+      <td class="oui"><code><strong>NonTransactionalWrite</strong>=true</code></td>
+    </tr>
+    <tr>
+      <th>Lecture non synchronisée</th>
+      <td class="oui"><code><strong>NonTransactionalRead</strong>=true</code></td>
+    </tr>
+    <tr>
+      <th>Recherche dans le cache</th>
+      <td class="oui"><code><strong>ignoreCache</strong>=false</code></td>
+    </tr>
+    </tbody>
+    <caption>Transactions JDO</caption>
+  </table>
+  <p>Egalement le <em>JDO Query Language</em> (JDOQL) permet d'obtenir des instances ou collections d'instances JDO d'un
+    type donné, éventuellement filtrées par divers critères exprimés dans une syntaxe proche de celle du <a
+        href="/org/us/company/oracle/sun/ptf/java">langage Java</a>.</p>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <caption>Filtres JDOQL</caption>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <td class="titleCorner"></td>
+      <th>Forme</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th rowspan="2">Egalité</th>
+      <th>Avec contante</th>
+      <td>champ == valeur, champ != valeur, champ == null, champ != null</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Entre champs</th>
+      <td>champ1 == champ2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3">Comparaison</th>
+      <th rowspan="2">Caractères</th>
+      <td>chaîne &gt; valeur<br> chaîne &lt; valeur<br> chaîne1 &lt; chaîne2<br> chaîne1 &gt; chaîne2</td>
+      <td>Pour les types non numérique, l'interprétation est dépendante de l'implémentation / du support de persistance
+      </td>
+    </tr>
+    <tr>
+      <td>chaîne.startsWith (valeur), chaîne.endsWith (valeur)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Expression</th>
+      <td>expression1 &amp;&amp; expression2<br> expression1 || expression2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2">Collections</th>
+      <th>Existence d'un élément caractérisé</th>
+      <td>collection.contains (var) &amp;&amp; expression (var)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vide</th>
+      <td>collection.isEmpty()</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Des contraintes peuvent également être imposées sur les ensembles résultats retournés, qui peuvent être :</p>
+  <ul>
+    <li>triés (ascendant, descendant) sur un ou plusieurs champs, par exemple pour des collections non ordonnées</li>
+  </ul>
+  <h3>API</h3>
+  <p>L'API de JDO est définie dans le package <q><code>javax.jdo</code></q>.
+  </p>
+  <p>On peut distinguer trois types de classes dans une application JDO :</p>
+  <ul>
+    <li>les classes d'objets potentiellement persistant et/ou transactionnels. Ces classes n'ont rien de particulier,
+      hormis le fait qu'elles implémenteront <code>PersistenceCapable</code> suite à leur post-compilation (<em>enhancement</em>).
+      Tout ou partie de leur champs (selon le mapping spécifié) sera alors pris en charge par JDO à l'exécution. Leur
+      identité peut être gérée par JDO de manière transparente (non durable ou datastore id) ou applicative et donc
+      explicite (application id). Dans ce dernier cas une classe d'identité applicative doit exister, semblable à celle
+      des EJB (combinaison publique, unique et sérialisable de champs de l'objet, avec constructeur par défaut, <code>equals()</code>
+      et <code>hashCode()</code>). </li>
+    <li>les classes conscientes de la persistance (<em>persistence aware</em>), utilisant l'API JDO pour manipuler des
+      objets <code>PersistenceCapable</code>. Ces classes utilisent typiquement des
+      <q><code>PersistenceManager</code></q>, aptes à exécuter des requêtes, démarrer/terminer des transactions, ou
+      changer l'état des objets JDO (persistant, transient, transactionnel, etc.). Les
+      <q><code>PersistenceManager</code></q> sont obtenus via une <q><code>PersistenceManagerFactory</code></q>.
+    </li>
+  </ul>
+  <p>Une implémentation JDO doit au moins supporter une des identités SGBD.</p>
+  <h3>SPI</h3>
+  <p>En dehors de l'API visible par les développeurs utilisant JDO, comment cela fonctionne-t-il "à l'intérieur" ?</p>
+  <p>A l'exécution, toute instance JDO "enhancée" référence un gestionnaire de son état
+    (<q><code>StateManager</code></q>) qui communique avec le <q><code>PersistenceManager</code></q> pour gérer la
+    persistance.</p>
+  <p>Le <code>StateManager</code>, chargé de gérer le cycle de vie d'une (ou plusieurs) instances, considère plusieurs
+    états possibles dans la vie du d'un <code>PersistenceCapable</code> :</p>
+  <ul>
+    <li><strong>transitoire </strong>(en mémoire)
+      <ul>
+        <li><strong>non transactionnel </strong>(<em>transient</em>). C'est l'état de n'importe quel objet décrit dans
+          les métadonnées JDO au démarrage de l'application.</li>
+        <li>(optionnel) <strong>transactionnel</strong>, après un <code>pm.makeTransactional(pc)</code>
+          <ul>
+            <li>non modifié dans la <a href="/tech/info/soft/proj/impl/algo/tx">transaction</a>
+              (<em>transient-clean</em>)
+            </li>
+            <li> modifié dans la <a href="/tech/info/soft/proj/impl/algo/tx">transaction</a> (<em>transient-dirty</em>),
+              après un <code>pc.setXxx(v)</code>.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>persistant </strong>
+      <ul>
+        <li>(optionnel) <strong>non transactionnel </strong>(<em>persistent-nontransactional</em>)</li>
+        <li><strong>transactionnel</strong>
+          <ul>
+            <li><strong>nouvellement créé </strong>dans la <a
+                href="/tech/info/soft/proj/impl/algo/tx">transaction</a> (<em>persistent-new</em>), après un <code>pm.makePersistent(pc)</code>
+              ou sur un autre pc référençant ce pc par exemple (persistance de proche en proche).
+              <ul>
+                <li><strong>nouvellement créé puis supprimé </strong>dans la <a
+                    href="/tech/info/soft/proj/impl/algo/tx">transaction</a> (<em>persistent-new-deleted</em>)
+                </li>
+              </ul>
+            </li>
+            <li><strong>vide</strong> (<em>hollow</em>), l'état persistant n'ayant pas encore été chargé, après un
+              <code>pc=getObjectById()</code> par exemple </li>
+            <li><strong>modifié </strong>dans la <a
+                href="/tech/info/soft/proj/impl/algo/tx">transaction </a>(<em>persistent-dirty</em>), après un <code>pc.setXxx(v)</code>
+              par exemple</li>
+            <li><strong>non modifié </strong>dans la <a
+                href="/tech/info/soft/proj/impl/algo/tx">transaction</a> (<em>persistent-clean</em>)
+            </li>
+            <li><strong>supprimé </strong>dans la <a
+                href="/tech/info/soft/proj/impl/algo/tx">transaction</a><strong> </strong>(<em>persistent-deleted</em>),
+              après un <code>pm.deletePersistent(pc)</code> par exemple.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Est-ce que JDO peut être plus rapide que du code <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> pur ? </strong>Oui, en fonction de
+      l'utilisation du cache où du pooling de connexions propres à toute implémentation JDO, mais aussi grâce au code
+      généré, optimisé pour exploiter l'ensembles des possibilités de <a
+          href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> (requêtes précompilées, pooling,
+      curseurs) et des spécificités de tel ou tel SGBD.</li>
+    <li><strong>J'ai effectué un comparatif et mon code <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> se révèle plus rapide, pourquoi ? </strong>Cela
+      peut être dû au fait que vous vous limiter à récuperer des colonnes de tables et non des objets complets. Un
+      comparatif représentatif doit comparer la création/modification/lecture de données sous forme d'objets et sur un
+      nombre conséquent de <a
+          href="/tech/info/soft/proj/impl/algo/tx">transactions</a>.</li>
+    <li><strong>Comment choisir entre JDO et les <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> ?</strong> Tout dépend de votre objectif.
+      S'il se limite à la <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'objet, JDO est
+      le plus adapté car il a été conçu pour cela, et offre dans ce domaine une très bonne <a
+          href="/tech/info/Performance.html">performance</a> (cache, optimisations) et souplesse (paramétrage,
+      granualité fine). Si votre objectif est de construire des composants réutilisables dans des applications
+      différentes, les <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> sont les plus adaptés, fournissant divers
+      autres services que JDO n'offre pas (distribution, transactions implicites, sécurité). Le but initial des <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> n'est pas de faire persister des objets
+      mais de fournir un modèle de composant. Pour permettre une bonne réutilisablité des <a
+          href="/tech/info/soft/proj/design/Composant.html">composants</a>, EJB est obligé de fournir une indépendance
+      au niveau persistance. </li>
+    <li><strong>Peut-on mélanger <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> et JDO ?</strong>
+      Tout à fait. Un <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> Session ou Entité peut très
+      bien encapsuler des objets JDO persistants, ou effectuer des requêtes JDO.</li>
+    <li><strong>JDO peut-il être utilisé dans un serveur applicatif ?</strong> Oui, et c'est en fait décrit dans la
+      spécification JDO. Une implémentation JDO peut fournir un connecteur <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a> s'intégrant dans tout serveur
+      compatible <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> 1.3 ou supérieur.</li>
+    <li><strong>Peut-on faire du <a href="/tech/info/soft/data/dbms/r/sql">SQL</a> avec JDO ?</strong> La plupart des
+      implémentations existantes le permettent. En fait une Query JDO peut être paramètrée pour utiliser le langage de
+      votre choix, et pas seulement JDO QL. Lorsque <a
+          href="/tech/info/soft/data/dbms/r/sql">SQL</a> est supporté, c'est aussi souvent en apportant une valeur
+      ajoutée, comme la construction automatique d'objets en fonction d'une clause <code>WHERE</code>, le support de
+      l'héritage, etc.</li>
+    <li><strong>Peut-on précompiler des requêtes JDO ? </strong>Oui. De la même manière que les PreparedStatement JDBC
+      sont censées précompiler des requêtes <a
+          href="/tech/info/soft/data/dbms/r/sql">SQL</a> (ce qui n'est en réalité pas supporté par tous les <a
+          href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>), une requête JDO peut être compilée avant une utilisation
+      repétée. Cette compilation s'effectue dans l'implémentation JDO et n'est donc pas dépendante des SGBD
+      sous-jacents. De plus les implémentations JDO utilisent généralement elle-même des PreparedStatements (poolées,
+      etc.).</li>
+    <li><strong>Puis-je utiliser JDO dans une application Web ? </strong>Oui. JDO y est d'autant mieux adapté qu'il est
+      prévu pour fournir des identifiants d'objets sous forme de chaînes de caractères (facilement stockable dans des
+      pages et/ou sessions Web) et qu'il supporte les <a
+          href="/tech/info/soft/proj/impl/algo/tx">transactions</a> optimistes (potentiellement "longues" en raison du
+      mode déconnecté de l'interaction client/serveur Web et du client <em>think time</em>).</li>
+    <li><strong>Puis-je débugger des classes qui ont été enhancées ?</strong> Tout à fait. Un enhancer de byte code
+      modifie les numéros de ligne dans les infos de debogage lorsqu'il enhance le bytecode d'une classe.</li>
+    <li><strong>Quels sont les avantages de JDO par rapport aux entités <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> ?</strong> JDO n'offre d'avantages que dans
+      le domaine de la <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>. Si vous avez besoin
+      de composants réutilisables, vous avez besoin des <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>. Dans le cas où vous ne chercher qu'à faire
+      persister des objets, alors JDO se démarque par des fonctionnalités garanties par sa spécification, et non
+      supportées par le standard EJB, telles que le support :
+      <ul>
+        <li>de l'héritage, alors que les entités ne le permettent pas (à juste titre en tant que composants
+          réutilisables) </li>
+        <li>d'un groupe de chargement (<code>default-fetch-group</code>) paramétrable, alors que les <a
+            href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> ne le spécifient pas (généralement
+          l'ensemble des champs est chargé)</li>
+        <li>d'un langage (JDO QL) permettant d'interroger des collections (<code>myCollection.contains(var1) &amp;&amp;
+          var1.otherCollection.contains(var2) &amp;&amp; var2 == xxx</code> par exemple), alors que EJB QL ne permet pas
+          de requêtes de ce type (<code>field.collection.field</code> est interdit). Cependant depuis JDO 2.0 un certain
+          rapprochement entre ces deux langages a été décidé et JDO QL pourra être un langage utilisable dans EJB 3.0.
+        </li>
+        <li>du support des transactions optimistes, alors que les <a
+            href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> ne supportent que les transactions du
+          SGBD (on doit alors implémenter l'optimiste à la main)</li>
+        <li>du paramétrage du comportement en cas de <code>commit()</code> ou de <code>rollback()</code> de transaction
+          (paramétrage propriétaire pour les EJB quand c'est possible)</li>
+        <li>du paramétrage du cache (possibilité de l'ignorer) alors que les <a
+            href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> ne spécifie par de tel comportement</li>
+        <li>de la possibilité d'effectuer des <a
+            href="/tech/info/soft/proj/impl/algo/tx">transactions</a> sur des objets non persistants (impossible ou à
+          implémenter manuellement de manière très compliquée avec des EJB).</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>FUD</h2>
+  <p>Du <a href="/tech/info/FUD.html">FUD</a> a parfois été présenté sur JDO.</p>
+  <ul>
+    <li><strong>JDO ne couvre pas telle ou telle fonctionnalité</strong>. En tant que standard, JDO ne peut demander aux
+      éditeurs de tout supporter. Il se limite donc à un plus-petit-commun-dénominateur acceptable, définissant des
+      fonctionnalités optionnelles. Il convient donc d'examiner ce que fournissent les implémentations JDO, et non la
+      spécification du standard seule. A côté de cela, la plupart des fournisseurs d'implémentation JDO implémentent
+      bien plus que la spécification, en proposant de nombreuses fonctionnalités (mapping de l'héritage, multi-tables)
+      ou optimisations (cache partagé, distribué) au-delà de ce que définit le standard lui-même.</li>
+    <li><strong>JDO n'est pas supporté par les plus grands acteurs du marché</strong>. JDO, déjà <a
+        href="/tech/info/soft/API.html">API</a> standard implémentée par une quinzaine d'éditeurs, est pressenti pour
+      être intégré à <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> 1.5. De ce fait l'ensemble des éditeurs de <a
+          href="/tech/info/soft/prod/server/app">serveurs applicatifs</a> devront en fournir une implémentation. <a
+          href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/jboss/jboss-persistence/src/main/org/jboss/persistence/jbossdo/">Le
+        serveur JBoss a par exemple déjà commencé le travail</a>. Des acteurs importants comme <a
+          href="http://www.jcp.org/en/jsr/detail?id=12">Oracle</a> ou même <a
+          href="http://www.jcp.org/en/jsr/detail?id=12">SAP</a> ont commencé à travailler sur une implémentation JDO.
+    </li>
+    <li><strong>JDO est trop jeune</strong>. La spécification JDO est issue d'une réflexion <a
+        href="http://www.jcp.org/en/jsr/detail?id=12">d'acteurs important du domaine tels que IBM, Ericsson, IONA,
+      Informix, Object People, Oracle, Rational, SAP, Secant, Sun et Versant</a>. Elle a notamment bénéficié des retours
+      d'expérience du standard CMP des <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>, implémenté
+      par Craig Russell, expert du groupe JDO. La dernière version de JDO est la 2.0, adoptée fin <time>2005-02</time>.
+    </li>
+    <li><strong>Le mapping O/R n'est pas standardisé</strong>. Il l'est depuis JDO 2.0.</li>
+    <li><strong><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> suffit</strong>
+      <ul>
+        <li><strong>Personne n'a besoin de supporter autre chose que le SGBDR du projet</strong> : C'est à peu près la
+          même chose que de dire que personne n'a besoin de <a
+              href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, et que l'on a pas besoin de
+          connaître autre chose que l'<a href="/tech/info/soft/API.html">API</a> bas-niveau du SGBDR (ce que disaient
+          les développeurs comme argument contre <a
+              href="/tech/info/soft/data/dbms/r/sql">SQL</a> quand il est apparu à la fin des années 1980s, ou contre <a
+              href="/org/us/company/oracle/sun/ptf/java">Java</a> qui était décrit comme sans avenir par rapport aux <a
+              href="/tech/info/Performance.html">performances</a> du <a
+              href="//tech/info/soft/proj/impl/lang/c">C</a> ou du <a
+              href="/tech/info/soft/proj/impl/lang/cpp">C++</a> à la fin des années 1990s). En réalité c'est un
+          investissement à plus large échelle que d'utiliser JDO : élever le niveau de la gestion de la persistance
+          (supportant de multiples bases relationnelles, et d'autres supports si besoin). D'autres standards, comme <a
+              href="/org/us/company/oracle/sun/ptf/java/api/ext/SDO.html">SDO</a>, ont identifié ce besoin d'abstraction
+          de la source de données.</li>
+        <li><strong>Je peux aller plus/aussi vite en JDBC </strong>: C'est l'évidence en théorie, puisqu'une
+          implémentation JDO va utiliser du <a
+              href="/tech/info/soft/data/dbms/r/sql">SQL</a> pour accéder à des <a
+              href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>. Dans la réalité, c'est autre chose. Aller aussi vite
+          qu'une implémentation JDO connaître aussi bien les optimisations pour chaque SGBD que ne le connaît l'éditeur
+          JDO, mais aussi implémenter divers niveaux de <strong>cache</strong> ou d'<strong>optimisations
+            symboliques</strong>. Par exemple <code>objet.getCollection().add(e)</code> ne devrait générer qu'une
+          insertion et ne pas charger la collection pour rien. Enfin, il est une autre vitesse où <a
+              href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> n'a pas non plus forcément l'avantage
+          : celle du développement. Les <a href="/tech/info/soft/proj">projets</a> sont de plus en plus complexes (et
+          donc coûteux) et demandent plus d'abstraction pour obtenir des temps de développement -- et des possibilités
+          fonctionnelles -- acceptables. Allez donc implémenter en JDBC la requête JDO QL : <code>manager.department.employees.contains
+            (anEmployee) &amp;&amp; ((Woman) anEmployee).husband == this</code> par exemple. JDO saura le faire de la
+          manière la plus optimisée possible, sans que le développeur perde du temps à descendre au niveau du support de
+          persistance aux paradigme, API et specificités différentes du niveau applicatif. </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Peuvent être utilisés par les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> (sessions,
+      entités CMP ou BMP) comme classes de persistance.</li>
+    <li>
+      <table>
+        <caption>Standard JDO</caption>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="3" class="titleCorner"></td>
+          <th colspan="2" valign="top">Logiciel</th>
+          <th colspan="3">Standard JDO</th>
+          <th rowspan="4"> Commentaire</th>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"> Version</th>
+          <th colspan="2">1</th>
+          <th>2</th>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"> Release</th>
+          <th colspan="2">0</th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th> Domaine</th>
+          <th> Technologie</th>
+          <th colspan="2" valign="top">Maintenance</th>
+          <th>0</th>
+          <th>1</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th valign="top">Inclus dans</th>
+          <th colspan="3" valign="top">J2EE</th>
+          <td colspan="2" class="non">Package optionnel, intégrable via <a
+              href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a>.
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Requêtes</th>
+          <th colspan="3" valign="top">JDOQL</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td><em>JDO Query Language</em></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Appel de fonctions</th>
+          <td colspan="2" class="non">Traitement sur le résultat (<code>collection.size()</code>, etc.) ou Query en
+            langage SQL
+          </td>
+          <td class="oui">query.setResult (min ou max ou sum ou avg ou manipulation de chaînes)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Appel de méthodes</th>
+          <td colspan="3" class="non">Non</td>
+          <td>object1.compute() &gt; objet2.getMax()</td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top">Transactions</th>
+          <th colspan="3" valign="top">Distribuées</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Optimistes</th>
+          <td>Optionnel</td>
+          <td colspan="2"><code>JDOOptimisticVerificationException</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Déconnectées</th>
+          <td colspan="2" class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td>Travail sur des instances détachées (client distant) puis reconnection.</td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Ecriture non transactionnelle</th>
+          <td colspan="2">Optionnel</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Lecture non transactionnelle</th>
+          <td colspan="2">Optionnel</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Environnement</th>
+          <th colspan="3" valign="top">géré</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">non-géré</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Stockage</th>
+          <th colspan="3" valign="top">SGBDR</th>
+          <td colspan="2">mapping via extensions des métadonnées JDO</td>
+          <td class="oui">mapping normalisé</td>
+          <td>Oracle, MySQL, etc.</td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">SGBDO</th>
+          <td colspan="3">Oui</td>
+          <td>Versant par exemple</td>
+        </tr>
+        <tr>
+          <th colspan="3" valign="top">Non persistant</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td>Transactions en mémoire</td>
+        </tr>
+        <tr>
+          <th rowspan="8" valign="top">Instance</th>
+          <th rowspan="4" valign="top">Identité</th>
+          <th rowspan="2" valign="top">Durable</th>
+          <th valign="top">Datastore</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td>Fournie par l'implémentation JDO, masquée dans l'objet</td>
+        </tr>
+        <tr>
+          <th valign="top">Applicative</th>
+          <td colspan="2" class="oui">Composée</td>
+          <td class="oui">Composée ou simple</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Non durable</th>
+          <td colspan="3">Optionnel</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Changement</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Transactionnelles</th>
+          <th colspan="2" valign="top">Transitoire</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Persistante</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Non transactionnelles</th>
+          <th colspan="2" valign="top">Transitoire</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Persistante</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="21" valign="top">Types</th>
+          <th rowspan="7" valign="top">Simples</th>
+          <th colspan="2" valign="top">Booléens</th>
+          <td colspan="3" class="oui"><code>boolean java.lang.Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Entiers</th>
+          <td colspan="3" class="oui"><code>byte short int long java.lang.Byte java.lang.Short java.lang.Integer
+            java.lang.Long java.math.BigInteger</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Flottants</th>
+          <td colspan="3" class="oui"><code>float double java.lang.Float java.lang.Double java.math.BigDecimal</code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Objet</th>
+          <td colspan="3" class="oui"><code> java.lang.Object</code> et dérivés</td>
+          <td><code>null</code> supporté</td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Chaîne</th>
+          <td colspan="3" class="oui"><code>java.lang.String char java.lang.Character </code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Internationalisation</th>
+          <td colspan="3" class="oui"><code>java.util.Locale</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Date</th>
+          <td colspan="3" class="oui"><code>java.util.Date</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Tableaux</th>
+          <th colspan="2" valign="top">Primitifs</th>
+          <td colspan="3" class="oui"><code>boolean[] byte[] short[] int[] long[] char[] float[] double[]</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Array</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top"><a href="/tech/info/soft/Dictionnaire.html">Dictionnaires</a>
+          </th>
+          <th colspan="2" valign="top">Map</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">HashSet</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">HashMap</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">TreeMap</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Hashtable</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="8" valign="top">Collections</th>
+          <th colspan="2" valign="top">Collection</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="4" valign="top">Listes</th>
+          <th valign="top">List</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">ArrayList</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">LinkedList</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Vector</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Ensembles</th>
+          <th valign="top">Set</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">TreeSet</th>
+          <td>Optionnel</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th colspan="2" valign="top">Bidirectionnelles</th>
+          <td colspan="2" class="non">Non spécifié</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"></th>
+          <th colspan="2" valign="top">Supression en cascade</th>
+          <td colspan="2" class="non">Non spécifié</td>
+          <td class="oui">Oui</td>
+          <td><em>Cascade delete</em></td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de classe persistante est n'importe quelle classe <a
+      href="/org/us/company/oracle/sun/ptf/java/POJO.html">POJO</a>.</p>
+  <p>Un exemple de code JDO est :</p>
+  <pre><code>import javax.jdo.*;
+
+ // Code code suppose que pm réference un PersistenceManager et qu'il y a un contexte transactionnel en cours
+    Employee jerome = new Employee ("Jérôme", "Beau");
+ Address jeromeAddress = new Address("71 rue Desnouettes", "75015", "Paris");
+
+      jerome.setAddress (jeromeAddress);
+
+ Transaction tx = pm.currentTransaction();
+
+      tx.begin();
+ {
+ ProjectId lidoProjectId = new ProjectId ("LiDO", 3.1); // Identifiant métier du projet
+
+      Project lidoProject = pm.getObjectById (lidoProjectId, true); // Récupère le projet en base
+
+
+ jerome.getProjects().add (lidoProject);
+ lidoProject.getWorkers().add (jerome);
+ pm.makePersistent (jerome);
+      // Rend aussi jeromeAddress persistant, de proche en proche (clôture transitive)
+
+}
+ tx.commit(); // Ecrit les jerome et jeromeAddress en base
+    tx.begin();
+ {
+ // Récupère les projets dont le nom commence par "L", dont les collaborateurs et travaillent à Paris ou qui contiennent le collaborateur jerome
+
+  Query query = pm.newQuery (Projet.class, "workers.contains(aPeople) && aPeople.address.city == someCity && name.startsWith(\"L\") || aPeople == somePeople");
+
+      myQuery.declareVariables  ("Employee aPeople");
+ myQuery.declareParameters ("String someCity, Employee somePeople");
+ myQuery.setOrdering ("name ascending, manager.name ascending"); // Trie les résultat par nom de projet puis éventuellement par nom du manager du projet
+
+      Collection foundProjects = (Collection) myQuery.execute (jerome, "Paris"); // Exécute la requête avec les arguments suivants
+ Iterator foundProjectsIterator = foundProjects.iterator();
+ while (iter.hasNext()) {
+ Project aFoundProject = (Project) foundProjectsIterator.next();
+
+     // Utilise projet
+ }
+
+      myQuery.close (result);
+ }
+ tx.commit();
+
+      pm.close();
+ </code></pre>
+  <p>Un exemple de descripteur JDO standard est :</p>
+  <pre><code><?xml version="1.0" encoding="UTF-8"?>
+    &lt;!DOCTYPE jdo SYSTEM "jdo.dtd">
+      <jdo>
+        <package name="net.javarome.jdo.samples">
+          <class name="Person" identity-type="application" objectidclass="PersonKey">
+            <field name="nom" primary-key="true"/>
+          </class>
+          <class name="Employe" identity-type="application" persistence-capable-superclass="Person">
+            <field name="salaire" default-fetch-group="true"/>
+            <field name="dept"/>
+            <field name="chef"/>
+          </class>
+      <class name="Project" identity-type="application">
+
+      <field name="nom" primary-key="true"/>
+
+      <field name="workers">
+
+      <collection element-type="Employe"/>
+
+      </field>
+
+      </class>
+
+
+      </package>
+
+
+      </jdo></code></pre>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <caption>
+      Implémentations JDO
+    </caption>
+    <tbody>
+    <tr>
+      <td colspan="2" rowspan="3" class="titleCorner"></td>
+      <th colspan="2" valign="top">Fournisseur</th>
+      <th><a href="http://www.exadel.com">Exadel</a></th>
+      <th>Object Frontier</th>
+      <th><a href="/tech/info/OpenSource.html">OSS</a></th>
+      <th><a href="http://www.objectindustries.com">Object Industries</a></th>
+      <th colspan="3"><a href="http://www.versant.com">Versant</a></th>
+      <th><a href="http://solarmetric.com/">Solarmetric</a></th>
+      <th><a href="http://www.xcalia.com">Xcalia</a> (LIBeLIS)</th>
+      <th><a href="http://www.objectdb.com">ObjectDB Software</a></th>
+      <th>(Apache) Jakarta</th>
+      <th><a href="http://www.signsoft.com">SignSoft</a></th>
+      <th>(Apache)</th>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Produit</th>
+      <th><a
+          href="http://www.exadel.com/products_jdoproducts.htm">Exadel JDO</a></th>
+      <th><a
+          href="http://www.objectfrontier.com/jdo/products/FrontierSuiteforJDO3.0/index.jsp">Frontier Suite for JDO</a>
+      </th>
+      <th><a href="http://www.jpox.org/">JPOX</a></th>
+      <th><a href="http://www.objectindustries.com/">JRelay</a></th>
+      <th><a href="http://www.hemtech.co.za/jdo">JDO Genie</a></th>
+      <th><p><a href="http://www.versant.com/developer/jdo">Judo</a> / <a
+          href="http://www.versant.com/developer/jdo">enJin</a></p></th>
+      <th><a href="http://www.fastobjects.com">Fast Objects</a></th>
+      <th><a href="http://www.solarmetric.com">Kodo JDO</a></th>
+      <th><a
+          href="http://www.libelis.com/index.jsp?next=Products.jsp">LiDO</a></th>
+      <th><a href="http://www.objectdb.com">ObjectDB</a></th>
+      <th><a href="http://db.apache.org/ojb">OJB</a></th>
+      <th><a href="http://www.signsoft.com/en/intellibo">intelliBO</a></th>
+      <th><a href="http://tjdo.sourceforge.net">TJDO</a></th>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"> Version</th>
+      <th></th>
+      <th>3</th>
+      <th>1</th>
+      <th></th>
+      <th>2</th>
+      <th></th>
+      <th>j2</th>
+      <th>2</th>
+      <th>3</th>
+      <th></th>
+      <th></th>
+      <th>3</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th>Domaine</th>
+      <th>Technologie</th>
+      <th colspan="2" valign="top"> Release</th>
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th></th>
+      <th>0</th>
+      <th></th>
+      <th></th>
+      <th>5</th>
+      <th>1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th valign="top">Standard</th>
+      <th valign="top">JDO</th>
+      <th colspan="2" valign="top">Version</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0--</td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2.0--</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">Cache</th>
+      <th rowspan="2" valign="top">Partagé / niveau 2</th>
+      <th colspan="2" valign="top">Entre PM</th>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td>Active Java Cache</td>
+      <td class="oui">Oui</td>
+      <td class="oui"><code>lido.cache.mode=shared</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>CacheConfiguration. setUseNTXCache (true)</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Entre PMF</th>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">JMS ou TCP</td>
+      <td><p><code>lido.cache.mode=shared<br> lido.cache.group= myMultiplePmfGroup</code><br> (si même JVM)</p></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Agrafage d'objets</th>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>DataCache.pin(objectId)</code></td>
+      <td class="oui"><code>pin(object)</code> ou <code>lido.cache.classStrategy (myClassName)= pinned</code></td>
+      <td></td>
+      <td></td>
+      <td><code></code><br></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Par classe</th>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui">Extension <code>cache-strategy=yes|all</code> d'une classe</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extension <code>can-cache</code> <code>=true</code> d'une classe (défaut)</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>CacheConfiguration. setUseNTXCache (false)</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Distribué</th>
+      <th colspan="2" valign="top"></th>
+      <td class="oui">Version entreprise</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a></td>
+      <td>Via cache listeners plugins, JDOGenie Servers</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui"><code>kodo.DataCache</code></td>
+      <td>via DataRepository API</td>
+      <td></td>
+      <td></td>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>, <a
+          href="/org/us/company/oracle/sun/ptf/java/TCP.html">TCP</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">JCache</th>
+      <td></td>
+      <td></td>
+      <td>Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td>via DataRepository API</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Pluggable</th>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Tangosol</th>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>kodo.DataCache: tangosol(TangosolCacheName=kodo, TangosolCacheType=distributed)</code></td>
+      <td> via DataRepository API</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Exclusif</th>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"><code>lido.cache.exclusive=true</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Evénements</th>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="oui"><code>kodo.event.RemoteCommitProvider: jms</code> ou <code>tcp</code></td>
+      <td class="oui"><code>lido.cache.CommitListeners= com.acme.MyCommitListener</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">Requêtes</th>
+      <th rowspan="2" valign="top">JDO QL</th>
+      <th rowspan="2" valign="top">Extensions</th>
+      <th valign="top">String</th>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"><code>toLowerCase()</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>stringContains() caseInsStarts() caseInsEnds() caseInsContains() </code></td>
+      <td class="oui"><code>toLowerCase() toUpperCase()</code></td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui"><code>charAt() length() startsWith(substr,pos) substring(begin,end) toLowerCase()
+        toUpperCase()</code></td>
+    </tr>
+    <tr>
+      <th valign="top">Map</th>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"><code>containsKey(key) <code>contains(value) isEmpty()</code></code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>containsKey(key) </code><code>containsValue(value)</code></td>
+      <td><code>containsKey(key) </code><code>containsValue(value)</code></td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Curseurs</th>
+      <th colspan="2" valign="top">Mono-transaction</th>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui"><code>randomAccess= true</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>com.solarmetric.kodo. ResultListProperties</code></td>
+      <td class="oui"><code>cursor= basic</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Cross-transactions</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><code>cursor= cross-pm</code></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Taille paramétrable</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"><code>fetch-size=n </code>LIDOHINT</td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Cache des résultat</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>kodo.QueryCache: CacheSize=n</code></td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th valign="top">Chargement</th>
+      <th colspan="2" valign="top">Grappe</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>fetch-group=fields</code></td>
+      <td></td>
+      <td></td>
+      <td>Eager Fetching<br> Personnalisable Fetch groups<br></td>
+      <td><code>load= dfg| true</code></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"><code>JDOQLQuery. addFetchGroupAttribute ("myAttribute");</code></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top"><a
+          href="/tech/info/soft/data/dbms/r/sql">SQL</a></th>
+      <th colspan="2" valign="top">Libre</th>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui"><code>sqlEmbed</code></td>
+      <td class="oui"><p><code>query = pm.newQuery ("sql")<br> query.setFilter ("where ...")<br> query.setFilter
+        ("select ...")</code></p></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui"><code>SQLQuery query = QueryFactory. newSQLQuery()</code></td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Procédures stockées</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>query.setFilter ("call ...")</code></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top"><a href="/tech/info/soft/proj/impl/algo/tx">Transactions</a>
+      </th>
+      <th colspan="3" valign="top">Distribuées (XA)</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Optimistes</th>
+      <th colspan="2" valign="top">Versionnage</th>
+      <td rowspan="2" class="oui">Oui</td>
+      <td rowspan="2" class="oui">Oui</td>
+      <td rowspan="2" class="oui">Oui</td>
+      <td rowspan="2" class="oui">Oui</td>
+      <td class="oui">N° version, Ttimestamp</td>
+      <td rowspan="2" class="non">Non</td>
+      <td rowspan="2" class="non">Non</td>
+      <td rowspan="2" class="oui">Extension <code>jdbc-version-ind" value="version-number"</code></td>
+      <td>champ JDO sélectionné (<code>lido.optimistic.class.MyClass =selected </code>sur champ int ou Date)</td>
+      <td rowspan="2" class="oui">Oui</td>
+      <td rowspan="2"></td>
+      <td class="oui">Extension <code>optimistic-lock </code>(<code>timestamp</code> ou <code>version</code>)</td>
+      <td rowspan="2"></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Champs modifiés</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Tous, champs modifiés, champ / classe</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Ecriture non transactionnelle</th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Lecture non transactionnelle</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Environnement</th>
+      <th colspan="3" valign="top">Intégration serveurs applicatifs</th>
+      <td></td>
+      <td>Weblogic, WebSphere, JBoss, Orbix E2A, Oracle 9i, HP AS, Orion, JRun</td>
+      <td></td>
+      <td class="oui"><a href="/tech/informatique/soft/java/J2C.html">JCA</a></td>
+      <td>
+        <p>Via MBeans (<a href="/org/us/company/oracle/sun/ptf/java/WLS.html">WLS</a> 7.0, JBoss 2.4, 3.0, <a
+            href="../../../../../../ibm/product/soft/server/app/WAS.html">WAS</a> 5.0)</p></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td>DataSource (Jboss, WebLogic, WenSphere, SunOne, JRun, Borland)<br></td>
+      <td class="oui"><a href="/tech/informatique/soft/java/J2C.html">JCA</a></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><a href="/tech/informatique/soft/java/J2C.html">JCA</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Attacher/détacher (JDO 2.0)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="26" valign="top">Stockage</th>
+      <th rowspan="22" valign="top"><a href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>
+      </th>
+      <th colspan="2" valign="top">CloudScape</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">4.0.6</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">4.0.6, 5.0.9</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="../../../../../../ibm/product/soft/server/dbms/DB2.html">DB2</a></th>
+      <td class="oui">7.1</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">07.02.0000</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">7.2</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">7.2.3</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a
+          href="http://firebird.sourceforge.net/">FireBird</a></th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">1.0.2</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui"> 1.0.0.796</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">HSQL DB</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">1.6</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Ingres</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Informix</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">9</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">7.31</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">InstantDB</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">3.26</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">3.14</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Interbase</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">6</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">JDataStore</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a
+          href="/org/us/company/oracle/sun/ptf/java/Microsoft.html">MS</a> Access
+      </th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">MS FoxPro</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a
+          href="/org/us/company/oracle/sun/ptf/java/Microsoft.html">MS</a> SQL Server
+      </th>
+      <td class="oui">8.0</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">7.0</td>
+      <td class="oui">7.0</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">8.0</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"> 7.0 SP4, 2000 SP2</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">McKoi</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/org/us/company/oracle/sun/ptf/java/MySQL.html">MySQL</a>
+      </th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">3.23.49, 4.0.12</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">3.23</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"> 3.23.55-max</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="../../../../..">Oracle</a></th>
+      <td class="oui">8.1, 9.2</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">8.1.7</td>
+      <td class="oui">8.1.7</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">8.1-9.1</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">8.1.7</td>
+      <td class="oui"> 8.1.7.4.0</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Pervasive SQL</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">PointBase</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">4.5</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">4.2</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/org/us/company/oracle/sun/ptf/java/PostgreSQL.html">PostgreSQL</a>
+      </th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">7.1.3</td>
+      <td class="oui">7.3.1</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">7.2.1</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"> 7.2.1, 7.3.1, 7.3.2-1</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Progress</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/org/us/company/oracle/sun/ptf/java/SAPDB.html">SAP DB</a></th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">7.3</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">7.4.3 Build 010-120-035-462</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Sybase</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">11.9.2, 12.5</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">12.5</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Unisys</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th valign="top"><a href="/tech/info/soft/prod/server/sgbd/o">SGBDO</a></th>
+      <th colspan="2" valign="top">Versant</th>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Autre</th>
+      <th colspan="2" valign="top">Propriétaire</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">FDB</td>
+      <td class="oui">ObjectDB</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Autre</th>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td>Via dictionnaire fourni</td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/tech/info/soft/data/doc/xml">XML</a>
+      </th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="11" valign="top">Instance</th>
+      <th rowspan="6" valign="top">Identité</th>
+      <th rowspan="4" valign="top">Durable</th>
+      <th valign="top">Datastore</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Applicative</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Génération automatique de classe</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Génération automatique de classe et de valeurs</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Personnalisé</th>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">OidProvider</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"><a href="/tech/info/soft/prod/server/sgbd">SGBD</a></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Champs identité, séquences, tables</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Non durable</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td>Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Changement</th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td>Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Transactionnelles</th>
+      <th colspan="2" valign="top">Transitoire</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Persistante</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Non transactionnelles</th>
+      <th colspan="2" valign="top">Transitoire</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Persistante</th>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" valign="top">Détachement/attachement</th>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="15" valign="top">Collections</th>
+      <th colspan="3" valign="top">Nulles</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Tableaux</th>
+      <th colspan="2" valign="top">Array[]</th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">int[][], byte[][]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">int[][][], byte[][][]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top"><a
+          href="/tech/info/soft/Dictionnaire.html">Dictionnaires</a></th>
+      <th colspan="2" valign="top"><a href="/tech/info/soft/Dictionnaire.html">Map</a></th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/tech/info/soft/proj/impl/struct/HashTable.html">HashSet</a>
+      </th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/tech/info/soft/proj/impl/struct/HashTable.html">HashMap</a>
+      </th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/tech/info/soft/Dictionnaire.html">TreeMap</a>
+      </th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/tech/info/soft/proj/impl/struct/HashTable.html">Hashtable</a>
+      </th>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Listes</th>
+      <th colspan="2" valign="top">List</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">ArrayList</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">LinkedList</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Vector</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Ensembles</th>
+      <th colspan="2" valign="top">Set</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">TreeSet</th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Développement</th>
+      <th rowspan="5" valign="top">Outils</th>
+      <th colspan="2" valign="top">Mapping graphique</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">LiDO Studio</td>
+      <td rowspan="5" class="oui">JDO Explorer</td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Navigateur de modèle</th>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Navilis</td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Génération de schéma</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Oui</td>
+      <td class="oui">DefineSchema, LPM</td>
+      <td></td>
+      <td class="oui"><code>schemagen</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Retro- ingénierie de schéma</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Oui</td>
+      <td class="oui">Pour XML</td>
+      <td></td>
+      <td class="oui">ClassGenerator</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Evolution de schéma</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Oui</td>
+      <td class="oui">DefineSchema</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Intégration <a
+          href="/tech/info/soft/prod/ide">IDE</a></th>
+      <th colspan="2" valign="top">JBuilder</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">6</td>
+      <td>Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="../../../../../../../../../java/TCC.html">TCC</a></th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Lido 1.4</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Sun ONE Studio</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a
+          href="/org/int/asso/ef/product/eclipse">Eclipse</a> / WSAD
+      </th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">2.x (LiDO Studio)</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">API</th>
+      <th colspan="2" valign="top">Métadonnées</th>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Javadoc</th>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">XDocLet</td>
+      <td class="oui">JDODocLet</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Taglib</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><a href="../../../../../../../../../java/InstanceCallback"></a>Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Suppressions en cascade</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extension <code>dependent</code> du champ collection</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extensions <code>dependent</code>, <code>value-dependent</code>, <code>key-dependent</code> et
+        <code>element-dependent</code></td>
+      <td>Automatique pour collections en reverse , sinon en partie via l'extension <code>sql-delete-behavior</code>
+        (sinon InstanceCallback)
+      </td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extension <code>cascade-delete</code> du champ</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="13" valign="top">Mapping</th>
+      <th valign="top">Classe</th>
+      <th colspan="2" valign="top">Plusieurs tables</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extension <code>table</code> du champ collection. Clés primaires différentes supportées</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Héritage</th>
+      <th colspan="2" valign="top">Vertical</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"><span class="oui"><code>&lt;inheritance-strategy type="per-class"</code>&gt;</span></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extension <code>inheritance</code> d'une classe</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Horizontal</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"><code>&lt;inheritance-strategy type="per-concrete-class"</code>&gt;
+        (défaut)
+      </td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Autre</th>
+      <td class="non"></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td>Possible</td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Plat / Filtré</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td>Oui</td>
+      <td class="oui"><code>&lt;inheritance-strategy type="per-hierarchy"&gt;</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Relations</th>
+      <th rowspan="2" valign="top">1-1</th>
+      <th valign="top"></th>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Inversée</th>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1-n</th>
+      <th valign="top">Table de liaison</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui (défaut)</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Inversée (non ordonnée)</th>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui">Extension <code>inverse</code> du champ collection</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Extension <code>inverse</code> du champ collection</td>
+      <td class="oui"><code>&lt;associate field="f" to-column="c"&gt;</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">n-m</th>
+      <th valign="top">Table de liaison</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Inversée (non ordonnée)</th>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Extension <code>inverse</code> du champ collection</td>
+      <td></td>
+      <td></td>
+      <td>Oui</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Champs</th>
+      <th colspan="2" valign="top">Convertisseurs</th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>JdbcConverter</code></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>custom-mapping=ClassMapping</code>, extension <code>column-length</code></td>
+      <td class="oui"><code>CustomMapper, CustomizableMapper</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">DataStore</th>
+      <th colspan="2" valign="top">Multiples</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td class="oui">Extension <code>datastore</code> d'une classe</td>
+      <td></td>
+      <td></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>HYWY Software PE:J The Productivity Environment for Java</li>
+    <li>OrientTechnologies <a
+        href="http://www.orientechnologies.com/eng/jdo_impl.htm">Orient</a></li>
+  </ul>
+  <h2>Limitations</h2>
+  <ul>
+    <li> Les objets doivent être locaux en environnement non géré.</li>
+    <li>l'état des objets ne peut être représenté que par l'ensemble des champs de ces objets. Par conséquent certains
+      types d'objets disposant d'un état non entièrement Java (System, Thread, Socket, File) ne peuvent être rendus
+      persistants via JDO (ni dans la plupart des autres solutions de persistance).</li>
+    <li>Les objets doivent être PersistenceCapable (implicitement ou explicitement) avant leur chargement en
+      mémoire.</li>
+    <li>Support des collections limité à celles connues (de <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> typiquement)</li>
+    <li>Pas de PGC (<em>Persistent Garbage Collection</em>)</li>
+    <li>Voir également le <a
+        href="http://groups.google.com/groups?q=author:Craig.Russell%40Sun.COM&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;safe=off&amp;selm=3B81634C.C8C316D9%40Sun.COM&amp;rnum=1">débat
+      entre Carl Rosenberger (directeur du projet de persistance objet DB40) et Craig Russel (directeur de la
+      spécification JDO)</a>.</li>
+    <li>Si un objet JDO hérite d'un objet non JDO
+      <ul>
+        <li>ce dernier doit au moins avoir un constructeur par défaut protégé</li>
+        <li>on doit redéfinir et utiliser les accesseurs aux champs hérités</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li>Standard</li>
+    <li>
+      <ul>
+        <li><a href="http://java.sun.com/products/jdo/javadocs">API</a>
+        </li>
+        <li><a href="http://www.jcp.org/jsr/detail/12.jsp">JSR 12</a> - Spécification
+          <ul>
+            <li><a
+                href="http://www.solarmetric.com/Software/Documentation/jdospec">en HTML</a></li>
+          </ul>
+        </li>
+        <li><a href="http://access1.sun.com/jdo/">Sun JDO Group</a></li>
+      </ul>
+    </li>
+    <li>Groupes de discussion
+      <ul>
+        <li><em><a href="http://groups.yahoo.com/group/JavaDataObjects/">Java Data Objects Yahoo! Group</a></em></li>
+      </ul>
+    </li>
+    <li>Articles
+      <ul>
+        <li>Sun
+          <ul>
+            <li><em><a
+                href="http://forte.sun.com/ffj/transcripts/chat01-11-07.html">The JDO RI: Employing File Storage to
+              Manage Users' Objects</a></em> - Discussion avec Craig Russell</li>
+            <li><em><a
+                href="http://forte.sun.com/ffj/articles/transparent.html">Transparent Persistence with JDO</a> </em>-
+              Article Forte</li>
+          </ul>
+        </li>
+        <li><a
+            href="http://www-105.ibm.com/developerworks/education.nsf/java-onlinecourse-bytitle/8CE3AB0807C9FA5786256BE200692408?OpenDocument">IBM </a>
+          <ul>
+            <li><a
+                href="http://www-105.ibm.com/developerworks/education.nsf/java-onlinecourse-bytitle/8CE3AB0807C9FA5786256BE200692408?OpenDocument">developerWorks
+              : Hands-on Java Data Objects</a> - Didacticiel JDO avec exemples utilisant LIBeLIS LiDO</li>
+          </ul>
+        </li>
+        <li><a href="http://my.execpc.com/%7Egopalan/java/jdo/jdo.html">JDO</a> par Gopalan Suresh Jan</li>
+        <li><a href="http://www.jdocentral.com">JDO Central</a> - Site privé pour la communauté JDO</li>
+        <li><em><a
+            href="http://www.jdocentral.com/JDO_Commentary_DavidJordan_4.html">Comparing JDO et ODMG</a></em> par David
+          Jordan</li>
+      </ul>
+    </li>
+    <li>Livres
+      <ul>
+        <li><em>Java Data Objects</em> par David Jordan et Craig Russell (O'Reilly 2003, ISBN 0-596-00276-9)</li>
+        <li>David Ezzio</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

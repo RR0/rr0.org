@@ -57,6 +57,7 @@ Redirect /tech/info/soft/proj/design/arch/web/js https://rr0.org/tech/info/soft/
 Redirect /tech/info/soft/proj/design/arch/web/client/CSS.html https://rr0.org/tech/info/soft/proj/design/arch/web/client/css
 Redirect /science/appliquee/informatique/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
 Redirect /science/appliquee/info/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
+Redirect /tech/info/soft/prog/oo/java/JDO.html https://rr0.org/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html
 Redirect /ScienceFiction.html https://rr0.org/science/crypto/ufo/culture/litterature
 Redirect /science/crypto/ufo/culture/litterature/sf https://rr0.org/science/crypto/ufo/culture/litterature
 Redirect /Religion.html https://rr0.org/science/crypto/ufo/Religion.html
@@ -206,6 +207,7 @@ Redirect /org/eu/be/association/SOBEPS.html https://rr0.org/org/eu/be/asso/sobep
 Redirect /FBI.html https://rr0.org/org/us/ic/fbi
 Redirect /CIA.html https://rr0.org/org/us/ic/cia
 Redirect /NASA.html https://rr0.org/org/us/nasa
+Redirect /org/us/nasa/projet https://rr0.org/org/us/nasa
 Redirect /NSA.html https://rr0.org/org/us/ic/nsa
 Redirect /NRO.html https://rr0.org/org/us/dod/NRO.html
 Redirect /org/us/IAS.html https://rr0.org/org/us/university/princeton/ias
@@ -287,10 +289,11 @@ Redirect /BoitteFranck.html https://rr0.org/people/b/BoitteFranck
 Redirect /BonvinFabrice.html https://rr0.org/people/b/BonvinFabrice
 Redirect /personne/b/BourbeauFrancoisC.html https://rr0.org/people/b/BourbeauFrancoisC
 Redirect /personne/b/BossonYves.html https://rr0.org/people/b/BossonYves
+Redirect /personne/BossonYves.html https://rr0.org/people/b/BossonYves
+Redirect /BoscClaude.html https://rr0.org/people/b/BoscClaude
 Redirect /personne/b/BoudierAlain.html https://rr0.org/people/b/BoudierAlainH
 Redirect /people/b/BrunoGiordano.html https://rr0.org/people/b/BrunoGiordano
 Redirect /BouniasMichel.html https://rr0.org/people/b/BouniasMichel
-Redirect /personne/BossonYves.html https://rr0.org/people/b/BossonYves
 Redirect /BlanchardWilliamHugh.html https://rr0.org/science/crypto/ufo/enquete/dossier/Roswell/BlanchardWilliamHugh
 Redirect /BourretJeanClaude.html https://rr0.org/people/b/BourretJeanClaude
 Redirect /BourdaisGildas.html https://rr0.org/people/b/BourdaisGildas
@@ -563,6 +566,7 @@ Redirect /personne/w/WilkinsHaroldT.html https://rr0.org/people/w/WilkinsHaroldT
 Redirect /WhiteEdward.html https://rr0.org/people/w/WhiteEdward
 Redirect /WhiteRobertMichael.html https://rr0.org/people/w/WhiteRobertMichael
 Redirect /people/w/WhiteRobertMichael.html https://rr0.org/people/w/WhiteRobertMichael
+Redirect /WalkerJosephA.html https://rr0.org/people/w/WalkerJosephA
 Redirect /people/w/WalkerJosephA.html https://rr0.org/people/w/WalkerJosephA
 Redirect /people/w/WilkinsJohn.html https://rr0.org/people/w/WilkinsJohn
 Redirect /WilliamsonGeorgeHunt.html https://rr0.org/people/h/HuntWilliamsonGeorge
@@ -810,14 +814,16 @@ Redirect /ufologues.html https://rr0.org/people/ufologues.html
 Redirect /science/crypto/ufo/detection/ https://rr0.org/science/crypto/ufo/observation/
 Redirect /science/crypto/ufologie/detection/ https://rr0.org/science/crypto/ufo/observation
 Redirect /FlyingSaucers.html https://rr0.org/science/crypto/ufo/FlyingSaucers.html
-Redirect /org/eu/fr/association http://rr0.org/org/eu/fr/asso
-Redirect /FR.html http://rr0.org/org/eu/fr
-Redirect /org/us/association http://rr0.org/org/us/asso
-Redirect /politique/ideologie/conspirationnisme http://rr0.org/croyance/conspirationnisme
-Redirect /science/crypto/ufo/enquete/dossier/1967-07-03_Woonsocket http://rr0.org/science/crypto/ufo/enquete/dossier/Ferriere/
-Redirect /StatistiquesApplet.html http://rr0.org/science/crypto/ufo/analyse/statistique/StatistiquesApplet.html
-Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday.html http://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index.html
-Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html http://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html
+Redirect /org/eu/fr/association https://rr0.org/org/eu/fr/asso
+Redirect /FR.html https://rr0.org/org/eu/fr
+Redirect /org/us/association https://rr0.org/org/us/asso
+Redirect /politique/ideologie/conspirationnisme https://rr0.org/croyance/conspirationnisme
+Redirect /science/crypto/ufo/enquete/dossier/1967-07-03_Woonsocket https://rr0.org/science/crypto/ufo/enquete/dossier/Ferriere/
+Redirect /StatistiquesApplet.html https://rr0.org/science/crypto/ufo/analyse/statistique/StatistiquesApplet.html
+Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday.html https://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index.html
+Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html https://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html
+
+RedirectMatch /people/x/(.*) https://rr0.org?p=$1
 
 # compress certain file types by extension:
 <files *.html>
@@ -830,6 +836,7 @@ allow from all
 </Files>
 
 RewriteEngine on
+
 
 RewriteCond %{HTTP_REFERER} !^http://.*.google.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^http://.*.google.com$      [NC]

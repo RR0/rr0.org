@@ -1,0 +1,59 @@
+<!--#include virtual="/header-start.html" -->
+<title>BDOD</title>
+<!--#include virtual="/header-end.html" -->
+<p>Base de Donnée Orientée Documents.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href="..">BDOA</a> pour stocker des documents.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une BDOD est :</p>
+  <ul>
+    <li>une <strong>collection</strong> de
+      <ul>
+        <li><strong>documents</strong> (de type variable, ce sera donc à l'application de les interpréter)
+          <ul><li>pouvant se <strong>référencer</strong> entre eux (DBRef)</li></ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Une BDOD est semblable à un <a href="../ecv">ECV</a> dont les valeurs sont des documents semi-structurés (en <a
+      href="/tech/info/soft/data/doc/xml">XML</a>, <a href="/tech/info/soft/data/JSON.html">JSON</a>, etc.) qui peuvent
+    être examinées sans nécessiter leur chargement intégral (contrairement aux <a href="../ecv">ECV</a>).
+  <p>La répartition de charge se fait généralement entre un noeud "maître" (chargé des écritures) et des noeuds
+    "esclaves" (chargés des lectures). Si le noeud maître tombe, les esclaves en élisent un nouveau (fonction de sa
+    distance aux autres, de ses disponibilités en mémoire). Elle utilise généralement le partitionnement horizontal
+    (selon le type de document, ou <em>sharding</em>).</p>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <p>L'unité <a href="/tech/info/soft/proj/impl/algo/tx">transactionnelle</a> est généralement le document, de sorte que
+    les traitements demandés à une BDOD ne peuvent généralement pas s'appliquer à un groupe de documents.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>Produits</h3>
+    <p>Des exemples de BDOD sont :</p>
+    <ul>
+      <li>MongoDB</li>
+      <li>CouchDB</li>
+      <li>RavenDB</li>
+      <li>Lotus Notes (IBM)</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Usages</h3>
+    <ul>
+      <li>Stockage de descriptions de produits</li>
+      <li><abbr title="Content Management System">CMS</abbr></li>
+      <li>Gestion de blogs.</li>
+      <li>Gestion de logs.</li>
+    </ul>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->

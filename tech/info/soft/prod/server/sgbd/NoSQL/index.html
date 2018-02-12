@@ -5,22 +5,34 @@
     href="/tech/info/soft/data/dbms/r/sql">SQL</a>.</p>
 <section>
   <h2>Besoin</h2>
-  <p><a href="..">SGBD</a> pour gros volumes hétérogènes/p>
+  <p><a href="..">SGBD</a> pour gros volumes hétérogènes.</p>
 </section>
 <section>
   <h2>Analyse</h2>
   <p>Bien qu'il n'existe pas de définition stricte des bases NoSQL, on peut dire qu'elles sont fréquentemment :</p>
   <ul>
-    <li><strong>Clusterisables</strong></li>
+    <li><strong>Clusterisables</strong> : les données sont réparties sur plusieurs noeuds (machines).</li>
     <li><strong>Sans schémas</strong> : structures de données non fixes ou entièrement fixes</li>
     <li><strong>Sans <a href="/tech/info/soft/proj/impl/algo/tx">transactions</a></strong> classiques</li>
-    <li><strong>Sans opérations <a href="/tech/info/soft/prod/server/sgbd/r">relationnelles</a></strong>
-      : pas de <a href="/tech/info/soft/data/dbms/r/sql/Join.html">jointures</a> typiquement</li>
+    <li><strong>Sans opérations <a href="/tech/info/soft/prod/server/sgbd/r">relationnelles</a></strong> : pas de <a
+        href="/tech/info/soft/data/dbms/r/sql/Join.html">jointures</a> typiquement</li>
   </ul>
 </section>
 <section>
   <h2>Conception</h2>
-  <p></p>
+  <p>Le but étant de privilégier la performance par rapport à la cohérence, les bases NoSQL utilisent généralement des
+    modèles de cohérence "optimistes" (non bloquants) à ceux des bases <a
+        href="/tech/info/soft/data/dbms/tx/acid">ACID </a> comme :
+  </p>
+  <ul>
+    <li>Cohérence à terme (<em>eventual consistency</em>)</li>
+  </ul>
+  <p>La qualité de ces modèles estgénéralement paramétrables suivant des :</p>
+  <ul>
+    <li><strong>quorums</strong> définissant combien de noeuds doivent être impliqués dans (doivent répliquer) une
+      opération (d'écriture, de lecture). Un quorum faible augmente la performance mais augmente le risque de perte de
+      donnée, alors qu'un quorum élevé augmente la fiabilité mais est moins performant.</li>
+  </ul>
 </section>
 <section>
   <h2>Exemples</h2>

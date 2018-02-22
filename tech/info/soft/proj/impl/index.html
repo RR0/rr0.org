@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Implémentation</title>
 <!--#include virtual="/header-end.html" -->
-<p><em>Implementation </em>est un terme anglais. Les termes français ne sont que très rarement utilisés, la traduction
+<p><em>Implementation</em> est un terme anglais. Les termes français ne sont que très rarement utilisés, la traduction
   littérale étant "implantation", et de meilleures traductions étant "mise en oeuvre", "réalisation" ou, par abus de
   langage, "développement" <span class="note">qui normalement désigne l'activité de production logicielle en générale
     et ne recouvre pas que la discipline d'implémentation</span>.
@@ -41,7 +41,17 @@
     <li><strong>Impérative</strong> qui consiste à donner des ordres à la machine (fait ceci, affecte telle
       valeur à telle variable, si ceci alors cela, boucle tant que, etc.).</li>
     <li><a href="lang/oo">POO</a> (classe, composant, prototype)</li>
-    <li>Déclarative (descriptive, fonctionnelle, logique ou par contraintes)</li>
+    <li><strong>Déclarative</strong>
+      <ul>
+        <li>descriptive</li>
+        <li><strong>fonctionnelle</strong> : sorte de projection "mathématique" de la programmation, les ordres
+          de changements d'états sont remplacés par des appels de fonctions (sans état donc, ce qui
+          donne un avantage d'isolation des données - qui ne sont plus que des paramètres non partagés - et donc de
+          performance - pas besoin de mutex) imbriqués.</li>
+        <li>logique</li>
+        <li>par contraintes</li>
+      </ul>
+    </li>
     <li>autres (événementielle, réactive, <a href="/tech/info/soft/AOP.html">AOP</a>, etc.)</li>
   </ul>
 </section>

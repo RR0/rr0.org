@@ -1,0 +1,46 @@
+<!--#include virtual="/header-start.html" --><title>MapReduce</title><!--#include virtual="/header-end.html" -->
+<p>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Paralléliser massivement des calculs.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le principe de MapReduce est de décomposer un traitement en plusieurs sous-traitements parallélisables : cela
+    demande souvent une expertise et n'est pas possible pour tous les cas.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ul>
+    <li>Une <strong>liste de couples clé-valeur</strong> (comme utilisées dans des <a
+        href="/tech/info/soft/prod/server/sgbd/NoSQL/oa/ecv">ECV</a> ou <a
+        href="/tech/info/soft/prod/server/sgbd/NoSQL/oa/bdod">BDOD</a>) typiquement très grande (de l'ordre du To, voire
+      du Po)
+      <ul>
+        <li>est partitionnée en différentes <strong>lots</strong> (<em>splits</em>)
+          <ul>
+            <li>donc des <strong>mappers</strong> produisent une liste intermédiaire en sortie</li></ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>Cas d'utilisation</h3>
+    <p>Des exemples d'application de MapReduce sont :</p>
+    <ul>
+      <li>la construction d'annuaires inversés (quels pages contiennent quels mots-clés) de <a
+          href="/org/us/company/google">Google</a></li>
+    </ul>
+  </section>
+  <p>Des outils permettant de convertir un problème donné en problème traitable par MapReduce sont :</p>
+  <ul>
+    <li>Pig et Hive</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

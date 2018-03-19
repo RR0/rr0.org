@@ -8,7 +8,8 @@ describe('PageComponent', () => {
   let fixture: ComponentFixture<PageComponent>;
 
   const fakeActivatedRoute = <any>{
-    snapshot: {data: {p: 'myPage'}}
+    snapshot: {data: {p: 'myPage'}},
+    subscribe: () =>{}
   } as ActivatedRoute;
 
   beforeEach(async(() => {

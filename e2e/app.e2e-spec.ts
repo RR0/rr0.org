@@ -1,10 +1,10 @@
-import { AppPage } from './app.po';
+import {AngularTemplatePage} from './app.po';
 
-describe('rr02 App', () => {
-  let page: AppPage;
+describe('angular-template App', () => {
+  let page: AngularTemplatePage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new AngularTemplatePage();
   });
 
   it('should display welcome message', () => {

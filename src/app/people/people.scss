@@ -1,0 +1,40 @@
+.disappeared:after {
+  color: lightgray;
+  font-size: 0.5em;
+  vertical-align: super;
+  content: " disparu";
+}
+
+.document-author {
+  background-color: #F9F9F9;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  color: gray;
+  @include gradientFromLeft;
+}
+
+.temoin {
+  display: inline-block;
+  color: $caviarBackgroundColor;
+  background: linear-gradient(to right, white, $caviarBackgroundColor 2%, $caviarBackgroundColor 98%, white);
+  transform: rotate(-0.5deg);
+  text-align: center;
+}
+
+.temoin1 {
+  @extend .temoin;
+}
+
+.temoin2 {
+  @extend .temoin;
+}
+
+.temoin3 {
+  @extend .temoin;
+}
+
+.people {
+  &.witness {
+    @extend .temoin;
+  }
+}

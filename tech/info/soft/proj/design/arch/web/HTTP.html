@@ -1,0 +1,400 @@
+<!--#include virtual="/header-start.html" -->
+<title>HTTP</title>
+<meta name="url" content="http://www.w3.org/HTTP"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Hyper-Text Transfer Protocol</i> : <a href="../../../../reseau/protocole/index.html">protocole</a> de transfert
+  d'hyper-texte.</p>
+<h2>Besoin</h2>
+<p>Définir un protocole réseau standard pour l'échange de documents sur le Web (pages <a href="HTML.html">HTML</a>).</p>
+<h2>Conception</h2>
+<p>HTTP est un protocole de l'<a href="../../../../reseau/internet/index.html">Internet</a>, basé sur <a
+    href="../../../../reseau/protocole/TCP.html">TCP</a>/<a href="../../../../reseau/internet/IP.html">IP</a> :</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Session</th>
+    <td align="center">
+      <div align="center">HTTP</div>
+    </td>
+  </tr>
+  <tr>
+    <th>Transport</th>
+    <td>
+      <div align="center"><a href="../../../../reseau/protocole/TCP.html">TCP</a></div>
+    </td>
+  </tr>
+  <tr>
+    <th>Réseau</th>
+    <td>
+      <div align="center"><a href="../../../../reseau/internet/IP.html">IP</a></div>
+    </td>
+  </tr>
+</table>
+<p>Une trame HTTP est échangée entre un client HTTP (<a href="client/index.html">navigateur Web</a>) et un serveur HTTP
+  (<a href="../serveur/ServeurWeb.html">serveur Web</a>).</p>
+<p>Elle est constituée de :</p>
+<ul>
+  <li>Un <strong>en-tête</strong> (<em>header</em>) constitué de :
+    <ul>
+      <li>Une commande</li>
+      <li>Une <a href="../../../../reseau/internet/URI.html">URI</a> de ressource à obtenir (monChemin/maResource)</li>
+      <li>Des champs d'en-tête</li>
+    </ul>
+  </li>
+  <li>un saut de ligne</li>
+  <li>Des <strong>données</strong> éventuelles (POST, upload)</li>
+</ul>
+<p>Le serveur répond un code HTTP.</p>
+<h2>Implémentation</h2>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <td rowspan="3" class="titleCorner"></td>
+    <th valign="top"> Version</th>
+    <th colspan="2">1</th>
+    <th rowspan="4"> Caractéristiques standard</th>
+  </tr>
+  <tr>
+    <th valign="top"> Release</th>
+    <th>0</th>
+    <th>1</th>
+  </tr>
+  <tr>
+    <th valign="top"> RFC</th>
+    <th><a href="http://www.w3.org/Protocols/rfc1945/rfc1945">1949</a></th>
+    <th><a href="http://www.w3.org/Protocols/rfc2068/rfc2068">2068</a></th>
+  </tr>
+  <tr>
+    <th> Technologie</th>
+    <th valign="top"> Année</th>
+    <th><a href="../../../../../1996.html">1996</a></th>
+    <th><a href="../../../../../1997.html">1997</a></th>
+  </tr>
+  <tr>
+    <th rowspan="8" valign="top">Méthodes</th>
+    <th valign="top">Récupération</th>
+    <td colspan="2" class="oui"><code>GET</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Envoi</th>
+    <td colspan="2" class="oui"><code>POST</code></td>
+    <td>Envoi des données d'un formulaire typiquement</td>
+  </tr>
+  <tr>
+    <th valign="top">En-tête</th>
+    <td colspan="2" class="oui"><code>HEAD</code></td>
+    <td>Obtenir les infos d'en-tête (<em>HEADer</em>) d'un fichier</td>
+  </tr>
+  <tr>
+    <th valign="top">Placement</th>
+    <td class="non">Non</td>
+    <td class="oui"><code>PUT</code></td>
+    <td>Envoyer un fichier (<em>upload</em>)</td>
+  </tr>
+  <tr>
+    <th valign="top">Suppression</th>
+    <td class="non">Non</td>
+    <td class="oui"><code>DELETE</code></td>
+    <td>Supprimer un fichier (rarement autorisé, voire implémenté par les serveur Web)</td>
+  </tr>
+  <tr>
+    <th valign="top">Options</th>
+    <td class="non">Non</td>
+    <td class="oui"><code>OPTIONS</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Mise à jour</th>
+    <td class="non">Non</td>
+    <td class="oui"><code>UPGRADE</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Trace</th>
+    <td class="non">Non</td>
+    <td class="oui"><code>TRACE</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="28" valign="top">En-tête</th>
+    <th valign="top">Type <a href="MIME.html">MIME</a> du contenu</th>
+    <td colspan="2" class="oui"><code>Content-type</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th valign="top">Longueur du contenu</th>
+    <td colspan="2" nowrap class="oui"><code>Content-length</code></td>
+    <td>Longueur du contenu (en octets) après l'en-tête</td>
+  </tr>
+  <tr>
+    <th valign="top">Langue supportée</th>
+    <td colspan="2" nowrap class="oui"><code>Accept-language</code></td>
+    <td><code>FR/fr</code>, <code>FR/be</code>, <code>EN/uk</code>, <code>EN/us</code>, etc.</td>
+  </tr>
+  <tr>
+    <th valign="top">Dernière modification</th>
+    <td colspan="2" class="oui"><code>Last-Modified</code></td>
+    <td>Cache</td>
+  </tr>
+  <tr>
+    <th valign="top">If-Modified-Since</th>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Utilisé avec Last-Modified</td>
+  </tr>
+  <tr>
+    <th valign="top">If-Unmodified-Since</th>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Utilisé avec Last-Modified</td>
+  </tr>
+  <tr>
+    <th valign="top">Host</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Machine appelée. Permet aux ISP de faire du cache</td>
+  </tr>
+  <tr>
+    <th valign="top">Range</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Permet aux clients de demander une range</td>
+  </tr>
+  <tr>
+    <th valign="top">Content-Range</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Spécifie si une entité partielle doit être insérée</td>
+  </tr>
+  <tr>
+    <th valign="top">If-Range</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Si l'entité est inchangée, retourner la(les) partie(s) que j'ai manquées, sinon retourner la nouvelle entité
+      entière
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">Etag</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Cache : Validateurs opaques (choisis par le serveur)</td>
+  </tr>
+  <tr>
+    <th valign="top">If-Match</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Utilisé avec Etag</td>
+  </tr>
+  <tr>
+    <th valign="top">If-None-Match</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Utilisé avec Etag</td>
+  </tr>
+  <tr>
+    <th valign="top">Cache-Control</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Contrôle de ce qui est caché (public, private, no-cache), ce qui peut être stocké (no-store), le mécanisme
+      d'expiration (max-age, min-fresh, max-stale) et must-revalidate, proxy-revalidate, no-transform
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">Connection</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Permet au serveur d'indiquer que la connexion va être fermée (Connection: close)</td>
+  </tr>
+  <tr>
+    <th valign="top">Expires</th>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Date et heure après laquelle le document doit être considéré comme expiré</td>
+  </tr>
+  <tr>
+    <th valign="top">Keep-Alive</th>
+    <td></td>
+    <td></td>
+    <td>Ne fonctionne pas bien avec les proxy chaînés</td>
+  </tr>
+  <tr>
+    <th valign="top">Via</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Utilisé avec TRACE</td>
+  </tr>
+  <tr>
+    <th valign="top">Max-Forwards</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Utilisé avec TRACE</td>
+  </tr>
+  <tr>
+    <th valign="top">Upgrade</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Changement de protocole sur une connexion ouverte</td>
+  </tr>
+  <tr>
+    <th valign="top">Proxy-authenticate</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Authentification des caches de proxies</td>
+  </tr>
+  <tr>
+    <th valign="top">Proxy-Authorization</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Authentification des caches de proxies</td>
+  </tr>
+  <tr>
+    <th valign="top">Content-MD5</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Vérification du test d'intégrité de condensé de message MD5</td>
+  </tr>
+  <tr>
+    <th valign="top">Content-Transfer-Encoding</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Compression de bond en bond des entités</td>
+  </tr>
+  <tr>
+    <th valign="top">Vary</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Indique quelles dimensions de la réponse varie</td>
+  </tr>
+  <tr>
+    <th valign="top">Alternates</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Négotiation future de contenu : quelles sont les représentations alternatives possibles</td>
+  </tr>
+  <tr>
+    <th valign="top">Refresh: <em>n</em>;URL="<em>uneURL</em>"</th>
+    <td></td>
+    <td></td>
+    <td>Recharge une <a href="../../../../reseau/internet/URL.html">URL</a> au bout de <em>n</em> secondes.</td>
+  </tr>
+  <tr>
+    <th valign="top">Age</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Le temps que la réponse a passé dans les caches sur le chemin réseau</td>
+  </tr>
+  <tr>
+    <th rowspan="10" valign="top">Code de retour</th>
+    <th valign="top">Ok</th>
+    <td colspan="2" class="oui">200</td>
+    <td>Page trouvée</td>
+  </tr>
+  <tr>
+    <th valign="top">Contenu partiel</th>
+    <td colspan="2" class="oui">206</td>
+    <td>Le serveur n'a pu répondre qu'en partie à la requête</td>
+  </tr>
+  <tr>
+    <th valign="top">Déplacé temporairement</th>
+    <td colspan="2" class="oui">302</td>
+    <td><p>L'URL pour la ressource demandée est correcte, mais l'objet est temporairement ailleurs. De futures requêtes
+      fonctionneront. </p></td>
+  </tr>
+  <tr>
+    <th valign="top">Non modifié</th>
+    <td colspan="2" class="oui">304</td>
+    <td>Indique au client Web que le rechargement de la page n'est pas nécessaire</td>
+  </tr>
+  <tr>
+    <th valign="top">Non autorisé</th>
+    <td colspan="2" class="oui">401</td>
+    <td>Authentification requise</td>
+  </tr>
+  <tr>
+    <th valign="top">Interdit</th>
+    <td colspan="2" class="oui">403</td>
+    <td>La requête est comprise mais l'accès n'est pas autorisé (étant donné les droits déduits de l'authentification)
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">Non trouvé</th>
+    <td colspan="2" class="oui">404</td>
+    <td>Page non trouvée</td>
+  </tr>
+  <tr>
+    <th valign="top">Méthode non autorisée</th>
+    <td colspan="2" class="oui">405</td>
+    <td>Resource demandée via une méthode non autorisée</td>
+  </tr>
+  <tr>
+    <th valign="top">Erreur interne du serveur</th>
+    <td colspan="2" class="oui">500</td>
+    <td>Erreur inatendue ayant empêché de servir la requête. Toutes les erreurs de modules annexes (<a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a>/<a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>, CGI, etc.) du serveur provoquent cette
+      erreur.
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">Service indisponible</th>
+    <td colspan="2" class="oui">503</td>
+    <td>Serveur temporairement surchargé</td>
+  </tr>
+  <tr>
+    <th rowspan="2" valign="top">Authentification</th>
+    <th valign="top">Basic</th>
+    <td colspan="2" class="oui">Oui</td>
+    <td>Pop-up navigateur, mot de passe en clair</td>
+  </tr>
+  <tr>
+    <th valign="top">Digest</th>
+    <td class="non">Non</td>
+    <td class="oui">Oui</td>
+    <td>Remplacement de Basic authentication (hâchage)</td>
+  </tr>
+</table>
+<h2>Exemples</h2>
+<p>Un exemple de requête HTTP 1.1 est :</p>
+<blockquote><strong><code>POST </code></strong><code>javarome/search.html<br> <strong>Content-type:</strong>
+  application-ext/form-data<br> <strong>Content-length:</strong> 40<br> <strong>Accept-language:</strong> FR/fr,
+  EN/uk<br> <br> query<strong>=</strong>HTTP<strong>&amp;</strong>query<strong>=</strong>protocol<strong>&amp;</strong>result<strong>=</strong>display</code>
+</blockquote>
+<h2>Notes</h2>
+<ul>
+  <li>Les <a href="../serveur/ServeurWeb.html">serveurs HTTP</a> sont également appelés serveurs Web</li>
+  <li>Des clients HTTP typiques sont les <a href="client/index.html">navigateurs Web</a></li>
+  <li>Une ressource HTTP sur Internet est localisée via une <a href="../../../../reseau/internet/URL.html">URL</a> HTTP
+  </li>
+  <li>Les <a href="../serveur/ServeurApplicatif.html">serveurs applicatifs</a> sont souvent également des serveurs HTTP
+  </li>
+  <li>Utilise les types <a href="MIME.html">MIME</a></li>
+  <li><a href="client/Cookie.html">Cookies</a></li>
+  <li>chunked encoding [1.1]</li>
+  <li>Respect du TTL des <a href="../../../../reseau/DNS.html">DNS</a> [1.1]</li>
+  <li>Diverses extensions existent, comme <a href="../../../../WebDAV.html">WebDAV</a>.</li>
+</ul>
+<h2>Limitations</h2>
+<ul>
+  <li>Basé sur les protocoles de courrier Internet (<a href="../../../../reseau/protocole/SMTP.html">SMTP</a>, <a
+      href="MIME.html">MIME</a>) et donc long à décoder, verbeux, découverte de la longueur à la fin de la lecture.</li>
+  <li><strong>Sans état </strong>: Aucun état n'est conservé entre deux requêtes/réponses HTTP. Ceci est généralement
+    contourné par :
+    <ul>
+      <li>les <a href="client/Cookie.html">cookies</a> HTTP</li>
+      <li>la réécriture d'<a href="../../../../reseau/internet/URL.html">URL</a> (<em>URL rewriting</em>)</li>
+    </ul>
+  </li>
+  <li><strong>Déconnecté</strong> : ne traite qu'une seule <a href="../../../../reseau/internet/URL.html">URL</a> par
+    connection <a href="../../../../reseau/protocole/TCP.html">TCP</a>. Une fois la réponse à la requête envoyée, la
+    connexion est théoriquement terminée (close). Des contournement sont l'ouverture de plusieurs connexions simultanées
+    (4 par défaut pour Netscape).
+    <ul>
+      <li>des alternatives pour faire du push sont :
+        <ul>
+          <li>les connexions persistantes de HTTP 1.1</li>
+          <li>les connexions en attente (pending)</li>
+          <li>le rechargement automatisé (refresh après expiration)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->
+

@@ -1,0 +1,184 @@
+<!--#include virtual="/header-start.html" -->
+<title>Protocole</title>
+<!--#include virtual="/header-end.html" -->
+<h2>Besoin</h2>
+<p>Définir des règles d'échanges (codage/décodage) entre acteurs.</p>
+<h2>Analyse</h2>
+<p>Les protocoles peuvent être :</p>
+<ul>
+  <li><strong><a href="..">réseau</a></strong></li>
+</ul>
+<h3>Réseau</h3>
+<p>Les protocoles réseaux sont typiquement répartis en couches. Seule la couche n dépend de la couche n-1 :</p>
+<ol>
+  <li><strong>Physique</strong> : niveau des <em>hubs </em>par exemple</li>
+  <li><strong>Liaison</strong> de données : niveau des <em>switches </em>par exemple</li>
+  <li><strong>Réseau</strong> : niveau des routeurs par exemple</li>
+  <li><strong>Transport</strong> : </li>
+  <li><strong>Session</strong> : </li>
+  <li><strong>Présentation</strong></li>
+  <li><strong>Application</strong> :</li>
+</ol>
+<p>Java exploite la pile <a href="TCP.html">TCP</a>/IP présente sur la plate-forme native (OS).</p>
+<h2>Exemples</h2>
+<p>Des exemples de protocoles réseau sont :</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Couches OSI</th>
+    <th colspan="14">Exemples</th>
+    <th>Couches <a href="TCP.html">TCP</a></th>
+  </tr>
+  <tr>
+    <th>Application</th>
+    <td colspan="2">
+      <div align="center"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/webservice/JAX-RPC.html">JAX-RPC</a>
+      </div>
+    </td>
+    <td colspan="2">JavaMail</td>
+    <td colspan="2">
+      <div align="center"><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a></div>
+    </td>
+    <td><a href="../../prod/orb/corba/index.html">CORBA</a></td>
+    <td></td>
+    <td colspan="2"></td>
+    <td>Traceroute</td>
+    <td>Ping</td>
+    <td></td>
+    <td></td>
+    <th rowspan="4">Application</th>
+  </tr>
+  <tr>
+    <th>Présentation</th>
+    <td colspan="2"><a href="/tech/info/soft/data/doc/ASCII.html">ASCII</a></td>
+    <td>PICT</td>
+    <td><a href="/tech/info/soft/data/doc/image/GIF.html">GIF</a></td>
+    <td><a href="/tech/info/soft/data/doc/image/JPG.html">JPEG</a></td>
+    <td colspan="2"><a href="/tech/info/soft/data/doc/EBCDIC.html">EBCDIC</a></td>
+    <td></td>
+    <td colspan="2">MIDI</td>
+    <td>Quicktime</td>
+    <td>MPEG</td>
+    <td>AVI</td>
+    <td><a href="/tech/info/soft/data/doc/image/TIFF.html">TIFF</a></td>
+  </tr>
+  <tr>
+    <th rowspan="2">Session</th>
+    <td colspan="2">
+      <div align="center"><a href="SOAP.html">SOAP</a></div>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td colspan="2"></td>
+    <td></td>
+    <td colspan="2"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <div align="center"><a href="../../proj/design/arch/web/HTTP.html">HTTP</a></div>
+    </td>
+    <td colspan="2">
+      <div align="center"><a href="SMTP.html">SMTP</a></div>
+    </td>
+    <td>
+      <div align="center"><a href="POP.html">POP3</a></div>
+    </td>
+    <td>JRMP</td>
+    <td colspan="2">
+      <div align="center"><a href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a></div>
+    </td>
+    <td>
+      <div align="center"><a href="FTP.html">FTP</a></div>
+    </td>
+    <td colspan="2">
+      <div align="center"><a href="../DNS.html">DNS</a></div>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th rowspan="2">Transport</th>
+    <td colspan="9">
+      <div align="center"><a href="/tech/info/soft/securite/confidentialite/cryptage/SSL.html">SSL</a></div>
+    </td>
+    <td rowspan="2"><a href="/tech/info/soft/reseau/UDP.html">UDP</a></td>
+    <td colspan="2"></td>
+    <td rowspan="2">
+      <center>
+        SPX
+      </center>
+    </td>
+    <td></td>
+    <th>Transport</th>
+  </tr>
+  <tr>
+    <td colspan="9">
+      <div align="center"><a href="TCP.html">TCP</a></div>
+    </td>
+    <td colspan="2">
+      <div align="center"><a href="/tech/info/soft/reseau/internet/ICMP.html">ICMP</a></div>
+    </td>
+    <td></td>
+    <th rowspan="2">Réseau</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Réseau</th>
+    <td colspan="12">
+      <div align="center"><a href="/tech/info/soft/reseau/internet/IP.html">IP</a></div>
+    </td>
+    <td><a href="IPX.html">IPX</a></td>
+    <td><a href="NetBEUI.html">NetBEUI</a></td>
+  </tr>
+  <tr>
+    <td colspan="14">
+      <div align="center"><a href="ARP.html">ARP</a>/<a href="/tech/info/soft/reseau/protocole/RARP.html">RARP</a></div>
+    </td>
+    <th rowspan="3">Liaison</th>
+  </tr>
+  <tr>
+    <th>Liaison</th>
+    <td colspan="3">
+      <div align="center"><a href="../Ethernet.html">Ethernet</a></div>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><a href="../TokenRing.html">Token Ring</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Physique</th>
+    <td>Paire torsadée</td>
+    <td>Câble coaxial</td>
+    <td colspan="2">Fibre optique</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<h2>Notes</h2>
+<ul>
+  <li> Sous Unix, le fichier <code>/etc/protocols</code> fait correspondre un numéro (propre au système) de protocole
+    avec un nom officiel ou des synonymes. Par exemple : <br/> <code>ip 0 IP<br/> icmp 1 ICMP<br/> tcp 6 TCP<br/> udp 17
+      UDP</code></li>
+</ul>
+<!--#include virtual="/footer.html" -->

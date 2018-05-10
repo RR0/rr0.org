@@ -1,0 +1,30 @@
+<!--#include virtual="/header-start.html" -->
+<title>CORS</title>
+<!--#include virtual="/header-end.html" -->
+<em>Cross-Origin Resource Sharing : partage de ressource d'une autre origine.</em>
+<section>
+  <h2>Besoin</h2>
+  <p>Permettre de contourner la Same Origin Policy.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Aujourd'hui la Same Origin Policy impose que toute requête émanant d'une page web ne puisse se connecter qu'au
+    serveur d'où elle vient.</p>
+  <p>Cependant cela est trop contraignant lorsque cette page veut exploiter d'autres ressources sur le web, comme :</p>
+  <ul>
+    <li>des medias (images, videos, etc.) stockés sur un autre serveur</li>
+    <li>des APIs tierces en ligne</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Une extension du protocole <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> permet une négociation entre les serveurs tiers en le client.</p>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li>Thierry Templier : "<a href="http://restlet.com/company/blog/2016/09/27/how-to-fix-cors-problems/">How to fix
+      CORS problems</a>", 2016-09-27</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

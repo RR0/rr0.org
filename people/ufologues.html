@@ -151,6 +151,7 @@
   angular.module('rr0.people')
     .controller('UfologistsController', ['$scope', '$log', function ($scope, $log) {
       $scope.countries = [
+        {code: 'au', name: 'Australie', on: true},
         {code: 'de', name: 'Allemands', on: true},
         {code: 'us', name: 'Américains', on: true},
         {code: 'au', name: 'Australiens', on: true},
@@ -191,9 +192,10 @@
         {name: 'B., W.', country: 'us'},
         {name: 'Ballester Olmos, Vicente Juan', country: 'es'},
         {name: 'Baker, Alan', country: 'us'},
-        {name: 'Barker, Gray Roscoe</span>', country: 'us', deceased: true},
+        {name: 'Barker, Gray Roscoe', country: 'us', deceased: true},
         {name: 'Barnet, Barney', country: 'us'},
         {name: 'Barrow, Robert', country: 'us'},
+        {name: 'Basterfield, Keith', country: 'au'},
         {name: 'Bennewitz, Paul', country: 'us'},
         {name: 'Beckley, Timothy Green', country: 'us'},
         {name: 'Bergier, Jacques', country: 'fr', deceased: true},
@@ -267,7 +269,7 @@
         {name: 'Fawcett, George D.', country: 'us'},
         {name: 'Faudrin, René', country: 'fr'},
         {name: 'Figuet, Michel', country: 'fr', deceased: true},
-        {name: 'Fouéré, Francine', country: 'fr'},
+        {name: 'Fouéré, Francine', country: 'fr', deceased: true},
         {name: 'Fouéré, René', country: 'fr', deceased: true},
         {name: 'Garreau, Charles', country: 'fr', deceased: true},
         {name: 'Gatti, Francis', country: 'fr'},

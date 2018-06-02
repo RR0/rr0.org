@@ -1,0 +1,41 @@
+<!--#include virtual="/header-start.html" -->
+<title>Tri par insertion</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Insertion sort</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href=".">Trier</a> un ensemble de données petit ou presque trié.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p><a href="Bubble.html">Tri à bulle</a> amélioré : Parcourir les éléments et les insérer là où ils doivent êntre dans
+    les précédents déjà triés.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <pre><code>public static void insertionSort(int array[]) {
+  for (int currentPos = 1; currentPos < array.length; currentPos++) {   // Start at 2nd element   
+    int key = array[currentPos];
+    int rightKeyPos = currentPos;
+    while (rightKeyPos > 0 && array[rightKeyPos - 1] > key) {           // Bubble down         
+      array[rightKeyPos] = array[rightKeyPos - 1];
+      rightKeyPos--;
+    }        
+    array[rightKeyPos] = key;
+  }
+}</code></pre>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li><a href="/tech/info/soft/proj/impl/algo/Complexite.html">Complexité</a> temporelle : O(n) au mieux si presque
+      trié, O(n<sup>2</sup>) en moyenne et au pire.</li>
+    <li><a href="/tech/info/soft/proj/impl/algo/Complexite.html">Complexité</a> spatiale : en place (ne fait que bouger
+      les éléments existants)</li>
+    <li>Tri stable</li>
+    <li>Utilisé par d'autres implémentations de tris (<a href="Quick.html">rapide</a>, <a href="Heap.html">par tas</a>)
+      pour "finir" de trier les petits ensembles restants.</li></ul>
+</section><!--#include virtual="/footer.html" -->

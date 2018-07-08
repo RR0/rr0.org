@@ -15,16 +15,18 @@ export class PageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private netService: NetService, private router: Router) {
     this.route.params.subscribe(res => {
-      const url: string = decodeURI(res.pageId);
-      console.log('url', url);
-      if (url) {
+      let url: string = decodeURI(res.pageId);
+      url = url.replace('-', '/');
+      if (url && !url.startsWith('404')) {
+        console.log(`Requested to serve page "${url}"`);
         this.netService.getPage(url)
           .subscribe(document => {
             this.page = document;
             this.text = this.page.querySelector('.text').innerHTML;
-            console.log('template', document);
+            console.log('Read', document);
           }, error => {
-            router.navigate(['404', error]);
+            console.log(`Could not fetch ${url}`, error);
+            router.navigate(['404'], {skipLocationChange: true});
           });
       }
     });

@@ -90,7 +90,6 @@ blockquote {
   margin: 0;
   margin-left: 1.5em;
 }
-
 span.question {
   font-weight: bold;
   &::before {
@@ -100,7 +99,6 @@ span.question {
     content: " : ";
   }
 }
-
 span.answer {
   &::before {
     content: "";

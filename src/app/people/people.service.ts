@@ -50,39 +50,6 @@ export class PeopleService {
   constructor(private commonsService: CommonsService) {
   }
 
-  getCopyright() {
-    return this.copyright;
-  }
-
-  getAuthors() {
-    return this.authors;
-  }
-
-  setAuthor(a, aLink) {
-    if (a) {
-      var author = this.setPName(a);
-      author.link = this.peopleLink(a, aLink);
-      this.authors.push(author);
-    }
-  }
-
-  setCopyright(c, cLink) {
-    this.copyright = (<RR0Window>window).copyright = c;
-  }
-
-  addAuthor(a, aLink, c, cLink) {
-    if (a) {
-      this.setAuthor(a, aLink);
-    }
-    if (c) {
-      this.setCopyright(c, cLink);
-    }
-  }
-
-  setPeopleName(name) {
-    this.setPName(name);
-  }
-
   /**
    * @param {String} p People's name
    * @param {String} [pLink] a href link, or a symbolic link, or null
@@ -117,8 +84,37 @@ export class PeopleService {
     return pLink;
   }
 
-  getPeople() {
-    return org.rr0.context.people;
+  getCopyright() {
+    return this.copyright;
+  }
+
+  getAuthors() {
+    return this.authors;
+  }
+
+  setAuthor(a, aLink) {
+    if (a) {
+      var author = this.setPName(a);
+      author.link = this.peopleLink(a, aLink);
+      this.authors.push(author);
+    }
+  }
+
+  setCopyright(c, cLink) {
+    this.copyright = (<RR0Window>window).copyright = c;
+  }
+
+  addAuthor(a, aLink, c, cLink) {
+    if (a) {
+      this.setAuthor(a, aLink);
+    }
+    if (c) {
+      this.setCopyright(c, cLink);
+    }
+  }
+
+  setPeopleName(name) {
+    this.setPName(name);
   }
 
   private setPName(name) {
@@ -126,5 +122,9 @@ export class PeopleService {
       org.rr0.context.people = new People(name);
       return org.rr0.context.people;
     }
+  }
+
+  getPeople() {
+    return org.rr0.context.people;
   }
 }

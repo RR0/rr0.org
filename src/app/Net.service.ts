@@ -16,10 +16,6 @@ export class NetService {
     return this.http.get(fullUrl, {responseType: 'document'});
   }
 
-  onExists(l) {
-    return this.$http.head(l);
-  }
-
   /**
    *
    * @param e The element to replace into
@@ -73,6 +69,11 @@ export class NetService {
           }).error(failProc);
       }
     }
+  }
+
+
+  onExists(l) {
+    return this.$http.head(l);
   }
 
   /**

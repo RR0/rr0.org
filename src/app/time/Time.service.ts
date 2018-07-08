@@ -432,6 +432,12 @@ class Duration {
 export class TimeService {
   chartZone = null;
 
+  $locale = {
+    DATETIME_FORMATS: {
+      MONTH: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+    }
+  };
+
   constructor(private commonsService: CommonsService) {
     'use strict';
 
@@ -525,7 +531,6 @@ export class TimeService {
   NewDuration() {
     return new Duration();
   }
-
   NewMoment() {
     return new Moment();
   }
@@ -630,7 +635,6 @@ export class TimeService {
   monthNames() {
     return this.$locale.DATETIME_FORMATS.MONTH;
   }
-
   /*            getTime: function () {
    return addDate();
    },*/
@@ -643,7 +647,6 @@ export class TimeService {
     }
     return this.monthNames()[m - 1];
   }
-
   /**
    * Builds a address to link to a year page/directory.
    *
@@ -663,16 +666,14 @@ export class TimeService {
     }
     return yLink;
   }
-
   dayOfWeekNames() {
     return this.$locale.DATETIME_FORMATS.DAY;
   }
-
   dayOfWeekName(d) {
     return this.dayOfWeekNames()[d];
   }
 
-  getDayOfWeek(y, m?, d?) {
+  getDayOfWeek(y?, m?, d?) {
     return this.getDate(y, m, d).getDay();
   }
 
@@ -720,19 +721,16 @@ export class TimeService {
     }
     return t.year;
   }
-
   setHour(h) {
     if (h) {
       this.getTime().hour = h;
     }
   }
-
   setMinutes(mn) {
     if (mn) {
       this.getTime().minutes = mn;
     }
   }
-
   getHour() {
     return this.getTime().hour;
   }

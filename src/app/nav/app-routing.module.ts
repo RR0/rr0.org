@@ -12,15 +12,15 @@ const routes: Routes = [
   },
   {
     path: 'p/:pageId',
-    component: PageComponent
-  },
-  {
-    path: '404',
-    component: PageNotFoundComponent
+    component: PageComponent,
   },
   {
     path: '**',
     component: RedirectComponent
+  },
+  {
+    path: '404',
+    component: PageNotFoundComponent
   },
 ];
 

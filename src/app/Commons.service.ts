@@ -453,7 +453,6 @@ function OrgModule(): void {
 
   return this;
 }
-
 export const org = new OrgModule();
 
 @Injectable()
@@ -464,54 +463,42 @@ export class CommonsService {
   text(e) {
     return org.text(e);
   }
-
   nounToLink(l, k) {
     return org.nounToLink(l, k);
   }
-
   addEndingSlash(l) {
     return org.addEndingSlash(l);
   }
-
   getUri() {
     if (!this.docUri) {
       this.docUri = window.location.pathname;
     }
     return this.docUri;
   }
-
   validLink(l) {
     return org.validLink(l);
   }
-
   zero(v) {
     return org.zero(v);
   }
-
   loadCSS(f) {
     return org.loadCSS(f);
   }
-
   loadJS(f) {
     return org.loadJS(f);
   }
-
   parentLink(l) {
     return org.parentLink(l);
   }
-
   initStructure() {
     org.rr0.initStructure();
   }
-
   hasClass(e, c) {
     org.hasClass(e, c);
   }
-
   capitalizeFirstLetter(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
-
   camelize(s) {
     var camelized = '';
     var wasWord = false;

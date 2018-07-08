@@ -10,28 +10,6 @@ export class LangService {
   constructor(private commonsService: CommonsService, private netService: NetService) {
   }
 
-  /**
-   * Get the URI of the original document, if any.
-   * By convention, a suffixed document is a translation, and the original is without this suffix.
-   * Thus, an original is always without suffix, typically index.html.
-   * So an original english will be index.html (with html lang="en") and its translation index_fr.html,
-   * and an original french will be index.html (with html lang="fr") and there will be no translation (or its translation will be index_en.html),
-   * If the suffix is not explicit, we need to check.
-   *
-   * uri:https://rr0.org/data/a/a/a/a/m/Something/index_fr.html --> original is https://rr0.org/data/a/a/a/a/m/Something/index.html
-   * uri:https://rr0.org/data/a/a/a/a/m/Something/index.fr --> original is the same
-   * uri:https://rr0.org/data/a/a/a/a/m/Something/ --> if https://rr0.org/data/a/a/a/a/m/Something/index_fr.html exists, original is https://rr0.org/data/a/a/a/a/m/Something/index.html
-   *
-   * @param uri
-   */
-
-  setLang(l?) {
-    if (!l) {
-      l = document.documentElement.lang;
-    }
-    this.docLang = l;
-  }
-
   checkAlternate(uri, origStatus, transStatus) {
     var dotPos = uri.lastIndexOf('.');
     var pageSpecified = dotPos > 0;
@@ -72,6 +50,28 @@ export class LangService {
         origFound(null);
       }
     });
+  }
+
+  /**
+   * Get the URI of the original document, if any.
+   * By convention, a suffixed document is a translation, and the original is without this suffix.
+   * Thus, an original is always without suffix, typically index.html.
+   * So an original english will be index.html (with html lang="en") and its translation index_fr.html,
+   * and an original french will be index.html (with html lang="fr") and there will be no translation (or its translation will be index_en.html),
+   * If the suffix is not explicit, we need to check.
+   *
+   * uri:https://rr0.org/data/a/a/a/a/m/Something/index_fr.html --> original is https://rr0.org/data/a/a/a/a/m/Something/index.html
+   * uri:https://rr0.org/data/a/a/a/a/m/Something/index.fr --> original is the same
+   * uri:https://rr0.org/data/a/a/a/a/m/Something/ --> if https://rr0.org/data/a/a/a/a/m/Something/index_fr.html exists, original is https://rr0.org/data/a/a/a/a/m/Something/index.html
+   *
+   * @param uri
+   */
+
+  setLang(l?) {
+    if (!l) {
+      l = document.documentElement.lang;
+    }
+    this.docLang = l;
   }
 
   private notifyTrans(translation, transFound) {

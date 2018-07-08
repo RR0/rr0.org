@@ -136,7 +136,6 @@ a {
 abbr {
   border-bottom: 1px dotted #999;
 }
-
 @media (max-width: $twoPanes) {
   /*@media (touch-enabled),(-webkit-touch-enabled),(-moz-touch-enabled),(-o-touch-enabled),(-ms-touch-enabled) {*/
   abbr[title]:after {

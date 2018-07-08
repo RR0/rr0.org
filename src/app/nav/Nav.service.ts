@@ -4,6 +4,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {CommonsService, org} from '../Commons.service';
 import {NetService} from '../Net.service';
 import {TimeService} from '../time/Time.service';
+import {Router} from '@angular/router';
 
 function NavLink(l, url, t) {
   this.label = l;
@@ -34,6 +35,9 @@ export class NavService {
   title = '';
   author = '';
   copyright = '';
+
+  private currentLevel = 1;
+
   starts: Start[] =
     [
       {
@@ -101,10 +105,18 @@ export class NavService {
         label: 'Politique'
       }
     ];
-  private currentLevel = 1;
 
-  constructor(private commonsService: CommonsService, private netService: NetService, private timeService: TimeService, private titleService: Title, private metaService: Meta) {
-    'use strict';
+  constructor(private commonsService: CommonsService, private netService: NetService, private timeService: TimeService, private titleService: Title, private metaService: Meta, private router: Router) {
+    /*router.events.subscribe((event: Event) => {
+        console.log('event', event);
+      if (event instanceof NavigationStart) {
+        console.log('navstart', event);
+      }
+      // NavigationEnd
+      // NavigationCancel
+      // NavigationError
+      // RoutesRecognized
+    });*/
   }
 
   setTitle(newTitle: string) {

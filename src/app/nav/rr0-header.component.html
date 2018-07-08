@@ -8,15 +8,16 @@
   <nav>
     <h1>Navigation</h1>
     <ul>
-      <li data-ng-cloak *ngIf="isFramed" class="constant">
+      <li *ngIf="isFramed" class="constant">
         <a href="/" class="home"> <span title="Home" class="label">RR0</span> </a>
       </li>
-      <li class="constant" data-ng-cloak [hidden]="isFramed">
-        <div class="search"></div>
+      <li class="constant"> <!--[hidden]="isFramed"-->
+        <rr0-search></rr0-search>
       </li>
-      <li data-ng-cloak data-ng-if="isFramed" class="collapsed"><i class="fa fa-angle-right"></i></li>
-      <li *ngFor="let p of ps" data-ng-if="p.link && p.label" class="constant {{p.style}}">
-        <a href="{{p.link}}"> <span [innerHTML]="p.label" [title]="p.title"></span> </a>
+      <li *ngFor="let p of ps" class="constant {{p.style}}">
+        <a href="{{p.link}}" *ngIf="p.link && p.label">
+          <span [innerHTML]="p.label" [title]="p.title"></span>
+        </a>
       </li>
       <!--li data-ng-repeat-end data-ng-cloak *ngIf="p.link && p.label" class="collapsed">
                 <i class="fa fa-angle-right"></i></li-->
@@ -24,12 +25,14 @@
         <a href="#contents" (click)="sectionClick('#contents')" class="outline-title" id="out-top">
           <span class="constant" [innerHTML]="outline" title="Début de l'article"></span> </a>
         <ul class="outline">
-          <li [tabindex]="101+$index" class="constant" *ngFor="let s of sections" data-ng-click="sectionClick(s)">
-            <a href="#{{s.id}}" id="out-{{s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+          <li [tabindex]="101+i" class="constant" *ngFor="let s of sections; index as i" (click)="sectionClick(s)">
+            <a href="#{{s.id}}" id="out-{{s.id}}">
+              <span [innerHTML]="s.outlineLabel"></span>
+            </a>
           </li>
         </ul>
       </li>
-      <li *ngFor="let n of ns" data-ng-cloak class="collapsed">
+      <li *ngFor="let n of ns" class="collapsed">
         <div *ngIf="n.link && n.label">
           <i class="fa fa-angle-right"></i>
         </div>
@@ -41,7 +44,10 @@
         <span [innerHTML]="alternate"></span>
       </li>
       <li class="toggleMap constant">
-        <a href='#'><span class="label">Carte</span> <span><i class="fa fa-map-marker"></i></span></a>
+        <a href='#'>
+          <span class="label">Carte</span>
+          <span><i class="fa fa-map-marker"></i></span>
+        </a>
       </li>
     </ul>
   </nav>

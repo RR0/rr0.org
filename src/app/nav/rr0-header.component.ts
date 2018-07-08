@@ -26,12 +26,17 @@ export class HeaderComponent implements OnInit {
   currentSection;
   alternate;
   header: HTMLElement;
+  titleUrl: string;
 
   constructor(private commonsService: CommonsService, private langService: LangService, private peopleService: PeopleService, private timeService: TimeService, private navService: NavService, private elem: ElementRef) {
   }
 
   ngOnInit() {
-    this.isFramed = window !== top;
+    try {
+      this.isFramed = window !== top;
+    } catch (e) {
+      console.error(e);
+    }
     const el = this.elem.nativeElement;
 
     this.scrolled = <HTMLElement>document.querySelector('.contents');
@@ -74,62 +79,11 @@ export class HeaderComponent implements OnInit {
     this.updateHeading();
     this.updatePos();
     // });
+    this.processMeta();
   }
 
   getHeadingHeight() {
     return this.nav.offsetTop + this.getNavHeight();
-  }
-
-  initPeople(p) {
-    this.peopleService.setPeopleName(p);
-  }
-
-  addNavElement(c) {
-    return this.createNavElement(c);
-  }
-
-  titleClick() {
-    if (this.isOutlineVisible()) {
-      this.outline.classList.add('clicked');
-    } else if (this.outline) {
-      this.outline.classList.remove('clicked');
-    }
-  }
-
-  init(s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
-    this.navInit(s, sLink, c, cLink, p, pLink, n, nLink);
-
-    const startNav = this.navService.getStartNav();
-    if (window === top) {
-      this.addPrev(startNav, startNav.title, 'start');
-      this.addPrev({
-        label: '' + this.navService.getContents(),
-        link: this.navService.getContentsURL()
-      }, 'Table des mati\xE8res', 'toc');
-      this.navService.getPrev().then(function (pp) {
-        this.addPrev(pp, 'Pr\xE9c\xE9dent', 'prev');
-      });
-      this.navService.getNext().then(function (nn) {
-        this.addNext(nn, 'Suivant', 'next');
-      });
-    } else {
-      //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
-      //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";
-    }
-
-    this.alternate = null;
-    const alternateClass = 'alternate';
-
-    this.createNavElement(alternateClass);
-    this.checkAlt();
-  }
-
-  initAuthor(a, aLink, c, cLink) {
-    this.peopleService.addAuthor(a, aLink, c, cLink);
-  }
-
-  sectionClick(section) {
-    this.scrollTo(section.id);
   }
 
   private isOutlineVisible() {
@@ -194,17 +148,8 @@ export class HeaderComponent implements OnInit {
     animateScroll();
   }
 
-  private updateSearchPos(triggerSelector) {
-    const trigger = document.querySelector(triggerSelector);
-    if (trigger) {
-      if (!this.searchResults) {
-        this.searchResults = document.querySelector('.search-result');
-      }
-      if (this.searchResults) {
-        this.searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
-        this.searchResults.style.left = '';
-      }
-    }
+  initPeople(p) {
+    this.peopleService.setPeopleName(p);
   }
 
   private updateOutlinePos(triggerSelector) {
@@ -260,16 +205,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  private select(toSelect) {
-    let toSelectElem;
-    if (toSelect) {
-      toSelectElem = document.querySelector('#out-' + toSelect.id);
-      /*if (currentSection && toSelectElem[0] === currentSection[0]) {
-       return;
-       }*/
-      toSelectElem.classList.add('hovered');
-    }
-    return toSelectElem;
+  addNavElement(c) {
+    return this.createNavElement(c);
   }
 
   private selectOutline(newSelection) {
@@ -297,6 +234,109 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  titleClick() {
+    if (this.isOutlineVisible()) {
+      this.outline.classList.add('clicked');
+    } else if (this.outline) {
+      this.outline.classList.remove('clicked');
+    }
+  }
+
+  init(s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
+    this.navInit(s, sLink, c, cLink, p, pLink, n, nLink);
+
+    const startNav = this.navService.getStartNav();
+    if (window === top) {
+      this.addPrev(startNav, startNav.title, 'start');
+      this.addPrev({
+        label: '' + this.navService.getContents(),
+        link: this.navService.getContentsURL()
+      }, 'Table des mati\xE8res', 'toc');
+      this.navService.getPrev().then(function (pp) {
+        this.addPrev(pp, 'Pr\xE9c\xE9dent', 'prev');
+      });
+      this.navService.getNext().then(function (nn) {
+        this.addNext(nn, 'Suivant', 'next');
+      });
+    } else {
+      //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
+      //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";
+    }
+
+    this.alternate = null;
+    const alternateClass = 'alternate';
+
+    this.createNavElement(alternateClass);
+    this.checkAlt();
+  }
+
+  initAuthor(a, aLink, c, cLink) {
+    this.peopleService.addAuthor(a, aLink, c, cLink);
+  }
+
+  sectionClick(section) {
+    this.scrollTo(section.id);
+  }
+
+// TODO: process meta of loaded page, not main page!
+  private processMeta() {
+    const metas = document.querySelectorAll('meta');
+    metas.forEach(meta => {
+      var name = meta.getAttribute('name');
+      var content = meta.getAttribute('content');
+      var urlPos = content.indexOf(';url=');
+      var link = urlPos > 0 ? content.substring(urlPos) : undefined;
+      switch (name) {
+        case 'url':
+          this.titleUrl = content;
+          break;
+        case 'author':
+          this.peopleService.setAuthor(content, link);
+          break;
+        case 'copyright':
+          this.peopleService.setCopyright(content, link);
+          break;
+      }
+    });
+  }
+
+  private setAlternates(innerHtml: string) {
+    this.alternate = innerHtml;
+  }
+
+  private updateSearchPos(triggerSelector) {
+    const trigger = document.querySelector(triggerSelector);
+    if (trigger) {
+      if (!this.searchResults) {
+        this.searchResults = document.querySelector('.search-result');
+      }
+      if (this.searchResults) {
+        this.searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
+        this.searchResults.style.left = '';
+      }
+    }
+  }
+
+  private select(toSelect) {
+    let toSelectElem;
+    if (toSelect) {
+      toSelectElem = document.querySelector('#out-' + toSelect.id);
+      /*if (currentSection && toSelectElem[0] === currentSection[0]) {
+       return;
+       }*/
+      toSelectElem.classList.add('hovered');
+    }
+    return toSelectElem;
+  }
+
+  private isNavLeft() {
+    return this.nav.offsetHeight === this.scrolled.offsetHeight;
+  }
+
+  private getNavHeight() {
+    return this.isNavLeft() ? 0 : this.nav.offsetHeight;
+  }
+
   private navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
     const onLoadDo = this.navService.setStart(s, sLink);
     if (window === top) {
@@ -306,10 +346,6 @@ export class HeaderComponent implements OnInit {
     this.navService.setContents(c, cLink);
     this.navService.setPrev(p, pLink);
     this.navService.setNext(n, nLink);
-  }
-
-  private setAlternates(innerHtml: string) {
-    this.alternate = innerHtml;
   }
 
   private checkAlt() {
@@ -325,12 +361,13 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  private isNavLeft() {
-    return this.nav.offsetHeight === this.scrolled.offsetHeight;
-  }
-
-  private getNavHeight() {
-    return this.isNavLeft() ? 0 : this.nav.offsetHeight;
+  private titleFromPeople() {
+    let title;
+    const p = this.peopleService.getPeople();
+    if (p) {
+      title = p.toString();
+    }
+    return title;
   }
 
   private titleFromTime() {
@@ -358,15 +395,6 @@ export class HeaderComponent implements OnInit {
     return li;
   }
 
-  private titleFromPeople() {
-    let title;
-    const p = this.peopleService.getPeople();
-    if (p) {
-      title = p.toString();
-    }
-    return title;
-  }
-
   private titleFromURI(): string {
     let title: string;
     const uri = this.commonsService.getUri();
@@ -376,7 +404,7 @@ export class HeaderComponent implements OnInit {
       title = uri.substring(ls + 1, htmlExt);
     } else if (ls < uri.length - 1) {
       let ps = ls - 1;
-      while (uri.charAt(ps) !== '/') {
+      while (uri.charAt(ps) !== '/' && ps > 0) {
         ps--;
       }
       title = uri.substring(ps + 1, ls).toUpperCase();  // Accronym assumed
@@ -384,6 +412,14 @@ export class HeaderComponent implements OnInit {
       title = uri.substring(ls + 1);
     }
     return title;
+  }
+
+  private isHeaderVisible() {
+    return window === top && this.scrolled.scrollTop <= this.header.offsetHeight;
+  }
+
+  private setOutline(outlineHTML) {
+    this.outline = outlineHTML;
   }
 
   private addPrev(pp, tt, c) {
@@ -402,13 +438,5 @@ export class HeaderComponent implements OnInit {
       title: tt,
       style: c
     });
-  }
-
-  private isHeaderVisible() {
-    return window === top && this.scrolled.scrollTop <= this.header.offsetHeight;
-  }
-
-  private setOutline(outlineHTML) {
-    this.outline = outlineHTML;
   }
 }

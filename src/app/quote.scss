@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/*.added:before {*/
+/*content: "[";*/
+/*}*/
+/*.added:after {*/
+/*content: "]";*/
+/*}*/
+cite {
+  border: none;
+  background: $highlightColor repeat-x;
+  text-indent: 0;
+  text-align: justify;
+  vertical-align: baseline;
+  font-style: normal;
+}
+
+p[data-author] {
+  &:before {
+    content: attr(data-author) " : ";
+  }
+}
+
+@mixin question() {
+  &:before {
+    content: "—\00a0";
+  }
+  &:after {
+    content: "";
+  }
+}
+
+@mixin answer() {
+  &:before {
+    content: "—\00a0";
+  }
+  &:after {
+    content: "";
+  }
+}
+
+@mixin quoting() {
+  background: $highlightColor repeat-x;
+   &:before {
+    content: "«\00a0";
+  }
+  &:after {
+    content: "\00a0»";
+  }
+  &.question {
+    @include question();
+  }
+  &.answer {
+    @include answer();
+  }
+  &.question {
+    font-weight: bolder;
+    margin-bottom: 0;
+  }
+  &.answer {
+    margin-top: 0.5em;
+  }
+}
+
+q {
+  @include quoting();
+}
+
+blockquote {
+  &.answer {
+    display: inline;
+    margin-left: 0;
+    p {
+      &:first-child {
+        @include answer();
+      }
+    }
+  }
+  p, ol>li, ul>li {
+    @include quoting();
+    &:after {
+      content: "";
+    }
+  }
+  p:last-child, ul>li:last-child, ol>li:last-child {
+    &:after {
+      content: "\00a0»";
+    }
+  }
+  margin: 0;
+  margin-left: 1.5em;
+}
+span.question {
+  font-weight: bold;
+  &::before {
+    content: "";
+  }
+  &::after {
+    content: " : ";
+  }
+}
+span.answer {
+  &::before {
+    content: "";
+  }
+  &::after {
+    content: "";
+  }
+}
+
+.exergue {
+  font-family: 'Libre Baskerville', serif;
+  //font-style: italic;
+  text-align: right;
+  color: #4C4C4C;
+  .source {
+    display: inline;
+    vertical-align: baseline;
+    a:first-of-type {
+      display: none;
+    }
+  }
+}

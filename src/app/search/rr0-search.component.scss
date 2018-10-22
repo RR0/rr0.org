@@ -1,0 +1,37 @@
+@import "../../mixins";
+
+.search {
+  @include selectable();
+  $rightMin: 1.5em;
+  display: inline-block;
+  form {
+    position: relative;
+    .flexible {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+      padding-right: $rightMin;
+      input {
+        width: 100%;
+        padding-right: 0.245em;
+      }
+    }
+    label {
+      display: none;
+    }
+    .icon {
+      width: $rightMin;
+      position: absolute;
+      right: 0.25em;
+      top: 0.3em;
+      @include selectable();
+      cursor: pointer;
+    }
+  }
+}
+.search-result {
+  @include dropdownMenu();
+  > * {
+    border-top: 1px lightgray dotted;
+  }
+}

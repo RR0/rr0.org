@@ -1,0 +1,14 @@
+<form (ngSubmit)="doSearch()">
+  <label for="search-input">Rechercher</label>
+  <div class="flexible">
+    <input type="search" name="search" id="search-input" [(ngModel)]="searchInput" tabindex="200" (keyDown)="searchKey($event)">
+  </div>
+  <!--<button type="submit">--><!--<span class="label">Rechercher</span>-->
+  <i class="fa fa-search icon" title="Rechercher" (click)="doSearch()"></i>
+  <!--</button>-->
+</form>
+<ul class="search-result">
+  <li *ngFor="let r of searchResults; index as i" tabindex="{{201+i}}" title="{{r.snippet}}">
+    <a href="{{r.link}}"><span [innerHTML]="r.htmlTitle"></span></a>
+  </li>
+</ul>

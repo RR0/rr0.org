@@ -1,0 +1,94 @@
+$imageTransitionDuration: 0.8s;
+
+.image-container {
+  max-width: 75%;
+  td {
+    height: 100%;
+  }
+}
+
+img {
+  margin: 1.25em 1.25em 1.5em 1.25em;
+  max-width: 100%;
+  border-radius: $borderRadius;
+  transition: all $imageTransitionDuration ease;
+}
+
+caption {
+  font-size: 1em;
+  text-align: justify;
+  vertical-align: bottom;
+  margin: 0;
+  display: table-caption;
+  overflow: hidden;
+  caption-side: bottom;
+  max-height: 0;
+  opacity: 0;
+  transition: all $imageTransitionDuration ease;
+}
+
+figure {
+  border-radius: $borderRadius;
+  display: table;
+  transition: all $imageTransitionDuration ease;
+  max-width: 75%;
+  max-height: 90%;
+  margin: 0 0 $sideMargin 0;
+  img {
+    margin: 0;
+    display: block;
+    width: 100%;
+  }
+  &:hover {
+    @include hovered();
+    transition: all $imageTransitionDuration ease-out;
+    figcaption + img {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include bottomInnerShadow();
+    }
+    margin-bottom: $sideMargin;
+    &.right {
+      margin-left: $sideMargin;
+    }
+    &.left {
+      margin-right: $sideMargin;
+    }
+    padding: 0.5em;
+    figcaption {
+      @include hovered(0.666rem);
+      padding: 0 0.5em 0.5em 0.5em;
+      margin: 0;
+      max-height: 100em;
+      opacity: 1;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  figcaption {
+    @extend caption;
+  }
+}
+iframe.long {
+  height: 80vh;
+  transition: all $imageTransitionDuration ease-out;
+}
+
+table img {
+  margin: 0;
+}
+
+.image-container {
+  max-width: 75%;
+  td {
+    height: 100%;
+  }
+}
+
+.leftImage {
+  @extend .left;
+}
+
+.rightImage {
+  @extend .right;
+}

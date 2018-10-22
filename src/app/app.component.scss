@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import "reset";
+//@import "reset";
 @import "mixins";
 
 [data-ng-cloak] {             /* Angular early hide */
@@ -231,8 +231,7 @@ ui-view {
   }
 }
 
-@import "js/head/head";
-@import "js/nav";
+@import "head/head";
+//@import "js/nav";
 @import "content";
-@import "js/note/foot";
-
+//@import "js/note/foot";

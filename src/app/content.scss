@@ -1,6 +1,6 @@
 .side {
   width: 20%;
-  
+
   &:hover {
     width: 40%;
   }
@@ -63,7 +63,7 @@ iframe, object, embed {
 /* Lifted corners */
 .abstract {
   font-weight: bold;
-  border-right-style: none ;
+  border-right-style: none;
   background: rgba(47, 47, 47, 0.10);
   padding: 0.7em;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -90,7 +90,7 @@ iframe, object, embed {
 
 .abstract2 {
   @extend .abstract;
-  font-weight: normal ;
+  font-weight: normal;
 }
 
 .org {

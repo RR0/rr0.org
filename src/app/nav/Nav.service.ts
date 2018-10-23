@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Title, Meta} from '@angular/platform-browser';
+import {Meta, Title} from '@angular/platform-browser';
 
-import {org, CommonsService} from '../Commons.service';
+import {CommonsService, org} from '../Commons.service';
 import {NetService} from '../Net.service';
 import {TimeService} from '../time/Time.service';
-import {Router, Event, NavigationStart} from '@angular/router';
+import {Router} from '@angular/router';
 
 function NavLink(l, url, t) {
   this.label = l;
@@ -41,68 +41,68 @@ export class NavService {
   starts: Start[] =
     [
       {
-        dir: "/tech/info/",
-        label: "Informatique",
-        css: "/js/pretty/prettify.css",
-        js: "/js/pretty/prettify.js",
-        onLoad: "prettyPrint()"
+        dir: '/tech/info/',
+        label: 'Informatique',
+        css: '/js/pretty/prettify.css',
+        js: '/js/pretty/prettify.js',
+        onLoad: 'prettyPrint()'
       },
       {
-        dir: "/science/crypto/ufo/",
-        label: "Ufologie"
+        dir: '/science/crypto/ufo/',
+        label: 'Ufologie'
       },
       {
-        dir: "/science/crypto/zoo/",
-        label: "Cryptozoologie"
+        dir: '/science/crypto/zoo/',
+        label: 'Cryptozoologie'
       },
       {
-        dir: "/science/crypto/archeo/",
-        label: "Cryptoarch\xE9ologie"
+        dir: '/science/crypto/archeo/',
+        label: 'Cryptoarch\xE9ologie'
       },
       {
-        dir: "/science/para/psi/",
-        label: "Parapsychologie"
+        dir: '/science/para/psi/',
+        label: 'Parapsychologie'
       },
       {
-        dir: "/science/para/",
-        label: "Parasciences"
+        dir: '/science/para/',
+        label: 'Parasciences'
       },
       {
-        dir: "/science/crypto/",
-        label: "Cryptosciences"
+        dir: '/science/crypto/',
+        label: 'Cryptosciences'
       },
       {
-        dir: "/science/sur/fantome",
-        label: "Fant\xF4mes"
+        dir: '/science/sur/fantome',
+        label: 'Fant\xF4mes'
       },
       {
-        dir: "/science/sur/",
-        label: "Surnaturel"
+        dir: '/science/sur/',
+        label: 'Surnaturel'
       },
       {
-        dir: "/science/",
-        label: "Science"
+        dir: '/science/',
+        label: 'Science'
       },
       {
-        dir: "/tech/",
-        label: "Technique"
+        dir: '/tech/',
+        label: 'Technique'
       },
       {
-        dir: "/croyance/conspirationnisme/",
-        label: "Conspirationnisme"
+        dir: '/croyance/conspirationnisme/',
+        label: 'Conspirationnisme'
       },
       {
-        dir: "/croyance/",
-        label: "Croyance"
+        dir: '/croyance/',
+        label: 'Croyance'
       },
       {
-        dir: "/org/",
-        label: '<i class="fa fa - sitemap"></i> <span class="label">Organisations</span></span>',
-        title: "Organisations"
+        dir: '/org/',
+        label: '<i class=\'fa fa-sitemap\'></i> <span class=\'label\'>Organisations</span></span>',
+        title: 'Organisations'
       },
       {
-        dir: "/politique/",
-        label: "Politique"
+        dir: '/politique/',
+        label: 'Politique'
       }
     ];
 
@@ -126,16 +126,16 @@ export class NavService {
 
   getNavList() {
     if (!this.navList) {
-      const n = document.getElementsByTagName("nav")[0];
+      const n = document.getElementsByTagName('nav')[0];
       this.navList = n.querySelector('ul');
     }
     return this.navList;
   }
 
   addRel(l: string, t: string) {
-    const rel = document.createElement("link");
-    rel.setAttribute("rel", t);
-    rel.setAttribute("href", l);
+    const rel = document.createElement('link');
+    rel.setAttribute('rel', t);
+    rel.setAttribute('href', l);
     org.addToHead(rel);
   }
 
@@ -285,7 +285,7 @@ export class NavService {
     const self = this;
     if (m) {
       self.setContents(oy, this.timeService.yearLink(oy));
-      l += "/" + this.commonsService.zero(m);
+      l += '/' + this.commonsService.zero(m);
       label = this.timeService.monthName(m);
       if (y !== this.timeService.getTime().year) {
         label += ' ' + y;
@@ -293,21 +293,19 @@ export class NavService {
     } else {
       const cLink = this.timeService.yearLink(oy, true);
       if (cLink !== this.commonsService.getUri()) {
-        this.setContents(~~(oy / 10) + "0s", cLink);
+        this.setContents(~~(oy / 10) + '0s', cLink);
       }
     }
     this.netService.onExists(l)
-      .subscribe({
-        next: req => {
-          const foundSibling = {label: label, link: l};
-          console.debug('Found sibling %o', foundSibling);
-          foundProc(foundSibling);
-        },
-        error: failReq => {
-          const currentDate = new Date();
-          if (y < currentDate.getFullYear()) {
-            self.findTimeSibling(y, m, changeProc, foundProc);
-          }
+      .then(function (req) {
+        const foundSibling = {label: label, link: l};
+        this.$log.debug('Found sibling %o', foundSibling);
+        foundProc(foundSibling);
+      })
+      .catch(function (failReq) {
+        const currentDate = new Date();
+        if (y < currentDate.getFullYear()) {
+          self.findTimeSibling(y, m, changeProc, foundProc);
         }
       });
   }
@@ -340,7 +338,7 @@ export class NavService {
           }
         }
         if (!t) {
-          t = "D\xE9but";
+          t = 'D\xE9but';
         }
         this.startNav = new NavLink(s, sLink, t);
       }

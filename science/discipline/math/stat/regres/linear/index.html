@@ -1,0 +1,297 @@
+<!--#include virtual="/header-start.html" -->
+<title>Régression linéaire</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+    integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Déterminer si une variable quantitative (y) à une influence sur une autre (x)</li>
+    <li>Prédire une valeur de y en fonction d'une valeur de x</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Ce type de <a href="/science/discipline/math/stat/regres">régression</a> consiste à déterminer les <strong>paramètres</strong>
+    Θ<sub>0</sub> et Θ<sub>1</sub> d'une fonction linéaire h<sub>Θ</sub>(x) = Θ<sub>0</sub> + xΘ<sub>1</sub> dont les
+    valeurs ont une distance minimale avec les points "réels" (connus).</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>On détermine une "fonction de coût" (<i lang="en">cost function</i>) <span class="note">ou "fonction de perte"
+    (<i class="en">loss function</i>) ou "fonction d'erreur carrée" (<i lang="en">squared error function</i>)</span>
+    comme suit :
+  </p>
+  <ol>
+    <li>On définit une "<strong>erreur</strong>" ε de prédiction comme la différence entre une valeur prédite
+      (h<sub>Θ</sub><sup>(x<sub>i</sub></sup>) et une réelle (y<sub>i</sub>)</li>
+    <li>Pour chacune des valeurs réelles (i de 1 à m), on calcule ces erreurs</li>
+    <li>Comme ces erreurs peuvent être positives ou négatives et que nous ne sommes intéressés que par l'écart/distance,
+      on élève cette erreur au carré afin de le garantir toujours positif <span class="note">On pourrait théoriquement utiliser une fonction de valeur absolue à la place mais
+        cela transformerait le résultat</span></li>
+    <li>on prend la moyenne de ces erreurs en / m</li>
+    <li>On annule/compense la mise au carré des erreurs en multipliant par 1/2 (ce qui annulera la dérivée de
+      x<sup>2 </sup> qui est 2x</li>
+  </ol>
+  <span class="katex"><span class="katex-mathml">
+    <math>
+      <semantics>
+        <mrow>
+          <mi>J</mi>
+          <mo>(</mo>
+          <msub>
+            <mi>θ</mi>
+            <mn>0</mn>
+          </msub>
+          <mo separator="true">,</mo>
+          <msub>
+            <mi>θ</mi>
+            <mn>1</mn>
+          </msub>
+          <mo>)</mo>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mn>1</mn>
+            </mrow>
+            <mrow>
+              <mn>2</mn>
+              <mi>m</mi>
+            </mrow>
+          </mfrac>
+          <mstyle scriptlevel="0" displaystyle="true">
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>i</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mi>m</mi>
+            </munderover>
+            <msup>
+              <mrow>
+                <mo fence="true">(</mo>
+                <msub>
+                  <mover accent="true">
+                    <mrow>
+                      <mi>y</mi>
+                    </mrow>
+                    <mo>^</mo>
+                  </mover>
+                  <mi>i</mi>
+                </msub>
+                <mo>−</mo>
+                <msub>
+                  <mi>y</mi>
+                  <mi>i</mi>
+                </msub>
+                <mo fence="true">)</mo>
+              </mrow>
+              <mn>2</mn>
+            </msup>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mn>2</mn>
+                <mi>m</mi>
+              </mrow>
+            </mfrac>
+            <mstyle scriptlevel="0" displaystyle="true">
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>m</mi>
+              </munderover>
+              <msup>
+                <mrow>
+                  <mo fence="true">(</mo>
+                  <msub>
+                    <mi>h</mi>
+                    <mi>θ</mi>
+                  </msub>
+                  <mo>(</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mi>i</mi>
+                  </msub>
+                  <mo>)</mo>
+                  <mo>−</mo>
+                  <msub>
+                    <mi>y</mi>
+                    <mi>i</mi>
+                  </msub>
+                  <mo fence="true">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+            </mstyle>
+          </mstyle>
+        </mrow>
+        <annotation encoding="application/x-tex">J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left ( \hat{y}_{i}- y_{i} \right)^2 = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left (h_\theta (x_{i}) - y_{i} \right)^2</annotation>
+      </semantics>
+    </math>
+  </span>
+    <span
+        class="katex-html" aria-hidden="true"><span class="strut" style="height:1.6513970000000002em;"></span><span
+        class="strut bottom" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="base"><span
+        class="mord mathit" style="margin-right:0.09618em;">J</span><span class="mopen">(</span><span class="mord"><span
+        class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span
+        class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span
+        style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut"
+        style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span
+        class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span
+        class="vlist-r"><span
+        class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span
+        class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span
+        class="mord mathit"
+        style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span
+        class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span
+        style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut"
+        style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span
+        class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span
+        class="vlist-r"><span
+        class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose">)</span><span
+        class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span
+        class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span
+        class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span
+        class="vlist-r"><span
+        class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut"
+        style="height:3em;"></span><span class="mord"><span class="mord">2</span><span
+        class="mord mathit">m</span></span></span><span
+        style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy"
+        style="height:0.2em;"><svg
+        width="400em" height="0.2em" viewBox="0 0 400000 200" preserveAspectRatio="xMinYMin slice"><path
+        d="M0 80H400000 v40H0z M0 80H400000 v40H0z"></path></svg></span></span><span style="top:-3.677em;"><span
+        class="pstrut" style="height:3em;"></span><span class="mord"><span
+        class="mord">1</span></span></span></span><span
+        class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"
+        style="height:0.686em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span><span
+        class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span
+        class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span
+        style="top:-1.872331em;margin-left:0;"><span class="pstrut" style="height:3.05em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">i</span><span
+        class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span
+        style="top:-3.050005em;"><span
+        class="pstrut" style="height:3.05em;"></span><span><span
+        class="mop op-symbol large-op">∑</span></span></span><span
+        style="top:-4.3000050000000005em;margin-left:0;"><span class="pstrut" style="height:3.05em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">m</span></span></span></span><span
+        class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"
+        style="height:1.277669em;"></span></span></span></span><span
+        class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span
+        class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span
+        class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"
+        style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span
+        class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span
+        style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body"
+        style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span
+        class="vlist" style="height:0.19444em;"></span></span></span></span><span class="msupsub"><span
+        class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span
+        style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span
+        class="mord mathit mtight">i</span></span></span></span></span><span
+        class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"
+        style="height:0.15em;"></span></span></span></span></span><span class="mord rule"
+        style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule"
+        style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathit"
+        style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span
+        class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span
+        style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut"
+        style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span
+        class="mord mathit mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span
+        class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span
+        class="mclose delimcenter" style="top:0;">)</span></span><span class="msupsub"><span class="vlist-t"><span
+        class="vlist-r"><span class="vlist" style="height:0.954008em;"><span
+        style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span
+        class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord rule"
+        style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule"
+        style="margin-right:0.2777777777777778em;"></span><span class="mord"><span
+        class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span
+        class="vlist-r"><span
+        class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut"
+        style="height:3em;"></span><span class="mord"><span class="mord">2</span><span
+        class="mord mathit">m</span></span></span><span
+        style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy"
+        style="height:0.2em;"><svg
+        width="400em" height="0.2em" viewBox="0 0 400000 200" preserveAspectRatio="xMinYMin slice"><path
+        d="M0 80H400000 v40H0z M0 80H400000 v40H0z"></path></svg></span></span><span style="top:-3.677em;"><span
+        class="pstrut" style="height:3em;"></span><span class="mord"><span
+        class="mord">1</span></span></span></span><span
+        class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"
+        style="height:0.686em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span><span
+        class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span
+        class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span
+        style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">i</span><span
+        class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span
+        style="top:-3.050005em;"><span
+        class="pstrut" style="height:3.05em;"></span><span><span
+        class="mop op-symbol large-op">∑</span></span></span><span
+        style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">m</span></span></span></span><span
+        class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"
+        style="height:1.277669em;"></span></span></span></span><span
+        class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span
+        class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span
+        class="mord mathit">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span
+        class="vlist" style="height:0.33610799999999996em;"><span
+        style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut"
+        style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight"
+        style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span
+        class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span
+        class="mopen">(</span><span
+        class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span
+        class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span
+        style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut"
+        style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span
+        class="mord mathit mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span
+        class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span
+        class="mclose">)</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span
+        class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span
+        class="mord"><span
+        class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span
+        class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span
+        style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut"
+        style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span
+        class="mord mathit mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span
+        class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span
+        class="mclose delimcenter" style="top:0;">)</span></span><span class="msupsub"><span class="vlist-t"><span
+        class="vlist-r"><span class="vlist" style="height:0.954008em;"><span
+        style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span
+        class="sizing reset-size6 size3 mtight"><span
+      class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Avant tout travail de modélisation, une approche descriptive ou exploratoire est nécessaire pour dépister au
+      plus tôt des difficultés dans les données : dissymétrie des distributions, valeurs atypiques, liaison non linéaire
+      entre les variables.</li>
+    <li>Le modèle suppose implicitement une notion préalable de <strong>causalité</strong> dans le sens où Y dépend de X
+      car le modèle n’est pas symétrique (i.e. X ne dépend pas forcément de Y).</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>En <a href="/tech/info/soft/data/science/ml">ML</a>, la régression linéaire permet de produire une fonction
+    continue à partir de données connues, qui permet de prédire des valeurs probables pour d'autres valeurs de x ou y.
+  </p>
+</section>
+<!--#include virtual="/footer.html" -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js"
+    integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx"
+    crossorigin="anonymous"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>

@@ -14,8 +14,8 @@
 <section>
   <h2>Analyse</h2>
   <p>Ce type de <a href="/science/discipline/math/stat/regres">régression</a> consiste à déterminer les <strong>paramètres</strong>
-    Θ<sub>0</sub> et Θ<sub>1</sub> d'une fonction linéaire h<sub>Θ</sub>(x) = Θ<sub>0</sub> + xΘ<sub>1</sub> dont les
-    valeurs ont une distance minimale avec les points "réels" (connus).</p>
+    Θ<sub>0</sub> et Θ<sub>1</sub> d'une fonction linéaire <strong>hypothèse</strong> h<sub>Θ</sub>(x) = Θ<sub>0 </sub>
+    + xΘ<sub>1</sub> dont les valeurs doivent avoir une distance minimale avec les points "réels" (connus).</p>
 </section>
 <section>
   <h2>Conception</h2>
@@ -24,6 +24,8 @@
     comme suit :
   </p>
   <ol>
+    <li>On définit une fonction (h) représentant notre <strong>hypothèse</strong>, que l'on va comparer aux valeurs
+      réelles/connues</li>
     <li>On définit une "<strong>erreur</strong>" ε de prédiction comme la différence entre une valeur prédite
       (h<sub>Θ</sub><sup>(x<sub>i</sub></sup>) et une réelle (y<sub>i</sub>)</li>
     <li>Pour chacune des valeurs réelles (i de 1 à m), on calcule ces erreurs</li>
@@ -32,7 +34,7 @@
         cela transformerait le résultat</span></li>
     <li>on prend la moyenne de ces erreurs en / m</li>
     <li>On annule/compense la mise au carré des erreurs en multipliant par 1/2 (ce qui annulera la dérivée de
-      x<sup>2 </sup> qui est 2x</li>
+      x<sup>2 </sup> qui est 2x)</li>
   </ol>
   <span class="katex"><span class="katex-mathml">
     <math>
@@ -269,7 +271,7 @@
         class="vlist-r"><span class="vlist" style="height:0.954008em;"><span
         style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span
         class="sizing reset-size6 size3 mtight"><span
-      class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>
+        class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>
 </section>
 <section>
   <h2>Notes</h2>

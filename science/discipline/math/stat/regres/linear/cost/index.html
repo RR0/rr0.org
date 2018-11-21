@@ -1,0 +1,49 @@
+<!--#include virtual="/header-start.html" -->
+<title>Fonction de coût</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">cost function</i>) ou "fonction de perte" (<i class="en">loss function</i>) ou "fonction d'erreur
+  carrée" (<i lang="en">squared error function</i>).</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Déterminer la différence entre une modélisation et la réalité</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>On détermine une "fonction de coût" J comme suit :
+  </p>
+  <ol>
+    <li>On définit une "<strong>erreur</strong>" ε de prédiction comme la différence entre une valeur prédite
+      (h<sub>Θ</sub><sup>(x<sub>i</sub></sup>) et une réelle (y<sub>i</sub>) : hΘ - y</li>
+    <li>Pour chacune des valeurs réelles (i de 1 à m), on calcule ces erreurs</li>
+    <li>Comme ces erreurs peuvent être positives ou négatives et que nous ne sommes intéressés que par l'écart/distance,
+      on élève cette erreur au carré afin de le garantir toujours positif <span class="note">On pourrait théoriquement utiliser une fonction de valeur absolue à la place mais
+        cela transformerait le résultat</span></li>
+    <li>on prend la moyenne de ces erreurs en / m</li>
+  </ol>
+  <p>`J = 1/m sum_(i=1)^m c(h_Θ, y)`</p>
+  <p>où c est la fonction de coût partielle (en un x).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Les fonctions de coût sont utilisées dans diverses méthodes de <a
+      href="/science/discipline/math/stat/regres">régression statistique</a>.</p>
+  <section>
+    <h3>Régressions linéaires ou non-linéaires</h3>
+    <p>Dans ce cas on annule/compense la mise au carré des erreurs en multipliant par 1/2 (ce qui annulera la dérivée de
+      x<sup>2 </sup> qui est 2x)</p>
+    <p>`c = 1/2 (h_Θ - y)^2`</p>
+  </section>
+  <section>
+    <h3>Régression logistiques</h3>
+    <p>On utilise le log :</p>
+    <p>`c(h_θ(x),y)=−log(h_θ(x))` si y = 1<br/> `c(h_θ(x),y)=−log(1−h_θ(x))` si y = 0
+    </p>
+    <p>ce qui peut s'écrire en 1 seule ligne :</p>
+    <p>`c(h_θ(x),y)=−ylog(h_θ(x))−(1−y)log(1−h_θ(x))`</p>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

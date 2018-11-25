@@ -1,0 +1,46 @@
+<!--#include virtual="/header-start.html" -->
+<title>Régression statistique</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Déterminer la relation entre 2 variables.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Soit :</p>
+  <ul>
+    <li>`X` une matrice de `m xx n` caractéristiques (<em>features</em>)</li>
+    <li>`y` un vecteur de données résultantes connues</li>
+  </ul>
+  <p>Il existe plusieurs types de régressions, suivant que l'on modélise la prédiction sous forme de :</p>
+  <ul>
+    <li>droite/surface plane (pente constante) : <a href="linear">linéaire</a></li>
+    <li>ligne/surface courbe (pente variable) : <a href="non-linear">non linéaire</a></li>
+    <li>succès/échec (binaire) ou classe/catégorie : <a href="logistic">logistique</a></li>
+    <li>quantile</li>
+    <li>non paramétrique</li>
+  </ul>
+  <p>Un même ensemble de données peut être modélisé par divers types de régressions, mais une de celle-ci sera plus
+    adaptée/fidèle aux données que les autres.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>On utilisera des outils comme :</p>
+  <ul>
+    <li>une <a href="cost">fonction de coût</a></li>
+    <li>l'algorithme de <a href="gradient">descente de gradient</a></li>
+    <li>l'équation normale</li>
+    <li>régularisation des paramètres</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Le terme de "régression" a été introduit par Francis Galton à la suite d'une étude sur la taille des descendants de
+    personnes de grande taille, qui diminue de générations en générations vers une taille moyenne (donc leur taille
+    "régresse") <span class="source">Galton, 1989</span>.</p>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

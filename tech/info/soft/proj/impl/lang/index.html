@@ -2,1044 +2,1057 @@
 <title>Langage de programmation</title>
 <!--#include virtual="/header-end.html" -->
 <p><em>Programming language.</em></p>
-<h2>Besoin</h2>
-<p>Fournir des informations à la <a href="../../design/arch/Host.html">machine</a>.</p>
-<h2>Analyse</h2>
-<p>Le langage de programmation est un formalisme (généralement textuel) :</p>
-<ul>
-  <li><strong>compréhensible </strong>par l'homme (qui écrit le <a href="../CodeSource.html">code source</a>)</li>
-  <li><strong>traduisible </strong>par un logiciel (<a href="../Compilation.html">compilateur</a>, interpréteur) en une
-    suite instructions compréhensibles par la machine (langage machine) : le <a href="../CodeObjet.html">code objet</a>.
-  </li>
-</ul>
-<p>On peut distinguer les langages par :</p>
-<ul>
-  <li>leur mode d'exécution :
-    <ul>
-      <li><strong>interprétés</strong> : les instructions du code sources sont examinées à l'exécution puis traduite en
-        langage machine.
-      </li>
-      <li><strong><a href="../Compilation.html">compilés</a></strong> : la traduction de l'interprétation est effectuée
-        à l'avance, de sorte de le programme exécuté est dès le départ un ensemble d'instructions pour la machine.
-      </li>
-      <li><strong>virtuels </strong>: à la fois compilés pour et interprétés par une machine virtuelle (<em>Virtual
-        Machine</em> ou <a href="../../../prog/oo/java/langage">VM</a>), c'est-à-dire une machine simulée par
-        un logiciel réécrit pour différentes machines. L'objectif de cette virtualité est la portabilité et ce qu'elle
-        implique (indépendance des contraintes d'un OS, d'une machine, optimisations dynamiques).
-      </li>
-    </ul>
-  </li>
-  <li>leur paradigme :
-    <ul>
-      <li><strong>procédural</strong>, qui se focalise sur le verbe : <code>ouvre (porte)</code>. On se préoccupe alors
-        plus des événements qui peuvent survenir dans une application, et de comment ils doivent survenir.
-      </li>
-      <li><strong><a href="oo">OO</a></strong>, qui se focalise sur l'objet : <code>porte.ouvre()</code>.
-        On se préoccupe alors plus des entités existantes et de leurs relations/interactions.
-      </li>
-      <li><strong>hiérarchique</strong></li>
-    </ul>
-  </li>
-  <li>leur domaine d'application :
-    <ul>
-      <li><strong>programmation</strong></li>
-      <li><strong>requêtes</strong></li>
-      <li><strong>représentation</strong></li>
-    </ul>
-  </li>
-  <li>leur niveau d'abstraction :
-    <ul>
-      <li><strong>élévé </strong>: langages fonctionnels</li>
-      <li><strong>moyen </strong>: langages <a href="oo">OO</a></li>
-      <li><strong>faible</strong></li>
-      <li><strong>nul </strong></li>
-    </ul>
-  </li>
-  <li>leur génération :
-    <ul>
-      <li><strong>1<sup>ère</sup></strong> : langage machine (suite de <a href="/time/Bit.html">bits</a>)
-      </li>
-      <li><strong>2ème</strong>: assembleur (mnémoniques, manipulation de registres)</li>
-      <li><strong>3<sup>ème</sup></strong>: procédural</li>
-      <li><strong>4<sup>ème</sup></strong>: automatisation</li>
-      <li><strong>5<sup>ème</sup></strong>: interprétation du sens (langue naturelle, <a
-          href="../../../../AI.html">IA</a>)
-      </li>
-    </ul>
-  </li>
-</ul>
-<h2>Conception</h2>
-<p>Un langage est constitué de :</p>
-<ul>
-  <li><strong>mots-clés </strong>ou mots réservés, utiliser pour représenter des :
-    <ul>
-      <li><strong>déclarations</strong></li>
-      <li><strong>affectations</strong></li>
-      <li><strong>structures de contrôles</strong>
-        <ul>
-          <li><strong>tests </strong>(if)</li>
-          <li><strong>boucles </strong>(for, while)</li>
-          <li><strong>branchements </strong>(goto, appel de méthode)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-<h2>Exemples</h2>
-<ul>
-  <li>
-    <table border=1 cellspacing=0 cellpadding=5>
-      <caption>Langages de programmation OO</caption>
-      <thead>
-      <tr>
-        <td colspan=2 rowspan=2 class="titleCorner"></td>
-        <th valign=top> Nom</th>
-        <th colspan="3"><a href="../../../prog/oo/java/langage">Java</a></th>
-        <th colspan="2"><a href="../../../prog/oo/java/langage">JavaScript</a></th>
-        <th><a href="java/groovy">Groovy</a></th>
-        <th><a href="oo/objc">Objective-C</a></th>
-        <th><a href="ruby">Ruby</a></th>
-        <th><a href="php">PHP</a></th>
-        <th><a href="perl">Perl</a></th>
-        <th><a href="../../../prog/cpp/CPP.html">C++</a></th>
-        <th>C#</th>
-        <th colspan=3><a href="../../../prog/pascal/langage">Pascal</a></th>
-        <th><a href="http://www.eiffel.com">Eiffel</a></th>
-        <th><a href="ada">Ada</a></th>
-        <th><a href="../../../prog/oo/java/SmallTalk.html">SmallTalk</a></th>
-        <th width=301 rowspan=3> Commentaire</th>
-      </tr>
-      <tr>
-        <th valign=top> Version/ Fournisseur</th>
-        <th colspan="3">1</th>
-        <th colspan="2">1</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th><a href="/org/us/ANSI.html">ANSI</a></th>
-        <th colspan="2">Borland</th>
-        <th></th>
-        <th><a href="../../../../GNU.html">GNU</a></th>
-        <th></th>
-      </tr>
-      <tr>
-        <th>Domaine</th>
-        <th>Technologie</th>
-        <th valign=top> Produit/ Release</th>
-        <th></th>
-        <th>4</th>
-        <th>5</th>
-        <th>0</th>
-        <th>2</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>5</th>
-        <th>Delphi</th>
-        <th></th>
-        <th>95</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tr>
-        <th colspan="3" valign=top>Exécution</th>
-        <td colspan="3"><a href="../../../prog/oo/java/JVM.html">JVM</a></td>
-        <td colspan="2">Interpréteur</td>
-        <td></td>
-        <td></td>
-        <td>Interpréteur</td>
-        <td></td>
-        <td></td>
-        <td>Machine</td>
-        <td>CLR</td>
-        <td colspan="3">Machine</td>
-        <td></td>
-        <td>Machine</td>
-        <td>Interpréteur</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top><a href="../Compilation.html">Compilation</a></th>
-        <th colspan="2" valign=top>Préprocesseur</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="11" valign=top>Structures de données</th>
-        <th colspan="2" valign=top>Constantes</th>
-        <td colspan="3" class="oui"><code><strong>final</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code><strong>S</strong>omeConstant</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td colspan="2" class="oui"><code>const</code></td>
-        <td></td>
-        <td class="oui"><code><strong>constant</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Enumérations</th>
-        <td colspan="2" class="non">Non</td>
-        <td class="oui"><code><strong>enum</strong> MonEnum { a, b, c }</code></td>
-        <td colspan="2"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>enum</strong> MonEnum { a, b, c}</code></td>
-        <td></td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-        <td class="oui"><code class="oui"><strong>type</strong> MonEnum <strong>is</strong> (A, B, C);</code>
-        </td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="2" valign=top>Numériques</th>
-        <th valign=top>Entiers</th>
-        <td colspan="2" class="oui"><code><strong>byte short int long</strong></code></td>
-        <td class="oui"><code><strong>Byte Short Integer Long</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code>[<strong>unsigned</strong>] <strong>char</strong>, [<strong>unsigned</strong>] [<strong>long</strong>]
-          <strong>int</strong></code></td>
-        <td class="oui"><code><strong>byte short int long</strong></code> <code><strong>Byte Short Integer Long</strong></code>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code><strong>INTEGER</strong></code></td>
-        <td class="oui"><code>var<strong>: Integer </strong>var<strong>: Short_Integer</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Flottants</th>
-        <td colspan="2" class="oui"><code><strong>float</strong></code></td>
-        <td class="oui"><code><strong>Float</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>float</strong>, [long] <strong>double</strong></code></td>
-        <td class="oui"><code><strong>float Float</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code><strong>REAL DOUBLE</strong></code></td>
-        <td class="oui"><code><strong>Float Long_Float</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="2" valign=top>Caractères</th>
-        <th valign=top>Unique</th>
-        <td colspan="2" class="oui"><code><strong>char</strong></code></td>
-        <td class="oui"><code><strong>Character</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>char</strong></code><strong> </strong>(8 bits)</td>
-        <td class="oui"><code><strong>char</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code><strong>Character</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Chaîne</th>
-        <td colspan="3" class="oui"><code><strong>String</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>char*</strong></code></td>
-        <td class="oui"><code><strong>String</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code><strong>CHARACTER</strong></code></td>
-        <td class="oui"><code><strong>String </strong>var</code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Booléen</th>
-        <td colspan="3" class="oui"><code><strong>boolean Boolean</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code></code></td>
-        <td class="oui"><code><strong>boolean Boolean</strong></code></td>
-        <td colspan="3" class="oui"></td>
-        <td><code></code></td>
-        <td class="oui"><code><strong>Boolean</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Enregistrements</th>
-        <td colspan="3">Classes</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>struct</strong></code></td>
-        <td></td>
-        <td colspan="3" class="oui">record</td>
-        <td>Classes</td>
-        <td class="oui"><code class="oui"><strong>record</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Type génériques</th>
-        <th valign=top>Templates</th>
-        <td colspan="2" class="non">Non</td>
-        <td class="oui"><code>Classe&lt;Type&gt;</code></td>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code>var : Classe[ Type]</code></td>
-        <td class="oui"><code><strong>generic type</strong> MonType</code></td>
-        <td></td>
-        <td>Modèles ou "patrons" de classes</td>
-      </tr>
-      <tr>
-        <th rowspan="2" valign=top><a href="oo">OO</a></th>
-        <th valign=top>Héritage simple</th>
-        <td colspan="3" class="oui"><code>Classe1 <strong>extends </strong>Classe2</code></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Class1</td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Oui</td>
-        <td class="oui"><code>Classe1: Classe2</code></td>
-        <td class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td class="oui"><code>Classe1 <strong>inherit</strong> Classe2</code></td>
-        <td class="oui">Oui</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Héritage multiple</th>
-        <td colspan="3" class="non"><code>Classe1 <strong>implements</strong> Interface1, Interface2</code></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Oui</td>
-        <td class="non"><code>Classe1: Interface1, Interface2</code></td>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui"><code>Classe1 <strong>inherit</strong> Classe2 Classe3 </code></td>
-        <td class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="7" valign=top>Structures de contrôle</th>
-        <th colspan="2" valign=top>Condition</th>
-        <td colspan="3" class="oui"><code><strong>if</strong> (cond) <br> ...<br> <strong>else</strong><br> ... </code>
-        </td>
-        <td colspan="2" class="oui"><code><strong>if</strong> (cond) <strong>...<br> else<br> ... </strong></code></td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code><strong>if</strong> cond <br>    ...<br> <strong> else<br>    ...<br> end</strong></code>
-        </td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>if</strong> (cond) ...</code></td>
-        <td class="oui"><code><strong>if</strong> (cond) ...</code></td>
-        <td colspan="3" class="oui"><code><strong>if </strong>cond <strong>then ...</strong></code></td>
-        <td><code></code></td>
-        <td class="oui"><code><strong>if</strong> (cond) <strong>then</strong></code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Cas</th>
-        <td colspan="3" class="oui"><code><strong>switch</strong> (var) { <br> <strong>  case</strong> val1: <strong>break</strong>;
-          <strong>  case</strong> val2: <strong>break</strong>; <br> }</code></td>
-        <td colspan="2" class="oui"><code>switch (var) { x: break; }</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>switch</strong> (var) { <strong>case</strong> x: <strong>break</strong>; }</code>
-        </td>
-        <td class="oui">
-          <p><code><strong>switch</strong> (var) { <strong>case</strong> val1: <strong>break</strong>;
-            <strong>case</strong> val2: <strong>break</strong>; }</code></p>
-        </td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td class="oui"><code><strong>case</strong> var <strong>is<br/> when</strong> val1 <strong>=&gt;</strong>
-          ...<br/> <strong>when</strong> val2 <strong>=&gt; </strong>...<br/> <strong>end case</strong>;</code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="5" valign=top>Boucle</th>
-        <th valign=top>Itération</th>
-        <td colspan="2" class="oui"><code><strong>for</strong> (init; while; inc) <strong>...</strong></code>
-        </td>
-        <td class="oui"><code></code></td>
-        <td colspan="2" class="oui"><code><strong>for</strong> (init; while; inc) <strong>...</strong></code>
-        </td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code>someList.<strong>each</strong> <strong>do</strong>
-          <strong>|</strong>someElement<strong>|</strong> <br> ... <br> <strong> end</strong></code></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>for</strong> (init; while; inc) <strong>...</strong></code></td>
-        <td class="oui"><code><strong>foreach</strong> (var <strong>in</strong> col) ...</code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td class="oui"><code><strong>for</strong> var <strong>in</strong> [<strong>reverse</strong>] discreteRange
-          <strong>loop</strong><br/> ...<br/> <strong>end loop</strong>;</code></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Un au moins</th>
-        <td colspan="3" class="oui"><code><strong>do</strong> <strong>...</strong> <strong>while</strong></code>
-        </td>
-        <td colspan="2" class="oui"><code><strong>do</strong> <strong>...</strong> <strong>while</strong></code>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>do</strong> <strong>...</strong> <strong>while</strong></code></td>
-        <td></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Tant que</th>
-        <td colspan="3" class="oui"><code><strong>while</strong> (cond) ...</code></td>
-        <td colspan="2" class="oui"><code><strong>while</strong> (cond) <strong>...</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>while</strong> (cond) <strong>...</strong></code></td>
-        <td></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Suite</th>
-        <td colspan="3" class="oui"><code><strong>continue</strong></code></td>
-        <td colspan="2" class="oui"><code><strong>continue</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>continue</strong></code></td>
-        <td></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Stop</th>
-        <td colspan="3" class="oui"><code><strong>break</strong></code></td>
-        <td colspan="2" class="oui"><code><strong>break</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"><code><strong>break</strong></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><code></code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Gestion des erreurs</th>
-        <th colspan="2" valign=top><a href="../../../prog/oo/java/Exception.html">Exceptions</a></th>
-        <td colspan="3" class="oui">Oui</td>
-        <td class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td colspan="2" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="3" valign=top>Robustesse</th>
-        <th colspan="2" valign=top>Contrôle des conversions</th>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Contrôle des limites de tableau</th>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Contrôle division par zéro</th>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="3" valign=top>Gestion mémoire</th>
-        <th colspan="2" valign=top>Pointeurs</th>
-        <td colspan="3" class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td class="oui">Oui</td>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Allocation</th>
-        <th valign=top>Automatique</th>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non">Non</td>
-        <td></td>
-        <td class="non">Non</td>
-        <td class="non">Non</td>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Libération</th>
-        <th valign=top><a href="../../../prog/oo/java/GC.html">GC</a></th>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="non"></td>
-        <td class="non"></td>
-        <td class="non">Non</td>
-        <td></td>
-        <td class="non">Non</td>
-        <td class="non">Non</td>
-        <td class="non">Non</td>
-        <td></td>
-        <td class="oui">Oui</td>
-        <td class="oui">Oui</td>
-        <td>Garantie de robustesse</td>
-      </tr>
-      <tr>
-        <th valign=top>Mise au point</th>
-        <th colspan="2" valign=top>Assertions</th>
-        <td class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><code>assert.h</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </li>
-  <li>
-    <table border=1 cellspacing=0 cellpadding=5>
-      <caption>L2G</caption>
-      <thead>
-      <tr>
-        <td colspan=2 rowspan=2 class="titleCorner"></td>
-        <th valign=top> Nom</th>
-        <th colspan=2>BASIC</th>
-        <th><a href="../../../prog/cobol">COBOL</a></th>
-        <th><a href="../../../prog/oo/java/PERL.html">PERL</a></th>
-        <th width=301 rowspan=3> Commentaire</th>
-      </tr>
-      <tr>
-        <th valign=top> Version/ Fournisseur</th>
-        <th></th>
-        <th>Microsoft</th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr>
-        <th>Domaine</th>
-        <th>Technologie</th>
-        <th valign=top> Produit/ Release</th>
-        <th></th>
-        <th>Visual Basic</th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <tr>
-        <th rowspan="3" valign=top>Exécution</th>
-        <th colspan="2" valign=top>Interpréteur</th>
-        <td class="oui">Oui</td>
-        <td></td>
-        <td></td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top><a href="../../../prog/oo/java/langage">VM</a></th>
-        <td colspan="2" class="non">Non</td>
-        <td></td>
-        <td class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Machine</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top><a href="../Compilation.html">Compilation</a></th>
-        <th colspan="2" valign=top>Préprocesseur</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="8" valign=top>Structures de données</th>
-        <th colspan="2" valign=top>Constantes</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Enumérations</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="2" valign=top>Numériques</th>
-        <th valign=top>Entiers</th>
-        <td class="oui"><code>var%</code></td>
-        <td></td>
-        <td></td>
-        <td class="oui">32 bits</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Flottants</th>
-        <td class="oui"><code>var<strong>! </strong>var<strong>#</strong></code></td>
-        <td></td>
-        <td></td>
-        <td class="oui">32 bits</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="2" valign=top>Caractères</th>
-        <th valign=top>Unique</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td class="oui">32 bits</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Chaîne</th>
-        <td class="oui"><code>var<strong>$</strong></code></td>
-        <td></td>
-        <td></td>
-        <td class="oui">Suite de 32 bits</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Enregistrements</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Type génériques</th>
-        <th valign=top>Templates</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Modèles ou "patrons" de classes</td>
-      </tr>
-      <tr>
-        <th rowspan="7" valign=top>Structures de contrôle</th>
-        <th colspan="2" valign=top>Condition</th>
-        <td class="oui"><code><strong>if </strong>cond<strong> then ...</strong></code></td>
-        <td><code></code></td>
-        <td><code></code></td>
-        <td class="oui"><code><strong>if</strong> (cond) { }</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Cas</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><code></code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="5" valign=top>Boucle</th>
-        <th valign=top>Itération</th>
-        <td class="oui"><code><strong>FOR</strong> var=exp <strong>TO</strong> exp [<strong>STEP</strong> exp]</code>
-        </td>
-        <td></td>
-        <td></td>
-        <td class="oui"><code>foreach $var (liste) <strong>...</strong></code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Un au moins</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><code></code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Tant que</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><code></code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Suite</th>
-        <td class="oui"><code><strong>NEXT</strong> var</code></td>
-        <td></td>
-        <td></td>
-        <td><code></code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Stop</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Gestion des erreurs</th>
-        <th colspan="2" valign=top><a href="../../../prog/oo/java/Exception.html">Exceptions</a></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="3" valign=top>Robustesse</th>
-        <th colspan="2" valign=top>Contrôle des conversions</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="non"></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Contrôle des limites de tableau</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign=top>Contrôle division par zéro</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="3" valign=top>Gestion mémoire</th>
-        <th colspan="2" valign=top>Pointeurs</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Allocation</th>
-        <th valign=top>Automatique</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign=top>Libération</th>
-        <th valign=top><a href="../../../prog/oo/java/GC.html">GC</a></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td>Garantie de robustesse</td>
-      </tr>
-      <tr>
-        <th valign=top>Mise au point</th>
-        <th colspan="2" valign=top>Assertions</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </li>
-  <li>
-    <table border=1 cellspacing=0 cellpadding=5>
-      <caption>Langages de requêtes</caption>
-      <thead>
-      <tr>
-        <td colspan=2 rowspan=2 class="titleCorner"></td>
-        <th valign=top> Nom</th>
-        <th><a href="/time/dbms/r/sql">SQL</a></th>
-        <th>OQL</th>
-        <th><a href="../../../prog/oo/java/EJB.html">EJB</a>QL</th>
-        <th><a href="../../../prog/oo/java/JDO.html">JDO</a>QL</th>
-        <th width=301 rowspan=3> Commentaire</th>
-      </tr>
-      <tr>
-        <th valign=top> Version/ Fournisseur</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr>
-        <th> Domaine</th>
-        <th> Technologie</th>
-        <th valign=top> Release</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <tr>
-        <th valign=top></th>
-        <th valign=top></th>
-        <th valign=top></th>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </li>
-  <li>
-    <table border="1" cellspacing="0" cellpadding="5">
-      <caption>Langages de représentation</caption>
-      <thead>
-      <tr>
-        <td colspan=2 rowspan=3 class="titleCorner"></td>
-        <th valign=top> Nom</th>
-        <th>SGML</th>
-        <th></th>
-      </tr>
-      </thead>
-    </table>
-  </li>
-</ul>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir des informations à la <a href="../../design/arch/Host.html">machine</a>.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le langage de programmation est un formalisme (généralement textuel) :</p>
+  <ul>
+    <li><strong>compréhensible </strong>par l'homme (qui écrit le <a href="../CodeSource.html">code source</a>)</li>
+    <li><strong>traduisible </strong>par un logiciel (<a href="../Compilation.html">compilateur</a>, interpréteur) en
+      une suite instructions compréhensibles par la machine (langage machine) : le <a href="../CodeObjet.html">code
+        objet</a>.
+    </li>
+  </ul>
+  <p>On peut distinguer les langages par :</p>
+  <ul>
+    <li>leur mode d'exécution :
+      <ul>
+        <li><strong>interprétés</strong> : les instructions du code sources sont examinées à l'exécution puis traduite
+          en langage machine.
+        </li>
+        <li><strong><a href="../Compilation.html">compilés</a></strong> : la traduction de l'interprétation est
+          effectuée à l'avance, de sorte de le programme exécuté est dès le départ un ensemble d'instructions pour la
+          machine.
+        </li>
+        <li><strong>virtuels </strong>: à la fois compilés pour et interprétés par une machine virtuelle (<em>Virtual
+          Machine</em> ou <a href="/org/us/company/oracle/sun/ptf/java/vm">VM</a>), c'est-à-dire une machine simulée par
+          un logiciel réécrit pour différentes machines. L'objectif de cette virtualité est la portabilité et ce qu'elle
+          implique (indépendance des contraintes d'un OS, d'une machine, optimisations dynamiques).
+        </li>
+      </ul>
+    </li>
+    <li>leur paradigme :
+      <ul>
+        <li><strong>procédural</strong>, qui se focalise sur le verbe : <code>ouvre (porte)</code>. On se préoccupe
+          alors plus des événements qui peuvent survenir dans une application, et de comment ils doivent survenir.
+        </li>
+        <li><strong><a href="oo">OO</a></strong>, qui se focalise sur l'objet : <code>porte.ouvre()</code>. On se
+          préoccupe alors plus des entités existantes et de leurs relations/interactions.
+        </li>
+        <li><strong>hiérarchique</strong></li>
+      </ul>
+    </li>
+    <li>leur domaine d'application :
+      <ul>
+        <li><strong>programmation</strong></li>
+        <li><strong>requêtes</strong></li>
+        <li><strong>représentation</strong></li>
+      </ul>
+    </li>
+    <li>leur niveau d'abstraction :
+      <ul>
+        <li><strong>élévé </strong>: langages fonctionnels</li>
+        <li><strong>moyen </strong>: langages <a href="oo">OO</a></li>
+        <li><strong>faible</strong></li>
+        <li><strong>nul </strong></li>
+      </ul>
+    </li>
+    <li>leur génération :
+      <ul>
+        <li><strong>1<sup>ère</sup></strong> : langage machine (suite de <a href="/tech/info/soft/data/Bit.html">bits</a>)
+        </li>
+        <li><strong>2ème</strong>: assembleur (mnémoniques, manipulation de registres)</li>
+        <li><strong>3<sup>ème</sup></strong>: procédural</li>
+        <li><strong>4<sup>ème</sup></strong>: automatisation</li>
+        <li><strong>5<sup>ème</sup></strong>: interprétation du sens (langue naturelle, <a
+            href="../../../../AI.html">IA</a>)
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h2>Conception</h2>
+  <p>Un langage est constitué de :</p>
+  <ul>
+    <li><strong>mots-clés </strong>ou mots réservés, utiliser pour représenter des :
+      <ul>
+        <li><strong>déclarations</strong></li>
+        <li><strong>affectations</strong></li>
+        <li><strong>structures de contrôles</strong>
+          <ul>
+            <li><strong>tests </strong>(if)</li>
+            <li><strong>boucles </strong>(for, while)</li>
+            <li><strong>branchements </strong>(goto, appel de méthode)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <caption>Langages de programmation OO</caption>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="2" class="titleCorner"></td>
+          <th valign="top"> Nom</th>
+          <th colspan="3"><a href="/tech/info/soft/proj/impl/lang/java">Java</a></th>
+          <th colspan="2"><a href="/tech/info/soft/proj/design/arch/web/js">JavaScript</a></th>
+          <th><a href="java/groovy">Groovy</a></th>
+          <th><a href="oo/objc">Objective-C</a></th>
+          <th><a href="ruby">Ruby</a></th>
+          <th><a href="php">PHP</a></th>
+          <th><a href="perl">Perl</a></th>
+          <th><a href="python">Python</a></th>
+          <th><a href="cpp">C++</a></th>
+          <th>C#</th>
+          <th colspan="3"><a href="pascal">Pascal</a></th>
+          <th><a href="http://www.eiffel.com">Eiffel</a></th>
+          <th><a href="ada">Ada</a></th>
+          <th><a href="smalltalk">SmallTalk</a></th>
+          <th width="301" rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Version/ Fournisseur</th>
+          <th colspan="3">1</th>
+          <th colspan="2">1</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th><a href="/org/us/ANSI.html">ANSI</a></th>
+          <th colspan="2">Borland</th>
+          <th></th>
+          <th><a href="../../../../GNU.html">GNU</a></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th valign="top"> Produit/ Release</th>
+          <th></th>
+          <th>4</th>
+          <th>5</th>
+          <th>0</th>
+          <th>2</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>5</th>
+          <th>Delphi</th>
+          <th></th>
+          <th>95</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tr>
+          <th colspan="3" valign="top">Exécution</th>
+          <td colspan="3"><a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a></td>
+          <td colspan="2">Interpréteur</td>
+          <td></td>
+          <td></td>
+          <td>Interpréteur</td>
+          <td></td>
+          <td></td>
+          <td>Machine</td>
+          <td>CLR</td>
+          <td colspan="3">Machine</td>
+          <td></td>
+          <td>Machine</td>
+          <td>Interpréteur</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../Compilation.html">Compilation</a></th>
+          <th colspan="2" valign="top">Préprocesseur</th>
+          <td colspan="3" class="non">Non</td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td colspan="2" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="11" valign="top">Structures de données</th>
+          <th colspan="2" valign="top">Constantes</th>
+          <td colspan="3" class="oui"><code><strong>final</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code><strong>S</strong>omeConstant</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td colspan="2" class="oui"><code>const</code></td>
+          <td></td>
+          <td class="oui"><code><strong>constant</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Enumérations</th>
+          <td colspan="2" class="non">Non</td>
+          <td class="oui"><code><strong>enum</strong> MonEnum { a, b, c }</code></td>
+          <td colspan="2"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>enum</strong> MonEnum { a, b, c}</code></td>
+          <td></td>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+          <td class="oui"><code class="oui"><strong>type</strong> MonEnum <strong>is</strong> (A, B, C);</code>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Numériques</th>
+          <th valign="top">Entiers</th>
+          <td colspan="2" class="oui"><code><strong>byte short int long</strong></code></td>
+          <td class="oui"><code><strong>Byte Short Integer Long</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code>[<strong>unsigned</strong>] <strong>char</strong>, [<strong>unsigned</strong>] [<strong>long</strong>]
+            <strong>int</strong></code></td>
+          <td class="oui"><code><strong>byte short int long</strong></code> <code><strong>Byte Short Integer
+            Long</strong></code>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code><strong>INTEGER</strong></code></td>
+          <td class="oui"><code>var<strong>: Integer </strong>var<strong>: Short_Integer</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Flottants</th>
+          <td colspan="2" class="oui"><code><strong>float</strong></code></td>
+          <td class="oui"><code><strong>Float</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>float</strong>, [long] <strong>double</strong></code></td>
+          <td class="oui"><code><strong>float Float</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code><strong>REAL DOUBLE</strong></code></td>
+          <td class="oui"><code><strong>Float Long_Float</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Caractères</th>
+          <th valign="top">Unique</th>
+          <td colspan="2" class="oui"><code><strong>char</strong></code></td>
+          <td class="oui"><code><strong>Character</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>char</strong></code><strong> </strong>(8 bits)</td>
+          <td class="oui"><code><strong>char</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code><strong>Character</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Chaîne</th>
+          <td colspan="3" class="oui"><code><strong>String</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>char*</strong></code></td>
+          <td class="oui"><code><strong>String</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code><strong>CHARACTER</strong></code></td>
+          <td class="oui"><code><strong>String </strong>var</code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Booléen</th>
+          <td colspan="3" class="oui"><code><strong>boolean Boolean</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code></code></td>
+          <td class="oui"><code><strong>boolean Boolean</strong></code></td>
+          <td colspan="3" class="oui"></td>
+          <td><code></code></td>
+          <td class="oui"><code><strong>Boolean</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Enregistrements</th>
+          <td colspan="3">Classes</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>struct</strong></code></td>
+          <td></td>
+          <td colspan="3" class="oui">record</td>
+          <td>Classes</td>
+          <td class="oui"><code class="oui"><strong>record</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Type génériques</th>
+          <th valign="top">Templates</th>
+          <td colspan="2" class="non">Non</td>
+          <td class="oui"><code>Classe&lt;Type&gt;</code></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code>var : Classe[ Type]</code></td>
+          <td class="oui"><code><strong>generic type</strong> MonType</code></td>
+          <td></td>
+          <td>Modèles ou "patrons" de classes</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"><a href="oo">OO</a></th>
+          <th valign="top">Héritage simple</th>
+          <td colspan="3" class="oui"><code>Classe1 <strong>extends </strong>Classe2</code></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Class1</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui"><code>Classe1: Classe2</code></td>
+          <td class="non">Non</td>
+          <td colspan="2" class="oui">Oui</td>
+          <td class="oui"><code>Classe1 <strong>inherit</strong> Classe2</code></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Héritage multiple</th>
+          <td colspan="3" class="non"><code>Classe1 <strong>implements</strong> Interface1, Interface2</code></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="non"><code>Classe1: Interface1, Interface2</code></td>
+          <td colspan="3" class="non">Non</td>
+          <td class="oui"><code>Classe1 <strong>inherit</strong> Classe2 Classe3 </code></td>
+          <td class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="7" valign="top">Structures de contrôle</th>
+          <th colspan="2" valign="top">Condition</th>
+          <td colspan="3" class="oui"><code><strong>if</strong> (cond) <br> ...<br> <strong>else</strong><br> ...
+          </code>
+          </td>
+          <td colspan="2" class="oui"><code><strong>if</strong> (cond) <strong>...<br> else<br> ... </strong></code>
+          </td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code><strong>if</strong> cond <br>    ...<br> <strong> else<br>    ...<br>
+            end</strong></code>
+          </td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>if</strong> (cond) ...</code></td>
+          <td class="oui"><code><strong>if</strong> (cond) ...</code></td>
+          <td colspan="3" class="oui"><code><strong>if </strong>cond <strong>then ...</strong></code></td>
+          <td><code></code></td>
+          <td class="oui"><code><strong>if</strong> (cond) <strong>then</strong></code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Cas</th>
+          <td colspan="3" class="oui"><code><strong>switch</strong> (var) { <br> <strong>  case</strong> val1: <strong>break</strong>;
+            <strong>  case</strong> val2: <strong>break</strong>; <br> }</code></td>
+          <td colspan="2" class="oui"><code>switch (var) { x: break; }</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>switch</strong> (var) { <strong>case</strong> x: <strong>break</strong>;
+            }</code>
+          </td>
+          <td class="oui">
+            <p><code><strong>switch</strong> (var) { <strong>case</strong> val1: <strong>break</strong>;
+              <strong>case</strong> val2: <strong>break</strong>; }</code></p>
+          </td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td class="oui"><code><strong>case</strong> var <strong>is<br/> when</strong> val1 <strong>=&gt;</strong>
+            ...<br/> <strong>when</strong> val2 <strong>=&gt; </strong>...<br/> <strong>end case</strong>;</code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top">Boucle</th>
+          <th valign="top">Itération</th>
+          <td colspan="2" class="oui"><code><strong>for</strong> (init; while; inc) <strong>...</strong></code>
+          </td>
+          <td class="oui"><code></code></td>
+          <td colspan="2" class="oui"><code><strong>for</strong> (init; while; inc) <strong>...</strong></code>
+          </td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code>someList.<strong>each</strong> <strong>do</strong> <strong>|</strong>someElement<strong>|</strong>
+            <br> ... <br> <strong> end</strong></code></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>for</strong> (init; while; inc) <strong>...</strong></code></td>
+          <td class="oui"><code><strong>foreach</strong> (var <strong>in</strong> col) ...</code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td class="oui"><code><strong>for</strong> var <strong>in</strong> [<strong>reverse</strong>] discreteRange
+            <strong>loop</strong><br/> ...<br/> <strong>end loop</strong>;</code></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Un au moins</th>
+          <td colspan="3" class="oui"><code><strong>do</strong> <strong>...</strong> <strong>while</strong></code>
+          </td>
+          <td colspan="2" class="oui"><code><strong>do</strong> <strong>...</strong> <strong>while</strong></code>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>do</strong> <strong>...</strong> <strong>while</strong></code></td>
+          <td></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Tant que</th>
+          <td colspan="3" class="oui"><code><strong>while</strong> (cond) ...</code></td>
+          <td colspan="2" class="oui"><code><strong>while</strong> (cond) <strong>...</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>while</strong> (cond) <strong>...</strong></code></td>
+          <td></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Suite</th>
+          <td colspan="3" class="oui"><code><strong>continue</strong></code></td>
+          <td colspan="2" class="oui"><code><strong>continue</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>continue</strong></code></td>
+          <td></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Stop</th>
+          <td colspan="3" class="oui"><code><strong>break</strong></code></td>
+          <td colspan="2" class="oui"><code><strong>break</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"><code><strong>break</strong></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><code></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Gestion des erreurs</th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/proj/impl/lang/Exception.html">Exceptions</a></th>
+          <td colspan="3" class="oui">Oui</td>
+          <td class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td colspan="2" class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Robustesse</th>
+          <th colspan="2" valign="top">Contrôle des conversions</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Contrôle des limites de tableau</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Contrôle division par zéro</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Gestion mémoire</th>
+          <th colspan="2" valign="top">Pointeurs</th>
+          <td colspan="3" class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Allocation</th>
+          <th valign="top">Automatique</th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td class="non">Non</td>
+          <td class="non">Non</td>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Libération</th>
+          <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/vm/GC.html">GC</a></th>
+          <td colspan="3" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="non"></td>
+          <td class="non"></td>
+          <td class="non">Non</td>
+          <td></td>
+          <td class="non">Non</td>
+          <td class="non">Non</td>
+          <td class="non">Non</td>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+          <td>Garantie de robustesse</td>
+        </tr>
+        <tr>
+          <th valign="top">Mise au point</th>
+          <th colspan="2" valign="top">Assertions</th>
+          <td class="non">Non</td>
+          <td colspan="2" class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><code>assert.h</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <caption>L2G</caption>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="2" class="titleCorner"></td>
+          <th valign="top"> Nom</th>
+          <th colspan="2">BASIC</th>
+          <th><a href="cobol">COBOL</a></th>
+          <th><a href="perl">PERL</a></th>
+          <th width="301" rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Version/ Fournisseur</th>
+          <th></th>
+          <th>Microsoft</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th valign="top"> Produit/ Release</th>
+          <th></th>
+          <th>Visual Basic</th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan="3" valign="top">Exécution</th>
+          <th colspan="2" valign="top">Interpréteur</th>
+          <td class="oui">Oui</td>
+          <td></td>
+          <td></td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top"><a href="/org/us/company/oracle/sun/ptf/java/vm">VM</a></th>
+          <td colspan="2" class="non">Non</td>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Machine</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="non">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../Compilation.html">Compilation</a></th>
+          <th colspan="2" valign="top">Préprocesseur</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="8" valign="top">Structures de données</th>
+          <th colspan="2" valign="top">Constantes</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Enumérations</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Numériques</th>
+          <th valign="top">Entiers</th>
+          <td class="oui"><code>var%</code></td>
+          <td></td>
+          <td></td>
+          <td class="oui">32 bits</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Flottants</th>
+          <td class="oui"><code>var<strong>! </strong>var<strong>#</strong></code></td>
+          <td></td>
+          <td></td>
+          <td class="oui">32 bits</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Caractères</th>
+          <th valign="top">Unique</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td class="oui">32 bits</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Chaîne</th>
+          <td class="oui"><code>var<strong>$</strong></code></td>
+          <td></td>
+          <td></td>
+          <td class="oui">Suite de 32 bits</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Enregistrements</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Type génériques</th>
+          <th valign="top">Templates</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Modèles ou "patrons" de classes</td>
+        </tr>
+        <tr>
+          <th rowspan="7" valign="top">Structures de contrôle</th>
+          <th colspan="2" valign="top">Condition</th>
+          <td class="oui"><code><strong>if </strong>cond<strong> then ...</strong></code></td>
+          <td><code></code></td>
+          <td><code></code></td>
+          <td class="oui"><code><strong>if</strong> (cond) { }</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Cas</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><code></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top">Boucle</th>
+          <th valign="top">Itération</th>
+          <td class="oui"><code><strong>FOR</strong> var=exp <strong>TO</strong> exp [<strong>STEP</strong> exp]</code>
+          </td>
+          <td></td>
+          <td></td>
+          <td class="oui"><code>foreach $var (liste) <strong>...</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Un au moins</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><code></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Tant que</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><code></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Suite</th>
+          <td class="oui"><code><strong>NEXT</strong> var</code></td>
+          <td></td>
+          <td></td>
+          <td><code></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Stop</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Gestion des erreurs</th>
+          <th colspan="2" valign="top"><a href="/tech/info/soft/proj/impl/lang/Exception.html">Exceptions</a></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Robustesse</th>
+          <th colspan="2" valign="top">Contrôle des conversions</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="non"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Contrôle des limites de tableau</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Contrôle division par zéro</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Gestion mémoire</th>
+          <th colspan="2" valign="top">Pointeurs</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Allocation</th>
+          <th valign="top">Automatique</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Libération</th>
+          <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/vm/GC.html">GC</a></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td>Garantie de robustesse</td>
+        </tr>
+        <tr>
+          <th valign="top">Mise au point</th>
+          <th colspan="2" valign="top">Assertions</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <caption>Langages de requêtes</caption>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="2" class="titleCorner"></td>
+          <th valign="top"> Nom</th>
+          <th><a href="/tech/info/soft/data/dbms/r/sql">SQL</a></th>
+          <th>OQL</th>
+          <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>QL</th>
+          <th><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>QL</th>
+          <th width="301" rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Version/ Fournisseur</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th> Domaine</th>
+          <th> Technologie</th>
+          <th valign="top"> Release</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td class="oui"></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <caption>Langages de représentation</caption>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="3" class="titleCorner"></td>
+          <th valign="top"> Nom</th>
+          <th>SGML</th>
+          <th></th>
+        </tr>
+        </thead>
+      </table>
+    </li>
+  </ul>
+</section>
 <!--#include virtual="/footer.html" -->

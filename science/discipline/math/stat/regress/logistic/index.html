@@ -12,28 +12,32 @@
   <h2>Analyse</h2>
   <p>On veut ici pouvoir classer des valeurs comme appartenant à une classe ou à une autre : cela implique que y doit
     avoir des valeurs discrètes (autant que le nombre de classes) et non plus une valeur continue.</p>
-  <p>Dans ce cas la fonction hypothèse h doit elle aussi fournir une résultat dans un intervalle binaire : soit y(x)
-    appartient à la classe "positive" (y = 1), soit à la classe "négative" (y = 0).</p>
+  <p>Dans ce cas la fonction hypothèse `h` doit elle aussi prédire une résultat de valeurs discrètes dans l'intervalle
+    correspondant à celles de y. Par exemple pour un cas binaire soit `y(x)` appartient à la classe "positive" (`y = 1`),
+    soit à la classe "négative" (`y = 0`), ou plus généralement pour une classification à `n` classes `y = { 0, 1, 2,
+    ..., n }`.</p>
 </section>
 <section>
   <h2>Conception</h2>
   <p>Utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher (par "chance") mais comporte trop
     de risque de faux positifs/négatifs.</p>
-  <p>On préfère donc encapsuler notre hypothèse dans une fonction logistique (ou "sigmoïde", en forme de "S") `g` qui
-    transforme tout résultat en une valeur entre 0 et 1 :</p>
-  <p>`g(z)=1/(1+e^(−z))`</p>
-  <p>dans notre cas si le vecteur x représente les caractéristiques (<em>features</em>) de éléments à classer :</p>
+  <p>On préfère donc encapsuler notre hypothèse dans une <a href="/science/discipline/math/stat/Sigmoide.html">fonction
+    logistique</a> `g` qui transforme tout résultat en une valeur tendant vers 0 ou 1. Dans notre cas si le vecteur `x
+    représente les caractéristiques (<em>features</em>) de éléments à classer :</p>
   <p>`z=θ^Tx`</p>
-  <p>et on définit donc `h_θ(x)` comme la probabilité P que y = 1 (et donc 1 - P que y = 0) :</p>
+  <p>et on définit donc `h_θ(x)` comme la probabilité P que `y = 1` (et donc `1 - P` que `y = 0) :</p>
   <p>`h_θ(x)=g(θ^Tx)`</p>
+  <section>
+    <h3>Vectorisation</h3>
+  </section>
 </section>
 <section>
   <h2>Notes</h2>
-  <p>Il pourra arriver que les données ne puissent être classées par une séparation linéaire. On pourra alors
-    effectuer un <i lang="en">feature mapping</i> pour créer de nouvelles features artificielles à partir de celles
-    existantes. Par exemple à partir d'une matrice X ne contenant que 2 features `X_1` et `X_2`, déboucher sur une
-    nouvelle matrice contenant `x_1, x_2, x_1^2, x_1*x_2, x_2^2, x_1^3, ..., x_1*x_2^5, x_2^6`, ce qui permet de
-    tracer des contours complexes (courbes, non-linéaires).</p>
+  <p>Il pourra arriver que les données ne puissent être classées par une séparation linéaire. On pourra alors effectuer
+    un <i lang="en">feature mapping</i> pour créer de nouvelles features artificielles à partir de celles existantes.
+    Par exemple à partir d'une matrice X ne contenant que 2 features `X_1` et `X_2`, déboucher sur une nouvelle matrice
+    contenant `x_1, x_2, x_1^2, x_1*x_2, x_2^2, x_1^3, ..., x_1*x_2^5, x_2^6`, ce qui permet de tracer des contours
+    complexes (courbes, non-linéaires).</p>
 </section>
 <!--#include virtual="/footer.html" -->
 <style>.mjx-math * {

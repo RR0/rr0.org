@@ -1,0 +1,105 @@
+<!--#include virtual="/header-start.html" -->
+<title>Bit</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Binary digit</em> : chiffre binaire.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Représenter une donnée numérique à partir d'un signal (électrique).</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Défini un système numérique en base 2 : les bits ne peuvent prendre que deux valeurs : 0 ou 1.</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Une logique binaire (ou bivalente) et un algèbre a été développée par Boole, introduisant des opérateurs
+      spécifiques
+    </li>
+    <li>
+      <table border=1 cellspacing=0 cellpadding=5>
+        <thead>
+        <tr>
+          <td rowspan=2>Opérateurs</td>
+          <td rowspan=2>Opérandes</td>
+          <th rowspan="2" valign=bottom>0</th>
+          <th rowspan="2" valign="bottom">1</th>
+          <th rowspan="2">Commentaire</th>
+          <th>Binaire</th>
+          <th colspan="2">Logique</th>
+        </tr>
+        <tr>
+          <th><a href="/org/us/company/oracle/sun/ptf/java">Java</a>, C, C++, Pascal</th>
+          <th><a href="/org/us/company/oracle/sun/ptf/java">Java</a>, C, C++</th>
+          <th>Pascal, SQL</th>
+        </tr>
+        <tr>
+          <th rowspan="2">OR</th>
+          <th> 0</th>
+          <td valign=top> 0</td>
+          <td> 1</td>
+          <td rowspan=2>Ou : l'un ou l'autre, ou les deux</td>
+          <td rowspan=2><code>|</code></td>
+          <td rowspan=2><code>||</code></td>
+          <td rowspan=2><code>or</code></td>
+        </tr>
+        <tr>
+          <th valign=top>1</th>
+          <td valign=top>1</td>
+          <td>1</td>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan="2" valign=top>AND</th>
+          <th valign=top>0</th>
+          <td valign=top>0</td>
+          <td>0</td>
+          <td rowspan="2">Et : Seulement les deux</td>
+          <td rowspan="2"><code>&amp;</code></td>
+          <td rowspan="2"><code>&amp;&amp;</code></td>
+          <td rowspan="2"><code>and</code></td>
+        </tr>
+        <tr>
+          <th valign=top>1</th>
+          <td valign=top>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th rowspan=2 valign=top>XOR</th>
+          <th valign=top>0</th>
+          <td valign=top>0</td>
+          <td>1</td>
+          <td rowspan="2">Ou exclusif : l'un ou l'autre, mais pas les deux</td>
+          <td rowspan="2"><code>^</code></td>
+          <td colspan="2" rowspan="2"><code>N/A</code></td>
+        </tr>
+        <tr>
+          <th valign=top>1</th>
+          <td valign=top>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th rowspan=2 valign=top>NOT</th>
+          <th valign=top>0</th>
+          <td valign=top>1</td>
+          <td colspan="2" rowspan="2">Opérateur unaire de négation : inversion vrai/faux
+          </td>
+          <td rowspan="2"><code>~</code></td>
+          <td rowspan="2"><code>!</code></td>
+          <td rowspan="2"><code>not</code></td>
+        </tr>
+        <tr>
+          <th valign=top>1</th>
+          <td valign=top>0</td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<h2>Limitations</h2>
+<ul>
+  <li>Logique tout ou rien. Des alternatives de "logique floue" ont été proposées pour proposer des états intermédiaires
+    (logique floue ou <em>fuzzy logic</em>), notamment utiles pour l'<a href="../../AI.html">IA</a>.
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->

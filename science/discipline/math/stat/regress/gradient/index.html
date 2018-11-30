@@ -12,14 +12,16 @@
     <figcaption>Descente de gradient vers un coût J minimal local (à droite) ou global (à gauche)</figcaption>
     <img src="gradient-descent.png" alt="Descente de gradient vers un coût J minimal local ou global"/>
   </figure>
-  <p>Si l'on considère un fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n` et une <a
+  <p>Si l'on considère une fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n` et une <a
       href="/science/discipline/math/stat/regress/cost">fonction de coût</a> `J(θ)`, l'<a
       href="/tech/info/soft/proj/impl/algo">algorithme</a> de descente de gradient consiste à changer (simultanément)
-    les `θ_n` (avec des "sauts" plus ou moins grands, en fonction de α) en fonction de la pente (dérivée) induite par le
+    les `θ_n` en fonction de la pente (dérivée) induite par le
     coût :</p>
   <p><strong>Itérer</strong> jusqu'à convergence {<br/>
     &nbsp;&nbsp;`θ_j:=θ_j−α∂/(∂θ_j) J(θ)`<br/> }
   </p>
+  <p>où `α` est le taux d'apprentissage (<i lang="en">learning rate</i>) à régler, déterminant la taille des "sauts"
+    lors de la descente.</p>
   <p>Si l'on dispose de capacités de calcul matriciel rapides, on peut effectuer l'opération équivalente de manière
     <strong>vectorisée</strong>.</p>
 </section>

@@ -1,0 +1,94 @@
+<!--#include virtual="/header-start.html" --><title>JSON</title><!--#include virtual="/header-end.html" -->
+<p><em>JavaScript Object Notation</em> : notation d'objet pour <a href="../proj/design/arch/web/js">Javascript</a>.
+</p>
+<section>
+  <h2>Motivation</h2>
+  <p> Représenter des données dans une format optimisé pour le réseau.</p>
+  <p>En effet, le format JSON est né du constat de la surcharge imposée par les transferts de données en <a
+      href="doc/xml">XML</a>, lorsque celui-ci ne se justifie pas (pas de grammaire complexe, pas de validation).
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un objet JSON est composé d'une suite de propriétés valuées, chaque valeur pouvant elle-même être un objet JSON.
+  </p>
+  <p>Ne supporte pas les cycles.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Utiliser la notation <a href="../proj/design/arch/web/js">Javascript</a> définissant un objet</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Des bibliothèques existent pour utiliser facilement JSON depuis divers langages comme Java, Javascript, C, C++,
+    Objective C, PHP, etc.
+  </p>
+  <section>
+    <h3>Javascript</h3>
+  </section>
+  <section>
+    <h3>Accès</h3>
+
+    <p>Les variables membres peuvent donc être récupérées via la notation pointée ou subscript.</p>
+    <p>
+    <pre><code>myJSONObject.bindings[0].method // "newURI" </code></pre>
+    </p>
+    <section>
+      <h3>Instanciation</h3>
+
+      <p>En tant que sous-ensemble de la notation litérale d'un objet en JavaScript, JSON peut être utilisé dans le
+        langage :
+      </p>
+      <p>
+      <pre><code>var myJSONObject = { "bindings": [ {"ircEvent": "PRIVMSG", "method": "newURI", "regex":
+                "^http://.*"}, {"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"}, {"ircEvent":
+                "PRIVMSG", "method": "randomURI", "regex": "^random.*"} ] };</code></pre>
+      </p><p>Un objet JSON provenant souvent d'autre part que le code qui va l'utiliser, on aura cependant typiquement
+      besoin de l'instancier à partir de son texte récupéré. Pour cela on peut utiliser :
+    </p>
+      <ul>
+        <li><strong>une évaluation de code </strong>qui le soumettra au "compilateur" JavaScript (entre parenthèses pour
+          lever l'ambiguité sur le début d'un bloc de code) : <code class="prettyprint">var myObject = eval('(' +
+            myJSONtext + ')'); </code> Il s'agit cependant d'une solution risquée, le texte à évaluer pouvant aussi
+          comporter n'importe quel code potentiellement malicieux.
+        </li>
+        <li><strong>un parseur d'objet</strong> qui ne comprendra que les objets au format JSON et jamais du code :
+          <code>var myObject = JSON.parse(myJSONtext, reviver); </code> où le paramètre optionnel reviver est une
+          fonction qui sera invoquée sur toute paire clé/valeur dans le cas où l'on souhaite personnaliser la
+          réification. Par exemple :
+          <pre><code>myData = JSON.parse(text, function (key, value) { var type; if (value &amp;&amp;
+          typeof value === 'object') { type = value.type; if (typeof type === 'string' &amp;&amp; typeof window[type]
+          === 'function') { return new (window[type])(value); } } return value; } ); </code></pre>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h3>Sérialisation</h3>
+
+    <p>Dans l'autre sens, envoyer un objet au format JSON peut se faire via un <em>stringifier</em> : <code>var
+      myJSONText = JSON.stringify(myObject, replacer); </code> qui invoquera la méthode <code>toJSON()</code> sur
+      l'objet pour le convertir, si elle existe. Ensuite, s'il est précisé, sera invoqué le <em>replacer</em> qui permet
+      de personnaliser la chaîne JSON représentant une paire clé/valeur :
+    </p>
+    <p>
+    <pre><code>function replacer(key, value) { if (typeof value === 'number' &amp;&amp; !isFinite(value)) {
+            return String(value); } return value; }</code></pre>
+    </p><p>Le replacer peut aussi être remplacé par un tableau des propriétés à sérialiser, si l'on veut juste pouvoir
+    les choisir.
+  </p>
+    <p>Les valeurs n'ayant pas de représentation JSON (fonctions, <code>undefined</code>, <code>NaN</code>, <code>+infinity</code>,
+      <code>-infinity</code>) seront exclues (un replacer peut donc retourner undefined pour exclure la sérialisation
+      d'une clé/valeur).
+    </p>
+    <p><span class="source">"<a href="http://www.json.org/js.html">JSON in JavaScript</a>", JSON.org</span></p>
+  </section>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <pre><code>{ "menu": { "id": "file", "value": "File", "popup": { "menuitem": [ { "value": "New", "onclick":
+    "CreateNewDoc()" }, { "value": "Open", "onclick": "OpenDoc()" }, { "value": "Close", "onclick": "CloseDoc()" } ] } }
+      }</code>
+</pre>
+</section>
+<!--#include virtual="/footer.html" -->

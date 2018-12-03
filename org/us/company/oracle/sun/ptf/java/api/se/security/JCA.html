@@ -2,7 +2,7 @@
 <title>JCA</title>
 <!--#include virtual="/header-end.html" -->
 <p><i>Java Cryptography Architecture</i> : architecture de <a
-    href="/tech/info/soft/securite/confidentialite/Cryptographie.html">cryptographie</a> de <a
+    href="/tech/info/soft/sec/priv/Cryptographie.html">cryptographie</a> de <a
     href="/tech/info/soft/prog/oo/java">Java</a> (JCA est aussi souvent utilisé pour désigner les <a
     href="/tech/info/soft/java/J2C.html">connecteurs J2EE</a>).</p>
 <section>
@@ -11,11 +11,11 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Dans un esprit d'abstraction des couches propriétaires, la <a href="/tech/info/soft/prog/oo/java/JCA.html">JCA</a>
+  <p>Dans un esprit d'abstraction des couches propriétaires, la JCA
     distingue :</p>
   <ul>
     <li>les <strong>concepts</strong> de sécurité (identité, clés, <a
-        href="/tech/info/soft/securite/authentification/certificat">certificats</a>...)
+        href="/tech/info/soft/sec/auth/cert">certificats</a>...)
       <ul>
         <li><strong>généraux </strong>
           <ul>
@@ -42,16 +42,16 @@
   <p>Les identités sont représentées par des classes implémentant <code>java.security.Principal</code>. depuis Java 2
     (dans Java 1, la classe <code>java.security.Identity</code> implémentait cette interface et fournissait diverses
     méthodes permettant d'associer des <a href="#cle">clés</a> et <a
-        href="/tech/info/soft/securite/authentification/certificat">certificats</a> à cette identité. Java 2 a rendu
+        href="/tech/info/soft/sec/auth/cert">certificats</a> à cette identité. Java 2 a rendu
     cette dernière classe obsolète avec l'apparition de la <a href="#keystore">base de clés</a> <code>java.security.Keystore</code>,
     qui permet d'associer clés et <a
-        href="/tech/info/soft/securite/authentification/certificat">certificats</a> à partir d'un alias unique -- alias
+        href="/tech/info/soft/sec/auth/cert">certificats</a> à partir d'un alias unique -- alias
     qu'un objet de type <span class="code"><code>java.security.Principal</code></span> peut fournir via sa méthode
     <code>getName()</code>. La classe <code>java.security.Identity</code> est donc obsolète à partir de Java 2, ainsi
     que ses dérivées <code>java.security.IdentityScope</code> et <code>java.security.Signer</code>.)</p>
   <h4>Clés</h4>
   <p>Le concept de <a href="#cle">clé</a> est représenté par l'interface <code>java.security.Key</code>, dont dérivent
-    les interfaces <code>java.security.PublicKey</code> (<a href="#clepublique">clé publique</a>) et <code>java.security.PrivateKey</code>
+    les interfaces <code>java.security.PublicKey</code> (<a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a>) et <code>java.security.PrivateKey</code>
     (<a href="#cleprivee">clé privée</a>).</p>
   <p>Clé publique et clé privée peuvent être associées dans un objet <code>java.security.KeyPair</code>. Ces paires de
     clés peuvent être générées à l'aide d'un générateur de paires de clés spécifique à un algorithme. Par exemple :</p>
@@ -106,8 +106,8 @@ byte[] donneesCondense1 = monCondense.clone().digest();
 
 monCondense.update (donnees2);
 byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
-  <h4><a href="/tech/info/soft/prog/oo/java/Signature.html">Signature</a></h4>
-  <h4><a href="/tech/info/ACL.html">ACL</a>/<a href="/tech/info/soft/prog/oo/java/Permission.html">Permissions</a></h4>
+  <h4><a href="/tech/info/soft/sec/auth/sign">Signature</a></h4>
+  <h4><a href="/tech/info/ACL.html">ACL</a>/<a href="/org/us/company/oracle/sun/ptf/java/Permission.html">Permissions</a></h4>
   <h3>Implémentation des concepts spécifiques à Java</h3>
   <p>Les concepts suivants ont été spécifiquement définis pour s'intégrer dans la plate-forme Java 2.</p>
   <h4> Objets gardés</h4>
@@ -129,8 +129,9 @@ byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
       même machine (on pourra par exemple définir des politiques différentes pour l'Administrateur de la machine, pour
       un compte destiné à tester les logiciels téléchargés potentiellement dangereux, etc.).</li>
   </ul>
-  <p>Concrètement, ces politiques sont exprimées sous la forme de séquences de <a href="#permission">permissions</a>
-    (comparables au principe des <a href="#ACL">ACL</a>). </p>
+  <p>Concrètement, ces politiques sont exprimées sous la forme de séquences de <a
+      href="/org/us/company/oracle/sun/ptf/java/Permission.html">permissions</a>
+    (comparables au principe des <a href="/tech/info/ACL.html">ACL</a>). </p>
   <h4><b class="titre4">Origine de code</b></h4>
   <p>Une origine de code (<i>Code Source</i>) représente une identification de l'émetteur d'un code applicatif.</p>
   <p>Cette identification peut s'effectuer sur la base de :</p>
@@ -152,9 +153,9 @@ byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
     <code>http://javarome.valtech.fr/classes/security/Example.class</code> sera considéré comme valide par exemple.</p>
   <p>Cette possibilité peut être utilisée au travers de <code>java.security.CodeSource.implies (CodeSource),</code> qui
     renvoie si l'origine d'un code (URL et certficats) est compatible avec l'origine d'un autre code.</p>
-  <h4><b><a href="/tech/info/soft/prog/oo/java/ClassLoader.html">Chargeur de classe</a></b></h4>
-  <h4><b><a href="/tech/info/soft/prog/oo/java/Verifier.html">Vérifieur de bytecode</a></b></h4>
-  <h4><b><a href="/tech/info/soft/prog/oo/java/SecurityManager.html">Gestionnaire de Sécurité</a></b></h4>
+  <h4><b><a href="/org/us/company/oracle/sun/ptf/java/ClassLoader.html">Chargeur de classe</a></b></h4>
+  <h4><b><a href="/org/us/company/oracle/sun/ptf/java/vm/Verifier.html">Vérifieur de bytecode</a></b></h4>
+  <h4><b><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/SecurityManager.html">Gestionnaire de Sécurité</a></b></h4>
   <h4><b>Contrôleur d'accès</b></h4>
   <p>Le rôle du contrôleur d'accès est donc à terme de remplacer le Gestionnaire de Sécurité. Il s'agit d'une classe
     statique (non-instantiable), contrôlant les accès aux ressources en fonction du Contexte de Sécurité courant.</p>
@@ -170,7 +171,7 @@ byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
   <h4><b class="titre4">Domaine de Protection</b></h4>
   <p>Un domaine de protection représente un modèle similaire à celui de la sanbox de Java 1.1, où l'identification par
     CODEBASE serait étendue au concept d'<a href="#codesource">origine de code</a>.</p>
-  <p>Un domaine de protection associe un ensemble de <a href="#permission">permissions</a> à une <a href="#codesource">origine
+  <p>Un domaine de protection associe un ensemble de <a href="/org/us/company/oracle/sun/ptf/java/Permission.html">permissions</a> à une <a href="#codesource">origine
     de code</a> donnée.</p>
   <p>Il existe typiquement deux catégories de domaines de protection :</p>
   <ul>
@@ -217,14 +218,14 @@ byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
   <p>Une entrée de la base de clés peut être :</p>
   <ul>
     <li>une <a href="#clesecrete">clé secrète</a></li>
-    <li>une chaînes de <a href="#certificat">certificats</a> associée à une <a href="#cleprivee">clé privée</a></li>
-    <li>un <a href="#certificat">certificat</a> associé à une <a href="#clepublique">clé publique</a></li>
+    <li>une chaînes de <a href="/tech/info/soft/sec/auth/cert">certificats</a> associée à une <a href="#cleprivee">clé privée</a></li>
+    <li>un <a href="/tech/info/soft/sec/auth/cert">certificat</a> associé à une <a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a></li>
   </ul>
   <p>Cette base est représentée par la classe <code>java.security.KeyStore</code> et son mode de persistance peut être
     fourni par divers fournisseurs implémentant une <code>java.security.KeyStoreSpi</code> (sur une carte à puce par
     exemple).</p>
   <h4>Objet Signé</h4>
-  <p>Un objet signé est un objet dont l'état courant a été signé à l'aide d'un <a href="#certificat">certificat</a>.</p>
+  <p>Un objet signé est un objet dont l'état courant a été signé à l'aide d'un <a href="/tech/info/soft/sec/auth/cert">certificat</a>.</p>
 </section>
 <section>
   <h2>Exemples</h2>
@@ -235,13 +236,13 @@ byte[] donneesCondense1et2 = monCondense.digest();</code></pre>
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>les <a href="#signature">signatures électroniques</a> [1.1]</li>
-    <li>les <a href="#digest">condensés de messages</a> [1.1]</li>
+    <li>les <a href="/tech/info/soft/sec/auth/sign">signatures électroniques</a> [1.1]</li>
+    <li>les <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensés de messages</a> [1.1]</li>
     <li>Génération de clés asymétriques (privées et publiques)</li>
     <li>Paramètres d'algorithmes</li>
-    <li>le support des certficats <a href="/tech/info/soft/securite/confidentialite/cryptage/X509.html">X.509</a> V3.
+    <li>le support des certficats <a href="/tech/info/soft/sec/priv/crypt/X509.html">X.509</a> V3.
     </li>
-    <li>peut être étendue par la <a href="/tech/info/soft/prog/oo/java/JCE.html">JCE</a>.</li>
+    <li>peut être étendue par la <a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>.</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

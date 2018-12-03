@@ -1,0 +1,56 @@
+<!--#include virtual="/header-start.html" -->
+<title>Chiffrement symétrique</title>
+<!--#include virtual="/header-end.html" -->
+<p>Ou chiffrement à <a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href=".">Chiffrer</a> rapidement</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le cryptage symétrique implique l'utilisation d'une seule et même <a
+      href="../../../proj/impl/struct/Key.html">clé</a> secrète pour le cryptage et le décryptage. Cette <a
+      href="../../../proj/impl/struct/Key.html">clé</a> doit donc être connue des deux parties. </p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>plus simple et plus rapide que le <a href="Asymetrique.html">cryptage asymétrique</a>, mais plus risqué (voir
+      limitations).</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>les correspondants doivent connaître la valeur de la clé secrète sans la transmettre sur le réseau (ce qui n'est
+      pas envisageable dans bien des cas, dont le commerce électronique). On aura donc tendance à utiliser un <a
+          href="Asymetrique.html">cryptage asymétrique</a> au moins le temps de <a href="../../auth">l'authentification</a>/<a
+          href="../../auth/cert">certification</a>, puis éventuellement des systèmes symétriques une fois
+      cette <a href="../../auth">authentification</a> effectuée (c'est ce que fait <a href="SSL.html">SSL</a>
+      par exemple).</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de cryptage symétrique sont :</p>
+  <ul>
+    <li><a href="DES.html">DES</a></li>
+    <li><a href="#3DES">3DES</a></li>
+    <li><a href="../../PGP.html">PGP</a></li>
+    <li><a href="http://www.cs.uwf.edu/%7Ewilde/CEN6990/papers/boone/IDEA.htm">IDEA</a> (<i>International Data
+      Encryption Algorithm</i>)</li>
+    <li>par flux
+      <ul>
+        <li><a href="RC2.html">RC2</a></li>
+        <li><a href="RC4.html">RC4</a></li>
+      </ul>
+    </li>
+    <li>par blocs
+      <ul>
+        <li><a href="RC5.html">RC5</a></li>
+        <li><a href="RC6.html">RC6</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

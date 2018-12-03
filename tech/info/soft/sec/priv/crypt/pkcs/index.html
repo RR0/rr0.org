@@ -1,0 +1,43 @@
+<!--#include virtual="/header-start.html" -->
+<title>PKCS</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Public Key Cryptography Standards</i> : standards de cryptographie à clé publique.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir une suite de spécifications standards de modules cryptographiques.</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Définie en <time>1991-06</time> par Apple, DEC, Lotus, Microsoft, le MIT, <a
+      href="/org/us/company/RSA.html">RSA</a> et Sun.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>PCKS regroupe les composants suivants :</p>
+  <ul>
+    <li>PKCS#1 : Cryptage <a href="/org/us/company/RSA.html">RSA</a></li>
+    <li>PKCS#2 : <i>Incorporé dans PKCS#1.</i></li>
+    <li>PKCS#3 : Agrément de clés Diffie-Hellman</li>
+    <li>PKCS#4 : <i>Incorporé dans PKCS#1.</i></li>
+    <li>PKCS#5 : Cryptage basé sur un mot de passe (<a href="../PBE.html">PBE</a>)</li>
+    <li>PKCS#6 : Format d'extension des certificats</li>
+    <li>PKCS#7 : Spécification du format de différents messages cryptographiques (SignedData.certificats, ContentInfo
+      par exemple... utilisés par <a href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> lors du
+      téléchargement de certificats). Voir la <a href="http://www.imc.org/rfc2315">RFC 2315</a></li>
+    <li>PKCS#8 : Format des <a href="/tech/info/soft/sec/auth/PrivateKey.html">clés privées</a></li>
+    <li>PKCS#9 : Selected Attributes Types ?</li>
+    <li>PKCS#10 : Format des requêtes de certification (<a href="/tech/info/soft/sec/auth/cert/CSR.html">CSR</a>). Voir
+      <a
+          href="http://www.imc.org/rfc2314">RFC 2314</a>.</li>
+    <li>PKCS#11 : Interface de cryptographie par token.</li>
+    <li><a href="12">PKCS#12 : Échange d'informations personnelles</a>.</li>
+    <li>PKCS#13 : Techniques à clé publique utilisant la cryptographie par courbe elliptique.</li>
+    <li>PKCS#15 : Format des fichiers de cartes à puce (draft).</li>
+  </ul>
+  <p>PKCS est aujourd'hui supporté dans de nombreux produits, dont :</p>
+  <ul>
+    <li>Netscape Communicator (support de PKCS#11 permettant l'utilisation de cartes à puce et de tokens)</li>
+  </ul>
+  <p>La dernière version spécifiée par RSA est PKCS#15.</p>
+</section>
+<!--#include virtual="/footer.html" -->

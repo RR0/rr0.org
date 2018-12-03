@@ -15,8 +15,7 @@
   <p>Si l'on considère une fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n` et une <a
       href="/science/discipline/math/stat/regress/cost">fonction de coût</a> `J(θ)`, l'<a
       href="/tech/info/soft/proj/impl/algo">algorithme</a> de descente de gradient consiste à changer (simultanément)
-    les `θ_n` en fonction de la pente (dérivée) induite par le
-    coût :</p>
+    les `θ_n` en fonction de la pente (dérivée) induite par le coût :</p>
   <p><strong>Itérer</strong> jusqu'à convergence {<br/>
     &nbsp;&nbsp;`θ_j:=θ_j−α∂/(∂θ_j) J(θ)`<br/> }
   </p>
@@ -28,11 +27,14 @@
 <section>
   <h2>Notes</h2>
   <ul>
+    <li>Sa complexité en `O(kn^2)` fait qu'elle est adaptée même si n est grand (contrairement à l'<a
+        href="/science/discipline/math/stat/regress/normal">équation normale</a>).</li>
     <li>Si votre α est trop grand (votre saut trop rapide), vous pouvez vous retrouver à remonter ("sauter" de l'autre
       côté du trou) et donc diverger au lieu de converger.</li>
     <li>Pour être sûr de converger (ou comprendre pourquoi on ne converge pas), il peut être utile de tracer `J(θ)` et
       s'assurer qu'elle tend bien vers 0.</li>
-    <li>D'autres algorithmes (plus complexes) d'optimization évitent ces problèmes : un bon α est déterminé
+    <li></li>
+    <li>D'autres algorithmes (plus complexes) d'optimisation évitent ces problèmes : un bon `α` est déterminé
       automatiquement et la convergence arrive donc rapidement :
       <ul>
         <li>Gradient conjugué</li>

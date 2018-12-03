@@ -1,0 +1,45 @@
+<!--#include virtual="/header-start.html" -->
+<title>CA</title>
+<!--#include virtual="/header-end.html" -->
+<p> <i>Certificate Authority</i> : autorité de certification.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Délivrer des <a href=".">certificats</a> permettant d'identifier
+    d'autres acteurs.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Lorsqu'un acteur désire être certifié (obtenir un certificat) par une Autorité de Certification, il lui transmet
+    une <a href="CSR.html">CSR</a>.</p>
+  <p>Chaque certificat est ainsi signé par une autre identité, dont le certificat peut lui-même être signé par une
+    identité supérieure, etc. Par exemple le certificat de Jérôme Beau peut être signé par le Département IT, dont le
+    certificat est signé par Valtech, dont le certificat est signé par <a href="/org/us/company/Verisign.html">Verisign</a>, une des CA de
+    l'Internet. C'est ce que l'on appelle des <i>chaînes de certificats</i>.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>En fonction du niveau de certificat demandé (offrant un niveau de garantie plus ou moins élevé de l'identité
+      certifiée), l'Autorité de Certification effectuera plus ou moins de vérifications de l'identité du demandeur, puis
+      retournera en cas de succès le certificat demandé, signé.</li>
+    <li>Une Autorité de Certification dispose elle-même d'un certificat auto-signé, est un acteur à l'identité
+      incontestable et n'a donc n'ayant pas besoin de fournir un certificat signé par une autre autorité (<a
+          href="#certificatautosigne">certificat auto-signé</a>).</li>
+    <li>Les CA peuvent être publiques (comme <a href="/org/us/company/Verisign.html">Verisign</a>, <a
+        href="http://www.bbn.com/products/security/cytrust/">GTE CyberTrust</a>, <a
+        href="http://www.thawte.com">Thawte</a> ou <a href="http://www.entrust.com/">Entrust</a>) ou privées (au sein
+      d'une compagnie) ;</li>
+    <li>Dans certains cas, une CA répondra à une CSR par une chaîne de certificats au lieu d'un seul certificat. </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de CA sont :</p>
+  <ul>
+    <li><a href="/org/us/company/Verisign.html">Verisign</a> (public)</li>
+    <li><a href="http://www.bbn.com/products/security/cytrust/">GTE CyberTrust</a> (public) </li>
+    <li><a href="http://www.thawte.com">Thawte</a> (public)</li>
+    <li><a href="http://www.entrust.com/">Entrust</a> (public)</li>
+    <li>Le département IT de Valtech (privé) </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

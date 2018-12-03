@@ -1,0 +1,115 @@
+<!--#include virtual="/header-start.html" -->
+<title>Dérivées</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Derivative</i>.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Déterminer la pente d'une <a href="..">fonction</a> en un point.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <figure class="right side">
+    <figcaption>Recherche de la tangente en un point de la fonction</figcaption>
+    <img src="Tangente2.gif" alt="Recherche de la tangente en un point de la fonction"/>
+  </figure>
+  <p>On considère que la pente est donnée par la <strong>tangente</strong> (plus précisément le <strong>coefficient
+    directeur</strong> de cette tangente) à la fonction en un point.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <figure class="right side">
+    <figcaption>Taux d'accroissement</figcaption>
+    <img src="taux.png" alt="Taux d'accroissement"/>
+  </figure>
+  <p>Pour trouver la tangente, on la définit comme passant par 2 points de la fonction (espacés d'un petit écart `h` en
+    abscisse), et l'on chercher à trouver quelle sera la pente lorsque ces points seront rapprochés au maximum (i .e.
+    lorsque `h` tend vers 0).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de fonctions dérivées sont :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Fonction `f =`</th>
+      <th>Graphique</th>
+      <th>Fonction dérivée `f'=`</th>
+      <th>Explication de la dérivée</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>constante</td>
+      <td>
+        <div id="const"></div>
+      </td>
+      <td>0</td>
+      <td>La pente d'une ordonnée constante (ligne horizontale) est nulle</td>
+    </tr>
+    <tr>
+      <td>`x`</td>
+      <td>
+        <div id="x"></div>
+      </td>
+      <td>1</td>
+      <td>`y = x` est une diagonale montant de `h` quand `x` augmente de `h`</td>
+    </tr>
+    <tr>
+      <td>`ax + b`</td>
+      <td>
+        <div id="axb"></div>
+      </td>
+      <td>`a `</td>
+      <td>La pente de la droite est `a`, `b` est juste la position en `x = 0`, i.e. l'intersection avec l'axe des
+        ordonnées
+      </td>
+    </tr>
+    <tr>
+      <td>`x^n`</td>
+      <td>
+        <div id="xn"></div>
+      </td>
+      <td>`nx^(n-1)`</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Des exemples d'utilisation des dérivées sont :</p>
+  <ul>
+    <li>Recherche du minimum d'une fonction => recherche du point où sa dérivée est nulle (puisque cela veut dire
+      qu'elle est descendue puis remontée).</li>
+    <li><a href="/science/discipline/math/stat/regress/gradient">Descente de gradient</a> => pente de descente</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}
+
+td:nth-child(2) div {
+  height: 5em;
+  width: 5em;
+}
+</style>
+<script>
+  var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-5, 5, 5, -5], axis: true});
+  cons.create('functiongraph', [function (x) {
+    return 2;
+  }, -5, 5]);
+  var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-5, 5, 5, -5], axis: true});
+  x.create('functiongraph', [function (x) {
+    return x;
+  }, -5, 5]);
+  var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-5, 5, 5, -5], axis: true});
+  axb.create('functiongraph', [function (x) {
+    return 2 * x + 2;
+  }, -5, 5]);
+  var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-5, 5, 5, -5], axis: true});
+  xn.create('functiongraph', [function (x) {
+    return x * x;
+  }, -5, 5]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

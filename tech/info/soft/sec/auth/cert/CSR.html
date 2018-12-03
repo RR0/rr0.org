@@ -1,0 +1,39 @@
+<!--#include virtual="/header-start.html" -->
+<title>CSR</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Certificate Signing Request</i> : demande de signature de <a href="..">certificat</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Demander à une <a href="CA.html">CA</a> de signer un <a href="..">certificat</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une personne désirant un certificat va par exemple générer une CSR localement sur son poste puis l'envoyer à <a
+      href="/org/us/company/Verisign.html">Verisign</a> qui lui retournera son certificat signé après vérification (plus
+    ou moins stricte, en fonction du type de certificat) des informations qu'il contient.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Le format des CSR est spécifié dans <a href="/tech/info/soft/sec/priv/crypt/pkcs">PKCS</a>#10.
+  </p>
+  <p>Il contient :</p>
+  <ul>
+    <li>le <i lang="en">DistinguishedName</i> de l'identité émettant la requête</li>
+    <li>la clé privée de l'identité émettant la requête</li>
+  </ul>
+  <p>Une CSR est généralement émise codée en base64. Par exemple :</p>
+  <p><code>-----BEGIN NEW CERTIFICATE REQUEST-----<br/>
+    MIICazCCAigCAQAwZjELMAkGA1UEBhMCRlIxEDAOBgNVBAgTB1Vua25vd24xDjAMBgNVBAcTBVBh
+    cmlzMRAwDgYDVQQKEwdWYWx0ZWNoMQ0wCwYDVQQLEwRKYXZhMRQwEgYDVQQDEwtKGnIcbWUgQmVh
+    dTCCAbcwggEsBgcqhkjOOAQBMIIBHwKBgQD9f1OBHXUSKVLfSpwu7OTn9hG3UjzvRADDHj+AtlEm
+    aUVdQCJR+1k9jVj6v8X1ujD2y5tVbNeBO4AdNG/yZmC3a5lQpaSfn+gEexAiwk+7qdf+t8Yb+DtX
+    58aophUPBPuD9tPFHsMCNVQTWhaRMvZ1864rYdcq7/IiAxmd0UgBxwIVAJdgUI8VIwvMspK5gqLr
+    hAvwWBz1AoGBAPfhoIXWmz3ey7yrXDa4V7l5lK+7+jrqgvlXTAs9B4JnUVlXjrrUWU/mcQcQgYC0
+    SRZxI+hMKBYTt88JMozIpuE8FnqLVHyNKOCjrh4rs6Z1kW6jfwv6ITVi8ftiegEkO8yk8b6oUZCJ
+    qIPf4VrlnwaSi2ZegHtVJWQBTDv+z0kqA4GEAAKBgE/55m87NhePMWzHaoUqiHunvS+6pG+aimij
+    AQiR6D9j/P7eJG73/sORF9z1pqIWnBvl74lIh3YuB9NW/DwjSBBSX6w1tXtshawuQMc6D0kmylEl
+    5nhqG6D0q6DIam0nh1YP56gs4DS+ADU97FHgTVGFG85eSwtOoCk6a1N4Hw53oAAwCwYHKoZIzjgE
+    AwUAAzAAMC0CFQCNQa2IdklsC8uXSTpgT5Rp3PmbtgIUdZbPWj07tsHELxcRt1C+W94/JqI=<br/> -----END NEW CERTIFICATE REQUEST-----</code>
+  </p>
+</section>
+<!--#include virtual="/footer.html" -->

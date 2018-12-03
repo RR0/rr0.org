@@ -1,13 +1,17 @@
 <!--#include virtual="/header-start.html" -->
-<title>Réseaux de neurones</title>
+<title>N. N.</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Neural networks.</i></p>
+<p><i lang="en">Neural network</i> : réseau de neurones</p>
 <section>
   <h2>Motivation</h2>
-  <p><a href="..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses non-linéaires complexes).</p>
+  <p><a href="..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
+      href="/science/discipline/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
 </section>
 <section>
   <h2>Analyse</h2>
+  <p>Lorsque le nombre de critères est trop grand (reconnaissance d'images par ex), <a
+      href="/science/discipline/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse en
+    calcul et il devient plus intéressant d'utiliser une alternative comme un réseau de neurones.</p>
   <p>À l'image des <a href="/science/discipline/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un neurone
     artificiel possède :</p>
   <ul>
@@ -20,11 +24,12 @@
   </ul>
   <section>
     <h3>Réseau</h3>
-    <p>Un réseau est constitué de couches (souvent représentées de gauche à droite) :</p>
+    <p>Un réseau est constitué de `L` couches (souvent représentées de gauche à droite) :</p>
     <ol>
-      <li>couche des entrées</li>
-      <li>n couches "cachées" : contient n unités d'activation (noeuds) `a_0^i, a_1^i, ..., a_n^i`</li>
-      <li>couche de sortie</li>
+      <li>couche de `s_1` entrées</li>
+      <li>`L-2` couches "cachées" : contient `s_n` <strong>unités</strong> d'activation (noeuds) `a_0^i, a_1^i, ...,
+        a_n^i`</li>
+      <li>couche de `s_L` sorties</li>
     </ol>
     <p>Par exemple pour 1 seule couche "cachée" (2) :</p>
     <p>`[[x_0],[x_1],[x_2],[x_3]] -> [[a_1^((2))],[a_2^((2))],[a_3^((2))]] -> hθ(x)`</p>
@@ -32,7 +37,7 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>On définit pour chacun des n noeud d'une couche `j` un résultat dépendant de la couche précédente `j-1` et de sa
+  <p>On définit pour chacun des `n` noeuds d'une couche `j` un résultat dépendant de la couche précédente `j-1` et de sa
     matrice de poids `Θ_j` :</p>
   <p>`z_i^((j))=Θ_(i,0)^((j-1)) x_0 + Θ_(i,1)^((j-1)) x_1 + Θ_(i,2)^((j-1)) x_2 + Θ_(i,3)^((j-1)) x_3`</p>
   <p>et l'on définit alors la <strong>fonction d'activation</strong> <a
@@ -42,9 +47,18 @@
     (i.e. `x_i = a_i`) :</p>
   <p>`h_Θ(x)=g(Θ_(10)^((2)) a_0 + Θ_(11)^((2)) a_1 + Θ_(12)^((2)) a_2 + Θ_(13)^((2)) a_3)`</p>
   <p>Toutefois les résultats peuvent être plus complexes. Dans des problèmes de classification multiple (plus de 2
-    classes) par exemple, les résultats connus (et donc les hypothèses) auront plutôt la forme d'une matrice (où
-    chaque ligne indique si la classe i est reconnue ou non par exemple) :</p>
+    classes) par exemple, les résultats connus (et donc les hypothèses) auront plutôt la forme d'une matrice (où chaque
+    ligne indique si la classe i est reconnue ou non par exemple) :</p>
   <p>`h_Θ(x)=[[h_Θ(x)_1],[h_Θ(x)_2],[h_Θ(x)_3],[h_Θ(x)_4]]`</p>
+  <section>
+    <h3>Prédiction</h3>
+    <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i`
+      (i<sup>ème </sup> sortie) via une <a
+          href="/science/discipline/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour la <a
+          href="/science/discipline/math/stat/regress/logistic">régression logistique</a>, mais pour `K` sorties (`y`).
+      Idem pour la <a href="/">fonction de régularisation</a>.
+    </p>
+  </section>
 </section>
 <section>
   <h2>Exemples</h2>

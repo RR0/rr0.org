@@ -10,8 +10,8 @@
 <section>
   <h2>Analyse</h2>
   <p>Lorsque le nombre de critères est trop grand (reconnaissance d'images par ex), <a
-      href="/science/discipline/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse en
-    calcul et il devient plus intéressant d'utiliser une alternative comme un réseau de neurones.</p>
+      href="/science/discipline/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse en calcul
+    et il devient plus intéressant d'utiliser une alternative comme un réseau de neurones.</p>
   <p>À l'image des <a href="/science/discipline/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un neurone
     artificiel possède :</p>
   <ul>
@@ -52,12 +52,32 @@
   <p>`h_Θ(x)=[[h_Θ(x)_1],[h_Θ(x)_2],[h_Θ(x)_3],[h_Θ(x)_4]]`</p>
   <section>
     <h3>Prédiction</h3>
-    <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i`
-      (i<sup>ème </sup> sortie) via une <a
-          href="/science/discipline/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour la <a
-          href="/science/discipline/math/stat/regress/logistic">régression logistique</a>, mais pour `K` sorties (`y`).
-      Idem pour la <a href="/">fonction de régularisation</a>.
-    </p>
+    <p>Comme pour d'autres algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a>, avant de prédire, le réseau
+      doit être "entraîné" (<i lang="en">trained </i>) en 2 phases à répéter jusqu'à convergence :</p>
+    <ol>
+      <li><strong>Propagation avant</strong> (<i lang="en">forward propagation</i>) pour calcul du coût (erreur de
+        prédiction)</li>
+      <li><strong>Rétro-propagation</strong> (<i lang="en">back propagation</i>) pour mise à jour des paramètres en
+        conséquence.</li>
+    </ol>
+    <section>
+      <h4>Propagation avant</h4>
+      <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i`
+        (i<sup>ème</sup> sortie) via une <a
+            href="/science/discipline/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour la <a
+            href="/science/discipline/math/stat/regress/logistic">régression logistique</a>, mais pour `K` sorties
+        (`y`). Idem pour la <a href="/">fonction de régularisation</a>.</p>
+      <section>
+        <h5>Coût</h5>
+        <p>Pour calculer le coût pour un réseau neuronal, on généralise celui de la régression logistique non pas une
+          seule sortie y mais K sorties :</p>
+        <p>`J = 1/m sum_(i=1)^m sum_(k=1)^K "cost"(h_Θ, y)`</p>
+      </section>
+    </section>
+    <section>
+      <h4>Rétro-propagation</h4>
+      <p></p>
+    </section>
   </section>
 </section>
 <section>
@@ -145,6 +165,14 @@
   <ul>
     <li>Inspiré des <a href="/science/discipline/bio/anat/nerv/brain/neuro">neurones biologiques</a>.
     </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Moawad, Assaad: "<a
+        href="https://medium.com/datathings/neural-networks-and-backpropagation-explained-in-a-simple-way-f540a3611f5e">Neural
+      networks and back-propagation explained in a simple way</a>", Medium, 2018-02-01</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

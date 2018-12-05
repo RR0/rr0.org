@@ -1,5 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Régression logistique</title>
+<script type="text/javascript" charset="UTF-8" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Motivation</h2>
@@ -13,20 +15,52 @@
   <p>On veut ici pouvoir classer des valeurs comme appartenant à une classe ou à une autre : cela implique que y doit
     avoir des valeurs discrètes (autant que le nombre de classes) et non plus une valeur continue.</p>
   <p>Dans ce cas la fonction hypothèse `h` doit elle aussi prédire une résultat de valeurs discrètes dans l'intervalle
-    correspondant à celles de y. Par exemple pour un cas binaire soit `y(x)` appartient à la classe "positive" (`y = 1`),
-    soit à la classe "négative" (`y = 0`), ou plus généralement pour une classification à `n` classes `y = { 0, 1, 2,
-    ..., n }`.</p>
+    correspondant à celles de y. Par exemple pour un cas binaire soit `y(x)` appartient à la classe "positive" (`y =
+    1`), soit à la classe "négative" (`y = 0`), ou plus généralement pour une classification à `n` classes `y = { 0, 1,
+    2, ..., n }`.</p>
 </section>
 <section>
   <h2>Conception</h2>
   <p>Utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher (par "chance") mais comporte trop
     de risque de faux positifs/négatifs.</p>
   <p>On préfère donc encapsuler notre hypothèse dans une <a href="/science/discipline/math/stat/Sigmoide.html">fonction
-    logistique</a> `g` qui transforme tout résultat en une valeur tendant vers 0 ou 1. Dans notre cas si le vecteur `x
+    logistique</a> `g` qui transforme tout résultat en une valeur tendant vers 0 ou 1. Dans notre cas si le vecteur `x`
     représente les caractéristiques (<em>features</em>) de éléments à classer :</p>
   <p>`z=θ^Tx`</p>
   <p>et on définit donc `h_θ(x)` comme la probabilité P que `y = 1` (et donc `1 - P` que `y = 0) :</p>
   <p>`h_θ(x)=g(θ^Tx)`</p>
+  <section>
+    <h3>Coût</h3>
+    <p>Le fait d'utiliser une <a href="/science/discipline/math/stat/Sigmoide.html">fonction sigmoïde</a> pour notre
+      fonction de coût a un inconvenient majeur : il ne garantit pas du tout qu'elle sera <strong>convexe</strong>,
+      c'est-à-dire qu'elle aura et un seul minimum global (au contraire, elle sera très certainement ondulante).</p>
+    <p>Pour calculer le coût lors d'une régression logistique, on va donc recourir à une autre formule garantissant la
+      convexité de la fonction de coût, en utilisant le log :</p>
+    <table>
+      <thead>
+      <tr>
+        <th>`y`</th>
+        <th>`"cost"(h_θ(x),y)`</th>
+        <th>Graphique</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>0</td>
+        <td>`−log(1−h_θ(x))`</td>
+        <td><div id="y0"></div></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>`−log(h_θ(x))`</td>
+        <td><div id="y1"></div></td>
+      </tr>
+      </tbody>
+    </table>
+    <p>ce qui peut s'écrire en 1 seule ligne si l'on utilise la valeur de `y` pour annuler l'une ou l'autre des <parties></parties>
+      :</p>
+    <p>`"cost"(h_θ(x),y)=−y*log(h_θ(x))−(1−y)log(1−h_θ(x))`</p>
+  </section>
   <section>
     <h3>Vectorisation</h3>
   </section>
@@ -42,5 +76,15 @@
 <!--#include virtual="/footer.html" -->
 <style>.mjx-math * {
   line-height: 0;
+}
+td:nth-child(3) div {
+  height: 5em;
+  width: 5em;
 }</style>
+<script>
+var y0 = JXG.JSXGraph.initBoard('y0', {boundingbox: [-5, 5, 5, -5], axis: true});
+y0.create('functiongraph', [function (x) {return -Math.log(1/(1+Math.exp(-x)));}, -5, 5]);
+var y1 = JXG.JSXGraph.initBoard('y1', {boundingbox: [-5, 5, 5, -5], axis: true});
+y1.create('functiongraph', [function (x) {return -Math.log(1-1/(1+Math.exp(-x)));}, -5, 5]);
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

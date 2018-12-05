@@ -40,16 +40,18 @@
   <section>
     <h3>Méthode itérative</h3>
     <p>On fourni à l'algorithme de <a href="/science/discipline/math/stat/regress/gradient">Descente de gradient</a> une
-      <a href="../cost">fonction de <strong>coût</strong></a> permettant de calculer la différence entre `h` et `y`</p>
+      <a href="../cost">fonction de <strong>coût</strong></a> permettant de calculer la différence entre `h` et `y`.</p>
     <section>
       <h4>Coût</h4>
       <p>Comme les erreurs peuvent être positives ou négatives et que nous ne sommes intéressés que par
         l'écart/distance, on élève cette erreur au carré afin de le garantir toujours positif <span class="note">On pourrait théoriquement utiliser une fonction de valeur absolue à la place mais
-        cela transformerait le résultat</span>. On annule/compense ensuite la mise au carré des erreurs en multipliant
-        par 1/2 (ce qui annulera la <a href="/science/discipline/math/ens/rel/func/deriv">dérivée</a> de `x^2` qui est
-        `2x`) :</p>
-      <p>`c = 1/2 (h_Θ - y)^2`</p>
-      <p>On parlera ici aussi de "fonction d'erreur carrée" (<i lang="en">squared error function</i>).</p>
+        cela transformerait le résultat</span>. On annule/compense ensuite la mise au carré <span
+            class="note">On parlera ici aussi de "fonction d'erreur carrée" (<i
+            lang="en">squared error function</i>)</span> des erreurs en multipliant par 1/2 (ce qui annulera la <a
+            href="/science/discipline/math/ens/rel/func/deriv">dérivée</a> de `x^2` qui est `2x`) :</p>
+      <p>`J(Θ) = 1/(2m) sum_(i=1)^m (h_Θ(x^((i))) - y^((i)))^2`</p>
+      <p>ou en version vectorisée (en utilisant le calcul matriciel) :</p>
+      <p>`J(Θ) = 1/(2m) (XΘ - vec y)^T (XΘ - vec y)`</p>
     </section>
     <section>
       <h4>Vectorisation</h4>

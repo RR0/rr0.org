@@ -1,54 +1,34 @@
 <!--#include virtual="/header-start.html" -->
 <title>Fonction de coût</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">cost function</i>) ou "fonction de perte" (<i class="en">loss function</i>).</p>
+<p><i lang="en">cost function</i>) ou "fonction de perte" (<i class="en">loss function</i>) de précision.</p>
 <section>
   <h2>Motivation</h2>
   <p>Déterminer la différence entre une modélisation et la réalité.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>On détermine une "fonction de coût" J comme suit :
+  <p>En supposant `Θ` comme le vecteur des paramètres à tester, on détermine une "fonction de coût" comme suit :
   </p>
   <ol>
-    <li>On définit une "<strong>erreur</strong>" ε de prédiction comme la différence entre une valeur prédite
-      (`h_Θ^((x_i))` et une réelle (`y^((i))`) : `c(x) = h_Θ - y`</li>
-    <li>Pour chacune des valeurs réelles (`i` de 1 à `m`), on calcule ces erreurs</li>
-    <li>on prend la moyenne de ces erreurs en divisant par `m`</li>
+    <li>Pour chacune des valeurs (`i` de 1 à `m`), on calcule l'<strong>erreur</strong> entre valeur prédite
+      `h_Θ(x^((i)))` valeur réelle `y^((i))`</li>
+    <li>on prend la <strong>moyenne</strong> de ces erreurs en divisant par `m`</li>
   </ol>
-  <p>`J = 1/m sum_(i=1)^m c(h_Θ, y)`</p>
-  <p>où `c` est la fonction de coût partielle (en un `x`).</p>
+  <p>Autrement dit :</p>
+  <p>`J(Θ) = 1/m sum_(i=1)^m "cost"(h_Θ(x^((i)), y^((i))))`</p>
+  <p>où `"cost"` est la fonction de coût partielle (pour une ligne de données `i`).</p>
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Les fonctions de coût sont utilisées dans diverses méthodes de <a
-      href="/science/discipline/math/stat/regress">régression statistique</a>.</p>
-  <section>
-    <h3>Régression linéaire ou non-linéaire</h3>
-    <p>Pour calculer le coût lors d'une <a href="/science/discipline/math/stat/regress/linear">régression linéaire</a>
-      ou <a href="/science/discipline/math/stat/regress/non-linear">non-linéaire</a>, comme les erreurs peuvent être
-      positives ou négatives et que nous ne sommes intéressés que par l'écart/distance, on élève cette erreur au carré
-      afin de le garantir toujours positif <span class="note">On pourrait théoriquement utiliser une fonction de valeur absolue à la place mais
-        cela transformerait le résultat</span>. On annule/compense ensuite la mise au carré des erreurs en multipliant
-      par 1/2 (ce qui annulera la dérivée de `x^2` qui est `2x`) :</p>
-    <p>`c = 1/2 (h_Θ - y)^2`</p>
-    <p>On parlera ici aussi de "fonction d'erreur carrée" (<i lang="en">squared error function</i>).</p>
-  </section>
-  <section>
-    <h3>Régression logistique</h3>
-    <p>Pour calculer le coût lors d'une <a href="/science/discipline/math/stat/regress/logistic">régression
-      logistique</a>, on utilise le log :</p>
-    <p>`c(h_θ(x),y)=−log(h_θ(x))` si `y = 1`<br/> `c(h_θ(x),y)=−log(1−h_θ(x))` si `y = 0`
-    </p>
-    <p>ce qui peut s'écrire en 1 seule ligne :</p>
-    <p>`c(h_θ(x),y)=−y*log(h_θ(x))−(1−y)log(1−h_θ(x))`</p>
-  </section>
-  <section>
-    <h3>Réseau de neurones</h3>
-    <p>Pour calculer le coût pour un <a href="/tech/info/soft/data/science/ml/nn">réseau neuronal</a>, on
-      généralise celui de la régression logistique non pas une seule sortie y mais K sorties :</p>
-    <p>`J = 1/m sum_(i=1)^m sum_(k=1)^K c(h_Θ, y)`</p>
-  </section>
+  <p>Les fonctions de coût sont utilisées dans divers algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a>
+  :</p>
+  <ul>
+    <li><a href="/science/discipline/math/stat/regress/linear#Cout">régression linéaire</a></li>
+    <li><a href="/science/discipline/math/stat/regress/non-linear#Cout">régression non-linéaire</a></li>
+    <li><a href="/science/discipline/math/stat/regress/logistic#Cout">régression logistique</a></li>
+    <li><a href="/tech/info/soft/data/science/ml/nn#Cout">réseau de neurones</a></li>
+  </ul>
 </section>
 <section>
   <h2>Notes</h2>

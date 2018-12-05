@@ -27,13 +27,20 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Sa complexité en `O(kn^2)` fait qu'elle est adaptée même si n est grand (contrairement à l'<a
+    <li>Sa complexité en `O(kn^2)` fait qu'elle est adaptée même si `n` est grand (contrairement à l'<a
         href="/science/discipline/math/stat/regress/normal">équation normale</a>).</li>
     <li>Si votre α est trop grand (votre saut trop rapide), vous pouvez vous retrouver à remonter ("sauter" de l'autre
       côté du trou) et donc diverger au lieu de converger.</li>
     <li>Pour être sûr de converger (ou comprendre pourquoi on ne converge pas), il peut être utile de tracer `J(θ)` et
       s'assurer qu'elle tend bien vers 0.</li>
-    <li></li>
+    <li>Si des caractéristiques sont trop différentes (ayant une échelle ou un type différent), il pourra être
+      nécessaire de les adapter :
+      <ul>
+        <li>Rééchelonnage (<i lang="en">feature scaling</i>) sur `0..1` : `x'=x/(max(x)-min(x))`</li>
+        <li>Recentrage autour de la moyenne (<i lang="en">mean normalization</i>) : `x'=(x-bar x)/(max(x)-min(x))`
+        ou de l'écart type : `x'=(x-bar x)/σ`</li>
+      </ul>
+    </li>
     <li>D'autres algorithmes (plus complexes) d'optimisation évitent ces problèmes : un bon `α` est déterminé
       automatiquement et la convergence arrive donc rapidement :
       <ul>
@@ -42,6 +49,12 @@
         <li>L-BFGS</li>
       </ul>
     </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Ruder, Sebastian: "<a href="http://ruder.io/optimizing-gradient-descent">An overview of gradient descent optimization algorithms</a>", 2016-01-16</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

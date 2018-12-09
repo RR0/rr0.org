@@ -57,9 +57,13 @@
       </tr>
       </tbody>
     </table>
-    <p>ce qui peut s'écrire en 1 seule ligne si l'on utilise la valeur de `y` pour annuler l'une ou l'autre des <parties></parties>
+    <p>ce qui peut s'écrire en 1 seule ligne si l'on utilise la valeur de `y` pour annuler l'une ou l'autre des parties
       :</p>
     <p>`"cost"(h_θ(x),y)=−y*log(h_θ(x))−(1−y)log(1−h_θ(x))`</p>
+    <p>ou `"cost"(h_θ(x),y)=−[y*log(h_θ(x))+(1−y)log(1−h_θ(x))]` ce qui est en fait très proche de la version <a href="..">linéaire</a> `(h_Θ(x) - y)^2`</p>
+    <p>ou si on l'insère dans la formule complète du <a href="/science/discipline/math/stat/regress/cost">coût</a> en
+      sortant le signe et en y ajoutant le terme de <a href="/science/discipline/math/stat/regress/regul">régularisation</a> :</p>
+    <p>`J(Θ) = -1/m sum_(i=1)^m [y^((i))*log(h_θ(x^((i))))+(1−y^((i)))log(1−h_θ(x^((i))))] + λ/(2m) sum_(j=1)^n θ_j^2`</p>
   </section>
   <section>
     <h3>Vectorisation</h3>

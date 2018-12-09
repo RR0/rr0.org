@@ -1,6 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Dérivées</title>
-<script type="text/javascript" charset="UTF-8" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Derivative</i>.</p>
@@ -16,6 +17,22 @@
   </figure>
   <p>On considère que la pente est donnée par la <strong>tangente</strong> (plus précisément le <strong>coefficient
     directeur</strong> de cette tangente) à la fonction en un point.</p>
+  <p>On note `f'(x)` ou `(df)/(dx)` ou `(δf)/(δx)` la fonction dérivée de `f(x)` (où `dx` et `df` représentent des
+    accroissement infinitésimaux de `x` et `f(x + dx)`).</p>
+  <section>
+    <h3>Plusieurs variables</h3>
+    <figure class="left side">
+      <figcaption>Ici la fonction implique plusieurs 2 variables/dimensions et sa dérivée est donc la somme des dérivées
+        (tangentes) dans chaque variable/dimension
+      </figcaption>
+      <img src="part.jpeg" alt="Si la fonction implique plusieurs variables/dimensions, la dérivée est la somme des
+        dérivées dans chaque variable/dimension"/>
+    </figure>
+    <p>Si la fonction implique plusieurs variables/dimensions `x_1, x_2, ..., x_n`, la dérivée est la somme des dérivées
+      dans chaque variable/dimension :</p>
+    <p>`df = (δf)/(δx_1) + (δf)/(δx_2) + ... + (δf)/(δx_n)`</p>
+    <p>de sorte que l'on peut calculer chacune de ces <strong>dérivées partielles</strong> indépendamment.</p>
+  </section>
 </section>
 <section>
   <h2>Conception</h2>

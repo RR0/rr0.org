@@ -40,16 +40,18 @@
   <p>On définit pour chacun des `n` noeuds d'une couche `j` un résultat dépendant de la couche précédente `j-1` et de sa
     matrice de poids `Θ_j` :</p>
   <p>`z_i^((j))=Θ_(i,0)^((j-1)) x_0 + Θ_(i,1)^((j-1)) x_1 + Θ_(i,2)^((j-1)) x_2 + Θ_(i,3)^((j-1)) x_3`</p>
-  <p>et l'on définit alors la <strong>fonction d'activation</strong> <a
-      href="/science/discipline/math/stat/Sigmoide.html">logistique</a> `g` comme :</p>
+  <p>et l'on définit alors la <strong>fonction d'activation</strong> comme une fonction <a
+      href="/science/discipline/math/stat/Sigmoide.html">logistique</a> `g` :</p>
   <p>`a_i^((j))=g(z_i^((j)))`</p>
-  <p>et l'on considère la sortie `h_Θ(x)` comme `a_1^(3)` par exemple s'il y a 3 couches, recevant la couche 2 comme X
-    (i.e. `x_i = a_i`) :</p>
-  <p>`h_Θ(x)=g(Θ_(10)^((2)) a_0 + Θ_(11)^((2)) a_1 + Θ_(12)^((2)) a_2 + Θ_(13)^((2)) a_3)`</p>
+  <p>et l'on considère la sortie `h_Θ(x)` comme `a_1^(3)` par exemple (s'il y a 3 couches), recevant la couche 2 comme
+    `X` (i.e. `x_i = a_i`) :</p>
+  <p>`h_Θ(x)=g(Θ_(1,0)^((2)) a_0 + Θ_(1,1)^((2)) a_1 + Θ_(1,2)^((2)) a_2 + Θ_(1,3)^((2)) a_3)`</p>
   <p>Toutefois les résultats peuvent être plus complexes. Dans des problèmes de classification multiple (plus de 2
     classes) par exemple, les résultats connus (et donc les hypothèses) auront plutôt la forme d'une matrice (où chaque
-    ligne indique si la classe i est reconnue ou non par exemple) :</p>
+    ligne indique si la classe `i` est reconnue ou non par exemple) :</p>
   <p>`h_Θ(x)=[[h_Θ(x)_1],[h_Θ(x)_2],[h_Θ(x)_3],[h_Θ(x)_4]]`</p>
+  <p>On parlera donc plus généralement de `h_Θ(x)_k` comme étant le `k`<sup>ième</sup> résultat dans la couche de sortie
+    .</p>
   <section>
     <h3>Prédiction</h3>
     <p>Comme pour d'autres algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a>, avant de prédire, le réseau
@@ -62,21 +64,43 @@
     </ol>
     <section>
       <h4>Propagation avant</h4>
-      <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i`
-        (i<sup>ème</sup> sortie) via une <a
-            href="/science/discipline/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour la <a
-            href="/science/discipline/math/stat/regress/logistic">régression logistique</a>, mais pour `K` sorties
-        (`y`). Idem pour la <a href="/">fonction de régularisation</a>.</p>
+      <p>La propagation avant consiste à calculer :</p>
+      <ul>
+        <li>pour chaque ligne de données (`i` de 1 à `m`)
+          <ul>
+            <li>pour chaque feature (`j` de 0 à `n` en incluant la feature de biais n° 0)
+              <ul>
+                <li>sa valeur d'activation `a_j^((i)) = g(z_j^((i)))` où `z_j^((i))` est la somme des noeuds (toujours
+                  en commençant par le noeud de biais d'indice 0) de la couche précédente en entrée multipliés par leurs
+                  poids `Θ_(i,j)^((i))`.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
       <section>
         <h5>Coût</h5>
-        <p>Pour calculer le coût pour un réseau neuronal, on généralise celui de la régression logistique non pas une
-          seule sortie y mais K sorties :</p>
-        <p>`J = 1/m sum_(i=1)^m sum_(k=1)^K "cost"(h_Θ, y)`</p>
+        <p>Pour calculer le coût pour un réseau neuronal, on généralise celui de la <a
+            href="/science/discipline/math/stat/regress/logistic">régression logistique</a> non pas pour une seule
+          sortie y mais pour `K` sorties en insérant une somme supplémentaire pour tenir compte des `K` noeuds de sortie
+          ainsi que des `S_l` unités (y compris le noeud de biais) de chaque couche :</p>
+        <p>`J(Θ) = -1/m sum_(i=1)^m sum_(k=1)^K [y_k^((i)) log(h_θ(x^((i)))_k)+(1−y_k^((i)))log(1−h_θ(x^((i)))_k)] +
+          λ/(2m) sum_(l=1)^(L-1) sum_(i=1)^(S_l) sum_(j=1)^(S_l+1) (θ_(j,i)^((l)))^2`</p>
+        <p>Pour minimiser ce coût, nous allons chercher à minimiser la <a
+            href="/science/discipline/math/ens/rel/func/deriv">dérivée</a> de cette fonction (i.e. plus la pente du coût
+          est faible, plus on s'approche de la solution).</p>
+        <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i`
+          (i<sup>ème</sup> sortie) via une <a
+              href="/science/discipline/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour la
+          <a
+              href="/science/discipline/math/stat/regress/logistic">régression logistique</a>, mais pour `K` sorties
+          (`y`). Idem pour la <a href="/">fonction de régularisation</a>.</p>
+
       </section>
     </section>
     <section>
       <h4>Rétro-propagation</h4>
-      <p></p>
+      <p>La rétro-propagation</p>
     </section>
   </section>
 </section>

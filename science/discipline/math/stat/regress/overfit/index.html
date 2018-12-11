@@ -1,0 +1,27 @@
+<!--#include virtual="/header-start.html" -->
+<title>Overfitting</title>
+<!--#include virtual="/header-end.html" -->
+<p>Ou <i lang="en">High variance problem</i> : correspondance exagérée.</p>
+<figure class="right side">
+  <figcaption>Un coût nul peut sembler correspondre aux points connus mais ne correspondra sans doute pas à de future
+    nouvelles données (qu'il n'aurait pas bien prédit)
+  </figcaption>
+  <img src="/science/discipline/math/stat/regress/overfit/Overfitting.png" alt="Un coût nul peut sembler correspondre aux points connus mais ne correspondra sans doute pas
+    à de future nouvelles données (qu'il n'aurait pas bien prédit)"/>
+</figure>
+<p>Lors d'un <a href="../cost">calcul de coût</a> d'une hypothèse, un coût nul ne signifie pas forcément que l'hypothèse
+  est excellente. Cela peut plutôt paraître suspect et demande une vérification qu'il ne s'agit pas d'un cas
+  d'<strong><em>overfitting</em></strong> (la fonction d'hypothèse couvre parfaitement les données connues mais ne
+  correspondra probablement pas à de nouvelles données).</p>
+<p>Dans un tel cas, cette correspondance abusive peut être corrigée en :</p>
+<ul>
+  <li>réduisant le nombre de caractéristiques (`n` composantes de `x`) soit manuellement soit via un algorithme de
+    sélection de modèle</li>
+  <li><a href="../regul">régularisant</a> la magnitude des paramètres `θ_j` qui ne devraient avoir autant d'influence.
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

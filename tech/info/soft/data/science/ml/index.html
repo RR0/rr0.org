@@ -30,9 +30,35 @@
 </section>
 <section>
   <h2>Conception</h2>
+  <p>Il existe diverses techniques de ML mais on peut distinguer celles qui mobilisent une hiérarchie de "couches"
+    d'apprentissage, qui constituent autant de niveau d'<a href="/tech/info/soft/proj/impl/lang/oo/Abstraction.html">abstraction</a>.
+    On parlera alors d'<strong>apprentissage profond</strong> (<i lang="en">deep learning</i>).</p>
   <ul>
-    <li><a href="nn">Réseaux de neurones</a></li>
-    <li><a href="deep">Deep learning</a></li>
+    <li><a href="deep/nn">Réseaux de neurones</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Il peut bien sûr arriver qu'un algorithme d'apprentissage ne donne pas les résultats escomptés. On pourra alors
+    opter pour différentes stratégies pour essayer de l'améliorer :</p>
+  <ul>
+    <li>Entraîner l'algorithme sur <strong>plus de données</strong>, pour qu'il acquière une vision plus fine du
+      problème ;</li>
+    <li><strong>Ajouter ou enlever des caractéristiques</strong> du problème, qui pourraient manquer ou au contraire le
+      complexifier inutilement ;</li>
+    <li>Ajouter des <strong>caractéristiques polynomiales</strong> (`x_1^2, x_2^2, x_1x_2`, etc.) si c'est adapté à
+      votre algorithme, qui permettront de mieux cerner les hypothèses ;</li>
+    <li>Augmenter ou diminuer le facteur de <strong><a
+        href="/science/discipline/math/stat/regress/regul">régularisation</a></strong>, afin de plus ou moins prendre en
+      compte des caractéristiques.</li>
+  </ul>
+  <p>Cependant le travail nécessaire à ces améliorations peut se révéler long et il est recommandé de mener au préalable
+    une analyse/un diagnostic aidant à sélectionner l'option la plus prometteuse :</p>
+  <ul>
+    <li>Segmentation de vos données en 70% (aléatoire) pour l'ensemble d'entraînement (<i lang="en">training set</i>) et
+      30% pour l'ensemble de test (<i lang="en">test set</i>), et appliquer la fonction de <a
+          href="/science/discipline/math/stat/regress/cost">calcul de coût</a> du test sur l'ensemble d'entraînement.
+    </li>
   </ul>
 </section>
 <section>
@@ -61,3 +87,7 @@
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

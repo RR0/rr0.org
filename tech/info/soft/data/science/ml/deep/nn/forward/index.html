@@ -1,0 +1,119 @@
+<!--#include virtual="/header-start.html" -->
+<title>Propagation avant</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Forward propagation</i>.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Reconnaissance de formes, etc.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>La propagation avant consiste à calculer :</p>
+  <ul>
+    <li>pour chaque feature (`j` de 0 à `n` en incluant la feature de biais n° 0)
+      <ul>
+        <li>sa valeur d'activation `a_j^((i)) = g(z_j^((i)))` où `z_j^((i))` est la somme des noeuds (toujours en
+          commençant par le noeud de biais d'indice 0) de la couche précédente en entrée multipliés par leurs poids
+          `Θ_(i,j)^((i))`.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Conception</h3>
+  <p>Comme nous disposons potentiellement de `K` sorties, nous devons minimiser le coût de `(h_Θ(x))_i` (i<sup>ème</sup>
+    sortie) via une <a
+        href="/science/discipline/math/stat/regress/cost">fonction de coût</a> similaire à celle utilisée pour la <a
+        href="/science/discipline/math/stat/regress/logistic">régression logistique</a>, mais pour `K` sorties (`y`).
+    Idem pour la <a href="/">fonction de régularisation</a>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>"Et" logique</h3>
+    <p>On définit des paramètres/poids générant la table de vérité du "et" logique :</p>
+    <p>`Θ^((1))=[−30, 20, 20]`</p>
+    <p>ce qui donne :</p>
+    <p>`h_Θ(x)=g(−30 + 20 x_1 + 20 x_2)`</p>
+    <p>et donc :</p>
+    <ul>
+      <li>si `x_1 = 0` et `x_2 = 0` alors `g(-30 + 0 + 0) = g(-30) ~~ 0`</li>
+      <li>si `x_1 = 0` et `x_2 = 1` alors `g(-30 + 0 + 20) = g(-10) ~~ 0`</li>
+      <li>si `x_1 = 1` et `x_2 = 0` alors `g(-30 + 20 + 0) = g(-10) ~~ 0`</li>
+      <li>si `x_1 = 1` et `x_2 = 1` alors `g(-30 + 20 + 20) = g(10) ~~ 1`</li>
+    </ul>
+    <p>(puisque <a
+        href="/science/discipline/math/stat/Sigmoide.html">`g`</a> permet de produire des valeurs tendant vers 0 ou 1
+      suivant que x est négatif ou positif)</p>
+  </section>
+  <section>
+    <h3>"Ou" logique</h3>
+    <p>On définit des paramètres/poids générant la table de vérité du "ou" logique :</p>
+    <p>`Θ^((1))=[−10, 20, 20]`</p>
+    <p>ce qui donne :</p>
+    <p>`h_Θ(x)=g(−10 + 20 x_1 + 20 x_2)`</p>
+    <p>et donc :</p>
+    <ul>
+      <li>si `x_1 = 0` et `x_2 = 0` alors `g(-10 + 0 + 0) = g(-10) ~~ 0`</li>
+      <li>si `x_1 = 0` et `x_2 = 1` alors `g(-10 + 0 + 20) = g(10) ~~ 1`</li>
+      <li>si `x_1 = 1` et `x_2 = 0` alors `g(-10 + 20 + 0) = g(10) ~~ 1`</li>
+      <li>si `x_1 = 1` et `x_2 = 1` alors `g(-10 + 20 + 20) = g(30) ~~ 1`</li>
+    </ul>
+  </section>
+  <section>
+    <h3>"Non" logique</h3>
+    <p>On définit des paramètres/poids générant la table de vérité du "non" logique :</p>
+    <p>`Θ^((1))=[10, -20]`</p>
+    <p>ce qui donne :</p>
+    <p>`h_Θ(x)=g(10 - 20 x_1)`</p>
+    <p>et donc :</p>
+    <ul>
+      <li>si `x_1 = 0` alors `g(10 - 0) = g(10) ~~ 1`</li>
+      <li>si `x_1 = 1` alors `g(10 - 20) = g(-10) ~~ 0`</li>
+    </ul>
+  </section>
+  <section>
+    <h3>"Nor" logique</h3>
+    <p>On définit des paramètres/poids générant la table de vérité du "ni l'un ni l'autre" (`x_1 = x_2 = 0`) logique
+      :</p>
+    <p>`Θ^((1))=[10, -20, -20]`</p>
+    <p>ce qui donne :</p>
+    <p>`h_Θ(x)=g(10 - 20 x_1 - 20 x_2)`</p>
+    <p>et donc :</p>
+    <ul>
+      <li>si `x_1 = 0` et `x_2 = 0` alors `g(10 - 0 - 0) = g(10) ~~ 1`</li>
+      <li>si `x_1 = 0` et `x_2 = 1` alors `g(10 - 20 - 0) = g(-10) ~~ 0`</li>
+      <li>si `x_1 = 1` et `x_2 = 0` alors `g(10 - 0 - 20) = g(-10) ~~ 0`</li>
+      <li>si `x_1 = 1` et `x_2 = 1` alors `g(10 - 20 - 20) = g(-30) ~~ 0`</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Not(Xor)</h3>
+    <p>On réutilise les paramètres/poids des exemples précédents :</p>
+    <ul>
+      <li>1ère couche :
+        <ul>
+          <li>Le "et" : `Θ^((1))=[−30, 20, 20]`</li>
+          <li>Le "nor" : `Θ^((1))=[10, -20, -20]`</li>
+        </ul>
+        donnent : `Θ^((1))=[[−30, 20, 20],[10, -20, -20]]`
+      </li>
+      <li>2ème couche : Le "ou" : `Θ^((2))=[-10, 20, 20]`</li>
+    </ul>
+    <p>on calcule alors le résultat des couches :</p>
+    <p>`a^((2))=g(Θ^((1)) * x)`</p>
+    <p>`a^((3))=g(Θ^((2)) * a^((2)))`</p>
+    <p>ce qui donne :</p>
+    <p>`h_Θ(x)=a^((3))`</p>
+  </section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

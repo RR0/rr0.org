@@ -15,7 +15,8 @@
   <p>Si l'on considère une fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n` et une <a
       href="/science/discipline/math/stat/regress/cost">fonction de coût</a> `J(θ)`, l'<a
       href="/tech/info/soft/proj/impl/algo">algorithme</a> de descente de gradient consiste à changer (simultanément)
-    les `θ_n` en fonction de la pente (<a href="/science/discipline/math/ens/rel/func/deriv">dérivée</a>) induite par le coût :</p>
+    les `θ_n` en fonction de la pente (<a href="/science/discipline/math/ens/rel/func/deriv">dérivée</a>) induite par le
+    coût :</p>
   <p><strong>Itérer</strong> jusqu'à convergence {<br/>
     &nbsp;&nbsp;`θ_j:=θ_j−α∂/(∂θ_j) J(θ)`<br/> }
   </p>
@@ -37,10 +38,15 @@
       nécessaire de les adapter :
       <ul>
         <li>Rééchelonnage (<i lang="en">feature scaling</i>) sur `0..1` : `x'=x/(max(x)-min(x))`</li>
-        <li>Recentrage autour de la moyenne (<i lang="en">mean normalization</i>) : `x'=(x-bar x)/(max(x)-min(x))`
-        ou de l'écart type : `x'=(x-bar x)/σ`</li>
+        <li>Recentrage autour de la moyenne (<i lang="en">mean normalization</i>) : `x'=(x-bar x)/(max(x)-min(x))` ou de
+          l'écart type : `x'=(x-bar x)/σ`</li>
       </ul>
     </li>
+    <li>Afin d'éviter toutes erreurs de descente, on pourra aussi mettre en place une "vérification de gradient" (<i
+        lang="en">gradient checking</i>) qui permettra de contrôler la valeur de la pente (<a
+        href="/science/discipline/math/ens/rel/func/deriv">dérivée</a>) trouvée. En effet si l'on considère un `ε` petit
+      (`10^-4` par ex) : `d/(dθ) J(θ) ~~ (J(θ+ε)-J(θ-ε))/(2ε)`. Bien sûr cette vérification ne devra être utilisée que
+      lors d'une phase de mise au point, puis désactivée une fois le gradient vérifié.</li>
     <li>D'autres algorithmes (plus complexes) d'optimisation évitent ces problèmes : un bon `α` est déterminé
       automatiquement et la convergence arrive donc rapidement :
       <ul>
@@ -54,7 +60,8 @@
 <section>
   <h2>Voir</h2>
   <ul>
-    <li>Ruder, Sebastian: "<a href="http://ruder.io/optimizing-gradient-descent">An overview of gradient descent optimization algorithms</a>", 2016-01-16</li>
+    <li>Ruder, Sebastian: "<a href="http://ruder.io/optimizing-gradient-descent">An overview of gradient descent
+      optimization algorithms</a>", 2016-01-16</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

@@ -30,10 +30,14 @@
       <li>`L-2` couches "<strong>cachées</strong>" : contient `s_n` <strong>unités</strong> d'activation (noeuds)
         `a_0^i, a_1^i, ..., a_n^i`. À noter que 1 seule couche cachée peut suffire à beaucoup de besoins, pour peu
         qu'elle contienne assez de neurones (généralement plus que dans les couches d'entrée et de sortie). Si plus
-        d'une couche cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones .¬
+        d'une couche cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones.
+        Enfin, plus le réseau sera complexe, plus il demandera du temps de calcul (amoindrissant la rapidité de réponse
+        donc) et plus il sera succeptible de faire de l'<a
+            href="/science/discipline/math/stat/regress/overfit">overfitting</a>.
       </li>
       <li>couche de `s_L` <strong>sorties</strong> (typiquement constituée de `n` neurones de sorties si la prédiction
-        recherchée à `n` possibilités de réponses, par exemple 26 s'il s'agit de reconnaître une lettre de l'alphabet)</li>
+        recherchée à `n` possibilités de réponses, par exemple 26 s'il s'agit de reconnaître une lettre de l'alphabet)
+      </li>
     </ol>
     <p>Par exemple pour 1 seule couche "cachée" (2) :</p>
     <p>`[[x_0],[x_1],[x_2],[x_3]] -> [[a_1^((2))],[a_2^((2))],[a_3^((2))]] -> hθ(x)`</p>
@@ -61,10 +65,9 @@
   <ul>
     <li>pour chaque ligne de données (`i` de 1 à `m`)
       <ol>
-        <li><strong><a href="forward">Propagation avant</a></strong> pour calcul
-          du coût (erreur de prédiction)</li>
-        <li><strong><a href="back">Rétro-propagation</a></strong>
-          si besoin, pour mise à jour des paramètres en conséquence.</li>
+        <li><strong><a href="forward">Propagation avant</a></strong> pour calcul du coût (erreur de prédiction)</li>
+        <li><strong><a href="back">Rétro-propagation</a></strong> si besoin, pour mise à jour des paramètres en
+          conséquence.</li>
       </ol>
     </li>
   </ul>

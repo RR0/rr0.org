@@ -53,6 +53,7 @@ aside {
   position: relative;
   overflow-y: auto;
   overflow-x: auto;
+  -webkit-overflow-scrolling:touch;
   z-index: 1;
   line-height: 1.5em;
   width: 100%;

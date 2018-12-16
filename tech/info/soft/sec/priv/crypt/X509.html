@@ -1,0 +1,44 @@
+<!--#include virtual="/header-start.html" -->
+<title>X.509</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Definite Encoding Rules</i> : règles d'encodages définies.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un format standard de <a href="../../auth/cert">certificat</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Les données contenues dans un certificat X.509 sont codifiées selon le format <a href="#ASN">ASN.1</a> puis
+    stockées et téléchargées selon le standard <a href="/tech/info/soft/sec/auth/cert/DER.html">DER</a>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de standards X.509 sont :</p>
+  <ul>
+    <li><strong>X.509 v1</strong>, défini en <time>1988</time>, très générique et largement diffusé.</li>
+    <li><strong>X.509 v2</strong>, qui a introduit le concept d'identifiant unique pour le sujet et le fournisseur de
+      certificats, afin de pouvoir les réutiliser. Cette pratique est cependant fortement déconseillée et les
+      certificats X.509 V2 sont très peu utilisés.</li>
+    <li><strong>X.509 v3</strong>, dont la normalisation fut achevée en <time>1996-06</time> par l'ISO/IEC et ANSI X9.
+      Les certificats X.509 v3 supportent les extensions (chacun peut ajouter des informations à un certificat). Ces
+      extensions, dont l'utilisation peut être imposée (<i>critical extensions</i>), peuvent être :
+      <ul>
+        <li><i>KeyUsage</i> : Spécification de limitations quant à l'utilisation des clés (<i>keyCertSign</i> indique
+          par exemple que la clé privée ne peut être utilisée que pour signer des certificats et dans une session SSL
+          par exemple).</li>
+        <li><i>AlternativeNames</i> : Possibilité d'associer d'autres identités à la clé publique du certificat
+          (adresses de courrier électronique, noms ou adresses de machines...)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Ces certificats sont exploités par divers systèmes de sécurité, tels que <a
+        href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a>, <a
+        href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a>, <a href="#SET">SET</a>, <a
+        href="../../../reseau/protocole/SMIME.html">S/MIME</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

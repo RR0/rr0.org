@@ -32,7 +32,7 @@
     </li>
   </ul>
   <p>Le package des certificats définit également une classe <a
-      href="/org/us/company/microsoft/windows/dotnet/CRL.html">CRL</a> permettant de représenter les listes de
+      href="/org/us/company/ms/windows/dotnet/CRL.html">CRL</a> permettant de représenter les listes de
     certificats révoqués.</p>
   <h4>X.509</h4>
   <p>En l'occurrence Java ne définit qu'un type particulier de certificat, le <a
@@ -81,7 +81,7 @@
       tableau d'octets. Cette méthode abstraite (<code>getEncoded()</code>) sera donc implémentée différemment par les
       différents types de certificats (un certificat <a
           href="../../priv/crypt/X509.html">X.509</a> retournera un ensemble d'octets au format ASN.1/<a
-          href="#DER">DER</a> par exemple).
+          href="DER.html">DER</a> par exemple).
     </li>
     <li>On peut vérifier si un certificat a bien été signé par une identité donnée si l'on dispose de la clé publique
       l'identité à vérifier (<code>telCertificat.verify(telleClePublique)</code> lèvera une exception si ce n'est pas le
@@ -93,8 +93,6 @@
       peut en effet être révoqué si son propriétaire a signalé s'être fait voler sa clé privée par exemple. Les CRL sont
       datées et signées par une <a href="CA.html">CA</a> et généralement accessible à tous. Chacun peut ainsi demander à
       une CRL si un certificat donné est toujours valide ou non.</li>
-    <li> DER (<i>Definite Encoding Rules</i>), est un standard définissant le format d'un certificat. Il pourra par
-      exemple être utilisé lors du téléchargement d'un certificat client (unique, pas une chaîne de certificats).</li>
     <li>Un realm (<i>domaine</i>) est un moyen d'associer des informations émises par le client (certificat, login/mot
       de passe) à une <a href="/tech/info/soft/sec/auth/Identite.html">identité</a> connue du serveur. WLS ou d'autres
       serveurs applicatifs définissent généralement parmi leurs realms (<i>UnixPasswordRealm, NTPasswordRealm,

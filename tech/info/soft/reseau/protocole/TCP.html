@@ -1,0 +1,562 @@
+<!--#include virtual="/header-start.html" -->
+<title>TCP</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Transport Control Protocol</i> : <a href="/tech/info/soft/reseau/protocole">protocole</a> à contrôle de transport.
+</p>
+<p>Ou TCP/<a href="/tech/info/soft/reseau/internet/IP.html">IP</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un protocole réseau standard et fiable pour l'échange de documents sur le Web (pages <a
+      href="../../proj/design/arch/web/HTML.html">HTML</a>)</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>TCP est basé sur <a href="/tech/info/soft/reseau/internet/IP.html">IP</a> (encapsulé dans les datagrammes IP). </p>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Transport</th>
+      <td>
+        <div align="center">TCP</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Réseau</th>
+      <td>
+        <div align="center"><a href="/tech/info/soft/reseau/internet/IP.html">IP</a></div>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Un segment TCP contient :</p>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Section</th>
+      <th>Octet</th>
+      <th>
+        <div align="center">Contenu</div>
+      </th>
+      <th>Commentaire</th>
+    </tr>
+    <tr>
+      <td rowspan="10">En-tête</td>
+      <td>0-1</td>
+      <td> Port source</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2-3</td>
+      <td> Port destination</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4-7</td>
+      <td>Numéro de séquence</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>8-11</td>
+      <td>Numéro d'accusé réception</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>12-13</td>
+      <td>Hlen (3 bits) + Réservé (5 bits) + Code (4 bits)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>14-15</td>
+      <td>Fenêtre</td>
+      <td>Groupe d'envois auquel appartient ce paquet</td>
+    </tr>
+    <tr>
+      <td>16-17</td>
+      <td>Somme de contrôle</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>18-19</td>
+      <td>Pointeur urgent</td>
+      <td>Où se trouvent les données urgentes</td>
+    </tr>
+    <tr>
+      <td>20-22</td>
+      <td>Options</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Remplissage</td>
+      <td>Des 0 ?</td>
+    </tr>
+    <tr>
+      <td>Données</td>
+      <td>24-</td>
+      <td>Données</td>
+      <td></td>
+    </tr>
+  </table>
+  <p>Les <a href="../../API.html">API</a> (<a href="/tech/info/soft/proj/impl/lang/c">C</a>, <a
+      href="/org/us/company/oracle/sun/ptf/java">Java</a>) utilisées pour établir des connexions TCP utilisent le
+    principe de <em><a href="/tech/info/soft/reseau/protocole/Socket.html">socket</a></em>.</p>
+  <p>L'utilisation de sockets TCP implique typiquement les opérations suivantes : </p>
+  <ol>
+    <li><strong>Création </strong>de la <em><a href="/tech/info/soft/reseau/protocole/Socket.html">socket</a></em> en
+      mode :
+      <ul>
+        <li>passif (serveur) : Accepter et attendre les connexions ;</li>
+        <li>actif (client) : Contacter l'application distante et s'y connecter.</li>
+      </ul>
+    </li>
+    <li><strong>Communication </strong>établie (bind, listen, connect ou accept)</li>
+    <li><strong>Echange </strong>de données (<code>read</code>/<code>write</code> ou
+      <code>sendto</code>/<code>recvfrom</code>).
+      <ul>
+        <li>Pour éviter une lecture bloquant infiniment en attente de données ou de fermeture de socket, on peut fixer
+          un temps d'expiration de la tentative de lecture (l'option Berkeley <code>SO_TIMEOUT</code>, en
+          millisecondes).
+        </li>
+        <li>Pour éviter trop de lourdeur des échanges, les paquets sont bufferisés et envoyés que lorsque les accusés
+          réception des n paquets précédents ont été reçus (système de "fenêtres" ou algorithme de John Nagle : envoi du
+          paquet 11 quand réception de l'accusé du paquet 1 si la fenêtre est de taille 10 par exemple). Ce système peut
+          être contourné pour des applications "temps réel" désirant des accusés réception immédiats pour chaque envoi
+          (via l'option Berkeley <code>TCP_NODELAY</code>), par exemple un client de serveur X <a
+              href="../../prod/os/unix/index.html">Unix</a> recevant les mouvement d'une souris.</li>
+      </ul>
+    </li>
+    <li><strong>Fermeture </strong>de la communication (close ou shutdown)
+      <ol>
+        <li>Envoi de TCP Finish (&lt;FIN&gt;)</li>
+        <li>L'autre partie confirme (&lt;ACK&gt;&lt;FIN&gt;). Sans confirmation au bout d'un temps moyen de réponse
+          constaté (ou valeur de l'option Berkekey SO_LINGER), la socket fermante émet un TCP Abort (&lt;RST&gt;) et
+          ferme unilatéralement.</li>
+        <li>La socket fermante reconfirme (&lt;ACK&gt;)</li>
+      </ol>
+    </li>
+  </ol>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'applications utilisant TCP sont :</p>
+  <table>
+    <tr>
+      <th>Application</th>
+      <th>Port</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td>0</td>
+      <td>Réservé</td>
+    </tr>
+    <tr>
+      <td>TCPMux</td>
+      <td>1</td>
+      <td>TCP port service multiplexer</td>
+    </tr>
+    <tr>
+      <td>CompressNet</td>
+      <td>2</td>
+      <td>Utilitaire de supervision</td>
+    </tr>
+    <tr>
+      <td>CompressNet</td>
+      <td>3</td>
+      <td>Processus de compression</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>4</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>RJE</td>
+      <td>5</td>
+      <td>Remote Job Entry</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>6</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>Echo</td>
+      <td>7</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>8</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>Discard</td>
+      <td>9</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>10</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>Systat</td>
+      <td>11</td>
+      <td>Fournit l'état des processus d'une machine.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>12</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>DayTime</td>
+      <td>13</td>
+      <td>RFC 867</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>14</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>Netstat</td>
+      <td>15</td>
+      <td>Non affecté aujourd'hui</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>16</td>
+      <td>Non affecté</td>
+    </tr>
+    <tr>
+      <td>QOTD</td>
+      <td>17</td>
+      <td>Citation du jour (<em>Quote Of The Day</em>)</td>
+    </tr>
+    <tr>
+      <td>MSP</td>
+      <td>18</td>
+      <td>Message Send Protocol</td>
+    </tr>
+    <tr>
+      <td>CharGen</td>
+      <td>19</td>
+      <td>Générateur de caractères (<em>Character Generator</em>)</td>
+    </tr>
+    <tr>
+      <td>FTP-Data</td>
+      <td>20</td>
+      <td>Données <a href="FTP.html">FTP</a> (par défaut)</td>
+    </tr>
+    <tr>
+      <td>FTP</td>
+      <td>21</td>
+      <td>Contrôle</td>
+    </tr>
+    <tr>
+      <td>SSH</td>
+      <td>22</td>
+      <td>Protocole de login <a href="/tech/info/soft/sec/priv/crypt/SSH.html">SSH</a> à distance</td>
+    </tr>
+    <tr>
+      <td>Telnet</td>
+      <td>23</td>
+      <td>connexion sur une machine distante</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>24</td>
+      <td>Tout système de mail privé</td>
+    </tr>
+    <tr>
+      <td><a href="/tech/info/soft/reseau/protocole/SMTP.html">SMTP</a></td>
+      <td>25</td>
+      <td>Envoi de courrier électronique (email)</td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td>37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>WhoIs</td>
+      <td>42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>53</td>
+      <td>serveur de noms (<a href="../DNS.html">DNS</a>)</td>
+    </tr>
+    <tr>
+      <td>MTP</td>
+      <td>57</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>RJE</td>
+      <td>77</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Finger</td>
+      <td>79</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="../../proj/design/arch/web/HTTP.html">HTTP</a></td>
+      <td>80</td>
+      <td><a href="../../proj/design/arch/web/index.html">Web</a></td>
+    </tr>
+    <tr>
+      <td>Link</td>
+      <td>87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>SupDup</td>
+      <td>95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>HostNames</td>
+      <td>101</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ISO-TSAP</td>
+      <td>102</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Dictionary</td>
+      <td>103</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>X400-SND</td>
+      <td>104</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CSNet-NS</td>
+      <td>105</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>POP/2</td>
+      <td>109</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>POP3</td>
+      <td>110</td>
+      <td>Récupération de mails</td>
+    </tr>
+    <tr>
+      <td>PortMap</td>
+      <td>111</td>
+      <td>Gère un annuaire des ports réservés par des applications (<a href="/tech/info/soft/RPC.html">RPC</a> de Sun)
+      </td>
+    </tr>
+    <tr>
+      <td>Auth</td>
+      <td>113</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>SFTP</td>
+      <td>115</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Path</td>
+      <td>117</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>NNTP</td>
+      <td>119</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Loc-Serv</td>
+      <td>135</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>NbSession</td>
+      <td>139</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>News</td>
+      <td>144</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>tcprepo</td>
+      <td>158</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Print-Srv</td>
+      <td>170</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>VMNet</td>
+      <td>175</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>VMNet0</td>
+      <td>400</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Exec</td>
+      <td>512</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Login</td>
+      <td>513</td>
+      <td>Connexion sur une machine distante (<em>Remote Login</em>)</td>
+    </tr>
+    <tr>
+      <td>Shell</td>
+      <td>514</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Printer</td>
+      <td>515</td>
+      <td>Impression déportée</td>
+    </tr>
+    <tr>
+      <td>EFS</td>
+      <td>520</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tempo</td>
+      <td>526</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Courier</td>
+      <td>530</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Conference</td>
+      <td>531</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>NetNews</td>
+      <td>532</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UUCP</td>
+      <td>540</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>KLogin</td>
+      <td>543</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>KShell</td>
+      <td>544</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>RemoteFS</td>
+      <td>556</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>garcon</td>
+      <td>600</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>maitrd</td>
+      <td>601</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>BusBoy</td>
+      <td>602</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kerberos</td>
+      <td>750</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kerberos_mast</td>
+      <td>751</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Krb_prop</td>
+      <td>754</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ERLogin</td>
+      <td>888</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>X11</td>
+      <td>6000</td>
+      <td>système X Window version 11</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Parfois désignée sous le terme de "pile" (de protocoles, ensemble de couches) TCP/IP</li>
+    <li>Fiable : contrôle des erreurs</li>
+    <li>Garantie du séquencement</li>
+    <li>Circuit virtuel</li>
+    <li>Transferts bufferisés</li>
+    <li>Full duplex</li>
+    <li>Utilise la notion de port (16 <a href="/tech/info/soft/data/Bit.html">bits</a>) pour faire communiquer 2 <a
+        href="../../Application.html">applications</a> sur des <a
+        href="/tech/info/soft/proj/design/arch/serveur/Host.html">machines</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Flux d'information non structuré</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><em>Unix Network Programming </em>de Richard Stevens (Addison-Wesley)</li>
+    <li><em>Internetworking with TCP/IP Vol. 1, 3ème Edition</em> de Douglas Corner (Prentice Hall)</li>
+    <li><em>Internetworking with TCP/IP Vol. 3</em> de Douglas Corner (Prentice Hall)</li>
+    <li><em>TCP/IP Illustrated </em>de Richard Stevens (Addison Wesley)</li>
+    <li>JavaSoft <a href="http://java.sun.com/docs/books/tutorial/networking"><em>The Java Tutorial - Custom Networking
+      : All About Sockets</em></a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

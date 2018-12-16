@@ -1,0 +1,378 @@
+<!--#include virtual="/header-start.html" -->
+<title>Unix</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Fournir un système d'exploitation muti-utilisateurs.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Unix est composé :</p>
+  <ul>
+    <li>d'un <strong>noyau </strong>(<em>kernel</em>), accédé par
+      <ul>
+        <li>une <strong><a href="shell">coquille</a></strong> (<em>shell</em>) permettant d'exécuter des
+          <ul>
+            <li><strong>applications </strong>et outils</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Son système de fichiers (<em>file system</em>) est censé avoir une hiérarchie standard (<abbr
+      title="Filesystem Hierarchy Standard">FHS</abbr>) :
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th colspan="3">Chemin</th>
+      <th>Commentaire</th>
+      <th>Optionnel</th>
+      <th>Statique</th>
+      <th>Partageable</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td colspan="3"><code>bin</code></td>
+      <td><code>Bin</code>aires de commandes essentielles</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>boot</code></td>
+      <td>Fichiers statiques de démarrage (<code>boot</code>)</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>dev</code></td>
+      <td>Fichiers de périphériques (<em><code>dev</code>ices</em>)</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>etc</code></td>
+      <td>Configuration système spécifique à la machine</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>home</code></td>
+      <td>Répertoire d'accueil (<code>home</code>) des utilisateurs</td>
+      <td class="oui"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>lib</code></td>
+      <td>Bibliothèques (<em><code>lib</code>rairies</em>) partagées essentielles et modules du noyau</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>lib&lt;qual&gt;</code></td>
+      <td>Format alternatif &lt;qual&gt; de bibliothèques (<em><code>lib</code>rairies</em>) partagées essentielles</td>
+      <td class="oui"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>media</code></td>
+      <td>Point de montage pour les <code>media</code> (disques, clés, etc.) amovibles</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>mnt</code></td>
+      <td>Point de montage (<em><code>m</code>ou<code>nt</code></em>) d'un système de fichiers temporaire</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>opt</code></td>
+      <td>Paquets logiciels <code>opt</code>ionnels pour des applications</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>root</code></td>
+      <td>Répertoire d'accueil (<code>home</code>) de l'administrateur</td>
+      <td class="oui"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>sbin</code></td>
+      <td>Binaires système (<em><code>s</code>ystem <code>bin</code>aries</em>) essentiels</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>srv</code></td>
+      <td>Données pour <code>s</code>e<code>rv</code>ices fournis par ce système</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>tmp</code></td>
+      <td>Fichiers <code>t</code>e<code>mp</code>oraires</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>usr</code></td>
+      <td>Hiérarchie secondaire</td>
+      <td class="non"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><code>var</code></td>
+      <td>Données variables</td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code></code></td>
+      <td><code>spool</code></td>
+      <td><code></code></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td><code>news</code></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td><code></code></td>
+      <td><code>mail</code></td>
+      <td><code></code></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td><code></code></td>
+      <td><code>run</code></td>
+      <td><code></code></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td><code></code></td>
+      <td><code>lock</code></td>
+      <td><code></code></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'OS Unix sont :</p>
+  <ul>
+    <li>Xenix
+      <ul>
+        <li>SCO</li>
+      </ul>
+    </li>
+    <li>BSD (Berkeley), conçu par <a href="/people/j/JoyBill/index.html">Bill Joy</a>
+      <ul>
+        <li>Ultrix</li>
+        <li><a href="/org/us/company/ibm/index.html">IBM</a> AIX
+          <ul>
+            <li>OS/400</li>
+          </ul>
+        </li>
+        <li>SunOS
+          <ul>
+            <li><a href="/org/us/company/oracle/sun/index.html">Sun</a> Solaris, conçu par <a
+                href="/people/j/JoyBill/index.html">Bill Joy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>HP UX</li>
+    <li><a href="Linux.html">Linux</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li> Issu du projet Multics, un effort conjoint des laboratoires Bell, General Electric et du MIT pour développer un
+      système d'exploitation général.
+    </li>
+    <li>Développé en <a href="../../../../1969.html">1969</a> par <a href="/people/t/ThompsonKen.html">Ken Thompson</a>
+      en assembleur sur une machine PDP-7 le système d'exploitation multi-utilisateurs Unix, destiné à faire tourner la
+      machine PDP-7 de Digital (fournie sans OS).
+    </li>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="4">
+        <tr>
+          <td class="titleCorner"></td>
+          <th>Version</th>
+          <th>1</th>
+          <th></th>
+          <th rowspan="3">Commentaire</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Release</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Commande</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Année</th>
+          <th></th>
+          <td>1969 1971</td>
+          <td>1972</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Shell</th>
+          <th>Bourne</th>
+          <td></td>
+          <td></td>
+          <td>prompt$</td>
+        </tr>
+        <tr>
+          <th>C</th>
+          <td></td>
+          <td></td>
+          <td>prompt%</td>
+        </tr>
+        <tr>
+          <th rowspan="11">Commandes shell</th>
+          <th>cat</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>Concaténer fichiers</td>
+        </tr>
+        <tr>
+          <th>b</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>compile b program</td>
+        </tr>
+        <tr>
+          <th>boot</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>boot system</td>
+        </tr>
+        <tr>
+          <th>chdir</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>change working directory</td>
+        </tr>
+        <tr>
+          <th>chmod</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>change access mode</td>
+        </tr>
+        <tr>
+          <th>chown</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>change owner</td>
+        </tr>
+        <tr>
+          <th>cp</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>copy file</td>
+        </tr>
+        <tr>
+          <th>ls</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>list directory contents</td>
+        </tr>
+        <tr>
+          <th>mv</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>move or rename file</td>
+        </tr>
+        <tr>
+          <th>wc</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>get word count</td>
+        </tr>
+        <tr>
+          <th>who</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>who is one the system</td>
+        </tr>
+        <tr>
+          <th>Langage</th>
+          <th>C</th>
+          <td>"B"</td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Pipes</th>
+          <th></th>
+          <td class="non"></td>
+          <td class="oui"></td>
+          <td>Tubes pour connecter la sortie d'un programme à l'entrée d'un autre.</td>
+        </tr>
+        <tr>
+          <th>Outils</th>
+          <th>roff</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>run off text, écrit par <a href="/people/t/ThompsonKen.html">Ken Thompson</a></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th>ed</th>
+          <td class="oui"></td>
+          <td></td>
+          <td>Editeur de texte, écrit par <a href="/people/t/ThompsonKen.html">Ken Thompson</a></td>
+        </tr>
+      </table>
+    </li>
+    <li>En <time>1980</time> <a href="/org/us/company/ms/index.html">Microsoft</a> rachète la licence Unix des
+      Bell Labs et l'appelle Xenix.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

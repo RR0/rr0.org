@@ -1,0 +1,179 @@
+<!--#include virtual="/header-start.html" -->
+<title>SSL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Secure Socket Layer </i>: couche de <a href="/tech/info/soft/reseau/protocole/Socket.html">prises</a> <a
+    href="/tech/info/soft/sec">sécurisées</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Sécuriser les échanges sur <a href="/tech/info/soft/reseau/protocole/TCP.html">TCP</a>/IP (donc <a
+      href="../../../proj/design/arch/web/index.html">Web</a> y compris)</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>SSL réalise :</p>
+  <ul>
+    <li>l'<a href="../../auth/index.html">authentification</a>.</li>
+    <li> l'intégrité des messages échangés</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>SSL implémente comme son nom l'indique (<i><a href="//tech/info/soft/reseau/protocole/Socket.html">socket</a> layer</i>)
+    la sécurité de la couche transport au-dessus de <a href="//tech/info/soft/reseau/protocole/TCP.html">TCP/IP</a>.</p>
+  <table>
+    <tr>
+      <th>Session</th>
+      <td>SSL</td>
+    </tr>
+    <tr>
+      <th>Transport</th>
+      <td>
+        <div align="center"><a href="/tech/info/soft/reseau/protocole/TCP.html">TCP</a></div>
+      </td>
+    </tr>
+    <tr>
+      <th>Réseau</th>
+      <td>
+        <div align="center"><a href="/tech/info/soft/reseau/internet/IP.html">IP</a></div>
+      </td>
+    </tr>
+  </table>
+  <p>L'<a href="../../auth/index.html"><strong>authentification</strong></a> est réalisée via un <a
+      href="Asymetrique.html">cryptage asymétrique</a> : le 1er message est crypté avec la <a
+      href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> du destinataire certifié (un serveur généralement)
+    par un certificat <a href="X509.html">X509</a>.</p>
+  <p> L'<strong>intégrité</strong> des messages échangés est réalisée via un <a
+      href="/tech/info/soft/sec/priv/crypt/Asymetrique.html">cryptage symétrique</a> (<a href="DES.html">DES</a>, <a
+      href="/tech/info/soft/sec/priv/crypt/RC4.html">RC4</a>) plus rapide : une fois l'une des parties certifiée, une
+    clé de cryptage unique (une <a href="#clesecrete">clé secrète</a> de cryptage de session, ou <i>token</i>) est
+    générée et transmise au destinataire authentifié. Cette clé n'est pas visible puisqu'insérée dans le message lisible
+    uniquement par le destinaire (le serveur typiquement). Elle reste néanmoins connue du client qui l'a générée et du
+    serveur qui l'a reçue dans son premier message crypté avec sa <a
+        href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a>. Les deux parties peuvent alors s'échanger des
+    messages cryptés avec cette clé de session partagée.</p>
+  <table>
+    <thead>
+    <tr>
+      <td colspan="2" rowspan="2">SSL</td>
+      <th valign="top"> Version</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th rowspan="3"> Commentaires</th>
+    </tr>
+    <tr>
+      <th valign="top"> Release</th>
+      <th></th>
+      <th></th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>Couche</th>
+      <th>Technologie</th>
+      <th valign="top"> Fixpack</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tr>
+      <th rowspan="3" valign="top"></th>
+      <th rowspan="3" valign="top"></th>
+      <th valign="top"></th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Java propose une implémentation portable de SSL au travers de JSSE.</p>
+  <table>
+    <thead>
+    <tr>
+      <td colspan="2" rowspan="2">JSSE</td>
+      <th valign="top"> Version</th>
+      <th></th>
+      <th rowspan="3"> Commentaires</th>
+    </tr>
+    <tr>
+      <th valign="top"> Release</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Couche</th>
+      <th>Technologie</th>
+      <th valign="top"> Fixpack</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tr>
+      <th rowspan="3" valign="top">Intégré dans</th>
+      <th rowspan="3" valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></th>
+      <th valign="top"> 1.2</th>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"> 1.3</th>
+      <td class="non"> Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"> 1.4</th>
+      <td class="oui"> Oui</td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>SSL 3.0 a été perfectionné pour donner TLS (<em>Transport Layer Security</em>), largement adopté.</li>
+    <li>SET est un Protocole de commerce électronique situé au-dessus de SSL</li>
+    <li>Créé par <a href="/org/us/company/netscape">Netscape</a> en <a href="../../../../1994.html">1994</a>
+    </li>
+    <li>La dernières version est SSL 3.0.</li>
+    <li>Une nouvelle génération de SSL est TLS.</li>
+  </ul>
+</section>
+<section>
+  <h2> Limitations</h2>
+  <ul>
+    <li>Ne supporte pas certaines caractéristiques de TCP/IP comme des données hors de bande (<em>out of band data</em>).
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li> Implémentations
+      <ul>
+        <li><a href="http://www.vonnieda.org/jSSL/">expreSSL - A free SSL Java Implementation</a></li>
+        <li><a href="http://www.bpsinfo.com/javassl/">Java SSL</a></li>
+        <li><a href="http://www.ssleay.org/">SSLeay (native)</a></li>
+      </ul>
+    </li>
+    <li><a href="http://home.netscape.com/eng/ssl3/3-SPEC.HTM">The SSL 3.0 Specification</a></li>
+    <li><a href="http://home.netscape.com/eng/ssl3/draft302.txt">The SSL Protocol</a></li>
+    <li>Netscape <a href="http://java.sun.com/security/signExample/">How SSL Works</a></li>
+    <li><a href="http://psych.psy.uq.oz.au/%7Eftp/Crypto/">SSLeay and SSLapps FAQ</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

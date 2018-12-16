@@ -74,6 +74,51 @@
     <p>`J(Θ) = -1/m sum_(i=1)^m [y^((i))*log(h_θ(x^((i))))+(1−y^((i)))log(1−h_θ(x^((i))))] + λ/(2m) sum_(j=1)^n
       θ_j^2`</p>
   </section>
+  <section>
+    <h3>Précision et rappel</h3>
+    <p>Classer les réponses comme 0 ou 1 en fonction de `h_θ(x)>=0.5` ou `h_θ(x)<0.5` n'est pas toujours le plus
+      opportun ; parfois on voudrait utiliser une autre valeur que 0.5 si les classes sont déséquilibrées/dissymétriques
+      (<i lang="en">skewed</i>).</p>
+    <p>Cependant si ce facteur est trop déséquilibré (disons 0.9), il convient de vérifier la fiabilité des résultats.
+      Si l'on suppose :</p>
+    <table>
+      <thead>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th colspan="2">Classe réelle</th>
+      </tr>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th>1</th>
+        <th>0</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>Classe prédite</th>
+        <th>1</th>
+        <td class="oui">Vrai positif</td>
+        <td class="non">Faux positif</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>0</th>
+        <td class="non">Faux négatif</td>
+        <td class="oui">Vrai négatif</td>
+      </tr>
+      </tbody>
+    </table>
+    <p>On définit la <strong>précision</strong> comme la proportion de prédictions positives correctes dans l'ensemble
+      des prédictions positives :</p>
+    <p>`P = "vrais positifs"/("vrais positifs" + "faux positifs")`</p>
+    <p>et le <strong>rappel</strong> (<i lang="en">recall</i>) comme la proportion de prédictions positives correctes
+      par rapport à l'ensemble des positifs réels :</p>
+    <p>`R = "vrais positifs"/("vrais positifs" + "faux négatifs")`</p>
+    <p>Ce qui nous permet de définir la métrique de fiabilité :</p>
+    <p>`F_1 = 2(RF)/(R+F)` entre 0 et 1.</p>
+  </section>
 </section>
 <section>
   <h2>Notes</h2>
@@ -88,7 +133,11 @@
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->
-<style>.mjx-math * {
+<style>
+.titleCorner {
+  border-bottom: none;
+}
+.mjx-math * {
   line-height: 0;
 }
 

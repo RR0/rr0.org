@@ -10,6 +10,43 @@
 <section>
   <h2>Analyse</h2>
   <p>Bibliothèque logicielle de <a href="..">PyData</a>.</p>
+  <p>Pandas manipule le concept de <i lang="en">Data Frame</i> (df), qui est un tableau de données.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Le module Panda doit avant tout être importé. Par exemple :<code>import pandas as pd</code></p>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>API</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Lecture de fichier</th>
+      <td><code>df = pd.read_csv('path/to/myFile.csv', sep ='|', encoding='iso-8859-1')<br/>
+        df = pd.read_excel('path/to/myFile.xls')</code></td>
+      <td>CSV, Excel</td>
+    </tr>
+    <tr>
+      <th>Affichage d'un extrait</th>
+      <td><code>df.head()</code></td>
+      <td>5 premières lignes, premières et dernières colonnes</td>
+    </tr>
+    <tr>
+      <th>Fusion de df</th>
+      <td><code>fusion = df1.merge(df2, on='colonne1')</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Appliquer une fonction sur une colonne</th>
+      <td><code>df['MyColumn'].apply(lambda x: someTransform(x)))</code></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <section>
   <h2>Déploiement</h2>

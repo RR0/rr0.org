@@ -1,0 +1,106 @@
+<!--#include virtual="/header-start.html" -->
+<title>S. V. M.</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Support Vector Machine</i> : machine à vecteurs de support ou Séparateur à Vaste Marge (<i
+    lang="en">large margin classifier</i>).</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Classification rapide et robuste.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <figure class="right side">
+    <figcaption>Le paramètre C définit la taille de la marge de classification</figcaption>
+    <img src="svm-parameter-c-example.png" alt="Le paramètre C définit la taille de la marge de classification"/>
+  </figure>
+  <p>La <a href="/science/discipline/math/stat/regress/logistic">régression logistique</a> peut classer correctement des
+    données mais parfois de manière trop précise, non naturelle. En ajoutant une contrainte de <strong>marge</strong>
+    autour de la ligne de séparation, on obtient un résultat plus naturel.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>L'algorithme de SVM simplifie la <a href="/science/discipline/math/stat/regress/cost">fonction de coût</a> de <a
+      href="/science/discipline/math/stat/regress/logistic">régression logistique</a> pour permettre un calcul plus
+    rapide :</p>
+  <ul>
+    <li>
+      <table class="right">
+        <thead>
+        <tr>
+          <th>`y`</th>
+          <th>`"cost"_y(h_θ(x),y)`</th>
+          <th>Graphique `z`</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>On veut que `h_θ(x)~~1` et donc que `θ^Tx≫0`. Cependant cette fonction garantit une "marge" de sécurité
+            supplémentaire en demandant `θ^Tx>=1`
+          </td>
+          <td>
+            <div id="y1"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>On veut que `h_θ(x)~~0` et donc que `θ^Tx≪0`. Cependant cette fonction garantit une "marge" de sécurité
+            supplémentaire en demandant `θ^Tx<=-1`
+          </td>
+          <td>
+            <div id="y0"></div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      Les courbes <a href="/science/discipline/math/stat/Sigmoide.html">sigmoïdes</a> sont remplacées par des fonction
+      linéaires
+    </li>
+    <li>le signe `-`, jusqu'ici factorisé, est ré-intégré à l'intérieur des termes.</li>
+    <li>La division par `m` (nombre de lignes de données) est supprimée (car cela n'affecte pas le résultat de la
+      minimisation).</li>
+    <li>le taux de <a href="/science/discipline/math/stat/regress/regul">régularisation</a> λ en 2ème terme est remplacé
+      par un taux inverse `C = 1/λ` en 1er terme</li>
+  </ul>
+  <p>De sorte que la <a href="/science/discipline/math/stat/regress/cost">fonction de coût</a> à minimiser devient :</p>
+  <p>`z(x) = θ^T x`</p>
+  <p>`J(Θ) = C sum_(i=1)^m [y^((i)) "cost"_1(z(x^((i))))+(1−y^((i)))"cost"_0(z(x^((i))))] + 1/2 sum_(j=1)^n θ_j^2`</p>
+  <p>Dans le cas d'un besoin de distinction non linéaire, on utilisera des <a href="kernel">kernels</a>.</p>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .mjx-math * {
+    line-height: 0;
+  }
+  td:nth-child(3) div {
+    height: 7em;
+    width: 7em;
+  }
+</style>
+<script>
+  var i = 4;
+  var y1 = JXG.JSXGraph.initBoard('y1', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  y1.create('functiongraph', [function (x) {
+    return -Math.log(1 / (1 + Math.exp(-x + 1)));
+  }, -i, i], {dash: 1, strokeColor: 'green'});
+  y1.create('functiongraph', [function (x) {
+    return x >= 1 ? 0 : -x + 1;
+  }, -i, i]);
+  var y0 = JXG.JSXGraph.initBoard('y0', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  y0.create('functiongraph', [function (x) {
+    return -Math.log(1 - 1 / (1 + Math.exp(-x - 1)));
+  }, -i, i], {dash: 1, strokeColor: 'green'});
+  y0.create('functiongraph', [function (x) {
+    return x <= -1 ? 0 : x + 1;
+  }, -i, i]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

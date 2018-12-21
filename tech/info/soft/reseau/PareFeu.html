@@ -1,0 +1,179 @@
+<!--#include virtual="/header-start.html" -->
+<title>Firewall</title>
+<!--#include virtual="/header-end.html" -->
+<p>Pare-feu.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Garantir la sécurité d'un domaine réseau, à savoir :</p>
+  <ul>
+    <li>les entrées dans ce domaine</li>
+    <li>les sorties de ce domaine</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un pare-feu (<i>firewall</i>) est une <a href="../proj/design/arch">architecture</a> réseau (et non forcément une
+    seule machine comme on le pense souvent). </p>
+  <p>Il peut fournir divers services :</p>
+  <ul>
+    <li><b>filtrage de paquets</b> : cette technique consiste à autoriser ou non le transit de paquets <a
+        href="/tech/info/soft/reseau/internet/IP.html">IP</a> en fonction de :
+      <ul>
+        <li>leur adresse de source</li>
+        <li>leur adresse de destination</li>
+        <li>le port de destination</li>
+        <li>le <a href="/tech/info/soft/reseau/protocole">protocole</a> de niveau supérieur (<a
+            href="/tech/info/soft/reseau/protocole/TCP.html">TCP</a>, <a
+            href="//tech/info/soft/reseau/protocole/UDP.html">UDP</a>) utilisé.</li>
+        <li>Outre ces informations, les pare-feux sont généralement incapables (sauf <em>Checkpoint Firewall 1</em>) de
+          prendre des décisions en fonction des données contenues dans ces paquets (d'où les techniques de <em>tunnelling</em>).
+        </li>
+      </ul>
+    </li>
+    <li><b>filtrage d'applications</b></li>
+    <li><b><a href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveur délégué/mandataire
+      (proxy)</a></b></li>
+    <li><b><a href="/tech/info/soft/reseau/NAT.html">NAT</a></b></li>
+    <li><strong><a href="VPN.html">VPN</a></strong> : réseau privé confidentiel</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>RMI</h3>
+    <p>Les pare-feux situés entre deux parties communiquant via <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> (une applet et son serveur par exemple)
+      interdisent généralement l'accès au port <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> par
+      défaut (1099), ce qui amène automatiquement (si la propriété <code>http.proxyHost</code> est spécifiée, voir plus
+      bas) le client <a
+          href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> à tenter un tunneling <a
+          href="../proj/design/arch/web/HTTP.html">HTTP</a>. Si cette tentative de tunnelling n'est pas souhaitée, on
+      fixera la propriété <code>java.rmi.server.disableHttp=true</code>.</p>
+    <p>Parce les requêtes <a href="../proj/design/arch/web/HTTP.html">HTTP</a> ne peuvent être émises que dans une
+      direction au travers d'un pare-feu, un client ne peut exporter ses propres objets au-delà du pare-feu, parce
+      qu'une machine au-delà de ce pare-feu ne peut invoquer une méthode en retour vers le client (à vérifier si le
+      pare-feu autorise les requêtes entrantes sur le port <a href="../proj/design/arch/web/HTTP.html">HTTP</a>).</p>
+  </section>
+  <section>
+    <h3>DNS</h3>
+    <p>Il arrive également que le pare-feu d'un utilisateur empêche ce dernier de se connecter à un serveur <a
+        href="DNS.html">DNS</a> externe, et donc de résoudre des noms symboliques (<code>www.javarome.org</code> par
+      exemple) en adresses physique (195.102.32.38 par exemple). Une applet sera par exemple incapable de charger une de
+      ses ressources, parce qu'utilisant son codebase exprimé sous forme de nom symbolique pour récupérer cette
+      ressource.
+    </p>
+    <p>Il existe plusieurs solutions pour résoudre ce problème :</p>
+    <ul>
+      <li>Spécifiez l'adresse <a href="/tech/info/soft/reseau/internet/IP.html">IP</a> dans le codebase du tag <code>&lt;applet&gt;</code>
+        et non pas le nom symbolique. Ceci impose de ne plus changer d'adresse <a
+            href="/tech/info/soft/reseau/internet/IP.html">IP</a>.
+      </li>
+      <li>Spécifiez la résolution du nom symbolique dans le fichier de votre <a href="DNS.html">DNS</a> local.
+        <ul>
+          <li>dans <code>/etc/hosts</code> pour les systèmes <a href="../prod/os/unix">Unix</a></li>
+          <li>dans <code>c:\windows\hosts</code> pour les systèmes <a
+              href="/org/us/company/ms/windows">Windows</a> 95 et <a
+              href="/org/us/company/ms/windows">Windows</a> 3.x</li>
+          <li>dans <code>c:\Winnt_version\system32\drivers\etc\hosts</code> pour les systèmes <a
+              href="/org/us/company/ms/windows">Windows</a> NT, où <code>Winnt_version</code> dépend de votre version de
+            <a href="/org/us/company/ms/windows">Windows</a> NT (<code>c:\winnt</code>, <code>c:\winnt4</code> par
+            exemple) </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>HTTP</h3>
+    <p>L'utilisation du protocole <a href="../proj/design/arch/web/HTTP.html">HTTP</a> est donc une règle quasi-générale
+      pour franchir les pare-feux. Ce protocole possède cependant de nombreux désavantages, qu'il peut être nécessaire
+      de contourner afin que le support des pare-feux n'handicape pas fonctionnellement notre application.</p>
+    <p><a href="../proj/design/arch/web/HTTP.html">HTTP</a> n'est en effet pas un protocole dit "connecté", ce qui
+      signifie que la connection établie par le client est censée être fermée une fois la réponse envoyée à ce premier.
+    </p>
+    <p>Ce n'est heureusement pas toujours vrai.</p>
+    <section><h4>Connexions Persistantes</h4>
+      <p>De nombreuses implémentations de <a href="../proj/design/arch/web/HTTP.html">HTTP</a> ont introduit une
+        optimisation de ce principe, au travers des "connexions persistantes".</p>
+      <p>Le principe des Connexions Persistantes consiste à réutiliser une connexion établie au lieu de la fermer et
+        d'en réouvrir une autre.</p>
+      <p>Ce mécanisme est fourni dans de nombreuses implémentations de <a
+          href="../proj/design/arch/web/HTTP.html">HTTP</a>, au travers de l'option <code>Keep-Alive</code>. Elle devait
+        cependant être négotiée avec le serveur (qui devait la comprendre) et ne constituait pas le comportement par
+        défaut de <a
+            href="../proj/design/arch/web/HTTP.html">HTTP</a> 1.0. Ceci pouvait en outre poser des problèmes lorsqu'un
+        client souhaitait se connecter à un tel serveur via un proxy <a
+            href="../proj/design/arch/web/HTTP.html">HTTP</a> qui ne comprenait pas cette option, et se bornait à la
+        transmettre au serveur final. Ce dernier, qui comprenait l'option, ne fermait pas sa connexion, ce qui bloquait
+        le proxy qui, lui, attendait une fermeture.</p>
+      <p><a href="../proj/design/arch/web/HTTP.html">HTTP</a> 1.1 a apporté de nombreuses optimisations, dont
+        l'utilisation par défaut des connexions persistantes, où l'exception consiste donc à fermer une connexion (la
+        partie effectuant cette fermeture devant en informer l'autre via l'option <code>Connection: close</code>).
+        L'utilisation de connexions persistantes par défaut permit par la suite diverses autres optimisations, comme
+        l'envoi de plusieurs requêtes <a href="../proj/design/arch/web/HTTP.html">HTTP</a>à la suite (les réponses sont
+        renvoyées dans l'ordre).</p>
+      <p>Un client <a href="../proj/design/arch/web/HTTP.html">HTTP</a> (<a
+          href="../proj/design/arch/web/client">navigateur Web</a> typiquement), tentera donc d'envoyer des requêtes <a
+          href="../proj/design/arch/web/HTTP.html">HTTP</a> sur une connexion existante (pour peu que le même serveur
+        soit visé) tant que cette connexion n'a pas été fermée. Le nombre de requêtes acceptées sur une même connexion
+        peut être paramétrable côté serveur (dans la configuration d'un serveur Web par exemple), ainsi que le délai
+        d'inactivité accepté avant la fermeture d'une connexion (<i>timeout</i>). </p></section>
+    <section>
+      <h4>Connexions en Attente</h4>
+      <p>Ou <i>Pending Connections</i>.</p>
+      <p>Certains besoins fonctionnels, tels qu'une connexion <i>full-duplex</i> peuvent être incompatibles avec un mode
+        déconnecté ou déconnectable (un serveur désirant envoyer des événements à un client par exemple - le fameux <em>server
+          push</em> ou <em>push</em>).</p>
+      <p>Une technique existe cependant pour contourner ce problème, consistant pour le client à se connecter au serveur
+        en lui indiquant qu'il souhaite recevoir un événement. Le serveur enregistre le fait qu'il s'agit d'une
+        connexion pour notification d'événement et ne déconnecte pas le client. Lorsque l'événement surviendra, le
+        serveur utilisera cette connexion pour en avertir le client.</p>
+      <p>Ce procédé sous-entend cependant un accord de principe entre le client et le serveur.</p>
+    </section>
+  </section>
+  <section>
+    <h3>Proxy</h3>
+    <p>Un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveur mandataire (ou <i>proxy</i>,
+      serveur de délégation)</a> est une machine mandatée pour effectuer les requêtes réseau de machines du réseau
+      interne à la place de celles-ci.
+    </p>
+    <p>Ceci permet :</p>
+    <ul>
+      <li>d'empêcher les machines du réseau externe de voir les machines du réseau interne (pour elles les requêtes
+        proviennent du serveur mandataire)</li>
+      <li>de contrôler les requêtes provenant des machines internes (on pourra par exemple n'autoriser que les requêtes
+        <a
+            href="../proj/design/arch/web/HTTP.html">HTTP</a>)</li>
+      <li>de contrôler les réponses provenant des machines externes</li>
+    </ul>
+    <p>Il existe deux grandes catégories de serveurs mandataires :</p>
+    <ul>
+      <li><b>les serveurs agissant au niveau application</b>, qui attendent des requêtes dans un protocole applicatif
+        donné (<a href="../proj/design/arch/web/HTTP.html">HTTP</a>, S-HTTP, <a href="protocole/FTP.html">FTP</a>,
+        Gopher). Le contenu de ces requêtes n'a pas besoin d'être modifié. Il est reçu tel quel par le serveur
+        mandataire qui les redirige après examen et validation vers la machine destinataire du réseau externe.</li>
+      <li><b>les serveurs agissant au niveau transport</b>, qui attendent des requêtes dans un protocole spécifique,
+        notamment <a href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a>. Ces serveurs dialoguent avec des
+        clients spécifiques connaissant le protocole <a href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a>. Le
+        fait que nombre de logiciels clients (les <a href="../proj/design/arch/web/client">navigateurs</a>, le <a
+            href="/org/us/company/oracle/sun/ptf/java/JPI.html">JPI</a>...) supportent le protocole <a
+            href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> permet, moyennant une configuration minime
+        (l'adresse et le port du serveur <a href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> à utiliser), de
+        rendre la traversée d'un tel proxy transparente pour l'utilisateur.</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Une <a href="DMZ.html">DMZ</a> est une architecture de pare-feu qui utilise 2 routeurs pour filtrer et
+      transférer l'information entre le réseau interne d'une organisation et l'Internet.</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><em><a href="http://arm.gobelins.fr/users/gpaul/ITIN_MEMOIRE">Ecriture d'un firewall en Java</a></em> par <a
+        href="mailto:paul-gregory@wanadoo.fr">Paul Grégory</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

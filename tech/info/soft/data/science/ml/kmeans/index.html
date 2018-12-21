@@ -1,0 +1,54 @@
+<!--#include virtual="/header-start.html" -->
+<title>K-means</title>
+<!--#include virtual="/header-end.html" -->
+<p>K moyennes.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Identifier des groupes (<i lang="en">clusters</i>) dans un ensemble de données.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>L'algorithme des K-moyennes est un algorithme de <a href="..">ML</a> non supervisé.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <figure class="right side">
+    <figcaption>3 points tirés au hasards se sont progressivement déplacés pour minimiser la moyenne de leur distances
+      aux 3 groupes de valeurs
+    </figcaption>
+    <img src="kmeans.png" alt="3 points tirés au hasards se sont progressivement déplacés pour minimiser la moyenne de
+      leur distances aux 3 groupes de valeurs"/>
+  </figure>
+  <p>L'algorithme des K-moyennes consiste à :</p>
+  <ol>
+    <li>tirer K points au hasard</li>
+    <li>répéter jusqu'à convergence
+      <ul>
+        <li>affectation de groupe</li>
+        <li>déplacer les centroïdes</li>
+      </ul>
+    </li>
+  </ol>
+  <section>
+    <h3>Affectation de groupe</h3>
+    <p>Pour déterminer le groupe (<i lang="en">cluster</i>) appartient (en attendant la convergence) chaque point
+      `x^((i))` (avec `i` de 1 à `m`), on va chercher de quel centroïde `μ_k` il est le plus proche. On affectera alors
+      `c^((i))` à l'indice du `k` groupe trouvé.</p>
+    <p>Mathématiquement, cette opération revient à minimiser la <a href="/science/discipline/math/stat/regress/cost">fonction
+      de coût</a> suivante (dite "<strong>fonction de distorsion</strong>") :</p>
+    <p>`J(c^((1)),…,c^((m)),μ_1,…,<μ_K></μ_K>) = 1/m sum_(i=1)^m norm(x^((i))-μ_(c^((i))))^2`</p>
+  </section>
+  <section>
+    <h3>Déplacer les centroïdes</h3>
+    <p>Déterminer pour chacun des K groupes `μ_k` qui est la moyenne des points (le nouveau centroïde) affectés au
+      groupe `k`</p>
+    <p>Mathématiquement, cette opération à minimiser J par rapport aux `μ`.</p>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .mjx-math * {
+    line-height: 0;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

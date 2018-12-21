@@ -112,21 +112,26 @@ td:nth-child(2) div {
 }
 </style>
 <script>
-  var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-5, 5, 5, -5], axis: true});
+  var i = 3;
+  var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false});
   cons.create('functiongraph', [function (x) {
-    return 2;
-  }, -5, 5]);
-  var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-5, 5, 5, -5], axis: true});
+    return i/2;
+  }, -i, i]);
+  var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false});
   x.create('functiongraph', [function (x) {
     return x;
-  }, -5, 5]);
-  var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-5, 5, 5, -5], axis: true});
+  }, -i, i]);
+  var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false});
   axb.create('functiongraph', [function (x) {
-    return 2 * x + 2;
-  }, -5, 5]);
-  var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-5, 5, 5, -5], axis: true});
+    return i/2 * x + i/2;
+  }, -i, i]);
+  var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false});
   xn.create('functiongraph', [function (x) {
     return x * x;
-  }, -5, 5]);
+  }, -i, i]);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

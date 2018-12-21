@@ -1,0 +1,55 @@
+<!--#include virtual="/header-start.html" -->
+<title>VPN</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Virtual Private Network</i> : Réseau Privé Virtuel (RPV).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Réseau privé <a href="/tech/info/soft/sec/priv">confidentiel</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un VPN permet de créer un réseau logique indépendant du réseau physique :</p>
+  <ul>
+    <li>partagé</li>
+    <li>pair à pair (<i lang="en">peer-to-peer</i>)</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Passerelle</p>
+  <p>Tunnel</p>
+  <p>La confidentialité est assurée par la <a href="/tech/info/soft/sec/priv">cryptographie</a>.</p>
+  <section>
+    <h3>SSL</h3>
+    <p>Ouverture des sessions HTTPS (SSL/TLS) depuis un <a href="/tech/info/soft/proj/design/arch/web/client">client
+      Web</a> typiquement.</p>
+  </section>
+  <section>
+    <h3>IPSec</h3>
+    <p>Un logiciel client permet la création d'un tunnel utilisant divers protocoles (<a
+        href="/tech/info/soft/sec/priv/crypt/SSH.html">SSH</a>, SMTP, IMAP, etc.)</p>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>Usages</h3>
+    <p>Travail à distance</p>
+    <p>Cloud computing</p>
+  </section>
+  <section>
+    <h3>Implémentations</h3>
+    <ul>
+      <li>IPSec</li>
+      <li>OpenVPN</li>
+      <li><a href="https://www.wireguard.com">WireGuard</a></li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

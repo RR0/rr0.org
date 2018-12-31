@@ -8,7 +8,8 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>L'algorithme des K-moyennes est un algorithme de <a href="..">ML</a> non supervisé.</p>
+  <p>L'algorithme des K-moyennes est un algorithme de <a href="..">ML</a> non supervisé qui va associer à chaque point
+    de `X` un groupe `{1..K}`.</p>
 </section>
 <section>
   <h2>Conception</h2>
@@ -19,31 +20,53 @@
     <img src="kmeans.png" alt="3 points tirés au hasards se sont progressivement déplacés pour minimiser la moyenne de
       leur distances aux 3 groupes de valeurs"/>
   </figure>
-  <p>L'algorithme des K-moyennes consiste à :</p>
+  <p>L'algorithme des K-moyennes consiste à associer des points à des groupes en fonction de leur distance à leurs
+    <strong>barycentres</strong> (<i lang="en">centroids</i>) :</p>
   <ol>
     <li>tirer K points au hasard</li>
     <li>répéter jusqu'à convergence
-      <ul>
-        <li>affectation de groupe</li>
-        <li>déplacer les centroïdes</li>
-      </ul>
+      <ol>
+        <li>affecter des points aux groupes</li>
+        <li>déplacer les barycentres des groupes</li>
+      </ol>
     </li>
   </ol>
   <section>
-    <h3>Affectation de groupe</h3>
+    <h3>Affectation aux groupes</h3>
     <p>Pour déterminer le groupe (<i lang="en">cluster</i>) appartient (en attendant la convergence) chaque point
-      `x^((i))` (avec `i` de 1 à `m`), on va chercher de quel centroïde `μ_k` il est le plus proche. On affectera alors
-      `c^((i))` à l'indice du `k` groupe trouvé.</p>
+      `x^((i))` (avec `i` de 1 à `m`), on va chercher de quel barycentre `μ_k` il est le plus proche. On affectera alors
+      à `c^((i))` l'indice du `k` groupe trouvé (par conséquent `μ_(c^((i)))` représente le barycentre auxquel `x^((i))`
+      est affecté).</p>
     <p>Mathématiquement, cette opération revient à minimiser la <a href="/science/discipline/math/stat/regress/cost">fonction
-      de coût</a> suivante (dite "<strong>fonction de distorsion</strong>") :</p>
-    <p>`J(c^((1)),…,c^((m)),μ_1,…,<μ_K></μ_K>) = 1/m sum_(i=1)^m norm(x^((i))-μ_(c^((i))))^2`</p>
+      de coût</a> suivante (dite "<strong>fonction de distorsion</strong>") sans changer les `μ_k` :</p>
+    <p>`J(c^((1)),…,c^((m)),μ_1,…,μ_K) = 1/m sum_(i=1)^m norm(x^((i))-μ_(c^((i))))^2`</p>
   </section>
   <section>
-    <h3>Déplacer les centroïdes</h3>
-    <p>Déterminer pour chacun des K groupes `μ_k` qui est la moyenne des points (le nouveau centroïde) affectés au
-      groupe `k`</p>
-    <p>Mathématiquement, cette opération à minimiser J par rapport aux `μ`.</p>
+    <h3>Déplacement des barycentres</h3>
+    <p>Déterminer pour chacun des K groupes `μ_k` qui est la <strong>moyenne</strong> des points (le nouveau barycentre)
+      affectés au groupe `k` :</p>
+    <p>`μ_k:= 1/abs(Ck) sum_(i∈C_k)x^((i))` où `C_k` est l'ensemble de points affectés au barycentre `k`</p>
+    <p>Mathématiquement, cette opération revient à minimiser `J` par rapport aux `μ_k`.</p>
   </section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>L'algorithme K-Means ne peut que converger.</li>
+    <li>Le résultat trouvé ne sera pas forcément optimal, mais dépendra des points initialement choisis au hasard. C'est
+      pour cela qu'il convient de réitérer l'algorithmes avec des points initiaux différents et de choisir le cas qui
+      aura donné une fonction J de coût minimale.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'application de K-Means sont :</p>
+  <ul>
+    <li>Déterminer des segments de marché : par exemple à partir d'un ensemble de ventes de tee-shirts, déterminer
+      quelles sont les populations pour des tailles S, M et L.</li>
+    <li>Compresser une image : regrouper les couleurs d'une image en "groupes" et réduires ces couleurs à leur
+      moyenne (permettant ainsi de passer de millions de couleurs 16 couleurs/groupes seulement par exemple).</li>
+  </ul>
 </section>
 <!--#include virtual="/footer.html" -->
 <style>

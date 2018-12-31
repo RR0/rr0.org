@@ -11,7 +11,8 @@
   <p>Le ML est un domaine de l'<a href="IA.html">IA</a> où un ensemble de données est utilisé pour "entraîner" :</p>
   <ul>
     <li>Apprentissage <strong>supervisé</strong> (<i lang="en">supervised learning</i>) : on indique à la machine ce
-      qu'on attend d'elle, de manière à ce qu'elle produise une prédiction :
+      qu'on attend d'elle (typiquement des résultats connus de données passées), de manière à ce qu'elle produise une
+      prédiction :
       <ul>
         <li><strong>quantitative</strong> : fonction continue issue d'une <a
             href="/science/discipline/math/stat/regress/linear">régression linéaire</a></li>
@@ -24,8 +25,8 @@
     </li>
     <li>Apprentissage <strong>non supervisé</strong> (<i lang="en">unsupervised learning</i>) : on demande à la machine
       de trouver elle-même des groupes (<i lang="en">clusters</i>) de données :
-    <ul>
-      <li><a href="kmeans">K-moyennes</a></li>
+      <ul>
+        <li><a href="kmeans">K-moyennes</a></li>
       </ul>
     </li>
   </ul>
@@ -109,19 +110,27 @@
       recherche du meilleur taux de régularisation).
     </li>
   </ul>
-  ce qui permet d'utiliser une fonction de <a href="/science/discipline/math/stat/regress/cost">calcul de coût</a>
-  paramétrée pour un ensemble sur un autre ensemble. Il pourra aussi être utile de tracer les "courbes d'apprentissage"
-  (<i lang="en">learning curves</i>) que représentent les erreurs (sans régularisation) des ensembles d'entraînement et
-  de validation, en fonction de la taille de l'ensemble d'entraînement : ces courbes qui devraient converger peuvent en
-  effet être indicatrices d'un <a href="/science/discipline/math/stat/regress/underfit"><i
-    lang="en">underfitting</i></a> (biais élevé si la convergence s'effectue mais ne parvient pas à descendre d'un haut
-  taux d'erreurs) ou <a
-    href="/science/discipline/math/stat/regress/overfit"><i lang="en">overfitting</i></a> (variance élevée si les
-  erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble d'entraînement).
+  <p>ce qui permet d'utiliser une fonction de <a href="/science/discipline/math/stat/regress/cost">calcul de coût</a>
+    paramétrée pour un ensemble sur un autre ensemble. Il pourra aussi être utile de tracer les "courbes
+    d'apprentissage" (<i lang="en">learning curves</i>) que représentent les erreurs (sans régularisation) des ensembles
+    d'entraînement et de validation, en fonction de la taille de l'ensemble d'entraînement : ces courbes qui devraient
+    converger peuvent en effet être indicatrices d'un <a href="/science/discipline/math/stat/regress/underfit"><i
+        lang="en">underfitting</i></a> (biais élevé si la convergence s'effectue mais ne parvient pas à descendre d'un
+    haut taux d'erreurs) ou <a
+        href="/science/discipline/math/stat/regress/overfit"><i lang="en">overfitting</i></a> (variance élevée si les
+    erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble d'entraînement).</p>
+  <p>On pourra utiliser la <a href="/science/discipline/math/stat/pca">PCA</a> pour réduire le nombre de features (mais
+    <em>pas</em> pour éviter le <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a>).</p>
 </section>
 <section>
-  <h2>Voir</h2>
+  <h2>Exemples</h2>
   <ul>
+    <li>Applications
+      <ul>
+        <li>Reconnaissance d'images</li>
+        <li><a href="nlp">NLP</a>, <abbr title="Machine Translation">MT</abbr></li>
+      </ul>
+    </li>
     <li>Framework
       <ul>
         <li><a href="https://js.tensorflow.org">TensorFlow.js</a></li>

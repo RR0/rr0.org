@@ -105,9 +105,8 @@
     <li><strong>test</strong> (<i lang="en">test set</i>) (20%, choisis aléatoirement si l'ordre est important) pour
       évaluer la performance de l'apprentissage sur des données qu'il n'a pas encore rencontrées ;</li>
     <li><strong>vérification</strong> (<i lang="en">cross-validation set</i>) (20%, choisis aléatoirement si l'ordre est
-      important) pour trouver le paramétrage de <a
-          href="/science/discipline/math/stat/regress/regul">régularisation </a> (on peut ainsi même automatiser cette
-      recherche du meilleur taux de régularisation).
+      important) pour trouver le paramétrage de <a href="/science/discipline/math/stat/regress/regul">régularisation</a>
+      (on peut ainsi même automatiser cette recherche du meilleur taux de régularisation).
     </li>
   </ul>
   <p>ce qui permet d'utiliser une fonction de <a href="/science/discipline/math/stat/regress/cost">calcul de coût</a>
@@ -116,9 +115,9 @@
     d'entraînement et de validation, en fonction de la taille de l'ensemble d'entraînement : ces courbes qui devraient
     converger peuvent en effet être indicatrices d'un <a href="/science/discipline/math/stat/regress/underfit"><i
         lang="en">underfitting</i></a> (biais élevé si la convergence s'effectue mais ne parvient pas à descendre d'un
-    haut taux d'erreurs) ou <a
-        href="/science/discipline/math/stat/regress/overfit"><i lang="en">overfitting</i></a> (variance élevée si les
-    erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble d'entraînement).</p>
+    haut taux d'erreurs) ou <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a> (variance
+    élevée si les erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble d'entraînement).
+  </p>
   <p>On pourra utiliser la <a href="/science/discipline/math/stat/pca">PCA</a> pour réduire le nombre de features (mais
     <em>pas</em> pour éviter le <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a>).</p>
 </section>

@@ -1,0 +1,258 @@
+<!--#include virtual="/header-start.html" -->
+<title>XML</title>
+<meta name="url" content="http://www.w3.org/XML"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>eXtensible Markup Language</i> : <a href="../../../proj/impl/lang">langage</a> de balises extensible.
+</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un <a href="../../../proj/impl/lang">langage</a> standard de description de données :
+  </p>
+  <ul>
+    <li>structuré (conforme à une grammaire)</li>
+    <li>portable (et donc interopérable)</li>
+    <li>facilement compréhensible (lisible et modifiable par un humain)</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une <strong>instance</strong> (document) XML peut référencer sa <strong>grammaire</strong> (définissant sa
+    structure). On peut ainsi vérifier qu'un document XML est <strong>valide</strong>, c'est à dire conforme à cette
+    grammaire.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Une instance XML est constituée d'un ensemble de <strong>balises</strong> définies dans une grammaire XML est
+    définissable via :
+  </p>
+  <ul>
+    <li>une <a href="../DTD.html"><strong>DTD</strong></a></li>
+    <li>un <a href="XMLSchema.html"><strong>schema XML</strong></a></li>
+  </ul>
+  <table>
+    <tr>
+      <td colspan="2" rowspan="2" class="titleCorner"></td>
+      <th>Version</th>
+      <th colspan="3">1</th>
+      <th rowspan="3"> Commentaire</th>
+    </tr>
+    <tr>
+      <td colspan="2" class="titleCorner"></td>
+      <th>Release</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Technologie</th>
+      <th>Technologie</th>
+      <th>FixPack</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th rowspan="3">Déclarations</th>
+      <th rowspan="2">Type de document</th>
+      <th>Interne</th>
+      <td colspan="3"><code><strong>DOCTYPE</strong> <em>élémentRacine</em> [<em>déclarationsEléments</em>]</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Externe</th>
+      <td colspan="3"><code><strong>DOCTYPE</strong> <em>élémentRacine</em> <strong>SYSTEM</strong> "<em>nomFichier</em>"</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">JAXP RI</th>
+      <td colspan="2">Apache Crimson</td>
+      <td>Xerces-J 2.0.1</td>
+      <td>Implémentation par défaut</td>
+    </tr>
+    <tr>
+      <th rowspan="2">DOM</th>
+      <th colspan="2">Package</th>
+      <td colspan="3"><code>org.w3c.dom</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">Propriété système pour paramétrage</th>
+      <td colspan="3"><code>javax.xml.parsers.DocumentBuilderFactory</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4">XSLT</th>
+      <th colspan="2">Package</th>
+      <td colspan="3"><code>javax.xml.transform</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">Propriété système pour paramétrage</th>
+      <td colspan="3"><code>javax.xml.transform.TransformerFactory</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th rowspan="2">JAXP RI</th>
+      <th>Interpréteur</th>
+      <td></td>
+      <td></td>
+      <td>Xalan-J 2.3.1_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Compilateur</th>
+      <td></td>
+      <td></td>
+      <td>XSLTC</td>
+      <td>Compile une feuille de style XSL en du code Java (<em>translet</em>)</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Des API pour XML sont :</p>
+  <ul>
+    <li><b><a href="DOM.html">DOM</a></b> permettant de représenter des données XML de manière programmative (objets)
+    </li>
+    <li><b><a href="SAX.html">SAX</a></b> permettant de lire un fichier XML selon un modèle événementiel
+    </li>
+    <li><b>XSLT</b>, permettant la transformation de données XML en d'autres format</li>
+    <li><strong>Xpath</strong></li>
+  </ul>
+  <p><a href="/org/us/company/oracle/sun/ptf/java">Java</a> propose un ensemble d'API optionelles au travers de son <a
+      href="http://java.sun.com/xml/downloads/javaxmlpack.html">Java XML Pack</a>.
+  </p>
+  <p>Celui-ci comprend :</p>
+  <ul>
+    <li><b><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></b>, permettant de lire des fichiers
+      XML avec le parseur de votre choix (Xerces, etc.)
+    </li>
+    <li><b><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXB.html">JAXB</a> </b>permettant de construire des
+      objets <a href="/org/us/company/oracle/sun/ptf/java">Java</a> à partir de données XML, et vice versa
+    </li>
+    <li><b>JAXM</b> (<i>Java API for XML Messaging</i>) spécifiant le format de messages XML envoyés via <a
+        href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a></li>
+    <li><b><a href="/org/us/company/oracle/sun/ptf/java/api/ext/webservice/JAX-RPC.html">JAX-RPC</a></b> permettant les
+      appels d'objets distants via XML
+    </li>
+    <li><b>SAAJ</b> (<i>SOAP with Attachments API for Java</i>)</li>
+    <li><b>JAXR</b> (<i>Java API for XML Registries</i>)</li>
+  </ul>
+  <p>D'autres API Java sont liées à XML car relatives aux <a href="../../../reseau/webservice">services Web</a>.
+  </p></section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de document XML défini par une <a href="../DTD.html">DTD</a> externe est :</p>
+  <blockquote>
+    <p><code>&lt;?<strong>xml version</strong>=<span class="codeString">"1.0"</span>?&gt;<br/>
+      &lt;!<strong>DOCTYPE </strong>voiture <strong>SYSTEM </strong><span
+          class="codeString">"voiture.dtd"</span>&gt;<br/> <br/> &lt;voiture couleur=<span
+          class="codeString">"rouge"</span> porte=<span class="codeString">"3"</span>&gt;<br/> &lt;marque&gt;Peugeot&lt;/marque&gt;<br/>
+      &lt;modele&gt;307&lt;/modele&gt;<br/> &lt;/voiture&gt;</code></p>
+  </blockquote>
+  <p>Des exemples de grammaires XML sont :</p>
+  <ul>
+    <li>XHTML/<a href="../../../proj/design/arch/web/HTML.html">HTML</a> 4.0.1</li>
+    <li><a href="../RDF.html">RDF</a>, <a href="../../../RSS.html">RSS</a></li>
+    <li><a href="XMLSchema.html">XML Schema</a></li>
+    <li><a href="../image/SVG.html">SVG</a></li>
+  </ul>
+  <p>Des exemples de parser XML sont :</p>
+  <ul>
+    <li><a href="http://web.wanadoo.be/cyberelf/nanoxml/">NanoXML</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Ne définit aucun format de présentation</li>
+    <li>On peut faire correspondre des balises XML a des objets. Les sous-balises devient alors des attributs, des
+      relations. Voir DOM et XML-Binding
+    </li>
+    <li><a href="XSL.html">XSL</a> définit un standard de transformation d'un document XML (en un autre document XML, <a
+        href="../../../proj/design/arch/web/HTML.html">HTML</a>)
+    </li>
+    <li>Sous-ensemble de <a href="../sgml">SGML</a> (défini par des <a href="../DTD.html">DTD</a>) adapté aux
+      contraintes du Web
+    </li>
+    <li> supporté par les <a href="../../../proj/design/arch/web/client">navigateurs</a> suivants :
+      <ul>
+        <li><a href="http://www.mozilla.org">Mozilla</a> [5.0+]</li>
+        <li><a href="http://www.mozilla.org">MSIE</a> [5.0+]</li>
+        <li><a href="http://www.xml.com/xml/pub/r/Amaya">Amaya</a></li>
+        <li><a href="http://www.xml.com/xml/pub/r/HyBrick_SGML/XML_Browser">HyBrick SGML/XML Browser</a> Fujitsu
+          Laboratories
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>XML seul ne définit pas d'intéropérabilité de services. Voir le <a href="../../../B2B.html">B2B</a> et les <a
+        href="../../../reseau/webservice">Web services</a></li>
+    <li>Verbeux et variable donc peu performant à transmettre (lire/écrire)</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Sites généraux
+      <ul>
+        <li><a href="http://www.ibiblio.org/xml">Cafe con Leche</a></li>
+        <li><a href="http://www.oasis-open.org/cover/sgml-xml.html">Oasis - The SGML/XML Web Page</a></li>
+        <li><a href="http://www.xml.com">XML.com</a></li>
+        <li><a href="http://www.chez.com/xml">XML Francophone</a></li>
+      </ul>
+    </li>
+    <li>Spécifications
+      <ul>
+        <li><a href="http://www.w3.org/TR/REC-xml">W3C Extensible Markup Language (XML) 1.0</a></li>
+        <li>XML.com fournit une <a href="http://www.xml.com/axml/axml.html">version annotée de cette spécification</a>
+          (illustration technique de la puissance de XML)
+        </li>
+      </ul>
+    </li>
+    <li>Articles
+      <ul>
+        <li>John Bozak, Sun Microsystems
+          <ul>
+            <li><a href="http://metalab.unc.edu/pub/sun-info/standards/xml/why/xmlapps.htm">XML, Java and the future of
+              the Web</a></li>
+            <li><a href="http://metalab.unc.edu/pub/sun-info/xml/why/4myths.htm">Media-Independent Publishing: Four
+              Myths about XML</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>API
+      <ul>
+        <li><a href="http://jakarta.apache.org/commons/digester.html">XML Digester</a> des <a
+            href="/org/int/asso/asf/Commons.html">Commons</a> de Jakarta (Apache)
+        </li>
+        <li>Une initiative intéressante de Bill LaForge (<a href="http://www.jxml.com/coins">JXML</a>) par rapport à
+          Java est <a href="http://www.jxml.com/coins">COINS</a>, permettant de remplacer le protocole de sérialisation
+          de Java par une grammaire XML.
+        </li>
+        <li><a href="http://www.alphaWorks.ibm.com/formula/BML">IBM Bean Markup Language (BML)</a></li>
+        <li><a href="http://www.javaworld.com/javaworld/jw-02-1999/jw-02-beans.html">JavaWorld XML JavaBeans</a></li>
+      </ul>
+    </li>
+    <li><a href="http://www.ucc.ie/xml">XML FAQ by Peter Flynn</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

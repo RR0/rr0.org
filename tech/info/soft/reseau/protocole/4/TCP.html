@@ -7,7 +7,7 @@
 <section>
   <h2>Besoin</h2>
   <p>Définir un protocole réseau standard et fiable pour l'échange de documents sur le Web (pages <a
-      href="../../proj/design/arch/web/HTML.html">HTML</a>)</p>
+      href="../../../proj/design/arch/web/HTML.html">HTML</a>)</p>
 </section>
 <section>
   <h2>Conception</h2>
@@ -30,7 +30,8 @@
 <section>
   <h2>Implémentation</h2>
   <p>Un segment TCP contient :</p>
-  <table border="1" cellspacing="0" cellpadding="5">
+  <table>
+    <thead>
     <tr>
       <th>Section</th>
       <th>Octet</th>
@@ -39,6 +40,8 @@
       </th>
       <th>Commentaire</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td rowspan="10">En-tête</td>
       <td>0-1</td>
@@ -96,8 +99,9 @@
       <td>Données</td>
       <td></td>
     </tr>
+    </tbody>
   </table>
-  <p>Les <a href="../../API.html">API</a> (<a href="/tech/info/soft/proj/impl/lang/c">C</a>, <a
+  <p>Les <a href="../../../API.html">API</a> (<a href="/tech/info/soft/proj/impl/lang/c">C</a>, <a
       href="/org/us/company/oracle/sun/ptf/java">Java</a>) utilisées pour établir des connexions TCP utilisent le
     principe de <em><a href="/tech/info/soft/reseau/protocole/Socket.html">socket</a></em>.</p>
   <p>L'utilisation de sockets TCP implique typiquement les opérations suivantes : </p>
@@ -122,7 +126,7 @@
           paquet 11 quand réception de l'accusé du paquet 1 si la fenêtre est de taille 10 par exemple). Ce système peut
           être contourné pour des applications "temps réel" désirant des accusés réception immédiats pour chaque envoi
           (via l'option Berkeley <code>TCP_NODELAY</code>), par exemple un client de serveur X <a
-              href="../../prod/os/unix/index.html">Unix</a> recevant les mouvement d'une souris.</li>
+              href="../../../prod/os/unix/index.html">Unix</a> recevant les mouvement d'une souris.</li>
       </ul>
     </li>
     <li><strong>Fermeture </strong>de la communication (close ou shutdown)
@@ -140,11 +144,14 @@
   <h2>Exemples</h2>
   <p>Des exemples d'applications utilisant TCP sont :</p>
   <table>
+    <thead>
     <tr>
       <th>Application</th>
       <th>Port</th>
       <th>Description</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td></td>
       <td>0</td>
@@ -248,7 +255,7 @@
     <tr>
       <td>FTP-Data</td>
       <td>20</td>
-      <td>Données <a href="FTP.html">FTP</a> (par défaut)</td>
+      <td>Données <a href="../FTP.html">FTP</a> (par défaut)</td>
     </tr>
     <tr>
       <td>FTP</td>
@@ -293,7 +300,7 @@
     <tr>
       <td>Domain</td>
       <td>53</td>
-      <td>serveur de noms (<a href="../DNS.html">DNS</a>)</td>
+      <td>serveur de noms (<a href="../../DNS.html">DNS</a>)</td>
     </tr>
     <tr>
       <td>MTP</td>
@@ -311,9 +318,9 @@
       <td></td>
     </tr>
     <tr>
-      <td><a href="../../proj/design/arch/web/HTTP.html">HTTP</a></td>
+      <td><a href="../../../proj/design/arch/web/HTTP.html">HTTP</a></td>
       <td>80</td>
-      <td><a href="../../proj/design/arch/web/index.html">Web</a></td>
+      <td><a href="../../../proj/design/arch/web/index.html">Web</a></td>
     </tr>
     <tr>
       <td>Link</td>
@@ -526,6 +533,7 @@
       <td>6000</td>
       <td>système X Window version 11</td>
     </tr>
+    </tbody>
   </table>
 </section>
 <section>
@@ -538,7 +546,7 @@
     <li>Transferts bufferisés</li>
     <li>Full duplex</li>
     <li>Utilise la notion de port (16 <a href="/tech/info/soft/data/Bit.html">bits</a>) pour faire communiquer 2 <a
-        href="../../Application.html">applications</a> sur des <a
+        href="../../../Application.html">applications</a> sur des <a
         href="/tech/info/soft/proj/design/arch/serveur/Host.html">machines</a>.</li>
   </ul>
 </section>

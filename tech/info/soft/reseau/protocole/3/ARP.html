@@ -1,0 +1,85 @@
+<!--#include virtual="/header-start.html" -->
+<title>ARP</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Address Resolution Protocol</i> : protocole de résolution d'adresses.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Résolution d'adresse dynamique entre <a href="../../internet/IP.html">IP</a> et <a
+      href="../../Ethernet.html">Ethernet</a>.
+  </p></section>
+<section>
+  <h2>Conception</h2>
+  <p>Le protocole ARP consiste en :</p>
+  <ol>
+    <li>Une interrogation via broadcast <a href="../../Ethernet.html">Ethernet</a> : je connais l'adresse IP de la machine
+      X, quelle est son adresse <a href="../../Ethernet.html">Ethernet</a> ?</li>
+    <li>Réponse de la machine X qui a reçu le broadcast : Voici mon adresse <a href="../../Ethernet.html">Ethernet</a>.
+    </li>
+  </ol>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Les données ARP sont donc à l'intérieur des trames <a href="../../Ethernet.html">Ethernet</a> :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Octet</th>
+      <th>
+        <div align="center">Contenu</div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>0-1</td>
+      <td> Type de matériel</td>
+    </tr>
+    <tr>
+      <td>2-3</td>
+      <td> Type de protocole</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Hlen</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Plen</td>
+    </tr>
+    <tr>
+      <td>6-7</td>
+      <td>Opération</td>
+    </tr>
+    <tr>
+      <td>8-13</td>
+      <td>Adresse matérielle émetteur (adresse source de la requête, et donc destination de la réponse)</td>
+    </tr>
+    <tr>
+      <td>14-17</td>
+      <td>Adresse IP Emetteur</td>
+    </tr>
+    <tr>
+      <td>18-23</td>
+      <td>Adresse matérielle cible (= 0 au moment de la question, puis remplacée par la réponse)</td>
+    </tr>
+    <tr>
+      <td>24-27</td>
+      <td>Adresse IP cible (octets 0-3)</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Sous Unix :</p>
+  <p><code>/etc/arp -a</code></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Pour éviter le traffic énorme engendré (1 broadcast + 1 réponse par paquet IP envoyé), chaque machine conserve
+      les dernières transactions dans un cache (sorte de résolution d'adresse statique). </li>
+    <li>Inverse par <a href="../RARP.html">RARP</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

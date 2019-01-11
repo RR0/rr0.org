@@ -1,0 +1,413 @@
+<!--#include virtual="/header-start.html" -->
+<title>IP</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Internet Protocol</i> : <a href="/tech/info/soft/reseau/protocole">protocole</a> de <a href="index.html">l'Internet</a>.
+</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Acheminer les datagrammes d'une <a href="/tech/info/soft/proj/design/arch/serveur/Host.html">machine</a> à une
+    autre.</p></section>
+<section>
+  <h2>Conception</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Couches OSI</th>
+      <th colspan="5">Exemples</th>
+      <th>Couches <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th rowspan="2">3 : Réseau</th>
+      <td colspan="5">
+        <div align="center">IP</div>
+      </td>
+      <th>Réseau</th>
+    </tr>
+    <tr>
+      <th></th>
+      <td colspan="5"><a href="../protocole/3/ARP.html">ARP</a>/<a
+          href="/tech/info/soft/reseau/protocole/3/RARP.html">RARP</a>
+      </td>
+      <th rowspan="3">Liaison</th>
+    </tr>
+    <tr>
+      <th>2 : Liaison données</th>
+      <td colspan="4"><a href="../Ethernet.html">Ethernet</a></td>
+      <td><a href="/tech/info/soft/reseau/TokenRing.html">Token Ring</a></td>
+    </tr>
+    <tr>
+      <th>1 : Physique</th>
+      <td>Paire torsadée</td>
+      <td>Câble coaxial</td>
+      <td colspan="2">Fibre optique</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Un datagramme IP à une taille limite de 64 Ko (65535 octets) mais le réseau sous-jacent limite le plus souvent
+    cette taille à une mesure inférieure appelée MTU (<em>Maximum Transfer Unit</em>), aboutissant à une fragmentation
+    du datagramme.</p>
+  <p>Un datagrame IP <span class="source">[6]</span> contient :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Section</th>
+      <th></th>
+      <th>Octet</th>
+      <th>
+        <div align="center">Contenu</div>
+      </th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td rowspan="20">En-tête</td>
+      <td rowspan="7">IPv6</td>
+      <td>0</td>
+      <td> Version (4 bits) = 6, Priorité (4 bits)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>1-3</td>
+      <td>Flow Label</td>
+      <td>Qualité de service</td>
+    </tr>
+    <tr>
+      <td>4-5</td>
+      <td>Payload length</td>
+      <td>Longueur (en octets) du reste du paquet (à l'exclusion de l'entête IPv6)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Type du prochain en-tête</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Hop limit</td>
+      <td>Nombre maximum de noeuds intermédiaires (champ TTL de IPv4)</td>
+    </tr>
+    <tr>
+      <td>8-23</td>
+      <td>Adresse IP source</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>24-39</td>
+      <td>Adresse IP destination</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="3">Options noeuds</td>
+      <td>on</td>
+      <td>Type du prochain en-tête</td>
+      <td rowspan="3">Facultatif</td>
+    </tr>
+    <tr>
+      <td>on+1</td>
+      <td>Longueur (en blocs de 8 octets) de l'en-tête (à l'exclusion des 8 premiers)</td>
+    </tr>
+    <tr>
+      <td>on+2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Options destination (routeurs)</td>
+      <td>2-3</td>
+      <td>Type du prochain en-tête</td>
+      <td rowspan="2">Facultatif</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>options</td>
+    </tr>
+    <tr>
+      <td>Routage explicite</td>
+      <td>4-5</td>
+      <td></td>
+      <td>Facultatif</td>
+    </tr>
+    <tr>
+      <td>Next Header</td>
+      <td></td>
+      <td>Type du prochain en-tête</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fragmentation</td>
+      <td>5-6</td>
+      <td></td>
+      <td>Facultatif</td>
+    </tr>
+    <tr>
+      <td>Next Header</td>
+      <td></td>
+      <td>Type du prochain en-tête</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Authentification</td>
+      <td>7</td>
+      <td></td>
+      <td>Facultatif</td>
+    </tr>
+    <tr>
+      <td>Next Header</td>
+      <td></td>
+      <td>Type du prochain en-tête</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Options destination finale</td>
+      <td>8</td>
+      <td></td>
+      <td>Facultatif</td>
+    </tr>
+    <tr>
+      <td>Next Header</td>
+      <td></td>
+      <td>Type du prochain en-tête</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Données</td>
+      <td>Données</td>
+      <td>23-</td>
+      <td>Données</td>
+      <td>Protocole encapsulé (TCP, UDP, ICMP, etc. ou même IPv6)</td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Un datagrame IP <span class="source">[4]</span> contient :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Section</th>
+      <th>Octet</th>
+      <th>
+        <div align="center">Contenu</div>
+      </th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td rowspan="11">En-tête</td>
+      <td>0</td>
+      <td> Version (4 bits) = 4, Hlen (4 bits)</td>
+      <td>4 encore souvent car IPV4 dure depuis 30 ans</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td> Type de service</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2-3</td>
+      <td>Longueur totale</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4-5</td>
+      <td>Identification</td>
+      <td>"N° de série" = N° de séquence pour ICMP</td>
+    </tr>
+    <tr>
+      <td>5-6</td>
+      <td>Drapeaux (4 bits) + Offset fragment (12 bits)</td>
+      <td>Drapeaux = fragmente plus, ne fragmente pas...</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TTL</td>
+      <td>Time To Live</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Protocole</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>9-10</td>
+      <td>Somme de contrôle en-tête</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11-14</td>
+      <td>Adresse IP source</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>15-18</td>
+      <td>Adresse IP destination</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>19-22</td>
+      <td>Options IP (12 bits) + Remplissage de 0</td>
+      <td>Les options IP sont peu utilisées</td>
+    </tr>
+    <tr>
+      <td>Données</td>
+      <td>23-</td>
+      <td>Données</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <h3>Adresse</h3>
+  <p>Une adresse IP est codée sur :</p>
+  <ul>
+    <li>32 bits (4 octets) pouvant énumérer 4294967296 (2^32) adresses <span class="source">[4]</span>.</li>
+    <li>128 bits (16 octets) <span class="source">[6]</span>.</li>
+  </ul>
+  <p>Cependant une adresse est codée selon :</p>
+  <ul>
+    <li>un <strong>numéro de réseau </strong>
+      <ul>
+        <li>codé sur 7 à 23 bits : entre 0 et 2097152 réseaux <span class="source">[4]</span></li>
+        <li>10^9 réseaux <span class="source">[6]</span></li>
+      </ul>
+    </li>
+    <li>un <strong>numéro de machine </strong>dans ce réseau
+      <ul>
+        <li>codé sur 24 à 8 bits : entre 16777216 et 256 machines sur un réseau <span class="source">[4]</span></li>
+      </ul>
+    </li>
+  </ul>
+  <p>On définit ainsi plusieurs <strong>classes d'adresses </strong>IP :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Classe</th>
+      <th>Adresse min</th>
+      <th>Adresse max</th>
+      <th>Bits</th>
+      <th>Nombre de réseaux</th>
+      <th>Nombre de machines</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th></th>
+      <td colspan="2">0.0.0.0</td>
+      <td>000...</td>
+      <td></td>
+      <td></td>
+      <td>Identifie le réseau lui-même</td>
+    </tr>
+    <tr>
+      <th>A</th>
+      <td>1.x.y.z</td>
+      <td>127.x.y.z</td>
+      <td>0xxx</td>
+      <td>127</td>
+      <td>16777216</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>127.0.0.1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Loopback (boucle locale)</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>128.0.y.z</td>
+      <td>191.255.y.z</td>
+      <td>10xxx</td>
+      <td>16384</td>
+      <td>65536</td>
+      <td>Trop grands, saturation</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>192.0.0.z</td>
+      <td>223.255.255.z</td>
+      <td>110xxx</td>
+      <td>2097152</td>
+      <td>256</td>
+      <td>Trop petits, inflation</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>224.0.0.z</td>
+      <td>?</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Multicast</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>255.255.255.255</td>
+      <td></td>
+      <td>111...</td>
+      <td></td>
+      <td></td>
+      <td>Broadcast (vers toutes les machines du réseau)</td>
+    </tr>
+    </tbody>
+  </table>
+  <p>La manière dont sont définies ces classes d'adresses réduit le nombre réel d'adresses possibles à 3,3 millards
+    environ.</p>
+  <p>L'association d'une adresse IP à une adresse physique (résolution d'adresse) dépend du type de réseau. Elle peut
+    être </p>
+  <ul>
+    <li>statique (table par machine)</li>
+    <li>dynamique : <a href="../protocole/3/ARP.html">ARP</a> pour <a href="../Ethernet.html">Ethernet</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Changer/affecter l'adresse IP d'une interface sous Unix :</p>
+  <blockquote><q>/etc/<strong>ifconfig</strong> lan0 34.157.0.252</q></blockquote>
+  <p>Liste des interfaces sous Unix :</p>
+  <blockquote><q><strong>netstat -in</strong></q></blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Une adresse IP est associée une interface réseau (une carte réseau typiquement, et une machine peut en avoir
+      plusieurs)</li>
+    <li>une adresse IP est généralement masquée derrière son nom via un serveur <a href="../DNS.html">DNS</a></li>
+    <li>Aujourd'hui Internet utilise en majeure partie IPv4.</li>
+    <li>Défini par l'<a href="/tech/info/soft/reseau/internet/IETF.html">IETF</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Non connecté / sans état</li>
+    <li>Non fiable : l'acheminement se fait du mieux possible (<em>best effort</em>), mais il n'y a pas de garantie
+      d'acheminement ni de séquencement. D'où le besoin d'une couche de transport au-dessus, avec des procotoles comme
+      <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>.</li>
+    <li>Le nombre d'adresses utilisables est devenu insuffisant (d'où des solutions comme IPv6 ou des contournements
+      comme <a href="/tech/info/soft/reseau/NAT.html">NAT</a>).</li>
+    <li>Non sécurisé (corrigé par <a href="/tech/info/soft/reseau/internet/IPSec.html">IPSec</a>).</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><em>IPV6 </em>de Christian Huitema</li>
+    <li><a href="http://www.ipv6.org">IPV6 Information Page</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

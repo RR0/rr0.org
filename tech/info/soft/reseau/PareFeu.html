@@ -17,7 +17,7 @@
   <p>Il peut fournir divers services :</p>
   <ul>
     <li><b>filtrage de paquets</b> : cette technique consiste à autoriser ou non le transit de paquets <a
-        href="/tech/info/soft/reseau/internet/IP.html">IP</a> en fonction de :
+        href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a> en fonction de :
       <ul>
         <li>leur adresse de source</li>
         <li>leur adresse de destination</li>
@@ -57,18 +57,18 @@
   <section>
     <h3>DNS</h3>
     <p>Il arrive également que le pare-feu d'un utilisateur empêche ce dernier de se connecter à un serveur <a
-        href="DNS.html">DNS</a> externe, et donc de résoudre des noms symboliques (<code>www.javarome.org</code> par
+        href="protocole/5/DNS.html">DNS</a> externe, et donc de résoudre des noms symboliques (<code>www.javarome.org</code> par
       exemple) en adresses physique (195.102.32.38 par exemple). Une applet sera par exemple incapable de charger une de
       ses ressources, parce qu'utilisant son codebase exprimé sous forme de nom symbolique pour récupérer cette
       ressource.
     </p>
     <p>Il existe plusieurs solutions pour résoudre ce problème :</p>
     <ul>
-      <li>Spécifiez l'adresse <a href="/tech/info/soft/reseau/internet/IP.html">IP</a> dans le codebase du tag <code>&lt;applet&gt;</code>
+      <li>Spécifiez l'adresse <a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a> dans le codebase du tag <code>&lt;applet&gt;</code>
         et non pas le nom symbolique. Ceci impose de ne plus changer d'adresse <a
-            href="/tech/info/soft/reseau/internet/IP.html">IP</a>.
+            href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a>.
       </li>
-      <li>Spécifiez la résolution du nom symbolique dans le fichier de votre <a href="DNS.html">DNS</a> local.
+      <li>Spécifiez la résolution du nom symbolique dans le fichier de votre <a href="protocole/5/DNS.html">DNS</a> local.
         <ul>
           <li>dans <code>/etc/hosts</code> pour les systèmes <a href="../prod/os/unix">Unix</a></li>
           <li>dans <code>c:\windows\hosts</code> pour les systèmes <a

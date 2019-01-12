@@ -1,18 +1,19 @@
 <!--#include virtual="/header-start.html" -->
 <title>M. L.</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Machine Learning</i> : apprentissage automatique.</p>
+<p><i lang="en">Machine Learning</i> : apprentissage automatique (ou apprentissage machine ou apprentissage statistique)
+  .</p>
 <section>
   <h2>Motivation</h2>
   <p>Extraire un modèle prédictif (<i lang="en">model fitting</i>) d'une <a href="..">analyse de données</a>.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Le ML est un domaine de l'<a href="IA.html">IA</a> où un ensemble de données est utilisé pour "entraîner" :</p>
+  <p>Le ML est un domaine de l'<a href="IA.html">IA</a> où un ensemble de données est utilisé pour "entraîner". On
+    distingue les apprentissages :</p>
   <ul>
-    <li>Apprentissage <strong>supervisé</strong> (<i lang="en">supervised learning</i>) : on indique à la machine ce
-      qu'on attend d'elle (typiquement des résultats connus de données passées), de manière à ce qu'elle produise une
-      prédiction :
+    <li><strong>supervisé</strong> (<i lang="en">supervised learning</i>) : on indique à la machine ce qu'on attend
+      d'elle (typiquement des résultats connus de données passées), de manière à ce qu'elle produise une prédiction :
       <ul>
         <li><strong>quantitative</strong> : fonction continue issue d'une <a
             href="/science/discipline/math/stat/regress/linear">régression linéaire</a></li>
@@ -23,10 +24,23 @@
         <li><a href="rf">Random Forest</a></li>
       </ul>
     </li>
-    <li>Apprentissage <strong>non supervisé</strong> (<i lang="en">unsupervised learning</i>) : on demande à la machine
-      de trouver elle-même des groupes (<i lang="en">clusters</i>) de données :
+    <li><strong>non supervisé</strong> (<i lang="en">unsupervised learning</i>) : on demande à la machine de trouver
+      elle-même des groupes (<i lang="en">clusters</i>) de données :
       <ul>
         <li><a href="kmeans">K-moyennes</a></li>
+      </ul>
+    </li>
+    <li><strong>par transfert</strong> (<i lang="en">transfer learning</i>) : réutiliser les connaissances acquises pour
+      un problème pour les réutiliser sur un autre problème similaire :
+      <ul>
+        <li>Réseaux logiques de Markov</li>
+        <li>Réseaux bayésiens</li>
+      </ul>
+    </li>
+    <li><strong>par renforcement</strong> (<i lang="en">Reinforcement Learning (RL)</i>) : apprendre par tâtonnement
+      (essais/erreurs) récompensés en cas de succès :
+      <ul>
+        <li>TD-learning</li>
       </ul>
     </li>
   </ul>

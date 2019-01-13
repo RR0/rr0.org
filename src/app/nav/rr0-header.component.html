@@ -1,7 +1,7 @@
 <div data-ng-controller="HeadController">
 	<header>
 		<h1 [hidden]="isFramed">
-			<a *ngIf="titleUrl" href="{{titleUrl}}" target="_blank" [innerHTML]="title"></a>
+			<a *ngIf="titleUrl" [href]="titleUrl" target="_blank" [innerHTML]="title"></a>
 			<span *ngIf="!titleUrl" [innerHTML]="title"></span>
 		</h1>
 	</header>
@@ -15,7 +15,7 @@
 				<rr0-search></rr0-search>
 			</li>
 			<li *ngFor="let p of ps" class="constant {{p.style}}">
-				<a href="{{p.link}}" *ngIf="p.link && p.label"> 
+				<a [href]="p.link" *ngIf="p.link && p.label">
           <span [innerHTML]="p.label" [title]="p.title"></span> 
         </a>
 			</li>
@@ -26,7 +26,7 @@
 					<span class="constant" [innerHTML]="outline" title="Début de l'article"></span> </a>
 				<ul class="outline">
 					<li [tabindex]="101+i" class="constant" *ngFor="let s of sections; index as i" (click)="sectionClick(s)">
-						<a href="#{{s.id}}" id="out-{{s.id}}">
+						<a [href]="'#' + s.id" id="out-{{s.id}}">
               <span [innerHTML]="s.outlineLabel"></span>
             </a>
 					</li>

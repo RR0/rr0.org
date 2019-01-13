@@ -25,7 +25,7 @@ const routes: Routes = [
   },
 ];
 
-//const routeOptions = { enableTracing: true };
+// const routeOptions = { enableTracing: true };
 const routeOptions = undefined;
 
 @NgModule({

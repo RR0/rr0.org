@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
-//import { LangModule } from '../lang.module';
-//import { TimeModule } from '../time/time.module';
-//import { PeopleModule } from '../people/people.module';
+// import { LangModule } from '../lang.module';
+// import { TimeModule } from '../time/time.module';
+// import { PeopleModule } from '../people/people.module';
 import { SearchModule } from '../search/search.module';
 import { NetModule } from '../net.module';
 import { NetService } from '../Net.service';
@@ -22,7 +22,7 @@ import { PageNotFoundComponent } from './notfound/PageNotFound.component';
 export const hiddenPos = '-100em';
 
 @NgModule({
-  imports: [CommonModule, NetModule, SearchModule,/*LangModule, PeopleModule, TimeModule*/],
+  imports: [CommonModule, NetModule, SearchModule, /* LangModule, PeopleModule, TimeModule */],
   declarations: [HeaderComponent, PageComponent, HomeComponent, PageNotFoundComponent, RedirectComponent, AnchorDirective],
   entryComponents: [HeaderComponent, PageComponent],
   providers: [NetService, CommonsService, TimeService, LangService, PeopleService]

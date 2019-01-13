@@ -1,0 +1,104 @@
+<!--#include virtual="/header-start.html" -->
+<title>Certificat</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Certificate</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Garantir qu'une <a href="../sign">signature</a> (clé publique) correspond bien à une <a
+      href="/tech/info/soft/sec/auth/Identite.html">identité</a> donnée.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>De la même manière que la signature sur votre carte d'identité est certifiée par la mairie qui vous l'a remise, et
+    que le tampon de la mairie est certifié par l'état, etc. un certificat contient une <a
+        href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> certifiée par quelqu'un d'autre, lui-même
+    certifié par un autre, etc. jusqu'à parvenir à la clé publique d'un auteur dont l'identité est incontestable : une
+    <a href="CA.html">CA</a>.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Dans Java, la manipulation des certificats relève du package <code>java.security.cert</code> [1.2+]. Ce package
+    définit la classe abstraite <code>Certificate</code>, dont doivent dériver les classes représentant des types
+    particuliers de certificats (par exemple <code>java.security.cert.X509Certificate</code>). On pourra par alors
+    demander à la fabrique de certificats (<code>java.security.cert.CertificateFactory</code>) d'un fournisseur donné
+    d'instancier un certificat à partir :</p>
+  <ul>
+    <li>de flux (fichiers, certificats téléchargés) que lira la fabrique de certificats afin de générer (<span
+        class="code">maFabrique.generateCertificate
+    (telInputStream)</span>) un objet de type <code>java.security.cert.Certificate</code>, que l'on pourra interpréter (<i>cast</i>)
+      selon les cas comme des <code>java.security.cert.X509Certificate</code> ou autre.</li>
+    <li>d'une <a href="#keystore">base de clés</a>, qui peut fournir une instance de certificat à partir de son alias.
+    </li>
+  </ul>
+  <p>Le package des certificats définit également une classe <a
+      href="/org/us/company/ms/windows/dotnet/CRL.html">CRL</a> permettant de représenter les listes de
+    certificats révoqués.</p>
+  <h4>X.509</h4>
+  <p>En l'occurrence Java ne définit qu'un type particulier de certificat, le <a
+      href="../../priv/crypt/X509.html">X.509</a>, largement utilisé par la plupart des protocoles. Il est représenté
+    par la classe <code>java.security.cert.X509Certificate</code>. Cette classe n'est cependant pas jamais instanciée,
+    et dérivable par différents fournisseurs souhaitant fournir une implémentation de certificats <a
+        href="../../priv/crypt/X509.html">X.509</a>. </p>
+  <p>Afin de pouvoir valider d'autres certificats, la plate-forme Java [1.2+] (<a href="#JDK">JDK</a> ou <a href="#JRE">JRE</a>/<a
+      href="/org/us/company/oracle/sun/ptf/java/Plugin.html">plugin</a>) inclut &#151; comme les <a
+      href="../../../proj/design/arch/web/client">navigateurs</a>
+    &#151; une liste de certificats identifiant au moins une <a href="CA.html">CA</a>, en l'occurence <a
+        href="/org/us/company/Verisign.html">Verisign</a>.</p>
+  <p>Cette base de certificats "racines" se trouve dans une <a href="#keystore">base de clés</a> (KeyStore) de nom
+    <code>cacerts</code>, située dans le sous-répertoire <code>lib/security/</code> de la plate-forme. Dans un premier
+    temps, il est peu probable que vous ayez a accéder à cette base. <span class="attention">Cependant, il est recommandé de changer
+  son mot de passe par défaut (<code>changeit</code>) afin d'éviter
+  que quelqu'un ne remplace à votre insu les certificats de confiance installés
+  sur votre machine.</span></p>
+  <p>La génération d'un tel certificat s'effectue via l'option <code>-genkey</code> de <code>keytool</code>. Sont alors
+    stockées dans la <a href="#keystore">base de clés</a> (<code>%HOME%\.keystore</code> par défaut) une nouvelle clé
+    privée et une nouvelle clé publique associée, ainsi qu'un certificat (<a href="../../priv/crypt/X509.html">X.509</a>
+    v1 uniquement pour l'instant) auto-signé certifiant la valeur de sa propre clé-publique. A chacune de ces identités
+    générées est associé un alias qui peut être spécifié à <code>keytool</code> (<code>mykey</code> par défaut). Par
+    exemple :</p>
+  <p><code>keytool -genkey -alias javarome</code></p>
+  <p>Cette génération nécessite diverses informations fournies par le certifié (nom, prénom, localité, compagnie,
+    département, état, pays) nécessaire à la définition X.500 du nom du certifié (<i><a
+        href="/tech/info/soft/data/dbms/ldap/DN.html">Distinguished Name</a></i>).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de formats de certificats sont :</p>
+  <ul>
+    <li><a href="../../priv/crypt/X509.html">X.509</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Lorsqu'un acteur désire être certifié (obtenir un certificat) par une Autorité de Certification, il lui transmet
+      une <a href="/tech/info/soft/sec/auth/cert/CSR.html">CSR</a>.</li>
+    <li><b></b> Le format ASN (<i>Abstract Syntax Notation</i>) est un standard définissant le format d'un certificat.
+      ASN.1 peut par exemple être utilisé pour représenter un certificat <a
+          href="../../priv/crypt/X509.html">X.509</a>.</li>
+    <li> On peut récupérer la version codée (à écrire dans un fichier, à télécharger...) d'un certificat sous forme d'un
+      tableau d'octets. Cette méthode abstraite (<code>getEncoded()</code>) sera donc implémentée différemment par les
+      différents types de certificats (un certificat <a
+          href="../../priv/crypt/X509.html">X.509</a> retournera un ensemble d'octets au format ASN.1/<a
+          href="DER.html">DER</a> par exemple).
+    </li>
+    <li>On peut vérifier si un certificat a bien été signé par une identité donnée si l'on dispose de la clé publique
+      l'identité à vérifier (<code>telCertificat.verify(telleClePublique)</code> lèvera une exception si ce n'est pas le
+      cas).</li>
+    <li> Un certificat auto-signé (<i>self-signed certificate</i>) n'est garantit que par l'identité certifiée
+      elle-même, et non par une <a href="CA.html">CA</a> supérieure. Les certificats auto-signés sont normalement
+      l'apanage des <a href="CA.html">CA</a>, ou uniquement utilisé à des fins de tests.</li>
+    <li> Les CRL (<i>Certificate Revocation List</i>) sont des listes de certificats révoqués (invalidés). Un certificat
+      peut en effet être révoqué si son propriétaire a signalé s'être fait voler sa clé privée par exemple. Les CRL sont
+      datées et signées par une <a href="CA.html">CA</a> et généralement accessible à tous. Chacun peut ainsi demander à
+      une CRL si un certificat donné est toujours valide ou non.</li>
+    <li>Un realm (<i>domaine</i>) est un moyen d'associer des informations émises par le client (certificat, login/mot
+      de passe) à une <a href="/tech/info/soft/sec/auth/Identite.html">identité</a> connue du serveur. WLS ou d'autres
+      serveurs applicatifs définissent généralement parmi leurs realms (<i>UnixPasswordRealm, NTPasswordRealm,
+        DatabaseRealm</i>)<i> un CertificateRealm.</i></li>
+    <li><a href="http://www.verisign.com">Verisign</a> est une <a href="/tech/info/soft/sec/auth/cert/CA.html">CA</a>
+      commerciale délivrant des certificats.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

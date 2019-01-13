@@ -1,0 +1,24 @@
+<!--#include virtual="/header-start.html" -->
+<title>Underfitting</title>
+<!--#include virtual="/header-end.html" -->
+<figure class="right side">
+  <figcaption>Un coût/une erreur trop grand(e) peut être signe d'underfitting.
+  </figcaption>
+  <img src="/science/discipline/math/stat/regress/overfit/Overfitting.png" alt="Un coût nul peut sembler correspondre aux points connus mais ne correspondra sans doute pas
+    à de future nouvelles données (qu'il n'aurait pas bien prédit)"/>
+</figure>
+<p>Ce problème intervient lorsque le modèle utilisé est trop simple pour représenter/prédire les données. Le <a
+    href="/science/discipline/math/stat/regress/cost">taux d'erreur</a> plafonne alors à un niveau élevé (<i lang="en">high
+  bias</i>), sans que l'ajout de données ne puissent améliorer le résultat.</p>
+<p>Dans un tel cas, cette correspondance simpliste peut être corrigée en :</p>
+<ul>
+  <li>augmentant le nombre de caractéristiques (`n` composantes de `x`) en ajoutant des polynomes typiquement</li>
+  <li>augmentant le facteur de <a href="../regul">régularisant</a> la magnitude des paramètres `θ_j` pour leur donner
+    plus d'influence.
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

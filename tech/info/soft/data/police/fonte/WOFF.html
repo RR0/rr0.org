@@ -1,0 +1,57 @@
+<!--#include virtual="/header-start.html" -->
+<title>WOFF</title>
+<meta name="url" content="http://www.w3.org/Style/CSS/">
+<!--#include virtual="/header-end.html" -->
+<p><em>Web Open Font Format</em> : Format Libre de <a href=".">Fontes</a> Web.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un format de <a href=".">fonte de caractères</a> libre d'utilisation et adapté au Web.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une police de caractères SFNT (TrueType, OpenType, Open Font Format) doit être <strong>convertie</strong> au format
+    WOFF via un outil de codage adapté <span class="source">"<a href="http://www.fontsquirrel.com/fontface/generator">@FONT-FACE Generator</a>", <em>Font
+            Squirrel</em></span>.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Le format utilise la compression ZLib, ce qui permet d'avoir une réduction de taille de fichier de plus de 40 %
+    <span
+        class="source">"<a href="http://people.mozilla.org/~jkew/woff/woff-spec-latest.html">WOFF File
+        Format</a>"</span>.
+  </p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table border="1" cellspacing="0" cellpadding="4">
+    <tr>
+      <td class="titleCorner"></td>
+      <th>Propriétés</th>
+      <th><a href="http://www.w3.org/TR/REC-CSS1-961217.html">1</a> (2010)</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de feuille d'utilisation de <a href="..">fonte</a> WOFF est :</p>
+  <pre><code>&lt;!--_woff.css <br> <strong>@font-face { <br>     </strong>font-family: <strong>Woff; <br>     </strong>src:
+    url(<span class="codeString">'font/Starcraft.<strong>woff</strong>'</span>);<strong> <br> } <br> </strong>.woff {
+    <br>     font: 30px <strong>Woff; <br> </strong>} <br> --&gt; <br> Texte : &lt;span class=<span class="codeString">"woff"</span>&gt;Web
+    Open Font Format&lt;/span&gt;&lt;br/&gt;<strong> <br> </strong> Image: &lt;img src=<span class="codeString">"img/woff.png"</span>
+    title="Police WOFF"&gt;</code></pre>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Format créé en <time>2009</time></li>
+    <li>Soutenu par Microsoft, Mozilla, Open Software ASA</li>
+    <li>Acceptée par le W3C</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

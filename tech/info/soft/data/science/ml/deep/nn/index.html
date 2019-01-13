@@ -1,0 +1,88 @@
+<!--#include virtual="/header-start.html" -->
+<title>N. N.</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Neural network</i> : Réseau de Neurones (RN).</p>
+<section>
+  <h2>Motivation</h2>
+  <p><a href="../..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
+      href="/science/discipline/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Lorsque le nombre de critères est trop grand (reconnaissance d'image par ex), <a
+      href="/science/discipline/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse en calcul
+    (autant de features que de pixels) et il devient plus intéressant d'utiliser une alternative comme un réseau de
+    neurones .</p>
+  <p>À l'image des <a href="/science/discipline/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un neurone
+    artificiel possède :</p>
+  <ul>
+    <li>des entrées :
+      <ul>
+        <li>`x_0 = 1`, l'unité de biais</li>
+        <li>`x_1, x_2, ..., x_n`</li>
+      </ul>
+    <li>une sortie calculée par la fonction de prédiction `h_Θ(x)` où Θ est une série de paramètres (ou "poids")</li>
+  </ul>
+  <section>
+    <h3>Réseau</h3>
+    <p>Un réseau est constitué de `L` couches (souvent représentées de gauche à droite) :</p>
+    <ol>
+      <li>couche de `s_1` <strong>entrées</strong> (où l'on insèrera les valeurs de `x_1, x_2, ..., x_n`)</li>
+      <li>`L-2` couches "<strong>cachées</strong>" : contient `s_n` <strong>unités</strong> d'activation (noeuds)
+        `a_0^i, a_1^i, ..., a_n^i`. À noter que 1 seule couche cachée peut suffire à beaucoup de besoins, pour peu
+        qu'elle contienne assez de neurones (généralement plus que dans les couches d'entrée et de sortie). Si plus
+        d'une couche cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones.
+        Enfin, plus le réseau sera complexe, plus il demandera du temps de calcul (amoindrissant la rapidité de réponse
+        donc) et plus il sera succeptible de faire de l'<a
+            href="/science/discipline/math/stat/regress/overfit">overfitting</a>.
+      </li>
+      <li>couche de `s_L` <strong>sorties</strong> (typiquement constituée de `n` neurones de sorties si la prédiction
+        recherchée à `n` possibilités de réponses, par exemple 26 s'il s'agit de reconnaître une lettre de l'alphabet)
+      </li>
+    </ol>
+    <p>Par exemple pour 1 seule couche "cachée" (2) :</p>
+    <p>`[[x_0],[x_1],[x_2],[x_3]] -> [[a_1^((2))],[a_2^((2))],[a_3^((2))]] -> hθ(x)`</p>
+  </section>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>On définit pour chacun des `n` noeuds d'une couche `j` un résultat dépendant de la couche précédente `j-1` et de sa
+    matrice de poids `Θ_j` :</p>
+  <p>`z_i^((j))=Θ_(i,0)^((j-1)) x_0 + Θ_(i,1)^((j-1)) x_1 + Θ_(i,2)^((j-1)) x_2 + Θ_(i,3)^((j-1)) x_3`</p>
+  <p>et l'on définit alors la <strong>fonction d'activation</strong> comme une fonction <a
+      href="/science/discipline/math/stat/Sigmoide.html">logistique</a> `g` :</p>
+  <p>`a_i^((j))=g(z_i^((j)))`</p>
+  <p>et l'on considère la sortie `h_Θ(x)` comme `a_1^(3)` par exemple (s'il y a 3 couches), recevant la couche 2 comme
+    `X` (i.e. `x_i = a_i`) :</p>
+  <p>`h_Θ(x)=g(Θ_(1,0)^((2)) a_0 + Θ_(1,1)^((2)) a_1 + Θ_(1,2)^((2)) a_2 + Θ_(1,3)^((2)) a_3)`</p>
+  <p>Toutefois les résultats peuvent être plus complexes. Dans des problèmes de classification multiple (plus de 2
+    classes) par exemple, les résultats connus (et donc les hypothèses) auront plutôt la forme d'une matrice (où chaque
+    ligne indique si la classe `i` est reconnue ou non par exemple) :</p>
+  <p>`h_Θ(x)=[[h_Θ(x)_1],[h_Θ(x)_2],[h_Θ(x)_3],[h_Θ(x)_4]]`</p>
+  <p>On parlera donc plus généralement de `h_Θ(x)_k` comme étant le `k`<sup>ième</sup> résultat dans la couche de sortie
+    .</p>
+  <p>Comme pour d'autres algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a>, avant de prédire, le réseau
+    doit être "entraîné" (<i lang="en">trained </i>) en 2 phases à répéter jusqu'à convergence :</p>
+  <ul>
+    <li>pour chaque ligne de données (`i` de 1 à `m`)
+      <ol>
+        <li><strong><a href="forward">Propagation avant</a></strong> pour calcul du coût (erreur de prédiction)</li>
+        <li><strong><a href="back">Rétro-propagation</a></strong> si besoin, pour mise à jour des paramètres en
+          conséquence.</li>
+      </ol>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Inspiré des <a href="/science/discipline/bio/anat/nerv/brain/neuro">neurones biologiques</a>.</li>
+    <li>L'apprentissage d'un RN peut être long. Une méthode plus rapide peut être la <a
+        href="/tech/info/soft/data/science/ml/svm">SVM</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

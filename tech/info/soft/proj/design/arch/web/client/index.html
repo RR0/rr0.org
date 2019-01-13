@@ -1,0 +1,538 @@
+<!--#include virtual="/header-start.html" -->
+<title>Client web</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Web client, web browser </em>: client web, navigateur web.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Afficher des pages/<a href="app">applications</a> <a href="..">Web</a> et naviguer entre elles.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un client <a href="..">Web</a> est un composant <strong>logiciel</strong> installé sur la machine d'un
+    utilisateur final.
+  </p>
+  <p>Il dialogue avec un ou plusieurs <a href="../../serveur/ServeurWeb.html"><strong>serveurs Web</strong></a> à qui il
+    demande des <strong>ressources</strong> telles que :
+  </p>
+  <ul>
+    <li>des <strong>pages <a href="..">Web</a></strong></li>
+    <li>des <a href="css">feuilles de styles</a> pour ces pages Web</li>
+    <li>des images (contenues dans les pages Web ou non)</li>
+    <li>des fichiers audio</li>
+    <li>des fichiers video</li>
+    <li>des archives (zip, etc.)</li>
+    <li>du code d'applications (<a href="../../../../impl/lang/javascript">Javascript</a>, <a
+        href="/org/us/company/oracle/sun/ptf/java/JAR.html">jar</a>, exe, etc.)
+    </li>
+    <li>d'autres types de documents (PDF, <a href="/tech/info/soft/data/doc/xml">XML</a>, etc.)</li>
+    <li>etc.</li>
+  </ul>
+  <p>Pour interpréter certains types de ressources (fichiers <a href="../Flash.html">Flash</a>, <a
+      href="../../../../../Shockwave.html">Shockwave</a>, PDF, Java parfois, etc.), un client Web doit parfois disposer
+    de <a
+        href="/org/us/company/oracle/sun/ptf/java/Plugin.html"><strong>plugins</strong></a>.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Le client Web dialogue avec un <a href="../../serveur/ServeurWeb.html">serveur Web</a> via le protocole <a
+      href="../HTTP.html"><strong>HTTP</strong>.</a></p>
+  <ul>
+    <li>une <strong>requête</strong> <a href="../HTTP.html">HTTP</a> contient
+      <ul>
+        <li>l'<a href="../../../../../reseau/internet/URL.html">URL</a> de la ressource recherchée</li>
+        <li>divers autres paramètres liés à configuration du navigateur (langue préférée, etc.)
+        </li>
+      </ul>
+    </li>
+    <li>une <strong>réponse</strong> contient
+      <ul>
+        <li>des informations sur la ressource trouvée (son type <a href="../MIME.html">MIME</a> notamment, qui permetta
+          au navigateur de l'interpréter)
+        </li>
+        <li>les données de la ressource trouvée, comme :
+          <ul>
+            <li>le code <a href="../HTML.html">HTML</a> d'une page Web (incluant éventuellement du <a
+                href="../../../../impl/lang/javascript">JavaScript</a>)
+            </li>
+            <li>les octets d'une image</li>
+            <li>etc</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>La réponse est ensuite interprétée :</p>
+  <ul>
+    <li>par le client web s'il sait comment traiter le type <a href="../MIME.html">MIME</a> de la ressource reçue
+    </li>
+    <li>par un plugin du client web</li>
+    <li>par un autre logiciel (le client web peut demander de le sélectionner ou se souvenir de la dernière sélection,
+      ou demander l'OS d'exécuter le logiciel adéquat pour ce type de fichier)
+    </li>
+  </ul>
+  <section>
+    <h3>Support</h3>
+    <p>Au fil du temps la diversité de support des clients web en terme de :</p>
+    <ul>
+      <li>technologies utilisées (HTML5, CSS3, Javascript)</li>
+      <li>caractéristiques variables d'affichage (dimensions, fontes)</li>
+    </ul>
+    <p>a abouti à concevoir les sites/webapps selon des principes de :</p>
+    <ul>
+      <li><strong>conception web adaptative</strong> (<em>responsive web design</em>), stratégie de tolérance aux
+        défaillances (<em>fault tolerance</em>) via :
+        <ul>
+          <li><strong>mode dégradé </strong>(<em>graceful degradation</em>) donnant priorité à la présentation, au
+            visuel
+          </li>
+          <li><strong>mode réaussé </strong>(<em>progressive enhancement</em>) : donnant priorité au contenu/à la
+            structure. Préférable, ne serait-ce que pour être correctement adapté aux <a
+                href="../../platform/mobile">plates-formes mobiles</a>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Automation</h3>
+    <p>Utile pour tests.</p>
+  </section>
+  <section>
+    <h3>Design</h3>
+    <p>La conception d'un site web/d'une webapp en elle-même est l'activité de <a href="../design">web design</a>.</p>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de clients Web sont :</p>
+  <ul>
+    <li>Navigateurs
+      <ul>
+        <li>Chrome (Google)</li>
+        <li><a href="/org/us/company/ms/MSIE.html">IE</a> (Microsoft) &#8212; La version 6 pour Windows est plus
+          conforme aux standards que ses prédecesseurs 5.0 et 5.5. Réclame cependant assez de mémoire pour ne pas faire
+          grésiller votre disque dur sans discontinuer. Il est gratuit. La version 5 pour Mac fait un beau travail de
+          conformance aux standards.
+        </li>
+        <li>JavaSoft HotJava &#8212; Navigateur en <a
+            href="/org/us/company/oracle/sun/ptf/java">Java</a> développé par Sun. Project abandonné
+          aujourd'hui (voir d'autres projets de navigateurs Java comme Jazilla).
+        </li>
+        <li><a href="http://www.konqueror.org/konq-browser.html">Konqueror</a> &#8212; Léger, anglophone, et conforme
+          aux standards pour <a
+              href="../../../../../prod/os/unix/Linux.html">Linux</a>.
+        </li>
+        <li><a href="http://lynx.browser.org">Lynx</a> &#8212; Mode texte uniquement, pour plates-formes Unix et VMS.
+        </li>
+        <li>NCSA <a href="http://archive.ncsa.uiuc.edu/SDG/Software/Mosaic">Mosaic</a> &#8212; Le premier navigateur.
+        </li>
+        <li><a href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> &#8212; Gratuit, conforme à 5
+          standards importants, y compris <a href="/tech/info/soft/data/doc/xml">XML</a> et <a
+              href="/tech/info/soft/data/doc/xml/DOM.html">DOM</a>. Si votre machine n'est pas assez puissante, vous
+          riquez de le trouver lent. Disponible en français.
+        </li>
+        <li><a href="/org/us/company/mozilla">Mozilla</a> &#8212; <a
+            href="../../../../../OpenSource.html">OSS</a> et gratuit respectant les standards. Il est la base sur
+          laquelle sont construits d'autres navigateurs, par exemple Netscape 7. Il est rapide et doté de nombreuses
+          fonctionalités (mail, chat, <a href="/tech/info/soft/data/doc/xml/DOM.html">DOM</a> Inspector).
+        </li>
+        <li><a href="http://www.opera.com">Opera</a> &#8212; Léger et rapide respectant les standards. Disponible sur 5
+          OS, et en français.
+        </li>
+        <li>W3C <a href="http://www.w3.org/Amaya/">Amaya</a> &#8212; Développé par le <a href="../W3C.html">W3C</a>. A
+          la fois navigateur et éditeur.
+        </li>
+      </ul>
+    </li>
+    <li>Composants
+      <ul>
+        <li>Android
+          <ul>
+            <li>WebView</li>
+          </ul>
+        </li>
+        <li>iPhone</li>
+        <li>Java</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>La Same Origin Policy limite les requête d'un client web à son serveur, ce qui est peut être contourné via la <a
+        href="CORS.html">CORS</a>.</li>
+    <li>Egalement désigné sous le terme plus général de "client Web" (rapport au "serveurs" Web auquels il se connecte)
+    </li>
+    <li>Peut constituer un client "universel", qui ne dépend plus d'une l'application installée sur tel ou tel serveur.
+    </li>
+    <li>supportent généralement l'exécution de code <a href="../../../../impl/lang/javascript">JavaScript</a>
+      (inclut dans les pages Web téléchargée ou placé dans des fichiers <a
+          href="../../../../impl/lang/javascript">JavaScript</a> séparés)
+    </li>
+    <li>constitue la partie cliente d'une architecture <a href="../../ClientServeur.html">C/S</a> Web.
+    </li>
+    <li>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="3" class="titleCorner"></td>
+          <th valign="top">Editeur</th>
+          <th>Apple</th>
+          <th>Google</th>
+          <th>Mozilla</th>
+          <th>Microsoft</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th valign="top"> Produit</th>
+          <th>Safari/iOS</th>
+          <th>Chrome/Android</th>
+          <th>Firefox/</th>
+          <th><a href="/org/us/company/ms/MSIE.html">IE</a></th>
+          <th><a href="http://www.opera.com">Opera</a></th>
+        </tr>
+        </thead>
+        <tr>
+          <th valign="top"> Version</th>
+          <th></th>
+          <th></th>
+          <th>1</th>
+          <th>6</th>
+          <th>7</th>
+        </tr>
+        <tr>
+          <th> Domaine</th>
+          <th> Technologie</th>
+          <th valign="top"> Release</th>
+          <th></th>
+          <th></th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Navigation</th>
+          <th valign="top">Onglets</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="non">Non</td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">Popups</th>
+          <th valign="top">Blocage possible</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">Recherche</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../../../reseau/protocole">Protocole</a></th>
+          <th valign="top"><a href="../HTTP.html">HTTP</a></th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">1.1+</td>
+        </tr>
+        <tr>
+          <th rowspan="6" valign="top"><a href="../../../../impl/lang">Langage</a></th>
+          <th valign="top"><a href="../HTML.html">HTML</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>4.01</td>
+        </tr>
+        <tr>
+          <th valign="top">XHTML</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th valign="top">WML</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>2.0</td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="css">CSS</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"><a href="../../../../impl/lang/javascript">JavaScript</a></th>
+          <th valign="top">Interpréteur</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">1.3/1.5</td>
+        </tr>
+        <tr>
+          <th valign="top">Debugger</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="non">Non</td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th rowspan="12" valign="top"><a href="/tech/info/soft/data/doc/xml">XML</a></th>
+          <th valign="top">Affichage</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">via <a href="/tech/info/soft/data/doc/xml/XSL.html">XSL</a></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">Feuilles de style</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">Base</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">XSLT</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">Xpath</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">RDF</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">MathML</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">XML-RPC</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">SOAP</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">Namespaces</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">XLink</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">DOM</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">via <a href="/tech/info/soft/data/doc/xml/XSL.html">XSL</a></td>
+          <td class="oui">2</td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="3"><a href="../../../../../sec">Sécurité</a></th>
+          <th valign="top">Certificats</th>
+          <th valign="top"><a href="../../../../../sec/priv/crypt/X509.html">X.509</a></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Téléchargement de CA</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Cookies</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../../../sec/priv/crypt/SSL.html">SSL</a></th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">3.0</td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java">Java</a>
+          </th>
+          <th valign="top">JRE</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">1.1.4 (SDK for Java 4.0)</td>
+          <td class="oui"></td>
+        </tr>
+        <tr>
+          <th valign="top">JNI</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top" rowspan="6">Plate-forme</th>
+          <th valign="top" rowspan="4">Windows</th>
+          <th valign="top">95</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">98</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">NT 4</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">2000</th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">MacOS</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">Linux</th>
+          <th valign="top"></th>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui">Oui</td>
+          <td class="oui">Oui</td>
+        </tr>
+        <tr>
+          <th valign="top">Rendu</th>
+          <th valign="top"></th>
+          <th valign="top"></th>
+          <td class="oui">Webkit</td>
+          <td class="oui">Webkit</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+        </tr>
+      </table>
+      <h2>Voir</h2>
+      <ul>
+        <li><a href="http://browsershots.org">Browser Shots </a> - voir le rendu d'un navigateur en ligne.</li>
+        <li>Vincent, J.-P.: "<a
+            href="http://www.alsacreations.com/article/lire/1158-tester-fiablement-ses-navigateurs.html">Des tests
+          fiables sous tous les navigateurs</a>", <em>Alsa Creations</em>, 29 octobre 2012.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

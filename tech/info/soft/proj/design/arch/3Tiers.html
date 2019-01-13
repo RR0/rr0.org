@@ -1,0 +1,101 @@
+<!--#include virtual="/header-start.html" -->
+<title>Architecture 3 tiers</title>
+<!--#include virtual="/header-end.html" -->
+<p>3 couches.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un modèle d'architecture <a href="ClientServeur.html">C/S</a> : </p>
+  <ul>
+    <li>plus simple à déployer</li>
+    <li>supportant une forte charge</li>
+    <li>adapté au <a href="web">Web</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les <a href=".">architectures</a> en 3 couches tentent de résoudre les limitations du <a
+      href="ClientServeur.html">C/S</a> traditionnel en répartissant l'<a
+      href="../../../Application.html">application</a> entre des couches :</p>
+  <ol>
+    <li><b>cliente</b>, chargée de la présentation des informations</li>
+    <li><strong>applicative, </strong>qui contient la logique de l'application</li>
+    <li><b>données</b>, qui fournit les informations exploitées par la logique applicative.</li>
+  </ol>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Les solutions d'<a href=".">architecture</a> à 3 couches mettent généralement en oeuvre :</p>
+  <ol>
+    <li>un <strong>client</strong>
+      <ul>
+        <li>souvent léger car facile à déployer (typiquement un <a href="web/client">navigateur Web</a> dont tout le
+          monde dispose et sur lequel il n'y a rien à installer)</li>
+        <li>pouvant être multiple (lourd, léger, <a href="/org/us/company/oracle/sun/ptf/java">Java</a>, non Java, etc.)
+          car dans une couche indépendante du <a href="serveur/ServeurApplicatif.html">serveur applicatif</a>, où se
+          trouve la logique de l'application.</li>
+      </ul>
+    </li>
+    <li>un <b><a href="serveur/ServeurApplicatif.html">serveur applicatif</a></b>, segmenté lui même en couches de
+      <ol>
+        <li><strong>présentation</strong>, qui construit l'<a href="../../../IHM.html">IHM</a> (souvent <a
+            href="web">Web</a>) destinée au client</li>
+        <li><strong>métier </strong>qui réunit l'ensemble des processus exécutés par l'application</li>
+        <li><strong>intégration</strong>, chargée des échanges entre serveur applicatif et serveur(s) de données.</li>
+      </ol>
+    </li>
+    <li>un <b>serveur de données</b> (souvent un <a href="../../../prod/server/sgbd/r">SGBDR</a>) qui fournit les
+      données au <a href="serveur/ServeurApplicatif.html">serveur applicatif</a>.</li>
+  </ol>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Le <a href="serveur/ServeurApplicatif.html">serveur applicatif</a> permet diverses optimisations :
+      <ul>
+        <li><a href="../../../Pooling.html">mutualisation (<em>pooling</em>)</a> des ressources demandées par les
+          clients (connexions, <a href="platform/Thread.html">threads</a>)</li>
+        <li>cache les données nécessaires (données pour les clients, authentification)</li>
+      </ul>
+    </li>
+    <li>On parle parfois d'architecture <em>n-tiers</em> pour signifier :
+      <ul>
+        <li>la distinction de couches (souvent logiques) au sein du serveur applicatif :
+          <ul>
+            <li>application</li>
+            <li>métier (commun à plusieurs applications)</li>
+            <li>intégration (accès aux données via <a
+                href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, <a
+                href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a> ou logiciel d'<a
+                href="../../../EAI.html">EAI</a>)</li>
+          </ul>
+        </li>
+        <li>la multiplication de couches derrière le <a href="serveur/ServeurApplicatif.html">serveur applicatifs</a>,
+          telles que :
+          <ul>
+            <li>TPM/MOT (Tuxedo)</li>
+            <li>autres serveurs applicatifs</li>
+            <li>Annuaires</li>
+            <li><a href="../../../prod/server/sgbd/r">SGBDR</a></li>
+            <li>logiciels d'<a href="../../../EAI.html">EAI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Exploite peu la puissance du poste client</li>
+    <li>Le serveur est un point central de défaillance, souvent palié par des solutions de <em>clustering</em></li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'architectures en 3 couches sont :</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></li>
+    <li><a href="/org/us/company/ms/windows/dotnet">.Net</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

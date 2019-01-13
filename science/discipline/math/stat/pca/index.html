@@ -1,0 +1,42 @@
+<!--#include virtual="/header-start.html" -->
+<title>PCA</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Principal Components Analysis</i> (ou <abbr lang="en" title="Proper Orthogonal Decomposition">POD</abbr>)
+  : Analyse en Composantes Principales (ACP).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Diminuer la complexité d'un problème (et donc augmenter la performance de sa résolution).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le principe de la PCA est de réduire le nombre de features d'un dataset `X` de `n` à `K` "composantes principales"
+    (<i
+        lang="en">principal components</i>) lorsque cela est acceptable.</p>
+  <p>On projette alors les données originelles sur ces composantes, ce qui implique une réduction de dimensionalité (<i
+      lang="en">dimensionality reduction</i>).</p>
+  <section>
+    <h2>Reconstruction</h2>
+    <p>Les données projetées peuvent être "reconstruites" en rétablissant la dimension supprimée (par exemple de 1D en
+      2D), au prix d'une approximation acceptable (les données initialement éloignées de la droite 2D seront dessus par
+      exemple).</p>
+  </section>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>(<i lang="en">eigenvectors</i>)</p>
+  <p>matrice de covariance</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>La PCA est utilisée :</p>
+  <ul>
+    <li>pour simplifier/accélérer la résolution de problèmes de <a href="/tech/info/soft/data/science/ml">ML</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .mjx-math * {
+    line-height: 0;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

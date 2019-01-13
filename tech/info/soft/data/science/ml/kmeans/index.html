@@ -1,0 +1,77 @@
+<!--#include virtual="/header-start.html" -->
+<title>K-means</title>
+<!--#include virtual="/header-end.html" -->
+<p>K moyennes.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Identifier des groupes (<i lang="en">clusters</i>) dans un ensemble de données.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>L'algorithme des K-moyennes est un algorithme de <a href="..">ML</a> non supervisé qui va associer à chaque point
+    de `X` un groupe `{1..K}`.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <figure class="right side">
+    <figcaption>3 points tirés au hasards se sont progressivement déplacés pour minimiser la moyenne de leur distances
+      aux 3 groupes de valeurs
+    </figcaption>
+    <img src="kmeans.png" alt="3 points tirés au hasards se sont progressivement déplacés pour minimiser la moyenne de
+      leur distances aux 3 groupes de valeurs"/>
+  </figure>
+  <p>L'algorithme des K-moyennes consiste à associer des points à des groupes en fonction de leur distance à leurs
+    <strong>barycentres</strong> (<i lang="en">centroids</i>) :</p>
+  <ol>
+    <li>tirer K points au hasard</li>
+    <li>répéter jusqu'à convergence
+      <ol>
+        <li>affecter des points aux groupes</li>
+        <li>déplacer les barycentres des groupes</li>
+      </ol>
+    </li>
+  </ol>
+  <section>
+    <h3>Affectation aux groupes</h3>
+    <p>Pour déterminer le groupe (<i lang="en">cluster</i>) appartient (en attendant la convergence) chaque point
+      `x^((i))` (avec `i` de 1 à `m`), on va chercher de quel barycentre `μ_k` il est le plus proche. On affectera alors
+      à `c^((i))` l'indice du `k` groupe trouvé (par conséquent `μ_(c^((i)))` représente le barycentre auxquel `x^((i))`
+      est affecté).</p>
+    <p>Mathématiquement, cette opération revient à minimiser la <a href="/science/discipline/math/stat/regress/cost">fonction
+      de coût</a> suivante (dite "<strong>fonction de distorsion</strong>") sans changer les `μ_k` :</p>
+    <p>`J(c^((1)),…,c^((m)),μ_1,…,μ_K) = 1/m sum_(i=1)^m norm(x^((i))-μ_(c^((i))))^2`</p>
+  </section>
+  <section>
+    <h3>Déplacement des barycentres</h3>
+    <p>Déterminer pour chacun des K groupes `μ_k` qui est la <strong>moyenne</strong> des points (le nouveau barycentre)
+      affectés au groupe `k` :</p>
+    <p>`μ_k:= 1/abs(Ck) sum_(i∈C_k)x^((i))` où `C_k` est l'ensemble de points affectés au barycentre `k`</p>
+    <p>Mathématiquement, cette opération revient à minimiser `J` par rapport aux `μ_k`.</p>
+  </section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>L'algorithme K-Means ne peut que converger.</li>
+    <li>Le résultat trouvé ne sera pas forcément optimal, mais dépendra des points initialement choisis au hasard. C'est
+      pour cela qu'il convient de réitérer l'algorithmes avec des points initiaux différents et de choisir le cas qui
+      aura donné une fonction J de coût minimale.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'application de K-Means sont :</p>
+  <ul>
+    <li>Déterminer des segments de marché : par exemple à partir d'un ensemble de ventes de tee-shirts, déterminer
+      quelles sont les populations pour des tailles S, M et L.</li>
+    <li>Compresser une image : regrouper les couleurs d'une image en "groupes" et réduires ces couleurs à leur
+      moyenne (permettant ainsi de passer de millions de couleurs 16 couleurs/groupes seulement par exemple).</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .mjx-math * {
+    line-height: 0;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

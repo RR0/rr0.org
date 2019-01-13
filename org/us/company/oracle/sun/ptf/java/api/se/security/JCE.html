@@ -1,0 +1,71 @@
+<!--#include virtual="/header-start.html" -->
+<title>JCE</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Java Cryptography Extension</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir des fonctionnalités cryptographiques sensibles (non exportables en-dehors des USA).</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>La JCE est une extension standard de la <a
+      href="JCA.html">Java Cryptography Architecture</a>, offrant des fonctionnalités de :
+  </p>
+  <ul>
+    <li><b>Cryptage</b>
+      <ul>
+        <li>à une ou plusieurs passes </li>
+        <li>appliqué à des flux non typés ou à des flux d'objets sérialisés </li>
+      </ul>
+    </li>
+    <li><b>Génération de clés symétriques</b> (clé secrète) en plus des clés asymétriques de la <a
+        href="JCA.html">Java Cryptography Architecture</a>. Une telle clé secrète de cryptage peut être transmise selon
+      deux techniques :
+      <ul>
+        <li><i>l'enveloppe électronique</i> (cryptée avec la clé publique du destinataire qui pourra la lire grâce à sa
+          clé privée) </li>
+        <li><i> l'échange de clés</i>, qui permet à deux parties de s'accorder sur un secret commun sans transmettre
+          d'information secrète.</li>
+      </ul>
+    </li>
+    <li><b>Contrôle d'Intégrité</b> (via <a href="/tech/info/soft/sec/integ/MAC.html">MAC</a>)</li>
+  </ul>
+  <p>La JCE intègre <a href="/tech/info/soft/sec/priv/crypt/DES.html">DES</a>. Elle ne peut être exportée en-dehors des
+    USA.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>La JCE inclut le package <code>javax.crypto</code> : </p>
+  <ul>
+    <li>le <b>chiffrage</b> (<i lang="en">encryption</i>) est assuré par la classe <code>Cipher</code>
+      <ul>
+        <li>les flux cryptés non typés sont réalisés via les classes <code>CipherInputStream</code>, et <code>CipherOutputStream</code>
+        </li>
+        <li>les flux cryptés d'objets sérialisés sont réalisés via la classe <code>SealedObject</code></li>
+      </ul>
+    </li>
+    <li><b>Génération de clés symétriques</b> (clé secrète via les classes <code>KeyGenerator</code>,
+      <code>SecretKey</code>, <code>SecretKeyFactory</code>) en plus des clés asymétriques de la <a
+          href="JCA.html">Java Cryptography Architecture</a> (<code>java.security.KeyPairGenerator</code>). Une telle
+      clé secrète de cryptage peut être transmise selon deux techniques :
+      <ul>
+        <li><i>l'enveloppe électronique</i> (cryptée avec la clé publique du destinataire qui pourra la lire grâce à sa
+          clé privée) </li>
+        <li><i> l'échange de clés</i> (<code>KeyAgreement</code>), qui permet à deux parties de s'accorder sur un secret
+          commun sans transmettre d'information secrète.</li>
+      </ul>
+    </li>
+    <li><b>Contrôle d'Intégrité</b> (via <a href="/tech/info/soft/sec/integ/MAC.html">MAC</a>)
+      <ul>
+        <li>la classe <code>MAC</code></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><a href="http://www.gnu.org/software/gnu-crypto"><em>GNU Crypto</em></a></li>
+    <li><a href="http://www.bouncycastle.org"><em>Legion of the Bouncy Castle</em></a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

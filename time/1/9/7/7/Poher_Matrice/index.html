@@ -60,85 +60,16 @@ Autres formats :
   </ul>
   <section>
     <h3>Javascript</h3>
-    <figure class="left">
-      <figcaption> Evaluation d'explications en terme de phénomènes connus</figcaption>
-      <div ng-controller="MatrixFormController" ng-cloak class="matrix">
-        <details>
-          <summary>Personnalisation</summary>
-          <form name="customization">
-            <fieldset class="tabs">
-              <legend>Fichier matrice</legend>
-              <p>Il s'agit d'une liste de question + type de réponse (choix, choix multiple...) + des valeurs de matrice
-                pour ce choix.
-              </p>
-              <div class="tab">
-                <label>Exemple</label> <a href="matrix.json" target="_blank">matrix.json</a>
-              </div>
-              <div class="tab">
-                <label for="matrixURL">URL</label>
-                <input name="matrixURL" type="text" id="matrixURL" data-ng-model="matrixURL" data-ng-init="matrixURL='https://rr0.org/time/1/9/7/7/Poher_Matrice/matrix.json'">
-              </div>
-              ou
-              <div class="tab">
-                <label for="matrixFile">Upload</label>
-                <input name="matrixFile" type="file" id="matrixFile" data-ng-model="matrixFile">
-              </div>
-            </fieldset>
-            <fieldset class="tabs">
-              <legend>Fichier libellés</legend>
-              <p>Il s'agit des libellés à afficher pour chaque clé de question du fichier de matrice.</p>
-              <div class="tab">
-                <label>Exemples</label>
-                <span>
-                  <a href="Matrix_fr.json" target="_blank">français</a>,
-                  <a href="Matrix_en.json" target="_blank">anglais</a>,
-                  <a href="Matrix_it.json" target="_blank">italien</a>
-              </span>
-              </div>
-              <div class="tab">
-                <label for="labelsURL">URL</label>
-                <input name="labelsURL" type="text" id="labelsURL" data-ng-model="labelsURL" data-ng-init="labelsURL='https://rr0.org/time/1/9/7/7/Poher_Matrice/Matrix_fr.json'">
-              </div>
-              ou
-              <div class="tab">
-                <label for="labelsFile">Upload</label>
-                <input name="labelsFile" type="file" id="labelsFile" data-ng-model="labelsFile">
-              </div>
-            </fieldset>
-            <button data-ng-click="load()">Charger personnalisation</button>
-          </form>
-        </details>
-        <form name="questionnaire" data-ng-init="load()">
-          <fieldset>
-            <legend>Question</legend>
-            <div style="margin-bottom:1em">
-              <input name="previousButton" type="button" value="<" data-ng-click="onPrevious()" data-ng-disabled="questionIndex<=0" title="Question précédente">
-              <select id="combo" data-ng-model="currentQuestion" data-ng-options="q as q.title for (title,q) in questions" data-ng-change="parameterChanged()" title="Question posée"></select>
-              <input name="nextButton" type="button" value=">" data-ng-click="onNext()" data-ng-disabled="questionIndex>=questionsKeys.length - 1" title="Question suivante">
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend>Réponse</legend>
-            <div data-ng-repeat="(key, field) in fields">
-              <input type="{{ field.type }}" id="{{ key }}" name="{{ field.type == 'radio' ? 'rad' : 'chk' }}" value="{{ key }}" data-ng-model="currentQuestion.choices[key].value" data-ng-change="compute('{{ key }}')">
-              <label for="{{ key }}">{{ field.label }}</label>
-            </div>
-          </fieldset>
-        </form>
-        <fieldset id="explanations" data-ng-show="explanations">
-          <legend>Explications</legend>
-          <input type="radio" id="Probable" data-ng-model="resultsType" value="Probable" name="resultsType" data-ng-change="compute()"><label for="Probable">probables</label>
-          <input type="radio" id="NonProbable" data-ng-model="resultsType" value="NonProbable" name="resultsType" data-ng-change="compute()"><label for="NonProbable" checked="checked">improbables</label>
-          <ol style="margin:0">
-            <li ng-repeat="(k, p) in explanations">{{ p }}</li>
-          </ol>
-        </fieldset>
-      </div>
-    </figure>
     <p>L'avantage d'une <a href="https://github.com/RR0/KnownPhenomenaMatrix/tree/master/time/1/9/7/7/Poher_Matrice">version
       Javascript</a> est d'être exécutable facilement sur pratiquement tous les navigateurs, sans ajout d'un module
       supplémentaire.
     </p>
+    <figure style="width: 100%">
+      <figcaption> Evaluation d'explications en terme de phénomènes connus</figcaption>
+      <p data-height="500" data-theme-id="light" data-slug-hash="xrBOrr" data-default-tab="result"
+          data-user="Javarome" data-embed-version="2" data-pen-title="Known phenomena matrix" class="codepen">See the Pen <a href="https://codepen.io/Javarome/pen/xrBOrr/">Known phenomena matrix</a> by Jérôme Beau (<a href="https://codepen.io/Javarome">@Javarome</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    </figure>
   </section>
   <section>
     <h3>Applet</h3>
@@ -152,7 +83,7 @@ Autres formats :
     <!--</table>-->
     <p>Une <a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applet</a> est un petit programme
       <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> pouvant s'exécuter dans un navigateur
-      <span class="note">[les utilisateurs d'une version récente de <a href="/org/us/company/microsoft/MSIE.html">Internet
+      <span class="note">[les utilisateurs d'une version récente de <a href="/org/us/company/ms/MSIE.html">Internet
                 Explorer</a> verront un bandeau jaune en haut de la page sur lequel il faut cliquer pour activer le contenu "actif"]</span>.
     </p>
     <ul>

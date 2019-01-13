@@ -47,6 +47,10 @@ Redirect /Documents/Articles/StupidUfologyTricks_Paynter.html /time/1/9/9/9/02/0
 Redirect /PineGap_Gille.html https://rr0.org/time/1/9/8/9/PineGap/PineGap_Gille.html
 Redirect /data/Documents/articles/1989-11-29_Zetetism.html https://rr0.org/time/1989/11/29/Truzzi_ReflectionsOnTheReceptionOfUnconventionalClaimsInScience/
 Redirect /java/ https://rr0.org/tech/info/soft/proj/impl/lang/java
+Redirect /tech/info/soft/data/doc/xml/XML.html https://rr0.org/tech/info/soft/data/doc/xml
+Redirect /tech/info/soft/securite https://rr0.org/tech/info/soft/sec
+Redirect //tech/info/soft/sec/confidentialite/Cryptographie.html https://rr0.org/tech/info/soft/sec/priv/Cryptographie.html
+Redirect /tech/info/soft/proj/impl/lang/SmallTalk.html https://rr0.org/tech/info/soft/proj/impl/lang/smalltalk
 Redirect /tech/info/1986.html /time/1/9/8/6
 Redirect /tech/info/soft/proj/design/arch/web/JavaScript.html https://rr0.org/tech/info/soft/proj/impl/lang/javascript
 Redirect /tech/info/soft/proj/conception https://rr0.org/tech/info/soft/proj/design
@@ -58,6 +62,7 @@ Redirect /tech/info/soft/proj/design/arch/web/client/CSS.html https://rr0.org/te
 Redirect /science/appliquee/informatique/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
 Redirect /science/appliquee/info/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
 Redirect /tech/info/soft/prog/oo/java/JDO.html https://rr0.org/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html
+Redirect /org/us/company/ttsacademy https://rr0.org/org/us/company/tts/a
 Redirect /ScienceFiction.html https://rr0.org/science/crypto/ufo/culture/litterature
 Redirect /science/crypto/ufo/culture/litterature/sf https://rr0.org/science/crypto/ufo/culture/litterature
 Redirect /Religion.html https://rr0.org/science/crypto/ufo/Religion.html
@@ -129,6 +134,7 @@ Redirect /science/crypto/ufo/enquete/meprise/meteore https://rr0.org/science/cry
 Redirect /Ballon.html https://rr0.org/science/crypto/ufo/enquete/meprise/ballon
 Redirect /Nuages.html https://rr0.org/science/crypto/ufo/enquete/meprise/nuage
 Redirect /FeuxFollets.html https://rr0.org/science/crypto/ufo/enquete/meprise/FeuxFollets.html
+Redirect /science/crypto/ufo/enquete/meprise/Insectes.html https://rr0.org/science/crypto/ufo/enquete/meprise/insecte
 Redirect /PilierDeSoleil.html https://rr0.org/science/crypto/ufo/enquete/meprise/optique/PilierDeSoleil.html
 Redirect /PilierDeLumiere.html https://rr0.org/science/crypto/ufo/enquete/meprise/optique/PilierDeLumiere.html
 Redirect /science/crypto/ufologie/enquete/meprise/illusion/ https://rr0.org/science/crypto/ufo/enquete/meprise/optique/
@@ -193,7 +199,8 @@ Redirect /TerreCreuse.html https://rr0.org/science/crypto/ufo/enquete/dossier/Te
 Redirect /data/1/9/4/3/Philadelphia https://rr0.org/science/crypto/ufo/enquete/dossier/Philadelphia
 Redirect /Philadel.html https://rr0.org/science/crypto/ufo/enquete/dossier/Philadelphia/
 Redirect /Montauk.html https://rr0.org/science/crypto/ufo/enquete/dossier/Philadelphia/Montauk.html
-Redirect /Documents/Articles/1996-09_Roswell_Penthouse.html https://rr0.org/science/crypto/ufo/enquete/dossier/Roswell_Penthouse/
+Redirect /Documents/Articles/1996-09_Roswell_Penthouse.html https://rr0.org/science/crypto/ufo/enquete/dossier/Roswell_Penthouse
+Redirect /science/crypto/ufo/enquete/dossier/Roswell_Penthouse/index_fr.html https://rr0.org/science/crypto/ufo/enquete/dossier/Roswell_Penthouse/index.html
 Redirect /Galileo.html https://rr0.org/science/crypto/ufo/enquete/dossier/Galileo/
 Redirect /Dossier/1608_Article https://rr0.org/time/1608/Signes
 Redirect /Dossier/1952-10-17_Oloron https://rr0.org/science/crypto/ufo/enquete/dossier/Oloron/
@@ -256,6 +263,7 @@ Redirect /1948.html https://rr0.org/time/1/9/4/8
 Redirect /1961.html https://rr0.org/time/1/9/6/1
 Redirect /1966.html https://rr0.org/time/1/9/6/6
 Redirect /1968.html https://rr0.org/time/1/9/6/8
+Redirect /time/1968 https://rr0.org/time/1/9/6/8
 Redirect /1973.html https://rr0.org/time/1/9/7/3
 Redirect /1974.html https://rr0.org/time/1/9/7/4
 Redirect /1975.html https://rr0.org/time/1/9/7/5
@@ -272,6 +280,7 @@ Redirect /AlvarezLuisW.html https://rr0.org/people/a/AlvarezLuisW
 Redirect /AndersonWalterS.html https://rr0.org/people/a/AndersonWalterS
 Redirect /people/a/Anaximandre.html https://rr0.org/people/a/Anaximandre
 Redirect /ArnoldKenneth.html https://rr0.org/people/a/ArnoldKennethE
+Redirect /people/a/Aristote/Aristote.html https://rr0.org/people/a/Aristote
 Redirect /people/a/ArmstrongMaryLouise.html https://rr0.org/people/a/ArmstrongMaryLouise
 Redirect /AsselineMichel.html https://rr0.org/people/a/AsselineMichel
 Redirect /people/b/BormanFrank.html https://rr0.org/people/b/BormanFrank
@@ -393,6 +402,7 @@ Redirect /people/k/KillianPeter.html https://rr0.org/people/k/KillianPeter
 Redirect /people/k/KirtonEdwinE.html https://rr0.org/people/k/KirtonEdwinE
 Redirect /people/k/KissingerHenriAlfred https://rr0.org/people/k/KissingerHenri
 Redirect /people/k/KlassPhilipJulian https://rr0.org/people/k/KlassPhilipJ
+Redirect /people/k/KlassPhillipJ https://rr0.org/people/k/KlassPhilipJ
 Redirect /people/k/KnowlesHerbert.html https://rr0.org/people/k/KnowlesHerbert
 Redirect /people/k/KorffKalK.html https://rr0.org/people/k/KorffKalK
 Redirect /people/k/KorolevSerguei.html https://rr0.org/people/k/KorolevSerguei
@@ -426,7 +436,8 @@ Redirect /personne/LakatosImre https://rr0.org/people/l/LakatosImre
 Redirect /LagrangePierre.html https://rr0.org/people/l/LagrangePierre
 Redirect /LaPazLincoln.html https://rr0.org/people/l/LaPazLincoln
 Redirect /people/l//LaPazLincoln.html https://rr0.org/people/l/LaPazLincoln
-Redirect /LazarRobertScott.html https://rr0.org/people/l/LazarRobertScott
+Redirect /LazarRobertScott.html https://rr0.org/people/l/LazarRobert
+Redirect /people/l/LazarRobertScott https://rr0.org/people/l/LazarRobert
 Redirect /LundahlArthurC.html https://rr0.org/people/l/LundahlArthurC
 Redirect /personne/l/LundahlArthurC.html https://rr0.org/people/l/LundahlArthurC
 Redirect /personne/LundahlArthurC.html https://rr0.org/people/l/LundahlArthurC
@@ -530,6 +541,7 @@ Redirect /SturrockPeterAndrew.html https://rr0.org/people/s/SturrockPeterAndrew
 Redirect /StrandErlingP.html https://rr0.org/people/s/StrandErlingP
 Redirect /people/s/StruveOtto.html https://rr0.org/people/s/StruveOtto
 Redirect /StringfieldLeonardH.html https://rr0.org/people/s/StringfieldLeonardH
+Redirect /people/o/OlsonBrad https://rr0.org/people/s/SteigerBrad
 Redirect /SwordsMichael.html https://rr0.org/people/s/SwordsMichaelD
 Redirect /TaradeGuy.html https://rr0.org/people/t/TaradeGuy
 Redirect /TellerEdward.html https://rr0.org/people/t/TellerEdward
@@ -823,8 +835,6 @@ Redirect /science/crypto/ufo/enquete/dossier/1967-07-03_Woonsocket https://rr0.o
 Redirect /StatistiquesApplet.html https://rr0.org/science/crypto/ufo/analyse/statistique/StatistiquesApplet.html
 Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday.html https://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index.html
 Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html https://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html
-
-RedirectMatch /people/x/(.*) https://rr0.org?p=$1
 
 # compress certain file types by extension:
 <files *.html>

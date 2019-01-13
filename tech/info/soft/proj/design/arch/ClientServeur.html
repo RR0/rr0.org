@@ -1,0 +1,64 @@
+<!--#include virtual="/header-start.html" -->
+<title>C/S</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Client/Server</em> : Client/Serveur.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir une <a href="/tech/info/soft/proj/design/arch">architecture</a> exploitant la puissance du poste client.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les architectures C/S répartissent l'application entre :</p>
+  <ol>
+    <li>le <b>client</b>, disposant d'un espace de stockage et d'une puissance suffisants (sur un PC par exemple) pour
+      exécuter une partie conséquente de l'application</li>
+    <li>le <b><a href="serveur">serveur</a> </b>(un <a
+        href="../../../prod/server/sgbd/r">SGBDR</a> typiquement), stockant les données et éventuellement des procédures
+      stockées de l'application. </li>
+  </ol>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Souvent réalisé via un <a href="../../impl/lang">L4G</a></li>
+    <li>Applications de type <a href="/tech/info/soft/data/dbms/CRUD.html">CRUD</a></li>
+    <li>Client PC typiquement</li>
+    <li>Egalement appelée architecture à 2 niveaux (<em>2 tiers</em>).</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>n clients maintiennent une connexion au serveur via un protocole spécifique à ce dernier, dont la capacité est
+      limitée (difficile de dépasser une centaine de clients simultanés). Donc pas adapté au Web (protocole HTTP
+      déconnecté, nombre de clients potentiellement beaucoup plus grand)</li>
+    <li>Déploiement difficile :
+      <ul>
+        <li>taille du logiciel à fournir</li>
+        <li>configuration du poste client (éventuellement conflits avec d'autres applications installées)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de solutions client/serveur sont :</p>
+  <ul>
+    <li>Clients légers
+      <ul>
+        <li><a href="web/client">Navigateur Web</a> (HTML et/ou <a
+            href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">Applet</a> Java) et <a
+            href="serveur/ServeurWeb.html">serveur Web</a>.</li>
+      </ul>
+    </li>
+    <li>Clients lourds
+      <ul>
+        <li>PowerBuilder</li>
+        <li>Clipper (dBase)</li>
+        <li>Delphi</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

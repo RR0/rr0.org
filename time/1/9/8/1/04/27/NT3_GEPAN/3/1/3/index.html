@@ -1,0 +1,20 @@
+<!--#include virtual="/header-start.html" -->
+<title>Simulation</title>
+<meta name="author" content="Besse, Philippe">
+<meta name="copyright" content="CT/GEPAN, CNES">
+<!--#include virtual="/header-end.html" -->
+<p>Pour simuler une distribution uniforme de points sur la France, en représentation sphérique, la démarche utilisée
+  en (GIL 80) est la suivante :</p>
+<ul>
+  <li>tirage aléatoire de points sur un rectangle</li>
+  <li>ne sont retenus que les points appartenant à un tronc de cône développé qui est le cône de projection LAMBERT de
+    la carte de France,</li>
+  <li>passage des coordonnées LAMBERT aux coordonnées polaires,</li>
+  <li>élimination des points situés à l'extérieur du contour schematisé de la France (FVAL, cf. figure 1) utilisé en
+    (VAL 66) pour simuler l'<a href="/science/crypto/ufo/analyse/Orthothenie.html">orthoténie</a>. (Voir figure 1, page
+    suivante),</li>
+  <li>élimination des triangles dont un côté est inférieur à 10 km opérée en (GIL 80). Les résultats du GEPAN
+    (cf.2.2.3) sembleraient montrer que cette opération n'a pas été effectuée par M. <span class="people">Gille</span>
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->

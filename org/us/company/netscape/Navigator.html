@@ -1,0 +1,214 @@
+<!--#include virtual="/header-start.html" -->
+<title>Netscape Navigator</title>
+<meta name="url" content="http://www.netscape.com">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p><a href="/tech/info/soft/proj/design/arch/web/client/index.html">Navigateur Web</a> de <a
+      href=".">Netscape</a>.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Sécurité</h3>
+    <p>Netscape Navigator sait télécharger des certificats <a href="/tech/info/soft/sec/priv/crypt/X509.html">X.509</a>
+      V1, V2 ou V3 via <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a>, moyennant la spécification du
+      type <a
+          href="/tech/info/soft/proj/design/arch/web/MIME.html">MIME</a> approprié dans l'en-tête <a
+          href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP </a> :</p>
+    <ul>
+      <li><code>application/x-x509-ca-cert</code> : certificat identifiant une <a
+          href="/tech/info/soft/sec/auth/cert/CA.html">Autorité de Certifcation</a>.</li>
+      <li><code>application/x-x509-email-cert</code> : certificat d'un autre utilisateur utilisable par <a
+          href="/tech/info/soft/reseau/protocole/SMIME.html"> S/MIME</a>
+      </li>
+      <li><code>application/x-x509-user-cert</code> : certificat appartenant à l'utilisateur du navigateur Netscape (la
+        clé privée correspondant au certificat doit de trouver dans la base de clé locale de Netscape).
+      </li>
+    </ul>
+    <p>Ces certificats peuvent être codés en formats :</p>
+    <ul>
+      <li>Binaires
+        <ul>
+          <li><a href="/tech/info/soft/sec/auth/cert/DER.html">DER</a></li>
+          <li><a href="/tech/info/soft/sec/priv/crypt/pkcs">PKCS</a>#7
+            <ul>
+              <li>via le champ <code>certificates</code> son objet <code>SignedData</code> (le contenu et la signature
+                de l'objet lui-même sont ignorés). Dans des versions futures, <q>crls</q> sera utilisé.</li>
+              <li>via la structure ContentInfo (contentType contient <code>netscape-cert-sequence</code>, et content une
+                séquence de certificats).</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Texte codé base64 (RFC 1113)
+        <ul>
+          <li>selon le format <code>-----BEGIN CERTIFICATE-----</code> &lt;données du certificat&gt; <code>-----END
+            CERTIFICATE----</code></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Versions</h3>
+    <table>
+      <thead>
+      <tr>
+        <td rowspan="2" class="titleCorner"></td>
+        <th>Version</th>
+        <th>1</th>
+        <th> 2</th>
+        <th>3</th>
+        <th colspan="5">4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th rowspan="3"> Commentaires</th>
+      </tr>
+      <tr>
+        <th> Release</th>
+        <th></th>
+        <th>0</th>
+        <th>0</th>
+        <th colspan="2">0</th>
+        <th>5</th>
+        <th colspan="2">7</th>
+        <th>0</th>
+        <th>0</th>
+        <th>0</th>
+      </tr>
+      <tr>
+        <th> Domaine</th>
+        <th>Fixpack</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>6</th>
+        <th></th>
+        <th></th>
+        <th>8</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th valign="top">Année</th>
+        <th valign="top"></th>
+        <td><a href="/tech/info/1995.html">1995</a></td>
+        <td><a href="/tech/info/1996.html">1996</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="/tech/info/2002.html">2002</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top">Protocole</th>
+        <th valign="top"><a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a></th>
+        <td class="oui">1.0</td>
+        <td colspan="7" class="oui">1.1</td>
+        <td colspan="3" class="oui">1.1+</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="3" valign="top">Langage</th>
+        <th valign="top"><a href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a></th>
+        <td class="Non">Non</td>
+        <td colspan="8" class="Oui">3.2</td>
+        <td class="Oui">4.0</td>
+        <td class="Oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top"><a href="/tech/info/soft/proj/design/arch/web/CSS.html">CSS</a></th>
+        <td colspan="3" class="Non">Non</td>
+        <td colspan="8" class="Oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top"><a href="/tech/info/soft/proj/design/arch/web/js">JavaScript</a></th>
+        <td class="Non">Non</td>
+        <td class="Oui">1.0</td>
+        <td class="oui">1.1</td>
+        <td colspan="2" class="oui">1.2</td>
+        <td colspan="6" class="oui">1.3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top"><a href="/tech/info/soft/data/doc/xml">XML</a></th>
+        <th valign="top">Affichage</th>
+        <td colspan="3" class="non">Non</td>
+        <td class="Oui">via <a href="/tech/info/soft/data/doc/xml/XSL.html">XSL</a></td>
+        <td colspan="7" class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top" rowspan="3"><a href="/tech/info/soft/sec">Sécurité</a></th>
+        <th valign="top"><a href="/tech/info/soft/sec/auth/cert/index.html">Certificats</a></th>
+        <td>Liste figée de <a href="/tech/info/soft/sec/auth/cert/CA.html">CA</a></td>
+        <td>Ajout de <a href="/tech/info/soft/sec/auth/cert/CA.html">CA</a></td>
+        <td colspan="9"></td>
+        <td><a href="/tech/info/soft/sec/priv/crypt/X509.html">X.509</a></td>
+      </tr>
+      <tr>
+        <th valign="top">Cookies</th>
+        <td colspan="3"></td>
+        <td colspan="8" class="Oui">Possibilité de les refuser</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top"><a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a></th>
+        <td class="oui"><p>1.0</p></td>
+        <td colspan="10" class="oui">3.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top" rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java">Java</a></th>
+        <th valign="top">JRE</th>
+        <td></td>
+        <td></td>
+        <td class="oui">1.02 (SDK for Java 1.0)</td>
+        <td class="oui">1.1.1 (SDK for Java 2.0)</td>
+        <td colspan="4" class="oui">1.1.1 total</td>
+        <td class="oui">1.1.4 (SDK for Java 3.2)</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top">JNI</th>
+        <td colspan="3" class="non">Non</td>
+        <td colspan="8" class="Oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top" rowspan="3"><a href="/org/us/company/oracle/sun/ptf/java">Plate-forme</a></th>
+        <th valign="top"><a href="../ms/windows/index.html">Windows</a></th>
+        <td></td>
+        <td></td>
+        <td colspan="6" class="Oui">95</td>
+        <td colspan="3" class="Oui">95, 98, NT4, 2000</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top">MacOS</th>
+        <td colspan="11"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top">Linux</th>
+        <td colspan="11"></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->

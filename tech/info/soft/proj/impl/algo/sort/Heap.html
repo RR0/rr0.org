@@ -1,0 +1,29 @@
+<!--#include virtual="/header-start.html" -->
+<title>Tri par tas</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Heap sort</em>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href=".">Trier</a> en </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le tableau à trier est vu comme un <a href="../../struct/graph/tree/Heap.html">tas</a> quasi-trié, dont une
+    opération de <strong>tamisage</strong>/percolation (<em>sifting</em>) échange régulièrement la racine (élément
+    supposé le plus grand dans un <a href="../../struct/graph/tree/Heap.html">tas</a>) avec le plus grand de ses fils,
+    si elle est plus petite. L'opération est répétée sur le sous-ensemble sans le plus grand élément.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Le <a href="../../struct/graph/tree/Heap.html">tas</a> est représenté sous forme de tableau en considérant que les
+    fils gauche et droit de t[n] se trouvent à t[2n] et t[2n + 1], respectivement.</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Sa performance étant en n log(n) dans tous les cas (meilleur, pire, moyen), il est généralement utilisé pour se
+      prémunir du pire cas du <a href="Quick.html">tri rapide</a>.</li>
+    <li>Complexité spatiale : en place.</li>
+    <li>Non stable.</li>
+  </ul>
+</section><!--#include virtual="/footer.html" -->

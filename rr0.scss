@@ -24,7 +24,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   &.wait {
@@ -53,6 +53,7 @@ aside {
   position: relative;
   overflow-y: auto;
   overflow-x: auto;
+  -webkit-overflow-scrolling:touch;
   z-index: 1;
   line-height: 1.5em;
   width: 100%;

@@ -1,0 +1,53 @@
+<!--#include virtual="/header-start.html" -->
+<title>REST</title>
+<!--#include virtual="/header-end.html" -->
+<p>Representational State Transfer : transfert d'état représentationnel.</p>
+<section>
+  <h2>Conception</h2>
+  <p>Une architecture REST utilise le protocole <a
+      href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> 1.1 qui doit être utilisé comme suit :
+  </p>
+  <ul>
+    <li>méthodes
+      <ul>
+        <li><code>POST</code> : Création d'entité(s)</li>
+        <li><code>GET</code> : Lecture d'entité(s). Cette méthode ne doit impliquer aucune modification côté serveur.
+        </li>
+        <li><code>PUT</code> : Mise à jour d'entité(s). Un appel cette méthode doit être idempotent (l'invoquer
+          plusieurs fois doit avoir les mêmes conséquences - pas plus, pas moins - à chaque fois)</li>
+        <li><code>DELETE</code> : Suppression d'entité(s). Un appel à cette méthode doit être idempotent (l'invoquer
+          plusieurs fois doit avoir les mêmes conséquences - pas plus, pas moins - à chaque fois)</li>
+      </ul>
+    </li>
+    <li>URIs normalisées. Par exemple :
+      <ul>
+        <li><code>GET /book/tag/{tag}</code> Liste des couples ID/livre ayant ce tag</li>
+        <li><code>POST /book/{id}/tags</code> Ajout d’un tag sur un livre donné</li>
+        <li><code>DELETE /book/{id}/tags/{tag}</code> Suppression d’un tag d'un livre donné</li>
+      </ul>
+    </li>
+    <li>Codes de réponses normalisés (200, 400, 404, 406, 500…)</li>
+  </ul>
+  <section>
+    <h3>Protocole, format</h3>
+    <p>SOAP...</p>
+    <p>En général, les services REST représentent les données avec le format JSON.</p>
+  </section>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>RESTeasy</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Pas forcément adapté aux limitations (actuelles) des plates-formes mobiles
+    </li>
+  </ul>
+</section><!--#include virtual="/footer.html" -->

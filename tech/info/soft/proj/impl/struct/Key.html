@@ -1,0 +1,76 @@
+<!--#include virtual="/header-start.html" -->
+<title>Clé</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Key</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Identifier un objet de manière non équivoque.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une clé est un identifiant unique pour un groupe de données. Souvent, elle est constituée d'un sous-ensemble de ce
+    groupe.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Les clés sont utilisées pour :</p>
+  <ul>
+    <li>les <a href="../../../prod/server/sgbd/r">SGBDR</a>
+      <ul>
+        <li>indexer via une <strong>clé primaire </strong>(<em>primary key</em>) identifiant un enregistrement/une
+          ligne/un objet de manière unique</li>
+        <li>référencer via une <strong>clé étrangère </strong>(<em>foreign key</em>) identifiant une relation de manière
+          unique </li>
+      </ul>
+    </li>
+    <li>la <a href="/tech/info/soft/sec">sécurité</a>
+      <ul>
+        <li>pour le <a href="../../../sec/priv/crypt">cryptage</a> de données, dans un but de confidentialité : <strong>clé
+          secrète</strong> de cryptage connue des parties communicantes.</li>
+        <li>pour l'<a href="../../../sec/auth">authentification</a>. Plus la taille de la clé sera grande, plus la
+          sécurité offerte sera grande.
+          <ul>
+            <li><strong>Clé privée </strong>: conservée par un acteur (jamais diffusée à un autre acteur). La clé privée
+              permet à un acteur de decrypter un message destiné à lui seul.</li>
+            <li><strong>Clé publique </strong>: diffusée par un acteur. La clé publique permet à un auteur de crypter un
+              message afin d'être authentifié par ses correspondants.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>les tris</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>les <a href="../../../prod/server/sgbd">SGBD</a>
+      <ul>
+        <li>permettent de définir des champs-clé de manière automatique (auto increment, rowid, etc.)</li>
+      </ul>
+    </li>
+    <li>en <a href="/tech/info/soft/sec">sécurité</a>
+      <ul>
+        <li>La "<strong>robustesse de clé</strong>" (<i>key strength</i>) détermine le niveau de sécurité offert par son
+          utilisation. Plus la clé est grande (codée sur 40, 56, 64, 80, 112, 128 bits, etc.), et plus un message codé
+          sera difficile à décoder sans cette clé.</li>
+        <li>Les clés peuvent varier d'interprétation selon les algorithmes utilisés : certains algorithmes acceptent des
+          tailles de clé variables (<a href="/tech/info/soft/sec/priv/crypt/RC2.html">RC2</a>, <a
+              href="/tech/info/soft/sec/priv/crypt/RC4.html">RC4</a>) et d'autres ne peuvent fonctionner qu'avec des
+          clés de taille fixe (<a href="../../../sec/priv/crypt/DES.html">DES</a>). De même, la taille de la clé
+          correspondra à différents arguments selon les algorithmes (la valeur d'un modulo pour <a
+              href="/org/us/company/RSA.html">RSA</a>, etc.).</li>
+        <li>Si une clé garantissant une sécurité à 99 % doit <i>aujourd'hui</i> dépasser 64 bits, une taille raisonnable
+          peut être estimée à 56 bits.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><span class="code"><a href="http://www.cs.uwf.edu/%7Ewilde/CEN6990/papers/boone/KEYS.htm">http://www.cs.uwf.edu/~wilde/CEN6990/papers/boone/KEYS.htm</a></span>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

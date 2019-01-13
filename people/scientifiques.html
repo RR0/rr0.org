@@ -2,8 +2,8 @@
 <title>Scientifiques</title>
 <!--#include virtual="/header-end.html" -->
 <p class="exergue">Si quelqu'un devrait garder un esprit ouvert sur une question jusqu'à ce que des données suffisantes
-  aient été recueillies pour s'en occuper, c'est bien le
-  scientifique<span class="source"> <a href="h/HainesRichardF/index.html">Haines, R. F. </a><em>Observing UFOs</em>, p. xvi</span>
+  aient été recueillies pour s'en occuper, c'est bien le scientifique<span class="source"> <a
+      href="h/HainesRichardF/index.html">Haines, R. F. </a><em>Observing UFOs</em>, p. xvi</span>
 </p>
 <table ng-controller="ScientistsController" border="0" cellpadding="5" cellspacing="0">
   <caption align="top">
@@ -53,280 +53,284 @@
 </table>
 <!--#include virtual="/footer.html" -->
 <script>
-  angular.module('rr0.people')
-      .controller('ScientistsController', ['$scope', '$log', function ($scope, $log) {
-        var disciplines = [
-          {code: 'bio', name: 'Biologistes'},
-          {code: 'astro', name: 'Astronomes'},
-          {code: 'astrophys', name: 'Astrophysiciens'},
-          {code: 'geophys', name: 'Géophysiciens'},
-          {code: 'geolo', name: 'Géologues'},
-          {code: 'meteo', name: 'Météorologues'},
-          {code: 'phys', name: 'Physiciens'},
-          {code: 'medecin', name: 'Médecins'},
-          {code: 'psy', name: 'Psychiatres'},
-          {code: 'socio', name: 'Sociologues'},
-          {code: 'math', name: 'Mathématiciens'},
-          {code: 'phi', name: 'Philosophes'},
-          {code: 'chi', name: 'Chimistes'},
-          {code: 'neuro', name: 'Neurologues'}
-        ];
-        $scope.disciplines = disciplines;
-        for (var d = 0; d < disciplines.length; d++) {
-          $scope.disciplines[d]["on"] = true;
-        }
-        $scope.countries = [
-          {code: 'de', name: 'Allemands', on: true},
-          {code: 'us', name: 'Américains', on: true},
-          {code: 'au', name: 'Australiens', on: true},
-          {code: 'uk', name: 'Britanniques', on: true},
-          {code: 'be', name: 'Belges', on: true},
-          {code: 'br', name: 'Brésiliens', on: true},
-          {code: 'ca', name: 'Canadiens', on: true},
-          {code: 'cn', name: 'Chinois', on: true},
-          {code: 'es', name: 'Espagnols', on: true},
-          {code: 'fr', name: 'Français', on: true},
-          {code: 'it', name: 'Italiens', on: true},
-          {code: 'mx', name: 'Mexicains', on: true},
-          {code: 'ru', name: 'Russes', on: true},
-          {code: 'se', name: 'Suédois', on: true},
-          {code: 'ch', name: 'Suisses', on: true},
-          {code: 'dk', name: 'Danois', on: true},
-          {code: 'no', name: 'Norvégien', on: true}
-        ];
-        $scope.disciplineFilter = function (scientist) {
-          for (var i = 0; i < $scope.disciplines.length; i++) {
-            var discipline = $scope.disciplines[i];
-            if (discipline.on && (!scientist.discipline || scientist.discipline.indexOf(discipline.code) >= 0)) {
-              $log.debug(scientist.name + " matches disciplines");
-              return true;
+    angular.module('rr0.people')
+        .controller('ScientistsController', ['$scope', '$log', function ($scope, $log) {
+            var disciplines = [
+                {code: 'bio', name: 'Biologistes'},
+                {code: 'astro', name: 'Astronomes'},
+                {code: 'astrophys', name: 'Astrophysiciens'},
+                {code: 'geophys', name: 'Géophysiciens'},
+                {code: 'geolo', name: 'Géologues'},
+                {code: 'meteo', name: 'Météorologues'},
+                {code: 'phys', name: 'Physiciens'},
+                {code: 'medecin', name: 'Médecins'},
+                {code: 'psy', name: 'Psychiatres'},
+                {code: 'socio', name: 'Sociologues'},
+                {code: 'math', name: 'Mathématiciens'},
+                {code: 'phi', name: 'Philosophes'},
+                {code: 'chi', name: 'Chimistes'},
+                {code: 'neuro', name: 'Neurologues'}
+            ];
+            $scope.disciplines = disciplines;
+            for (var d = 0; d < disciplines.length; d++) {
+                $scope.disciplines[d]["on"] = true;
             }
-          }
-          $log.debug(scientist.name + " doesn't matches disciplines");
-          return false;
-        };
-        $scope.countryFilter = function (scientist) {
-          for (var i = 0; i < $scope.countries.length; i++) {
-            var country = $scope.countries[i];
-            if (country.on && (!scientist.country || scientist.country === country.code)) {
-              $log.debug(scientist.name + " matches country");
-              return true;
-            }
-          }
-          $log.debug(scientist.name + " doesn't matches country");
-          return false;
-        };
-        $scope.scientists = [
-          {name: 'Adair, David', country: 'us', discipline: 'phys'},
-          {name: 'Altov, Genrikh', country: 'ru', discipline: 'astro'},
-          {name: 'Archimède', country: 'gr', discipline: 'phys math'},
-          {name: 'Aristote', country: 'gr', discipline: 'phi'},
-          {name: 'Agrest, Matest', country: 'ru', discipline: 'math phy'},
-          {name: 'Jung, Carl Gustav', country: 'ch', discipline: 'psy'},
-          {name: 'Ziegel, Felix Y.', country: 'ru'},
-          {name: 'Almeida, Fernando F. M.', country: 'br', discipline: 'geophys geolo'},
-          {name: 'Agrest, Mikhail', country: 'ru', discipline: 'math phys'},
-          {name: 'Alvarez, Luis W.', country: 'us', discipline: 'phys'},
-          {name: 'Korolev, Sergey', country: 'us', discipline: 'phys'},
-          {name: 'Altschuler, Martin D.', country: 'us', discipline: 'astro phys'},
-          {name: 'Bacon, Francis', country: 'uk'},
-          {name: 'Bacon, Roger', country: 'uk', discipline: 'astro phys'},
-          {name: 'Baker, Robert M. L.', country: 'us', discipline: 'phys'},
-          {name: 'Beckman, Fred', country: 'us', discipline: 'neuro'},
-          {name: 'Berkner, Lloyd Viel', country: 'us', discipline: 'geophys'},
-          {name: 'Biot, Maurice', country: 'fr'},
-          {name: 'Blumrich, Josef F.', country: 'us'},
-          {name: 'Bounias, Michel', country: 'fr', discipline: 'math chi bio'},
-          {name: 'Brahé, Tycho', country: 'dk', discipline: 'astro'},
-          {name: 'Branscomb, Lewis M.', country: 'us', discipline: 'phys'},
-          {name: 'Breguet, Louis', country: 'fr'},
-          {name: 'Bronk, Detlev Wulf', country: 'us', discipline: 'neuro'},
-          {name: 'Brown, Thomas Townsend', country: 'us', discipline: 'phys'},
-          {name: 'Brown, Harold', country: 'us', discipline: 'phys'},
-          {name: 'Bruneau, Jean-Luc', country: 'fr', discipline: 'phys'},
-          {name: 'Bruno, Giordano', country: 'it', discipline: 'astro'},
-          {name: 'Bullard, Thomas E.', country: 'us', discipline: 'socio'},
-          {name: 'Bush, Vannevar', country: 'us'},
-          {name: 'Bushman, Boyd', country: 'us', discipline: 'phys'},
-          {name: 'Calvin, Melvin', country: 'us', discipline: 'chi'},
-          {name: 'Carrington', discipline: 'astro'},
-          {name: 'Carvalho, Wellaide Cecim', country: 'br', discipline: 'medecin'},
-          {name: 'Chadwell, H. Marshall', country: 'us'},
-          {name: 'Clarkson', country: 'us', discipline: 'phys'},
-          {name: 'Chatelain, Maurice', country: 'fr'},
-          {name: 'Chauvin, Rémy', country: 'fr'},
-          {name: 'Condon, Edward Uhler', country: 'us', discipline: 'phys'},
-          {name: 'Cook, Stuart W.', country: 'us', discipline: 'psi'},
-          {name: 'Copernic, Nicolas', discipline: 'astro'},
-          {name: 'Corliss, William R.', country: 'us', discipline: 'phys'},
-          {name: 'Cross, Howard Clinton', country: 'us', discipline: 'phys'},
-          {name: 'Croste', discipline: 'astro'},
-          {name: 'Craig, Roy F.', country: 'us'},
-          {name: 'Creegan, Robert F.'},
-          {name: 'Curien, Hubert', country: 'fr'},
-          {name: 'Davidson, Leon'},
-          {name: 'Descartes, René', country: 'fr'},
-          {name: 'Drake, Frank D.', country: 'us', discipline: 'astro'},
-          {name: 'Dryden, Hugh Latimer'},
-          {name: 'Dyson, Freeman John'},
-          {name: 'Edison, Thomas A.', country: 'us'},
-          {name: 'Einstein, Albert', country: 'us', discipline: 'phys'},
-          {name: 'Eriksson, Tage O.'},
-          {name: 'Ewing, Maurice William'},
-          {name: 'Faure, Henri', country: 'fr'},
-          {name: 'Fernandez, Gilles', country: 'fr', discipline: 'psy'},
-          {name: 'Fermi, Enrico', country: 'us', discipline: 'phys'},
-          {name: 'Feynman, Richard P.', country: 'us', discipline: 'phys'},
-          {name: 'Fontès, Olavo T.', country: 'br', discipline: 'medecin'},
-          {name: 'Flammarion, Camille', country: 'fr', discipline: 'astro'},
-          {name: 'Friedman, Stanton T.', country: 'us', discipline: 'phys'},
-          {name: 'Forrestal, James Vincent'},
-          {name: 'Freitas, Robert A., Jr.'},
-          {name: 'Galilée', country: 'it'},
-          {name: 'Goudsmit, Samuel A.'},
-          {name: 'Gottlieb', country: 'us'},
-          {name: 'Guérin, Pierre', country: 'fr', discipline: 'astro astrophys'},
-          {name: 'Gustoff'},
-          {name: 'Greer, Steven M.'},
-          {name: 'Gruau, Jean', country: 'fr'},
-          {name: 'Haines, Richard F.'},
-          {name: 'Haisch, Bernard'},
-          {name: 'Hall, Robert L.'},
-          {name: 'Halley, Edmund'},
-          {name: 'Halstead, Frank'},
-          {name: 'Harder, James A.'},
-          {name: 'Hartmann, William K.'},
-          {name: 'Hauge, Bjørn Gitle', country: 'no'},
-          {name: 'Hawking, Stephen', discipline: 'astrophys'},
-          {name: 'Henderson, Garry C.'},
-          {name: 'Herschel, William'},
-          {name: 'Hess, Seymour', discipline: 'astro'},
-          {name: 'Hilbert, David', discipline: 'math'},
-          {name: 'Hill, Paul R.', country: 'us'},
-          {name: 'Horowitz, Paul'},
-          {name: 'Hunsaker, Jerome Clarke'},
-          {name: 'Hynek, Josef Allen', country: 'us', discipline: 'astro'},
-          {name: 'Irwin, Gerry'}, // TODO:
-          {name: 'Jessup, Morris Ketchum'},
-          {name: 'Katchen, Lee', country: 'us', discipline: 'phys'},
-          {name: 'Kaplan, Joseph'},
-          {name: 'Kepler, Johannes', country: 'de', discipline: 'astro'},
-          {name: 'Kuettner, Joachim P.'},
-          {name: 'Kuiper, Gerard Pieter', country: 'astro'},
-          {name: 'LaPaz, Lincoln', country: 'astro'},
-          {name: 'Lee, Oliver', country: 'us'},  // TODO:
-          {name: 'Leir, Roger K.', country: 'us', discipline: 'medecin'},
-          {name: 'Levengood, William'},
-          {name: 'Levine, Norman E.'},
-          {name: 'Levinson, Henry'},
-          {name: 'MacClelland, Clark', country: 'us'},
-          {name: 'Marconi, Guglielmo'},
-          {name: 'Maccabee, Bruce Sargent', country: 'us'},
-          {name: 'MacDonald, James E.', country: 'us', discipline: 'meteo'},
-          {name: 'MacKenzie, J. C.'}, // TODO: NRC
-          {name: 'Mack, John E.', country: 'us', discipline: 'psy'},
-          {name: 'Markowitz, William', country: 'us', discipline: 'astro'},
-          {name: 'Maunder, Edward Walter', country: 'uk', discipline: 'astro'},
-          {name: 'Meessen, Auguste', country: 'be', discipline: 'phys'},
-          {name: 'Menzel, Donald Howard', country: 'us', discipline: 'phys'},
-          {name: 'Merritt, Everitt', country: 'us'},
-          {name: 'Messel, Harry', country: 'au', discipline: 'phys'},
-          {name: 'Messier, Charles', country: 'astro'},
-          {name: 'Moore, Charles B.', country: 'us'},
-          {name: 'Moray, Henry T.', country: 'us'},
-          {name: 'Morrison, Philip', country: 'us', discipline: 'astrophys'},
-          {name: 'Munday, John C.'},
-          {name: 'Nichols, Preston B.'},
-          {name: 'Oberg, James E.'},
-          {name: 'Oberth, Hermann'},
-          {name: 'Oppenheimer, Robert Julius', country: 'us', discipline: 'phys'},
-          {name: 'Oswald, John'},
-          {name: 'Page, Thornton Leigh', country: 'us'},
-          {name: 'Papagiannis, Michael D.', country: 'gr', discipline: 'phys'},
-          {name: 'Pellat, René', country: 'fr'},
-          {name: 'Persinger, Michael A.'},
-          {name: 'Petit, Jean-Pierre', country: 'fr', discipline: 'phys'},
-          {name: 'Pharabod, Jean-Pierre', country: 'fr', discipline: 'phys'},
-          {name: 'Poher, Claude', country: 'fr'},
-          {name: 'Poincaré, Jules Henri', country: 'fr', discipline: 'phys'},
-          {name: 'Puthoff, Harold E.', country: 'us'},
-          {name: 'Powers, William T.', country: 'us'},
-          {name: 'Price, William J.'},
-          {name: 'Price-Williams, Douglass'},
-          {name: 'Ptolémée'},
-          {name: 'Reich, Wilhelm', country: 'us'},
-          {name: 'Reiffel, Leonard'},
-          {name: 'Riedel, Walther'},  // TODO:
-          {name: 'Roach, Franklin E.'},
-          {name: 'Robertson, Howard P.', country: 'us'},
-          {name: 'Robin-Evans, Karyl'},   // TODO: Dropas
-          {name: 'Kuhn, Thomas Samuel', country: 'us', discipline: 'phys'},
-          {name: 'Rodeghier, Mark', country: 'us'},
-          {name: 'Rubtsov, Vladimir', country: 'ru', disappeared: true},
-          {name: 'Rutledge, Harley', country: 'us'},
-          {name: 'Rostan', discipline: 'astro'},
-          {name: 'Rush, Joseph H.'},  // TODO: Not found
-          {name: 'Sagan, Carl', country: 'us', discipline: 'astrophys'},
-          {name: 'Salisbury, Frank B.', country: 'us'},
-          {name: 'Sarbacher, Robert Irving', country: 'us'},
-          {name: 'Sathco, John', country: 'us', discipline: 'astro'},
-          {name: 'Sauders, David R.', country: 'us'},
-          {name: 'Shideler, Emerson W.', country: 'us', discipline: 'phi'},
-          {name: 'Seitz, Frederick'},
-          {name: 'Shepard, Roger N.', country: 'us'},
-          {name: 'Smith, Willy'},
-          {name: 'Smith, Wilbert Brooker', country: 'ca'},
-          {name: 'Solandt, Omond M.', country: 'ca'},
-          {name: 'Sprinkle, Ronald Leo'},
-          {name: 'Sturrock, Peter Andrew', country: 'us'},
-          {name: 'Struve, Otto'},
-          {name: 'Swords, Michael D.'},
-          {name: 'Teller, Edward', country: 'us', discipline: 'phys'},
-          {name: 'Tesla, Nikola', country: 'us', discipline: 'phys'},
-          {name: 'Thayer, Gordon D.'},
-          {name: 'Tombaugh, Clyde William', country: 'us', discipline: 'astro'},
-          {name: 'Truzzi, Marcello'},
-          {name: 'VonBraun, Wernher', country: 'us', discipline: 'phys'},
-          {name: 'VonNeumann, John', country: 'us'},
-          {name: 'VonKarman, Théodore'},
-          {name: 'Wartmann'},
-          {name: 'Webb, James'},
-          {name: 'Webb, David F.'},
-          {name: 'Webb, Walter N.'},
-          {name: 'Wilkins, John', country: 'uk'},
-          {name: 'Wilkins, Hugh Percy', country: 'uk', discipline: 'astro'},
-          {name: 'Williamson, Charles Hunt'},
-          {name: 'Wood, Robert M.'},
-          {name: 'D\'Escatha, Yannick', country: 'fr'},
-          {name: 'Goupil, Jean', country: 'fr'},
-          {name: 'Jimenez, Manuel', country: 'fr'},   // TODO
-          {name: 'Lagrange, Pierre', country: 'fr'},
-          {name: 'Lebeau, André', country: 'fr'},
-          {name: 'Lhote, Henri', country: 'fr'},      // TODO:
-          {name: 'Ribes, Jean-Claude', country: 'fr', discipline: 'astro'},
-          {name: 'Ridpath, Ian', country: 'uk', discipline: 'astro'},
-          {name: 'Rospars, Jean-Pierre', country: 'fr'},
-          {name: 'Sillard, Yves', country: 'fr'},
-          {name: 'Vallée, Jacques', country: 'fr', discipline: 'astro'},
-          {name: 'Vélasco, Jean-Jacques', country: 'fr'},
-          {name: 'Veyret, Bernard', country: 'fr'},
-          {name: 'Viton, Maurice', country: 'fr'},
-          {name: 'Perrin de Brichambaut, Christian', country: 'fr'},
-          {name: 'Rocard, Yves', country: 'fr', discipline: 'phys'},
-          {name: 'Teodorani, Massimo', country: 'it'},
-          {name: 'Regge, Tulio', country: 'it'},
-          {name: 'Keldysh, Mstislav', country: 'ru'}, // TODO:
-          {name: 'Lolladoff, Sergey', country: 'ru'}, // TODO:
-          {name: 'Zverev, Mitrofran', country: 'ru'},
-          {name: 'Kurchatov, Igor', country: 'ru'},   // TODO:
-          {name: 'Shklovsky, Josef Samuelovitch', country: 'ru'},
-          {name: 'Topchiev, Aleksandr', country: 'ru', discipline: 'chi'},
-          {name: 'Erling P. Strand'}, // TODO: http://erling.hiof.no/english/
-          {name: 'Zhang, Zhousheng', country: 'cn', discipline: 'astro'},
-          {name: 'De Samos, Artistarque', country: 'gr', discipline: 'phi'},
-          {name: 'Huygens, Christiaan', discipline: 'astro'},
-          {name: 'Webb, James', discipline: 'astro'},
-          {name: 'Zverev, Mitrofran', discipline: 'astro'}
-        ];
-      }]);
+            $scope.countries = [
+                {code: 'de', name: 'Allemands', on: true},
+                {code: 'us', name: 'Américains', on: true},
+                {code: 'au', name: 'Australiens', on: true},
+                {code: 'uk', name: 'Britanniques', on: true},
+                {code: 'be', name: 'Belges', on: true},
+                {code: 'br', name: 'Brésiliens', on: true},
+                {code: 'ca', name: 'Canadiens', on: true},
+                {code: 'cn', name: 'Chinois', on: true},
+                {code: 'es', name: 'Espagnols', on: true},
+                {code: 'fr', name: 'Français', on: true},
+                {code: 'it', name: 'Italiens', on: true},
+                {code: 'mx', name: 'Mexicains', on: true},
+                {code: 'ru', name: 'Russes', on: true},
+                {code: 'se', name: 'Suédois', on: true},
+                {code: 'ch', name: 'Suisses', on: true},
+                {code: 'dk', name: 'Danois', on: true},
+                {code: 'no', name: 'Norvégien', on: true}
+            ];
+            $scope.disciplineFilter = function (scientist) {
+                for (var i = 0; i < $scope.disciplines.length; i++) {
+                    var discipline = $scope.disciplines[i];
+                    if (discipline.on && (!scientist.discipline || scientist.discipline.indexOf(discipline.code) >= 0)) {
+                        $log.debug(scientist.name + " matches disciplines");
+                        return true;
+                    }
+                }
+                $log.debug(scientist.name + " doesn't matches disciplines");
+                return false;
+            };
+            $scope.countryFilter = function (scientist) {
+                for (var i = 0; i < $scope.countries.length; i++) {
+                    var country = $scope.countries[i];
+                    if (country.on && (!scientist.country || scientist.country === country.code)) {
+                        $log.debug(scientist.name + " matches country");
+                        return true;
+                    }
+                }
+                $log.debug(scientist.name + " doesn't matches country");
+                return false;
+            };
+            $scope.scientists = [
+                {name: 'Adair, David', country: 'us', discipline: 'phys'},
+                {name: 'Altov, Genrikh', country: 'ru', discipline: 'astro'},
+                {name: 'Archimède', country: 'gr', discipline: 'phys math'},
+                {name: 'Aristote', country: 'gr', discipline: 'phi'},
+                {name: 'Agrest, Matest', country: 'ru', discipline: 'math phy'},
+                {name: 'Jung, Carl Gustav', country: 'ch', discipline: 'psy'},
+                {name: 'Ziegel, Felix Y.', country: 'ru'},
+                {name: 'Almeida, Fernando F. M.', country: 'br', discipline: 'geophys geolo'},
+                {name: 'Agrest, Mikhail', country: 'ru', discipline: 'math phys'},
+                {name: 'Alvarez, Luis W.', country: 'us', discipline: 'phys'},
+                {name: 'Korolev, Sergey', country: 'us', discipline: 'phys'},
+                {name: 'Altschuler, Martin D.', country: 'us', discipline: 'astro phys'},
+                {name: 'Bacon, Francis', country: 'uk'},
+                {name: 'Bacon, Roger', country: 'uk', discipline: 'astro phys'},
+                {name: 'Baker, Robert M. L.', country: 'us', discipline: 'phys'},
+                {name: 'Beckman, Fred', country: 'us', discipline: 'neuro'},
+                {name: 'Berkner, Lloyd Viel', country: 'us', discipline: 'geophys'},
+                {name: 'Biot, Maurice', country: 'fr'},
+                {name: 'Blumrich, Josef F.', country: 'us'},
+                {name: 'Bounias, Michel', country: 'fr', discipline: 'math chi bio'},
+                {name: 'Brahé, Tycho', country: 'dk', discipline: 'astro'},
+                {name: 'Branscomb, Lewis M.', country: 'us', discipline: 'phys'},
+                {name: 'Breguet, Louis', country: 'fr'},
+                {name: 'Bronk, Detlev Wulf', country: 'us', discipline: 'neuro'},
+                {name: 'Brown, Thomas Townsend', country: 'us', discipline: 'phys'},
+                {name: 'Brown, Harold', country: 'us', discipline: 'phys'},
+                {name: 'Bruneau, Jean-Luc', country: 'fr', discipline: 'phys'},
+                {name: 'Bruno, Giordano', country: 'it', discipline: 'astro'},
+                {name: 'Bullard, Thomas E.', country: 'us', discipline: 'socio'},
+                {name: 'Bush, Vannevar', country: 'us'},
+                {name: 'Bushman, Boyd', country: 'us', discipline: 'phys'},
+                {name: 'Calvin, Melvin', country: 'us', discipline: 'chi'},
+                {name: 'Carrington', discipline: 'astro'},
+                {name: 'Carvalho, Wellaide Cecim', country: 'br', discipline: 'medecin'},
+                {name: 'Chadwell, H. Marshall', country: 'us'},
+                {name: 'Clarkson', country: 'us', discipline: 'phys'},
+                {name: 'Chatelain, Maurice', country: 'fr'},
+                {name: 'Chauvin, Rémy', country: 'fr'},
+                {name: 'Condon, Edward Uhler', country: 'us', discipline: 'phys'},
+                {name: 'Cook, Stuart W.', country: 'us', discipline: 'psi'},
+                {name: 'Copernic, Nicolas', discipline: 'astro'},
+                {name: 'Corliss, William R.', country: 'us', discipline: 'phys'},
+                {name: 'Cross, Howard Clinton', country: 'us', discipline: 'phys'},
+                {name: 'Croste', discipline: 'astro'},
+                {name: 'Craig, Roy F.', country: 'us'},
+                {name: 'Creegan, Robert F.'},
+                {name: 'Curien, Hubert', country: 'fr', disappeared: true},
+                {name: 'Davidson, Leon'},
+                {name: 'Descartes, René', country: 'fr'},
+                {name: 'Drake, Frank D.', country: 'us', discipline: 'astro'},
+                {name: 'Dryden, Hugh Latimer'},
+                {name: 'Dyson, Freeman John'},
+                {name: 'Edison, Thomas A.', country: 'us'},
+                {name: 'Einstein, Albert', country: 'us', discipline: 'phys'},
+                {name: 'Eriksson, Tage O.'},
+                {name: 'Ewing, Maurice William'},
+                {name: 'Faure, Henri', country: 'fr'},
+                {name: 'Fernandez, Gilles', country: 'fr', discipline: 'psy'},
+                {name: 'Fermi, Enrico', country: 'us', discipline: 'phys'},
+                {name: 'Feynman, Richard P.', country: 'us', discipline: 'phys'},
+                {name: 'Fontès, Olavo T.', country: 'br', discipline: 'medecin'},
+                {name: 'Flammarion, Camille', country: 'fr', discipline: 'astro'},
+                {name: 'Friedman, Stanton T.', country: 'us', discipline: 'phys'},
+                {name: 'Forrestal, James Vincent'},
+                {name: 'Freitas, Robert A., Jr.'},
+                {name: 'Galilée', country: 'it'},
+                {name: 'Goudsmit, Samuel A.'},
+                {name: 'Gottlieb', country: 'us'},
+                {name: 'Guérin, Pierre', country: 'fr', discipline: 'astro astrophys'},
+                {name: 'Gustoff'},
+                {name: 'Greer, Steven M.'},
+                {name: 'Gruau, Jean', country: 'fr'},
+                {name: 'Haines, Richard F.'},
+                {name: 'Haisch, Bernard'},
+                {name: 'Hall, Robert L.'},
+                {name: 'Halley, Edmund'},
+                {name: 'Halstead, Frank'},
+                {name: 'Harder, James A.'},
+                {name: 'Hartmann, William K.'},
+                {name: 'Hauge, Bjørn Gitle', country: 'no'},
+                {name: 'Hawking, Stephen', discipline: 'astrophys'},
+                {name: 'Henderson, Garry C.'},
+                {name: 'Herschel, William'},
+                {name: 'Hess, Seymour', discipline: 'astro'},
+                {name: 'Hilbert, David', discipline: 'math'},
+                {name: 'Hill, Paul R.', country: 'us'},
+                {name: 'Horowitz, Paul'},
+                {name: 'Hunsaker, Jerome Clarke'},
+                {name: 'Hynek, Josef Allen', country: 'us', discipline: 'astro'},
+                {name: 'Irwin, Gerry'}, // TODO:
+                {name: 'Jessup, Morris Ketchum'},
+                {name: 'Katchen, Lee', country: 'us', discipline: 'phys'},
+                {name: 'Kaplan, Joseph'},
+                {name: 'Kepler, Johannes', country: 'de', discipline: 'astro'},
+                {name: 'Kelleher, Colm', country: 'us', discipline: 'chi'},
+                {name: 'Kuettner, Joachim P.'},
+                {name: 'Kuiper, Gerard Pieter', country: 'astro'},
+                {name: 'LaPaz, Lincoln', country: 'astro'},
+                {name: 'Lee, Oliver', country: 'us'},  // TODO:
+                {name: 'Leir, Roger K.', country: 'us', discipline: 'medecin'},
+                {name: 'Levengood, William'},
+                {name: 'Levine, Norman E.'},
+                {name: 'Levinson, Henry'},
+                {name: 'MacClelland, Clark', country: 'us'},
+                {name: 'Marconi, Guglielmo'},
+                {name: 'Maccabee, Bruce Sargent', country: 'us'},
+                {name: 'MacDonald, James E.', country: 'us', discipline: 'meteo'},
+                {name: 'MacKenzie, J. C.'}, // TODO: NRC
+                {name: 'Mack, John E.', country: 'us', discipline: 'psy'},
+                {name: 'Markowitz, William', country: 'us', discipline: 'astro'},
+                {name: 'Maunder, Edward Walter', country: 'uk', discipline: 'astro'},
+                {name: 'Meessen, Auguste', country: 'be', discipline: 'phys'},
+                {name: 'Menzel, Donald Howard', country: 'us', discipline: 'phys'},
+                {name: 'Merritt, Everitt', country: 'us'},
+                {name: 'Messel, Harry', country: 'au', discipline: 'phys'},
+                {name: 'Messier, Charles', country: 'astro'},
+                {name: 'Moore, Charles B.', country: 'us'},
+                {name: 'Moray, Henry T.', country: 'us'},
+                {name: 'Morrison, Philip', country: 'us', discipline: 'astrophys'},
+                {name: 'Munday, John C.'},
+                {name: 'Nichols, Preston B.'},
+                {name: 'Oberg, James E.'},
+                {name: 'Oberth, Hermann'},
+                {name: 'Oppenheimer, Robert Julius', country: 'us', discipline: 'phys'},
+                {name: 'Oswald, John'},
+                {name: 'Page, Thornton Leigh', country: 'us'},
+                {name: 'Papagiannis, Michael D.', country: 'gr', discipline: 'phys'},
+                {name: 'Pellat, René', country: 'fr'},
+                {name: 'Persinger, Michael A.'},
+                {name: 'Petit, Jean-Pierre', country: 'fr', discipline: 'phys'},
+                {name: 'Piccoli, Raymond', country: 'fr'},
+                {name: 'Pharabod, Jean-Pierre', country: 'fr', discipline: 'phys'},
+                {name: 'Planck, Max', country: 'de', discipline: 'phys', disappeared: true},
+                {name: 'Poher, Claude', country: 'fr'},
+                {name: 'Poincaré, Jules Henri', country: 'fr', discipline: 'phys'},
+                {name: 'Powers, William T.', country: 'us'},
+                {name: 'Puthoff, Harold E.', country: 'us'},
+                {name: 'Price, William J.'},
+                {name: 'Price-Williams, Douglass'},
+                {name: 'Ptolémée'},
+                {name: 'Reich, Wilhelm', country: 'us'},
+                {name: 'Reiffel, Leonard'},
+                {name: 'Riedel, Walther'},  // TODO:
+                {name: 'Roach, Franklin E.'},
+                {name: 'Robertson, Howard P.', country: 'us'},
+                {name: 'Robin-Evans, Karyl'},   // TODO: Dropas
+                {name: 'Kuhn, Thomas Samuel', country: 'us', discipline: 'phys'},
+                {name: 'Rodeghier, Mark', country: 'us'},
+                {name: 'Rubtsov, Vladimir', country: 'ru', disappeared: true},
+                {name: 'Rutledge, Harley', country: 'us'},
+                {name: 'Rostan', discipline: 'astro'},
+                {name: 'Rush, Joseph H.'},  // TODO: Not found
+                {name: 'Sagan, Carl', country: 'us', discipline: 'astrophys'},
+                {name: 'Salisbury, Frank B.', country: 'us'},
+                {name: 'Sarbacher, Robert Irving', country: 'us'},
+                {name: 'Sathco, John', country: 'us', discipline: 'astro'},
+                {name: 'Sauders, David R.', country: 'us'},
+                {name: 'Shideler, Emerson W.', country: 'us', discipline: 'phi'},
+                {name: 'Seitz, Frederick'},
+                {name: 'Shepard, Roger N.', country: 'us'},
+                {name: 'Smith, Willy'},
+                {name: 'Smith, Wilbert Brooker', country: 'ca'},
+                {name: 'Solandt, Omond M.', country: 'ca'},
+                {name: 'Sprinkle, Ronald Leo'},
+                {name: 'Sturrock, Peter Andrew', country: 'us'},
+                {name: 'Struve, Otto'},
+                {name: 'Swords, Michael D.'},
+                {name: 'Teller, Edward', country: 'us', discipline: 'phys'},
+                {name: 'Tesla, Nikola', country: 'us', discipline: 'phys'},
+                {name: 'Thayer, Gordon D.'},
+                {name: 'Tombaugh, Clyde William', country: 'us', discipline: 'astro'},
+                {name: 'Truzzi, Marcello'},
+                {name: 'VonBraun, Wernher', country: 'us', discipline: 'phys'},
+                {name: 'VonNeumann, John', country: 'us'},
+                {name: 'VonKarman, Théodore'},
+                {name: 'Wartmann'},
+                {name: 'Webb, James'},
+                {name: 'Webb, David F.'},
+                {name: 'Webb, Walter N.'},
+                {name: 'Wilkins, John', country: 'uk'},
+                {name: 'Wilkins, Hugh Percy', country: 'uk', discipline: 'astro'},
+                {name: 'Williamson, Charles Hunt'},
+                {name: 'Wood, Robert M.'},
+                {name: 'D\'Escatha, Yannick', country: 'fr'},
+                {name: 'Goupil, Jean', country: 'fr'},
+                {name: 'Jimenez, Manuel', country: 'fr'},   // TODO
+                {name: 'Lagrange, Pierre', country: 'fr'},
+                {name: 'Lebeau, André', country: 'fr'},
+                {name: 'Lhote, Henri', country: 'fr'},      // TODO:
+                {name: 'Ribes, Jean-Claude', country: 'fr', discipline: 'astro'},
+                {name: 'Ridpath, Ian', country: 'uk', discipline: 'astro'},
+                {name: 'Rospars, Jean-Pierre', country: 'fr'},
+                {name: 'Sillard, Yves', country: 'fr'},
+                {name: 'Vallée, Jacques', country: 'fr', discipline: 'astro'},
+                {name: 'Vélasco, Jean-Jacques', country: 'fr'},
+                {name: 'Veyret, Bernard', country: 'fr'},
+                {name: 'Viton, Maurice', country: 'fr'},
+                {name: 'Perrin de Brichambaut, Christian', country: 'fr'},
+                {name: 'Rocard, Yves', country: 'fr', discipline: 'phys'},
+                {name: 'Teodorani, Massimo', country: 'it'},
+                {name: 'Regge, Tulio', country: 'it'},
+                {name: 'Keldysh, Mstislav', country: 'ru'}, // TODO:
+                {name: 'Lolladoff, Sergey', country: 'ru'}, // TODO:
+                {name: 'Zverev, Mitrofran', country: 'ru'},
+                {name: 'Kurchatov, Igor', country: 'ru'},   // TODO:
+                {name: 'Shklovsky, Josef Samuelovitch', country: 'ru'},
+                {name: 'Topchiev, Aleksandr', country: 'ru', discipline: 'chi'},
+                {name: 'Erling P. Strand'}, // TODO: http://erling.hiof.no/english/
+                {name: 'Zhang, Zhousheng', country: 'cn', discipline: 'astro'},
+                {name: 'De Samos, Artistarque', country: 'gr', discipline: 'phi'},
+                {name: 'Huygens, Christiaan', discipline: 'astro'},
+                {name: 'Webb, James', discipline: 'astro'},
+                {name: 'Wendt, Alexander', discipline: 'socio', country: 'us'},
+                {name: 'Zverev, Mitrofran', discipline: 'astro'}
+            ];
+        }]);
 </script>

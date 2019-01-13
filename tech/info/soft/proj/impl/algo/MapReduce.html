@@ -6,8 +6,8 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Le principe de MapReduce est de décomposer un traitement en plusieurs sous-traitements parallélisables : cela
-    demande souvent une expertise et n'est pas possible pour tous les cas.</p>
+  <p>Le principe de MapReduce est de décomposer un traitement en plusieurs sous-traitements parallélisables. Une telle
+    décomposition du problème à traiter demande souvent une expertise et n'est pas possible pour tous les cas.</p>
 </section>
 <section>
   <h2>Conception</h2>
@@ -16,12 +16,18 @@
         href="/tech/info/soft/prod/server/sgbd/NoSQL/oa/ecv">ECV</a> ou <a
         href="/tech/info/soft/prod/server/sgbd/NoSQL/oa/bdod">BDOD</a>) typiquement très grande (de l'ordre du To, voire
       du Po)
-      <ul>
-        <li>est partitionnée en différentes <strong>lots</strong> (<em>splits</em>)
+      <ol>
+        <li><strong>map</strong> : est partitionnée en différents <strong>lots</strong> (<em>splits</em>)
           <ul>
-            <li>donc des <strong>mappers</strong> produisent une liste intermédiaire en sortie</li></ul>
+            <li>dont des <strong>mappers</strong> (parallélisables) produisent chacun une liste intermédiaire en sortie
+            </li>
+          </ul>
         </li>
-      </ul>
+        <li><strong>shuffle</strong> (une fois toutes les maps terminées) : Les résultats des opérations map sont
+          fusionnées et triées en fonction des valeurs de clés</li>
+        <li><strong>reduce</strong> : les listes intermédiaires sont traitées en fonction du problème à résoudre, pour
+          fournir un résultat agrégeable à un résultat total.</li>
+      </ol>
     </li>
   </ul>
 </section>
@@ -40,7 +46,7 @@
   </section>
   <p>Des outils permettant de convertir un problème donné en problème traitable par MapReduce sont :</p>
   <ul>
-    <li>Pig et Hive</li>
+    <li>Hadoop : Pig et Hive</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

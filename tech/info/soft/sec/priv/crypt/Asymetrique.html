@@ -1,0 +1,41 @@
+<!--#include virtual="/header-start.html" -->
+<title>Chiffrement asymétrique</title>
+<!--#include virtual="/header-end.html" -->
+<p>Ou chiffrement à <a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href=".">Chiffrer</a> sans nécessiter l'échange d'une <a
+      href="../../../proj/impl/struct/Key.html">clé</a> commune (<a href="../../../proj/impl/struct/Key.html">clé</a>
+    secrète).</p>
+  <h2><span class="chapitre"><span class="titre1"> </span></span><span class="chapitre"><span
+      class="titre1">Analyse</span></span></h2>
+  <p>Le cryptage asymétrique consiste à utiliser des clés différentes pour le cryptage et le décryptage. </p>
+  <p>Chaque correspondant :</p>
+  <ul>
+    <li>diffuse une <strong><a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a></strong>
+    </li>
+    <li>conserve sa <strong><a href="../../../proj/impl/struct/Key.html">clé</a> privée</strong></li>
+  </ul>
+  <p>Un message peut être crypté avec la <a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> du
+    destinataire afin que seul celui-ci puisse le lire (avec sa <a href="../../../proj/impl/struct/Key.html">clé</a>
+    privée). </p>
+  <p>Dans cette optique, une communication cryptée bidirectionnelle implique que les 2 correspondants disposent de clés
+    <a
+        href="../../auth/cert">certifiées</a> (ce qui n'est pas souvent le cas pour le commun des mortels sur le <a
+        href="../../../proj/design/arch/web">Web</a>) et surtout un temps de traitement relativement lourd lié au modèle
+    de cryptage asymétrique (implémenté au travers de systèmes tels que <a href="DSA.html">DSA</a>, <a
+        href="../../auth/sign/DSS.html">DSS</a>...).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de cryptage asymétrique sont :</p>
+  <ul>
+    <li><a href="DSA.html">DSA</a></li>
+    <li><a href="../../auth/sign/DSS.html">DSS</a></li>
+    <li><a href="/org/us/company/RSA.html">RSA</a> (disponible dans la <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>)</li>
+    <li><a href="#Diffie-Hellman">Diffie-Hellman</a> (disponible dans la <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>).</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,26 @@
+<!--#include virtual="/header-start.html" -->
+<title>Kernel gaussien</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Gaussian <a href="..">kernel</a></i>.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Fonction de similarité entre 2 points (donnée et landmark).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un kernel gaussien mesure la "distance" entre 2 points de données `x^(i)` et `x^(j)`.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Le kernel gaussien est défini comme fonction de la norme (distance entre les points examinés) et d'un paramètre
+    de largeur de bande/marge `σ` :</p>
+  <p>`K_"gaussien"(x^((i)),x^((j)))=exp(-(norm(x^((i))-x^((j)))^2)/(2σ^2))=exp(-(sum_(k=1)^n (x_k^((i))-x_k^((j)))^2)/(2σ^2))
+    `</p>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .mjx-math * {
+    line-height: 0;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

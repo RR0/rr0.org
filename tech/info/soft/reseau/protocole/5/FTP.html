@@ -1,0 +1,463 @@
+<!--#include virtual="/header-start.html" -->
+<title>FTP</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">File Transfer Protocol</i> : <a href="..">protocole</a> de transfert de
+  fichiers.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un protocole réseau standard pour l'échange de fichier entre machines distantes (sur Internet
+    typiquement).</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>FTP est un protocole de l'<a href="../../internet">Internet</a>, basé sur <a href="../4/TCP.html">TCP</a>/<a
+      href="../3/IP.html">IP</a> :</p>
+  <table>
+    <tr>
+      <th>Application</th>
+      <td align="center">
+        <div align="center">FTP</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Transport</th>
+      <td>
+        <div align="center"><a href="../4/TCP.html">TCP</a></div>
+      </td>
+    </tr>
+    <tr>
+      <th>Réseau</th>
+      <td>
+        <div align="center"><a href="../3/IP.html">IP</a></div>
+      </td>
+    </tr>
+  </table>
+  <p>En théorie, tous les transferts de données doivent être réalisés via une seule connexion : une ouverture active est
+    faite par le serveur, depuis son port 20 vers un port sur la machine cliente. Le client effectue alors une ouverture
+    passive.</p>
+  <p> Une commande FTP est chaîne Telnet terminée par une fin de ligne Telnet. Le mot-clé d'une commande lui-même est
+    une chaîne de caractères, eventuellement suivi d'un espace et de paramètres.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li> En pratique, la plupart des clients FTP crée une nouvelle connexion pour chaque transfert. Pour éviter la
+      prolifération d'état TCP TIMEWAIT, le client prend un nouveau numéro de port à chaque fois et envoie une commande
+      PORT pour en avertir le serveur.
+      <table>
+        <thead>
+          <tr>
+            <td class="titleCorner"></td>
+            <td class="titleCorner"></td>
+            <th valign="top">Version</th>
+            <th></th>
+            <th>Caractéristiques standard</th>
+          </tr>
+          <tr>
+            <td class="titleCorner"></td>
+            <td class="titleCorner"></td>
+            <th valign="top">Release</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td class="titleCorner"></td>
+            <td class="titleCorner"></td>
+            <th valign="top">RFC</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Domaine</th>
+            <th>Technologie</th>
+            <th valign="top">Année</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tr>
+          <th rowspan="48" valign="top">Commandes</th>
+          <th rowspan="13" valign="top">Basiques</th>
+          <th valign="top">ABR</th>
+          <td class="oui">Oui</td>
+          <td><em>ABORt </em>: abandon.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">ACCT</th>
+          <td class="oui">Oui</td>
+          <td><em>ACCounT </em>: compte.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">ALLO</th>
+          <td class="oui">Oui</td>
+          <td><em>ALLOcate </em>: allocation.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">APPE</th>
+          <td class="oui">Oui</td>
+          <td><em>APPEnd </em>: ajout.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">DELE</th>
+          <td class="oui">Oui</td>
+          <td><em>DELEte </em>: suppression.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">HELP</th>
+          <td class="oui">Oui</td>
+          <td>Aide.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">LIST</th>
+          <td class="oui">Oui</td>
+          <td>Liste.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">NLST</th>
+          <td class="oui">Oui</td>
+          <td><em>Name LiST </em>: liste de noms.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">NOOP</th>
+          <td class="oui">Oui</td>
+          <td><em>NO OPeration </em>: pas d'opération/opération nulle.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">PASS</th>
+          <td class="oui">Oui</td>
+          <td><em>PASSword </em>: mot de passe.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">PASV</th>
+          <td class="oui">Oui</td>
+          <td>PASsive</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">PORT</th>
+          <td class="oui">Oui</td>
+          <td>PORT de données.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">MODE</th>
+          <td class="oui">Oui</td>
+          <td>Mode de transfert</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th rowspan="20" valign="top">Extensions de sécurité (<a href="../../../../RFC.html">RFC</a> 2228)</th>
+          <th valign="top">ADAT</th>
+          <td class="oui">Oui</td>
+          <td><em>Authentication/security DATa</em> : authentification/données de sécurité.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">AUTH</th>
+          <td class="oui">Oui</td>
+          <td><em>Authentication/security mechanism</em> : authentification/méchanisme de sécurité.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">CCC</th>
+          <td class="oui">Oui</td>
+          <td><em>Clear Command Channel</em></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">CONF</th>
+          <td class="oui">Oui</td>
+          <td><em>CONFidentiality protected command </em>: commande protégée par confidentialité.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">ENC</th>
+          <td class="oui">Oui</td>
+          <td><em>ENCoded command </em>: commande à confidentialité garantie.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">PBSZ</th>
+          <td class="oui">Oui</td>
+          <td><em>Protection Buffer SiZe </em>: taille du tampon de protection.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">PROT</th>
+          <td class="oui">Oui</td>
+          <td>Niveau de PROTection du canal de données.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">QUIT</th>
+          <td class="oui">Oui</td>
+          <td>QUITTer.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">REIN</th>
+          <td class="oui">Oui</td>
+          <td>REINitialisation.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">REST</th>
+          <td class="oui">Oui</td>
+          <td><em>RESTart </em>: redémarrage.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">RETR</th>
+          <td class="oui">Oui</td>
+          <td><em>RETRieve </em>: récupération.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">RNFR</th>
+          <td class="oui">Oui</td>
+          <td><em>ReName FRom </em>: renommer depuis.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">RNTO</th>
+          <td class="oui">Oui</td>
+          <td><em>ReName TO </em>: renommer vers.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">SITE</th>
+          <td class="oui">Oui</td>
+          <td>paramètres du SITE.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">STAT</th>
+          <td class="oui">Oui</td>
+          <td>Statut.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">STOR</th>
+          <td class="oui">Oui</td>
+          <td><em>STORe </em>: stockage.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">STRU</th>
+          <td class="oui">Oui</td>
+          <td>STRUcture des fichiers.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">TYPE</th>
+          <td class="oui">Oui</td>
+          <td>TYPE de représentation</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">USER</th>
+          <td class="oui">Oui</td>
+          <td>Utilisateur.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">MIC</th>
+          <td class="oui">Oui</td>
+          <td>Commande à intégrité garantie.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th valign="top">Commande CWD de FTP (<a href="../../../../RFC.html">RFC</a> 697)</th>
+          <th valign="top">CWD</th>
+          <td class="oui">Oui</td>
+          <td><em>Change Working Directory </em>: changement de répertoire de travail.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th rowspan="7" valign="top">FTP (<a href="../../../../RFC.html">RFC</a> 959)</th>
+          <th valign="top">MKD</th>
+          <td class="oui">Oui</td>
+          <td><em>MaKe Directory </em>: création de répertoire.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">PWD</th>
+          <td class="oui">Oui</td>
+          <td><em>Print Working Directory </em>: Affichage du répertoire de travail.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">RMD</th>
+          <td class="oui">Oui</td>
+          <td><em>ReMove Directory </em>: suppression répertoire.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">SMNT</th>
+          <td class="oui">Oui</td>
+          <td><em>Structure MouNT</em></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">STOU</th>
+          <td class="oui">Oui</td>
+          <td><em>STOre Unique</em>.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">SYST</th>
+          <td class="oui">Oui</td>
+          <td><em>SYSTème.</em></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">CDUP</th>
+          <td class="oui">Oui</td>
+          <td><em>Change Directory UP </em>: changement vers le répertoire parent.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th rowspan="2" valign="top">Extensions pour IPv6 et NATs (<a href="../../../../RFC.html">RFC</a> 2428)</th>
+          <th valign="top">EPRT</th>
+          <td class="oui">Oui</td>
+          <td><em>Extended PoRT </em>: port de données étendu.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">EPSV</th>
+          <td class="oui">Oui</td>
+          <td><em>Extensded PaSsiVe</em></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th rowspan="2" valign="top">Négociation de fonctionnalités FTP (<a href="../../../../RFC.html">RFC</a> 2389)
+          </th>
+          <th valign="top">FEAT</th>
+          <td class="oui">Oui</td>
+          <td>FEATure : fonctionnalité.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">OPTS</th>
+          <td class="oui">Oui</td>
+          <td>Options</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th valign="top">I18N (<a href="../../../../RFC.html">RFC</a> 2640)</th>
+          <th valign="top">LANG</th>
+          <td class="oui">Oui</td>
+          <td>LANGuage negotiation : négociation de la langue.</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th rowspan="2" valign="top">FOOBAR (<a href="../../../../RFC.html">RFC</a> 1639)</th>
+          <th valign="top">LPRT</th>
+          <td class="oui">Oui</td>
+          <td><em>Long data PoRT </em>: port de données long</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th valign="top">LPSV</th>
+          <td class="oui">Oui</td>
+          <td><em>Long PaSsiVe</em></td>
+        </tr>
+      </table>
+    </li>
+    <li>Les serveurs FTP sont également appelés serveurs de fichiers</li>
+    <li>Des clients FTP possibles sont les <a href="../../../proj/design/arch/web/client">navigateurs Web</a>
+    </li>
+  </ul>
+  <h2>Exemples</h2>
+  <p>Des exemples de clients FTP sont :</p>
+  <ul>
+    <li><a href="http://www.cuteftp.com/products/cuteftp">Cute FTP</a></li>
+    <li><a href="https://sourceforge.net/projects/filezilla/">FileZilla</a> (GPL)</li>
+    <li><a href="http://j-ftp.sourceforge.net">JFTP</a></li>
+    <li><a href="http://www.ipswitch.com/Products/WS_FTP/">WS FTP</a></li>
+  </ul>
+  <p>Des exemples de serveurs FTP sont :</p>
+  <ul>
+    <li><a href="https://sourceforge.net/projects/filezilla/">FileZilla Server</a> (GPL)</li>
+    <li><a href="http://www.mycgiserver.com/%7Eranab/ftp">Java FTP Server</a></li>
+    <li><a href="http://jetty.mortbay.org/jetty">Jetty</a></li>
+  </ul>
+  <p>Un exemple de session FTP est :</p>
+  <blockquote>
+    <p><strong><code>220 </code></strong><code>SuperFTPD 1.2.6 Server (Serveur de mise a jour des pages de Javarome.net)<br>
+      <strong>USER </strong>javarome<br> <strong>331 </strong>Password required for javarome.<br> <strong>PASS</strong>
+      superpassword<br> <strong>230</strong>-User javarome logged in.<br> <strong>230</strong> Quotas on: using
+      30998725.00 of 104857600.00 bytes<br> <strong>SYST</strong><br> <strong>215</strong> UNIX Type: L8<br>
+      <strong>PWD</strong><br> <strong>257</strong> "/" is current directory.<br> <strong> TYPE A</strong><br> <strong>200 </strong>Type
+      set to A.<br> <strong>PORT </strong>195,132,179,223,4,146<br> <strong>200 </strong>PORT command successful<br>
+      <strong>LIST</strong><br> <strong>150 </strong>Opening ASCII mode data connection for file list<br> drwxr-sr-t 9
+      web site 4096 Oct 25 21:39 .<br> drwxr-sr-t 9 web site 4096 Oct 25 21:39 ..<br> -rw-r--r-- 1 web site 3477 Sep 13
+      00:20 BD.html<br> drwxr-xr-x 3 web site 4096 Sep 13 21:06 Dessin<br> -rw-r--r-- 1 web site 7850 Sep 13 00:20
+      Fantastique.html<br> drwxr-xr-x 4 web site 4096 Sep 13 19:52 Fantomes<br> -rw-r--r-- 1 web site 3992 Sep 13 00:20
+      Photos.html<br> -rw-r--r-- 1 web site 792064 Sep 13 23:22 setiathome_win_3_07.exe<br> <strong>226</strong>-Transfer
+      complete.<br> <strong>226</strong> Quotas on: using 30998725.00 of 104857600.00 bytes<br>
+      <strong>QUIT</strong><br> <strong>221 </strong>Goodbye.</code></p>
+  </blockquote>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Non sécurisé (les logins et mots de passe circulent en clair sur le réseau). Ce problème est pallié par <a
+        href="../../../sec/priv/crypt/SSH.html">SSH</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>RFC 959</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -5,112 +5,112 @@
 <h2><a href="/tech/info/soft/proj/besoin/index.html">Besoin</a></h2>
 
 <p>Fournir un <a href="/tech/info/soft/Framework.html">framework</a> <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a>
-  <a href="/tech/info/soft/prog/oo/java/index.html">Java</a> <a href="/tech/info/OpenSource.html">Open Source</a> prenant
+  <a href="/tech/info/soft/prog/oo/java/index.html">Java</a> <a href="/tech/info/soft/OpenSource.html">Open Source</a> prenant
   en charge :</p>
 <ul>
-  <li>la séparation des <a href="/tech/info/soft/IHM.html">IHM</a> et des processus métiers</li>
-  <li>le contrôle de saisie des formulaires</li>
+  <li>la sï¿½paration des <a href="/tech/info/soft/IHM.html">IHM</a> et des processus mï¿½tiers</li>
+  <li>le contrï¿½le de saisie des formulaires</li>
   <li>diverses optimisations (<a href="/tech/info/soft/prog/oo/java/Pooling.html"><em>pooling</em></a>)</li>
 </ul>
 <h2><a href="/tech/info/soft/proj/Analyse.html">Analyse</a></h2>
-<p>Struts externalise les interactions entre requête et actions ainsi que
-  le contrôle de validité des formulaires. </p>
+<p>Struts externalise les interactions entre requï¿½te et actions ainsi que
+  le contrï¿½le de validitï¿½ des formulaires. </p>
 <h2><a href="/tech/info/soft/proj/design/index.html">Conception</a></h2>
 
 <p>Struts applique le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> <a href="/tech/info/soft/prog/oo/java/MVC.html">MVC</a> qui
-  répartit les responsabilités entre :</p>
+  rï¿½partit les responsabilitï¿½s entre :</p>
 
 <ul>
-  <li><b>(M)odèle </b>: les <i>form beans</i> représentant les données
+  <li><b>(M)odï¿½le </b>: les <i>form beans</i> reprï¿½sentant les donnï¿½es
     saisies dans des formulaires. D'un point de vue global, les <i>form beans 
-    </i>ne représentent qu'un <em>modèle de présentation</em>,
-    c'est-à-dire un moyen de récolter les informations saisies par
-    l'utilisateur mais qui ne correspond pas forcément au véritable
-    modèle, généralement situé dans des JavaBeans
-    ou des <a href="/tech/info/soft/prog/oo/java/EJB.html">EJB</a> métier annexes.</li>
+    </i>ne reprï¿½sentent qu'un <em>modï¿½le de prï¿½sentation</em>,
+    c'est-ï¿½-dire un moyen de rï¿½colter les informations saisies par
+    l'utilisateur mais qui ne correspond pas forcï¿½ment au vï¿½ritable
+    modï¿½le, gï¿½nï¿½ralement situï¿½ dans des JavaBeans
+    ou des <a href="/tech/info/soft/prog/oo/java/EJB.html">EJB</a> mï¿½tier annexes.</li>
   <li><b>(V)ue </b>: les <a href="/tech/info/soft/prog/oo/java/JSP.html">JSP</a>, utilisant des balises  Struts.</li>
-  <li><b>(C)ontrôleur</b> MVC2, combinaison de :
+  <li><b>(C)ontrï¿½leur</b> MVC2, combinaison de :
     <ul>
       <li>une <a href="/tech/info/soft/prog/oo/java/Servlets.html">servlet</a> unique</li>
-      <li> des <strong>actions</strong> déclenchées par cette servlet
+      <li> des <strong>actions</strong> dï¿½clenchï¿½es par cette servlet
         (<a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande/Action).</li>
     </ul>
   </li>
 </ul>
-<p>Lors de la réception d'une requête Web, la <a href="/tech/info/soft/prog/oo/java/Servlets.html">servlet</a>
-  de Struts examine l'<a href="/tech/info/soft/reseau/internet/URL.html">URL</a> demandé et lui cherche une
-  correspondance (<em>mapping</em>) dans les classes d'actions spécifiées par le développeur. Une instance de cette classe d'action est récupérée
-  (d'un <a href="/tech/info/soft/prog/oo/java/Pooling.html"><em>pool</em></a>) et exécutée. </p>
-<p>Cette exécution effectue divers appels métiers, prépare
-  généralement un formulaire (<em>form bean</em>) nécessaire
-  à la vue. et retourne un code symbolique indiquant le résultat
-  de son action. La servlet reçoit ce code et lui troue une correspondance
-  (<em>mapping</em>) de vue (<a href="/tech/info/soft/prog/oo/java/JSP.html">JSP</a>) à afficher.</p>
+<p>Lors de la rï¿½ception d'une requï¿½te Web, la <a href="/tech/info/soft/prog/oo/java/Servlets.html">servlet</a>
+  de Struts examine l'<a href="/tech/info/soft/reseau/internet/URL.html">URL</a> demandï¿½ et lui cherche une
+  correspondance (<em>mapping</em>) dans les classes d'actions spï¿½cifiï¿½es par le dï¿½veloppeur. Une instance de cette classe d'action est rï¿½cupï¿½rï¿½e
+  (d'un <a href="/tech/info/soft/prog/oo/java/Pooling.html"><em>pool</em></a>) et exï¿½cutï¿½e. </p>
+<p>Cette exï¿½cution effectue divers appels mï¿½tiers, prï¿½pare
+  gï¿½nï¿½ralement un formulaire (<em>form bean</em>) nï¿½cessaire
+  ï¿½ la vue. et retourne un code symbolique indiquant le rï¿½sultat
+  de son action. La servlet reï¿½oit ce code et lui troue une correspondance
+  (<em>mapping</em>) de vue (<a href="/tech/info/soft/prog/oo/java/JSP.html">JSP</a>) ï¿½ afficher.</p>
 <p>La <a href="/tech/info/soft/prog/oo/java/JSP.html">JSP</a> importe les balises Struts et les utilise pour
-  insérer simplement des données du formulaire (<em>form bean</em>)
-  dans la page retournée à l'utilisateur.</p>
-<h2><a href="/tech/info/soft/proj/impl/index.html">Implémentation</a></h2>
-<p>Les formulaires sont des <strong>JavaBeans</strong> héritant de <code>org.apache.struts.action.ActionForm</code>.
-  Etant gérés dans un <a href="/tech/info/soft/prog/oo/java/Pooling.html">pool</a>, ils doivent
-  avoir un constructeur par défaut.</p>
+  insï¿½rer simplement des donnï¿½es du formulaire (<em>form bean</em>)
+  dans la page retournï¿½e ï¿½ l'utilisateur.</p>
+<h2><a href="/tech/info/soft/proj/impl/index.html">Implï¿½mentation</a></h2>
+<p>Les formulaires sont des <strong>JavaBeans</strong> hï¿½ritant de <code>org.apache.struts.action.ActionForm</code>.
+  Etant gï¿½rï¿½s dans un <a href="/tech/info/soft/prog/oo/java/Pooling.html">pool</a>, ils doivent
+  avoir un constructeur par dï¿½faut.</p>
 <p>Les vues sont des <a href="/tech/info/soft/prog/oo/java/JSP.html"><strong>JSP</strong></a> utilisant des
    TagLibs Struts telles que :</p>
 <ul>
   <li> <code>struts-html</code> pour la construction de code <a href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a> (y
     compris formulaires depuis Struts 1.1)</li>
-  <li><code>struts-bean</code> pour l'accès aux propriétés
-    de <a href="/tech/info/soft/prog/oo/java/JavaBeans.html">JavaBeans</a> (modèles) </li>
-  <li><code>struts-nested</code> pour la version de ces TagLib intégrant
-    la notion de hiérarchie</li>
+  <li><code>struts-bean</code> pour l'accï¿½s aux propriï¿½tï¿½s
+    de <a href="/tech/info/soft/prog/oo/java/JavaBeans.html">JavaBeans</a> (modï¿½les) </li>
+  <li><code>struts-nested</code> pour la version de ces TagLib intï¿½grant
+    la notion de hiï¿½rarchie</li>
   <li>etc.</li>
 </ul>
 <p>Tout formulaire se :</p>
 <ol>
-  <li> <strong>réinitialise</strong> via sa méthode <code>reset()</code></li>
-  <li><strong>remplit</strong> à partir d'une requête (soumission d'un formulaire HTML) via
-    sa méthode <code>populate()</code></li>
-  <li><strong>valide</strong>    (accepte ou rejete les données qu'il contient)
-    via sa méthode <code>validate()</code>.</li>
+  <li> <strong>rï¿½initialise</strong> via sa mï¿½thode <code>reset()</code></li>
+  <li><strong>remplit</strong> ï¿½ partir d'une requï¿½te (soumission d'un formulaire HTML) via
+    sa mï¿½thode <code>populate()</code></li>
+  <li><strong>valide</strong>    (accepte ou rejete les donnï¿½es qu'il contient)
+    via sa mï¿½thode <code>validate()</code>.</li>
 </ol>
-<h3>Contrôleur</h3>
-<p>Le contrôleur<strong> </strong>est constitué de
+<h3>Contrï¿½leur</h3>
+<p>Le contrï¿½leur<strong> </strong>est constituï¿½ de
   :</p>
 <ul>
   <li>une <a href="/tech/info/soft/prog/oo/java/Servlets.html"><strong>servlet</strong></a> unique : <code>org.apache.struts.action.ActionServlet</code>
-    fournie par Struts ou dérivée</li>
-  <li>des <strong>actions </strong>à implémenter, dérivant
+    fournie par Struts ou dï¿½rivï¿½e</li>
+  <li>des <strong>actions </strong>ï¿½ implï¿½menter, dï¿½rivant
     de <code>org.apache.struts.action.Action</code>. En tant que commande, une
-    action n'a qu'à redéfinir le code de sa méthode <code>execute()</code> pour
-    indiquer ce qu'elle fait lorsqu'on l'invoque. Cette méthode retourne un <code>ActionForward</code>    représentant
-    le résultat de l'exécution. C'est en fonction de ce résultat que la prochaine
-    vue à afficher (ou autre action à exécuter) est choisie d'après la configuration
-    Struts. Cependant, plusieurs autres actions plus spécialisées sont disponibles
+    action n'a qu'ï¿½ redï¿½finir le code de sa mï¿½thode <code>execute()</code> pour
+    indiquer ce qu'elle fait lorsqu'on l'invoque. Cette mï¿½thode retourne un <code>ActionForward</code>    reprï¿½sentant
+    le rï¿½sultat de l'exï¿½cution. C'est en fonction de ce rï¿½sultat que la prochaine
+    vue ï¿½ afficher (ou autre action ï¿½ exï¿½cuter) est choisie d'aprï¿½s la configuration
+    Struts. Cependant, plusieurs autres actions plus spï¿½cialisï¿½es sont disponibles
     :
     <ul>
-      <li><code>DispachAction</code>, qui exécute telle ou telle méthode (pas
-        uniquement <code>execute()</code>) en fonction d'un <strong>paramètre</strong> de la requête soumise.
-        Ceci est pratique lorsque l'action varie fortement en fonction des paramètres
-        (création, suppression, mise à jour par exemple).
+      <li><code>DispachAction</code>, qui exï¿½cute telle ou telle mï¿½thode (pas
+        uniquement <code>execute()</code>) en fonction d'un <strong>paramï¿½tre</strong> de la requï¿½te soumise.
+        Ceci est pratique lorsque l'action varie fortement en fonction des paramï¿½tres
+        (crï¿½ation, suppression, mise ï¿½ jour par exemple).
         <ul>
-          <li><code>LookupDispatchAction</code> qui considère le paramètre d'action
+          <li><code>LookupDispatchAction</code> qui considï¿½re le paramï¿½tre d'action
             comme provenant directement des boutons de l'interface utilisateur.</li>
         </ul>
       </li>
       <li><code>ForwardAction</code>, qui n'effectue rien d'autre que de rediriger
-        vers une destination (une vue typiquement). Ceci évite d'avoir à écrire
+        vers une destination (une vue typiquement). Ceci ï¿½vite d'avoir ï¿½ ï¿½crire
         des classes d'action aussi simples.</li>
     </ul>
   </li>
 </ul>
 <h3>Configuration</h3>
-<p>Une <strong>WebApp </strong>utilisant Struts ajoute sous son répertoire <code>WEB-INF</code> un
-  (ou plusieurs) fichier(s) de configuration Struts définissant :</p>
+<p>Une <strong>WebApp </strong>utilisant Struts ajoute sous son rï¿½pertoire <code>WEB-INF</code> un
+  (ou plusieurs) fichier(s) de configuration Struts dï¿½finissant :</p>
 <ul>
-  <li>les sources de données éventuelles. </li>
+  <li>les sources de donnï¿½es ï¿½ventuelles. </li>
   <li>les formulaires (<i>form-beans</i>)</li>
   <li>les redirections globales (<i>global forwards</i>) </li>
-  <li>les correspondances (<i>action-mappings</i>) entre requêtes, actions
-    à exécuter et formulaires utilisés</li>
+  <li>les correspondances (<i>action-mappings</i>) entre requï¿½tes, actions
+    ï¿½ exï¿½cuter et formulaires utilisï¿½s</li>
   <li>les ressources d'internationalisation</li>
 </ul>
 <blockquote>
@@ -191,8 +191,8 @@
     <th colspan="2" valign=top>Validator</th>
     <td>Contribution</td>
     <td class="oui">Oui</td>
-    <td>Validation de formulaires via expressions régulières, code
-      JavaScript généré</td>
+    <td>Validation de formulaires via expressions rï¿½guliï¿½res, code
+      JavaScript gï¿½nï¿½rï¿½</td>
   </tr>
   <tr>
     <th colspan="2" valign=top><a href="http://jakarta.apache.org/commons/beanutils.html">BeanUtils</a></th>
@@ -210,7 +210,7 @@
     <th colspan="2" valign=top><a href="http://jakarta.apache.org/commons/digester/">Digester</a></th>
     <td><code>org.apache. struts.digester</code></td>
     <td class="oui">Oui</td>
-    <td><a href="/tech/info/soft/data/doc/xml/XML.html">XML</a>Mapping XML vers Java, souvent utilisé pour
+    <td><a href="/tech/info/soft/data/doc/xml/XML.html">XML</a>Mapping XML vers Java, souvent utilisï¿½ pour
       la lecture de fichiers de configuration.</td>
   </tr>
   <tr>
@@ -238,13 +238,13 @@
     <th rowspan="2" valign=top>Formulaires</th>
     <th colspan="2" valign=top>ActionForm</th>
     <td colspan="2" class="oui">Oui</td>
-    <td>Formulaires implémentés (classes)</td>
+    <td>Formulaires implï¿½mentï¿½s (classes)</td>
   </tr>
   <tr>
     <th colspan="2" valign=top>DynaBeans</th>
     <td class="non">Non</td>
     <td class="oui">Oui</td>
-    <td>Formulaires déclaratifs (XML)</td>
+    <td>Formulaires dï¿½claratifs (XML)</td>
   </tr>
   <tr>
     <th rowspan="4" valign=top>Actions</th>
@@ -293,18 +293,18 @@
     <th valign=top>optionsCollection</th>
     <td class="non">Non</td>
     <td class="oui">Oui</td>
-    <td> Remplir des options HTML à partir d'une collection.</td>
+    <td> Remplir des options HTML ï¿½ partir d'une collection.</td>
   </tr>
   <tr>
     <th valign=top>message</th>
     <td colspan="2" class="oui">Oui</td>
-    <td> Insertion d'un libellé.</td>
+    <td> Insertion d'un libellï¿½.</td>
   </tr>
   <tr>
     <th valign=top>messages</th>
     <td class="non">Non</td>
     <td class="oui">Oui</td>
-    <td> Itération d'une collection de messages dans la classe ActionMessages.</td>
+    <td> Itï¿½ration d'une collection de messages dans la classe ActionMessages.</td>
   </tr>
   <tr>
     <th valign=top> ActionForm</th>
@@ -376,7 +376,7 @@
     <th colspan="2" valign=top>LabelValueBean</th>
     <td class="non">Non</td>
     <td class="oui">Oui</td>
-    <td>Collection clés/valeurs utilisables pour la baslise &lt;html:options&gt; ou
+    <td>Collection clï¿½s/valeurs utilisables pour la baslise &lt;html:options&gt; ou
       ailleurs.</td>
   </tr>
   <tr>
@@ -407,7 +407,7 @@
 
     <ul>
 
-      <li>peuvent stocker des données relatives à une ou plusieurs
+      <li>peuvent stocker des donnï¿½es relatives ï¿½ une ou plusieurs
 
         pages</li>
 
@@ -420,34 +420,34 @@
     <ul>
 
       <li> appliquent le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande.</li>
-      <li>sont le prolongement du code de la servlet contrôleur, ce qui
+      <li>sont le prolongement du code de la servlet contrï¿½leur, ce qui
         implique que : 
         <ul>
           <li>elles ne sont pas <i><a href="/tech/info/soft/prog/oo/java/Thread.html">thread</a>-safe</i></li>
-          <li>elles adaptent les requête <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> à
-            la véritable logique métier indépendante du
+          <li>elles adaptent les requï¿½te <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> ï¿½
+            la vï¿½ritable logique mï¿½tier indï¿½pendante du
             Web  (<a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> adaptateur)</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>les sources de données Struts
+  <li>les sources de donnï¿½es Struts
     <ul>
-      <li>(obsolète) une (<code>GenericDataSource</code>) est livrée
+      <li>(obsolï¿½te) une (<code>GenericDataSource</code>) est livrï¿½e
         pour les infrastructures qui en manquent (<a href="Tomcat.html">Tomcat</a> 
         par exemple).</li>
-      <li>ne sont pas recommandées à moins de ne disposez d'aucun
+      <li>ne sont pas recommandï¿½es ï¿½ moins de ne disposez d'aucun
         pool de connexion (dans <a href="Tomcat.html">Tomcat</a> par exemple). 
-        En effet elles ne sont pas performantes et ne sont accessibles qu'à
-        partir du <code>ServletContext</code> de la WebApp. Mieux vaut leurs préferer
-        les sources de données fournies par le serveur applicatif (<a href="../../../../../us/company/ibm/product/soft/server/app/WAS.html">WAS</a>,
-        <a href="/tech/info/soft/prog/oo/java/WLS.html">WLS</a>), qui ont l'avantage d'être plus performantes
+        En effet elles ne sont pas performantes et ne sont accessibles qu'ï¿½
+        partir du <code>ServletContext</code> de la WebApp. Mieux vaut leurs prï¿½ferer
+        les sources de donnï¿½es fournies par le serveur applicatif (<a href="../../../../../us/company/ibm/product/soft/server/app/WAS.html">WAS</a>,
+        <a href="/tech/info/soft/prog/oo/java/WLS.html">WLS</a>), qui ont l'avantage d'ï¿½tre plus performantes
         et accessibles via le service de nommage (API <a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a>).
         Des DataSource <a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a> existent depuis Struts 1.1</li>
     </ul>
   </li>
-  <li>Le travail d'initialisation/de terminaison peut être réalisé via un plugin
-    Struts plutôt que par une servlet de contrôle spécialisant celle de Struts.</li>
+  <li>Le travail d'initialisation/de terminaison peut ï¿½tre rï¿½alisï¿½ via un plugin
+    Struts plutï¿½t que par une servlet de contrï¿½le spï¿½cialisant celle de Struts.</li>
 </ul>
 
 <h2>Exemples</h2>
@@ -455,7 +455,7 @@
   <li>Actions 
     <ul>
       <li><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/Java/org/orange/kicsa/presentation/control/skill/">Gestion 
-        des compétences KiCsa</a></li>
+        des compï¿½tences KiCsa</a></li>
     </ul>
   </li>
   <li>Configuration Struts 
@@ -474,16 +474,16 @@
 <h2>Limitations</h2>
 
 <ul>
-  <li>Pas de vérification de la provenance lors de l'exécution d'une
+  <li>Pas de vï¿½rification de la provenance lors de l'exï¿½cution d'une
     action (pas d'automate en somme).</li>
-<li>Commence à être relativement obsolète, notamment à cause de sa contraire de compatibilité ascendante. Voir son successeur <a href="/tech/info/soft/prog/oo/java/Shale.html">Shale</a>. </li>
+<li>Commence ï¿½ ï¿½tre relativement obsolï¿½te, notamment ï¿½ cause de sa contraire de compatibilitï¿½ ascendante. Voir son successeur <a href="/tech/info/soft/prog/oo/java/Shale.html">Shale</a>. </li>
 </ul>
 
 <h2>Voir</h2>
 <ul>
   <li>Struts 
     <ul>
-      <li><a href="http://apache.i-connexion.net/dist/jakarta/struts/binaries">Téléchargement</a></li>
+      <li><a href="http://apache.i-connexion.net/dist/jakarta/struts/binaries">Tï¿½lï¿½chargement</a></li>
       <li><a href="http://jakarta.apache.org/struts/userGuide">Guide de l'utilisateur</a></li>
       <li><a href="http://jakarta.apache.org/struts/api">API</a></li>
       <li><a href="http://rollerjm.free.fr/pro/Struts.html">Validateur </a> 
@@ -503,14 +503,14 @@
       </li>
     </ul>
   </li>
-  <li>Alternatives/compléments
+  <li>Alternatives/complï¿½ments
 <ul>
       <li><a href="/tech/info/soft/prog/oo/java/JSTL.html">JSTL</a></li>
       <li><a href="/tech/info/soft/prog/oo/java/JSF.html">JSF</a></li>
       <li><a href="http://tapestry.sourceforge.net">Tapestry</a></li>
   </ul>
 </li>
-  <li>Développement
+  <li>Dï¿½veloppement
     <ul>
       <li>Javanovic <a href="http://www.javanovic.com/products/karapan-sapi.html">Karapan 
         Sapi Struts Generator</a></li>
@@ -519,7 +519,7 @@
   <li>Test 
     <ul>
       <li><a href="http://strutstestcase.sourceforge.net/">Struts TestCase for 
-        JUnit</a> - Test des actions Struts hors ou à l'intérieur
+        JUnit</a> - Test des actions Struts hors ou ï¿½ l'intï¿½rieur
         d'un conteneur Web.</li>
     </ul>
   </li>

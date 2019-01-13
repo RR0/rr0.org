@@ -106,7 +106,8 @@ export class NavService {
       }
     ];
 
-  constructor(private commonsService: CommonsService, private netService: NetService, private timeService: TimeService, private titleService: Title, private metaService: Meta, private router: Router) {
+  constructor(private commonsService: CommonsService, private netService: NetService, private timeService: TimeService,
+              private titleService: Title, private metaService: Meta, private router: Router) {
     /*router.events.subscribe((event: Event) => {
         console.log('event', event);
       if (event instanceof NavigationStart) {
@@ -226,7 +227,7 @@ export class NavService {
    */
   getPrev() {
     let pp;
-    let previousSpecified = this.prevLink || this.prev;
+    const previousSpecified = this.prevLink || this.prev;
     if (!previousSpecified) {
       if (this.timeService.getYear()) {          // If no previous link has been specified, try to devise previous from context time.
         pp = this.previousFromTime();
@@ -297,12 +298,11 @@ export class NavService {
       }
     }
     this.netService.onExists(l)
-      .then(function (req) {
+      .subscribe(req => {
         const foundSibling = {label: label, link: l};
-        this.$log.debug('Found sibling %o', foundSibling);
+        console.debug('Found sibling %o', foundSibling);
         foundProc(foundSibling);
-      })
-      .catch(function (failReq) {
+      }, failReq => {
         const currentDate = new Date();
         if (y < currentDate.getFullYear()) {
           self.findTimeSibling(y, m, changeProc, foundProc);

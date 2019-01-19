@@ -10,8 +10,8 @@ export class AnchorDirective {
   constructor(private el: ElementRef) {
     console.log('handling ' + el.nativeElement);
     const e: any = el.nativeElement;
-    const path = e.pathname + e.hash;
-    //console.log('href', e.href, path)
+    // const path = e.pathname + e.hash;
+    // console.log('href', e.href, path)
     if (e.hostname && e.hostname.indexOf('.') > 0 && e.hostname !== location.host) {
       e.target = '_blank';
     }

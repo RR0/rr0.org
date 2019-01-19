@@ -1,10 +1,10 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 
-import { org, CommonsService } from '../Commons.service';
-import { LangService } from '../lang.service';
-import { NavService } from './Nav.service';
-import { PeopleService } from '../people/people.service';
-import { TimeService } from '../time/Time.service';
+import {org, CommonsService} from '../Commons.service';
+import {LangService} from '../lang.service';
+import {NavService} from './Nav.service';
+import {PeopleService} from '../people/people.service';
+import {TimeService} from '../time/Time.service';
 
 @Component({
   selector: 'rr0-header',
@@ -28,7 +28,10 @@ export class HeaderComponent implements OnInit {
   header: HTMLElement;
   titleUrl: string;
 
-  constructor(private commonsService: CommonsService, private langService: LangService, private peopleService: PeopleService, private timeService: TimeService, private navService: NavService, private elem: ElementRef) {
+  constructor(private commonsService: CommonsService, private langService: LangService,
+              private peopleService: PeopleService, private timeService: TimeService, private navService: NavService,
+              private elem: ElementRef) {
+    console.log('HeaderComponent');
   }
 
   ngOnInit() {
@@ -39,14 +42,14 @@ export class HeaderComponent implements OnInit {
     }
     const el = this.elem.nativeElement;
 
-    this.scrolled = <HTMLElement>document.querySelector(".contents");
+    this.scrolled = <HTMLElement>document.querySelector('.contents');
     this.header = <HTMLElement>document.querySelector('header');
     this.nav = el.querySelector('nav');
     this.text = <HTMLElement>this.scrolled.querySelector('.text');
     this.titleSection = {
       label: this.title,
       outlineLabel: this.title,
-      id: "top",
+      id: 'top',
       level: 0,
       elem: document.querySelector('#top')
     };
@@ -54,7 +57,8 @@ export class HeaderComponent implements OnInit {
     this.outline = <HTMLElement>document.querySelector('.outline');
 
     if (!this.title) {
-      this.navService.setTitle(this.commonsService.capitalizeFirstLetter("" + (this.titleFromTime() || this.titleFromPeople() || this.titleFromURI())));
+      this.navService.setTitle(this.commonsService.capitalizeFirstLetter(''
+        + (this.titleFromTime() || this.titleFromPeople() || this.titleFromURI())));
     }
 
     this.scrolled.onscroll = (event) => {
@@ -62,9 +66,9 @@ export class HeaderComponent implements OnInit {
     };
 
     if (window.addEventListener) {      // most non-IE browsers and IE9
-      window.addEventListener("resize", this.onResize.bind(this), false);
+      window.addEventListener('resize', this.onResize.bind(this), false);
     } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
-      (<any>window).attachEvent("onresize", this.onResize.bind(this));
+      (<any>window).attachEvent('onresize', this.onResize.bind(this));
     }
 
     this.init();
@@ -86,10 +90,10 @@ export class HeaderComponent implements OnInit {
   private processMeta() {
     const metas = document.querySelectorAll('meta');
     Array.from(metas).forEach(meta => {
-      var name = meta.getAttribute('name');
-      var content = meta.getAttribute('content');
-      var urlPos = content.indexOf(';url=');
-      var link = urlPos > 0 ? content.substring(urlPos) : undefined;
+      const name = meta.getAttribute('name');
+      const content = meta.getAttribute('content');
+      const urlPos = content.indexOf(';url=');
+      const link = urlPos > 0 ? content.substring(urlPos) : undefined;
       switch (name) {
         case 'url':
           this.titleUrl = content;
@@ -115,26 +119,27 @@ export class HeaderComponent implements OnInit {
 
   private scrollTo(id) {
     const anchor = document.getElementById(id);   // anchor.scrollIntoView(true, 'smooth');
-    //hideOutline();
+    // hideOutline();
     this.smoothScroll(anchor, 500);
   }
 
   private smoothScroll(anchor, duration) {
     const easingPattern = function (percent) {
-      return percent < 0.5 ? 4 * percent * percent * percent : (percent - 1) * (2 * percent - 2) * (2 * percent - 2) + 1; // acceleration until halfway, then deceleration
+      return percent < 0.5 ? 4 * percent * percent * percent
+        : (percent - 1) * (2 * percent - 2) * (2 * percent - 2) + 1; // acceleration until halfway, then deceleration
     };
     // Get the height of a fixed header if one exists
     const headerHeight = this.getHeadingHeight();
 
     // Calculate how far to scroll
     const startLocation = this.scrolled.scrollTop;
-    const getEndLocation = function (anchor) {
+    const getEndLocation = function (a) {
       let location = 0;
-      if (anchor.offsetParent) {
+      if (a.offsetParent) {
         do {
-          location += anchor.offsetTop;
-          anchor = anchor.offsetParent;
-        } while (anchor);
+          location += a.offsetTop;
+          a = a.offsetParent;
+        } while (a);
       }
       location = location - headerHeight;
       return location >= 0 ? location : 0;
@@ -174,7 +179,7 @@ export class HeaderComponent implements OnInit {
       }
       if (this.searchResults) {
         this.searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px';
-        this.searchResults.style.left = "";
+        this.searchResults.style.left = '';
       }
     }
   }
@@ -201,13 +206,13 @@ export class HeaderComponent implements OnInit {
       if (isNavCollapsed || !this.outline) {
         this.nav.classList.remove('collapsed');
         this.text.style.paddingTop = '0';
-        //this.$apply(function () {
+        // this.$apply(function () {
         // if (outline && outline.childElementCount > 0) {
         this.setOutline('Sommaire');
         /* } else {
          setOutline('');
          }*/
-        //});
+        // });
         this.selectOutline(null);
         this.updatePos();
       }
@@ -217,9 +222,9 @@ export class HeaderComponent implements OnInit {
       } else {
         this.nav.classList.add('collapsed');
         this.text.style.paddingTop = this.getNavHeight() + 'px';
-        //this.$apply(function () {
+        // this.$apply(function () {
         this.setOutline(this.title);
-        //});
+        // });
         this.selectOutline(this.titleSection);
         this.updatePos();
       }
@@ -235,7 +240,7 @@ export class HeaderComponent implements OnInit {
   private select(toSelect) {
     let toSelectElem;
     if (toSelect) {
-      toSelectElem = document.querySelector("#out-" + toSelect.id);
+      toSelectElem = document.querySelector('#out-' + toSelect.id);
       /*if (currentSection && toSelectElem[0] === currentSection[0]) {
        return;
        }*/
@@ -292,7 +297,7 @@ export class HeaderComponent implements OnInit {
   private navInit(s, sLink, c, cLink, p, pLink, n, nLink) {
     const onLoadDo = this.navService.setStart(s, sLink);
     if (window === top) {
-      this.navService.addRel(sLink, "Start");
+      this.navService.addRel(sLink, 'Start');
     }
     //    if (onLoadDo) domLoadProcs.push(onLoadDo);
     this.navService.setContents(c, cLink);
@@ -306,13 +311,15 @@ export class HeaderComponent implements OnInit {
 
   private checkAlt() {
     if (!this.alternate) {
-      this.alternate = " ";
+      this.alternate = ' ';
       this.langService.checkAlternate(this.commonsService.getUri(),
         original => {
-          this.setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce document est une traduction");
+          this.setAlternates(original ? '<a href="' + original + '>&#8668; Texte d\'origine</a>'
+            : '&#9888; Ce document est une traduction');
         },
         translation => {
-          this.setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible");
+          this.setAlternates(translation ? '<a href="' + translation + '>&#8669; Traduction fran\xE7aise</a>'
+            : '&#9888; Pas de traduction disponible');
         });
     }
   }
@@ -322,16 +329,16 @@ export class HeaderComponent implements OnInit {
 
     const startNav = this.navService.getStartNav();
     if (window === top) {
-      this.addPrev(startNav, startNav.title, "start");
+      this.addPrev(startNav, startNav.title, 'start');
       this.addPrev({
         label: '' + this.navService.getContents(),
         link: this.navService.getContentsURL()
-      }, "Table des mati\xE8res", "toc");
+      }, 'Table des mati\xE8res', 'toc');
       this.navService.getPrev().then(function (pp) {
-        this.addPrev(pp, "Pr\xE9c\xE9dent", "prev");
+        this.addPrev(pp, 'Pr\xE9c\xE9dent', 'prev');
       });
       this.navService.getNext().then(function (nn) {
-        this.addNext(nn, "Suivant", "next");
+        this.addNext(nn, 'Suivant', 'next');
       });
     } else {
       //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
@@ -339,7 +346,7 @@ export class HeaderComponent implements OnInit {
     }
 
     this.alternate = null;
-    const alternateClass = "alternate";
+    const alternateClass = 'alternate';
 
     this.createNavElement(alternateClass);
     this.checkAlt();
@@ -357,10 +364,10 @@ export class HeaderComponent implements OnInit {
     let title = this.timeService.getYear();
     if (title) {
       if (this.timeService.getTime().month) {
-        title = this.timeService.monthName() + " " + title;
+        title = this.timeService.monthName() + ' ' + title;
         const dayOfMonth = this.timeService.getDayOfMonth();
         if (dayOfMonth) {
-          title = this.timeService.dayOfWeekName(this.timeService.getDayOfWeek()) + " " + dayOfMonth + " " + title;
+          title = this.timeService.dayOfWeekName(this.timeService.getDayOfWeek()) + ' ' + dayOfMonth + ' ' + title;
         }
       }
     }
@@ -370,9 +377,9 @@ export class HeaderComponent implements OnInit {
   private createNavElement(c) {
     let li = document.getElementsByClassName(c)[0];
     if (!li) {
-      li = document.createElement("li");
-      c = !(!c) ? org.constantClass + " " + c : org.constantClass;
-      li.setAttribute("class", c);
+      li = document.createElement('li');
+      c = !(!c) ? org.constantClass + ' ' + c : org.constantClass;
+      li.setAttribute('class', c);
       this.navService.getNavList().appendChild(li);
     }
     return li;
@@ -390,9 +397,9 @@ export class HeaderComponent implements OnInit {
   private titleFromURI(): string {
     let title: string;
     const uri = this.commonsService.getUri();
-    const ls = uri.lastIndexOf("/");
-    const htmlExt = uri.lastIndexOf(".html");
-    if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) !== "index") {
+    const ls = uri.lastIndexOf('/');
+    const htmlExt = uri.lastIndexOf('.html');
+    if (htmlExt > 0 && uri.substring(htmlExt - 5, htmlExt) !== 'index') {
       title = uri.substring(ls + 1, htmlExt);
     } else if (ls < uri.length - 1) {
       let ps = ls - 1;
@@ -408,7 +415,7 @@ export class HeaderComponent implements OnInit {
 
   private addPrev(pp, tt, c) {
     this.ps.push({
-      label: this.commonsService.capitalizeFirstLetter("" + pp.label),
+      label: this.commonsService.capitalizeFirstLetter('' + pp.label),
       link: pp.link,
       title: tt,
       style: c
@@ -417,7 +424,7 @@ export class HeaderComponent implements OnInit {
 
   private addNext(nn, tt, c) {
     this.ns.push({
-      label: this.commonsService.capitalizeFirstLetter("" + nn.label),
+      label: this.commonsService.capitalizeFirstLetter('' + nn.label),
       link: nn.link,
       title: tt,
       style: c

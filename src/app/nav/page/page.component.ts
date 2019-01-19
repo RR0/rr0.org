@@ -5,7 +5,7 @@ import { NetService } from '../../Net.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-page',
+  selector: 'rr0-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss'],
   providers: [NetService]
@@ -16,6 +16,7 @@ export class PageComponent implements OnInit {
   text: string;
 
   constructor(private route: ActivatedRoute, private netService: NetService, private router: Router) {
+    console.log('PageComponent');
     this.route.params.subscribe(res => {
       let url: string = decodeURI(res.pageId);
       url = url.replace('-', '/');

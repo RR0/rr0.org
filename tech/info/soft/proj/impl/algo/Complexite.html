@@ -1,0 +1,96 @@
+<!--#include virtual="/header-start.html" -->
+<title>Complexité algorithmique</title>
+<!--#include virtual="/header-end.html" -->
+<p>Comportement asymptotique.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Estimer la performance d'un <a href=".">algorithme</a> en fonction de la taille de ses entrées (n).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une complexité peut être :</p>
+  <ul>
+    <li><strong>temporelle</strong> : sa rapidité (dans le pire, le meilleur des cas, en moyenne), généralement en
+      fonction de la taille des données à traiter
+    </li>
+    <li><strong>spatiale</strong> : sa consommation mémoire ("en place" si consommation nulle, etc.), généralement en
+      fonction de la taille des données à traiter
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Une complexité est généralement représentée sous forme d'Ordre de grandeur, noté O.</p>
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">Complexité</th>
+      <th>Notation (n)</th>
+      <th>Exemple</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td colspan="2">Constante</td>
+      <td>O(1)</td>
+      <td>Accès tableau</td>
+    </tr>
+    <tr>
+      <td colspan="2">Logarithmique</td>
+      <td>O(log(n))</td>
+      <td>Dichotomie (meilleurs <a href="sort">tris</a>, <a
+          href="/tech/info/soft/proj/impl/struct/graph/tree">arbres</a> équilibrés)
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">Linéaire</td>
+      <td>O(n)</td>
+      <td>Parcours de liste</td>
+    </tr>
+    <tr>
+      <td colspan="2">Quasi-linéaire (ou linéarithmique ou loglinéaire)</td>
+      <td>O(n.log(n))</td>
+      <td>Transformation fast fourrier</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Polynomiale</td>
+      <td>Quadratique</td>
+      <td>O(n<sup>2</sup>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Cubique</td>
+      <td>O(n<sup>3</sup>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Polynomiale</td>
+      <td>O(n<sup>e</sup>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2">Sous-exponentielle</td>
+      <td>O(n<sup>log(n)</sup>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2">Polylogarithmique</td>
+      <td>O(log(n)<sup>e</sup>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2">Exponentielle</td>
+      <td>O(e<sup>n</sup>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2">Factorielle</td>
+      <td>O(n!)</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,104 @@
+<!--#include virtual="/header-start.html" -->
+<title>Évaluation d'un modèle de M. L.</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Evaluer les résultats d'un modèle de <a href="..">data science</a> pour :</p>
+  <ul>
+    <li>Optimiser son paramétrage, ou le cas échéant :</li>
+    <li>changer de modèle</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Il peut bien sûr arriver qu'un algorithme d'apprentissage ne donne pas les résultats escomptés. On pourra alors
+    opter pour différentes stratégies pour essayer de l'améliorer</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>Résoud l'<i lang="en"><a href="/science/discipline/math/stat/regress/underfit">underfitting</a> (high
+        bias)</i></th>
+      <th>Résoud l'<i lang="en"><a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a> (high
+        variance)</i>
+      </th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Entraîner l'algorithme sur <strong>plus de données</strong></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>pour qu'il acquière une vision plus fine du problème</td>
+    </tr>
+    <tr>
+      <td>Enlever des caractéristiques</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>L'hypothèse est trop dépendante des données connues, elle pourrait ne pas bien prédire de nouvelles données
+      </td>
+    <tr>
+    <tr>
+      <td>Augmenter le facteur de <strong><a
+          href="/science/discipline/math/stat/regress/regul">régularisation</a></strong></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>La pénalisation de paramètres permet de moins coller aux données connues</td>
+    </tr>
+    <tr>
+      <td>Diminuer le facteur de <strong><a
+          href="/science/discipline/math/stat/regress/regul">régularisation</a></strong></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td>Ne pas trop pénaliser les paramètres permet de mieux prendre en compte les données connues</td>
+    </tr>
+    <tr>
+      <td>Ajouter des caractéristiques</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td>L'hypothèse est trop simple. Des caractéristiques pourraient manquer à résoudre le problème</td>
+    <tr>
+    <tr>
+      <td>Ajouter des <strong>caractéristiques polynomiales</strong> (`x_1^2, x_2^2, x_1x_2`, etc.) si c'est adapté à
+        votre algorithme
+      </td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td>permettront de mieux cerner les hypothèses</td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Cependant le travail nécessaire à ces améliorations peut se révéler long et il est recommandé de mener au préalable
+    une analyse/un diagnostic aidant à sélectionner l'option la plus prometteuse. Ceci commence souvent par segmenter
+    les données disponibles en ensembles de :</p>
+  <ul>
+    <li><strong>entraînement</strong> (<i lang="en">training set</i>) (60%, choisis aléatoirement si l'ordre est
+      important) à partir duquel le modèle va apprendre (trouver ses paramètres optimaux) ;</li>
+    <li><strong>test</strong> (<i lang="en">test set</i>) (20%, choisis aléatoirement si l'ordre est important) pour
+      évaluer la performance de l'apprentissage sur des données qu'il n'a pas encore rencontrées ;</li>
+    <li><strong>vérification</strong> (<i lang="en">cross-validation set</i>) (20%, choisis aléatoirement si l'ordre est
+      important) pour trouver le paramétrage de <a href="/science/discipline/math/stat/regress/regul">régularisation</a>
+      (on peut ainsi même automatiser cette recherche du meilleur taux de régularisation).
+    </li>
+  </ul>
+  <p>ce qui permet d'utiliser une fonction de <a href="/science/discipline/math/stat/regress/cost">calcul de coût</a>
+    paramétrée pour un ensemble sur un autre ensemble. Il pourra aussi être utile de tracer les "courbes
+    d'apprentissage" (<i lang="en">learning curves</i>) que représentent les erreurs (sans régularisation) des ensembles
+    d'entraînement et de validation, en fonction de la taille de l'ensemble d'entraînement : ces courbes qui devraient
+    converger peuvent en effet être indicatrices d'un <a href="/science/discipline/math/stat/regress/underfit"><i
+        lang="en">underfitting</i></a> (biais élevé si la convergence s'effectue mais ne parvient pas à descendre d'un
+    haut taux d'erreurs) ou <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a> (variance
+    élevée si les erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble d'entraînement).
+  </p>
+  <p>On pourra utiliser la <a href="/science/discipline/math/stat/pca">PCA</a> pour réduire le nombre de features (mais
+    <em>pas</em> pour éviter le <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a>).</p>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

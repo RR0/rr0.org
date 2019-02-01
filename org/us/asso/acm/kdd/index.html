@@ -11,8 +11,55 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p><span class="source"><a href="http://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html">Overview of the KDD Process</a></span>
+  <figure class="right side">
+    <figcaption>Les étapes du processus KDD</figcaption>
+    <img src="kdd.gif" alt="Les étapes du processus KDD"/>
+  </figure>
+  <p>Les étapes du processus KDD sont :<span class="source"><a
+      href="http://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html">Overview of the KDD Process</a></span>
   </p>
+  <ol>
+    <li><strong>Compréhension métier :</strong>
+      <ul>
+        <li>du domaine de l'application</li>
+        <li>de la connaissance antérieure pertinente</li>
+        <li>des objectifs du client final</li>
+      </ul>
+    </li>
+    <li><strong>créer un ensemble de données cible</strong> : sélectionner un ensemble de données, ou se concentrer sur
+      un sous-ensemble de variables, ou des échantillons de données, sur lesquels la découverte doit être faite.</li>
+    <li><strong>Nettoyage et prétraitement des données</strong>
+      <ul>
+        <li>Suppression du bruit ou des valeurs aberrantes (<i lang="en">outliers</i>)</li>
+        <li>Recueil de l'information nécessaire pour modéliser ou expliquer le bruit</li>
+        <li>Stratégies pour gérer les colonnes où manquent des données</li>
+        <li>Expliquer la séquence temporelle et les changements connus</li></ul>
+    </li>
+    <li><strong>Réduction et projection de données</strong>
+      <ul>
+        <li>Recherche des colonnes utiles pour représenter les données en fonction de l'objectif de la tâche.
+        </li>
+        <li>Utiliser la réduction de dimensions ou des méthodes de transformation pour réduire le nombre effectif de
+          variables prises consideration ou pour trouver des représentations invariantes des données.</li>U
+      </ul>
+    </li>
+    <li><strong>Choix de la tâche de data mining</strong> : Décider si l'objectif du processus KDD est la <a
+        href="/science/discipline/math/stat/regress/logistic">classification</a>, la <a
+        href="/science/discipline/math/stat/regress">régression</a>, le <a
+        href="/tech/info/soft/data/science/ml/kmeans">clustering</a>, etc.</li>
+    <li><strong>Choix d(es) algorithme(s) de Data Mining</strong>
+      <ul>
+        <li>Sélectionner la ou les méthodes à utiliser pour rechercher des schémas dans les données.</li>
+        <li>Décider quels modèles et paramètres pourraient être appropriés.</li>
+        <li>Faire correspondre une méthode de data mining donnée avec l'ensemble des critères du processus KDD.</li>
+      </ul>
+    </li>
+    <li><strong>Data mining</strong> : Rechercher des schémas intéressants dans une forme particulière de représentation
+      ou un ensemble de ces représentations en tant que arbres ou règles de classification, regression, clustering, etc.
+    </li>
+    <li><strong>Interpréter les schémas trouvés.</strong></li>
+    <li><strong>Consolider la connaissance découverte.</strong></li>
+  </ol>
 </section>
 <section>
   <h2>Notes</h2>

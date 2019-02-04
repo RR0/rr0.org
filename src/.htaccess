@@ -1,4 +1,4 @@
-Options +Indexes FollowSymLinks ExecCGI Includes
+Options Indexes FollowSymLinks ExecCGI Includes
 <IfModule mod_autoindex.c>
 IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=* SuppressHTMLPreamble
 HeaderName /dirheader.html
@@ -49,7 +49,7 @@ Redirect /data/Documents/articles/1989-11-29_Zetetism.html https://rr0.org/time/
 Redirect /java/ https://rr0.org/tech/info/soft/proj/impl/lang/java
 Redirect /tech/info/soft/data/doc/xml/XML.html https://rr0.org/tech/info/soft/data/doc/xml
 Redirect /tech/info/soft/securite https://rr0.org/tech/info/soft/sec
-Redirect //tech/info/soft/sec/confidentialite/Cryptographie.html https://rr0.org/tech/info/soft/sec/priv/Cryptographie.html
+Redirect /tech/info/soft/sec/confidentialite/Cryptographie.html https://rr0.org/tech/info/soft/sec/priv/Cryptographie.html
 Redirect /tech/info/soft/proj/impl/lang/SmallTalk.html https://rr0.org/tech/info/soft/proj/impl/lang/smalltalk
 Redirect /tech/info/1986.html /time/1/9/8/6
 Redirect /tech/info/soft/proj/design/arch/web/JavaScript.html https://rr0.org/tech/info/soft/proj/impl/lang/javascript
@@ -872,4 +872,5 @@ RewriteCond %{HTTP_REFERER} !^http://www.rr0.org$      [NC]
 RewriteRule .*\.(jpg|jpeg|jpe|gif|bmp|png)$ http://rr0.org/Referencement.html [R,NC]
 
 RewriteCond %{SERVER_PORT} 80
+RewriteCond %{SERVER_NAME} rr0.org
 RewriteRule ^(.*)$ https://rr0.org/$1 [R,L]

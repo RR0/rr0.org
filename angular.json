@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rr0",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -21,7 +21,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/.htaccess"
+              "src/.htaccess",
+              "src/header-start.html",
+              "src/header-end.html",
+              "src/footer.html",
+              "src/footer-start.html",
+              "src/footer-end.html",
+              "src/app/rr0.css"
             ],
             "styles": [
               "src/styles.css"

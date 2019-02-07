@@ -17,24 +17,12 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <base target="_top"/>
   <title>{{ page.title }}</title>
-{% if page.author %}
-  <meta name="author" content="{{page.author}}">
-{% endif %}
-{% if page.copyright %}
-  <meta name="copyright" content="{{page.copyright}}">
-{% endif %}
-{% if page.prev %}
-  <link rel="prev" href="{{page.prev.href}}" title="{{page.prev.title}}">
-{% endif %}
-{% if page.next %}
-  <link rel="next" href="{{page.next.href}}" title="{{page.next.title}}">
-{% endif %}
-{% if page.start %}
-  <link rel="start" href="{{page.start.href}}" title="{{page.start.title}}">
-{% endif %}
-{% if page.contents %}
-  <link rel="contents" href="{{page.contents.href}}" title="{{page.contents.title}}">
-{% endif %}
+{% if page.author %}<meta name="author" content="{{page.author}}">{% endif %}
+{% if page.copyright %}<meta name="copyright" content="{{page.copyright}}">{% endif %}
+{% if page.prev %}<link rel="prev" href="{{page.prev.href}}" title="{{page.prev.title}}">{% endif %}
+{% if page.next %}<link rel="next" href="{{page.next.href}}" title="{{page.next.title}}">{% endif %}
+{% if page.start %}<link rel="start" href="{{page.start.href}}" title="{{page.start.title}}">{% endif %}
+{% if page.contents %}<link rel="contents" href="{{page.contents.href}}" title="{{page.contents.title}}">{% endif %}
 </head>
 <body>
 <div class="contents no-side">

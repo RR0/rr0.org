@@ -1,4 +1,6 @@
 source: .
 destination: ./dist
 build: debug
-exclude: [CAIPAN, index2.html, place, science, people, croyance, images, lib, org, politique, tech, contextual, odom, test, public, bower_components, node_modules, droit, js, logs, dist, coverage, cgi-bin, Documents, celeris, jekyll-site]
+exclude: [time, src, e2e, CAIPAN, index2.html, place, science, people, croyance, images, lib, org, politique, tech,
+          contextual,
+          odom, test, public, bower_components, node_modules, droit, js, logs, dist, coverage, cgi-bin, Documents, celeris, jekyll-site]

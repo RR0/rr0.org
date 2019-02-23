@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ContentChild, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { NetService } from '../../Net.service';
@@ -15,9 +15,9 @@ export class PageComponent implements OnInit {
   page: HTMLDocument;
   text: string;
 
-  constructor(private route: ActivatedRoute, private netService: NetService, private router: Router) {
+    constructor(/*private route: ActivatedRoute, private netService: NetService, private router: Router*/) {
     console.log('PageComponent');
-    this.route.params.subscribe(res => {
+    /*this.route.params.subscribe(res => {
       let url: string = decodeURI(res.pageId);
       url = url.replace('-', '/');
       if (url && !url.startsWith('404')) {
@@ -32,7 +32,7 @@ export class PageComponent implements OnInit {
             router.navigate(['404'], { skipLocationChange: true });
           });
       }
-    });
+    });*/
   }
 
   ngOnInit() {

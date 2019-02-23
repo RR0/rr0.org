@@ -107,7 +107,7 @@ export class NavService {
     ];
 
   constructor(private commonsService: CommonsService, private netService: NetService, private timeService: TimeService,
-              private titleService: Title, private metaService: Meta, private router: Router) {
+              private titleService: Title, private metaService: Meta, /*private router: Router*/) {
     /*router.events.subscribe((event: Event) => {
         console.log('event', event);
       if (event instanceof NavigationStart) {

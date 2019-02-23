@@ -18,13 +18,15 @@ import { HomeComponent } from './home/home.component';
 import { RedirectComponent } from './redirect/Redirect.component';
 import { AnchorDirective } from './rr0-a.directive';
 import { PageNotFoundComponent } from './notfound/PageNotFound.component';
+import {RouterModule} from '@angular/router';
 
 export const hiddenPos = '-100em';
 
 @NgModule({
-  imports: [CommonModule, NetModule, SearchModule, /* LangModule, PeopleModule, TimeModule */],
+  imports: [CommonModule, NetModule, SearchModule, RouterModule, /* LangModule, PeopleModule, TimeModule */],
   declarations: [HeaderComponent, PageComponent, HomeComponent, PageNotFoundComponent, RedirectComponent, AnchorDirective],
-  entryComponents: [HeaderComponent, PageComponent],
+  entryComponents: [PageComponent],
+  exports: [PageComponent],
   providers: [NetService, CommonsService, TimeService, LangService, PeopleService]
 })
 export class NavModule { }

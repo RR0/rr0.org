@@ -1,6 +1,3 @@
-source: .
-destination: ./dist
+source: ./src
+destination: ./generated
 build: debug
-exclude: [time, src, e2e, CAIPAN, index2.html, place, science, people, croyance, images, lib, org, politique, tech,
-          contextual,
-          odom, test, public, bower_components, node_modules, droit, js, logs, dist, coverage, cgi-bin, Documents, celeris, jekyll-site]

@@ -12,7 +12,7 @@ import { SearchModule } from './search/search.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NavModule, SearchModule/*, TimeModule, LangModule*/],
+  imports: [BrowserModule, FormsModule, HttpClientModule, NavModule, SearchModule/*, TimeModule, LangModule*/],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })

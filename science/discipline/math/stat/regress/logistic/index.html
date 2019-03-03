@@ -13,12 +13,13 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>On veut ici classer des données comme appartenant à une classe ou à une autre : cela implique que `y` doit avoir
-    des valeurs discrètes (i.e. autant de valeurs que de classes possibles) et non pas une valeur continue (comme en <a
-        href="/science/discipline/math/stat/regress/linear">régression linéaire</a>).</p>
+  <p>On veut ici classer des données comme appartenant à une classe ou à une autre : cela implique que `y` (la valeur
+    connue ou à prédire) doit avoir des valeurs <strong>discrètes</strong> (i.e. autant de valeurs que de classes
+    possibles) et non pas une valeur continue (comme en <a href="/science/discipline/math/stat/regress/linear">régression
+      linéaire</a>).</p>
   <p>Cela implique que la fonction hypothèse `h` doit elle aussi prédire un résultat sous forme de valeurs discrètes
-    dans l'intervalle correspondant à celles de `y`. Par exemple pour un cas binaire soit `y(x)` appartient à la classe
-    "positive" (`y = 1`), soit à la classe "négative" (`y = 0`).</p>
+    dans l'intervalle correspondant à celles de `y`¬. Par exemple pour un cas binaire soit `y(x)` appartient à la classe
+    "positive" (`y = 1`), soit à la classe "négative" (`y = 0` ou `y = -1` selon les choix techniques).</p>
   <section>
     <h3>Classes multiples</h3>
     <p>Lorsque l'on doit classer entre `K > 2` classes, c'est-à-dire que `y = { 0, 1, 2, ..., K }`, on décompose le
@@ -28,13 +29,22 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher (par "chance") mais comporte trop
-    de risque de faux positifs/négatifs.</p>
-  <p>On préfère donc encapsuler notre hypothèse dans une <a href="/science/discipline/math/stat/Sigmoide.html">fonction
-    logistique</a> `g(z)` qui transforme tout résultat en une valeur tendant vers 0 ou 1. Dans notre cas si le vecteur
-    `x` représente les caractéristiques (<em>features</em>) de éléments à classer :</p>
+  <p>Soit le vecteur `x` représentant les caractéristiques (<em>features</em>) de éléments à classer, notre fonction :
+  </p>
   <p>`z=θ^Tx`</p>
-  <p>et on définit donc `h_θ(x)` comme la probabilité P que `y = 1` (et donc `1 - P` que `y = 0) :</p>
+  <p>Cependant utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher (par "chance") mais
+    comporte trop de risque de faux positifs/négatifs.</p>
+  <p>On choisit donc d'encapsuler notre hypothèse dans une <strong><a
+      href="/tech/info/soft/data/science/ml/nn/activation">fonction d'activation</a></strong> `g(z)` qui transforme tout
+    résultat en une valeur tendant vers nos valeurs de classe :</p>
+  <ul>
+    <li>une <strong>fonction signe</strong> (<i>signum</i>) s'il s'agit d'une classification binaire, qui fait alors
+      correspondre chacune des 2 classes vers -1 ou 1</li>
+    <li>une <a href="/science/discipline/math/stat/Sigmoide.html"><strong>fonction logistique</strong> (sigmoide)</a>,
+      qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
+  </ul>
+  <p>et on définit donc `h_θ(x)` comme la <em>probabilité</em> `P` que `y = 1` (et donc probabilité `1 - P` que `y`
+    valle l'autre classe :</p>
   <p>`h_θ(x)=g(θ^Tx)`</p>
   <p>ou, si l'on remplace `g` par sa définition <a href="/science/discipline/math/stat/Sigmoide.html">sigmoïde</a> :</p>
   <p>`h_θ(x)=1/(1+e^(−θ^Tx))`</p>
@@ -76,7 +86,8 @@
     <p>ou si on l'insère dans la formule complète du <a href="/science/discipline/math/stat/regress/cost">coût</a> en
       sortant le signe et en y ajoutant le terme de <a
           href="/science/discipline/math/stat/regress/regul">régularisation</a> :</p>
-    <p>`J(Θ) = -1/m sum_(i=1)^m [y^((i)) log(h_θ(x^((i))))+(1−y^((i)))log(1−h_θ(x^((i))))] + λ/(2m) sum_(j=1)^n θ_j^2`</p>
+    <p>`J(Θ) = -1/m sum_(i=1)^m [y^((i)) log(h_θ(x^((i))))+(1−y^((i)))log(1−h_θ(x^((i))))] + λ/(2m) sum_(j=1)^n
+      θ_j^2`</p>
   </section>
   <section>
     <h3>Précision et rappel</h3>
@@ -133,7 +144,7 @@
       nouvelle matrice contenant `x_1, x_2, x_1^2, x_1*x_2, x_2^2, x_1^3, ..., x_1*x_2^5, x_2^6`, ce qui permet de
       tracer des contours complexes (courbes, non-linéaires).</li>
     <li>La régression logistique n'est pas la seule méthode de classification ; on pourra également utiliser un <a
-        href="/tech/info/soft/data/science/ml/deep/nn">réseau de neurones</a>.</li>
+        href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>.</li>
     <li>Une optimisation de la régression logistique est l'algorithme <a
         href="/tech/info/soft/data/science/ml/svm">SVM</a>.</li>
   </ul>
@@ -154,13 +165,17 @@
   }</style>
 <script>
   var i = 4;
-  var y1 = JXG.JSXGraph.initBoard('y1', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
+  var y1 = JXG.JSXGraph.initBoard('y1', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
   y1.create('functiongraph', [function (x) {
     return -Math.log(1 / (1 + Math.exp(-x)));
   }, -i, i]);
-  var y0 = JXG.JSXGraph.initBoard('y0', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
+  var y0 = JXG.JSXGraph.initBoard('y0', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
   y0.create('functiongraph', [function (x) {
     return -Math.log(1 - 1 / (1 + Math.exp(-x)));
   }, -i, i]);

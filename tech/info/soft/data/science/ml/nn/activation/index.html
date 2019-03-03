@@ -1,0 +1,47 @@
+<!--#include virtual="/header-start.html" -->
+<title>Fonction d'activation</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Forward propagation</i>.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Transformer un signal continu en booléen.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Dans les <a href="/tech/info/soft/data/science/ml/nn">NN</a>.</p>
+</section>
+<section>
+  <h3>Conception</h3>
+  <p></p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <table>
+    <thead>
+    <tr><th>Nom</th><th>Equation</th><th>Graphe</th><th>Commentaire</th></tr>
+    <tr><td>Marche (<i lang="en">heaviside</i>)</td><td>`g(x)={(0,pour,x < 0),(1,pour,x > 0):}`</td></tr>
+    </thead>
+  </table>
+</section>
+<!--#include virtual="/footer.html" -->
+<script>
+  var i = 4;
+  var y1 = JXG.JSXGraph.initBoard('y1', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  y1.create('functiongraph', [function (x) {
+    return -Math.log(1 / (1 + Math.exp(-x)));
+  }, -i, i]);
+  var y0 = JXG.JSXGraph.initBoard('y0', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  y0.create('functiongraph', [function (x) {
+    return -Math.log(1 - 1 / (1 + Math.exp(-x)));
+  }, -i, i]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

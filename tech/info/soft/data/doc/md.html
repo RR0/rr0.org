@@ -1,0 +1,45 @@
+<!--#include virtual="/header-start.html" -->
+<title>Markdown</title>
+<meta name="url" content="https://daringfireball.net/projects/markdown"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Rédaction simplifiée de documents <a href="xml/html">HTML</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Markdown propose de rédiger des documents à l'aide de raccourcis syntaxiques pour les différentes structures
+    <a href="xml/html">HTML</a> :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Markdown</th>
+      <th>HTML</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr> <td><code>*Texte*</code></td> <td><code>&lt;h1>Titre&lt;/h1></code> </td><td>Titre 1</td> </tr>
+    <tr> <td><code># Titre</code></td> <td><code>&lt;h1>Titre&lt;/h1></code> </td><td>Titre 1</td> </tr>
+    <tr> <td><code>## Sous-titre</code></td> <td><code>&lt;h2>Sous-titre&lt;/h2></code> </td><td>Titre 2</td> </tr>
+    <tr> <td><code>### Sous-sous-titre</code></td> <td><code>&lt;h3>Sous-sous-titre&lt;/h3></code> </td><td>Titre 3</td> </tr>
+    <tr> <td><code>#### Sous-sous-titre</code></td> <td><code>&lt;h4>Sous-sous-titre&lt;/h4></code> </td><td>Titre 4</td> </tr>
+    <tr> <td valign="top"><code>* Element 1<br/>* Element 2</code></td> <td><code>&lt;ul><br/>&nbsp;&nbsp;&lt;li>Element
+      1&lt;/li><br/>&nbsp;&nbsp;&lt;li>Element
+      2&lt;/li><br/>&lt;/ul></code>
+    </td><td>Liste non ordonnée</td> </tr>
+    <tr> <td valign="top"><code>1. Element 1<br/>1. Element 2</code></td>
+      <td><code>&lt;ol><br/>&nbsp;&nbsp;&lt;li>Element
+      1&lt;/li><br/>&nbsp;&nbsp;&lt;li>Element
+      2&lt;/li><br/>&lt;/ol></code>
+    </td><td>Liste ordonnée</td> </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Créé en <time>2004</time></li>
+    </ul>
+</section>
+<!--#include virtual="/footer.html" -->

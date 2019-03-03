@@ -1,0 +1,225 @@
+<!--#include virtual="/header-start.html" -->
+<title>BASIC</title>
+<!--#include virtual="/header-end.html" -->
+<p>Beginners' All-purpose Symbolic Instruction Code : code d'instructions tout usages pour débutants.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="..">langage de programmation</a> simple et généraliste.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>BASIC est un <a href="..">langage</a> procédural, généralement interprété.</p>
+  <p>Ses lignes d'instructions sont numérotées, ce qui permet des branchements divers.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <caption>
+      Syntaxe BASIC
+    </caption>
+    <thead>
+    <tr>
+      <th>Domaine</th> <th></th> <th valign="top"></th> <th></th> <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th rowspan="6" valign="top">Structures de données</th>
+      <th colspan="2" valign="top">Enumérations</th>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th rowspan="2" valign="top">Numériques</th>
+      <th valign="top">Entiers</th>
+      <td class="oui"><code>INT var</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">Flottants</th>
+      <td class="oui"><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th rowspan="2" valign="top">Caractères</th>
+      <th valign="top">Unique</th>
+      <td class="oui"><code><em>var</em>$</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">Chaîne</th>
+      <td class="oui"><code><em>var</em>$</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">Tableaux</th>
+      <td class="oui"><code>DIM <em>tab</em>(<em>taille</em>)</code></td>
+      <td><em>DIMension</em></td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Structures de contrôle</th>
+      <th colspan="2" valign="top">Condition</th>
+      <td class="oui"><code>IF condition THEN action1 ELSE
+        action2</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th rowspan="3" valign="top">Boucle</th>
+      <th valign="top">Itération</th>
+      <td class="oui"><code>FOR var=début TO
+        fin:<em>action</em>:NEXT</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">Suite</th>
+      <td class="oui"><code>NEXT var</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">Stop</th>
+      <td class="oui"><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top">Branchement</th>
+      <th valign="top"></th>
+      <td class="oui"><code>GOTO</code></td>
+      <td>Va à</td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th valign="top">Sous-programme</th>
+      <td class="oui"><code>GOSUB</code></td>
+      <td>Va à sous-routine</td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th valign="top">Retour de sous-programme</th>
+      <td class="oui"><code>RETURN</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Ecran</th>
+      <th colspan="2" valign="top">Effacement</th>
+      <td class="oui"><code>CLS</code></td>
+      <td><em>CLear Screen</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th rowspan="2" valign="top">Affichage</th>
+      <th valign="top">Expression</th>
+      <td class="oui"><code>PRINT expression</code></td>
+      <td>Imprime</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top"></th>
+      <th valign="top">Tabulation</th>
+      <td class="oui"><code>TAB(<em>n</em>)</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th valign="top">Positionnement</th>
+      <td class="oui"><code>LOCATE ligne,colonne</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Clavier</th>
+      <th valign="top">Lecture</th>
+      <th valign="top">Chaîne</th>
+      <td class="oui"><code>var=CHR$</code></td>
+      <td>Lit</td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th valign="top">Touche</th>
+      <td class="oui"><code>var=INKEY$</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top"></th>
+      <td class="oui"><code>READ var</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Commentaire</th>
+      <td class="oui"><code>REM commentaire</code>, <code>' commentaire</code></td>
+      <td><em>REMark</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Aléatoire</th>
+      <td class="oui"><code>RND(max)</code></td>
+      <td><em>RaNDom</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Code <a href="/tech/info/soft/data/doc/ASCII.html">ASCII</a></th>
+      <td class="oui"><code>ASC(var)</code></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de BASIC sont :</p>
+  <ul>
+    <li>Locomotive Basic </li>
+    <li>BASICA / GW-BASIC</li>
+    <li>Borland Turbo Basic</li>
+    <li>Quick Basic</li>
+    <li>Visual Basic</li>
+  </ul>
+  <p>Un exemple de code source BASIC est :</p>
+  <p><code>10 REM ZOO Création aléatoire, sur poême de M. Butor 07/24/86<br> 30 CLS:CLEAR:DEFSTR
+    A-H:DEFINT I-T<br> 40 DIM A(2),B(14),C(14),L(14),M(14)<br> 50 A(1)="A la tombée de la nuit":A(2)="Quand se sont refermées les grilles"<br> 60 FOR I=1
+    TO 14:READ B(I):NEXT<br> 70 FOR I=1
+    TO 14:READ C(I):NEXT<br> 80 FOR J1=1 TO
+    14:L(J1)=J1:NEXT<br> 90 FOR J2=1 TO
+    14:M(J2)=J2:NEXT<br> 100 PRINT TAB(30)"ZOO":PRINT
+    TAB(30) STRING$(9,"="):PRINT<br> 110 PRINT
+    A(1):PRINT A(2)<br> 120 FOR I=1 TO 14<br> 130
+    J1=RND(14):IF L(J1)&lt;1 THEN 130<br> 140
+    J2=RND(14):IF M(J2)&lt;1 THEN 140<br> 150
+    IF J1=14 THEN D1="rêvent " ELSE
+    D1="rêve "<br> 160 IF J2=13 THEN D2="aux " ELSE D2="à "<br> 170
+    PRINT B(J1);" ";D1;D2;C(J2)<br> 180 L(J1)=0:M(J2)=0<br> 190
+    NEXT I<br> 200 PRINT:PRINT TAB(40)"Autre création ?":GOSUB 10000<br> 210 IF H&lt;&gt;"O" THEN 220 ELSE CLS : GOTO
+    80<br> 220 CLS:END<br> 10000 IF INKEY$&lt;&gt;""
+    THEN 10010<br> 10010 H=INKEY$:IF H="" THEN 10010 ELSE IF ASC(H)&gt;95
+    THEN H=CHR$(ASC(H)-32)<br> 10020 RETURN<br> 10100
+    GOSUB 10000:IF ASC(H)&gt;57
+    THEN S=ASC(H)-55 ELSE S=ASC(H)-48 10110
+    RETURN</code></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Créé en <time>1964</time>.</p></section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Les branchements de type GOTO ligne produisent du "code spaghetti"</li>
+    <li>Pas de notion de constantes</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -12,11 +12,12 @@
     <figcaption>Descente de gradient vers un coût J minimal local (à droite) ou global (à gauche)</figcaption>
     <img src="gradient-descent.png" alt="Descente de gradient vers un coût J minimal local ou global"/>
   </figure>
-  <p>Si l'on considère une fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n` et une <a
-      href="/science/discipline/math/stat/regress/cost">fonction de coût</a> `J(θ)`, l'<a
-      href="/tech/info/soft/proj/impl/algo">algorithme</a> de descente de gradient consiste à changer (simultanément)
-    les `θ_n` en fonction de la pente (<a href="/science/discipline/math/ens/rel/func/deriv">dérivée</a>) induite par le
-    coût :</p>
+  <p>L'<a
+      href="/tech/info/soft/proj/impl/algo">algorithme</a> de descente de gradient consiste, si l'on considère :</p>
+  <ul><li>une fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n`</li><li>une <a
+      href="/science/discipline/math/stat/regress/cost">fonction de coût</a> `J(θ)`</li></ul>
+  <p>à changer (simultanément) les `θ_n` en fonction de la pente (<a href="/science/discipline/math/ens/rel/func/deriv">dérivée</a>)
+    induite par le coût :</p>
   <p><strong>Itérer</strong> jusqu'à convergence {<br/>
     &nbsp;&nbsp;`θ_j:=θ_j−α∂/(∂θ_j) J(θ)`<br/> }
   </p>
@@ -55,8 +56,9 @@
         <li>L-BFGS</li>
       </ul>
     </li>
-    <li>Une version plus performante (mais moins précise) est la descente de gradient <strong>stochastique</strong>, où l'on met à
-      jour les paramètres en fonction d'un seul échantillon de données (x) à chaque fois, au lieu de tous.</li>
+    <li>Une version plus performante (mais moins précise) est la descente de gradient <strong>stochastique</strong>, où
+      l'on met à jour les paramètres en fonction d'un seul échantillon de données (x) à chaque fois, au lieu de tous.
+    </li>
   </ul>
 </section>
 <section>

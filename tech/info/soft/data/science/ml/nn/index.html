@@ -4,15 +4,15 @@
 <p><i lang="en">Neural network</i> : Réseau de Neurones (RN).</p>
 <section>
   <h2>Motivation</h2>
-  <p><a href="../..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
+  <p><a href="..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
       href="/science/discipline/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Lorsque le nombre de critères est trop grand (reconnaissance d'image par ex), <a
+  <p>Lorsque le nombre de critères est trop grand (<a href="../ir">IR</a> par ex), <a
       href="/science/discipline/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse en calcul
-    (autant de features que de pixels) et il devient plus intéressant d'utiliser une alternative comme un réseau de
-    neurones .</p>
+    (autant de <i lang="en">features</i> que de pixels) et il devient plus intéressant d'utiliser une alternative comme
+    un réseau de neurones.</p>
   <p>À l'image des <a href="/science/discipline/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un neurone
     artificiel possède :</p>
   <ul>
@@ -33,8 +33,8 @@
         qu'elle contienne assez de neurones (généralement plus que dans les couches d'entrée et de sortie). Si plus
         d'une couche cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones.
         Enfin, plus le réseau sera complexe, plus il demandera du temps de calcul (amoindrissant la rapidité de réponse
-        donc) et plus il sera succeptible de faire de l'<a
-            href="/science/discipline/math/stat/regress/overfit">overfitting</a>.
+        donc) et plus il sera succeptible de faire du <a
+            href="/science/discipline/math/stat/regress/overfit">surapprentissage</a>.
       </li>
       <li>couche de `s_L` <strong>sorties</strong> (typiquement constituée de `n` neurones de sorties si la prédiction
         recherchée à `n` possibilités de réponses, par exemple 26 s'il s'agit de reconnaître une lettre de l'alphabet)
@@ -42,6 +42,9 @@
     </ol>
     <p>Par exemple pour 1 seule couche "cachée" (2) :</p>
     <p>`[[x_0],[x_1],[x_2],[x_3]] -> [[a_1^((2))],[a_2^((2))],[a_3^((2))]] -> hθ(x)`</p>
+    <p>Lorsqu'un réseau contient plusieurs couches cachées (impliquant autant de autant de niveaux d'<a
+        href="/tech/info/soft/proj/impl/lang/oo/Abstraction.html">abstraction</a>), on parle d'<a
+        href="deep"><strong>apprentissage profond</strong> (<i lang="en">deep learning</i>)</a>.</p>
   </section>
 </section>
 <section>

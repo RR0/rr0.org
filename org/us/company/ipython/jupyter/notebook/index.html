@@ -1,14 +1,118 @@
 <!--#include virtual="/header-start.html" -->
 <title>Jupyter notebook</title>
-<meta name="url" content="https://jupyter.org">
+<meta name="url" content="https://jupyter-notebook.readthedocs.io">
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
-  <p></p>
+  <p>Analyse interactive.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un notebook est constitué d'une séquence de cellules (<i lang="en">cells</i>) de type :</p>
+  <ul>
+    <li><strong>code</strong> à exécuter dans différents <a href="/tech/info/soft/proj/impl/lang">langages</a> (<a
+        href="/tech/info/soft/proj/impl/lang/python">Python</a>, etc.)</li>
+    <li><strong>texte</strong> (<i lang="en"><a href="/tech/info/soft/data/doc/md.html">markup</a></i>) à lire </li>
+  </ul>
+  <p>Chaque cellule peut être en mode :</p>
+  <ul>
+    <li><strong>édition</strong> pour rédiger du code ou du texte riche</li>
+    <li><strong>commande</strong> pour exécuter du code.</li></ul>
 </section>
 <section>
   <h2>Conception</h2>
   <p>Un notebook peut être sauvegardé dans un fichier au format spécifique.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <caption>Raccourcis</caption>
+    <thead>
+    <tr>
+      <th colspan="2">Contexte</th>
+      <th>Raccourci</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td colspan="2">Edition</td>
+      <td>Esc</td>
+      <td>Passe en mode commande</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Ctrl + Shift + <code>-</code></td>
+      <td>Scinde la cellule à l'endroit du curseur</td>
+    </tr>
+    <tr>
+      <td colspan="2">Commande</td>
+      <td>Enter</td>
+      <td>Passe en mode édition</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Haut</td>
+      <td>Remonter à cellule précédente</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Bas</td>
+      <td>Descendre à la cellule suivante</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Shift + Bas</td>
+      <td>Sélectionner des cellules vers le bas</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Shift + Haut</td>
+      <td>Sélectionner des cellules vers le haut</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><code>A</code></td>
+      <td>Insérer une cellule au-dessus (<i lang="en">Above</i>)</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><code>B</code></td>
+      <td>Insérer une cellule en-dessous (<i lang="en">Below</i>)</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><code>M</code></td>
+      <td>Transformer la cellule en texte (<i lang="en">Markdown</i>)</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><code>Y</code></td>
+      <td>Transformer la cellule en code</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><code>DD</code></td>
+      <td>Supprimer la cellule</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><code>Z</code></td>
+      <td>Annuler la supression de cellule</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Clic à gauche de cellules</td>
+      <td>Sélectionne la plage de cellules</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Cellules sélectionnées</td>
+      <td><code>M</code></td>
+      <td>Fusionner (<i lang="en">Merge</i>) les cellules</td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <section>
   <h2>Déploiement</h2>
@@ -16,5 +120,9 @@
   <ul>
     <li><a href="/org/us/company/continuumio">Anaconda</a></li>
   </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Successeur du notebook IPython prototypé en <time>2010</time>.</p>
 </section>
 <!--#include virtual="/footer.html" -->

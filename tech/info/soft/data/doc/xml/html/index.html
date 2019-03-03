@@ -1,0 +1,936 @@
+<!--#include virtual="/header-start.html" -->
+<meta name="url" content="http://www.w3.org/MarkUp">
+<title>HTML</title>
+<!--#include virtual="/header-end.html" -->
+<dt><dfn>Hyper-Text Markup Language</dfn></dt> :
+<dd>langage de balises pour l'hypertexte</dd>
+<section title="Besoin">
+  <p>Définir un language standard de description de documents sur le <a
+      href="../../../../proj/design/arch/web/index.html">Web</a>.</p>
+</section>
+<section title="Analyse">
+  <p>HTML est un langage simple permettant de décrire :</p>
+  <ul>
+    <li>le <strong>contenu</strong> : les données à présenter</li>
+    <li>la <strong>présentation</strong> : comment les données sont affichées (couleurs, fontes, casse, justification,
+      etc.) </li>
+    <li>le <strong>format de saisie</strong> d'informations saisies par le client (formulaires)</li>
+  </ul>
+</section>
+<section title="Conception">
+  <p>Un document HTML est une structure hiérarchique (<a href="../DOM.html">DOM</a>) de <strong>balises</strong>(<em>tags</em>),
+    interprétée par un <a href="../../../../proj/design/arch/web/client/index.html">navigateur Web</a>.</p>
+  <p>Parmi ces balises on trouve notamment :</p>
+  <ul>
+    <li>Un <a href="head">en-tête (<em>head</em>)</a></li>
+    <li>Un <a href="body">corps (<em>body</em>) de document</a></li>
+  </ul>
+</section>
+<section title="Exemples">
+  <p>Un exemple de document HTML est :</p>
+  <blockquote>
+    <pre class="prettyprint"><code class="language-html">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Ma page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;Texte de la page &lt;strong&gt;en gras&lt;/strong&gt; avec un &lt;em&gt;&lt;a href="Lien.html"&gt;lien en italique&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt; &lt;body&gt; &lt;/html&gt;</code></pre>
+  </blockquote>
+</section>
+<section title="Implémentation">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <td colspan="2" rowspan="3" class="titleCorner"></td>
+      <th colspan="2" valign="top"> Version</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th rowspan="4"> Commentaires</th>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"> Release</th>
+      <th><a href="http://www.rfc-editor.org/rfc/rfc1866.txt">0</a></th>
+      <th><a href="http://www.w3.org/TR/REC-html32">2</a></th>
+      <th><a href="http://www.w3.org/TR/1998/REC-html40-19980424/">0</a></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"> Fixpack</th>
+      <th></th>
+      <th></th>
+      <th><a href="http://www.w3.org/TR/html401/">1</a></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th> Domaine</th>
+      <th> Technologie</th>
+      <th colspan="2" valign="top"> Service Pack</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">RFC</th>
+      <td><a href="http://www.rfc-editor.org/rfc/rfc1866.txt">1866</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Année</th>
+      <td>1995</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">!doctype</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"><code>html</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="111" valign="top">Balises</th>
+      <th rowspan="10" valign="top">Structure</th>
+      <th colspan="2" valign="top">Début de page</th>
+      <td colspan="4" class="oui"><code>html</code></td>
+      <td>Document HTML</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">En-tête (<em>header</em>)</th>
+      <th valign="top"></th>
+      <td colspan="4" class="oui"><code>head</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Titre de page</th>
+      <td colspan="4" class="oui"><code>title</code></td>
+      <td>Titre</td>
+    </tr>
+    <tr>
+      <th valign="top">Méta-données</th>
+      <td colspan="4" class="oui"><code>meta http-equiv="<em>clé</em>" content="<em>valeur</em>" </code></td>
+      <td>Equivalent en-tête <a href="../../../../proj/design/arch/web/HTTP.html">HTTP</a> <em>clé</em></td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Corps</th>
+      <th valign="top"></th>
+      <td colspan="4" class="oui"><code>body</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Navigation</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>nav</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Section</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>section</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Article</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>article</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">En-tête</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>header</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Pied de page</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>footer</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Composants</th>
+      <th colspan="2" valign="top">Image</th>
+      <td colspan="2" class="oui"><code>img</code></td>
+      <td class="oui"><code>object</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">Applet Java</a></th>
+      <td class="non">Non</td>
+      <td class="oui"><code>applet</code></td>
+      <td class="oui"><code>object</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Video</th>
+      <td colspan="3" class="non"><code>object</code></td>
+      <td class="oui"><code>video</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Audio</th>
+      <td colspan="3" class="non"><code>object</code></td>
+      <td class="oui"><code>audio</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Figure</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>figure</code>, <code>figcaption</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Dessin</th>
+      <td colspan="3" class="non"><code>img</code></td>
+      <td class="oui"><code>canvas</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Emphase</th>
+      <th colspan="2" valign="top">Accentuation</th>
+      <td colspan="3" class="oui"><code>em</code></td>
+      <td></td>
+      <td><em>Emphasis</em></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Gras</th>
+      <td colspan="2" class="oui"><code>b</code><code></code></td>
+      <td class="oui"><code>strong</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Fort</th>
+      <td colspan="3" class="oui"><code>strong</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Italique</th>
+      <td colspan="3" class="oui"><code>i</code></td>
+      <td></td>
+      <td><em>Italic</em></td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Listes</th>
+      <th colspan="2" valign="top">Liste de définitions</th>
+      <td class="oui"><code>dl</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Definition list</em></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Terme de définition</th>
+      <td class="oui"><code>dt</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Definition term</em></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Description de définition</th>
+      <td class="oui"><code>dd</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Definition description</em></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Elément de liste</th>
+      <td class="oui"><code>li</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>List item</em></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Liste non ordonnée</th>
+      <td class="oui"><code>ul</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Unordered list</em></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Liste ordonnée</th>
+      <td class="oui"><code>ol</code></td>
+      <td></td>
+      <td class="oui"><code>em</code></td>
+      <td></td>
+      <td><em>Ordered list</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Hyperlien</th>
+      <td colspan="3" class="oui"><code>a</code></td>
+      <td></td>
+      <td><em>Anchor</em> : ancre</td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Citation</th>
+      <td class="oui"><code>cite</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Citation</td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Saut de ligne</th>
+      <td class="oui"><code>br</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Break</em></td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">Formulaire</th>
+      <th colspan="2" valign="top">Formulaire</th>
+      <td colspan="3" class="oui"><code>form</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Option de menu</th>
+      <td class="oui"><code>option</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Option à sélectionner</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Zone de texte</th>
+      <td colspan="3" class="oui"><code>textarea</code></td>
+      <td></td>
+      <td>Zone de texte</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Saisie</th>
+      <td colspan="3" class="oui"><code>input</code></td>
+      <td></td>
+      <td>Saisie</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Sélection de choix</th>
+      <td colspan="3" class="oui"><code>select</code></td>
+      <td></td>
+      <td>Formulaire</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Search</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>search</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">URL</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>url</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Email</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>email</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Heure</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>time</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Date</th>
+      <td colspan="3" class="non"></td>
+      <td class="oui"><code>date</code>, <code>calendar</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Ligne horizontale</th>
+      <td class="oui"><code>hr</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Horizontal rule</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Télétype</th>
+      <td class="oui"><code>tt</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Teletype</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">var</th>
+      <td class="oui"><code>var</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">strong</th>
+      <td class="oui"><code>strong</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Strong emphasis</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Exemple</th>
+      <td class="oui"><code>samp</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Sample</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Clavier</th>
+      <td class="oui"><code>kbd</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Keyboard</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Code</th>
+      <td class="oui"><code>code</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Code</td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Base de document</th>
+      <td class="oui"><code>base</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Metadonnée</th>
+      <td class="oui"><code>meta</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Lien</th>
+      <td class="oui"><code>link</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Menu</th>
+      <td class="oui"><code>menu</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">isindex</th>
+      <td class="oui"><code>isindex</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Preformatté</th>
+      <th colspan="2" valign="top">Préformatté</th>
+      <td class="oui"><code>pre</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Preformated</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Texte plein</th>
+      <td class="oui"><code>plaintext</code></td>
+      <td colspan="2" class="oui"><code>pre</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">xmp</th>
+      <td class="oui"><code>xmp</code></td>
+      <td colspan="2" class="oui"><code>pre</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Listing</th>
+      <td class="oui"><code>listing</code></td>
+      <td colspan="2" class="oui"><code>pre</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Adresse</th>
+      <td class="oui"><code>address</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Barré</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>strike</code></td>
+      <td>Obsolète</td>
+      <td></td>
+      <td><strike>Barré</strike></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Grand</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>big</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Petit</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>small</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Exposant</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>sup</code></td>
+      <td></td>
+      <td></td>
+      <td>Normal<sup>sup</sup></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Indice</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>sub</code></td>
+      <td></td>
+      <td></td>
+      <td>Normal<sub>sub</sub></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">dfn</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>dfn</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Fonte</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>font</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">basefont</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>basefont</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Carte</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>map</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Citation</th>
+      <td colspan="3" class="oui"><code>blockquote</code></td>
+      <td></td>
+      <td>
+        <quote></quote>
+      </td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">Répertoire</th>
+      <td colspan="3" class="oui"><code>dir</code></td>
+      <td></td>
+      <td><em>Directory</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">En-têtes</th>
+      <td colspan="3" class="oui"><code>h1, h2, h3, h4, h5, h6</code></td>
+      <td></td>
+      <td>En-têtes 1, 2, 3, 4, 5, 6</td>
+    </tr>
+    <tr>
+      <th rowspan="35" valign="top">Entités</th>
+      <th colspan="2" valign="top">&</th>
+      <td colspan="3" class="oui"><code>&amp;</code></td>
+      <td></td>
+      <td>Ampersand</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">é</th>
+      <td colspan="3" class="oui"><code>é</code></td>
+      <td></td>
+      <td>e aigü (<em>acute</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">ê</th>
+      <td colspan="3" class="oui"><code>ê</code></td>
+      <td></td>
+      <td>e circonflexe</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">è</th>
+      <td colspan="3" class="oui"><code>è</code></td>
+      <td></td>
+      <td>e grave</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">ë</th>
+      <td colspan="3" class="oui"><code>&euml;</code></td>
+      <td></td>
+      <td>e tréma</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"> Espace insécable</th>
+      <td colspan="3" class="oui"><code> </code></td>
+      <td></td>
+      <td>Non-breaking space : espace non sécable.</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Euro</th>
+      <td colspan="3" class="oui"><code>&euro;</code> <code>&#8364;</code></td>
+      <td></td>
+      <td>&euro;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Cent</th>
+      <td colspan="3" class="oui"><code>&cent;</code></td>
+      <td></td>
+      <td>&cent;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Degré</th>
+      <td colspan="3" class="oui"><code>°</code></td>
+      <td></td>
+      <td>° (<em>degree</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Carré</th>
+      <td colspan="3" class="oui"><code>&sup2;</code></td>
+      <td></td>
+      <td>&sup2;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Guillemets gauche</th>
+      <td colspan="3" class="oui"><code>"</code></td>
+      <td></td>
+      <td>"(<em>left aquote</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Guillemets droit</th>
+      <td colspan="3" class="oui"><code>"</code></td>
+      <td></td>
+      <td>" (<em>right aquote</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Quart</th>
+      <td colspan="3" class="oui"><code>&frac14;</code></td>
+      <td></td>
+      <td>&frac14; (<em>fraction 1/4</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Demi</th>
+      <td colspan="3" class="oui"><code>&frac12;</code></td>
+      <td></td>
+      <td>&frac12; (<em>fraction 1/2</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Trois quarts</th>
+      <td colspan="3" class="oui"><code>&frac34;</code></td>
+      <td></td>
+      <td>&frac34; (<em>fraction 3/4</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Plus ou moins</th>
+      <td colspan="3" class="oui"><code>&plusmn;</code></td>
+      <td></td>
+      <td>&plusmn; (plus minus)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">U tréma</th>
+      <td colspan="3" class="oui"><code>ü</code></td>
+      <td></td>
+      <td>ü</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">N tilde</th>
+      <td colspan="3" class="oui"><code>&ntilde;</code></td>
+      <td></td>
+      <td>&ntilde;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">I bas</th>
+      <td colspan="3" class="oui"><code>&iexcl;</code></td>
+      <td></td>
+      <td>&iexcl;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">O barré</th>
+      <td colspan="3" class="oui"><code>Ø</code></td>
+      <td></td>
+      <td>Ø</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Droits réservés</th>
+      <td colspan="3" class="oui"><code>&copy;</code></td>
+      <td></td>
+      <td> &copy; (<em>copyright</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Déposé</th>
+      <td colspan="3" class="oui"><code>&reg;</code></td>
+      <td></td>
+      <td>&reg; (<em>registered</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Marque déposée</th>
+      <td colspan="3" class="oui"><code>&#8442;</code></td>
+      <td></td>
+      <td>&#8482; (<em>trade mark</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top"> Inférieur à</th>
+      <td colspan="3" class="oui"><code>&lt;</code></td>
+      <td></td>
+      <td><em>&lt; (lower than</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Inférieur ou égal à</th>
+      <td colspan="3" class="oui"><code>&le;</code></td>
+      <td></td>
+      <td><em>&le; (lower or equal</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Supérieur à</th>
+      <td colspan="3" class="oui"><code>&gt;</code></td>
+      <td></td>
+      <td><em>&gt; (greater than</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Supérieur ou égal à</th>
+      <td colspan="3" class="oui"><code>&ge;</code></td>
+      <td></td>
+      <td><em>&ge; (greater or equal</em>)</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Guillemet</th>
+      <td colspan="3" class="oui"><code>"</code></td>
+      <td></td>
+      <td><p>" <em>Quote</em></p></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Alpha</th>
+      <td colspan="3" class="oui">&alpha;</td>
+      <td></td>
+      <td>&alpha;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Beta</th>
+      <td colspan="3" class="oui">&beta;</td>
+      <td></td>
+      <td>&beta;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Gamma</th>
+      <td colspan="3" class="oui">&gamma;</td>
+      <td></td>
+      <td>&gamma;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Delta</th>
+      <td colspan="3" class="oui">&Delta;</td>
+      <td></td>
+      <td>&Delta;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Lamda</th>
+      <td colspan="3" class="oui">&lambda</td>
+      <td></td>
+      <td>&lambda;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Pi</th>
+      <td colspan="3" class="oui">&pi;</td>
+      <td></td>
+      <td>&pi;</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Sigma</th>
+      <td colspan="3" class="oui">&Sigma;</td>
+      <td></td>
+      <td>&Sigma;</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Section</th>
+      <th colspan="2" valign="top">Division</th>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><code>div</code></td>
+      <td></td>
+      <td>Remplace layer</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Centré</th>
+      <td class="non">Non</td>
+      <td class="oui"><code>center</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Paragraphe</th>
+      <td colspan="3" class="oui"><code>p</code></td>
+      <td></td>
+      <td><em>Paragraph</em></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">script</th>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><code>script</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">style</th>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><code>style</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top"><a href="http://www.rfc-editor.org/rfc/rfc1942.txt">Tableaux</a></th>
+      <th colspan="2" valign="top">Tableau</th>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><code>table</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Ligne</th>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><code>tr</code></td>
+      <td></td>
+      <td><em>Table row </em>: ligne de tableau</td>
+    </tr>
+    <tr>
+      <th colspan="2" valign="top">Colonne</th>
+      <td class="non">Non</td>
+      <td colspan="2" class="oui"><code>td</code></td>
+      <td></td>
+      <td><em>Table delimiter </em>: délimiteur de tableau</td>
+    </tr>
+    <tr>
+      <th valign="top">Caractères</th>
+      <th valign="top">Type</th>
+      <th colspan="2" valign="top"></th>
+      <td></td>
+      <td></td>
+      <td>Unicode</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Stockage</th>
+      <th valign="top">local</th>
+      <th colspan="2" valign="top"></th>
+      <td colspan="3" class="non">Cookies</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+  </table>
+  <ul>
+    <li>créé à l'origine par le <a href="/tech/info/CERN.html">CERN</a> pour l'échange de documents entre scientifiques.
+    </li>
+    <li>L'affichage des balises peut être contrôlé via <a
+        href="../../../../proj/design/arch/web/client/CSS.html">CSS</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Mélange présentation et contenu</li>
+    <li>Langage (ensemble des balises) limité car figé dans une version</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+
+  <p>Créé en 1996</p>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="http://www.w3.org/MarkUp">W3C</a> - Maintient le standard HTML
+      <ul>
+        <li><em><a href="http://validator.w3.org/">MarkUp Validation Service</a></em></li>
+      </ul>
+    </li>
+    <li><a href="http://devedge.netscape.com/viewsource/2001/validate/"><em>Liberty! Equality! Validity - HTML
+      Validation</em></a> par Netscape DevEdge
+    </li>
+    <li> "<a href="http://www.w3.org/TR/REC-html40/sgml/entities.html">Character entity references in HTML 4</a>", W3C
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -15,41 +15,50 @@
     <li><strong>supervisé</strong> (<i lang="en">supervised learning</i>) : on indique à la machine ce qu'on attend
       d'elle (typiquement des résultats connus de données passées), de manière à ce qu'elle produise une prédiction :
       <ul>
-        <li><strong>quantitative</strong> : fonction continue issue d'une <a
-            href="/science/discipline/math/stat/regress/linear">régression linéaire</a></li>
-        <li><strong>qualitative</strong> : classification via <a href="/science/discipline/math/stat/regress/logistic">régression
-          logistique</a></li>
+        <li><strong>quantitative</strong> : prédire une valeur à l'aide d'une fonction continue</li>
+        <li><strong>qualitative</strong> : classification</li>
         <li>les deux : déterminant une probabilité d'appartenir à une classe</li>
+      </ul>
+    </li>
+    <li><strong>non supervisé</strong> (<i lang="en">unsupervised learning</i>) : on demande à la machine de trouver
+      elle-même des groupes (<i lang="en">clusters</i>) de données</li>
+    <li><strong>par transfert</strong> (<i lang="en">transfer learning</i>) : réutiliser les connaissances acquises pour
+      un problème pour les réutiliser sur un autre problème similaire</li>
+    <li><strong>par renforcement</strong> (<i lang="en">Reinforcement Learning (RL)</i>) : apprendre par tâtonnement
+      (essais/erreurs) récompensés en cas de succès</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Il existe diverses "<strong>modèles</strong>" de ML adaptés à chaque type de problème :</p>
+  <ul>
+    <li>supervisé :
+      <ul>
+        <li>quantitatif : <a
+            href="/science/discipline/math/stat/regress/linear">régression linéaire</a></li>
+        <li>qualitatif : <a href="/science/discipline/math/stat/regress/logistic">régression logistique</a></li>
         <li><a href="svm">SVM</a></li>
         <li><a href="rf">Random Forest</a></li>
       </ul>
     </li>
-    <li><strong>non supervisé</strong> (<i lang="en">unsupervised learning</i>) : on demande à la machine de trouver
-      elle-même des groupes (<i lang="en">clusters</i>) de données :
+    <li>non supervisé :
       <ul>
         <li><a href="kmeans">K-moyennes</a></li>
       </ul>
     </li>
-    <li><strong>par transfert</strong> (<i lang="en">transfer learning</i>) : réutiliser les connaissances acquises pour
-      un problème pour les réutiliser sur un autre problème similaire :
+    <li>par transfert (<i lang="en">transfer learning</i>) :
       <ul>
         <li>Réseaux logiques de Markov</li>
         <li>Réseaux bayésiens</li>
       </ul>
     </li>
-    <li><strong>par renforcement</strong> (<i lang="en">Reinforcement Learning (RL)</i>) : apprendre par tâtonnement
-      (essais/erreurs) récompensés en cas de succès :
+    <li>par renforcement :
       <ul>
         <li>TD-learning</li>
       </ul>
     </li>
+    <li>autres, adaptables à différents types de problèmes (supervisés ou non), comme les <a href="nn">NN</a>.</li>
   </ul>
-</section>
-<section>
-  <h2>Conception</h2>
-  <p>Il existe diverses techniques de ML mais on peut distinguer celles qui mobilisent une hiérarchie de "couches"
-    d'apprentissage, qui constituent autant de niveau d'<a href="/tech/info/soft/proj/impl/lang/oo/Abstraction.html">abstraction</a>.
-    On parlera alors d'<strong><a href="deep">apprentissage profond</a></strong> (<i lang="en">deep learning</i>).</p>
   <p>L'efficacité du modèle choisi devra ensuite être <a href="../eval">évaluée</a>.</p>
 </section>
 <section>
@@ -57,7 +66,7 @@
   <ul>
     <li>Applications
       <ul>
-        <li>Reconnaissance d'images</li>
+        <li><a href="ir">IR</a></li>
         <li><a href="nlp">NLP</a>, <abbr title="Machine Translation">MT</abbr></li>
       </ul>
     </li>
@@ -84,6 +93,8 @@
       <ul>
         <li><a href="https://www.kaggle.com/competitions">Kaggle</a></li>
       </ul>
+    </li>
+    <li><a href="https://developers.google.com/machine-learning/glossary">Glossaire du machine learning</a> (Google)
     </li>
   </ul>
 </section>

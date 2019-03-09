@@ -21,27 +21,74 @@
   <h2>Exemples</h2>
   <table>
     <thead>
-    <tr><th>Nom</th><th>Equation</th><th>Graphe</th><th>Commentaire</th></tr>
-    <tr><td>Marche (<i lang="en">heaviside</i>)</td><td>`g(x)={(0,pour,x < 0),(1,pour,x > 0):}`</td></tr>
+    <tr>
+      <th>Nom</th>
+      <th>Equation</th>
+      <th>Graphe</th>
+      <th>Commentaire</th>
+    </tr>
     </thead>
+    <tbody>
+    <tr>
+      <td>Signe (<i lang="en">sign</i>)</td>
+      <td>`g(x)={(-1,"pour",x < 0),(0,"pour",x = 0),(1,"pour",x > 0):}`</td>
+      <td>
+        <div id="sign"></div>
+      </td>
+      <td>Parfois utilisé pour la <a href="/science/discipline/math/stat/regress/logistic">classification</a> binaire
+      </td>
+    </tr>
+    <tr>
+      <td>Marche (<i lang="en">heaviside</i>)</td>
+      <td>`g(x)={(0,"pour",x < 0),(1,"pour",x > 0):}`</td>
+      <td>
+        <div id="heaviside"></div>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Logistique (<i lang="en">logistic</i>) / <a href="/science/discipline/math/stat/Sigmoide.html">sigmoïde</a>
+      </td>
+      <td>`g(x)=1/(1+e^-x)`</td>
+      <td>
+        <div id="logistic"></div>
+      </td>
+      <td>Utilisé pour la <a href="/science/discipline/math/stat/regress/logistic">classification</a></td>
+    </tr>
+    </tbody>
   </table>
 </section>
 <!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}
+
+td:nth-child(3) div {
+  height: 5em;
+  width: 5em;
+}</style>
 <script>
-  var i = 4;
-  var y1 = JXG.JSXGraph.initBoard('y1', {
+  var i = 2;
+  var sign = JXG.JSXGraph.initBoard('sign', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  y1.create('functiongraph', [function (x) {
-    return -Math.log(1 / (1 + Math.exp(-x)));
+  sign.create('functiongraph', [function (x) {
+    return x < 0 ? -1 : x === 0 ? 0 : 1;
   }, -i, i]);
-  var y0 = JXG.JSXGraph.initBoard('y0', {
+  var heaviside = JXG.JSXGraph.initBoard('heaviside', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  y0.create('functiongraph', [function (x) {
-    return -Math.log(1 - 1 / (1 + Math.exp(-x)));
+  heaviside.create('functiongraph', [function (x) {
+    return x < 0 ? 0 : 1;
+  }, -i, i]);
+  var logistic = JXG.JSXGraph.initBoard('logistic', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  logistic.create('functiongraph', [function (x) {
+    return 1 / (1 + Math.exp(-x));
   }, -i, i]);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

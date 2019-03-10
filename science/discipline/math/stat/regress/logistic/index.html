@@ -18,7 +18,7 @@
     possibles) et non pas une valeur continue (comme en <a href="/science/discipline/math/stat/regress/linear">régression
       linéaire</a>).</p>
   <p>Cela implique que la fonction hypothèse `h` doit elle aussi prédire un résultat sous forme de valeurs discrètes
-    dans l'intervalle correspondant à celles de `y`¬. Par exemple pour un cas binaire soit `y(x)` appartient à la classe
+    dans l'intervalle correspondant à celles de `y`. Par exemple pour un cas binaire soit `y(x)` appartient à la classe
     "positive" (`y = 1`), soit à la classe "négative" (`y = 0` ou `y = -1` selon les choix techniques).</p>
   <section>
     <h3>Classes multiples</h3>
@@ -29,30 +29,31 @@
 </section>
 <section>
   <h2>Conception</h2>
+  <p>Utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher "par chance" mais comporte trop de
+    risque de faux positifs/négatifs.</p>
+  <p>On préfère donc encapsuler notre hypothèse dans une <strong><a
+      href="/tech/info/soft/data/science/ml/nn/activation">fonction d'activation</a></strong> `g(z)` qui transforme tout
+    résultat en valeur associée à une classe :</p>
+  <ul>
+    <li>(rarement) une <strong>fonction signe</strong> (<i>signum</i>) s'il s'agit d'une classification binaire, qui
+      fait alors correspondre chacune des 2 classes vers -1 ou 1</li>
+    <li>(plus généralement) une <a href="/science/discipline/math/ens/rel/func/sigmoid/logistic"><strong>fonction
+      logistique</strong></a>, qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
+  </ul>
   <p>Soit le vecteur `x` représentant les caractéristiques (<em>features</em>) de éléments à classer, notre fonction :
   </p>
   <p>`z=θ^Tx`</p>
-  <p>Cependant utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher (par "chance") mais
-    comporte trop de risque de faux positifs/négatifs.</p>
-  <p>On choisit donc d'encapsuler notre hypothèse dans une <strong><a
-      href="/tech/info/soft/data/science/ml/nn/activation">fonction d'activation</a></strong> `g(z)` qui transforme tout
-    résultat en une valeur tendant vers nos valeurs de classe :</p>
-  <ul>
-    <li>une <strong>fonction signe</strong> (<i>signum</i>) s'il s'agit d'une classification binaire, qui fait alors
-      correspondre chacune des 2 classes vers -1 ou 1</li>
-    <li>une <a href="/science/discipline/math/stat/Sigmoide.html"><strong>fonction logistique</strong> (sigmoide)</a>,
-      qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
-  </ul>
   <p>et on définit donc `h_θ(x)` comme la <em>probabilité</em> `P` que `y = 1` (et donc probabilité `1 - P` que `y`
-    valle l'autre classe :</p>
-  <p>`h_θ(x)=g(θ^Tx)`</p>
-  <p>ou, si l'on remplace `g` par sa définition <a href="/science/discipline/math/stat/Sigmoide.html">sigmoïde</a> :</p>
-  <p>`h_θ(x)=1/(1+e^(−θ^Tx))`</p>
+    valle l'autre classe) :</p>
+  <p>`h_θ(x)=g(z)`</p>
+  <p>ou, si l'on remplace `g` par sa définition <a href="/science/discipline/math/ens/rel/func/sigmoid/index.html">sigmoïde</a> :</p>
+  <p>`h_θ(x)=1/(1+e^−z)`</p>
   <section>
     <h3>Coût</h3>
-    <p>Cependant la <a href="/science/discipline/math/stat/Sigmoide.html">fonction sigmoïde</a> ne garantit pas d'être
+    <p>Cependant la <a href="/science/discipline/math/ens/rel/func/sigmoid/index.html">fonction sigmoïde</a> ne garantit pas d'être
       <a href="/science/discipline/math/ens/rel/func/Convexe.html">convexe</a>. On va donc l'encapsuler dans une autre
-      fonction <a href="/science/discipline/math/ens/rel/func/Convexe.html">convexe</a>, le `log` :</p>
+      fonction <a href="/science/discipline/math/ens/rel/func/Convexe.html">convexe</a>, le <a
+          href="/science/discipline/math/ens/rel/func/log">`log`</a> :</p>
     <table>
       <thead>
       <tr>
@@ -78,8 +79,8 @@
       </tr>
       </tbody>
     </table>
-    <p>ce qui peut s'écrire en 1 seule ligne si l'on utilise la valeur de `y` pour annuler l'une ou l'autre des parties
-      :</p>
+    <p>ce qui peut s'écrire en une seule ligne si l'on utilise la valeur de `y` pour annuler l'une ou l'autre des
+      parties :</p>
     <p>`"cost"(h_θ(x),y)=−y*log(h_θ(x))−(1−y)log(1−h_θ(x))`</p>
     <p>ou `"cost"(h_θ(x),y)=−[y*log(h_θ(x))+(1−y)log(1−h_θ(x))]` ce qui est en fait très proche de la version <a
         href="..">linéaire</a> `(h_Θ(x) - y)^2`</p>
@@ -91,10 +92,10 @@
   </section>
   <section>
     <h3>Précision et rappel</h3>
-    <p>Classer les réponses comme 0 ou 1 en fonction de `h_θ(x)>=0.5` ou `h_θ(x)<0.5` n'est pas toujours le plus
-      opportun ; parfois on voudrait utiliser une autre valeur que 0.5 si les classes sont déséquilibrées/dissymétriques
+    <p>Classer les réponses comme 0 ou 1 en fonction de `h_θ(x)>=0,5` ou `h_θ(x)<0,5` n'est pas toujours le plus
+      opportun ; parfois on voudrait utiliser une autre valeur que 0,5 si les classes sont déséquilibrées/dissymétriques
       (<i lang="en">skewed</i>).</p>
-    <p>Cependant si ce facteur est trop déséquilibré (disons 0.9), il convient de vérifier la fiabilité des résultats.
+    <p>Cependant si ce facteur est trop déséquilibré (disons 0,9), il convient de vérifier la fiabilité des résultats.
       Si l'on suppose :</p>
     <table>
       <thead>

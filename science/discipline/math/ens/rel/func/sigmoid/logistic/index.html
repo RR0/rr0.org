@@ -10,8 +10,8 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Cette fonction est une fonction d'<strong>activation</strong> (vaut 0 en-dessous d'un certain seuil, et 1 au-delà
-    de ce seuil).</p>
+  <p>Cette fonction <a href="..">sigmoïde</a> est une fonction d'<strong>activation</strong> (vaut 0 en-dessous d'un
+    certain seuil, et 1 au-delà de ce seuil).</p>
 </section>
 <section>
   <h2>Conception</h2>
@@ -32,7 +32,10 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Egalement appelée fonction "sigmoïde" car en forme de "S"</li>
+    <li>Parfois appelée fonction "sigmoïde" par abus de langage car celle préférée par les fonctions <a
+        href="/science/discipline/math/ens/rel/func/sigmoid">sigmoïdes</a> comme <a
+        href="/tech/info/soft/data/science/ml/nn/activation">fonction d'activation</a> dans une régression logistique;.
+    </li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->
@@ -46,8 +49,10 @@
 }
 </style>
 <script>
-  var b = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-7, 1.25, 7, -0.25], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
+  var b = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-7, 1.25, 7, -0.25], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
   b.create('functiongraph', [function (x) {
     return 1 / (1 + Math.exp(-x));
   }, -7, 7]);

@@ -1,0 +1,116 @@
+<!--#include virtual="/header-start.html" -->
+<title>Logarithme</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<p>"Log"</p>
+<section>
+  <h2>Analyse</h2>
+  <p>Une fonction logarithme s'exprime toujours en fonction d'une <strong>base</strong> et fournit la
+    <strong>puissance</strong> à laquelle il faut élever cette `"base"` pour obtenir `n`. Autrement dit, si :</p>
+  <p>`log_"base"n = x`</p>
+  <p>alors :</p>
+  <p>`"base"^x = n`</p>
+  <section>
+    <h3>Bases</h3>
+    <p>Lorsque la base n'est pas mentionnée, il s'agit implicitement `log_10`.</p>
+    <p>Lorsque la base est `e`, on parle de logarithme <strong>népérien</strong> ou <strong>naturel</strong>, noté `ln`.
+    </p>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>Calculs</h3>
+    <ul>
+      <li>`log_3 9 = 2` car `9 = 3^2`</li>
+      <li>`log 10000 = 4` car `10000 = 10^4`</li>
+      <li>`log_2(1/8) = -3` car `1/8 = 1/2^3 = 2^-3`</li>
+      <li>`log 1 = 0` car `1 = 10^0`</li>
+      <li>`log 0` et `log -1` sont indéfinis car `10^x` donnera toujours un nombre positif</li>
+      <li>`ln 1 = log_e 1 = 0` car `e^1 = 0`</li>
+      <li>`ln(e^3) = log_e(e^3) = 3` car cela revient à résoudre `e^x = e^3`</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Graphiques</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Formule</th>
+        <th>Graphe</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>`log x = log_10 x`</td>
+        <td>
+          <div id="log"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>`ln x = log_e x`</td>
+        <td>
+          <div id="ln"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>`log_2 x`</td>
+        <td>
+          <div id="log2"></div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h3>Equations</h3>
+    <ul>
+      <li>`log_x 32 = 5` implique que `x^5 = 32`, soit `x^5 = 2^5` et donc que `x = 2`</li>
+      <li>`log_5 x = 3` implique que `5^3 = x` et donc que `x = 125`</li>
+      <li>`log_2 7 = x` implique que `2^x = 7` et via le changement de base `x = log 7/log 2`</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=Zw5t6BTQYRU">"Logarithms... How?", NancyPi, 2018-08-19</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .mjx-math * {
+    line-height: 0;
+  }
+
+  td:nth-child(2) div {
+    height: 5em;
+    width: 5em;
+  }</style>
+<script>
+  var i = 5;
+  var log = JXG.JSXGraph.initBoard('log', {
+    boundingbox: [-1, i, 5, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  log.create('functiongraph', [function (x) {
+    return Math.log10(x);
+  }, -i, i]);
+  var log2 = JXG.JSXGraph.initBoard('log2', {
+    boundingbox: [-1, i, 5, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  log2.create('functiongraph', [function (x) {
+    return Math.log2(x);
+  }, -i, i]);
+  var ln = JXG.JSXGraph.initBoard('ln', {
+    boundingbox: [-1, i, 5, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  ln.create('functiongraph', [function (x) {
+    return Math.log(x);
+  }, -i, i]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

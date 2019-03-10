@@ -1,0 +1,103 @@
+<!--#include virtual="/header-start.html" -->
+<title>Les fonction sigmoïdes</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Convertir un signal continu en valeur binaire.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une sigmoïde est une fonction monotone à asymptotes horizontales, ce qui lui donne sa forme de "<i>S</i>"</p>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Formule</th>
+      <th>Graphe</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Courbe de Gompertz</td>
+      <td>`ae^(-be^(-ct))`</td>
+      <td>
+        <div id="Gompertz"></div>
+      </td>
+      <td>Utilisée pour modéliser certaines séries temporelles, dont la croissance est lente au départ et d'arrête
+        à un moment. Employée pour décrire une population dans un espace confiné, dont la reproduction augmente au
+        début puis ralentit aue fois que les ressources à disposition deviennent rares.</td>
+    </tr>
+    <tr>
+      <td>Tangente hyperbolique</td>
+      <td>`(e^x - e^-x)/(e^x + e^-x)`</td>
+      <td>
+        <div id="tanh"></div>
+      </td>
+      <td>À la base une fonction complexe, on s'intéresse ici à sa restriction à R qui est une bijection
+        strictement croissante de R dans [-1,1]</td>
+    </tr>
+    <tr>
+      <td>Fonction de répartition de la loi normale centrée réduite</td>
+      <td>`1/sqrt(2pi) int_-oo^1 e^(-1/2x^2)dx`</td>
+      <td>
+        <div id="norm"></div>
+      </td>
+      <td>Très bonnes candidate pour la fonction hypothèse d'une régression logistique</td>
+    </tr>
+    <tr>
+      <td><a href="logistic">Fonction de répartition de la loi logistique</a></td>
+      <td>`1/(1+e((x-mu)/s))`</td>
+      <td>
+        <div id="logistic"></div>
+      </td>
+      <td>Ressemble beaucoup à une loi normale, mais représente un plus grand
+        kurtosis<span class="note">Indicateur qui mesure le coefficient d'applatissement d'une distribution</span></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}
+
+td:nth-child(3) div {
+  height: 5em;
+  width: 5em;
+}
+</style>
+<script>
+  var i = 3 ;
+  var Gompertz = JXG.JSXGraph.initBoard('Gompertz', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  Gompertz.create('functiongraph', [function (x) {
+    var a = 1;
+    var b = 1;
+    var c = 1;
+    return a * Math.exp(-b * Math.exp(-c * x));
+  }, -i, i]);
+  var tanh = JXG.JSXGraph.initBoard('tanh', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  tanh.create('functiongraph', [function (x) {
+    return (Math.exp(x) - Math.exp(-x))/(Math.exp(x) + Math.exp(-x));
+  }, -i, i]);
+  var logistic = JXG.JSXGraph.initBoard('logistic', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  logistic.create('functiongraph', [function (x) {
+    return 1 / (1 + Math.exp(-x));
+  }, -7, 7]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

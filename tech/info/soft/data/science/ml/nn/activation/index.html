@@ -47,13 +47,21 @@
       <td></td>
     </tr>
     <tr>
-      <td>Logistique (<i lang="en">logistic</i>) / <a href="/science/discipline/math/stat/Sigmoide.html">sigmoïde</a>
+      <td><a href="/science/discipline/math/ens/rel/func/sigmoid/logistic">Logistique (<i lang="en">logistic</i>)</a>
       </td>
       <td>`g(x)=1/(1+e^-x)`</td>
       <td>
         <div id="logistic"></div>
       </td>
       <td>Utilisé pour la <a href="/science/discipline/math/stat/regress/logistic">classification</a></td>
+    </tr>
+    <tr>
+      <td>Unité de REctification Linéaire (<i lang="en"><abbr title="Rectification Linear Unit">ReLU</abbr></i>)</td>
+      <td>`g(x)={(0,"pour",x < 0),(x,"pour",x > 0):}`</td>
+      <td>
+        <div id="relu"></div>
+      </td>
+      <td></td>
     </tr>
     </tbody>
   </table>
@@ -89,6 +97,13 @@ td:nth-child(3) div {
   });
   logistic.create('functiongraph', [function (x) {
     return 1 / (1 + Math.exp(-x));
+  }, -i, i]);
+  var relu = JXG.JSXGraph.initBoard('relu', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  relu.create('functiongraph', [function (x) {
+    return x < 0 ? 0 : x === 0 ? 0 : x;
   }, -i, i]);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

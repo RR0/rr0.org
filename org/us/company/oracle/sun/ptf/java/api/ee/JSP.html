@@ -2,657 +2,759 @@
 <title>JSP</title>
 <meta name="url" content="http://java.sun.com/products/jsp"/>
 <!--#include virtual="/header-end.html" -->
-<p><i>Java Server Pages</i> : pages Java côté serveur</p>
-
-<h2>Besoin</h2>
-
-<p>Construire dynamiquement des <a href="/tech/info/soft/IHM.html">IHM</a> <a
-    href="/tech/info/soft/proj/design/arch/web/index.html">Web</a>.</p>
-<h2>Analyse</h2>
-<p>Les JSP permettent de décrire des <a href="/tech/info/soft/IHM.html">IHM</a> <a
-    href="/tech/info/soft/proj/design/arch/web/index.html">Web</a> sous la forme de pages Web (<a
-    href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a>) dans lesquelles on insère des portions de code Java.
-</p>
-<h2>Conception</h2>
-
-<p>Les JSP ne sont en fait qu'une autre manière d'écrire des <a
-    href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlets</a> qui vont construire la présentation
-  voulue.</p>
-<p>A la demande d'une page JSP par un client, le conteneur Web :</p>
-<ol>
-  <li>écrit le code source d'une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlet</a>
-    retournant la présentation décrite dans la JSP</li>
-  <li>compile ce code source</li>
-  <li>charge la servlet compilée et lui demande de traiter la demande du client</li>
-  <li>retourne la réponse de la servlet générée au client</li>
-</ol>
-<h2>Exemples</h2>
-
-<p>Un exemple de JSP est :</p>
-
-<blockquote><b><code>&lt;jsp:usebean id=<span class="codeString">"</span></code></b><span class="codeString"><code>userBean<b>"</b></code></span><code><b>
-  class=<span class="codeString">"</span></b><span class="codeString">org.javarome.sample.UserBean<b>"</b></span><b>
-  scope=<span class="codeString">"session"</span> /&gt;</b><br>
-  &lt;html&gt;<br>   &lt;head&gt;<br>     &lt;title&gt;Bienvenue <b>&lt;%= </b>userBean.getName()<b> %&gt;</b>&lt;/title&gt;<br>
-    &lt;/head&gt;<br>   &lt;body&gt;<br>     Texte de la page.<br>   &lt;body&gt;<br>
-  &lt;/html&gt;</code></blockquote>
-
-<h2>Notes</h2>
-
-<ul>
-  <li>
-    <table border="1" cellspacing="0" cellpadding="5">
-      <thead>
-      <tr>
-        <td colspan="2" rowspan="2">JSP</td>
-        <th valign="top"> Version</th>
-        <th colspan="2"> 0</th>
-        <th colspan="3">1</th>
-        <th>2</th>
-        <th rowspan="3"> Commentaire</th>
-      </tr>
-      <tr>
-        <th valign="top"> Release</th>
-        <th colspan="2"> 9</th>
-        <th> 0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>0</th>
-      </tr>
-      <tr>
-        <th>Domaine</th>
-        <th>Technologie</th>
-        <th valign="top"> Fixpack</th>
-        <th><a href="http://www.kirkdorffer.com/jspspecs/jsp091.html">1</a></th>
-        <th><a href="http://www.kirkdorffer.com/jspspecs/jsp092.html">2</a></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
-        <th valign="top"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="oui">1.2+</td>
-        <td class="oui">1.4</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th colspan="2" valign="top">API <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>
-        </th>
-        <td></td>
-        <td></td>
-        <td class="oui">2.1</td>
-        <td class="oui">2.2</td>
-        <td class="oui">2.3</td>
-        <td class="oui">2.4</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="10" valign="top">Variables</th>
-        <th colspan="2" valign="top">request</th>
-        <td colspan="6" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">response</th>
-        <td colspan="6" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">pageContext</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">session</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">application</th>
-        <td class="non">Non</td>
-        <td colspan="5" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">in</th>
-        <th valign="top"></th>
-        <td colspan="6" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">out</th>
-        <th valign="top"></th>
-        <td colspan="6" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">config</th>
-        <th valign="top"></th>
-        <td class="non">Non</td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">page</th>
-        <th valign="top"></th>
-        <td class="non">Non</td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">exception</th>
-        <td class="non">Non</td>
-        <td colspan="5" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      </thead>
-      <tr>
-        <th rowspan="29" valign="top"> Balises</th>
-        <th rowspan="16" valign="top">&lt;jsp:page&gt;</th>
-        <th valign="top">method</th>
-        <td class="oui">Oui</td>
-        <td colspan="5" class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">implements</th>
-        <td class="oui">Oui</td>
-        <td colspan="5" class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">language</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">extends</th>
-        <td class="oui">Oui</td>
-        <td class="non">Non</td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">import</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">session</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">buffer</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">autoFlush</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">isThreadSafe</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">info</th>
-        <td></td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">errorPage</th>
-        <td class="non">Non</td>
-        <td colspan="5" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">isErrorPage</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">contentType</th>
-        <td>content_type</td>
-        <td></td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">pageEncoding</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">isELEnable</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">isScriptingEnabled</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="6" valign="top">&lt;jsp:usebean&gt;</th>
-        <th valign="top"></th>
-        <td>bean</td>
-        <td colspan="5" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">type</th>
-        <td class="non">Non</td>
-        <td colspan="5" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">introspect</th>
-        <td class="oui">Oui</td>
-        <td colspan="5" class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">name</th>
-        <td>beanname</td>
-        <td colspan="5" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">scope</th>
-        <td>lifespan = page, session</td>
-        <td>lifespan = application, page, session</td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">class</th>
-        <td class="oui">Oui</td>
-        <td>type</td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">&lt;jsp:getProperty&gt;</th>
-        <td class="non">Non</td>
-        <td>display property, loop property</td>
-        <td colspan="4" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">&lt;includeif&gt;, &lt;excludeif&gt;</th>
-        <td class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td colspan="4" class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">&lt;jsp:include&gt;</th>
-        <td colspan="3" class="non"> Non</td>
-        <td colspan="3" class="oui"> Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">flush="false"</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="2">&lt;jsp:taglib&gt;</th>
-        <th valign="top"></th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">&lt;jsp-config&gt;</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">&lt;jsp:text&gt;</th>
-        <td colspan="2" class="non">Non</td>
-        <td></td>
-        <td>&lt;jsp:cdata&gt;</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">web.xml</th>
-        <th colspan="2" valign="top">&lt;jsp-properties-group&gt;</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">Langage d'expression</th>
-        <th valign="top"></th>
-        <th valign="top"></th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td>Idem à celui de la <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSTL.html">JSTL</a></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="8">TLD</th>
-        <th valign="top"></th>
-        <th valign="top">&lt;tag-class&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>Autre nom</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">&lt;tei-class&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>Autre nom</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">&lt;tlib-version&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>Autre nom</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">&lt;jsp-version&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>Autre nom</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">&lt;shortname&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>Autre nom</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">&lt;body-content&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>Autre nom</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">&lt;description&gt;</th>
-        <td colspan="3" class="non">Non</td>
-        <td>&lt;info&gt;</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">&lt;tag&gt;</th>
-        <th valign="top">&lt;example&gt;</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="28">API</th>
-        <th colspan="2" valign="top">JSPException</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">JSPError</th>
-        <th valign="top"></th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="6">Tag</th>
-        <th valign="top"></th>
-        <td colspan="3" class="non">Non</td>
-        <td>abstract</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">initialize</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">release</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">doBeforeBody</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td>doBody</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">doAfterBody</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td>doBody</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">TagData</th>
-        <th valign="top"></th>
-        <td class="non">Non</td>
-        <td></td>
-        <td>NodeData</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">PageData</th>
-        <th valign="top"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>PageInfo</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="2">TagSupport</th>
-        <th valign="top">getId</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">setId</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="3">PageContext</th>
-        <th valign="top">pushBody</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">popBody</th>
-        <td colspan="3" class="non">Non</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">handleException</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">BodyContent</th>
-        <td class="non">Non</td>
-        <td></td>
-        <td>BodyEvaluation</td>
-        <td colspan="3" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">ValidatorClass</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">TagValidatorInfo</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">JspContext</th>
-        <th valign="top">getExpressionEvaluator</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">JspPage</th>
-        <th valign="top"></th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">IteratorTag</th>
-        <th valign="top"></th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">TryCatchFinally</th>
-        <td colspan="4" class="non">Non</td>
-        <td colspan="2" class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">VariableResolver</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">ExpressionEvaluator</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">AttributeNotSupportedException</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">DynamicAttributes</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th colspan="2" valign="top">JSPFragment</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">SimpleTag</th>
-        <th valign="top">getPageContext</th>
-        <td colspan="5" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-    </table>
-    Mêmes caractéristiques que les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlets</a>.
-  </li>
-  <li>Des balises personnalisées peuvent être développées et utilisées via des TagLibs.</li>
-  <li>JSP 2.0 fut initialement prévu comme JSP 1.3.</li>
-</ul>
-
-<h2>Conseils</h2>
-
-<ul>
-
-  <li> N'insérez pas beaucoup de code Java dans vos JSP. Si vous en avez vraiment besoin, considérez l'utilisation de
-    servlets ou de taglibs</li>
-
-  <li>Ne traitez pas vos requêtes dans vos JSP, mais dans des servlets en amont. Ces dernières sauront rediriger
-    l'affichage vers vous si besoin (modèle de conception <a href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a>)
-  </li>
-
-  <li>Ne mettez pas à jour des données dans les JSP. Les mises à jour se font typiquement à partir d'une servlet (voir
-    modèle <a href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a> ci-avant)</li>
-
-</ul>
-
-<h2>Voir</h2>
-
-<ul>
-  <li><a href="http://www.jcp.org/aboutJava/communityprocess/final/jsr053/">Spécification</a></li>
-  <li><a href="http://www.theserverside.com">The Server Side</a></li>
-  <li><a href="/org/int/asso/asf/server/web/Struts.html">Struts</a></li>
-</ul>
+<p><i lang="en">Java Server Pages</i> : pages Java côté serveur</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Construire dynamiquement des <a href="/tech/info/soft/IHM.html">IHM</a> <a
+      href="/tech/info/soft/proj/design/arch/web/index.html">Web</a>.</p>
+  <h2>Analyse</h2>
+  <p>Les JSP permettent de décrire des <a href="/tech/info/soft/IHM.html">IHM</a> <a
+      href="/tech/info/soft/proj/design/arch/web/index.html">Web</a> sous la forme de pages Web (<a
+      href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a>) dans lesquelles on insère des portions de code
+    Java.
+  </p></section>
+<section>
+  <h2>Conception</h2>
+  <p>Les JSP ne sont en fait qu'une autre manière d'écrire des <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlets</a> qui vont construire la présentation
+    voulue.</p>
+  <p>A la demande d'une page JSP par un client, le conteneur Web :</p>
+  <ol>
+    <li>écrit le code source d'une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlet</a>
+      retournant la présentation décrite dans la JSP</li>
+    <li>compile ce code source</li>
+    <li>charge la servlet compilée et lui demande de traiter la demande du client</li>
+    <li>retourne la réponse de la servlet générée au client</li>
+  </ol>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de JSP est :</p>
+  <blockquote>&lt;jsp:usebean id="userBean" class="org.javarome.sample.UserBean<b>"</b><b> scope="session" /&gt;</b><br>
+    &lt;html&gt;<br>   &lt;head&gt;<br>     &lt;title&gt;Bienvenue <b>&lt;%= </b>userBean.getName()<b> %&gt;</b>&lt;/title&gt;<br>
+      &lt;/head&gt;<br>   &lt;body&gt;<br>     Texte de la page.<br>   &lt;body&gt;<br>
+    &lt;/html&gt;
+  </blockquote>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <thead>
+    <tr>
+      <td colspan="2" rowspan="2" class="titleCorner"></td>
+      <th valign="top"> Version</th>
+      <th colspan="2"> 0</th>
+      <th colspan="3">1</th>
+      <th>2</th>
+      <th rowspan="3"> Commentaire</th>
+    </tr>
+    <tr>
+      <th valign="top"> Release</th>
+      <th colspan="2"> 9</th>
+      <th> 0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>Domaine</th>
+      <th>Technologie</th>
+      <th valign="top"> Fixpack</th>
+      <th><a href="http://www.kirkdorffer.com/jspspecs/jsp091.html">1</a></th>
+      <th><a href="http://www.kirkdorffer.com/jspspecs/jsp092.html">2</a></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th valign="top"></th>
+      <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">1.2+</td>
+      <td class="oui">1.4</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top"></th>
+      <th colspan="2" valign="top">API <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>
+      </th>
+      <td></td>
+      <td></td>
+      <td class="oui">2.1</td>
+      <td class="oui">2.2</td>
+      <td class="oui">2.3</td>
+      <td class="oui">2.4</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">Variables</th>
+      <th colspan="2" valign="top">request</th>
+      <td colspan="6" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">response</th>
+      <td colspan="6" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">pageContext</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">session</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">application</th>
+      <td class="non">Non</td>
+      <td colspan="5" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">in</th>
+      <th valign="top"></th>
+      <td colspan="6" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">out</th>
+      <th valign="top"></th>
+      <td colspan="6" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">config</th>
+      <th valign="top"></th>
+      <td class="non">Non</td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">page</th>
+      <th valign="top"></th>
+      <td class="non">Non</td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">exception</th>
+      <td class="non">Non</td>
+      <td colspan="5" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="29" valign="top"> Balises</th>
+      <th rowspan="16" valign="top">&lt;jsp:page&gt;</th>
+      <th valign="top">method</th>
+      <td class="oui">Oui</td>
+      <td colspan="5" class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">implements</th>
+      <td class="oui">Oui</td>
+      <td colspan="5" class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">language</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">extends</th>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">import</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">session</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">buffer</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">autoFlush</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">isThreadSafe</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">info</th>
+      <td></td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">errorPage</th>
+      <td class="non">Non</td>
+      <td colspan="5" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">isErrorPage</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">contentType</th>
+      <td>content_type</td>
+      <td></td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">pageEncoding</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">isELEnable</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">isScriptingEnabled</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th rowspan="6" valign="top">&lt;jsp:usebean&gt;</th>
+      <th valign="top"></th>
+      <td>bean</td>
+      <td colspan="5" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">type</th>
+      <td class="non">Non</td>
+      <td colspan="5" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">introspect</th>
+      <td class="oui">Oui</td>
+      <td colspan="5" class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">name</th>
+      <td>beanname</td>
+      <td colspan="5" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">scope</th>
+      <td>lifespan = page, session</td>
+      <td>lifespan = application, page, session</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">class</th>
+      <td class="oui">Oui</td>
+      <td>type</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">&lt;jsp:getProperty&gt;</th>
+      <td class="non">Non</td>
+      <td>display property, loop property</td>
+      <td colspan="4" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">&lt;includeif&gt;, &lt;excludeif&gt;</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td colspan="4" class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">&lt;jsp:include&gt;</th>
+      <td colspan="3" class="non"> Non</td>
+      <td colspan="3" class="oui"> Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top"></th>
+      <th valign="top">flush="false"</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top" rowspan="2">&lt;jsp:taglib&gt;</th>
+      <th valign="top"></th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">&lt;jsp-config&gt;</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">&lt;jsp:text&gt;</th>
+      <td colspan="2" class="non">Non</td>
+      <td></td>
+      <td>&lt;jsp:cdata&gt;</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">web.xml</th>
+      <th colspan="2" valign="top">&lt;jsp-properties-group&gt;</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Langage d'expression</th>
+      <th valign="top"></th>
+      <th valign="top"></th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>Idem à celui de la <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSTL.html">JSTL</a></td>
+    </tr>
+    <tr>
+      <th valign="top" rowspan="8">TLD</th>
+      <th valign="top"></th>
+      <th valign="top">&lt;tag-class&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>Autre nom</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">&lt;tei-class&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>Autre nom</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">&lt;tlib-version&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>Autre nom</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">&lt;jsp-version&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>Autre nom</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">&lt;shortname&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>Autre nom</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">&lt;body-content&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>Autre nom</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">&lt;description&gt;</th>
+      <td colspan="3" class="non">Non</td>
+      <td>&lt;info&gt;</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">&lt;tag&gt;</th>
+      <th valign="top">&lt;example&gt;</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top" rowspan="28">API</th>
+      <th colspan="2" valign="top">JSPException</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">JSPError</th>
+      <th valign="top"></th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top" rowspan="6">Tag</th>
+      <th valign="top"></th>
+      <td colspan="3" class="non">Non</td>
+      <td>abstract</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">initialize</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">release</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">doBeforeBody</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td>doBody</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">doAfterBody</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td>doBody</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top"></th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">TagData</th>
+      <th valign="top"></th>
+      <td class="non">Non</td>
+      <td></td>
+      <td>NodeData</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">PageData</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>PageInfo</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top" rowspan="2">TagSupport</th>
+      <th valign="top">getId</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">setId</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top" rowspan="3">PageContext</th>
+      <th valign="top">pushBody</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">popBody</th>
+      <td colspan="3" class="non">Non</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th valign="top">handleException</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">BodyContent</th>
+      <td class="non">Non</td>
+      <td></td>
+      <td>BodyEvaluation</td>
+      <td colspan="3" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">ValidatorClass</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">TagValidatorInfo</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">JspContext</th>
+      <th valign="top">getExpressionEvaluator</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">JspPage</th>
+      <th valign="top"></th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">IteratorTag</th>
+      <th valign="top"></th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">TryCatchFinally</th>
+      <td colspan="4" class="non">Non</td>
+      <td colspan="2" class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">VariableResolver</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">ExpressionEvaluator</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">AttributeNotSupportedException</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">DynamicAttributes</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" valign="top">JSPFragment</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th valign="top">SimpleTag</th>
+      <th valign="top">getPageContext</th>
+      <td colspan="5" class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      Mêmes caractéristiques que les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlets</a>.
+    </li>
+    <li>Des balises personnalisées peuvent être développées et utilisées via des TagLibs.</li>
+    <li>JSP 2.0 fut initialement prévu comme JSP 1.3.</li>
+  </ul>
+</section>
+<section>
+  <h2>Conseils</h2>
+  <ul>
+    <li> N'insérez pas beaucoup de code Java dans vos JSP. Si vous en avez vraiment besoin, considérez l'utilisation de
+      servlets ou de taglibs</li>
+    <li>Ne traitez pas vos requêtes dans vos JSP, mais dans des servlets en amont. Ces dernières sauront rediriger
+      l'affichage vers vous si besoin (modèle de conception <a
+          href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a>)
+    </li>
+    <li>Ne mettez pas à jour des données dans les JSP. Les mises à jour se font typiquement à partir d'une servlet (voir
+      modèle <a href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a> ci-avant)</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="http://www.jcp.org/aboutJava/communityprocess/final/jsr053/">Spécification</a></li>
+    <li><a href="http://www.theserverside.com">The Server Side</a></li>
+    <li><a href="/org/int/asso/asf/server/web/Struts.html">Struts</a></li>
+  </ul>
+</section>
 <!--#include virtual="/footer.html" -->

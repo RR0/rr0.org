@@ -1,7 +1,7 @@
-Options +Indexes FollowSymLinks ExecCGI Includes
+Options +Indexes +FollowSymLinks +ExecCGI +includes
 <IfModule mod_autoindex.c>
 IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=* SuppressHTMLPreamble
-HeaderName /dirheader.html
+HeaderName /DIRHEADER.html
 IndexIgnore header.html footer.html favicon.ico .htaccess .ftpquota .DS_Store icons *.log *,v *,t .??* *~ *#
 </IfModule>
 

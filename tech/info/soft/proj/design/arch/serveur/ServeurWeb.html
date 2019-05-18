@@ -1,0 +1,54 @@
+<!--#include virtual="/header-start.html" -->
+<title>Serveur web</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en"><a href="../web/index.html">Web</a> server</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir des pages <a href="../web/index.html">Web</a> à des clients distants.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>Un serveur <a href="../web/index.html">Web</a> est un serveur de fichiers : il examine le fichier qui lui est
+    demandé dans une requête Web (<a href="../web/HTTP.html">HTTP</a>), lit son contenu via son système de fichiers
+    local, et renvoie ce contenu au client <a href="../web/HTTP.html">HTTP</a> (un <a href="../web/client/index.html">navigateur
+      Web</a> typiquement).</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Un serveur Web peut généralement être paramétré pour représenter plusieurs <a
+        href="../../../../reseau/VirtualHost.html">hôtes virtuels</a></li>
+  </ul>
+  </section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li> Au sens stricts, les serveurs Web se bornent à fournir des ressources statiques (fichiers HTML, images, etc.).
+      Ils ne sont capables de fournir des réponses dynamiques que si on leur adjoint un module destiné à cet effet comme
+      :
+      <ul>
+        <li>un conteneur Web ou "moteur" de <a href="../../../../prog/oo/java/Servlets.html">Servlets</a>/<a
+            href="../../../../prog/oo/java/JSP.html">JSP</a> (<em>Servlet engine</em>)</li>
+        <li>un module <a href="../../../../prog/php/index.html">PHP</a></li>
+        <li>un module CGI ou Light CGI</li>
+        <li>une extension propriétaire (NSAPI, ISAPI)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de serveurs Web sont :</p>
+  <ul>
+    <li> Apache
+      <ul>
+        <li>Server</li>
+        <li>Jakarta <a href="/org/int/asso/asf/server/web/Tomcat.html">Tomcat</a> (Java Apache)</li>
+      </ul>
+    </li>
+    <li><a href="http://jetty.mortbay.org/jetty/index.html">Jetty</a> (Java)</li>
+    <li>IHS</li>
+    <li>NES</li>
+    <li>IIS</li>
+    <li>Nginx</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>RR0</name>
+  <description><![CDATA[Localisation des sites Echo et Oscar près de la base de Malmstrom]]></description>
+<Style id="blue">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="red">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+    <Style id="kv50">
+    <LineStyle>
+      <color>730066FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="kv72">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+    <Style id="shortcircuit">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/fr_fr/mapfiles/ms/micons/caution.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+    <Style id="alim">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/fr_fr/mapfiles/ms/micons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Malmstrom AFB</name>
+    <description><![CDATA[<div dir="ltr">Base de l'USAF qui aurait été survolée par un ovni le 24 mars 1967. </div>]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-111.188332,47.505257,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alpha Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-110.727081,47.263390,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Charlie Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-110.170898,47.055153,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beta Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-110.409851,47.303448,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Delta Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.948425,47.310898,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mike Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.539185,46.954014,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de Contrôle Echo Flight</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"New Zealand Nuclear Free" d</span>ont <a href="https://rr0.org/science/crypto/ufo/enquete/dossier/EchoFlight">des missiles furent inopérants le 16 mars 1967</a> à 08:45, alors qu'il était occupé par Eric Carlson et Walter Figel Jr.]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.417564,47.453659,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de Contrôle Oscar Flight</name>
+    <description><![CDATA[dont des missiles auraient été inaptes au lancement alors que la base était survolée par un ovni, alors qu'il était occupé par Robert Salas]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-108.927116,47.328629,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>November Flight</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#red</styleUrl>
+    <Point>
+      <coordinates>-109.043427,47.031757,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-11</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Pluto's Bayonet"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.439522,47.582829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-2</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Missouri River Breaks"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.342117,47.645210,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-4</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Cut Bank Creek"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.246521,47.585197,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-3</name>
+    <description><![CDATA["Melting Cities"]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.345894,47.526592,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-10</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Salt Creek Pines"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.515816,47.491543,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-5</name>
+    <description><![CDATA[<span style="font-family:Times;font-size:medium">"Rolling Hills"</span>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.231613,47.497486,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-8</name>
+    <description><![CDATA[<div dir="ltr">"Unforgivable"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.289055,47.265633,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-7</name>
+    <description><![CDATA["Moulton"]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.361214,47.334751,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-9</name>
+    <description><![CDATA[<div dir="ltr">"Box Elder Creek"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.490219,47.385277,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-8</name>
+    <description><![CDATA[<div dir="ltr">"North Moccasin Mountains"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.547745,47.305607,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-9</name>
+    <description><![CDATA[<div dir="ltr">"Minuteman&#39;s Slaughterhouse"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.174461,47.306835,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-10</name>
+    <description><![CDATA[<div dir="ltr">"Guilded Gas Oven"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.053619,47.338123,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-11</name>
+    <description><![CDATA[<div dir="ltr">"Armells Creek"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.138161,47.402431,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-2</name>
+    <description><![CDATA[<div dir="ltr">"Stomping Nightmare"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.911346,47.420460,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-3</name>
+    <description><![CDATA[<div dir="ltr">"Sacogawea"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.763046,47.426563,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-7</name>
+    <description><![CDATA[<div dir="ltr">"Moral Novocaine"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.983986,47.253078,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-5</name>
+    <description><![CDATA[<div dir="ltr">"Burton K. Wheeler"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.833572,47.261524,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Oscar-4</name>
+    <description><![CDATA[<div dir="ltr">"Terrorism&#39;s Icon"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-108.789192,47.344292,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Echo-6</name>
+    <description><![CDATA[<div dir="ltr">"Indefensible"</div>]]></description>
+    <styleUrl>#blue</styleUrl>
+    <Point>
+      <coordinates>-109.311333,47.415485,0.000000</coordinates>
+    </Point>
+  </Placemark>
+    <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.474129,47.452293,0.000000
+        -109.420914,47.452702,0.000000
+        -109.409927,47.452702,0.000000
+        -109.399109,47.445850,0.000000
+        -109.335655,47.449379,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.515671,47.491283,0.000000
+        -109.512833,47.488033,0.000000
+        -109.509232,47.485657,0.000000
+        -109.505966,47.484673,0.000000
+        -109.503822,47.482292,0.000000
+        -109.490860,47.481831,0.000000
+        -109.488373,47.481018,0.000000
+        -109.476524,47.481190,0.000000
+        -109.474297,47.480206,0.000000
+        -109.474556,47.452179,0.000000
+        -109.488892,47.452003,0.000000
+        -109.489227,47.428146,0.000000
+        -109.485970,47.424721,0.000000
+        -109.482796,47.417110,0.000000
+        -109.484772,47.407993,0.000000
+        -109.484428,47.405380,0.000000
+        -109.485023,47.401775,0.000000
+        -109.487167,47.395676,0.000000
+        -109.489403,47.392483,0.000000
+        -109.490517,47.389286,0.000000
+        -109.492577,47.387192,0.000000
+        -109.492577,47.385624,0.000000
+        -109.490433,47.385216,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.311211,47.415451,0.000000
+        -109.309067,47.415890,0.000000
+        -109.310013,47.417171,0.000000
+        -109.316841,47.421322,0.000000
+        -109.321472,47.428810,0.000000
+        -109.326881,47.440361,0.000000
+        -109.357864,47.471531,0.000000
+        -109.359619,47.474979,0.000000
+        -109.358467,47.478985,0.000000
+        -109.346581,47.493427,0.000000
+        -109.341217,47.497257,0.000000
+        -109.339539,47.499802,0.000000
+        -109.341042,47.510151,0.000000
+        -109.338814,47.516529,0.000000
+        -109.339020,47.519859,0.000000
+        -109.344727,47.531448,0.000000
+        -109.362198,47.548260,0.000000
+        -109.368980,47.551682,0.000000
+        -109.374908,47.559326,0.000000
+        -109.375237,47.561352,0.000000
+        -109.389320,47.584160,0.000000
+        -109.438927,47.583351,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.345871,47.526520,0.000000
+        -109.342651,47.527271,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.340225,47.511982,0.000000
+        -109.248901,47.510475,0.000000
+        -109.232941,47.510883,0.000000
+        -109.231567,47.497429,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.246162,47.584515,0.000000
+        -109.302467,47.584286,0.000000
+        -109.302467,47.570042,0.000000
+        -109.344284,47.569809,0.000000
+        -109.344910,47.569359,0.000000
+        -109.344910,47.563614,0.000000
+        -109.345764,47.562771,0.000000
+        -109.372032,47.562424,0.000000
+        -109.373421,47.561615,0.000000
+        -109.375206,47.561424,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.341965,47.645233,0.000000
+        -109.340485,47.645252,0.000000
+        -109.340408,47.639194,0.000000
+        -109.341743,47.636860,0.000000
+        -109.344185,47.635624,0.000000
+        -109.345947,47.634129,0.000000
+        -109.344994,47.633110,0.000000
+        -109.345390,47.631172,0.000000
+        -109.345291,47.615536,0.000000
+        -109.346069,47.613918,0.000000
+        -109.345383,47.612183,0.000000
+        -109.344925,47.569405,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.361153,47.334808,0.000000
+        -109.360718,47.334969,0.000000
+        -109.358879,47.334545,0.000000
+        -109.360741,47.331203,0.000000
+        -109.360397,47.255001,0.000000
+        -109.351730,47.255234,0.000000
+        -109.341599,47.259834,0.000000
+        -109.305038,47.259892,0.000000
+        -109.290878,47.262688,0.000000
+        -109.290939,47.263535,0.000000
+        -109.289246,47.265121,0.000000
+        -109.289078,47.265659,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.360313,47.254826,0.000000
+        -109.363831,47.251736,0.000000
+        -109.367523,47.245502,0.000000
+        -109.370010,47.242706,0.000000
+        -109.374222,47.240608,0.000000
+        -109.384605,47.236469,0.000000
+        -109.386925,47.234024,0.000000
+        -109.387352,47.214497,0.000000
+        -109.395508,47.203789,0.000000
+        -109.394547,47.203522,0.000000
+        -109.392700,47.203861,0.000000
+        -109.390869,47.204060,0.000000
+        -109.388222,47.205700,0.000000
+        -109.387863,47.206406,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Mike-3</name>
+    <description><![CDATA[<div dir="ltr">"Warm Spring Creek"</div>]]></description>
+    <styleUrl>#style23</styleUrl>
+    <Point>
+      <coordinates>-109.387955,47.206276,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.547791,47.305649,0.000000
+        -109.549088,47.305630,0.000000
+        -109.549095,47.298122,0.000000
+        -109.553864,47.293900,0.000000
+        -109.554245,47.291660,0.000000
+        -109.554375,47.288895,0.000000
+        -109.555748,47.283627,0.000000
+        -109.557205,47.281006,0.000000
+        -109.558624,47.279579,0.000000
+        -109.560257,47.276985,0.000000
+        -109.561073,47.272968,0.000000
+        -109.564850,47.272182,0.000000
+        -109.563217,47.259193,0.000000
+        -109.563263,47.256924,0.000000
+        -109.566734,47.249756,0.000000
+        -109.569099,47.247398,0.000000
+        -109.569183,47.239124,0.000000
+        -109.566261,47.238831,0.000000
+        -109.562019,47.236938,0.000000
+        -109.559784,47.233208,0.000000
+        -109.549911,47.227699,0.000000
+        -109.538582,47.226856,0.000000
+        -109.526611,47.225224,0.000000
+        -109.518501,47.222801,0.000000
+        -109.514336,47.217804,0.000000
+        -109.508629,47.212337,0.000000
+        -109.466576,47.207558,0.000000
+        -109.408897,47.207439,0.000000
+        -109.408379,47.189594,0.000000
+        -109.396194,47.203709,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Mike-2</name>
+    <description><![CDATA[<div dir="ltr">"Brian&#39;s"</div>]]></description>
+    <styleUrl>#style47</styleUrl>
+    <Point>
+      <coordinates>-109.517097,47.219086,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.517097,47.219086,0.000000
+        -109.516472,47.219170,0.000000
+        -109.515709,47.219341,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Delta-6</name>
+    <description><![CDATA[<div dir="ltr">"Dementia"</div>]]></description>
+    <styleUrl>#style43</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.569313,47.239120,0.000000
+        -109.572701,47.239410,0.000000
+        -109.580811,47.242062,0.000000
+        -109.595833,47.243198,0.000000
+        -109.602440,47.242149,0.000000
+        -109.611656,47.243778,0.000000
+        -109.639954,47.243988,0.000000
+        -109.645615,47.246494,0.000000
+        -109.657974,47.257565,0.000000
+        -109.669563,47.263039,0.000000
+        -109.687843,47.267990,0.000000
+        -109.694969,47.271484,0.000000
+        -109.700119,47.272125,0.000000
+        -109.705612,47.274220,0.000000
+        -109.709496,47.274513,0.000000
+        -109.718224,47.273579,0.000000
+        -109.731438,47.274200,0.000000
+        -109.738541,47.275867,0.000000
+        -109.740509,47.276222,0.000000
+        -109.742088,47.276264,0.000000
+        -109.747238,47.275806,0.000000
+        -109.750664,47.275787,0.000000
+        -109.750725,47.274754,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 7,2 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv72</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.637077,47.244907,0.000000
+        -109.637192,47.244499,0.000000
+        -109.637199,47.243820,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Delta-7</name>
+    <description><![CDATA[<div dir="ltr">"Joe&#39;s"</div>]]></description>
+    <styleUrl>#style61</styleUrl>
+    <Point>
+      <coordinates>-109.750702,47.274723,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centre de lancement Delta-6</name>
+    <description><![CDATA[<div dir="ltr">"Dementia"</div>]]></description>
+    <styleUrl>#style33</styleUrl>
+    <Point>
+      <coordinates>-109.637115,47.245327,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sous-station d&#39;alimentation de Hilger</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#alim</styleUrl>
+    <Point>
+      <coordinates>-109.359673,47.254826,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sous-station d&#39;alimentation de Winifred</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#alim</styleUrl>
+    <Point>
+      <coordinates>-109.374557,47.560310,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 50 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv50</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.374733,47.560398,0.000000
+        -109.374817,47.559269,0.000000
+        -109.369156,47.551620,0.000000
+        -109.361771,47.547913,0.000000
+        -109.344864,47.531693,0.000000
+        -109.339111,47.519577,0.000000
+        -109.338898,47.516506,0.000000
+        -109.341003,47.510216,0.000000
+        -109.339630,47.500099,0.000000
+        -109.341301,47.497051,0.000000
+        -109.346535,47.493427,0.000000
+        -109.358551,47.478725,0.000000
+        -109.359451,47.474869,0.000000
+        -109.358299,47.472198,0.000000
+        -109.327271,47.440742,0.000000
+        -109.317139,47.421436,0.000000
+        -109.310234,47.417374,0.000000
+        -109.309334,47.415894,0.000000
+        -109.308815,47.414265,0.000000
+        -109.313110,47.402241,0.000000
+        -109.316841,47.396809,0.000000
+        -109.323662,47.380451,0.000000
+        -109.323494,47.378532,0.000000
+        -109.318687,47.370804,0.000000
+        -109.318604,47.369232,0.000000
+        -109.319717,47.367664,0.000000
+        -109.335167,47.356674,0.000000
+        -109.347267,47.352547,0.000000
+        -109.351471,47.349640,0.000000
+        -109.353966,47.345192,0.000000
+        -109.354904,47.341091,0.000000
+        -109.360916,47.331142,0.000000
+        -109.359970,47.256397,0.000000
+        -109.367523,47.243813,0.000000
+        -109.385376,47.236355,0.000000
+        -109.388123,47.209309,0.000000
+        -109.412155,47.185513,0.000000
+        -109.433441,47.146530,0.000000
+        -109.447174,47.131821,0.000000
+        -109.445801,47.117336,0.000000
+        -109.450951,47.101795,0.000000
+        -109.450264,47.098991,0.000000
+        -109.448029,47.096363,0.000000
+        -109.437561,47.091633,0.000000
+        -109.436447,47.089703,0.000000
+        -109.430008,47.085789,0.000000
+        -109.429153,47.080059,0.000000
+        -109.428635,47.070824,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Ligne 50 KV</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#kv50</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -109.117760,47.347778,0.000000
+        -109.125824,47.324631,0.000000
+        -109.228134,47.292736,0.000000
+        -109.261093,47.268513,0.000000
+        -109.305725,47.260124,0.000000
+        -109.341774,47.259892,0.000000
+        -109.351044,47.255466,0.000000
+        -109.360481,47.254768,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Sous-station d&#39;alimentation de Horse Ranch</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#alim</styleUrl>
+    <Point>
+      <coordinates>-109.117760,47.347546,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>transformateur en court-circuit d&#39;une phase à la terre</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#shortcircuit</styleUrl>
+    <Point>
+      <coordinates>-109.353447,47.539631,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

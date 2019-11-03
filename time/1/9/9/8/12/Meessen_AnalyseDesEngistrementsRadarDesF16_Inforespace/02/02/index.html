@@ -1,0 +1,42 @@
+<!--#include virtual="/header-start.html" -->
+<title>L'effet Doppler pour un réflecteur en mouvement</title>
+<link rel="start" href=".." title="Analyse approfondie des mystérieux enregistrements radar des F-16"/>
+<meta name="url" content="http://home.nordnet.fr/~phuleux/leradar.htm">
+<meta name="copyright" content="Inforespace n° 97 (SOBEPS)">
+<meta name="author" content="Meessen, Auguste">
+<!--#include virtual="/header-end.html" -->
+<p> Rappelons nous qu'une voiture de course produit un son de fréquence élevée quand elle <em>s'approche</em>, mais dès
+  que la voiture <em>s'éloigne</em> de nous, on entend un son de fréquence plus basse, bien que le bruit produit par le
+  moteur reste le même. La lumière émise par des galaxies qui <em>s'écartent</em> de nous, présente également un spectre
+  "décalée vers le rouge", c'est-à-dire vers les basses fréquences. La situation est un peu différente pour un <a
+      href="/science/crypto/ufo/enquete/indice/radar">radar</a> ou un sonar, parce que l'émetteur envoie une onde vers
+  <em>un réflecteur en mouvement</em>. L'onde revient, pour être captée par le récepteur qui se trouve au même endroit
+  que l'émetteur. La figure 3 décrit ces événements d'une manière graphique, facilement compréhensible.</p>
+<p> Considérons d'abord le cas (à gauche), où <em>le réflecteur est immobile</em> par rapport à l'émetteur-récepteur.
+  Celui-ci se trouve à l'origine de l'axe des x, tandis que le réflecteur est situé à une distance d, constante au cours
+  du temps. Un signal émis en `x = 0` à l'instant `t = 0` se propage vers le réflecteur à la vitesse c et revient à la
+  même vitesse. Un second signal émis en `x = 0` à l'instant `t = T` revient après un intervalle de temps égal à `T`. On
+  peut imaginer que le réflecteur est un miroir perpendiculaire à l'axe des `x`, mais en fait, il s'agit simplement
+  d'une <em>rétrodiffusion</em>. Au lieu de deux signaux successifs, on peut considérer une onde qui oscille constamment
+  à la fréquence `F = 1/T`. L'onde qui revient aura <em>la même fréquence</em>, si le réflecteur est immobile, mais la
+  situation est différente quand le réflecteur est en mouvement.</p>
+<figure class="right side"><img src="image3.gif" alt="Figure 3. La
+  propagation d'ondes à la vitesse c conduit à un changement de la période d'oscillation du signal réfléchi quand le
+  réflecteur est en mouvement">
+  <figcaption>Figure 3. La propagation d'ondes à la vitesse c conduit à un changement de la période d'oscillation du
+    signal réfléchi quand le réflecteur est en mouvement.
+  </figcaption>
+</figure>
+<p>Examinons le cas (représenté à droite) où il s'approche de l'émetteur-récepteur à une vitesse `v`. Il suffit
+  d'inspecter la figure pour voir qu'on peut calculer le changement `ΔT` de la période, puisque `c(ΔT/2) = v(T-ΔT/2)`.
+  Donc `(c+v) ΔT = 2vT`. Quand `v &laquo; c`, il en résulte que `ΔT = (2v/c)T`. La période du signal reçu `T' = T-DT =
+  (1-2c/v)T`. Elle diminue, mais la fréquence `F'= 1/T'` augmente. Puisque `v &laquo; c`, on trouve que `F' =
+  (1+2v/c)F`. Le changement de fréquence `ΔF = F'-F` est tel que `ΔF/F = 2v/c`. Si l'onde s'était propagée toujours dans le
+  même sens (d'un émetteur vers un récepteur séparé), on aurait obtenu `ΔF/F = v/c`, où v est la vitesse d'approche
+  relative, avec `v &laquo; c`. Un réflecteur en mouvement amplifie donc l'effet Doppler d'un facteur 2. Notons que la
+  fréquence augmente quand le réflecteur s'approche et qu'elle diminue, quand il s'éloigne.</p>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

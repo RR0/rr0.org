@@ -1,7 +1,8 @@
 <!--#include virtual="/header-start.html" -->
 <title>La mesure de la distance radiale</title>
 <link rel="start" href=".." title="Analyse approfondie des mystérieux enregistrements radar des F-16"/>
-<meta name="url" content="http://home.nordnet.fr/~phuleux/leradar.htm">
+<link href="../05" rel="next" title="La vitesse maximale mesurable"/>
+<meta content="https://web.archive.org/web/20131217194208/http://home.nordnet.fr:80/~phuleux/leradar.htm" name="url">
 <meta name="copyright" content="Inforespace n° 97 (SOBEPS)">
 <meta name="author" content="Meessen, Auguste">
 <!--#include virtual="/header-end.html" -->
@@ -12,17 +13,17 @@
   atmosphériques, mais la formule qui précède n'est valable que pour des sources proches. La figure 5 montre en effet
   que l'écho reçu pourrait être dû à une impulsion antérieure, par exemple la précédente. On aboutit donc à une <em>ambiguïté</em>.
 </p>
-<figure class="right side"><img src="http://home.nordnet.fr/%7Ephuleux/image5.GIF"
+<figure class="right side"><img src="image5.gif"
     alt="Figure 5: La détermination des distances est ambiguë pour une seule valeur de To.">
   <figcaption>Figure 5: La détermination des distances est ambiguë pour une seule valeur de To.</figcaption>
 </figure>
 <p>Considérons une onde de période `T`, découpée en une suite d'impulsions qui se répètent avec une période `T_0`. Dans
   ce cas, on peut seulement affirmer que la <em>distance réelle</em> `D = d + nd_0`, où `d_0 = cT_0/2` et `n = 0, 1, 2,
-  ...` On
-  peut émettre cependant de manière successive plusieurs trains d'ondes, avec des intervalles différents : `T_0, T_1,
-  T_2, ...` Cela fournit des "distances ambiguës maximales" `d_0, d_1, d_2, ...` et un ensemble d'équations
-  `D = d+n_0d_0 = d+n_1d_1 = d+n_2d_2...` Trois trains d'ondes seraient suffisants pour déterminer la valeur de d, si l'on était certain
-  qu'il y a un seul réflecteur. Un F-16 doit évidemment pouvoir discerner différents réflecteurs. Leur nombre résulte
+  ...` On peut émettre cependant de manière successive plusieurs trains d'ondes, avec des intervalles différents : `T_0,
+  T_1, T_2, ...` Cela fournit des "distances ambiguës maximales" `d_0, d_1, d_2, ...` et un ensemble d'équations `D =
+  d+n_0d_0 = d+n_1d_1 = d+n_2d_2...` Trois trains d'ondes seraient suffisants pour déterminer la valeur de d, si l'on
+  était certain qu'il y a un seul réflecteur. Un F-16 doit évidemment pouvoir discerner différents réflecteurs. Leur
+  nombre résulte
   d'un compromis. Le système APG-66 des F-16 utilise 8 trains d'ondes de 64 impulsions, envoyés à 8 fréquences de
   récurrence différentes. En pratique, on ne résout pas des équations, mais on détermine D au moyen d'un corrélateur
   électronique qui détecte simplement des coïncidences. Ce conditionnement analogique est robuste et suffisant.</p>

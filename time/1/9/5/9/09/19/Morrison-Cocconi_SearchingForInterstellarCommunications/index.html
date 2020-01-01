@@ -27,28 +27,28 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
 <section>
   <h2>The Optimum Channel</h2>
   <p>Interstellar communication across the galactic plasma without dispersion in direction and flight-time is practical,
-    so far as we know, only with electromagnetic waves. </p>
+    so far as we know, only with electromagnetic waves.</p>
   <p>Since the object of those who operate the source is to find a newly evolved society, we may presume that the
     channel used will be one that places a minimum burden of frequency and angular discrimination on the detector.
     Moreover, the channel must not be highly attenuated in space or in the Earth's atmosphere. Radio frequencies below
     about 1 Mc/s <span class="note">1 Mc/s = 1 megacycle per second = 1 million cycles per second</span>, and all
-    frequencies higher than molecular absorption lines near 30,000 Mc./s., up to cosmic-ray gamma energies, are suspect
-    of absorption in planetary atmospheres. The bandwidths which seem physically possible in the near-visible or
-    gamma-ray domains demand either very great power at the source or very complicated techniques. The wide radio band
-    from, say, 1 Mc to 10 Mc/s, remains as the rational choice.</p>
+    frequencies higher than molecular absorption lines near {{30000|number}} Mc./s., up to cosmic-ray gamma energies,
+    are suspect of absorption in planetary atmospheres. The bandwidths which seem physically possible in the
+    near-visible or gamma-ray domains demand either very great power at the source or very complicated techniques. The
+    wide radio band from, say, 1 Mc to 10 Mc/s, remains as the rational choice.</p>
   <p>In the radio region, the source must compete with two backgrounds: </p>
   <ol>
     <li>the emission of its own local star (we assume that the detector's angular resolution is unable to separate
       source from star since the source is likely to lie within a second of arc of its nearby star); </li>
-    <li>the galactic emission along the line of sight. </li>
+    <li>the galactic emission along the line of sight.</li>
   </ol>
   <p>Let us examine the frequency dependence of these backgrounds. A star similar to the quiet Sun would emit a power
     which produces at `n` distance `R` (in metres) a flux of :</p>
-  <p>`10^-14f^2`/`R^2` W.m.^-2(c./n.)^-2</p>
+  <p>`10^-14f^2`/`R^2` W.m.<sup>-2</sup>(c./n.)<sup>-2</sup></p>
   <p>If this flux is detected by a mirror of diameter `L_d`, the received power is the above flux multiplied by
     `L_d^2`.</p>
   <p>The more or less isotropic part of the galactic background yields a received power equal to :</p>
-  <p>`(10^-14.2/f)(lambda/l_d)^2(l_d)^2` W.(c./s.)^-2</p>
+  <p>`(10^-14.2/f)(lambda/l_d)^2(l_d)^2` W.(c./s.)<sup>-2</sup></p>
   <p>where the first factor arises from the spectrum of the galactic continuum, the second from the angular resolution,
     and the third from the area of the detector. Thus a minimum in sparious background is defined by equating these two
     terms. The minimum lies at :</p>
@@ -74,10 +74,10 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
     detector a signal as large as the galactic background is :</p>
   <p>`(dW_s)/(df) = (dW_b)/(dS dOmega df)(lambda/l_s)^2(lambda/l_d)R^2 = 10^-14.3 R^2/l_s^2l_d^2` W.(c./s.)<sup>-1</sup>
   </p>
-  <p>For source and receiver with mirrors like those at Jodrell Bank (l=80 m.), and for a distance `R ~~ 10` light
+  <p>For source and receiver with mirrors like those at Jodrell Bank (`l=80` m.), and for a distance `R ~~ 10` light
     years, the power at the source required is `10^2-2` W.(c./s.)<sup>-1</sup>, which could tax our present technical
     possibilities. However, if the size of the two mirrors is that of the telescope already planned by the U.S. Naval
-    Research Laboratory (l=200 m.), the power needed is a factor of 40 lower, which would fall within even our limited
+    Research Laboratory (`l=200` m.), the power needed is a factor of 40 lower, which would fall within even our limited
     capabilities.</p>
   <p>We have assumed that the source is bearing towards all the sun-like stars in its galactic neighbourhood. The
     support of, say, 100 different beams of the kind we have described does not seem an impossible burden on a society
@@ -94,19 +94,18 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
     natural line background as observed from the direction of the Sun.</p>
   <p>So far as the duration of the scanning is concerned, the receiver band-width appears to be unimportant. The usual
     radiometer relation for fluctuations in the background applies here, that is :</p>
-  <p>`DeltaR/B` &prop; &radic;(1/&Delta;fd^2&tau;)</p>
-  <p>where &Delta;fd^ is the bandwidth of the detector and &tau; the time constant of the post-detection recording
+  <p>`(DeltaR)/B prop sqrt(1/(Deltafd^2tau))`</p>
+  <p>where `Deltafd` is the bandwidth of the detector and `tau` the time constant of the post-detection recording
     equipment. On the other hand, the background accepted by the receiver is :</p>
-  <p>B = d<em>W</em>_b/df&Delta;f_d and t &prop;
-    &Delta;f_d/(&Delta;B)^2</p>
-  <p>If we set &Delta;<em>R</em> equal to some fixed value, then the search time <em>T</em> required to examine the band
-    <em>P</em> within which we postulated the signal to lie is given by :</p>
-  <p><em>T</em> = <em>F</em>&tau;/&Delta;f_d &prop; <em>F</em>/&Delta;B)^2</p>
-  <p>independent of receiver band-width &Delta;f_d.</p>
+  <p>`B = (dW_b)/(df)Deltaf_d` and `t prop Deltaf_d/(DeltaB)^2`</p>
+  <p>If we set `DeltaR` equal to some fixed value, then the search time `T` required to examine the band `P` within
+    which we postulated the signal to lie is given by :</p>
+  <p>`T = (Ftau)/(Deltaf_d) prop F/(DeltaB)^2`</p>
+  <p>independent of receiver band-width `Deltaf_d`.</p>
   <p>Of course, the smaller the band-width chosen, the weaker the signal which can be detected, provided
-    &Delta;f_d&ge;&Delta;f_s. It looks reasonable for a first effort to choose a band-width
-    &Delta;f_d normal in 21 cm. practice, but an integration time v longer than usual. A few settings should cover the
-    frequency range <em>F</em> using an integration time of minutes to hours. </p></section>
+    `Deltaf_d>=Deltaf_s`. It looks reasonable for a first effort to choose a band-width `Deltaf_d` normal in 21 cm.
+    practice, but an integration time v longer than usual. A few settings should cover the frequency range `F` using an
+    integration time of minutes to hours.</p></section>
 <section>
   <h2>Nature of the Signal and Possible Sources</h2>
   <p>No guesswork here is as good as finding the signal. We expect that the signal will be pulse-modulated with a speed

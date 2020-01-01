@@ -35,7 +35,7 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
   <p>L'objet de ceux opèrant la source étant de trouver une société nouvellement évoluée, nous pourrions présumer que le
     canal utilisé sera celui plaçant un minimum de fardeau de fréquence et de discrimination angulaire sur le détecteur.
     De plus, le canal ne sera pas hautement atténué dans l'espace ou dans l'atmosphère terrestre. Les fréquences radio
-    sous &#126;1 Mc/s <span class="note">[1 Mc/s = 1 megacycle par seconde = 1 million de cycles par seconde]</span>, et
+    sous &#126;1 Mc/s <span class="note">1 Mc/s = 1 megacycle par seconde = 1 million de cycles par seconde</span>, et
     toutes les fréquences plus élevées que les lignes d'absorption près de 30 000 Mc/s, jusqu'aux énergies des rayons
     cosmiques gamma, sont suspectes d'absorption dans les atmosphères planétaires. Les bandes passantes semblant
     physiquement possibles dans les domaines proches du visible ou des rayons gamma demandent, soit une puissance très
@@ -49,18 +49,18 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
     <li>l'émission galactique le long de la ligne de visée.</li>
   </ol>
   <p>Examinons la dépendance de fréquence de ces contextes. Une étoile semblable au calme <a
-      href="/place/systeme/solaire/Soleil">Soleil</a> émettrait une puissance produisant à une distance R (en mètres) un
-    flux de :</p>
-  <p>10<sup>-15</sup>&#402;<sup>2</sup>/R<sup>2</sup> W.m.<sup>-S</sup>(c/s)<sup>-2</sup></p>
+      href="/place/systeme/solaire/Soleil">Soleil</a> émettrait une puissance produisant à une distance `R` (en mètres)
+    un flux de :</p>
+  <p>`10^-14f^2`/`R^2` W.m.<sup>-2</sup>(c./n.)<sup>-2</sup></p>
   <p>Si ce flux est détecté par un mirroir de diamètre ld<sup>2</sup> la puissance reçue est le flux ci-dessus multiplié
     par ld<sup>2</sup>.</p>
   <p>Le partie plus ou moins isotrope du contexte isotrope libère une puissance reçue égale à :</p>
-  <p>(10<sup>-15+E</sup>/&#402;) (&#955;/ld)<sup>2</sup> (ld<sup>2</sup>) W.(c/s)<sup>-1</sup></p>
+  <p>`(10^-14.2/f)(lambda/l_d)^2(l_d)^2` W.(c/s)<sup>-1</sup></p>
   <p>où le 1er facteur vient du spectre du continuum galactique, le 2ème de la résolution angulaire, et le 3ème de la
     zone où le détecteur. Ainsi un minimum dans le faux contexte est défini en égalisant ces 2 termes. Le minimum réside
     à :</p>
-  <p>fmin. ~= 10<sup>4</sup> (R/ld)<sup>0-4</sup>c/s</p>
-  <p>Avec R = 10 années-lumière = 10<sup>15</sup> m et ld = 10<sup>5</sup> m, fmin. ~= 10<sup>10</sup> c/s</p>
+  <p>`fmin ~~ 10^4(R/l_d)^(c-4)` c./s.</p>
+  <p>Avec `R = 10` années-lumière `= 10^17 m` et `l_d=10^8 m`, `fmin ~~ 10^18` c/s</p>
   <p>La source est susceptible d'émettre dans la région de ce large minimum. </p>
   <p>A quelle fréquence devrons-nous regarder ? Une longue recherche dans le spectre d'un signal faible de fréquence
     inconnue est difficile. Mais, juste dans la région radio la plus favorisée réside un standard de fréquence unique,
@@ -72,23 +72,20 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
 </section>
 <section>
   <h2>Demandes de puissance de la source</h2>
-  <p>Le contexte galactique autour de la ligne de 21 cm totalise :</p>
-  <p>d&Pi;d<sup>2</sup>d/dS d&Omega; d&#402; &asymp; 10<sup>-21.6</sup> W.m.<sup>-2</sup> ster.<sup>-1</sup> (c/s)<sup>-1</sup>
+  <p>Le fond galactique autour de la ligne de 21 cm totalise :</p>
+  <p>`dPid^2d/(dS dOmega df) ~~ 10^-21.6` W.m.<sup>-2</sup> ster.<sup>-1</sup> (c./s)<sup>-1</sup>
   </p>
   <p>pour environ 2/3 des directions dans le ciel. Dans les directions proches du plan de la galaxie se trouve un fond
     jusqu'à 40 fois supérieur. Il est donc plus économique d'examiner d'abord les étoiles proches se trouvant dans les
     directions éloignées du plan galactique. </p>
   <p>Si à la source un mirroir est utilisé de <em>l</em><sub>s</sub> m de diamètre, alors la puissance nécessaire à ce
     qu'il génère dans notre détecteur un signal aussi grand que le fond galactique est :</p>
-  <p>d<em>W</em><sub>s</sub>/d&#402; = d<em>W</em><sub>b</sub>/dS d&Omega; d&#402; (&lambda;/l<sub>s</sub>)<sup>2</sup>
-    (&lambda;/l<sub>d</sub>)R<sup>2</sup> = 10<sup>-14.3</sup> R<sup>2</sup>/l<sub>s</sub><sup>2</sup>l<sub>d</sub><sup>2</sup>
-    W(c/s)<sup>-1</sup></p>
-  <p>Pour une source et un récépteur avec des mirroirs comme ceux à Jodrell Bank (<em>l</em>=80 m), et pour une distance
-    R
-    &asymp; 10 années-lumière, la puissance nécessaire à la source est 10<sup>2-2</sup> W(c/s)<sup>-1</sup>, ce qui
-    pourrait avoir raison de nos possibilités technique actuelles. Cependant, si la taille des 2 mirroirs est celle du
-    télescope déjà prévu par le Laboratoire de la Recherche Navle U.S. (<em>l</em>=200 m), la puissance nécessaire est
-    de 40 fois inférieure, ce qui tomberait même dans nos capacités limitées.</p>
+  <p>`(dW_s)/(df) = (dW_b)/(dS dOmega df)(lambda/l_s)^2(lambda/l_d)R^2 = 10^-14.3 R^2/l_s^2l_d^2` W.(c./s.)<sup>-1</sup>
+  <p>Pour une source et un récépteur avec des mirroirs comme ceux à Jodrell Bank (`l=80` m), et pour une distance `R ~~
+    10` années-lumière, la puissance nécessaire à la source est `10^2-2` W(c/s)<sup>-1</sup>, ce qui pourrait avoir
+    raison de nos possibilités technique actuelles. Cependant, si la taille des 2 mirroirs est celle du télescope déjà
+    prévu par le Laboratoire de la Recherche Navle U.S. (`l=200` m), la puissance nécessaire est de 40 fois inférieure,
+    ce qui tomberait même dans nos capacités limitées.</p>
   <p>Nous avons supposé que la source est orientée vers toutes les étoiles semblables au Soleil dans son voisinage
     galactique. Le soutien de, disons, 100 rayons différents du type que nous avons décrit ne semble pas être un charge
     impossible à soutenir par une société plus avancée que la nôtre (en détectant un signal, nous mêmes établirions
@@ -106,21 +103,19 @@ Science et de Technologie, Londres, S. W. T., Université de Cornell, Ithaca, Ne
     Sun.</p>
   <p>So far as the duration of the scanning is concerned, the receiver band-width appears to be unimportant. The usual
     radiometer relation for fluctuations in the background applies here, that is :</p>
-  <p>&Delta;<em>R</em>/<em>B</em> &prop; &radic;(1/&Delta;&#402;d<sup>2</sup>&tau;)</p>
-  <p>où &Delta;&#402;d<sup></sup> est la bande passante du détecteur et &tau; le temps constant de l'équipement
-    d'enregistrement post-detection. D'un autre côté, le fond accepté par le récepteur est :</p>
-  <p>B = d<em>W</em><sub>b</sub>/d&#402;&Delta;&#402;<sub>d</sub> and t &prop;
-    &Delta;&#402;<sub>d</sub>/(&Delta;B)<sup>2</sup></p>
-  <p>Si nous fixons &Delta;<em>R</em> à une valeur déterminée, alors la temps de recherche <em>T</em> nécessaire à
-    examiner la bande <em>P</em> au sein de laquelle nous avons postulé que se trouve le signal est donné par :</p>
-  <p><em>T</em> = <em>F</em>&tau;/&Delta;&#402;<sub>d</sub> &prop; <em>F</em>/&Delta;B)<sup>2</sup></p>
-  <p>indépendant de la bande passante du récepteur &Delta;&#402;<sub>d</sub>.</p>
+  <p>`(DeltaR)/B prop sqrt(1/(Deltafd^2tau))`</p>
+  <p>où `Deltafd` est la bande passante du détecteur et `tau` le temps constant de l'équipement d'enregistrement
+    post-detection. D'un autre côté, le fond accepté par le récepteur est :</p>
+  <p>`B = (dW_b)/(df)Deltaf_d` and `t prop Deltaf_d/(DeltaB)^2`</p>
+  <p>Si nous fixons &Delta;<em>R</em> à une valeur déterminée, alors la temps de recherche `T` nécessaire à examiner la
+    bande <em>P</em> au sein de laquelle nous avons postulé que se trouve le signal est donné par :</p>
+  <p>`T = (Ftau)/(Deltaf_d) prop F/(DeltaB)^2`</p>
+  <p>indépendant de la bande passante du récepteur `Deltaf_d`.</p>
   <p>Bien sûr, plus la bande passante choisie est courte, plus faible est le signal pouvant être détecté, étant donné
-    que
-    &Delta;&#402;<sub>d </sub>&ge; &Delta;&#402;<sub>s</sub>. Il semble raisonnable pour un 1er effort de choisir une
-    bande passante &Delta;&#402;<sub>d</sub> normale dans la pratique de 21 cm, mais un temps d'integration v plus long
-    que d'habitude. A few settings should cover the frequency range <em>F</em> using an integration time of minutes to
-    hours. </p></section>
+    que `Deltaf_d>=Deltaf_s`. Il semble raisonnable pour un 1er effort de choisir une bande passante `Deltaf_d` normale
+    dans la pratique de 21 cm, mais un temps d'integration v plus long que d'habitude. A few settings should cover the
+    frequency range `F` using an integration time of minutes to hours.</p>
+</section>
 <section>
   <h2>Nature du signal et sources possibles</h2>
   <p>No guesswork here is as good as finding the signal. Nous nous attendons à ce que le signal doit modulé par

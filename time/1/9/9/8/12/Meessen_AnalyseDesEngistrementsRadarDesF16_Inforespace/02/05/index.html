@@ -1,0 +1,54 @@
+<!--#include virtual="/header-start.html" -->
+<title>La vitesse maximale mesurable</title>
+<link href=".." rel="start" title="Analyse approfondie des mystérieux enregistrements radar des F-16"/>
+<link href="../04" rel="prev" title="La mesure de la distance radiale"/>
+<meta content="https://web.archive.org/web/20131217194208/http://home.nordnet.fr:80/~phuleux/leradar.htm" name="url">
+<meta content="Inforespace n° 97 (SOBEPS)" name="copyright">
+<meta content="Meessen, Auguste" name="author">
+<!--#include virtual="/header-end.html" -->
+<p>Puisque les F-16 sont dotés d'un <em>radar Doppler à impulsions</em>, on est confronté à une seconde difficulté. Elle
+  concerne la mesure des vitesses. Revenons en effet au cas simple, où le radar émet de manière <em>continue</em> une
+  onde sinusoïdale de fréquence `F`. Le spectre des fréquences serait alors constitué d'une seule raie infiniment mince.
+  Elle correspondrait à la fréquence `F` et il suffirait de mesurer le changement DF de cette fréquence pour déterminer
+  la vitesse `v`. La réalité est un peu plus compliquée, puisqu'il faut utiliser une série de trains d'ondes si l'on
+  veut également mesurer la distance du réflecteur.</p>
+<p> Le radar des F-16 émet une onde de fréquence F qui se situe dans le domaine des GHz (la période T &raquo; 10-9 s),
+  mais cette <em>onde porteuse</em> est modulée en amplitude, pour former une suite d'impulsions rectangulaires de
+  faible durée (largeur t &raquo; 10-6 s). Admettons pour l'instant qu'il y ait une suite infinie d'impulsions qui se
+  succèdent à des intervalles réguliers (To &raquo; 10-3 s). La <em>fréquence de récurrence</em> `f_0 = 1/To` se situe
+  alors dans le domaine des kHz. Dans ce cas, on ne peut plus dire que l'onde est monochromatique ! On obtient <em>une
+    raie élargie</em>, constituée d'un ensemble de raies, séparées les unes des autres de f_0. Comme le montre la figure
+  6, l'enveloppe des amplitudes est donnée par une fonction qui est maximale pour la fréquence F et décroît avec des
+  rebondissements. On peut calculer l'enveloppe (elle varie comme la valeur absolue de `sinx` sur x). Sa largeur
+  caractéristique est égale à `1/t`.</p>
+<p> Nous savons qu'il faut envoyer différents trains d'impulsions pour arriver à lever l'incertitude sur les distances.
+  Si chaque train d'impulsions est limité à `N` éléments, les raies internes du spectre des fréquences sont élargies,
+  mais `N` est assez grand pour que nous puissions les représenter par des raies très minces (figure 6). L'importance de
+  ce qui précède résulte du fait que l'effet Doppler produit un glissement de tout le spectre des fréquences. Il se
+  pourrait donc que le déplacement `DF` soit supérieur à `f_0`. Cela dépendra de la grandeur de la vitesse `v`, mais
+  quand DF est égal à un multiple de `f_0`, le spectre du signal reçu coïncide avec le spectre du signal émis. Tout se
+  passe comme si la vitesse v était nulle.</p>
+<figure class="right side">
+  <img alt="Figure 6 : Le spectre des fréquences d'un train d'ondes et le changement de fréquence `DF` qui résulte de
+    l'effet Doppler. Il faut que `DF` soit limité pour éviter une ambiguïté des vitesses."
+      src="image6.gif"/>
+  <figcaption>Figure 6 : Le spectre des fréquences d'un train d'ondes et le changement de fréquence `DF` qui résulte de
+    l'effet Doppler. Il faut que `DF` soit limité pour éviter une ambiguïté des vitesses.
+  </figcaption>
+</figure>
+<p>Puisqu'on doit tenir compte aussi bien des "cibles" qui s'écartent du F-16 que de celles qui s'en approchent, on
+  exigera que `DF` se situe entre `pmf_o/2`. On doit donc renoncer à la mesure des vitesses qui dépassent une certaine
+  valeur `vm`. Cette <em>vitesse relative maximale</em> est déterminée par la relation `f_0/2 = (2vm/c) F`. Puisque la
+  longueur d'onde de l'onde porteuse est `l = c/F`, on a `vm = f_0l/4`. Pour pouvoir mesurer des vitesses élevées, il
+  faudrait que la fréquence de récurrence `f_0` soit élevée, mais il y a une objection. La distance ambiguë maximale `dm
+  = c/2f_0` serait très petite, si `f_0` était très grand. Il faudrait beaucoup de trains d'ondes différents pour lever
+  l'ambiguïté en distance.</p>
+<p>On doit donc accepter un compromis : la valeur de `f_0` sera ni trop grande ni trop petite. Il suffit que la vitesse
+  relative maximale `vm` soit assez élevée pour ne pas être dépassé par la technologie du moment. Pour les F-16, la
+  vitesse relative maximale vm est de l'ordre de 600 noeuds <strong>6</strong>. Puisque la vitesse <em>absolue</em> par
+  rapport au sol est calculée, elle peut être plus élevée, mais il y a une limite.</p>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

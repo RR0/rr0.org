@@ -1,0 +1,47 @@
+<!--#include virtual="/header-start.html" -->
+<title>La mesure de la vitesse d'approche</title>
+<link href=".." rel="start" title="Analyse approfondie des mystérieux enregistrements radar des F-16"/>
+<link href="../02" rel="prev" title="L'effet Doppler pour un réflecteur en mouvement"/>
+<link href="../04" rel="next" title="La mesure de la distance radiale"/>
+<meta content="https://web.archive.org/web/20131217194208/http://home.nordnet.fr:80/~phuleux/leradar.htm" name="url">
+<meta content="Inforespace n° 97 (SOBEPS)" name="copyright">
+<meta content="Meessen, Auguste" name="author">
+<!--#include virtual="/header-end.html" -->
+<p> Pour mesurer la grandeur et le signe de `v`, il faut comparer le signal qui revient à celui qui continue à être
+  produit par l'oscillateur interne de l'émetteur-récepteur. Ces signaux peuvent être représentés <em>au même instant
+    `t`</em> par deux vecteurs qui tournent à des vitesses angulaires différentes (figure 4). Le vecteur qui caractérise
+  l'oscillateur interne a une grandeur `A` et tourne avec une vitesse angulaire `w = 21/T`, où 21 est l'angle balayé (en
+  radians) pendant un tour complet ou une période `T`. Les composantes du vecteur (encadrées) sont des fonctions
+  harmoniques. L'une est maximale quand l'autre est nulle.</p>
+<figure class="right side">
+  <img alt="Figure 4: Le signal interne à l'émetteur et le signal capté par le récepteur peuvent être<br> représentés par
+    deux vecteurs qui tournent. L'effet Doppler change la vitesse angulaire." src="image4.gif">
+  <figcaption>Figure 4: Le signal interne à l'émetteur et le signal capté par le récepteur peuvent être<br> représentés
+    par deux vecteurs qui tournent. L'effet Doppler change la vitesse angulaire.
+  </figcaption>
+</figure>
+<p>Le signal capté par le récepteur est caractérisé par un vecteur de grandeur `A'`. Il tourne à une vitesse angulaire
+  w' différente de w quand l'onde est renvoyée par un réflecteur en mouvement. S'il s'approche à une vitesse v, on aura
+  un changement relatif `Dw/w = 2v/c`. Quand la vitesse est constante depuis l'instant `t = 0` jusqu'à l'instant `t`, la
+  phase `f = Dw.t` et quand la vitesse varie, on peut dire qu'après un temps dt, la phase change de telle manière que
+  `Dw = df/dt`. C'est la dérivée de f par rapport au temps. Il est donc possible de mesurer la <em>vitesse
+    instantanée</em>, quand dt est très petit.</p>
+<p> La valeur de f à un instant donné est extraite du signal qui revient, au moyen d'un traitement électronique. Posons
+  `A = 2` et prenons les produits (au moyen d'un mélangeur électronique) du signal reçu et du signal de référence au
+  même instant. On prendra également le produit avec le signal de référence, déphasé de 90° (le sinus au lieu du
+  cosinus). Les élèves du secondaire savent déjà que ces produits sont équivalents à des sommes de fonctions
+  trigonométriques :</p>
+<p>`2A' cos (wt+f) coswt = A' [cos f + cos (wt+f/2)]`<br> `2A' cos (wt+f) sinwt = A' [-sin f + sin (wt+f/2)]`.</p>
+<p>Les derniers termes dans les crochets correspondent à des fonctions qui oscillent rapidement. On peut les éliminer
+  par un filtrage électronique pour obtenir deux signaux de basse fréquence :</p>
+<p>`I(t) = A' cos f` <em>et</em> `Q(t) = A' sin f`.</p>
+<p>Le premier signal suffirait pour déterminer la grandeur de `f`, mais pas son signe. Pour aboutir à une précision
+  optimale pour la grandeur et le signe de la phase instantanée `f`, on utilisera toujours les deux fonctions I (t) et Q
+  (t), en effectuant une <em>transformée de Fourier rapide</em> (au moyen d'un processeur digital, agissant comme
+  analyseur de fréquence). Ensuite, il suffit de tenir compte du changement df de la phase pendant un tout petit
+  intervalle de temps dt pour déterminer `Dw = (2v/c) w`.</p>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

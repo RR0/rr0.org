@@ -1,0 +1,207 @@
+<!--#include virtual="/header-start.html" -->
+<title>Cordova</title>
+<meta content="http://cordova.apache.org" name="url">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Permettre l'accès à des fonctionnalités mobiles natives depuis une application Web (HTML + CSS + Javascript) plus
+    portable.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Fournit des APIs supplémentaires permettant d'accèder aux fonctionnalités natives d'une <a
+      href="/tech/info/soft/proj/design/arch/platform/mobile">plate-forme mobile</a>, telles que :</p>
+  <ul>
+    <li><strong>Accéléromètre</strong></li>
+    <li><strong>Caméra</strong> par défaut de l'appareil</li>
+    <li><strong>Capture</strong> photo, video, audio</li>
+    <li><strong>Compas</strong></li>
+    <li><strong>Connexions</strong> cellulaires et WiFi</li>
+    <li><strong>Contacts</strong></li>
+    <li><strong>Appareil</strong> (logiciel et matériel)</li>
+    <li><strong>Événements</strong> (batterie, appels téléphoniques, volume, perte de connexion...)</li>
+    <li><strong>Fichiers</strong></li>
+    <li><strong>Géolocalisation</strong></li>
+    <li><strong>Globalisation</strong> (fuseau horaire et langue utilisateur)</li>
+    <li><strong>Media</strong> (enregistrement/lecture audio)</li>
+    <li><strong>Notifications</strong> visuelles, audio</li>
+    <li><strong>Splashscreen</strong> d'application</li>
+    <li><strong>Stockage</strong> local</li>
+  </ul>
+  <p>OSS</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ol>
+    <li>Intégrer un navigateur <em><a href="https://github.com/mozilla/chromeless">chromeless</a></em> dans une
+      application native </li>
+    <li>Créer un "pont" (<em>bridge</em>) ce navigateur et le code natif </li>
+    <li>Ecrire une webapp</li>
+    <li>Packager la webapp dans le code natif et déployer sur les plates-formes natives (même packaging/distribution via
+      un store que des autres applications natives).</li>
+  </ol>
+  <p>Remote debugging</p>
+  <p>Extensibilité (plates-formes ou extensions de plates-formes)</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Cycle de développement</h3>
+    <ul>
+      <li>N'importe quel IDE
+        <ul>
+          <li>Android 4.0 (API Level 15)</li>
+        </ul>
+      </li>
+      <li>Emulateurs de plate-forme ou émulateur Ripple </li>
+      <li>Web Inspector Remote (Weinre) / Srsly utilise Weinre</li>
+      <li>A défaut du reste, Console.log et alert</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Performance</h3>
+    <ul>
+      <li>Utiliser des transformations CSS3 au lieu de fixer des propriétés CSS dans une boucle Javascript</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>Code</h3>
+    <p><code>&lt;!doctype html<br>
+      &gt;
+      &lt;html&gt;<br>
+      &lt;head&gt;<br>
+      &lt;meta name=<span class="codeString">"viewport"</span> content=<span class="codeString">"<strong>width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;</strong>"</span>/&gt;<br>
+         &lt;link rel=<span class="codeString">"stylesheet"</span> media=<span class="codeString">"<strong>all and (max-device-width: 480px)</strong>" </span>href=<span
+          class="codeString">"iphone.css"</span>&gt;<br>   &lt;link rel=<span class="codeString">"stylesheet"</span>
+      media=<span class="codeString">"<strong>all and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)</strong>"</span>
+      href=<span class="codeString">"ipad-portrait.css"</span>&gt;<br>   &lt;link rel=<span
+          class="codeString">"stylesheet"</span> media=<span class="codeString">"<strong>all and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)</strong>"</span>
+      href=<span class="codeString">"ipad-landscape.css"</span>&gt;<br>    &lt;script src=<span class="codeString">"phonegap-0.9.4.js"</span>&gt;&lt;/script&gt;<br>
+        
+      &lt;script&gt;<br>       document.addEventListener(<span class="codeString">‘deviceready’</span>,function(){<br>
+        
+alert(<span class="codeString">‘Hello!’</span>);<br>
+     }, false); Performance•UsethoseCSStransforms•Don’tsetstylepropertiesinsidealoop•Don’tdowhatyoudoontheweb <br>   
+      &lt;/script&gt;
+      <br>
+      &lt;/head&gt;<br>
+      &lt;body&gt;<br>     </code><code>&lt;button&gt;Je suis dans une appli native !&lt;/button&gt;<br>
+      &lt;/body&gt;<br>
+      &lt;/html&gt; </code></p></section>
+  <h3>Applications</h3>
+  <p>Parmi les applications mobiles développée avec Cordova ou PhoneGap <span class="source">"<a
+      href="http://phonegap.com/app">Apps Created with PhoneGap</a>", <em>PhoneGap</em></span> on trouve :</p>
+  <ul>
+    <li>Wikipedia/WikiMedia (Android, iOS, Blackberry)</li>
+    <li>Une précédente version de Facebook</li>
+    (fork)
+    <li>Salesforce (fork de PhoneGap)</li>
+    <li>Halo Waypoint (jeu de Microsoft pour iOS, Android)</li>
+    <li>jeux de Zynga (Mafia Wars utilise PhoneGap)</li>
+    <li>Contrôleur de la radio Squeezebox de Logitech (iOS, Android)</li>
+    <li>Alcatel-Lucent</li>
+    <li>Deutshce Telecom</li>
+    <li>Ars Technica</li>
+    <li>Sabre</li>
+    <li>Cisco</li>
+    <li>TimeWarner</li>
+    <li>The Onion</li>
+  </ul>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <table>
+    <thead>
+    <tr>
+      <th rowspan="2">Plate-forme</th>
+      <th rowspan="2">Navigateur chromeless</th>
+      <th rowspan="2">Version</th>
+      <th colspan="2">Pont web-natif</th>
+    </tr>
+    <tr>
+      <th>du web de le natif</th>
+      <th>du natif vers le web</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><a href="../../../../us/company/apple/soft/iOS">iOS</a> (iPad, iPod Touch, iPhone)</td>
+      <td>Webkit (UIWebView)</td>
+      <td></td>
+      <td>au choix :
+        <ul>
+          <li>écriture dans une iframe, lue et exécutée par le natif</li>
+          <li>requête XHR à une URL interceptée</li></ul>
+      </td>
+      <td>stringByEvaluatingJavaScriptFromString</td>
+    </tr>
+    <tr>
+      <td><a href="../../../../us/company/google/product/soft/android">Android</a></td>
+      <td>WebKit (WebView)</td>
+      <td> 2.1 (API level 7)</td>
+      <td>au choix :
+        <ul>
+          <li>onJSPrompt</li>
+          <li>JS_Object</li>
+          <li>location URL change </li>
+        </ul>
+      </td>
+      <td> au choix :
+        <ul>
+          <li>polling du natif par le web (toutes les 50 ms, suboptimal)</li>
+          <li>HANGING_GET : un serveur interne répond à des requêtes XHR du web</li>
+          <li>Reflexivité Java sur la WebView (Android 3.2+)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>RIM pour Blackberry (smartphones, Playbook)</td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>Windows Phone</td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>HP/Palm WebOS</td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>Bada</td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>Symbian</td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Anciennement appelé Callback, lui-même dérivé de Adobe Phonegap</li>
+    <li>Des contributeurs de Cordova/PhoneGap sont :
+      <ul>
+        <li>Microsoft (support Windows Phone)</li>
+        <li> Adobe (via son PhoneGap)</li>
+        <li>RIM (support BlackBerry Playbook)</li>
+        <li>IBM</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

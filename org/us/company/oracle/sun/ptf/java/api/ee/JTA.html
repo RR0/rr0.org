@@ -1,0 +1,43 @@
+<!--#include virtual="/header-start.html" -->
+<title>JTA</title>
+<meta content="http://java.sun.com/products/jta" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Java Transaction API</i> : API de Transactions Java.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir une API Java standard pour utiliser (démarrer, valider, annuler) des <a
+      href="/tech/info/soft/proj/impl/algo/tx">transactions</a>.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>JTA est composée de 3 parties :</p>
+  <ul>
+    <li>des <a href="/tech/info/soft/API.html">API</a> haut-niveau de démarcation de transactions
+      <ul>
+        <li>pour le développeur d'application</li>
+        <li>pour les environnements gérés (<a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs
+          applicatifs</a>, <a href="/tech/info/soft/prod/TPM.html">TPM</a>) </li>
+      </ul>
+    </li>
+    <li>une version Java du protocole XA de l'X/Open permettant à un <a
+        href="/tech/info/soft/proj/impl/algo/tx/RM.html">RM</a> de participer à une <a
+        href="/tech/info/soft/proj/impl/algo/tx/TransactionGlobale.html">transaction globale</a> contrôlée par un <a
+        href="/tech/info/soft/proj/impl/algo/tx/TM.html">TM</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Elle appelle dans des couches inférieures un TM, qui peut être conforme à JTS.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <p><code><strong><a href="http://java.sun.com/products/jta/javadocs-1.0.1/javax/transaction/package-summary.html">javax.transaction</a>.<a
+      href="http://java.sun.com/products/jta/javadocs-1.0.1/index.html">UserTransaction</a></strong> tx =
+    namingContext.lookup(<span class="codeString">"UserTransaction"</span>);<br> tx.<strong>begin</strong>();<br> try {<br>
+// Opérations transactionnelles<br>
+  tx.<strong>commit</strong>();<br>} catch (Exception exceptionMetier) {<br>
+  tx.<strong>rollback</strong>();<br>}
+  </code></p></section>
+<section>
+  <h2>Déploiement</h2>
+  <p>JTA est intégré dans <a href="org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> 1.2. </p>
+</section>
+<!--#include virtual="/footer.html" -->

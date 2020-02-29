@@ -16,15 +16,16 @@
     <figcaption>Le paramètre C définit la taille de la marge de classification</figcaption>
     <img src="svm-parameter-c-example.png" alt="Le paramètre C définit la taille de la marge de classification"/>
   </figure>
-  <p>La <a href="/science/discipline/math/stat/regress/logistic">régression logistique</a> peut classer correctement des
-    données mais parfois de manière trop précise, non naturelle. En ajoutant une contrainte de <strong>marge</strong>
+  <p>La <a href="/science/discipline/hard/form/math/stat/regress/logistic">régression logistique</a> peut classer
+    correctement des données mais parfois de manière trop précise, non naturelle. En ajoutant une contrainte de <strong>marge</strong>
     autour de la ligne de séparation, on obtient un résultat plus naturel.</p>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>L'algorithme de SVM simplifie la <a href="/science/discipline/math/stat/regress/cost">fonction de coût</a> de <a
-      href="/science/discipline/math/stat/regress/logistic">régression logistique</a> pour permettre un calcul plus
-    rapide :</p>
+  <p>L'algorithme de SVM simplifie la <a href="/science/discipline/hard/form/math/stat/regress/cost">fonction de
+    coût</a> de <a
+      href="/science/discipline/hard/form/math/stat/regress/logistic">régression logistique</a> pour permettre un calcul
+    plus rapide :</p>
   <ul>
     <li>
       <table class="right">
@@ -56,16 +57,17 @@
         </tr>
         </tbody>
       </table>
-      Les courbes <a href="/science/discipline/math/ens/rel/func/sigmoid">sigmoïdes</a> sont remplacées par des fonction
-      linéaires
+      Les courbes <a href="/science/discipline/hard/form/math/ens/rel/func/sigmoid">sigmoïdes</a> sont remplacées par
+      des fonction linéaires
     </li>
     <li>le signe `-`, jusqu'ici factorisé, est ré-intégré à l'intérieur des termes.</li>
     <li>La division par `m` (nombre de lignes de données) est supprimée (car cela n'affecte pas le résultat de la
       minimisation).</li>
-    <li>le taux de <a href="/science/discipline/math/stat/regress/regul">régularisation</a> λ en 2ème terme est remplacé
-      par un taux inverse `C = 1/λ` en 1er terme</li>
+    <li>le taux de <a href="/science/discipline/hard/form/math/stat/regress/regul">régularisation</a> λ en 2ème terme
+      est remplacé par un taux inverse `C = 1/λ` en 1er terme</li>
   </ul>
-  <p>De sorte que la <a href="/science/discipline/math/stat/regress/cost">fonction de coût</a> à minimiser devient :</p>
+  <p>De sorte que la <a href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a> à minimiser
+    devient :</p>
   <p>`z(x) = θ^T x`</p>
   <p>`J(Θ) = C sum_(i=1)^m [y^((i)) "cost"_1(z(x^((i))))+(1−y^((i)))"cost"_0(z(x^((i))))] + 1/2 sum_(j=1)^n θ_j^2`</p>
   <p>Dans le cas d'un besoin de distinction non linéaire, on utilisera des <a href="kernel">kernels</a>.</p>

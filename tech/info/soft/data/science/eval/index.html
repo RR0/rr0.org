@@ -20,10 +20,10 @@
     <thead>
     <tr>
       <td class="titleCorner"></td>
-      <th>Résoud l'<i lang="en"><a href="/science/discipline/math/stat/regress/underfit">underfitting</a> (high
-        bias)</i></th>
-      <th>Résoud l'<i lang="en"><a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a> (high
-        variance)</i>
+      <th>Résoud l'<i lang="en"><a href="/science/discipline/hard/form/math/stat/regress/underfit">underfitting</a>
+        (high bias)</i></th>
+      <th>Résoud l'<i lang="en"><a href="/science/discipline/hard/form/math/stat/regress/overfit">surapprentissage</a>
+        (high variance)</i>
       </th>
       <th>Commentaire</th>
     </tr>
@@ -44,14 +44,14 @@
     <tr>
     <tr>
       <td>Augmenter le facteur de <strong><a
-          href="/science/discipline/math/stat/regress/regul">régularisation</a></strong></td>
+          href="/science/discipline/hard/form/math/stat/regress/regul">régularisation</a></strong></td>
       <td class="non">Non</td>
       <td class="oui">Oui</td>
       <td>La pénalisation de paramètres permet de moins coller aux données connues</td>
     </tr>
     <tr>
       <td>Diminuer le facteur de <strong><a
-          href="/science/discipline/math/stat/regress/regul">régularisation</a></strong></td>
+          href="/science/discipline/hard/form/math/stat/regress/regul">régularisation</a></strong></td>
       <td class="oui">Oui</td>
       <td class="non">Non</td>
       <td>Ne pas trop pénaliser les paramètres permet de mieux prendre en compte les données connues</td>
@@ -81,21 +81,24 @@
     <li><strong>test</strong> (<i lang="en">test set</i>) (20%, choisis aléatoirement si l'ordre est important) pour
       évaluer la performance de l'apprentissage sur des données qu'il n'a pas encore rencontrées ;</li>
     <li><strong>vérification</strong> (<i lang="en">cross-validation set</i>) (20%, choisis aléatoirement si l'ordre est
-      important) pour trouver le paramétrage de <a href="/science/discipline/math/stat/regress/regul">régularisation</a>
+      important) pour trouver le paramétrage de <a href="/science/discipline/hard/form/math/stat/regress/regul">régularisation</a>
       (on peut ainsi même automatiser cette recherche du meilleur taux de régularisation).
     </li>
   </ul>
-  <p>ce qui permet d'utiliser une fonction de <a href="/science/discipline/math/stat/regress/cost">calcul de coût</a>
-    paramétrée pour un ensemble sur un autre ensemble. Il pourra aussi être utile de tracer les "courbes
+  <p>ce qui permet d'utiliser une fonction de <a href="/science/discipline/hard/form/math/stat/regress/cost">calcul de
+    coût</a> paramétrée pour un ensemble sur un autre ensemble. Il pourra aussi être utile de tracer les "courbes
     d'apprentissage" (<i lang="en">learning curves</i>) que représentent les erreurs (sans régularisation) des ensembles
     d'entraînement et de validation, en fonction de la taille de l'ensemble d'entraînement : ces courbes qui devraient
-    converger peuvent en effet être indicatrices d'un <a href="/science/discipline/math/stat/regress/underfit"><i
+    converger peuvent en effet être indicatrices d'un <a
+        href="/science/discipline/hard/form/math/stat/regress/underfit"><i
         lang="en">underfitting</i></a> (biais élevé si la convergence s'effectue mais ne parvient pas à descendre d'un
-    haut taux d'erreurs) ou <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a> (variance
-    élevée si les erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble d'entraînement).
+    haut taux d'erreurs) ou <a href="/science/discipline/hard/form/math/stat/regress/overfit">surapprentissage</a>
+    (variance élevée si les erreurs de l'ensemble de validation restent bien au-dessus de celles de l'ensemble
+    d'entraînement).
   </p>
-  <p>On pourra utiliser la <a href="/science/discipline/math/stat/pca">PCA</a> pour réduire le nombre de features (mais
-    <em>pas</em> pour éviter le <a href="/science/discipline/math/stat/regress/overfit">surapprentissage</a>).</p>
+  <p>On pourra utiliser la <a href="/science/discipline/hard/form/math/stat/pca">PCA</a> pour réduire le nombre de
+    features (mais <em>pas</em> pour éviter le <a href="/science/discipline/hard/form/math/stat/regress/overfit">surapprentissage</a>).
+  </p>
 </section>
 <!--#include virtual="/footer.html" -->
 <style>.mjx-math * {

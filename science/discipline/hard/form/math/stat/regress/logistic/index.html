@@ -1,0 +1,189 @@
+<!--#include virtual="/header-start.html" -->
+<title>Régression logistique</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Convertir une variable quantitative (y) en qualitative</li>
+    <li>Prédire une classe en fonction d'une valeur de x</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>On veut ici classer des données comme appartenant à une classe ou à une autre : cela implique que `y` (la valeur
+    connue ou à prédire) doit avoir des valeurs <strong>discrètes</strong> (i.e. autant de valeurs que de classes
+    possibles) et non pas une valeur continue (comme en <a
+        href="/science/discipline/hard/form/math/form/math/stat/regress/linear">régression linéaire</a>).</p>
+  <p>Cela implique que la fonction hypothèse `h` doit elle aussi prédire un résultat sous forme de valeurs discrètes
+    dans l'intervalle correspondant à celles de `y`. Par exemple pour un cas binaire soit `y(x)` appartient à la classe
+    "positive" (`y = 1`), soit à la classe "négative" (`y = 0` ou `y = -1` selon les choix techniques).</p>
+  <section>
+    <h3>Classes multiples</h3>
+    <p>Lorsque l'on doit classer entre `K > 2` classes, c'est-à-dire que `y = { 0, 1, 2, ..., K }`, on décompose le
+      problème en `K` problèmes à 2 classes, où l'on cherche à savoir pour chacune si une valeur appartient à la classe
+      testée ou à l'une des autres (<i lang="en">one-vs-all</i>).</p>
+  </section>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Utiliser une <a href="../linear">fonction linéaire</a> pour classer peut marcher "par chance" mais comporte trop de
+    risque de faux positifs/négatifs.</p>
+  <p>On préfère donc encapsuler notre hypothèse dans une <strong><a
+      href="/tech/info/soft/data/science/ml/nn/activation">fonction d'activation</a></strong> `g(z)` qui transforme tout
+    résultat en valeur associée à une classe :</p>
+  <ul>
+    <li>(rarement) une <strong>fonction signe</strong> (<i>signum</i>) s'il s'agit d'une classification binaire, qui
+      fait alors correspondre chacune des 2 classes vers -1 ou 1</li>
+    <li>(plus généralement) une <a
+        href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid/logistic"><strong>fonction
+      logistique</strong></a>, qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
+  </ul>
+  <p>Soit le vecteur `x` représentant les caractéristiques (<em>features</em>) de éléments à classer, notre fonction :
+  </p>
+  <p>`z=θ^Tx`</p>
+  <p>et on définit donc `h_θ(x)` comme la <em>probabilité</em> `P` que `y = 1` (et donc probabilité `1 - P` que `y`
+    valle l'autre classe) :</p>
+  <p>`h_θ(x)=g(z)`</p>
+  <p>ou, si l'on remplace `g` par sa définition <a
+      href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid/index.html">sigmoïde</a> :</p>
+  <p>`h_θ(x)=1/(1+e^(−z))`</p>
+  <section>
+    <h3>Coût</h3>
+    <p>Cependant la <a href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid/index.html">fonction
+      sigmoïde</a> ne garantit pas d'être <a
+        href="/science/discipline/hard/form/math/form/math/ens/rel/func/Convexe.html">convexe</a>. On va donc
+      l'encapsuler dans une autre fonction <a
+          href="/science/discipline/hard/form/math/form/math/ens/rel/func/Convexe.html">convexe</a>, le <a
+          href="/science/discipline/hard/form/math/form/math/ens/rel/func/log">`log`</a> :</p>
+    <table>
+      <thead>
+      <tr>
+        <th>`y`</th>
+        <th>`"cost"(h_θ(x),y)`</th>
+        <th>Graphique `z`</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>`−log(h_θ(x))`</td>
+        <td>
+          <div id="y1"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>`−log(1−h_θ(x))`</td>
+        <td>
+          <div id="y0"></div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <p>ce qui peut s'écrire en une seule ligne si l'on utilise la valeur de `y` pour annuler l'une ou l'autre des
+      parties :</p>
+    <p>`"cost"(h_θ(x),y)=−y*log(h_θ(x))−(1−y)log(1−h_θ(x))`</p>
+    <p>ou `"cost"(h_θ(x),y)=−[y*log(h_θ(x))+(1−y)log(1−h_θ(x))]` ce qui est en fait très proche de la version <a
+        href="../../../../../../../../..">linéaire</a> `(h_Θ(x) - y)^2`</p>
+    <p>ou si on l'insère dans la formule complète du <a
+        href="/science/discipline/hard/form/math/form/math/stat/regress/cost">coût</a> en sortant le signe et en y
+      ajoutant le terme de <a
+          href="/science/discipline/hard/form/math/form/math/stat/regress/regul">régularisation</a> :</p>
+    <p>`J(Θ) = -1/m sum_(i=1)^m [y^((i)) log(h_θ(x^((i))))+(1−y^((i)))log(1−h_θ(x^((i))))] + λ/(2m) sum_(j=1)^n
+      θ_j^2`</p>
+  </section>
+  <section>
+    <h3>Précision et rappel</h3>
+    <p>Classer les réponses comme 0 ou 1 en fonction de `h_θ(x)>=0,5` ou `h_θ(x)<0,5` n'est pas toujours le plus
+      opportun ; parfois on voudrait utiliser une autre valeur que 0,5 si les classes sont déséquilibrées/dissymétriques
+      (<i lang="en">skewed</i>).</p>
+    <p>Cependant si ce facteur est trop déséquilibré (disons 0,9), il convient de vérifier la fiabilité des résultats.
+      Si l'on suppose :</p>
+    <table>
+      <thead>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th colspan="2">Classe réelle</th>
+      </tr>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th>1</th>
+        <th>0</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>Classe prédite</th>
+        <th>1</th>
+        <td class="oui">Vrai positif</td>
+        <td class="non">Faux positif</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>0</th>
+        <td class="non">Faux négatif</td>
+        <td class="oui">Vrai négatif</td>
+      </tr>
+      </tbody>
+    </table>
+    <p>On définit la <strong>précision</strong> comme la proportion de prédictions positives correctes dans l'ensemble
+      des prédictions positives :</p>
+    <p>`P = "vrais positifs"/("vrais positifs" + "faux positifs")`</p>
+    <p>et le <strong>rappel</strong> (<i lang="en">recall</i>) comme la proportion de prédictions positives correctes
+      par rapport à l'ensemble des positifs réels :</p>
+    <p>`R = "vrais positifs"/("vrais positifs" + "faux négatifs")`</p>
+    <p>Ce qui nous permet de définir la métrique de fiabilité :</p>
+    <p>`F_1 = 2(RF)/(R+F)` entre 0 et 1.</p>
+  </section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Il pourra arriver que les données ne puissent être classées par une séparation linéaire. On pourra alors
+      effectuer un <i lang="en">feature mapping</i> pour créer de nouvelles features artificielles à partir de celles
+      existantes. Par exemple à partir d'une matrice X ne contenant que 2 features `X_1` et `X_2`, déboucher sur une
+      nouvelle matrice contenant `x_1, x_2, x_1^2, x_1*x_2, x_2^2, x_1^3, ..., x_1*x_2^5, x_2^6`, ce qui permet de
+      tracer des contours complexes (courbes, non-linéaires).</li>
+    <li>La régression logistique n'est pas la seule méthode de classification ; on pourra également utiliser un <a
+        href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>.</li>
+    <li>Une optimisation de la régression logistique est l'algorithme <a
+        href="/tech/info/soft/data/science/ml/svm">SVM</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>
+  .titleCorner {
+    border-bottom: none;
+  }
+
+  .mjx-math * {
+    line-height: 0;
+  }
+
+  td:nth-child(3) div {
+    height: 5em;
+    width: 5em;
+  }</style>
+<script>
+  var i = 4;
+  var y1 = JXG.JSXGraph.initBoard('y1', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  y1.create('functiongraph', [function (x) {
+    return -Math.log(1 / (1 + Math.exp(-x)));
+  }, -i, i]);
+  var y0 = JXG.JSXGraph.initBoard('y0', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  y0.create('functiongraph', [function (x) {
+    return -Math.log(1 - 1 / (1 + Math.exp(-x)));
+  }, -i, i]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

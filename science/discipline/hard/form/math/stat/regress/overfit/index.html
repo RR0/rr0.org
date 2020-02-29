@@ -1,0 +1,31 @@
+<!--#include virtual="/header-start.html" -->
+<title>Surapprentissage</title>
+<!--#include virtual="/header-end.html" -->
+<p>ou <i lang="en">overfitting</i>.</p>
+<figure class="right side">
+  <figcaption>Un coût nul peut sembler correspondre aux points connus mais ne correspondra sans doute pas à de future
+    nouvelles données (qu'il n'aurait pas bien prédit)
+  </figcaption>
+  <img alt="Un coût nul peut sembler correspondre aux points connus mais ne correspondra sans doute pas
+    à de future nouvelles données (qu'il n'aurait pas bien prédit)"
+      src="/science/discipline/hard/form/math/form/math/stat/regress/overfit/Overfitting.png"/>
+</figure>
+<p>Lors d'un <a href="../cost">calcul de coût</a> d'une hypothèse, un coût nul ne signifie pas forcément que l'hypothèse
+  est excellente. Cela peut plutôt paraître suspect et demande une vérification qu'il ne s'agit pas d'un cas d'<em>overfitting</em>
+  (la fonction d'hypothèse couvre parfaitement les données connues mais ne correspondra probablement pas à de nouvelles
+  données). Cela peut également être repéré en constatant que la fonction de validation croisée (<i lang="en">cross-validation
+    error</i>) est bien supérieure (<i lang="en">high variance</i>) à celle de la fonction d'erreur et qu'elles
+  convergent difficilement.</p>
+<p>Dans un tel cas, cette correspondance abusive peut être corrigée en :</p>
+<ul>
+  <li>réduisant le nombre de caractéristiques (`n` composantes de `x`) soit manuellement soit via un algorithme de
+    sélection de modèle</li>
+  <li><a href="../regul">régularisant</a> la magnitude des paramètres `θ_j` qui ne devraient avoir autant d'influence.
+  </li>
+  <li>Augmentant la quantité de données, ce qui forcera les fonction d'erreur à converger</li>
+</ul>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

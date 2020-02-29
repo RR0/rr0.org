@@ -1,0 +1,60 @@
+<!--#include virtual="/header-start.html" -->
+<title>Fonction logistique</title>
+<script type="text/javascript" charset="UTF-8"
+    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Transformer tout résultat en une valeur tendant vers un résultat binaire (0 ou 1).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Cette fonction <a href="../../../../../../../../../../..">sigmoïde</a> est une fonction
+    d'<strong>activation</strong> (vaut 0 en-dessous d'un certain seuil, et 1 au-delà de ce seuil).</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <figure class="right side">
+    <figcaption>Courbe sigmoïde</figcaption>
+    <div id="jxgbox"></div>
+  </figure>
+  <p>`g(z)=1/(1+e^(−z))`</p>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <p>Utilisé pour :</p>
+  <ul>
+    <li><a href="/science/discipline/hard/form/math/form/math/stat/regress/logistic">Régression logistique</a></li>
+    <li><a href="/tech/info/soft/data/science/ml/nn">Réseaux neuronaux</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Parfois appelée fonction "sigmoïde" par abus de langage car celle préférée par les fonctions <a
+        href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid">sigmoïdes</a> comme <a
+        href="/tech/info/soft/data/science/ml/nn/activation">fonction d'activation</a> dans une régression logistique;.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}
+
+#jxgbox {
+  height: 200px;
+  width: 200px;
+}
+</style>
+<script>
+  var b = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-7, 1.25, 7, -0.25], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  });
+  b.create('functiongraph', [function (x) {
+    return 1 / (1 + Math.exp(-x));
+  }, -7, 7]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

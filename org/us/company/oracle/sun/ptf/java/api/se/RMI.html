@@ -1,0 +1,526 @@
+<!--#include virtual="/header-start.html" -->
+<title>RMI</title>
+<meta content="http://java.sun.com/products/jdk/rmi" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Remote Method Invocation</i> : invocation de méthodes à distance.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Standardiser la communication entre objets distants depuis <a href="/org/us/company/oracle/sun/ptf/java">Java</a>.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>RMI est l'<a href="/tech/info/soft/API.html">API</a> de manipulation d'objets distribués (distants) en <a
+      href="/tech/info/soft/proj/impl/lang/java">Java</a>. Elle fournit une relative illusion de localité.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>A partir de l'interface d'un objet distant à accéder sont générés :</p>
+  <ul>
+    <li>une <strong>souche </strong>(<em>stub</em>) cliente qui codera les appels du client pour voyager sur le réseau.
+    </li>
+    <li>un <strong>squelette </strong>(<em>skeleton</em>) serveur qui recevra et décodera les appels du client distant.
+    </li>
+  </ul>
+  <p>Les souches et skelettes pour accéder un tel objet sont générés par un outil.</p>
+  <p>L'objet serveur s'enregistre dans un annuaire afin d'être retrouvable par ses clients.</p>
+  <p>Les clients retrouvent l'objet distant et appellent ses méthodes via la souche installée de leur côté.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Tout objet Java publiant son interface pour des clients distants implémente <code>java.rmi.Remote</code>.</p>
+  <p>Les souches et skelettes sont générés par un compilateur RMI (<code>rmic</code> pour <em>RMI Compiler</em>) fournit
+    dans le J2SDK.
+  </p>
+  <p>L'objet serveur s'enregistre dans la <em>RMI registry</em>.</p>
+  <p>La seule différence dans les appels d'objets est que toute méthode est susceptible de lever une <code>java.rmi.RemoteException</code>.
+  </p>
+  <p>RMI peut utiliser différents protocoles de transport entre des objets distants :</p>
+  <ul>
+    <li><strong>JRMP </strong>(<i>Java Remote Method Protocol</i>), conçu pour la communication entre objets Java
+      uniquement et optimisé pour eux
+    </li>
+    <li><a href="/tech/info/soft/prod/orb/corba/IIOP.html"><strong>IIOP</strong></a> (on parle alors de RMI/<a
+        href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>)
+      <ul>
+        <li>pour garantir l'interopérabilité avec d'autres systèmes (protocole standard)</li>
+        <li>communiquer avec des objets non <a href="/tech/info/soft/proj/impl/lang/java">Java</a> (<a
+            href="/tech/info/soft/proj/impl/lang/cpp">C++</a>, etc.)
+        </li>
+        <li>transporter des informations techniques telles que :
+          <ul>
+            <li>contexte de sécurité (identification éventuelle de l'appelant)</li>
+            <li>contexte transactionnel (transaction éventuellement associée à l'appel)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Inclus dans <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></li>
+    <li>Inclut la gestion implicitement distribuée
+      <ul>
+        <li>des exceptions (automatiquement propagées entre objets distants)</li>
+        <li>de la <em>Garbage Collection</em></li>
+      </ul>
+    </li>
+    <li>Livré avec le J2SDK et les outils :
+      <ul>
+        <li>rmic (RMI Compiler) pour générer les stubs et skeletons</li>
+        <li>rmiregistry, annuaire des objets distants publiés</li>
+        <li>rmid (RMI activation daemon)</li>
+      </ul>
+    </li>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td colspan=2 rowspan=2> RMI</td>
+          <th> Version</th>
+          <th colspan=9> 1</th>
+          <th rowspan=3> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th colspan=4><a href="http://java.sun.com/products/jdk/1.1/docs/guide/rmi/index.html">1</a></th>
+          <th><a href="http://java.sun.com/products/jdk/1.2/docs/guide/rmi/index.html">2</a></th>
+          <th></th>
+          <th><a href="http://java.sun.com/j2se/1.3/docs/guide/rmi/index.html">3</a></th>
+          <th><a href="http://java.sun.com/j2se/1.4/docs/guide/rmi/index.html">4</a></th>
+          <th>5</th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th> Fixpack</th>
+          <th></th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th></th>
+          <th>2</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan=4></th>
+          <th colspan="2"> Activation à distance</th>
+          <td class="non" colspan="4"> Non</td>
+          <td class="oui" colspan="5"> Oui</td>
+          <td> Permet de ne pas mobiliser inutilement des objets en mémoire.</td>
+        </tr>
+        <tr>
+          <th colspan="2"> Fabrique de sockets personnalisables</th>
+          <td class="non" colspan="4"> Non</td>
+          <td class="oui" colspan="5"> Oui</td>
+          <td>Permet le changement de protocole (<a href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a> au lieu de
+            JRMP, sécurisation via <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a> par exemple)
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Pile d'exécution dans les RemoteExceptions</th>
+          <td class="non" colspan="7">Non</td>
+          <td class="oui" colspan="2">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2"> Envoi de chaines supérieures à 64 Ko</th>
+          <td class="non" colspan="6"> Non</td>
+          <td class="oui" colspan="3"> Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan=6>Outils</th>
+          <th rowspan=3>rmic</th>
+          <th></th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>-idl</th>
+          <td class="non">Non</td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td></td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>-iiop</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td></td>
+          <td class="td2"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>rmiregistry</th>
+          <th></th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan=2>rmid</th>
+          <th></th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="5">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.activation.port</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="5">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan=42>Propriétés système</th>
+          <th rowspan=8>Standard</th>
+          <th>java.rmi.dgc.leaseValue</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server.codebase</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server.hostname</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server.logCalls</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server. randomIDs</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui" colspan="6">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server. useCodebaseOnly</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server. useLocalHostName</th>
+          <td class="non">Non</td>
+          <td></td>
+          <td class="oui" colspan="7">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>java.rmi.server. disableHttp</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="25">Propriétaires</th>
+          <th>sun.rmi.server. suppressStackTraces</th>
+          <td class="non" colspan="7">Non</td>
+          <td class="oui" colspan="2">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.activation. execTimeout</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.activation. snapshotInterval</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.log.debug</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.rmid. maxstartgroup</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.server.activation. debugExec</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc. checkInterval</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc.logLevel</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc.server. gcInterval</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.loader.logLevel</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.server. exceptionTrace</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport. logLevel</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.tcp. localHostNameTimeOut</th>
+          <td class="non">Non</td>
+          <td class="td2"></td>
+          <td class="td2">O</td>
+          <td class="td2">O</td>
+          <td>O</td>
+          <td></td>
+          <td class="td2">O</td>
+          <td>O</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.tcp. readTimeout</th>
+          <td class="non" colspan="5">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc.cleanInterval</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc.client. gcInterval</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.loader.logLevel</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.server.logLevel</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport. connectionTimeout</th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport. logLevel</th>
+          <td class="oui" colspan="9">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.proxy. connectTimeout</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.proxy. logLevel</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.tcp. logLevel</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc.ackTimeout</th>
+          <td class="non" colspan="7">Non</td>
+          <td class="oui">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.tcp. handshakeTimeout</th>
+          <td class="non" colspan="7">Non</td>
+          <td class="oui">Oui</td>
+          <td class="td2"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="9">Traces</th>
+          <th>java.rmi.server.logCalls</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td>server-side remote calls and exceptions. Logger client sun.rmi.server.call</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.server.logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td>server-side remote reference activity. Logger client sun.rmi.server.ref</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.client.logCalls</th>
+          <td class="non" colspan="7">Non</td>
+          <td class="oui" colspan="2">Oui</td>
+          <td>client-side remote calls and exceptions. Logger client sun.rmi.client.call</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.client.logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td>client-side remote reference activity. Logger client sun.rmi.client.ref</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.dgc.logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td>distributed garbage collection activity. Logger client sun.rmi.dgc</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.loader.logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td>activity of default RMIClassLoader provider. Logger client sun.rmi.loader</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport. logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td>transport-layer activity. Logger client sun.rmi.transport</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.tcp. logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td>TCP binding and connection activity. Logger client sun.rmi.transport.tcp</td>
+        </tr>
+        <tr>
+          <th>sun.rmi.transport.proxy. logLevel</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="td2"></td>
+          <td class="td2"></td>
+          <td> HTTP tunelling activity. Logger client sun.rmi.transport.proxy</td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>J2SE <a href="http://java.sun.com/j2se/1.4/docs/guide/rmi/spec/rmiTOC.html">RMI Specification</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

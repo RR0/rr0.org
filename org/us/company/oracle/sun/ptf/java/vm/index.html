@@ -1,0 +1,404 @@
+<!--#include virtual="/header-start.html" -->
+<title>JVM</title>
+<meta content="http://docs.oracle.com/javase/specs/jvms/se8/html" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><em>Java Virtual Machine</em> : machine virtuelle <a href="/tech/info/soft/proj/impl/lang/java">Java</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p> Exécuter du code <a href="/tech/info/soft/proj/impl/Compilation.html">compilé</a> Java (<em>bytecode</em>).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une JVM interprête le <em>bytecode </em>qu'elle lit et exécute les opérations machine correspondante. Elle dispose
+    également d'un <a href="/org/us/company/oracle/sun/ptf/java/vm/GC.html">GC</a>.
+  </p>
+  <p>Une JVM est incluse dans chaque plate-forme Java (<a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a>, <a
+      href="/org/us/company/oracle/sun/ptf/java/api/me">J2ME</a>, etc.).
+  </p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des JVMs sont implémentées par :</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/sun">JavaSoft</a> (Sun)
+      <ul>
+        <li>pour J2SE : JVM</li>
+        <li>pour J2EE : JVM -server</li>
+        <li>pour J2ME : JVM ou KVM</li>
+      </ul>
+    </li>
+    <li><a href="/org/us/company/ibm">IBM</a>
+      <ul>
+        <li>pour J2SE</li>
+        <li>pour J2EE</li>
+        <li>pour pour J2ME : J9</li>
+      </ul>
+    </li>
+    <li>HP</li>
+    <li><a href="/org/us/company/ms">Microsoft</a></li>
+    <li><a href="/org/us/asso/fsf/gnu/GNU.html">GNU</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Le concept de VM n'a pas été inventé pour <a href="/tech/info/soft/proj/impl/lang/java">Java</a> mais existait
+      bien auparavant.
+    </li>
+    <li>Le <a href="/tech/info/soft/proj/impl/CodeSource.html">code source</a> ayant produit le code compilé exécuté par
+      la JVM n'était pas forcément du code source Java.
+    </li>
+  </ul>
+  <table border=1 cellpadding=5 cellspacing=0>
+    <thead>
+    <tr>
+      <td class="titleCorner" colspan=2 rowspan=2></td>
+      <th valign=top> Release</th>
+      <th colspan="6">1</th>
+      <th width=301></th>
+      <th width=301></th>
+      <th width=301></th>
+      <th width=301></th>
+      <th rowspan=3 width=301> Commentaire</th>
+    </tr>
+    <tr>
+      <th valign=top> Fix</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th colspan="2">4</th>
+      <th width=301>5</th>
+      <th width=301>6</th>
+      <th width=301>7</th>
+      <th width=301>8</th>
+    </tr>
+    <tr>
+      <th> Domaine</th>
+      <th> Technologie</th>
+      <th valign=top> Maintenance</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th width=301></th>
+      <th width=301></th>
+      <th width=301></th>
+      <th width=301></th>
+    </tr>
+    </thead>
+    <tr>
+      <th rowspan="3" valign=top>EVM</th>
+      <th valign=top></th>
+      <th valign=top></th>
+      <td></td>
+      <td></td>
+      <td>-Xtm</td>
+      <td>D</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top></th>
+      <th valign=top></th>
+      <td></td>
+      <td></td>
+      <td>-Xt</td>
+      <td>D</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>JIT</th>
+      <th valign=top></th>
+      <td class="Non">Non</td>
+      <td class="Oui" colspan="5">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> 2ème génération disposant d'un compilateur "à la volée" (<i>Just-In-Time compiler</i>) capable de compiler en
+        mémoire du bytecode Java de manière à de pas avoir à le ré-interpréter la prochaine fois (dans une bouche par
+        exemple).
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="20" valign=top><a href="http://java.sun.com/docs/hotspot">HotSpot</a> JVM</th>
+      <th valign=top>Client</th>
+      <th valign=top></th>
+      <td class="Non" colspan="2">Non</td>
+      <td class="Oui" colspan="4">Oui</td>
+      <td rowspan="2"></td>
+      <td rowspan="2"></td>
+      <td rowspan="2"></td>
+      <td rowspan="2"></td>
+      <td rowspan="2"> 3ème génération capable d'identifier statistiquement des "points chauds" (<i>hot spots</i>) de
+        l'application auquels il est plus intéressant d'appliquer la technique JIT (au lieu de perdre du temps à
+        appliquer le JIT sur des portions "froides").
+      </td>
+    </tr>
+    <tr>
+      <th valign=top>Serveur</th>
+      <th valign=top></th>
+      <td class="Non" colspan="2">Non</td>
+      <td></td>
+      <td class="Oui" colspan="3">Oui</td>
+    </tr>
+    <tr>
+      <th valign=top>JVM</th>
+      <th valign=top>-server</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign=top>Tas</th>
+      <th valign=top>Taille maximum</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">-mx</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Multiple de 1024, au moins 1 <a href="/tech/info/soft/data/Byte.html">Mo</a>, 2 <a
+          href="/tech/info/soft/data/Byte.html">Mo</a> par défaut, par ex. : <code>-<strong>Xms</strong>6291456<br/>
+        -<strong>Xms</strong>6144<strong>k</strong><br/> <strong>-Xms</strong>6<strong>m</strong></code>...
+      </td>
+    </tr>
+    <tr>
+      <th valign=top>Taille initiale</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">-ms</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Multiple de 1024, au moins 2 <a href="/tech/info/soft/data/Byte.html">Mo</a>, 64 <a
+          href="/tech/info/soft/data/Byte.html">Mo</a> par défaut. Par ex.: <code>-<strong>Xms</strong>6291456<br/>
+        -<strong>Xms</strong>6144<strong>k</strong><br/> <strong>-Xms</strong>6<strong>m</strong></code>...
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign=top><a href="/org/us/company/oracle/sun/ptf/java/vm/GC.html">GC</a></th>
+      <th valign=top>-verbose:gc</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XXloggc=filename</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:+PrintGCDetails</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:+PrintGCTimeStamps</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:+PrintTenuringDistribution</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign=top>HotSpot</th>
+      <th valign=top>-XX:NewSize</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:MaxNewSize</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:SurvivorRatio</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:MaxTenuringThreshold=y</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:TargetSurvivorRatio=z</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui" colspan="3">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign=top>Parallel GC</th>
+      <th valign=top>-XX:+UseParNewGC</th>
+      <td class="non" colspan="5">Non</td>
+      <td class="Oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top> -XX:ParallelGCThreads=n</th>
+      <td class="non" colspan="5">Non</td>
+      <td class="Oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:+UseParallelGC</th>
+      <td class="non" colspan="5">Non</td>
+      <td class="Oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign=top>Concurrent GC</th>
+      <th valign=top>-XX:+UseConcMarkSweepGC</th>
+      <td class="non" colspan="5">Non</td>
+      <td class="Oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top>-XX:CMSInitiatingOccupancyFraction=x</th>
+      <td class="non" colspan="5">Non</td>
+      <td class="Oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign=top></th>
+      <th valign=top>Invocation dynamique</th>
+      <th valign=top></th>
+      <td class="non" colspan="5"></td>
+      <td class="Oui"></td>
+      <td></td>
+      <td></td>
+      <td><code>invokedynamic</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><em><a href="http://java.sun.com/products/hotspot/docs/whitepaper/Java_HotSpot_WP_Final_4_30_01.html">The Java
+      HotSpot VM</a></em> de JavaSoft
+    </li>
+    <li><em><a href="http://java.sun.com/docs/hotspot/VMOptions.html">Java VM Options</a></em> de JavaSoft</li>
+    <li><em><a href="http://java.sun.com/docs/hotspot/PerformanceFAQ.html">FAQ About the JVM</a></em> de JavaSoft</li>
+    <li><em><a href="http://java.sun.com/j2se/1.3/docs/guide/performance/hotspot.html">The Java HotSpotTM Client and
+      Server Virtual Machines</a></em> de JavaSoft
+    </li>
+    <li><em><a href="http://www.javaworld.com/jw-03-1998/jw-03-hotspot.html">HotSpot: A new breed of virtual machine</a></em>
+      sur JavaWorld
+    </li>
+    <li><em><a href="http://www.javaworld.com/jw-08-1998/jw-08-volanomark.html">Which Java VM scales best ?</a></em> sur
+      JavaWorld
+    </li>
+    <li>Jakarta <a href="http://jakarta.apache.org/bcel/">BCEL</a></li>
+    <li> Tolksdorf, Robert, "<a href="http://www.robert-tolksdorf.de/vmlanguages.html">Programming Languages for the
+      Java Virtual Machine</a>" - Java n'est pas le seul langage pouvant tourner sur une JVM.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

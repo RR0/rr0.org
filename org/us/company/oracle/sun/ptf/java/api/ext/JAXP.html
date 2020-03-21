@@ -1,0 +1,154 @@
+<!--#include virtual="/header-start.html" -->
+<title>JAXP</title>
+<meta content="http://java.sun.com/xml/jaxp" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Java API for XML Processing</i>. </p>
+<section>
+  <h2>Besoin</h2>
+  <p>Manipuler (lire, représenter, transformer) des données XML avec l'implémentation de votre choix (Xerces, etc.).</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Par JAXP on entend :</p>
+  <ul>
+    <li>une <b>spécification</b>, définissant des API pour
+      <ul>
+        <li><b><a href="/tech/info/soft/data/doc/xml/DOM.html">DOM</a></b> permettant de représenter des données XML de
+          manière programmative (objets)</li>
+        <li><b>SAX</b> permettant de lire un fichier XML selon un modèle événementiel</li>
+        <li><b>XSLT</b>, permettant la transformation de données XML en d'autres formats</li>
+      </ul>
+    </li>
+    <li>des <b>implémentations</b> paramétrables pour chacune de ces technologies</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner" colspan="2" rowspan="2"></td>
+      <th>Version</th>
+      <th colspan="3">1</th>
+      <th rowspan="3"> Commentaire</th>
+    </tr>
+    <tr>
+      <th> Release</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th> Technologie</th>
+      <th> Technologie</th>
+      <th>FixPack</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Livré avec</th>
+      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
+      <td></td>
+      <td>1.4</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></th>
+      <td></td>
+      <td>1.3</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="3"><a href="/tech/info/soft/data/doc/xml/SAX.html">SAX</a></th>
+      <th colspan="2">Package</th>
+      <td colspan="3"><code>org.xml.sax</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">Propriété système pour paramétrage</th>
+      <td colspan="3"><code>javax.xml.parsers.SAXParserFactory</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">JAXP RI</th>
+      <td colspan="2">Apache Crimson</td>
+      <td>Xerces-J 2.0.1</td>
+      <td>Implémentation par défaut</td>
+    </tr>
+    <tr>
+      <th rowspan="2"><a href="/tech/info/soft/data/doc/xml/DOM.html">DOM</a></th>
+      <th colspan="2">Package</th>
+      <td colspan="3"><code>org.w3c.dom</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">Propriété système pour paramétrage</th>
+      <td colspan="3"><code>javax.xml.parsers.DocumentBuilderFactory</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4">XSLT</th>
+      <th colspan="2">Package</th>
+      <td colspan="3"><code>javax.xml.transform</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">Propriété système pour paramétrage</th>
+      <td colspan="3"><code>javax.xml.transform.TransformerFactory</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th rowspan="2">JAXP RI</th>
+      <th>Interpréteur</th>
+      <td></td>
+      <td></td>
+      <td>Xalan-J 2.3.1_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Compilateur</th>
+      <td></td>
+      <td></td>
+      <td>XSLTC</td>
+      <td>Compile une feuille de style XSL en du code Java (<em>translet</em>)</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li> Des implémentations par défaut sont fournies dans une implémentation de référence de la spécification (JAXP
+      RI)</li>
+    <li>Partie du <a href="http://java.sun.com/xml/downloads/javaxmlpack.html">Java XML Pack</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'implémentations totales ou partielles de JAXP peuvent être trouvés dans :</p>
+  <ul>
+    <li>JavaSoft <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> [1.4+] (JAXP RI)
+    </li>
+    <li>JavaSoft <a href="http://java.sun.com/xml/downloads/javaxmlpack.html">Java XML Pack</a> (JAXP RI)</li>
+    <li>JavaSoft <a href="http://java.sun.com/webservices/webservicespack.html">WSDP</a> (JAXP RI)</li>
+    <li>JavaSoft <a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> RI (JAXP RI)</li>
+    <li>Apache <a href="http://xml.apache.org/xalan-j">Xalan-j</a> (Xerces-J)</li>
+    <li><a href="http://www.gnu.org/software/classpathx/jaxp/">GNUJAXP</a></li>
+    <li>Apache <a href="http://xml.apache.org/crimson">Crimson</a></li>
+    <li>Apache <a href="http://xml.apache.org/xerces2-j/">Xerces-J</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

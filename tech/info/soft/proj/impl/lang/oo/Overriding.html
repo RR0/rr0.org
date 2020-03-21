@@ -4,17 +4,15 @@
 <p>Redéfinition <span class="note">Et non "surcharge"</span> .</p>
 <section>
   <h2>Motivation</h2>
-
   <p>Redéfinir l'implémentation d'une méthode dans une sous-classe.</p>
 </section>
 <section>
   <h2>Exemples</h2>
-
   <p>Un exemple de redéfinition est :</p>
   <blockquote>
-    <p>class InputStream<br> {<br> public close () <br> { <br> ... <br> }<br> }<br> <br> class FilterInputStream extends
-      InputStream<br> { <br></p>
-    <q> public close () // Redéfinition de la méthode close()<br> { <br> ... <br> }<br> } </q></blockquote>
+    <code>class InputStream<br> {<br> public close () <br> { <br> ... <br> }<br> }<br> <br> class FilterInputStream
+      extends InputStream<br> { <br></p>
+    <q> public close () // Redéfinition de la méthode close()<br> { <br> ... <br> }<br> } </code></blockquote>
 </section>
 <section>
   <h2>Notes</h2>

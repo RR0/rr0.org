@@ -3,7 +3,7 @@
 <meta name="url" content="http://java.sun.com/j2se">
 <!--#include virtual="/header-end.html" -->
 <figure class="right side">
-  <a href="http://java.com/fr/"><img src="/tech/info/images/get_java_blue-button.gif" width="88" height="31" border="0"
+  <a href="http://java.com/fr/"><img src="/tech/info/images/get_java_blue-button.gif"
       alt="Java -- Téléchargez-le"/></a>
 </figure>
 <p><i>Java 2 Standard Edition</i> : édition standard de Java 2.</p>
@@ -14,40 +14,37 @@
 </section>
 <section>
   <h2>Analyse</h2>
-
-  <p>J2SE est la plate-forme <a href="/tech/info/soft/prog/oo/java">Java</a> de base ou "standard".</p>
-
+  <p>J2SE est la <a href="/org/us/company/oracle/sun/ptf/java">plate-forme Java</a> de base ou "standard".</p>
   <p>Elle inclut :</p>
-
   <ul>
-    <li>un ensemble d'<a href="/tech/info/soft/prog/oo/java/api"><strong>API standards</strong></a></li>
+    <li>un ensemble d'<a href="/org/us/company/oracle/sun/ptf/java/api"><strong>API standards</strong></a></li>
     <li>une <strong>configuration</strong> comprenant :
       <ul>
-        <li>la <a href="/tech/info/soft/prog/oo/java/JVM.html">JVM</a> en cours (<em>HotSpot</em> client ou serveur)
+        <li>la <a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a> en cours (<em>HotSpot</em> client ou serveur)
         </li>
-        <li>une politique de <a href="/tech/info/soft/prog/oo/java/Securite.html">sécurité</a> (fichier <code>.java.policy</code>)
+        <li>une politique de <a href="/org/us/company/oracle/sun/ptf/java/api/se/security">sécurité</a> (fichier <code>.java.policy</code>)
         </li>
         <li>des <a href="/tech/info/soft/sec/auth/cert">certificats</a> de <a
-            href="/tech/info/soft/prog/oo/java/CA.html">CA</a> (fichier <code>cacerts</code>)</li>
+            href="/tech/info/soft/sec/auth/cert/CA.html">CA</a> (fichier <code>cacerts</code>)</li>
       </ul>
     </li>
   </ul>
 </section>
 <section>
   <h2>Notes</h2>
-
   <ul>
     <li>
-      <table border="1" cellspacing="0" cellpadding="5">
+      <table>
         <caption>J2SE</caption>
+        <thead>
         <tr>
           <td colspan="2" rowspan="2" class="titleCorner"></td>
-          <th valign="top"> Version</th>
+          <th> Version</th>
           <th colspan="18"> 1</th>
           <th rowspan="3"> Commentaire</th>
         </tr>
         <tr>
-          <th valign="top"> Release</th>
+          <th> Release</th>
           <th> 0</th>
           <th colspan="8"><a href="http://java.sun.com/products/jdk/1.1/docs">1</a></th>
           <th colspan="3"><a href="http://java.sun.com/products/jdk/1.2/docs">2</a></th>
@@ -58,7 +55,7 @@
         <tr>
           <th>Domaine</th>
           <th>Technologie</th>
-          <th valign="top"> Fixpack</th>
+          <th> Fixpack</th>
           <th>2</th>
           <th>1</th>
           <th>2</th>
@@ -78,46 +75,48 @@
           <th><a href="http://java.sun.com/j2se/1.4.2/docs">2</a></th>
           <th></th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
-          <th colspan="3" valign="top"><a href="/tech/info/soft/prog/oo/java/JVM.html">JVM</a></th>
+          <th colspan="3"><a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a></th>
           <td colspan="9" class="oui">Classic</td>
           <td colspan="9" class="oui">HotSpot</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top" rowspan="5">Graphisme</th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/AWT.html">AWT</a></th>
+          <th rowspan="5">Graphisme</th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/ui/AWT.html">AWT</a></th>
           <td colspan="18" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top">Java2D</th>
+          <th colspan="2">Java2D</th>
           <td colspan="9" class="non">Non</td>
           <td colspan="9" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top" rowspan="3">JFC</th>
-          <th valign="top">Swing</th>
+          <th rowspan="3">JFC</th>
+          <th>Swing</th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top">PLF</th>
+          <th>PLF</th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td>Pluggable Look and Feel</td>
         </tr>
         <tr>
-          <th valign="top">Dnd</th>
+          <th>Dnd</th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td>Drag'n drop</td>
         </tr>
         <tr>
-          <th valign="top" rowspan="3">Intégration</th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JDBC.html">JDBC</a></th>
+          <th rowspan="3">Intégration</th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
           <td class="non">Non</td>
           <td colspan="8" class="oui">1.0</td>
           <td colspan="3" class="oui">2.0</td>
@@ -125,181 +124,175 @@
           <td></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></th>
           <td colspan="12" class="non">Non</td>
           <td colspan="6" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top"><a href="http://java.sun.com/products/jdk/idl">JavaIDL</a></th>
+          <th colspan="2"><a href="http://java.sun.com/products/jdk/idl">JavaIDL</a></th>
           <td colspan="9" class="non">Non</td>
           <td colspan="9" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top">Composants</th>
-          <th colspan="2" valign="top"><a href="http://java.sun.com/products/javabeans">JavaBeans</a></th>
+          <th>Composants</th>
+          <th colspan="2"><a href="http://java.sun.com/products/javabeans">JavaBeans</a></th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td>Composants légers</td>
         </tr>
         <tr>
-          <th valign="top"></th>
-          <th colspan="2" valign="top">JNI</th>
+          <th></th>
+          <th colspan="2">JNI</th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td><em>Java Native Interface</em></td>
         </tr>
         <tr>
-          <th valign="top" rowspan="2">Objets distribués</th>
-          <th valign="top" rowspan="2"><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a></th>
-          <th valign="top">JRMP</th>
+          <th rowspan="2">Objets distribués</th>
+          <th rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a></th>
+          <th>JRMP</th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top"><a href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a></th>
+          <th><a href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a></th>
           <td colspan="12" class="non">Non</td>
           <td colspan="6" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top"></th>
-          <th colspan="2" valign="top">I18N</th>
+          <th></th>
+          <th colspan="2">I18N</th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td>Internationalisation</td>
         </tr>
         <tr>
-          <th valign="top"></th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a></th>
+          <th></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/JAR.html">JAR</a></th>
           <td class="non">Non</td>
           <td colspan="17" class="oui">Oui</td>
           <td>Java ARchive (ZIP)</td>
         </tr>
         <tr>
-          <th rowspan="2" valign="top"><a href="/tech/info/soft/data/doc/xml/XML.html">XML</a></th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a></th>
+          <th rowspan="2"><a href="/tech/info/soft/data/doc/xml">XML</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
           <td colspan="14" class="non">Non</td>
           <td colspan="4" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAXB.html">JAXB</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXB.html">JAXB</a></th>
           <td colspan="18" class="non">Non</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top" rowspan="8"><a href="../../../../../../../../../Securite.html">Sécurité</a></th>
-          <th colspan="2" valign="top"><a href="../../../../../../../../../JCA.html">JCA</a></th>
+          <th rowspan="8"><a href="../../../../../../../../../Securite.html">Sécurité</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCA.html">JCA</a></th>
           <td colspan="9" class="non">Non</td>
           <td colspan="9" class="oui">Oui</td>
           <td><em>Java Cryptography Architecture</em>.</td>
         </tr>
         <tr>
-          <th rowspan="5" valign="top"><a href="/tech/info/soft/prog/oo/java/JCE.html">JCE</a></th>
-          <th valign="top"></th>
+          <th rowspan="5"><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a></th>
+          <th></th>
           <td colspan="9" class="non">Non</td>
           <td colspan="9" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top">SHA-256</th>
+          <th>SHA-256</th>
           <td colspan="17" class="non">Non</td>
           <td class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top">SHA-384</th>
+          <th>SHA-384</th>
           <td colspan="17" class="non">Non</td>
           <td class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top"> SHA-512</th>
+          <th> SHA-512</th>
           <td colspan="17" class="non">Non</td>
           <td class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top">AES</th>
+          <th>AES</th>
           <td colspan="17" class="non">Non</td>
           <td class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JSSE.html">JSSE</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JSSE.html">JSSE</a></th>
           <td colspan="12" class="non">Non</td>
           <td colspan="2">Optionnel</td>
           <td colspan="4" class="oui">Oui</td>
-          <td><a href="/tech/info/soft/prog/oo/java/SSL.html">SSL</a></td>
+          <td><a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JAAS.html">JAAS</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">JAAS</a></th>
           <td colspan="12" class="non">Non</td>
           <td colspan="6" class="oui">Oui</td>
           <td>Authentification et autorisations.</td>
         </tr>
         <tr>
-          <th valign="top"><a href="/tech/info/soft/prog/oo/java/Log.html">Traces</a></th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JLA.html">JLA</a></th>
+          <th><a href="/tech/info/soft/prog/oo/java/Log.html">Traces</a></th>
+          <th colspan="2"><a href="/tech/info/soft/prog/oo/java/JLA.html">JLA</a></th>
           <td colspan="14" class="non">Non</td>
           <td colspan="4" class="oui">Oui</td>
           <td>Traces (log)</td>
         </tr>
         <tr>
-          <th valign="top"></th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/Regex.html">Regex</a></th>
+          <th></th>
+          <th colspan="2"><a href="/tech/info/soft/prog/oo/java/Regex.html">Regex</a></th>
           <td colspan="14" class="non">Non</td>
           <td colspan="4" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th valign="top">Gestion</th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JMX.html">JMX</a></th>
+          <th>Gestion</th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/JMX.html">JMX</a></th>
           <td colspan="14" class="non">Non</td>
           <td colspan="4" class="oui">Oui</td>
           <td>Administration</td>
         </tr>
         <tr>
-          <th rowspan="2" valign="top"><a href="/tech/info/soft/proj/design/arch/web">Web</a></th>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JPI.html">JPI</a></th>
+          <th rowspan="2"><a href="/tech/info/soft/proj/design/arch/web">Web</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/JPI.html">JPI</a></th>
           <td colspan="9" class="non">Non</td>
           <td colspan="9" class="oui">Oui</td>
           <td></td>
         </tr>
         <tr>
-          <th colspan="2" valign="top"><a href="/tech/info/soft/prog/oo/java/JWS.html">JWS</a></th>
+          <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/jws/JWS.html">JWS</a></th>
           <td colspan="14" class="non">Non</td>
           <td colspan="4" class="oui">Oui</td>
           <td></td>
         </tr>
+        </tbody>
       </table>
     </li>
-    <li>Disponible sur diverses plates-formes (<a href="../../../../../../ms/windows">Windows</a>,
-      Solaris, AIX, HP-UX, <a href="/tech/info/soft/prog/oo/java/Linux.html">Linux</a>, etc.)</li>
+    <li>Disponible sur diverses plates-formes (<a href="../../../../../../ms/windows">Windows</a>, Solaris, AIX, HP-UX,
+      <a href="/tech/info/soft/prog/oo/java/Linux.html">Linux</a>, etc.)</li>
     <li>A ne pas confondre avec le <a href="/tech/info/soft/prog/oo/java/J2SDK.html">J2SDK</a>, qui ajoute des outils de
       développement tels qu'un compilateur, débogueur, etc.</li>
   </ul>
 </section>
-
 <section>
   <h2>Limitations</h2>
-
   <ul>
-
-    <li> Les <a href="/tech/info/soft/prog/oo/java/api">API standards</a> varient (ajouts, obsolescences)
-      selon la version.</li>
-
+    <li> Les <a href="/org/us/company/oracle/sun/ptf/java/api">API standards</a> varient (ajouts, obsolescences) selon
+      la version.</li>
   </ul>
 </section>
-
 <section>
   <h2>Voir</h2>
-
   <ul>
-
     <li>Téléchargement
       <ul>
         <li><a href="http://java.sun.com/products/jdk/1.2/download.html">1.2</a></li>
@@ -309,14 +302,9 @@
     </li>
     <li><a href="/tech/info/soft/prog/oo/java/langage">Java en tant que Langage</a></li>
     <li><a href="http://java.sun.com/j2se/1.4/docs">Documentation</a>
-
       <ul>
-
         <li><a href="http://java.sun.com/j2se/1.4.1/docs/api">API</a></li>
-
       </ul>
-
     </li>
-
   </ul>
 </section><!--#include virtual="/footer.html" -->

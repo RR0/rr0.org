@@ -1,0 +1,235 @@
+<!--#include virtual="/header-start.html" -->
+<title>GC</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Garbage Collector </i>ou <i lang="en">Garbage Collection</i> : récupération de déchets,
+  "ramasse-miettes".</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Libérer automatiquement la mémoire allouée inutilisée.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>Le GC est intégré à la <a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a>. Il s'exécute dans un <a
+      href="/tech/info/soft/proj/design/arch/platform/Thread.html">thread</a> dédié, exécuté de temps en temps.</p>
+  <p>Plusieurs conceptions sont possibles :</p>
+  <ul>
+    <li>(<em>stop the world</em>) : l'unique thread du GC
+      <ul>
+        <li>stoppe tous les threads applicatifs le temps de son travail. </li>
+        <li>ne sait travailler que sur 1 CPU</li>
+      </ul>
+    </li>
+    <li><strong>génerationnelle</strong> (<i lang="en">generational</i>) : chaque objet a un âge qui le détermine sa
+      place dans un espace de génération. La taille de chaque espace générationnel dans le tas (<em>heap</em>) détermine
+      avec quel fréquence il sera rempli et nettoyé par le GC
+      <ul>
+        <li>à la jeune génération (<i lang="en">young</i> <i lang="en">generation</i>) est allouée une portion réduite
+          du tas, plus rapidement remplie et donc fréquemment libérée par le GC. Y sont placés les objets alloués
+          récemment (souvent les 2/3 des objets d'une application) dont la libération fréquente impliquera de nombreuses
+          pauses mais sera rentable quant à la quantité de mémoire libérée.
+          <ul>
+            <li>paradis (<i lang="en">eden</i>) :</li>
+            <li>espaces de survivants (<i lang="en">survivor spaces</i>) :</li>
+          </ul>
+        </li>
+        <li>à l'ancienne génération (<i lang="en">old generation</i>) est allouée une plus grande portion du tas où sont
+          placés les objets restés trop longtemps en jeune génération. Leur espace se rempli moins vite et le GC les
+          examine donc moins souvent. Cependant le moment venu leur libération prendra plus de temps.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Défauts</h2>
+  <ul>
+    <li>Dans certains GC, l'application est suspendue (quelques secondes, parfois plusieurs minutes dans des cas
+      extraordinaires) pendant le recyclage de la mémoire. </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <table>
+    <thead>
+    <tr>
+      <td colspan=2 rowspan=3>GC de JVM<br> <br> (O)ui, (N)on, (D)eprecated</td>
+      <th></th>
+      <th>Version</th>
+      <th colspan="7"><a href="/org/us/company/oracle/sun/ptf/java">Java</a></th>
+      <th rowspan=4> Commentaire</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th> Release</th>
+      <th colspan="7">1</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th> Fix</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th colspan="3">4</th>
+    </tr>
+    <tr>
+      <th> Domaine</th>
+      <th> Technologie</th>
+      <th></th>
+      <th> Maintenance</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>0</th>
+      <th colspan="2">1</th>
+    </tr>
+    </thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Collector</th>
+      <th>Young</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="3">Copying</th>
+      <th>Parallel</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Old</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="3">MC</th>
+      <th>CMS</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Threads GC</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Arrêt application</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Stop the world</td>
+    </tr>
+    <tr>
+      <th>Multiple CPU</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td class="non">Non</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="5">Algorithme</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4">Générationnel</th>
+      <th rowspan="2">Collector young</th>
+      <th>Parallel</th>
+      <td class="non" colspan="4">Non</td>
+      <td></td>
+      <td colspan="2">Optionnel</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Copying</th>
+      <td class="non" colspan="2">Non</td>
+      <td></td>
+      <td class="oui" colspan="4">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2">Collector old</th>
+      <th>CMS</th>
+      <td class="non" colspan="2">Non</td>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td colspan="2">Optionnel</td>
+      <td>Concurrent Mark Sweep</td>
+    </tr>
+    <tr>
+      <th>Mark-Compact</th>
+      <td class="non" colspan="2">Non</td>
+      <td></td>
+      <td class="oui" colspan="4">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Tas</th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td colspan="2"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>&gt; 4 Go</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="2">Oui</td>
+      <td>JVM 64 bits</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="http://www-106.ibm.com/developerworks/library/garbage-collection.html"><em>Garbage Collection on Java
+      1.1.8 JVMs</em></a> de IBM Developper Works</li>
+    <li><em><a href="http://java.sun.com/docs/hotspot/gc/">Tuning Garbage Collection with the 1.3.1 JVM</a></em> de
+      JavaSoft</li>
+  </ul>
+</section>
+<!--#include virtual="/foter.html" -->

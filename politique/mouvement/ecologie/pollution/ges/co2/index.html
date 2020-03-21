@@ -1,7 +1,10 @@
 <!--#include virtual="/header-start.html" -->
 <TITLE>Dioxide de carbone</TITLE>
+<link href="https://unpkg.com/kekule/dist/themes/default/kekule.css" rel="stylesheet" type="text/css"/>
 <!--#include virtual="/header-end.html" -->
-<p>Le gaz carbonique (CO<sub>2</sub>) est (dans des conditions normales de température et de pression) un gaz.</p>
+<div class="right" id="molecule"></div>
+<p>Le CO<sub>2</sub> est (dans des conditions normales de température et de pression) un gaz. On l'appelle alors "gaz
+  carbonique".</p>
 <section>
   <h2>Dans l'atmosphère</h2>
   <section>
@@ -19,14 +22,15 @@
       <li>les <a href="/politique/mouvement/ecologie/energie/thermique">centrales thermiques</a> de production d'énergie
         électrique :
         <ul>
-          <li>qui prennent des matières <a href="/politique/mouvement/ecologie/energie/fossile">fossiles</a> extraites
-            pour les <a href="/politique/mouvement/ecologie/energie/thermique/combustion">brûler</a> (ce qui génère
-            beaucoup de CO<sub>2</sub>)
+          <li>qui prennent des matières <a href="/politique/mouvement/ecologie/energie/thermique/combustion/fossile">fossiles</a>
+            extraites pour les <a href="/politique/mouvement/ecologie/energie/thermique/combustion">brûler</a> (ce qui
+            génère beaucoup de CO<sub>2</sub>)
             <ul>
-              <li><a href="../../../energie/fossile/hc/charbon">charbon</a> (800 à 1050 gCO<sub>2</sub>/kWh) suivant la
-                technologie</li>
-              <li><a href="../../../energie/fossile/hc/gaz">gaz naturel</a> (430 gCO<sub>2</sub>/kWh)</li>
-              <li><a href="../../../energie/fossile/hc/petrole">pétrole</a></li>
+              <li><a href="../../../energie/thermique/combustion/fossile/hc/charbon">charbon</a> (800 à 1050
+                gCO<sub>2</sub>/kWh) suivant la technologie</li>
+              <li><a href="../../../energie/thermique/combustion/fossile/hc/gaz">gaz naturel</a> (430 gCO<sub>2</sub>/kWh)
+              </li>
+              <li><a href="../../../energie/thermique/combustion/fossile/hc/petrole">pétrole</a></li>
             </ul>
           </li>
           <li><a href="/politique/mouvement/ecologie/energie/thermique/nucleaire">nucléaire</a> (10 gCO<sub>2</sub>/kWh
@@ -43,4 +47,32 @@
     </ul>
   </section>
 </section>
+<script src="https://unpkg.com/kekule/dist/kekule.js?modules=chemWidget"></script>
+<script>
+  // Create a simple CO2 molecule
+  var mol = new Kekule.Molecule();
+  /*  var atomC = mol.appendAtom('C');
+    var atomO1 = mol.appendAtom('O');
+    var atomO2 = mol.appendAtom('O');
+    mol.appendBond([atomC, atomO1], 2);
+    mol.appendBond([atomC, atomO2], 2);
+  */
+  // add three atoms to molecule, property setter can be called cascadely
+  var c = (new Kekule.Atom()).setSymbol('C').setCoord2D({'x': 0, 'y': 0});
+  var o1 = (new Kekule.Atom()).setSymbol('O').setCoord2D({'x': -0.4, 'y': 0});
+  var o2 = (new Kekule.Atom()).setSymbol('O').setCoord2D({'x': 0.4, 'y': 0});
+  mol.appendNode(c);
+  mol.appendNode(o1);
+  mol.appendNode(o2);
+  // add three bonds to molecule
+  var co1 = (new Kekule.Bond()).setBondOrder(2).setConnectedObjs([c, o1]);
+  var co2 = (new Kekule.Bond()).setBondOrder(2).setConnectedObjs([c, o2]);
+  mol.appendConnector(co1);
+  mol.appendConnector(co2);
+
+  var chemViewer = new Kekule.ChemWidget.Viewer(document.getElementById('molecule'));
+  chemViewer.setDimension('100px', '100px');
+  chemViewer.setZoom(1.5);
+  chemViewer.setChemObj(mol);
+</script>
 <!--#include virtual="/footer.html" -->

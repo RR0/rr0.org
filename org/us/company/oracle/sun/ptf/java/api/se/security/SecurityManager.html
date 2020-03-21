@@ -1,0 +1,124 @@
+<!--#include virtual="/header-start.html" -->
+<title>Security Manager</title>
+<!--#include virtual="/header-end.html" -->
+<p>Gestionnaire de sécurité.</p>
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Définir une politique de sécurité d'une <a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Organisation</h2>
+  <section>
+    <h3>Java 1.1</h3>
+    <p>Les accès sensibles (écriture de fichiers, de propriétés système, etc.) sont contrôlés via l'appel de méthodes
+      <code>checkXXX()</code> sur le gestionnaire de sécurité. Par exemple l'implémentation de <code>FileOutputStream.write() </code>appelle
+      <code>SecurityManager.checkWrite().</code>
+    </p>
+    <p>Les méthodes <code>checkXXX()</code> du SecurityManager sont censées lever des exceptions lorsque les accès sont
+      interdits. Le SecurityManager effectue ce contrôle en examinant si la classe appelante a été chargée par un autre
+      ClassLoader que le ClassLoader primordial. Un tel ClassLoader peut par exemple être un AppletClassLoader, ou d'une
+      manière générale impliquer un CODEBASE distant, impliquant des droits limités. Cet examen est effectué via la
+      méthode <code>inClassLoader()</code> du Gestionnaire de Sécurité.</p>
+    <p>Ainsi, </p>
+    <ul>
+      <li>si la classe appelante n'a pas été chargée pas un ClassLoader (autre que celui du système), elle est
+        considérée comme sûres (<i>trusted</i>) et le securityManager lui autorise toutes les actions par défaut. Il n'y
+        a pas pas de granularité, c'est un mode "tout ou rien".</li>
+      <li><b> la position (profondeur) de ce ClassLoader dans la pile d'exécution</b> (via sa méthode <code>classLoaderDepth()</code>).
+        Ceci permet d'autoriser des classes système sûres (classes système de profondeur faible) à effectuer des
+        opérations sensibles même si ces classes ont été appelées par des classes non sûres (classes utilisateur de
+        grande profondeur).</li>
+    </ul>
+    <p>est représenté par une <b>classe abstraite</b>.</p></section>
+  <section>
+    <h3>Java 2</h3>
+    <p>Java 2 offre plus de souplesse que le mode tout ou rien en introduisant le concept de permission. Le Gestionnaire
+      de Sécurité n'est plus seul à décider de l'autorisation en fonction du ClassLoader (sanbox ou non), mais <em>délègue </em>la
+      décision à un nouveau composant, le contrôleur d'accès (AccessController). Si l'on reprend notre exemple
+      l'implémentation de <code>FileOutputStream.write()</code> appelle <code>SecurityManager.checkWrite()</code> qui
+      appelle lui-même <code>AccessControl.checkPermission()</code></p>
+    <p>On aboutit ainsi à un modèle de "capacité" (permission) à effectuer une opération (Capabilities model) plutôt
+      qu'un modèle d'autorisation (la sandbox autorise ou non) : posséder (accéder à) un objet (directement) donne le
+      droit de l'utiliser : c'est le modèle de l'objet gardé, où l'on demande l'accès à un objet à un gatekeeper. On
+      peut exercer une permission par autorisation d'une autre partie, si l'autre partie nous donne l'objet
+      permission.</p>
+    <p> on distingue :</p>
+    <ul>
+      <li>le <strong>Contrôleur d'Accès</strong> <i>(AccessController)</i>, qui gère les accès à aux différentes
+        ressources, en fonction de la politique de sécurité (<em>security policy</em>) en vigueur.</li>
+      <li>le <strong>Gestionnaire de Sécurité</strong><i> (SecurityManager), </i>qui contrôle délègue le contrôle des
+        permissions au Contrôleur d'Accès et gère lui-même le contrôle de quelques accès fondamentaux. Celui-ci :
+        <ul>
+          <li>contrôlait les accès aux ressources en fonction
+            <ul>
+              <li><b>des permissions définies par le Contrôleur d'Accès</b> (appliquant la politique de sécurité définie
+                pour la plate-forme). Ces permissions sont, rappellons-le, fonction de l'<a href="#codesource">origine
+                  du code</a> appelant.</li>
+              <li>de l'existence ou non d'un ClassLoader dans la pile d'exécution et de la position (profondeur) de ce
+                ClassLoader dans la pile d'exécution, sauf pour :
+                <ul>
+                  <li><b>les ClassLoaders système</b> (chargeurs de classes de la plate-forme Java, de ses extensions,
+                    ou issues du CLASSPATH)</li>
+                  <li><b>les classes disposant de la permission java.security.AllPermission</b></li>
+                  <li><b>les blocs de code privilégés</b></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>offrait un accès dépendant des permissions définies par la politique de sécurité locale</li>
+          <li><b>n'est plus une classe abstraite</b>, et peut donc être utilisé directement comme Gestionnaire de
+            Sécurité par défaut. Ceci peut être fait en fixant la propriété <code>java.security.manager</code> (<code>java
+              -Djava.security.manager MonApplication</code>) ou par programmation (<code>System.setSecurityManager (new
+              SecurityManager())</code>). Il n'est donc plus nécessaire de développer de classe dérivée du
+            SecurityManager pour personnaliser la politique de sécurité, ce Gestionnaire de Sécurité par défaut
+            exploitant la politique définie par les fichiers prévus à cet effet.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Cependant, afin d'exploiter le nouveau modèle de permissions introduit dans Java 2, divers changements plus ou
+      moins transparents (nous allons voir pourquoi) ont été effectués :Une méthode checkPermission() a été les
+      implémentation de ces méthodes Mais en fait, elles font maintenant toutes appel à la méthode <code>checkPermission()</code>
+      qui se charge d'interroger l'Access Controler.</p>
+    <p>Tous les accès doivent donc maintenant être validés par le Contrôleur d'Accès, et non plus par le Gestionnaire de
+      Sécurité. Ceci à pour inconvénient de devoir migrer les implémentations de Gestionnaire de Sécurité écrites pour
+      Java 1.1.</p>
+    <p>Redéfinir les methodes <code>checkXXX()</code> d'un SecurityManager n'est donc plus valide en Java 2, dans la
+      mesure ou cette redéfinition court-circuite l'appel à la vérification des permissions de Java 2. Il est donc
+      nécessaire, soit d'appeler systématiquement super.checkXXX (qui appelera checkPermission) dans les methodes
+      checkXXX() de notre SecurityManager, soit de réécrire le SecurityManager en prenant en compte la délégation du
+      contrôle des accès (permissions) à l'Access Controler. Il est en effet important, d'une manière ou d'une autre,
+      d'exploiter les permissions par défaut fixées dans Java 2, parce que Sun indique qu'elles sont plus sûres et
+      corrigent quelques failles de sécurité de Java 1.</p>
+    <p>La redéfinition des méthodes checkXXX() peut cependant se révéler toujours utile pour inclure de l'audit ou des
+      affichages GUI lors des tentatives d'actions sensibles.</p></section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple d'accès contrôlé est :</p>
+  <ul>
+    <li><code>MaClasse.maMethode()</code>
+      <ul>
+        <li><code>FileOutputStream.write() </code>
+          <ul>
+            <li><code>SecurityManager.checkWrite()</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li> Bien que plusieurs instances de Gestionnaire de Sécurité puissent être créées à partir de Java 2 (c'était
+      impossible dans Java 1.1), il ne peut y avoir qu'un gestionnaire de sécurité actif à un moment donné dans une
+      application Java (fixé via <code>System.setSecurityManager()</code>). </li>
+    <li> Il est donc impossible de définir un Gestionnaire de Sécurité une fois qu'un tel gestionnaire est installé. Une
+      illustration de ce principe est le navigateur Web capable d'exécuter des applets Java : sa première tâche en tant
+      qu'application consiste à installer un Gestionnaire de Sécurité limitant les accès pour les applets
+      téléchargées.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

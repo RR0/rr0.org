@@ -1,0 +1,25 @@
+<!--#include virtual="/header-start.html" -->
+<title>Semaphore</title>
+<!--#include virtual="/header-end.html" -->
+<p>Sémaphore.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Garantir un accès limité à une <a href="../../../impl/struct">donnée</a> par n <a
+      href="/tech/info/soft/proj/design/arch/platform/Thread.html">fils d'exécution</a> à la fois.
+  </p></section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Un <a href="/tech/info/soft/proj/design/arch/platform/Mutex.html">mutex</a> est un sémaphore binaire
+      (n'admettant que 1 seul accès à la fois).</li>
+    <li>Semaphore implicte des objets Java via les méthodes <code>wait()</code> et <code>notify()</code>/<code>notifyAll()</code>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Inventé par <a href="/people/d/DijkstraEdsgerW">Dijkstra</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,38 @@
+<!--#include virtual="/header-start.html" -->
+<title>Soufre</title>
+<!--#include virtual="/header-end.html" -->
+<link href="https://unpkg.com/kekule/dist/themes/default/kekule.css" rel="stylesheet" type="text/css"/>
+<div class="right" id="element"></div>
+<p>Le soufre est un <a href="..">élément chimique</a> contenant 16 protons (Z = 16), noté S.
+</p>
+<section>
+  <h2>Pollution</h2>
+  <p>Le soufre est un composant des <b>pluies acides</b>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Le soufre est présent dans :</p>
+  <ul>
+    <li>des molécules comme :
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li>des produits comme :
+      <ul>
+        <li>le <a href="/politique/mouvement/ecologie/energie/thermique/combustion/fossile/hc/petrole/fioul">fioul</a>
+          (< 0,2 % de fraction massique)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<script src="https://unpkg.com/kekule/dist/kekule.js?modules=chemWidget"></script>
+<script>
+  var widget = new Kekule.ChemWidget.PeriodicTable(document.getElementById('element'));
+  widget
+    .setEnableSelect(false)
+    .setStartingAtomNum(16)
+    .setEndingAtomNum(16)
+    .setDisplayedComponents(['symbol', 'name', 'atomicNumber', 'atomicWeight',]);
+</script>
+<!--#include virtual="/footer.html" -->

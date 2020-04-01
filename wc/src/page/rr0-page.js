@@ -4,25 +4,32 @@ export class RR0Page extends HTMLElement {
     super();
     this.template = document.createElement('template');
     this.sd = this.attachShadow({mode: 'open'});
-    this.fetch('/science/crypto/ufo/enquete/dossier/Roswell');
+    this.load('/science/crypto/ufo/enquete/dossier/Roswell');
   }
 
 
   fetch(urlPath) {
-    window.fetch(urlPath).then(res => res.text()).then(pageHtml => {
+    return window.fetch(urlPath).then(res => res.text()).then(pageHtml => {
       const style = `@import "/wc/page/rr0-page.css";`;
       const loadedPageTemplate = document.createElement('template');
       loadedPageTemplate.innerHTML = pageHtml;
       const fullContents = loadedPageTemplate.content;
       let newTitle = fullContents.querySelector('title').innerText;
       this.setTitle(newTitle);
-      let newContent = `<style>${style}</style>${fullContents.querySelector('.text').innerHTML}`;
+      const newContent = `<style>${style}</style>${fullContents.querySelector('.text').innerHTML}`;
       this.template.innerHTML = newContent;
       if (this.sd.childElementCount > 0) {
         this.sd.innerHTML = '';
       }
       this.sd.appendChild(this.template.content);
-      window.history.pushState({}, newTitle, urlPath);
+      return newTitle;
+    });
+  }
+
+  load(urlPath) {
+    this.fetch(urlPath).then(newTitle => {
+      const state = {previousPath: urlPath};
+      window.history.pushState(state, newTitle, urlPath);
     });
   }
 

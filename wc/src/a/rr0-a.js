@@ -21,11 +21,13 @@ export class RR0Anchor extends HTMLAnchorElement {
 
   onclick(event) {
     event.preventDefault();
-    page.fetch(this.pathname);
+    let urlPath = this.pathname;
+    page.load(urlPath);
   }
 }
 
 window.customElements.define('rr0-a', RR0Anchor, {extends: 'a'});
 window.onpopstate = function (event) {
-  page.fetch(window.location);
+  event.preventDefault();
+  page.fetch(event.state.previousPath);
 };

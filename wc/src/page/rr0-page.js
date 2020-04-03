@@ -1,3 +1,5 @@
+const globalThis = window;
+
 export class RR0Page extends HTMLElement {
 
   constructor() {
@@ -9,8 +11,8 @@ export class RR0Page extends HTMLElement {
 
 
   fetch(urlPath) {
-    return window.fetch(urlPath).then(res => res.text()).then(pageHtml => {
-      const style = `@import "/wc/page/rr0-page.css";`;
+    return globalThis.fetch(urlPath).then(res => res.text()).then(pageHtml => {
+      const style = `<link rel="stylesheet" href="/wc/src/page/rr0-page.css"/>`;
       const loadedPageTemplate = document.createElement('template');
       loadedPageTemplate.innerHTML = pageHtml;
       const fullContents = loadedPageTemplate.content;

@@ -1,0 +1,12 @@
+a {
+    cursor: pointer;
+    padding: 0.2rem 0.3rem;
+    margin: -0.2rem -0.3rem;
+}
+
+a:hover {
+    border: none;
+    border-radius: 0.2rem;
+    background: rgba(184, 197, 212, 0.49);
+    transition: background 0.2s ease-out;
+}

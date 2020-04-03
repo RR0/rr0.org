@@ -18,7 +18,7 @@ export class RR0Page extends HTMLElement {
       const fullContents = loadedPageTemplate.content;
       let newTitle = fullContents.querySelector('title').innerText;
       this.setTitle(newTitle);
-      const newContent = `<style>${style}</style>${fullContents.querySelector('.text').innerHTML}`;
+      const newContent = `${style}${fullContents.querySelector('.text').innerHTML}`;
       this.template.innerHTML = newContent;
       if (this.sd.childElementCount > 0) {
         this.sd.innerHTML = '';

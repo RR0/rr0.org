@@ -1,0 +1,63 @@
+<!--#include virtual="/header-start.html" -->
+<title>Date</title>
+<!--#include virtual="/header-end.html" -->
+<h2>Besoin</h2>
+<p>Représenter le temps.</p>
+<h2>Analyse</h2>
+<p>On a généralement besoin de deux notions pour gérer le temps :</p>
+<ul>
+  <li>une <strong>date</strong>, qui définit un moment absolu dans le temps</li>
+  <li>un <strong>calendrier</strong>, qui permet d'exprimer une date selon telle ou telle convention</li>
+</ul>
+<h2>Conception</h2>
+<table>
+  <tr>
+    <td class="titleCorner" rowspan="2"></td>
+    <th>Version</th>
+    <th colspan="6">1</th>
+  </tr>
+  <tr>
+    <th>Release</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <th>Fonction</th>
+    <th>Maintenance</th>
+    <th>2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <th>Moment dans le temps</th>
+    <th></th>
+    <td class="oui" colspan="6"><code><a href="http://java.sun.com/j2se/1.4.1/docs/api/java/util/Date.html">java.util.Date</a></code>
+    </td>
+  </tr>
+  <tr>
+    <th>Interprétation en années, jour, mois, heure</th>
+    <th></th>
+    <td class="oui" rowspan="3"><code><a href="http://java.sun.com/j2se/1.4.1/docs/api/java/util/Date.html">java.util.Date</a></code>
+    </td>
+    <td class="oui" colspan="5"><code><a href="http://java.sun.com/j2se/1.4.1/docs/api/java/util/Calendar.html">java.util.Calendar</a></code>
+    </td>
+  </tr>
+  <tr>
+    <th>Affichage</th>
+    <th></th>
+    <td class="oui" colspan="5" rowspan="2"><code><a
+        href="http://java.sun.com/j2se/1.4.1/docs/api/java/text/DateFormat.html">java.text.DateFormat</a></code></td>
+  </tr>
+  <tr>
+    <th>Parsing</th>
+    <th></th>
+  </tr>
+</table>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,344 @@
+<!--#include virtual="/header-start.html" -->
+<title>CVS</title>
+<meta content="http://www.cvshome.org" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Concurrent Versions System</i> : système pour versions concurrentes.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Permettre à plusieurs personnes de travailler simultanément sur un ensemble de fichiers.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>CVS est un <a href=".">VCS</a> utilisant un modèle copie/modification/fusion : tous les développeurs peuvent
+    obtenir (<em>check out</em>) un fichier puisqu'il ne s'agit que de <strong>copies de travail</strong> (<em>working
+      copy</em>). Lorsqu'ils valident (<em>commit</em>) leur version modifiée :</p>
+  <ul>
+    <li>soit personne d'autre n'a modifié ce fichier et la copie de travail est placée dans le référentiel avec un
+      <strong>commentaire </strong>(<em>log message</em>) de l'auteur. </li>
+    <li>soit d'autres ont déjà publié une version modifiée et CVS propose de <strong>mettre à
+      jour </strong>(<em>update</em>) la copie de travail. Cette mise à jour détecte si les modifications de la version
+      publiée et de la copie de travail sont compatibles (i.e. ont modifié des parties différentes du fichier)
+      <ul>
+        <li>si c'est le cas, CVS les <strong>fusionne </strong>(<em>merge</em>) dans la copie de travail, qui n'a plus
+          qu'à être <strong>validée </strong>(<em>committed</em>) pour envoi dans le référentiel.</li>
+        <li>si ce n'est pas le cas, CVS place dans la copie de travail une fusion des deux versions avec des indicateurs
+          de <strong>conflit</strong> (<em>conflict</em>). Le développeur résoud alors ces conflits manuellement (après
+          discussion avec le développeur de la version publiée par exemple) puis valide (<em>commit</em>) la version
+          résolue.. </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>CVS stocke l'ensemble des versions dans un référentiel (<em>repository</em>).</p>
+  <p>Sous une arborescence du choix des utilisateurs se trouve :</p>
+  <ul>
+    <li>leurs copies de travail</li>
+    <li>des sous-répertoires spécifiques à CVS par répertoire contenant les fichiers d'administration :
+      <ul>
+        <li><code>Root</code>, qui contient le CVSROOT
+          (<code>:ext:javarome@cvs.kicsa.sourceforge.net:/cvsroot/kicsa</code> par exemple)</li>
+        <li><code>Repository</code>, qui contient le module dans le CVSROOT</li>
+        <li><code>Entries</code>, qui contient la liste des fichiers pris en charge par CVS, sous la forme <code><em>Type
+          particulier</em>/<em>NomFichier</em>/<em>Revision</em>/<em>Date en temps universel</em>//</code> (ce qui
+          permet de détecter le besoin de synchronisation par rapport à une version du référentiel ayant une date
+          différente) donc par exemple :<br/> <code>/MonFichier.java/1.1.1.1/Wed Dec 04 21:52:14 2002//<br/>
+            D/MonRepertoire////</code></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>La localisation du référentiel est spécifiée par la variable d'environnement <q>CVSROOT</q>.</p>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td colspan="2">CVS</td>
+      <th valign="top"> Version</th>
+      <th colspan="7">1</th>
+      <th rowspan="2"> Commentaire</th>
+    </tr>
+    <tr>
+      <th>Domaine</th>
+      <th>Technologie</th>
+      <th valign="top"> Release</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">Commandes</th>
+      <th valign="top">co</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Check Out </em>: Extraction de copie de travail</td>
+    </tr>
+    <tr>
+      <th valign="top">update</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Fusion les sources du référentiel avec les sources modifiées. Suivi d'un test (voir si le code fonctionne
+        toujours après fusion) puis d'un commit typiquement.
+      </td>
+    </tr>
+    <tr>
+      <th valign="top">commit</th>
+      <th valign="top"></th>
+      <td class="oui">ci</td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td class="oui"></td>
+      <td>Valide les modifications pour être placées dans le référentiel. Après update typiquement.</td>
+    </tr>
+    <tr>
+      <th valign="top">log</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Liste des modifications historisées</td>
+    </tr>
+    <tr>
+      <th valign="top">diff</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Affiche les différences entre deux versions</td>
+    </tr>
+    <tr>
+      <th valign="top">add</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Ajout d'un fichier dans le référentiel. Suivi de commit typiquement</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">rm</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>ReMove</em> : suppression d'un fichier du référentiel après suppression en local. A suivre d'un
+        <em>commit</em>.
+      </td>
+    </tr>
+    <tr>
+      <th valign="top">-P</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Prune empty directories</em></td>
+    </tr>
+    <tr>
+      <th valign="top">tag</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Marquer des sources (comme faisant partie d'une release typiquement)</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Options</th>
+      <th rowspan="2" valign="top">-d</th>
+      <th valign="top">pserver</th>
+      <td colspan="5"></td>
+      <td colspan="2"></td>
+      <td><em>Password-authenticated server</em></td>
+    </tr>
+    <tr>
+      <th valign="top">ext</th>
+      <td colspan="5"></td>
+      <td colspan="2"></td>
+      <td><em>External connection program </em>tels que rsh, <a href="../../../sec/priv/crypt/SSH.html">SSH</a>, kserver
+        (Kerberos 4), gserver (GSSAPI ou Kerberos 5)
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Mots-clés</th>
+      <th rowspan="6" valign="top">Substitués</th>
+      <th valign="top">Auteur</th>
+      <td class="oui" colspan="7"><code>$<i></i>Author$</code></td>
+      <td>
+        <dl>
+          <dt><code> </code></dt>
+          Nom de login de l'utilisateur ayant placé la révision.
+        </dl>
+      </td>
+    </tr>
+    <tr>
+      <th valign="top">Date</th>
+      <td class="oui" colspan="7"><code>$<i></i>Date$</code></td>
+      <td>Date et heure (UTC) à laquelle la révision a été placée</td>
+    </tr>
+    <tr>
+      <th valign="top">En-tête</th>
+      <td class="oui" colspan="7"><code>$<i></i>Header$</code></td>
+      <td>En-tête standard contenant le chemin complet du fichier, son numéro de révision, sa date (UTC), son auteur,
+        son état (et celui qui l'a verrouillé le cas échéant, très rare)
+      </td>
+    </tr>
+    <tr>
+      <th valign="top">Id</th>
+      <td class="oui" colspan="7"><code>$<i></i>Id$</code></td>
+      <td>Comme En-tête, sauf que le fichier est sans son chemin complet</td>
+    </tr>
+    <tr>
+      <th valign="top">Révision</th>
+      <td class="oui" colspan="7"><code>$<i></i>Revision$</code></td>
+      <td>Numéro affecté à cette révision</td>
+    </tr>
+    <tr>
+      <th valign="top">Source</th>
+      <td class="oui" colspan="7"><code>$<i></i>Source$</code></td>
+      <td>Chemin complet du fichier</td>
+    </tr>
+    <tr>
+      <th valign="top">Protocole</th>
+      <th valign="top">Distant</th>
+      <th valign="top"></th>
+      <td class="non" colspan="5">Non</td>
+      <td class="oui" colspan="2">Oui</td>
+      <td>Protocole distant</td>
+    </tr>
+    <tr>
+      <th valign="top">Référentiel</th>
+      <th valign="top">Format</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="4">1.3</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th valign="top">Local</th>
+      <th valign="top">Répertoire de travail</th>
+      <th valign="top"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="2">1.5</td>
+      <td></td>
+    </tr>
+  </table>
+  <h2>Notes</h2>
+  <ul>
+    <li> Adapté pour le partage de code source à travers le réseau (Internet y compris) entre développeurs indépendants
+      éloignés.</li>
+    <li>Licence <a href="../../../prod/licence/GPL.html">GPL</a> et donc très souvent employé pour la gestion de
+      configuration <a href="../../../OpenSource.html">OSS</a></li>
+    <li>De plus en plus souvent intégré dans des <a href="../../../prod/ide">IDE</a> (<a
+        href="../../../../../../java/TCC.html">TCC</a>, JBuilder, <a
+        href="../../../../../../org/us/company/ibm/product/soft/ide/WSAD.html">WSAD</a>, IDEA)</li>
+    <li>Ne pas confondre les numéros de révisions de fichier CVS (internes) et le numéro de version de votre produit
+      (public).</li>
+    <li>Le premier numéro de version CVS vaut toujours <code>1.1.1.1</code>.</li>
+    <li>On peut éviter de spécifier le référentiel à chaque commande :
+      <ul>
+        <li>en spécifiant sa valeur dans la variable d'environnement <code>CVSROOT</code> si vous n'utilisez pas
+          plusieurs référentiels</li>
+        <li>parce que les copies de travail, une fois extraites (<em>checked out</em>), savent de quel référentiel elles
+          proviennent (grâce aux informations contenues dans le sous-répertoire "CVS" de l'endroit où elles se
+          trouvent).</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>CVS est utilisé sur les projets :</p>
+  <ul>
+    <li>de <a href="http://sourceforge.net">SourceForge.net</a></li>
+    <li>Mozilla</li>
+    <li>GIMP</li>
+    <li>XEmacs</li>
+    <li>KDE</li>
+    <li>GNOME</li>
+    <li><a href="http://kicsa.sourceforge.net/ConfigurationChangeManagement.html">KiCsa</a></li>
+  </ul>
+  <p>Des exemples de commandes CVS sont :</p>
+  <blockquote>
+    <code><strong>cvs -z3 -d:pserver:anonymous@</strong>cvs.kicsa.sourceforge.net:/cvsroot/kicsa <strong>co </strong>MonModule<strong><br/>
+      <br/> cvs -z3 -d:ext:</strong>javarome@cvs.kicsa.sourceforge.net:/cvsroot/kicsa
+      <strong>co </strong>MonModule</code>
+  </blockquote>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Peu adapté au <em>refactoring</em>, en raison d'inadéquation :
+      <ul>
+        <li>à la <strong>suppression</strong> de fichiers et répertoires (supprimer le fichier local avant, suppression
+          de répertoire différente, la suppression de répertoire vide ne supprime pas le répertoire dans le référentiel)
+        </li>
+        <li>au <strong>renommage</strong> de fichier et répertoires (copie et </li>
+      </ul>
+    </li>
+    <li>Impossibilité d'avoir un répertoire nommé <code>CVS</code></li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Clients
+      <ul>
+        <li><a href="http://www.jcvs.org">jCVS</a> (<a href="/org/us/company/oracle/sun/ptf/java">Java</a> <a
+            href="../../../prod/licence/GPL.html">GPL</a>)</li>
+        <li><a href="http://www.wincvs.org/">WinCVS</a> (<a href="../../impl/lang/cpp">C++</a> <a
+            href="../../../prod/licence/GPL.html">GPL</a>)</li>
+      </ul>
+    </li>
+    <li><a href="http://cvsbook.red-bean.com/"><em>The CVS book</em></a> par <a
+        href="../../../../../../java/kfogel@red-bean.com">Karl Fogel</a></li>
+    <li><a href="http://www.geocities.com/vivekv/cvs-bestpractices/"><em>CVS best practices</em></a> par <a
+        href="mailto:vivek@magic-cauldron.com">Vivek Venugopalan</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

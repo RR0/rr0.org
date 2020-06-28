@@ -1,0 +1,266 @@
+<!--#include virtual="/header-start.html" -->
+<title>VAJ</title>
+<meta content="http://www-3.ibm.com/software/ad/studioappdev/" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">VisualAge for Java.</i></p>
+<section>
+  <h2>Besoin</h2>
+  <p>D�velopper des applications <a href="/org/us/company/oracle/sun/ptf/java">Java</a>, en particulier pour <a
+      href="../server/app/WAS.html">WAS</a> 3.x.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>VAJ stocke ses repository dans un fichier <code>.dat</code>.</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li> Incontournable pour le d�veloppement sur <a href="../server/app/WAS.html">WAS</a>
+      &lt; 4.</li>
+    <li>VAJ est la d�clinaison <a href="/org/us/company/oracle/sun/ptf/java">Java</a> de l'outil VisualAge, existant �
+      l'origine pour <a href="/tech/info/soft/proj/impl/lang/smalltalk">SmallTalk</a>, puis pour <a
+          href="/tech/info/soft/proj/impl/lang/oo/cpp">C++</a>.</li>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="3">VAJ<br/> <br/> (O)ui, (N)on, (D)eprecated, (P)resque</td>
+          <th valign="top"> Version</th>
+          <th colspan="6"> 3</th>
+          <th>4</th>
+          <th rowspan="4"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Release</th>
+          <th>0</th>
+          <th colspan="5">5</th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th valign="top"> Fixpack</th>
+          <th>2</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th> Module</th>
+          <th> Technologie</th>
+          <th valign="top"> Maintenance</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top">HTTP</th>
+          <th valign="top">1.1</th>
+          <td></td>
+          <td>O</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th rowspan="3" valign="top">J2SE</th>
+          <th valign="top">1.1.7</th>
+          <td>O</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top">1.2.2</th>
+          <td>N</td>
+          <td></td>
+          <td>O</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>JDK de IBM seulement</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top">1.3</th>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">D�ploiement</th>
+          <th rowspan="3" valign="top">WAS</th>
+          <th valign="top">3.02</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">3.5</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">4</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="9" valign="top">API</th>
+          <th valign="top">EJB</th>
+          <th valign="top">1.1</th>
+          <td>N</td>
+          <td>P</td>
+          <td>P</td>
+          <td>P</td>
+          <td>P</td>
+          <td>P</td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Servlet</th>
+          <th valign="top">2.1</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">JNDI</th>
+          <th valign="top">1.1</th>
+          <td></td>
+          <td></td>
+          <td>O</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">1.2</th>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">JMS</th>
+          <th valign="top">1.0.1</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">JSP</th>
+          <th valign="top">1.0</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">JDBC</th>
+          <th valign="top">2.0</th>
+          <td>N</td>
+          <td>P</td>
+          <td>O</td>
+          <td>O</td>
+          <td>O</td>
+          <td>O</td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">XML</th>
+          <th valign="top">1.0</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">JavaMail</th>
+          <th valign="top">1.1</th>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>N</td>
+          <td>O</td>
+          <td></td>
+        </tr>
+        </thead>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>512 Mo de RAM recommand�</li>
+    <li>Plantages et bugs parfois.</li>
+    <li>Travail sur un r�f�rentiel et non des fichiers</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

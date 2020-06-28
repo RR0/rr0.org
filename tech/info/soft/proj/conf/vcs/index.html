@@ -1,0 +1,69 @@
+<!--#include virtual="/header-start.html" -->
+<title>VCS</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Version Control System</i> : système de contrôle des versions.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Gérer les versions d'artefacts pour récupérer d'anciens états (état stable sans erreurs par exemple) d'un logiciel
+    en cours de développement.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les VCS proposent des fonctionnalités de :</p>
+  <ul>
+    <li><strong>historisation</strong> : mémorisation des modifications (versions) réalisées sur des artefacts</li>
+    <li><strong>travail en équipe</strong> : obtention (<em>check-out</em>) depuis et publication (<em>check-in</em>)
+      d'artefacts vers un <strong>référentiel</strong> (<em>repository</em>) de versions, selon différents modèles :
+      <ul>
+        <li><strong>réservation/libération</strong> : verrouillage et extraction d'un fichier, modification du fichier
+          puis déverrouillage après re-publication.</li>
+        <li><strong>copie/fusion</strong> : aucun verrouillage et résolution des modification concurrentes par fusion
+          automatique ou manuelle.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Les VCS utilisent parfois des verrous.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>On ne place généralement dans le référentiel qu'une version "stable" (exécutable sans erreurs) de
+      l'application.</li>
+    <li>Certains VCS appliquant le principe de réservation/libération permettent parfois de "voler" un verrou acquis par
+      un autre.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Les VCS utilisant un modèle réservation/modification/libération ne sont pas adapté pour la collaboration entre
+      développeurs indépendants éloignés (projets <a href="../../../OpenSource.html">OSS</a> par exemple).</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><a href="git">Git</a></li>
+    <li>copie/modification/fusion
+      <ul>
+        <li><a href="CVS.html">CVS</a></li>
+      </ul>
+    </li>
+    <li>Rational ClearCase</li>
+    <li>Component Software <a href="http://www.componentsoftware.com/products/rcs">RCS</a></li>
+    <li>Microsoft
+      <ul>
+        <li><a href="/tech/info/soft/proj/conf/vcs/SCC.html">SCC</a></li>
+        <li><a href="http://msdn.microsoft.com/ssafe">Visual SourceSafe</a></li>
+      </ul>
+    </li>
+    <li>IBM <a href="http://www-3.ibm.com/software/ad/teamcon/">TeamConnection</a></li>
+    <li>Merant <a href="http://www.merant.com/pvcs/products/dimensions">PVCS Dimensions</a></li>
+    <li>Mortice Kern Systems (MKS) <a href="http://www.mks.com/products/sie/">Source Integrity</a></li>
+    <li>Perforce <a href="http://www.perforce.com/perforce/loadprog.html">SCM</a></li>
+    <li><a href="http://www.qumasoft.com">QCVS</a></li>
+    <li>Startbase <a href="http://www.starbase.com/">Versions</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

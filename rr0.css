@@ -1115,7 +1115,8 @@ pre code {
     border-top-style: none;
     border-left-style: none;
     background-position: center center;
-    border-right-style: none
+    border-right-style: none;
+    background-color: transparent;
 }
 
 .oui {

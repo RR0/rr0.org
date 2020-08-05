@@ -10,8 +10,7 @@
   <h2>Analyse</h2>
   <p>Lors d'un <a href="../cost">calcul de coût</a> d'une hypothèse, un coût nul ne signifie pas forcément que
     l'hypothèse est excellente. Cela peut plutôt paraître suspect et demande une vérification qu'il ne s'agit pas d'un
-    cas d'<strong><em><a
-        href="/science/discipline/hard/form/math/form/math/stat/regress/overfit">overfitting</a></em></strong>.
+    cas de<strong><em><a href="../overfit">surapprentissage</a></em></strong>.
   </p>
 </section>
 <section>
@@ -20,8 +19,8 @@
   <p>`J = 1/m sum_(i=1)^m c(h_Θ, y) + λ sum_(j=1)^n θ_j^2`</p>
   <p>ce qui ajoute au coût une pénalité qui augmente d'autant que les paramètres `Θ` augmente, et où `λ` doit être
     suffisamment grand (1000 par ex) mais pas trop (sinon <i
-        lang="en"><a href="/science/discipline/hard/form/math/form/math/stat/regress/underfit">underfitting</a></i>)
-    pour que la minimisation du coût fasse tendre les `θ` vers zéro.</p>
+        lang="en"><a href="../underfit">sous-apprentissage</a></i>) pour que la minimisation du coût fasse tendre les
+    `θ` vers zéro.</p>
   <p>À noter que `θ_0` ne doit pas être régularisé.</p>
   <section>
     <h3>Vectorisation</h3>

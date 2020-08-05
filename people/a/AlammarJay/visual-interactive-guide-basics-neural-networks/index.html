@@ -15,201 +15,257 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
 <link href="../style.css" rel="stylesheet" type="text/css"/>
 <link href="https://jalammar.github.io/feed.xml" rel="alternate"
-    title="Jay Alammar - Visualizing machine learning one concept at a time."
-    type="application/rss+xml"/>
-<script type="text/javascript">
-  var _paq = _paq || [];
-</script>
+    title="Jay Alammar - Visualizing machine learning one concept at a time." type="application/rss+xml"/>
+<script type="text/javascript"> var _paq = _paq || [];</script>
 <!--#include virtual="/header-end.html" -->
-<div class="container" id="main" role="main">
-  <div class="post">
-    <div class="entry prediction">
-      <p><span class="discussion">Discussions:
+<div class="prediction">
+  <p><span class="discussion">Discussions:
 <a class="hn-link" href="https://news.ycombinator.com/item?id=13183171">Hacker News (63 points, 8 comments)</a>, <a
-            class=""
-            href="https://www.reddit.com/r/programming/comments/5igdix/a_visual_and_interactive_guide_to_the_basics_of/">Reddit r/programming (312 points, 37 comments)</a>
+        href="https://www.reddit.com/r/programming/comments/5igdix/a_visual_and_interactive_guide_to_the_basics_of/">Reddit r/programming (312 points, 37 comments)</a>
 <br/>
-<span class="discussion">Translations: <a
-    href="https://camporeale.github.io/guia-interactiva-visual-conceptos-basicos-redes-neuronales/">Spanish</a>
+<span class="discussion">Translations:
+  <a href="index_fr.html">French</a>
+  <a href="https://camporeale.github.io/guia-interactiva-visual-conceptos-basicos-redes-neuronales/">Spanish</a>
 </span></span></p>
-      <div class="img-div">
-        <img alt="NNs 2 variables" src="NNs_2_variables.png"/>
+  <div class="img-div">
+    <img alt="NNs 2 variables" src="NNs_2_variables.png"/>
+  </div>
+  <p><strong>Update</strong>: Part 2 is now live: <a
+      href="https://jalammar.github.io/feedforward-neural-networks-visual-interactive/"> A Visual And Interactive Look
+    at Basic Neural Network Math</a>
+  </p>
+  <section>
+    <h2>Motivation</h2>
+    <p>I’m not a <a href="/tech/info/soft/data/science/ml">machine learning</a> expert. I’m a software engineer by
+      training and I’ve had little interaction with AI. I had always wanted to delve deeper into machine learning, but
+      never really found my “in”. That’s why when Google open sourced <a
+          href="/org/us/company/alphabet/x/brain/product/soft/tensorflow">TensorFlow</a> in <time>2015-11</time>, I got
+      super excited and knew it was time to jump in and start the learning journey. Not to sound dramatic, but to me, it
+      actually felt kind of like Prometheus handing down fire to mankind from the Mount Olympus of machine learning. In
+      the back of my head was the idea that the entire field of Big Data and technologies like Hadoop were vastly
+      accelerated when Google researchers released their Map Reduce paper. This time it’s not a paper – it’s the actual
+      software they use internally after years and years of evolution.</p>
+    <p>So I started learning what I can about the basics of the topic, and saw the need for gentler resources for people
+      with no experience in the field. This is my attempt at that.</p>
+  </section>
+  <section>
+    <h2>Start here</h2>
+    <p>Let’s start with a simple example. Say you’re helping a friend who wants to buy a house. She was quoted $400,000
+      for a 2000 sq ft house (185 meters). Is this a good price or not?</p>
+    <p>It’s not easy to tell without a frame of reference. So you ask your friends who have bought houses in that same
+      neighborhoods, and you end up with three data points:</p>
+    <div class="one_variable">
+      <table>
+        <thead>
+        <tr>
+          <th>Area (sq ft) (x)</th>
+          <th>Price (y)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2,104</td>
+          <td>399,900</td>
+        </tr>
+        <tr>
+          <td>1,600</td>
+          <td>329,900</td>
+        </tr>
+        <tr>
+          <td>2,400</td>
+          <td>369,000</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Personally, my first instinct would be to get the average price per sq ft. That comes to $180 per sq ft.</p>
+    <p>Welcome to your first neural network! Now it’s not quite at Siri level yet, but now you know the fundamental
+      building block. And it looks like this:</p>
+    <div class="img-div">
+      <img alt="simple NN 1" src="simple_NN_1.png"/>
+    </div>
+    <p>Diagrams like this show you the structure of the network and how it calculates a prediction. The calculation
+      starts from the input node at the left. The input value flows to the right. It gets multiplied by the weight and
+      the result becomes our output.</p>
+    <p>Multiplying 2,000 sq ft by 180 gives us $360,000. That’s all there is to it at this level. Calculating the
+      prediction is simple multiplication. But before that, we needed to think about the weight we’ll be multiplying by.
+      Here we started with an average, later we’ll look at better algorithms that can scale as we get more inputs and
+      more complicated models. Finding the weight is our “training” stage. So whenever you hear of someone “training” a
+      neural network, it just means finding the weights we use to calculate the prediction.</p>
+    <div class="img-div">
+      <img alt="NNs formula no bias" src="NNs_formula_no_bias.png"/>
+    </div>
+    <p>This is a form of prediction. This is a simple predictive model that takes an input, does a calculation, and
+      gives an output (since the output can be of continuous values, the technical name for what we have would be a
+      “regression model”)</p>
+    <p>Let us visualize this process (for simplicity, let’s switch our price unit from $1 to $1000. Now our weight is
+      0.180 rather than 180):</p>
+    <div class="img-div-large">
+      <img alt="data points graph, animated" src="data_points_graph_animated.gif"/>
+    </div>
+  </section>
+  <section>
+    <h2>Harder, Better, Faster, Stronger</h2>
+    <p>Can we do better than estimate the price based on the average of our data points? Let’s try. Let’s first define
+      what it means to be better in this scenario. If we apply our model to the three data points we have, how good of a
+      job would it do?</p>
+    <div class="img-div-large">
+      <img alt="" src="data_points_error_animated.gif"/>
+    </div>
+    <p>That’s quite a bit of yellow. Yellow is bad. Yellow is error. We want to shrink yellow as much as we can.</p>
+    <div class="one_variable">
+      <table>
+        <thead>
+        <tr>
+          <th>Area (x)</th>
+          <th>Price ($1000) (<span class="y_">y_</span>)</th>
+          <th>Prediction (<span class="y">y</span>)</th>
+          <th><span class="y_">y_</span>-<span class="y">y</span></th>
+          <th>(<span class="y_">y_</span>-<span class="y">y</span>)²</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2,104</td>
+          <td>399.9</td>
+          <td>379</td>
+          <td>21</td>
+          <td>449</td>
+        </tr>
+        <tr>
+          <td>1,600</td>
+          <td>329.9</td>
+          <td>288</td>
+          <td>42</td>
+          <td>1756</td>
+        </tr>
+        <tr>
+          <td>2,400</td>
+          <td>369</td>
+          <td>432</td>
+          <td>-63</td>
+          <td>3969</td>
+        </tr>
+        <tr>
+          <td class="bottom-left-corner"></td>
+          <td class="bottom-left-corner"></td>
+          <td class="bottom-left-corner" colspan="2"><span class="total"> Average:</span></td>
+          <td><b>2,058</b></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Here we can see the <span class="y_">actual price value</span>, the <span
+        class="y">predicted price value</span>, and the <span class="error-value">difference between them</span>. Then
+      we’ll need to average these differences so we have a number that tells us how much error there is in this
+      prediction model. The problem is, the 3rd row has -63 as its value. We have to deal with this negative value if we
+      want to use the difference between the prediction and price as our error measuring stick. That’s one reason why we
+      introduce an additional column that shows the error squared, thus getting rid of the negative value.</p>
+    <p>This is now our definition of doing better – a better model is one that has less error. Error is measured as the
+      average of the errors for each point in our data set. For each point, the error is measured by the difference
+      between the actual value and the predicted value, raised to the power of 2. This is called <a
+          href="http://mste.illinois.edu/patel/amar430/meansquare.html">Mean Square Error</a>. Using it as a guide to
+      train our model makes it our <strong>loss function</strong> (also, <strong>cost function</strong>).</p>
+    <p>Now that we defined our measuring stick for what makes a better model, let’s experiment with a couple more weight
+      values and compare them with our average pick:</p>
+    <figure class="img-div-large">
+      <img alt="lines and errors, animated" src="lines_and_errors_animated.gif"/>
+      <figcaption>
+        We can't improve much on the model by varying the weight any more. But if we add a bias we can find values that
+        improve the model.
+      </figcaption>
+    </figure>
+    <p>Our lines can better approximate our values now that we have this b value added to the line formula. In this
+      context, we call it a “bias”. This makes our neural network look like this:</p>
+    <div class="img-div">
+      <img alt="NNs bias" src="NNs_bias.png"/>
+    </div>
+    <p>We can generalize it by saying that a neural network with one input and one output (<em>spoiler warning:</em> and
+      no hidden layers) looks like this:</p>
+    <div class="img-div">
+      <img alt="NNs bias #2" src="NNs_bias_2.png"/>
+    </div>
+    <p>In this graph, W and b are values we find during the training process. X is the input we plug into the formula
+      (area in sq ft in our example). Y is the predicted price.</p>
+    <p>Calculating a prediction now uses this formula:</p>
+    <div class="img-div">
+      <img alt="NNs formula" src="NNs_formula.png"/>
+    </div>
+    <p>So our current model calculates predictions by plugging in the area of house as x in this formula:</p>
+    <div class="img-div">
+      <img alt="NNs formula ex" src="NNs_formula_ex.png"/>
+    </div>
+  </section>
+  <section>
+    <h2>Train Your Dragon</h2>
+    <p>How about you take a crack at training our toy neural network? Minimize the loss function by tweaking the weight
+      and bias dials. Can you get an error value below 799?</p>
+    <div class="training-chart" id="training-one-chart"></div>
+    <table class="training-table" id="training-one">
+      <tr>
+        <td>
+          Error
+        </td>
+        <td colspan="2">
+          <span id="error-value"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="error-cell" colspan="3">
+          <span id="error-value-message"></span>&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Weight
+        </td>
+        <td>
+          <input class="weight" id="weightSlider" max="0.4" min="0" step="0.001" type="range"/>
+        </td>
+        <td class="slider-value">
+          <span class="weight" id="weight">0</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Bias
+        </td>
+        <td>
+          <input class="bias" id="biasSlider" max="460" min="0" step="1" type="range"/>
+        </td>
+        <td class="slider-value">
+          <span class="bias" id="bias">0</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="nn-graph-area" id="neural-network-graph"></div>
+  </section>
+  <section>
+    <h2>Automation</h2>
+    <p>Congratulations on manually training your first neural network! Let’s look at how to automate this training
+      process. Below is another example with an additional autopilot-like functionality. These are the GD Step buttons.
+      They use an algorithm called “Gradient Descent” to try to step towards the correct weight and bias values that
+      minimize the loss function.</p>
+    <div class="figure">
+      <div class="col graphs">
+        <div class="training-chart" id="training-one-gd-chart"></div>
+        <div class="training-chart mini-charts">
+          <div class="error-chart col-xs-6" id="training-one-gd-error-chart"></div>
+          <div class="error-chart col-xs-6" id="training-one-gd-heatmap"></div>
+        </div>
       </div>
-      <p><strong>Update</strong>: Part 2 is now live: <a
-          href="https://jalammar.github.io/feedforward-neural-networks-visual-interactive/">A Visual And Interactive
-        Look at Basic Neural Network Math</a></p>
-      <section>
-        <h2>Motivation</h2>
-        <p>I’m not a machine learning expert. I’m a software engineer by training and I’ve had little interaction with
-          AI. I had always wanted to delve deeper into machine learning, but never really found my “in”. That’s why when
-          Google open sourced TensorFlow in November 2015, I got super excited and knew it was time to jump in and start
-          the learning journey. Not to sound dramatic, but to me, it actually felt kind of like Prometheus handing down
-          fire to mankind from the Mount Olympus of machine learning. In the back of my head was the idea that the
-          entire field of Big Data and technologies like Hadoop were vastly accelerated when Google researchers released
-          their Map Reduce paper. This time it’s not a paper – it’s the actual software they use internally after years
-          and years of evolution.</p>
-        <p>So I started learning what I can about the basics of the topic, and saw the need for gentler resources for
-          people with no experience in the field. This is my attempt at that.</p>
-      </section>
-      <section>
-        <h2>Start here</h2>
-        <p>Let’s start with a simple example. Say you’re helping a friend who wants to buy a house. She was quoted
-          $400,000 for a 2000 sq ft house (185 meters). Is this a good price or not?</p>
-        <p>It’s not easy to tell without a frame of reference. So you ask your friends who have bought houses in that
-          same neighborhoods, and you end up with three data points:</p>
-        <div class="one_variable">
-          <table>
-            <thead>
-            <tr>
-              <th>Area (sq ft) (x)</th>
-              <th>Price (y)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>2,104</td>
-              <td>399,900</td>
-            </tr>
-            <tr>
-              <td>1,600</td>
-              <td>329,900</td>
-            </tr>
-            <tr>
-              <td>2,400</td>
-              <td>369,000</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Personally, my first instinct would be to get the average price per sq ft. That comes to $180 per sq ft.</p>
-        <p>Welcome to your first neural network! Now it’s not quite at Siri level yet, but now you know the fundamental
-          building block. And it looks like this:</p>
-        <div class="img-div">
-          <img alt="simple NN 1" src="simple_NN_1.png"/>
-        </div>
-        <p>Diagrams like this show you the structure of the network and how it calculates a prediction. The calculation
-          starts from the input node at the left. The input value flows to the right. It gets multiplied by the weight
-          and the result becomes our output.</p>
-        <p>Multiplying 2,000 sq ft by 180 gives us $360,000. That’s all there is to it at this level. Calculating the
-          prediction is simple multiplication. But before that, we needed to think about the weight we’ll be multiplying
-          by. Here we started with an average, later we’ll look at better algorithms that can scale as we get more
-          inputs and more complicated models. Finding the weight is our “training” stage. So whenever you hear of
-          someone “training” a neural network, it just means finding the weights we use to calculate the prediction.</p>
-        <div class="img-div">
-          <img alt="NNs formula no bias" src="NNs_formula_no_bias.png"/>
-        </div>
-        <p>This is a form of prediction. This is a simple predictive model that takes an input, does a calculation, and
-          gives an output (since the output can be of continuous values, the technical name for what we have would be a
-          “regression model”)</p>
-        <p>Let us visualize this process (for simplicity, let’s switch our price unit from $1 to $1000. Now our weight
-          is 0.180 rather than 180):</p>
-        <div class="img-div-large">
-          <img alt="data points graph, animated" src="data_points_graph_animated.gif"/>
-        </div>
-      </section>
-      <section>
-        <h2>Harder, Better, Faster, Stronger</h2>
-        <p>Can we do better than estimate the price based on the average of our data points? Let’s try. Let’s first
-          define what it means to be better in this scenario. If we apply our model to the three data points we have,
-          how good of a job would it do?</p>
-        <div class="img-div-large">
-          <img alt="" src="data_points_error_animated.gif"/>
-        </div>
-        <p>That’s quite a bit of yellow. Yellow is bad. Yellow is error. We want to shrink yellow as much as we can.</p>
-        <div class="one_variable">
-          <table>
-            <thead>
-            <tr>
-              <th>Area (x)</th>
-              <th>Price ($1000) (<span class="y_">y_</span>)</th>
-              <th>Prediction (<span class="y">y</span>)</th>
-              <th><span class="y_">y_</span>-<span class="y">y</span></th>
-              <th>(<span class="y_">y_</span>-<span class="y">y</span>)²</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>2,104</td>
-              <td>399.9</td>
-              <td>379</td>
-              <td>21</td>
-              <td>449</td>
-            </tr>
-            <tr>
-              <td>1,600</td>
-              <td>329.9</td>
-              <td>288</td>
-              <td>42</td>
-              <td>1756</td>
-            </tr>
-            <tr>
-              <td>2,400</td>
-              <td>369</td>
-              <td>432</td>
-              <td>-63</td>
-              <td>3969</td>
-            </tr>
-            <tr>
-              <td class="bottom-left-corner"></td>
-              <td class="bottom-left-corner"></td>
-              <td class="bottom-left-corner" colspan="2"><span class="total"> Average:</span></td>
-              <td><b>2,058</b></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Here we can see the <span class="y_">actual price value</span>, the <span
-            class="y">predicted price value</span>, and the <span class="error-value">difference between them</span>.
-          Then we’ll need to average these differences so we have a number that tells us how much error there is in this
-          prediction model. The problem is, the 3rd row has -63 as its value. We have to deal with this negative value
-          if we want to use the difference between the prediction and price as our error measuring stick. That’s one
-          reason why we introduce an additional column that shows the error squared, thus getting rid of the negative
-          value.</p>
-        <p>This is now our definition of doing better – a better model is one that has less error. Error is measured as
-          the average of the errors for each point in our data set. For each point, the error is measured by the
-          difference between the actual value and the predicted value, raised to the power of 2. This is called <a
-              href="http://mste.illinois.edu/patel/amar430/meansquare.html">Mean Square Error</a>. Using it as a guide
-          to train our model makes it our <strong>loss function</strong> (also, <strong>cost function</strong>).</p>
-        <p>Now that we defined our measuring stick for what makes a better model, let’s experiment with a couple more
-          weight values and compare them with our average pick:</p>
-        <figure class="img-div-large">
-          <img alt="lines and errors, animated" src="lines_and_errors_animated.gif"/>
-          <figcaption>
-            We can't improve much on the model by varying the weight any more. But if we add a bias we can find values
-            that improve the model.
-          </figcaption>
-        </figure>
-        <p>Our lines can better approximate our values now that we have this b value added to the line formula. In this
-          context, we call it a “bias”. This makes our neural network look like this:</p>
-        <div class="img-div">
-          <img alt="NNs bias" src="NNs_bias.png"/>
-        </div>
-        <p>We can generalize it by saying that a neural network with one input and one output (<em>spoiler warning:</em>
-          and no hidden layers) looks like this:</p>
-        <div class="img-div">
-          <img alt="NNs bias #2" src="NNs_bias_2.png"/>
-        </div>
-        <p>In this graph, W and b are values we find during the training process. X is the input we plug into the
-          formula (area in sq ft in our example). Y is the predicted price.</p>
-        <p>Calculating a prediction now uses this formula:</p>
-        <div class="img-div">
-          <img alt="NNs formula" src="NNs_formula.png"/>
-        </div>
-        <p>So our current model calculates predictions by plugging in the area of house as x in this formula:</p>
-        <div class="img-div">
-          <img alt="NNs formula ex" src="NNs_formula_ex.png"/>
-        </div>
-      </section>
-      <section>
-        <h2>Train Your Dragon</h2>
-        <p>How about you take a crack at training our toy neural network? Minimize the loss function by tweaking the
-          weight and bias dials. Can you get an error value below 799?</p>
-        <div class="training-chart" id="training-one-chart"></div>
-        <table class="training-table" id="training-one">
+      <div class="col">
+        <table class="training-table" id="training-one-gd">
           <tr>
-            <td>
-              Error
+            <td class="gd-buttons" colspan="3">
+              <input class="btn btn-primary" id="gradient-descent-button" type="button" value="GD Step"/> <input
+                class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 GD Steps "/> <input
+                class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 GD Steps "/>
             </td>
+          </tr>
+          <tr>
+            <td>Error</td>
             <td colspan="2">
               <span id="error-value"></span>
             </td>
@@ -220,493 +276,409 @@
             </td>
           </tr>
           <tr>
+            <td><label for="weightSlider">Weight</label></td>
             <td>
-              Weight
-            </td>
-            <td>
-              <input class="weight" id="weightSlider" max="0.4" min="0" step="0.001" type="range"/>
+              <input class="weight" id="weightSlider" max="0.4" min="0" step="0.0001" type="range"/>
             </td>
             <td class="slider-value">
               <span class="weight" id="weight">0</span>
             </td>
           </tr>
           <tr>
-            <td>
-              Bias
+            <td><label for="biasSlider">Bias</label></td>
+            <td><input class="bias" id="biasSlider" max="460" min="0" step="0.1" type="range"/></td>
+            <td class="slider-value">
+              <span class="bias" id="bias">0</span>
             </td>
+          </tr>
+        </table>
+        <div class="nn-graph-area" id="neural-network-gd-graph"></div>
+      </div>
+    </div>
+    <p>The two new graphs are to help you track the error values as you fiddle with the parameters (weight and bias) of
+      the model. It’s important to keep track of the error as the training process is all about reducing this error as
+      much possible.</p>
+    <p>How does gradient descent know where its next step should be? Calculus. You see, knowing the function we’re
+      minimizing (our loss function, the average of (y_ - y)² for all our data points), and knowing the current inputs
+      into it (the current weight and bias), the derivatives of the loss function tell us which direction to nudge W and
+      b in order to minimize the error.</p>
+    <p>Learn more about gradient descent and how to use it to calculate the new weights &amp; bias in the first lectures
+      of Coursera’s <a href="https://www.coursera.org/learn/machine-learning">Machine Learning</a> course.
+    </p>
+  </section>
+  <section>
+    <h2>And Then There Were Two</h2>
+    <p>Is the size of the house the only variable that goes into how much it costs? Obviously there are many other
+      factors. Let’s add another variable and see how we can adjust our neural network to it.</p>
+    <p>Say your friend does a bit more research and finds a bunch more data points. She also finds out how many
+      bathrooms each house has:</p>
+    <div class="two_variables">
+      <table>
+        <thead>
+        <tr>
+          <th>Area (sq ft) (x1)</th>
+          <th>Bathrooms (x2)</th>
+          <th>Price (y)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2,104</td>
+          <td>3</td>
+          <td>399,900</td>
+        </tr>
+        <tr>
+          <td>1,600</td>
+          <td>3</td>
+          <td>329,900</td>
+        </tr>
+        <tr>
+          <td>2,400</td>
+          <td>3</td>
+          <td>369,000</td>
+        </tr>
+        <tr>
+          <td>1,416</td>
+          <td>2</td>
+          <td>232,000</td>
+        </tr>
+        <tr>
+          <td>3,000</td>
+          <td>4</td>
+          <td>539,900</td>
+        </tr>
+        <tr>
+          <td>1,985</td>
+          <td>4</td>
+          <td>299,900</td>
+        </tr>
+        <tr>
+          <td>1,534</td>
+          <td>3</td>
+          <td>314,900</td>
+        </tr>
+        <tr>
+          <td>1,427</td>
+          <td>3</td>
+          <td>198,999</td>
+        </tr>
+        <tr>
+          <td>1,380</td>
+          <td>3</td>
+          <td>212,000</td>
+        </tr>
+        <tr>
+          <td>1,494</td>
+          <td>3</td>
+          <td>242,500</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Our neural network with two variables looks like this:</p>
+    <div class="img-div">
+      <img alt="NNs 2 variables" src="NNs_2_variables.png"/>
+    </div>
+    <p>We now have to find two weights (one for each input) and one bias to create our new model.</p>
+    <p>Calculating Y looks like this:</p>
+    <div class="img-div">
+      <img alt="NNs formula two variables" src="NNs_formula_two_variables.png"/>
+    </div>
+    <p>But how do we find w1 and w2? This is a little trickier than when we only had to worry about one weight value.
+      How much does having an extra bathroom change how we predict the value of a home?</p>
+    <p>Take a stab at finding the right weights and bias. You will start here to see the complexity we start getting
+      into as the number of our inputs increase. We start losing the ability to create simple 2d shapes that allow us to
+      visualize the model at a glance. Instead, we’ll have to mainly rely on how the error value is evolving as we tweak
+      our model parameters.</p>
+    <div class="figure">
+      <div class="col graphs">
+        <div class="error-chart" id="training-two-chart"></div>
+      </div>
+      <div class="col">
+        <table class="training-table" id="training-two-table">
+          <tr>
+            <td class="gd-buttons" colspan="3">
+              <input class="btn btn-primary" id="gradient-descent-button" type="button" value="GD Step"/> <input
+                class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 GD Steps "/> <input
+                class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 GD Steps "/>
+            </td>
+          </tr>
+          <tr>
+            <td>Error</td>
+            <td colspan="2">
+              <span id="error-value"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="error-cell" colspan="3">
+              <span id="error-value-message"></span>&nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td><label for="weight0Slider">Weight #1</label></td>
             <td>
-              <input class="bias" id="biasSlider" max="460" min="0" step="1" type="range"/>
+              <input class="weight" id="weight0Slider" max="0.4" min="-0.4" step="0.0001" type="range"/>
+            </td>
+            <td class="slider-value">
+              <span class="weight" id="weight0">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="weight1Slider">Weight #2</label></td>
+            <td>
+              <input class="weight" id="weight1Slider" max="200" min="-100" step="0.0001" type="range"/>
+            </td>
+            <td class="slider-value">
+              <span class="weight" id="weight1">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="biasSlider">Bias</label></td>
+            <td>
+              <input class="bias" id="biasSlider" max="300" min="-100" step="0.1" type="range"/>
             </td>
             <td class="slider-value">
               <span class="bias" id="bias">0</span>
             </td>
           </tr>
         </table>
-
-        <div class="nn-graph-area" id="neural-network-graph"></div>
-      </section>
-      <section>
-        <h2>Automation</h2>
-        <p>Congratulations on manually training your first neural network! Let’s look at how to automate this training
-          process. Below is another example with an additional autopilot-like functionality. These are the GD Step
-          buttons. They use an algorithm called “Gradient Descent” to try to step towards the correct weight and bias
-          values that minimize the loss function.</p>
-        <div class="figure">
-          <div class="col graphs">
-            <div class="training-chart" id="training-one-gd-chart"></div>
-            <div class="training-chart mini-charts">
-              <div class="error-chart col-xs-6" id="training-one-gd-error-chart"></div>
-              <div class="error-chart col-xs-6" id="training-one-gd-heatmap"></div>
-            </div>
-          </div>
-          <div class="col">
-            <table class="training-table" id="training-one-gd">
-              <tr>
-                <td class="gd-buttons" colspan="3">
-                  <input class="btn btn-primary" id="gradient-descent-button" type="button" value="GD Step"/> <input
-                    class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 GD Steps "/> <input
-                    class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 GD Steps "/>
-                </td>
-              </tr>
-              <tr>
-                <td>Error</td>
-                <td colspan="2">
-                  <span id="error-value"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="error-cell" colspan="3">
-                  <span id="error-value-message"></span>&nbsp;
-                </td>
-              </tr>
-              <tr>
-                <td><label for="weightSlider">Weight</label></td>
-                <td>
-                  <input class="weight" id="weightSlider" max="0.4" min="0" step="0.0001" type="range"/>
-                </td>
-                <td class="slider-value">
-                  <span class="weight" id="weight">0</span>
-                </td>
-              </tr>
-              <tr>
-                <td><label for="biasSlider">Bias</label></td>
-                <td><input class="bias" id="biasSlider" max="460" min="0" step="0.1" type="range"/></td>
-                <td class="slider-value">
-                  <span class="bias" id="bias">0</span>
-                </td>
-              </tr>
-            </table>
-            <div class="nn-graph-area" id="neural-network-gd-graph"></div>
-          </div>
-        </div>
-        <p>The two new graphs are to help you track the error values as you fiddle with the parameters (weight and bias)
-          of the model. It’s important to keep track of the error as the training process is all about reducing this
-          error as much possible.</p>
-        <p>How does gradient descent know where its next step should be? Calculus. You see, knowing the function we’re
-          minimizing (our loss function, the average of (y_ - y)² for all our data points), and knowing the current
-          inputs into it (the current weight and bias), the derivatives of the loss function tell us which direction to
-          nudge W and b in order to minimize the error.</p>
-        <p>Learn more about gradient descent and how to use it to calculate the new weights &amp; bias in the first
-          lectures of Coursera’s <a href="https://www.coursera.org/learn/machine-learning">Machine Learning</a> course.
-        </p>
-      </section>
-      <section>
-        <h2>And Then There Were Two</h2>
-        <p>Is the size of the house the only variable that goes into how much it costs? Obviously there are many other
-          factors. Let’s add another variable and see how we can adjust our neural network to it.</p>
-        <p>Say your friend does a bit more research and finds a bunch more data points. She also finds out how many
-          bathrooms each house has:</p>
-        <div class="two_variables">
-          <table>
-            <thead>
-            <tr>
-              <th>Area (sq ft) (x1)</th>
-              <th>Bathrooms (x2)</th>
-              <th>Price (y)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>2,104</td>
-              <td>3</td>
-              <td>399,900</td>
-            </tr>
-            <tr>
-              <td>1,600</td>
-              <td>3</td>
-              <td>329,900</td>
-            </tr>
-            <tr>
-              <td>2,400</td>
-              <td>3</td>
-              <td>369,000</td>
-            </tr>
-            <tr>
-              <td>1,416</td>
-              <td>2</td>
-              <td>232,000</td>
-            </tr>
-            <tr>
-              <td>3,000</td>
-              <td>4</td>
-              <td>539,900</td>
-            </tr>
-            <tr>
-              <td>1,985</td>
-              <td>4</td>
-              <td>299,900</td>
-            </tr>
-            <tr>
-              <td>1,534</td>
-              <td>3</td>
-              <td>314,900</td>
-            </tr>
-            <tr>
-              <td>1,427</td>
-              <td>3</td>
-              <td>198,999</td>
-            </tr>
-            <tr>
-              <td>1,380</td>
-              <td>3</td>
-              <td>212,000</td>
-            </tr>
-            <tr>
-              <td>1,494</td>
-              <td>3</td>
-              <td>242,500</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Our neural network with two variables looks like this:</p>
-        <div class="img-div">
-          <img alt="NNs 2 variables" src="NNs_2_variables.png"/>
-        </div>
-        <p>We now have to find two weights (one for each input) and one bias to create our new model.</p>
-        <p>Calculating Y looks like this:</p>
-        <div class="img-div">
-          <img alt="NNs formula two variables" src="NNs_formula_two_variables.png"/>
-        </div>
-        <p>But how do we find w1 and w2? This is a little trickier than when we only had to worry about one weight
-          value. How much does having an extra bathroom change how we predict the value of a home?</p>
-        <p>Take a stab at finding the right weights and bias. You will start here to see the complexity we start getting
-          into as the number of our inputs increase. We start losing the ability to create simple 2d shapes that allow
-          us to visualize the model at a glance. Instead, we’ll have to mainly rely on how the error value is evolving
-          as we tweak our model parameters.</p>
-        <div class="figure">
-          <div class="col graphs">
-            <div class="error-chart" id="training-two-chart"></div>
-          </div>
-          <div class="col">
-            <table class="training-table" id="training-two-table">
-              <tr>
-                <td class="gd-buttons" colspan="3">
-                  <input class="btn btn-primary" id="gradient-descent-button" type="button" value="GD Step"/> <input
-                    class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 GD Steps "/> <input
-                    class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 GD Steps "/>
-                </td>
-              </tr>
-              <tr>
-                <td>Error</td>
-                <td colspan="2">
-                  <span id="error-value"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="error-cell" colspan="3">
-                  <span id="error-value-message"></span>&nbsp;
-                </td>
-              </tr>
-              <tr>
-                <td><label for="weight0Slider">Weight #1</label></td>
-                <td>
-                  <input class="weight" id="weight0Slider" max="0.4" min="-0.4" step="0.0001" type="range"/>
-                </td>
-                <td class="slider-value">
-                  <span class="weight" id="weight0">0</span>
-                </td>
-              </tr>
-              <tr>
-                <td><label for="weight1Slider">Weight #2</label></td>
-                <td>
-                  <input class="weight" id="weight1Slider" max="200" min="-100" step="0.0001" type="range"/>
-                </td>
-                <td class="slider-value">
-                  <span class="weight" id="weight1">0</span>
-                </td>
-              </tr>
-              <tr>
-                <td><label for="biasSlider">Bias</label></td>
-                <td>
-                  <input class="bias" id="biasSlider" max="300" min="-100" step="0.1" type="range"/>
-                </td>
-                <td class="slider-value">
-                  <span class="bias" id="bias">0</span>
-                </td>
-              </tr>
-            </table>
-            <div class="nn-graph-area" id="neural-network-two-graph"></div>
-          </div>
-        </div>
-        <p>Our trusty gradient descent is here to help once again. It still is valuable in helping us find the right
-          weights and bias.</p>
-      </section>
-      <section>
-        <h2 id="features">Features</h2>
-        <p>Now that you’ve seen neural networks with one and two features, you can sort of figure out how to add
-          additional features and use them to calculate your predictions. The number of weights will continue to grow,
-          and our implementation of gradient descent will have to be tweaked as we add each feature so that it can
-          update the new weights associated with the new feature.</p>
-        <p>It’s important to note here that we don’t blindly feed the network everything we know about our examples. We
-          have to be selective about which features we feed the model. Feature selection/processing is an entire
-          discipline with its own set of best practices and considerations. If you want to see an example of the process
-          of examining a dataset to choose which features to feed a prediction model, check out <a
-              href="https://www.kaggle.com/omarelgabry/titanic/a-journey-through-titanic">A Journey Through Titanic</a>.
-          It’s a notebook where <a href="https://twitter.com/Omar_ElGabry">Omar EL Gabry</a> narrates his process for
-          solving Kaggle’s Titanic challenge. Kaggle makes available the passenger’s manifest of the Titanic including
-          data like name, sex, age, cabin, and whether the person survived or not. The challenge is to build a model
-          that predicts whether a person survived or not given their other information.</p>
-      </section>
-      <section>
-        <h2 id="classification">Classification</h2>
-        <p>Let’s continue to tweak our example. Assume your friend gives you a list of houses. This time, she has
-          labeled which ones she thinks have a good size and number of bathrooms:</p>
-        <div class="two_variables">
-          <table>
-            <thead>
-            <tr>
-              <th>Area (sq ft) (x1)</th>
-              <th>Bathrooms (x2)</th>
-              <th>Label (y)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>2,104</td>
-              <td>3</td>
-              <td>Good</td>
-            </tr>
-            <tr>
-              <td>1,600</td>
-              <td>3</td>
-              <td>Good</td>
-            </tr>
-            <tr>
-              <td>2,400</td>
-              <td>3</td>
-              <td>Good</td>
-            </tr>
-            <tr>
-              <td>1,416</td>
-              <td>2</td>
-              <td>Bad</td>
-            </tr>
-            <tr>
-              <td>3,000</td>
-              <td>4</td>
-              <td>Bad</td>
-            </tr>
-            <tr>
-              <td>1,985</td>
-              <td>4</td>
-              <td>Good</td>
-            </tr>
-            <tr>
-              <td>1,534</td>
-              <td>3</td>
-              <td>Bad</td>
-            </tr>
-            <tr>
-              <td>1,427</td>
-              <td>3</td>
-              <td>Good</td>
-            </tr>
-            <tr>
-              <td>1,380</td>
-              <td>3</td>
-              <td>Good</td>
-            </tr>
-            <tr>
-              <td>1,494</td>
-              <td>3</td>
-              <td>Good</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>She needs you to use this to create a model to predict whether she would like a house or not given its size
-          and number of bathrooms. You will use this list above to build the model, then she will use the model to
-          classify many other houses. One additional change in the process, is that she has another list of 10 houses
-          she has labeled, but she’s keeping it from you. That other list would be used to evaluate your model after
-          you’ve trained it – thus trying to ensure your model grasps the conditions that actually make her like the
-          features of the house.</p>
-        <p>The neural networks we’ve been toying around with until now are all doing “regression” – they calculate and
-          output a “continuous” value (the output can be 4, or 100.6, or 2143.342343). In practice, however, neural
-          networks are more often used in “classification” type problems. In these problems, the neural network’s output
-          has to be from a set of discrete values (or “classes”) like “Good” or “Bad”. How this works out in practice,
-          is that we’ll have a model that will say that it’s 75% sure that a house is “Good” rather than just spit out
-          “good” or “bad”.</p>
-        <figure class="img-div">
-          <img alt="android tensorflow classifier results" src="android_tensorflow_classifier_results.jpg"/>
-          <figcaption>The TensorFlow app I discussed in my <a
-              href="https://jalammar.github.io/Supercharging-android-apps-using-tensorflow/">previous post</a> is a good
-            example for a classification model in practice.
-          </figcaption>
-        </figure>
-        <p>One way we can transform the network we’ve seen into a classification network is to have it output two values
-          – one for each class (our classes now being “good” and “bad”). We then pass these values through an operation
-          called “<a href="https://rasbt.github.io/mlxtend/user_guide/classifier/SoftmaxRegression/">softmax</a>”. The
-          output of softmax is the probability of each class. For example, say that layer of the network outputs 2 for
-          “good” and 4 for “bad”, if we feed [2, 4] to softmax, it will return [0.11, 0.88] as the output. Which
-          translates the values to say the network is 88% sure that the inputted value is “bad” and our friend would not
-          like that house.</p>
-        <p>Softmax takes an array and outputs an array of the same length. Notice that its outputs are all positive and
-          sum up to 1 – which is useful when we’re outputting a probability value. Also notice that even though 4 is
-          double 2, its probability is not only double, but is eight times that of 2. This is a useful property that
-          exaggerates the difference in output thus improving our training process.</p>
-
-        <table>
-          <thead>
-          <tr>
-            <th class="titleCorner"></th>
-            <th>output</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>softmax([ 1 ])</td>
-            <td>[ 1 ]</td>
-          </tr>
-          <tr>
-            <td>softmax([ 1, 1 ])</td>
-            <td>[ 0.5, 0.5 ]</td>
-          </tr>
-          <tr>
-            <td>softmax([ 0, 1 ])</td>
-            <td>[ 0.26, 0.73 ]</td>
-          </tr>
-          <tr>
-            <td>softmax([ 2, 4 ])</td>
-            <td>[ 0.11, 0.88 ]</td>
-          </tr>
-          <tr>
-            <td>softmax([ 5, 10 ])</td>
-            <td>[ 0.007, 0.993 ]</td>
-          </tr>
-          <tr>
-            <td>softmax([ -1, 0, 1 ])</td>
-            <td>[ 0.09, 0.24, 0.66 ]</td>
-          </tr>
-          <tr>
-            <td>softmax([ 1, 2, 4 ])</td>
-            <td>[ 0.04, 0.11, 0.84 ]</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <p>As you can see in the last two rows, softmax extends to any number of inputs. So now if our friend adds a
-          third label (say “Good, but I’ll have to airbnb one room”), softmax scales to accomedate that change.</p>
-        <p>Take a second to explore the shape of the network as you vary the number of features (x1, x2, x3…etc) (which
-          can be area, number of bathrooms, price, proximity to school/work…etc) and vary the number of classes (y1, y2,
-          y3…etc) (which can be “too expensive”, “good deal”, “good if I airbnb”, “too small”):</p>
-        <table>
-          <tr>
-            <td>
-              Features (x):
-            </td>
-            <td>
-              <div class="input-group">
-                  <span class="input-group-btn">
-                      <button class="btn btn-default btn-number" data-field="quant[1]" data-type="minus"
-                          type="button">-</button>
-                  </span> <input class="form-control input-number" name="quant[1]" type="text" value="2"/> <span
-                  class="input-group-btn">
-                      <button class="btn btn-default btn-number" data-field="quant[1]" data-type="plus"
-                          type="button">+</button>
-                  </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Classes (y):
-            </td>
-            <td>
-              <div class="input-group">
-                  <span class="input-group-btn">
-                      <button class="btn btn-default btn-number" data-field="quant[2]" data-type="minus"
-                          type="button">-</button>
-                  </span> <input class="form-control input-number" name="quant[2]" type="text" value="2"/> <span
-                  class="input-group-btn">
-                      <button class="btn btn-default btn-number" data-field="quant[2]" data-type="plus"
-                          type="button">+</button>
-                  </span>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <div class="nn-graph-area" id="shallow-neural-network-graph"></div>
-        <p>You can see an example of how to create and train this network using TensorFlow in <a
-            href="https://github.com/jalammar/simpleTensorFlowClassificationExample/blob/master/Basic%20Classification%20Example%20with%20TensorFlow.ipynb">this
-          notebook</a> I created to accompany this post.</p>
-      </section>
-      <section>
-        <h2 id="true-motivation">True Motivation</h2>
-        <p>If you have reached this far, I have to reveal to you another motivation of mine to write this post. This
-          post is meant as an even gentler intro to TensorFlow tutorials. If you start working through <a
-              href="https://www.tensorflow.org/versions/r0.10/tutorials/mnist/beginners/index.html">MNIST For ML
-            Beginners</a> now, and come across this graph:</p>
-        <figure class="img-div">
-          <img alt="softmax regression scalar graph" src="softmax-regression-scalargraph.png"/>
-          <figcaption>I wrote this post to prepare people without machine learning experience for this graph in the
-            TensorFlow introductory tutorial. That's why I simulated its visual style.
-          </figcaption>
-        </figure>
-        <p>I hope you would feel prepared and that you have an understanding of this system and how it works. If you
-          want to start tinkering with code, feel free to pick up from the intro <a
-              href="https://www.tensorflow.org/versions/r0.10/tutorials/mnist/beginners/index.html">tutorial</a> and
-          teach a neural network how to detect handwritten digits.</p>
-        <p>You should also continue your education by learning the theoretical and mathematical underpinnings of the
-          concepts we discussed here. Good questions to ask now include:</p>
-        <ul>
-          <li>What other kinds of cost functions exist? Which are better for which applications?</li>
-          <li>What’s the algorithm to actually calculate new weights using gradient descent?</li>
-          <li>What are the applications for machine learning in the fields you’re already knowledgeable about? What new
-            magic can you wield by mixing this spell with others in your spell book?</li>
-        </ul>
-        <p>Great learning resources include:</p>
-        <ul>
-          <li>Coursera’s <a href="https://www.coursera.org/learn/machine-learning">Machine Learning</a> course by <a
-              href="https://twitter.com/AndrewYNg">Andrew Ng</a>. This is the one I started with. Starts with regression
-            then moves to classification and neural networks.</li>
-          <li>Coursera’s <a href="https://www.coursera.org/learn/neural-networks">Neural Networks for Machine
-            Learning</a> by <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">Geoffrey Hinton</a>. More focused on
-            neural networks and its visual applications.</li>
-          <li>Stanford’s <a
-              href="https://www.youtube.com/watch?v=g-PvXUjD6qg&amp;list=PLlJy-eBtNFt6EuMxFYRiNRS07MCWN5UIA">CS231n:
-            Convolutional Neural Networks for Visual Recognition</a> by <a href="https://twitter.com/karpathy">Andrej
-            Karpathy</a>. It’s interesting to see some advanced concepts and the state of the art in visual recognition
-            using deep neural networks.</li>
-          <li>The <a href="http://www.asimovinstitute.org/neural-network-zoo/">Neural Network Zoo</a> is a great
-            resource to learn more about the different types of neural networks.</li>
-        </ul>
-      </section>
-      <section>
-        <h2 id="acknowledgements">Acknowledgements</h2>
-        <p>Thanks to <a href="https://www.linkedin.com/in/yasmine-alfouzan-b05ba317">Yasmine Alfouzan</a>, <a
-            href="https://twitter.com/a3ammar">Ammar Alammar</a>, <a href="https://www.linkedin.com/in/khalidalnuaim">Khalid
-          Alnuaim</a>, <a href="https://twitter.com/fahd09">Fahad Alhazmi</a>, <a
-            href="https://www.linkedin.com/in/mkhdev">Mazen Melibari</a>, and <a
-            href="https://www.linkedin.com/in/hadeel-al-negheimish-4a73abb3">Hadeel Al-Negheimish</a> for their
-          assistance in reviewing previous versions of this post.</p>
-        <p>Please contact me on <a href="https://twitter.com/JayAlammar">Twitter</a> with any corrections or feedback.
-        </p>
-      </section>
+        <div class="nn-graph-area" id="neural-network-two-graph"></div>
+      </div>
     </div>
-    <div class="date">Written on December 14, 2016</div>
-  </div>
+    <p>Our trusty gradient descent is here to help once again. It still is valuable in helping us find the right weights
+      and bias.</p>
+  </section>
+  <section>
+    <h2>Features</h2>
+    <p>Now that you’ve seen neural networks with one and two features, you can sort of figure out how to add additional
+      features and use them to calculate your predictions. The number of weights will continue to grow, and our
+      implementation of gradient descent will have to be tweaked as we add each feature so that it can update the new
+      weights associated with the new feature.</p>
+    <p>It’s important to note here that we don’t blindly feed the network everything we know about our examples. We have
+      to be selective about which features we feed the model. Feature selection/processing is an entire discipline with
+      its own set of best practices and considerations. If you want to see an example of the process of examining a
+      dataset to choose which features to feed a prediction model, check out <a
+          href="https://www.kaggle.com/omarelgabry/titanic/a-journey-through-titanic">A Journey Through Titanic</a>.
+      It’s a notebook where <a href="https://twitter.com/Omar_ElGabry">Omar EL Gabry</a> narrates his process for
+      solving Kaggle’s Titanic challenge. Kaggle makes available the passenger’s manifest of the Titanic including data
+      like name, sex, age, cabin, and whether the person survived or not. The challenge is to build a model that
+      predicts whether a person survived or not given their other information.</p>
+  </section>
+  <section>
+    <h2>Classification</h2>
+    <p>Let’s continue to tweak our example. Assume your friend gives you a list of houses. This time, she has labeled
+      which ones she thinks have a good size and number of bathrooms:</p>
+    <div class="two_variables">
+      <table>
+        <thead>
+        <tr>
+          <th>Area (sq ft) (x1)</th>
+          <th>Bathrooms (x2)</th>
+          <th>Label (y)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2,104</td>
+          <td>3</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td>1,600</td>
+          <td>3</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td>2,400</td>
+          <td>3</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td>1,416</td>
+          <td>2</td>
+          <td>Bad</td>
+        </tr>
+        <tr>
+          <td>3,000</td>
+          <td>4</td>
+          <td>Bad</td>
+        </tr>
+        <tr>
+          <td>1,985</td>
+          <td>4</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td>1,534</td>
+          <td>3</td>
+          <td>Bad</td>
+        </tr>
+        <tr>
+          <td>1,427</td>
+          <td>3</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td>1,380</td>
+          <td>3</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td>1,494</td>
+          <td>3</td>
+          <td>Good</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>She needs you to use this to create a model to predict whether she would like a house or not given its size and
+      number of bathrooms. You will use this list above to build the model, then she will use the model to classify many
+      other houses. One additional change in the process, is that she has another list of 10 houses she has labeled, but
+      she’s keeping it from you. That other list would be used to evaluate your model after you’ve trained it – thus
+      trying to ensure your model grasps the conditions that actually make her like the features of the house.</p>
+    <p>The neural networks we’ve been toying around with until now are all doing “regression” – they calculate and
+      output a “continuous” value (the output can be 4, or 100.6, or 2143.342343). In practice, however, neural networks
+      are more often used in “classification” type problems. In these problems, the neural network’s output has to be
+      from a set of discrete values (or “classes”) like “Good” or “Bad”. How this works out in practice, is that we’ll
+      have a model that will say that it’s 75% sure that a house is “Good” rather than just spit out “good” or
+      “bad”.</p>
+    <figure class="img-div">
+      <img alt="android tensorflow classifier results" src="android_tensorflow_classifier_results.jpg"/>
+      <figcaption>The TensorFlow app I discussed in my <a
+          href="https://jalammar.github.io/Supercharging-android-apps-using-tensorflow/">previous post</a> is a good
+        example for a classification model in practice.
+      </figcaption>
+    </figure>
+    <p>One way we can transform the network we’ve seen into a classification network is to have it output two values –
+      one for each class (our classes now being “good” and “bad”). We then pass these values through an operation called
+      “<a href="https://rasbt.github.io/mlxtend/user_guide/classifier/SoftmaxRegression/">softmax</a>”. The output of
+      softmax is the probability of each class. For example, say that layer of the network outputs 2 for “good” and 4
+      for “bad”, if we feed [2, 4] to softmax, it will return [0.11, 0.88] as the output. Which translates the values to
+      say the network is 88% sure that the inputted value is “bad” and our friend would not like that house.</p>
+    <p>Softmax takes an array and outputs an array of the same length. Notice that its outputs are all positive and sum
+      up to 1 – which is useful when we’re outputting a probability value. Also notice that even though 4 is double 2,
+      its probability is not only double, but is eight times that of 2. This is a useful property that exaggerates the
+      difference in output thus improving our training process.</p>
+    <table>
+      <thead>
+      <tr>
+        <th class="titleCorner"></th>
+        <th>output</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>softmax([ 1 ])</td>
+        <td>[ 1 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 1, 1 ])</td>
+        <td>[ 0.5, 0.5 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 0, 1 ])</td>
+        <td>[ 0.26, 0.73 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 2, 4 ])</td>
+        <td>[ 0.11, 0.88 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 5, 10 ])</td>
+        <td>[ 0.007, 0.993 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ -1, 0, 1 ])</td>
+        <td>[ 0.09, 0.24, 0.66 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 1, 2, 4 ])</td>
+        <td>[ 0.04, 0.11, 0.84 ]</td>
+      </tr>
+      </tbody>
+    </table>
+    <p>As you can see in the last two rows, softmax extends to any number of inputs. So now if our friend adds a third
+      label (say “Good, but I’ll have to airbnb one room”), softmax scales to accomedate that change.</p>
+    <p>Take a second to explore the shape of the network as you vary the number of features (x1, x2, x3…etc) (which can
+      be area, number of bathrooms, price, proximity to school/work…etc) and vary the number of classes (y1, y2, y3…etc)
+      (which can be “too expensive”, “good deal”, “good if I airbnb”, “too small”):</p>
+    <table class="form">
+      <tr>
+        <td>Features (x):</td>
+        <td>
+          <button class="btn-number" data-field="quant[1]" data-type="minus" type="button">-</button>
+          <input class="form-control input-number" name="quant[1]" type="text" value="2"/>
+          <button class="btn-number" data-field="quant[1]" data-type="plus" type="button">+</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Classes (y):</td>
+        <td>
+          <button class="btn-number" data-field="quant[2]" data-type="minus" type="button">-</button>
+          <input class="form-control input-number" name="quant[2]" type="text" value="2"/>
+          <button class="btn-number" data-field="quant[2]" data-type="plus" type="button">+</button>
+        </td>
+      </tr>
+    </table>
+    <div class="nn-graph-area" id="shallow-neural-network-graph"></div>
+    <p>You can see an example of how to create and train this network using TensorFlow in <a
+        href="https://github.com/jalammar/simpleTensorFlowClassificationExample/blob/master/Basic%20Classification%20Example%20with%20TensorFlow.ipynb">this
+      notebook</a> I created to accompany this post.</p>
+  </section>
+  <section>
+    <h2>True Motivation</h2>
+    <p>If you have reached this far, I have to reveal to you another motivation of mine to write this post. This post is
+      meant as an even gentler intro to TensorFlow tutorials. If you start working through <a
+          href="https://www.tensorflow.org/versions/r0.10/tutorials/mnist/beginners/index.html">MNIST For ML
+        Beginners</a> now, and come across this graph:</p>
+    <figure class="img-div">
+      <img alt="softmax regression scalar graph" src="softmax-regression-scalargraph.png"/>
+      <figcaption>I wrote this post to prepare people without machine learning experience for this graph in the
+        TensorFlow introductory tutorial. That's why I simulated its visual style.
+      </figcaption>
+    </figure>
+    <p>I hope you would feel prepared and that you have an understanding of this system and how it works. If you want to
+      start tinkering with code, feel free to pick up from the intro <a
+          href="https://www.tensorflow.org/versions/r0.10/tutorials/mnist/beginners/index.html">tutorial</a> and teach a
+      neural network how to detect handwritten digits.</p>
+    <p>You should also continue your education by learning the theoretical and mathematical underpinnings of the
+      concepts we discussed here. Good questions to ask now include:</p>
+    <ul>
+      <li>What other kinds of cost functions exist? Which are better for which applications?</li>
+      <li>What’s the algorithm to actually calculate new weights using gradient descent?</li>
+      <li>What are the applications for machine learning in the fields you’re already knowledgeable about? What new
+        magic can you wield by mixing this spell with others in your spell book?</li>
+    </ul>
+    <p>Great learning resources include:</p>
+    <ul>
+      <li>Coursera’s <a href="https://www.coursera.org/learn/machine-learning">Machine Learning</a> course by <a
+          href="https://twitter.com/AndrewYNg">Andrew Ng</a>. This is the one I started with. Starts with regression
+        then moves to classification and neural networks.</li>
+      <li>Coursera’s <a href="https://www.coursera.org/learn/neural-networks">Neural Networks for Machine Learning</a>
+        by <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">Geoffrey Hinton</a>. More focused on neural networks
+        and its visual applications.</li>
+      <li>Stanford’s <a
+          href="https://www.youtube.com/watch?v=g-PvXUjD6qg&amp;list=PLlJy-eBtNFt6EuMxFYRiNRS07MCWN5UIA">CS231n:
+        Convolutional Neural Networks for Visual Recognition</a> by <a href="https://twitter.com/karpathy">Andrej
+        Karpathy</a>. It’s interesting to see some advanced concepts and the state of the art in visual recognition
+        using deep neural networks.</li>
+      <li>The <a href="http://www.asimovinstitute.org/neural-network-zoo/">Neural Network Zoo</a> is a great resource to
+        learn more about the different types of neural networks.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Acknowledgements</h2>
+    <p>Thanks to <a href="https://www.linkedin.com/in/yasmine-alfouzan-b05ba317">Yasmine Alfouzan</a>, <a
+        href="https://twitter.com/a3ammar">Ammar Alammar</a>, <a href="https://www.linkedin.com/in/khalidalnuaim">Khalid
+      Alnuaim</a>, <a href="https://twitter.com/fahd09">Fahad Alhazmi</a>, <a
+        href="https://www.linkedin.com/in/mkhdev">Mazen Melibari</a>, and <a
+        href="https://www.linkedin.com/in/hadeel-al-negheimish-4a73abb3">Hadeel Al-Negheimish</a> for their assistance
+      in reviewing previous versions of this post.</p>
+    <p>Please contact me on <a href="https://twitter.com/JayAlammar">Twitter</a> with any corrections or feedback.
+    </p>
+  </section>
 </div>
+<div class="date">Written on December 14, 2016</div>
 <div>
   <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"><img alt="Creative Commons License"
       src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" style="border-width:0"/></a><br/>This work is

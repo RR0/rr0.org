@@ -1,0 +1,733 @@
+<!--#include virtual="/header-start.html" -->
+<title>Guide visuel et interactif des bases des réseaux neuronaux</title>
+<meta content="https://jalammar.github.io/visual-interactive-guide-basics-neural-networks/" name="url">
+<meta content="Alammar, Jay" name="author">
+<meta content="Jay Alammar" name="copyright">
+<meta content="Guide visuel et interactif des bases des réseaux neuronaux" property="og:title"/>
+<meta content="Guide visuel et interactif des bases des réseaux neuronaux" property="twitter:title"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js" type="text/javascript"></script>
+<script src="../js/d3-selection-multi.v0.4.min.js" type="text/javascript"></script>
+<script src="../js/d3-jetpack.js" type="text/javascript"></script>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"
+    integrity="sha384-wE+lCONuEo/QSfLb4AfrSk7HjWJtc4Xc1OiB2/aDBzHzjnlBP4SX7vjErTcwlA8C" rel="stylesheet">
+<script crossorigin="anonymous" integrity="sha384-tdtuPw3yx/rnUGmnLNWXtfjb9fpmwexsd+lr6HUYnUY4B7JhB5Ty7a1mYd+kto/s"
+    src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+<link href="../style.css" rel="stylesheet" type="text/css"/>
+<link href="https://jalammar.github.io/feed.xml" rel="alternate"
+    title="Jay Alammar - Visualizing machine learning one concept at a time." type="application/rss+xml"/>
+<script type="text/javascript"> var _paq = _paq || [];</script>
+<!--#include virtual="/header-end.html" -->
+<div class="prediction">
+  <p><span class="discussion">Discussions:
+<a class="hn-link" href="https://news.ycombinator.com/item?id=13183171">Hacker News (63 points, 8 commentaires)</a>, <a
+        href="https://www.reddit.com/r/programming/comments/5igdix/a_visual_and_interactive_guide_to_the_basics_of/">Reddit r/programming (312 points, 37 commentaires)</a>
+<br/>
+<span class="discussion">Traductions:
+  <a href="index.html">Anglais</a>
+  <a href="https://camporeale.github.io/guia-interactiva-visual-conceptos-basicos-redes-neuronales/">Espagnol</a>
+</span></span></p>
+  <div class="img-div">
+    <img alt="NNs 2 variables" src="NNs_2_variables.png"/>
+  </div>
+  <p><strong>Mise à jour </strong>: La 2ème partie est maintenant en ligne : <a
+      href="https://jalammar.github.io/feedforward-neural-networks-visual-interactive/"> Regard visuel et interactif sur
+    les mathématiques de base des réseaux neuronaux</a>
+  </p>
+  <section>
+    <h2>Motivation</h2>
+    <p>Je ne suis pas un expert de l'<a href="/tech/info/soft/data/science/ml">apprentissage automatisé</a>. Je suis
+      ingénieur logiciel de formation et j'ai eu peu d'interactions avec l'<a
+          href="/tech/info/soft/data/science/ml/IA.html">IA</a>. J'ai toujours voulu plonger plus profondément dans le
+      <a href="/tech/info/soft/data/science/ml"><i lang="en">machine learning</i></a>, mais sans jamais trouver mon
+      "entrée". C'est pourquoi lorsque <a href="/org/us/company/alphabet/google">Google</a> a publié <a
+          href="/org/us/company/alphabet/x/brain/product/soft/tensorflow">TensorFlow</a> en Open Source en
+      <time>2015-11</time>, j'ai été super excité et j'ai su que c'était le moment de m'y mettre et de commencer le long
+      trajet de l'apprentissage. Sans vouloir dramatiser, pour moi, c'était comme être une sorte de Prométhée apportant
+      le feu à l'humanité depuis le Mont Olympe de l'<a href="/tech/info/soft/data/science/ml">apprentissage
+        automatique</a>. Je me souvenais encore que tout le domaine du <a
+          href="/tech/info/soft/prod/server/sgbd/BigData.html">Big Data</a> et des technologies comme Hadoop avaient été
+      énormément accélérés lorsque les chercheurs de <a href="/org/us/company/alphabet/google">Google</a> avaient publié
+      leur article sur Map-Reduce. Cette fois ce n'était pas un article – c'est le logiciel-même qu'ils utilisent en
+      interne, après des années et des années d'évolution.</p>
+    <p>J'ai donc commencé à apprendre ce que je pouvais sur les bases du sujet, et ai pu constater le besoin de
+      ressources plus accessibles pour des personnes n'ayant aucune expérience dans le domaine. Ceci est mon effort dans
+      ce sens.</p>
+  </section>
+  <section>
+    <h2>Commencez ici</h2>
+    <p>Commençons par un exemple simple. Disons que vous aidez une amie qui veut acheter une maison. On lui a proposé
+      {{400000|number}}$ pour une maison de 2000 pieds² (185 m²). Est-ce un bon prix ou non ?</p>
+    <p>Ce n'est pas facile à dire sans données de référence. Vous demandez donc à des amis ayant acheté une maison dans
+      la même zone, ce qui vous mène à 3 points de données :</p>
+    <div class="one_variable">
+      <table>
+        <thead>
+        <tr>
+          <th>Surface (pieds²) (`x`)</th>
+          <th>Prix (`y`)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2104</td>
+          <td>{{399900|number}}</td>
+        </tr>
+        <tr>
+          <td>1600</td>
+          <td>{{329900|number}}</td>
+        </tr>
+        <tr>
+          <td>2400</td>
+          <td>{{369000|number}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Personnellement, mon premier instinct serait de prendre le prix moyen par pied². Cela revient à 180 $ par
+      pied².</p>
+    <p>Bienvenue dans votre premier <a href="/tech/info/soft/data/science/ml/nn">réseau neuronal</a> ! Bon ce n'est pas
+      encore du niveau de <a href="https://fr.wikipedia.org/wiki/Siri_(logiciel)">Siri</a>, mais vous en connaissez
+      maintenant une brique fondamentale. Et elle ressemble à ceci :</p>
+    <div class="img-div">
+      <img alt="simple NN 1" src="simple_NN_1.png"/>
+    </div>
+    <p>Des diagrammes comme celui-ci vous montrent la structure du réseau et comment il calcule une prédiction. Le
+      calcul commence au noeud d'entrée à gauche. La valeur d'entrée va à droite. Elle y est multipliée par le poids et
+      le résultat devient notre sortie.</p>
+    <p>Multiplier 2000 pieds² par 180 nous donne {{360000|number}} $. Cela se résume à ça à ce niveau. Calculer la
+      prédiction est une simple multiplication. Mais avant cela, nous avons eu besoin de réfléchir au poids par lequel
+      nous allions multiplier. Ici nous avons commencé par une moyenne ; plus tard nous examinerons de meilleurs <a
+          href="/tech/info/soft/proj/impl/algo">algorithmes</a> capables de supporter plus d'entrées et des modèles plus
+      compliqués. Trouver le poids est notre étape d'"entraînement". Donc chaque fois que vous entendez que quelqu'un
+      "entraîne" un <a href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>, cela veut juste dire trouver
+      les poids que nous utilisons pour calculer la prédiction.</p>
+    <div class="img-div">
+      <img alt="NNs formula no bias" src="NNs_formula_no_bias.png"/>
+    </div>
+    <p>Ceci une forme de prédiction. Il s'agit d'un modèle prédictif simple qui prend une entrée, effectue un calcul, et
+      fournit une sortie (la sortie pouvant être des valeurs continues, la terme technique pour ce que nous avons serait
+      un "modèle de <a href="/science/discipline/hard/form/math/stat/regress">régression</a>").</p>
+    <p>Essayons de visualiser ce processus (à des fins de simplicité, changeons notre unité de prix de 1 $ à 1000 $.
+      Notre poids est maintenant de 0,180 plutôt que 180):</p>
+    <div class="img-div-large">
+      <img alt="data points graph, animated" src="data_points_graph_animated.gif"/>
+    </div>
+  </section>
+  <section>
+    <h2>Plus dur, meilleur, plus rapide, plus solide</h2>
+    <p>Pouvons-nous faire mieux qu'estimer le prix sur la base de la moyenne de nos points de données ? Essayons.
+      Commençons par définir ce que veux dire faire mieux dans ce scénario. Si nous appliquons notre modèle aux 3 points
+      de données dont nous disposons, quelle qualité fournirait-il ?</p>
+    <div class="img-div-large">
+      <img alt="" src="data_points_error_animated.gif"/>
+    </div>
+    <p>Cela fait beaucoup de jaune. Le jaune, c'est mal. Le jaune, c'est de l'erreur. Nous voulons réduire le jaune
+      autant que possible.</p>
+    <div class="one_variable">
+      <table>
+        <thead>
+        <tr>
+          <th>Surface (`x`)</th>
+          <th>Prix ($1000) (<span class="y_">`"y_"`</span>)</th>
+          <th>Prédiction (<span class="y">`y`</span>)</th>
+          <th><span class="y_">`"y_"`</span>-<span class="y">y</span></th>
+          <th>(<span class="y_">`"y_"`</span>-<span class="y">`y`</span>)²</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2104</td>
+          <td>399,9</td>
+          <td>379</td>
+          <td>21</td>
+          <td>449</td>
+        </tr>
+        <tr>
+          <td>1600</td>
+          <td>329,9</td>
+          <td>288</td>
+          <td>42</td>
+          <td>1756</td>
+        </tr>
+        <tr>
+          <td>2400</td>
+          <td>369</td>
+          <td>432</td>
+          <td>-63</td>
+          <td>3969</td>
+        </tr>
+        <tr>
+          <td class="bottom-left-corner"></td>
+          <td class="bottom-left-corner"></td>
+          <td class="bottom-left-corner" colspan="2"><span class="total"> Moyenne :</span></td>
+          <td><b>2058</b></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ici on peut voir la <span class="y_">valeur du prix réel</span>, la <span class="y">valeur du prix prédite</span>
+      et la <span class="error-value">différence entre elles</span>. Nous aurons alors besoin de faire la moyenne de ces
+      différence afin d'avoir un nombre qui nous indique la quantité d'erreur dans ce modèle prédictif. Le problème est
+      que la 3ème ligne a une valeur de -63. Nous devons traiter cette valeur négative si nous voulons utiliser la
+      différence entre prédiction et prix comme instrument de mesure de l'erreur. C'est une des raisons pour lesquelles
+      nous introduisons une colonne supplémentaire qui montre l'erreur au carré, éliminant ainsi la valeur négative.</p>
+    <p>C'est maintenant notre définition de faire mieux – un meilleur modèle est un modèle qui a moins d'erreur.
+      L'erreur est mesurée comme la moyenne des erreurs pour chaque point de notre ensemble de données. Pour chaque
+      point, l'erreur est mesurée par la différence entre la valeur réelle et la valeur prédite, élevée à la puissance
+      2. On appelle ça l'<a href="https://fr.wikipedia.org/wiki/Erreur_quadratique_moyenne">erreur quadratique
+        moyenne</a>. L'utiliser comme guide pour entraîner notre modèle en fait notre <a
+          href="/science/discipline/hard/form/math/stat/regress/cost"><strong>fonction de coût</strong> (ou encore
+        <strong>fonction de perte</strong>)</a>.
+    </p>
+    <p>Maintenant que nous avons défini notre instrument de mesure de ce qui fait un meilleur modèle, expérimentons
+      quelques autres valeurs de poids et comparons-les avec notre choix de la moyenne :</p>
+    <figure class="img-div-large">
+      <img alt="lines and errors, animated" src="lines_and_errors_animated.gif"/>
+      <figcaption>Nous ne pouvons pas beaucoup améliorer le modèle en faisant varier encore le poids. Mais en ajoutant
+        un biais nous pouvons trouver des valeurs qui améliorent le modèle.
+      </figcaption>
+    </figure>
+    <p>Nos lignes peuvent mieux approcher nos valeurs maintenant que nous avons cette valeur `b` ajoutée à la formule
+      linéaire. Dans ce contexte, nous l'appelons un "biais". Cela fait ressembler notre <a
+          href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a> à ceci :</p>
+    <div class="img-div">
+      <img alt="NNs bias" src="NNs_bias.png"/>
+    </div>
+    <p>Nous pouvons le généraliser en disant qu'un <a href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>
+      avec 1 entrée et 1 sortie (<em>attention spoiler :</em> et aucune couche cachée) ressemble à ceci :</p>
+    <div class="img-div">
+      <img alt="NNs bias #2" src="NNs_bias_2.png"/>
+    </div>
+    <p>Dans ce graphique, `W` et `b` sont des valeurs que nous trouvons au cours de l'entraînement. `x` est l'entrée que
+      nous branchons dans la formule (surface en pieds² dans notre exemple). Y est le prix prédit.</p>
+    <p>Le calcul d'une prédiction utilise maintenant cette formule :</p>
+    <div class="img-div">
+      <img alt="NNs formula" src="NNs_formula.png"/>
+    </div>
+    <p>Notre modèle actuel calcule donc les prédictions en branchant la surface de la maison comme `x` dans cette
+      formule :</p>
+    <div class="img-div">
+      <img alt="NNs formula ex" src="NNs_formula_ex.png"/>
+    </div>
+  </section>
+  <section>
+    <h2>Entraînez votre dragon</h2>
+    <p>Que diriez-vous d'essayer d'entraîner notre <a href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>
+      d'exemple ? Minimisez la <a
+          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a> en ajustant les curseurs de
+      poids et de biais. Pouvez-vous obtenir une erreur en-dessous de 799 ?</p>
+    <div class="training-chart" id="training-one-chart"></div>
+    <table class="training-table" id="training-one">
+      <tr>
+        <td>Erreur</td>
+        <td colspan="2"><span id="error-value"></span></td>
+      </tr>
+      <tr>
+        <td class="error-cell" colspan="3"><span id="error-value-message"></span></td>
+      </tr>
+      <tr>
+        <td><label for="weightSlider">Poids</label></td>
+        <td><input class="weight" id="weightSlider" max="0.4" min="0" step="0.001" type="range"/></td>
+        <td class="slider-value"><span class="weight" id="weight">0</span></td>
+      </tr>
+      <tr>
+        <td><label for="biasSlider">Biais</label></td>
+        <td><input class="bias" id="biasSlider" max="460" min="0" step="1" type="range"/></td>
+        <td class="slider-value"><span class="bias" id="bias">0</span></td>
+      </tr>
+    </table>
+    <div class="nn-graph-area" id="neural-network-graph"></div>
+  </section>
+  <section>
+    <h2>Automatisation</h2>
+    <p>Félicitations pour avoir entraîné manuellement votre premier <a href="/tech/info/soft/data/science/ml/nn">réseau
+      de neurones</a> ! Regardons maintenant comment automatiser ce processus d'entraînement. Ci-dessous se trouve un
+      autre exemple avec une fonctionnalité supplémentaire d'auto-pilotage. Il s'agit des boutons Itération DG. Ils
+      utilisent un algorithme appelé "<a href="/science/discipline/hard/form/math/stat/regress/gradient">Descente de
+        Gradient</a>" pour essayer d'itérer vers les valeurs correctes de poids et biais corrects qui minimise la <a
+          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a>.
+    </p>
+    <div class="figure">
+      <div class="col graphs">
+        <div class="training-chart" id="training-one-gd-chart"></div>
+        <div class="training-chart mini-charts">
+          <div class="error-chart col-xs-6" id="training-one-gd-error-chart"></div>
+          <div class="error-chart col-xs-6" id="training-one-gd-heatmap"></div>
+        </div>
+      </div>
+      <div class="col">
+        <table class="training-table" id="training-one-gd">
+          <tr>
+            <td class="gd-buttons" colspan="3">
+              <input class="btn btn-primary" id="gradient-descent-button" type="button" value="Itération DG"/> <input
+                class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 itérations DG"/> <input
+                class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 itérations DG"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Erreur</td>
+            <td colspan="2">
+              <span id="error-value"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="error-cell" colspan="3">
+              <span id="error-value-message"></span>&nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td><label for="weightSlider">Poids</label></td>
+            <td><input class="weight" id="weightSlider" max="0.4" min="0" step="0.0001" type="range"/></td>
+            <td class="slider-value"><span class="weight" id="weight">0</span></td>
+          </tr>
+          <tr>
+            <td><label for="biasSlider">Biais</label></td>
+            <td><input class="bias" id="biasSlider" max="460" min="0" step="0.1" type="range"/></td>
+            <td class="slider-value"><span class="bias" id="bias">0</span></td>
+          </tr>
+        </table>
+        <div class="nn-graph-area" id="neural-network-gd-graph"></div>
+      </div>
+    </div>
+    <p>Les 2 nouveaux graphiques sont là pour vous aider à suivre les valeurs d'erreur à mesure que vous bidouillez les
+      paramètres (poids et biais) du modèle. Il est important de garder une trace de l'erreur car le processus
+      d'entraînement vise à réduire cette erreur autant que possible.</p>
+    <p>Comment la <a href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> sait-elle
+      où devrait être sa prochaine itération ? Par calcul : en connaissant la fonction que l'on minimise (notre <a
+          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a>, la moyenne de `("y_" - y)^2`
+      pour l'ensemble de nos points de données), et en connaissant ses entrées à un moment donné (des poids et biais
+      donnés), les <a href="/science/discipline/hard/form/math/ens/rel/func/deriv">dérivées</a> de la <a
+          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a> nous indiquent dans quelle
+      direction pousser `W` et `b` afin de minimiser l'erreur.</p>
+    <p>Vous en apprendrez plus sur la <a href="/science/discipline/hard/form/math/stat/regress/gradient">descente de
+      gradient</a> et comment l'utiliser pour calculer les nouveaux poids & biais dans les premiers exposés du <a
+        href="https://www.coursera.org/learn/machine-learning">cours sur l'apprentissage automatique de Coursera</a>.
+    </p>
+  </section>
+  <section>
+    <h2>Puis il y en eut deux</h2>
+    <p>La taille de la maison est-elle la seule variable influant sur son coût ? À l'évidence il existe d'autres
+      facteurs. Ajoutons une autre variable et voyons comment nous pouvons y ajuster notre <a
+          href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>.</p>
+    <p>Disons que notre amie a fait un peu de recherche et a trouvé pas mal de points de données supplémentaires. Elle a
+      aussi trouvé combien de salles de bain avait chaque maison :</p>
+    <div class="two_variables">
+      <table>
+        <thead>
+        <tr>
+          <th>Surface (pieds²) (`x1`)</th>
+          <th>Salles de bain (`x2`)</th>
+          <th>Prix (`y`)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2104</td>
+          <td>3</td>
+          <td>{{399900|number}}</td>
+        </tr>
+        <tr>
+          <td>1600</td>
+          <td>3</td>
+          <td>{{329900|number}}</td>
+        </tr>
+        <tr>
+          <td>2400</td>
+          <td>3</td>
+          <td>{{369000|number}}</td>
+        </tr>
+        <tr>
+          <td>1416</td>
+          <td>2</td>
+          <td>{{232000|number}}</td>
+        </tr>
+        <tr>
+          <td>3000</td>
+          <td>4</td>
+          <td>{{539900|number}}</td>
+        </tr>
+        <tr>
+          <td>1985</td>
+          <td>4</td>
+          <td>{{299900|number}}</td>
+        </tr>
+        <tr>
+          <td>1534</td>
+          <td>3</td>
+          <td>{{314900|number}}</td>
+        </tr>
+        <tr>
+          <td>1427</td>
+          <td>3</td>
+          <td>{{198999|number}}</td>
+        </tr>
+        <tr>
+          <td>1380</td>
+          <td>3</td>
+          <td>{{212000|number}}</td>
+        </tr>
+        <tr>
+          <td>1494</td>
+          <td>3</td>
+          <td>{{242500|number}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Notre <a href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a> à 2 variables ressemble à ceci :</p>
+    <div class="img-div">
+      <img alt="NNs 2 variables" src="NNs_2_variables.png"/>
+    </div>
+    <p>Nous devons maintenant trouver 2 poids (1 pour chaque entrée) et 1 biais pour créer notre nouveau modèle.</p>
+    <p>Calculer `y` ressemble à ceci :</p>
+    <div class="img-div">
+      <img alt="NNs formula two variables" src="NNs_formula_two_variables.png"/>
+    </div>
+    <p>Mais comment trouvons-nous `W1` et `W2` ? C'est un peu plus compliqué que lorsque nous n'avions à nous soucier
+      que d'une seule valeur de poids. Dans quelle mesure avoir une salle de brain supplémentaire affecte la manière
+      dont nous prédisons la valeur d'une maison ?</p>
+    <p>Essayez de trouver les bons poids et biais. Vous allez commencer ici à voir la complexité dans laquelle nous
+      commençons à plonger à mesure que le nombre de nos entrées augmente. Nous commençons à avoir du mal à créer des
+      formes en 2D simples qui nous permettent de visualiser le modèle d'un coup d'oeil. Au lieu de cela, nous allons
+      devoir nous reposer principalement sur la manière dont la valeur d'erreur évolue lorsque nous ajustons les
+      paramètres de notre modèle.</p>
+    <div class="figure">
+      <div class="col graphs">
+        <div class="error-chart" id="training-two-chart"></div>
+      </div>
+      <div class="col">
+        <table class="training-table" id="training-two-table">
+          <tr>
+            <td class="gd-buttons" colspan="3">
+              <input class="btn btn-primary" id="gradient-descent-button" type="button" value="Itération DG"/> <input
+                class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 itérations DG"/> <input
+                class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 itérations DG"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Erreur</td>
+            <td colspan="2"><span id="error-value"></span></td>
+          </tr>
+          <tr>
+            <td class="error-cell" colspan="3"><span id="error-value-message"></span>&nbsp</td>
+          </tr>
+          <tr>
+            <td><label for="weight0Slider">Poids n°1</label></td>
+            <td><input class="weight" id="weight0Slider" max="0.4" min="-0.4" step="0.0001" type="range"/></td>
+            <td class="slider-value"><span class="weight" id="weight0">0</span></td>
+          </tr>
+          <tr>
+            <td><label for="weight1Slider">Poids n°2</label></td>
+            <td><input class="weight" id="weight1Slider" max="200" min="-100" step="0.0001" type="range"/></td>
+            <td class="slider-value"><span class="weight" id="weight1">0</span></td>
+          </tr>
+          <tr>
+            <td><label for="biasSlider">Bias</label></td>
+            <td><input class="bias" id="biasSlider" max="300" min="-100" step="0.1" type="range"/></td>
+            <td class="slider-value"><span class="bias" id="bias">0</span></td>
+          </tr>
+        </table>
+        <div class="nn-graph-area" id="neural-network-two-graph"></div>
+      </div>
+    </div>
+    <p>Notre fidèle <a href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> nous
+      aide encore une fois. Elle reste utile pour nous aider à trouver les bons poids et biais.</p>
+  </section>
+  <section>
+    <h2>Paramètres</h2>
+    <p>Maintenant que vous avez vu des <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> avec 1 ou 2
+      paramètres, vous pouvez deviner comment ajouter des paramètres et les utiliser pour calculer vos predictions. Le
+      nombre de poids continuera d'augmenter, et notre <a href="/tech/info/soft/proj/impl">implémentation</a> de la <a
+          href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> devra être ajustée à
+      chaque fois que l'on ajoute un paramètre, afin qu'elle puisse mettre à jour les nouveaux poids associés aux
+      nouveaux paramètres.</p>
+    <p>Il est important de noter ici que l'on n'alimente pas aveuglément le réseau avec tout ce que l'on sait de nos
+      exemples. Nous devons être sélectifs quant aux paramètres que nous fournissons au modèle. La sélection et le
+      traitement des paramètres et une discipline à part entière qui a son propre lot de considérations et bonnes
+      practiques. Si vous souhaitez voir un exemple du processus consistant à examiner un ensemble de données dans le
+      but de choisir quelles caractéristiques fournir en entrée d'un modèle de prédiction, regardez <a
+          href="https://www.kaggle.com/omarelgabry/titanic/a-journey-through-titanic">Un voyage sur le Titanic</a>. Il
+      s'agit d'un carnet de notes où <a href="https://twitter.com/Omar_ElGabry">Omar EL Gabry</a> relate son processus
+      de résolution du <a href="https://www.kaggle.com/c/titanic">défi Titanic de Kaggle</a>. Kaggle publie la liste des
+      passagers du Titanic incluant des données comme les nom, sexe, âge, cabine et si la personne a survécu ou non. Le
+      défi consiste à élaborer un modèle capable de prédire si une personne a survécu ou non étant données leurs autres
+      informations.</p>
+  </section>
+  <section>
+    <h2>Classement</h2>
+    <p>Continuons à affiner notre exemple. Supposons que notre amie nous donne une liste de maisons. Cette fois, elle a
+      indiqué lesquelles selon elle ont une bonne taille et le nombre de salles de bains :</p>
+    <div class="two_variables">
+      <table>
+        <thead>
+        <tr>
+          <th>Surface (pieds²) (`x1`)</th>
+          <th>Salles de bain (`x2`)</th>
+          <th>Libellé (`y`)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2104</td>
+          <td>3</td>
+          <td>Bon</td>
+        </tr>
+        <tr>
+          <td>1600</td>
+          <td>3</td>
+          <td>Bon</td>
+        </tr>
+        <tr>
+          <td>2400</td>
+          <td>3</td>
+          <td>Bon</td>
+        </tr>
+        <tr>
+          <td>1416</td>
+          <td>2</td>
+          <td>Mauvais</td>
+        </tr>
+        <tr>
+          <td>3000</td>
+          <td>4</td>
+          <td>Mauvais</td>
+        </tr>
+        <tr>
+          <td>1985</td>
+          <td>4</td>
+          <td>Bon</td>
+        </tr>
+        <tr>
+          <td>1534</td>
+          <td>3</td>
+          <td>Mauvais</td>
+        </tr>
+        <tr>
+          <td>1427</td>
+          <td>3</td>
+          <td>Bon</td>
+        </tr>
+        <tr>
+          <td>1380</td>
+          <td>3</td>
+          <td>Bon</td>
+        </tr>
+        <tr>
+          <td>1494</td>
+          <td>3</td>
+          <td>Bon</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Elle vous demande d'utiliser ceci pour créer un modèle capable de prédire si elle aimera une maison ou non, étant
+      donnés sa taille et son nombre de salles de bain. Vous utiliserez la liste ci-dessus pour élaborer le modèle, puis
+      elle utilisera le modèle pour classer nombre d'autres maisons. Un autre changement dans le processus est qu'elle a
+      une autre liste de 10 maisons qu'elle a libellées, mais qu'elle ne vous montre pas. Cette autre list sera utilisée
+      pour évaluer votre modèle une fois que vous l'aurez entraîné – essayant ainsi de s'assurer que votre modèle capte
+      les conditions qui font qu'elle aime les caractéristiques d'une maison.</p>
+    <p>Les <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> sur lesquels nous nous sommes exercés
+      jusqu'à maintenant faisaient tous des "<a href="/science/discipline/hard/form/math/stat/regress">regressions</a>"
+      – ils calculaient et sortaient une valeur "continue" (la sortie peut être 4, ou 100,6 ou 2143,342343). En
+      pratique, cependant, les <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> sont plus souvent
+      utilisés dans les problèmes de type "classement". Dans ces problèmes, la sortie du <a
+          href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a> doit faire partie d'un ensemble de valeurs
+      discrètes (ou "classes") comme "Bon" ou "Mauvais". En pratique, nous aurons un modèle qui dira être à 75% sûr
+      qu'un choix de maison est "Bon" plutôt que juste dire "bon" ou "mauvais".</p>
+    <figure class="img-div">
+      <img alt="android tensorflow classifier results" src="android_tensorflow_classifier_results.jpg"/>
+      <figcaption>L'application TensorFlow dont j'ai parlé dans ma <a
+          href="https://jalammar.github.io/Supercharging-android-apps-using-tensorflow/">publication précédente</a> est
+        un bon exemple de modèle de classement en pratique.
+      </figcaption>
+    </figure>
+    <p>Une manière de transformer le réseau que nous avons vu en réseau de classement est de lui faire sortir 2 valeurs
+      – une pour chaque classe (nos classes étant maintenant "bon" et "mauvais"). Nous devons alors faire passer ces
+      valeurs à travers une opération appelée "<a
+          href="https://rasbt.github.io/mlxtend/user_guide/classifier/SoftmaxRegression/">softmax</a>". Le sortie d'un
+      softmax est la probabilité de chaque classe. Par exemple, disons que la couche du réseau sort 2 pour "bon" et 4
+      pour "mauvais" ; si nous entrons [2, 4] dans le softmax, il retournera [0,11, 0,88] en sortie. Ce qui traduit les
+      valeurs pour dire que le réseau est à 88% sûr que la valeur entrée est "mauvaise" et que notre amie n'aimera pas
+      cette maison.</p>
+    <p>Softmax prend un tableau et sort un tableau de la même taille. Notez que les sorties sont toutes positives et que
+      leur addition donne 1 – ce qui est pratique lorsque l'on sort une valeur de probabilité. Notez aussi que même si 4
+      est le double de 2, sa probabilité n'est pas seulement le double, mais est de 8 fois celle de 2. Il s'agit d'une
+      propriété utile qui exagère la différence en sortie, améliorant ainsi notre processus d'entraînement.</p>
+    <table>
+      <thead>
+      <tr>
+        <th class="titleCorner"></th>
+        <th>sortie</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>softmax([ 1 ])</td>
+        <td>[ 1 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 1, 1 ])</td>
+        <td>[ 0.5, 0.5 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 0, 1 ])</td>
+        <td>[ 0.26, 0.73 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 2, 4 ])</td>
+        <td>[ 0.11, 0.88 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 5, 10 ])</td>
+        <td>[ 0.007, 0.993 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ -1, 0, 1 ])</td>
+        <td>[ 0.09, 0.24, 0.66 ]</td>
+      </tr>
+      <tr>
+        <td>softmax([ 1, 2, 4 ])</td>
+        <td>[ 0.04, 0.11, 0.84 ]</td>
+      </tr>
+      </tbody>
+    </table>
+    <p>Comme nous le voyons dans les 2 dernières lignes, softmax s'étend à n'importe quel nombre d'entrées. Donc si
+      notre amie ajoute un 3ème libellé (disons “Bon, mais je devrai louer une chambre sur airbnb"), softmax s'adapte à
+      ce changement.</p>
+    <p>Prenez une seconde pour explorer la forme du réseau lorsque vous faites varier le nombre de paramètres (`x1, x2,
+      x3…` etc) (qui peuvent être la surface, le nombre de salles de bain, le prix, la proximité de l'école/du travail…
+      etc) et faites varier le nombre de classes (`y1, y2, y3…` etc) (qui peuvent être "trop cher", "bonne affaire",
+      "bien si je loue sur airbnb", "trop petit") :</p>
+    <table class="form">
+      <tr>
+        <td>Caractéristiques (`x`):</td>
+        <td>
+          <button class="btn-number" data-field="quant[1]" data-type="minus" type="button">-</button>
+          <input class="form-control input-number" name="quant[1]" type="text" value="2"/>
+          <button class="btn-number" data-field="quant[1]" data-type="plus" type="button">+</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Classes (`y`):</td>
+        <td>
+          <button class="btn-number" data-field="quant[2]" data-type="minus" type="button">-</button>
+          <input class="form-control input-number" name="quant[2]" type="text" value="2"/>
+          <button class="btn-number" data-field="quant[2]" data-type="plus" type="button">+</button>
+        </td>
+      </tr>
+    </table>
+    <div class="nn-graph-area" id="shallow-neural-network-graph"></div>
+    <p>Vous trouverez un exemple de comment créer et entraîner ce réseau avec TensorFlow dans <a
+        href="https://github.com/jalammar/simpleTensorFlowClassificationExample/blob/master/Basic%20Classification%20Example%20with%20TensorFlow.ipynb">ce
+      carnet</a> que j'ai créé pour accompagner cet article.</p>
+  </section>
+  <section>
+    <h2>Vraie motivation</h2>
+    <p>Si vous êtes arrivé(e) jusqu'ici, je dois vous révéler une autre motivation qui m'a incité à écrire cet article.
+      Cet article vise à être une introduction encore plus accessible aux didacticiels de <a
+          href="/org/us/company/alphabet/x/brain/product/soft/tensorflow">TensorFlow</a>. Si vous commencer à travailler
+      <a href="https://www.tensorflow.org/versions/r0.10/tutorials/mnist/beginners/index.html">MNIST pour débutants en
+        ML</a> maintenant, et tombez sur ce graphique :</p>
+    <figure class="img-div">
+      <img alt="softmax regression scalar graph" src="softmax-regression-scalargraph.png"/>
+      <figcaption>J'ai écrit cet article pour préparer les gens sans expérience de l'apprentissage automatique à ce
+        graphique dans le didacticiel introduisant à TensorFlow. C'est pourquoi j'ai simulé son style visuel.
+      </figcaption>
+    </figure>
+    <p>J'espère que vous vous sentez prêt et que vous comprenez maintenant ce système et comment il fonctionne. Si vous
+      souhaitez commencer à bricoler du code, n'hésitez pas à le récupérer du <a
+          href="https://www.tensorflow.org/versions/r0.10/tutorials/mnist/beginners/index.html">didacticiel</a> de
+      l'intro et apprendre à un <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> à reconnaître des
+      chiffres manuscripts.</p>
+    <p>Vous devriez aussi poursuivre votre formation en apprendre les sous-jacents théoriques et <a
+        href="/science/discipline/hard/form/math">mathématiques</a> des concepts que nous avons discutés ici. Parmi les
+      bonnes questions à poser maintenant se trouvent :</p>
+    <ul>
+      <li>Quels autres types de <a href="/science/discipline/hard/form/math/stat/regress/cost">fonctions de coût</a>
+        existent ? Quelles sont les plus adaptées à quelles applications ?</li>
+      <li>Quel est l'algorithme pour calculer concrètement les nouveaux poids en utilisant la <a
+          href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> ?</li>
+      <li>Quelles sont les applications de l'<a href="/tech/info/soft/data/science/ml">apprentissage automatique</a>
+        dans les domaines que vous connaissez déjà ? Quelle nouvelle magie pouvez-vous insuffler en mixant ce pouvoir
+        avec d'autres dans votre livre de sorts ?</li>
+    </ul>
+    <p>Parmi de très bonnes ressources pour apprendre on trouve :</p>
+    <ul>
+      <li>Le cours sur <a href="https://www.coursera.org/learn/machine-learning">apprentissage automatique</a> de
+        Coursera par <a href="https://twitter.com/AndrewYNg">Andrew Ng</a>. C'est celui avec lequel j'ai commencé. Il
+        commence avec la regression puis passe au classement et aux <a href="/tech/info/soft/data/science/ml/nn">réseaux
+          neuronaux</a>.</li>
+      <li><a href="https://www.coursera.org/learn/neural-networks">Réseaux de neurones pour apprentissage
+        automatique</a> de Coursera par <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">Geoffrey Hinton</a>.
+        Plus centré sur les <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> et leurs applications
+        visuelles.</li>
+      <li><a
+          href="https://www.youtube.com/watch?v=g-PvXUjD6qg&amp;list=PLlJy-eBtNFt6EuMxFYRiNRS07MCWN5UIA">CS231n:
+        Convolutional Neural Networks for Visual Recognition</a> de Stanford, par <a
+          href="https://twitter.com/karpathy">Andrej Karpathy</a>. Il est intéressant de voir des concepts avancés et
+        l'état de l'art dans la reconnaissance visuelle en utilisant des <a
+            href="tech/info/soft/data/science/ml/nn/deep">réseaux de neurones profonds</a>.</li>
+      <li>Le <a href="http://www.asimovinstitute.org/neural-network-zoo/">Neural Network Zoo</a> est une très bonne
+        ressource pour en apprendre plus sur les différents types de <a href="/tech/info/soft/data/science/ml/nn">réseaux
+          de neurones</a>.</li>
+    </ul>
+  </section>
+  <section>
+    <h2 id="acknowledgements">Remerciements</h2>
+    <p>Merci à <a href="https://www.linkedin.com/in/yasmine-alfouzan-b05ba317">Yasmine Alfouzan</a>, <a
+        href="https://twitter.com/a3ammar">Ammar Alammar</a>, <a href="https://www.linkedin.com/in/khalidalnuaim">Khalid
+      Alnuaim</a>, <a href="https://twitter.com/fahd09">Fahad Alhazmi</a>, <a
+        href="https://www.linkedin.com/in/mkhdev">Mazen Melibari</a>, and <a
+        href="https://www.linkedin.com/in/hadeel-al-negheimish-4a73abb3">Hadeel Al-Negheimish</a> pour leur aide à
+      revoir les versions précédentes de cet article.</p>
+    <p>Merci de me contacter sur <a href="https://twitter.com/JayAlammar">Twitter</a> pour toutes corrections ou
+      retours.</p>
+  </section>
+</div>
+<div class="date">Rédigé le <time>2016-12-14</time></div>
+<div>
+  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"><img alt="Creative Commons License"
+      src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" style="border-width:0"/></a><br/>Cet article est
+  publié sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons
+  Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <br/>Exemple d'attribution : <br/> <i>Alammar, Jay
+  (2018). The Illustrated Transformer [Blog post]. Récupéré de <a
+      href="https://jalammar.github.io/illustrated-transformer/">https://jalammar.github.io/illustrated-transformer/</a></i>
+  <br/><br/> Note : Si vous traduisez un de mes articles, faites-le moi savoir pour que je puisse ajouter un lien vers
+  votre traduction de l'article d'origine. Mon est email dans la page <a
+    href="https://jalammar.github.io/about">À propos</a>.
+</div>
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-71956058-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/visual-interactive-guide-basics-neural-networks/',
+    'title': 'A Visual and Interactive Guide to the Basics of Neural Networks'
+  });
+</script>
+<!--#include virtual="/footer.html" -->
+<script src="../js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function () {
+    setTimeout(() => {
+      $.getScript("../js/nnVizUtils.js");
+      $.getScript("../js/simple_nn.js");
+      $.getScript("../js/two_variable_nn.js");
+      $.getScript("../js/shallow_nn_grapher.js");
+    }, 5000)  // Wait for angular to set the DOM
+  });
+</script>
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

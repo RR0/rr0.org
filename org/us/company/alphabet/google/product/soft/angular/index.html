@@ -1,0 +1,81 @@
+<!--#include virtual="/header-start.html" -->
+<title>AngularJS</title>
+<meta content="http://angularjs.org" name="url">
+<!--#include virtual="/header-end.html" -->
+<p>Framework pour client <a href="/tech/info/soft/proj/impl/lang/javascript">Javascript</a></p>
+<section>
+  <h2>Analyse</h2>
+  <section>
+    <h3>1.x</h3>
+    <p>AngularJS implémente les concepts de :</p>
+    <ul>
+      <li>Service</li>
+      <li>Contrôleur</li>
+      <li>Vue</li>
+      <li>Directive</li>
+    </ul>
+    <section>
+      <h3>Directive</h3>
+      <p>Une directive est définie par :</p>
+      <ul>
+        <li>Une fonction d'injection</li>
+        <li>Une fonction de compilation (<em>compile</em>)</li>
+        <li>Une fonction de liaison (<em>link</em>)</li>
+      </ul>
+      <section>
+        <h4>Injection</h4>
+        <p>Les directives définissent des <a href="/tech/info/soft/proj/design/Composant.html">composants</a> HTML,
+          définis par :
+        </p>
+        <ul>
+          <li>Une éventuelle <em>restriction</em> sur la manière dont ce composant peut-être instancié : Element,
+            Attribut, Classe... ou une plusieurs d'entre eux
+          </li>
+          <li>Un <em>template</em> contenant la structure HTML sous-jacente au composant. Il peut s'agir du contenu
+            lui-même ou d'un lien (<em>templateUrl</em>) pointant vers lui.
+          </li>
+          <li>Une éventuelle description de scope, initialisé sous la forme : <code>scopeValue: '=param'</code>
+          </li>
+          <li>D'éventuelles autres dépendances (require) dont le contrôleur est à injecter. Cela sera typiquement
+            d'autres directives, y compris celle définissant un ngModel.
+          </li>
+          <li>Un contrôleur</li>
+          <li>Le fait de wrapper son contenu (transclude) ou non</li>
+          <li>Une éventuelle priorité si la directive est en concurrence avec d'autres.</li>
+        </ul>
+      </section>
+      <section>
+        <h4>Liaison</h4>
+        <p>La fonction de liaison, qui reçoit l'élément et les attributs de celui-ci, est typiquement utilisée pour
+          mettre à jour l'état du template.
+        </p>
+        <section>
+          <h5>Scope</h5>
+          <p>La fonction de liaison est celle qui reçoit le scope. Il peut s'agir du scope du contrôleur où a été
+            instanciée la directive (par défaut), ou d'un scope indépendant, propre à la directive (recommandé pour les
+            <a href="/tech/info/soft/proj/design/Composant.html">composants</a>).
+          </p>
+        </section>
+        <p>Par défaut il s'agit d'une post-liaison, c'est-à-dire qu'elle est appelée sur un élément fils, puis sur son
+          parent. Définir une pré-liaison permet d'avoir l'inverse (parent d'abord, puis fils)
+        </p>
+      </section>
+    </section>
+  </section>
+  <section>
+    <h3>2.x</h3>
+    <p>Angular</p>
+  </section>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <article>
+    <h3>Service</h3>
+    module.service(serviceName, initFn)
+  </article>
+  <article>
+    <h3>Contrôleur</h3>
+    module.controller(ctrlName, initFn)
+  </article>
+</section>
+<!--#include virtual="/footer.html" -->

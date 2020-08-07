@@ -8,11 +8,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js" type="text/javascript"></script>
 <script src="../js/d3-selection-multi.v0.4.min.js" type="text/javascript"></script>
 <script src="../js/d3-jetpack.js" type="text/javascript"></script>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"
-    integrity="sha384-wE+lCONuEo/QSfLb4AfrSk7HjWJtc4Xc1OiB2/aDBzHzjnlBP4SX7vjErTcwlA8C" rel="stylesheet">
-<script crossorigin="anonymous"
-    integrity="sha384-tdtuPw3yx/rnUGmnLNWXtfjb9fpmwexsd+lr6HUYnUY4B7JhB5Ty7a1mYd+kto/s"
-    src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
 <link href="../style.css" rel="stylesheet" type="text/css"/>
 <link href="https://jalammar.github.io/feed.xml" rel="alternate"
     title="Jay Alammar - Visualizing machine learning one concept at a time." type="application/rss+xml"/>
@@ -378,7 +373,7 @@
           </tr>
           <tr>
             <td>Error</td>
-            <td colspan="2"><span id="error-value"></span></td>
+            <td colspan="2"><span class="error-value"></span></td>
           </tr>
           <tr>
             <td class="error-cell" colspan="3"><span class="error-value-message"></span>&nbsp;</td>
@@ -561,18 +556,18 @@
       (which can be “too expensive”, “good deal”, “good if I airbnb”, “too small”):</p>
     <table class="form">
       <tr>
-        <td>Features (x):</td>
+        <td><label for="features">Features (x):</label></td>
         <td>
           <button class="btn-number" data-field="quant[1]" data-type="minus" type="button">-</button>
-          <input class="form-control input-number" name="quant[1]" type="text" value="2"/>
+          <input class="input-number" id="features" name="quant[1]" type="text" value="2"/>
           <button class="btn-number" data-field="quant[1]" data-type="plus" type="button">+</button>
         </td>
       </tr>
       <tr>
-        <td>Classes (y):</td>
+        <td><label for="classes">Classes (y):</label></td>
         <td>
           <button class="btn-number" data-field="quant[2]" data-type="minus" type="button">-</button>
-          <input class="form-control input-number" name="quant[2]" type="text" value="2"/>
+          <input class="input-number" id="classes" name="quant[2]" type="text" value="2"/>
           <button class="btn-number" data-field="quant[2]" data-type="plus" type="button">+</button>
         </td>
       </tr>
@@ -653,9 +648,10 @@
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {
       (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
+    };
+    i[r].l = 1 * new Date();
+    a = s.createElement(o);
+    m = s.getElementsByTagName(o)[0];
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m)
@@ -676,6 +672,6 @@
       $.getScript("../js/simple_nn.js");
       $.getScript("../js/two_variable_nn.js");
       $.getScript("../js/shallow_nn_grapher.js");
-    }, 5000)  // Wait for angular to set the DOM
+    }, 4000)  // Wait for angular to set the DOM
   });
 </script>

@@ -220,20 +220,20 @@
     <table class="training-table" id="training-one">
       <tr>
         <td>Erreur</td>
-        <td colspan="2"><span id="error-value"></span></td>
+        <td colspan="2"><span class="error-value"></span></td>
       </tr>
       <tr>
-        <td class="error-cell" colspan="3"><span id="error-value-message"></span></td>
+        <td class="error-cell" colspan="3"><span class="error-value-message"></span></td>
       </tr>
       <tr>
-        <td><label for="weightSlider">Poids</label></td>
-        <td><input class="weight" id="weightSlider" max="0.4" min="0" step="0.001" type="range"/></td>
-        <td class="slider-value"><span class="weight" id="weight">0</span></td>
+        <td><label for="training-one-weightSlider">Poids</label></td>
+        <td><input class="weight" id="training-one-weightSlider" max="0.4" min="0" step="0.001" type="range"/></td>
+        <td class="slider-value"><span class="weight">0</span></td>
       </tr>
       <tr>
-        <td><label for="biasSlider">Biais</label></td>
-        <td><input class="bias" id="biasSlider" max="460" min="0" step="1" type="range"/></td>
-        <td class="slider-value"><span class="bias" id="bias">0</span></td>
+        <td><label for="training-one-biasSlider">Biais</label></td>
+        <td><input class="bias" id="training-one-biasSlider" max="460" min="0" step="1" type="range"/></td>
+        <td class="slider-value"><span class="bias">0</span></td>
       </tr>
     </table>
     <div class="nn-graph-area" id="neural-network-graph"></div>
@@ -259,31 +259,28 @@
         <table class="training-table" id="training-one-gd">
           <tr>
             <td class="gd-buttons" colspan="3">
-              <input class="btn btn-primary" id="gradient-descent-button" type="button" value="Itération DG"/> <input
-                class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 itérations DG"/> <input
-                class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 itérations DG"/>
+              <input class="gradient-descent-button" type="button" value="Itération DG"/> <input
+                class="gradient-descent-10-button" type="button" value="10 itérations DG"/> <input
+                class="gradient-descent-100-button" type="button" value="100 itérations DG"/>
             </td>
           </tr>
           <tr>
             <td>Erreur</td>
-            <td colspan="2">
-              <span id="error-value"></span>
+            <td colspan="2"><span class="error-value"></span></td>
+          </tr>
+          <tr>
+            <td class="error-cell" colspan="3"><span class="error-value-message"></span>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><label for="training-one-gd-weightSlider">Poids</label></td>
+            <td><input class="weight" id="training-one-gd-weightSlider" max="0.4" min="0" step="0.0001" type="range"/>
             </td>
+            <td class="slider-value"><span class="weight">0</span></td>
           </tr>
           <tr>
-            <td class="error-cell" colspan="3">
-              <span id="error-value-message"></span>&nbsp;
-            </td>
-          </tr>
-          <tr>
-            <td><label for="weightSlider">Poids</label></td>
-            <td><input class="weight" id="weightSlider" max="0.4" min="0" step="0.0001" type="range"/></td>
-            <td class="slider-value"><span class="weight" id="weight">0</span></td>
-          </tr>
-          <tr>
-            <td><label for="biasSlider">Biais</label></td>
-            <td><input class="bias" id="biasSlider" max="460" min="0" step="0.1" type="range"/></td>
-            <td class="slider-value"><span class="bias" id="bias">0</span></td>
+            <td><label for="training-one-gd-biasSlider">Biais</label></td>
+            <td><input class="bias" id="training-one-gd-biasSlider" max="460" min="0" step="0.1" type="range"/></td>
+            <td class="slider-value"><span class="bias">0</span></td>
           </tr>
         </table>
         <div class="nn-graph-area" id="neural-network-gd-graph"></div>
@@ -399,32 +396,32 @@
         <table class="training-table" id="training-two-table">
           <tr>
             <td class="gd-buttons" colspan="3">
-              <input class="btn btn-primary" id="gradient-descent-button" type="button" value="Itération DG"/> <input
-                class="btn btn-primary" id="gradient-descent-10-button" type="button" value="10 itérations DG"/> <input
-                class="btn btn-primary" id="gradient-descent-100-button" type="button" value="100 itérations DG"/>
+              <input class="gradient-descent-button" type="button" value="Itération DG"/> <input
+                class="gradient-descent-10-button" type="button" value="10 itérations DG"/> <input
+                class="gradient-descent-100-button" type="button" value="100 itérations DG"/>
             </td>
           </tr>
           <tr>
             <td>Erreur</td>
-            <td colspan="2"><span id="error-value"></span></td>
+            <td colspan="2"><span class="error-value"></span></td>
           </tr>
           <tr>
-            <td class="error-cell" colspan="3"><span id="error-value-message"></span>&nbsp</td>
+            <td class="error-cell" colspan="3"><span class="error-value-message"></span>&nbsp</td>
           </tr>
           <tr>
             <td><label for="weight0Slider">Poids n°1</label></td>
             <td><input class="weight" id="weight0Slider" max="0.4" min="-0.4" step="0.0001" type="range"/></td>
-            <td class="slider-value"><span class="weight" id="weight0">0</span></td>
+            <td class="slider-value"><span id="weight0">0</span></td>
           </tr>
           <tr>
             <td><label for="weight1Slider">Poids n°2</label></td>
             <td><input class="weight" id="weight1Slider" max="200" min="-100" step="0.0001" type="range"/></td>
-            <td class="slider-value"><span class="weight" id="weight1">0</span></td>
+            <td class="slider-value"><span id="weight1">0</span></td>
           </tr>
           <tr>
             <td><label for="biasSlider">Bias</label></td>
             <td><input class="bias" id="biasSlider" max="300" min="-100" step="0.1" type="range"/></td>
-            <td class="slider-value"><span class="bias" id="bias">0</span></td>
+            <td class="slider-value"><span class="bias">0</span></td>
           </tr>
         </table>
         <div class="nn-graph-area" id="neural-network-two-graph"></div>
@@ -618,7 +615,7 @@
     </table>
     <div class="nn-graph-area" id="shallow-neural-network-graph"></div>
     <p>Vous trouverez un exemple de comment créer et entraîner ce réseau avec TensorFlow dans <a
-        href="https://github.com/jalammar/simpleTensorFlowClassificationExample/blob/master/Basic%20Classification%20Example%20with%20TensorFlow.ipynb">ce
+        href="https://github.com/RR0/simpleTensorFlowClassificationExample/blob/master/Exemple%20de%20base%20de%20classification%20avec%20TensorFlow.ipynb">ce
       carnet</a> que j'ai créé pour accompagner cet article.</p>
   </section>
   <section>
@@ -673,7 +670,7 @@
     </ul>
   </section>
   <section>
-    <h2 id="acknowledgements">Remerciements</h2>
+    <h2>Remerciements</h2>
     <p>Merci à <a href="https://www.linkedin.com/in/yasmine-alfouzan-b05ba317">Yasmine Alfouzan</a>, <a
         href="https://twitter.com/a3ammar">Ammar Alammar</a>, <a href="https://www.linkedin.com/in/khalidalnuaim">Khalid
       Alnuaim</a>, <a href="https://twitter.com/fahd09">Fahad Alhazmi</a>, <a
@@ -693,7 +690,7 @@
   (2018). The Illustrated Transformer [Blog post]. Récupéré de <a
       href="https://jalammar.github.io/illustrated-transformer/">https://jalammar.github.io/illustrated-transformer/</a></i>
   <br/><br/> Note : Si vous traduisez un de mes articles, faites-le moi savoir pour que je puisse ajouter un lien vers
-  votre traduction de l'article d'origine. Mon est email dans la page <a
+  votre traduction de l'article d'origine. Mon email est dans la page <a
     href="https://jalammar.github.io/about">À propos</a>.
 </div>
 <script>
@@ -712,7 +709,7 @@
   ga('create', 'UA-71956058-1', 'auto');
   ga('send', 'pageview', {
     'page': '/visual-interactive-guide-basics-neural-networks/',
-    'title': 'A Visual and Interactive Guide to the Basics of Neural Networks'
+    'title': 'Guide visuel et interactif des bases des réseaux neuronaux'
   });
 </script>
 <!--#include virtual="/footer.html" -->

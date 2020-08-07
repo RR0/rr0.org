@@ -59,21 +59,21 @@ var NN_trainer = function (svg_el, table_el, areas, prices, weight, bias, x1, y1
 
   // Attach events to react to the user moving the sliders
   var trainer_self = this;
-  $(this.table_el + " #weightSlider").on("input change", (function () {
+  $(this.table_el + "-weightSlider").on("input change", (function () {
     trainer_self.updateWeightAndBias(this.value, -1, true);
   }));
 
-  $(this.table_el + " #biasSlider").on("input change", (function () {
+  $(this.table_el + "-biasSlider").on("input change", (function () {
     trainer_self.updateWeightAndBias(-1, this.value, true);
   }));
 
   // Attach Analytics events to when a user interacts with the sliders
-  $(this.table_el + " #weightSlider").on("mouseup touchend", (function () {
+  $(this.table_el + "-weightSlider").on("mouseup touchend", (function () {
     ga('send', 'event', trainer_self.analyticsCategory, "Interacted with", "Weight slider");
     _paq.push(['trackEvent', trainer_self.analyticsCategory, "Interacted with", "Weight slider"]);
   }));
 
-  $(this.table_el + " #biasSlider").on("mouseup touchend", (function () {
+  $(this.table_el + "-biasSlider").on("mouseup touchend", (function () {
     ga('send', 'event', trainer_self.analyticsCategory, "Interacted with", "Bias slider");
     _paq.push(['trackEvent', trainer_self.analyticsCategory, "Interacted with", "Bias slider"]);
   }));
@@ -99,8 +99,8 @@ var NN_trainer = function (svg_el, table_el, areas, prices, weight, bias, x1, y1
   }
 
   // Update the reading of the weight/bias numbers
-  $(this.table_el + " #weightSlider").val(this.weight);
-  $(this.table_el + " #biasSlider").val(this.bias);
+  $(this.table_el + "-weightSlider").val(this.weight);
+  $(this.table_el + "-biasSlider").val(this.bias);
 };
 
 
@@ -140,6 +140,8 @@ NN_trainer.prototype.initializeGraph = function () {
   this.y = d3.scaleLinear().rangeRound([this.height, 0]);
   this.x.domain([this.x1, this.x2]);
   this.y.domain([this.y1, this.y2]);
+  var formatX = d3.tickFormat(d3.format("d"));
+  this.x.ticks().map(formatX);
 
   // define the line
   this.valueline = d3.line()
@@ -378,33 +380,32 @@ NN_trainer.prototype.updateWeightAndBias = function (weight, bias, updateUI) {
 NN_trainer.prototype.updateUI = function (mean_delta_sum, errorLineValues) {
 
   //Update error chart if available
-  if (this.error_chart_el != "")
+  if (this.error_chart_el !== "")
     this.addErrorPoint(mean_delta_sum);
 
   // Update the error/weight/bias indicators
-  $(this.table_el + " span#weight").text(this.weight.toLocaleString('fr', {maximumFractionDigits: 3}));
-  $(this.table_el + " span#bias").text(this.bias.toLocaleString('fr', {maximumFractionDigits: 1}));
-  $(this.table_el + " span#error-value").text(numberWithCommas(Math.round(mean_delta_sum)));
+  $(this.table_el + " span.weight").text(this.weight.toLocaleString('fr', {maximumFractionDigits: 3}));
+  $(this.table_el + " span.bias").text(this.bias.toLocaleString('fr', {maximumFractionDigits: 1}));
+  $(this.table_el + " span.error-value").text(numberWithCommas(Math.round(mean_delta_sum)));
 
   // Update comment on the score
+  var messageElem = $(this.table_el + " .error-value-message");
   if (mean_delta_sum < 450) {
-    $(this.table_el + " span#error-value-message").html("Honnêtement je ne pensais pas que c'était" +
-      " 'humainement' possible..");
+    messageElem.html("Honnêtement je ne pensais pas que c'était 'humainement' possible..");
   } else if (mean_delta_sum < 500) {
-    $(this.table_el + " span#error-value-message").html("Salut toi, overlord IA superintelligent..");
+    messageElem.html("Salut à toi, overlord IA superintelligent..");
   } else if (mean_delta_sum < 600) {
-    $(this.table_el + " span#error-value-message").html("Wow wow ! Les doigts dans le nez, <a" +
-      " href='https://en.wikipedia.org/wiki/Yann_LeCun'>LeCun</a>!!");
+    messageElem.html("Wow wow ! Les doigts dans le nez, <a href='https://en.wikipedia.org/wiki/Yann_LeCun'>LeCun</a> !!");
   } else if (mean_delta_sum < 750) {
-    $(this.table_el + " span#error-value-message").text("Bravo ! Vous avez trouvé 750 !");
+    messageElem.text("Bravo ! Vous avez trouvé 750 !");
   } else if (mean_delta_sum < 799) {
-    $(this.table_el + " span#error-value-message").text("Bien joué");
+    messageElem.text("Bien joué");
   } else if (mean_delta_sum >= 800000) {
-    $(this.table_el + " span#error-value-message").text("Vous essayez vraiment, là ?");
+    messageElem.text("Vous essayez vraiment, là ?");
   } else if (mean_delta_sum >= 100000) {
-    $(this.table_el + " span#error-value-message").text("Encore loin, mon pote");
+    messageElem.text("Encore loin, mon pote");
   } else {
-    $(this.table_el + " span#error-value-message").text("");
+    messageElem.text("");
   }
 
 
@@ -515,8 +516,8 @@ NN_trainer.prototype.gradientDescentStep = function (number_of_steps) {
     }
   }
 
-  $(this.table_el + " #weightSlider").val(new_w);
-  $(this.table_el + " #biasSlider").val(new_b);
+  $(this.table_el + "-weightSlider").val(new_w);
+  $(this.table_el + "-biasSlider").val(new_b);
 
 
 };
@@ -821,10 +822,10 @@ var trainer2 = new NN_trainer("#training-one-gd-chart", "#training-one-gd",
   0,      // y1
   2600,   // x2
   410,    //y2
-  "#gradient-descent-button",
-  "#gradient-descent-10-button",
-  "#gradient-descent-100-button",
-  "#gradient-descent-converge-button",
+  ".gradient-descent-button",
+  ".gradient-descent-10-button",
+  ".gradient-descent-100-button",
+  ".gradient-descent-converge-button",
   false,
   "#training-one-gd-error-chart",
   "#training-one-gd-heatmap",

@@ -375,7 +375,7 @@ td.slider-value .bias {
   text-align: center;
 }
 
-td span#error-value {
+td .error-value {
   color: #cab900;
   font-weight: bold;
 }
@@ -423,7 +423,7 @@ td.error-cell {
   border: none;
 }
 
-#error-value-message {
+.error-value-message {
   color: #31A2DA;
   font-weight: bold;
 }

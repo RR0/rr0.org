@@ -89,7 +89,7 @@ var multiVariableNeuralNetworkTrainer = function (numberOfInputNodes,
 
     // Update the sliders
     for (var c = 0; c < this.weights.length; c++)
-        $(this.table_el + " #weight" + c + "Slider").val(trainerSelf.weights[c])
+        $(this.table_el + " .weight" + c + "Slider").val(trainerSelf.weights[c])
     $(this.table_el + " #biasSlider").val(trainerSelf.bias);
 };
 
@@ -198,10 +198,10 @@ multiVariableNeuralNetworkTrainer.prototype.updateUI = function (mean_delta_sum)
 
     // Update the error/weight/bias indicators
     for (var c = 0; c < this.numberOfInputNodes; c++) {
-        $(this.table_el + " span#weight" + c).text(this.weights[c].toLocaleString('fr', {maximumFractionDigits: 3}));
+        $(this.table_el + " .weight" + c).text(this.weights[c].toLocaleString('fr', {maximumFractionDigits: 3}));
     }
-    $(this.table_el + " span#bias").text(this.bias.toLocaleString('fr', {maximumFractionDigits: 3}));
-    $(this.table_el + " span#error-value").text(numberWithCommas(Math.round(mean_delta_sum)));
+    $(this.table_el + " .bias").text(this.bias.toLocaleString('fr', {maximumFractionDigits: 3}));
+    $(this.table_el + " .error-value").text(numberWithCommas(Math.round(mean_delta_sum)));
 
     this.updateNeuralNetworkGraph();
 };
@@ -432,7 +432,7 @@ multiVariableNeuralNetworkTrainer.prototype.initializeNeuralNetworkGraph = funct
 
 multiVariableNeuralNetworkTrainer.prototype.updateNeuralNetworkGraph = function () {
     for (var c = 0; c < this.weights.length; c++) {
-        d3.select(this.neuralNetworkGraphEl + " #weight" + c + "Value")
+        d3.select(this.neuralNetworkGraphEl + " .weight" + c + "Value")
           .text(this.weights[c].toLocaleString('fr', {maximumFractionDigits: 3}));
 
     }
@@ -514,7 +514,7 @@ multiVariableNeuralNetworkTrainer.prototype.gradientDescentStep = function (step
 
     // Update the sliders
     for (var c = 0; c < this.weights.length; c++)
-        $(this.table_el + " #weight" + c + "Slider").val(newWeights[c])
+        $(this.table_el + " .weight" + c + "Slider").val(newWeights[c])
     $(this.table_el + " #biasSlider").val(newBias);
 
 
@@ -551,10 +551,10 @@ var trainer3 = new multiVariableNeuralNetworkTrainer(2,
   "#training-two-chart", "#training-two-table",
   dataPoints, labels,
   weights, bias,
-  "#gradient-descent-button",
-  "#gradient-descent-10-button",
-  "#gradient-descent-100-button",
-  "#gradient-descent-converge-button",
+  ".gradient-descent-button",
+  ".gradient-descent-10-button",
+  ".gradient-descent-100-button",
+  ".gradient-descent-converge-button",
   weightRanges, biasRange,
   "#neural-network-two-graph",
   "Basics of Neural Networks - Viz 3 two variables"

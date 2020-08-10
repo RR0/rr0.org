@@ -1,6 +1,7 @@
 /**
  * Created by alammar on 12/8/16.
  */
+
 var shallowNeuralNetworkGrapher = function (inputNodeCount, outputNodeCount, svgElement, analyticsCategory) {
   this.inputNodeCount = inputNodeCount;
   this.outputNodeCount = outputNodeCount;
@@ -9,13 +10,15 @@ var shallowNeuralNetworkGrapher = function (inputNodeCount, outputNodeCount, svg
   this.analyticsCategory = analyticsCategory;
 
   this.initializeGraph();
-  this.drawGraph()
+  this.drawGraph();
 };
 
 shallowNeuralNetworkGrapher.prototype.updateNodeCount = function (nodeType, newValue) {
-  if (nodeType == "input") this.inputNodeCount = newValue;
-  else if (nodeType == "output") this.outputNodeCount = newValue;
-
+  if (nodeType === "input") {
+    this.inputNodeCount = newValue;
+  } else if (nodeType === "output") {
+    this.outputNodeCount = newValue;
+  }
   this.drawGraph();
 };
 
@@ -24,10 +27,10 @@ shallowNeuralNetworkGrapher.prototype.initializeGraph = function () {
     .append("svg")           // append an SVG element to the body
     .attr("width", this.graphWidth)      // make the SVG element 449 pixels wide
     .attr("height", 250);    // make the SVG element 249 pixels high
-  this.neuralNetworkMargin = {top: 10, right: 10, bottom: 10, left: 10},
-    this.neuralNetworkWidth = +this.nnGraphHolder.attr("width") - this.neuralNetworkMargin.left - this.neuralNetworkMargin.right,
-    this.neuralNetworkHeight = +this.nnGraphHolder.attr("height") - this.neuralNetworkMargin.top - this.neuralNetworkMargin.bottom,
-    this.neuralNetworkG = this.nnGraphHolder.append("g");
+  this.neuralNetworkMargin = {top: 10, right: 10, bottom: 10, left: 10};
+  this.neuralNetworkWidth = +this.nnGraphHolder.attr("width") - this.neuralNetworkMargin.left - this.neuralNetworkMargin.right;
+  this.neuralNetworkHeight = +this.nnGraphHolder.attr("height") - this.neuralNetworkMargin.top - this.neuralNetworkMargin.bottom;
+  this.neuralNetworkG = this.nnGraphHolder.append("g");
 
   // Define arrow head
   // http://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
@@ -49,8 +52,6 @@ shallowNeuralNetworkGrapher.prototype.initializeGraph = function () {
 };
 
 shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
-
-
   var grapher = this;
   this.nodeRadius = 15;
   this.weightNodeWidthRatio = 1.7;
@@ -95,22 +96,19 @@ shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
 
   // Calculate the angles of the all the Input-to_Bias lines
   this.lineAngles = [];
-  for (var j = 0; j < this.outputNodeCount; j++)
+  for (var j = 0; j < this.outputNodeCount; j++) {
     for (var i = 0; i < this.inputNodeCount; i++) {
-
-      //initialize inner array
-      if (i == 0) this.lineAngles[j] = new Array(this.inputNodeCount);
-
+      // initialize inner array
+      if (i === 0) this.lineAngles[j] = new Array(this.inputNodeCount);
       var opposite = this.inputLayerCoordinates[i].y - this.outputLayerCoordinates[j].y,
         adjacent = biasLayerX - inputLayerX,
         angle = Math.atan(opposite / adjacent);
 
       this.lineAngles[j][i] = angle;
     }
-
-
+  }
   this.weightLayerCoordinates = [];
-  for (var i = 0; i < this.inputNodeCount; i++)
+  for (var i = 0; i < this.inputNodeCount; i++) {
     for (var j = 0; j < this.outputNodeCount; j++) {
       this.weightLayerCoordinates.push({
         x: this.weightLayerXCoordinates[j],
@@ -119,13 +117,12 @@ shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
           (this.weightLayerXCoordinates[j] - inputLayerX),
         outputIndex: j,
         inputIndex: i
-      })
+      });
     }
-
-
+  }
   this.inputToBiasLines = [];
   // Calculate the coordiantes of the lines from input to bias
-  for (var i = 0; i < this.inputNodeCount; i++)
+  for (var i = 0; i < this.inputNodeCount; i++) {
     for (var j = 0; j < this.outputNodeCount; j++) {
       this.inputToBiasLines.push({
         x1: this.inputLayerCoordinates[i].x,
@@ -134,31 +131,28 @@ shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
         y2: this.biasLayerCoordinates[j].y
       });
     }
-
-
+  }
   this.BiasToSoftmaxLines = [];
   // Calculate the coordiantes of the lines from input to bias
-  for (var i = 0; i < this.outputNodeCount; i++)
+  for (var i = 0; i < this.outputNodeCount; i++) {
     this.BiasToSoftmaxLines.push({
       x1: this.biasLayerCoordinates[i].x,
       y1: this.biasLayerCoordinates[i].y,
       x2: softmaxLayerX - grapher.nodeRadius,
       y2: this.biasLayerCoordinates[i].y
     });
-
-
+  }
   this.softmaxtoOutputLines = [];
   // Calculate the coordiantes of the lines from input to bias
-  for (var i = 0; i < this.outputNodeCount; i++)
+  for (var i = 0; i < this.outputNodeCount; i++) {
     this.softmaxtoOutputLines.push({
       x1: softmaxLayerX + grapher.nodeRadius + 6,
       y1: this.biasLayerCoordinates[i].y,
       x2: outputLayerX - grapher.nodeRadius - 8,
       y2: this.biasLayerCoordinates[i].y
     });
-
+  }
   var softmaxCoordinates = {x: softmaxLayerX, y: this.neuralNetworkMargin.top};
-
 
   // Graph all the things
   this.graphSoftmaxToOutputArrows(this.softmaxtoOutputLines);
@@ -171,17 +165,12 @@ shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
   this.graphBiasNodes(this.biasLayerCoordinates);
   this.graphSoftmax(softmaxCoordinates);
 
-
   var biasNodeY = this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2 - this.nodeRadius;
-
-
 };
 
 shallowNeuralNetworkGrapher.prototype.graphInputNodes = function (data) {
-
   // JOIN
-  var inputGroups = this.neuralNetworkG.selectAll(this.svgElement + " .input-group")
-    .data(data);
+  var inputGroups = this.neuralNetworkG.selectAll(this.svgElement + " .input-group").data(data);
 
   // EXIT old elements not present in new data.
   inputGroups.exit()
@@ -191,10 +180,7 @@ shallowNeuralNetworkGrapher.prototype.graphInputNodes = function (data) {
   // UPDATE old elements present in new data.
   inputGroups.attr("class", "input-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     }.bind(this));
 
   inputGroups.select("#input-name")
@@ -202,16 +188,12 @@ shallowNeuralNetworkGrapher.prototype.graphInputNodes = function (data) {
       return "X" + (d.index + 1)
     });
 
-
   // ENTER new elements present in new data.
   var inputs = inputGroups.enter()
     .append("g")
     .attr("class", "input-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     }.bind(this));
 
   inputs
@@ -228,9 +210,8 @@ shallowNeuralNetworkGrapher.prototype.graphInputNodes = function (data) {
     .attr("x", 0)
     .attr("y", 5)
     .text(function (d) {
-      return "X" + (d.index + 1)
+      return "X" + (d.index + 1);
     });
-
 
   inputGroups.moveUp();
 };
@@ -253,10 +234,7 @@ shallowNeuralNetworkGrapher.prototype.graphWeightNodes = function (data) {
   // UPDATE old elements present in new data.
   groupElements.attr("class", "weight-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     });
 
   groupElements.select("#weight0Value")
@@ -269,10 +247,7 @@ shallowNeuralNetworkGrapher.prototype.graphWeightNodes = function (data) {
     .append("g")
     .attr("class", "weight-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     });
 
   groups
@@ -298,13 +273,9 @@ shallowNeuralNetworkGrapher.prototype.graphWeightNodes = function (data) {
   groupElements.moveUp();
 };
 
-
 shallowNeuralNetworkGrapher.prototype.graphBiasNodes = function (data) {
-
-
   // JOIN
-  var biasNodes = this.neuralNetworkG.selectAll(this.svgElement + " .bias-group")
-    .data(data);
+  var biasNodes = this.neuralNetworkG.selectAll(this.svgElement + " .bias-group").data(data);
 
   // EXIT old elements not present in new data.
   biasNodes.exit()
@@ -314,10 +285,7 @@ shallowNeuralNetworkGrapher.prototype.graphBiasNodes = function (data) {
   // UPDATE old elements present in new data.
   biasNodes.attr("class", "bias-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y - this.nodeRadius) + ")";
+      return "translate(" + (d.x) + "," + (d.y - this.nodeRadius) + ")";
     }.bind(this));
 
   biasNodes.moveUp();
@@ -326,10 +294,7 @@ shallowNeuralNetworkGrapher.prototype.graphBiasNodes = function (data) {
     .append("g")
     .attr("class", "bias-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y - this.nodeRadius) + ")";
+      return "translate(" + (d.x) + "," + (d.y - this.nodeRadius) + ")";
     }.bind(this));
 
   biases
@@ -349,14 +314,12 @@ shallowNeuralNetworkGrapher.prototype.graphBiasNodes = function (data) {
     .attr("x", this.nodeRadius)
     .attr("y", this.nodeRadius + 5)
     .text(function (d) {
-      return "+b" + (d.index + 1)
+      return "+b" + (d.index + 1);
     });
-
 };
 
 
 shallowNeuralNetworkGrapher.prototype.graphOutputNodes = function (data) {
-
   // JOIN
   var inputGroups = this.neuralNetworkG.selectAll(this.svgElement + " .output-group")
     .data(data);
@@ -369,27 +332,20 @@ shallowNeuralNetworkGrapher.prototype.graphOutputNodes = function (data) {
   // UPDATE old elements present in new data.
   inputGroups.attr("class", "output-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     }.bind(this));
 
   inputGroups.select("#output-name")
     .text(function (d) {
-      return "Y" + (d.index + 1)
+      return "Y" + (d.index + 1);
     });
-
 
   // ENTER new elements present in new data.
   var inputs = inputGroups.enter()
     .append("g")
     .attr("class", "output-group")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     }.bind(this));
 
   inputs
@@ -406,9 +362,8 @@ shallowNeuralNetworkGrapher.prototype.graphOutputNodes = function (data) {
     .attr("x", 0)
     .attr("y", 5)
     .text(function (d) {
-      return "Y" + (d.index + 1)
+      return "Y" + (d.index + 1);
     });
-
 
   //var outputNodes = this.neuralNetworkG.selectAll(this.svgElement + " .output-node" )
   //    .data(data);
@@ -429,7 +384,6 @@ shallowNeuralNetworkGrapher.prototype.graphOutputNodes = function (data) {
 };
 
 shallowNeuralNetworkGrapher.prototype.graphInputToBiasLines = function (data) {
-
   var inputToBiasLines = this.neuralNetworkG.selectAll(this.svgElement + " .input-to-bias-line")
     .data(data);
 
@@ -440,16 +394,16 @@ shallowNeuralNetworkGrapher.prototype.graphInputToBiasLines = function (data) {
     .attrs({
       class: "arrow input-to-bias-line",
       x1: function (d) {
-        return d.x1
+        return d.x1;
       }, // From the center of the input node
       y1: function (d) {
-        return d.y1
+        return d.y1;
       },
       x2: function (d) {
-        return d.x2
+        return d.x2;
       },    // To the center of the bias node
       y2: function (d) {
-        return d.y2
+        return d.y2;
       }
     });
 
@@ -458,24 +412,21 @@ shallowNeuralNetworkGrapher.prototype.graphInputToBiasLines = function (data) {
     .attrs({
       "class": "arrow input-to-bias-line",
       "x1": function (d) {
-        return d.x1
+        return d.x1;
       }, // From the center of the input node
       "y1": function (d) {
-        return d.y1
+        return d.y1;
       },
       "x2": function (d) {
-        return d.x2
+        return d.x2;
       },    // To the center of the bias node
       "y2": function (d) {
-        return d.y2
+        return d.y2;
       }
     });
-
 };
 
-
 shallowNeuralNetworkGrapher.prototype.graphBiasToSoftmaxArrows = function (data) {
-
   var inputToBiasLines = this.neuralNetworkG.selectAll(this.svgElement + " .bias-to-softmax-line")
     .data(data);
 
@@ -487,16 +438,16 @@ shallowNeuralNetworkGrapher.prototype.graphBiasToSoftmaxArrows = function (data)
       class: "arrow bias-to-softmax-line",
       "marker-end": "url(#arrow)",
       x1: function (d) {
-        return d.x1
+        return d.x1;
       }, // From the center of the input node
       y1: function (d) {
-        return d.y1
+        return d.y1;
       },
       x2: function (d) {
-        return d.x2
+        return d.x2;
       },    // To the center of the bias node
       y2: function (d) {
-        return d.y2
+        return d.y2;
       }
     });
 
@@ -506,84 +457,73 @@ shallowNeuralNetworkGrapher.prototype.graphBiasToSoftmaxArrows = function (data)
       "class": "arrow bias-to-softmax-line",
       "marker-end": "url(#arrow)",
       "x1": function (d) {
-        return d.x1
+        return d.x1;
       }, // From the center of the input node
       "y1": function (d) {
-        return d.y1
+        return d.y1;
       },
       "x2": function (d) {
-        return d.x2
+        return d.x2;
       },    // To the center of the bias node
       "y2": function (d) {
-        return d.y2
+        return d.y2;
       }
     });
-
 };
-
 
 shallowNeuralNetworkGrapher.prototype.graphSoftmaxToOutputArrows = function (data) {
 
-  var inputToBiasLines = this.neuralNetworkG.selectAll(this.svgElement + " .softmax-to-output-line")
-    .data(data);
+  var inputToBiasLines = this.neuralNetworkG.selectAll(this.svgElement + " .softmax-to-output-line").data(data);
 
-  inputToBiasLines.exit()
-    .remove();
+  inputToBiasLines.exit().remove();
 
   inputToBiasLines
     .attrs({
       class: "arrow softmax-to-output-line",
       "marker-end": "url(#arrow)",
       x1: function (d) {
-        return d.x1
+        return d.x1;
       }, // From the center of the input node
       y1: function (d) {
-        return d.y1
+        return d.y1;
       },
       x2: function (d) {
-        return d.x2
+        return d.x2;
       },    // To the center of the bias node
       y2: function (d) {
-        return d.y2
+        return d.y2;
       }
     });
 
   inputToBiasLines.enter()
     .append('line')
     .attrs({
-      "class": "arrow softmax-to-output-line",
+      class: "arrow softmax-to-output-line",
       "marker-end": "url(#arrow)",
       "x1": function (d) {
-        return d.x1
+        return d.x1;
       }, // From the center of the input node
       "y1": function (d) {
-        return d.y1
+        return d.y1;
       },
       "x2": function (d) {
-        return d.x2
+        return d.x2;
       },    // To the center of the bias node
       "y2": function (d) {
-        return d.y2
+        return d.y2;
       }
     });
-
 };
-
 
 shallowNeuralNetworkGrapher.prototype.graphSoftmax = function (data) {
 
-  var softmax = this.neuralNetworkG.selectAll(this.svgElement + " .softmax")
-    .data([data]);
-
+  var softmax = this.neuralNetworkG.selectAll(this.svgElement + " .softmax").data([data]);
 
   var softmaxGroup = softmax.enter()
     .append("g")
     .attr("class", "softmax")
     .attr("transform", function (d) {
-      return "translate(" +
-        (d.x)
-        + ","
-        + (d.y) + ")";
+      return "translate(" + (d.x) + "," + (d.y) + ")";
     });
 
   softmaxGroup
@@ -603,7 +543,6 @@ shallowNeuralNetworkGrapher.prototype.graphSoftmax = function (data) {
     .attr("y", -2)
     .attr("transform", "rotate(90)")
     .text("softmax");
-
 };
 
 var softmaxNNExample = new shallowNeuralNetworkGrapher(2, 2, "#shallow-neural-network-graph",
@@ -623,26 +562,29 @@ $(document).ready(function () {
     var input = $("input[name='" + fieldName + "']");
     var currentVal = parseInt(input.val());
     if (!isNaN(currentVal)) {
-      if (type == 'minus') {
+      if (type === 'minus') {
         var minValue = parseInt(input.attr('min'));
-        if (!minValue) minValue = 1;
+        if (!minValue) {
+          minValue = 1;
+        }
         if (currentVal > minValue) {
           input.val(currentVal - 1).change();
         }
-        if (parseInt(input.val()) == minValue) {
+        if (parseInt(input.val()) === minValue) {
           $(this).attr('disabled', true);
         }
 
-      } else if (type == 'plus') {
+      } else if (type === 'plus') {
         var maxValue = parseInt(input.attr('max'));
-        if (!maxValue) maxValue = 9999999999999;
+        if (!maxValue) {
+          maxValue = 9999999999999;
+        }
         if (currentVal < maxValue) {
           input.val(currentVal + 1).change();
         }
-        if (parseInt(input.val()) == maxValue) {
+        if (parseInt(input.val()) === maxValue) {
           $(this).attr('disabled', true);
         }
-
       }
     } else {
       input.val(0);
@@ -652,11 +594,14 @@ $(document).ready(function () {
     $(this).data('oldValue', $(this).val());
   });
   $('.input-number').change(function () {
-
     var minValue = parseInt($(this).attr('min'));
     var maxValue = parseInt($(this).attr('max'));
-    if (!minValue) minValue = 1;
-    if (!maxValue) maxValue = 9999999999999;
+    if (!minValue) {
+      minValue = 1;
+    }
+    if (!maxValue) {
+      maxValue = 9999999999999;
+    }
     var valueCurrent = parseInt($(this).val());
 
     var name = $(this).attr('name');
@@ -675,10 +620,10 @@ $(document).ready(function () {
 
     ///var fieldName = $(this).attr('data-field');
     var fieldName = $(this).attr('name');
-    if (fieldName == "quant[1]") {
+    if (fieldName === "quant[1]") {
       softmaxNNExample.updateNodeCount("input", valueCurrent);
       ga('send', 'event', softmaxNNExample.analyticsCategory, "Set number of", "Features", valueCurrent);
-    } else if (fieldName == "quant[2]") {
+    } else if (fieldName === "quant[2]") {
       softmaxNNExample.updateNodeCount("output", valueCurrent);
       ga('send', 'event', softmaxNNExample.analyticsCategory, "Set number of", "Classes", valueCurrent);
     }
@@ -687,7 +632,7 @@ $(document).ready(function () {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
       // Allow: Ctrl+A
-      (e.keyCode == 65 && e.ctrlKey === true) ||
+      (e.keyCode === 65 && e.ctrlKey === true) ||
       // Allow: home, end, left, right
       (e.keyCode >= 35 && e.keyCode <= 39)) {
       // let it happen, don't do anything

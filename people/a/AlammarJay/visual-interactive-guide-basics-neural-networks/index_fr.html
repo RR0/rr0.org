@@ -594,24 +594,19 @@
     <table class="form">
       <tr>
         <td><label for="features">Caractéristiques (`x`):</label></td>
-        <td>
-          <button class="btn-number" data-field="quant[1]" data-type="minus" type="button">-</button>
-          <input class="input-number" id="features" name="quant[1]" type="text" value="2"/>
-          <button class="btn-number" data-field="quant[1]" data-type="plus" type="button">+</button>
-        </td>
+        <td><input class="input-number" id="features" max="99" min="1" name="quant[1]" step="1" type="number"
+            value="2"/></td>
       </tr>
       <tr>
         <td><label for="classes">Classes (`y`):</label></td>
-        <td>
-          <button class="btn-number" data-field="quant[2]" data-type="minus" type="button">-</button>
-          <input class="input-number" id="classes" name="quant[2]" type="text" value="2"/>
-          <button class="btn-number" data-field="quant[2]" data-type="plus" type="button">+</button>
+        <td><input class="input-number" id="classes" max="99" min="1" name="quant[2]" step="1" type="number" value="2"/>
         </td>
       </tr>
     </table>
     <div class="nn-graph-area" id="shallow-neural-network-graph"></div>
     <p>Vous trouverez un exemple de comment créer et entraîner ce réseau avec TensorFlow dans <a
-        href="https://github.com/RR0/simpleTensorFlowClassificationExample/blob/master/Exemple%20de%20base%20de%20classification%20avec%20TensorFlow.ipynb">bloc-notes</a>
+        href="https://github.com/RR0/simpleTensorFlowClassificationExample/blob/master/Exemple%20de%20base%20de%20classification%20avec%20TensorFlow.ipynb">ce
+      bloc-notes</a>
       que j'ai créé pour accompagner cet article.</p>
   </section>
   <section>

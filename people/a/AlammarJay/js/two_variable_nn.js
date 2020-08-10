@@ -89,7 +89,7 @@ var multiVariableNeuralNetworkTrainer = function (numberOfInputNodes,
 
     // Update the sliders
     for (var c = 0; c < this.weights.length; c++)
-        $(this.table_el + " .weight" + c + "Slider").val(trainerSelf.weights[c])
+        $(this.table_el + " #weight" + c + "Slider").val(trainerSelf.weights[c])
     $(this.table_el + " #biasSlider").val(trainerSelf.bias);
 };
 
@@ -185,20 +185,19 @@ multiVariableNeuralNetworkTrainer.prototype.updateParameter = function (key, key
     mean_delta_sum = delta_sum / this.prediction.length;
 
 
-    if (updateUI)
+    if (updateUI) {
         this.updateUI(mean_delta_sum);
-
+    }
     return mean_delta_sum;
 };
 
 
 multiVariableNeuralNetworkTrainer.prototype.updateUI = function (mean_delta_sum) {
-
     this.addErrorPoint(mean_delta_sum);
 
     // Update the error/weight/bias indicators
     for (var c = 0; c < this.numberOfInputNodes; c++) {
-        $(this.table_el + " .weight" + c).text(this.weights[c].toLocaleString('fr', {maximumFractionDigits: 3}));
+        $(this.table_el + " #weight" + c).text(this.weights[c].toLocaleString('fr', {maximumFractionDigits: 3}));
     }
     $(this.table_el + " .bias").text(this.bias.toLocaleString('fr', {maximumFractionDigits: 3}));
     $(this.table_el + " .error-value").text(numberWithCommas(Math.round(mean_delta_sum)));
@@ -275,15 +274,14 @@ multiVariableNeuralNetworkTrainer.prototype.initializeNeuralNetworkGraph = funct
       .append("svg")           // append an SVG element to the body
       .attr("width", this.graphWidth)      // make the SVG element 449 pixels wide
       .attr("height", 250);    // make the SVG element 249 pixels high
-    this.neuralNetworkMargin = {top: 10, right: 10, bottom: 10, left: 10},
-      this.neuralNetworkWidth = +this.nnGraphHolder.attr("width") - this.neuralNetworkMargin.left - this.neuralNetworkMargin.right,
-      this.neuralNetworkHeight = +this.nnGraphHolder.attr("height") - this.neuralNetworkMargin.top - this.neuralNetworkMargin.bottom,
-      this.neuralNetworkG = this.nnGraphHolder.append("g");
+    this.neuralNetworkMargin = {top: 10, right: 10, bottom: 10, left: 10};
+    this.neuralNetworkWidth = +this.nnGraphHolder.attr("width") - this.neuralNetworkMargin.left - this.neuralNetworkMargin.right;
+    this.neuralNetworkHeight = +this.nnGraphHolder.attr("height") - this.neuralNetworkMargin.top - this.neuralNetworkMargin.bottom;
+    this.neuralNetworkG = this.nnGraphHolder.append("g");
 
     var nodeRadius = 30,
       biasNodeX = this.neuralNetworkWidth * 2 / 3 - 20,
       biasNodeY = this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2 - nodeRadius;
-
 
     // Arrow #1 - Bias to Output
     // http://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
@@ -335,10 +333,7 @@ multiVariableNeuralNetworkTrainer.prototype.initializeNeuralNetworkGraph = funct
     var weight1GroupX = this.neuralNetworkMargin.left + nodeRadius + this.neuralNetworkWidth / 3 - 10,
       weight1GroupY = (weight1GroupX - this.neuralNetworkMargin.left) * 0.60 - this.neuralNetworkMargin.top;
     this.weightG = this.neuralNetworkG.append("g")
-      .attr("transform", "translate(" +
-        (weight1GroupX)
-        + ","
-        + (weight1GroupY) + ")"); //this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2
+      .attr("transform", "translate(" + (weight1GroupX) + "," + (weight1GroupY) + ")"); //this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2
     this.weightNode = this.weightG
       .append("ellipse")
       .attr("class", "weightNode")
@@ -378,10 +373,7 @@ multiVariableNeuralNetworkTrainer.prototype.initializeNeuralNetworkGraph = funct
       weight2GroupY = this.neuralNetworkMargin.top + this.neuralNetworkHeight + this.neuralNetworkMargin.bottom
         - (weight1GroupX - this.neuralNetworkMargin.left) * 0.60 + 10;
     this.weightG = this.neuralNetworkG.append("g")
-      .attr("transform", "translate(" +
-        (weight2GroupX)
-        + ","
-        + (weight2GroupY) + ")"); //this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2
+      .attr("transform", "translate(" + (weight2GroupX) + "," + (weight2GroupY) + ")"); //this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2
     this.weightNode = this.weightG
       .append("ellipse")
       .attr("class", "weightNode")
@@ -432,7 +424,7 @@ multiVariableNeuralNetworkTrainer.prototype.initializeNeuralNetworkGraph = funct
 
 multiVariableNeuralNetworkTrainer.prototype.updateNeuralNetworkGraph = function () {
     for (var c = 0; c < this.weights.length; c++) {
-        d3.select(this.neuralNetworkGraphEl + " .weight" + c + "Value")
+        d3.select(this.neuralNetworkGraphEl + " #weight" + c + "Value")
           .text(this.weights[c].toLocaleString('fr', {maximumFractionDigits: 3}));
 
     }
@@ -514,7 +506,7 @@ multiVariableNeuralNetworkTrainer.prototype.gradientDescentStep = function (step
 
     // Update the sliders
     for (var c = 0; c < this.weights.length; c++)
-        $(this.table_el + " .weight" + c + "Slider").val(newWeights[c])
+        $(this.table_el + " #weight" + c + "Slider").val(newWeights[c])
     $(this.table_el + " #biasSlider").val(newBias);
 
 

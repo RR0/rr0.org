@@ -419,7 +419,7 @@ td.error-cell {
   border: none;
 }
 
-.prediction table.training-table td {
+.prediction table.training-table td, .neuron-expo td {
   border: none;
 }
 
@@ -1066,7 +1066,6 @@ table.collapsed-style {
 }
 
 .prediction div.neuron-expo .side-column code {
-  font-size: 80%;
   color: #666;
 }
 
@@ -1120,10 +1119,6 @@ table.collapsed-style {
 
 pre {
   padding: 8px;
-}
-
-pre code {
-  font-size: 90%;
 }
 
 .vcenter {

@@ -213,13 +213,11 @@ sigmoidGraph.prototype.updateSigmoidValue = function (containerElement, sliderEl
   // Update graph dot label
   d3.select(this.containerElement + " .sigmoid-value-text")
     .text(sigmoid(inputValue).toFixed(11));
-
-
 };
 
 
 sigmoidGraph.prototype.generateValues = function (xStart, xEnd) {
-  var length = xEnd - xStart, values = [];
+  const values = [];
 
   for (var i = xStart; i <= xEnd; i++) {
     var point = {x: i, y: sigmoid(i)};
@@ -231,11 +229,11 @@ sigmoidGraph.prototype.generateValues = function (xStart, xEnd) {
 
 
 var sigmoid = function (x) {
-  return 1 / (1 + Math.exp(-x))
+  return 1 / (1 + Math.exp(-x));
 };
 
 var sig = new sigmoidGraph("#sigmoid-graph", -20, 20, 0, "#sigmoid-slider", ".sigmoid-input-value",
-  "#sigmoid-formula-input .sigmoid-value-input-number", "#sigmoid-result", ".explicit-activation-output-value");
+  "#MJXc-Node-37", "#sigmoid-result", ".explicit-activation-output-value");
 
 
 //d3.select(window).on('resize', resize);

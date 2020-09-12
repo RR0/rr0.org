@@ -31,17 +31,18 @@
     </li>
     <li>`y` un vecteur de `m` résultats connus</li>
   </ul>
-  <p>Ce type de <a href="/science/discipline/hard/form/math/form/math/stat/regress">régression</a> consiste à déterminer
-    la fonction <strong>hypothèse</strong> `h_Θ(x) = Θ_0 + x_1Θ_1 + x_2Θ_2 + ... + x_nΘ_n` dont les points sont les
-    moins éloignés des valeurs réelles (connues du passé) pour espérer pouvoir en prédire des valeurs futures. Autrement
-    dit déterminer les <strong>paramètres</strong> `Θ_0, Θ_1, ..., Θ_n` qui permettent à la fonction linéaire `h`
-    d'avoir des points ayant une distance/différence minimale avec les points "réels" (connus).</p>
+  <p>Ce type de <a href="/science/discipline/hard/form/math/stat/regress">régression</a> consiste à déterminer la
+    fonction <strong>hypothèse</strong> `h_Θ(x) = Θ_0 + x_1Θ_1 + x_2Θ_2 + ... + x_nΘ_n` dont les points sont les moins
+    éloignés des valeurs réelles (connues du passé) pour espérer pouvoir en prédire des valeurs futures. Autrement dit
+    déterminer les <strong>paramètres</strong> `Θ_0, Θ_1, ..., Θ_n` qui permettent à la fonction linéaire `h` d'avoir
+    des points ayant une distance/différence minimale avec les points "réels" (connus).</p>
   <p>`Θ_0` qui ne dépend pas d'une variable, est une constante appelée <strong>biais</strong> (<i lang="en">bias</i>) ou
     <strong>intersection</strong> (de la fonction avec l'axe des ordonnées en `h_Θ(0)`).</p>
   <p>Les cas les plus courants ne requièrent cependant que 1 (`Θ_0 + xΘ_1`) ou 2 paramètres (`Θ_0 + x_1Θ_1 + x_2Θ_2`).
     S'il est besoin de représenter des fonctions plus complexes (typiquement si la fonction hypothèse ne correspond pas
-    assez aux données ou en cas de <a href="/science/discipline/hard/form/math/form/math/stat/regress/underfit">surapprentissage</a>),
-    on recourra aux <a href="../non-linear">régression non-linéaires</a>.
+    assez aux données ou en cas de <a
+        href="/science/discipline/hard/form/math/stat/regress/underfit">surapprentissage</a>), on recourra aux <a
+        href="../non-linear">régression non-linéaires</a>.
   </p>
 </section>
 <section>
@@ -53,7 +54,7 @@
     <li><strong>itérative</strong> autrement.</li>
   </ul>
   <p>La méthode itérative consiste à fournir à l'algorithme de <a
-      href="/science/discipline/hard/form/math/form/math/stat/regress/gradient">descente de gradient</a> une <a
+      href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> une <a
       href="../cost">fonction de <strong>coût</strong></a> `J(Θ)` permettant de calculer la différence entre `h` et `y`
     suivant de plus ou moins bons paramètres `Θ`.</p>
   <section>
@@ -63,7 +64,7 @@
         cela transformerait le résultat</span>. On annule/compense ensuite la mise au carré <span
           class="note">On parlera ici aussi de "fonction d'erreur carrée" (<i
           lang="en">squared error function</i>)</span> des erreurs en multipliant par 1/2 (ce qui annulera la <a
-          href="/science/discipline/hard/form/math/form/math/ens/rel/func/deriv">dérivée</a> de `x^2` qui est `2x`) :
+          href="/science/discipline/hard/form/math/ens/rel/func/deriv">dérivée</a> de `x^2` qui est `2x`) :
     </p>
     <p>`J(Θ) = 1/(2m) sum_(i=1)^m (h_Θ(x^((i))) - y^((i)))^2`</p>
     <p>ou en version vectorisée (en utilisant le calcul matriciel) :</p>

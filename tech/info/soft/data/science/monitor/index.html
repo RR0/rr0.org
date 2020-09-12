@@ -1,0 +1,47 @@
+<!--#include virtual="/header-start.html" -->
+<title>Surveillance d'un modèle ML</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Monitoring</i> : supervision, surveillance.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>S'assurer que des modèles de ML en production restent équitables, explicables et conformes aux attentes.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>La surveillance d'un modèle peut inclure de vérifier régulièrement :</p>
+  <ul>
+    <li>la bonne santé du modèle, au travers d'indicateurs de :
+      <ul>
+        <li><strong>dérive</strong> des données (<i lang="en">data drift</i>)</li>
+        <li><strong>qualité</strong> du modèle, au travers d'indicateurs comme
+          <ul>
+            <li>sa <strong>précision</strong></li>
+            <li>sa <strong>précision</strong></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>le <strong>traffic</strong> de prédictions</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Dérive</h3>
+    <p>La dérive de données consiste à comparer les <strong>données d'entraînement</strong> aux <strong>données de
+      prédiction</strong>.</p>
+    <p>Elle peut être évaluée à travers de tests de type :</p>
+    <ul>
+      <li>Seuil à ne pas dépasser pour une <a
+          href="https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler">Divergence de Kullback-Leibler</a></li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><abbr title="Domino Model Monitor"><a href="https://www.dominodatalab.com/product/domino-model-monitor">DMM</a></abbr>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -16,7 +16,7 @@
   <p>On veut ici classer des données comme appartenant à une classe ou à une autre : cela implique que `y` (la valeur
     connue ou à prédire) doit avoir des valeurs <strong>discrètes</strong> (i.e. autant de valeurs que de classes
     possibles) et non pas une valeur continue (comme en <a
-        href="/science/discipline/hard/form/math/form/math/stat/regress/linear">régression linéaire</a>).</p>
+        href="/science/discipline/hard/form/math/stat/regress/linear">régression linéaire</a>).</p>
   <p>Cela implique que la fonction hypothèse `h` doit elle aussi prédire un résultat sous forme de valeurs discrètes
     dans l'intervalle correspondant à celles de `y`. Par exemple pour un cas binaire soit `y(x)` appartient à la classe
     "positive" (`y = 1`), soit à la classe "négative" (`y = 0` ou `y = -1` selon les choix techniques).</p>
@@ -38,8 +38,7 @@
     <li>(rarement) une <strong>fonction signe</strong> (<i>signum</i>) s'il s'agit d'une classification binaire, qui
       fait alors correspondre chacune des 2 classes vers -1 ou 1</li>
     <li>(plus généralement) une <a
-        href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid/logistic"><strong>fonction
-      logistique</strong></a>, qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
+        href="/science/discipline/hard/form/math/ens/rel/func/sigmoid/logistic"><strong>fonction logistique</strong></a>, qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
   </ul>
   <p>Soit le vecteur `x` représentant les caractéristiques (<em>features</em>) de éléments à classer, notre fonction :
   </p>
@@ -48,16 +47,16 @@
     valle l'autre classe) :</p>
   <p>`h_θ(x)=g(z)`</p>
   <p>ou, si l'on remplace `g` par sa définition <a
-      href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid/index.html">sigmoïde</a> :</p>
+      href="/science/discipline/hard/form/math/ens/rel/func/sigmoid">sigmoïde</a> :</p>
   <p>`h_θ(x)=1/(1+e^(−z))`</p>
   <section>
     <h3>Coût</h3>
-    <p>Cependant la <a href="/science/discipline/hard/form/math/form/math/ens/rel/func/sigmoid/index.html">fonction
-      sigmoïde</a> ne garantit pas d'être <a
-        href="/science/discipline/hard/form/math/form/math/ens/rel/func/Convexe.html">convexe</a>. On va donc
-      l'encapsuler dans une autre fonction <a
-          href="/science/discipline/hard/form/math/form/math/ens/rel/func/Convexe.html">convexe</a>, le <a
-          href="/science/discipline/hard/form/math/form/math/ens/rel/func/log">`log`</a> :</p>
+    <p>Cependant la <a href="/science/discipline/hard/form/math/ens/rel/func/sigmoid">fonction sigmoïde</a> ne garantit
+      pas d'être <a
+          href="/science/discipline/hard/form/math/ens/rel/func/Convexe.html">convexe</a>. On va donc l'encapsuler dans
+      une autre fonction <a
+          href="/science/discipline/hard/form/math/ens/rel/func/Convexe.html">convexe</a>, le <a
+          href="/science/discipline/hard/form/math/ens/rel/func/log">`log`</a> :</p>
     <table>
       <thead>
       <tr>
@@ -89,9 +88,9 @@
     <p>ou `"cost"(h_θ(x),y)=−[y*log(h_θ(x))+(1−y)log(1−h_θ(x))]` ce qui est en fait très proche de la version <a
         href="../../../../../../../../..">linéaire</a> `(h_Θ(x) - y)^2`</p>
     <p>ou si on l'insère dans la formule complète du <a
-        href="/science/discipline/hard/form/math/form/math/stat/regress/cost">coût</a> en sortant le signe et en y
-      ajoutant le terme de <a
-          href="/science/discipline/hard/form/math/form/math/stat/regress/regul">régularisation</a> :</p>
+        href="/science/discipline/hard/form/math/stat/regress/cost">coût</a> en sortant le signe et en y ajoutant le
+      terme de <a
+          href="/science/discipline/hard/form/math/stat/regress/regul">régularisation</a> :</p>
     <p>`J(Θ) = -1/m sum_(i=1)^m [y^((i)) log(h_θ(x^((i))))+(1−y^((i)))log(1−h_θ(x^((i))))] + λ/(2m) sum_(j=1)^n
       θ_j^2`</p>
   </section>
@@ -138,7 +137,7 @@
       par rapport à l'ensemble des positifs réels :</p>
     <p>`R = "vrais positifs"/("vrais positifs" + "faux négatifs")`</p>
     <p>Ce qui nous permet de définir la métrique de fiabilité :</p>
-    <p>`F_1 = 2(RF)/(R+F)` entre 0 et 1.</p>
+    <p>`F_1 = 2(RP)/(R+P)` entre 0 et 1.</p>
   </section>
 </section>
 <section>

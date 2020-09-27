@@ -1,0 +1,57 @@
+<!--#include virtual="/header-start.html" -->
+<title>Matrice de confusion</title>
+<!--#include virtual="/header-end.html" -->
+<i lang="en">Confusion matrix</i>
+<section>
+  <h2>Motivation</h2>
+  <p>Représenter la fiabilité d'un <abbr title="Système Automatique de Classification">SAC</abbr></p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Classification binaire</h3>
+    <table>
+      <thead>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th colspan="2">Classe réelle</th>
+      </tr>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th>1</th>
+        <th>0</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>Classe prédite</th>
+        <th>1</th>
+        <td class="oui">Vrai positif</td>
+        <td class="non">Faux positif</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>0</th>
+        <td class="non">Faux négatif</td>
+        <td class="oui">Vrai négatif</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Inventée par Kohavi & Provost, 1998.</p>
+  <p>Une matrice de confusion idéale est une matrice diagonale.</p>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

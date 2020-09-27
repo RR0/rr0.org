@@ -1,0 +1,80 @@
+<!--#include virtual="/header-start.html" -->
+<title>HTML Link</title>
+<meta content="http://www.w3.org/MarkUp" name="url">
+<!--#include virtual="/header-end.html" -->
+<dt><dfn>Link</dfn></dt> :
+<dd>lien</dd>.
+<section>
+  <h2>Besoin</h2>
+  <p><a href="..">Décrire</a> un lien inhérent entre le document HTML et d'autres documents.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ul>
+    <li><strong>rel</strong> (relation) : type de lien</li>
+    <li><strong>href</strong> : valeur du lien</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Une balise link doit se placer dans la balise <a href="..">head</a>. Elle doit être de la forme :
+  <pre
+      class="prettyprint"><code class="language-html">&lt;link rel="type de relation" href="valeur du lien"/&gt;</code>
+</pre>
+  </p><p>Parmi les types de liens possibles on trouve :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Type de lien <span class="source">"<a href="http://www.w3.org/TR/html4/types.html#type-links">Link types</a>", HTML4, W3C</span>
+      </th>
+      <th><code>href</code></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code>stylesheet</code></td>
+      <td><a href="/tech/info/soft/proj/design/arch/web/client/CSS.html">Feuille de style</a> du document</td>
+    </tr>
+    <tr>
+      <td><code>prev</code></td>
+      <td>Page précédente du document</td>
+    </tr>
+    <tr>
+      <td><code>next</code></td>
+      <td>Page suivante du document</td>
+    </tr>
+    <tr>
+      <td><code>canonical</code></td>
+      <td>Version la plus typique du document</td>
+    </tr>
+    <tr>
+      <td><code>contents</code></td>
+      <td>Table des matières du document</td>
+    </tr>
+    <tr>
+      <td><code>start</code></td>
+      <td>Premier document</td>
+    </tr>
+    <tr>
+      <td><code>index</code></td>
+      <td>Index du document</td>
+    </tr>
+    <tr>
+      <td><code>help</code></td>
+      <td>Aide sur le document</td>
+    </tr>
+    <tr>
+      <td><code>alternate</code></td>
+      <td>Version alternative (langue, format, etc.) du document</td>
+    </tr>
+    <tr>
+      <td><code>meta</code></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<!--#include virtual="/footer.html" -->

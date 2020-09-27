@@ -1,0 +1,376 @@
+<!--#include virtual="/header-start.html" -->
+<title>Windows</title>
+<meta content="http://www.microsoft.com" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p>"Fenêtres" (<a href="/tech/info/soft/IHM.html">IHM</a> multi-fenêtrée).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un OS graphique pour <a href="/tech/info/hard/computer/PC.html">PC</a> :</p>
+  <ul>
+    <li>avec <a href="/tech/info/soft/GUI.html">GUI</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner" colspan="2" rowspan="3"></td>
+      <th> Version</th>
+      <th>2</th>
+      <th colspan="3">3</th>
+      <th>95</th>
+      <th>98</th>
+      <th>XP</th>
+      <th colspan="4">NT</th>
+      <th>7</th>
+      <th>8</th>
+      <th>Phone</th>
+      <th rowspan="4"> Commentaires</th>
+    </tr>
+    <tr>
+      <th> Release</th>
+      <th></th>
+      <th><a href="http://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes.html">0</a></th>
+      <th colspan="4">1</th>
+      <th></th>
+      <th colspan="2">3</th>
+      <th>4</th>
+      <th>5 (2000)</th>
+      <th colspan="2">6</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th> Fixpack</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Workgroup</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>5</th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th> Couche</th>
+      <th> Technologie</th>
+      <th> Maintenance</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Divers</th>
+      <th></th>
+      <th> Année</th>
+      <td></td>
+      <td>1991</td>
+      <td>1992</td>
+      <td>1992</td>
+      <td>1995</td>
+      <td></td>
+      <td></td>
+      <td>1993</td>
+      <td>1996</td>
+      <td></td>
+      <td>2000</td>
+      <td></td>
+      <td>2012</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2">Multi-utilisateurs</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="9">Oui</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2"> Multitâche</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui" colspan="9">Oui</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th> Bits</th>
+      <td>&lt;32</td>
+      <td colspan="3">&lt;32</td>
+      <td>32</td>
+      <td></td>
+      <td>64</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>64</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="12">Infrastructure composants</th>
+      <th rowspan="5">OLE</th>
+      <th>1.0</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Object Linking and Embedding</em>. Invité pour rendre Office plus souple.</td>
+    </tr>
+    <tr>
+      <th>2.0 (COM)</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Component Object Model</em>. Modèle de composants avec gestion des threads complexe et sans de <em>garbage
+        collection</em>.
+      </td>
+    </tr>
+    <tr>
+      <th>DAO</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Data Access Objects</em>. API d'accès aux bases de données COM. Trop lente pour le <a
+          href="/tech/info/soft/proj/design/arch/ClientServeur.html">C/S</a>.
+      </td>
+    </tr>
+    <tr>
+      <th>RDO</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Remote Data Objects</em>. Wrapper COM au-dessus de <a href="/tech/info/soft/proj/impl/ODBC.html">ODBC</a>.
+      </td>
+    </tr>
+    <tr>
+      <th>OLE DB</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2">ActiveX</th>
+      <th>Contrôle (OCX)</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>OLE Control Extension</em>. Utilisables par des <a
+          href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateurs Web</a>. Faible sécurité (signature
+        de contrôle)
+      </td>
+    </tr>
+    <tr>
+      <th>Document (DocObject)</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Client DocObject (MSIE par exemple) affiche un document d'un serveur DocObject (Word par exemple)</td>
+    </tr>
+    <tr>
+      <th rowspan="2">COM+</th>
+      <th> DCOM</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Distributed COM</em> : Infrastructure de communication entre composants COM de processus différents (RPC)
+      </td>
+    </tr>
+    <tr>
+      <th> MTS</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>Microsoft Transaction Service</em>. Service transactionnel, <em>pooling</em> d'objets, stateless.</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>ADO</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><em>ActiveX Data Objects</em>. Objet COM utilisant des pilotes OLE DB.</td>
+    </tr>
+    <tr>
+      <th>DNA</th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="dotnet/index.html">.Net</a></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Les composants COM peuvent être encapsulés dans des composants .Net, mais pas l'inverse.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Disponible sur PC (<a href="../../../../Intel.html">Intel</a>, ou compatible AMD, etc.) uniquement.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

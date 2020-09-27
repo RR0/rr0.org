@@ -3,40 +3,60 @@
 <title>HTML</title>
 <!--#include virtual="/header-end.html" -->
 <dt><dfn>Hyper-Text Markup Language</dfn></dt> :
-<dd>langage de balises pour l'hypertexte</dd>
-<section title="Besoin">
-  <p>Définir un language standard de description de documents sur le <a
-      href="../../../../proj/design/arch/web/index.html">Web</a>.</p>
+<dd>langage de balises pour l'hypertexte</dd>.
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un language standard de description de documents sur le <a href="../../../proj/design/arch/web">Web</a>.
+  </p>
 </section>
-<section title="Analyse">
-  <p>HTML est un langage simple permettant de décrire :</p>
+<section>
+  <h2>Analyse</h2>
+  <p>HTML est un langage permettant de décrire :</p>
   <ul>
     <li>le <strong>contenu</strong> : les données à présenter</li>
     <li>la <strong>présentation</strong> : comment les données sont affichées (couleurs, fontes, casse, justification,
-      etc.) </li>
+      etc.)</li>
     <li>le <strong>format de saisie</strong> d'informations saisies par le client (formulaires)</li>
   </ul>
 </section>
-<section title="Conception">
-  <p>Un document HTML est une structure hiérarchique (<a href="../DOM.html">DOM</a>) de <strong>balises</strong>(<em>tags</em>),
-    interprétée par un <a href="../../../../proj/design/arch/web/client/index.html">navigateur Web</a>.</p>
-  <p>Parmi ces balises on trouve notamment :</p>
+<section>
+  <h2>Conception</h2>
+  <p>Un document HTML est un document texte <span class="note">encodable en UTF-8, ISO-8859-1 ou autre</span> contenant
+    une structure hiérarchique de <a href="tag"><strong>balises</strong></a> (<em>tags</em>) imbriquées, dont :</p>
   <ul>
-    <li>Un <a href="head">en-tête (<em>head</em>)</a></li>
+    <li>Un <a href="tag/head">en-tête (<em>head</em>)</a></li>
     <li>Un <a href="body">corps (<em>body</em>) de document</a></li>
   </ul>
+  <p>Ces balises peuvent toutefois en référencer d'autres à travers certains de leurs attributs.</p>
+  <p>Cette structure est interprétée par un <a href="../../../proj/design/arch/web/client">navigateur Web</a> pour en
+    constituer un <a href="../dom">DOM</a>.</p>
 </section>
-<section title="Exemples">
+<section>
+  <h2>Implémentation</h2>
+</section>
+<section>
+  <h2>Exemples</h2>
   <p>Un exemple de document HTML est :</p>
   <blockquote>
-    <pre class="prettyprint"><code class="language-html">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Ma page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;Texte de la page &lt;strong&gt;en gras&lt;/strong&gt; avec un &lt;em&gt;&lt;a href="Lien.html"&gt;lien en italique&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt; &lt;body&gt; &lt;/html&gt;</code></pre>
+    <pre class="prettyprint"><code class="language-html">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Ma page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Texte de la page &lt;strong&gt;en gras&lt;/strong&gt; avec un &lt;em&gt;&lt;a href="Lien.html"&gt;lien
+      en italique&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+  &lt;body&gt;
+&lt;/html&gt;</code></pre>
   </blockquote>
 </section>
-<section title="Implémentation">
-  <table border="1" cellspacing="0" cellpadding="5">
+<section>
+  <h2>Implémentation</h2>
+  <table>
     <tr>
       <td colspan="2" rowspan="3" class="titleCorner"></td>
-      <th colspan="2" valign="top"> Version</th>
+      <th colspan="2">Version</th>
       <th>2</th>
       <th>3</th>
       <th>4</th>
@@ -117,7 +137,7 @@
     <tr>
       <th valign="top">Méta-données</th>
       <td colspan="4" class="oui"><code>meta http-equiv="<em>clé</em>" content="<em>valeur</em>" </code></td>
-      <td>Equivalent en-tête <a href="../../../../proj/design/arch/web/HTTP.html">HTTP</a> <em>clé</em></td>
+      <td>Equivalent en-tête <a href="../../../proj/design/arch/web/HTTP.html">HTTP</a> <em>clé</em></td>
     </tr>
     <tr>
       <th rowspan="6" valign="top">Corps</th>
@@ -903,7 +923,7 @@
     <li>créé à l'origine par le <a href="/tech/info/CERN.html">CERN</a> pour l'échange de documents entre scientifiques.
     </li>
     <li>L'affichage des balises peut être contrôlé via <a
-        href="../../../../proj/design/arch/web/client/CSS.html">CSS</a>.</li>
+        href="../../../proj/design/arch/web/client/CSS.html">CSS</a>.</li>
   </ul>
 </section>
 <section>
@@ -915,7 +935,6 @@
 </section>
 <section>
   <h2>Notes</h2>
-
   <p>Créé en 1996</p>
 </section>
 <section>

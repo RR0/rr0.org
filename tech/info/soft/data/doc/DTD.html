@@ -1,0 +1,303 @@
+<!--#include virtual="/header-start.html" -->
+<title>DTD</title>
+<meta content="http://www.w3.org/TR/2000/REC-xml-20001006#dt-doctype" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Document Type Definition</i> : définition de type de document.</p>
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Définir la structure de documents</li>
+    <li>Valider qu'un document est conforme à une structure</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Les DTD spécifient les grammaires de documents <a href="sgml">SGML</a>. Cela inclut des grammaires sous-ensembles
+    de SGML comme <a href="xml">XML</a> ou <a href="html">HTML</a>.</p>
+  <table>
+    <tr>
+      <td colspan="2" rowspan="2">DTD</td>
+      <th>Version</th>
+      <th></th>
+      <th rowspan="3">Exemple DTD</th>
+      <th rowspan="3">Exemple XML</th>
+      <th rowspan="3">Commentaire</th>
+    </tr>
+    <tr>
+      <th> Release</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th> Technologie</th>
+      <th> Technologie</th>
+      <th>FixPack</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th rowspan="8">Elément</th>
+      <th colspan="2">Vide</th>
+      <td><code>EMPTY</code></td>
+      <td><code>&lt;!ELEMENT br EMPTY&gt;</code></td>
+      <td><code>&lt;br/&gt;</code></td>
+      <td>Sans contenu.</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Texte</th>
+      <th>A interpréter</th>
+      <td><code>#PCDATA</code></td>
+      <td><code><strong>&lt;!ELEMENT</strong> description <strong>(#PCDATA)&gt;</strong></code></td>
+      <td><code>&lt;description&gt;<br> Ce cas est arriv&amp;eacute; le &lt;date year="2003"/&gt;.<br>
+        &lt;/description&gt;</code></td>
+      <td><em>Parseable Character DATA. </em>Les balises dans le texte seront traitées et les entités seront développées
+      </td>
+    </tr>
+    <tr>
+      <th>A ne pas interpréter</th>
+      <td><code>#CDATA</code></td>
+      <td><code><strong>&lt;!ELEMENT</strong> identifiant <strong>(#CDATA)&gt;</strong></code></td>
+      <td><code>&lt;identifiant&gt;<br> AB52<br>
+        &lt;/identifiant&gt;</code></td>
+      <td><em>Character DATA</em>. Les balises dans le texte ne seront pas traitées et les entités ne seront pas
+        développées
+      </td>
+    </tr>
+    <tr>
+      <th>Séquence</th>
+      <th></th>
+      <td><code>(element1, element2, element3)</code></td>
+      <td><code>&lt;!<strong>ELEMENT</strong> voiture (marque,modele)&gt;</code></td>
+      <td><code>&lt;voiture&gt;<br>
+        &lt;marque&gt;<br> Peugeot<br>
+        &lt;/marque&gt;<br>
+        &lt;modele&gt;<br> 307<br>
+        &lt;/modele&gt;<br>
+        &lt;/voiture&gt;</code></td>
+      <td>L'ordre est imposé.</td>
+    </tr>
+    <tr>
+      <th>Liste</th>
+      <th></th>
+      <td><code>(element1+)</code></td>
+      <td><code>&lt;!<strong>ELEMENT</strong> liste (objet+)&gt;</code></td>
+      <td><code>&lt;liste&gt;<br>
+        &lt;objet&gt;<br> Objet 1<br>
+        &lt;/objet&gt;<br>
+        &lt;objet&gt;<br> Objet 2<br>
+        &lt;/objet&gt;<br>
+        &lt;/liste&gt;</code></td>
+      <td>Au moins 1 élément</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Optionnel</th>
+      <th>Unique</th>
+      <td><code>(element1?)</code></td>
+      <td><code>&lt;!<strong>ELEMENT</strong> prenoms (prenom,prenom?)&gt;</code></td>
+      <td><code>&lt;prenoms&gt;<br>
+        &lt;prenom&gt;<br> Jerome &lt;/prenom&gt;<br>
+        &lt;prenom&gt;<br> Pierre<br>
+        &lt;/prenom&gt; <br>
+        &lt;/temoignage&gt;</code></td>
+      <td>0 ou 1 élément</td>
+    </tr>
+    <tr>
+      <th>Multiple</th>
+      <td><code>(element1*)</code></td>
+      <td><code>&lt;!<strong>ELEMENT</strong> enfants (enfant*)&gt;</code></td>
+      <td><code>&lt;enfants&gt;<br>
+        &lt;enfant&gt;<br> Jerome &lt;/enfant&gt;<br>
+        &lt;enfant&gt;<br> Jean-Pierre<br>
+        &lt;/enfant&gt; <br>
+        &lt;/enfants&gt;</code></td>
+      <td>0 ou n éléments</td>
+    </tr>
+    <tr>
+      <th>Unique</th>
+      <th></th>
+      <td><code>(element1)</code></td>
+      <td><code>&lt;!<strong>ELEMENT</strong> temoignage (description)&gt;</code></td>
+      <td><code>&lt;temoignage&gt;<br>
+        &lt;description&gt;<br> Il &amp;eacute;tait une fois... &lt;/description&gt;<br>
+        &lt;/temoignage&gt;</code></td>
+      <td>1 et 1 seul obligatoire</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Entités</th>
+      <th rowspan="5">Prédéfinies</th>
+      <th>&lt;</th>
+      <td><code>&amp;lt;</code></td>
+      <td></td>
+      <td><code>&lt;expression&gt;<br> 1 <strong>&amp;lt;</strong> 2<br>
+        &lt;/expression&gt;</code></td>
+      <td><em>Lower Than </em>: inférieur à.</td>
+    </tr>
+    <tr>
+      <th>&gt;</th>
+      <td><code>&amp;gt;</code></td>
+      <td><code></code></td>
+      <td><code>&lt;expression&gt;<br> 2 <strong>&amp;gt;</strong> 1<br>
+        &lt;/expression&gt;</code></td>
+      <td><em>Greather Than </em>: supérieur à.</td>
+    </tr>
+    <tr>
+      <th>&amp;</th>
+      <td><code>&amp;amp;</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td><em>Ampersand</em> : perluète</td>
+    </tr>
+    <tr>
+      <th>"</th>
+      <td><code>&amp;quot;</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td><em>Quote </em>: guillemet</td>
+    </tr>
+    <tr>
+      <th>'</th>
+      <td><code>&amp;apos;</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td><em>Apostroph </em>: apostrophe.</td>
+    </tr>
+    <tr>
+      <th rowspan="15">Attribut</th>
+      <th rowspan="11">Type</th>
+      <th>Texte</th>
+      <td><code><strong>CDATA</strong></code></td>
+      <td><code>&lt;!<strong>ATTLIST</strong> event startDate <strong>CDATA</strong> "inconnue"&gt;</code></td>
+      <td><code>&lt;event startDate="12/08/1972"/&gt;</code></td>
+      <td><em>Character DATA</em></td>
+    </tr>
+    <tr>
+      <th>Enuméré</th>
+      <td><code><em>el1</em><strong>|</strong><em>el2</em><strong>|</strong><em>el3</em></code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Identifiant</th>
+      <td><code>ID</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Référence à un autreidentifiant</th>
+      <td><code>IDREF</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Références à d'autres identifiants</th>
+      <td><code>IDREFS</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Nom XML</th>
+      <td><code>NMTOKEN</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td><em>NaMe TOKEN </em></td>
+    </tr>
+    <tr>
+      <th>Noms XML</th>
+      <td><code>NMTOKENS</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td><em>NaME TOKENS</em></td>
+    </tr>
+    <tr>
+      <th>Entité</th>
+      <td><code>ENTITY</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Entités</th>
+      <td><code>ENTITIES</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Notation</th>
+      <td><code>NOTATION</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Valeur XML prédéfinie</th>
+      <td><code>xml:</code></td>
+      <td><code></code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="4">Valeur</th>
+      <th>Par défaut</th>
+      <td></td>
+      <td><code>&lt;!ATTLIST event startDate CDATA <strong>"inconnue"</strong>&gt;</code></td>
+      <td><code>&lt;event startDate="12/08/1972"&gt;</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Obligatoire</th>
+      <td><code>#REQUIRED</code></td>
+      <td><code>&lt;!<strong>ATTLIST</strong> event author <strong>CDATA #REQUIRED</strong>&gt;</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Déductible</th>
+      <td><code>#IMPLIED</code></td>
+      <td><code>&lt;!<strong>ATTLIST</strong> event parent <strong>CDATA #IMPLIED</strong>&gt;</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Constante</th>
+      <td><code>#FIXED <em>valeur</em></code></td>
+      <td><code>&lt;!<strong>ATTLIST</strong> event version <strong>CDATA #FIXED </strong>"1.0"&gt;</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de DTD est :</p>
+  <blockquote><code><strong>&lt;!DOCTYPE </strong>librairie <strong>[</strong><br> <strong>&lt;!ELEMENT </strong>librairie
+    <strong>(</strong>sujet<strong>+)&gt;</strong><br> <strong>&lt;!ELEMENT </strong>sujet <strong>(</strong>nom<strong>,</strong>livre<strong>*)&gt;</strong><br>
+    <strong>&lt;!ELEMENT </strong>nom <strong>(#PCDATA)&gt;</strong><br> <strong>&lt;!ELEMENT</strong> livre
+    <strong>(</strong>titre<strong>,</strong>auteur<strong>)&gt;</strong><br> <strong>&lt;!ELEMENT </strong>titre
+    <strong>(#CDATA)&gt;</strong><br> <strong>&lt;!ELEMENT </strong>auteur <strong>(#CDATA)&gt;<br>
+      &lt;!ELEMENT </strong>isbn <strong>(#PCDATA)&gt;<br>
+      &lt;!ATTLIST</strong> livre isbn <strong>CDATA "</strong>0<strong>"&gt;<br> ]&gt;</strong></code></blockquote>
+  <p> Il existe aujourd'hui des outils capables de générer l'éditeur de documents correspondant à une DTD donnée,
+    comme </p>
+  <ul>
+    <li>IBM <a href="http://www.alphaWorks.ibm.com/tech/xmleditormaker">XML EditorMaker</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Non XML</li>
+    <li>Typage des données limité (texte uniquement via CDATA ou PCDATA), obligeant à implémenter des vérifications
+      supplémentaires le cas échéant.</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Préférer les <a href="xml/XMLSchema.html">Schemas XML</a> pour les grammaires de documents <a href="xml">XML</a>.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

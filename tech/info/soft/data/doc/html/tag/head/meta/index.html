@@ -1,0 +1,59 @@
+<!--#include virtual="/header-start.html" -->
+<title>HTML Meta</title>
+<meta content="http://www.w3.org/MarkUp" name="url">
+<!--#include virtual="/header-end.html" -->
+<dt><dfn>Metadata</dfn></dt> :
+<dd>Meta-données</dd>.
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir des informations supplémentaires à la <a href="..">description d'un document HTML</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ul>
+    <li><strong>name</strong> : nom d'une propriété meta</li>
+    <li><strong>charset</strong> : jeu de caractères</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Une balise meta doit se placer dans la balise <a href="..">head</a>. Elle doit être de la forme :
+  <pre
+      class="prettyprint"><code
+      class="language-html">&lt;meta name="nom propriété" content="valeur propriété"/&gt;</code>
+</pre>
+  </p>
+  <section>
+    <h3>Propriétés meta</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Contenu</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>description</code></td>
+        <td>Description du contenu du document</td>
+      </tr>
+      <tr>
+        <td><code>keywords</code></td>
+        <td>Mots-clés relatifs au document</td>
+      </tr>
+      <tr>
+        <td><code>author</code></td>
+        <td>Auteur du document</td>
+      </tr>
+      <tr>
+        <td><code><a href="viewport">viewport</a></code></td>
+        <td>Fenêtre de visualisation</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->

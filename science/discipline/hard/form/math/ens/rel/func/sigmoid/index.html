@@ -4,13 +4,16 @@
     src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
 <!--#include virtual="/header-end.html" -->
+<p>Fonctions ayant une forme de "S".</p>
 <section>
   <h2>Motivation</h2>
   <p>Convertir un signal continu en valeur binaire.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Une sigmoïde est une fonction monotone à asymptotes horizontales, ce qui lui donne sa forme de "<i>S</i>"</p>
+  <p>Une sigmoïde est une <a href="/science/discipline/hard/form/math/ens/rel/func/logistic">fonction logistique</a>
+    dont un paramètre strictement positif en fait une fonction monotone à asymptotes horizontales, ce qui lui donne sa
+    forme de "<i>S</i>" caractéristique.</p>
 </section>
 <section>
   <h2>Exemple</h2>
@@ -30,9 +33,10 @@
       <td>
         <div id="Gompertz"></div>
       </td>
-      <td>Utilisée pour modéliser certaines séries temporelles, dont la croissance est lente au départ et d'arrête
-        à un moment. Employée pour décrire une population dans un espace confiné, dont la reproduction augmente au
-        début puis ralentit aue fois que les ressources à disposition deviennent rares.</td>
+      <td>Utilisée pour modéliser certaines séries temporelles, dont la croissance est lente au départ et d'arrête à un
+        moment. Employée pour décrire une population dans un espace confiné, dont la reproduction augmente au début puis
+        ralentit aue fois que les ressources à disposition deviennent rares.
+      </td>
     </tr>
     <tr>
       <td>Tangente hyperbolique</td>
@@ -40,8 +44,9 @@
       <td>
         <div id="tanh"></div>
       </td>
-      <td>À la base une fonction complexe, on s'intéresse ici à sa restriction à R qui est une bijection
-        strictement croissante de R dans [-1,1]</td>
+      <td>À la base une fonction complexe, on s'intéresse ici à sa restriction à R qui est une bijection strictement
+        croissante de R dans [-1,1]
+      </td>
     </tr>
     <tr>
       <td>Fonction de répartition de la loi normale centrée réduite</td>
@@ -57,8 +62,8 @@
       <td>
         <div id="logistic"></div>
       </td>
-      <td>Ressemble beaucoup à une loi normale, mais représente un plus grand
-        kurtosis<span class="note">Indicateur qui mesure le coefficient d'applatissement d'une distribution</span></td>
+      <td>Ressemble beaucoup à une loi normale, mais représente un plus grand kurtosis<span class="note">Indicateur qui mesure le coefficient d'applatissement d'une distribution</span>
+      </td>
     </tr>
     </tbody>
   </table>
@@ -74,7 +79,7 @@ td:nth-child(3) div {
 }
 </style>
 <script>
-  var i = 3 ;
+  var i = 3;
   var Gompertz = JXG.JSXGraph.initBoard('Gompertz', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
@@ -90,7 +95,7 @@ td:nth-child(3) div {
     showCopyright: false
   });
   tanh.create('functiongraph', [function (x) {
-    return (Math.exp(x) - Math.exp(-x))/(Math.exp(x) + Math.exp(-x));
+    return (Math.exp(x) - Math.exp(-x)) / (Math.exp(x) + Math.exp(-x));
   }, -i, i]);
   var logistic = JXG.JSXGraph.initBoard('logistic', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,

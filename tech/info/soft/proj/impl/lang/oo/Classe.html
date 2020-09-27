@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Classe</title>
 <!--#include virtual="/header-end.html" -->
-<p><em>Class</em> : Classe d'objet.</p>
+<p><i lang="en">Class</i> : Classe d'<a href="Objet.html">objet</a>.</p>
 <section>
   <h2>Besoin</h2>
   <p>Définir un <strong>modèle</strong> commun pour un ensemble d'<a href="Objet.html">objets</a>.
@@ -11,9 +11,9 @@
   <h2>Analyse</h2>
   <p>Une classe d'objet définit :</p>
   <ul>
-    <li>la structure de son <strong>état</strong></li>
-    <li> son comportement, c'est-à-dire les <strong>messages </strong>qu'on peut lui envoyer et comment il va y
-      répondre.
+    <li>la structure de son <strong>état</strong> (<i lang="en">state</i>)</li>
+    <li>son <strong>comportement</strong> (<i lang="en">behavior</i>), c'est-à-dire les <em>messages</em> qu'on peut lui
+      envoyer et comment il va y répondre.
     </li>
   </ul>
   <p>De tels attributs ou méthodes membres d'une classes peuvent être rendus plus ou moins accessibles (publics,
@@ -29,11 +29,13 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Les membres d'un classe d'objet définit ses <strong>membres</strong> :</p>
+  <p>Une classe d'objet définit ses <strong>membres</strong> :</p>
   <ul>
-    <li>le nom et le type et la visibilité de ses <strong>attributs</strong></li>
-    <li>le nom, le type, la visibilité et les paramètres de ses <strong>méthodes</strong></li>
+    <li>les <strong>attributs</strong> qui constituent sont état </li>
+    <li>ses <strong>méthodes</strong>, qui implémentent son comportement</li>
   </ul>
+  <p>Chaque membre est caractérisé par un un nom, un type et une <strong>visibilité</strong> (privé, protégé, public).
+  </p>
 </section>
 <section>
   <h2>Implémentation</h2>
@@ -70,11 +72,14 @@
     <li>En Java les tableaux sont considérés comme des classes. Leurs noms s'affichent alors en fonction du type de
       leurs éléments, comme suit (pour un tableau de profondeur 1, le nombre de [ se multipliant si cette profondeur
       augmente) :
-      <table border="1" cellspacing="0" cellpadding="5">
+      <table>
+        <thead>
         <tr>
           <th>Type d'élément</th>
           <th>Nom affiché de la classe de tableau</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td><code>boolean</code></td>
           <td><code>[Z</code></td>
@@ -111,13 +116,13 @@
           <td><code>short</code></td>
           <td><code>[S</code></td>
         </tr>
+        </tbody>
       </table>
     </li>
   </ul>
 </section>
 <section>
   <h2>Limitations</h2>
-
   <p>Une classe :</p>
   <ul>
     <li>ne peut changer de structure à l'exécution</li>
@@ -132,14 +137,18 @@
 </section>
 <section>
   <h2>Exemples</h2>
-
   <p>Des exemples de classes d'objet sont :</p>
   <ul>
-    <li> Voiture</li>
+    <li>Voiture</li>
     <li>Avion</li>
     <li>Personne</li>
     <li>Facture</li>
     <li>Idée</li>
   </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p><q>Record classes</q> inventées par C. A. R. Hoare en <time>1965</time> <span
+      class="source">Hoare, C. A. R.: "Record Handling", 1965</span></p>
 </section>
 <!--#include virtual="/footer.html" -->

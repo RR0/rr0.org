@@ -1,0 +1,42 @@
+<!--#include virtual="/header-start.html" -->
+<title>Rappel</title>
+<!--#include virtual="/header-end.html" -->
+<i lang="en">Recall</i> : "rapatriement", récupération (des bonnes réponses).
+<section>
+  <h2>Motivation</h2>
+  <p>Diagnostiquer la capacité à trouver les bonnes réponses.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le rappel représente la capacité à éviter les <strong>erreurs de type 2</strong> que sont les <strong>faux
+    négatifs</strong>. Il représente donc la capacité à être exhaustif dans les bonnes réponses. C'est donc est la
+    proportion de bonnes réponses fournies dans l'ensemble des bonnes réponses possibles.</p>
+  <p>C'est-à-dire la proportion de prédictions <em>correctes</em> (vrais positifs) par rapport à l'ensemble des positifs
+    <em>réels</em> (vrais positifs et faux négatifs).</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>`R = "vrais positifs"/("vrais positifs" + "faux négatifs")`</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Dans un système de classification de pourriels (<i lang="en">spam mail</i>), le rappel représenterait le nombre
+      d'emails <em>réels</em> identifiés correctement.</li>
+    <li>Dans un système de recherche de documents, il s'agirait de la proportion de documents corrects sur le total des
+      documents pertinents pour cette recherches. Par exemple si une recherche retourne 60 documents sur 100
+      disponibles, et que seuls 50 sont réellement pertinents, le rappel sera de `100/50 = 2 = 0,5`, soit 50% <span
+          class="source">Lemire, Daniel: "<a href="https://spip.teluq.ca/inf6460/spip.php?article98">Précision
+        et rappel</a>", INF 6460</span>. Si seuls 6 documents avaient été retournés corrects sont retournés sur 12
+      potentiellement corrects le rappel aurait été de `6/12 = 0,5` soit 50% également.</li>
+    <li>Il est facile de fournir un système avec un rappel de 100 % : il suffit de retourner le total des réponses
+      possibles pour être sûr de ne pas en manquer une. Mais la <a href="../precision">précision</a> en sera très
+      mauvaise (à moins que par chance la requête ait réellement visé tous les réponses possibles).</li>
+    <li>Le rappel est utilisé dans le calcul du score de fiabilité <a href="../f1">F1</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

@@ -1,0 +1,37 @@
+<!--#include virtual="/header-start.html" -->
+<title>Score F1</title>
+<!--#include virtual="/header-end.html" -->
+<i lang="en">F1</i>
+<section>
+  <h2>Motivation</h2>
+  <p>Évaluer la fiabilité d'un <abbr title="Système Automatique de Classification">SAC</abbr></p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <figure class="right side">
+    <figcaption>Exemple de <a href="../precision">précision</a> nuisant au <a
+        href="../recall">rappel</a>, et <i lang="lat">vice versa</i> <span class="source">Lemire, Daniel: "<a
+        href="https://spip.teluq.ca/inf6460/spip.php?article98">Précision et rappel</a>", INF 6460</span></figcaption>
+    <img alt="Exemple de précision nuisant au rappel, et vice versa" src="../pr.png">
+  </figure>
+  <p>Afin de représenter la globalité des indicateurs de <a href="../precision">précision</a> et <a
+      href="../recall">rappel</a>, on calcule leur <strong>moyenne harmonique</strong>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Soit P la <a href="../precision">précision</a> et R le <a href="../recall">rappel</a>. Leurs valeurs étant toujours
+    positives, on peut calculer leur moyenne harmonique comme :</p>
+  <p>`F_1 = 2(RP)/(R+P)` entre 0 et 1.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Pour trouver le meilleur compromis entre <a href="../precision">précision</a> et <a href="../recall">rappel </a>,
+      on cherchera à maximiser leur F1.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

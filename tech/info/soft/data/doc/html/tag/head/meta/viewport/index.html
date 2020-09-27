@@ -1,0 +1,96 @@
+<!--#include virtual="/header-start.html" -->
+<title>HTML Meta viewport</title>
+<meta content="http://www.w3.org/MarkUp" name="url">
+<!--#include virtual="/header-end.html" -->
+<dt><dfn>Viewport</dfn></dt> :
+<dd>Fenêtre de visualisation</dd>.
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir des <a href="..">metadonnées</a> relative à la fenêtre de visualisation d'une page web.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>La métadonnée viewport acceptant elle-même divers paramétrages, elle décompose propose d'inclure une série de
+    clés/valeurs dans sa propre valeur.</p>
+  <ul>
+    <li><strong>clé</strong> : nom d'une propriété viewport</li>
+    <li><strong>valeur</strong> : valeur de la propriété</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Une directive viewport est une balise meta dont la clé vaut <q>viewport</q> et la valeur une série de clés-valeurs
+    :
+  <pre
+      class="prettyprint"><code
+      class="language-html">&lt;meta name="viewport" content="clé1=valeur1,clé2=valeur2"/&gt;</code>
+</pre>
+  </p>
+  <section>
+    <h3>Clés/valeurs viewport</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Clé</th>
+        <th>Valeur</th>
+        <th>Commentaire</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>width</code></td>
+        <td><code>device-width</code></td>
+        <td>Largeur du document = largeur de l'appareil (en pixels <a
+            href="/tech/info/soft/proj/design/arch/web/client/css">CSS</a>)
+        </td>
+      </tr>
+      <tr>
+        <td><code>height</code></td>
+        <td><code>device-height</code></td>
+        <td>Hauteur du document = hauteur de l'appareil (en pixels <a
+            href="/tech/info/soft/proj/design/arch/web/client/css">CSS</a>)
+        </td>
+      </tr>
+      <tr>
+        <td><code>initial-scale</code></td>
+        <td><code>1.0</code></td>
+        <td>Niveau de zoom initial</td>
+      </tr>
+      <tr>
+        <td><code>minimum-scale</code></td>
+        <td><code>0.5</code></td>
+        <td>Niveau de zoom minimum</td>
+      </tr>
+      <tr>
+        <td><code>maximum-scale</code></td>
+        <td><code>3.0</code></td>
+        <td>Niveau de zoom maximum <span class="note">Fixer un tel maximum n'est pas recommandé car cela peut
+          empêcher la lecture par des personnes ayant des déficiences visuelles</span>.
+        </td>
+      </tr>
+      <tr>
+        <td><code>user-scalable</code></td>
+        <td><code>no</code></td>
+        <td>Interdire le zoom <span class="note">Fixer une telle valeur n'est pas recommandé car
+          cela peut empêcher la lecture par des personnes ayant des déficiences visuelles</span>.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <h3>Page web compatible mobile</h3>
+  <p>S'assurer qu'une page web ne sera pas dézoomée sur des appareils à l'écran trop petit : :
+  <pre
+      class="prettyprint"><code
+      class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</code>
+</pre>
+  </p>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -16,12 +16,13 @@
   <p>À l'image des <a href="/science/discipline/hard/nat/vie/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un
     neurone artificiel possède :</p>
   <ul>
-    <li>des entrées :
+    <li>des <strong>entrées</strong> :
       <ul>
         <li>`x_0 = 1`, l'unité de biais</li>
         <li>`x_1, x_2, ..., x_n`</li>
       </ul>
-    <li>une sortie calculée par la fonction de prédiction `h_Θ(x)` où Θ est une série de paramètres (ou "poids")</li>
+    <li>une <strong>sortie</strong> calculée par la fonction de prédiction `h_Θ(x)` où Θ est une série de paramètres (ou
+      "poids")</li>
   </ul>
   <section>
     <h3>Réseau</h3>
@@ -65,7 +66,7 @@
   <p>On parlera donc plus généralement de `h_Θ(x)_k` comme étant le `k`<sup>ième</sup> résultat dans la couche de sortie
     .</p>
   <p>Comme pour d'autres algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a>, avant de prédire, le réseau
-    doit être "entraîné" (<i lang="en">trained </i>) en 2 phases à répéter jusqu'à convergence :</p>
+    doit être "entraîné" (<i lang="en">trained</i>) en 2 phases à répéter jusqu'à convergence :</p>
   <ul>
     <li>pour chaque ligne de données (`i` de 1 à `m`)
       <ol>
@@ -73,6 +74,30 @@
         <li><strong><a href="back">Rétro-propagation</a></strong> si besoin, pour mise à jour des paramètres en
           conséquence.</li>
       </ol>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de RN sont :</p>
+  <ul>
+    <li>les <strong><abbr title="Feed-Forward Neural Network">FNN</abbr></strong> : RN à <a href="forward">propagation
+      avant</a> uniquement (<em>perceptrons</em>). Il peuvent être :
+      <ul>
+        <li>mono-couche (perceptron simple) pour classifier linéairement (2 classes de sorties possible
+          uniquement).</li>
+        <li>multi-couches ou "<a href="deep">profonds</a>" (<abbr title="Deep Neural Network">DNN</abbr>). Ces réseaux
+          peuvent eux-mêmes connectés :
+          <ul>
+            <li><strong>pleinement</strong>, ce qui a l'inconvénient d'être prompt à l'<a
+                href="/science/discipline/hard/form/math/stat/regress/overfit">overfitting</a></li>
+            <li><strong>hiérarchiquement</strong> (<abbr title="Convolutional Neural Network">CNN</abbr> ou CovNet) avec
+              une couche de <a
+                  href="https://openclassrooms.com/fr/courses/4500266-analysez-les-signaux-1d/4507446-quest-ce-quune-convolution">convolution</a>
+              (et une couche de pooling) qui permettent de se concentrer sur les éléments les plus significatifs.</li>
+          </ul>
+        </li>
+      </ul>
     </li>
   </ul>
 </section>

@@ -1,0 +1,90 @@
+<!--#include virtual="/header-start.html" -->
+<meta content="http://www.w3.org/MarkUp" name="url">
+<title>Balise HTML</title>
+<!--#include virtual="/header-end.html" -->
+<dt><dfn>HTML tag</dfn></dt> :
+<dd>balise <a href="..">HTML</a></dd>.
+<section>
+  <h2>Besoin</h2>
+  <p>Représenter un aspect d'un document <a href="..">HTML</a> ou <a href="../../xml">XML</a>.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une balise permet de délimiter une interprétation donnée sur un contenu.</p>
+  <p>Un attribut de balise permet de paramétrer l'effet de celle-ci.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Une balise est constituée de :</p>
+  <ul>
+    <li>un <b>nom</b></li>
+    <li>de 0 à n <b>attributs</b></li>
+  </ul>
+  <p>Les balises possibles sont régies par une <strong>grammaire</strong>, <a href="custom">extensible</a> ou non.</p>
+  <section>
+    <h3>Attributs</h3>
+    <p>Chaque attribut est représenté par :</p>
+    <ul>
+      <li>un <b>nom</b></li>
+      <li>une <b>valeur</b> sous forme de texte entre guillemets (pas le choix dans un document texte) qui pourra par la
+        suite être interprétée différemment (sous forme de nombre, JSON, etc.)</li>
+    </ul>
+    <p>Certains attributs réservés sont utilisables sur toutes les balises :</p>
+    <ul>
+      <li><b><code>id</code></b> : identifiant unique de la balise dans le document (un même <code>id</code> ne doit
+        donc jamais être répété).</li>
+      <li><b><code>class</code></b> pour spécifier quelle(s) classe(s) <a
+          href="tech/info/soft/proj/design/arch/web/client/CSS.html">CSS</a> doivent gouverner l'affichage de ce contenu
+      </li>
+      <li><b><code>style</code></b> pour spécifier une apparence de la balise (en <a
+          href="tech/info/soft/proj/design/arch/web/client/CSS.html">CSS</a>) qui supplante les règles CSS appliquées au
+        niveau document.</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Une balise est de la forme
+  <pre class="prettyprint"><code class="language-html">
+&lt;nom-balise premier-attribut="valeur1" deuxieme-attribut="valeur2"&gt;contenu balise&lt;/nom-balise&gt;</code>
+</pre>
+  </p><p>Les grammaires définissant les balises et attributs possibles (et les balises dans ces balises, etc.) peuvent
+  être définies sous forme de :</p>
+  <ul>
+    <li><abbr title="Document Type Definition"><b>DTD</b></abbr></li>
+    <li><b>Schema XML</b> si le document est compatible <a href="../../xml">XML</a></li>
+  </ul>
+  <p>Dans la grammaire HTML, des balises HTML possibles sont :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Balise</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><a href="head"><code>head</code></a></td>
+      <td>En-tête du document</td>
+    </tr>
+    <tr>
+      <td><a href="body"><code>body</code></a></td>
+      <td>Corps du document</td>
+    </tr>
+    <tr>
+      <td><a href="template"><code>template</code></a></td>
+      <td>Modèle de structure</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de balise est :</p>
+  <blockquote>
+    <pre
+        class="prettyprint"><code class="language-html">&lt;p id="p1" style="color: green"&gt;paragraphe de texte&lt;/p&gt;</code></pre>
+  </blockquote>
+</section>
+<!--#include virtual="/footer.html" -->

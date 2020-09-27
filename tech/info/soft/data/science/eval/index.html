@@ -3,7 +3,8 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Motivation</h2>
-  <p>Évaluer les résultats d'un modèle de <a href="..">data science</a> pour :</p>
+  <p>Évaluer les résultats d'un <a href="/tech/info/soft/data/science/ml">modèle d'apprentissage automatisé</a> pour :
+  </p>
   <ul>
     <li>Optimiser son paramétrage, ou le cas échéant :</li>
     <li>changer de modèle</li>
@@ -11,8 +12,25 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Il peut bien sûr arriver qu'un algorithme d'apprentissage ne donne pas les résultats escomptés. On pourra alors
-    opter pour différentes stratégies pour essayer de l'améliorer</p>
+  <p>Il peut bien sûr arriver qu'un algorithme d'apprentissage ne donne pas les résultats escomptés.</p>
+  <section>
+    <h3>Diagnostic</h3>
+    <p>En fonction du type de modèle on pourra mener des tests différents :</p>
+    <ul>
+      <li><abbr title="Système Automatique de Classification">SAC</abbr> :
+        <ul>
+          <li><a href="confusion">matrice de confusion</a></li>
+          <li>Score de fiabilité <a href="/tech/info/soft/data/science/eval/f1">F1</a> issus des indicateurs de <a
+              href="/tech/info/soft/data/science/eval/precision">précision</a> et <a
+              href="/tech/info/soft/data/science/eval/recall">rappel</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Correction</h3>
+    <p>On pourra alors opter pour différentes stratégies pour essayer de l'améliorer.</p>
+  </section>
 </section>
 <section>
   <h2>Conception</h2>

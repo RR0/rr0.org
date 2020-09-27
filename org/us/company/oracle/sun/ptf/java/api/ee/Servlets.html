@@ -50,7 +50,7 @@
   <ul>
     <li>une servlet <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a> écoutant des requêtes <a
         href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> et retournant des pages Web (<a
-        href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a>) dans ses réponses <a
+        href="/tech/info/soft/data/doc/html/index.html">HTML</a>) dans ses réponses <a
         href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a></li>
     <li>une servlet <a href="/tech/info/soft/reseau/webservice/index.html">Service Web</a> écoutant des requêtes <a
         href="/tech/info/soft/reseau/protocole/5/SOAP.html">SOAP</a>/HTTP et retournant des réponses SOAP/HTTP</li>
@@ -63,27 +63,24 @@
   <p>Un exemple de <a href="/tech/info/soft/proj/impl/CodeSource.html">code source</a> de servlet est :</p>
 
   <blockquote><code>import <b>javax.servlet.http</b>.*; <span class="codeComment">//
-  Classes nécessaires aux servlets Web (HTTP)</span><br> <br> public class MaServlet<br> extends <b>HttpServlet</b>  {<br>
-   <span class="codeComment"> /**<br>
+  Classes nécessaires aux servlets Web (HTTP)</span><br> <br> public class MaServlet<br> extends <b>HttpServlet</b>
+    {<br> <span class="codeComment"> /**<br>
      * Traitement des requêtes HTTP POST<br>
      * @param someRequest  La requête HTTP POST<br>
      * @param someResponse La réponse HTTP que l'on va remplir<br>
-     */ </span><br>
-    public void <b>doPost</b> (<b>HttpServletRequest</b> someRequest,
-  <b>HttpServletResponse</b> someResponse) {<br> someResponse.<b>setContentType</b> (<span class="codeString">"text/html"</span>);
-    <span class="codeComment">//
+     */ </span><br> public void <b>doPost</b> (<b>HttpServletRequest</b> someRequest, <b>HttpServletResponse</b>
+    someResponse) {<br> someResponse.<b>setContentType</b> (<span class="codeString">"text/html"</span>); <span
+        class="codeComment">//
   Type <a href="/tech/info/soft/proj/design/arch/web/MIME.html">MIME</a> d'une page <a
-          href="/tech/info/soft/proj/design/arch/web/HTML.html">HTML</a></span><br> java.io.PrintWriter output =
-    someResponse.<b>getWriter</b>(); <span class="codeComment">// Flux d'écriture de la réponse</span><br> <br>
-    output.println (<span class="codeString">"&lt;html&gt;"</span>);<br> output.println (<span class="codeString">" &lt;head&gt;"</span>);
-    <br> output.println (<span class="codeString">"  &lt;title&gt;Bienvenue
+          href="/tech/info/soft/data/doc/html/index.html">HTML</a></span><br> java.io.PrintWriter output = someResponse.<b>getWriter</b>();
+    <span class="codeComment">// Flux d'écriture de la réponse</span><br> <br> output.println (<span class="codeString">"&lt;html&gt;"</span>);<br>
+    output.println (<span class="codeString">" &lt;head&gt;"</span>); <br> output.println (<span class="codeString">"  &lt;title&gt;Bienvenue
   !&lt;/title&gt;"</span>); <br> output.println (<span class="codeString">" &lt;/head&gt;"</span>); <br> output.println
     (<span class="codeString">" &lt;body&gt;"</span>); <br> <br> <span class="codeComment">// Valeur du paramètre
   "name" envoyé avec la requête ?</span> <br> String userName = someRequest.<b>getParameter</b> (<span
         class="codeString">"name"</span>); <br> <br> output.println (<span class="codeString">" Bienvenue
   "</span> + userName); <br> <br> output.println (<span class="codeString">" &lt;/body&gt;"</span>); <br> output.println
-    (<span class="codeString">"&lt;/html&gt;"</span>); <br>
-    }<br>} </code></blockquote>
+    (<span class="codeString">"&lt;/html&gt;"</span>); <br> }<br>} </code></blockquote>
 </section>
 <section>
   <h2>Notes</h2>

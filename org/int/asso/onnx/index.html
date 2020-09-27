@@ -1,0 +1,51 @@
+<!--#include virtual="/header-start.html" -->
+<title>ONNX</title>
+<meta content="https://onnx.ai" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Open Neural Network Exchange</i> : échange ouvert de <a href="/tech/info/soft/data/science/ml/nn">réseaux
+  de neurones</a>.</p>
+<!--#include virtual="/header-start.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Permettre d'échanger des modèles entre différents frameworks d'<a href="/tech/info/soft/data/science/ml/nn/deep">apprentissage
+    profond</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Standard de représentation des modèles de <a href="/tech/info/soft/data/science/ml">ML</a> définissant :</p>
+  <ul>
+    <li>un ensemble d'opérateurs</li>
+    <li>un format de fichier</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>ONNX définit :</p>
+  <ul>
+    <li>des types de données standards</li>
+    <li>des opérateurs prédéfinis</li>
+    <li>un modèle de <strong>graphe</strong> de calcul acyclique, constitué de :
+      <ul>
+        <li><strong>noeuds</strong> ayant :
+          <ul>
+            <li>n <strong>entrées</strong> ou plus</li>
+            <li>n <strong>sortie</strong> ou plus</li>
+            <li>un <strong>opérateur</strong> à appeler</li>
+          </ul>
+        </li>
+        <li><strong>métadonnées</strong> décrivant objectif, auteur, etc.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Permet d'échanger des modèles entre les frameworks :</p>
+  <ul>
+    <li><a href="/org/us/company/ms/product/soft/mct">CNTK</a></li>
+    <li>Caffe2</li>
+    <li>MXNet</li>
+    <li>PyTorch</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

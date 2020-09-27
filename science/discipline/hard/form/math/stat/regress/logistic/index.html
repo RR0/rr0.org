@@ -38,13 +38,14 @@
     <li>(rarement) une <strong>fonction signe</strong> (<i>signum</i>) s'il s'agit d'une classification binaire, qui
       fait alors correspondre chacune des 2 classes vers -1 ou 1</li>
     <li>(plus généralement) une <a
-        href="/science/discipline/hard/form/math/ens/rel/func/sigmoid/logistic"><strong>fonction logistique</strong></a>, qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
+        href="/science/discipline/hard/form/math/ens/rel/func/sigmoid/logistic"><strong>fonction logistique</strong></a>,
+      qui fait alors correspondre chacune des 2 classes vers 0 ou 1.</li>
   </ul>
-  <p>Soit le vecteur `x` représentant les caractéristiques (<em>features</em>) de éléments à classer, notre fonction :
+  <p>Soit le vecteur `x` représentant les caractéristiques (<em>features</em>) des éléments à classer, notre fonction :
   </p>
   <p>`z=θ^Tx`</p>
   <p>et on définit donc `h_θ(x)` comme la <em>probabilité</em> `P` que `y = 1` (et donc probabilité `1 - P` que `y`
-    valle l'autre classe) :</p>
+    vaille l'autre classe) :</p>
   <p>`h_θ(x)=g(z)`</p>
   <p>ou, si l'on remplace `g` par sa définition <a
       href="/science/discipline/hard/form/math/ens/rel/func/sigmoid">sigmoïde</a> :</p>
@@ -99,45 +100,11 @@
     <p>Classer les réponses comme 0 ou 1 en fonction de `h_θ(x)>=0,5` ou `h_θ(x)<0,5` n'est pas toujours le plus
       opportun ; parfois on voudrait utiliser une autre valeur que 0,5 si les classes sont déséquilibrées/dissymétriques
       (<i lang="en">skewed</i>).</p>
-    <p>Cependant si ce facteur est trop déséquilibré (disons 0,9), il convient de vérifier la fiabilité des résultats.
-      Si l'on suppose :</p>
-    <table>
-      <thead>
-      <tr>
-        <td class="titleCorner"></td>
-        <td class="titleCorner"></td>
-        <th colspan="2">Classe réelle</th>
-      </tr>
-      <tr>
-        <td class="titleCorner"></td>
-        <td class="titleCorner"></td>
-        <th>1</th>
-        <th>0</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th>Classe prédite</th>
-        <th>1</th>
-        <td class="oui">Vrai positif</td>
-        <td class="non">Faux positif</td>
-      </tr>
-      <tr>
-        <th></th>
-        <th>0</th>
-        <td class="non">Faux négatif</td>
-        <td class="oui">Vrai négatif</td>
-      </tr>
-      </tbody>
-    </table>
-    <p>On définit la <strong>précision</strong> comme la proportion de prédictions positives correctes dans l'ensemble
-      des prédictions positives :</p>
-    <p>`P = "vrais positifs"/("vrais positifs" + "faux positifs")`</p>
-    <p>et le <strong>rappel</strong> (<i lang="en">recall</i>) comme la proportion de prédictions positives correctes
-      par rapport à l'ensemble des positifs réels :</p>
-    <p>`R = "vrais positifs"/("vrais positifs" + "faux négatifs")`</p>
-    <p>Ce qui nous permet de définir la métrique de fiabilité :</p>
-    <p>`F_1 = 2(RP)/(R+P)` entre 0 et 1.</p>
+    <p>Cependant si ce facteur est trop déséquilibré (disons 0,9), il convient de vérifier la fiabilité des résultats au
+      travers d'une <a href="/tech/info/soft/data/science/eval/confusion">matrice de confusion</a> et des estimations de
+      <a href="/tech/info/soft/data/science/eval/precision">précision</a> et de <a
+          href="/tech/info/soft/data/science/eval/recall">rappel</a> débouchant sur le score <a
+          href="/tech/info/soft/data/science/eval/f1">F1</a>.</p>
   </section>
 </section>
 <section>

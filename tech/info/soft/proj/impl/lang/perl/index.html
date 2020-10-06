@@ -1,0 +1,162 @@
+<!--#include virtual="/header-start.html" -->
+<title>Perl</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Pearl</i>. Plus tard <i lang="en">Pratical Extration and Report Language </i>: langage pratique
+  d'extraction et rapport.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="../../../../prog/Language.html">langage</a> pour le <a
+      href="../../../conception/arch/web/index.html">Web</a>, les petits scripts et le prototypage.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>PERL est un <a href="../../../../prog/Language.html">langage</a> interprété.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>PERL n'offre pas de typage fort. Tous les types scalaires sont codés sur 32 bits et un caractère peut être converti
+    en chaîne facilement, et vice versa. Il propose des types listes (tableaux de scalaires), tables de hâchage (clé-&gt;valeur),
+    des routines (sub), expressions régulières (recherche, remplacement)</p>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Peu lisible. On dit du PERL qu'il s'agit d'un langage fait pour être écrit, et non pour être lu.</li>
+    <li>Lenteur de l'interprétation.</li>
+    <li>Règles de programmation peu strictes.</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Larry Wall</li>
+    <li>Inspiré du script des shells <a href="../../../../prod/os/unix/index.html">Unix</a>.</li>
+    <li>Disponible sur tous la plupart des <a href="../../../../prod/os/unix/index.html">Unix</a> et <a
+        href="/org/us/company/ms/product/soft/windows/index.html">NT</a>.</li>
+    <li>Le développement est simple et rapide.</li>
+    <li>Nombreuses librairies disponibles (CGI, BD, DBM...)</li>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td class="titleCorner" colspan="2" rowspan="3"></td>
+          <th> Version</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th rowspan="4"> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th> Fixpack</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th> Couche</th>
+          <th> Technologie</th>
+          <th> Maintenance</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>4</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Paramètres</th>
+          <th>-e</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Exécute</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>-c</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Check : vérifie la syntaxe</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>-w</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Warning : exécute avec des avertissements</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>-V</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Version : affiche la version et les paramètres d'installation</td>
+        </tr>
+        </thead>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de ligne de commande PERL est :</p>
+  <blockquote><code><strong>&gt;</strong> <strong>perl -e 'print <span class="codeString">"</span></strong><span
+      class="codeString">hello
+  world<strong>\n"</strong></span><strong> '</strong><br/> hello world<br/> <strong>&gt;</strong></code></blockquote>
+  <p>Des exemples de code PERL sont :</p>
+  <blockquote><code><strong>#!/usr/bin/perl</strong><br/> <strong>print <span class="codeString">"</span></strong><span
+      class="codeString">hello world<strong>\n"</strong></span><strong>;</strong></code></blockquote>
+  <p>ou</p>
+  <blockquote><strong><code>opendir(DIR, $</code></strong><code>dir<strong>) ||<br/> print <span
+      class="codeString">"</span></strong><span class="codeString">Repertoire<strong> $</strong>dir introuvable<strong>:$!\n"</strong></span><strong>;<br/>
+    while(readdir(DIR))<br/> {<br/> $filename = $_;<br/> # </strong>On passe les fichiers caches<strong><br/> if(
+    $filename =~ /^\.|^\#|~$/ )<br/> {next;}<br/> }<br/> closedir(DIR); <br/> <br/> my $l;<br/> open(DESCR,$</strong>fichier<strong>)
+    || <br/> die <span class="codeString">"</span></strong><span class="codeString">Erreur lecture <strong>$</strong>fichier<strong>:$!\n"</strong></span><strong>;
+    <br/> while (defined(my $l=&lt;DESCR&gt;)) {$buf.= $l;}<br/> close(DESCR);</strong></code></blockquote>
+  <p>Exemple d'un programme CGI d'envoi de la page Web courante par mail en Perl :</p>
+  <blockquote><code>#!/usr/bin/perl -w<br/> # # Appellez ce script comme cela :<br/> # #
+    script.cgi?email=myfriend@isp.com&amp;url=http://www.go.com<br/> <strong>use </strong>strict;<br/>
+    <strong>use </strong>CGI qw/:standard/;<br/> <strong>use </strong>CGI::Carp qw/fatalsToBrowser/;<br/>
+    <strong>use </strong>MIME::Lite::HTML; <br/> <br/> my $mailHTML = new MIME::Lite::HTML<br/> From =&gt; <span
+        class="codeString">'javarome@javarome.net'</span>,<br/> To =&gt; param(<span class="codeString">'email'</span>),<br/>
+    Subject =&gt; <span class="codeString">'Your url: '</span>.param(<span class="codeString">'url'</span>),<br/> Debug
+    =&gt;
+    3; <br/> <br/> my $MIMEmail = $mailHTML-&gt;parse(param('url'));<br/> MIMEmail-&gt;send; # ou pour windows : $mail-&gt;send_by_smtp(<span
+        class="codeString">'smtp.fai.com'</span>);<br/> <strong>print </strong>header,<span class="codeString">"Mail envoye ("</span>,
+    param(<span class="codeString">'url'</span>), <span class="codeString">"
+  to "</span>, param(<span class="codeString">'email'</span>),<span class="codeString">")&lt;br&gt;\n"</span>;</code>
+  </blockquote>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="http://perl.apache.org/">PERL en module dans Apache</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

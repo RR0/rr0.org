@@ -1,0 +1,50 @@
+<!--#include virtual="/header-start.html" -->
+<title>Le langage Pascal</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Organisation</h2>
+  <p>Le Pascal est un langage différenciant les fonctions (retournant une valeur) des procédures (effectuant uniquement
+    un traitement).</p>
+  <p>Librairies réutilisables (.tpu en Turbo Pascal).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de code source Turbo Pascal est :</p>
+  <blockquote><q><strong>program </strong>ExemplePascal; { Exemple de programme Pascal }<br> <br> <strong>uses </strong>Dos,
+    Crt;<br> <br> <strong>type</strong> PtrDiskParam = ^DiskParamBlock;<br> DiskParamBlock = <strong>record</strong><br>
+    Segment, Offset : <strong>Word</strong>;<br> Suivant : PtrDiskParam;<br>
+
+    <strong>end</strong>; <br> <br> <strong>var </strong>List : PtrDiskParam;<br> <br> <strong>function </strong>SegPremierDBP
+    : <strong>Word</strong>;<br> <strong>var </strong>Regs : Registers;<br> <strong>begin<br> if
+      (</strong>regs.Flags<strong> and</strong> 1 = 1<strong>) then<br> </strong>SegPremierDBP := $FFFF;<br> else
+    <strong><br> </strong>SegPremierDBP := <strong>MemW[</strong>Regs.Es:(Regs.Bx+2)<strong>]; <br> end;</strong><br>
+    <br> <strong>procedure </strong>ConstruitListe (<strong>var </strong>PtrListe : PtrDiskParam);<br>
+    <strong>var </strong>Actuel, Suivant : PtrDiskParam;<br> <strong>begin<br> </strong>Actuel<strong> := </strong>PtrListe;<strong><br>
+      while </strong>actuel^.Offset &lt;&gt; $FFFF <strong>do<br> begin<br> </strong>{ Etc. }<strong><br> end;<br> end;</strong>
+    <br> <br> <strong>begin<br> </strong>ConstruitListe (Liste)<strong>;<br> end.</strong></q></blockquote>
+  <p>Des exemples de Pascal sont :</p>
+  <ul>
+    <li>Borland
+      <ul>
+        <li>Turbo Pascal</li>
+        <li>Pascal for Windows</li>
+        <li>Delphi</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Créé en <a href="/tech/info/1969.html">1969</a> par <a
+        href="../../../../../prog/oo/java/WirthNicklaus.html">Nicklaus Wirth</a>.</li>
+    <li>Bien que procédural à l'origine, des variations ont abouti à des versions orientées objets (Turbo Pascal,
+      Delphi) du langage.</li>
+    <li><a href="/tech/info/soft/proj/impl/lang/ada">Ada</a> est un langage industriel issu du Pascal et de Delphi.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

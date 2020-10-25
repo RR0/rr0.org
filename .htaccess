@@ -221,7 +221,6 @@ Redirect /org/eu/be/association/SOBEPS.html https://rr0.org/org/eu/be/asso/sobep
 Redirect /FBI.html https://rr0.org/org/us/ic/fbi
 Redirect /CIA.html https://rr0.org/org/us/ic/cia
 Redirect /NASA.html https://rr0.org/org/us/nasa
-Redirect /org/us/nasa/projet https://rr0.org/org/us/nasa
 Redirect /NSA.html https://rr0.org/org/us/ic/nsa
 Redirect /NRO.html https://rr0.org/org/us/dod/NRO.html
 Redirect /org/us/IAS.html https://rr0.org/org/us/university/princeton/ias
@@ -376,6 +375,7 @@ Redirect /people/f/FullerJohnG.html https://rr0.org/people/f/FullerJohnG
 Redirect /pilotes.html https://rr0.org/people/pilotes.html
 Redirect /personne/p/pilotes.html https://rr0.org/people/pilotes.html
 Redirect /PatenetJacques.html https://rr0.org/people/p/PatenetJacques
+Redirect /people/p/PageThornton.html https://rr0.org/people/p/PageThornton
 Redirect /PlantierJean.html https://rr0.org/people/p/PlantierJean
 Redirect /people/p/Ptolemee.html https://rr0.org/people/p/Ptolemee
 Redirect /people/p/PeñaJoseLuisJordan https://rr0.org/people/p/PenaJoseLuisJordan
@@ -468,7 +468,8 @@ Redirect /personne/MaccabeeBruceSargent https://rr0.org/people/m/MaccabeeBruceSa
 Redirect /MacDivittJames.html https://rr0.org/people/m/MacDivittJames/
 Redirect /MackJohnE.html https://rr0.org/people/m/MackJohnE/
 Redirect /personne/MackJohnE https://rr0.org/people/m/MackJohnE
-Redirect /MitchellEdgarDean.html https://rr0.org/people/m/MitchellEdgarDean
+Redirect /MitchellEdgarDean.html https://rr0.org/people/m/MitchellEdgar
+Redirect /people/m/MitchellEdgarDean https://rr0.org/people/m/MitchellEdgar
 Redirect /Dossier/1947-07-02_Roswell/MarcelJesseA.html https://rr0.org/people/m/MarcelJesseA
 Redirect /ufo/enquete/dossier/Roswell/MarcelJesseA https://rr0.org/people/m/MarcelJesseA
 Redirect /MarcelJesseA.html https://rr0.org/science/crypto/ufo/enquete/dossier/Roswell/MarcelJesseA/
@@ -779,6 +780,7 @@ Redirect /SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
 Redirect /detection/projet/SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
 Redirect /SETI-RMW.html http://www.rr0.org/science/crypto/ufo/observation/projet/seti/rmw
 Redirect /Apollo11.html https://rr0.org/org/us/nasa/projet/apollo/11
+Redirect /org/us/nasa/apollo/14 https://rr0.org/org/us/nasa/projet/apollo/14
 Redirect /Aquarius.html https://rr0.org/science/crypto/ufo/enquete/dossier/ProjetAquarius
 Redirect /Dossier/1290_Amplefort/ https://rr0.org/science/crypto/ufo/enquete/dossier/Amplefort/
 Redirect /Implants.html https://rr0.org/science/crypto/ufo/enquete/dossier/Implants/

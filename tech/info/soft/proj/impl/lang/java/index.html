@@ -1,0 +1,290 @@
+<!--#include virtual="/header-start.html" -->
+<title>Le langage Java</title>
+<meta content="http://java.sun.com/docs/books/jls/second_edition/html/j.title.doc.html" name="url">
+<!--#include virtual="/header-end.html" -->
+<figure class="right side">
+  <a href="http://java.com/fr/"><img alt="Java -- Téléchargez-le" src="/images/get_java_blue-button.gif"/></a>
+</figure>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="../../index.html">langage</a> simple et <a
+      href="/tech/info/soft/proj/impl/lang/oo">objet</a> pour la plate-forme <a
+      href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le <a href="/tech/info/soft/proj/impl/CodeSource.html">langage source</a> à <strong>compiler</strong> pour générer
+    un code exécutable (<strong><em>bytecode</em></strong>) par une <a
+        href="/org/us/company/oracle/sun/ptf/java/vm"><strong>JVM</strong></a> peut être :</p>
+  <ul>
+    <li>Java
+      <ul>
+        <li><a href="groovy/index.html">Groovy</a></li>
+        <li>Scala</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td class="titleCorner" colspan="2" rowspan="2"></td>
+          <th valign="top"> Version</th>
+          <th colspan="8">Java</th>
+          <th rowspan="3" width="301"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Release</th>
+          <th colspan="8">1</th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th valign="top"> Fix</th>
+          <th>0</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan="3" valign="top">Exécution</th>
+          <th colspan="2" valign="top">Interpréteur</th>
+          <td class="non" colspan="8">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">VM</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td><a href="../../../../../prog/oo/java/JVM.html">JVM</a></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Machine</th>
+          <td class="non" colspan="8">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Compilation</th>
+          <th colspan="2" valign="top">Préprocesseur</th>
+          <td class="non" colspan="8">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="7" valign="top">Structures de contrôle</th>
+          <th colspan="2" valign="top">Condition</th>
+          <td colspan="8"><code><strong>if</strong> () { }</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Cas</th>
+          <td colspan="8"><code><strong>switch</strong> () { x: <strong>break</strong>; }</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top">Boucle</th>
+          <th valign="top">Itération</th>
+          <td colspan="8"><code><strong>for</strong> (init; while; increment) { }</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Un au moins</th>
+          <td colspan="8"><code><strong>do</strong> { } <strong>while</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Tant que</th>
+          <td colspan="8"><code><strong>while</strong> () { }</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Suite</th>
+          <td colspan="8"><code><strong>continue</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Stop</th>
+          <td colspan="8"><code><strong>break</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Gestion des erreurs</th>
+          <th valign="top">Exceptions</th>
+          <th valign="top"></th>
+          <td class="oui" colspan="8">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"><a href="../../../../../prog/oo/java/OO.html">OO</a></th>
+          <th rowspan="2" valign="top">Héritage</th>
+          <th valign="top">Simple</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Multiple</th>
+          <td class="non" colspan="8">Non</td>
+          <td width="301"></td>
+        </tr>
+        <tr>
+          <th rowspan="12" valign="top">Types</th>
+          <th valign="top">Classes</th>
+          <th valign="top">Internes</th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Collections</th>
+          <th valign="top">Iteration</th>
+          <td class="non" colspan="5"><code>Iterator it = col.iterator(); Object o = it.next();</code></td>
+          <td class="oui" colspan="3"><code><strong>for</strong> (Object o : col)</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Constantes</th>
+          <th valign="top">Déclaration</th>
+          <td colspan="8"><code><strong>final</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Import</th>
+          <td class="non" colspan="5">Non</td>
+          <td class="oui" colspan="3"><code><strong>import</strong> <strong>static</strong> package.Class.*;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Enumérations</th>
+          <td class="non" colspan="5">Non</td>
+          <td class="oui" colspan="3"><code><strong>enum</strong> MonEnum { val1, val2, val3 }</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Numériques</th>
+          <th valign="top">Entiers</th>
+          <td colspan="8"><code><strong>byte</strong>, <strong>short</strong>, <strong>int</strong>,
+            <strong>long</strong></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Flottants</th>
+          <td colspan="8"><code><strong>float</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Caractères</th>
+          <th valign="top">Unique</th>
+          <td colspan="8"><code><strong>char</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Chaîne</th>
+          <td colspan="8"><code><strong>String</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"><a href="../../../../../prog/oo/java/langage/Generics.html">Génériques</a>
+          </th>
+          <th valign="top">Types</th>
+          <td class="non" colspan="5">Non</td>
+          <td class="oui" colspan="3"><code><strong>Classe&lt;</strong>Type<strong>&gt;</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Méthodes</th>
+          <td class="non" colspan="5">Non</td>
+          <td class="oui" colspan="3"><code><strong>&lt;</strong>Type<strong>&gt; void
+            methode(</strong>&lt;Type&gt;<strong>)</strong></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Enregistrements</th>
+          <td colspan="8">Classe</td>
+          <td>Structs/record</td>
+        </tr>
+        <tr>
+          <th rowspan="4" valign="top">Robustesse et mise au point</th>
+          <th colspan="2" valign="top">Contrôle des conversions</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Contrôle des limites de tableau</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Contrôle division par zéro</th>
+          <td class="oui" colspan="8">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" valign="top">Assertions</th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui" colspan="4"><code><strong>assert</strong> booleanCondition : message;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Gestion mémoire</th>
+          <th colspan="2" valign="top">Automatique</th>
+          <td class="oui" colspan="8"><a href="../../../../../prog/oo/java/GC.html">GC</a></td>
+          <td>Pointeurs évités volontairement pour plus de robustesse.</td>
+        </tr>
+      </table>
+    </li>
+    <li> Créé en <a href="../../../../../../1995.html">1995</a> par <a href="http://www.sun.com/">Sun Microsystems</a>
+      qui le gère toujours aujourd'hui via sa filiale <a href="http://java.sun.com">JavaSoft</a>.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de code Java est :</p>
+  <blockquote><code><strong>public class</strong> MonApplication <strong>{</strong><br/> <strong>public static
+    void</strong> main <strong>(</strong>String<strong>[]</strong> someArgs<strong>) {<br/> if
+    (</strong>someArgs<strong></strong>.length <strong> &gt; </strong>0<strong>)</strong><br/> System.out.println
+    <strong>(<span
+        class="codeString">"</span></strong><span
+        class="codeString">Hello
+  "</span> + someArgs<strong></strong>[0]<strong>);</strong><br/> <strong> else</strong><br/> System.out.println
+    <strong>(<span class="codeString">"</span></strong><span
+        class="codeString">Hello
+  world !<strong>"</strong></span><strong>);<br/> } <br/> }</strong></code></blockquote>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Les <strong>classes internes</strong> ne font pas partie de la spécification de la <a
+        href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a>. Elle sont simulées par des classes externes situées dans
+      le même package, ce qui implique que n'importe quelle autre classe de ce package peut y accéder. De plus, les
+      classes internes générées sous forme de classes externes doivent pouvoir accéder aux membres privés de la classe
+      englobante. Pour rendre cela possible, le compilateur change la visibilité de ces champs de privé en package.
+      Evitez donc les classes internes qui ne sont pas équivalentes à des classes externes, notamment pour définir des
+      bloc privilégiés dans Java 2.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="http://java.sun.com">JavaSoft</a>
+      <ul>
+        <li><a href="http://java.com/fr/">Get Java</a></li>
+      </ul>
+    </li>
+    <li><a href="http://java.sun.com/docs/books/tutorial/">The Java Tutorial</a></li>
+    <li><a href="http://java.sun.com/docs/books/jls/second_edition/html/j.title.doc.html">Java Language Specification
+      (JLS)</a></li>
+    <li><a href="http://java.sun.com/products/jdk/1.1/docs/guide/innerclasses/spec/innerclasses.doc.html">Inner classes
+      specification</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

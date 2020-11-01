@@ -23,18 +23,20 @@
       <li>une </li>
     </ol>
     <ul>
-      <li><code><strong>A</strong></code>(ddress) : le plus courant. Il permet d'associer une adresse IP à un nom. </li>
-      <li><strong>AAAA</strong> : pour les adresses IP au format IPv6. </li>
-      <li><strong>CNAME </strong>(Cannonical NAME) Cet enregistrement permet d'indiquer que le nom de domaine donné est
-        un alias vers un autre nom. </li>
-      <li><strong>MX </strong>(Mail eXchanger) : quel est son serveur mail associé. </li>
-      <li><strong>TXT </strong>: permet d'avoir un TeXTe enregistré dans son DNS. </li>
-      <li><strong>WKS </strong>(Well Known Services) : liste de serveurs qui offrent des services connus comme du HTTP
-        ou POP3. </li>
-      <li><strong>SPF </strong>(Sender Policy Framework) norme de vérification du nom de domaine de l'expéditeur d'un
-        courrier électronique. </li>
-      <li><strong>SRV </strong>(SeRVice record) enregistrement d'informations sur les services disponibles (défini dans
-        la RFC 2782). </li>
+      <li><strong><code>A</code></strong>(ddress) : le plus courant. Il permet d'associer une adresse IP à un nom.</li>
+      <li><strong><code>AAAA</code></strong> : pour les adresses IP au format IPv6.</li>
+      <li><strong><code>CNAME</code></strong> (Cannonical NAME) Cet enregistrement permet d'indiquer que le nom de
+        domaine donné est un alias vers un autre nom.</li>
+      <li><strong><code>ANAME</code></strong> : Comme CNAME, mais à la racine du domaine.</li>
+      <li><strong><code>ALIAS</code></strong> : Comportement semblable à CNAME sur les domaines apex.</li>
+      <li><strong><code>MX</code></strong> (Mail eXchanger) : quel est son serveur mail associé.</li>
+      <li><strong><code>TXT</code></strong>: permet d'avoir un TeXTe enregistré dans son DNS.</li>
+      <li><strong><code>WKS</code></strong> (Well Known Services) : liste de serveurs qui offrent des services connus
+        comme du HTTP ou POP3.</li>
+      <li><strong><code>SPF</code></strong> (Sender Policy Framework) norme de vérification du nom de domaine de
+        l'expéditeur d'un courrier électronique.</li>
+      <li><strong><code>SRV</code></strong> (SeRVice record) enregistrement d'informations sur les services disponibles
+        (défini dans la RFC 2782).</li>
     </ul>
   </section>
   <section>
@@ -50,12 +52,11 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>La résolution d'un nom en adresse <a href="../3/IP.html">IP</a> se fait par interrogation d'un Serveur de
-    Nom de Domaine (ou serveur DNS). Désigné dans la configuration réseau de la machine cliente, un serveur DNS peut
-    être :</p>
+  <p>La résolution d'un nom en adresse <a href="../3/IP.html">IP</a> se fait par interrogation d'un Serveur de Nom de
+    Domaine (ou serveur DNS). Désigné dans la configuration réseau de la machine cliente, un serveur DNS peut être :</p>
   <ul>
-    <li><strong>primaire </strong>de la zone hiérarchique (<code>net</code>, <code>rr0.org</code> par exemple) d'où
-      part la requête.</li>
+    <li><strong>primaire </strong>de la zone hiérarchique (<code>net</code>, <code>rr0.org</code> par exemple) d'où part
+      la requête.</li>
     <li><strong>secondaire</strong>, copie de secours du premier (la recopie des données du serveur primaire est
       effectuée automatiquement toutes les x secondes), </li>
   </ul>
@@ -123,7 +124,9 @@
     <tr>
       <td><code>arpa</code></td>
       <td>ARPA</td>
-      <td>Advanced Research Project Agency, agence militaire fondatrice de l'Internet. Domaine de service.</td>
+      <td><a href="/org/us/dod/arpa">Advanced Research Project Agency</a>, agence militaire fondatrice de l'Internet.
+        Domaine de service.
+      </td>
     </tr>
     <tr>
       <td><code>fr</code></td>

@@ -1,0 +1,74 @@
+<!--#include virtual="/header-start.html" -->
+<title>J2ME</title>
+<meta content="http://www.oracle.com/technetwork/java/javame" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i>Java 2 Micro Edition</i> : édition micro de Java 2.</p>
+<h2>Besoin</h2>
+<p>Fournir une plate-forme d'exécution des applications <a href="/org/us/company/oracle/sun/ptf/java">Java</a> pour :
+</p>
+<ul>
+  <li>les appareils connectés : <a href="tech/info/hard/computer/PDA.html">PDA</a>s sophistiqués (PocketPC), appareils
+    embarqués (dans des véhicules), les boîtiers (décodeurs, etc.)</li>
+  <li>les appareils mobiles : téléphones mobiles ou <a href="tech/info/hard/computer/PDA.html">PDA</a>s légers et
+    déconnectés</li>
+</ul>
+<h2>Conception</h2>
+<p>Une architecture J2ME est composée de :</p>
+<ul>
+  <li>une <strong>configuration</strong> : un machine virtuelle et un ensemble de librairies adaptées pour la
+    plate-forme visée</li>
+  <li>des <strong>profils</strong> : un ensemble d'API de haut niveau</li>
+  <li>des packages optionnels
+    <table>
+      <thead>
+      <tr>
+        <td class="titleCorner"></td>
+        <td class="titleCorner"></td>
+        <th>Mobiles</th>
+        <th>Connectés</th>
+        <th>Commentaire</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th colspan="2"> Machine virtuelle</th>
+        <td class="oui">KVM</td>
+        <td class="oui"><a href="org/us/company/oracle/sun/ptf/java/vm">JVM</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2" valign="top"> Configuration</th>
+        <td class="oui"><a href="/tech/info/soft/CLDC.html">CLDC</a></td>
+        <td class="oui"><a href="/tech/info/soft/CDC.html">CDC</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="4" valign="top">Profils</th>
+        <th></th>
+        <td class="oui"><a href="/tech/info/soft/MIDP.html">MIDP</a></td>
+        <td class="oui">FP</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th valign="top"><a href="/tech/info/soft/reseau">Réseau</a></th>
+        <td class="oui"></td>
+        <td class="oui">FB</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2" valign="top"><a href="/tech/info/soft/GUI.html">GUI</a></th>
+        <td class="oui"></td>
+        <td class="oui">PBP</td>
+        <td><a href="/tech/info/soft/GUI.html">GUI</a> basique</td>
+      </tr>
+      <tr>
+        <td class="oui"></td>
+        <td class="oui">PP</td>
+        <td>(Ex-PersonalJava) <a href="/org/us/company/oracle/sun/ptf/java/api/se/ui/AWT.html">AWT</a>, <a
+            href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">Applets</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->

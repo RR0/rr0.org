@@ -4,338 +4,330 @@
 <!--#include virtual="/header-end.html" -->
 <p><i><a href="/org/us/company/oracle/sun/ptf/java">Java</a> 2 Enterprise Edition</i> : édition d'entreprise de la <a
     href="/org/us/company/oracle/sun/ptf/java">plate-forme Java</a> 2.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Standardiser l'infrastructure technique offerte aux applications <a href="//org/us/company/oracle/sun/ptf/java">Java</a>
+    exécutées par des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs</a>.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>J2EE définit une <a href="/tech/info/soft/proj/design/arch">architecture</a> logicielle standard . </p>
+  <p>A cet effet elle définit ou intégre divers types de composants applicatifs standards, susceptibles de composer une
+    application :</p>
+  <ul>
+    <li>Clients
+      <ul>
+        <li>autonomes (<em>standalone</em>)</li>
+        <li><a href="/tech/info/soft/proj/design/arch/web">Web</a></li>
+      </ul>
+    </li>
+    <li>Serveur
+      <ul>
+        <li><a href="/tech/info/soft/proj/design/arch/web">Web</a></li>
+        <li>métier </li>
+        <li>d'intégration</li>
+      </ul>
+    </li>
+    <li>des <strong>services </strong>offerts à ces composants via ces conteneurs :
+      <ul>
+        <li><a href="/tech/info/soft/proj/impl/algo/tx">transaction</a></li>
+        <li> distribution</li>
+        <li><a href="/tech/info/soft/sec">sécurité</a></li>
+        <li>cycle de vie (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>La plate-forme J2EE :</p>
+  <ul>
+    <li>est basée sur <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></li>
+    <li>ajoute des API d'"entreprise" intégrées entre elles, telles que :
+      <ul>
+        <li>des <strong>conteneurs </strong>de composants :
+          <ul>
+            <li>Clients
+              <ul>
+                <li>autonomes (<em>standalone</em>)</li>
+                <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applets</a></li>
+              </ul>
+            </li>
+            <li>Serveur
+              <ul>
+                <li><a href="/tech/info/soft/proj/design/arch/web">Web</a> (<a
+                    href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>, <a
+                    href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>)</li>
+                <li>métier (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>)</li>
+                <li>d'intégration (<a href="/tech/info/soft/java/J2C.html">JCA</a>)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>des <strong>services </strong>offerts à ces composants via ces conteneurs :
+      <ul>
+        <li><a href="//tech/info/soft/proj/impl/algo/tx">transaction</a></li>
+        <li> distribution</li>
+        <li><a href="/tech/info/soft/sec">sécurité</a></li>
+        <li>cycle de vie (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
+      </ul>
+    </li>
+  </ul>
+  <p>intégrées entre elles (propagations entre composants des contextes transactionnel et de sécurité par exemple).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>La plate-forme J2EE est implémentée par la plupart des <a
+      href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs </a>:</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/bea/wls">WLS</a></li>
+    <li><a href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a></li>
+    <li><a href="/tech/info/soft/prod/server/app/JBoss.html">JBoss</a></li>
+    <li>Jonas</li>
+    <li>Oracle 9i</li>
+    <li>Borland Enterprise Server (BES)</li>
+  </ul>
+  <p>Il existe également une <strong>implémentation de référence</strong> de J2EE fournie par JavaSoft : <a
+      href="/org/us/company/oracle/sun/ptf/java/impl/J2EE-RI.html">J2EE RI</a>.</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      <table>
+        <caption>
+          API J2EE
+        </caption>
+        <thead>
+        <tr>
+          <td class="titleCorner" rowspan="2"></td>
+          <th>Version</th>
+          <th colspan="4"> 1</th>
+          <th rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th>Release</th>
+          <th colspan="2"> 2</th>
+          <th><a href="http://java.sun.com/j2ee/j2ee-1_3-fr-spec.pdf">3</a></th>
+          <th><a href="http://java.sun.com/j2ee/j2ee-1_4-pfd-spec.pdf">4</a></th>
+        </tr>
+        <tr>
+          <th>Couche</th>
+          <th>Technologie</th>
+          <th>0</th>
+          <th>1</th>
+          <th> 0</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th valign="top">Plate-forme de base</th>
+          <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
+          <td class="oui" colspan="2"> 1.2</td>
+          <td class="oui">1.3</td>
+          <td class="oui">1.4</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top">Présentation Web</th>
+          <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
+          <td class="oui" colspan="2">2.2</td>
+          <td class="oui">2.3</td>
+          <td class="oui">2.4</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
+          <td class="oui" colspan="2">1.1</td>
+          <td class="oui">1.2</td>
+          <td class="oui">2.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JSF.html">JSF</a></th>
+          <td class="non" colspan="4">Non</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"> API d'entreprise</th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/EJB.html">EJB</a></th>
+          <td class="oui" colspan="2">1.1</td>
+          <td class="oui">2.0</td>
+          <td class="oui">2.1</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Intégration</th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JDBC.html">JDBC</a> extension</th>
+          <td class="oui" colspan="2">2.0</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td>XARessource</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a></th>
+          <td class="oui" colspan="2"> 1.2</td>
+          <td class="oui" colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
+          <td>CosNaming SPI</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>/<a
+              href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a></th>
+          <td class="oui" colspan="2"> 1.0</td>
+          <td class="oui" colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"> JTA</th>
+          <td class="oui" colspan="2"> 1.0</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td>UserTransaction</td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"> JavaMail</th>
+          <td class="oui" colspan="2"> 1.1</td>
+          <td class="oui">1.2</td>
+          <td class="oui">1.3</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top">JAF</th>
+          <td class="oui">1.0</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JMS.html">JMS</a></th>
+          <td colspan="2"> API seulement, pas d'implémentation</td>
+          <td class="oui">1.0</td>
+          <td class="oui">1.1</td>
+          <td>Queue, Topic</td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="/tech/info/soft/data/doc/xml/XML.html">XML</a></th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a></th>
+          <td class="non" colspan="2">Non</td>
+          <td class="oui"> 1.1</td>
+          <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top">EAI</th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JAX-RPC.html">JAX-RPC</a></th>
+          <td class="non" colspan="2"> Non</td>
+          <td> Optionnel</td>
+          <td class="oui"> 1.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">JAXR</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">SAAJ</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.1</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="/tech/informatique/soft/java/J2C.html">J2C</a></th>
+          <td class="non" colspan="2">Non</td>
+          <td class="oui"> 1.0</td>
+          <td class="oui">1.5</td>
+          <td>CCI</td>
+        </tr>
+        <tr>
+          <th valign="top">Web Services</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top"><a href="/tech/info/soft/sec">Sécurité</a></th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JAAS.html">JAAS</a></th>
+          <td class="non" colspan="2"> Non</td>
+          <td class="oui" colspan="2"> 1.0</td>
+          <td><code>LoginContext</code></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JSSE.html">JSSE</a></th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">Oui</td>
+          <td><a href="/tech/info/soft/prog/oo/java/SSL.html">SSL</a>, TLS</td>
+        </tr>
+        <tr>
+          <th valign="top"> JACC</th>
+          <td class="non" colspan="3"> Non</td>
+          <td class="oui"> 1.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"> Journalisation (log)</th>
+          <th valign="top"> JLA</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.0</td>
+          <td> Logger, Handler, Filter, Formatter</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top"> Supervision</th>
+          <th valign="top"><a href="/tech/info/soft/prog/oo/java/JMX.html">JMX</a></th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.1</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"> J2EE Management</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"> Déploiement</th>
+          <th valign="top"> J2EE Deployment</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.1</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
 
-<h2>Besoin</h2>
+      Implémentation de référence (<a href="/tech/info/soft/prog/oo/java/J2EE-RI.html">J2EE RI</a>)
+    </li>
 
-<p>Standardiser l'infrastructure technique offerte aux applications <a href="//org/us/company/oracle/sun/ptf/java">Java</a>
-  exécutées par des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs</a>.</p>
-<h2>Analyse</h2>
-<p>J2EE définit une <a href="/tech/info/soft/proj/design/arch">architecture</a> logicielle standard . </p>
-<p>A cet effet elle définit ou intégre divers types de composants applicatifs standards, susceptibles de composer une
-  application :</p>
-<ul>
-  <li>Clients
-    <ul>
-      <li>autonomes (<em>standalone</em>)</li>
-      <li><a href="/tech/info/soft/proj/design/arch/web">Web</a></li>
-    </ul>
-  </li>
-  <li>Serveur
-    <ul>
-      <li><a href="/tech/info/soft/proj/design/arch/web">Web</a></li>
-      <li>métier </li>
-      <li>d'intégration</li>
-    </ul>
-  </li>
-  <li>des <strong>services </strong>offerts à ces composants via ces conteneurs :
-    <ul>
-      <li><a href="/tech/info/soft/proj/impl/algo/tx">transaction</a></li>
-      <li> distribution</li>
-      <li><a href="/tech/info/soft/sec">sécurité</a></li>
-      <li>cycle de vie (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
-    </ul>
-  </li>
-</ul>
-<h2>Conception</h2>
+    <li>Compatibility Test Suite (CTS)</li>
 
-<p>La plate-forme J2EE :</p>
-<ul>
-  <li>est basée sur <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></li>
-  <li>ajoute des API d'"entreprise" intégrées entre elles, telles que :
-    <ul>
-      <li>des <strong>conteneurs </strong>de composants :
-        <ul>
-          <li>Clients
-            <ul>
-              <li>autonomes (<em>standalone</em>)</li>
-              <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applets</a></li>
-            </ul>
-          </li>
-          <li>Serveur
-            <ul>
-              <li><a href="/tech/info/soft/proj/design/arch/web">Web</a> (<a
-                  href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>, <a
-                  href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>)</li>
-              <li>métier (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>)</li>
-              <li>d'intégration (<a href="/tech/informatique/soft/java/J2C.html">JCA</a>)</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>des <strong>services </strong>offerts à ces composants via ces conteneurs :
-    <ul>
-      <li><a href="//tech/info/soft/proj/impl/algo/tx">transaction</a></li>
-      <li> distribution</li>
-      <li><a href="/tech/info/soft/sec">sécurité</a></li>
-      <li>cycle de vie (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
-    </ul>
-  </li>
-</ul>
-<p>intégrées entre elles (propagations entre composants des contextes transactionnel et de sécurité par exemple).</p>
-<h2>Exemples</h2>
+    <li>Standard de benchmark (ECPerf) <span class="source">[1.3]</span></li>
 
-<p>La plate-forme J2EE est implémentée par la plupart des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs
-  applicatifs </a>:</p>
-
-<ul>
-  <li><a href="/tech/info/soft/prog/oo/java/WLS.html">WLS</a></li>
-  <li><a href="../../../../../../ibm/product/soft/server/app/WAS.html">WAS</a></li>
-  <li><a href="/tech/info/soft/prog/oo/java/JBoss.html">JBoss</a></li>
-  <li>Jonas</li>
-  <li>Oracle 9i</li>
-  <li>Borland Enterprise Server (BES)</li>
-</ul>
-
-<p>Il existe également une <strong>implémentation de référence</strong> de J2EE fournie par JavaSoft : <a
-    href="/tech/info/soft/prog/oo/java/J2EE-RI.html">J2EE RI</a>.</p>
-
-<h2>Notes</h2>
-
-<ul>
-
-  <li>
-
-    <table border="1" cellspacing="0" cellpadding="5">
-      <caption>
-        API J2EE
-      </caption>
-      <thead>
-      <tr>
-        <td rowspan="2" class="titleCorner"></td>
-        <th>Version</th>
-        <th colspan="4"> 1</th>
-        <th rowspan="3"> Commentaire</th>
-      </tr>
-      <tr>
-        <th>Release</th>
-        <th colspan="2"> 2</th>
-        <th><a href="http://java.sun.com/j2ee/j2ee-1_3-fr-spec.pdf">3</a></th>
-        <th><a href="http://java.sun.com/j2ee/j2ee-1_4-pfd-spec.pdf">4</a></th>
-      </tr>
-      <tr>
-        <th>Couche</th>
-        <th>Technologie</th>
-        <th>0</th>
-        <th>1</th>
-        <th> 0</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th valign="top">Plate-forme de base</th>
-        <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
-        <td colspan="2" class="oui"> 1.2</td>
-        <td class="oui">1.3</td>
-        <td class="oui">1.4</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th rowspan="3" valign="top">Présentation Web</th>
-        <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
-        <td colspan="2" class="oui">2.2</td>
-        <td class="oui">2.3</td>
-        <td class="oui">2.4</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th></th>
-        <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
-        <td colspan="2" class="oui">1.1</td>
-        <td class="oui">1.2</td>
-        <td class="oui">2.0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th></th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JSF.html">JSF</a></th>
-        <td colspan="4" class="non">Non</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"> API d'entreprise</th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/EJB.html">EJB</a></th>
-        <td colspan="2" class="oui">1.1</td>
-        <td class="oui">2.0</td>
-        <td class="oui">2.1</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">Intégration</th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JDBC.html">JDBC</a> extension</th>
-        <td colspan="2" class="oui">2.0</td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td>XARessource</td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a></th>
-        <td colspan="2" class="oui"> 1.2</td>
-        <td colspan="2" class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
-        <td>CosNaming SPI</td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>/<a
-            href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a></th>
-        <td colspan="2" class="oui"> 1.0</td>
-        <td colspan="2" class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top"> JTA</th>
-        <td colspan="2" class="oui"> 1.0</td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td>UserTransaction</td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top"> JavaMail</th>
-        <td colspan="2" class="oui"> 1.1</td>
-        <td class="oui">1.2</td>
-        <td class="oui">1.3</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top">JAF</th>
-        <td class="oui">1.0</td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td class="oui"></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"></th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JMS.html">JMS</a></th>
-        <td colspan="2"> API seulement, pas d'implémentation</td>
-        <td class="oui">1.0</td>
-        <td class="oui">1.1</td>
-        <td>Queue, Topic</td>
-      </tr>
-      <tr>
-        <th valign="top"><a href="/tech/info/soft/data/doc/xml/XML.html">XML</a></th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a></th>
-        <td colspan="2" class="non">Non</td>
-        <td class="oui"> 1.1</td>
-        <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="5">EAI</th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JAX-RPC.html">JAX-RPC</a></th>
-        <td colspan="2" class="non"> Non</td>
-        <td> Optionnel</td>
-        <td class="oui"> 1.0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">JAXR</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top">SAAJ</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.1</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"><a href="/tech/informatique/soft/java/J2C.html">J2C</a></th>
-        <td colspan="2" class="non">Non</td>
-        <td class="oui"> 1.0</td>
-        <td class="oui">1.5</td>
-        <td>CCI</td>
-      </tr>
-      <tr>
-        <th valign="top">Web Services</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="3"><a href="/tech/info/soft/sec">Sécurité</a></th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JAAS.html">JAAS</a></th>
-        <td colspan="2" class="non"> Non</td>
-        <td colspan="2" class="oui"> 1.0</td>
-        <td><code>LoginContext</code></td>
-      </tr>
-      <tr>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JSSE.html">JSSE</a></th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">Oui</td>
-        <td><a href="/tech/info/soft/prog/oo/java/SSL.html">SSL</a>, TLS</td>
-      </tr>
-      <tr>
-        <th valign="top"> JACC</th>
-        <td colspan="3" class="non"> Non</td>
-        <td class="oui"> 1.0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"> Journalisation (log)</th>
-        <th valign="top"> JLA</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.0</td>
-        <td> Logger, Handler, Filter, Formatter</td>
-      </tr>
-      <tr>
-        <th valign="top" rowspan="2"> Supervision</th>
-        <th valign="top"><a href="/tech/info/soft/prog/oo/java/JMX.html">JMX</a></th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.1</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"> J2EE Management</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th valign="top"> Déploiement</th>
-        <th valign="top"> J2EE Deployment</th>
-        <td colspan="3" class="non">Non</td>
-        <td class="oui">1.1</td>
-        <td></td>
-      </tr>
-      </tbody>
-    </table>
-
-    Implémentation de référence (<a href="/tech/info/soft/prog/oo/java/J2EE-RI.html">J2EE RI</a>)
-  </li>
-
-  <li>Compatibility Test Suite (CTS)</li>
-
-  <li>Standard de benchmark (ECPerf) <span class="source">[1.3]</span></li>
-
-</ul>
-
-<h2>Voir</h2>
-
-<ul>
-
-  <li>JavaSoft <a href="http://java.sun.com/blueprints">J2EE BluePrints</a>
-
-    <ul>
-
-      <li><a href="http://java.sun.com/blueprints/patterns/j2ee_patterns/catalog.html">J2EE
-
-        Design Patterns catalog</a></li>
-
-    </ul>
-
-  </li>
-
-  <li><a href="http://www.theserverside.com">The Server Side</a></li>
-
-  <li><a href="http://java.sun.com/j2ee/sdk_1.3/techdocs/api">API</a></li>
-
-</ul>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>JavaSoft <a href="http://java.sun.com/blueprints">J2EE BluePrints</a>
+      <ul>
+        <li><a href="http://java.sun.com/blueprints/patterns/j2ee_patterns/catalog.html">J2EE Design Patterns
+          catalog</a></li>
+      </ul>
+    </li>
+    <li><a href="http://www.theserverside.com">The Server Side</a></li>
+    <li><a href="http://java.sun.com/j2ee/sdk_1.3/techdocs/api">API</a></li>
+  </ul>
+</section>
 <!--#include virtual="/footer.html" -->

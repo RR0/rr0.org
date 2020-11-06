@@ -1,0 +1,155 @@
+<!--#include virtual="/header-start.html" -->
+<title>WebGL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Web Graphics Library</i>. </p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une bibliothèque de fonctions graphiques 2D et 3D pour le <a href="/tech/info/soft/proj/design/arch/web">Web</a>
+    déléguant des calculs à la carte graphique .</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Gestion de :</p>
+  <ul>
+    <li>la caméra</li>
+    <li>la rotation 3D d'objets</li>
+    <li>le remplissage de facettes</li>
+    <li>les textures</li>
+    <li>la lumière</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>WebGL est basé sur <a href="../opengl">OpenGL</a> ES</p>
+  <p>pBuffers</p>
+  <p>pipeline model. </p>
+  <p>Mécanisme d'extension </p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <tr>
+      <td class="titleCorner" rowspan="3"></td>
+      <th>Version</th>
+      <th colspan="6">1</th>
+      <th colspan="2">2</th>
+      <th rowspan="2">Commentaire</th>
+    </tr>
+    <tr>
+      <th>Release</th>
+      <th>1</th>
+      <th colspan="2">2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>Fixpack</th>
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>JS2E</th>
+      <th>minimal</th>
+      <td class="oui">1.4</td>
+      <td class="oui"></td>
+      <td class="oui">1.4</td>
+      <td class="oui">1.4</td>
+      <td class="oui"></td>
+      <td class="oui">1.4</td>
+      <td class="oui">1.4</td>
+      <td class="oui">1.4</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Core</th>
+      <td class="oui">2.0</td>
+      <td class="oui"></td>
+      <td class="oui">2.0</td>
+      <td class="oui">2.0</td>
+      <td class="oui"></td>
+      <td class="oui">2.0</td>
+      <td class="oui">2.0</td>
+      <td class="oui">2.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Vendor extensions</th>
+      <td class="oui">oui</td>
+      <td class="oui"></td>
+      <td class="oui">oui</td>
+      <td class="oui">oui</td>
+      <td class="oui"></td>
+      <td class="oui">oui</td>
+      <td class="oui">oui</td>
+      <td class="oui">oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Couleurs</th>
+      <th>True color</th>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui"></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td>15 bits</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Indexed</th>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non"></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <ul>
+    <li>Plates-formes
+      <ul>
+        <li>Stations de travail Unix&reg;, Linux, OPENStep, BeOS </li>
+        <li>Windows 95/98/2000/NT/Vista</li>
+        <li>MacOS</li>
+        <li>Web via WebGL/li>
+      </ul>
+    </li>
+    <li>Langages
+      <ul>
+        <li>C,</li>
+        <li>C++</li>
+        <li>Fortran</li>
+        <li>Ada</li>
+        <li>Java via <a href="/org/us/company/oracle/sun/ptf/java/api/ext/JOGL.html">JOGL</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Inventé par Sillicon Graphics (SGI) </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

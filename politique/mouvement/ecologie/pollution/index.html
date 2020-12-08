@@ -1,12 +1,148 @@
-<!--#include virtual="/header-start.html" -->
-<title>Pollution</title>
-<!--#include virtual="/header-end.html" -->
-<p>La pollution est une conséquence nocive pour l'environnement et/ou la santé d'une activité humaine.</p>
-<p>Des exemples de problématiques de pollution sont :</p>
-<ul>
-  <li>réchauffement climatique (<a href="ges">GES</a>)</li>
-  <li>production de <a href="dechets">déchets</a> et leur recyclage</li>
-  <li>la <a href="CoucheOzone.html">couche d'ozone</a></li>
-  <li>la pollution atmosphérique (particules fines, cancérigènes)</li>
-</ul>
-<!--#include virtual="/footer.html" -->
+<!DOCTYPE html>
+<html data-ng-app="rr0" lang="{{app.lang}}" ng-controller="AppController as app">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <title>Pollution</title>
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', {packages: ['corechart'], 'language': 'fr'});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Source d'énergie",
+          'Émission directes', "Infrastructure et chaîne d'approvisionnement", 'Rejets de méthane',
+          {role: 'annotation'}],
+        ['Nucléaire', 0, {v: 6, f: "six"}, 0, '6'],
+        ['Éolien', 0, 14, 0, '14'],
+        ['Géothermie', 0, 45, 0, '45'],
+        ['Solaire PV', 0, 55, 0, '55'],
+        ['Hydroélectricité', 0, 8, 140, "6 à 140"],
+        ['Gaz naturel', 380, 1, 48, "418"],
+        ['Charbon', 1000, 2, 60, "1060"],
+      ]);
+      var options = {
+        title: "Intensité carbone de l'électricité",
+        width: 800, height: 800,
+        vAxis: {
+          minValue: 0,
+          maxValue: 1000,
+          ticks: [0, 200, 400, 600, 800, 1000]
+        },
+        legend: {position: 'bottom', maxLines: 3},
+        bar: {groupWidth: '50%'},
+        isStacked: true,
+        series: {
+          0: {color: 'rgb(88,129,184)'},
+          1: {color: 'rgb(164,186,103)'},
+          2: {color: 'rgb(181,88,84)'}
+        },
+        vAxes: {
+          0: {title: 'émissions (en gCO2éq/KWh)'},
+        },
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+<div class="contents no-side">
+  <div data-ng-controller="HeadController">
+    <header>
+      <h1 data-ng-show="!isFramed()">
+        <a ng-bind-html="title" ng-href="{{titleUrl}}" ng-if="titleUrl" target="_blank"></a> <span ng-bind-html="title"
+          ng-if="!titleUrl"></span>
+      </h1>
+    </header>
+    <nav>
+      <h1>Navigation</h1>
+      <ul>
+        <li class="constant" data-ng-cloak data-ng-if="!isFramed()">
+          <a class="home" data-ng-href="/" href="/"> <span class="label" title="Home">RR0</span> </a>
+        </li>
+        <li class="constant" data-ng-cloak data-ng-show="!isFramed()">
+          <div class="search"></div>
+        </li>
+        <li class="collapsed" data-ng-cloak data-ng-if="!isFramed()"><i class="fa fa-angle-right"></i></li>
+        <li class="constant {{::p.style}}" data-ng-if="p.link && p.label" data-ng-repeat-start="p in ps">
+          <a data-ng-href="{{::p.link}}"> <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span> </a>
+        </li>
+        <li class="collapsed" data-ng-cloak data-ng-if="p.link && p.label" data-ng-repeat-end>
+          <i class="fa fa-angle-right"></i></li>
+        <li class="constant" data-ng-click="titleClick()" tabindex="100">
+          <a class="outline-title" data-ng-click="sectionClick('#contents')" href="#contents" id="out-top"> <span
+              class="constant" data-ng-bind-html="outline | unsafe" title="Début de l'article"></span> </a>
+          <ul class="outline">
+            <li class="constant" data-ng-attr-tabindex="{{101+$index}}" data-ng-click="sectionClick(s)"
+                data-ng-repeat="s in sections">
+              <a data-ng-href="#{{::s.id}}" id="out-{{::s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="collapsed" data-ng-cloak data-ng-if="n.link && n.label" data-ng-repeat-start="n in ns">
+          <i class="fa fa-angle-right"></i></li>
+        <li class="constant {{n.style}}" data-ng-if="n.link && n.label" data-ng-repeat-end>
+          <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
+        </li>
+        <li class="constant">
+          <span data-ng-bind-html="alternate"></span>
+        </li>
+        <li class="toggleMap constant">
+          <a href="#"><span class="label">Carte</span> <span><i class="fa fa-map-marker"></i></span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="text">
+
+    <p>La pollution est une conséquence nocive pour l'environnement et/ou la santé d'une activité humaine.</p>
+    <p>Des exemples de problématiques de pollution sont :</p>
+    <ul>
+      <li>réchauffement climatique (suite à l'accumulation de <a href="ges">GES</a> émis, notamment par des techniques
+        de <a href="..">production d'énergie</a>)</li>
+      <li>production de <a href="dechets">déchets</a> (et leur taux de recyclage) induites par la consommation et
+        certaines techniques de <a href="..">production d'énergie</a> ou </li>
+      <li>la <a href="CoucheOzone.html">couche d'ozone</a></li>
+      <li>la pollution atmosphérique (particules fines, cancérigènes)</li>
+    </ul>
+    <section>
+      <h2>Comparaison</h2>
+      <div id="chart_div" style="z-index: 100000"></div>
+    </section>
+    <footer data-ng-controller="FootCtrl">
+      <div data-ng-cloak data-ng-show="!isFramed()" id="footerTable">
+        <div>
+          <span class="rr0-tweet"></span> <span class="rr0-gplus"></span> <span class="rr0-fb-like"></span>
+        </div>
+        <div class="footer">
+          Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" -->
+          <!--#flastmod virtual="$DOCUMENT_URI" -->
+          <span class="copyright" data-default-name="RR0" data-url="/Copyright.html"></span> - <a href="/Contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div><!--text-->
+</div><!--contents-->
+<aside>
+  <h1>Map</h1>
+  <div id="starmap"></div>
+  <div id="map-canvas"></div>
+</aside>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-sanitize.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.15/angular-locale_fr-fr.js"></script>
+<script src="/rr0_.js"></script>
+</body>
+</html>

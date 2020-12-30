@@ -1,0 +1,459 @@
+<!--#include virtual="/header-start.html" -->
+<title>CSS</title>
+<meta content="http://www.w3.org/Style/CSS" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i>Cascading Style Sheets</i> : feuilles de style en cascade.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir l'apparence de balises <a href="/tech/info/soft/data/doc/html">HTML</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un <strong>style</strong> est un ensemble de paramètres déterminant le rendu visuel d'une balise, comme :</p>
+  <ul>
+    <li>la <a href="/tech/info/soft/data/police/fonte">fonte</a></li>
+    <li>les couleurs (avant-plan, arrière-plan, etc.)</li>
+    <li>l'espacement</li>
+    <li>la justification</li>
+    <li>la casse</li>
+  </ul>
+  <p>La spécification des styles applicables à un document est contenue dans une <strong>feuille de style</strong>.
+  </p>
+  <p>On prévoit de spécifier pour un document une série de feuilles de styles, dont certaines peuvent <a
+      href="../../../../../impl/lang/oo/Overriding.html">redéfinir</a> les styles des précédentes. On parle alors de
+    <strong>cascade</strong> de feuilles de styles, pour atteindre les buts de :
+  </p>
+  <ul>
+    <li><strong>modularité </strong>: capacité à construire un style global à partir de feuilles de styles élémentaires
+    </li>
+    <li><strong>adaptabilité </strong>: appliquer les style adéquats en fonction des volontés des rédacteurs, des
+      lecteurs, des cas d'utilisation, etc.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Modèle de boîte</h3>
+    <p>Conformément à la nature hiérarchique du langage à balises fermantes/ouvrantes qu'est <a
+        href="/tech/info/soft/data/doc/html">HTML</a>, CSS utilise un <b>modèle de boîtes</b> (<i lang="en">box
+      model</i>) imbriquées représentant les zones à afficher.</p>
+    <p>Chaque boîte applique les <b>règles</b> d'affichage qui lui sont dictées, de manière absolue ou en relation avec
+      les autres boîtes.</p>
+    <section>
+      <h4>Contenu</h4>
+      <figure class="right side">
+        <figcaption>Les composants d'une boîte, emboîtés</figcaption>
+        <table>
+          <tr>
+            <td style="background-color: lightsalmon">
+              margin
+              <table>
+                <tr>
+                  <td style="background-color: lightyellow">
+                    border
+                    <table>
+                      <tr>
+                        <td style="background-color: darkseagreen">
+                          padding
+                          <table>
+                            <tr>
+                              <td style="background-color: lightskyblue">Contenu</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </figure>
+      <p>Une boîte est une encapsulation de plusieurs éléments :</p>
+      <ul>
+        <li>son <b>contenu</b>, qui inclut lui-même :
+          <ul>
+            <li>sa <b>bordure</b> (<code lang="en">border</code>) qui entoure :
+              <ul>
+                <li>sa marge interne (<code lang="en"><b>padding</b></code>), qui englobe :
+                  <ul>
+                    <li>son contenu</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>sa <b>marge</b> (<code lang="en">margin</code>) <i>externe</i>, qui n'est <em>jamais prise en compte</em>
+          dans sa taille.</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Affichage</h4>
+      <p>L'affichage (<code>display</code>) des boîtes peut se faire :</p>
+      <ul>
+        <li>sous forme de <b>conteneur</b> (<code lang="en">block</code>) qui <em>réserve son espace</em>. Par défaut un
+          bloc occupe toute la largeur disponible (de son propre conteneur, à défaut du <i lang="en">viewport</i>) et
+          ira donc à la ligne s'il est placé après un autre élément.
+        </li>
+        <li>sous forme de <b>contenu</b> (<code lang="en">inline</code>) qui sera inséré dans le flux de lecture. Sa
+          taille ne sera alors régie que par la taille de ce contenu et de rien d'autre (fixer sa taille n'aura aucun
+          effect).</li>
+        <li>sous forme de <b>conteneur contenu</b> (<code lang="en">inline-block</code>)</li>
+        <li>non affiché (<code lang="en">none</code>) : aucun espace n'est alors réservé.</li>
+      </ul>
+      <p>Tout <a href="/tech/info/soft/proj/design/arch/web/client">navigateur</a> définit un style par défaut pour
+        chaque balise <a href="/tech/info/soft/data/doc/html">HTML</a>, conformément au standard CSS
+        (<code>&lt;p&gt;</code> ou <code>&lt;div&gt;</code> seront par défaut affiché comme des blocs,
+        <code>&lt;i&gt;</code> ou <code>&lt;span&gt;</code> comme des éléments de texte, etc.).
+      </p>
+      <p>Le calcul de la dimension d'une boîte peut à partir de son contenu (<code>box-sizing: content-box</code> par
+        défaut) ou de sa bordure (<code>box-sizing: border-box</code>, souvent plus pratique).
+    </section>
+    <section>
+      <h4>Positionnement</h4>
+      <p>Les boîtes peuvent être positionnées (<code>position</code>) selon différents algorithmes :</p>
+      <ul>
+        <li><b>inchangée</b> (<code lang="en">static</code>) par rapport à leur position attendue dans le flux de
+          lecture du document.</li>
+        <li>de manière <b><code>relative</code></b> <em>à la position courante</em>. Par exemple 10px plus haut, 2em de
+          moins côté gauche, etc.
+        </li>
+        <li>de manière <b>absolue</b> (<code lang="en">absolute</code>) <em>par rapport à un référentiel</em></li>
+        <li>de manière <b>fixe</b> (<code lang="en">fixed</code>), c'est-à-dire absolue indépendamment de tout
+          référentiel (ou par rapport au référentiel du <i lang="en">viewport</i> si l'on veut).</li>
+      </ul>
+    </section>
+  </section>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Langage</h3>
+    <p>Une feuille de style est constituée de :</p>
+    <ul>
+      <li><strong>règles </strong>(<em>rules</em>), elles-mêmes constituées de :
+        <ul>
+          <li>un <strong>sélecteur </strong>(<em>selector</em>) d'éléments auxquels appliquer le style, via (par
+            spécificité croissante) :
+            <ul>
+              <li>leur <strong>type</strong> : nom d'élément : <code>a</code>, <code>p</code>, etc.
+              </li>
+              <li>la <strong>classe</strong> qu'il leur est appliquée : <code>.<em>classe</em></code> . La règle
+                s'appliquera donc à tous les éléments ayant cette classe.
+              </li>
+              <li>leur <strong>identité </strong>(id) : <code>#<em>id</em></code> . La règle ne doit alors concerner
+                qu'un seul élément (ou plusieurs mais via l'héritage du style) tel que en-tête, pied de page,
+                navigation, barre latérale, etc.
+              </li>
+            </ul>
+          </li>
+          <li>une <strong>déclaration </strong>: définition du style sous la forme d'une suite de :
+            <ul>
+              <li><strong>propriété</strong></li>
+              <li><strong>valeur </strong></li>
+            </ul>
+          </li>
+          <li>un <strong><strong>poids</strong></strong>, considéré en cas de conflits de redéfinitions entre règles.
+            Par défaut les règles issues de l'auteur d'un document sont plus fortes que celles d'un lecteur par exemple.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>Une feuille de style peut être :</p>
+    <ul>
+      <li><strong>interne</strong> : intégrée au contenu du document <a href="../../../../../../data/doc/html">HTML</a>
+      </li>
+      <li><strong>externe</strong> : référencée par le document <a
+          href="../../../../../../data/doc/html">HTML</a>. Ce dernier choix permet de réutiliser la même feuille de
+        style pour plusieurs documents, et donc de modifier l'apparence d'un ensemble de document à partir d'une seule
+        feuille.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Versions</h3>
+    <table class="long wide">
+      <thead>
+      <tr>
+        <td class="titleCorner" rowspan="2"></td>
+        <th rowspan="2">Propriétés</th>
+        <th rowspan="2"><a href="http://www.w3.org/TR/REC-CSS1-961217.html">1</a> (1996)</th>
+        <th colspan="2"><a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">2</a></th>
+        <th rowspan="2">3 (2012)</th>
+        <th rowspan="2">4</th>
+      </tr>
+      <tr>
+        <th>0 (1998)</th>
+        <th>1 (2011)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td rowspan="6">Texte</td>
+        <td>Propriétés de fontes (typeface, emphasis)</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui">Sélection plus précise d'élément avec &gt;, +, [attr], :first-child, etc.
+        </td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td> Couleur d'avant-plan, arrière-plan</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Espacement entre mots et lignes</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Alignement</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Marge, bordure, padding et positionnement</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Identification unique et classification générique de groupes d'attributs</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td rowspan="6">Sélecteur</td>
+        <td>Element particulier</td>
+        <td class="oui"><code><strong><em>#</em></strong><em>idElement</em></code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Classe d'élément</td>
+        <td class="oui"><code><strong>.</strong><em>classe</em></code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Pseudo-classe d'élément</td>
+        <td class="oui"></td>
+        <td class="oui"><code><em>classe</em>:<strong>link</strong><br>
+          <em>classe</em>:<strong>visited</strong></code><br>
+        </td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Descendant d'élément</td>
+        <td class="oui"><code><em>parent child</em></code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Tous éléments</td>
+        <td class="oui"><code><em>[parent]</em> <strong>*</strong></code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Images</td>
+        <td>Alignement, marge, bordure, padding et positionnement</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Tableaux</td>
+        <td>Alignement, marge, bordure, padding et positionnement</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td rowspan="4">Positionnement</td>
+        <td></td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>position: static</code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Relatif</td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>position: relative (top, bottom, left, right offsets)</code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Absolu</td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>position: absolute</code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Fixe</td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>position: fixed</code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td>Affichage</td>
+        <td></td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>display: [none|inline|block]</code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <ul>
+            <li>index de profondeur</li>
+            <li>media types</li>
+            <li>aural style sheets</li>
+            <li>bidirectional text</li>
+            <li>new font properties (shadows)</li>
+          </ul>
+        </td>
+        <td class="non">Non</td>
+        <td class="oui"><code>z-index</code></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <ul>
+            <li>bords arrondis</li>
+          </ul>
+        </td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>border-radius</code></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>media-queries</td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="non"></td>
+        <td class="oui"><code>@media screen and (min-width: 400px) and (max-width: 700px) { … }</code></td>
+        <td class="oui"></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de feuille de style CSS est :</p>
+  <blockquote><pre class="prettyprint"><code class="language-css">&lt;style type="text/css"&gt; .mainTitle { // classe
+        font-family: Verdana, Arial, Helvetica, sans-serif; font-size: larger } h1 { font-family: "Bookman Old Style";
+        font-size: x-large; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none;
+        text-align: left; word-spacing: normal; letter-spacing: 0mm } p { font-size: small; font-style: normal;
+        line-height: normal; font-weight: normal; font-variant: normal; text-transform: none; text-align: justify;
+        color: #000000; font-family: "Bookman Old Style"; clip: rect( ); text-indent: 20pt } ul {
+        font-family: <span class="codeString">"Bookman Old
+  Style"</span>; font-size: small; list-style-position: outside; list-style-type: disc; text-align: justify<br/>
+        }<br/> address { font-family: <span class="codeString">"Courier
+  New"</span>, Courier, mono; <br/> font-size: small; margin-left: 1cm<br/> }<br/> ol {
+        font-family: <span class="codeString">"Bookman Old
+  Style"</span>; font-size: small; list-style-position: outside; list-style-type: decimal; text-align: justify<br/>
+        }<br/> h2 { font-family: <span class="codeString">"Bookman Old
+  Style"</span>; font-size: large; font-style: normal; line-height: normal; font-weight: normal; font-variant:
+        normal; text-transform: none; height: auto; margin-top: 25px; margin-right: 0; margin-left: 0; padding-top: 0;
+        padding-bottom: 0; padding-left: 0; border: 0; black groove; clip: rect( ) } &lt;/style&gt;
+    </code></pre>
+  </blockquote>
+  <p>Un exemple de page Web (HTML) utilisant une feuille de style est :</p>
+  <blockquote>
+    <pre class="prettyprint"><code class="language-html">&lt;html&gt; &lt;head&gt; &lt;title&gt;Test de
+        feuille de style&lt;/title&gt; &lt;link rel="stylesheet" type"text/css" href="/monStyle.css" title="MonStyle"&gt;
+        &lt;style type="text/css"&gt; &lt;!-- @import url(http://javarome.net/basic); h1 { color: blue } --&gt;</span>
+      &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Ce titre 1 est bleu&lt;/h1&gt; &lt;p style="color: green"&gt;Alors
+        que ce paragraphe est vert.&lt;/p&gt; &lt;/body&gt; &lt;/html&gt;
+    </code></pre>
+  </blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>CSS ne doit pas être confondu avec le standard <a href="/time/doc/xml/XSL.html">XSL</a> (eXtensible Style Sheet)
+      lié à XML.
+    </li>
+    <li>Des outils permettent une écriture simplifiée de feuilles CSS :
+      <ul>
+        <li>Préprocesseurs (Meta-langage compilant du CSS)
+          <ul>
+            <li><a href="http://compass-style.org">CompaSS</a></li>
+            <li><a href="http://lesscss.org/">LESS</a></li>
+            <li><a href="/tech/info/soft/prod/Sass.html">SaSS</a></li>
+          </ul>
+        </li>
+        <li><a href="http://knacss.com">Knacss</a> : feuille de style utilitaire</li>
+        <li><a href="http://csslint.net">CSS Lint</a> : Analyse en ligne de votre CSS et suggestions de
+          corrections/améliorations
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li><em><a href="http://learnlayout.com">Learn CSS Layout</a></em></li>
+    <li>"<a href="http://caniuse.com/#cats=CSS">CSS</a>", <em>Can I use...</em></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

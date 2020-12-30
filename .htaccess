@@ -837,6 +837,7 @@ Redirect /tech/info/soft/proj/besoin https://rr0.org/tech/info/soft/proj/req
 Redirect /tech/info/soft/proj/methode https://rr0.org/tech/info/soft/proj/method
 Redirect /tech/info/soft/proj/design/arch/web/js https://rr0.org/tech/info/soft/proj/impl/lang/javascript
 Redirect /tech/info/soft/proj/design/arch/web/client/CSS.html https://rr0.org/tech/info/soft/proj/design/arch/web/client/css
+Redirect /tech/info/soft/proj/design/arch/web/CSS.html https://rr0.org/tech/info/soft/proj/design/arch/web/client/css
 Redirect /tech/info/soft/prog/oo/java/JDO.html https://rr0.org/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html
 Redirect /tech/info/soft/prod/ide/WSAD.html https://rr0.org/org/us/company/ibm/product/soft/ide/WSAD.html
 Redirect /tech/info/soft/reseau/DNS.html https://rr0.org/tech/info/soft/reseau/protocole/5/DNS.html

@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Client web</title>
 <!--#include virtual="/header-end.html" -->
-<p><em>Web client, web browser </em>: client web, navigateur web.</p>
+<p><i lang="en">Web client, web browser </i>: client web, navigateur web.</p>
 <section>
   <h2>Besoin</h2>
   <p>Afficher des pages/<a href="app">applications</a> <a href="..">Web</a> et naviguer entre elles.</p>
@@ -52,9 +52,8 @@
         </li>
         <li>les données de la ressource trouvée, comme :
           <ul>
-            <li>le code <a href="../../../../../data/doc/html/index.html">HTML</a> d'une page Web (incluant
-              éventuellement du <a
-                  href="../../../../impl/lang/javascript">JavaScript</a>)
+            <li>le code <a href="../../../../../data/doc/html">HTML</a> d'une page Web (incluant éventuellement du <a
+                href="../../../../impl/lang/javascript">JavaScript</a>)
             </li>
             <li>les octets d'une image</li>
             <li>etc</li>
@@ -82,13 +81,13 @@
     <p>a abouti à concevoir les sites/webapps selon des principes de :</p>
     <ul>
       <li><strong>conception web adaptative</strong> (<em>responsive web design</em>), stratégie de tolérance aux
-        défaillances (<em>fault tolerance</em>) via :
+        défaillances (<i lang="en">fault tolerance</i>) via :
         <ul>
-          <li><strong>mode dégradé </strong>(<em>graceful degradation</em>) donnant priorité à la présentation, au
-            visuel
+          <li><strong>mode dégradé </strong>(<i lang="en">graceful degradation</i>) donnant priorité à la présentation,
+            au visuel
           </li>
-          <li><strong>mode réaussé </strong>(<em>progressive enhancement</em>) : donnant priorité au contenu/à la
-            structure. Préférable, ne serait-ce que pour être correctement adapté aux <a
+          <li><strong>mode réaussé </strong>(<i lang="en">progressive enhancement</i>) : donnant priorité au contenu/à
+            la structure. Préférable, ne serait-ce que pour être correctement adapté aux <a
                 href="../../platform/mobile">plates-formes mobiles</a>.
           </li>
         </ul>
@@ -112,7 +111,7 @@
       <ul>
         <li>Chrome (Google)</li>
         <li><a href="/org/us/company/ms/MSIE.html">IE</a> (Microsoft) &#8212; La version 6 pour Windows est plus
-          conforme aux standards que ses prédecesseurs 5.0 et 5.5. Réclame cependant assez de mémoire pour ne pas faire
+          conforme aux standards que ses prédécesseurs 5.0 et 5.5. Réclame cependant assez de mémoire pour ne pas faire
           grésiller votre disque dur sans discontinuer. Il est gratuit. La version 5 pour Mac fait un beau travail de
           conformance aux standards.
         </li>
@@ -130,13 +129,13 @@
         </li>
         <li><a href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> &#8212; Gratuit, conforme à 5
           standards importants, y compris <a href="/tech/info/soft/data/doc/xml">XML</a> et <a
-              href="/tech/info/soft/data/doc/dom/index.html">DOM</a>. Si votre machine n'est pas assez puissante, vous
-          riquez de le trouver lent. Disponible en français.
+              href="/tech/info/soft/data/doc/dom">DOM</a>. Si votre machine n'est pas assez puissante, vous riquez de le
+          trouver lent. Disponible en français.
         </li>
         <li><a href="/org/us/company/mozilla">Mozilla</a> &#8212; <a
-            href="../../../../../OpenSource.html">OSS</a> et gratuit respectant les standards. Il est la base sur
+            href="tech/info/soft/prod/licence/oss">OSS</a> et gratuit respectant les standards. Il est la base sur
           laquelle sont construits d'autres navigateurs, par exemple Netscape 7. Il est rapide et doté de nombreuses
-          fonctionalités (mail, chat, <a href="/tech/info/soft/data/doc/dom/index.html">DOM</a> Inspector).
+          fonctionalités (mail, chat, <a href="/tech/info/soft/data/doc/dom">DOM</a> Inspector).
         </li>
         <li><a href="http://www.opera.com">Opera</a> &#8212; Léger et rapide respectant les standards. Disponible sur 5
           OS, et en français.
@@ -175,11 +174,11 @@
     <li>constitue la partie cliente d'une architecture <a href="../../ClientServeur.html">C/S</a> Web.
     </li>
     <li>
-      <table border="1" cellspacing="0" cellpadding="5">
+      <table>
         <thead>
         <tr>
           <td colspan="2" rowspan="3" class="titleCorner"></td>
-          <th valign="top">Editeur</th>
+          <th>Editeur</th>
           <th>Apple</th>
           <th>Google</th>
           <th>Mozilla</th>
@@ -187,7 +186,7 @@
           <th></th>
         </tr>
         <tr>
-          <th valign="top"> Produit</th>
+          <th> Produit</th>
           <th>Safari/iOS</th>
           <th>Chrome/Android</th>
           <th>Firefox/</th>
@@ -196,7 +195,7 @@
         </tr>
         </thead>
         <tr>
-          <th valign="top"> Version</th>
+          <th> Version</th>
           <th></th>
           <th></th>
           <th>1</th>
@@ -206,7 +205,7 @@
         <tr>
           <th> Domaine</th>
           <th> Technologie</th>
-          <th valign="top"> Release</th>
+          <th> Release</th>
           <th></th>
           <th></th>
           <th>0</th>
@@ -214,9 +213,9 @@
           <th>0</th>
         </tr>
         <tr>
-          <th rowspan="3" valign="top">Navigation</th>
-          <th valign="top">Onglets</th>
-          <th valign="top"></th>
+          <th rowspan="3">Navigation</th>
+          <th>Onglets</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui">Oui</td>
@@ -224,8 +223,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">Popups</th>
-          <th valign="top">Blocage possible</th>
+          <th>Popups</th>
+          <th>Blocage possible</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui">Oui</td>
@@ -233,8 +232,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">Recherche</th>
-          <th valign="top"></th>
+          <th>Recherche</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui">Oui</td>
@@ -242,9 +241,9 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top"><a href="../../../../../reseau/protocole">Protocole</a></th>
-          <th valign="top"><a href="../HTTP.html">HTTP</a></th>
-          <th valign="top"></th>
+          <th><a href="../../../../../reseau/protocole">Protocole</a></th>
+          <th><a href="../HTTP.html">HTTP</a></th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -252,9 +251,9 @@
           <td class="oui">1.1+</td>
         </tr>
         <tr>
-          <th rowspan="6" valign="top"><a href="../../../../impl/lang">Langage</a></th>
-          <th valign="top"><a href="../../../../../data/doc/html/index.html">HTML</a></th>
-          <th valign="top"></th>
+          <th rowspan="6"><a href="../../../../impl/lang">Langage</a></th>
+          <th><a href="../../../../../data/doc/html">HTML</a></th>
+          <th></th>
           <td></td>
           <td></td>
           <td></td>
@@ -262,8 +261,8 @@
           <td>4.01</td>
         </tr>
         <tr>
-          <th valign="top">XHTML</th>
-          <th valign="top"></th>
+          <th>XHTML</th>
+          <th></th>
           <td></td>
           <td></td>
           <td></td>
@@ -271,8 +270,8 @@
           <td>1.0</td>
         </tr>
         <tr>
-          <th valign="top">WML</th>
-          <th valign="top"></th>
+          <th>WML</th>
+          <th></th>
           <td></td>
           <td></td>
           <td></td>
@@ -280,8 +279,8 @@
           <td>2.0</td>
         </tr>
         <tr>
-          <th valign="top"><a href="css">CSS</a></th>
-          <th valign="top"></th>
+          <th><a href="css">CSS</a></th>
+          <th></th>
           <td></td>
           <td></td>
           <td></td>
@@ -289,8 +288,8 @@
           <td>2</td>
         </tr>
         <tr>
-          <th rowspan="2" valign="top"><a href="../../../../impl/lang/javascript">JavaScript</a></th>
-          <th valign="top">Interpréteur</th>
+          <th rowspan="2"><a href="../../../../impl/lang/javascript">JavaScript</a></th>
+          <th>Interpréteur</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -298,7 +297,7 @@
           <td class="oui">1.3/1.5</td>
         </tr>
         <tr>
-          <th valign="top">Debugger</th>
+          <th>Debugger</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -306,9 +305,9 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th rowspan="12" valign="top"><a href="/tech/info/soft/data/doc/xml">XML</a></th>
-          <th valign="top">Affichage</th>
-          <th valign="top"></th>
+          <th rowspan="12"><a href="/tech/info/soft/data/doc/xml">XML</a></th>
+          <th>Affichage</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -316,8 +315,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">Feuilles de style</th>
-          <th valign="top"></th>
+          <th>Feuilles de style</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -325,8 +324,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">Base</th>
-          <th valign="top"></th>
+          <th>Base</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -334,8 +333,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">XSLT</th>
-          <th valign="top"></th>
+          <th>XSLT</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -343,8 +342,8 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">Xpath</th>
-          <th valign="top"></th>
+          <th>Xpath</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -352,8 +351,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">RDF</th>
-          <th valign="top"></th>
+          <th>RDF</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -361,8 +360,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">MathML</th>
-          <th valign="top"></th>
+          <th>MathML</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -370,8 +369,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">XML-RPC</th>
-          <th valign="top"></th>
+          <th>XML-RPC</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -379,8 +378,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">SOAP</th>
-          <th valign="top"></th>
+          <th>SOAP</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -388,8 +387,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">Namespaces</th>
-          <th valign="top"></th>
+          <th>Namespaces</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -397,8 +396,8 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">XLink</th>
-          <th valign="top"></th>
+          <th>XLink</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -406,8 +405,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">DOM</th>
-          <th valign="top"></th>
+          <th>DOM</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -415,9 +414,9 @@
           <td class="oui">2</td>
         </tr>
         <tr>
-          <th valign="top" rowspan="3"><a href="../../../../../sec">Sécurité</a></th>
-          <th valign="top">Certificats</th>
-          <th valign="top"><a href="../../../../../sec/priv/crypt/X509.html">X.509</a></th>
+          <th rowspan="3"><a href="../../../../../sec">Sécurité</a></th>
+          <th>Certificats</th>
+          <th><a href="../../../../../sec/priv/crypt/X509.html">X.509</a></th>
           <td></td>
           <td></td>
           <td></td>
@@ -425,8 +424,8 @@
           <td></td>
         </tr>
         <tr>
-          <th valign="top">Cookies</th>
-          <th valign="top"></th>
+          <th>Cookies</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -434,8 +433,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top"><a href="../../../../../sec/priv/crypt/SSL.html">SSL</a></th>
-          <th valign="top"></th>
+          <th><a href="../../../../../sec/priv/crypt/SSL.html">SSL</a></th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -443,10 +442,10 @@
           <td class="oui">3.0</td>
         </tr>
         <tr>
-          <th valign="top" rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java">Java</a>
+          <th rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java">Java</a>
           </th>
-          <th valign="top">JRE</th>
-          <th valign="top"></th>
+          <th>JRE</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -454,8 +453,8 @@
           <td class="oui"></td>
         </tr>
         <tr>
-          <th valign="top">JNI</th>
-          <th valign="top"></th>
+          <th>JNI</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -463,9 +462,9 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top" rowspan="6">Plate-forme</th>
-          <th valign="top" rowspan="4">Windows</th>
-          <th valign="top">95</th>
+          <th rowspan="6">Plate-forme</th>
+          <th rowspan="4">Windows</th>
+          <th>95</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -473,7 +472,7 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">98</th>
+          <th>98</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -481,7 +480,7 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">NT 4</th>
+          <th>NT 4</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -489,7 +488,7 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">2000</th>
+          <th>2000</th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -497,8 +496,8 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">MacOS</th>
-          <th valign="top"></th>
+          <th>MacOS</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -506,8 +505,8 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">Linux</th>
-          <th valign="top"></th>
+          <th>Linux</th>
+          <th></th>
           <td class="oui"></td>
           <td class="oui"></td>
           <td class="oui"></td>
@@ -515,9 +514,9 @@
           <td class="oui">Oui</td>
         </tr>
         <tr>
-          <th valign="top">Rendu</th>
-          <th valign="top"></th>
-          <th valign="top"></th>
+          <th>Rendu</th>
+          <th></th>
+          <th></th>
           <td class="oui">Webkit</td>
           <td class="oui">Webkit</td>
           <td class="oui"></td>

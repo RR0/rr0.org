@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>WebGL</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Web Graphics Library</i>. </p>
+<p><i lang="en">Web Graphics Library</i>. : librairie graphique pour le web.</p>
 <section>
   <h2>Besoin</h2>
   <p>Fournir une bibliothèque de fonctions graphiques 2D et 3D pour le <a href="/tech/info/soft/proj/design/arch/web">Web</a>
@@ -21,6 +21,12 @@
 <section>
   <h2>Conception</h2>
   <p>WebGL est basé sur <a href="../opengl">OpenGL</a> ES</p>
+  <p>Il permet de faire de rendus à l'aide de 2 types de <i lang="en">shaders</i> :</p>
+  <ul>
+    <li>de <b lang="en">vertex</b> qui va fournir les coordonnées dans l'espace de projection (<i
+        lang="en">clipspace</i>)</li>
+    <li>de <b>pixels</b> (de fragment) qui va fournir les couleurs.</li>
+  </ul>
   <p>pBuffers</p>
   <p>pipeline model. </p>
   <p>Mécanisme d'extension </p>
@@ -28,6 +34,7 @@
 <section>
   <h2>Implémentation</h2>
   <table>
+    <thead>
     <tr>
       <td class="titleCorner" rowspan="3"></td>
       <th>Version</th>
@@ -55,8 +62,10 @@
       <th></th>
       <th></th>
       <th></th>
-      <td></td>
+      <th></th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <th>JS2E</th>
       <th>minimal</th>
@@ -122,6 +131,7 @@
       <td class="non">Non</td>
       <td></td>
     </tr>
+    </tbody>
   </table>
 </section>
 <section>
@@ -149,7 +159,25 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Inventé par Sillicon Graphics (SGI) </li>
+    <li>Inventé par Sillicon Graphics (SGI)</li>
+    <li>Peut être utilisé pour faire de la 3D (comme toute API 2D) en implémentant les projections 3D soi-même, mais
+      n'intègre pas de fonctionnalités 3D nativement <span class="source">Tavares, Gregg: "<a
+          href="https://webglfundamentals.org/webgl/lessons/webgl-2d-vs-3d-library.html">WebGL - Rasterization vs 3D
+        libraries</a>", WebGLFundamentals</span></li>
+    <li>Destiné à être remplacé par WebGPU</li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li>Fundamentals for WebGL <a href="https://webglfundamentals.org">1</a> and <a
+        href="https://webgl2fundamentals.org">2</a></li>
+    <li>Boilerplate
+      <ul>
+        <li><a href="https://webglfundamentals.org/webgl/resources/webgl-utils.js">WebGL Utils</a></li>
+        <li><a href="https://twgljs.org">Tiny WebGL</a></li>
+      </ul>
+    </li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

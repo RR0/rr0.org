@@ -1,0 +1,287 @@
+<!--#include virtual="/header-start.html" -->
+<title>WebGL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Web Graphics Library</i>. : librairie graphique pour le web.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une bibliothèque de fonctions graphiques 2D et 3D pour le <a href="/tech/info/soft/proj/design/arch/web">Web</a>
+    déléguant des calculs à la carte graphique .</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>WebGL propose des services de gestion de :</p>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>1.0 (OpenGL ES 2.0)</th>
+      <th>2.0 (OpenGL ES 3.0)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Caméra</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Rotation 3D d'objets</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Remplissage de facettes</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Textures</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Lumière</th>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Textures 3D</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Objets Sampler</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Objets de tampon Uniform</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Objets Sync</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Objets Query</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Objets Transform Feedback</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>objets Vertex Array</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Instanciation</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Cibles de rendu multiples</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Profondeur de fragment</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>WebGL est basé sur <a href="../opengl">OpenGL</a> ES</p>, qui est un sous-ensemble de <a
+    href="../opengl">OpenGL</a>.
+  <p>Comme <a href="../opengl">OpenGL</a>, il permet de faire de rendus à l'aide d'une <b>pipeline</b> de <i
+      lang="en">shaders</i> plus limités, ne pouvant inclure que des :</p>
+  <ul>
+    <li><b>shader de vertex</b> qui va fournir les coordonnées dans l'espace de projection (<i lang="en">clipspace</i>)
+    </li>
+    <li><b>shader de fragment</b> (de pixels) qui va fournir les couleurs.</li>
+  </ul>
+  <p>pBuffers</p>
+  <p>pipeline model. </p>
+  <p>Mécanisme d'extension </p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Un contexte de rendu WebGL doit être obtenu à partir d'un <code>canvas</code>.</p>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>1.0</th>
+      <th>2.0</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Date</th>
+      <td>2009</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>OpenGL ES</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Langage</th>
+      <td>GLSL ES 1.00.17 (GLSL 1.2)</td>
+      <td>GLSL ES 3.00.6 (GLSL 3.30)</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <section>
+    <h3>WebGL 1.0</h3>
+    <section>
+      <h4>HTML</h4>
+      <pre><code>
+&lt;canvas>&lt;/canvas>
+&lt;script id="vs" type="x-shader/vertex">
+  attribute vec3 position;
+  void main() {
+    gl_Position = vec4( position, 1.0 );
+  }
+&lt;/script>
+&lt;script id="fs" type="x-shader/fragment">
+  uniform vec2 resolution;
+  void main( void ) {
+    gl_FragColor = vec4( 1.0, 0.0, 1.0, 0.6 );
+  }
+&lt;/script>
+  </code></pre>
+    </section>
+    <section>
+      <h4>JavaScript</h4>
+      <pre><code>
+const vertexShader = document.getElementById("vs").textContent
+const fragmentShader = document.getElementById("fs").textContent
+const canvas = document.querySelector("canvas")
+const gl = canvas.getContext("webgl")
+const program = gl.createProgram()
+const vs = createShader(vertexShader, gl.VERTEX_SHADER)
+const fs = createShader("#ifdef GL_ES\nprecision highp float;\n#endif\n\n" + fragmentShader, gl.FRAGMENT_SHADER)
+gl.attachShader(program, vs)
+gl.attachShader(program, fs)
+gl.linkProgram(program)
+const resolutionLocation = gl.getUniformLocation(program, "resolution")
+  </code></pre>
+    </section>
+  </section>
+  <section>
+    <h3>WebGL 2.0</h3>
+
+  </section>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <p>En supposant que l'appareil exécutant le programme dispose d'une carte graphique adaptée, l'API WebGL est
+    disponible dans les <a href="/tech/info/soft/proj/design/arch/web/client">navigateurs</a> suivants :</p>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>1.0</th>
+      <th>2.0</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Chrome</th>
+      <td class="oui">9+</td>
+      <td class="oui">56+</td>
+    </tr>
+    <tr>
+      <th>Chrome Android</th>
+      <td class="oui">88+</td>
+      <td class="oui">88+</td>
+    </tr>
+    <tr>
+      <th>Android browser</th>
+      <td class="oui">81+</td>
+      <td class="oui">81+</td>
+    </tr>
+    <tr>
+      <th>Safari</th>
+      <td class="oui">5.1+</td>
+      <td class="non">TP</td>
+    </tr>
+    <tr>
+      <th>iOS Safari</th>
+      <td class="oui">8+</td>
+      <td class="non">flag</td>
+    </tr>
+    <tr>
+      <th>Firefox</th>
+      <td class="oui">4+</td>
+      <td class="oui">51+</td>
+    </tr>
+    <tr>
+      <th>Firefox Android</th>
+      <td class="oui">86+</td>
+      <td class="oui">86+</td>
+    </tr>
+    <tr>
+      <th>Edge</th>
+      <td class="oui">12+</td>
+      <td class="oui">79+</td>
+    </tr>
+    <tr>
+      <th>IE</th>
+      <td class="oui">11+</td>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th>Samsung Internet</th>
+      <td class="oui">4+</td>
+      <td class="oui">7.2+</td>
+    </tr>
+    <tr>
+      <th>Baidu Browser</th>
+      <td class="oui">7.12+</td>
+      <td class="non">Non</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Peut être utilisé pour faire de la 3D (comme toute API 2D) en implémentant les projections 3D soi-même, mais
+      n'intègre pas de fonctionnalités 3D nativement <span class="source">Tavares, Gregg: "<a
+          href="https://webglfundamentals.org/webgl/lessons/webgl-2d-vs-3d-library.html">WebGL - Rasterization vs 3D
+        libraries</a>", WebGLFundamentals</span></li>
+    <li>Destiné à être remplacé par WebGPU</li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li>Didacticiels :
+      <ul>
+        <li>Fundamentals for WebGL <a href="https://webglfundamentals.org">1</a> and <a
+            href="https://webgl2fundamentals.org">2</a></li>
+      </ul>
+    </li>
+    <li>Boilerplate
+      <ul>
+        <li><a href="https://webglfundamentals.org/webgl/resources/webgl-utils.js">WebGL Utils</a></li>
+        <li><a href="https://twgljs.org">Tiny WebGL</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

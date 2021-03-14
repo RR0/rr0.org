@@ -1,0 +1,155 @@
+<!--#include virtual="/header-start.html" -->
+<title>OpenGL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Open Graphics Library</i>. </p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une <a href="tech/info/soft/API.html">API</a> graphiques 2D et 3D déléguant des calculs au <a
+      href="/tech/info/hard/gpu">GPU</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Gestion de :</p>
+  <ul>
+    <li>la caméra</li>
+    <li>la rotation 3D d'objets</li>
+    <li>le remplissage de facettes</li>
+    <li>les textures</li>
+    <li>la lumière</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>pBuffers</p>
+  <p>Un <b>programme</b> OpenGL effectue un rendu au travers d'une <b lang="en">pipeline</b> de <i
+      lang="en">shaders</i> pouvant inclure des <b lang="en">shaders</b> de :
+  </p>
+  <ul>
+    <li><b>sommets</b> ou <i lang="en">vertices</i> (<i lang="en">vertex shader</i>) qui va fournir les coordonnées dans
+      l'espace de projection (<i lang="en"> clipspace</i>)</li>
+    <li><b>pixels</b> (<i lang="en">fragment shader</i>) qui va fournir les couleurs.</li>
+    <li><b>géométries</b> (<i lang="en">geometry shader</i>)</li>
+    <li><b>tessellation</b> (<i lang="en">tessellation shader</i>)</li>
+    <li><b>calcul</b> (<i lang="en">compute shader</i>)</li>
+  </ul>
+  <p>qui se communiquent des données au travers de variables :</p>
+  <ul>
+    <li><b>uniformes</b> (<i lang="en">uniform</i>), c'est-à-dire fournie de l'extérieur (l'applicatif côté CPU) et ne
+      changeant pas durant l'exécution de toute la pipeline.</li>
+    <li><b>attributs</b> (<i lang="en">attributes</i>) utilisés comme paramètres (positions, normales, couleurs, UVs) de
+      vertex.</li>
+    <li><b>variants</b> (<i lang="en">varying</i>) dont la valeur varie d'un pixel à un autre par interpolation
+      (bilinéaire, corrigé pour la perspective en utilisant la profondeur du pixel, etc.).</li>
+  </ul>
+  <p>Mécanisme d'extension </p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Le traitement effectué par chaque shader doit être implémenté en <abbr title="openGL Shader Language">GLSL</abbr>.
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>1.0</th>
+      <th>1.4</th>
+      <th>1.5</th>
+      <th>2.0</th>
+      <th>2.1</th>
+      <th>3.0</th>
+      <th>3.1</th>
+      <th>3.2</th>
+      <th>3.3</th>
+      <th>4.0</th>
+      <th>Vulkan</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Date</th>
+      <td>1992</td>
+      <td>2003</td>
+      <td>2003</td>
+      <td>2004</td>
+      <td>2004</td>
+      <td>2008</td>
+      <td>2009</td>
+      <td>2009</td>
+      <td>2010</td>
+      <td>2010</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>Langage</th>
+      <td>ARB assembly language</td>
+      <td>ARB assembly language</td>
+      <td>GLSL 0.1</td>
+      <td>GLSL 1.10.59</td>
+      <td>GLSL 1.20.8</td>
+      <td>GLSL 1.30.10</td>
+      <td>GLSL 1.40.08</td>
+      <td>GLSL 1.50.11</td>
+      <td>GLSL 3.30.6</td>
+      <td>GLSL 4.00.9</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Extensions</th>
+      <td></td>
+      <td>GLSL 0.1</td>
+      <td>ARB_shader_objects, ARB_vertex_shader, ARB_fragment_shader</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <ul>
+    <li>Plates-formes
+      <ul>
+        <li>Stations de travail Unix&reg;, Linux, OPENStep, BeOS</li>
+        <li>Windows 95/98/2000/NT/Vista</li>
+        <li>MacOS</li>
+        <li>Web via <a href="/org/us/asso/khronos/product/soft/webgl">WebGL</a></li>
+      </ul>
+    </li>
+    <li>Langages
+      <ul>
+        <li>C,</li>
+        <li>C++</li>
+        <li>Fortran</li>
+        <li>Ada</li>
+        <li>Java via <a href="/org/us/company/oracle/sun/ptf/java/api/ext/JOGL.html">JOGL</a></li>
+        <li>JavaScript via <a href="/org/us/asso/khronos/product/soft/webgl">WebGL</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Inventé par Sillicon Graphics (SGI) </li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li>Didacticiels
+      <ul>
+        <li><a href="https://www.opengl.org/sdk/docs/tutorials/">OpenGL Tutorials</a></li>
+        <li><a href="https://learnopengl.com/">Learn OpenGL</a></li>
+        <li>Patricio Gonzalez Vivo & Jen Lowe, <a href="https://thebookofshaders.com/?lan=fr">The Book of Shaders</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

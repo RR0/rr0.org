@@ -1,37 +1,42 @@
-const path = require("path");
-const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const autoprefixer = require('autoprefixer');
-
-const PROD = JSON.parse(process.env.PROD_ENV || '0');
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: './js/index.ts',
-  resolve: {
-    // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: ['.ts', '.tsx', '.js'] // note if using webpack 1 you'd also need a '' in the array as well
+  entry: {
+    index: "./src/index.ts"
   },
-  module: {
-    loaders: [
-      {test: /\.tsx?$/, loader: 'ts-loader'},
-      {test: /\.js$/, loaders: ['ng-annotate-loader']},
-      {test: /\.scss$/, use: ExtractTextPlugin.extract({fallback: "style-loader", use: ["css-loader", "sass-loader"]})}
-    ],
-  },
+  mode: process.env.NODE_ENV || "production",
   devtool: "source-map",
-  externals: {
-    'angular': 'angular',
-    'google': 'google',
+  devServer: {
+    contentBase: "./dist"
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+        title: "Where do I go from now?",
+        lang: "en",
+        template: "src/index.html",
+        js: ["bundle.js"]
+      }
+    )
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+    modules: [
+      path.resolve("./node_modules"),
+      path.resolve("./src")
+    ]
   },
   output: {
-    filename: 'rr0.js'
-  },
-  plugins: PROD ? [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {warnings: false}
-    }),
-    new ExtractTextPlugin("rr0.css")
-  ] : [
-    new ExtractTextPlugin("rr0.css")
-  ],
-};
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
+  }
+}

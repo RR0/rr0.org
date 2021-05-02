@@ -1,6 +1,3 @@
-bower_components
-node_modules
-cgi-bin
-lib
-.sass-cache
-.idea
+# Project exclude paths
+/dist/
+/node_modules/

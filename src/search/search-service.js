@@ -1,4 +1,4 @@
-import nav from '../nav/nav';
+import nav from "../nav/nav"
 
 angular.module(nav)
   .service('searchService', function ($rootScope, $http) {

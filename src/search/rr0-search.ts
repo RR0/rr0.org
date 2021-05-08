@@ -1,6 +1,6 @@
 const angular = require('angular');
 
-import nav from '../nav/nav';
+import nav from '../nav/nav'
 
 angular.module(nav)
   .directive('search', function () {

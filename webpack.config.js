@@ -14,7 +14,7 @@ module.exports = {
     new HtmlWebpackPlugin({
         title: "Where do I go from now?",
         lang: "en",
-        template: "src/index.html",
+        template: "index.native.html",
         js: ["bundle.js"]
       }
     )
@@ -32,7 +32,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
     modules: [
       path.resolve("./node_modules"),
-      path.resolve("./src")
+      path.resolve("./")
     ]
   },
   output: {

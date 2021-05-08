@@ -1,10 +1,12 @@
-const angular = require('angular');
+const displinesJSON = require('/science/disciplines.json')
 
-export default scienceModule => {
-  var scienceModule = angular.module('rr0.science', ['ngResource']);
-  scienceModule
-    .factory('Disciplines', function ($resource) {
-      "use strict";
-      return $resource('/science/disciplines.json');
-    });
+export class ScienceModule {
+  disciplines: any[]
+
+  constructor() {
+    this.disciplines = JSON.parse(displinesJSON)
+  }
 }
+
+const science = new ScienceModule()
+export default science

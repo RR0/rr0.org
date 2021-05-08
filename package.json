@@ -1,8 +1,8 @@
 {
-  "name": "wheredoigofromnow",
-  "version": "1.0.0",
-  "description": "Your life board",
-  "main": "index.html",
+  "name": "rr0",
+  "version": "2.0.0",
+  "description": "UFO Encyclopaedia",
+  "main": "index.native.html",
   "scripts": {
     "start": "webpack serve --open",
     "watch": "webpack --watch",
@@ -20,8 +20,10 @@
     "from",
     "now"
   ],
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "stylelint": "^13.13.1",
     "@types/uuid": "^8.3.0",
     "html-webpack-plugin": "^5.3.1",
     "sass": "^1.32.11",

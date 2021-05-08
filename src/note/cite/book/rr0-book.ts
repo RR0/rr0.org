@@ -1,6 +1,4 @@
-import * as angular from "angular";
-
-interface BookScope extends ng.IScope {
+interface BookScope {
   bibkeys: string;
   book: {};
 }
@@ -18,7 +16,7 @@ export default commonsModule => {
         link: function (scope: BookScope) {
           $http.jsonp('https://openlibrary.org/api/books?callback=JSON_CALLBACK&bibkeys=' + scope.bibkeys + '&jscmd=data')
             .success(function (data) {
-              var books = angular.fromJson(data);
+              var books = JSON.parse(data)
               for (var bookId in books) {
                 if (books.hasOwnProperty(bookId)) {
                   scope.book = books[bookId];

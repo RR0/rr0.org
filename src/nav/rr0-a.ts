@@ -1,6 +1,6 @@
 const angular = require('angular');
 
-import nav from './nav';
+import nav from './nav'
 
 angular.module(nav)
 /**

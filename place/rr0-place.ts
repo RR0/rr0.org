@@ -1,30 +1,32 @@
-import angular = require("angular");
-import place from "./place";
+import place, {MapService, PlaceService} from "./place"
+import {SelectorDirective} from "note/foot"
+import {directives} from "common"
 
-angular.module('rr0.place')
-  .directive('place', ['placeService', 'mapService', function (placeService, mapService) { // or lieu
-    'use strict';
-    return {
-      restrict: 'C',
-      link: function (scope, elem, attrs) {
-        var title = elem.attr('title');
-        var placeName = title ? title : elem.text();
-        if (placeName) {
-          var place = placeService.addPlace(placeName);
-          attrs['place-id'] = "place" + place.id;
-          mapService.geocode(place, function (placeOnMap) {
-            var parent = elem.parent();
-            var parentTagName = parent.prop('tagName');
-            if (parentTagName === "P" || parentTagName === "LI") {
-              elem.bind('click', function () {
-                mapService.focusOn(placeOnMap);
-              });
-              elem.css('cursor', 'pointer');
-              elem.attr('title', 'Cliquez pour voir la carte');
-            }
-            mapService.refresh();
-          });
+class PlaceDirective extends SelectorDirective {
+  constructor(private placeService: PlaceService, private mapService: MapService) {
+    super(".place")
+  }
+
+  protected handle(elem: HTMLElement) {
+    const title = elem.getAttribute('title')
+    const placeName = title ? title : elem.innerText
+    if (placeName) {
+      const place = this.placeService.addPlace(placeName)
+      elem.setAttribute('place-id', "place" + place.id)
+      this.mapService.geocode(place, (placeOnMap) => {
+        const parent = elem.parentElement
+        const parentTagName = parent.tagName
+        if (parentTagName === "P" || parentTagName === "LI") {
+          elem.onclick = () => {
+            this.mapService.focusOn(placeOnMap)
+          }
+          elem.style.cursor = 'pointer'
+          elem.setAttribute('title', 'Cliquez pour voir la carte')
         }
-      }
-    };
-  }]);
+        this.mapService.refresh()
+      })
+    }
+  }
+}
+
+directives.push(new PlaceDirective(place.service, place.mapService))

@@ -1,7 +1,7 @@
-import {org} from "../js/common";
-import people from "./people";
+import {org} from "../src/common"
+import people from "./people"
 
-interface PeopleScope extends ng.IScope {
+interface PeopleScope {
   id: string;
   href: string;
   people: {

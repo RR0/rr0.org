@@ -1,4 +1,4 @@
-interface CopyrightScope extends ng.IScope {
+interface CopyrightScope {
   name: string;
   defaultName: string;
 }

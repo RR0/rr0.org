@@ -1,360 +1,365 @@
-import {org} from "../js/common";
-
-const angular = require('angular');
+import {org} from "../src/common"
 
 function Place(n) {
-  this.name = n;
+  this.name = n
 }
 
-declare var google;
-declare var Swipe;
-declare var $;
+declare var google
+declare var Swipe
+declare var $
 
-export default placeModule => {
-  var placeModule = angular.module('rr0.place', []);
-  placeModule
-    .service('mapService', [function ($timeout) {
-      "use strict";
+export class MapService {
+  geocoder
+  myMap
+  totalBounds
+  peoplePoints = []
+  mapZone
+  latestPlaceOnMap
+  planetarium
+  zoomMin = 1
+  zoomMax = 10
+  mapToggled
+  mapUpdateCallbacks = [this.mapResize]
+  mySwipe
+  toGeocode = []
+  peoplePath
+  m
+  iw
 
-      var geocoder;
-      var myMap;
-      var totalBounds;
-      var peoplePoints = [];
-      var mapZone;
-      var latestPlaceOnMap;
-      var planetarium;
+  initSkyMap() {
+    this.planetarium = $.virtualsky({
+      id: 'starmap',
+      langurl: 'lang/%LANG%.json',
+      language: 'fr',
+      meteorshowers: true,
+      showstarlabels: true,
+      showorbits: true,
+      ground: true,
+      fov: 5,
+      projection: 'stereo'
+    })
+  }
 
-      function PlaceOnMap(place) {
-        var m = new google.maps.Marker({
-          position: place.bounds.getCenter(),
-          map: myMap,
-          title: place.name
-        });
-        m.setMap(myMap);
-        var iw = new google.maps.InfoWindow({
-          content: place.name
-        });
-        var me = this;
-        google.maps.event.addListener(m, 'click', function () {
-          me.show();
-        });
-        this.show = function () {
-          if (latestPlaceOnMap) {
-            latestPlaceOnMap.close();
-          }
-          iw.open(myMap, m);
+  geocode(p, callback) {
+    if (!this.geocoder) {
+      if (this.toGeocode.length === 0) {
+        this.init(org.rr0.getSideZone("map-canvas"), this.onceMapIsLoaded)
+      }
+      this.toGeocode.push({place: p, callback: callback})
+    } else {
+      this.geocodeNow(p, callback)
+    }
+  }
 
-          if (planetarium) {
-            planetarium.setLatitude(m.position.lat());
-            planetarium.setLongitude(m.position.lng());
-            planetarium.draw();
-          }
+  focusOn(placeOnMap) {
+    if (this.isMapWidthAvailable()) {
+      this.mapShow()
+    }
+    if (this.isPlanetariumWidthAvailable()) {
+      this.planetariumShow()
+    }
+    if (this.isMapVisible()) {
+      placeOnMap.show()
+    }
+  }
 
-          latestPlaceOnMap = me;
-          fitBounds(place.bounds);
-        };
-        this.close = function () {
-          iw.close();
-        };
+  refresh() {
+    this.mapResize()
+  }
+
+  /**
+   *
+   * @param lat
+   * @param lng
+   * @param kmlUrl
+   * @param zoom
+   * @param mapType "hybrid", "terrain"
+   * @param anchor The id of the element that will contain the map. "map-canvas" by default.
+   */
+  loadMap(lat, lng, kmlUrl, zoom, mapType, anchor) {
+    (<any>window).onGoogleMapsLoaded.push(function () {
+      const mapOptions = {
+        center: new google.maps.LatLng(lat, lng),
+        mapTypeId: mapType
+      }
+      const map = new google.maps.Map(document.getElementById(anchor ? anchor : 'map-canvas'), mapOptions)
+      if (zoom) {
+        map.setZoom(zoom)
+      }
+      const ctaLayer = new google.maps.KmlLayer(kmlUrl)
+      ctaLayer.setMap(map)
+      this.peoplePath = new google.maps.Polyline({
+        path: this.peoplePoints,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.5,
+        strokeWeight: 3
+      })
+      this.peoplePath.setMap(map)
+    })
+  }
+
+  private geocodeNow(place, callback) {
+    this.geocoder.geocode({'address': place.name}, (results, status) => {
+      if (status === google.maps.GeocoderStatus.OK) {
+        const loc = results[0].geometry.location
+        this.peoplePath.getPath().push(loc)
+        this.totalBounds.extend(loc)
+        const placeBounds = new google.maps.LatLngBounds()
+        placeBounds.extend(loc)
+        place.bounds = placeBounds
+        const placeOnMap = this.PlaceOnMap(place)
+        callback(placeOnMap)
+      }
+    })
+  }
+
+  private geocodeAll() {
+    for (let i = 0; i < this.toGeocode.length; i++) {
+      const waitingToBeGeocoded = this.toGeocode[i]
+      this.geocodeNow(waitingToBeGeocoded.place, waitingToBeGeocoded.callback)
+    }
+  }
+
+  private fitBounds(bounds) {
+    this.myMap.fitBounds(bounds)
+    let z = this.myMap.getZoom()
+    if (z > this.zoomMax) {
+      z = this.zoomMax
+    }
+    this.myMap.setZoom(z)
+  }
+
+  private close() {
+    this.iw.close()
+  }
+
+  private PlaceOnMap(place) {
+    const m = new google.maps.Marker({
+      position: place.bounds.getCenter(),
+      map: this.myMap,
+      title: place.name
+    })
+    m.setMap(this.myMap)
+    this.iw = new google.maps.InfoWindow({
+      content: place.name
+    })
+    const show = () => {
+      if (this.latestPlaceOnMap) {
+        this.latestPlaceOnMap.close()
+      }
+      this.iw.open(this.myMap, this.m)
+
+      if (this.planetarium) {
+        this.planetarium.setLatitude(this.m.position.lat())
+        this.planetarium.setLongitude(this.m.position.lng())
+        this.planetarium.draw()
       }
 
-      function initGoogleMaps(mz, callback) {
-        google.load("maps", "3", {
-          other_params: "sensor=false",
-          callback: function () {
+      this.latestPlaceOnMap = this
+      this.fitBounds(place.bounds)
+    }
+    google.maps.event.addListener(this.m, 'click', () => {
+      show()
+    })
+  }
+
+  private initGoogleMaps(mz, callback) {
+    google.load("maps", "3", {
+      other_params: "sensor=false",
+      callback: () => {
 //                    place.sideCallbacks = place.sideCallbacks.concat(mapUpdateCallbacks);
-            mapZone = mz;
-            mapZone.addEventListener('DOMMouseScroll', function (e) {   // Disable map slide propagation to container sliding zone
-              e.stopPropagation();
-            }, false);
+        this.mapZone = mz
+        this.mapZone.addEventListener('DOMMouseScroll', function (e) {   // Disable map slide propagation to container
+          // sliding zone
+          e.stopPropagation()
+        }, false)
 
-            geocoder = new google.maps.Geocoder();
-            var mapType = "hybrid";
-            var mapOptions = {
-              mapTypeId: mapType
+        this.geocoder = new google.maps.Geocoder()
+        const mapType = "hybrid"
+        const mapOptions = {
+          mapTypeId: mapType
 //                ,minZoom: zoomMin
-            };
-            myMap = new google.maps.Map(document.getElementById(mapZone.id), mapOptions);
-            totalBounds = new google.maps.LatLngBounds();
-            peoplePath = new google.maps.Polyline({
-              path: peoplePoints,
-              strokeColor: '#FF0000',
-              strokeOpacity: 0.5,
-              strokeWeight: 3
-            });
-            peoplePath.setMap(myMap);
-            callback(geocoder);
-          }
-        });
-      }
-
-      function initSkyMap() {
-        planetarium = $.virtualsky({
-          id: 'starmap',
-          langurl: 'lang/%LANG%.json',
-          language: 'fr',
-          meteorshowers: true,
-          showstarlabels: true,
-          showorbits: true,
-          ground: true,
-          fov: 5,
-          projection: 'stereo'
-        });
-      }
-
-      var init = function (mz, callback) {
-        initGoogleMaps(mz, callback);
-        initSkyMap();
-      };
-
-      var toGeocode = [];
-
-      function geocodeNow(place, callback) {
-        geocoder.geocode({'address': place.name}, function (results, status) {
-          if (status === google.maps.GeocoderStatus.OK) {
-            var loc = results[0].geometry.location;
-            peoplePath.getPath().push(loc);
-            totalBounds.extend(loc);
-            var placeBounds = new google.maps.LatLngBounds();
-            placeBounds.extend(loc);
-            place.bounds = placeBounds;
-            var placeOnMap = new PlaceOnMap(place);
-            callback(placeOnMap);
-          }
-        });
-      }
-
-      function geocodeAll() {
-        for (var i = 0; i < toGeocode.length; i++) {
-          var waitingToBeGeocoded = toGeocode[i];
-          geocodeNow(waitingToBeGeocoded.place, waitingToBeGeocoded.callback);
         }
+        this.myMap = new google.maps.Map(document.getElementById(this.mapZone.id), mapOptions)
+        this.totalBounds = new google.maps.LatLngBounds()
+        this.peoplePath = new google.maps.Polyline({
+          path: this.peoplePoints,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.5,
+          strokeWeight: 3
+        })
+        this.peoplePath.setMap(this.myMap)
+        callback(this.geocoder)
       }
+    })
+  }
 
-      var peoplePath;
+  private init(mz, callback) {
+    this.initGoogleMaps(mz, callback)
+    this.initSkyMap()
+  }
 
-      function fitBounds(bounds) {
-        myMap.fitBounds(bounds);
-        var z = myMap.getZoom();
-        if (z > zoomMax) {
-          z = zoomMax;
-        }
-        myMap.setZoom(z);
+  private mapRebound(bounds) {
+    google.maps.event.trigger(this.myMap, 'resize')
+    this.fitBounds(bounds)
+    if (!this.mapToggled) {
+      this.mapToggled = true
+    }
+  }
+
+  private mapResize() {
+    this.mapRebound(this.totalBounds)
+  }
+
+  private mapRefresh() {
+    const bounds = this.totalBounds
+    if (!this.myMap.getBounds()) {
+      google.maps.event.addListener(this.myMap, 'bounds_changed', () => {
+        setTimeout(() => {
+          this.mapRebound(bounds)
+        }, 600)
+      })
+      if ((<any>window).getPeople()) {
+        this.peoplePath = new google.maps.Polyline({
+          path: this.peoplePoints,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.5,
+          strokeWeight: 3
+        })
+        this.peoplePath.setMap(this.myMap)
       }
+      setTimeout(() => {
+        this.myMap.fitBounds(bounds)
+      }, 800)
+    }
+  }
 
-      var zoomMin = 1;
-      var zoomMax = 10;
-      var mapToggled;
+  private mapUpdate(i) {
+    const mapVisible = this.isMapVisible() || i > 0
+    if (mapVisible) {
+      this.mapRefresh()
+    }
+    const toggleButton = document.getElementsByClassName("toggleMap")[0]
+    if (mapVisible) {
+      toggleButton.className += " selected"
+    } else {
+      toggleButton.className = "constant toggleMap"
+    }
+  }
 
-      function mapRebound(bounds) {
-        google.maps.event.trigger(myMap, 'resize');
-        fitBounds(bounds);
-        if (!mapToggled) {
-          mapToggled = true;
-        }
-      }
+  private onTransitionEnd(e, ar) {
+    for (let i = 0; i < ar.length; i++) {
+      const events = ar[i]
+      e.addEventListener('webkitTransitionEnd', events, false)
+      e.addEventListener('msTransitionEnd', events, false)
+      e.addEventListener('oTransitionEnd', events, false)
+      e.addEventListener('otransitionend', events, false)
+      e.addEventListener('transitionend', events, false)
+    }
+  }
 
-      function mapResize() {
-        mapRebound(totalBounds);
-      }
+  private addMapButton() {
+    const element: HTMLElement = <HTMLElement>document.querySelector('.toggleMap')
+    element.style.display = 'inline-block'
+    element.title = 'Affiche carte'
+    element.onclick = this.toggleMap
+  }
 
-      function mapRefresh() {
-        var bounds = totalBounds;
-        if (!myMap.getBounds()) {
-          google.maps.event.addListener(myMap, 'bounds_changed', function () {
-            setTimeout(function () {
-              mapRebound(bounds);
-            }, 600);
-          });
-          if ((<any>window).getPeople()) {
-            peoplePath = new google.maps.Polyline({
-              path: peoplePoints,
-              strokeColor: '#FF0000',
-              strokeOpacity: 0.5,
-              strokeWeight: 3
-            });
-            peoplePath.setMap(myMap);
-          }
-          setTimeout(function () {
-            myMap.fitBounds(bounds);
-          }, 800);
-        }
-      }
+  private getSwipe() {
+    if (!this.mySwipe) {
+      this.mySwipe = new Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
+        {
+          continuous: false,
+          stopPropagation: true,
+          callback: this.mapUpdate
+        })
+    }
+    return this.mySwipe
+  }
 
-      var mapUpdate = function (i) {
-        var mapVisible = isMapVisible() || i > 0;
-        if (mapVisible) {
-          mapRefresh();
-        }
-        var toggleButton = document.getElementsByClassName("toggleMap")[0];
-        if (mapVisible) {
-          toggleButton.className += " selected";
-        } else {
-          toggleButton.className = "constant toggleMap";
-        }
-      };
+  private mapHide() {
+    if (this.isMapWidthAvailable()) {
+      this.splitWithMap(org.rr0.getScreenWidth())
+    } else {
+      this.getSwipe().prev()
+    }
+  }
 
-      function onTransitionEnd(e, ar) {
-        for (var i = 0; i < ar.length; i++) {
-          var events = ar[i];
-          e.addEventListener('webkitTransitionEnd', events, false);
-          e.addEventListener('msTransitionEnd', events, false);
-          e.addEventListener('oTransitionEnd', events, false);
-          e.addEventListener('otransitionend', events, false);
-          e.addEventListener('transitionend', events, false);
-        }
-      }
+  private toggleMap() {
+    const mapVisible = this.isMapVisible()
+    if (mapVisible) {
+      this.mapHide()
+    } else {
+      this.mapShow()
+    }
+  }
 
-      function addMapButton() {
-        var element: HTMLElement = <HTMLElement>document.querySelector('.toggleMap');
-        element.style.display = 'inline-block';
-        element.title = 'Affiche carte';
-        element.onclick = toggleMap;
-      }
-
-      var mapUpdateCallbacks = [mapResize];
-
-      function onceMapIsLoaded() {
-        geocodeAll();
-        addMapButton();
+  private onceMapIsLoaded() {
+    this.geocodeAll()
+    this.addMapButton()
 //            if (org.rr0.getScreenWidth() > 1024) {
 //                mapShow();
 //            }
-        onTransitionEnd(org.rr0.contentsZone, mapUpdateCallbacks);
-      }
+    this.onTransitionEnd(org.rr0.contentsZone, this.mapUpdateCallbacks)
+  }
 
-      function isMapWidthAvailable() {
-        return org.rr0.getScreenWidth() > 320;
-      }
+  private isMapWidthAvailable() {
+    return org.rr0.getScreenWidth() > 320
+  }
 
-      function isPlanetariumWidthAvailable() {
-        return org.rr0.getScreenHeight() > 400;
-      }
+  private isPlanetariumWidthAvailable() {
+    return org.rr0.getScreenHeight() > 400
+  }
 
-      function isMapVisible() {
-        return org.rr0.leftWidth < org.rr0.getScreenWidth();
-      }
+  private isMapVisible() {
+    return org.rr0.leftWidth < org.rr0.getScreenWidth()
+  }
 
-      function mapShow() {
-        var sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth;
-        if (sideWidth <= 0) {
-          org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100 - 28) / 100);
-        }
-        splitWithMap(org.rr0.leftWidth);
-        //org.rr0.time.drawChart();
-      }
+  private mapShow() {
+    const sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth
+    if (sideWidth <= 0) {
+      org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100 - 28) / 100)
+    }
+    this.splitWithMap(org.rr0.leftWidth)
+    //org.rr0.time.drawChart();
+  }
 
-      function planetariumShow() {
-        angular.element('#starmap').css('height', '25%');
-        angular.element('#map-canvas').css('height', '75%');
-        planetarium.createSky();
-      }
+  private planetariumShow() {
+    (document.querySelector('#starmap') as HTMLElement).style.height = '25%';
+    (document.querySelector('#map-canvas') as HTMLElement).style.height = '75%'
+    this.planetarium.createSky()
+  }
 
-      function splitWithMap(contentWidth) {
-        org.rr0.leftWidth = contentWidth;
-        org.rr0.updateDivision();
-      }
-
-      var mySwipe;
-
-      function getSwipe() {
-        if (!mySwipe) {
-          mySwipe = new Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
-            {
-              continuous: false,
-              stopPropagation: true,
-              callback: mapUpdate
-            });
-        }
-        return mySwipe;
-      }
-
-      function mapHide() {
-        if (isMapWidthAvailable()) {
-          splitWithMap(org.rr0.getScreenWidth());
-        } else {
-          getSwipe().prev();
-        }
-      }
-
-      function toggleMap() {
-        var mapVisible = isMapVisible();
-        if (mapVisible) {
-          mapHide();
-        } else {
-          mapShow();
-        }
-      }
-
-      return {
-        geocode: function (p, callback) {
-          if (!geocoder) {
-            if (toGeocode.length === 0) {
-              init(org.rr0.getSideZone("map-canvas"), onceMapIsLoaded);
-            }
-            toGeocode.push({place: p, callback: callback});
-          } else {
-            geocodeNow(p, callback);
-          }
-        },
-        focusOn: function (placeOnMap) {
-          if (isMapWidthAvailable()) {
-            mapShow();
-          }
-          if (isPlanetariumWidthAvailable()) {
-            planetariumShow();
-          }
-          if (isMapVisible()) {
-            placeOnMap.show();
-          }
-        },
-        refresh: function () {
-          mapResize();
-        },
-        /**
-         *
-         * @param lat
-         * @param lng
-         * @param kmlUrl
-         * @param zoom
-         * @param mapType "hybrid", "terrain"
-         * @param anchor The id of the element that will contain the map. "map-canvas" by default.
-         */
-        loadMap: function (lat, lng, kmlUrl, zoom, mapType, anchor) {
-          (<any>window).onGoogleMapsLoaded.push(function () {
-            var mapOptions = {
-              center: new google.maps.LatLng(lat, lng),
-              mapTypeId: mapType
-            };
-            var map = new google.maps.Map(document.getElementById(anchor ? anchor : 'map-canvas'), mapOptions);
-            if (zoom) {
-              map.setZoom(zoom);
-            }
-            var ctaLayer = new google.maps.KmlLayer(kmlUrl);
-            ctaLayer.setMap(map);
-            peoplePath = new google.maps.Polyline({
-              path: peoplePoints,
-              strokeColor: '#FF0000',
-              strokeOpacity: 0.5,
-              strokeWeight: 3
-            });
-            peoplePath.setMap(map);
-          });
-        }
-      };
-    }])
-    .service('placeService', [function () {
-      'use strict';
-      var places = [];
-
-      return {
-        addPlace: function (placeName) {
-          var place = new Place(placeName);
-          places.push(place);
-          place.id = places.length;
-          angular.element('.contents').removeClass('no-side');
-          return place;
-        }
-      };
-    }]);
+  private splitWithMap(contentWidth) {
+    org.rr0.leftWidth = contentWidth
+    org.rr0.updateDivision()
+  }
 }
+
+export class PlaceService {
+  places = []
+
+  constructor() {
+  }
+
+  addPlace(placeName: string) {
+    const place = new Place(placeName)
+    this.places.push(place)
+    place.id = this.places.length
+    document.querySelector('.contents').classList.remove('no-side')
+    return place
+  }
+}
+
+export class PlaceModule {
+  mapService: MapService
+  readonly service: PlaceService
+
+  constructor() {
+    this.mapService = new MapService()
+    this.service = new PlaceService()
+  }
+}
+
+const place = new PlaceModule()
+export default place

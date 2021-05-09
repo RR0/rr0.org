@@ -1,7 +1,7 @@
 import common, {CommonModule, CommonService, org} from "../common"
 import lang, {LangModule, LangService} from '../lang'
-import net, {NetModule} from "../net"
 import {titleScope, TitleScope} from "./rr0-title"
+import {AnchorDirective} from "rr0-a.directive"
 
 function NavLink(l, url, t) {
   this.label = l
@@ -98,12 +98,12 @@ export class NavService {
   prevHandlers: ((nextLink, next) => {})[] = []
   nextHandlers: ((nextLink, next) => {})[] = []
 
-  constructor(private commonsService) {
+  constructor(private commonsService: CommonService, private root: ParentNode) {
   }
 
   getNavList() {
     if (!this.navList) {
-      const n = document.getElementsByTagName("nav")[0]
+      const n = this.root.querySelector("nav")
       this.navList = n.querySelector('ul')
     }
     return this.navList
@@ -275,53 +275,56 @@ export class HeadController {
   private ns = []
   private navEl: HTMLElement
   private text: HTMLElement
-  private readonly titleSection: {}
+  private titleSection: {}
 
   constructor(private $scope: TitleScope, private commonsService: CommonService, private langService: LangService,
-              private navigationService: NavService, private constantClass: string) {
-    this.scrolled = <HTMLElement>document.querySelector(".contents")
-    this.header = <HTMLElement>document.querySelector('header')
-    this.navEl = document.querySelector('nav')
-    this.text = <HTMLElement>this.scrolled.querySelector('.text')
-    this.titleSection = {
-      label: $scope.title,
-      outlineLabel: $scope.title,
-      id: "top",
-      level: 0,
-      elem: document.querySelector('#top')
-    }
-
-    this.outline = <HTMLElement>document.querySelector('.outline')
-
-    if (!$scope.title) {
-      let titleValues = ""
-      for (const titleHandler of this.titleHandlers) {
-        if (!titleValues) {
-          titleValues = titleHandler()
-        }
+              private navigationService: NavService, private constantClass: string, private root: ParentNode) {
+    {
+      const $scope = this.$scope
+      this.scrolled = <HTMLElement>root.querySelector(".contents")
+      this.header = <HTMLElement>root.querySelector('header')
+      this.navEl = root.querySelector('nav')
+      this.text = <HTMLElement>this.scrolled.querySelector('.text')
+      this.titleSection = {
+        label: $scope.title,
+        outlineLabel: $scope.title,
+        id: "top",
+        level: 0,
+        elem: root.querySelector('#top')
       }
-      const title = commonsService.capitalizeFirstLetter(titleValues)
-      $scope.setTitle(title)
+
+      this.outline = <HTMLElement>root.querySelector('.outline')
+
+      if (!$scope.title) {
+        let titleValues = ""
+        for (const titleHandler of this.titleHandlers) {
+          if (!titleValues) {
+            titleValues = titleHandler()
+          }
+        }
+        const title = this.commonsService.capitalizeFirstLetter(titleValues)
+        $scope.setTitle(title)
+      }
+
+      const self = this
+
+      this.scrolled.onscroll = (event) => {
+        requestAnimationFrame(self.updateHeading)
+      }
+
+      if (window.addEventListener) {      // most non-IE browsers and IE9
+        window.addEventListener("resize", this.onResize.bind(this), false)
+      } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
+        (<any>window).attachEvent("onresize", this.onResize.bind(this))
+      }
+
+      this.init()
+
+      setTimeout(function () {
+        self.updateHeading()
+        self.updatePos()
+      })
     }
-
-    const self = this
-
-    this.scrolled.onscroll = function (event) {
-      requestAnimationFrame(self.updateHeading)
-    }
-
-    if (window.addEventListener) {      // most non-IE browsers and IE9
-      window.addEventListener("resize", this.onResize.bind(this), false)
-    } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
-      (<any>window).attachEvent("onresize", this.onResize.bind(this))
-    }
-
-    this.init()
-
-    setTimeout(function () {
-      self.updateHeading()
-      self.updatePos()
-    })
   }
 
   sectionAdded(section) {
@@ -451,7 +454,7 @@ export class HeadController {
   }
 
   private createNavElement(c) {
-    let li = document.getElementsByClassName(c)[0]
+    let li = this.root.querySelector(c)
     if (!li) {
       li = document.createElement("li")
       c = !(!c) ? this.constantClass + " " + c : this.constantClass
@@ -551,10 +554,10 @@ export class HeadController {
   }
 
   private updateSearchPos(triggerSelector) {
-    const trigger = document.querySelector(triggerSelector)
+    const trigger = this.root.querySelector(triggerSelector)
     if (trigger) {
       if (!this.searchResults) {
-        this.searchResults = document.querySelector('.search-result')
+        this.searchResults = this.root.querySelector('.search-result')
       }
       if (this.searchResults) {
         this.searchResults.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px'
@@ -567,7 +570,7 @@ export class HeadController {
     if (this.isNavLeft()) {
       (<HTMLElement>this.outline).style.top = '0'
     } else {
-      const trigger = document.querySelector(triggerSelector)
+      const trigger = this.root.querySelector(triggerSelector)
       if (trigger && this.outline) {
         this.outline.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px'
       }
@@ -615,7 +618,7 @@ export class HeadController {
   private select(toSelect) {
     let toSelectElem
     if (toSelect) {
-      toSelectElem = document.querySelector("#out-" + toSelect.id)
+      toSelectElem = this.root.querySelector("#out-" + toSelect.id)
       /*if (currentSection && toSelectElem[0] === currentSection[0]) {
        return;
        }*/
@@ -679,11 +682,12 @@ export class NavModule {
   readonly service: NavService
   readonly headController: HeadController
 
-  constructor(common: CommonModule, lang: LangModule, net: NetModule) {
-    this.service = new NavService(common.service)
-    this.headController = new HeadController(titleScope, common.service, lang.service, this.service, common.constantClass)
+  constructor(common: CommonModule, lang: LangModule, root: ParentNode) {
+    this.service = new NavService(common.service, root)
+    this.headController = new HeadController(titleScope, common.service, lang.service, this.service, common.constantClass, root)
+    common.directives.push(new AnchorDirective(this.host))
   }
 }
 
-const nav = new NavModule(common, lang, net)
+const nav = new NavModule(common, lang, document)
 export default nav

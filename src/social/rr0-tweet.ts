@@ -1,5 +1,4 @@
-import {directives} from "common"
-import {SelectorDirective} from "note/foot"
+import common, {SelectorDirective} from "common"
 
 class Rr0Tweet extends SelectorDirective {
 
@@ -19,4 +18,4 @@ class Rr0Tweet extends SelectorDirective {
 }
 
 const rr0Tweet = new Rr0Tweet()
-directives.push(rr0Tweet)
+common.directives.push(rr0Tweet)

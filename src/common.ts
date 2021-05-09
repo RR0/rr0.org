@@ -1,9 +1,16 @@
-import {SelectorDirective} from "../src/note/foot"
+export abstract class SelectorDirective {
+  constructor(private selector: string, private from: ParentNode = document) {
+  }
 
-export const directives: SelectorDirective[] = []
+  execute() {
+    const els = this.from.querySelectorAll(this.selector)
+    els.forEach(el => this.handle(el as HTMLElement))
+  }
+
+  protected abstract handle(el: HTMLElement)
+}
 
 function OrgModule(): void {
-  'use strict'
   this.debug = window.location.href.indexOf("?debug") >= 0
 
   if (this.debug && typeof console !== 'undefined') {
@@ -578,6 +585,7 @@ export class CommonService {
 }
 
 export class CommonModule {
+  readonly directives: SelectorDirective[] = []
   constantClass = org.constantClass
   readonly service: CommonService
 
@@ -588,7 +596,7 @@ export class CommonModule {
         elem.innerHTML = prettyPrintOne(elem.innerHTML)
       }
     }("code")
-    directives.push(codeDirective)
+    this.directives.push(codeDirective)
     this.service.initStructure()
   }
 }

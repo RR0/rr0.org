@@ -1,50 +1,52 @@
 @import "../../mixins";
 
 $headerBackColor: rgb(224, 224, 233);
+
 header {
+  background-image: linear-gradient(to right, $headerBackColor 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.5) 100%);
+  background-position: center !important;
+  background-size: cover !important;
   font-family: $menuFont;
   margin: 0;
-  background-size: cover !important;
-  background-position: center !important;
-  background-image: linear-gradient(to right, $headerBackColor 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.5) 100%);
+
   h1 {
+    color: #666;
     font-family: inherit;
-    line-height: 100%;
+    font-weight: normal;
     letter-spacing: 1px;
-    color: #666666;
+    line-height: 100%;
     margin: 0;
     padding: 0.8em;
-    font-weight: normal;
     text-shadow: 0 0 0.5em white;
   }
 }
 
 h2 {
-  clear:both;
+  @include gradientFromLeft;
+  clear: both;
+  color: #666;
   font-family: $contentFont;
-  text-decoration: none;
   font-size: 1.5em;
   font-weight: normal;
-  margin-top: 1.5em;
-  margin-right: 0;
-  margin-left: -$textMargin;
+  letter-spacing: 1px;
   margin-bottom: $shadowLength;
-  color: #666666;
-  @include gradientFromLeft;
-  padding-top: 0.35em;
+  margin-left: -$textMargin;
+  margin-right: 0;
+  margin-top: 1.5em;
   padding-bottom: 0.4em;
   padding-left: $textMargin;
-  letter-spacing: 1px;
-  width: 50%;
+  padding-top: 0.35em;
   text-align: left;
+  text-decoration: none;
+  width: 50%;
 }
 
 h3 {
   @extend h2;
   background: transparent;
+  border-bottom: thin dotted #dbdbdb;
   font-size: 1.2em;
   margin-top: 1.25em;
-  border-bottom: thin dotted #DBDBDB;
 }
 
 h4 {
@@ -58,6 +60,7 @@ section {
   h1 {
     @extend h2;
   }
+
   section {
     h1 {
       @extend h3;
@@ -71,12 +74,12 @@ section {
 /*}*/
 
 .title {
-  font-weight: lighter;
-  position: fixed;
+  color: #f5f5ff;
   font-size: 5em;
-  color: #F5F5FF;
-  z-index: -1;
+  font-weight: lighter;
   margin: 2vh 0;
+  position: fixed;
+  z-index: -1;
 }
 
 /*@media (max-device-width: 480px) {*/

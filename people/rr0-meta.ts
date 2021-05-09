@@ -1,6 +1,5 @@
-import {SelectorDirective} from "note/foot"
 import people, {PeopleService} from "./people"
-import {directives} from "common"
+import common, {SelectorDirective} from "common"
 import nav, {HeadController} from "nav/nav"
 
 export interface MetaScope {
@@ -32,4 +31,4 @@ class MetaDirective extends SelectorDirective {
   }
 }
 
-directives.push(new MetaDirective(people.service, nav.headController))
+common.directives.push(new MetaDirective(people.service, nav.headController))

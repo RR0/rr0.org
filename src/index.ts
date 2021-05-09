@@ -5,7 +5,9 @@ import context, {ContextModule} from './rr0-context'
 import science, {ScienceModule} from "../science/science"
 import place, {PlaceModule} from "../place/place"
 import foot, {FootModule} from "./note/foot"
-import common from "./common"
+import common, {CommonModule} from "./common"
+
+import "../rr0.scss"
 
 export interface RR0Window extends Window {
   copyright: string;
@@ -30,9 +32,8 @@ class AppController implements TitleScope {
 export class Rr0Module {
   private appController: AppController
 
-  constructor(common, nav: NavModule, place: PlaceModule, foot: FootModule, context: ContextModule, science: ScienceModule) {
+  constructor(common: CommonModule, nav: NavModule, place: PlaceModule, foot: FootModule, context: ContextModule, science: ScienceModule) {
     this.appController = new AppController()
-    common.debugEnabled(false)
   }
 }
 

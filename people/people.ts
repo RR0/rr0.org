@@ -1,8 +1,7 @@
-import common, {CommonModule, directives, org} from "../src/common"
+import common, {CommonModule, org, SelectorDirective} from "../src/common"
 import {RR0Window} from "../src/index"
 import time, {TimeModule, TimeService} from "../time/time"
 import nav, {NavModule} from "../src/nav/nav"
-import {SelectorDirective} from "../src/note/foot"
 
 export class People {
   firstName: any
@@ -123,22 +122,22 @@ export class PeopleModule {
     const timeService = time.service
     this.service = new PeopleService(commonService, this.peopleRoot)
     const self = this
-    directives.push(new class extends SelectorDirective {
+    common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
         self.handleWitness("", elem)
       }
     }(".temoin"))
-    directives.push(new class extends SelectorDirective {
+    common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
         self.handleWitness("1", elem)
       }
     }(".temoin1"))
-    directives.push(new class extends SelectorDirective {
+    common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
         self.handleWitness("2", elem)
       }
     }(".temoin2"))
-    directives.push(new class extends SelectorDirective {
+    common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
         self.handleWitness("3", elem)
       }
@@ -146,6 +145,7 @@ export class PeopleModule {
     this.authorCtrl = new AuthorCtrl(this.service, timeService)
 
     const navigationService = nav.service
+    nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
     navigationService.addStart({
         dir: this.peopleRoot,
         label: "<i class='fa fa-user'></i> <span class='label'>Personnes</span></span>",
@@ -157,6 +157,15 @@ export class PeopleModule {
     commonService.nounToLink(this.peopleRoot + "ufologues.html", "ufologue")
     commonService.nounToLink(this.peopleRoot + "Astronomes.html", "astronome")
     commonService.nounToLink(this.peopleRoot + "temoins.html", "temoin")
+  }
+
+  private titleFromPeople() {
+    let title
+    const p = this.service.getPeople()
+    if (p) {
+      title = p.toString()
+    }
+    return title
   }
 
   handleWitness(witnessId, elem) {
@@ -179,7 +188,7 @@ const people = new PeopleModule(nav, common, time)
 export default people
 
 class AuthorCtrl {
-  private authors: any[]
+  private authors: any[] = []
   private copyright: any
   private docTime: string
 

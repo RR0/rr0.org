@@ -1,9 +1,9 @@
-import common, {org} from "../src/common"
+import common, {CommonModule, org} from "../src/common"
 
-import net, {NetModule} from '../src/net'
-import people, {PeopleModule} from '../people/people'
+import people from '../people/people'
 import nav, {NavModule} from "../src/nav/nav"
 import lang, {LangModule} from "../src/lang"
+import net, {NetModule} from "../src/net"
 
 declare var google
 
@@ -117,7 +117,7 @@ class Moment {
     var self = this
 
     var resetParse = function () {
-      this.clear()
+      self.clear()
       number = null
       hourNumber = null
       era = 1
@@ -361,7 +361,6 @@ class Duration {
     durationThis.minute = new Unit(60 * durationThis.second.factor, 'minute')
     durationThis.hour = new Unit(60 * durationThis.minute.factor, 'heure')
     durationThis.day = new Unit(24 * durationThis.hour.factor, 'jour')
-
   }
 
   fromString(txt) {
@@ -944,7 +943,7 @@ export class TimeModule {
     "Au", "Le", "Du", "À", "Vers", "Jusqu'au"]
   readonly service: TimeService
 
-  constructor(lang: LangModule, nav: NavModule, net: NetModule, people: PeopleModule) {
+  constructor(private common: CommonModule, lang: LangModule, nav: NavModule, private net: NetModule) {
     const navigationService = nav.service
     navigationService.addStart({
         dir: this.timeRoot,
@@ -952,6 +951,22 @@ export class TimeModule {
         title: "Historique"
       }
     )
+    nav.service.nextHandlers.push((nextLink, next) => {
+      let nn
+      if (this.service.getYear()) {
+        nn = this.nextFromTime(next)
+      }
+      return nn
+    })
+    nav.service.prevHandlers.push((prevLink, prev) => {
+      let pp
+      if (this.service.getYear()) {          // If no previous link has been specified, try to devise previous from
+        // context time.
+        pp = this.previousFromTime()
+      }
+      return pp
+    })
+    nav.service.prevHandlers.push(this.titleFromTime.bind(this))
 
     /*if (typeof google !== 'undefined') {
      initGoogleCharts(function () {
@@ -969,6 +984,103 @@ export class TimeModule {
     this.service = new TimeService(lang.userLang, this.timeRoot, common.service)
   }
 
+  /**
+   * Find some time-dedicated page near a given time.
+   *
+   * @param oy The starting year.
+   * @param m The starting month.
+   * @param changeProc How to determine the next date to look for.
+   * @param foundProc What to do once a sibling page has been found.
+   */
+  findTimeSibling(oy, m, changeProc, foundProc) {
+    org.log('Looking for time sibling of %o-%o', oy, m)
+    const ret = changeProc(oy, m)
+    const y = ret.y
+    let l = this.service.yearLink(y)
+    m = ret.m
+    let label = y
+    const self = this
+    if (m) {
+      nav.service.setContents(oy, this.service.yearLink(oy))
+      l += "/" + this.common.service.zero(m)
+      label = this.service.monthName(m)
+      if (y !== this.service.getTime().year) {
+        label += ' ' + y
+      }
+    } else {
+      const cLink = this.service.yearLink(oy, true)
+      if (cLink !== this.common.service.getUri()) {
+        nav.service.setContents(~~(oy / 10) + "0s", cLink)
+      }
+    }
+    this.net.service.onExists(l)
+      .then(function (req) {
+        const foundSibling = {label: label, link: l}
+        org.log('Found sibling %o', foundSibling)
+        foundProc(foundSibling)
+      })
+      .catch(function (failReq) {
+        const currentDate = new Date()
+        if (y < currentDate.getFullYear()) {
+          self.findTimeSibling(y, m, changeProc, foundProc)
+        }
+      })
+  }
+
+  private nextFromTime(n) {
+    const t = this.service.getTime()
+    const self = this
+    const lookAfter = function (y, m) {
+      if (m) {
+        if (m < 12) {
+          m++                    // Before December?
+          return {y: y, m: m}    // Return date with incremented month
+        } else {
+          m = 1                  // January
+        }
+      }
+      y++
+      return {y: y, m: m}        // Return date with incremented year
+    }
+    return new Promise((resolve, reject) => {
+      self.findTimeSibling(t.year, t.month, lookAfter, resolve)
+    })
+  }
+
+  private titleFromTime() {
+    let title = this.service.getYear()
+    if (title) {
+      if (this.service.getTime().month) {
+        title = this.service.monthName() + " " + title
+        const dayOfMonth = this.service.getDayOfMonth()
+        if (dayOfMonth) {
+          title = this.service.dayOfWeekName(this.service.getDayOfWeek()) + " " + dayOfMonth + " " + title
+        }
+      }
+    }
+    return title
+  }
+
+  private previousFromTime() {
+    const t = this.service.getTime()
+    const self = this
+    const lookBefore = function (y, m) {
+      if (m) {
+        if (m > 1) {            // Month above february?
+          m--
+          return {y: y, m: m}  // Return date with decremented month
+        } else {
+          m = 12               // December
+        }
+      }
+      y--                      // Return date with decremented year
+      return {y: y, m: m}
+    }
+    return new Promise((resolve, reject) => {
+      self.findTimeSibling(t.year, t.month, lookBefore, resolve)
+    })
+  }
+
   private initGoogleCharts(chartsApiLoaded) {
     google.load('visualization', '1.0', {
       'packages': ['corechart'],
@@ -977,5 +1089,5 @@ export class TimeModule {
   }
 }
 
-const time = new TimeModule(lang, nav, net, people)
+const time = new TimeModule(common, lang, nav, net)
 export default time

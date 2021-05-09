@@ -1,5 +1,3 @@
-import people, {PeopleModule, PeopleService} from '../../people/people'
-import time, {TimeModule, TimeService} from '../../time/time'
 import common, {CommonModule, CommonService, org} from "../common"
 import lang, {LangModule, LangService} from '../lang'
 import net, {NetModule} from "../net"
@@ -97,8 +95,10 @@ export class NavService {
       }
     ]
   currentLevel = 1
+  prevHandlers: ((nextLink, next) => {})[] = []
+  nextHandlers: ((nextLink, next) => {})[] = []
 
-  constructor(private commonsService, private netService, private timeService) {
+  constructor(private commonsService) {
   }
 
   getNavList() {
@@ -114,46 +114,6 @@ export class NavService {
     rel.setAttribute("rel", t)
     rel.setAttribute("href", l)
     org.addToHead(rel)
-  }
-
-  nextFromTime(n) {
-    const t = this.timeService.getTime()
-    const self = this
-    const lookAfter = function (y, m) {
-      if (m) {
-        if (m < 12) {
-          m++                    // Before December?
-          return {y: y, m: m}    // Return date with incremented month
-        } else {
-          m = 1                  // January
-        }
-      }
-      y++
-      return {y: y, m: m}        // Return date with incremented year
-    }
-    return new Promise((resolve, reject) => {
-      self.findTimeSibling(t.year, t.month, lookAfter, resolve)
-    })
-  }
-
-  previousFromTime() {
-    const t = this.timeService.getTime()
-    const self = this
-    const lookBefore = function (y, m) {
-      if (m) {
-        if (m > 1) {            // Month above february?
-          m--
-          return {y: y, m: m}  // Return date with decremented month
-        } else {
-          m = 12               // December
-        }
-      }
-      y--                      // Return date with decremented year
-      return {y: y, m: m}
-    }
-    return new Promise((resolve, reject) => {
-      self.findTimeSibling(t.year, t.month, lookBefore, resolve)
-    })
   }
 
   setPrev(p?, pLink?) {
@@ -174,11 +134,14 @@ export class NavService {
     }
   }
 
-  getNext() {
+  async getNext() {
     let nn
     if (!this.nextLink && !this.next) {
-      if (this.timeService.getYear()) {
-        nn = this.nextFromTime(this.next)
+      for (let nextHandler of this.nextHandlers) {
+        nn = nextHandler(this.nextLink, this.next)
+        if (nn) {
+          break
+        }
       }
     }
     if (!nn) {
@@ -193,7 +156,7 @@ export class NavService {
         })
       }
     }
-    return nn.then ? nn : Promise.resolve(nn)
+    return nn
   }
 
   /**
@@ -205,8 +168,11 @@ export class NavService {
     let pp
     let previousSpecified = this.prevLink || this.prev
     if (!previousSpecified) {
-      if (this.timeService.getYear()) {          // If no previous link has been specified, try to devise previous from context time.
-        pp = this.previousFromTime()
+      for (let nextHandler of this.prevHandlers) {
+        pp = nextHandler(this.prevLink, this.prev)
+        if (pp) {
+          break
+        }
       }
     }
     if (!pp) {
@@ -242,49 +208,6 @@ export class NavService {
       this.contentsURL = cLink
       // addRel(contentsURL, "Contents");
     }
-  }
-
-  /**
-   * Find some time-dedicated page near a given time.
-   *
-   * @param oy The starting year.
-   * @param m The starting month.
-   * @param changeProc How to determine the next date to look for.
-   * @param foundProc What to do once a sibling page has been found.
-   */
-  findTimeSibling(oy, m, changeProc, foundProc) {
-    org.log('Looking for time sibling of %o-%o', oy, m)
-    const ret = changeProc(oy, m)
-    const y = ret.y
-    let l = this.timeService.yearLink(y)
-    m = ret.m
-    let label = y
-    const self = this
-    if (m) {
-      self.setContents(oy, this.timeService.yearLink(oy))
-      l += "/" + this.commonsService.zero(m)
-      label = this.timeService.monthName(m)
-      if (y !== this.timeService.getTime().year) {
-        label += ' ' + y
-      }
-    } else {
-      const cLink = this.timeService.yearLink(oy, true)
-      if (cLink !== this.commonsService.getUri()) {
-        this.setContents(~~(oy / 10) + "0s", cLink)
-      }
-    }
-    this.netService.onExists(l)
-      .then(function (req) {
-        const foundSibling = {label: label, link: l}
-        org.log('Found sibling %o', foundSibling)
-        foundProc(foundSibling)
-      })
-      .catch(function (failReq) {
-        const currentDate = new Date()
-        if (y < currentDate.getFullYear()) {
-          self.findTimeSibling(y, m, changeProc, foundProc)
-        }
-      })
   }
 
   setStart(s?, sLink?) {
@@ -346,17 +269,19 @@ export class HeadController {
   scrolled: HTMLElement
   outline: HTMLElement
   titleUrl: string
+  titleHandlers = [
+    this.titleFromURI.bind(this)
+  ]
   private ns = []
-  private nav: HTMLElement
+  private navEl: HTMLElement
   private text: HTMLElement
   private readonly titleSection: {}
 
   constructor(private $scope: TitleScope, private commonsService: CommonService, private langService: LangService,
-              private peopleService: PeopleService, private timeService: TimeService,
               private navigationService: NavService, private constantClass: string) {
     this.scrolled = <HTMLElement>document.querySelector(".contents")
     this.header = <HTMLElement>document.querySelector('header')
-    this.nav = document.querySelector('nav')
+    this.navEl = document.querySelector('nav')
     this.text = <HTMLElement>this.scrolled.querySelector('.text')
     this.titleSection = {
       label: $scope.title,
@@ -369,7 +294,14 @@ export class HeadController {
     this.outline = <HTMLElement>document.querySelector('.outline')
 
     if (!$scope.title) {
-      $scope.setTitle(commonsService.capitalizeFirstLetter("" + (this.titleFromTime() || this.titleFromPeople() || this.titleFromURI())))
+      let titleValues = ""
+      for (const titleHandler of this.titleHandlers) {
+        if (!titleValues) {
+          titleValues = titleHandler()
+        }
+      }
+      const title = commonsService.capitalizeFirstLetter(titleValues)
+      $scope.setTitle(title)
     }
 
     const self = this
@@ -403,15 +335,6 @@ export class HeadController {
     return nav[0].offsetTop + this.getNavHeight()
   }
 
-  titleFromPeople() {
-    let title
-    const p = this.peopleService.getPeople()
-    if (p) {
-      title = p.toString()
-    }
-    return title
-  }
-
   titleFromURI() {
     let title
     const uri = this.commonsService.getUri()
@@ -435,9 +358,9 @@ export class HeadController {
     return window !== top
   }
 
-  initPeople(p) {
+  /*initPeople(p) {
     this.peopleService.setPeopleName(p)
-  }
+  }*/
 
   addNavElement(c) {
     return this.createNavElement(c)
@@ -497,9 +420,9 @@ export class HeadController {
     scrollTo(section.id)
   }
 
-  initAuthor(a, aLink, c, cLink) {
+  /*initAuthor(a, aLink, c, cLink) {
     this.peopleService.addAuthor(a, aLink, c, cLink)
-  }
+  }*/
 
   private setAlternates(innerHtml) {
     this.alternate = innerHtml
@@ -520,25 +443,11 @@ export class HeadController {
   }
 
   private isNavLeft() {
-    return nav[0].offsetHeight === (<HTMLElement>this.scrolled).offsetHeight
+    return this.navEl.offsetHeight === (<HTMLElement>this.scrolled).offsetHeight
   }
 
   private getNavHeight() {
     return this.isNavLeft() ? 0 : nav[0].offsetHeight
-  }
-
-  private titleFromTime() {
-    let title = this.timeService.getYear()
-    if (title) {
-      if (this.timeService.getTime().month) {
-        title = this.timeService.monthName() + " " + title
-        const dayOfMonth = this.timeService.getDayOfMonth()
-        if (dayOfMonth) {
-          title = this.timeService.dayOfWeekName(this.timeService.getDayOfWeek()) + " " + dayOfMonth + " " + title
-        }
-      }
-    }
-    return title
   }
 
   private createNavElement(c) {
@@ -671,10 +580,10 @@ export class HeadController {
   }
 
   private updateHeading() {
-    const isNavCollapsed = nav.classList.contains('collapsed')
+    const isNavCollapsed = this.navEl.classList.contains('collapsed')
     if (this.isHeaderVisible()) {
       if (isNavCollapsed || !this.outline) {
-        nav.classList.remove('collapsed')
+        this.navEl.classList.remove('collapsed')
         this.text.style.paddingTop = '0'
         // if (outline && outline.childElementCount > 0) {
         this.setOutline('Sommaire')
@@ -688,7 +597,7 @@ export class HeadController {
       if (isNavCollapsed) {
         this.updateOutline()
       } else {
-        nav.classList.add('collapsed')
+        this.navEl.classList.add('collapsed')
         this.text.style.paddingTop = this.getNavHeight() + 'px'
         this.setOutline(this.$scope.title)
         this.selectOutline(this.titleSection)
@@ -770,79 +679,11 @@ export class NavModule {
   readonly service: NavService
   readonly headController: HeadController
 
-  constructor(common: CommonModule, lang: LangModule, people: PeopleModule, time: TimeModule, net: NetModule, $stateProvider, $state) {
-    $stateProvider
-      .state('any', {
-        url: '*path',
-        views: {
-          'textView': {
-            templateProvider: function ($stateParams, $http) {
-              const url = location.pathname
-              return $http.get(url).then(function (response) {
-                const template = response.data
-                return pageContents(template)
-              })
-            },
-            controller: function () {
-              console.log('time controller')
-            }
-          }
-        }
-      })
-      .state('page', {
-        url: '/index.new.html?p =:path',
-        templateUrl: function ($stateParams) {
-          return $stateParams.path
-        },
-        controller: function ($scope) {
-          console.log('ok')
-        }
-      })
-      .state('home', {
-        url: '^/dist/home',
-        views: {
-          'textView': {
-            templateUrl: './home.new.html',
-            controller: function ($scope) {
-              console.log('home controller')
-            }
-          }
-        }
-      })
-      .state('time', {
-        url: '^/dist/time',
-        views: {
-          'textView': {
-            templateProvider: function ($stateParams, $http) {
-              return $http.get('/time').then(function (response) {
-                const template = response.data
-                return pageContents(template)
-              })
-            },
-            controller: function () {
-              console.log('time controller')
-            }
-          }
-        }
-      })
-    /*  $urlRouterProvider.otherwise(function($injector, $location) {
-     var path = $location.path(), normalized = path.toLowerCase();
-     if (path !== normalized) {
-     //instead of returning a new url string, I'll just change the $location.path directly so I don't have to worry about constructing a new url string and so a new state change is not triggered
-     $location.replace().path(normalized);
-     }
-     });*/
-    $state.go('home')
-      .then(val => {
-        console.log('going home: ', val)
-      })
-      .catch(err => {
-        console.log('error when going home: ', err)
-      })
-    this.service = new NavService(common.service, net.service, time.service)
-    this.headController = new HeadController(titleScope, common.service, lang.service, people.service, time.service, this.service, common.constantClass)
+  constructor(common: CommonModule, lang: LangModule, net: NetModule) {
+    this.service = new NavService(common.service)
+    this.headController = new HeadController(titleScope, common.service, lang.service, this.service, common.constantClass)
   }
 }
 
-const nav = new NavModule(common, lang, people, time, net, null, null)
+const nav = new NavModule(common, lang, net)
 export default nav

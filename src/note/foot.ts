@@ -1,5 +1,4 @@
-import social, {SocialModule} from "../social/social"
-import {directives} from "../common"
+import common, {CommonModule, SelectorDirective} from "../common"
 
 /*
  * Foot notes and sources references
@@ -17,18 +16,6 @@ export class FootService {
 
   constructor() {
   }
-}
-
-export abstract class SelectorDirective {
-  constructor(private selector: string, private from: ParentNode = document) {
-  }
-
-  execute() {
-    const els = this.from.querySelectorAll(this.selector)
-    els.forEach(el => this.handle(el as HTMLElement))
-  }
-
-  protected abstract handle(el: HTMLElement)
 }
 
 class NoteDirective extends SelectorDirective {
@@ -86,11 +73,11 @@ class SourceDirective extends SelectorDirective {
 export class FootModule {
   readonly service: FootService
 
-  constructor(private social: SocialModule) {
+  constructor(common: CommonModule) {
     this.service = new FootService()
     document.getElementsByTagName("footer")[0].innerHTML += ""
-    directives.push(new NoteDirective(this.service))
-    directives.push(new SourceDirective(this.service))
+    common.directives.push(new NoteDirective(this.service))
+    common.directives.push(new SourceDirective(this.service))
   }
 }
 
@@ -100,5 +87,5 @@ export class FootCtrl {
   }
 }
 
-const foot = new FootModule(social)
+const foot = new FootModule(common)
 export default foot

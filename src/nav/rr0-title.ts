@@ -1,5 +1,4 @@
-import {SelectorDirective} from "../note/foot"
-import {directives} from "../common"
+import common, {SelectorDirective} from "../common"
 
 export interface TitleScope {
   title: string;
@@ -29,4 +28,4 @@ export const titleScope: TitleScope = {
   author: "", copyright: "", title: "", setTitle(text): void {
   }
 }
-directives.push(new TitleDirective(titleScope))
+common.directives.push(new TitleDirective(titleScope))

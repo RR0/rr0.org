@@ -4,7 +4,7 @@ export class ScienceModule {
   disciplines: any[]
 
   constructor() {
-    this.disciplines = JSON.parse(displinesJSON)
+    this.disciplines = displinesJSON
   }
 }
 

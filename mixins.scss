@@ -10,6 +10,7 @@
 
 @mixin gradientFromLeft {
   background: $gradientColorStart; /* Old browsers */
+
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZGZkZmYyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzklIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
   background: -moz-linear-gradient(-45deg, $gradientColorStart 0%, rgba(255, 255, 255, 0) 79%); /* FF3.6+ */
@@ -30,7 +31,7 @@
 
 @mixin headerBackground() {
   background: $headerFromColor; /* for non-css3 browsers */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1); /* for IE */
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$header-from-color', endcolorstr='$header-to-color', gradienttype=1); /* for IE */
   background: linear-gradient(left top, $headerFromColor, $headerToColor);
 }
 
@@ -55,6 +56,7 @@
   cursor: pointer;
   padding: $selectionPaddingY $selectionPaddingX;
   margin: (-$selectionPaddingY) (-$selectionPaddingX);
+
   &:hover {
     @include hovered();
   }
@@ -67,52 +69,67 @@
   padding: 0;
   //  transition: height $transitionDuration ease;
   @include headerBackground();
+
   li {
     display: block;
+
     a {
       display: block;
     }
+
     h1 {
       padding: 0;
       margin: 0;
     }
+
     h2 {
       background: none;
       margin: 0;
       padding: 0;
       width: auto;
     }
+
     h3 {
       margin: 0;
       padding: 0;
       width: auto;
     }
+
     h4 {
       margin: 0;
       padding: 0;
       width: auto;
     }
+
     padding: $selectionPaddingY $selectionPaddingX;
     float: none;
+
     &:focus {
-      color: #FFF;
+      color: #fff;
       background-color: $hoverColor;
       text-decoration: none;
       cursor: pointer;
     }
   }
 }
+
 @mixin dropdownMenu {
   li {
     width: 100%;
   }
+
   @include menu();
+
   position: absolute;
+
   @include bottomInnerShadow;
+
   height: 0;                    // Closed by default
 }
+
 @mixin embeddedMenu {
   @include menu();
+
   position: relative;
   height: auto;
   box-shadow: none;

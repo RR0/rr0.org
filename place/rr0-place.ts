@@ -1,6 +1,5 @@
 import place, {MapService, PlaceService} from "./place"
-import {SelectorDirective} from "note/foot"
-import {directives} from "common"
+import common, {SelectorDirective} from "common"
 
 class PlaceDirective extends SelectorDirective {
   constructor(private placeService: PlaceService, private mapService: MapService) {
@@ -29,4 +28,4 @@ class PlaceDirective extends SelectorDirective {
   }
 }
 
-directives.push(new PlaceDirective(place.service, place.mapService))
+common.directives.push(new PlaceDirective(place.service, place.mapService))

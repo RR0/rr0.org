@@ -40,7 +40,7 @@ class NoteDirective extends SelectorDirective {
     const span = document.createElement("span")
     span.innerHTML = contents
 
-    elem.innerHTML = this.a.innerHTML + span.innerHTML
+    elem.innerHTML = a.innerHTML + span.innerHTML
   }
 }
 
@@ -66,7 +66,7 @@ class SourceDirective extends SelectorDirective {
     const span = document.createElement("span")
     span.innerHTML = "&nbsp;– " + contents
 
-    elem.innerHTML = this.a.innerHTML + span.innerHTML
+    elem.innerHTML = a.innerHTML + span.innerHTML
   }
 }
 

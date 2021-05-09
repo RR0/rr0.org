@@ -1,6 +1,5 @@
 import common, {CommonModule, org, SelectorDirective} from "../src/common"
 import {RR0Window} from "../src/index"
-import time, {TimeModule, TimeService} from "../time/time"
 import nav, {NavModule} from "../src/nav/nav"
 
 export class People {
@@ -24,6 +23,18 @@ export class People {
 }
 
 (<any>window).copyright = null
+
+class AuthorCtrl {
+  private authors: any[] = []
+  private copyright: any
+  private docTime: string
+
+  constructor(peopleService: PeopleService) {
+    this.authors = peopleService.getAuthors()
+    this.copyright = peopleService.getCopyright()
+    // this.docTime = timeService.toString(timeService.NewMoment(), timeService.getTime()).replacement
+  }
+}
 
 export class PeopleService {
   authors = []
@@ -117,32 +128,31 @@ export class PeopleModule {
   service: PeopleService
   private authorCtrl: AuthorCtrl
 
-  constructor(nav: NavModule, common: CommonModule, time: TimeModule) {
+  constructor(nav: NavModule, common: CommonModule) {
     const commonService = common.service
-    const timeService = time.service
     this.service = new PeopleService(commonService, this.peopleRoot)
     const self = this
     common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
-        self.handleWitness("", elem)
+        self.handleWitness(null, elem)
       }
     }(".temoin"))
     common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
-        self.handleWitness("1", elem)
+        self.handleWitness(1, elem)
       }
     }(".temoin1"))
     common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
-        self.handleWitness("2", elem)
+        self.handleWitness(2, elem)
       }
     }(".temoin2"))
     common.directives.push(new class extends SelectorDirective {
       protected handle(elem: HTMLElement) {
-        self.handleWitness("3", elem)
+        self.handleWitness(3, elem)
       }
     }(".temoin3"))
-    this.authorCtrl = new AuthorCtrl(this.service, timeService)
+    this.authorCtrl = new AuthorCtrl(this.service)
 
     const navigationService = nav.service
     nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
@@ -168,33 +178,20 @@ export class PeopleModule {
     return title
   }
 
-  handleWitness(witnessId, elem) {
+  handleWitness(witnessId: number, elem: HTMLElement) {
     'use strict'
-    const txt = elem.text()
-    const e = elem[0]
-    e.style.width = txt.length + 'em'
+    const txt = elem.innerText
+    elem.style.width = txt.length + 'em'
     const tint = 50 + (witnessId * 10)
-    const caviarBackgroundColor = "rgb(" + tint + ", " + tint + ", " + tint + ")"
-    e.style.background = 'linear-gradient(left, white, ' + caviarBackgroundColor + ' 2%, ' + caviarBackgroundColor + ' 98%, white);'
-    e.innerHTML = '<a href="/FAQ.html#privacy">témoin' + (witnessId ? ' ' + witnessId : '') + '</a>'
-    e.title = 'Nom du témoin anonymisé'
-    if (e.id) {
-      e.innerHTML += ' ' + e.id
+    const caviarBackgroundColor = `rgb(${tint}, ${tint}, ${tint})`
+    elem.style.background = `linear-gradient(left, white, ${caviarBackgroundColor} 2%, ${caviarBackgroundColor} 98%, white);`
+    elem.innerHTML = `<a href="/FAQ.html#privacy">témoin${witnessId ? ` ${witnessId}` : ''}</a>`
+    elem.title = 'Nom du témoin anonymisé'
+    if (elem.id) {
+      elem.innerHTML += ` ${elem.id}`
     }
   }
 }
 
-const people = new PeopleModule(nav, common, time)
+const people = new PeopleModule(nav, common)
 export default people
-
-class AuthorCtrl {
-  private authors: any[] = []
-  private copyright: any
-  private docTime: string
-
-  constructor(peopleService: PeopleService, timeService: TimeService) {
-    this.authors = peopleService.getAuthors()
-    this.copyright = peopleService.getCopyright()
-    this.docTime = timeService.toString(timeService.NewMoment(), timeService.getTime()).replacement
-  }
-}

@@ -4,6 +4,7 @@ import people from '../people/people'
 import nav, {NavModule} from "../src/nav/nav"
 import lang, {LangModule} from "../src/lang"
 import net, {NetModule} from "../src/net"
+import {TimeDirective} from "./rr0-time"
 
 declare var google
 
@@ -429,6 +430,32 @@ class Duration {
 
 export class TimeService {
   chartZone = null
+  private DATETIME_FORMATS = {
+    MONTH: [
+      "Janvier",
+      "Février",
+      "Mars",
+      "Avril",
+      "Mai",
+      "Juin",
+      "Juillet",
+      "Août",
+      "Septembre",
+      "Octobre",
+      "Novembre",
+      "Décembre"
+    ],
+    DAY: [
+      "Dimanche",
+      "Lundi",
+      "Mardi",
+      "Mercredi",
+      "Jeudi",
+      "Vendredi",
+      "Samedi"
+    ]
+
+  }
 
   constructor(private $locale, private timeRoot, private commonsService) {
     'use strict'
@@ -624,7 +651,7 @@ export class TimeService {
   }
 
   monthNames() {
-    return this.$locale.DATETIME_FORMATS.MONTH
+    return this.DATETIME_FORMATS.MONTH
   }
 
   /*            getTime: function () {
@@ -661,7 +688,7 @@ export class TimeService {
   }
 
   dayOfWeekNames() {
-    return this.$locale.DATETIME_FORMATS.DAY
+    return this.DATETIME_FORMATS.DAY
   }
 
   dayOfWeekName(d) {
@@ -839,7 +866,7 @@ export class TimeService {
     function handleHour() {
       var hourAsNumber = parseInt(h, 10)
       if (!!(hourAsNumber)) {
-        titHour = this.commonsService.zero(h)
+        titHour = self.commonsService.zero(h)
       } else {
         titHour = h
         otherHour = true
@@ -1091,3 +1118,5 @@ export class TimeModule {
 
 const time = new TimeModule(common, lang, nav, net)
 export default time
+
+common.directives.push(new TimeDirective(common.service, net.service, time.service))

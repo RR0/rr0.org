@@ -1,79 +1,79 @@
-export default timeModule => {
-  timeModule
-    .directive('time', ['commonsService', 'netService', 'timeService', function (commonsService, netService, timeService) {
-      'use strict';
-      return {
-        restrict: 'E',
-        link: function (scope, elem, attrs) {
-          var txt = elem.text();
+import {SelectorDirective} from "../src/common"
+import time from "./time"
 
-          var currentTime = timeService.getTime();
+export class TimeDirective extends SelectorDirective {
 
-          var decodedTime = new timeService.NewMoment();
-          decodedTime.year = currentTime.getYear();
-          decodedTime.month = currentTime.getMonth();
-          decodedTime.dayOfMonth = currentTime.getDayOfMonth();
-          decodedTime.hour = currentTime.getHour();
-          decodedTime.minutes = currentTime.getMinutes();
-          decodedTime.seconds = currentTime.getSeconds();
+  constructor(private commonsService, private netService, private timeService) {
+    super("time")
+  }
 
-          var r;
-          var e = elem[0];
-          var datetime;
-          var dataStr;
-          if (attrs.datetime) {
-            datetime = attrs.datetime;
-            dataStr = datetime;
-          } else {
-            dataStr = txt;
-          }
+  protected handle(elem: HTMLElement) {
+    const self = this
+    const txt = elem.innerText
 
-          function handleDuration() {
-            var durationStr;
-            var durationMax;
-            var slashPos = dataStr.indexOf('/');
-            if (slashPos > 0) {
-              var maxString = dataStr.substring(slashPos + 1);
-              if (maxString.charAt(0) !== 'P') {
-                maxString = 'P' + maxString;
-              }
-              var durMax = timeService.NewDuration();
-              durationMax = durMax.fromString(maxString).toString();
-              var durationMin = timeService.NewDuration().fromString(dataStr).toString(durMax.unit.name);
-              durationStr = durationMin + " \xE0 " + durationMax;
-            } else {
-              durationStr = timeService.NewDuration().fromString(dataStr).toString();
-            }
-            r = {
-              replacement: durationStr
-            };
-            if (!datetime) {
-              e.setAttribute("datetime", dataStr);
-            }
-            e.innerHTML = r.replacement;
-            elem.addClass('duration');
-          }
+    const currentTime = this.timeService.getTime()
 
-          function handleTime() {
-            decodedTime.fromString(dataStr);
-            r = timeService.toString(currentTime, decodedTime);
-            var previousSibling = elem[0].previousSibling;
-            if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
-              r.replacement = commonsService.capitalizeFirstLetter(r.replacement);
-            }
-            dataStr = timeService.toISOString(decodedTime);
-            netService.checkedLink(e, txt, r.timeLink, r.replacement, false, r.title);
-            if (!datetime) {
-              e.setAttribute("datetime", dataStr);
-            }
-          }
+    const decodedTime = new this.timeService.NewMoment()
+    decodedTime.year = currentTime.getYear()
+    decodedTime.month = currentTime.getMonth()
+    decodedTime.dayOfMonth = currentTime.getDayOfMonth()
+    decodedTime.hour = currentTime.getHour()
+    decodedTime.minutes = currentTime.getMinutes()
+    decodedTime.seconds = currentTime.getSeconds()
 
-          if (dataStr.charAt(0) === 'P') {
-            handleDuration();
-          } else {
-            handleTime();
-          }
+    let r
+    let dataStr
+    const dateTime = elem.getAttribute("datetime")
+    if (dateTime) {
+      dataStr = dateTime
+    } else {
+      dataStr = txt
+    }
+
+    function handleDuration() {
+      let durationStr
+      let durationMax
+      const slashPos = dataStr.indexOf('/')
+      if (slashPos > 0) {
+        let maxString = dataStr.substring(slashPos + 1)
+        if (maxString.charAt(0) !== 'P') {
+          maxString = 'P' + maxString
         }
-      };
-    }]);
+        const durMax = self.timeService.NewDuration()
+        durationMax = durMax.fromString(maxString).toString()
+        const durationMin = self.timeService.NewDuration().fromString(dataStr).toString(durMax.unit.name)
+        durationStr = durationMin + " \xE0 " + durationMax
+      } else {
+        durationStr = self.timeService.NewDuration().fromString(dataStr).toString()
+      }
+      r = {
+        replacement: durationStr
+      }
+      if (!dateTime) {
+        elem.setAttribute("datetime", dataStr)
+      }
+      elem.innerHTML = r.replacement
+      elem.classList.add('duration')
+    }
+
+    function handleTime() {
+      decodedTime.fromString(dataStr)
+      r = self.timeService.toString(currentTime, decodedTime)
+      const previousSibling = elem.previousSibling
+      if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
+        r.replacement = self.commonsService.capitalizeFirstLetter(r.replacement)
+      }
+      dataStr = self.timeService.toISOString(decodedTime)
+      self.netService.checkedLink(elem, txt, r.timeLink, r.replacement, false, r.title)
+      if (!dateTime) {
+        elem.setAttribute("datetime", dataStr)
+      }
+    }
+
+    if (dataStr.charAt(0) === 'P') {
+      handleDuration()
+    } else {
+      handleTime()
+    }
+  }
 }

@@ -8,6 +8,7 @@ import foot, {FootModule} from "./note/foot"
 import common, {CommonModule} from "./common"
 
 import "../rr0.scss"
+import time, {TimeModule} from "../time/time"
 
 export interface RR0Window extends Window {
   copyright: string;
@@ -32,10 +33,14 @@ class AppController implements TitleScope {
 export class Rr0Module {
   private appController: AppController
 
-  constructor(common: CommonModule, nav: NavModule, place: PlaceModule, foot: FootModule, context: ContextModule, science: ScienceModule) {
+  constructor(common: CommonModule, nav: NavModule, place: PlaceModule, foot: FootModule, context: ContextModule,
+              science: ScienceModule, time: TimeModule) {
     this.appController = new AppController()
+    for (const directive of common.directives) (
+      directive.execute()
+    )
   }
 }
 
-const rr0 = new Rr0Module(common, nav, place, foot, context, science)
+const rr0 = new Rr0Module(common, nav, place, foot, context, science, time)
 export default rr0

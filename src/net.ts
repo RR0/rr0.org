@@ -20,7 +20,7 @@ export class NetService {
    * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
    * @param {string} [t] title on the link
    */
-  checkedLink(e, toReplace, l, replacement, cacheIt, t) {
+  async checkedLink(e: HTMLElement, toReplace, l, replacement, cacheIt, t) {
     const self = this
     if (l) {
       l = this.commonsService.addEndingSlash(l)
@@ -43,13 +43,13 @@ export class NetService {
         const failProc = function () {
           const pLink = self.commonsService.parentLink(l)
           if (self.commonsService.getUri().indexOf("/time/") < 0) {    // TODO: should ask time module
-            org.log.debug("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode)
+            org.log("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode)
             cacheIt = false
-            self.checkedLink(e, toReplace, pLink, replacement, cacheIt, t)
+            self.checkedLink(e, toReplace, pLink, replacement, cacheIt, t).then(() => console.log("link checked"))
           }
         }
 
-        if (self.onExists(l)) {
+        if (await self.onExists(l)) {
           if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
             if (self.onExists(`${l}/index.html`)) {
               org.log("found link " + l + " for e'sparent=" + e.parentNode)

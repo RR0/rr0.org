@@ -1,9 +1,9 @@
 export abstract class SelectorDirective {
-  constructor(private selector: string, private from: ParentNode = document) {
+  constructor(private selector: string) {
   }
 
-  execute() {
-    const els = this.from.querySelectorAll(this.selector)
+  execute(from: ParentNode = document) {
+    const els = from.querySelectorAll(this.selector)
     els.forEach(el => this.handle(el as HTMLElement))
   }
 

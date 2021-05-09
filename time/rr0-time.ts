@@ -1,9 +1,10 @@
-import {SelectorDirective} from "../src/common"
-import time from "./time"
+import {CommonService, SelectorDirective} from "../src/common"
+import time, {TimeService} from "./time"
+import {NetService} from "../src/net"
 
 export class TimeDirective extends SelectorDirective {
 
-  constructor(private commonsService, private netService, private timeService) {
+  constructor(private commonsService: CommonService, private netService: NetService, private timeService: TimeService) {
     super("time")
   }
 
@@ -13,7 +14,7 @@ export class TimeDirective extends SelectorDirective {
 
     const currentTime = this.timeService.getTime()
 
-    const decodedTime = new this.timeService.NewMoment()
+    const decodedTime = this.timeService.NewMoment()
     decodedTime.year = currentTime.getYear()
     decodedTime.month = currentTime.getMonth()
     decodedTime.dayOfMonth = currentTime.getDayOfMonth()
@@ -22,13 +23,8 @@ export class TimeDirective extends SelectorDirective {
     decodedTime.seconds = currentTime.getSeconds()
 
     let r
-    let dataStr
     const dateTime = elem.getAttribute("datetime")
-    if (dateTime) {
-      dataStr = dateTime
-    } else {
-      dataStr = txt
-    }
+    let dataStr = dateTime ? dateTime : txt
 
     function handleDuration() {
       let durationStr

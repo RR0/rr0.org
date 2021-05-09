@@ -8,17 +8,17 @@ import {TimeDirective} from "./rr0-time"
 
 declare var google
 
-class Moment {
+export class Moment {
   startDate: any
-  private decade: boolean
-  private dayOfMonth: any
-  private timeZone: any
-  private year: any
-  private month: any
-  private hour: any
-  private minutes: any
-  private seconds: any
-  private approx: any
+  decade: boolean
+  dayOfMonth: number
+  timeZone: number
+  year: number
+  month: number
+  hour: number
+  minutes: number
+  seconds: number
+  approx: any
 
   constructor() {
     this.decade = false
@@ -108,16 +108,16 @@ class Moment {
   }
 
   fromString(dString) {
-    var number
-    var hourNumber
-    var era
-    var txt
-    var monthReady
-    var zReady
+    let number
+    let hourNumber
+    let era
+    let txt
+    let monthReady
+    let zReady
 
-    var self = this
+    const self = this
 
-    var resetParse = function () {
+    const resetParse = function () {
       self.clear()
       number = null
       hourNumber = null
@@ -130,7 +130,7 @@ class Moment {
     resetParse.call(this)
 
     function setTz(c) {
-      var z
+      let z
       switch (txt) {
         case 'Z':
         case 'UTC':
@@ -180,11 +180,11 @@ class Moment {
       return number !== null ? (zReady ? number : (txt !== null ? txt + number : number)) : (txt !== null ? txt : null)
     }
 
-    var i
+    let i
 
     function timeSet() {
-      var valueToSet = value()
-      var valueIsNumber = typeof valueToSet === 'number'
+      const valueToSet = value()
+      const valueIsNumber = typeof valueToSet === 'number'
       if (self.year && valueIsNumber && number <= 59) {
         monthReady = monthReady || dString.charAt(i) === '-'
         if (!monthReady) {
@@ -227,7 +227,7 @@ class Moment {
     }
 
     function parseEnd() {
-      var val = value()
+      const val = value()
       if (val !== null && val !== undefined) {
         timeSet.call(self) // End of date
       }
@@ -237,8 +237,8 @@ class Moment {
     }
 
     for (i = 0; i < dString.length; i++) {
-      var c = dString.charAt(i)
-      var digit = null
+      const c = dString.charAt(i)
+      let digit = null
       switch (c) {
         case '0':
         case '1':
@@ -355,73 +355,67 @@ class Duration {
   unit: Unit
 
   constructor() {
-    'use strict'
-    const durationThis = this
-
-    durationThis.second = new Unit(1, 'seconde')
-    durationThis.minute = new Unit(60 * durationThis.second.factor, 'minute')
-    durationThis.hour = new Unit(60 * durationThis.minute.factor, 'heure')
-    durationThis.day = new Unit(24 * durationThis.hour.factor, 'jour')
+    this.second = new Unit(1, 'seconde')
+    this.minute = new Unit(60 * this.second.factor, 'minute')
+    this.hour = new Unit(60 * this.minute.factor, 'heure')
+    this.day = new Unit(24 * this.hour.factor, 'jour')
   }
 
-  fromString(txt) {
-    const durationThis = this
-    var durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/
-    var foundExprs = durationRegex.exec(txt)
-    durationThis.durationInSeconds = 0
-    for (var i = 1; i < foundExprs.length; i++) {
-      var expr = foundExprs[i]
+  fromString(txt: string): Duration {
+    const durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/
+    const foundExprs = durationRegex.exec(txt)
+    this.durationInSeconds = 0
+    for (let i = 1; i < foundExprs.length; i++) {
+      const expr = foundExprs[i]
       if (expr) {
-        var lastCharPos = expr.length - 1
-        var value = parseInt(expr.substring(0, lastCharPos), 10)
+        const lastCharPos = expr.length - 1
+        const value = parseInt(expr.substring(0, lastCharPos), 10)
         switch (expr.charAt(lastCharPos)) {
           case 'D':
-            durationThis.unit = durationThis.day
+            this.unit = this.day
             break
           case 'H':
-            durationThis.unit = durationThis.hour
+            this.unit = this.hour
             break
           case 'M':
-            durationThis.unit = durationThis.minute
+            this.unit = this.minute
             break
           case 'S':
-            durationThis.unit = durationThis.second
+            this.unit = this.second
             break
           case 'P':
         }
-        durationThis.durationInSeconds += value * durationThis.unit.factor
+        this.durationInSeconds += value * this.unit.factor
       }
     }
-
     return this
   }
 
-  toString(unitStated) {
-    var durationThis = this
-    var txt = []
-    var remaining = durationThis.durationInSeconds
-    var days = Math.floor(remaining / durationThis.day.factor)
+  toString(unitStated?: Duration): string {
+    const txt = []
+    let remaining = this.durationInSeconds
+    const days = Math.floor(remaining / this.day.factor)
     if (days >= 1) {
-      txt.push(unitStated !== durationThis.day.name ? durationThis.day.toString(days) : days)
+      txt.push(unitStated !== this.day.name ? this.day.toString(days) : days)
     }
-    remaining = remaining % durationThis.day.factor
-    var hours = Math.floor(remaining / durationThis.hour.factor)
+    remaining = remaining % this.day.factor
+    const hours = Math.floor(remaining / this.hour.factor)
     if (hours >= 1) {
-      txt.push(unitStated !== durationThis.hour.name ? this.hour.toString(hours) : hours)
+      txt.push(unitStated !== this.hour.name ? this.hour.toString(hours) : hours)
     }
-    remaining = remaining % durationThis.hour.factor
-    var minutes = Math.floor(remaining / durationThis.minute.factor)
+    remaining = remaining % this.hour.factor
+    const minutes = Math.floor(remaining / this.minute.factor)
     if (minutes >= 1) {
-      txt.push(unitStated !== durationThis.minute.name ? durationThis.minute.toString(minutes) : minutes)
+      txt.push(unitStated !== this.minute.name ? this.minute.toString(minutes) : minutes)
     }
-    remaining = remaining % durationThis.minute.factor
-    var seconds = remaining
+    remaining = remaining % this.minute.factor
+    const seconds = remaining
     if (seconds >= 1) {
-      txt.push(unitStated !== durationThis.second.name ? durationThis.second.toString(seconds) : seconds)
+      txt.push(unitStated !== this.second.name ? this.second.toString(seconds) : seconds)
     }
-    var last = txt.length - 1
-    var s = ''
-    for (var i = last; i >= 0; i--) {
+    const last = txt.length - 1
+    let s = ''
+    for (let i = last; i >= 0; i--) {
       s = (i === last && i > 0 ? ' et ' : i > 0 ? ', ' : '') + txt[i] + s
     }
     return s
@@ -468,22 +462,22 @@ export class TimeService {
      *
      * 1947-06-21T14:20-02:00
      */
-    var times
+    let times
 
-    var self = this
+    const self = this
 
-    var paramLang = function (lang) {
+    const paramLang = function (lang) {
       return (!lang) ? org.rr0.context.language : lang
     }
 
     org.rr0.context.time = new Moment()
 
-    var chart
+    let chart
   }
 
   addYear(y, yLink, t) {
     const self = this
-    var s = ""
+    let s = ""
     if (!y) {
       y = self.getTime().year
     }
@@ -491,7 +485,7 @@ export class TimeService {
       yLink = self.yearLink(y)
     }
     if (!t) {
-      var p = (<any>people).getPeople()
+      const p = (<any>people).getPeople()
       if (p) {
         t = p.toString()
         if (p.born) {
@@ -508,7 +502,7 @@ export class TimeService {
   }
 
   toISOString(moment) {
-    var s = moment.year
+    let s = moment.year
     if (moment.month) {
       s += '-' + this.commonsService.zero(moment.month)
     }
@@ -584,8 +578,8 @@ export class TimeService {
   }
 
   addMonth(m) {
-    var s = ""
-    var t = this.getTime()
+    let s = ""
+    const t = this.getTime()
     if (m) {
       t.month = m
     }
@@ -601,13 +595,13 @@ export class TimeService {
    * @returns {string}
    */
   addDayOfMonth(d) {
-    var s = ""
-    var t = this.getTime()
+    let s = ""
+    const t = this.getTime()
     if (!d) {
       d = t.dayOfMonth
     }
     if (d) {
-      var dayName = this.dayOfWeekName(this.getDayOfWeek(t.year, t.month, d))
+      const dayName = this.dayOfWeekName(this.getDayOfWeek(t.year, t.month, d))
       s += dayName + " "
       s += (d === 1 ? "1<sup>er</sup>" : d)
     }
@@ -618,7 +612,7 @@ export class TimeService {
     if (!y) {
       y = this.getTime().year
     }
-    var s = ""
+    let s = ""
     if (y) {
       if (!m) {
         m = this.getMonth()
@@ -626,9 +620,9 @@ export class TimeService {
       if (!d) {
         d = this.getTime().dayOfMonth
       }
-      var newDate = new Date()
+      const newDate = new Date()
       newDate.setFullYear(y)
-      var dateLink = this.yearLink(y)
+      let dateLink = this.yearLink(y)
       if (m) {
         newDate.setMonth(m)
         dateLink += "/" + org.zero(m)
@@ -644,7 +638,7 @@ export class TimeService {
       } else {
 //            s += "en ";
       }
-      var t = null
+      const t = null
       s += " " + this.addYear(y, dateLink, t)
     }
     return s
@@ -659,7 +653,7 @@ export class TimeService {
    },*/
   monthName(m?) {
     if (!m) {
-      var t = this.getTime()
+      const t = this.getTime()
       if (t.month) {
         m = t.month
       }
@@ -675,9 +669,9 @@ export class TimeService {
    * @returns {string} The link
    */
   yearLink(y, decade?) {
-    var yString = y.toString()
-    var yLink = this.timeRoot
-    var pos = 0
+    const yString = y.toString()
+    let yLink = this.timeRoot
+    let pos = 0
     yLink += (y < 1000 ? "0" : yString.substring(pos, ++pos)) + "/"
     yLink += (y < 100 ? "0" : yString.substring(pos, ++pos)) + "/"
     yLink += (y < 10 ? "0" : yString.substring(pos, ++pos)) + "/"
@@ -717,15 +711,15 @@ export class TimeService {
   }
 
   getYear() {
-    var t = this.getTime()
+    const t = this.getTime()
     if (!t.year) {
-      var u = this.commonsService.getUri()
+      const u = this.commonsService.getUri()
       if (this.isTimeURL(u)) {
-        var parts = u.split("/")
+        const parts = u.split("/")
         t.year = 0
-        var mul = 1000
-        for (var i = 2; i < parts.length; i++) {
-          var v = parts[i]
+        let mul = 1000
+        for (let i = 2; i < parts.length; i++) {
+          const v = parts[i]
           if (org.isNumber(v)) {
             if (i <= 5) {
               t.year += v * mul
@@ -768,7 +762,7 @@ export class TimeService {
 
   setDayOfMonth(d) {
     if (d) {
-      var t = this.getTime()
+      const t = this.getTime()
       t.dayOfMonth = d
       t.hour = null
       t.minutes = null
@@ -776,17 +770,17 @@ export class TimeService {
   }
 
   toString(contextTime, time) {
-    var timeLink
-    var repYear
-    var titYear
-    var repMonth
-    var titMonth
-    var repDay
-    var titDay
-    var repHour
-    var self = this
-    var y = time.getYear()
-    var otherYear
+    let timeLink
+    let repYear
+    let titYear
+    let repMonth
+    let titMonth
+    let repDay
+    let titDay
+    let repHour
+    const self = this
+    const y = time.getYear()
+    let otherYear
     if (y) {
       otherYear = y !== contextTime.getYear()
       timeLink = this.yearLink(y)
@@ -796,8 +790,8 @@ export class TimeService {
         repYear = " " + y
       }
     }
-    var otherMonth
-    var m = time.getMonth()
+    let otherMonth
+    const m = time.getMonth()
     if (m) {
       titMonth = this.monthName(m)
       timeLink += "/" + this.commonsService.zero(m)
@@ -807,11 +801,11 @@ export class TimeService {
         repMonth = " " + titMonth
       }
     }
-    var otherDay = 0
-    var d = time.getDayOfMonth()
+    let otherDay = 0
+    const d = time.getDayOfMonth()
     if (d) {
-      var dayAsNumber = parseInt(d, 10)
-      var dOW
+      const dayAsNumber = parseInt(d, 10)
+      let dOW
       if (!!(dayAsNumber)) {
         dOW = this.dayOfWeekName(this.getDayOfWeek(y, m, d))
         titDay = dOW + " " + d + (d === 1 ? "er" : "")
@@ -843,9 +837,9 @@ export class TimeService {
         contextTime.setDayOfMonth(d)
       }
     }
-    var titHour
-    var h = time.getHour()
-    var otherHour
+    let titHour
+    const h = time.getHour()
+    let otherHour
 
     function registerTimeToDraw(updatedHour) {
       /*          var timesToUpdate = self.getTimes();
@@ -864,7 +858,7 @@ export class TimeService {
     }
 
     function handleHour() {
-      var hourAsNumber = parseInt(h, 10)
+      const hourAsNumber = parseInt(h, 10)
       if (!!(hourAsNumber)) {
         titHour = self.commonsService.zero(h)
       } else {
@@ -887,33 +881,34 @@ export class TimeService {
     if (h) {
       handleHour()
     }
-    var mn = time.getMinutes()
+    let otherMinutes
+    const mn = time.getMinutes()
     if (mn || h) {
-      var th = ':' + this.commonsService.zero(mn)
+      const th = ':' + this.commonsService.zero(mn)
       titHour += th
-      var otherMinutes = otherHour || mn !== contextTime.getMinutes()
+      otherMinutes = otherHour || mn !== contextTime.getMinutes()
       if (otherMinutes) {
         contextTime.setMinutes(mn)
         repHour += th
       }
     }
-    var s = time.getSeconds()
+    const s = time.getSeconds()
     if (s) {
-      var ts = ':' + this.commonsService.zero(s)
+      const ts = ':' + this.commonsService.zero(s)
       titHour += ts
-      var otherSeconds = otherMinutes || s !== contextTime.getSeconds()
+      const otherSeconds = otherMinutes || s !== contextTime.getSeconds()
       if (otherSeconds) {
         contextTime.setSeconds(s)
         repHour += ts
       }
     }
-    var titZ
-    var z = time.getTimeZone()
+    let titZ
+    const z = time.getTimeZone()
     if (z) {
       titZ = "(UTC" + (z >= 0 ? '+' : "") + z + ")"
     }
-    var replacement = ""
-    var title = ""
+    let replacement = ""
+    let title = ""
     if (repDay) {
       replacement += repDay
     }
@@ -947,9 +942,9 @@ export class TimeService {
       title += " " + titZ
     }
     if (time.startDate) {
-      var start = self.toString(time, time.startDate).replacement
-      var end = replacement
-      var betweenWord = repDay ? 'au' : '\xE0'
+      const start = self.toString(time, time.startDate).replacement
+      const end = replacement
+      const betweenWord = repDay ? 'au' : '\xE0'
       replacement = start + ' ' + betweenWord + ' ' + end
       title = start + ' ' + betweenWord + ' ' + title
     }

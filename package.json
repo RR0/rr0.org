@@ -7,7 +7,7 @@
     "start": "webpack serve --open",
     "watch": "webpack --watch",
     "build": "webpack",
-    "test": "test"
+    "test": "jest --coverage"
   },
   "keywords": [
     "life",
@@ -35,7 +35,12 @@
     "uuid": "^8.3.2",
     "webpack": "^5.36.0",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "@types/jest": "^26.0.22",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-relay": "^11.0.2",
+    "jest": "26.6.3",
+    "ts-jest": "^26.5.5"
   },
   "author": "Jérôme Beau",
   "license": "ISC"

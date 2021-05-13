@@ -1,10 +1,11 @@
-import common, {CommonModule, org} from "../src/common"
+import common, {CommonModule} from "../src/common"
 
 import people from '../people/people'
 import nav, {NavModule} from "../src/nav/nav"
 import lang, {LangModule} from "../src/lang"
 import net, {NetModule} from "../src/net"
 import {TimeDirective} from "./rr0-time"
+import rr0 from "../src/index"
 
 declare var google
 
@@ -107,13 +108,13 @@ export class Moment {
     return this.approx
   }
 
-  fromString(dString) {
-    let number
-    let hourNumber
-    let era
-    let txt
-    let monthReady
-    let zReady
+  fromString(dString: string) {
+    let number: number
+    let hourNumber: boolean
+    let era: number
+    let txt: string
+    let monthReady: boolean
+    let zReady: boolean
 
     const self = this
 
@@ -132,7 +133,7 @@ export class Moment {
     function setTz(c) {
       let z
       switch (txt) {
-        case 'Z':
+        case "Z":
         case 'UTC':
         case 'TU':
         case 'UT':
@@ -238,7 +239,7 @@ export class Moment {
 
     for (i = 0; i < dString.length; i++) {
       const c = dString.charAt(i)
-      let digit = null
+      let digit: number = null
       switch (c) {
         case '0':
         case '1':
@@ -250,14 +251,14 @@ export class Moment {
         case '7':
         case '8':
         case '9':
-          digit = (c - 33) // - '0'
+          digit = c.charCodeAt(0) - "0".charCodeAt(0)
           if (number === null) {
             number = digit * era
           } else {
             number = number * 10 + digit
           }
           break
-        case '-':
+        case "-":
           if (!txt) {
             if (number === null) {
               era = -1
@@ -268,20 +269,20 @@ export class Moment {
             txt = txt ? txt + c : c
           }
           break
-        case 's':
+        case "s":
           if (number !== null && txt.charAt(i - 1) !== ' ') {
             this.decade = true
           } else {
             txt = txt ? txt + c : c
           }
           break
-        case '+':
+        case "+":
           era = 1
           break
-        case '~':
+        case "~":
           this.approx = true
           break
-        case ':':
+        case ":":
           if (this.hour !== null && zReady) {
             this.setTimeZone(number * era)
           } else if (this.minutes) {
@@ -295,14 +296,14 @@ export class Moment {
           }
           number = null
           break
-        case 'T':
+        case "T":
           if (!txt) {
-            hourNumber = !isNaN(dString.charAt(i + 1))
+            hourNumber = !isNaN(dString.charAt(i + 1).codePointAt(0))
           } else {
             txt = txt ? txt + c : c
             break
           }
-        case ' ':
+        case " ":
           if (!hourNumber && (txt || zReady)) {
             txt = txt ? txt + c : c
           } else {
@@ -311,8 +312,8 @@ export class Moment {
           break
         case '/':
           parseEnd.call(this)
-          this.startDate = org.clone(this)
-          org.rr0.context.time = this.startDate
+          this.startDate = common.service.clone(this)
+          rr0.context.time = this.startDate
           resetParse.call(this)
           break
         default:
@@ -320,7 +321,7 @@ export class Moment {
             timeSet.call(this) // End of minutes or seconds
           }
           if (digit) {
-            txt = txt ? txt + digit : digit
+            txt = txt ? txt + digit : '' + digit
             number = null
             digit = null
           }
@@ -467,10 +468,10 @@ export class TimeService {
     const self = this
 
     const paramLang = function (lang) {
-      return (!lang) ? org.rr0.context.language : lang
+      return (!lang) ? rr0.context.language : lang
     }
 
-    org.rr0.context.time = new Moment()
+    rr0.context.time = new Moment()
 
     let chart
   }
@@ -496,7 +497,7 @@ export class TimeService {
       }
     }
     if (y) {
-      s += org.link(yLink, y, t)
+      s += common.service.link(yLink, y, t)
     }
     return s
   }
@@ -523,7 +524,7 @@ export class TimeService {
    },*/
   setChartsHeight(h) {
     this.chartZone.style.height = h + '%'
-    org.rr0.getSideZone("map-canvas").style.height = (100 - h) + '%'
+    rr0.getSideZone("map-canvas").style.height = (100 - h) + '%'
   }
 
   /*drawChart: function () {
@@ -570,7 +571,7 @@ export class TimeService {
   }
 
   getTime() {
-    return org.rr0.context.time
+    return rr0.context.time
   }
 
   getMonth() {
@@ -625,12 +626,12 @@ export class TimeService {
       let dateLink = this.yearLink(y)
       if (m) {
         newDate.setMonth(m)
-        dateLink += "/" + org.zero(m)
+        dateLink += "/" + common.service.zero(m)
         if (d) {
           newDate.setDate(d)
 //                s = "le ";
           s += this.addDayOfMonth(d)
-          dateLink += "/" + org.zero(d)
+          dateLink += "/" + common.service.zero(d)
         } else {
 //                s = "en ";
         }
@@ -720,7 +721,7 @@ export class TimeService {
         let mul = 1000
         for (let i = 2; i < parts.length; i++) {
           const v = parts[i]
-          if (org.isNumber(v)) {
+          if (common.service.isNumber(v)) {
             if (i <= 5) {
               t.year += v * mul
               mul /= 10
@@ -769,7 +770,7 @@ export class TimeService {
     }
   }
 
-  toString(contextTime, time) {
+  toString(contextTime: Moment, time) {
     let timeLink
     let repYear
     let titYear
@@ -992,9 +993,9 @@ export class TimeModule {
 
     /*if (typeof google !== 'undefined') {
      initGoogleCharts(function () {
-     timeService.chartZone = org.rr0.getSideZone("chart");
+     timeService.chartZone = rr0.getSideZone("chart");
      var chart = new google.visualization.ColumnChart(timeService.chartZone);
-     org.rr0.sideCallbacks = org.rr0.sideCallbacks.concat([timeService.drawChart]);
+     rr0.sideCallbacks = rr0.sideCallbacks.concat([timeService.drawChart]);
 
      for (var i = 0; i < onGoogleChartsLoaded.length; i++) {
      onGoogleChartsLoaded[i]();
@@ -1004,6 +1005,7 @@ export class TimeModule {
      console.warn("Google API is not loaded");
      }*/
     this.service = new TimeService(lang.userLang, this.timeRoot, common.service)
+    common.directives.push(new TimeDirective(common.service, net.service, this.service))
   }
 
   /**
@@ -1012,10 +1014,10 @@ export class TimeModule {
    * @param oy The starting year.
    * @param m The starting month.
    * @param changeProc How to determine the next date to look for.
-   * @param foundProc What to do once a sibling page has been found.
+   * @return the found time sibling, if any
    */
-  findTimeSibling(oy, m, changeProc, foundProc) {
-    org.log('Looking for time sibling of %o-%o', oy, m)
+  async findTimeSibling(oy, m, changeProc) {
+    common.service.log('Looking for time sibling of %o-%o', oy, m)
     const ret = changeProc(oy, m)
     const y = ret.y
     let l = this.service.yearLink(y)
@@ -1035,18 +1037,17 @@ export class TimeModule {
         nav.service.setContents(~~(oy / 10) + "0s", cLink)
       }
     }
-    this.net.service.onExists(l)
-      .then(function (req) {
-        const foundSibling = {label: label, link: l}
-        org.log('Found sibling %o', foundSibling)
-        foundProc(foundSibling)
-      })
-      .catch(function (failReq) {
-        const currentDate = new Date()
-        if (y < currentDate.getFullYear()) {
-          self.findTimeSibling(y, m, changeProc, foundProc)
-        }
-      })
+    const lExists = await this.net.service.onExists(l)
+    if (lExists) {
+      const foundSibling = {label: label, link: l}
+      common.service.log('Found sibling %o', foundSibling)
+      return foundSibling
+    } else {
+      const currentDate = new Date()
+      if (y < currentDate.getFullYear()) {
+        return self.findTimeSibling(y, m, changeProc)
+      }
+    }
   }
 
   private nextFromTime(n) {
@@ -1064,9 +1065,7 @@ export class TimeModule {
       y++
       return {y: y, m: m}        // Return date with incremented year
     }
-    return new Promise((resolve, reject) => {
-      self.findTimeSibling(t.year, t.month, lookAfter, resolve)
-    })
+    return self.findTimeSibling(t.year, t.month, lookAfter)
   }
 
   private titleFromTime() {
@@ -1098,9 +1097,7 @@ export class TimeModule {
       y--                      // Return date with decremented year
       return {y: y, m: m}
     }
-    return new Promise((resolve, reject) => {
-      self.findTimeSibling(t.year, t.month, lookBefore, resolve)
-    })
+    return self.findTimeSibling(t.year, t.month, lookBefore)
   }
 
   private initGoogleCharts(chartsApiLoaded) {
@@ -1114,4 +1111,3 @@ export class TimeModule {
 const time = new TimeModule(common, lang, nav, net)
 export default time
 
-common.directives.push(new TimeDirective(common.service, net.service, time.service))

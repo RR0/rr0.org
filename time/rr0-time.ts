@@ -10,7 +10,7 @@ export class TimeDirective extends SelectorDirective {
 
   protected handle(elem: HTMLElement) {
     const self = this
-    const txt = elem.innerText
+    const txt = elem.innerText || elem.innerHTML
 
     const currentTime = this.timeService.getTime()
 

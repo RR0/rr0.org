@@ -1,8 +1,8 @@
+import {SelectorDirective} from "./common"
+
 /**
  * Adds "target=_blank" to external links so they will be opened in separate tabs
  */
-import {SelectorDirective} from "common"
-
 export class AnchorDirective extends SelectorDirective {
 
   constructor(private host: string) {

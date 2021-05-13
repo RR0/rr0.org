@@ -1,4 +1,4 @@
-import common, {CommonModule, CommonService, org} from './common'
+import common, {CommonModule, CommonService} from './common'
 
 export class NetService {
   constructor(private commonsService: CommonService, private constantClass: string) {
@@ -21,6 +21,7 @@ export class NetService {
    * @param {string} [t] title on the link
    */
   async checkedLink(e: HTMLElement, toReplace, l, replacement, cacheIt, t) {
+    console.log(`checking link ${l}`)
     const self = this
     if (l) {
       l = this.commonsService.addEndingSlash(l)
@@ -29,7 +30,8 @@ export class NetService {
       if (!replacement) {
         replacement = toReplace
       }
-      const newText = org.text(e).replace(toReplace, replacement)  // Replace text early, the link will come later
+      const newText = common.service.text(e).replace(toReplace, replacement)  // Replace text early, the link will
+      // come later
       if (e.nodeType === Node.TEXT_NODE) {
         e.nodeValue = newText
       } else {
@@ -40,29 +42,30 @@ export class NetService {
       }
       if (l && l !== this.commonsService.getUri()) {
         toReplace = replacement
-        const failProc = function () {
+        const failProc = async () => {
           const pLink = self.commonsService.parentLink(l)
           if (self.commonsService.getUri().indexOf("/time/") < 0) {    // TODO: should ask time module
-            org.log("failed " + l + " trying " + pLink + " for e'sparent=" + e.parentNode)
+            common.service.log(`failed ${l} trying ${pLink} for e'sparent=${e.parentNode}`)
             cacheIt = false
-            self.checkedLink(e, toReplace, pLink, replacement, cacheIt, t).then(() => console.log("link checked"))
+            await self.checkedLink(e, toReplace, pLink, replacement, cacheIt, t)
+            console.log(`checked ${l}`)
           }
         }
 
         if (await self.onExists(l)) {
           if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
-            if (self.onExists(`${l}/index.html`)) {
-              org.log("found link " + l + " for e'sparent=" + e.parentNode)
+            if (await self.onExists(`${l}/index.html`)) {
+              common.service.log(`found link ${l} for e'sparent=${e.parentNode}`)
               e = self.linkify(e, replacement, l, replacement, cacheIt)
               if (t) {
                 e.title = t
               }
             } else {
-              failProc()
+              return failProc()
             }
           }
         } else {
-          failProc()
+          return failProc()
         }
       }
     }
@@ -80,12 +83,12 @@ export class NetService {
    */
   private linkify(e, k, l, r, cacheIt) {
     const uri = this.commonsService.getUri()
-    if (!org.hasClass(e, this.constantClass) && l !== uri && (l + "/") !== uri) {
-      const txt = org.text(e)
+    if (!common.service.hasClass(e, this.constantClass) && l !== uri && (l + "/") !== uri) {
+      const txt = common.service.text(e)
       if (txt) {
         const pos = txt.indexOf(k)
         if (pos >= 0) {
-          org.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode)
+          common.service.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode)
           if (!r) {
             r = k
           }
@@ -94,7 +97,7 @@ export class NetService {
             text1 = document.createTextNode(txt.substring(0, pos))
           }
           const re = document.createTextNode(r)
-          const le = org.linkElement(l, re)
+          const le = common.service.linkElement(l, re)
           const endPos = pos + k.length
           let text2
           if (endPos < txt.length) {
@@ -111,7 +114,7 @@ export class NetService {
             }
           }
           if (cacheIt) {
-            org.toLink(l, r)
+            common.service.toLink(l, r)
           }
           e = le
         }
@@ -125,7 +128,7 @@ export class NetModule {
   readonly service: NetService
 
   constructor(common: CommonModule) {
-    this.service = new NetService(common.service, common.constantClass)
+    this.service = new NetService(common.service, common.service.constantClass)
   }
 }
 

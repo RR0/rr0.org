@@ -1,5 +1,5 @@
-import common, {CommonModule, org, SelectorDirective} from "../src/common"
-import {RR0Window} from "../src/index"
+import common, {CommonModule, SelectorDirective} from "../src/common"
+import rr0, {RR0Window} from "../src/index"
 import nav, {NavModule} from "../src/nav/nav"
 
 export class People {
@@ -83,10 +83,10 @@ export class PeopleService {
   peopleLink(p, pLink) {
     if (p) {
       if (!pLink) {
-        pLink = org.cache[p]
+        pLink = common.service.cache[p]
         if (!pLink) {
           this.setPName(p)
-          pLink = org.cache[this.getPeople().lastName]
+          pLink = common.service.cache[this.getPeople().lastName]
           if (!pLink) {
             p = (this.getPeople().lastName + this.getPeople().firstName)
             pLink = this.commonsService.validLink(p)
@@ -102,8 +102,8 @@ export class PeopleService {
         pLink = this.peopleRoot + firstLinkChar.toLowerCase() + "/" + pLink
       }
       pLink = this.commonsService.validLink(pLink)
-      org.cache[p] = pLink
-      org.cache[this.getPeople().lastName] = pLink
+      common.service.cache[p] = pLink
+      common.service.cache[this.getPeople().lastName] = pLink
     } else {
       pLink = null
     }
@@ -111,13 +111,13 @@ export class PeopleService {
   }
 
   getPeople() {
-    return org.rr0.context.people
+    return rr0.context.people
   }
 
   private setPName(name) {
     if (name && name.length > 0) {
-      org.rr0.context.people = new People(name)
-      return org.rr0.context.people
+      rr0.context.people = new People(name)
+      return rr0.context.people
     }
   }
 }

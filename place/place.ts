@@ -1,4 +1,4 @@
-import {org} from "../src/common"
+import rr0 from "../src/index"
 
 function Place(n) {
   this.name = n
@@ -43,7 +43,7 @@ export class MapService {
   geocode(p, callback) {
     if (!this.geocoder) {
       if (this.toGeocode.length === 0) {
-        this.init(org.rr0.getSideZone("map-canvas"), this.onceMapIsLoaded)
+        this.init(rr0.getSideZone("map-canvas"), this.onceMapIsLoaded)
       }
       this.toGeocode.push({place: p, callback: callback})
     } else {
@@ -267,7 +267,7 @@ export class MapService {
 
   private getSwipe() {
     if (!this.mySwipe) {
-      this.mySwipe = new Swipe(org.rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
+      this.mySwipe = new Swipe(rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
         {
           continuous: false,
           stopPropagation: true,
@@ -279,7 +279,7 @@ export class MapService {
 
   private mapHide() {
     if (this.isMapWidthAvailable()) {
-      this.splitWithMap(org.rr0.getScreenWidth())
+      this.splitWithMap(rr0.getScreenWidth())
     } else {
       this.getSwipe().prev()
     }
@@ -300,27 +300,27 @@ export class MapService {
 //            if (org.rr0.getScreenWidth() > 1024) {
 //                mapShow();
 //            }
-    this.onTransitionEnd(org.rr0.contentsZone, this.mapUpdateCallbacks)
+    this.onTransitionEnd(rr0.contentsZone, this.mapUpdateCallbacks)
   }
 
   private isMapWidthAvailable() {
-    return org.rr0.getScreenWidth() > 320
+    return rr0.getScreenWidth() > 320
   }
 
   private isPlanetariumWidthAvailable() {
-    return org.rr0.getScreenHeight() > 400
+    return rr0.getScreenHeight() > 400
   }
 
   private isMapVisible() {
-    return org.rr0.leftWidth < org.rr0.getScreenWidth()
+    return rr0.leftWidth < rr0.getScreenWidth()
   }
 
   private mapShow() {
-    const sideWidth = org.rr0.getScreenWidth() - org.rr0.leftWidth
+    const sideWidth = rr0.getScreenWidth() - rr0.leftWidth
     if (sideWidth <= 0) {
-      org.rr0.leftWidth = org.rr0.getScreenWidth() * ((100 - 28) / 100)
+      rr0.leftWidth = rr0.getScreenWidth() * ((100 - 28) / 100)
     }
-    this.splitWithMap(org.rr0.leftWidth)
+    this.splitWithMap(rr0.leftWidth)
     //org.rr0.time.drawChart();
   }
 
@@ -331,8 +331,8 @@ export class MapService {
   }
 
   private splitWithMap(contentWidth) {
-    org.rr0.leftWidth = contentWidth
-    org.rr0.updateDivision()
+    rr0.leftWidth = contentWidth
+    rr0.updateDivision()
   }
 }
 

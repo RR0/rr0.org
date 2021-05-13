@@ -1,7 +1,7 @@
-import common, {CommonModule, CommonService, org} from "../common"
+import common, {CommonModule, CommonService} from "../common"
 import lang, {LangModule, LangService} from '../lang'
 import {titleScope, TitleScope} from "./rr0-title"
-import {AnchorDirective} from "rr0-a.directive"
+import {AnchorDirective} from "../rr0-a.directive"
 
 function NavLink(l, url, t) {
   this.label = l
@@ -113,7 +113,7 @@ export class NavService {
     const rel = document.createElement("link")
     rel.setAttribute("rel", t)
     rel.setAttribute("href", l)
-    org.addToHead(rel)
+    common.service.addToHead(rel)
   }
 
   setPrev(p?, pLink?) {
@@ -274,8 +274,7 @@ export class HeadController {
   ]
   private ns = []
   private navEl: HTMLElement
-  private text: HTMLElement
-  private titleSection: {}
+  private readonly titleSection: {}
 
   constructor(private $scope: TitleScope, private commonsService: CommonService, private langService: LangService,
               private navigationService: NavService, private constantClass: string, private root: ParentNode) {
@@ -284,7 +283,6 @@ export class HeadController {
       this.scrolled = <HTMLElement>root.querySelector(".contents")
       this.header = <HTMLElement>root.querySelector('header')
       this.navEl = root.querySelector('nav')
-      this.text = <HTMLElement>this.scrolled.querySelector('.text')
       this.titleSection = {
         label: $scope.title,
         outlineLabel: $scope.title,
@@ -584,10 +582,11 @@ export class HeadController {
 
   private updateHeading() {
     const isNavCollapsed = this.navEl.classList.contains('collapsed')
+    const text = <HTMLElement>this.scrolled.querySelector('.text')
     if (this.isHeaderVisible()) {
       if (isNavCollapsed || !this.outline) {
         this.navEl.classList.remove('collapsed')
-        this.text.style.paddingTop = '0'
+        text.style.paddingTop = '0'
         // if (outline && outline.childElementCount > 0) {
         this.setOutline('Sommaire')
         /* } else {
@@ -601,7 +600,7 @@ export class HeadController {
         this.updateOutline()
       } else {
         this.navEl.classList.add('collapsed')
-        this.text.style.paddingTop = this.getNavHeight() + 'px'
+        text.style.paddingTop = this.getNavHeight() + 'px'
         this.setOutline(this.$scope.title)
         this.selectOutline(this.titleSection)
         this.updatePos()
@@ -680,12 +679,19 @@ export class NavModule {
   host = location.host
   hiddenPos = '-100em'
   readonly service: NavService
-  readonly headController: HeadController
 
-  constructor(common: CommonModule, lang: LangModule, root: ParentNode) {
+  constructor(common: CommonModule, lang: LangModule, private root: ParentNode) {
     this.service = new NavService(common.service, root)
-    this.headController = new HeadController(titleScope, common.service, lang.service, this.service, common.constantClass, root)
     common.directives.push(new AnchorDirective(this.host))
+  }
+
+  _headController: HeadController
+
+  get headController() {
+    if (!this._headController) {
+      this._headController = new HeadController(titleScope, common.service, lang.service, this.service, common.service.constantClass, this.root)
+    }
+    return this._headController
   }
 }
 

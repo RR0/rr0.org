@@ -1,4 +1,4 @@
-import common, {SelectorDirective} from "common"
+import common, {Context, SelectorDirective} from "common"
 
 class Rr0Tweet extends SelectorDirective {
 
@@ -12,8 +12,8 @@ class Rr0Tweet extends SelectorDirective {
     fjs.parentNode.insertBefore(frag, fjs)
   }
 
-  protected handle(elem: HTMLElement) {
-    elem.innerHTML = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>'
+  protected handle(context: Context, el: HTMLElement) {
+    el.innerHTML = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>'
   }
 }
 

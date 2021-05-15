@@ -1,7 +1,8 @@
-import rr0 from "../src/index"
+class Place {
+  id: number
 
-function Place(n) {
-  this.name = n
+  constructor(private name: string) {
+  }
 }
 
 declare var google
@@ -42,24 +43,9 @@ export class MapService {
 
   geocode(p, callback) {
     if (!this.geocoder) {
-      if (this.toGeocode.length === 0) {
-        this.init(rr0.getSideZone("map-canvas"), this.onceMapIsLoaded)
-      }
       this.toGeocode.push({place: p, callback: callback})
     } else {
       this.geocodeNow(p, callback)
-    }
-  }
-
-  focusOn(placeOnMap) {
-    if (this.isMapWidthAvailable()) {
-      this.mapShow()
-    }
-    if (this.isPlanetariumWidthAvailable()) {
-      this.planetariumShow()
-    }
-    if (this.isMapVisible()) {
-      placeOnMap.show()
     }
   }
 
@@ -77,7 +63,7 @@ export class MapService {
    * @param anchor The id of the element that will contain the map. "map-canvas" by default.
    */
   loadMap(lat, lng, kmlUrl, zoom, mapType, anchor) {
-    (<any>window).onGoogleMapsLoaded.push(function () {
+    (<any>window).onGoogleMapsLoaded.push(() => {
       const mapOptions = {
         center: new google.maps.LatLng(lat, lng),
         mapTypeId: mapType
@@ -163,40 +149,21 @@ export class MapService {
     })
   }
 
-  private initGoogleMaps(mz, callback) {
-    google.load("maps", "3", {
-      other_params: "sensor=false",
-      callback: () => {
-//                    place.sideCallbacks = place.sideCallbacks.concat(mapUpdateCallbacks);
-        this.mapZone = mz
-        this.mapZone.addEventListener('DOMMouseScroll', function (e) {   // Disable map slide propagation to container
-          // sliding zone
-          e.stopPropagation()
-        }, false)
-
-        this.geocoder = new google.maps.Geocoder()
-        const mapType = "hybrid"
-        const mapOptions = {
-          mapTypeId: mapType
-//                ,minZoom: zoomMin
-        }
-        this.myMap = new google.maps.Map(document.getElementById(this.mapZone.id), mapOptions)
-        this.totalBounds = new google.maps.LatLngBounds()
-        this.peoplePath = new google.maps.Polyline({
-          path: this.peoplePoints,
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.5,
-          strokeWeight: 3
-        })
-        this.peoplePath.setMap(this.myMap)
-        callback(this.geocoder)
-      }
-    })
+  init(mz: HTMLElement, callback) {
+    this.initGoogleMaps(mz, callback)
+    // this.initSkyMap()
   }
 
-  private init(mz, callback) {
-    this.initGoogleMaps(mz, callback)
-    this.initSkyMap()
+  getSwipe(parentNode, isMapVisible: boolean) {
+    if (!this.mySwipe) {
+      this.mySwipe = new Swipe(parentNode, // Create slider after adding zone it will manage
+        {
+          continuous: false,
+          stopPropagation: true,
+          callback: (i) => this.mapUpdate(i, isMapVisible)
+        })
+    }
+    return this.mySwipe
   }
 
   private mapRebound(bounds) {
@@ -234,8 +201,54 @@ export class MapService {
     }
   }
 
-  private mapUpdate(i) {
-    const mapVisible = this.isMapVisible() || i > 0
+  onceMapIsLoaded(contentZone: HTMLElement, onclick) {
+    this.geocodeAll()
+    this.addMapButton(onclick)
+//            if (org.rr0.getScreenWidth() > 1024) {
+//                mapShow();
+//            }
+    this.onTransitionEnd(contentZone, this.mapUpdateCallbacks)
+  }
+
+  planetariumShow() {
+    (document.querySelector('#starmap') as HTMLElement).style.height = '25%';
+    (document.querySelector('#map-canvas') as HTMLElement).style.height = '75%'
+    this.planetarium.createSky()
+  }
+
+  private initGoogleMaps(mz: HTMLElement, callback) {
+    google.load("maps", "3", {
+      other_params: "sensor=false",
+      callback: () => {
+//                    place.sideCallbacks = place.sideCallbacks.concat(mapUpdateCallbacks);
+        this.mapZone = mz
+        this.mapZone.addEventListener('DOMMouseScroll', function (e) {   // Disable map slide propagation to container
+          // sliding zone
+          e.stopPropagation()
+        }, false)
+
+        this.geocoder = new google.maps.Geocoder()
+        const mapType = "hybrid"
+        const mapOptions = {
+          mapTypeId: mapType
+//                ,minZoom: zoomMin
+        }
+        this.myMap = new google.maps.Map(document.getElementById(this.mapZone.id), mapOptions)
+        this.totalBounds = new google.maps.LatLngBounds()
+        this.peoplePath = new google.maps.Polyline({
+          path: this.peoplePoints,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.5,
+          strokeWeight: 3
+        })
+        this.peoplePath.setMap(this.myMap)
+        callback(this.geocoder)
+      }
+    })
+  }
+
+  private mapUpdate(i, isMapVisible: boolean) {
+    const mapVisible = isMapVisible || i > 0
     if (mapVisible) {
       this.mapRefresh()
     }
@@ -247,7 +260,7 @@ export class MapService {
     }
   }
 
-  private onTransitionEnd(e, ar) {
+  private onTransitionEnd(e: HTMLElement, ar) {
     for (let i = 0; i < ar.length; i++) {
       const events = ar[i]
       e.addEventListener('webkitTransitionEnd', events, false)
@@ -258,81 +271,11 @@ export class MapService {
     }
   }
 
-  private addMapButton() {
+  private addMapButton(onclick) {
     const element: HTMLElement = <HTMLElement>document.querySelector('.toggleMap')
     element.style.display = 'inline-block'
     element.title = 'Affiche carte'
-    element.onclick = this.toggleMap
-  }
-
-  private getSwipe() {
-    if (!this.mySwipe) {
-      this.mySwipe = new Swipe(rr0.contentsZone.parentNode.parentNode, // Create slider after adding zone it will manage
-        {
-          continuous: false,
-          stopPropagation: true,
-          callback: this.mapUpdate
-        })
-    }
-    return this.mySwipe
-  }
-
-  private mapHide() {
-    if (this.isMapWidthAvailable()) {
-      this.splitWithMap(rr0.getScreenWidth())
-    } else {
-      this.getSwipe().prev()
-    }
-  }
-
-  private toggleMap() {
-    const mapVisible = this.isMapVisible()
-    if (mapVisible) {
-      this.mapHide()
-    } else {
-      this.mapShow()
-    }
-  }
-
-  private onceMapIsLoaded() {
-    this.geocodeAll()
-    this.addMapButton()
-//            if (org.rr0.getScreenWidth() > 1024) {
-//                mapShow();
-//            }
-    this.onTransitionEnd(rr0.contentsZone, this.mapUpdateCallbacks)
-  }
-
-  private isMapWidthAvailable() {
-    return rr0.getScreenWidth() > 320
-  }
-
-  private isPlanetariumWidthAvailable() {
-    return rr0.getScreenHeight() > 400
-  }
-
-  private isMapVisible() {
-    return rr0.leftWidth < rr0.getScreenWidth()
-  }
-
-  private mapShow() {
-    const sideWidth = rr0.getScreenWidth() - rr0.leftWidth
-    if (sideWidth <= 0) {
-      rr0.leftWidth = rr0.getScreenWidth() * ((100 - 28) / 100)
-    }
-    this.splitWithMap(rr0.leftWidth)
-    //org.rr0.time.drawChart();
-  }
-
-  private planetariumShow() {
-    (document.querySelector('#starmap') as HTMLElement).style.height = '25%';
-    (document.querySelector('#map-canvas') as HTMLElement).style.height = '75%'
-    this.planetarium.createSky()
-  }
-
-  private splitWithMap(contentWidth) {
-    rr0.leftWidth = contentWidth
-    rr0.updateDivision()
+    element.onclick = onclick
   }
 }
 

@@ -1,8 +1,8 @@
+import common, {Context, SelectorDirective} from "common"
+
 interface FbScope {
   urlToLike: string;
 }
-
-import common, {SelectorDirective} from "common"
 
 class Rr0FbLike extends SelectorDirective {
 
@@ -20,8 +20,8 @@ class Rr0FbLike extends SelectorDirective {
     fjs.parentNode.insertBefore(frag, fjs)
   }
 
-  protected handle(elem: HTMLElement) {
-    elem.innerHTML = `<span id="fb-root"></span><div class="fb-like" style="line-height: 0.7em" data-href="${window.location.href}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>`
+  protected handle(context: Context, el: HTMLElement) {
+    el.innerHTML = `<span id="fb-root"></span><div class="fb-like" style="line-height: 0.7em" data-href="${window.location.href}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>`
   }
 }
 

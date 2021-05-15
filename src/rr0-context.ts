@@ -1,14 +1,14 @@
-import common, {SelectorDirective} from "./common"
+import common, {Context, SelectorDirective} from "./common"
 
 export class ContextModule {
 
   constructor() {
     common.directives.push(new class extends SelectorDirective {
-      protected handle(el: HTMLElement) {
+      protected handle(context: Context, el: HTMLElement) {
       }
     }(".place"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(el: HTMLElement) {
+      protected handle(context: Context, el: HTMLElement) {
       }
     }("time"))
   }

@@ -1,5 +1,5 @@
-import {CommonService, SelectorDirective} from "../src/common"
-import time, {TimeService} from "./time"
+import {CommonService, Context, SelectorDirective} from "../src/common"
+import time, {Moment, TimeService} from "./time"
 import {NetService} from "../src/net"
 
 export class TimeDirective extends SelectorDirective {
@@ -8,11 +8,50 @@ export class TimeDirective extends SelectorDirective {
     super("time")
   }
 
-  protected handle(elem: HTMLElement) {
-    const self = this
-    const txt = elem.innerText || elem.innerHTML
+  handleDuration(el: HTMLElement, dataStr: string, dateTime: string) {
+    let durationStr
+    let durationMax
+    const slashPos = dataStr.indexOf('/')
+    if (slashPos > 0) {
+      let maxString = dataStr.substring(slashPos + 1)
+      if (maxString.charAt(0) !== 'P') {
+        maxString = 'P' + maxString
+      }
+      const durMax = this.timeService.NewDuration()
+      durationMax = durMax.fromString(maxString).toString()
+      const durationMin = this.timeService.NewDuration().fromString(dataStr).toString(durMax.unit.name)
+      durationStr = durationMin + " \xE0 " + durationMax
+    } else {
+      durationStr = this.timeService.NewDuration().fromString(dataStr).toString()
+    }
+    const r = {
+      replacement: durationStr
+    }
+    if (!dateTime) {
+      el.setAttribute("datetime", dataStr)
+    }
+    el.innerHTML = r.replacement
+    el.classList.add('duration')
+  }
 
-    const currentTime = this.timeService.getTime()
+  async handleTime(el: HTMLElement, dataStr: string, dateTime: string, decodedTime: Moment, currentTime: Moment, txt: string) {
+    decodedTime.fromString(dataStr)
+    const r = this.timeService.toString(currentTime, decodedTime)
+    const previousSibling = el.previousSibling
+    if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
+      r.replacement = this.commonsService.capitalizeFirstLetter(r.replacement)
+    }
+    dataStr = this.timeService.toISOString(decodedTime)
+    await this.netService.checkedLink(el, txt, r.timeLink, r.replacement, false, r.title)
+    if (!dateTime) {
+      el.setAttribute("datetime", dataStr)
+    }
+  }
+
+  protected async handle(context: Context, el: HTMLElement) {
+    const txt = el.innerText || el.innerHTML
+
+    const currentTime = context.time
 
     const decodedTime = this.timeService.NewMoment()
     decodedTime.year = currentTime.getYear()
@@ -22,54 +61,13 @@ export class TimeDirective extends SelectorDirective {
     decodedTime.minutes = currentTime.getMinutes()
     decodedTime.seconds = currentTime.getSeconds()
 
-    let r
-    const dateTime = elem.getAttribute("datetime")
+    const dateTime = el.getAttribute("datetime")
     let dataStr = dateTime ? dateTime : txt
 
-    function handleDuration() {
-      let durationStr
-      let durationMax
-      const slashPos = dataStr.indexOf('/')
-      if (slashPos > 0) {
-        let maxString = dataStr.substring(slashPos + 1)
-        if (maxString.charAt(0) !== 'P') {
-          maxString = 'P' + maxString
-        }
-        const durMax = self.timeService.NewDuration()
-        durationMax = durMax.fromString(maxString).toString()
-        const durationMin = self.timeService.NewDuration().fromString(dataStr).toString(durMax.unit.name)
-        durationStr = durationMin + " \xE0 " + durationMax
-      } else {
-        durationStr = self.timeService.NewDuration().fromString(dataStr).toString()
-      }
-      r = {
-        replacement: durationStr
-      }
-      if (!dateTime) {
-        elem.setAttribute("datetime", dataStr)
-      }
-      elem.innerHTML = r.replacement
-      elem.classList.add('duration')
-    }
-
-    function handleTime() {
-      decodedTime.fromString(dataStr)
-      r = self.timeService.toString(currentTime, decodedTime)
-      const previousSibling = elem.previousSibling
-      if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
-        r.replacement = self.commonsService.capitalizeFirstLetter(r.replacement)
-      }
-      dataStr = self.timeService.toISOString(decodedTime)
-      self.netService.checkedLink(elem, txt, r.timeLink, r.replacement, false, r.title)
-      if (!dateTime) {
-        elem.setAttribute("datetime", dataStr)
-      }
-    }
-
     if (dataStr.charAt(0) === 'P') {
-      handleDuration()
+      this.handleDuration(el, dataStr, dateTime)
     } else {
-      handleTime()
+      await this.handleTime(el, dataStr, dateTime, decodedTime, currentTime, txt)
     }
   }
 }

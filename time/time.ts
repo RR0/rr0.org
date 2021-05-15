@@ -5,7 +5,6 @@ import nav, {NavModule} from "../src/nav/nav"
 import lang, {LangModule} from "../src/lang"
 import net, {NetModule} from "../src/net"
 import {TimeDirective} from "./rr0-time"
-import rr0 from "../src/index"
 
 declare var google
 
@@ -22,14 +21,7 @@ export class Moment {
   approx: any
 
   constructor() {
-    this.decade = false
-    this.dayOfMonth = null
-    this.timeZone = null
-    this.year = null
-    this.month = null
-    this.hour = null
-    this.minutes = null
-    this.seconds = null
+    this.clear()
   }
 
   clear() {
@@ -108,7 +100,7 @@ export class Moment {
     return this.approx
   }
 
-  fromString(dString: string) {
+  fromString(dString: string): Moment {
     let number: number
     let hourNumber: boolean
     let era: number
@@ -313,7 +305,6 @@ export class Moment {
         case '/':
           parseEnd.call(this)
           this.startDate = common.service.clone(this)
-          rr0.context.time = this.startDate
           resetParse.call(this)
           break
         default:
@@ -467,20 +458,18 @@ export class TimeService {
 
     const self = this
 
-    const paramLang = function (lang) {
+    /*const paramLang = function (lang) {
       return (!lang) ? rr0.context.language : lang
-    }
-
-    rr0.context.time = new Moment()
+    }*/
 
     let chart
   }
 
-  addYear(y, yLink, t) {
+  addYear(time: Moment, y, yLink, t) {
     const self = this
     let s = ""
     if (!y) {
-      y = self.getTime().year
+      y = time.year
     }
     if (!yLink) {
       yLink = self.yearLink(y)
@@ -522,10 +511,10 @@ export class TimeService {
    }
    return times;
    },*/
-  setChartsHeight(h) {
+  /*setChartsHeight(h: number) {
     this.chartZone.style.height = h + '%'
     rr0.getSideZone("map-canvas").style.height = (100 - h) + '%'
-  }
+  }*/
 
   /*drawChart: function () {
    if (times) {
@@ -548,20 +537,20 @@ export class TimeService {
     return new Moment()
   }
 
-  getDate(y?, m?, d?): Date {
+  getDate(t: Moment, y?, m?, d?): Date {
     let dat
     if (!y) {
-      y = this.getYear()
+      y = t.getYear()
     }
     if (y) {                    // No getTime().year set means no date set
       dat = new Date()
       dat.setFullYear(y)
       if (!d) {
-        d = this.getDayOfMonth()
+        d = t.getDayOfMonth()
       }
       dat.setDate(d)
       if (!m) {
-        m = this.getMonth()
+        m = t.getMonth()
       }
       if (m) {
         dat.setMonth(m - 1)
@@ -570,77 +559,68 @@ export class TimeService {
     return dat
   }
 
-  getTime() {
-    return rr0.context.time
-  }
-
-  getMonth() {
-    return this.getTime().month
-  }
-
-  addMonth(m) {
+  addMonth(t: Moment, m: number) {
     let s = ""
-    const t = this.getTime()
     if (m) {
       t.month = m
     }
     if (t.month) {
-      s += this.monthName()
+      s += this.monthName(t)
     }
     return s
   }
 
   /**
    *
+   * @param t
    * @param d
    * @returns {string}
    */
-  addDayOfMonth(d) {
+  addDayOfMonth(t: Moment, d: number) {
     let s = ""
-    const t = this.getTime()
     if (!d) {
       d = t.dayOfMonth
     }
     if (d) {
-      const dayName = this.dayOfWeekName(this.getDayOfWeek(t.year, t.month, d))
+      const dayName = this.dayOfWeekName(this.getDayOfWeek(t, t.year, t.month, d))
       s += dayName + " "
       s += (d === 1 ? "1<sup>er</sup>" : d)
     }
     return s
   }
 
-  addDate(p, y, m, d) {
+  addDate(t: Moment, p, y: number, m, d) {
     if (!y) {
-      y = this.getTime().year
+      y = t.year
     }
     let s = ""
     if (y) {
       if (!m) {
-        m = this.getMonth()
+        m = t.getMonth()
       }
       if (!d) {
-        d = this.getTime().dayOfMonth
+        d = t.getDayOfMonth()
       }
       const newDate = new Date()
       newDate.setFullYear(y)
       let dateLink = this.yearLink(y)
       if (m) {
         newDate.setMonth(m)
-        dateLink += "/" + common.service.zero(m)
+        dateLink += `/${common.service.zero(m)}`
         if (d) {
           newDate.setDate(d)
 //                s = "le ";
-          s += this.addDayOfMonth(d)
-          dateLink += "/" + common.service.zero(d)
+          s += this.addDayOfMonth(t, d)
+          dateLink += `/${common.service.zero(d)}`
         } else {
 //                s = "en ";
         }
-        s += " " + this.addMonth(m)
+        s += ` ${this.addMonth(t, m)}`
       } else {
 //            s += "en ";
       }
-      const t = null
-      s += " " + this.addYear(y, dateLink, t)
+      const tt = null
+      s += ` ${this.addYear(tt, y, dateLink, t)}`
     }
     return s
   }
@@ -652,9 +632,8 @@ export class TimeService {
   /*            getTime: function () {
    return addDate();
    },*/
-  monthName(m?) {
+  monthName(t: Moment, m?) {
     if (!m) {
-      const t = this.getTime()
       if (t.month) {
         m = t.month
       }
@@ -690,17 +669,13 @@ export class TimeService {
     return this.dayOfWeekNames()[d]
   }
 
-  getDayOfWeek(y?, m?, d?) {
-    return this.getDate(y, m, d).getDay()
+  getDayOfWeek(t: Moment, y?, m?, d?) {
+    return this.getDate(t, y, m, d).getDay()
   }
 
-  getDayOfMonth() {
-    return this.getTime().dayOfMonth
-  }
-
-  setYear(y) {
+  setYear(t: Moment, y?: number) {
     if (y) {
-      this.getTime().year = y
+      t.year = y
     }
   }
 
@@ -711,8 +686,7 @@ export class TimeService {
     return u.indexOf(this.timeRoot) === 0
   }
 
-  getYear() {
-    const t = this.getTime()
+  getYear(t: Moment) {
     if (!t.year) {
       const u = this.commonsService.getUri()
       if (this.isTimeURL(u)) {
@@ -739,31 +713,26 @@ export class TimeService {
     return t.year
   }
 
-  setHour(h) {
+  setHour(t: Moment, h) {
     if (h) {
-      this.getTime().hour = h
+      t.hour = h
     }
   }
 
-  setMinutes(mn) {
+  setMinutes(t: Moment, mn?: number) {
     if (mn) {
-      this.getTime().minutes = mn
+      t.minutes = mn
     }
   }
 
-  getHour() {
-    return this.getTime().hour
-  }
-
-  setMonth(m) {
+  setMonth(t: Moment, m?: number) {
     if (m) {
-      this.getTime().setMonth(m)
+      t.setMonth(m)
     }
   }
 
-  setDayOfMonth(d) {
+  setDayOfMonth(t: Moment, d?: number) {
     if (d) {
-      const t = this.getTime()
       t.dayOfMonth = d
       t.hour = null
       t.minutes = null
@@ -808,7 +777,7 @@ export class TimeService {
       const dayAsNumber = parseInt(d, 10)
       let dOW
       if (!!(dayAsNumber)) {
-        dOW = this.dayOfWeekName(this.getDayOfWeek(y, m, d))
+        dOW = this.dayOfWeekName(this.getDayOfWeek(contextTime, y, m, d))
         titDay = dOW + " " + d + (d === 1 ? "er" : "")
         otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth()
       } else {
@@ -974,18 +943,18 @@ export class TimeModule {
         title: "Historique"
       }
     )
-    nav.service.nextHandlers.push((nextLink, next) => {
+    nav.service.nextHandlers.push((t: Moment, nextLink, next) => {
       let nn
-      if (this.service.getYear()) {
-        nn = this.nextFromTime(next)
+      if (this.service.getYear(t)) {
+        nn = this.nextFromTime(t, next)
       }
       return nn
     })
-    nav.service.prevHandlers.push((prevLink, prev) => {
+    nav.service.prevHandlers.push((t: Moment, prevLink, prev) => {
       let pp
-      if (this.service.getYear()) {          // If no previous link has been specified, try to devise previous from
+      if (this.service.getYear(t)) {          // If no previous link has been specified, try to devise previous from
         // context time.
-        pp = this.previousFromTime()
+        pp = this.previousFromTime(t)
       }
       return pp
     })
@@ -1016,7 +985,7 @@ export class TimeModule {
    * @param changeProc How to determine the next date to look for.
    * @return the found time sibling, if any
    */
-  async findTimeSibling(oy, m, changeProc) {
+  async findTimeSibling(t: Moment, oy, m, changeProc) {
     common.service.log('Looking for time sibling of %o-%o', oy, m)
     const ret = changeProc(oy, m)
     const y = ret.y
@@ -1028,7 +997,7 @@ export class TimeModule {
       nav.service.setContents(oy, this.service.yearLink(oy))
       l += "/" + this.common.service.zero(m)
       label = this.service.monthName(m)
-      if (y !== this.service.getTime().year) {
+      if (y !== t.year) {
         label += ' ' + y
       }
     } else {
@@ -1045,13 +1014,12 @@ export class TimeModule {
     } else {
       const currentDate = new Date()
       if (y < currentDate.getFullYear()) {
-        return self.findTimeSibling(y, m, changeProc)
+        return self.findTimeSibling(t, y, m, changeProc)
       }
     }
   }
 
-  private nextFromTime(n) {
-    const t = this.service.getTime()
+  private nextFromTime(t: Moment, n: number) {
     const self = this
     const lookAfter = function (y, m) {
       if (m) {
@@ -1065,25 +1033,24 @@ export class TimeModule {
       y++
       return {y: y, m: m}        // Return date with incremented year
     }
-    return self.findTimeSibling(t.year, t.month, lookAfter)
+    return self.findTimeSibling(t, t.year, t.month, lookAfter)
   }
 
-  private titleFromTime() {
-    let title = this.service.getYear()
+  private titleFromTime(t: Moment) {
+    let title = t.getYear() ? t.getYear().toString() : undefined
     if (title) {
-      if (this.service.getTime().month) {
-        title = this.service.monthName() + " " + title
-        const dayOfMonth = this.service.getDayOfMonth()
+      if (t.month) {
+        title = `${this.service.monthName(t)} ${title}`
+        const dayOfMonth = t.getDayOfMonth()
         if (dayOfMonth) {
-          title = this.service.dayOfWeekName(this.service.getDayOfWeek()) + " " + dayOfMonth + " " + title
+          title = `${this.service.dayOfWeekName(this.service.getDayOfWeek(t))} ${dayOfMonth} ${title}`
         }
       }
     }
     return title
   }
 
-  private previousFromTime() {
-    const t = this.service.getTime()
+  private previousFromTime(t: Moment) {
     const self = this
     const lookBefore = function (y, m) {
       if (m) {
@@ -1097,7 +1064,7 @@ export class TimeModule {
       y--                      // Return date with decremented year
       return {y: y, m: m}
     }
-    return self.findTimeSibling(t.year, t.month, lookBefore)
+    return self.findTimeSibling(t, t.year, t.month, lookBefore)
   }
 
   private initGoogleCharts(chartsApiLoaded) {

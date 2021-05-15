@@ -1,7 +1,8 @@
-import common, {CommonModule, CommonService} from "../common"
+import common, {CommonModule, CommonService, Context} from "../common"
 import lang, {LangModule, LangService} from '../lang'
 import {titleScope, TitleScope} from "./rr0-title"
 import {AnchorDirective} from "../rr0-a.directive"
+import {Moment} from "../../time/time"
 
 function NavLink(l, url, t) {
   this.label = l
@@ -95,8 +96,8 @@ export class NavService {
       }
     ]
   currentLevel = 1
-  prevHandlers: ((nextLink, next) => {})[] = []
-  nextHandlers: ((nextLink, next) => {})[] = []
+  prevHandlers: ((t: Moment, nextLink, next) => {})[] = []
+  nextHandlers: ((t: Moment, nextLink, next) => {})[] = []
 
   constructor(private commonsService: CommonService, private root: ParentNode) {
   }
@@ -134,11 +135,11 @@ export class NavService {
     }
   }
 
-  async getNext() {
+  async getNext(context: Context) {
     let nn
     if (!this.nextLink && !this.next) {
       for (let nextHandler of this.nextHandlers) {
-        nn = nextHandler(this.nextLink, this.next)
+        nn = nextHandler(context.time, this.nextLink, this.next)
         if (nn) {
           break
         }
@@ -164,12 +165,12 @@ export class NavService {
    *
    * @returns {Promise}
    */
-  getPrev() {
+  getPrev(context: Context) {
     let pp
     let previousSpecified = this.prevLink || this.prev
     if (!previousSpecified) {
       for (let nextHandler of this.prevHandlers) {
-        pp = nextHandler(this.prevLink, this.prev)
+        pp = nextHandler(context.time, this.prevLink, this.prev)
         if (pp) {
           break
         }
@@ -278,50 +279,41 @@ export class HeadController {
 
   constructor(private $scope: TitleScope, private commonsService: CommonService, private langService: LangService,
               private navigationService: NavService, private constantClass: string, private root: ParentNode) {
-    {
-      const $scope = this.$scope
-      this.scrolled = <HTMLElement>root.querySelector(".contents")
-      this.header = <HTMLElement>root.querySelector('header')
-      this.navEl = root.querySelector('nav')
-      this.titleSection = {
-        label: $scope.title,
-        outlineLabel: $scope.title,
-        id: "top",
-        level: 0,
-        elem: root.querySelector('#top')
-      }
+    const scope = this.$scope
+    this.scrolled = <HTMLElement>root.querySelector(".contents")
+    this.header = <HTMLElement>root.querySelector('header')
+    this.navEl = root.querySelector('nav')
+    this.titleSection = {
+      label: scope.title,
+      outlineLabel: scope.title,
+      id: "top",
+      level: 0,
+      elem: root.querySelector('#top')
+    }
 
-      this.outline = <HTMLElement>root.querySelector('.outline')
+    this.outline = <HTMLElement>root.querySelector('.outline')
 
-      if (!$scope.title) {
-        let titleValues = ""
-        for (const titleHandler of this.titleHandlers) {
-          if (!titleValues) {
-            titleValues = titleHandler()
-          }
+    if (!scope.title) {
+      let titleValues = ""
+      for (const titleHandler of this.titleHandlers) {
+        if (!titleValues) {
+          titleValues = titleHandler()
         }
-        const title = this.commonsService.capitalizeFirstLetter(titleValues)
-        $scope.setTitle(title)
       }
+      const title = this.commonsService.capitalizeFirstLetter(titleValues)
+      scope.setTitle(title)
+    }
 
-      const self = this
+    const self = this
 
-      this.scrolled.onscroll = (event) => {
-        requestAnimationFrame(self.updateHeading)
-      }
+    this.scrolled.onscroll = (event) => {
+      requestAnimationFrame(self.updateHeading)
+    }
 
-      if (window.addEventListener) {      // most non-IE browsers and IE9
-        window.addEventListener("resize", this.onResize.bind(this), false)
-      } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
-        (<any>window).attachEvent("onresize", this.onResize.bind(this))
-      }
-
-      this.init()
-
-      setTimeout(function () {
-        self.updateHeading()
-        self.updatePos()
-      })
+    if (window.addEventListener) {      // most non-IE browsers and IE9
+      window.addEventListener("resize", this.onResize.bind(this), false)
+    } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
+      (<any>window).attachEvent("onresize", this.onResize.bind(this))
     }
   }
 
@@ -375,7 +367,7 @@ export class HeadController {
     }
   }
 
-  init(s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
+  init(context: Context, s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
 
     const self = this
 
@@ -399,10 +391,10 @@ export class HeadController {
         label: '' + this.navigationService.getContents(),
         link: this.navigationService.getContentsURL()
       }, "Table des mati\xE8res", "toc")
-      this.navigationService.getPrev().then(function (pp) {
+      this.navigationService.getPrev(context).then(function (pp) {
         self.addPrev(pp, "Pr\xE9c\xE9dent", "prev")
       })
-      this.navigationService.getNext().then(function (nn) {
+      this.navigationService.getNext(context).then(function (nn) {
         self.addNext(nn, "Suivant", "next")
       })
     } else {
@@ -415,6 +407,9 @@ export class HeadController {
 
     this.createNavElement(alternateClass)
     this.checkAlt().then(() => console.log("checkalt done"))
+
+    this.updateHeading()
+    this.updatePos()
   }
 
   sectionClick(section) {

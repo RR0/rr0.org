@@ -1,31 +1,31 @@
 import place, {MapService, PlaceService} from "./place"
-import common, {SelectorDirective} from "common"
+import {Context, SelectorDirective} from "../src/common"
+import {Rr0Module} from "../src/rr0"
 
-class PlaceDirective extends SelectorDirective {
-  constructor(private placeService: PlaceService, private mapService: MapService) {
+export class PlaceDirective extends SelectorDirective {
+
+  constructor(private placeService: PlaceService, private mapService: MapService, private rr0: Rr0Module) {
     super(".place")
   }
 
-  protected handle(elem: HTMLElement) {
-    const title = elem.getAttribute('title')
-    const placeName = title ? title : elem.innerText
+  protected handle(context: Context, el: HTMLElement) {
+    const title = el.getAttribute('title')
+    const placeName = title ? title : el.innerText
     if (placeName) {
       const place = this.placeService.addPlace(placeName)
-      elem.setAttribute('place-id', "place" + place.id)
+      el.setAttribute('place-id', "place" + place.id)
       this.mapService.geocode(place, (placeOnMap) => {
-        const parent = elem.parentElement
+        const parent = el.parentElement
         const parentTagName = parent.tagName
         if (parentTagName === "P" || parentTagName === "LI") {
-          elem.onclick = () => {
-            this.mapService.focusOn(placeOnMap)
+          el.onclick = () => {
+            this.rr0.focusOn(placeOnMap)
           }
-          elem.style.cursor = 'pointer'
-          elem.setAttribute('title', 'Cliquez pour voir la carte')
+          el.style.cursor = 'pointer'
+          el.setAttribute('title', 'Cliquez pour voir la carte')
         }
         this.mapService.refresh()
       })
     }
   }
 }
-
-common.directives.push(new PlaceDirective(place.service, place.mapService))

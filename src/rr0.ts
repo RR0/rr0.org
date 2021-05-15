@@ -8,7 +8,23 @@ import foot, {FootModule} from "./note/foot"
 import common, {CommonModule, Context, User} from "./common"
 
 import "../rr0.scss"
-import time, {TimeModule} from "../time/time"
+import time, {Moment, TimeModule} from "../time/time"
+import people, {People, PeopleModule} from "../people/people"
+import {PlaceDirective} from "../place/rr0-place"
+
+export class Rr0Context extends Context {
+
+  setPName(name: string) {
+    if (name && name.length > 0) {
+      this.people = new People(name)
+      return this.people
+    }
+  }
+
+  setPeopleName(name: string) {
+    this.setPName(name)
+  }
+}
 
 export interface RR0Window extends Window {
   copyright: string;
@@ -31,7 +47,6 @@ class AppController implements TitleScope {
 }
 
 export class Rr0Module {
-  private appController: AppController
   leftWidth: number
   user = new User()
   context = new Context(this.user)
@@ -39,14 +54,40 @@ export class Rr0Module {
   contentsZone = null
   sideCallbacks = []
   textZone = null
+  private appController: AppController
 
-  constructor(common: CommonModule, nav: NavModule, place: PlaceModule, foot: FootModule, context: ContextModule,
-              science: ScienceModule, time: TimeModule) {
+  constructor(common: CommonModule, nav: NavModule, private place: PlaceModule, foot: FootModule, context: ContextModule,
+              science: ScienceModule, private time: TimeModule, private people: PeopleModule) {
+    this.context.time = new Moment()
     this.appController = new AppController()
     this.initStructure()
-    for (const directive of common.directives) (
-      directive.execute()
-    )
+    const mapZone = this.getSideZone("map-canvas")
+    this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap))
+    nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
+    nav.headController.init(this.context)
+
+    const directives = common.directives
+    directives.push(new PlaceDirective(place.service, place.mapService, this))
+    const promises = []
+    for (let i = 0; i < directives.length; i++) {
+      const directive = directives[i]
+      promises.push(directive.execute(this.context))
+    }
+    Promise.all(promises).then(() => {
+      console.log("applied directives")
+    })
+  }
+
+  focusOn(placeOnMap) {
+    if (this.isMapWidthAvailable()) {
+      this.mapShow()
+    }
+    if (this.isPlanetariumWidthAvailable()) {
+      this.place.mapService.planetariumShow()
+    }
+    if (this.isMapVisible()) {
+      placeOnMap.show()
+    }
   }
 
   /**
@@ -119,7 +160,7 @@ export class Rr0Module {
     this.callSideCallbacks()
   }
 
-  getSideZone(id) {
+  getSideZone(id: string) {
     let sideZone = document.getElementById(id)
     if (!sideZone) {
       sideZone = document.createElement("div")
@@ -134,7 +175,61 @@ export class Rr0Module {
     this.textZone = document.querySelector(".text")
     this.leftWidth = this.getScreenWidth()
   }
+
+  private mapHide() {
+    if (this.isMapWidthAvailable()) {
+      this.splitWithMap(this.getScreenWidth())
+    } else {
+      const parentNode = this.contentsZone.parentNode.parentNode
+      const swipe = this.place.mapService.getSwipe(parentNode, this.isMapVisible())
+      swipe.prev()
+    }
+  }
+
+  private toggleMap() {
+    const mapVisible = this.isMapVisible()
+    if (mapVisible) {
+      this.mapHide()
+    } else {
+      this.mapShow()
+    }
+  }
+
+  private isMapVisible() {
+    return this.leftWidth < this.getScreenWidth()
+  }
+
+  private isMapWidthAvailable() {
+    return this.getScreenWidth() > 320
+  }
+
+  private isPlanetariumWidthAvailable() {
+    return this.getScreenHeight() > 400
+  }
+
+  private splitWithMap(contentWidth) {
+    this.leftWidth = contentWidth
+    this.updateDivision()
+  }
+
+  private mapShow() {
+    const sideWidth = rr0.getScreenWidth() - rr0.leftWidth
+    if (sideWidth <= 0) {
+      rr0.leftWidth = rr0.getScreenWidth() * ((100 - 28) / 100)
+    }
+    this.splitWithMap(rr0.leftWidth)
+    //org.rr0.time.drawChart();
+  }
+
+  private titleFromPeople() {
+    let title
+    const p = this.context.people
+    if (p) {
+      title = p.toString()
+    }
+    return title
+  }
 }
 
-const rr0 = new Rr0Module(common, nav, place, foot, context, science, time)
+const rr0 = new Rr0Module(common, nav, place, foot, context, science, time, people)
 export default rr0

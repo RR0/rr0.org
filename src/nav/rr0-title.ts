@@ -1,4 +1,4 @@
-import common, {SelectorDirective} from "../common"
+import common, {Context, SelectorDirective} from "../common"
 
 export interface TitleScope {
   title: string;
@@ -17,9 +17,9 @@ class TitleDirective extends SelectorDirective {
     super("[title]")
   }
 
-  protected handle(elem: HTMLElement) {
-    if (elem.innerText.indexOf('{{') < 0) {
-      this.scope.setTitle(elem.innerText)
+  protected handle(context: Context, el: HTMLElement) {
+    if (el.innerText.indexOf('{{') < 0) {
+      this.scope.setTitle(el.innerText)
     }
   }
 }

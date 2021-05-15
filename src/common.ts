@@ -1,27 +1,35 @@
-export abstract class SelectorDirective {
-  constructor(private selector: string) {
-  }
-
-  execute(from: ParentNode = document) {
-    const els = from.querySelectorAll(this.selector)
-    els.forEach(el => this.handle(el as HTMLElement))
-  }
-
-  protected abstract handle(el: HTMLElement)
-}
-
-export class User {
-  language = navigator.language || (<any>navigator).userLanguage || (<any>navigator).browserLanguage || (<any>navigator).systemLanguage
-}
+import {Moment} from "../time/time"
 
 export class Context {
   language = this.user.language.substring(0, 2)
-  time = null
+  time: Moment = null
   place = null
   people = null
 
   constructor(private user: User) {
   }
+}
+
+
+export abstract class SelectorDirective<E extends HTMLElement = HTMLElement> {
+  constructor(private selector: string) {
+  }
+
+  async execute(context: Context, from: ParentNode = document) {
+    const els = from.querySelectorAll(this.selector)
+    const promises = []
+    for (let i = 0; i < els.length; i++) {
+      const el = els[i]
+      promises.push(this.handle(context, el as E))
+    }
+    await Promise.all(promises)
+  }
+
+  protected abstract handle(context: Context, el: E)
+}
+
+export class User {
+  language = navigator.language || (<any>navigator).userLanguage || (<any>navigator).browserLanguage || (<any>navigator).systemLanguage
 }
 
 declare var prettyPrintOne: any
@@ -452,8 +460,8 @@ export class CommonModule {
   constructor() {
     this.service = new CommonService()
     const codeDirective = new class extends SelectorDirective {
-      protected handle(elem) {
-        elem.innerHTML = prettyPrintOne(elem.innerHTML)
+      protected handle(context: Context, el: HTMLElement) {
+        el.innerHTML = prettyPrintOne(el.innerHTML)
       }
     }("code")
     this.directives.push(codeDirective)

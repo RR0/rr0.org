@@ -1,12 +1,12 @@
-import common, {CommonModule, SelectorDirective} from "../src/common"
-import rr0, {RR0Window} from "../src/index"
+import common, {CommonModule, Context, SelectorDirective} from "../src/common"
 import nav, {NavModule} from "../src/nav/nav"
+import {Rr0Context, RR0Window} from "../src/rr0"
 
 export class People {
   firstName: any
   lastName: string
 
-  constructor(p) {
+  constructor(p: string) {
     const commaPos = p.indexOf(", ")
     if (commaPos > 0) {
       this.lastName = p.substring(0, commaPos)
@@ -51,44 +51,42 @@ export class PeopleService {
     return this.authors
   }
 
-  setAuthor(a, aLink) {
+  setAuthor(context: Context, a: string, aLink: string) {
     if (a) {
-      const author = this.setPName(a)
-      author.link = this.peopleLink(a, aLink)
+      const author = (context as Rr0Context).setPName(a)
+      author.link = this.peopleLink(context, a, aLink)
       this.authors.push(author)
     }
   }
 
-  setCopyright(c, cLink) {
+  setCopyright(c: string, cLink: string) {
     this.copyright = (window as unknown as RR0Window).copyright = c
   }
 
-  addAuthor(a, aLink, c, cLink) {
+  addAuthor(context: Context, a: string, aLink: string, c: string, cLink: string) {
     if (a) {
-      this.setAuthor(a, aLink)
+      this.setAuthor(context, a, aLink)
     }
     if (c) {
       this.setCopyright(c, cLink)
     }
   }
 
-  setPeopleName(name) {
-    this.setPName(name)
-  }
-
   /**
+   * @param context
    * @param {String} p People's name
    * @param {String} [pLink] a href link, or a symbolic link, or null
    */
-  peopleLink(p, pLink) {
+  peopleLink(context: Context, p, pLink) {
     if (p) {
+      const people = context.people
       if (!pLink) {
         pLink = common.service.cache[p]
         if (!pLink) {
-          this.setPName(p)
-          pLink = common.service.cache[this.getPeople().lastName]
+          (context as Rr0Context).setPName(p)
+          pLink = common.service.cache[people.lastName]
           if (!pLink) {
-            p = (this.getPeople().lastName + this.getPeople().firstName)
+            p = (people.lastName + people.firstName)
             pLink = this.commonsService.validLink(p)
           } else {
             return pLink
@@ -103,22 +101,11 @@ export class PeopleService {
       }
       pLink = this.commonsService.validLink(pLink)
       common.service.cache[p] = pLink
-      common.service.cache[this.getPeople().lastName] = pLink
+      common.service.cache[people.lastName] = pLink
     } else {
       pLink = null
     }
     return pLink
-  }
-
-  getPeople() {
-    return rr0.context.people
-  }
-
-  private setPName(name) {
-    if (name && name.length > 0) {
-      rr0.context.people = new People(name)
-      return rr0.context.people
-    }
   }
 }
 
@@ -133,29 +120,28 @@ export class PeopleModule {
     this.service = new PeopleService(commonService, this.peopleRoot)
     const self = this
     common.directives.push(new class extends SelectorDirective {
-      protected handle(elem: HTMLElement) {
-        self.handleWitness(null, elem)
+      protected handle(context: Context, el: HTMLElement) {
+        self.handleWitness(null, el)
       }
     }(".temoin"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(elem: HTMLElement) {
-        self.handleWitness(1, elem)
+      protected handle(context: Context, el: HTMLElement) {
+        self.handleWitness(1, el)
       }
     }(".temoin1"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(elem: HTMLElement) {
-        self.handleWitness(2, elem)
+      protected handle(context: Context, el: HTMLElement) {
+        self.handleWitness(2, el)
       }
     }(".temoin2"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(elem: HTMLElement) {
-        self.handleWitness(3, elem)
+      protected handle(context: Context, el: HTMLElement) {
+        self.handleWitness(3, el)
       }
     }(".temoin3"))
     this.authorCtrl = new AuthorCtrl(this.service)
 
     const navigationService = nav.service
-    nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
     navigationService.addStart({
         dir: this.peopleRoot,
         label: "<i class='fa fa-user'></i> <span class='label'>Personnes</span></span>",
@@ -167,15 +153,6 @@ export class PeopleModule {
     commonService.nounToLink(this.peopleRoot + "ufologues.html", "ufologue")
     commonService.nounToLink(this.peopleRoot + "Astronomes.html", "astronome")
     commonService.nounToLink(this.peopleRoot + "temoins.html", "temoin")
-  }
-
-  private titleFromPeople() {
-    let title
-    const p = this.service.getPeople()
-    if (p) {
-      title = p.toString()
-    }
-    return title
   }
 
   handleWitness(witnessId: number, elem: HTMLElement) {

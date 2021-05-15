@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: {
-    index: "./src/index.ts"
+    index: "./src/rr0.ts"
   },
   mode: process.env.NODE_ENV || "production",
   devtool: "source-map",
@@ -12,8 +12,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-        title: "Where do I go from now?",
-        lang: "en",
+        title: "RR0",
+        lang: "fr",
         template: "index.native.html",
         js: ["bundle.js"]
       }
@@ -38,7 +38,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts"],
     modules: [
       path.resolve("./node_modules"),
       path.resolve("./")

@@ -1,4 +1,4 @@
-import common, {CommonModule, SelectorDirective} from "../common"
+import common, {CommonModule, Context, SelectorDirective} from "../common"
 
 /*
  * Foot notes and sources references
@@ -27,8 +27,8 @@ class NoteDirective extends SelectorDirective {
     super(".note")
   }
 
-  protected handle(elem: HTMLElement) {
-    const contents = elem.innerHTML
+  protected handle(context: Context, el: HTMLElement) {
+    const contents = el.innerHTML
 
     const a = document.createElement("a")
     a.href = "#"
@@ -40,7 +40,7 @@ class NoteDirective extends SelectorDirective {
     const span = document.createElement("span")
     span.innerHTML = contents
 
-    elem.innerHTML = a.innerHTML + span.innerHTML
+    el.innerHTML = a.innerHTML + span.innerHTML
   }
 }
 
@@ -53,8 +53,8 @@ class SourceDirective extends SelectorDirective {
     super(".source")
   }
 
-  protected handle(elem: HTMLElement) {
-    const contents = elem.innerHTML
+  protected handle(context: Context, el: HTMLElement) {
+    const contents = el.innerHTML
 
     const a = document.createElement("a")
     a.href = "#"
@@ -66,7 +66,7 @@ class SourceDirective extends SelectorDirective {
     const span = document.createElement("span")
     span.innerHTML = "&nbsp;– " + contents
 
-    elem.innerHTML = a.innerHTML + span.innerHTML
+    el.innerHTML = a.innerHTML + span.innerHTML
   }
 }
 

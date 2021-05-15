@@ -22,7 +22,6 @@ export class NetService {
    */
   async checkedLink(e: HTMLElement, toReplace, l, replacement, cacheIt, t) {
     console.log(`checking link ${l}`)
-    const self = this
     if (l) {
       l = this.commonsService.addEndingSlash(l)
     }
@@ -43,20 +42,21 @@ export class NetService {
       if (l && l !== this.commonsService.getUri()) {
         toReplace = replacement
         const failProc = async () => {
-          const pLink = self.commonsService.parentLink(l)
-          if (self.commonsService.getUri().indexOf("/time/") < 0) {    // TODO: should ask time module
+          const pLink = this.commonsService.parentLink(l)
+          const currentURI = this.commonsService.getUri()
+          if (currentURI.indexOf("/time/") < 0 && l !== pLink) {    // TODO: should ask time module
             common.service.log(`failed ${l} trying ${pLink} for e'sparent=${e.parentNode}`)
             cacheIt = false
-            await self.checkedLink(e, toReplace, pLink, replacement, cacheIt, t)
+            await this.checkedLink(e, toReplace, pLink, replacement, cacheIt, t)
             console.log(`checked ${l}`)
           }
         }
 
-        if (await self.onExists(l)) {
+        if (await this.onExists(l)) {
           if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
-            if (await self.onExists(`${l}/index.html`)) {
+            if (await this.onExists(`${l}/index.html`)) {
               common.service.log(`found link ${l} for e'sparent=${e.parentNode}`)
-              e = self.linkify(e, replacement, l, replacement, cacheIt)
+              e = this.linkify(e, replacement, l, replacement, cacheIt)
               if (t) {
                 e.title = t
               }

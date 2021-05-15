@@ -1,5 +1,5 @@
 import people, {PeopleService} from "./people"
-import common, {SelectorDirective} from "common"
+import common, {Context, SelectorDirective} from "common"
 import nav, {HeadController} from "nav/nav"
 
 export interface MetaScope {
@@ -12,17 +12,17 @@ class MetaDirective extends SelectorDirective {
     super("meta")
   }
 
-  protected handle(el: HTMLElement) {
-    var name = el.getAttribute("name")
-    var content = el.getAttribute("content")
-    var urlPos = content.indexOf(';url=')
-    var link = urlPos > 0 ? content.substring(urlPos) : undefined
+  protected handle(context: Context, el: HTMLElement) {
+    const name = el.getAttribute("name")
+    const content = el.getAttribute("content")
+    const urlPos = content.indexOf(';url=')
+    const link = urlPos > 0 ? content.substring(urlPos) : undefined
     switch (name) {
       case 'url':
         this.headController.titleUrl = content
         break
       case 'author':
-        this.peopleService.setAuthor(content, link)
+        this.peopleService.setAuthor(context, content, link)
         break
       case 'copyright':
         this.peopleService.setCopyright(content, link)

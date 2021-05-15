@@ -1,4 +1,4 @@
-import {SelectorDirective} from "common"
+import {Context, SelectorDirective} from "common"
 
 class HeadDirective extends SelectorDirective {
   lang = "fr"
@@ -7,8 +7,8 @@ class HeadDirective extends SelectorDirective {
     super("rr0-head")
   }
 
-  protected handle(elem: HTMLElement) {
-    elem.innerHTML = `<!DOCTYPE html>
+  protected handle(context: Context, el: HTMLElement) {
+    el.innerHTML = `<!DOCTYPE html>
 <html data-ng-app="rr0" lang="<!--#if expr="${this.lang}" --><!--#echo var="lang" --><!--#else -->fr<!--#endif -->">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -17,7 +17,7 @@ class HeadDirective extends SelectorDirective {
   <link rel="dns-prefetch" href="//googleapis.com">
   <link rel="dns-prefetch" href="//facebook.com">
   <link rel="dns-prefetch" href="//twitter.com">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/rr0.css" type="text/css"/>
   <!--[if lt IE 9]>

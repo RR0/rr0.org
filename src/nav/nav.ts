@@ -3,6 +3,7 @@ import lang, {LangModule, LangService} from '../lang'
 import {titleScope, TitleScope} from "./rr0-title"
 import {AnchorDirective} from "../rr0-a.directive"
 import {Moment} from "../../time/time"
+import {Section} from "nav/rr0-outline"
 
 function NavLink(l, url, t) {
   this.label = l
@@ -262,20 +263,21 @@ export class NavService {
 
 export class HeadController {
   ps = []
-  sections = []
+  sections: Section[] = []
   searchResults
-  currentSection
+  currentSection: HTMLElement
   alternate: any
   header: HTMLElement
   scrolled: HTMLElement
-  outline: HTMLElement
+  outlineEl: HTMLElement
   titleUrl: string
   titleHandlers = [
     this.titleFromURI.bind(this)
   ]
   private ns = []
   private navEl: HTMLElement
-  private readonly titleSection: {}
+  private readonly titleSection: Section
+  private outline: string
 
   constructor(private $scope: TitleScope, private commonsService: CommonService, private langService: LangService,
               private navigationService: NavService, private constantClass: string, private root: ParentNode) {
@@ -291,7 +293,7 @@ export class HeadController {
       elem: root.querySelector('#top')
     }
 
-    this.outline = <HTMLElement>root.querySelector('.outline')
+    this.outlineEl = <HTMLElement>root.querySelector('.outline')
 
     if (!scope.title) {
       let titleValues = ""
@@ -304,10 +306,8 @@ export class HeadController {
       scope.setTitle(title)
     }
 
-    const self = this
-
-    this.scrolled.onscroll = (event) => {
-      requestAnimationFrame(self.updateHeading)
+    this.scrolled.onscroll = (_event) => {
+      requestAnimationFrame(this.updateHeading.bind(this))
     }
 
     if (window.addEventListener) {      // most non-IE browsers and IE9
@@ -317,7 +317,7 @@ export class HeadController {
     }
   }
 
-  sectionAdded(section) {
+  sectionAdded(section: Section) {
 //            for (var i = 2; i < section.level; i++) {
 //                section.label = '&nbsp;&nbsp;' + section.label;
 //            }
@@ -361,9 +361,9 @@ export class HeadController {
 
   titleClick() {
     if (this.isOutlineVisible()) {
-      this.outline.classList.add('clicked')
-    } else if (this.outline) {
-      this.outline.classList.remove('clicked')
+      this.outlineEl.classList.add('clicked')
+    } else if (this.outlineEl) {
+      this.outlineEl.classList.remove('clicked')
     }
   }
 
@@ -458,7 +458,7 @@ export class HeadController {
   }
 
   private isOutlineVisible() {
-    return this.outline && this.outline.style.height !== '0px'
+    return this.outlineEl && this.outlineEl.style.height !== '0px'
   }
 
   private onResize(event) {
@@ -544,6 +544,7 @@ export class HeadController {
 
   private setOutline(outlineHTML) {
     this.outline = outlineHTML
+    document.querySelector(".outline-title").innerHTML = outlineHTML
   }
 
   private updateSearchPos(triggerSelector) {
@@ -559,13 +560,13 @@ export class HeadController {
     }
   }
 
-  private updateOutlinePos(triggerSelector) {
+  private updateOutlinePos(triggerSelector: string) {
     if (this.isNavLeft()) {
-      (<HTMLElement>this.outline).style.top = '0'
+      (<HTMLElement>this.outlineEl).style.top = '0'
     } else {
-      const trigger = this.root.querySelector(triggerSelector)
-      if (trigger && this.outline) {
-        this.outline.style.top = (trigger.offsetTop + trigger.offsetHeight) + 'px'
+      const trigger = this.root.querySelector(triggerSelector) as HTMLElement
+      if (trigger && this.outlineEl) {
+        this.outlineEl.style.top = `${trigger.offsetTop + trigger.offsetHeight}px`
       }
     }
   }
@@ -575,7 +576,7 @@ export class HeadController {
     this.updateSearchPos('.search form')
   }
 
-  private updateHeading() {
+  private updateHeading(_time?: number) {
     const isNavCollapsed = this.navEl.classList.contains('collapsed')
     const text = <HTMLElement>this.scrolled.querySelector('.text')
     if (this.isHeaderVisible()) {
@@ -603,20 +604,20 @@ export class HeadController {
     }
   }
 
-  private unselect(sec) {
+  private unselect(sec: HTMLElement) {
     if (sec) {
-      sec.removeClass('hovered')
+      sec.classList.remove('hovered')
     }
   }
 
   private select(toSelect) {
     let toSelectElem
     if (toSelect) {
-      toSelectElem = this.root.querySelector("#out-" + toSelect.id)
+      toSelectElem = this.root.querySelector(`#out-${toSelect.id}`)
       /*if (currentSection && toSelectElem[0] === currentSection[0]) {
        return;
        }*/
-      toSelectElem.addClass('hovered')
+      toSelectElem.classList.add('hovered')
     }
     return toSelectElem
   }

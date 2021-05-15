@@ -20,7 +20,7 @@ export class MapService {
   zoomMin = 1
   zoomMax = 10
   mapToggled
-  mapUpdateCallbacks = [this.mapResize]
+  mapUpdateCallbacks = [this.mapResize.bind(this)]
   mySwipe
   toGeocode = []
   peoplePath

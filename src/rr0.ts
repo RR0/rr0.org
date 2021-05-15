@@ -1,3 +1,5 @@
+import "../rr0.scss"
+
 import {TitleScope} from "nav/rr0-title"
 
 import nav, {NavModule} from "./nav/nav"
@@ -7,10 +9,10 @@ import place, {PlaceModule} from "../place/place"
 import foot, {FootModule} from "./note/foot"
 import common, {CommonModule, Context, User} from "./common"
 
-import "../rr0.scss"
 import time, {Moment, TimeModule} from "../time/time"
 import people, {People, PeopleModule} from "../people/people"
 import {PlaceDirective} from "../place/rr0-place"
+import {ArticleDirective, OutlineService, SectionDirective} from "./nav/rr0-outline"
 
 export class Rr0Context extends Context {
 
@@ -65,9 +67,12 @@ export class Rr0Module {
     this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap))
     nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
     nav.headController.init(this.context)
+    const outlineService = new OutlineService(nav, common.service)
 
     const directives = common.directives
     directives.push(new PlaceDirective(place.service, place.mapService, this))
+    directives.push(new SectionDirective(outlineService))
+    directives.push(new ArticleDirective(outlineService))
     const promises = []
     for (let i = 0; i < directives.length; i++) {
       const directive = directives[i]

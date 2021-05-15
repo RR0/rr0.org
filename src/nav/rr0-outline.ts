@@ -1,9 +1,17 @@
-import {CommonService} from "common"
-import {NavModule} from "nav/nav"
+import {CommonService, Context, SelectorDirective} from "../common"
+import {NavModule} from "./nav"
 
-interface SectionScope {
-  level: number;
-  title: string;
+class SectionScope {
+  level: number
+  title: string
+}
+
+export class Section {
+  label: string
+  outlineLabel: string
+  id: string
+  level: number
+  elem: HTMLElement
 }
 
 export class OutlineService {
@@ -13,12 +21,12 @@ export class OutlineService {
   constructor(private nav: NavModule, private commonsService: CommonService) {
   }
 
-  addSection(s, elem) {
+  addSection(s: string, elem: HTMLElement): Section {
     let l
     let outlineL
     const hPos = s.indexOf('<h')
     if (hPos < 0) {
-      l = '<h1>' + s + '</h1>'
+      l = `<h1>${s}</h1>`
       const tag = 'h' + (this.currentLevel) + '>'
       outlineL = '<' + tag + s + '</' + tag
     } else {
@@ -38,7 +46,7 @@ export class OutlineService {
 
     const idLink = this.commonsService.validLink(s)
     const sectionId = this.commonsService.camelize(idLink, this.currentLevel)
-    const section = {
+    const section: Section = {
       label: l,
       outlineLabel: outlineL,
       id: sectionId,
@@ -50,85 +58,65 @@ export class OutlineService {
   }
 }
 
-export default navModule => {
-  navModule
-    .service('outlineService', [
-      '$rootScope', '$q',
-      'commonsService',
-    ])
-    /**
-     * Registers each encountered HTML5 "section" tag as an document outline entry
-     */
-    .directive('section', ['outlineService', function (outlineService) {
-      'use strict'
+export class SectionDirective extends SelectorDirective {
+  constructor(private outlineService: OutlineService) {
+    super("section")
+  }
 
-      function addSec(sectionTitle, scope, elem) {
-        const section = outlineService.addSection(sectionTitle, elem)
-        scope.level = section.level
-        scope.sectionTitle = section.label
-        elem[0].id = section.id
-      }
+  addSec(sectionTitle: string, scope, elem: HTMLElement) {
+    const section = this.outlineService.addSection(sectionTitle, elem)
+    scope.level = section.level
+    scope.sectionTitle = section.label
+    elem.id = section.id
+  }
 
-      return {
-        restrict: 'E',
-        transclude: true,
-        scope: {title: '@'},
-        link: {
-          pre: function (scope: SectionScope, elem, attrs) {
-            const sectionTitle = attrs.title
-            if (sectionTitle) {
-              addSec(sectionTitle, scope, elem)
-            }
-          },
-          post: function (scope: SectionScope, elem, attrs) {
-            if (!scope.title) {
-              const titleElem = elem.children()[1].children()[0]
-              const sectionTitle = titleElem.outerHTML
-              titleElem.remove()
-              addSec(sectionTitle, scope, elem)
-            }
-            outlineService.currentLevel--
-            scope.level = outlineService.currentLevel
-          }
-        },
-        template: '<span ng-bind-html="sectionTitle"></span><div ng-transclude></div> '
-      }
-    }])
-    /**
-     * Registers each encountered HTML5 "article" tag as an document outline entry
-     */
-    .directive('article', ['outlineService', function (outlineService) {
-      'use strict'
+  protected handle(context: Context, elem: HTMLElement) {
+    const transclude = elem.innerHTML
+    const scope = new SectionScope()
+    const sectionTitle = elem.title
+    if (sectionTitle) {
+      this.addSec(sectionTitle, scope, elem)
+    }
+    //post
+    if (!scope.title) {
+      const titleElem = elem.children[1].children[0]
+      const sectionTitle = titleElem.outerHTML
+      titleElem.remove()
+      this.addSec(sectionTitle, scope, elem)
+    }
+    this.outlineService.currentLevel--
+    scope.level = this.outlineService.currentLevel
+    elem.innerHTML = `<span>${sectionTitle}</span><div>${transclude}</div>`
+  }
+}
 
-      function addArt(sectionTitle, scope, elem) {
-        const section = outlineService.addSection(sectionTitle, elem)
-        scope.level = section.level
-        scope.sectionTitle = section.label
-        elem[0].id = section.id
-      }
+export class ArticleDirective extends SelectorDirective {
+  constructor(private outlineService: OutlineService) {
+    super("article")
+  }
 
-      return {
-        restrict: 'E',
-        transclude: true,
-        scope: {title: '@'},
-        link: {
-          pre: function (scope, elem, attrs) {
-            const sectionTitle = attrs.title
-            if (sectionTitle) {
-              addArt(sectionTitle, scope, elem)
-            }
-          },
-          post: function (scope: SectionScope, elem, attrs) {
-            if (!scope.title) {
-              const titleElem = elem.children()[0].children()[0]
-              const sectionTitle = titleElem.outerHTML
-              addArt(sectionTitle, scope, elem)
-            }
-            outlineService.currentLevel--
-            scope.level = outlineService.currentLevel
-          }
-        },
-        template: '<p ng-transclude></p> '
-      }
-    }])
+  addArt(sectionTitle, scope, elem) {
+    const section = this.outlineService.addSection(sectionTitle, elem)
+    scope.level = section.level
+    scope.sectionTitle = section.label
+    elem[0].id = section.id
+  }
+
+  protected handle(context: Context, elem: HTMLElement) {
+    const transclude = elem.innerHTML
+    const scope = new SectionScope()
+    const sectionTitle = elem.title
+    if (sectionTitle) {
+      this.addArt(sectionTitle, scope, elem)
+    }
+    // post:
+    if (!scope.title) {
+      const titleElem = elem.children[0].children[0]
+      const sectionTitle = titleElem.outerHTML
+      this.addArt(sectionTitle, scope, elem)
+    }
+    this.outlineService.currentLevel--
+    scope.level = this.outlineService.currentLevel
+    elem.innerHTML = `<p>${transclude}</p> `
+  }
 }

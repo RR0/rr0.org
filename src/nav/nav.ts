@@ -5,10 +5,9 @@ import {AnchorDirective} from "../rr0-a.directive"
 import {Moment} from "../../time/time"
 import {Section} from "nav/rr0-outline"
 
-function NavLink(l, url, t) {
-  this.label = l
-  this.link = url
-  this.title = t
+class NavLink {
+  constructor(private label: string, private link: string, private title?: string) {
+  }
 }
 
 interface Start {
@@ -97,8 +96,8 @@ export class NavService {
       }
     ]
   currentLevel = 1
-  prevHandlers: ((t: Moment, nextLink, next) => {})[] = []
-  nextHandlers: ((t: Moment, nextLink, next) => {})[] = []
+  prevHandlers: ((t: Moment, nextLink, next) => NavLink)[] = []
+  nextHandlers: ((t: Moment, nextLink, next) => NavLink)[] = []
 
   constructor(private commonsService: CommonService, private root: ParentNode) {
   }
@@ -136,8 +135,8 @@ export class NavService {
     }
   }
 
-  async getNext(context: Context) {
-    let nn
+  async getNext(context: Context): Promise<NavLink> {
+    let nn: NavLink
     if (!this.nextLink && !this.next) {
       for (let nextHandler of this.nextHandlers) {
         nn = nextHandler(context.time, this.nextLink, this.next)
@@ -148,14 +147,9 @@ export class NavService {
     }
     if (!nn) {
       if (this.next && this.nextLink) {
-        nn = {
-          label: this.next,
-          link: this.nextLink
-        }
+        nn = new NavLink(this.next, this.nextLink)
       } else {
-        nn = new Promise((resolve, reject) => {
-          reject()
-        })
+        nn = null
       }
     }
     return nn
@@ -166,8 +160,8 @@ export class NavService {
    *
    * @returns {Promise}
    */
-  getPrev(context: Context) {
-    let pp
+  async getPrev(context: Context): Promise<NavLink> {
+    let pp: NavLink
     let previousSpecified = this.prevLink || this.prev
     if (!previousSpecified) {
       for (let nextHandler of this.prevHandlers) {
@@ -179,17 +173,12 @@ export class NavService {
     }
     if (!pp) {
       if (this.prev && this.prevLink) {
-        pp = {
-          label: this.prev,
-          link: this.prevLink
-        }
+        pp = new NavLink(this.prev, this.prevLink)
       } else {
-        pp = new Promise((resolve, reject) => {
-          reject()
-        })
+        pp = null
       }
     }
-    return pp.then ? pp : Promise.resolve(pp)
+    return pp
   }
 
   getPrevLink() {
@@ -367,7 +356,7 @@ export class HeadController {
     }
   }
 
-  init(context: Context, s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
+  async init(context: Context, s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
 
     const self = this
 
@@ -391,12 +380,14 @@ export class HeadController {
         label: '' + this.navigationService.getContents(),
         link: this.navigationService.getContentsURL()
       }, "Table des mati\xE8res", "toc")
-      this.navigationService.getPrev(context).then(function (pp) {
-        self.addPrev(pp, "Pr\xE9c\xE9dent", "prev")
-      })
-      this.navigationService.getNext(context).then(function (nn) {
-        self.addNext(nn, "Suivant", "next")
-      })
+      const pp = await this.navigationService.getPrev(context)
+      if (pp) {
+        this.addPrev(pp, "Pr\xE9c\xE9dent", "prev")
+      }
+      const nn = await this.navigationService.getNext(context)
+      if (nn) {
+        this.addNext(nn, "Suivant", "next")
+      }
     } else {
       //        org.rr0.contentsZone.style.boxShadow = "0.4em 0.4em 0,8em rgb(200,200,200) inset";
 //        org.rr0.contentsZone.style.backgroundColor = "#e2e2e8";

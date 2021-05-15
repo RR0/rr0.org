@@ -64,7 +64,7 @@ export class Rr0Module {
     this.appController = new AppController()
     this.initStructure()
     const mapZone = this.getSideZone("map-canvas")
-    this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap))
+    this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap.bind(this)))
     nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
     nav.headController.init(this.context)
     const outlineService = new OutlineService(nav, common.service)

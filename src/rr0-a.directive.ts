@@ -9,7 +9,7 @@ export class AnchorDirective extends SelectorDirective<HTMLAnchorElement> {
     super("a")
   }
 
-  protected handle(context: Context, el: HTMLAnchorElement) {
+  protected async handle(context: Context, el: HTMLAnchorElement) {
     // const path = e.pathname + e.hash;
     // console.log('href', e.href, path)
     if (el.hostname && el.hostname.indexOf('.') > 0 && el.hostname !== this.host) {

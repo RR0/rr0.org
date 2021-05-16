@@ -2,8 +2,8 @@ import common, {CommonModule, CommonService, Context} from "../common"
 import lang, {LangModule, LangService} from '../lang'
 import {titleScope, TitleScope} from "./rr0-title"
 import {AnchorDirective} from "../rr0-a.directive"
-import {Moment} from "../../time/time"
 import {Section} from "nav/rr0-outline"
+import {Moment} from "../../time/Moment"
 
 class NavLink {
   constructor(private label: string, private link: string, private title?: string) {

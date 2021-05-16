@@ -7,7 +7,7 @@ class HeadDirective extends SelectorDirective {
     super("rr0-head")
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     el.innerHTML = `<!DOCTYPE html>
 <html data-ng-app="rr0" lang="<!--#if expr="${this.lang}" --><!--#echo var="lang" --><!--#else -->fr<!--#endif -->">
 <head>

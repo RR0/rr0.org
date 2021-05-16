@@ -27,7 +27,7 @@ class NoteDirective extends SelectorDirective {
     super(".note")
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     const contents = el.innerHTML
 
     const a = document.createElement("a")
@@ -53,7 +53,7 @@ class SourceDirective extends SelectorDirective {
     super(".source")
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     const contents = el.innerHTML
 
     const a = document.createElement("a")
@@ -73,9 +73,9 @@ class SourceDirective extends SelectorDirective {
 export class FootModule {
   readonly service: FootService
 
-  constructor(common: CommonModule) {
+  constructor(common: CommonModule, root: ParentNode) {
     this.service = new FootService()
-    document.getElementsByTagName("footer")[0].innerHTML += ""
+    root.querySelector("footer").innerHTML += ""
     common.directives.push(new NoteDirective(this.service))
     common.directives.push(new SourceDirective(this.service))
   }
@@ -87,5 +87,5 @@ export class FootCtrl {
   }
 }
 
-const foot = new FootModule(common)
+const foot = new FootModule(common, document)
 export default foot

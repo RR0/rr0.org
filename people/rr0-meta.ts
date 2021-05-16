@@ -12,7 +12,7 @@ class MetaDirective extends SelectorDirective {
     super("meta")
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     const name = el.getAttribute("name")
     const content = el.getAttribute("content")
     const urlPos = content.indexOf(';url=')

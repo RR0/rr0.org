@@ -1,4 +1,4 @@
-const displinesJSON = require('/science/disciplines.json')
+const displinesJSON = require('./disciplines.json')
 
 export class ScienceModule {
   disciplines: any[]

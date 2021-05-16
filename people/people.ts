@@ -120,22 +120,22 @@ export class PeopleModule {
     this.service = new PeopleService(commonService, this.peopleRoot)
     const self = this
     common.directives.push(new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
         self.handleWitness(null, el)
       }
     }(".temoin"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
         self.handleWitness(1, el)
       }
     }(".temoin1"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
         self.handleWitness(2, el)
       }
     }(".temoin2"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
         self.handleWitness(3, el)
       }
     }(".temoin3"))

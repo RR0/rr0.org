@@ -1,4 +1,4 @@
-import {Moment} from "../time/time"
+import {Moment} from "../time/Moment"
 
 export class Context {
   language = this.user.language.substring(0, 2)
@@ -25,7 +25,7 @@ export abstract class SelectorDirective<E extends HTMLElement = HTMLElement> {
     await Promise.all(promises)
   }
 
-  protected abstract handle(context: Context, el: E)
+  protected abstract handle(context: Context, el: E): Promise<void>
 }
 
 export class User {
@@ -404,12 +404,13 @@ export class CommonService {
     this.addToHead(e)
   }
 
-  parentLink(l) {
+  parentLink(l: string) {
     let parentL = l
     if (l.charAt(l.length - 1) === '/') {
       parentL = parentL.substring(0, parentL.length - 1)
     }
-    for (var i = parentL.length - 1; i > 0 && parentL.charAt(i) !== '/';) {
+    let i: number
+    for (i = parentL.length - 1; i > 0 && parentL.charAt(i) !== '/';) {
       i--
     }
     if (i > 0) {
@@ -460,7 +461,7 @@ export class CommonModule {
   constructor() {
     this.service = new CommonService()
     const codeDirective = new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
         el.innerHTML = prettyPrintOne(el.innerHTML)
       }
     }("code")

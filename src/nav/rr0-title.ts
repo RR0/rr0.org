@@ -17,7 +17,7 @@ class TitleDirective extends SelectorDirective {
     super("[title]")
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     if (el.innerText.indexOf('{{') < 0) {
       this.scope.setTitle(el.innerText)
     }

@@ -12,7 +12,7 @@ class Rr0Tweet extends SelectorDirective {
     fjs.parentNode.insertBefore(frag, fjs)
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     el.innerHTML = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>'
   }
 }

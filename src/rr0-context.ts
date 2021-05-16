@@ -4,11 +4,11 @@ export class ContextModule {
 
   constructor() {
     common.directives.push(new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
       }
     }(".place"))
     common.directives.push(new class extends SelectorDirective {
-      protected handle(context: Context, el: HTMLElement) {
+      protected async handle(context: Context, el: HTMLElement) {
       }
     }("time"))
   }

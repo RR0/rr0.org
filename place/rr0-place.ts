@@ -8,7 +8,7 @@ export class PlaceDirective extends SelectorDirective {
     super(".place")
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     const title = el.getAttribute('title')
     const placeName = title ? title : el.innerText
     if (placeName) {

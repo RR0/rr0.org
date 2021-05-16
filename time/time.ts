@@ -5,417 +5,30 @@ import nav, {NavModule} from "../src/nav/nav"
 import lang, {LangModule} from "../src/lang"
 import net, {NetModule} from "../src/net"
 import {TimeDirective} from "./rr0-time"
+import {Moment} from "./Moment"
 
 declare var google
 
-export class Moment {
-  startDate: any
-  decade: boolean
-  dayOfMonth: number
-  timeZone: number
-  year: number
-  month: number
-  hour: number
-  minutes: number
-  seconds: number
-  approx: any
-
-  constructor() {
-    this.clear()
-  }
-
-  clear() {
-    this.decade = false
-    this.dayOfMonth = null
-    this.timeZone = null
-    this.year = null
-    this.month = null
-    this.hour = null
-    this.minutes = null
-    this.seconds = null
-  }
-
-  setSeconds(s?) {
-    this.seconds = s
-  }
-
-  setMinutes(mn?) {
-    this.minutes = mn
-    this.setSeconds()
-  }
-
-  setHour(h?) {
-    this.hour = h
-    this.setMinutes()
-  }
-
-  setTimeZone(z) {
-    this.timeZone = z
-  }
-
-  setDayOfMonth(d?) {
-    this.dayOfMonth = d
-    this.setHour()
-  }
-
-  setMonth(m?) {
-    this.month = m
-    this.setDayOfMonth()
-  }
-
-  setYear(number) {
-    this.year = number
-    this.setMonth()
-  }
-
-  getYear() {
-    return this.year
-  }
-
-  getMonth() {
-    return this.month
-  }
-
-  getDayOfMonth() {
-    return this.dayOfMonth
-  }
-
-  getHour() {
-    return this.hour
-  }
-
-  getMinutes() {
-    return this.minutes
-  }
-
-  getSeconds() {
-    return this.seconds
-  }
-
-  getTimeZone() {
-    return this.timeZone
-  }
-
-  isApprox() {
-    return this.approx
-  }
-
-  fromString(dString: string): Moment {
-    let number: number
-    let hourNumber: boolean
-    let era: number
-    let txt: string
-    let monthReady: boolean
-    let zReady: boolean
-
-    const self = this
-
-    const resetParse = function () {
-      self.clear()
-      number = null
-      hourNumber = null
-      era = 1
-      txt = null
-      monthReady = undefined
-      zReady = undefined
-    }
-
-    resetParse.call(this)
-
-    function setTz(c) {
-      let z
-      switch (txt) {
-        case "Z":
-        case 'UTC':
-        case 'TU':
-        case 'UT':
-        case 'GMT':
-          z = 0
-          break
-        case 'EGT':
-          z = -1
-          break
-        case 'ADT':
-        case 'HAA':
-        case 'WGT':
-          z = -3
-          break
-        case 'EDT':
-        case 'AST':
-        case 'HAE':
-          z = -4
-          break
-        case 'EST': // Eastern Daylight Time
-        case 'CDT':
-        case 'ET':
-        case 'HAC':
-          z = -5
-          break
-        case 'CST':
-        case 'MDT':
-          z = -6
-          break
-        case 'MST':
-        case 'PDT':
-          z = -7
-          break
-        case 'PST':
-          z = -8
-          break
-        default:
-          return
-      }
-      self.setTimeZone(z)
-      txt = null
-    }
-
-    function value() {
-      return number !== null ? (zReady ? number : (txt !== null ? txt + number : number)) : (txt !== null ? txt : null)
-    }
-
-    let i
-
-    function timeSet() {
-      const valueToSet = value()
-      const valueIsNumber = typeof valueToSet === 'number'
-      if (self.year && valueIsNumber && number <= 59) {
-        monthReady = monthReady || dString.charAt(i) === '-'
-        if (!monthReady) {
-          if (self.month) {
-            if (self.dayOfMonth || self.hour) {
-              if (self.hour) {
-                if (self.minutes) {
-                  if (self.seconds) {
-                    self.setDayOfMonth(valueToSet)     // setHour is processed after ':' only
-                  } else {
-                    self.setSeconds(valueToSet)
-                  }
-                } else {
-                  self.setMinutes(valueToSet)
-                }
-              } else {
-                self.setDayOfMonth(valueToSet)     // setHour is processed after ':' only
-              }
-            } else {
-              self.setDayOfMonth(valueToSet)
-            }
-          } else {
-            // Probably just text
-          }
-        } else {
-          self.setMonth(valueToSet)
-          monthReady = false
-        }
-      } else if (self.minutes) {
-        if (valueIsNumber) {
-          self.setSeconds(valueToSet)
-        }
-      } else if (self.hour) {
-        self.setMinutes(valueToSet)
-      } else {
-        self.setYear(era * number)
-        monthReady = true
-      }
-      number = null
-    }
-
-    function parseEnd() {
-      const val = value()
-      if (val !== null && val !== undefined) {
-        timeSet.call(self) // End of date
-      }
-      if (txt) {
-        setTz.call(self)
-      }
-    }
-
-    for (i = 0; i < dString.length; i++) {
-      const c = dString.charAt(i)
-      let digit: number = null
-      switch (c) {
-        case '0':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
-          digit = c.charCodeAt(0) - "0".charCodeAt(0)
-          if (number === null) {
-            number = digit * era
-          } else {
-            number = number * 10 + digit
-          }
-          break
-        case "-":
-          if (!txt) {
-            if (number === null) {
-              era = -1
-            }
-            this.setHour(null)  // Next value cannot be minutes
-            timeSet.call(this) // End of year or month
-          } else {
-            txt = txt ? txt + c : c
-          }
-          break
-        case "s":
-          if (number !== null && txt.charAt(i - 1) !== ' ') {
-            this.decade = true
-          } else {
-            txt = txt ? txt + c : c
-          }
-          break
-        case "+":
-          era = 1
-          break
-        case "~":
-          this.approx = true
-          break
-        case ":":
-          if (this.hour !== null && zReady) {
-            this.setTimeZone(number * era)
-          } else if (this.minutes) {
-            this.setSeconds(value())
-            zReady = true
-          } else if (this.hour) {
-            this.setMinutes(value())
-            zReady = true
-          } else {
-            this.setHour(value())
-          }
-          number = null
-          break
-        case "T":
-          if (!txt) {
-            hourNumber = !isNaN(dString.charAt(i + 1).codePointAt(0))
-          } else {
-            txt = txt ? txt + c : c
-            break
-          }
-        case " ":
-          if (!hourNumber && (txt || zReady)) {
-            txt = txt ? txt + c : c
-          } else {
-            timeSet.call(this) // End of date
-          }
-          break
-        case '/':
-          parseEnd.call(this)
-          this.startDate = common.service.clone(this)
-          resetParse.call(this)
-          break
-        default:
-          if (number) {
-            timeSet.call(this) // End of minutes or seconds
-          }
-          if (digit) {
-            txt = txt ? txt + digit : '' + digit
-            number = null
-            digit = null
-          }
-          txt = txt ? txt + c : c
-      }
-    }
-    parseEnd.call(this)
-    return this
-  }
-}
-
-class Unit {
-  factor: any
-  name: any
-
-  constructor(f, n) {
-    this.factor = f
-    this.name = n
-  }
-
-  toString(value) {
-    return value > 0 ? value + '&nbsp;' + this.name + (value > 1 ? 's' : '') : ''
-  }
-}
-
-class Duration {
-  durationInSeconds: number
-  second: Unit
-  minute: Unit
-  hour: Unit
-  day: Unit
-  unit: Unit
-
-  constructor() {
-    this.second = new Unit(1, 'seconde')
-    this.minute = new Unit(60 * this.second.factor, 'minute')
-    this.hour = new Unit(60 * this.minute.factor, 'heure')
-    this.day = new Unit(24 * this.hour.factor, 'jour')
-  }
-
-  fromString(txt: string): Duration {
-    const durationRegex = /P(\d+D)*(\d+H)*(\d+M)*(\d+S)*/
-    const foundExprs = durationRegex.exec(txt)
-    this.durationInSeconds = 0
-    for (let i = 1; i < foundExprs.length; i++) {
-      const expr = foundExprs[i]
-      if (expr) {
-        const lastCharPos = expr.length - 1
-        const value = parseInt(expr.substring(0, lastCharPos), 10)
-        switch (expr.charAt(lastCharPos)) {
-          case 'D':
-            this.unit = this.day
-            break
-          case 'H':
-            this.unit = this.hour
-            break
-          case 'M':
-            this.unit = this.minute
-            break
-          case 'S':
-            this.unit = this.second
-            break
-          case 'P':
-        }
-        this.durationInSeconds += value * this.unit.factor
-      }
-    }
-    return this
-  }
-
-  toString(unitStated?: Duration): string {
-    const txt = []
-    let remaining = this.durationInSeconds
-    const days = Math.floor(remaining / this.day.factor)
-    if (days >= 1) {
-      txt.push(unitStated !== this.day.name ? this.day.toString(days) : days)
-    }
-    remaining = remaining % this.day.factor
-    const hours = Math.floor(remaining / this.hour.factor)
-    if (hours >= 1) {
-      txt.push(unitStated !== this.hour.name ? this.hour.toString(hours) : hours)
-    }
-    remaining = remaining % this.hour.factor
-    const minutes = Math.floor(remaining / this.minute.factor)
-    if (minutes >= 1) {
-      txt.push(unitStated !== this.minute.name ? this.minute.toString(minutes) : minutes)
-    }
-    remaining = remaining % this.minute.factor
-    const seconds = remaining
-    if (seconds >= 1) {
-      txt.push(unitStated !== this.second.name ? this.second.toString(seconds) : seconds)
-    }
-    const last = txt.length - 1
-    let s = ''
-    for (let i = last; i >= 0; i--) {
-      s = (i === last && i > 0 ? ' et ' : i > 0 ? ', ' : '') + txt[i] + s
-    }
-    return s
-  }
+export interface TimeLink {
+  replacement: string
+  timeLink: string
+  title: string
 }
 
 export class TimeService {
   chartZone = null
+  /**
+   * http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element
+   * http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#global-dates-and-times
+   *
+   * ((-)?[1-9]\d{3})(-(\d{1,2})(-(\d{1,2})(T\d{1,2}:\d{1:2])?)?)?
+   *
+   * 1947-06-21T14:20-02:00
+   */
+  times
+
+  chart
+
   private DATETIME_FORMATS = {
     MONTH: [
       "Janvier",
@@ -440,29 +53,12 @@ export class TimeService {
       "Vendredi",
       "Samedi"
     ]
-
   }
 
   constructor(private $locale, private timeRoot, private commonsService) {
-    'use strict'
-
-    /**
-     * http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element
-     * http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#global-dates-and-times
-     *
-     * ((-)?[1-9]\d{3})(-(\d{1,2})(-(\d{1,2})(T\d{1,2}:\d{1:2])?)?)?
-     *
-     * 1947-06-21T14:20-02:00
-     */
-    let times
-
-    const self = this
-
     /*const paramLang = function (lang) {
       return (!lang) ? rr0.context.language : lang
     }*/
-
-    let chart
   }
 
   addYear(time: Moment, y, yLink, t) {
@@ -491,16 +87,16 @@ export class TimeService {
     return s
   }
 
-  toISOString(moment) {
-    let s = moment.year
+  toISOString(moment: Moment): string {
+    let s = moment.year.toString()
     if (moment.month) {
-      s += '-' + this.commonsService.zero(moment.month)
+      s += `-${this.commonsService.zero(moment.month)}`
     }
     if (moment.dayOfMonth) {
-      s += '-' + this.commonsService.zero(moment.dayOfMonth)
+      s += `-${this.commonsService.zero(moment.dayOfMonth)}`
     }
     if (moment.hour) {
-      s += 'T' + this.commonsService.zero(moment.hour) + ":" + this.commonsService.zero(moment.minutes)
+      s += `T${this.commonsService.zero(moment.hour)}:${this.commonsService.zero(moment.minutes)}`
     }
     return s
   }
@@ -529,13 +125,6 @@ export class TimeService {
    self.setChartsHeight(0);
    }
    },*/
-  NewDuration() {
-    return new Duration()
-  }
-
-  NewMoment() {
-    return new Moment()
-  }
 
   getDate(t: Moment, y?, m?, d?): Date {
     let dat
@@ -739,7 +328,7 @@ export class TimeService {
     }
   }
 
-  toString(contextTime: Moment, time) {
+  toLink(contextTime: Moment, time: Moment): TimeLink {
     let timeLink
     let repYear
     let titYear
@@ -757,28 +346,28 @@ export class TimeService {
       titYear = y
       if (otherYear) {
         contextTime.setYear(y)
-        repYear = " " + y
+        repYear = ` ${y}`
       }
     }
     let otherMonth
     const m = time.getMonth()
     if (m) {
-      titMonth = this.monthName(m)
-      timeLink += "/" + this.commonsService.zero(m)
+      titMonth = this.monthName(contextTime, m)
+      timeLink += `/${this.commonsService.zero(m)}`
       otherMonth = otherYear || m !== contextTime.getMonth()
       if (otherMonth) {
         contextTime.setMonth(m)
-        repMonth = " " + titMonth
+        repMonth = ` ${titMonth}`
       }
     }
     let otherDay = 0
     const d = time.getDayOfMonth()
     if (d) {
-      const dayAsNumber = parseInt(d, 10)
+      const dayAsNumber = d
       let dOW
       if (!!(dayAsNumber)) {
         dOW = this.dayOfWeekName(this.getDayOfWeek(contextTime, y, m, d))
-        titDay = dOW + " " + d + (d === 1 ? "er" : "")
+        titDay = `${dOW} ${d}${d === 1 ? "er" : ""}`
         otherDay = otherMonth ? 30 : d - contextTime.getDayOfMonth()
       } else {
         titDay = d
@@ -800,7 +389,7 @@ export class TimeService {
               break
             default:
               if (otherDay <= 7) {
-                repDay = otherDay < 0 ? dOW + " pr\xE9c\xE9dent" : dOW + " suivant"
+                repDay = otherDay < 0 ? dOW + " pr\xE9c\xE9dent" : `${dOW} suivant`
               }
           }
         }
@@ -828,8 +417,7 @@ export class TimeService {
     }
 
     function handleHour() {
-      const hourAsNumber = parseInt(h, 10)
-      if (!!(hourAsNumber)) {
+      if (!!(h)) {
         titHour = self.commonsService.zero(h)
       } else {
         titHour = h
@@ -840,7 +428,7 @@ export class TimeService {
       }
       otherHour = otherHour || otherDay || h !== contextTime.getHour()
       if (d) {
-        titHour = (time.isApprox() ? 'vers' : '\xE0') + ' ' + titHour
+        titHour = `${time.isApprox() ? 'vers' : '\xE0'} ${titHour}`
       }
       if (otherHour) {
         contextTime.setHour(h)
@@ -854,7 +442,7 @@ export class TimeService {
     let otherMinutes
     const mn = time.getMinutes()
     if (mn || h) {
-      const th = ':' + this.commonsService.zero(mn)
+      const th = `:${this.commonsService.zero(mn)}`
       titHour += th
       otherMinutes = otherHour || mn !== contextTime.getMinutes()
       if (otherMinutes) {
@@ -864,7 +452,7 @@ export class TimeService {
     }
     const s = time.getSeconds()
     if (s) {
-      const ts = ':' + this.commonsService.zero(s)
+      const ts = `:${this.commonsService.zero(s)}`
       titHour += ts
       const otherSeconds = otherMinutes || s !== contextTime.getSeconds()
       if (otherSeconds) {
@@ -875,7 +463,7 @@ export class TimeService {
     let titZ
     const z = time.getTimeZone()
     if (z) {
-      titZ = "(UTC" + (z >= 0 ? '+' : "") + z + ")"
+      titZ = `(UTC${z >= 0 ? '+' : ""}${z})`
     }
     let replacement = ""
     let title = ""
@@ -900,28 +488,28 @@ export class TimeService {
       replacement += repYear
     }
     if (titYear) {
-      title += " " + titYear
+      title += ` ${titYear}`
     }
     if (repHour) {
-      replacement += " " + repHour
+      replacement += ` ${repHour}`
     }
     if (titHour) {
-      title += ", " + titHour
+      title += `, ${titHour}`
     }
     if (titZ) {
-      title += " " + titZ
+      title += ` ${titZ}`
     }
     if (time.startDate) {
-      const start = self.toString(time, time.startDate).replacement
+      const start = self.toLink(time, time.startDate).replacement
       const end = replacement
       const betweenWord = repDay ? 'au' : '\xE0'
-      replacement = start + ' ' + betweenWord + ' ' + end
-      title = start + ' ' + betweenWord + ' ' + title
+      replacement = `${start} ${betweenWord} ${end}`
+      title = `${start} ${betweenWord} ${title}`
     }
     return {
-      "replacement": replacement.trim(),
-      "timeLink": timeLink,
-      "title": title.trim()
+      replacement: replacement.trim(),
+      timeLink,
+      title: title.trim()
     }
   }
 }
@@ -950,7 +538,7 @@ export class TimeModule {
       }
       return nn
     })
-    nav.service.prevHandlers.push((t: Moment, prevLink, prev) => {
+    nav.service.prevHandlers.push((t: Moment, _prevLink, _prev) => {
       let pp
       if (this.service.getYear(t)) {          // If no previous link has been specified, try to devise previous from
         // context time.
@@ -980,6 +568,7 @@ export class TimeModule {
   /**
    * Find some time-dedicated page near a given time.
    *
+   * @param t
    * @param oy The starting year.
    * @param m The starting month.
    * @param changeProc How to determine the next date to look for.
@@ -1019,7 +608,7 @@ export class TimeModule {
     }
   }
 
-  private nextFromTime(t: Moment, n: number) {
+  private nextFromTime(t: Moment, _n: number) {
     const self = this
     const lookAfter = function (y, m) {
       if (m) {

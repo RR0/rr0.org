@@ -20,7 +20,7 @@ class Rr0FbLike extends SelectorDirective {
     fjs.parentNode.insertBefore(frag, fjs)
   }
 
-  protected handle(context: Context, el: HTMLElement) {
+  protected async handle(context: Context, el: HTMLElement) {
     el.innerHTML = `<span id="fb-root"></span><div class="fb-like" style="line-height: 0.7em" data-href="${window.location.href}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>`
   }
 }

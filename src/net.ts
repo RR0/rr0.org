@@ -4,8 +4,8 @@ export class NetService {
   constructor(private commonsService: CommonService, private constantClass: string) {
   }
 
-  async onExists(l): Promise<boolean> {
-    const res = await fetch(l, {
+  async onExists(l: string): Promise<boolean> {
+    const res = await fetch("https://rr0.org" + l, {
       method: 'HEAD'
     })
     return res.status == 200
@@ -53,7 +53,7 @@ export class NetService {
         }
 
         if (await this.onExists(l)) {
-          if (l !== ("/time/0/0/")) {                             // TODO: should ask time module
+          if (l !== "/time/0/0/") {                             // TODO: should ask time module
             if (await this.onExists(`${l}/index.html`)) {
               common.service.log(`found link ${l} for e'sparent=${e.parentNode}`)
               e = this.linkify(e, replacement, l, replacement, cacheIt)
@@ -81,7 +81,7 @@ export class NetService {
    * @param {boolean} [cacheIt]
    * @return {HTMLElement}
    */
-  private linkify(e, k, l, r, cacheIt) {
+  private linkify(e: HTMLElement, k: string, l: string, r: string, cacheIt: boolean) {
     const uri = this.commonsService.getUri()
     if (!common.service.hasClass(e, this.constantClass) && l !== uri && (l + "/") !== uri) {
       const txt = common.service.text(e)
@@ -92,7 +92,7 @@ export class NetService {
           if (!r) {
             r = k
           }
-          let text1
+          let text1: Node
           if (pos > 0) {
             text1 = document.createTextNode(txt.substring(0, pos))
           }

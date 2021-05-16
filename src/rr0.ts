@@ -9,12 +9,18 @@ import place, {PlaceModule} from "../place/place"
 import foot, {FootModule} from "./note/foot"
 import common, {CommonModule, Context, User} from "./common"
 
-import time, {Moment, TimeModule} from "../time/time"
+import time, {TimeModule} from "../time/time"
 import people, {People, PeopleModule} from "../people/people"
 import {PlaceDirective} from "../place/rr0-place"
 import {ArticleDirective, OutlineService, SectionDirective} from "./nav/rr0-outline"
+import {Moment} from "../time/Moment"
 
 export class Rr0Context extends Context {
+
+  constructor(user: User) {
+    super(user)
+    this.time = new Moment()
+  }
 
   setPName(name: string) {
     if (name && name.length > 0) {

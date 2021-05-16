@@ -1,6 +1,10 @@
 import {CommonService, Context, SelectorDirective} from "../src/common"
-import time, {Moment, TimeService} from "./time"
+import time, {TimeService} from "./time"
 import {NetService} from "../src/net"
+import {Moment} from "./Moment"
+import {Duration} from "./Duration"
+
+global.fetch = require("node-fetch")
 
 export class TimeDirective extends SelectorDirective {
 
@@ -17,12 +21,12 @@ export class TimeDirective extends SelectorDirective {
       if (maxString.charAt(0) !== 'P') {
         maxString = 'P' + maxString
       }
-      const durMax = this.timeService.NewDuration()
+      const durMax = new Duration()
       durationMax = durMax.fromString(maxString).toString()
-      const durationMin = this.timeService.NewDuration().fromString(dataStr).toString(durMax.unit.name)
+      const durationMin = new Duration().fromString(dataStr).toString(durMax.unit.name)
       durationStr = durationMin + " \xE0 " + durationMax
     } else {
-      durationStr = this.timeService.NewDuration().fromString(dataStr).toString()
+      durationStr = new Duration().fromString(dataStr).toString()
     }
     const r = {
       replacement: durationStr
@@ -34,9 +38,17 @@ export class TimeDirective extends SelectorDirective {
     el.classList.add('duration')
   }
 
-  async handleTime(el: HTMLElement, dataStr: string, dateTime: string, decodedTime: Moment, currentTime: Moment, txt: string) {
+  async handleTime(el: HTMLElement, dataStr: string, dateTime: string, contextTime: Moment, txt: string) {
+    const decodedTime = new Moment()
+    decodedTime.year = contextTime.getYear()
+    decodedTime.month = contextTime.getMonth()
+    decodedTime.dayOfMonth = contextTime.getDayOfMonth()
+    decodedTime.hour = contextTime.getHour()
+    decodedTime.minutes = contextTime.getMinutes()
+    decodedTime.seconds = contextTime.getSeconds()
+
     decodedTime.fromString(dataStr)
-    const r = this.timeService.toString(currentTime, decodedTime)
+    const r = this.timeService.toLink(contextTime, decodedTime)
     const previousSibling = el.previousSibling
     if (r.replacement && (!previousSibling || previousSibling.textContent.trim().length === 0)) {
       r.replacement = this.commonsService.capitalizeFirstLetter(r.replacement)
@@ -50,24 +62,12 @@ export class TimeDirective extends SelectorDirective {
 
   protected async handle(context: Context, el: HTMLElement) {
     const txt = el.innerText || el.innerHTML
-
-    const currentTime = context.time
-
-    const decodedTime = this.timeService.NewMoment()
-    decodedTime.year = currentTime.getYear()
-    decodedTime.month = currentTime.getMonth()
-    decodedTime.dayOfMonth = currentTime.getDayOfMonth()
-    decodedTime.hour = currentTime.getHour()
-    decodedTime.minutes = currentTime.getMinutes()
-    decodedTime.seconds = currentTime.getSeconds()
-
     const dateTime = el.getAttribute("datetime")
-    let dataStr = dateTime ? dateTime : txt
-
-    if (dataStr.charAt(0) === 'P') {
-      this.handleDuration(el, dataStr, dateTime)
+    if (txt.charAt(0) === 'P') {
+      this.handleDuration(el, txt, dateTime)
     } else {
-      await this.handleTime(el, dataStr, dateTime, decodedTime, currentTime, txt)
+      let dataStr = dateTime ? dateTime : txt
+      await this.handleTime(el, dataStr, dateTime, context.time, txt)
     }
   }
 }

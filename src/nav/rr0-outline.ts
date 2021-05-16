@@ -70,7 +70,7 @@ export class SectionDirective extends SelectorDirective {
     elem.id = section.id
   }
 
-  protected handle(context: Context, elem: HTMLElement) {
+  protected async handle(context: Context, elem: HTMLElement) {
     const transclude = elem.innerHTML
     const scope = new SectionScope()
     const sectionTitle = elem.title
@@ -102,7 +102,7 @@ export class ArticleDirective extends SelectorDirective {
     elem[0].id = section.id
   }
 
-  protected handle(context: Context, elem: HTMLElement) {
+  protected async handle(context: Context, elem: HTMLElement) {
     const transclude = elem.innerHTML
     const scope = new SectionScope()
     const sectionTitle = elem.title

@@ -1,10 +1,10 @@
-import common, {Context, SelectorDirective} from "common"
+import common, {Context, SelectorDirective} from "../../common"
 
 interface FbScope {
   urlToLike: string;
 }
 
-class Rr0FbLike extends SelectorDirective {
+export class FacebookDirective extends SelectorDirective {
 
   constructor() {
     super(".rr0-fb-like")
@@ -25,5 +25,5 @@ class Rr0FbLike extends SelectorDirective {
   }
 }
 
-const rr0Tweet = new Rr0FbLike()
+const rr0Tweet = new FacebookDirective()
 common.directives.push(rr0Tweet)

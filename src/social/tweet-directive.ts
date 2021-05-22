@@ -1,6 +1,6 @@
-import common, {Context, SelectorDirective} from "common"
+import common, {Context, SelectorDirective} from "../common"
 
-class Rr0Tweet extends SelectorDirective {
+export class TweetDirective extends SelectorDirective {
 
   constructor() {
     super(".rr0-tweet")
@@ -17,5 +17,5 @@ class Rr0Tweet extends SelectorDirective {
   }
 }
 
-const rr0Tweet = new Rr0Tweet()
+const rr0Tweet = new TweetDirective()
 common.directives.push(rr0Tweet)

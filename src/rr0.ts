@@ -15,6 +15,9 @@ import {PlaceDirective} from "../place/rr0-place"
 import {ArticleDirective, OutlineService, SectionDirective} from "./nav/rr0-outline"
 import {Moment} from "../time/Moment"
 import {MetaDirective} from "../people/rr0-meta"
+import {CopyrightDirective} from "../people/rr0-copyright"
+import {TweetDirective} from "./social/tweet-directive"
+import {FacebookDirective} from "./social/fb/rr0-fb-like"
 
 export class Rr0Context extends Context {
 
@@ -77,7 +80,7 @@ export class Rr0Module {
   private readonly appController: AppController
 
   constructor(common: CommonModule, nav: NavModule, private place: PlaceModule, foot: FootModule, context: ContextModule,
-              science: ScienceModule, private time: TimeModule, private people: PeopleModule) {
+              science: ScienceModule, private time: TimeModule, private people: PeopleModule, footModule: FootModule) {
     this.context.time = new Moment()
     this.appController = new AppController()
     nav.init(this.appController)
@@ -97,6 +100,9 @@ export class Rr0Module {
     directives.push(new PlaceDirective(place.service, place.mapService, this))
     directives.push(new SectionDirective(outlineService))
     directives.push(new ArticleDirective(outlineService))
+    directives.push(new CopyrightDirective(people.service))
+    directives.push(new TweetDirective())
+    directives.push(new FacebookDirective())
 
     const promises = []
     for (let i = 0; i < directives.length; i++) {
@@ -262,5 +268,5 @@ export class Rr0Module {
   }
 }
 
-const rr0 = new Rr0Module(common, nav, place, foot, context, science, time, people)
+const rr0 = new Rr0Module(common, nav, place, foot, context, science, time, people, foot)
 export default rr0

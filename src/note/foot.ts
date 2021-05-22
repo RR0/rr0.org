@@ -72,12 +72,14 @@ class SourceDirective extends SelectorDirective {
 
 export class FootModule {
   readonly service: FootService
+  private footCtrl: FootCtrl
 
   constructor(common: CommonModule, root: ParentNode) {
     this.service = new FootService()
     root.querySelector("footer").innerHTML += ""
     common.directives.push(new NoteDirective(this.service))
     common.directives.push(new SourceDirective(this.service))
+    this.footCtrl = new FootCtrl()
   }
 }
 

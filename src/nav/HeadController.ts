@@ -80,7 +80,7 @@ export class HeadController {
   }
 
   getHeadingHeight(): number {
-    return nav[0].offsetTop + this.getNavHeight()
+    return this.navEl.offsetTop + this.getNavHeight()
   }
 
   titleFromURI(): string {
@@ -170,7 +170,7 @@ export class HeadController {
   }
 
   sectionClick(section) {
-    scrollTo(section.id)
+    this.scrollTo(section.id)
   }
 
   /*initAuthor(a, aLink, c, cLink) {
@@ -271,7 +271,7 @@ export class HeadController {
     animateScroll()
   }
 
-  private scrollTo(id) {
+  private scrollTo(id: string) {
     const anchor = document.getElementById(id)   // anchor.scrollIntoView(true, 'smooth');
     //hideOutline();
     this.smoothScroll(anchor, 500)

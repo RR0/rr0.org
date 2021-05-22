@@ -59,6 +59,7 @@ export class OutlineService {
 }
 
 export class SectionDirective extends SelectorDirective {
+
   constructor(private outlineService: OutlineService) {
     super("section")
   }
@@ -79,7 +80,7 @@ export class SectionDirective extends SelectorDirective {
     }
     //post
     if (!scope.title) {
-      const titleElem = elem.children[1].children[0]
+      const titleElem = elem.children[0]
       const sectionTitle = titleElem.outerHTML
       titleElem.remove()
       this.addSec(sectionTitle, scope, elem)

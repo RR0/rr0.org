@@ -65,6 +65,18 @@ export class HeadController {
 //                section.label = '&nbsp;&nbsp;' + section.label;
 //            }
     this.sections.push(section)
+    const outlineEl = document.querySelector(".outline")
+    outlineEl.innerHTML = ""
+    for (let i = 0; i < this.sections.length; i++) {
+      const sec = this.sections[i]
+      const item = document.createElement("li")
+      const id = sec.id
+      item.innerHTML = `<a data-ng-href="#${id}" id="out-${id}">${sec.outlineLabel}</span></a>`
+      item.className = "constant"
+      item.tabIndex = 100 + i
+      item.onclick = () => this.sectionClick(sec)
+      outlineEl.append(item)
+    }
   }
 
   getHeadingHeight(): number {
@@ -374,12 +386,12 @@ export class HeadController {
 
   private updateOutline() {
     let lastSec = this.titleSection
-    let newSec
+    let newSec: Section
     if (this.sections.length) {
       for (let i = 0; i < this.sections.length; i++) {
         newSec = this.sections[i]
         let found
-        found = this.scrolled.scrollTop > newSec.elem[0].offsetTop
+        found = this.scrolled.scrollTop > newSec.elem.offsetTop
         if (lastSec) {
           if (!found) {
             this.selectOutline(lastSec)

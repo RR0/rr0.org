@@ -58,11 +58,11 @@ export class AppController implements TitleScope {
     if (this.titleUrl) {
       const link: HTMLAnchorElement = inner = document.createElement("a")
       link.href = this.titleUrl
+      h1.replaceChild(inner, h1.children[0])
     } else {
       inner = h1
     }
     inner.innerText = newTitle
-    h1.replaceChild(inner, h1.children[0])
   }
 }
 

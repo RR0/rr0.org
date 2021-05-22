@@ -1,6 +1,7 @@
 import people, {PeopleService} from "./people"
 import common, {Context, SelectorDirective} from "common"
-import nav, {HeadController} from "nav/nav"
+import nav from "nav/nav"
+import {HeadController} from "nav/HeadController"
 
 export interface MetaScope {
   titleUrl: string;

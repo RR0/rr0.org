@@ -1,6 +1,7 @@
 import common, {CommonModule, CommonService} from './common'
 
 export class NetService {
+
   constructor(private commonsService: CommonService, private constantClass: string) {
   }
 
@@ -88,7 +89,7 @@ export class NetService {
       if (txt) {
         const pos = txt.indexOf(k)
         if (pos >= 0) {
-          common.service.log("linkify('" + txt + "', " + k + ", '" + l + "' for e'sparent=" + e.parentNode)
+          common.service.log(`linkify('${txt}', ${k}, '${l}' for e'sparent=${e.parentNode}`)
           if (!r) {
             r = k
           }

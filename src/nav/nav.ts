@@ -1,9 +1,9 @@
 import common, {CommonModule, CommonService, Context} from "../common"
 import lang, {LangModule} from '../lang'
-import {titleScope} from "./rr0-title"
 import {AnchorDirective} from "../rr0-a.directive"
 import {Moment} from "../../time/Moment"
 import {HeadController} from "./HeadController"
+import {AppController} from "rr0"
 
 class NavLink {
   constructor(private label: string, private link: string, private title?: string) {
@@ -277,19 +277,15 @@ export class NavModule {
   host = location.host
   hiddenPos = '-100em'
   readonly service: NavService
+  headController: HeadController
 
   constructor(common: CommonModule, lang: LangModule, private root: ParentNode) {
     this.service = new NavService(common.service, root)
     common.directives.push(new AnchorDirective(this.host))
   }
 
-  _headController: HeadController
-
-  get headController() {
-    if (!this._headController) {
-      this._headController = new HeadController(titleScope, common.service, lang.service, this.service, common.service.constantClass, this.root)
-    }
-    return this._headController
+  init(appController: AppController) {
+    this.headController = new HeadController(common.service, lang.service, this.service, common.service.constantClass, this.root)
   }
 }
 

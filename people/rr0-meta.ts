@@ -1,13 +1,12 @@
-import people, {PeopleService} from "./people"
-import common, {Context, SelectorDirective} from "common"
-import nav from "nav/nav"
+import {PeopleService} from "./people"
+import {Context, SelectorDirective} from "../src/common"
 import {HeadController} from "nav/HeadController"
 
 export interface MetaScope {
   titleUrl: string;
 }
 
-class MetaDirective extends SelectorDirective {
+export class MetaDirective extends SelectorDirective {
 
   constructor(private peopleService: PeopleService, private headController: HeadController) {
     super("meta")
@@ -31,5 +30,3 @@ class MetaDirective extends SelectorDirective {
     }
   }
 }
-
-common.directives.push(new MetaDirective(people.service, nav.headController))

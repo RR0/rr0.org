@@ -1,4 +1,4 @@
-import common, {Context, SelectorDirective} from "../common"
+import {Context, SelectorDirective} from "../common"
 
 export interface TitleScope {
   title: string;
@@ -11,10 +11,10 @@ export interface TitleScope {
 /**
  * Sets controller's title to be displayed from the title header tag.
  */
-class TitleDirective extends SelectorDirective {
+export class TitleDirective extends SelectorDirective {
 
   constructor(private scope: TitleScope) {
-    super("[title]")
+    super("title")
   }
 
   protected async handle(context: Context, el: HTMLElement) {
@@ -23,9 +23,3 @@ class TitleDirective extends SelectorDirective {
     }
   }
 }
-
-export const titleScope: TitleScope = {
-  author: "", copyright: "", title: "", setTitle(text): void {
-  }
-}
-common.directives.push(new TitleDirective(titleScope))

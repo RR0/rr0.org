@@ -19,25 +19,35 @@ export class HeadController {
   ]
   private ns = []
   private navEl: HTMLElement
-  private readonly titleSection: Section
+  private titleSection: Section
   private outline: string
+  private $scope: TitleScope
 
-  constructor(private $scope: TitleScope, private commonsService: CommonService, private langService: LangService,
-              private navigationService: NavService, private constantClass: string, private root: ParentNode) {
-    const scope = this.$scope
+  constructor(private commonsService: CommonService, private langService: LangService, private navigationService: NavService,
+              private constantClass: string, private root: ParentNode) {
     this.scrolled = <HTMLElement>root.querySelector(".contents")
     this.header = <HTMLElement>root.querySelector('header')
     this.navEl = root.querySelector('nav')
+    this.outlineEl = <HTMLElement>root.querySelector('.outline')
+    this.scrolled.onscroll = (_event) => {
+      requestAnimationFrame(this.updateHeading.bind(this))
+    }
+    if (window.addEventListener) {      // most non-IE browsers and IE9
+      window.addEventListener("resize", this.onResize.bind(this), false)
+    } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
+      (<any>window).attachEvent("onresize", this.onResize.bind(this))
+    }
+  }
+
+  setTitleScope(scope: TitleScope) {
+    this.$scope = scope
     this.titleSection = {
       label: scope.title,
       outlineLabel: scope.title,
       id: "top",
       level: 0,
-      elem: root.querySelector('#top')
+      elem: this.root.querySelector('#top')
     }
-
-    this.outlineEl = <HTMLElement>root.querySelector('.outline')
-
     if (!scope.title) {
       let titleValues = ""
       for (const titleHandler of this.titleHandlers) {
@@ -48,16 +58,6 @@ export class HeadController {
       const title = this.commonsService.capitalizeFirstLetter(titleValues)
       scope.setTitle(title)
     }
-
-    this.scrolled.onscroll = (_event) => {
-      requestAnimationFrame(this.updateHeading.bind(this))
-    }
-
-    if (window.addEventListener) {      // most non-IE browsers and IE9
-      window.addEventListener("resize", this.onResize.bind(this), false)
-    } else if ((<any>window).attachEvent) {    // Internet Explorer 5 or above
-      (<any>window).attachEvent("onresize", this.onResize.bind(this))
-    }
   }
 
   sectionAdded(section: Section) {
@@ -67,12 +67,12 @@ export class HeadController {
     this.sections.push(section)
   }
 
-  getHeadingHeight() {
+  getHeadingHeight(): number {
     return nav[0].offsetTop + this.getNavHeight()
   }
 
-  titleFromURI() {
-    let title
+  titleFromURI(): string {
+    let title: string
     const uri = this.commonsService.getUri()
     const ls = uri.lastIndexOf("/")
     const htmlExt = uri.lastIndexOf(".html")
@@ -187,7 +187,7 @@ export class HeadController {
     return this.navEl.offsetHeight === (<HTMLElement>this.scrolled).offsetHeight
   }
 
-  private getNavHeight() {
+  private getNavHeight(): number {
     return this.isNavLeft() ? 0 : nav[0].offsetHeight
   }
 

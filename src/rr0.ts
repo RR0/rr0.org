@@ -1,6 +1,6 @@
 import "../rr0.scss"
 
-import {TitleScope} from "nav/rr0-title"
+import {TitleDirective, TitleScope} from "./nav/rr0-title"
 
 import nav, {NavModule} from "./nav/nav"
 import context, {ContextModule} from './rr0-context'
@@ -14,6 +14,7 @@ import people, {People, PeopleModule} from "../people/people"
 import {PlaceDirective} from "../place/rr0-place"
 import {ArticleDirective, OutlineService, SectionDirective} from "./nav/rr0-outline"
 import {Moment} from "../time/Moment"
+import {MetaDirective} from "../people/rr0-meta"
 
 export class Rr0Context extends Context {
 
@@ -38,8 +39,9 @@ export interface RR0Window extends Window {
   copyright: string;
 }
 
-class AppController implements TitleScope {
+export class AppController implements TitleScope {
   title: string
+  titleUrl: string
   readonly copyright: string
   readonly author: string
 
@@ -49,8 +51,18 @@ class AppController implements TitleScope {
     this.copyright = ''
   }
 
-  setTitle(newTitle) {
+  setTitle(newTitle: string) {
     this.title = newTitle
+    const h1 = document.querySelector("h1") as HTMLHeadingElement
+    let inner: HTMLElement
+    if (this.titleUrl) {
+      const link: HTMLAnchorElement = inner = document.createElement("a")
+      link.href = this.titleUrl
+    } else {
+      inner = h1
+    }
+    inner.innerText = newTitle
+    h1.replaceChild(inner, h1.children[0])
   }
 }
 
@@ -62,23 +74,30 @@ export class Rr0Module {
   contentsZone = null
   sideCallbacks = []
   textZone = null
-  private appController: AppController
+  private readonly appController: AppController
 
   constructor(common: CommonModule, nav: NavModule, private place: PlaceModule, foot: FootModule, context: ContextModule,
               science: ScienceModule, private time: TimeModule, private people: PeopleModule) {
     this.context.time = new Moment()
     this.appController = new AppController()
+    nav.init(this.appController)
     this.initStructure()
     const mapZone = this.getSideZone("map-canvas")
     this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap.bind(this)))
-    nav.headController.titleHandlers.push(this.titleFromPeople.bind(this))
-    nav.headController.init(this.context)
+    const headController = nav.headController
+    headController.titleHandlers.push(this.titleFromPeople.bind(this))
+    headController.init(this.context).then(() => {
+      console.log("headController.init() done")
+    })
     const outlineService = new OutlineService(nav, common.service)
 
     const directives = common.directives
+    directives.push(new MetaDirective(people.service, headController))
+    directives.push(new TitleDirective(this.appController))
     directives.push(new PlaceDirective(place.service, place.mapService, this))
     directives.push(new SectionDirective(outlineService))
     directives.push(new ArticleDirective(outlineService))
+
     const promises = []
     for (let i = 0; i < directives.length; i++) {
       const directive = directives[i]
@@ -87,6 +106,7 @@ export class Rr0Module {
     Promise.all(promises).then(() => {
       console.log("applied directives")
     })
+    nav.headController.setTitleScope(this.appController)
   }
 
   focusOn(placeOnMap) {

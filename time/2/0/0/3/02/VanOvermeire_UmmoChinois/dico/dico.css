@@ -1,0 +1,21 @@
+dt, .ortho {
+  color: #0000ff;
+  font-weight: bold;
+}
+
+dt, .name {
+  text-decoration: underline;
+}
+
+.conclusion {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.light {
+  font-weight: normal;
+}
+
+.letters {
+  color: #ff0000;
+}

@@ -18,6 +18,8 @@ import {MetaDirective} from "../people/rr0-meta"
 import {CopyrightDirective} from "../people/rr0-copyright"
 import {TweetDirective} from "./social/tweet-directive"
 import {FacebookDirective} from "./social/fb/rr0-fb-like"
+import {SearchDirective} from "./search/rr0-search"
+import {SearchService} from "./search/search-service"
 
 export class Rr0Context extends Context {
 
@@ -103,6 +105,8 @@ export class Rr0Module {
     directives.push(new CopyrightDirective(people.service))
     directives.push(new TweetDirective())
     directives.push(new FacebookDirective())
+    const searchService = new SearchService()
+    directives.push(new SearchDirective(searchService))
 
     const promises = []
     for (let i = 0; i < directives.length; i++) {

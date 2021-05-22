@@ -34,6 +34,10 @@ module.exports = {
           "sass-loader"     // Compiles Sass to CSS
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader"
       }
     ]
   },

@@ -1,14 +1,10 @@
-<form data-ng-submit="doSearch()">
+<form>
   <label for="search-input">Rechercher</label>
   <div class="flexible">
-    <input type="search" id="search-input" data-ng-model="searchInput" tabindex="200" data-ng-keydown="searchKey($event)">
+    <input id="search-input" tabindex="200" type="search">
   </div>
   <!--<button type="submit">--><!--<span class="label">Rechercher</span>-->
-  <i class="fa fa-search icon" title="Rechercher" data-ng-click="doSearch()"></i>
+  <i class="fa fa-search icon submit" title="Rechercher"></i>
   <!--</button>-->
 </form>
-<ul class="search-result">
-  <li data-ng-repeat="r in searchResults" tabindex="{{201+$index}}" title="{{::r.snippet}}">
-    <a href="{{::r.link}}"><span data-ng-bind-html="r.htmlTitle | unsafe"></span></a>
-  </li>
-</ul>
+<ul class="search-result"></ul>

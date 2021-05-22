@@ -1,0 +1,27 @@
+dl.bullet {
+  margin: 0;
+  padding: 0;
+}
+
+dl.bullet dt::before {
+  content: '\2022';
+  display: inline-block;
+  width: 1.8em;
+  text-align: right;
+  padding-right: 0.7em;
+}
+
+dl.bullet dt {
+  float: left;
+  font-weight: bold;
+}
+
+dl.bullet dt::after {
+  content: ' : ';
+  padding-right: 0.3em;
+}
+
+dl.bullet dd {
+  display: block;
+  margin-left: 2.5em;
+}

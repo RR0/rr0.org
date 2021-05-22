@@ -1,0 +1,68 @@
+@media (prefers-color-scheme: dark) {
+  .contents {
+    background: black;
+    color: whitesmoke;
+  }
+
+  a {
+    color: lightblue;
+  }
+
+  header {
+    background-image: linear-gradient(to right, #19191F 0, #000 50%, rgba(255, 255, 255, .5) 100%)
+  }
+
+  header h1 {
+    color: white;
+  }
+
+  nav, .outline, nav ul {
+    background: black;
+  }
+
+  h2, h3, h4, section h1, section section h1 {
+    color: white;
+    background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
+  }
+
+  .search input {
+    background-color: slategray;
+    color: white;
+  }
+
+  .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {
+    color: white;
+    background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
+  }
+
+  .place {
+    color: lightskyblue;
+  }
+
+  .place:hover {
+    background-color: darkslategray;
+  }
+
+  .exergue {
+    color: lightgrey;
+  }
+
+  .abstract, .abstract2 {
+    background-color: #2f3032;
+  }
+
+  code, pre {
+    background-color: #2f3032;
+  }
+
+  *::-webkit-scrollbar {
+    background-color: #1c1b1b;
+    padding: 0 2px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: dimgray;
+    border-radius: 0.5em;
+    border: 1px outset gray;
+  }
+}

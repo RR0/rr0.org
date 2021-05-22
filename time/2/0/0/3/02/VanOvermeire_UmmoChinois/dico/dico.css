@@ -3,6 +3,10 @@ dt, .ortho {
   font-weight: bold;
 }
 
+dt, .name {
+  text-decoration: underline;
+}
+
 .conclusion {
   color: #ff00ff;
   font-weight: bold;

@@ -1,38 +1,37 @@
-export default navModule => {
-  navModule
-  /**
-   * Sets navigation menu items from relationship links meta tags.
-   */
-    .directive('link', ['navigationService', function (navigationService) {
-      'use strict';
-      return {
-        restrict: 'E',
-        link: function (scope, elem, attrs) {
-          var rel = attrs.rel;
-          if (rel) {
-            rel = rel.toLowerCase();
-          }
-          var text = attrs.title;
+import {Context, SelectorDirective} from "../common"
+import {NavService} from "nav/nav"
 
-          var link = attrs.href;
-          switch (rel) {
-            case 'alternate':
-              var alternatelang = attrs.hreflang;
-              break;
-            case 'prev':
-              navigationService.setPrev(text, link);
-              break;
-            case 'next':
-              navigationService.setNext(text, link);
-              break;
-            case 'start':
-              navigationService.setStart(text, link);
-              break;
-            case 'contents':
-              navigationService.setContents(text, link);
-              break;
-          }
-        }
-      };
-    }]);
+export class LinkDirective extends SelectorDirective {
+
+  constructor(private navigationService: NavService) {
+    super("link")
+  }
+
+  protected async handle(context: Context, elem: HTMLElement): Promise<void> {
+    const el = elem as HTMLLinkElement
+    var rel = el.rel
+    if (rel) {
+      rel = rel.toLowerCase()
+    }
+    var text = el.title
+
+    var link = el.href
+    switch (rel) {
+      case 'alternate':
+        var alternatelang = el.hreflang
+        break
+      case 'prev':
+        this.navigationService.setPrev(text, link)
+        break
+      case 'next':
+        this.navigationService.setNext(text, link)
+        break
+      case 'start':
+        this.navigationService.setStart(text, link)
+        break
+      case 'contents':
+        this.navigationService.setContents(text, link)
+        break
+    }
+  }
 }

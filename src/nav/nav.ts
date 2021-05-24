@@ -3,30 +3,29 @@ import lang, {LangModule} from '../lang'
 import {AnchorDirective} from "../rr0-a.directive"
 import {Moment} from "../../time/Moment"
 import {HeadController} from "./HeadController"
-import {AppController} from "rr0"
 
-class NavLink {
-  constructor(private label: string, private link: string, private title?: string) {
+export class NavLink {
+  constructor(readonly label: string, readonly link: string, readonly title?: string) {
   }
 }
 
 interface Start {
-  dir: string;
-  label: string;
-  title?: string;
-  css?: string;
-  js?: string;
-  onLoad?: string;
+  dir: string
+  label: string
+  title?: string
+  css?: string
+  js?: string
+  onLoad?: string
 }
 
 export class NavService {
-  startNav: any
+  startNav: NavLink
   contentsURL: any
   contents: any
-  nextLink: any
-  next: any
-  prev: any
-  prevLink: any
+  next: string
+  nextLink: string
+  prev: string
+  prevLink: string
   navList: any
   starts: Start[] =
     [
@@ -110,14 +109,14 @@ export class NavService {
     return this.navList
   }
 
-  addRel(l?, t?) {
+  addRel(l?: string, t?: string) {
     const rel = document.createElement("link")
     rel.setAttribute("rel", t)
     rel.setAttribute("href", l)
     common.service.addToHead(rel)
   }
 
-  setPrev(p?, pLink?) {
+  setPrev(p?: string, pLink?: string) {
     if (pLink) {
       this.prevLink = pLink
     }
@@ -126,7 +125,7 @@ export class NavService {
     }
   }
 
-  setNext(n?, nLink?) {
+  setNext(n?: string, nLink?: string) {
     if (n) {
       this.next = n
     }
@@ -158,7 +157,7 @@ export class NavService {
   /**
    * Determine the "previous" link, if any.
    *
-   * @returns {Promise}
+   * @returns {Promise<NavLink>}
    */
   async getPrev(context: Context): Promise<NavLink> {
     let pp: NavLink
@@ -193,7 +192,7 @@ export class NavService {
     this.starts.push(s)
   }
 
-  setContents(c?, cLink?) {
+  setContents(c?: string, cLink?: string) {
     if (!this.contents) {
       this.contents = c
       this.contentsURL = cLink
@@ -201,7 +200,7 @@ export class NavService {
     }
   }
 
-  setStart(s?, sLink?) {
+  setStart(s?: string, sLink?: string) {
     if (!this.startNav) {
       let ret = null
       let t
@@ -245,7 +244,7 @@ export class NavService {
     return this.contentsURL
   }
 
-  getStartNav() {
+  getStartNav(): NavLink {
     return this.startNav
   }
 }
@@ -282,9 +281,6 @@ export class NavModule {
   constructor(common: CommonModule, lang: LangModule, private root: ParentNode) {
     this.service = new NavService(common.service, root)
     common.directives.push(new AnchorDirective(this.host))
-  }
-
-  init(appController: AppController) {
     this.headController = new HeadController(common.service, lang.service, this.service, common.service.constantClass, this.root)
   }
 }

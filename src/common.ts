@@ -12,10 +12,11 @@ export class Context {
 
 
 export abstract class SelectorDirective<E extends HTMLElement = HTMLElement> {
-  constructor(private selector: string) {
+
+  constructor(private selector: string, private defaultFrom: ParentNode = document) {
   }
 
-  async execute(context: Context, from: ParentNode = document) {
+  async execute(context: Context, from: ParentNode = this.defaultFrom) {
     const els = from.querySelectorAll(this.selector)
     const promises = []
     for (let i = 0; i < els.length; i++) {
@@ -140,11 +141,11 @@ export class CommonService {
     return found
   }
 
-  isNumber(o) {
+  isNumber(o: any) {
     return o && !isNaN(o - 0)
   }
 
-  addToElementType(n, e) {
+  addToElementType(n: string, e: Element) {
     document.getElementsByTagName(n)[0].appendChild(e)
   }
 

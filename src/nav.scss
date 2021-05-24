@@ -1,74 +1,90 @@
 @import "../mixins";
 
 nav {
-  h1 {
-    display: none;  // Heading here is only for accessibility
-  }
-  font-size: 0.9em;
-  transition: width, height $transitionDuration;
-  z-index: 100;
-  width: 100%;
   background: rgba(253, 250, 250, 0.1);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  font-size: 0.9em;
+  transition: width, height $transitionDuration;
+  width: 100%;
+  z-index: 100;
+
+  h1 {
+    display: none; // Heading here is only for accessibility
+  }
+
   &.collapsed {
-    top: 0;
     position: fixed;
+    top: 0;
+
     .outline-title {
       font-weight: bold;
     }
   }
+
   ul { // Nav elements list
     @include headerBackground();
     margin: 0;
     padding: 0;
+
     li {
       padding: $selectionPaddingY $selectionPaddingX;
+
       * {
         font-family: $menuFont;
       }
+
       &.alternate {
         color: lightgray;
       }
+
       &:hover {
-        border-right: none;
+        border-right: 0;
       }
+
       .label {
         ul li:hover {
           cursor: pointer;
         }
       }
+
       a {
         display: block;
       }
     }
+
     > li {
+      display: inline;
       float: left;
       padding: $selectionPaddingY $selectionPaddingX;
-      display: inline;
     }
   }
+
   &.collapsed {
     position: fixed;
     z-index: 201;
   }
 }
+
 .outline {
   @include dropdownMenu();
   font-size: 0.7em;
 }
 
 .toggleMap {
+  display: none;
+  float: right;
+
   * {
     display: inline-block;
   }
-  float: right;
-  display: none;
 }
 
 @import "search/search";
 
-.outline-title:hover + .outline, .outline:hover,
-.search form:hover + .search-result, .search-result:hover {   // Triggers for drop-down menus
+.outline-title:hover + .outline,
+.outline:hover,
+.search form:hover + .search-result,
+.search-result:hover { // Triggers for drop-down menus
   height: auto;
 }
 
@@ -89,6 +105,7 @@ nav {
   aside {
     width: 0;
   }
+
   nav {
     > ul {
       overflow: hidden; /* BFC */
@@ -110,41 +127,49 @@ nav {
  */
 @media (min-width: $twoPanes) {
   .search {
-    width: 100%;
     box-sizing: content-box;
+    width: 100%;
+
     label {
       display: inline;
     }
   }
+
   .search-result {
-    min-width: 30em;
     max-width: 100vw - $leftPaneWidth;
+    min-width: 30em;
     z-index: 1;
   }
+
   .label {
     display: inline;
   }
+
   nav {
-    overflow: visible;  /* To display search results aside */
-    width: $leftPaneWidth;
-    position: absolute;
     height: 100%;
+    overflow: visible; /* To display search results aside */
+    position: absolute;
+    width: $leftPaneWidth;
+
     ul {
       background: none;
+
       li {
         display: block;
-        padding: $selectionPaddingY $selectionPaddingX;
         float: none;
+        padding: $selectionPaddingY $selectionPaddingX;
       }
     }
+
     .collapsed {
       display: none;
     }
   }
+
   .outline {
     @include embeddedMenu;
-    max-height: 75vh;
     margin-left: 10%;
+    max-height: 75vh;
     /*    position: fixed;
         margin-left: 0;
         margin-top: 10em;
@@ -153,11 +178,13 @@ nav {
         width: 18%;
     */
   }
+
   .text {
     left: $leftPaneWidth;
     min-height: 100%;
     position: absolute;
   }
+
   ui-view {
     .text {
       left: 0;
@@ -173,14 +200,15 @@ nav {
   .contents {
     width: 100% - $rightPaneWidth;
   }
+
   aside {
     width: $rightPaneWidth;
   }
 }
 
 .menu ul li .current {
-  color: #FFF;
   background-color: $hoverColor;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -193,30 +221,33 @@ nav {
     padding: 0;
 
     li {
+      border: 0;
+      display: inline;
       float: left;
       font-size: 0.9em;
-      display: inline;
-      border: none;
 
       a {
-        text-decoration: none;
+        border: 0;
         color: $hoverColor;
         padding: $selectionPaddingY $selectionPaddingX;
-        border: none;
+        text-decoration: none;
       }
     }
   }
 }
 
-.menu ul li a:active, .menu ul li a:focus, .menu ul li .current {
-  color: #FFF;
+.menu ul li a:active,
+.menu ul li a:focus,
+.menu ul li .current {
   background-color: $hoverColor;
+  border: 0;
+  color: #fff;
   text-decoration: none;
-  border: none;
 }
 
 .SubMenu {
   float: right;
+
   .title {
     font-weight: bold;
     text-indent: 1.4em;

@@ -20,6 +20,9 @@ import {TweetDirective} from "./social/tweet-directive"
 import {FacebookDirective} from "./social/fb/rr0-fb-like"
 import {SearchDirective} from "./search/rr0-search"
 import {SearchService} from "./search/search-service"
+import {LinkDirective} from "./nav/rr0-link"
+import {HeadController} from "./nav/HeadController"
+import {ImageDirective} from "./nav/rr0-img"
 
 export class Rr0Context extends Context {
 
@@ -46,11 +49,10 @@ export interface RR0Window extends Window {
 
 export class AppController implements TitleScope {
   title: string
-  titleUrl: string
   readonly copyright: string
   readonly author: string
 
-  constructor() {
+  constructor(private headController: HeadController) {
     this.title = ''
     this.author = ''
     this.copyright = ''
@@ -60,9 +62,9 @@ export class AppController implements TitleScope {
     this.title = newTitle
     const h1 = document.querySelector("h1") as HTMLHeadingElement
     let inner: HTMLElement
-    if (this.titleUrl) {
+    if (this.headController.titleUrl) {
       const link: HTMLAnchorElement = inner = document.createElement("a")
-      link.href = this.titleUrl
+      link.href = this.headController.titleUrl
       h1.replaceChild(inner, h1.children[0])
     } else {
       inner = h1
@@ -84,29 +86,31 @@ export class Rr0Module {
   constructor(common: CommonModule, nav: NavModule, private place: PlaceModule, foot: FootModule, context: ContextModule,
               science: ScienceModule, private time: TimeModule, private people: PeopleModule, footModule: FootModule) {
     this.context.time = new Moment()
-    this.appController = new AppController()
-    nav.init(this.appController)
+    this.appController = new AppController(nav.headController)
     this.initStructure()
     const mapZone = this.getSideZone("map-canvas")
     this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap.bind(this)))
     const headController = nav.headController
     headController.titleHandlers.push(this.titleFromPeople.bind(this))
-    headController.init(this.context).then(() => {
-      console.log("headController.init() done")
-    })
     const outlineService = new OutlineService(nav, common.service)
 
     const directives = common.directives
+    // Head
     directives.push(new MetaDirective(people.service, headController))
+    directives.push(new LinkDirective(nav.service))
     directives.push(new TitleDirective(this.appController))
+    // Heading
+    const searchService = new SearchService()
+    directives.push(new SearchDirective(searchService))
+    // Text
     directives.push(new PlaceDirective(place.service, place.mapService, this))
     directives.push(new SectionDirective(outlineService))
     directives.push(new ArticleDirective(outlineService))
+    directives.push(new ImageDirective())
+    // Footer
     directives.push(new CopyrightDirective(people.service))
     directives.push(new TweetDirective())
     directives.push(new FacebookDirective())
-    const searchService = new SearchService()
-    directives.push(new SearchDirective(searchService))
 
     const promises = []
     for (let i = 0; i < directives.length; i++) {
@@ -117,6 +121,9 @@ export class Rr0Module {
       console.log("applied directives")
     })
     nav.headController.setTitleScope(this.appController)
+    headController.init(this.context).then(() => {
+      console.log("headController.init() done")
+    })
   }
 
   focusOn(placeOnMap) {

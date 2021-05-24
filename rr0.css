@@ -1455,7 +1455,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     color: white;
   }
 
-  nav, .outline {
+  nav, .outline, nav ul {
     background: black;
   }
 

@@ -26,28 +26,23 @@
     <nav>
       <h1>Navigation</h1>
       <ul>
-        <li class="constant" data-ng-cloak data-ng-if="!isFramed()">
+        <li class="constant" data-ng-if="!isFramed()">
           <a class="home" data-ng-href="/" href="/"> <span class="label" title="Home">RR0</span> </a>
         </li>
         <li class="constant" data-ng-show="!isFramed()">
           <div class="search"></div>
         </li>
-        <li class="collapsed" data-ng-cloak data-ng-if="!isFramed()"><i class="fa fa-angle-right"></i></li>
-        <li class="constant {{::p.style}}" data-ng-if="p.link && p.label" data-ng-repeat-start="p in ps">
-          <a data-ng-href="{{::p.link}}"> <span data-ng-bind-html="p.label | unsafe" title="{{::p.title}}"></span> </a>
+        <li class="collapsed" data-ng-if="!isFramed()"><i class="fa fa-angle-right"></i></li>
+        <li>
+          <ul class="prev"></ul>
         </li>
-        <li class="collapsed" data-ng-cloak data-ng-if="p.link && p.label" data-ng-repeat-end>
-          <i class="fa fa-angle-right"></i></li>
         <li class="constant" data-ng-click="titleClick()" tabindex="100">
           <a class="outline-title" data-ng-click="sectionClick('#contents')" href="#contents" id="out-top"> <span
               class="constant" title="Début de l'article"></span> </a>
           <ul class="outline"></ul>
         </li>
-        <li class="collapsed" data-ng-cloak data-ng-if="n.link && n.label" data-ng-repeat-start="n in ns">
+        <li class="next collapsed" data-ng-if="n.link && n.label" data-ng-repeat-start="n in ns">
           <i class="fa fa-angle-right"></i></li>
-        <li class="constant {{n.style}}" data-ng-if="n.link && n.label" data-ng-repeat-end>
-          <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
-        </li>
         <li class="constant">
           <span data-ng-bind-html="alternate"></span>
         </li>

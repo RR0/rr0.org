@@ -2,7 +2,7 @@ import {Section} from "nav/rr0-outline"
 import {TitleScope} from "nav/rr0-title"
 import {CommonService, Context} from "common"
 import {LangService} from "lang"
-import nav, {NavService} from "./nav"
+import {NavLink, NavService} from "./nav"
 
 export class HeadController {
   ps = []
@@ -30,7 +30,7 @@ export class HeadController {
     this.navEl = root.querySelector('nav')
     this.outlineEl = <HTMLElement>root.querySelector('.outline')
     this.scrolled.onscroll = (_event) => {
-      requestAnimationFrame(this.updateHeading.bind(this))
+      requestAnimationFrame(() => this.updateHeading())
     }
     if (window.addEventListener) {      // most non-IE browsers and IE9
       window.addEventListener("resize", this.onResize.bind(this), false)
@@ -102,7 +102,7 @@ export class HeadController {
     return title
   }
 
-  isFramed() {
+  isFramed(): boolean {
     return window !== top
   }
 
@@ -128,7 +128,7 @@ export class HeadController {
 
     function navInit(s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
       const onLoadDo = self.navigationService.setStart(s, sLink)
-      if (window === top) {
+      if (!self.isFramed()) {
         self.navigationService.addRel(sLink, "Start")
       }
 //    if (onLoadDo) domLoadProcs.push(onLoadDo);
@@ -140,8 +140,10 @@ export class HeadController {
     navInit(s, sLink, c, cLink, p, pLink, n, nLink)
 
     const startNav = this.navigationService.getStartNav()
-    if (window === top) {
-      this.addPrev(startNav, startNav.title, "start")
+    if (!this.isFramed()) {
+      if (startNav) {
+        this.addPrev(startNav, startNav.title, "start")
+      }
       this.addPrev({
         label: '' + this.navigationService.getContents(),
         link: this.navigationService.getContentsURL()
@@ -200,7 +202,7 @@ export class HeadController {
   }
 
   private getNavHeight(): number {
-    return this.isNavLeft() ? 0 : nav[0].offsetHeight
+    return this.isNavLeft() ? 0 : this.navEl.offsetHeight
   }
 
   private createNavElement(c) {
@@ -277,13 +279,21 @@ export class HeadController {
     this.smoothScroll(anchor, 500)
   }
 
-  private addPrev(pp, tt, c) {
+  private addPrev(pp: NavLink, tt: string, c: string) {
     this.ps.push({
-      label: this.commonsService.capitalizeFirstLetter("" + pp.label),
+      label: this.commonsService.capitalizeFirstLetter(pp.label),
       link: pp.link,
       title: tt,
       style: c
     })
+    const prevEl = this.root.querySelector(".prev") as HTMLElement
+    prevEl.innerHTML = ""
+    for (const p of this.ps) {
+      const item = document.createElement("li")
+      item.className = `constant ${p.style}`
+      item.innerHTML = `<a data-ng-href="${p.link}"><span title="${p.title}">${p.label}</span></a>`
+      prevEl.appendChild(item)
+    }
   }
 
   private addNext(nn, tt, c) {
@@ -353,7 +363,7 @@ export class HeadController {
         this.updateOutline()
       } else {
         this.navEl.classList.add('collapsed')
-        text.style.paddingTop = this.getNavHeight() + 'px'
+        text.style.paddingTop = `${this.getNavHeight()}px`
         this.setOutline(this.$scope.title)
         this.selectOutline(this.titleSection)
         this.updatePos()

@@ -1,20 +1,19 @@
-export default navModule => {
-  navModule
-  /**
-   * Picks last image from contents to set header background
-   */
-    .directive('img', [function () {
-      'use strict';
-      return {
-        restrict: 'E',
-        link: function (scope, elem, attrs) {
-          var pageHeading = document.querySelector('header');
-          if (pageHeading) {
-            var style = window.getComputedStyle(pageHeading).backgroundImage;
-            style += ', url(\'' + attrs.src + '\')';
-            pageHeading.style.backgroundImage = style;
-          }
-        }
-      };
-    }]);
+import {Context, SelectorDirective} from "../common"
+
+/**
+ * Picks last image from contents to set header background
+ */
+export class ImageDirective extends SelectorDirective<HTMLImageElement> {
+  constructor() {
+    super("img")
+  }
+
+  protected async handle(context: Context, el: HTMLImageElement): Promise<void> {
+    const pageHeading = document.querySelector('header')
+    if (pageHeading) {
+      let style = window.getComputedStyle(pageHeading).backgroundImage
+      style += `, url('${el.src}')`
+      pageHeading.style.backgroundImage = style
+    }
+  }
 }

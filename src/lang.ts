@@ -38,7 +38,7 @@ export class LangService {
         await this.notifyOrig(orig1, origStatus)
         return
       } else {
-        translation = uri.substr(0, dotPos) + "_" + this.userLang + uri.substr(dotPos)
+        translation = `${uri.substr(0, dotPos)}_${this.userLang}${uri.substr(dotPos)}`
       }
     } else {
       if (this.docLang !== this.userLang) {
@@ -69,7 +69,7 @@ export class LangService {
     }
   }
 
-  private async notifyTrans(translation, transFound) {
+  private async notifyTrans(translation: string, transFound) {
     if (await this.netService.onExists(translation)) {
       transFound(translation)
     } else {

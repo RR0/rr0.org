@@ -6,10 +6,19 @@ export class NetService {
   }
 
   async onExists(l: string): Promise<boolean> {
-    const res = await fetch("https://rr0.org" + l, {
-      method: 'HEAD'
-    })
-    return res.status == 200
+    const url = `https://rr0.org${l}`
+    let exists
+    try {
+      const res = await fetch(url, {
+        method: 'HEAD'
+      })
+      exists = res.ok && res.status == 200
+      console.log(`${url} does ${!exists ? "not " : ""}exists`)
+    } catch (e) {
+      console.error(`Could not check existence of ${url}`, e)
+      exists = false
+    }
+    return exists
   }
 
   /**
@@ -22,7 +31,6 @@ export class NetService {
    * @param {string} [t] title on the link
    */
   async checkedLink(e: HTMLElement, toReplace, l, replacement, cacheIt, t) {
-    console.log(`checking link ${l}`)
     if (l) {
       l = this.commonsService.addEndingSlash(l)
     }

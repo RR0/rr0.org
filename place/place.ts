@@ -218,7 +218,7 @@ export class MapService {
 
   private initGoogleMaps(mz: HTMLElement, callback) {
     google.load("maps", "3", {
-      other_params: "sensor=false",
+      other_params: "key=AIzaSyDiwAdaqUDGOI6CmNeG9DwsXiTsrjA_5dU",
       callback: () => {
 //                    place.sideCallbacks = place.sideCallbacks.concat(mapUpdateCallbacks);
         this.mapZone = mz

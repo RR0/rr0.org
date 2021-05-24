@@ -76,7 +76,7 @@ export class AppController implements TitleScope {
 export class Rr0Module {
   leftWidth: number
   user = new User()
-  context = new Context(this.user)
+  context = new Rr0Context(this.user)
   sidePane
   contentsZone = null
   sideCallbacks = []

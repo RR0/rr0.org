@@ -179,8 +179,10 @@ export class HeadController {
     this.peopleService.addAuthor(a, aLink, c, cLink)
   }*/
 
-  private setAlternates(innerHtml) {
+  private setAlternates(innerHtml: string) {
     this.alternate = innerHtml
+    const altEl = this.root.querySelector(".alternate") as HTMLElement
+    altEl.innerHTML = innerHtml
   }
 
   private async checkAlt() {
@@ -188,11 +190,10 @@ export class HeadController {
       this.alternate = " "
       await this.langService.checkAlternate(this.commonsService.getUri(),
         (original) => {
-          this.setAlternates(original ? "<a href='" + original + "'>&#8668; Texte d'origine</a>" : "&#9888; Ce" +
-            " document est une traduction")
+          this.setAlternates(original ? `<a href="${original}">&#8668; Texte d'origine</a>` : `&#9888; Ce document est une traduction`)
         },
         (translation) => {
-          this.setAlternates(translation ? "<a href='" + translation + "'>&#8669; Traduction fran\xE7aise</a>" : "&#9888; Pas de traduction disponible")
+          this.setAlternates(translation ? `<a href="${translation}">&#8669; Traduction fran\xE7aise</a>` : "&#9888; Pas de traduction disponible")
         })
     }
   }

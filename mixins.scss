@@ -124,7 +124,8 @@
 
   @include bottomInnerShadow;
 
-  height: 0;                    // Closed by default
+  height: 0; // Closed by default
+  z-index: 1;
 }
 
 @mixin embeddedMenu {

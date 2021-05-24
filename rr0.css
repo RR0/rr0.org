@@ -433,7 +433,8 @@ nav ul > li {
   background: rgba(242, 242, 248, .95);
   background: linear-gradient(left top, rgba(242, 242, 248, .95), rgba(255, 255, 255, .95));
   position: absolute;
-  height: 0
+  height: 0;
+  z-index: 1;
 }
 
 .search-result li {
@@ -1467,6 +1468,10 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
   .search input {
     background-color: slategray;
     color: white;
+  }
+
+  .search-result {
+    background-color: black;
   }
 
   .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {

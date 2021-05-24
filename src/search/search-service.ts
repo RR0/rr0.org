@@ -14,7 +14,7 @@ export interface SearchResults {
 export class SearchService {
 
   async search(toSearch: string): Promise<SearchResults> {
-    const response = await fetch("https://www.googleapis.com/customsearch/v1?key=AIzaSyCBM8ZUsYyJNdwKTKxoARTr673_8IaWKSo&cx=014557949845581334805:gdnqsazbu8i&q=" + toSearch)
+    const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyCBM8ZUsYyJNdwKTKxoARTr673_8IaWKSo&cx=014557949845581334805:gdnqsazbu8i&q=${toSearch}`)
     if (response.ok) {
       return response.json()
     } else {

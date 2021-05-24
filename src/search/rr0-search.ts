@@ -12,20 +12,21 @@ export class SearchDirective extends SelectorDirective {
   async doSearch(searchInput: string, el: HTMLElement) {
     const data = await this.searchService.search(searchInput)
     // $scope.searchResults = [];
-    if (data.searchInformation.totalResults > 0) {
-      const resultsEl = el.querySelector(".search-results")
+    const results = data.searchInformation.totalResults
+    if (results > 0) {
+      const resultsEl = el.querySelector(".search-result")
       resultsEl.innerHTML = ""
-      for (let i = 0; i < data.items.length; i++) {
-        const r = data[i]
+      const items = data.items
+      for (let i = 0; i < items.length; i++) {
+        const r = items[i]
         const item = document.createElement("li")
         item.title = r.snippet
         item.tabIndex = 200 + i
         item.innerHTML = `<a href="${r.link}"><span>${r.htmlTitle}</span></a>`
         resultsEl.appendChild(item)
       }
-    } else {
-      console.log(`No results for '${searchInput}'`)
     }
+    return results
   }
 
   searchClick(item) {
@@ -41,9 +42,9 @@ export class SearchDirective extends SelectorDirective {
 
   protected async handle(context: Context, el: HTMLElement): Promise<void> {
     el.innerHTML = template
-    const formEl = el.querySelector(`form`) as HTMLFormElement
-    formEl.onsubmit = this.doSearch.bind(this)
     const searchInput = el.querySelector(`input[type="search"]`) as HTMLInputElement
+    const formEl = el.querySelector(`form`) as HTMLFormElement
+    formEl.onsubmit = (_ev) => this.doSearch(searchInput.value, el)
     searchInput.onkeydown = this.searchKey.bind(this)
     const submit = el.querySelector(".submit") as HTMLElement
     submit.onclick = () => this.doSearch(searchInput.value, el)

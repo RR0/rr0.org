@@ -15,6 +15,8 @@
 
   <title>Some title</title>
   <meta content="http://example.com" name="url"/>
+  <link href=".." rel="prev" title="My previous"/>
+  <link href="./next" rel="next" title="My next"/>
 
 </head>
 <body>
@@ -33,16 +35,13 @@
           <div class="search"></div>
         </li>
         <li class="collapsed" data-ng-if="!isFramed()"><i class="fa fa-angle-right"></i></li>
-        <li>
-          <ul class="prev"></ul>
-        </li>
+        <li class="constant prev"></li>
         <li class="constant" data-ng-click="titleClick()" tabindex="100">
           <a class="outline-title" data-ng-click="sectionClick('#contents')" href="#contents" id="out-top"> <span
               class="constant" title="Début de l'article"></span> </a>
           <ul class="outline"></ul>
         </li>
-        <li class="next collapsed" data-ng-if="n.link && n.label" data-ng-repeat-start="n in ns">
-          <i class="fa fa-angle-right"></i></li>
+        <li class="constant next"></li>
         <li class="constant">
           <span data-ng-bind-html="alternate"></span>
         </li>

@@ -6,7 +6,7 @@ module.exports = {
     index: "./src/rr0.ts"
   },
   mode: process.env.NODE_ENV || "production",
-  devtool: "source-map",
+  devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist"
   },

@@ -145,7 +145,7 @@ export class HeadController {
         this.addPrev(startNav, startNav.title, "start")
       }
       this.addPrev({
-        label: '' + this.navigationService.getContents(),
+        label: this.navigationService.getContents(),
         link: this.navigationService.getContentsURL()
       }, "Table des mati\xE8res", "toc")
       const pp = await this.navigationService.getPrev(context)
@@ -280,29 +280,31 @@ export class HeadController {
   }
 
   private addPrev(pp: NavLink, tt: string, c: string) {
-    this.ps.push({
-      label: this.commonsService.capitalizeFirstLetter(pp.label),
-      link: pp.link,
-      title: tt,
-      style: c
-    })
-    const prevEl = this.root.querySelector(".prev") as HTMLElement
-    prevEl.innerHTML = ""
-    for (const p of this.ps) {
-      const item = document.createElement("li")
-      item.className = `constant ${p.style}`
-      item.innerHTML = `<a data-ng-href="${p.link}"><span title="${p.title}">${p.label}</span></a>`
-      prevEl.appendChild(item)
+    if (pp && pp.label) {
+      this.ps.push({
+        label: this.commonsService.capitalizeFirstLetter(pp.label),
+        link: pp.link,
+        title: tt,
+        style: c
+      })
+      const prevEl = this.root.querySelector(".prev") as HTMLElement
+      const p = this.ps[0]
+      prevEl.innerHTML = `<a href="${p.link}"><span title="${p.title}">${p.label}</span></a>`
     }
   }
 
-  private addNext(nn, tt, c) {
-    this.ns.push({
-      label: this.commonsService.capitalizeFirstLetter("" + nn.label),
-      link: nn.link,
-      title: tt,
-      style: c
-    })
+  private addNext(nn: NavLink, tt: string, c: string) {
+    if (nn && nn.label) {
+      this.ns.push({
+        label: this.commonsService.capitalizeFirstLetter(nn.label),
+        link: nn.link,
+        title: tt,
+        style: c
+      })
+      const nextEl = this.root.querySelector(".next") as HTMLElement
+      const n = this.ns[0]
+      nextEl.innerHTML = `<a href="${n.link}"><span title="${n.title}">${n.label}</span></a>`
+    }
   }
 
   private isHeaderVisible() {

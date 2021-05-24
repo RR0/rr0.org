@@ -6,7 +6,7 @@ module.exports = {
     index: "./src/rr0.ts"
   },
   mode: process.env.NODE_ENV || "production",
-  devtool: "inline-source-map",
+  devtool: "source-map",
   devServer: {
     contentBase: "./dist"
   },
@@ -25,6 +25,11 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"]
       },
       {
         test: /\.scss$/,

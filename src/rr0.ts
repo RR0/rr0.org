@@ -2,15 +2,15 @@ import "../rr0.scss"
 
 import {TitleDirective, TitleScope} from "./nav/rr0-title"
 
-import nav, {NavModule} from "./nav/nav"
-import context, {ContextModule} from './rr0-context'
-import science, {ScienceModule} from "../science/science"
-import place, {PlaceModule} from "../place/place"
-import foot, {FootModule} from "./note/foot"
-import common, {CommonModule, Context, User} from "./common"
+import {NavModule} from "./nav/nav"
+import {ContextModule} from './rr0-context'
+import {ScienceModule} from "../science/science"
+import {PlaceModule} from "../place/place"
+import {FootModule} from "./note/foot"
+import {CommonModule, CommonService, Context, User} from "./common"
 
-import time, {TimeModule} from "../time/time"
-import people, {People, PeopleModule} from "../people/people"
+import {TimeModule} from "../time/time"
+import {People, PeopleModule} from "../people/people"
 import {PlaceDirective} from "../place/rr0-place"
 import {ArticleDirective, OutlineService, SectionDirective} from "./nav/rr0-outline"
 import {Moment} from "../time/Moment"
@@ -26,9 +26,9 @@ import {ImageDirective} from "./nav/rr0-img"
 
 export class Rr0Context extends Context {
 
-  constructor(user: User) {
+  constructor(user: User, commonService: CommonService) {
     super(user)
-    this.time = new Moment()
+    this.time = new Moment(commonService)
   }
 
   setPName(name: string) {
@@ -59,38 +59,41 @@ export class AppController implements TitleScope {
   }
 
   setTitle(newTitle: string) {
-    this.title = newTitle
-    const h1 = document.querySelector("h1") as HTMLHeadingElement
-    let inner: HTMLElement
-    if (this.headController.titleUrl) {
-      const link: HTMLAnchorElement = inner = document.createElement("a")
-      link.href = this.headController.titleUrl
-      h1.replaceChild(inner, h1.children[0])
-    } else {
-      inner = h1
+    if (!this.headController.isFramed()) {
+      this.title = newTitle
+      const h1 = document.querySelector("h1") as HTMLHeadingElement
+      let inner: HTMLElement
+      if (this.headController.titleUrl) {
+        const link: HTMLAnchorElement = inner = document.createElement("a")
+        link.href = this.headController.titleUrl
+        h1.replaceChild(inner, h1.children[0])
+      } else {
+        inner = h1
+      }
+      inner.innerText = newTitle
     }
-    inner.innerText = newTitle
   }
 }
 
 export class Rr0Module {
   leftWidth: number
   user = new User()
-  context = new Rr0Context(this.user)
+  context
   sidePane
   contentsZone = null
   sideCallbacks = []
   textZone = null
   private readonly appController: AppController
 
-  constructor(common: CommonModule, nav: NavModule, private place: PlaceModule, foot: FootModule, context: ContextModule,
+  constructor(private common: CommonModule, nav: NavModule, private place: PlaceModule, foot: FootModule, context: ContextModule,
               science: ScienceModule, private time: TimeModule, private people: PeopleModule, footModule: FootModule) {
-    this.context.time = new Moment()
-    this.appController = new AppController(nav.headController)
+    this.context = new Rr0Context(this.user, common.service)
+    this.context.time = new Moment(common.service)
+    const headController = nav.headController
+    this.appController = new AppController(headController)
     this.initStructure()
     const mapZone = this.getSideZone("map-canvas")
     this.place.mapService.init(mapZone, () => this.place.mapService.onceMapIsLoaded(this.contentsZone, this.toggleMap.bind(this)))
-    const headController = nav.headController
     headController.titleHandlers.push(this.titleFromPeople.bind(this))
     const outlineService = new OutlineService(nav, common.service)
 
@@ -101,7 +104,9 @@ export class Rr0Module {
     directives.push(new TitleDirective(this.appController))
     // Heading
     const searchService = new SearchService()
-    directives.push(new SearchDirective(searchService))
+    if (!headController.isFramed()) {
+      directives.push(new SearchDirective(searchService))
+    }
     // Text
     directives.push(new PlaceDirective(place.service, place.mapService, this))
     directives.push(new SectionDirective(outlineService))
@@ -142,7 +147,7 @@ export class Rr0Module {
    */
   handleTags() {
     const args = arguments
-    common.service.walk(this.textZone, e => {
+    this.common.service.walk(this.textZone, e => {
 //        context.add(e);
       for (let h = 0; h < args.length; h++) {
         if (e.parentNode) {
@@ -261,11 +266,11 @@ export class Rr0Module {
   }
 
   private mapShow() {
-    const sideWidth = rr0.getScreenWidth() - rr0.leftWidth
+    const sideWidth = this.getScreenWidth() - this.leftWidth
     if (sideWidth <= 0) {
-      rr0.leftWidth = rr0.getScreenWidth() * ((100 - 28) / 100)
+      this.leftWidth = this.getScreenWidth() * ((100 - 28) / 100)
     }
-    this.splitWithMap(rr0.leftWidth)
+    this.splitWithMap(this.leftWidth)
     //org.rr0.time.drawChart();
   }
 
@@ -278,6 +283,3 @@ export class Rr0Module {
     return title
   }
 }
-
-const rr0 = new Rr0Module(common, nav, place, foot, context, science, time, people, foot)
-export default rr0

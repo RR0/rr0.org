@@ -1,4 +1,4 @@
-import common from "../src/common"
+import {CommonService} from "common"
 
 export class Moment {
   startDate: any
@@ -12,7 +12,7 @@ export class Moment {
   seconds: number
   approx: any
 
-  constructor() {
+  constructor(private commonService: CommonService) {
     this.clear()
   }
 
@@ -296,7 +296,7 @@ export class Moment {
           break
         case '/':
           parseEnd.call(this)
-          this.startDate = common.service.clone(this)
+          this.startDate = this.commonService.clone(this)
           resetParse.call(this)
           break
         default:

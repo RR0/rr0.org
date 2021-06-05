@@ -1,5 +1,5 @@
-import common, {CommonModule, CommonService, Context} from "../common"
-import lang, {LangModule} from '../lang'
+import {CommonModule, CommonService, Context} from "../common"
+import {LangModule} from '../lang'
 import {AnchorDirective} from "../rr0-a.directive"
 import {Moment} from "../../time/Moment"
 import {HeadController} from "./HeadController"
@@ -113,7 +113,7 @@ export class NavService {
     const rel = document.createElement("link")
     rel.setAttribute("rel", t)
     rel.setAttribute("href", l)
-    common.service.addToHead(rel)
+    this.commonsService.addToHead(rel)
   }
 
   setPrev(p?: string, pLink?: string) {
@@ -284,6 +284,3 @@ export class NavModule {
     this.headController = new HeadController(common.service, lang.service, this.service, common.service.constantClass, this.root)
   }
 }
-
-const nav = new NavModule(common, lang, document)
-export default nav

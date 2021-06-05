@@ -1,5 +1,5 @@
 import {CommonService, Context, SelectorDirective} from "../src/common"
-import time, {TimeService} from "./time"
+import {TimeService} from "./time"
 import {NetService} from "../src/net"
 import {Moment} from "./Moment"
 import {Duration} from "./Duration"
@@ -39,7 +39,7 @@ export class TimeDirective extends SelectorDirective {
   }
 
   async handleTime(el: HTMLElement, dataStr: string, dateTime: string, contextTime: Moment, txt: string) {
-    const decodedTime = new Moment()
+    const decodedTime = new Moment(this.commonsService)
     decodedTime.year = contextTime.getYear()
     decodedTime.month = contextTime.getMonth()
     decodedTime.dayOfMonth = contextTime.getDayOfMonth()

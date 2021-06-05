@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = (env) => {
   return {
     entry: {
-      index: "./src/rr0.ts"
+      index: "./src/index.ts"
     },
     mode: process.env.NODE_ENV || "production",
     devtool: "source-map",

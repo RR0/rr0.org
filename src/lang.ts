@@ -1,5 +1,5 @@
-import net, {NetModule, NetService} from './net'
-import common, {CommonModule, CommonService} from "./common"
+import {NetModule, NetService} from './net'
+import {CommonModule, CommonService} from "./common"
 
 export class LangService {
 
@@ -20,11 +20,12 @@ export class LangService {
      */
   }
 
-  setLang(l?) {
+  setLang(l?: string) {
     if (!l) {
       l = document.documentElement.lang
     }
     this.docLang = l
+    document.documentElement.lang = this.docLang
   }
 
   async checkAlternate(uri, origStatus, transStatus) {
@@ -88,6 +89,3 @@ export class LangModule {
     this.service.setLang()
   }
 }
-
-const lang = new LangModule(common, net)
-export default lang

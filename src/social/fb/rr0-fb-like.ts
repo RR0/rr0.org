@@ -1,4 +1,4 @@
-import common, {Context, SelectorDirective} from "../../common"
+import {Context, SelectorDirective} from "../../common"
 
 interface FbScope {
   urlToLike: string;
@@ -24,6 +24,3 @@ export class FacebookDirective extends SelectorDirective {
     el.innerHTML = `<span id="fb-root"></span><div class="fb-like" style="line-height: 0.7em" data-href="${window.location.href}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>`
   }
 }
-
-const rr0Tweet = new FacebookDirective()
-common.directives.push(rr0Tweet)

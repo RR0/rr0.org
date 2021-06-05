@@ -1,6 +1,7 @@
-import common, {CommonModule, Context, SelectorDirective} from "../src/common"
-import nav, {NavModule} from "../src/nav/nav"
+import {CommonModule, CommonService, Context, SelectorDirective} from "../src/common"
+import {NavModule} from "../src/nav/nav"
 import {Rr0Context, RR0Window} from "../src/rr0"
+import {PeopleAttributeDirective, PeopleClassDirective} from "./rr0-people"
 
 export class People {
   firstName: any
@@ -40,7 +41,7 @@ export class PeopleService {
   authors = []
   copyright
 
-  constructor(private commonsService, private peopleRoot) {
+  constructor(private commonService: CommonService, private peopleRoot) {
   }
 
   getCopyright() {
@@ -77,17 +78,17 @@ export class PeopleService {
    * @param {String} p People's name
    * @param {String} [pLink] a href link, or a symbolic link, or null
    */
-  peopleLink(context: Context, p, pLink) {
+  peopleLink(context: Context, p: string, pLink?: string) {
     if (p) {
       const people = context.people
       if (!pLink) {
-        pLink = common.service.cache[p]
+        pLink = this.commonService.cache[p]
         if (!pLink) {
           (context as Rr0Context).setPName(p)
-          pLink = common.service.cache[people.lastName]
+          pLink = this.commonService.cache[people.lastName]
           if (!pLink) {
             p = (people.lastName + people.firstName)
-            pLink = this.commonsService.validLink(p)
+            pLink = this.commonService.validLink(p)
           } else {
             return pLink
           }
@@ -99,9 +100,9 @@ export class PeopleService {
       if (firstLinkChar !== '.' && firstLinkChar !== '/') {
         pLink = this.peopleRoot + firstLinkChar.toLowerCase() + "/" + pLink
       }
-      pLink = this.commonsService.validLink(pLink)
-      common.service.cache[p] = pLink
-      common.service.cache[people.lastName] = pLink
+      pLink = this.commonService.validLink(pLink)
+      this.commonService.cache[p] = pLink
+      this.commonService.cache[people.lastName] = pLink
     } else {
       pLink = null
     }
@@ -119,6 +120,8 @@ export class PeopleModule {
     const commonService = common.service
     this.service = new PeopleService(commonService, this.peopleRoot)
     const self = this
+    common.directives.push(new PeopleClassDirective(commonService, this.service))
+    common.directives.push(new PeopleAttributeDirective(this.service))
     common.directives.push(new class extends SelectorDirective {
       protected async handle(context: Context, el: HTMLElement) {
         self.handleWitness(null, el)
@@ -169,6 +172,3 @@ export class PeopleModule {
     }
   }
 }
-
-const people = new PeopleModule(nav, common)
-export default people

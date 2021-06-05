@@ -18,8 +18,6 @@ export class TitleDirective extends SelectorDirective {
   }
 
   protected async handle(context: Context, el: HTMLElement) {
-    if (el.innerText.indexOf('{{') < 0) {
-      this.scope.setTitle(el.innerText)
-    }
+    this.scope.setTitle(el.innerText)
   }
 }

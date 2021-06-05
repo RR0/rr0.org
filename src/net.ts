@@ -1,4 +1,4 @@
-import common, {CommonModule, CommonService} from './common'
+import {CommonModule, CommonService} from './common'
 
 export class NetService {
 
@@ -38,7 +38,7 @@ export class NetService {
       if (!replacement) {
         replacement = toReplace
       }
-      const newText = common.service.text(e).replace(toReplace, replacement)  // Replace text early, the link will
+      const newText = this.commonsService.text(e).replace(toReplace, replacement)  // Replace text early, the link will
       // come later
       if (e.nodeType === Node.TEXT_NODE) {
         e.nodeValue = newText
@@ -54,7 +54,7 @@ export class NetService {
           const pLink = this.commonsService.parentLink(l)
           const currentURI = this.commonsService.getUri()
           if (currentURI.indexOf("/time/") < 0 && l !== pLink) {    // TODO: should ask time module
-            common.service.log(`failed ${l} trying ${pLink} for e'sparent=${e.parentNode}`)
+            this.commonsService.log(`failed ${l} trying ${pLink} for e'sparent=${e.parentNode}`)
             cacheIt = false
             await this.checkedLink(e, toReplace, pLink, replacement, cacheIt, t)
             console.log(`checked ${l}`)
@@ -64,7 +64,7 @@ export class NetService {
         if (await this.onExists(l)) {
           if (l !== "/time/0/0/") {                             // TODO: should ask time module
             if (await this.onExists(`${l}/index.html`)) {
-              common.service.log(`found link ${l} for e'sparent=${e.parentNode}`)
+              this.commonsService.log(`found link ${l} for e'sparent=${e.parentNode}`)
               e = this.linkify(e, replacement, l, replacement, cacheIt)
               if (t) {
                 e.title = t
@@ -92,12 +92,12 @@ export class NetService {
    */
   private linkify(e: HTMLElement, k: string, l: string, r: string, cacheIt: boolean) {
     const uri = this.commonsService.getUri()
-    if (!common.service.hasClass(e, this.constantClass) && l !== uri && (l + "/") !== uri) {
-      const txt = common.service.text(e)
+    if (!this.commonsService.hasClass(e, this.constantClass) && l !== uri && (l + "/") !== uri) {
+      const txt = this.commonsService.text(e)
       if (txt) {
         const pos = txt.indexOf(k)
         if (pos >= 0) {
-          common.service.log(`linkify('${txt}', ${k}, '${l}' for e'sparent=${e.parentNode}`)
+          this.commonsService.log(`linkify('${txt}', ${k}, '${l}' for e'sparent=${e.parentNode}`)
           if (!r) {
             r = k
           }
@@ -106,7 +106,7 @@ export class NetService {
             text1 = document.createTextNode(txt.substring(0, pos))
           }
           const re = document.createTextNode(r)
-          const le = common.service.linkElement(l, re)
+          const le = this.commonsService.linkElement(l, re)
           const endPos = pos + k.length
           let text2
           if (endPos < txt.length) {
@@ -123,7 +123,7 @@ export class NetService {
             }
           }
           if (cacheIt) {
-            common.service.toLink(l, r)
+            this.commonsService.toLink(l, r)
           }
           e = le
         }
@@ -140,6 +140,3 @@ export class NetModule {
     this.service = new NetService(common.service, common.service.constantClass)
   }
 }
-
-const net = new NetModule(common)
-export default net

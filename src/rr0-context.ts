@@ -1,8 +1,8 @@
-import common, {Context, SelectorDirective} from "./common"
+import {CommonModule, Context, SelectorDirective} from "./common"
 
 export class ContextModule {
 
-  constructor() {
+  constructor(common: CommonModule) {
     common.directives.push(new class extends SelectorDirective {
       protected async handle(context: Context, el: HTMLElement) {
       }
@@ -13,6 +13,3 @@ export class ContextModule {
     }("time"))
   }
 }
-
-const context = new ContextModule()
-export default context

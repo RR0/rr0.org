@@ -141,7 +141,7 @@ export class CommonService {
     return found
   }
 
-  isNumber(o: any) {
+  isNumber(o: any): boolean {
     return o && !isNaN(o - 0)
   }
 
@@ -469,6 +469,3 @@ export class CommonModule {
     this.directives.push(codeDirective)
   }
 }
-
-const common = new CommonModule()
-export default common

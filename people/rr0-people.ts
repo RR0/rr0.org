@@ -1,5 +1,5 @@
-import people from "./people"
-import common from "common"
+import {CommonService, Context, SelectorDirective} from "../src/common"
+import {PeopleService} from "./people"
 
 interface PeopleScope {
   id: string;
@@ -9,47 +9,42 @@ interface PeopleScope {
   };
 }
 
-export default peopleModule => {
-  peopleModule
-    .directive('people', ['peopleService', function (peopleService) {
-      'use strict';
-      return {
-        restrict: 'C',
-        transclude: true,
-        scope: true,
-        template: "<a href='{{::href}}' translate='no' ng-transclude></a>",
-        link: function (scope: PeopleScope, elem, attrs) {
-          scope.id = 'people' + scope.id;
-          var txt = common.service.text(elem[0])
-          var nameKey = attrs.title    // Alternate (correct for link) name?
-          var peopleName = txt;
-          if (peopleName.length <= 0) {
-            peopleName = nameKey;
-            elem.val(peopleName);
-          }
-          scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
-        }
-      };
-    }])
-    .directive('people', ['peopleService', function (peopleService) {
-      'use strict';
-      return {
-        restrict: 'A',
-        scope: {
-          people: '='
-        },
-        template: "<a href='{{::href}}' translate='no'>{{::people.name}}</a>",
-        link: function (scope: PeopleScope, elem, attrs) {
-          scope.id = 'people' + scope.id;
-          var txt = scope.people.name;
-          var nameKey = attrs.title;    // Alternate (correct for link) name?
-          var peopleName = txt;
-          if (peopleName.length <= 0) {
-            peopleName = nameKey;
-            elem.val(peopleName);
-          }
-          scope.href = peopleService.peopleLink(nameKey ? nameKey : peopleName);
-        }
-      };
-    }]);
+export class PeopleClassDirective extends SelectorDirective {
+
+  constructor(private commonService: CommonService, private peopleService: PeopleService) {
+    super(".people")
+  }
+
+  protected async handle(context: Context, el: HTMLElement) {
+    // const id = 'people' + scope.id
+    const txt = this.commonService.text(el)
+    const nameKey = el.title     // Alternate (correct for link) name?
+    let peopleName = txt
+    if (peopleName.length <= 0) {
+      peopleName = nameKey
+      el.innerText = peopleName
+    }
+    const href = this.peopleService.peopleLink(context, nameKey ? nameKey : peopleName)
+    el.innerHTML = `<a href="${href}" translate="no">${el.innerHTML}</a>`
+  }
+}
+
+export class PeopleAttributeDirective extends SelectorDirective {
+  constructor(private peopleService: PeopleService) {
+    super("*[people]")
+  }
+
+  async handle(context: Context, el: HTMLElement): Promise<void> {
+    // scope.id = 'people' + scope.id
+    const people = context.people
+    const txt = people.name
+    const nameKey = el.title     // Alternate (correct for link) name?
+    let peopleName = txt
+    if (peopleName.length <= 0) {
+      peopleName = nameKey
+      el.innerText = peopleName
+    }
+    const href = this.peopleService.peopleLink(context, nameKey ? nameKey : peopleName)
+    el.innerHTML = `<a href="${href}" translate="no">${people.name}</a>`
+  }
 }

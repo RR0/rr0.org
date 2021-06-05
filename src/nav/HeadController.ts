@@ -22,6 +22,7 @@ export class HeadController {
   private titleSection: Section
   private outline: string
   private $scope: TitleScope
+  private outlineTitle: HTMLElement
 
   constructor(private commonsService: CommonService, private langService: LangService, private navigationService: NavService,
               private constantClass: string, private root: ParentNode) {
@@ -125,6 +126,8 @@ export class HeadController {
   async init(context: Context, s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
 
     const self = this
+    this.outlineTitle = document.querySelector(".outline-title") as HTMLElement
+    this.outlineTitle.onclick = () => this.scrollTo("contents")
 
     function navInit(s?, sLink?, c?, cLink?, p?, pLink?, n?, nLink?) {
       const onLoadDo = self.navigationService.setStart(s, sLink)
@@ -171,7 +174,7 @@ export class HeadController {
     this.updatePos()
   }
 
-  sectionClick(section) {
+  sectionClick(section: Section) {
     this.scrollTo(section.id)
   }
 
@@ -226,8 +229,8 @@ export class HeadController {
     this.updatePos()
   }
 
-  private smoothScroll(anchor, duration) {
-    const easingPattern = function (percent) {
+  private smoothScroll(anchor: HTMLElement, duration: number) {
+    const easingPattern = (percent) => {
       return percent < 0.5 ? 4 * percent * percent * percent : (percent - 1) * (2 * percent - 2) * (2 * percent - 2) + 1 // acceleration until halfway, then deceleration
     }
     // Get the height of a fixed header if one exists
@@ -308,17 +311,17 @@ export class HeadController {
     }
   }
 
-  private isHeaderVisible() {
-    return window === top && this.scrolled.scrollTop <= this.header.offsetHeight
+  private isHeaderVisible(): boolean {
+    return !this.isFramed() && this.scrolled.scrollTop <= this.header.offsetHeight
   }
 
-  private setOutline(outlineHTML) {
+  private setOutline(outlineHTML: string) {
     this.outline = outlineHTML
-    document.querySelector(".outline-title").innerHTML = outlineHTML
+    this.outlineTitle.innerHTML = outlineHTML
   }
 
-  private updateSearchPos(triggerSelector) {
-    const trigger = this.root.querySelector(triggerSelector)
+  private updateSearchPos(triggerSelector: string) {
+    const trigger = this.root.querySelector(triggerSelector) as HTMLElement
     if (trigger) {
       if (!this.searchResults) {
         this.searchResults = this.root.querySelector('.search-result')

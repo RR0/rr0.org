@@ -1,4 +1,4 @@
-import common, {Context, SelectorDirective} from "../common"
+import {Context, SelectorDirective} from "../common"
 
 export class TweetDirective extends SelectorDirective {
 
@@ -16,6 +16,3 @@ export class TweetDirective extends SelectorDirective {
     el.innerHTML = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>'
   }
 }
-
-const rr0Tweet = new TweetDirective()
-common.directives.push(rr0Tweet)

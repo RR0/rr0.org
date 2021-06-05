@@ -1,4 +1,4 @@
-import common, {CommonModule, Context, SelectorDirective} from "../common"
+import {CommonModule, Context, SelectorDirective} from "../common"
 
 /*
  * Foot notes and sources references
@@ -88,6 +88,3 @@ export class FootCtrl {
     return window !== top
   }
 }
-
-const foot = new FootModule(common, document)
-export default foot

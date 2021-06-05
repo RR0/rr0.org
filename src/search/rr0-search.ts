@@ -6,7 +6,7 @@ const template = require("./rr0-search.html").default
 export class SearchDirective extends SelectorDirective {
 
   constructor(private searchService: SearchService) {
-    super(".search")
+    super("#rr0-search")
   }
 
   async doSearch(searchInput: string, el: HTMLElement) {

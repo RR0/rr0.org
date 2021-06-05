@@ -1,11 +1,11 @@
-import common, {CommonModule} from "../src/common"
+import {CommonModule, CommonService} from "../src/common"
 
-import people from '../people/people'
-import nav, {NavModule} from "../src/nav/nav"
-import lang, {LangModule} from "../src/lang"
-import net, {NetModule} from "../src/net"
+import {NavModule} from "../src/nav/nav"
+import {LangModule} from "../src/lang"
+import {NetModule} from "../src/net"
 import {TimeDirective} from "./rr0-time"
 import {Moment} from "./Moment"
+import {PeopleModule} from "../people/people"
 
 declare var google
 
@@ -55,7 +55,7 @@ export class TimeService {
     ]
   }
 
-  constructor(private $locale, private timeRoot, private commonsService) {
+  constructor(private $locale, private timeRoot, private commonsService: CommonService, private people: PeopleModule) {
     /*const paramLang = function (lang) {
       return (!lang) ? rr0.context.language : lang
     }*/
@@ -71,7 +71,7 @@ export class TimeService {
       yLink = self.yearLink(y)
     }
     if (!t) {
-      const p = (<any>people).getPeople()
+      const p = (<any>this.people).getPeople()
       if (p) {
         t = p.toString()
         if (p.born) {
@@ -82,7 +82,7 @@ export class TimeService {
       }
     }
     if (y) {
-      s += common.service.link(yLink, y, t)
+      s += this.commonsService.link(yLink, y, t)
     }
     return s
   }
@@ -195,12 +195,12 @@ export class TimeService {
       let dateLink = this.yearLink(y)
       if (m) {
         newDate.setMonth(m)
-        dateLink += `/${common.service.zero(m)}`
+        dateLink += `/${this.commonsService.zero(m)}`
         if (d) {
           newDate.setDate(d)
 //                s = "le ";
           s += this.addDayOfMonth(t, d)
-          dateLink += `/${common.service.zero(d)}`
+          dateLink += `/${this.commonsService.zero(d)}`
         } else {
 //                s = "en ";
         }
@@ -283,15 +283,15 @@ export class TimeService {
         t.year = 0
         let mul = 1000
         for (let i = 2; i < parts.length; i++) {
-          const v = parts[i]
-          if (common.service.isNumber(v)) {
+          const v: number = parseInt(parts[i], 10)
+          if (this.commonsService.isNumber(v)) {
             if (i <= 5) {
               t.year += v * mul
               mul /= 10
             } else if (!t.month) {
-              t.month = parseInt(v, 10)
+              t.month = v
             } else if (!t.dayOfMonth) {
-              t.dayOfMonth = parseInt(v, 10)
+              t.dayOfMonth = v
             }
           } else {
             break
@@ -523,7 +523,7 @@ export class TimeModule {
     "Au", "Le", "Du", "À", "Vers", "Jusqu'au"]
   readonly service: TimeService
 
-  constructor(private common: CommonModule, lang: LangModule, nav: NavModule, private net: NetModule) {
+  constructor(private common: CommonModule, lang: LangModule, private nav: NavModule, private net: NetModule, people: PeopleModule) {
     const navigationService = nav.service
     navigationService.addStart({
         dir: this.timeRoot,
@@ -561,7 +561,7 @@ export class TimeModule {
      } else {
      console.warn("Google API is not loaded");
      }*/
-    this.service = new TimeService(lang.userLang, this.timeRoot, common.service)
+    this.service = new TimeService(lang.userLang, this.timeRoot, common.service, people)
     common.directives.push(new TimeDirective(common.service, net.service, this.service))
   }
 
@@ -575,7 +575,7 @@ export class TimeModule {
    * @return the found time sibling, if any
    */
   async findTimeSibling(t: Moment, oy, m, changeProc) {
-    common.service.log('Looking for time sibling of %o-%o', oy, m)
+    this.common.service.log('Looking for time sibling of %o-%o', oy, m)
     const ret = changeProc(oy, m)
     const y = ret.y
     let l = this.service.yearLink(y)
@@ -583,7 +583,7 @@ export class TimeModule {
     let label = y
     const self = this
     if (m) {
-      nav.service.setContents(oy, this.service.yearLink(oy))
+      this.nav.service.setContents(oy, this.service.yearLink(oy))
       l += "/" + this.common.service.zero(m)
       label = this.service.monthName(m)
       if (y !== t.year) {
@@ -592,13 +592,13 @@ export class TimeModule {
     } else {
       const cLink = this.service.yearLink(oy, true)
       if (cLink !== this.common.service.getUri()) {
-        nav.service.setContents(~~(oy / 10) + "0s", cLink)
+        this.nav.service.setContents(~~(oy / 10) + "0s", cLink)
       }
     }
     const lExists = await this.net.service.onExists(l)
     if (lExists) {
       const foundSibling = {label: label, link: l}
-      common.service.log('Found sibling %o', foundSibling)
+      this.common.service.log('Found sibling %o', foundSibling)
       return foundSibling
     } else {
       const currentDate = new Date()
@@ -663,7 +663,3 @@ export class TimeModule {
     })
   }
 }
-
-const time = new TimeModule(common, lang, nav, net)
-export default time
-

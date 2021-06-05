@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="rr0" lang="{{app.lang}}" ng-controller="AppController as app">
+<html lang="fr">
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <link href="./print.css" media="print" rel="stylesheet" type="text/css"/>
@@ -24,9 +24,9 @@
 </head>
 <body>
 <div class="contents no-side">
-  <div data-ng-controller="HeadController">
+  <div>
     <header>
-      <h1 data-ng-show="!isFramed()"><span></span></h1>
+      <h1><span></span></h1>
     </header>
     <nav>
       <h1>Navigation</h1>
@@ -34,13 +34,10 @@
         <li class="constant" data-ng-if="!isFramed()">
           <a class="home" data-ng-href="/" href="/"> <span class="label" title="Home">RR0</span> </a>
         </li>
-        <li class="constant" data-ng-show="!isFramed()">
-          <div class="search"></div>
-        </li>
-        <li class="collapsed" data-ng-if="!isFramed()"><i class="fa fa-angle-right"></i></li>
+        <li id="rr0-search"></li>
         <li class="constant prev"></li>
         <li class="constant" data-ng-click="titleClick()" tabindex="100">
-          <a class="outline-title" data-ng-click="sectionClick('#contents')" href="#contents" id="out-top"> <span
+          <a class="outline-title" href="#contents"> <span
               class="constant" title="Début de l'article"></span> </a>
           <ul class="outline"></ul>
         </li>
@@ -127,6 +124,19 @@
               class="source">GEPAN: <a
               href="http://www.geipan.fr/index.php?id=202&cas=1976-08-00336">PAN classé B</a></span>.</li>
       </ul>
+    </section>
+    <section>
+      <h2>Section 2</h2>
+      <p>This is section 2.</p>
+      <section>
+        <h3>This is section 2.1</h3>
+        <p>Hey section 2.1 here.</p>
+        <p>Speaking of <span class="people">William Hershell</span>.</p>
+      </section>
+      <section>
+        <h3>This is section 2.2</h3>
+        <p>Hey section 2.2 here.</p>
+      </section>
     </section>
 
     <footer data-ng-controller="FootCtrl">

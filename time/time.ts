@@ -55,13 +55,13 @@ export class TimeService {
     ]
   }
 
-  constructor(private $locale, private timeRoot, private commonsService: CommonService, private people: PeopleModule) {
+  constructor(private $locale, private timeRoot, private commonsService: CommonService) {
     /*const paramLang = function (lang) {
       return (!lang) ? rr0.context.language : lang
     }*/
   }
 
-  addYear(time: Moment, y, yLink, t) {
+  addYear(time: Moment, y: number, yLink?: string, moment?: Moment): string {
     const self = this
     let s = ""
     if (!y) {
@@ -70,19 +70,22 @@ export class TimeService {
     if (!yLink) {
       yLink = self.yearLink(y)
     }
-    if (!t) {
-      const p = (<any>this.people).getPeople()
+    let title: string
+    if (moment) {
+      title = moment.toString()
+    } else {
+      /*const p = (<any>this.people).getPeople()
       if (p) {
-        t = p.toString()
+        title = p.toString()
         if (p.born) {
-          t += " a " + (y - p.born.getFullYear()) + " ans"
+          title += ` a ${y - p.born.getFullYear()} ans`
         } else {
-          t = "Naissance de " + t
+          title = `Naissance de ${title}`
         }
-      }
+      }*/
     }
     if (y) {
-      s += this.commonsService.link(yLink, y, t)
+      s += this.commonsService.link(yLink, y.toString(), title.toString())
     }
     return s
   }
@@ -237,7 +240,7 @@ export class TimeService {
    * @param decade if the year (such as "1950") is to be understood as a decade (1950s).
    * @returns {string} The link
    */
-  yearLink(y, decade?) {
+  yearLink(y, decade?): string {
     const yString = y.toString()
     let yLink = this.timeRoot
     let pos = 0
@@ -561,7 +564,7 @@ export class TimeModule {
      } else {
      console.warn("Google API is not loaded");
      }*/
-    this.service = new TimeService(lang.userLang, this.timeRoot, common.service, people)
+    this.service = new TimeService(lang.userLang, this.timeRoot, common.service)
     common.directives.push(new TimeDirective(common.service, net.service, this.service))
   }
 

@@ -24,7 +24,7 @@ export class TimeDirective extends SelectorDirective {
       const durMax = new Duration()
       durationMax = durMax.fromString(maxString).toString()
       const durationMin = new Duration().fromString(dataStr).toString(durMax.unit.name)
-      durationStr = durationMin + " \xE0 " + durationMax
+      durationStr = `${durationMin} \xE0 ${durationMax}`
     } else {
       durationStr = new Duration().fromString(dataStr).toString()
     }
@@ -54,10 +54,10 @@ export class TimeDirective extends SelectorDirective {
       r.replacement = this.commonsService.capitalizeFirstLetter(r.replacement)
     }
     dataStr = this.timeService.toISOString(decodedTime)
-    await this.netService.checkedLink(el, txt, r.timeLink, r.replacement, false, r.title)
     if (!dateTime) {
       el.setAttribute("datetime", dataStr)
     }
+    await this.netService.checkedLink(el, txt, r.timeLink, r.replacement, false, r.title)
   }
 
   protected async handle(context: Context, el: HTMLElement) {
@@ -67,7 +67,7 @@ export class TimeDirective extends SelectorDirective {
       this.handleDuration(el, txt, dateTime)
     } else {
       let dataStr = dateTime ? dateTime : txt
-      await this.handleTime(el, dataStr, dateTime, context.time, txt)
+      return this.handleTime(el, dataStr, dateTime, context.time, txt)
     }
   }
 }

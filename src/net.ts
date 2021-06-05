@@ -25,14 +25,14 @@ export class NetService {
    *
    * @param e The element to replace into
    * @param toReplace The text to link in the element contents
-   * @param l The link address
+   * @param link The link address
    * @param replacement The replacement text, if different from toReplace
    * @param {boolean} cacheIt If the association text->link should be cached (if no fallback)
-   * @param {string} [t] title on the link
+   * @param {string} [title] title on the link
    */
-  async checkedLink(e: HTMLElement, toReplace, l, replacement, cacheIt, t) {
-    if (l) {
-      l = this.commonsService.addEndingSlash(l)
+  async checkedLink(e: HTMLElement, toReplace: string, link: string, replacement: string, cacheIt: boolean, title: string) {
+    if (link) {
+      link = this.commonsService.addEndingSlash(link)
     }
     if (e.className !== this.constantClass) {
       if (!replacement) {
@@ -45,29 +45,29 @@ export class NetService {
       } else {
         e.innerHTML = newText
       }
-      if (t) {
-        e.title = t
+      if (title) {
+        e.title = title
       }
-      if (l && l !== this.commonsService.getUri()) {
+      if (link && link !== this.commonsService.getUri()) {
         toReplace = replacement
         const failProc = async () => {
-          const pLink = this.commonsService.parentLink(l)
+          const pLink = this.commonsService.parentLink(link)
           const currentURI = this.commonsService.getUri()
-          if (currentURI.indexOf("/time/") < 0 && l !== pLink) {    // TODO: should ask time module
-            this.commonsService.log(`failed ${l} trying ${pLink} for e'sparent=${e.parentNode}`)
+          if (currentURI.indexOf("/time/") < 0 && link !== pLink) {    // TODO: should ask time module
+            this.commonsService.log(`failed ${link} trying ${pLink} for e'sparent=${e.parentNode}`)
             cacheIt = false
-            await this.checkedLink(e, toReplace, pLink, replacement, cacheIt, t)
-            console.log(`checked ${l}`)
+            await this.checkedLink(e, toReplace, pLink, replacement, cacheIt, title)
+            console.log(`checked ${link}`)
           }
         }
 
-        if (await this.onExists(l)) {
-          if (l !== "/time/0/0/") {                             // TODO: should ask time module
-            if (await this.onExists(`${l}/index.html`)) {
-              this.commonsService.log(`found link ${l} for e'sparent=${e.parentNode}`)
-              e = this.linkify(e, replacement, l, replacement, cacheIt)
-              if (t) {
-                e.title = t
+        if (await this.onExists(link)) {
+          if (link !== "/time/0/0/") {                             // TODO: should ask time module
+            if (await this.onExists(`${link}/index.html`)) {
+              this.commonsService.log(`found link ${link} for e'sparent=${e.parentNode}`)
+              e = this.linkify(e, replacement, link, replacement, cacheIt)
+              if (title) {
+                e.title = title
               }
             } else {
               return failProc()

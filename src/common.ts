@@ -254,10 +254,10 @@ export class CommonService {
     return se
   }
 
-  linkStart(l, t) {
-    let sp = `<a href="${this.validLink(l)}"`
-    if (t) {
-      sp += ` title="${t}"`
+  linkStart(link: string, title: string): string {
+    let sp = `<a href="${this.validLink(link)}"`
+    if (title) {
+      sp += ` title="${title}"`
     }
     return `${sp}>`
   }
@@ -284,14 +284,14 @@ export class CommonService {
     return le
   }
 
-  link(l, contents, t) {
-    return this.linkStart(l, t) + contents + "</a>"
+  link(link: string, contents: string, title: string): string {
+    return `${this.linkStart(link, title)}${contents}</a>`
   }
 
 //var cache = pageCache;
   toLink(l, k) {
     l = this.addEndingSlash(l)
-    this.log("caching " + k + " as " + l)
+    this.log(`caching ${k} as ${l}`)
     this.cache[k] = l
   }
 
@@ -372,8 +372,8 @@ export class CommonService {
     return this.docUri
   }
 
-  validLink(l) {
-    this.log('validLink(' + l + ')')
+  validLink(l: string) {
+    this.log(`validLink(${l})`)
     l = l.replace(/\n/g, ' ')
       .replace(/(\u00E0|\u00E1|\u00E2|\u00E4)/g, 'a')
       .replace(/\u00E7/g, 'c')

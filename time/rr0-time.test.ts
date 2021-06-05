@@ -4,7 +4,6 @@ import {TimeService} from "./time"
 import {Moment} from "./Moment"
 import {LangModule} from "lang"
 import {NetModule} from "../src/net"
-import {PeopleModule} from "../people/people"
 import {NavModule} from "nav/nav"
 
 const common = new CommonModule()
@@ -17,10 +16,9 @@ root.appendChild(contents)
 const nav = new NavModule(common, lang, root)
 let timeService: TimeService
 const commonsService = common.service
-const people = new PeopleModule(nav, common)
 
 beforeEach(() => {
-  timeService = new TimeService(lang.userLang, "/time/", commonsService, people)
+  timeService = new TimeService(lang.userLang, "/time/", commonsService)
 })
 
 test('converts ISO date', () => {
@@ -33,7 +31,7 @@ test('converts ISO date', () => {
   anchorDirective.execute(context, element)
   const child = element.children[0]
   const dateStr = "Samedi 12 Août 1972"
-  expect(child.outerHTML).toEqual(`<time title="${dateStr}" datetime="${isoDate}">${dateStr}</time>`)
+  expect(child.outerHTML).toEqual(`<time datetime="${isoDate}" title="${dateStr}">${dateStr}</time>`)
 })
 
 test('converts ISO date and time', () => {
@@ -48,5 +46,5 @@ test('converts ISO date and time', () => {
   anchorDirective.execute(context, element)
   const child = element.children[0]
   const dateStr = "Samedi 12 Août 1972"
-  expect(child.outerHTML).toEqual(`<time title="${dateStr}, à ${time}" datetime="${isoDate}T${time}">${dateStr} à ${time}</time>`)
+  expect(child.outerHTML).toEqual(`<time datetime="${isoDate}T${time}" title="${dateStr}, à ${time}">${dateStr} à ${time}</time>`)
 })

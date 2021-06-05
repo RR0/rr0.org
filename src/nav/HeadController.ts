@@ -72,7 +72,7 @@ export class HeadController {
       const sec = this.sections[i]
       const item = document.createElement("li")
       const id = sec.id
-      item.innerHTML = `<a data-ng-href="#${id}" id="out-${id}">${sec.outlineLabel}</span></a>`
+      item.innerHTML = `<a href="#${id}" id="out-${id}">${sec.outlineLabel}</span></a>`
       item.className = "constant"
       item.tabIndex = 100 + i
       item.onclick = () => this.sectionClick(sec)

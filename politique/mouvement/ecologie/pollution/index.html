@@ -8,10 +8,10 @@
   <script type="text/javascript">
 
     // Load the Visualization API and the corechart package.
-    google.charts.load('current', {packages: ['corechart'], 'language': 'fr'});
+    google.charts.load("current", {packages: ["corechart"], "language": "fr"})
 
     // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart)
 
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
@@ -19,16 +19,16 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Source d'énergie",
-          'Émission directes', "Infrastructure et chaîne d'approvisionnement", 'Rejets de méthane',
-          {role: 'annotation'}],
-        ['Nucléaire', 0, {v: 6, f: "six"}, 0, '6'],
-        ['Éolien', 0, 14, 0, '14'],
-        ['Géothermie', 0, 45, 0, '45'],
-        ['Solaire PV', 0, 55, 0, '55'],
-        ['Hydroélectricité', 0, 8, 140, "6 à 140"],
-        ['Gaz naturel', 380, 1, 48, "418"],
-        ['Charbon', 1000, 2, 60, "1060"],
-      ]);
+          "Émission directes", "Infrastructure et chaîne d'approvisionnement", "Rejets de méthane",
+          {role: "annotation"}],
+        ["Nucléaire", 0, {v: 6, f: "six"}, 0, "6"],
+        ["Éolien", 0, 14, 0, "14"],
+        ["Géothermie", 0, 45, 0, "45"],
+        ["Solaire PV", 0, 55, 0, "55"],
+        ["Hydroélectricité", 0, 8, 140, "6 à 140"],
+        ["Gaz naturel", 380, 1, 48, "418"],
+        ["Charbon", 1000, 2, 60, "1060"]
+      ])
       var options = {
         title: "Intensité carbone de l'électricité",
         width: 800, height: 800,
@@ -37,22 +37,22 @@
           maxValue: 1000,
           ticks: [0, 200, 400, 600, 800, 1000]
         },
-        legend: {position: 'bottom', maxLines: 3},
-        bar: {groupWidth: '50%'},
+        legend: {position: "bottom", maxLines: 3},
+        bar: {groupWidth: "50%"},
         isStacked: true,
         series: {
-          0: {color: 'rgb(88,129,184)'},
-          1: {color: 'rgb(164,186,103)'},
-          2: {color: 'rgb(181,88,84)'}
+          0: {color: "rgb(88,129,184)"},
+          1: {color: "rgb(164,186,103)"},
+          2: {color: "rgb(181,88,84)"}
         },
         vAxes: {
-          0: {title: 'émissions (en gCO2éq/KWh)'},
-        },
-      };
+          0: {title: "émissions (en gCO2éq/KWh)"}
+        }
+      }
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
+      var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"))
+      chart.draw(data, options)
     }
   </script>
 </head>
@@ -105,16 +105,15 @@
     </nav>
   </div>
   <div class="text">
-
     <p>La pollution est une conséquence nocive pour l'environnement et/ou la santé d'une activité humaine.</p>
     <p>Des exemples de problématiques de pollution sont :</p>
     <ul>
-      <li>réchauffement climatique (suite à l'accumulation de <a href="ges">GES</a> émis, notamment par des techniques
-        de <a href="..">production d'énergie</a>)</li>
-      <li>production de <a href="dechets">déchets</a> (et leur taux de recyclage) induites par la consommation et
-        certaines techniques de <a href="..">production d'énergie</a> ou </li>
+      <li>le <b>réchauffement climatique</b> (suite à l'accumulation de <a href="ges">GES</a> émis, notamment par des
+        techniques de <a href="..">production d'énergie</a>)</li>
+      <li>la production de <a href="dechets"><b>déchets</b></a> (et leur taux de <b>recyclage</b>) induites par la
+        consommation et certaines techniques de <a href="..">production d'énergie</a></li>
       <li>la <a href="CoucheOzone.html">couche d'ozone</a></li>
-      <li>la pollution atmosphérique (particules fines, cancérigènes)</li>
+      <li>la pollution <b>atmosphérique</b> (particules fines, cancérigènes)</li>
     </ul>
     <section>
       <h2>Comparaison</h2>

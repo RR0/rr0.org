@@ -45,12 +45,15 @@
         hors stockage ou appoint)</li>
       <li>biomasse bois (faible émission mais 1500 gCO<sub>2</sub>/kWh sans replantation)</li>
     </ul>
+    <iframe frameborder="0" height="609" scrolling="no" seamless
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwudzOJGiFSfwGIxeChlywcT4oQudhgnQx4Nqztqu0AdGugmlCoD-7_kgIXG3rHD96Lc_14A_ngPZq/pubchart?oid=1815863873&amp;format=interactive"
+        width="985"></iframe>
   </section>
 </section>
 <script src="https://unpkg.com/kekule/dist/kekule.js?modules=chemWidget"></script>
 <script>
   // Create a simple CO2 molecule
-  var mol = new Kekule.Molecule();
+  var mol = new Kekule.Molecule()
   /*  var atomC = mol.appendAtom('C');
     var atomO1 = mol.appendAtom('O');
     var atomO2 = mol.appendAtom('O');
@@ -58,21 +61,21 @@
     mol.appendBond([atomC, atomO2], 2);
   */
   // add three atoms to molecule, property setter can be called cascadely
-  var c = (new Kekule.Atom()).setSymbol('C').setCoord2D({'x': 0, 'y': 0});
-  var o1 = (new Kekule.Atom()).setSymbol('O').setCoord2D({'x': -0.4, 'y': 0});
-  var o2 = (new Kekule.Atom()).setSymbol('O').setCoord2D({'x': 0.4, 'y': 0});
-  mol.appendNode(c);
-  mol.appendNode(o1);
-  mol.appendNode(o2);
+  var c = (new Kekule.Atom()).setSymbol("C").setCoord2D({"x": 0, "y": 0})
+  var o1 = (new Kekule.Atom()).setSymbol("O").setCoord2D({"x": -0.4, "y": 0})
+  var o2 = (new Kekule.Atom()).setSymbol("O").setCoord2D({"x": 0.4, "y": 0})
+  mol.appendNode(c)
+  mol.appendNode(o1)
+  mol.appendNode(o2)
   // add three bonds to molecule
-  var co1 = (new Kekule.Bond()).setBondOrder(2).setConnectedObjs([c, o1]);
-  var co2 = (new Kekule.Bond()).setBondOrder(2).setConnectedObjs([c, o2]);
-  mol.appendConnector(co1);
-  mol.appendConnector(co2);
+  var co1 = (new Kekule.Bond()).setBondOrder(2).setConnectedObjs([c, o1])
+  var co2 = (new Kekule.Bond()).setBondOrder(2).setConnectedObjs([c, o2])
+  mol.appendConnector(co1)
+  mol.appendConnector(co2)
 
-  var chemViewer = new Kekule.ChemWidget.Viewer(document.getElementById('molecule'));
-  chemViewer.setDimension('100px', '100px');
-  chemViewer.setZoom(1.5);
-  chemViewer.setChemObj(mol);
+  var chemViewer = new Kekule.ChemWidget.Viewer(document.getElementById("molecule"))
+  chemViewer.setDimension("100px", "100px")
+  chemViewer.setZoom(1.5)
+  chemViewer.setChemObj(mol)
 </script>
 <!--#include virtual="/footer.html" -->

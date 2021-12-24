@@ -1,5 +1,5 @@
 import {CommonModule, CommonService, Context, SelectorDirective} from "../src/common"
-import {NavModule} from "../src/nav/nav"
+import {NavModule} from "nav/nav"
 import {Rr0Context, RR0Window} from "../src/rr0"
 import {PeopleAttributeDirective, PeopleClassDirective} from "./rr0-people"
 

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack serve --open",
     "watch": "webpack --watch",
+    "prebuild": "npm install",
     "build": "webpack",
     "test": "jest --coverage"
   },

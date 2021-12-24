@@ -1,35 +1,37 @@
 RR0  [![Build Status](https://travis-ci.org/RR0/rr0.org.svg?branch=master)](https://travis-ci.org/RR0/rr0.org) [![Code Climate](https://codeclimate.com/github/RR0/rr0.org/badges/gpa.svg)](https://codeclimate.com/github/RR0/rr0.org) [![Test Coverage](https://codeclimate.com/github/RR0/rr0.org/badges/coverage.svg)](https://codeclimate.com/github/RR0/rr0.org)
 ===
 
-RR0 is a client-side library that aims to ease the display of testimonial data.
-It is instantiated as the https://rr0.org website, which hosts various data about unexplained phenomena.
+RR0 is a client-side library that aims to ease the display of testimonial data. It is instantiated as
+the https://rr0.org website, which hosts various data about unexplained phenomena.
 
-It relies on the [AngularJS](https://angularjs.org/) framework.
+This "native" version only relies on vanilla JavaScript, CSS and HTML.
 
 Note: It is [being refactored](RR0%20Refactoring.md).
 
 General principles
 ------------------
- * **Data-centric** : The pages are the data. They contain semantic only, not how to display them.
- Display is performed automatically once the pages are loaded, by parsing the semantic tags/classes/attributes contained in the page
- . These can be about places, people, time, etc.
- * **Contextual** : Display rendering not only takes into account the semantic tags/classes/attributes, 
- but also the ways they are assembled. For example a month tag can be resolved as in the context of a previous year tag.
 
-Modules
--------
-The 'rr0' app depends on the following modules:
+* **Data-centric** : The pages are the data. They contain semantic only, not how to display them. Display is performed
+  automatically once the pages are loaded, by parsing the semantic tags/classes/attributes contained in the page . These
+  can be about places, people, time, etc.
+* **Contextual** : Display rendering not only takes into account the semantic tags/classes/attributes, but also the ways
+  they are assembled. For example a month tag can be resolved as in the context of a previous year tag.
 
- * [common](common.md)
- * [lang](lang.md)
- * [nav](nav.md)
- * [place](place/place.md)
- * [time](time/time.md)
- * [people](people/people.md)
- * [foot](foot.md)
- * [notes](notes.md)
- * [units](units.md)
- * [net](net.md)
+# Structure
+
+The 'rr0' app has the following structure
+
+- [common](common.md)
+- [lang](lang.md)
+- [nav](nav.md)
+- [place](place/place.md) module to handle locations and maps
+- [time](time/time.md) module to handle date/time and durations
+- [people](people/people.md) module to handle persons
+- [foot](foot.md)
+- [notes](notes.md) to handle sources mentions and footnotes
+- [units](units.md) to handle units conversions (miles to km, etc.)
+- [net](net.md) to provide network utility functions
+- `index.native.html` a sample page for manual testing.
 
 Services
 --------
@@ -140,23 +142,34 @@ In case the last name contain multiple words, just write it in camel case, like 
 
 ### section ###
 #### Contextual effects ####
- * Adds a hierarchical entry (depending on the depth of the section, possibly in other sections) in the 'Contents' contextual menu.
+
+* Adds a hierarchical entry (depending on the depth of the section, possibly in other sections) in the 'Contents'
+  contextual menu.
 
 To do
 -----
- * directives to handle measurements (lengths, weights, speed)
- * User settings to customize rendering of directives (i18n, how to display people names, which units to use for expressing measurements)
- * [SAP Refactoring](SAP refactoring)
+
+* directives to handle measurements (lengths, weights, speed)
+* User settings to customize rendering of directives (i18n, how to display people names, which units to use for
+  expressing measurements)
+* [SPA Refactoring](SPA refactoring)
 
 # Build
 
-# Test
+1. Make sure you set the `MAP_KEY` environment variable to your Google Maps API key.
+2. Run `npm run build`. This will generate a `dist` folder with the following files :
+    - `index.html` The output version of `index.native.html` page.
+
+# Tests
 
 ## Unit tests
 
-## Pre-prod
+Run `npm test`
 
-The build must be tested locally before deployment.
+## Manual
+
+1. Build
+2. Open
 
 # Deploy
 

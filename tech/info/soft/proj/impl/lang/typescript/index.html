@@ -3,85 +3,79 @@
 <meta name="url" content="http://www.typescriptlang.org"/>
 <!--#include virtual="/header-end.html" -->
 <section>
-    <h2>Besoin</h2>
-
-    <p>Etendre <a href="../javascript">Javascript</a> par :</p>
-    <ul>
-        <li>des classes statiques</li>
-        <li>un typage fort</li>
-    </ul>
+  <h2>Besoin</h2>
+  <p>Etendre <a href="../javascript">Javascript</a> par :</p>
+  <ul>
+    <li>des classes statiques</li>
+    <li>un typage fort</li>
+  </ul>
 </section>
 <section>
-    <h2>Analyse</h2>
-    <table class="long wide">
-        <thead>
-        <tr>
-            <th>Fonctionnalité</th>
-            <th>TypeScript</th>
-            <th>ES6</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Typage statique</td>
-            <td>var isDone: boolean = false;</td>
-            <td>N/A (futur "trademarks" et "guards" de ES7)</td>
-        </tr>
-        <tr>
-            <td>Typage "any"</td>
-            <td>var notSure: any = 4;</td>
-            <td>Future</td>
-        </tr>
-        <tr>
-            <td>Interface</td>
-            <td>interface LabelledValue {
-                label: string;
-                }</td>
-            <td>N/A (mot réservé pour le futur)</td>
-        </tr>
-        <tr>
-            <td>Lamba expressions</td>
-            <td>var square = (x) => { x * x };</td>
-            <td>var square = (x) => { x * x };</td>
-        </tr>
-        <tr>
-            <td>Arguments par défaut</td>
-            <td>var fill = (container, liquid = "coffee") => { "Filling the #{container} with #{liquid}..." };</td>
-            <td>var fill = (container, liquid = "coffee") => { "Filling the #{container} with #{liquid}..." };</td>
-        </tr>
-        <tr>
-            <td>Classe</td>
-            <td>class Animal
-                constructor (name) => { }
-            </td>
-            <td>class Animal
-                constructor (name) => { }
-            </td>
-        </tr>
-        <tr>
-            <td>Interpolation de chaînes</td>
-            <td>N/A</td>
-            <td>var author = "Wittgenstein";
-                var quote  = "A picture is a fact. -- ${author}";</td>
-        </tr>
-        <tr>
-            <td>Source maps</td>
-            <td>--map</td>
-            <td>traceur --sourcemap</td>
-        </tr>
-        </tbody>
-    </table>
+  <h2>Analyse</h2>
+  <table class="long wide">
+    <thead>
+    <tr>
+      <th>Fonctionnalité</th>
+      <th>TypeScript</th>
+      <th>ES6</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Typage statique</td>
+      <td>var isDone: boolean = false;</td>
+      <td>N/A (futur "trademarks" et "guards" de ES7)</td>
+    </tr>
+    <tr>
+      <td>Typage "any"</td>
+      <td>var notSure: any = 4;</td>
+      <td>Future</td>
+    </tr>
+    <tr>
+      <td>Interface</td>
+      <td>interface LabelledValue { label: string; }</td>
+      <td>N/A (mot réservé pour le futur)</td>
+    </tr>
+    <tr>
+      <td>Lamba expressions</td>
+      <td>var square = (x) => { x * x };</td>
+      <td>var square = (x) => { x * x };</td>
+    </tr>
+    <tr>
+      <td>Arguments par défaut</td>
+      <td>var fill = (container, liquid = "coffee") => { "Filling the #{container} with #{liquid}..." };</td>
+      <td>var fill = (container, liquid = "coffee") => { "Filling the #{container} with #{liquid}..." };</td>
+    </tr>
+    <tr>
+      <td>Classe</td>
+      <td>class Animal constructor (name) => { }
+      </td>
+      <td>class Animal constructor (name) => { }
+      </td>
+    </tr>
+    <tr>
+      <td>Interpolation de chaînes</td>
+      <td>N/A</td>
+      <td>var author = "Wittgenstein"; var quote = "A picture is a fact. -- ${author}";</td>
+    </tr>
+    <tr>
+      <td>Source maps</td>
+      <td>--map</td>
+      <td>traceur --sourcemap</td>
+    </tr>
+    </tbody>
+  </table>
 
 </section>
 <section>
-    <h2>Conception</h2>
-
-    <p>Le code TypeScript est compilé en <a href="../javascript">Javascript</a> avant exécution.</p>
+  <h2>Conception</h2>
+  <p>Le code TypeScript est compilé en <a href="../javascript">Javascript</a> avant exécution.</p>
 </section>
 <section>
-    <h2>Notes</h2>
-    <ul>
-        <li>Compatible avec (sur-ensemble de) <a href="../javascript">Javascript</a></li>
-    </ul>
+  <h2>Notes</h2>
+  <ul>
+    <li>Compatible avec (sur-ensemble de) <a href="../javascript">Javascript</a></li>
+    <li>Créé par Anders Hejlsberg (Turbo <a href="/tech/info/soft/proj/impl/lang/pascal">Pascal</a>, Delphi, C#),</li>
+  </ul>
 </section>
 <!--#include virtual="/footer.html" -->

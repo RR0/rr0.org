@@ -1,0 +1,212 @@
+<!--#include virtual="/header-start.html" -->
+<title>JAR</title>
+<meta content="http://java.sun.com/j2se/1.4/docs/guide/jar" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Java ARchive</i>. Jar désigne également un récipient (bouteille, bocal, etc.) en anglais.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Archiver/packager des ressources/extensions/applications Java.</p>
+</section>
+<section>
+  <h2>Analyses</h2>
+  <p>Les fichiers JAR peuvent être très simples (regroupement de classes) mais leur contenu peut aussi être spécialisé
+    pour des lecteurs spéciaux (conteneurs <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>, Web,
+    d'Applets, etc.).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <table>
+    <caption>Exemples de JAR</caption>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>ejb-jar</th>
+      <th>WAR</th>
+      <th>RAR</th>
+      <th>EAR</th>
+      <th>Applet</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Contenu</th>
+      <td>
+        <ul>
+          <li><code>org</code>
+            <ul>
+              <li><code>javarome</code>
+                <ul>
+                  <li><code>myapp</code>
+                    <ul>
+                      <li><code>business</code>
+                        <ul>
+                          <li><code>Account.class</code></li>
+                          <li><code>AccountBean.class</code></li>
+                          <li><code>AccountKey.class</code></li>
+                          <li><code>TransferRemote.class</code></li>
+                          <li><code>TransferBean.class</code></li>
+                          <li><code>UtilityClass.class</code></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><code><strong>META-INF/</strong></code>
+            <ul>
+              <li><code><strong>ejb-jar.xml</strong></code></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>index.html</code></li>
+          <li><code>Logon.jsp</code></li>
+          <li><code>Menu.jsp</code></li>
+          <li><code>AnApplet.class</code></li>
+          <li><code>images/</code>
+            <ul>
+              <li><code>Logo.gif</code></li>
+            </ul>
+          </li>
+          <li><code><strong>WEB-INF/</strong></code>
+            <ul>
+              <li><code><strong>web.xml</strong></code></li>
+              <li><code>struts-config.xml</code></li>
+              <li><code>struts-bean.tld</code></li>
+              <li><code><strong>classes/</strong></code>
+                <ul>
+                  <li><code>org</code>
+                    <ul>
+                      <li><code>javarome</code>
+                        <ul>
+                          <li><code>myapp</code>
+                            <ul>
+                              <li><code>webapp</code>
+                                <ul>
+                                  <li><code>MainServlet.class</code></li>
+                                  <li><code>UtilityClass.class</code></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><code><strong>lib/</strong></code>
+                <ul>
+                  <li><code>struts.jar</code></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>library.jar</code></li>
+          <li><code><strong>META-INF/</strong></code>
+            <ul>
+              <li><code><strong>ra.xml</strong></code></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>clientModule.jar</code></li>
+          <li><code>ejbModule.jar</code></li>
+          <li><code>webModule1.war</code></li>
+          <li><code>webModule2.war</code></li>
+          <li><code>connector.rar</code></li>
+          <li><code><strong>META-INF/</strong></code>
+            <ul>
+              <li><code><strong>application.xml</strong></code></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>MonApplet.class</code></li>
+          <li><code>MaClasseUtilitaire.class</code></li>
+          <li><code>images/ </code>
+            <ul>
+              <li><code>MonImage.gif</code></li>
+            </ul>
+          </li>
+          <li><code>sounds/ </code>
+            <ul>
+              <li><code>MonSon.au</code></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Commentaire</th>
+      <td> Représente un module <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></td>
+      <td><em>Web Archive. </em>Représente une WebApp (module Web J2EE) et contient les classes nécessaires à ses <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a> et/ou <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></td>
+      <td><p><em>Resource ARchive,</em> contenant les classes nécessaires à un connecteur <a
+          href="/tech/informatique/soft/java/J2C.html">JCA</a></p>
+      </td>
+      <td><em>Enterprise ARchive</em>, représentant une application <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> (contenant des modules ejb-jar et/ou war et/ou rar
+        et/ou client.
+      </td>
+      <td>L'applet peut ainsi être téléchargée en une seule requête <a
+          href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> (téléchargeant le fichier JAR) au lieu de n (1
+        pour récupérer chaque classe, image... nécessaire à l'applet).
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>La structure standard d'un fichier JAR est la suivante (tout est optionnel et des ajouts sont possibles, voir les
+    exemples) :</p>
+  <ul>
+    <li>Fichiers</li>
+    <li><code>META-INF</code> (en majuscules obligatoirement)
+      <ul>
+        <li><code>MANIFEST.MF</code> : Définition des données du package et d'extension.</li>
+        <li><code>INDEX.LIST</code> : Généré par l'option "-i" de l'outil jar, contenenant l'information de localisation
+          des packages définis dans une application ou une extension.</li>
+        <li> xxx<code>.SF</code> : Fichier de <a href="/tech/info/soft/prog/oo/java/Signature.html">signature</a> xxx.
+        </li>
+        <li> yyy.<a href="/tech/info/soft/prog/oo/java/DSA.html"><code>DSA</code></a> : Fichier de bloc de signature
+          numérique pour le fichier yyy.</li>
+        <li><code>services/</code>
+          <ul>
+            <li>Fichiers de configurations des fournisseurs (noms des fabriques d'implémentations <a
+                href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a> par exemple).</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Il est possible d'accéder à des fichiers JAR via l'<a href="/tech/info/soft/API.html">API</a> standard fournie dans
+    <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> dans le package <code><a
+        href="http://java.sun.com/j2se/1.4.1/docs/api/java/util/jar/package-summary.html">java.util.jar</a></code>.</p>
+  <h2>Notes</h2>
+  <ul>
+    <li>Basé sur (et compatible avec) les fichiers ZIP (peuvent donc être compressés).</li>
+    <li>Permet le téléchargement d'un ensemble de ressources Java (classes, images, fichier de propriétés, etc.) en un
+      seul échange réseau.</li>
+    <li>peut dépendre d'autres fichiers Jar, via l'entrée <code>Class-Path</code> de son fichier Manifest.</li>
+    <li>Peut être signé numériquement.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,4 +1,4 @@
-import {ReplaceCommand} from "./ssg"
+import {ReplaceCommand} from "./Ssg"
 import {getFileInfo} from "./FileUtil"
 import path from "path"
 

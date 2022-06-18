@@ -1,11 +1,10 @@
-import fs from "fs"
+import * as fs from "fs"
+import {promises as fsAsync} from "fs"
 import {HTMLElement, parse} from "node-html-parser"
 import detectCharacterEncoding from "detect-character-encoding"
-import * as util from "util"
 import path from "path"
 
-const writeFileAsync = util.promisify(fs.writeFile)
-
+const fse = require("fs-extra")
 export type FileInfo = {
   name: string
   encoding: BufferEncoding
@@ -52,7 +51,7 @@ function ensureDirectoryExistence(filePath: string) {
 export async function writeFile(fileInfo: FileInfo) {
   let fileName = fileInfo.name
   ensureDirectoryExistence(fileName)
-  return writeFileAsync(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
+  return fsAsync.writeFile(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
 }
 
 export function getFileInfo(fileName: string): FileInfo {
@@ -68,6 +67,10 @@ export function getFileInfo(fileName: string): FileInfo {
     console.error(fileName, ":", e)
     throw e
   }
+}
+
+export async function copy(from: string, to: string): Promise<void> {
+  return fse.copy(from, to)
 }
 
 export function getContentType(html: HTMLElement): BufferEncoding | undefined {

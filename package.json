@@ -8,7 +8,7 @@
     "watch": "webpack --watch",
     "build": "webpack",
     "test": "test",
-    "ssg": "ts-node tool/ssg.ts"
+    "ssg": "ts-node tool/index.ts"
   },
   "keywords": [
     "life",
@@ -24,7 +24,8 @@
   "dependencies": {
     "detect-character-encoding": "^0.8.0",
     "glob-promise": "^4.2.2",
-    "node-html-parser": "^5.3.3"
+    "node-html-parser": "^5.3.3",
+    "fs-extra": "^10.1.0"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "^0.7.0",

@@ -4,7 +4,7 @@ import {Ssg, SsgConfig} from "./Ssg"
 
 const config: SsgConfig = {
   contentsRoots: [
-    "time/2/0/1/4/01/Bullard_IsTheAnomalistOnAFoolsErrand_Paranthropology/Exeter/index.html",
+    "index.html",
     "croyance/**/*.html",
     "droit/**/*.html",
     "org/**/*.html",

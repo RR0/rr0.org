@@ -35,4 +35,4 @@ const config: SsgConfig = {
 
 new Ssg(config)
   .start()
-  .then(() => console.log("done"))
+  .then(result => console.log("Wrote", result.contentCount, "content files"))

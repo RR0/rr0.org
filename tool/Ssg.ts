@@ -15,13 +15,18 @@ export interface ReplaceCommand {
   execute(contents: string): string
 }
 
+export type SsgResult = {
+  contentCount: number
+}
+
 export class Ssg {
 
   constructor(protected config: SsgConfig) {
   }
 
-  async start() {
+  async start(): Promise<SsgResult> {
     let config = this.config
+    let contentCount = 0
     for (const contentsRoot of config.contentsRoots) {
       const contentFiles = await glob(contentsRoot)
       contentFiles.forEach((fileName: string) => {
@@ -29,6 +34,7 @@ export class Ssg {
         for (const replacement of config.replacements) {
           fileInfo.contents = replacement.execute(fileInfo.contents)
         }
+        contentCount++
         config.output(fileInfo)
       })
     }
@@ -38,6 +44,9 @@ export class Ssg {
       }).catch(err => {
         console.error("Could not copy", file, err)
       })
+    }
+    return {
+      contentCount
     }
   }
 }

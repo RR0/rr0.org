@@ -3,7 +3,7 @@ export default commonsModule => {
   /**
    * Example:
    * <pre><code>
-   * <span itemscope itemtype="http://schema.org/QuantitativeValue">
+   * <span itemscope itemtype="https://schema.org/QuantitativeValue">
    *   <span itemprop="value">370</span> <span itemprop="unitCode" content="FOT">pieds</span>
    * </span>
    * </code></pre>
@@ -108,7 +108,7 @@ export default commonsModule => {
           }
 
           var ItemTypes = {
-            'http://schema.org/QuantitativeValue': QuantitativeItem
+            "https://schema.org/QuantitativeValue": QuantitativeItem
           };
           var itemTypeKey = $element.attr('itemType');
           var ItemType = ItemTypes[itemTypeKey];

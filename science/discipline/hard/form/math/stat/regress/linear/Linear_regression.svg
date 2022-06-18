@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with matplotlib (http://matplotlib.sourceforge.net/) -->
+<!-- Created with matplotlib (https://matplotlib.sourceforge.net/) -->
 
 <svg
     height="231pt"
@@ -9,13 +9,13 @@
     version="1.1"
     viewBox="0 0 350 231"
     width="350pt"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+    xmlns="https://www.w3.org/2000/svg"
+    xmlns:cc="https://creativecommons.org/ns#"
+    xmlns:dc="https://purl.org/dc/elements/1.1/"
+    xmlns:inkscape="https://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:sodipodi="https://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:xlink="https://www.w3.org/1999/xlink">
   <metadata
       id="metadata5070">
     <rdf:RDF>
@@ -23,7 +23,7 @@
           rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+            rdf:resource="https://purl.org/dc/dcmitype/StillImage"/>
       </cc:Work>
     </rdf:RDF>
   </metadata>

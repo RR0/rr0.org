@@ -51,7 +51,7 @@ Directives
 This is an override of the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable date (including day 
 of week) or duration.
 
-For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration, respectively, as stated in the [ISO_8601 standard](http://en.wikipedia.org/wiki/ISO_8601#Time_intervals).
+For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration, respectively, as stated in the [ISO_8601 standard](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals).
 
 #### Dates ####
 

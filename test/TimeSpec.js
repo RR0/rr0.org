@@ -6,7 +6,7 @@ describe("Time module", function () {
    return {
    initStructure: function() { },
    nounToLink: function() { },
-   getUri: function() { return 'http://rr0.org/time/something'; },
+   getUri: function() { return 'https://rr0.org/time/something'; },
    zero: function() { },
    capitalizeFirstLetter: function() { },
    addEndingSlash: function() { }

@@ -700,7 +700,7 @@ NN_trainer.prototype.initializeNeuralNetworkGraph = function () {
   var nodeRadius = 30;
 
   // Arrow
-  // http://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
+  // https://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
   var defs = this.nnGraphHolder.append("defs");
 
   defs.append("marker")

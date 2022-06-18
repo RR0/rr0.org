@@ -13,11 +13,11 @@
 <link href="people/b/BeauJerome/index.html" rel="author"/>
 <link href="Contact.html" rel="help"/>
 <link href="sources.html" rel="appendix" title="Références"/>
-<link href="http://translate.google.com/translate?u=http:%2F%2Frr0.org&langpair=fr%7Cen&hl=fr&ie=UTF8&oe=UTF8" rel="alternate" lang="en" title="English translation"/>
-<link href="http://translate.google.com/translate?u=http:%2F%2Frr0.org&langpair=fr%7Cde&hl=fr&ie=UTF8&oe=UTF8" rel="alternate" lang="de" title="Deutsche &Uuml;bersetzung"/>
+<link href="https://translate.google.com/translate?u=https:%2F%2Frr0.org&langpair=fr%7Cen&hl=fr&ie=UTF8&oe=UTF8" rel="alternate" lang="en" title="English translation"/>
+<link href="https://translate.google.com/translate?u=https:%2F%2Frr0.org&langpair=fr%7Cde&hl=fr&ie=UTF8&oe=UTF8" rel="alternate" lang="de" title="Deutsche &Uuml;bersetzung"/>
 <link href="technique.html" rel="appendix" title="Technique"/>
-<link href="http://ufoathome.org/index_fr.html" rel="appendix" title="UFO@home"/>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.0/">
+<link href="https://ufoathome.org/index_fr.html" rel="appendix" title="UFO@home"/>
+<rdf:RDF xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="https://purl.org/dc/elements/1.0/">
     <rdf:Description rdf:about="" dc:creator="RR0" dc:title="R.R.0." dc:description="UFO data for french-people" dc:date="1999-11-1" dc:Format="text/html" dc:Language="fr"/>
 </rdf:RDF>
 <style type="text/css">
@@ -86,7 +86,7 @@
         var gcse = document.createElement('script');
         gcse.type = 'text/javascript';
         gcse.async = true;
-        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'https:') +
         '//www.google.fr/cse/cse.js?cx=' + cx;
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(gcse, s);
@@ -154,12 +154,12 @@
 </div>
 <script src="//connect.facebook.net/fr_FR/all.js"></script>
 <footer class="centered">
-    <span class="Mini"><a href="preambule.html">Préambule</a> - <a href="FAQ.html">FAQ</a> - <a href="http://www.javarome.org/category/Ufologie">Blog</a> - <a href="http://www.facebook.com/rrzero"><img src="images/facebook.jpg" border="0" align="absmiddle"/></a> - <a href="https://plus.google.com/109521510531702092323/?prsrc=3" style="text-decoration: none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" width="16" align="absmiddle" style="border: 0;"/></a> -
+    <span class="Mini"><a href="preambule.html">Préambule</a> - <a href="FAQ.html">FAQ</a> - <a href="https://www.javarome.org/category/Ufologie">Blog</a> - <a href="https://www.facebook.com/rrzero"><img src="images/facebook.jpg" border="0" align="absmiddle"/></a> - <a href="https://plus.google.com/109521510531702092323/?prsrc=3" style="text-decoration: none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" width="16" align="absmiddle" style="border: 0;"/></a> -
     <g:plusone size="small" count="false"></g:plusone>
      - <a href="https://twitter.com/r_r_0" class="twitter-follow-button" data-show-count="false" data-lang="fr" align="absmiddle">Suivre</a>
     <br/>
-    <a href="http://translate.google.com/translate?u=https://rr0.org&langpair=fr|en&hl=fr&ie=UTF8&oe=UTF8">English
-        translation</a>, <a href="http://translate.google.com/translate?u=http:%2F%2Frr0.org&langpair=fr%7Cde&hl=fr&ie=UTF8&oe=UTF8">Deutsche &Uuml;bersetzung</a><br/>
+    <a href="https://translate.google.com/translate?u=https://rr0.org&langpair=fr|en&hl=fr&ie=UTF8&oe=UTF8">English
+        translation</a>, <a href="https://translate.google.com/translate?u=https:%2F%2Frr0.org&langpair=fr%7Cde&hl=fr&ie=UTF8&oe=UTF8">Deutsche &Uuml;bersetzung</a><br/>
     <a href="Contact.html">Contact</a> - <a href="Copyright.html">Copyright</a></span>
 </footer>
 <!--#include virtual="/footer-end.html" -->

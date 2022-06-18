@@ -59,7 +59,7 @@ module.exports = function (config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    // Firefox only is available on Travis VM : http://docs.travis-ci.com/user/gui-and-headless-browsers/
+    // Firefox only is available on Travis VM : https://docs.travis-ci.com/user/gui-and-headless-browsers/
     // Current PhantomJS versions fail with traceur : https://github.com/google/traceur-compiler/issues/908
     browsers: ['Firefox'],
 

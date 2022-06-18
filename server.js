@@ -3,7 +3,7 @@ var ssi = require('node-ssi'),
   path = require("path"),
   fs = require("fs");
 var app = express();
-var root = "http://rr0.org";
+var root = "https://rr0.org";
 var parser 		= new ssi(__dirname, "", "");
 
 var options = {

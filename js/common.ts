@@ -15,7 +15,7 @@ function OrgModule(): void {
 
 // Add a getElementsByClassName function if the browser doesn't have one
 // Limitation: only works with one class name
-// Copyright: Eike Send http://eike.se/nd
+// Copyright: Eike Send https://eike.se/nd
 // License: MIT License
   if (!document.getElementsByClassName) {
     (<any>document).getElementsByClassName = function (search: string): any[] {
@@ -458,7 +458,7 @@ declare var prettyPrintOne: any;
 
 /**
  * requestAnimationFrame() shim by Paul Irish.
- * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+ * https://paulirish.com/2011/requestanimationframe-for-smart-animating/
  */
 (function () {
   'use strict';

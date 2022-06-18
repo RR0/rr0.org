@@ -141,7 +141,7 @@
     <br/> while (defined(my $l=&lt;DESCR&gt;)) {$buf.= $l;}<br/> close(DESCR);</strong></code></blockquote>
   <p>Exemple d'un programme CGI d'envoi de la page Web courante par mail en Perl :</p>
   <blockquote><code>#!/usr/bin/perl -w<br/> # # Appellez ce script comme cela :<br/> # #
-    script.cgi?email=myfriend@isp.com&amp;url=http://www.go.com<br/> <strong>use </strong>strict;<br/>
+    script.cgi?email=myfriend@isp.com&amp;url=https://www.go.com<br/> <strong>use </strong>strict;<br/>
     <strong>use </strong>CGI qw/:standard/;<br/> <strong>use </strong>CGI::Carp qw/fatalsToBrowser/;<br/>
     <strong>use </strong>MIME::Lite::HTML; <br/> <br/> my $mailHTML = new MIME::Lite::HTML<br/> From =&gt; <span
         class="codeString">'javarome@javarome.net'</span>,<br/> To =&gt; param(<span class="codeString">'email'</span>),<br/>
@@ -156,7 +156,7 @@
 <section>
   <h2>Voir</h2>
   <ul>
-    <li><a href="http://perl.apache.org/">PERL en module dans Apache</a></li>
+    <li><a href="https://perl.apache.org/">PERL en module dans Apache</a></li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

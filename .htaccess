@@ -82,7 +82,7 @@ Redirect /Sondages.html https://rr0.org//science/crypto/ufo/observation/Sondages
 Redirect /science/crypto/ufo/detection/scenario/MIB.html https://rr0.org/science/crypto/ufo/observation/etre/mib/
 Redirect /MIB.html https://rr0.org/science/crypto/ufo/observation/etre/mib/
 Redirect /science/crypto/ufologie/observation/scenario/MIB.html https://rr0.org//science/crypto/ufo/observation/scenario/mib/
-Redirect /Gris.html http://www.rr0.org/science/crypto/ufo/observation/etre/gris
+Redirect /Gris.html https://www.rr0.org/science/crypto/ufo/observation/etre/gris
 Redirect /science/crypto/ufo/observation/scenario/Gris.html https://rr0.org/science/crypto/ufo/observation/etre/gris/
 Redirect /science/crypto/ufologie/observation/scenario/Reptiliens.html https://rr0.org/science/crypto/ufo/observation/etre/reptilien/
 Redirect /science/crypto/ufologie/observation/aspect/ https://rr0.org/science/crypto/ufo/observation/pan/aspect/
@@ -220,7 +220,7 @@ Redirect /Area51.html https://rr0.org/org/us/dod/af/base/Area51
 Redirect /org/us/GOC.html https://rr0.org/org/us/dod/af/goc
 Redirect /Skyhook.html https://rr0.org/org/us/dod/navy/projet/skyhook
 Redirect /org/us/dod/af/base/MinotAFB.html https://rr0.org/org/us/dod/af/base/Minot
-Redirect /Hangar18.html http://www.rr0.org/org/us/dod/af/base/WPAFB/Hangar18
+Redirect /Hangar18.html https://www.rr0.org/org/us/dod/af/base/WPAFB/Hangar18
 Redirect /Princeton.html https://rr0.org/org/us/university/princeton
 Redirect /org/us/university/Princeton https://rr0.org/org/us/university/princeton
 Redirect /ColoradoProject.html https://rr0.org/org/us/university/colorado/projet/condon
@@ -775,7 +775,7 @@ Redirect /Nibiru.html https://rr0.org/place/systeme/solaire/planete/Nibiru.html
 Redirect /USA.html https://rr0.org/org/us
 Redirect /SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
 Redirect /detection/projet/SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
-Redirect /SETI-RMW.html http://www.rr0.org/science/crypto/ufo/observation/projet/seti/rmw
+Redirect /SETI-RMW.html https://www.rr0.org/science/crypto/ufo/observation/projet/seti/rmw
 Redirect /Apollo11.html https://rr0.org/org/us/nasa/projet/apollo/11
 Redirect /org/us/nasa/apollo/14 https://rr0.org/org/us/nasa/projet/apollo/14
 Redirect /Aquarius.html https://rr0.org/science/crypto/ufo/enquete/dossier/ProjetAquarius
@@ -897,22 +897,22 @@ RewriteEngine on
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://rr0.org/$1 [R,L]
 
-RewriteCond %{HTTP_REFERER} !^http://.*.google.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://.*.google.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://.*.tineye.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://.*.tineye.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://java.rr0.org/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://java.rr0.org$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://psiland.free.fr/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://psiland.free.fr$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://rr0.org/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://rr0.org$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.java.rr0.org/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.java.rr0.org$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.javarome.org/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.javarome.org$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.rr0.org/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.rr0.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://.*.google.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://.*.google.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://.*.tineye.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://.*.tineye.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://java.rr0.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://java.rr0.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://psiland.free.fr/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://psiland.free.fr$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://rr0.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://rr0.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.java.rr0.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.java.rr0.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.javarome.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.javarome.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.rr0.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.rr0.org$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://rr0.org/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://rr0.org$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.rr0.org/.*$      [NC]
@@ -921,5 +921,5 @@ RewriteCond %{HTTP_REFERER} !^https://vraiufo.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.com$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.fr/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.fr$      [NC]
-RewriteRule .*\.(jpg|jpeg|jpe|gif|bmp|png)$ http://rr0.org/Referencement.html [R,NC]
+RewriteRule .*\.(jpg|jpeg|jpe|gif|bmp|png)$ https://rr0.org/Referencement.html [R,NC]
 

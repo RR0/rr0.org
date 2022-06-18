@@ -48,7 +48,7 @@ function average(data) {
   return avg;
 }
 
-// From http://cwestblog.com/2012/11/12/javascript-degree-and-radian-conversion/
+// From https://cwestblog.com/2012/11/12/javascript-degree-and-radian-conversion/
 // Converts from degrees to radians.
 Math.radians = function (degrees) {
   return degrees * Math.PI / 180;

@@ -7,11 +7,11 @@
      </information>
      <resources>
        <j2se version="1.6+"
-             href="http://java.sun.com/products/autodl/j2se" />
+             href="https://java.sun.com/products/autodl/j2se" />
        <jar href="matrix2.jar" main="true" />
        <!-- Specify if using JNLP extensions
                                 <extension name="SomeExtension"
-                  href="http://some.server.com/some_extension.jnlp" />
+                  href="https://some.server.com/some_extension.jnlp" />
                                 -->
      </resources>
      <applet-desc

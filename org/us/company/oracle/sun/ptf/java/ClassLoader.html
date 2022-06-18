@@ -3,19 +3,19 @@
 <!--#include virtual="/header-end.html" -->
 <p> Chargeur de classes.</p>
 <h2>Besoin</h2>
-<p>Charger en mémoire des classes Java <a href="/tech/info/soft/proj/impl/Compilation.html">compilées</a>.</p>
+<p>Charger en mï¿½moire des classes Java <a href="/tech/info/soft/proj/impl/Compilation.html">compilï¿½es</a>.</p>
 <h2>Analyse</h2>
-<p>Les<em> ClassLoaders</em> permet à une plate-forme <a href="/org/us/company/oracle/sun/ptf/java">Java</a> de définir
-  des classes en mémoire. Eux seuls déterminent l'<a href="#codesource">origine du code</a> d'une classe et les <a
-      href="#permission">permissions</a> qui lui sont associées, en fonction de cette origine et de la <a
-      href="#policy">politique de sécurité</a> en vigueur.</p>
-<p>La règle de chargement d'une classe est : toute classe B nécessaire à une classe A est chargée par le ClassLoader de
+<p>Les<em> ClassLoaders</em> permet ï¿½ une plate-forme <a href="/org/us/company/oracle/sun/ptf/java">Java</a> de dï¿½finir
+  des classes en mï¿½moire. Eux seuls dï¿½terminent l'<a href="#codesource">origine du code</a> d'une classe et les <a
+      href="#permission">permissions</a> qui lui sont associï¿½es, en fonction de cette origine et de la <a
+      href="#policy">politique de sï¿½curitï¿½</a> en vigueur.</p>
+<p>La rï¿½gle de chargement d'une classe est : toute classe B nï¿½cessaire ï¿½ une classe A est chargï¿½e par le ClassLoader de
   A.</p>
 <h2>Conception</h2>
-<p>Les ClassLoaders définissent une classe en mémoire à partir d'un ensemble d'octets, pouvant provenir d'un fichier de
-  classe (<code>.class</code>) local, du réseau, ou de tout autre source capable de fournir des octets (y compris la
-  mémoire).</p>
-<h2>Implémentation</h2>
+<p>Les ClassLoaders dï¿½finissent une classe en mï¿½moire ï¿½ partir d'un ensemble d'octets, pouvant provenir d'un fichier de
+  classe (<code>.class</code>) local, du rï¿½seau, ou de tout autre source capable de fournir des octets (y compris la
+  mï¿½moire).</p>
+<h2>Implï¿½mentation</h2>
 <table>
   <thead>
   <tr>
@@ -37,38 +37,38 @@
   </thead>
   <tr>
     <th>Type</th>
-    <th colspan="2">Système</th>
-    <td class="oui">Chargement de l'ensemble des classes (système ou non) accessibles depuis le <code>CLASSPATH</code>
+    <th colspan="2">Systï¿½me</th>
+    <td class="oui">Chargement de l'ensemble des classes (systï¿½me ou non) accessibles depuis le <code>CLASSPATH</code>
     </td>
-    <td class="oui" colspan="4">Chargement des classes de la plate-forme Java (<i>Core API</i>), c'est-à-dire provenant
-      des fichiers situés dans <q><code>%JAVA_HOME%/lib/</code></q> et <code>%JAVA_HOME%/jre/lib/ext/</code></td>
-    <td>Privilégié dans la mesure où il n'est pas un ClassLoader à proprement parler (il est en grande partie écrit en
-      code natif, charge les classes d'une manière spécifique à la plate-forme, n'hérite pas de java.lang.ClassLoader,
-      et n'est pas accessible par le développeur). On peut identifier les classes chargées par ce ClassLoader en
-      examinant la valeur retournée par <code><i>LaClasse</i>.getClassLoader()</code>. Une classe utilisateur (provenant
-      du <code>CLASSPATH</code> ou d'ailleurs) retournera une instance de java.net.URLClassLoader (par défaut <q><code>sun.misc.AppLauncher$AppClassLoader</code></q><code>)</code>,
-      tandis qu'une classe système retournera <code>null</code>, ce qui désigne le chargeur de classe système. Les
-      chargeurs de classes sont également responsables du chargement d'autres ClassLoaders, ce qui implique une
-      définition circulaire. C'est pourquoi on appelle le chargeur système le <i>primordial class loader</i> (on trouve
-      également les termes de <i>internal class loader</i>, <i>bootstrap class loader </i>ou <i>default class loader</i>,
-      cette dernière appelation étant trompeuse dans la mesure où le chargement d'une classe par défaut ne passe plus
-      dans Java 2 par ce chargeur mais par un véritable ClassLoader).
+    <td class="oui" colspan="4">Chargement des classes de la plate-forme Java (<i>Core API</i>), c'est-ï¿½-dire provenant
+      des fichiers situï¿½s dans <q><code>%JAVA_HOME%/lib/</code></q> et <code>%JAVA_HOME%/jre/lib/ext/</code></td>
+    <td>Privilï¿½giï¿½ dans la mesure oï¿½ il n'est pas un ClassLoader ï¿½ proprement parler (il est en grande partie ï¿½crit en
+      code natif, charge les classes d'une maniï¿½re spï¿½cifique ï¿½ la plate-forme, n'hï¿½rite pas de java.lang.ClassLoader,
+      et n'est pas accessible par le dï¿½veloppeur). On peut identifier les classes chargï¿½es par ce ClassLoader en
+      examinant la valeur retournï¿½e par <code><i>LaClasse</i>.getClassLoader()</code>. Une classe utilisateur (provenant
+      du <code>CLASSPATH</code> ou d'ailleurs) retournera une instance de java.net.URLClassLoader (par dï¿½faut <q><code>sun.misc.AppLauncher$AppClassLoader</code></q><code>)</code>,
+      tandis qu'une classe systï¿½me retournera <code>null</code>, ce qui dï¿½signe le chargeur de classe systï¿½me. Les
+      chargeurs de classes sont ï¿½galement responsables du chargement d'autres ClassLoaders, ce qui implique une
+      dï¿½finition circulaire. C'est pourquoi on appelle le chargeur systï¿½me le <i>primordial class loader</i> (on trouve
+      ï¿½galement les termes de <i>internal class loader</i>, <i>bootstrap class loader </i>ou <i>default class loader</i>,
+      cette derniï¿½re appelation ï¿½tant trompeuse dans la mesure oï¿½ le chargement d'une classe par dï¿½faut ne passe plus
+      dans Java 2 par ce chargeur mais par un vï¿½ritable ClassLoader).
     </td>
   </tr>
   <tr>
     <th></th>
     <th colspan="2">RMI</th>
     <td class="oui" colspan="5">Oui</td>
-    <td>Comme le chargeur de classes système, ce chargeur n'est pas un ClassLoader à proprement parler (il n'hérite pas
+    <td>Comme le chargeur de classes systï¿½me, ce chargeur n'est pas un ClassLoader ï¿½ proprement parler (il n'hï¿½rite pas
       de <code>java.lang.ClassLoader</code>).
     </td>
   </tr>
   <tr>
     <th></th>
-    <th colspan="2">Sécurisé</th>
+    <th colspan="2">Sï¿½curisï¿½</th>
     <td class="non">Non</td>
     <td class="oui" colspan="4"><code>java. security. SecureClassLoader</code></td>
-    <td>Spécialisation de de ClassLoader prenant en compte les domaines de protection (origine du code : URL +
+    <td>Spï¿½cialisation de de ClassLoader prenant en compte les domaines de protection (origine du code : URL +
       certificats).
     </td>
   </tr>
@@ -77,33 +77,33 @@
     <th colspan="2">URL</th>
     <td class="non">Non</td>
     <td class="oui" colspan="4"><code>java. net. URLClassLoader</code></td>
-    <td>Spécialisation du <code>SecureClassLoader</code> ancêtre des ClassLoaders chargeant des classes non-système.
-      permet de charger une classe référencée par une URL (de type <code>http://</code> ou <code>file://</code> ),
-      située dans un fichier (<code>.class</code> ou <code>.jar</code>) où à partir d'une liste d'URL par ordre de
-      préférence. Par défaut, les classes chargées depuis un tel ClassLoader sécurisé ne pourront accéder qu'aux classes
-      provenant d'une des URL spécifiées dans l'invocation de ce ClassLoader.
+    <td>Spï¿½cialisation du <code>SecureClassLoader</code> ancï¿½tre des ClassLoaders chargeant des classes non-systï¿½me.
+      permet de charger une classe rï¿½fï¿½rencï¿½e par une URL (de type <code>https://</code> ou <code>file://</code> ),
+      situï¿½e dans un fichier (<code>.class</code> ou <code>.jar</code>) oï¿½ ï¿½ partir d'une liste d'URL par ordre de
+      prï¿½fï¿½rence. Par dï¿½faut, les classes chargï¿½es depuis un tel ClassLoader sï¿½curisï¿½ ne pourront accï¿½der qu'aux classes
+      provenant d'une des URL spï¿½cifiï¿½es dans l'invocation de ce ClassLoader.
     </td>
   </tr>
   <tr>
     <th></th>
     <th colspan="2">Applet</th>
     <td>Oui</td>
-    <td colspan="4">Oui, sécurisé (hérite de <code>java. security. SecureClassLoader</code>)</td>
-    <td>Les chargeurs d'applets, bien que non standards (issus de packages propriétaires de Microsoft, Netscape ou Sun),
-      sont généralement inspirés du chargeur privé <code>sun.applet.AppletClassLoader</code>, utilisé dans l'outil
-      <code>appletviewer</code>. ClassLoader par délégation.
+    <td colspan="4">Oui, sï¿½curisï¿½ (hï¿½rite de <code>java. security. SecureClassLoader</code>)</td>
+    <td>Les chargeurs d'applets, bien que non standards (issus de packages propriï¿½taires de Microsoft, Netscape ou Sun),
+      sont gï¿½nï¿½ralement inspirï¿½s du chargeur privï¿½ <code>sun.applet.AppletClassLoader</code>, utilisï¿½ dans l'outil
+      <code>appletviewer</code>. ClassLoader par dï¿½lï¿½gation.
     </td>
   </tr>
 </table>
 <h2>Notes</h2>
 <ul>
   <li> On peut imaginer une classe en construisant une autre dynamiquement.</li>
-  <li>Jouent un rôle déterminant dans la sécurité.</li>
-  <li> Il peut donc exister divers ClassLoaders en mémoire, fonction du nombre d'origines de code différentes.</li>
-  <li>Il est possible de connaître le ClassLoader d'une classe via MaClasse.getClassLoader(). Une valeur null indique
-    que la classe examinée est une classe système de la plate-forme (java.lang.String par exemple, mais aussi les types
+  <li>Jouent un rï¿½le dï¿½terminant dans la sï¿½curitï¿½.</li>
+  <li> Il peut donc exister divers ClassLoaders en mï¿½moire, fonction du nombre d'origines de code diffï¿½rentes.</li>
+  <li>Il est possible de connaï¿½tre le ClassLoader d'une classe via MaClasse.getClassLoader(). Une valeur null indique
+    que la classe examinï¿½e est une classe systï¿½me de la plate-forme (java.lang.String par exemple, mais aussi les types
     primitifs tels que <code>int</code>). Le ClassLoader d'un tableau est le ClassLoader correspondant au type des
-    éléments de ce tableau.</li>
+    ï¿½lï¿½ments de ce tableau.</li>
 </ul>
 <h2>Exemples</h2>
 <p>Des exemples de ClassLoader sont :</p>

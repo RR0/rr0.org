@@ -5,9 +5,9 @@
 */
 /*
 	USAGE:
-		<!--[if lt IE 9]><script src="http://lcogt.net/virtualsky/embed/excanvas.js" type="text/javascript"></script><![endif]-->
-		<script src="http://lcogt.net/virtualsky/embed/jquery-1.7.1.min.js" type="text/javascript"></script>
-		<script src="http://lcogt.net/virtualsky/embed/virtualsky.js" type="text/javascript"></script>
+		<!--[if lt IE 9]><script src="https://lcogt.net/virtualsky/embed/excanvas.js" type="text/javascript"></script><![endif]-->
+		<script src="https://lcogt.net/virtualsky/embed/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script src="https://lcogt.net/virtualsky/embed/virtualsky.js" type="text/javascript"></script>
 		<script type="text/javascript">
 		<!--
 			$(document).ready(function(){
@@ -64,7 +64,7 @@
 
 	/*@cc_on
 // Fix for IE's inability to handle arguments to setTimeout/setInterval
-// From http://webreflection.blogspot.com/2007/06/simple-settimeout-setinterval-extra.html
+// From https://webreflection.blogspot.com/2007/06/simple-settimeout-setinterval-extra.html
 (function(f){
 	window.setTimeout =f(window.setTimeout);
 	window.setInterval =f(window.setInterval);
@@ -98,7 +98,7 @@
 	}
 
 	$.extend($.fn.addTouch = function () {
-		// Adapted from http://code.google.com/p/rsslounge/source/browse/trunk/public/javascript/addtouch.js?spec=svn115&r=115
+		// Adapted from https://code.google.com/p/rsslounge/source/browse/trunk/public/javascript/addtouch.js?spec=svn115&r=115
 		this.each(function (i, el) {
 			// Pass the original event object because the jQuery event object
 			// is normalized to w3c specs and does not provide the TouchList.
@@ -136,11 +136,11 @@
 			}
 		}
 	});
-	/*! Copyright (c) 2013 Brandon Aaron (http://brandonaaron.net)
+	/*! Copyright (c) 2013 Brandon Aaron (https://brandonaaron.net)
 * Licensed under the MIT License (LICENSE.txt).
 *
-* Thanks to: http://adomas.org/javascript-mouse-wheel/ for some pointers.
-* Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
+* Thanks to: https://adomas.org/javascript-mouse-wheel/ for some pointers.
+* Thanks to: Mathias Bank(https://www.mathias-bank.de) for a scope bug fix.
 * Thanks to: Seamus Leahy for adding deltaX and deltaY
 *
 * Version: 3.1.3
@@ -806,7 +806,7 @@
 		// Overwrite our defaults with input values
 		this.init(input)
 
-		// Country codes at http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+		// Country codes at https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 		this.language = (typeof this.q.lang === "string") ? this.q.lang : (typeof this.setlang === "string" ? this.setlang : (navigator) ? (navigator.userLanguage || navigator.systemLanguage || navigator.language || browser.language) : "")
 		this.langshort = (this.language.indexOf("-") > 0 ? this.language.substring(0, this.language.indexOf("-")) : this.language.substring(0, 2))
 		this.langs = [{"language": {"code": "en", "name": "English", "alignment": "left"}}] // The contents of the language will be loaded from the JSON language file
@@ -1203,7 +1203,7 @@
 			for (var o = 0; o < ob.length; o++)
 				$.ajax({
 					dataType: "jsonp",
-					url: "http://www.strudel.org.uk/lookUP/json/?name=" + ob[o],
+					url: "https://www.strudel.org.uk/lookUP/json/?name=" + ob[o],
 					context: this,
 					success: function (data) {
 						if (data && data.dec && data.ra) {
@@ -2082,7 +2082,7 @@
 			var metric_credit = this.drawText(credit, 5, this.tall - 5)
 			// Float a transparent link on top of the credit text
 			if (d.find("." + this.id + "_credit").length == 0)
-				d.append("<div class=\"" + this.id + "_credit\"><a href=\"http://lcogt.net/virtualsky\" target=\"_parent\" title=\"Created by the Las Cumbres Observatory Global Telescope\">" + this.getPhrase("powered") + "</a></div>")
+				d.append("<div class=\"" + this.id + "_credit\"><a href=\"https://lcogt.net/virtualsky\" target=\"_parent\" title=\"Created by the Las Cumbres Observatory Global Telescope\">" + this.getPhrase("powered") + "</a></div>")
 			d.find("." + this.id + "_credit").css({
 				padding: 0,
 				zIndex: 20,
@@ -3192,8 +3192,8 @@
 			p.d = is(p.d, "number") ? p.d : 5
 			if (typeof p.html !== "string") {
 				style = p.style || "width:128px;height:128px;"
-				url = p.url || "http://server1.wikisky.org/v2?ra=" + (p.ra / 15) + "&de=" + (p.dec) + "&zoom=6&img_source=DSS2"
-				img = p.img || "http://server7.sky-map.org/imgcut?survey=DSS2&w=128&h=128&ra=" + (p.ra / 15) + "&de=" + p.dec + "&angle=0.25&output=PNG"
+				url = p.url || "https://server1.wikisky.org/v2?ra=" + (p.ra / 15) + "&de=" + (p.dec) + "&zoom=6&img_source=DSS2"
+				img = p.img || "https://server7.sky-map.org/imgcut?survey=DSS2&w=128&h=128&ra=" + (p.ra / 15) + "&de=" + p.dec + "&angle=0.25&output=PNG"
 				label = p.credit || "View in Wikisky"
 				credit = p.credit || "DSS2/Wikisky"
 				p.html = p.html ||

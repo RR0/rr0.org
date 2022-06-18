@@ -16,7 +16,7 @@ describe("Navigation module", function () {
     }));
 
     it('detect inner links', function () {
-        var element = $compile("<a href=\"http://rr0.org/path/file.html\">same site link</a>")($rootScope);
+        var element = $compile("<a href=\"https://rr0.org/path/file.html\">same site link</a>")($rootScope);
         $rootScope.$digest();
         expect(element[0].target).not.toEqual("_blank");
     });
@@ -26,7 +26,7 @@ describe("Navigation module", function () {
         expect(element[0].target).not.toEqual("_blank");
     });
     it('detect outer links', function () {
-        var element = $compile("<a href=\"http://example.com/path/file.html\">external link</a>")($rootScope);
+        var element = $compile("<a href=\"https://example.com/path/file.html\">external link</a>")($rootScope);
         $rootScope.$digest();
         expect(element[0].target).toEqual("_blank");
     });

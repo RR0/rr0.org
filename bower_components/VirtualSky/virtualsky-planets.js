@@ -1,7 +1,7 @@
 /*!
  * Virtual Sky add on to display planets without 
  * needing a file regularly updated from JPL Horizons
- * Written by Stuart Lowe (http://www.strudel.org.uk/)
+ * Written by Stuart Lowe (https://www.strudel.org.uk/)
  */
 
 (function ($) {
@@ -20,8 +20,8 @@
 
   // Create an object to deal with planet ephemerides
   function Planets() {
-    // Heliocentric Osculating Orbital Elements Referred to the Mean Equinox and Ecliptic of Date for 2013: http://asa.usno.navy.mil/static/files/2013/Osculating_Elements_2013.txt
-    // Values of the Osculating Orbital Elements for 8th August 1997: http://www.stargazing.net/kepler/ellipse.html
+    // Heliocentric Osculating Orbital Elements Referred to the Mean Equinox and Ecliptic of Date for 2013: https://asa.usno.navy.mil/static/files/2013/Osculating_Elements_2013.txt
+    // Values of the Osculating Orbital Elements for 8th August 1997: https://www.stargazing.net/kepler/ellipse.html
     this.planets = [{
       "name": "Me",
       "radius": 2439.7,	// km
@@ -1062,7 +1062,7 @@
   // Input:
   //   planet = ID
   //   day = Julian Date to calculate the ephemeris for
-  // Method from http://www.stargazing.net/kepler/ellipse.html#twig06
+  // Method from https://www.stargazing.net/kepler/ellipse.html#twig06
   Planets.prototype.getEphem = function (planet, day) {
 
     var i, v, e, x, y, z, ec, q, ra, dc, R, mag, FV, phase
@@ -1102,7 +1102,7 @@
 
     R = Math.sqrt(q[0] * q[0] + q[1] * q[1] + q[2] * q[2])
 
-    // Calculate the magnitude (http://stjarnhimlen.se/comp/tutorial.html)
+    // Calculate the magnitude (https://stjarnhimlen.se/comp/tutorial.html)
     var angdiam = (this.planets[i].radius * 2 / (R * this.AUinkm))
     mag = 1
 

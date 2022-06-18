@@ -434,8 +434,8 @@ export class TimeService {
     'use strict';
 
     /**
-     * http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element
-     * http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#global-dates-and-times
+     * https://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element
+     * https://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#global-dates-and-times
      *
      * ((-)?[1-9]\d{3})(-(\d{1,2})(-(\d{1,2})(T\d{1,2}:\d{1:2])?)?)?
      *

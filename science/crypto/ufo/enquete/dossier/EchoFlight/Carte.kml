@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://earth.google.com/kml/2.2">
+<kml xmlns="https://earth.google.com/kml/2.2">
 <Document>
   <name>RR0</name>
   <description><![CDATA[Localisation des sites Echo et Oscar près de la base de Malmstrom]]></description>
 <Style id="blue">
     <IconStyle>
       <Icon>
-        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+        <href>https://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
       </Icon>
     </IconStyle>
   </Style>
   <Style id="red">
     <IconStyle>
       <Icon>
-        <href>http://maps.google.com/mapfiles/ms/micons/red-dot.png</href>
+        <href>https://maps.google.com/mapfiles/ms/micons/red-dot.png</href>
       </Icon>
     </IconStyle>
   </Style>
@@ -32,14 +32,14 @@
     <Style id="shortcircuit">
     <IconStyle>
       <Icon>
-        <href>http://maps.gstatic.com/intl/fr_fr/mapfiles/ms/micons/caution.png</href>
+        <href>https://maps.gstatic.com/intl/fr_fr/mapfiles/ms/micons/caution.png</href>
       </Icon>
     </IconStyle>
   </Style>
     <Style id="alim">
     <IconStyle>
       <Icon>
-        <href>http://maps.gstatic.com/intl/fr_fr/mapfiles/ms/micons/red-pushpin.png</href>
+        <href>https://maps.gstatic.com/intl/fr_fr/mapfiles/ms/micons/red-pushpin.png</href>
       </Icon>
     </IconStyle>
   </Style>

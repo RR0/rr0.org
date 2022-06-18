@@ -10,7 +10,7 @@ angular.module('rr0.social')
         var fjs = document.getElementsByTagName('script')[0];
         var frag = document.createDocumentFragment();
         var js = document.createElement('script');
-        js.src = 'http://apis.google.com/js/plusone.js';
+        js.src = 'https://apis.google.com/js/plusone.js';
         frag.appendChild(js);
         fjs.parentNode.insertBefore(frag, fjs);
       }

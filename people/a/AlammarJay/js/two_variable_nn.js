@@ -284,7 +284,7 @@ multiVariableNeuralNetworkTrainer.prototype.initializeNeuralNetworkGraph = funct
     biasNodeY = this.neuralNetworkMargin.top + this.neuralNetworkHeight / 2 - nodeRadius;
 
   // Arrow #1 - Bias to Output
-  // http://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
+  // https://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
   var defs = this.nnGraphHolder.append("defs");
   defs.append("marker")
     .attrs({

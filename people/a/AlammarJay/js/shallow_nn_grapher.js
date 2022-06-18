@@ -33,7 +33,7 @@ shallowNeuralNetworkGrapher.prototype.initializeGraph = function () {
   this.neuralNetworkG = this.nnGraphHolder.append("g");
 
   // Define arrow head
-  // http://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
+  // https://bl.ocks.org/tomgp/d59de83f771ca2b6f1d4
   var defs = this.nnGraphHolder.append("defs");
   defs.append("marker")
     .attrs({
@@ -551,8 +551,8 @@ var softmaxNNExample = new shallowNeuralNetworkGrapher(2, 2, "#shallow-neural-ne
 
 
 //plugin bootstrap minus and plus
-// http://bootsnipp.com/snippets/1Pj1d
-//http://jsfiddle.net/laelitenetwork/puJ6G/
+// https://bootsnipp.com/snippets/1Pj1d
+//https://jsfiddle.net/laelitenetwork/puJ6G/
 $(document).ready(function () {
   $('.input-number').on("input change", function () {
     var valueCurrent = parseInt($(this).val());

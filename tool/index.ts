@@ -1,9 +1,19 @@
 import {FileInfo, writeFile} from "./FileUtil"
 import {SsiIfReplaceCommand, SsiIncludeReplaceCommand} from "./Ssi"
-import {ReplaceCommand, Ssg, SsgConfig} from "./Ssg"
+import {Ssg, SsgConfig} from "./Ssg"
 
 const config: SsgConfig = {
-  contents: "croyance/conspirationnisme/enquete/dossier/**/*.html",
+  contentsRoots: [
+    "croyance/**/*.html",
+    "droit/**/*.html",
+    "org/**/*.html",
+    "people/**/*.html",
+    "place/**/*.html",
+    "politique/**/*.html",
+    "science/**/*.html",
+    "tech/**/*.html",
+    "time/**/*.html"
+  ],
   output: async (info: FileInfo) => {
     info.name = "out/" + info.name
     writeFile(info).then(result => {
@@ -11,19 +21,17 @@ const config: SsgConfig = {
     }).catch(err => {
       console.error(info.name, err)
     })
-  }
+  },
+  replacements: [
+    new SsiIncludeReplaceCommand(),
+    new SsiIfReplaceCommand()
+  ],
+  copies: [
+    "rr0.css", "print.css",
+    "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js"
+  ]
 }
 
-const replacements: ReplaceCommand[] = [
-  new SsiIncludeReplaceCommand(),
-  new SsiIfReplaceCommand()
-]
-
-const copies = [
-  "rr0.css", "print.css",
-  "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js"
-]
-
-new Ssg(config, replacements, copies)
+new Ssg(config)
   .start()
   .then(() => console.log("done"))

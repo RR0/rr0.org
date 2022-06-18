@@ -4,8 +4,10 @@ import {copy, FileInfo, getFileInfo} from "./FileUtil"
 type OutputFileGeneration = (info: FileInfo) => Promise<void>
 
 export type SsgConfig = {
-  contents: string,
-  output: OutputFileGeneration
+  contentsRoots: string[],
+  output: OutputFileGeneration,
+  replacements: ReplaceCommand[],
+  copies: string[]
 }
 
 
@@ -15,19 +17,22 @@ export interface ReplaceCommand {
 
 export class Ssg {
 
-  constructor(protected config: SsgConfig, protected replacements: ReplaceCommand[], protected copies: string[]) {
+  constructor(protected config: SsgConfig) {
   }
 
   async start() {
-    const contentFiles = await glob(this.config.contents)
-    contentFiles.forEach((fileName: string) => {
-      const fileInfo = getFileInfo(fileName)
-      for (const replacement of this.replacements) {
-        fileInfo.contents = replacement.execute(fileInfo.contents)
-      }
-      this.config.output(fileInfo)
-    })
-    for (const file of this.copies) {
+    let config = this.config
+    for (const contentsRoot of config.contentsRoots) {
+      const contentFiles = await glob(contentsRoot)
+      contentFiles.forEach((fileName: string) => {
+        const fileInfo = getFileInfo(fileName)
+        for (const replacement of config.replacements) {
+          fileInfo.contents = replacement.execute(fileInfo.contents)
+        }
+        config.output(fileInfo)
+      })
+    }
+    for (const file of config.copies) {
       copy(file, `out/${file}`).then(() => {
         console.log("copied", file)
       }).catch(err => {

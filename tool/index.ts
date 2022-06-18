@@ -4,7 +4,7 @@ import {Ssg, SsgConfig} from "./Ssg"
 
 const config: SsgConfig = {
   contentsRoots: [
-    "science/crypto/ufo/enquete/dossier/Caponi/I DUBBI DEL _FALSO_ CASO CAPONI __ Ufologia __ Notizie.html",
+    "tech/info/soft/proj/impl/lang/oo/Encapsulation.html",
     "croyance/**/*.html",
     "droit/**/*.html",
     "org/**/*.html",

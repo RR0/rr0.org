@@ -34,7 +34,7 @@ export class Ssg {
     }
     for (const file of config.copies) {
       copy(file, `out/${file}`).then(() => {
-        console.log("copied", file)
+        console.log("Copied", file)
       }).catch(err => {
         console.error("Could not copy", file, err)
       })

@@ -16,6 +16,7 @@ export function toBufferEncoding(encoding: string | undefined): BufferEncoding |
     case "utf-8":
       return "utf-8"
     case "iso-8859-1":
+    case "windows-1252":
       return "latin1"
     default:
       return encoding ? encoding as BufferEncoding : undefined
@@ -24,8 +25,16 @@ export function toBufferEncoding(encoding: string | undefined): BufferEncoding |
 
 export function detectEncoding(fileName: string): BufferEncoding | undefined {
   const fileBuffer = fs.readFileSync(fileName)
-  let guessedEncoding = detectCharacterEncoding(fileBuffer)
-  return toBufferEncoding(guessedEncoding?.encoding)
+  let guessedEncoding = undefined
+  try {
+    guessedEncoding = detectCharacterEncoding(fileBuffer)
+  } catch (e) {
+    if (e.message !== "Failed to detect charset.") {
+      throw e
+    }
+  } finally {
+    return toBufferEncoding(guessedEncoding?.encoding)
+  }
 }
 
 export function getCharSet(html: HTMLElement): BufferEncoding | undefined {

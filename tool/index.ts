@@ -1,6 +1,8 @@
 import {FileInfo, writeFile} from "./FileUtil"
-import {SsiIfReplaceCommand, SsiIncludeReplaceCommand} from "./Ssi"
 import {Ssg, SsgConfig} from "./Ssg"
+import {SsiIncludeReplaceCommand} from "./ssi/SsiIncludeReplaceCommand"
+import {SsiIfReplaceCommand} from "./ssi/SsiIfReplaceCommand"
+import {SsiLastModifiedReplaceCommand} from "./ssi/SsiLastModifiedReplaceCommand"
 
 const config: SsgConfig = {
   contentsRoots: [
@@ -15,17 +17,10 @@ const config: SsgConfig = {
     "tech/**/*.html",
     "time/**/*.html"
   ],
-  output: async (info: FileInfo) => {
-    info.name = "out/" + info.name
-    writeFile(info).then(result => {
-      console.log("Wrote", info.name)
-    }).catch(err => {
-      console.error(info.name, err)
-    })
-  },
   replacements: [
     new SsiIncludeReplaceCommand(),
-    new SsiIfReplaceCommand()
+    new SsiIfReplaceCommand(),
+    new SsiLastModifiedReplaceCommand()
   ],
   copies: [
     "rr0.css", "print.css",
@@ -33,6 +28,14 @@ const config: SsgConfig = {
   ]
 }
 
+const output = async (info: FileInfo) => {
+  info.name = "out/" + info.name
+  writeFile(info).then(result => {
+    console.log("Wrote", info.name)
+  }).catch(err => {
+    console.error(info.name, err)
+  })
+}
 new Ssg(config)
-  .start()
+  .start(output)
   .then(result => console.log("Wrote", result.contentCount, "content files"))

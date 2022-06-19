@@ -9,6 +9,7 @@ export type FileInfo = {
   name: string
   encoding: BufferEncoding
   contents: string
+  lastModified: Date
 }
 
 export function toBufferEncoding(encoding: string | undefined): BufferEncoding | undefined {
@@ -65,13 +66,14 @@ export async function writeFile(fileInfo: FileInfo) {
 
 export function getFileInfo(fileName: string): FileInfo {
   try {
+    const fileStats = fs.statSync(fileName)
     const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
     const html = parse(initialContents, {comment: true})
     const declaredEncoding = getCharSet(html) || getContentType(html)
     const detectedEncoding = detectEncoding(fileName)
     const encoding = declaredEncoding || detectedEncoding || "utf-8"
     const contents = fs.readFileSync(fileName, {encoding})
-    return {name: fileName, encoding, contents}
+    return {name: fileName, encoding, contents, lastModified: fileStats.mtime}
   } catch (e) {
     console.error(fileName, ":", e)
     throw e

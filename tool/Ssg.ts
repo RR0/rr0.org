@@ -5,14 +5,13 @@ type OutputFileGeneration = (info: FileInfo) => Promise<void>
 
 export type SsgConfig = {
   contentsRoots: string[],
-  output: OutputFileGeneration,
   replacements: ReplaceCommand[],
   copies: string[]
 }
 
 
 export interface ReplaceCommand {
-  execute(contents: string): string
+  execute(fileInfo: FileInfo): FileInfo
 }
 
 export type SsgResult = {
@@ -24,18 +23,18 @@ export class Ssg {
   constructor(protected config: SsgConfig) {
   }
 
-  async start(): Promise<SsgResult> {
+  async start(output: OutputFileGeneration): Promise<SsgResult> {
     let config = this.config
     let contentCount = 0
     for (const contentsRoot of config.contentsRoots) {
       const contentFiles = await glob(contentsRoot)
       contentFiles.forEach((fileName: string) => {
-        const fileInfo = getFileInfo(fileName)
+        let fileInfo = getFileInfo(fileName)
         for (const replacement of config.replacements) {
-          fileInfo.contents = replacement.execute(fileInfo.contents)
+          fileInfo = replacement.execute(fileInfo)
         }
         contentCount++
-        config.output(fileInfo)
+        output(fileInfo)
       })
     }
     for (const file of config.copies) {

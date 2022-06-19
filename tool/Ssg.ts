@@ -6,7 +6,8 @@ type OutputFileGeneration = (info: FileInfo) => Promise<void>
 export type SsgConfig = {
   contentsRoots: string[],
   replacements: ReplaceCommand[],
-  copies: string[]
+  copies: string[],
+  outDir: string
 }
 
 export type SsgContext = {
@@ -30,6 +31,13 @@ export class Ssg {
   async start(output: OutputFileGeneration): Promise<SsgResult> {
     const context: SsgContext = {locales: "fr", options: {year: "numeric", month: "long", day: "numeric"}}
     let config = this.config
+    for (const file of config.copies) {
+      copy(file, config.outDir).then(() => {
+        console.log("Copied", file)
+      }).catch(err => {
+        console.error("Could not copy", file, err)
+      })
+    }
     let contentCount = 0
     for (const contentsRoot of config.contentsRoots) {
       const contentFiles = await glob(contentsRoot)
@@ -40,13 +48,6 @@ export class Ssg {
         }
         contentCount++
         output(fileInfo)
-      })
-    }
-    for (const file of config.copies) {
-      copy(file, `out/${file}`).then(() => {
-        console.log("Copied", file)
-      }).catch(err => {
-        console.error("Could not copy", file, err)
       })
     }
     return {

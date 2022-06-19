@@ -25,12 +25,14 @@ const config: SsgConfig = {
   copies: [
     "favicon.ico",
     "rr0.css", "print.css",
-    "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js"
-  ]
+    "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",
+    "**/*.png", "**/*.jpg"
+  ],
+  outDir: "out"
 }
 
 const output = async (info: FileInfo) => {
-  info.name = "out/" + info.name
+  info.name = `${config.outDir}/${info.name}`
   writeFile(info).then(result => {
     console.log("Wrote", info.name)
   }).catch(err => {

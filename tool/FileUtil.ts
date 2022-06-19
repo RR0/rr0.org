@@ -3,8 +3,10 @@ import {promises as fsAsync} from "fs"
 import {HTMLElement, parse} from "node-html-parser"
 import detectCharacterEncoding from "detect-character-encoding"
 import path from "path"
+import * as util from "util"
 
-const fse = require("fs-extra")
+const globCopy = util.promisify(require("copy"))
+
 export type FileInfo = {
   name: string
   encoding: BufferEncoding
@@ -81,7 +83,7 @@ export function getFileInfo(fileName: string): FileInfo {
 }
 
 export async function copy(from: string, to: string): Promise<void> {
-  return fse.copy(from, to)
+  return globCopy(from, to)
 }
 
 export function getContentType(html: HTMLElement): BufferEncoding | undefined {

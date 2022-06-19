@@ -1,7 +1,7 @@
 {
-  "name": "wheredoigofromnow",
-  "version": "1.0.0",
-  "description": "Your life board",
+  "name": "rr0",
+  "version": "2.0.0",
+  "description": "",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --open",
@@ -25,7 +25,7 @@
     "detect-character-encoding": "^0.8.0",
     "glob-promise": "^4.2.2",
     "node-html-parser": "^5.3.3",
-    "fs-extra": "^10.1.0"
+    "copy": "^0.3.2"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "^0.7.0",

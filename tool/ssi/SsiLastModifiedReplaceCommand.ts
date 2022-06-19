@@ -1,15 +1,17 @@
 import {FileInfo} from "../FileUtil"
 import {SsiReplaceCommand, SsiReplacer} from "./SsiReplaceCommand"
+import {SsgContext} from "../Ssg"
 
 export class SsiLastModifiedReplaceCommand extends SsiReplaceCommand {
 
   constructor() {
-    super(/<!--#config timefmt="%d %B %Y %H:%M \(%Z\)" --><!--#flastmod virtual="\$DOCUMENT_URI" -->/gs)
+    super(/<!--\s*#config timefmt="(.*?)"\s*--><!--\s*#flastmod virtual="\$DOCUMENT_URI"\s*-->/gs)
   }
 
-  protected createReplacer(fileInfo: FileInfo): SsiReplacer {
+  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsiReplacer {
     return (substring: string, ...args: any[]): string => {
-      return fileInfo.lastModified.toLocaleDateString()
+      const timeFormat = args[0]
+      return fileInfo.lastModified.toLocaleDateString(context.locales, context.options)
     }
   }
 }

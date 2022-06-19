@@ -1,5 +1,6 @@
 import {FileInfo} from "../FileUtil"
 import {SsiReplaceCommand, SsiReplacer} from "./SsiReplaceCommand"
+import {SsgContext} from "../Ssg"
 
 export class SsiIfReplaceCommand extends SsiReplaceCommand {
 
@@ -15,7 +16,7 @@ export class SsiIfReplaceCommand extends SsiReplaceCommand {
     return condVar === condValue ? trueContent : falseContent
   }
 
-  protected createReplacer(fileInfo: FileInfo): SsiReplacer {
+  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsiReplacer {
     return this.replacer
   }
 }

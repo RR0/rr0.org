@@ -1,6 +1,7 @@
 import path from "path"
 import {FileInfo, getFileInfo} from "../FileUtil"
 import {SsiReplaceCommand, SsiReplacer} from "./SsiReplaceCommand"
+import {SsgContext} from "../Ssg"
 
 export class SsiIncludeReplaceCommand extends SsiReplaceCommand {
 
@@ -14,7 +15,7 @@ export class SsiIncludeReplaceCommand extends SsiReplaceCommand {
     return replacement.contents
   }
 
-  protected createReplacer(fileInfo: FileInfo): SsiReplacer {
+  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsiReplacer {
     return this.replacer
   }
 }

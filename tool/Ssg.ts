@@ -9,9 +9,13 @@ export type SsgConfig = {
   copies: string[]
 }
 
+export type SsgContext = {
+  locales?: string | string[]
+  options?: Intl.DateTimeFormatOptions
+}
 
 export interface ReplaceCommand {
-  execute(fileInfo: FileInfo): FileInfo
+  execute(context: SsgContext, fileInfo: FileInfo): FileInfo
 }
 
 export type SsgResult = {
@@ -24,6 +28,7 @@ export class Ssg {
   }
 
   async start(output: OutputFileGeneration): Promise<SsgResult> {
+    const context: SsgContext = {locales: "fr", options: {year: "numeric", month: "long", day: "numeric"}}
     let config = this.config
     let contentCount = 0
     for (const contentsRoot of config.contentsRoots) {
@@ -31,7 +36,7 @@ export class Ssg {
       contentFiles.forEach((fileName: string) => {
         let fileInfo = getFileInfo(fileName)
         for (const replacement of config.replacements) {
-          fileInfo = replacement.execute(fileInfo)
+          fileInfo = replacement.execute(context, fileInfo)
         }
         contentCount++
         output(fileInfo)

@@ -47,3 +47,11 @@
     </nav>
   </div>
   <div class="text">
+    <div class="metadata">
+      <div class="document-author" data-ng-cloak data-ng-controller="AuthorCtrl" data-ng-show="authors.length">
+      <span data-ng-cloak data-ng-repeat="aa in authors">{{$first ? '' : ' & '}}<a data-ng-cloak
+          data-ng-href="{{aa.link}}">{{aa.lastName}},
+        {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>, <span
+          data-ng-bind-html="docTime"></span>
+      </div>
+    </div>

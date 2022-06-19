@@ -6,7 +6,7 @@ import {SsiLastModifiedReplaceCommand} from "./ssi/SsiLastModifiedReplaceCommand
 
 const config: SsgConfig = {
   contentsRoots: [
-    "index.html",
+    "index.html", "404.html",
     "croyance/**/*.html",
     "droit/**/*.html",
     "org/**/*.html",

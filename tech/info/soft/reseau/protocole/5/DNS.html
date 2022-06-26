@@ -13,26 +13,21 @@
   <h2>Analyse</h2>
   <p>Le DNS permet de convertir les noms recherchés en adresses <a href="../3/IP.html">IP</a> et inversement.
   </p>
-  <p>Par ce biais il permet de router les requête <a href="../../../proj/design/arch/web/index.html">Web</a> ou de <a
+  <p>Par ce biais il permet de router les requêtes <a href="../../../proj/design/arch/web/index.html">Web</a> ou de <a
       href="../../internet/eMail.html">courrier électronique</a>.</p>
   <section>
     <h3>Entrées</h3>
-    <p>Les entrées d'une zone DNS définissent ce type d'association entre :</p>
-    <ol>
-      <li>un nom</li>
-      <li>une </li>
-    </ol>
+    <p>Chaque entrée d'une zone DNS définit une correspondance un <b>nom</b>, et :</p>
     <ul>
-      <li><strong><code>A</code></strong>(ddress) : le plus courant. Il permet d'associer une adresse IP à un nom.</li>
-      <li><strong><code>AAAA</code></strong> : pour les adresses IP au format IPv6.</li>
-      <li><strong><code>CNAME</code></strong> (Cannonical NAME) Cet enregistrement permet d'indiquer que le nom de
-        domaine donné est un alias vers un autre nom.</li>
-      <li><strong><code>ANAME</code></strong> : Comme CNAME, mais à la racine du domaine.</li>
-      <li><strong><code>ALIAS</code></strong> : Comportement semblable à CNAME sur les domaines apex.</li>
-      <li><strong><code>MX</code></strong> (Mail eXchanger) : quel est son serveur mail associé.</li>
-      <li><strong><code>TXT</code></strong>: permet d'avoir un TeXTe enregistré dans son DNS.</li>
-      <li><strong><code>WKS</code></strong> (Well Known Services) : liste de serveurs qui offrent des services connus
-        comme du HTTP ou POP3.</li>
+      <li>une <b>addresse</b> IP (<code>A</code> ou <code>AAAA</code> pour les adresses IPv6) : le plus courant.</li>
+      <li>un <b>alias</b> (<code><abbr title="Canonical NAME">CNAME</abbr></code>, ou <code>ANAME</code> pour la racine
+        du domaine ou <code>ALIAS</code> pour les domaines apex) pour indiquer que le nom de domaine donné est un alias
+        vers un autre nom.</li>
+      <li>un <b>serveur de mail</b> (<code><abbr title="Mail eXchanger">MX</abbr></code>) associé au domaine.</li>
+      <li>un <b>texte</b> (<code>TXT</code>) enregistré.</li>
+      <li>des serveurs de <b>services</b> connus (<code><abbr title="Well Known Services">WKS</abbr></code>) comme <a
+          href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> ou <a
+          href="/tech/info/soft/reseau/protocole/4/POP.html">POP</a>3.</li>
       <li><strong><code>SPF</code></strong> (Sender Policy Framework) norme de vérification du nom de domaine de
         l'expéditeur d'un courrier électronique.</li>
       <li><strong><code>SRV</code></strong> (SeRVice record) enregistrement d'informations sur les services disponibles

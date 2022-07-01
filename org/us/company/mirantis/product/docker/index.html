@@ -4,14 +4,118 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Motivation</h2>
-  <p>Offrir des environnements invariables$ aux applications.</p>
+  <p>Offrir des environnements invariables aux applications.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Docker propose une alternative plus légère (et donc plus performante) aux <a
+      href="/tech/info/soft/proj/conf/VM.html">VM</a> pour créer des environnements aux applications sans pour autant
+    répliquer un <a href="/tech/info/soft/prod/os">OS</a>.</p>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Docker évite l'utilisation de <a href="/tech/info/soft/proj/conf/VM.html">VM</a>.</p>
+  <p>Docker permet de <em>construire</em> (<i lang="en">build</i>) et <em>pousser</em> (<i lang="en">push</i>) des <b>images</b>
+    de <b>conteneurs</b> (<i lang="en">containers</i>)</p>
   <ul>
-    <li>Image</li>
-    <li>Conteneur (<i lang="en">container</i>)</li>
+    <li>d'environnement</li>
+    <li>d'application</li>
   </ul>
+  <p>Une fois construit, un conteneur peut être démarré ou stoppé.</p>
+  <p>Les conteneurs peuvent avoir accès à des ressources du système où ils s'exécutent :</p>
+  <ul>
+    <li>volume</li>
+    <li>port réseau</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <ul>
+    <li>Un <b>moteur</b> (<i lang="en">docker engine</i>) gère les conteneurs et les images</li>
+    <li>Un <b>client</b> (<i lang="en">docker client</i>, en ligne de commande ou application desktop) dialogue avec le
+      moteur pour exécuter les opérations de gestion des images (publication, récupération) et des conteneurs
+      (démarrage/arrêt, suppression)</li>
+  </ul>
+  <p>
+  <p>La description du conteneur est décrit dans un <code>Dockerfile</code>.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Instruction</th>
+      <th>Description</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code># syntax <i>version</i></code></td>
+      <td>Version de syntaxe</td>
+      <td>Indique quelle version de dockerfile utiliser (en 1ère ligne)</td>
+    </tr>
+    <tr>
+      <td><code># escape <i>char</i></code></td>
+      <td>Directive d'échappement</td>
+      <td>Indique quel est le caractère d'échappement (en 1ère ligne). <code>\</code> par défaut</td>
+    </tr>
+    <tr>
+      <td><code>FROM <i>dockerImage</i></code></td>
+      <td>Indique à partir de quelle image cette image va être construite</td>
+      <td>Première ligne (ou 2ème si directive)</td>
+    </tr>
+    <tr>
+      <td><code>ARG <i>argument</i>=<i>value</i></code></td>
+      <td>Définit une variable de construction</td>
+      <td>Valeur à spécifier au moment de la construction (ou valeur par défaut), après FROM</td>
+    </tr>
+    <tr>
+      <td><code>ENV <i>varname1</i>=<i>value1</i> <i>varname2</i>=<i>value2</i></code></td>
+      <td>Définit une variable d'environnement</td>
+      <td>Valeur <code>$varname1</code> ou <code>${varname}</code> disponible pendant la construction et l'exécution
+      </td>
+    </tr>
+    <tr>
+      <td><code>WORKDIR <i>path</i></code></td>
+      <td>Spécifie le répertoire du conteneur où seront exécutées les prochaines instructions de build</td>
+      <td>Crée le répertoire si non existant, <code>/.</code> par défaut</td>
+    </tr>
+    <tr>
+      <td><code>USER <i>username</i></code></td>
+      <td>Spécifie quel utilisateur va exécuter les prochaines commandes</td>
+      <td>L'utilisateur doit exister (<code>root</code> par défaut)</td>
+    </tr>
+    <tr>
+      <td><code>ADD <i>source</i> <i>dest</i></code></td>
+      <td>Ajoute des fichiers/répertoires à l'image construite.</td>
+      <td>dest est absolu ou relatif au dernier WORKDIR. <code><i>source</i></code> peut être une URL.</td>
+    </tr>
+    <tr>
+      <td><code>COPY <i>source</i> <i>dest</i></code></td>
+      <td>Ajoute des fichiers/répertoires locaux à l'image construite.</td>
+      <td> dest est absolu ou relatif au dernier WORKDIR</td>
+    </tr>
+    <tr>
+      <td><code>RUN ["<i>command</i>", "<i>arg1</i>", "<i>argn</i>"]</code><br> <code>RUN <i>command</i> <i>arg1</i> <i>argn</i></code>
+      </td>
+      <td>Execute une commande shell</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>EXPOSE <i>port</i>/<i>protocol</i></code></td>
+      <td>Déclare sur quel port le conteneur écoutera des requêtes réseau. <code><i>protocol</i></code> est `tcp` par
+        défaut
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>CMD [<i>commande</i>]</code></td>
+      <td>Indique une commande à exécuter au démarrage du conteneur</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>ENTRYPOINT ['<i>commande</i>', '<i>arg1</i>', '<i>argn</i>']</code></td>
+      <td>Indique une commande à exécuter au démarrage du conteneur</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <!--#include virtual="/footer.html" -->

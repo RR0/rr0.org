@@ -15,7 +15,8 @@ const config: SsgConfig = {
     "politique/**/*.html",
     "science/**/*.html",
     "tech/**/*.html",
-    "time/**/*.html"
+    "time/**/*.html",
+    "politique/**/*.html"
   ],
   replacements: [
     new SsiIncludeReplaceCommand(),

@@ -23,6 +23,7 @@ const config: SsgConfig = {
     new SsiLastModifiedReplaceCommand()
   ],
   copies: [
+    "_redirects",
     "favicon.ico",
     "rr0.css", "print.css",
     "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",

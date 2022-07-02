@@ -22,7 +22,7 @@ AddHandler server-parsed .shtml .html .htm
 
 ErrorDocument 404 /404.shtml
 
-DirectoryIndex index.shtml index_fr.html index.php index.html
+DirectoryIndex index_fr.html index.html
 Redirect /data https://rr0.org/time
 Redirect /personne https://rr0.org/people
 Redirect /lieu https://rr0.org/place

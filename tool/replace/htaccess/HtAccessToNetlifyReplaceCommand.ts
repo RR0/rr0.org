@@ -25,8 +25,8 @@ export class HtAccessToNetlifyReplaceCommand implements ReplaceCommand {
       if (command) {
         switch (command) {
           case HtAccessCommands.DirectoryIndex:
-            result += `/*.html /:splat.html\n`
-            result += `/* /:splat/${args[1]}\n`
+            result += `/* ${args[1]}\n`
+            //result += `/*/ /:splat/${args[1]}\n`
             break
           case HtAccessCommands.Redirect:
             const host = "https://rr0.org/"

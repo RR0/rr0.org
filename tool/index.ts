@@ -1,30 +1,44 @@
 import {FileInfo, writeFile} from "./FileUtil"
 import {Ssg, SsgConfig} from "./Ssg"
-import {SsiIncludeReplaceCommand} from "./ssi/SsiIncludeReplaceCommand"
-import {SsiIfReplaceCommand} from "./ssi/SsiIfReplaceCommand"
-import {SsiLastModifiedReplaceCommand} from "./ssi/SsiLastModifiedReplaceCommand"
+import {SsiIncludeReplaceCommand} from "./replace/ssi/SsiIncludeReplaceCommand"
+import {SsiIfReplaceCommand} from "./replace/ssi/SsiIfReplaceCommand"
+import {SsiLastModifiedReplaceCommand} from "./replace/ssi/SsiLastModifiedReplaceCommand"
+import {HtAccessToNetlifyReplaceCommand} from "./replace/htaccess/HtAccessToNetlifyReplaceCommand"
 
 const config: SsgConfig = {
-  contentsRoots: [
-    "index.html", "404.html",
-    "croyance/**/*.html",
-    "droit/**/*.html",
-    "org/**/*.html",
-    "people/**/*.html",
-    "place/**/*.html",
-    "politique/**/*.html",
-    "science/**/*.html",
-    "tech/**/*.html",
-    "time/**/*.html",
-    "politique/**/*.html"
-  ],
-  replacements: [
-    new SsiIncludeReplaceCommand(),
-    new SsiIfReplaceCommand(),
-    new SsiLastModifiedReplaceCommand()
+  contents: [
+    {
+      roots: [".htaccess"],
+      replacements: [new HtAccessToNetlifyReplaceCommand()],
+      outputFile(inputFile: FileInfo): FileInfo {
+        return Object.assign({...inputFile}, {name: "_redirects"})
+      }
+    },
+    {
+      roots: [
+        "index.html", "404.html",
+        "croyance/**/*.html",
+        "droit/**/*.html",
+        "org/**/*.html",
+        "people/**/*.html",
+        "place/**/*.html",
+        "politique/**/*.html",
+        "science/**/*.html",
+        "tech/**/*.html",
+        "time/**/*.html",
+        "politique/**/*.html"
+      ],
+      replacements: [
+        new SsiIncludeReplaceCommand(),
+        new SsiIfReplaceCommand(),
+        new SsiLastModifiedReplaceCommand()
+      ],
+      outputFile(inputFile: FileInfo): FileInfo {
+        return inputFile
+      }
+    }
   ],
   copies: [
-    "_redirects",
     "favicon.ico",
     "rr0.css", "print.css",
     "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",

@@ -1,9 +1,9 @@
 import {ReplaceCommand, SsgContext} from "../Ssg"
 import {FileInfo} from "../FileUtil"
 
-export type SsiReplacer = (substring: string, ...args: any[]) => string
+export type Replacer = (substring: string, ...args: any[]) => string
 
-export abstract class SsiReplaceCommand implements ReplaceCommand {
+export abstract class RegexpReplaceCommand implements ReplaceCommand {
 
   protected constructor(protected regex: RegExp) {
   }
@@ -20,5 +20,5 @@ export abstract class SsiReplaceCommand implements ReplaceCommand {
     return fileInfo
   }
 
-  protected abstract createReplacer(context: SsgContext, fileInfo: FileInfo): SsiReplacer
+  protected abstract createReplacer(context: SsgContext, fileInfo: FileInfo): Replacer
 }

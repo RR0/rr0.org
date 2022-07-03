@@ -1,8 +1,8 @@
-import {FileInfo} from "../FileUtil"
-import {SsiReplaceCommand, SsiReplacer} from "./SsiReplaceCommand"
-import {SsgContext} from "../Ssg"
+import {FileInfo} from "../../FileUtil"
+import {RegexpReplaceCommand, Replacer} from "../RegexpReplaceCommand"
+import {SsgContext} from "../../Ssg"
 
-export class SsiIfReplaceCommand extends SsiReplaceCommand {
+export class SsiIfReplaceCommand extends RegexpReplaceCommand {
 
   constructor() {
     super(/<!--\s*#if\s+expr="(.+?)=(.+?)"\s*-->(.*?)<!--\s*#else\s*-->(.*?)<!--\s*#endif\s*-->/gs)
@@ -16,7 +16,7 @@ export class SsiIfReplaceCommand extends SsiReplaceCommand {
     return condVar === condValue ? trueContent : falseContent
   }
 
-  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsiReplacer {
+  protected createReplacer(context: SsgContext, fileInfo: FileInfo): Replacer {
     return this.replacer
   }
 }

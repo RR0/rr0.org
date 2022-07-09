@@ -30,7 +30,13 @@ export class HtAccessToNetlifyReplaceCommand implements ReplaceCommand {
             break
           case HtAccessCommands.Redirect:
             const host = "https://rr0.org/"
-            result += `${args[1]} /${args[2].substring(host.length)}\n`
+            let path = args[2].substring(host.length)
+            let from = args[1]
+            if (from.endsWith("/") || !from.endsWith(".html")) {
+              from += "/*"
+              path += "/:splat"
+            }
+            result += `${from} /${path}\n`
             break
         }
       }

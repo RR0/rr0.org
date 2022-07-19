@@ -16,7 +16,7 @@ const config: SsgConfig = {
     },
     {
       roots: [
-        "index.html", "404.html",
+        "index.html", "404.html", "googlebe03dcf00678bb7c.html",
         "croyance/**/*.html",
         "droit/**/*.html",
         "org/**/*.html",

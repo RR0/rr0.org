@@ -1264,7 +1264,7 @@ dt, dd {
 }
 
 #notes, #sources, .footer, .note, .source {
-  font-size: .7em
+  font-size: .8em
 }
 
 footer {
@@ -1492,17 +1492,6 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 
   code, pre {
     background-color: #2f3032;
-  }
-
-  *::-webkit-scrollbar {
-    background-color: #1c1b1b;
-    padding: 0 2px;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: dimgray;
-    border-radius: 0.5em;
-    border: 1px outset gray;
   }
 }
 

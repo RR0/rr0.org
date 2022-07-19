@@ -1438,6 +1438,10 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
   .contents {
     background: black;
     color: whitesmoke;

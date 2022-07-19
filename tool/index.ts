@@ -27,7 +27,8 @@ const config: SsgConfig = {
         "tech/**/*.html",
         "time/**/*.html",
         "politique/**/*.html",
-        "udb/**/*.*"
+        "udb/**/*.*",
+        "js/**/*.html"
       ],
       replacements: [
         new SsiIncludeReplaceCommand(),

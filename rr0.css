@@ -1468,11 +1468,6 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
   }
 
-  .search input {
-    background-color: slategray;
-    color: white;
-  }
-
   .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {
     color: white;
     background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);

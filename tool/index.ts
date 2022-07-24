@@ -188,7 +188,6 @@ const config: SsgConfig = {
     },
     {
       roots: [
-        "croyance/conspirationnisme/enquete/dossier/11Septembre/index.html",
         "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
         "croyance/**/*.html",
         "droit/**/*.html",

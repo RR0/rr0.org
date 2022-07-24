@@ -36,7 +36,7 @@ export class Ssg {
   async start(output: OutputFileGeneration): Promise<SsgResult> {
     const context: SsgContext = {locales: "fr", options: {year: "numeric", month: "long", day: "numeric"}}
     let config = this.config
-    //  await this.processCopies(config)
+    await this.processCopies(config)
     let contentCount = 0
     for (const contents of config.contents) {
       contentCount += await this.processContents(contents, context, output)

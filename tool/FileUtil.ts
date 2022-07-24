@@ -35,9 +35,8 @@ export function detectEncoding(fileName: string): BufferEncoding | undefined {
     if (e.message !== "Failed to detect charset.") {
       throw e
     }
-  } finally {
-    return toBufferEncoding(guessedEncoding?.encoding)
   }
+  return toBufferEncoding(guessedEncoding?.encoding)
 }
 
 export function getCharSet(html: HTMLElement): BufferEncoding | undefined {
@@ -60,7 +59,7 @@ function ensureDirectoryExistence(filePath: string) {
   fs.mkdirSync(dirname)
 }
 
-export async function writeFile(fileInfo: FileInfo) {
+export async function writeFile(fileInfo: FileInfo): Promise<void> {
   let fileName = fileInfo.name
   ensureDirectoryExistence(fileName)
   return fsAsync.writeFile(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
@@ -82,7 +81,7 @@ export function getFileInfo(fileName: string): FileInfo {
   }
 }
 
-export async function copy(from: string, to: string): Promise<void> {
+export async function ssgCopy(to: string, ...from: string[]): Promise<File[]> {
   return globCopy(from, to)
 }
 

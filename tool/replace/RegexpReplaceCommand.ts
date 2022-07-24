@@ -1,5 +1,6 @@
 import {ReplaceCommand, SsgContext} from "../Ssg"
 import {FileInfo} from "../FileUtil"
+import {SsgReplacer} from "./SsgReplacer"
 
 export type Replacer = (substring: string, ...args: any[]) => string
 
@@ -14,11 +15,11 @@ export abstract class RegexpReplaceCommand implements ReplaceCommand {
     do {
       contents = result
       const replacer = this.createReplacer(context, fileInfo)
-      result = contents.replace(this.regex, replacer)
+      result = contents.replace(this.regex, replacer.replacer)
     } while (result != contents)
     fileInfo.contents = result
     return fileInfo
   }
 
-  protected abstract createReplacer(context: SsgContext, fileInfo: FileInfo): Replacer
+  protected abstract createReplacer(context: SsgContext, fileInfo: FileInfo): SsgReplacer
 }

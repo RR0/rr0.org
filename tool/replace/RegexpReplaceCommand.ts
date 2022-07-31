@@ -1,6 +1,7 @@
-import {ReplaceCommand, SsgContext} from "../Ssg"
+import {ReplaceCommand} from "../Ssg"
 import {FileInfo} from "../FileUtil"
 import {SsgReplacer} from "./SsgReplacer"
+import {SsgContext} from "../SsgContext"
 
 export type Replacer = (substring: string, ...args: any[]) => string
 

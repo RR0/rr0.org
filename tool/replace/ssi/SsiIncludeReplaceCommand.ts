@@ -1,8 +1,8 @@
 import path from "path"
 import {FileInfo, getFileInfo} from "../../FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
-import {SsgContext} from "../../Ssg"
 import {SsgReplacer} from "../SsgReplacer"
+import {SsgContext} from "../../SsgContext"
 
 export class SsiIncludeReplaceCommand extends RegexpReplaceCommand {
 

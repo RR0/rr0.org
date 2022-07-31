@@ -1,5 +1,6 @@
 import {promise as glob} from "glob-promise"
 import {FileInfo, getFileInfo, ssgCopy} from "./FileUtil"
+import {SsgContext} from "./SsgContext"
 
 type OutputFileGeneration = (info: FileInfo) => Promise<void>
 
@@ -12,12 +13,6 @@ export type SsgConfig = {
   contents: ContentsConfig[]
   copies: string[]
   outDir: string
-}
-
-export type SsgContext = {
-  date?: Date
-  locales?: string | string[]
-  options?: Intl.DateTimeFormatOptions
 }
 
 export interface ReplaceCommand {
@@ -33,14 +28,13 @@ export class Ssg {
   constructor(protected config: SsgConfig) {
   }
 
-  async start(output: OutputFileGeneration): Promise<SsgResult> {
-    const context: SsgContext = {locales: "fr", options: {year: "numeric", month: "long", day: "numeric"}}
+  async start(context: SsgContext, output: OutputFileGeneration): Promise<SsgResult> {
     let config = this.config
-    await this.processCopies(config)
     let contentCount = 0
     for (const contents of config.contents) {
       contentCount += await this.processContents(contents, context, output)
     }
+    await this.processCopies(config)
     return {
       contentCount
     }

@@ -1,5 +1,6 @@
 import {FileInfo} from "../../FileUtil"
-import {ReplaceCommand, SsgContext} from "../../Ssg"
+import {ReplaceCommand} from "../../Ssg"
+import {SsgContext} from "../../SsgContext"
 
 enum HtAccessCommands {
   Options = "Options",

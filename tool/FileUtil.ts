@@ -32,7 +32,7 @@ export function detectEncoding(fileName: string): BufferEncoding | undefined {
   try {
     guessedEncoding = detectCharacterEncoding(fileBuffer)
   } catch (e) {
-    if (e.message !== "Failed to detect charset.") {
+    if ((e as Error).message !== "Failed to detect charset.") {
       throw e
     }
   }

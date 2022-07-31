@@ -1,8 +1,8 @@
 import {FileInfo} from "../../FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
-import {SsgContext} from "../../Ssg"
 import {ReplacerFactory} from "../ReplacerFactory"
 import {SsgReplacer} from "../SsgReplacer"
+import {SsgContext} from "../../SsgContext"
 
 export class HtmlTagReplaceCommand extends RegexpReplaceCommand {
 

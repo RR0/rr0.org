@@ -1,7 +1,7 @@
 import {FileInfo} from "../../FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
-import {SsgContext} from "../../Ssg"
 import {SsgReplacer} from "../SsgReplacer"
+import {SsgContext} from "../../SsgContext"
 
 export class SsiVarReplaceCommand extends RegexpReplaceCommand {
 

@@ -64,7 +64,7 @@ export class TimeReplacerFactory implements ReplacerFactory {
     } else {
       replacement = TimeReplacerFactory.valueReplacement(context, timeStr) || substring
     }
-    console.log("\tReplacing", substring, "with", replacement)
+   // console.log("\tReplacing", substring, "with", replacement)
     return replacement
   }
 

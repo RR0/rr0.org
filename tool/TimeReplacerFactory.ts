@@ -1,74 +1,15 @@
 import {ReplacerFactory} from "./replace/ReplacerFactory"
 import {SsgReplacer} from "./replace/SsgReplacer"
-import {UrlDateBuilder} from "./UrlDateBuilder"
-import {TextDateBuilder} from "./TextDateBuilder"
 import {SsgContext} from "./SsgContext"
-import {RelativeTextDateBuilder} from "./RelativeTextDateBuilder"
+import {TimeReplacer} from "./TimeReplacer"
+import {promise as glob} from "glob-promise"
 
 export class TimeReplacerFactory implements ReplacerFactory {
 
-  static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-([0-1]\\d))?(?:-([0-3]\\d))?(?:[ T]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
+  protected instance?: TimeReplacer
 
-  static valueReplacement(context: SsgContext, timeStr: string): string | undefined {
-    const previousContext: SsgContext = context.clone()
-    let replacement = undefined
-    timeStr = timeStr.trim()
-    let regExpExecArray = this.dateTimeRegexp.exec(timeStr)
-    if (regExpExecArray) {
-      let timeContext = context.time
-      const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = regExpExecArray.slice(1, 1 + 6)
-      if (yearStr) {
-        const year = parseInt(yearStr, 10)
-        if (!Number.isNaN(year)) {
-          timeContext.year = year
-        }
-      }
-      if (monthStr) {
-        const month = parseInt(monthStr, 10)
-        if (!Number.isNaN(month)) {
-          timeContext.month = month
-        }
-      }
-      if (dayOfMonthStr) {
-        const dayOfMonth = parseInt(dayOfMonthStr, 10)
-        if (!Number.isNaN(dayOfMonth)) {
-          timeContext.dayOfMonth = dayOfMonth
-        }
-      }
-      if (hour) {
-        timeContext.hour = parseInt(hour, 10)
-      }
-      if (minutes) {
-        timeContext.minutes = parseInt(minutes, 10)
-      }
-      if (timeZone) {
-        timeContext.timeZone = timeZone
-      }
-      if (timeContext.isDefined()) {
-        let url = UrlDateBuilder.build(context)
-        let title = TextDateBuilder.build(context)
-        let text = RelativeTextDateBuilder.build(previousContext, context)
-        replacement = `<a href="${url}" title="${title}">${text}</a>`
-      }
-    }
-    return replacement
-  }
-
-  static replacement(context: SsgContext, substring: string, timeStr: string): string {
-    let parts = timeStr.split("/")
-    let replacement: string
-    if (parts.length > 1) {
-      const startReplacement = TimeReplacerFactory.valueReplacement(context, parts[0])
-      const endReplacement = TimeReplacerFactory.valueReplacement(context, parts[1])
-      replacement = startReplacement + " à " + endReplacement
-    } else {
-      replacement = TimeReplacerFactory.valueReplacement(context, timeStr) || substring
-    }
-   // console.log("\tReplacing", substring, "with", replacement)
-    return replacement
-  }
-
-  create(context: SsgContext): SsgReplacer {
+  async create(context: SsgContext): Promise<SsgReplacer> {
+    const instance = await this.getInstance()
     return {
       replacer:
         /**
@@ -76,8 +17,23 @@ export class TimeReplacerFactory implements ReplacerFactory {
          */
         (substring: string, ...args: any[]): string => {
           const timeStr = args[0]
-          return TimeReplacerFactory.replacement(context, substring, timeStr)
+          return instance.replacement(context, substring, timeStr)
         }
     }
+  }
+
+  protected async getInstance(): Promise<TimeReplacer> {
+    if (!this.instance) {
+      const minusYearFiles = await glob("time/-?/?/?/?")
+      const year1Files = await glob("time/?")
+      const year2Files = await glob("time/?/?")
+      const year3Files = await glob("time/?/?/?")
+      const year4Files = await glob("time/?/?/?/?")
+      const monthFiles = await glob("time/?/?/?/?/??")
+      const dayFiles = await glob("time/?/?/?/?/??/??")
+      const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(minusYearFiles).concat(monthFiles).concat(dayFiles)
+      this.instance = new TimeReplacer(timeFiles)
+    }
+    return this.instance
   }
 }

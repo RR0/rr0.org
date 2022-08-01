@@ -1,5 +1,6 @@
 import {TimeReplacerFactory} from "./TimeReplacerFactory"
 import {SsgContext} from "./SsgContext"
+import {TimeReplacer} from "./TimeReplacer"
 
 describe("TimeReplacerFactory", () => {
 
@@ -15,7 +16,8 @@ describe("TimeReplacerFactory", () => {
   test("parses year", () => {
     {
       const context = new SsgContext("fr", intlOptions)
-      expect(TimeReplacerFactory.valueReplacement(context, "2003"))
+      const replacer = new TimeReplacer()
+      expect(replacer.valueReplacement(context, "2003"))
         .toBe(`<a href="/time/2/0/0/3" title="2003">2003</a>`)
       expect(context.time.year).toBe(2003)
       expect(context.time.month).toBe(undefined)
@@ -26,7 +28,8 @@ describe("TimeReplacerFactory", () => {
     }
     {
       const context = new SsgContext("fr", intlOptions)
-      expect(TimeReplacerFactory.valueReplacement(context, "2025\n      "))
+      const replacer = new TimeReplacer()
+      expect(replacer.valueReplacement(context, "2025\n      "))
         .toBe(`<a href="/time/2/0/2/5" title="2025">2025</a>`)
       expect(context.time.year).toBe(2025)
       expect(context.time.month).toBe(undefined)
@@ -40,7 +43,8 @@ describe("TimeReplacerFactory", () => {
   test("parses interval", () => {
     const context = new SsgContext("fr", intlOptions)
     let interval = "2012/2016"
-    expect(TimeReplacerFactory.replacement(context, `<time>${interval}</time>`, interval))
+    const replacer = new TimeReplacer()
+    expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
       .toBe(`<a href="/time/2/0/1/2" title="2012">2012</a> à <a href="/time/2/0/1/6" title="2016">2016</a>`)
     expect(context.time.year).toBe(2016)
     expect(context.time.month).toBe(undefined)
@@ -53,7 +57,8 @@ describe("TimeReplacerFactory", () => {
   test("parses unsupported", () => {
     const context = new SsgContext("fr", intlOptions)
     let interval = "moi"
-    expect(TimeReplacerFactory.replacement(context, `<time>${interval}</time>`, interval))
+    const replacer = new TimeReplacer()
+    expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
       .toBe(`<time>moi</time>`)
     expect(context.time.year).toBe(undefined)
     expect(context.time.month).toBe(undefined)
@@ -66,7 +71,8 @@ describe("TimeReplacerFactory", () => {
   test("parses timezone", () => {
     const context = new SsgContext("fr", intlOptions)
     let interval = "2003-12-24CDT"
-    expect(TimeReplacerFactory.replacement(context, `<time>${interval}</time>`, interval))
+    const replacer = new TimeReplacer()
+    expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
       .toBe(`<a href="/time/2/0/0/3/12/24" title="mercredi 24 décembre 2003">mercredi 24 décembre 2003</a>`)
     expect(context.time.year).toBe(2003)
     expect(context.time.month).toBe(12)
@@ -79,7 +85,8 @@ describe("TimeReplacerFactory", () => {
   test("parses month", () => {
     const context = new SsgContext("fr", intlOptions)
     let value = "2004-09"
-    expect(TimeReplacerFactory.replacement(context, `<time>${value}</time>`, value))
+    const replacer = new TimeReplacer()
+    expect(replacer.replacement(context, `<time>${value}</time>`, value))
       .toBe(`<a href="/time/2/0/0/4/09" title="septembre 2004">septembre 2004</a>`)
     expect(context.time.year).toBe(2004)
     expect(context.time.month).toBe(9)
@@ -90,7 +97,8 @@ describe("TimeReplacerFactory", () => {
 
   test("parses day", () => {
     const context = new SsgContext("fr", intlOptions)
-    expect(TimeReplacerFactory.valueReplacement(context, "2005-08-23"))
+    const replacer = new TimeReplacer()
+    expect(replacer.valueReplacement(context, "2005-08-23"))
       .toBe(`<a href="/time/2/0/0/5/08/23" title="mardi 23 août 2005">mardi 23 août 2005</a>`)
     expect(context.time.year).toBe(2005)
     expect(context.time.month).toBe(8)
@@ -102,7 +110,8 @@ describe("TimeReplacerFactory", () => {
   test("parses hour", () => {
     {
       const context = new SsgContext("fr", intlOptions)
-      expect(TimeReplacerFactory.valueReplacement(context, "2006-07-14 17:56"))
+      const replacer = new TimeReplacer()
+      expect(replacer.valueReplacement(context, "2006-07-14 17:56"))
         .toBe(`<a href="/time/2/0/0/6/07/14" title="vendredi 14 juillet 2006, 17:56">vendredi 14 juillet 2006, 17:56</a>`)
       expect(context.time.year).toBe(2006)
       expect(context.time.month).toBe(7)
@@ -115,7 +124,8 @@ describe("TimeReplacerFactory", () => {
       context.time.year = 2007
       context.time.month = 6
       context.time.dayOfMonth = 15
-      expect(TimeReplacerFactory.valueReplacement(context, "18:47")).toBe(`<a href="/time/2/0/0/7/06/15" title="vendredi 15 juin 2007, 18:47">vendredi 15 juin 2007, 18:47</a>`)
+      const replacer = new TimeReplacer()
+      expect(replacer.valueReplacement(context, "18:47")).toBe(`<a href="/time/2/0/0/7/06/15" title="vendredi 15 juin 2007, 18:47">vendredi 15 juin 2007, 18:47</a>`)
       expect(context.time.year).toBe(2007)
       expect(context.time.month).toBe(6)
       expect(context.time.dayOfMonth).toBe(15)

@@ -10,17 +10,17 @@ export abstract class RegexpReplaceCommand implements ReplaceCommand {
   protected constructor(protected regex: RegExp) {
   }
 
-  execute(context: SsgContext, fileInfo: FileInfo): FileInfo {
+  async execute(context: SsgContext, fileInfo: FileInfo): Promise<FileInfo> {
     let contents = fileInfo.contents
     let result = contents
     do {
       contents = result
-      const replacer = this.createReplacer(context, fileInfo)
+      const replacer = await this.createReplacer(context, fileInfo)
       result = contents.replace(this.regex, replacer.replacer)
     } while (result != contents)
     fileInfo.contents = result
     return fileInfo
   }
 
-  protected abstract createReplacer(context: SsgContext, fileInfo: FileInfo): SsgReplacer
+  protected abstract createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer>
 }

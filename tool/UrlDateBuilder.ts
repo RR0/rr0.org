@@ -3,7 +3,7 @@ import {SsgContext} from "./SsgContext"
 export class UrlDateBuilder {
 
   static build(context: SsgContext): string {
-    let url = "/time/"
+    let url = "time/"
     let time = context.time
     const year = time.year
     if (year) {

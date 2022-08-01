@@ -9,7 +9,7 @@ export class SsiLastModifiedReplaceCommand extends RegexpReplaceCommand {
     super(/<!--\s*#config timefmt="(.*?)"\s*--><!--\s*#flastmod virtual="\$DOCUMENT_URI"\s*-->/gs)
   }
 
-  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsgReplacer {
+  protected async createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
     return {
       replacer: (substring: string, ...args: any[]): string => {
         const timeFormat = args[0]

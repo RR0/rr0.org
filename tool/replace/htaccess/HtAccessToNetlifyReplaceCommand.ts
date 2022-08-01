@@ -16,7 +16,7 @@ enum HtAccessCommands {
 }
 
 export class HtAccessToNetlifyReplaceCommand implements ReplaceCommand {
-  execute(context: SsgContext, fileInfo: FileInfo): FileInfo {
+  async execute(context: SsgContext, fileInfo: FileInfo): Promise<FileInfo> {
     let contents = fileInfo.contents
     let lines = contents.split("\n").map(line => line.trim())
     let result = ""

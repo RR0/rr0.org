@@ -16,7 +16,7 @@ export type SsgConfig = {
 }
 
 export interface ReplaceCommand {
-  execute(context: SsgContext, fileInfo: FileInfo): FileInfo
+  execute(context: SsgContext, fileInfo: FileInfo): Promise<FileInfo>
 }
 
 export type SsgResult = {
@@ -48,7 +48,7 @@ export class Ssg {
         const inputFile = getFileInfo(fileName)
         let outputFile: FileInfo = contentsConfig.outputFile(inputFile)
         for (const replacement of contentsConfig.replacements) {
-          outputFile = replacement.execute(context, outputFile)
+          outputFile = await replacement.execute(context, outputFile)
         }
         contentCount++
         await output(outputFile)

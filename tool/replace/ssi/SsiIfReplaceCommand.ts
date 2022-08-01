@@ -19,7 +19,7 @@ export class SsiIfReplaceCommand extends RegexpReplaceCommand {
     super(/<!--\s*#if\s+expr="(.+?)=(.+?)"\s*-->(.*?)<!--\s*#else\s*-->(.*?)<!--\s*#endif\s*-->/gs)
   }
 
-  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsgReplacer {
+  protected async createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
     return this.replacer
   }
 }

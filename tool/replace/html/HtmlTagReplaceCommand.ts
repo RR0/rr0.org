@@ -10,7 +10,7 @@ export class HtmlTagReplaceCommand extends RegexpReplaceCommand {
     super(new RegExp(`<${tagName}>s*(.+?)s*</${tagName}>`, "gs"))
   }
 
-  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsgReplacer {
+  protected createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
     return this.replacerFactory.create(context)
   }
 }

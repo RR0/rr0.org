@@ -18,7 +18,7 @@ export class SsiIncludeReplaceCommand extends RegexpReplaceCommand {
     super(/<!--\s*#include\s+virtual="(.+?)"\s*-->/g)
   }
 
-  protected createReplacer(context: SsgContext, fileInfo: FileInfo): SsgReplacer {
+  protected async createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
     return this.replacer
   }
 }

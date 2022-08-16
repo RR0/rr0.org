@@ -1,5 +1,5 @@
 import {UrlDateBuilder} from "./UrlDateBuilder"
-import {SsgContext} from "./SsgContext"
+import {SsgContext} from "../SsgContext"
 
 describe("DateUrlBuilder", () => {
 
@@ -17,7 +17,7 @@ describe("DateUrlBuilder", () => {
       const context = new SsgContext("fr", intlOptions)
       context.time.year = 2008
       const url = UrlDateBuilder.build(context)
-      expect(url).toEqual("/time/2/0/0/8")
+      expect(url).toEqual("time/2/0/0/8")
     }
     {
       const context = new SsgContext("fr", intlOptions)
@@ -26,7 +26,7 @@ describe("DateUrlBuilder", () => {
       context.time.dayOfMonth = 12
       context.time.year = 2020  // Resets month and day
       const url = UrlDateBuilder.build(context)
-      expect(url).toEqual("/time/2/0/2/0")
+      expect(url).toEqual("time/2/0/2/0")
     }
   })
 
@@ -36,7 +36,7 @@ describe("DateUrlBuilder", () => {
       context.time.year = 2001
       context.time.month = 9
       const url = UrlDateBuilder.build(context)
-      expect(url).toBe("/time/2/0/0/1/09")
+      expect(url).toBe("time/2/0/0/1/09")
     }
     {
       const context = new SsgContext("fr", intlOptions)
@@ -45,7 +45,7 @@ describe("DateUrlBuilder", () => {
       context.time.dayOfMonth = 12
       context.time.month = 2
       const url = UrlDateBuilder.build(context)
-      expect(url).toEqual("/time/2/0/1/2/02")
+      expect(url).toEqual("time/2/0/1/2/02")
     }
   })
 })

@@ -1,4 +1,4 @@
-import {SsgContext} from "./SsgContext"
+import {SsgContext} from "../SsgContext"
 import {UrlDateBuilder} from "./UrlDateBuilder"
 import {TextDateBuilder} from "./TextDateBuilder"
 import {RelativeTextDateBuilder} from "./RelativeTextDateBuilder"
@@ -51,7 +51,7 @@ export class TimeReplacer {
           url = url.substring(0, slash)
         }
         const title = TextDateBuilder.build(context)
-        const text = RelativeTextDateBuilder.build(previousContext, context)
+        const text = RelativeTextDateBuilder.build(previousContext, context) || title
         if (url) {
           replacement = `<a href="/${url}" title="${title}">${text}</a>`
         } else {
@@ -72,7 +72,7 @@ export class TimeReplacer {
     } else {
       replacement = this.valueReplacement(context, timeStr) || substring
     }
-    // console.log("\tReplacing", substring, "with", replacement)
+    console.debug("\tReplacing", substring, "with", replacement)
     return replacement
   }
 }

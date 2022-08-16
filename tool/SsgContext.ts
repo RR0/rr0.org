@@ -1,5 +1,6 @@
-import {TimeContext} from "./TimeContext"
-import {SsgMessages, ssgMessages} from "./i18n/SsgMessages"
+import {TimeContext} from "./time/TimeContext"
+import {SsgMessages} from "./i18n/SsgMessages"
+import {ssgMessages} from "./i18n"
 
 export class SsgContext {
 
@@ -14,5 +15,9 @@ export class SsgContext {
 
   clone(): SsgContext {
     return new SsgContext(this.locales, {...this.options}, this.time.clone())
+  }
+
+  static merge(oldContext: SsgContext, deltaContext: SsgContext) {
+    return new SsgContext(deltaContext.locales, deltaContext.options, TimeContext.merge(oldContext.time, deltaContext.time))
   }
 }

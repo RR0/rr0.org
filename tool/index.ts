@@ -6,7 +6,7 @@ import {SsiLastModifiedReplaceCommand} from "./replace/ssi/SsiLastModifiedReplac
 import {HtAccessToNetlifyReplaceCommand} from "./replace/htaccess/HtAccessToNetlifyReplaceCommand"
 import {SsiVarReplaceCommand} from "./replace/ssi/SsiVarCommand"
 import {HtmlTagReplaceCommand} from "./replace/html/HtmlTagReplaceCommand"
-import {TimeReplacerFactory} from "./TimeReplacerFactory"
+import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
 import {SsgContext} from "./SsgContext"
 
 /**

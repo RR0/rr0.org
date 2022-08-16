@@ -1,5 +1,5 @@
 import {TextDateBuilder} from "./TextDateBuilder"
-import {SsgContext} from "./SsgContext"
+import {SsgContext} from "../SsgContext"
 
 describe("TextDateBuilder", () => {
 
@@ -42,6 +42,24 @@ describe("TextDateBuilder", () => {
       context.time.month = 9
       context.time.dayOfMonth = 23
       expect(TextDateBuilder.build(context)).toBe("mardi 23 septembre 2003")
+    }
+    {
+      const context = new SsgContext("en", intlOptions)
+      context.time.year = 2003
+      context.time.month = 9
+      context.time.dayOfMonth = 23
+      expect(TextDateBuilder.build(context)).toBe("Tuesday, September 23, 2003")
+    }
+  })
+
+  test("prints hour", () => {
+    {
+      const context = new SsgContext("fr", intlOptions)
+      context.time.year = 2003
+      context.time.month = 9
+      context.time.dayOfMonth = 23
+      context.time.hour = 16
+      expect(TextDateBuilder.build(context)).toBe("mardi 23 septembre 2003, 16 h")
     }
     {
       const context = new SsgContext("en", intlOptions)

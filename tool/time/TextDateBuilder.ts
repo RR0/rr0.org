@@ -1,4 +1,4 @@
-import {SsgContext} from "./SsgContext"
+import {SsgContext} from "../SsgContext"
 
 export class TextDateBuilder {
 
@@ -34,6 +34,10 @@ export class TextDateBuilder {
       printOptions.minute = context.options.minute
     }
 
+    function setTimeZone(timeZone: string) {
+      printOptions.timeZoneName = context.options.timeZoneName
+    }
+
     const year = time.year
     if (year) {
       setYear(year)
@@ -53,6 +57,10 @@ export class TextDateBuilder {
     const minutes = time.minutes
     if (minutes) {
       setMinutes(minutes)
+    }
+    const timeZone = time.timeZone
+    if (timeZone) {
+      //    setTimeZone(timeZone)
     }
     let text: string
     if (Number.isNaN(date.getTime())) {

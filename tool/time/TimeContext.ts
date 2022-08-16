@@ -77,4 +77,14 @@ export class TimeContext {
   clone(): TimeContext {
     return new TimeContext(this._year, this._month, this._dayOfMonth, this._hour, this._minutes, this._timeZone)
   }
+
+  static merge(oldTime: TimeContext, newTime: TimeContext) {
+    return new TimeContext(
+      oldTime._year ?? newTime._year,
+      oldTime._month ?? newTime._month,
+      oldTime._dayOfMonth ?? newTime._dayOfMonth,
+      oldTime._hour ?? newTime._hour,
+      oldTime._minutes ?? newTime._minutes
+    )
+  }
 }

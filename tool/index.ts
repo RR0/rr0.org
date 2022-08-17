@@ -41,7 +41,7 @@ const config: SsgConfig = {
     },
     {
       roots: [
-        "politique/mouvement/ecologie/energie/thermique/nucleaire/fission/index.html",
+        "time/1/9/9/0/08/index.html",
         "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
         "croyance/**/*.html",
         "droit/**/*.html",
@@ -72,7 +72,7 @@ const config: SsgConfig = {
     "favicon.ico",
     "rr0.css", "print.css",
     "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",
-    "**/*.png", "**/*.jpg", "**/*.gif", "!out/**/*"
+    "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*"
   ],
   outDir: "out"
 }

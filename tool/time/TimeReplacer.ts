@@ -46,13 +46,15 @@ export class TimeReplacer {
       }
       if (timeContext.isDefined()) {
         let url = UrlDateBuilder.build(context)
+        const currentFileName = context.fileInfo?.name!
         while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
           const slash = url.lastIndexOf("/")
           url = url.substring(0, slash)
         }
         const title = TextDateBuilder.build(context)
         const text = RelativeTextDateBuilder.build(previousContext, context) || title
-        if (url) {
+        const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
+        if (url && url !== dirName) {
           replacement = `<a href="/${url}" title="${title}">${text}</a>`
         } else {
           replacement = `<span class="time" title="${title}">${text}</span>`
@@ -64,15 +66,20 @@ export class TimeReplacer {
 
   replacement(context: SsgContext, substring: string, timeStr: string): string {
     let parts = timeStr.split("/")
-    let replacement: string
+    let replacement: string | undefined
     if (parts.length > 1) {
       const startReplacement = this.valueReplacement(context, parts[0])
-      const endReplacement = this.valueReplacement(context, parts[1])
-      replacement = startReplacement + " à " + endReplacement
-    } else {
+      if (startReplacement) {
+        const endReplacement = this.valueReplacement(context, parts[1])
+        if (endReplacement) {
+          replacement = context.messages.context.time.fromTo(startReplacement, endReplacement)
+        }
+      }
+    }
+    if (!replacement) {
       replacement = this.valueReplacement(context, timeStr) || substring
     }
-    console.debug("\tReplacing", substring, "with", replacement)
+    context.debug("\tReplacing", substring, "with", replacement)
     return replacement
   }
 }

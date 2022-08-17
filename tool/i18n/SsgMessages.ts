@@ -18,7 +18,8 @@ export interface SsgMessages {
           before: string
           after: string
         }
-      }
+      },
+      fromTo(startReplacement: string, endReplacement: string): string
     }
   }
 }

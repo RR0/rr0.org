@@ -1,4 +1,3 @@
-import {FileInfo} from "../../FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
 import {ReplacerFactory} from "../ReplacerFactory"
 import {SsgReplacer} from "../SsgReplacer"
@@ -10,7 +9,7 @@ export class HtmlTagReplaceCommand extends RegexpReplaceCommand {
     super(new RegExp(`<${tagName}>s*(.+?)s*</${tagName}>`, "gs"))
   }
 
-  protected createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
+  protected createReplacer(context: SsgContext): Promise<SsgReplacer> {
     return this.replacerFactory.create(context)
   }
 }

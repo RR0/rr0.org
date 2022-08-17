@@ -6,7 +6,7 @@ import {promise as glob} from "glob-promise"
 
 export class TimeReplacerFactory implements ReplacerFactory {
 
-  protected instance?: TimeReplacer
+  protected singleton?: TimeReplacer
 
   async create(context: SsgContext): Promise<SsgReplacer> {
     const instance = await this.getInstance()
@@ -23,7 +23,7 @@ export class TimeReplacerFactory implements ReplacerFactory {
   }
 
   protected async getInstance(): Promise<TimeReplacer> {
-    if (!this.instance) {
+    if (!this.singleton) {
       const minusYearFiles = await glob("time/-?/?/?/?")
       const year1Files = await glob("time/?")
       const year2Files = await glob("time/?/?")
@@ -32,8 +32,8 @@ export class TimeReplacerFactory implements ReplacerFactory {
       const monthFiles = await glob("time/?/?/?/?/??")
       const dayFiles = await glob("time/?/?/?/?/??/??")
       const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(minusYearFiles).concat(monthFiles).concat(dayFiles)
-      this.instance = new TimeReplacer(timeFiles)
+      this.singleton = new TimeReplacer(timeFiles)
     }
-    return this.instance
+    return this.singleton
   }
 }

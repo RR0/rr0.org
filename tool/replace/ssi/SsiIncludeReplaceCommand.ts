@@ -1,5 +1,5 @@
 import path from "path"
-import {FileInfo, getFileInfo} from "../../FileUtil"
+import {getFileInfo} from "../../FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
 import {SsgReplacer} from "../SsgReplacer"
 import {SsgContext} from "../../SsgContext"
@@ -18,7 +18,7 @@ export class SsiIncludeReplaceCommand extends RegexpReplaceCommand {
     super(/<!--\s*#include\s+virtual="(.+?)"\s*-->/g)
   }
 
-  protected async createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
+  protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {
     return this.replacer
   }
 }

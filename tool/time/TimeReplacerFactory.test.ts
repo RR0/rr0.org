@@ -108,6 +108,17 @@ describe("TimeReplacerFactory", () => {
     expect(context.time.minutes).toBe(undefined)
   })
 
+  test("avoids linking to current file", () => {
+    const context = new SsgContext("fr", intlOptions)
+    context.fileInfo = {
+      contents: "", encoding: "utf8", lastModified: new Date(),
+      name: "time/1/9/9/0/08/index.html"
+    }
+    const replacer = new TimeReplacer(["time/1/9/9/0/08"])
+    expect(replacer.replacement(context, "<time>1990-08-02</time>", "1990-08-02"))
+      .toBe(`<span class="time" title="jeudi 2 août 1990">jeudi 2 août 1990</span>`)
+  })
+
   test("parses hour", () => {
     {
       const context = new SsgContext("fr", intlOptions)

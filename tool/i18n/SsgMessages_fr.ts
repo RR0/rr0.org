@@ -20,7 +20,8 @@ export class SsgMessages_fr implements SsgMessages {
           before: "une heure auparavant",
           after: "une heure plus tard"
         }
-      }
+      },
+      fromTo: (startReplacement: string, endReplacement: string): string => startReplacement + " à " + endReplacement
     }
   }
 }

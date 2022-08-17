@@ -1,4 +1,3 @@
-import {FileInfo} from "../../FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
 import {SsgReplacer} from "../SsgReplacer"
 import {SsgContext} from "../../SsgContext"
@@ -9,7 +8,7 @@ export class SsiVarReplaceCommand extends RegexpReplaceCommand {
     super(/<!--\s*#set\s+var="(.+?)"\s+value="(.+?)"\s*-->/gs)
   }
 
-  protected async createReplacer(context: SsgContext, fileInfo: FileInfo): Promise<SsgReplacer> {
+  protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {
     return this.replacer
   }
 }

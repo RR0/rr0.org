@@ -53,11 +53,12 @@ export class TimeReplacer {
         }
         const title = TextDateBuilder.build(context)
         const text = RelativeTextDateBuilder.build(previousContext, context) || title
+        const titleAttr = text != title ? ` title="${title}"` : ""
         const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
         if (url && url !== dirName) {
-          replacement = `<a href="/${url}" title="${title}">${text}</a>`
+          replacement = `<a href="/${url}"${titleAttr}>${text}</a>`
         } else {
-          replacement = `<span class="time" title="${title}">${text}</span>`
+          replacement = `<span class="time"${titleAttr}>${text}</span>`
         }
       }
     }

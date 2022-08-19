@@ -4,8 +4,8 @@ export class TextDateBuilder {
 
   static build(context: SsgContext): string {
     const time = context.time
-    const printOptions: Intl.DateTimeFormatOptions = {}
-    const date = new Date()
+    let printOptions: Intl.DateTimeFormatOptions = {}
+    let date = new Date()
 
     function setYear(year: number) {
       date.setFullYear(year)

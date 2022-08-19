@@ -133,7 +133,8 @@ export class RelativeTextDateBuilder {
       }
     }
     if (!text) {
-      text = TextDateBuilder.build(deltaContext)
+      const defaultContext = deltaContext.time.isDefined() ? deltaContext : newContext
+      text = TextDateBuilder.build(defaultContext)
     }
     return text
   }

@@ -27,7 +27,7 @@ describe("HtmlClassReplaceCommand", () => {
     const command = new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())
     const context = newContext()
     const file = await command.execute(context)
-    expect(file.contents).toBe(`<a href="/people/b/BeauJerome">Jérôme Beau</a>`)
+    expect(file.contents).toBe(`<a href="/people/b/BeauJerome/" translate="no">Jérôme Beau</a>`)
   })
 })
 

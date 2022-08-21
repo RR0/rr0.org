@@ -51,7 +51,7 @@ describe("PeopleReplacer", () => {
   test("replace people tags", () => {
     const replacer = new PeopleReplacer(["people/b/BeauJerome"])
     const context = newContext()
-    expect(replacer.replacement(context, "Jérôme Beau", "Jérôme Beau")).toBe(`<a href="/people/b/BeauJerome">Jérôme Beau</a>`)
-    expect(replacer.replacement(context, "Beau", "Beau")).toBe(`<a href="/people/b/BeauJerome" title="Jérôme Beau">Beau</a>`)
+    expect(replacer.replacement(context, "Jérôme Beau", "Jérôme Beau")).toBe(`<a href="/people/b/BeauJerome/" translate="no">Jérôme Beau</a>`)
+    expect(replacer.replacement(context, "Beau", "Beau")).toBe(`<a href="/people/b/BeauJerome/" title="Jérôme Beau" translate="no">Beau</a>`)
   })
 })

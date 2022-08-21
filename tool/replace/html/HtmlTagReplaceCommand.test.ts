@@ -26,7 +26,7 @@ describe("HtmlTagReplaceCommand", () => {
     const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory())
     const context = newContext()
     const file = await command.execute(context)
-    expect(file.contents).toBe(`<a href="/time/2/0/0/4">2004</a>`)
+    expect(file.contents).toBe(`<a href="/time/2/0/0/4/">2004</a>`)
   })
 })
 

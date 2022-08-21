@@ -1,5 +1,6 @@
 import {SsgContext} from "../SsgContext"
 import {People} from "./People"
+import {UrlUtil} from "../UrlUtil"
 
 export class PeopleReplacer {
   readonly cache = new Map<string, People>()
@@ -14,7 +15,15 @@ export class PeopleReplacer {
       this.cache.set(people.lastName, people)
     }
     const titleAttr = peopleStr != people.fullName ? ` title="${people.fullName}"` : ""
-    const replacement = `<a href="/${people.url}"${titleAttr} translate="no">${peopleStr}</a>`
+    let url = people.url
+    let replacement: string
+    const currentFileName = context.currentFile?.name!
+    const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
+    if (url && url !== dirName) {
+      replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr} translate="no">${peopleStr}</a>`
+    } else {
+      replacement = `<span class="peopl" translate="no">${peopleStr}</span>`
+    }
     context.debug("\tReplacing", substring, "with", replacement)
     return replacement
   }

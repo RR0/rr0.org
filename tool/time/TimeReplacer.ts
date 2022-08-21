@@ -2,6 +2,7 @@ import {SsgContext} from "../SsgContext"
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
+import {UrlUtil} from "../UrlUtil"
 
 export class TimeReplacer {
   static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-([0-1]\\d))?(?:-([0-3]\\d))?(?:[ T]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
@@ -46,7 +47,6 @@ export class TimeReplacer {
       }
       if (timeContext.isDefined()) {
         let url = TimeUrlBuilder.build(context)
-        const currentFileName = context.currentFile?.name!
         while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
           const slash = url.lastIndexOf("/")
           url = url.substring(0, slash)
@@ -54,9 +54,10 @@ export class TimeReplacer {
         const title = TimeTextBuilder.build(context)
         const text = RelativeTimeTextBuilder.build(previousContext, context) || title
         const titleAttr = text != title ? ` title="${title}"` : ""
+        const currentFileName = context.currentFile?.name!
         const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
         if (url && url !== dirName) {
-          replacement = `<a href="/${url}"${titleAttr}>${text}</a>`
+          replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr}>${text}</a>`
         } else {
           replacement = `<span class="time"${titleAttr}>${text}</span>`
         }

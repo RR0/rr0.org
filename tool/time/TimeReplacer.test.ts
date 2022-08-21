@@ -116,6 +116,15 @@ describe("TimeReplacer", () => {
     expect(context.time.minutes).toBe(undefined)
   })
 
+  test("reset context", () => {
+    const context = newContext()
+    const replacer = new TimeReplacer(["time/2/0/0/5", "time/2/0/0/6"])
+    expect(replacer.valueReplacement(context, "2005"))
+      .toBe(`<a href="/time/2/0/0/5/">2005</a>`)
+    expect(replacer.replacement(context, `<time data-context="none">2006</time>`, "2006"))
+      .toBe(`<a href="/time/2/0/0/6/">2006</a>`)
+  })
+
   test("avoids linking to current file", () => {
     const context = newContext()
     context.currentFile = {

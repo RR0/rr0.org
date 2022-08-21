@@ -10,8 +10,7 @@ export class TimeReplacer {
   constructor(protected timeFiles: string[]) {
   }
 
-  valueReplacement(context: SsgContext, timeStr: string): string | undefined {
-    const previousContext: SsgContext = context.clone()
+  valueReplacement(context: SsgContext, timeStr: string, previousContext: SsgContext | null = context.clone()): string | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
     let regExpExecArray = TimeReplacer.dateTimeRegexp.exec(timeStr)
@@ -52,7 +51,10 @@ export class TimeReplacer {
           url = url.substring(0, slash)
         }
         const title = TimeTextBuilder.build(context)
-        const text = RelativeTimeTextBuilder.build(previousContext, context) || title
+        let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
+        if (!text) {
+          text = title
+        }
         const titleAttr = text != title ? ` title="${title}"` : ""
         const currentFileName = context.currentFile?.name!
         const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
@@ -67,19 +69,20 @@ export class TimeReplacer {
   }
 
   replacement(context: SsgContext, substring: string, timeStr: string): string {
-    let parts = timeStr.split("/")
+    const parts = timeStr.split("/")
+    const previousContext = substring.indexOf(`data-context="none"`) >= 0 ? null : undefined
     let replacement: string | undefined
     if (parts.length > 1) {
-      const startReplacement = this.valueReplacement(context, parts[0])
+      const startReplacement = this.valueReplacement(context, parts[0], previousContext)
       if (startReplacement) {
-        const endReplacement = this.valueReplacement(context, parts[1])
+        const endReplacement = this.valueReplacement(context, parts[1], previousContext)
         if (endReplacement) {
           replacement = context.messages.context.time.fromTo(startReplacement, endReplacement)
         }
       }
     }
     if (!replacement) {
-      replacement = this.valueReplacement(context, timeStr) || substring
+      replacement = this.valueReplacement(context, timeStr, previousContext) || substring
     }
     context.debug("\tReplacing", substring, "with", replacement)
     return replacement

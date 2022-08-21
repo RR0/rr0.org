@@ -86,7 +86,7 @@ aside {
   margin: 2.25rem
 }
 
-.text ul time {
+.text ul time, .text ul .time {
   font-weight: 700
 }
 

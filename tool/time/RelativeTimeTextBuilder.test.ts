@@ -18,7 +18,7 @@ describe("RelativeTimeTextBuilder", () => {
       const previousContext = new SsgContext("fr", intlOptions)
       previousContext.time.year = 2003
       const context = previousContext.clone()
-      context.time.year!++
+      context.time.year = 2004
       expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("l'année suivante")
       context.time.month = 6
       expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("juin 2004")

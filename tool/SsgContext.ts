@@ -10,7 +10,7 @@ export class SsgContext {
   } : console.log
   readonly debug = process.env.LOG_LEVEL === "debug" ? console.debug : () => {
   }
-  fileInfo?: FileInfo
+  currentFile?: FileInfo
 
   constructor(
     readonly locales: string | string[] = "fr",
@@ -21,9 +21,5 @@ export class SsgContext {
 
   clone(): SsgContext {
     return new SsgContext(this.locales, {...this.options}, this.time.clone())
-  }
-
-  static merge(oldContext: SsgContext, deltaContext: SsgContext) {
-    return new SsgContext(deltaContext.locales, deltaContext.options, TimeContext.merge(oldContext.time, deltaContext.time))
   }
 }

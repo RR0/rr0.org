@@ -47,7 +47,7 @@ export class Ssg {
       for (const fileName of contentFiles) {
         const inputFile = getFileInfo(fileName)
         let outputFile = contentsConfig.outputFile(inputFile)
-        context.fileInfo = outputFile
+        context.currentFile = outputFile
         for (const replacement of contentsConfig.replacements) {
           outputFile = await replacement.execute(context)
         }

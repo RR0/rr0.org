@@ -1,6 +1,6 @@
 import {SsgContext} from "../SsgContext"
 
-export class TextDateBuilder {
+export class TimeTextBuilder {
 
   static build(context: SsgContext): string {
     const time = context.time

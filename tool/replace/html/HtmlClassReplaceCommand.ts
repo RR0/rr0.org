@@ -3,10 +3,10 @@ import {ReplacerFactory} from "../ReplacerFactory"
 import {SsgReplacer} from "../SsgReplacer"
 import {SsgContext} from "../../SsgContext"
 
-export class HtmlTagReplaceCommand extends RegexpReplaceCommand {
+export class HtmlClassReplaceCommand extends RegexpReplaceCommand {
 
-  constructor(protected tagName: string, protected replacerFactory: ReplacerFactory) {
-    super(new RegExp(`<${tagName}>\\s*(.+?)\\s*</${tagName}>`, "gm"))
+  constructor(protected className: string, protected replacerFactory: ReplacerFactory) {
+    super(new RegExp(`<[A-z\-]+?\\s+class="${className}">\\s*(.+?)\\s*<\/[A-z\-]+?>`, "gm"))
   }
 
   protected createReplacer(context: SsgContext): Promise<SsgReplacer> {

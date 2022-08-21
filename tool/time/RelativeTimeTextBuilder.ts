@@ -1,13 +1,13 @@
 import {SsgContext} from "../SsgContext"
-import {TextDateBuilder} from "./TextDateBuilder"
+import {TimeTextBuilder} from "./TimeTextBuilder"
 import {TimeContext} from "./TimeContext"
 
-export class RelativeTextDateBuilder {
+export class RelativeTimeTextBuilder {
 
   static build(oldContext: SsgContext, newContext: SsgContext): string {
     const previousTime = oldContext.time
     if (!previousTime.isDefined()) {
-      return TextDateBuilder.build(newContext)
+      return TimeTextBuilder.build(newContext)
     }
     const deltaContext = new SsgContext(oldContext.locales, {...oldContext.options}, new TimeContext())
     const deltaTime = deltaContext.time
@@ -134,7 +134,7 @@ export class RelativeTextDateBuilder {
     }
     if (!text) {
       const defaultContext = deltaContext.time.isDefined() ? deltaContext : newContext
-      text = TextDateBuilder.build(defaultContext)
+      text = TimeTextBuilder.build(defaultContext)
     }
     return text
   }

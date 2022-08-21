@@ -1,6 +1,6 @@
 import {SsgContext} from "../SsgContext"
 
-export class UrlDateBuilder {
+export class TimeUrlBuilder {
 
   static build(context: SsgContext): string {
     let url = "time/"

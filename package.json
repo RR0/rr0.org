@@ -7,7 +7,7 @@
     "start": "webpack serve --open",
     "watch": "webpack --watch",
     "build": "webpack",
-    "test": "test",
+    "test": "jest --coverage",
     "ssg": "ts-node tool/index.ts"
   },
   "keywords": [

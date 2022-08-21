@@ -8,6 +8,8 @@ import {SsiVarReplaceCommand} from "./replace/ssi/SsiVarCommand"
 import {HtmlTagReplaceCommand} from "./replace/html/HtmlTagReplaceCommand"
 import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
 import {SsgContext} from "./SsgContext"
+import {HtmlClassReplaceCommand} from "./replace/html/HtmlClassReplaceCommand"
+import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 
 /**
  * Replace a SSI var=value but appropriate HTML.
@@ -41,7 +43,7 @@ const config: SsgConfig = {
     },
     {
       roots: [
-        "time/1/9/9/0/08/index.html",
+        "org/eu/fr/asso/SERPAN.html",
         "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
         "croyance/**/*.html",
         "droit/**/*.html",
@@ -61,7 +63,8 @@ const config: SsgConfig = {
         new SsiIfReplaceCommand(),
         new SsiVarReplaceCommand({replacer: ssiVarReplacer}),
         new SsiLastModifiedReplaceCommand(),
-        new HtmlTagReplaceCommand("time", new TimeReplacerFactory())
+        new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
+        new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())
       ],
       outputFile(inputFile: FileInfo): FileInfo {
         return inputFile

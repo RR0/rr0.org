@@ -1,7 +1,7 @@
 import {SsgContext} from "../SsgContext"
-import {UrlDateBuilder} from "./UrlDateBuilder"
-import {TextDateBuilder} from "./TextDateBuilder"
-import {RelativeTextDateBuilder} from "./RelativeTextDateBuilder"
+import {TimeUrlBuilder} from "./TimeUrlBuilder"
+import {TimeTextBuilder} from "./TimeTextBuilder"
+import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
 
 export class TimeReplacer {
   static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-([0-1]\\d))?(?:-([0-3]\\d))?(?:[ T]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
@@ -45,14 +45,14 @@ export class TimeReplacer {
         timeContext.timeZone = timeZone
       }
       if (timeContext.isDefined()) {
-        let url = UrlDateBuilder.build(context)
-        const currentFileName = context.fileInfo?.name!
+        let url = TimeUrlBuilder.build(context)
+        const currentFileName = context.currentFile?.name!
         while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
           const slash = url.lastIndexOf("/")
           url = url.substring(0, slash)
         }
-        const title = TextDateBuilder.build(context)
-        const text = RelativeTextDateBuilder.build(previousContext, context) || title
+        const title = TimeTextBuilder.build(context)
+        const text = RelativeTimeTextBuilder.build(previousContext, context) || title
         const titleAttr = text != title ? ` title="${title}"` : ""
         const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
         if (url && url !== dirName) {

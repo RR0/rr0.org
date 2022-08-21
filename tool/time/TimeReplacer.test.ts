@@ -1,8 +1,7 @@
-import {TimeReplacerFactory} from "./TimeReplacerFactory"
 import {SsgContext} from "../SsgContext"
 import {TimeReplacer} from "./TimeReplacer"
 
-describe("TimeReplacerFactory", () => {
+describe("TimeReplacer", () => {
 
   const intlOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -16,7 +15,7 @@ describe("TimeReplacerFactory", () => {
 
   function newContext() {
     const context = new SsgContext("fr", intlOptions)
-    context.fileInfo = {
+    context.currentFile = {
       contents: "", encoding: "utf8", lastModified: new Date(),
       name: "time/1/9/9/0/08/index.html"
     }
@@ -119,7 +118,7 @@ describe("TimeReplacerFactory", () => {
 
   test("avoids linking to current file", () => {
     const context = newContext()
-    context.fileInfo = {
+    context.currentFile = {
       contents: "", encoding: "utf8", lastModified: new Date(),
       name: "time/1/9/9/0/08/index.html"
     }

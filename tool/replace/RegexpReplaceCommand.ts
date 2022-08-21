@@ -3,15 +3,13 @@ import {FileInfo} from "../FileUtil"
 import {SsgReplacer} from "./SsgReplacer"
 import {SsgContext} from "../SsgContext"
 
-export type Replacer = (substring: string, ...args: any[]) => string
-
 export abstract class RegexpReplaceCommand implements ReplaceCommand {
 
   protected constructor(protected regex: RegExp) {
   }
 
   async execute(context: SsgContext): Promise<FileInfo> {
-    const fileInfo = context.fileInfo!
+    const fileInfo = context.currentFile!
     let contents = fileInfo.contents
     let result = contents
     do {

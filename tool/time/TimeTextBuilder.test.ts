@@ -1,7 +1,7 @@
-import {TextDateBuilder} from "./TextDateBuilder"
+import {TimeTextBuilder} from "./TimeTextBuilder"
 import {SsgContext} from "../SsgContext"
 
-describe("TextDateBuilder", () => {
+describe("TimeTextBuilder", () => {
 
   const intlOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -16,7 +16,7 @@ describe("TextDateBuilder", () => {
     {
       const context = new SsgContext("fr", intlOptions)
       context.time.year = 2003
-      expect(TextDateBuilder.build(context)).toBe("2003")
+      expect(TimeTextBuilder.build(context)).toBe("2003")
     }
   })
 
@@ -25,13 +25,13 @@ describe("TextDateBuilder", () => {
       const context = new SsgContext("fr", intlOptions)
       context.time.year = 2003
       context.time.month = 9
-      expect(TextDateBuilder.build(context)).toBe("septembre 2003")
+      expect(TimeTextBuilder.build(context)).toBe("septembre 2003")
     }
     {
       const context = new SsgContext("en", intlOptions)
       context.time.year = 2003
       context.time.month = 9
-      expect(TextDateBuilder.build(context)).toBe("September 2003")
+      expect(TimeTextBuilder.build(context)).toBe("September 2003")
     }
   })
 
@@ -41,14 +41,14 @@ describe("TextDateBuilder", () => {
       context.time.year = 2003
       context.time.month = 9
       context.time.dayOfMonth = 23
-      expect(TextDateBuilder.build(context)).toBe("mardi 23 septembre 2003")
+      expect(TimeTextBuilder.build(context)).toBe("mardi 23 septembre 2003")
     }
     {
       const context = new SsgContext("en", intlOptions)
       context.time.year = 2003
       context.time.month = 9
       context.time.dayOfMonth = 23
-      expect(TextDateBuilder.build(context)).toBe("Tuesday, September 23, 2003")
+      expect(TimeTextBuilder.build(context)).toBe("Tuesday, September 23, 2003")
     }
   })
 
@@ -59,14 +59,14 @@ describe("TextDateBuilder", () => {
       context.time.month = 9
       context.time.dayOfMonth = 23
       context.time.hour = 16
-      expect(TextDateBuilder.build(context)).toBe("mardi 23 septembre 2003, 16 h")
+      expect(TimeTextBuilder.build(context)).toBe("mardi 23 septembre 2003, 16 h")
     }
     {
       const context = new SsgContext("en", intlOptions)
       context.time.year = 2003
       context.time.month = 9
       context.time.dayOfMonth = 23
-      expect(TextDateBuilder.build(context)).toBe("Tuesday, September 23, 2003")
+      expect(TimeTextBuilder.build(context)).toBe("Tuesday, September 23, 2003")
     }
   })
 })

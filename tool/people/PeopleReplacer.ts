@@ -8,7 +8,12 @@ export class PeopleReplacer {
   constructor(protected peopleFiles: string[]) {
   }
 
-  replacement(context: SsgContext, substring: string, peopleStr: string): string {
+  replacement(context: SsgContext, substring: string, originalPeopleStr: string): string {
+    const titleParts = / title="(.*?)"/.exec(substring)
+    let peopleStr = originalPeopleStr
+    if (titleParts && titleParts.length > 1) {
+      peopleStr = titleParts[1]
+    }
     let people = this.cache.get(peopleStr)
     if (!people) {
       people = this.getPeople(peopleStr)
@@ -20,7 +25,7 @@ export class PeopleReplacer {
     const currentFileName = context.currentFile?.name!
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
-      replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr} translate="no">${peopleStr}</a>`
+      replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr} translate="no">${originalPeopleStr}</a>`
     } else {
       replacement = `<span class="peopl" translate="no">${peopleStr}</span>`
     }

@@ -14,7 +14,7 @@ export class PeopleReplacer {
       this.cache.set(people.lastName, people)
     }
     const titleAttr = peopleStr != people.fullName ? ` title="${people.fullName}"` : ""
-    const replacement = `<a href="/${people.url}"${titleAttr}>${peopleStr}</a>`
+    const replacement = `<a href="/${people.url}"${titleAttr} translate="no">${peopleStr}</a>`
     context.debug("\tReplacing", substring, "with", replacement)
     return replacement
   }

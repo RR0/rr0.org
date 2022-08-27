@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Trajet et evenements du vol RB-47</name>
+  <description>Le 17 juillet 1957</description>
+  <Style id="event">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="path">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Trajet du RB-47</name>
+    <description><![CDATA[en 1957]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -95.932617,28.071980,0.000000
+        -94.438477,27.702984,0.000000
+        -93.493652,27.527758,0.000000
+        -92.477417,27.479034,0.000000
+        -91.505127,27.561852,0.000000
+        -90.593262,27.722437,0.000000
+        -89.906616,27.989552,0.000000
+        -89.642944,28.130129,0.000000
+        -89.417725,28.343065,0.000000
+        -89.263916,28.555576,0.000000
+        -89.170532,28.791733,0.000000
+        -89.104614,29.060970,0.000000
+        -89.088135,29.334297,0.000000
+        -89.077148,30.391830,0.000000
+        -89.022217,31.821566,0.000000
+        -89.121094,32.036018,0.000000
+        -89.291382,32.170963,0.000000
+        -89.588013,32.208153,0.000000
+        -90.043945,32.115150,0.000000
+        -91.538086,31.882221,0.000000
+        -95.053711,31.442724,0.000000
+        -95.276184,31.445066,0.000000
+        -95.449219,31.484894,0.000000
+        -97.943115,32.886505,0.000000
+        -98.083191,32.907261,0.000000
+        -98.195801,32.898037,0.000000
+        -98.300171,32.831135,0.000000
+        -98.338623,32.731842,0.000000
+        -98.319397,32.620869,0.000000
+        -98.245239,32.556072,0.000000
+        -98.102417,32.491230,0.000000
+        -97.907410,32.484280,0.000000
+        -97.734375,32.519028,0.000000
+        -97.616272,32.641689,0.000000
+        -97.520142,32.916485,0.000000
+        -97.448730,33.247875,0.000000
+        -97.338867,33.893215,0.000000
+        -97.031250,36.315125,0.000000
+        -96.877441,36.985004,0.000000
+        -96.723633,37.448696,0.000000
+        -96.492920,37.944199,0.000000
+        -96.218262,38.307182,0.000000
+        -95.675423,38.938351,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>1er contact ovni au-dessus de la region de Gulfport</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-89.077148,30.368135,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Le RB-47 tourne vers l&#39;ouest pres de Meridian</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-89.187012,32.077919,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>1ere observation visuelle par l&#39;equipage dans le cockpit</name>
+    <description><![CDATA[0410 C]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-91.28,32.0,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Le RB-47 vire au nord-ouest pour poursuivre a pleine puissance</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-95.303650,31.449753,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Zone vers laquelle le RB-47 depasse l&#39;ovni</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-98.091431,32.900345,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>L&#39;ovni semble perdre 5000 pieds rapidement, puis commence a etre perdu a l&#39;ecran lorsque le RB-47 tente de plonger dessus</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-98.335876,32.687931,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Dernier contact ECM pres de Oklahoma City</name>
+    <description><![CDATA[0540 C]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-97.163086,35.478565,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

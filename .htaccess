@@ -862,7 +862,9 @@ Redirect /tech/info/soft/proj/design/arch/web/CSS.html https://rr0.org/tech/info
 Redirect /tech/info/soft/prog/oo/java/JDO.html https://rr0.org/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html
 Redirect /tech/info/soft/prod/ide/WSAD.html https://rr0.org/org/us/company/ibm/product/soft/ide/WSAD.html
 Redirect /tech/info/soft/reseau/DNS.html https://rr0.org/tech/info/soft/reseau/protocole/5/DNS.html
+Redirect tech/info/soft/reseau/protocole/FTP.html https://rr0.org/tech/info/soft/reseau/protocole/5/FTP.html
 Redirect /science/appliquee/informatique/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
+Redirect /science/appliquee/info/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
 Redirect /science/appliquee/info/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
 Redirect /Abduction.html https://rr0.org/science/crypto/ufo/observation/scenario/Abduction.html
 Redirect /scientifiques.html https://rr0.org/people/scientifiques.html

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://www.opengis.net/kml/2.2"
+     xmlns:gx="https://www.google.com/kml/ext/2.2">
+<Document>
+  <name>Trajets de Arnold et des phénomenes observes</name>
+  <description>Le 24 juin 1947</description>
+  <Style id="event">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="pathArnold">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="pathUfo">
+    <LineStyle>
+      <color>730000FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+    <Style id="eventArnold">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/blue-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Trajectoire des phenomenes observes par Arnold</name>
+    <description><![CDATA[<div dir="ltr">le 24 juin 1947</div>]]></description>
+    <styleUrl>#pathUfo</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -121.843872,47.036430,0.000000
+        -121.472740,46.152843,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Trajectoire de Kenneth Arnold</name>
+    <description><![CDATA[<div dir="ltr">Initialement dirigee vers Yakima, mais faisant un virage sur la droite suite a  son observation</div>]]></description>
+	<styleUrl>#pathArnold</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -122.975456,46.681469,0.000000
+        -122.757111,46.744560,0.000000
+        -122.537376,46.791592,0.000000
+        -122.276451,46.824490,0.000000
+        -122.196800,46.829659,0.000000
+        -122.129173,46.828487,0.000000
+        -122.084885,46.824024,0.000000
+        -122.050552,46.819565,0.000000
+        -122.025833,46.814865,0.000000
+        -122.005234,46.810635,0.000000
+        -121.983604,46.801472,0.000000
+        -121.975365,46.792538,0.000000
+        -121.972618,46.783371,0.000000
+        -121.972961,46.771614,0.000000
+        -121.980515,46.763149,0.000000
+        -121.992188,46.757973,0.000000
+        -122.007637,46.755623,0.000000
+        -122.017250,46.755386,0.000000
+        -122.031326,46.757271,0.000000
+        -122.053986,46.760796,0.000000
+        -122.070465,46.761269,0.000000
+        -122.080765,46.759857,0.000000
+        -122.095871,46.758678,0.000000
+        -122.108231,46.757740,0.000000
+        -122.118530,46.756092,0.000000
+        -122.128143,46.756092,0.000000
+        -122.141533,46.757034,0.000000
+        -122.161102,46.760563,0.000000
+        -122.182732,46.760090,0.000000
+        -122.201614,46.759621,0.000000
+        -122.217751,46.762444,0.000000
+        -122.227364,46.769028,0.000000
+        -122.230110,46.777962,0.000000
+        -122.225990,46.786896,0.000000
+        -122.218437,46.793476,0.000000
+        -122.194061,46.801704,0.000000
+        -122.170715,46.807579,0.000000
+        -122.141876,46.812515,0.000000
+        -122.119217,46.817211,0.000000
+        -122.089348,46.821442,0.000000
+        -122.066338,46.824959,0.000000
+        -122.019653,46.826843,0.000000
+        -121.979141,46.823555,0.000000
+        -121.945488,46.814152,0.000000
+        -121.901550,46.790649,0.000000
+        -121.852112,46.749271,0.000000
+        -121.684570,46.568298,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Position du 1er phénomène</name>
+    <Camera>
+        <gx:TimeStamp>
+          <when>1947-06-24T14:59:00-07:00</when>
+        </gx:TimeStamp>
+        <longitude>-121.763962</longitude>
+        <latitude>46.846073</latitude>
+        <altitude>2800.0</altitude>
+        <altitudeMode>absolute</altitudeMode>
+        <heading>70.0</heading>
+        <tilt>75.0</tilt>
+      </Camera>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-121.763962,46.846073,2800.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Position du dernier phenomène</name>
+    <description><![CDATA[<div dir="ltr">1 mn 42 s apres le début du chronometrage</div>]]></description>
+    <Camera>
+        <gx:TimeStamp>
+          <when>1947-06-24T15:01:00-07:00</when>
+        </gx:TimeStamp>
+        <longitude>-121.489044</longitude>
+        <latitude>46.192070</latitude>
+        <altitude>2800.0</altitude>
+        <altitudeMode>absolute</altitudeMode>
+        <heading>70.0</heading>
+        <tilt>75.0</tilt>
+      </Camera>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>-121.489044,46.192070,2888.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Premiere observation d&#39;Arnold</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#eventArnold</styleUrl>
+    <Point>
+      <coordinates>-122.216377,46.792301,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

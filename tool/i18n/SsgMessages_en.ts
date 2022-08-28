@@ -1,8 +1,15 @@
-import {SsgMessages} from "./SsgMessages"
+import {MessageUtils, SsgMessages} from "./SsgMessages"
 
 export class SsgMessages_en implements SsgMessages {
   context = {
     time: {
+      duration: {
+        days: (d: number): string => MessageUtils.plural(d, "day"),
+        hours: (d: number): string => MessageUtils.plural(d, "hour"),
+        minutes: (mn: number): string => MessageUtils.plural(mn, "minute"),
+        seconds: (s: number): string => MessageUtils.plural(s, "second"),
+        lastSeparator: " and "
+      },
       relative: {
         year: {
           before: "the year before",

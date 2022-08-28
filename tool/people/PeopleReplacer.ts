@@ -54,8 +54,12 @@ export class PeopleReplacer {
 
   getUrl(lastName: string, firstNames: string[]): string {
     const normalizedLastName = this.withoutAccents(lastName)
-    const normalizedFirstNames = firstNames.map(this.withoutAccents)
+    const normalizedFirstNames = firstNames.map(this.withoutAccents).map(this.withoutDots)
     return "people/" + normalizedLastName.charAt(0).toLowerCase() + "/" + normalizedLastName + normalizedFirstNames.join("")
+  }
+
+  private withoutDots(str: string): string {
+    return str.replace(".", "")
   }
 
   private withoutAccents(str: string): string {

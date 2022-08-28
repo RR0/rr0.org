@@ -30,7 +30,7 @@ describe("PeopleReplacer", () => {
   })
 
   test("build people", () => {
-    const replacer = new PeopleReplacer(["people/b/BeauJerome", "people/b/BeauJeromePierre", "people/v/VonBraunWerner"])
+    const replacer = new PeopleReplacer(["people/b/BeauJerome", "people/b/BeauJeromePierre", "people/v/VonBraunWerner", "people/c/CondonEdwardU"])
     expect(replacer.getPeople("Jérôme Beau")).toEqual({
       lastName: "Beau",
       firstNames: ["Jérôme"],
@@ -45,6 +45,11 @@ describe("PeopleReplacer", () => {
       lastName: "VonBraun",
       firstNames: ["Werner"],
       url: "people/v/VonBraunWerner"
+    })
+    expect(replacer.getPeople("Edward U. Condon")).toEqual({
+      lastName: "Condon",
+      firstNames: ["Edward", "U."],
+      url: "people/c/CondonEdwardU"
     })
   })
 

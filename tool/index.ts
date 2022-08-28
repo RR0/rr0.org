@@ -43,7 +43,6 @@ const config: SsgConfig = {
     },
     {
       roots: [
-        "org/eu/fr/asso/SERPAN.html",
         "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
         "croyance/**/*.html",
         "droit/**/*.html",

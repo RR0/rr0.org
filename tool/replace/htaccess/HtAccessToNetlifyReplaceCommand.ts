@@ -27,7 +27,10 @@ export class HtAccessToNetlifyReplaceCommand implements ReplaceCommand {
       if (command) {
         switch (command) {
           case HtAccessCommands.DirectoryIndex:
-            result += `/* ${args[1]}\n`
+            const files = args.splice(1)
+            for (const file of files) {
+              result += `/* ${file}\n`
+            }
             //result += `/*/ /:splat/${args[1]}\n`
             break
           case HtAccessCommands.Redirect:

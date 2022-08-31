@@ -129,7 +129,7 @@ Redirect /science/crypto/ufo/enquete/meprise/boreal https://rr0.org/science/cryp
 Redirect /science/crypto/ufo/meprise/aurore https://rr0.org/science/crypto/ufo/enquete/meprise/aurore
 Redirect /science/crypto/ufo/enquete/meprise/FeuxFollets.html https://rr0.org/science/crypto/ufo/enquete/meprise/feufollet
 Redirect /Meteore.html https://rr0.org/science/crypto/ufo/enquete/meprise/rentree/meteore
-Redirect /science/crypto/ufo/enquete/meprise/meteore https://rr0.org/science/crypto/ufo/enquete/meprise/rentree/meteore
+Redirect /science/crypto/ufo/enquete/meprise/rentree/meteore https://rr0.org/science/crypto/ufo/enquete/meprise/rentree/meteore
 Redirect /Ballon.html https://rr0.org/science/crypto/ufo/enquete/meprise/ballon
 Redirect /Nuages.html https://rr0.org/science/crypto/ufo/enquete/meprise/nuage
 Redirect /FeuxFollets.html https://rr0.org/science/crypto/ufo/enquete/meprise/FeuxFollets.html
@@ -774,7 +774,7 @@ Redirect /science/crypto/ufo/meprise https://rr0.org/science/crypto/ufo/enquete/
 Redirect /PrankBalloons.html https://rr0.org/science/crypto/ufo/enquete/meprise/ballon/PrankBalloons.html
 Redirect /Gendarmerie.html https://rr0.org/org/eu/fr/dn/gendarmerie
 Redirect /Terre.html https://rr0.org/place/systeme/solaire/planete/terre
-Redirect /place/systeme/solaire/soleil /place/systeme/solaire/Soleil
+Redirect /place/systeme/solaire/Soleil /place/systeme/solaire/Soleil
 Redirect /lieu/systeme/solaire/planete/terre/us/Socorro.html https://rr0.org/place/systeme/solaire/planete/terre/us/nm/Socorro.html
 Redirect /Jupiter.html https://rr0.org/place/systeme/solaire/planete/jupiter
 Redirect /lieu/systeme/solaire/planete/terre/lune/Lune.html https://rr0.org/place/systeme/solaire/planete/terre/lune

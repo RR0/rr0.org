@@ -1,8 +1,8 @@
-import {SsgContext} from "../../SsgContext"
-import {TimeReplacerFactory} from "../../time/TimeReplacerFactory"
-import {HtmlTagReplaceCommand} from "./HtmlTagReplaceCommand"
+import {SsgContext} from "../SsgContext"
+import {HtmlAnchorReplaceCommand} from "./HtmlAnchorReplaceCommand"
+import {AnchorReplacerFactory} from "./AnchorReplacerFactory"
 
-describe("HtmlTagReplaceCommand", () => {
+describe("HtmlAnchorReplaceCommand", () => {
 
   const intlOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -25,11 +25,11 @@ describe("HtmlTagReplaceCommand", () => {
     return context
   }
 
-  test("replace time tag", async () => {
-    const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory())
+  test("replace anchor tag", async () => {
+    const command = new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     const context = newContext()
     const file = await command.execute(context)
-    expect(file.contents).toBe(`<a href="/time/2/0/0/4/">2004</a> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
+    expect(file.contents).toBe(`<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell/">Roswell</a>`)
   })
 })
 

@@ -64,6 +64,7 @@ const config: SsgConfig = {
         new SsiLastModifiedReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
         new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())
+        // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
       ],
       outputFile(inputFile: FileInfo): FileInfo {
         return inputFile

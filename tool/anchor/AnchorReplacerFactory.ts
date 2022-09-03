@@ -11,12 +11,11 @@ export class AnchorReplacerFactory implements ReplacerFactory {
     const instance = await this.getInstance()
     return {
       replacer:
-        /**
-         * Replace time tags but urls.
-         */
-        (substring: string, ...args: any[]): string => {
-          const timeStr = args[0]
-          return instance.replacement(context, substring, timeStr)
+        (matchedTagStr: string, ...args: any[]): string => {
+          const dir = args[0]
+          const file = args[2]
+          const contents = args[3]?.trim()
+          return instance.replacement(context, matchedTagStr, dir, file, contents)
         }
     }
   }

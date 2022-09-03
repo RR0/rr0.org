@@ -1,26 +1,27 @@
 import {SsgContext} from "../SsgContext"
 
 export class AnchorReplacer {
+  protected static readonly blankTarget = ` target="_blank"`
 
-  static readonly anchorRegExp = new RegExp(`<a href="(.+)">(.+)</a>`)
-
-  constructor() {
-  }
-
-  replacement(context: SsgContext, substring: string, contentStr: string): string {
+  replacement(context: SsgContext, substring: string, dir: string, file: string | undefined, contents: string): string {
     let replacement: string | undefined
-    const parts = AnchorReplacer.anchorRegExp.exec(substring)
-    if (parts && parts.length > 2) {
-      let url = parts[1]
-      if (!url.endsWith(".html") && !url.endsWith("/")) {
-        url += "/"
+    if (dir) {
+      let target: string
+      if (dir.startsWith("http") && substring.indexOf(AnchorReplacer.blankTarget) > 0) {
+        target = AnchorReplacer.blankTarget
+      } else {
+        if (!file && !dir.endsWith("/")) {
+          dir += "/"
+        }
+        target = ""
       }
-      replacement = `<a href="${url}">${contentStr}</a>`
+      replacement = `<a href="${dir}"${target}>${contents}</a>`
     }
     if (!replacement) {
       replacement = substring
+    } else {
+      context.debug("\tReplacing anchor", substring, "with", replacement)
     }
-    context.debug("\tReplacing", substring, "with", replacement)
     return replacement
   }
 }

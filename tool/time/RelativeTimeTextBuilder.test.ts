@@ -35,7 +35,7 @@ describe("RelativeTimeTextBuilder", () => {
       expect(RelativeTimeTextBuilder.build(context1, context2)).toBe("le mois suivant")
       const context3 = context2.clone()
       context3.time.dayOfMonth = 23 // Resets day of month in context
-      expect(RelativeTimeTextBuilder.build(context2, context3)).toBe("mardi 23")
+      expect(RelativeTimeTextBuilder.build(context2, context3)).toBe("vendredi 23")
       const context4 = context3.clone()
       context4.time.month = 12
       expect(RelativeTimeTextBuilder.build(context3, context4)).toBe("décembre")

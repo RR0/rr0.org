@@ -51,7 +51,7 @@ export class TimeReplacer {
     if (!replacement) {
       replacement = this.valueReplacement(context, timeStr, previousContext) || substring
     }
-    context.debug("\tReplacing", substring, "with", replacement)
+    context.debug("\tReplacing time", substring, "with", replacement)
     return replacement
   }
 

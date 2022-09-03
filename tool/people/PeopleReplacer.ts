@@ -8,9 +8,9 @@ export class PeopleReplacer {
   constructor(protected peopleFiles: string[]) {
   }
 
-  replacement(context: SsgContext, substring: string, originalPeopleStr: string): string {
-    const titleParts = / title="(.*?)"/.exec(substring)
-    let peopleStr = originalPeopleStr
+  replacement(context: SsgContext, matchingString: string, peopleContent: string): string {
+    const titleParts = / title="(.*?)"/.exec(matchingString)
+    let peopleStr = peopleContent
     if (titleParts && titleParts.length > 1) {
       peopleStr = titleParts[1]
     }
@@ -25,11 +25,11 @@ export class PeopleReplacer {
     const currentFileName = context.currentFile?.name!
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
-      replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr} translate="no">${originalPeopleStr}</a>`
+      replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr} translate="no">${peopleContent}</a>`
     } else {
       replacement = `<span class="peopl" translate="no">${peopleStr}</span>`
     }
-    context.debug("\tReplacing", substring, "with", replacement)
+    context.debug("\tReplacing people", matchingString, "with", replacement)
     return replacement
   }
 

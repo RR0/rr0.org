@@ -14,12 +14,16 @@ export class PeopleReplacer {
     if (titleParts && titleParts.length > 1) {
       peopleStr = titleParts[1]
     }
+    const leftParent = peopleStr.indexOf("(")
+    if (leftParent > 0) {
+      peopleStr = peopleStr.substring(0, leftParent).trim()
+    }
     let people = this.cache.get(peopleStr)
     if (!people) {
       people = this.getPeople(peopleStr)
       this.cache.set(people.lastName, people)
     }
-    const titleAttr = peopleStr != people.fullName ? ` title="${people.fullName}"` : ""
+    const titleAttr = peopleStr.indexOf(people.fullName) < 0 ? ` title="${people.fullName}"` : ""
     let url = people.url
     let replacement: string
     const currentFileName = context.currentFile?.name!
@@ -34,16 +38,22 @@ export class PeopleReplacer {
   }
 
   getPeople(peopleStr: string): People {
-    let spaceParts = peopleStr.split(" ")
     let lastName: string
     let firstNames: string[]
-    if (spaceParts.length > 1) {
-      const lastPos = spaceParts.length - 1
-      lastName = spaceParts[lastPos]
-      firstNames = spaceParts.slice(0, lastPos)
+    let commaPos = peopleStr.indexOf(",")
+    if (commaPos > 0) {
+      lastName = peopleStr.substring(0, commaPos).trim()
+      firstNames = peopleStr.substring(commaPos + 1).trim().replace("  ", " ").split(" ")
     } else {
-      lastName = peopleStr
-      firstNames = []
+      let spaceParts = peopleStr.split(" ")
+      if (spaceParts.length > 1) {
+        const lastPos = spaceParts.length - 1
+        lastName = spaceParts[lastPos]
+        firstNames = spaceParts.slice(0, lastPos)
+      } else {
+        lastName = peopleStr
+        firstNames = []
+      }
     }
     let url: string | undefined = this.cache.get(lastName)?.url || this.getUrl(lastName, firstNames)
     if (this.peopleFiles.indexOf(url) < 0) {

@@ -8,62 +8,62 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Les exceptions représentent des erreurs. Tout code pouvant signaler des erreurs est susceptible de "lever" ou
+  <p>Les exceptions reprï¿½sentent des erreurs. Tout code pouvant signaler des erreurs est susceptible de "lever" ou
     lancer (<em>throw</em>) des exceptions.</p>
   <p>Lorsqu'un code appele un autre code pouvant lever des exceptions, la compilation lui impose de choisir entre :</p>
   <ul>
-    <li><strong>attraper </strong>(<em>catch</em>) ces exceptions pour les gérer (affichage de message d'erreur, action
-      réparatrice, nouvelle tentative, etc.) s'il a suffisamment d'informations pour faire quelque chose de censé avec
-      cette exception (si c'est à lui d'afficher un message à l'utilisateur, de notifier d'autres objets, etc.)</li>
-    <li><strong>propager </strong>ou relancer (<em>re-throw</em>) le exception (telle quelle ou encapsulée dans une
+    <li><strong>attraper </strong>(<em>catch</em>) ces exceptions pour les gï¿½rer (affichage de message d'erreur, action
+      rï¿½paratrice, nouvelle tentative, etc.) s'il a suffisamment d'informations pour faire quelque chose de censï¿½ avec
+      cette exception (si c'est ï¿½ lui d'afficher un message ï¿½ l'utilisateur, de notifier d'autres objets, etc.)</li>
+    <li><strong>propager </strong>ou relancer (<em>re-throw</em>) le exception (telle quelle ou encapsulï¿½e dans une
       autre exception).</li>
   </ul>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Une exception est un objet caractérisé par une classe. </p>
-  <p>Les exceptions peuvent être catégorisées en fonction de leur :</p>
+  <p>Une exception est un objet caractï¿½risï¿½ par une classe. </p>
+  <p>Les exceptions peuvent ï¿½tre catï¿½gorisï¿½es en fonction de leur :</p>
   <ul>
-    <li><strong>contrôle</strong> :
+    <li><strong>contrï¿½le</strong> :
       <ul>
-        <li>les exceptions non contrôlées (<em>uncheked</em>) sont considérées comme improbables si le code est correct
-          (pas d'utilisation de références nulles, pas de dépassement des limites de tableau, pas de fuites mémoire,
+        <li>les exceptions non contrï¿½lï¿½es (<em>uncheked</em>) sont considï¿½rï¿½es comme improbables si le code est correct
+          (pas d'utilisation de rï¿½fï¿½rences nulles, pas de dï¿½passement des limites de tableau, pas de fuites mï¿½moire,
           etc.)
         </li>
-        <li>les exceptions contrôlées (<em>checked</em>) ne dépendent pas de la qualité de votre code et, leur existence
-          étant prévue, le compilateur considère que leur gestion (en les attrapant ou en les propageant) est
-          obligatoire (sans quoi cela reviendrait à ne pas gérer un cas d'erreur prévu).</li>
+        <li>les exceptions contrï¿½lï¿½es (<em>checked</em>) ne dï¿½pendent pas de la qualitï¿½ de votre code et, leur existence
+          ï¿½tant prï¿½vue, le compilateur considï¿½re que leur gestion (en les attrapant ou en les propageant) est
+          obligatoire (sans quoi cela reviendrait ï¿½ ne pas gï¿½rer un cas d'erreur prï¿½vu).</li>
       </ul>
     </li>
     <li><strong>encapsulation</strong> : si une exception peut contenir une (ou plusieurs) autre(s) exception(s)
-      imbriquées (<em>nested</em>) ou "interne(s)" (<em>inner</em>) décrivant les causes initiales de l'erreur.</li>
+      imbriquï¿½es (<em>nested</em>) ou "interne(s)" (<em>inner</em>) dï¿½crivant les causes initiales de l'erreur.</li>
   </ul>
 </section>
 <section>
-  <h2>Implémentation</h2>
-  <p>Toutes les exceptions implémentent l'interface <code>java.lang.Throwable</code>, ce qui permet de les lancer (<em>throw</em>).
-    Elles le font généralement en dérivant de :</p>
+  <h2>Implï¿½mentation</h2>
+  <p>Toutes les exceptions implï¿½mentent l'interface <code>java.lang.Throwable</code>, ce qui permet de les lancer (<em>throw</em>).
+    Elles le font gï¿½nï¿½ralement en dï¿½rivant de :</p>
   <ul>
-    <li><code>java.lang.Exception</code> pour les exceptions contrôlées</li>
-    <li><code>java.lang.RuntimeException</code> pour les exceptions non-contrôlées</li>
+    <li><code>java.lang.Exception</code> pour les exceptions contrï¿½lï¿½es</li>
+    <li><code>java.lang.RuntimeException</code> pour les exceptions non-contrï¿½lï¿½es</li>
   </ul>
 </section>
 <section>
   <h2>Exemples</h2>
   <p>Des exemples d'exceptions sont :</p>
-  <table border="1" cellspacing="0" cellpadding="5">
+  <table>
     <tr>
       <td>Exemples de types d''exceptions</td>
-      <th>Contrôlées</th>
-      <th>Non-contrôlées</th>
+      <th>Contrï¿½lï¿½es</th>
+      <th>Non-contrï¿½lï¿½es</th>
     </tr>
     <tr>
-      <th>Sans exception(s) imbriquée(s)</th>
+      <th>Sans exception(s) imbriquï¿½e(s)</th>
       <td><code>Exception, IOException</code></td>
       <td><code>RuntimeException, ArrayOutOfBoundsException, NullPointerException</code></td>
     </tr>
     <tr>
-      <th>Avec exception(s) imbriquée(s)</th>
+      <th>Avec exception(s) imbriquï¿½e(s)</th>
       <td><code>SQLException</code></td>
       <td><code>JDOException</code></td>
     </tr>
@@ -77,88 +77,88 @@
     static </strong>load (String someFileName) <strong>throws </strong>ProblemeFichierException {<br> <strong>if
     (</strong>problemeFichier<strong>)<br> throw new </strong>ProblemeFichierException <strong>(<span
       class="codeString">"</span></strong><span class="codeString">Informations
-  sur le problème<strong>"</strong></span><strong>);</strong><br> } <br> }</code></blockquote>
-  <p>Un exemple code Java gérant des exceptions est :</p>
+  sur le problï¿½me<strong>"</strong></span><strong>);</strong><br> } <br> }</code></blockquote>
+  <p>Un exemple code Java gï¿½rant des exceptions est :</p>
   <blockquote><strong><code>public</code></strong> <code><strong>class</strong> Main {<br> <strong>public </strong>static
     void main (String[] args)<br> <strong>throws </strong>java.io.IOException { <span class="codeComment">//
   Peut propager cette exception</span><br> <strong>try</strong> { <br> FileLoader.load<strong> (<span
         class="codeString">"</span></strong><span
         class="codeString">NomFichier.txt<strong>"</strong></span><strong>);</strong><br>
-    <strong>System.out.println </strong>(<span class="codeString">"Le fichier a été ouvert"</span>);<br> }<br> <strong>catch </strong>(ProblemeFichierException
+    <strong>System.out.println </strong>(<span class="codeString">"Le fichier a ï¿½tï¿½ ouvert"</span>);<br> }<br> <strong>catch </strong>(ProblemeFichierException
     erreurFichier) {<br> <strong>System.err.println </strong>(<span
-        class="codeString">"Le fichier n'a pu être ouvert"</span>);<br> } <br> } <br> }</code></blockquote>
+        class="codeString">"Le fichier n'a pu ï¿½tre ouvert"</span>);<br> } <br> } <br> }</code></blockquote>
 </section>
 <section>
   <h2>Anti-exemples</h2>
   <section>
     <h3>Absorption</h3>
-    <p>N'éludez jamais le traitement d'une exception contrôlée. Cela pourra donner l'illusion que votre code tourne,
-      alors que ce n'est pas le cas (erreurs difficiles à trouver) :</p>
+    <p>N'ï¿½ludez jamais le traitement d'une exception contrï¿½lï¿½e. Cela pourra donner l'illusion que votre code tourne,
+      alors que ce n'est pas le cas (erreurs difficiles ï¿½ trouver) :</p>
     <blockquote>
       <p class="anticode">try {<br> faitQuelqueChose();<br> }<br> catch (SomeException uneExceptionFatiguanteAGerer)
         <strong>{<br> }</strong></p>
     </blockquote>
-    <p>La gestion minimale d'une exception devrait être :</p>
+    <p>La gestion minimale d'une exception devrait ï¿½tre :</p>
     <blockquote>
       <p><code>try {<br> faitQuelqueChose();<br> }<br> catch (SomeException uneExceptionFatiguanteAGerer) {<br> <strong>uneExceptionFatiguanteAGerer.printStackTrace</strong>();<br>
         }</code></p>
     </blockquote>
-    <p>Dans de rares cas il pourra être admissible d'asborber une exception. Cependant même dans ce cas le lecteur doit
+    <p>Dans de rares cas il pourra ï¿½tre admissible d'asborber une exception. Cependant mï¿½me dans ce cas le lecteur doit
       savoir que c'est normal et pourquoi c'est normal :</p>
     <blockquote>
       <p><code>try {<br> testErreurAttendue();<br> throw new TestException (<span class="codeString">"Ce test
     devrait produire une erreur"</span>);<br> }<br> catch (SomeException uneException) {<br> <span
-          class="codeComment"><strong>// Ok, c'était attendu</strong></span><br> }</code></p>
+          class="codeComment"><strong>// Ok, c'ï¿½tait attendu</strong></span><br> }</code></p>
     </blockquote>
   </section>
   <section>
     <h3>Utilisation d'une ressource</h3>
-    <p>Vouloir éviter les blocs de gestion d'erreur peut rendre votre code moins robuste et moins clair. Voici un
+    <p>Vouloir ï¿½viter les blocs de gestion d'erreur peut rendre votre code moins robuste et moins clair. Voici un
       exemple de mauvaise gestion des erreurs lors de l'utilisation d'une ressource (connexion, fichier, etc.):</p>
     <blockquote>
       <p class="anticode"><strong>MaResource maResource = null</strong>;<br> try {<br> <strong> MaResource maResource =
         getResource();</strong><br> <strong>maResource</strong>.utilise();<br> }<br> catch (MaResourceException
-        uneErreur) {<br> <span class="codeComment">// Gère l'erreur</span><br> }<br> finally {<br> <strong> if
+        uneErreur) {<br> <span class="codeComment">// Gï¿½re l'erreur</span><br> }<br> finally {<br> <strong> if
           (maResource != null)</strong><br> maResource.release(); <br> }</p>
     </blockquote>
-    <p>Voici une version claire, qui sait différencier les causes des erreurs, et qui n'a pas besoin de faire des tests
+    <p>Voici une version claire, qui sait diffï¿½rencier les causes des erreurs, et qui n'a pas besoin de faire des tests
       inutiles :</p>
     <blockquote>
       <p><code><strong>try</strong> { <br> MaResource maResource = getResource();<br> <strong> try</strong> {<br>
         maResource.utilise();<br> }<br> <strong> catch</strong> (MaResourceException erreurUtilisation) {<br> <span
-            class="codeComment">// Gère l'erreur
+            class="codeComment">// Gï¿½re l'erreur
     d'utilisation</span><br> }<br> <strong> finally</strong> {<br> maResource.release(); // Or close, etc.<br> }<br> }
-        <br> <strong>catch</strong> (MaResourceException erreurAllocation) {<br> <span class="codeComment">// Gère l'erreur d'allocation</span><br>
+        <br> <strong>catch</strong> (MaResourceException erreurAllocation) {<br> <span class="codeComment">// Gï¿½re l'erreur d'allocation</span><br>
         } </code></p>
     </blockquote>
   </section>
   <section>
-    <h3>Mauvaise portée</h3>
-    <p>Une erreur courante est de ne gérer les exception qu'au niveau d'une instruction ou au niveau d'un ensemble
-      réduit d'instructions qui pourtant dépendent de la réussite d'instructions précédentes :</p>
+    <h3>Mauvaise portï¿½e</h3>
+    <p>Une erreur courante est de ne gï¿½rer les exception qu'au niveau d'une instruction ou au niveau d'un ensemble
+      rï¿½duit d'instructions qui pourtant dï¿½pendent de la rï¿½ussite d'instructions prï¿½cï¿½dentes :</p>
     <blockquote>
       <p class="anticode">SomeResult resultat;<strong><br> try</strong> {<br> resultat = effectuePremiereTache();<br>
         }<br> <strong>catch</strong> (SomeExceptionType unePremiereErreur) {<br> <span
-            class="codeComment">// Gère le cas d'erreur</span><br> }<br> <br> <strong>try</strong> {<br>
+            class="codeComment">// Gï¿½re le cas d'erreur</span><br> }<br> <br> <strong>try</strong> {<br>
         effectueSecondeTache(resultat); <span class="codeComment">//
     Quid si resultat n'a pas pu s'initialiser ?</span><br> }<br> <strong>catch</strong> (AnotherExceptionType
-        uneSecondeErreur) {<br> <span class="codeComment">// Gère le cas d'erreur</span><br> }</p>
+        uneSecondeErreur) {<br> <span class="codeComment">// Gï¿½re le cas d'erreur</span><br> }</p>
     </blockquote>
-    <p>Une version correcte inclue dans une bloc <code>try</code> un ensemble d'actions dépendantes :</p>
+    <p>Une version correcte inclue dans une bloc <code>try</code> un ensemble d'actions dï¿½pendantes :</p>
     <blockquote>
       <p><code> <strong>try</strong> {<br> SomeResult resultat = effectuePremiereTache();<br> effectueSecondeTache
         (resultat);<br> }<br> <strong>catch</strong> (SomeExceptionType unePremiereErreur) {<br> <span
-            class="codeComment">// Gère le cas d'erreur</span><br> }<br> <strong>catch</strong> (AnotherExceptionType
-        uneSecondeErreur) {<br> <span class="codeComment">// Gère le cas d'erreur</span><br> }</code></p>
+            class="codeComment">// Gï¿½re le cas d'erreur</span><br> }<br> <strong>catch</strong> (AnotherExceptionType
+        uneSecondeErreur) {<br> <span class="codeComment">// Gï¿½re le cas d'erreur</span><br> }</code></p>
     </blockquote>
     <h3>Perte d'information</h3>
-    <p>L'information étant critique pour comprendre et éventuellement corriger une erreur, ne pas remonter toutes les
-      informations instructives peut être très dommageable pour l'utilisateur ou le code appelant.</p>
-    <p>Il faut donc éviter du code du genre :</p>
+    <p>L'information ï¿½tant critique pour comprendre et ï¿½ventuellement corriger une erreur, ne pas remonter toutes les
+      informations instructives peut ï¿½tre trï¿½s dommageable pour l'utilisateur ou le code appelant.</p>
+    <p>Il faut donc ï¿½viter du code du genre :</p>
     <blockquote>
       <p class="anticode">try {<br> SomeResult result = doFirstTask(parameter);<br> doSecondTask (result);<br> }<br>
         catch (SomeException someException) {<br> System.err.println (<span class="codeString">"Il y a eu un
-    problème"</span>); <span class="codeComment">// Lequel ?
+    problï¿½me"</span>); <span class="codeComment">// Lequel ?
     Pourquoi ?</span><br> }</p>
     </blockquote>
     <p>Ou encore : </p>
@@ -168,9 +168,9 @@
             class="codeComment">//
     Perd l'info de l'erreur initiale</span><br> }</p>
     </blockquote>
-    <p>A la place utilisez les exceptions imbriquées (il en existe dans certaines exceptions standards ou dans toutes
-      depuis J2SE 1.4), ou ajouter des champs d'info à remplir dans votre propres classes d'exceptions, ou au pire
-      fournissez un message d'erreur détaillé :</p>
+    <p>A la place utilisez les exceptions imbriquï¿½es (il en existe dans certaines exceptions standards ou dans toutes
+      depuis J2SE 1.4), ou ajouter des champs d'info ï¿½ remplir dans votre propres classes d'exceptions, ou au pire
+      fournissez un message d'erreur dï¿½taillï¿½ :</p>
     <blockquote>
       <p><code> try {<br> SomeResult result = doFirstTask(parameter);<br> doSecondTask (result);<br> }<br> catch
         (SomeException someException) {<br> throw <strong>new AnotherException (someException)</strong>;<br> }</code>
@@ -190,14 +190,14 @@
           " + someException.getMessage(</strong>));<br> }</code></p>
     </blockquote>
     <h3>Traiter les exceptions comme des branches d'algorithmes</h3>
-    <p>Une exception ne doit pas être considérée comme un cas de traitement normal : </p>
+    <p>Une exception ne doit pas ï¿½tre considï¿½rï¿½e comme un cas de traitement normal : </p>
     <blockquote>
       <p class="anticode">public Result method (Object someParam) {<strong><br> if (someParam != null)</strong> {<br>
         <strong>return</strong> doTask(someParam);<br> <strong> }<br> else {<br> throw new MyException ("Parameter " +
           someParam + " cannot be null");<br> } <br> </strong>}</p>
     </blockquote>
-    <p>Une exception plutôt, comme son nom l'indique, prévenir les cas exceptionnels et être gérées comme des
-      pré/postconditions de traitements :</p>
+    <p>Une exception plutï¿½t, comme son nom l'indique, prï¿½venir les cas exceptionnels et ï¿½tre gï¿½rï¿½es comme des
+      prï¿½/postconditions de traitements :</p>
     <blockquote>
       <p><code> public Result method (Object someParam) {<br> <strong> if (someParam == null) {<br> throw new
         MyException ("Parameter " + someParam + " cannot be null");<br> }<br> </strong><br> return
@@ -207,7 +207,7 @@
 </section>
 <h2>Notes</h2>
 <ul>
-  <li>La gestion des exception est intégrée à <a href="../../../prog/oo/java/RMI.html">RMI</a>. Elles n'ont pas besoin
-    d'implémenter <code>java.io.Serializable</code> pour être propagées entre objets distants (via le réseau).</li>
+  <li>La gestion des exception est intï¿½grï¿½e ï¿½ <a href="../../../prog/oo/java/RMI.html">RMI</a>. Elles n'ont pas besoin
+    d'implï¿½menter <code>java.io.Serializable</code> pour ï¿½tre propagï¿½es entre objets distants (via le rï¿½seau).</li>
 </ul>
 <!--#include virtual="/footer.html" -->

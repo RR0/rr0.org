@@ -8,7 +8,8 @@ export class SsgMessages_en implements SsgMessages {
         hours: (d: number): string => MessageUtils.plural(d, "hour"),
         minutes: (mn: number): string => MessageUtils.plural(mn, "minute"),
         seconds: (s: number): string => MessageUtils.plural(s, "second"),
-        lastSeparator: " and "
+        lastSeparator: " and ",
+        approximate: (txt: string): string => `${txt} approximately`
       },
       relative: {
         year: {
@@ -28,6 +29,7 @@ export class SsgMessages_en implements SsgMessages {
           after: "one hour later"
         }
       },
+      approximate: (title: string): string => `around ${title}`,
       fromTo: (startReplacement: string, endReplacement: string): string => startReplacement + " to " + endReplacement
     }
   }

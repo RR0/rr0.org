@@ -151,51 +151,84 @@ describe("TimeReplacer", () => {
       .toBe(`<span class="time">jeudi 2 août 1990</span>`)
   })
 
-  test("parse duration", () => {
-    const context = newContext()
-    context.currentFile = {
-      contents: "", encoding: "utf8", lastModified: new Date(),
-      name: "time/1/9/9/0/08/index.html"
-    }
-    const replacer = new TimeReplacer(["time/1/9/9/0/08"])
-    expect(replacer.replacement(context, "<time>P2D10H23M45S</time>", "P2D10H23M45S"))
-      .toBe(`<time class="duration">2 jours, 10 heures, 23 minutes et 45 secondes</time>`)
+  describe("parse duration", () => {
+
+    test("with days, hours, minutes and seconds", () => {
+      const context = newContext()
+      context.currentFile = {
+        contents: "", encoding: "utf8", lastModified: new Date(),
+        name: "time/1/9/9/0/08/index.html"
+      }
+      const replacer = new TimeReplacer([])
+      expect(replacer.replacement(context, "<time>P2D10H23M45S</time>", "P2D10H23M45S"))
+        .toBe(`<time class="duration">2 jours, 10 heures, 23 minutes et 45 secondes</time>`)
+    })
+
+    test("with approximation", () => {
+      const context = newContext()
+      context.currentFile = {
+        contents: "", encoding: "utf8", lastModified: new Date(),
+        name: "time/1/9/9/0/08/index.html"
+      }
+      const replacer = new TimeReplacer([])
+      expect(replacer.replacement(context, "<time>~P2H</time>", "~P2H"))
+        .toBe(`<time class="duration">environ 2 heures</time>`)
+    })
   })
 
-  test("parses hour", () => {
-    {
-      const context = newContext()
-      const replacer = new TimeReplacer(["time/2/0/0/6/07/14"])
-      expect(replacer.valueReplacement(context, "2006-07-14 17:56"))
-        .toBe(`<a href="/time/2/0/0/6/07/14/">vendredi 14 juillet 2006, 17:56</a>`)
-      expect(context.time.year).toBe(2006)
-      expect(context.time.month).toBe(7)
-      expect(context.time.dayOfMonth).toBe(14)
-      expect(context.time.hour).toBe(17)
-      expect(context.time.minutes).toBe(56)
-    }
-    {
-      const context = newContext()
-      const replacer = new TimeReplacer(["time/2/0/0/7/06/15"])
-      expect(replacer.valueReplacement(context, "2007-06-15 18:47")).toBe(`<a href="/time/2/0/0/7/06/15/">vendredi 15 juin 2007, 18:47</a>`)
-      expect(context.time.year).toBe(2007)
-      expect(context.time.month).toBe(6)
-      expect(context.time.dayOfMonth).toBe(15)
-      expect(context.time.hour).toBe(18)
-      expect(context.time.minutes).toBe(47)
-    }
-    {
-      const context = newContext()
-      context.time.year = 2007
-      context.time.month = 6
-      context.time.dayOfMonth = 15
-      const replacer = new TimeReplacer(["time/2/0/0/7/06/15"])
-      expect(replacer.valueReplacement(context, "18:47")).toBe(`<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007, 18:47">18:47</a>`)
-      expect(context.time.year).toBe(2007)
-      expect(context.time.month).toBe(6)
-      expect(context.time.dayOfMonth).toBe(15)
-      expect(context.time.hour).toBe(18)
-      expect(context.time.minutes).toBe(47)
-    }
+  describe("parses hour", () => {
+
+    test("with context", () => {
+      {
+        const context = newContext()
+        const replacer = new TimeReplacer(["time/2/0/0/6/07/14"])
+        expect(replacer.valueReplacement(context, "2006-07-14 17:56"))
+          .toBe(`<a href="/time/2/0/0/6/07/14/">vendredi 14 juillet 2006, 17:56</a>`)
+        expect(context.time.year).toBe(2006)
+        expect(context.time.month).toBe(7)
+        expect(context.time.dayOfMonth).toBe(14)
+        expect(context.time.hour).toBe(17)
+        expect(context.time.minutes).toBe(56)
+      }
+      {
+        const context = newContext()
+        const replacer = new TimeReplacer(["time/2/0/0/7/06/15"])
+        expect(replacer.valueReplacement(context, "2007-06-15 18:47")).toBe(`<a href="/time/2/0/0/7/06/15/">vendredi 15 juin 2007, 18:47</a>`)
+        expect(context.time.year).toBe(2007)
+        expect(context.time.month).toBe(6)
+        expect(context.time.dayOfMonth).toBe(15)
+        expect(context.time.hour).toBe(18)
+        expect(context.time.minutes).toBe(47)
+      }
+      {
+        const context = newContext()
+        context.time.year = 2007
+        context.time.month = 6
+        context.time.dayOfMonth = 15
+        const replacer = new TimeReplacer(["time/2/0/0/7/06/15"])
+        expect(replacer.valueReplacement(context, "18:47")).toBe(`<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007, 18:47">18:47</a>`)
+        expect(context.time.year).toBe(2007)
+        expect(context.time.month).toBe(6)
+        expect(context.time.dayOfMonth).toBe(15)
+        expect(context.time.hour).toBe(18)
+        expect(context.time.minutes).toBe(47)
+      }
+    })
+
+    test("with approximation", () => {
+      {
+        const context = newContext()
+        context.time.year = 2007
+        context.time.month = 6
+        context.time.dayOfMonth = 15
+        const replacer = new TimeReplacer(["time/2/0/0/7/06/15"])
+        expect(replacer.valueReplacement(context, "~18:45")).toBe(`<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007, vers 18:45">vers 18:45</a>`)
+        expect(context.time.year).toBe(2007)
+        expect(context.time.month).toBe(6)
+        expect(context.time.dayOfMonth).toBe(15)
+        expect(context.time.hour).toBe(18)
+        expect(context.time.minutes).toBe(45)
+      }
+    })
   })
 })

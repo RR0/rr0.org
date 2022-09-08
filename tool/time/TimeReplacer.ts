@@ -12,13 +12,18 @@ export class TimeReplacer {
   constructor(protected timeFiles: string[]) {
   }
 
-  valueReplacement(context: SsgContext, timeStr: string, previousContext: SsgContext | null = context.clone()): string | undefined {
+  valueReplacement(context: SsgContext, timeStr: string, noContext = false): string | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
+    const approximate = timeStr.charAt(0) === "~"
+    if (approximate) {
+      timeStr = timeStr.substring(1)
+    }
     const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
     if (dateTimeValues && dateTimeValues[0]) {
       const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
-      replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone)
+      const previousContext: SsgContext | null = noContext ? null : context.clone()
+      replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone, approximate)
     } else {
       const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
       if (durationValues && durationValues[0]) {
@@ -29,35 +34,35 @@ export class TimeReplacer {
           }
           return reduced
         }, [])
-        replacement = this.durationReplacement(context, previousContext, daysStr, hoursStr, minutesStr, secondsStr)
+        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr, approximate)
       }
     }
     return replacement
   }
 
-  replacement(context: SsgContext, substring: string, timeStr: string): string {
-    const parts = timeStr.split("/")
-    const previousContext = substring.indexOf(`data-context="none"`) >= 0 ? null : undefined
+  replacement(context: SsgContext, match: string, contents: string): string {
+    const noContext = match.indexOf(`data-context="none"`) >= 0
+    const parts = contents.split("/")
     let replacement: string | undefined
     if (parts.length > 1) {
-      const startReplacement = this.valueReplacement(context, parts[0], previousContext)
+      const startReplacement = this.valueReplacement(context, parts[0], noContext)
       if (startReplacement) {
-        const endReplacement = this.valueReplacement(context, parts[1], previousContext)
+        const endReplacement = this.valueReplacement(context, parts[1], noContext)
         if (endReplacement) {
           replacement = context.messages.context.time.fromTo(startReplacement, endReplacement)
         }
       }
     }
     if (!replacement) {
-      replacement = this.valueReplacement(context, timeStr, previousContext) || substring
+      replacement = this.valueReplacement(context, contents, noContext) || match
     }
-    context.debug("\tReplacing time", substring, "with", replacement)
+    context.debug("\tReplacing time", match, "with", replacement)
     return replacement
   }
 
-  private dateTimeReplacement(context: SsgContext, previousContext: SsgContext | null, yearStr: string, monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string) {
-    let replacement = undefined
-    let timeContext = context.time
+  private dateTimeReplacement(context: SsgContext, previousContext: SsgContext | null, yearStr: string, monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string, approximate: boolean): string | undefined {
+    let replacement: string | undefined = undefined
+    const timeContext = context.time
     if (yearStr) {
       const year = parseInt(yearStr, 10)
       if (!Number.isNaN(year)) {
@@ -91,9 +96,16 @@ export class TimeReplacer {
         const slash = url.lastIndexOf("/")
         url = url.substring(0, slash)
       }
-      const title = TimeTextBuilder.build(context)
+      let title = TimeTextBuilder.build(context)
+      if (approximate) {
+        title = context.messages.context.time.approximate(title)
+      }
       let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
-      if (!text) {
+      if (text) {
+        if (approximate) {
+          text = context.messages.context.time.approximate(text)
+        }
+      } else {
         text = title
       }
       const titleAttr = text != title ? ` title="${title}"` : ""
@@ -108,31 +120,34 @@ export class TimeReplacer {
     return replacement
   }
 
-  private durationReplacement(context: SsgContext, previousContext: SsgContext | null, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string) {
+  private durationReplacement(context: SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string, approximate: boolean): string | undefined {
     const items = []
-    const durationMessages = context.messages.context.time.duration
+    const messages = context.messages.context.time.duration
     if (daysStr) {
       const days = parseInt(daysStr, 10)
-      items.push(durationMessages.days(days))
+      items.push(messages.days(days))
     }
     if (hoursStr) {
       const hours = parseInt(hoursStr, 10)
-      items.push(durationMessages.hours(hours))
+      items.push(messages.hours(hours))
     }
     if (minutesStr) {
       const minutes = parseInt(minutesStr, 10)
-      items.push(durationMessages.minutes(minutes))
+      items.push(messages.minutes(minutes))
     }
     if (secondsStr) {
       const seconds = parseInt(secondsStr, 10)
-      items.push(durationMessages.seconds(seconds))
+      items.push(messages.seconds(seconds))
     }
     let replacement
     if (items.length > 0) {
       replacement = items.join(", ")
       if (items.length > 1) {
         let last = replacement.lastIndexOf(", ")
-        replacement = replacement.substring(0, last) + durationMessages.lastSeparator + items[items.length-1]
+        replacement = replacement.substring(0, last) + messages.lastSeparator + items[items.length - 1]
+      }
+      if (approximate) {
+        replacement = messages.approximate(replacement)
       }
       replacement = `<time class="duration">${replacement}</time>`
     }

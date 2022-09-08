@@ -13,6 +13,7 @@ export interface SsgMessages {
         minutes: (mn: number) => string
         seconds: (mn: number) => string
         lastSeparator: string
+        approximate(txt: string): string
       },
       relative: {
         hour: {
@@ -33,6 +34,7 @@ export interface SsgMessages {
         }
       },
       fromTo(startReplacement: string, endReplacement: string): string
+      approximate(title: string): string
     }
   }
 }

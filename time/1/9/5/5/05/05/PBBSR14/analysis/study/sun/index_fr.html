@@ -1,0 +1,279 @@
+<!--#include virtual="/header-start.html" -->
+<title>Position du Soleil par rapport l'observateur</title>
+<meta content="https://bluebookarchive.org" name="url">
+<meta content="BMI" name="author">
+<meta content="ATIC" name="copyright">
+<link href=".." rel="prev" title="Etude avancée des données">
+<link href="../.." rel="start" title="Project Blue Book Special Report n° 14">
+<!--#include virtual="/header-end.html" -->
+<p>La 1ère chose qui a été faite a été de calculer l'angle d'élévation du <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> au-dessus de l'horizon et son orientation par rapport au
+  nord vrai tel que vu par l'observateur au moment de chaque observation. Avec cette information, il pourrait alors être
+  déterminé si une possibilité existait que l'objet rapporté puisse avoir été illuminé par la lumière du soleil. De
+  plus, il pourrait être déterminé si un objet avait pu être un faux <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a>
+  ou s'il y avait une possibilité de reflet spéculaire d'un <a href="/tech/aero/appareil/index.html">appareil</a> à la
+  position de l'objet, donnant l'apparence d'un "disque volant".
+</p>
+<p>Un programme de calcul a été mis en place et mené pour obtenir l'angle d'élévation et l'orientation du <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> pour chaque observation. L'ensemble des informations
+  nécessaires à ce calcul étaient disponibles sur la plate-forme des cartes IBM.
+</p>
+<p>Cette information a consisté en :</p>
+<ol>
+  <li> L'heure et la date d'observation en Temps Civil de Greenwich</li>
+  <li> Les latitude et longitude de l'observateur au moment de l'observation.</li>
+</ol>
+<figure class="right side">
+  <figcaption> Figure 39 - Diagramme d'une sphère céleste</figcaption>
+  <img alt="Diagramme d'une sphère céleste" src="pbspr14066.jpg">
+</figure>
+<p>La figure 39 montre une sphère céleste sur laquelle <u>Z</u> représente le zénith de l'observateur, <u>s</u> le <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> et <u>N</u> représente le pôle nord céleste.
+</p>
+<p>En utilisant la date et l'heure de l'observation, les longitude et déclinaison (<u>S</u>) du <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> ont été obtenues d'une éphéméride du <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> et corrigés pour l'équation du temps. La différence entre
+  les longitudes du <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a> et l'observateur ont été prises, et
+  appelées l'angle horaire (HA sur la figure 39).
+</p>
+<p>Alors, en utilisant la déclinaison du <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a> (S), la latitude
+  de l'observateur (lat), et l'angle horaire (HA), l'angle (ZS) entre le zénith de l'observateur et le <a
+      href="/place/systeme/solaire/Soleil/index.html">Soleil</a> peut être calculé d'après la loi des cosinus de
+  trigonométrie sphérique. Ainsi, cos ZS = cos (90 - lat) cos (90 - S) + sin (90 - lat) sin (90 - S) cos (HA).
+</p>
+<p>Puisque l'angle ZS est mesuré à partir du zénith de l'observateur, l'angle d'élévation du <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> au-dessus de l'horizon pour les observations de jour a
+  été trouvé en prenant 90 - ZS. Lorsque le <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a> était sous
+  l'horizon, l'angle de dépression du soleil sous l'horizon a été trouvé en prenant ZS - 90.
+</p>
+<p>Ayant trouvé l'angle ZS, l'orientation du <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a> (angle B) a
+  été obtenue d'après la formule :
+</p>
+<table style="table-layout:auto">
+  <tbody style="box-shadow:none">
+  <tr>
+    <td style="border:none">sin (B)<br>
+      <hr size="1">
+      sin (90 - S)
+    </td>
+    <td style="border:none"> =</td>
+    <td style="border:none">sin (HA)<br>
+      <hr size="1">
+      sin (ZS)
+    </td>
+  </tr>
+  </tbody>
+</table>
+<p>Tous les calculs ci-dessus ont été fait avec un équipement IBM. Les sinus, cosinus et leurs inverses ont été obtenus
+  depuis à partir d'un deck de 9000 cartes IBM sur lesquelles 7 place Peter'' s tableaux de sinus ; cosinus et tangentes
+  d'angles ont été perforées pour chaque 0,01 de degré de 0 à 90 °.
+</p>
+<figure class="right side">
+  <figcaption> Figure 40 - Fréquence d'observations d'objets par angle d'élévation du Soleil, intervalles de 10 °
+    d'angle
+  </figcaption>
+  <img alt="Diagramme d'une sphère céleste" src="pbspr14067.jpg">
+</figure>
+<p>Au terme de ces calculs, les cartes représentant les <em>observations d'objets</em> ont été triées sur le signe du
+  sinus de l'angle d'orientation. Cela a divisé les cartes en 2 groupes :
+</p>
+<ol>
+  <li> les observations qui eurent lieu entre 12:00 et 00:00, pour lesquelles le sinus de l'angle d'orientation était
+    positif ; et
+  </li>
+  <li> les observations entre 00:00 et 12:00, pour lesquelles le sinus de l'angle d'orientation était négatif.</li>
+</ol>
+<p>Chacun de ces groupes a alors été trié en groupes d'intervalles de 10 ° d'angle d'élévation du <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a>, de -90 à +90. Une comptabilisation des cartes dans
+  chaque groupe et d'après cet histogramme a été faite (figure 40). Les <em>observations d'objets inconnus</em> ont
+  alors été triées, comptabilisées de la même manière, et un histogramme réalisé (voir à nouveau la figure 40).
+</p>
+<p>Les points suivants devraient être notés avec attention concernant ces histogrammes :</p>
+<ol>
+  <li>Le nombre négligeable d'observations lorsque le <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a> est
+    entre les 10 ° du zénith et le nadir (angle d'élévation du <a
+        href="/place/systeme/solaire/Soleil/index.html">Soleil</a> à 90) de l'observateur est dû au fait que la latitude
+    la plus au Sud des U. S. est plus grande que la déclinaison du <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a>
+    au solstice d'Eté, de sorte qu'il serait impossible pour le <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a>
+    d'atteindre le zénith ou le nadir de quelque observateur aux U. S. (où la plupart des observations ont été faites).
+  </li>
+  <li>L'heure de la journée à laquelle intervient un angle d'élévation particulier du soleil ne reste pas fixe mais
+    varie de jour en jour. Considérez, par exemple, la variation dans les heures de lever et de coucher du soleil au
+    cours d'une année.
+  </li>
+</ol>
+<p>Ainsi, il n'y a que 2 inférences à faire d'après cet histogramme :</p>
+<ol>
+  <li> le fort pic d'observations peu après le coucher du <a href="/place/systeme/solaire/Soleil/index.html">Soleil</a>,
+    et
+  </li>
+  <li> l'absence d'augmentation des <em>inconnus</em> par rapport aux <em>connus</em> près du coucher ou du level du <a
+      href="/place/systeme/solaire/Soleil/index.html">Soleil</a>.
+  </li>
+</ol>
+<p>Cela semblerait écarter la possibilité que les phénomènes atmosphériques tels que les faux <a
+    href="/place/systeme/solaire/Soleil/index.html">Soleil</a> soient la cause principale des rapports
+  d'<em>inconnus</em>, puisque de tels phénomènes ont généralement lieu lorsque le <a
+      href="/place/systeme/solaire/Soleil/index.html">Soleil</a> est proche de l'horizon.
+</p>
+<figure class="right side">
+  <figcaption> Figure 41 - Fréquence des observations d'objets par Heure Solaire Locale, intervalles de 1 h</figcaption>
+  <img alt="Diagramme d'une sphère céleste" src="pbspr14069.jpg">
+</figure>
+<p>L'Heure Solaire Locale a été calculée comme une étape dans le calcul de l'angle d'élévation du soleil. Elle est liée
+  à l'angle horaire par l'équation : Heure Solaire Locale (H. S. L.) = HA/i5 + 12,00, om H. S. L. est en heures et HA en
+  degrés.
+</p>
+<p>Les cartes ont été regroupées sur la base de l'H. S. L. en intervalles de 1 h, et le nombre de cartes dans chaque
+  intervalle a été comptabilisé. A nouveau les <em>inconnus</em> ont été tris et traité de la même manière. Des
+  histogrammes ont été construits avec les résultats de ces tabulations d'<em>observations d'objets</em> (Figure 41).
+  Ici, à nouveau, il existe un pic dans les premières heures du soir.
+</p>
+<p>Les cartes ont alors été séparées en 7 groupes sur la base de l'angle d'élévation du soleil, comme suit :</p>
+<ol>
+  <li><strong>Observations de jour</strong> pour lesquelles le soleil était à plus de 10 ° au-dessus de l'horizon.</li>
+  <li><strong>Observations au coucher du soleil</strong> pour lesquelles le soleil était entre 0 et 10 ° au-dessus de
+    l'horizon.
+  </li>
+  <li><strong>Observations au coucher du soleil</strong> pour lesquelles le soleil était entre 0 et 10 ° sous l'horizon.
+  </li>
+  <li><strong>Observations de soirée</strong> pour lesquelles le soleil était entre 10 et 40 ° sous l'horizon.</li>
+  <li><strong>Observations de nuit</strong> pour lesquelles le soleil était à plus de 10 ° sous l'horizon et qui n'ont
+    pas été incluses dans le Groupe 4.
+  </li>
+  <li><strong>Observation au lever du soleil </strong>pour lesquelles le soleil était entre 0 et 10 ° sous l'horizon.
+  </li>
+  <li><strong>Observation au lever du soleil </strong>pour lesquelles le soleil était entre 0 et 10 ° au-dessus de
+    l'horizon.
+  </li>
+</ol>
+<p>Ces nombres de groupes ont été perforés sur les cartes et incorporés dans le système de codage. Le nombre d'<em>observations
+  d'objets</em> dans chaque group pour chaque identification a alors été tabulated et est donné dans le tableau 1.
+</p>
+<table>
+  <caption>
+    Tableau 1 - Observation d'objets
+  </caption>
+  <thead>
+  <tr>
+    <th rowspan="2">Identification</th>
+    <th colspan="7">Groupe d'angle d'élévation <em></em></th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="/science/crypto/ufo/enquete/meprise/ballon/index.html">Ballon</a>
+    </td>
+    <td>156</td>
+    <td>17</td>
+    <td>28</td>
+    <td>83</td>
+    <td>40</td>
+    <td>0</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Astronomique</td>
+    <td>52</td>
+    <td>6</td>
+    <td>43</td>
+    <td>236</td>
+    <td>118</td>
+    <td>9</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td><a href="/tech/aero/appareil/index.html">Appareil</a></td>
+    <td>187</td>
+    <td>23</td>
+    <td>49</td>
+    <td>144</td>
+    <td>60</td>
+    <td>5</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Phénomène lumineux</td>
+    <td>8</td>
+    <td>2</td>
+    <td>4</td>
+    <td>25</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Information insuffisante</td>
+    <td>72</td>
+    <td>12</td>
+    <td>26</td>
+    <td>76</td>
+    <td>28</td>
+    <td>2</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td><em>Inconnu</em></td>
+    <td>134</td>
+    <td>14</td>
+    <td>25</td>
+    <td>150</td>
+    <td>86</td>
+    <td>6</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>Autre</td>
+    <td>64</td>
+    <td>8</td>
+    <td>12</td>
+    <td>50</td>
+    <td>36</td>
+    <td>3</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td height="2"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>673</td>
+    <td>82</td>
+    <td>187</td>
+    <td>764</td>
+    <td>375</td>
+    <td>25</td>
+    <td>24</td>
+  </tr>
+  </tbody>
+</table>
+<p>D'après ce tableau, une grande majorité des <em>observations d'objets connus</em> du Groupe 1 (343 sur 467) sont soit
+  des <a href="/tech/aero/appareil/index.html">appareils</a> soit des <a
+      href="/science/crypto/ufo/enquete/meprise/ballon/index.html">ballons</a>. Dans les Groupes 4 et 5 combinés, une
+  grande majorité (681 sur 899) sont soit des <a
+      href="/science/crypto/ufo/enquete/meprise/ballon/index.html">ballons</a>, des <a
+      href="/tech/aero/appareil/index.html">appareils</a>, ou astronomiques. En conséquence, une ré-évaluation des <em>inconnus</em>
+  dans ces groupes a été prévue avec pour objectif de déterminer quels <em>inconnus</em> du Groupe 1 pourraient
+  éventuellement être des <a href="/tech/aero/appareil/index.html">appareils</a> ou des <a
+      href="/science/crypto/ufo/enquete/meprise/ballon/index.html">ballons</a> et quels <em>inconnus</em> des Groupes 4
+  et 5 pourraient éventuellement être des <a href="/science/crypto/ufo/enquete/meprise/ballon/index.html">ballons</a>,
+  <a href="/tech/aero/appareil/index.html">appareils</a>, ou objets astronomiques. Plus sera dit sur ce projet par la
+  suite.
+</p>
+<!--#include virtual="/footer.html" -->

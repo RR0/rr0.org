@@ -1,0 +1,24 @@
+<!--#include virtual="/header-start.html" -->
+<title>RC4</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Chiffrer rapidement.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Système de <a href="/tech/info/soft/sec/priv/crypt/Symetrique.html">chiffrement symétrique</a> par <a
+      href="#stream"> flux</a> (<a href="https://www.cs.uwf.edu/%7Ewilde/CEN6990/papers/boone/RC4.htm"><code>https://www.cs.uwf.edu/~wilde/CEN6990/papers/boone/RC4.htm</code></a>)
+    comme <a href="RC2.html">RC2</a>, contenant un bon algorithme de <a href="#RNG">RNG</a>.</p>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Développé par RSA.</li>
+    <li>appartient officiellemment au domaine public, mais <a href="/org/us/company/RSA.html">RSA</a> poursuivra toute
+      personne utilisant cet algorithme sans lui payer de droits (!)</li>
+    <li>algorithme très rapide, très facile à implémenter</li>
+    <li>RC4 est considéré comme sûr, dans la mesure où vous changez de clé pour crypter chaque nouveau message.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

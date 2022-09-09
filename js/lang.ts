@@ -1,6 +1,6 @@
 const angular = require('angular');
 
-import net from './net';
+import net from "./net"
 
 export default langModule => {
   var langModule = angular.module('rr0.lang', ['rr0.net']);
@@ -35,9 +35,9 @@ export default langModule => {
        * and an original french will be index.html (with html lang="fr") and there will be no translation (or its translation will be index_en.html),
        * If the suffix is not explicit, we need to check.
        *
-       * uri:https://rr0.org/data/a/a/a/a/m/Something/index_fr.html --> original is https://rr0.org/data/a/a/a/a/m/Something/index.html
-       * uri:https://rr0.org/data/a/a/a/a/m/Something/index.fr --> original is the same
-       * uri:https://rr0.org/data/a/a/a/a/m/Something/ --> if https://rr0.org/data/a/a/a/a/m/Something/index_fr.html exists, original is https://rr0.org/data/a/a/a/a/m/Something/index.html
+       * uri:https://rr0.org/time/a/a/a/a/m/Something/index_fr.html --> original is https://rr0.org/time/a/a/a/a/m/Something/index.html
+       * uri:https://rr0.org/time/a/a/a/a/m/Something/index.fr --> original is the same
+       * uri:https://rr0.org/time/a/a/a/a/m/Something/ --> if https://rr0.org/time/a/a/a/a/m/Something/index_fr.html exists, original is https://rr0.org/time/a/a/a/a/m/Something/index.html
        *
        * @param uri
        */

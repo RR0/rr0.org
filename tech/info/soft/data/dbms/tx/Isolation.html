@@ -3,20 +3,20 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
-  <p>Garantir l'indépendance d'opérations travaillant sur les mêmes données.</p>
+  <p>Garantir l'indÃ©pendance d'opÃ©rations travaillant sur les mÃªmes donnÃ©es.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Idéalement l'isolation doit être maximale : j'aimerai pouvoir travailler sur des données sans me soucier d'autres
+  <p>IdÃ©alement l'isolation doit Ãªtre maximale : j'aimerai pouvoir travailler sur des donnÃ©es sans me soucier d'autres
     transactions.</p>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Dans la pratique, le niveau d'isolation idéal (maximal) est souvent trop contraignant car il implique que chaque
-    transaction passe après une autre (aucun parallélisme des travaux). Pour pallier ce problème, on accepte de perdre
-    un partie de l'isolation au profit d'un meilleur parallélisme, et donc d'une meilleure <a
+  <p>Dans la pratique, le niveau d'isolation idÃ©al (maximal) est souvent trop contraignant car il implique que chaque
+    transaction passe aprÃ¨s une autre (aucun parallÃ©lisme des travaux). Pour pallier ce problÃ¨me, on accepte de perdre
+    une partie de l'isolation au profit d'un meilleur parallÃ©lisme, et donc d'une meilleure <a
         href="../../../../Performance.html">performance</a>.</p>
-  <table border="1" cellspacing="0" cellpadding="4">
+  <table>
     <thead>
     <tr>
       <th>Niveau</th>
@@ -29,38 +29,38 @@
     <tr>
       <td>0</td>
       <td>Read uncommitted</td>
-      <td>lectures non valides : Je lis pendant ma transaction des données peut-être issues d'autres transactions et
-        susceptibles d'être annulées (si une des autres transaction finit par annuler ses modifications typiquement).
+      <td>lectures non valides : Je lis pendant ma transaction des donnÃ©es peut-Ãªtre issues d'autres transactions et
+        susceptibles d'Ãªtre annulÃ©es (si une des autres transaction finit par annuler ses modifications typiquement).
       </td>
       <td>-</td>
     </tr>
     <tr>
       <td>1</td>
       <td>Read committed</td>
-      <td>Lectures valides : Je lis pendant ma transaction uniquement des données issues de transactions achevées
-        (validées ou annulées). Je ne vois pas les données modifiées par des transactions encore non achevées. Cela
-        évite les
+      <td>Lectures valides : Je lis pendant ma transaction uniquement des donnÃ©es issues de transactions achevÃ©es
+        (validÃ©es ou annulÃ©es). Je ne vois pas les donnÃ©es modifiÃ©es par des transactions encore non achevÃ©es. Cela
+        Ã©vite les
       </td>
-      <td>Lectures sales (<em>dirty reads</em>), où je lis les données de travail d'autres transactions, potentiellement
+      <td>Lectures sales (<em>dirty reads</em>), oÃ¹ je lis les donnÃ©es de travail d'autres transactions, potentiellement
         fausses (annulables par ces autres transactions).
       </td>
     </tr>
     <tr>
       <td>2</td>
       <td>Repeatable read</td>
-      <td>Lectures répétables : Pendant ma transaction ce que je lis ne sera pas modifiable par d'autres transactions.
-        Cela évite des
+      <td>Lectures rÃ©pÃ©tables : Pendant ma transaction ce que je lis ne sera pas modifiable par d'autres transactions.
+        Cela Ã©vite des
       </td>
-      <td>lectures non répétables (<em>non-repeteable reads</em>), où je lis pour de mêmes données des valeurs
-        différentes (issues des modifications d'autres transactions) alors que je ne les ai pas modifiées dans ma
+      <td>lectures non rÃ©pÃ©tables (<em>non-repeteable reads</em>), oÃ¹ je lis pour de mÃªmes donnÃ©es des valeurs
+        diffÃ©rentes (issues des modifications d'autres transactions) alors que je ne les ai pas modifiÃ©es dans ma
         transaction.
       </td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Sérialisable</td>
-      <td>Ordonnancement<strong> </strong>: Mes lectures ne sont pas du tout impactées par les autres transactions</td>
-      <td>Lectures fantômes (<em>phantom reads</em>), où des enregistrements apparaissent (insertions par d'autres
+      <td>SÃ©rialisable</td>
+      <td>Ordonnancement<strong> </strong>: Mes lectures ne sont pas du tout impactÃ©es par les autres transactions</td>
+      <td>Lectures fantÃ´mes (<em>phantom reads</em>), oÃ¹ des enregistrements apparaissent (insertions par d'autres
         transactions) ou disparaissent (supression par d'autres transactions) pendant ma transaction.
       </td>
     </tr>
@@ -68,22 +68,22 @@
   </table>
 </section>
 <section>
-  <h2>Implémentation</h2>
-  <p><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> permet de spécifier le niveau d'isolation
-    via <code>Connection.setTransactionIsolation()</code>, dans le cas d'environnement non-géré ou de persistance
-    manuelle dans un environnement géré (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> BMP
+  <h2>ImplÃ©mentation</h2>
+  <p><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> permet de spÃ©cifier le niveau d'isolation
+    via <code>Connection.setTransactionIsolation()</code>, dans le cas d'environnement non-gÃ©rÃ© ou de persistance
+    manuelle dans un environnement gÃ©rÃ© (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> BMP
     typiquement).
   </p>
-  <p>En environnement géré (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> CMP par exemple), la
-    spécification du niveau d'isolation n'est pas supportée par le standard (sauf <a
-        href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> 1.0) et le niveau d'isolation utilisé doit
-    être paramétré de manière propriétaire dans la base de données accédée ou via un paramétrage spécifique au serveur
+  <p>En environnement gÃ©rÃ© (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> CMP par exemple), la
+    spÃ©cification du niveau d'isolation n'est pas supportÃ©e par le standard (sauf <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> 1.0) et le niveau d'isolation utilisÃ© doit
+    Ãªtre paramÃ©trÃ© de maniÃ¨re propriÃ©taire dans la base de donnÃ©es accÃ©dÃ©e ou via un paramÃ©trage spÃ©cifique au serveur
     applicatif (<a href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a> 4.x par exemple).</p>
 </section>
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>L'isolation est une des propriété des <a href="../../../proj/impl/algo/tx/index.html">transactions</a> (le "I"
+    <li>L'isolation est une des propriÃ©tÃ© des <a href="../../../proj/impl/algo/tx/index.html">transactions</a> (le "I"
       de "ACID").</li>
   </ul>
 </section>
@@ -91,7 +91,7 @@
   <h2>Limitations</h2>
   <ul>
     <li> Tous les RM ne supportent pas tous les niveaux d'isolation</li>
-    <li>Le niveau d'isolation par défaut n'est pas le même pour tous les RM</li>
+    <li>Le niveau d'isolation par dÃ©faut n'est pas le mÃªme pour tous les RM</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

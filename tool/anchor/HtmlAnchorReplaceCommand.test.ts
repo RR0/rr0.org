@@ -1,6 +1,7 @@
 import {SsgContext} from "../SsgContext"
 import {HtmlAnchorReplaceCommand} from "./HtmlAnchorReplaceCommand"
 import {AnchorReplacerFactory} from "./AnchorReplacerFactory"
+import {TimeContext} from "../time/TimeContext"
 
 describe("HtmlAnchorReplaceCommand", () => {
 
@@ -15,7 +16,7 @@ describe("HtmlAnchorReplaceCommand", () => {
   }
 
   function newContext() {
-    const context = new SsgContext("fr", intlOptions)
+    const context = new SsgContext("fr", new TimeContext(intlOptions))
     context.currentFile = {
       contents: `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`,
       encoding: "utf8",

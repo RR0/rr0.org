@@ -9,33 +9,33 @@ export class TimeTextBuilder {
 
     function setYear(year: number) {
       date.setFullYear(year)
-      printOptions.year = context.options.year
+      printOptions.year = context.time.options.year
     }
 
     function setMonth(month: number) {
       date.setDate(1) // Avoid increasing month if today is > 30
       date.setMonth(month - 1)
-      printOptions.month = context.options.month
+      printOptions.month = context.time.options.month
     }
 
     function setDayOfMonth(dayOfMonth: number) {
       date.setDate(dayOfMonth)
-      printOptions.day = context.options.day
-      printOptions.weekday = context.options.weekday
+      printOptions.day = context.time.options.day
+      printOptions.weekday = context.time.options.weekday
     }
 
     function setHour(hour: number) {
       date.setHours(hour)
-      printOptions.hour = context.options.hour
+      printOptions.hour = context.time.options.hour
     }
 
     function setMinutes(minutes: number) {
       date.setMinutes(minutes)
-      printOptions.minute = context.options.minute
+      printOptions.minute = context.time.options.minute
     }
 
     function setTimeZone(timeZone: string) {
-      printOptions.timeZoneName = context.options.timeZoneName
+      printOptions.timeZoneName = context.time.options.timeZoneName
     }
 
     const year = time.year

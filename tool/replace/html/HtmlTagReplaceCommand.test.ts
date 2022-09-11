@@ -1,6 +1,7 @@
 import {SsgContext} from "../../SsgContext"
 import {TimeReplacerFactory} from "../../time/TimeReplacerFactory"
 import {HtmlTagReplaceCommand} from "./HtmlTagReplaceCommand"
+import {TimeContext} from "../../time/TimeContext"
 
 describe("HtmlTagReplaceCommand", () => {
 
@@ -15,7 +16,7 @@ describe("HtmlTagReplaceCommand", () => {
   }
 
   function newContext() {
-    const context = new SsgContext("fr", intlOptions)
+    const context = new SsgContext("fr", new TimeContext(intlOptions))
     context.currentFile = {
       contents: `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`,
       encoding: "utf8",

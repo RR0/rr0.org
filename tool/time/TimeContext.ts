@@ -1,6 +1,7 @@
 export class TimeContext {
 
   constructor(
+    readonly options: Intl.DateTimeFormatOptions,
     protected _year?: number, protected _month?: number, protected _dayOfMonth?: number,
     protected _hour?: number, protected _minutes?: number, protected _timeZone?: string
   ) {
@@ -75,6 +76,6 @@ export class TimeContext {
   }
 
   clone(): TimeContext {
-    return new TimeContext(this._year, this._month, this._dayOfMonth, this._hour, this._minutes, this._timeZone)
+    return new TimeContext({...this.options}, this._year, this._month, this._dayOfMonth, this._hour, this._minutes, this._timeZone)
   }
 }

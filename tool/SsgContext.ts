@@ -12,14 +12,11 @@ export class SsgContext {
   }
   currentFile?: FileInfo
 
-  constructor(
-    readonly locales: string | string[] = "fr",
-    readonly options: Intl.DateTimeFormatOptions,
-    readonly time: TimeContext = new TimeContext()) {
+  constructor(readonly locales: string | string[], readonly time: TimeContext) {
     this.messages = ssgMessages[Array.isArray(locales) ? locales[0] : locales]
   }
 
   clone(): SsgContext {
-    return new SsgContext(this.locales, {...this.options}, this.time.clone())
+    return new SsgContext(this.locales, this.time.clone())
   }
 }

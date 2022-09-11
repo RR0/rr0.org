@@ -1,5 +1,6 @@
 import {SsgContext} from "../SsgContext"
 import {AnchorReplacer} from "./AnchorReplacer"
+import {TimeContext} from "../time/TimeContext"
 
 describe("AnchorReplacer", () => {
 
@@ -14,7 +15,7 @@ describe("AnchorReplacer", () => {
   }
 
   function newContext() {
-    const context = new SsgContext("fr", intlOptions)
+    const context = new SsgContext("fr", new TimeContext(intlOptions))
     context.currentFile = {
       contents: "", encoding: "utf8", lastModified: new Date(),
       name: "time/1/9/9/0/08/index.html"

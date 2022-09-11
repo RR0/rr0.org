@@ -15,7 +15,7 @@ describe("RelativeTimeTextBuilder", () => {
 
   test("next year", () => {
     {
-      const previousContext = new SsgContext("fr", intlOptions)
+      const previousContext = new SsgContext("fr", new TimeContext(intlOptions))
       previousContext.time.year = 2003
       const context = previousContext.clone()
       context.time.year = 2004
@@ -27,7 +27,7 @@ describe("RelativeTimeTextBuilder", () => {
 
   test("next month", () => {
     {
-      const context1 = new SsgContext("fr", intlOptions)
+      const context1 = new SsgContext("fr", new TimeContext(intlOptions))
       context1.time.year = 2003
       context1.time.month = 9
       const context2 = context1.clone()
@@ -45,7 +45,7 @@ describe("RelativeTimeTextBuilder", () => {
       expect(RelativeTimeTextBuilder.build(context4, context5)).toBe("lundi 24 janvier")
     }
     {
-      const context = new SsgContext("en", intlOptions)
+      const context = new SsgContext("en", new TimeContext(intlOptions))
       context.time.year = 2003
       context.time.month = 9
       const previousContext = context.clone()
@@ -56,7 +56,7 @@ describe("RelativeTimeTextBuilder", () => {
 
   test("next day", () => {
     {
-      const context = new SsgContext("fr", intlOptions)
+      const context = new SsgContext("fr", new TimeContext(intlOptions))
       context.time.year = 2003
       context.time.month = 9
       context.time.dayOfMonth = 23
@@ -66,7 +66,7 @@ describe("RelativeTimeTextBuilder", () => {
       expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("le lendemain")
     }
     {
-      const context = new SsgContext("en", intlOptions)
+      const context = new SsgContext("en", new TimeContext(intlOptions))
       context.time.year = 2003
       context.time.month = 9
       context.time.dayOfMonth = 23
@@ -81,8 +81,8 @@ describe("RelativeTimeTextBuilder", () => {
 
     test("next", () => {
       {
-        let previousContext = new SsgContext("fr", intlOptions)
-        const context = new SsgContext(previousContext.locales, previousContext.options, new TimeContext())
+        let previousContext = new SsgContext("fr", new TimeContext(intlOptions))
+        const context = previousContext.clone()
         context.time.year = 2003
         context.time.month = 9
         context.time.dayOfMonth = 23
@@ -95,8 +95,8 @@ describe("RelativeTimeTextBuilder", () => {
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("17:43")
       }
       {
-        let previousContext = new SsgContext("en", intlOptions)
-        const context = new SsgContext(previousContext.locales, previousContext.options, new TimeContext())
+        let previousContext = new SsgContext("en", new TimeContext(intlOptions))
+        const context = previousContext.clone()
         context.time.year = 2003
         context.time.month = 9
         context.time.dayOfMonth = 23

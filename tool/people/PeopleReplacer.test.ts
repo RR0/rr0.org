@@ -1,5 +1,6 @@
 import {SsgContext} from "../SsgContext"
 import {PeopleReplacer} from "./PeopleReplacer"
+import {TimeContext} from "../time/TimeContext"
 
 describe("PeopleReplacer", () => {
 
@@ -14,7 +15,7 @@ describe("PeopleReplacer", () => {
   }
 
   function newContext() {
-    const context = new SsgContext("fr", intlOptions)
+    const context = new SsgContext("fr", new TimeContext(intlOptions))
     context.currentFile = {
       contents: "", encoding: "utf8", lastModified: new Date(),
       name: "people/1/9/9/0/08/index.html"

@@ -1,6 +1,7 @@
 import {SsgContext} from "../../SsgContext"
 import {PeopleReplacerFactory} from "../../people/PeopleReplacerFactory"
 import {HtmlClassReplaceCommand} from "./HtmlClassReplaceCommand"
+import {TimeContext} from "../../time/TimeContext"
 
 describe("HtmlClassReplaceCommand", () => {
 
@@ -15,7 +16,7 @@ describe("HtmlClassReplaceCommand", () => {
   }
 
   function newContext() {
-    const context = new SsgContext("fr", intlOptions)
+    const context = new SsgContext("fr", new TimeContext(intlOptions))
     context.currentFile = {
       contents: `<span class="people">Jérôme Beau</span>`, encoding: "utf8", lastModified: new Date(),
       name: "time/1/9/9/0/08/index.html"

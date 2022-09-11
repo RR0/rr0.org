@@ -10,6 +10,7 @@ import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
 import {SsgContext} from "./SsgContext"
 import {HtmlClassReplaceCommand} from "./replace/html/HtmlClassReplaceCommand"
 import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
+import {TimeContext} from "./time/TimeContext"
 
 /**
  * Replace a SSI var=value but appropriate HTML.
@@ -90,14 +91,14 @@ async function output(info: FileInfo): Promise<void> {
   }
 }
 
-const context = new SsgContext("fr", {
+const context = new SsgContext("fr", new TimeContext({
   year: "numeric",
   month: "long",
   day: "numeric",
   weekday: "long",
   hour: "2-digit",
   minute: "2-digit"
-})
+}))
 new Ssg(config)
   .start(context, output)
   .then(result => console.log("Wrote", result.contentCount, "content files"))

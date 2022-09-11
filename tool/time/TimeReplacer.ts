@@ -9,6 +9,10 @@ export class TimeReplacer {
   static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-([0-1]\\d))?(?:-([0-3]\\d))?(?:[ T]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
+  /**
+   *
+   * @param timeFiles The existing time files that we can link to (i.e. we won't link to non-existing ones).
+   */
   constructor(protected timeFiles: string[]) {
   }
 

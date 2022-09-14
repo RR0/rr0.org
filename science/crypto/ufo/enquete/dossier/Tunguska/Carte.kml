@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Explosion de Tunguska</name>
+  <description>Le 11 decembre 1996</description>
+  <Style id="marker">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+    <Style id="ligne">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Site de Kulik</name>
+    <description><![CDATA[du <a href="https://rr0.org/science/crypto/ufo/enquete/dossier/Tunguska">crash de Tunguska</a> le 30 juin 1908.]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>101.926689,60.900726,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Trajectoire possible du bolide de Tunguska</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#ligne</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        101.862831,60.961945,0.000000
+        102.150879,60.683941,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Site de Shishkov</name>
+    <description><![CDATA[du crash de Tunguska]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>103.656006,60.543774,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cratere de Voronov</name>
+    <description><![CDATA[cratere de 200 m de diametre par 20 
+  m de profondeur, supposee etre la derniere consequence de l'<a href="https://rr0.org/science/crypto/ufo/enquete/dossier/Tunguska">explosion de Tunguska</a> le 30 juin 1908]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>100.748749,61.311134,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lac Tcheko</name>
+    <description><![CDATA[possible cratere d'impact du bolide de Tunguska]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>101.860428,60.963776,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Une des trajectoires envisagees du bolide de Tunguska</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#ligne</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        100.761108,61.307178,0.000000
+        103.656006,60.543774,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

@@ -120,16 +120,61 @@ describe("TimeReplacer", () => {
     expect(context.time.minutes).toBe(undefined)
   })
 
-  test("parses day", () => {
-    const context = newContext()
-    const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
-    expect(replacer.valueReplacement(context, "2005-08-23"))
-      .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
-    expect(context.time.year).toBe(2005)
-    expect(context.time.month).toBe(8)
-    expect(context.time.dayOfMonth).toBe(23)
-    expect(context.time.hour).toBe(undefined)
-    expect(context.time.minutes).toBe(undefined)
+  describe("parses day", () => {
+
+    test("from full date", () => {
+      const context = newContext()
+      const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
+      expect(replacer.valueReplacement(context, "2005-08-23"))
+        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+      expect(context.time.year).toBe(2005)
+      expect(context.time.month).toBe(8)
+      expect(context.time.dayOfMonth).toBe(23)
+      expect(context.time.hour).toBe(undefined)
+      expect(context.time.minutes).toBe(undefined)
+    })
+
+    test("from current date", () => {
+      const context = newContext()
+      context.time.year = 2005
+      context.time.month = 8
+      const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
+      expect(replacer.valueReplacement(context, "23"))
+        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+      expect(context.time.year).toBe(2005)
+      expect(context.time.month).toBe(8)
+      expect(context.time.dayOfMonth).toBe(23)
+      expect(context.time.hour).toBe(undefined)
+      expect(context.time.minutes).toBe(undefined)
+    })
+
+    test("with hour", () => {
+      const context = newContext()
+      context.time.year = 2005
+      context.time.month = 8
+      const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
+      expect(replacer.valueReplacement(context, "23 18:45"))
+        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+      expect(context.time.year).toBe(2005)
+      expect(context.time.month).toBe(8)
+      expect(context.time.dayOfMonth).toBe(23)
+      expect(context.time.hour).toBe(18)
+      expect(context.time.minutes).toBe(45)
+    })
+
+    test("with hour interval", () => {
+      const context = newContext()
+      context.time.year = 2005
+      context.time.month = 8
+      const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
+      expect(replacer.valueReplacement(context, "23 18:45/19:00"))
+        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+      expect(context.time.year).toBe(2005)
+      expect(context.time.month).toBe(8)
+      expect(context.time.dayOfMonth).toBe(23)
+      expect(context.time.hour).toBe(18)
+      expect(context.time.minutes).toBe(45)
+    })
   })
 
   test("reset context", () => {

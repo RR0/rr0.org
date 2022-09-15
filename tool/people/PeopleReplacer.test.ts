@@ -75,6 +75,15 @@ describe("PeopleReplacer", () => {
     })
   })
 
+  test("Single name", () => {
+    const replacer = new PeopleReplacer(["people/a/Aristote"])
+    expect(replacer.getPeople("Aristote")).toEqual({
+      lastName: "Aristote",
+      firstNames: [],
+      url: "people/a/Aristote"
+    })
+  })
+
   test("ignore brackets", () => {
     const replacer = new PeopleReplacer(["people/h/HynekJosefAllen"])
     const context = newContext()

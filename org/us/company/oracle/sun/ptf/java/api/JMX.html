@@ -1,0 +1,141 @@
+<!--#include virtual="/header-start.html" -->
+<title>JMX</title>
+<meta content="https://java.sun.com/products/JavaManagement/" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Java Management Extension</i>s : extensions de gestion (administration, supervision) pour Java.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une <a href="/tech/info/soft/API.html">API</a> <a href="/org/us/company/oracle/sun/ptf/java">Java</a>
+    standard pour la gestion et la supervision de ressources telles que des : </p>
+  <ul>
+    <li>applications</li>
+    <li>périphériques</li>
+    <li>services</li>
+    <li>politiques réseau</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>JMX définit une architecture de gestion sur 3 niveaux d'abstraction (du plus bas au plus haut) :</p>
+  <ol>
+    <li><b>Instrumentation</b> (MBean) : capacité à gérer tout objet Java. Ces MBeans peuvent être : </li>
+    <li>
+      <ul>
+        <li><b>standard </b>: des JavaBeans</li>
+        <li><b>dynamiques</b> :</li>
+        <li><b>ouverts </b>(Open) : MBeans dynamiques utilisables par le maximum d'outils d'administration</li>
+        <li><b>modèles</b> : MBeans dynamiques paramétrables et auto-descriptifs à l'exécution</li>
+      </ul>
+    </li>
+    <li><b>Agent </b>de gestion (MBean server) : conteneurs hébergeant des services de gestion et pouvant les mettre à
+      jour (ajout, supression, modification) dynamiquement</li>
+    <li><b>Services distribués </b> : </li>
+  </ol>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>L'API de JMX définit le package <q>javax.management</q>.</p>
+  <ol>
+    <li><b>Instrumentation</b></li>
+    <li>
+      <ul>
+        <li><b>standard </b>: des JavaBeans</li>
+        <li><b>dynamiques</b> : conformes à l'interface <q>DynamicMBean</q> (<q>getAttribute()</q>,
+          <q>setAttribute()</q>, <q>invoke()</q>, etc.)</li>
+        <li><b>ouverts </b></li>
+        <li><b>modèles</b> : </li>
+      </ul>
+    </li>
+    <li><b>Agent </b></li>
+    <li><b>Services distribués </b> : </li>
+  </ol>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Anciennement JMAPI (<em>Java Management API</em>)</li>
+    <li>Intégré à <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> [1.5+]</li>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="2">JMX</td>
+          <th> Version</th>
+          <th colspan="2"> 1</th>
+          <th rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th>0</th>
+          <th>1</th>
+        </tr>
+        <tr>
+          <th> Domaine</th>
+          <th> Technologie</th>
+          <th> FixPack</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Plate-forme</th>
+          <th>J2SE</th>
+          <th></th>
+          <td></td>
+          <td>1.2</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Persistance</th>
+          <th>Sérialisation</th>
+          <th>Standard</th>
+          <td class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sécurité</th>
+          <th>Permissions</th>
+          <th>MBeanServerPermission</th>
+          <td class="non">Non</td>
+          <td class="oui">Oui</td>
+          <td>Droit d'accès aux méthodes statiques de MBeanServerFactory</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th>loading</th>
+          <th>ClassLoaderRepository</th>
+          <td>DefaultLoaderRepository</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th>MBeanServerFactory</th>
+          <th>getDefaultLoaderRepository</th>
+          <td>DefaultLoaderRepository. loadClass</td>
+          <td class="oui">Oui</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Let</th>
+          <th></th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </thead>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>JMX RI</li>
+    <li><a href="https://www.jboss.org/developers/projects/jboss/jbossmx.jsp">JBossMX</a></li>
+    <li>MOF2MBean</li>
+    <li><a href="https://mx4j.sourceforge.net">MX4J</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -12,27 +12,6 @@ import {HtmlClassReplaceCommand} from "./replace/html/HtmlClassReplaceCommand"
 import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
 
-/**
- * Replace a SSI var=value but appropriate HTML.
- */
-function ssiVarReplacer(substring: string, ...args: any[]): string {
-  const [variable, value] = args
-  let replacement: string
-  switch (variable) {
-    case "title":
-      replacement = `<title>${value}</title>`
-      break
-    default:
-      replacement = substring
-  }
-  return replacement
-}
-
-interface DateBuilder {
-
-  build(): string
-}
-
 const config: SsgConfig = {
   contents: [
     {
@@ -61,7 +40,8 @@ const config: SsgConfig = {
       replacements: [
         new SsiIncludeReplaceCommand(),
         new SsiIfReplaceCommand(),
-        new SsiVarReplaceCommand({replacer: ssiVarReplacer}),
+        new SsiVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+        new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
         new SsiLastModifiedReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
         new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())

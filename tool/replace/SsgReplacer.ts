@@ -1,3 +1,5 @@
+export type ReplaceCall = (match: string, ...args: any[]) => string
+
 export interface SsgReplacer {
-  replacer: (substring: string, ...args: any[]) => string
+  replacer: ReplaceCall
 }

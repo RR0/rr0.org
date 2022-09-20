@@ -1,11 +1,13 @@
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
-import {SsgReplacer} from "../SsgReplacer"
+import {ReplaceCall, SsgReplacer} from "../SsgReplacer"
 import {SsgContext} from "../../SsgContext"
 
 export class SsiVarReplaceCommand extends RegexpReplaceCommand {
+  protected replacer: SsgReplacer
 
-  constructor(protected replacer: SsgReplacer) {
-    super(/<!--\s*#set\s+var="(.+?)"\s+value="(.+?)"\s*-->/gs)
+  constructor(varName: string, ssiVarReplacer: ReplaceCall) {
+    super(new RegExp(`<!--\\s*#set\\s+var="${varName}"\\s+value="(.+?)"\\s*-->`, "gs"))
+    this.replacer = {replacer: ssiVarReplacer}
   }
 
   protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {

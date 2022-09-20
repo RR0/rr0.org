@@ -16,6 +16,7 @@ enum HtAccessCommands {
 }
 
 export class HtAccessToNetlifyReplaceCommand implements ReplaceCommand {
+
   async execute(context: SsgContext): Promise<FileInfo> {
     const fileInfo = context.currentFile!
     const contents = fileInfo.contents
@@ -37,9 +38,11 @@ export class HtAccessToNetlifyReplaceCommand implements ReplaceCommand {
             const host = "https://rr0.org/"
             let path = args[2].substring(host.length)
             let from = args[1]
-            if (from.endsWith("/") || !from.endsWith(".html")) {
-              from += "/*"
-              path += "/:splat"
+            const trailingFrom = from.endsWith("/")
+            if (trailingFrom || !from.endsWith(".html")) {
+              from += (trailingFrom ? "" : "/") + "*"
+              const trailingTo = path.endsWith("/")
+              path += (trailingTo ? "" : "/") + ":splat"
             }
             result += `${from} /${path}\n`
             break

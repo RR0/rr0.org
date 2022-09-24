@@ -275,7 +275,7 @@ nav {
     transition: width, height .3s;
     z-index: 100;
     width: 100%;
-    background: rgba(253, 250, 250, .1);
+    background: rgba(253, 250, 250);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset
 }
 

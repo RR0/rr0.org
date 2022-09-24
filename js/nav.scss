@@ -2,21 +2,25 @@
 
 nav {
   h1 {
-    display: none;  // Heading here is only for accessibility
+    display: none; // Heading here is only for accessibility
   }
+
   font-size: 0.9em;
   transition: width, height $transitionDuration;
   z-index: 100;
   width: 100%;
-  background: rgba(253, 250, 250, 0.1);
+  background: rgba(253, 250, 250);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
   &.collapsed {
     top: 0;
     position: fixed;
+
     .outline-title {
       font-weight: bold;
     }
   }
+
   ul { // Nav elements list
     @include headerBackground();
     margin: 0;

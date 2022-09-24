@@ -35,7 +35,7 @@ describe("RelativeTimeTextBuilder", () => {
       expect(RelativeTimeTextBuilder.build(context1, context2)).toBe("le mois suivant")
       const context3 = context2.clone()
       context3.time.dayOfMonth = 23 // Resets day of month in context
-      expect(RelativeTimeTextBuilder.build(context2, context3)).toBe("vendredi 23")
+      expect(RelativeTimeTextBuilder.build(context2, context3)).toBe("jeudi 23")
       const context4 = context3.clone()
       context4.time.month = 12
       expect(RelativeTimeTextBuilder.build(context3, context4)).toBe("décembre")
@@ -87,7 +87,7 @@ describe("RelativeTimeTextBuilder", () => {
         context.time.month = 9
         context.time.dayOfMonth = 23
         context.time.hour = 16
-        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("mardi 23 septembre 2003, 16 h")
+        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("mardi 23 septembre 2003 à 16 h")
         previousContext = context.clone()
         context.time.hour = 17
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("une heure plus tard")
@@ -101,7 +101,7 @@ describe("RelativeTimeTextBuilder", () => {
         context.time.month = 9
         context.time.dayOfMonth = 23
         context.time.hour = 16
-        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("Tuesday, September 23, 2003, 04 PM")
+        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("Tuesday, September 23, 2003 at 04 PM")
         previousContext = context.clone()
         context.time.hour = 17
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("one hour later")

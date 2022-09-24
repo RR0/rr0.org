@@ -1,6 +1,5 @@
-import {SsgContext} from "../SsgContext"
 import {TimeReplacer} from "./TimeReplacer"
-import {TimeContext} from "./TimeContext"
+import {testUtil} from "../test/TestUtil"
 
 describe("TimeReplacer", () => {
 
@@ -14,18 +13,9 @@ describe("TimeReplacer", () => {
     timeZoneName: "short"
   }
 
-  function newContext() {
-    const context = new SsgContext("fr", new TimeContext(intlOptions))
-    context.currentFile = {
-      contents: "", encoding: "utf8", lastModified: new Date(),
-      name: "time/1/9/9/0/08/index.html"
-    }
-    return context
-  }
-
   test("parses year", () => {
     {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer(["time/2/0/0/3"])
       expect(replacer.valueReplacement(context, "2003"))
         .toBe(`<a href="/time/2/0/0/3/">2003</a>`)
@@ -37,7 +27,7 @@ describe("TimeReplacer", () => {
       expect(context.time.timeZone).toBe(undefined)
     }
     {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer(["time/2/0/2/5"])
       expect(replacer.valueReplacement(context, "2025\n      "))
         .toBe(`<a href="/time/2/0/2/5/">2025</a>`)
@@ -51,7 +41,7 @@ describe("TimeReplacer", () => {
   })
 
   test("parses interval", () => {
-    const context = newContext()
+    const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     let interval = "2012/2016"
     const replacer = new TimeReplacer(["time/2/0/1/2", "time/2/0/1/6"])
     expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
@@ -65,7 +55,7 @@ describe("TimeReplacer", () => {
   })
 
   test("parses unsupported", () => {
-    const context = newContext()
+    const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     let interval = "moi"
     const replacer = new TimeReplacer([])
     expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
@@ -80,7 +70,7 @@ describe("TimeReplacer", () => {
 
   test("parses timezone", () => {
     {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const interval = "2003-12-24CDT"
       const replacer = new TimeReplacer(["time/2/0/0/3/12/24"])
       expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
@@ -187,11 +177,7 @@ describe("TimeReplacer", () => {
   })
 
   test("avoids linking to current file", () => {
-    const context = newContext()
-    context.currentFile = {
-      contents: "", encoding: "utf8", lastModified: new Date(),
-      name: "time/1/9/9/0/08/index.html"
-    }
+    const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     const replacer = new TimeReplacer(["time/1/9/9/0/08"])
     expect(replacer.replacement(context, "<time>1990-08-02</time>", "1990-08-02"))
       .toBe(`<span class="time">jeudi 2 août 1990</span>`)
@@ -200,22 +186,14 @@ describe("TimeReplacer", () => {
   describe("parse duration", () => {
 
     test("with days, hours, minutes and seconds", () => {
-      const context = newContext()
-      context.currentFile = {
-        contents: "", encoding: "utf8", lastModified: new Date(),
-        name: "time/1/9/9/0/08/index.html"
-      }
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer([])
       expect(replacer.replacement(context, "<time>P2D10H23M45S</time>", "P2D10H23M45S"))
         .toBe(`<time class="duration">2 jours, 10 heures, 23 minutes et 45 secondes</time>`)
     })
 
     test("with approximation", () => {
-      const context = newContext()
-      context.currentFile = {
-        contents: "", encoding: "utf8", lastModified: new Date(),
-        name: "time/1/9/9/0/08/index.html"
-      }
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer([])
       expect(replacer.replacement(context, "<time>~P2H</time>", "~P2H"))
         .toBe(`<time class="duration">environ 2 heures</time>`)
@@ -226,10 +204,10 @@ describe("TimeReplacer", () => {
 
     test("with context", () => {
       // Empty context
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer(["time/2/0/0/6/07/14", "time/2/0/0/7/06/15"])
       expect(replacer.valueReplacement(context, "2006-07-14 17:56"))
-        .toBe(`<a href="/time/2/0/0/6/07/14/">vendredi 14 juillet 2006, 17:56</a>`)
+        .toBe(`<a href="/time/2/0/0/6/07/14/">vendredi 14 juillet 2006 à 17:56</a>`)
       expect(context.time.year).toBe(2006)
       expect(context.time.month).toBe(7)
       expect(context.time.dayOfMonth).toBe(14)
@@ -237,7 +215,7 @@ describe("TimeReplacer", () => {
       expect(context.time.minutes).toBe(56)
 
       // Change day + hour
-      expect(replacer.valueReplacement(context, "2007-06-15 18:47")).toBe(`<a href="/time/2/0/0/7/06/15/">vendredi 15 juin 2007, 18:47</a>`)
+      expect(replacer.valueReplacement(context, "2007-06-15 18:47")).toBe(`<a href="/time/2/0/0/7/06/15/">vendredi 15 juin 2007 à 18:47</a>`)
       expect(context.time.year).toBe(2007)
       expect(context.time.month).toBe(6)
       expect(context.time.dayOfMonth).toBe(15)
@@ -245,7 +223,7 @@ describe("TimeReplacer", () => {
       expect(context.time.minutes).toBe(47)
 
       // Change hour only
-      expect(replacer.valueReplacement(context, "18:47")).toBe(`<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007, 18:47">18:47</a>`)
+      expect(replacer.valueReplacement(context, "18:47")).toBe(`<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007 à 18:47">18:47</a>`)
       expect(context.time.year).toBe(2007)
       expect(context.time.month).toBe(6)
       expect(context.time.dayOfMonth).toBe(15)
@@ -255,7 +233,7 @@ describe("TimeReplacer", () => {
 
     test("with approximation", () => {
       {
-        const context = newContext()
+        const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
         context.time.year = 2007
         context.time.month = 6
         context.time.dayOfMonth = 15

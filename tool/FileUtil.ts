@@ -4,6 +4,7 @@ import {HTMLElement, parse} from "node-html-parser"
 import detectCharacterEncoding from "detect-character-encoding"
 import path from "path"
 import * as util from "util"
+import {SsgContext} from "./SsgContext"
 
 const globCopy = util.promisify(require("copy"))
 
@@ -12,6 +13,7 @@ export type FileInfo = {
   encoding: BufferEncoding
   contents: string
   lastModified: Date
+  lang: string | string[]
 }
 
 export function toBufferEncoding(encoding: string | undefined): BufferEncoding | undefined {
@@ -65,7 +67,7 @@ export async function writeFile(fileInfo: FileInfo): Promise<void> {
   return fsAsync.writeFile(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
 }
 
-export function getFileInfo(fileName: string): FileInfo {
+export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
   try {
     const fileStats = fs.statSync(fileName)
     const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
@@ -74,11 +76,27 @@ export function getFileInfo(fileName: string): FileInfo {
     const detectedEncoding = detectEncoding(fileName)
     const encoding = declaredEncoding || detectedEncoding || "utf-8"
     const contents = fs.readFileSync(fileName, {encoding})
-    return {name: fileName, encoding, contents, lastModified: fileStats.mtime}
+    const lang = getFileLang(context, fileName)
+    return {name: fileName, encoding, contents, lastModified: fileStats.mtime, lang}
   } catch (e) {
     console.error(fileName, ":", e)
     throw e
   }
+}
+
+function getFileLang(context: SsgContext, filePath: string): string | string[] {
+  let lang = context.locales
+  const lastDot = filePath.lastIndexOf(".")
+  let lastSlash = filePath.lastIndexOf("/")
+  if (lastSlash < 0 || lastSlash < lastDot) {
+    lastSlash = lastSlash < 0 ? 0 : lastSlash
+    const fileName = filePath.substring(lastSlash, lastDot)
+    const variantPos = fileName.lastIndexOf("_")
+    if (variantPos > 0) {
+      lang = [fileName.substring(variantPos + 1)]
+    }
+  }
+  return lang
 }
 
 export async function ssgCopy(to: string, ...from: string[]): Promise<File[]> {

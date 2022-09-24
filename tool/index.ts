@@ -12,6 +12,41 @@ import {HtmlClassReplaceCommand} from "./replace/html/HtmlClassReplaceCommand"
 import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
 
+const argv = process.argv
+const args: Record<string, string> = {}
+for (let i = 2; i < argv.length; i++) {
+  const arg = argv[i]
+  const dash = arg.lastIndexOf("-")
+  if (dash >= 0) {
+    const value = argv[i + 1]
+    const key = arg.substring(dash + 1)
+    args[key] = value
+    i++
+  }
+}
+const contents = args.contents
+const roots = contents ? contents.split(",") : [
+  "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
+  "croyance/**/*.html",
+  "droit/**/*.html",
+  "org/**/*.html",
+  "people/**/*.html",
+  "place/**/*.html",
+  "politique/**/*.html",
+  "science/**/*.html",
+  "tech/**/*.html",
+  "time/**/*.html",
+  "politique/**/*.html",
+  "udb/**/*.*",
+  "js/**/*.html"
+]
+const copiesArg = args.copies
+const copies = copiesArg ? copiesArg.split(",") : [
+  "favicon.ico",
+  "rr0.css", "print.css",
+  "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",
+  "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*"
+]
 const config: SsgConfig = {
   contents: [
     {
@@ -22,21 +57,7 @@ const config: SsgConfig = {
       }
     },
     {
-      roots: [
-        "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
-        "croyance/**/*.html",
-        "droit/**/*.html",
-        "org/**/*.html",
-        "people/**/*.html",
-        "place/**/*.html",
-        "politique/**/*.html",
-        "science/**/*.html",
-        "tech/**/*.html",
-        "time/**/*.html",
-        "politique/**/*.html",
-        "udb/**/*.*",
-        "js/**/*.html"
-      ],
+      roots,
       replacements: [
         new SsiIncludeReplaceCommand(),
         new SsiIfReplaceCommand(),
@@ -52,12 +73,7 @@ const config: SsgConfig = {
       }
     }
   ],
-  copies: [
-    "favicon.ico",
-    "rr0.css", "print.css",
-    "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",
-    "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*"
-  ],
+  copies,
   outDir: "out"
 }
 

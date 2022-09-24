@@ -44,8 +44,8 @@ export class Ssg {
     let contentCount = 0
     for (const contentsRoot of contentsConfig.roots) {
       const contentFiles = await glob(contentsRoot)
-      for (const fileName of contentFiles) {
-        const inputFile = getFileInfo(fileName)
+      for (const filePath of contentFiles) {
+        const inputFile = getFileInfo(context, filePath)
         let outputFile = contentsConfig.outputFile(inputFile)
         context.currentFile = outputFile
         for (const replacement of contentsConfig.replacements) {

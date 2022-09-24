@@ -12,13 +12,14 @@ class TestUtil {
     timeZoneName: "short"
   }
 
-  newContext(name: string, contents: string) {
+  newContext(name: string, contents: string): SsgContext {
     const context = new SsgContext("fr", new TimeContext(this.intlOptions))
     context.currentFile = {
       contents,
       encoding: "utf8",
       lastModified: new Date(),
-      name
+      name,
+      lang: "fr"
     }
     return context
   }

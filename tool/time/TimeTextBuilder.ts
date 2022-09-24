@@ -9,7 +9,9 @@ export class TimeTextBuilder {
 
     function setYear(year: number) {
       date.setFullYear(year)
-      printOptions.year = context.time.options.year
+      if (b) {
+        printOptions.year = context.time.options.year
+      }
     }
 
     function setMonth(month: number) {

@@ -60,7 +60,7 @@ describe("TimeTextBuilder", () => {
       context.time.month = 9
       context.time.dayOfMonth = 23
       context.time.hour = 16
-      expect(TimeTextBuilder.build(context)).toBe("mardi 23 septembre 2003, 16 h")
+      expect(TimeTextBuilder.build(context)).toBe("mardi 23 septembre 2003 à 16 h")
     }
     {
       const context = new SsgContext("en", new TimeContext(intlOptions))

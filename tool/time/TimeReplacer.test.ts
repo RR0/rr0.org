@@ -83,7 +83,7 @@ describe("TimeReplacer", () => {
       expect(context.time.timeZone).toBe("CDT")
     }
     /*{
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const interval = "2003-12-24 (CDT)"
       const replacer = new TimeReplacer(["time/2/0/0/3/12/24"])
       expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
@@ -98,7 +98,7 @@ describe("TimeReplacer", () => {
   })
 
   test("parses month", () => {
-    const context = newContext()
+    const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     let value = "2004-09"
     const replacer = new TimeReplacer(["time/2/0/0/4/09"])
     expect(replacer.replacement(context, `<time>${value}</time>`, value))
@@ -113,7 +113,7 @@ describe("TimeReplacer", () => {
   describe("parses day", () => {
 
     test("from full date", () => {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
       expect(replacer.valueReplacement(context, "2005-08-23"))
         .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
@@ -125,12 +125,12 @@ describe("TimeReplacer", () => {
     })
 
     test("from current date", () => {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       context.time.year = 2005
       context.time.month = 8
       const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
       expect(replacer.valueReplacement(context, "23"))
-        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+        .toBe(`<a href="/time/2/0/0/5/08/23/" title="mardi 23 août 2005">mardi 23</a>`)
       expect(context.time.year).toBe(2005)
       expect(context.time.month).toBe(8)
       expect(context.time.dayOfMonth).toBe(23)
@@ -139,12 +139,12 @@ describe("TimeReplacer", () => {
     })
 
     test("with hour", () => {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       context.time.year = 2005
       context.time.month = 8
       const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
       expect(replacer.valueReplacement(context, "23 18:45"))
-        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23, 18:45</a>`)
       expect(context.time.year).toBe(2005)
       expect(context.time.month).toBe(8)
       expect(context.time.dayOfMonth).toBe(23)
@@ -153,12 +153,12 @@ describe("TimeReplacer", () => {
     })
 
     test("with hour interval", () => {
-      const context = newContext()
+      const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       context.time.year = 2005
       context.time.month = 8
       const replacer = new TimeReplacer(["time/2/0/0/5/08/23"])
       expect(replacer.valueReplacement(context, "23 18:45/19:00"))
-        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+        .toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23, entre 18:45 et 19:00</a>`)
       expect(context.time.year).toBe(2005)
       expect(context.time.month).toBe(8)
       expect(context.time.dayOfMonth).toBe(23)
@@ -168,7 +168,7 @@ describe("TimeReplacer", () => {
   })
 
   test("reset context", () => {
-    const context = newContext()
+    const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     const replacer = new TimeReplacer(["time/2/0/0/5", "time/2/0/0/6"])
     expect(replacer.valueReplacement(context, "2005"))
       .toBe(`<a href="/time/2/0/0/5/">2005</a>`)

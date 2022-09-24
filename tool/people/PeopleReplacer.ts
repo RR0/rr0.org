@@ -1,6 +1,6 @@
 import {SsgContext} from "../SsgContext"
 import {People} from "./People"
-import {UrlUtil} from "../UrlUtil"
+import {UrlUtil} from "../util/url/UrlUtil"
 
 export class PeopleReplacer {
   readonly cache = new Map<string, People>()

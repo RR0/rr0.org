@@ -2,7 +2,7 @@ import {SsgContext} from "../SsgContext"
 
 export class TimeTextBuilder {
 
-  static build(context: SsgContext): string {
+  static build(context: SsgContext, b = true): string {
     const time = context.time
     let printOptions: Intl.DateTimeFormatOptions = {}
     let date = new Date()
@@ -17,7 +17,9 @@ export class TimeTextBuilder {
     function setMonth(month: number) {
       date.setDate(1) // Avoid increasing month if today is > 30
       date.setMonth(month - 1)
-      printOptions.month = context.time.options.month
+      if (b) {
+        printOptions.month = context.time.options.month
+      }
     }
 
     function setDayOfMonth(dayOfMonth: number) {

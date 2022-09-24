@@ -133,8 +133,20 @@ export class RelativeTimeTextBuilder {
       }
     }
     if (!text) {
-      const defaultContext = deltaContext.time.isDefined() ? deltaContext : newContext
-      text = TimeTextBuilder.build(defaultContext)
+      let b = true
+      let defaultContext: SsgContext
+      if (deltaContext.time.isDefined()) {
+        defaultContext = deltaContext
+        const dayOfMonth = defaultContext.time.dayOfMonth
+        if (dayOfMonth && !defaultContext.time.month) {
+          defaultContext.time.month = previousTime.month
+          defaultContext.time.dayOfMonth = dayOfMonth
+          b = false
+        }
+      } else {
+        defaultContext = newContext
+      }
+      text = TimeTextBuilder.build(defaultContext, b)
     }
     return text
   }

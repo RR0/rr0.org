@@ -2,11 +2,11 @@ import {SsgContext} from "../SsgContext"
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
-import {UrlUtil} from "../UrlUtil"
+import {UrlUtil} from "../util/url/UrlUtil"
 
 export class TimeReplacer {
 
-  static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-([0-1]\\d))?(?:-([0-3]\\d))?(?:[ T]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
+  static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-?([0-1]\\d))?(?:-?([0-3]\\d{1,2}))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
   /**

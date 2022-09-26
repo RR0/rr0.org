@@ -1,0 +1,553 @@
+<!--#include virtual="/header-start.html" -->
+<title>Javascript</title>" -->
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Ajouter de la logique programmable aux pages <a href="index.html">Web</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>JavaScript est un <a href="/tech/info/soft/proj/impl/lang">langage</a> interprété.</p>
+  <p>Il est exécuté : </p>
+  <ul>
+    <li>(tr&egrave;s souvent) côté <a href="client/index.html">client</a></li>
+    <li>(rarement) côté <a href="server/index.html">serveur</a>
+      <ul>
+        <li>lors du traitement d'une page Web dynamique</li>
+        <li>en tant que programme autonome</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Des initiatives visent également à en faire un véritable langage autonome, comme <a
+      href="https://www.commonjs.org/">CommonJS</a>.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Sa syntaxe s'inspire de celle du <a href="/tech/info/soft/proj/impl/lang/java">langage Java</a> (d'o&ugrave;
+    son nom), mais c'est là leur seul point commun. En effet Javascript :</p>
+  <ul>
+    <li>n'est pas réellement orienté objet, mais utilise des prototypes de fonctions. Créer ses propres classes requiert
+      des astuces.</li>
+    <li>n'est pas strictement typé (bien qu'il possède des opérateurs de comparaison stricte).</li>
+    <li>est dynamique : il est capable d'exécuter du code source passé en paramètre (eval).</li>
+  </ul>
+  <p>Il est typiquement intégré à une page <a href="/tech/info/soft/data/doc/html">HTML</a> :</p>
+  <ul>
+    <li>par référence :
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li>par valeur (inline)
+      <ul>
+        <li>entre balises <code>script</code>. On place alors généralement le contenu entre ces balises dans un
+          commentaire, afin d'éviter qu'il soit affiché dans la page du client si son navigateur ne supporte pas cette
+          balise.</li>
+        <li>sous forme de commentaire <a href="/tech/info/soft/data/doc/html">HTML</a> afin de ne pas &ecirc;tre affiché
+          comme du texte par les navigateurs ne supportant pas JavaScript.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de code JavaScript est :</p>
+  <blockquote>
+    <p><b><code>document.write (<span class="codeString">&quot;Hello World !&quot;</span>);</code></b></p>
+  </blockquote>
+  <p>Intégré dans une page HTML, il appara&icirc;t comme suit :</p>
+  <blockquote><code>&lt;html&gt;<br>
+    &nbsp;&nbsp;&lt;head&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page contenant un exemple de JavaScript&lt;/title&gt;<br>
+    &nbsp;&nbsp;&lt;head&gt;<br>
+    &nbsp; &lt;body&gt;<br>
+    &nbsp;&nbsp; &nbsp;Voici un exemple de code JavaScript :<br> <b>&nbsp; &nbsp;&nbsp;&lt;script language=<span
+        class="codeString">&quot;JavaScript&quot;</span>&gt;<br>
+      &nbsp; &nbsp; &nbsp;&nbsp;&lt;!--<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.write (<span class="codeString">&quot;Hello World
+  !&quot;</span>);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</b><br>
+    &nbsp;&nbsp;&lt;/body&gt;<br>
+    &lt;/html&gt;</code></blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td class="titleCorner" colspan="2" rowspan="2">&nbsp;</td>
+          <th> Version</th>
+          <th colspan="3">1</th>
+          <th rowspan="3"> Commentaires</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th>0</th>
+          <th>1</th>
+          <th>2</th>
+        </tr>
+        <tr>
+          <th> Domaine</th>
+          <th> Produit</th>
+          <th> Service Pack</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <th rowspan="5"><a href="client/index.html">Navigateur Web</a></th>
+          <th rowspan="3"><a href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a></th>
+          <th>2.0</th>
+          <td class="oui">Oui</td>
+          <td class="non" colspan="2">Non</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>3.0</th>
+          <td>Obsol&egrave;te</td>
+          <td class="oui">Oui</td>
+          <td class="non">Non</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>4.0</th>
+          <td colspan="2">Obsol&egrave;te</td>
+          <td class="oui">Oui</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th rowspan="2"><a href="/org/us/company/ms/MSIE.html">MSIE</a></th>
+          <th>3.0</th>
+          <td class="oui">Oui</td>
+          <td class="non" colspan="2">Non</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>4.0</th>
+          <td>Obsol&egrave;te</td>
+          <td class="oui">Oui</td>
+          <td class="non">Non</td>
+          <td>&nbsp;</td>
+        </tr>
+        </thead>
+      </table>
+    </li>
+    <li>créé par <a href="org/us/company/netscape/Navigator.html">Netscape</a> sous le nom LiveScript. </li>
+    <li>pas véritablement <a href="/tech/info/soft/proj/impl/lang/oo">OO</a></li>
+    <li>Environ 100 fois plus lent que le C.</li>
+    <li>pas de relation avec <a href="/tech/info/soft/proj/impl/lang">Java</a> malgré le nom, en dehors d'une syntaxe
+      semblable</li>
+    <li>une version Microsoft est JScript. Il existe également VBScript pour l'intégration à Windows</li>
+    <li>évolution de ECMA-262 Edition 3 (ECMAScript) qui est un standard européen (intégré avec JavaScript 1.2)</li>
+  </ul>
+  <section>
+    <h3>Bibliothèques</h3>
+    <table>
+      <tr>
+        <th>Produit</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><a href="https://vowsjs.org/">Node.js</a></td>
+        <td>Asynchrone</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/nodejitsu/kyuri">Kyuri</a></td>
+        <td>Implémentation de <a href="https://cukes.info/">cucumber</a> en Node.js</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/noblesamurai/cucumis">cucumis</a></td>
+        <td>Implémentation de <a href="https://cukes.info/">cucumber</a> en Node.js</td>
+      </tr>
+    </table>
+  </section>
+  <section>
+    <h3>Test unitaires</h3>
+    <p>Comme pour tout code, il devient important de pouvoir réaliser des tests automatisés lorsque celui-ci devient
+      conséquent. Globalement, deux approches sont proposées : tester indépendamment du navigateur (léger mais
+      généraliste) versus tester dans le navigateur (lourd mais précis). A moins de disposer d'un code généraliste (ce
+      qui est rare), c'est cette dernière option qu'il faudra privilégier, en veillant à pouvoir exécuter les tests sur
+      l'ensemble des navigateurs à supporter.</p>
+    <table>
+      <tr>
+        <th>Produit</th>
+        <th>Pour</th>
+        <th>Contre</th>
+      </tr>
+      <tr>
+        <td><a class="deprecated" href="https://www.jsunit.net">JsUnit</a></td>
+        <td>
+          <ul>
+            <li>Invocable via <a href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+            <li>S'exécute dans le navigateur</li>
+            <li>Plugin Eclipse</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li> Lance le navigateur pour exécuter les tests, et donc :</li>
+            <li>Ne supporte pas les fichiers javascript directement (intégration dans une page html nécessaire</li>
+            <li>Ne semble plus maintenu <span class="note">Il y a un JsUnit (2)</span>. </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://code.google.com/p/rhinounit/">RhinoUnit</a></td>
+        <td>
+          <ul>
+            <li>Invocable via <a href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+            <li>Supporte les fichiers javascripts directement</li>
+            <li>Très simple d'utilisation</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li> Simulation d'un moteur JavaScript, donc susceptible de ne pas supporter tous les codes</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://sourceforge.net/projects/crosscheck/">crosscheck</a></td>
+        <td>
+          <ul>
+            <li>Invocable via <a href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+            <li>Simule le véritable comportement du navigateur </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li> Simulation du moteur JavaScript d'un nombre limité de navigateurs/versions (pas de Firefox 2.x ni 3.x,
+              etc.)</li>
+            <li>Ne semble plus maintenu</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://code.google.com/p/jsspec/">jsspec</a></td>
+        <td>
+          <ul>
+            <li>S'exécute dans le navigateur</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Framework Javascript ne pouvant être appelé depuis <a
+                href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="deprecated" href="https://github.com/visionmedia/jspec">jspec</a></td>
+        <td>
+          <ul>
+            <li>S'exécute dans le navigateur</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Ne semble pas supporter tous les codes </li>
+            <li>Framework Javascript ne pouvant être appelé depuis <a
+                href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/nkallen/screw-unit">Screw.unit</a></td>
+        <td>
+          <ul>
+            <li>S'exécute dans le navigateur</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Framework Javascript ne pouvant être appelé depuis <a
+                href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://pivotal.github.com/jasmine/">Jasmine</a>, <a
+            href="https://rudylattae.github.com/jasmine-species/">Jasmine species</a></td>
+        <td>
+          <ul>
+            <li>S'exécute dans le navigateur</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Framework Javascript ne pouvant être appelé depuis <a
+                href="../../../../../../../org/int/asso/asf/Ant.html">Ant</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://vowsjs.org/">Vows</a></td>
+        <td>&nbsp;</td>
+        <td>
+          <ul>
+            <li>Dédié à Node.js</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://docs.busterjs.org/">Buster.js</a></td>
+        <td>
+          <ul>
+            <li>S'exécute dans le navigateur (automation)</li>
+          </ul>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/jquery/testswarm/">TestSwarm</a></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><a href="https://code.google.com/p/js-test-driver/">JsTestDriver</a></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><a href="https://yuilibrary.com/projects/yeti/">Yeti</a></td>
+        <td>&nbsp;</td>
+        <td>
+          <ul>
+            <li>Pour Yui (Yahoo!)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://qunitjs.com/">QUnit</a></td>
+        <td>
+          <ul>
+            <li>S'exécute dans le navigateur</li>
+          </ul>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><a href="https://sinonjs.org/">Sinon</a></td>
+        <td>
+          <ul>
+            <li>Autonome</li>
+          </ul>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </section>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Interprété</li>
+    <li>Souvent intégré à la page <a href="/tech/info/soft/data/doc/html">HTML</a> qui l'utilise (donc téléchargé, donc
+      non confidentiel)</li>
+    <li>Peu fiable (bugs)</li>
+    <li>variable (selon les navigateurs)</li>
+  </ul>
+</section>
+<section>
+  <h2>Trucs</h2>
+  <section>
+    <h3>Détecter le niveau de support de JavaScript</h3>
+    <blockquote>
+      <p><strong><code>&lt;html&gt;<br>
+        &nbsp; &lt;head&gt;&lt;title&gt;</code></strong><code>Detecteur JavaScript pour navigateur&lt;/title&gt;<br>
+        &nbsp;&nbsp;&lt;<strong>script language=<span class="codeString">&quot;JavaScript&quot;</span></strong>&gt;<br>
+        &nbsp;&nbsp;<span class="codeComment">&lt;!--<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ver = 10;<br>
+&nbsp;&nbsp;//--&gt;</span><br>
+        &nbsp;&nbsp;&lt;/<strong>script</strong>&gt;<br>
+        &nbsp;&nbsp;<strong>&lt;script language=<span
+            class="codeString">&quot;JavaScript1.1&quot;</span>&gt;</strong><br>
+        &nbsp;&nbsp;<span class="codeComment">&lt;!--<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ver = 11;<br>
+&nbsp;&nbsp;//--&gt;</span><br>
+        &nbsp;&nbsp;<strong>&lt;/script&gt;</strong><br>
+        &nbsp;&nbsp;&lt;<strong>script language=<span
+            class="codeString">&quot;JavaScript1.2&quot;</span></strong>&gt;<br>
+        &nbsp;&nbsp;<span class="codeComment">&lt;!--<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ver = 12;<br>
+&nbsp;&nbsp;//--&gt;</span><br>
+        &nbsp;&nbsp;<strong>&lt;/script&gt;</strong><br>
+        &nbsp;&nbsp;&lt;<strong>script language=<span class="codeString">&quot;JavaScript&quot;</span></strong>&gt;<br>
+        &nbsp;&nbsp;<span class="codeComment">&lt;!--<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>function </strong>nextPage()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Si le navigateur est de type 4.0 on utilise
+  latestver.html<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if (navigator.userAgent.indexOf</strong>&nbsp;(</span><span
+            class="codeString">&quot;4.0&quot;</span><span class="codeComment">) &gt;= 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>window.location</strong> = </span><span class="codeString">&quot;latestver.html&quot;</span><span
+            class="codeComment">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>else if (</strong>ver <strong>&gt;=</strong> 11<strong>)</strong> <strong>{</strong> &nbsp;//
+  Sinon
+  on regarde s'il ont JavaScript 1.1 avant d'utiliser newver.html<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>window.location </strong>= </span><span class="codeString">&quot;newver.html&quot;</span><span
+            class="codeComment">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>else </strong>//
+  Par défaut on
+   choisit oldver.html pour tous les autres.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>window.location </strong>= </span><span class="codeString">&quot;oldver.html&quot;</span><span
+            class="codeComment">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// --&gt;</span><br>
+        &nbsp;&nbsp;&lt;/<strong>script</strong>&gt;<br>
+        &nbsp;&nbsp;&lt;/head&gt;</code></p>
+      <p><code>&nbsp;&nbsp;&lt;<strong>body</strong>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="codeComment">&lt;!-- Met oldver.html sur
+    le lien pour les navigateurs
+    qui n'ont pas JavaScript --&gt;</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<strong>a href</strong>=<span class="codeString">&quot;oldver.html&quot;</span>
+        <strong>onClick</strong>=<span class="codeString">&quot;nextPage(); <strong>return false</strong>;&quot;</span>&gt;mon
+        lien&lt;/<strong>a</strong>&gt;<br>
+        &nbsp;&nbsp;&lt;/<strong>body</strong>&gt;<br>
+        &lt;/<strong>html</strong>&gt; </code></p>
+    </blockquote>
+  </section>
+  <section>
+    <h3>Ouvrir une nouvelle fen&ecirc;tre</h3>
+    <blockquote>
+      <p><code>window.open(<span class="codeString">&quot;https://www.javarome.net&quot;</span>)</code></p>
+    </blockquote>
+  </section>
+  <section>
+    <h3>Faire communiquer une applet Java avec JavaScript</h3>
+    <p> La communication entre JavaScript et une applet <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> est
+      possible gr&acirc;ce à <i>LiveConnect,</i> qui est automatiquement fournit à partir de <a
+          href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> 3.0 et activé par la double activation
+      de <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> et JavaScript dans la configuration du navigateur.</p>
+    <p> Une applet ne peut accéder à JavaScript et les objets que si elle importe le package
+      <code>netscape.javascript</code> qui définit les classes <code>JSObject</code> et <code>JSException</code> :</p>
+    <blockquote><code>import netscape.javascript.*; </code></blockquote>
+    <ul>
+      <li>(Note: Ce package se trouve dans le fichier <code>java_30</code>, généralement situé dans le sous-répertoire
+        <code>Program\java\classes</code> du navigateur. Ce répertoire doit donc &ecirc;tre ajouté au
+        <code>CLASSPATH</code> lors de la compilation de l'applet) </li>
+    </ul>
+    <p> De l'autre côté, le document HTML intégrant cette applet doit autoriser celle-ci à communiquer avec JavaScript
+      gr&acirc;ce au param&egrave;tre <code>mayscript</code> du tag <code>&lt;applet></code>. Par exemple :</p>
+    <blockquote><code>&lt;applet code=<span class="codeString">"monApplet.class"</span> width=100 height=100 mayscript>&lt;/applet></code>
+    </blockquote>
+    <p> La classe Java <code>JSObject</code> permet alors d'accéder aux objets JavaScript de la page, à commencer par
+      l'objet window, récupérable à l'aide de la fonction <code>getWindow()</code> :</p>
+    <blockquote>
+      <p><code>JSObject win = JSObject.getWindow (this);</code></p>
+    </blockquote>
+    <p> Tout sous-objet ou propriété peut ensuite &ecirc;tre accédé via la fonction
+      <code>getMember(<i>nomObjet</i>)</code>. Par exemple :</p>
+    <blockquote><code>JSObject doc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      = (JSObject) win.getMember (<span class="codeString">"document"</span>);&nbsp; <br> JSObject formulaire&nbsp; =
+      (JSObject) doc.getMember (<span class="codeString">"testForm"</span>);&nbsp; <br> JSObject caseACocher =
+      (JSObject) formulaire.getMember (<span class="codeString">"testCheck"</span>);&nbsp;
+      <br> Boolean&nbsp; estCochee&nbsp;&nbsp; = (Boolean)&nbsp; caseACocher.getMember (<span
+          class="codeString">"checked"</span>);</code><cite>&nbsp; </cite></blockquote>
+    <p> Les méthodes JavaScript, qu'elles soit utilisateur ou syst&egrave;me, peuvent alors &ecirc;tre appelées de deux
+      mani&egrave;res différentes.<br> <br> Soit via la méthode <code>call()</code> de la classe <code>JSObject</code>,
+      en passant en param&egrave;tres le nom de la méthode et un tableau de ses arguments (ne pouvant pas &ecirc;tre
+      <code>null</code> mais pouvant contenir une cha&icirc;ne vide) : </p>
+    <blockquote><code>String arguments[] = {<span class="codeString">"premierArg"</span>, <span class="codeString">"secondArg"</span>};&nbsp;
+      <br> win.call (<span class="codeString">"nomMethode"</span>, arguments);&nbsp; </code></blockquote>
+    <p> soit via la méthode <code>eval()</code> de cette classe, qui re&ccedil;oit en param&egrave;tre une cha&icirc;ne
+      JavaScript à exécuter. Par exemple : </p>
+    <blockquote><code>win.eval (<span class="codeString">"nomMethode("</span> + premierArg + <span
+        class="codeString">","</span> + secondArg + <span class="codeString">")"</span>);</code></blockquote>
+    <p><a id="whichNav"></a>Conna&icirc;tre le navigateur utilisé pour lire votre page&nbsp; </p>
+    <ul>
+      <li><code>navigator.appName</code> donne le nom du navigateur</li>
+      <li><code>navigator.appVersion</code> donne la version du navigateur</li>
+      <li><br>
+        <form>
+          <input name="button"
+              onClick="alert('navigator.appName=' + navigator.appName + '\nnavigator.appVersion=' + navigator.appVersion)"
+              type="button"
+              value="Exemple">
+        </form>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Faire communiquer JavaScript avec une applet Java&nbsp;
+    </h3>
+    <p> La communication entre JavaScript et une applet Java est possible gr&acirc;ce à <i>LiveConnect,</i> qui est
+      automatiquement fournit à partir de Netscape 3.0 et activé par la double activation de Java et JavaScript dans la
+      configuration du navigateur.</p>
+    <p> Les packages et classes Java font alors partie pour JavaScript de l'objet <code>Packages</code>. On peut alors
+      appeler la méthode d'une classe Java selon la syntaxe suivante :</p>
+    <blockquote>
+      <p>
+        <code><strong>Packages</strong>.<i>nomPackage</i>.<i>nomClasse</i>.<i>nomMéthode</i>(<i>param&egrave;tres</i>)</code><cite> </cite>
+      </p>
+    </blockquote>
+    <p> (A noter que les alias <code>java</code>, <code>sun</code><code> </code>et <code>netscape</code><code> </code>désignent
+      respectivement <code>Packages.java</code>, <code>Packages.sun</code> et <code>Packages.netscape</code>).
+    </p>
+    <p> Les applets Java présentes dans un document sont alors référen&ccedil;ables à partir de l'objet document, selon
+      les syntaxes suivantes, au choix :</p>
+    <ul>
+      <li><code><strong>document</strong>.<i>nomApplet</i></code>&nbsp; <br> <code><strong>document.applets</strong>[<i>nomApplet</i>]<code></code></code><code>&nbsp;&nbsp;&nbsp; </code>(<i><code>nomApplet</code></i>
+        étant attribué par le param&egrave;tre <code>name</code> de l'applet) <br>
+        <code><strong>document.applets</strong>[<i>indexApplet</i>]</code>
+      </li>
+    </ul>
+    <p>Voici l'exemple d'une applet affichant le nombre de clics effectués sur sa surface depuis sa création (essayez
+      donc) : <br> <br>
+      <applet code="Spots.class" height="30" name="spots" width="150">
+      </applet>
+      <br> <br> Il est possible dans cet exemple pour JavaScript de communiquer avec l'applet, dans un sens (ajouter un
+      clic à l'applet, fixer le nouveau nombre de clics de l'applet) comme dans l'autre (lire le nombre de clics de
+      l'applet), comme le montrent les boutons suivants :&nbsp;
+    </p>
+    <ul>
+      <li>
+        <form>
+          <input name="button2" onClick="document.spots.ajoute()" type="button" value="Incrémenter le nombre de clics">
+          &nbsp;
+          <input name="button2" onClick="alert('Le nombre de clics de l\'applet est ' + document.spots.getTotal())"
+              type="button" value="Lire le nombre de clics">
+        </form>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Ecrire un cookie</h3>
+    <p> Un cookie est une cha&icirc;ne de caract&egrave;res de la forme :</p>
+    <blockquote>
+      <p><i><code>nom</code></i><code>=<i>valeur</i>;expires=<i>dateExpiration</i>;</code></p>
+    </blockquote>
+    <ul>
+      <li>Stockée dans le document cookies.txt chez l'utilisateur et accessible depuis JavaScript via la cha&icirc;ne
+        <code>document.cookie</code>.
+      </li>
+    </ul>
+    <p> L'écriture d'un cookie peut s'effectuer par...</p>
+  </section>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Créé en <time>1996</time>.</li>
+    <li><a href="https://javascriptkit.com">JavaScriptKit</a></li>
+    <li><a href="https://www.mozilla.org/js/">JavaScript</a> par Mozilla
+      <ul>
+        <li><a href="https://www.mozilla.org/js/language/js20/index.html">JavaScript 2.0</a></li>
+      </ul>
+    </li>
+    <li>Groupe de discussion
+      <ul>
+        <li><a href="news://comp.lang.javascript">comp.lang.javascript</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,60 @@
+<!--#include virtual="/header-start.html" -->
+<title>Cookie</title>
+<meta content="https://www.w3.org/Protocols/rfc2109/rfc2109" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Gérer un état <a href="HTTP.html">HTTP</a> ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Structure</h2>
+  <p>La gestion des cookies est prise en charge par le protocole <a href="HTTP.html">HTTP</a>.</p>
+  <p>Un cookie contient :</p>
+  <ul>
+    <li>Un en-tête (<i lang="en">header</i>) constitué de :
+      <ul>
+        <li>Une commande :
+          <ul>
+            <li>GET </li>
+            <li>POST</li>
+            <li>PUT</li>
+            <li>DELETE</li>
+            <li>HEAD</li>
+          </ul>
+        </li>
+        <li>Une <a href="../../../../reseau/internet/URI.html">URI</a> de ressource &agrave; obtenir
+          (monChemin/maResource) ;</li>
+        <li>Des champs d'en-tête (<cite>Content-type</cite>, <cite>Content-length</cite>, etc.)</li>
+      </ul>
+    </li>
+    <li>Des éventuelles données (POST, upload)</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de réponse <a href="HTTP.html">HTTP</a> envoyant un cookie est :</p>
+  <blockquote><cite> <strong>HTTP/1.1 200 OK<br> Content-type:</strong> text/html<br> <strong>Content-length:</strong>
+    148<br> <strong>Set-cookie:</strong> Customer=&quot;WILE_E_COYOTE&quot;; Version=&quot;1&quot;; Path=&quot;/acme&quot;</cite>
+  </blockquote>
+  <p>Un exemple de requête HTTP retournant un cookie :</p>
+  <blockquote><cite><strong>GET</strong> javarome/SecondRequest.html<br> <strong>Content-length:</strong> 148<br>
+    <strong>Cookie:</strong> $Version=&quot;1&quot;; Customer=&quot;WILE_E_COYOTE&quot;; $Path=&quot;/acme&quot;</cite>
+  </blockquote>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Créés par <a href="/org/us/company/netscape/index.html">Netscape</a> ;</li>
+    <li>Standardisés par la RFC 2109 ;</li>
+    <li>Stockés dans <code>C:\Documents and Settings\</code>login<code>\Cookies</code> par <a
+        href="/org/us/company/ms/MSIE.html">MSIE</a>/Windows ;</li>
+  </ul>
+</section>
+<h2>Limitations</h2>
+<ul>
+  <li>4096 octets maximum ;</li>
+  <li>Leur support peut être désactivé sur certains navigateurs ; </li>
+</ul>
+<!--#include virtual="/footer.html" -->

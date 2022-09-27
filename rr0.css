@@ -723,7 +723,16 @@ p, td {
 }
 
 .tech {
-  background-color: #E7EFFF
+  list-style-type: square;
+}
+
+#rr0-context-select {
+  clear: both;
+}
+
+#rr0-context-select > * {
+  text-align: right;
+  display: block;
 }
 
 section:after {
@@ -1037,7 +1046,7 @@ blockquote ol > li.answer, blockquote p.answer, blockquote ul > li.answer {
   margin-top: .5em
 }
 
-blockquote ol > li:last-child:after, blockquote p:last-child:after, blockquote ul > li:last-child-:after {
+blockquote ol > li:last-child:after, blockquote p:last-child:after, blockquote ul > li:last-child:after {
   content: "\00a0»"
 }
 

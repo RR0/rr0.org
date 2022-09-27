@@ -1,0 +1,288 @@
+<!--#include virtual="/header-start.html" -->
+<title>Castor-JDO</title>
+<meta content="https://castor.exolab.org" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une solution de <a href="../proj/impl/lang/oo/Persistance.html">persistance</a> pour les objets Java.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Contrairement à ce que semble indiquer son nom, Castor-JDO est un <a href="../Framework.html">framework</a> de <a
+      href="../proj/impl/lang/oo/Persistance.html">persistance</a> qui ne respecte pas la norme <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>. Il utilise la <strong>réflexivité</strong> de
+    <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> pour accéder (en lecture ou écriture) à l'état des
+    objets métiers persistants. Ceux-ci doivent donc fournir des <strong>accesseurs</strong> de type <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/beans/index.html">JavaBeans</a> standard permettant à
+    Castor-JDO d'accéder à leur état.</p>
+  <p>Castor permet de configurer :</p>
+  <ul>
+    <li><strong>la source de données </strong>: Castor fournit des connecteurs pour plusieurs <a
+        href="server/sgbd/r/index.html">SGBDR</a></li>
+    <li><strong>le mapping </strong>entre le modèle objet et le modèle relationnel.</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>L'API de Castor est relativement simple (1 classe, 7 interfaces) dans le package <q><code>org.exolab.castor</code></q>.
+  </p>
+  <p>Les classes métier doivent implémenter des <strong>accesseurs</strong> de type JavaBeans standard (<code><strong>get</strong>Xxx()</code>/<code><strong>set</strong>Xxx()</code>)
+    permettant à Castor-JDO d'accéder à leur état.</p>
+  <p>La récupération d'objet persistant peut se faire par <code><strong>Database</strong>::<strong>load</strong>
+    (telleClasse, clé)</code> ou via une requête Castor OQL.</p>
+  <p>La configuration se fait via 2 fichiers XML pour :</p>
+  <ul>
+    <li>la source de données</li>
+    <li>le mapping objet/relationnel, où :
+      <ul>
+        <li>Chaque objet est représenté par un élément <code><strong>class</strong></code> contenant :
+          <ul>
+            <li>un élément <code><strong>map-to</strong></code> qui l&#8217;associe à une <strong>table</strong> de la
+              base de données relationnelle</li>
+            <li>des éléments <code><strong>field</strong></code> qui définissent les mappings
+              <strong>table/champ</strong>-<strong>classe/attribut</strong>.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de code Castor-JDO est :</p>
+  <blockquote>
+    <p><q><code><strong>Database</strong> myDatabase = jdo.<strong>getDatabase</strong>();<br>
+      myDatabase.<strong>begin</strong>();<br> Adresse adresse = new Adresse();<br> adresse.setLibelle (<span
+          class="codeString">&#8220;34 avenue des fleurs en
+    pot 06000 NICE&#8220;</span>);<br> adresse.setDepartement (Departement);<br> </code></q><q><code>myDatabase.<strong>load</strong>
+      (Departement.class, 6);<br> myDatabase.<strong>create </strong>(adresse);<br> myDatabase.<strong>commit</strong>();<br>
+      myDatabase.<strong>close</strong>();</code></q></p>
+  </blockquote>
+  <p>Un exemple de requête Castor OQL est :</p>
+  <blockquote>
+    <p><code><strong>Query</strong> myQuery = <q><code>myDatabase</code></q>.<strong>getOQLQuery </strong>(<span
+        class="codeString">"SELECT a FROM Adresse WHERE a.id
+    = $1</span>");<br> myQuery.<strong>bind</strong> (new Long (idAdresse));<br> <strong>QueryResults</strong>
+      myQueryResults = myQuery.<strong>execute</strong>();<br> Adresse adresse = (Adresse)
+      myQueryResults.<strong>next</strong>();</code></p>
+  </blockquote>
+  <p> Un exemple de descripteur Castor-JDO est :</p>
+  <blockquote>
+    <p><code>&lt;<strong>class access</strong>=<strong><span class="codeString">"</span></strong><span
+        class="codeString"><strong>shared</strong></span><span class="codeString">"</span> <strong>name</strong>=<span
+        class="codeString">"Adresse"</span> <strong>identity</strong>=<span class="codeString">"id"</span> <strong>key-generator</strong>=<span
+        class="codeString">"<strong>IDENTITY</strong>"</span>&gt;<br> <br>
+      &lt;<strong>description</strong>&gt;Adresse&lt;/<strong>description</strong>&gt;<br> <br>
+      &lt;<strong>map-to table</strong>=<span class="codeString">"ADRESSE"</span> <strong>xml</strong>=<span
+          class="codeString">"adresse"</span>/&gt;<br> <br>
+      &lt;<strong>field name</strong>=<span class="codeString">"id"</span> <strong>type</strong>=<span
+          class="codeString">"long"</span> <strong>dirty</strong>=<span
+          class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
+          class="codeString">"<strong>true</strong>"</span>&gt;<br>
+      &lt;<strong>sql name</strong>=<span class="codeString">"ID_ADRESSE"</span> <strong>type</strong>=<span
+          class="codeString">"<strong>numeric</strong>"</span>/&gt;<br>
+      &lt;<strong>xml node</strong>=<span class="codeString">"attribute"</span>/&gt;<br>
+      &lt;/<strong>field</strong>&gt;<br> <br>
+      &lt;<strong>field name</strong>=<span class="codeString">"adresse"</span> <strong>type</strong>=<span
+          class="codeString">"java.lang.String"</span> <strong>dirty</strong>=<span
+          class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
+          class="codeString">"<strong>true</strong>"</span>
+      &gt;<br>
+      &lt;<strong>sql name</strong>=<span class="codeString">"ADRESSE"</span> <strong>type</strong>=<span
+          class="codeString">"char"</span>/&gt;<br>
+      &lt;<strong>xml node</strong>=<span class="codeString">"element"</span>/&gt;
+      <br>
+      &lt;/<strong>field</strong>&gt; <br> <br> <span class="codeComment">&lt;!-- References &#8211; Clés
+    étrangères --&gt;</span> <br>
+      &lt;<strong>field name</strong>=<span class="codeString">"departement"</span> <strong>type</strong>=<span
+          class="codeString">"Departement"</span> <strong>dirty</strong>=<span
+          class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
+          class="codeString">"<strong>false</strong>"</span>&gt;<br>
+      &lt;<strong>sql name</strong>=<span class="codeString">"ID_DEPARTEMENT_ADRESSE"</span>/&gt;<br>
+      &lt;<strong>xml node</strong>=<span class="codeString">"attribute"</span> <strong>reference</strong>=<span
+          class="codeString">"<strong>true</strong>"</span>/&gt;<br>
+      &lt;/<strong>field</strong>&gt;<br> <br> <span class="codeComment">&lt;!-- many-references --&gt;</span><br>
+      &lt;<strong>field</strong> <strong>name</strong>=<span class="codeString">"dsvsAdresse"</span>
+      <strong>type</strong>=<span class="codeString">"Personne"</span> <strong>collection</strong>=<span
+          class="codeString">"<strong>vector</strong>"</span>&gt;<br>
+      &lt;<strong>sql</strong> <strong>many-key</strong>=<span class="codeString">"ID_ADRESSE_PERSONNE"</span>/&gt;<br>
+      &lt;<strong>xml</strong> <strong>node</strong>=<span class="codeString">"element"</span>/&gt;
+      <br>
+      &lt;/<strong>field</strong>&gt; <br>
+      &lt;/<strong>class</strong>&gt;</code></p>
+  </blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <table>
+    <tr>
+      <td rowspan="2" width="107">Persistance</td>
+      <th width="93">Solution</th>
+      <th width="106"><a href="CastorJDO.html">Castor-JDO</a></th>
+    </tr>
+    <tr>
+      <th width="93">Version</th>
+      <th>0.9</th>
+    </tr>
+    <tr>
+      <th rowspan="6"><a href="../proj/impl/algo/tx/index.html">Transactions</a></th>
+      <th>Explicites</th>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTA.html">JTA</a></td>
+    </tr>
+    <tr>
+      <th>Implicites</th>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th>Pessimistes</th>
+      <td class="oui">Exclusive</td>
+    </tr>
+    <tr>
+      <th>Optimistes</th>
+      <td class="oui">Shared</td>
+    </tr>
+    <tr>
+      <th>Distribuées</th>
+      <td class="oui"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JTS.html">JTS</a></td>
+    </tr>
+    <tr>
+      <th>Mémoire</th>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th>Cycle de vie</th>
+      <th>Callbacks</th>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th rowspan="5">Requêtes</th>
+      <th>Langage objet</th>
+      <td class="oui">Castor OQL</td>
+    </tr>
+    <tr>
+      <th>Projections, vues</th>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <th>Fonctions aggrégats</th>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <th>SQL possible</th>
+      <td class="oui"><code>Database:: getOQLQuery ("CALL SQL ...")</code></td>
+    </tr>
+    <tr>
+      <th>Accès au code</th>
+      <td class="non">Non</td>
+    </tr>
+    <tr>
+      <th rowspan="2"><a href="../../Performance.html">Performance</a></th>
+      <th>Cache</th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Détection des modifications</th>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th rowspan="8">Transparence</th>
+      <th>Accès aux informations</th>
+      <td>Réflexivité Java</td>
+    </tr>
+    <tr>
+      <th>Relations (1-n, n-m)</th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Héritage</th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Collections Java</th>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <th>Persistance de proche en proche</th>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <th>Non intrusion dans le code des objets métier</th>
+      <td class="non">Méthodes d'accès aux données obligatoires</td>
+    </tr>
+    <tr>
+      <th>Accès au graphe d'objets dépendants</th>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <th>Accès au modèle métier</th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th rowspan="4">Mapping</th>
+      <th>Multi-tables</th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th>Top-down</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Bottom-up</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Granularité fine</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="2">Stockage</th>
+      <th>Paradigme libre</th>
+      <td class="non"><a href="server/sgbd/r/index.html">SGBDR</a>, <a href="../time/doc/xml/XML.html">XML</a>, <a
+          href="../time/dbms/ldap/index.html">LDAP</a></td>
+    </tr>
+    <tr>
+      <th>Support d'une base existante</th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Portabilité</th>
+      <th>API standard</th>
+      <td class="non">org.exolab.castor</td>
+    </tr>
+    <tr>
+      <th>J2ME</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/index.html">J2SE</a></th>
+      <td class="oui">Oui</td>
+    </tr>
+    <tr>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/index.html">J2EE</a></th>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <th>Implémentations</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Licence</th>
+      <th></th>
+      <td>Style BSD</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li> Contrainte d'implémentation sur les classes métier (présence d'accesseurs JavaBeans).</li>
+    <li>Requêtes Castor OQL
+      <ul>
+        <li>Pas de sous-requêtes (forall, exists, in subquery)</li>
+        <li>Pas de structures ni d'expressions dans la clause select</li>
+        <li>Pas de chemin traversant les attributs multivalués</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

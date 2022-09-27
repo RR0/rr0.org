@@ -1,0 +1,78 @@
+<!--#include virtual="/header-start.html" -->
+<title>JUnit</title>
+<meta content="https://www.junit.org" name="url">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="../Framework.html">framework</a> de <a href="/tech/info/soft/proj/Test.html">test</a> unitaire
+    en <a href="/org/us/company/oracle/sun/ptf/java">Java</a>.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un cas de test (<em>test case</em>) peut être considéré comme le pendant d'un <a
+      href="/tech/info/soft/proj/req/UseCase.html">cas d'utilisation</a> (<em>use case</em>). Pour chaque scénario de ce
+    dernier, il propose un test validant son implémentation.
+  </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Un cas de test JUnit est constitué d'une classe contenant :</p>
+  <ul>
+    <li>un <strong>montage</strong> (<em>fixture</em>) d'objets sur lesquels les scénarios du test vont être exécutés
+    </li>
+    <li>un ensemble de <strong>scénarios </strong>du cas de test</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Toute <a href="/tech/info/soft/proj/impl/lang/oo/Classe.html">classe</a> de <a
+      href="/tech/info/soft/proj/Test.html">test</a> hérite de <code>junit.framework.TestCase</code> et implémente
+    autant de méthode <code>testXxx()</code> que de scénarios à tester.
+  </p>
+  <p>Elle peut redéfinir si elle le souhaite :</p>
+  <ul>
+    <li><code>setUp()</code> pour initialiser le montage (fixture) des objets soumis au test</li>
+    <li>et <code>tearDown()</code> pour le nettoyage de fin de test.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de classe de test JUnit est :</p>
+  <blockquote><b><code>import </code></b><code><strong>junit.framework</strong></code><b><code>.*;</code></b><code><br>
+    import org.javarome.exemple.MaClasse;<br> <b><br> public </b>class MonTest <b>extends TestCase</b> {<br> <br> <b>public </b>MonTest
+    <b>(String </b>someTestName<b>)</b> {<br> <b>super (</b>someTestName<b>);</b><br> }<br> <b><br> protected void
+      setUp()</b> {<br> <span class="codeComment">// Initialisation des
+  tests</span><br> }<br> <br> <b> public void test</b>Scenario1() {<br> <span class="codeComment">// Code du test de scénario
+  1</span><br> final String expected = <span class="codeString">"EXPECTED
+  RESULT"</span>;<br> String tested = new MaClasse().method ();<br> <b>assertTrue </b>(expected.equals (tested));<br>
+    }<br> <br> <b> public void test</b>Scenario2() {<br> <span class="codeComment">// Code du test de scénario
+  2</span><br> }<br> <br> <b> protected void tearDown()</b> {<br> <span class="codeComment">// Nettoyage fin de
+  test</span><br> }<br> }</code></blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li><a href="../OpenSource.html">Open Source</a></li>
+    <li><a href="https://www.extreme-java.de/junitx">JUnitX</a> étend JUnit pour tester l'état interne d'un système
+      (accès au code protégé et privé des classes). <a href="https://www.extreme-java.de/xptools/index.html">XPTest</a>
+      intègre JUnit et JUnitX dans <a href="../../../../java/TCC.html">TCC</a>.
+    </li>
+    <li><a href="https://jakarta.apache.org/cactus">Cactus</a> étend JUnit pour les tests côté serveur
+    </li>
+    <li>Réalisé par <a href="/people/b/BeckKent.html">Ken Beck</a>,<a href="/people/g/GammaErich.html"> Erich Gamma</a>
+      et Erik Meade
+    </li>
+    <li>Peut s'exécuter en mode texte ou graphique (<em>GUI</em>).</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Les objets montés (fixtures) sont réinitialisés à chaque exécution de scénario.</li>
+    <li>En mode graphique (<em>GUI</em>), un ClassLoader spécifique est utilisé pour le rechargement des classes.
+      Celui-ci peut générer des <code>ClassCastException</code>, faisant échouer certains test à tort.
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

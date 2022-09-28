@@ -1,0 +1,100 @@
+<!--#include virtual="/header-start.html" -->
+<title>Groovy</title>
+<meta content="https://groovy.codehaus.org" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p><a href="../../../index.html">Langage</a> de script/dynamique pour la <a
+      href="/org/us/company/oracle/sun/ptf/java/index.html">plate-forme Java</a>.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>Le langage Groovy est inspiré de Java, Python et Ruby.</p>
+  <ul>
+    <li>typage statique et typage dynamique</li>
+    <li>listes, maps, et expressions régulières nativement supportées</li>
+    <li>fermetures ou clôtures (<em>closures</em>)</li>
+    <li>surcharge des opérateurs.</li>
+    <li>gestion native des langages de balisage comme XML (groovy.xml.MarkupBuilder) et HTML.</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Java peut être déployé sur différentes <a
+      href="../../../../../conception/arch/index.html">architectures :</a></p>
+  <table>
+    <caption>
+      Plates-formes Groovy
+    </caption>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th valign="top"> Version</th>
+      <th>1</th>
+      <th>2</th>
+      <th width="301"> Commentaire</th>
+    </tr>
+    <tr>
+      <th colspan="2">Contrôle statique du typage</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>Signalement d'erreurs dès la compilation</td>
+    </tr>
+    <tr>
+      <th colspan="2">Compilation statique</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>Pour performance</td>
+    </tr>
+    <tr>
+      <th colspan="2">Librairies modulaires et extensibles</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td>JARs multiples</td>
+    </tr>
+    <tr>
+      <th colspan="2">Support de invokedynamic</th>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    </thead>
+  </table>
+</section>
+<section>
+  <h2>Déploiement</h2>
+
+  <p>Le(s) JAR de Groovy peuvent être déployés sur toute plate-forme Java 1.5+.</p></section>
+
+<section>
+  <h2>Exemples</h2>
+  <p>Affichage de "Hello World" :</p>
+  <p><code><strong> def</strong> name=<span class="codeString">'World'</span>; <br/>    <strong>println</strong> <span
+      class="codeString">"Hello $name!"</span> </code></p>
+
+  <p>Une classe avec méthode :</p>
+
+  <p><code><strong>class</strong> Greet {<br/>      <strong>def</strong> name <br/>      Greet(who) { <br/>         name
+    = who[0].toUpperCase() + who[1..-1] <br/>      } <br/>      <strong>def</strong> salute() { <br/>         <strong>println</strong>
+    <span class="codeString">"Hello $name!"</span> <br/>      } <br/>   } <br/> <br/>   g = <strong>new</strong>
+    Greet(<span class="codeString">'world'</span>) <span class="codeComment"> // create object</span><br/>   g.salute()
+    <span class="codeComment">             // output "Hello World!"</span> </code></p>
+
+  <p>Utilisation de bibliothèques Java existantes : </p>
+
+  <p><code><strong>import static</strong> org.apache.commons.lang.WordUtils.* <br/> <br/> <strong>   class</strong>
+    Greeter <strong>extends</strong> Greet { <br/>      Greeter(who) { <br/>         name = capitalize(who) <br/>      }
+    <br/>   } <br/> <br/>   <strong>new</strong> Greeter(<span class="codeString">'world'</span>).salute() </code></p>
+
+  <p>"Hello World" en ligne de commande : </p>
+
+  <p><code><strong>groovy -e</strong> <span
+      class="codeString">"<strong>println</strong> 'Hello ' + <strong>args</strong>[0]"</span> World </code>
+  </p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Spécifié par la <a href="https://jcp.org/en/jsr/detail?id=241">JSR 241</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

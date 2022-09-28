@@ -1,0 +1,63 @@
+<!--#include virtual="/header-start.html" -->
+<title>Generics</title>
+<!--#include virtual="/header-end.html" -->
+<p>Types génériques ou paramétrés (<i lang="en">parameterized types</i>): structures de données dont un ou plusieurs
+  types peuvent être paramétrés.</p>
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Augmenter
+      <ul>
+        <li>la robustesse du code </li>
+        <li>la lisibilité du code </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les types génériques peuvent être paramétrés par d'autres types.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Bien qu'apparaissant semblables aux mécanisme de <em>template</em> du <a
+        href="../../../../../prog/cpp/CPP.html">C++</a>, les génériques de Java :
+      <ul>
+        <li>ne génèrent pas une nouvelle classe pour chaque spécialisation</li>
+        <li>ne permettent pas de "métaprogrammation" par modèle (template) puisqu'un typage fort est préservé </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Déclaration</h3>
+    <p>Un type générique est postfixé par un (ou plusieurs) marqueur de généricité symbolique :</p>
+    <p><code>class MyGenericType<strong>&lt;</strong>T1<strong>,</strong>T2,T3<strong>&gt;</strong> {<br> ...<br> }
+    </code></p>
+  </section>
+  <section>
+    <h3>Instanciation</h3>
+    <p><code>MyGenericType<strong>&lt;</strong>String,Integer,OtherType<strong>&gt;</strong> = new MyGenericType<strong>&lt;</strong>String,Integer,OtherType<strong>&gt;</strong>();</code>
+    </p></section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de code Java est :</p>
+  <blockquote></blockquote>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <ul>
+    <li>Disponible à partir de Java 5 </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Sun Microsystems: "<a href="https://java.sun.com/j2se/1.5.0/docs/guide/language/generics.html">Generics</a>",
+      Java Platform 1.5 </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -9,18 +9,71 @@
 <section>
   <h2>Analyse</h2>
   <p>On peut voir la technologie blockchain comme un (réseau d')ordinateur(s) mondial public, toujours allumé, sécurisé,
-    et que tout le monde peut utiliser et programmer comme il en a envie.</p>
-  <p>Registre</p>
+    et que tout le monde peut utiliser (et programmer) comme il en a envie.</p>
+  <p>Le <b>registre</b> de blocks est réparti dans des <b>nœuds</b> réseaux.</p>
 </section>
 <section>
   <h2>Conception</h2>
+  <p>Il existe 3 grands axes pour convevoir une blockchain :</p>
+  <ul>
+    <li>la <b>sécurité</b> (<i lang="en">security</i>) </li>
+    <li>la <b>décentralisation</b></li>
+    <li>la <b>mise à l'échelle</b> (<i lang="en">scalability</i>)</li>
+  </ul>
+  <p>Renforcer un des axes de ce "trilemme" se fait généralement au détriment des autres.</p>
+  <p>Les blockchains peuvent être classées en "couches" (<i lang="en">layers</i>) ou <b>niveaux</b> :</p>
+  <ol start="0">
+    <li><b>fondations</b>/socle : protocoles réseau, internet, mineurs et validateurs de nœuds, sécurité.</li>
+    <li>blockchains "<b>souveraines</b>" car indépendantes de toute autre blockchain. Parmi ces blockchains, certaines
+      sont plus modernes que d'autres (par exemple sur cette couche <a href="btc">Bitcoin</a> est considéré comme la 1ʳᵉ
+      génération et <a href="eth">Etherum</a> la 2ᵉ)</li>
+    <li>blockchains (Arbitrum, SkarkNet, etc.) utilisant la couche précédente</li>
+  </ol>
+  <p>Une blockchain de niveau peut elle-même être décomposée en plusieurs couches internes <span class="note">rappelant les couches <a
+      href="/tech/info/soft/reseau/protocole">ISO</a></span> :</p>
+  <table>
+    <caption>Couches d'une blockchain de niveau 1</caption>
+    <thead>
+    <tr>
+      <td>Couche</td>
+      <td>Contenu</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>4 : Application & présentation</td>
+      <td><a href="/tech/info/soft/data/blockchain/SmartContract.html">Smart contracts</a>, Chaincode, <a
+          href="DApp.html">DApps</a>, UI
+      </td>
+    </tr>
+    <tr>
+      <td>3 : Consensus</td>
+      <td>Méthodes de valisation de transaction (<a href="/tech/info/soft/data/blockchain/mining/pow">PoW</a>, <a
+          href="/tech/info/soft/data/blockchain/mining/pos">PoS</a>, DPoS, PoET, PBFT) avec leur impact sur la
+        scalabilité et la décentralisation.
+      </td>
+    </tr>
+    <tr>
+      <td>2 : Réseau</td>
+      <td>Implémentation du <a href="/tech/info/soft/reseau/P2P.html">P2P</a> permettant aux nœuds de communiquer entre
+        eux
+      </td>
+    </tr>
+    <tr>
+      <td>1 : Données</td>
+      <td>Informations liées à la blockchain (<a href="/tech/info/soft/sec/auth/sign">Signature électronique</a>, Hash,
+        Arbre de Merkel, Transactions / historique des blocs)
+      </td>
+    </tr>
+    <tr>
+      <td>0 : Matériel / infrastructure</td>
+      <td><a href="/tech/info/soft/data/blockchain/eth/evm.html">VM</a>, conteneurs, services, messagerie</td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Des exemples de blockchains sont :</p>
-  <ul>
-    <li><a href="btc">Bitcoin</a></li>
-    <li><a href="eth">Etherum</a></li>
-  </ul>
+  <iframe class="long wide" src="exemples.html"></iframe>
 </section>
 <!--#include virtual="/footer.html" -->

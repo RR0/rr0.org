@@ -1,0 +1,264 @@
+<!--#include virtual="/header-start.html" -->
+<title>Design Patterns</title>
+<!--#include virtual="/header-end.html" -->
+<p>Modèles de <a href="..">conception</a>.</p>
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Fournir des solutions-types à des problèmes-types (de <a href="../index.html">conception</a>) </li>
+  </ul>
+</section>
+<section>
+  <h2>Structure</h2>
+  <p>Les modèles de <a href="../index.html">conception</a> sont généralement définis par :</p>
+  <ul>
+    <li>un nom (et éventuellement des noms équivalents ou traduits) ;</li>
+    <li>une motivation ;</li>
+    <li>une structure ;</li>
+    <li>des participants ;</li>
+    <li>des collaborations entre participants ;</li>
+  </ul>
+  <p>On peut caractériser les modèles en :</p>
+  <ul>
+    <li>modèles (de conception) ;</li>
+    <li><b>modèle d'amélioration </b>: modèle transitoire pour passer d'une mauvaise à une bonne solution ;</li>
+    <li><b>modèle gris </b>: quelque chose dont on ne sait s'il s'agit d'un modèle d'amélioration ou d'un anti-modèle ;
+    </li>
+    <li><b>anti-modèle </b>: ce qu'il ne faut pas faire, ce qu'il faut éviter ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Traduits "modèles de conception" ;</li>
+    <li>Les modèles de conception les plus connus sont ceux du [GoF].</li>
+    <li>D'autres modèles existents, tels que :
+      <ul>
+        <li>les modèles architecturaux ;</li>
+        <li>les modèles de processus ;</li>
+        <li>les modèles de gestion de conf ;</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Un modèle de conception n'est pas spécifique à une implémentation, ni une plate-forme, etc. </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de modèles de conception sont :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Source</th>
+      <th>Type</th>
+      <th>Nom</th>
+      <th>But</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td rowspan="23">GoF</td>
+      <td rowspan="7">Structuraux</td>
+      <td>Adaptateur</td>
+      <td>Fournir une interface différente de l'originelle</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Pont</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Composite</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Décorateur</td>
+      <td>Ajouter une fonctionnalité à un objet sans le modifier</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fa&ccedil;ade</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Poids mouche</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Proxy</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="5">Créateurs</td>
+      <td>Fabrique abstraite</td>
+      <td>Création sans conna&icirc;tre implémentation</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Constructeur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Méthode de fabrique</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Prototype</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="Singleton.html">Singleton</a></td>
+      <td>Garantir une instance unique.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="11">Comportementaux</td>
+      <td>Chaine de responsabilités</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Commande</td>
+      <td>Worker</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Interpréteur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Itérateur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Médiateur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mémento</td>
+      <td>Copie</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Observateur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Etat</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Stratégie</td>
+      <td>Worker</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Méthode de modèle</td>
+      <td>Framework</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Visiteur</td>
+      <td>Découpagle</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="6"></td>
+      <td rowspan="6">Concurrence</td>
+      <td>Balking</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Suspension gardée</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Planificateur</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Verrou lecture écriture</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Verrouillage doublement vérifié</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Désactivation requ&ecirc;tes de t&acirc;che pendant exécution de t&acirc;che</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Temps réel</td>
+      <td>T&acirc;che planifiée</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="5"><a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a></td>
+      <td></td>
+      <td>DAO</td>
+      <td>Encapulser l'accès aux données</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Objet valeur</td>
+      <td>Faire voyager un état depuis un objet distant</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Fa&ccedil;ade de session</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Business Delegate</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Adaptateur EJB</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Ressources</h2>
+  <ul>
+    <li><a href="https://hillside.net/patterns">Patterns home page</a></li>
+    <li><a href="https://c2.com/cgi/wiki?PortlandPatternRepository">Portland pattern repository</a></li>
+    <li><a href="https://java.sun.com/blueprints/patterns/j2ee_patterns">Blueprints J2EE design patterns</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,247 @@
+<!--#include virtual="/header-start.html" -->
+<title>Modèles de conception</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>Design Patterns (DP)</em>. Ou "patron" <span class="note">Comme les patrons dans la conception de mode, qui servent à détourer des modèles.</span>
+    de conception.
+</p>
+<section title="Besoin">
+    <p>Simplifier une création d'objet en partant d'un modèle à copier puis éventuellement modifier.</p>
+</section>
+<section title="Conception">
+    <p>Les modèles de <a href="../index.html">conception</a> sont généralement définis par :</p>
+    <ul>
+        <li>un nom (et éventuellement des noms équivalents ou traduits)</li>
+        <li>une motivation</li>
+        <li>une structure</li>
+        <li>des participants</li>
+        <li>des collaborations entre participants</li>
+    </ul>
+    <p>On peut caractériser les modèles en :</p>
+    <ul>
+        <li>modèles (de conception) ;</li>
+        <li><strong>modèle d'amélioration</strong> : modèle transitoire pour passer d'une mauvaise à une bonne solution
+            ;
+        </li>
+        <li><strong>modèle gris</strong> : quelque chose dont on ne sait s'il s'agit d'un modèle d'amélioration ou d'un
+            anti-modèle ;
+        </li>
+        <li><strong>anti-modèle </strong>: ce qu'il ne faut pas faire, ce qu'il faut éviter ;</li>
+    </ul>
+</section>
+<section title="Implémentation">
+    <p>Par définition, un DP se limite au niveau d'une solution de <a href="../index.html">conception</a> et n'a pas
+        d'<a href="../../impl/index.html">implémentation</a> déterminée (cette dernière dépendra du
+        <a href="../../impl/lang/index.html">langage</a> utilisé, des contraintes de la plate-forme, etc.). Toutefois,
+        on trouve souvent un <em>exemple</em> d'implémentation dans des descriptions de DP.
+    </p>
+</section>
+<section title="Notes">
+    <ul>
+        <li>Les modèles de conception les plus connus sont ceux du [GoF].</li>
+        <li>D'autres modèles existent, tels que :
+            <ul>
+                <li>les <a href="../arch/AP.html">modèles d'architecture</a></li>
+                <li>les modèles de processus</li>
+                <li>les modèles de gestion de configuration</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section title="Exemples">
+    <p>Des exemples de modèles de conception sont :</p>
+    <table class="long wide">
+        <thead>
+        <tr>
+            <th>Source</th>
+            <th>Type</th>
+            <th>Nom original</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="23">GoF</td>
+            <td rowspan="7">Structuraux</td>
+            <td><em>Adapter</em></td>
+            <td>Adaptateur : fournir une interface différente de l'originelle</td>
+        </tr>
+        <tr>
+            <td><em>Bridge</em></td>
+            <td>Pont entre abstraction et implémentation, afin de les rendre indépendants</td>
+        </tr>
+        <tr>
+            <td><a href="Prototype.html">Prototype</a></td>
+            <td>Création d'objet à partir de modèle</td>
+        </tr>
+        <tr>
+            <td><em>Composite</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><em>Decorator</em></td>
+            <td>Décorateur : ajouter une fonctionnalité à un objet sans le modifier</td>
+        </tr>
+        <tr>
+            <td><em>Facade</em></td>
+            <td>Façade</td>
+        </tr>
+        <tr>
+            <td><em>Flyweight</em></td>
+            <td>Poids mouche</td>
+        </tr>
+        <tr>
+            <td><em>Proxy</em></td>
+            <td>Délégué :</td>
+        </tr>
+        <tr>
+            <td rowspan="5">Créateurs</td>
+            <td><em>Abstract factory : </em></td>
+            <td>Fabrique abstraite : créer sans connaître l'implémentation</td>
+        </tr>
+        <tr>
+            <td><em>Builder</em></td>
+            <td>Constructeur</td>
+        </tr>
+        <tr>
+            <td><em>Factory method</em></td>
+            <td>Méthode de fabrique</td>
+        </tr>
+        <tr>
+            <td><em>Prototype</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="Singleton.html"><em>Singleton</em></a></td>
+            <td>Garantir une instance unique.</td>
+        </tr>
+        <tr>
+            <td rowspan="11">Comportementaux</td>
+            <td><em>Chain of responsability</em></td>
+            <td>Chaine de responsabilités : traitement ou délégation du traitement à une hiérarchie de responsables</td>
+        </tr>
+        <tr>
+            <td><em><a href="Command.html">Command</a></em></td>
+            <td>Commande ou Action : Encapsulation d'un comportement, réutilisation dans divers contextes.</td>
+        </tr>
+        <tr>
+            <td><em>Interpreter</em></td>
+            <td>Interpréteur</td>
+        </tr>
+        <tr>
+            <td><em>Iterator</em></td>
+            <td>Itérateur</td>
+        </tr>
+        <tr>
+            <td><em>Mediator</em></td>
+            <td>Médiateur</td>
+        </tr>
+        <tr>
+            <td><em>Memento</em></td>
+            <td>Copie</td>
+        </tr>
+        <tr>
+            <td><em>Observer</em></td>
+            <td>Observateur</td>
+        </tr>
+        <tr>
+            <td><em>State</em></td>
+            <td>Etat : Chaque classe d'état répond à un événement par l'état suivant</td>
+        </tr>
+        <tr>
+            <td><em>Strategy</em></td>
+            <td>Stratégie : Algorithme variable</td>
+        </tr>
+        <tr>
+            <td><a href="TemplateMethod.html"><em>Template method</em></a></td>
+            <td>Modèle de méthode : comportement et services commun pour un modèle d'objets (framework)</td>
+        </tr>
+        <tr>
+            <td><em><a href="Visitor.html">Visitor</a></em></td>
+            <td>Visiteur : traitement dépendant d'un type sans dépendance statique à ce type</td>
+        </tr>
+        <tr>
+            <td rowspan="6"></td>
+            <td rowspan="6">Concurrence</td>
+            <td><em>Balking</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><em>Suspension gardée</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><em>Planificateur</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><em>Verrou lecture écriture</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><em>Verrouillage doublement vérifié</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><em>Désactivation requêtes de tâche pendant exécution de tâche</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Temps réel</td>
+            <td><em>Tâche planifiée</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="5">
+                <a href="/org/us/company/oracle/sun/ptf/java/api/ee/index.html">J2EE</a></td>
+            <td></td>
+            <td><em>DAO</em></td>
+            <td>Encapulser l'accès aux données</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><em> <a href="ValueObject.html">Value object</a></em></td>
+            <td><em><a href="ValueObject.html">Objet valeur</a></em>. Faire voyager un état depuis un objet distant</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><em>Session facade </em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><em>Business delegate</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><em>Adaptateur EJB</em></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="MVC.html"><em>MVC</em></a></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<section title="Voir">
+    <ul>
+        <li><a href="https://hillside.net/patterns"><em>Patterns home page</em></a></li>
+        <li><a href="https://c2.com/cgi/wiki?PortlandPatternRepository"><em>Portland pattern repository</em></a></li>
+        <li><a href="https://java.sun.com/blueprints/patterns/j2ee_patterns">Blueprints J2EE design patterns</a></li>
+        <li><a href="https://g.oswego.edu/dl/ca/ca/ca.html"><em>An Introduction for Object-Oriented
+            Designers</em></a><em> </em>de Christopher Alexander ;
+        </li>
+        <li><a href="https://c2.com/cgi-bin/wiki?HistoryOfPatterns"><em>History of Patterns</em></a></li>
+        <li>Martin Flower - <i><a href="https://martinfowler.com/isa/">Patterns of enterprise application
+            architecture</a></i>.
+        </li>
+        <li><em><a href="https://www.cs.ubc.ca/%7Ejan/AODPs/">Design Patterns in AOP</a> </em>- Mise en oeuvre en
+            <a href="../../../AOP.html">AOP</a> de 17 des 23 patterns du GOF
+        </li>
+    </ul>
+</section>
+<!--#include virtual="/footer.html" -->

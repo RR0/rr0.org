@@ -1,12 +1,12 @@
 const angular = require('angular');
 
-import {TitleScope} from "./nav/rr0-title";
+import {TitleScope} from "./nav/rr0-title"
 
-import nav from './nav/nav';
-import place from '../place/place';
-import foot from './note/foot';
-import context from './rr0-context';
-import science from "../science/science";
+import nav from "./nav/nav"
+import place from "../place/place"
+import foot from "./note/foot"
+import context from "./rr0-context"
+import science from "/science/science"
 
 export interface RR0Window extends Window {
   copyright: string;

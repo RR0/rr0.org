@@ -1,0 +1,736 @@
+<!--#include virtual="/header-start.html" -->
+<title>CORBA</title>
+<meta content="https://www.corba.org" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Common <a href="../index.html">ORB</a> Architecture</i> : architecture d'<a
+    href="../index.html">ORB </a> commune.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Standardiser le communication entre <a href="../../../proj/impl/lang/oo/Objet.html">objets</a> distants :</p>
+  <ul>
+    <li>indépendamment du <a href="../../../proj/impl/lang/index.html">langage</a></li>
+    <li>indépendamment de la <a href="../../../proj/design/arch/platform/index.html">plate-forme</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>CORBA est composé de :</p>
+  <ul>
+    <li>un <a href="../index.html">ORB</a> utilisant
+      <ul>
+        <li>un <a href="../../../reseau/protocole/index.html">protocole</a> dérivé de GIOP, comme :
+          <ul>
+            <li><a href="IIOP.html">IIOP</a></li>
+          </ul>
+        </li>
+        <li><a href="IDL.html">IDL</a> (<em>Interface Definition Language</em>) pour spécifier les interfaces entre
+          objets communicants.</li>
+      </ul>
+    </li>
+    <li>des <strong>services</strong> horizontaux au dessus de cet <a href="../index.html">ORB</a></li>
+    <li>des <strong>dispositifs</strong> (<i lang="en">facilities</i>) verticaux au-dessus de ces services</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>JavaIDL</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td colspan="2" rowspan="3"> CORBA</td>
+          <th valign="top"> Version</th>
+          <th colspan="8"> 1</th>
+          <th colspan="4"> 2</th>
+          <th> 3</th>
+          <th>4</th>
+          <th rowspan="4"> Commentaire</th>
+        </tr>
+        <tr>
+          <th valign="top"> Release</th>
+          <th colspan="2"> 0</th>
+          <th colspan="6"><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes.html">5</a>
+          </th>
+          <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/relnotes.html">0</a>
+          </th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th> 0</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th valign="top"> Fixpack</th>
+          <th colspan="2"> 2</th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp1.html">1</a>
+          </th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp2.html">2</a>
+          </th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp3.html">3</a>
+          </th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp4.html">4</a>
+          </th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp5.html">5</a>
+          </th>
+          <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/356RN.html">6</a>
+          </th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/relnotes401.html">1</a>
+          </th>
+          <th><a
+              href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/relnotes402.html">2</a>
+          </th>
+          <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/403RN.html">3</a>
+          </th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th> Couche</th>
+          <th> Technologie</th>
+          <th valign="top"> Maintenance</th>
+          <th> 0</th>
+          <th> 1</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th valign="top"></th>
+          <th valign="top"></th>
+          <th valign="top">Année</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="../../../../1996.html">1996</a></td>
+          <td></td>
+          <td><a href="../../../../1998.html">1998</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="3" valign="top"><a href="../../../reseau/protocole/index.html">Protocole</a></th>
+          <th rowspan="3" valign="top">GIOP</th>
+          <th valign="top"></th>
+          <td class="non" colspan="8">Non</td>
+          <td class="oui">1.0</td>
+          <td class="oui">1.1</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="IIOP.html">IIOP</a></th>
+          <td class="non" colspan="8">Non</td>
+          <td class="oui" colspan="6">Oui</td>
+          <td>Sur <a href="../../../reseau/protocole/4/TCP.html">TCP</a>/IP</td>
+        </tr>
+        <tr>
+          <th valign="top">ESIOP</th>
+          <td class="non" colspan="8">Non</td>
+          <td class="oui" colspan="6">Oui</td>
+          <td><em>Environment Specific Inter-ORB Protocol</em></td>
+        </tr>
+        <tr>
+          <th valign="top">Interface</th>
+          <th valign="top"><a href="IDL.html">IDL</a></th>
+          <th valign="top"></th>
+          <td class="oui" colspan="14">Oui</td>
+          <td></td>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan="9" valign="top"><a href="../../../proj/impl/lang/index.html">Langages</a></th>
+          <th valign="top"><a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../proj/impl/lang/cpp/index.html">C++</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../proj/impl/lang/c/index.html">C</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../proj/impl/lang/cobol/index.html">COBOL</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../proj/impl/lang/smalltalk/index.html">SmallTalk</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../proj/impl/lang/ada/index.html">Ada</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="../../../proj/impl/lang/lisp/index.html">LisP</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Python</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">IDLScript</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Composants</th>
+          <th valign="top">CCM</th>
+          <th valign="top"></th>
+          <td class="non" colspan="12">Non</td>
+          <td class="oui" colspan="2">Oui</td>
+          <td><i>Corba Component Model</i>.</td>
+        </tr>
+        <tr>
+          <th rowspan="15" valign="top">Services</th>
+          <th valign="top">COS Naming</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><em>CORBA Service Naming</em></td>
+        </tr>
+        <tr>
+          <th valign="top"><a href="OTS.html">OTS</a></th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Transactions</td>
+        </tr>
+        <tr>
+          <th valign="top">Event</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Life cycle</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">POS</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Persistent Object Service.</td>
+        </tr>
+        <tr>
+          <th valign="top">Relationship</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Externalization</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">CCS</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Concurrency Control Service.</td>
+        </tr>
+        <tr>
+          <th valign="top">Query</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Licensing</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Property</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Time</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Security</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Trader</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Collections</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="5" valign="top">Facilities</th>
+          <th valign="top">User interface</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Information management</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">System management</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Task management</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th valign="top">Vertical maket</th>
+          <th valign="top"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

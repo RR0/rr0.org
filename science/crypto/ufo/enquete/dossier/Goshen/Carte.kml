@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://www.opengis.net/kml/2.2"
+     xmlns:gx="https://www.google.com/kml/ext/2.2">
+<Document>
+  <name>Le trajet du vol 117</name>
+  <description>Le 27 avril 1950</description>
+  <Style id="event">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="pathPlane">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="pathUfo">
+    <LineStyle>
+      <color>730000FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+    <Style id="eventArnold">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/blue-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+   <Placemark>
+    <name>Trajet du vol 117</name>
+    <description><![CDATA[Le jeudi 27 avril 1950]]></description>
+    <styleUrl>#pathPlane</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -86.599731,41.672913,0.000000
+        -85.968018,41.594906,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

@@ -1472,6 +1472,10 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     background: black;
   }
 
+  nav ul {
+    background: linear-gradient(left top, rgba(242, 242, 248, .95), rgba(0, 0, 0, .95));
+  }
+
   h2, h3, h4, section h1, section section h1 {
     color: white;
     background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);

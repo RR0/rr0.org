@@ -1452,7 +1452,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
   }
 
   .contents {
-    background-color: black;
+    background: black;
     color: whitesmoke;
   }
 
@@ -1471,7 +1471,6 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
   nav, .outline {
     background: black;
   }
-
   nav ul {
     background: linear-gradient(left top, rgba(242, 242, 248, .95), rgba(0, 0, 0, .95));
   }

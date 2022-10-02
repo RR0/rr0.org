@@ -13,6 +13,7 @@ import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
 import {ContentStep} from "./step/ContentStep"
 import {CopyStep} from "./step/CopyStep"
+import {DirectoryStep} from "./step/DirectoryStep"
 
 const argv = process.argv
 const args: Record<string, string> = {}
@@ -100,9 +101,8 @@ const context = new SsgContext("fr", new TimeContext({
 
 new Ssg(config)
   .add(new ContentStep(outputFunc))
-  /* .add(new DirectoryStep("science/crypto/ufo/enquete/dossier", "science/crypto/ufo/enquete/dossier/index.html",
-   outputFunc))
-   */
+  .add(new DirectoryStep("science/crypto/ufo/enquete/dossier", "science/crypto/ufo/enquete/dossier/index.html",
+    outputFunc))
   .add(new CopyStep())
   .start(context)
   .then(result => console.log("Wrote", result))

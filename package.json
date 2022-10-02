@@ -22,7 +22,7 @@
     "now"
   ],
   "dependencies": {
-    "copy": "^0.0.1",
+    "copy": "^0.3.2",
     "detect-character-encoding": "^0.8.0",
     "glob-promise": "^4.2.2",
     "node-html-parser": "^5.3.3"

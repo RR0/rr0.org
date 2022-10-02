@@ -75,20 +75,15 @@ export function camelToText(camel: string): string {
 }
 
 export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
-  try {
-    const fileStats = fs.statSync(fileName)
-    const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
-    const html = parse(initialContents, {comment: true})
-    const declaredEncoding = getCharSet(html) || getContentType(html)
-    const detectedEncoding = detectEncoding(fileName)
-    const encoding = declaredEncoding || detectedEncoding || "utf-8"
-    const contents = fs.readFileSync(fileName, {encoding})
-    const lang = getFileLang(context, fileName)
-    return {name: fileName, encoding, contents, lastModified: fileStats.mtime, lang}
-  } catch (e) {
-    console.error(fileName, ":", e)
-    throw e
-  }
+  const fileStats = fs.statSync(fileName)
+  const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
+  const html = parse(initialContents, {comment: true})
+  const declaredEncoding = getCharSet(html) || getContentType(html)
+  const detectedEncoding = detectEncoding(fileName)
+  const encoding = declaredEncoding || detectedEncoding || "utf-8"
+  const contents = fs.readFileSync(fileName, {encoding})
+  const lang = getFileLang(context, fileName)
+  return {name: fileName, encoding, contents, lastModified: fileStats.mtime, lang}
 }
 
 function getFileLang(context: SsgContext, filePath: string): string | string[] {

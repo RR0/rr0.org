@@ -8,6 +8,16 @@ export interface DirectoryResult extends SsgStepResult {
   directoryCount: number
 }
 
+interface Case {
+  dirName: string
+  url: string
+  title: string
+  time: string
+  classification: {
+    hynek: string
+  }
+}
+
 export class DirectoryStep implements SsgStep {
 
   constructor(protected dir: string, protected template: string, protected outputFunc: OutputFunc) {
@@ -16,17 +26,38 @@ export class DirectoryStep implements SsgStep {
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
     const fileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
     const dirames = await dirNames(this.dir)
-    const directories = []
+    const cases: Case[] = []
     for (const dirName of dirames) {
-      directories.push(dirName)
+      const dirCase: Case = {
+        dirName, classification: {hynek: ""}, time: "", title: "", url: ""
+      }
+      cases.push(dirCase)
+      try {
+        const jsonFileInfo = getFileInfo(context, `${this.dir}/${dirName}/index.json`)
+        Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
+      } catch (e) {
+        console.warn(e)
+        // No json, just guess title.
+      }
     }
-    const directoriesHtml = Html.element("ul", directories.map(dir => {
-      const title = camelToText(dir)
-      const a = Html.element("a", title, {href: dir + "/"})
+    const directoriesHtml = Html.element("ul", cases.map(dirCase => {
+      dirCase.title = camelToText(dirCase.dirName)
+      const details: string[] = []
+      if (dirCase.classification.hynek) {
+        details.push(dirCase.classification.hynek)
+      }
+      if (dirCase.time) {
+        details.push(Html.element("time", dirCase.time))
+      }
+      const text: (string | string[])[] = [dirCase.title]
+      if (details.length > 0) {
+        text.push(`(${details.join(", ")})`)
+      }
+      const a = Html.element("a", text.join(" "), {href: dirCase.dirName + "/"})
       return Html.element("li", a)
     }).join("\n"))
     fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
     await this.outputFunc(context, fileInfo, "")
-    return {directoryCount: directories.length}
+    return {directoryCount: cases.length}
   }
 }

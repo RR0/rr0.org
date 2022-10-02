@@ -5,6 +5,7 @@ import detectCharacterEncoding from "detect-character-encoding"
 import path from "path"
 import * as util from "util"
 import {SsgContext} from "./SsgContext"
+import {readdir} from "fs/promises"
 
 const globCopy = util.promisify(require("copy"))
 
@@ -97,6 +98,12 @@ function getFileLang(context: SsgContext, filePath: string): string | string[] {
     }
   }
   return lang
+}
+
+export async function dirNames(dir: string): Promise<string[]> {
+  const dirs = await readdir(dir, {withFileTypes: true})
+  return dirs.filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
 }
 
 export async function ssgCopy(to: string, ...from: string[]): Promise<File[]> {

@@ -1,7 +1,7 @@
 import {SsgStep, SsgStepResult} from "./SsgStep"
 import {OutputFunc, SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {dirNames, dirToTitle, getFileInfo} from "../util/file/FileUtil"
+import {camelToText, dirNames, getFileInfo} from "../util/file/FileUtil"
 import {Html} from "../util/Html"
 
 export interface DirectoryResult extends SsgStepResult {
@@ -21,7 +21,7 @@ export class DirectoryStep implements SsgStep {
       directories.push(dirName)
     }
     const directoriesHtml = Html.element("ul", directories.map(dir => {
-      const title = dirToTitle(dir)
+      const title = camelToText(dir)
       const a = Html.element("a", title, {href: dir + "/"})
       return Html.element("li", a)
     }).join("\n"))

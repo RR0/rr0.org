@@ -52,7 +52,6 @@ export function getCharSet(html: HTMLElement): BufferEncoding | undefined {
   return charSet
 }
 
-
 function ensureDirectoryExistence(filePath: string) {
   const dirname = path.dirname(filePath)
   if (fs.existsSync(dirname)) {
@@ -68,11 +67,11 @@ export async function writeFile(fileInfo: FileInfo): Promise<void> {
   return fsAsync.writeFile(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
 }
 
-export function dirToTitle(dir: string): string {
-  const result = dir
-    .replace(/([A-Z]+)/g, " $1").trim()
-    .replace(/([0-9]+)/g, " $1").trim()
-  return result.charAt(0).toUpperCase() + result.slice(1)
+export function camelToText(camel: string): string {
+  const text = camel.trim()
+    .replace(/([A-Z]+)/g, " $1")
+    .replace(/([0-9]+)/g, " $1")
+  return (text.charAt(0).toUpperCase() + text.slice(1)).trim()
 }
 
 export function getFileInfo(context: SsgContext, fileName: string): FileInfo {

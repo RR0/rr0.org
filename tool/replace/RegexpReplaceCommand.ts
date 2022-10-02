@@ -1,7 +1,7 @@
+import {ReplaceCommand} from "../Ssg"
 import {FileInfo} from "../FileUtil"
 import {SsgReplacer} from "./SsgReplacer"
 import {SsgContext} from "../SsgContext"
-import {ReplaceCommand} from "./ReplaceCommand"
 
 export abstract class RegexpReplaceCommand implements ReplaceCommand {
 

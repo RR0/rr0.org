@@ -1,7 +1,8 @@
-import {FileInfo} from "./FileUtil"
+import {promise as glob} from "glob-promise"
+import {FileInfo, getFileInfo, ssgCopy} from "./FileUtil"
 import {SsgContext} from "./SsgContext"
-import {ReplaceCommand} from "./replace/ReplaceCommand"
-import {SsgStep} from "./step/SsgStep"
+
+type OutputFileGeneration = (info: FileInfo) => Promise<void>
 
 export type ContentsConfig = {
   roots: string[],
@@ -14,32 +15,58 @@ export type SsgConfig = {
   outDir: string
 }
 
-export type SsgResult = {}
+export interface ReplaceCommand {
+  execute(context: SsgContext): Promise<FileInfo>
+}
 
-export type OutputFunc = (context: SsgContext, info: FileInfo, outDir?: string) => Promise<void>
+export type SsgResult = {
+  contentCount: number
+}
 
 export class Ssg {
-
-  protected steps: SsgStep[] = []
 
   constructor(protected config: SsgConfig) {
   }
 
-  add(step: SsgStep) {
-    this.steps.push(step)
-    return this
+  async start(context: SsgContext, output: OutputFileGeneration): Promise<SsgResult> {
+    let config = this.config
+    let contentCount = 0
+    for (const contents of config.contents) {
+      contentCount += await this.processContents(contents, context, output)
+    }
+    await this.processCopies(config)
+    return {
+      contentCount
+    }
   }
 
-  async start(context: SsgContext): Promise<SsgResult> {
-    const config = this.config
-    const result: SsgResult = {}
-    for (let i = 0; i < this.steps.length; i++) {
-      const step = this.steps[i]
-      console.log(`Step #${i + 1}`)
-      const stepResult = await step.execute(context, config)
-      console.log(`Step result #${i + 1}`, stepResult)
-      Object.assign(result, stepResult)
+  private async processContents(contentsConfig: ContentsConfig, context: SsgContext, output: (info: FileInfo) => Promise<void>) {
+    let contentCount = 0
+    for (const contentsRoot of contentsConfig.roots) {
+      const contentFiles = await glob(contentsRoot)
+      for (const filePath of contentFiles) {
+        const inputFile = getFileInfo(context, filePath)
+        let outputFile = contentsConfig.outputFile(inputFile)
+        context.currentFile = outputFile
+        for (const replacement of contentsConfig.replacements) {
+          outputFile = await replacement.execute(context)
+        }
+        contentCount++
+        await output(outputFile)
+      }
     }
-    return result
+    return contentCount
+  }
+
+  private async processCopies(config: SsgConfig) {
+    let copies: string[] = config.copies
+    const dest = config.outDir
+    try {
+      console.log("Copying to", dest, copies)
+      const files = await ssgCopy(dest, ...copies)
+      console.log(files.length, "files copied")
+    } catch (e) {
+      console.error("Could not copy", copies, e)
+    }
   }
 }

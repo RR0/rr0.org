@@ -11,9 +11,6 @@ import {SsgContext} from "./SsgContext"
 import {HtmlClassReplaceCommand} from "./replace/html/HtmlClassReplaceCommand"
 import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
-import {ContentStep} from "./step/ContentStep"
-import {CopyStep} from "./step/CopyStep"
-import {DirectoryStep} from "./step/DirectoryStep"
 
 const argv = process.argv
 const args: Record<string, string> = {}
@@ -80,8 +77,8 @@ const config: SsgConfig = {
   outDir: "out"
 }
 
-async function outputFunc(context: SsgContext, info: FileInfo, oudDir = config.outDir + "/"): Promise<void> {
-  info.name = `${oudDir}${info.name}`
+async function output(info: FileInfo): Promise<void> {
+  info.name = `${config.outDir}/${info.name}`
   try {
     console.log("Writing", info.name)
     await writeFile(info)
@@ -98,11 +95,6 @@ const context = new SsgContext("fr", new TimeContext({
   hour: "2-digit",
   minute: "2-digit"
 }))
-
 new Ssg(config)
-  .add(new ContentStep(outputFunc))
-  .add(new DirectoryStep("science/crypto/ufo/enquete/dossier", "science/crypto/ufo/enquete/dossier/index.html", outputFunc))
-  .add(new CopyStep())
-  .start(context)
-  .then(result => console.log("Wrote", result))
-  .catch(err => console.error(err))
+  .start(context, output)
+  .then(result => console.log("Wrote", result.contentCount, "content files"))

@@ -1,4 +1,4 @@
-import {FileInfo} from "./FileUtil"
+import {FileInfo} from "./util/file/FileUtil"
 import {SsgContext} from "./SsgContext"
 import {ReplaceCommand} from "./replace/ReplaceCommand"
 import {SsgStep} from "./step/SsgStep"
@@ -9,8 +9,6 @@ export type ContentsConfig = {
   outputFile(inputFile: FileInfo): FileInfo
 }
 export type SsgConfig = {
-  contents: ContentsConfig[]
-  copies: string[]
   outDir: string
 }
 

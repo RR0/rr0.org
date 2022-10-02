@@ -4,7 +4,7 @@ import {HTMLElement, parse} from "node-html-parser"
 import detectCharacterEncoding from "detect-character-encoding"
 import path from "path"
 import * as util from "util"
-import {SsgContext} from "./SsgContext"
+import {SsgContext} from "../../SsgContext"
 import {readdir} from "fs/promises"
 
 const globCopy = util.promisify(require("copy"))
@@ -66,6 +66,13 @@ export async function writeFile(fileInfo: FileInfo): Promise<void> {
   let fileName = fileInfo.name
   ensureDirectoryExistence(fileName)
   return fsAsync.writeFile(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
+}
+
+export function dirToTitle(dir: string): string {
+  const result = dir
+    .replace(/([A-Z]+)/g, " $1").trim()
+    .replace(/([0-9]+)/g, " $1").trim()
+  return result.charAt(0).toUpperCase() + result.slice(1)
 }
 
 export function getFileInfo(context: SsgContext, fileName: string): FileInfo {

@@ -1,7 +1,7 @@
 import {TimeContext} from "./time/TimeContext"
 import {SsgMessages} from "./i18n/SsgMessages"
 import {ssgMessages} from "./i18n"
-import {FileInfo} from "./FileUtil"
+import {FileInfo} from "./util/file/FileUtil"
 
 export class SsgContext {
 

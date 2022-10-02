@@ -1,5 +1,5 @@
 import {SsgStep, SsgStepResult} from "./SsgStep"
-import {getFileInfo} from "../FileUtil"
+import {getFileInfo} from "../util/file/FileUtil"
 import {SsgContext} from "../SsgContext"
 import {ContentsConfig, OutputFunc, SsgConfig} from "../Ssg"
 import {promise as glob} from "glob-promise"
@@ -7,12 +7,12 @@ import {promise as glob} from "glob-promise"
 
 export class ContentStep implements SsgStep {
 
-  constructor(protected output: OutputFunc) {
+  constructor(protected contents: ContentsConfig[], protected output: OutputFunc) {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<SsgStepResult> {
     let contentCount = 0
-    for (const contents of config.contents) {
+    for (const contents of this.contents) {
       contentCount += await this.processContents(context, contents)
     }
     return {

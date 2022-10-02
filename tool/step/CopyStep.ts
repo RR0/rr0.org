@@ -1,12 +1,15 @@
 import {SsgStep, SsgStepResult} from "./SsgStep"
 import {SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {ssgCopy} from "../FileUtil"
+import {ssgCopy} from "../util/file/FileUtil"
 
 export class CopyStep implements SsgStep {
 
+  constructor(protected copies: string[]) {
+  }
+
   async execute(context: SsgContext, config: SsgConfig): Promise<SsgStepResult> {
-    const copies: string[] = config.copies
+    const copies: string[] = this.copies
     const dest = config.outDir
     try {
       console.log("Copying to", dest, copies)

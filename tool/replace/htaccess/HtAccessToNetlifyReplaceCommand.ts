@@ -1,4 +1,4 @@
-import {FileInfo} from "../../FileUtil"
+import {FileInfo} from "../../util/file/FileUtil"
 import {SsgContext} from "../../SsgContext"
 import {ReplaceCommand} from "../ReplaceCommand"
 

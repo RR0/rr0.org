@@ -1,5 +1,5 @@
-import {FileInfo, writeFile} from "./FileUtil"
-import {Ssg, SsgConfig} from "./Ssg"
+import {FileInfo, writeFile} from "./util/file/FileUtil"
+import {ContentsConfig, Ssg, SsgConfig} from "./Ssg"
 import {SsiIncludeReplaceCommand} from "./replace/ssi/SsiIncludeReplaceCommand"
 import {SsiIfReplaceCommand} from "./replace/ssi/SsiIfReplaceCommand"
 import {SsiLastModifiedReplaceCommand} from "./replace/ssi/SsiLastModifiedReplaceCommand"
@@ -51,32 +51,6 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*"
 ]
 const config: SsgConfig = {
-  contents: [
-    {
-      roots: [".htaccess"],
-      replacements: [new HtAccessToNetlifyReplaceCommand()],
-      outputFile(inputFile: FileInfo): FileInfo {
-        return Object.assign({...inputFile}, {name: "_redirects"})
-      }
-    },
-    {
-      roots,
-      replacements: [
-        new SsiIncludeReplaceCommand(),
-        new SsiIfReplaceCommand(),
-        new SsiVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-        new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-        new SsiLastModifiedReplaceCommand(),
-        new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
-        new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())
-        // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
-      ],
-      outputFile(inputFile: FileInfo): FileInfo {
-        return inputFile
-      }
-    }
-  ],
-  copies,
   outDir: "out"
 }
 
@@ -99,11 +73,38 @@ const context = new SsgContext("fr", new TimeContext({
   minute: "2-digit"
 }))
 
+const contentConfigs: ContentsConfig[] = [
+  {
+    roots: [".htaccess"],
+    replacements: [new HtAccessToNetlifyReplaceCommand()],
+    outputFile(inputFile: FileInfo): FileInfo {
+      return Object.assign({...inputFile}, {name: "_redirects"})
+    }
+  },
+  {
+    roots,
+    replacements: [
+      new SsiIncludeReplaceCommand(),
+      new SsiIfReplaceCommand(),
+      new SsiVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+      new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+      new SsiLastModifiedReplaceCommand(),
+      new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
+      new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())
+      // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
+    ],
+    outputFile(inputFile: FileInfo): FileInfo {
+      return inputFile
+    }
+  }
+]
 new Ssg(config)
-  .add(new ContentStep(outputFunc))
-  .add(new DirectoryStep("science/crypto/ufo/enquete/dossier", "science/crypto/ufo/enquete/dossier/index.html",
+  .add(new ContentStep(contentConfigs, outputFunc))
+  .add(new DirectoryStep(
+    "science/crypto/ufo/enquete/dossier",
+    "science/crypto/ufo/enquete/dossier/index.html",
     outputFunc))
-  .add(new CopyStep())
+  .add(new CopyStep(copies))
   .start(context)
-  .then(result => console.log("Wrote", result))
+  .then(result => console.log("Completed", result))
   .catch(err => console.error(err))

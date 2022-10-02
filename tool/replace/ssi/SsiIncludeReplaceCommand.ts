@@ -1,5 +1,5 @@
 import path from "path"
-import {getFileInfo} from "../../FileUtil"
+import {getFileInfo} from "../../util/file/FileUtil"
 import {RegexpReplaceCommand} from "../RegexpReplaceCommand"
 import {SsgReplacer} from "../SsgReplacer"
 import {SsgContext} from "../../SsgContext"

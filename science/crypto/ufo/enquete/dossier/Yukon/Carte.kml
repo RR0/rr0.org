@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Observation du Yukon</name>
+  <description>Le 11 decembre 1996</description>
+  <Style id="marker">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="sighting">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style40">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style75">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style52">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style76">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style100">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style85">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style45">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style63">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style109">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style80">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style21">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style110">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style76">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Départ de FOX2 et FOX3</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style40</styleUrl>
+    <Point>
+      <coordinates>-135.076904,60.718884,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Camping de Fox Lake</name>
+    <description><![CDATA[6 témoins (FOX2-FOX5) vers 20 h 20]]></description>
+    <styleUrl>#style75</styleUrl>
+    <Point>
+      <coordinates>-135.458679,61.244476,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Braeburn Lodge</name>
+    <description><![CDATA[à 34 km du lac Fox, où s'arrêtent FOX1, puis FOX2, FOX3, FOX4, FOX5]]></description>
+    <styleUrl>#style52</styleUrl>
+    <Point>
+      <coordinates>-135.778656,61.480759,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Carmacks</name>
+    <description><![CDATA[CRM5, CRM6, CRM7 et CRM8 observent le phénomène]]></description>
+    <styleUrl>#style76</styleUrl>
+    <Point>
+      <coordinates>-136.287292,62.095772,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>PEL4-5-6-7</name>
+    <description><![CDATA[Observant depuis la balcon d'une salle de classe le phÃ©nomÃ¨ne se dirigeant de l'ouest vers elles, lÃ©gÃ¨rement au nord]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-136.573105,62.824429,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FOX1 observe une lumière</name>
+    <description><![CDATA[vers 20 h en direction de l'extrêmité opposée du lac]]></description>
+    <styleUrl>#style85</styleUrl>
+    <Point>
+      <coordinates>-135.372162,61.158806,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FOX1 voit une zone illuminée légèrement courbe</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style45</styleUrl>
+    <Point>
+      <coordinates>-135.546570,61.299595,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FOX1 croise 2 véhicules se dirigeant vers le sud</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style63</styleUrl>
+    <Point>
+      <coordinates>-135.556870,61.304871,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FOX1 voit 3 rangées de lumières dériver au-dessus d&#39;une colline à l&#39;est</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style15</styleUrl>
+    <Point>
+      <coordinates>-135.570602,61.312782,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FOX1 sort de son véhicule</name>
+    <description><![CDATA[mais ne remarque plus rien d'anormal]]></description>
+    <styleUrl>#style109</styleUrl>
+    <Point>
+      <coordinates>-135.615234,61.324314,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FOX4 et FOX5 remarquent un semi-remorque garé sur le côté</name>
+    <description><![CDATA[et se demandent s'il a aussi remarqué le phénomène]]></description>
+    <styleUrl>#style80</styleUrl>
+    <Point>
+      <coordinates>-135.718231,61.414135,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>CRM1 voit le phénomène pour la 1ère fois</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style21</styleUrl>
+    <Point>
+      <coordinates>-136.278534,62.047127,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>CRM1, CRM2, CRM3 et CRM4 se rangent sur le bas-côté</name>
+    <description><![CDATA[pour observer le phénomène]]></description>
+    <styleUrl>#style110</styleUrl>
+    <Point>
+      <coordinates>-136.287796,62.075115,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Trajectoire possible du phÃ©nomÃ¨ne</name>
+    <styleUrl>#style76</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -136.273727,62.889275,0.000000
+        -137.460938,62.754726,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>PEL1</name>
+    <description><![CDATA[observe le phÃ©nomÃ¨ne au sud-ouest]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-136.435776,62.858906,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>1Ã¨re observation de PEL2 et PEL3</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-136.582031,62.778606,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>ArrÃªt de PEL2 et PEL3</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-136.594391,62.804665,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mayo</name>
+    <description><![CDATA[oÃ¹ le phÃ©nomÃ¨ne fut aussi observÃ© le mÃªme soir]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-135.917358,63.614540,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mayo</name>
+    <description><![CDATA[oÃ¹ le phÃ©nomÃ¨ne fut aussi observÃ© le mÃªme soir]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-135.917358,63.614540,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Piste aÃ©rienne locale</name>
+    <description><![CDATA[oÃ¹ CRM1-4 se rendent pour voir si un appareil a atterri lÃ .]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-136.198196,62.114162,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Watson Lake</name>
+    <description><![CDATA[d'oÃ¹ quelqu'un aurait Ã©galement vu l'ovni du Yukon le 11 dÃ©cembre 1996]]></description>
+    <styleUrl>#sighting</styleUrl>
+    <Point>
+      <coordinates>-128.693848,60.053875,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

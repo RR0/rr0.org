@@ -1,0 +1,34 @@
+import {DirectoryStep} from "./DirectoryStep"
+import {SsgContext} from "../SsgContext"
+import {FileInfo} from "../util/file/FileUtil"
+import {testUtil} from "../test/TestUtil"
+import {SsgConfig} from "../Ssg"
+
+describe("DirectoryStep", () => {
+
+  const config: SsgConfig = {
+    outDir: "out"
+  }
+
+  async function outputFunc(context: SsgContext, info: FileInfo, oudDir = config.outDir + "/"): Promise<void> {
+    info.name = `${oudDir}${info.name}`
+  }
+
+  test("", async () => {
+    const template = `
+<!--#include virtual="/header-start.html" -->
+<title>Dossiers ufologiques</title>
+<!--#include virtual="/header-end.html" -->
+<p>Before</p>
+$\{directories}
+<p>Aftere</p>
+<!--#include virtual="/footer.html" -->`
+    const context = testUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
+    const step = new DirectoryStep(
+      "science/crypto/ufo/enquete/dossier",
+      "science/crypto/ufo/enquete/dossier/index.html",
+      outputFunc)
+    const stepResult = await step.execute(context, config)
+    expect(stepResult.directoryCount).toBe(240)
+  })
+})

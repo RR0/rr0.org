@@ -1,11 +1,28 @@
 import {SsgStep, SsgStepResult} from "./SsgStep"
 import {OutputFunc, SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {camelToText, dirNames, getFileInfo} from "../util/file/FileUtil"
+import {camelToText, dirNames, FileInfo, getFileInfo} from "../util/file/FileUtil"
 import {Html} from "../util/Html"
 
 export interface DirectoryResult extends SsgStepResult {
   directoryCount: number
+}
+
+enum HynekClassification {
+  NL = "NL",
+  DD = "DD",
+  RV = "RV",
+  CE1 = "CE1",
+  CE2 = "CE2",
+  CE3 = "CE3",
+  CE4 = "CE3",
+  CE5 = "CE3"
+}
+
+enum CaseConclusion {
+  unknown = "unknown",
+  misinterpretation = "misinterpretation",
+  hoax = "hoax"
 }
 
 interface Case {
@@ -13,9 +30,15 @@ interface Case {
   url: string
   title: string
   time: string
-  classification: {
-    hynek: string
-  }
+  classification?: {
+    hynek: HynekClassification
+  },
+  conclusion?: CaseConclusion
+}
+
+const cssClasses: Record<string, string> = {
+  hoax: "canular",
+  misinterpretation: "meprise"
 }
 
 export class DirectoryStep implements SsgStep {
@@ -26,11 +49,14 @@ export class DirectoryStep implements SsgStep {
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
     const fileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
     const dirames = await dirNames(this.dir)
+    await this.processDirs(context, dirames, fileInfo)
+    return {directoryCount: dirames.length}
+  }
+
+  private async processDirs(context: SsgContext, dirames: string[], fileInfo: FileInfo) {
     const cases: Case[] = []
     for (const dirName of dirames) {
-      const dirCase: Case = {
-        dirName, classification: {hynek: ""}, time: "", title: "", url: ""
-      }
+      const dirCase: Case = {dirName, time: "", title: "", url: ""}
       cases.push(dirCase)
       try {
         const jsonFileInfo = getFileInfo(context, `${this.dir}/${dirName}/index.json`)
@@ -42,22 +68,36 @@ export class DirectoryStep implements SsgStep {
     }
     const directoriesHtml = Html.element("ul", cases.map(dirCase => {
       dirCase.title = camelToText(dirCase.dirName)
+      const attrs: { [name: string]: string } = {}
+      let titles = []
       const details: string[] = []
-      if (dirCase.classification.hynek) {
-        details.push(dirCase.classification.hynek)
+      const classification = dirCase.classification
+      const hynek = classification?.hynek
+      if (hynek) {
+        const classificationLabels = context.messages.case.classification.hynek[hynek]
+        details.push(classificationLabels.short)
+        titles.push(classificationLabels.long)
       }
-      if (dirCase.time) {
-        details.push(Html.element("time", dirCase.time))
+      const time = dirCase.time
+      if (time) {
+        details.push(Html.element("time", time))
+      }
+      const conclusion = dirCase.conclusion
+      if (conclusion) {
+        attrs.class = cssClasses[conclusion]
+        titles.push(context.messages.case.conclusion[conclusion])
       }
       const text: (string | string[])[] = [dirCase.title]
       if (details.length > 0) {
         text.push(`(${details.join(", ")})`)
       }
       const a = Html.element("a", text.join(" "), {href: dirCase.dirName + "/"})
-      return Html.element("li", a)
+      if (titles.length) {
+        attrs.title = titles.join(", ")
+      }
+      return Html.element("li", a, attrs)
     }).join("\n"))
     fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
     await this.outputFunc(context, fileInfo, "")
-    return {directoryCount: cases.length}
   }
 }

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Carte des observations de l'ovni de Mantell</name>
+  <description>Le 11 decembre 1996</description>
+  <Style id="marker">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+    <Style id="ligne">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Crash de Thomas Mantell</name>
+    <description><![CDATA[A <span class="heure">15:18</span> le 7 janvier 1948, alors qu'il tentait dans son avion de se rapprocher d'un objet volant non-identifié. On expliquera plus tard que l'objet en question était un ballon Skyhook.]]></description>
+    <styleUrl>#style41</styleUrl>
+    <Point>
+      <coordinates>-86.591492,36.703659,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Trajet du ballon Skyhook, selon Charles B. Moore</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style49</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -94.350586,46.286224,0.000000
+        -86.912842,35.884598,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Contact initial avec Fort Knox</name>
+    <description><![CDATA[A 13 h pour signaler qu'un objet est visible, se déplaçant vers le sud-ouest à une vitesse <q>terrifiante</q>]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-87.462158,37.217205,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Base AAF de Godman</name>
+    <description><![CDATA[dont la tour observe l'objet au sud-ouest de <span class="heure">14:00</span> à <span class="heure">16:00</span>]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-85.966728,37.902760,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Observatoire de Moore</name>
+    <description><![CDATA[Au sein de l'Université de Louisville, où l'astronome Walter Lee Moore dirige son télescope vers les coordonnées indiquées par la base de Godman, et voit Vénus.]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-85.505219,38.354042,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bowling Green</name>
+    <description><![CDATA[où le Services de Vol voit l'objet vers <span class="heure">16:00</span>]]></description>
+    <styleUrl>#style56</styleUrl>
+    <Point>
+      <coordinates>-86.451416,36.985001,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Clarksville</name>
+    <description><![CDATA[qui à partir de <span class="heure">14:00</span> voit l'objet approcher du nord, survolant la ville pendant 1 h 30 environ, pour disparaître  derrière des nuages vers <span class="heure">16:00</span>]]></description>
+    <styleUrl>#style117</styleUrl>
+    <Point>
+      <coordinates>-87.297363,36.505219,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Camp Ripley</name>
+    <description><![CDATA[Depuis lequel aurait été lancé le 6 janvier 1946 le ballon Skyhook qui aurait été la méprise poursuivie par Mantell]]></description>
+    <styleUrl>#style79</styleUrl>
+    <Point>
+      <coordinates>-94.394531,46.195042,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Columbia</name>
+    <description><![CDATA[L'objet est vu au nord vers <span class="heure">16:00</span>]]></description>
+    <styleUrl>#style123</styleUrl>
+    <Point>
+      <coordinates>-87.035065,35.617115,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Nashville</name>
+    <description><![CDATA[L'astronome L. Rawls voit l'objet avec un grossissement x100, certain qu'il s'agit d'un ballon.
+L'astronome Carl Seyfert voit un ballon dont l'altitude est estimée à 25 000 pieds, se déplaçant d'abord au sud-sud-est puis vers l'ouest à 10 miles/h.
+L'astronome amateur Latimer Wilson voit un "ballon de verre" Ã  la forme "d'ampoule"]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-86.802979,36.109035,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Les avions de chasse suspendent leur trajet</name>
+    <description><![CDATA[Orbitant autour du Dale Hollow Reservoir, à mi-chemin de Louisville. Ils ne remarquent pas d'objet à ce moment.]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-85.463333,36.541088,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Vol de Mantell</name>
+    <description><![CDATA[accompagné un moment de son escadrille]]></description>
+    <styleUrl>#style113</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -86.594238,36.738884,0.000000
+        -85.966728,37.902760,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Vol d&#39;avions de chasse</name>
+    <description><![CDATA[Le 7 janvier 1948]]></description>
+    <styleUrl>#style23</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -84.792480,34.061760,0.000000
+        -85.468140,36.571423,0.000000
+        -85.966728,37.902760,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

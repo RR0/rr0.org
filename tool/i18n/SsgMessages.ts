@@ -37,5 +37,48 @@ export interface SsgMessages {
       approximate(title: string): string
     }
   }
+  case: {
+    classification: {
+      hynek: {
+        NL: {
+          short: string
+          long: string
+        }
+        DD: {
+          short: string
+          long: string
+        }
+        RV: {
+          short: string
+          long: string
+        }
+        CE1: {
+          short: string
+          long: string
+        }
+        CE2: {
+          short: string
+          long: string
+        }
+        CE3: {
+          short: string
+          long: string
+        }
+        CE4: {
+          short: string
+          long: string
+        }
+        CE5: {
+          short: string
+          long: string
+        }
+      }
+    },
+    conclusion: {
+      unknown: string,
+      misinterpretation: string,
+      hoax: string
+    }
+  }
 }
 

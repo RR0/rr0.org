@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Cartes des observations de Rendlesham-Lakenheath</name>
+  <description>Le 13 aout 1956</description>
+  <Style id="event">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="path">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Echo radar non identifie detecte a 21:30</name>
+    <description><![CDATA[le 14 aout 1956]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        1.032715,52.210972,0.000000
+        2.120361,51.866318,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>12 a 15 echos radar non identifies detecte a 21:35</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        1.304626,52.024193,0.000000
+        2.103882,52.526249,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Un autre echo radar non-identifie detecte a 22:00</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.796509,52.087944,0.000000
+        2.153320,52.093849,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Autre echo radar non identifie detecte a 22:55</name>
+    <description><![CDATA[Apparemment identique a l'echo de 22:00, a l'exception du point de disparition]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        2.158813,52.093006,0.000000
+        0.626221,52.089634,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Echo radar non identifie</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.162735,52.212444,0.000000
+        0.274658,52.680546,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cible radar et lumiere blanche</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#path</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.230713,52.422523,0.000000
+        0.590515,52.418755,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Point approximatif d&#39;interception</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>0.227966,52.242096,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>1er mouvement ici (heure inconnue)</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>0.273285,52.677216,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Poste RAF de Waterbeach</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>0.179214,52.280659,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stationnaire 3-5 mn</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>2.101135,52.524578,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stationnaire 10-15 mn</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>2.021484,52.472744,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ovni no. 5 de Lakenheath repere ici pour la 1ere fois a 00:10</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#event</styleUrl>
+    <Point>
+      <coordinates>0.162048,52.209290,0.000000</coordinates>
+    </Point>
+  </Placemark></Document>
+</kml>

@@ -33,4 +33,47 @@ export class SsgMessages_en implements SsgMessages {
       fromTo: (startReplacement: string, endReplacement: string): string => startReplacement + " to " + endReplacement
     }
   }
+  case = {
+    classification: {
+      hynek: {
+        NL: {
+          short: "NL",
+          long: "Noctunal Light"
+        },
+        DD: {
+          short: "DD",
+          long: "Daylight Disc"
+        },
+        RV: {
+          short: "RV",
+          long: "Radar Visual"
+        },
+        CE1: {
+          short: "CE1",
+          long: "Close Encounter of the 1st kind"
+        },
+        CE2: {
+          short: "CE2",
+          long: "Close Encounter of the 2d kind"
+        },
+        CE3: {
+          short: "CE3",
+          long: "Close Encounter of the 3rd kind"
+        },
+        CE4: {
+          short: "CE4",
+          long: "Close Encounter of the 4th kind"
+        },
+        CE5: {
+          short: "CE5",
+          long: "Close Encounter of the 5th kind"
+        }
+      }
+    },
+    conclusion: {
+      unknown: "unexplained",
+      misinterpretation: "misinterpretation",
+      hoax: "hoax"
+    }
+  }
 }

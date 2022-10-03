@@ -9,16 +9,27 @@
   function findCase(e) {
     const value = e.target.value.toLowerCase()
     const list = document.querySelector("#caseText + ul")
+    let found = 0
     for (const child of list.children) {
-      child.style.display = child.textContent.toLowerCase().indexOf(value) >= 0 ? "list-item" : "none"
+      if (child.textContent.toLowerCase().indexOf(value) >= 0) {
+        child.style.display = "list-item"
+        found++
+      } else {
+        child.style.display = "none"
+      }
     }
+    const output = document.querySelector("#caseText output")
+    output.textContent = `(${found} cas)`
   }
 </script>
 <style>#caseText + ul {
   column-width: 14em;
 }</style>
-<p id="caseText"><label>Nom, date, classification <input oninput="findCase(event)"></label></p>
+<p id="caseText"><label>Nom, date, classification <input oninput="findCase(event)" type="search"></label>
+  <output></output>
+</p>
 ${directories}
+<script>document.querySelector("#caseText input").dispatchEvent(new Event("input"))</script>
 <section>
   <h2>Conspiration</h2>
   <table>

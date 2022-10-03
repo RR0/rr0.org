@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Roswell</name>
+  <description><![CDATA[Exemples de témoignages de la vague belge]]></description>
+  <Style id="style41">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style44">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style154">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style28">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/green-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style141">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/yellow-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style143">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/micons/purple-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>29 novembre 1989 entre 17:00 et 17:30</name>
+    <description><![CDATA[<div dir="ltr">Gendarmes apperçoivent à travers les vitres de l'aubette un objet qui vole à très basse altitude, avec 2 ou 3 phares excessivement lumineux</div>]]></description>
+    <styleUrl>#style45</styleUrl>
+    <Point>
+      <coordinates>6.125822,50.720917,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 17:13</name>
+    <description><![CDATA[<div dir="ltr">un témoin exerçant une fonction officielle voit un objet volant, doté de phares très puissants</div>]]></description>
+    <styleUrl>#style127</styleUrl>
+    <Point>
+      <coordinates>6.050377,50.651203,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 17:15-17:17</name>
+    <description><![CDATA[<div dir="ltr">M. D., directeur d'école, range sa voiture chez lui quant il voit dans le ciel un objet qui se déplace lentement, avec de puissants phares</div>]]></description>
+    <styleUrl>#style37</styleUrl>
+    <Point>
+      <coordinates>6.057243,50.628994,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 17:20</name>
+    <description><![CDATA[<div dir="ltr">Le conducteur de la voiture, v. M., s'étonne alors de la présence d'une tache de lumière très intense à droite de la route</div>]]></description>
+    <styleUrl>#style193</styleUrl>
+    <Point>
+      <coordinates>6.055956,50.656319,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 17:30</name>
+    <description><![CDATA[<div dir="ltr">M. G. voit arriver un objet volant doté de 3 gros phares brillants disposés en triangle qui passe silencieusement à 200 ou 300 m de lui</div>]]></description>
+    <styleUrl>#style49</styleUrl>
+    <Point>
+      <coordinates>6.051664,50.631279,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 18:00</name>
+    <description><![CDATA[<div dir="ltr">monsieur K., un technicien de centrale électrique regarde par hasard dans la direction de Ans et Bierset. Il note alors la présence d'un énorme triangle à large base et coins arrondis. Il porte 3 phares blancs, très lumineux, situés près des coins et un clignotant rouge au centre. Il est parfaitement immobile.</div>]]></description>
+    <styleUrl>#style58</styleUrl>
+    <Point>
+      <coordinates>5.546122,50.675358,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 18:00</name>
+    <description><![CDATA[<div dir="ltr">Le médecin M. et son épouse observent également dans le ciel 3 points lumineux immobiles. Le témoin se trouve à ce moment à Alleur, près de l'échangeur de Loncin. Il gare son véhicule sur le côté de la chaussée, à un endroit dégagé. Ayant baissé la vitre, il n'entend qu'un léger bruit, sourd et continu, venant de l'objet. Les témoins ne voient pas le corps de l'objet, mais 3 grands phares, situés presque sur une même ligne horizontale, à environ 150 m du sol. L'objet s'est éloigné vers le Nord-Est. Mme L. se trouve également à Alleur</div>]]></description>
+    <styleUrl>#style71</styleUrl>
+    <Point>
+      <coordinates>5.503893,50.672150,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 18:40</name>
+    <description><![CDATA[<div dir="ltr">Monsieur H. (ingénieur en construction aéronautique et PDG d'une société) roule à vive allure sur la bande de dépassement, près de l'aérodrome de Bierset. Un objet volant, très éclairé, apparaÃ®t alors subitement devant lui, à environ 200 m du sol. A cause de la proximité de la base militaire de Bierset, il pense immédiatement que c'est un avion, muni de phares d'atterissage et se trompant de piste</div>]]></description>
+    <styleUrl>#style69</styleUrl>
+    <Point>
+      <coordinates>5.452309,50.635090,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 18:50</name>
+    <description><![CDATA[<div dir="ltr">Mme B. entend un ronronnement doux comme pourrait le faire un moteur électrique, alors qu'elle promène son chien en terrain dégagé. Regardant vers le ciel, elle y découvre une chose indéfinissable qui vole tellement bas qu'elle pense qu'elle va heurter le toit d'une maison, dont la hauteur est à 25-30 m. La vitesse n'est que d'environ 20 km/h</div>]]></description>
+    <styleUrl>#style150</styleUrl>
+    <Point>
+      <coordinates>5.516510,50.662521,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>29 novembre 1989, 19:10</name>
+    <description><![CDATA[<div dir="ltr">La famille S. roule vers l'échangeur de Loncin, pour rejoindre la E40. Mme S. occupe le siège avant, à côté de son mari, qui est enseignant. Les 2 enfants sont assis sur la banquette arrière. A 1 km de la jonction autoroutière, fortement éclairée, Mme S. remarque sur sa droite un engin encore plus éclairé, relativement plat. Il se rapproche lentement, à une altitude tellement basse qu'elle pense d'abord à un véhicule sur le pont. L'ayant signalé aux autres, ils voient qu'il n'y a pas de pont. </div>]]></description>
+    <styleUrl>#style41</styleUrl>
+    <Point>
+      <coordinates>5.548782,50.649895,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>2 décembre 1989</name>
+    <description><![CDATA[<div dir="ltr">6 personnes voient un objet immobile pendant 10 mn</div>]]></description>
+    <styleUrl>#style44</styleUrl>
+    <Point>
+      <coordinates>5.694351,50.571026,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>2 décembre 1989</name>
+    <description><![CDATA[<div dir="ltr">2 témoins voient un objet de la taille d'un terrain de football qui reste immobile pendant 5 mn</div>]]></description>
+    <styleUrl>#style154</styleUrl>
+    <Point>
+      <coordinates>4.667473,50.466026,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>21 décembre 1989</name>
+    <description><![CDATA[<div dir="ltr">5 personnes contemplent 1 objet qui reste immobile pendant 7 à 8 mn</div>]]></description>
+    <styleUrl>#style28</styleUrl>
+    <Point>
+      <coordinates>3.647633,50.526089,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>7 février 1990</name>
+    <description><![CDATA[<div dir="ltr">2 automobilistes circulent sur une petite route forestière quand ils sont survolés silencieusement par une structure de 25 m sur 15 m environ. L'objet est très proche, si proche que les témoins raconteront que si 3 personnes étaient montées sur le toit de la voiture et se faisant la courte échelle, elles auraient pu toucher l'objet. Celui-ci se déplace si lentement que le conducteur doit freiner et mettre au point mort pour ne pas le dépasser (moins de 10 km/h)</div>]]></description>
+    <styleUrl>#style141</styleUrl>
+    <Point>
+      <coordinates>5.238419,50.664303,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>30 mars 1990, 22:50</name>
+    <description><![CDATA[<div dir="ltr">Monsieur A. Renkin, Maréchal des Logis à la gendarmerie, qui affirme voir 3 lumières inhabituelles en direction de Thorembais-Gembloux, dans un coup de téléphone au responsable (MC) pour le CRC (Control Reporting Center). Ces lumières sont manifestement plus intenses que les étoiles et les planètes. De plus, elles ne bougent pas et sont situées aux extremités d'un triangle équilatéral. Leur couleur est changeante : rouge, verte et jaune</div>]]></description>
+    <styleUrl>#style143</styleUrl>
+    <Point>
+      <coordinates>4.888058,50.649460,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

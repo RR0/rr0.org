@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>Plan des lieux de l'observation avec la direction de départ de l'ovni</title>
+  <script
+      src="https://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAA0F5PCNh_gr_7qvmBnnCc9hSCXz57HFqdqHYuG1R39Ganzi6F4BQK_8aWqWKccr2UIE_VQlwSTihjjw"
+      type="text/javascript"></script>
+  <style type="text/css">
+    v\: * {
+      behavior: url(#default#VML);
+    }
+  </style>
+  <script type="text/javascript">
+
+    function onLoad() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"))
+        map.setCenter(new GLatLng(44.98180, 2.918000), 16, G_HYBRID_MAP)
+        var geoXml = new GGeoXml("https://rr0.org/science/crypto/ufo/enquete/dossier/Cussac/Plan.kml")
+        map.addControl(new GLargeMapControl())
+        map.addOverlay(geoXml)
+      }
+    }
+  </script>
+</head>
+<body onLoad="onLoad()" onUnload="GUnload()">
+<div id="map" style="width: 664px; height: 363px;"><span class="leftImage"
+    style="width: 664px; height: 363px; float:left">Plan des lieux de l'observation avec la direction de départ de l'ovni</span>
+</div>
+</body>
+</html>

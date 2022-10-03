@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Lieu de l'observation de Cussac</name>
+  <description><![CDATA[Où les enfants ont vu l'ovni et leurs occupants le 29 août 1967]]></description>
+  <Style id="style18">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Enfants témoins</name>
+    <description><![CDATA[derrière le muret]]></description>
+    <styleUrl>#style18</styleUrl>
+    <Point>
+      <coordinates>2.917384,44.981270,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>L&#39;ovni de Cussac</name>
+    <description><![CDATA[sorte de boule lumineuse derrière la haie d'arbres, où remontent plusieurs petits "bonhommes noirs". ]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>2.915989,44.981449,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Agriculteur sur son tracteur</name>
+    <description><![CDATA[rencontrant les enfants témoins.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>2.918158,44.981419,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

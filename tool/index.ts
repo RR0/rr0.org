@@ -101,7 +101,17 @@ const contentConfigs: ContentsConfig[] = [
 new Ssg(config)
   .add(new ContentStep(contentConfigs, outputFunc))
   .add(new DirectoryStep(
-    ["science/crypto/ufo/enquete/dossier/*/", "time/1/6/0/8/Signes/"],
+    [
+      "science/crypto/ufo/enquete/dossier/*/",
+      "time/1/6/0/8/Signes/",
+      "science/crypto/ufo/enquete/dossier/Ummo/Aluche",
+      "science/crypto/ufo/enquete/dossier/Ummo/SanJoseDeValderas",
+      "science/crypto/ufo/observation/projet/Hessdalen",
+      "people/a/AndreassonBetty",
+      "people/c/CrowhusrtDonald",
+      "people/v/ValentichFrederik",
+      "people/n/NapolitanoLinda"
+    ],
     "science/crypto/ufo/enquete/dossier/index.html",
     outputFunc))
   .add(new CopyStep(copies))

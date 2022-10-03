@@ -67,7 +67,7 @@ export class DirectoryStep implements SsgStep {
       }
     }
     const directoriesHtml = Html.element("ul", cases.map(dirCase => {
-      dirCase.title = camelToText(dirCase.dirName)
+      dirCase.title = dirCase.title || camelToText(dirCase.dirName)
       const attrs: { [name: string]: string } = {}
       let titles = []
       const details: string[] = []

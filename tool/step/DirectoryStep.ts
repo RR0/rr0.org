@@ -27,7 +27,6 @@ enum CaseConclusion {
 
 interface Case {
   dirName: string
-  url: string
   title: string
   time: string
   classification?: {
@@ -43,12 +42,22 @@ const cssClasses: Record<string, string> = {
 
 export class DirectoryStep implements SsgStep {
 
-  constructor(protected dir: string, protected template: string, protected outputFunc: OutputFunc) {
+  constructor(protected dirs: string[], protected template: string, protected outputFunc: OutputFunc) {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
     const fileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
-    const dirames = await dirNames(this.dir)
+    let dirames: string[] = []
+    for (let dir of this.dirs) {
+      let d: string[]
+      if (dir.endsWith("/*/")) {
+        const baseDir = dir.substring(0, dir.length - 3)
+        d = (await dirNames(baseDir)).map(x => baseDir + "/" + x)
+      } else {
+        d = [dir]
+      }
+      dirames = dirames.concat(d)
+    }
     await this.processDirs(context, dirames, fileInfo)
     return {directoryCount: dirames.length}
   }
@@ -56,10 +65,10 @@ export class DirectoryStep implements SsgStep {
   private async processDirs(context: SsgContext, dirames: string[], fileInfo: FileInfo) {
     const cases: Case[] = []
     for (const dirName of dirames) {
-      const dirCase: Case = {dirName, time: "", title: "", url: ""}
+      const dirCase: Case = {dirName, time: "", title: ""}
       cases.push(dirCase)
       try {
-        const jsonFileInfo = getFileInfo(context, `${this.dir}/${dirName}/index.json`)
+        const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
         Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
         console.warn(e)
@@ -67,7 +76,11 @@ export class DirectoryStep implements SsgStep {
       }
     }
     const directoriesHtml = Html.element("ul", cases.map(dirCase => {
-      dirCase.title = dirCase.title || camelToText(dirCase.dirName)
+      if (!dirCase.title) {
+        const lastSlash = dirCase.dirName.lastIndexOf("/")
+        const lastDir = dirCase.dirName.substring(lastSlash + 1)
+        dirCase.title = camelToText(lastDir)
+      }
       const attrs: { [name: string]: string } = {}
       let titles = []
       const details: string[] = []
@@ -91,7 +104,7 @@ export class DirectoryStep implements SsgStep {
       if (details.length > 0) {
         text.push(`(${details.join(", ")})`)
       }
-      const a = Html.element("a", text.join(" "), {href: dirCase.dirName + "/"})
+      const a = Html.element("a", text.join(" "), {href: "/" + dirCase.dirName + "/"})
       if (titles.length) {
         attrs.title = titles.join(", ")
       }

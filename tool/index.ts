@@ -108,7 +108,7 @@ new Ssg(config)
       "science/crypto/ufo/enquete/dossier/Ummo/SanJoseDeValderas",
       "science/crypto/ufo/observation/projet/Hessdalen",
       "people/a/AndreassonBetty",
-      "people/c/CrowhusrtDonald",
+      "people/c/CrowhurstDonald",
       "people/v/ValentichFrederik",
       "people/n/NapolitanoLinda"
     ],

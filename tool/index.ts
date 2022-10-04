@@ -108,10 +108,11 @@ new Ssg(config)
       "science/crypto/ufo/enquete/dossier/Ummo/SanJoseDeValderas",
       "science/crypto/ufo/observation/projet/Hessdalen",
       "people/a/AndreassonBetty",
-      "people/c/CrowhurstDonald",
+      "people/c/CrowhurstDonaldC",
       "people/v/ValentichFrederik",
       "people/n/NapolitanoLinda"
     ],
+    ["science/crypto/ufo/enquete/dossier/canular"],
     "science/crypto/ufo/enquete/dossier/index.html",
     outputFunc))
   .add(new CopyStep(copies))

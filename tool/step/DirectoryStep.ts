@@ -42,7 +42,7 @@ const cssClasses: Record<string, string> = {
 
 export class DirectoryStep implements SsgStep {
 
-  constructor(protected dirs: string[], protected template: string, protected outputFunc: OutputFunc) {
+  constructor(protected dirs: string[], protected excludedDirs: string[], protected template: string, protected outputFunc: OutputFunc) {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
@@ -65,14 +65,16 @@ export class DirectoryStep implements SsgStep {
   private async processDirs(context: SsgContext, dirames: string[], fileInfo: FileInfo) {
     const cases: Case[] = []
     for (const dirName of dirames) {
-      const dirCase: Case = {dirName, time: "", title: ""}
-      cases.push(dirCase)
-      try {
-        const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
-        Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
-      } catch (e) {
-        console.warn(e)
-        // No json, just guess title.
+      if (!this.excludedDirs.includes(dirName)) {
+        const dirCase: Case = {dirName, time: "", title: ""}
+        cases.push(dirCase)
+        try {
+          const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
+          Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
+        } catch (e) {
+          console.warn(e)
+          // No json, just guess title.
+        }
       }
     }
     const directoriesHtml = Html.element("ul", cases.map(dirCase => {

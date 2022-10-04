@@ -1,0 +1,56 @@
+<!--#include virtual="/header-start.html" -->
+<title>Ada</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un équivalent industriel de <a href="../index.html">langage</a> comme <a
+      href="/tech/info/soft/proj/impl/lang/pascal">Pascal</a> ou Delphi.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Ada est un langage de <a href="../../index.html">programmation</a> <a href="../oo/index.html">OO</a> généraliste.
+  </p>
+  <p>Il supporte :</p>
+  <ul>
+    <li>les accès concurrents</li>
+    <li>les <a href="../Exception.html">exceptions</a></li>
+    <li>les templates génériques</li>
+    <li>l'exécution distribuée</li>
+  </ul>
+  <p>Il propose également des interfaces standardisées vers d'autres langages de programmation et librairies. </p>
+  <p>La syntaxe de Ada est inspirée de <a href="/tech/info/soft/proj/impl/lang/pascal">Pascal</a> et Modula.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de code source Ada est :</p>
+  <blockquote><code><strong>with</strong></code><strong><code> </code></strong><code>Text_IO<strong>;<br> with </strong>Display<strong>;<br>
+    with </strong>Fact<strong>; <br> <br> function </strong>Get_Bits (X : Bit_Array; P : Bit; N : Offset)
+    <strong>return </strong>Bit_Array <strong>is</strong><br> <strong>begin</strong><br> return X (P &#8211; N + 1 ..
+    P);<br> <strong>end </strong>Get_Bits;<br> <br> <strong> procedure Main is</strong><br> Length : Integer :=
+    8265;<br> Width : Integer := 0252;<br> Height : Integer := 8292;<br> <strong>begin</strong><br> Text_IO.Put_Line
+    (Length'img);<br> Text_IO.Put_Line (Width'img);<br> Text_IO.Put_Line (Height'img);<br> <br> <strong>for </strong>K
+    <strong>in </strong>1 .. 4 <strong>loop</strong><br> Display (<span class="codeString">"Factorial"</span>, K, Fact
+    (K));<br> <strong>end loop</strong>;<br> <strong>end Main</strong>;</code></blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Du nom de la comtesse Augusta Ada Byron, 1ère à "programmer" la machine analytique de Charles Babbage.</li>
+    <li>Développé en France en <time>1979</time> par une équipe de CII-Honeywell-Bull, sous la direction de Jean
+      Ichbiah. </li>
+    <li>Première version en <time>1983</time>, basée sur des objets mais pas <a href="../oo/index.html">OO</a>. </li>
+    <li>Révisé en <time>1995</time> pour être <a href="../oo/index.html">OO</a>.</li>
+    <li>Premier langage <a href="../oo/index.html">OO</a> normalisé par l'<a href="/org/int/asso/iso/index.html">ISO</a>.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="https://libre.act-europe.fr/"><em>ACT Europe - The european GNAT company</em></a><em> </em>-
+      Compilateur <a href="../../../../../../../org/us/asso/fsf/gnu">GNU</a> Ada 95, outils pour Ada, y compris orientés
+      <a href="/tech/info/soft/proj/method/XP.html">XP</a></li>
+    <li><em>Programming in Ada 95</em>, par John Barnes (Addison Wesley)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

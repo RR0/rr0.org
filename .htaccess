@@ -85,7 +85,7 @@ Redirect /LittleGreenMen.html https://rr0.org/science/crypto/ufo/LittleGreenMen.
 Redirect /SETV.html https://rr0.org/science/crypto/ufo/observation/projet/SETV.html
 Redirect /science/crypto/ufo/observation/projet/Magnet.html https://rr0.org/org/ca/dot/projet/Magnet.html
 Redirect /Sondages.html https://rr0.org/science/crypto/ufo/observation/Sondages.html
-Redirect /science/crypto/ufo/detection/scenario/MIB.html https://rr0.org/science/crypto/ufo/observation/etre/mib/
+Redirect /science/crypto/ufo/observation/scenario/MIB.html https://rr0.org/science/crypto/ufo/observation/etre/mib/
 Redirect /MIB.html https://rr0.org/science/crypto/ufo/observation/etre/mib/
 Redirect /science/crypto/ufologie/observation/scenario/MIB.html https://rr0.org/science/crypto/ufo/observation/scenario/mib/
 Redirect /Gris.html https://www.rr0.org/science/crypto/ufo/observation/etre/gris
@@ -149,7 +149,7 @@ Redirect /Photo.html https://rr0.org/science/crypto/ufo/enquete/indice/photo
 Redirect /Radar.html https://rr0.org/science/crypto/ufo/enquete/indice/radar
 Redirect /science/crypto/ufo/enquete/indice/temoignage https://rr0.org/science/crypto/ufo/enquete/indice/temoignage
 Redirect /Absurde.html https://rr0.org/science/crypto/ufo/analyse/absurde
-Redirect /science/crypto/ufo/analyse/Absurde.html https://rr0.org/science/crypto/ufo/analyse/absurde
+Redirect /science/crypto/ufo/analyse/absurde https://rr0.org/science/crypto/ufo/analyse/absurde
 Redirect /science/crypto/ufo/enquete/analyse https://rr0.org/science/crypto/ufo/analyse
 Redirect /Presse.html https://rr0.org/science/crypto/ufo/observation/media/presse
 Redirect /science/crypto/ufo/observation/presse https://rr0.org/science/crypto/ufo/observation/media/presse
@@ -796,7 +796,7 @@ Redirect /lieu/systeme/solaire/planete/venus/Venus.html https://rr0.org/place/sy
 Redirect /Nibiru.html https://rr0.org/place/systeme/solaire/planete/Nibiru.html
 Redirect /USA.html https://rr0.org/org/us
 Redirect /SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
-Redirect /detection/projet/SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
+Redirect /observation/projet/SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti
 Redirect /SETI-RMW.html https://www.rr0.org/science/crypto/ufo/observation/projet/seti/rmw
 Redirect /Apollo11.html https://rr0.org/org/us/nasa/projet/apollo/11
 Redirect /org/us/nasa/apollo/14 https://rr0.org/org/us/nasa/projet/apollo/14
@@ -891,12 +891,12 @@ Redirect /science/crypto/ufo/analyse/hypotheses/intelligence/HET/ETPoilus.html h
 Redirect /Dossier https://rr0.org/science/crypto/ufo/enquete/dossier
 Redirect /chronoset.html https://rr0.org/time
 Redirect /annees.html https://rr0.org/time
-Redirect /detection/ https://rr0.org/science/crypto/ufo/observation/
+Redirect /observation/ https://rr0.org/science/crypto/ufo/observation/
 Redirect /enquete/ https://rr0.org/science/crypto/ufo/enquete/
 Redirect /ufologie/ https://rr0.org/science/crypto/ufo/
 Redirect /ufologues.html https://rr0.org/people/ufologues.html
-Redirect /science/crypto/ufo/detection/ https://rr0.org/science/crypto/ufo/observation/
-Redirect /science/crypto/ufologie/detection/ https://rr0.org/science/crypto/ufo/observation
+Redirect /science/crypto/ufo/observation/ https://rr0.org/science/crypto/ufo/observation/
+Redirect /science/crypto/ufologie/observation/ https://rr0.org/science/crypto/ufo/observation
 Redirect /FlyingSaucers.html https://rr0.org/science/crypto/ufo/FlyingSaucers.html
 Redirect /org/eu/fr/association https://rr0.org/org/eu/fr/asso
 Redirect /FR.html https://rr0.org/org/eu/fr

@@ -1450,6 +1450,11 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     color-scheme: dark;
   }
 
+  .document-author {
+    color: gray;
+    background: linear-gradient(135deg, #555555 0, rgba(255, 255, 255, 0) 79%)
+  }
+
   .contents {
     background: black;
     color: whitesmoke;

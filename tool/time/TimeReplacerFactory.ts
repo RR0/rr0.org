@@ -1,5 +1,5 @@
-import {ReplacerFactory} from "../replace/ReplacerFactory"
-import {SsgReplacer} from "../replace/SsgReplacer"
+import {ReplacerFactory} from "../step/content/replace/ReplacerFactory"
+import {SsgReplacer} from "../step/content/replace/SsgReplacer"
 import {SsgContext} from "../SsgContext"
 import {TimeReplacer} from "./TimeReplacer"
 import {promise as glob} from "glob-promise"

@@ -1,4 +1,4 @@
-import {SsgContext} from "../SsgContext"
+import {SsgContext, SsgContextImpl} from "../SsgContext"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {TimeContext} from "./TimeContext"
 
@@ -9,7 +9,7 @@ export class RelativeTimeTextBuilder {
     if (!previousTime.isDefined()) {
       return TimeTextBuilder.build(newContext)
     }
-    const deltaContext = new SsgContext(oldContext.locales, new TimeContext({...oldContext.time.options}))
+    const deltaContext = new SsgContextImpl(oldContext.locales, new TimeContext({...oldContext.time.options}))
     const deltaTime = deltaContext.time
     let dayOfMonthDelta: number | undefined
     let yearDelta: number | undefined

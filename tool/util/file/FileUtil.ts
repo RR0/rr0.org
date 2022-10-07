@@ -1,21 +1,13 @@
 import * as fs from "fs"
 import {promises as fsAsync} from "fs"
-import {HTMLElement, parse} from "node-html-parser"
+import {HTMLElement} from "node-html-parser"
 import detectCharacterEncoding from "detect-character-encoding"
 import path from "path"
 import * as util from "util"
-import {SsgContext} from "../../SsgContext"
 import {readdir} from "fs/promises"
+import {FileInfo} from "./FileInfo"
 
 const globCopy = util.promisify(require("copy"))
-
-export type FileInfo = {
-  name: string
-  encoding: BufferEncoding
-  contents: string
-  lastModified: Date
-  lang: string | string[]
-}
 
 export function toBufferEncoding(encoding: string | undefined): BufferEncoding | undefined {
   switch (encoding?.toLowerCase()) {
@@ -72,33 +64,6 @@ export function camelToText(camel: string): string {
     .replace(/([A-Z]+)/g, " $1")
     .replace(/([0-9]+)/g, " $1")
   return (text.charAt(0).toUpperCase() + text.slice(1)).trim()
-}
-
-export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
-  const fileStats = fs.statSync(fileName)
-  const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
-  const html = parse(initialContents, {comment: true})
-  const declaredEncoding = getCharSet(html) || getContentType(html)
-  const detectedEncoding = detectEncoding(fileName)
-  const encoding = declaredEncoding || detectedEncoding || "utf-8"
-  const contents = fs.readFileSync(fileName, {encoding})
-  const lang = getFileLang(context, fileName)
-  return {name: fileName, encoding, contents, lastModified: fileStats.mtime, lang}
-}
-
-function getFileLang(context: SsgContext, filePath: string): string | string[] {
-  let lang = context.locales
-  const lastDot = filePath.lastIndexOf(".")
-  let lastSlash = filePath.lastIndexOf("/")
-  if (lastSlash < 0 || lastSlash < lastDot) {
-    lastSlash = lastSlash < 0 ? 0 : lastSlash
-    const fileName = filePath.substring(lastSlash, lastDot)
-    const variantPos = fileName.lastIndexOf("_")
-    if (variantPos > 0) {
-      lang = [fileName.substring(variantPos + 1)]
-    }
-  }
-  return lang
 }
 
 export async function dirNames(dir: string): Promise<string[]> {

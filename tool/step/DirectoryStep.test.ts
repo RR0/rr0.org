@@ -1,8 +1,8 @@
 import {DirectoryStep} from "./DirectoryStep"
 import {SsgContext} from "../SsgContext"
-import {FileInfo} from "../util/file/FileUtil"
 import {testUtil} from "../test/TestUtil"
 import {SsgConfig} from "../Ssg"
+import {FileInfo} from "../util/file/FileInfo"
 
 describe("DirectoryStep", () => {
 
@@ -25,10 +25,11 @@ $\{directories}
 <!--#include virtual="/footer.html" -->`
     const context = testUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
     const step = new DirectoryStep(
-      "science/crypto/ufo/enquete/dossier",
+      ["science/crypto/ufo/enquete/dossier/*/"],
+      [],
       "science/crypto/ufo/enquete/dossier/index.html",
       outputFunc)
     const stepResult = await step.execute(context, config)
-    expect(stepResult.directoryCount).toBe(240)
+    expect(stepResult.directoryCount).toBe(239)
   })
 })

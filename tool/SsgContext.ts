@@ -1,9 +1,20 @@
 import {TimeContext} from "./time/TimeContext"
 import {SsgMessages} from "./i18n/SsgMessages"
 import {ssgMessages} from "./i18n"
-import {FileInfo} from "./util/file/FileUtil"
+import {FileInfo} from "./util/file/FileInfo"
 
-export class SsgContext {
+export interface SsgContext {
+  messages: SsgMessages
+  log: () => void
+  debug: { (message?: any, ...optionalParams: any[]): void; (...data: any[]): void }
+  currentFile?: FileInfo
+  readonly locales: string | string[]
+  readonly time: TimeContext
+
+  clone(): SsgContext
+}
+
+export class SsgContextImpl implements SsgContext {
 
   readonly messages: SsgMessages
   readonly log = process.env.LOG_LEVEL === "none" ? () => {
@@ -17,6 +28,6 @@ export class SsgContext {
   }
 
   clone(): SsgContext {
-    return new SsgContext(this.locales, this.time.clone())
+    return new SsgContextImpl(this.locales, this.time.clone())
   }
 }

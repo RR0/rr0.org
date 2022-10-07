@@ -177,7 +177,7 @@ describe("TimeReplacer", () => {
   })
 
   test("avoids linking to current file", () => {
-    const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
+    const context = testUtil.newContext("time/1/9/9/0/08/index.html", "")
     const replacer = new TimeReplacer(["time/1/9/9/0/08"])
     expect(replacer.replacement(context, "<time>1990-08-02</time>", "1990-08-02"))
       .toBe(`<span class="time">jeudi 2 août 1990</span>`)

@@ -1,5 +1,5 @@
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
-import {SsgContext} from "../SsgContext"
+import {SsgContextImpl} from "../SsgContext"
 import {TimeContext} from "./TimeContext"
 
 describe("TimeUrlBuilder", () => {
@@ -15,13 +15,13 @@ describe("TimeUrlBuilder", () => {
 
   test("builds year", () => {
     {
-      const context = new SsgContext("fr", new TimeContext(intlOptions))
+      const context = new SsgContextImpl("fr", new TimeContext(intlOptions))
       context.time.year = 2008
       const url = TimeUrlBuilder.build(context)
       expect(url).toEqual("time/2/0/0/8")
     }
     {
-      const context = new SsgContext("fr", new TimeContext(intlOptions))
+      const context = new SsgContextImpl("fr", new TimeContext(intlOptions))
       context.time.year = 2012
       context.time.month = 8
       context.time.dayOfMonth = 12
@@ -33,14 +33,14 @@ describe("TimeUrlBuilder", () => {
 
   test("builds month", () => {
     {
-      const context = new SsgContext("fr", new TimeContext(intlOptions))
+      const context = new SsgContextImpl("fr", new TimeContext(intlOptions))
       context.time.year = 2001
       context.time.month = 9
       const url = TimeUrlBuilder.build(context)
       expect(url).toBe("time/2/0/0/1/09")
     }
     {
-      const context = new SsgContext("fr", new TimeContext(intlOptions))
+      const context = new SsgContextImpl("fr", new TimeContext(intlOptions))
       context.time.year = 2012
       context.time.month = 8
       context.time.dayOfMonth = 12

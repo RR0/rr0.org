@@ -1,7 +1,7 @@
-import {FileInfo} from "./util/file/FileUtil"
 import {SsgContext} from "./SsgContext"
-import {ReplaceCommand} from "./replace/ReplaceCommand"
+import {ReplaceCommand} from "./step/content/replace/ReplaceCommand"
 import {SsgStep} from "./step/SsgStep"
+import {FileInfo} from "./util/file/FileInfo"
 
 export type ContentsConfig = {
   roots: string[],

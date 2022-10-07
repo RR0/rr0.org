@@ -1,19 +1,21 @@
-import {FileInfo, writeFile} from "./util/file/FileUtil"
+import {writeFile} from "./util/file/FileUtil"
 import {ContentsConfig, Ssg, SsgConfig} from "./Ssg"
-import {SsiIncludeReplaceCommand} from "./replace/ssi/SsiIncludeReplaceCommand"
-import {SsiIfReplaceCommand} from "./replace/ssi/SsiIfReplaceCommand"
-import {SsiLastModifiedReplaceCommand} from "./replace/ssi/SsiLastModifiedReplaceCommand"
-import {HtAccessToNetlifyReplaceCommand} from "./replace/htaccess/HtAccessToNetlifyReplaceCommand"
-import {SsiVarReplaceCommand} from "./replace/ssi/SsiVarCommand"
-import {HtmlTagReplaceCommand} from "./replace/html/HtmlTagReplaceCommand"
+import {SsiIncludeReplaceCommand} from "./step/content/replace/html/ssi/SsiIncludeReplaceCommand"
+import {SsiIfReplaceCommand} from "./step/content/replace/html/ssi/SsiIfReplaceCommand"
+import {SsiLastModifiedReplaceCommand} from "./step/content/replace/html/ssi/SsiLastModifiedReplaceCommand"
+import {HtAccessToNetlifyReplaceCommand} from "./step/content/replace/htaccess/HtAccessToNetlifyReplaceCommand"
+import {SsiVarReplaceCommand} from "./step/content/replace/html/ssi/SsiVarCommand"
+import {HtmlTagReplaceCommand} from "./step/content/replace/html/tag/HtmlTagReplaceCommand"
 import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
-import {SsgContext} from "./SsgContext"
-import {HtmlClassReplaceCommand} from "./replace/html/HtmlClassReplaceCommand"
-import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
+import {SsgContext, SsgContextImpl} from "./SsgContext"
+import {HtmlClassReplaceCommand} from "./step/content/replace/html/class/HtmlClassReplaceCommand"
+import {PeopleReplacerFactory} from "./step/content/replace/html/people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
-import {ContentStep} from "./step/ContentStep"
+import {ContentStep} from "./step/content/ContentStep"
 import {CopyStep} from "./step/CopyStep"
 import {DirectoryStep} from "./step/DirectoryStep"
+import {TitleReplaceCommand} from "./step/content/replace/TitleReplaceCommand"
+import {FileInfo} from "./util/file/FileInfo"
 
 const argv = process.argv
 const args: Record<string, string> = {}
@@ -64,7 +66,7 @@ async function outputFunc(context: SsgContext, info: FileInfo, oudDir = config.o
   }
 }
 
-const context = new SsgContext("fr", new TimeContext({
+const context = new SsgContextImpl("fr", new TimeContext({
   year: "numeric",
   month: "long",
   day: "numeric",
@@ -85,6 +87,7 @@ const contentConfigs: ContentsConfig[] = [
     roots,
     replacements: [
       new SsiIncludeReplaceCommand(),
+      new TitleReplaceCommand(),
       new SsiIfReplaceCommand(),
       new SsiVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
       new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),

@@ -3,10 +3,8 @@
 <div class="contents no-side">
   <div data-ng-controller="HeadController">
     <header>
-      <h1 data-ng-show="!isFramed()">
-        <a ng-bind-html="title" ng-href="{{titleUrl}}" ng-if="titleUrl" target="_blank"></a> <span ng-bind-html="title"
-          ng-if="!titleUrl"></span>
-      </h1>
+      <h1>${title}</h1>
+      <script>if (window !== top) document.querySelector("h1").style.display = "none"</script>
     </header>
     <nav>
       <h1>Navigation</h1>

@@ -1,8 +1,9 @@
 import {SsgStep, SsgStepResult} from "./SsgStep"
 import {OutputFunc, SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {camelToText, dirNames, FileInfo, getFileInfo} from "../util/file/FileUtil"
+import {camelToText, dirNames} from "../util/file/FileUtil"
 import {Html} from "../util/Html"
+import {FileInfo, getFileInfo} from "../util/file/FileInfo"
 
 export interface DirectoryResult extends SsgStepResult {
   directoryCount: number

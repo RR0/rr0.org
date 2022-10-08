@@ -17,7 +17,7 @@
       if (GBrowserIsCompatible()) {
         var map = new GMap2(document.getElementById("map"))
         map.setCenter(new GLatLng(49.619608, -2.290649), 10, G_HYBRID_MAP)
-        var geoXml = new GGeoXml("https://www.rr0.org/science/crypto/ufo/enquete/dossier/Aurigny/Carte.kml")
+        var geoXml = new GGeoXml("/science/crypto/ufo/enquete/dossier/Aurigny/Carte.kml")
         map.addControl(new GLargeMapControl())
         map.addControl(new GScaleControl())
         map.addOverlay(geoXml)

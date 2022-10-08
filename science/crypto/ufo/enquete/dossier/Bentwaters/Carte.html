@@ -11,7 +11,7 @@
             if (GBrowserIsCompatible()) {
                 var map = new GMap2(document.getElementById("map"))
                 map.setCenter(new GLatLng(52.090055, 1.44), 11, G_HYBRID_MAP)
-                var geoXml = new GGeoXml("https://www.rr0.org/science/crypto/ufo/enquete/dossier/Bentwaters/Carte.kml")
+                var geoXml = new GGeoXml("/science/crypto/ufo/enquete/dossier/Bentwaters/Carte.kml")
                 map.addControl(new GLargeMapControl())
                 map.addControl(new GScaleControl())
                 map.addOverlay(geoXml)

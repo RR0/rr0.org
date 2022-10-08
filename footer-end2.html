@@ -35,14 +35,44 @@
   const inputs = document.getElementById("rr0-context-select")
 
   function setContext(clazz, checked) {
-    const all = document.querySelectorAll(`.rr0-context.${clazz}`)
+    const all = document.querySelectorAll(`.rr0-context.${clazz.substring("enable-".length)}`)
     all.forEach(el => {
       el.style.display = checked ? "list-item" : "none"
     })
   }
 
+  function upTo(from, tagName) {
+    let curr = from
+    if (curr) {
+      while (curr.parentElement && curr.parentElement.tagName !== tagName.toUpperCase()) {
+        curr = curr.parentElement
+      }
+      curr = curr.parentElement
+    }
+    return curr
+  }
+
+  function downTo(from, selector) {
+    return from.querySelector(selector)
+  }
+
   function enableParents(target) {
-    if (target.classList.contains("rr0-context")) {
+    const from = upTo(upTo(target, "details"), "details")
+    if (from) {
+      const parentInput = downTo(from.firstElementChild, "input[type='checkbox']")
+      if (parentInput && !parentInput.checked) {
+        parentInput.dispatchEvent(new MouseEvent("click"))
+      }
+    }
+  }
+
+  function disableChildren(target) {
+    const from = target.parentElement.parentElement.nextElementSibling
+    if (from) {
+      const childInput = from.querySelector("input[type='checkbox']")
+      if (childInput && childInput.checked) {
+        childInput.dispatchEvent(new MouseEvent("click"))
+      }
     }
   }
 
@@ -53,24 +83,19 @@
         const input = document.createElement("input")
         input.type = "checkbox"
         input.checked = v._enabled
-        input.name = k
+        input.name = "enable-" + k
+        console.log((input.checked ? "enabling" : "disabling") + " " + k)
         input.onchange = e => {
           const target = e.target
           const clazz = target.name
           const checked = target.checked
+          console.log((checked ? "enabling" : "disabling") + " " + clazz)
           setContext(clazz, checked)
           if (checked) {
             enableParents(target)
           } else {
             disableChildren(target)
           }
-          let parent1 = target.parentElement.parentElement
-          if (parent1.tagName === "SUMMARY") {
-            parent1 = parent1.parentElement
-          }
-          const subChecks =
-            parent1.querySelectorAll(`details input[type="checkbox"]`)
-          subChecks.forEach(sub => sub.checked = checked)
         }
         const label = document.createElement("label")
         label.textContent = k

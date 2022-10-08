@@ -47,16 +47,14 @@
     </nav>
   </div>
   <script>
-    var pageContext = {
-      "science": {
-        _enabled: true,
-        "crypto": {
-          _enabled: true,
-          "ufo": {
-            _enabled: true
-          }
-        }
-      }
+    var pageContext = {}
+    const levels = window.location.pathname.split("/").filter(l => !!l && l.indexOf(".")<0)
+    let i = 0
+    let ctx = pageContext
+    while (i < levels.length) {
+      ctx[levels[i]] = {_enabled: true}
+      ctx = ctx[levels[i]]
+      i++
     }
   </script>
   <div class="text">

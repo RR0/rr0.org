@@ -2,7 +2,7 @@ import {SsgStep, SsgStepResult} from "./SsgStep"
 import {OutputFunc, SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
 import {camelToText, dirNames} from "../util/file/FileUtil"
-import {Html} from "../util/Html"
+import {HtmlTag} from "../util/HtmlTag"
 import {FileInfo, getFileInfo} from "../util/file/FileInfo"
 
 export interface DirectoryResult extends SsgStepResult {
@@ -78,7 +78,7 @@ export class DirectoryStep implements SsgStep {
         }
       }
     }
-    const directoriesHtml = Html.element("ul", cases.map(dirCase => {
+    const directoriesHtml = HtmlTag.toString("ul", cases.map(dirCase => {
       if (!dirCase.title) {
         const lastSlash = dirCase.dirName.lastIndexOf("/")
         const lastDir = dirCase.dirName.substring(lastSlash + 1)
@@ -96,7 +96,7 @@ export class DirectoryStep implements SsgStep {
       }
       const time = dirCase.time
       if (time) {
-        details.push(Html.element("time", time))
+        details.push(HtmlTag.toString("time", time))
       }
       const conclusion = dirCase.conclusion
       if (conclusion) {
@@ -107,11 +107,11 @@ export class DirectoryStep implements SsgStep {
       if (details.length > 0) {
         text.push(`(${details.join(", ")})`)
       }
-      const a = Html.element("a", text.join(" "), {href: "/" + dirCase.dirName + "/"})
+      const a = HtmlTag.toString("a", text.join(" "), {href: "/" + dirCase.dirName + "/"})
       if (titles.length) {
         attrs.title = titles.join(", ")
       }
-      return Html.element("li", a, attrs)
+      return HtmlTag.toString("li", a, attrs)
     }).join("\n"))
     fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
     await this.outputFunc(context, fileInfo, "")

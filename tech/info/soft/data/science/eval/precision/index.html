@@ -11,7 +11,7 @@
   <p>Indépendamment de l'exhaustivité des bonnes réponses retournées (la capacité de <a href="../recall">rappel</a>), la
     précision indique combien de réponses sont bonnes dans ce qui est retourné par le système. Le but est donc de
     mesurer à quel point on évite les <strong>erreurs de type 1</strong> que sont les <strong>faux positifs</strong>
-    (réponses présentées comme bonnes mais qui en réalité ne le sont pas).</p>
+    (réponses présentées comme bonnes, mais qui en réalité ne le sont pas).</p>
   <p>La précision est le <strong>pourcentage de réponses correctes</strong>, c'est-à-dire la proportion de prédictions
     <em>correctes </em> (vrais positifs) dans un ensemble des prédictions pour ne classe donnée (pour une classification
     binaire, ce serait la somme des positifs, qu'ils soient corrects ou non).
@@ -26,12 +26,12 @@
   <ul>
     <li>Dans un système de classification de pourriels (<i lang="en">spam mail</i>), la précision représenterait le
       nombre d'emails <em>correctement identifiés comme spam</em>.</li>
-    <li>Dans un système de recherche de documents, il s'agirait du pourcentage réellement pertinents par rapport à la
+    <li>Dans un système de recherche de documents, il s'agirait du pourcentage réellement pertinent par rapport à la
       requête de recherche. Par exemple si une recherche retourne 60 documents sur 100 disponibles, et que seuls 50 sont
       réellement pertinents, la précision sera de `50/(50 + 10) = 50/60 = 0,83`, soit 83% <span class="source">Lemire, Daniel: "<a
           href="https://spip.teluq.ca/inf6460/spip.php?article98">Précision et rappel</a>", INF 6460</span>.</li>
-    <li>Il théoriquement facile d’obtenir une précision proche de 100 % si l'on se limite à retourner des réponses dont
-      on est très sûr(e)s. Cependant la valeur de <a href="../recall">rappel</a> en sera très mauvaise, car nombre
+    <li>Il est théoriquement facile d’obtenir une précision proche de 100 % si l'on se limite à retourner des réponses
+      dont on est très sûr(e)s. Cependant, la valeur de <a href="../recall">rappel</a> en sera très mauvaise, car nombre
       d'autres bonnes réponses n'auront pas été fournies.</li>
     <li>La précision est utilisé dans le calcul du score de fiabilité <a href="../f1">F1</a>.</li>
   </ul>

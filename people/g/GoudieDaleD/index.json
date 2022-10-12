@@ -1,5 +1,8 @@
 {
-  "birthDate": "1942",
-  "occupations": ["ufologist", "writer"],
+  "birthTime": "1942",
+  "occupations": [
+    "ufologist",
+    "writer"
+  ],
   "country": "uk"
 }

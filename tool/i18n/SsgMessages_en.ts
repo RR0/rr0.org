@@ -129,6 +129,7 @@ export class SsgMessages_en implements SsgMessages {
     pe: "Peru",
     ru: "Russia",
     uk: "United Kingdom",
-    us: "USA"
+    us: "USA",
+    se: "Sweden"
   }
 }

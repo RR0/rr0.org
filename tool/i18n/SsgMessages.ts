@@ -135,6 +135,7 @@ export interface SsgMessages {
     ru: string
     uk: string
     us: string
+    se: string
   }
 }
 

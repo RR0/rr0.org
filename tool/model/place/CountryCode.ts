@@ -5,13 +5,14 @@ export enum CountryCode {
   ca = "ca",
   cn = "cn",
   ch = "ch",
+  sp = "es",
   fr = "fr",
   it = "it",
   mx = "mx",
   nz = "nz",
   pe = "pe",
   ru = "ru",
-  sp = "es",
   uk = "uk",
-  us = "us"
+  us = "us",
+  se = "se"
 }

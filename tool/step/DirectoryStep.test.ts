@@ -3,6 +3,7 @@ import {SsgContext} from "../SsgContext"
 import {testUtil} from "../test/TestUtil"
 import {SsgConfig} from "../Ssg"
 import {FileInfo} from "../util/file/FileInfo"
+import {CaseDirectoryStep} from "./CaseDirectoryStep"
 
 describe("DirectoryStep", () => {
 
@@ -24,7 +25,7 @@ $\{directories}
 <p>Aftere</p>
 <!--#include virtual="/footer.html" -->`
     const context = testUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
-    const step = new DirectoryStep(
+    const step = new CaseDirectoryStep(
       ["science/crypto/ufo/enquete/dossier/*/"],
       [],
       "science/crypto/ufo/enquete/dossier/index.html",

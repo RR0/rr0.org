@@ -1,4 +1,5 @@
 import {MessageUtils, SsgMessages} from "./SsgMessages"
+import {Gender} from "../model/people/Gender"
 
 export class SsgMessages_en implements SsgMessages {
   context = {
@@ -75,5 +76,59 @@ export class SsgMessages_en implements SsgMessages {
       misinterpretation: "misinterpretation",
       hoax: "hoax"
     }
+  }
+  people = {
+    occupation: {
+      anthropologist: (_gender: Gender) => "anthropologist",
+      artist: (_gender: Gender) => "artist",
+      astronomer: (_gender: Gender) => "astronomer",
+      biologist: (_gender: Gender) => "biologist",
+      biochemist: (_gender: Gender) => "biochemist",
+      chemist: (_gender: Gender) => "chemist",
+      cryptozoologist: (_gender: Gender) => "cryptozoologist",
+      dentist: (_gender: Gender) => "dentist",
+      director: (_gender: Gender) => "director",
+      engineer: (_gender: Gender) => "engineer",
+      geologist: (_gender: Gender) => "geologist",
+      historian: (_gender: Gender) => "historian",
+      journalist: (_gender: Gender) => "journalist",
+      librarian: (_gender: Gender) => "librarian",
+      lawyer: (_gender: Gender) => "lawyer",
+      military: (_gender: Gender) => "military",
+      musician: (_gender: Gender) => "musician",
+      neurologist: (_gender: Gender) => "neurologist",
+      philosopher: (_gender: Gender) => "philosopher",
+      photographer: (_gender: Gender) => "photographer",
+      parapsychologist: (_gender: Gender) => "parapsychologist",
+      physicist: (_gender: Gender) => "physicist",
+      physician: (_gender: Gender) => "physician",
+      pilot: (_gender: Gender) => "pilot",
+      producer: (_gender: Gender) => "producer",
+      psychologist: (_gender: Gender) => "psychologist",
+      sailor: (_gender: Gender) => "sailor",
+      sociologist: (_gender: Gender) => "sociologist",
+      softwareEngineer: (_gender: Gender) => "software engineer",
+      stuntman: (_gender: Gender) => "stuntman",
+      teacher: (_gender: Gender) => "teacher",
+      ufologist: (_gender: Gender) => "ufologist",
+      writer: (_gender: Gender) => "writer"
+    }
+  }
+  country = {
+    au: "Australia",
+    be: "Belgium",
+    br: "Brasil",
+    ca: "Canada",
+    ch: "Switzerland",
+    cn: "China",
+    es: "Spain",
+    fr: "France",
+    it: "Italia",
+    mx: "Mexico",
+    nz: "New Zealand",
+    pe: "Peru",
+    ru: "Russia",
+    uk: "United Kingdom",
+    us: "USA"
   }
 }

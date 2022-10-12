@@ -63,6 +63,8 @@ export function camelToText(camel: string): string {
   const text = camel.trim()
     .replace(/([A-Z]+)/g, " $1")
     .replace(/([0-9]+)/g, " $1")
+    .replace(/( [A-Z] )/g, " $1. ")
+    .replace(/( [A-Z]$)/g, " $1.")
   return (text.charAt(0).toUpperCase() + text.slice(1)).trim()
 }
 

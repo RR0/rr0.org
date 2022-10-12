@@ -1,6 +1,6 @@
-<!--#include virtual="/header-start.html" -->
+<!--#include virtual="/header-start2.html" -->
 <title>Ufologues</title>
-<!--#include virtual="/header-end.html" -->
+<!--#include virtual="/header-end2.html" -->
 <p class="exergue">L'ufologie fait de nous tous des amateurs <span class="source"><span
     class="people">Allan Hendry</span></span></p>
 <p class="exergue">L'ufologie est un domaine où il n'y a aucun expert <span class="source"><span class="people">Philip Morrison</span></span>
@@ -8,52 +8,74 @@
 <p class="exergue">L'ufologie est le royaume des autodidactes, qui y trouvent une "terra incognita" dont l'exploration
   les rend égaux ! <span class="source"><span class="people">Michel Picard</span>: <em>Les ovnis - laboratoire du
     futur</em>, p. 14</span></p>
-<table ng-controller="UfologistsController" border="0" cellpadding="5" cellspacing="0">
-  <caption>
-    Exemples d'ufologues
-  </caption>
-  <thead>
-  <tr>
-    <td>
-      <span class="option" data-ng-repeat="country in countries | orderBy:'name'" data-ng-cloak>
-          <input type="checkbox" id="{{::country.code}}CheckBox" data-ng-model="country.on"/>
-          <label for="{{::country.code}}CheckBox">{{::country.name}}</label>
-      </span>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <span class="option">
-          <label for="filterName">Nom</label>
-          <input id="filterName" type="text" ng-model="filterName">
-      </span>
-    </td>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <ul class="multi-list columns">
-        <li class="people {{::ufologist.country}} {{::ufologist.discipline}}"
-            title="{{::ufologist.name}}" data-ng-cloak
-            data-ng-repeat="ufologist in ufologists | filter:countryFilter | filter:filterName | orderBy:'name'">
-          {{::ufologist.name}}
-        </li>
-        <li>
-      </ul>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<script>
+  var countryInputs
+
+  function findCase(e) {
+    const textInput = document.querySelector("#caseForm input[name='text']")
+    const value = textInput.value.toLowerCase()
+    const list = document.querySelector("#caseForm + ul")
+    let found = 0
+    const selectedCountries = countryInputs.filter(countryInput => countryInput.checked)
+      .map(countryInput => countryInput.id)
+    for (const child of list.children) {
+      const countryClass = Array.from(child.classList).filter(c => c.startsWith("country-"))[0]
+      const matchCountry = selectedCountries.includes(countryClass)
+      const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
+      if (matchText && matchCountry) {
+        child.style.display = "list-item"
+        found++
+      } else {
+        child.style.display = "none"
+      }
+    }
+    const output = document.querySelector("#caseForm output")
+    output.textContent = `(${found > 0 ? found : "Aucune"} personne${found > 1 ? "s" : ""})`
+  }
+</script>
+<style>
+  #caseForm {
+    padding: 1em 0.5em;
+    border: 1px solid gray;
+    margin: 1em 0;
+  }
+  .deceased {
+    text-decoration: line-through;
+  }
+  #caseForm + ul {
+    column-width: 14em;
+  }
+  #caseForm label, output {
+    padding: 0.5em 1em;
+    white-space: nowrap;
+  }
+  #caseForm input[name="text"] {
+    margin-left: 0.5em;
+  }
+  #caseForm output {
+    color: gray;
+  }
+</style>
+<form id="caseForm">
+  <label style="white-space: normal">Nom <input name="text" oninput="findCase(event)"
+      style="margin-left: 1em" type="search"></label> ${countries}
+  <output></output>
+</form>
+${directories}
+<script>
+  var countryInputs = Array.from(document.querySelectorAll("#caseForm input[type=checkbox]"))
+  for (const countryInput of countryInputs) {
+    countryInput.checked = true
+  }
+  document.querySelector("#caseForm input").dispatchEvent(new Event("input"))
+</script>
 <p>Bien que l'homme observe le ciel avec curiosité depuis toujours, ce n'est qu'à partir de la Grèce antique que l'on
   retrouve des inventaires et études de phénomènes célestes inexpliqués, du moins en occident. Demetrius Phalereus
   relate l'observation de rayons lumineux dans le ciel, Aristote traite de phénomènes météorologiques étonnants, <span
       class="people">Camille Flammarion</span> qualifie de <em>bradytes</em> d'étranges "météores lents", voire
-  stationnaires, capable de rester très longtemps dans le ciel.
-</p>
+  stationnaires, capable de rester très longtemps dans le ciel.</p>
 <p>Ce n'est cependant que peu après <time>1947</time>, avec ce qu'on appelle l'ère "moderne" du phénomène, que va se
-  développer un véritable microcosme plus de personnes étudiant ce sujet.
-</p>
+  développer un véritable microcosme plus de personnes étudiant ce sujet.</p>
 <p>Celui-ci étant composé d'une large majorité d'"amateurs" — étudiant les ovnis sur leur temps libre — la conséquence
   est que n'importe qui peut se revendiquer "ufologue" sans que cela ait jamais nécessité de formation, cursus (il
   n'existe pas de diplôme d'ufologue) ou accréditation quelconque. Ainsi, plus qu'une répartition en terme de conviction
@@ -62,11 +84,10 @@
       href="/science/crypto/ufo/analyse/hypotheses/intelligence/HET">HET</a> — sur laquelle se prononcer,  et qu'il n'y a pas lieu de recherche puisque la réponse serait déjà trouvée — <a
       href="/science/crypto/ufo/analyse/hypotheses/intelligence/HET">HET</a> ou <a
       href="/science/crypto/ufo/analyse/hypotheses/HPS">HSP</a>, selon — et qu'il ne s'agirait plus que de faire du lobbying pour la faire reconnaître</span>)
-  il est important de distinguer les ufologues :
-</p>
+  il est important de distinguer les ufologues :</p>
 <ul>
-  <li><strong>actifs</strong> qui mènent des <a href="/science/crypto/ufo/enquete">enquêtes</a> sur le terrain,
-    publient des <a href="../Documents/Articles">articles</a>, réalisent des études <a
+  <li><strong>actifs</strong> qui mènent des <a href="/science/crypto/ufo/enquete">enquêtes</a> sur le terrain, publient
+    des <a href="../Documents/Articles">articles</a>, réalisent des études <a
         href="/science/crypto/ufo/analyse/statistique">statistiques</a>, développent des <a
         href="/science/Theorie.html">théories</a> complètes, développent des <a
         href="/science/crypto/ufo/observation/projet/Instrument.html">stations de détection</a>, recherchent des <a
@@ -74,35 +95,28 @@
     informations, etc.
   </li>
   <li><strong>non actifs </strong>qui se cantonnent à lire des livres et des revues ufologiques, naviguer sur des sites
-    web, débattre de leurs convictions dans des forums, etc.
-  </li>
+    web, débattre de leurs convictions dans des forums, etc.</li>
 </ul>
 <p>Il existe également une infime poignée de "professionnels" de l'ufologie, travaillant à plein temps sur le sujet,
-  généralement au sein d'<a href="/org/officiels.html">organismes officiels d'étude des ovnis</a>. Enfin existent aussi
-  quelques journalistes, éditeurs de <a href="/science/crypto/ufo/observation/media/presse">revues</a> ou écrivains
-  gagnant leur vie grâce à l'ufologie. Le côté mercantile de ces derniers ne joue évidemment pas en faveur de la
-  crédibilité de ce domaine de recherche, mais comme la science établie, l'ufologie n'échappe pas non plus à ses <a
+  généralement au sein d'organismes officiels d'étude des ovnis. Enfin existent aussi quelques journalistes, éditeurs de
+  <a href="/science/crypto/ufo/observation/media/presse">revues</a> ou écrivains gagnant leur vie grâce à l'ufologie. Le
+  côté mercantile de ces derniers ne joue évidemment pas en faveur de la crédibilité de ce domaine de recherche, mais
+  comme la science établie, l'ufologie n'échappe pas non plus à ses <a
       href="/science/crypto/ufo/observation/media/presse/scientifique">publications</a>, et il faut reconnaître à
   certaines d'entre elles un travail considérable qui bénéficie à tous.<span class="fr"></span></p>
 <h2><a id="Allen"></a>Allen (docteur)</h2>
 <p>Auteur de :</p>
 <ul>
-  <li><em>Enigma Fantastique, </em>où est repris le fameux article de <a
+  <li><i>Enigma Fantastique</i>, où est repris le fameux article de <a
       href="ufologues.html#JessupLois">Lois Jessup</a>.
   </li>
 </ul>
 <h2><a id="Anderson"></a>Anderson, John</h2>
 <p>Chercheur ufologue.</p>
-<h2><a id="HoughPeter"></a>Hough, Peter</h2>
-<p>Ufologue que <span class="people">Jennifer Randles</span> mit en rapport avec <a
-    href="/science/crypto/ufo/observation/media/presse">Philip Spencer</a> à la suite de son observation.
-</p>
 <h2><a id="JessupLois"></a>Jessup, Lois</h2>
 <p>Lois Jessup, à l'époque employée de l'ambassade Britannique et plus tard secrétaire du <a
     href="/org/us/asso/NYSIB.html">Bureau d'Information sur les Soucoupes de New York</a>, écrivit un article sur ...
 </p>
-<h2><a id="LeVesque"></a>LeVesque, TAL</h2>
-<p>Ufologue.</p>
 <h2><a id="NormanDavid"></a>Norman, David</h2>
 <p>Journaliste qui écrivit une critique sur le documentaire de <a
     href="c/CronkiteWalter">Walter Cronkite</a>, dans laquelle il parle du modèle de dinosaure humanoïde pensé par <a
@@ -112,7 +126,7 @@
 <p>Contact secret de <a href="m/MooreWilliamL">William Moore</a> lui fournissant des informations sur les ovnis.
 </p>
 <h2><a id="Purdy"></a>Purdy</h2>
-<p>Editeur de <em>True Magazine</em>, pour lequel <a
+<p>Editeur de <time>True Magazine</time>, pour lequel <a
     href="k/KeyhoeDonaldE">Donald Keyhoe</a> écrivait des articles sur les ovnis.
 </p>
 <h2><a id="RusselDale"></a>Russel, Dale</h2>
@@ -127,7 +141,7 @@
 </p>
 <h2><a id="TomlinsonArthur"></a>Tomlinson, Arthur</h2>
 <p>Ufologue ayant enquêté sur l'observation de <a
-    href="/people/s/SpencerPhilip.html">Philip Spencer</a>.
+    href="/people/s/SpencerPhilip/index.html">Philip Spencer</a>.
 </p>
 <h2><a id="Whritenour"></a>Whritenour, Joan</h2>
 <p>Ufologue.</p>
@@ -142,385 +156,4 @@
     href="m/MooreWilliamL">William Moore</a> des document sur <a
     href="/science/crypto/ufo/enquete/dossier/SouthAfricaCrash">l'Affaire de l'Afrique du Sud</a>.
 </p>
-<!--#include virtual="/footer.html" -->
-<script>
-  angular.module('rr0.people')
-    .controller('UfologistsController', ['$scope', '$log', function ($scope, $log) {
-      $scope.countries = [
-        {code: 'au', name: 'Australie', on: true},
-        {code: 'de', name: 'Allemands', on: true},
-        {code: 'us', name: 'Américains', on: true},
-        {code: 'au', name: 'Australiens', on: true},
-        {code: 'uk', name: 'Britanniques', on: true},
-        {code: 'be', name: 'Belges', on: true},
-        {code: 'br', name: 'Brésiliens', on: true},
-        {code: 'ca', name: 'Canadiens', on: true},
-        {code: 'cn', name: 'Chinois', on: true},
-        {code: 'es', name: 'Espagnols', on: true},
-        {code: 'fr', name: 'Français', on: true},
-        {code: 'it', name: 'Italiens', on: true},
-        {code: 'mx', name: 'Mexicains', on: true},
-        {code: 'ru', name: 'Russes', on: true},
-        {code: 'se', name: 'Suédois', on: true},
-        {code: 'ch', name: 'Suisses', on: true},
-        {code: 'dk', name: 'Danois', on: true}
-      ];
-      $scope.countryFilter = function (ufologist) {
-        for (var i = 0; i < $scope.countries.length; i++) {
-          var country = $scope.countries[i];
-          if (country.on && (!ufologist.country || ufologist.country === country.code)) {
-            $log.debug(ufologist.name + " matches country");
-            return true;
-          }
-        }
-        $log.debug(ufologist.name + " doesn't matches country");
-        return false;
-      };
-      $scope.ufologists = [
-        {name: "Abraini, Giorgio", country: "it"},
-        {name: "Ailleris, Philippe", country: "fr"},
-        {name: "Aldrich, Jan", country: "us"},
-        {name: "Alessandri, Robert", country: "fr"},
-        {name: "Allen", country: "us"},
-        {name: "Anderson, John", country: "us"},
-        {name: "Andrus, Walter H.", country: "us"},
-        {name: "Aubeck, Christopher", country: "uk"},
-        {name: "Azahehdel, Henry", country: "us"},
-        {name: "B., W.", country: "us"},
-        {name: "Balducci, Corrado", country: "it"},
-        {name: 'Ballester Olmos, Vicente Juan', country: 'es'},
-        {name: 'Baker, Alan', country: 'us'},
-        {name: 'Barker, Gray Roscoe', country: 'us', deceased: true},
-        {name: 'Barnet, Barney', country: 'us'},
-        {name: 'Barrow, Robert', country: 'us'},
-        {name: 'Basterfield, Keith', country: 'au'},
-        {name: 'Bennewitz, Paul', country: 'us'},
-        {name: 'Beckley, Timothy Green', country: 'us'},
-        {name: 'Bergier, Jacques', country: 'fr', deceased: true},
-        {name: 'Bender, Albert K.', country: 'us'},
-        {name: 'Berlitz, Charles Frambach', country: 'us', deceased: true},
-        {name: 'Berliner, Don', country: 'us'},
-        {name: 'Beckman, Fred', country: 'us'},
-        {name: 'Béduneau, Geneviève', country: 'fr', deceased: true},
-        {name: 'Bidault, Bernard', country: 'fr', deceased: true},
-        {name: 'Bigorne, Jean-Marie', country: 'fr'},
-        {name: 'Bishop, Greg', country: 'us'},
-        {name: 'Birdsall, Graham W.', country: 'us', deceased: true},
-        {name: 'Birdsall, Mark Ian', country: 'us'},
-        {name: 'Bishop, Jason', country: 'us'},
-        {name: 'Bloecher, Ted', country: 'us', deceased: true},
-        {name: 'Blue Jay', country: 'us', pseudo: true},
-        {name: 'Bo, Shi', country: 'cn'},
-        {name: 'Bonvin, Fabrice', country: 'ch'},
-        {name: 'Boudier, Alain', country: 'fr'},
-        {name: 'Bourdais, Gildas', country: 'fr'},
-        {name: 'Bourret, Jean-Claude', country: 'fr'},
-        {name: 'Bosson, Yves', country: 'fr'},
-        {name: 'Boedec, Jean-François', country: 'fr'},
-        {name: 'Boitte, Franck', country: 'be'},
-        {name: 'Bonabot, Jacques', country: 'be'},
-        {name: 'Bourbeau, François C.', country: 'ca'},
-        {name: "Bougard, Michel", country: "be"},
-        {name: "Bowen, Charles", country: "uk"},
-        {name: "Boylan, Richard J.", country: "us"},
-        {name: "Bray, Arthur Reid", country: "us"},
-        {name: "Brenig, Léon", country: "be"},
-        {name: "Brock, Rod Dean", country: "uk", deceased: true},
-        {name: "Brookesmith, Peter", country: "uk"},
-        {name: "Bryant, Larry W.", country: "us"},
-        {name: "Cabassi, Renzo", country: "it"},
-        {name: "Carr, Robert Spencer", country: "us"},
-        {name: "Campbell, Glenn", country: "us", deceased: true},
-        {name: "Carpenter, Joel", country: "us"},
-        {name: "Chickadee", country: "us", pseudo: true},
-        {name: "Clancarty, Lord ", country: "uk", deceased: true},
-        {name: "Charon, Gaston", deceased: true, pseudo: "Jean Nocher"},
-        {name: "Conti, Nico", country: "it"},
-        {name: "Costagliola, Jacques", country: "fr", deceased: true},
-        {name: "Canuti, Thibaut", country: "fr"},
-        {name: "Cameron, Grant", country: "ca"},
-        {name: "Carrouges, Michel", country: "fr", deceased: true},
-        {name: "Casgha, Jean-Yves", country: "fr"},
-        {name: "Caudron, Dominique", country: "fr"},
-        {name: "Chaloupek, Henri", country: "fr"},
-        {name: "Charroux, Robert", country: "fr", deceased: true},
-        {name: "Chauvin, Rémy", country: "fr"},
-        {name: "Chabin, Laurent", country: "fr"},
-        {name: "Chourinov, Boris", country: "ru"},
-        {name: "Cohin, Eylan", country: "fr", deceased: true},
-        {name: "Cocteau, Jean", country: "fr", deceased: true},
-        {name: "Colosimo, Pier Domenico"},
-        {name: "Cometta, Lucien", country: "fr", deceased: true},
-        {name: "Cornu, Gilbert", country: "fr", deceased: true},
-        {name: "Couten, François", country: "fr", deceased: true},
-        {name: "Clark, Jerome E.", country: "us"},
-        {name: "Clarke, David", country: "uk"},
-        {name: "Collins, Robert", country: "us"},
-        {name: "Couturier, Louis", country: "fr", deceased: true},
-        {name: "Coste, Michel", country: "fr"},
-        {name: "Connors, Wendy Ann", country: "us"},
-        {name: "Cooper, Timothy S.", country: "us"},
-        {name: "Cooper, William Milton", country: "us", deceased: true},
-        {name: "Corbin, Lou", country: "us"},
-        {name: "Crebely, Frantz", country: "fr"},
-        {name: "Creighton, Gordon", country: "uk", deceased: true},
-        {name: "Dean, Robert O.", country: "us", deceased: true},
-        {name: "Dardaude, Ignacio", country: "es", deceased: true},
-        {name: "Davenport, Peter", country: "us"},
-        {name: "Deforge, Gérard", country: "fr"},
-        {name: "Deliyannis, Yannis", country: "fr"},
-        {name: "Davidson, Leon", country: "us"},
-        {name: "Davis, Isabel L.", country: "us", deceased: true},
-        {name: "Drake, Walter Raymond", country: "us", deceased: true},
-        {name: "Dodd, Anthony", country: "us"},
-        {name: "Dolan, Richard", country: "us"},
-        {name: "Druffel, Ann", country: "us"},
-        {name: "Dumont, Jacques", country: "ca"},
-        {name: "Durand, Gilles", country: "fr"},
-        {name: "Durrant, Henry", country: "fr", pseudo: true},
-        {name: "Dumerchat, Frédéric", country: "fr"},
-        {name: "Easton, James", country: "uk"},
-        {name: "Escobar, Héctor", country: "mx"},
-        {name: "Evans, Hilary", country: "uk"},
-        {name: "Edwards, Frank", country: "us", deceased: true},
-        {name: "Emenegger, Robert", country: "us"},
-        {name: "Evans, Hilary", country: "uk"},
-        {name: "Farriols, Rafaël", country: "es", deceased: true},
-        {name: "Fawcett, Lawrence", country: "us"},
-        {name: "Ferryn, Patrick", country: "be"},
-        {name: "Fernandez, Gilles", country: "fr"},
-        {name: "Fish, Marjorie E.", country: "us"},
-        {name: "Fontès, Olavo Teixeira", country: "br", deceased: true},
-        {name: "Fort, Charles Hoy", country: "us", deceased: true},
-        {name: "Fowler, Raymond E.", country: "us"},
-        {name: "Franz Navarrete, Alejandro", country: "br"},
-        {name: "Friedman, Stanton T.", country: "us"},
-        {name: "Friedrich, Mattern", country: "de"},
-        {name: "Fuller, Paul", country: "uk"},
-        {name: "Fuller, John G.", country: "us", deceased: true},
-        {name: "Fawcett, George D.", country: "us"},
-        {name: "Faudrin, René", country: "fr"},
-        {name: "Figuet, Michel", country: "fr", deceased: true},
-        {name: "Fouéré, Francine", country: "fr", deceased: true},
-        {name: "Fouéré, René", country: "fr", deceased: true},
-        {name: "Garreau, Charles", country: "fr", deceased: true},
-        {name: "Gatti, Francis", country: "fr"},
-        {name: "Gille, Jean-François", country: "fr", deceased: true},
-        {name: "Gille, John F.", country: "fr", pseudo: true},
-        {name: "Gross, Patrick", country: "fr"},
-        {name: "Grugeau, Robert", country: "fr", deceased: true},
-        {name: "Guérin, Pierre", country: "fr", deceased: true},
-        {name: "Guieu, Jimmy", country: "fr", deceased: true},
-        {name: "Gutierez, Grégory", country: "fr"},
-        {name: "Holbecq, André Jacques", country: "fr"},
-        {name: "Ecker, Donald Francis", country: "us"},
-        {name: "Geoffroy, Patrick", country: "fr"},
-        {name: "Gersten, Peter A.", country: "us"},
-        {name: "Gevaerd, A. J.", country: "br"},
-        {name: "Gomez, Didier", country: "fr"},
-        {name: "Good, Timothy", country: "uk"},
-        {name: "Goudie, Dale D.", country: "us"},
-        {name: "Gouiran, Charles", country: "fr"},
-        {name: "Grace, John", country: "us"},
-        {name: "Graham, L. M.", country: "us"},
-        {name: "Granger, Michel", country: "fr"},
-        {name: 'Greenwell, J. Richard', country: 'us'},
-        {name: 'Greenwood, Barry', country: 'us'},
-        {name: 'Gross, Loren E.', country: 'us'},
-        {name: 'Imbrogno, Philip J.'},
-        {name: 'Hallet, Marc', country: 'be'},
-        {name: 'Hall, Richard H.', country: 'us'},
-        {name: 'Hancock, Graham', country: 'nz'},
-        {name: 'Harris, Paola Leopizzi', country: 'it'},
-        {name: 'Hassall, Peter', country: 'nz'},
-        {name: 'Hastings, Robert', country: 'us'},
-        {name: 'Hawk', country: 'us', pseudo: true},
-        {name: 'Hatch, Larry', country: 'us', deceased: true},
-        {name: 'Hendry, Allan', country: 'us', deceased: true},
-        {name: 'Heron', country: 'us', pseudo: true},
-        {name: "Hoagland, Richard C.", country: "us"},
-        {name: "Hopkins, Budd", country: "us"},
-        {name: "Hough, Peter", country: "us"},
-        {name: "Hudson, Michael", country: "uk"},
-        {name: "Hutchinson, Bruce", country: "us"},
-        {name: "Hynek, Josef Allen", country: "us", deceased: true},
-        {name: "Jacobs, David Michael", country: "us"},
-        {name: "Jeffreys, Kent", country: "us"},
-        {name: "Joyce, Frank", country: "us"},
-        {name: "Johnson, Donald A.", country: "us"},
-        {name: "Jaillat, Jean-Jacques.", country: "fr"},
-        {name: "Kazantsev, Alexandre N.", country: "ru"},
-        {name: "Keel, John Alva", country: "us"},
-        {name: "Keyhoe, Donald Edward", country: "us", deceased: true},
-        {name: "Kean, Leslie", country: "us"},
-        {name: "Klass, Philip Julian", country: "us", deceased: true},
-        {name: "Klinn, Robert B.", country: "us"},
-        {name: "Klotz, James", country: "us"},
-        {name: "Koi, Isaac", country: "uk"},
-        {name: "Korff, Kal K.", country: "us"},
-        {name: "Kottmeyer, Martin S.", country: "us"},
-        {name: "Labanti, Roberto", country: "it"},
-        {name: "Lagarde, Fernand", country: "fr", deceased: true},
-        {name: "Lagrange, Pierre", country: "fr"},
-        {name: "Larquet, Thierry", country: "fr"},
-        {name: "Lebat, Gérard", country: "fr"},
-        {name: "Leclet, Renaud", country: "fr", deceased: true},
-        {name: "Ledger, Donald", country: "ca"},
-        {name: "Leduc, Marc", country: "ca"},
-        {name: "Leroy, Jean-Claude", country: "fr"},
-        {name: "Le Poer Trench, William Francis Brinsley", country: "uk", deceased: true},
-        {name: "Leuba, Serge", country: "ch", deceased: true},
-        {name: "LeVesque, Tal", country: "us"},
-        {name: "Lippens, Xavier", country: "fr"},
-        {name: "Lorenzen, Coral E.", country: "us", deceased: true},
-        {name: "Lorenzen, L. James", country: "us", deceased: true},
-        {name: "Lorthioir, Roger", country: "be"},
-        {name: "Louange, François", country: "fr"},
-        {name: "Leone, Mateo", country: "it"},
-        {name: "Loterre, Guy", country: "fr", deceased: true},
-        {name: "Lucchesi, Dominick C.", country: "us"},
-        {name: "Macé, Christian", country: "fr"},
-        {name: "Maillard, Nicolas", country: "fr", deceased: true},
-        {name: "Maillot, Eric", country: "fr"},
-        {name: 'Mancusi, Bruno', country: 'ch'},
-        {name: 'Marhic, Renaud', country: 'fr'},
-        {name: 'Mary, Roger-Luc', country: 'fr', deceased: true},
-        {name: 'Maugé, Claude', country: 'fr'},
-        {name: "Méheust, Bertrand", country: "fr"},
-        {name: "Mesnard, Joël", country: "fr"},
-        {name: "Michel, Aimé", country: "fr", deceased: true},
-        {name: "Monnerie, Michel", country: "fr", deceased: true},
-        {name: "Montigiani, Nicolas", country: "fr"},
-        {name: "Morgenthaler, Christian", country: "fr"},
-        {name: "Munsch, Gilles", country: "fr"},
-        {name: "Nahon, Alfred", country: "fr", deceased: true},
-        {name: "Nocher, Jean", country: "fr", deceased: true},
-        {name: "Nolane, Richard D.", country: "fr", pseudo: true},
-        {name: "Pasquereau, Antonin", country: "ca"},
-        {name: "Petrakis, Perry", country: "fr"},
-        {name: "Picard, Michel", country: "fr"},
-        {name: "Pinvidic, Thierry", country: "fr"},
-        {name: "Plunkett, Edgar L.", country: "uk"},
-        {name: "Plunkett, Dennis P.", country: "uk"},
-        {name: "Mantle, Philip", country: "uk"},
-        {name: "Martins, João", country: "br"},
-        {name: "McCampbell, James M.", country: "us"},
-        {name: "Mebane, Alexander", country: "us", deceased: true},
-        {name: "Meessen, Auguste", country: "be"},
-        {name: 'Moore, William Leonard', country: 'us'},
-        {name: 'Moseley, James W.', country: 'us'},
-        {name: 'MoultonHowe, Linda', country: 'us'},
-        {name: 'Maussán, Jaime', country: 'mx'},
-        {name: 'Nickell, Joe', country: 'us'},
-        {name: 'Nixon, Stewart', country: 'us'},
-        {name: 'Norman, David', country: 'us'},
-        {name: 'd\'Obrenovic, Michel D. M.', country: 'us', deceased: true},
-        {name: 'Oechsler, Robert', country: 'us'},
-        {name: 'Olson, Brad', country: 'us'},
-        {name: 'Partridge', country: 'us', pseudo: 'true'},
-        {name: 'Perrin, R. Jack', country: 'ch', deceased: true, pseudo: true},
-        {name: 'Perrinjaquet, Roger-Paul', country: 'ch', deceased: true},
-        {name: 'Piccin, Michel', country: 'fr'},
-        {name: 'Poher, Claude', country: 'fr'},
-        {name: 'Phillips, Ken', country: 'uk', deceased: true},
-        {name: 'Quincy, Guy', country: 'fr'},
-        {name: 'Raynaud, Olivier', country: 'fr'},
-        {name: 'Ribes, Jean-Claude', country: 'fr'},
-        {name: 'Rivera, Jean-Luc', country: 'fr'},
-        {name: 'Roberts, August C.', country: 'us'},
-        {name: 'Robin, Daniel', country: 'fr'},
-        {name: 'Rocher, Thierry', country: 'fr'},
-        {name: 'Roussel, Robert', country: 'fr'},
-        {name: 'Rubtsov, Vladimir', country: 'ru'},
-        {name: 'Russo, Edoardo', country: 'it'},
-        {name: 'Serre, Didier', country: 'fr'},
-        {name: 'Schaefer, Francis', country: 'fr'},
-        {name: 'Shurinov, Boris', country: 'ru'},
-        {name: 'Sider, Jean', country: 'fr'},
-        {name: 'Smiena, Gilles', country: 'fr', pseudo: 'Gilbert Cornu'},
-        {name: 'Svahn, Clas', country: 'se'},
-        {name: 'Tarade, Guy', country: 'fr'},
-        {name: 'Thirouin, Marc', country: 'fr', deceased: true},
-        {name: 'Thomas, Gilles', country: 'fr'},
-        {name: 'Thouanel, Bernard', country: 'fr'},
-        {name: 'Troadec, Jean-Pierre', country: 'fr'},
-        {name: 'Tyrode, Jean', country: 'fr'},
-        {name: 'Vallée, Jacques', country: 'fr'},
-        {name: 'Veillith, Raymond', country: 'fr', deceased: true},
-        {name: 'Verga, Maurizio', country: 'it'},
-        {name: 'Yvars, Jean-Jacques', country: 'fr'},
-        {name: 'Wathelet, Thierry', country: 'fr'},
-        {name: 'Pflock, Karl T.', country: 'us', deceased: true},
-        {name: 'Piens, Christiane', country: 'be'},
-        {name: 'Phillips, Ted R.', country: 'us'},
-        {name: 'Palmer, Raymond A.', country: 'us', deceased: true},
-        {name: 'Pratt, Robert', country: 'us', deceased: true},
-        {name: 'Purdy', country: 'us', pseudo: true},
-        {name: 'Randles, Jennifer', country: 'uk'},
-        {name: 'Randle, Kevin Douglas', country: 'us'},
-        {name: 'Redfern, Nick', country: 'uk'},
-        {name: 'Recolet, Daniel', country: 'be', deceased: true},
-        {name: 'Ribera, Antoni', country: 'es', deceased: true},
-        {name: 'Ridge, Francis L.', country: 'us'},
-        {name: "Ridpath, Ian", country: "uk"},
-        {name: "Roberts, Andy", country: "uk"},
-        {name: "Rodeghier, Mark", country: "us"},
-        {name: "Rodríguez Tanguay, Jaime E. ", country: "ec"},
-        {name: "Rogerson, Peter", country: "us"},
-        {name: "Ronecker, Jean-Paul", country: "fr", deceased: true},
-        {name: "Russel, Dale", country: "us"},
-        {name: "Rutkowski, Chris", country: "ca"},
-        {name: "Saint-Saviol", country: "us"},
-        {name: "Sanderson, Ivan T.", country: "us"},
-        {name: "Santamaria, Giuseppe ", country: "it"},
-        {name: "Sandler, Alan", country: "us"},
-        {name: "Schmidt, Donald", country: "us"},
-        {name: "Scornaux, Jacques", country: "be"},
-        {name: "Scully, Frank", country: "us", deceased: true},
-        {name: "Schneyder, Philippe", country: "fr", deceased: true},
-        {name: "Stringfield, Leonard H.", country: "us", deceased: true},
-        {name: "Seguen, Ron", country: "us"},
-        {name: "Settimo, Giovanni", country: "it"},
-        {name: "Shallet, Sidney", country: "us"},
-        {name: "Shandera, Jaime", country: "us"},
-        {name: 'Shough, Martin Lawrence', country: 'uk'},
-        {name: 'Sidoun, Jean-Claude', country: 'fr'},
-        {name: 'Sim&otilde;es, Auriphebo Berrance', country: 'br'},
-        {name: 'Sims, Derrel', country: 'us'},
-        {name: 'Smith, Willy', country: 'us', deceased: true},
-        {name: 'Smith, Dan', country: 'us', deceased: true},
-        {name: 'Sparks, Brad', country: 'us'},
-        {name: 'Sparrow', country: 'us', pseudo: true},
-        {name: 'Spencer, John', country: 'us'},
-        {name: 'Stacy, Dennis', country: 'us'},
-        {name: 'Stanford, Raymond D.', country: 'us'},
-        {name: 'Stauffer, Alain'},
-        {name: 'Steiger, Brad', country: 'us', deceased: true},
-        {name: 'Steinman, William S.', country: 'us'},
-        {name: "Stevens, Wendelle C.", country: "us"},
-        {name: "Strand, Linda", country: "us"},
-        {name: "Strieber, Whitley", country: "us"},
-        {name: "Sued, Ibrahim", country: "br", deceased: true},
-        {name: "Teodorani, Massimo", country: "it"},
-        {name: "Todd, Robert Greer", country: "us", deceased: true},
-        {name: "Toselli, Paolo", country: "it"},
-        {name: "Tomlinson, Arthur", country: "us"},
-        {name: "Tulien, Thomas", country: "us"},
-        {name: "Valerian, Val", country: "us", pseudo: "John Grace"},
-        {name: "Vadnais, Yann", country: "ca"},
-        {name: "VanGreunen, James", country: "de"},
-        {name: "Van Overmeire, Godelieve", country: "be"},
-        {name: "Vertongen, Jean-Luc", country: "be"},
-        {name: "Von Däniken, Erik", country: "ch"},
-        {name: "VonKeviczky, Coleman", country: "us"},
-        {name: "Von Ludwiger, Illobrand", country: "de"},
-        {name: "Wattecamps, Jean-Marc", country: "be"},
-        {name: "Webster, Robert N.", country: "us", pseudo: true},
-        {name: "Whritenour, Joan", country: "us"},
-        {name: "Williamson, George Hunt", country: "us"},
-        {name: "Whiting, Frederick", country: "us"},
-        {name: 'Zechel, W. Todd', country: 'us'},
-        {name: 'Zürcher, Eric', country: 'fr'}
-      ];
-    }]);
-</script>
+<!--#include virtual="/footer2.html" -->

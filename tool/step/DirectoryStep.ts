@@ -1,119 +1,49 @@
 import {SsgStep, SsgStepResult} from "./SsgStep"
 import {OutputFunc, SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {camelToText, dirNames} from "../util/file/FileUtil"
-import {HtmlTag} from "../util/HtmlTag"
+import {dirNames} from "../util/file/FileUtil"
 import {FileInfo, getFileInfo} from "../util/file/FileInfo"
 
 export interface DirectoryResult extends SsgStepResult {
   directoryCount: number
 }
 
-enum HynekClassification {
-  NL = "NL",
-  DD = "DD",
-  RV = "RV",
-  CE1 = "CE1",
-  CE2 = "CE2",
-  CE3 = "CE3",
-  CE4 = "CE3",
-  CE5 = "CE3"
-}
+export abstract class DirectoryStep implements SsgStep {
 
-enum CaseConclusion {
-  unknown = "unknown",
-  misinterpretation = "misinterpretation",
-  hoax = "hoax"
-}
-
-interface Case {
-  dirName: string
-  title: string
-  time: string
-  classification?: {
-    hynek: HynekClassification
-  },
-  conclusion?: CaseConclusion
-}
-
-const cssClasses: Record<string, string> = {
-  hoax: "canular",
-  misinterpretation: "meprise"
-}
-
-export class DirectoryStep implements SsgStep {
-
-  constructor(protected dirs: string[], protected excludedDirs: string[], protected template: string, protected outputFunc: OutputFunc) {
+  protected constructor(protected dirs: string[], protected excludedDirs: string[], protected template: string,
+                        protected outputFunc: OutputFunc) {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
     const fileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
-    let dirames: string[] = []
-    for (let dir of this.dirs) {
-      let d: string[]
-      if (dir.endsWith("/*/")) {
-        const baseDir = dir.substring(0, dir.length - 3)
-        d = (await dirNames(baseDir)).map(x => baseDir + "/" + x)
-      } else {
-        d = [dir]
-      }
-      dirames = dirames.concat(d)
-    }
+    let dirames = (await this.findDirs(this.dirs))
+      .filter(dirName => !this.excludedDirs.includes(dirName))
     await this.processDirs(context, dirames, fileInfo)
     return {directoryCount: dirames.length}
   }
 
-  private async processDirs(context: SsgContext, dirames: string[], fileInfo: FileInfo) {
-    const cases: Case[] = []
-    for (const dirName of dirames) {
-      if (!this.excludedDirs.includes(dirName)) {
-        const dirCase: Case = {dirName, time: "", title: ""}
-        cases.push(dirCase)
-        try {
-          const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
-          Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
-        } catch (e) {
-          console.warn(e)
-          // No json, just guess title.
+  protected abstract processDirs(context: SsgContext, dirames: string[], fileInfo: FileInfo): Promise<void>
+
+  private async findDirs(fromDirs: string[]) {
+    let dirames: string[] = []
+    for (let fromDir of fromDirs) {
+      let subDirs: string[] = []
+      if (fromDir.endsWith("/*/")) {
+        const baseDir = fromDir.substring(0, fromDir.length - 3)
+        if (baseDir.endsWith("/*")) {
+          const dirs = (await this.findDirs([baseDir + "/"]))
+            .filter(dirName => !this.excludedDirs.includes(dirName))
+          for (const dir of dirs) {
+            subDirs = subDirs.concat(await this.findDirs([dir + "/*/"]))
+          }
+        } else {
+          subDirs = (await dirNames(baseDir)).map(x => baseDir + "/" + x)
         }
+      } else {
+        subDirs = [fromDir]
       }
+      dirames = dirames.concat(subDirs)
     }
-    const directoriesHtml = HtmlTag.toString("ul", cases.map(dirCase => {
-      if (!dirCase.title) {
-        const lastSlash = dirCase.dirName.lastIndexOf("/")
-        const lastDir = dirCase.dirName.substring(lastSlash + 1)
-        dirCase.title = camelToText(lastDir)
-      }
-      const attrs: { [name: string]: string } = {}
-      let titles = []
-      const details: string[] = []
-      const classification = dirCase.classification
-      const hynek = classification?.hynek
-      if (hynek) {
-        const classificationLabels = context.messages.case.classification.hynek[hynek]
-        details.push(classificationLabels.short)
-        titles.push(classificationLabels.long)
-      }
-      const time = dirCase.time
-      if (time) {
-        details.push(HtmlTag.toString("time", time))
-      }
-      const conclusion = dirCase.conclusion
-      if (conclusion) {
-        attrs.class = cssClasses[conclusion]
-        titles.push(context.messages.case.conclusion[conclusion])
-      }
-      const text: (string | string[])[] = [dirCase.title]
-      if (details.length > 0) {
-        text.push(`(${details.join(", ")})`)
-      }
-      const a = HtmlTag.toString("a", text.join(" "), {href: "/" + dirCase.dirName + "/"})
-      if (titles.length) {
-        attrs.title = titles.join(", ")
-      }
-      return HtmlTag.toString("li", a, attrs)
-    }).join("\n"))
-    fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
-    await this.outputFunc(context, fileInfo, "")
+    return dirames
   }
 }

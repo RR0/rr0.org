@@ -13,9 +13,10 @@ import {PeopleReplacerFactory} from "./step/content/replace/html/people/PeopleRe
 import {TimeContext} from "./time/TimeContext"
 import {ContentStep} from "./step/content/ContentStep"
 import {CopyStep} from "./step/CopyStep"
-import {DirectoryStep} from "./step/DirectoryStep"
 import {TitleReplaceCommand} from "./step/content/replace/TitleReplaceCommand"
 import {FileInfo} from "./util/file/FileInfo"
+import {CaseDirectoryStep} from "./step/CaseDirectoryStep"
+import {PeopleDirectoryStep} from "./step/PeopleDirectoryStep"
 
 const argv = process.argv
 const args: Record<string, string> = {}
@@ -103,7 +104,7 @@ const contentConfigs: ContentsConfig[] = [
 ]
 new Ssg(config)
   .add(new ContentStep(contentConfigs, outputFunc))
-  .add(new DirectoryStep(
+  .add(new CaseDirectoryStep(
     [
       "science/crypto/ufo/enquete/dossier/*/",
       "time/1/6/0/8/Signes/",
@@ -117,7 +118,14 @@ new Ssg(config)
     ],
     ["science/crypto/ufo/enquete/dossier/canular"],
     "science/crypto/ufo/enquete/dossier/index.html",
-    outputFunc))
+    outputFunc)
+  )
+  .add(new PeopleDirectoryStep(
+    ["people/*/*/"],
+    ["people/Astronomers_fichiers"],
+    "people/ufologues.html",
+    outputFunc)
+  )
   .add(new CopyStep(copies))
   .start(context)
   .then(result => console.log("Completed", result))

@@ -1,4 +1,5 @@
 import {MessageUtils, SsgMessages} from "./SsgMessages"
+import {Gender} from "../model/people/Gender"
 
 export class SsgMessages_fr implements SsgMessages {
   context = {
@@ -75,5 +76,59 @@ export class SsgMessages_fr implements SsgMessages {
       misinterpretation: "méprise",
       hoax: "canular"
     }
+  }
+  people = {
+    occupation: {
+      anthropologist: (_gender: Gender) => "anthropologue",
+      artist: (_gender: Gender) => "artiste",
+      astronomer: (_gender: Gender) => "astronome",
+      biologist: (_gender: Gender) => "biologiste",
+      biochemist: (_gender: Gender) => "biochimiste",
+      chemist: (_gender: Gender) => "chimiste",
+      cryptozoologist: (_gender: Gender) => "cryptozoologue",
+      dentist: (_gender: Gender) => "dentiste",
+      director: (_gender: Gender) => "réalisateur",
+      engineer: (_gender: Gender) => "ingénieur",
+      geologist: (_gender: Gender) => "géologue",
+      historian: (gender: Gender) => gender === Gender.male ? "historien" : "historienne",
+      journalist: (_gender: Gender) => "journalist",
+      lawyer: (gender: Gender) => gender === Gender.male ? "avocat" : "avocate",
+      librarian: (_gender: Gender) => "bibliothécaire",
+      neurologist: (_gender: Gender) => "neurologue",
+      military: (_gender: Gender) => "militaire",
+      musician: (gender: Gender) => gender === Gender.male ? "musicien" : "musicienne",
+      parapsychologist: (_gender: Gender) => "parapsychologue",
+      philosopher: (_gender: Gender) => "philosophe",
+      photographer: (_gender: Gender) => "photographe",
+      physicist: (gender: Gender) => gender === Gender.male ? "physicien" : "physicienne",
+      physician: (_gender: Gender) => "médecin",
+      pilot: (_gender: Gender) => "pilote",
+      producer: (gender: Gender) => gender === Gender.male ? "producteur" : "productrice",
+      psychologist: (_gender: Gender) => "psychologue",
+      sailor: (_gender: Gender) => "marin",
+      sociologist: (_gender: Gender) => "sociologue",
+      softwareEngineer: (_gender: Gender) => "ingénieur en informatique",
+      stuntman: (_gender: Gender) => "cascadeur",
+      teacher: (gender: Gender) => gender === Gender.male ? "enseignant" : "enseignante",
+      ufologist: (_gender: Gender) => "ufologue",
+      writer: (gender: Gender) => gender === Gender.male ? "écrivain" : "écrivaine"
+    }
+  }
+  country = {
+    au: "Australie",
+    be: "Belgique",
+    br: "Brésil",
+    ca: "Canada",
+    ch: "Suisse",
+    cn: "Chine",
+    fr: "France",
+    it: "Italie",
+    mx: "Mexique",
+    nz: "Nouvelle-Zélande",
+    pe: "Pérou",
+    ru: "Russie",
+    es: "Espagne",
+    uk: "Royaume-Uni",
+    us: "États-Unis"
   }
 }

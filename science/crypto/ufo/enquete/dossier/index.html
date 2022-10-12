@@ -27,7 +27,7 @@
       }
     }
     const output = document.querySelector("#caseForm output")
-    output.textContent = `(${found} cas)`
+    output.textContent = `(${found > 0 ? found : "Aucun"} cas)`
   }
 </script>
 <style>
@@ -36,20 +36,16 @@
     border: 1px solid gray;
     margin: 1em 0;
   }
-
   #caseForm + ul {
     column-width: 14em;
   }
-
   #caseForm label, output {
     padding: 0.5em 1em;
     white-space: nowrap;
   }
-
   #caseForm input[name="text"] {
     margin-left: 0.5em;
   }
-
   #caseForm output {
     color: gray;
   }

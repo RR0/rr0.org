@@ -121,6 +121,7 @@ export class SsgMessages_fr implements SsgMessages {
     ca: "Canada",
     ch: "Suisse",
     cn: "Chine",
+    de: "Allemagne",
     fr: "France",
     it: "Italie",
     mx: "Mexique",

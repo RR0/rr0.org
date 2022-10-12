@@ -126,6 +126,7 @@ export interface SsgMessages {
     ca: string,
     ch: string,
     cn: string,
+    de: string,
     es: string
     fr: string
     it: string

@@ -1,0 +1,281 @@
+<!--#include virtual="/header-start.html" -->
+<title>C</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p> Définir un <a href="..">langage</a> algorithmique procédural, permettant de programmer les couches basses du
+    système.
+  </p>
+</section>
+<section>
+  <h2>Principes</h2>
+  <p>Instructions préprocesseur avec #</p>
+  <p>Séparation <code>.h</code> et <code>.c</code></p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de programme C est :</p>
+  <blockquote><code><strong>#include</strong> &lt;stdio.h&gt;<br/> <br/> <span class="codeComment"><strong>/*</strong> Demande à l'utilisateur un nombre entre 1 et 10 <strong>*/</strong></span><br/>
+    <strong>int </strong>Get_X<strong>() {<br/> int </strong>x<strong>;<br/> <br/> do<br/> {<br/> </strong>printf
+    <strong>(<span class="codeString">"\n</span></strong><span class="codeString">Entrez un
+  nombre entre 0 et 10 <strong>"</strong></span><strong>);<br/> </strong>scanf<strong> (<span
+        class="codeString">"%d"</span>, &</strong>x<strong>);<br/> <br/> } while (</strong>x<strong>
+      &lt; </strong>0<strong> || </strong>x<strong> &gt; </strong>10<strong>);<br/> <br/> return
+      (</strong>x<strong>);<br/> } <br/> <br/> main</strong>() <strong>{</strong><br/> <strong>int </strong>c, c1; c =
+    c1 = 0;<br/> <strong>while </strong>((c = getchar()) != EOF)<br/> <strong>{</strong><br/> <strong>if </strong>(c !=
+    <span class="codeString">' '</span> && c != <span class="codeString">'\t'</span> && c != <span class="codeString">'\n'</span>)<br/>
+    printf ("%c", c);<br/> <strong>else</strong><br/> <strong>if</strong> (c1 != <span class="codeString">' '</span> &
+    c1 != <span class="codeString">'\t'</span> && c1 != <span class="codeString">'\n'</span>)<br/> printf (<span
+        class="codeString">"\n"</span>);<br/> <br/> c1 = c;<br/> <strong>}<br/> }</strong></code>
+  </blockquote>
+  <p>Un exemple de compilation C est :</p>
+  <p><code><strong>cc</strong> MonSource.c</code></p>
+  <p>ou avec un compilateur <a href="../../../../../../../org/us/asso/fsf/gnu">GNU</a>/Linux :</p>
+  <p><code><strong>gcc</strong> MonSource.c</code></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Produit en <time>1972</time> par <span class="people">Dennis Ritchie</span> avec <span class="people">Brian Kernighan</span>,
+      suite à B (version simplifiée de BCPL, ou <em>Basic Combined Programming Language</em>)
+    </li>
+    <li>En <time>1973</time> <span class="people">Ken Thompson</span> s'associe avec <span class="people">Ritchie</span>,
+      son créateur, pour réécrire le noyau d'<a
+          href="../../../../prod/os/unix/index.html">Unix</a> dans ce langage.
+    </li>
+    <li>Une première version du C définit les opérateurs combinés d'affectation à l'envers (<q>=+</q>, <q>=*</q>, etc.),
+      ce qui introduisait une ambig&uuml;ité pour des expressions du type <q>x=-y</q>).
+    </li>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td class="titleCorner" colspan="2" rowspan="3"></td>
+          <th> Version</th>
+          <th></th>
+          <th rowspan="4"> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th> Fix</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th> Couche</th>
+          <th> Technologie</th>
+          <th> Maintenance</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th rowspan="11">Types</th>
+          <th rowspan="2">Texte</th>
+          <th><code>char</code></th>
+          <td>Caractère <a href="/tech/info/soft/data/doc/encoding/ASCII.html">ASCII</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>char*</code></th>
+          <td>Pointeur sur suite de char</td>
+          <td>Chaîne à zéro terminal</td>
+        </tr>
+        <tr>
+          <td></td>
+          <th rowspan="9">Numériques</th>
+          <th><code>char</code></th>
+          <td>8 bits signés (-128 à 127)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>unsigned char</code></th>
+          <td>8 bits non signés (0 à 255)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>int</code></th>
+          <td>16 bits signés (-32768 à 32767)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>unsigned int</code></th>
+          <td>16 bits non signés (0 à 65535)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>long int</code></th>
+          <td>32 bits signés (-2147483648 à 2147483647)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>unsigned long int</code></th>
+          <td>32 bits non signés (0 à 4294967295)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>float</code></th>
+          <td>32 bits</td>
+          <td>Précision à 6 décimales</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>double</code></th>
+          <td>64 bits</td>
+          <td>Précision à 10 décimales</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th><code>long double</code></th>
+          <td>80 bits</td>
+          <td>Précision à 10 décimales</td>
+        </tr>
+        <tr>
+          <th rowspan="15">Librairies</th>
+          <th rowspan="15">ANSI</th>
+          <th>Assertions</th>
+          <td><code>assert.h</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th></th>
+          <td><code>ctype.h</code></td>
+          <td>Classement de caractères et macros de conversion</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Codes d'erreur</th>
+          <td><code>errno.h</code></td>
+          <td>Mnémoniques pour codes d'erreur</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Arithmétique flottante</th>
+          <td><code>float.h</code></td>
+          <td>Macros spécifiques à la plate-forme pour les mathématiques à virgule flottante</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Types</th>
+          <td><code>limits.h</code></td>
+          <td>Définit les limites spécifiques à la plate-forme pour les valeurs de types</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Localisation</th>
+          <td><code>locale.h</code></td>
+          <td>Paramètres spécifiques au pays</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Mathématiques</th>
+          <td><code>math.h</code></td>
+          <td>Prototypes de fonctions mathématiques</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th></th>
+          <td><code>setjmp.h</code></td>
+          <td>Définitions de types et fonctions pour setjmp/longjmp</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Signaux système</th>
+          <td><code>signal.h</code></td>
+          <td>Constantes et déclarations pour signal() et raise()</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Arguments</th>
+          <td><code>stdarg.h</code></td>
+          <td>Macros pour traiter des listes d'arguments</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th></th>
+          <td><code>stddef.h</code></td>
+          <td>Types de données et macros communs</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Entrées/Sorties</th>
+          <td><code>stdio.h</code></td>
+          <td>Types et macros nécessaires pour E/S standards</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Divers</th>
+          <td><code>stdlib.h</code></td>
+          <td>Prototypes de fonctions courantes et diverses</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Texte</th>
+          <td><code>string.h</code></td>
+          <td>Prototypes de fonctions de manipulation de chaînes de caractères</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <th>Temps</th>
+          <td><code>time.h</code></td>
+          <td>Structures pour routines de conversion de temps</td>
+        </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Fait confiance au programmeur
+      <ul>
+        <li>typage faible (changement non contrôlé des types des pointeurs, des arguments de méthodes)</li>
+        <li>non contrôle des dépassements de tableaux</li>
+        <li>accès direct à la mémoire</li>
+      </ul>
+    </li>
+    <li>code d'erreurs au lieu d'exceptions</li>
+    <li>Conçu pour être concis, aux dépens de la lisibilité</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><em>Le langage C - Conforme à la norme ANSI </em>de Jacques Philipp (Presses de l'Ecole Nationale des Ponts et
+      Chaussées 1990).
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

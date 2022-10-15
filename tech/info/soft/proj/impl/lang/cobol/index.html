@@ -1,0 +1,90 @@
+<!--#include virtual="/header-start.html" -->
+<title>COBOL</title>
+<!--#include virtual="/header-start.html" -->
+<p><em>COmmon Business Oriented Language</em> : langage courant orienté métier.</p>
+<section>
+  <h2>Besoin</h2>
+  <p> Définir un <a href="..">langage</a> commun pour les applications commerciales </p>
+  <ul>
+    <li>facile à programmer</li>
+    <li>rapide à écrire</li>
+    <li>proche de la langue naturelle (anglais)</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un programme COBOL est divisé en 4 parties appelées divisions, à savoir :</p>
+  <ul>
+    <li><strong>identification </strong>du problème à traiter ("carte d'identité" du programme)</li>
+    <li><strong>environnement</strong> : configurations de compilation et d'exécution</li>
+    <li><strong>données</strong> : description et organisation des données relatives aux fichiers, variables, constantes
+    </li>
+    <li><strong>procédures</strong> : traitements et algorithmique.</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Mis au point en <a href="../../../../../1959.html">1959</a> par le comité <abbr title="Conference on DA SYstem
+      Language">CODASYL</abbr>, dont les soins diligents de madame le capitaine Grace Hopper, de l'US Navy.</li>
+    <li>A ses débuts, les instructions COBOL sont perforées dans des cartes introduites dans l'ordinateur.</li>
+    <li>Peut être exécuté sur Burroughs 3500, IBM 360, etc.</li>
+    <li>De par son code source verbeux, COBOL a été décrit comme incluant à la fois le code et sa documentation.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Positionnement fixe des instructions sur des colonnes (80 maximum).</li>
+    <li>Programmation par pages au nombre limité de lignes (25).</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de programme COBOL est :</p>
+  <blockquote><code>001010 <strong>IDENTIFICATION DIVISION</strong>.<br> 001020 <strong>PROGRAM-ID</strong>. EXEMPLE
+    COBOL.<br> 001030 <strong>AUTHOR</strong>. JAVAROME.<br> 001040 <strong>DATE-WRITTEN</strong>. 12 AOUT 1972.<br>
+    001050 <strong>DATE-COMPILED</strong>.<br> 001060 <strong>ENVIRONMENT DIVISION</strong>.<br> 001070 <strong>SOURCE-COMPUTER</strong>.
+    B-3500.<br> 001080 <strong>OBJECT-COMPUTER</strong>. B-3500.<br> 001090 <strong>INPUT-OUTPUT SECTION</strong>.<br>
+    001100 <strong>FILE CONTROL</strong>.<br> 001110 <strong>SELECT </strong>FIPAYE <strong>ASSIGN TO </strong>TAPE.<br>
+    001120 <strong>SELECT </strong>FIPRIM <strong>ASSIGN TO </strong>TAPE. <br> 001130 <strong>SELECT </strong>FILIST
+    <strong>ASSIGN TO </strong>PRINTER. <br> 001140 <strong>DATA DIVISION</strong>.<br> 001150 <strong>FILE
+      SECTION</strong>.<br> 001160 <strong>FD</strong> FIPAYE<br> 001170 <strong>LABEL RECORD STANDARD VA OF
+      ID </strong>"FICHPA"<br> 001180 <strong>DATA RECORD </strong>PAYE.<br> 001190 <strong>01</strong> PAYE.<br> 001200
+    <strong>02</strong> INDICATIF.<br> 001210 <strong>03</strong> MATRICULE PC X(10).<br> 001220 <strong>03</strong> NOM
+    PC X(15).<br> 001230 <strong>03</strong> PRENOM PC X(10).<br> 001240 <strong>02 </strong> ADRESSE PC X(30).<br>
+    001250 <strong>02</strong> ANCIENNETE PC 99.<br> 002010 <strong>02</strong> FILLER PC X(24).<br> 002020
+    <strong>FD</strong> FIPRIM<br> 002030 <strong>LABEL RECORD STANDARD VA OF ID </strong><span class="codeString">"FICHPR"</span><br>
+    002040 <strong>DATA RECORD </strong>PRIME.<br> 002050 <strong>01</strong> PRIME.<br> 002060 <strong>02</strong>
+    PRENOM-P. PC X(10). <br> 002070 <strong>02 </strong> NOM-P PC X(15).<br> 002080 <strong>02</strong> ADRESSE-P PC
+    X(30).<br> 002090 <strong>02</strong> MONTANT-P PC 999.<br> 002100 <strong>FD</strong> FILIST<br> 002110 <strong>DATA
+      RECORDS ARE</strong> LISTE LIGN1 LIGN2.<br> 002120 <strong>01</strong> LISTE.<br> 002130 <strong>02</strong>
+    FILLER PC X(47).<br> 002140 <strong>02 </strong> INDICATIF-L PC X(35).<br> 002150 <strong>02</strong> MONTANT-L PC
+    999.<br> 002160 <strong>02</strong> FILLER PC X(47).<br> 002170 <strong>01</strong> LIGN1.<br> 002180
+    <strong>02</strong> FILLER PC X(50).<br> 002190 <strong>02</strong> TEXT1 PC X(32).<br> 002200 <strong>02</strong>
+    FILLER PC X(50).<br> 002210 <strong>01</strong> LIGN2.<br> 002220 <strong>02</strong> FILLER PC X(50).<br> 002230
+    <strong>02</strong> TEXT2 PC X(47).<br> 002240 <strong>02</strong> FILLER PC X(50). <br> <br> 003010 <strong>WORKING-STORAGE
+      SECTION</strong>.<br> 003020 <strong>01 </strong> LIBELLE1.<br> 003030 <strong>02</strong> TITRE1 PC X(27)
+    <strong>VA</strong> <span class="codeString">"TOTAL DES PLUS DE 10
+  ANS = "</span>.<br> 003040 <strong>02</strong> COMPTEUR1 PC 9(5) <strong>VA</strong> 0.<br> 003050 <strong>01</strong>
+    LIBELLE2.<br> 003060 <strong>02</strong> TITRE1 PC X(42) <strong>VA</strong> <span class="codeString">"TOTAL DES 10 ANS ET
+  DES MOINS DE 10</span><br> 003070 <span class="codeString">"ANS = "</span>.<br> 003080 <strong>02</strong> COMPTEUR2
+    PC 9(5) <strong>VA</strong> 0.<br> 003090<br> 003100 <strong>PROCEDURE DIVISION</strong>.<br> 003110 DEBUT.<br>
+    003120 <strong>OPEN INPUT </strong>FIPAYE <strong>OUTPUT </strong>FIPRIM FILIST.<br> 003130 A.<br> 003140 <strong>READ </strong>FIPAYE
+    <strong>AT END GO TO </strong>FIN.<br> 003150 <strong>MOVE </strong>INDICATIF <strong>TO </strong>INDICATIF-L<br>
+    003160 <strong>MOVE </strong>PRENOM <strong>TO </strong>PRENOM-P<br> 003170 <strong>MOVE </strong>NOM
+    <strong>TO </strong>NOM-P <br> 003180 <strong>MOVE </strong>ADRESSE <strong>TO </strong>ADRESSE-P.<br> 003190
+    <strong>IF </strong>ANCIENNETE <strong>GREATER </strong>10 <strong>PERFORM </strong>PRIM <strong>THRU </strong>PRIMF.<br>
+    003200 <strong>MOVE </strong>500 <strong>TO </strong>MONTANT-L MONTANT-P <strong>ADD </strong>1 <strong>TO </strong>COMPTEUR2.<br>
+    003210 <strong>WRITE </strong>PRIME <strong>WRITE </strong>LIST <strong>GO TO </strong>A.<br> 003220 PRIM.<br>
+    003230 <strong>MOVE </strong>750 <strong>TO </strong>MONTANT-L MONTANT-P <strong>ADD </strong>1 <strong>TO </strong>COMPTEUR1.<br>
+    003240 FIN.<br> 003250 <strong>MOVE </strong>LIBELLE1 <strong>TO </strong>TEXT1 <strong>WRITE </strong>LIGN1. <br>
+    <br> 003235 PRIMF.<br> 003237 <strong>EXIT</strong>.<br> 004010 <strong>MOVE </strong>LIBELLE2<strong> TO </strong>TEXT2
+    <strong>WRITE </strong>LIGN2. <br> 004020 <strong>CLOSE </strong>FIPAYE FIPRIM FILIST<br> 004030 <strong>STOP
+      RUN</strong>.<br> 004040 <strong>END-OF-JOB</strong>.</code></blockquote>
+  <h2>Voir</h2>
+  <ul>
+    <li><em>Le cobol, langage de programmation </em>de Pierre Grandfils (Dunod, 1970).</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

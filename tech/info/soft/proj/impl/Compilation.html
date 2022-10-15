@@ -1,0 +1,78 @@
+<!--#include virtual="/header-start.html" -->
+<title>Compilation</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Traduire un <a href="CodeSource.html">code source</a> en <a href="CodeObjet.html">code objet</a> compréhensible par
+    la machine.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>On soumet un <a href="CodeSource.html"><strong>code source</strong></a> à un outil nommé
+    "<strong>compilateur</strong>" pour obtenir un <a href="CodeObjet.html"><strong>code objet</strong></a>.
+  </p>
+  <p>Il existe parfois :</p>
+  <ul>
+    <li>une ou plusieurs étapes de modification du code source avant compilation : la <strong>précompilation</strong>.
+    </li>
+    <li>une ou plusieurs étapes de modification du code compilé après compilation : la <strong>postcompilation</strong>.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Dans l'absolu, la compilation ne produit pas forcément un code directement compréhensible par une machine, mais
+      représente au sens large le processus de traduction automatisée d'un langage vers un autre.
+    </li>
+    <li>Le code source étant spécifique à un langage, on précise généralement le terme avec le nom du langage compilé :
+      compilation <a href="lang/java/index.html">Java</a>, compilation <a href="lang/c/index.html">C</a>, etc.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de compilateurs sont:</p>
+  <ul>
+    <li> pour <a href="/org/us/company/oracle/sun/ptf/java/vm/index.html">JVM</a>
+      <ul>
+        <li>depuis un <a href="CodeSource.html">code source</a> <strong>Java </strong>
+          <ul>
+            <li>javac (<em>Java Compiler</em>) livré avec J2SDK</li>
+            <li>gjc (GNU Java Compiler) livré avec Kaffe</li>
+          </ul>
+        </li>
+        <li>depuis <a href="CodeSource.html">code source</a> Eiffel
+          <ul>
+            <li><a href="https://efsa.sourceforge.net/archive/kalberer/jeiffel.htm">J-Eiffel</a></li>
+          </ul>
+        </li>
+        <li>depuis <a href="CodeSource.html">code source</a> Smalltalk
+          <ul>
+            <li><a href="https://www.smalltalkjvm.com">Smalltalk/JVM</a></li>
+          </ul>
+        </li>
+        <li><a href="https://flp.cs.tu-berlin.de/%7Etolk/vmlanguages.html">etc.</a></li>
+      </ul>
+    </li>
+    <li>C et C++ : gcc (<em>GNU C Compiler</em>)</li>
+  </ul>
+  <p>Des exemples de précompilation sont :</p>
+  <ul>
+    <li>le JSQL</li>
+    <li>le pro*C</li>
+  </ul>
+  <p>Des exemples de postcompilation sont :</p>
+  <ul>
+    <li>l'enhancement <a href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Voir aussi</h2>
+  <ul>
+    <li><a href="https://flp.cs.tu-berlin.de/%7Etolk/vmlanguages.html">Programming languages for the Java Virtual
+      Machine</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

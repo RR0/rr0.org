@@ -1,0 +1,46 @@
+<!--#include virtual="/header-start.html" -->
+<title>Log</title>
+<!--#include virtual="/header-end.html" -->
+<p>Journalisation ou traces.</p>
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Produire des traces de l'exécution dans des buts de deboggage ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Organisation</h2>
+  <p>Une API de trace propose généralement : </p>
+  <ul>
+    <li>Différents niveaux de détail (hiérarchie de préférence) ;</li>
+    <li>Configuration dynamique ;</li>
+    <li>Gestionnaires de sorties pluggables ;</li>
+    <li>Filtrage pluggable ;</li>
+    <li>Formatage pluggable (pour permettre l'internationalisation notamment) ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Les caractéristiques d'une bonne API de log sont :
+      <ul>
+        <li>Simplicité d'utilisation ;</li>
+        <li><a href="/tech/info/Performance.html">Performance</a> (appels de trace peu coûteux) ;</li>
+      </ul>
+    </li>
+    <li>L'<a href="index.html">implémentation</a> est généralement le niveau d'abstraction où apparaissent les traces ;
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'API de trace sont :</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/JLA.html">Java Logging API</a> [<a
+        href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> 1.4+] ;</li>
+    <li><a href="/org/int/asso/asf/Log4J.html">Log4J</a> ;</li>
+    <li>IBM <a href="https://www.alphaworks.ibm.com/tech/loggingtoolkit4j">Logging Toolkit for Java</a> (ex-JLog) ;</li>
+    <li><a href="https://javalogging.sourceforge.net/">LumberJack</a> (GPL)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

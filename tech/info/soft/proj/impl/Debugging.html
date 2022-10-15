@@ -1,0 +1,57 @@
+<!--#include virtual="/header-start.html" -->
+<title>Debugging</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">De-bug</i> : enlever les bugs. : la traduction de "deboguer" (des "bogues") a été proposée, mais la
+  traduction préférée est "mise au point".</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Tracer et corriger les erreurs d'<a href="index.html">implémentation</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Java</h3>
+    <p>Depuis Java 1.3, le debugging est accessibles aux applications via la <a
+        href="/org/us/company/oracle/sun/ptf/java/vm/debug/JPDA.html">JPDA</a>. </p>
+  </section>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <table>
+    <caption>Debugging en Java</caption>
+    <tr>
+      <td class="titleCorner"></td>
+      <th colspan="5"><a href="/org/us/company/oracle/sun/ptf/java/impl/J2SDK.html">Java SDK</a></th>
+      <th rowspan="2"> Commentaire</th>
+    </tr>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>1.1</th>
+      <th>1.2.2</th>
+      <th>1.3</th>
+      <th>1.4</th>
+      <th>1.5</th>
+    </tr>
+    <tr>
+      <th>sun.tools.debug</th>
+      <td class="oui">Oui</td>
+      <td colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/vm/index.html">JVM</a> classic</td>
+      <td class="non" colspan="2">Non</td>
+      <td>Non fiable</td>
+    </tr>
+    <tr>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/vm/debug/JPDA.html">JPDA</a></th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="4">Oui</td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Il peut arriver que le debugging diagnostique des erreurs plus conséquentes de <a
+        href="../../../../../java/conce">conception</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

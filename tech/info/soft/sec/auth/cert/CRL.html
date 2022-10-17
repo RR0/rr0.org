@@ -1,0 +1,21 @@
+<!--#include virtual="/header-start.html" -->
+<title>CRL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Certificate Revocation List</i> : liste de révocation de certificats.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Représenter les listes de certificats révoqués.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Le package des certificats définit également une classe <code>CRL</code> permettant de représenter les listes de
+    certificats révoqués. On peut ainsi demander à un objet de type <q>java.security.cert.CRL</q> si un certificat donné
+    est révoqué (n'est plus valide).</p>
+  <p>Comme les certificats, les CRL ne sont pas directement instantiables et ne peuvent l'être qu'à partir de flux
+    (fichiers, certificats téléchargés) que lira une fabrique de certificats (<span class="code"><q>java.security.cert.CertificateFactory</q></span>)
+    afin de générer (<span class="code"><q>maFabrique.generateCRL
+  (telAutreInputStream)</q></span><q>)</q> un objet de type <span class="code"><q>java.security.cert.CRL</q></span>, que
+    l'on pourra interpréter (<i>cast</i>) selon les cas comme des <span
+        class="code"><q>java.security.cert.X509CRL</q></span> ou autre.</p>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -107,7 +107,7 @@ export class SsgMessages_fr implements SsgMessages {
       psychologist: (_gender: Gender) => "psychologue",
       sailor: (_gender: Gender) => "marin",
       sociologist: (_gender: Gender) => "sociologue",
-      softwareEngineer: (_gender: Gender) => "ingénieur en informatique",
+      softwareEngineer: (_gender: Gender) => "Développeur",
       stuntman: (_gender: Gender) => "cascadeur",
       teacher: (gender: Gender) => gender === Gender.male ? "enseignant" : "enseignante",
       ufologist: (_gender: Gender) => "ufologue",

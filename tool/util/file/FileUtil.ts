@@ -6,6 +6,7 @@ import path from "path"
 import * as util from "util"
 import {readdir} from "fs/promises"
 import {FileInfo} from "./FileInfo"
+import {StringUtil} from "../StringUtil"
 
 const globCopy = util.promisify(require("copy"))
 
@@ -65,7 +66,7 @@ export function camelToText(camel: string): string {
     .replace(/([0-9]+)/g, " $1")
     .replace(/( [A-Z] )/g, " $1. ")
     .replace(/( [A-Z]$)/g, " $1.")
-  return (text.charAt(0).toUpperCase() + text.slice(1)).trim()
+  return StringUtil.capitalizeFirstLetter(text).trim()
 }
 
 export async function dirNames(dir: string): Promise<string[]> {

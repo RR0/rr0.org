@@ -17,6 +17,7 @@ import {TitleReplaceCommand} from "./step/content/replace/TitleReplaceCommand"
 import {FileInfo} from "./util/file/FileInfo"
 import {CaseDirectoryStep} from "./step/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./step/PeopleDirectoryStep"
+import {Occupation} from "./model/people/Occupation"
 
 const argv = process.argv
 const args: Record<string, string> = {}
@@ -124,8 +125,16 @@ new Ssg(config)
     ["people/*/*/"],
     ["people/Astronomers_fichiers"],
     "people/ufologues.html",
-    outputFunc)
-  )
+    outputFunc, [Occupation.ufologist]))
+  .add(new PeopleDirectoryStep(
+    ["people/*/*/"],
+    ["people/Astronomers_fichiers"],
+    "people/scientifiques.html",
+    outputFunc, [
+      Occupation.anthropologist, Occupation.astronomer, Occupation.chemist, Occupation.biochemist,
+      Occupation.neurologist, Occupation.psychologist, Occupation.physicist, Occupation.physician,
+      Occupation.sociologist
+    ]))
   .add(new CopyStep(copies))
   .start(context)
   .then(result => console.log("Completed", result))

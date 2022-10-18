@@ -7,11 +7,11 @@
 </p>
 <script>
   function findCase(e) {
-    const textInput = document.querySelector("#caseForm input[name='text']")
+    const textInput = document.querySelector("#searchForm input[name='text']")
     const value = textInput.value.toLowerCase()
-    const list = document.querySelector("#caseForm + ul")
-    const hoaxInput = document.querySelector("#caseForm input[name='hoax']")
-    const misinterpretationInput = document.querySelector("#caseForm input[name='misinterpretation']")
+    const list = document.querySelector("#searchForm + ul")
+    const hoaxInput = document.querySelector("#searchForm input[name='hoax']")
+    const misinterpretationInput = document.querySelector("#searchForm input[name='misinterpretation']")
     let found = 0
     for (const child of list.children) {
       const isHoax = child.classList.contains("canular")
@@ -26,31 +26,35 @@
         child.style.display = "none"
       }
     }
-    const output = document.querySelector("#caseForm output")
+    const output = document.querySelector("#searchForm output")
     output.textContent = `(${found > 0 ? found : "Aucun"} cas)`
   }
 </script>
 <style>
-  #caseForm {
+  #searchForm {
     padding: 1em 0.5em;
     border: 1px solid gray;
     margin: 1em 0;
   }
-  #caseForm + ul {
+
+  #searchForm + ul {
     column-width: 14em;
   }
-  #caseForm label, output {
+
+  #searchForm label, output {
     padding: 0.5em 1em;
     white-space: nowrap;
   }
-  #caseForm input[name="text"] {
+
+  #searchForm input[name="text"] {
     margin-left: 0.5em;
   }
-  #caseForm output {
+
+  #searchForm output {
     color: gray;
   }
 </style>
-<form id="caseForm">
+<form id="searchForm">
   <label style="white-space: normal">Nom, date, classification <input name="text" oninput="findCase(event)"
       style="margin-left: 1em" type="search"></label> <label>Canular <input checked name="hoax"
     onchange="findCase(event)" type="checkbox"/></label> <label>Méprise <input
@@ -58,7 +62,7 @@
   <output></output>
 </form>
 ${directories}
-<script>document.querySelector("#caseForm input").dispatchEvent(new Event("input"))</script>
+<script>document.querySelector("#searchForm input").dispatchEvent(new Event("input"))</script>
 <section>
   <h2>Conspiration</h2>
   <ul style="column-width: 20em">

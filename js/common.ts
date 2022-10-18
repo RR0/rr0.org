@@ -535,9 +535,7 @@ export default commonModule => {
         hasClass: function (e, c) {
           org.hasClass(e, c);
         },
-        capitalizeFirstLetter: function (s) {
-          return s.charAt(0).toUpperCase() + s.slice(1);
-        },
+        @
         camelize: function (s) {
           var camelized = '';
           var wasWord = false;

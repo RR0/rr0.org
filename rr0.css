@@ -1450,6 +1450,14 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     color-scheme: dark;
   }
 
+  details[open] summary {
+    color: white;
+  }
+
+  details[open] summary:hover, details summary:hover {
+    background-color: rgb(24, 37, 42);
+  }
+
   .document-author {
     color: gray;
     background: linear-gradient(135deg, #555555 0, rgba(255, 255, 255, 0) 79%)

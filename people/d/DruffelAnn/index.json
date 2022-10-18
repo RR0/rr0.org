@@ -1,7 +1,11 @@
 {
   "birthTime": "1926-08-12",
   "deathTime": "2020-06-12",
-  "occupations": ["ufologist"],
-  "country": "us",
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "us"
+  ],
   "gender": "female"
 }

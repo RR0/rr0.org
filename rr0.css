@@ -1084,7 +1084,7 @@ span.answer::after, span.answer::before {
   display: inline
 }
 
-.exergue .source a:first-of-type, .exergue .source details summary:first-of-type, details .exergue .source summary:first-of-type {
+.exergue .source > a:first-of-type, .exergue .source details summary:first-of-type, details .exergue .source summary:first-of-type {
   display: none
 }
 

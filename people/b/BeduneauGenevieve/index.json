@@ -1,8 +1,15 @@
 {
   "birthTime": "1947-03-30",
   "deathTime": "2018-04-05",
-  "occupations": ["ufologist", "writer"],
-  "country": "fr",
-  "pseudonyms": ["Anne Vève"],
+  "occupations": [
+    "ufologist",
+    "writer"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "pseudonyms": [
+    "Anne Vève"
+  ],
   "gender": "female"
 }

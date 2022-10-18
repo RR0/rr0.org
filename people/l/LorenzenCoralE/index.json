@@ -1,5 +1,9 @@
 {
-  "occupations": ["ufologist"],
-  "country": "us",
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "us"
+  ],
   "gender": "female"
 }

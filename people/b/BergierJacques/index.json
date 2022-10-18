@@ -2,5 +2,7 @@
   "birthTime": "1912-08-08",
   "deathTime": "1978-11-23",
   "occupations": ["ufologist"],
-  "country": "fr"
+  "countries": [
+    "fr"
+  ]
 }

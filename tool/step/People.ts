@@ -5,7 +5,6 @@ import {Occupation} from "../model/people/Occupation"
 export class People {
   gender?: Gender
   title?: string
-  country?: CountryCode
   birthTime?: Date
   deathTime?: Date
 
@@ -14,7 +13,8 @@ export class People {
     readonly firstNames: string[] = [],
     public lastName = "",
     readonly pseudonyms: string[] = [],
-    readonly occupations: Occupation[] = []
+    readonly occupations: Occupation[] = [],
+    readonly countries: CountryCode[] = []
   ) {
   }
 

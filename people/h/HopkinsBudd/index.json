@@ -2,5 +2,7 @@
   "birthTime": "1931-06-15",
   "deathTime": "2011-08-21",
   "occupations": ["ufologist", "writer", "artist"],
-  "country": "us"
+  "countries": [
+    "us"
+  ]
 }

@@ -5,5 +5,7 @@
     "ufoWitness",
     "military"
   ],
-  "country": "us"
+  "countries": [
+    "us"
+  ]
 }

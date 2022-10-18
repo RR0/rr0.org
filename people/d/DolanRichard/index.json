@@ -1,5 +1,7 @@
 {
   "birthTime": "1962-07-01",
   "occupations": ["ufologist", "historian"],
-  "country": "us"
+  "countries": [
+    "us"
+  ]
 }

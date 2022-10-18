@@ -10,6 +10,7 @@ describe("FileUtil", () => {
 
     expect(camelToText("camelCase")).toBe("Camel Case")
     expect(camelToText("superSimpleExample")).toBe("Super Simple Example")
+    //expect(camelToText("BakerRogerML")).toBe("Baker Roger M. L.")
     /*expect(camelToText("goodNumber90text")).toBe("Good Number 90 Text")
     expect(camelToText("aGoodIPAddress")).toBe("A Good IP Address")
     expect(camelToText("camelTOPCase")).toBe("Camel TOP Case")

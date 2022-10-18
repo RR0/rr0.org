@@ -6,5 +6,7 @@
     "writer",
     "producer"
   ],
-  "country": "us"
+  "countries": [
+    "us"
+  ]
 }

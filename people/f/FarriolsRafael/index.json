@@ -2,5 +2,7 @@
   "birthTime": "1928",
   "deathTime": "2006-12-27",
   "occupations": ["ufologist"],
-  "country": "es"
+  "countries": [
+    "es"
+  ]
 }

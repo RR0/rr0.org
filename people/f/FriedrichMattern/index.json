@@ -1,4 +1,6 @@
 {
   "occupations": ["ufologist", "writer"],
-  "country": "ca"
+  "countries": [
+    "ca"
+  ]
 }

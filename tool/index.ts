@@ -131,8 +131,14 @@ new Ssg(config)
     ["people/Astronomers_fichiers"],
     "people/scientifiques.html",
     outputFunc, [
-      Occupation.anthropologist, Occupation.astronomer, Occupation.chemist, Occupation.biochemist,
-      Occupation.neurologist, Occupation.psychologist, Occupation.physicist, Occupation.physician,
+      Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist,
+      Occupation.biochemist,
+      Occupation.chemist,
+      Occupation.engineer,
+      Occupation.geologist, Occupation.geophysicist,
+      Occupation.mathematician,
+      Occupation.neurologist,
+      Occupation.psychologist, Occupation.philosopher, Occupation.physicist, Occupation.physician, Occupation.psychiatrist,
       Occupation.sociologist
     ]))
   .add(new CopyStep(copies))

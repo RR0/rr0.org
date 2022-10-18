@@ -66,6 +66,7 @@ export function camelToText(camel: string): string {
     .replace(/([0-9]+)/g, " $1")
     .replace(/( [A-Z] )/g, " $1. ")
     .replace(/( [A-Z]$)/g, " $1.")
+//    .replace(/([A-Z])([A-Z])/g, " $1. $2.")
   return StringUtil.capitalizeFirstLetter(text).trim()
 }
 

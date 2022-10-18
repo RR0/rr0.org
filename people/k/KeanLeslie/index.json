@@ -1,6 +1,12 @@
 {
   "birthTime": "1952",
-  "occupations": ["ufologist", "journalist", "writer"],
-  "country": "us",
+  "occupations": [
+    "ufologist",
+    "journalist",
+    "writer"
+  ],
+  "countries": [
+    "us"
+  ],
   "gender": "female"
 }

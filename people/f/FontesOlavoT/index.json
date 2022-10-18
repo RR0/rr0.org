@@ -3,5 +3,7 @@
   "birthTime": "1924-06-09",
   "deathTime": "1968-05-09",
   "occupations": ["ufologist", "journalist"],
-  "country": "br"
+  "countries": [
+    "br"
+  ]
 }

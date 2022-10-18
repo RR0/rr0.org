@@ -19,9 +19,9 @@
     const selectedOccupations = occupationInputs.filter(occupationInput => occupationInput.checked)
       .map(occupationInput => occupationInput.id)
     for (const child of list.children) {
-      const countryClass = Array.from(child.classList).filter(c => c.startsWith("country-"))[0]
+      const countryClasses = Array.from(child.classList).filter(c => c.startsWith("country-"))
       const occupationClasses = Array.from(child.classList).filter(c => c.startsWith("occupation-"))
-      const matchCountry = selectedCountries.includes(countryClass)
+      const matchCountry = countryClasses.some(o => selectedCountries.includes(o))
       const matchOccupation = occupationClasses.some(o => selectedOccupations.includes(o))
       const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
       if (matchText && matchCountry && matchOccupation) {

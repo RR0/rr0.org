@@ -9,7 +9,11 @@ import {CountryCode} from "../model/place/CountryCode"
 import {People} from "./People"
 import {Occupation} from "../model/people/Occupation"
 import {StringUtil} from "../util/StringUtil"
+import {Time} from "../model/time/Time"
 
+/**
+ * Scan directories for people information, then populates a template with collected data.
+ */
 export class PeopleDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc,
@@ -19,7 +23,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
 
   protected async processDirs(context: SsgContext, dirNames: string[], fileInfo: FileInfo) {
     let peopleList: People[] = []
-    const countries = new Set<CountryCode>()
+    const allCountries = new Set<CountryCode>()
     const occupations = new Set<Occupation>()
     for (const dirName of dirNames) {
       const peopleDir = new People(dirName)
@@ -43,36 +47,38 @@ export class PeopleDirectoryStep extends DirectoryStep {
       const titles = []
       const classList = []
       const details: string[] = []
-      const country = people.country
-      let timeTitle = ""
-      const birthTimeStr = people.birthTime
+      const countries = people.countries
+      let birthTimeStr = people.birthTime as unknown as string
       if (birthTimeStr) {
-        const birthTime = people.birthTime = new Date(birthTimeStr)
-        timeTitle = birthTime.getFullYear() + "-"
+        const birthTime = people.birthTime = Time.dateFromIso(birthTimeStr)
+        birthTimeStr = birthTime.getFullYear().toString()
       }
-      const deathTimeStr = people.deathTime
+      let deathTimeStr = people.deathTime as unknown as string
       if (deathTimeStr) {
-        const deathTime = people.deathTime = new Date(deathTimeStr)
-        timeTitle += "-" + deathTime.getFullYear()
+        const deathTime = people.deathTime = Time.dateFromIso(deathTimeStr)
+        deathTimeStr = deathTime.getFullYear().toString()
         if (people.isDeceased) {
           classList.push("deceased")
         }
+      }
+      if (birthTimeStr || deathTimeStr) {
+        const timeStr = birthTimeStr ? deathTimeStr ? birthTimeStr + "-" + deathTimeStr : birthTimeStr + "-" : "-" + deathTimeStr
+        titles.push(timeStr)
       }
       const age = people.age
       if (age) {
         titles.push(`${age} ans`)
       }
-      if (timeTitle) {
-        titles.push(timeTitle.replace("--", "-"))
-      }
-      if (country) {
-        countries.add(country)
-        const classificationLabel = context.messages.country[country]
-        if (!classificationLabel) {
-          throw new Error(`No label for country "${country}"`)
+      if (countries) {
+        for (const country of countries) {
+          allCountries.add(country)
+          const classificationLabel = context.messages.country[country]
+          if (!classificationLabel) {
+            throw new Error(`No label for country "${country}"`)
+          }
+          titles.push(classificationLabel)
+          classList.push(`country-${country}`)
         }
-        titles.push(classificationLabel)
-        classList.push(`country-${country}`)
       }
       const gender = people.gender || Gender.male
       for (const occupation of people.occupations) {
@@ -102,7 +108,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
     {
       let countriesHtml = ""
-      for (const country of Array.from(countries).sort()) {
+      for (const country of Array.from(allCountries).sort()) {
         const countryStr = context.messages.country[country]
         countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="find(event)"> ${countryStr}</label></span>`
       }

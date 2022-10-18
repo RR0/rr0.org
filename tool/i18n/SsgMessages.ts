@@ -1,10 +1,16 @@
 import {Gender} from "../model/people/Gender"
+import {CountryCode} from "../model/place/CountryCode"
+import {Occupation} from "../model/people/Occupation"
 
 export class MessageUtils {
   static plural(n: number, word: string): string {
     return n ? n + " " + word + (n > 1 ? "s" : "") : ""
   }
 }
+
+type CountryMessages = { [key in CountryCode]: string }
+
+type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
 export interface SsgMessages {
   context: {
@@ -83,60 +89,8 @@ export interface SsgMessages {
     }
   }
   people: {
-    occupation: {
-      anthropologist(gender: Gender): string
-      artist(gender: Gender): string
-      astronomer(gender: Gender): string
-      biologist(gender: Gender): string
-      biochemist(gender: Gender): string
-      chemist(gender: Gender): string
-      cryptozoologist(gender: Gender): string
-      dentist(gender: Gender): string
-      director(gender: Gender): string
-      engineer(gender: Gender): string
-      geologist(gender: Gender): string
-      historian(gender: Gender): string
-      journalist(gender: Gender): string
-      lawyer(gender: Gender): string
-      librarian(gender: Gender): string
-      military(gender: Gender): string
-      musician(gender: Gender): string
-      neurologist(gender: Gender): string
-      parapsychologist(gender: Gender): string
-      philosopher(gender: Gender): string
-      photographer(gender: Gender): string
-      physician(gender: Gender): string
-      physicist(gender: Gender): string
-      pilot(gender: Gender): string
-      producer(gender: Gender): string
-      psychologist(gender: Gender): string
-      sailor(gender: Gender): string
-      sociologist(gender: Gender): string
-      softwareEngineer(gender: Gender): string
-      stuntman(gender: Gender): string
-      teacher(gender: Gender): string
-      ufologist(gender: Gender): string
-      writer(gender: Gender): string
-    }
+    occupation: OccupationMessages
   },
-  country: {
-    au: string,
-    be: string,
-    br: string,
-    ca: string,
-    ch: string,
-    cn: string,
-    de: string,
-    es: string
-    fr: string
-    it: string
-    mx: string
-    nz: string
-    pe: string
-    ru: string
-    uk: string
-    us: string
-    se: string
-  }
+  country: CountryMessages
 }
 

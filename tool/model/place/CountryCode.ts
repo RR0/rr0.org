@@ -1,4 +1,5 @@
 export enum CountryCode {
+  at = "at",
   au = "au",
   be = "be",
   br = "br",
@@ -6,6 +7,8 @@ export enum CountryCode {
   cn = "cn",
   ch = "ch",
   de = "de",
+  dk = "dk",
+  gr = "gr",
   sp = "es",
   fr = "fr",
   it = "it",

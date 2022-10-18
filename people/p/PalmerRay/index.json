@@ -6,5 +6,7 @@
     "journalist",
     "writer"
   ],
-  "country": "us"
+  "countries": [
+    "us"
+  ]
 }

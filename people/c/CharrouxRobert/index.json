@@ -3,5 +3,7 @@
   "deathTime": "1978-06-24",
   "occupations": ["ufologist"],
   "pseudonyms": ["Robert Grugeau"],
-  "country": "fr"
+  "countries": [
+    "fr"
+  ]
 }

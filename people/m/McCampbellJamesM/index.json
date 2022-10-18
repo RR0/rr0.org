@@ -6,5 +6,7 @@
     "physicist",
     "engineer"
   ],
-  "country": "us"
+  "countries": [
+    "us"
+  ]
 }

@@ -9,6 +9,7 @@ export class People {
   title?: string
   birthTime?: Date
   deathTime?: Date
+  hoax = false
 
   constructor(
     readonly dirName?: string,

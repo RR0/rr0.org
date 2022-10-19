@@ -1,7 +1,16 @@
 {
+  "title": "Von Neumann, John",
   "birthTime": "1903-12-28",
-  "occupations": [],
+  "deathTime": "1957-02-08",
+  "occupations": [
+    "chemist",
+    "engineer",
+    "mathematician",
+    "physicist"
+  ],
   "countries": [
+    "hu",
+    "de",
     "us"
   ]
 }

@@ -55,7 +55,9 @@ export class PeopleDirectoryStep extends DirectoryStep {
       const titles = []
       const classList = []
       const details: string[] = []
-      const countries = people.countries
+      if (people.hoax) {
+        classList.push("canular")
+      }
       let birthTimeStr = people.birthTime as unknown as string
       if (birthTimeStr) {
         const birthTime = people.birthTime = Time.dateFromIso(birthTimeStr)
@@ -77,6 +79,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (age) {
         titles.push(`${age} ans`)
       }
+      const countries = people.countries
       if (countries) {
         for (const country of countries) {
           allCountries.add(country)

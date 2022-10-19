@@ -6,10 +6,10 @@ import {FileInfo, getFileInfo} from "../util/file/FileInfo"
 import {DirectoryStep} from "./DirectoryStep"
 import {Gender} from "../model/people/Gender"
 import {CountryCode} from "../model/place/CountryCode"
-import {People} from "./People"
 import {Occupation} from "../model/people/Occupation"
 import {StringUtil} from "../util/StringUtil"
 import {Time} from "../model/time/Time"
+import {People} from "../model/people/People"
 
 /**
  * Scan directories for people information, then populates a template with collected data.
@@ -38,10 +38,18 @@ export class PeopleDirectoryStep extends DirectoryStep {
     }
     peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     const directoriesHtml = HtmlTag.toString("ul", peopleList.map(people => {
+      const dirName = people.dirName
       if (!people.title) {
-        const lastSlash = people.dirName.lastIndexOf("/")
-        const lastDir = people.dirName.substring(lastSlash + 1)
-        people.title = camelToText(lastDir)
+        if (dirName) {
+          const lastSlash = dirName.lastIndexOf("/")
+          const lastDir = dirName.substring(lastSlash + 1)
+          const title = camelToText(lastDir)
+          const firstSpace = title.indexOf(" ")
+          people.title = firstSpace > 0 ? title.substring(0, firstSpace) + ", " + title.substring(
+            firstSpace + 1) : title
+        } else {
+          throw Error("Can't devise title for people " + JSON.stringify(people))
+        }
       }
       const attrs: { [name: string]: string } = {}
       const titles = []
@@ -57,15 +65,15 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (deathTimeStr) {
         const deathTime = people.deathTime = Time.dateFromIso(deathTimeStr)
         deathTimeStr = deathTime.getFullYear().toString()
-        if (people.isDeceased) {
-          classList.push("deceased")
-        }
+      }
+      if (people.isDeceased()) {
+        classList.push("deceased")
       }
       if (birthTimeStr || deathTimeStr) {
         const timeStr = birthTimeStr ? deathTimeStr ? birthTimeStr + "-" + deathTimeStr : birthTimeStr + "-" : "-" + deathTimeStr
         titles.push(timeStr)
       }
-      const age = people.age
+      const age = people.getAge()
       if (age) {
         titles.push(`${age} ans`)
       }
@@ -96,7 +104,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (details.length > 0) {
         text.push(`(${details.join(", ")})`)
       }
-      const a = HtmlTag.toString("a", text.join(" "), {href: "/" + people.dirName + "/"})
+      const a = HtmlTag.toString("a", text.join(" "), {href: "/" + dirName + "/"})
       if (titles.length) {
         attrs.title = titles.join(", ")
       }

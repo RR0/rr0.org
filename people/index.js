@@ -3,7 +3,12 @@ var occupationInputs
 
 function find(_e) {
   const textInput = document.querySelector("#searchForm input[name='text']")
-  const value = textInput.value.toLowerCase()
+
+  function normalize(str) {
+    return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  }
+
+  const value = normalize(textInput.value)
   const list = document.querySelector("#searchForm + ul")
   let found = 0
   const selectedCountries = countryInputs.filter(countryInput => countryInput.checked)
@@ -11,11 +16,12 @@ function find(_e) {
   const selectedOccupations = occupationInputs.filter(occupationInput => occupationInput.checked)
     .map(occupationInput => occupationInput.id)
   for (const child of list.children) {
-    const countryClasses = Array.from(child.classList).filter(c => c.startsWith("country-"))
-    const occupationClasses = Array.from(child.classList).filter(c => c.startsWith("occupation-"))
+    const classes = Array.from(child.classList)
+    const countryClasses = classes.filter(c => c.startsWith("country-"))
+    const occupationClasses = classes.filter(c => c.startsWith("occupation-"))
     const matchCountry = countryClasses.some(o => selectedCountries.includes(o))
     const matchOccupation = occupationClasses.some(o => selectedOccupations.includes(o))
-    const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
+    const matchText = normalize(child.textContent).indexOf(value) >= 0
     if (matchText && matchCountry && matchOccupation) {
       child.style.display = "list-item"
       found++

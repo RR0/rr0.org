@@ -1,7 +1,10 @@
 {
   "birthTime": "1907",
-  "deathTilme": "1994-11-03",
-  "occupations": ["ufologist", "engineer"],
+  "deathTime": "1994-11-03",
+  "occupations": [
+    "ufologist",
+    "engineer"
+  ],
   "countries": [
     "fr"
   ]

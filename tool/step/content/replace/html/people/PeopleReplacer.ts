@@ -3,7 +3,8 @@ import {People} from "../../../../../model/people/People"
 import {UrlUtil} from "../../../../../util/url/UrlUtil"
 
 export class PeopleReplacer {
-  readonly cache = new Map<string, People>()
+
+  protected cache = new Map<string, People>()
 
   constructor(protected peopleFiles: string[]) {
   }
@@ -24,7 +25,7 @@ export class PeopleReplacer {
       this.cache.set(people.lastName, people)
     }
     const titleAttr = peopleStr.indexOf(people.fullName) < 0 ? ` title="${people.fullName}"` : ""
-    let url = people.url
+    let url = people.dirName
     let replacement: string
     const currentFileName = context.currentFile?.name!
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
@@ -55,24 +56,10 @@ export class PeopleReplacer {
         firstNames = []
       }
     }
-    let url: string | undefined = this.cache.get(lastName)?.url || this.getUrl(lastName, firstNames)
-    if (this.peopleFiles.indexOf(url) < 0) {
-      url = undefined
+    let dirName: string | undefined = this.cache.get(lastName)?.dirName || People.getUrl(lastName, firstNames)
+    if (this.peopleFiles.indexOf(dirName) < 0) {
+      dirName = undefined
     }
-    return new People(lastName, firstNames, url)
-  }
-
-  getUrl(lastName: string, firstNames: string[]): string {
-    const normalizedLastName = this.withoutAccents(lastName)
-    const normalizedFirstNames = firstNames.map(this.withoutAccents).map(this.withoutDots)
-    return "people/" + normalizedLastName.charAt(0).toLowerCase() + "/" + normalizedLastName + normalizedFirstNames.join("")
-  }
-
-  private withoutDots(str: string): string {
-    return str.replace(".", "")
-  }
-
-  private withoutAccents(str: string): string {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    return new People(dirName, firstNames, lastName)
   }
 }

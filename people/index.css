@@ -4,8 +4,9 @@
   margin: 1em 0;
 }
 
-.deceased {
-  text-decoration: line-through;
+.deceased::after {
+  content: " †";
+  color: gray;
 }
 
 #searchForm .option {

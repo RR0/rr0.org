@@ -124,12 +124,13 @@ new Ssg(config)
     "people/scientifiques.html",
     outputFunc, [
       Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist,
-      Occupation.biochemist,
+      Occupation.biochemist, Occupation.biophysicist,
       Occupation.chemist,
       Occupation.engineer,
       Occupation.geologist, Occupation.geophysicist,
-      Occupation.mathematician,
-      Occupation.neurologist,
+      Occupation.mathematician, Occupation.meteorologist,
+      Occupation.neurologist, Occupation.neuroscientist,
+      Occupation.oceanographer,
       Occupation.psychologist, Occupation.philosopher, Occupation.physicist, Occupation.physician, Occupation.psychiatrist,
       Occupation.sociologist
     ]))

@@ -1,10 +1,10 @@
 {
-  "birthTime": "1917",
-  "deathTime": "2001-02-24",
+  "birthTime": "1965",
   "occupations": [
-    "scientist"
+    "engineer",
+    "softwareEngineer"
   ],
   "countries": [
-    "us"
+    "de"
   ]
 }

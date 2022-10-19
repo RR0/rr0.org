@@ -3,13 +3,6 @@ import {testUtil} from "../../../../../test/TestUtil"
 
 describe("PeopleReplacer", () => {
 
-  test("build url", () => {
-    const replacer = new PeopleReplacer([])
-    expect(replacer.getUrl("Beau", ["Jérôme"])).toBe("people/b/BeauJerome")
-    expect(replacer.getUrl("Beau", ["Jérôme", "Pierre"])).toBe("people/b/BeauJeromePierre")
-    expect(replacer.getUrl("VonBraun", ["Werner"])).toBe("people/v/VonBraunWerner")
-  })
-
   test("build people with one first name", () => {
     const replacer = new PeopleReplacer(["people/b/BeauJerome"])
     expect(replacer.getPeople("Jérôme Beau")).toEqual({

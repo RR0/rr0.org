@@ -1,14 +1,14 @@
-import people from '../../people/people';
-import time from '../../time/time';
-import {org} from "../common";
-import lang from '../lang';
+import people from "../../people/people.old"
+import time from "../../time/time"
+import {org} from "../common"
+import lang from "../lang"
 
-const angular = require('angular');
+const angular = require("angular")
 
 function NavLink(l, url, t) {
-  this.label = l;
-  this.link = url;
-  this.title = t;
+  this.label = l
+  this.link = url
+  this.title = t
 }
 
 interface Start {

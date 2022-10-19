@@ -1,16 +1,16 @@
-import {org} from "../js/common";
+import {org} from "../js/common"
+import net from "../js/net"
+import people from "../people/people.old"
 
-const angular = require('angular');
-import net from '../js/net';
-import people from '../people/people';
+const angular = require("angular")
 
-declare var google;
+declare var google
 
 class Moment {
-  startDate: any;
-  private decade: boolean;
-  private dayOfMonth: any;
-  private timeZone: any;
+  startDate: any
+  private decade: boolean
+  private dayOfMonth: any
+  private timeZone: any
   private year: any;
   private month: any;
   private hour: any;

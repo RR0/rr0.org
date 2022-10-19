@@ -1,99 +1,11 @@
 <!--#include virtual="/header-start.html" -->
 <title>Scientifiques</title>
+<link href="index.css" rel="stylesheet"/>
 <!--#include virtual="/header-end.html" -->
 <p class="exergue">Si quelqu'un devrait garder un esprit ouvert sur une question jusqu'à ce que des données suffisantes
   aient été recueillies pour s'en occuper, c'est bien le scientifique<span class="source"> <a
       href="h/HainesRichardF/index.html">Haines, R. F. </a><em>Observing UFOs</em>, p. xvi</span>
 </p>
-<script>
-  var countryInputs
-  var occupationInputs
-
-  function find(e) {
-    const textInput = document.querySelector("#searchForm input[name='text']")
-    const value = textInput.value.toLowerCase()
-    const list = document.querySelector("#searchForm + ul")
-    let found = 0
-    const selectedCountries = countryInputs.filter(countryInput => countryInput.checked)
-      .map(countryInput => countryInput.id)
-    const selectedOccupations = occupationInputs.filter(occupationInput => occupationInput.checked)
-      .map(occupationInput => occupationInput.id)
-    for (const child of list.children) {
-      const countryClasses = Array.from(child.classList).filter(c => c.startsWith("country-"))
-      const occupationClasses = Array.from(child.classList).filter(c => c.startsWith("occupation-"))
-      const matchCountry = countryClasses.some(o => selectedCountries.includes(o))
-      const matchOccupation = occupationClasses.some(o => selectedOccupations.includes(o))
-      const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
-      if (matchText && matchCountry && matchOccupation) {
-        child.style.display = "list-item"
-        found++
-      } else {
-        child.style.display = "none"
-      }
-    }
-    const output = document.querySelector("#searchForm output")
-    output.textContent = `(${found > 0 ? found : "Aucune"} personne${found > 1 ? "s" : ""})`
-  }
-</script>
-<style>
-  #searchForm {
-    padding: 1em 0.5em;
-    border: 1px solid gray;
-    margin: 1em 0;
-  }
-
-  .deceased {
-    text-decoration: line-through;
-  }
-
-  #searchForm .option {
-    column-width: 12em;
-  }
-
-  #searchForm + ul {
-    column-width: 14em;
-  }
-
-  #searchForm label, output {
-    padding: 0.5em 1em;
-    white-space: nowrap;
-  }
-
-  #searchForm input[name="text"] {
-    margin-left: 0.5em;
-  }
-
-  #searchForm output {
-    color: gray;
-  }
-</style>
-<form id="searchForm">
-  <label style="white-space: normal">Nom <input name="text" oninput="find(event)"
-      style="margin-left: 1em" type="search"></label>
-  <details>
-    <summary>Pays</summary>
-    ${countries}
-  </details>
-  <details>
-    <summary>Profession</summary>
-    ${occupations}
-  </details>
-  <output></output>
-</form>
-${directories}
-<script>
-  {
-    var countryInputs = Array.from(document.querySelectorAll("#countries input[type=checkbox]"))
-    for (const countryInput of countryInputs) {
-      countryInput.checked = true
-    }
-  }
-  {
-    var occupationInputs = Array.from(document.querySelectorAll("#occupations input[type=checkbox]"))
-    for (const occupationInput of occupationInputs) {
-      occupationInput.checked = true
-    }
-  }
-  document.querySelector("#searchForm input").dispatchEvent(new Event("input"))
-</script>
+<!--#include virtual="form.html" -->
+<script src="index.js" type="text/javascript"></script>
 <!--#include virtual="/footer.html" -->

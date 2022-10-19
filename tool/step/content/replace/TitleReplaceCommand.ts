@@ -2,7 +2,12 @@ import {RegexpReplaceCommand} from "./RegexpReplaceCommand"
 import {SsgReplacer} from "./SsgReplacer"
 import {HtmlSsgContext} from "../../../HtmlSsgContext"
 
+/**
+ * Replaces "${title}" by the page's <title> content,
+ * with a link if there's a <meta name="url"> content.
+ */
 export class TitleReplaceCommand extends RegexpReplaceCommand {
+
   constructor() {
     super(/\$\{title}/)
   }

@@ -12,8 +12,20 @@ export class SsiIncludeReplaceCommand extends RegexpReplaceCommand {
 
   protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {
     return {
-      replacer: (substring: string, ...args: any[]): string => {
-        const fileName = path.join(process.cwd(), args[0])
+      replacer: (match: string, ...args: any[]): string => {
+        let currentDir = process.cwd()
+        const toInclude = args[0]
+        if (!toInclude.startsWith("/")) {
+          const currentFile = context.currentFile
+          if (currentFile) {
+            const currentFileName = currentFile.name
+            const lastSlash = currentFileName.lastIndexOf("/")
+            if (lastSlash) {
+              currentDir = path.join(process.cwd(), currentFileName.substring(0, lastSlash))
+            }
+          }
+        }
+        const fileName = path.join(currentDir, toInclude)
         const replacement = getFileInfo(context, fileName)
         return replacement.contents
       }

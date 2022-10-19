@@ -1,14 +1,14 @@
-import {org} from "../js/common";
-import {RR0Window} from "../js/index";
-import {NavService} from "../js/nav/nav";
+import {org} from "../js/common"
+import {RR0Window} from "../js/index"
+import {NavService} from "../js/nav/nav"
 
-const angular = require('angular');
+const angular = require("angular")
 
-var peoples = {};
+var peoples = {}
 
 export class People {
-  firstName: any;
-  lastName: string;
+  firstName: any
+  lastName: string
 
   constructor(p) {
     'use strict';

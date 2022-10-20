@@ -30,30 +30,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
   })
 }
 
-export class UdbController {
-  constructor(udbService, logger, dir = "./") {
-    this.udbService = udbService
-    this.logger = logger
-    this.logs = "Loading..."
-    udbService.load(dir + "usources.txt", dir + "U.RND").then(() => logger.log("loaded"))
+export class RecordEnumerator {
+  constructor(input, recordIndex, maxCount) {
+    this.input = input
+    this.recordIndex = recordIndex
+    this.maxCount = maxCount
+    this.count = 0
+    this.input.goToRecord(this.recordIndex)
   }
 
-  timeLink(year) {
-    const millennium = Math.floor(year / 1000)
-    const centuries = year % 1000
-    const century = Math.floor(centuries / 100)
-    const decades = centuries % 100
-    const decade = Math.floor(decades / 10)
-    const y = decades % 10
-    return `/time/${millennium}/${century}/${decade}/${y}`
+  hasNext() {
+    return this.count < this.maxCount && this.input.hasNext()
   }
 
-  search(matchCriteria) {
+  next() {
     return __awaiter(this, void 0, void 0, function* () {
-      const memory = yield this.udbService.match(matchCriteria)
-      return memory.records
+      this.input.goToRecord(this.recordIndex)
+      const promise = this.input.readRecord(this.recordIndex)
+      this.recordIndex++
+      this.count++
+      return promise
     })
   }
 }
 
-//# sourceMappingURL=UdbController.js.map
+//# sourceMappingURL=RecordEnumerator.js.map

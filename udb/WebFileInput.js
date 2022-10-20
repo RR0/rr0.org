@@ -1,55 +1,85 @@
-"use strict"
-Object.defineProperty(exports, "__esModule", {value: true})
-exports.WebFileInput = void 0
-var UdbRecordReader_1 = require("../input/db/udb/UdbRecordReader")
-var RecordEnumerator_1 = require("../input/RecordEnumerator")
-/**
- * A FileInput that reads from a webapp.
- */
-var WebFileInput = /** @class */ (function () {
-  /*@ngInject*/
-  function WebFileInput(logger, $http) {
-    this.logger = logger
-    this.$http = $http
-    this.filePos = 0
-    this.recordSize = 112
-  }
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+            resolve(value)
+        })
+    }
 
-  WebFileInput.prototype.open = function (dataFile, whenDone) {
-    var _this = this
-    this.$http.get(dataFile, {responseType: "arraybuffer"}).then(function (response) {
-      _this.fileData = response.data
-      _this.fileSize = _this.fileData.byteLength
-      // logDebug('File size=' + fileSize);
-      _this.buffer = new Uint8Array(_this.fileData, _this.filePos, _this.recordSize)
-      _this.recordReader = new UdbRecordReader_1.UdbRecordReader(_this.buffer, _this.logger)
-      whenDone()
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value))
+            } catch (e) {
+                reject(e)
+            }
+        }
+
+        function rejected(value) {
+            try {
+                step(generator["throw"](value))
+            } catch (e) {
+                reject(e)
+            }
+        }
+
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected)
+        }
+
+        step((generator = generator.apply(thisArg, _arguments || [])).next())
     })
-  }
-  WebFileInput.prototype.recordEnumerator = function (firstIndex, maxCount) {
-    return new RecordEnumerator_1.RecordEnumerator(this, firstIndex, maxCount)
-  }
-  WebFileInput.prototype.goToRecord = function (recordIndex) {
-    this.filePos = recordIndex * this.recordSize
-  }
-  WebFileInput.prototype.hasNext = function () {
-    return this.filePos + (this.recordSize * 2) < this.fileSize
-  }
-  WebFileInput.prototype.readRecord = function (recordIndex) {
-    var _this = this
-    return new Promise(function (resolve, reject) {
-      _this.getBuffer()
-      var inputRecord = _this.recordReader.read(_this.filePos)
-      inputRecord.id = recordIndex
-      resolve(inputRecord)
-    })
-  }
-  WebFileInput.prototype.close = function () {
-  }
-  WebFileInput.prototype.getBuffer = function () {
-    this.buffer.set(new Uint8Array(this.fileData, this.filePos, this.recordSize))
-  }
-  return WebFileInput
-}())
-exports.WebFileInput = WebFileInput
+}
+import {UdbRecordReader} from "./input/db/udb/UdbRecordReader.js"
+import {RecordEnumerator} from "./input/RecordEnumerator.js"
+
+export class WebFileInput {
+    constructor(logger) {
+        this.logger = logger
+        this.filePos = 0
+        this.recordSize = 112
+    }
+
+    open(dataFile) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield fetch(dataFile, {headers: {"User-Agent": "@rr0/udb", responseType: "arraybuffer"}})
+            if (response.ok) {
+                this.fileData = yield response.arrayBuffer()
+                this.fileSize = this.fileData.byteLength
+                this.buffer = new Uint8Array(this.fileData, this.filePos, this.recordSize)
+                this.recordReader = new UdbRecordReader(this.buffer, this.logger)
+            } else {
+                throw Error(response.statusText)
+            }
+        })
+    }
+
+    recordEnumerator(firstIndex, maxCount) {
+        return new RecordEnumerator(this, firstIndex, maxCount)
+    }
+
+    goToRecord(recordIndex) {
+        this.filePos = recordIndex * this.recordSize
+    }
+
+    hasNext() {
+        return this.filePos + (this.recordSize * 2) < this.fileSize
+    }
+
+    readRecord(recordIndex) {
+        return new Promise((resolve, reject) => {
+            this.getBuffer()
+            let inputRecord = this.recordReader.read(this.filePos)
+            inputRecord.id = recordIndex
+            resolve(inputRecord)
+        })
+    }
+
+    close() {
+    }
+
+    getBuffer() {
+        this.buffer.set(new Uint8Array(this.fileData, this.filePos, this.recordSize))
+    }
+}
+
 //# sourceMappingURL=WebFileInput.js.map

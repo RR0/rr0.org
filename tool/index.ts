@@ -126,13 +126,14 @@ new Ssg(config)
       Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
       Occupation.biochemist, Occupation.biophysicist, Occupation.botanist,
       Occupation.chemist,
-      Occupation.engineer,
+      Occupation.engineer, Occupation.ethnologist,
       Occupation.geologist, Occupation.geophysicist,
       Occupation.historian,
       Occupation.mathematician, Occupation.meteorologist,
       Occupation.neurologist, Occupation.neuroscientist, Occupation.neuropsychiatrist,
       Occupation.oceanographer,
       Occupation.psychologist, Occupation.philosopher, Occupation.physicist, Occupation.physician, Occupation.psychiatrist,
+      Occupation.radioastronomer,
       Occupation.sociologist, Occupation.softwareEngineer
     ]))
   .add(new CopyStep(copies))

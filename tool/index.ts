@@ -34,7 +34,7 @@ const roots = contents ? contents.split(",") : [
   "tech/**/*.html",
   "time/**/*.html",
   "politique/**/*.html",
-  "udb/**/*.*",
+  "udb/*.html",
   "js/**/*.html"
 ]
 const copiesArg = args.copies

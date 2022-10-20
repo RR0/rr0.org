@@ -15,7 +15,10 @@ export function toBufferEncoding(encoding: string | undefined): BufferEncoding |
     case "utf-8":
       return "utf-8"
     case "iso-8859-1":
+    case "iso-8859-2":
     case "windows-1252":
+    case "windows-1253":
+    case "IBM424_ltr":
       return "latin1"
     default:
       return encoding ? encoding as BufferEncoding : undefined

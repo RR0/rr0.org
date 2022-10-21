@@ -26,14 +26,19 @@ function getFileLang(context: SsgContext, filePath: string): string | string[] {
   return lang
 }
 
-export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
-  const fileStats = fs.statSync(fileName)
+function getContents(context: SsgContext, fileName: string) {
   const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
   const html = parse(initialContents, {comment: true})
   const declaredEncoding = getCharSet(html) || getContentType(html)
   const detectedEncoding = detectEncoding(fileName)
   const encoding = declaredEncoding || detectedEncoding || "utf-8"
   const contents = fs.readFileSync(fileName, {encoding})
+  return {encoding, contents}
+}
+
+export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
+  const fileStats = fs.statSync(fileName)
+  const {encoding, contents} = getContents(context, fileName)
   const lang = getFileLang(context, fileName)
   return {name: fileName, encoding, contents, lastModified: fileStats.mtime, lang}
 }

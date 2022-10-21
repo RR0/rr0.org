@@ -1,24 +1,33 @@
 import {writeFile} from "./util/file/FileUtil"
-import {ContentsConfig, Ssg, SsgConfig} from "./Ssg"
+import {Ssg, SsgConfig} from "./Ssg"
 import {SsiIncludeReplaceCommand} from "./step/content/replace/html/ssi/SsiIncludeReplaceCommand"
 import {SsiIfReplaceCommand} from "./step/content/replace/html/ssi/SsiIfReplaceCommand"
 import {SsiLastModifiedReplaceCommand} from "./step/content/replace/html/ssi/SsiLastModifiedReplaceCommand"
-import {HtAccessToNetlifyReplaceCommand} from "./step/content/replace/htaccess/HtAccessToNetlifyReplaceCommand"
+import {
+  HtAccessToNetlifyRedirectsReplaceCommand
+} from "./step/content/replace/htaccess/HtAccessToNetlifyRedirectsReplaceCommand"
 import {SsiVarReplaceCommand} from "./step/content/replace/html/ssi/SsiVarCommand"
 import {HtmlTagReplaceCommand} from "./step/content/replace/html/tag/HtmlTagReplaceCommand"
-import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
+import {TimeReplacerFactory} from "./step/content/replace/html/time/TimeReplacerFactory"
 import {SsgContext, SsgContextImpl} from "./SsgContext"
 import {HtmlClassReplaceCommand} from "./step/content/replace/html/class/HtmlClassReplaceCommand"
 import {PeopleReplacerFactory} from "./step/content/replace/html/people/PeopleReplacerFactory"
-import {TimeContext} from "./time/TimeContext"
-import {ContentStep} from "./step/content/ContentStep"
+import {TimeContext} from "./step/content/replace/html/time/TimeContext"
+import {ContentStep, ContentStepConfig} from "./step/content/ContentStep"
 import {CopyStep} from "./step/CopyStep"
-import {TitleReplaceCommand} from "./step/content/replace/TitleReplaceCommand"
+import {TitleReplaceCommand} from "./step/content/replace/html/title/TitleReplaceCommand"
 import {FileInfo} from "./util/file/FileInfo"
 import {CaseDirectoryStep} from "./step/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./step/PeopleDirectoryStep"
 import {Occupation} from "./model/people/Occupation"
 import {CLI} from "./util/cli/CLI"
+import {
+  HtAccessToNetlifyConfigReplaceCommand
+} from "./step/content/replace/htaccess/HtAccessToNetlifyConfigReplaceCommand"
+import {timeDefaultHandler} from "./step/content/replace/html/title/TimeDefaultTitle"
+import {CopyrightReplaceCommand} from "./step/content/replace/html/copyright/CopyrightReplaceCommand"
+import {rr0DefaultCopyright} from "./step/content/replace/html/copyright/RR0DefaultCopyright"
+import {CaviarReplacerFactory} from "./step/content/replace/html/caviar/CaviarReplacerFactory"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -44,7 +53,9 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "rr0.js", "bower_components/VirtualSky/virtualsky.js", "bower_components/VirtualSky/virtualsky-planets.min.js",
   "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "people/index.js",
-  "people/index.css"
+  "people/index.css",
+  "udb/**/*.js",
+  "udb/input/db/udb/data/*.*"
 ]
 const config: SsgConfig = {
   outDir: "out"
@@ -69,25 +80,37 @@ const context = new SsgContextImpl("fr", new TimeContext({
   minute: "2-digit"
 }))
 
-const contentConfigs: ContentsConfig[] = [
-  {
-    roots: [".htaccess"],
-    replacements: [new HtAccessToNetlifyReplaceCommand()],
-    outputFile(inputFile: FileInfo): FileInfo {
-      return Object.assign({...inputFile}, {name: "_redirects"})
-    }
-  },
+const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
+  roots: [".htaccess"],
+  replacements: [new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")],
+  outputFile(inputFile: FileInfo): FileInfo {
+    return Object.assign({...inputFile}, {name: "_redirects"})
+  }
+}
+
+const htAccessToNetlifyConfig: ContentStepConfig = {
+  roots: [".htaccess"],
+  replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
+  outputFile(inputFile: FileInfo): FileInfo {
+    return Object.assign({...inputFile}, {name: "netlify.toml"})
+  }
+}
+
+const contentConfigs: ContentStepConfig[] = [
+  htAccessToNetlifyConfig,
   {
     roots,
     replacements: [
       new SsiIncludeReplaceCommand(),
-      new TitleReplaceCommand(),
+      new TitleReplaceCommand([timeDefaultHandler]),
+      new CopyrightReplaceCommand([rr0DefaultCopyright]),
       new SsiIfReplaceCommand(),
       new SsiVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
       new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
       new SsiLastModifiedReplaceCommand(),
       new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
-      new HtmlClassReplaceCommand("people", new PeopleReplacerFactory())
+      new HtmlClassReplaceCommand("people", new PeopleReplacerFactory()),
+      new HtmlClassReplaceCommand("temoin(.+)", new CaviarReplacerFactory())
       // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     ],
     outputFile(inputFile: FileInfo): FileInfo {
@@ -95,47 +118,53 @@ const contentConfigs: ContentsConfig[] = [
     }
   }
 ]
+
+const scientistsDirectoryStep = new PeopleDirectoryStep(
+  ["people/*/*/"],
+  ["people/Astronomers_fichiers"],
+  "people/scientifiques.html",
+  outputFunc, [
+    Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
+    Occupation.biochemist, Occupation.biophysicist, Occupation.botanist,
+    Occupation.chemist,
+    Occupation.engineer, Occupation.ethnologist,
+    Occupation.geologist, Occupation.geophysicist,
+    Occupation.historian,
+    Occupation.mathematician, Occupation.meteorologist,
+    Occupation.neurologist, Occupation.neuroscientist, Occupation.neuropsychiatrist,
+    Occupation.oceanographer,
+    Occupation.psychologist, Occupation.philosopher, Occupation.physicist, Occupation.physician, Occupation.psychiatrist,
+    Occupation.radioastronomer,
+    Occupation.sociologist, Occupation.softwareEngineer
+  ])
+
+const ufologistsDirectoryStep = new PeopleDirectoryStep(
+  ["people/*/*/"],
+  ["people/Astronomers_fichiers"],
+  "people/ufologues.html",
+  outputFunc, [Occupation.ufologist])
+
+const ufoCasesDirectoryStep = new CaseDirectoryStep(
+  [
+    "science/crypto/ufo/enquete/dossier/*/",
+    "time/1/6/0/8/Signes/",
+    "science/crypto/ufo/enquete/dossier/Ummo/Aluche",
+    "science/crypto/ufo/enquete/dossier/Ummo/SanJoseDeValderas",
+    "science/crypto/ufo/observation/projet/Hessdalen",
+    "people/a/AndreassonBetty",
+    "people/c/CrowhurstDonaldC",
+    "people/v/ValentichFrederik",
+    "people/n/NapolitanoLinda"
+  ],
+  ["science/crypto/ufo/enquete/dossier/canular"],
+  "science/crypto/ufo/enquete/dossier/index.html",
+  outputFunc)
+
 new Ssg(config)
   .add(new ContentStep(contentConfigs, outputFunc))
-  .add(new CaseDirectoryStep(
-    [
-      "science/crypto/ufo/enquete/dossier/*/",
-      "time/1/6/0/8/Signes/",
-      "science/crypto/ufo/enquete/dossier/Ummo/Aluche",
-      "science/crypto/ufo/enquete/dossier/Ummo/SanJoseDeValderas",
-      "science/crypto/ufo/observation/projet/Hessdalen",
-      "people/a/AndreassonBetty",
-      "people/c/CrowhurstDonaldC",
-      "people/v/ValentichFrederik",
-      "people/n/NapolitanoLinda"
-    ],
-    ["science/crypto/ufo/enquete/dossier/canular"],
-    "science/crypto/ufo/enquete/dossier/index.html",
-    outputFunc)
-  )
-  .add(new PeopleDirectoryStep(
-    ["people/*/*/"],
-    ["people/Astronomers_fichiers"],
-    "people/ufologues.html",
-    outputFunc, [Occupation.ufologist]))
-  .add(new PeopleDirectoryStep(
-    ["people/*/*/"],
-    ["people/Astronomers_fichiers"],
-    "people/scientifiques.html",
-    outputFunc, [
-      Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
-      Occupation.biochemist, Occupation.biophysicist, Occupation.botanist,
-      Occupation.chemist,
-      Occupation.engineer, Occupation.ethnologist,
-      Occupation.geologist, Occupation.geophysicist,
-      Occupation.historian,
-      Occupation.mathematician, Occupation.meteorologist,
-      Occupation.neurologist, Occupation.neuroscientist, Occupation.neuropsychiatrist,
-      Occupation.oceanographer,
-      Occupation.psychologist, Occupation.philosopher, Occupation.physicist, Occupation.physician, Occupation.psychiatrist,
-      Occupation.radioastronomer,
-      Occupation.sociologist, Occupation.softwareEngineer
-    ]))
+  .add(ufoCasesDirectoryStep)
+  .add(ufologistsDirectoryStep)
+  .add(scientistsDirectoryStep)
   .add(new CopyStep(copies))
   .start(context)
   .then(result => console.log("Completed", result))

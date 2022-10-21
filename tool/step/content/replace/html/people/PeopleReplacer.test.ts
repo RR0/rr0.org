@@ -6,54 +6,78 @@ describe("PeopleReplacer", () => {
   test("build people with one first name", () => {
     const replacer = new PeopleReplacer(["people/b/BeauJerome"])
     expect(replacer.getPeople("Jérôme Beau")).toEqual({
+      countries: [],
       lastName: "Beau",
       firstNames: ["Jérôme"],
-      url: "people/b/BeauJerome"
+      hoax: false,
+      dirName: "people/b/BeauJerome",
+      occupations: [],
+      pseudonyms: []
     })
   })
 
   test("build people with two first names", () => {
     const replacer = new PeopleReplacer(["people/b/BeauJeromePierre"])
     expect(replacer.getPeople("Jérôme Pierre Beau")).toEqual({
+      countries: [],
       lastName: "Beau",
       firstNames: ["Jérôme", "Pierre"],
-      url: "people/b/BeauJeromePierre"
+      hoax: false,
+      dirName: "people/b/BeauJeromePierre",
+      occupations: [],
+      pseudonyms: []
     })
   })
 
   test("build people with two last names", () => {
     const replacer = new PeopleReplacer(["people/v/VonBraunWerner"])
     expect(replacer.getPeople("Werner VonBraun")).toEqual({
+      countries: [],
       lastName: "VonBraun",
       firstNames: ["Werner"],
-      url: "people/v/VonBraunWerner"
+      hoax: false,
+      dirName: "people/v/VonBraunWerner",
+      occupations: [],
+      pseudonyms: []
     })
   })
 
   test("build people with one initial first names", () => {
     const replacer = new PeopleReplacer(["people/c/CondonEdwardU"])
     expect(replacer.getPeople("Edward U. Condon")).toEqual({
+      countries: [],
       lastName: "Condon",
       firstNames: ["Edward", "U."],
-      url: "people/c/CondonEdwardU"
+      hoax: false,
+      dirName: "people/c/CondonEdwardU",
+      occupations: [],
+      pseudonyms: []
     })
   })
 
   test("build people with last name first", () => {
     const replacer = new PeopleReplacer(["people/h/HynekJosefAllen"])
     expect(replacer.getPeople("Hynek, Josef Allen")).toEqual({
+      countries: [],
       lastName: "Hynek",
       firstNames: ["Josef", "Allen"],
-      url: "people/h/HynekJosefAllen"
+      hoax: false,
+      dirName: "people/h/HynekJosefAllen",
+      occupations: [],
+      pseudonyms: []
     })
   })
 
   test("Single name", () => {
     const replacer = new PeopleReplacer(["people/a/Aristote"])
     expect(replacer.getPeople("Aristote")).toEqual({
+      countries: [],
       lastName: "Aristote",
       firstNames: [],
-      url: "people/a/Aristote"
+      hoax: false,
+      dirName: "people/a/Aristote",
+      occupations: [],
+      pseudonyms: []
     })
   })
 

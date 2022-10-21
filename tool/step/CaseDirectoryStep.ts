@@ -52,7 +52,7 @@ export class CaseDirectoryStep extends DirectoryStep {
         const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
         Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
-        console.warn(e)
+        console.warn(`${dirName} has no index.json description`)
         // No json, just guess title.
       }
     }

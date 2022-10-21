@@ -1,4 +1,4 @@
-import {TimeReplacerFactory} from "../../../../../time/TimeReplacerFactory"
+import {TimeReplacerFactory} from "../time/TimeReplacerFactory"
 import {HtmlTagReplaceCommand} from "./HtmlTagReplaceCommand"
 import {testUtil} from "../../../../../test/TestUtil"
 

@@ -4,6 +4,9 @@ import {SsgContext} from "../../../../../SsgContext"
 import {promise as glob} from "glob-promise"
 import {PeopleReplacer} from "./PeopleReplacer"
 
+/**
+ * Creates replacers for people HTML in a given context.
+ */
 export class PeopleReplacerFactory implements ReplacerFactory {
 
   protected singleton?: PeopleReplacer

@@ -1,15 +1,15 @@
-import {SsgContext} from "../SsgContext"
+import {SsgContext} from "../../../../../SsgContext"
 
 export class TimeTextBuilder {
 
-  static build(context: SsgContext, b = true): string {
+  static build(context: SsgContext, print = true): string {
     const time = context.time
     let printOptions: Intl.DateTimeFormatOptions = {}
     let date = new Date()
 
     function setYear(year: number) {
       date.setFullYear(year)
-      if (b) {
+      if (print) {
         printOptions.year = context.time.options.year
       }
     }
@@ -17,7 +17,7 @@ export class TimeTextBuilder {
     function setMonth(month: number) {
       date.setDate(1) // Avoid increasing month if today is > 30
       date.setMonth(month - 1)
-      if (b) {
+      if (print) {
         printOptions.month = context.time.options.month
       }
     }

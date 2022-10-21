@@ -9,8 +9,8 @@ export class PeopleReplacer {
   constructor(protected peopleFiles: string[]) {
   }
 
-  replacement(context: SsgContext, matchingString: string, peopleContent: string): string {
-    const titleParts = / title="(.*?)"/.exec(matchingString)
+  replacement(context: SsgContext, match: string, peopleContent: string): string {
+    const titleParts = / title="(.*?)"/.exec(match)
     let peopleStr = peopleContent
     if (titleParts && titleParts.length > 1) {
       peopleStr = titleParts[1]
@@ -34,7 +34,7 @@ export class PeopleReplacer {
     } else {
       replacement = `<span class="peopl" translate="no">${peopleStr}</span>`
     }
-    context.debug("\tReplacing people", matchingString, "with", replacement)
+    context.debug("\tReplacing people", match, "with", replacement)
     return replacement
   }
 

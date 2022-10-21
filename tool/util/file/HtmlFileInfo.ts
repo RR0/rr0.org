@@ -6,7 +6,7 @@ const {JSDOM} = jsdom
 
 export interface HtmlFileInfo extends FileInfo {
   dom: any
-  title: string
+  title?: string
   titleUrl?: string
   author?: string
   copyright?: string
@@ -23,17 +23,13 @@ export function getHtmlFileInfo(context: SsgContext, fileName: string): HtmlFile
   const fileInfo = getFileInfo(context, fileName)
   const fileContents = fileInfo.contents
   const dom = new JSDOM(fileContents)
-  let title: string
+  let title: string | undefined
   const doc = dom.window.document
   let titleElem = doc.querySelector("title")
   if (titleElem) {
-    title = titleElem.textContent.trim()
-    const split = title.lastIndexOf(" - ")
-    if (split > 0) {
-      title = title.substring(0, split)
-    }
-  } else {
-    title = fileName
+    const elemTitle = titleElem.textContent.trim()
+    const split = elemTitle.lastIndexOf(" - ")
+    title = split > 0 ? elemTitle.substring(0, split) : elemTitle
   }
   const titleUrl = meta("url", doc)
   const author = meta("author", doc)

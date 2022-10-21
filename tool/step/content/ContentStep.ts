@@ -1,14 +1,34 @@
 import {SsgStep, SsgStepResult} from "../SsgStep"
 import {SsgContext} from "../../SsgContext"
-import {ContentsConfig, OutputFunc, SsgConfig} from "../../Ssg"
+import {OutputFunc, SsgConfig} from "../../Ssg"
 import {promise as glob} from "glob-promise"
 import {getHtmlFileInfo} from "../../util/file/HtmlFileInfo"
 import {HtmlSsgContext} from "../../HtmlSsgContext"
+import {ReplaceCommand} from "./replace/ReplaceCommand"
+import {FileInfo} from "../../util/file/FileInfo"
+
+export type ContentStepConfig = {
+  /**
+   * The glob roots of contents to process.
+   */
+  roots: string[],
+
+  /**
+   * The replacements to process on contents.
+   */
+  replacements: ReplaceCommand[],
+
+  /**
+   * @param inputFile
+   * @return the file where to output.
+   */
+  outputFile(inputFile: FileInfo): FileInfo
+}
 
 
 export class ContentStep implements SsgStep {
 
-  constructor(protected contents: ContentsConfig[], protected output: OutputFunc) {
+  constructor(protected contents: ContentStepConfig[], protected output: OutputFunc) {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<SsgStepResult> {
@@ -21,7 +41,7 @@ export class ContentStep implements SsgStep {
     }
   }
 
-  private async processContents(context: SsgContext, contentsConfig: ContentsConfig) {
+  private async processContents(context: SsgContext, contentsConfig: ContentStepConfig) {
     let contentCount = 0
     for (const contentsRoot of contentsConfig.roots) {
       const contentFiles = await glob(contentsRoot)

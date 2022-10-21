@@ -32,7 +32,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
         const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
         Object.assign(peopleDir, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
-        console.warn(e)
+        console.warn(`${dirName} has no index.json description`)
         // No json, just guess title.
       }
     }

@@ -1,4 +1,4 @@
-import {SsgContext, SsgContextImpl} from "../SsgContext"
+import {SsgContext, SsgContextImpl} from "../../../../../SsgContext"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {TimeContext} from "./TimeContext"
 

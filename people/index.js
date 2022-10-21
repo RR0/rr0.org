@@ -1,8 +1,10 @@
 var countryInputs
 var occupationInputs
 
+const form = document.getElementById("searchForm")
+
 function find(_e) {
-  const textInput = document.querySelector("#searchForm input[name='text']")
+  const textInput = form.querySelector("input[type='text']")
 
   function normalize(str) {
     return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -29,20 +31,17 @@ function find(_e) {
       child.style.display = "none"
     }
   }
-  const output = document.querySelector("#searchForm output")
+  const output = form.querySelector("output")
   output.textContent = `(${found > 0 ? found : "Aucune"} personne${found > 1 ? "s" : ""})`
 }
 
-{
-  countryInputs = Array.from(document.querySelectorAll("#countries input[type=checkbox]"))
-  for (const countryInput of countryInputs) {
-    countryInput.checked = true
-  }
+countryInputs = Array.from(form.querySelectorAll("#countries input[type=checkbox]"))
+for (const countryInput of countryInputs) {
+  countryInput.checked = true
 }
-{
-  occupationInputs = Array.from(document.querySelectorAll("#occupations input[type=checkbox]"))
-  for (const occupationInput of occupationInputs) {
-    occupationInput.checked = true
-  }
+occupationInputs = Array.from(form.querySelectorAll("#occupations input[type=checkbox]"))
+for (const occupationInput of occupationInputs) {
+  occupationInput.checked = true
 }
-document.querySelector("#searchForm input").dispatchEvent(new Event("input"))
+form.style.display = "block"
+form.querySelector("input").dispatchEvent(new Event("input"))

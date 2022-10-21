@@ -1,5 +1,5 @@
 import {TimeReplacer} from "./TimeReplacer"
-import {testUtil} from "../test/TestUtil"
+import {testUtil} from "../../../../../test/TestUtil"
 
 describe("TimeReplacer", () => {
 

@@ -1,13 +1,8 @@
 import {SsgContext} from "./SsgContext"
-import {ReplaceCommand} from "./step/content/replace/ReplaceCommand"
 import {SsgStep} from "./step/SsgStep"
 import {FileInfo} from "./util/file/FileInfo"
 
-export type ContentsConfig = {
-  roots: string[],
-  replacements: ReplaceCommand[],
-  outputFile(inputFile: FileInfo): FileInfo
-}
+
 export type SsgConfig = {
   outDir: string
 }

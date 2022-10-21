@@ -1,8 +1,8 @@
-import {SsgContext} from "../SsgContext"
+import {SsgContext} from "../../../../../SsgContext"
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
-import {UrlUtil} from "../util/url/UrlUtil"
+import {UrlUtil} from "../../../../../util/url/UrlUtil"
 
 export class TimeReplacer {
 

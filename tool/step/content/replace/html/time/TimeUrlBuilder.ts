@@ -1,4 +1,4 @@
-import {SsgContext} from "../SsgContext"
+import {SsgContext} from "../../../../../SsgContext"
 
 export class TimeUrlBuilder {
 

@@ -1,10 +1,11 @@
-<footer data-ng-controller="FootCtrl">
-  <div data-ng-cloak data-ng-show="!isFramed()" id="footerTable">
+<footer>
+  <div id="footerTable">
     <div class="footer">
-      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->
-      <span class="copyright" data-default-name="RR0" data-url="/Copyright.html"></span> - <a href="/Contact.html">Contact</a>
+      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
+      Copyright <span class="copyright">${copyright}</span> - <a href="/Contact.html">Contact</a>
     </div>
   </div>
+  <script>if (window !== top) document.getElementById("footerTable").style.display = "none"</script>
 </footer>
 </div><!--text-->
 </div><!--contents-->

@@ -1,5 +1,5 @@
 import {SsgContext, SsgContextImpl} from "../SsgContext"
-import {TimeContext} from "../time/TimeContext"
+import {TimeContext} from "../step/content/replace/html/time/TimeContext"
 import {HtmlFileInfo} from "../util/file/HtmlFileInfo"
 import {HtmlSsgContext} from "../HtmlSsgContext"
 

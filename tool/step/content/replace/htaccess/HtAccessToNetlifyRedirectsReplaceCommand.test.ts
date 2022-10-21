@@ -1,10 +1,10 @@
-import {HtAccessToNetlifyReplaceCommand} from "./HtAccessToNetlifyReplaceCommand"
+import {HtAccessToNetlifyRedirectsReplaceCommand} from "./HtAccessToNetlifyRedirectsReplaceCommand"
 import {testUtil} from "../../../../test/TestUtil"
 
 describe("HtAccessToNetlifyReplaceCommand", () => {
 
   test("redirect html file to html file", async () => {
-    const command = new HtAccessToNetlifyReplaceCommand()
+    const command = new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")
     const context = testUtil.newHtmlContext(".htaccess",
       `Redirect /Documents/Articles/Vallee/1990_5ArgumentsContreHET_Vallee_fr.html https://rr0.org/time/1/9/9/0/Vallee_5ArgumentsAgainstTheExtraterrestrialOriginOfUnidentifiedFlyingObjects/index_fr.html`)
     const file = await command.execute(context)
@@ -12,7 +12,7 @@ describe("HtAccessToNetlifyReplaceCommand", () => {
   })
 
   test("redirect directory to directory", async () => {
-    const command = new HtAccessToNetlifyReplaceCommand()
+    const command = new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")
     const context = testUtil.newHtmlContext(".htaccess",
       `Redirect /science/crypto/ufologie https://rr0.org/science/crypto/ufo`)
     const file = await command.execute(context)
@@ -22,7 +22,7 @@ describe("HtAccessToNetlifyReplaceCommand", () => {
   describe("redirect directory to directory", () => {
 
     test("with trailing slash", async () => {
-      const command = new HtAccessToNetlifyReplaceCommand()
+      const command = new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")
       const context = testUtil.newHtmlContext(".htaccess",
         `Redirect /science/crypto/ufo/analyse/hypotheses/HET/ https://rr0.org/science/crypto/ufo/analyse/hypotheses/intelligence/HET/`)
       const file = await command.execute(context)
@@ -30,7 +30,7 @@ describe("HtAccessToNetlifyReplaceCommand", () => {
     })
 
     test("without trailing slash", async () => {
-      const command = new HtAccessToNetlifyReplaceCommand()
+      const command = new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")
       const context = testUtil.newHtmlContext(".htaccess",
         `Redirect /science/crypto/ufologie https://rr0.org/science/crypto/ufo`)
       const file = await command.execute(context)

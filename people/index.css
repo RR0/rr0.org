@@ -2,6 +2,7 @@
   padding: 1em 0.5em;
   border: 1px solid gray;
   margin: 1em 0;
+  display: none;
 }
 
 .deceased::after {

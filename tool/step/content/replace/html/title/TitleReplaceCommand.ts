@@ -1,6 +1,7 @@
-import {RegexpReplaceCommand} from "./RegexpReplaceCommand"
-import {SsgReplacer} from "./SsgReplacer"
-import {HtmlSsgContext} from "../../../HtmlSsgContext"
+import {RegexpReplaceCommand} from "../../RegexpReplaceCommand"
+import {SsgReplacer} from "../../SsgReplacer"
+import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
+import {StringContextHandler} from "../StringContextHandler"
 
 /**
  * Replaces "${title}" by the page's <title> content,
@@ -8,7 +9,7 @@ import {HtmlSsgContext} from "../../../HtmlSsgContext"
  */
 export class TitleReplaceCommand extends RegexpReplaceCommand {
 
-  constructor() {
+  constructor(protected defaultHandlers: StringContextHandler[] = []) {
     super(/\$\{title}/)
   }
 
@@ -16,7 +17,14 @@ export class TitleReplaceCommand extends RegexpReplaceCommand {
     return {
       replacer: (_match: string, ..._args: any[]): string => {
         const fileInfo = context.currentFile!
-        const title = fileInfo.title
+        let title = fileInfo.title
+        if (!title) {
+          this.defaultHandlers.some(handle => !title && (title = handle(context)))
+        }
+        if (!title) {
+          title = fileInfo.name
+        }
+        fileInfo.title = title
         const titleUrl = fileInfo.titleUrl
         return titleUrl ? `<a href="${titleUrl}" target="_blank">${title}</a>` : title
       }

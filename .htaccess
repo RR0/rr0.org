@@ -763,7 +763,7 @@ Redirect /AIAA.html https://rr0.org/org/us/asso/AIAA.html
 Redirect /JASONS.html https://rr0.org/org/us/asso/JASONS.html
 Redirect /NICAP.html https://rr0.org/org/us/asso/nicap
 Redirect /org/us/asso/NARCAP.html https://rr0.org/org/us/asso/narcap
-Redirect /org/us/asso/NICAP.html https://rr0.org/org/us/asso/nicap
+Redirect /org/us/asso/nicap/ https://rr0.org/org/us/asso/nicap
 Redirect /NSF.html https://rr0.org/org/us/asso/NSF.html
 Redirect /CSETI.html https://rr0.org/org/us/asso/cseti
 Redirect /org/us/asso/CSETI.html https://rr0.org/org/us/asso/cseti
@@ -777,7 +777,7 @@ Redirect /CIPH.html https://rr0.org/org/eu/it/asso/CISU/projet/CIPH.html
 Redirect /org/eu/fr/asso/Ouranos.html https://rr0.org/org/eu/fr/asso/ouranos
 Redirect /Ouranos.html https://rr0.org/org/eu/fr/asso/ouranos
 Redirect /Maroc.html https://rr0.org/org/ma
-Redirect /org/eu/fr/asso/LDLN.html https://rr0.org/org/eu/fr/asso/ldln
+Redirect /org/eu/fr/asso/ldln/ https://rr0.org/org/eu/fr/asso/ldln
 Redirect /SCEAU.html https://rr0.org/org/eu/fr/asso/SCEAU.html
 Redirect /org/eu/fr/asso/SCEAU.html https://rr0.org/org/eu/fr/asso/sceau
 Redirect /SERPAN.html https://rr0.org/org/eu/fr/asso/SERPAN.html

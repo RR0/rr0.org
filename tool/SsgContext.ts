@@ -1,4 +1,4 @@
-import {TimeContext} from "./time/TimeContext"
+import {TimeContext} from "./step/content/replace/html/time/TimeContext"
 import {SsgMessages} from "./i18n/SsgMessages"
 import {ssgMessages} from "./i18n"
 import {FileInfo} from "./util/file/FileInfo"

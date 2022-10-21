@@ -8,5 +8,5 @@ const webFileInput = new WebFileInput(logger)
 const webReadLine = new WebReadLine()
 const udbService = new UdbService(logger, webFileInput, webReadLine)
 const win = window
-win.udbController = new UdbController(udbService, logger, "./input/db/udb/")
+win.udbController = new UdbController(udbService, logger, "./input/db/udb/data/")
 //# sourceMappingURL=webUdb.js.map

@@ -10,7 +10,7 @@ import {SsiVarReplaceCommand} from "./step/content/replace/html/ssi/SsiVarComman
 import {HtmlTagReplaceCommand} from "./step/content/replace/html/tag/HtmlTagReplaceCommand"
 import {TimeReplacerFactory} from "./step/content/replace/html/time/TimeReplacerFactory"
 import {SsgContext, SsgContextImpl} from "./SsgContext"
-import {HtmlClassReplaceCommand} from "./step/content/replace/html/class/HtmlClassReplaceCommand"
+import {ClassRegexReplaceCommand} from "./step/content/replace/html/class/ClassRegexReplaceCommand"
 import {PeopleReplacerFactory} from "./step/content/replace/html/people/PeopleReplacerFactory"
 import {TimeContext} from "./step/content/replace/html/time/TimeContext"
 import {ContentStep, ContentStepConfig} from "./step/content/ContentStep"
@@ -28,11 +28,14 @@ import {timeDefaultHandler} from "./step/content/replace/html/title/TimeDefaultT
 import {CopyrightReplaceCommand} from "./step/content/replace/html/copyright/CopyrightReplaceCommand"
 import {rr0DefaultCopyright} from "./step/content/replace/html/copyright/RR0DefaultCopyright"
 import {CaviarReplacerFactory} from "./step/content/replace/html/caviar/CaviarReplacerFactory"
+import {NoteReplacerFactory} from "./step/content/replace/html/note/NoteReplacerFactory"
+import {SourceReplacerFactory} from "./step/content/replace/html/source/SourceReplacerFactory"
+import {ClassDomReplaceCommand} from "./step/content/replace/html/class/ClassDomReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
 const roots = contents ? contents.split(",") : [
-  "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html",
+  "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html",
   "croyance/**/*.html",
   "droit/**/*.html",
   "org/**/*.html",
@@ -109,8 +112,10 @@ const contentConfigs: ContentStepConfig[] = [
       new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
       new SsiLastModifiedReplaceCommand(),
       new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
-      new HtmlClassReplaceCommand("people", new PeopleReplacerFactory()),
-      new HtmlClassReplaceCommand("temoin(.+)", new CaviarReplacerFactory())
+      new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
+      new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
+      new ClassRegexReplaceCommand("note", new NoteReplacerFactory()),
+      new ClassDomReplaceCommand("source", new SourceReplacerFactory())
       // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     ],
     outputFile(inputFile: FileInfo): FileInfo {

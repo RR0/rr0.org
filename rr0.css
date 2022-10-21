@@ -1213,6 +1213,10 @@ dt, dd {
   text-align: center
 }
 
+.witness a {
+  color: gray;
+}
+
 .place {
   color: #006
 }
@@ -1292,6 +1296,40 @@ footer iframe {
 
 .note, .source {
   line-height: normal
+}
+
+.note-id {
+  color: gray;
+  vertical-align: super;
+  font-size: smaller;
+  line-height: normal;
+}
+
+.note-contents {
+  font-size: .8em;
+  color: gray;
+  display: none;
+}
+
+.note-contents:target {
+  display: inline-block;
+}
+
+.source-id {
+  color: gray;
+  vertical-align: super;
+  font-size: smaller;
+  line-height: normal;
+}
+
+.source-contents {
+  font-size: .8em;
+  color: gray;
+  display: none;
+}
+
+.source-contents:target {
+  display: inline-block;
 }
 
 .foot:target {
@@ -1443,6 +1481,10 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 
 #footerTable {
   overflow: hidden
+}
+
+.visible {
+  display: inline-block;
 }
 
 @media (prefers-color-scheme: dark) {

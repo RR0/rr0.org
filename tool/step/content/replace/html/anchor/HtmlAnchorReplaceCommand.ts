@@ -1,15 +1,15 @@
-import {RegexpReplaceCommand} from "../../RegexpReplaceCommand"
+import {RegexReplaceCommand} from "../../RegexReplaceCommand"
 import {ReplacerFactory} from "../../ReplacerFactory"
 import {SsgContext} from "../../../../../SsgContext"
-import {SsgReplacer} from "../../SsgReplacer"
+import {RegexReplacer} from "../../RegexReplacer"
 
-export class HtmlAnchorReplaceCommand extends RegexpReplaceCommand {
+export class HtmlAnchorReplaceCommand extends RegexReplaceCommand {
 
-  constructor(protected replacerFactory: ReplacerFactory) {
+  constructor(protected replacerFactory: ReplacerFactory<RegexReplacer>) {
     super(new RegExp(`<a href="((?:https?\:\\/\\/)?[^ ]+?)?(?:\\/([^ :/]+\\.[^ ]+)?)?"( .*?)?>(.+?)<\\/a>`, "gm"))
   }
 
-  protected createReplacer(context: SsgContext): Promise<SsgReplacer> {
+  protected createReplacer(context: SsgContext): Promise<RegexReplacer> {
     return this.replacerFactory.create(context)
   }
 }

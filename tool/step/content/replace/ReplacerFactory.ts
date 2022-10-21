@@ -1,7 +1,6 @@
-import {SsgReplacer} from "./SsgReplacer"
 import {SsgContext} from "../../../SsgContext"
 
-export interface ReplacerFactory {
-  create(context: SsgContext): Promise<SsgReplacer>
+export interface ReplacerFactory<R> {
+  create(context: SsgContext): Promise<R>
 }
 

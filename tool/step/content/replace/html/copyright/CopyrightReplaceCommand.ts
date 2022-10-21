@@ -1,5 +1,5 @@
-import {RegexpReplaceCommand} from "../../RegexpReplaceCommand"
-import {SsgReplacer} from "../../SsgReplacer"
+import {RegexReplaceCommand} from "../../RegexReplaceCommand"
+import {RegexReplacer} from "../../RegexReplacer"
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {StringContextHandler} from "../StringContextHandler"
 
@@ -7,15 +7,15 @@ import {StringContextHandler} from "../StringContextHandler"
  * Replaces "${title}" by the page's <title> content,
  * with a link if there's a <meta name="url"> content.
  */
-export class CopyrightReplaceCommand extends RegexpReplaceCommand {
+export class CopyrightReplaceCommand extends RegexReplaceCommand {
 
   constructor(protected defaultHandlers: StringContextHandler[] = []) {
     super(/\$\{copyright}/)
   }
 
-  protected async createReplacer(context: HtmlSsgContext): Promise<SsgReplacer> {
+  protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
     return {
-      replacer: (_match: string, ..._args: any[]): string => {
+      replace: (_match: string, ..._args: any[]): string => {
         const fileInfo = context.currentFile!
         let copyright = fileInfo.copyright
         if (!copyright) {

@@ -1,24 +1,20 @@
 import {ReplacerFactory} from "../../ReplacerFactory"
-import {SsgReplacer} from "../../SsgReplacer"
+import {RegexReplacer} from "../../RegexReplacer"
 import {SsgContext} from "../../../../../SsgContext"
 import {TimeReplacer} from "./TimeReplacer"
 import {promise as glob} from "glob-promise"
 
-export class TimeReplacerFactory implements ReplacerFactory {
+export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
 
   protected singleton?: TimeReplacer
 
-  async create(context: SsgContext): Promise<SsgReplacer> {
+  async create(context: SsgContext): Promise<RegexReplacer> {
     const instance = await this.getInstance()
     return {
-      replacer:
-        /**
-         * Replace time tags but urls.
-         */
-        (substring: string, ...args: any[]): string => {
-          const timeStr = args[0]
-          return instance.replacement(context, substring, timeStr)
-        }
+      replace: (substring: string, ...args: any[]): string => {
+        const timeStr = args[0]
+        return instance.replacement(context, substring, timeStr)
+      }
     }
   }
 
@@ -31,7 +27,8 @@ export class TimeReplacerFactory implements ReplacerFactory {
       const year4Files = await glob("time/?/?/?/?")
       const monthFiles = await glob("time/?/?/?/?/??")
       const dayFiles = await glob("time/?/?/?/?/??/??")
-      const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(minusYearFiles).concat(monthFiles).concat(dayFiles)
+      const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
+        minusYearFiles).concat(monthFiles).concat(dayFiles)
       this.singleton = new TimeReplacer(timeFiles)
     }
     return this.singleton

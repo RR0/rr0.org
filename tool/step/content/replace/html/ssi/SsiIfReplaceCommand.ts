@@ -1,11 +1,11 @@
-import {RegexpReplaceCommand} from "../../RegexpReplaceCommand"
-import {SsgReplacer} from "../../SsgReplacer"
+import {RegexReplaceCommand} from "../../RegexReplaceCommand"
+import {RegexReplacer} from "../../RegexReplacer"
 import {SsgContext} from "../../../../../SsgContext"
 
-export class SsiIfReplaceCommand extends RegexpReplaceCommand {
+export class SsiIfReplaceCommand extends RegexReplaceCommand {
 
   protected readonly replacer = {
-    replacer: (substring: string, ...args: any[]): string => {
+    replace: (substring: string, ...args: any[]): string => {
       let condVar = args[0]
       let condValue = args[1]
       let trueContent = args[2]
@@ -18,7 +18,7 @@ export class SsiIfReplaceCommand extends RegexpReplaceCommand {
     super(/<!--\s*#if\s+expr="(.+?)=(.+?)"\s*-->(.*?)<!--\s*#else\s*-->(.*?)<!--\s*#endif\s*-->/gs)
   }
 
-  protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {
+  protected async createReplacer(context: SsgContext): Promise<RegexReplacer> {
     return this.replacer
   }
 }

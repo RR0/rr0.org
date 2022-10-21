@@ -1,18 +1,18 @@
 import path from "path"
-import {RegexpReplaceCommand} from "../../RegexpReplaceCommand"
-import {SsgReplacer} from "../../SsgReplacer"
+import {RegexReplaceCommand} from "../../RegexReplaceCommand"
+import {RegexReplacer} from "../../RegexReplacer"
 import {SsgContext} from "../../../../../SsgContext"
 import {getFileInfo} from "../../../../../util/file/FileInfo"
 
-export class SsiIncludeReplaceCommand extends RegexpReplaceCommand {
+export class SsiIncludeReplaceCommand extends RegexReplaceCommand {
 
   constructor() {
     super(/<!--\s*#include\s+virtual="(.+?)"\s*-->/g)
   }
 
-  protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {
+  protected async createReplacer(context: SsgContext): Promise<RegexReplacer> {
     return {
-      replacer: (match: string, ...args: any[]): string => {
+      replace: (match: string, ...args: any[]): string => {
         let currentDir = process.cwd()
         const toInclude = args[0]
         if (!toInclude.startsWith("/")) {

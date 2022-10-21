@@ -1,16 +1,16 @@
-import {RegexpReplaceCommand} from "../../RegexpReplaceCommand"
-import {SsgReplacer} from "../../SsgReplacer"
+import {RegexReplaceCommand} from "../../RegexReplaceCommand"
+import {RegexReplacer} from "../../RegexReplacer"
 import {SsgContext} from "../../../../../SsgContext"
 
-export class SsiLastModifiedReplaceCommand extends RegexpReplaceCommand {
+export class SsiLastModifiedReplaceCommand extends RegexReplaceCommand {
 
   constructor() {
     super(/<!--\s*#config timefmt="(.*?)"\s*--><!--\s*#flastmod virtual="\$DOCUMENT_URI"\s*-->/gs)
   }
 
-  protected async createReplacer(context: SsgContext): Promise<SsgReplacer> {
+  protected async createReplacer(context: SsgContext): Promise<RegexReplacer> {
     return {
-      replacer: (substring: string, ...args: any[]): string => {
+      replace: (substring: string, ...args: any[]): string => {
         const timeFormat = args[0]
         const fileInfo = context.currentFile!
         return fileInfo.lastModified.toLocaleDateString(context.locales, context.time.options)

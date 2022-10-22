@@ -1,7 +1,9 @@
 import fs from "fs"
-import {parse} from "node-html-parser"
 import {detectEncoding, getCharSet, getContentType} from "./FileUtil"
 import {SsgContext} from "../../SsgContext"
+
+const jsdom = require("jsdom")
+const {JSDOM} = jsdom
 
 export class FileInfo {
 
@@ -37,8 +39,12 @@ function getFileLang(context: SsgContext, filePath: string): string | string[] {
 
 function getContents(context: SsgContext, fileName: string) {
   const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
-  const html = parse(initialContents, {comment: true})
-  const declaredEncoding = getCharSet(html) || getContentType(html)
+  let declaredEncoding
+  if (fileName.endsWith(".html")) {
+    const dom = new JSDOM(initialContents)
+    const html = dom.window.document
+    declaredEncoding = getCharSet(html) || getContentType(html)
+  }
   const detectedEncoding = detectEncoding(fileName)
   const encoding = declaredEncoding || detectedEncoding || "utf-8"
   const contents = fs.readFileSync(fileName, {encoding})

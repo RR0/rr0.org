@@ -3,3 +3,7 @@ for = "/*"
 [headers.values]
 Access-Control-Allow-Origin = "https://rr0.org"
 
+[[redirects]]
+from = "/*.jpg"
+to = "/Referencement.html"
+

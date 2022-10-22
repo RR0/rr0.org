@@ -15,10 +15,10 @@ export abstract class DirectoryStep implements SsgStep {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
-    const fileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
+    const templateFileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
     let dirames = (await this.findDirs(this.dirs))
       .filter(dirName => !this.excludedDirs.includes(dirName))
-    await this.processDirs(context, dirames, fileInfo)
+    await this.processDirs(context, dirames, templateFileInfo)
     return {directoryCount: dirames.length}
   }
 

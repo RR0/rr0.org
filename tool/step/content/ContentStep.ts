@@ -50,6 +50,7 @@ export class ContentStep implements SsgStep {
 
   private async processRoot(context: SsgContext, contentsRoot: string, contentsConfig: ContentStepConfig,
                             contentCount: number) {
+    context.debug("Processing root", contentsRoot)
     const contentFiles = await glob(contentsRoot)
     for (const filePath of contentFiles) {
       contentCount = await this.processFile(context, filePath, contentsConfig, contentCount)

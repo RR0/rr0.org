@@ -44,7 +44,7 @@ export class TimeReplacer {
     return replacement
   }
 
-  replacement(context: SsgContext, match: string, contents: string, attrs: string): string {
+  replacement(context: SsgContext, match: string, contents: string, attrs?: string): string {
     const noContext = attrs === ` data-context="none"`
     const parts = contents.split("/")
     let replacement: string | undefined

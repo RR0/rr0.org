@@ -1,6 +1,5 @@
 import * as fs from "fs"
 import {promises as fsAsync} from "fs"
-import {HTMLElement} from "node-html-parser"
 import detectCharacterEncoding from "detect-character-encoding"
 import path from "path"
 import * as util from "util"
@@ -35,14 +34,18 @@ export function detectEncoding(fileName: string): BufferEncoding | undefined {
       throw e
     }
   }
-  return toBufferEncoding(guessedEncoding?.encoding)
+  if (guessedEncoding) {
+    return toBufferEncoding(guessedEncoding.confidence > 50 ? guessedEncoding.encoding : "utf-8")
+  } else {
+    return toBufferEncoding(undefined)
+  }
 }
 
 export function getCharSet(html: HTMLElement): BufferEncoding | undefined {
   let charSet: BufferEncoding | undefined
   const charsetEl = html.querySelector("html[charset]")
   if (charsetEl) {
-    const charSetValue = charsetEl.getAttribute("charset")
+    const charSetValue = charsetEl.getAttribute("charset") || undefined
     charSet = toBufferEncoding(charSetValue)
   }
   return charSet

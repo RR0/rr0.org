@@ -34,21 +34,23 @@ import {ClassDomReplaceCommand} from "./step/content/replace/html/class/ClassDom
 
 const args = CLI.getArgs()
 const contents = args.contents
-const roots = contents ? contents.split(",") : [
-  "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html",
-  "croyance/**/*.html",
-  "droit/**/*.html",
-  "org/**/*.html",
-  "people/**/*.html",
-  "place/**/*.html",
-  "politique/**/*.html",
-  "science/**/*.html",
-  "tech/**/*.html",
-  "time/**/*.html",
-  "politique/**/*.html",
-  "udb/*.html",
-  "js/**/*.html"
-]
+const roots = contents
+  ? contents.split(",")
+  : [
+    "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
+    "croyance/**/*.html",
+    "droit/**/*.html",
+    "org/**/*.html",
+    "people/**/*.html",
+    "place/**/*.html",
+    "politique/**/*.html",
+    "science/**/*.html",
+    "tech/**/*.html",
+    "time/**/*.html",
+    "politique/**/*.html",
+    "udb/*.html",
+    "js/**/*.html"
+  ]
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
   "favicon.ico",

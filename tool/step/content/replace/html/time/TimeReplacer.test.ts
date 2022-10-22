@@ -44,7 +44,7 @@ describe("TimeReplacer", () => {
     const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     let interval = "2012/2016"
     const replacer = new TimeReplacer(["time/2/0/1/2", "time/2/0/1/6"])
-    expect(replacer.replacement(context, `<time>${interval}</time>`, interval, attrs))
+    expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
       .toBe(`<a href="/time/2/0/1/2/">2012</a> à <a href="/time/2/0/1/6/">2016</a>`)
     expect(context.time.year).toBe(2016)
     expect(context.time.month).toBe(undefined)
@@ -58,7 +58,7 @@ describe("TimeReplacer", () => {
     const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     let interval = "moi"
     const replacer = new TimeReplacer([])
-    expect(replacer.replacement(context, `<time>${interval}</time>`, interval, attrs))
+    expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
       .toBe(`<time>moi</time>`)
     expect(context.time.year).toBe(undefined)
     expect(context.time.month).toBe(undefined)
@@ -73,7 +73,7 @@ describe("TimeReplacer", () => {
       const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const interval = "2003-12-24CDT"
       const replacer = new TimeReplacer(["time/2/0/0/3/12/24"])
-      expect(replacer.replacement(context, `<time>${interval}</time>`, interval, attrs))
+      expect(replacer.replacement(context, `<time>${interval}</time>`, interval))
         .toBe(`<a href="/time/2/0/0/3/12/24/">mercredi 24 décembre 2003</a>`)  // TODO: Text should have timezone info
       expect(context.time.year).toBe(2003)
       expect(context.time.month).toBe(12)
@@ -101,7 +101,7 @@ describe("TimeReplacer", () => {
     const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
     let value = "2004-09"
     const replacer = new TimeReplacer(["time/2/0/0/4/09"])
-    expect(replacer.replacement(context, `<time>${value}</time>`, value, attrs))
+    expect(replacer.replacement(context, `<time>${value}</time>`, value))
       .toBe(`<a href="/time/2/0/0/4/09/">septembre 2004</a>`)
     expect(context.time.year).toBe(2004)
     expect(context.time.month).toBe(9)
@@ -172,14 +172,14 @@ describe("TimeReplacer", () => {
     const replacer = new TimeReplacer(["time/2/0/0/5", "time/2/0/0/6"])
     expect(replacer.valueReplacement(context, "2005"))
       .toBe(`<a href="/time/2/0/0/5/">2005</a>`)
-    expect(replacer.replacement(context, `<time data-context="none">2006</time>`, "2006", attrs))
+    expect(replacer.replacement(context, `<time data-context="none">2006</time>`, "2006"))
       .toBe(`<a href="/time/2/0/0/6/">2006</a>`)
   })
 
   test("avoids linking to current file", () => {
     const context = testUtil.newContext("time/1/9/9/0/08/index.html", "")
     const replacer = new TimeReplacer(["time/1/9/9/0/08"])
-    expect(replacer.replacement(context, "<time>1990-08-02</time>", "1990-08-02", attrs))
+    expect(replacer.replacement(context, "<time>1990-08-02</time>", "1990-08-02"))
       .toBe(`<span class="time">jeudi 2 août 1990</span>`)
   })
 
@@ -188,14 +188,14 @@ describe("TimeReplacer", () => {
     test("with days, hours, minutes and seconds", () => {
       const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer([])
-      expect(replacer.replacement(context, "<time>P2D10H23M45S</time>", "P2D10H23M45S", attrs))
+      expect(replacer.replacement(context, "<time>P2D10H23M45S</time>", "P2D10H23M45S"))
         .toBe(`<time class="duration">2 jours, 10 heures, 23 minutes et 45 secondes</time>`)
     })
 
     test("with approximation", () => {
       const context = testUtil.newContext("people/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer([])
-      expect(replacer.replacement(context, "<time>~P2H</time>", "~P2H", attrs))
+      expect(replacer.replacement(context, "<time>~P2H</time>", "~P2H"))
         .toBe(`<time class="duration">environ 2 heures</time>`)
     })
   })

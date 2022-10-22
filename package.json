@@ -8,7 +8,7 @@
     "watch": "webpack --watch",
     "build": "webpack",
     "test": "jest --coverage",
-    "ssg": "ts-node tool/index.ts"
+    "ssg": "rm -Rf out && ts-node tool/index.ts"
   },
   "keywords": [
     "life",
@@ -25,7 +25,6 @@
     "copy": "^0.3.2",
     "detect-character-encoding": "^0.8.0",
     "glob-promise": "^4.2.2",
-    "node-html-parser": "^5.3.3",
     "jsdom": "^20.0.1"
   },
   "devDependencies": {

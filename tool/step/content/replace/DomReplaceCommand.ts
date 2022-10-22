@@ -12,13 +12,12 @@ export abstract class DomReplaceCommand implements ReplaceCommand {
   }
 
   async execute(context: HtmlSsgContext): Promise<FileInfo> {
-    const fileInfo = context.currentFile!
+    const fileInfo = context.currentFile
     let contents = fileInfo.contents
     let result = contents
     const replacer = await this.createReplacer(context)
     do {
       contents = result
-      fileInfo.dom = new JSDOM(contents)
       const doc = fileInfo.dom.window.document
       const elements = doc.querySelectorAll(this.selector)
       if (elements.length > 0) {

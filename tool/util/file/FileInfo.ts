@@ -3,12 +3,21 @@ import {parse} from "node-html-parser"
 import {detectEncoding, getCharSet, getContentType} from "./FileUtil"
 import {SsgContext} from "../../SsgContext"
 
-export interface FileInfo {
-  name: string
-  encoding: BufferEncoding
-  contents: string
-  lastModified: Date
-  lang: string | string[]
+export class FileInfo {
+
+  constructor(
+    public name: string, readonly encoding: BufferEncoding, protected _contents: string, readonly lastModified: Date,
+    readonly lang: string | string[]
+  ) {
+  }
+
+  get contents(): string {
+    return this._contents
+  }
+
+  set contents(value: string) {
+    this._contents = value
+  }
 }
 
 function getFileLang(context: SsgContext, filePath: string): string | string[] {
@@ -40,5 +49,5 @@ export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
   const fileStats = fs.statSync(fileName)
   const {encoding, contents} = getContents(context, fileName)
   const lang = getFileLang(context, fileName)
-  return {name: fileName, encoding, contents, lastModified: fileStats.mtime, lang}
+  return new FileInfo(fileName, encoding, contents, fileStats.mtime, lang)
 }

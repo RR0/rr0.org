@@ -4,12 +4,37 @@ import {FileInfo, getFileInfo} from "./FileInfo"
 const jsdom = require("jsdom")
 const {JSDOM} = jsdom
 
-export interface HtmlFileInfo extends FileInfo {
-  dom: any
-  title?: string
-  titleUrl?: string
-  author?: string
-  copyright?: string
+export class HtmlFileInfo extends FileInfo {
+
+  constructor(
+    name: string, encoding: BufferEncoding, contents: string, lastModified: Date, lang: string | string[],
+    public title?: string, readonly titleUrl?: string, readonly author?: string, public copyright?: string
+  ) {
+    super(name, encoding, contents, lastModified, lang)
+  }
+
+  _dom: typeof JSDOM | undefined
+
+  get dom(): typeof JSDOM {
+    if (!this._dom) {
+      this._dom = new JSDOM(this._contents)
+    }
+    return this._dom
+  }
+
+  set dom(newDom: typeof JSDOM) {
+    this._contents = newDom.serialize()
+    this._dom = newDom
+  }
+
+  get contents(): string {
+    return this._contents
+  }
+
+  set contents(value: string) {
+    this._dom = undefined
+    this._contents = value
+  }
 }
 
 function meta(name: string, doc: Document): string | undefined {
@@ -34,7 +59,10 @@ export function getHtmlFileInfo(context: SsgContext, fileName: string): HtmlFile
   const titleUrl = meta("url", doc)
   const author = meta("author", doc)
   const copyright = meta("copyright", doc)
-  return {...fileInfo, title, titleUrl, author, copyright, dom}
+  return new HtmlFileInfo(
+    fileInfo.name, fileInfo.encoding, fileInfo.contents, fileInfo.lastModified, fileInfo.lang,
+    title, titleUrl, author, copyright
+  )
 }
 
 

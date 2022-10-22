@@ -64,8 +64,8 @@ const config: SsgConfig = {
   outDir: "out"
 }
 
-async function outputFunc(context: SsgContext, info: FileInfo, oudDir = config.outDir + "/"): Promise<void> {
-  info.name = `${oudDir}${info.name}`
+async function outputFunc(context: SsgContext, info: FileInfo, outDir = config.outDir + "/"): Promise<void> {
+  info.name = `${outDir}${info.name}`
   try {
     console.log("Writing", info.name)
     await writeFile(info)
@@ -87,7 +87,7 @@ const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")],
   outputFile(inputFile: FileInfo): FileInfo {
-    return Object.assign({...inputFile}, {name: "_redirects"})
+    return new FileInfo("_redirects", inputFile.encoding, inputFile.contents, inputFile.lastModified, inputFile.lang)
   }
 }
 
@@ -95,7 +95,7 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
   outputFile(inputFile: FileInfo): FileInfo {
-    return Object.assign({...inputFile}, {name: "netlify.toml"})
+    return new FileInfo("netlify.toml", inputFile.encoding, inputFile.contents, inputFile.lastModified, inputFile.lang)
   }
 }
 
@@ -114,7 +114,7 @@ const contentConfigs: ContentStepConfig[] = [
       new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
       new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
       new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
-      new ClassRegexReplaceCommand("note", new NoteReplacerFactory()),
+      new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
       new ClassDomReplaceCommand("source", new SourceReplacerFactory())
       // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     ],

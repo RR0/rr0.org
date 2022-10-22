@@ -18,7 +18,7 @@ enum HtAccessCommands {
 export abstract class HtAccessReplaceCommand implements ReplaceCommand {
 
   async execute(context: HtmlSsgContext): Promise<FileInfo> {
-    const fileInfo = context.currentFile!
+    const fileInfo = context.currentFile
     const contents = fileInfo.contents
     const lines = contents.split("\n").map(line => line.trim())
     let result = ""

@@ -5,7 +5,7 @@ import {StringContextHandler} from "../StringContextHandler"
 
 export const timeDefaultHandler: StringContextHandler = (context: HtmlSsgContext): string | undefined => {
   let title: string | undefined
-  const fileInfo = context.currentFile!
+  const fileInfo = context.currentFile
   const fileName = fileInfo.name
   const timeRegex = /time\/(\d)\/(\d)\/(\d)\/(\d)\/?(\d{2})?\/?(\d{2})?\/?(index(_[a-z]{2})?.html)?/
   const timeExec = timeRegex.exec(fileName)

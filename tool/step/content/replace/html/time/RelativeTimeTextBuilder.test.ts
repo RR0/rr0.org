@@ -1,4 +1,4 @@
-import {SsgContextImpl} from "../../../../../SsgContext"
+import {SsgContext, SsgContextImpl} from "../../../../../SsgContext"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
 import {TimeContext} from "./TimeContext"
 
@@ -81,7 +81,7 @@ describe("RelativeTimeTextBuilder", () => {
 
     test("next", () => {
       {
-        let previousContext = new SsgContextImpl("fr", new TimeContext(intlOptions))
+        let previousContext: SsgContext = new SsgContextImpl("fr", new TimeContext(intlOptions))
         const context = previousContext.clone()
         context.time.year = 2003
         context.time.month = 9
@@ -95,7 +95,7 @@ describe("RelativeTimeTextBuilder", () => {
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("17:43")
       }
       {
-        let previousContext = new SsgContextImpl("en", new TimeContext(intlOptions))
+        let previousContext: SsgContext = new SsgContextImpl("en", new TimeContext(intlOptions))
         const context = previousContext.clone()
         context.time.year = 2003
         context.time.month = 9

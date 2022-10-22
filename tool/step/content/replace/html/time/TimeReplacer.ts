@@ -113,7 +113,7 @@ export class TimeReplacer {
         text = title
       }
       const titleAttr = text != title ? ` title="${title}"` : ""
-      const currentFileName = context.currentFile?.name!
+      const currentFileName = context.currentFile.name
       const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
       if (url && url !== dirName) {
         replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr}>${text}</a>`

@@ -16,7 +16,7 @@ export class TitleReplaceCommand extends RegexReplaceCommand {
   protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
-        const fileInfo = context.currentFile!
+        const fileInfo = context.currentFile
         let title = fileInfo.title
         if (!title) {
           this.defaultHandlers.some(handle => !title && (title = handle(context)))

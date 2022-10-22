@@ -200,9 +200,10 @@ form {
   font-variant: normal
 }
 
-ui-view .contents {
+.contents {
   box-shadow: none;
-  background: 0 0
+  background: 0 0;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -1492,6 +1493,10 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     color-scheme: dark;
   }
 
+  .footer {
+    color: gray;
+  }
+
   .witness, .temoin, .temoin1, .temoin2, .temoin3 {
     background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
   }
@@ -1511,7 +1516,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 
   .contents {
     background: black;
-    color: whitesmoke;
+    color: lightgrey;
   }
 
   a {
@@ -1523,7 +1528,8 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
   }
 
   header h1 {
-    color: white;
+    color: lightgrey;
+    text-shadow: none;
   }
 
   nav, .outline {

@@ -1300,7 +1300,6 @@ footer iframe {
 }
 
 .note-id {
-  color: gray;
   vertical-align: super;
   font-size: smaller;
   line-height: normal;
@@ -1317,7 +1316,6 @@ footer iframe {
 }
 
 .source-id {
-  color: gray;
   vertical-align: super;
   font-size: smaller;
   line-height: normal;

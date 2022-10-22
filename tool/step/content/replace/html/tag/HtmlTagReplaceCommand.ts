@@ -6,7 +6,7 @@ import {SsgContext} from "../../../../../SsgContext"
 export class HtmlTagReplaceCommand extends RegexReplaceCommand {
 
   constructor(protected tagName: string, protected replacerFactory: ReplacerFactory<RegexReplacer>) {
-    super(new RegExp(`<${tagName}>\\s*(.+?)\\s*</${tagName}>`, "gm"))
+    super(new RegExp(`<${tagName}(\\s+.*?)?>\\s*(.+?)\\s*</${tagName}>`, "gm"))
   }
 
   protected createReplacer(context: SsgContext): Promise<RegexReplacer> {

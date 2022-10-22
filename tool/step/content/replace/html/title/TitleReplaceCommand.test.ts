@@ -8,7 +8,7 @@ describe("TitleReplaceCommand", () => {
   test("default title with no handler", async () => {
     const command = new TitleReplaceCommand()
     const context = testUtil.newHtmlContext("time/1/9/5/4/index.html", "This this about ${title} !")
-    context.currentFile.title = undefined
+    context.inputFile.title = undefined
     const file = await command.execute(context) as HtmlFileInfo
     expect(file.title).toBe("time/1/9/5/4/index.html")
     expect(file.contents).toBe("This this about time/1/9/5/4/index.html !")
@@ -17,7 +17,7 @@ describe("TitleReplaceCommand", () => {
   test("default title with handler", async () => {
     const command = new TitleReplaceCommand([timeDefaultHandler])
     const context = testUtil.newHtmlContext("time/1/9/5/4/index.html", "This this about ${title} !")
-    context.currentFile.title = undefined
+    context.inputFile.title = undefined
     const file = await command.execute(context) as HtmlFileInfo
     expect(file.title).toBe("1954")
     expect(file.contents).toBe("This this about 1954 !")
@@ -26,7 +26,7 @@ describe("TitleReplaceCommand", () => {
   test("default month title with handler", async () => {
     const command = new TitleReplaceCommand([timeDefaultHandler])
     const context = testUtil.newHtmlContext("time/1/9/5/4/10/index.html", "This this about ${title} !")
-    context.currentFile.title = undefined
+    context.inputFile.title = undefined
     const file = await command.execute(context) as HtmlFileInfo
     expect(file.title).toBe("Octobre 1954")
     expect(file.contents).toBe("This this about Octobre 1954 !")
@@ -35,7 +35,7 @@ describe("TitleReplaceCommand", () => {
   test("default day of month title with handler", async () => {
     const command = new TitleReplaceCommand([timeDefaultHandler])
     const context = testUtil.newHtmlContext("time/1/9/5/4/10/01/index.html", "This this about ${title} !")
-    context.currentFile.title = undefined
+    context.inputFile.title = undefined
     const file = await command.execute(context) as HtmlFileInfo
     expect(file.title).toBe("Vendredi 1 octobre 1954")
     expect(file.contents).toBe("This this about Vendredi 1 octobre 1954 !")

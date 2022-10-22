@@ -9,7 +9,7 @@ export abstract class RegexReplaceCommand implements ReplaceCommand {
   }
 
   async execute(context: HtmlSsgContext): Promise<FileInfo> {
-    const fileInfo = context.currentFile
+    const fileInfo = context.inputFile
     let contents = fileInfo.contents
     let result = contents
     const replacer = await this.createReplacer(context)

@@ -12,8 +12,9 @@ export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
     const instance = await this.getInstance()
     return {
       replace: (substring: string, ...args: any[]): string => {
-        const timeStr = args[0]
-        return instance.replacement(context, substring, timeStr)
+        const attrs = args[0]
+        const timeStr = args[1]
+        return instance.replacement(context, substring, timeStr, attrs)
       }
     }
   }

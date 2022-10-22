@@ -19,12 +19,11 @@ export type ContentStepConfig = {
   replacements: ReplaceCommand[],
 
   /**
-   * @param inputFile
+   * @param context
    * @return the file where to output.
    */
-  outputFile(inputFile: FileInfo): FileInfo
+  getOutputFile(context: SsgContext): FileInfo
 }
-
 
 export class ContentStep implements SsgStep {
 
@@ -34,28 +33,39 @@ export class ContentStep implements SsgStep {
   async execute(context: SsgContext, config: SsgConfig): Promise<SsgStepResult> {
     let contentCount = 0
     for (const contents of this.contents) {
-      contentCount += await this.processContents(context, contents)
+      contentCount += await this.processRoots(context, contents)
     }
     return {
       contentCount
     }
   }
 
-  private async processContents(context: SsgContext, contentsConfig: ContentStepConfig) {
+  private async processRoots(context: SsgContext, contentsConfig: ContentStepConfig) {
     let contentCount = 0
     for (const contentsRoot of contentsConfig.roots) {
-      const contentFiles = await glob(contentsRoot)
-      for (const filePath of contentFiles) {
-        const inputFile = getHtmlFileInfo(context, filePath)
-        let outputFile = contentsConfig.outputFile(inputFile)
-        context.currentFile = outputFile
-        for (const replacement of contentsConfig.replacements) {
-          outputFile = await replacement.execute(context as HtmlSsgContext)
-        }
-        contentCount++
-        await this.output(context, outputFile)
-      }
+      contentCount = await this.processRoot(context, contentsRoot, contentsConfig, contentCount)
     }
+    return contentCount
+  }
+
+  private async processRoot(context: SsgContext, contentsRoot: string, contentsConfig: ContentStepConfig,
+                            contentCount: number) {
+    const contentFiles = await glob(contentsRoot)
+    for (const filePath of contentFiles) {
+      contentCount = await this.processFile(context, filePath, contentsConfig, contentCount)
+    }
+    return contentCount
+  }
+
+  private async processFile(context: SsgContext, filePath: string, contentsConfig: ContentStepConfig,
+                            contentCount: number) {
+    context.inputFile = getHtmlFileInfo(context, filePath)
+    context.outputFile = contentsConfig.getOutputFile(context)
+    for (const replacement of contentsConfig.replacements) {
+      context.outputFile = await replacement.execute(context as HtmlSsgContext)
+    }
+    contentCount++
+    await this.output(context, context.outputFile)
     return contentCount
   }
 }

@@ -1,6 +1,6 @@
 import {ReplaceCommand} from "../ReplaceCommand"
-import {HtmlSsgContext} from "../../../../HtmlSsgContext"
 import {FileInfo} from "../../../../util/file/FileInfo"
+import {SsgContext} from "../../../../SsgContext"
 
 enum HtAccessCommands {
   Options = "Options",
@@ -17,9 +17,9 @@ enum HtAccessCommands {
 
 export abstract class HtAccessReplaceCommand implements ReplaceCommand {
 
-  async execute(context: HtmlSsgContext): Promise<FileInfo> {
-    const fileInfo = context.currentFile
-    const contents = fileInfo.contents
+  async execute(context: SsgContext): Promise<FileInfo> {
+    const inputFileInfo = context.inputFile
+    const contents = inputFileInfo.contents
     const lines = contents.split("\n").map(line => line.trim())
     let result = ""
     for (const line of lines) {
@@ -36,8 +36,9 @@ export abstract class HtAccessReplaceCommand implements ReplaceCommand {
         }
       }
     }
-    fileInfo.contents = result
-    return fileInfo
+    const outputFileInfo = context.outputFile
+    outputFileInfo.contents += result
+    return outputFileInfo
   }
 
   protected abstract handleDirectoryIndex(args: string[], result: string): string

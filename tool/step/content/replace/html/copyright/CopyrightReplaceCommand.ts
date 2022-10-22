@@ -16,7 +16,7 @@ export class CopyrightReplaceCommand extends RegexReplaceCommand {
   protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
-        const fileInfo = context.currentFile
+        const fileInfo = context.inputFile
         let copyright = fileInfo.copyright
         if (!copyright) {
           this.defaultHandlers.some(handle => !copyright && (copyright = handle(context)))

@@ -18,7 +18,7 @@ class TestUtil {
 
   newContext(name: string, contents: string): SsgContext {
     const context = new SsgContextImpl("fr", new TimeContext(this.intlOptions))
-    context.currentFile = new FileInfo(name, "utf8", contents, new Date(), "fr")
+    context.inputFile = new FileInfo(name, "utf8", contents, new Date(), "fr")
     return context
   }
 
@@ -26,8 +26,8 @@ class TestUtil {
     const context = this.newContext(name, contents)
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : name
-    const currentFile = context.currentFile
-    context.currentFile = new HtmlFileInfo(
+    const currentFile = context.inputFile
+    context.inputFile = new HtmlFileInfo(
       currentFile.name, currentFile.encoding, currentFile.contents, currentFile.lastModified, currentFile.lang,
       title
     )

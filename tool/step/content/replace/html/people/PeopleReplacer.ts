@@ -27,7 +27,7 @@ export class PeopleReplacer {
     const titleAttr = peopleStr.indexOf(people.fullName) < 0 ? ` title="${people.fullName}"` : ""
     let url = people.dirName
     let replacement: string
-    const currentFileName = context.currentFile.name
+    const currentFileName = context.inputFile.name
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
       replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr} translate="no">${peopleContent}</a>`

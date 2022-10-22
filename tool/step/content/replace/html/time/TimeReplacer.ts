@@ -44,8 +44,8 @@ export class TimeReplacer {
     return replacement
   }
 
-  replacement(context: SsgContext, match: string, contents: string): string {
-    const noContext = match.indexOf(`data-context="none"`) >= 0
+  replacement(context: SsgContext, match: string, contents: string, attrs: string): string {
+    const noContext = attrs === ` data-context="none"`
     const parts = contents.split("/")
     let replacement: string | undefined
     if (parts.length > 1) {
@@ -113,7 +113,7 @@ export class TimeReplacer {
         text = title
       }
       const titleAttr = text != title ? ` title="${title}"` : ""
-      const currentFileName = context.currentFile.name
+      const currentFileName = context.inputFile.name
       const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
       if (url && url !== dirName) {
         replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr}>${text}</a>`

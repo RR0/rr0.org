@@ -16,7 +16,7 @@ import {TimeContext} from "./step/content/replace/html/time/TimeContext"
 import {ContentStep, ContentStepConfig} from "./step/content/ContentStep"
 import {CopyStep} from "./step/CopyStep"
 import {TitleReplaceCommand} from "./step/content/replace/html/title/TitleReplaceCommand"
-import {FileInfo} from "./util/file/FileInfo"
+import {FileInfo, getFileInfo} from "./util/file/FileInfo"
 import {CaseDirectoryStep} from "./step/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./step/PeopleDirectoryStep"
 import {Occupation} from "./model/people/Occupation"
@@ -86,7 +86,8 @@ const context = new SsgContextImpl("fr", new TimeContext({
 const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")],
-  outputFile(inputFile: FileInfo): FileInfo {
+  getOutputFile(context: SsgContext): FileInfo {
+    const inputFile = context.inputFile
     return new FileInfo("_redirects", inputFile.encoding, inputFile.contents, inputFile.lastModified, inputFile.lang)
   }
 }
@@ -94,8 +95,8 @@ const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
 const htAccessToNetlifyConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
-  outputFile(inputFile: FileInfo): FileInfo {
-    return new FileInfo("netlify.toml", inputFile.encoding, inputFile.contents, inputFile.lastModified, inputFile.lang)
+  getOutputFile(context: SsgContext): FileInfo {
+    return getFileInfo(context, "netlify.toml")
   }
 }
 
@@ -118,8 +119,8 @@ const contentConfigs: ContentStepConfig[] = [
       new ClassDomReplaceCommand("source", new SourceReplacerFactory())
       // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     ],
-    outputFile(inputFile: FileInfo): FileInfo {
-      return inputFile
+    getOutputFile(context: SsgContext): FileInfo {
+      return context.inputFile
     }
   }
 ]

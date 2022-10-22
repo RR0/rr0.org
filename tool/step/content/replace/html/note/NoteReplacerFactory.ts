@@ -8,21 +8,12 @@ import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
  */
 export class NoteReplacerFactory implements ReplacerFactory<DomReplacer> {
 
-  protected singleton?: NoteReplacer
-
   async create(context: HtmlSsgContext): Promise<DomReplacer> {
-    const instance = await this.getInstance()
+    const instance = new NoteReplacer()
     return {
       replace: (original: Element): Element => {
         return instance.replacement(context, original)
       }
     }
-  }
-
-  protected async getInstance(): Promise<NoteReplacer> {
-    if (!this.singleton) {
-      this.singleton = new NoteReplacer()
-    }
-    return this.singleton
   }
 }

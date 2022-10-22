@@ -7,7 +7,8 @@ export interface SsgContext {
   messages: SsgMessages
   log: () => void
   debug: { (message?: any, ...optionalParams: any[]): void; (...data: any[]): void }
-  currentFile: FileInfo
+  inputFile: FileInfo
+  outputFile: FileInfo
   readonly locales: string | string[]
   readonly time: TimeContext
 
@@ -25,23 +26,36 @@ export class SsgContextImpl implements SsgContext {
   constructor(readonly locales: string | string[], readonly time: TimeContext,
               currentFile: FileInfo | undefined = undefined) {
     this.messages = ssgMessages[Array.isArray(locales) ? locales[0] : locales]
-    this._currentFile = currentFile
+    this._inputFile = currentFile
   }
 
-  protected _currentFile: FileInfo | undefined
+  protected _inputFile: FileInfo | undefined
 
-  get currentFile(): FileInfo {
-    if (!this._currentFile) {
-      throw Error("Should have a currentFile")
+  get inputFile(): FileInfo {
+    if (!this._inputFile) {
+      throw Error("Should have a inputFile")
     }
-    return this._currentFile
+    return this._inputFile
   }
 
-  set currentFile(value: FileInfo) {
-    this._currentFile = value
+  set inputFile(value: FileInfo) {
+    this._inputFile = value
+  }
+
+  protected _outputFile: FileInfo | undefined
+
+  get outputFile(): FileInfo {
+    if (!this._outputFile) {
+      throw Error("Should have a outputFile")
+    }
+    return this._outputFile
+  }
+
+  set outputFile(value: FileInfo) {
+    this._outputFile = value
   }
 
   clone(): SsgContext {
-    return new SsgContextImpl(this.locales, this.time.clone(), this._currentFile)
+    return new SsgContextImpl(this.locales, this.time.clone(), this._inputFile)
   }
 }

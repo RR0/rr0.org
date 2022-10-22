@@ -16,7 +16,7 @@ export class SsiIncludeReplaceCommand extends RegexReplaceCommand {
         let currentDir = process.cwd()
         const toInclude = args[0]
         if (!toInclude.startsWith("/")) {
-          const currentFile = context.currentFile
+          const currentFile = context.inputFile
           if (currentFile) {
             const currentFileName = currentFile.name
             const lastSlash = currentFileName.lastIndexOf("/")

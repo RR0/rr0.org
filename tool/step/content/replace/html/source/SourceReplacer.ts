@@ -8,7 +8,7 @@ export class SourceReplacer {
     this.number++
     const sourceStr = String.fromCharCode(96 + this.number)
     const sourceId = `source-${sourceStr}`
-    const doc = context.currentFile.dom.window.document
+    const doc = context.inputFile.dom.window.document
     const result = doc.createElement("span")
     const a = doc.createElement("a")
     a.className = "source-id"

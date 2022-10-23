@@ -1,9 +1,13 @@
 @charset "UTF-8";
-.contents, aside {
+:root {
+  --header-height: 5rem;
+}
+
+body > .contents, aside {
   transition: width .3s ease
 }
 
-.contents, .contents.no-side, body {
+body > .contents, body > .contents.no-side, body {
   width: 100%
 }
 
@@ -12,7 +16,7 @@
   vertical-align: sub
 }
 
-#main, .contents, aside, body, html {
+#main, body > .contents, aside, body, html {
   height: 100%
 }
 
@@ -56,7 +60,7 @@ body {
   overflow: hidden
 }
 
-.contents, aside {
+body > .contents, aside {
   position: relative
 }
 
@@ -68,7 +72,7 @@ aside {
   float: right
 }
 
-.contents {
+body > .contents {
   box-shadow: 0 .5em 1em -.1em #555;
   float: left;
   overflow-y: auto;
@@ -200,7 +204,7 @@ form {
   font-variant: normal
 }
 
-.contents {
+body > .contents {
   box-shadow: none;
   background: 0 0;
   scroll-behavior: smooth;
@@ -501,7 +505,7 @@ nav ul > li {
 }
 
 @media (max-width: 80em) {
-  .contents {
+  body > .contents {
     width: 100%
   }
 }
@@ -611,7 +615,7 @@ embed, iframe, img, object {
 }
 
 @media (min-width: 80em) {
-  .contents {
+  body > .contents {
     width: 72%
   }
 
@@ -1512,7 +1516,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     background: linear-gradient(135deg, #555555 0, rgba(255, 255, 255, 0) 79%)
   }
 
-  .contents {
+  body > .contents {
     background: black;
     color: lightgrey;
   }
@@ -1607,8 +1611,19 @@ dl.bullet dd {
 
 #main-nav {
   position: fixed;
-  top: 5rem;
+  top: var(--header-height);
   left: 0;
+}
+
+#main-nav li {
+  list-style: none;
+  display: inline-block;
+}
+
+@media (min-width: 60em) {
+  #main-nav li {
+    display: list-item;
+  }
 }
 
 .anchor {
@@ -1618,7 +1633,7 @@ dl.bullet dd {
 
 #aside {
   position: fixed;
-  top: 5rem;
+  top: var(--header-height);
   width: 18vw;
   right: 0;
 }

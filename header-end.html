@@ -14,16 +14,8 @@
       <ul class="outline">
       </ul>
     </li>
-    <li class="collapsed" data-ng-cloak data-ng-if="n.link && n.label" data-ng-repeat-start="n in ns">
-      <i class="fa fa-angle-right"></i></li>
-    <li class="{{n.style}}" data-ng-if="n.link && n.label" data-ng-repeat-end>
-      <a data-ng-href="{{n.link}}"><span data-ng-bind-html="n.label | unsafe" title="{{n.title}}"></span></a>
-    </li>
     <li>
-      <span data-ng-bind-html="alternate"></span>
-    </li>
-    <li class="toggleMap">
-      <a href="#"><span class="label">Carte</span> <span><i class="fa fa-map-marker"></i></span></a>
+      <span id="alternate"></span>
     </li>
   </ul>
   <form id="rr0-context-select"></form>
@@ -39,7 +31,7 @@
     i++
   }
 </script-->
-<div id="_top"></div>
+<div class="anchor" id="_top"></div>
 <div class="metadata">
   <div class="document-author" data-ng-cloak data-ng-controller="AuthorCtrl" data-ng-show="authors.length">
       <span data-ng-cloak data-ng-repeat="aa in authors">{{$first ? '' : ' & '}}<a data-ng-cloak

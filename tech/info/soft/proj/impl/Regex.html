@@ -1,32 +1,32 @@
 <!--#include virtual="/header-start.html" -->
 <title>Regex</title>
 <!--#include virtual="/header-end.html" -->
-<p><em><strong>Reg</strong>ular <strong>ex</strong>pressions </em>: expressions régulières.</p>
+<p><em><strong>Reg</strong>ular <strong>ex</strong>pressions </em>: expressions rï¿½guliï¿½res.</p>
 <section>
   <h2>Besoin</h2>
-  <p>Reconnaître des motifs (<em>pattern match</em>) textuels.</p></section>
+  <p>Reconnaï¿½tre des motifs (<em>pattern match</em>) textuels.</p></section>
 <section>
   <h2>Analyse</h2>
-  <p>Les expressions décrivant des motifs reconnaissables utilisent :</p>
+  <p>Les expressions dï¿½crivant des motifs reconnaissables utilisent :</p>
   <ul>
-    <li>des caractères normaux (<code>a</code>, <code>b</code>, <code>0</code>, <code>_</code>, etc.), reconnu comme
+    <li>des caractï¿½res normaux (<code>a</code>, <code>b</code>, <code>0</code>, <code>_</code>, etc.), reconnu comme
       tels</li>
-    <li>des caractères spéciaux ou "jokers" (<em>wildcards</em>) exprimant une sémantique de motif (<code>*</code>,
+    <li>des caractï¿½res spï¿½ciaux ou "jokers" (<em>wildcards</em>) exprimant une sï¿½mantique de motif (<code>*</code>,
       <code>+</code>, <code>[</code>, <code>^</code>, etc.)</li>
   </ul>
-  <p>Pour désigner des caractères normaux ayant la forme de caractère spéciaux, on les précède d'un caractère
-    d'échappement <code>\</code> (<code>\*</code>, <code>\+</code>, etc.)</p></section>
+  <p>Pour dï¿½signer des caractï¿½res normaux ayant la forme de caractï¿½re spï¿½ciaux, on les prï¿½cï¿½de d'un caractï¿½re
+    d'ï¿½chappement <code>\</code> (<code>\*</code>, <code>\+</code>, etc.)</p></section>
 <section>
-  <h2>Déploiement</h2>
-  <p>Les regex sont intégrées dans la <a href="/org/us/company/oracle/sun/ptf/java/api/se">plate-forme standard</a>
+  <h2>Dï¿½ploiement</h2>
+  <p>Les regex sont intï¿½grï¿½es dans la <a href="/org/us/company/oracle/sun/ptf/java/api/se">plate-forme standard</a>
     depuis Java 1.4.
   </p></section>
 <section>
   <h2>Exemples</h2>
-  <p>Les expressions régulières sont utilisées dans nombre de domaines, comme :</p>
+  <p>Les expressions rï¿½guliï¿½res sont utilisï¿½es dans nombre de domaines, comme :</p>
   <ul>
-    <li>la sélection de fichiers (<code>mon?Fichier*.*</code>)</li>
-    <li>les moteurs de recherche (<code>motclé*</code>)</li>
+    <li>la sï¿½lection de fichiers (<code>mon?Fichier*.*</code>)</li>
+    <li>les moteurs de recherche (<code>motclï¿½*</code>)</li>
     <li>des utilitaires (awk, ed, ex, sed, grep, egrep, fgrep, vi)</li>
     <li>des <a href="../../prod/ide/index.html">IDE</a> (rechercher/remplacer)</li>
     <li>des <a href="/tech/info/soft/proj/impl/lang">langages</a> de programmation (<a
@@ -49,21 +49,21 @@
     </tr>
     <tr>
       <th rowspan="11">Motifs</th>
-      <th>Tout caractère<br/>
+      <th>Tout caractï¿½re<br/>
       </th>
       <td><code><strong>.</strong></code></td>
     </tr>
     <tr>
-      <th> 0 ou 1 fois un caractère<br/>
+      <th> 0 ou 1 fois un caractï¿½re<br/>
       </th>
       <td><code>c<strong>?</strong></code></td>
     </tr>
     <tr>
-      <th> Tout caractère parmi un ensemble</th>
+      <th> Tout caractï¿½re parmi un ensemble</th>
       <td><code><strong>[</strong>ABC<strong>]</strong></code></td>
     </tr>
     <tr>
-      <th> Tout caractère sauf ceux d'un ensemble</th>
+      <th> Tout caractï¿½re sauf ceux d'un ensemble</th>
       <td><code><strong>[^</strong>DEF<strong>]</strong></code></td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@
         <code><strong>\</strong>$</code> <code><strong>\</strong>^</code></td>
     </tr>
     <tr>
-      <th> Début de ligne</th>
+      <th> Dï¿½but de ligne</th>
       <td><code><strong>^</strong><strong></strong></code></td>
     </tr>
     <tr>
@@ -81,7 +81,7 @@
       <td><code><strong>$</strong><strong></strong></code></td>
     </tr>
     <tr>
-      <th>Début d'un mot</th>
+      <th>Dï¿½but d'un mot</th>
       <td><code><strong>\&lt;</strong><strong></strong></code></td>
     </tr>
     <tr>
@@ -89,46 +89,46 @@
       <td><code><strong>\&gt;</strong><strong></strong></code></td>
     </tr>
     <tr>
-      <th>Début ou fin d'un mot</th>
+      <th>Dï¿½but ou fin d'un mot</th>
       <td><code><strong>\b</strong></code></td>
     </tr>
     <tr>
-      <th>Sauf début ou fin de mot</th>
+      <th>Sauf dï¿½but ou fin de mot</th>
       <td><code><strong>\B</strong></code></td>
     </tr>
     <tr>
-      <th rowspan="4">Répétitions</th>
+      <th rowspan="4">Rï¿½pï¿½titions</th>
       <th> 0 ou n fois l'element</th>
-      <td><code>élément<strong>*</strong></code></td>
+      <td><code>ï¿½lï¿½ment<strong>*</strong></code></td>
     </tr>
     <tr>
-      <th>1 ou n fois l'élément</th>
-      <td><code>élément<strong>+</strong></code></td>
+      <th>1 ou n fois l'ï¿½lï¿½ment</th>
+      <td><code>ï¿½lï¿½ment<strong>+</strong></code></td>
     </tr>
     <tr>
-      <th>n fois l'élément</th>
-      <td><code>élément<strong>{</strong>n<strong>}</strong></code></td>
+      <th>n fois l'ï¿½lï¿½ment</th>
+      <td><code>ï¿½lï¿½ment<strong>{</strong>n<strong>}</strong></code></td>
     </tr>
     <tr>
-      <th>Entre min et max fois l'élément</th>
-      <td><code>élément<strong>{</strong>min,max<strong>}</strong></code></td>
+      <th>Entre min et max fois l'ï¿½lï¿½ment</th>
+      <td><code>ï¿½lï¿½ment<strong>{</strong>min,max<strong>}</strong></code></td>
     </tr>
     <tr>
       <th>Conditions</th>
       <th>Ou</th>
-      <td><code><strong>(</strong>élément1<strong>|</strong>élément2<strong>)</strong></code></td>
+      <td><code><strong>(</strong>ï¿½lï¿½ment1<strong>|</strong>ï¿½lï¿½ment2<strong>)</strong></code></td>
     </tr>
   </table>
   <h2>Notes</h2>
   <ul>
-    <li>Issues des travaux de Stephen Kleene, mathématicien de l'informatique qui définit <q>l'algèbre des ensembles
-      réguliers</q>. Le caractère joker <code>*</code> est formellement appelé <q>étoile de Kleene</q>.</li>
+    <li>Issues des travaux de Stephen Kleene, mathï¿½maticien de l'informatique qui dï¿½finit <q>l'algï¿½bre des ensembles
+      rï¿½guliers</q>. Le caractï¿½re joker <code>*</code> est formellement appelï¿½ <q>ï¿½toile de Kleene</q>.</li>
   </ul>
 </section>
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li> Plus faciles à écrire qu'à relire</li>
+    <li> Plus faciles ï¿½ ï¿½crire qu'ï¿½ relire</li>
   </ul>
 </section>
 <section>

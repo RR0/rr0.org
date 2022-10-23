@@ -12,6 +12,10 @@ export class LinkReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     const dom = outputFile.dom
     const outputDoc = dom.window.document
     const ul = outputDoc.querySelector("nav ul")
+    if (!ul) {
+      console.error("Could not find nav list in " + context.outputFile.name)
+      return inputFile
+    }
     if (inputFile.relStart) {
       this.addLink(outputDoc, ul, inputFile.relStart)
     }

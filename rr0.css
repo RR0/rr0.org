@@ -1619,5 +1619,6 @@ dl.bullet dd {
 #aside {
   position: fixed;
   top: 5rem;
+  width: 18vw;
   right: 0;
 }

@@ -1,21 +1,21 @@
 <!--#include virtual="/header-start.html" -->
 <title>CRL</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Certificate Revocation List</i> : liste de révocation de certificats.</p>
+<p><i lang="en">Certificate Revocation List</i> : liste de rï¿½vocation de certificats.</p>
 <section>
   <h2>Besoin</h2>
-  <p>Représenter les listes de certificats révoqués.</p>
+  <p>Reprï¿½senter les listes de certificats rï¿½voquï¿½s.</p>
 </section>
 <section>
-  <h2>Implémentation</h2>
-  <p>Le package des certificats définit également une classe <code>CRL</code> permettant de représenter les listes de
-    certificats révoqués. On peut ainsi demander à un objet de type <q>java.security.cert.CRL</q> si un certificat donné
-    est révoqué (n'est plus valide).</p>
-  <p>Comme les certificats, les CRL ne sont pas directement instantiables et ne peuvent l'être qu'à partir de flux
-    (fichiers, certificats téléchargés) que lira une fabrique de certificats (<span class="code"><q>java.security.cert.CertificateFactory</q></span>)
-    afin de générer (<span class="code"><q>maFabrique.generateCRL
+  <h2>Implï¿½mentation</h2>
+  <p>Le package des certificats dï¿½finit ï¿½galement une classe <code>CRL</code> permettant de reprï¿½senter les listes de
+    certificats rï¿½voquï¿½s. On peut ainsi demander ï¿½ un objet de type <q>java.security.cert.CRL</q> si un certificat donnï¿½
+    est rï¿½voquï¿½ (n'est plus valide).</p>
+  <p>Comme les certificats, les CRL ne sont pas directement instantiables et ne peuvent l'ï¿½tre qu'ï¿½ partir de flux
+    (fichiers, certificats tï¿½lï¿½chargï¿½s) que lira une fabrique de certificats (<span class="code"><q>java.security.cert.CertificateFactory</q></span>)
+    afin de gï¿½nï¿½rer (<span class="code"><q>maFabrique.generateCRL
   (telAutreInputStream)</q></span><q>)</q> un objet de type <span class="code"><q>java.security.cert.CRL</q></span>, que
-    l'on pourra interpréter (<i>cast</i>) selon les cas comme des <span
+    l'on pourra interprï¿½ter (<i>cast</i>) selon les cas comme des <span
         class="code"><q>java.security.cert.X509CRL</q></span> ou autre.</p>
 </section>
 <!--#include virtual="/footer.html" -->

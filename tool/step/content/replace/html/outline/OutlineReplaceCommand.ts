@@ -14,6 +14,10 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     const outputDoc = dom.window.document
     const inputDoc = inputFile.dom.window.document
     const ul = outputDoc.querySelector(".outline")
+    if (!ul) {
+      console.error("Could not find .outline in " + context.inputFile.name)
+      return inputFile
+    }
     const from = inputDoc.documentElement
     this.process(from, ul, outputDoc, 2)
     outputFile.dom = dom

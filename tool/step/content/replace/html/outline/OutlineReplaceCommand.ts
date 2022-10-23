@@ -1,0 +1,50 @@
+import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
+import {ReplaceCommand} from "../../ReplaceCommand"
+import {HtmlFileInfo} from "../../../../../util/file/HtmlFileInfo"
+import {textToDash} from "../../../../../util/file/FileUtil"
+
+/**
+ */
+export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
+
+  async execute(context: HtmlSsgContext): Promise<HtmlFileInfo> {
+    const inputFile = context.inputFile
+    const outputFile = context.outputFile
+    const dom = outputFile.dom
+    const outputDoc = dom.window.document
+    const inputDoc = inputFile.dom.window.document
+    const ul = outputDoc.querySelector(".outline")
+    const from = inputDoc.documentElement
+    this.process(from, ul, outputDoc, 2)
+    outputFile.dom = dom
+    return outputFile
+    /**
+     *             <li data-ng-attr-tabindex="{{101+$index}}" data-ng-click="sectionClick(s)" data-ng-repeat="s in sections">
+     *               <a data-ng-href="#{{::s.id}}" id="out-{{::s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
+     *             </li>
+     */
+  }
+
+  private process(from: Element, target: Element, outputDoc: Document, level: number) {
+    const selector = "section h" + level
+    const sectionsHeadings = from.querySelectorAll(selector)
+    for (const titleElem of sectionsHeadings) {
+      const text = titleElem.textContent
+      if (text) {
+        const localAnchor = textToDash(text)
+        const outlineElem = titleElem.cloneNode(true)
+        const anchor = outputDoc.createElement("div")
+        anchor.className = "anchor"
+        anchor.id = localAnchor
+        titleElem.prepend(anchor)
+        const a = outputDoc.createElement("a")
+        a.href = "#" + localAnchor
+        a.appendChild(outlineElem)
+        const li = outputDoc.createElement("li")
+        li.appendChild(a)
+        target.appendChild(li)
+        this.process(titleElem.parentElement!, target, outputDoc, level + 1)
+      }
+    }
+  }
+}

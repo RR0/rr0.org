@@ -76,6 +76,11 @@ export function camelToText(camel: string): string {
   return StringUtil.capitalizeFirstLetter(text).trim()
 }
 
+export function textToDash(camel: string): string {
+  return StringUtil.removeAccents(camel.trim()
+    .replace(/ /g, "-"))
+}
+
 export async function dirNames(dir: string): Promise<string[]> {
   const dirs = await readdir(dir, {withFileTypes: true})
   return dirs.filter(dirent => dirent.isDirectory())

@@ -30,8 +30,8 @@ export class People {
   }
 
   static getUrl(lastName: string, firstNames: string[]): string {
-    const normalizedLastName = StringUtil.withoutAccents(lastName)
-    const normalizedFirstNames = firstNames.map(StringUtil.withoutAccents).map(StringUtil.withoutDots)
+    const normalizedLastName = StringUtil.removeAccents(lastName)
+    const normalizedFirstNames = firstNames.map(StringUtil.removeAccents).map(StringUtil.withoutDots)
     return "people/" + normalizedLastName.charAt(
       0).toLowerCase() + "/" + normalizedLastName + normalizedFirstNames.join("")
   }

@@ -1596,3 +1596,28 @@ dl.bullet dd {
   display: block;
   margin-left: 2.5em;
 }
+
+#main-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 101;
+}
+
+#main-nav {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+}
+
+.anchor {
+  position: relative;
+  top: -5rem;
+}
+
+#aside {
+  position: fixed;
+  top: 5rem;
+  right: 0;
+}

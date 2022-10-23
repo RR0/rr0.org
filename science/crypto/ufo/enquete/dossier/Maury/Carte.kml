@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Lieux de l'affaire de l'ile Maury</name>
+  <description>le 21 juin 1947</description>
+  <Style id="marker">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Observation de l'ile Maury</name>
+    <description><![CDATA[<img style="width:100px" align="right" src="https://rr0.org/science/crypto/ufo/enquete/dossier/Maury/1947-06-21.jpg">le 21 juin 1947, par la suite avouÃ© comme un canular.]]></description>
+    <styleUrl>#marker</styleUrl>
+    <Point>
+      <coordinates>-122.411385,47.367432,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

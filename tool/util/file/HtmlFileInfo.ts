@@ -8,7 +8,8 @@ export class HtmlFileInfo extends FileInfo {
 
   constructor(
     name: string, encoding: BufferEncoding, contents: string, lastModified: Date, lang: string | string[],
-    public title?: string, readonly titleUrl?: string, readonly author?: string, public copyright?: string
+    public title?: string, readonly titleUrl?: string, readonly author?: string, public copyright?: string,
+    readonly relStart?: Link, readonly relContents?: Link, readonly relPrev?: Link, readonly relNext?: Link
   ) {
     super(name, encoding, contents, lastModified, lang)
   }
@@ -44,6 +45,26 @@ function meta(name: string, doc: Document): string | undefined {
   }
 }
 
+enum LinkType {
+  start = "start",
+  contents = "contents",
+  prev = "prev",
+  next = "next"
+}
+
+export interface Link {
+  type: LinkType
+  text: string
+  url: string
+}
+
+function link(rel: LinkType, doc: Document): Link | undefined {
+  const linkElem = doc.querySelector(`link[rel='${rel}']`) as HTMLLinkElement
+  if (linkElem) {
+    return {text: linkElem.title, url: linkElem.href, type: rel}
+  }
+}
+
 export function getHtmlFileInfo(context: SsgContext, fileName: string): HtmlFileInfo {
   const fileInfo = getFileInfo(context, fileName)
   const fileContents = fileInfo.contents
@@ -59,9 +80,14 @@ export function getHtmlFileInfo(context: SsgContext, fileName: string): HtmlFile
   const titleUrl = meta("url", doc)
   const author = meta("author", doc)
   const copyright = meta("copyright", doc)
+  const relStart = link(LinkType.start, doc)
+  const relContents = link(LinkType.contents, doc)
+  const relPrev = link(LinkType.prev, doc)
+  const relNext = link(LinkType.next, doc)
   return new HtmlFileInfo(
     fileInfo.name, fileInfo.encoding, fileInfo.contents, fileInfo.lastModified, fileInfo.lang,
-    title, titleUrl, author, copyright
+    title, titleUrl, author, copyright,
+    relStart, relContents, relPrev, relNext
   )
 }
 

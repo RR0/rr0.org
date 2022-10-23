@@ -1,7 +1,7 @@
 import {FileInfo} from "../../../util/file/FileInfo"
-import {HtmlSsgContext} from "../../../HtmlSsgContext"
+import {SsgContext} from "../../../SsgContext"
 
-export interface ReplaceCommand {
+export interface ReplaceCommand<C extends SsgContext> {
 
-  execute(context: HtmlSsgContext): Promise<FileInfo>
+  execute(context: C): Promise<FileInfo>
 }

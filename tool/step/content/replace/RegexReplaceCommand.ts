@@ -1,14 +1,14 @@
 import {RegexReplacer} from "./RegexReplacer"
 import {ReplaceCommand} from "./ReplaceCommand"
 import {FileInfo} from "../../../util/file/FileInfo"
-import {HtmlSsgContext} from "../../../HtmlSsgContext"
+import {SsgContext} from "../../../SsgContext"
 
-export abstract class RegexReplaceCommand implements ReplaceCommand {
+export abstract class RegexReplaceCommand implements ReplaceCommand<SsgContext> {
 
   protected constructor(protected regex: RegExp) {
   }
 
-  async execute(context: HtmlSsgContext): Promise<FileInfo> {
+  async execute(context: SsgContext): Promise<FileInfo> {
     const fileInfo = context.inputFile
     let contents = fileInfo.contents
     let result = contents
@@ -21,5 +21,5 @@ export abstract class RegexReplaceCommand implements ReplaceCommand {
     return fileInfo
   }
 
-  protected abstract createReplacer(context: HtmlSsgContext): Promise<RegexReplacer>
+  protected abstract createReplacer(context: SsgContext): Promise<RegexReplacer>
 }

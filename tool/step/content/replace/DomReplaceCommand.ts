@@ -6,7 +6,7 @@ import jsdom from "jsdom"
 
 const {JSDOM} = jsdom
 
-export abstract class DomReplaceCommand implements ReplaceCommand {
+export abstract class DomReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
 
   protected constructor(protected selector: string) {
   }

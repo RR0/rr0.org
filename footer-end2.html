@@ -1,10 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-sanitize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.15/angular-locale_fr-fr.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="https://www.google.com/jsapi" type="text/javascript"></script>
-<script src="/rr0.js"></script>
 <script>
   let pathname = window.location.pathname
   if (pathname.indexOf(".") < 0 && !pathname.endsWith("/")) {
@@ -118,5 +112,6 @@
   const container = addInput(pageContext)
   inputs.appendChild(container)
 
+  if (window !== top) document.querySelectorAll(".full-page").forEach(elem => elem.style.display = "none")
 </script>
 </body></html>

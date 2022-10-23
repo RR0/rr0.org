@@ -1,15 +1,12 @@
 <footer>
-  <div id="footerTable">
+  <div class="full-page" id="footerTable">
     <div class="footer">
       Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
-      Copyright <span class="copyright">${copyright}</span> - <a href="/Contact.html">Contact</a>
+      Copyright <span class="copyright"><!--#echo var="copyright" --></span> - <a href="/Contact.html">Contact</a>
     </div>
   </div>
-  <script>if (window !== top) document.getElementById("footerTable").style.display = "none"</script>
 </footer>
-</div><!--text-->
-</div><!--contents-->
-<aside>
+<aside id="aside">
   <h1>Map</h1>
   <div id="starmap"></div>
   <div id="map-canvas2"></div>

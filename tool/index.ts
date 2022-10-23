@@ -6,7 +6,7 @@ import {SsiLastModifiedReplaceCommand} from "./step/content/replace/html/ssi/Ssi
 import {
   HtAccessToNetlifyRedirectsReplaceCommand
 } from "./step/content/replace/htaccess/HtAccessToNetlifyRedirectsReplaceCommand"
-import {SsiVarReplaceCommand} from "./step/content/replace/html/ssi/SsiVarCommand"
+import {SsiSetVarReplaceCommand} from "./step/content/replace/html/ssi/SsiSetVarCommand"
 import {HtmlTagReplaceCommand} from "./step/content/replace/html/tag/HtmlTagReplaceCommand"
 import {TimeReplacerFactory} from "./step/content/replace/html/time/TimeReplacerFactory"
 import {SsgContext, SsgContextImpl} from "./SsgContext"
@@ -31,6 +31,8 @@ import {CaviarReplacerFactory} from "./step/content/replace/html/caviar/CaviarRe
 import {NoteReplacerFactory} from "./step/content/replace/html/note/NoteReplacerFactory"
 import {SourceReplacerFactory} from "./step/content/replace/html/source/SourceReplacerFactory"
 import {ClassDomReplaceCommand} from "./step/content/replace/html/class/ClassDomReplaceCommand"
+import {LinkReplaceCommand} from "./step/content/replace/html/link/LinkReplaceCommand"
+import {OutlineReplaceCommand} from "./step/content/replace/html/outline/OutlineReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -111,14 +113,16 @@ const contentConfigs: ContentStepConfig[] = [
       new TitleReplaceCommand([timeDefaultHandler]),
       new CopyrightReplaceCommand([rr0DefaultCopyright]),
       new SsiIfReplaceCommand(),
-      new SsiVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-      new SsiVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+      new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+      new SsiSetVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
       new SsiLastModifiedReplaceCommand(),
       new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
       new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
       new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
       new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
-      new ClassDomReplaceCommand("source", new SourceReplacerFactory())
+      new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
+      new LinkReplaceCommand(),
+      new OutlineReplaceCommand()
       // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     ],
     getOutputFile(context: SsgContext): FileInfo {

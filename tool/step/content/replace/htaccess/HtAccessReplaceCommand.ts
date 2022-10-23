@@ -15,7 +15,7 @@ enum HtAccessCommands {
   ErrorDocument = "ErrorDocument",
 }
 
-export abstract class HtAccessReplaceCommand implements ReplaceCommand {
+export abstract class HtAccessReplaceCommand implements ReplaceCommand<SsgContext> {
 
   async execute(context: SsgContext): Promise<FileInfo> {
     const inputFileInfo = context.inputFile

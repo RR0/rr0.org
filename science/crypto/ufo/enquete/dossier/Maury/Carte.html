@@ -1,0 +1,31 @@
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <title>Carte de l'observation du Yukon</title>
+  <script
+      src="https://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAA0F5PCNh_gr_7qvmBnnCc9hSCXz57HFqdqHYuG1R39Ganzi6F4BQK_8aWqWKccr2UIE_VQlwSTihjjw"
+      type="text/javascript"></script>
+  <style type="text/css">
+    v\: * {
+      behavior: url(#default#VML);
+    }
+  </style>
+  <script type="text/javascript">
+    //<![CDATA[
+    function onLoad() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"))
+        map.setCenter(new GLatLng(47.380219, -122.416534), 12, G_HYBRID_MAP)
+        var geoXml = new GGeoXml("https://rr0.org/science/crypto/ufo/enquete/dossier/Maury/Carte.kml")
+        map.addControl(new GLargeMapControl())
+        map.addOverlay(geoXml)
+      }
+    }
+
+    //]]>
+  </script>
+</head>
+<body onLoad="onLoad()" onUnload="GUnload()">
+<div id="map" style="width: 400; height: 400px;">Lieu de l'affaire de l'Ile Maury</div>
+</body>
+</html>

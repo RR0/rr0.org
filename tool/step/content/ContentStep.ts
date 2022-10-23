@@ -16,7 +16,7 @@ export type ContentStepConfig = {
   /**
    * The replacements to process on contents.
    */
-  replacements: ReplaceCommand[],
+  replacements: ReplaceCommand<SsgContext>[],
 
   /**
    * @param context

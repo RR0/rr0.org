@@ -1,16 +1,16 @@
-import {RegexReplaceCommand} from "../../RegexReplaceCommand"
 import {RegexReplacer} from "../../RegexReplacer"
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {StringContextHandler} from "../StringContextHandler"
+import {SsiEchoVarReplaceCommand} from "../ssi/SsiEchoVarCommand"
 
 /**
- * Replaces "${title}" by the page's <title> content,
+ * Replaces "<!--#echo var="title" -->" by the page's <title> content,
  * with a link if there's a <meta name="url"> content.
  */
-export class TitleReplaceCommand extends RegexReplaceCommand {
+export class TitleReplaceCommand extends SsiEchoVarReplaceCommand {
 
   constructor(protected defaultHandlers: StringContextHandler[] = []) {
-    super(/\$\{title}/)
+    super("title")
   }
 
   protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {

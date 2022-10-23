@@ -2,7 +2,8 @@ import {RegexReplaceCommand} from "../../RegexReplaceCommand"
 import {RegexReplaceCallback, RegexReplacer} from "../../RegexReplacer"
 import {SsgContext} from "../../../../../SsgContext"
 
-export class SsiVarReplaceCommand extends RegexReplaceCommand {
+export class SsiSetVarReplaceCommand extends RegexReplaceCommand {
+
   protected replacer: RegexReplacer
 
   constructor(varName: string, ssiVarReplacer: RegexReplaceCallback) {

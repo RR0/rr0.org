@@ -163,4 +163,10 @@ export class SsgMessages_en implements SsgMessages {
     us: "USA",
     se: "Sweden"
   }
+  nav = {
+    start: "Start",
+    contents: "Contents",
+    prev: "Previous",
+    next: "Next"
+  }
 }

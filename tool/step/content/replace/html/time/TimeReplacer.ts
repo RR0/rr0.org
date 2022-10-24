@@ -96,10 +96,10 @@ export class TimeReplacer {
     }
     if (timeContext.isDefined()) {
       let url = TimeUrlBuilder.build(context)
-      while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
+     /* while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
         const slash = url.lastIndexOf("/")
         url = url.substring(0, slash)
-      }
+      }*/
       let title = TimeTextBuilder.build(context)
       if (approximate) {
         title = context.messages.context.time.approximate(title)

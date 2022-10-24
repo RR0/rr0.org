@@ -45,7 +45,7 @@ function meta(name: string, doc: Document): string[] {
   return Array.from(metaElems).map(metaElem => (metaElem as HTMLMetaElement).content)
 }
 
-enum LinkType {
+export enum LinkType {
   start = "start",
   contents = "contents",
   prev = "prev",

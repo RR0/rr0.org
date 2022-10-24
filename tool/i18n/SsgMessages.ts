@@ -83,7 +83,7 @@ export interface SsgMessages {
       }
     },
     conclusion: {
-      unknown: string,
+      unknown: string
       misinterpretation: string
       hoax: string
     }
@@ -91,6 +91,12 @@ export interface SsgMessages {
   people: {
     occupation: OccupationMessages
   },
-  country: CountryMessages
+  country: CountryMessages,
+  nav: {
+    start: string
+    contents: string
+    prev: string
+    next: string
+  }
 }
 

@@ -5,7 +5,7 @@ import {testUtil} from "../../../../../test/TestUtil"
 describe("HtmlTagReplaceCommand", () => {
 
   test("replace time tag", async () => {
-    const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory())
+    const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory([]))
     const context = testUtil.newHtmlContext("time/1/9/9/0/08/index.html",
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
     const file = await command.execute(context)

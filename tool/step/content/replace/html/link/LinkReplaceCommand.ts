@@ -32,31 +32,33 @@ export class LinkReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     }
     const relStart = inputFile.relStart || this.defaultHandler?.start(context)
     if (relStart) {
-      this.addLink(outputDoc, ul, relStart)
+      this.addLink(context, ul, relStart)
     }
     const relContents = inputFile.relContents || this.defaultHandler?.contents(context)
     if (relContents) {
-      this.addLink(outputDoc, ul, relContents)
+      this.addLink(context, ul, relContents)
     }
     const relPrev = inputFile.relPrev || this.defaultHandler?.prev(context)
     if (relPrev) {
-      this.addLink(outputDoc, ul, relPrev)
+      this.addLink(context, ul, relPrev)
     }
     const relNext = inputFile.relNext || this.defaultHandler?.next(context)
     if (relNext) {
-      this.addLink(outputDoc, ul, relNext)
+      this.addLink(context, ul, relNext)
     }
     outputFile.dom = dom
     return outputFile
   }
 
-  private addLink(outputDoc: Document, ul: Element, link: Link) {
+  private addLink(context: HtmlSsgContext, ul: Element, link: Link) {
+    const outputDoc = context.outputFile.dom.window.document
     const li = outputDoc.createElement("li")
     li.className = link.type
     const a = outputDoc.createElement("a")
     a.textContent = link.text
     a.href = link.url
     li.appendChild(a)
+    li.title = context.messages.nav[link.type]
     ul.appendChild(li)
   }
 }

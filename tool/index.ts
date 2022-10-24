@@ -35,6 +35,7 @@ import {LinkReplaceCommand} from "./step/content/replace/html/link/LinkReplaceCo
 import {OutlineReplaceCommand} from "./step/content/replace/html/outline/OutlineReplaceCommand"
 import {AuthorReplaceCommand} from "./step/content/replace/html/author/AuthorReplaceCommand"
 import {TimeLinkDefaultHandler} from "./step/content/replace/html/link/TimeLinkDefaultHandler"
+import {promise as glob} from "glob-promise"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -106,33 +107,18 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
   }
 }
 
-const contentConfigs: ContentStepConfig[] = [
-  htAccessToNetlifyConfig,
-  {
-    roots,
-    replacements: [
-      new SsiIncludeReplaceCommand(),
-      new TitleReplaceCommand([timeDefaultHandler]),
-      new CopyrightReplaceCommand([rr0DefaultCopyright]),
-      new SsiIfReplaceCommand(),
-      new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-      new SsiSetVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-      new SsiLastModifiedReplaceCommand(),
-      new AuthorReplaceCommand(),
-      new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
-      new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
-      new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
-      new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
-      new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
-      new LinkReplaceCommand(new TimeLinkDefaultHandler()),
-      new OutlineReplaceCommand()
-      // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
-    ],
-    getOutputFile(context: SsgContext): FileInfo {
-      return context.inputFile
-    }
-  }
-]
+async function getTimeFiles(): Promise<string[]> {
+  const minusYearFiles = await glob("time/-?/?/?/?")
+  const year1Files = await glob("time/?")
+  const year2Files = await glob("time/?/?")
+  const year3Files = await glob("time/?/?/?")
+  const year4Files = await glob("time/?/?/?/?")
+  const monthFiles = await glob("time/?/?/?/?/??")
+  const dayFiles = await glob("time/?/?/?/?/??/??")
+  const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
+    minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
+  return timeFiles
+}
 
 const scientistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
@@ -152,6 +138,7 @@ const scientistsDirectoryStep = new PeopleDirectoryStep(
     Occupation.radioastronomer,
     Occupation.sociologist, Occupation.softwareEngineer
   ])
+
 
 const ufologistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
@@ -175,12 +162,43 @@ const ufoCasesDirectoryStep = new CaseDirectoryStep(
   "science/crypto/ufo/enquete/dossier/index.html",
   outputFunc)
 
-new Ssg(config)
-  .add(new ContentStep(contentConfigs, outputFunc))
-  .add(ufoCasesDirectoryStep)
-  .add(ufologistsDirectoryStep)
-  .add(scientistsDirectoryStep)
-  .add(new CopyStep(copies))
-  .start(context)
-  .then(result => console.log("Completed", result))
-  .catch(err => console.error(err, context.inputFile.name, "=>", context.outputFile.name))
+getTimeFiles().then(timeFiles => {
+  const contentConfigs: ContentStepConfig[] = [
+    htAccessToNetlifyConfig,
+    {
+      roots,
+      replacements: [
+        new SsiIncludeReplaceCommand(),
+        new TitleReplaceCommand([timeDefaultHandler]),
+        new CopyrightReplaceCommand([rr0DefaultCopyright]),
+        new SsiIfReplaceCommand(),
+        new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+        new SsiSetVarReplaceCommand("url",
+          (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+        new SsiLastModifiedReplaceCommand(),
+        new AuthorReplaceCommand(),
+        new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
+        new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
+        new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
+        new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
+        new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
+        new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+        new OutlineReplaceCommand()
+        // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
+      ],
+      getOutputFile(context: SsgContext): FileInfo {
+        return context.inputFile
+      }
+    }
+  ]
+  new Ssg(config)
+    .add(new ContentStep(contentConfigs, outputFunc))
+    .add(ufoCasesDirectoryStep)
+    .add(ufologistsDirectoryStep)
+    .add(scientistsDirectoryStep)
+    .add(new CopyStep(copies))
+    .start(context)
+    .then(result => console.log("Completed", result))
+    .catch(err => console.error(err, context.inputFile.name, "=>", context.outputFile.name))
+
+})

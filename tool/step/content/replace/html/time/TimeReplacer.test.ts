@@ -172,13 +172,13 @@ describe("TimeReplacer", () => {
     const replacer = new TimeReplacer(["time/2/0/0/5", "time/2/0/0/6"])
     expect(replacer.valueReplacement(context, "2005"))
       .toBe(`<a href="/time/2/0/0/5/">2005</a>`)
-    expect(replacer.replacement(context, `<time data-context="none">2006</time>`, "2006"))
+    expect(replacer.replacement(context, `<time data-context="none">2006</time>`, "2006", ` data-context="none"`))
       .toBe(`<a href="/time/2/0/0/6/">2006</a>`)
   })
 
   test("avoids linking to current file", () => {
-    const context = testUtil.newContext("time/1/9/9/0/08/index.html", "")
-    const replacer = new TimeReplacer(["time/1/9/9/0/08"])
+    const context = testUtil.newContext("time/1/9/9/0/08/02/index.html", "")
+    const replacer = new TimeReplacer(["time/1/9/9/0/08/02"])
     expect(replacer.replacement(context, "<time>1990-08-02</time>", "1990-08-02"))
       .toBe(`<span class="time">jeudi 2 août 1990</span>`)
   })

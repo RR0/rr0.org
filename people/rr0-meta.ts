@@ -1,4 +1,4 @@
-import angular = require("angular");
+import angular = require("angular")
 
 export interface MetaScope extends ng.IScope {
   titleUrl: string;
@@ -18,10 +18,10 @@ angular.module('rr0.people')
           case 'url':
             scope.titleUrl = content;
             break;
-          case 'author':
+          case 'authors?':
             peopleService.setAuthor(content, link);
             break;
-          case 'copyright':
+          case 'copyright?':
             peopleService.setCopyright(content, link);
             break;
         }

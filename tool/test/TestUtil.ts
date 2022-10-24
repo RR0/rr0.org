@@ -27,10 +27,8 @@ class TestUtil {
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : name
     const currentFile = context.inputFile
-    context.inputFile = new HtmlFileInfo(
-      currentFile.name, currentFile.encoding, currentFile.contents, currentFile.lastModified, currentFile.lang,
-      title
-    )
+    context.inputFile = new HtmlFileInfo(currentFile.name, currentFile.encoding, currentFile.contents,
+      currentFile.lastModified, currentFile.lang, title)
     return context as HtmlSsgContext
   }
 }

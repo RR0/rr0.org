@@ -1,7 +1,7 @@
 [[headers]]
   for = "/*"
     [headers.values]
-    Access-Control-Allow-Origin = "https://rr0.org"
+    Access-Control-Allow-Origin = "*"
 
 [[redirects]]
   from = "/*.jpg"

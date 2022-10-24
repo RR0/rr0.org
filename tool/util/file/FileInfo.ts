@@ -37,7 +37,7 @@ function getFileLang(context: SsgContext, filePath: string): string | string[] {
   return lang
 }
 
-function getContents(context: SsgContext, fileName: string) {
+function getContents(context: SsgContext, fileName: string): {encoding: BufferEncoding, contents: string} {
   const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
   let declaredEncoding
   if (fileName.endsWith(".html")) {
@@ -46,7 +46,7 @@ function getContents(context: SsgContext, fileName: string) {
     declaredEncoding = getCharSet(html) || getContentType(html)
   }
   const detectedEncoding = detectEncoding(fileName)
-  const encoding = declaredEncoding || detectedEncoding || "utf-8"
+  const encoding: BufferEncoding = declaredEncoding || detectedEncoding || "utf-8"
   const contents = fs.readFileSync(fileName, {encoding})
   return {encoding, contents}
 }

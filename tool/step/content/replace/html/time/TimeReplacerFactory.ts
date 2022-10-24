@@ -29,7 +29,7 @@ export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
       const monthFiles = await glob("time/?/?/?/?/??")
       const dayFiles = await glob("time/?/?/?/?/??/??")
       const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
-        minusYearFiles).concat(monthFiles).concat(dayFiles)
+        minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
       this.singleton = new TimeReplacer(timeFiles)
     }
     return this.singleton

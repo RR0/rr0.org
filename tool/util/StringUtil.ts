@@ -11,4 +11,9 @@ export class StringUtil {
   static removeAccents(str: string): string {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
   }
+
+  static textToCamel(camel: string): string {
+    return StringUtil.removeAccents(camel.trim()
+      .replace(/ /g, ""))
+  }
 }

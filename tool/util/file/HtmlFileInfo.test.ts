@@ -13,7 +13,7 @@ describe("HtmlFileInfo", () => {
     const context = testUtil.newHtmlContext(fileName, fileContents)
     const fileInfo = getHtmlFileInfo(context, fileName)
     expect(fileInfo.title).toBe("Introduction à l'édition du NCAS")
-    expect(fileInfo.author).toBe("Paul Jaffe (président du NCAS, janvier 1999)")
+    expect(fileInfo.authors).toBe("Paul Jaffe (président du NCAS, janvier 1999)")
     expect(fileInfo.titleUrl).toBe("https://www.ncas.org/condon/text/intro.htm")
   })
 
@@ -25,7 +25,7 @@ describe("HtmlFileInfo", () => {
     const context = testUtil.newHtmlContext(fileName, fileContents)
     const fileInfo = getHtmlFileInfo(context, fileName)
     expect(fileInfo.title).toBe("Introduction à l'édition du NCAS")
-    expect(fileInfo.author).toBe("Paul Jaffe (président du NCAS, janvier 1999)")
+    expect(fileInfo.authors).toBe("Paul Jaffe (président du NCAS, janvier 1999)")
     expect(fileInfo.titleUrl).toBe("https://www.ncas.org/condon/text/intro.htm")
   })
 })

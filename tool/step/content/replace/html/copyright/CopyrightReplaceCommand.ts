@@ -10,23 +10,18 @@ import {SsiEchoVarReplaceCommand} from "../ssi/SsiEchoVarCommand"
 export class CopyrightReplaceCommand extends SsiEchoVarReplaceCommand {
 
   constructor(protected defaultHandlers: StringContextHandler[] = []) {
-    super("copyright")
+    super("copyright?")
   }
 
   protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
         const fileInfo = context.inputFile
-        let copyright = fileInfo.copyright
-        if (!copyright) {
-          this.defaultHandlers.some(handle => !copyright && (copyright = handle(context)))
+        let copyrightStr = fileInfo.copyright
+        if (!copyrightStr) {
+          this.defaultHandlers.some(handle => !copyrightStr && (copyrightStr = handle(context)))
         }
-        if (copyright) {
-          fileInfo.copyright = copyright
-        } else {
-          copyright = ""
-        }
-        return copyright
+        return copyrightStr || ""
       }
     }
   }

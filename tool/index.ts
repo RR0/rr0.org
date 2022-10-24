@@ -33,6 +33,8 @@ import {SourceReplacerFactory} from "./step/content/replace/html/source/SourceRe
 import {ClassDomReplaceCommand} from "./step/content/replace/html/class/ClassDomReplaceCommand"
 import {LinkReplaceCommand} from "./step/content/replace/html/link/LinkReplaceCommand"
 import {OutlineReplaceCommand} from "./step/content/replace/html/outline/OutlineReplaceCommand"
+import {AuthorReplaceCommand} from "./step/content/replace/html/author/AuthorReplaceCommand"
+import {TimeLinkDefaultHandler} from "./step/content/replace/html/link/TimeLinkDefaultHandler"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -116,12 +118,13 @@ const contentConfigs: ContentStepConfig[] = [
       new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
       new SsiSetVarReplaceCommand("url", (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
       new SsiLastModifiedReplaceCommand(),
+      new AuthorReplaceCommand(),
       new HtmlTagReplaceCommand("time", new TimeReplacerFactory()),
       new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
       new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
       new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
       new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
-      new LinkReplaceCommand(),
+      new LinkReplaceCommand(new TimeLinkDefaultHandler()),
       new OutlineReplaceCommand()
       // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
     ],

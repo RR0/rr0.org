@@ -33,7 +33,7 @@ Redirect /science/crypto/ufo/observation/classification/hynek/CE1.html https://r
 Redirect /CE1.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/1
 Redirect /science/crypto/ufo/observation/classification/hynek/CE2.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/2
 Redirect /CE2.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/2
-Redirect /science/crypto/ufo/observation/classification/hynek/CE3.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/3
+Redirect /science/crypto/ufo/observation/classification/hynek/rr/3 https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/3
 Redirect /CE3.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/3
 Redirect /science/discipline/math https://rr0.org/science/discipline/hard/form/math
 Redirect /science/discipline/phys https://rr0.org/science/discipline/hard/nat/mat/phys
@@ -135,12 +135,12 @@ Redirect /science/crypto/ufo/enquete/meprise/rentree/meteore https://rr0.org/sci
 Redirect /Ballon.html https://rr0.org/science/crypto/ufo/enquete/meprise/ballon
 Redirect /Nuages.html https://rr0.org/science/crypto/ufo/enquete/meprise/nuage
 Redirect /FeuxFollets.html https://rr0.org/science/crypto/ufo/enquete/meprise/FeuxFollets.html
-Redirect /science/crypto/ufo/enquete/meprise/Insectes.html https://rr0.org/science/crypto/ufo/enquete/meprise/insecte
+Redirect /science/crypto/ufo/enquete/meprise/insectes/ https://rr0.org/science/crypto/ufo/enquete/meprise/insecte
 Redirect /PilierDeSoleil.html https://rr0.org/science/crypto/ufo/enquete/meprise/optique/PilierDeSoleil.html
 Redirect /PilierDeLumiere.html https://rr0.org/science/crypto/ufo/enquete/meprise/optique/PilierDeLumiere.html
 Redirect /science/crypto/ufologie/enquete/meprise/illusion/ https://rr0.org/science/crypto/ufo/enquete/meprise/optique/
 Redirect /SaintElme.html https://rr0.org/science/crypto/ufo/enquete/meprise/elme/
-Redirect /Insectes.html https://rr0.org/science/crypto/ufo/enquete/meprise/Insectes.html
+Redirect /insectes/ https://rr0.org/science/crypto/ufo/enquete/meprise/insectes/
 Redirect /Sceptiques.html https://rr0.org/science/crypto/ufo/analyse/Scepticisme.html
 Redirect /StarJelly.html https://rr0.org/science/crypto/ufo/enquete/indice/residu/StarJelly/
 Redirect /CheveuxAnge.html https://rr0.org/science/crypto/ufo/enquete/indice/residu/filament/
@@ -152,7 +152,7 @@ Redirect /Absurde.html https://rr0.org/science/crypto/ufo/analyse/absurde
 Redirect /science/crypto/ufo/analyse/absurde https://rr0.org/science/crypto/ufo/analyse/absurde
 Redirect /science/crypto/ufo/enquete/analyse https://rr0.org/science/crypto/ufo/analyse
 Redirect /Presse.html https://rr0.org/science/crypto/ufo/observation/media/presse
-Redirect /science/crypto/ufo/observation/presse https://rr0.org/science/crypto/ufo/observation/media/presse
+Redirect /science/crypto/ufo/observation/media/presse https://rr0.org/science/crypto/ufo/observation/media/presse
 Redirect /Invisibilite.html https://rr0.org/science/crypto/ufo/observation/pan/aspect/Invisibilite.html
 Redirect /Dossier/1908-06-30_Tunguska/ https://rr0.org/science/crypto/ufo/enquete/dossier/Tunguska/
 Redirect /Dossier/1998-01-10_Haravilliers https://rr0.org/science/crypto/ufo/enquete/dossier/Haravilliers
@@ -451,8 +451,8 @@ Redirect /LhoteHenri.html https://rr0.org/people/l/LhoteHenri.html
 Redirect /LovellJamesA.html https://rr0.org/people/l/LovellJamesA
 Redirect /people/l/LovellJamesA.html https://rr0.org/people/l/LovellJamesA
 Redirect /LouangeFrancois.html https://rr0.org/people/l/LouangeFrancois
-Redirect /LorenzenCoralE.html https://rr0.org/people/l/LorenzenCoralE
-Redirect /people/l/LorenzenCoralE.html https://rr0.org/people/l/LorenzenCoralE
+Redirect /LorenzenCoralE/ https://rr0.org/people/l/LorenzenCoralE
+Redirect /people/l/LorenzenCoralE/ https://rr0.org/people/l/LorenzenCoralE
 Redirect /people/l/LorenzenLJames.html https://rr0.org/people/l/LorenzenJames
 Redirect /people/l/LowRobertJ https://rr0.org/people/l/LowRobertJ
 Redirect /personne/LakatosImre https://rr0.org/people/l/LakatosImre
@@ -850,7 +850,7 @@ Redirect /Dossier/1997-04-04_JRodAutopsy https://rr0.org/science/crypto/ufo/enqu
 Redirect /Dossier/1998_Sverdlovsk https://rr0.org/science/crypto/ufo/enquete/dossier/Sverdlovsk
 Redirect /Dossier/2004-03-05_Mexique https://rr0.org/science/crypto/ufo/enquete/dossier/Campeche
 Redirect /Canulars.html https://rr0.org/science/crypto/ufo/enquete/dossier/canular
-Redirect /science/crypto/ufo/enquete/dossier/Canulars.html https://rr0.org/science/crypto/ufo/enquete/dossier/canular
+Redirect /science/crypto/ufo/enquete/dossier/canular/ https://rr0.org/science/crypto/ufo/enquete/dossier/canular
 Redirect /Saqqara.html https://rr0.org/science/crypto/archeo/enquete/dossier/Saqqara/
 Redirect /1965-07-01_Valensole.html https://rr0.org/science/crypto/ufo/enquete/dossier/Valensole/
 Redirect /audio/2001-05-20_Menant_Vallee.html https://rr0.org/time/2001/05/20/Menant_InterviewVallee.html

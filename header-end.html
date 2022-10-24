@@ -10,7 +10,7 @@
       <a class="home" href="/" title="Home">RR0</a>
     </li>
     <li id="summary" tabindex="100">
-      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article">Sommaire</a>
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
       <ul class="outline">
       </ul>
     </li>
@@ -33,10 +33,5 @@
 </script-->
 <div class="anchor" id="_top"></div>
 <div class="metadata">
-  <div class="document-author" data-ng-cloak data-ng-controller="AuthorCtrl" data-ng-show="authors.length">
-      <span data-ng-cloak data-ng-repeat="aa in authors">{{$first ? '' : ' & '}}<a data-ng-cloak
-          data-ng-href="{{aa.link}}">{{aa.lastName}},
-        {{aa.firstName}}</a></span>: <span data-ng-bind-html="copyright"></span>, <span
-      data-ng-bind-html="docTime"></span>
-  </div>
+  <!--#echo var="authors" -->
 </div>

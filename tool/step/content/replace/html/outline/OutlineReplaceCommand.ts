@@ -1,7 +1,7 @@
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {ReplaceCommand} from "../../ReplaceCommand"
 import {HtmlFileInfo} from "../../../../../util/file/HtmlFileInfo"
-import {textToDash} from "../../../../../util/file/FileUtil"
+import {StringUtil} from "../../../../../util/StringUtil"
 
 /**
  */
@@ -15,7 +15,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     const inputDoc = inputFile.dom.window.document
     const ul = outputDoc.querySelector(".outline")
     if (!ul) {
-      console.error("Could not find .outline in " + context.inputFile.name)
+      console.error("Could not find .outline in", context.inputFile.name)
       return inputFile
     }
     const from = inputDoc.documentElement
@@ -35,7 +35,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     for (const titleElem of sectionsHeadings) {
       const text = titleElem.textContent
       if (text) {
-        const localAnchor = textToDash(text)
+        const localAnchor = StringUtil.textToCamel(text)
         const outlineElem = titleElem.cloneNode(true)
         const anchor = outputDoc.createElement("div")
         anchor.className = "anchor"

@@ -8,8 +8,10 @@ export class HtmlFileInfo extends FileInfo {
 
   constructor(
     name: string, encoding: BufferEncoding, contents: string, lastModified: Date, lang: string | string[],
-    public title?: string, readonly titleUrl?: string, readonly author?: string, public copyright?: string,
-    readonly relStart?: Link, readonly relContents?: Link, readonly relPrev?: Link, readonly relNext?: Link
+    public title?: string | undefined, readonly titleUrl?: string, readonly authors: string[] = [],
+    public copyright?: string | undefined,
+    readonly relStart?: Link | undefined, readonly relContents?: Link | undefined, readonly relPrev?: Link | undefined,
+    readonly relNext?: Link | undefined
   ) {
     super(name, encoding, contents, lastModified, lang)
   }
@@ -38,11 +40,9 @@ export class HtmlFileInfo extends FileInfo {
   }
 }
 
-function meta(name: string, doc: Document): string | undefined {
-  const metaElem = doc.querySelector(`meta[name='${name}']`) as HTMLMetaElement
-  if (metaElem) {
-    return metaElem.content
-  }
+function meta(name: string, doc: Document): string[] {
+  const metaElems = doc.querySelectorAll(`meta[name='${name}']`)
+  return Array.from(metaElems).map(metaElem => (metaElem as HTMLMetaElement).content)
 }
 
 enum LinkType {
@@ -77,16 +77,16 @@ export function getHtmlFileInfo(context: SsgContext, fileName: string): HtmlFile
     const split = elemTitle.lastIndexOf(" - ")
     title = split > 0 ? elemTitle.substring(0, split) : elemTitle
   }
-  const titleUrl = meta("url", doc)
-  const author = meta("author", doc)
-  const copyright = meta("copyright", doc)
+  const titleUrl = meta("url", doc)[0]
+  const authors = meta("author", doc)
+  const copyright = meta("copyright", doc)[0]
   const relStart = link(LinkType.start, doc)
   const relContents = link(LinkType.contents, doc)
   const relPrev = link(LinkType.prev, doc)
   const relNext = link(LinkType.next, doc)
   return new HtmlFileInfo(
     fileInfo.name, fileInfo.encoding, fileInfo.contents, fileInfo.lastModified, fileInfo.lang,
-    title, titleUrl, author, copyright,
+    title, titleUrl, authors, copyright,
     relStart, relContents, relPrev, relNext
   )
 }

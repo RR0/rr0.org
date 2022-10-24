@@ -103,7 +103,7 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
   getOutputFile(context: SsgContext): FileInfo {
-    return getFileInfo(context, "netlify.toml")
+    return getFileInfo(context, "netlify.toml", "utf-8")
   }
 }
 

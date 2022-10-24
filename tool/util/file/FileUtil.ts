@@ -35,9 +35,7 @@ export function detectEncoding(fileName: string): BufferEncoding | undefined {
     }
   }
   if (guessedEncoding) {
-    return toBufferEncoding(guessedEncoding.confidence > 50 ? guessedEncoding.encoding : "utf-8")
-  } else {
-    return toBufferEncoding(undefined)
+    return toBufferEncoding(guessedEncoding.encoding)
   }
 }
 

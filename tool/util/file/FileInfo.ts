@@ -37,23 +37,26 @@ function getFileLang(context: SsgContext, filePath: string): string | string[] {
   return lang
 }
 
-function getContents(context: SsgContext, fileName: string): {encoding: BufferEncoding, contents: string} {
+function getContents(context: SsgContext, fileName: string,
+                     declaredEncoding?: BufferEncoding): { encoding: BufferEncoding, contents: string } {
   const initialContents = fs.readFileSync(fileName, {encoding: "utf-8"})
-  let declaredEncoding
-  if (fileName.endsWith(".html")) {
-    const dom = new JSDOM(initialContents)
-    const html = dom.window.document
-    declaredEncoding = getCharSet(html) || getContentType(html)
+  let detectedEncoding
+  if (!declaredEncoding) {
+    if (fileName.endsWith(".html")) {
+      const dom = new JSDOM(initialContents)
+      const html = dom.window.document
+      declaredEncoding = getCharSet(html) || getContentType(html)
+    }
+    detectedEncoding = detectEncoding(fileName)
   }
-  const detectedEncoding = detectEncoding(fileName)
   const encoding: BufferEncoding = declaredEncoding || detectedEncoding || "utf-8"
   const contents = fs.readFileSync(fileName, {encoding})
   return {encoding, contents}
 }
 
-export function getFileInfo(context: SsgContext, fileName: string): FileInfo {
+export function getFileInfo(context: SsgContext, fileName: string, declaredEncoding?: BufferEncoding): FileInfo {
   const fileStats = fs.statSync(fileName)
-  const {encoding, contents} = getContents(context, fileName)
+  const {encoding, contents} = getContents(context, fileName, declaredEncoding)
   const lang = getFileLang(context, fileName)
   return new FileInfo(fileName, encoding, contents, fileStats.mtime, lang)
 }

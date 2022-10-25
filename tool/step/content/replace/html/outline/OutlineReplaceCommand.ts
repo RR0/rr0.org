@@ -24,17 +24,11 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     }
     outputFile.dom = dom
     return outputFile
-    /**
-     *             <li data-ng-attr-tabindex="{{101+$index}}" data-ng-click="sectionClick(s)" data-ng-repeat="s in sections">
-     *               <a data-ng-href="#{{::s.id}}" id="out-{{::s.id}}"><span data-ng-bind-html="s.outlineLabel|unsafe"></span></a>
-     *             </li>
-     */
   }
 
   private process(from: Element, target: Element, outputDoc: Document, level: number): boolean {
     let added = false
-    const selector = "section h" + level
-    const sectionsHeadings = from.querySelectorAll(selector)
+    const sectionsHeadings = from.querySelectorAll("section h" + level)
     for (const titleElem of sectionsHeadings) {
       const text = titleElem.textContent
       if (text) {

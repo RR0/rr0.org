@@ -1,6 +1,6 @@
 import {TimeTextBuilder} from "./TimeTextBuilder"
-import {SsgContextImpl} from "../../../../../SsgContext"
 import {TimeContext} from "./TimeContext"
+import {SsgContextImpl} from "../../../../../SsgContextImpl"
 
 describe("TimeTextBuilder", () => {
 

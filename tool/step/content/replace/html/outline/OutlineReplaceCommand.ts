@@ -19,7 +19,9 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
       return inputFile
     }
     const from = inputDoc.documentElement
-    this.process(from, ul, outputDoc, 2)
+    if (this.process(from, ul, outputDoc, 2)) {
+      outputDoc.querySelector(".outline-title").textContent = "Sommaire"
+    }
     outputFile.dom = dom
     return outputFile
     /**
@@ -29,7 +31,8 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
      */
   }
 
-  private process(from: Element, target: Element, outputDoc: Document, level: number) {
+  private process(from: Element, target: Element, outputDoc: Document, level: number): boolean {
+    let added = false
     const selector = "section h" + level
     const sectionsHeadings = from.querySelectorAll(selector)
     for (const titleElem of sectionsHeadings) {
@@ -47,8 +50,10 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
         const li = outputDoc.createElement("li")
         li.appendChild(a)
         target.appendChild(li)
+        added = true
         this.process(titleElem.parentElement!, target, outputDoc, level + 1)
       }
     }
+    return added
   }
 }

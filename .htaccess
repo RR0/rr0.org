@@ -29,9 +29,9 @@ Redirect /lieu https://rr0.org/place
 Redirect /lieux.html https://rr0.org/place
 Redirect /glossair.html https://rr0.org/science/crypto/ufo/glossair.html
 Redirect /DD.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/dd
-Redirect /science/crypto/ufo/observation/classification/hynek/CE1.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/1
+Redirect /science/crypto/ufo/observation/classification/hynek/rr/1/ https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/1
 Redirect /CE1.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/1
-Redirect /science/crypto/ufo/observation/classification/hynek/CE2.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/2
+Redirect /science/crypto/ufo/observation/classification/hynek/rr/2/ https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/2
 Redirect /CE2.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/2
 Redirect /science/crypto/ufo/observation/classification/hynek/rr/3 https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/3
 Redirect /CE3.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/rr/3
@@ -568,7 +568,7 @@ Redirect /SoubirousBernadette.html https://rr0.org/people/s/SoubirousBernadette
 Redirect /personne/SoubirousBernadette https://rr0.org/people/s/SoubirousBernadette
 Redirect /SpielbergSteven.html https://rr0.org/people/s/SpielbergStevenAllan
 Redirect /StevensWendelleC.html https://rr0.org/people/s/StevensWendelleC
-Redirect /SturrockPeterAndrew.html https://rr0.org/people/s/SturrockPeterAndrew
+Redirect /SturrockPeterA.html https://rr0.org/people/s/SturrockPeterA
 Redirect /StrandErlingP.html https://rr0.org/people/s/StrandErlingP
 Redirect /people/s/StruveOtto.html https://rr0.org/people/s/StruveOtto
 Redirect /people/s/SteinmanWilliamS.html https://rr0.org/people/s/SteinmanWilliamS
@@ -887,7 +887,7 @@ Redirect /science/appliquee/info/soft/java/Internet.html https://rr0.org/tech/in
 Redirect /science/appliquee/info/soft/java/Internet.html https://rr0.org/tech/info/soft/reseau/internet
 Redirect /Abduction.html https://rr0.org/science/crypto/ufo/observation/scenario/Abduction.html
 Redirect /scientifiques.html https://rr0.org/people/scientifiques.html
-Redirect /people/Scientifiques.html https://rr0.org/people/scientifiques.html
+Redirect /people/scientifiques.html https://rr0.org/people/scientifiques.html
 Redirect /analyse/ https://rr0.org/science/crypto/ufo/analyse/
 Redirect /science/crypto/ufo/analyse/FermiParadoxe.html https://rr0.org/science/crypto/ufo/analyse/hypotheses/intelligence/HET/FermiParadoxe.html
 Redirect /science/crypto/ufo/analyse/hypotheses/intelligence/HET/ETPoilus.html https://rr0.org/science/crypto/ufo/analyse/hypotheses/intelligence/HET/pilosite

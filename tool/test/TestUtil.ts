@@ -1,8 +1,9 @@
-import {SsgContext, SsgContextImpl} from "../SsgContext"
+import {SsgContext} from "../SsgContext"
 import {TimeContext} from "../step/content/replace/html/time/TimeContext"
 import {HtmlFileInfo} from "../util/file/HtmlFileInfo"
 import {HtmlSsgContext} from "../HtmlSsgContext"
 import {FileInfo} from "../util/file/FileInfo"
+import {SsgContextImpl} from "../SsgContextImpl"
 
 class TestUtil {
 

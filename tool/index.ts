@@ -9,7 +9,7 @@ import {
 import {SsiSetVarReplaceCommand} from "./step/content/replace/html/ssi/SsiSetVarCommand"
 import {HtmlTagReplaceCommand} from "./step/content/replace/html/tag/HtmlTagReplaceCommand"
 import {TimeReplacerFactory} from "./step/content/replace/html/time/TimeReplacerFactory"
-import {SsgContext, SsgContextImpl} from "./SsgContext"
+import {SsgContext} from "./SsgContext"
 import {ClassRegexReplaceCommand} from "./step/content/replace/html/class/ClassRegexReplaceCommand"
 import {PeopleReplacerFactory} from "./step/content/replace/html/people/PeopleReplacerFactory"
 import {TimeContext} from "./step/content/replace/html/time/TimeContext"
@@ -25,7 +25,6 @@ import {
   HtAccessToNetlifyConfigReplaceCommand
 } from "./step/content/replace/htaccess/HtAccessToNetlifyConfigReplaceCommand"
 import {timeDefaultHandler} from "./step/content/replace/html/title/TimeDefaultTitle"
-import {CopyrightReplaceCommand} from "./step/content/replace/html/copyright/CopyrightReplaceCommand"
 import {rr0DefaultCopyright} from "./step/content/replace/html/copyright/RR0DefaultCopyright"
 import {CaviarReplacerFactory} from "./step/content/replace/html/caviar/CaviarReplacerFactory"
 import {NoteReplacerFactory} from "./step/content/replace/html/note/NoteReplacerFactory"
@@ -36,6 +35,9 @@ import {OutlineReplaceCommand} from "./step/content/replace/html/outline/Outline
 import {AuthorReplaceCommand} from "./step/content/replace/html/author/AuthorReplaceCommand"
 import {TimeLinkDefaultHandler} from "./step/content/replace/html/link/TimeLinkDefaultHandler"
 import {promise as glob} from "glob-promise"
+import {SsiEchoVarReplaceCommand} from "./step/content/replace/html/ssi/SsiEchoVarCommand"
+import {SsgContextImpl} from "./SsgContextImpl"
+import {StringEchoVarReplaceCommand} from "./step/content/replace/html/StringEchoVarReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -81,14 +83,17 @@ async function outputFunc(context: SsgContext, info: FileInfo, outDir = config.o
   }
 }
 
-const context = new SsgContextImpl("fr", new TimeContext({
+const timeFormat: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
   day: "numeric",
   weekday: "long",
   hour: "2-digit",
   minute: "2-digit"
-}))
+}
+const timeContext = new TimeContext(timeFormat)
+const context = new SsgContextImpl("fr", timeContext)
+context.setVar("mail", "javarome@gmail.com")
 
 const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
   roots: [".htaccess"],
@@ -170,7 +175,8 @@ getTimeFiles().then(timeFiles => {
       replacements: [
         new SsiIncludeReplaceCommand(),
         new TitleReplaceCommand([timeDefaultHandler]),
-        new CopyrightReplaceCommand([rr0DefaultCopyright]),
+        new StringEchoVarReplaceCommand("mail"),
+        new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
         new SsiIfReplaceCommand(),
         new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
         new SsiSetVarReplaceCommand("url",

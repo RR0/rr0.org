@@ -1,6 +1,7 @@
-import {SsgContext, SsgContextImpl} from "../../../../../SsgContext"
+import {SsgContext} from "../../../../../SsgContext"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {TimeContext} from "./TimeContext"
+import {SsgContextImpl} from "../../../../../SsgContextImpl"
 
 export class RelativeTimeTextBuilder {
 

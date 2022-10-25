@@ -13,9 +13,10 @@ export abstract class RegexReplaceCommand implements ReplaceCommand<SsgContext> 
     let contents = fileInfo.contents
     let result = contents
     const replacer = await this.createReplacer(context)
+    const replaceFunc = replacer.replace.bind(replacer)
     do {
       contents = result
-      result = contents.replace(this.regex, replacer.replace)
+      result = contents.replace(this.regex, replaceFunc)
     } while (result != contents)
     fileInfo.contents = result
     return fileInfo

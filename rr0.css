@@ -916,13 +916,14 @@ table img {
 }
 
 cite {
-  margin-top: -1em;
+  font-style: normal;
+  color: gray;
+  margin-top: -0.4em;
   display: block;
   text-align: right;
 }
 
 cite::before {
-  background-color: white;
   content: '— ';
 }
 
@@ -1399,7 +1400,7 @@ dl.bullet dd {
   margin-top: -7rem;
   background-size: cover!important;
   background-position: center!important;
-  background-image: linear-gradient(to right,#e0e0e9 0,#fff 50%,rgba(255,255,255,.5) 100%);
+  background-image: linear-gradient(to right,rgba(224,224,233, 0.5) 0,rgba(255,255,255,.5) 100%);
 }
 
 #main-nav {
@@ -1545,7 +1546,7 @@ dl.bullet dd {
   }
 
   #main-header {
-    background-image: linear-gradient(to right, #19191F 0, #000 50%, rgba(255, 255, 255, .5) 100%)
+    background-image: linear-gradient(to right, rgba(25,25,31, 0.5) 0, rgba(255, 255, 255, .5) 100%)
   }
 
   header h1 {

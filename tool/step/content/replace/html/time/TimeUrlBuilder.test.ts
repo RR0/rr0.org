@@ -1,6 +1,6 @@
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
-import {SsgContextImpl} from "../../../../../SsgContext"
 import {TimeContext} from "./TimeContext"
+import {SsgContextImpl} from "../../../../../SsgContextImpl"
 
 describe("TimeUrlBuilder", () => {
 

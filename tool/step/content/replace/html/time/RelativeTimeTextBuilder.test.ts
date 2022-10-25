@@ -1,6 +1,7 @@
-import {SsgContext, SsgContextImpl} from "../../../../../SsgContext"
+import {SsgContext} from "../../../../../SsgContext"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
 import {TimeContext} from "./TimeContext"
+import {SsgContextImpl} from "../../../../../SsgContextImpl"
 
 describe("RelativeTimeTextBuilder", () => {
 

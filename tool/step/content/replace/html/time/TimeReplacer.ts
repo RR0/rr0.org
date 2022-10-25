@@ -6,7 +6,8 @@ import {UrlUtil} from "../../../../../util/url/UrlUtil"
 
 export class TimeReplacer {
 
-  static readonly dateTimeRegexp = new RegExp("^(-?\\d{3,})?(?:-?([0-1]\\d))?(?:-?([0-3]\\d{1,2}))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
+  static readonly dateTimeRegexp = new RegExp(
+    "^(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
   /**
@@ -70,29 +71,29 @@ export class TimeReplacer {
     if (yearStr) {
       const year = parseInt(yearStr, 10)
       if (!Number.isNaN(year)) {
-        timeContext.year = year
+        timeContext.setYear(year)
       }
     }
     if (monthStr) {
       const month = parseInt(monthStr, 10)
       if (!Number.isNaN(month)) {
-        timeContext.month = month
+        timeContext.setMonth(month)
       }
     }
     if (dayOfMonthStr) {
       const dayOfMonth = parseInt(dayOfMonthStr, 10)
       if (!Number.isNaN(dayOfMonth)) {
-        timeContext.dayOfMonth = dayOfMonth
+        timeContext.setDayOfMonth(dayOfMonth)
       }
     }
     if (hour) {
-      timeContext.hour = parseInt(hour, 10)
+      timeContext.setHour(parseInt(hour, 10))
     }
     if (minutes) {
-      timeContext.minutes = parseInt(minutes, 10)
+      timeContext.setMinutes(parseInt(minutes, 10))
     }
     if (timeZone) {
-      timeContext.timeZone = timeZone
+      timeContext.setTimeZone(timeZone)
     }
     if (timeContext.isDefined()) {
       let url = TimeUrlBuilder.build(context)

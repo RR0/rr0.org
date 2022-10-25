@@ -5,15 +5,15 @@ export class TimeUrlBuilder {
   static build(context: SsgContext): string {
     let url = "time/"
     let time = context.time
-    const year = time.year
+    const year = time.getYear()
     if (year) {
       url += year.toString().split("").join("/")
     }
-    let month = time.month
+    let month = time.getMonth()
     if (month) {
       url += "/" + month.toString().padStart(2, "0")
     }
-    let day = time.dayOfMonth
+    let day = time.getDayOfMonth()
     if (day) {
       url += "/" + day.toString().padStart(2, "0")
     }

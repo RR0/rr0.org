@@ -7,63 +7,63 @@ export class TimeContext {
   ) {
   }
 
-  get year(): number | undefined {
+  getYear(): number | undefined {
     return this._year
   }
 
-  set year(year: number | undefined) {
-    if (year != this.year) {
-      this.month = undefined
+  setYear(year: number | undefined, print = true) {
+    if (year != this._year && print) {
+      this.setMonth(undefined, print)
     }
     this._year = year
   }
 
-  get month(): number | undefined {
+  getMonth(): number | undefined {
     return this._month
   }
 
-  set month(month: number | undefined) {
-    if (month != this.month) {
-      this.dayOfMonth = undefined
+  setMonth(month: number | undefined, print = true) {
+    if (month != this._month && print) {
+      this.setDayOfMonth(undefined, print)
     }
     this._month = month
   }
 
-  get dayOfMonth(): number | undefined {
+  getDayOfMonth(): number | undefined {
     return this._dayOfMonth
   }
 
-  set dayOfMonth(dayOfMonth: number | undefined) {
-    if (dayOfMonth != this._dayOfMonth) {
-      this.hour = undefined
+  setDayOfMonth(dayOfMonth: number | undefined, print = true) {
+    if (dayOfMonth != this._dayOfMonth && print) {
+      this.setHour(undefined, print)
     }
     this._dayOfMonth = dayOfMonth
   }
 
-  get hour(): number | undefined {
+  getHour(): number | undefined {
     return this._hour
   }
 
-  set hour(hour: number | undefined) {
-    if (hour != this._hour) {
-      this.minutes = undefined
+  setHour(hour: number | undefined, print = true) {
+    if (hour != this._hour && print) {
+      this.setMinutes(undefined, print)
     }
     this._hour = hour
   }
 
-  get minutes(): number | undefined {
+  getMinutes(): number | undefined {
     return this._minutes
   }
 
-  set minutes(minutes: number | undefined) {
+  setMinutes(minutes: number | undefined, print = true) {
     this._minutes = minutes
   }
 
-  get timeZone(): string | undefined {
+  getTimeZone(): string | undefined {
     return this._timeZone
   }
 
-  set timeZone(timeZone: string | undefined) {
+  setTimeZone(timeZone: string | undefined) {
     this._timeZone = timeZone
   }
 

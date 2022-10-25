@@ -24,47 +24,55 @@ export class TimeTextBuilder {
 
     function setDayOfMonth(dayOfMonth: number) {
       date.setDate(dayOfMonth)
+      // if (print) {
       printOptions.day = context.time.options.day
       printOptions.weekday = context.time.options.weekday
+      //  }
     }
 
     function setHour(hour: number) {
       date.setHours(hour)
+      //    if (print) {
       printOptions.hour = context.time.options.hour
+      //     }
     }
 
     function setMinutes(minutes: number) {
       date.setMinutes(minutes)
+      //   if (print) {
       printOptions.minute = context.time.options.minute
+      //   }
     }
 
     function setTimeZone(timeZone: string) {
-      printOptions.timeZoneName = context.time.options.timeZoneName
+      if (print) {
+        // printOptions.timeZoneName = context.time.options.timeZoneName
+      }
     }
 
-    const year = time.year
+    const year = time.getYear()
     if (year) {
       setYear(year)
     }
-    const month = time.month
+    const month = time.getMonth()
     if (month) {
       setMonth(month)
     }
-    const dayOfMonth = time.dayOfMonth
+    const dayOfMonth = time.getDayOfMonth()
     if (dayOfMonth) {
       setDayOfMonth(dayOfMonth)
     }
-    const hour = time.hour
+    const hour = time.getHour()
     if (hour) {
       setHour(hour)
     }
-    const minutes = time.minutes
+    const minutes = time.getMinutes()
     if (minutes) {
       setMinutes(minutes)
     }
-    const timeZone = time.timeZone
+    const timeZone = time.getTimeZone()
     if (timeZone) {
-      //    setTimeZone(timeZone)
+      setTimeZone(timeZone)
     }
     let text: string
     if (Number.isNaN(date.getTime())) {

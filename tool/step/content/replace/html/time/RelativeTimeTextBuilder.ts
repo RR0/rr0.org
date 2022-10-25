@@ -18,75 +18,93 @@ export class RelativeTimeTextBuilder {
     let hourDelta: number | undefined
     let minutesDelta: number | undefined
 
+    function shouldSetDay() {
+      return !previousTime.getMonth() || monthDelta === 0
+    }
+
+    function shouldSetHour() {
+      return !previousTime.getDayOfMonth() || dayOfMonthDelta === 0
+    }
+
+    function shouldSetMinutes() {
+      return !previousTime.getMinutes() || hourDelta === 0
+    }
+
     function setYear(year: number) {
-      if (previousTime.year) {
-        yearDelta = year - previousTime.year
+      const previousYear = previousTime.getYear()
+      if (previousYear) {
+        yearDelta = year - previousYear
         if (yearDelta != 0) {
-          deltaTime.year = year
+          deltaTime.setYear(year)
         }
       }
     }
 
     function setMonth(month: number) {
-      if (yearDelta === 0 && previousTime.month) {
-        monthDelta = month - previousTime.month
+      const previousMonth = previousTime.getMonth()
+      if (yearDelta === 0 && previousMonth) {
+        monthDelta = month - previousMonth
         if (monthDelta != 0) {
-          deltaTime.month = month
+          deltaTime.setMonth(month)
         }
       } else if (yearDelta != 0) {
-        deltaTime.month = month
+        deltaTime.setMonth(month)
       }
     }
 
     function setDayOfMonth(dayOfMonth: number) {
-      if (yearDelta === 0 && monthDelta === 0) {
-        dayOfMonthDelta = dayOfMonth - (previousTime.dayOfMonth || 0)
+      const sameMonth = yearDelta === 0 && shouldSetDay()
+      if (sameMonth) {
+        dayOfMonthDelta = dayOfMonth - (previousTime.getDayOfMonth() || 0)
         if (dayOfMonthDelta != 0) {
-          deltaTime.dayOfMonth = dayOfMonth
+          deltaTime.setDayOfMonth(dayOfMonth)
         }
       } else if (monthDelta != 0) {
-        deltaTime.dayOfMonth = dayOfMonth
+        deltaTime.setDayOfMonth(dayOfMonth)
       }
     }
 
     function setHour(hour: number) {
-      if (yearDelta === 0 && monthDelta === 0 && dayOfMonthDelta === 0 && previousTime.hour) {
-        hourDelta = hour - previousTime.hour
+      const sameDay = yearDelta === 0 && shouldSetDay() && shouldSetHour()
+      if (sameDay) {
+        hourDelta = hour - (previousTime.getHour() || 0)
         if (hourDelta != 0) {
-          deltaTime.hour = hour
+          deltaTime.setHour(hour)
         }
+      } else if (dayOfMonthDelta != 0) {
+        deltaTime.setHour(hour)
       }
-      deltaTime.hour = hour
     }
 
     function setMinutes(minutes: number) {
-      if (yearDelta === 0 && monthDelta === 0 && dayOfMonthDelta === 0 && hourDelta === 0 && previousTime.minutes) {
-        minutesDelta = minutes - previousTime.minutes
+      const sameHour = yearDelta === 0 && shouldSetDay() && shouldSetHour() && shouldSetMinutes()
+      if (sameHour) {
+        minutesDelta = minutes - (previousTime.getMinutes() || 0)
         if (minutesDelta != 0) {
-          deltaTime.minutes = minutes
+          deltaTime.setMinutes(minutes)
         }
       }
-      deltaTime.minutes = minutes
+      deltaTime.setMinutes(minutes)
     }
 
     const time = newContext.time
-    const year = time.year
+    const year = time.getYear()
     if (year) {
       setYear(year)
     }
-    const month = time.month
+    const month = time.getMonth()
     if (month) {
       setMonth(month)
     }
-    const dayOfMonth = time.dayOfMonth
+    const dayOfMonth = time.getDayOfMonth()
     if (dayOfMonth) {
       setDayOfMonth(dayOfMonth)
     }
-    const hour = time.hour
+    const hour = time.getHour()
     if (hour) {
       setHour(hour)
     }
-    const minutes = time.minutes
+    const minutes = time.getMinutes()
     if (minutes) {
       setMinutes(minutes)
     }
@@ -134,20 +152,20 @@ export class RelativeTimeTextBuilder {
       }
     }
     if (!text) {
-      let b = true
+      let print = true
       let defaultContext: SsgContext
       if (deltaContext.time.isDefined()) {
         defaultContext = deltaContext
-        const dayOfMonth = defaultContext.time.dayOfMonth
-        if (dayOfMonth && !defaultContext.time.month) {
-          defaultContext.time.month = previousTime.month
-          defaultContext.time.dayOfMonth = dayOfMonth
-          b = false
+        const dayOfMonth = defaultContext.time.getDayOfMonth()
+        if (dayOfMonth && shouldSetDay()) {
+          defaultContext.time.setMonth(newContext.time.getMonth() || previousTime.getMonth(), false)  // give month
+          // context for the day but won't
+          print = false
         }
       } else {
         defaultContext = newContext
       }
-      text = TimeTextBuilder.build(defaultContext, b)
+      text = TimeTextBuilder.build(defaultContext, print)
     }
     return text
   }

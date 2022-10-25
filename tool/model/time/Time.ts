@@ -25,14 +25,14 @@ export class Time {
     if (timeExec && timeExec.length > 4) {
       const pageContext = context.clone()
       timeContext = pageContext.time
-      timeContext.year = parseInt(timeExec[1], 10) * 1000
+      timeContext.setYear(parseInt(timeExec[1], 10) * 1000
         + parseInt(timeExec[2], 10) * 100
         + parseInt(timeExec[3], 10) * 10
-        + parseInt(timeExec[4], 10)
+        + parseInt(timeExec[4], 10))
       const monthStr = timeExec[5]
-      timeContext.month = monthStr ? parseInt(monthStr, 10) : undefined
+      timeContext.setMonth(monthStr ? parseInt(monthStr, 10) : undefined)
       const dayStr = timeExec[6]
-      timeContext.dayOfMonth = dayStr ? parseInt(dayStr, 10) : undefined
+      timeContext.setDayOfMonth(dayStr ? parseInt(dayStr, 10) : undefined)
     }
     return timeContext
   }

@@ -60,13 +60,14 @@ const roots = contents
   ]
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
-  "favicon.ico",
+  "favicon.ico", "manifest.json", "opensearch.xml",
   "rr0.css", "print.css",
   "rr0.js",
   "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "people/index.js",
   "people/index.css",
   "udb/**/*.js",
+  "udb/netlify.toml",
   "udb/input/db/udb/data/*.*"
 ]
 const config: SsgConfig = {

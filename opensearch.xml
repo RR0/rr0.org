@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>RR0</ShortName>
+    <Description>UFO data for french-reading people</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image width="16" height="16" type="image/x-icon">https://rr0.org/favicon.ico</Image>
+    <Url type="text/html" method="get" template="https://www.google.com/search?q=site%3Arr0.org+{searchTerms}"/>
+</OpenSearchDescription>

@@ -56,7 +56,7 @@ export class CaseDirectoryStep extends DirectoryStep {
         // No json, just guess title.
       }
     }
-    const directoriesHtml = HtmlTag.toString("ul", cases.map(dirCase => {
+    const listItems = cases.map(dirCase => {
       if (!dirCase.title) {
         const lastSlash = dirCase.dirName.lastIndexOf("/")
         const lastDir = dirCase.dirName.substring(lastSlash + 1)
@@ -90,8 +90,9 @@ export class CaseDirectoryStep extends DirectoryStep {
         attrs.title = titles.join(", ")
       }
       return HtmlTag.toString("li", a, attrs)
-    }).join("\n"))
-    fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
+    })
+    const directoriesHtml = HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
+    fileInfo.contents = fileInfo.contents.replace(`<!--#echo var="directories" -->`, directoriesHtml)
     await this.outputFunc(context, fileInfo, "")
   }
 }

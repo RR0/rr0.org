@@ -37,7 +37,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       }
     }
     peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
-    const directoriesHtml = HtmlTag.toString("ul", peopleList.map(people => {
+    const listItems = peopleList.map(people => {
       const dirName = people.dirName
       if (!people.title) {
         if (dirName) {
@@ -115,15 +115,16 @@ export class PeopleDirectoryStep extends DirectoryStep {
         attrs.class = classList.join(" ")
       }
       return HtmlTag.toString("li", a, attrs)
-    }).join("\n"))
-    fileInfo.contents = fileInfo.contents.replace("${directories}", directoriesHtml)
+    })
+    const directoriesHtml = HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
+    fileInfo.contents = fileInfo.contents.replace(`<!--#echo var="directories" -->`, directoriesHtml)
     {
       let countriesHtml = ""
       for (const country of Array.from(allCountries).sort()) {
         const countryStr = context.messages.country[country]
         countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="find(event)"> ${countryStr}</label></span>`
       }
-      fileInfo.contents = fileInfo.contents.replace("${countries}",
+      fileInfo.contents = fileInfo.contents.replace(`<!--#echo var="countries" -->`,
         HtmlTag.toString("div", countriesHtml, {id: "countries"}))
     }
     {
@@ -133,7 +134,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
           context.messages.people.occupation[occupation](Gender.male))
         occupationsHtml += `<span class="option"><label><input type="checkbox" id="occupation-${occupation}" onchange="find(event)"> ${occupationStr}</label></span>`
       }
-      fileInfo.contents = fileInfo.contents.replace("${occupations}",
+      fileInfo.contents = fileInfo.contents.replace(`<!--#echo var="occupations" -->`,
         HtmlTag.toString("div", occupationsHtml, {id: "occupations"}))
     }
     await this.outputFunc(context, fileInfo, "")

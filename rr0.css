@@ -90,8 +90,8 @@ body.wait, body.wait * {
   font-weight: 700
 }
 
-.text ul li {
-  margin-top: .5em
+.links li {
+  margin-top: 2.5mm
 }
 
 .left figcaption, .leftImage figcaption, .multi-list li {
@@ -297,11 +297,11 @@ nav ul li.alternate {
   color: #d3d3d3
 }
 
-nav ul li:hover {
+nav li:hover {
   border-right: none
 }
 
-nav ul li .label ul li:hover {
+nav li .label li:hover {
   cursor: pointer
 }
 
@@ -870,23 +870,14 @@ figure img {
 
 figure:hover {
   border: none;
-  transition: all .8s ease-out;
+  transition: all .3s ease-out;
   margin-bottom: 1.75em;
-  padding: .5em
 }
 
 figure:hover figcaption + img {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: 0 .5em 1em -.1em #555
-}
-
-figure.rightImage:hover, figure:hover.right {
-  margin-left: 1.75em
-}
-
-figure.leftImage:hover, figure:hover.left {
-  margin-right: 1.75em
 }
 
 figure:hover figcaption {

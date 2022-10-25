@@ -21,7 +21,7 @@ describe("DirectoryStep", () => {
 <title>Dossiers ufologiques</title>
 <!--#include virtual="/header-end.html" -->
 <p>Before</p>
-$\{directories}
+<!--#echo var="directories" -->
 <p>Aftere</p>
 <!--#include virtual="/footer.html" -->`
     const context = testUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)

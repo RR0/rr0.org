@@ -9,7 +9,7 @@
     <li class="full-page">
       <a class="home" href="/" title="Home">RR0</a>
     </li>
-    <li id="summary" tabindex="100">
+    <li id="summary">
       <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
       <ul class="outline">
       </ul>
@@ -18,20 +18,15 @@
       <span id="alternate"></span>
     </li>
   </ul>
-  <!--form id="rr0-context-select"></form-->
 </nav>
-<!--script>
-  var pageContext = {}
-  const levels = window.location.pathname.split("/").filter(l => !!l && l.indexOf(".") < 0)
-  let i = 0
-  let ctx = pageContext
-  while (i < levels.length) {
-    ctx[levels[i]] = {_enabled: true}
-    ctx = ctx[levels[i]]
-    i++
-  }
-</script-->
-<div class="anchor" id="_top"></div>
+<script>
+  const summary = document.getElementById("out-top")
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio <= 0 ? document.title : "Sommaire"
+  }, {threshold: [0, 1]})
+  observer.observe(document.querySelector("#main-header"))
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
 <div class="metadata">
   <!--#echo var="authors" -->
 </div>

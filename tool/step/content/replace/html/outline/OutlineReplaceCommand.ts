@@ -36,6 +36,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
         const outlineElem = titleElem.cloneNode(true)
         const anchor = outputDoc.createElement("div")
         anchor.className = "anchor"
+        anchor.ariaHidden = "true"
         anchor.id = localAnchor
         titleElem.prepend(anchor)
         const a = outputDoc.createElement("a")

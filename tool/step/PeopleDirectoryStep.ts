@@ -7,7 +7,7 @@ import {DirectoryStep} from "./DirectoryStep"
 import {Gender} from "../model/people/Gender"
 import {CountryCode} from "../model/place/CountryCode"
 import {Occupation} from "../model/people/Occupation"
-import {StringUtil} from "../util/StringUtil"
+import {StringUtil} from "../util/string/StringUtil"
 import {Time} from "../model/time/Time"
 import {People} from "../model/people/People"
 

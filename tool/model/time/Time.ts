@@ -1,6 +1,6 @@
 import {HtmlSsgContext} from "../../HtmlSsgContext"
 import {TimeTextBuilder} from "../../step/content/replace/html/time/TimeTextBuilder"
-import {StringUtil} from "../../util/StringUtil"
+import {StringUtil} from "../../util/string/StringUtil"
 import {TimeContext} from "../../step/content/replace/html/time/TimeContext"
 import {SsgContextImpl} from "../../SsgContextImpl"
 

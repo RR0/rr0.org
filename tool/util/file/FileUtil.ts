@@ -5,7 +5,7 @@ import path from "path"
 import * as util from "util"
 import {readdir} from "fs/promises"
 import {FileInfo} from "./FileInfo"
-import {StringUtil} from "../StringUtil"
+import {StringUtil} from "../string/StringUtil"
 
 const globCopy = util.promisify(require("copy"))
 

@@ -1,7 +1,7 @@
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {ReplaceCommand} from "../../ReplaceCommand"
 import {HtmlFileInfo} from "../../../../../util/file/HtmlFileInfo"
-import {StringUtil} from "../../../../../util/StringUtil"
+import {StringUtil} from "../../../../../util/string/StringUtil"
 
 /**
  */

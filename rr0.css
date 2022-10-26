@@ -339,6 +339,9 @@ nav ul > li {
   margin: 0
 }
 
+.outline li {
+  border-top: 0.5px solid lightgrey;
+}
 .outline li h2, .outline li h3, .outline li h4, .outline li section h1, section .outline li h1 {
   background: 0 0;
   margin: 0;

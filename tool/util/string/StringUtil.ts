@@ -14,6 +14,8 @@ export class StringUtil {
 
   static textToCamel(camel: string): string {
     return StringUtil.removeAccents(camel.trim()
-      .replace(/ /g, ""))
+      .replace(/ [^ ]+/g,
+        (substring: string, args: string[]) => substring.charAt(1).toUpperCase() + substring.substring(2)))
+      .replace(/[?!.'"/\\,;:°]/g, "")
   }
 }

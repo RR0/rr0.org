@@ -17,16 +17,16 @@ class TestUtil {
     timeZoneName: "short"
   }
 
-  newContext(name: string, contents: string): SsgContext {
+  newContext(inputFileName: string, contents: string): SsgContext {
     const context = new SsgContextImpl("fr", new TimeContext(this.intlOptions))
-    context.inputFile = new FileInfo(name, "utf8", contents, new Date(), "fr")
+    context.inputFile = new FileInfo(inputFileName, "utf8", contents, new Date(), "fr")
     return context
   }
 
-  newHtmlContext(name: string, contents: string): HtmlSsgContext {
-    const context = this.newContext(name, contents)
+  newHtmlContext(inputFileName: string, contents: string): HtmlSsgContext {
+    const context = this.newContext(inputFileName, contents)
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
-    const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : name
+    const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : inputFileName
     const currentFile = context.inputFile
     context.inputFile = new HtmlFileInfo(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, title)

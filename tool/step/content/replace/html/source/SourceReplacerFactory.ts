@@ -11,7 +11,7 @@ export class SourceReplacerFactory implements ReplacerFactory<DomReplacer> {
   async create(context: HtmlSsgContext): Promise<DomReplacer> {
     const instance = new SourceReplacer()
     return {
-      replace: (original: Element): Element => {
+      async replace(original: Element): Promise<Element> {
         return instance.replacement(context, original)
       }
     }

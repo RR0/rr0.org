@@ -1,9 +1,9 @@
 import {OutputFunc} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {camelToText} from "../util/file/FileUtil"
 import {HtmlTag} from "../util/HtmlTag"
 import {FileInfo, getFileInfo} from "../util/file/FileInfo"
 import {DirectoryStep} from "./DirectoryStep"
+import {StringUtil} from "../util/string/StringUtil"
 
 enum HynekClassification {
   NL = "NL",
@@ -60,7 +60,7 @@ export class CaseDirectoryStep extends DirectoryStep {
       if (!dirCase.title) {
         const lastSlash = dirCase.dirName.lastIndexOf("/")
         const lastDir = dirCase.dirName.substring(lastSlash + 1)
-        dirCase.title = camelToText(lastDir)
+        dirCase.title = StringUtil.camelToText(lastDir)
       }
       const attrs: { [name: string]: string } = {}
       const titles = []

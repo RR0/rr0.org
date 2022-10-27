@@ -1,4 +1,4 @@
-export type RegexReplaceCallback = (match: string, ...args: any[]) => string
+export type RegexReplaceCallback = (substring: string, ...args: any[]) => string
 
 export interface RegexReplacer {
   replace: RegexReplaceCallback

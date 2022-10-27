@@ -3,7 +3,6 @@ import {SsgContext} from "../../SsgContext"
 import {OutputFunc, SsgConfig} from "../../Ssg"
 import {promise as glob} from "glob-promise"
 import {getHtmlFileInfo} from "../../util/file/HtmlFileInfo"
-import {HtmlSsgContext} from "../../HtmlSsgContext"
 import {ReplaceCommand} from "./replace/ReplaceCommand"
 import {FileInfo} from "../../util/file/FileInfo"
 
@@ -63,7 +62,7 @@ export class ContentStep implements SsgStep {
     context.inputFile = getHtmlFileInfo(context, filePath)
     context.outputFile = contentsConfig.getOutputFile(context)
     for (const replacement of contentsConfig.replacements) {
-      context.outputFile = await replacement.execute(context as HtmlSsgContext)
+      context.outputFile = await replacement.execute(context)
     }
     contentCount++
     await this.output(context, context.outputFile)

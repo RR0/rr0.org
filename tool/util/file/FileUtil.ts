@@ -5,7 +5,6 @@ import path from "path"
 import * as util from "util"
 import {readdir} from "fs/promises"
 import {FileInfo} from "./FileInfo"
-import {StringUtil} from "../string/StringUtil"
 
 const globCopy = util.promisify(require("copy"))
 
@@ -58,20 +57,13 @@ function ensureDirectoryExistence(filePath: string) {
   fs.mkdirSync(dirname)
 }
 
-export async function writeFile(fileInfo: FileInfo): Promise<void> {
-  let fileName = fileInfo.name
+export async function writeFile(fileName: string, contents: string, encoding: BufferEncoding): Promise<void> {
   ensureDirectoryExistence(fileName)
-  return fsAsync.writeFile(fileName, fileInfo.contents, {encoding: fileInfo.encoding})
+  return fsAsync.writeFile(fileName, contents, {encoding})
 }
 
-export function camelToText(camel: string): string {
-  const text = camel.trim()
-    .replace(/([A-Z]+)/g, " $1")
-    .replace(/([0-9]+)/g, " $1")
-    .replace(/( [A-Z] )/g, " $1. ")
-    .replace(/( [A-Z]$)/g, " $1.")
-//    .replace(/([A-Z])([A-Z])/g, " $1. $2.")
-  return StringUtil.capitalizeFirstLetter(text).trim()
+export async function writeFileInfo(fileInfo: FileInfo): Promise<void> {
+  return writeFile(fileInfo.name, fileInfo.contents, fileInfo.encoding)
 }
 
 export async function dirNames(dir: string): Promise<string[]> {

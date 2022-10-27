@@ -1,3 +1,6 @@
+/**
+ * 2-letter codes of known countries.
+ */
 export enum CountryCode {
   /**
    * AusTria

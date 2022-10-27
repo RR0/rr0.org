@@ -1,6 +1,5 @@
 import {OutputFunc} from "../Ssg"
 import {SsgContext} from "../SsgContext"
-import {camelToText} from "../util/file/FileUtil"
 import {HtmlTag} from "../util/HtmlTag"
 import {FileInfo, getFileInfo} from "../util/file/FileInfo"
 import {DirectoryStep} from "./DirectoryStep"
@@ -43,7 +42,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
         if (dirName) {
           const lastSlash = dirName.lastIndexOf("/")
           const lastDir = dirName.substring(lastSlash + 1)
-          const title = camelToText(lastDir)
+          const title = StringUtil.camelToText(lastDir)
           const firstSpace = title.indexOf(" ")
           people.title = firstSpace > 0 ? title.substring(0, firstSpace) + ", " + title.substring(
             firstSpace + 1) : title

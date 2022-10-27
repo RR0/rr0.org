@@ -1,3 +1,3 @@
 export interface DomReplacer {
-  replace: (original: Element) => Element
+  replace: (original: Element) => Promise<Element>
 }

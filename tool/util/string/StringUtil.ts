@@ -18,4 +18,14 @@ export class StringUtil {
         (substring: string, args: string[]) => substring.charAt(1).toUpperCase() + substring.substring(2)))
       .replace(/[?!.'"/\\,;:°]/g, "")
   }
+
+  static camelToText(camel: string): string {
+    const text = camel.trim()
+      .replace(/([A-Z]+)/g, " $1")
+      .replace(/([0-9]+)/g, " $1")
+      .replace(/( [A-Z] )/g, " $1. ")
+      .replace(/( [A-Z]$)/g, " $1.")
+//    .replace(/([A-Z])([A-Z])/g, " $1. $2.")
+    return StringUtil.capitalizeFirstLetter(text).trim()
+  }
 }

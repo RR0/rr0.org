@@ -22,7 +22,8 @@ export abstract class DomReplaceCommand implements ReplaceCommand<HtmlSsgContext
       const elements = doc.querySelectorAll(this.selector)
       if (elements.length > 0) {
         for (const element of elements) {
-          element.replaceWith(replacer.replace(element))
+          const replaced = await replacer.replace(element)
+          element.replaceWith(replaced)
         }
         result = fileInfo.dom.serialize()
       }

@@ -1,4 +1,4 @@
-import {writeFile} from "./util/file/FileUtil"
+import {writeFileInfo} from "./util/file/FileUtil"
 import {Ssg, SsgConfig} from "./Ssg"
 import {SsiIncludeReplaceCommand} from "./step/content/replace/html/ssi/SsiIncludeReplaceCommand"
 import {SsiIfReplaceCommand} from "./step/content/replace/html/ssi/SsiIfReplaceCommand"
@@ -38,6 +38,8 @@ import {promise as glob} from "glob-promise"
 import {SsiEchoVarReplaceCommand} from "./step/content/replace/html/ssi/SsiEchoVarCommand"
 import {SsgContextImpl} from "./SsgContextImpl"
 import {StringEchoVarReplaceCommand} from "./step/content/replace/html/StringEchoVarReplaceCommand"
+import {PlaceReplacerFactory} from "./step/content/replace/html/place/PlaceReplacerFactory"
+import {PlaceService} from "./model/place/PlaceService"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -78,7 +80,7 @@ async function outputFunc(context: SsgContext, info: FileInfo, outDir = config.o
   info.name = `${outDir}${info.name}`
   try {
     console.log("Writing", info.name)
-    await writeFile(info)
+    await writeFileInfo(info)
   } catch (e) {
     console.error(info.name, e)
   }
@@ -168,7 +170,17 @@ const ufoCasesDirectoryStep = new CaseDirectoryStep(
   "science/crypto/ufo/enquete/dossier/index.html",
   outputFunc)
 
-getTimeFiles().then(timeFiles => {
+getTimeFiles().then(async (timeFiles) => {
+  const placeFiles = await glob("place/*/*")
+  const placeService = new PlaceService()
+  for (const placeDir of placeFiles) {
+    try {
+      const place = await placeService.read(placeDir)
+      console.log(`read place "${place.title}"`)
+    } catch (e) {
+      console.warn("Place is not documented in", placeDir)
+    }
+  }
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
@@ -186,6 +198,7 @@ getTimeFiles().then(timeFiles => {
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
+        new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService)),
         new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
         new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
         new ClassDomReplaceCommand("source", new SourceReplacerFactory()),

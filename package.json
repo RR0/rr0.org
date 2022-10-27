@@ -3,13 +3,6 @@
   "version": "2.0.0",
   "description": "",
   "main": "index.html",
-  "scripts": {
-    "start": "webpack serve --open",
-    "watch": "webpack --watch",
-    "build": "webpack",
-    "test": "jest --coverage",
-    "ssg": "rm -Rf out && ts-node tool/index.ts"
-  },
   "keywords": [
     "life",
     "board",
@@ -21,11 +14,14 @@
     "from",
     "now"
   ],
+  "author": "Jérôme Beau",
+  "license": "ISC",
   "dependencies": {
     "copy": "^0.3.2",
     "detect-character-encoding": "^0.8.0",
     "glob-promise": "^4.2.2",
-    "jsdom": "^20.0.1"
+    "jsdom": "^20.0.1",
+    "@googlemaps/google-maps-services-js": "^3.3.16"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "^0.7.0",
@@ -43,6 +39,11 @@
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.10.0"
   },
-  "author": "Jérôme Beau",
-  "license": "ISC"
+  "scripts": {
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "jest --coverage",
+    "ssg": "rm -Rf out && ts-node tool/index.ts"
+  }
 }

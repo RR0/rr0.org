@@ -58,6 +58,11 @@ export enum CountryCode {
   es = "es",
 
   /**
+   * FInland
+   */
+  fi = "fi",
+
+  /**
    * FRance
    */
   fr = "fr",
@@ -76,6 +81,11 @@ export enum CountryCode {
    * ITalia
    */
   it = "it",
+
+  /**
+   * JaPan
+   */
+  jp = "jp",
 
   /**
    * MeXico

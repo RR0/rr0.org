@@ -1,5 +1,4 @@
-import {PlaceType2} from "@googlemaps/google-maps-services-js/src/common"
-import {Client, Status} from "@googlemaps/google-maps-services-js"
+import {Client, PlaceType2, Status} from "@googlemaps/google-maps-services-js"
 
 import {Location, Place, placeDirName} from "./Place"
 import {CountryCode} from "./CountryCode"

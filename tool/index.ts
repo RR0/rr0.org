@@ -38,7 +38,6 @@ import {promise as glob} from "glob-promise"
 import {SsiEchoVarReplaceCommand} from "./step/content/replace/html/ssi/SsiEchoVarCommand"
 import {SsgContextImpl} from "./SsgContextImpl"
 import {StringEchoVarReplaceCommand} from "./step/content/replace/html/StringEchoVarReplaceCommand"
-import {PlaceReplacerFactory} from "./step/content/replace/html/place/PlaceReplacerFactory"
 import {PlaceService} from "./model/place/PlaceService"
 
 const args = CLI.getArgs()
@@ -154,6 +153,12 @@ const ufologistsDirectoryStep = new PeopleDirectoryStep(
   "people/ufologues.html",
   outputFunc, [Occupation.ufologist])
 
+const contacteesDirectoryStep = new PeopleDirectoryStep(
+  ["people/*/*/"],
+  ["people/Astronomers_fichiers"],
+  "people/contactes.html",
+  outputFunc, [Occupation.contactee])
+
 const ufoCasesDirectoryStep = new CaseDirectoryStep(
   [
     "science/crypto/ufo/enquete/dossier/*/",
@@ -198,7 +203,7 @@ getTimeFiles().then(async (timeFiles) => {
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
-        new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService)),
+        // new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService)),
         new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
         new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
         new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
@@ -216,9 +221,9 @@ getTimeFiles().then(async (timeFiles) => {
     .add(ufoCasesDirectoryStep)
     .add(ufologistsDirectoryStep)
     .add(scientistsDirectoryStep)
+    .add(contacteesDirectoryStep)
     .add(new CopyStep(copies))
     .start(context)
     .then(result => console.log("Completed", result))
     .catch(err => console.error(err, context.inputFile.name, "=>", context.outputFile.name))
-
 })

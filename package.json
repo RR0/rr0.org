@@ -37,13 +37,14 @@
     "uuid": "^8.3.2",
     "webpack": "^5.36.0",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^4.10.0"
+    "webpack-dev-server": "^4.10.0",
+    "@babel/plugin-transform-modules-commonjs": "~7.19.6"
   },
   "scripts": {
     "start": "webpack serve --open",
     "watch": "webpack --watch",
     "build": "webpack",
-    "test": "jest --coverage",
+    "test": "jest",
     "ssg": "rm -Rf out && ts-node tool/index.ts"
   }
 }

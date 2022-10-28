@@ -1,7 +1,0 @@
-* {
-  display: none;
-}
-
-*:after {
-  content: "do not print";
-}

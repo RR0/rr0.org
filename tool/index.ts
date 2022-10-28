@@ -133,15 +133,15 @@ const scientistsDirectoryStep = new PeopleDirectoryStep(
   "people/scientifiques.html",
   outputFunc, [
     Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
-    Occupation.biochemist, Occupation.biophysicist, Occupation.botanist,
+    Occupation.biochemist, Occupation.biologist, Occupation.biophysicist, Occupation.botanist,
     Occupation.chemist,
-    Occupation.engineer, Occupation.ethnologist,
-    Occupation.geologist, Occupation.geophysicist,
+    Occupation.engineer, Occupation.exobiologist, Occupation.ethnologist,
+    Occupation.geophysicist, Occupation.geologist, Occupation.geographer,
     Occupation.historian,
     Occupation.mathematician, Occupation.meteorologist,
-    Occupation.neurologist, Occupation.neuroscientist, Occupation.neuropsychiatrist,
+    Occupation.neuroscientist, Occupation.neurologist, Occupation.neuropsychiatrist,
     Occupation.oceanographer,
-    Occupation.psychologist, Occupation.philosopher, Occupation.physicist, Occupation.physician, Occupation.psychiatrist,
+    Occupation.philosopher, Occupation.physician, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
     Occupation.radioastronomer,
     Occupation.sociologist, Occupation.softwareEngineer
   ])
@@ -154,7 +154,7 @@ const ufologistsDirectoryStep = new PeopleDirectoryStep(
   outputFunc, [Occupation.ufologist])
 
 const contacteesDirectoryStep = new PeopleDirectoryStep(
-  ["people/*/*/"],
+  ["people/*/*/", "science/crypto/ufo/enquete/dossier/Villa"],
   ["people/Astronomers_fichiers"],
   "people/contactes.html",
   outputFunc, [Occupation.contactee])

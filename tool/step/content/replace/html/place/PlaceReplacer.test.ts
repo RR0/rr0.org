@@ -5,8 +5,9 @@ import {testUtil} from "../../../../../test/TestUtil"
 
 describe("PlaceReplacer", () => {
 
-  test("build place with one first name", async () => {
-    const service = new PlaceService(["place/amer/n/OakRidge"])
+  test("replace a place tag", async () => {
+    const service = new PlaceService()
+    await service.read("place/amer/n/OakRidge")
     const replacer = new PlaceReplacer(service)
     const context = testUtil.newHtmlContext("place/amer/n/OakRidge/index.html", "")
     const doc = context.inputFile.dom.window.document

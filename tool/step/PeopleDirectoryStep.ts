@@ -25,35 +25,38 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const allCountries = new Set<CountryCode>()
     const occupations = new Set<Occupation>()
     for (const dirName of dirNames) {
-      const peopleDir = new People(dirName)
-      peopleList.push(peopleDir)
+      const people = new People(dirName)
+      peopleList.push(people)
       try {
         const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
-        Object.assign(peopleDir, JSON.parse(jsonFileInfo.contents))
+        Object.assign(people, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
         console.warn(`${dirName} has no index.json description`)
         // No json, just guess title.
       }
     }
     peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
-    const listItems = peopleList.map(people => {
-      const dirName = people.dirName
-      if (!people.title) {
-        if (dirName) {
-          const lastSlash = dirName.lastIndexOf("/")
-          const lastDir = dirName.substring(lastSlash + 1)
-          const title = StringUtil.camelToText(lastDir)
-          const firstSpace = title.indexOf(" ")
-          people.title = firstSpace > 0 ? title.substring(0, firstSpace) + ", " + title.substring(
-            firstSpace + 1) : title
-        } else {
-          throw Error("Can't devise title for people " + JSON.stringify(people))
+    const pseudoPeopleList = peopleList.reduce((prev: People[], p: People) => {
+      if (p.pseudonyms?.length > 0) {
+        for (const pseudonym of p.pseudonyms) {
+          const pseudo = new People(p.dirName, p.firstNames, p.lastName, p.pseudonyms, p.occupations, p.countries)
+          pseudo.title = pseudonym
+          prev.push(pseudo)
         }
       }
+      return prev
+    }, [])
+    peopleList = peopleList.concat(pseudoPeopleList).sort((p1, p2) => p1.title.localeCompare(p2.title))
+    const listItems = peopleList.map(people => {
+      const dirName = people.dirName
       const attrs: { [name: string]: string } = {}
       const titles = []
       const classList = []
       const details: string[] = []
+      if (pseudoPeopleList.indexOf(people) >= 0) {
+        classList.push("pseudonym")
+        titles.push("(pseudonyme)")
+      }
       if (people.hoax) {
         classList.push("canular")
       }
@@ -96,7 +99,8 @@ export class PeopleDirectoryStep extends DirectoryStep {
           occupations.add(occupation)
           const occupationMsg = context.messages.people.occupation[occupation]
           if (!occupationMsg) {
-            throw Error(`No message to translate occupation "${occupation}" in ${context.locales}`)
+            throw Error(
+              `No message to translate occupation "${occupation}" in ${context.locales}, as specified in ${people.dirName}/index.json`)
           }
           classList.push(`occupation-${occupation}`)
           titles.push(occupationMsg(gender))
@@ -106,7 +110,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (details.length > 0) {
         text.push(`(${details.join(", ")})`)
       }
-      const a = HtmlTag.toString("a", text.join(" "), {href: "/" + dirName + "/"})
+      const a = HtmlTag.toString("a", text.join(" "), {href: `/${dirName}/`})
       if (titles.length) {
         attrs.title = titles.join(", ")
       }

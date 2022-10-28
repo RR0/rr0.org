@@ -3,7 +3,15 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta content="UFO data for french-reading people" name="description"/>
-  <link href="/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <style>@media print {
+    * {
+      display: none
+    }
+
+    *:after {
+      content: "Do not print"
+    }
+  }</style>
   <link href="https://googleapis.com" rel="dns-prefetch">
   <link href="/rr0.css" rel="stylesheet" type="text/css"/>
   <link href="/manifest.json" rel="manifest">

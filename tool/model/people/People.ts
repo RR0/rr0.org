@@ -4,9 +4,7 @@ import {CountryCode} from "../place/CountryCode"
 import {StringUtil} from "../../util/string/StringUtil"
 
 export class People {
-
   gender?: Gender
-  title?: string
   birthTime?: Date
   deathTime?: Date
   hoax = false
@@ -19,6 +17,26 @@ export class People {
     readonly occupations: Occupation[] = [],
     readonly countries: CountryCode[] = []
   ) {
+    if (dirName) {
+      const lastSlash = dirName.lastIndexOf("/")
+      const lastDir = dirName.substring(lastSlash + 1)
+      const title = StringUtil.camelToText(lastDir)
+      const firstSpace = title.indexOf(" ")
+      this._title = firstSpace > 0 ? title.substring(0, firstSpace) + ", " + title.substring(
+        firstSpace + 1) : title
+    } else {
+      this._title = lastName + (firstNames.length > 0 ? ", " + this.firstNames.join(" ") : "")
+    }
+  }
+
+  protected _title: string
+
+  get title(): string {
+    return this._title
+  }
+
+  set title(value: string) {
+    this._title = value
   }
 
   get fullName(): string {

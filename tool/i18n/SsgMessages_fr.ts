@@ -79,6 +79,7 @@ export class SsgMessages_fr implements SsgMessages {
   }
   people = {
     occupation: {
+      actor: (gender: Gender) => gender === Gender.male ? "acteur" : "actrice",
       anthropologist: (_gender: Gender) => "anthropologue",
       archeologist: (_gender: Gender) => "archéologue",
       artist: (_gender: Gender) => "artiste",
@@ -99,10 +100,12 @@ export class SsgMessages_fr implements SsgMessages {
       ethnologist: (_gender: Gender) => "ethnologue",
       exobiologist: (_gender: Gender) => "exobiologiste",
       farmer: (_gender: Gender) => "agriculteur",
+      flightAttendant: (gender: Gender) => gender === Gender.male ? "hotesse de l'air" : "stewart",
       geographer: (_gender: Gender) => "géographe",
       geologist: (_gender: Gender) => "géologue",
       geophysicist: (gender: Gender) => gender === Gender.male ? "géophysicien" : "géophysicienne",
       historian: (gender: Gender) => gender === Gender.male ? "historien" : "historienne",
+      houseWife: (_gender: Gender) => "femme au foyer",
       journalist: (_gender: Gender) => "journalist",
       lawyer: (gender: Gender) => gender === Gender.male ? "avocat" : "avocate",
       librarian: (_gender: Gender) => "bibliothécaire",
@@ -114,6 +117,7 @@ export class SsgMessages_fr implements SsgMessages {
       neurologist: (_gender: Gender) => "neurologue",
       neuroscientist: (_gender: Gender) => "neuroscientifique",
       neuropsychiatrist: (_gender: Gender) => "neuropsychiatre",
+      nurse: (gender: Gender) => gender === Gender.male ? "infirmier" : "infirmière",
       oceanographer: (_gender: Gender) => "océanographe",
       painter: (_gender: Gender) => "peintre",
       parapsychologist: (_gender: Gender) => "parapsychologue",
@@ -123,6 +127,7 @@ export class SsgMessages_fr implements SsgMessages {
       physician: (_gender: Gender) => "médecin",
       pilot: (_gender: Gender) => "pilote",
       politician: (gender: Gender) => gender === Gender.male ? "policitien" : "policitienne",
+      priest: (gender: Gender) => gender === Gender.male ? "prêtre" : "prêtresse",
       producer: (gender: Gender) => gender === Gender.male ? "producteur" : "productrice",
       psychologist: (_gender: Gender) => "psychologue",
       psychiatrist: (_gender: Gender) => "psychiatre",
@@ -134,7 +139,8 @@ export class SsgMessages_fr implements SsgMessages {
       stuntman: (_gender: Gender) => "cascadeur",
       teacher: (gender: Gender) => gender === Gender.male ? "enseignant" : "enseignante",
       truckDriver: (gender: Gender) => gender === Gender.male ? "camionneur" : "camionneuse",
-      taxiDriver: (gender: Gender) => "taxi",
+      taxiDriver: (_gender: Gender) => "taxi",
+      telegrapher: (_gender: Gender) => "télégraphiste",
       ufologist: (_gender: Gender) => "ufologue",
       worker: (gender: Gender) => gender === Gender.male ? "ouvrier" : "ouvrière",
       writer: (gender: Gender) => gender === Gender.male ? "écrivain" : "écrivaine"

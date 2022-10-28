@@ -30,3 +30,7 @@
 #searchForm output {
   color: gray;
 }
+
+.pseudonym {
+  font-style: italic;
+}

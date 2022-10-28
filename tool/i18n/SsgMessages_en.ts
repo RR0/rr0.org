@@ -142,6 +142,7 @@ export class SsgMessages_en implements SsgMessages {
       taxiDriver: (_gender: Gender) => "taxi driver",
       truckDriver: (_gender: Gender) => "truck driver",
       ufologist: (_gender: Gender) => "ufologist",
+      ufoWitness: (_gender: Gender) => "UFO witness",
       worker: (_gender: Gender) => "worker",
       writer: (_gender: Gender) => "writer"
     }
@@ -163,6 +164,7 @@ export class SsgMessages_en implements SsgMessages {
     hu: "Hungary",
     ie: "Ireland",
     it: "Italia",
+    ir: "Iran",
     jp: "Japan",
     mx: "Mexico",
     nl: "Netherlands",

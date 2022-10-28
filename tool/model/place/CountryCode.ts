@@ -68,14 +68,19 @@ export enum CountryCode {
   fr = "fr",
 
   /**
+   * HUngary
+   */
+  hu = "hu",
+
+  /**
    * IrEland
    */
   ie = "ie",
 
   /**
-   * HUngary
+   * IRan
    */
-  hu = "hu",
+  ir = "ir",
 
   /**
    * ITalia

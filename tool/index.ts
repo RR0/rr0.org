@@ -159,6 +159,21 @@ const contacteesDirectoryStep = new PeopleDirectoryStep(
   "people/contactes.html",
   outputFunc, [Occupation.contactee])
 
+const pilotsDirectoryStep = new PeopleDirectoryStep(
+  [
+    "people/*/*/",
+    "science/crypto/ufo/enquete/dossier/Goshen",
+    "science/crypto/ufo/enquete/dossier/Aurigny",
+    "science/crypto/ufo/enquete/dossier/Tananarive",
+    "science/crypto/ufo/enquete/dossier/Draguignan",
+    "science/crypto/ufo/enquete/dossier/Coyne",
+    "science/crypto/ufo/enquete/dossier/Duboc",
+    "science/crypto/ufo/enquete/dossier/Mantell"
+  ],
+  ["people/Astronomers_fichiers"],
+  "people/pilotes.html",
+  outputFunc, [Occupation.astronaut, Occupation.pilot])
+
 const ufoCasesDirectoryStep = new CaseDirectoryStep(
   [
     "science/crypto/ufo/enquete/dossier/*/",
@@ -222,6 +237,7 @@ getTimeFiles().then(async (timeFiles) => {
     .add(ufologistsDirectoryStep)
     .add(scientistsDirectoryStep)
     .add(contacteesDirectoryStep)
+    .add(pilotsDirectoryStep)
     .add(new CopyStep(copies))
     .start(context)
     .then(result => console.log("Completed", result))

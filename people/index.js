@@ -4,7 +4,7 @@ var occupationInputs
 const form = document.getElementById("searchForm")
 
 function find(_e) {
-  const textInput = form.querySelector("input[type='text']")
+  const textInput = form.querySelector("input[type='search']")
 
   function normalize(str) {
     return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")

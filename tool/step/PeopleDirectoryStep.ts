@@ -9,6 +9,7 @@ import {Occupation} from "../model/people/Occupation"
 import {StringUtil} from "../util/string/StringUtil"
 import {Time} from "../model/time/Time"
 import {People} from "../model/people/People"
+import {promise as glob} from "glob-promise"
 
 /**
  * Scan directories for people information, then populates a template with collected data.
@@ -25,14 +26,17 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const allCountries = new Set<CountryCode>()
     const occupations = new Set<Occupation>()
     for (const dirName of dirNames) {
-      const people = new People(dirName)
-      peopleList.push(people)
-      try {
-        const jsonFileInfo = getFileInfo(context, `${dirName}/index.json`)
-        Object.assign(people, JSON.parse(jsonFileInfo.contents))
-      } catch (e) {
-        console.warn(`${dirName} has no index.json description`)
-        // No json, just guess title.
+      const files = await glob(`${dirName}/index*.json`)
+      for (const file of files) {
+        const people = new People(dirName)
+        peopleList.push(people)
+        try {
+          const jsonFileInfo = getFileInfo(context, file)
+          Object.assign(people, JSON.parse(jsonFileInfo.contents))
+        } catch (e) {
+          console.warn(`${dirName} has no index.json description`)
+          // No json, just guess title.
+        }
       }
     }
     peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))

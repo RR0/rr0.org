@@ -26,7 +26,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const allCountries = new Set<CountryCode>()
     const occupations = new Set<Occupation>()
     for (const dirName of dirNames) {
-      const files = await glob(`${dirName}/index*.json`)
+      const files = await glob(`${dirName}/people*.json`)
       for (const file of files) {
         const people = new People(dirName)
         peopleList.push(people)
@@ -104,7 +104,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
           const occupationMsg = context.messages.people.occupation[occupation]
           if (!occupationMsg) {
             throw Error(
-              `No message to translate occupation "${occupation}" in ${context.locales}, as specified in ${people.dirName}/index.json`)
+              `No message to translate occupation "${occupation}" in ${context.locales}, as specified in ${people.dirName}/people*.json`)
           }
           classList.push(`occupation-${occupation}`)
           titles.push(occupationMsg(gender))

@@ -167,7 +167,6 @@ const pilotsDirectoryStep = new PeopleDirectoryStep(
     "science/crypto/ufo/enquete/dossier/Tananarive",
     "science/crypto/ufo/enquete/dossier/Draguignan",
     "science/crypto/ufo/enquete/dossier/Coyne",
-    "science/crypto/ufo/enquete/dossier/Duboc",
     "science/crypto/ufo/enquete/dossier/Mantell"
   ],
   ["people/Astronomers_fichiers"],

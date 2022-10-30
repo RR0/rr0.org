@@ -1,6 +1,9 @@
 {
-  "time": "1968",
-  "classification": {
-    "hynek": "CE4"
-  }
+  "birthTime": "1932",
+  "occupations": [
+    "sailor"
+  ],
+  "countries": [
+    "uk"
+  ]
 }

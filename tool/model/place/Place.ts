@@ -4,7 +4,8 @@ export type PlaceLocation = {
 }
 
 export type Elevation = {
-  elevation: number
+  elevation: number,
+  data?: any
 }
 
 export class Place {

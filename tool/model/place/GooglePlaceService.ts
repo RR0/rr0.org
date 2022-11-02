@@ -16,7 +16,7 @@ export class GooglePlaceService extends PlaceService {
     const elevationResponse = await this.client.elevation({params: {locations: [location], key: this.apiKey}})
     const data = elevationResponse.data
     const result = data.results[0]
-    return {elevation: result.elevation}
+    return {elevation: result.elevation, data: result}
   }
 
   protected async geocode(address: string): Promise<{ location: PlaceLocation, data: any } | undefined> {

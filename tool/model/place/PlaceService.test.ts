@@ -12,36 +12,25 @@ describe("PlaceService", () => {
     }
   })
 
-  xtest("build place with one first name", async () => {
-    const service = new GooglePlaceService("place", apiKey)
+  let service: GooglePlaceService
+
+  beforeEach(() => {
+    service = new GooglePlaceService("place", apiKey)
+  })
+
+  const lanlPosition = {"lat": 35.8440582, "lng": -106.287162}
+  const lanlElevation = 2161.025390625
+
+  test("build place with one first name", async () => {
     const laln = await service.get("LANL")
-    expect(laln).toEqual({
-      dirName: "",
-      location: {
-        "lat": 35.8440582,
-        "lng": -106.287162
-      },
-      state: {
-        code: "nm"
-      },
-      title: "LANL"
-    })
+    expect(laln?.location).toEqual(lanlPosition)
+    expect(laln?.elevation.elevation).toBe(lanlElevation)
   })
 
-  xtest("read", async () => {
-    const service = new GooglePlaceService("place", apiKey)
-    expect(await service.read("org/us/state/nm/LosAlamosNationalLaboratories")).toEqual({
-      "dirName": "org/us/state/nm/LosAlamosNationalLaboratories",
-      "location": {
-        "lat": 35.8440582,
-        "lng": -106.287162
-      },
-      "state": {
-        "code": "nm",
-        "dirName": "org/us/state/nm/"
-      },
-      "title": "Los Alamos National Laboratories"
-    })
+  test("read", async () => {
+    const fileName = service.getFileName(lanlPosition)
+    const result = await service.read(fileName)
+    expect(result.location).toEqual(lanlPosition)
+    expect(result.elevation.elevation).toBe(lanlElevation)
   })
-
 })

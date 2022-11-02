@@ -6,7 +6,7 @@ export abstract class PlaceService {
 
   protected readonly cache = new Map<string, Place>()
 
-  protected regex = /lat([\d.\-]+)lng([\d.\-]+)/
+  protected readonly regex = /lat([\d.\-]+)lng([\d.\-]+)/
 
   constructor(readonly rootDir: string) {
   }
@@ -62,13 +62,12 @@ export abstract class PlaceService {
     }
   }
 
-  private async save(place: Place) {
-    const fileName = this.getFileName(place.location)
-    const toSave: any = {elevation: place.elevation, dirName: place.dirName}
-    await writeFile(fileName, JSON.stringify(toSave, null, 2), "utf-8")
+  getFileName(location: PlaceLocation): string {
+    return `${this.rootDir}/${this.key(location)}.json`
   }
 
-  private getFileName(location: PlaceLocation): string {
-    return `${this.rootDir}/${this.key(location)}.json`
+  private async save(place: Place) {
+    const fileName = this.getFileName(place.location)
+    await writeFile(fileName, JSON.stringify(place, null, 2), "utf-8")
   }
 }

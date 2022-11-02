@@ -1,7 +1,8 @@
 import {PlaceReplacer} from "./PlaceReplacer"
-import {CountryCode} from "../../../../../model/place/CountryCode"
 import {PlaceService} from "../../../../../model/place/PlaceService"
 import {testUtil} from "../../../../../test/TestUtil"
+import {Elevation, Place, PlaceLocation} from "../../../../../model/place/Place"
+import {OrganizationService} from "../../../../../model/org/OrganizationService"
 
 describe("PlaceReplacer", () => {
 
@@ -14,14 +15,9 @@ describe("PlaceReplacer", () => {
     const placeTag = doc.createElement("span")
     placeTag.className = "place"
     placeTag.innerHTML = "Oak Ridge (Tennessee)"
-    expect(await replacer.replacement(context, placeTag)).toEqual({
-      title: "Oak Ridge (Tennessee)",
-      location: {
-        lat: 36.0103561,
-        lng: -84.26964490000002
-      },
-      country: CountryCode.us
-    })
+    const replacement = await replacer.replacement(context, placeTag)
+    expect(replacement.tagName).toEqual("SPAN")
+    expect(replacement.textContent).toEqual("Oak Ridge (Tennessee)")
   })
 
 })

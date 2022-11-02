@@ -1,81 +1,74 @@
-import {Client, PlaceType2, Status} from "@googlemaps/google-maps-services-js"
-
-import {Location, Place, placeDirName} from "./Place"
-import {CountryCode} from "./CountryCode"
-import {Country, State} from "./Country"
-import {StringUtil} from "../../util/string/StringUtil"
+import {Elevation, Place, PlaceLocation} from "./Place"
 import {writeFile} from "../../util/file/FileUtil"
 import fs from "fs"
 
-export class PlaceService {
+export abstract class PlaceService {
 
   protected readonly cache = new Map<string, Place>()
-  private readonly client: Client
 
-  constructor() {
-    this.client = new Client({})
+  protected regex = /lat([\d.\-]+)lng([\d.\-]+)/
+
+  constructor(readonly rootDir: string) {
   }
 
-  async read(dirName: string): Promise<Place> {
-    const fileBuffer = fs.readFileSync(dirName + "/index.json")
-    const place = JSON.parse(fileBuffer.toString())
-    this.cache.set(place.title, place)
+  async read(fileName: string): Promise<Place> {
+    const fileBuffer = fs.readFileSync(fileName)
+    const execArray = this.regex.exec(fileName)
+    if (!execArray) {
+      throw Error("file name must match " + this.regex.source)
+    }
+    const location: PlaceLocation = {lat: parseFloat(execArray[1]), lng: parseFloat(execArray[2])}
+    const place = {location, ...JSON.parse(fileBuffer.toString())} as Place
+    this.cache.set(this.key(place.location), place)
     return place
   }
 
-  async get(address: string): Promise<Place> {
+  async get(address: string): Promise<Place | undefined> {
     let place = this.cache.get(address)
     if (!place) {
       place = await this.create(address)
-      await this.save(place)
-      this.cache.set(place.title, place)
+      if (place) {
+        try {
+          const fileName = this.getFileName(place.location)
+          place = await this.read(fileName)
+        } catch (e) {
+          if ((e as any).code === "ENOENT") {
+            await this.save(place)
+          } else {
+            throw e
+          }
+        } finally {
+          this.cache.set(this.key(place.location), place)
+        }
+      }
     }
-    return await this.create(address)
+    return place
   }
 
-  private async create(address: string): Promise<Place> {
-    const key = process.env.GOOGLE_MAPS_API_KEY || ""
-    const response = await this.client.geocode({params: {address, key}})
-    const data = response.data
-    let dirName: string | undefined
-    let state: State | undefined
-    let location: Location | undefined
-    switch (data.status) {
-      case Status.OK:
-        const result = data.results[0]
-        const gCountry = result.address_components.find(c => c.types.includes(PlaceType2.country))
-        const countryCode = gCountry ? gCountry.short_name.toLowerCase() as CountryCode : undefined
-        if (countryCode) {
-          const country = Country.instances.get(countryCode)
-          if (country) {
-            const gState = result.address_components.find(c => c.types.includes(PlaceType2.administrative_area_level_1))
-            state = gState ? country.states.get(gState.short_name.toLowerCase()) : undefined
-            if (state) {
-              dirName = state.dirName + StringUtil.textToCamel(address)
-            } else {
-              dirName = country.dirName + StringUtil.textToCamel(address)
-            }
-          } else {
-            dirName = placeDirName + StringUtil.textToCamel(address)
-          }
-        } else {
-          dirName = placeDirName + StringUtil.textToCamel(address)
-        }
-        location = result.geometry.location
-        break
-      case Status.NOT_FOUND:
-      case Status.ZERO_RESULTS:
-        break
-      default:
-        throw Error(data.error_message)
+  protected abstract geocode(address: string): Promise<{ location: PlaceLocation, data: any } | undefined>
+
+  protected key(location: PlaceLocation) {
+    return `lat${location.lat}lng${location.lng}`
+  }
+
+  protected abstract elevation(location: PlaceLocation): Promise<Elevation>
+
+  private async create(address: string): Promise<Place | undefined> {
+    const geocodeResult = await this.geocode(address)
+    if (geocodeResult) {
+      const {location, data} = geocodeResult
+      const elevation: Elevation = await this.elevation(location)
+      return new Place(location, elevation, "", data)
     }
-    return new Place(address, dirName, location, state)
   }
 
   private async save(place: Place) {
-    const fileName = place.dirName + "/index.json"
-    const toSave: any = {...place}
-    delete toSave.dirName
+    const fileName = this.getFileName(place.location)
+    const toSave: any = {elevation: place.elevation, dirName: place.dirName}
     await writeFile(fileName, JSON.stringify(toSave, null, 2), "utf-8")
+  }
+
+  private getFileName(location: PlaceLocation): string {
+    return `${this.rootDir}/${this.key(location)}.json`
   }
 }

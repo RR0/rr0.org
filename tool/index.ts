@@ -159,12 +159,6 @@ const contacteesDirectoryStep = new PeopleDirectoryStep(
   "people/contactes.html",
   outputFunc, [Occupation.contactee])
 
-const cDirectoryStep = new PeopleDirectoryStep(
-  ["people/c/*/"],
-  [],
-  "people/c/index.html",
-  outputFunc, [])
-
 const pilotsDirectoryStep = new PeopleDirectoryStep(
   [
     "people/*/*/",
@@ -196,6 +190,18 @@ const ufoCasesDirectoryStep = new CaseDirectoryStep(
   outputFunc)
 
 getTimeFiles().then(async (timeFiles) => {
+  const letterDirs = await glob("people/*/")
+  const peopleLetterFiles = letterDirs.filter(l => /(.*?)\/[a-z]\//.test(l))
+  const letterDirectorySteps: PeopleDirectoryStep[] = []
+  for (const peopleLetterFile of peopleLetterFiles) {
+    const c = peopleLetterFile.charAt(peopleLetterFile.length - 2)
+    letterDirectorySteps.push(new PeopleDirectoryStep(
+      [`people/${c}/*/`],
+      [],
+      `people/${c}/index.html`,
+      outputFunc, []))
+  }
+
   const placeFiles = await glob("place/loc*.json")
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -246,7 +252,7 @@ getTimeFiles().then(async (timeFiles) => {
     .add(ufologistsDirectoryStep)
     .add(scientistsDirectoryStep)
     .add(contacteesDirectoryStep)
-    .add(cDirectoryStep)
+    .add(...letterDirectorySteps)
     .add(pilotsDirectoryStep)
     .add(new CopyStep(copies))
     .start(context)

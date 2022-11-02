@@ -18,8 +18,8 @@ export class Ssg {
   constructor(protected config: SsgConfig) {
   }
 
-  add(step: SsgStep) {
-    this.steps.push(step)
+  add(...steps: SsgStep[]) {
+    this.steps.push(...steps)
     return this
   }
 

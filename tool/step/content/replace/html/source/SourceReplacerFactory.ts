@@ -9,10 +9,10 @@ import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 export class SourceReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   async create(context: HtmlSsgContext): Promise<DomReplacer> {
-    const instance = new SourceReplacer()
+    const replacer = new SourceReplacer()
     return {
-      async replace(original: Element): Promise<Element> {
-        return instance.replacement(context, original)
+      async replace(original: HTMLElement): Promise<HTMLElement> {
+        return replacer.replacement(context, original)
       }
     }
   }

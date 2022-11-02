@@ -1286,7 +1286,7 @@ footer iframe {
   display: none;
 }
 
-.source-contents:target {
+.source-contents:has(.anchor:target) {
   display: inline-block;
 }
 

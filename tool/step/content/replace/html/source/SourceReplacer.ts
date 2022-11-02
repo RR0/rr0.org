@@ -1,25 +1,27 @@
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
+import {LocalAnchor} from "../LocalAnchor"
 
 export class SourceReplacer {
-
+  /**
+   * Source counter in the page.
+   */
   protected number = 0
 
-  replacement(context: HtmlSsgContext, original: Element): Element {
+  replacement(context: HtmlSsgContext, original: HTMLElement): HTMLElement {
     this.number++
     const sourceStr = String.fromCharCode(96 + this.number)
     const sourceId = `source-${sourceStr}`
-    const doc = context.inputFile.dom.window.document
-    const result = doc.createElement("span")
-    const a = doc.createElement("a")
+    const outputDoc = context.outputFile.dom.window.document
+    const replacement = outputDoc.createElement("span")
+    const a = outputDoc.createElement("a")
     a.className = "source-id"
     a.href = `#${sourceId}`
     a.textContent = sourceStr
-    result.appendChild(a)
-    const contents = doc.createElement("span")
+    replacement.appendChild(a)
+    const contents = outputDoc.createElement("span")
     contents.className = "source-contents"
-    contents.id = sourceId
-    contents.innerHTML = original.innerHTML
-    result.appendChild(contents)
-    return result
+    contents.innerHTML = LocalAnchor.createHTML(outputDoc, sourceId) + original.innerHTML
+    replacement.appendChild(contents)
+    return replacement
   }
 }

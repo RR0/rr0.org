@@ -28,7 +28,8 @@ export class TimeReplacer {
     if (dateTimeValues && dateTimeValues[0]) {
       const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
       const previousContext: SsgContext | null = noContext ? null : context.clone()
-      replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone, approximate)
+      replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes,
+        timeZone, approximate)
     } else {
       const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
       if (durationValues && durationValues[0]) {
@@ -65,7 +66,9 @@ export class TimeReplacer {
     return replacement
   }
 
-  private dateTimeReplacement(context: SsgContext, previousContext: SsgContext | null, yearStr: string, monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string, approximate: boolean): string | undefined {
+  private dateTimeReplacement(context: SsgContext, previousContext: SsgContext | null, yearStr: string,
+                              monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string,
+                              approximate: boolean): string | undefined {
     let replacement: string | undefined = undefined
     const timeContext = context.time
     if (yearStr) {
@@ -96,11 +99,7 @@ export class TimeReplacer {
       timeContext.setTimeZone(timeZone)
     }
     if (timeContext.isDefined()) {
-      let url = TimeUrlBuilder.build(context)
-     /* while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
-        const slash = url.lastIndexOf("/")
-        url = url.substring(0, slash)
-      }*/
+      const url = this.matchExistingTimeFile(TimeUrlBuilder.build(context))
       let title = TimeTextBuilder.build(context)
       if (approximate) {
         title = context.messages.context.time.approximate(title)
@@ -125,7 +124,16 @@ export class TimeReplacer {
     return replacement
   }
 
-  private durationReplacement(context: SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string, approximate: boolean): string | undefined {
+  private matchExistingTimeFile(url: string): string | undefined {
+    while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
+      const slash = url.lastIndexOf("/")
+      url = url.substring(0, slash)
+    }
+    return url === "time" ? undefined : url
+  }
+
+  private durationReplacement(context: SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
+                              secondsStr: string, approximate: boolean): string | undefined {
     const items = []
     const messages = context.messages.context.time.duration
     if (daysStr) {

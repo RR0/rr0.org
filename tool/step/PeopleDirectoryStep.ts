@@ -39,7 +39,9 @@ export class PeopleDirectoryStep extends DirectoryStep {
         }
       }
     }
-    peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
+    if (this.filterOccupations.length > 0) {
+      peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
+    }
     const pseudoPeopleList = peopleList.reduce((prev: People[], p: People) => {
       if (p.pseudonyms?.length > 0) {
         for (const pseudonym of p.pseudonyms) {
@@ -89,11 +91,11 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (countries) {
         for (const country of countries) {
           allCountries.add(country)
-          const classificationLabel = context.messages.country[country]
-          if (!classificationLabel) {
+          const countryLabel = context.messages.country[country].title
+          if (!countryLabel) {
             throw new Error(`No label for country "${country}"`)
           }
-          titles.push(classificationLabel)
+          titles.push(countryLabel)
           classList.push(`country-${country}`)
         }
       }
@@ -128,7 +130,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     {
       let countriesHtml = ""
       for (const country of Array.from(allCountries).sort()) {
-        const countryStr = context.messages.country[country]
+        const countryStr = context.messages.country[country].title
         countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="find(event)"> ${countryStr}</label></span>`
       }
       fileInfo.contents = fileInfo.contents.replace(`<!--#echo var="countries" -->`,

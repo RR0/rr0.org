@@ -159,6 +159,12 @@ const contacteesDirectoryStep = new PeopleDirectoryStep(
   "people/contactes.html",
   outputFunc, [Occupation.contactee])
 
+const cDirectoryStep = new PeopleDirectoryStep(
+  ["people/c/*/"],
+  [],
+  "people/c/index.html",
+  outputFunc, [])
+
 const pilotsDirectoryStep = new PeopleDirectoryStep(
   [
     "people/*/*/",
@@ -240,6 +246,7 @@ getTimeFiles().then(async (timeFiles) => {
     .add(ufologistsDirectoryStep)
     .add(scientistsDirectoryStep)
     .add(contacteesDirectoryStep)
+    .add(cDirectoryStep)
     .add(pilotsDirectoryStep)
     .add(new CopyStep(copies))
     .start(context)

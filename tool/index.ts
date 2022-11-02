@@ -38,7 +38,7 @@ import {promise as glob} from "glob-promise"
 import {SsiEchoVarReplaceCommand} from "./step/content/replace/html/ssi/SsiEchoVarCommand"
 import {SsgContextImpl} from "./SsgContextImpl"
 import {StringEchoVarReplaceCommand} from "./step/content/replace/html/StringEchoVarReplaceCommand"
-import {PlaceService} from "./model/place/PlaceService"
+import {GooglePlaceService} from "./model/place/GooglePlaceService"
 
 const args = CLI.getArgs()
 const contents = args.contents

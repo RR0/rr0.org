@@ -4,7 +4,7 @@ export class NoteReplacer {
 
   protected number = 0
 
-  replacement(context: HtmlSsgContext, original: Element): Element {
+  replacement(context: HtmlSsgContext, original: HTMLElement): HTMLElement {
     this.number++
     const noteStr = this.number.toString()
     const noteId = `note-${noteStr}`

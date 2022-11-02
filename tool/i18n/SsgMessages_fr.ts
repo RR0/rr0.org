@@ -148,37 +148,48 @@ export class SsgMessages_fr implements SsgMessages {
     }
   }
   country = {
-    at: "Autriche",
-    au: "Australie",
-    be: "Belgique",
-    br: "Brésil",
-    ca: "Canada",
-    ch: "Suisse",
-    cn: "Chine",
-    de: "Allemagne",
-    dk: "Danemark",
-    es: "Espagne",
-    fi: "Finlande",
-    fr: "France",
-    gr: "Grèce",
-    hu: "Hongrie",
-    ie: "Irelande",
-    it: "Italie",
-    ir: "Iran",
-    jp: "Japon",
-    mx: "Mexique",
-    nl: "Pays-Bas",
-    no: "Norvège",
-    nz: "Nouvelle-Zélande",
-    pe: "Pérou",
-    pl: "Pologne",
-    ro: "Roumanie",
-    ru: "Russie",
-    tr: "Turquie",
-    ua: "Ukraine",
-    uk: "Royaume-Uni",
-    us: "États-Unis",
-    se: "Suède"
+    at: {title: "Autriche"},
+    au: {title: "Australie"},
+    be: {title: "Belgique"},
+    br: {title: "Brésil"},
+    ca: {title: "Canada"},
+    ch: {title: "Suisse"},
+    cn: {title: "Chine"},
+    de: {title: "Allemagne"},
+    dk: {title: "Danemark"},
+    es: {title: "Espagne"},
+    fi: {title: "Finlande"},
+    fr: {
+      title: "France",
+      region: {
+        idf: "Ile-de-France"
+      }
+    },
+    gr: {title: "Grèce"},
+    hu: {title: "Hongrie"},
+    ie: {title: "Irelande"},
+    it: {title: "Italie"},
+    ir: {title: "Iran"},
+    jp: {title: "Japon"},
+    mx: {title: "Mexique"},
+    nl: {title: "Pays-Bas"},
+    no: {title: "Norvège"},
+    nz: {title: "Nouvelle-Zélande"},
+    pe: {title: "Pérou"},
+    pl: {title: "Pologne"},
+    ro: {title: "Roumanie"},
+    ru: {title: "Russie"},
+    tr: {title: "Turquie"},
+    ua: {title: "Ukraine"},
+    uk: {title: "Royaume-Uni"},
+    us: {
+      title: "USA",
+      state: {
+        nm: "Nouveau-Mexique",
+        tn: "Tennessee"
+      }
+    },
+    se: {title: "Suède"}
   }
   nav = {
     start: "Début",

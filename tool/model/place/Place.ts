@@ -1,13 +1,23 @@
-import {State} from "./Country"
-
-export type Location = {
+export type PlaceLocation = {
   lat: number
   lng: number
 }
 
+export type Elevation = {
+  elevation: number
+}
+
 export class Place {
 
-  constructor(readonly title: string, readonly dirName?: string, readonly location?: Location, readonly state?: State) {
+  constructor(
+    readonly location: PlaceLocation,
+    readonly elevation: Elevation,
+    readonly dirName: string,
+    /**
+     * Remote service specific data.
+     */
+    readonly data?: any
+  ) {
   }
 }
 

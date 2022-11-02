@@ -6,6 +6,7 @@ describe("PeopleReplacer", () => {
   test("build people with one first name", () => {
     const replacer = new PeopleReplacer(["people/b/BeauJerome"])
     expect(replacer.getPeople("Jérôme Beau")).toEqual({
+      title: "Beau, Jérôme",
       countries: [],
       lastName: "Beau",
       firstNames: ["Jérôme"],
@@ -19,6 +20,7 @@ describe("PeopleReplacer", () => {
   test("build people with two first names", () => {
     const replacer = new PeopleReplacer(["people/b/BeauJeromePierre"])
     expect(replacer.getPeople("Jérôme Pierre Beau")).toEqual({
+      title: "Beau, Jérôme Pierre",
       countries: [],
       lastName: "Beau",
       firstNames: ["Jérôme", "Pierre"],
@@ -32,6 +34,7 @@ describe("PeopleReplacer", () => {
   test("build people with two last names", () => {
     const replacer = new PeopleReplacer(["people/v/VonBraunWerner"])
     expect(replacer.getPeople("Werner VonBraun")).toEqual({
+      title: "Von Braun, Werner",
       countries: [],
       lastName: "VonBraun",
       firstNames: ["Werner"],
@@ -45,6 +48,7 @@ describe("PeopleReplacer", () => {
   test("build people with one initial first names", () => {
     const replacer = new PeopleReplacer(["people/c/CondonEdwardU"])
     expect(replacer.getPeople("Edward U. Condon")).toEqual({
+      title: "Condon, Edward U.",
       countries: [],
       lastName: "Condon",
       firstNames: ["Edward", "U."],
@@ -58,6 +62,7 @@ describe("PeopleReplacer", () => {
   test("build people with last name first", () => {
     const replacer = new PeopleReplacer(["people/h/HynekJosefAllen"])
     expect(replacer.getPeople("Hynek, Josef Allen")).toEqual({
+      title: "Hynek, Josef Allen",
       countries: [],
       lastName: "Hynek",
       firstNames: ["Josef", "Allen"],
@@ -71,6 +76,7 @@ describe("PeopleReplacer", () => {
   test("Single name", () => {
     const replacer = new PeopleReplacer(["people/a/Aristote"])
     expect(replacer.getPeople("Aristote")).toEqual({
+      title: "Aristote",
       countries: [],
       lastName: "Aristote",
       firstNames: [],

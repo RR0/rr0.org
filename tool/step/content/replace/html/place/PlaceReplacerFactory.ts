@@ -3,6 +3,7 @@ import {PlaceReplacer} from "./PlaceReplacer"
 import {DomReplacer} from "../../DomReplacer"
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {PlaceService} from "../../../../../model/place/PlaceService"
+import {OrganizationService} from "../../../../../model/org/OrganizationService"
 
 /**
  * Creates replacers for place HTML in a given context.
@@ -11,13 +12,13 @@ export class PlaceReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected singleton?: PlaceReplacer
 
-  constructor(private service: PlaceService) {
+  constructor(private placeService: PlaceService, protected orgService: OrganizationService) {
   }
 
   async create(context: HtmlSsgContext): Promise<DomReplacer> {
-    const instance = new PlaceReplacer(this.service)
+    const instance = new PlaceReplacer(this.placeService, this.orgService)
     return {
-      async replace(original: Element): Promise<Element> {
+      async replace(original: HTMLElement): Promise<HTMLElement> {
         return instance.replacement(context, original)
       }
     }

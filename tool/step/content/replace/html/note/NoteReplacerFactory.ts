@@ -11,7 +11,7 @@ export class NoteReplacerFactory implements ReplacerFactory<DomReplacer> {
   async create(context: HtmlSsgContext): Promise<DomReplacer> {
     const instance = new NoteReplacer()
     return {
-      async replace(original: Element): Promise<Element> {
+      async replace(original: HTMLElement): Promise<HTMLElement> {
         return instance.replacement(context, original)
       }
     }

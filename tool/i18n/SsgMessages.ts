@@ -1,6 +1,9 @@
 import {Gender} from "../model/people/Gender"
-import {CountryCode} from "../model/place/CountryCode"
+import {CountryCode} from "../model/org/CountryCode"
 import {Occupation} from "../model/people/Occupation"
+import {FrCountryMessages} from "../model/org/FrCountry"
+import {CountryMessages} from "../model/org/Country"
+import {UsCountryMessages} from "../model/org/UsCountry"
 
 export class MessageUtils {
   static plural(n: number, word: string): string {
@@ -8,7 +11,10 @@ export class MessageUtils {
   }
 }
 
-type CountryMessages = { [key in CountryCode]: string }
+type CountriesMessages
+  = { [key in CountryCode]: CountryMessages }
+  & { us: UsCountryMessages }
+  & { fr: FrCountryMessages }
 
 type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
@@ -91,7 +97,7 @@ export interface SsgMessages {
   people: {
     occupation: OccupationMessages
   },
-  country: CountryMessages,
+  country: CountriesMessages,
   nav: {
     start: string
     contents: string

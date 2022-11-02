@@ -22,7 +22,7 @@ describe("DirectoryStep", () => {
 <!--#include virtual="/header-end.html" -->
 <p>Before</p>
 <!--#echo var="directories" -->
-<p>Aftere</p>
+<p>After</p>
 <!--#include virtual="/footer.html" -->`
     const context = testUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
     const step = new CaseDirectoryStep(

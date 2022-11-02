@@ -148,37 +148,48 @@ export class SsgMessages_en implements SsgMessages {
     }
   }
   country = {
-    at: "Austria",
-    au: "Australia",
-    be: "Belgium",
-    br: "Brasil",
-    ca: "Canada",
-    ch: "Switzerland",
-    cn: "China",
-    de: "Germany",
-    dk: "Denmark",
-    es: "Spain",
-    fi: "Finland",
-    fr: "France",
-    gr: "Greece",
-    hu: "Hungary",
-    ie: "Ireland",
-    it: "Italia",
-    ir: "Iran",
-    jp: "Japan",
-    mx: "Mexico",
-    nl: "Netherlands",
-    no: "Norway",
-    nz: "New Zealand",
-    pe: "Peru",
-    pl: "Poland",
-    ro: "Romania",
-    ru: "Russia",
-    tr: "Turkey",
-    ua: "Ukraine",
-    uk: "United Kingdom",
-    us: "USA",
-    se: "Sweden"
+    at: {title: "Austria"},
+    au: {title: "Australia"},
+    be: {title: "Belgium"},
+    br: {title: "Brasil"},
+    ca: {title: "Canada"},
+    ch: {title: "Switzerland"},
+    cn: {title: "China"},
+    de: {title: "Germany"},
+    dk: {title: "Denmark"},
+    es: {title: "Spain"},
+    fi: {title: "Finland"},
+    fr: {
+      title: "France",
+      region: {
+        idf: "Ile-de-France"
+      }
+    },
+    gr: {title: "Greece"},
+    hu: {title: "Hungary"},
+    ie: {title: "Ireland"},
+    it: {title: "Italia"},
+    ir: {title: "Iran"},
+    jp: {title: "Japan"},
+    mx: {title: "Mexico"},
+    nl: {title: "Netherlands"},
+    no: {title: "Norway"},
+    nz: {title: "New Zealand"},
+    pe: {title: "Peru"},
+    pl: {title: "Poland"},
+    ro: {title: "Romania"},
+    ru: {title: "Russia"},
+    tr: {title: "Turkey"},
+    ua: {title: "Ukraine"},
+    uk: {title: "United Kingdom"},
+    us: {
+      title: "USA",
+      state: {
+        nm: "New Mexico",
+        tn: "Tennessee"
+      }
+    },
+    se: {title: "Sweden"}
   }
   nav = {
     start: "Start",

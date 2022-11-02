@@ -1,34 +1,42 @@
 import {UrlUtil} from "../../../../../util/url/UrlUtil"
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {PlaceService} from "../../../../../model/place/PlaceService"
+import {OrganizationService} from "../../../../../model/org/OrganizationService"
 
 export class PlaceReplacer {
 
-  constructor(protected service: PlaceService) {
+  constructor(protected placeService: PlaceService, protected orgService: OrganizationService) {
   }
 
-  async replacement(context: HtmlSsgContext, original: Element): Promise<Element> {
-    let placeStr = original.innerHTML || ""
-    let place = await this.service.get(placeStr)
-    const titleAttr = placeStr.indexOf(place.title) < 0 ? ` title="${place.title}"` : ""
-    let url = place.dirName
+  async replacement(context: HtmlSsgContext, original: HTMLElement): Promise<HTMLElement> {
     let replacement: HTMLElement
-    const currentFileName = context.inputFile.name
-    const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
-    const outputDoc = context.outputFile.dom.window.document
-    if (url && url !== dirName) {
-      const anchor = replacement = outputDoc.createElement("a") as HTMLAnchorElement
-      anchor.href = UrlUtil.absolute(url)
+    const placeStr = original.innerHTML || ""
+    const place = await this.placeService.get(placeStr)
+    if (place) {
+      const dirName = place.dirName
+      if (dirName) {
+        const org = await this.orgService.read(dirName)
+        const orgTitle = org.title(context)
+        const titleAttr = placeStr.indexOf(orgTitle) < 0 ? ` title="${orgTitle}"` : ""
+        const outputDoc = context.outputFile.dom.window.document
+        const anchor = replacement = outputDoc.createElement("a") as HTMLAnchorElement
+        replacement.title = titleAttr
+        anchor.href = UrlUtil.absolute(dirName)
+        const location = place.location
+        if (location) {
+          replacement.setAttribute("onclick", `showMap(${location.lat},${location.lng})`)
+        }
+      } else {
+        console.warn("Place", place, "has no dirName")
+        const outputDoc = context.outputFile.dom.window.document
+        replacement = outputDoc.createElement("span")
+      }
     } else {
+      const outputDoc = context.outputFile.dom.window.document
       replacement = outputDoc.createElement("span")
     }
-    replacement.title = titleAttr
     replacement.innerHTML = placeStr
     replacement.translate = false
-    const location = place.location
-    if (location) {
-      replacement.setAttribute("onclick", `showMap(${location.lat},${location.lng})`)
-    }
     context.debug("\tReplacing place", original.innerHTML, "with", replacement)
     return replacement
   }

@@ -190,14 +190,18 @@ const ufoCasesDirectoryStep = new CaseDirectoryStep(
   outputFunc)
 
 getTimeFiles().then(async (timeFiles) => {
-  const placeFiles = await glob("place/*/*")
-  const placeService = new PlaceService()
-  for (const placeDir of placeFiles) {
+  const placeFiles = await glob("place/loc*.json")
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY
+  if (!apiKey) {
+    throw Error("GOOGLE_MAPS_API_KEY is required")
+  }
+  const placeService = new GooglePlaceService("place", apiKey)
+  for (const placeFile of placeFiles) {
     try {
-      const place = await placeService.read(placeDir)
-      console.log(`read place "${place.title}"`)
+      const place = await placeService.read(placeFile)
+      console.log(`read place "${placeFile}"`)
     } catch (e) {
-      console.warn("Place is not documented in", placeDir)
+      console.warn("Place is not documented in", placeFile)
     }
   }
   const contentConfigs: ContentStepConfig[] = [

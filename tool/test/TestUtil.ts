@@ -20,6 +20,7 @@ class TestUtil {
   newContext(inputFileName: string, contents: string): SsgContext {
     const context = new SsgContextImpl("fr", new TimeContext(this.intlOptions))
     context.inputFile = new FileInfo(inputFileName, "utf8", contents, new Date(), "fr")
+    context.outputFile = context.inputFile  // By default
     return context
   }
 
@@ -30,6 +31,7 @@ class TestUtil {
     const currentFile = context.inputFile
     context.inputFile = new HtmlFileInfo(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, title)
+    context.outputFile = context.inputFile  // By default
     return context as HtmlSsgContext
   }
 }

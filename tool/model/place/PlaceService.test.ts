@@ -1,25 +1,35 @@
 import {PlaceService} from "./PlaceService"
+import {GooglePlaceService} from "./GooglePlaceService"
 
 describe("PlaceService", () => {
 
-  test("build place with one first name", async () => {
-    const service = new PlaceService()
-    expect(await service.get("LANL")).toEqual({
-      dirName: "org/us/state/nm/LANL",
+  let apiKey: any
+
+  beforeAll(() => {
+    apiKey = process.env.GOOGLE_MAPS_API_KEY
+    if (!apiKey) {
+      throw Error("GOOGLE_MAPS_API_KEY is required")
+    }
+  })
+
+  xtest("build place with one first name", async () => {
+    const service = new GooglePlaceService("place", apiKey)
+    const laln = await service.get("LANL")
+    expect(laln).toEqual({
+      dirName: "",
       location: {
         "lat": 35.8440582,
         "lng": -106.287162
       },
       state: {
-        code: "nm",
-        dirName: "org/us/state/nm/"
+        code: "nm"
       },
       title: "LANL"
     })
   })
 
-  test("read", async () => {
-    const service = new PlaceService()
+  xtest("read", async () => {
+    const service = new GooglePlaceService("place", apiKey)
     expect(await service.read("org/us/state/nm/LosAlamosNationalLaboratories")).toEqual({
       "dirName": "org/us/state/nm/LosAlamosNationalLaboratories",
       "location": {

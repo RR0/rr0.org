@@ -39,6 +39,8 @@ import {SsiEchoVarReplaceCommand} from "./step/content/replace/html/ssi/SsiEchoV
 import {SsgContextImpl} from "./SsgContextImpl"
 import {StringEchoVarReplaceCommand} from "./step/content/replace/html/StringEchoVarReplaceCommand"
 import {GooglePlaceService} from "./model/place/GooglePlaceService"
+import {PlaceReplacerFactory} from "./step/content/replace/html/place/PlaceReplacerFactory"
+import {OrganizationService} from "./model/org/OrganizationService"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -202,20 +204,14 @@ getTimeFiles().then(async (timeFiles) => {
       outputFunc, []))
   }
 
-  const placeFiles = await glob("place/loc*.json")
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
     throw Error("GOOGLE_MAPS_API_KEY is required")
   }
   const placeService = new GooglePlaceService("place", apiKey)
-  for (const placeFile of placeFiles) {
-    try {
-      const place = await placeService.read(placeFile)
-      console.log(`read place "${placeFile}"`)
-    } catch (e) {
-      console.warn("Place is not documented in", placeFile)
-    }
-  }
+
+  const orgService = new OrganizationService("org")
+
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
@@ -233,7 +229,7 @@ getTimeFiles().then(async (timeFiles) => {
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
-        // new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService)),
+        new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
         new ClassRegexReplaceCommand("temoin(.?)", new CaviarReplacerFactory()),
         new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
         new ClassDomReplaceCommand("source", new SourceReplacerFactory()),

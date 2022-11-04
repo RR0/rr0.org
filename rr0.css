@@ -17,7 +17,7 @@ body, aside {
   vertical-align: sub
 }
 
-#main, body, aside{
+#main, body {
   height: 100%
 }
 
@@ -66,10 +66,6 @@ body {
   line-height: 1.5em;
 }
 
-body, aside {
-  position: relative
-}
-
 body.wait, body.wait * {
   cursor: wait
 }
@@ -79,6 +75,7 @@ body.wait, body.wait * {
   top: var(--header-height);
   right: 0;
   width: 0;
+  bottom: 0;
 }
 
 .text {
@@ -340,7 +337,7 @@ nav ul > li {
 }
 
 .outline li {
-  border-top: 0.5px solid lightgrey;
+  border-top: 0.5px solid gray;
 }
 .outline li h2, .outline li h3, .outline li h4, .outline li section h1, section .outline li h1 {
   background: 0 0;
@@ -1177,11 +1174,12 @@ dt, dd {
   color: gray;
 }
 
-.place {
-  color: #006
+.place, .plac {
+  color: #006;
+  cursor: pointer;
 }
 
-.place:hover {
+.place:hover, .plac:hover {
   background-color: #f5f5ff;
   color: navy;
   border-radius: .2em
@@ -1192,19 +1190,10 @@ dt, dd {
   height: 0
 }
 
-#map-canvas {
+#map-canvas, #map-canvas iframe {
   width: 100%;
-  height: 100%
-}
-
-#map-canvas label {
-  width: auto;
-  display: inline
-}
-
-#map-canvas img {
-  max-width: none;
-  transition: none
+  height: 100%;
+  border: 0;
 }
 
 .map {
@@ -1563,11 +1552,11 @@ dl.bullet dd {
     background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
   }
 
-  .place {
+  .place, .plac. {
     color: lightskyblue;
   }
 
-  .place:hover {
+  .place:hover, .plac:hover {
     background-color: darkslategray;
   }
 

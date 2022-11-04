@@ -1,3 +1,8 @@
 export interface Rr0Data {
-  dirName: string
+  /**
+   * The directory where the data is stored, relatively to RR0's root.
+   *
+   * Should end with a trailing slash ("/").
+   */
+  dirName?: string
 }

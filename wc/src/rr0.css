@@ -1220,16 +1220,6 @@ pre code {
     height: 100%
 }
 
-#map-canvas label {
-    width: auto;
-    display: inline
-}
-
-#map-canvas img {
-    max-width: none;
-    transition: none
-}
-
 .map {
     transition: width .3s ease, height .3s ease;
     box-shadow: .8em .8em 1.6em #555;

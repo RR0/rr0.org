@@ -1,3 +1,5 @@
+import {Rr0Data} from "../Rr0Data"
+
 export type PlaceLocation = {
   lat: number
   lng: number
@@ -8,12 +10,12 @@ export type Elevation = {
   data?: any
 }
 
-export class Place {
+export class Place implements Rr0Data {
 
   constructor(
     readonly location: PlaceLocation,
-    readonly elevation: Elevation,
-    readonly dirName: string,
+    readonly elevation?: Elevation,
+    readonly dirName?: string,
     /**
      * Remote service specific data.
      */

@@ -12,14 +12,33 @@ export class GooglePlaceService extends PlaceService {
     this.client = new Client({})
   }
 
-  protected async elevation(location: PlaceLocation): Promise<Elevation> {
+  protected async getElevation(location: PlaceLocation): Promise<Elevation | undefined> {
+    console.debug("Looking for elevation of", location)
     const elevationResponse = await this.client.elevation({params: {locations: [location], key: this.apiKey}})
     const data = elevationResponse.data
-    const result = data.results[0]
-    return {elevation: result.elevation, data: result}
+    switch (data.status) {
+      case Status.OK:
+        const results = data.results
+        switch (results.length) {
+          case 0:
+            throw Error(`No results when looking for elevation of ${JSON.stringify(location)}`)
+          case 1:
+            const result = results[0]
+            return {elevation: result.elevation, data: result}
+          default:
+            throw Error(`More than 1 result when looking for elevation of ${JSON.stringify(location)}`)
+        }
+      case Status.NOT_FOUND:
+      case Status.ZERO_RESULTS:
+        break
+      default:
+        throw Error(`Unexpected status ${data.status} when looking for elevation of ${JSON.stringify(
+          location)}: ${data.error_message}`)
+    }
   }
 
   protected async geocode(address: string): Promise<{ location: PlaceLocation, data: any } | undefined> {
+    console.debug("Geocoding", address)
     const response = await this.client.geocode({params: {address, key: this.apiKey}})
     const data = response.data
     switch (data.status) {
@@ -27,19 +46,19 @@ export class GooglePlaceService extends PlaceService {
         const results = data.results
         switch (results.length) {
           case 0:
-            throw Error(`No results when geocoding ${address}`)
+            throw Error(`No results when geocoding "${address}"`)
           case 1:
-            const result = results[0]
-            const location = result.geometry.location
-            return {location, data: result}
+            const singleResult = results[0]
+            const location = singleResult.geometry.location
+            return {location, data: singleResult}
           default:
-            throw Error(`Too many results when geocoding "${address}"`)
+            throw Error(`More than 1 result when geocoding "${address}": ${JSON.stringify(results)}`)
         }
       case Status.NOT_FOUND:
       case Status.ZERO_RESULTS:
         break
       default:
-        throw Error(data.error_message)
+        throw Error(`Unexpected status ${data.status} when geocoding "${address}": ${data.error_message}`)
     }
   }
 }

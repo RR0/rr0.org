@@ -2,7 +2,7 @@
 
 :root {
   --mobile-nav-height: 2rem;
-  --header-height: 5rem;
+  --header-height: 6.5rem;
   --nav-width: 18vw;
   --aside-width: 18vw;
   --margin: 3vw;
@@ -199,7 +199,6 @@ form {
 
 #main-header h1 {
   font-family: inherit;
-  line-height: 100%;
   letter-spacing: 1px;
   color: #666;
   padding: .8em;
@@ -581,7 +580,7 @@ embed, iframe, img, object {
   }
 
   body {
-    padding-top: 5rem;
+    padding-top: var(--header-height);
     margin-left: 21vw;
     width: 57vw;
   }
@@ -1374,10 +1373,10 @@ dl.bullet dd {
 
 #main-header {
   position: sticky;
-  top: -100%;
+  top: calc(var(--header-height) * -1);
   margin-left: -3vw;
   margin-right: calc(0 - var(--margin));
-  margin-top: -7rem;
+  margin-top: calc(var(--header-height) * -1 - var(--mobile-nav-height));
   background-size: cover!important;
   background-position: center!important;
   background-image: linear-gradient(to right,rgba(224,224,233, 0.5) 0,rgba(255,255,255,.5) 100%);
@@ -1398,7 +1397,7 @@ dl.bullet dd {
 }
 .anchor {
   position: relative;
-  top: -5rem;
+  top: calc(var(--header-height) * -1);
 }
 
 @media screen {

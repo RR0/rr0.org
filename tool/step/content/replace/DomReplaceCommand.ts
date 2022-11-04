@@ -2,13 +2,10 @@ import {ReplaceCommand} from "./ReplaceCommand"
 import {FileInfo} from "../../../util/file/FileInfo"
 import {HtmlSsgContext} from "../../../HtmlSsgContext"
 import {DomReplacer} from "./DomReplacer"
-import jsdom from "jsdom"
 
-const {JSDOM} = jsdom
+export abstract class DomReplaceCommand<T extends HTMLElement = HTMLElement> implements ReplaceCommand<HtmlSsgContext> {
 
-export abstract class DomReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
-
-  protected constructor(protected selector: string) {
+  constructor(protected selector: string) {
   }
 
   async execute(context: HtmlSsgContext): Promise<FileInfo> {
@@ -32,5 +29,5 @@ export abstract class DomReplaceCommand implements ReplaceCommand<HtmlSsgContext
     return fileInfo
   }
 
-  protected abstract createReplacer(context: HtmlSsgContext): Promise<DomReplacer>
+  protected abstract createReplacer(context: HtmlSsgContext): Promise<DomReplacer<T>>
 }

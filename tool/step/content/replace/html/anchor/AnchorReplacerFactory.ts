@@ -1,27 +1,27 @@
 import {ReplacerFactory} from "../../ReplacerFactory"
-import {RegexReplacer} from "../../RegexReplacer"
-import {SsgContext} from "../../../../../SsgContext"
+import {DomReplacer} from "../../DomReplacer"
 import {AnchorReplacer} from "./AnchorReplacer"
+import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 
-export class AnchorReplacerFactory implements ReplacerFactory<RegexReplacer> {
+export class AnchorReplacerFactory implements ReplacerFactory<DomReplacer<HTMLAnchorElement>> {
 
   protected singleton?: AnchorReplacer
 
-  async create(context: SsgContext): Promise<RegexReplacer> {
+  constructor(protected baseUrl: string) {
+  }
+
+  async create(context: HtmlSsgContext): Promise<DomReplacer<HTMLAnchorElement>> {
     const instance = await this.getInstance()
     return {
-      replace: (matchedTagStr: string, ...args: any[]): string => {
-        const dir = args[0]
-        const file = args[2]
-        const contents = args[3]?.trim()
-        return instance.replacement(context, matchedTagStr, dir, file, contents)
+      async replace(original: HTMLAnchorElement): Promise<HTMLAnchorElement> {
+        return instance.replacement(context, original)
       }
     }
   }
 
   protected async getInstance(): Promise<AnchorReplacer> {
     if (!this.singleton) {
-      this.singleton = new AnchorReplacer()
+      this.singleton = new AnchorReplacer(this.baseUrl)
     }
     return this.singleton
   }

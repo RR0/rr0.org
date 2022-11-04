@@ -1,27 +1,23 @@
-import {SsgContext} from "../../../../../SsgContext"
+import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 
 export class AnchorReplacer {
-  protected static readonly blankTarget = ` target="_blank"`
 
-  replacement(context: SsgContext, substring: string, dir: string, file: string | undefined, contents: string): string {
-    let replacement: string | undefined
-    if (dir) {
-      let target: string
-      if (dir.startsWith("http") && substring.indexOf(AnchorReplacer.blankTarget) < 0) {
-        target = AnchorReplacer.blankTarget
-      } else {
-        if (!file && !dir.endsWith("/")) {
-          dir += "/"
-        }
-        target = ""
-      }
-      replacement = `<a href="${dir}"${target}>${contents}</a>`
+  constructor(protected baseUrl: string) {
+  }
+
+  async replacement(context: HtmlSsgContext, a: HTMLAnchorElement): Promise<HTMLAnchorElement> {
+    const href = a.href
+    const baseUrl = this.baseUrl + context.inputFile.name
+    const url = new URL(href, baseUrl)
+    if (href.startsWith("https://")) {
+      a.target = "_blank"
+      context.debug("Adding target in", a.outerHTML)
     }
-    if (!replacement) {
-      replacement = substring
-    } else {
-      context.debug("\tReplacing anchor", substring, "with", replacement)
+    const pathname = url.pathname
+    if (url.protocol.startsWith("http") && pathname.indexOf(".") < 0 && !pathname.endsWith("/")) {
+      a.href += "/"
+      context.debug("Adding traling slash in", a.outerHTML)
     }
-    return replacement
+    return a
   }
 }

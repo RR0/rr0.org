@@ -41,6 +41,10 @@ import {StringEchoVarReplaceCommand} from "./step/content/replace/html/StringEch
 import {GooglePlaceService} from "./model/place/GooglePlaceService"
 import {PlaceReplacerFactory} from "./step/content/replace/html/place/PlaceReplacerFactory"
 import {OrganizationService} from "./model/org/OrganizationService"
+import {AnchorReplacerFactory} from "./step/content/replace/html/anchor/AnchorReplacerFactory"
+import {DomReplaceCommand} from "./step/content/replace/DomReplaceCommand"
+import {DomReplacer} from "./step/content/replace/DomReplacer"
+import {HtmlSsgContext} from "./HtmlSsgContext"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -212,6 +216,7 @@ getTimeFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService("org")
 
+  const anchorReplacerFactory = new AnchorReplacerFactory("https://rr0.org/")
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
@@ -234,8 +239,12 @@ getTimeFiles().then(async (timeFiles) => {
         new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
         new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
-        new OutlineReplaceCommand()
-        // new HtmlAnchorReplaceCommand(new AnchorReplacerFactory())
+        new OutlineReplaceCommand(),
+        new class extends DomReplaceCommand<HTMLAnchorElement> {
+          protected createReplacer(context: HtmlSsgContext): Promise<DomReplacer<HTMLAnchorElement>> {
+            return anchorReplacerFactory.create(context)
+          }
+        }("a")
       ],
       getOutputFile(context: SsgContext): FileInfo {
         return context.inputFile

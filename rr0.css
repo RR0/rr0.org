@@ -62,6 +62,7 @@ body {
   padding: 0;
   padding-top: calc(var(--header-height) + var(--mobile-nav-height));
   margin-left: var(--margin);
+  margin-right: var(--margin);
   -webkit-overflow-scrolling: touch;
   line-height: 1.5em;
 }
@@ -201,6 +202,7 @@ form {
   font-family: inherit;
   letter-spacing: 1px;
   color: #666;
+  line-height: 1.5;
   padding: .8em;
   padding-left: 0.6em;
   font-weight: 400;
@@ -1373,9 +1375,9 @@ dl.bullet dd {
 
 #main-header {
   position: sticky;
-  top: calc(var(--header-height) * -1);
-  margin-left: -3vw;
-  margin-right: calc(0 - var(--margin));
+  top: -100%;
+  margin-left: calc(var(--margin) * -1);
+  margin-right: calc(var(--margin) * -1);
   margin-top: calc(var(--header-height) * -1 - var(--mobile-nav-height));
   background-size: cover!important;
   background-position: center!important;
@@ -1547,6 +1549,7 @@ dl.bullet dd {
   h2, h3, h4, section h1, section section h1 {
     color: white;
     background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
+    border-bottom: none;
   }
 
   .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {
@@ -1572,6 +1575,10 @@ dl.bullet dd {
 
   code, pre {
     background-color: #2f3032;
+  }
+
+  section:after {
+    border-bottom-color: #555;
   }
 }
 

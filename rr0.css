@@ -337,7 +337,7 @@ nav ul > li {
 }
 
 .outline li {
-  border-top: 0.5px solid gray;
+  border-top: 0.5px solid lightgray;
 }
 .outline li h2, .outline li h3, .outline li h4, .outline li section h1, section .outline li h1 {
   background: 0 0;
@@ -1540,6 +1540,9 @@ dl.bullet dd {
 
   .outline, nav ul {
     background: rgb(50, 50, 60);
+  }
+  .outline li {
+    border-color: gray;
   }
 
   h2, h3, h4, section h1, section section h1 {

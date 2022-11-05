@@ -1399,7 +1399,7 @@ dl.bullet dd {
 }
 .anchor {
   position: relative;
-  top: calc(var(--header-height) * -1);
+  top: calc((var(--header-height) + 0.5rem) * -1);
 }
 
 @media screen {
@@ -1535,21 +1535,23 @@ dl.bullet dd {
     text-shadow: none;
   }
 
-  nav, .outline {
-    background: black;
+  #main-nav {
+    background-color: black;
+    box-shadow: 0 1px 4px rgb(255 255 255 / 30%), 0 0 40px rgb(255 255 255 / 10%) inset
   }
 
   .outline, nav ul {
-    background: rgb(50, 50, 60);
+    background: rgb(20, 20, 25);
   }
   .outline li {
-    border-color: gray;
+    border-color: rgb(80,80,80);
   }
 
   h2, h3, h4, section h1, section section h1 {
     color: white;
     background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
     border-bottom: none;
+    border-top-left-radius: 0.3em;
   }
 
   .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {
@@ -1603,6 +1605,10 @@ dl.bullet dd {
   }
   #main-nav li {
     display: list-item;
+  }
+
+  blockquote ol > li, blockquote p, blockquote ul > li, q {
+    background: repeat-x rgba(250, 250, 255, .3)
   }
 }
 

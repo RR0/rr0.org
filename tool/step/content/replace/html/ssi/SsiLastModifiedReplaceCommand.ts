@@ -11,7 +11,7 @@ export class SsiLastModifiedReplaceCommand extends RegexReplaceCommand {
   protected async createReplacer(context: SsgContext): Promise<RegexReplacer> {
     return {
       replace: (substring: string, ...args: any[]): string => {
-        const timeFormat = args[0]
+        const timeFormat = args[0]  // TODO: Support it
         const fileInfo = context.inputFile
         return fileInfo.lastModified.toLocaleDateString(context.locales, context.time.options)
       }

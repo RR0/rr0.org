@@ -4,6 +4,9 @@ import {RegexReplacer} from "../../RegexReplacer"
 import {SsgContext} from "../../../../../SsgContext"
 import {getFileInfo} from "../../../../../util/file/FileInfo"
 
+/**
+ * Replaces SSI's <!-- #include virtual="fileName" --> by fileName's contents.
+ */
 export class SsiIncludeReplaceCommand extends RegexReplaceCommand {
 
   constructor() {

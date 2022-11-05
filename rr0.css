@@ -1197,6 +1197,10 @@ dt, dd {
   border: 0;
 }
 
+#map-canvas {
+  display: none;
+}
+
 .map {
   transition: width .3s ease, height .3s ease;
   box-shadow: .8em .8em 1.6em #555;

@@ -45,7 +45,7 @@ import {AnchorReplaceCommand} from "./step/content/replace/html/anchor/AnchorRep
 
 const args = CLI.getArgs()
 const contents = args.contents
-const roots = contents
+const contentRoots = contents
   ? contents.split(",")
   : [
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
@@ -149,7 +149,6 @@ const scientistsDirectoryStep = new PeopleDirectoryStep(
     Occupation.sociologist, Occupation.softwareEngineer
   ])
 
-
 const ufologistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
   ["people/Astronomers_fichiers"],
@@ -216,7 +215,7 @@ getTimeFiles().then(async (timeFiles) => {
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
-      roots,
+      roots: contentRoots,
       replacements: [
         new SsiIncludeReplaceCommand(),
         new TitleReplaceCommand([timeDefaultHandler]),

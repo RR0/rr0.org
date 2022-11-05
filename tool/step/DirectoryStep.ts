@@ -2,12 +2,17 @@ import {SsgStep, SsgStepResult} from "./SsgStep"
 import {OutputFunc, SsgConfig} from "../Ssg"
 import {SsgContext} from "../SsgContext"
 import {dirNames} from "../util/file/FileUtil"
-import {FileInfo, getFileInfo} from "../util/file/FileInfo"
+import {getFileInfo} from "../util/file/FileInfo"
 
 export interface DirectoryResult extends SsgStepResult {
   directoryCount: number
 }
 
+/**
+ * A step to enrich a template from some subdirectories processing.
+ *
+ * A typical use case is to generate an index page from subdirectories.
+ */
 export abstract class DirectoryStep implements SsgStep {
 
   protected constructor(protected dirs: string[], protected excludedDirs: string[], protected template: string,
@@ -15,14 +20,15 @@ export abstract class DirectoryStep implements SsgStep {
   }
 
   async execute(context: SsgContext, config: SsgConfig): Promise<DirectoryResult> {
-    const templateFileInfo = getFileInfo(context, `${config.outDir}/${this.template}`)
+    context.inputFile = getFileInfo(context, this.template)
+    context.outputFile = getFileInfo(context, `${config.outDir}/${this.template}`)
     let dirames = (await this.findDirs(this.dirs))
       .filter(dirName => !this.excludedDirs.includes(dirName))
-    await this.processDirs(context, dirames, templateFileInfo)
+    await this.processDirs(context, dirames)
     return {directoryCount: dirames.length}
   }
 
-  protected abstract processDirs(context: SsgContext, dirames: string[], fileInfo: FileInfo): Promise<void>
+  protected abstract processDirs(context: SsgContext, dirames: string[]): Promise<void>
 
   private async findDirs(fromDirs: string[]) {
     let dirames: string[] = []

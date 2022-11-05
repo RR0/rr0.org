@@ -4,15 +4,31 @@ import {FileInfo, getFileInfo} from "./FileInfo"
 const jsdom = require("jsdom")
 const {JSDOM} = jsdom
 
+export type HtmlMeta = {
+  url?: string
+  author: string[]
+  copyright?: string
+}
+
+export type HtmlLinks = {
+  start?: Link
+  contents?: Link
+  prev?: Link
+  next?: Link
+}
+
+/**
+ * File info augmented with HTML semantics, such as:
+ * - head info
+ *   - meta tags
+ *   - links tags
+ *   - title
+ */
 export class HtmlFileInfo extends FileInfo {
 
   constructor(
     name: string, encoding: BufferEncoding, contents: string, lastModified: Date, lang: string | string[],
-    public title?: string | undefined, readonly titleUrl?: string, readonly authors: string[] = [],
-    public copyright?: string | undefined,
-    readonly relStart?: Link | undefined, readonly relContents?: Link | undefined, readonly relPrev?: Link | undefined,
-    readonly relNext?: Link | undefined
-  ) {
+    readonly meta: HtmlMeta, readonly links: HtmlLinks, public title?: string) {
     super(name, encoding, contents, lastModified, lang)
   }
 
@@ -40,7 +56,7 @@ export class HtmlFileInfo extends FileInfo {
   }
 }
 
-function meta(name: string, doc: Document): string[] {
+function getMeta(name: string, doc: Document): string[] {
   const metaElems = doc.querySelectorAll(`meta[name='${name}']`)
   return Array.from(metaElems).map(metaElem => (metaElem as HTMLMetaElement).content)
 }
@@ -58,7 +74,7 @@ export interface Link {
   url: string
 }
 
-function link(rel: LinkType, doc: Document): Link | undefined {
+function getLink(rel: LinkType, doc: Document): Link | undefined {
   const linkElem = doc.querySelector(`link[rel='${rel}']`) as HTMLLinkElement
   if (linkElem) {
     return {text: linkElem.title, url: linkElem.href, type: rel}
@@ -77,18 +93,17 @@ export function getHtmlFileInfo(context: SsgContext, fileName: string): HtmlFile
     const split = elemTitle.lastIndexOf(" - ")
     title = split > 0 ? elemTitle.substring(0, split) : elemTitle
   }
-  const titleUrl = meta("url", doc)[0]
-  const authors = meta("author", doc)
-  const copyright = meta("copyright", doc)[0]
-  const relStart = link(LinkType.start, doc)
-  const relContents = link(LinkType.contents, doc)
-  const relPrev = link(LinkType.prev, doc)
-  const relNext = link(LinkType.next, doc)
-  return new HtmlFileInfo(
-    fileInfo.name, fileInfo.encoding, fileInfo.contents, fileInfo.lastModified, fileInfo.lang,
-    title, titleUrl, authors, copyright,
-    relStart, relContents, relPrev, relNext
-  )
+  const url = getMeta("url", doc)[0]
+  const author = getMeta("author", doc)
+  const copyright = getMeta("copyright", doc)[0]
+  const meta: HtmlMeta = {url, author, copyright}
+  const start = getLink(LinkType.start, doc)
+  const contents = getLink(LinkType.contents, doc)
+  const prev = getLink(LinkType.prev, doc)
+  const next = getLink(LinkType.next, doc)
+  const links: HtmlLinks = {start, contents, prev, next}
+  return new HtmlFileInfo(fileInfo.name, fileInfo.encoding, fileInfo.contents, fileInfo.lastModified, fileInfo.lang,
+    meta, links, title)
 }
 
 

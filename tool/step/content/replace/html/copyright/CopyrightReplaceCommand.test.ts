@@ -9,9 +9,9 @@ describe("CopyrightReplaceCommand", () => {
     const command = new SsiEchoVarReplaceCommand("copyright", [])
     const context = testUtil.newHtmlContext("time/1/9/5/4/index.html",
       `This is published by <!--#echo var="copyright" -->!`)
-    context.inputFile.copyright = undefined
+    context.inputFile.meta.copyright = undefined
     const file = await command.execute(context) as HtmlFileInfo
-    expect(file.copyright).toBeUndefined()
+    expect(file.meta.copyright).toBeUndefined()
     expect(file.contents).toBe(`This is published by !`)
   })
 
@@ -19,9 +19,9 @@ describe("CopyrightReplaceCommand", () => {
     const command = new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright])
     const context = testUtil.newHtmlContext("time/1/9/5/4/index.html",
       `This is published by <!--#echo var="copyright" -->!`)
-    context.inputFile.copyright = undefined
+    context.inputFile.meta.copyright = undefined
     const file = await command.execute(context) as HtmlFileInfo
-    expect(file.copyright).toBeUndefined()
+    expect(file.meta.copyright).toBeUndefined()
     expect(file.contents).toBe(`This is published by <a href="/GFDL.html">RR0</a>!`)
   })
 
@@ -29,9 +29,9 @@ describe("CopyrightReplaceCommand", () => {
     const command = new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright])
     const context = testUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="copyright" -->!`)
-    context.inputFile.copyright = "Some editor"
+    context.inputFile.meta.copyright = "Some editor"
     const file = await command.execute(context) as HtmlFileInfo
-    expect(file.copyright).toBe("Some editor")
+    expect(file.meta.copyright).toBe("Some editor")
     expect(file.contents).toBe("This is published by Some editor!")
   })
 })

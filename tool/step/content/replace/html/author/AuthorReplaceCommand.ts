@@ -3,24 +3,24 @@ import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {SsiEchoVarReplaceCommand} from "../ssi/SsiEchoVarCommand"
 
 /**
- * Replaces "<!--#echo var="authors" -->" by the page's <meta name="author">s' content.
+ * Replaces "<!--#echo var="author" -->" by the page's <meta name="author">s' content.
  */
 export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
 
   constructor() {
-    super("authors")
+    super("author")
   }
 
   protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
         const fileInfo = context.inputFile
-        let authors = fileInfo.authors
+        let authors = fileInfo.meta.author
         let authorsHtml = ""
         for (const author of authors) {
           authorsHtml += `<span class="people">${author}</span>`
         }
-        const copyright = fileInfo.copyright
+        const copyright = fileInfo.meta.copyright
         if (copyright) {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }

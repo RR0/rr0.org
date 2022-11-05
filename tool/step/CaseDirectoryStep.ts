@@ -1,7 +1,7 @@
 import {OutputFunc} from "../Ssg"
 import {SsgContext} from "../SsgContext"
 import {HtmlTag} from "../util/HtmlTag"
-import {FileInfo, getFileInfo} from "../util/file/FileInfo"
+import {getFileInfo} from "../util/file/FileInfo"
 import {DirectoryStep} from "./DirectoryStep"
 import {StringUtil} from "../util/string/StringUtil"
 
@@ -43,9 +43,9 @@ export class CaseDirectoryStep extends DirectoryStep {
     super(dirs, excludedDirs, template, outputFunc)
   }
 
-  protected async processDirs(context: SsgContext, dirNames: string[], fileInfo: FileInfo) {
+  protected async processDirs(context: SsgContext, dirames: string[]): Promise<void> {
     const cases: Case[] = []
-    for (const dirName of dirNames) {
+    for (const dirName of dirames) {
       const dirCase: Case = {dirName, time: "", title: ""}
       cases.push(dirCase)
       try {
@@ -92,7 +92,8 @@ export class CaseDirectoryStep extends DirectoryStep {
       return HtmlTag.toString("li", a, attrs)
     })
     const directoriesHtml = HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
-    fileInfo.contents = fileInfo.contents.replace(`<!--#echo var="directories" -->`, directoriesHtml)
-    await this.outputFunc(context, fileInfo, "")
+    context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
+      directoriesHtml)
+    await this.outputFunc(context, context.outputFile, "")
   }
 }

@@ -6,7 +6,7 @@ import {SsgContext} from "../../../SsgContext"
 /**
  * Performs replacements using a Regular Expression to find patterns to replace.
  */
-export abstract class RegexReplaceCommand implements ReplaceCommand<SsgContext> {
+export abstract class RegexReplaceCommand<C extends SsgContext = SsgContext> implements ReplaceCommand<C> {
 
   protected constructor(protected regex: RegExp) {
   }
@@ -16,7 +16,7 @@ export abstract class RegexReplaceCommand implements ReplaceCommand<SsgContext> 
    *
    * @param context
    */
-  async execute(context: SsgContext): Promise<FileInfo> {
+  async execute(context: C): Promise<FileInfo> {
     const fileInfo = context.inputFile
     let contents = fileInfo.contents
     let result = contents
@@ -30,5 +30,5 @@ export abstract class RegexReplaceCommand implements ReplaceCommand<SsgContext> 
     return fileInfo
   }
 
-  protected abstract createReplacer(context: SsgContext): Promise<RegexReplacer>
+  protected abstract createReplacer(context: C): Promise<RegexReplacer>
 }

@@ -30,19 +30,19 @@ export class LinkReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
       console.error("Could not find nav list in " + context.outputFile.name)
       return inputFile
     }
-    const relStart = inputFile.relStart || this.defaultHandler?.start(context)
+    const relStart = inputFile.links.start || this.defaultHandler?.start(context)
     if (relStart) {
       this.addLink(context, ul, relStart)
     }
-    const relContents = inputFile.relContents || this.defaultHandler?.contents(context)
+    const relContents = inputFile.links.contents || this.defaultHandler?.contents(context)
     if (relContents) {
       this.addLink(context, ul, relContents)
     }
-    const relPrev = inputFile.relPrev || this.defaultHandler?.prev(context)
+    const relPrev = inputFile.links.prev || this.defaultHandler?.prev(context)
     if (relPrev) {
       this.addLink(context, ul, relPrev)
     }
-    const relNext = inputFile.relNext || this.defaultHandler?.next(context)
+    const relNext = inputFile.links.next || this.defaultHandler?.next(context)
     if (relNext) {
       this.addLink(context, ul, relNext)
     }

@@ -1,7 +1,9 @@
 import {ContextVarName, SsgContext} from "./SsgContext"
-import {HtmlFileInfo} from "./util/file/HtmlFileInfo"
+import {HtmlFileInfo, HtmlLinks, HtmlMeta} from "./util/file/HtmlFileInfo"
 
-export type HtmlVarName = ContextVarName | keyof HtmlFileInfo
+export type HtmlContextVarName = ContextVarName | keyof HtmlMeta | keyof HtmlLinks
+
+export type HtmlVarName = HtmlContextVarName | keyof HtmlFileInfo
 
 export interface HtmlSsgContext extends SsgContext {
   inputFile: HtmlFileInfo

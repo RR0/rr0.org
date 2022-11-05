@@ -50,7 +50,7 @@ describe("PlaceReplacer", () => {
     return placeTag
   }
 
-  test("link to existing organization", async () => {
+  xtest("link to existing organization", async () => {
     const location = {lat: 35.8440582, lng: -106.287162}
     const elevation = 2161.025390625
     const dirName = "org/us/state/nm/lanl/"
@@ -84,7 +84,7 @@ describe("PlaceReplacer", () => {
     expect(replacement.tagName).toBe("SPAN")
     expect(replacement.className).toBe("plac")
     expect(replacement.textContent).toBe(text)
-    expect(replacement.getAttribute("onclick")).toBe(`showMap(${location.lat},${location.lng})`)
+    expect(replacement.getAttribute("onclick")).toBe(`showMap('${text}')`)
   })
 
 })

@@ -13,8 +13,8 @@ describe("HtmlFileInfo", () => {
     const context = testUtil.newHtmlContext(fileName, fileContents)
     const fileInfo = getHtmlFileInfo(context, fileName)
     expect(fileInfo.title).toBe("Introduction à l'édition du NCAS")
-    expect(fileInfo.authors).toEqual(["Paul Jaffe (président du NCAS, janvier 1999)"])
-    expect(fileInfo.titleUrl).toBe("https://www.ncas.org/condon/text/intro.htm")
+    expect(fileInfo.meta.author).toEqual(["Paul Jaffe (président du NCAS, janvier 1999)"])
+    expect(fileInfo.meta.url).toBe("https://www.ncas.org/condon/text/intro.htm")
   })
 
   test("undefined title", () => {
@@ -25,7 +25,7 @@ describe("HtmlFileInfo", () => {
     const context = testUtil.newHtmlContext(fileName, fileContents)
     const fileInfo = getHtmlFileInfo(context, fileName)
     expect(fileInfo.title).toBe("Introduction à l'édition du NCAS")
-    expect(fileInfo.authors).toEqual(["Paul Jaffe (président du NCAS, janvier 1999)"])
-    expect(fileInfo.titleUrl).toBe("https://www.ncas.org/condon/text/intro.htm")
+    expect(fileInfo.meta.author).toEqual(["Paul Jaffe (président du NCAS, janvier 1999)"])
+    expect(fileInfo.meta.url).toBe("https://www.ncas.org/condon/text/intro.htm")
   })
 })

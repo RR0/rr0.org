@@ -25,7 +25,7 @@ export class TitleReplaceCommand extends SsiEchoVarReplaceCommand {
           title = fileInfo.name
         }
         fileInfo.title = title
-        const titleUrl = fileInfo.titleUrl
+        const titleUrl = fileInfo.meta.url
         return titleUrl ? `<a href="${titleUrl}" target="_blank">${title}</a>` : title
       }
     }

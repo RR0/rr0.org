@@ -7,7 +7,7 @@ function find(_e) {
   const textInput = form.querySelector("input[type='search']")
 
   function normalize(str) {
-    return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim()
   }
 
   const value = normalize(textInput.value)

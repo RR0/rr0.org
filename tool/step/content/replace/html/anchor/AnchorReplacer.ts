@@ -2,7 +2,10 @@ import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 
 export class AnchorReplacer {
 
-  constructor(protected baseUrl: string) {
+  protected readonly baseUrl: string
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"
   }
 
   async replacement(context: HtmlSsgContext, a: HTMLAnchorElement): Promise<HTMLAnchorElement> {
@@ -14,7 +17,7 @@ export class AnchorReplacer {
       context.debug("Adding target in", a.outerHTML)
     } else if (url.protocol.startsWith("http")) {
       const pathname = url.pathname
-      if (pathname.indexOf(".") < 0 && !pathname.endsWith("/")) {
+      if (pathname.indexOf(".") < 0 && !pathname.endsWith("/") && href.indexOf("#") < 0) {
         a.href += "/"
         context.debug("Adding traling slash in", a.outerHTML)
       }

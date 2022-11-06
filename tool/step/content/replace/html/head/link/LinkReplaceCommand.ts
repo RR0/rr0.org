@@ -1,6 +1,6 @@
-import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
-import {ReplaceCommand} from "../../ReplaceCommand"
-import {HtmlFileInfo, Link} from "../../../../../util/file/HtmlFileInfo"
+import {HtmlSsgContext} from "../../../../../../HtmlSsgContext"
+import {ReplaceCommand} from "../../../ReplaceCommand"
+import {HtmlFileInfo, Link} from "../../../../../../util/file/HtmlFileInfo"
 
 export interface LinkHandler {
 

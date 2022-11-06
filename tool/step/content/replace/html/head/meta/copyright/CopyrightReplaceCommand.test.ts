@@ -1,7 +1,7 @@
-import {testUtil} from "../../../../../test/TestUtil"
-import {HtmlFileInfo} from "../../../../../util/file/HtmlFileInfo"
+import {testUtil} from "../../../../../../../test/TestUtil"
+import {HtmlFileInfo} from "../../../../../../../util/file/HtmlFileInfo"
 import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
-import {SsiEchoVarReplaceCommand} from "../ssi/SsiEchoVarCommand"
+import {SsiEchoVarReplaceCommand} from "../../../ssi/SsiEchoVarCommand"
 
 describe("CopyrightReplaceCommand", () => {
 

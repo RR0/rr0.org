@@ -11,6 +11,9 @@ export type SsgResult = {}
 
 export type OutputFunc = (context: SsgContext, info: FileInfo, outDir?: string) => Promise<void>
 
+/**
+ * Static Site Generator
+ */
 export class Ssg {
 
   protected steps: SsgStep[] = []

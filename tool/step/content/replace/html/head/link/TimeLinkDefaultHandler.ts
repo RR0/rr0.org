@@ -1,7 +1,7 @@
 import {LinkHandler} from "./LinkReplaceCommand"
-import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
-import {Link, LinkType} from "../../../../../util/file/HtmlFileInfo"
-import {Time} from "../../../../../model/time/Time"
+import {HtmlSsgContext} from "../../../../../../HtmlSsgContext"
+import {Link, LinkType} from "../../../../../../util/file/HtmlFileInfo"
+import {Time} from "../../../../../../model/time/Time"
 
 export class TimeLinkDefaultHandler implements LinkHandler {
 

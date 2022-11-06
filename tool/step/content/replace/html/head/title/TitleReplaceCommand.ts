@@ -1,7 +1,7 @@
-import {RegexReplacer} from "../../RegexReplacer"
-import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
-import {StringContextHandler} from "../StringContextHandler"
-import {SsiEchoVarReplaceCommand} from "../ssi/SsiEchoVarCommand"
+import {RegexReplacer} from "../../../RegexReplacer"
+import {HtmlSsgContext} from "../../../../../../HtmlSsgContext"
+import {StringContextHandler} from "../../StringContextHandler"
+import {SsiEchoVarReplaceCommand} from "../../ssi/SsiEchoVarCommand"
 
 /**
  * Replaces "<!--#echo var="title" -->" by the page's <title> content,

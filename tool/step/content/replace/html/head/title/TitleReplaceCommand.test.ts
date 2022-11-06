@@ -1,6 +1,6 @@
 import {TitleReplaceCommand} from "./TitleReplaceCommand"
-import {testUtil} from "../../../../../test/TestUtil"
-import {HtmlFileInfo} from "../../../../../util/file/HtmlFileInfo"
+import {testUtil} from "../../../../../../test/TestUtil"
+import {HtmlFileInfo} from "../../../../../../util/file/HtmlFileInfo"
 import {timeDefaultHandler} from "./TimeDefaultTitle"
 
 describe("TitleReplaceCommand", () => {

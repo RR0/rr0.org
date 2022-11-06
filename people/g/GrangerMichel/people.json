@@ -1,6 +1,10 @@
 {
   "birthTime": "1943",
-  "occupations": ["ufologist"],
+  "occupations": [
+    "physicist",
+    "chemist",
+    "ufologist"
+  ],
   "countries": [
     "fr"
   ]

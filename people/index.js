@@ -21,8 +21,8 @@ function find(_e) {
     const classes = Array.from(child.classList)
     const countryClasses = classes.filter(c => c.startsWith("country-"))
     const occupationClasses = classes.filter(c => c.startsWith("occupation-"))
-    const matchCountry = countryClasses.some(o => selectedCountries.includes(o))
-    const matchOccupation = occupationClasses.some(o => selectedOccupations.includes(o))
+    const matchCountry = countryClasses.length <= 0 || countryClasses.some(o => selectedCountries.includes(o))
+    const matchOccupation = occupationClasses.length <= 0 || occupationClasses.some(o => selectedOccupations.includes(o))
     const matchText = normalize(child.textContent).indexOf(value) >= 0
     if (matchText && matchCountry && matchOccupation) {
       child.style.display = "list-item"

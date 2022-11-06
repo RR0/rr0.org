@@ -155,6 +155,12 @@ const ufologistsDirectoryStep = new PeopleDirectoryStep(
   "people/ufologues.html",
   outputFunc, [Occupation.ufologist])
 
+const astronomersDirectoryStep = new PeopleDirectoryStep(
+  ["people/*/*/"],
+  ["people/Astronomers_fichiers"],
+  "people/astronomes.html",
+  outputFunc, [Occupation.astronomer])
+
 const contacteesDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/", "science/crypto/ufo/enquete/dossier/Villa"],
   ["people/Astronomers_fichiers"],
@@ -248,6 +254,7 @@ getTimeFiles().then(async (timeFiles) => {
     .add(ufologistsDirectoryStep)
     .add(scientistsDirectoryStep)
     .add(contacteesDirectoryStep)
+    .add(astronomersDirectoryStep)
     .add(...letterDirectorySteps)
     .add(pilotsDirectoryStep)
     .add(new CopyStep(copies))

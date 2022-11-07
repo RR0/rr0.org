@@ -149,6 +149,7 @@ export class SsgMessages_en implements SsgMessages {
   }
   country = {
     at: {title: "Austria"},
+    ar: {title: "Argentina"},
     au: {title: "Australia"},
     be: {title: "Belgium"},
     br: {title: "Brasil"},
@@ -189,7 +190,8 @@ export class SsgMessages_en implements SsgMessages {
         tn: "Tennessee"
       }
     },
-    se: {title: "Sweden"}
+    se: {title: "Sweden"},
+    za: {title: "South Africa"}
   }
   nav = {
     start: "Start",

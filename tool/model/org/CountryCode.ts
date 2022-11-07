@@ -13,6 +13,11 @@ export enum CountryCode {
   au = "au",
 
   /**
+   * ARgentina
+   */
+  ar = "ar",
+
+  /**
    * BElgium
    */
   be = "be",
@@ -155,5 +160,10 @@ export enum CountryCode {
   /**
    * SwEden
    */
-  se = "se"
+  se = "se",
+
+  /**
+   * South Africa
+   */
+  za = "za"
 }

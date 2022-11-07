@@ -121,10 +121,6 @@ body.wait, body.wait * {
   padding: 0
 }
 
-.tit {
-  padding: 0 .7em
-}
-
 .columns {
   -webkit-column-width: 15em;
   -moz-column-width: 15em;
@@ -150,10 +146,6 @@ body.wait, body.wait * {
 
 .mainTitle {
   font-size: larger
-}
-
-.clear {
-  clear: both
 }
 
 .added {
@@ -340,6 +332,7 @@ nav ul > li {
 .outline li {
   border-top: 0.5px solid lightgray;
 }
+
 .outline li h2, .outline li h3, .outline li h4, .outline li section h1, section .outline li h1 {
   background: 0 0;
   margin: 0;
@@ -471,100 +464,8 @@ nav ul > li {
   height: auto
 }
 
-@media (max-width: 40em) {
-  .label {
-    display: none
-  }
-}
-
-@media (max-width: 60em) {
-  aside {
-    width: 0
-  }
-
-  nav > ul {
-    overflow: hidden
-  }
-}
-
 .menu, iframe {
   overflow: auto
-}
-
-@media (min-width: 60em) {
-
-  .label, .search label {
-    display: inline
-  }
-
-  .search {
-    width: 100%;
-    box-sizing: content-box
-  }
-  .search-result {
-    min-width: 30em;
-    max-width: 82vw;
-    z-index: 1
-  }
-
-  nav {
-    overflow: visible;
-    max-width: var(--nav-width);
-    position: absolute;
-    height: 100%;
-  }
-  nav ul {
-    background: 0 0
-  }
-  nav ul li {
-    display: block;
-    padding: .2rem .3rem;
-    float: none
-  }
-  nav .collapsed {
-    display: none
-  }
-
-  .outline, .outline li, .outline li a, .outline li details summary, details .outline li summary {
-    display: block
-  }
-  .outline {
-    overflow: auto;
-    padding: 0;
-    background: rgba(242, 242, 248, .95);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1);
-    background: linear-gradient(left top, rgba(242, 242, 248, .95), rgba(255, 255, 255, .95));
-    position: relative;
-    height: auto;
-    box-shadow: none;
-    max-height: 75vh;
-    margin-left: 10%
-  }
-  .outline li {
-    padding: .2rem .3rem;
-    float: none
-  }
-  .outline li h1 {
-    padding: 0;
-    margin: 0
-  }
-  .outline li h3, .outline li h4, .outline li section section h1, section section .outline li h1 {
-    margin: 0;
-    padding: 0;
-    width: auto
-  }
-  .outline li:focus {
-    color: #FFF;
-    background-color: rgba(11, 117, 178, .4);
-    text-decoration: none;
-    cursor: pointer
-  }
-
-  body {
-    padding-top: var(--header-height);
-    margin-left: calc(var(--nav-width) + var(--margin));
-    width: 76vw;
-  }
 }
 
 .long, table tbody {
@@ -573,19 +474,6 @@ nav ul > li {
 
 embed, iframe, img, object {
   max-width: 100%
-}
-
-@media (min-width: 80em) {
-
-  #aside {
-    width: var(--aside-width);
-  }
-
-  body {
-    padding-top: var(--header-height);
-    margin-left: 21vw;
-    width: 57vw;
-  }
 }
 
 .menu {
@@ -745,12 +633,6 @@ figure, img {
 
 abbr {
   border-bottom: 1px dotted #999
-}
-
-@media (max-width: 60em) {
-  abbr[title]:after {
-    content: " (" attr(title) ")"
-  }
 }
 
 details[open] {
@@ -1349,6 +1231,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 .visible {
   display: inline-block;
 }
+
 dl.bullet {
   margin: 0;
   padding: 0;
@@ -1383,9 +1266,9 @@ dl.bullet dd {
   margin-left: calc(var(--margin) * -1);
   margin-right: calc(var(--margin) * -1);
   margin-top: calc(var(--header-height) * -1 - var(--mobile-nav-height));
-  background-size: cover!important;
-  background-position: center!important;
-  background-image: linear-gradient(to right,rgba(224,224,233, 0.5) 0,rgba(255,255,255,.5) 100%);
+  background-size: cover !important;
+  background-position: center !important;
+  background-image: linear-gradient(to right, rgba(224, 224, 233, 0.5) 0, rgba(255, 255, 255, .5) 100%);
 }
 
 #main-nav {
@@ -1401,97 +1284,140 @@ dl.bullet dd {
   list-style: none;
   display: inline-block;
 }
+
 .anchor {
   position: relative;
   top: calc((var(--header-height) + 0.5rem) * -1);
 }
 
-@media screen {
-  .str {
-    color: #080
+aside {
+  width: 0
+}
+
+nav > ul {
+  overflow: hidden
+}
+
+@media (min-width: 60em) {
+  abbr[title]:after {
+    content: " (" attr(title) ")"
   }
 
-  .kwd {
-    color: #008
+  #main-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    z-index: 102;
+    backdrop-filter: blur(11px);
   }
 
-  .com {
-    color: #800
+  #main-nav {
+    position: fixed;
+    width: var(--nav-width);
+    top: calc(var(--header-height) - 0.3rem);
+    margin: 0;
+    left: 0;
   }
 
-  .typ {
-    color: #606
+  #main-nav li {
+    display: list-item;
   }
 
-  .lit {
-    color: #066
+  blockquote ol > li, blockquote p, blockquote ul > li, q {
+    background: repeat-x rgba(250, 250, 255, .3)
   }
 
-  .clo, .opn, .pun {
-    color: #660
+  .label, .search label {
+    display: inline
   }
 
-  .tag {
-    color: #008
+  .search {
+    width: 100%;
+    box-sizing: content-box
   }
 
-  .atn {
-    color: #606
+  .search-result {
+    min-width: 30em;
+    max-width: 82vw;
+    z-index: 1
   }
 
-  .atv {
-    color: #080
+  nav {
+    overflow: visible;
+    max-width: var(--nav-width);
+    position: absolute;
+    height: 100%;
   }
 
-  .dec, .var {
-    color: #606
+  nav ul {
+    background: 0 0
   }
 
-  .fun {
-    color: red
+  nav ul li {
+    display: block;
+    padding: .2rem .3rem;
+    float: none
+  }
+
+  .outline, .outline li, .outline li a, .outline li details summary, details .outline li summary {
+    display: block
+  }
+
+  .outline {
+    overflow: auto;
+    padding: 0;
+    background: rgba(242, 242, 248, .95);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1);
+    background: linear-gradient(left top, rgba(242, 242, 248, .95), rgba(255, 255, 255, .95));
+    position: relative;
+    height: auto;
+    box-shadow: none;
+    max-height: 75vh;
+    margin-left: 10%
+  }
+
+  .outline li {
+    padding: .2rem .3rem;
+    float: none
+  }
+
+  .outline li h1 {
+    padding: 0;
+    margin: 0
+  }
+
+  .outline li h3, .outline li h4, .outline li section section h1, section section .outline li h1 {
+    margin: 0;
+    padding: 0;
+    width: auto
+  }
+
+  .outline li:focus {
+    color: #FFF;
+    background-color: rgba(11, 117, 178, .4);
+    text-decoration: none;
+    cursor: pointer
+  }
+
+  body {
+    padding-top: var(--header-height);
+    margin-left: calc(var(--nav-width) + var(--margin));
+    width: 76vw;
   }
 }
 
-@media print, projection {
-  .kwd, .tag, .typ {
-    font-weight: 700
+@media (min-width: 80em) {
+
+  #aside {
+    width: var(--aside-width);
   }
 
-  .str {
-    color: #060
-  }
-
-  .kwd {
-    color: #006
-  }
-
-  .com {
-    color: #600;
-    font-style: italic
-  }
-
-  .typ {
-    color: #404
-  }
-
-  .lit {
-    color: #044
-  }
-
-  .clo, .opn, .pun {
-    color: #440
-  }
-
-  .tag {
-    color: #006
-  }
-
-  .atn {
-    color: #404
-  }
-
-  .atv {
-    color: #060
+  body {
+    padding-top: var(--header-height);
+    margin-left: 21vw;
+    width: 57vw;
   }
 }
 
@@ -1531,7 +1457,7 @@ dl.bullet dd {
   }
 
   #main-header {
-    background-image: linear-gradient(to right, rgba(25,25,31, 0.5) 0, rgba(255, 255, 255, .5) 100%)
+    background-image: linear-gradient(to right, rgba(25, 25, 31, 0.5) 0, rgba(255, 255, 255, .5) 100%)
   }
 
   #main-header h1 {
@@ -1547,8 +1473,9 @@ dl.bullet dd {
   .outline, nav ul {
     background: rgb(20, 20, 25);
   }
+
   .outline li {
-    border-color: rgb(80,80,80);
+    border-color: rgb(80, 80, 80);
   }
 
   h2, h3, h4, section h1, section section h1 {
@@ -1588,32 +1515,12 @@ dl.bullet dd {
   }
 }
 
-
-@media (min-width: 60em) {
-
-  #main-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: 0;
-    z-index: 102;
-    backdrop-filter: blur(11px);
-  }
-  #main-nav {
-    position: fixed;
-    width: var(--nav-width);
-    top: var(--header-height);
-    margin: 0;
-    left: 0;
-  }
-  #main-nav li {
-    display: list-item;
+@media print {
+  * {
+    display: none
   }
 
-  blockquote ol > li, blockquote p, blockquote ul > li, q {
-    background: repeat-x rgba(250, 250, 255, .3)
+  *:after {
+    content: "Do not print"
   }
 }
-
-

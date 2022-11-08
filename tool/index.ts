@@ -42,6 +42,7 @@ import {GooglePlaceService} from "./model/place/GooglePlaceService"
 import {PlaceReplacerFactory} from "./step/content/replace/html/place/PlaceReplacerFactory"
 import {OrganizationService} from "./model/org/OrganizationService"
 import {AnchorReplaceCommand} from "./step/content/replace/html/anchor/AnchorReplaceCommand"
+import {AngularExpressionReplaceCommand} from "./step/content/replace/angular/AngularExpressionReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents

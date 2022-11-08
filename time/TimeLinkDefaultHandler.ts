@@ -1,0 +1,73 @@
+import {LinkHandler} from "../tool/step/content/replace/html/head/link/LinkReplaceCommand"
+import {HtmlSsgContext} from "../tool/HtmlSsgContext"
+import {Link, LinkType} from "../tool/util/file/HtmlFileInfo"
+import {Time} from "./Time"
+
+export class TimeLinkDefaultHandler implements LinkHandler {
+
+  constructor(protected timeFiles: string[]) {
+  }
+
+  contents(context: HtmlSsgContext): Link | undefined {
+    const prevLink = this.prev(context)
+    if (prevLink) {
+      let contentUrl = prevLink.url.substring(1)
+      do {
+        const slash = contentUrl.lastIndexOf("/")
+        contentUrl = contentUrl.substring(0, slash)
+      } while (this.timeFiles.indexOf(contentUrl) < 0 && contentUrl !== "time")
+      if (contentUrl != "time") {
+        const text = Time.titleFromFile(context, contentUrl)
+        if (text) {
+          return {type: LinkType.prev, text, url: "/" + contentUrl}
+        }
+      }
+    }
+  }
+
+  next(context: HtmlSsgContext): Link | undefined {
+    let fileName = context.inputFile.name
+    if (this.isTimeFile(fileName)) {
+      const filePos = fileName.lastIndexOf("/index.html")
+      if (filePos > 0) {
+        fileName = fileName.substring(0, filePos)
+      }
+      const pos = this.timeFiles.indexOf(fileName)
+      const nextFile = this.timeFiles[pos + 1]
+      if (nextFile) {
+        const text = Time.titleFromFile(context, nextFile)!
+        return {type: LinkType.next, text, url: "/" + nextFile}
+      }
+    }
+  }
+
+  prev(context: HtmlSsgContext): Link | undefined {
+    let fileName = context.inputFile.name
+    if (this.isTimeFile(fileName)) {
+      const filePos = fileName.lastIndexOf("/index.html")
+      if (filePos > 0) {
+        fileName = fileName.substring(0, filePos)
+      }
+      const pos = this.timeFiles.indexOf(fileName)
+      const prevFile = this.timeFiles[pos - 1]
+      if (prevFile) {
+        const text = Time.titleFromFile(context, prevFile)!
+        return {type: LinkType.prev, text, url: "/" + prevFile}
+      }
+    }
+  }
+
+  start(context: HtmlSsgContext): Link | undefined {
+    if (this.isTimeFile(context.inputFile.name)) {
+      return {
+        type: LinkType.contents,
+        text: "Historique",
+        url: "/time/"
+      }
+    }
+  }
+
+  private isTimeFile(fileName: string) {
+    return fileName.startsWith("time/")
+  }
+}

@@ -1,5 +1,5 @@
 import {Organization} from "./index"
-import {Place} from "../tool/model/place/Place"
+import {Place} from "../place/Place"
 import fs from "fs"
 
 export class OrganizationService {

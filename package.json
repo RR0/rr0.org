@@ -30,7 +30,7 @@
     "@babel/plugin-transform-modules-commonjs": "~7.19.6"
   },
   "scripts": {
-    "build": "rm -Rf out && ts-node tool/index.ts",
+    "build": "rm -Rf out && ts-node build.ts",
     "test": "jest"
   }
 }

@@ -1,5 +1,5 @@
-import {TimeContext} from "./step/content/replace/html/time/TimeContext"
-import {SsgMessages} from "./i18n/SsgMessages"
+import {TimeContext} from "../time/TimeContext"
+import {SsgMessages} from "../i18n/SsgMessages"
 import {FileInfo} from "./util/file/FileInfo"
 
 export type ContextVarName = "mail" | keyof FileInfo

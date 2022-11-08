@@ -1,7 +1,7 @@
-import {SsgMessages} from "./i18n/SsgMessages"
-import {TimeContext} from "./step/content/replace/html/time/TimeContext"
+import {SsgMessages} from "../i18n/SsgMessages"
+import {TimeContext} from "../time/TimeContext"
 import {FileInfo} from "./util/file/FileInfo"
-import {ssgMessages} from "./i18n"
+import {ssgMessages} from "../i18n"
 import {ContextVarName, SsgContext} from "./SsgContext"
 
 export class SsgContextImpl implements SsgContext {

@@ -1,5 +1,5 @@
 import {CountryCode} from "./CountryCode"
-import {SsgContext} from "../../SsgContext"
+import {SsgContext} from "../tool/SsgContext"
 
 export interface CountryMessages {
   title: string

@@ -1,6 +1,6 @@
 import {Gender} from "./Gender"
 import {Occupation} from "./Occupation"
-import {CountryCode} from "../org/CountryCode"
+import {CountryCode} from "../../../org/CountryCode"
 import {StringUtil} from "../../util/string/StringUtil"
 
 export class People {

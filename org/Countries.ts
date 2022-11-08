@@ -1,5 +1,5 @@
-import {FrCountry} from "./FrCountry"
-import {UsCountry} from "./UsCountry"
+import {FrCountry} from "./eu/fr/FrCountry"
+import {UsCountry} from "./us/UsCountry"
 import {CountryCode} from "./CountryCode"
 import {Country} from "./Country"
 

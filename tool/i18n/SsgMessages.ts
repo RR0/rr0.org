@@ -1,13 +1,13 @@
 import {Gender} from "../model/people/Gender"
-import {CountryCode} from "../model/org/CountryCode"
+import {CountryCode} from "../../org/CountryCode"
 import {Occupation} from "../model/people/Occupation"
-import {FrCountryMessages} from "../model/org/FrCountry"
-import {CountryMessages} from "../model/org/Country"
-import {UsCountryMessages} from "../model/org/UsCountry"
+import {FrCountryMessages} from "../../org/eu/fr/FrCountry"
+import {CountryMessages} from "../../org/Country"
+import {UsCountryMessages} from "../../org/us/UsCountry"
 
 export class MessageUtils {
   static plural(n: number, word: string): string {
-    return n ? n + " " + word + (n > 1 ? "s" : "") : ""
+    return n ? `${n} ${word}${n > 1 ? "s" : ""}` : ""
   }
 }
 

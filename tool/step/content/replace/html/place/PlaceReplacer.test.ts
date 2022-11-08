@@ -2,8 +2,8 @@ import {PlaceReplacer} from "./PlaceReplacer"
 import {PlaceService} from "../../../../../model/place/PlaceService"
 import {testUtil} from "../../../../../test/TestUtil"
 import {Elevation, Place, PlaceLocation} from "../../../../../model/place/Place"
-import {OrganizationService} from "../../../../../model/org/OrganizationService"
-import {Organization} from "../../../../../model/org"
+import {OrganizationService} from "../../../../../../org/OrganizationService"
+import {Organization} from "../../../../../../org"
 import {SsgContext} from "../../../../../SsgContext"
 
 class MockPlaceService extends PlaceService {

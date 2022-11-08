@@ -1,6 +1,6 @@
 import {HtmlSsgContext} from "../../../../../HtmlSsgContext"
 import {PlaceService} from "../../../../../model/place/PlaceService"
-import {OrganizationService} from "../../../../../model/org/OrganizationService"
+import {OrganizationService} from "../../../../../../org/OrganizationService"
 
 export class PlaceReplacer {
 

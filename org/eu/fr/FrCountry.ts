@@ -1,7 +1,7 @@
-import {Country, CountryMessages} from "./Country"
-import {CountryCode} from "./CountryCode"
-import {Organization} from "./index"
-import {SsgContext} from "../../SsgContext"
+import {Country, CountryMessages} from "../../Country"
+import {CountryCode} from "../../CountryCode"
+import {Organization} from "../../index"
+import {SsgContext} from "../../../tool/SsgContext"
 
 export enum FrenchRegionCode {
   /**

@@ -1,26 +1,27 @@
-import {HtmlSsgContext} from "../../../../../../HtmlSsgContext"
-import {ReplaceCommand} from "../../../ReplaceCommand"
-import {HtmlFileInfo, Link} from "../../../../../../util/file/HtmlFileInfo"
+import {HtmlSsgContext} from "./tool/HtmlSsgContext"
+import {ReplaceCommand} from "./tool/step/content/replace/ReplaceCommand"
+import {HtmlFileInfo, Link} from "./tool/util/file/HtmlFileInfo"
+import {HtmlRR0SsgContext} from "./RR0SsgContext"
 
-export interface LinkHandler {
+export interface LinkHandler<C extends HtmlSsgContext> {
 
-  start(context: HtmlSsgContext): Link | undefined
+  start(context: C): Link | undefined
 
-  contents(context: HtmlSsgContext): Link | undefined
+  contents(context: C): Link | undefined
 
-  prev(context: HtmlSsgContext): Link | undefined
+  prev(context: C): Link | undefined
 
-  next(context: HtmlSsgContext): Link | undefined
+  next(context: C): Link | undefined
 }
 
 /**
  */
-export class LinkReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
+export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext> implements ReplaceCommand<C> {
 
-  constructor(protected defaultHandler?: LinkHandler) {
+  constructor(protected defaultHandler?: LinkHandler<C>) {
   }
 
-  async execute(context: HtmlSsgContext): Promise<HtmlFileInfo> {
+  async execute(context: C): Promise<HtmlFileInfo> {
     const inputFile = context.inputFile
     const outputFile = context.outputFile
     const dom = outputFile.dom
@@ -50,7 +51,7 @@ export class LinkReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     return outputFile
   }
 
-  private addLink(context: HtmlSsgContext, ul: Element, link: Link) {
+  private addLink(context: HtmlRR0SsgContext, ul: Element, link: Link) {
     const outputDoc = context.outputFile.dom.window.document
     const li = outputDoc.createElement("li")
     li.className = link.type

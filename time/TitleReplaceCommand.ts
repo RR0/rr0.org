@@ -1,7 +1,7 @@
-import {RegexReplacer} from "../../../RegexReplacer"
-import {HtmlSsgContext} from "../../../../../../HtmlSsgContext"
-import {StringContextHandler} from "../../StringContextHandler"
-import {SsiEchoVarReplaceCommand} from "../../ssi/SsiEchoVarCommand"
+import {SsiEchoVarReplaceCommand} from "../tool/step/content/replace/html/ssi/SsiEchoVarCommand"
+import {RegexReplacer} from "../tool/step/content/replace/RegexReplacer"
+import {StringContextHandler} from "../tool/step/content/replace/html/StringContextHandler"
+import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
 /**
  * Replaces "<!--#echo var="title" -->" by the page's <title> content,
@@ -13,7 +13,7 @@ export class TitleReplaceCommand extends SsiEchoVarReplaceCommand {
     super("title")
   }
 
-  protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
+  protected async createReplacer(context: HtmlRR0SsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
         const fileInfo = context.inputFile

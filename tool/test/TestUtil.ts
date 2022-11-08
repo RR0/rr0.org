@@ -1,5 +1,4 @@
 import {SsgContext} from "../SsgContext"
-import {TimeContext} from "../../time/TimeContext"
 import {HtmlFileInfo} from "../util/file/HtmlFileInfo"
 import {HtmlSsgContext} from "../HtmlSsgContext"
 import {FileInfo} from "../util/file/FileInfo"
@@ -7,18 +6,8 @@ import {SsgContextImpl} from "../SsgContextImpl"
 
 class TestUtil {
 
-  readonly intlOptions: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    weekday: "long",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZoneName: "short"
-  }
-
   newContext(inputFileName: string, contents: string): SsgContext {
-    const context = new SsgContextImpl("fr", new TimeContext(this.intlOptions))
+    const context = new SsgContextImpl("fr")
     context.inputFile = new FileInfo(inputFileName, "utf8", contents, new Date(), "fr")
     context.outputFile = context.inputFile  // By default
     return context

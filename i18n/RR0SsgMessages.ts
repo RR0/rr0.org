@@ -18,7 +18,7 @@ type CountriesMessages
 
 type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
-export interface SsgMessages {
+export interface RR0SsgMessages {
   context: {
     time: {
       duration: {
@@ -97,7 +97,7 @@ export interface SsgMessages {
   people: {
     occupation: OccupationMessages
   },
-  country: CountriesMessages,
+  country: CountriesMessages
   nav: {
     start: string
     contents: string

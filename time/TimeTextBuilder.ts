@@ -1,8 +1,8 @@
-import {SsgContext} from "../tool/SsgContext"
+import {RR0SsgContext} from "../RR0SsgContext"
 
 export class TimeTextBuilder {
 
-  static build(context: SsgContext, print = true): string {
+  static build(context: RR0SsgContext, print = true): string {
     const time = context.time
     let printOptions: Intl.DateTimeFormatOptions = {}
     let date = new Date()
@@ -44,7 +44,7 @@ export class TimeTextBuilder {
       //   }
     }
 
-    function setTimeZone(timeZone: string) {
+    function setTimeZone(_timeZone: string) {
       if (print) {
         // printOptions.timeZoneName = context.time.options.timeZoneName
       }

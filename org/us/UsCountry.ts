@@ -1,7 +1,7 @@
 import {Country, CountryMessages} from "../Country"
 import {CountryCode} from "../CountryCode"
 import {Organization} from "../index"
-import {SsgContext} from "../../tool/SsgContext"
+import {RR0SsgContext} from "../../RR0SsgContext"
 
 export enum UsStateCode {
   /**
@@ -24,7 +24,7 @@ export class UsState implements Organization {
   constructor(readonly code: UsStateCode, readonly dirName: string) {
   }
 
-  title(context: SsgContext): string {
+  title(context: RR0SsgContext): string {
     return context.messages.country.us.state[this.code]
   }
 }

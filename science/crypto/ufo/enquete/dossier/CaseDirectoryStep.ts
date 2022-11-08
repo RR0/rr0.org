@@ -1,9 +1,9 @@
 import {OutputFunc} from "../../../../../tool/Ssg"
-import {SsgContext} from "../../../../../tool/SsgContext"
 import {HtmlTag} from "../../../../../tool/util/HtmlTag"
 import {getFileInfo} from "../../../../../tool/util/file/FileInfo"
 import {DirectoryStep} from "../../../../../tool/step/DirectoryStep"
 import {StringUtil} from "../../../../../tool/util/string/StringUtil"
+import {RR0SsgContext} from "../../../../../RR0SsgContext"
 
 enum HynekClassification {
   NL = "NL",
@@ -43,7 +43,7 @@ export class CaseDirectoryStep extends DirectoryStep {
     super(dirs, excludedDirs, template, outputFunc)
   }
 
-  protected async processDirs(context: SsgContext, dirames: string[]): Promise<void> {
+  protected async processDirs(context: RR0SsgContext, dirames: string[]): Promise<void> {
     const cases: Case[] = []
     for (const dirName of dirames) {
       const dirCase: Case = {dirName, time: "", title: ""}

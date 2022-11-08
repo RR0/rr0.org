@@ -1,5 +1,5 @@
 import {CountryCode} from "./CountryCode"
-import {SsgContext} from "../tool/SsgContext"
+import {RR0SsgContext} from "../RR0SsgContext"
 
 export interface CountryMessages {
   title: string
@@ -10,7 +10,7 @@ export abstract class Country<K, V> {
   protected constructor(readonly code: CountryCode, readonly dirName: string) {
   }
 
-  title(context: SsgContext): string {
+  title(context: RR0SsgContext): string {
     return context.messages.country[this.code].title
   }
 

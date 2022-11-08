@@ -1,5 +1,5 @@
-import {testUtil} from "../../../../../../../test/TestUtil"
-import {HtmlFileInfo} from "../../../../../../../util/file/HtmlFileInfo"
+import {testUtil} from "../../tool/test/TestUtil"
+import {HtmlFileInfo} from "../../tool/util/file/HtmlFileInfo"
 import {AuthorReplaceCommand} from "./AuthorReplaceCommand"
 
 describe("AuthorReplaceCommand", () => {

@@ -1,8 +1,8 @@
-import {SsgContext} from "../tool/SsgContext"
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
 import {UrlUtil} from "../tool/util/url/UrlUtil"
+import {RR0SsgContext} from "../RR0SsgContext"
 
 export class TimeReplacer {
 
@@ -17,7 +17,7 @@ export class TimeReplacer {
   constructor(protected timeFiles: string[]) {
   }
 
-  valueReplacement(context: SsgContext, timeStr: string, noContext = false): string | undefined {
+  valueReplacement(context: RR0SsgContext, timeStr: string, noContext = false): string | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
     const approximate = timeStr.charAt(0) === "~"
@@ -27,7 +27,7 @@ export class TimeReplacer {
     const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
     if (dateTimeValues && dateTimeValues[0]) {
       const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
-      const previousContext: SsgContext | null = noContext ? null : context.clone()
+      const previousContext: RR0SsgContext | null = noContext ? null : context.clone()
       replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes,
         timeZone, approximate)
     } else {
@@ -46,7 +46,7 @@ export class TimeReplacer {
     return replacement
   }
 
-  replacement(context: SsgContext, match: string, contents: string, attrs?: string): string {
+  replacement(context: RR0SsgContext, match: string, contents: string, attrs?: string): string {
     const noContext = attrs === ` data-context="none"`
     const parts = contents.split("/")
     let replacement: string | undefined
@@ -66,7 +66,7 @@ export class TimeReplacer {
     return replacement
   }
 
-  private dateTimeReplacement(context: SsgContext, previousContext: SsgContext | null, yearStr: string,
+  private dateTimeReplacement(context: RR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string,
                               monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string,
                               approximate: boolean): string | undefined {
     let replacement: string | undefined = undefined
@@ -132,7 +132,7 @@ export class TimeReplacer {
     return url === "time" ? undefined : url
   }
 
-  private durationReplacement(context: SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
+  private durationReplacement(context: RR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
                               secondsStr: string, approximate: boolean): string | undefined {
     const items = []
     const messages = context.messages.context.time.duration

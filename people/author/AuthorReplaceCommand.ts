@@ -1,6 +1,6 @@
-import {RegexReplacer} from "../../../../RegexReplacer"
-import {HtmlSsgContext} from "../../../../../../../HtmlSsgContext"
-import {SsiEchoVarReplaceCommand} from "../../../ssi/SsiEchoVarCommand"
+import {RegexReplacer} from "../../tool/step/content/replace/RegexReplacer"
+import {HtmlSsgContext} from "../../tool/HtmlSsgContext"
+import {SsiEchoVarReplaceCommand} from "../../tool/step/content/replace/html/ssi/SsiEchoVarCommand"
 
 /**
  * Replaces "<!--#echo var="author" -->" by the page's <meta name="author">s' content.

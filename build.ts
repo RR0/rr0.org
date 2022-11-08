@@ -15,7 +15,6 @@ import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
 import {ContentStep, ContentStepConfig} from "./tool/step/content/ContentStep"
 import {CopyStep} from "./tool/step/CopyStep"
-import {TitleReplaceCommand} from "./tool/step/content/replace/html/head/title/TitleReplaceCommand"
 import {FileInfo, getFileInfo} from "./tool/util/file/FileInfo"
 import {CaseDirectoryStep} from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./people/PeopleDirectoryStep"
@@ -29,13 +28,12 @@ import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
 import {NoteReplacerFactory} from "./note/NoteReplacerFactory"
 import {SourceReplacerFactory} from "./source/SourceReplacerFactory"
 import {ClassDomReplaceCommand} from "./tool/step/content/replace/html/class/ClassDomReplaceCommand"
-import {LinkReplaceCommand} from "./tool/step/content/replace/html/head/link/LinkReplaceCommand"
+import {LinkReplaceCommand} from "./LinkReplaceCommand"
 import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
-import {AuthorReplaceCommand} from "./tool/step/content/replace/html/head/meta/author/AuthorReplaceCommand"
+import {AuthorReplaceCommand} from "./people/author/AuthorReplaceCommand"
 import {TimeLinkDefaultHandler} from "./time/TimeLinkDefaultHandler"
 import {promise as glob} from "glob-promise"
 import {SsiEchoVarReplaceCommand} from "./tool/step/content/replace/html/ssi/SsiEchoVarCommand"
-import {SsgContextImpl} from "./tool/SsgContextImpl"
 import {StringEchoVarReplaceCommand} from "./tool/step/content/replace/html/StringEchoVarReplaceCommand"
 import {GooglePlaceService} from "./place/GooglePlaceService"
 import {PlaceReplacerFactory} from "./place/PlaceReplacerFactory"
@@ -43,6 +41,8 @@ import {OrganizationService} from "./org/OrganizationService"
 import {AnchorReplaceCommand} from "./tool/step/content/replace/html/anchor/AnchorReplaceCommand"
 import {AngularExpressionReplaceCommand} from "./tool/step/content/replace/angular/AngularExpressionReplaceCommand"
 import {WitnessReplacerFactory} from "./people/witness/WitnessReplacerFactory"
+import {RR0SsgContextImpl} from "./RR0SsgContext"
+import {TitleReplaceCommand} from "./time/TitleReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -98,7 +98,7 @@ const timeFormat: Intl.DateTimeFormatOptions = {
   minute: "2-digit"
 }
 const timeContext = new TimeContext(timeFormat)
-const context = new SsgContextImpl("fr", timeContext)
+const context = new RR0SsgContextImpl("fr", timeContext)
 context.setVar("mail", "javarome@gmail.com")
 
 const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
@@ -233,7 +233,7 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
         new SsiSetVarReplaceCommand("url",
           (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-        new SsiLastModifiedReplaceCommand(),
+        new SsiLastModifiedReplaceCommand(context.time.options),
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),

@@ -1,16 +1,15 @@
-import {SsgContext} from "../tool/SsgContext"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {TimeContext} from "./TimeContext"
-import {SsgContextImpl} from "../tool/SsgContextImpl"
+import {RR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
 
 export class RelativeTimeTextBuilder {
 
-  static build(oldContext: SsgContext, newContext: SsgContext): string {
+  static build(oldContext: RR0SsgContext, newContext: RR0SsgContext): string {
     const previousTime = oldContext.time
     if (!previousTime.isDefined()) {
       return TimeTextBuilder.build(newContext)
     }
-    const deltaContext = new SsgContextImpl(oldContext.locales, new TimeContext({...oldContext.time.options}))
+    const deltaContext = new RR0SsgContextImpl(oldContext.locales, new TimeContext({...oldContext.time.options}))
     const deltaTime = deltaContext.time
     let dayOfMonthDelta: number | undefined
     let yearDelta: number | undefined
@@ -153,7 +152,7 @@ export class RelativeTimeTextBuilder {
     }
     if (!text) {
       let print = true
-      let defaultContext: SsgContext
+      let defaultContext: RR0SsgContext
       if (deltaContext.time.isDefined()) {
         defaultContext = deltaContext
         const dayOfMonth = defaultContext.time.getDayOfMonth()

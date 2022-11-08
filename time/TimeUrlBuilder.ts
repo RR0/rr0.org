@@ -1,8 +1,8 @@
-import {SsgContext} from "../tool/SsgContext"
+import {RR0SsgContext} from "../RR0SsgContext"
 
 export class TimeUrlBuilder {
 
-  static build(context: SsgContext): string {
+  static build(context: RR0SsgContext): string {
     let url = "time/"
     let time = context.time
     const year = time.getYear()

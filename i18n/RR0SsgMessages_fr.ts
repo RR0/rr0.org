@@ -1,7 +1,7 @@
-import {MessageUtils, SsgMessages} from "./SsgMessages"
+import {MessageUtils, RR0SsgMessages} from "./RR0SsgMessages"
 import {Gender} from "../people/Gender"
 
-export class SsgMessages_fr implements SsgMessages {
+export class RR0SsgMessages_fr implements RR0SsgMessages {
   context = {
     time: {
       duration: {

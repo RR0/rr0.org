@@ -1,14 +1,14 @@
-import {LinkHandler} from "../tool/step/content/replace/html/head/link/LinkReplaceCommand"
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
+import {LinkHandler} from "../LinkReplaceCommand"
 import {Link, LinkType} from "../tool/util/file/HtmlFileInfo"
 import {Time} from "./Time"
+import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
-export class TimeLinkDefaultHandler implements LinkHandler {
+export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
 
   constructor(protected timeFiles: string[]) {
   }
 
-  contents(context: HtmlSsgContext): Link | undefined {
+  contents(context: HtmlRR0SsgContext): Link | undefined {
     const prevLink = this.prev(context)
     if (prevLink) {
       let contentUrl = prevLink.url.substring(1)
@@ -25,7 +25,7 @@ export class TimeLinkDefaultHandler implements LinkHandler {
     }
   }
 
-  next(context: HtmlSsgContext): Link | undefined {
+  next(context: HtmlRR0SsgContext): Link | undefined {
     let fileName = context.inputFile.name
     if (this.isTimeFile(fileName)) {
       const filePos = fileName.lastIndexOf("/index.html")
@@ -41,7 +41,7 @@ export class TimeLinkDefaultHandler implements LinkHandler {
     }
   }
 
-  prev(context: HtmlSsgContext): Link | undefined {
+  prev(context: HtmlRR0SsgContext): Link | undefined {
     let fileName = context.inputFile.name
     if (this.isTimeFile(fileName)) {
       const filePos = fileName.lastIndexOf("/index.html")
@@ -57,7 +57,7 @@ export class TimeLinkDefaultHandler implements LinkHandler {
     }
   }
 
-  start(context: HtmlSsgContext): Link | undefined {
+  start(context: HtmlRR0SsgContext): Link | undefined {
     if (this.isTimeFile(context.inputFile.name)) {
       return {
         type: LinkType.contents,

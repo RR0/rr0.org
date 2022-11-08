@@ -1,9 +1,9 @@
 import {DirectoryStep} from "../../../../../tool/step/DirectoryStep"
 import {SsgContext} from "../../../../../tool/SsgContext"
-import {testUtil} from "../../../../../tool/test/TestUtil"
 import {SsgConfig} from "../../../../../tool/Ssg"
 import {FileInfo} from "../../../../../tool/util/file/FileInfo"
 import {CaseDirectoryStep} from "./CaseDirectoryStep"
+import {rr0TestUtil} from "../../../../../test/RR0TestUtil"
 
 describe("DirectoryStep", () => {
 
@@ -24,7 +24,7 @@ describe("DirectoryStep", () => {
 <!--#echo var="directories" -->
 <p>After</p>
 <!--#include virtual="/footer.html" -->`
-    const context = testUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
+    const context = rr0TestUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
     const step = new CaseDirectoryStep(
       ["science/crypto/ufo/enquete/dossier/*/"],
       [],

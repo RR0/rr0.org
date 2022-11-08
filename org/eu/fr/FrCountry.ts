@@ -1,7 +1,7 @@
 import {Country, CountryMessages} from "../../Country"
 import {CountryCode} from "../../CountryCode"
 import {Organization} from "../../index"
-import {SsgContext} from "../../../tool/SsgContext"
+import {RR0SsgContext} from "../../../RR0SsgContext"
 
 export enum FrenchRegionCode {
   /**
@@ -19,7 +19,7 @@ export class FrenchRegion implements Organization {
   constructor(readonly code: FrenchRegionCode, readonly dirName: string) {
   }
 
-  title(context: SsgContext): string {
+  title(context: RR0SsgContext): string {
     return context.messages.country.fr.region[this.code]
   }
 }

@@ -1,8 +1,8 @@
-import {SsgMessages_fr} from "./SsgMessages_fr"
-import {SsgMessages_en} from "./SsgMessages_en"
-import {SsgMessages} from "./SsgMessages"
+import {RR0SsgMessages_fr} from "./RR0SsgMessages_fr"
+import {RR0SsgMessages_en} from "./RR0SsgMessages_en"
+import {RR0SsgMessages} from "./RR0SsgMessages"
 
-export const ssgMessages: { [lang: string]: SsgMessages } = {
-  "fr": new SsgMessages_fr(),
-  "en": new SsgMessages_en()
+export const ssgMessages: { [lang: string]: RR0SsgMessages } = {
+  "fr": new RR0SsgMessages_fr(),
+  "en": new RR0SsgMessages_en()
 }

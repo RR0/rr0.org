@@ -1,8 +1,7 @@
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {StringUtil} from "../tool/util/string/StringUtil"
 import {TimeContext} from "./TimeContext"
-import {SsgContextImpl} from "../tool/SsgContextImpl"
+import {HtmlRR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
 
 export class Time {
 
@@ -19,7 +18,7 @@ export class Time {
     return Time.timeRegex.exec(fileName)
   }
 
-  static contextFromFile(context: HtmlSsgContext, fileName = context.inputFile.name): TimeContext | undefined {
+  static contextFromFile(context: HtmlRR0SsgContext, fileName = context.inputFile.name): TimeContext | undefined {
     let timeContext: TimeContext | undefined
     const timeExec = Time.parse(fileName)
     if (timeExec && timeExec.length > 4) {
@@ -37,11 +36,11 @@ export class Time {
     return timeContext
   }
 
-  static titleFromFile(context: HtmlSsgContext, fileName = context.inputFile.name): string | undefined {
+  static titleFromFile(context: HtmlRR0SsgContext, fileName = context.inputFile.name): string | undefined {
     let title: string | undefined
     const timeContext = Time.contextFromFile(context, fileName)
     if (timeContext) {
-      const pageContext = new SsgContextImpl(context.locales, timeContext, context.inputFile)
+      const pageContext = new RR0SsgContextImpl(context.locales, timeContext, context.inputFile)
       title = TimeTextBuilder.build(pageContext)
       title = StringUtil.capitalizeFirstLetter(title)
     }

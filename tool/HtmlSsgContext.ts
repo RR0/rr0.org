@@ -6,7 +6,9 @@ export type HtmlContextVarName = ContextVarName | keyof HtmlMeta | keyof HtmlLin
 export type HtmlVarName = HtmlContextVarName | keyof HtmlFileInfo
 
 export interface HtmlSsgContext extends SsgContext {
+
   inputFile: HtmlFileInfo
+
   outputFile: HtmlFileInfo
 
   getVar(varName: HtmlVarName): string | undefined

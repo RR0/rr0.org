@@ -1,16 +1,17 @@
 import {ReplacerFactory} from "../tool/step/content/replace/ReplacerFactory"
 import {RegexReplacer} from "../tool/step/content/replace/RegexReplacer"
-import {SsgContext} from "../tool/SsgContext"
 import {TimeReplacer} from "./TimeReplacer"
+import {RR0SsgContext} from "../RR0SsgContext"
 
 export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
+
   private replacer: TimeReplacer
 
   constructor(protected timeFiles: string[]) {
     this.replacer = new TimeReplacer(timeFiles)
   }
 
-  async create(context: SsgContext): Promise<RegexReplacer> {
+  async create(context: RR0SsgContext): Promise<RegexReplacer> {
     return {
       replace: (substring: string, ...args: any[]): string => {
         const attrs = args[0]

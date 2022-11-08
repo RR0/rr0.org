@@ -1,7 +1,6 @@
-import {SsgContext} from "../tool/SsgContext"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
 import {TimeContext} from "./TimeContext"
-import {SsgContextImpl} from "../tool/SsgContextImpl"
+import {RR0SsgContextImpl} from "../RR0SsgContext"
 
 describe("RelativeTimeTextBuilder", () => {
 
@@ -16,7 +15,7 @@ describe("RelativeTimeTextBuilder", () => {
 
   test("next year", () => {
     {
-      const previousContext = new SsgContextImpl("fr", new TimeContext(intlOptions))
+      const previousContext = new RR0SsgContextImpl("fr", new TimeContext(intlOptions))
       previousContext.time.setYear(2003)
       const context = previousContext.clone()
       context.time.setYear(2004)
@@ -28,7 +27,7 @@ describe("RelativeTimeTextBuilder", () => {
 
   test("next month", () => {
     {
-      const sept9_2003 = new SsgContextImpl("fr", new TimeContext(intlOptions))
+      const sept9_2003 = new RR0SsgContextImpl("fr", new TimeContext(intlOptions))
       sept9_2003.time.setYear(2003)
       sept9_2003.time.setMonth(9)
       const oct_2003 = sept9_2003.clone()
@@ -46,7 +45,7 @@ describe("RelativeTimeTextBuilder", () => {
       expect(RelativeTimeTextBuilder.build(context4, context5)).toBe("lundi 24 janvier")
     }
     {
-      const context = new SsgContextImpl("en", new TimeContext(intlOptions))
+      const context = new RR0SsgContextImpl("en", new TimeContext(intlOptions))
       context.time.setYear(2003)
       context.time.setMonth(9)
       const previousContext = context.clone()
@@ -57,7 +56,7 @@ describe("RelativeTimeTextBuilder", () => {
 
   test("next day", () => {
     {
-      const context = new SsgContextImpl("fr", new TimeContext(intlOptions))
+      const context = new RR0SsgContextImpl("fr", new TimeContext(intlOptions))
       context.time.setYear(2003)
       context.time.setMonth(9)
       context.time.setDayOfMonth(23)
@@ -67,7 +66,7 @@ describe("RelativeTimeTextBuilder", () => {
       expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("le lendemain")
     }
     {
-      const context = new SsgContextImpl("en", new TimeContext(intlOptions))
+      const context = new RR0SsgContextImpl("en", new TimeContext(intlOptions))
       context.time.setYear(2003)
       context.time.setMonth(9)
       context.time.setDayOfMonth(23)
@@ -82,7 +81,7 @@ describe("RelativeTimeTextBuilder", () => {
 
     test("next", () => {
       {
-        let previousContext: SsgContext = new SsgContextImpl("fr", new TimeContext(intlOptions))
+        let previousContext = new RR0SsgContextImpl("fr", new TimeContext(intlOptions))
         const context = previousContext.clone()
         context.time.setYear(2003)
         context.time.setMonth(9)
@@ -96,7 +95,7 @@ describe("RelativeTimeTextBuilder", () => {
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("17:43")
       }
       {
-        let previousContext: SsgContext = new SsgContextImpl("en", new TimeContext(intlOptions))
+        let previousContext = new RR0SsgContextImpl("en", new TimeContext(intlOptions))
         const context = previousContext.clone()
         context.time.setYear(2003)
         context.time.setMonth(9)

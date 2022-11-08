@@ -226,6 +226,7 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiIncludeReplaceCommand(),
         new TitleReplaceCommand([timeDefaultHandler]),
         new StringEchoVarReplaceCommand("mail"),
+        new AngularExpressionReplaceCommand(),
         new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
         new SsiIfReplaceCommand(),
         new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),

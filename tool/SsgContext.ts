@@ -6,8 +6,10 @@ export type ContextVarName = "mail" | keyof FileInfo
 
 export interface SsgContext {
   messages: SsgMessages
-  log: () => void
+  log: { (message?: any, ...optionalParams: any[]): void; (...data: any[]): void }
   debug: { (message?: any, ...optionalParams: any[]): void; (...data: any[]): void }
+  warn: { (message?: any, ...optionalParams: any[]): void; (...data: any[]): void }
+  error: { (message?: any, ...optionalParams: any[]): void; (...data: any[]): void }
   inputFile: FileInfo
   outputFile: FileInfo
   readonly locales: string | string[]

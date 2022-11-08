@@ -11,6 +11,10 @@ export class SsgContextImpl implements SsgContext {
   } : console.log
   readonly debug = process.env.LOG_LEVEL === "debug" ? console.debug : () => {
   }
+  readonly warn = process.env.LOG_LEVEL === "warn" ? console.warn : () => {
+  }
+  readonly error = process.env.LOG_LEVEL === "error" ? console.error : () => {
+  }
   protected vars = new Map<string, string>()
 
   constructor(readonly locales: string | string[], readonly time: TimeContext,

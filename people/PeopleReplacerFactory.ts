@@ -1,8 +1,6 @@
-import {ReplacerFactory} from "../tool/step/content/replace/ReplacerFactory"
-import {RegexReplacer} from "../tool/step/content/replace/RegexReplacer"
-import {SsgContext} from "../tool/SsgContext"
 import {promise as glob} from "glob-promise"
 import {PeopleReplacer} from "./PeopleReplacer"
+import {RegexReplacer, ReplacerFactory, SsgContext} from "ssg-api"
 
 /**
  * Creates replacers for people HTML in a given context.

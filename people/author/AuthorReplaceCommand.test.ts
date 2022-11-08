@@ -1,12 +1,12 @@
-import {testUtil} from "../../tool/test/TestUtil"
-import {HtmlFileInfo} from "../../tool/util/file/HtmlFileInfo"
 import {AuthorReplaceCommand} from "./AuthorReplaceCommand"
+import {rr0TestUtil} from "../../test/RR0TestUtil"
+import {HtmlFileInfo} from "ssg-api"
 
 describe("AuthorReplaceCommand", () => {
 
   test("no author", async () => {
     const command = new AuthorReplaceCommand()
-    const context = testUtil.newHtmlContext("time/1/9/5/4/index.html",
+    const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/index.html",
       `This is published by <!--#echo var="author" -->!`)
     const file = await command.execute(context) as HtmlFileInfo
     expect(file.meta.author).toEqual([])
@@ -15,7 +15,7 @@ describe("AuthorReplaceCommand", () => {
 
   test("author only", async () => {
     const command = new AuthorReplaceCommand()
-    const context = testUtil.newHtmlContext("time/1/9/5/4/10/index.html",
+    const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")
     const file = await command.execute(context) as HtmlFileInfo
@@ -26,7 +26,7 @@ describe("AuthorReplaceCommand", () => {
 
   test("copyright only", async () => {
     const command = new AuthorReplaceCommand()
-    const context = testUtil.newHtmlContext("time/1/9/5/4/10/index.html",
+    const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.copyright = "Some publication"
     const file = await command.execute(context) as HtmlFileInfo
@@ -37,7 +37,7 @@ describe("AuthorReplaceCommand", () => {
 
   test("author with copyright", async () => {
     const command = new AuthorReplaceCommand()
-    const context = testUtil.newHtmlContext("time/1/9/5/4/10/index.html",
+    const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")
     context.inputFile.meta.copyright = "Some publication"

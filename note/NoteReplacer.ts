@@ -1,4 +1,4 @@
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
+import {HtmlSsgContext} from "ssg-api"
 
 export class NoteReplacer {
 

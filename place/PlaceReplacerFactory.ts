@@ -1,16 +1,12 @@
-import {ReplacerFactory} from "../tool/step/content/replace/ReplacerFactory"
 import {PlaceReplacer} from "./PlaceReplacer"
-import {DomReplacer} from "../tool/step/content/replace/DomReplacer"
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
 import {PlaceService} from "./PlaceService"
 import {OrganizationService} from "../org/OrganizationService"
+import {DomReplacer, HtmlSsgContext, ReplacerFactory} from "ssg-api"
 
 /**
  * Creates replacers for place HTML in a given context.
  */
 export class PlaceReplacerFactory implements ReplacerFactory<DomReplacer> {
-
-  protected singleton?: PlaceReplacer
 
   constructor(private placeService: PlaceService, protected orgService: OrganizationService) {
   }

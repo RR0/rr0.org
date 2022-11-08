@@ -1,7 +1,7 @@
 import {LinkHandler} from "../LinkReplaceCommand"
-import {Link, LinkType} from "../tool/util/file/HtmlFileInfo"
 import {Time} from "./Time"
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import {Link, LinkType} from "ssg-api"
 
 export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
 

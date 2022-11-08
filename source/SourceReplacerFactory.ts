@@ -1,7 +1,5 @@
-import {ReplacerFactory} from "../tool/step/content/replace/ReplacerFactory"
 import {SourceReplacer} from "./SourceReplacer"
-import {DomReplacer} from "../tool/step/content/replace/DomReplacer"
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
+import {DomReplacer, HtmlSsgContext, ReplacerFactory} from "ssg-api"
 
 /**
  * Creates replacers for sources HTML in a given context.

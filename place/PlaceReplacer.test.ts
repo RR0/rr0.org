@@ -1,10 +1,10 @@
 import {PlaceReplacer} from "./PlaceReplacer"
 import {PlaceService} from "./PlaceService"
-import {testUtil} from "../tool/test/TestUtil"
 import {Elevation, Place, PlaceLocation} from "./Place"
 import {OrganizationService} from "../org/OrganizationService"
 import {Organization} from "../org"
-import {SsgContext} from "../tool/SsgContext"
+import {SsgContext} from "ssg-api"
+import {rr0TestUtil} from "../test/RR0TestUtil"
 
 class MockPlaceService extends PlaceService {
 
@@ -57,7 +57,7 @@ describe("PlaceReplacer", () => {
     const placeService = new MockPlaceService(location, {elevation}, dirName)
     const orgService = new MockOrganizationService(dirName)
     const replacer = new PlaceReplacer(placeService, orgService)
-    const context = testUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
+    const context = rr0TestUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
     const doc = context.inputFile.dom.window.document
     const text = "LANL"
     const placeTag = createPlaceTag(doc, text)
@@ -76,7 +76,7 @@ describe("PlaceReplacer", () => {
     const placeService = new MockPlaceService(location, {elevation}, dirName)
     const orgService = new MockOrganizationService(dirName)
     const replacer = new PlaceReplacer(placeService, orgService)
-    const context = testUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
+    const context = rr0TestUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
     const doc = context.inputFile.dom.window.document
     const text = "Non existing"
     const placeTag = createPlaceTag(doc, text)

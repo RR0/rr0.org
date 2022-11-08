@@ -1,6 +1,4 @@
-import {SsiEchoVarReplaceCommand} from "../tool/step/content/replace/html/ssi/SsiEchoVarCommand"
-import {RegexReplacer} from "../tool/step/content/replace/RegexReplacer"
-import {StringContextHandler} from "../tool/step/content/replace/html/StringContextHandler"
+import {RegexReplacer, SsiEchoVarReplaceCommand, StringContextHandler} from "ssg-api"
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
 /**

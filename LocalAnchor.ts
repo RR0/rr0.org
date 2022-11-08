@@ -1,4 +1,4 @@
-import {HtmlTag} from "../../../../util/HtmlTag"
+import {HtmlTag} from "./util/HtmlTag"
 
 export class LocalAnchor {
 

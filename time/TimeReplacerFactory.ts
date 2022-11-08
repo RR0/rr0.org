@@ -1,7 +1,6 @@
-import {ReplacerFactory} from "../tool/step/content/replace/ReplacerFactory"
-import {RegexReplacer} from "../tool/step/content/replace/RegexReplacer"
 import {TimeReplacer} from "./TimeReplacer"
 import {RR0SsgContext} from "../RR0SsgContext"
+import {RegexReplacer, ReplacerFactory} from "ssg-api"
 
 export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
 

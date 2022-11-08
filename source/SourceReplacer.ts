@@ -1,5 +1,5 @@
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
-import {LocalAnchor} from "../tool/step/content/replace/html/LocalAnchor"
+import {HtmlSsgContext} from "ssg-api"
+import {LocalAnchor} from "../LocalAnchor"
 
 export class SourceReplacer {
   /**

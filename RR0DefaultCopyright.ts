@@ -1,5 +1,4 @@
-import {HtmlSsgContext} from "./tool/HtmlSsgContext"
-import {StringContextHandler} from "./tool/step/content/replace/html/StringContextHandler"
+import {HtmlSsgContext, StringContextHandler} from "ssg-api"
 
 export const rr0DefaultCopyright: StringContextHandler = (context: HtmlSsgContext): string | undefined => {
   const fileInfo = context.inputFile

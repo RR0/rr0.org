@@ -1,6 +1,6 @@
 import {Elevation, Place, PlaceLocation} from "./Place"
-import {writeFile} from "../tool/util/file/FileUtil"
 import fs from "fs"
+import {writeFile} from "ssg-api"
 
 export abstract class PlaceService {
 

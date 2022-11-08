@@ -1,5 +1,5 @@
-import {SsgContext} from "../tool/SsgContext"
 import {Rr0Data} from "../Rr0Data"
+import {SsgContext} from "ssg-api"
 
 export interface Organization extends Rr0Data {
 

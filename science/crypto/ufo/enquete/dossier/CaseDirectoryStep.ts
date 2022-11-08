@@ -1,9 +1,7 @@
-import {OutputFunc} from "../../../../../tool/Ssg"
-import {HtmlTag} from "../../../../../tool/util/HtmlTag"
-import {getFileInfo} from "../../../../../tool/util/file/FileInfo"
-import {DirectoryStep} from "../../../../../tool/step/DirectoryStep"
-import {StringUtil} from "../../../../../tool/util/string/StringUtil"
+import {DirectoryStep, getFileInfo, OutputFunc} from "ssg-api"
 import {RR0SsgContext} from "../../../../../RR0SsgContext"
+import {HtmlTag} from "../../../../../util/HtmlTag"
+import {StringUtil} from "../../../../../util/string/StringUtil"
 
 enum HynekClassification {
   NL = "NL",

@@ -1,7 +1,5 @@
+import {RegexReplacer, ReplacerFactory, SsgContext} from "ssg-api"
 import {WitnessReplacer} from "./WitnessReplacer"
-import {RegexReplacer} from "../../tool/step/content/replace/RegexReplacer"
-import {ReplacerFactory} from "../../tool/step/content/replace/ReplacerFactory"
-import {SsgContext} from "../../tool/SsgContext"
 
 /**
  * Creates replacers for caviarded HTML in a given context.

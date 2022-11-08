@@ -1,7 +1,7 @@
-import {HtmlFileInfo} from "../tool/util/file/HtmlFileInfo"
 import {timeDefaultHandler} from "./TimeDefaultTitle"
 import {TitleReplaceCommand} from "./TitleReplaceCommand"
 import {rr0TestUtil} from "../test/RR0TestUtil"
+import {HtmlFileInfo} from "ssg-api"
 
 describe("TitleReplaceCommand", () => {
 

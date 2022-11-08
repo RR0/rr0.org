@@ -1,4 +1,4 @@
-import {SsgContext} from "../../tool/SsgContext"
+import {SsgContext} from "ssg-api"
 
 export class WitnessReplacer {
 

@@ -1,6 +1,4 @@
-import {HtmlSsgContext} from "./tool/HtmlSsgContext"
-import {ReplaceCommand} from "./tool/step/content/replace/ReplaceCommand"
-import {HtmlFileInfo, Link} from "./tool/util/file/HtmlFileInfo"
+import {HtmlFileInfo, HtmlSsgContext, Link, ReplaceCommand} from "ssg-api"
 import {HtmlRR0SsgContext} from "./RR0SsgContext"
 
 export interface LinkHandler<C extends HtmlSsgContext> {

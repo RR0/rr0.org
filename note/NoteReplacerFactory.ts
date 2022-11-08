@@ -1,7 +1,5 @@
-import {ReplacerFactory} from "../tool/step/content/replace/ReplacerFactory"
+import {DomReplacer, HtmlSsgContext, ReplacerFactory} from "ssg-api"
 import {NoteReplacer} from "./NoteReplacer"
-import {DomReplacer} from "../tool/step/content/replace/DomReplacer"
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
 
 /**
  * Creates replacers for notes HTML in a given context.

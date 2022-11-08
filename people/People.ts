@@ -1,7 +1,7 @@
 import {Gender} from "./Gender"
 import {Occupation} from "./Occupation"
 import {CountryCode} from "../org/CountryCode"
-import {StringUtil} from "../tool/util/string/StringUtil"
+import {StringUtil} from "../util/string/StringUtil"
 
 export class People {
   gender?: Gender

@@ -1,10 +1,7 @@
-import {SsgContextImpl} from "./tool/SsgContextImpl"
 import {TimeContext} from "./time/TimeContext"
-import {FileInfo} from "./tool/util/file/FileInfo"
 import {ssgMessages} from "./i18n"
 import {RR0SsgMessages} from "./i18n/RR0SsgMessages"
-import {SsgContext} from "./tool/SsgContext"
-import {HtmlSsgContext} from "./tool/HtmlSsgContext"
+import {FileInfo, HtmlSsgContext, SsgContext, SsgContextImpl} from "ssg-api"
 
 export interface RR0SsgContext extends SsgContext {
   readonly messages: RR0SsgMessages

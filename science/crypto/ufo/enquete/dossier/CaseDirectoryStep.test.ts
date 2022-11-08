@@ -1,9 +1,6 @@
-import {DirectoryStep} from "../../../../../tool/step/DirectoryStep"
-import {SsgContext} from "../../../../../tool/SsgContext"
-import {SsgConfig} from "../../../../../tool/Ssg"
-import {FileInfo} from "../../../../../tool/util/file/FileInfo"
 import {CaseDirectoryStep} from "./CaseDirectoryStep"
 import {rr0TestUtil} from "../../../../../test/RR0TestUtil"
+import {FileInfo, SsgConfig, SsgContext} from "ssg-api"
 
 describe("DirectoryStep", () => {
 

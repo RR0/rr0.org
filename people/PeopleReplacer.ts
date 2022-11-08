@@ -1,6 +1,6 @@
-import {SsgContext} from "../tool/SsgContext"
 import {People} from "./People"
-import {UrlUtil} from "../tool/util/url/UrlUtil"
+import {SsgContext} from "ssg-api"
+import {UrlUtil} from "../util/url/UrlUtil"
 
 export class PeopleReplacer {
 

@@ -1,10 +1,9 @@
-import {HtmlSsgContext} from "../tool/HtmlSsgContext"
-import {ReplaceCommand} from "../tool/step/content/replace/ReplaceCommand"
-import {HtmlFileInfo} from "../tool/util/file/HtmlFileInfo"
-import {StringUtil} from "../tool/util/string/StringUtil"
-import {LocalAnchor} from "../tool/step/content/replace/html/LocalAnchor"
+import {HtmlFileInfo, HtmlSsgContext, ReplaceCommand} from "ssg-api"
+import {StringUtil} from "../util/string/StringUtil"
+import {LocalAnchor} from "../LocalAnchor"
 
 /**
+ * Creates page outline from sections tags.
  */
 export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
 

@@ -1,7 +1,7 @@
 import {TimeTextBuilder} from "./TimeTextBuilder"
-import {StringUtil} from "../tool/util/string/StringUtil"
 import {TimeContext} from "./TimeContext"
 import {HtmlRR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
+import {StringUtil} from "../util/string/StringUtil"
 
 export class Time {
 

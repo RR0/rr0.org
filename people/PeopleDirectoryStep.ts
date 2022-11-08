@@ -1,15 +1,13 @@
-import {OutputFunc} from "../tool/Ssg"
-import {HtmlTag} from "../tool/util/HtmlTag"
-import {getFileInfo} from "../tool/util/file/FileInfo"
-import {DirectoryStep} from "../tool/step/DirectoryStep"
 import {Gender} from "./Gender"
 import {CountryCode} from "../org/CountryCode"
 import {Occupation} from "./Occupation"
-import {StringUtil} from "../tool/util/string/StringUtil"
 import {Time} from "../time/Time"
 import {People} from "./People"
 import {promise as glob} from "glob-promise"
 import {RR0SsgContext} from "../RR0SsgContext"
+import {HtmlTag} from "../util/HtmlTag"
+import {DirectoryStep, getFileInfo, OutputFunc} from "ssg-api"
+import {StringUtil} from "../util/string/StringUtil"
 
 /**
  * Scan directories for people information, then populates a template with collected data.

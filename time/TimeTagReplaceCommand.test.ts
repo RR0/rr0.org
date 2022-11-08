@@ -1,6 +1,6 @@
 import {TimeReplacerFactory} from "./TimeReplacerFactory"
-import {HtmlTagReplaceCommand} from "../tool/step/content/replace/html/tag/HtmlTagReplaceCommand"
 import {rr0TestUtil} from "../test/RR0TestUtil"
+import {HtmlTagReplaceCommand} from "ssg-api"
 
 describe("HtmlTagReplaceCommand", () => {
 

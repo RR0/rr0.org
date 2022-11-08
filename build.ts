@@ -1,48 +1,49 @@
-import {writeFileInfo} from "./tool/util/file/FileUtil"
-import {Ssg, SsgConfig} from "./tool/Ssg"
-import {SsiIncludeReplaceCommand} from "./tool/step/content/replace/html/ssi/SsiIncludeReplaceCommand"
-import {SsiIfReplaceCommand} from "./tool/step/content/replace/html/ssi/SsiIfReplaceCommand"
-import {SsiLastModifiedReplaceCommand} from "./tool/step/content/replace/html/ssi/SsiLastModifiedReplaceCommand"
-import {
-  HtAccessToNetlifyRedirectsReplaceCommand
-} from "./tool/step/content/replace/htaccess/HtAccessToNetlifyRedirectsReplaceCommand"
-import {SsiSetVarReplaceCommand} from "./tool/step/content/replace/html/ssi/SsiSetVarCommand"
-import {HtmlTagReplaceCommand} from "./tool/step/content/replace/html/tag/HtmlTagReplaceCommand"
 import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
-import {SsgContext} from "./tool/SsgContext"
-import {ClassRegexReplaceCommand} from "./tool/step/content/replace/html/class/ClassRegexReplaceCommand"
 import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
-import {ContentStep, ContentStepConfig} from "./tool/step/content/ContentStep"
-import {CopyStep} from "./tool/step/CopyStep"
-import {FileInfo, getFileInfo} from "./tool/util/file/FileInfo"
 import {CaseDirectoryStep} from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./people/PeopleDirectoryStep"
 import {Occupation} from "./people/Occupation"
-import {CLI} from "./tool/util/cli/CLI"
-import {
-  HtAccessToNetlifyConfigReplaceCommand
-} from "./tool/step/content/replace/htaccess/HtAccessToNetlifyConfigReplaceCommand"
 import {timeDefaultHandler} from "./time/TimeDefaultTitle"
 import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
 import {NoteReplacerFactory} from "./note/NoteReplacerFactory"
 import {SourceReplacerFactory} from "./source/SourceReplacerFactory"
-import {ClassDomReplaceCommand} from "./tool/step/content/replace/html/class/ClassDomReplaceCommand"
 import {LinkReplaceCommand} from "./LinkReplaceCommand"
 import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
 import {AuthorReplaceCommand} from "./people/author/AuthorReplaceCommand"
 import {TimeLinkDefaultHandler} from "./time/TimeLinkDefaultHandler"
 import {promise as glob} from "glob-promise"
-import {SsiEchoVarReplaceCommand} from "./tool/step/content/replace/html/ssi/SsiEchoVarCommand"
-import {StringEchoVarReplaceCommand} from "./tool/step/content/replace/html/StringEchoVarReplaceCommand"
 import {GooglePlaceService} from "./place/GooglePlaceService"
 import {PlaceReplacerFactory} from "./place/PlaceReplacerFactory"
 import {OrganizationService} from "./org/OrganizationService"
-import {AnchorReplaceCommand} from "./tool/step/content/replace/html/anchor/AnchorReplaceCommand"
-import {AngularExpressionReplaceCommand} from "./tool/step/content/replace/angular/AngularExpressionReplaceCommand"
 import {WitnessReplacerFactory} from "./people/witness/WitnessReplacerFactory"
 import {RR0SsgContextImpl} from "./RR0SsgContext"
 import {TitleReplaceCommand} from "./time/TitleReplaceCommand"
+import {CLI} from "./util/cli/CLI"
+import {
+  AnchorReplaceCommand,
+  AngularExpressionReplaceCommand,
+  ClassDomReplaceCommand,
+  ClassRegexReplaceCommand,
+  ContentStep,
+  ContentStepConfig,
+  CopyStep,
+  FileInfo,
+  getFileInfo,
+  HtAccessToNetlifyConfigReplaceCommand,
+  HtAccessToNetlifyRedirectsReplaceCommand,
+  HtmlTagReplaceCommand,
+  Ssg,
+  SsgConfig,
+  SsgContext,
+  SsiEchoVarReplaceCommand,
+  SsiIfReplaceCommand,
+  SsiIncludeReplaceCommand,
+  SsiLastModifiedReplaceCommand,
+  SsiSetVarReplaceCommand,
+  StringEchoVarReplaceCommand,
+  writeFileInfo
+} from "ssg-api"
 
 const args = CLI.getArgs()
 const contents = args.contents

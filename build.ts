@@ -132,9 +132,10 @@ async function getTimeFiles(): Promise<string[]> {
   return timeFiles
 }
 
+const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
 const scientistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
-  ["people/Astronomers_fichiers"],
+  excludedPeopleDirs,
   "people/scientifiques.html",
   outputFunc, [
     Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
@@ -153,19 +154,19 @@ const scientistsDirectoryStep = new PeopleDirectoryStep(
 
 const ufologistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
-  ["people/Astronomers_fichiers"],
+  excludedPeopleDirs,
   "people/ufologues.html",
   outputFunc, [Occupation.ufologist])
 
 const astronomersDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
-  ["people/Astronomers_fichiers"],
+  excludedPeopleDirs,
   "people/astronomes.html",
   outputFunc, [Occupation.astronomer])
 
 const contacteesDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/", "science/crypto/ufo/enquete/dossier/Villa"],
-  ["people/Astronomers_fichiers"],
+  excludedPeopleDirs,
   "people/contactes.html",
   outputFunc, [Occupation.contactee])
 
@@ -179,7 +180,7 @@ const pilotsDirectoryStep = new PeopleDirectoryStep(
     "science/crypto/ufo/enquete/dossier/Coyne",
     "science/crypto/ufo/enquete/dossier/Mantell"
   ],
-  ["people/Astronomers_fichiers"],
+  excludedPeopleDirs,
   "people/pilotes.html",
   outputFunc, [Occupation.astronaut, Occupation.pilot])
 

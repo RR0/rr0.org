@@ -18,7 +18,7 @@ type CountriesMessages
 
 type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
-export interface RR0SsgMessages {
+export interface RR0Messages {
   context: {
     time: {
       duration: {

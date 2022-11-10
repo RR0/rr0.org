@@ -21,7 +21,6 @@ import {RR0SsgContextImpl} from "./RR0SsgContext"
 import {TitleReplaceCommand} from "./time/TitleReplaceCommand"
 import {CLI} from "./util/cli/CLI"
 import {
-  AnchorReplaceCommand,
   AngularExpressionReplaceCommand,
   ClassDomReplaceCommand,
   ClassRegexReplaceCommand,
@@ -44,6 +43,7 @@ import {
   StringEchoVarReplaceCommand,
   writeFileInfo
 } from "ssg-api"
+import {AnchorReplaceCommand} from "./anchor/AnchorReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -133,11 +133,12 @@ async function getTimeFiles(): Promise<string[]> {
 }
 
 const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
+
 const scientistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
   excludedPeopleDirs,
   "people/scientifiques.html",
-  outputFunc, [
+  outputFunc, config, [
     Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
     Occupation.biochemist, Occupation.biologist, Occupation.biophysicist, Occupation.botanist,
     Occupation.chemist,
@@ -156,19 +157,25 @@ const ufologistsDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
   excludedPeopleDirs,
   "people/ufologues.html",
-  outputFunc, [Occupation.ufologist])
+  outputFunc, config, [Occupation.ufologist])
+
+const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(
+  ["people/*/*/"],
+  excludedPeopleDirs,
+  "people/witness/index.html",
+  outputFunc, config, [Occupation.ufoWitness])
 
 const astronomersDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/"],
   excludedPeopleDirs,
   "people/astronomes.html",
-  outputFunc, [Occupation.astronomer])
+  outputFunc, config, [Occupation.astronomer])
 
 const contacteesDirectoryStep = new PeopleDirectoryStep(
   ["people/*/*/", "science/crypto/ufo/enquete/dossier/Villa"],
   excludedPeopleDirs,
   "people/contactes.html",
-  outputFunc, [Occupation.contactee])
+  outputFunc, config, [Occupation.contactee])
 
 const pilotsDirectoryStep = new PeopleDirectoryStep(
   [
@@ -182,7 +189,7 @@ const pilotsDirectoryStep = new PeopleDirectoryStep(
   ],
   excludedPeopleDirs,
   "people/pilotes.html",
-  outputFunc, [Occupation.astronaut, Occupation.pilot])
+  outputFunc, config, [Occupation.astronaut, Occupation.pilot])
 
 const ufoCasesDirectoryStep = new CaseDirectoryStep(
   [
@@ -210,7 +217,7 @@ getTimeFiles().then(async (timeFiles) => {
       [`people/${c}/*/`],
       [],
       `people/${c}/index.html`,
-      outputFunc, []))
+      outputFunc, config, []))
   }
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
@@ -259,10 +266,11 @@ getTimeFiles().then(async (timeFiles) => {
     .add(scientistsDirectoryStep)
     .add(contacteesDirectoryStep)
     .add(astronomersDirectoryStep)
+    .add(ufoWitnessesDirectoryStep)
     .add(...letterDirectorySteps)
     .add(pilotsDirectoryStep)
-    .add(new CopyStep(copies))
+    .add(new CopyStep(copies, config))
     .start(context)
     .then(result => console.log("Completed", result))
-    .catch(err => console.error(err, context.inputFile.name, "=>", context.outputFile.name))
+    .catch(err => console.error(err, context.inputFile.name, "=>", context.outputFile?.name))
 })

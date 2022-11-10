@@ -62,6 +62,7 @@ export enum Occupation {
   telegrapher = "telegrapher",
   truckDriver = "truckDriver",
   ufologist = "ufologist",
+  ufoWitness = "ufoWitness",
   worker = "worker",
   writer = "writer"
 }

@@ -118,14 +118,19 @@ export enum CountryCode {
   nz = "nz",
 
   /**
+   * PEru
+   */
+  pe = "pe",
+
+  /**
    * PoLand
    */
   pl = "pl",
 
   /**
-   * PEru
+   * PorTugal
    */
-  pe = "pe",
+  pt = "pt",
 
   /**
    * ROmania

@@ -2,6 +2,7 @@ import {DirectoryStep, OutputFunc, SsgConfig, SsgFile} from "ssg-api"
 import {RR0SsgContext} from "../../../../../RR0SsgContext"
 import {HtmlTag} from "../../../../../util/HtmlTag"
 import {StringUtil} from "../../../../../util/string/StringUtil"
+import {Time} from "../../../../../time/Time"
 
 enum HynekClassification {
   NL = "NL",
@@ -71,9 +72,11 @@ export class CaseDirectoryStep extends DirectoryStep {
         details.push(classificationLabels.short)
         titles.push(classificationLabels.long)
       }
-      const time = dirCase.time
-      if (time) {
-        details.push(HtmlTag.toString("time", time))
+      const timeStr = dirCase.time
+      if (timeStr) {
+        const time = Time.dateFromIso(timeStr.replace("~", ""))
+        const timeDetail = time.getFullYear()
+        details.push(HtmlTag.toString("time", timeDetail.toString()))
       }
       const conclusion = dirCase.conclusion
       if (conclusion) {

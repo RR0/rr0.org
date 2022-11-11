@@ -37,8 +37,9 @@ const cssClasses: Record<string, string> = {
 
 export class CaseDirectoryStep extends DirectoryStep {
 
-  constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc) {
-    super(dirs, excludedDirs, template, outputFunc)
+  constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc,
+              config: SsgConfig) {
+    super(dirs, excludedDirs, template, config, "case directory")
   }
 
   protected async processDirs(context: RR0SsgContext, dirames: string[]): Promise<void> {

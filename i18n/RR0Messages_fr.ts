@@ -129,6 +129,7 @@ export class RR0Messages_fr implements RR0Messages {
       physicist: (gender: Gender) => gender === Gender.male ? "physicien" : "physicienne",
       physician: (_gender: Gender) => "médecin",
       pilot: (_gender: Gender) => "pilote",
+      policeman: (gender: Gender) => gender === Gender.male ? "policier" : "policière",
       politician: (gender: Gender) => gender === Gender.male ? "policitien" : "policitienne",
       priest: (gender: Gender) => gender === Gender.male ? "prêtre" : "prêtresse",
       producer: (gender: Gender) => gender === Gender.male ? "producteur" : "productrice",

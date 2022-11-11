@@ -50,6 +50,7 @@ export enum Occupation {
   physician = "physician",
   physicist = "physicist",
   politician = "politician",
+  policeman = "policeman",
   priest = "priest",
   producer = "producer",
   psychologist = "psychologist",

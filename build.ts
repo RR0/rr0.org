@@ -80,11 +80,11 @@ const config: SsgConfig = {
   outDir: "out"
 }
 
-async function outputFunc(context: SsgContext, info: FileInfo, outDir = config.outDir + "/"): Promise<void> {
+async function outputFunc(context: SsgContext, info: SsgFile, outDir = config.outDir + "/"): Promise<void> {
   info.name = `${outDir}${info.name}`
   try {
     console.log("Writing", info.name)
-    await writeFileInfo(info)
+    await info.write()
   } catch (e) {
     console.error(info.name, e)
   }
@@ -105,8 +105,8 @@ context.setVar("mail", "javarome@gmail.com")
 const htAccessToNetlifyConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
-  getOutputFile(context: SsgContext): FileInfo {
-    return getFileInfo(context, "netlify.toml", "utf-8")
+  getOutputFile(context: SsgContext): SsgFile {
+    return SsgFile.read(context, "netlify.toml", "utf-8")
   }
 }
 
@@ -122,33 +122,18 @@ async function getTimeFiles(): Promise<string[]> {
     minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
 }
 
-const ufoCasesDirectoryStep = new CaseDirectoryStep(
-  [
-    "science/crypto/ufo/enquete/dossier/*/",
-    "time/1/6/0/8/Signes/",
-    "science/crypto/ufo/enquete/dossier/Ummo/Aluche",
-    "science/crypto/ufo/enquete/dossier/Ummo/SanJoseDeValderas",
-    "science/crypto/ufo/observation/projet/Hessdalen",
-    "people/a/AndreassonBetty",
-    "people/c/CrowhurstDonaldC",
-    "people/v/ValentichFrederik",
-    "people/n/NapolitanoLinda"
-  ],
-  ["science/crypto/ufo/enquete/dossier/canular"],
-  "science/crypto/ufo/enquete/dossier/index.html",
-  outputFunc, config)
+async function findDirectoriesContaining(fileName) {
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index
+  }
+
+  return (await glob("**/" + fileName))
+    .map(path => path.substring(0, path.lastIndexOf("/")))
+    .filter(onlyUnique)
+}
 
 async function createPeopleSteps(): Promise<SsgStep[]> {
-  const peopleDirectories = [
-    "people/*/*/",
-    "science/crypto/ufo/enquete/dossier/Villa",
-    "science/crypto/ufo/enquete/dossier/Goshen",
-    "science/crypto/ufo/enquete/dossier/Aurigny",
-    "science/crypto/ufo/enquete/dossier/Tananarive",
-    "science/crypto/ufo/enquete/dossier/Draguignan",
-    "science/crypto/ufo/enquete/dossier/Coyne",
-    "science/crypto/ufo/enquete/dossier/Mantell"
-  ]
+  const peopleDirectories = await findDirectoriesContaining("people*.json")
   const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
 
   const scientistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
@@ -213,14 +198,24 @@ async function createPeopleSteps(): Promise<SsgStep[]> {
   return [scientistsDirectoryStep, ufologistsDirectoryStep, ufoWitnessesDirectoryStep, astronomersDirectoryStep, contacteesDirectoryStep, pilotsDirectoryStep, peopleDirectoryStep, ...letterDirectorySteps]
 }
 
-getTimeFiles().then(async (timeFiles) => {
+async function createUfoCasesStep(): Promise<CaseDirectoryStep> {
+  const ufoCasesDirectories = await findDirectoriesContaining("case.json")
+  return new CaseDirectoryStep(
+    ufoCasesDirectories,
+    ["science/crypto/ufo/enquete/dossier/canular"],
+    "science/crypto/ufo/enquete/dossier/index.html",
+    outputFunc, config)
+}
 
+getTimeFiles().then(async (timeFiles) => {
+  const ufoCasesDirectoryStep = await createUfoCasesStep()
   const peopleSteps = await createPeopleSteps()
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
     throw Error("GOOGLE_MAPS_API_KEY is required")
   }
+  context.setVar("mapsApiKey", apiKey)
   const placeService = new GooglePlaceService("place", apiKey)
 
   const orgService = new OrganizationService("org")
@@ -233,6 +228,7 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiIncludeReplaceCommand(),
         new TitleReplaceCommand([timeDefaultHandler]),
         new StringEchoVarReplaceCommand("mail"),
+        new StringEchoVarReplaceCommand("mapsApiKey"),
         new AngularExpressionReplaceCommand(),
         new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
         new SsiIfReplaceCommand(),
@@ -251,7 +247,7 @@ getTimeFiles().then(async (timeFiles) => {
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand("https://rr0.org/")
       ],
-      getOutputFile(context: SsgContext): FileInfo {
+      getOutputFile(context: SsgContext): SsgFile {
         return context.inputFile
       }
     }

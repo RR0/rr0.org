@@ -1,6 +1,6 @@
 import {AuthorReplaceCommand} from "./AuthorReplaceCommand"
 import {rr0TestUtil} from "../../test/RR0TestUtil"
-import {HtmlFileInfo} from "ssg-api"
+import {HtmlSsgFile} from "ssg-api"
 
 describe("AuthorReplaceCommand", () => {
 
@@ -8,7 +8,7 @@ describe("AuthorReplaceCommand", () => {
     const command = new AuthorReplaceCommand()
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/index.html",
       `This is published by <!--#echo var="author" -->!`)
-    const file = await command.execute(context) as HtmlFileInfo
+    const file = await command.execute(context) as HtmlSsgFile
     expect(file.meta.author).toEqual([])
     expect(file.contents).toBe("This is published by !")
   })
@@ -18,7 +18,7 @@ describe("AuthorReplaceCommand", () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")
-    const file = await command.execute(context) as HtmlFileInfo
+    const file = await command.execute(context) as HtmlSsgFile
     expect(file.meta.author).toEqual(["Beau, Jérôme"])
     expect(file.contents).toBe(
       `This is published by <div class="document-author"><span class="people">Beau, Jérôme</span></div>!`)
@@ -29,7 +29,7 @@ describe("AuthorReplaceCommand", () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.copyright = "Some publication"
-    const file = await command.execute(context) as HtmlFileInfo
+    const file = await command.execute(context) as HtmlSsgFile
     expect(file.meta.author).toEqual([])
     expect(file.meta.copyright).toBe("Some publication")
     expect(file.contents).toBe(`This is published by <div class="document-author">Some publication</div>!`)
@@ -41,7 +41,7 @@ describe("AuthorReplaceCommand", () => {
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")
     context.inputFile.meta.copyright = "Some publication"
-    const file = await command.execute(context) as HtmlFileInfo
+    const file = await command.execute(context) as HtmlSsgFile
     expect(file.meta.author).toEqual(["Beau, Jérôme"])
     expect(file.meta.copyright).toBe("Some publication")
     expect(file.contents).toBe(

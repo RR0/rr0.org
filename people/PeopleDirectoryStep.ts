@@ -6,7 +6,7 @@ import {People} from "./People"
 import {promise as glob} from "glob-promise"
 import {RR0SsgContext} from "../RR0SsgContext"
 import {HtmlTag} from "../util/HtmlTag"
-import {DirectoryStep, getFileInfo, OutputFunc, SsgConfig} from "ssg-api"
+import {DirectoryStep, OutputFunc, SsgConfig, SsgFile} from "ssg-api"
 import {StringUtil} from "../util/string/StringUtil"
 
 /**
@@ -24,16 +24,17 @@ export class PeopleDirectoryStep extends DirectoryStep {
     let peopleList: People[] = []
     const allCountries = new Set<CountryCode>()
     const occupations = new Set<Occupation>()
+    const fileSpec = `/people*.json`
     for (const dirName of dirames) {
-      const files = await glob(`${dirName}/people*.json`)
+      const files = await glob(`${dirName}${fileSpec}`)
       for (const file of files) {
         const people = new People(dirName)
         peopleList.push(people)
         try {
-          const jsonFileInfo = getFileInfo(context, file)
+          const jsonFileInfo = SsgFile.read(context, file)
           Object.assign(people, JSON.parse(jsonFileInfo.contents))
         } catch (e) {
-          console.warn(`${dirName} has no index.json description`)
+          console.warn(`${dirName} has no ${fileSpec} description`)
           // No json, just guess title.
         }
       }
@@ -105,7 +106,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
           const occupationMsg = context.messages.people.occupation[occupation]
           if (!occupationMsg) {
             throw Error(
-              `No message to translate occupation "${occupation}" in ${context.locales}, as specified in ${people.dirName}/people*.json`)
+              `No message to translate occupation "${occupation}" in ${context.locale}, as specified in ${people.dirName}/people*.json`)
           }
           classList.push(`occupation-${occupation}`)
           titles.push(occupationMsg(gender))

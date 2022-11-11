@@ -1,7 +1,7 @@
 import {TimeContext} from "./time/TimeContext"
 import {ssgMessages} from "./i18n"
 import {RR0Messages} from "./i18n/RR0Messages"
-import {FileInfo, HtmlSsgContext, SsgContext, SsgContextImpl} from "ssg-api"
+import {HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile} from "ssg-api"
 
 export interface RR0SsgContext extends SsgContext {
   readonly messages: RR0Messages
@@ -21,13 +21,13 @@ export class RR0SsgContextImpl extends SsgContextImpl {
 
   readonly messages: RR0Messages
 
-  constructor(locales: string | string[], readonly time: TimeContext,
-              currentFile: FileInfo | undefined = undefined) {
-    super(locales, currentFile)
-    this.messages = ssgMessages[Array.isArray(locales) ? locales[0] : locales]
+  constructor(locale: string, readonly time: TimeContext,
+              currentFile: SsgFile | undefined = undefined) {
+    super(locale, currentFile)
+    this.messages = ssgMessages[locale]
   }
 
   clone(): RR0SsgContextImpl {
-    return new RR0SsgContextImpl(this.locales, this.time.clone(), this._inputFile)
+    return new RR0SsgContextImpl(this.locale, this.time.clone(), this._inputFile)
   }
 }

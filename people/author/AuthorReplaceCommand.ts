@@ -12,13 +12,13 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
   protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
-        const fileInfo = context.inputFile
-        let authors = fileInfo.meta.author
+        const SsgFile = context.inputFile
+        let authors = SsgFile.meta.author
         let authorsHtml = ""
         for (const author of authors) {
           authorsHtml += `<span class="people">${author}</span>`
         }
-        const copyright = fileInfo.meta.copyright
+        const copyright = SsgFile.meta.copyright
         if (copyright) {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }

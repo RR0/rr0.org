@@ -15,12 +15,8 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
-    "copy": "~0.3.2",
-    "detect-character-encoding": "~0.8.0",
     "glob-promise": "~5.0.0",
-    "jsdom": "~20.0.2",
-    "@googlemaps/google-maps-services-js": "~3.3.16",
-    "ssg-api": "~1.0.6"
+    "ssg-api": "~1.1.1"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "~0.7.0",

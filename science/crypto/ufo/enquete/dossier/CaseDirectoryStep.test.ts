@@ -1,6 +1,6 @@
 import {CaseDirectoryStep} from "./CaseDirectoryStep"
 import {rr0TestUtil} from "../../../../../test/RR0TestUtil"
-import {FileInfo, SsgConfig, SsgContext} from "ssg-api"
+import {SsgConfig, SsgContext, SsgFile} from "ssg-api"
 
 describe("DirectoryStep", () => {
 

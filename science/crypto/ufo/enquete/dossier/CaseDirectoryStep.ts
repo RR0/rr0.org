@@ -1,4 +1,4 @@
-import {DirectoryStep, getFileInfo, OutputFunc, SsgConfig} from "ssg-api"
+import {DirectoryStep, OutputFunc, SsgConfig, SsgFile} from "ssg-api"
 import {RR0SsgContext} from "../../../../../RR0SsgContext"
 import {HtmlTag} from "../../../../../util/HtmlTag"
 import {StringUtil} from "../../../../../util/string/StringUtil"

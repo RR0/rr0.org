@@ -27,21 +27,19 @@ import {
   ContentStep,
   ContentStepConfig,
   CopyStep,
-  FileInfo,
-  getFileInfo,
   HtAccessToNetlifyConfigReplaceCommand,
   HtmlTagReplaceCommand,
   Ssg,
   SsgConfig,
   SsgContext,
+  SsgFile,
   SsgStep,
   SsiEchoVarReplaceCommand,
   SsiIfReplaceCommand,
   SsiIncludeReplaceCommand,
   SsiLastModifiedReplaceCommand,
   SsiSetVarReplaceCommand,
-  StringEchoVarReplaceCommand,
-  writeFileInfo
+  StringEchoVarReplaceCommand
 } from "ssg-api"
 import {AnchorReplaceCommand} from "./anchor/AnchorReplaceCommand"
 

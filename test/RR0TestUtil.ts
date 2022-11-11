@@ -1,6 +1,6 @@
 import {HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
 import {TimeContext} from "../time/TimeContext"
-import {FileInfo, HtmlFileInfo} from "ssg-api"
+import {HtmlSsgFile, SsgFile} from "ssg-api"
 
 class RR0TestUtil {
 

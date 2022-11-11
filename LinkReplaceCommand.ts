@@ -1,4 +1,4 @@
-import {HtmlFileInfo, HtmlSsgContext, Link, ReplaceCommand} from "ssg-api"
+import {HtmlSsgContext, HtmlSsgFile, Link, ReplaceCommand} from "ssg-api"
 import {HtmlRR0SsgContext} from "./RR0SsgContext"
 
 export interface LinkHandler<C extends HtmlSsgContext> {

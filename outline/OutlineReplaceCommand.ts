@@ -1,4 +1,4 @@
-import {HtmlFileInfo, HtmlSsgContext, ReplaceCommand} from "ssg-api"
+import {HtmlSsgContext, HtmlSsgFile, ReplaceCommand} from "ssg-api"
 import {StringUtil} from "../util/string/StringUtil"
 import {LocalAnchor} from "../LocalAnchor"
 

@@ -26,8 +26,8 @@ describe("DirectoryStep", () => {
       ["science/crypto/ufo/enquete/dossier/*/"],
       [],
       "science/crypto/ufo/enquete/dossier/index.html",
-      outputFunc)
-    const stepResult = await step.execute(context, config)
+      outputFunc, config)
+    const stepResult = await step.execute(context)
     expect(stepResult.directoryCount).toBe(239)
   })
 })

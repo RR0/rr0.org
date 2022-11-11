@@ -20,7 +20,7 @@
     "glob-promise": "~5.0.0",
     "jsdom": "~20.0.2",
     "@googlemaps/google-maps-services-js": "~3.3.16",
-    "ssg-api": "~1.0.2"
+    "ssg-api": "~1.0.6"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "~0.7.0",

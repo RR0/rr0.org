@@ -3,7 +3,7 @@ function showMap(address) {
   if (address) {
     mapEl.style.display = "block"
     mapEl.querySelector("iframe").src =
-      `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I`
+      `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
   } else {
     mapEl.style.display = "none"
   }

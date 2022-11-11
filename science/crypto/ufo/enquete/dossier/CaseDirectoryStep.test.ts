@@ -8,7 +8,7 @@ describe("DirectoryStep", () => {
     outDir: "out"
   }
 
-  async function outputFunc(context: SsgContext, info: FileInfo, oudDir = config.outDir + "/"): Promise<void> {
+  async function outputFunc(context: SsgContext, info: SsgFile, oudDir = config.outDir + "/"): Promise<void> {
     info.name = `${oudDir}${info.name}`
   }
 

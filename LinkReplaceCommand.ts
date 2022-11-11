@@ -19,7 +19,7 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
   constructor(protected defaultHandler?: LinkHandler<C>) {
   }
 
-  async execute(context: C): Promise<HtmlFileInfo> {
+  async execute(context: C): Promise<HtmlSsgFile> {
     const inputFile = context.inputFile
     const outputFile = context.outputFile
     const dom = outputFile.dom

@@ -7,7 +7,7 @@ import {LocalAnchor} from "../LocalAnchor"
  */
 export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
 
-  async execute(context: HtmlSsgContext): Promise<HtmlFileInfo> {
+  async execute(context: HtmlSsgContext): Promise<HtmlSsgFile> {
     const inputFile = context.inputFile
     const outputFile = context.outputFile
     const dom = outputFile.dom

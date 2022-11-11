@@ -48,7 +48,7 @@ export class CaseDirectoryStep extends DirectoryStep {
       const dirCase: Case = {dirName, time: "", title: ""}
       cases.push(dirCase)
       try {
-        const jsonFileInfo = getFileInfo(context, `${dirName}/case.json`)
+        const jsonFileInfo = SsgFile.read(context, `${dirName}/case.json`)
         Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
         console.warn(`${dirName} has no case.json description`)

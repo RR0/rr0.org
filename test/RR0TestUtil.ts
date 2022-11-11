@@ -16,7 +16,7 @@ class RR0TestUtil {
 
   newContext(inputFileName: string, contents: string): RR0SsgContext {
     const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions))
-    context.inputFile = new FileInfo(inputFileName, "utf8", contents, new Date(), "fr")
+    context.inputFile = new SsgFile(inputFileName, "utf8", contents, new Date(), "fr")
     context.outputFile = context.inputFile  // By default
     return context
   }
@@ -26,7 +26,7 @@ class RR0TestUtil {
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : undefined
     const currentFile = context.inputFile
-    context.inputFile = new HtmlFileInfo(currentFile.name, currentFile.encoding, currentFile.contents,
+    context.inputFile = new HtmlSsgFile(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
     context.outputFile = context.inputFile  // By default
     return context as HtmlRR0SsgContext

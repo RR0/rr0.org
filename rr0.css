@@ -1325,10 +1325,6 @@ nav > ul {
     display: list-item;
   }
 
-  blockquote ol > li, blockquote p, blockquote ul > li, q {
-    background: repeat-x rgba(250, 250, 255, .3)
-  }
-
   .label, .search label {
     display: inline
   }
@@ -1432,6 +1428,10 @@ nav > ul {
 
   .witness, .temoin, .temoin1, .temoin2, .temoin3 {
     background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
+  }
+
+  blockquote ol > li, blockquote p, blockquote ul > li, q {
+    background: repeat-x rgba(250, 250, 255, .3)
   }
 
   details[open] summary {

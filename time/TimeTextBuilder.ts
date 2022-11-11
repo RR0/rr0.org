@@ -79,7 +79,7 @@ export class TimeTextBuilder {
       text = ""
       // TODO: Handle partial date (month only, etc.)
     } else {  // Valid date?
-      text = date.toLocaleString(context.locales, printOptions)
+      text = date.toLocaleString(context.locale, printOptions)
     }
     return text
   }

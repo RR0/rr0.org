@@ -9,7 +9,7 @@ export class RelativeTimeTextBuilder {
     if (!previousTime.isDefined()) {
       return TimeTextBuilder.build(newContext)
     }
-    const deltaContext = new RR0SsgContextImpl(oldContext.locales, new TimeContext({...oldContext.time.options}))
+    const deltaContext = new RR0SsgContextImpl(oldContext.locale, new TimeContext({...oldContext.time.options}))
     const deltaTime = deltaContext.time
     let dayOfMonthDelta: number | undefined
     let yearDelta: number | undefined

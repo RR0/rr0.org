@@ -6,7 +6,7 @@ import {People} from "./People"
 import {promise as glob} from "glob-promise"
 import {RR0SsgContext} from "../RR0SsgContext"
 import {HtmlTag} from "../util/HtmlTag"
-import {DirectoryStep, getFileInfo, OutputFunc} from "ssg-api"
+import {DirectoryStep, getFileInfo, OutputFunc, SsgConfig} from "ssg-api"
 import {StringUtil} from "../util/string/StringUtil"
 
 /**

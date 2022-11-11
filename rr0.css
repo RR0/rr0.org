@@ -6,10 +6,18 @@
   --nav-width: 18vw;
   --aside-width: 18vw;
   --margin: 3vw;
+  --icon-color: gray;
 }
 
 body, aside {
   transition: width .3s ease
+}
+
+.people-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  margin: 0;
 }
 
 .text section, .text ul {

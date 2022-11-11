@@ -45,7 +45,8 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const pseudoPeopleList = peopleList.reduce((prev: People[], p: People) => {
       if (p.pseudonyms?.length > 0) {
         for (const pseudonym of p.pseudonyms) {
-          const pseudo = new People(p.dirName, p.firstNames, p.lastName, p.pseudonyms, p.occupations, p.countries)
+          const pseudo = new People(p.dirName, p.firstNames, p.lastName, p.pseudonyms, p.occupations, p.countries,
+            p.discredited, p.birthTime, p.deathTime, p.gender)
           pseudo.title = pseudonym
           prev.push(pseudo)
         }
@@ -58,7 +59,6 @@ export class PeopleDirectoryStep extends DirectoryStep {
       const attrs: { [name: string]: string } = {}
       const titles = []
       const classList = []
-      const details: string[] = []
       if (pseudoPeopleList.indexOf(people) >= 0) {
         classList.push("pseudonym")
         titles.push("(pseudonyme)")
@@ -113,17 +113,17 @@ export class PeopleDirectoryStep extends DirectoryStep {
         }
       }
       const text: (string | string[])[] = [people.title]
-      if (details.length > 0) {
-        text.push(`(${details.join(", ")})`)
+      let peopleLink = HtmlTag.toString("a", text.join(" "), {href: `/${dirName}/`})
+      if (people.discredited) {
+        peopleLink += ` <img src="/people/lier.svg" title="Discrédité" class="people-icon" alt="discredited"/>`
       }
-      const a = HtmlTag.toString("a", text.join(" "), {href: `/${dirName}/`})
       if (titles.length) {
         attrs.title = titles.join(", ")
       }
       if (classList.length) {
         attrs.class = classList.join(" ")
       }
-      return HtmlTag.toString("li", a, attrs)
+      return HtmlTag.toString("li", peopleLink, attrs)
     })
     const directoriesHtml = HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
     context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,

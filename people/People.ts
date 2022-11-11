@@ -4,10 +4,11 @@ import {CountryCode} from "../org/CountryCode"
 import {StringUtil} from "../util/string/StringUtil"
 
 export class People {
-  gender?: Gender
-  birthTime?: Date
-  deathTime?: Date
+  /**
+   * The people actually doesn't exist.
+   */
   hoax = false
+
   title: string
 
   constructor(
@@ -16,7 +17,14 @@ export class People {
     public lastName = "",
     readonly pseudonyms: string[] = [],
     readonly occupations: Occupation[] = [],
-    readonly countries: CountryCode[] = []
+    readonly countries: CountryCode[] = [],
+    /**
+     * The people has been caught lying or has confessed a hoax.
+     */
+    readonly discredited = false,
+    public birthTime?: Date,
+    public deathTime?: Date,
+    readonly gender?: Gender
   ) {
     if (firstNames?.length <= 0 && !lastName && dirName) {
       const lastSlash = dirName.lastIndexOf("/")

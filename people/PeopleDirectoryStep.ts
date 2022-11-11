@@ -15,8 +15,9 @@ import {StringUtil} from "../util/string/StringUtil"
 export class PeopleDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc,
-              protected filterOccupations: Occupation[]) {
-    super(dirs, excludedDirs, template, outputFunc)
+              config: SsgConfig,
+              protected filterOccupations: Occupation[], name = "people directory") {
+    super(dirs, excludedDirs, template, config, name)
   }
 
   protected async processDirs(context: RR0SsgContext, dirames: string[]): Promise<void> {

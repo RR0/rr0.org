@@ -102,15 +102,6 @@ const timeContext = new TimeContext(timeFormat)
 const context = new RR0SsgContextImpl("fr", timeContext)
 context.setVar("mail", "javarome@gmail.com")
 
-const htAccessToNetlifyRedirectsConfig: ContentStepConfig = {
-  roots: [".htaccess"],
-  replacements: [new HtAccessToNetlifyRedirectsReplaceCommand("https://rr0.org/")],
-  getOutputFile(context: SsgContext): FileInfo {
-    const inputFile = context.inputFile
-    return new FileInfo("_redirects", inputFile.encoding, inputFile.contents, inputFile.lastModified, inputFile.lang)
-  }
-}
-
 const htAccessToNetlifyConfig: ContentStepConfig = {
   roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
@@ -127,69 +118,9 @@ async function getTimeFiles(): Promise<string[]> {
   const year4Files = await glob("time/?/?/?/?")
   const monthFiles = await glob("time/?/?/?/?/??")
   const dayFiles = await glob("time/?/?/?/?/??/??")
-  const timeFiles = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
+  return year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
     minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
-  return timeFiles
 }
-
-const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
-
-const scientistsDirectoryStep = new PeopleDirectoryStep(
-  ["people/*/*/"],
-  excludedPeopleDirs,
-  "people/scientifiques.html",
-  outputFunc, config, [
-    Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
-    Occupation.biochemist, Occupation.biologist, Occupation.biophysicist, Occupation.botanist,
-    Occupation.chemist,
-    Occupation.engineer, Occupation.exobiologist, Occupation.ethnologist,
-    Occupation.geophysicist, Occupation.geologist, Occupation.geographer,
-    Occupation.historian,
-    Occupation.mathematician, Occupation.meteorologist,
-    Occupation.neuroscientist, Occupation.neurologist, Occupation.neuropsychiatrist,
-    Occupation.oceanographer,
-    Occupation.philosopher, Occupation.physician, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
-    Occupation.radioastronomer,
-    Occupation.sociologist, Occupation.softwareEngineer
-  ])
-
-const ufologistsDirectoryStep = new PeopleDirectoryStep(
-  ["people/*/*/"],
-  excludedPeopleDirs,
-  "people/ufologues.html",
-  outputFunc, config, [Occupation.ufologist])
-
-const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(
-  ["people/*/*/"],
-  excludedPeopleDirs,
-  "people/witness/index.html",
-  outputFunc, config, [Occupation.ufoWitness])
-
-const astronomersDirectoryStep = new PeopleDirectoryStep(
-  ["people/*/*/"],
-  excludedPeopleDirs,
-  "people/astronomes.html",
-  outputFunc, config, [Occupation.astronomer])
-
-const contacteesDirectoryStep = new PeopleDirectoryStep(
-  ["people/*/*/", "science/crypto/ufo/enquete/dossier/Villa"],
-  excludedPeopleDirs,
-  "people/contactes.html",
-  outputFunc, config, [Occupation.contactee])
-
-const pilotsDirectoryStep = new PeopleDirectoryStep(
-  [
-    "people/*/*/",
-    "science/crypto/ufo/enquete/dossier/Goshen",
-    "science/crypto/ufo/enquete/dossier/Aurigny",
-    "science/crypto/ufo/enquete/dossier/Tananarive",
-    "science/crypto/ufo/enquete/dossier/Draguignan",
-    "science/crypto/ufo/enquete/dossier/Coyne",
-    "science/crypto/ufo/enquete/dossier/Mantell"
-  ],
-  excludedPeopleDirs,
-  "people/pilotes.html",
-  outputFunc, config, [Occupation.astronaut, Occupation.pilot])
 
 const ufoCasesDirectoryStep = new CaseDirectoryStep(
   [
@@ -205,9 +136,69 @@ const ufoCasesDirectoryStep = new CaseDirectoryStep(
   ],
   ["science/crypto/ufo/enquete/dossier/canular"],
   "science/crypto/ufo/enquete/dossier/index.html",
-  outputFunc)
+  outputFunc, config)
 
-getTimeFiles().then(async (timeFiles) => {
+async function createPeopleSteps(): Promise<SsgStep[]> {
+  const peopleDirectories = [
+    "people/*/*/",
+    "science/crypto/ufo/enquete/dossier/Villa",
+    "science/crypto/ufo/enquete/dossier/Goshen",
+    "science/crypto/ufo/enquete/dossier/Aurigny",
+    "science/crypto/ufo/enquete/dossier/Tananarive",
+    "science/crypto/ufo/enquete/dossier/Draguignan",
+    "science/crypto/ufo/enquete/dossier/Coyne",
+    "science/crypto/ufo/enquete/dossier/Mantell"
+  ]
+  const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
+
+  const scientistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    "people/scientifiques.html",
+    outputFunc, config, [
+      Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
+      Occupation.biochemist, Occupation.biologist, Occupation.biophysicist, Occupation.botanist,
+      Occupation.chemist,
+      Occupation.engineer, Occupation.exobiologist, Occupation.ethnologist,
+      Occupation.geophysicist, Occupation.geologist, Occupation.geographer,
+      Occupation.historian,
+      Occupation.mathematician, Occupation.meteorologist,
+      Occupation.neuroscientist, Occupation.neurologist, Occupation.neuropsychiatrist,
+      Occupation.oceanographer,
+      Occupation.philosopher, Occupation.physician, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
+      Occupation.radioastronomer,
+      Occupation.sociologist, Occupation.softwareEngineer
+    ], "scientists directories")
+
+  const ufologistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    "people/ufologues.html",
+    outputFunc, config, [Occupation.ufologist],
+    "ufologists directories")
+
+  const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    "people/witness/index.html",
+    outputFunc, config, [Occupation.ufoWitness, Occupation.ufoWitness2],
+    "UFO witnesses directories")
+
+  const astronomersDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    "people/astronomes.html",
+    outputFunc, config, [Occupation.astronomer],
+    "astronomers directories")
+
+  const contacteesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    "people/contactes.html",
+    outputFunc, config, [Occupation.contactee],
+    "contactees directories")
+
+  const pilotsDirectoryStep = new PeopleDirectoryStep(
+    peopleDirectories,
+    excludedPeopleDirs,
+    "people/pilotes.html",
+    outputFunc, config, [Occupation.astronaut, Occupation.pilot])
+
+  const peopleDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    "people/index.html",
+    outputFunc, config, [],
+    "people directories")
+
   const letterDirs = await glob("people/*/")
   const peopleLetterFiles = letterDirs.filter(l => /(.*?)\/[a-z]\//.test(l))
   const letterDirectorySteps: PeopleDirectoryStep[] = []
@@ -219,6 +210,12 @@ getTimeFiles().then(async (timeFiles) => {
       `people/${c}/index.html`,
       outputFunc, config, []))
   }
+  return [scientistsDirectoryStep, ufologistsDirectoryStep, ufoWitnessesDirectoryStep, astronomersDirectoryStep, contacteesDirectoryStep, pilotsDirectoryStep, peopleDirectoryStep, ...letterDirectorySteps]
+}
+
+getTimeFiles().then(async (timeFiles) => {
+
+  const peopleSteps = await createPeopleSteps()
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -262,13 +259,7 @@ getTimeFiles().then(async (timeFiles) => {
   new Ssg(config)
     .add(new ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesDirectoryStep)
-    .add(ufologistsDirectoryStep)
-    .add(scientistsDirectoryStep)
-    .add(contacteesDirectoryStep)
-    .add(astronomersDirectoryStep)
-    .add(ufoWitnessesDirectoryStep)
-    .add(...letterDirectorySteps)
-    .add(pilotsDirectoryStep)
+    .add(...peopleSteps)
     .add(new CopyStep(copies, config))
     .start(context)
     .then(result => console.log("Completed", result))

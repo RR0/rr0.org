@@ -10,6 +10,7 @@ export enum Occupation {
   biologist = "biologist",
   biochemist = "biochemist",
   biophysicist = "biophysicist",
+  bishop = "bishop",
   botanist = "botanist",
   chemist = "chemist",
   contactee = "contactee",
@@ -62,7 +63,14 @@ export enum Occupation {
   telegrapher = "telegrapher",
   truckDriver = "truckDriver",
   ufologist = "ufologist",
+  /**
+   * Firsthand UFO witness.
+   */
   ufoWitness = "ufoWitness",
+  /**
+   * Second-hand UFO witness.
+   */
+  ufoWitness2 = "ufoWitness2",
   worker = "worker",
   writer = "writer"
 }

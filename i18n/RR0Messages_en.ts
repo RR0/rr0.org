@@ -90,6 +90,7 @@ export class RR0Messages_en implements RR0Messages {
       biologist: (_gender: Gender) => "biologist",
       biochemist: (_gender: Gender) => "biochemist",
       biophysicist: (_gender: Gender) => "biophysicist",
+      bishop: (_gender: Gender) => "bishop",
       botanist: (_gender: Gender) => "botanist",
       chemist: (_gender: Gender) => "chemist",
       contactee: (_gender: Gender) => "contactee",
@@ -143,6 +144,7 @@ export class RR0Messages_en implements RR0Messages {
       truckDriver: (_gender: Gender) => "truck driver",
       ufologist: (_gender: Gender) => "ufologist",
       ufoWitness: (_gender: Gender) => "UFO witness",
+      ufoWitness2: (_gender: Gender) => "Second-hand UFO witness",
       worker: (_gender: Gender) => "worker",
       writer: (_gender: Gender) => "writer"
     }

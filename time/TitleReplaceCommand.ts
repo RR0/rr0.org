@@ -13,7 +13,7 @@ export class TitleReplaceCommand extends SsiEchoVarReplaceCommand {
 
   protected async createReplacer(context: HtmlRR0SsgContext): Promise<RegexReplacer> {
     return {
-      replace(_match: string, ..._args: any[]): string {
+      replace: (_match: string, ..._args: any[]): string => {
         const inputFile = context.inputFile
         let title = inputFile.title
         if (!title) {

@@ -1,6 +1,9 @@
 {
   "birthTime": "1950-05-06",
-  "occupations": ["ufologist"],
+  "occupations": [
+    "ufologist",
+    "ufoWitness2"
+  ],
   "countries": [
     "us"
   ]

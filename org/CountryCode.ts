@@ -88,6 +88,11 @@ export enum CountryCode {
   ir = "ir",
 
   /**
+   * IsraeL
+   */
+  il = "il",
+
+  /**
    * ITalia
    */
   it = "it",

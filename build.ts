@@ -70,6 +70,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "rr0.js",
   "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "people/index.js",
+  "people/lier.svg",
   "people/index.css",
   "udb/**/*.js",
   "udb/netlify.toml",

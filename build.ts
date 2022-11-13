@@ -1,47 +1,25 @@
-import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
-import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {TimeContext} from "./time/TimeContext"
 import {CaseDirectoryStep} from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./people/PeopleDirectoryStep"
 import {Occupation} from "./people/Occupation"
-import {timeDefaultHandler} from "./time/TimeDefaultTitle"
-import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
-import {NoteReplacerFactory} from "./note/NoteReplacerFactory"
-import {SourceReplacerFactory} from "./source/SourceReplacerFactory"
-import {LinkReplaceCommand} from "./LinkReplaceCommand"
-import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
-import {AuthorReplaceCommand} from "./people/author/AuthorReplaceCommand"
-import {TimeLinkDefaultHandler} from "./time/TimeLinkDefaultHandler"
 import {promise as glob} from "glob-promise"
 import {GooglePlaceService} from "./place/GooglePlaceService"
-import {PlaceReplacerFactory} from "./place/PlaceReplacerFactory"
 import {OrganizationService} from "./org/OrganizationService"
-import {WitnessReplacerFactory} from "./people/witness/WitnessReplacerFactory"
 import {RR0SsgContextImpl} from "./RR0SsgContext"
-import {TitleReplaceCommand} from "./time/TitleReplaceCommand"
 import {CLI} from "./util/cli/CLI"
 import {
-  AngularExpressionReplaceCommand,
-  ClassDomReplaceCommand,
-  ClassRegexReplaceCommand,
   ContentStep,
   ContentStepConfig,
   CopyStep,
   HtAccessToNetlifyConfigReplaceCommand,
-  HtmlTagReplaceCommand,
   Ssg,
   SsgConfig,
   SsgContext,
   SsgFile,
   SsgStep,
-  SsiEchoVarReplaceCommand,
-  SsiIfReplaceCommand,
-  SsiIncludeReplaceCommand,
-  SsiLastModifiedReplaceCommand,
-  SsiSetVarReplaceCommand,
-  StringEchoVarReplaceCommand
+  SsiIncludeReplaceCommand
 } from "ssg-api"
-import {AnchorReplaceCommand} from "./anchor/AnchorReplaceCommand"
+import {LanguageReplaceCommand} from "./lang/LanguageReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -158,7 +136,7 @@ async function createPeopleSteps(): Promise<SsgStep[]> {
 
   const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
     "people/witness/index.html",
-    outputFunc, config, [Occupation.ufoWitness, Occupation.ufoWitness2],
+    outputFunc, config, [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee],
     "UFO witnesses directories")
 
   const astronomersDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
@@ -224,29 +202,30 @@ getTimeFiles().then(async (timeFiles) => {
       roots: contentRoots,
       replacements: [
         new SsiIncludeReplaceCommand(),
-        new TitleReplaceCommand([timeDefaultHandler]),
-        new StringEchoVarReplaceCommand("mail"),
-        new StringEchoVarReplaceCommand("mapsApiKey"),
-        new AngularExpressionReplaceCommand(),
-        new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
-        new SsiIfReplaceCommand(),
-        new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-        new SsiSetVarReplaceCommand("url",
-          (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-        new SsiLastModifiedReplaceCommand(context.time.options),
-        new AuthorReplaceCommand(),
-        new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
-        new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
-        new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
-        new ClassRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
-        new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
-        new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
-        new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
-        new OutlineReplaceCommand(),
-        new AnchorReplaceCommand("https://rr0.org/")
+        new LanguageReplaceCommand()
+        /*  new TitleReplaceCommand([timeDefaultHandler]),
+          new StringEchoVarReplaceCommand("mail"),
+          new StringEchoVarReplaceCommand("mapsApiKey"),
+          new AngularExpressionReplaceCommand(),
+          new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
+          new SsiIfReplaceCommand(),
+          new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+          new SsiSetVarReplaceCommand("url",
+            (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+          new SsiLastModifiedReplaceCommand(context.time.options),
+          new AuthorReplaceCommand(),
+          new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
+          new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
+          new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
+          new ClassRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
+          new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
+          new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
+          new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+          new OutlineReplaceCommand(),
+          new AnchorReplaceCommand("https://rr0.org/")*/
       ],
       getOutputFile(context: SsgContext): SsgFile {
-        return context.inputFile
+        return context.outputFile
       }
     }
   ]
@@ -257,5 +236,11 @@ getTimeFiles().then(async (timeFiles) => {
     .add(new CopyStep(copies, config))
     .start(context)
     .then(result => console.log("Completed", result))
-    .catch(err => console.error(err, context.inputFile.name, "=>", context.outputFile?.name))
+    .catch(err => {
+      try {
+        console.error(err, context.inputFile.name, "=>", context.outputFile?.name)
+      } catch (e) {
+        console.error(err)
+      }
+    })
 })

@@ -16,7 +16,7 @@ class RR0TestUtil {
 
   newContext(inputFileName: string, contents: string): RR0SsgContext {
     const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions))
-    context.inputFile = new SsgFile(inputFileName, "utf8", contents, new Date(), "fr")
+    context.inputFile = new SsgFile(inputFileName, "utf8", contents, new Date(), {lang: "fr", variants: []})
     context.outputFile = context.inputFile  // By default
     return context
   }

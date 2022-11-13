@@ -1,6 +1,6 @@
 import {TimeContext} from "./time/TimeContext"
-import {ssgMessages} from "./i18n"
-import {RR0Messages} from "./i18n/RR0Messages"
+import {ssgMessages} from "./lang"
+import {RR0Messages} from "./lang/RR0Messages"
 import {HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile} from "ssg-api"
 
 export interface RR0SsgContext extends SsgContext {

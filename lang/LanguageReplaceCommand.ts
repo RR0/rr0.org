@@ -25,10 +25,11 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
           for (let i = 0; i < langVariants.length; i++) {
             const langVariant = langVariants[i]
             const altLink = doc.createElement("a")
-            altLink.href = context.inputFile.name.replace((foundLang ? "_" + foundLang : "") + ".",
+            altLink.href = inputFile.name.replace((foundLang ? "_" + foundLang : "") + ".",
               `${variants[i] == "" ? "" : "_" + langVariant}.`)
             altLink.textContent = langVariant === "en" ? "English translation" : "Traduction française"
             original.appendChild(altLink)
+            context.debug("Added translation link", original.outerHTML, "in", inputFile.name)
           }
         }
         return original

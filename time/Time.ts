@@ -7,7 +7,15 @@ export class Time {
 
   static readonly timeRegex = /time\/(\d)\/(\d)\/(\d)\/(\d)\/?(\d{2})?\/?(\d{2})?\/?(index(_[a-z]{2})?.html)?/
 
+  /**
+   * Instantiate a Date object matching an ISO date ("1972-08-12 16:34" for instance).
+   *
+   * Approximated dates like "~1972" will be converted to exact dates ("1972").
+   *
+   * @param isoDate
+   */
   static dateFromIso(isoDate: string): Date {
+    isoDate = isoDate.replace("~", "")
     if (isoDate.charAt(0) === "-") {
       isoDate = "-" + "0".repeat(7 - isoDate.length) + isoDate.substring(1)
     }

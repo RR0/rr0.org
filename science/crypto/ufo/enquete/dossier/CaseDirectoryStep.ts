@@ -74,8 +74,7 @@ export class CaseDirectoryStep extends DirectoryStep {
       }
       const timeStr = dirCase.time
       if (timeStr) {
-        const time = Time.dateFromIso(timeStr.replace("~", ""))
-        const timeDetail = time.getFullYear()
+        const timeDetail = Time.dateFromIso(timeStr).getFullYear()
         details.push(HtmlTag.toString("time", timeDetail.toString()))
       }
       const conclusion = dirCase.conclusion

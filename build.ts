@@ -8,18 +8,41 @@ import {OrganizationService} from "./org/OrganizationService"
 import {RR0SsgContextImpl} from "./RR0SsgContext"
 import {CLI} from "./util/cli/CLI"
 import {
+  AngularExpressionReplaceCommand,
+  ClassDomReplaceCommand,
+  ClassRegexReplaceCommand,
   ContentStep,
   ContentStepConfig,
   CopyStep,
   HtAccessToNetlifyConfigReplaceCommand,
+  HtmlTagReplaceCommand,
   Ssg,
   SsgConfig,
   SsgContext,
   SsgFile,
   SsgStep,
-  SsiIncludeReplaceCommand
+  SsiEchoVarReplaceCommand,
+  SsiIfReplaceCommand,
+  SsiIncludeReplaceCommand,
+  SsiLastModifiedReplaceCommand,
+  SsiSetVarReplaceCommand,
+  StringEchoVarReplaceCommand
 } from "ssg-api"
 import {LanguageReplaceCommand} from "./lang/LanguageReplaceCommand"
+import {TitleReplaceCommand} from "./time/TitleReplaceCommand"
+import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
+import {SourceReplacerFactory} from "./source/SourceReplacerFactory"
+import {timeDefaultHandler} from "./time/TimeDefaultTitle"
+import {NoteReplacerFactory} from "./note/NoteReplacerFactory"
+import {WitnessReplacerFactory} from "./people/witness/WitnessReplacerFactory"
+import {AnchorReplaceCommand} from "./anchor/AnchorReplaceCommand"
+import {TimeLinkDefaultHandler} from "./time/TimeLinkDefaultHandler"
+import {AuthorReplaceCommand} from "./people/author/AuthorReplaceCommand"
+import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
+import {PlaceReplacerFactory} from "./place/PlaceReplacerFactory"
+import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
+import {LinkReplaceCommand} from "./LinkReplaceCommand"
+import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
 
 const args = CLI.getArgs()
 const contents = args.contents
@@ -202,27 +225,27 @@ getTimeFiles().then(async (timeFiles) => {
       roots: contentRoots,
       replacements: [
         new SsiIncludeReplaceCommand(),
-        new LanguageReplaceCommand()
-        /*  new TitleReplaceCommand([timeDefaultHandler]),
-          new StringEchoVarReplaceCommand("mail"),
-          new StringEchoVarReplaceCommand("mapsApiKey"),
-          new AngularExpressionReplaceCommand(),
-          new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
-          new SsiIfReplaceCommand(),
-          new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-          new SsiSetVarReplaceCommand("url",
-            (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-          new SsiLastModifiedReplaceCommand(context.time.options),
-          new AuthorReplaceCommand(),
-          new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
-          new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
-          new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
-          new ClassRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
-          new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
-          new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
-          new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
-          new OutlineReplaceCommand(),
-          new AnchorReplaceCommand("https://rr0.org/")*/
+        new LanguageReplaceCommand(),
+        new TitleReplaceCommand([timeDefaultHandler]),
+        new StringEchoVarReplaceCommand("mail"),
+        new StringEchoVarReplaceCommand("mapsApiKey"),
+        new AngularExpressionReplaceCommand(),
+        new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
+        new SsiIfReplaceCommand(),
+        new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+        new SsiSetVarReplaceCommand("url",
+          (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+        new SsiLastModifiedReplaceCommand(context.time.options),
+        new AuthorReplaceCommand(),
+        new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
+        new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
+        new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
+        new ClassRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
+        new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
+        new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
+        new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+        new OutlineReplaceCommand(),
+        new AnchorReplaceCommand("https://rr0.org/")
       ],
       getOutputFile(context: SsgContext): SsgFile {
         return context.outputFile

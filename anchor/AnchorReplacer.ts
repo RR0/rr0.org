@@ -20,7 +20,7 @@ export class AnchorReplacer {
         const pathname = url.pathname
         if (pathname.indexOf(".") < 0 && !pathname.endsWith("/") && href.indexOf("#") < 0) {
           a.href += "/"
-          context.debug("Adding traling slash in", a.outerHTML)
+          context.debug("Added trailing slash in", a.outerHTML)
         }
       }
     } catch (e) {

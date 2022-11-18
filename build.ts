@@ -83,10 +83,10 @@ const config: SsgConfig = {
 async function outputFunc(context: SsgContext, info: SsgFile, outDir = config.outDir + "/"): Promise<void> {
   info.name = `${outDir}${info.name}`
   try {
-    console.log("Writing", info.name)
+    context.log("Writing", info.name)
     await info.write()
   } catch (e) {
-    console.error(info.name, e)
+    context.error(info.name, e)
   }
 }
 

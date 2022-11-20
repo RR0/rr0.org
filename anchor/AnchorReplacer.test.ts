@@ -1,8 +1,7 @@
 import {AnchorReplacer} from "./AnchorReplacer"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 
-const jsdom = require("jsdom")
-const {JSDOM} = jsdom
+import {JSDOM} from "jsdom"
 
 describe("AnchorReplacer", () => {
 

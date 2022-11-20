@@ -14,14 +14,19 @@ class RR0TestUtil {
     timeZoneName: "short"
   }
 
-  newContext(inputFileName: string, contents: string): RR0SsgContext {
+  newContext(inputFileName: string, contents?: string): RR0SsgContext {
     const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions))
-    context.inputFile = new SsgFile(inputFileName, "utf8", contents, new Date(), {lang: "fr", variants: []})
+    if (contents !== undefined && contents != null) {
+      const langInfo = SsgFile.getLang(context, inputFileName)
+      context.inputFile = new SsgFile(inputFileName, "utf8", contents, new Date(), langInfo)
+    } else {
+      context.inputFile = SsgFile.read(context, inputFileName)
+    }
     context.outputFile = context.inputFile  // By default
     return context
   }
 
-  newHtmlContext(inputFileName: string, contents: string): HtmlRR0SsgContext {
+  newHtmlContext(inputFileName: string, contents?: string): HtmlRR0SsgContext {
     const context = this.newContext(inputFileName, contents)
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : undefined

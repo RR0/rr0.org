@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "glob-promise": "~5.0.0",
-    "ssg-api": "~1.2.7",
+    "ssg-api": "~1.2.8",
     "@googlemaps/google-maps-services-js": "^3.3.16"
   },
   "devDependencies": {

@@ -1,0 +1,346 @@
+<!--#include virtual="/header-start.html" -->
+<title>WLS</title>
+<meta content="https://commerce.bea.com/downloads/weblogic_server.jsp" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i> WebLogic Server.</i></p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur applicatif</a> <a
+      href="../index.html">BEA</a>.
+  </p>
+</section>
+<h2>Analyse</h2>
+<p>WLS est un serveur applicatif <a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a>.</p>
+<p>Un domaine WLS est un ensemble de ressources :</p>
+<ul>
+  <li>Clusters contenant des :
+    <ul>
+      <li>Machines, hébergeant des :
+        <ul>
+          <li>Instances de serveurs (en cluster ou non)
+            <ul>
+              <li>Dont un serveur d&#146;administration du domaine</li>
+              <li>contenant des :
+                <ul>
+                  <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a> (réplicables)</li>
+                  <li>
+                    <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>/<a
+                      href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a> (réplicables)
+                  </li>
+                  <li>objets <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> (réplicables)
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Connecteurs</li>
+      <li>Classes de démarrage</li>
+      <li>Pools de connexions</li>
+    </ul>
+  </li>
+</ul>
+<h3>Clustering</h3>
+<p>Le clustering peut s'effectuer sur tout serveur d'un même domaine et d'une même version de WLS. Il exploite les
+  technologies :
+</p>
+<ul>
+  <li>Multicast</li>
+  <li>Sockets IP</li>
+  <li>JNDI</li>
+</ul>
+<h2>Notes</h2>
+<ul>
+  <li>Intégration à Tuxedo via WTC</li>
+  <li>Indépendant de l'environnement de développement</li>
+  <li>Déploiement
+    <ul>
+      <li>à chaud : copie de fichiers (mode développement) [6.x]</li>
+      <li>réplicable : déploiement à 2 phases (préparation puis activation) [7.0]</li>
+      <li>ordonnançable : { <a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, <a
+          href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>, <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">Connecteurs</a>, <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJBs</a>, WebApps } ou autre [7.0]
+      </li>
+      <li>inclusions de ressources dans le déploiement (pools de connexions) [7.0]</li>
+      <li>API de déploiement [7.0]</li>
+    </ul>
+  </li>
+  <li>Sécurité
+    <ul>
+      <li>Standards pluggables (<a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">JAAS</a>, PKIs)
+      </li>
+      <li>SPI pour Autorisations et adjudications, Base de clés, Mapping user-&gt;credentials externes, Mapping Subject-&gt;roles,
+        <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a> (bidirectionnel ou non), Authentification
+        (Préparation, WebLogic (<a href="/tech/info/soft/data/dbms/ldap/">LDAP</a> intégré), iPlanet, Realm (File par
+        défaut
+        &lt; [7]), Active Directory (<a href="/tech/info/soft/data/dbms/ldap/">LDAP</a>), Open <a
+            href="/tech/info/soft/data/dbms/ldap/">LDAP</a>, Novell), SSO
+      </li>
+    </ul>
+  </li>
+  <li>Annuaire <a href="/tech/info/soft/data/dbms/ldap/">LDAP</a>
+    <ul>
+      <li>livré <span class="source">[7.0]</span></li>
+    </ul>
+  </li>
+  <li>Base de données
+    <ul>
+      <li>livrée
+        <ul>
+          <li>Cloudscape <span class="source">[5.1]</span></li>
+          <li>PointBase <span class="source">[7.0]</span></li>
+        </ul>
+      </li>
+      <li>pilotes <a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> fournis
+        <ul>
+          <li><a href="../../index.html">Oracle</a> (type 2, XA)</li>
+          <li><a href="../../index.html">Oracle</a> (type 4)</li>
+          <li>Sybase JConnect (type 4)</li>
+          <li>MS SQL Server (type 4)</li>
+        </ul>
+      </li>
+      <li>Wrapper XA (TxDataSource [6.x]) de pilotes non XA (Intégrité non garantie en cas d&#146;erreur lors du
+        commit/rollback (heuristique))
+      </li>
+      <li>pools de connexions (derrière les DataSources publiées)
+        <ul>
+          <li>créations dynamiques [6.x]</li>
+          <li>incluables dans une application [7.0] pour facilité de déploiement</li>
+          <li>multipools (pool de pools)
+            <ul>
+              <li>Equilibrage de charge (round robin sur plusieurs pools)</li>
+              <li>Reprise sur erreur (pool de secours si le pool courant tombe)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Outils de déploiement
+    <ul>
+      <li>deploytool <span class="source">[5.1]</span></li>
+      <li>WebLogic Builder <span class="source">[7.0]</span></li>
+      <li>EJBGen <span class="source">[7.0]</span></li>
+      <li>WebLogic Workshop <span class="source">[7.0.0.1]</span></li>
+    </ul>
+  </li>
+  <li>API
+    <table>
+      <thead>
+      <tr>
+        <td>WLS</td>
+        <th>Version</th>
+        <th> 5</th>
+        <th colspan="2"> 6</th>
+        <th> 7</th>
+        <th rowspan="2"> WebLogic</th>
+      </tr>
+      <tr>
+        <th>Couche</th>
+        <th>Release</th>
+        <th><a href="https://www.weblogic.com/docs51">1</a></th>
+        <th><a href="https://edocs.beasys.com/wls/docs60">0</a></th>
+        <th><a href="https://edocs.beasys.com/wls/docs61">1</a></th>
+        <th><a href="https://edocs.beasys.com/wls/docs70">0</a></th>
+      </tr>
+      </thead>
+      <tr>
+        <th rowspan="2"> Présentation / Contrôle</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
+        <td class="oui"> 2.1</td>
+        <td class="oui" colspan="2"> 2.2</td>
+        <td class="oui"> 2.3</td>
+        <td>weblogic.httpd.register.MaServlet, weblogic.httpd.session.enable, weblogic.httpd.session.timeoutSecs,
+          weblogic.httpd.session.invalidationIntervalSecs, weblogic.httpd.servlet.reloadCheckSecs, ServletServlet,
+          FileServlet
+        </td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
+        <td class="oui"> 1.0</td>
+        <td class="oui" colspan="2"> 1.1</td>
+        <td class="oui"> 1.2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Services / Domaine</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></th>
+        <td class="oui"> 1.1</td>
+        <td class="oui" colspan="2"> 2.0</td>
+        <td class="oui"> 2.1</td>
+        <td>enable-call-by-reference, db-is-shared, read-only, read-timeout-seconds, is-modified-method-name,
+          ReadMostly, delay-updates-until-end-of-tx. 7.0=weblogic.j2eeclient.Main
+        </td>
+      </tr>
+      <tr>
+        <th rowspan="9"> Intégration</th>
+        <th>
+          <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>/<a
+            href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>
+        </th>
+        <td></td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></th>
+        <td></td>
+        <td class="oui" colspan="2"> 1.2</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
+        <td class="oui"> 2.0</td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a></th>
+        <td class="non" colspan="2"> Non</td>
+        <td class="oui">1.0</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a></th>
+        <td class="non" colspan="3"> Non</td>
+        <td class="oui"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/reseau/protocole/5/SOAP.html">SOAP</a></th>
+        <td class="non"> Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> UDDI</th>
+        <td class="non"> Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>WTC</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="2">1.0</td>
+        <td class="oui">1.1</td>
+        <td>Intégration avec Tuxedo. Spécifique WebLogic.</td>
+      </tr>
+      <tr>
+        <th> WSDL</th>
+        <td class="non"> Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/data/doc/xml/">XML</a></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td class="oui">1.1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/sec/">Sécurité</a></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">JAAS</a></th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Journalisation (log)</th>
+        <th> JLA</th>
+        <td class="non" colspan="3">Non</td>
+        <td class="oui"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Gestion</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMX.html">JMX</a></th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Clustering</th>
+        <th></th>
+        <td class="oui" colspan="4">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="4"> Existant</th>
+        <th><a href="../../../ibm/product/soft/server/dbms/DB2.html">DB2</a></th>
+        <td class="oui"> 5</td>
+        <td class="oui" colspan="2">6</td>
+        <td class="oui">7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="../../index.html">Oracle</a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> MS SQL Server</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Sybase</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>11, 12</td>
+      </tr>
+      <tr>
+        <th rowspan="3">Plate-forme</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></th>
+        <td class="oui">1.2</td>
+        <td class="oui" colspan="2">1.3</td>
+        <td class="oui">1.4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>AIX</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>64 bits...</td>
+      </tr>
+      <tr>
+        <th>Solaris</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>64 bits...</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="https://commerce.bea.com/downloads/weblogic_server.jsp">Téléchargement</a></li>
+  <li>Documentation (<a href="https://edocs.beasys.com/wls/docs70/index.html">7.0</a>, <a
+      href="https://edocs.beasys.com/wls/docs61">6.1</a>, <a href="https://www.weblogic.com/docs51">5.1</a>)
+  </li>
+</ul>
+<!--#include virtual="/footer.html" -->

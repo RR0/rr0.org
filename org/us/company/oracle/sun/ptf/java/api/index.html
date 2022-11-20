@@ -10,8 +10,8 @@
 <p>Le terme "API Java" désigne l'ensemble des libraries standards livrées avec les <a
     href="/tech/info/soft/prog/oo/java/PlateForme.html">plates-formes</a> Java :</p>
 <ul>
-  <li><a href="/tech/info/soft/prog/oo/java/J2SE.html">J2SE</a></li>
-  <li><a href="/tech/info/soft/prog/oo/java/J2EE.html">J2EE</a></li>
+  <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></li>
+  <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a></li>
 </ul>
 <p>Ces libraries peuvent varier en fonction des versions de ces plates-formes.</p>
 <h2>Conception</h2>
@@ -35,7 +35,7 @@
         </tr>
         <tr> 
           <th>Technologie</th>
-          <th valign=top> Release</th>
+          <th> Release</th>
           <th>0</th>
           <th width=301>1</th>
           <th width=301><a href="https://java.sun.com/products/jdk/1.2/docs/api/index.html">2</a></th>
@@ -45,29 +45,30 @@
           <td width=301>Fonctionnalit�</td>
         </tr>
       </thead>
-      <tr> 
-        <th rowspan="5" valign=top>Fondamentaux</th>
-        <th valign=top> </th>
+      <tr>
+        <th rowspan="5">Fondamentaux</th>
+        <th></th>
         <td colspan="6" class="oui"><code>java.lang</code></td>
-        <td>Types de bases (String, StringBuffer, Integer, etc.) et conversions
-           associ�es, <a href="/tech/info/soft/prog/oo/java/SystemProperties.html">propri�t�s syst�me</a>.</td>
+        <td>Types de bases (String, StringBuffer, Integer, etc.) et conversions associ�es, <a
+            href="/tech/info/soft/prog/oo/java/SystemProperties.html">propri�t�s syst�me</a>.
+        </td>
       </tr>
-      <tr> 
-        <th valign=top><a href="/tech/info/soft/prog/oo/java/Reflexivite.html">R�flexivit�</a></th>
+      <tr>
+        <th><a href="/tech/info/soft/prog/oo/java/Reflexivite.html">R�flexivit�</a></th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.lang.reflect</code></td>
         <td><em><a href="/tech/info/soft/prog/oo/java/Reflexivite.html">Reflection</a> </em>: D�couverte et invocation dynamiques des
           interfaces des objets.</td>
       </tr>
-      <tr> 
-        <th valign=top><a href="/tech/info/soft/prog/oo/java/Reference.html">R�f�rences m�moire</a></th>
+      <tr>
+        <th><a href="/tech/info/soft/prog/oo/java/Reference.html">R�f�rences m�moire</a></th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.lang.ref</code></td>
         <td>Objets repr�sentant des r�f�rences m�moire,
           permettant un interaction limit�e avec le <a href="/tech/info/soft/prog/oo/java/GC.html">GC</a>.</td>
       </tr>
-      <tr> 
-        <th rowspan="2" valign=top><a href="/tech/info/soft/prog/oo/java/JavaBeans.html">JavaBeans</a></th>
+      <tr>
+        <th rowspan="2"><a href="/tech/info/soft/prog/oo/java/JavaBeans.html">JavaBeans</a></th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.beans</code></td>
         <td>Composants Java simples, notamment adapt�s aux <a href="/tech/info/soft/GUI.html">GUI</a>. Int�grables dynamiquement gr�ce � l'<a href="/tech/info/soft/prog/oo/java/Introspection.html">introspection</a>. </td>
@@ -77,59 +78,60 @@
         <td colspan="4" class="oui"><code>java.beans. beancontext</code></td>
         <td> </td>
       </tr>
-      <tr> 
-        <th valign=top><a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a></th>
-        <th valign=top><a href="/tech/info/soft/prog/oo/java/Applet.html">Applets</a></th>
+      <tr>
+        <th><a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a></th>
+        <th><a href="/tech/info/soft/prog/oo/java/Applet.html">Applets</a></th>
         <td colspan="6" class="oui"><code>java.applet</code></td>
         <td>Petites applications ins�rables dans des pages Web.</td>
       </tr>
-      <tr> 
-        <th rowspan="6" valign=top>AWT</th>
-        <th valign=top> </th>
+      <tr>
+        <th rowspan="6">AWT</th>
+        <th></th>
         <td colspan="6" class="oui"><code>java.awt</code></td>
-        <td><em>Abstract Window Toolkit</em> : <a href="/tech/info/soft/GUI.html">GUI</a> avec 
-          widgets natifs (<em>peers</em>).</td>
+        <td><em>Abstract Window Toolkit</em> : <a href="/tech/info/soft/GUI.html">GUI</a> avec widgets natifs
+          (<em>peers</em>).
+        </td>
       </tr>
-      <tr> 
-        <th valign=top>Espaces de couleurs</th>
+      <tr>
+        <th>Espaces de couleurs</th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.awt.color</code></td>
         <td> </td>
       </tr>
-      <tr> 
-        <th valign=top>Copier-Coller</th>
+      <tr>
+        <th>Copier-Coller</th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.awt.datatransfer</code></td>
         <td>Copier-Coller entre applications.</td>
       </tr>
-      <tr> 
-        <th valign=top>Glisser-d�poser</th>
+      <tr>
+        <th>Glisser-d�poser</th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.awt.dnd</code></td>
         <td><em>Drag and Drop</em> : Manipulation de l'utilisateur permettant 
           de transf�rer (copier, d�placer) de l'information.</td>
       </tr>
-      <tr> 
-        <th valign=top>Ev�nements</th>
+      <tr>
+        <th>Ev�nements</th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.awt.event</code></td>
         <td> </td>
       </tr>
-      <tr> 
-        <th valign=top>Polices de caract�res</th>
+      <tr>
+        <th>Polices de caract�res</th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.awt.font</code></td>
         <td>.</td>
       </tr>
-      <tr> 
-        <th valign=top>Java2D</th>
-        <th valign=top> </th>
+      <tr>
+        <th>Java2D</th>
+        <th></th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.awt.geom</code></td>
         <td><em>Geometry </em>: Op�rations g�om�triques 2D.</td>
       </tr>
-      <tr> 
-        <th rowspan="4" valign=top>Image</th>
+      <tr>
+        <th rowspan="4">Image</th>
         <th> </th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.awt.im</code></td>
@@ -153,8 +155,8 @@
         <td>Provides classes and interfaces for producing rendering-independent 
           images.</td>
       </tr>
-      <tr> 
-        <th rowspan="16" valign=top>Swing</th>
+      <tr>
+        <th rowspan="16">Swing</th>
         <th> </th>
         <td colspan="2" class="non"><code>Non</code></td>
         <td colspan="4" class="oui"><code>javax.swing</code></td>
@@ -251,17 +253,18 @@
         <td colspan="4" class="oui"><code>javax.swing. undo</code></td>
         <td>Annuler/R�p�ter.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
-        <th valign=top> </th>
+      <tr>
+        <th></th>
+        <th></th>
         <td class="non"><code>Non</code></td>
         <td colspan="5" class="oui"><code>java.math</code></td>
-        <td>Provides classes for performing arbitrary-precision integer arithmetic 
-          (BigInteger) and arbitrary-precision decimal arithmetic (BigDecimal).</td>
+        <td>Provides classes for performing arbitrary-precision integer arithmetic (BigInteger) and arbitrary-precision
+          decimal arithmetic (BigDecimal).
+        </td>
       </tr>
-      <tr> 
-        <th rowspan="3" valign=top><a href="/tech/info/soft/prog/oo/java/Reseau.html">R�seau</a></th>
-        <th valign=top> </th>
+      <tr>
+        <th rowspan="3"><a href="/tech/info/soft/prog/oo/java/Reseau.html">R�seau</a></th>
+        <th></th>
         <td colspan="6" class="oui"><code>java.net</code></td>
         <td>Provides the classes for implementing networking applications.</td>
       </tr>
@@ -277,49 +280,50 @@
         <td colspan="2" class="oui"><code>javax.net. ssl</code></td>
         <td>secure socket package.</td>
       </tr>
-      <tr> 
-        <th rowspan="6" valign=top>E/S</th>
-        <th valign=top> </th>
+      <tr>
+        <th rowspan="6">E/S</th>
+        <th></th>
         <td colspan="6" class="oui">java.io</td>
-        <td><em>Input/Output</em> : Provides for system input and output through 
-          data streams, serialization and the file system.</td>
+        <td><em>Input/Output</em> : Provides for system input and output through data streams, serialization and the
+          file system.
+        </td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.nio</code></td>
         <td><em>New I/O </em>: API pour E/S non-bloquantes.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.nio. channels</code></td>
         <td>Defines channels, which represent connections to entities that are 
           capable of performing I/O operations, such as files and sockets; defines 
           selectors, for multiplexed, non-blocking I/O operations.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.nio. channels.spi</code></td>
         <td>Service-provider classes for the java.nio.channels package.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.nio. charset</code></td>
         <td>Defines charsets, decoders, and encoders, for translating between 
           bytes and Unicode characters.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.nio. charset.spi</code></td>
         <td>Service-provider classes for the java.nio.charset package.</td>
       </tr>
-      <tr> 
-        <th rowspan="7" valign=top><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a></th>
-        <th valign=top> </th>
+      <tr>
+        <th rowspan="7"><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a></th>
+        <th></th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.rmi</code></td>
         <td><em>Remote Method Invocation</em>.</td>
@@ -328,29 +332,30 @@
         <th><a href="/tech/info/soft/prog/oo/java/GC.html">GC</a></th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.rmi.dgc</code></td>
-        <td><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a> et garbage-collection
-           distribu�e (DGC)</td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> et garbage-collection distribu�e (DGC)
+        </td>
       </tr>
       <tr> 
         <th>Annuaire</th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.rmi.registry</code></td>
-        <td>Annuaire d'objets <a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>.</td>
+        <td>Annuaire d'objets <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>.</td>
       </tr>
       <tr> 
         <th>C�t� serveur</th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.rmi.server</code></td>
-        <td><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a> c�t� serveur.</td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> c�t� serveur.</td>
       </tr>
       <tr> 
         <th>Activation</th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>java.rmi.activation</code></td>
-        <td>Activation d'objets <a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>.</td>
+        <td>Activation d'objets <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>.</td>
       </tr>
-      <tr> 
-        <th rowspan="2"><a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>/<a href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a></th>
+      <tr>
+        <th rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>/<a
+            href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a></th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>javax.rmi</code></td>
         <td> </td>
@@ -358,10 +363,12 @@
       <tr> 
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>javax.rmi. CORBA</code></td>
-        <td>Portabilit� <a href="/tech/info/soft/prog/oo/java/RMI.html">RMI</a>/<a href="/tech/info/soft/prog/oo/java/IIOP.html">IIOP</a>.</td>
+        <td>Portabilit� <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>/<a
+            href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>.
+        </td>
       </tr>
-      <tr> 
-        <th rowspan="12" valign=top><a href="/tech/info/soft/prog/oo/java/Securite.html">Cryptographie</a></th>
+      <tr>
+        <th rowspan="12"><a href="/tech/info/soft/sec/">Cryptographie</a></th>
         <th> </th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.security</code></td>
@@ -439,8 +446,8 @@
         <td colspan="2" class="oui"><code>javax. security. cert</code></td>
         <td>public key certificates.</td>
       </tr>
-      <tr> 
-        <th rowspan="3" valign=top>JCE</th>
+      <tr>
+        <th rowspan="3">JCE</th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td>Optionnel</td>
@@ -461,8 +468,8 @@
         <td class="oui"><code>javax. crypto. spec</code></td>
         <td>key specifications and algorithm parameter specifications.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>org.ietf.jgss</code></td>
@@ -470,12 +477,13 @@
           and data confidentiality from a variety of underlying security mechanisms 
           like Kerberos, using a unified API.</td>
       </tr>
-      <tr> 
-        <th rowspan="2" valign=top><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></th>
-        <th><a href="/tech/info/soft/prog/oo/java/JDBC.html">JDBC</a></th>
+      <tr>
+        <th rowspan="2"><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
         <td class="non">Non</td>
-        <td colspan="5" class="oui"><code><a href="https://java.sun.com/j2se/1.4.1/docs/api/java/sql/package-summary.html">java.sql</a></code></td>
-        <td> </td>
+        <td colspan="5" class="oui"><code><a
+            href="https://java.sun.com/j2se/1.4.1/docs/api/java/sql/package-summary.html">java.sql</a></code></td>
+        <td></td>
       </tr>
       <tr> 
         <th><br> </th>
@@ -484,8 +492,8 @@
         <td>server side data source access and processing from the JavaTM programming 
           language. JDBC 3.0</td>
       </tr>
-      <tr> 
-        <th rowspan="4" valign=top>Utilitaires</th>
+      <tr>
+        <th rowspan="4">Utilitaires</th>
         <th>Collections</th>
         <td colspan="6" rowspan="4" class="oui"><code>java.util</code></td>
         <td>Listes, dictionnaires (<a href="/tech/info/soft/prog/oo/java/HashTable.html">t�bles
@@ -505,61 +513,61 @@
         <td>�v�nements, d�codeur de cha�nes, nombres
         al�atoires, tableau de bits.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.text </code></td>
         <td> handling text, dates, numbers, and messages in a manner independent 
           of natural languages.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td class="non">Non</td>
         <td colspan="5" class="oui"><code>java.util.zip </code></td>
         <td>reading and writing the standard ZIP and GZIP file formats.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code><a href="https://java.sun.com/j2se/1.4.1/docs/api/java/util/jar/package-summary.html">java.util.jar</a></code></td>
         <td>Ecriture et lecture de fichiers au format <a href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a>.</td>
       </tr>
-      <tr> 
-        <th valign=top><a href="/tech/info/soft/prog/oo/java/Log.html">Traces</a></th>
+      <tr>
+        <th><a href="/tech/info/soft/prog/oo/java/Log.html">Traces</a></th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.util. logging</code></td>
         <td> </td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.util. prefs </code></td>
         <td>Stockage et r�cup�ration de donn�es de configuration
           utilisateur et syst�me.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>java.util. regex</code></td>
         <td>Reconnaissance de s�quences de caract�res par rapport � des motifs
           sp�cifi�s par des expressions r�guli�res</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>javax.accessibility</code></td>
         <td> contract between user-interface components and an assistive technology 
           that provides access to those components.</td>
       </tr>
-      <tr> 
-        <th rowspan="6" valign=top>Image</th>
+      <tr>
+        <th rowspan="6">Image</th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>javax. imageio</code></td>
@@ -598,8 +606,8 @@
         <td>A package of the Java Image I/O API dealing with low-level I/O from 
           files and streams.</td>
       </tr>
-      <tr> 
-        <th rowspan="5" valign=top><a href="/tech/info/soft/prog/oo/java/JNDI.html">JNDI</a></th>
+      <tr>
+        <th rowspan="5"><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></th>
         <th> </th>
         <td colspan="3" class="non">Non</td>
         <td colspan="3" class="oui"><code>javax.naming </code></td>
@@ -630,9 +638,9 @@
         <td>means for dynamically plugging in support for accessing naming and 
           directory services through the javax.naming and related packages.</td>
       </tr>
-      <tr> 
-        <th rowspan="5" valign=top>Impression</th>
-        <th valign=top> </th>
+      <tr>
+        <th rowspan="5">Impression</th>
+        <th></th>
         <td colspan="2" class="non">Non</td>
         <td colspan="2" class="oui"><code>java. awt. print</code></td>
         <td colspan="2">Obsol�te</td>
@@ -663,8 +671,8 @@
         <td colspan="2" class="oui"><code>javax.print. event</code></td>
         <td>event classes and listener interfaces.</td>
       </tr>
-      <tr> 
-        <th rowspan="4" valign=top>Audio</th>
+      <tr>
+        <th rowspan="4">Audio</th>
         <th> </th>
         <td colspan="3" class="non">Non</td>
         <td colspan="3" class="oui"><code>javax.sound.midi</code></td>
@@ -691,8 +699,8 @@
         <td>service providers to subclass when offering new audio devices, sound 
           file readers and writers, or audio format converters.</td>
       </tr>
-      <tr> 
-        <th valign=top> </th>
+      <tr>
+        <th></th>
         <th> </th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>javax. transaction. xa </code></td>
@@ -700,12 +708,12 @@
           which allows the transaction manager to enlist and delist resource objects 
           (supplied by the resource manager driver) in JTA transactions.</td>
       </tr>
-      <tr> 
-        <th rowspan="8" valign=top><a href="/tech/info/soft/prog/oo/java/JAXP.html">JAXP</a></th>
+      <tr>
+        <th rowspan="8"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
         <th>Parser</th>
         <td colspan="4" class="non">Non</td>
         <td colspan="2" class="oui"><code>javax.xml. parsers </code></td>
-        <td>Traitement de documents <a href="/tech/info/soft/time/doc/xml/XML.html">XML</a>.</td>
+        <td>Traitement de documents <a href="/tech/info/soft/data/doc/xml/">XML</a>.</td>
       </tr>
       <tr> 
         <th>XSLT</th>
@@ -749,8 +757,8 @@
         <td colspan="2" class="oui"><code>org.w3c. dom</code></td>
         <td> Interfaces <a href="/tech/info/soft/time/doc/dom/index.html">DOM</a></td>
       </tr>
-      <tr> 
-        <th rowspan="29" valign=top><a href="/tech/info/soft/prod/orb/corba/index.html">CORBA</a></th>
+      <tr>
+        <th rowspan="29"><a href="/tech/info/soft/prod/orb/corba/index.html">CORBA</a></th>
         <th> </th>
         <td colspan="2" class="non">Non</td>
         <td colspan="4" class="oui"><code>org.omg.CORBA </code></td>
@@ -961,16 +969,18 @@
     Microsystems</a> qui le g�re toujours aujourd'hui via sa filiale <a href="https://java.sun.com">JavaSoft</a>.</li>
 </ul>
 <h2>Exemples</h2>
-<p><a href="/tech/info/soft/prog/oo/java/J2SE.html">J2SE</a> comporte des libraries standards :</p>
+<p><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a> comporte des libraries standards :</p>
 <ul>
   <li>Runtime (<code>%JAVA_HOME%/jre/lib/rt.<a href="/tech/info/soft/prog/oo/java/JAR.html">jar</a></code>)</li>
-  <li>d'internationalisation (<code>%JAVA_HOME%/jre/lib/i18n.<a href="/tech/info/soft/prog/oo/java/JAR.html">jar</a></code>)</li>
+  <li>d'internationalisation (<code>%JAVA_HOME%/jre/lib/i18n.<a
+      href="/tech/info/soft/prog/oo/java/JAR.html">jar</a></code>)</li>
 </ul>
-<p><a href="/tech/info/soft/prog/oo/java/J2EE.html">J2EE</a> compte les libraries standards dont les <a href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a> 
-  ne sont pas impos�s mais devant inclure :</p>
+<p><a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a> compte les libraries standards dont les <a
+    href="/tech/info/soft/prog/oo/java/JAR.html">JAR</a> ne sont pas impos�s mais devant inclure :</p>
 <ul>
-  <li><a href="/tech/info/soft/prog/oo/java/EJB.html">EJB</a></li>
-  <li><a href="/tech/info/soft/prog/oo/java/Servlets.html">Servlet</a> et <a href="/tech/info/soft/prog/oo/java/JSP.html">JSP</a></li>
+  <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></li>
+  <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a> et <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></li>
   <li><a href="/tech/info/soft/java/J2C.html">J2C</a></li>
 </ul>
 <h2>Voir</h2>

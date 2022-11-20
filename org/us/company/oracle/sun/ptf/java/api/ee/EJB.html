@@ -1,0 +1,436 @@
+<!--#include virtual="/header-start.html" -->
+<title>EJB</title>
+<meta content="https://java.sun.com/products/ejb" name="url"/>
+<p><i lang="en">Enterprise JavaBeans</i> : composants Java d'entreprise.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un modèle de <a href="/tech/info/soft/proj/design/Composant.html"><strong>composants</strong></a> <a
+      href="/org/us/company/oracle/sun/ptf/java/ee/">Java</a> pouvant être :</p>
+  <ul>
+    <li>distribuables</li>
+    <li><a href="/tech/info/soft/prog/oo/java/Transaction.html">transactionnels</a></li>
+    <li><a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistants</a></li>
+    <li><a href="/tech/info/soft/sec/">sécurisés</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les <a href="/tech/info/soft/proj/design/Composant.html">composants</a> EJB peuvent représenter des : </p>
+  <ul>
+    <li>processus
+      <ul>
+        <li>synchrones : <strong>sessions </strong>(<em>session beans</em>)
+          <ul>
+            <li>sans état (<i lang="en">stateless session beans</i>) et donc partageables par plusieurs clients</li>
+            <li>avec état (<i lang="en">stateful session beans</i>)</li>
+          </ul>
+        </li>
+        <li>asynchrones<strong> </strong>et sans état (<em>message-driven beans</em>) </li>
+      </ul>
+    </li>
+    <li>données : <b>entités</b>(<i lang="en">entity beans</i>) persistantes et affectées par les transactions.</li>
+  </ul>
+</section>
+<h2>Conception</h2>
+<h3>Développement</h3>
+<p>Chaque <a href="/tech/info/soft/proj/design/Composant.html">composant</a> EJB est mis en oeuvre par un ensemble
+  d'objets :</p>
+<ul>
+  <li>une <strong>instance</strong> EJB, contenant l'implémentation des méthodes métier et l'état (ensemble de valeurs
+    métier) du composant, s'il en a un. Cette instance est <a
+        href="/tech/info/soft/Pooling.html">poolée</a> et n'est donc en fait présente qu'au moment où l'on s'en sert
+    (lorsqu'un appel arrive sur l'EJB).</li>
+  <li>un (ou plusieurs) <strong>objet d'interposition</strong> (EJBObject) du conteneur, placé entre le client et
+    l'<strong>instance</strong>. En filtrant l'ensemble des appels adressés à l'instant, cet objet rend de manière
+    automatisée et transparente divers services du conteneur (démarrage/arrêt de transactions, contrôle des droits
+    d'appel en fonction de l'identité de l'appelant, chargement de l'instance à la demande - <em>lazy loading</em>). Cet
+    objet peut adopter divers types d'interfaces : distribuée (<a
+        href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>), <a
+        href="/tech/info/soft/reseau/webservice/index.html">Service Web</a>, locale (intra-<a
+        href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a>) ou asynchrone (<a
+        href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>).</li>
+</ul>
+<p>Les composants trouvent les éléments externes (autres EJB, sources de données, files de messages, etc.) auxquels ils
+  veulent accéder via un annuaire compatible <a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a>.</p>
+<h3>Assemblage</h3>
+<p>Une fois définis, les <a href="/tech/info/soft/proj/design/Composant.html">composants</a> EJB peuvent être <strong>assemblés </strong>en
+  un <strong>module </strong>EJB. On résoud alors, entre composants de ce module, les dépendances :</p>
+<ul>
+  <li><strong>transactionnelles </strong>: tel composant, recevant un appel de tel autre composant, effectue-t-il son
+    travail dans la même transaction ? Dans une autre ? </li>
+</ul>
+<h3>Déploiement</h3>
+<p>Une fois assemblé, un module EJB peut être <strong>déployé</strong> dans un <strong>conteneur </strong>EJB. On résoud
+  alors, pour les composants de ce module, les dépendances avec l'environnement de déploiement, telles que les
+  dépendances de :</p>
+<ul>
+  <li><strong>persistance </strong>: où (dans quelle base, sur quelle machine) et comment (<em>mapping</em>) l'état de
+    tel ou tel composant est enregistré ou lu.</li>
+  <li><strong>sécurité</strong> : à quels véritables utilisateur ou groupe d'utilisateur correspond le <strong>rôle
+    applicatif </strong>contrôlé dans tel composant ?</li>
+</ul>
+<h2>Implémentation</h2>
+<p>L'API des EJB est définie dans le package <code>javax.ejb</code>.</p>
+<p>Un EJB est développé à partir de :</p>
+<ul>
+  <li>la classe de l'instance, héritant d'une interface EJB dépendant du type d'EJB
+    <ul>
+      <li><code>EntityBean</code> pour un EJB Entité</li>
+      <li><code>SessionBean</code> pour un EJB Session</li>
+      <li><code>MessageDrivenBean</code> pour un EJB asynchrone</li>
+    </ul>
+  </li>
+  <li>l'interface composant (<em>component interface</em>, parfois générée à partir de la classe d'instance), pouvant
+    hériter de :
+    <ul>
+      <li><code>EJBObject</code> pour proposer une interface distribuable</li>
+      <li><code>EJBLocalObject</code> pour proposer une interface locale</li>
+      <li>(générée au déploiement dans le cas d'un MDB)</li>
+    </ul>
+  </li>
+</ul>
+<p>La recherche des éléments externes doit s'effectuer en interrogeant le contexte de nommage de l'environnement du
+  composant :</p>
+<ul>
+  <li><code><strong>java:comp/env/</strong>ejb/AutreEJB</code></li>
+  <li><code><strong>java:comp/env/</strong>jdbc/UneDataSource</code></li>
+  <li><code><strong>java:comp/env/</strong>jms/UneFileDeMessages</code></li>
+  <li><code><strong>java:comp/env/</strong>eis/UnConnecteurJCA</code></li>
+  <li>etc.</li>
+</ul>
+<p>Au moment du déploiement, les noms recherchés dans cet environnement local seront associés à des noms absolus
+  d'objets déployés dans le serveur (tout ou partie de cette résolution de nom peut également s'effectuer lors de
+  l'assemblage, s'il s'agit de désigner d'autres EJB locaux au module de l'EJB appelant).</p>
+<p>Exemples</p>
+<p>Un exemple de classe d'instance d'EJB Entité 2.0 est :</p>
+<p><code>import <strong>javax.ejb</strong>.*;<br> <br> <strong>public abstract</strong> class SkillTree implements
+  <strong>EntityBean</strong> {<br> <span class="codeComment">  /** <br>
+     * Constructeur par défaut, toujours vide <br>
+     */</span><br> public SkillTree() {}<br> <br> <strong>public </strong>SkillKey <strong>ejbCreate </strong>(Skill
+  someRootSkill) throws <strong>CreateException </strong>{ <br> setRoot (someRootSkill);<br> return null; <span
+      class="codeComment">// En CMP
+  la clé est déduite</span><br> </code><code>} <br> <br> <span class="codeComment"> /**<br>
+     * Accesseurs CMP<br>
+     */ </span><br> <strong>public abstract</strong> Object getRoot();<br> </code><code> <strong>public
+  abstract</strong> void setRoot (Object);<br> <br> public void <strong>ejbStore</strong>() {<br> <span
+    class="codeComment">    // Rien à faire ici<br>
+  </span> }</code></p>
+<p><code> public void <strong>ejbLoad</strong>() {<br> <span class="codeComment">    // Rien à faire ici<br>
+  </span> }</code></p>
+<p><code> public void <strong>ejbRemove</strong>() {<br> <span class="codeComment">    // Rien à faire ici<br>
+  </span> }</code></p>
+<p><code> public void <strong>ejbActivate</strong>() {<br> <span class="codeComment">    // Rien à faire ici<br>
+  </span> }</code></p>
+<p><code> public void <strong>ejbPassivate</strong>() {<br> <span class="codeComment">    // Rien à faire ici<br>
+  </span> }</code></p>
+<p><code> public void <strong>setEntityContext</strong> (EntityContext someContext) { <br> ejbContext = someContext;
+  <br> } <br> <br> public void <strong>unsetEntityContext</strong>() { <br> } <br> <br> private
+  <strong>EntityContext </strong>ejbContext;<br> </code><code></code><code>}</code></p>
+<h2>Notes</h2>
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>EJB</td>
+        <th colspan="2">Version</th>
+        <th colspan="2">1</th>
+        <th colspan="2">2</th>
+        <th rowspan="2">3</th>
+        <th rowspan="2">Commentaire</th>
+      </tr>
+      <tr>
+        <th>Technologie</th>
+        <th colspan="2">Release</th>
+        <th>0</th>
+        <th>1</th>
+        <th>0</th>
+        <th>1</th>
+      </tr>
+      <tr>
+        <th rowspan="3">Sessions</th>
+        <th colspan="2">Stateless</th>
+        <td class="oui" colspan="5" rowspan="2">OuiOui</td>
+        <td>Sans état conversationnel (donc optimisables en étant partagés par plusieurs clients)</td>
+      </tr>
+      <tr>
+        <th colspan="2">Stateful</th>
+        <td>Avec état conversationnel (optimisés via <em><a href="/tech/info/soft/Pooling.html">pooling</a></em>)
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">MDB</th>
+        <td class="non" colspan="2">Non</td>
+        <td class="oui" colspan="3">Oui</td>
+        <td><em>Message-Driven Bean</em>. Invoqué par des messages asynchrones (<a
+            href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>)
+        </td>
+      </tr>
+      <tr>
+        <th rowspan="7">Entités</th>
+        <th rowspan="3">CMP</th>
+        <th>Champs simples</th>
+        <td class="non">N/A</td>
+        <td class="oui">Attributs</td>
+        <td class="oui" colspan="3">Accesseurs abstraits</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Langage de requête</th>
+        <td class="non">N/A</td>
+        <td class="oui">Dépendant de l'implémentation</td>
+        <td class="oui" colspan="3">EJB QL</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Relations</th>
+        <td class="non">N/A</td>
+        <td class="non">Manuel</td>
+        <td class="oui" colspan="3">Accesseurs abstraits, intégrité</td>
+        <td><em>Container-Managed Persistence</em> : la <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>
+          du composant est automatisée par le conteneur.
+        </td>
+      </tr>
+      <tr>
+        <th>BMP</th>
+        <th>BMP</th>
+        <td class="non">N/A</td>
+        <td class="oui" colspan="4">Oui</td>
+        <td><em>Bean-Managed Persistence</em> : le composant gère lui-même sa <a
+            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>.
+        </td>
+      </tr>
+      <tr>
+        <th rowspan="3"><a href="/org/us/company/oracle/sun/ptf/java/POJO.html">POJO</a></th>
+        <th>Champs simples</th>
+        <td class="non" colspan="4">N/A</td>
+        <td class="oui"><span class="oui">Oui</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Langage de requête</th>
+        <td class="non" colspan="4">N/A</td>
+        <td class="oui"><span class="oui">EJB QL</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Relations</th>
+        <td class="non" colspan="4">N/A</td>
+        <td class="oui"><span class="oui">Oui</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="5">Invocation</th>
+        <th>Distribuée</th>
+        <th>Distribuée</th>
+        <td class="oui" colspan="5">Oui</td>
+        <td>Inter-processus.</td>
+      </tr>
+      <tr>
+        <th>Locale</th>
+        <th>Locale</th>
+        <td class="non" colspan="2">Non</td>
+        <td class="oui" colspan="3">Oui</td>
+        <td>Intra-processus (JVM).</td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/reseau/webservice/index.html">Service Web</a></th>
+        <th><a href="/tech/info/soft/reseau/webservice/index.html">Service Web</a></th>
+        <td class="non" colspan="3">Non</td>
+        <td class="oui" colspan="2">Oui</td>
+        <td>Invoqué par des messages <a href="/tech/info/soft/reseau/protocole/5/SOAP.html">SOAP</a>.</td>
+      </tr>
+      <tr>
+        <th>Timer</th>
+        <th>Timer</th>
+        <td class="non" colspan="3">Non</td>
+        <td class="oui" colspan="2">Oui</td>
+        <td>Invoqué par le temps.</td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a></th>
+        <th><a href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a></th>
+        <td class="non" colspan="2">Non</td>
+        <td class="oui" colspan="3">Oui</td>
+        <td>Protocole de transport.</td>
+      </tr>
+      <tr>
+        <th rowspan="6">Descripteur</th>
+        <th>Référence EJB</th>
+        <th>Référence EJB</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3"><code>ejb-ref</code></td>
+        <td></td>
+        <td>Réference relative à un autre EJB</td>
+      </tr>
+      <tr>
+        <th>Réference ressource</th>
+        <th>Réference ressource</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3"><code>resource-ref</code></td>
+        <td>Annotations resource</td>
+        <td>Réference relative à une ressource (DataSource, ConnectionFactory, etc.)</td>
+      </tr>
+      <tr>
+        <th>Référence rôle</th>
+        <th>Référence rôle</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3"><code>role-ref</code></td>
+        <td></td>
+        <td>Référence relative à un rôle de sécurité</td>
+      </tr>
+      <tr>
+        <th>Environnement de ressource</th>
+        <th>Environnement de ressource</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3"><code>resource-env-ref</code></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Type d'identité d'exécution</th>
+        <th>Type d'identité d'exécution</th>
+        <td><code>RUN_AS_MODE</code></td>
+        <td class="non">Non</td>
+        <td class="oui" colspan="2"><code>run-as-mode</code></td>
+        <td></td>
+        <td>Propagation, spécifique ou système.</td>
+      </tr>
+      <tr>
+        <th>Identité d'exécution</th>
+        <th>Identité d'exécution</th>
+        <td><code>RUN_AS_IDENTITY</code></td>
+        <td class="non">Non</td>
+        <td class="oui" colspan="2"><code>run-as-identity</code></td>
+        <td></td>
+        <td>Identité si type d'identiié spécifique.</td>
+      </tr>
+      <tr>
+        <th>Descripteur</th>
+        <th colspan="2">Format</th>
+        <td class="non">Objet sérialisé dans un fichier</td>
+        <td class="oui" colspan="3"><a href="/tech/info/soft/data/doc/xml/">XML</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="6"><a href="/tech/info/soft/prog/oo/java/Transaction.html">Transaction</a></th>
+        <th>Requise</th>
+        <th>Requise</th>
+        <td><code>REQUIRED</code></td>
+        <td class="oui" colspan="3"><code>Required</code></td>
+        <td></td>
+        <td>Utilise si existante, sinon démarre une nouvelle</td>
+      </tr>
+      <tr>
+        <th>Nouvelle requise</th>
+        <th>Nouvelle requise</th>
+        <td><code>REQUIRES_NEW</code></td>
+        <td class="oui" colspan="3"><code>RequiresNew</code></td>
+        <td></td>
+        <td>Démarre toujours une nouvelle (suspend celle en cours si besoin)</td>
+      </tr>
+      <tr>
+        <th>Supporte</th>
+        <th>Supporte</th>
+        <td><code>SUPPORTS</code></td>
+        <td class="oui" colspan="3"><code>Supports</code></td>
+        <td></td>
+        <td>Ne démarre rien, utilise le contexte courant.</td>
+      </tr>
+      <tr>
+        <th>Non supportée</th>
+        <th>Non supportée</th>
+        <td><code>NOT_SUPPORTED</code></td>
+        <td class="oui" colspan="3"><code>NotSupported</code></td>
+        <td></td>
+        <td>Ne peut intégrer ses actions dans une transaction.</td>
+      </tr>
+      <tr>
+        <th>Obligatoire</th>
+        <th>Obligatoire</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3"><code>Mandatory</code></td>
+        <td></td>
+        <td>Nécessite une transaction.</td>
+      </tr>
+      <tr>
+        <th>Jamais</th>
+        <th>Jamais</th>
+        <td class="non">Non</td>
+        <td class="oui" colspan="3"><code>Never</code></td>
+        <td></td>
+        <td>Refuse toute transaction.</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th colspan="2">Niveau d'isolation</th>
+        <td class="oui"><code>ISOLATION_LEVEL</code></td>
+        <td class="non" colspan="3">Non</td>
+        <td></td>
+        <td>Spécifique aux <a href="/tech/info/soft/prod/server/sgbd/index.html">SGBD</a></td>
+      </tr>
+    </table>
+    Leurs dépendances (références à d'autres EJB, sources de données, rôles, files de messages, web service) peuvent
+    être déclarées (ejb-ref, etc.) dans leur descripteur.
+  </li>
+  <li>Pas de rapport avec les JavaBeans.</li>
+</ul>
+<h2>Limitations</h2>
+<p>On peut reprocher aux EJB :</p>
+<ul>
+  <li>Les <i>finders </i>d'entités EJB ne sont pas adaptés à la récupération de listes : un EJBObject est chargé pour
+    chaque élément de la liste récupérée, alors qu'une liste ne sert généralement qu'à sélectionner un élément parmi n
+    pour un traitement particulier (édition du détail, etc.).</li>
+  <li>Une partie des avantages des EJB réside dans des fonctionnalités propriétaires des serveurs, comme :
+    <ul>
+      <li>le mapping O/R (non standardisé)</li>
+      <li>les optimisations (accès exclusif à la base, méthodes en lecture seule)</li>
+    </ul>
+  </li>
+  <li>Les composants ne sont portables (déployables dans n'importe quel conteneur et donc serveur) que tant qu'ils ne
+    sont pas <strong>déployés </strong>(donc jusqu'à l'étape d'<strong>assemblage</strong>).</li>
+  <li>Langage de requêtes limité :
+    <ul>
+      <li>pas d'expression de contrainte possible sur les collections (pas d'expressions du type <code>champ.collection.champ</code>
+        dans EJBQL contrairement au <code>contains()</code> de <a href="/tech/info/soft/prog/oo/java/JDO.html">JDO</a>)
+      </li>
+      <li>les <strong>méthodes select</strong> (<em>select methods</em>) ne permettent que de récupérer soit un champ
+        unique soit une Entité (pas un objet léger ou ensemble de champs).</li>
+    </ul>
+  </li>
+  <li>développer une application avec des EJB demande une bonne expérience de cette technologie qu'il de mal utiliser.
+    Il faut par exemple :
+    <ul>
+      <li><strong>éviter de modéliser tous les objets métier avec des EJB </strong>qui sont un modèle de <a
+          href="/tech/info/soft/proj/design/Composant.html">composants</a> et non un modèle objet. Tout objet (par
+        exemple un objet à granularité fine) n'a pas vocation à être un <a
+            href="/tech/info/soft/proj/design/Composant.html">composant </a>réutilisable. Par contre des EJB peuvent
+        encapsulant des graphes entiers d'objets (transitoires ou <a
+            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistants</a>).</li>
+      <li><strong>éviter de n'utiliser des Entités EJB que pour leur <a
+          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a></strong> CMP : les EJB ne sont pas
+        conçus pour la <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'un modèle objet
+        (pas d'héritage par exemple) et imposent un coût global de modèle de <a
+            href="/tech/info/soft/proj/design/Composant.html">composants </a>
+        (sécurité+transactions+persistance+composant) alors que des solutions de simple <a
+            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'un modèle objet n'imposent pas
+        le coût ni les contraintes d'un modèle de composants tel que les EJB. On préfèrera typiquement <a
+            href="/tech/info/soft/prog/oo/java/JDO.html">JDO</a> comme service de <a
+            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> des EJB, prenant en charge la
+        persistance d'objets complexes encapsulés dans un EJB.</li>
+    </ul>
+  </li>
+</ul>
+<p>On ne peut pas reprocher aux EJB &lt; 3 :</p>
+<ul>
+  <li><strong>l'absence d'héritage</strong> : un <a href="/tech/info/soft/proj/design/Composant.html">composant </a>n'est
+    pas naturellement adapté à la notion d'héritage, qui limite sa réutilisabilité en introduisant une dépendance forte
+    (avec la classe héritée) et non spécifiée (héritage d'implémentation permettant de redéfinir des opérations, accéder
+    à un état protégé, etc.)</li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="https://www.theserverside.com">The Server Side</a></li>
+  <li><a href="https://rollerjm.free.fr/pro/EJB_UML.html">EJB UML diagram</a> par Jean-Michel Garnier</li>
+</ul>
+<!--#include virtual="/footer.html" -->

@@ -1,6 +1,6 @@
 import {Elevation, Place, PlaceLocation} from "./Place"
 import fs from "fs"
-import {writeFile} from "ssg-api"
+import {FileUtil} from "ssg-api"
 
 export abstract class PlaceService {
 
@@ -75,6 +75,6 @@ export abstract class PlaceService {
   private async save(place: Place) {
     const fileName = this.getFileName(place.location)
     const contents = JSON.stringify(place, null, 2)
-    await writeFile(fileName, contents, "utf-8")
+    await FileUtil.writeFile(fileName, contents, "utf-8")
   }
 }

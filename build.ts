@@ -11,7 +11,6 @@ import {
   AngularExpressionReplaceCommand,
   ClassDomReplaceCommand,
   ClassRegexReplaceCommand,
-  ContentStep,
   ContentStepConfig,
   CopyStep,
   HtAccessToNetlifyConfigReplaceCommand,
@@ -43,11 +42,12 @@ import {PlaceReplacerFactory} from "./place/PlaceReplacerFactory"
 import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
 import {LinkReplaceCommand} from "./LinkReplaceCommand"
 import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
+import {RR0ContentStep} from "./RR0ContentStep"
 
 const args = CLI.getArgs()
-const contents = args.contents
-const contentRoots = contents
-  ? contents.split(",")
+const cliContents = args.contents
+const contentRoots = cliContents
+  ? cliContents.split(",")
   : [
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
     "croyance/**/*.html",
@@ -65,7 +65,7 @@ const contentRoots = contents
   ]
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
-  "favicon.ico", "manifest.json", "opensearch.xml",
+  "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png",
   "rr0.css", "print.css",
   "rr0.js",
   "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
@@ -103,8 +103,8 @@ const context = new RR0SsgContextImpl("fr", timeContext)
 context.setVar("mail", "javarome@gmail.com")
 
 const htAccessToNetlifyConfig: ContentStepConfig = {
-  roots: [".htaccess"],
   replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
+  roots: [".htaccess"],
   getOutputFile(context: SsgContext): SsgFile {
     return SsgFile.read(context, "netlify.toml", "utf-8")
   }
@@ -254,17 +254,17 @@ getTimeFiles().then(async (timeFiles) => {
     }
   ]
   new Ssg(config)
-    .add(new ContentStep(contentConfigs, outputFunc))
+    .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesDirectoryStep)
     .add(...peopleSteps)
     .add(new CopyStep(copies, config))
     .start(context)
-    .then(result => console.log("Completed", result))
+    .then(result => context.log("Completed", result))
     .catch(err => {
       try {
-        console.error(err, context.inputFile.name, "=>", context.outputFile?.name)
+        context.error(err, context.inputFile.name, "=>", context.outputFile?.name)
       } catch (e) {
-        console.error(err)
+        context.error(err)
       }
     })
 })

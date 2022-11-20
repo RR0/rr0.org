@@ -25,6 +25,16 @@ describe("RelativeTimeTextBuilder", () => {
     }
   })
 
+  xtest("change year", () => {
+    const previousContext = new RR0SsgContextImpl("fr", new TimeContext(intlOptions))
+    previousContext.time.setYear(1947)
+    const context = previousContext.clone()
+    context.time.setYear(1990)
+    context.time.setMonth(8)
+    context.time.setDayOfMonth(4)
+    expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("samedi 4 août 1990")
+  })
+
   test("next month", () => {
     {
       const sept9_2003 = new RR0SsgContextImpl("fr", new TimeContext(intlOptions))

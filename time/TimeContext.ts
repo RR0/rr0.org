@@ -1,3 +1,6 @@
+/**
+ * Time context for a RR0 page.
+ */
 export class TimeContext {
 
   constructor(
@@ -76,6 +79,11 @@ export class TimeContext {
   }
 
   clone(): TimeContext {
-    return new TimeContext({...this.options}, this._year, this._month, this._dayOfMonth, this._hour, this._minutes, this._timeZone)
+    return new TimeContext({...this.options}, this._year, this._month, this._dayOfMonth, this._hour, this._minutes,
+      this._timeZone)
+  }
+
+  reset(): void {
+    this.setYear(undefined)
   }
 }

@@ -50,10 +50,13 @@ export class TimeReplacer {
     const noContext = attrs === ` data-context="none"`
     const parts = contents.split("/")
     let replacement: string | undefined
-    if (parts.length > 1) {
-      const startReplacement = this.valueReplacement(context, parts[0], noContext)
+    const isTimeInterval = parts.length > 1
+    if (isTimeInterval) {
+      const startTime = parts[0]
+      const startReplacement = this.valueReplacement(context, startTime, noContext)
       if (startReplacement) {
-        const endReplacement = this.valueReplacement(context, parts[1], noContext)
+        const endTime = parts[1]
+        const endReplacement = this.valueReplacement(context, endTime, noContext)
         if (endReplacement) {
           replacement = context.messages.context.time.fromTo(startReplacement, endReplacement)
         }
@@ -99,7 +102,8 @@ export class TimeReplacer {
       timeContext.setTimeZone(timeZone)
     }
     if (timeContext.isDefined()) {
-      const url = this.matchExistingTimeFile(TimeUrlBuilder.build(context))
+      const absoluteTimeStr = TimeUrlBuilder.build(context)
+      const url = this.matchExistingTimeFile(absoluteTimeStr)
       let title = TimeTextBuilder.build(context)
       if (approximate) {
         title = context.messages.context.time.approximate(title)
@@ -125,7 +129,7 @@ export class TimeReplacer {
   }
 
   private matchExistingTimeFile(url: string): string | undefined {
-    while (url !== "time" && this.timeFiles.indexOf(url) < 0) {
+    while (url !== "time" && this.timeFiles.indexOf(`${url}/index.html`) < 0) {
       const slash = url.lastIndexOf("/")
       url = url.substring(0, slash)
     }

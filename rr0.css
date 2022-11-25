@@ -1306,9 +1306,14 @@ nav > ul {
   overflow: hidden
 }
 
+abbr[title]:after {
+  content: " (" attr(title) ")"
+}
+
 @media (min-width: 60em) {
+
   abbr[title]:after {
-    content: " (" attr(title) ")"
+    content: ""
   }
 
   #main-header {

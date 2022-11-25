@@ -65,7 +65,7 @@ const contentRoots = cliContents
   ]
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
-  "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png",
+  "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
   "rr0.css", "print.css",
   "rr0.js",
   "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
@@ -111,13 +111,13 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
 }
 
 async function getTimeFiles(): Promise<string[]> {
-  const minusYearFiles = await glob("time/-?/?/?/?")
-  const year1Files = await glob("time/?")
-  const year2Files = await glob("time/?/?")
-  const year3Files = await glob("time/?/?/?")
-  const year4Files = await glob("time/?/?/?/?")
-  const monthFiles = await glob("time/?/?/?/?/??")
-  const dayFiles = await glob("time/?/?/?/?/??/??")
+  const minusYearFiles = await glob("time/-?/?/?/?/index.html")
+  const year1Files = await glob("time/?/index.html")
+  const year2Files = await glob("time/?/?/index.html")
+  const year3Files = await glob("time/?/?/?/index.html")
+  const year4Files = await glob("time/?/?/?/?/index.html")
+  const monthFiles = await glob("time/?/?/?/?/??/index.html")
+  const dayFiles = await glob("time/?/?/?/?/??/??/index.html")
   return year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
     minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
 }

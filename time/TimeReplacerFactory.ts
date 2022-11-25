@@ -4,12 +4,17 @@ import {RegexReplacer, ReplacerFactory} from "ssg-api"
 
 export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
 
-  private replacer: TimeReplacer
+  protected readonly replacer: TimeReplacer
 
-  constructor(protected timeFiles: string[]) {
+  constructor(timeFiles: string[]) {
     this.replacer = new TimeReplacer(timeFiles)
   }
 
+  /**
+   * Creates a contextual replacer for time tags.
+   *
+   * @param context
+   */
   async create(context: RR0SsgContext): Promise<RegexReplacer> {
     return {
       replace: (substring: string, ...args: any[]): string => {

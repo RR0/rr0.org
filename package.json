@@ -12,6 +12,7 @@
     "url": "git+https://github.com/RR0/rr0.org.git"
   },
   "scripts": {
+    "rebuild": "rm -Rf out && npm run build",
     "build": "rm -Rf out && tsx build.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },

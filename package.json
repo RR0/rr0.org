@@ -13,12 +13,14 @@
   },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",
-    "build": "rm -Rf out && tsx build.ts",
+    "build": "tsx build.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
     "glob-promise": "~5.0.0",
-    "ssg-api": "~1.2.8",
+    "@rr0/common": "~1.0.1",
+    "ssg-api": "~1.2.12",
+    "skia-canvas": "~1.0.1",
     "@googlemaps/google-maps-services-js": "^3.3.16"
   },
   "devDependencies": {

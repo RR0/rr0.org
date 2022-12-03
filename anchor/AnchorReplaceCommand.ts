@@ -1,16 +1,23 @@
 import {DomReplaceCommand, DomReplacer, HtmlSsgContext} from "ssg-api"
-import {AnchorReplacerFactory} from "./AnchorReplacerFactory"
+import {AnchorReplacer} from "./AnchorReplacer"
 
+/**
+ * Contextual replacement of anchors (`<a>` tags).
+ */
 export class AnchorReplaceCommand extends DomReplaceCommand<HTMLAnchorElement> {
 
-  private anchorReplacerFactory: AnchorReplacerFactory
+  protected readonly singleton: AnchorReplacer
 
   constructor(baseUrl: string) {
     super("a")
-    this.anchorReplacerFactory = new AnchorReplacerFactory(baseUrl)
+    this.singleton = new AnchorReplacer(baseUrl)
   }
 
-  protected createReplacer(context: HtmlSsgContext): Promise<DomReplacer<HTMLAnchorElement>> {
-    return this.anchorReplacerFactory.create(context)
+  protected async createReplacer(context: HtmlSsgContext): Promise<DomReplacer<HTMLAnchorElement>> {
+    return {
+      replace: async (original: HTMLAnchorElement): Promise<HTMLAnchorElement> => {
+        return this.singleton.replacement(context, original)
+      }
+    }
   }
 }

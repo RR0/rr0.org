@@ -13,6 +13,7 @@ export interface RR0SsgContext extends SsgContext {
 export interface HtmlRR0SsgContext extends HtmlSsgContext {
   readonly messages: RR0Messages
   readonly time: TimeContext
+  readonly images: Set<string>
 
   clone(): HtmlRR0SsgContext
 }
@@ -20,6 +21,7 @@ export interface HtmlRR0SsgContext extends HtmlSsgContext {
 export class RR0SsgContextImpl extends SsgContextImpl {
 
   readonly messages: RR0Messages
+  readonly images = new Set<string>()
 
   constructor(locale: string, readonly time: TimeContext,
               currentFile: SsgFile | undefined = undefined) {

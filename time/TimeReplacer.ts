@@ -1,10 +1,12 @@
 import {TimeUrlBuilder} from "./TimeUrlBuilder"
 import {TimeTextBuilder} from "./TimeTextBuilder"
 import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
-import {RR0SsgContext} from "../RR0SsgContext"
+import {HtmlRR0SsgContext, RR0SsgContext} from "../RR0SsgContext"
 import {UrlUtil} from "../util/url/UrlUtil"
+import {DomReplacement} from "./DomReplacement"
+import {ObjectUtils} from "@rr0/common"
 
-export class TimeReplacer {
+export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
   static readonly dateTimeRegexp = new RegExp(
     "^(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
@@ -17,7 +19,7 @@ export class TimeReplacer {
   constructor(protected timeFiles: string[]) {
   }
 
-  valueReplacement(context: RR0SsgContext, timeStr: string, noContext = false): string | undefined {
+  valueReplacement(context: HtmlRR0SsgContext, timeStr: string, noContext = false): HTMLElement | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
     const approximate = timeStr.charAt(0) === "~"
@@ -46,10 +48,11 @@ export class TimeReplacer {
     return replacement
   }
 
-  replacement(context: RR0SsgContext, match: string, contents: string, attrs?: string): string {
-    const noContext = attrs === ` data-context="none"`
+  async replacement(context: HtmlRR0SsgContext, original: HTMLElement): Promise<HTMLElement> {
+    const noContext = original.dataset["context"] === "none"
+    const contents = original.textContent
     const parts = contents.split("/")
-    let replacement: string | undefined
+    let replacement: HTMLElement | undefined
     const isTimeInterval = parts.length > 1
     if (isTimeInterval) {
       const startTime = parts[0]
@@ -58,21 +61,24 @@ export class TimeReplacer {
         const endTime = parts[1]
         const endReplacement = this.valueReplacement(context, endTime, noContext)
         if (endReplacement) {
-          replacement = context.messages.context.time.fromTo(startReplacement, endReplacement)
+          replacement = context.outputFile.document.createElement("span")
+          replacement.className = "time-interval"
+          replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
+            endReplacement.outerHTML)
         }
       }
     }
     if (!replacement) {
-      replacement = this.valueReplacement(context, contents, noContext) || match
+      replacement = this.valueReplacement(context, contents, noContext) || original
     }
-    context.debug("\tReplacing time", match, "with", replacement)
+    context.debug("\tReplacing time", original.outerHTML, "with", ObjectUtils.asSet<HTMLElement>(replacement).outerHTML)
     return replacement
   }
 
-  private dateTimeReplacement(context: RR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string,
+  private dateTimeReplacement(context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string,
                               monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string,
-                              approximate: boolean): string | undefined {
-    let replacement: string | undefined = undefined
+                              approximate: boolean): HTMLElement | undefined {
+    let replacement: HTMLElement | undefined = undefined
     const timeContext = context.time
     if (yearStr) {
       const year = parseInt(yearStr, 10)
@@ -116,14 +122,19 @@ export class TimeReplacer {
       } else {
         text = title
       }
-      const titleAttr = text != title ? ` title="${title}"` : ""
       const currentFileName = context.inputFile.name
       const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
       if (url && url !== dirName) {
-        replacement = `<a href="${UrlUtil.absolute(url)}"${titleAttr}>${text}</a>`
+        const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
+        a.href = UrlUtil.absolute(url)
+        if (text != title) {
+          replacement.title = title
+        }
       } else {
-        replacement = `<span class="time"${titleAttr}>${text}</span>`
+        const span = replacement = context.outputFile.document.createElement("span")
+        span.className = "time"
       }
+      replacement.textContent = text
     }
     return replacement
   }
@@ -137,7 +148,7 @@ export class TimeReplacer {
   }
 
   private durationReplacement(context: RR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
-                              secondsStr: string, approximate: boolean): string | undefined {
+                              secondsStr: string, approximate: boolean): HTMLElement | undefined {
     const items = []
     const messages = context.messages.context.time.duration
     if (daysStr) {

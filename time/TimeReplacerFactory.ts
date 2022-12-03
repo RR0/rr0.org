@@ -1,8 +1,8 @@
 import {TimeReplacer} from "./TimeReplacer"
-import {RR0SsgContext} from "../RR0SsgContext"
-import {RegexReplacer, ReplacerFactory} from "ssg-api"
+import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import {DomReplacer, ReplacerFactory} from "ssg-api"
 
-export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
+export class TimeReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected readonly replacer: TimeReplacer
 
@@ -15,12 +15,10 @@ export class TimeReplacerFactory implements ReplacerFactory<RegexReplacer> {
    *
    * @param context
    */
-  async create(context: RR0SsgContext): Promise<RegexReplacer> {
+  async create(context: HtmlRR0SsgContext): Promise<DomReplacer> {
     return {
-      replace: (substring: string, ...args: any[]): string => {
-        const attrs = args[0]
-        const timeStr = args[1]
-        return this.replacer.replacement(context, substring, timeStr, attrs)
+      replace: (original: HTMLElement): Promise<HTMLElement> => {
+        return this.replacer.replacement(context, original)
       }
     }
   }

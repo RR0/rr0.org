@@ -9,8 +9,8 @@ import {RR0SsgContextImpl} from "./RR0SsgContext"
 import {CLI} from "./util/cli/CLI"
 import {
   AngularExpressionReplaceCommand,
+  ClassDomRegexReplaceCommand,
   ClassDomReplaceCommand,
-  ClassRegexReplaceCommand,
   ContentStepConfig,
   CopyStep,
   HtAccessToNetlifyConfigReplaceCommand,
@@ -43,6 +43,7 @@ import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
 import {LinkReplaceCommand} from "./LinkReplaceCommand"
 import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
 import {RR0ContentStep} from "./RR0ContentStep"
+import {ImageRegistryCommand} from "./ImageRegistryCommand"
 
 const args = CLI.getArgs()
 const cliContents = args.contents
@@ -68,7 +69,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
   "rr0.css", "print.css",
   "rr0.js",
-  "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
+  // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "people/index.js",
   "people/lier.svg",
   "people/index.css",
@@ -239,14 +240,15 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiLastModifiedReplaceCommand(context.time.options),
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
-        new ClassRegexReplaceCommand("people", new PeopleReplacerFactory()),
+        new ClassDomRegexReplaceCommand("people", new PeopleReplacerFactory()),
         new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
-        new ClassRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
+        new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
         new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
         new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
         new OutlineReplaceCommand(),
-        new AnchorReplaceCommand("https://rr0.org/")
+        new AnchorReplaceCommand("https://rr0.org/"),
+        new ImageRegistryCommand(config.outDir)
       ],
       getOutputFile(context: SsgContext): SsgFile {
         return context.outputFile

@@ -18,7 +18,7 @@
   </Style>
   <Placemark>
     <name>Crash de Thomas Mantell</name>
-    <description><![CDATA[A <span class="heure">15:18</span> le 7 janvier 1948, alors qu'il tentait dans son avion de se rapprocher d'un objet volant non-identifié. On expliquera plus tard que l'objet en question était un ballon Skyhook.]]></description>
+    <description><![CDATA[A <time>15:18</time> le 7 janvier 1948, alors qu'il tentait dans son avion de se rapprocher d'un objet volant non-identifié. On expliquera plus tard que l'objet en question était un ballon Skyhook.]]></description>
     <styleUrl>#style41</styleUrl>
     <Point>
       <coordinates>-86.591492,36.703659,0.000000</coordinates>
@@ -46,7 +46,7 @@
   </Placemark>
   <Placemark>
     <name>Base AAF de Godman</name>
-    <description><![CDATA[dont la tour observe l'objet au sud-ouest de <span class="heure">14:00</span> à <span class="heure">16:00</span>]]></description>
+    <description><![CDATA[dont la tour observe l'objet au sud-ouest de <time>14:00</time> à <time>16:00</time>]]></description>
     <styleUrl>#marker</styleUrl>
     <Point>
       <coordinates>-85.966728,37.902760,0.000000</coordinates>
@@ -62,7 +62,7 @@
   </Placemark>
   <Placemark>
     <name>Bowling Green</name>
-    <description><![CDATA[où le Services de Vol voit l'objet vers <span class="heure">16:00</span>]]></description>
+    <description><![CDATA[où le Services de Vol voit l'objet vers <time>16:00</time>]]></description>
     <styleUrl>#style56</styleUrl>
     <Point>
       <coordinates>-86.451416,36.985001,0.000000</coordinates>
@@ -70,7 +70,7 @@
   </Placemark>
   <Placemark>
     <name>Clarksville</name>
-    <description><![CDATA[qui à partir de <span class="heure">14:00</span> voit l'objet approcher du nord, survolant la ville pendant 1 h 30 environ, pour disparaître  derrière des nuages vers <span class="heure">16:00</span>]]></description>
+    <description><![CDATA[qui à partir de <time>14:00</time> voit l'objet approcher du nord, survolant la ville pendant 1 h 30 environ, pour disparaître  derrière des nuages vers <time>16:00</time>]]></description>
     <styleUrl>#style117</styleUrl>
     <Point>
       <coordinates>-87.297363,36.505219,0.000000</coordinates>
@@ -86,7 +86,7 @@
   </Placemark>
   <Placemark>
     <name>Columbia</name>
-    <description><![CDATA[L'objet est vu au nord vers <span class="heure">16:00</span>]]></description>
+    <description><![CDATA[L'objet est vu au nord vers <time>16:00</time>]]></description>
     <styleUrl>#style123</styleUrl>
     <Point>
       <coordinates>-87.035065,35.617115,0.000000</coordinates>

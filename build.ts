@@ -228,7 +228,6 @@ getTimeFiles().then(async (timeFiles) => {
       replacements: [
         new SsiIncludeReplaceCommand(),
         new LanguageReplaceCommand(),
-        new TitleReplaceCommand([timeDefaultHandler]),
         new StringEchoVarReplaceCommand("mail"),
         new StringEchoVarReplaceCommand("mapsApiKey"),
         new AngularExpressionReplaceCommand(),
@@ -238,6 +237,7 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiSetVarReplaceCommand("url",
           (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
         new SsiLastModifiedReplaceCommand(context.time.options),
+        new TitleReplaceCommand([timeDefaultHandler]),
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassDomRegexReplaceCommand("people", new PeopleReplacerFactory()),

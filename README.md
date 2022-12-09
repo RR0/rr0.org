@@ -1,12 +1,20 @@
-RR0  [![Build Status](https://travis-ci.org/RR0/rr0.org.svg?branch=master)](https://travis-ci.org/RR0/rr0.org) [![Code Climate](https://codeclimate.com/github/RR0/rr0.org/badges/gpa.svg)](https://codeclimate.com/github/RR0/rr0.org) [![Test Coverage](https://codeclimate.com/github/RR0/rr0.org/badges/coverage.svg)](https://codeclimate.com/github/RR0/rr0.org)
-===
+# RR0  [![Build Status](https://travis-ci.org/RR0/rr0.org.svg?branch=master)](https://travis-ci.org/RR0/rr0.org) [![Code Climate](https://codeclimate.com/github/RR0/rr0.org/badges/gpa.svg)](https://codeclimate.com/github/RR0/rr0.org) [![Test Coverage](https://codeclimate.com/github/RR0/rr0.org/badges/coverage.svg)](https://codeclimate.com/github/RR0/rr0.org)
 
-This repository hosts both data and code of the [RR0 website](https://rr0.org),
-which hosts various data about unexplained phenomena (UFOs, cryptozoology, paranormal...)
-but also technical data (software development).
+This repository hosts both data and code of the [RR0 website](https://rr0.org).
 
-Analysis
---------
+## Data
+
+- `time/` hosts chronological data. Chronology is the base data of other data (for instance, a UFO case photograph will be hosted in its relevant time directory, and the case file will link to it).
+  The subdirectories represent date components in the form `Y/Y/Y/Y/MM/DD/`
+- `croyance/` hosts beliefs data, that is, opinions that do not rely on proof.
+  This includes religion, conspirationism, occultism and other cults.
+- `org/` hosts data about all kinds of human organizations, from countries to towns, including state agencies, universities, etc.
+- `org/` hosts data about people, regardless of their nationalities, occupations, etc.
+
+## Code
+
+### Analysis
+
 RR0 is:
 
 * **Data-centric** : The pages are the data. They contain semantic only, not how to display them.

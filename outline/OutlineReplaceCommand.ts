@@ -15,7 +15,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     const inputDoc = inputFile.dom.window.document
     const ul = outputDoc.querySelector(".outline")
     if (!ul) {
-      console.error("Could not find .outline in", context.inputFile.name)
+      context.error("Could not find .outline in", context.inputFile.name)
       return inputFile
     }
     const from = inputDoc.documentElement

@@ -26,7 +26,7 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
     const outputDoc = dom.window.document
     const ul = outputDoc.querySelector("nav ul")
     if (!ul) {
-      console.error("Could not find nav list in " + context.outputFile.name)
+      context.error("Could not find nav list in " + context.outputFile.name)
       return inputFile
     }
     const relStart = inputFile.links.start || this.defaultHandler?.start(context)

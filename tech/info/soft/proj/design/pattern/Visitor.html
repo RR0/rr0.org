@@ -1,0 +1,62 @@
+<!--#include virtual="/header-start.html" -->
+<title>Visitor</title>
+<!--#include virtual="/header-end.html" -->
+<p>Visiteur (d'objet).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir une nouvelle opération sur des objets sans changer leur code.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>Alors que le <strong>polyphormisme</strong> permet de faire varier le comportement d'objets d'une même hiérarchie,
+    le <a href="index.html">DP</a> visiteur permet d'appliquer la même variation à des comportements externes, appliqués
+    à des objets. De plus, il ne nécessite pas que les objets appartiennent à une même hiérarchie.</p>
+  <p>L'idée du visiteur est d'implémenter dans un objet annexe (le <strong>visiteur</strong>), qui invoquera de
+    l'extérieur (viendra visiter) les opérations à exécuter pour ce comportement. L'objet visité n'aura eu aucune
+    dépendance avec le visiteur concret. </p>
+  <p>Le <a href="index.html">DP</a> visiteur définit :</p>
+  <ul>
+    <li>un <strong>visiteur</strong> d'objets, qui implémente les opérations à effectuer sur les objets </li>
+    <li>la hiérarchie d'objets <strong>accept</strong>ant les visites. </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <code>interface MyVisitor {<br/> void <strong>visit</strong> (Car visitedCar);<br/> void <strong>visit</strong>
+    (Computer visitedComputer);<br/> } <br/> <br/> interface MyVisitable {<br/> void <strong>accept</strong> (MyVisitor
+    visitor);<br/> } <br/> <br/> class StopVisitor implements MyVisitor {<br/> <span class="codeComment">   /**<br/>
+    *  The stop operation performed on a Car <br/>
+    */<br/>
+</span> public void <strong>visit </strong>(Car visitedCar) {<br/> visitedCar.freine(on);<br/> visitedCar.debraye(true);<br/>
+    visitedCar.vitesse(0);<br/> visitedCar.debraye(false);<br/> visitedCar.setContact(false);<br/> }<br/> <br/> <span
+        class="codeComment">   /**<br/>
+    * The stop operation performed on a Computer<br/>
+    */<br/>
+</span> public void <strong>visit </strong>(Computer visitedComputer) {<br/> visitedComputer.cliqueDemarrer();<br/>
+    visitedComputer.selectionne("Arrêter l'ordinateur");<br/> }<br/> } <br/> <br/> class Car implements MyVisitable
+    {<br/> <br/> public void freine(boolean on) {<br/> <span class="codeComment">// Code ici... </span><br/> } <br/>
+    <br/> public void debraye(boolean on) {<br/> <span class="codeComment">// Code ici... </span><br/> } <br/> <br/>
+    public void vitesse(int level) {<br/> <span class="codeComment">// Code ici... </span><br/> } <br/> <br/> public
+    void setContact(boolean on) {<br/> <span class="codeComment">// Code ici... </span><br/> } <br/> <br/> public void
+    <strong>accept</strong> (MyVisitor visitor) {<br/> visitor.<strong>visit </strong>(this); <span class="codeComment">// Ask the visitor to perform its operation on myself</span><br/>
+    }<br/> }<br/> <br/> class Computer implements MyVisitable {<br/> <br/> public void cliqueDemarrer() {<br/> <span
+        class="codeComment">// Code ici... </span><br/> } <br/> <br/> public void selectionne(String menuChoice) {<br/>
+    <span class="codeComment">// Code ici... </span><br/> } <br/> <br/> public void <strong>accept</strong> (MyVisitor
+    visitor) {<br/> visitor.<strong>visit </strong>(this); <span class="codeComment">// Ask the visitor to perform its operation on myself</span><br/>
+    }<br/> }<br/> <br/> class Main {<br/> public static void main (String args[]) {<br/> MyVisitor stopVisitor = new
+    MyStopVisitor(); <span class="codeComment">// Une implementation de visiteur qui stoppe les objects</span><br/>
+    <br/> MyVisitable car = new Car();<br/> car.<strong>accept </strong>(stopVisitor); <br/> <br/> MyVisitable computer
+    = new Computer();<br/> computer.<strong>accept </strong>(stopVisitor); <br/> }<br/> } </code></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Contrairement au polymorphisme, le visiteur permet de définir des comportements indépendants d'un objet </li>
+    <li>Souvent utilisés lors de parcours d'arbres. </li>
+    <li>Une utilisation du visiteur est le <em>double-dipatching</em> pour limiter le couplage d'appels entre deux
+      objets ou palier au manque de multiméthode (méthodes dynamiques) dans Java (le branchement sur une méthode est
+      compilé en fonction du type de déclaration et non d'exécution, de sorte que <code>m(Object)</code> sera appelé au
+      lieu de <code>m(MonType)</code> si vous invoquez <code>Object p = new Montype(); o.m(p);</code> Au lieu de cela on
+      invoque <code>MonType.visit(o)</code> qui contient le code <code>o.m(this)</code> où <code>this</code> a pu être
+      résolu à la compilation comme étant de type <code>MonType</code>. </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,5 +1,10 @@
 {
-  "occupations": ["ufologist"],
+  "deathTime": "2022-12-09",
+  "occupations": [
+    "ufologist",
+    "chemist",
+    "writer"
+  ],
   "countries": [
     "br"
   ]

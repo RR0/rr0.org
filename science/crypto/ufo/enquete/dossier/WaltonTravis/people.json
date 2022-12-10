@@ -5,6 +5,7 @@
     "logger",
     "ufoWitness"
   ],
+  "discredited": true,
   "countries": [
     "us"
   ]

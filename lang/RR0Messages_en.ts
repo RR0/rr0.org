@@ -110,6 +110,7 @@ export class RR0Messages_en implements RR0Messages {
       geophysicist: (_gender: Gender) => "geophysicist",
       historian: (_gender: Gender) => "historian",
       houseWife: (_gender: Gender) => "housewife",
+      hypnotherapist: (_gender: Gender) => "hypnotherapist",
       illusionist: (_gender: Gender) => "illusionist",
       journalist: (_gender: Gender) => "journalist",
       librarian: (_gender: Gender) => "librarian",

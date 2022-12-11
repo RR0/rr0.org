@@ -205,6 +205,7 @@ export class RR0Messages_en implements RR0Messages {
       }
     },
     se: {title: "Sweden"},
+    ve: {title: "Venezuela"},
     za: {title: "South Africa"}
   }
   nav = {

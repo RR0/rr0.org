@@ -91,9 +91,9 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (countries) {
         for (const country of countries) {
           allCountries.add(country)
-          const countryLabel = context.messages.country[country].title
+          const countryLabel = context.messages.country[country]?.title
           if (!countryLabel) {
-            throw new Error(`No label for country "${country}"`)
+            throw new Error(`No title for country "${country}"`)
           }
           titles.push(countryLabel)
           classList.push(`country-${country}`)

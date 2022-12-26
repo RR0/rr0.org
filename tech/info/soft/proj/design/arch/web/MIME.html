@@ -1,60 +1,57 @@
 <!--#include virtual="/header-start.html" -->
 <title>MIME</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Multipurpose Internet Mail Extension</i> : extension pour le courrier Internet � but multiple.</p>
+<p><i lang="en">Multipurpose Internet Mail Extension</i> : extension pour le courrier Internet à but multiple.</p>
 <section>
   <h2>Besoin</h2>
-  <p>D�finir un standard de type de donn�es.</p></section>
+  <p>Définir un standard de type de données.</p></section>
 <section>
-  <h2>Impl�mentation</h2>
-  <p>Les types MIME sont d�finis par des cha�nes de caract�res de la forme :</p>
-  <blockquote>
-    <p>type<q>/</q>sous-type</p>
-  </blockquote>
-  <p>ou de mani�re plus d�taill�e :</p>
-  <blockquote>
-    <p>type<q>/</q>sous-type<q>; charset=</q>tableDeCaract�res</p>
-  </blockquote>
+  <h2>Implémentation</h2>
+  <p>Les types MIME sont définis par des chaînes de caractères de la forme :</p>
+  <p><code>type/sous-type</code></p>
+  <p>ou de manière plus détaillée :</p>
+  <p><code>type/sous-type; charset=tableDeCaractères</code></p>
 </section>
 <section>
   <h2>Exemples</h2>
   <p>Des exemples de types MIME sont :</p>
   <ul>
-    <li><q>text/plain</q> pour du texte brut ;</li>
-    <li><q>text/plain; charset=ISO-8859-1</q> pour du texte brut cod� en Latin 1 ;</li>
-    <li><q>text/html</q> pour une page Web (<a href="../../../../time/doc/html/index.html">HTML</a>) ;</li>
-    <li><q>text/css</q> pour une feuille de style (<a href="client/CSS.html">CSS</a>) ;</li>
-    <li><q>text/xml</q> pour une instance <a href="/tech/info/soft/time/doc/xml">XML</a> ;</li>
-    <li><q>text/rtf</q> pour un document RTF ;</li>
-    <li><q>multipart/form-data</q> pour un formulaire Web ;</li>
-    <li><q>application/pdf</q> pour un document PDF ;</li>
-    <li><q>application/zip</q> pour une archive ZIP ;</li>
-    <li><q>application/postscript</q> pour un document PostScript ;</li>
-    <li><q>application/msword</q> pour un document Microsoft Word ;</li>
-    <li><q>image/gif</q> pour une image GIF ;</li>
-    <li><q>image/jpeg</q> pour une image JPEG ;</li>
-    <li><q>image/png</q> pour une image PNG ;</li>
-    <li><q>audio/mpeg</q> pour du son cod� en MPEG ;</li>
-    <li><q>video/mpeg</q> pour de la video cod� en MPEG ;</li>
-    <li><q>video/quicktime</q> pour de la video cod� en QuickTime ;</li>
-    <li><q>model/vrml</q> pour un mod�le de r�alit� virtuelle ;</li>
-    <li><q>message/external-body</q> pour une pi�ce attach�e � un mail ;</li>
+    <li><code>text/plain</code> pour du texte brut ;</li>
+    <li><code>text/plain; charset=ISO-8859-1</code> pour du texte brut codé en Latin 1 ;</li>
+    <li><code>text/html</code> pour une page Web (HTML) ;</li>
+    <li><code>text/css</code> pour une feuille de style (<a href="/tech/info/soft/proj/design/arch/web/client/css/">
+      CSS</a>) ;</li>
+    <li><code>text/xml</code> pour une instance <a href="/tech/info/soft/time/doc/xml">XML</a> ;</li>
+    <li><code>text/rtf</code> pour un document RTF ;</li>
+    <li><code>multipart/form-data</code> pour un formulaire Web ;</li>
+    <li><code>application/pdf</code> pour un document PDF ;</li>
+    <li><code>application/zip</code> pour une archive ZIP ;</li>
+    <li><code>application/postscript</code> pour un document PostScript ;</li>
+    <li><code>application/msword</code> pour un document Microsoft Word ;</li>
+    <li><code>image/gif</code> pour une image GIF ;</li>
+    <li><code>image/jpeg</code> pour une image JPEG ;</li>
+    <li><code>image/png</code> pour une image PNG ;</li>
+    <li><code>audio/mpeg</code> pour du son codé en MPEG ;</li>
+    <li><code>video/mpeg</code> pour de la video codé en MPEG ;</li>
+    <li><code>video/quicktime</code> pour de la video codé en QuickTime ;</li>
+    <li><code>model/vrml</code> pour un modèle de réalité virtuelle ;</li>
+    <li><code>message/external-body</code> pour une pièce attachée à un mail ;</li>
   </ul>
 </section>
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Les mime types peuvent �tre exprim�s lors des requ�tes comme des r�ponses ;</li>
-    <li>Ils sont typiquement sp�cifi�s dans l'en-t�te <a href="HTTP.html">HTTP</a> <q>content-type</q> exprimant le type
-      de la r�ponse d'une serveur Web (ou d'une requ�te adress�e � un serveur Web, comme un formulaire) ;</li>
-    <li>Standard d�finit par la <a href="https://www.ietf.org/rfc/rfc1341.txt?number=1341">RFC 1341</a>.</li>
-    <li>Une version s�curis�e est <a href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>.</li>
+    <li>Les mime types peuvent être exprimés lors des requêtes comme des réponses ;</li>
+    <li>Ils sont typiquement spécifiés dans l'en-tête <a href="HTTP.html">HTTP</a> <code>content-type</code> exprimant
+      le type de la réponse d'un serveur Web (ou d'une requête adressée à un serveur Web, comme un formulaire) ;</li>
+    <li>Standard définit par la <a href="https://www.ietf.org/rfc/rfc1341.txt?number=1341">RFC 1341</a>.</li>
+    <li>Une version sécurisée est <a href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>.</li>
   </ul>
 </section>
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li>Le type doit �tre compris par le client.</li>
+    <li>Le type doit être compris par le client.</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

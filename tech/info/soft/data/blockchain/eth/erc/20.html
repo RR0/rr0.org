@@ -16,28 +16,39 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Le smart contract doit implémenter des fonctions :</p>
+  <p>Le <a href="../../SmartContract.html">smart contract</a> doit implémenter des fonctions :</p>
   <ul>
     <li><b>obligatoires</b>
       <ul>
-        <li><code>totalSupply</code> : La gestion du nombre maximal de token. Le Smart Contract doit pouvoir dire stop à la
-        <li>création de token dès que la limite a été atteinte.</li><li>Fonction balanceOf : La gestion des balances. Le
-        Smart Contract doit pouvoir dire combien une adresse possède de Token</li>
-        <li><code>transfer</code> : Le Smart Contract utilise cette méthode pour envoyer des tokens provenant du
-          fournisseur, à un utilisateur.</li>
-        <li><code>transferFrom</code> : Le Smart Contract gère le transfert de tokens entre utilisateur</li>
-        <li><code>approve</code> : Le Smart Contract détermine s'il peut donner des tokens à un utilisateur, en vérifiant
-          que le nombre de tokens en circulation n'a pas atteint sa limite.</li>
-        <li><code>allowance</code> : Le Smart Contract vérifie que l'utilisateur qui veut envoyer des tokens aie un montant
-          minimum pour effectuer son transfert.</li></ul>
+        <li><code>totalSupply</code> : impossibilité de créer plus de <a
+            href="../../token">token</a> que cette limite.</li>
+        <li><code>balanceOf</code> : savoir combien une adresse possède de <a href="../../token">token</a></li>
+        <li><code>transfer</code> : envoyer des <a href="../../token">token</a> provenant du fournisseur, à un
+          utilisateur.</li>
+        <li><code>transferFrom</code> : transfert de <a href="../../token">tokens</a> entre utilisateurs.</li>
+        <li><code>approve</code> : détermine s'il peut donner des <a href="../../token">token</a> à un utilisateur
+          (toujours en vérifiant le <code>totalSupply</code>).</li>
+        <li><code>allowance</code> : vérifie que l'utilisateur qui veut envoyer des tokens dispose du montant minimum
+          nécessaire à son transfert.</li>
+      </ul>
     </li>
     <li><b>Optionnelles</b> :
       <ul>
-        <li>donner un nom (<code>WikiToken</code> par exemple)</li>
-        <li>donner un Symbol (<code>WKT</code> par exemple)</li>
+        <li>donner un nom (<code>MyToken</code> par exemple)</li>
+        <li>donner un Symbol (<code>MTK</code> par exemple)</li>
         <li>définir le nombre de décimales (<code>8</code> par exemple)</li>
       </ul>
     </li>
+    <p>La conformité d'un contrat ERC20 peut être audité par des sociétés spécialisées comme <a
+        href="https://www.certik.org">Certik</a>.</p>
+  </ul>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <ul>
+    <li>USDT</li>
+    <li>LINK</li>
+    <li>UNI</li>
   </ul>
 </section>
 <section>

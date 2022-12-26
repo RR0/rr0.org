@@ -1,0 +1,83 @@
+<!--#include virtual="/header-start.html" -->
+<title>RDF</title>
+<h1><a href="https://www.w3.org/RDF">R. D. F.</a></h1>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Resource Description Framework</i> : Infrastructure de description de ressources.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Développer un "Web sémantique" en permettant :</p>
+  <ul>
+    <li>de trouver des ressources</li>
+    <li>de cataloguer un contenu et ses relations </li>
+    <li>l'émergence d'agents intelligents facilitant le partage de connaissance et l'échange</li>
+    <li>l'évaluation de contenu</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>RDF définit des métadonnées (description de données)</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>RDF utilise <a href="xml/XML.html">XML</a>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de document RDF est :</p>
+  <blockquote><code>&lt;?xml:namespace href=<span class="codeString">"<strong>https://www.w3c.org/RDF/</strong>"</span>
+    as=<span class="codeString">"RDF"</span>?&gt; <br>
+    &lt;?xml:namespace href=<span class="codeString">"https://purl.oclc.org/RDF/DC/"</span> as=<span class="codeString">"DC"</span>?&gt;<br>
+    <br>
+    &lt;RDF:<strong>RDF</strong>&gt;<br> <br>
+    &lt;RDF:Description RDF:HREF=<span class="codeString">"https://www.ariadne.ac.uk/"</span> RDF:BAGID=<span
+        class="codeString">"ARIADNE_RDF"</span>&gt;<br>
+    &lt;DC:Title&gt;Ariadne - The Web Version&lt;/DC:Title&gt;<br>
+    &lt;DC:Subject&gt;journal, magazine, elib, electronic libraries, digital libraries, networking, Web, IT, higher
+    education&lt;/DC:Subject&gt;<br>
+    &lt;DC:Description&gt;A Web and print magazine of Internet issues for librarians and information specialists&lt;/DC:Description&gt;<br>
+    &lt;DC:Publisher&gt;UKOLN, University of Bath&lt;/DC:Publisher&gt;<br>
+    &lt;DC:Type&gt;Text.Serial.Magazine&lt;/DC:Type&gt;<br>
+    &lt;DC:Format&gt;text/html&lt;/DC:Format&gt;<br>
+    &lt;DC:Identifier&gt;URN:ISSN:1361-3200&lt;/DC:Identifier&gt;<br>
+    &lt;/RDF:Description&gt;<br> <br> </code><code> &lt;RDF:Description RDF:HREF=<span
+      class="codeString">"#ARIADNE_RDF"</span>&gt;<br>
+    &lt;DC:Creator RDF:HREF=<span
+        class="codeString">"https://www.ukoln.ac.uk/ukoln/staff/a.powell.rdf#Andy_Powell"</span>/&gt;<br>
+    &lt;DC:Date&gt;<br>
+    &lt;RDF:Description&gt;<br>
+    &lt;DC:Date.Type&gt;Created&lt;/DC:Date.Type&gt;<br>
+    &lt;DC:Date.Value&gt;1998-03-07&lt;/DC:Date.Value&gt;<br>
+    &lt;/RDF:Description&gt;<br>
+    &lt;/DC:Date&gt;<br>
+    &lt;/RDF:Description&gt;<br> <br>
+    &lt;/RDF:<strong>RDF</strong>&gt;</code></blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Un sous-ensemble de RDF est <a href="../../prog/oo/java/RSS.html">RSS</a>.</p>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Spécification
+      <ul>
+        <li><a href="https://web.resource.org/rss/1.0/">RDF Site Summary (RSS) 1.0</a></li>
+      </ul>
+    </li>
+    <li>Outils/API
+      <ul><li><strong>Jena Java RDF API</strong> de Brian McBride, Jeremy Carroll, Andy Seaborne, Dave Reynolds et Ian
+        Dickinson, HP Labs, Bristol - API for manipulating RDF models including statement and resource-centric methods
+        using cascading calls for easy object orientated use, container support, the ARP RDF/XML parser, an RDF/XML
+        writer, the RDQL query language, DAML support, persistent storage. Available under an open source, BSD-like
+        license. </li>
+        <li><strong>ICS-FORTH RDFSuite</strong> - open source, high-level scalable tools for the Semantic Web. This
+          suite includes VAalidating RDF Parser (VRP), a RDF Schema Specific DataBase (RSSDB) and supporting RDF Query
+          Language (RQL)</li>
+        <li><strong>IsaViz</strong> : A visual authoring tool for browsing and authoring RDF models represented as
+          graphs. Developed by Emmanuel Pietriga of W3C and Xerox Research Centre Europe, IsaViz is based on the Xerox
+          Visual Transformation Machine.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,271 @@
+<!--#include virtual="/header-start.html" -->
+<title>XHTML</title>
+<h1><a href="https://www.w3.org/TR/xhtml1">X. H. T. M. L.</a> (2000)</h1>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">eXtensible <a href="../html/index.html">HTML</a></i> : <a href="../html/index.html">HTML</a> extensible.
+</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Redéfinir le <a href="../html/index.html">HTML</a> avec <a href=".">XML</a> afin de le rendre extensible et
+    traitable par des systèmes <a href=".">XML</a>.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>XHTML définit différents ensembles de contenus, auquels seront affectées des propriétés par défaut (propriétés
+    d'affichage en <a href="/tech/info/soft/proj/design/arch/web/client/css">CSS</a> par exemple) :</p>
+  <table>
+    <tr>
+      <th>Ensemble</th>
+      <th>Nom</th>
+      <th>Exemples</th>
+      <th>Propriétés</th>
+    </tr>
+    <tr>
+      <td>En-tête</td>
+      <td class="oui"><code>Heading</code></td>
+      <td class="oui"><code>head</code>, <code>meta</code>, <code>title</code></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td>Bloc</td>
+      <td class="oui"><code>Block</code></td>
+      <td class="oui"><code>p</code>, <code>div, blockquote, h1...h6</code></td>
+      <td class="oui">Largeur, hauteur</td>
+    </tr>
+    <tr>
+      <td>A la suite</td>
+      <td class="oui"><code>Inline</code></td>
+      <td class="oui"><code>a</code>, <code>span, strong, em, img</code></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td>Liste</td>
+      <td class="oui"><code>List</code></td>
+      <td class="oui"><code>ul, ol</code></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td>Formulaire</td>
+      <td class="oui"><code>Form</code></td>
+      <td class="oui"><code>form</code></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td>Elément de formulaire</td>
+      <td class="oui"><code>FormCtrl</code></td>
+      <td class="oui"><code>input</code></td>
+      <td class="oui"></td>
+    </tr>
+    <tr>
+      <td>Flux</td>
+      <td class="oui"><code>Flow</code></td>
+      <td>Mélange de <code>Heading</code>, <code>Block</code>, <code>List</code> et <code>Inline</code></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <tr>
+      <th>Version</th>
+      <th colspan="3">1.0</th>
+      <th colspan="3">MP</th>
+      <th>1.1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Print</th>
+      <th>1.2</th>
+      <th>2.0</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1.1</th>
+      <th>1.2</th>
+      <th>1.3</th>
+      <th colspan="4">Core</th>
+      <th colspan="12">Abstract</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Variante/module</th>
+      <th>Frameset</th>
+      <th>Transitional</th>
+      <th>Strict</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Structure</th>
+      <th>Text</th>
+      <th>Hypertext</th>
+      <th>List</th>
+      <th>Base</th>
+      <th><s>Basic</s> Forms</th>
+      <th>Basic Tables</th>
+      <th>Image</th>
+      <th>Link</th>
+      <th>Metainformation</th>
+      <th>Object</th>
+      <th>Stylesheet</th>
+      <th>Target</th>
+      <th>Events</th>
+      <th>Presentation</th>
+      <th>Scripting</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Multi-cadres</td>
+      <td class="oui"><code>frameset</code></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non" colspan="19"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Centrage</td>
+      <td class="oui" colspan="2"><code>center</code></td>
+      <td class="non"></td>
+      <td class="non" colspan="19"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Fonte</td>
+      <td class="oui" colspan="2"><code>font</code></td>
+      <td class="non"></td>
+      <td class="non" colspan="19"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Barré</td>
+      <td class="oui" colspan="2"><code>strike</code></td>
+      <td class="non"></td>
+      <td class="non" colspan="19"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Caractères asiatiques</td>
+      <td class="non" colspan="2"></td>
+      <td class="non"></td>
+      <td class="oui" colspan="22"><code>ruby</code>, <code>rbc</code>, <code>rtc</code>, <code>rb</code>,
+        <code>rt</code>, <code>rc</code></td>
+    </tr>
+    <tr>
+      <td>Ancre</td>
+      <td class="oui" colspan="3"><code>a name="someName"</code></td>
+      <td class="oui" colspan="22"><code>a</code></td>
+    </tr>
+    <tr>
+      <td>Carte</td>
+      <td class="oui" colspan="3"><code>map name="someName"</code></td>
+      <td class="oui" colspan="22"><code>map</code></td>
+    </tr>
+    <tr>
+      <td>Langue</td>
+      <td class="oui" colspan="3"><code>html lang="fr"</code></td>
+      <td class="oui" colspan="22"><code>xml:lang="fr"</code></td>
+    </tr>
+    <tr>
+      <td>Grammaire</td>
+      <td class="oui" colspan="3"></td>
+      <td class="oui" colspan="22">XSD</td>
+    </tr>
+    <tr>
+      <td>En-tête (<em>heading</em>)</td>
+      <td class="oui" colspan="24"><code>h1</code>, h2, h3, h4, h5, h6</td>
+      <td class="oui"><code>h</code></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td class="oui" colspan="24">img alt="description"</td>
+      <td class="oui"><img>Description</img></td>
+    </tr>
+    <tr>
+      <td>Italique</td>
+      <td class="oui" colspan="24">i</td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Gras (<em>bold</em>)</td>
+      <td class="oui" colspan="24">b</td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Teletype</td>
+      <td class="oui" colspan="24">tt</td>
+      <td class="non"></td>
+    </tr>
+    <tr>
+      <td>Indice (<em>subscript</em>)</td>
+      <td class="oui" colspan="25">sub</td>
+    </tr>
+    <tr>
+      <td>Exposant (<em>superscript</em>)</td>
+      <td class="oui" colspan="25">sup</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de document XHTML est :</p>
+  <pre>
+  <?xml version="1.0<b>" encoding="</b>UTF-8"?><br/>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd"><br/>
+    <html lang="en" xml:lang="en"
+        xmlns="https://www.w3.org/1999/xhtml">
+      <head>
+        <title>Ma page</title>
+      </head>
+      <body>
+        Texte de la page <b>en gras</b>
+    avec un <a href="Lien.html">lien</a>.
+      </body>
+    </html>
+</pre>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li> Contrairement à <a href="../html/index.html">HTML</a>, toute balise ouverte doit être fermée (
+      <balise>Xxx</balise>
+      ou <q>
+        <balise/>
+      </q>)
+    </li>
+    <li><a href="../html/index.html">HTML</a> 4.01 a donné lieu au standard XHTML 1.0</li>
+    <li>Cette page est en XHTML.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Non supporté par les plus anciens navigateurs (< HTML 4.0)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

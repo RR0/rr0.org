@@ -87,6 +87,7 @@ export class RR0Messages_fr implements RR0Messages {
       astronomer: (_gender: Gender) => "astronome",
       astrologist: (_gender: Gender) => "astrologue",
       astrophysicist: (gender: Gender) => gender === Gender.male ? "astrophysicien" : "astrophysicienne",
+      banker: (gender: Gender) => gender === Gender.male ? "banquier" : "banquière",
       barman: (gender: Gender) => gender === Gender.male ? "barman" : "barmaid",
       biologist: (_gender: Gender) => "biologiste",
       biochemist: (_gender: Gender) => "biochimiste",

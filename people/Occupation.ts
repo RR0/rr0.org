@@ -7,6 +7,7 @@ export enum Occupation {
   astronomer = "astronomer",
   astrologist = "astrologist",
   astrophysicist = "astrophysicist",
+  banker = "banker",
   barman = "barman",
   biologist = "biologist",
   biochemist = "biochemist",

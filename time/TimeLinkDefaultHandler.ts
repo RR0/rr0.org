@@ -61,7 +61,7 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
     if (this.isTimeFile(context.inputFile.name)) {
       return {
         type: LinkType.contents,
-        text: "Historique",
+        text: "Chronologie",
         url: "/time/"
       }
     }

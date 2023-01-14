@@ -34,7 +34,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
       if (text) {
         const localAnchor = StringUtil.textToCamel(text)
         const outlineElem = titleElem.cloneNode(true)
-        const outputDoc = context.outputFile.dom.window.document
+        const outputDoc = context.outputFile.document
         const anchor = LocalAnchor.create(outputDoc, localAnchor)
         titleElem.prepend(anchor)
         const a = outputDoc.createElement("a")

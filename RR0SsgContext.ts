@@ -2,6 +2,7 @@ import {TimeContext} from "./time/TimeContext"
 import {ssgMessages} from "./lang"
 import {RR0Messages} from "./lang/RR0Messages"
 import {HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile} from "ssg-api"
+import {DefaultLogger} from "ssg-api/dist/src/DefaultLogger"
 
 export interface RR0SsgContext extends SsgContext {
   readonly messages: RR0Messages
@@ -25,7 +26,7 @@ export class RR0SsgContextImpl extends SsgContextImpl {
 
   constructor(locale: string, readonly time: TimeContext,
               currentFile: SsgFile | undefined = undefined) {
-    super(locale, currentFile)
+    super(locale, new Map(), "RR0", new DefaultLogger("RR0"), currentFile)
     this.messages = ssgMessages[locale]
   }
 

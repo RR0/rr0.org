@@ -28,10 +28,6 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
   next(context: HtmlRR0SsgContext): Link | undefined {
     let fileName = context.inputFile.name
     if (this.isTimeFile(fileName)) {
-      const filePos = fileName.lastIndexOf("/index.html")
-      if (filePos > 0) {
-        fileName = fileName.substring(0, filePos)
-      }
       const pos = this.timeFiles.indexOf(fileName)
       const nextFile = this.timeFiles[pos + 1]
       if (nextFile) {
@@ -44,10 +40,6 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
   prev(context: HtmlRR0SsgContext): Link | undefined {
     let fileName = context.inputFile.name
     if (this.isTimeFile(fileName)) {
-      const filePos = fileName.lastIndexOf("/index.html")
-      if (filePos > 0) {
-        fileName = fileName.substring(0, filePos)
-      }
       const pos = this.timeFiles.indexOf(fileName)
       const prevFile = this.timeFiles[pos - 1]
       if (prevFile) {

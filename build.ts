@@ -50,6 +50,7 @@ const cliContents = args.contents
 const contentRoots = cliContents
   ? cliContents.split(",")
   : [
+    "time/**/*.html",
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
     "croyance/**/*.html",
     "droit/**/*.html",
@@ -59,7 +60,6 @@ const contentRoots = cliContents
     "politique/**/*.html",
     "science/**/*.html",
     "tech/**/*.html",
-    "time/**/*.html",
     "politique/**/*.html",
     "udb/*.html",
     "js/**/*.html"

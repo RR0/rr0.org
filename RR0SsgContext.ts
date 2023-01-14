@@ -1,8 +1,7 @@
 import {TimeContext} from "./time/TimeContext"
 import {ssgMessages} from "./lang"
 import {RR0Messages} from "./lang/RR0Messages"
-import {HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile} from "ssg-api"
-import {DefaultLogger} from "ssg-api/dist/src/DefaultLogger"
+import {DefaultLogger, HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile} from "ssg-api"
 
 export interface RR0SsgContext extends SsgContext {
   readonly messages: RR0Messages

@@ -10,7 +10,7 @@ describe("HtmlTagReplaceCommand", () => {
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
     const file = await command.execute(context)
     expect(file.contents).toBe(
-      `<a href="/time/2/0/0/4/">2004</a> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
+      `<html><head></head><body><a href="/time/2/0/0/4/">2004</a> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a></body></html>`)
   })
 })
 

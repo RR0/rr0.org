@@ -100,6 +100,7 @@ export class RR0Messages_fr implements RR0Messages {
       cryptozoologist: (_gender: Gender) => "cryptozoologue",
       dentist: (_gender: Gender) => "dentiste",
       director: (_gender: Gender) => "réalisateur",
+      diver: (_gender: Gender) => "plongeur",
       engineer: (_gender: Gender) => "ingénieur",
       ethnologist: (_gender: Gender) => "ethnologue",
       exobiologist: (_gender: Gender) => "exobiologiste",

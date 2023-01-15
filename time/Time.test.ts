@@ -1,0 +1,56 @@
+import {Time} from "./Time"
+import {TimeContext} from "./TimeContext"
+import {rr0TestUtil} from "../test/RR0TestUtil"
+import {RR0SsgContextImpl} from "../RR0SsgContext"
+import {SsgFile} from "ssg-api"
+
+describe("Time", () => {
+  test("parse", () => {
+    const exec = Time.parse("time/-0/0/1/1/index.html")
+    let pos = 0
+    expect(exec[++pos]).toBe("-")
+    expect(exec[++pos]).toBe("0")
+    expect(exec[++pos]).toBe("0")
+    expect(exec[++pos]).toBe("1")
+    expect(exec[++pos]).toBe("1")
+    expect(exec[++pos]).toBeUndefined()
+    expect(exec[++pos]).toBeUndefined()
+    expect(exec[++pos]).toBe("index.html")
+  })
+
+  describe("contextFromFile", () => {
+    const timeContext = new TimeContext(rr0TestUtil.intlOptions)
+    const context = new RR0SsgContextImpl("fr", timeContext)
+
+    test("recognize year before 0 AD", () => {
+      context.inputFile = new SsgFile("time/-0/0/1/1/index.html", "utf-8", "", new Date("2012-08-12"),
+        {lang: "fr", variants: []})
+      const newTimeContext = Time.contextFromFile(context as any)
+      expect(newTimeContext.getYear()).toBe(-11)
+    })
+
+    test("recognize year after 0 AD", () => {
+      context.inputFile = new SsgFile("time/1/9/7/2/index.html", "utf-8", "", new Date("2012-08-12"),
+        {lang: "fr", variants: []})
+      const newTimeContext = Time.contextFromFile(context as any)
+      expect(newTimeContext.getYear()).toBe(1972)
+    })
+
+    test("recognize month", () => {
+      context.inputFile = new SsgFile("time/1/9/7/2/08/index.html", "utf-8", "", new Date("2012-08-12"),
+        {lang: "fr", variants: []})
+      const newTimeContext = Time.contextFromFile(context as any)
+      expect(newTimeContext.getYear()).toBe(1972)
+      expect(newTimeContext.getMonth()).toBe(8)
+    })
+
+    test("recognize day", () => {
+      context.inputFile = new SsgFile("time/1/9/7/2/08/12/index.html", "utf-8", "", new Date("2012-08-12"),
+        {lang: "fr", variants: []})
+      const newTimeContext = Time.contextFromFile(context as any)
+      expect(newTimeContext.getYear()).toBe(1972)
+      expect(newTimeContext.getMonth()).toBe(8)
+      expect(newTimeContext.getDayOfMonth()).toBe(12)
+    })
+  })
+})

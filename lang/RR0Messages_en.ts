@@ -2,6 +2,7 @@ import {MessageUtils, RR0Messages} from "./RR0Messages"
 import {Gender} from "../people/Gender"
 
 export class RR0Messages_en implements RR0Messages {
+  nonSignificantWords = ["my", "the", "we", "they", "want", "she", "them"]
   context = {
     time: {
       duration: {

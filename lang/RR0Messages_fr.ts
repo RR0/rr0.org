@@ -2,6 +2,14 @@ import {MessageUtils, RR0Messages} from "./RR0Messages"
 import {Gender} from "../people/Gender"
 
 export class RR0Messages_fr implements RR0Messages {
+  nonSignificantWords = [
+    "ce", "du", "va", "se", "peu", "a", "qui", "y", "rend", "nom", "bien", "qu'à", "l'on", "qu'on", "nous", "et",
+    "tous", "des", "où", "y'a", "aucun", "cependant", "personnes", "composé", "importe", "peut", "sans", "nécessité",
+    "appelle", "étonnant", "retrouve", "observe", "égaux", "existe", "qu", "on", "fait", "rester", "capable",
+    "véritable", "celui-ci", "qualifie", "traite", "relate", "toujours", "faire", "n'y", "une", "dont", "les", "p",
+    "que", "avec", "n'est", "-", "—", "le", "dans", "très", "de", "après", "un", "étant", "voire", "d'une", "sur",
+    "leur", "la", "est", "que", "cela", "ait", "jamais", "il", "pas", "ou", "en", "plus", "moins", "ainsi", "donc"
+  ]
   context = {
     time: {
       duration: {

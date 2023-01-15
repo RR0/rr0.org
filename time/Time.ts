@@ -5,7 +5,7 @@ import {StringUtil} from "../util/string/StringUtil"
 
 export class Time {
 
-  static readonly timeRegex = /time\/(\d)\/(\d)\/(\d)\/(\d)\/?(\d{2})?\/?(\d{2})?\/?(index(_[a-z]{2})?.html)?/
+  static readonly timeRegex = /time\/(-)?(\d)\/(\d)\/(\d)\/(\d)\/?(\d{2})?\/?(\d{2})?\/?(index(_[a-z]{2})?.html)?/
 
   /**
    * Instantiate a Date object matching an ISO date ("1972-08-12 16:34" for instance).
@@ -29,16 +29,18 @@ export class Time {
   static contextFromFile(context: HtmlRR0SsgContext, fileName = context.inputFile.name): TimeContext | undefined {
     let timeContext: TimeContext | undefined
     const timeExec = Time.parse(fileName)
-    if (timeExec && timeExec.length > 4) {
+    if (timeExec && timeExec.length > 5) {
       const pageContext = context.clone()
       timeContext = pageContext.time
-      timeContext.setYear(parseInt(timeExec[1], 10) * 1000
-        + parseInt(timeExec[2], 10) * 100
-        + parseInt(timeExec[3], 10) * 10
-        + parseInt(timeExec[4], 10))
-      const monthStr = timeExec[5]
+      const m = parseInt(timeExec[2], 10)
+      const c = parseInt(timeExec[3], 10)
+      const d = parseInt(timeExec[4], 10)
+      const u = parseInt(timeExec[5], 10)
+      const year = (timeExec[1] ? -1 : 1) * (m * 1000 + c * 100 + d * 10 + u)
+      timeContext.setYear(year)
+      const monthStr = timeExec[6]
       timeContext.setMonth(monthStr ? parseInt(monthStr, 10) : undefined)
-      const dayStr = timeExec[6]
+      const dayStr = timeExec[7]
       timeContext.setDayOfMonth(dayStr ? parseInt(dayStr, 10) : undefined)
     }
     return timeContext

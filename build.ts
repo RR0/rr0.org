@@ -44,6 +44,7 @@ import {LinkReplaceCommand} from "./LinkReplaceCommand"
 import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
 import {RR0ContentStep} from "./RR0ContentStep"
 import {ImageRegistryCommand} from "./ImageRegistryCommand"
+import {SearchCommand} from "./search/SearchCommand"
 
 const args = CLI.getArgs()
 const cliContents = args.contents
@@ -221,6 +222,7 @@ getTimeFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService("org")
 
+  const searchCommand = new SearchCommand()
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
@@ -248,7 +250,8 @@ getTimeFiles().then(async (timeFiles) => {
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand("https://rr0.org/"),
-        new ImageRegistryCommand(config.outDir)
+        new ImageRegistryCommand(config.outDir),
+        searchCommand
       ],
       getOutputFile(context: SsgContext): SsgFile {
         return context.outputFile
@@ -262,6 +265,9 @@ getTimeFiles().then(async (timeFiles) => {
     .add(new CopyStep(copies, config))
     .start(context)
     .then(result => context.log("Completed", result))
+    .then(() => {
+      searchCommand.save("search/index.json")
+    })
     .catch(err => {
       try {
         context.error(err, context.inputFile.name, "=>", context.outputFile?.name)

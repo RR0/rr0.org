@@ -19,6 +19,7 @@ type CountriesMessages
 type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
 export interface RR0Messages {
+  nonSignificantWords: string[]
   context: {
     time: {
       duration: {

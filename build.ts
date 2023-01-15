@@ -71,9 +71,8 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "rr0.css", "print.css",
   "rr0.js",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
-  "people/index.js",
-  "people/lier.svg",
-  "people/index.css",
+  "people/index.js", "people/lier.svg", "people/index.css",
+  "search/index.js", "search/index.json",
   "udb/**/*.js",
   "udb/netlify.toml",
   "udb/input/db/udb/data/*.*"

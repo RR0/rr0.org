@@ -11,40 +11,12 @@
 </header>
 <nav id="main-nav">
   <h1>Navigation</h1>
-  <script>
-    var siteIndex
-
-    function siteSearchChange(e) {
-      const value = e.target.value.trim()
-      const pageIndex = siteIndex.pages.findIndex(page => page.title === value)
-      if (pageIndex >= 0) {
-        const page = siteIndex.pages[pageIndex]
-        window.location.href = page.url
-      }
-    }
-
-    function siteSearchLoad() {
-      const datalist = document.querySelector("#search-site-values")
-      if (!siteIndex) {
-        fetch("/search/pages.json").then(async (response) => {
-          if (response.ok) {
-            siteIndex = await response.json()
-            for (const page of siteIndex.pages) {
-              const option = document.createElement("option")
-              option.value = page.title
-              datalist.append(option)
-            }
-          }
-        })
-      }
-    }
-  </script>
   <ul>
     <li class="full-page">
       <a class="home" href="/" title="Home">RR0</a>
     </li>
-    <li class="search" onmouseover="siteSearchLoad()">
-      <input id="search-site" list="search-site-values" oninput="siteSearchChange(event)" type="search">
+    <li class="search">
+      <input id="search-site" list="search-site-values" type="search">
       <datalist id="search-site-values">
       </datalist>
     </li>
@@ -57,6 +29,7 @@
       <span id="alternate"></span>
     </li>
   </ul>
+  <script src="/search/index.js" type="text/javascript"></script>
 </nav>
 <script>
   const summary = document.getElementById("out-top")

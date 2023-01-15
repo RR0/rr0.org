@@ -8,7 +8,8 @@ export class RR0Messages_fr implements RR0Messages {
     "appelle", "étonnant", "retrouve", "observe", "égaux", "existe", "qu", "on", "fait", "rester", "capable",
     "véritable", "celui-ci", "qualifie", "traite", "relate", "toujours", "faire", "n'y", "une", "dont", "les", "p",
     "que", "avec", "n'est", "-", "—", "le", "dans", "très", "de", "après", "un", "étant", "voire", "d'une", "sur",
-    "leur", "la", "est", "que", "cela", "ait", "jamais", "il", "pas", "ou", "en", "plus", "moins", "ainsi", "donc"
+    "leur", "la", "est", "que", "cela", "ait", "jamais", "il", "pas", "ou", "en", "plus", "moins", "ainsi", "donc",
+    "espère", "auparavant", "voulait", "amène", "bonnes", "fameux", "constituant"
   ]
   context = {
     time: {

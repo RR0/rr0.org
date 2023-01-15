@@ -51,19 +51,7 @@ const cliContents = args.contents
 const contentRoots = cliContents
   ? cliContents.split(",")
   : [
-    "time/**/*.html",
-    "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
     "croyance/**/*.html",
-    "droit/**/*.html",
-    "org/**/*.html",
-    "people/**/*.html",
-    "place/**/*.html",
-    "politique/**/*.html",
-    "science/**/*.html",
-    "tech/**/*.html",
-    "politique/**/*.html",
-    "udb/*.html",
-    "js/**/*.html"
   ]
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [

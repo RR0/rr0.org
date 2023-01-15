@@ -15,13 +15,11 @@
     var siteIndex
 
     function siteSearchChange(e) {
-      const input = e.target
-      const value = input.value.trim()
+      const value = e.target.value.trim()
       const pageIndex = siteIndex.pages.findIndex(page => page.title === value)
       if (pageIndex >= 0) {
         const page = siteIndex.pages[pageIndex]
-        const href = page.url
-        console.log(href)
+        window.location.href = page.url
       }
     }
 

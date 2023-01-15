@@ -25,15 +25,20 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
 
   async execute(context: HtmlRR0SsgContext): Promise<HtmlSsgFile> {
     const outputFile = context.outputFile
-    const pageIndex = this.index.pages.length
     this.index.pages.push({
       title: outputFile.title,
       url: outputFile.name
     })
+    // this.indexWords(context, outputFile)
+    return outputFile
+  }
+
+  private indexWords(context: HtmlRR0SsgContext, outputFile: HtmlSsgFile) {
+    const pageIndex = this.index.pages.length
     const nonSignificant = context.messages.nonSignificantWords
     const contents = this.getContents(outputFile.document)
     const pageText = contents.toLowerCase()
-    const pageWords = pageText.split(/[ ,.'":!?;()\[\]\n]/g)
+    const pageWords = pageText.split(/[ \t,.…'’\-" :!?;()\[\]\n]/g)
       .filter(w => w.length > 1)
       .filter(w => !nonSignificant.includes(w))
       .filter(w => {
@@ -56,7 +61,6 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       const pageWordCount = pageWordsCount.get(word)
       existingWordCounts.push({pageIndex, count: pageWordCount})
     }
-    return outputFile
   }
 
   async save(fileName: string) {

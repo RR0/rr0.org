@@ -1,11 +1,13 @@
 var siteIndex
 
 function siteSearchChange(e) {
-  const value = e.target.value.trim()
-  const pageIndex = siteIndex.pages.findIndex(page => page.title === value)
-  if (pageIndex >= 0) {
-    const page = siteIndex.pages[pageIndex]
-    window.location.href = `/${page.url}`
+  if (e.inputType === "insertReplacementText" || e.inputType == null) {
+    const value = e.target.value.trim()
+    const pageIndex = siteIndex.pages.findIndex(page => page.title === value)
+    if (pageIndex >= 0) {
+      const page = siteIndex.pages[pageIndex]
+      window.location.href = `/${page.url}`
+    }
   }
 }
 

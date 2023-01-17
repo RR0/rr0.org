@@ -45,6 +45,7 @@ import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
 import {RR0ContentStep} from "./RR0ContentStep"
 import {ImageRegistryCommand} from "./ImageRegistryCommand"
 import {SearchCommand} from "./search/SearchCommand"
+import {SearchIndexStep} from "./search/SearchIndexStep"
 
 const args = CLI.getArgs()
 const cliContents = args.contents
@@ -221,7 +222,7 @@ getTimeFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService("org")
 
-  const searchCommand = new SearchCommand()
+  const searchCommand = new SearchCommand(["404.html"])
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
@@ -261,12 +262,10 @@ getTimeFiles().then(async (timeFiles) => {
     .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesDirectoryStep)
     .add(...peopleSteps)
+    .add(new SearchIndexStep("search/index.json", searchCommand))
     .add(new CopyStep(copies, config))
     .start(context)
     .then(result => context.log("Completed", result))
-    .then(() => {
-      searchCommand.save("search/index.json")
-    })
     .catch(err => {
       try {
         context.error(err, context.inputFile.name, "=>", context.outputFile?.name)

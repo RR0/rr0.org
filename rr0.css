@@ -273,6 +273,10 @@ nav {
   transition: background .2s ease-out
 }
 
+.search input {
+  width: 100%;
+}
+
 nav.collapsed {
   top: 0;
   position: fixed;

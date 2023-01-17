@@ -1,4 +1,4 @@
-import {FileUtil, HtmlSsgContext, HtmlSsgFile, ReplaceCommand} from "ssg-api"
+import {HtmlSsgContext, HtmlSsgFile, ReplaceCommand} from "ssg-api"
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
 type PageInfo = {
@@ -18,19 +18,37 @@ type SearchIndex = {
 }
 
 export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
-  protected index: SearchIndex = {
+  readonly index: SearchIndex = {
     pages: [],
     words: {}
   }
 
+  constructor(protected notIndexedUrls: string[]) {
+  }
+
   async execute(context: HtmlRR0SsgContext): Promise<HtmlSsgFile> {
     const outputFile = context.outputFile
-    this.index.pages.push({
-      title: outputFile.title,
-      url: outputFile.name
-    })
+    const title = outputFile.title
+    const url = outputFile.name
+    if (title && !this.notIndexedUrls.includes(url)) {
+      const indexedPages = this.index.pages
+      const titleIndexed = indexedPages.find(page => page.title === title && page.url !== url)
+      if (titleIndexed) {
+        context.warn(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`)
+      }
+      indexedPages.push({title, url})
+    }
     // this.indexWords(context, outputFile)
     return outputFile
+  }
+
+  protected getContents(doc: Document) {
+    var div = doc.createElement("div")
+    div.append(doc.body)
+    this.removeTags(div, "script")
+    this.removeTags(div, "nav")
+    this.removeTags(div, "footer")
+    return div.textContent
   }
 
   private indexWords(context: HtmlRR0SsgContext, outputFile: HtmlSsgFile) {
@@ -61,19 +79,6 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       const pageWordCount = pageWordsCount.get(word)
       existingWordCounts.push({pageIndex, count: pageWordCount})
     }
-  }
-
-  async save(fileName: string) {
-    FileUtil.writeFile(fileName, JSON.stringify(this.index), "utf-8")
-  }
-
-  protected getContents(doc: Document) {
-    var div = doc.createElement("div")
-    div.append(doc.body)
-    this.removeTags(div, "script")
-    this.removeTags(div, "nav")
-    this.removeTags(div, "footer")
-    return div.textContent
   }
 
   private removeTags(div: HTMLDivElement, selector: string) {

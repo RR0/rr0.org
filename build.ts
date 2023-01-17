@@ -222,7 +222,7 @@ getTimeFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService("org")
 
-  const searchCommand = new SearchCommand(["404.html"])
+  const searchCommand = new SearchCommand(["404.html", "Referencement.html"])
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {

@@ -1391,6 +1391,11 @@ abbr[title]:after {
     margin-left: 10%
   }
 
+  #summary {
+    max-height: 65vh;
+    overflow: auto;
+  }
+
   .outline li {
     padding: .2rem .3rem;
     float: none

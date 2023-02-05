@@ -95,6 +95,16 @@ export class CaseDirectoryStep extends DirectoryStep {
     const directoriesHtml = HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
     context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
       directoriesHtml)
-    await this.outputFunc(context, context.outputFile, "")
+    await this.outputFunc(context, context.outputFile)
+  }
+
+  static async create(outputFunc: OutputFunc, config: SsgConfig,
+                      findDirectoriesContaining: (fileName) => Promise<string[]>): Promise<CaseDirectoryStep> {
+    const ufoCasesDirectories = await findDirectoriesContaining("case.json")
+    return new CaseDirectoryStep(
+      ufoCasesDirectories,
+      ["science/crypto/ufo/enquete/dossier/canular"],
+      "science/crypto/ufo/enquete/dossier/index.html",
+      outputFunc, config)
   }
 }

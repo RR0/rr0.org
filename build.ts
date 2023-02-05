@@ -1,7 +1,6 @@
 import {TimeContext} from "./time/TimeContext"
 import {CaseDirectoryStep} from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
 import {PeopleDirectoryStep} from "./people/PeopleDirectoryStep"
-import {Occupation} from "./people/Occupation"
 import {promise as glob} from "glob-promise"
 import {GooglePlaceService} from "./place/GooglePlaceService"
 import {OrganizationService} from "./org/OrganizationService"
@@ -19,7 +18,6 @@ import {
   SsgConfig,
   SsgContext,
   SsgFile,
-  SsgStep,
   SsiEchoVarReplaceCommand,
   SsiIfReplaceCommand,
   SsiIncludeReplaceCommand,
@@ -46,8 +44,9 @@ import {RR0ContentStep} from "./RR0ContentStep"
 import {ImageRegistryCommand} from "./ImageRegistryCommand"
 import {SearchCommand} from "./search/SearchCommand"
 import {SearchIndexStep} from "./search/SearchIndexStep"
+import {OutputFunc} from "ssg-api/dist/src/Ssg"
 
-const args = CLI.getArgs()
+const args = new CLI().getArgs()
 const cliContents = args.contents
 const contentRoots = cliContents
   ? cliContents.split(",")
@@ -82,7 +81,8 @@ const config: SsgConfig = {
   outDir: "out"
 }
 
-async function outputFunc(context: SsgContext, info: SsgFile, outDir = config.outDir + "/"): Promise<void> {
+const outputFunc: OutputFunc
+  = async (context: SsgContext, info: SsgFile, outDir = config.outDir + "/"): Promise<void> => {
   info.name = `${outDir}${info.name}`
   try {
     context.log("Writing", info.name)
@@ -134,84 +134,9 @@ async function findDirectoriesContaining(fileName) {
     .filter(onlyUnique)
 }
 
-async function createPeopleSteps(): Promise<SsgStep[]> {
-  const peopleDirectories = await findDirectoriesContaining("people*.json")
-  const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
-
-  const scientistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
-    "people/scientifiques.html",
-    outputFunc, config, [
-      Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
-      Occupation.biochemist, Occupation.biologist, Occupation.biophysicist, Occupation.botanist,
-      Occupation.chemist,
-      Occupation.engineer, Occupation.exobiologist, Occupation.ethnologist,
-      Occupation.geophysicist, Occupation.geologist, Occupation.geographer,
-      Occupation.historian,
-      Occupation.mathematician, Occupation.meteorologist,
-      Occupation.neuroscientist, Occupation.neurologist, Occupation.neuropsychiatrist,
-      Occupation.oceanographer,
-      Occupation.philosopher, Occupation.physician, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
-      Occupation.radioastronomer,
-      Occupation.sociologist, Occupation.softwareEngineer
-    ], "scientists directories")
-
-  const ufologistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
-    "people/ufologues.html",
-    outputFunc, config, [Occupation.ufologist],
-    "ufologists directories")
-
-  const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
-    "people/witness/index.html",
-    outputFunc, config, [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee],
-    "UFO witnesses directories")
-
-  const astronomersDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
-    "people/astronomes.html",
-    outputFunc, config, [Occupation.astronomer],
-    "astronomers directories")
-
-  const contacteesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
-    "people/contactes.html",
-    outputFunc, config, [Occupation.contactee],
-    "contactees directories")
-
-  const pilotsDirectoryStep = new PeopleDirectoryStep(
-    peopleDirectories,
-    excludedPeopleDirs,
-    "people/pilotes.html",
-    outputFunc, config, [Occupation.astronaut, Occupation.pilot])
-
-  const peopleDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
-    "people/index.html",
-    outputFunc, config, [],
-    "people directories")
-
-  const letterDirs = await glob("people/*/")
-  const peopleLetterFiles = letterDirs.filter(l => /(.*?)\/[a-z]\//.test(l))
-  const letterDirectorySteps: PeopleDirectoryStep[] = []
-  for (const peopleLetterFile of peopleLetterFiles) {
-    const c = peopleLetterFile.charAt(peopleLetterFile.length - 2)
-    letterDirectorySteps.push(new PeopleDirectoryStep(
-      [`people/${c}/*/`],
-      [],
-      `people/${c}/index.html`,
-      outputFunc, config, []))
-  }
-  return [scientistsDirectoryStep, ufologistsDirectoryStep, ufoWitnessesDirectoryStep, astronomersDirectoryStep, contacteesDirectoryStep, pilotsDirectoryStep, peopleDirectoryStep, ...letterDirectorySteps]
-}
-
-async function createUfoCasesStep(): Promise<CaseDirectoryStep> {
-  const ufoCasesDirectories = await findDirectoriesContaining("case.json")
-  return new CaseDirectoryStep(
-    ufoCasesDirectories,
-    ["science/crypto/ufo/enquete/dossier/canular"],
-    "science/crypto/ufo/enquete/dossier/index.html",
-    outputFunc, config)
-}
-
 getTimeFiles().then(async (timeFiles) => {
-  const ufoCasesDirectoryStep = await createUfoCasesStep()
-  const peopleSteps = await createPeopleSteps()
+  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, findDirectoriesContaining)
+  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, findDirectoriesContaining)
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -260,7 +185,7 @@ getTimeFiles().then(async (timeFiles) => {
   ]
   new Ssg(config)
     .add(new RR0ContentStep(contentConfigs, outputFunc))
-    .add(ufoCasesDirectoryStep)
+    .add(ufoCasesStep)
     .add(...peopleSteps)
     .add(new SearchIndexStep("search/index.json", searchCommand))
     .add(new CopyStep(copies, config))

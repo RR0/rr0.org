@@ -17,6 +17,9 @@ type SearchIndex = {
   }
 }
 
+/**
+ * Builds an index of pages.
+ */
 export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
   readonly index: SearchIndex = {
     pages: [],

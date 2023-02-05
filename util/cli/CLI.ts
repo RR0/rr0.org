@@ -1,15 +1,19 @@
 export class CLI {
 
-  static getArgs(): Record<string, string> {
-    const argv = process.argv
-    const args: Record<string, string> = {}
+  constructor(protected argv: string[] = process.argv, protected argPrefix = "-") {
+  }
+
+  /**
+   * @return A record of args values for each arg -key.
+   */
+  getArgs<T = Record<string, string>>(): T {
+    const argv = this.argv
+    const args: T = {} as T
     for (let i = 2; i < argv.length; i++) {
       const arg = argv[i]
-      const dash = arg.lastIndexOf("-")
+      const dash = arg.lastIndexOf(this.argPrefix)
       if (dash >= 0) {
-        const value = argv[i + 1]
-        const key = arg.substring(dash + 1)
-        args[key] = value
+        args[arg.substring(dash + 1)] = argv[i + 1]
         i++
       }
     }

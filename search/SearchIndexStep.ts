@@ -1,6 +1,9 @@
 import {FileUtil, SsgContext, SsgStep} from "ssg-api"
 import {SearchCommand} from "./SearchCommand"
 
+/**
+ * Saves the index file collected by the SearchCommand.
+ */
 export class SearchIndexStep implements SsgStep {
 
   constructor(protected fileName: string, protected searchCommand: SearchCommand) {

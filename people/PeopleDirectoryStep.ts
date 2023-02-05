@@ -6,7 +6,7 @@ import {People} from "./People"
 import {promise as glob} from "glob-promise"
 import {RR0SsgContext} from "../RR0SsgContext"
 import {HtmlTag} from "../util/HtmlTag"
-import {DirectoryStep, OutputFunc, SsgConfig, SsgFile} from "ssg-api"
+import {DirectoryStep, OutputFunc, SsgConfig, SsgFile, SsgStep} from "ssg-api"
 import {StringUtil} from "../util/string/StringUtil"
 
 /**
@@ -147,6 +147,73 @@ export class PeopleDirectoryStep extends DirectoryStep {
       context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="occupations" -->`,
         HtmlTag.toString("div", occupationsHtml, {id: "occupations"}))
     }
-    await this.outputFunc(context, context.outputFile, "")
+    await this.outputFunc(context, context.outputFile)
+  }
+
+  static async create(outputFunc: OutputFunc, config: SsgConfig,
+                      findDirectoriesContaining: (fileName) => Promise<string[]>): Promise<SsgStep[]> {
+    const peopleDirectories = await findDirectoriesContaining("people*.json")
+    const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
+
+    const scientistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+      "people/scientifiques.html",
+      outputFunc, config, [
+        Occupation.anthropologist, Occupation.astronomer, Occupation.astrophysicist, Occupation.archeologist,
+        Occupation.biochemist, Occupation.biologist, Occupation.biophysicist, Occupation.botanist,
+        Occupation.chemist,
+        Occupation.engineer, Occupation.exobiologist, Occupation.ethnologist,
+        Occupation.geophysicist, Occupation.geologist, Occupation.geographer,
+        Occupation.historian,
+        Occupation.mathematician, Occupation.meteorologist,
+        Occupation.neuroscientist, Occupation.neurologist, Occupation.neuropsychiatrist,
+        Occupation.oceanographer,
+        Occupation.philosopher, Occupation.physician, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
+        Occupation.radioastronomer,
+        Occupation.sociologist, Occupation.softwareEngineer
+      ], "scientists directories")
+
+    const ufologistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+      "people/ufologues.html",
+      outputFunc, config, [Occupation.ufologist],
+      "ufologists directories")
+
+    const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+      "people/witness/index.html",
+      outputFunc, config, [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee],
+      "UFO witnesses directories")
+
+    const astronomersDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+      "people/astronomes.html",
+      outputFunc, config, [Occupation.astronomer],
+      "astronomers directories")
+
+    const contacteesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+      "people/contactes.html",
+      outputFunc, config, [Occupation.contactee],
+      "contactees directories")
+
+    const pilotsDirectoryStep = new PeopleDirectoryStep(
+      peopleDirectories,
+      excludedPeopleDirs,
+      "people/pilotes.html",
+      outputFunc, config, [Occupation.astronaut, Occupation.pilot])
+
+    const peopleDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+      "people/index.html",
+      outputFunc, config, [],
+      "people directories")
+
+    const letterDirs = await glob("people/*/")
+    const peopleLetterFiles = letterDirs.filter(l => /(.*?)\/[a-z]\//.test(l))
+    const letterDirectorySteps: PeopleDirectoryStep[] = []
+    for (const peopleLetterFile of peopleLetterFiles) {
+      const c = peopleLetterFile.charAt(peopleLetterFile.length - 2)
+      letterDirectorySteps.push(new PeopleDirectoryStep(
+        [`people/${c}/*/`],
+        [],
+        `people/${c}/index.html`,
+        outputFunc, config, []))
+    }
+    return [scientistsDirectoryStep, ufologistsDirectoryStep, ufoWitnessesDirectoryStep, astronomersDirectoryStep, contacteesDirectoryStep, pilotsDirectoryStep, peopleDirectoryStep, ...letterDirectorySteps]
   }
 }

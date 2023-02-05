@@ -19,7 +19,7 @@
   "dependencies": {
     "glob-promise": "~5.0.0",
     "@rr0/common": "~1.0.1",
-    "ssg-api": "~1.3.2",
+    "ssg-api": "~1.4.2",
     "skia-canvas": "~1.0.1",
     "@googlemaps/google-maps-services-js": "^3.3.16"
   },

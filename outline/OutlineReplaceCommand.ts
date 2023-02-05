@@ -29,7 +29,9 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
   private process(context: HtmlSsgContext, from: Element, target: Element, level: number): boolean {
     let added = false
     const sectionsHeadings = from.querySelectorAll("section h" + level)
-    for (const titleElem of sectionsHeadings) {
+    const articlesHeadings = from.querySelectorAll("article h" + level)
+    const headings = Array.from(sectionsHeadings).concat(Array.from(articlesHeadings))
+    for (const titleElem of headings) {
       const text = titleElem.textContent
       if (text) {
         const localAnchor = StringUtil.textToCamel(text)

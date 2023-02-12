@@ -1,0 +1,1029 @@
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <title>How to Tell when Simpler, More Unified, or Less Ad Hoc Theories will Provide More Accurate Predictions</title>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/notes.js" type="text/javascript"></script>
+</head>
+<body id="bodyid" onLoad="footnotes();footsources()">
+<h1><a href="https://philosophy.wisc.edu/Forster/papers/SciSimp.htm">How to Tell when Simpler, More Unified, or Less Ad
+  Hoc Theories will Provide More Accurate Predictions</a></h1>
+<p>Forster, Malcolm R. &amp; Sober, Elliott <span class="note"> Both of us gratefully acknowledge support from the Graduate School at the University of
+  Wisconsin-Madison, and NSF grant DIR-8822278 (M. F.) and NSF grant SBE-9212294 (E.
+S.). Special thanks go to A. W. F. Edwards, William Harper, Martin Leckey, Brian Skyrms,
+and especially Peter Turney for helpful comments on an earlier draft.</span>: British Journal for the Philosophy of
+  Science 45 (1994). 1&minus;35. </p>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a></th>
+  </tr>
+</table>
+<p class="abstract"> Traditional analyses of the curve fitting problem maintain that the data do not indicate what form
+  the fitted curve should take. Rather, this issue is said to be settled by prior probabilities, by simplicity, or by a
+  background theory. In this paper, we describe a result due to Akaike [1973], which shows how the data can underwrite
+  an inference concerning the curve&#146;s form based on an estimate of how predictively accurate it will be. We argue
+  that this approach throws light on the theoretical virtues of parsimoniousness, unification, and non ad hocness, on
+  the dispute about Bayesianism, and on empiricism and scientific realism.</p>
+<ol>
+  <li> Introduction</li>
+  <li> Akaike without Tears</li>
+  <li> Unification As a Scientific Goal</li>
+  <li> Causal Modeling</li>
+  <li> The Problem of Ad Hocness</li>
+  <li> The Sub-Family Problem</li>
+  <li> The Bearing on Bayesianism</li>
+  <li> Empiricism and Realism</li>
+  <li> Appendix A: The Assumptions Behind Akaike&#146;s Theorem</li>
+  <li> Appendix B: A Proof of a Special Case of Akaike&#146;s Theorem</li>
+</ol>
+<h2> Introduction</h2>
+<p> Curve fitting is a two-step process. First one selects a family of curves (or the form that the fitted curve must
+  take). Then one finds the curve in that family (or the curve of the required form) that most accurately fits the data.
+  These two steps are universally supposed to answer to different standards. The second step requires some measure of
+  goodness-of-fit. The first is the context in which simplicity is said to play a role. Intrinsic to this two-step
+  picture is the idea that these different standards can come into conflict. Maximizing simplicity usually requires
+  sacrifice in goodness-of-fit. And perfect goodness-of-fit can usually be achieved only by selecting a complex
+  curve.</p>
+<p> This view of the curve fitting problem engenders two puzzles. The first concerns the nature and justification of
+  simplicity. What makes one curve simpler than another and why should the simplicity of a curve have any relevance to
+  our opinions about which curves are true? The second concerns the relation of simplicity and goodness-of-fit. When
+  these two desiderata conflict, how is a trade-off to be effected? A host of serious and inventive philosophical
+  proposals notwithstanding, both these questions remain unanswered.</p>
+<p> If it could be shown that a single criterion for selecting a curve gives due weight to both simplicity and
+  goodness-of-fit, then the two problems mentioned above for traditional analyses of the curve fitting problem would
+  fall into place. It would become clear why simplicity matters (and how it should be measured). In addition, simplicity
+  and goodness-of-fit would be rendered commensurable by representing each in a common currency. In what follows we
+  describe a result in statistics, stemming from the work of Akaike [1973], [1974], which provides this sort of unified
+  treatment of the problem, in which simplicity and goodness-of-fit are both shown to contribute to a curve&#146;s
+  expected accuracy in making predictions.1</p>
+<h2> Akaike wihtout tears</h2>
+<p> In this section, we present the basic concepts that are needed to formulate the curve-fitting problem and to solve
+  it. To begin with, we need to describe the kinds of hypotheses that curves represent and the relationship of those
+  curves to the data we have available. A &#145;deterministic&#146; curve is a line in the X/Y plane; it represents a
+  function, which maps values of X (the independent variable) onto unique values of Y (the dependent variable).2 For
+  example, Figure 1 depicts two such curves; each says that Y is a linear function of X. Each of these curves may 1
+  There is a growing technical literature on the subject. Linhart &amp; Zucchini [1986] surveys the earlier work of
+  statisticians. Researchers in computer science have used the concept of&#145;shortest data descriptions&#146; to
+  warrant the trade-off between simplicity and goodness of fit.<br> See Rissanen [1978], [1989], or more recently,
+  Wallace and Freeman [1992]. While there are criteria in the literature that are quantitatively different from Akaike&#146;s,
+  there is a measure of agreement in the way they define simplicity and goodness-of-fit. We have focused on Akaike&#146;s
+  seminal work because he motivates his criterion in a general and perspicuous manner.</p>
+<p> 2 The idea that there is just one independent variable is a simplifying assumption adopted for ease of exposition.
+  The results we will describe generalize to any number of independent<br> variables.</p>
+<p> be obtained by fixing the values of the parameters &alpha;0 and &alpha;1 in the following<br> equation:</p>
+<p> Y = &alpha;0 + &alpha;1 X .</p>
+<p> The two curves in Figure 1 are equally simple, we might say, because each is a straight line and each is obtained
+  from a functional form in which there are just two adjustable parameters. These two curves belong to a family of
+  curves? namely, the set of all straight lines. We will be talking about both specific curves and families of curves in
+  what follows, so it will be important to keep the distinction between them in mind. In fact, it will turn out that
+  there is no need to define the simplicity of a specific curve; all that is needed is the notion of the simplicity of a
+  family of curves, and this Akaike&#146;s approach provides.</p>
+<p> Observed value of X<br> Curve 2&#146;s prediction of Y<br> X<br> Y<br> Curve 2<br> Curve 1<br> The observed value of
+  Y<br> Curve 1&#146;s prediction of Y<br> FIGURE 1</p>
+<p> Suppose the true specific curve determined the outcomes of the observations we make. Then, if Curve 1 were true, the
+  set of data points we obtain would have to fall on a straight line (i.e., on the straight line depicted by Curve 1
+  itself). But we will suppose that the observation process involves error. Even if Curve 1 were true, it is nonetheless
+  quite possible that the data we obtain will not fall exactly on that curve. It may be impossible to say when any
+  particular data point will fall above or below the true curve - only that it should &#145;tend&#146; to be close. To
+  represent this possibility of error, we associate a probability distribution with each curve. This distribution tells
+  us how probable it is that the Y-value we observe for a given X-value will be &#145;close&#146; to the curve. The most
+  probable outcome is to obtain a Y-value that falls exactly on the true curve. Locations that are further off the curve
+  have lower probabilities (symmetrically above and below) of being what we observe.</p>
+<p> To make this idea concrete, suppose that we are interested in plotting the location of a planet as it moves across
+  the sky. In this case, the X-axis represents time and the Y-axis represents location. The true curve is the actual,
+  unique trajectory of the planet. But our observation of the planet&#146;s motion is subject to error. Even if Curve 1
+  in Figure 1 describes the planet&#146;s true trajectory, it nonetheless is possible that we should obtain data that
+  fail to fall exactly on that<br> curve.</p>
+<p> So there are two factors that influence the observations we make. There is the planet&#146;s actual trajectory; and
+  there is the process of observation, which is subject to error. If the planet&#146;s trajectory is a straight line, we
+  can combine these two influences into a single expression:</p>
+<p> (LIN) Y = &alpha;0 + &alpha;1 X + &sigma; U.</p>
+<p> The last addend represents the influence of error. Here, of course, Y doesn&#146;t represent the planet&#146;s
+  actual location, but represents its apparent location.3<br> Now consider the data points depicted in Figure 1. If
+  Curve 1 were true, it is possible that we should obtain the data before us. But the same is true of Curve 2; if it
+  were true, it also could have generated the data at hand. Although this is a similarity between the two curves, there
+  nonetheless is a difference: the probability of obtaining the data, if Curve 1 is true, exceeds the probability of
+  obtaining the data, if Curve 2 were true: p(Data/Curve 1) &gt; p(Data/Curve 2).4<br> Statisticians use the technical
+  term likelihood to describe this difference; they would say that Curve 1 is more likely than Curve 2, given the data
+  displayed. It is important to note that the likelihood of a hypothesis is not the same thing as its probability; don&#146;t
+  confuse p(Data/Curve 1) with p(Curve 1/Data).<br> In a sense, Curve 1 fits the data better than Curve 2 does. The
+  standard way to measure this goodness-of-fit is by a curve&#146;s sum of squares (SOS). As depicted in Figure 1, we
+  compute the difference between the Y-value of a data point and the Y-value on the curve directly above or below it. We
+  square this difference and then sum the same squared differences for each data point. Curve 1 has a lower SOS value
+  than Curve 2, relative to the data in Figure 1. Comparing SOS values is a way to compare likelihoods. Notice that if
+  we were to increase the number of data points, the SOS values for both curves would almost certainly go up.5<br> We
+  can use the concept of SOS to reformulate the curve-fitting problem.<br> Given a set of data, how are we to decide
+  which curve is most plausible? If minimizing the SOS value were our sole criterion, we would almost always prefer
+  bumpier curves over smoother ones. Even though Curve 1 is rather close to the data depicted in Figure 1, we could draw
+  a more complex curve that 3 Alternatively, the error term can be given a physical, instead of an epistemological,
+  interpretation, if one wishes to represent the idea that nature itself is stochastic. In that case, Y would represent
+  the planet&#146;s &#145;mean&#146; position. This difference in interpretation will not affect our subsequent
+  discussion.</p>
+<p> 4 When random variables are continuous, the likelihood is defined in terms of probability densities rather than
+  probabilities. A lower case p is a probability density, while the upper case<br> P is reserved for probabilities.</p>
+<p> 5 The SOS value for a curve can&#146;t go down as the data set is enlarged; it would stay the same, if, improbably
+  enough, the new data points fell exactly on the curve. Also note that a curve&#146;s likelihood will decline as the
+  data set is enlarged, even if the new points fall exactly on the curve.</p>
+<p>passes exactly through those data points. The practice of science is to not do this. Even though a hypothesis with
+  more adjustable parameters would fit the data better, scientists seem to be willing to sacrifice goodness-of-fit if
+  there is a compensating gain in simplicity. The problem is to understand the rationale behind this behavior.
+  Aesthetics to one side, the fundamental issue is to understand what simplicity has to do with truth.<br> The universal
+  reaction to this problem among philosophers has been to think that the only thing the data tell you about the problem
+  at hand is given by the SOS values. The universal refrain is that &#145;if we proceed just on the basis of the data,
+  we will choose a curve that passes exactly through the data points.&#146; This interpretation means that giving weight
+  to simplicity involves an extraempirical consideration. We thereby permit considerations to influence us other than
+  the data at hand. Giving weight to simplicity thus seems to embody a kind of rationalism; a consistent empiricist must
+  always opt for bumpy curves over smooth ones.<br> The elementary framework developed so far allows us to show that
+  this standard reaction is misguided. Let us suppose that the curve in Figure 2 is true.<br> Now consider the data that
+  this true curve will generate. Since we assume that observation is subject to error, it is overwhelmingly probable
+  that the data we obtain will not fall exactly on that true curve. An example of such a data set, obtained from the
+  true curve, also is depicted in Figure 2. Now suppose we draw a curve that passes exactly through those data points.
+  Since the data points do not fall exactly on the true curve, such a best-fitting curve will be false. If we think of
+  the true curve as the &#145;signal&#146; and the deviation from the true curve generated by errors of observation as
+  &#145;noise,&#146; then fitting the data perfectly involves confusing the noise with the signal. It is overwhelmingly
+  probable that any curve that fits the data perfectly is false.<br> Of course, this negative remark does not provide a
+  recipe for disentangling signal from noise. We know that any curve with perfect fit is probably false, but this does
+  not tell us which curve we should regard as true. What we would like is a method for separating the &#145;trends&#146;
+  in the data from the random deviations from those trends generated by error. A solution to the curve fitting problem
+  will provide a method of this sort.</p>
+<p> X<br> Y<br> H<br> FIGURE 2</p>
+<p>To explain Akaike&#146;s proposal, we need to introduce a precise definition of how successful a curve is in
+  identifying the trend behind the data. In addition to talking about a curve&#146;s distance from a particular data
+  set, we need a way to measure a curve&#146;s distance from the true curve. A constraint on this new concept is already
+  before us: a curve that is maximally close to the data (because it passes exactly through all the data points) is
+  probably not going to be maximally close to the truth. Closeness to the truth is different from closeness to the data.
+  How should the concept of closeness to the truth be defined?<br> Let us suppose that Curve 1 in Figure 1 is true. We
+  want a way to measure how close Curve 2 is to this true curve. Curve 1 has generated the data set displayed in the
+  figure, and we can use the SOS measure to describe how close Curve 2 is to these data points. The idea is to define
+  the distance of Curve 2 from Curve 1 in terms of the average distance of Curve 2 from the data generated by Curve 1.
+  So, imagine that Curve 1 generates new data sets, and each time we measure the distance of Curve 2 from the generated
+  data set. We repeat this procedure indefinitely, and we compute the average distance that Curve 2 has with respect to
+  data sets generated by the true Curve 1. Remember that this average is computed over the space of possible data sets,
+  rather than actual data sets.6 This allows us to define distance from the truth as follows:<br> Distance from the true
+  curve (T) of curve C = df<br> Average[SOS of C, relative to data set D generated by T] &minus;<br> Average[SOS of T,
+  relative to data set D generated by T].<br> First, note that the distance from the true curve is relative to the
+  process of data generation; it depends on the method of generating the array of X-values whose associated Y-values the
+  curves are asked to predict.7 Second, note that the true curve, T, is the curve that is closest to the truth (its
+  distance from the truth is 0) according to this definition. However, the average SOS value of the true curve T,
+  relative to the data sets that T generates, is nonzero. This is because of the role of error; on average, even the
+  true curve won&#146;t fit the data perfectly.<br> We now define the concept of distance from the truth for families of
+  curves.<br> The above definition defines what it means for Curve 2 to be a certain distance from the true curve. But
+  what would it mean to describe how close to the true curve the family of straight lines (LIN) is? Here&#146;s the
+  idea: Let&#146;s think of two data sets, D1 and D2, each generated by the true curve T. First, we find the specific
+  curve within the family that fits D1 best. Then we compute the SOS of that curve relative to the second data set D2.
+  Imagine carrying out this procedure</p>
+<p> 6 Statisticians mark this distinction by using the term &#145;expected value&#146; rather than &#145;average value.&#146;
+  We have chosen not to do this because the psychological connotations of the word &#145;expected&#146; may mislead some
+  readers.</p>
+<p> 7 The X-arrays for the predicted data do not have to be the same as the X-array for the actual data, but both must
+  be generated by the same stochastic process.</p>
+<p>again and again for different pairs of data sets. The average SOS obtained in this way is the family&#146;s distance
+  from the truth:<br> Distance from the true curve (T) of family F = df<br> Average[SOS of L1(F), relative to data set
+  D2 generated by T] &minus;<br> Average[SOS of T, relative to data set D2 generated by T].<br> Here L1(F) is the best
+  fitting (&#145;likeliest&#146;) member of the family F, relative to data set D1.8<br> Our definition of a family&#146;s
+  distance from the truth is intended to measure how accurate the predictions will be that the best fitting curve in a
+  family generates.<br> Consider the family of straight lines (LIN) and the data displayed in Figure 1.<br> How close is
+  the family (LIN) to the truth? We can imagine finding the straight line that best fits the data at hand. The question
+  we&#146;d like to answer is how accurately that particular straight line will predict new data. The average distance
+  from the truth of best fitting curves selected from that family is the distance of the family from the truth:<br>
+  Distance from the true curve (T) of family F = Average[Distance of best fitting curves in F from the truth T].<br> Our
+  interest in the distance of families from the truth stems from this equality.<br> Families are of interest because
+  they are instruments of prediction; they make predictions by providing us with a specific curve&#150;viz. the curve in
+  the family that best fits the data.9<br> If the true curve is in fact a straight line, (LIN) will of course be very
+  close to the truth (though the distance will be nonzero).10 But if the truth is highly nonlinear, (LIN) will perform
+  poorly as a device for predicting new data from old data. Let us move to a more complicated family of curves and ask
+  the same questions. Consider (PAR), the family of parabolic equations:<br> (PAR) Y = &beta;0 + &beta;1 X + &beta;2 X 2
+  + &sigma; U.<br> Specific parabolas will be c-shaped or 1-shaped curves. Notice that (LIN) is a subset of (PAR). If
+  the true specific curve is in (LIN), it also will be in (PAR).<br> However, the converse relation does not hold.<br>
+  So if (LIN) is true, so is (PAR) (but not conversely). This may lead one to 8 The definition of distance from the
+  truth of a specific curve C is a special case of the definition for a family of curves F. A family is a set of curves;
+  when a family contains just one curve, its best fitting member is just that curve itself.</p>
+<p> 9 In the kinds of example we consider, there will be a unique curve in a family that fits the data best when the
+  number of data points exceeds the number of adjustable parameters.</p>
+<p>10 A family can be literally true (by including the true curve) and still have a non-zero distance from the truth
+  because other curves in the family (including L(F)) will be closer than the true curve to the actual data.</p>
+<p>expect that PAR must be at least as close to the truth as (LIN) is. However, this is not so! Let&#146;s suppose that
+  the true curve is, in fact, a straight line. This will generate sets of data points that mostly fail to fall on a
+  straight line. Fitting a straight line to one set of data points will provide more accurate predictions about new data
+  than will fitting a parabolic curve to that set. To be sure, for each data set, the best fitting parabola will be
+  closer to the data than the best fitting straight line. But this leaves open how well these two curves will predict
+  new data. (LIN) will be closer to the truth (in the sense defined) than (PAR) is, if the truth is a straight line.<br>
+  Curves that fit a given data set perfectly will usually be false; they will perform poorly when they are asked to make
+  predictions about new data sets.<br> Perfectly fitting curves are said to &#145;overfit&#146; the data. This fact
+  about specific curves is reflected in our definition of what it means for a family to be close to the truth. If (LIN)
+  is closer to the truth than (PAR) is, then a straight line hypothesis fitted to one data set will do a better job of
+  predicting new data than a parabolic curve fitted to the same data, at least on average. In this case, the more
+  complex family is disadvantaged by the greater tendency of its best fitting case, L(PAR), to overfit the data.<br> The
+  definitions just given of closeness to the truth do not show how that quantity is epistemologically accessible. To
+  apply these definitions and compute how close to the truth a curve C (or a family F) is, one must know what the truth
+  (T) is. Nonetheless we can use the concept of closeness to the truth to reformulate the curve-fitting problem and to
+  provide it with a solution.<br> All families with at least one free parameter are able to reduce their least SOS by
+  fitting to random fluctuations in the data. This is true of low dimensional families as well, though to a lesser
+  degree. For example, the data in Figure 1 were generated by a straight line, but random fluctuations in the data
+  enable a parabola to fit it better than any straight line. This shows that the phenomenon of overfitting is
+  ubiquitous.11 Thus, there are two reasons why the least SOS goes down as we move from lower to higher dimensional
+  families: (a) Larger families generally contain curves closer to the truth than smaller families. (b) Overfitting: The
+  higher the number of adjustable parameters, the more prone the family is to fit to noise in the data. Our promised
+  reformulation of the curve fitting problem is this: We want to favour larger families if the least SOS goes down
+  because of factor (a), but not if its decline is largely due to (b). If only we could correct the SOS value for
+  overfitting, then the corrected SOS value would be an unbiased indication of what we are interested in?viz. the
+  distance from the true curve.</p>
+<p> 11 This is the same overfitting problem that plagues general purpose learning devices like neural networks. Moody
+  [1992] and Murata et al. [1992] are working on generalizing the Akaike<br> framework to apply to artificial neural
+  networks. See Forster [1992b] for further details. It is interesting that there is such a fundamental connection
+  between neural learning and the philosophy of science (Churchland [1989]).</p>
+<p> At this point, we will simply state Akaike&#146;s theorem, without attempting to work through the mathematical
+  argument that establishes its correctness. (See the Appendix A for a non-technical explanation of the assumptions
+  needed, and Appendix B for the proof of the theorem in a special case. The most thorough, and accessible, technical
+  treatment is found in Sakamoto et al.[1986].) Akaike [1973] discovered a way of estimating the size of the overfitting
+  factor. The procedure is fallible, of course, but it has the mathematical property of providing an unbiased estimate12
+  of the comparative distances of different families from the truth under favourable conditions (see Appendix A). The
+  amazing thing about Akaike&#146;s result is that it renders closeness to the truth epistemologically accessible; the
+  estimate turns on facts that we can readily ascertain from the family itself and from the single data set we have
+  before us:<br> Estimated[(Distance from the truth of family F) = SOS[L(F)] + 2k &sigma;2 + Constant.<br> L(F) is the
+  member of the family that fits the data best, k is the number of adjustable parameters that the family contains, and
+  &sigma;2 is the variance (degree of spread) of the distribution of errors around the true curve. The last term on the
+  right hand side is common to all families, and so it drops out in comparative judgments.<br> The first term on the
+  right hand side, SOS[L(F)], is what we have been calling the least SOS for the family. It represents what empiricists
+  have traditionally taken to exhaust the testimony of evidence. The second term corrects for the average degree of
+  overfitting for the family. Since overfitting has the effect of reducing the SOS, any correction should be positive.
+  That this correction is proportional to k, the number of adjustable parameters,13 reflects the intuition that
+  overfitting will increase as we include more curves that are able to mould themselves to noise in the data. That the
+  expected degree of overfitting also is proportional to &sigma;2 is plausible as well - the bigger the error deviations
+  from the true curve, the greater the potential for misleading fluctuations in the data. Also note that if there is no
+  error (&sigma;2 = 0), then the estimate for the distance from the truth reduces to the least SOS value. The
+  postulation of error is essential if 12 &#145;Unbiased&#146; means that its average performance will center on the
+  true value of the quantity being estimated. Note that an unbiased estimator can have a wide or narrow variance, which
+  measures how much the estimate &#145;bounces around&#146; on average. Unbiasedness is only one desideratum for &#145;good&#146;
+  estimators.</p>
+<p> 13 In our running example, (LIN) contains two adjustable parameters and (PAR) contains three.<br> The number of
+  adjustable parameters is not a merely linguistic feature of the way a family is represented. For example, Y = &alpha;
+  + &beta; X + &gamma; X is one way of representing (LIN), but k is still 2, because there is a reparameterization (viz.
+  &alpha;&prime; = &alpha;, &beta; &prime; = (&beta; + &gamma;), and &gamma; &prime; = (&beta; &minus; &gamma;)) such
+  that Y = &alpha; &prime; + &beta; &prime; X. In contrast, the dimension of the family Y = &alpha; + &beta; X + &gamma;
+  Z is 3 because there is no such reparameterization.</p>
+<p>simplicity (as measured by k) is to be relevant to our estimates concerning what is true.14<br> We will use the term
+  &#145;predictive accuracy&#146; to describe how close to the truth a curve or family is. &#145;Accuracy&#146; is a
+  synonym for &#145;closeness to the truth&#146;, while the term &#145;predictive&#146; serves to remind the reader that
+  the concept is relativized to the process by which the true curve generates new data. Instead of using SOS as a
+  measure of distance, we use the log of the likelihood to measure closeness to the data (the greater the
+  log-likelihood, the smaller the distance from the data).<br> Thus, we define the predictive accuracy of a curve C,
+  denoted by A(curve C), as the average log-likelihood of C per datum. The predictive accuracy of a family F is the
+  average predictive accuracy of its best fitting curves.15 This leads to a more general statement of Akaike&#146;s
+  Theorem, since the log-likelihood applies to cases, like coin tossing examples, in which the SOS value is not defined.<br>
+  Recalling the connection between the low SOS value of a specific curve and its high likelihood, the general statement
+  of Akaike&#146;s theorem is as follows:<br> Akaike&#146;s Theorem: Estimated[A(family F)] = (1/N)
+  [log-likelihood(L(F)) &minus; k], where N is the number of data points.16 We no longer need to assume that the error
+  variance, &sigma;2, is known, for the error variance may be treated as another adjustable parameter.17<br> 14 We
+  regard the total absence of error as radically implausible. Even if nature were completely deterministic, there still
+  would be observational errors. And even then, there still would be lawless deviations from any &#145;curve&#146; that
+  limits itself to an impoverished stock of independent variables. For example, it may be that the temperature at a
+  particular place and time is determined. A curve that truly captures the dependence of temperature on the time of day
+  and time of year will not predict the temperature exactly because there are other relevant factors.<br> The data will
+  behave as randomly as if the world were indeterministic. From an epistemological point of view, this is all that
+  matters. Forster [1988b] and Harper [1989] examine the role of this third kind of error (arising from the action of
+  other variables) in the &#145;exact&#146; science of astronomy.</p>
+<p> 15 This average is computed as follows: Take a data set D1 generated by the true curve T, and note the predictive
+  accuracy of the best curve L1(F) in F relative to D1. Imagine that this procedure is repeated with new data sets D2,
+  D3, ..., each time noting the predictive values of<br> the curves L2(F), L3(F), ... Now take the average of all these
+  values.</p>
+<p> 16 The factor (1/N) arises from the fact that we prefer to define accuracy as the average per datum log-likelihood,
+  so that the accuracy of a hypothesis does not change when we consider the prediction of data sets of different
+  sizes.</p>
+<p> 17 When &sigma;2 is treated as unknown, a curve (by itself) no longer confers a probability on the data.</p>
+<p> Literally speaking, a curve is a family of probability distributions?one for each numerical value of &sigma;2. From
+  now on we will understand a &#145;curve&#146; to be associated with some specific numerical value of &sigma;2. Also
+  note that Akaike&#146;s estimate of predictive accuracy of a family of&#145;curves&#146; in which &sigma;2 is a free
+  parameter is related to the least SOS value for the family by a different formula (Sakamoto et al. [1986], p.170):<br>
+  Estimate[A(Family FN)] = &minus; (1/2)log[SOS(B(F))/N] &minus; kN/N + constant, where FN is the higher dimensional
+  family obtained from F by making &sigma;2 adjustable. Here, SOS(B(F)) is the least SOS for the original family F, and
+  kN is the dimension of the final family. For LIN and PAR, kN = k + 1.</p>
+<p>This theorem, we believe, provides a solution to the curve-fitting problem. It explains why fitting the data at hand
+  is not the only consideration that should affect our judgment about what is true. The quantity k is also relevant; it
+  represents the bearing of simplicity. A family F with a large number of adjustable parameters will have a best member
+  L(F) whose likelihood is high; however, such a family will also have a high value for k. Symmetrically, a simpler
+  family will have a lower likelihood associated with its best case, but will have a low value for k. Akaike&#146;s
+  theorem shows the relevance of goodness-of-fit and simplicity to our estimate of what is true. But of equal
+  importance, it states a precise rate-of-exchange between these two conflicting considerations; it shows how the one
+  quantity should be traded off against the other. We emphasize that Akaike&#146;s theorem solves the curve-fitting
+  problem without attributing simplicity to specific curves; the quantity k, in the first instance, is a property of
+  families.18</p>
+<p> A special case of Akaike&#146;s result is worth considering. Suppose one has a set of data that falls fairly evenly
+  around a straight line. In this case the best fitting straight line will be very close to the best fitting parabola.
+  So L(LIN) and L(PAR) will have almost the same SOS values. In this circumstance, Akaike&#146;s theorem says that the
+  family with the smaller number of adjustable parameters is the one we should estimate to be closer to the truth. A
+  simpler family is preferable if it fits the data about as well as a more complex family. Akaike&#146;s theorem
+  describes how much of an improvement in goodness-of-fit the move to a more complicated family must provide for it to
+  make sense to prefer the more complex family. A slight improvement in goodness-of-fit will not be enough to justify
+  the move to a more complex family. The improvement must be large enough to overcome the penalty for complexity
+  (represented by k).</p>
+<p> Another feature of Akaike&#146;s theorem is that the relative weight we give to simplicity declines as the number of
+  data points increases. Suppose that there is a slight parabolic bend in the data, reflected in the fact that the SOS
+  value of L(PAR) is slightly lower than the SOS value of L(LIN). Recall that the absolute value of these quantities
+  depends on the number of data points. With a large amount of data our estimate of how close a family is to the truth
+  will be determined largely by goodness-of-fit and only slightly by simplicity. But with smaller amounts of data,
+  simplicity plays a more determining role. Only when a nonlinear trend in the data is &#145;statistically significant&#146;
+  should that regularity be taken seriously. This is an intuitively plausible idea that Akaike&#146;s result
+  explains.</p>
+<h2> 3 UNIFICATION AS A SCIENTIFIC GOAL</h2>
+<p> It is not at all standard to think that the curve fitting problem is related intimately</p>
+<p>18 Thus, the problems of defining the simplicity of curves described by Priest [1976] do not undermine Akaike&#146;s
+  proposal.</p>
+<p> to the problem of explaining why unified theories are preferable to disunified ones. The former problem usually is
+  associated with &#145;inductive&#146; inference, the latter with &#145;inference to the best explanation.&#146; We are
+  inclined to doubt that there really are such fundamentally different kinds of nondeductive inference (Forster [1986],
+  [1988a], [1988b]; Sober [1988b], [1990a], [1990b]).19 In any case, Akaike&#146;s approach to curve fitting provides a
+  ready characterization of the circumstances in which a unified model is preferable to two disunified models that cover
+  the same domain.20</p>
+<p> It is always a substantive scientific question whether two data sets should be encompassed by a single theory or
+  different theories should be constructed for each. Should celestial and terrestrial motion be given a unified
+  treatment or do the two sets of phenomena obey different laws? In retrospect, it may seem obvious that these two kinds
+  of motion should receive the same theoretical treatment. But this is the wisdom of hindsight; individual phenomena do
+  not<br> have written on their sleeves the other phenomena with which they should be coalesced.<br> Traditional
+  approaches to this problem make the allure of unification something of a mystery.21 Given two data sets D1 and D1, a
+  unified model Mu</p>
+<p> 19 William Whewell [1840] described the process of curve fitting as a special case of a process of conceptualization
+  called the &#145;colligation of facts&#146; (Forster [1988b]). He then referred to the process that leads to the
+  unification of disparate curve fitting solutions as the &#145;consilience of inductions.&#146; On our view, both of
+  these processes are seen as aspects of a single kind of inferential procedure. Bogen and Woodward [1988] argue that
+  the inferential relationship of observation to theory has two parts: of observation to phenomena and of phenomena to
+  theory.</p>
+<p> Again, it is not clear to us that these relationships are fundamentally different in kind.</p>
+<p> 20 We will follow statistical practice and reserve the term &#145;model&#146; for a family of hypotheses, in which
+  each hypothesis includes a specific statement about the distribution of errors (so that likelihoods are well defined).
+  A model leaves the values of some parameters unspecified. In applying the term to astronomy, we need only assume that
+  some assumption about the form of the error distribution is included (e. g. that the distribution is Gaussian, as was
+  assumed in Gauss&#146;s own application of the method of least squares to astronomy?see Porter [1986]). The variance
+  of the distribution may be left as an adjustable parameter. The important point to notice is that distinguishing
+  models from curves, or from abstract &#145;theories&#146;, is now critical to the philosophy of science, since Akaike&#146;s
+  framework only provides a way of defining the simplicity of models.</p>
+<p> 21 Friedman [1983], like some of the authors he cites (p. 242), describes unification as the process of reducing the
+  number of independent theoretical assumptions. Of course, a model that assumes principles A, B, and C is made more
+  probable if these assumptions are whittled down to just A and B. However, as Friedman realizes, head counting will not
+  deliver this verdict when the postulates of one model fail to be a subset of the postulates of the other.<br> Friedman
+  suggests (e.g., pp. 259-60) that a unified model receives more &#145;boosts&#146; in confirmation than a model of
+  narrower scope. If model Mu covers domains D1 and D2, whereas model M1 covers only domain D1, then Mu can receive a
+  confirmational boost from both data sets, whereas M1 can receive a boost only from D1. Two points need to be made
+  about this proposal. First, although Mu receives two boosts whereas M1 receives only one, the conjunction M1 and M2
+  receives two boosts as well. Here M2 is a model that aims to explain only the data in D2. The conjunction M1&amp;M2 is
+  a disunified model. If one wishes to explain the virtues of unification, one should compare Mu with this conjunction,
+  not Mu with M1. The second point is that &#145;boosts&#146; in probability are increases in probability, not the
+  absolute values</p>
+<p>might be constructed that seeks to explain them both. Alternatively, a disunified pair of models M1 and M2 also might
+  be constructed, each theory addressing a different part of the total data. If M1 fits D1 at least as well as Mu does,
+  and if M2 fits D2 at least as well as Mu does, what reason could there be to prefer Mu over the conjunction of M1 and
+  M2? The temptation is to answer this question by invoking some consideration that lies outside of what the evidence
+  says. One might appeal to the allegedly irreducible scientific goal of unification or to the connection of unification
+  with simplicity.<br> The problem posed by the question of goodness-of-fit is a real one, since the combined data set
+  D1 and D2 often will be more heterogeneous than either subpart is on its own. This engenders a conflict between
+  unification and goodness-of-fit; a unified theory that encompasses both data sets will fit the data less well than a
+  conjunction of two separate theories, each tailor-made to fit only a single data set. However, just as in the curve
+  fitting problem, this conflict can be resolved. Once again, the key is to correct for the fact that disunified
+  theories are more inclined to overfit the data than their unified counterparts are.<br> For example, consider the two
+  data sets represented in Figure 3 and the following three models:<br> (Mu) The X and Y values in D1 and D2 are related
+  by the function<br> Y = &alpha;0 + &alpha;1X + &alpha;2X2 + &sigma; U.<br> (M1) The X and Y values in D1 are related
+  by the function<br> Y = &beta;0 + &beta;1X + &sigma; U.<br> (M2) The X and Y values in D2 are related by the
+  function<br> Y = &gamma;0 + &gamma;1X + &sigma; U.<br> Since each data set is close to collinear, M1 will be more
+  likely than Mu with respect to D1 and M2 will be more likely than Mu with respect to D2. However, what happens when we
+  use Akaike&#146;s Theorem to compare Mu with the conjunction M1 and M2, relative to the combined data? Notice that Mu
+  has four free parameters, whereas the conjunction M1 and M2 has five. If its assumptions apply (see Appendix A),
+  Akaike&#146;s Theorem entails that Mu may be more thus attained. The fact that Mu receives two boosts while M1
+  receives only one is quite consistent with Mu&#146;s remaining less probable than M1. Friedman (pp. 143-4) recognizes
+  this problem. His solution is to argue that deriving M1 from a unified theory Mu renders M1 more plausible than it
+  would be if M1 were not so derivable. We note that this claim, even if it could be sustained, does not show why Mu is
+  more plausible than M1 and M2, where the unified model and its disunified competitor are incompatible. In addition,
+  the fact that M1 is more plausible in one scenario than it is in another does not bear on the question of how
+  plausible Mu is.<br> In addition to these specific problems with Friedman&#146;s proposal, we also wish to note that
+  its basic motivation is contrary to what we learn from Akaike&#146;s framework. Friedman seeks to connect unification
+  with paucity of assumptions; as we will see in what follows, unified models<br> impose more constraints than their
+  disunified counterparts.</p>
+<p>X<br> Y<br> D1<br> D2<br> FIGURE 3<br> predictively accurate even though its best case is less likely than the best
+  case of<br> M1 and M2. The best fitting case of the disunified theory would have to have a<br> log-likelihood at least
+  1 unit greater than the best fitting case of the unified<br> model if the disunified model were to be judged
+  predictively superior. This is<br> not true for the data in Figure 3. We conclude that estimated accuracy explains<br>
+  why a unified model is (sometimes) preferable to its disunified competitor. At<br> least for cases that can be
+  analyzed in the way just described, it is gratuitous to<br> invoke &#145;unification&#146; as a sui generis constraint
+  on theorizing.<br> The history of astronomy provides one of the earliest examples of the problem<br> at hand. In
+  Ptolemy&#146;s geocentric astronomy, the relative motion of the earth and<br> the sun is independently replicated
+  within the model for each planet, thereby<br> unnecessarily adding to the number of adjustable parameters in his
+  system.<br> Copernicus&#146;s major innovation was to decompose the apparent motion of the<br> planets into their
+  individual motions around the sun together with a common<br> sun-earth component, thereby reducing the number of
+  adjustable parameters. At<br> the end of the non-technical exposition of his programme in De Revolutionibus,<br>
+  Copernicus repeatedly traces the weakness of Ptolemy&#146;s astronomy back to its<br> failure to impose any principled
+  constraints on the separate planetary models.<br> In a now famous passage, Kuhn ([1957], p.181) claims that the
+  unification or<br>
+  &#145;harmony&#146; of Copernicus&#146; system appeals to an &#145;aesthetic sense, and that alone&#146;.<br> Many
+  philosophers of science have resisted Kuhn&#146;s analysis, but none has made<br> a convincing reply. We present the
+  maximization of estimated predictive<br> accuracy as the rationale for accepting the Copernican model over its
+  Ptolemaic<br> rival. For example, if each additional epicycle is characterized by 4 adjustable<br> parameters, then
+  the likelihood of the best basic Ptolemaic model, with just<br> twelve circles, would have to be e20 (or more than 485
+  million) times the<br> likelihood of its Copernican counterpart with just seven circles for the evidence<br> to favour
+  the Ptolemaic proposal.22 Yet it is generally agreed that these basic<br> 22 If the log-likelihood is penalized by
+  subtracting k, then the likelihood is penalized by<br> multiplying it by a &#145;decay factor&#146; e&minus;k.<br> How
+  to Tell when Simpler Theories will Provide More Accurate Predictions 15<br> models had about the same degree of fit
+  with the data known at the time. The<br> advantage of the Copernican model can hardly be characterized as merely<br>
+  aesthetic; it is observation, not a prioristic preference, that drives our choice of<br> theory in this
+  instance.23<br> 4. CAUSAL MODELING<br> Newton&#146;s first Rule of Reasoning in Philosophy in Principia was that
+  &#145;we are to<br> admit no more causes of natural things than such as are both true and sufficient<br> to explain
+  their appearances.&#146; Here Newton gives voice to a version of<br> Ockham&#146;s razor -- explanations that
+  postulate fewer causes should be preferred<br> over explanations that postulate more. Although this injunction is
+  often thought<br> to be quite separate from the criterion of evidential support, some everyday<br> applications of the
+  rule can be given a simple representation in Akaike&#146;s<br> framework.<br> The entries in the following table
+  represent the probabilities that an event C<br> has, given the four combinations of the putative causes A and B:<br>
+  P(C / &minus; )<br> A &minus;A<br> B w + a + b + i w + b<br>
+  &minus;B w + a w<br> Next we define a characteristic function &chi;A:<br>
+  &chi;A = 1 if A occurs<br>
+  &chi;A = 0 if A does not occur.<br> Ditto for the definition of &chi;B.<br> We now can formulate three hypotheses
+  about the probability that C has in<br> these four possible circumstances:<br> (INT) P(C / &chi;A = xA , &chi;B = xB)
+  = w + axA + bxB + ixAxB<br> (ADD) P(C / &chi;A = xA , &chi;B = xB) = w + axA + bxB<br> (SING) P(C / &chi;A = xA ,
+  &chi;B = xB) = w + axA.<br> (SING) says that only a single cause (namely A) makes a difference in whether C<br>
+  occurs. (ADD) says that two causes play a role and that their relationship is<br> additive. (INT) says that there are
+  two causes whose contributions are<br> interactive (i.e., nonlinear or nonadditive). The hypotheses are listed in
+  order of<br> increasing parsimoniousness?one cause is simpler than two, and an additive<br> 23 Forster (1988b) and
+  Harper (1989) argue that the subsequent impact of Kepler and Newton<br> may be understood in the same terms.<br> 16
+  Malcolm Forster and Elliott Sober<br> model with two causes is simpler than an interactive model for those two causes.<br>
+  As in the curve fitting problem, it is standard to understand causal modeling as<br> a problem with two parts. First
+  one selects a hypothesis about the form the<br> causal relationship is to take; then one finds the best hypothesis of
+  that form by<br> estimating parameter values. Rather than solving the first problem by appeal to<br> simplicity, our
+  approach shows how estimated predictive accuracy can be<br> brought to bear from the beginning. Suppose one has a
+  large and equal number<br> of observations for each of the four treatment cells. Let the empirical<br> frequencies of
+  C in those four cells be:<br> P(C / &minus; )<br> A &minus;A<br> B 0.5 0.2<br>
+  &minus;B 0.5 0.2<br> The three hypotheses now have the same best case, namely one in which w =<br> 0.2, a = 0.3, b =
+  0, and i = 0. Recall that the estimated predictive accuracy of<br> each model is 1/N times its maximum log-likelihood
+  minus k/N. This means<br> that when one model is a special case of another and they have the same best<br> case, the
+  model of lower dimensionality has greater estimated predictive<br> accuracy. It follows that (SING) has greater
+  estimated predictive accuracy than<br> (ADD) and (ADD) has greater estimated predictive accuracy than (INT). For
+  the<br> data just given, predictive accuracy explains why it is vain to postulate more<br> causes when fewer
+  suffice.24 And as in our discussion of unification, it is<br> possible to adjust the data set so as to provide a
+  rationale for favouring a<br> hypothesis of greater complexity.<br> 5 THE PROBLEM OF AD HOCNESS<br> The bugbear of ad
+  hoc hypotheses has traditionally been raised within the<br> framework of a hypothetico-deductive philosophy of
+  science. Predictions can be<br> deduced from theories only with the help of auxiliary hypotheses. On this view,<br> we
+  test a theory by observing whether its predictions are true. However, the<br> Quine-Duhem thesis states that the core
+  theory may always be shielded from<br> refutation by making after-the-fact adjustments in the auxiliary hypotheses, so<br>
+  that correct predictions are deduced. The classic example of this is Ptolemaic<br> astronomy, where the model may
+  always be amended in the face of potential<br> refutation by adding another circle?so much so that the expression
+  &#145;adding<br> 24 In this example, it isn&#146;t just that fewer causes are preferable to more; in addition, we have<br>
+  shown why an additive model for two causes is preferable to an interactive model of those two<br> causes. Counting
+  causes is a special case of the more general consideration of dimensionality.<br> Forster [1988b] argues that Newton
+  was sensitive to this wider conception.<br> How to Tell when Simpler Theories will Provide More Accurate Predictions
+  17<br> epicycles to epicycles&#146; has become synonymous with &#145;ad hocness&#146;. Although we<br> reject the
+  hypothetico-deductive picture of science, we do accept the usual<br> conclusion that there is an important distinction
+  to be drawn between reasonable<br> revision and ad hoc evasion.<br> Philosophers of science have recognized that
+  protection of the core theories by<br> post hoc revision is not always bad. The example usually cited is Leverrier&#146;s<br>
+  postulation of Neptune&#146;s existence to protect Newtonian mechanics from the<br> anomalous wiggles in Uranus&#146;
+  orbit. The problem is to understand the<br> epistemological grounds for distinguishing good from bad revisions of
+  auxiliary<br> hypotheses (which Lakatos [1970] refers to as the protective belt). As is<br> customary, we reserve the
+  term &#145;ad hoc&#146; for revisions of the bad kind, but reject<br> the ad hominem or historicist construal of the
+  term. Ad hocness, if it is relevant<br> to questions of evidence, has nothing to do with the motives of the person<br>
+  advocating the hypothesis, or with historical sequences of theories and their<br> evidence.25<br> Lakatos [1970]
+  notes, with approval, that Leverrier&#146;s amendment of the prior<br> Newtonian planetary model produced novel
+  predictions; he introduces the<br> derogatory term &#145;degenerating&#146; for research programmes that fail to do
+  this. But<br> there are at least two problems with this approach. Musgrave [1974] warns that<br> a careless reading of
+  the term &#145;novel&#146; may tempt us into a view of confirmation<br> in which historical contingencies are given
+  undue emphasis. The second defect<br> in Lakatos&#146;s idea is that it fails to distinguish estimated predictive
+  success from<br> predictive power. It is obvious that predictive power is important, for without it<br> there can be
+  no predictive success. But predictive power is not enough to<br> indicate that model revisions are of the good kind.
+  For example, the continued<br> addition of epicycles in Ptolemy&#146;s astronomy is not degenerate in
+  Lakatos&#146;s<br> sense. Each addition leads to novel predictions about the future positions of the<br> planets. What
+  we need is a measure of the predictive success that these<br> additions can be expected to bring, and this is what
+  Akaike&#146;s idea of estimated<br> predictive accuracy provides.<br> Our proposal is that a research programme is
+  degenerative just in case loss in<br> simplicity is not compensated by a sufficient gain in fit with data. Of course,
+  the<br> fit will always improve, but the improvement may not be enough to increase the<br> estimated predictive value.<br>
+  Established research programmes often achieve considerable predictive<br> success, so why do some researchers put
+  their money on an undeveloped<br> programme? First note that on our proposal there is no impediment for new<br>
+  programmes to take over the predictive successes of old ones. There is no<br>
+  &#145;problem of old evidence&#146; (Glymour [1980], Eells [1985]), since estimated<br> 25 We do not rule out the
+  possibility that historical or psychological circumstances may<br> sometimes be a reliable indication of ad hocness.
+  Our only point is that these circumstances<br> do not make a theory ad hoc, anymore than a barometer makes it
+  rain.<br> 18 Malcolm Forster and Elliott Sober<br> predictive accuracy does not depend on the historical sequence of
+  discovery.<br> But further, it is perfectly understandable that researchers may decide where to<br> invest their
+  energy by formulating a judgment about projected predictive<br> success, and the degree to which current programmes
+  are degenerating is thus a<br> relevant consideration.26<br> 6 THE SUB-FAMILY PROBLEM<br> While this explication of
+  Lakatos&#146; notion is a point in favour of our approach,<br> there is another type of ad hocness that is a threat to
+  Akaike&#146;s programme. A<br> literal reading of Akaike&#146;s Theorem is that we should use the best fitting
+  curve<br> from the family with the highest estimated predictive value. However, for any<br> such family, it is
+  possible to construct an ad hoc family of curves with the same<br> best fitting curve, with yet higher estimated
+  predictive accuracy: Fix one or<br> more of the adjustable parameters at their maximum likelihood values. Each<br>
+  subfamily, so constructed, will have the same best case. At the end of the<br> procedure, we obtain a zero dimensional
+  family whose only member is the best<br> fitting curve of the original family. The Akaike estimate of the
+  predictive<br> accuracy of this singleton family is just the log-likelihood of the curve. If this is<br> allowed, then
+  we are pushed back towards selecting complicated curves that fit<br> the data exactly. We call this the sub-family
+  problem.27<br> Our resolution of this problem returns us to an idea described in Section 2: If a<br> curve fits the
+  data so well that it looks &#145;too good to be true&#146;, then it probably is.<br> In order to spell this out, we
+  now describe a theorem (stronger than Akaike&#146;s)<br> that characterizes the behaviour of the error in estimating
+  the predictive<br> accuracy of families. The error of the estimated predictive accuracy of family F,<br> or
+  Error[Estimated(A(F))], is defined as the difference between Akaike&#146;s<br> estimate of the predictive accuracy of
+  family F and the true predictive accuracy<br> of that family. Notice that the true predictive accuracy is constant?it
+  does not<br> depend on which hypothetical data set generated by the truth happens to be the<br> actual data set. On
+  the other hand, the estimated predictive accuracy of F does<br> depend on the actual data?it is what statisticians
+  call a random variable. So<br> Error[Estimated(A(F))] also depends on the data, and the following theorem<br>
+  describes this dependence by decomposing it into the sum of three errors:28<br> 26 The Akaike approach also finesses
+  the problem of &#145;Kuhn loss&#146;: Superceding theories do not<br> always carry over all the successes of their
+  predecessor. For example, Cartesian vortex theory<br>
+  &#145;explains&#146; why all planets revolve around the sun in the same direction, whereas Newton&#146;s<br> theory
+  dismisses this as a mere coincidence. Within Akaike&#146;s framework, the losses are<br> weighed against the gains in
+  the common currency of likelihoods.<br> 27 The reader should not be misled into thinking that the subfamily problem is
+  a problem for<br> Akaike&#146;s criterion alone; it arises for any proposal that measures simplicity by the paucity of<br>
+  parameters.<br> 28 The result we are about to describe is close to, but not identical with, equation (4.55) in<br>
+  Sakamoto et al. ([1986], p.77). Similar formulae were originally proven in Akaike [1973].<br> See Forster [1992a] for
+  further explanation.<br> How to Tell when Simpler Theories will Provide More Accurate Predictions 19<br> The Error
+  Theorem:<br> Error[Estimated(A(F))] =<br> Residual Fitting Error + Common Error + Sub-family Error.<br> It is
+  important to remember that these errors are not errors of prediction - they<br> are errors in the estimation of
+  predictive accuracy. This is why the Error<br> Theorem might be called a &#145;meta-theorem&#146; - it is a theorem
+  about the &#145;meaning&#146;<br> of Akaike&#146;s Theorem. However, it rests on the same assumptions as Akaike&#146;s<br>
+  Theorem (see Appendix A).<br> Akaike&#146;s Theorem states that the average of Error[Estimated(A(F))] over all<br>
+  possible data sets generated by the truth is zero, which is to say Akaike&#146;s<br> estimate of predictive accuracy
+  is statistically unbiased.29 &#145;Statistically unbiased&#146;<br> means that its average performance will center on
+  the true value of the quantity<br> being estimated; it is a minimal requirement for &#145;good&#146; estimators.
+  Akaike&#146;s<br> estimate conforms to this standard, but sometimes fails to meet another<br> desideratum, which we
+  will refer to as epistemic unbiasedness. We shall now<br> explain the distinction in terms of an example.<br> First,
+  consider a standard example of a statistically unbiased estimate: the<br> measurement of the mass of an object. For
+  this measurement, the deviation from<br> the true mass value is determined by a symmetrical error distribution centred
+  on<br> the true mass value, so that it is just as probable that the measured value is below<br> the true value as it
+  is above the true value. The measured value of mass is a<br> statistically unbiased estimate of the true mass. But now
+  suppose that we modify<br> this estimate by adding +10 or &minus;10 depending on whether a fair coin lands heads<br>
+  or tails, respectively. Supposed that the measured value of mass was 7 kg, and<br> the fair coin lands heads. Then the
+  new estimate is 17 kg. Surprisingly, this new<br> estimate is also a statistically unbiased estimate of the true mass!
+  The reason is<br> that in an imagined series of repeated instances, the +10 will be subtracted as<br> often as it is
+  added, so that the value of the average value of the modified<br> estimate will still be equal to the true mass value.
+  However, we know that the<br> modified estimate is an overestimate in this instance, because we know that the<br> coin
+  landed heads. If the coin had landed tails, then the estimate would have<br> been &minus;3 kg, and would have been
+  known to be an underestimate. In either case,<br> we say that the modified estimate is epistemically biased. In sum,
+  the<br> unmodified measurement value is a statistically and epistemically unbiased<br> estimate of the mass, while the
+  modified estimate is statistically unbiased, but<br> epistemically biased. Other things being equal, we prefer an
+  estimate that is<br> epistemically unbiased.<br> With this distinction in hand, the Error Theorem is able to explain
+  the<br> limitations of Akaike&#146;s method. Here is a brief overview of our analysis:<br> 29 Statistical unbiasedness
+  is really a property of the formula for obtaining the estimate, rather<br> than the particular value of the estimator.<br>
+  20 Malcolm Forster and Elliott Sober<br> First, the common error is the same for all families (hence its name); it
+  cancels<br> out when we make comparisons, and has no effect on model selection. It will<br> not be mentioned again.
+  Second, the Residual Fitting Error is statistically and<br> epistemically unbiased. But the Subfamily Error has a
+  peculiar property. It is<br> statistically unbiased (as is required by Akaike&#146;s Theorem); however, it is not<br>
+  always free of epistemic bias. Sometimes Akaike&#146;s estimate displays an<br> epistemic bias, and this bias is
+  highlighted by the subfamily problem. A careful<br> analysis of the Subfamily Error will reveal the source and nature
+  of the problem.<br> We begin by filling in some background. One of the assumptions of these<br> theorems is that there
+  is some complex K-dimensional family of hypotheses<br> (curves) that includes the true hypothesis, and that every
+  family F that we may<br> wish to consider is a subfamily of this superfamily (which we will call K).<br> Every
+  hypothesis under consideration may be represented as a point in the<br> parameter space of K. This space may be
+  treated as a K-dimensional vector<br> space. So, if we imagine that our coordinate frame is centered on the Truth<br>
+  (where else?), then various hypotheses may be located in different directions, as<br> shown in Figure 4. The two
+  vectors shown are particularly important because<br> the subfamily error is equal to the dot product, or scalar
+  product, of these two<br> vectors. The first vector is the one to L(K), the best fitting curve in K. Clearly<br> this
+  vector will move around when we consider different data sets generated by<br> the truth. In fact, its tip falls just
+  as probably on one point as on any other on the<br> circle shown, although its length will vary as well. The other
+  vector is fixed. It<br> is the vector from the truth, T, to the hypothesis in the family F that is closest to<br> T
+  (viz. the most predictively accurate hypothesis in F). Now, the dot product is<br> the product of the lengths of these
+  two vectors times the cosine of the angle<br> between them. The cosine factor is +1 if the vectors are parallel, 0 if
+  they are<br> orthogonal, &minus;1 if they are anti-parallel, and in between for in between angles.<br> The Akaike
+  estimate for a low dimensional family whose best fitting case is<br> close to the data (and such families are the
+  dangerous &#145;pretenders&#146;, for they<br>
+  &#145;unfairly&#146; combine high log-likelihoods with small penalties for complexity)<br> The hypothesis in F<br> T
+  closest to T <br> L(K), representing the data<br> in parameter space<br> FIGURE 4<br> How to Tell when Simpler
+  Theories will Provide More Accurate Predictions 21<br> exhibits an epistemic bias, as we now explain. The most
+  predictively accurate<br> hypothesis in such small families will also be close to the data, and therefore<br> close to
+  L(K). The danger is that the tips of the two vectors (whose dot product<br> is equal to the subfamily error) will be
+  close together. Then the cosine factor is<br> close to +1 and the subfamily error is large and positive. To illustrate
+  this aspect<br> of the relationship of Akaike&#146;s Theorem and the Error Theorem, consider the<br> following
+  example. Suppose we have a very large data set that exhibits strong<br> linearity. We wish to estimate the predictive
+  accuracies of L(LIN) and<br> L(POLY-n), where POLY-n is the family of n-degree polynomials with n<br> parameters free,
+  and L(F) is obtained by using the data to single out the best<br> fitting curve in family F.30 We may apply Akaike&#146;s
+  Theorem to (LIN) and<br> (POLY-n) directly, or we can apply it to the singleton families containing just<br> L(LIN)
+  and L(POLY-n), respectively. The surprising fact - that the ad hoc<br> Akaike estimate for L(POLY-n) is surely an
+  overestimate of the predictive<br> accuracy of L(POLY-n) - may have been anticipated from the fact that unreliable<br>
+  ad hoc comparisons of L(POLY-n) and L(LIN) will always favour L(POLY-n),<br> because it is always closer to the data.
+  In sum, both the direct and the ad hoc<br> method of accuracy estimation are statistically unbiased (as required by
+  Akaike&#146;s<br> Theorem), but the ad hoc application of Akaike&#146;s method yields an estimate that<br> we know is
+  too high. The ad hoc application yields an estimate that is<br> epistemically biased.31<br> We have now unpacked our
+  slogan about a curve&#146;s looking &#145;too good to be<br> true&#146; to provide deeper insights into the source and
+  solution of the subfamily<br> problem: The Akaike estimates of the predictive accuracy of L(F) obtained by<br> viewing
+  L(F) as the best fitting case in the ad hoc hierarchy of subfamilies of F<br> tend to be too high. Indeed, that is
+  exactly what we observe?the Akaike<br> estimate of L(F) increases steadily as we move down the hierarchy towards
+  the<br> singleton subfamily. In sum: We have good reason not to trust the Akaike<br> accuracy estimates for ad hoc
+  subfamilies constructed by fixing adjustable<br> parameters at their maximum likelihood values. We emphasize that this
+  has<br> nothing to do with when subfamilies are constructed, or who constructs them.<br> Our analysis of the Error
+  Theorem has been brief and necessarily incomplete.<br> Much more research is needed on the management of errors in
+  Akaike&#146;s method<br> of model selection. Our aim has been to give the reader a taste for the heuristic<br> power
+  of Akaike&#146;s framework in addressing such foundational questions. We<br> close by pointing out that the resolution
+  we have sketched depends (like<br> Akaike&#146;s Theorem) on the existence of prediction errors, for otherwise the
+  vector<br> 30 Remember (from Section 2) that we are interested in estimating the predictive accuracy of a<br> family
+  only because it also provides an estimate of the predictive accuracy of its best fitting<br> curve.<br> 31 Although
+  the estimate is known to be too high, given the data at hand, the Akaike estimate of<br> the predictive accuracy of
+  that same singleton family relative to other data sets generated by<br> the true &#145;curve&#146; will be too low. On
+  average, of course, the estimate will be centred on the true<br> value.<br> 22 Malcolm Forster and Elliott Sober<br>
+  to L(F) would be 0 and there would no subfamily errors for any family.<br> 7. THE BEARING ON BAYESIANISM<br> The
+  fundamental principle behind Akaike&#146;s method is that we should aim to<br> select hypotheses that have the
+  greatest predictive accuracy. Since the truth has<br> the maximum possible predictive accuracy and accuracy is a
+  measure of<br>
+  &#145;closeness&#146;, Akaike&#146;s recipe aims to move us towards the truth. In contrast, the<br> central thesis of
+  the kind of Bayesianism we will criticize here is that hypotheses<br> should be compared as to their probability of
+  truth.32<br> In this section, we examine the possibility that Akaike&#146;s method might be<br> recast in a Bayesian
+  framework. Since our argument is many-faceted, we<br> provide a brief summary here. We criticize two different
+  Bayesian proposals<br> that promise to yield a solution to the curve fitting problem. The first Bayesian<br> strategy
+  is to focus on families?show that the best families by Akaike&#146;s<br> standards are the most probable families, and
+  then give a Bayesian justification<br> for selecting the best fitting case. The second approach is to bypass families,<br>
+  and show how the most accurate individual hypotheses end up with higher<br> posterior probabilities. After criticizing
+  these suggestions, we end the section by<br> suggesting that Bayesian methods may be useful for assessing the risks in<br>
+  applying Akaike&#146;s criterion.<br> The key element of any Bayesian approach is the use of Bayes&#146; Theorem,<br>
+  which says that the probability of any hypothesis H given any data is<br> proportional to its prior probability times
+  its likelihood: p(H/Data) &prop; p(H) &times;<br> p(Data/H). However, it is an unalterable fact about probabilities
+  that (PAR) is<br> more probable than (LIN), relative to any data you care to describe. No matter<br> what the
+  likelihoods are, there is no assignment of priors consistent with<br> probability theory that can alter the fact that
+  p(PAR/Data) &ge; p(LIN/Data). The<br> reason is that (LIN) is a special case of (PAR). How, then, can Bayesians<br>
+  explain the fact that scientists sometimes prefer (LIN) over (PAR)?33<br> Bayesians might propose to address this
+  problem as follows. Instead of (LIN)<br> 32 The problems we will enumerate for Bayesianism in what follows apply with
+  equal force to<br> what might be called incremental Bayesianism. This doctrine has no interest in assigning<br>
+  absolute values to prior and posterior probabilities, but seeks only to make sense of differences<br> or ratios that
+  obtain between these quantities. If H1 and H2 are both confirmed by the data,<br> both P(H1/Data)/P(H1) and
+  P(H2/Data)/P(H2) are greater than unity. To compare these ratios<br> to find out which hypothesis received the larger
+  boost, we need to evaluate the likelihood ratio<br> P(Data/H1)/P(Data/H2). When the hypotheses are single curves, the
+  better fitting hypothesis<br> automatically receives the higher boost. When the hypotheses are families, evaluating
+  this<br> ratio leads to the problems we will describe in connection with Bayesian approaches to<br> defining the
+  likelihood of families.<br> 33 One might seek to evade this conclusion by saying that (LIN) and (PAR) are embedded
+  in<br> different theoretical contexts, that this difference gives rise to differences in meaning between<br> their
+  respective theoretical parameters, and that it follows from this that (PAR) is not entailed<br> by (LIN). Although we
+  are prepared to grant that this might be plausible in certain special<br> cases, we doubt that this is an adequate
+  response in general.<br> How to Tell when Simpler Theories will Provide More Accurate Predictions 23<br> and (PAR),
+  let us consider (LIN) and (PAR*), where (PAR*) is some subset of<br> (PAR) from which (LIN) has been removed. Since
+  (LIN) and (PAR*) are<br> disjoint, nothing prevents us from ordering their prior probabilities as we see fit.<br> In
+  response, we note that this ad hoc maneuver does not address the problem of<br> comparing (LIN) versus (PAR), but
+  merely changes the subject. In addition, it<br> remains to be seen how Bayesians can justify an ordering of priors for
+  the<br> hypotheses thus constructed and how they are able to make sense of the idea that<br> families of curves (as
+  opposed to single curves) possess well defined likelihoods.<br> Rosenkrantz [1977] and Schwarz [1978] independently
+  argued for a proposal<br> of the first kind?ignoring the problems of logical entailment, they seek to<br> compare the
+  likelihoods of families of curves.34 So consider some family of<br> curves F with dimension k. The idea is to define
+  the average likelihood of the<br> family in terms of some prior weighting of the members of the family,<br>
+  p(Curve/F).35<br> If p(Curve/F) is strictly informationless, then it is easy to see that p(Data/F) =<br> 0. Almost
+  every curve in the family will be very far from the data. This means<br> that if we accord equal weight to every curve
+  in F, the average likelihood of F<br> will be zero. What if we let p(Curve/F) be &#145;almost&#146; informationless?
+  This<br> means that we divide the curves in the family into two subsets -- within one<br> subset (which includes
+  curves close to the data points), we let the weights be<br> equal and nonzero; outside this volume, we let the weights
+  be zero. We<br> illustrate this proposal by returning to the examples of (LIN) and (PAR), where<br> the error variance
+  &sigma;2 is known. For (LIN), we specify a volume V1 of parameter<br> values for &alpha;0 and &alpha;1 within which
+  the likelihoods are non-negligible. For PAR,<br> we specify a volume V2 of parameter values for &beta;0, &beta;1, and
+  &beta;3 with the same<br> characteristic. If we let boldface &alpha; and &beta; range over curves in (LIN) and
+  (PAR)<br> respectively, the average likelihoods of those families then may be expressed<br> approximately as
+  follows:<br> p(Data/LIN) = (1/V1) I&sdot;&sdot;&sdot;I p(Data/&alpha;,LIN) d&alpha; <br> p(Data/PAR) = (1/V2) I&sdot;&sdot;&sdot;I
+  p(Data/&beta;,PAR) d&beta;,<br> where the integration is restricted to the subsets of curves with non-zero
+  weights.<br> Note that as larger and larger volumes are taken into account, the average<br> likelihoods approach zero
+  (as the weighting become more strictly<br> informationless).<br> How are these two likelihoods to be compared? The
+  volume V1 has two<br> dimensions in parameter space; the volume V2 has three. Although Rosenkrantz<br> 34 They ignore
+  the entailment problem by comparing only the likelihoods of families; they<br> bracket the Bayesian comparison of
+  posterior probabilities.<br> 35 Here, the &#145;average likelihood&#146; is an average over the members of a family of
+  curves, and the<br> Data are fixed. In contrast, the &#145;average log-likelihoods&#146; we discussed in previous
+  sections<br> were averages of the log-likelihood of a single curve with respect to many (hypothetical) data<br>
+  sets.<br> 24 Malcolm Forster and Elliott Sober<br> [1977] and Schwarz [1978] do not formulate their analysis in terms
+  of the<br> volumes V1 and V2, their proposal is equivalent to setting V1 = V2. This is one<br> way to render
+  commensurable the volumes of different dimensionality that<br> appear in the likelihood expressions.36<br> The trouble
+  is that the proposal is not invariant under reparameterization.<br> Consider the following pair of equations:<br>
+  (LIN) Y = &alpha;0 + &alpha;1 X + &sigma; U<br> (LIN&prime;) Y = (&alpha;0&prime;)/3 + (&alpha;1&prime;/2) X + &sigma;
+  U.<br> These equations define exactly the same family of straight lines. Yet, the<br> proposal entails that the latter
+  has 6 times the average likelihood of the former.37<br> Let us now turn to another strategy that Bayesians might
+  pursue in finding a<br> solution to the weighting problem. This is to let p(&alpha;/LIN) be equal to some<br>
+  informative probability p(&alpha;/LIN,E0). Here the weighting scheme is a posterior<br> probability, constructed on
+  the basis of some evidence E0 that was acquired<br> before the Data. The difficulty with this proposal is that it only
+  pushes the<br> problem back a step. One still has to make sense of the average likelihood<br> p(E0/LIN). This requires
+  us to evaluate quantities of the form p(&alpha;/LIN).<br> Eventually, this must lead the Bayesian back to the quest
+  for informationless (or<br> almost informationless) priors, which we have discussed already.38 In light of<br> these
+  considerations, we think it is highly questionable that this first Bayesian<br> 36 The ad hocness of any such
+  assumption is noted by Aitkin [1991], who refers his readers to<br> Lindley [1957].<br> 37 The reader can most easily
+  grasp this result by considering the problem of integrating a<br> function f(x), where f(x) = 1 between the limits 0
+  and 1, and f(x) = 0 elsewhere. Clearly,<br> f (x)dx 1<br>
+  &infin;<br>
+  &minus;&infin;<br>
+  &int; = .<br> Yet if we transform coordinates such that xN = 6x, while equating g(xN) and f(x) for<br> corresponding
+  values of x and xN, we obtain<br> g(x)dx 6<br>
+  &infin;<br>
+  &minus;&infin;<br>
+  &int; &prime; &prime;= .<br> 38 Nevertheless, Schwarz [1978] has pressed ahead and derived an interesting
+  asymptotic<br> expression for the average likelihood (with the V term omitted). Under conditions similar to<br> those
+  for Akaike&#146;s Theorem,<br> Log(Average Likelihood of F) = log p(Data/L(F)) &minus; (logN) k/2 + other terms ,<br>
+  where L(F) is the maximum likelihood hypothesis in F, N is the number of data, and k is the<br> dimension of F. The
+  &#145;other terms&#146; are negligible for large N. The resulting recipe for model<br> selection is often referred to
+  as the Bayesian Information Criterion, or BIC for short. We will<br> not evaluate the criterion here. But we deny that
+  it is securely grounded in the Bayesian<br> framework, for the reasons we have given. In that regard, it is
+  interesting to note that the same<br> criterion has been independently derived from quite different principles by
+  Akaike [1977] and<br> Rissanen [1978], [1989].<br> How to Tell when Simpler Theories will Provide More Accurate
+  Predictions 25<br> approach?in which families of curves are the objects of investigation?can<br> provide a
+  satisfactory treatment of the curve fitting problem.39<br> So let us consider a Bayesian who compares the
+  probabilities of particular<br> curves. The problem here is that there seems to be no principled way for<br> estimated
+  predictive accuracies to affect the estimated probability of their truth.<br> For such a Bayesian is bound by Bayes&#146;
+  Theorem, which says that the posterior<br> probability of such a particular hypothesis is proportional to the prior
+  probability<br> times the likelihood relative to the total evidence:<br> p(Curve/Data) = p(Curve) p(Data/Curve)
+  /p(Data) .<br> The likelihood term, p(Data/Curve), simply measures the goodness-of-fit, so the<br> only vehicle for
+  including any estimate of the predictive value of the curve is in<br> the prior probability, p(Curve). In order to
+  replicate the Akaike result, we would<br> need<br> p(Curve) = p(Data) e&minus;k ,<br> where p(Data) is merely a
+  normalization factor. But we do not see how a<br> Bayesian can justify assigning priors in accordance with this
+  scheme.<br> The problem is not avoided by adopting a subjectivist approach that eschews<br> the need for objective
+  justification. The problem is deeper than that. The<br> trouble is that a particular curve, as opposed to a family of
+  curves, cannot be<br> assigned a value of k on a priori grounds. After all, any curve is a member of<br> many families
+  of different dimensions. While this problem for Akaike arises in<br> the guise of the subfamily problem, the proposed
+  solution was to distrust<br> subfamilies that have a special relationship with the data. However, no<br> comparable
+  solution is available to the Bayesians because the determination of k<br> must be made independently of the data.
+  Thus, Bayesians must find an entirely<br> different kind of solution to the subfamily problem,<br> 39 However, Aitkin
+  [1991] has a different &#145;average likelihood&#146; proposal, which allegedly solves<br> the curve fitting problem.
+  He computes the average by weighing each curve in the family by<br> its posterior probability p(Curve/Data), given all
+  the available data. A theorem based on the<br> same assumptions as Akaike&#146;s Theorem shows that:<br> Log(Aitkin
+  Average Likelihood of F) = Log-likelihood(L(F)) &minus; (k/2)log2 .<br> Since log2 is less than 1 (the logarithms are
+  to base e), Aitkin imposes less than 1/2 of<br> Akaike&#146;s penalty for complexity. This is already an uncomfortable
+  consequence because the<br> Error Theorem shows that (PAR) will be chosen over (LIN) by Aitkin&#146;s criterion more
+  often<br> than not even when (LIN) is true. But the real problem is that the criterion is just &#145;pulled out of<br>
+  a hat.&#146; What will families of greater average posterior likelihood provide for us? Will they<br> tend to bring us
+  closer to the truth, or give us more accurate predictions, or what? Aitkin<br> provides no answers to these questions.
+  Given that Aitkin&#146;s proposal does not have more<br> fundamental principles to fall back on, how does he cope with
+  the subfamily problem? There<br> is no analogue to the Error Theorem for Aitkin because there is no sense in which
+  average<br> likelihood is in error if it is not estimating anything. Also see the commentaries immediately<br>
+  following Aitkin&#146;s paper, including one by Akaike.<br> 26 Malcolm Forster and Elliott Sober<br> and we fail to
+  see how this can be done.40<br> Our diagnosis of the problem is that Bayesianism is unable to capture the<br> proper
+  significance of considering families of curves. We work with families<br> because they deliver the most reliable
+  estimates of the predictive accuracy of a<br> few curves; namely their best fitting cases. There is no reason to
+  suspect that<br> such an enterprise can be construed as maximizing the probability that these best<br> fitting cases
+  are true. Why should we be interested in the probability of these<br> curves&#146; being true, when it is intuitively
+  clear that no curve fitting procedure will<br> ever deliver curves that are exactly true? If we have to live with
+  false<br> hypotheses, then it may be wise to lower our sights, and aim at hypotheses that<br> have the highest
+  possible predictive accuracy. Thus, the brand of Bayesianism<br> most popular amongst philosophers is founded on too
+  narrow a conception of the<br> scientific enterprise.41<br> Having said all that, we do not draw the rash conclusion
+  that Bayesian<br> methodology is irrelevant to Akaike&#146;s new predictive paradigm. There are many<br> Bayesian
+  solutions to practical statistical problems. However, Akaike&#146;s<br> reconceptualization of statistics does
+  recommend that the foundations of<br> Bayesian statistics require rethinking.42 A positive suggestion may be that<br>
+  Bayesian methods can help determine the probability that one hypothesis is more<br> predictively accurate than
+  another. In that way, Bayesian methods might be<br> usefully brought to bear on the problem of assessing the
+  reliability of estimated<br> accuracies, for that appears to be an important and open area of research.<br> 8.
+  EMPIRICISM AND REALISM<br> One virtue of our approach is that it makes clear what the simplicity of a curve<br> has to
+  do with the reasons one might have for believing it. Popper [1959] argued<br> that simpler curves are more
+  falsifiable; Sober [1975] suggested that simpler<br> curves are more informative. These proposals, and others like
+  them,43 make it<br> 40 In this respect, we think it is instructive to consider the recent attempt by Jefferys and
+  Berger<br> [1992] to provide a Bayesian rationale for Ockham&#146;s razor. We criticize their proposal in<br> Sober
+  and Forster [1992].<br> 41 It is easy to construct examples which show that maximizing probability of truth is
+  different<br> from maximizing closeness to the truth. A common example is the use of averages to estimate<br> a
+  discrete number, say the number of children in an American family. An estimate of 1.9<br> children has less
+  probability of being true in any case than an estimate of 2, but may be<br> predictively more accurate
+  nevertheless.<br> 42 Akaike [1985] shows how the rule of Bayesian conditionalization, as a method of updating<br>
+  probabilities, may be understood in terms of maximizing expected predictive accuracy.<br> 43 Turney [1990]
+  demonstrates that simpler families of curves are more stable. Roughly, the<br> instability of a family of curves,
+  relative to the data, is the expected &#145;distance&#146; (measured by<br> the SOS) of a new best fitting curve from
+  the old best fitting curve when the data are perturbed<br> in accordance with the known error distribution. Turney&#146;s
+  measure of instability takes one step<br> How to Tell when Simpler Theories will Provide More Accurate Predictions
+  27<br> difficult to say why one ought to believe simpler curves rather than their more<br> complex competitors. In
+  contrast, the analysis we have proposed greatly<br> simplifies the task of justification. When a simpler curve is more
+  plausible than<br> its more complex alternatives, this is because it has a higher estimated predictive<br>
+  accuracy.<br> We believe that our account of curve fitting is good news for empiricism,<br> although it does not
+  accord with what has been said by many empiricists. The<br> idea that some sui generis criterion of simplicity is
+  relevant to judging the<br> plausibility of hypotheses is deeply inimical to empiricism. For empiricism,<br>
+  hypothesis evaluation should be driven by data, not by a priori assumptions<br> about what a &#145;good&#146;
+  hypothesis should be like. Empiricists often take this point<br> to heart and conclude that simplicity is a merely
+  pragmatic virtue, one having to<br> do with the usefulness of hypotheses, but not with their plausibility (cf. e.g.,
+  Van<br> Fraassen [1980], pp. 87-89). The embarrassing thing about this dismissal of<br> simplicity is that it applies
+  not just to highly theoretical hypotheses, but to quite<br> mundane empirical generalizations of the sort that figure
+  in some curve fitting<br> problems. In these contexts, skepticism about simplicity threatens to lead the<br>
+  empiricist down the garden path to skepticism about induction (Sober [1990a]).<br> Empiricists therefore should
+  welcome the idea that curve fitting does not require<br> a sui generis criterion of simplicity. This does not show
+  that some form of<br> radical empiricism is true. Rather, we draw the more modest conclusion that the<br> data tell
+  you more than you may have thought.44<br> Although our goal has been to show how the simplicity of a curve can reflect<br>
+  important facts about its predictive accuracy, we do not claim that all uses of<br> simplicity and parsimony in
+  science reduce to purely evidential considerations.<br> We do not deny that scientists often have pragmatic reasons
+  for using simpler<br> curves instead of more complex ones. However, we would insist that these<br> pragmatic
+  considerations not be confused with evidential ones. Monolithic<br> theories about simplicity and parsimony?which
+  claim that these considerations<br> are never evidential or that they are never merely pragmatic?should be
+  replaced<br> by a more pluralistic approach. At least in the context of the curve fitting<br> problem, Akaike&#146;s
+  technical result provides a benchmark that identifies the<br> degree to which simplicity has evidential significance.
+  Any further weight<br> accorded to simplicity, we suspect, derives from pragmatic considerations.<br> Our analysis
+  supports the idea that the simplicity of a family of curves is an<br> towards estimating the degree of overfitting, as
+  we have characterized it. However, in our<br> opinion, his paper does not show why stability should be relevant to the
+  question of what to<br> believe. We also note that Turney leaves open the justification for trade offs between<br>
+  simplicity and goodness-of-fit. Akaike&#146;s Theorem is more general than Turney&#146;s theorem in<br> any case?it is
+  not restricted to the standard curve fitting situation, and does not assume a<br> known error variance.<br> 44 For the
+  bearing of this thesis on traditional arguments against the existence of component<br> forces in Newtonian physics,
+  see Forster [1988b].<br> 28 Malcolm Forster and Elliott Sober<br> epistemic epiphenomenon.45 Sometimes simpler curves
+  are to be preferred over<br> more complicated ones, but the reason for this is not that simplicity is an<br> epistemic
+  end-in-itself. At other times, more complex curves are to be preferred<br> over simpler alternatives, but this is not
+  because the irreducible demands of<br> simplicity are overwhelmed by more weighty considerations of some other
+  sort.<br> Whether a simpler curve is preferable to some more complex alternative, or the<br> reverse is true, has
+  nothing to do with simplicity and everything to do with<br> predictive accuracy.<br> Our brand of empiricism is not
+  antithetical to the realist view that science aims<br> at the truth,46 in the same sense that archers aim at the bull&#146;s-eye
+  even when<br> they have no hope of hitting it. In the past, the curve fitting problem has posed a<br> dilemma: Either
+  accept a realist interpretation of science at the price of viewing<br> simplicity as an irreducible and a prioristic
+  sign of truth and thereby eschew<br> empiricism, or embrace some form of anti-realism. Akaike&#146;s solution to
+  the<br> curve fitting problem dismantles the dilemma. It now is possible to be a realist<br> and an empiricist at the
+  same time.<br> Popper [1968] initiated a realist program that takes the &#145;disastrous metainduction<br>
+  &#146; (Laudan [1984]) seriously - all of our scientific theories in the past<br> have been false, so it is likely
+  that all of our theories in the future will also be<br> false. Even granting this prediction of failure, it may make
+  sense to claim that<br> our theories aim at the truth if we could (1) define a measure of<br> closeness-to-the-truth,
+  and (2) show how theory choice could be viewed as<br> implementing some method that would, more often than not, take
+  us closer to<br> the truth. Proposed solutions to the problem of defining verisimilitude have<br> never gained wide
+  acceptance,47 and the second part of the programme is seldom<br> discussed.<br> We have already described predictive
+  accuracy as a measure of closeness to<br> 45 This thesis complements the view of parsimony developed in Sober [1988b],
+  [1990b]. It also<br> might be formulated in terms of the idea of screening off: Simplicity is correlated with<br>
+  plausibility, but only because simplicity also is correlated with predictive accuracy. Once the<br> estimated
+  predictive accuracy of a hypothesis is held fixed, its simplicity has nothing further to<br> contribute to an
+  assessment of its plausibility.<br> 46 We do not claim that this is the only aim of science. We agree with
+  sociologists of science<br> that a complete account of the practice of science must include an account of pragmatic
+  and<br> social values. Modern theories of decision making are well equipped to model scientific<br> practice in terms
+  of pragmatic, social, and evidential considerations, in a way that is<br> compatible with realism (Hooker [1987]).
+  However, we do oppose those extremists who<br> believe that internal evidential considerations play no role in the
+  social dynamics of science.<br> 47 Popper&#146;s original definition of verisimilitude was formulated in terms of the
+  deductive<br> consequences of theories; fatal flaws were detected independently by Tich&yacute; [1974] and by<br>
+  Miller [1974]. Tich&yacute; [1974] presents an alternative definition of his own, which Miller [1974]<br> shows to be
+  language dependent. Miller [1975] also argues that the intuitive notion of<br> accuracy of prediction is also subject
+  to the same kind of language variance. Good&#146;s [1975]<br> reply to Miller&#146;s paper contains a brief
+  explanation of why a probabilistic definition of<br> accuracy, like Akaike&#146;s, is not susceptible to Miller&#146;s
+  objection. See Forster [1992a] for<br> further discussion.<br> How to Tell when Simpler Theories will Provide More
+  Accurate Predictions 29<br> the truth. To that extent, Akaike&#146;s approach revitalizes Popper&#146;s
+  programme.48<br> However, we suspect that those neo-Popperians who seek some grand<br> metaphysical definition of
+  closeness to the truth will be disappointed with a<br> notion of predictive accuracy defined by reference to a
+  specified domain of<br> inquiry.49 Nonetheless, we are convinced that any definition of verisimilitude<br> must be
+  limited in this way if we are primarily interested in epistemological<br> questions. In any event, the important point
+  is that Akaike&#146;s Theorem lays the<br> epistemological foundation for our progress towards the truth in this
+  domainrelative<br> sense.<br> In spite of our sympathy for Popper&#146;s quest for a concept of verisimilitude, we<br>
+  nonetheless reject hypothetico-deductivism, on which the Popperian programme<br> is founded.50 The
+  hypothetico-deductivist strategy has been to adopt an<br> idealized model of science in which there are no
+  probabilistic errors in the data,<br> to use this error-free idealization to solve various philosophical problems, and<br>
+  then to add an account of error as an afterthought.51 Our analysis suggests that<br> many central problems in the
+  philosophy of science are not decomposable in this<br> way. Simplicity and unification are relevant to our judgments
+  about what is<br> truth-like only to the extent that observing and inferring are subject to error.<br> 9. APPENDIX A:
+  THE ASSUMPTIONS BEHIND AKAIKE&#146;S THEOREM<br> There are three kinds of assumption behind the proof of Akaike&#146;s
+  Theorem.<br> First, there is a &#145;uniformity of nature&#146; assumption that says that the true curve,<br> whatever
+  it is, remains the same for both the old and the new data sets<br> considered in the definition of predictive
+  accuracy. The second kind of<br> assumption consists of mathematically formulated conditions that ensure the<br>
+  &#145;asymptotic normality&#146; of the likelihood function (viz. the likelihood viewed as a<br> function of parameter
+  values). These assumptions contribute to proving various<br> central limit theorems in mathematical statistics. The
+  final assumption is that<br> the sample size (the amount of data) is large enough to ensure that the likelihood<br>
+  function will approximate its asymptotic properties. It is the second assumption<br> that requires the most
+  explaining. We first say what the &#145;normality&#146; assumption<br> 48 This perspective also is relevant to
+  Cartwright&#146;s [1983] argument that the proliferation of<br> mutually incompatible models in physics is a reason to
+  reject realism. This is an<br> embarrassment to a realist who interprets all (viable) models as true. On the other
+  hand, our<br> brand of realist is only interested in interpreting hypotheses as being more or less<br>
+  close-to-the-truth. A plurality of models is conducive to a more modest realist programme.<br> 49 We note in this
+  connection that there are philosophical issues raised by the concept of<br> prediction that are not addressed by
+  Akaike&#146;s notion of predictive accuracy.<br> 50 Note that hypothetico-deductivism, as we understand it, is not
+  rescued by the fact that<br> probabilistic assertions about future data are deduced from scientific hypotheses.
+  For<br> hypothetico-deductivism demands that at least some of the deductive consequences of our<br> theories are
+  observations, but we do not observe probabilities.<br> 51 See Forster [1994] for a discussion of how this bears on
+  Hempel&#146;s raven paradox.<br> 30 Malcolm Forster and Elliott Sober<br> is, and describe the pivotal role it has
+  played in statistics.<br> The normal, or Gaussian, probability distribution is easily recognized in its<br> one
+  dimensional form by its characteristic bell shape. In its more general<br> multivariate form, the normal distribution
+  has come to play a pivotal role in<br> experimental and theoretical statistics. In experimental statistics, error<br>
+  distributions (in the estimation of parameter values) are found to be<br> approximately normal, especially for large
+  data sets. According to Cramér<br> ([1946], p.231), &#145;Such is the case, e.g., with the distributions of errors
+  of<br> physical and astronomical measurements, a great number of demographical and<br> biological distributions, etc.&#146;
+  In fact, the assumption that measurement errors are<br> normally distributed around a mean value is so widespread in
+  science that it is<br> often referred to as the law of errors. On the theoretical side, &#145;the central limit<br>
+  theorem affords a theoretical explanation of these empirical facts.&#146; In a<br> somewhat humorous tone, Cramér
+  ([1946], p.232) sums up by quoting Lippman<br> as saying: &#145;everyone believes in the law of errors, the
+  experimenters because<br> they think it is a mathematical theorem, the mathematicians because they think it<br> is an
+  experimental fact,&#146; and adds that &#145;both parties are perfectly right, provided<br> that their belief is not
+  too absolute.&#146;<br> Mathematically, these assumptions are difficult to state explicitly, not just<br> because they
+  are mathematically esoteric, but also because there are various<br> ways in which the assumptions may be weakened (see
+  Cramér [1946]). For this<br> reason, mathematical statisticians almost always vaguely refer to the<br> assumptions as
+  &#145;certain regularity conditions.&#146; They would certainly not make<br> the brazen claim that these conditions
+  hold for all real scientific models, and we<br> follow their lead here. However, we do wish to say that the conditions
+  are not<br> unduly restrictive. There is no need to assume that the error distributions<br> associated with the
+  observational data are themselves approximately bell-shaped.<br> The standard coin tossing example illustrates the
+  point. The assumed &#145;error&#146;<br> distribution is the binomial distribution (the probability getting the high
+  value is<br> p, while the probability of the low value is (1&minus;p)), yet the distribution for the<br> p-estimates
+  is asymptotically normal. The second point is that asymptotic<br> normality is not restricted to models that are
+  linear in their parameters. For<br> example, suppose that the product &alpha; &beta; occurs in one of the equations of
+  the<br> model. If &#136; &alpha; and &#136;&beta; are their maximum likelihood estimates and the values of &alpha;<br>
+  and &beta; are sufficiently close to these estimates, then we may write: &alpha; &beta; = (&alpha;&#136; +<br>
+  &Delta;&alpha;)( &#136;&beta;+ &Delta;&beta;) &asymp; &#136; &alpha; &#136;&beta; + &#136; &alpha; &Delta;&beta; +
+  &#136;&beta; &Delta;&alpha;. Here, &#136; &alpha; and &#136;&beta; are constants, and the<br> nonlinear product is now
+  linear in the new, transformed, parameters &Delta;&alpha; and &Delta;&beta;.<br> This approximation will be valid
+  because the region of non-negligible<br> likelihoods becomes more narrowly concentrated around the best estimates
+  as<br> the sample size increases. The same argument applies to other sufficiently<br> smooth nonlinear equations, such
+  as Y = sin(&alpha;X + &beta;), and so on.<br> Perhaps the most restrictive assumption is that the sample size be
+  large. This<br> How to Tell when Simpler Theories will Provide More Accurate Predictions 31<br> does not mean merely
+  that the total data set is large, but that there is enough data<br> within the domain of each parameter. For example,
+  the approximate normality<br> of the model M1 and M2 in Section 3 requires that both of the data sets D1 and D2<br>
+  are sufficiently large.<br> 10 APPENDIX B: A PROOF OF A SPECIAL CASE OF AKAIKE&#146;S<br> THEOREM<br> Suppose that we
+  are sampling from a target population of values of a random<br> variable X (e.g. the population of possible
+  measurements of the mass of an<br> object) with mean &mu;* (the true mass) and variance &sigma;2 (the error of
+  measurement),<br> where the true probability distribution p for the values x of the random variable<br> X is normal,
+  or Gaussian. That is,<br> ( ) ( )2<br> 2 2<br> 1 exp 1 *<br> 2 2<br> p x x &mu;<br>
+  &pi;&sigma; &sigma;<br> = &#63726;&minus; &minus; &#63737; &#63727;&#63728; &#63738;&#63739;<br> .<br> Now consider a
+  hypothesis (&#145;curve&#146;) that (falsely) asserts that the mean is &mu;. The<br> hypothesis in question asserts
+  that the probability distribution for measured<br> values of X is<br> ( ) ( )2<br> 2 2<br> 1 exp 1<br> 2 2<br> q x x
+  &mu;<br>
+  &pi;&sigma; &sigma;<br> = &#63726;&minus; &minus; &#63737; &#63727;&#63728; &#63738;&#63739;<br> .<br> Hypotheses like
+  q(x) form a family of hypotheses, each of which corresponds to<br> a particular value of the parameter &mu;. Thus, it
+  is notationally convenient to<br> denote the hypothesis itself by &mu;. (It will be clear from the context when &mu;
+  is the<br> parameter, the parameter value, or the hypothesis in the family corresponding to<br> a parameter value.)
+  The simplicity of a family of hypotheses (referred to by<br> statisticians as a model) is measured by the number of
+  adjustable parameters; in<br> this case there is only one (&mu;).<br> If we accept this family of hypotheses, the next
+  step is to find the best fitting<br> hypothesis, and this is the hypothesis that confers the highest probability<br>
+  (density) on the data (i.e. has the maximum likelihood out of all the members of<br> the family). We denote the
+  maximum likelihood hypothesis (which is also<br>
+  &mu;* &mu; x<br> p (x) q (x)<br> FIGURE 5<br> 32 Malcolm Forster and Elliott Sober<br> the maximum log-likelihood
+  hypothesis) by&mu;&#136; . How will&mu;&#136; , obtained from past<br> data, fare in the prediction of new data drawn
+  from the same population? For<br> any particular datum x, we might measure the accuracy with which it is<br> predicted
+  by its goodness-of-fit; viz. the log-likelihood, log p(x). But we are<br> really interested in the &#145;average datum&#146;
+  drawn from the population, so we define<br> the predictive accuracy (A for &#145;accuracy&#146;) of an arbitrary
+  hypothesis &mu; to be:<br> A(&mu;) = df E*(log q(x)),<br> where q(x) is the probability distribution in the family
+  corresponding to the<br> parameter value &mu;, and E* is the expected value calculated with respect to the<br> true
+  hypothesis (&mu;*). That is,<br> A(&mu;) p(x)logq(x)dx<br>
+  &infin;<br>
+  &minus;&infin;<br> = &int; .<br> Note that A(&mu;) is the expected log-likelihood per datum for a data set of
+  arbitrary<br> size N. From the diagram, it is intuitively clear that a distribution q(x) with<br> central point &mu;
+  that is far from the true value &mu;* is not going to do so well in<br> predicting data randomly sampled from the true
+  population. By the same token,<br> p(x) is going to do the best job of fitting the data it generates. The
+  following<br> result gives this intuitive fact a quantitative representation:<br> A(&mu;) = A(&mu;*) &minus; &frac12;
+  (&mu; &minus;&mu;*)2/&sigma; 2. (1)<br> Proof: The log of<br> ( )2<br> 2<br> exp 1<br> 2<br> x &mu;<br>
+  &sigma;<br>
+  &#63726;&minus; &minus; &#63737; &#63727;&#63728; &#63738;&#63739;<br> is clearly equal to<br>
+  &minus; &frac12; (&mu; &minus;&mu;*)2/&sigma; 2.<br> But,<br> (x &minus; &mu;)2 = (x &minus; &mu;* &minus; (&mu;
+  &minus;&mu;*))2 = (x &minus;&mu;*)2 - 2(x &minus; &mu;)(&mu; &minus;&mu;*) + (&mu; &minus;&mu;*)2.<br> When we take
+  expectations and simplify the result follows. This completes the<br> proof.<br> Since (1) holds for any hypothesis in
+  the family, it surely holds for the<br> hypothesis that best fits the past data. Thus,<br> ( ) ( ) ( )1 2 2<br> 2 A&mu;&#136;=A&mu;*&minus;
+  &mu;&minus;&mu;* &sigma; .<br> While interesting, this result is still epistemologically unhelpful because we<br> don&#146;t
+  know A(&mu;*) and we don&#146;t know the value of &mu;*. The second problem is<br> surmounted in the following way. We
+  may estimate A(&mu;&#136;) by the expected value<br> of the right hand side, where the expected value is taken over
+  the maximum<br> likelihood estimate&mu;&#136; . That is,<br> Estimate of ( ) ( ) ( )1 2 2<br> 2 A&mu;&#136;=E*&#63726;&#63728;A&mu;&minus;
+  &mu;&#136;&minus;&mu;* &sigma;&#63737;&#63739;.<br> How to Tell when Simpler Theories will Provide More Accurate
+  Predictions 33<br> But the central limit theorem tells us that the expected sum of squared deviations<br> of an
+  estimate of &mu; from its true value is just &sigma;2/N, where N is the number of data<br> in the sample from which
+  the estimate is taken (the number of &#145;past data&#146;).<br> Thus, we have<br> Estimate of A(&mu;&#136; ) = A(&mu;*)
+  &minus; &frac12; /N. (2)<br> The only remaining problem is to estimate A(&mu;*). Again the qualitative facts are<br>
+  clear. If&mu;&#136; is the best fitting hypothesis relative to past data, then it fits the past<br> data better than
+  any other hypothesis (by definition), and therefore it fits better<br> than &mu;*. Thus, if l(&mu;&#136;)is the
+  log-likelihood of the best fitting hypothesis, then<br> l(&mu;&#136;)&gt; l(&mu;*) andE*(l(&mu;&#136; ) N) &gt;E*(l(&mu;*)
+  N) = df A(&mu;*). The question as to how<br> much greater is answered by the following result (without proof):<br> A(&mu;*)
+  = 1<br> 2 E*(l(&mu;&#136; ) N) &minus; N. (3)<br> If we now combine (2) and (3) we get:<br> Estimate of A(&mu;&#136;)=E*(l(&mu;&#136;)&minus;1)N.<br>
+  Since l(&mu;&#136;)&minus;1 is clearly an unbiased estimate of E*( l(&mu;&#136;)&minus;1), we finally arrive at<br>
+  the main result, as it applies to this example:<br> Akaike [1973]: Estimate of A(&mu;&#136; ) = (1/N )[ l(&mu;&#136;)
+  &minus;1].<br> That is, if we are interested in the predictive accuracy of the best fitting<br> hypothesis from the
+  family, we should not judge its accuracy by its<br> goodness-of-fit, for that estimate is usually biased towards being
+  too high. An<br> unbiased estimate is obtained by using a corrected measure of goodness-of-fit.<br> The important fact
+  is that this result generalizes (surprisingly well) to a variety<br> of conditions, and to examples of models with
+  many adjustable parameters. If k<br> is the number of adjustable parameters in a model, then we may state Akaike&#146;s<br>
+  theorem in its general form:<br> Akaike [1973]: Estimate of A(&mu;&#136; ) = (1/N )[ l(&mu;&#136;) &minus;k].<br> This
+  is the formula that quantifies the trade-off between simplicity (the number<br> of adjustable parameters) and
+  goodness-of-fit (the maximum log-likelihood).<br> Department of Philosophy<br> University of Wisconsin, Madison
+  53706<br> REFERENCES<br> AITKIN, M. [1991]: &#145;Posterior Bayes Factors.&#146; Journal of the Royal Statistical
+  Society. B<br> 1: 110-128.<br> AKAIKE, H. [1973]: &#145;Information Theory and an Extension of the Maximum
+  Likelihood<br> Principle.&#146; B. N. Petrov and F. Csaki (eds.), 2nd International Symposium on<br> Information
+  Theory: 267-81. Budapest: Akademiai Kiado.<br> 34 Malcolm Forster and Elliott Sober<br> AKAIKE, H. [1974]: &#145;A New
+  Look at the Statistical Model Identification.&#146; IEEE<br> Transactions on Automatic Control, vol. AC-19:
+  716-23.<br> AKAIKE, H. [1977]: &#145;One Entropy Maximization Principle.&#146; P. R. Krishniah (ed.),<br> Applications
+  of Statistics: 27-41. Amsterdam: North-Holland.<br> AKAIKE, H. [1985]: &#145;Prediction and Entropy.&#146; In A. C.
+  Atkinson and S. E. Feinberg<br> (eds.), A Celebration of Statistics. New York: Springer. 1-24.<br> BOGEN, J. &amp; J.
+  WOODWARD [1988]: &#145;Saving the Phenomena.&#146; The Philosophical<br> Review, vol. XCVII: 303-352.<br> CARTWRIGHT,
+  N. [1983]: How the Laws of Physics Lie. Oxford: Oxford University<br> Press.<br> CHURCHLAND, P. M. [1989]: A
+  Neuralcomputational Perspective: The Nature of Mind<br> and the Structure of Science. Cambridge: MIT Press.<br> CRAMéR
+  H. [1946]: Mathematical Methods of Statistics. Princeton, NJ: Princeton<br> University Press.<br> EELLS, E. [1985]:
+  &#145;Problems of Old Evidence.&#146; Pacific Philosophical Quarterly:<br> 283-302.<br> FORSTER, M. [1986]: &#145;Unification
+  and Scientific Realism Revisited.&#146; In A. Fine and P.<br> Machamer (eds.), PSA 1986. E. Lansing, Michigan:
+  Philosophy of Science<br> Association. 1: 394-405.<br> FORSTER, M. [1988a]: &#145;Confirmation of Component Causes.&#146;
+  PSA 1988. E. Lansing,<br> Michigan: Philosophy of Science Association. 1: 3-9.<br> FORSTER, M. [1988b]: &#145;Unification,
+  Explanation, and the Composition of Causes in<br> Newtonian Mechanics.&#146; Studies in the History and Philosophy of
+  Science: 55-101.<br> FORSTER, M [1992a]: &#145;Progress Towards the Truth.&#146; In preparation.<br> FORSTER, M.
+  [1992b]: &#145;The Problem of Overfitting in Artificial Neural Networks.&#146; In<br> preparation.<br> FORSTER, M.
+  [1994]: &#145;Non-Bayesian Foundations for Statistical Estimation, Prediction,<br> and the Ravens Example.&#146;
+  Erkenntnis 40: 357 - 376.<br> FRIEDMAN, M. [1983]: Foundations of Space-Time Theories. Princeton, NJ: Princeton<br>
+  University Press.<br> GLYMOUR, C. [1980]: Theory and Evidence. Princeton: Princeton University Press.<br> GOOD, I. J.
+  [1985]: &#145;Comments on David Miller,&#146; Synthese 30: 205-206.<br> HARPER, W. [1989]: &#145;Consilience and
+  Natural Kind Reasoning.&#146; In J. R. Brown and J.<br> Mittelstrass (eds.) An Intimate Relation: 115-152. Dordrecht:
+  Kluwer Academic<br> Publishers.<br> HOOKER, C. [1987]: A Realistic Theory of Science. Albany: State University of
+  New<br> York Press.<br> HOWSON, C. and URBACH, P. [1989]: Scientific Reasoning: The Bayesian Approach.<br> La Salle,
+  Illinois: Open Court.<br> JEFFERYS, W. and J. BERGER [1992]: &#145;Ockham&#146;s Razor and Bayesian
+  Analysis.&#146;<br> American Scientist 80: 64-72.<br> KUHN, T. [1957]: The Copernican Revolution. Cambridge, Mass.:
+  Harvard University<br> Press.<br> LAKATOS, I. [1970]: &#145;Falsificationism and the Methodology of Scientific
+  Research<br> Programmes&#146; in Lakatos and Musgrave (eds.), Criticism and the Growth of<br> Knowledge. Cambridge:
+  Cambridge University Press.<br> LAUDAN, L. [1984]: &#145;A Confutation of Convergent Realism.&#146; In J. Leplin
+  (ed.),<br> Scientific Realism. Berkeley and Los Angeles: The University of California Press.<br> How to Tell when
+  Simpler Theories will Provide More Accurate Predictions 35<br> LINDLEY, D. V. [1957]: &#145;A Statistical Paradox.&#146;
+  Biometrika 44: 187-192.<br> LINHART, H. and W. ZUCCHINI [1986]: Model Selection. N. Y.: John Wiley &amp; Sons.<br>
+  MILLER, D. [1974]: &#145;Popper&#146;s Qualitative Theory of Verisimilitude,&#146; British Journal for<br> Philosophy
+  of Science 25: 166-77.<br> MILLER, D. [1975]: &#145;The Accuracy of Predictions,&#146; Synthese 30: 159-191.<br>
+  MOODY, J. [1992]: &#145;The Effective Number of Parameters: An Analysis of<br> Generalization and Regularization in
+  Nonlinear Learning Systems.&#146; In J. E. Moody,<br> S. J. Hanson and R. P. Lippmann (eds.) Advances in Neural
+  Information Processing<br> Systems 4. San Mateo, CA: Morgan Kauffmann Publishers.<br> MURATA, N., S. YOSHIZAWA, and S.
+  AMARI [1992]: &#145;Network Information Criterion -<br> Determining the Number of Hidden Units for an Artificial
+  Neural Network Model.&#146;<br> Unpublished Manuscript, June 22 1992, University of Tokyo.<br> MUSGRAVE, A. [1974]:
+  &#145;Logical Versus Historical Theories of Confirmation.&#146; British<br> Journal for the Philosophy of Science 25:
+  1-23.<br> POPPER, K. [1959]: The Logic of Scientific Discovery. London: Hutchinson.<br> POPPER, K. [1963]: Conjectures
+  and Refutations. London: Routledge and Kegan Paul.<br> PRIEST, G. [1976]: &#145;Gruesome Simplicity.&#146; Philosophy
+  of Science 43: 432-437.<br> RISSANEN, J. [1978]: &#145;Modeling by the Shortest Data Description.&#146; Automatica 14:<br>
+  465-471.<br> RISSANEN, J. [1989]: Stochastic Complexity in Statistical Inquiry. Singapore: World<br> Books.<br>
+  ROSENKRANTZ, R. [1977]: Inference, Method, and Decision. Dordrecht: D. Reidel.<br> SAKAMOTO, Y., M. ISHIGURO, and G.
+  KITAGAWA [1986]: Akaike Information Criterion<br> Statistics. Dordrecht: Kluwer Academic Publishers.<br> SCHWARZ, G.
+  [1978]: &#145;Estimating the Dimension of a Model.&#146; Annals of Statistics 6:<br> 461-5.<br> SOBER, E. [1975]:
+  Simplicity. Oxford: Oxford University Press.<br> SOBER, E. [1988a]: &#145;Likelihood and Convergence.&#146; Philosophy
+  of Science 55: 228-37.<br> SOBER, E. [1988b]: Reconstructing the Past: Parsimony, Evolution, and Inference.<br>
+  Cambridge, Mass.: MIT Press.<br> SOBER, E. [1990a]: &#145;Contrastive Empiricism.&#146; In W. Savage (ed.), Minnesota
+  Studies<br> in the Philosophy of Science: Scientific Theories, vol. 14, Minneapolis: University of<br> Minnesota
+  Press, 392-412.<br> SOBER, E. [1990b]: &#145;Let&#146;s Razor Ockham&#146;s Razor.&#146; In D. Knowles (ed.),
+  Explanation<br> and Its Limits. Royal Institute of Philosophy Supplementary Volume 27, Cambridge:<br> Cambridge
+  University Press, 73-94.<br> SOBER, E. and M. FORSTER [1992]: &#145;Lessons in Likelihood.&#146; American Scientist
+  80:<br> 212-13.<br> TICH&Yacute;, P. [1974]: &#145;On Popper&#146;s Definitions of Verisimilitude,&#146; British
+  Journal for the<br> Philosophy of Science. 25: 155-160.<br> TURNEY, PETER [1990]: &#145;The Curve Fitting Problem?A
+  Solution.&#146; British Journal for<br> the Philosophy of Science 41: 509-30.<br> VAN FRAASSEN, B. [1980]: The
+  Scientific Image. Oxford: Oxford University Press.<br> WALLACE, C. S. and P. R. FREEMAN [1992]: &#145;Single Factor
+  Analysis by MML<br> Estimation.&#146; Journal of the Royal Statistical Society B 54: 195-209.<br> WHEWELL, W. [1840]:
+  The Philosophy of the Inductive Sciences (1967 edition).<br> London: Frank Cass &amp; Co Ltd.</p>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a></th>
+  </tr>
+</table>
+<script src="https://www.assoc-amazon.fr/s/link-enhancer?tag=r047-21&o=8" type="text/javascript">
+</script>
+<noscript><img alt="" src="https://www.assoc-amazon.fr/s/noscript?tag=r047-21"/></noscript>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.MrA {
+  color: green;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  width: 70%;
+  text-align: left;
+  padding-left: 10%;
+}
+
+.MrB {
+  color: blue;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin-right: 10%;
+  text-align: right;
+  padding-left: 30%;
+}
+
+.MrAUnderlined {
+  border-bottom-color: green;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.MrBUnderlined {
+  border-bottom-color: blue;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.JemiUnderlined {
+  border-bottom-color: purple;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.Style1 {
+  font-family: Arial;
+  font-size: 7.0pt;
+  color: black;
+}

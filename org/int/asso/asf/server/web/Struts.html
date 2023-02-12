@@ -9,12 +9,11 @@
   en charge :</p>
 <ul>
   <li>la s�paration des <a href="/tech/info/soft/IHM.html">IHM</a> et des processus m�tiers</li>
-  <li>le contr�le de saisie des formulaires</li>
+  <li>le contrôle de saisie des formulaires</li>
   <li>diverses optimisations (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
 </ul>
 <h2><a href="/tech/info/soft/proj/Analyse.html">Analyse</a></h2>
-<p>Struts externalise les interactions entre requ�te et actions ainsi que
-  le contr�le de validit� des formulaires. </p>
+<p>Struts externalise les interactions entre requ�te et actions ainsi que le contrôle de validit� des formulaires. </p>
 <h2><a href="/tech/info/soft/proj/design/index.html">Conception</a></h2>
 
 <p>Struts applique le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> <a href="/tech/info/soft/prog/oo/java/MVC.html">MVC</a> qui
@@ -62,24 +61,22 @@
 </ul>
 <p>Tout formulaire se :</p>
 <ol>
-  <li> <strong>r�initialise</strong> via sa m�thode <code>reset()</code></li>
-  <li><strong>remplit</strong> � partir d'une requ�te (soumission d'un formulaire HTML) via
-    sa m�thode <code>populate()</code></li>
-  <li><strong>valide</strong>    (accepte ou rejete les donn�es qu'il contient)
-    via sa m�thode <code>validate()</code>.</li>
+  <li><strong>r�initialise</strong> via sa m�thode <code>reset()</code></li>
+  <li><strong>remplit</strong> � partir d'une requ�te (soumission d'un formulaire HTML) via sa m�thode
+    <code>populate()</code></li>
+  <li><strong>valide</strong> (accepte ou rejete les donn�es qu'il contient) via sa m�thode <code>validate()</code>.
+  </li>
 </ol>
-<h3>Contr�leur</h3>
-<p>Le contr�leur<strong> </strong>est constitu� de
-  :</p>
+<h3>contrôleur</h3>
+<p>Le contrôleur<strong> </strong>est constitu� de :</p>
 <ul>
   <li>une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html"><strong>servlet</strong></a> unique :
     <code>org.apache.struts.action.ActionServlet</code> fournie par Struts ou d�riv�e</li>
-  <li>des <strong>actions </strong>� impl�menter, d�rivant
-    de <code>org.apache.struts.action.Action</code>. En tant que commande, une
-    action n'a qu'� red�finir le code de sa m�thode <code>execute()</code> pour
-    indiquer ce qu'elle fait lorsqu'on l'invoque. Cette m�thode retourne un <code>ActionForward</code>    repr�sentant
-    le r�sultat de l'ex�cution. C'est en fonction de ce r�sultat que la prochaine
-    vue � afficher (ou autre action � ex�cuter) est choisie d'apr�s la configuration
+  <li>des <strong>actions </strong>� impl�menter, d�rivant de <code>org.apache.struts.action.Action</code>. En tant que
+    commande, une action n'a qu'� red�finir le code de sa m�thode <code>execute()</code> pour indiquer ce qu'elle fait
+    lorsqu'on l'invoque. Cette m�thode retourne un <code>ActionForward</code> repr�sentant le r�sultat de l'ex�cution.
+    C'est en fonction de ce r�sultat que la prochaine vue � afficher (ou autre action � ex�cuter) est choisie d'apr�s la
+    configuration
     Struts. Cependant, plusieurs autres actions plus sp�cialis�es sont disponibles
     :
     <ul>
@@ -399,7 +396,7 @@
 <h2>Notes</h2>
 <ul>
 
-  <li> les formulaires 
+  <li> les formulaires
 
     <ul>
 
@@ -411,27 +408,25 @@
 
   </li>
 
-  <li>Les actions 
+  <li>Les actions
 
     <ul>
 
       <li> appliquent le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande.</li>
-      <li>sont le prolongement du code de la servlet contr�leur, ce qui
-        implique que : 
+      <li>sont le prolongement du code de la servlet contrôleur, ce qui implique que :
         <ul>
           <li>elles ne sont pas <i><a href="/tech/info/soft/prog/oo/java/Thread.html">thread</a>-safe</i></li>
-          <li>elles adaptent les requ�te <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> �
-            la v�ritable logique m�tier ind�pendante du
-            Web  (<a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> adaptateur)</li>
+          <li>elles adaptent les requ�te <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> � la
+            v�ritable logique m�tier ind�pendante du Web (<a
+                href="/tech/info/soft/proj/design/pattern/index.html">DP</a> adaptateur)</li>
         </ul>
       </li>
     </ul>
   </li>
   <li>les sources de donn�es Struts
     <ul>
-      <li>(obsol�te) une (<code>GenericDataSource</code>) est livr�e
-        pour les infrastructures qui en manquent (<a href="Tomcat.html">Tomcat</a> 
-        par exemple).</li>
+      <li>(obsol�te) une (<code>GenericDataSource</code>) est livr�e pour les infrastructures qui en manquent (<a
+          href="Tomcat.html">Tomcat</a> par exemple).</li>
       <li>ne sont pas recommand�es � moins de ne disposez d'aucun pool de connexion (dans <a
           href="Tomcat.html">Tomcat</a> par exemple). En effet elles ne sont pas performantes et ne sont accessibles
         qu'� partir du <code>ServletContext</code> de la WebApp. Mieux vaut leurs pr�ferer les sources de donn�es
@@ -443,21 +438,23 @@
       </li>
     </ul>
   </li>
-  <li>Le travail d'initialisation/de terminaison peut �tre r�alis� via un plugin
-    Struts plut�t que par une servlet de contr�le sp�cialisant celle de Struts.</li>
+  <li>Le travail d'initialisation/de terminaison peut �tre r�alis� via un plugin Struts plut�t que par une servlet de
+    contrôle sp�cialisant celle de Struts.</li>
 </ul>
 
 <h2>Exemples</h2>
 <ul>
-  <li>Actions 
+  <li>Actions
     <ul>
-      <li><a href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/Java/org/orange/kicsa/presentation/control/skill/">Gestion
+      <li><a
+          href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/Java/org/orange/kicsa/presentation/control/skill/">Gestion
         des comp�tences KiCsa</a></li>
     </ul>
   </li>
-  <li>Configuration Struts 
+  <li>Configuration Struts
     <ul>
-      <li><a href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/WebAoo/WEB-INF/struts-config.xml?rev=1.1.1.1&content-type=text/vnd.viewcvs-markup">Configuration
+      <li><a
+          href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/WebAoo/WEB-INF/struts-config.xml?rev=1.1.1.1&content-type=text/vnd.viewcvs-markup">Configuration
         Struts de KiCsa</a></li>
     </ul>
   </li>
@@ -478,15 +475,14 @@
 
 <h2>Voir</h2>
 <ul>
-  <li>Struts 
+  <li>Struts
     <ul>
       <li><a href="https://apache.i-connexion.net/dist/jakarta/struts/binaries">T�l�chargement</a></li>
       <li><a href="https://jakarta.apache.org/struts/userGuide">Guide de l'utilisateur</a></li>
       <li><a href="https://jakarta.apache.org/struts/api">API</a></li>
       <li><a href="https://rollerjm.free.fr/pro/Struts.html">Validateur </a>
         <ul>
-          <li><a href="https://home.earthlink.net/%7Edwinterfeldt">Struts validator</a>
-            par David winterfeldt</li>
+          <li><a href="https://home.earthlink.net/%7Edwinterfeldt">Struts validator</a> par David winterfeldt</li>
         </ul>
       </li>
       <li>Didacticiel
@@ -513,11 +509,10 @@
         Sapi Struts Generator</a></li>
     </ul>
   </li>
-  <li>Test 
+  <li>Test
     <ul>
-      <li><a href="https://strutstestcase.sourceforge.net/">Struts TestCase for
-        JUnit</a> - Test des actions Struts hors ou � l'int�rieur
-        d'un conteneur Web.</li>
+      <li><a href="https://strutstestcase.sourceforge.net/">Struts TestCase for JUnit</a> - Test des actions Struts hors
+        ou � l'int�rieur d'un conteneur Web.</li>
     </ul>
   </li>
   <li>Husted - <a href="https://www.husted.com/struts/">More about Struts</a></li>

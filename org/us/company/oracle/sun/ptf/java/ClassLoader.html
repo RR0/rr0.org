@@ -37,8 +37,8 @@
   </thead>
   <tr>
     <th>Type</th>
-    <th colspan="2">Syst�me</th>
-    <td class="oui">Chargement de l'ensemble des classes (syst�me ou non) accessibles depuis le <code>CLASSPATH</code>
+    <th colspan="2">système</th>
+    <td class="oui">Chargement de l'ensemble des classes (système ou non) accessibles depuis le <code>CLASSPATH</code>
     </td>
     <td class="oui" colspan="4">Chargement des classes de la plate-forme Java (<i>Core API</i>), c'est-�-dire provenant
       des fichiers situ�s dans <q><code>%JAVA_HOME%/lib/</code></q> et <code>%JAVA_HOME%/jre/lib/ext/</code></td>
@@ -47,9 +47,9 @@
       et n'est pas accessible par le d�veloppeur). On peut identifier les classes charg�es par ce ClassLoader en
       examinant la valeur retourn�e par <code><i>LaClasse</i>.getClassLoader()</code>. Une classe utilisateur (provenant
       du <code>CLASSPATH</code> ou d'ailleurs) retournera une instance de java.net.URLClassLoader (par d�faut <q><code>sun.misc.AppLauncher$AppClassLoader</code></q><code>)</code>,
-      tandis qu'une classe syst�me retournera <code>null</code>, ce qui d�signe le chargeur de classe syst�me. Les
+      tandis qu'une classe système retournera <code>null</code>, ce qui d�signe le chargeur de classe système. Les
       chargeurs de classes sont �galement responsables du chargement d'autres ClassLoaders, ce qui implique une
-      d�finition circulaire. C'est pourquoi on appelle le chargeur syst�me le <i>primordial class loader</i> (on trouve
+      d�finition circulaire. C'est pourquoi on appelle le chargeur système le <i>primordial class loader</i> (on trouve
       �galement les termes de <i>internal class loader</i>, <i>bootstrap class loader </i>ou <i>default class loader</i>,
       cette derni�re appelation �tant trompeuse dans la mesure o� le chargement d'une classe par d�faut ne passe plus
       dans Java 2 par ce chargeur mais par un v�ritable ClassLoader).
@@ -59,7 +59,7 @@
     <th></th>
     <th colspan="2">RMI</th>
     <td class="oui" colspan="5">Oui</td>
-    <td>Comme le chargeur de classes syst�me, ce chargeur n'est pas un ClassLoader � proprement parler (il n'h�rite pas
+    <td>Comme le chargeur de classes système, ce chargeur n'est pas un ClassLoader � proprement parler (il n'h�rite pas
       de <code>java.lang.ClassLoader</code>).
     </td>
   </tr>
@@ -77,7 +77,7 @@
     <th colspan="2">URL</th>
     <td class="non">Non</td>
     <td class="oui" colspan="4"><code>java. net. URLClassLoader</code></td>
-    <td>Sp�cialisation du <code>SecureClassLoader</code> anc�tre des ClassLoaders chargeant des classes non-syst�me.
+    <td>Sp�cialisation du <code>SecureClassLoader</code> anc�tre des ClassLoaders chargeant des classes non-système.
       permet de charger une classe r�f�renc�e par une URL (de type <code>https://</code> ou <code>file://</code> ),
       situ�e dans un fichier (<code>.class</code> ou <code>.jar</code>) o� � partir d'une liste d'URL par ordre de
       pr�f�rence. Par d�faut, les classes charg�es depuis un tel ClassLoader s�curis� ne pourront acc�der qu'aux classes
@@ -101,7 +101,7 @@
   <li>Jouent un r�le d�terminant dans la s�curit�.</li>
   <li> Il peut donc exister divers ClassLoaders en m�moire, fonction du nombre d'origines de code diff�rentes.</li>
   <li>Il est possible de conna�tre le ClassLoader d'une classe via MaClasse.getClassLoader(). Une valeur null indique
-    que la classe examin�e est une classe syst�me de la plate-forme (java.lang.String par exemple, mais aussi les types
+    que la classe examin�e est une classe système de la plate-forme (java.lang.String par exemple, mais aussi les types
     primitifs tels que <code>int</code>). Le ClassLoader d'un tableau est le ClassLoader correspondant au type des
     �l�ments de ce tableau.</li>
 </ul>

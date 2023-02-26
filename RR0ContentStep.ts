@@ -10,6 +10,6 @@ export class RR0ContentStep extends ContentStep {
   }
 
   protected shouldProcess(_context: SsgContext): boolean {
-    return true
+    return true // TODO: Don't process unmodified files
   }
 }

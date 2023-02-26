@@ -1295,6 +1295,7 @@ dl.bullet dd {
 #main-nav li {
   list-style: none;
   display: inline-block;
+  padding: 0.6em;
 }
 
 .anchor {

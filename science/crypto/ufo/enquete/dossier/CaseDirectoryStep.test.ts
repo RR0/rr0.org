@@ -21,11 +21,11 @@ describe("DirectoryStep", () => {
 <!--#echo var="directories" -->
 <p>After</p>
 <!--#include virtual="/footer.html" -->`
-    const context = rr0TestUtil.newContext("science/crypto/ufo/enquete/dossier/index.html", template)
+    const context = rr0TestUtil.newContext("/science/crypto/ufo/enquete/dossier/index.html", template)
     const step = new CaseDirectoryStep(
-      ["science/crypto/ufo/enquete/dossier/*/"],
+      ["/science/crypto/ufo/enquete/dossier/*/"],
       [],
-      "science/crypto/ufo/enquete/dossier/index.html",
+      "/science/crypto/ufo/enquete/dossier/index.html",
       outputFunc, config)
     const stepResult = await step.execute(context)
     expect(stepResult.directoryCount).toBe(239)

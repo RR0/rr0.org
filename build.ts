@@ -59,7 +59,7 @@ const contentRoots = cliContents
     "people/**/*.html",
     "place/**/*.html",
     "politique/**/*.html",
-    "science/**/*.html",
+    "/science/**/*.html",
     "tech/**/*.html",
     "politique/**/*.html",
     "udb/*.html",
@@ -83,7 +83,10 @@ const config: SsgConfig = {
 
 const outputFunc: OutputFunc
   = async (context: SsgContext, info: SsgFile, outDir = config.outDir + "/"): Promise<void> => {
-  info.name = `${outDir}${info.name}`
+  // TODO: Fix this
+  if (!info.name.startsWith(outDir)) {
+    info.name = outDir + info.name
+  }
   try {
     context.log("Writing", info.name)
     await info.write()
@@ -184,7 +187,8 @@ getTimeFiles().then(async (timeFiles) => {
     }
   ]
   new Ssg(config)
-    .add(new RR0ContentStep(contentConfigs, outputFunc))
+    .add(new RR0ContentStep(
+      contentConfigs, outputFunc))
     .add(ufoCasesStep)
     .add(...peopleSteps)
     .add(new SearchIndexStep("search/index.json", searchCommand))

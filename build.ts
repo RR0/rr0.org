@@ -59,7 +59,7 @@ const contentRoots = cliContents
     "people/**/*.html",
     "place/**/*.html",
     "politique/**/*.html",
-    "/science/**/*.html",
+    "science/**/*.html",
     "tech/**/*.html",
     "politique/**/*.html",
     "udb/*.html",

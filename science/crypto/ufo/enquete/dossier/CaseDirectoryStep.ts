@@ -103,8 +103,8 @@ export class CaseDirectoryStep extends DirectoryStep {
     const ufoCasesDirectories = await findDirectoriesContaining("case.json")
     return new CaseDirectoryStep(
       ufoCasesDirectories,
-      ["/science/crypto/ufo/enquete/dossier/canular"],
-      "/science/crypto/ufo/enquete/dossier/index.html",
+      ["science/crypto/ufo/enquete/dossier/canular"],
+      "science/crypto/ufo/enquete/dossier/index.html",
       outputFunc, config)
   }
 }

@@ -21,7 +21,8 @@
     "@rr0/common": "~1.0.1",
     "ssg-api": "~1.4.2",
     "skia-canvas": "~1.0.1",
-    "@googlemaps/google-maps-services-js": "^3.3.16"
+    "@googlemaps/google-maps-services-js": "^3.3.16",
+    "@rr0/udb": "^1.0.4"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "~0.7.0",

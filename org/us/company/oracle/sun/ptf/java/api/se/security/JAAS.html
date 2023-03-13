@@ -1,0 +1,65 @@
+<!--#include virtual="/header-start.html" -->
+<title>JAAS</title>
+<meta content="https://java.sun.com/products/jaas" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Java Authentication and Authorization Service</i> : Service Java d'authentification et d'autorisation.
+</p>
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Définir une API <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">Java</a> standard pour
+      <ul>
+        <li><b>authentifier</b> un utilisateur ;</li>
+        <li><b>autoriser </b>: soumettre l'exécution d'actions à des droits utilisateur ;</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Organisation<q></q></h2>
+  <p>JAAS possède deux fonctionnalités :</p>
+  <ul>
+    <li><b>authentification </b>pluggable, afin de rendre le code indépendant de la technologie d'authentification ;
+    </li>
+    <li><b>autorisation</b>, déterminée par :
+      <ul>
+        <li>le code ;</li>
+        <li>une politique (<i>policy</i>) de sécurité, spécifiant les droits attribués aux utilisateurs.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Implémentation Java d'un <i>Pluggable Authentication Module </i>(PAM) ;</li>
+    <li>Utilisable par tout code Java : applet, bean, servlet ;</li>
+    <li>Package optionnel pour <span class="source">[<a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a>
+    1.3]</span> ;</li>
+    <li>Intégré à <span class="source">[<a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a>
+    1.4]</span> ;</li>
+    <li>SSO via Kerberos ;</li>
+    <li>Un utilisateur peut être une autre application ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Il existe des exemples d'authentification JAAS en:</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></li>
+    <li>Unix</li>
+    <li>Windows NT</li>
+    <li>Kerberos</li>
+    <li>KeyStore</li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li><i><a href="https://www-106.ibm.com/developerworks/java/library/j-jaas">Extend JAAS for class instance-level
+      authorization</a></i> par <a href="mailto:cafonseca@us.ibm.com">Carlos A. Fonseca</a> pour IBM DevelopperWorks
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

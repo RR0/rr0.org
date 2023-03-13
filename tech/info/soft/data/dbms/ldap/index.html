@@ -1,0 +1,35 @@
+<!--#include virtual="/header-start.html" -->
+<title>LDAP</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Lightweight Directory Access Protocol</i> : protocole standard d'annuaire.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Définir un protocole standard d'accès à un annuaire.</p></section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Standard défini par la <a href="https://info.internet.isi.edu:80/in-notes/rfc/files/rfc2251.txt">RFC 2251</a> ;
+    </li>
+    <li>Hiérarchique ;</li>
+    <li>Un annuaire est accédé depuis Java via <a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a> ;
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li> Non transactionnel ;</li>
+    <li>Peu adapté aux mises à jour fréquentes (optimisé pour la lecture) ;</li>
+    <li>Peu adapté aux relations ;</li>
+    <li>Clustering non standard ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'annuaires LDAP sont :</p>
+  <ul>
+    <li>Netscape Directory Server</li>
+    <li>Lotus Domino</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

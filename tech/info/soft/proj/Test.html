@@ -1,0 +1,82 @@
+<!--#include virtual="/header-start.html" -->
+<title>Test</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Valider une <a href="impl/index.html">implémentation</a>.</p></section>
+<section>
+  <h2><a href="Analyse.html">Analyse</a></h2>
+  <p>Le test est une <a href="Discipline.html">discipline</a> du développement d'application.</p>
+  <p>On peut distinguer les tests en fonction de leur :</p>
+  <ul>
+    <li>objectif :
+      <ul>
+        <li><b>scénario</b> : vérifier que le comportement fonctionnel est bien celui attendu</li>
+        <li><b>non-regression</b> : ce qui fonctionnait dans les versions précédentes du code fonctionne toujours dans
+          la nouvelle version
+        </li>
+        <li><b><a href="/tech/info/Performance.html">performance</a> </b>(<i>bench</i>) ou <b>charge</b> (<i
+            lang="en">load</i>) : les temps de réponse à une requête sont conformes aux attentes
+        </li>
+        <li><b>intégration/fonctionnels </b>: le code s'intègre bien avec les autres éléments du système.</li>
+      </ul>
+    </li>
+    <li>cible :
+      <ul>
+        <li><b>scénarios</b> : tester un cas d'utilisation</li>
+        <li><b>unitaires</b> : tester un composant du système</li>
+      </ul>
+    </li>
+    <li>technologie :
+      <ul>
+        <li><strong>Web </strong>: envoyer des requêtes Web simulant le comportement d'utilisateur(s)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li><a href="/tech/info/soft/proj/method/XP.html">XP</a> compte parmis ses recommandations les tests unitaires
+      systématiques et les tests d'intégration continue.
+    </li>
+    <li>Une bonne pratique de <a href="design">conception</a> est le créer le test d'une fonctionnalité avant
+      d'implémenter cette fonctionnalité (<em>test-driven </em>ou <em>test-first design</em>), afin de :
+      <ul>
+        <li>s'assurer de l'adéquation de la conception/réalisation au <a href="req/Besoin.html">besoin</a> exprimé par
+          le test
+        </li>
+        <li>garantir qu'une fonctionnalité peut être constamment vérifiée/évaluée au fil de son implémentation.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'outils de test sont :</p>
+  <ul>
+    <li>Mercury</li>
+    <li>Test Web
+      <ul>
+        <li>Load Runner</li>
+        <li>HttpUnit</li>
+      </ul>
+    </li>
+    <li>Tests unitaires
+      <ul>
+        <li><a href="/tech/info/soft/prod/JUnit.html">JUnit</a></li>
+      </ul>
+    </li>
+    <li>Tests fonctionnels/d'intégration
+      <ul>
+        <li><a href="https://jfunc.sourceforge.net">JFunc</a></li>
+      </ul>
+    </li>
+    <li>Test de charge/performance
+      <ul>
+        <li><a href="https://jakarta.apache.org/jmeter">JMeter</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -3,7 +3,7 @@
 <meta content="https://java.sun.com/products/jpda" name="url"/>
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Java Platform Debugger Architecture</i> : Architecture de <a
-    href="/tech/info/soft/proj/impl/Debugging.html">Deboggage</a> de la <a
+    href="/tech/info/soft/proj/impl/Debugging.html">Débugage</a> de la <a
     href="/org/us/company/oracle/sun/ptf/java/api/se">plate-forme Java</a>.</p>
 <section>
   <h2>Besoin</h2>
@@ -41,7 +41,7 @@
     <li>un <strong>nom</strong> unique</li>
     <li>une <strong>implémentation </strong>
       <ul>
-        <li>mono- ou multi-machines, ou les 2</li>
+        <li>mono- ou multi-machines ou les 2</li>
         <li>paramétré par une <strong>adresse</strong> (chaîne libre interprétée par l'implémentation du transport)</li>
       </ul>
     </li>
@@ -51,13 +51,13 @@
         <li>un <strong>nom</strong> unique</li>
         <li>une <strong>implémentation </strong>
           <ul>
-            <li>mono- ou multi-machines, ou les 2</li>
+            <li>mono- ou multi-machines ou les 2</li>
             <li>paramétré par une <strong>adresse</strong> (chaîne libre interprétée par l'implémentation du transport)
             </li>
           </ul>
         </li>
-        <li>un <strong>serveur </strong>(le debogueur ou la VM cible) </li>
-        <li>un <strong>client </strong>(le debogueur ou la VM cible) s'<strong>attachant</strong> au serveur </li>
+        <li>un <strong>serveur </strong>(le débogueur ou la VM cible) </li>
+        <li>un <strong>client </strong>(le débogueur ou la VM cible) s'<strong>attachant</strong> au serveur </li>
       </ul>
     </li>
   </ul>
@@ -75,7 +75,7 @@
       <td><a href="/org/us/company/oracle/sun/ptf/java/vm/debug/JDWP.html">JDWP</a></td>
     </tr>
     <tr>
-      <th><a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a> deboguée</th>
+      <th><a href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a> déboguée</th>
       <td><a href="/org/us/company/oracle/sun/ptf/java/vm/profile/JVMTI.html">JVM TI</a></td>
     </tr>
   </table>
@@ -138,12 +138,12 @@
   <p>L'implémentation de référence de JPDA contient les implémentations suivantes de transport :</p>
   <ul>
     <li><strong>mémoire partagée</strong> (Windows) : </li>
-    <li><strong>socket </strong>réseau (Windows, Solaris) : communication entre deborguer et VM cible via <a
+    <li><strong>socket </strong>réseau (Windows, Solaris) : communication entre debugger et VM cible via <a
         href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/IP</li>
   </ul>
 </section>
 <section>
-  <h2>Deploiement</h2>
+  <h2>Déploiement</h2>
   <table>
     <thead>
     <tr>
@@ -267,11 +267,11 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Une JVM ne peut exécuter que 1 seul debugger (mais ce débugger peut débugger plusieurs VM cibles)</li>
+    <li>Une JVM ne peut exécuter que 1 seul debugger (mais ce debugger peut déboguer plusieurs VM cibles)</li>
     <li>Une JVM en mode classic peut toujours utiliser sun.tools.debug, mais pas une HotSpot</li>
-    <li>Une application debuggante doit s'exécuter dans un <a
+    <li>Une application débuggante doit s'exécuter dans un <a
         href="/tech/info/soft/proj/design/arch/platform/Processus.html">processus</a> différent de l'application
-      debuggée, afin de rester indépendante de divers <a href="/tech/info/SideEffect.html">effets de bord</a> (l'ordre
+      déboguée, afin de rester indépendante de divers <a href="/tech/info/SideEffect.html">effets de bord</a> (l'ordre
       dans lequel les <a href="/tech/info/soft/proj/impl/lang/oo/Classe.html">classes</a> sont <a
           href="/org/us/company/oracle/sun/ptf/java/ClassLoader.html">chargées</a>, l'ordonnancement des <a
           href="/tech/info/soft/proj/design/arch/platform/Thread.html">threads</a>, attente de relâchement de verrous)

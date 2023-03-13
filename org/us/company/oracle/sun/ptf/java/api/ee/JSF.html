@@ -1,0 +1,97 @@
+<!--#include virtual="/header-start.html" -->
+<title>JSF</title>
+<meta content="https://java.sun.com/j2ee/javaserverfaces" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Java Server Faces</i> : faces serveur Java.</p>
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Permettre de développer facilement des applications serveur avec une <a href="/tech/info/soft/IHM.html">IHM</a>
+      riche. </li>
+    <li>supporter plusieurs types d'affichages (et donc plusieurs types de clients)</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>JSF permet de : </p>
+  <ul>
+    <li>développer des <strong>composants </strong><a href="/tech/info/soft/IHM.html">IHM</a> et
+      <ul>
+        <li>gérer leurs états</li>
+        <li>gérer leurs événements </li>
+        <li>valider les saisies</li>
+        <li>définir la navigation des pages</li>
+        <li>supporter l'internationalisation et accessibilité.</li>
+      </ul>
+    </li>
+    <li>produit des <strong>rendus </strong>(<em>renderers</em>) de ces composants via un <strong>kit de rendu</strong>
+      (<em>RenderKit</em>) pour un type de client donné</li>
+    <li>gérer côté serveur les <strong>événements </strong>de ces composants venant du client </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>JSF applique le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> <a
+      href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a> :</p>
+  <ul>
+    <li>Le contrôleur <code>FaceServlet</code> reçoit les requêtes clientes</li>
+  </ul>
+  <p>est composé de :</p>
+  <ul>
+    <li> un ensemble d'<a href="/tech/info/soft/API.html">API</a> permettant de représenter des composants <a
+        href="/tech/info/soft/IHM.html">IHM</a>, héritant tous de <code>UIComponent</code>. Par exemple le composant de
+      formulaire <code>HtmlForm</code> du RenderKit <a href="/tech/info/soft/data/doc/html">HTML</a> hérite d'un <code>UIForm</code>
+      neutre qui implémente lui-même <code>UIComponent</code>. </li>
+    <li>une TagLib représentant les concepts JSF dans une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>.
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Déploiement</h2>
+  <ul>
+    <li>Intégré dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a> 1.4+
+      <ul>
+        <li>nécessite Servlet 2.3 et éventuellement JSP 1.2.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Implémentations :</p>
+  <ul>
+    <li><a href="https://java.sun.com/j2ee/javaserverfaces/download.html">Implémentation de référence</a> (RI)</li>
+    <li>Apache <a href="https://myfaces.apache.org/">MyFaces </a></li>
+  </ul>
+  <p>IDEs :</p>
+  <ul>
+    <li><a href="https://developers.sun.com/prodtech/javatools/jscreator/index.jsp">Sun Java Studio Creator</a></li>
+    <li><a href="https://www.borland.com/jbuilder/">Borland JBuilder</a></li>
+    <li><a href="https://www-306.ibm.com/software/info1/websphere/index.jsp">IBM Websphere</a></li>
+    <li><a href="https://otn.oracle.com/products/jdev/index.html">Oracle JDeveloper</a></li>
+  </ul>
+  <p>Fournisseurs de composants :</p>
+  <ul>
+    <li><a href="https://www.otrix.com/products">Otrix WebMenu</a></li>
+    <li><a href="https://www.ilog.com/products/jviews">ILOG JViews</a></li>
+    <li><a href="https://www.quest.com/jclass">Quest Software JClass</a></li>
+    <li><a href="https://www.chartfx.com/SfxJavaProducts/">Software FX Chart FX</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Standard similaire/complémentaire aux <a href="/tech/info/soft/Framework.html">frameworks</a> <a
+        href="/org/int/asso/asf/server/web/Struts.html">Struts</a> ou <a href="https://tapestry.sourceforge.net">Tapestry</a>.
+    </li>
+    <li>JSR 127.</li>
+    <li>Nécessite le <a href="/org/us/company/oracle/sun/ptf/java/api/ext/webservice/JWSDP.html">JWSDP</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="https://java.sun.com/j2ee/javaserverfaces/docs/JSFTOC.html">Tutoriel</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

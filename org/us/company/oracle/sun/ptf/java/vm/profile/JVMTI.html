@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>JVMTI</title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<h1><span class="sourceIdent1"></span> <a href="https://java.sun.com/j2se/1.5.0/docs/guide/jvmti/">J. V. M. T. I.</a>
+</h1>
+<table width="100%">
+  <tr>
+    <th colspan="4"><a href="/tech/info/index.html">Home</a></th>
+  </tr>
+</table>
+
+<p><em>JVM Tool Interface </em> : Interface pour les outils interagissant avec des <a
+    href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a>s. </p>
+<h2>Besoin</h2>
+<p>Inspecter l'état et contrôler l'exécution d'applications Java. </p>
+<h2>Analyse</h2>
+<p>JVMTI est une interface bidirectionnelle où un <strong>agent </strong>(client situé dans la même <a
+    href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a> que celle de l'application examinée)</p>
+<ul><li>recevant des <strong>événements</strong></li>
+  <li>pouvant invoquer des <strong>fonctions </strong></li>
+</ul>
+<p>Cet agent peut lui-même être contrôlé par un outil (dans le même <a
+    href="/tech/info/soft/prog/oo/java/Processus.html">processus</a> ou un processus différent).</p>
+<h2>Implémentation</h2>
+<p>Les agents peuvent être écrits en n'importe quel langage supportant les conventions d'appel <a
+    href="/tech/info/soft/prog/c/index.html">C</a>/<a href="/tech/info/soft/prog/cpp/CPP.html">C++</a>.</p>
+<h2>Conception</h2>
+<h2>Déploiement</h2>
+<p>JVM TI fait partie de la <a href="/tech/info/soft/prog/oo/java/JPDA.html">JPDA</a>. </p>
+<table>
+  <caption>
+    JVM TI
+  </caption>
+  <tr>
+    <td class="titleCorner"></td>
+    <th colspan="4"><a href="/tech/info/soft/prog/oo/java/J2SDK.html">Java SDK</a></th>
+    <th rowspan="2"> Commentaire</th>
+  </tr>
+  <tr>
+    <td class="titleCorner"></td>
+    <th>1.2.2</th>
+    <th>1.3</th>
+    <th>1.4</th>
+    <th>1.5</th>
+  </tr>
+  <tr>
+    <th></th>
+    <td colspan="3"><code></code><a href="/tech/info/soft/prog/oo/java/JVMDI.html">JVM DI</a> + JVM PI</td>
+    <td class="oui">Oui</td>
+    <td></td>
+  </tr>
+</table>
+<p>Exemple</p>
+<p>Des exemples d'outils utilisant JVM TI sont les outils de :</p>
+<ul>
+  <li><a href="/tech/info/soft/proj/impl/Debugging.html">deboguage</a> (<a href="/tech/info/soft/prod/ide/index.html">IDE</a>s)
+  </li>
+  <li>optimisation (<em>profiling</em>)</li>
+  <li>surveillance (<em>monitoring</em>)</li>
+  <li>analyse de thread</li>
+  <li>test de couverture (<em>coverage</em>) </li>
+</ul>
+<h2>Notes</h2>
+<ul>
+  <li>JVMTI peut être utilisé directement par des applications, mais le cas le plus courant (car le plus pratique) reste
+    son utilisation à travers la <a href="/tech/info/soft/prog/oo/java/JDI.html">JDI</a> ou <a
+        href="/tech/info/soft/prog/oo/java/JDWP.html">JDWP</a>.</li>
+</ul>
+<table width="100%">
+  <tr>
+    <th colspan="4"><a href="/tech/info/index.html">Home</a></th>
+  </tr>
+</table>
+</body>
+</html>

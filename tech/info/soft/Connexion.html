@@ -1,0 +1,48 @@
+<!--#include virtual="/header-start.html" -->
+<title>Connexion</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="fr">Connection</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Maintenir un flux d'échange de données.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une connexion fournit des flux en :</p>
+  <ul>
+    <li>écriture </li>
+    <li>lecture</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Les connexions utilisent souvent <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/IP comme <a
+      href="/tech/info/soft/reseau/protocole">protocole</a> de transport des données.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Les connexions sont souvent manipulée via une API de <a href="/tech/info/soft/reseau/protocole/Socket.html">prises
+    (<em>sockets</em>)</a>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de connexions sont :</p>
+  <ul>
+    <li> une connexion entre une <a href="Application.html">application</a> et un <a
+        href="prod/server/sgbd/r/index.html">SGBDR</a>
+      <ul>
+        <li>sur laquelle un certain nombre de requêtes peuvent être émises en parallèle</li>
+      </ul>
+    </li>
+    <li>une connexion <a href="proj/design/arch/web/HTTP.html">HTTP</a> entre un <a
+        href="proj/design/arch/web/client/index.html">navigateur Web</a> et un <a
+        href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a></li>
+    <li>une connexion <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Les connexions sont souvent <a href="/tech/info/soft/Pooling.html">mutualisées (<i lang="en">pooled</i>)</a>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

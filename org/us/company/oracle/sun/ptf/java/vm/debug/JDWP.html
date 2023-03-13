@@ -1,0 +1,28 @@
+<!--#include virtual="/header-start.html" -->
+<title>JDWP</title>
+<meta content="https://java.sun.com/j2se/1.5.0/docs/guide/jpda/jdwp-spec.html" name="url"/>
+<!--#include virtual="/header-start.html" -->
+<p><i lang="en">Java Debug Wire Protocol</i> : Protocole de communication de <a
+    href="/tech/info/soft/proj/impl/Debugging.html">debugging</a> en Java. </p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un protocole <a href="/tech/info/soft/reseau">réseau</a> <em>portable</em> permettant la <a
+      href="/tech/info/soft/proj/impl/Debugging.html">mise-au-point</a> à distance (<em>remote <a
+      href="/tech/info/soft/proj/impl/Debugging.html">debugging</a></em>). </p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>JDWP définit le format des informations et des requêtes transférées entre le processus débogué et l'interface de <a
+      href="/tech/info/soft/proj/impl/Debugging.html">debugging</a>.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>JDWP fait partie de la <a href="/org/us/company/oracle/sun/ptf/java/vm/debug/JPDA.html">JPDA</a>. </p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>JDWP peut être exploité directement par des applications (par exemple si celles-ci ne sont pas en <a
+        href="/org/us/company/oracle/sun/ptf/java">Java</a>), mais le cas le plus courant (car le plus pratique) depuis
+      des applications <a href="/org/us/company/oracle/sun/ptf/java">Java</a> reste son utilisation à travers la <a
+          href="/org/us/company/oracle/sun/ptf/java/api/JDI.html">JDI</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

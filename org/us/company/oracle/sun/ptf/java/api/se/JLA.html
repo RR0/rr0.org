@@ -1,0 +1,73 @@
+<!--#include virtual="/header-start.html" -->
+<title>JLA</title>
+<meta content="https://java.sun.com/j2se/1.4/docs/guide/util/logging" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Java Logging API</i>.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Fournir une API de trace <a href="/org/us/company/oracle/sun/ptf/java">Java</a> standard ;</p></section>
+<section>
+  <h2>Organisation</h2>
+  <p>JLA est composé de :</p>
+  <ul>
+    <li>un<b><i> log manager</i></b> qui gère :
+      <ul>
+        <li>la <b>configuration </b>globale de trace ;</li>
+        <li>des <b><i>loggers </i></b>qui représentent des catégories de traces, caractérisés par :
+          <ul>
+            <li>un <b>nom </b>hiérarchique, généralement similaire aux packages et à la classe émétrice de la trace (<q>org.javarome.MaClasse</q>
+              par exemple). Par défaut tous les messages envoyés à un logger fils sont envoyés à son père ;</li>
+            <li>un <b>niveau </b>(FINE, FINER, FINEST, ou SEVERE, WARNING, INFO, CONFIG, ALL, OFF) optionnel car un
+              logger hérite du niveau de son père ;</li>
+            <li>(optionnellement) un <b>filtre</b> ;</li>
+            <li>des <b><i>handlers</i></b> qui représentent des destinations de trace (console, fichiers rotatifs,
+              sockets). Les <i>handlers</i> référencent :
+              <ul>
+                <li>(optionnellement) un <b>filtre</b> ;</li>
+                <li>un<b><i> formatter</i></b> qui définit le format d'écriture d'un <i>handler </i>(simple, XML) ;</li>
+                <li>(optionnellement) d'autres <i>handlers</i> ;</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'utilisation de JLog sont :</p>
+  <blockquote><q><b>Logger </b>logger = <b>Logger.getLogger</b> ("org.javarome.exemple"); </q><br/> <q>logger<b>.setLevel </b>(<b>Level.FINE</b>);
+    // Pourrait être défini dans le fichier de configuration</q><br/> <q><b>Logger </b>autreLogger =
+    <b>Logger.getLogger </b>("org.javarome.autre");<br/> logger<b>.log</b> (<b>Level.FINER</b>, "Attention"); // Ok, car
+    WARNING &gt;= INFO<br/> </q><q>logger<b>.severe </b> ("MaClass", "Je suis juste après", "'Attention'"); // Non
+    affiché, car FINE&lt; INFO</q><q><br/> if (logger.<b>isLogging </b>(<b>Level.FINEST</b>)) <br/> autreLogger.<b>finest </b>("Located
+    nearest gas station.");</q><q> // Affiché car autreLogger hérite du niveau INFO de son père logger<br/>
+    autreLoger.<b>debug</b> ("Exiting gas station search"); // Non affiché car autreLogger hérite du niveau INFO &gt;
+    FINE de son père logger</q></blockquote>
+</section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li> Dans le cadre d'exécution d'un conteneur <a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a>, ce
+      dernier remplace le <i>log manager</i> ;</li>
+    <li>Méthodes utiles pour signaler les entrées et sorties de méthode ;</li>
+    <li>Internationalisation intégrée (<q>getLogger (ResourceBundle)</q> et <q>logger.info ("Mon message {0} : {1}",
+      tableauValeurs)</q>) ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'applications utilisant JLA sont :</p>
+  <ul>
+    <li></li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Eviter les concaténations de chaînes avec des "+" dans les chaînes de log (effectuées même quand le log est
+      désactivé) ;</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

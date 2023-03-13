@@ -1,0 +1,120 @@
+<!--#include virtual="/header-start.html" -->
+<title>Log4J</title>
+<meta content="https://jakarta.apache.org/log4j" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Log four Java = Log for Java </i>: <a href="/tech/info/soft/proj/impl/Log.html">trace</a> pour Java.</p>
+<h2>Besoin</h2>
+<p>Fournir une <a href="/tech/info/soft/API.html">API</a> de <a href="/tech/info/soft/proj/impl/Log.html">trace</a> <a
+    href="/org/us/company/oracle/sun/ptf/java">Java</a> et <a href="/tech/info/soft/prod/licence/oss">Open Source</a>
+</p>
+<h2>Conception</h2>
+<p>Log4J est composé de :</p>
+<ul>
+  <li><b><i>loggers </i></b>qui représentent des catégories de traces, caractérisés par :
+    <ul>
+      <li>un <b>nom </b>hiérarchique, généralement similaire aux packages et à la classe émettrice de la trace (<code>org.javarome.MaClasse</code>
+        par exemple). Par défaut tous les messages envoyés à un logger fils sont envoyés à son père.</li>
+      <li>un <b>niveau </b>(ALL, INFO, DEBUG, WARN, ERROR, FATAL, OFF ou autre) optionnel car un logger hérite du niveau
+        de son père.</li>
+      <li>des <b><i>appenders</i></b> qui représentent des destinations de trace (console, fichier, composants d'IHM,
+        sockets, destinations JMS, journal d'événements de NT, démons Unix Syslog ou autre). Par ce biais on peut
+        également tracer de manière synchrone ou asynchrone. Les <i>appenders</i> référencent :
+        <ul>
+          <li>un<b><i> layout</i></b> qui définit le format d'écriture d'un <i>appender</i> (syntaxe à la
+            <code>printf</code> du <a href="/tech/info/soft/proj/impl/lang/c">C</a> ou autre). L'affichage de la valeur
+            d'objets complexes (héritant les uns des autres par exemple) peut être réalisé via un
+            <code>ObjectRenderer</code> afin d'éviter de détourner <code>toString()</code>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h2>Implémentation</h2>
+<table>
+  <tr>
+    <td rowspan="2">Log4J</td>
+    <th>Version</th>
+    <th colspan="4">1</th>
+  </tr>
+  <tr>
+    <th>Release</th>
+    <th colspan="4">2</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Maintenance</th>
+    <th></th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+  </tr>
+  <tr>
+    <th>Configuration</th>
+    <th></th>
+    <td class="oui" colspan="2">log4.properties</td>
+    <td class="oui" colspan="2">log4.xml</td>
+  </tr>
+</table>
+<h2>Exemples</h2>
+<p>Des exemples d'utilisation de Log4J sont :</p>
+<blockquote><b><code>Logger </code></b><code>applogger = <b>Logger.getLogger</b> (<span class="codeString">"org.javarome.prosper"</span>);
+  <br> logger<b>.setLevel </b>(<b>Level.INFO</b>); <span class="codeComment">//
+  Pourrait être défini dans le fichier de configuration</span><br> <b>Logger </b>presentationLogger = <b>Logger.getLogger </b>(<span
+      class="codeString">"org.javarome.proper.presentation"</span>);<br> logger<b>.warn</b> (<span class="codeString">"Avertissement application"</span>);
+  <span class="codeComment">//
+  Ok, car WARN &gt;= INFO</span><br> logger<b>.debug</b> (<span class="codeString">"Debug application"</span>); <span
+      class="codeComment">// Non affiché,
+  car DEBUG &lt; INFO</span><br> presentationLogger.<b>info</b> (<span class="codeString">"Info de présentation"</span>);
+  <span class="codeComment">//
+  Affiché car
+  presentationLogger hérite du niveau INFO de son père appLogger</span><br> presentationLogger.<b>debug</b> (<span
+      class="codeString">"Debug de presentation"</span>); <span class="codeComment">//
+  Non affiché car presentationLogger hérite du niveau INFO &gt; DEBUG
+  de son
+père appLogger</span></code></blockquote>
+<h2>Notes</h2>
+<ul>
+  <li> Fichier de configuration <a href="/tech/info/soft/data/doc/xml/">XML</a> ou Properties</li>
+  <li>Hiérarchie de loggers</li>
+  <li>Activation/désactivation de loggers</li>
+  <li>Envoi des messages de logs vers plusieurs destinations (plusieurs <i>appenders </i>pour un même <i>logger</i>)
+  </li>
+  <li>L'<a href="/tech/info/soft/API.html">API</a> Java standard de trace est la <a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/JLA.html">JLA</a> depuis [<a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a> 1.4+]</li>
+  <li>Des produits tiers complètent Log4J :
+    <ul>
+      <li>des appenders :
+        <ul>
+          <li>JDBCAppender pour écrire des traces dans une base de <a
+              href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></li>
+          <li>SNMPTrapAppender pour envoyer les logs à une machine de supervision
+          </li>
+        </ul>
+      </li>
+      <li>configLog4j pour éditer visuellement une configuration Log4J</li>
+      <li>LogTag permet d'effectuer des traces via une balise <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a> spéciale</li>
+    </ul>
+  </li>
+</ul>
+<p>Des exemples d'applications utilisant Log4J sont :</p>
+<ul>
+  <li><a href="/org/int/asso/asf/server/web/apache/Tomcat.html">Tomcat</a></li>
+</ul>
+<h2>Limitations</h2>
+<ul>
+  <li> Certains paramètres du PatternLayout peuvent être pénalisants pour la <a
+      href="/tech/info/Performance.html">performance</a> :
+    <ul>
+      <li><code>%t</code> affichant le thread courant</li>
+      <li><code>%c</code> affichant la classe courante</li>
+    </ul>
+  </li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="https://jakarta.apache.org/log4j/docs/download.html">Téléchargement</a></li>
+  <li><a href="https://nagoya.apache.org/wiki/apachewiki.cgi?Log4JProjectPages">Page Wiki Log4J</a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,520 @@
+<!--#include virtual="/header-start.html" -->
+<title>J2EE RI</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a> Reference Implementation</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Offrir un démonstrateur de la technologie</li>
+    <li><i><a href="/tech/info/POC.html">POC</a></i> de la spécification <a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>J2EE RI est un serveur applicatif de démonstration implémentant la spécification <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a>. </p>
+  <p>Elle est composé de :</p>
+  <ul>
+    <li>un conteneur Web hébergeant <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a> et
+      <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></li>
+    <li>un conteneur <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></li>
+    <li><a href="/tech/info/soft/java/J2C.html">J2C</a></li>
+  </ul>
+</section>
+<h2>Implémentation</h2>
+<p>Conteneur Web : <a href="../../../../../../../int/asso/asf/server/web/Tomcat.html">Tomcat</a>.</p>
+<p>Outil de déploiement (graphique ou ligne de commande) : deploytool.</p>
+<h2>Limitations</h2>
+
+<ul>
+  <li> Peu adapté aux applications en production
+    <ul>
+      <li>Pas d'équilibrage de charge</li>
+      <li>Base de donnée générée à partir des entités CMP (<em>top-down</em>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Notes</h2>
+
+<ul>
+  <li>
+    <table>
+      <thead>
+      <tr>
+        <td colspan="2" rowspan="3">J2EE RI<br> <br> (O)ui, (N)on, (D)eprecated.</td>
+        <th> Version</th>
+        <th colspan="4"> 1</th>
+        <th rowspan="4"> Caractéristiques standard</th>
+      </tr>
+      <tr>
+        <th> Release</th>
+        <th> 2</th>
+        <th colspan="2"> 3</th>
+        <th> 4</th>
+      </tr>
+      <tr>
+        <th> Fixpack</th>
+        <th><a href="https://java.sun.com/j2ee/sdk_1.2.1/techdocs/index.html">1</a></th>
+        <th> 0</th>
+        <th><a href="https://java.sun.com/j2ee/sdk_1.3/techdocs/index.html">1</a></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th> Couche</th>
+        <th> Technologie</th>
+        <th> Maintenance</th>
+        <th></th>
+        <th><a href="https://java.sun.com/j2ee/sdk_1.3/1.3_01/techdocs/index.html">1</a>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tr>
+        <th rowspan="3">Plate-forme standard</th>
+        <th rowspan="3"><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></th>
+        <th> 1.2</th>
+        <td> O</td>
+        <td>N</td>
+        <td></td>
+        <td> N</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> 1.3</th>
+        <td> N</td>
+        <td class="td2">O</td>
+        <td></td>
+        <td> N</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> 1.4</th>
+        <td> N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2"> O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="4"> API d'entreprise</th>
+        <th rowspan="4"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></th>
+        <th> 1.0</th>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+        <td> O</td>
+        <td> RUN_AS_MODE, RUN_AS_IDENTITY, TRANSACTION_ISOLATION</td>
+      </tr>
+      <tr>
+        <th> 1.1</th>
+        <td> O</td>
+        <td>O</td>
+        <td></td>
+        <td> O</td>
+        <td> EJBException, ejb-ref, resource-ref</td>
+      </tr>
+      <tr>
+        <th> 2.0</th>
+        <td> N</td>
+        <td class="td2">O</td>
+        <td></td>
+        <td> O</td>
+        <td> EJBLocalHome, &lt;run-as-role&gt;, &lt;run-as-identity&gt;, MessageDrivenBean, NoSuchEntityException</td>
+      </tr>
+      <tr>
+        <th>2.1</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="7">Présentation Web</th>
+        <th rowspan="3"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
+        <th> 2.2</th>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+        <td> O</td>
+        <td>HttpSession: getValue()</td>
+      </tr>
+      <tr>
+        <th>2.3</th>
+        <td>N</td>
+        <td class="td2">O</td>
+        <td></td>
+        <td>O</td>
+        <td>HttpSession: getAttribute(), RequestDispatcher, errorPage, WAR files</td>
+      </tr>
+      <tr>
+        <th>2.4</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="3"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
+        <th> 1.1</th>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+        <td> O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>1.2</th>
+        <td>N</td>
+        <td>O</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>2.0</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/prog/oo/java/JSF.html">JSF</a></th>
+        <th>1.0</th>
+        <td>N</td>
+        <td>N</td>
+        <td></td>
+        <td>N</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Intégration</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> extension</th>
+        <th> 2.0</th>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+        <td> O</td>
+        <td>XARessource</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></th>
+        <th> 1.2</th>
+        <td> O</td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></td>
+        <td></td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></td>
+        <td>CosNaming SPI</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>/<a
+            href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a></th>
+        <th> 1.0</th>
+        <td> O</td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></td>
+        <td></td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th> JTA</th>
+        <th> 1.0</th>
+        <td> O</td>
+        <td>O</td>
+        <td></td>
+        <td>O</td>
+        <td>UserTransaction</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th rowspan="3"> JavaMail</th>
+        <th> 1.1</th>
+        <td> O</td>
+        <td>O</td>
+        <td></td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>1.2</th>
+        <td>N</td>
+        <td class="td2">O</td>
+        <td></td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>1.3</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>JAF</th>
+        <th>1.0</th>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a></th>
+        <th> 1.0</th>
+        <td> API seulement, pas d'implémentation</td>
+        <td class="td2">O</td>
+        <td></td>
+        <td>O</td>
+        <td>Queue, Topic</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>1.1</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2"><a href="/tech/info/soft/data/doc/xml/">XML</a></th>
+        <th rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
+        <th> 1.1</th>
+        <td>N</td>
+        <td class="td2"> O</td>
+        <td></td>
+        <td><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>1.2</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="6"><a href="/tech/info/soft/EAI.html">EAI</a></th>
+        <th> JAX-RPC</th>
+        <th> 1.0</th>
+        <td>N</td>
+        <td> N</td>
+        <td class="td2"></td>
+        <td class="td2"> O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>JAXR</th>
+        <th>1.0</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>SAAJ</th>
+        <th>1.1</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2"><a href="/tech/info/soft/java/J2C.html">J2C</a></th>
+        <th>1.0</th>
+        <td>N</td>
+        <td class="td2"> O</td>
+        <td></td>
+        <td>O</td>
+        <td>CCI</td>
+      </tr>
+      <tr>
+        <th>1.5</th>
+        <td>N</td>
+        <td> N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Web Services</th>
+        <th>1.0</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2"><a href="/tech/info/soft/sec/">Sécurité</a></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">JAAS</a></th>
+        <th> 1.0</th>
+        <td>N</td>
+        <td class="td2"> O</td>
+        <td></td>
+        <td> O</td>
+        <td> LoginContext</td>
+      </tr>
+      <tr>
+        <th> JACC</th>
+        <th> 1.0</th>
+        <td>N</td>
+        <td> N</td>
+        <td class="td2"></td>
+        <td class="td2"> O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Journalisation (log)</th>
+        <th> JLA</th>
+        <th> 1.0</th>
+        <td>N</td>
+        <td>N</td>
+        <td></td>
+        <td>N</td>
+        <td> Logger, Handler, Filter, Formatter</td>
+      </tr>
+      <tr>
+        <th rowspan="2"> Supervision</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMX.html">JMX</a></th>
+        <th>1.1</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> J2EE Management</th>
+        <th>1.0</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Déploiement</th>
+        <th> J2EE Deployment</th>
+        <th> 1.1</th>
+        <td>N</td>
+        <td>N</td>
+        <td class="td2"></td>
+        <td class="td2">O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="4"> SGBDR</th>
+        <th><a href="../../../../index.html">Oracle</a></th>
+        <th> 8.0.5</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2"> MS SQL Server</th>
+        <th>6.5</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> 7.0</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Cloudscape</th>
+        <th> 3.0.4</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="6">OS</th>
+        <th rowspan="2">Windows</th>
+        <th>2000 Pro</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>NT 4</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2">Linux RedHat</th>
+        <th>6.0</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>6.1</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2">Solaris</th>
+        <th>7</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>8</th>
+        <td class="td2">O</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<h2>Voir</h2>
+
+<ul>
+  <li><a href="https://java.sun.com/j2ee/download.html#sdk">Téléchargement</a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

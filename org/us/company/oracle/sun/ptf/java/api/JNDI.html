@@ -1,0 +1,137 @@
+<!--#include virtual="/header-start.html" -->
+<title>JNDI</title>
+<meta content="https://java.sun.com/products/jndi" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i>Java Naming and Directory Interface</i> : interface de nommage et d'annuaire.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir une API Java standard d'accès aux annuaires et services de nommage.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>JNDI est structurée en :</p>
+  <ul>
+    <li>une <a href="/tech/info/soft/API.html"><strong>API</strong></a>, utilisée par les développeurs Java souhaitant
+      accéder à tel ou tel annuaire ou service de nommage ;</li>
+    <li>une <a href="/tech/info/soft/SPI.html"><strong>SPI</strong></a>, utilisée par les fournisseurs désirant
+      implémenter un pilote JNDI pour leur annuaire ou service de nommage. </li>
+  </ul>
+  <p>JNDI est donc indépendante du véritable annuaire ou service de nommage sous-jaçent. Afin de trouver ce service et
+    communiquer avec celui-ci, elle a besoin d'au moins 2 informations :</p>
+  <ul>
+    <li><strong>l'URL du fournisseur </strong>(<em>provider url</em>) du service de nommage (généralement distant, dans
+      un serveur)</li>
+    <li><strong>la fabrique de contexte de nommage initial</strong> (<em>initial context factory</em>). Cette classe est
+      typiquement propriétaire (fournie avec le service de nommage) car elle implémente le protocole de communication
+      avec le service en question (potentiellement via un protocole propriétaire).</li>
+  </ul>
+  <p>JNDI est incluse dans <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> depuis J2SE 1.3.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <p>JNDI utilise le package standard <code>javax.naming</code>.</p>
+  <p>Les noeuds dans l'arbre de nommage sont représentés par l'interface <code>Context</code>. Une implémentation
+    particulière d'un contexte est l'<code>InitialContext</code>, responsable d'établir la communication initiale avec
+    le service en question. A son instanciation, ce contexte initial va rechercher les propriétés <code>java.naming.factory.initial</code>
+    et <code>java.naming.provider.url</code> dans des propriétés Java :</p>
+  <ol>
+    <li>fournies en argument du constructeur</li>
+    <li>à défaut, les propriétés système Java (initialisées au démarrage de la <a
+        href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a> via <code>java -Djava.naming.factory.initial=<em>telleValeur</em>
+      -Djava.naming.provider.url=<em>telleAutreValeur</em> </code>ou par programmation <code>via
+      System.setProperty())</code></li>
+    <li>à défaut lues depuis un fichier <code>jndi.properties</code> accessible dans le classpath</li>
+  </ol>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de connexion à un annuaire LDAP de Sun est : </p>
+  <p><code>Properties namingProperties = new Properties();<br> namingProperties.put
+    (<strong>Context</strong>.<strong><strong>INITIAL_CONTEXT_FACTORY</strong>, </strong><span class="codeString">"com.sun.jndi.ldap.LdapCtxFactory<strong>"</strong></span>);<br>
+    namingProperties.put (<strong>Context</strong>.<strong>PROVIDER_URL, </strong><span class="codeString">"ldap://myldaphost:389/o=javaromeCorp"</span>);<br>
+    InitialContext namingContext = new InitialContext(namingProperties); </code></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td class="titleCorner" colspan="2" rowspan="2"></td>
+          <th> Version</th>
+          <th colspan="3"> 1</th>
+          <th rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th> 0</th>
+          <th> 1</th>
+          <th>2</th>
+        </tr>
+        <tr>
+          <th>Couche</th>
+          <th>Technologie</th>
+          <th> Fixpack</th>
+          <th></th>
+          <th></th>
+          <th>1</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>port</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>900 par défaut pour RMI/IIOP, réservé sur Solaris (&gt; 1024)</td>
+        </tr>
+        </thead>
+        <tr>
+          <th rowspan="3">Propriétés systèmes</th>
+          <th rowspan="2">Standard</th>
+          <th>Fabrique de contexte initiale</th>
+          <td colspan="3"><code>java.naming.factory.initial</code></td>
+          <td>valeur com.sun.jndi.cosnaming.CNCtxFactory non supportée avant JNDI 1.2</td>
+        </tr>
+        <tr>
+          <th>URL du service de nommage</th>
+          <td colspan="3"><code>java.naming.provider.url</code></td>
+          <td>iiop://&lt;hostname&gt;:900</td>
+        </tr>
+        <tr>
+          <th>Propriétaire</th>
+          <th></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li> Non transactionnel</li>
+    <li>Peu adapté aux mises à jour fréquentes (optimisé pour la lecture)</li>
+    <li>Peu adapté aux relations</li>
+    <li>Pas de clustering</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de pilotes JNDI sont :</p>
+  <ul>
+    <li><a href="/tech/info/soft/data/dbms/ldap">LDAP</a></li>
+    <li>COS Naming</li>
+    <li><a href="/tech/info/soft/reseau/protocole/5/DNS.html">DNS</a></li>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> Registry</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir aussi</h2>
+  <ul>
+    <li><a href="https://java.sun.com/products/jndi/tutorial/"><i lang="en">JNDI Tutorial</i></a> de Sun</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

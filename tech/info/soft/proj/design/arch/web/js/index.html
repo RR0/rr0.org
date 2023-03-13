@@ -1,5 +1,5 @@
 <!--#include virtual="/header-start.html" -->
-<title>Javascript</title>
+<title>Javascript sur le web</title>
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
@@ -152,7 +152,7 @@
     </li>
     <li>Le code est souvent minimalisé afin de réduire son coût de téléchargement. Il existe des <em>minifiers</em> en
       ligne (<a href="https://dean.edwards.name/packer/">Packer</a>) ou non (<a
-          href="https://crockford.com/javascript/jsmin">JSMin</a> en C, les compresseur de <a
+          href="https://crockford.com/javascript/jsmin">JSMin</a> en C, les compresseurs de <a
           href="https://dojotoolkit.org/">Dojo</a> ou de de <a href="/org/us/company/yahoo/yui/index.html">YUI</a> basés
       sur <a href="https://developer.mozilla.org/en-US/docs/Rhino">Rhino</a>, etc.).
     </li>
@@ -465,14 +465,14 @@
     </p>
     <blockquote><code>&lt;applet code="monApplet.class" width=100 height=100 mayscript>&lt;/applet></code>
     </blockquote>
-    <p> La classe Java <tt>JSObject</tt> permet alors d'accéder aux objets JavaScript de la page, à commencer par
-      l'objet window, récupérable à l'aide de la fonction <tt>getWindow()</tt> :
+    <p> La classe Java <code>JSObject</code> permet alors d'accéder aux objets JavaScript de la page, à commencer par
+      l'objet window, récupérable à l'aide de la fonction <code>getWindow()</code> :
     </p>
     <blockquote>
       <p><code>JSObject win = JSObject.getWindow (this);</code></p>
     </blockquote>
-    <p> Tout sous-objet ou propriété peut ensuite être accédé via la fonction <tt>getMember(<i>nomObjet</i>)</tt>. Par
-      exemple :
+    <p> Tout sous-objet ou propriété peut ensuite être accédé via la fonction <code>getMember(<i>nomObjet</i>)</code>.
+      Par exemple :
     </p>
     <blockquote><code>JSObject doc = (JSObject) win.getMember ("document"); JSObject formulaire = (JSObject)
       doc.getMember ("testForm"); JSObject caseACocher = (JSObject) formulaire.getMember ("testCheck"); Boolean
@@ -484,7 +484,7 @@
     </p>
     <blockquote><code>String arguments[] = {"premierArg", "secondArg"}; win.call ("nomMethode", arguments); </code>
     </blockquote>
-    <p> soit via la méthode <tt>eval()</tt> de cette classe, qui reçoit en paramètre une chaîne Jaît à exécuter. Par
+    <p> soit via la méthode <code>eval()</code> de cette classe, qui reçoit en paramètre une chaîne Jaît à exécuter. Par
       exemple :
     </p>
     <blockquote><code>win.eval ("nomMethode(" + premierArg + <span class="codeString">","</span> + secondArg + <span

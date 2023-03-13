@@ -1,0 +1,21 @@
+<!--#include virtual="/header-start.html" -->
+<title>JVMDI</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">JVM Debug Interface</i> : Interface de <a href="/tech/info/soft/proj/impl/Debugging.html">debugging</a>
+  des <a href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a>s. </p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une <a href="/tech/info/soft/API.html">API</a> simplifiant les requêtes de debugging dans une <a
+      href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a>.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Remplacé par <a href="/org/us/company/oracle/sun/ptf/java/vm/profile/JVMTI.html">JVM TI</a>.</li>
+    <li>JVMDI peut être utilisé directement par des applications (par exemple si celles-ci ne sont pas en <a
+        href="/org/us/company/oracle/sun/ptf/java">Java</a> ou veulent fournir du debugging mixte Java + autre), mais le
+      cas le plus courant (car le plus pratique) reste son utilisation à travers la <a
+          href="/org/us/company/oracle/sun/ptf/java/api/JDI.html">JDI</a> ou <a
+          href="/org/us/company/oracle/sun/ptf/java/vm/debug/JDWP.html">JDWP</a>.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

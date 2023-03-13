@@ -1,0 +1,323 @@
+<!--#include virtual="/header-start.html" -->
+<title>Ant</title>
+<meta content="https://jakarta.apache.org/ant" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p>Fourmi : une petite chose qui peut construire de grandes choses.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Offrir un outil semblable à <a href="/tech/info/soft/proj/impl/Make.html">make</a> mais portable et extensible
+    grâce à <a href="/org/us/company/oracle/sun/ptf/java">Java</a>.</p></section>
+<section>
+  <h2>Conception<q></q></h2>
+  <p>Ant exécute :</p>
+  <ul>
+    <li>un <strong>projet</strong> définissant
+      <ul>
+        <li> un ensemble de <strong>cibles </strong>(<em>targets</em>)
+          <ul>
+            <li>exécutant des <strong>tâches</strong> (<em>tasks</em>), réalisées par des classes Java </li>
+            <li><strong>standards</strong> (livrées avec Ant)
+              <ul>
+                <li><strong> autonomes </strong>(<em>core tasks</em>)</li>
+                <li><strong>optionnelles </strong>(optional tasks) car dépendantes d'autres librairies (comme <a
+                    href="/tech/info/soft/prod/JUnit.html">JUnit</a>, BCEL, etc.)</li>
+              </ul>
+            </li>
+            <li>non standards (non livrées avec Ant) telle que
+              <ul>
+                <li>des tâches fournies par des produits commerciaux (<a
+                    href="/org/us/company/oracle/bea/wls">WebLogic</a>, LiDO, etc.)</li>
+                <li>des tâches que vous écrivez vous-même</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Tout projet est paramétrable via les <a href="/tech/info/soft/prog/oo/java/SystemProperties.html"><strong>propriétés </strong>système</a>
+    de Java.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Tout projet Ant est défini via un fichier <a href="/tech/info/soft/data/doc/xml/">XML</a>.</p>
+  <p>Ant peut lire une <a href="/tech/info/soft/prog/oo/java/SystemProperties.html">propriété système</a> via la syntaxe
+    <code><strong>${</strong><em>nomPropriété</em><strong>}</strong></code>. Cela lui permet de lire les propriétés
+    fixées par la plate-forme Java (<code><strong>${java.class.path}</strong></code> par exemple) comme les propriétés
+    que vous ajoutez (via un fichier <code>.properties</code> ou des arguments
+    <code><strong>-D</strong><em>propriété</em><strong>=</strong><em>valeur</em></code> sur la ligne de commande).</p>
+  <section>
+    <h3>Ecriture d'une tâche</h3>
+    <p>Chaque tâche Ant est réalisée par une classe implémentant l'interface <code>Task</code>.</p></section>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Supporté par de nombreux IDE (<a href="../../../../java/TCC.html">TCC</a>, NetBeans, JEdit, <a
+        href="/tech/info/soft/prog/oo/java/Eclipse.html">Eclipse</a>, IDEA, etc.)</li>
+    <li>L'exécution de tâches de type shell est toujours possible via la tâche <code>&lt;exec&gt;</code></li>
+    <li>
+      <table>
+        <thead>
+        <tr>
+          <td rowspan="2">Ant</td>
+          <th> Version</th>
+          <th colspan="7">1</th>
+          <th>2</th>
+          <th rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th colspan="2">4</th>
+          <th colspan="2">5</th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th> Fixpack</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>0</th>
+          <th>1</th>
+          <th>0</th>
+          <th>1</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th rowspan="2">Ant</th>
+          <th>Sous-projet</th>
+          <td class="oui" colspan="8"><code><a href="https://ant.apache.org/manual/CoreTasks/ant.html">ant</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Appel de cible</th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7"><code><a
+              href="https://ant.apache.org/manual/CoreTasks/antcall.html">antcall</a></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>SGBD</th>
+          <th><a href="/tech/info/soft/data/dbms/r/sql">SQL</a></th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7"><code><a href="https://ant.apache.org/manual/CoreTasks/sql.html">sql</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Propriétés</th>
+          <th></th>
+          <td class="oui" colspan="8"><code><a href="https://ant.apache.org/manual/CoreTasks/property.html">property</a></code>
+          </td>
+          <td>Constantes ou lecture depuis un fichier</td>
+        </tr>
+        <tr>
+          <th rowspan="3">Archives</th>
+          <th><a href="/org/us/company/oracle/sun/ptf/java/JAR.html">JAR</a></th>
+          <td class="oui" colspan="8"><code><a href="https://ant.apache.org/manual/CoreTasks/jar.html">jar</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>WebApp</th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7"><code><a href="https://ant.apache.org/manual/CoreTasks/war.html">war</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Enterprise ARchive</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui" colspan="5"><code><a href="https://ant.apache.org/manual/CoreTasks/ear.html">ear</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Exécution</th>
+          <th><a href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a></th>
+          <td class="oui" colspan="8"><code><a href="https://ant.apache.org/manual/CoreTasks/java.html">java</a></code>
+          </td>
+          <td>Possibilité d'utiliser la JVM exécutant Ant ou une autre (fork), permettant ainsi de fournir des jvmargs
+            (classpath, -D, etc.)
+          </td>
+        </tr>
+        <tr>
+          <th>Programme externe</th>
+          <td class="oui" colspan="8"><code><a href="https://ant.apache.org/manual/CoreTasks/exec.html">exec</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Développement</th>
+          <th>Compilation</th>
+          <td class="oui" colspan="8"><code><a
+              href="https://ant.apache.org/manual/CoreTasks/javac.html">javac</a></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Documentation</th>
+          <th>API Java</th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7"><code><a
+              href="https://ant.apache.org/manual/CoreTasks/javadoc.html">javadoc</a></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="8">Système de fichiers</th>
+          <th>Déplacement</th>
+          <td class="non">Non</td>
+          <td class="oui" colspan="7" rowspan="3"><code><a
+              href="https://ant.apache.org/manual/CoreTasks/move.html">move</a></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Renommage</th>
+          <td class="oui"><code>rename</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Renommage d'extension</th>
+          <td class="oui"><code>renameext</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Copie de fichier</th>
+          <td class="oui"><code>copyfile</code></td>
+          <td class="oui" colspan="7" rowspan="2"><code><a
+              href="https://ant.apache.org/manual/CoreTasks/copy.html">copy</a></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Copie de répertoire</th>
+          <td class="oui"><code>copydir</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Suppression de répertoire</th>
+          <td class="oui"><code>deltree</code></td>
+          <td class="oui" colspan="7" rowspan="2"><code><a href="https://ant.apache.org/manual/CoreTasks/delete.html">delete</a></code>
+          </td>
+          <td rowspan="2"></td>
+        </tr>
+        <tr>
+          <th>Supression</th>
+          <td class="non">Non</td>
+        </tr>
+        <tr>
+          <th>Création de répertoire</th>
+          <td class="non" colspan="8"><code><a
+              href="https://ant.apache.org/manual/CoreTasks/mkdir.html">mkdir</a></code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Qualité</th>
+          <th>Audit de code</th>
+          <td colspan="8"><code><a href="https://ant.apache.org/manual/OptionalTasks/jdepend.html">jdepend</a></code>
+          </td>
+          <td>Optionnel</td>
+        </tr>
+        <tr>
+          <th>Tests unitaires</th>
+          <td colspan="8"><code><a href="https://ant.apache.org/manual/OptionalTasks/junit.html">junit</a></code></td>
+          <td>JUnit doit se trouver dans le classpath</td>
+        </tr>
+        <tr>
+          <th>Déploiement</th>
+          <th>J2EE</th>
+          <td colspan="8"><code><a href="https://ant.apache.org/manual/OptionalTasks/serverdeploy.html">serverdeploy</a></code>
+          </td>
+          <td>Générique, Jonas 2.4, <a href="/org/us/company/oracle/bea/wls">WLS</a></td>
+        </tr>
+        <tr>
+          <th>EJB</th>
+          <th></th>
+          <td colspan="8"><code><a href="https://ant.apache.org/manual/OptionalTasks/ejb.html">ejbjar</a></code></td>
+          <td>Optionnel. BES 4.5, iPlanet 6.0, JBoss 2.1 et ultérieurs, WLS 5.1/6.0 avec weblogic.ejbc, WAS 4.0, TOPLink
+            for WLS 2.5.1, JOnAS 2.4.x et 2.5
+          </td>
+        </tr>
+        </thead>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de script Ant est :</p>
+  <blockquote><code>&lt;<strong>project name</strong>=<span class="codeString">"MyProject"</span>
+    <strong>default</strong>=<span class="codeString">"dist"</span> <strong>basedir</strong>=<span class="codeString">"."</span>&gt;<br>
+    <br>
+    &lt;<strong>description</strong>&gt;Exemple simple de script Ant&lt;/<strong>description</strong>&gt;<br> <br> <span
+        class="codeComment">&lt;!-- Fixe les propriétés
+  globales pour ce script --&gt;</span><br>
+    &lt;<strong>property name</strong>=<span class="codeString">"src"</span> <strong> location</strong>=<span
+        class="codeString">"src"</span>/&gt;<br>
+    &lt;<strong>property name</strong>=<span class="codeString">"build"</span> <strong>location</strong>=<span
+        class="codeString">"build"</span>/&gt;<br>
+    &lt;<strong>property name</strong>=<span class="codeString">"dist"</span> <strong>location</strong>=<span
+        class="codeString">"dist"</span>/&gt;<br> <br>
+    &lt;<strong>target name</strong>=<span class="codeString">"init"</span>&gt;<br> <span class="codeComment"> &lt;!-- Crée l'horodatage
+  --&gt;</span><br>
+    &lt;<strong>tstamp</strong>/&gt;<br> <span class="codeComment">&lt;!-- Crée la structure
+  de répertoires de destination de compilation --&gt;</span><br>
+    &lt;<strong>mkdir dir</strong>=<span class="codeString">"<strong>${</strong>build<strong>}</strong>"</span>/&gt;<br>
+    &lt;/<strong>target</strong>&gt; <br> <br>
+    &lt;<strong>target name</strong>=<span class="codeString">"compile"</span> <strong>depends</strong>=<span
+        class="codeString">"init"</span> <strong>description</strong>=<span class="codeString">"Compile
+  les sources"</span> &gt;<br> <span class="codeComment">&lt;!-- Compile le code source
+  Java depuis ${src} vers ${build} --&gt;</span><br>
+    &lt;<strong>javac srcdir</strong>=<span class="codeString">"<strong>${</strong>src<strong>}</strong>"</span>
+    <strong>destdir=<span class="codeString">"${</span></strong><span class="codeString">build}"</span>/&gt;<br>
+    &lt;/<strong>target</strong>&gt;<br> <br>
+    &lt;<strong>target name</strong>=<span class="codeString">"dist"</span> <strong>depends</strong>=<span
+        class="codeString">"compile"</span> <strong> description</strong>=<span class="codeString">"Génère
+  la distribution"</span> &gt;<br> <span class="codeComment">&lt;!-- Crée le répertoire
+  de distribution --&gt;</span><br>
+    &lt;<strong>mkdir dir=<span class="codeString">"${</span></strong><span class="codeString">dist}/lib"</span>/&gt;
+    <br> <span class="codeComment">&lt;!-- Met tout ce qui est dans
+  ${build} dans le fichier MyProject-${DSTAMP}.jar --&gt;</span><br>
+    &lt;<strong>jar jarfile=</strong><span
+        class="codeString">"<strong>${</strong>dist}/lib/MyProject-${DSTAMP}.jar"</span> <strong>basedir=<span
+        class="codeString">"${</span></strong><span class="codeString">build}"</span>/&gt;<br>
+    &lt;/<strong>target</strong>&gt; <br> <br>
+    &lt;<strong>target name</strong>=<span class="codeString">"clean"</span> <strong>description</strong>=<span
+        class="codeString">"Nettoyage"</span>
+    &gt;<br> <span class="codeComment">&lt;!-- Efface les arborescences
+  de ${build} et ${dist} --&gt;</span><br>
+    &lt;<strong>delete dir=<span class="codeString">"${</span></strong><span class="codeString">build}"</span>/&gt;<br>
+    &lt;<strong>delete dir=<span class="codeString">"${</span></strong><span class="codeString">dist}"</span>/&gt;<br>
+    &lt;/<strong>target</strong>&gt;<br> <br>
+    &lt;/<strong>project</strong>&gt; </code></blockquote>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Peu ergonomique</li>
+    <li>Faible niveau d'intégration dans les outils</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Ant
+      <ul>
+        <li><a href="https://jakarta.apache.org/ant/bindownload.cgi">Téléchargement</a></li>
+        <li>Documentation
+          <ul>
+            <li><a href="https://ant.apache.org/manual">Manuel</a></li>
+            <li><a href="https://nagoya.apache.org/gump/javadoc/ant/build/javadocs/index.html">API</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Sun Dot Com Builder - <a href="https://dcb.sun.com/practices/profiles/ant.jsp"><em>Ant best pratices</em></a>
+    </li>
+    <li>AJUG 2002 Meeting - <a href="https://www.ajug.org/meetings/download/struts.pdf"><em>Whirwind tour with Ant</em></a>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

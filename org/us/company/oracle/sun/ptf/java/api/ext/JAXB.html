@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtm20-scrict.dtd">
+<html>
+<head>
+  <title>JAXB</title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<h1><a href="https://java.sun.com/xml/jaxb/">J. A. X. B.</a></h1>
+<table width="100%">
+  <tr>
+    <th colspan="4"><a href=/tech/info/index.html">Home</a></th>
+  </tr>
+</table>
+<p><i><a href=/tech/info/soft/prog/oo/java/index.html">Java</a> Architecture for <a href=/tech/info/soft/data/doc/xml/">XML</a>
+  Binding</i> : Architecture <a href=/tech/info/soft/prog/oo/java/index.html">Java</a> pour liaison avec <a
+    href=/tech/info/soft/data/doc/xml/">XML</a> . </p>
+<h2>Besoin</h2>
+<p>Automatiser la traduction d'objets <a href=/tech/info/soft/prog/oo/java/index.html">Java</a> en documents <a
+    href=/tech/info/soft/data/doc/xml/">XML</a> et <em>vice versa</em>.</p>
+<h2>Analyse</h2>
+<p>JAXB est constitué de :</p>
+<ul>
+  <li>une <strong>infrastructure de codage/décodage</strong> (<em>marshalling framework</em>), suffisamment souple pour
+    prendre en compte <a href=/tech/info/soft/data/doc/xml/">XML</a> mais aussi d'autres formats</li>
+  <li>un <strong>compilateur de schéma</strong> (<em>schema compiler</em>) capable de créer à partir d'un schéma des
+    classes avec les accesseurs (get/set) appropriés</li>
+</ul>
+<h2>Conception</h2>
+<p>JAXB utilise des métadonnées (metadata).</p>
+<p>Le compilateur de schéma est un outil en ligne de commande.</p>
+<h2>Implémentation</h2>
+<ul>
+  <li><code>javax.io.marshal</code> Public platform API for the XML-independent marshalling framework</li>
+  <li><code>javax.xml.marshal</code> Public platform API for the XML-specific parts of the marshalling framework</li>
+  <li><code>javax.xml.schema</code> Public platform API for schema-specific data types and other support classes</li>
+  <li><code>com.sun.tools.xjc</code> Public but non-platform API for the schema compiler</li>
+</ul>
+<h2>Notes</h2>
+<ul>
+  <li>Doit être intégré dans <a href=/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></li>
+</ul>
+<h2>Limitations</h2>
+<ul>
+  <li>Ne supporte pas les <a href="/tech/info/soft/data/doc/DTD.html"> (seulement les <a
+      href=/tech/info/soft/time/doc/xml/XMLSchema.html">schémas XML</a>)</li>
+  <li>(pour l'instant) Les classes générées par une implémentation de JAXB ne sont pas garanties compatibles avec celles
+    générées par une autre implémentation.</li>
+  <li>(pour l'instant) pas de liaison entre une classe de JavaBean existante et un schéma</li>
+  <li>(pour l'instant) pas de support de l'évolution d'un schéma</li>
+</ul>
+<table width="100%">
+  <tr>
+    <th colspan="4"><a href=/tech/info/index.html">Home</a></th>
+  </tr>
+</table>
+</body>
+</html>

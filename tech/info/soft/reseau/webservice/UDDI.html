@@ -1,0 +1,149 @@
+<html>
+<head>
+  <title>UDDI</title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<h1><span class="sourceIdent1"></span> <span class="warning"></span> <span class="titre4"><a
+    href="https://www.w3.org/TR/SOAP">U.
+  D. D. I.</a></span></h1>
+<p><i> Universal Description, Discovery and Integration</i> : description, découverte et intégration universels.</p>
+<h2>Besoin</h2>
+<p>Mettre en place un annuaire public (Internet) des <a href="/org/us/company/oracle/sun/ptf/java/index.html">services
+  Web</a> publiés par les entreprises.</p>
+<h2>Principes</h2>
+<p>L'annuaire UDDI distribué sur Internet est pensé pour comporter trois types d'informations :</p>
+<ul>
+  <li><strong>pages blanches </strong>: description des entreprises (contacts, adresse, raison sociale, etc.)</li>
+  <li><strong>pages jaunes</strong> : description des services (métier de l'entreprise, services proposés)</li>
+  <li><strong>pages vertes </strong>: description technique (<a href="../internet/URL.html">URL</a> d'accès, protocoles
+    utilisés, interfaces implémentées, etc.)</li>
+</ul>
+<h2>Notes</h2>
+<ul>
+  <li>Géré par le <a href="../../../../../org/int/asso/w3c/index.html">W3C</a></li>
+  <li>Beaucoup plus utilisé en interne (EAI) que sur Internet.</li>
+  <li>Encapsulé derrière WS-Inspection qui regroupe l'ensemble des informations sur un service Web (<a href="WSDL.html">WSDL</a>,
+    UDDI, autres).</li>
+  <li>
+    <table>
+      <thead>
+      <tr>
+        <td class="titleCorner" colspan="2" rowspan="3"></td>
+        <th> Version</th>
+        <th> 1</th>
+        <th>2</th>
+        <th>3</th>
+        <th rowspan="4"> Commentaire</th>
+      </tr>
+      <tr>
+        <th> Release</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th> Fixpack</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th> Domaine</th>
+        <th> Technologie</th>
+        <th> Maintenance</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tr>
+        <th>API</th>
+        <th></th>
+        <th></th>
+        <td>O</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Structure de données</th>
+        <th></th>
+        <th></th>
+        <td>O</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Schéma XML</th>
+        <th></th>
+        <th></th>
+        <td>O</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Spécification d'opérateur</th>
+        <th></th>
+        <td>N</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Schéma XML custody</th>
+        <th></th>
+        <td>N</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2">Réplication</th>
+        <th>Schéma XML</th>
+        <th></th>
+        <td>N</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Spécification</th>
+        <th></th>
+        <td>N</td>
+        <td>O</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="WSDL.html">WSDL</a></th>
+        <th>Interface de service</th>
+        <th></th>
+        <td>N</td>
+        <td>N</td>
+        <td>O</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+<h2>Limitations</h2>
+<ul>
+  <li>Pas de mécanisme pour évaluer la qualité de service</li>
+  <li>Court-circuitage des relations humaines peu adapté aux habitudes des entreprise</li>
+  <li>Fournit une description technique des services redondante avec <a href="WSDL.html">WSDL</a></li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="https://www.uddi.org">UDDI.org</a></li>
+  <li>IBM <a href="https://www-3.ibm.com/services/uddi">Web services and UDDI</a></li>
+  <li>Microsoft <a href="https://uddi.microsoft.com/">Business Registry Node</a></li>
+</ul>
+</body>
+</html>

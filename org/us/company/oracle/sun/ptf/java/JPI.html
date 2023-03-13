@@ -1,0 +1,67 @@
+<!--#include virtual="/header-start.html" -->
+<title>JPI</title>
+<!--#include virtual="/header-end.html" -->
+<p><span class="people">Java Plug-In</span> : Plug-in <a href="/org/us/company/oracle/sun/ptf/java">Java</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir une <a href="/tech/info/soft/proj/design/arch/platform">plate-forme</a> d'exécution pour les <a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applets</a> <a
+      href="/org/us/company/oracle/sun/ptf/java">Java</a>.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>Le plugin Java s'intègre au <a href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateur Web</a> en
+    paramétrant celui-ci pour lui déléguer l'exécution d'applets.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Inclus dans <a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a>.</li>
+    <li>Livré avec le <i>Java Plug-in Control Panel</i>, un outil graphique (<a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/ui/Swing.html">Swing</a>) permettant de le configurer,
+      accessible uniquement à l'Administrateur de la machine (il faut donc installer le Java Plugin en tant
+      qu'administrateur).
+      <ul>
+        <li>spécifier le JRE à utiliser (celui du plugin, un installé sur la machine)</li>
+        <li>cacher les archives Java (.jar) en mémoire</li>
+        <li>afficher une console Java </li>
+        <li>activer ou non la prise en charge des <a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applets</a>
+          par le plugin (il n'est donc pas nécessaire de désinstaller le plugin pour réactiver la prise en charge des
+          applets par les <a href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateur</a>)</li>
+      </ul>
+    </li>
+    <li>permet un cache <i>persistant</i> des applets chargées. Le répertoire de cache est celui du <a
+        href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateur</a> utilisé. </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li> Doit être téléchargé </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <p>La détection du Plugin Java peut s'effectuer via du code <a
+      href="/tech/info/soft/proj/design/arch/web/js">JavaScript</a>. Ce code est différent selon le <a
+      href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateur</a> utilisé.</p>
+  <p>Pour <a href="/org/us/company/netscape/Navigator.html">Netscape</a> :</p>
+  <blockquote><code>&lt;<strong>script language</strong>=<span class="codeString">"JavaScript"</span>&gt;<br/> <strong>navigator.plugins</strong>
+    <span class="codeComment">etc.</span><br/>
+    &lt;/<strong>script</strong>&gt;<br/> <br/>
+    &lt;<strong>script language</strong>=<span class="codeString">"JavaScript"</span>&gt;<br/> <strong>if</strong>
+    (<strong>navigator.mimeTypes</strong>[<span class="codeString">"application/x-java-applet"</span>] !=
+    <strong>null</strong>) {<br/> <strong>if</strong> (<strong>navigator.mimeTypes</strong>[<span class="codeString">"application/x-java-applet"</span>].<strong>enabledPlugin</strong>
+    == <strong>null</strong>)<br/> <span class="codeComment">// Plugin non actif</span><br/> <strong>else</strong>
+    {<br/> <span class="codeComment">// Plugin actif</span><br/> }<br/> }<br/> <strong>else</strong><br/> <span
+        class="codeComment">// Plugin non installé</span><br/>
+    &lt;/<strong>script</strong>&gt;</code><q> </q></blockquote>
+  <p>Pour <a href="/org/us/company/ms/MSIE.html">MSIE</a> :</p>
+  <blockquote><code>&lt;<strong>script language</strong>=<span class="codeString">"vbscript"</span>&gt;<br/> <strong>if
+    scriptEngineMajorVersion > 1 then<br/> on error resume next</strong>
+    javaplug=(<strong>IsObject(CreateObject</strong>(<span
+        class="codeString">"JavaSoft.JavaBeansBridge.1"</span>)))<br/> <strong>on error resume next</strong>
+    javaplug=(<strong>IsObject(CreateObject</strong>(<span class="codeString">"Java(TM)
+  Plug-in.Java(TM) Plug-in"</span>)))<br/> <strong>if</strong> javaplug <strong>then</strong><br/> <span
+        class="codeComment">// Plugin installé</span><br/> <strong>else</strong><br/> <span class="codeComment">// Plugin non installé</span><br/>
+    <strong> end if<br/> end if<br/> </strong>&lt;/<strong>script</strong>&gt;</code></blockquote>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -8,10 +8,11 @@ export class NoteReplacer {
     this.number++
     const noteStr = this.number.toString()
     const noteId = `note-${noteStr}`
-    const doc = context.inputFile.dom.window.document
+    const doc = context.inputFile.document
     const result = doc.createElement("span")
     const a = doc.createElement("a")
     a.className = "note-id"
+    a.ariaLabel = "Note"
     a.href = `#${noteId}`
     a.textContent = noteStr
     result.appendChild(a)

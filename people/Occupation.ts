@@ -21,6 +21,7 @@ export enum Occupation {
   dentist = "dentist",
   director = "director",
   diver = "diver",
+  electronics = "electronics",
   engineer = "engineer",
   ethnologist = "ethnologist",
   exobiologist = "exobiologist",

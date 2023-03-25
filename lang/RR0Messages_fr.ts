@@ -111,6 +111,7 @@ export class RR0Messages_fr implements RR0Messages {
       director: (_gender: Gender) => "réalisateur",
       diver: (_gender: Gender) => "plongeur",
       engineer: (_gender: Gender) => "ingénieur",
+      electronics: (gender: Gender) => gender === Gender.male ? "électronicien" : "électronicienne",
       ethnologist: (_gender: Gender) => "ethnologue",
       exobiologist: (_gender: Gender) => "exobiologiste",
       farmer: (gender: Gender) => gender === Gender.male ? "agriculteur" : "agricultrice",

@@ -1174,7 +1174,7 @@ footer iframe {
   display: none;
 }
 
-.source-contents:has(.anchor:target) {
+.source-contents:target {
   display: inline-block;
 }
 

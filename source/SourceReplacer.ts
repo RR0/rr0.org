@@ -1,5 +1,4 @@
 import {HtmlSsgContext} from "ssg-api"
-import {LocalAnchor} from "../LocalAnchor"
 
 export class SourceReplacer {
   /**
@@ -20,8 +19,9 @@ export class SourceReplacer {
     a.textContent = sourceStr
     replacement.appendChild(a)
     const contents = outputDoc.createElement("span")
+    contents.id = sourceId
     contents.className = "source-contents"
-    contents.innerHTML = LocalAnchor.createHTML(outputDoc, sourceId) + original.innerHTML
+    contents.innerHTML = original.innerHTML
     replacement.appendChild(contents)
     return replacement
   }

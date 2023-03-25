@@ -8,7 +8,7 @@ export class SourceReplacer {
 
   replacement(context: HtmlSsgContext, original: HTMLElement): HTMLElement {
     this.number++
-    const sourceStr = String.fromCharCode(96 + this.number)
+    const sourceStr = this.number.toString()
     const sourceId = `source-${sourceStr}`
     const outputDoc = context.outputFile.document
     const replacement = outputDoc.createElement("span")

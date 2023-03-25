@@ -6,21 +6,21 @@ export class NoteReplacer {
 
   replacement(context: HtmlSsgContext, original: HTMLElement): HTMLElement {
     this.number++
-    const noteStr = this.number.toString()
+    const noteStr = String.fromCharCode(96 + this.number)
     const noteId = `note-${noteStr}`
-    const doc = context.inputFile.document
-    const result = doc.createElement("span")
-    const a = doc.createElement("a")
+    const outputDoc = context.outputFile.document
+    const replacement = outputDoc.createElement("span")
+    const a = outputDoc.createElement("a")
     a.className = "note-id"
     a.ariaLabel = "Note"
     a.href = `#${noteId}`
     a.textContent = noteStr
-    result.appendChild(a)
-    const contents = doc.createElement("span")
-    contents.className = "note-contents"
+    replacement.appendChild(a)
+    const contents = outputDoc.createElement("span")
     contents.id = noteId
+    contents.className = "note-contents"
     contents.innerHTML = original.innerHTML
-    result.appendChild(contents)
-    return result
+    replacement.appendChild(contents)
+    return replacement
   }
 }

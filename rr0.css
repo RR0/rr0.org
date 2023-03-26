@@ -484,10 +484,6 @@ nav ul > li {
   max-height: 80vh
 }
 
-embed, iframe, img, object {
-  max-width: 100%
-}
-
 .menu {
   width: 100%
 }
@@ -718,11 +714,6 @@ th {
   text-align: left
 }
 
-figure:hover, figure:hover figcaption {
-  transition: background .2s ease-out;
-  background: rgba(184, 197, 212, .49)
-}
-
 img {
   margin: 1.25em 1.25em 1.5em
 }
@@ -739,9 +730,6 @@ caption, figure figcaption {
   display: table-caption;
   overflow: hidden;
   caption-side: bottom;
-  max-height: 0;
-  opacity: 0;
-  transition: all .8s ease
 }
 
 .exergue .source {
@@ -757,7 +745,6 @@ figure {
 figure img {
   margin: 0;
   display: block;
-  width: 100%
 }
 
 figure:hover {

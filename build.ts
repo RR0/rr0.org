@@ -51,9 +51,9 @@ const cliContents = args.contents
 const contentRoots = cliContents
   ? cliContents.split(",")
   : [
+    "croyance/**/*.html",
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
     "time/**/*.html",
-    "croyance/**/*.html",
     "droit/**/*.html",
     "org/**/*.html",
     "people/**/*.html",
@@ -178,7 +178,7 @@ getTimeFiles().then(async (timeFiles) => {
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand("https://rr0.org/"),
-        new ImageRegistryCommand(config.outDir),
+        new ImageRegistryCommand(config.outDir, 300, 500),
         searchCommand
       ],
       getOutputFile(context: SsgContext): SsgFile {

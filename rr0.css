@@ -42,7 +42,7 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1)
 }
 
-.search form .icon:hover, .search:hover, figure, figure:hover, iframe .wide, img {
+.search form .icon:hover, .search:hover, figure, iframe .wide, img {
   border-radius: .2em
 }
 
@@ -522,14 +522,6 @@ nav ul > li {
   text-indent: 1.4em
 }
 
-.side {
-  width: 20%
-}
-
-.side:hover {
-  width: 40%
-}
-
 data {
   border-bottom: 1px #999 dotted
 }
@@ -722,14 +714,16 @@ img {
   max-width: 75%
 }
 
-caption, figure figcaption {
-  font-size: 1em;
+caption, figcaption {
+  font-size: 0.8em;
+  color: dimgray;
   text-align: justify;
   vertical-align: bottom;
   margin: 0;
   display: table-caption;
   overflow: hidden;
   caption-side: bottom;
+  transition: background-color 0.3s ease;
 }
 
 .exergue .source {
@@ -747,26 +741,11 @@ figure img {
   display: block;
 }
 
-figure:hover {
-  border: none;
-  transition: all .3s ease-out;
-  margin-bottom: 1.75em;
+figure:hover figcaption, figcaption:hover {
+  color: black;
+  background-color: rgba(184, 197, 212, .49);
 }
 
-figure:hover figcaption + img {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  box-shadow: 0 .5em 1em -.1em #555
-}
-
-figure:hover figcaption {
-  border: none;
-  border-radius: 0 0 .2em .2em;
-  padding: 0 .5em .5em;
-  margin: 0;
-  max-height: 100em;
-  opacity: 1
-}
 
 blockquote ol > li, blockquote p, blockquote ul > li, q {
   background: repeat-x rgba(250, 255, 6, .1)
@@ -1434,6 +1413,14 @@ abbr[title]:after {
 
   .footer {
     color: gray;
+  }
+
+  figcaption {
+    color: darkgray;
+  }
+
+  figure:hover figcaption, figcaption:hover {
+    color: white;
   }
 
   .witness, .temoin, .temoin1, .temoin2, .temoin3 {

@@ -1,42 +1,43 @@
 const path = require("path")
+const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: {
-    index: "./src/index.ts"
-  },
-  mode: process.env.NODE_ENV || "production",
-  devtool: "source-map",
-  devServer: {
-    contentBase: "./dist"
-  },
+  entry: "./udb/index.ts",
   plugins: [
-    new HtmlWebpackPlugin({
-        title: "Where do I go from now?",
-        lang: "en",
-        template: "src/index.html",
-        js: ["bundle.js"]
-      }
-    )
+    /*new HtmlWebpackPlugin({
+      title: 'use plugin',
+      filename: 'index.html'
+    }),*/
+    new webpack.ProvidePlugin({
+      process: "process/browser"
+    })
   ],
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: "ts-loader",
         exclude: /node_modules/
       }
     ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-    modules: [
-      path.resolve("./node_modules"),
-      path.resolve("./src")
-    ]
+    extensions: [".ts", ".js"],
+    fallback: {
+      "https": require.resolve("https-browserify"),
+      "url": require.resolve("url/"),
+      "path": require.resolve("path-browserify"),
+      "http": require.resolve("stream-http"),
+      "buffer": require.resolve("buffer/"),
+      "process": require.resolve("process/browser"),
+      "fs": false,
+      "child_process": false,
+      "readline": false
+    }
   },
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist")
+    filename: "udb.js",
+    path: path.resolve(__dirname, "out/udb")
   }
 }

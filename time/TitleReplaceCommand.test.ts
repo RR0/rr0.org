@@ -1,5 +1,5 @@
 import {timeDefaultHandler} from "./TimeDefaultTitle"
-import {TitleReplaceCommand} from "./TitleReplaceCommand"
+import {SsiTitleReplaceCommand} from "./SsiTitleReplaceCommand"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 import {HtmlSsgFile} from "ssg-api"
 
@@ -8,7 +8,7 @@ describe("TitleReplaceCommand", () => {
   describe("Time page", () => {
 
     test("default title with no handler", async () => {
-      const command = new TitleReplaceCommand()
+      const command = new SsiTitleReplaceCommand()
       const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/index.html", `This is about <!--#echo var="title" -->!`)
       const file = await command.execute(context) as HtmlSsgFile
       expect(file.title).toBe("time/1/9/5/4/index.html")
@@ -16,7 +16,7 @@ describe("TitleReplaceCommand", () => {
     })
 
     test("default title with handler", async () => {
-      const command = new TitleReplaceCommand([timeDefaultHandler])
+      const command = new SsiTitleReplaceCommand([timeDefaultHandler])
       const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/index.html", `This is about <!--#echo var="title" -->!`)
       const file = await command.execute(context) as HtmlSsgFile
       expect(file.title).toBe("1954")
@@ -24,7 +24,7 @@ describe("TitleReplaceCommand", () => {
     })
 
     test("default month title with handler", async () => {
-      const command = new TitleReplaceCommand([timeDefaultHandler])
+      const command = new SsiTitleReplaceCommand([timeDefaultHandler])
       const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
         `This is about <!--#echo var="title" -->!`)
       const file = await command.execute(context) as HtmlSsgFile
@@ -33,7 +33,7 @@ describe("TitleReplaceCommand", () => {
     })
 
     test("default day of month title with handler", async () => {
-      const command = new TitleReplaceCommand([timeDefaultHandler])
+      const command = new SsiTitleReplaceCommand([timeDefaultHandler])
       const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/01/index.html",
         `This is about <!--#echo var="title" -->!`)
       const file = await command.execute(context) as HtmlSsgFile

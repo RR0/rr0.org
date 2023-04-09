@@ -26,7 +26,7 @@ import {
   StringEchoVarReplaceCommand
 } from "ssg-api"
 import {LanguageReplaceCommand} from "./lang/LanguageReplaceCommand"
-import {TitleReplaceCommand} from "./time/TitleReplaceCommand"
+import {SsiTitleReplaceCommand} from "./time/SsiTitleReplaceCommand"
 import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
 import {SourceReplacerFactory} from "./source/SourceReplacerFactory"
 import {timeDefaultHandler} from "./time/TimeDefaultTitle"
@@ -45,6 +45,7 @@ import {ImageRegistryCommand} from "./ImageRegistryCommand"
 import {SearchCommand} from "./search/SearchCommand"
 import {SearchIndexStep} from "./search/SearchIndexStep"
 import {OutputFunc} from "ssg-api/dist/src/Ssg"
+import {BaseReplaceCommand} from "./BaseReplaceCommand"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -107,8 +108,9 @@ const timeContext = new TimeContext(timeFormat)
 const context = new RR0SsgContextImpl("fr", timeContext)
 context.setVar("mail", "javarome@gmail.com")
 
+const siteBaseUrl = "https://rr0.org/"
 const htAccessToNetlifyConfig: ContentStepConfig = {
-  replacements: [new HtAccessToNetlifyConfigReplaceCommand("https://rr0.org/")],
+  replacements: [new HtAccessToNetlifyConfigReplaceCommand(siteBaseUrl)],
   roots: [".htaccess"],
   getOutputFile(context: SsgContext): SsgFile {
     return SsgFile.read(context, "netlify.toml", "utf-8")
@@ -157,6 +159,7 @@ getTimeFiles().then(async (timeFiles) => {
       roots: contentRoots,
       replacements: [
         new SsiIncludeReplaceCommand(),
+        new BaseReplaceCommand("/"),
         new LanguageReplaceCommand(),
         new StringEchoVarReplaceCommand("mail"),
         new StringEchoVarReplaceCommand("mapsApiKey"),
@@ -167,7 +170,7 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiSetVarReplaceCommand("url",
           (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
         new SsiLastModifiedReplaceCommand(context.time.options),
-        new TitleReplaceCommand([timeDefaultHandler]),
+        new SsiTitleReplaceCommand([timeDefaultHandler]),
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassDomRegexReplaceCommand("people", new PeopleReplacerFactory()),
@@ -177,7 +180,7 @@ getTimeFiles().then(async (timeFiles) => {
         new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
         new OutlineReplaceCommand(),
-        new AnchorReplaceCommand("https://rr0.org/"),
+        new AnchorReplaceCommand(siteBaseUrl),
         new ImageRegistryCommand(config.outDir, 300, 500),
         searchCommand
       ],

@@ -5,7 +5,7 @@ import {HtmlRR0SsgContext} from "../RR0SsgContext"
  * Replaces "<!--#echo var="title" -->" by the page's <title> content,
  * with a link if there's a <meta name="url"> content.
  */
-export class TitleReplaceCommand extends SsiEchoVarReplaceCommand {
+export class SsiTitleReplaceCommand extends SsiEchoVarReplaceCommand {
 
   constructor(protected defaultHandlers: StringContextHandler[] = []) {
     super("title")

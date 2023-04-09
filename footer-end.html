@@ -1,11 +1,4 @@
 <script>
-  let pathname = window.location.pathname
-  if (pathname.indexOf(".") < 0 && !pathname.endsWith("/")) {
-    pathname += "/"
-    history.replaceState(null, "", pathname)
-  }
-</script>
-<script>
   if (window !== top) document.querySelectorAll(".full-page").forEach(elem => elem.style.display = "none")
 </script>
 </body></html>

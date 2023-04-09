@@ -1,6 +1,7 @@
 import {promise as glob} from "glob-promise"
 import {PeopleReplacer} from "./PeopleReplacer"
 import {RegexReplacer, ReplacerFactory, SsgContext} from "ssg-api"
+import {PeopleFactory} from "./PeopleFactory"
 
 /**
  * Creates replacers for people HTML in a given context.
@@ -23,7 +24,8 @@ export class PeopleReplacerFactory implements ReplacerFactory<RegexReplacer> {
   protected async getInstance(): Promise<PeopleReplacer> {
     if (!this.singleton) {
       const peopleFiles = await glob("people/*/*")
-      this.singleton = new PeopleReplacer(peopleFiles)
+      const factory = new PeopleFactory(peopleFiles)
+      this.singleton = new PeopleReplacer(factory)
     }
     return this.singleton
   }

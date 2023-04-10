@@ -181,7 +181,7 @@ getTimeFiles().then(async (timeFiles) => {
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand(siteBaseUrl),
-        new ImageRegistryCommand(config.outDir, 300, 500),
+        new ImageRegistryCommand(config.outDir, 275, 500),
         searchCommand
       ],
       getOutputFile(context: SsgContext): SsgFile {

@@ -1,0 +1,970 @@
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <title>The new science of simplicity</title>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/notes.js" type="text/javascript"></script>
+</head>
+<body id="bodyid" onLoad="footnotes();footsources()">
+<h1><a href="https://philosophy.wisc.edu/Forster/papers/SciSimp.htm">The new science of simplicity</a> <span
+    class="note">My thanks go to the participants of the conference for a stimulating exchange of ideas,
+  and to Martin Barrett, Branden Fitelson, Mike Kruse, Elliott Sober and Grace Wahba
+  for helpful discussions on material that appeared in previous versions of this paper. I
+  am also grateful to the Vilas Foundation, the Graduate School, and sabbatical support
+  from the University of Wisconsin-Madison.</span></h1>
+<p>Forster, Malcolm R., in Arnold Zellner, Hugo Keuzenkamp, and Michael McAleer (eds.), <em>Simplicity, Inference and
+  Modelling</em>, pp. 83-117. Cambridge: Cambridge University Press. </p>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a></th>
+  </tr>
+</table>
+<h2> The problem</h2>
+<p> No matter how often billiard balls have moved when struck in the past, the next billiard ball may not move when
+  struck. For philosophers, this &#145;theoretical&#146; possibility of being wrong raises a problem about how to
+  justify our theories and models of the world and their predictions. This is the problem of induction. In practice,
+  nobody denies that the next billiard ball will move when struck, so many scientists see no practical problem. But in
+  recent times, scientists have been presented with competing methods for comparing hypotheses or models (classical
+  hypothesis testing, BIC, AIC, cross validation, and so on) which do not yield the same predictions. Here there is a
+  problem.</p>
+<p> Model selection involves a tradeoff between simplicity and fit for reasons that are now fairly well understood (see
+  Forster and Sober, 1994, for an elementary exposition). However, there are many ways of making this tradeoff, and this
+  chapter will analyze the conditions under which one method will perform better than another. The main conclusions of
+  the analysis are that (1) there is no method that is better than all the others under all conditions, even when some
+  reasonable background assumptions are made, and (2) for <em>any</em> methods A and B, there are circumstances in which
+  A is better than B, and there are other circumstance in which B will do better than A. Every method is fraught with
+  some risk even in well behaved situations in which nature is &#147;uniform.&#148; Scientists will do well to
+  understand the risks.</p>
+<p> It is easy to be persuaded by the wrong reasons. If there is always a situation in which method A performs worse
+  than method B, then there is a computer simulation that will display this weakness. But if the analysis of this
+  article is correct, then there is always a situation in which any method A will do worse. To be swayed by a single
+  simulation to put all your money on the assumption that the examples of interest to you are the same in all relevant
+  respects. One needs to understand what is relevant and what is not.</p>
+<p> Another spurious argument is the (frequently cited) claim that AIC is inconsistent?that AIC does not converge in the
+  limit of large samples to what it is trying to estimate. That depends on what AIC is trying to estimate. Akaike (1973)
+  designed AIC to estimate the expected loglikelihood, or equivalently, Kullback-Leibler discrepancy, or predictive
+  accuracy (Forster and Sober, 1994). In section 7, I show that AIC is consistent in estimating this quantity. Whether
+  it is the most efficient method is a separate question. I suspect that no method has a universally valid claim to that
+  title. The bottom line is that the comparison of methods has no easy solution, and one should not be swayed by hasty
+  conclusions.</p>
+<p> The way to avoid hasty conclusions is to analyze the problem in three steps:</p>
+<ol>
+  <li> The specification of a goal. What goal can be reached or achieved?</li>
+  <li> The specification of a means to the goal. What is the criterion, or method?</li>
+  <li> An explanation of how a criterion works in achieving the goal.</li>
+</ol>
+<p>This chapter is an exercise in applying this three-step methodology to the problem of model selection.</p>
+<p> The chapter is organized as follows. Section 2 introduces scientific inference and its goals, while section 3 argues
+  that standard model selection procedures lack a clear foundation in even the <em>easiest</em> of examples. This
+  motivates the need for a deeper analysis, and section 4 describes a framework in which the goal of predictive accuracy
+  is precisely defined. The definition of predictive accuracy is completely general and assumption free, in contrast to
+  section 5 which develops the framework using a<br>
+  &#145;normality assumption&#146; about the distribution of parameter estimates <span class="note"> &#145;Normality&#146; refers to the bell-shaped normal distribution, which plays a central role in
+statistics. Physicists, and others, refer to the same distribution as Gaussian, after Carl
+Friedrich Gauss (1777 - 1855), who used it to derive the method of least squares
+from the principle of maximum likelihood.</span>. Even though the assumption is not universal, it is surprisingly
+  general and far reaching. No statistician will deny that this is a very important case, and it serves as concrete
+  illustration of how a science of simplicity should be developed. Section 6 compares the performance of various methods
+  for optimizing the goal of predictive accuracy when the normality assumption holds approximately, and explains the
+  limitations in each method. The clear and precise definition of the goal is enough to defend AIC against the very
+  common, but spurious, charge that it is inconsistent.</p>
+<p> I discuss this in section 7. Section 8 summarizes the main conclusions.</p>
+<h2> Preliminaries</h2>
+<p> A model is a set of equations, or functions, with one or more adjustable parameters. For example, suppose LIN is the
+  family of linear functions of a dependent variable y on a single independent variable x, {y = a0 + a1x + u | a0 &isin;
+  ?, a1 &isin; ?}, where ? is the set of real numbers and u is an error term that has a specified probability
+  distribution. The error distribution may be characterized by adjustable parameters of its own, such as a variance,
+  although it is always assumed to have zero mean. Note that there can be more than one dependent variable, and they can
+  each depend on several independent variables, which may depend on each other (as in causal modelling). The family LIN
+  is characterized by two adjustable parameters, while PAR is a family of parabolic functions {y = a0 + a1x + a2 x2 + u
+  | a0 &isin; ?, a1 &isin; ?, a2 &isin; ?}, characterized by at least three adjustable parameters.</p>
+<p> The distinction between variables and adjustable parameters is sometimes confusing since the adjustable parameters
+  are variables in a sense. The difference is that x and y vary within the context of each member of the family, while
+  the parameters only vary from one member to the next. The empirical data specify pairs of (x, y) values, which do not
+  include parameter values. Parameters are introduced theoretically for the purpose of distinguishing competing
+  hypotheses within each model.</p>
+<p> A typical inferential problem is that of deciding, given a set of seen data (a set of number pairs, where the first
+  number is a measured x-value, and the second number is a measured y-value), whether to use LIN or PAR is better for
+  the purpose of predicting new data (a set of unseen (x, y) pairs). Since LIN and PAR are competing models, the problem
+  is a problem of model selection. After the model is selected, then standard statistical methods are used to estimate
+  the parameter values to yield a single functional relation between x and y, which can be used to predict y-values for
+  novel x-values. The second step is fairly well understood. Model selection is the more intriguing part of the process
+  although model selection is usually based on the properties of the estimated parameter values.</p>
+<p> The philosophical problem is to understand exactly how scientists should compare models. Neither the problem, nor
+  its proposed solutions, are limited to curve-fitting problems. That is why econometricians or physicists, or anyone
+  interested in prediction, should be interested in how to trade off fit with simplicity, or its close cousin,
+  unification. For example, we may compare the solutions of Newton&#146;s equations with the solutions of Einstein&#146;s
+  mechanics applied to the same physical system or set of systems. Here we would be comparing one huge nexus of
+  interconnected models with another huge nexus where the interconnections amongst the parts follow a different pattern.
+  Einstein&#146;s solution of the problem of explaining the slow precession of the planet Mercury&#146;s orbit around
+  the sun depends on the speed of light, which connects that precession phe-nomenon to quite disparate electromagnetic
+  phenomena. There is wide consensus that Einsteinian physics would come out on top because it fits the data at least as
+  well as the Newtonian equations, and sometimes better, without fudging the result by introducing new parameters (the
+  speed of light was already in use, though not in explaining planetary motions). It seems that the overall number of
+  parameters is relevant here. These vague intuitions have swayed physicists for millennia. But physicists have not
+  formalized them, nor explained them, nor understood them, even in very simple cases.</p>
+<p> Recent research in statistics has lead to a number numerically precise criteria for model selection. There is
+  classical Neyman-Pearson hypothesis testing, the Bayesian BIC criterion (Schwarz 1978), the minimization of
+  description length (MDL) criterion (Rissanen 1978, 1987; Wallace and Freeman 1987), Akaike&#146;s information
+  criterion (AIC) (Akaike 1973, 1974, 1977, 1985; see also Sakamoto et al 1986, and<br> Forster and Sober 1994) , and
+  various methods of cross validation (e.g., Turney 1994, Xiang and Wahba 1996). In a few short years we have gone from
+  informal intuition to an embarrassment of riches. The problem is to find some way of critically evaluating competing
+  methods of scientific inference. I call this the &#145;new science of simplicity&#146; because I believe that this
+  problem should be treated as a scientific problem: to understand when and why model selection criteria succeed or
+  fail, we should model the process of model selection itself. There is no simple and no universal model of model
+  selection, for the success of a selection method depends greatly on the circumstances, and to understand the
+  complexities, we have to model the situation in which the model selection takes place. For philosophers of science,
+  this is like making assumptions about the uniformity of nature in order understand how induction works. The problem is
+  the same: How can we make assumptions that don&#146;t simply assume what we want to prove? For example, it would not
+  be enlighten-ing to try to understand why inductive methods favor Einstein&#146;s physics over Newton&#146;s if we
+  have to assume that Einstein&#146;s theory is true in order to model the inferential process. Fortunately, the new
+  work on simplicity makes use of weaker assumptions. An example of such an assumption is the &#145;normality assumption&#146;.
+  It simply places constraints on how the estimated values of parameters are distributed around their true values
+  without placing any constraints on the true values themselves.</p>
+<p> This is why it is so important not to confuse what I am calling the normality assumption, which is about the
+  distribution of repeated parameter estimates, with an assumption about the normality of error distributions. For
+  example, in the case of a binary event like coin tossing, in which a random variable3 takes on the values 0 and 1,
+  there is no sense in which the deviation of this random variable from the mean is normal. The error distribution is
+  discrete, whereas the normal distribution is continuous. However, the distribution of the sample mean, which estimates
+  the propensity of the coin to land heads, is approximately normal. A normality assumption about errors is stronger and
+  more restrictive than an assumption of normality for the repeated parameter estimates. It is the less restrictive
+  assumption that is used in what follows.4</p>
+<p> It is true that models of model selection are a little different from standard scientific models. Scientific models
+  are descriptive, while models of model selection are what I will call weakly normative.5 For example, models of
+  planetary motion describe or purport to describe planets. But models of model selection relate a model selection
+  criterion to a goal. The goal might be predictive accuracy, empirical adequacy, truth, probable truth, or approximate
+  truth. But whatever the goal, the project is to understand the relationship between the methods of scientific
+  inference and the goal. Of this list, predictive accuracy is the one epistemic goal (minimizing description length is
+  a non-epistemic<br> goal) whose relationship with simplicity is reasonably well understood thanks to recent work in
+  mathematical statistics. So, predictive accuracy is the goal considered in this paper.</p>
+<p> Bayesianism is the dominant approach to scientific inference in North America today, but what does it take as the
+  goal of inference? Fundamentally, Bayesianism is a theory of decision making, and can consider any goal. It then
+  defines the method of deciding between two competing models as the maximization of the expected payoff with<br> 3 A
+  random variable is a variable whose possible values are assigned a probability.<br> 4 Kiessep&auml; (1997) shows that
+  a normality assumption for the error distribution is not<br> always sufficient to ensure normality of the parameter
+  estimators. However, Cramér<br> (1946), especially chapters 32 and 33, explains how the conditions are met<br>
+  asymptotically for large sample sizes in a very general class of cases.<br> 5 A strongly normative statement is one
+  which says we should or we ought to do such<br> and such. A weakly normative statement is one that says we should do
+  such and such<br> in order to optimize a given goal, without implying that it is a goal we should<br> optimize.<br> 88
+  Malcolm R. Forster<br> respect to that goal. The simplest idea is that the payoff of scientific<br> theories lies in
+  their truth. With that in mind, it is simplest to assign a<br> payoff of 1 to a true model and 0 to a false model. Let
+  me refer to this<br> kind of Bayesian philosophy of science as classical Bayesianism, or<br> standard Bayesianism.6
+  Consider a choice between model A and model<br> B. Is the expected payoff in selecting A greater than the expected
+  payoff<br> in selecting B? The answer is given in terms of their probabilities. If<br> Pr(A) is the probability that A
+  is true, and Pr(B) be the probability that B<br> is true, then the expected payoff for A is, by definition, Pr(A)
+  times the<br> payoff if it&#146;s true plus the Pr(not-A) times the payoff if it&#146;s false. The<br> second term
+  disappears, so the expected payoff for believing A is Pr(A).<br> Likewise, the expected payoff for believing B is
+  Pr(B). The expected<br> payoff for believing A is greater than the expected payoff for believing B<br> if and only if
+  Pr(A) is greater than Pr(B). This leads to the principle that<br> we should choose the theory that has the greatest
+  probability, which is<br> exactly the idea behind the model selection criterion derived by Schwarz<br> (1978), called
+  BIC.<br> Whatever the goal, a scientific approach to model selection is<br> usefully divided into 3 parts:<br> 1. The
+  specification of a goal. What goal can be reached or achieved in<br> model selection? Approximate truth is too vague.
+  Probable truth is<br> also too vague unless you tell me what the probability is of. Truth is<br> too vague for the
+  same reason. Are we aiming for the truth of a<br> theory, a model, or a more precise hypothesis?<br> 2. The
+  specification of a criterion, or a means to the goal. This is where<br> simplicity will enter the picture. What kind
+  of simplicity is involved<br> and exactly how it is to be used in combination with other kinds of<br> information,
+  like fit?<br> 3. An explanation of how the criterion works in achieving the goal. For<br> example, Bayesians explain
+  the criterion by deducing it from specific<br> assumptions about prior probability distributions. The Akaike
+  explanation<br> makes no such assumptions about prior probabilities, but<br> instead, makes assumptions about the
+  probabilistic behavior of parameter<br> estimates. The style of the explanation is different in each case,<br> and is
+  a further ingredient in what I am calling the framework.<br> 6 The classical Bayesian approach is currently dominant
+  in the philosophy of science.<br> See Earman (1992) for a survey of this tradition, and Forster (1995) for a
+  critical<br> overview. For alternative &#145;Akaike&#146; solutions to standard problems in the philosophy<br> of
+  science, see Forster and Sober (1994). For an &#145;Akaike&#146; treatment of the ravens<br> paradox, see Forster
+  (1994). For an Akaike solution to the problem of variety of<br> evidence, see Kruse (1997).<br> The new science of
+  simplicity 89<br> It should be clear from this brief summary that the difference between the<br> Bayesian and Akaike
+  modeling of model selection marks a profound<br> difference between statistical frameworks. What I have to say about
+  the<br> modeling of model selection goes to the very heart of statistical practice<br> and its foundations. Anyone
+  interested in induction agrees that, in some<br> sense, truth is the ultimate goal of inference, but they disagree
+  about how<br> to measure partial success in achieving that goal. Classical Bayesians do<br> not tackle the problem of
+  defining partial success. They talk of the<br> probability that a hypothesis is true, but most Bayesians deny that
+  such<br> probabilities are objective, in which case they do not define partial<br> success in an objective way. There
+  is no sense in which one Bayesian<br> scientist is closer to the truth than another if neither actually reaches
+  the<br> true model.<br> The same criticism applies to decision-theoretic Bayesians as well.<br> These are Bayesians
+  who treat model selection as a decision problem,<br> whose aim is to maximize a goal, or utility (Young, 1987), or
+  minimize a<br> loss or discrepancy (Linhart and Zucchini, 1986). They are free to<br> specify any goal whatsoever, and
+  so they are free to consider predictive<br> accuracy as a goal. But, again, the expectation is a subjective
+  expectation<br> defined in terms of a subjective probability distribution. Typically, these<br> Bayesians do not
+  evaluate the success of their method with respect to the<br> degree of predictive accuracy actually achieved. They
+  could, but then<br> they would be evaluating their method within the Akaike framework.<br> Nor do Bayesians consider
+  the objective relationship between the<br> method (the maximization of subjectively expected utilities) and the
+  goal<br> (the utilities). That is, they do not consider step (3), above. At present, it<br> appears to be an article
+  of faith that there is nothing better than the<br> Bayesian method, and they provide no explanation of this fact (if
+  it is a<br> fact). And even if they did, I fear that it would depend on a subjective<br> measure of partial success.
+  That is why the Akaike approach is<br> fundamental to the problem of comparing methods of model selection.<br> The
+  Akaike framework defines the success of inference by how close<br> the selected hypothesis is to the true hypothesis,
+  where the closeness is<br> measured by the Kullback-Leibler distance (Kullback and Leibler 1951).<br> This distance
+  can also be conceptualized as a measure of the accuracy of<br> predictions in a certain domain. It is an objective
+  measure of partial<br> success, and like truth, we do not know its value. That is why predictive<br> accuracy plays
+  the role of a goal of inference, and not a means or method<br> of inference. The issue of how well any method achieves
+  the goal is<br> itself a matter of scientific investigation. We need to develop models of<br> model selection.<br> The
+  vagueness of the notion of simplicity has always been a major<br> worry for philosophers. Interestingly, all three
+  methods already men90<br> Malcolm R. Forster<br> tioned, the MDL criterion, BIC, and AIC, define simplicity in exactly
+  the<br> same way?as the paucity of adjustable parameters, or more exactly, the<br> dimension of a family of functions
+  (when the two differ, then it is the<br> dimension that is meant, for it does not depend on how the family is<br>
+  described; see Forster, 1999). So, the definition of simplicity is not a<br> source of major disagreement.<br> In
+  fact, I am surprised that there is any disagreement amongst these<br> schools of thought at all! After all, each
+  criterion was designed to pursue<br> an entirely different goal, so each criterion might be the best one for<br>
+  achieving its goal. The MDL criterion may be the best for minimizing<br> description length, the BIC criterion the
+  best for maximizing probability,<br> and the AIC criterion the best at maximizing predictive accuracy. The<br> point
+  is that the claims are logically independent. The truth of one does<br> not entail the falsity of the others. There is
+  no reason why scientists<br> should not value all three goals and pursue each one of them separately,<br> for none of
+  the goals are wrong-headed.<br> Nevertheless, researchers do tend to think that the approaches are<br> competing
+  solutions to the same problem. Perhaps it is because they<br> think that it is impossible to achieve one goal without
+  achieving the<br> others? Hence, there is only one problem of induction and they talk of<br> the problem of scientific
+  inference. If there is only one problem, then the<br> Akaike formulation is a precise formulation of the problem, for
+  it<br> provides a definition of partial success with respect to the ultimate goal<br> of truth. For that reason, I
+  will compare all model selection criteria<br> within the Akaike framework.<br> 3 A milieu of methods and an easy
+  example<br> Here is a very simple example of a statistics problem. Suppose that a die<br> has a probability&theta; *of
+  an odd number of dots landing up, which does not<br> change over time, and each toss is independent of every other
+  toss. This<br> fact is not known. The two competing models are M1 and M2. Both<br> models get everything right except
+  that they disagree on the probability<br> of an odd number of dots landing up, denoted by &theta;.<br> M1 asserts that
+  &theta; = &frac12;. This model specifies an exact probability for<br> all events. If M1 is a family of hypotheses,
+  then there is only one<br> hypothesis in the family. M1 has no adjustable parameters. This is a<br> common source of
+  confusion, since it does mention a parameter;<br> namely&theta; . But &theta; is given a value, and is therefore
+  adjusted, and not<br> adjustable. M2, on the other hand, is uncommitted about the value of &theta; .<br>
+  &theta; is now an adjustable parameter, so M2 is more complex than M1 in one<br> sense of &#145;complex&#146;. Also
+  note that M1 is nested in M2, since all the<br> hypotheses in M1 also appear in<br> The new science of simplicity
+  91<br> M2. The problem is to use the observed data to estimate the probability<br> of future events. There is no
+  precise prediction involved, but we think of<br> it as a prediction problem of a more general kind. The problem of<br>
+  induction applies to this kind of problem.<br> In classical statistics, there are two steps in the &#147;solution&#148;
+  of this problem.<br> The first step is to test M1 against M2. This is the process that I am<br> calling model
+  selection. The second step is to estimate the value of any<br> adjustable parameters in the winning model by choosing
+  the best fitting<br> hypothesis in the family that best fits the seen data. This picks out a<br> single hypothesis
+  which can be used for the prediction or explanation of<br> unseen data. While different statistical paradigms have
+  different<br> definitions of &#145;best fit&#146;, those differences usually make little difference,<br> and I will
+  ignore them here. I will assume that everyone measures fit by<br> the likelihood (or log-likelihood). The naïve
+  empirical method that<br> ignores simplicity and goes by fit alone is called the method of maximum<br> likelihood
+  (ML). In the case of M1 the maximum likelihood hypothesis<br> has to be &theta; = &frac12;, since there are no others
+  that can do better. In the case<br> of M2 there is a well known result that tells us that the maximum<br> likelihood
+  hypothesis is &#136; &theta; &theta; = , where &#136;&theta; is the relative frequency of<br> heads-up in the observed
+  data. Note that the second step is essential,<br> since M2 by itself does not specify the value of its adjustable
+  parameter,<br> and cannot be used to make probabilistic assertions about future data.<br> Here is how classical
+  Neyman-Pearson hypothesis testing works. The<br> simpler of two models is the null hypothesis, in this case M1 (see
+  figure<br> 5.1). The decision to accept the null hypothesis or reject the null<br> hypothesis (and therefore accept
+  M2) depends on how probable the data<br> would be if the null hypothesis were true. If the data are improbable<br>
+  given the null hypothesis, then reject the null hypothesis, otherwise<br> accept it. The degree of improbability is
+  determined by the size or the<br> level of significance of the test. A size of 5% is fairly standard (p &lt; .05),<br>
+  which means that the null hypothesis is rejected if the observed data is a<br> member of a class of possible data sets
+  that collectively has a probability<br> of 5% given the null hypothesis. The observed relative frequencies that<br>
+  would be lead to such a rejection are those that fall under the shaded area<br> in figure 5.1. The value of the
+  relative frequency shown in Figure 1 lies<br> in that region, so that the null hypothesis is accepted in that
+  case.<br> Notice that the hypothesis &theta; =&theta;&#136; in M2 fits the observed facts better<br> than the null
+  hypothesis, yet the null hypothesis is still accepted.<br> Therefore classical model selection trades off fit for
+  simplicity, provided<br> that the simpler hypothesis is chosen as the null hypothesis.<br> There are a number of
+  peculiar features of the classical method of<br> model selection. First, there is nothing to prevent the more
+  complex<br> 92 Malcolm R. Forster<br> Null hypothesis<br> !&theta;<br> 1<br> 2 Relative<br> frequency<br>
+  &theta;=&theta;!<br> Rejection area<br> Figure 5.1: Classical Neyman-Pearson hypothesis testing.<br> model being
+  chosen as the null hypothesis, and there is no reason against<br> this practice except to say that it is not common
+  practice. Nor is there<br> any reason for choosing a 5% level of significance other than common<br> practice. Finally,
+  it is odd that the same tradeoff would be made even if<br> M2 had many more adjustable parameters than M1. There is no
+  obvious<br> method for adjusting the size of the test to take account of these features<br> of the context.
+  Neyman-Pearson methods do not appear to have the kind<br> of rationale demanded by the three steps described in the
+  introduction.<br> I have heard only one reply to this charge. The reply is that classical<br> statistics aims to
+  minimize the probability of rejecting the null hypothesis<br> when it is true (i.e. minimize type I error), and
+  minimize the probability<br> of accepting the null hypothesis when it is false (i.e. minimize type II<br> error), and
+  it does this successfully. I doubt that this is the only aim of<br> the procedure because I think that working
+  scientists are also interested<br> in predictive accuracy, and it is not obvious that classical testing brings<br> us
+  closer to that goal. And, in any case, the two parts to the goal stated<br> above are incompatible. To minimize type I
+  error, we should choose the<br> size of the test to be 0%. But that will maximize the type II error. At the<br> other
+  extreme, one could minimize Type II errors by choosing a 100%<br> significance level, but that would maximize the Type
+  I error. The actual<br> practice is a tradeoff between these two extremes. Classical statisticians<br> need to specify
+  a third goal if the tradeoff is to be principled.<br> Another objection to the Neyman-Pearson rationale for hypothesis<br>
+  testing is that it fails to address the problem when both models are false.<br> For then I would have thought that any
+  choice is in error, so trading off<br> Type I and Type II errors, which are conditional on one or other of the<br>
+  models being true, is an irrelevant consideration. In other words, there is<br> no criterion of partial success. Note
+  that these are criticisms of the<br> rationale behind the method, and not the methods themselves.<br> The new science
+  of simplicity 93<br> In order to explain the AIC and BIC model selection methods in this<br> example, it is sufficient
+  to think of them as classical Neyman-Pearson<br> tests, with some special peculiarities. In particular, AIC chooses
+  a<br> greater rejection area (about 15.7%), while BIC recommends a smaller<br> rejection area, which further
+  diminishes as the number of data increases.<br> This is the situation when the competing models differ by one
+  adjustable<br> parameter, as is the case in our example. Figure 5.2 plots the critical<br> point (the point defining
+  the boundary of the rejection area) as a function<br> of the number of coin tosses. Notice that as the number of
+  tosses<br> increases, a smaller deviation of the proportion of heads up from the null<br> result of 50% will succeed
+  in rejecting the null hypothesis, although BIC<br> requires are greater deviation in all cases. Therefore BIC gives
+  greater<br> weight to simplicity in the sense that it requires that there be stronger<br> evidence against the
+  hypothesis before the simpler null hypothesis is<br> rejected.<br> When the models differ by a dimensions greater than
+  one (such as<br> would be the case if we were to compare LIN with a family of 10-degree<br> polynomials), the size of
+  the rejection areas decrease. This is<br> significantly different from classical Neyman-Pearson testing, which<br>
+  makes no adjustment.<br> Number of data (in thousands)<br> Departure of the observed<br> relative frequency of
+  heads<br> above/below 50%<br> 20 40 60 80 100<br> 10<br> 20<br> 30<br> 40<br> AIC and Cross-Validation<br> BIC<br>
+  Figure 5.2: The critical point at which the null hypothesis is rejected<br> in cross-validation, BIC, and AIC.
+  Classical hypothesis testing<br> would be between BIC and AIC.<br> 94 Malcolm R. Forster<br> Bayesians have responded
+  to the conceptual difficulties facing<br> classical statisticians by bringing in the prior probabilities of the<br>
+  competing hypotheses and their likelihoods. The posterior probability of<br> a model is proportional to the product of
+  the prior probability and the<br> likelihood of the model. Therefore, the Bayesian method of comparing<br> posterior
+  probabilities appears to address the problem. Certainly, this<br> approach does make a decision that depends on both
+  of the competing<br> models, but is it the best policy for comparing the predictive accuracy of<br> competing
+  models?<br> Perhaps Bayesians could argue like this: Truth is connected to<br> predictive accuracy in the sense that
+  there is no hypothesis that can be<br> more predictively accurate than a true hypothesis, so to maximize the<br>
+  expected predictive accuracy of a model, we should maximize its<br> probability. However, this argument is flawed.
+  First, the premise is<br> false. It is true that for a maximally specific hypothesis?one that gives<br> precise values
+  to all parameters?no hypothesis can be more accurate<br> than the true hypothesis. However, this statement does not
+  extend to<br> models, which assert only that one of its hypotheses is true?models are<br> very large disjunctions.
+  Therefore, the predictive accuracy of a model is<br> either undefined, or it depends either on the probabilistic
+  weights given<br> to its members, or it is identified with the predictive accuracy of the<br> maximum likelihood
+  hypothesis (if &#145;point&#146; estimation is used). In either<br> case, if the predictive accuracy is well defined,
+  then the predictive<br> accuracy of a true model will be less than the predictive accuracy of the<br> true hypothesis.
+  It also follows that the predictive accuracy of a false<br> model can be higher than the predictive accuracy of a true
+  model.<br> Second, even if the premise were true, the conclusion does not follow.<br> Maximizing the probability of
+  truth does not always maximize the<br> expected predictive accuracy. To show this, suppose I predict the<br> reading
+  (plus or minus a second) on an atomic clock using my watch,<br> which is 3 seconds fast. My predictive accuracy
+  (suitably defined) is<br> pretty good, but the probability that my prediction is true is zero.<br> Contrast that to
+  someone who makes the same prediction on the basis of<br> a stopped clock. The probability of their prediction being
+  true is higher<br> than mine, yet their predictive accuracy is lousy.<br> Another incongruity of this Bayesian
+  approach arises in the case of<br> nested models, like the ones we are considering. As an independent<br> example,
+  consider a curve fitting example in which the model of all<br> linear functions, LIN, is nested in the model of all
+  parabolic functions,<br> PAR, since all the members of LIN are contained in PAR. This can be<br> seen by examining the
+  equations: If the coefficient of the squared term<br> in the equation for PAR is zero, then the equation reduces to
+  the equation<br> The new science of simplicity 95<br> for a straight line. Logically speaking, this nested
+  relationship means<br> that LIN logically entails PAR, in the sense that it is impossible for LIN<br> to be true and
+  PAR false. It is now a consequence of the axioms of<br> probability that the LIN can never be more probable than PAR,
+  and this<br> is true for all probabilities, prior or posterior (Popper 1959, chapter 7).<br> So, the Bayesian idea
+  that we should select the model with the highest<br> posterior probability leads to the conclusion that we should
+  never choose<br> LIN over PAR. In fact, we should never choose PAR over CUBE, where<br> CUBE is the family of third
+  degree polynomials, and so on. But if we<br> are interested in predictive accuracy, there will be occasions on which
+  we<br> should choose LIN over PAR. Therefore, the Bayesian principle cannot<br> serve the goal of predictive accuracy
+  in this case.<br> Of course, Bayesians can simply refuse to consider this case. They<br> might consider LIN versus PAR&minus;,
+  where PAR&minus; is PAR minus LIN. Then<br> the models are not nested, and the Bayesian criterion could lead to
+  the<br> choice of LIN over PAR&minus;. But it is puzzling why this difference should<br> make a difference if we are
+  interested in predictive accuracy, since the<br> presence or absence of LIN nested in PAR makes no difference to
+  any<br> prediction, and ipso facto, no difference to the accuracy of any<br> predictions. The failure of Bayesian
+  principles to yield the same answer<br> in both cases is a clear demonstration that their methods are not designed<br>
+  to maximize predictive accuracy. If they succeed in achieving this goal,<br> then it is a lucky accident.<br> The
+  goals of probable truth and predictive accuracy are clearly<br> different, and it seems that predictive accuracy is
+  the one that scientists<br> care about most. Whenever parameter values are replaced by point<br> estimates, there is
+  zero chance of that specific value being the true one,<br> yet scientists are not perturbed by this. Economists don&#146;t
+  care whether<br> their predictions of tomorrow&#146;s stock prices are exactly right; being close<br> would still
+  produce huge profits. Physicists don&#146;t care whether their<br> current estimate of the speed of light is exactly
+  true, so long as it has a<br> high degree of accuracy. Biologists are not concerned if they fail to<br> predict the
+  exact corn yield of a new strain, so long as they are<br> approximately right. If the probability of truth were
+  something they<br> cared about, then point estimation would be a puzzling practice. But if<br> predictive accuracy is
+  what scientists value, then their methodology<br> makes sense.<br> This does not work as a criticism of all Bayesians.
+  Decisiontheoretic<br> Bayesians could take predictive accuracy as their utility, and<br> derive a criterion to
+  maximize the expected predictive accuracy. This<br> decision-theoretic approach is discussed in Young (1987), for
+  example.<br> However, the classical Bayesian approach is the most influential amongst<br> 96 Malcolm R. Forster<br>
+  scientists, perhaps because it has led to the useable BIC criterion which<br> appears to implement Occam&#146;s
+  razor.7<br> A decision-theoretic Bayesianism that takes predictive accuracy as<br> its utility still requires the use
+  of prior probability distributions over<br> propositions about the predictive accuracies of hypotheses. If we had<br>
+  such prior knowledge, then the Bayesian approach would make sense.<br> But we don&#146;t. Another way of stating the
+  criticism is that there are<br> infinitely many Bayesian theories, and there is no way of deciding<br> amongst them,
+  besides using computer simulations, testing their success<br> on real predictions, and mathematically analyzing the
+  various criteria<br> under a variety of assumptions. But this is just to revert to the Akaike<br> approach, and one
+  might wonder whether Bayesianism is anything more<br> than the background machinery for generating criteria.<br> A
+  counter-consideration is that Bayesian decision theory allows us<br> to incorporate background information in
+  decision-making. Certainly,<br> when such information is available, it should be used. But Bayesians do<br> not have a
+  monopoly on background knowledge. It is not even true that<br> the AIC criterion takes no account of background
+  information, since it<br> can be applied more globally when there is data relevant to the<br> hypothesis that falls
+  outside of the prediction problem at hand. For<br> example, a model of stock market movement may take global
+  economic<br> parameters into account, and this may be done by considering a broader<br> base of economic data. AIC
+  requires that the relevance be built explicitly<br> into the model, whereas Bayesians allow it to be represented in
+  the prior<br> probabilities. I believe that the background information is better built<br> into the model, where it is
+  publicly displayed and subjected to debate.<br> Cross-validation is a method widely used in learning algorithms in<br>
+  neural networks and in machine learning (e.g., Turney 1994). It is an<br> interesting method because it appears to
+  make no assumptions at all. The<br> idea is that a curve is fitted to a subset of the observed data?often the<br>
+  whole data minus one data point. Such a subset of data is called a<br> calibrating data set. The predictive accuracy
+  of the fitted model is tested<br> against the data point or points left out, which may be averaged over all<br>
+  possible calibrating data sets. Note that this method cannot be applied to<br> a single specific curve, since the
+  average fit for each data point in the set<br> is<br> 7 The earliest reference to this idea I know is Rosenkrantz
+  (1977), except he does not<br> derive the BIC approximation, which was derived by Schwarz (1978). MacKay<br> (1995)
+  discusses the same version of Occam&#146;s razor in apparent ignorance of<br> previous work. Cheeseman (1990) also
+  discusses the classical Bayesian approach<br> with even less sophistication and even fewer references.<br> The new
+  science of simplicity 97<br> just the fit with respect to the total data set, which reduces to the naïve<br>
+  empiricism of ML.<br> However, if the method is used to compare models rather than<br> particular hypotheses, then it
+  has different properties. Each calibrating<br> data set produces a slightly different best fitting curve in the family
+  and<br> there will be a penalty for large, complex, families of curves because<br> large families will tend to produce
+  greater variation in the curve that best<br> fits a calibrating data set (Turney 1990). This leads to an average fit
+  that<br> is poorer than the fit of the curve that best fits the total data set. There is<br> no need to explicitly
+  define simplicity or to quantify its effects on the<br> stability of estimation; it is taken into account implicitly
+  rather than<br> explicitly. It is a remarkable fact that this simple method leads to<br> approximately the same
+  criterion of model selection as AIC in our simple<br> coin tossing example (see figure 5.2). It is remarkable exactly
+  because<br> AIC factors in simplicity explicitly while cross validation does not. But<br> perhaps it is not so
+  surprising once we note that they are both designed<br> with the same goal in mind &#150; predictive accuracy.8
+  Methods of cross<br> validation are worthy of serious attention from scientists, either as a way<br> of complementing
+  other criteria or as an alternative criterion. I don&#146;t<br> know which, but I believe that the Akaike framework
+  provides the right<br> tools for such an investigation.<br> This section has surveyed the variety of inference methods
+  that can<br> be applied to the easiest example imaginable. Very often the methods<br> give similar results, but the
+  foundations of those methods vary greatly.<br> Nevertheless, they should all be considered seriously. The solution is
+  to<br> evaluate all of them within the Akaike framework (or some natural<br> extension of it). As you can see, this
+  has been an argument for the<br> Akaike framework, and not the Akaike criterion (AIC).<br> 4 Predictive accuracy as a
+  goal of model selection<br> How should we define predictive accuracy? First, we need to distinguish<br> between seen
+  and unseen data. As a goal, we are interested in the<br> prediction of unseen data, rather than the data used to
+  construct the<br> hypothesis. The seen data is the means by which we can forecast how<br> well the hypothesis will
+  predict unseen data.<br> However, any particular set of data may exhibit idiosyncrasies due to<br> random fluctuations
+  of observational error. If we took the goal to be the<br> 8 I have since learned that Stone (1977) proved that AIC is
+  equivalent to leave-one-out<br> cross-validation asymptotically for large samples, so the result I got is to be
+  expected<br> because I assumed the same conditions.<br> 98 Malcolm R. Forster<br> prediction of a single set of unseen
+  data, then the goal is too hard in the<br> sense that particular errors are impossible to predict, and in other
+  cases<br> the goal may be achieved by dumb luck. It is therefore customary to<br> define predictive accuracy
+  differently. The idea is that a predictively<br> accurate curve is one that is as close as possible to the trend,
+  or<br> regularity, behind the data. The technical trick used to unpack that idea<br> is to imagine many data sets
+  generated repeatedly by that regularity (the<br> true curve) and define the predictive accuracy of an arbitrary
+  hypothesis<br> as the average fit of the curve with respect to all such data sets. In that<br> way no particular set
+  of errors fluctuations are given undue emphasis. In<br> the language of probability, predictive accuracy is the
+  expected fit of data<br> sets generated by the true probability distribution. The expected value is<br> therefore
+  objectively defined. It is not the subjective expectation that<br> would appear in a Bayesian analysis of the problem.
+  This point is worth<br> examining in greater detail.<br> Consider a curve fitting example in which y is function of x.
+  Define<br> the domain of prediction in terms of a probability distribution defined<br> over the independent variable,
+  p(x). This distribution will define the<br> range of x-values over which unseen data sets are sampled. There is no<br>
+  claim that p(x)is objective in the sense of representing an objective<br> chance, or a propensity of some kind. But it
+  is objectively given once the<br> domain of prediction is fixed. There are now three cases to consider:<br> 1. There
+  is a true conditional probability densityp*(y x), which is an<br> objective propensity. Since p(x) is objective (given
+  the domain of<br> prediction), the joint distribution p(x, y) is objective, because it is the<br> product of the
+  two.<br> 2. The probability densityp(y x) is an average over the propensities<br> p*(y x,z), where z refers to one or
+  more variables that affect the<br> value of y. In this case, one needs to specify the domain of prediction<br> more
+  finely. One needs to specify the probability distribution p(x, z).<br> Once p(x, z) is fixed, p(x, y)is determined
+  byp*(y x,z), and is again<br> objective.<br> 3. The independent variable x determines a unique, error free, value
+  of<br> y. This is the case of noise-free data. The true curve is defined by<br> the value of y determined by each
+  value of x. What this means is that<br> all points generated by the p(x, y) will lie exactly on the true curve.<br>
+  The distribution p(y x) is a Dirac delta function (zero for all values<br> of y except for one value, such that it
+  integrates to 1). The<br> probability p(x, y) is still objectively determined from p(x), which<br> defines the domain
+  of prediction. Moreover, p(x, y) allows for a<br> statistical treatment of parameter estimation, so it fits into the
+  Akaike<br> framework.<br> The new science of simplicity 99<br> Case (3) is important for it shows how a probabilistic
+  treatment of<br> parameter estimation may be grounded in a probabilistic definition of the<br> domain of prediction.
+  There is no need to assume that nature is<br> probabilistic. The only exception to this is when a family of curves<br>
+  actually contains the true curve, for in that case, there can be no curve<br> that fits the data better than the true
+  curve, and the estimated parameter<br> values are always the true ones, and there will be no variation from one<br>
+  data set to the next. In this case, the framework will not apply. I believe<br> that this is not a severe limitation
+  of the framework since it is plausible to<br> suppose that it arises very rarely. Therefore, in general, once the
+  domain<br> is fixed, the probability of sets of data generated by the true distribution<br> in this domain is
+  objectively determined by the true distribution.<br> The relativization of predictive accuracy to a domain has
+  meaningful<br> consequences. In many cases, a scientist is interested in predictions in a<br> domain different from
+  the one in which the data are sampled. For<br> example, in time series, the observed data is sampled from the past,
+  but<br> the predictions pertain to the future. In the Akaike framework, the<br> default assumption is that the domain
+  of prediction is the same as the<br> domain in which the data are sampled. It is imagined, in other words,<br> that
+  new data are re-sampled from the past. If the time series is<br> stationary, then the past is effectively the same as
+  the future. But in<br> general this is not true, in which case it is an open question whether the<br> standard model
+  selection criteria apply (for discussion, see Forster,<br> 2000). It is an advantage of the Akaike framework that such
+  issues are<br> raised explicitly.<br> Predictive accuracy is the expected fit of unseen data in a domain, but<br> this
+  definition is not precise until the notion of fit is precise. A common<br> choice is the sum of squared deviations
+  made famous by the method of<br> least squares. However, squared deviations do not make sense in every<br> example.
+  For instance, when probabilistic hypotheses are devised to<br> explain the relative frequency of heads in a hundred
+  tosses by the fairness<br> of the coin, the hypothesis does not fit the data in the sense of squared<br> deviations.
+  In these cases, an appropriate measure of fit is the likelihood<br> of the hypothesis relative to the data (the
+  probability of the data given the<br> hypothesis).<br> However, does the likelihood measure apply to all cases? In
+  order for<br> the hypothesis to have a likelihood, we need the hypothesis to be<br> probabilistic. In curve fitting,
+  we do that by associating each hypothesis<br> with an error distribution. In that way, the fit of a hypothesis with
+  any<br> data set is determined by the hypothesis itself, and is therefore an entirely<br> objective feature of the
+  hypothesis. When the error distribution is normal<br> (Gaussian), then the log-likelihood is proportional to the sum a
+  squared<br> 100 Malcolm R. Forster<br> deviations. When the error distribution is not normal, then I take the
+  loglikelihood<br> to be the more fundamental measure of fit.<br> Before we can state the goal of curve fitting, or
+  model selection in<br> general, we need a clear definition of the predictive accuracy of an<br> arbitrary hypothesis.
+  We are interested in the performance of a<br> hypothesis in predicting data randomly generated by the true hypothesis.<br>
+  We have already explained that this can be measured by the expected<br> log-likelihood of newly generated data. But we
+  do not want this goal to<br> depend on the number of data n because we do not really care whether<br> the unseen data
+  set is of size n or not. It is convenient to think of the<br> unseen data sets as the same size as the seen data set,
+  but it is surely not<br> necessary. Unfortunately, the log-likelihood relative to n data increases<br> as n increases.
+  So, in order that the goal not depend on n we need to<br> define the predictive accuracy of a hypothesis h as the
+  expected per<br> datum log-likelihood of h relative to data sets of size n. Under this<br> definition, the predictive
+  accuracy of a fixed hypothesis will be the same<br> no matter what the value of n, at least in the special case in
+  which the<br> data are probabilistically independent and identically distributed.9<br> Formally, we define the
+  predictive accuracy of an arbitrary hypothesis<br> h as follows. Let E* be the expected value with respect to the
+  objective<br> probability distribution p*(x, y), and let Data(n) be an arbitrary data set<br> of n data randomly
+  generated by p*(x, y). Then the predictive accuracy<br> of h, denoted by A(h), is defined as<br> A(h) 1E*
+  loglikelihood(Data(n))<br> n<br> = &#63726;&#63728; &#63737;&#63739;,<br> where E* denotes the expected value relative
+  to the distribution p*(x, y).<br> The goal of curve fitting, and model selection in general, is now well<br> defined
+  once we say what the h&#146;s are.<br> Models are families of hypotheses. Note that, while each member of<br> the
+  family has an objective likelihood, the model itself does not.<br> Technically speaking, the likelihood of a model is
+  an average likelihood<br> of its members, but the average can only be defined relative to a<br> subjective
+  distribution over its members. So, the predictive accuracy of a<br> model is undefined (except when there is only one
+  member in the<br> model). 10<br> Model selection proceeds in two steps. The first step is to select a<br> model, and
+  the second step is to select a particular hypothesis from the<br> 9 For in that case, the expected log-likelihood is n
+  times the expected log-likelihood of<br> each datum.<br> 10 There are ways of defining model accuracy (Forster and
+  Sober, 1994), but I will not<br> do so here because it complicates the issue unnecessarily.<br> The new science of
+  simplicity 101<br> model. The second step is well known in statistics as the estimation of<br> parameters. It can only
+  use the seen data, and I will assume that it is the<br> method of maximum likelihood estimation. Maximizing likelihood
+  is<br> the same as maximizing the log-likelihood, which selects the hypothesis<br> that best fits the seen data. If an
+  arbitrary member of the model is<br> identified by a vector of parameter values, denoted by &theta; , then &#136;&theta;
+  denotes<br> the member of the model that provides the best fit with the data. Each<br> model produces a different best
+  fitting hypothesis, so the goal of model<br> selection is to maximize the predictive accuracy of the best fitting
+  cases<br> drawn from rival models. This is the first complete statement of the goal<br> of model selection.<br> In
+  science, competing models are often constrained by a single<br> background theory. For example, Newton first
+  investigated a model of<br> the earth as a uniformly spherical ball, but found that none of the<br> trajectories of
+  the earth&#146;s motion derived from this assumption fit the<br> known facts about the precession of the earth&#146;s
+  equinoxes. He then<br> complicated the model by allowing for the fact that the earth&#146;s globe<br> bulges at the
+  equator and found that the more complicated model was<br> able to fit the equinox data. The two models are Newtonian
+  models of<br> the motion. However, there is no reason why Newtonian and Einsteinian<br> models cannot compete with
+  each other in the same way (Forster,<br> 2000a). In fact, we may suppose that there are no background theories.<br>
+  All that is required is that the models share the common goal of<br> predicting the same data.<br> In the model
+  selection literature, the kind of selection problem<br> commonly considered is where the competing models form a
+  nested<br> hierarchy, like the hierarchy of k-degree polynomials. Each model in the<br> hierarchy has a unique
+  dimension k, and the sequence of best fitting<br> members is denoted by &#136;<br> k &theta; . The predictive accuracy
+  of &#136;<br> k &theta; is denoted by<br> (&#136; ) k A &theta; . This value does not depend on the number of data, n.
+  In fact, the<br> predictive accuracy is not a property of the seen data at all?except in the<br> sense that &#136;<br>
+  k &theta; is a function of the seen data. The aim of model selection<br> in this context is to choose the value of k
+  for which (&#136;k) A &theta; has the highest<br> value in the hierarchy.<br> Note that &#136;<br> k &theta; will not
+  be the predictively most accurate hypothesis in<br> the model k. &#136;<br> k &theta; fits the seen data the best, but
+  it will not, in general,<br> provide the best average fit of unseen data. The random fluctuations in<br> any data set
+  will lead us away from the predictively most accurate<br> hypothesis in the family, which is denoted by *<br> k
+  &theta; . However, from an<br> epistemological point of view, we don&#146;t know the hypothesis *<br> k &theta; , so
+  we<br> have no choice but to select &#136;<br> k &theta; in the second step of curve fitting. So, our<br> goal is to
+  maximize (&#136;k) A &theta; , and not ( *k) A &theta; . In fact, the maximization of<br> ( *)k A &theta; would lead
+  to the absurd result that we should select the most<br> 102 Malcolm R. Forster<br> complex model in the hierarchy,
+  since ( *k) A &theta; can never decrease as k<br> increases.<br> While I am on the subject of &#147;what the goal is
+  not&#148;, let me note that<br> getting the value of k &#147;right&#148; is not the goal either. It is true that
+  in<br> selecting a model in the hierarchy we also select of value of k. And in<br> the special case in which ( *)k A
+  &theta; stops increasing at some point in the<br> hierarchy, then that point in the hierarchy can be characterized in
+  terms<br> of a value of k, which we may denote as k*. In other words, k* is the<br> smallest dimensional family in the
+  hierarchy that contains the most<br> predictively accurate hypothesis to occur anywhere in the hierarchy (if<br> the
+  true hypothesis is in the hierarchy, then k* denotes the smallest true<br> model). But model selection aims at
+  selecting the best hypothesis &#136;<br> k &theta; ,<br> and this may not necessarily occur when k = k*. After all,
+  &#136;<br> k &theta; could be<br> closer to the optimal hypothesis when k is greater than k* since the<br> optimal
+  hypothesis is also contained in those higher dimensional models.<br> I will return to this point in section 7, where I
+  defend AIC against the<br> common charge that it is not statistically consistent.<br> 5 A &#145;normality&#146;
+  assumption and the geometry of parameter space<br> There is a very elegant geometrical interpretation of predictive
+  accuracy<br> in the special case in which parameter estimates conform to a<br> probabilistic description that I shall
+  refer to as the normality condition. It<br> is good to separate the condition from the question about what
+  justifies<br> the assumption. I will concentrate on its consequences and refer the<br> inter-ested reader to Cramér
+  (1946, chs. 32-4) for the theory behind the<br> con-dition.<br> Consider the problem of predicting y from x in a
+  specified domain of<br> prediction. As discussed in the previous section, there is a &#145;true&#146;<br> distribution
+  p(x,y), which determines how the estimated parameter<br> values in our models vary from one possible data set to the
+  next. We can<br> imagine that a large dimensional model K contains the true distribution,<br> even though the model K
+  is too high in the hierarchy to be considered in<br> practice. In fact, we could define the hierarchy in such a way
+  that it<br> contains the true distribution, even though every model considered in<br> practice will be false. So, let
+  the point &theta; * in the model K represent the<br> true distribution. The maximum likelihood hypothesis in K is
+  &#136;<br> K &theta; , which<br> we may denote more simply by &#136;&theta; . There are now two separate functions<br>
+  over parameter space to consider. The first is the probability density for<br>
+  &#136;&theta; over the parameter space, which we could denote by (<br> )<br> f<br>
+  &theta;<br> .<br> The<br> second is the likelihood function, L(Data&theta;), which records the<br> probability of the
+  data given any particular point in parameter space.<br> Both are defined over points in parameter space, but each has
+  a very<br> different meaning. The normality<br> The new science of simplicity 103<br> assumption describes the nature
+  of each function, and then connects them<br> together.<br> 1. The distribution f (&theta;) is a multivariate normal
+  distribution centered<br> at the point &theta; * with a bell-shaped distribution around that point<br> whose spread is
+  determined by the covariance matrix &Sigma;*. The<br> covariance matrix &Sigma;* is proportional to 1/n, where n is
+  the sample<br> size (that is, the distribution is more peaked as n increases).<br> 2. The likelihood function L(Data&theta;)
+  is proportional to a multivariate<br> normal distribution with mean &#136;&theta;and covariance matrix &Sigma;.11 As n<br>
+  increases, logL(Data&theta;) increases proportionally to n, so that &Sigma; is<br> proportional to 1&frasl;n.<br> 3.
+  &Sigma; is equal to &Sigma;*.<br> The exact truth of condition (3) is an unnecessarily strong condition, but<br> its
+  implications are simple and clear. Combined with (1) and (2), it<br> implies that log-likelihoods and predictive
+  accuracies vary according to<br> the same metric; namely squared distances in parameter space. More<br> precisely,
+  there is a transformation of parameter space in which &Sigma; is<br> equal to I/n, where I is the identity matrix and
+  n is the sample size. The<br> per-datum log-likelihood of an arbitrary point &theta; is equal to the perdatum<br>
+  log-likelihood of &#136;&theta; minus &frac12; n|&theta; &minus;&theta;&#136;|2 , where |&theta; &minus;&theta;&#136;|2
+  is the<br> square of the Euclidean distance between &theta; and &#136;&theta; in the transformed<br> parameter space.
+  Moreover, the predictive accuracy of the same point &theta;<br> is equal to the predictive accuracy of &theta; * minus
+  &frac12; 2 * &theta; &theta; &minus; . Since &#136;&theta; is<br> a multivariate normal random variable distributed
+  around &theta; * with<br> covariance matrix I&frasl;n, n(&theta;&#136; &minus;&theta;*) is a multivariate normal
+  random<br> variable with mean zero and covariance matrix I. It follows that<br> n|&theta;&#136; &minus;&theta;*|2 is a
+  chi-squared random variable with K degrees of freedom,<br> and that |&theta;&#136; &minus;&theta;*|2 is a random
+  variable with mean K &frasl;n.<br> Similar conclusions apply to lower models in the hierarchy of<br> models, assuming
+  that they are represented as subspaces of the Kdimensional<br> parameter space. Without loss of generality, we may<br>
+  suppose that the parameterization is chosen so that an arbitrary member<br> of the model of dimension k is ( ) 1 2 , ,
+  , ,0, ,0 k &theta; &theta;?&theta; ? , where the last K &minus; k<br> parameter values are 0. The predictively most
+  accurate member of model<br> k, denoted *<br> k &theta; , is the projection of &theta; * onto the subspace and
+  &#136;<br> k &theta; is the<br> projection of &#136;&theta; onto the same subspace.<br> 11 The likelihood function is
+  not a probability function because it does not integrate to 1.<br> 104 Malcolm R. Forster<br> We may now use the
+  normality assumption to understand the<br> relationship between (&#136;k) A &theta; and ( *k) A &theta; . First note
+  that *<br> k &theta; is fixed,<br> so ( *k) A &theta; is a constant. On the other hand, &#136;<br> k &theta; varies
+  randomly around *<br> k &theta;<br> according to a k-variate normal distribution centered at *<br> k &theta; . We know<br>
+  that ( *)k A &theta; is greater than (&#136;k) A &theta; , since ( *)k A &theta; is the maximum by<br> definition.
+  Moreover, (&#136;k) A &theta; is less than ( *)k A &theta; by an amount proportional<br> to the squared distance
+  between &#136;<br> k &theta; and *<br> k &theta; in the k-dimensional<br> subspace. Therefore,<br> ( ) ( ) 2<br>
+  &#136; *<br> 2<br> k<br> k k A A<br> n<br>
+  &theta; = &theta; &minus;&chi; ,<br> where 2<br> k &chi; is a chi-squared random variable of k degrees of freedom. It
+  is<br> a well known property of the chi-squared distribution that 2<br> k &chi; has a mean,<br> or expected value,
+  equal to k. That leads to the relationship between the<br> bottom two plots in figure 5.3. Note that while ( *)k A&theta;
+  can never decrease<br> (because the best in k +1 is at least as good as the best in k), it is also<br> bounded above
+  (since it can never exceed the predictive accuracy of the<br> true hypothesis). This implies that the lower plot of (&#136;k)
+  A &theta; as a function<br> of k will eventually reach a maximum value and then decrease as k<br> increases. Hence
+  model selection aims at a model of finite dimension,<br> even though the predictive accuracy ( *)k A &theta; of the
+  best hypothesis in the<br> model will always increase as we move up the hierarchy (or, at least, it<br> can never
+  decrease). The distinction between &#136;<br> k &theta; around *<br> k &theta; is crucial to our<br> under-standing of
+  model selection methodology.<br> As an example, suppose that a Fourier series is used to approximate a<br> function.
+  Adding new terms in the series can improve the potential accuk0<br> k<br> k<br> 2n<br> Predictive<br> Accuracy<br>
+  k<br> 2n<br> * log (&#136;k) E&#63726; L&theta; n&#63737;<br>
+  &#63728; &#63739;<br> * (&#136; )<br> k E&#63726;A&theta; &#63737;<br>
+  &#63728; &#63739;<br> A k c&theta; * h<br> Increasing<br> complexity<br> Figure 5.3 The behavior of various quantities
+  in a nested<br> hierarchy of models.<br> The new science of simplicity 105<br> racy of fit indefinitely; however, the
+  problem with overfitting is overwhelming<br> when there are too many parameters to estimate. An historical<br>
+  illustration of this phenomenon is the case of ancient Ptolemaic<br> astronomy, where adding epicycles can always
+  improve the<br> approximation to the planetary trajectories, yet adding epicycles beyond a<br> certain point does not
+  improve prediction in practice. The present<br> framework explains this fact.<br> Denote the k for which (&#136;k) A
+  &theta; is maximum as 0 k . The value of 0 k<br> depends on the estimated parameter values (on the &#136;<br> k
+  &theta; ), which depends<br> on the actual data at hand. There will be a tendency for 0 k to increase as<br> the
+  number of seen data increases. This is observed in figure 5.3. The<br> middle curve (the curve for ( *)k A &theta; )
+  is entirely independent of the seen<br> data, but the mean curve for (&#136;k) A &theta; hangs below it by a distance
+  k/n. As n<br> increases, it will hang closer to the middle curve, and so its maximum<br> point will move to the right.
+  Therefore a richer data set justifies an<br> increase in complexity?something that is intuitively plausible on the<br>
+  idea that more data allow for the more accurate estimation of complex<br> regularities. For example, a parabolic trend
+  in a small set of data is more<br> readily explained away as an accidental deviation from a linear<br> regularity,
+  while the same parabolic trend in a large number of data is not<br> so easily dismissed.<br> The relationship between
+  (&#136; ) k A &theta; and ( *)k A &theta; exhibits what is<br> commonly called the bias/variance tradeoff (Geman et
+  al, 1992). Let me<br> first explain what is meant by the terms &#145;bias&#146; and &#145;variance&#146;. Model<br>
+  bias is the amount that the best case in the model is less predictively<br> accurate than the true hypothesis. By
+  &#145;best case&#146;, I mean the hypothesis<br> in the model with the highest predictive accuracy, not the best
+  fitting<br> case. In other words, model bias is the difference between ( *)k A &theta; and the<br> predictive accuracy
+  of the true hypothesis. As ( *k) A &theta; increases (see<br> figure 5.3), it gets closer to the best possible value,
+  so the model bias<br> decreases. Of course, we do not know which hypothesis is the most<br> predictively accurate. So,
+  model bias is not something that models wear<br> on their sleeves. Nevertheless, we can make some reasonable
+  guesses<br> about model bias. For example, the model that says that planets orbit the<br> sun on square paths is a
+  very biased model because the best possible<br> square orbit is not going fit the true orbit very well. At the
+  other<br> extreme, any model that contains the true hypothesis has zero bias. In<br> nested models, the bias is less
+  for more complex hypotheses.<br> The variance, on the other hand, refers to the squared distance of the<br> best
+  fitting hypothesis &#136;<br> k &theta; from the most predictively accurate hypothesis<br> *k<br>
+  &theta; . It is governed by the chi-squared variable in the previous equation.<br> The variance of estimated
+  hypothesis from the best case favors<br> simplicity.<br> 106 Malcolm R. Forster<br> In conclusion, complexity is good
+  for reduction of bias, whereas simplicity<br> reduces the tendency to overfit. The optimum model is the one<br> that
+  makes the best tradeoff between these two factors. The bias/variance<br> dilemma refers to the fact that as we go up
+  in a hierarchy of nested<br> models, the bias decreases, but the expected variance increases. A model<br> selection
+  criterion aims at the best trade off between bias and variance,<br> but neither bias nor variance is known, so this
+  theoretical insight does not<br> lead directly to any criteria. It tells us what we aim to do, not how to do<br>
+  it.<br> An interesting special case is where a family 1 k at some point in the<br> hierarchy already contains the true
+  hypothesis. In that case, there is no<br> decrease in bias past that point. But going higher in the hierarchy
+  leads<br> to some loss, because the additional parameters will produce a tendency<br> to overfit. This means that
+  going from model k1 to k1 +1 has no expected<br> advantages in terms of predictive accuracy. So, it would be best to
+  stop<br> in this case. However, this fact does not lead to a criterion either, unless<br> we know that the 1 k model
+  is true. If we already knew that, we would<br> need no criterion.<br> 6 Comparing selection criteria<br> In this
+  section I will compare the performance of AIC and BIC in the<br> selection of two nested models differing by one
+  adjustable parameter in<br> contexts in which the normality assumption holds. While the normality<br> condition will
+  not hold for many examples, it is a central case in statistics<br> because the Central Limit theorems show that it
+  holds in a wide variety<br> of circumstances (see Cramér 1946, chapters 32 and 33). More<br> importantly, the
+  arguments leveled against AIC in favor of BIC are<br> framed in this context. So, my analysis will enable us to
+  analyze those<br> arguments in the next section.<br> The normality assumption also determines the stochastic behavior
+  of<br> the log-likelihood of the seen data, and we can exploit this knowledge to<br> obtain a criterion of model
+  selection. Let log ( &#136;k ) L &theta; be the log-likelihood<br> of &#136;<br> k &theta; relative to the seen data.
+  If &#136;<br> k &theta; is a random variable, then<br> log ( &#136; ) k L&theta; n is also a random variable. Its
+  relationship to (&#136; ) k A &theta; is also<br> displayed in figure 5.3: log ( &#136;k ) L&theta; n is, on average,
+  higher than (&#136; ) k A &theta; by a<br> value of k/n (modulo a constant, which doesn&#146;t matter because it
+  cancels<br> out when we compare models). So, an unbiased12 estimate of the<br> predictive accuracy<br> 12 An estimator
+  of a quantity (in this case an estimator of predictive accuracy) is<br> unbiased if the expected value of the estimate
+  is equal to the quantity being<br> estimated. This sense of &#145;bias&#146; has nothing to do with model bias.<br>
+  The new science of simplicity 107<br> of the best fitting curve in any model is given by log ( &#136;k ) L&theta; n&minus;kn.
+  If<br> we judge the predictive accuracies of competing models by this estimate,<br> then we should choose the model
+  with the highest value of<br> log ( &#136; ) k L&theta; n&minus;kn. This is the Akaike information criterion
+  (AIC).<br> The BIC criterion (Schwarz 1978) maximizes the quantity<br> log ( &#136; ) log[ ] 2 k L&theta; n&minus;k n
+  n, giving a greater weight to simplicity by a<br> factor of log[n] 2 . This factor is quite large for large n, and has
+  the<br> effect of selecting a simpler model than AIC. As we shall see, this an<br> advantage in some cases and a
+  disadvantage in other cases. There is an<br> easy way of understanding why this is so. Consider two very extreme<br>
+  selection rules: The first I shall call the Always-Simple rule because it<br> always selects the simpler model no
+  matter what the data say.<br> Philosophers will think of this rule as an extreme form a rationalism.<br> The second
+  rule goes to the opposite extreme and always selects the<br> more complex model no matter what the data, which I call
+  the Always-<br> Complex rule. In the case of nested models, the Always-Complex rule<br> always selects the model with
+  the best-fitting specification and is<br> therefore equivalent to a maximum likelihood (ML) rule. It is also a
+  rule<br> that philosophers might describe as a naïve form of empiricism, since it<br> gives no weight to simplicity.
+  BIC and AIC are between these two rules:<br> BIC erring towards the Always-Simple side of the spectrum, while AIC<br>
+  is closer to the ML rule.<br> Consider any two nested models that differ by one adjustable<br> parameter, and assume
+  that normality conditions apply approximately.<br> Note we need not assume that the true hypothesis is in either model<br>
+  (although the normality conditions are easier to satisfy when it is). The<br> simple example in section 3 is of this
+  type, but the results here are far<br> more general. The only circumstance that affects the expected<br> performance
+  of the rules in this context is the difference in the model<br> biases between the two models. The model bias,
+  remember, is defined as<br> the amount that the most predictively accurate member of the family is<br> less
+  predictively accurate than the true hypothesis. Under conditions of<br> normality, the difference in model bias is
+  proportional to the squared<br> distance between the most accurate members of each model. In our easy<br> example,
+  this is proportional to 1 2<br> (&theta;*&minus; 2) . Note that the Always-Simple<br> rule selects the hypothesis
+  1<br>
+  &theta; = 2 and the ML rule selects the hypothesis<br>
+  &#136; &theta; &theta; = , where &#136;&theta; is the maximum likelihood value of the statistic (the<br> relative
+  frequency of &#145;heads up&#146; in our example). Under the normality<br> assumption the predictive accuracies of
+  these hypotheses are proportional<br> to the squared distance to &theta; * in parameter space. That is,<br> ( 1) ( 1)2<br>
+  A&theta;=2=&minus;const.&theta;*&minus;2 and ( ) ( )2 A&theta;=&theta;&#136;=&minus;const.&theta;*&minus;&theta;&#136;.<br>
+  108 Malcolm R. Forster<br> Therefore, the null hypothesis 1<br> 2 &#136;&theta; = is a better choice than the<br>
+  alternative &#136; &theta; &theta; = if and only if &frac12; is closer to * &theta; than &#136;&theta; is to &theta;
+  *.<br> Notice that the first distance is proportional to the complex model&#146;s<br> advantage in bias, while the
+  expected value of the second squared<br> distance is just the variance of the estimator &#136;&theta; . Therefore, the
+  ML rule<br> is more successful than the Always-Simple rule, on average, if and only<br> if, the advantage in model
+  bias outweighs the increased variance, or<br> expected overfitting, that comes with complexity. This is the<br>
+  bias/variance dilemma.<br> A simple corollary to this result is that the two extreme rules, Always-<br> Simple and
+  Always-Complex, enjoy the same success (on average) if the<br> model bias advantage exactly balances the expected loss
+  due to variance.<br> It is remarkable that two diametrically opposed methods can be equally<br> successful in some
+  circumstances. In fact, we may expect that all rules,<br> like BIC and AIC, will perform equivalently when the bias
+  difference is<br> equal to the variance difference.<br> The situation in which the bias and variance differences are
+  equal is a<br> neutral point between two kinds of extremes?at one end of the<br> spectrum the variance is the dominant
+  factor, and at the other extreme,<br> the bias difference is the overriding consideration. In the first case<br>
+  simplicity is the important factor, while in the second case goodness of<br> fit is the important criterion. So, when
+  the model bias difference is less<br> than the expected difference in variance, we may expect BIC to perform<br>
+  better since it gives greater weight to simplicity. And when the model<br> bias is greater than the variance, we may
+  expect AIC to perform better<br> than BIC, though neither will do better than ML.<br> These facts are confirmed by the
+  results of computer computations<br> shown in figure 5.4. In that graph, the expected gain in predictive accuracy,<br>
+  or what amounts to the same thing, the gain in expected predictive<br> accuracy, is plotted against the model bias
+  difference between the two<br> models in question. Higher is better. The expected performance of naïve<br> empiricist
+  method of ML is taken as a baseline, so the gain (or loss if the<br> gain is negative) is relative to ML. The
+  performance is therefore<br> computed as follows. Imagine that a data set of size n is randomly<br> generated by the
+  true distribution in a domain of prediction. The method<br> in question then selects its hypothesis. If it is the same
+  as the ML<br> hypothesis, then the gain is zero. If it chooses the simpler model, then<br> the gain will be positive
+  if the resulting hypothesis is predictively more<br> accurate, and negative if it is less accurate, on average. The
+  overall<br> performance of the method is calculated as its expected gain. The<br> expectation is calculated by
+  weighting each possible case by the relative<br> frequency of its occurrence as determined by the true
+  distribution.<br> The new science of simplicity 109<br> The performance of any method will depend on the difference in
+  bias<br> between the two models. The horizontal axis is scaled according to raw<br> (un-squared) distances in
+  parameter space, so it is actually represents the<br> square root of the model bias differences.13 On the far left is
+  the special<br> case in which both models have the same bias. That is the point at which<br> there is no advantage in
+  complexity. To the right are points for which the<br> model bias is decreased in the more complex model. For nested
+  models,<br> the bias factor will always favor the more complex model, although this<br> is not always true for
+  non-nested models.<br> The rest of the context is held fixed: The models differ by one<br> adjustable parameter, the
+  number of seen data is fixed, and normality<br> conditions hold. Remember that the seen data set itself is not held
+  fixed.<br> We are interested in the expected performance averaged over all possible<br> seen data sets of size n,
+  where the expectation is determined by the true<br> distribution.<br> The curve labeled the &#145;optimum rule&#146;
+  in figure 4 records the perfor-<br> 13 If it were scaled by the squared distances, then the results would look even
+  less<br> favorable to the BIC criterion.<br> AIC<br> Predictive accuracy<br> above ML<br> Neutral point<br> n =
+  100<br> BIC<br> Optimum<br> 0<br> * *<br>
+  &theta;2&minus;&theta;1<br> * *<br> 2 1<br> 1<br> n<br>
+  &theta; &theta; &minus; =<br> Figure 5.4 At the neutral point, the advantage of bias had by the<br> complex model
+  balances its disadvantage in variance, and all<br> selection rules result in roughly the same expected predictive<br>
+  accuracy. In situations where the difference in model bias is<br> smaller, methods that favor simplicity do better,
+  like BIC, while in<br> all other contexts, it is better to give less weight to simplicity, in<br> which case AIC does
+  better than BIC. The plot looks the same for<br> a very wide variety of values of n.<br> 110 Malcolm R. Forster<br>
+  mance of the following &#145;perfect&#146; method of selection: of the two hypothesis,<br> choose the one that is the
+  most predictively accurate. Sometimes<br> the simpler model will &#145;win&#146;, sometimes the more complex model
+  will<br>
+  &#145;win&#146;. In the cases in which the simpler model is chosen, the policy is<br> doing the opposite from the ML
+  method. This &#145;policy&#146; does better than<br> ML when the model bias gain is relatively small, which reflects
+  the fact<br> that the decreased overfitting outweighs the loss in model bias. But<br> when the model bias advantage of
+  complex models is large enough, the<br> complex model is almost always doing better in spite of its greater<br>
+  tendency to overfit. Note that the optimum rule cannot be implemented<br> in practice, for it supposes that we know
+  the predictive accuracies of the<br> hypotheses in question. Of course, we do not know this. &#145;Real&#146;
+  methods<br> can only make use of things we know, like the number of adjustable<br> parameters, the number of seen
+  data, and the fit with seen data. The<br> optimum curve is shown on the graph because it marks the absolute<br> upper
+  bound in performance for any real criterion.<br> BIC manages to meet that optimum for the special case (on the far
+  left<br> in Figure 4) in which both models are equally biased. In our easy<br> example, this corresponds to the case
+  in which the null hypothesis is<br> actually true ( 1<br>
+  &theta; * = 2 ). If we knew this were the case, then we would<br> want to choose the null hypothesis no matter what
+  the data are, which is<br> to say that the Always-Simple rule is also optimum in this situation. It is<br> hardly
+  surprising that both these rules do better than AIC in this situation.<br> Nevertheless, this situation may be
+  relevant to scientific research.<br> Raftery (1994) argues that this situation is likely to arise in regression<br>
+  problems in which scientists consider many possible independent<br> variables when few, if any, are truly relevant to
+  the dependent variable.<br> In an extreme case we can imagine that a set of 51 variables are all<br> probabilistically
+  independent. Pick one as the depend variable and<br> consider all models that take this variable to be a linear
+  function of some<br> proper subset of the remaining variables. Since the coefficients of each<br> term in the equation
+  can be zero, all of the models contain the true<br> hypothesis (in which all the coefficients are zero). Therefore all
+  the<br> models are unbiased (in fact, they are all true). That means that complex<br> models lose by their increased
+  tendency to overfit, and have no<br> compensating gains in bias. For instance, in comparing two nested<br> models in
+  which one adds a single independent variable, AIC will<br> incorrectly add the variable 15.7% of the time no matter
+  how many data<br> we collect. BIC will make this mistake less often, and the frequency of<br> the mistake diminishes
+  to zero as we collect more data.<br> While AIC is making a mistake in this situation, the mistake is not as<br> bad as
+  it sounds. The goal is to maximize predictive accuracy, and the<br> severity of the mistake is measured by the loss in
+  predictive accuracy. If<br> The new science of simplicity 111<br> the estimated value of the coefficient of the added
+  variable is close to<br> zero, then the loss in predictive accuracy may be very small. Even the<br> extreme case of
+  adopting the maximum likelihood rule (ML), which adds<br> all 50 variables, the loss in predictive accuracy due to
+  overfitting is equal<br> to 50/n, on average, which diminishes as n increases.14 AIC will tend to<br> add about 8
+  variables, instead of 50, although the loss will be more than<br> 8/n because it will add the variables with the
+  larger estimated<br> coefficients. The plot in Figure 4 suggests that the loss is around 28/n.<br> For smaller n, this
+  may be quite a large loss, but notice that the loss tends<br> to zero as n increases, despite that fact that the
+  proportion of wrongly<br> added variables does not tend to zero. That is why it is important to be<br> clear about the
+  goal (I will return to this point in the next section).<br> In the plot in figure 5.4, n = 100. But, surprisingly, the
+  plots look the<br> same for a wide variety of values I tested, from n = 100, and up. Again,<br> the reason that the
+  relative performance of BIC and AIC does not change<br> much is because of the fact that the relative cost of each BIC
+  mistake<br> goes up even though the frequency of BIC mistakes diminishes for BIC.<br> Note that the absolute cost, in
+  terms of predictive accuracy, decreases to<br> zero for both methods as n tends to infinity.<br> Before leaving the
+  special case, it is important to emphasize that<br> scientists do not know that they are in such a situation. If they
+  did know,<br> there would be no need for any method of model selection?just pick the<br> simplest model. It is
+  precisely because the context is unknown that<br> scien-tists want to use a selection rule. So, it would be wrong to
+  prefer<br> BIC solely on the basis of what happens in this special case.<br> The raison d&#146;être of model selection
+  is the possibility of facing the<br> situations represented further to the right on the x-axis in Figure 4. There<br>
+  we quickly approach the neutral point at which all &#145;real&#146; methods<br> perform approximately the same. This
+  point occurs when the model bias<br> difference equals the variance of the true distribution (of the parameter<br>
+  estimator). With the units we have chosen, this occurs at the point<br> marked 1 n . At points of greater difference
+  in model bias, the fortunes<br> of BIC and AIC change dramatically, and at model bias differences<br> corresponding to
+  about 3 standard deviations, BIC is paying a huge price<br> for weighing simplicity so heavily.<br> In the case
+  illustrated, the competing models differ by just one adjustable<br> parameter(&Delta;k=1). In other computer
+  computations, I have found<br> that BIC has an even greater disadvantage on the right-hand side of the<br> 14 This is
+  because the maximum likelihood hypothesis is, on average, a (squared)<br> distance of 1/n from the optimum hypothesis,
+  &theta;* (see figure 5.4). (This depends on<br> an appropriate scaling of distances in parameter space.) The loss is
+  then multiplied<br> for each variable.<br> 112 Malcolm R. Forster<br> neutral point, while its advantage over AIC on
+  the left is less. The near<br> optimality of BIC in one case exposes us to considerable risk in other<br>
+  contexts.<br> It is interesting to consider what happens when the number of seen<br> data, n, increases. I have
+  defined model bias in a way that does not<br> depend on n, so the point on the x-axis in Figure 4 that represents
+  the<br> context we are in does not change as n changes. As n increases, the<br> relative shapes of the curves do not
+  change, but they shrink in size. That<br> is, the heights above and below the x-axis get smaller inversely<br>
+  proportionally to n, and the neutral point moves to the left. If we<br> imagine that the graph is magnified as it
+  shrinks, so it appears the same<br> size to us, then the only change is that the point on the x-axis that<br>
+  represents the current context moves to the right. So, what happens if we<br> steadily increase the number of seen
+  data over time? We start out at an<br> initial value of n, call it n0. Then we collect more data, and n increases.<br>
+  At the beginning, we are either to the left of the neutral point or we are<br> not. If we start at the left, then BIC
+  will be better than AIC initially. But<br> as the data number increases, we must move through the region in which<br>
+  BIC is performing poorly. If we do not start out to the left of the neutral<br> point, then AIC is never worse than
+  BIC. So, no matter what happens,<br> we are exposed to a case in which BIC is worse than AIC as the sample<br> size
+  increases. In the limit as n tends to infinity, all methods<br> approximate the optimal curve. So, the risks
+  associated with BIC appear<br> at intermediate values of n. Analyses that look only at the behavior of<br> the methods
+  for asymptotically large values of n will overlook this<br> weakness of BIC at intermediate sample sizes.<br> The
+  analysis of this section has looked at the comparison of two fixed<br> nested models. These results do not extend
+  straightforwardly to the case<br> of selecting models in a hierarchy of nested models (some remarks will<br> address
+  this in the next section). However, the special case considered<br> here does substantiate my thesis that BIC pays a
+  price for its near<br> optimality in one special case.<br> 7 The charge that AIC is inconsistent<br> It is frequently
+  alleged that AIC is inconsistent,15 while BIC is not,<br> thereby suggesting that BIC performs better in the limit of
+  large n. This<br> allegation is repeated in many publications, and in so many con-<br> 15 Philosophers unfamiliar with
+  statistical terminology should note that this does not<br> refer to logical inconsistency. Rather, an estimator is
+  statistically consistent if it<br> converges in probability to the true value of what it is trying to estimate (the
+  target<br> value).<br> The new science of simplicity 113<br> versations, that I am unable to document all of them. I
+  will pick on just<br> one example. Keuzenkamp and McAleer (1995, page 9) state that AIC<br>
+  &#147;fails to give a consistent estimate of k,&#148; which they attribute to Rissanen<br> (1987, page 92) and Schwarz
+  (1978). Bozdogan (1987) takes the<br> criticism to heart, and derives an extension of AIC that is consistent in<br>
+  this sense. My conclusion will be that there is no sensible charge to<br> answer, and so there is no need to modify
+  AIC (at least, not for this<br> reason). An immediate corollary is that all the competing criteria are<br> consistent
+  in the relevant sense. In any case, even if it did turn out<br> unfavorably for AIC, it would be wrong to place too
+  much emphasis on<br> what happens in the long term, when scientists are only interested in<br> finite data.16<br>
+  There are actually many different questions that can be asked about<br> the consistency of AIC. The first is whether
+  AIC is a consistent method<br> of maximizing predictive accuracy in the sense of converging on the<br> hypothesis with
+  the greatest predictive accuracy in the large sample limit.<br> The second is whether AIC is consistent estimator of
+  predictive accuracy,<br> which is a subtlety different question from the first. And the third is<br> whether AIC
+  converges to the smallest true model in a nested hierarchy<br> of models. The answer to the first two questions will
+  be yes, AIC is<br> consistent in this sense while the answer to the third is no, AIC is not<br> consistent in this
+  sense, but this fact does not limit its ability to achieve<br> its goal. Here are the details.<br> Whatever it means
+  to &#145;estimate k&#146;, it is certainly not what AIC was<br> designed to estimate. The goal defined by Akaike
+  (1973) was to estimate<br> predictive accuracy. Because Akaike is the author of this approach, the<br> charge that AIC
+  is inconsistent might be read by many observers as<br> saying that AIC is an inconsistent estimate of predictive
+  accuracy. I will<br> begin by showing that this charge of inconsistency is false, and then<br> return to the quoted
+  charge.<br> Akaike&#146;s own criterion minimizes the quantity 2(log ( &#136; ) ) k &minus; L&theta; &minus;k,<br>
+  which estimates 2 (&#136; ) k &minus; nA &theta; . But note that this is a strange thing to<br> estimate, since it
+  depends on the number of seen data, n. It is like<br> estimating the sum of heights of n people drawn from a
+  population. The<br> target value would be n&mu;, where &mu; is the mean height in the population.<br> Rather, the
+  target should be a feature of the population alone, namely &mu;.<br> To proceed otherwise is to mix up the means to
+  the goal, which is a<br> function of n, and the goal itself (which is not a function of n). So, the<br> correct
+  procedure is to use the sample mean, x , to estimate &mu;, and this is<br> a consistent estimate.<br> 16 See Sober
+  (1988) for a response to the inconsistency of likelihood estimation in some<br> situations, and Forster (1995, section
+  3) for a critique of the Bayesian idea that priors<br> are harmless because they are &#145;washed out&#146; in the
+  long run.<br> 114 Malcolm R. Forster<br> Now suppose we were to use n x to estimate n&mu;. Then of course the<br>
+  estimator would be inconsistent because the error of estimation grows<br> with increasing n. This is hardly surprising
+  when the target value keeps<br> growing. The correct response to this problem would be to say, as everyone<br> does,
+  that x is a consistent estimate of &mu;. Surprisingly, this is<br> exactly the situation with respect to AIC. AIC, in
+  Akaike&#146;s formulation,<br> is an inconsistent estimate because its target value grows with n. Akaike<br> (1973,
+  1974, 1977, 1985) sets up the problem in a conceptually muddled<br> way.<br> The correct response to the &#145;problem&#146;
+  is to divide the estimator and<br> target by n, so that the target does not depend on the sample size. This is<br>
+  exactly what I have done here, and what Forster and Sober (1994) were<br> careful to do when they introduced the term
+  &#145;predictive accuracy&#146; to<br> represent what the AIC criterion aimed to estimate (Akaike does not use<br>
+  this term). AIC does provide a consistent estimate of predictive accuracy<br> when it is properly defined.<br> Now,
+  let us return to the earlier charge of inconsistency. When there<br> is talk of &#145;estimating k&#146; the
+  discussion is typically being restricted to the<br> context of a nested hierarchy of models. Here there are two cases
+  to<br> consider. The first is the case in which the true hypothesis appears somewhere<br> in the hierarchy, while in
+  the second it does not. Let me consider<br> them in turn.<br> In the former case, the true hypothesis will first
+  appear in a model of<br> dimension k*, and in every model higher in the hierarchy. When one<br> talks of estimating k,
+  one is treating the value of k determined by the<br> selected model as an estimate of k*. But why should it be
+  desirable that<br> k be as close as possible to k*? In general it is not desirable. For<br> example, consider the
+  hierarchy of nested polynomials and suppose that<br> the true curve is a parabola (i.e., it is in PAR). If the data is
+  sampled<br> from a relatively narrow region in which the curve is approximately<br> linear (which is to say that there
+  is not much to gain by going from LIN<br> to PAR), then for even quite large values of n, it may be best to select<br>
+  LIN over PAR, and better than any other family of polynomials higher in<br> the hierarchy. Philosophically speaking,
+  this is the interesting case in<br> which a false model is better than a true model. However, for<br> sufficiently
+  high values of n, this will change, and PAR will be the better<br> choice (because the problem of overfitting is then
+  far less). Again, this is<br> an example in which asymptotic results are potentially misleading<br> because they do
+  not extend to intermediate data sizes.<br> Let us consider the case in which n is large enough to make PAR the<br>
+  best choice (again in that case in which the true curve is in PAR). Now<br> AIC will eventually overshoot PAR.
+  Asymptotically, AIC will not converge<br> on PAR (Bozdogan 1987; Speed and Yu, 1991). This is the basis<br> The new
+  science of simplicity 115<br> for the quoted charge that AIC is inconsistent. But how serious are the<br> consequences
+  of this fact? After all, AIC does successfully converge on<br> the true hypothesis!<br> One might object: &#147;But
+  how can it converge on the true parabola if it<br> doesn&#146;t converge on PAR?&#148; But the objector is forgetting
+  that the true<br> curve is also in all the models higher in the hierarchy because the models<br> are nested. So, there
+  is no need for the curve favored by AIC to be in<br> PAR in order for it to converge to a member of PAR. The fact that
+  I am<br> right about this is seen independently from the fact that the maximum<br> likelihood estimates of the
+  parameter values converge to their true<br> values. This implies that even ML converges on the true hypothesis,
+  and<br> certainly ML overshoots k* far more than AIC!<br> In the second case the true hypothesis does not appear
+  anywhere in the<br> hierarchy of models. In this case the model bias will keep decreasing as<br> we move up the
+  hierarchy, and there will never be a point at which it<br> stops decreasing. The situation is depicted in figure 5.3.
+  For each n,<br> there will be an optimum model k0, and this value will keep increasing as<br> n increases. The
+  situation here is complicated to analyse, but one thing is<br> clear. There is no universally valid theorem that shows
+  that BIC does<br> better than AIC. Their relative performances will depend on the model<br> biases in the hierarchy in
+  a complicated way.<br> In both cases, the optimum model moves up the hierarchy as n<br> increases. In the first case,
+  it reaches a maximum value k*, and then<br> stops. The crucial point is that in all cases, the error of AIC (as an<br>
+  estimate of predictive accuracy) converges to zero as n tends to infinity.<br> So, there is no relevant charge of
+  inconsistency to be leveled against AIC<br> in any situation. In fact, there is no such charge to be leveled against
+  any<br> of the methods I have discussed, which is to say that asymptotic results<br> do not succeed in differentiating
+  any method from any other. The crucial<br> question concerns what happens for intermediate values of n.<br>
+  Theoreticians should focus on the harder questions, for there are no easy<br> knock-down arguments against one
+  criterion or another.<br> 8 Summary of results<br> The analysis has raised a number of issues: is there any universal
+  proof<br> of optimality, or more realistically, Is one criterion more optimal than<br> known competitors? Or does it
+  depend on the circumstances? What is<br> the sense of optimality involved? I believe that the framework described<br>
+  in this chapter shows how to approach these questions, and has yielded<br> some answers in special cases. The main
+  conclusion is that the perfor116<br> Malcolm R. Forster<br> mance of model selection criteria varies dramatically from
+  one context to<br> another. Here is a more detailed summary of these results:<br>
+  &bull; All model selection criteria may be measured against the common<br> goal of maximizing predictive accuracy.<br>
+  &bull; Predictive accuracy is always relative to a specified domain of<br> prediction, and different domains define
+  different, and perhaps<br> conflicting, goals.<br>
+  &bull; It is commonly claimed that AIC is inconsistent. However, all<br> criteria are consistent in the sense that
+  they converge on the optimum<br> hypothesis for asymptotically large data sizes.<br>
+  &bull; Because all methods are consistent in the relevant sense, this<br> asymptotic property is irrelevant to the
+  comparison of selection<br> methods.<br>
+  &bull; The relevant differences in the selection criteria show up for<br> intermediate sized data sets, although what
+  counts as &#145;intermediate&#146;<br> may vary from one context to the next.<br>
+  &bull; When the more complex model merely adds adjustable parameters<br> without reducing model bias, then BIC makes a
+  better choice than<br> AIC, but no method does better than always choosing the simpler<br> model in this context.<br>
+  &bull; When a more complex model does reduce bias, but just enough to<br> balance the expected loss due to
+  overfitting, then this is a &#145;neutral<br> point&#146; at which all methods enjoy roughly the same degree of<br>
+  success.<br>
+  &bull; When a more complex model reduces model bias by an amount that<br> exceeds the expected loss due to
+  overfitting, then AIC does quite a<br> lot better than BIC, though ML performs better than both.<br> The demonstration
+  of these results is limited to the comparison of two<br> nested models under conditions of normality, and it supposes
+  that the<br> domain of prediction is the same as the sampling domain (it deals with<br> interpolation rather than
+  extrapolation?see Forster, 2000 for some<br> results on extrapolation). This leaves a number of open questions.
+  How<br> do these results extend to hierarchies of nested models, and to non-nested<br> models? What happens when
+  normality conditions do not apply? What<br> if the domain of prediction is different from the domain from which
+  the<br> data are sampled? While I have few answers to these questions, I have<br> attempted to describe how such an
+  investigation may proceed.<br> What are the practical consequences of these results? In the case<br> investigated
+  here, I have plotted the relative performances of model<br> selection criteria against the biases of the models under
+  consideration.<br> The problem is that the model biases are generally unknown.<br> A sophisticated Bayesian might
+  assign a prior probability distribution<br> over the model biases. For example, if the model biases along the
+  x-axis<br> The new science of simplicity 117<br> in figure 5.4 have approximately the same weight, then the
+  expected<br> performance of AIC will be better than BIC. If such a prior were<br> available, it would not only
+  adjudicate between AIC and BIC, but it<br> would also allow one to design a third criterion that is better than
+  both.<br> However, it is difficult to see how any such prior could be justified.<br> If such priors are unavailable,
+  then it seems sensible to favor AIC over<br> BIC, if that were the only choice.17 After all, AIC is a better estimator
+  of<br> predictive accuracy than BIC, since BIC is a biased18 estimator of<br> predictive accuracy. When you correct
+  for the bias in BIC you get AIC.<br> BIC merely sacrifices bias with no known gain in efficiency or any other<br>
+  desirable property of estimators.<br> Irrespective of any practical advice available at the present time, the<br> main
+  conclusion of this chapter is that the Akaike framework is the right<br> framework to use in the investigation of
+  practical questions.<br> References<br> Akaike, H. (1973). Information theory and an extension of the maximum
+  likelihood<br> principle, in B. N. Petrov and F. Csaki (eds.), 2nd International<br> Symposium on Information Theory,
+  Budapest, Akademiai Kiado, pp.<br> 267-81.<br> (1974). A new look at the statistical model identification, IEEE
+  Transactions<br> on Automatic Control, vol. AC-19: 716-23.<br> (1977). On the entropy maximization principle, in P. R.
+  Krishniah (ed.),<br> Applications of Statistics: 27-41. Amsterdam, North-Holland.<br> (1985). Prediction and Entropy,
+  in A. C. Atkinson and S. E. Fienberg (eds.),<br> A Celebration of Statistics, pp. 1-24, New York, Springer.<br>
+  Bearse, P. M., H. Bozdogan and A. Schlottman (1997). Empirical econometric<br> modeling of food consumption using a
+  new informational complexity<br> approach. Journal of Applied Econometrics. October 1997.<br> Bozdogan, H. (1987).
+  Model selection and Akaike&#146;s information criterion<br> (AIC): the general theory and its analytical extensions.
+  Psychometrika 52:<br> 345-370.<br> (1990). On the information-based measure of covariance complexity and its<br>
+  application to the evaluation of multivariate linear models.<br> Communications in Statistics?Theory and Method 19:
+  221-278.<br> Bozdogan, H. and D. Haughton (forthcoming). Information complexity criteria<br> for regression models.
+  Computational Statistics and Data Analysis.<br> Burnham, K. P. and Anderson, D. R. (1998). Model Selection and
+  Inference: a<br> Practical Information-Theoretic Approach. New York: Springer.<br> 17 Of course, they are not the only
+  choices. For example, Bearse et al (1997) and<br> Bozdogan (1990) derive alternative criteria to AIC and BIC. Burnham
+  and Anderson<br> (1998) provide a recent survey of variations on AIC.<br> 18 An estimator of a quantity, in this case
+  an estimator of predictive accuracy, is biased<br> if the expected value of the estimate is not equal to the quantity
+  being estimated.<br> This sense of &#145;bias&#146; has nothing to do with model bias.<br> 118 Malcolm R. Forster<br>
+  Cheeseman, P. (1990). On finding the most probable model. In Jeff Shrager<br> and Pat Langley, Computational Models of
+  Scientific Discovery and<br> Theory Formation, pp.73-93. San Mateo, CA: Morgan Kaufmann Inc.<br> Cramér H. (1946).
+  Mathematical Methods of Statistics. Princeton, NJ:<br> Princeton University Press.<br> Earman, J. (1992). Bayes or
+  Bust? A Critical Examination of Bayesian<br> Confirmation Theory, The MIT Press, Cambridge.<br> Forster, M. R. (1994).
+  Non-Bayesian foundations for statistical estimation,<br> prediction, and the ravens example. Erkenntnis 40: 357 - 376.<br>
+  Forster, M. R. (1995). Bayes and bust: the problem of simplicity for a<br> probabilist&#146;s approach to
+  confirmation. British Journal for the Philosophy<br> of Science 46: 399-424.<br> (1999). Model selection in science:
+  the problem of language variance. British<br> Journal for the Philosophy of Science 50: 83-102.<br> (2000). Key
+  concepts in model selection: performance and generalizability,<br> Journal of Mathematical Psychology 44: 205-231.<br>
+  (2000a). Hard problems in the philosophy of science: Idealisation and<br> commensurability. In R. Nola and H. Sankey
+  (eds) After Popper, Kuhn,<br> and Feyerabend. Kluwer Academic Press, pp. 231-250.<br> Forster, M. R. and E. Sober
+  (1994). How to tell when simpler, more unified, or<br> less ad hoc theories will provide more accurate predictions.
+  British Journal<br> for the Philosophy of Science 45: 1 - 35.<br> Geman, S., E. Bienenstock and R. Doursat 1992,
+  Neural networks and the<br> bias/variance dilemma. Neural Computation 4: 1-58.<br> Keuzenkamp, H. and McAleer, M.
+  (1995). Simplicity, scientific inference and<br> economic modeling. The Economic Journal 105: 1-21.<br> Kiessep&auml;,
+  I. A. (1997). Akaike information criterion, curve-fitting, and the<br> philosophical problem of simplicity. British
+  Journal for the Philosophy of<br> Science 48: 21-48.<br> Kruse, M. (1997). Variation and the accuracy of predictions.
+  British Journal<br> for the Philosophy of Science 48: 181-193.<br> Kullback, S. and R. A. Leibler (1951). On
+  information and sufficiency. Annals<br> of Mathematical Statistics 22: 79-86.<br> Linhart, H. and W. Zucchini (1986).
+  Model Selection. New York: John Wiley<br>
+  &amp; Sons.<br> MacKay, D. J. C. (1995). Probable networks and plausible predictions?a<br> review of practical
+  Bayesian methods for supervised neural networks.<br> Network: Computation in Neural Systems 6: 496-505.<br> Popper, K.
+  (1959). The Logic of Scientific Discovery. London, Hutchinson.<br> Raftery, A. E. (1994). Bayesian model selection and
+  social research. Working<br> Paper no. 94-12, Center for Studies in Demography and Ecology,<br> University of
+  Washington.<br> Rissanen, J. (1978). Modeling by the shortest data description. Automatica 14:<br> 465-471.<br>
+  (1987). Stochastic complexity and the MDL principle. Economic Reviews 6:<br> 85-102.<br> (1989). Stochastic Complexity
+  in Statistical Inquiry. Singapore, World<br> Books.<br> Rosenkrantz, R. D. (1977). Inference, Method, and Decision.
+  Dordrecht:<br> Reidel.<br> The new science of simplicity 119<br> Sakamoto, Y., M. Ishiguro, and G. Kitagawa (1986).
+  Akaike Information<br> Criterion Statistics. Dordrecht, Kluwer.<br> Schwarz, G. (1978). Estimating the dimension of a
+  model. Annals of Statistics<br> 6: 461-5.<br> Sober, Elliott (1988). Likelihood and convergence. Philosophy of Science
+  55:<br> 228-37.<br> Speed, T. P. and Bin Yu (1991). Model selection and prediction: normal<br> regression, Technical
+  Report No. 207, Statistics Dept., University of<br> California at Berkeley.<br> Stone, M. (1977). An asymptotic
+  equivalence of choice of model by crossvalidation<br> and Akaike&#146;s criterion. Journal of the Royal Statistical
+  Society<br> B 39: 44-47.<br> Turney, P. D. (1990). The curve fitting problem?a solution. British Journal<br> for the
+  Philosophy of Science 41: 509-30.<br> (1994). A theory of cross-validation error. The Journal of Theoretical and<br>
+  Experimental Artificial Intelligence 6: 361-392.<br> Young, A. S. (1987). On a Bayesian criterion for choosing
+  predictive<br> sub-models in linear regression. Metrika 34: 325-339.<br> Wallace, C. S. and P. R. Freeman (1987).
+  Estimation and inference by<br> compact coding, Journal of the Royal Statistical Society B 49: 240-265.<br> Xiang, D.
+  and G. Wahba (1996). A generalized approximate cross validation<br> for smoothing splines with non-Gaussian data.
+  Statistica Sinica 6: 675-692.</p>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a></th>
+  </tr>
+</table>
+<script src="https://www.assoc-amazon.fr/s/link-enhancer?tag=r047-21&o=8" type="text/javascript">
+</script>
+<noscript><img alt="" src="https://www.assoc-amazon.fr/s/noscript?tag=r047-21"/></noscript>
+</body>
+</html>

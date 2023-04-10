@@ -173,7 +173,7 @@ getTimeFiles().then(async (timeFiles) => {
         new SsiTitleReplaceCommand([timeDefaultHandler]),
         new AuthorReplaceCommand(),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
-        new ClassDomRegexReplaceCommand("people", new PeopleReplacerFactory()),
+        new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),
         new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
         new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
         new ClassDomReplaceCommand("note", new NoteReplacerFactory()),

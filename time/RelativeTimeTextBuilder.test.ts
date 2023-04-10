@@ -103,7 +103,7 @@ describe("RelativeTimeTextBuilder", () => {
         context.time.setMonth(9)
         context.time.setDayOfMonth(23)
         context.time.setHour(16)
-        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("Tuesday, September 23, 2003 at 04 PM")
+        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("Tuesday, September 23, 2003 at 04 PM")
         previousContext = context.clone()
         context.time.setHour(17)
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("one hour later")

@@ -50,7 +50,7 @@ export class Time {
     let title: string | undefined
     const timeContext = Time.contextFromFile(context, fileName)
     if (timeContext) {
-      const pageContext = new RR0SsgContextImpl(context.locale, timeContext, context.inputFile)
+      const pageContext = new RR0SsgContextImpl(context.locale, timeContext, context.people, context.inputFile)
       title = TimeTextBuilder.build(pageContext)
       title = StringUtil.capitalizeFirstLetter(title)
     }

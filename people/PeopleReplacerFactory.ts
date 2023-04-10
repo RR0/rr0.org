@@ -1,22 +1,22 @@
 import {promise as glob} from "glob-promise"
 import {PeopleReplacer} from "./PeopleReplacer"
-import {RegexReplacer, ReplacerFactory, SsgContext} from "ssg-api"
+import {DomReplacer, ReplacerFactory} from "ssg-api"
 import {PeopleFactory} from "./PeopleFactory"
+import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
 /**
  * Creates replacers for people HTML in a given context.
  */
-export class PeopleReplacerFactory implements ReplacerFactory<RegexReplacer> {
+export class PeopleReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected singleton?: PeopleReplacer
 
-  async create(context: SsgContext): Promise<RegexReplacer> {
+  async create(context: HtmlRR0SsgContext): Promise<DomReplacer> {
     const instance = await this.getInstance()
     return {
       replace:
-        (substring: string, ...args: any[]): string => {
-          const peopleStr = args[0]
-          return instance.replacement(context, substring, peopleStr)
+        (original: HTMLElement): Promise<HTMLElement> => {
+          return instance.replacement(context, original)
         }
     }
   }

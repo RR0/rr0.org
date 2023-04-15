@@ -205,6 +205,23 @@ describe("TimeReplacer", () => {
       expect(replacement.outerHTML).toBe(`<time class="duration">2 jours, 10 heures, 23 minutes et 45 secondes</time>`)
     })
 
+    test("with context", async () => {
+      const context = rr0TestUtil.newHtmlContext("time/1/9/4/7/07/02/index.html", "")
+      const replacer = new TimeReplacer([])
+      {
+        const ctxElement = context.outputFile.document.createElement("time")
+        ctxElement.textContent = "1947-07-02"
+        const replacement1 = await replacer.replacement(context, ctxElement)
+        expect(replacement1.outerHTML).toBe(`<span class="time">mercredi 2 juillet 1947</span>`)
+      }
+      {
+        const element = context.outputFile.document.createElement("time")
+        element.textContent = "P20M"
+        const replacement = await replacer.replacement(context, element)
+        expect(replacement.outerHTML).toBe(`<time class="duration">20 minutes</time>`)
+      }
+    })
+
     test("with approximation", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       const replacer = new TimeReplacer([])

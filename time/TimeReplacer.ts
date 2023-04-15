@@ -147,7 +147,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return url === "time" ? undefined : url
   }
 
-  private durationReplacement(context: RR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
+  private durationReplacement(context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
                               secondsStr: string, approximate: boolean): HTMLElement | undefined {
     const items = []
     const messages = context.messages.context.time.duration
@@ -167,17 +167,20 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
       const seconds = parseInt(secondsStr, 10)
       items.push(messages.seconds(seconds))
     }
-    let replacement
+    let replacement: HTMLElement | undefined
     if (items.length > 0) {
-      replacement = items.join(", ")
+      let replacementStr
+      replacementStr = items.join(", ")
       if (items.length > 1) {
-        let last = replacement.lastIndexOf(", ")
-        replacement = replacement.substring(0, last) + messages.lastSeparator + items[items.length - 1]
+        let last = replacementStr.lastIndexOf(", ")
+        replacementStr = replacementStr.substring(0, last) + messages.lastSeparator + items[items.length - 1]
       }
       if (approximate) {
-        replacement = messages.approximate(replacement)
+        replacementStr = messages.approximate(replacementStr)
       }
-      replacement = `<time class="duration">${replacement}</time>`
+      replacement = context.outputFile.document.createElement("time")
+      replacement.className = "duration"
+      replacement.textContent = replacementStr
     }
     return replacement
   }

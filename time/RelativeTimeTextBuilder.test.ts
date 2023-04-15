@@ -108,7 +108,7 @@ describe("RelativeTimeTextBuilder", () => {
         context.time.setHour(17)
         expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("one hour later")
         context.time.setMinutes(43)
-        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("05:43 PM")
+        expect(RelativeTimeTextBuilder.build(previousContext, context)).toBe("05:43 PM")
       }
     })
   })

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+<Document>
+  <name>Roswell</name>
+  <description><![CDATA[Lieux de crash de Roswell]]></description>
+  <Style id="style33">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style22">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style42">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style16">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style33">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>https://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Site du crash de Roswell, signalé par Brazel</name>
+    <description><![CDATA[...le découvreur initial des débris le 3 juillet 1947]]></description>
+    <styleUrl>#style33</styleUrl>
+    <Point>
+      <coordinates>-105.485229,34.045830,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>1er site de crash de Roswell, signalé par Kaufmann</name>
+    <description><![CDATA[...après un 1er. Kaufmann sera par la suite discrédité comme témoin de l'affaire.]]></description>
+    <styleUrl>#style22</styleUrl>
+    <Point>
+      <coordinates>-105.297089,34.016239,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>1er site de crash de Roswell, signalé par Kaufmann</name>
+    <description><![CDATA[...avant de changer d'avis. Kaufmann sera par la suite discrédité comme témoin de l'affaire.]]></description>
+    <styleUrl>#style42</styleUrl>
+    <Point>
+      <coordinates>-104.758759,33.835060,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Site de crash de Roswell, signalé par Ragsdale</name>
+    <description><![CDATA[Ragsdale finira par être discrédité comme témoin de l'affaire.]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>-105.185852,33.552841,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Site de crash de Roswell, signalé par Hensemann</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style16</styleUrl>
+    <Point>
+      <coordinates>-107.119446,33.879536,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Site de crash de Rowell, signalé par Anderson</name>
+    <description><![CDATA[...et son groupe d'archéologues amateurs]]></description>
+    <styleUrl>#style46</styleUrl>
+    <Point>
+      <coordinates>-107.904968,33.954750,0.000000</coordinates>
+    </Point>
+  </Placemark>
+    <Placemark>
+    <name>Base USAF de Roswell</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-104.524612,33.301765,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

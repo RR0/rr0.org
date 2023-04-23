@@ -4,7 +4,7 @@ import {Occupation} from "./Occupation"
 import {Time} from "../time/Time"
 import {People} from "./People"
 import {promise as glob} from "glob-promise"
-import {RR0SsgContext} from "../RR0SsgContext"
+import {HtmlRR0SsgContext, RR0SsgContext} from "../RR0SsgContext"
 import {HtmlTag} from "../util/HtmlTag"
 import {DirectoryStep, OutputFunc, SsgConfig, SsgFile, SsgStep} from "ssg-api"
 import {StringUtil} from "../util/string/StringUtil"
@@ -20,25 +20,110 @@ export class PeopleDirectoryStep extends DirectoryStep {
     super(dirs, excludedDirs, template, config, name)
   }
 
-  protected async processDirs(context: RR0SsgContext, dirames: string[]): Promise<void> {
-    let peopleList: People[] = []
-    const allCountries = new Set<CountryCode>()
-    const occupations = new Set<Occupation>()
-    const fileSpec = `/people*.json`
-    for (const dirName of dirames) {
-      const files = await glob(`${dirName}${fileSpec}`)
-      for (const file of files) {
-        const people = new People(dirName)
-        peopleList.push(people)
-        try {
-          const jsonFileInfo = SsgFile.read(context, file)
-          Object.assign(people, JSON.parse(jsonFileInfo.contents))
-        } catch (e) {
-          console.warn(`${dirName} has no ${fileSpec} description`)
-          // No json, just guess title.
+  static getPeopleLink(context: HtmlRR0SsgContext,
+                       people: People, pseudoPeopleList: People[], allCountries: Set<CountryCode>,
+                       occupations: Set<Occupation>, filterOccupations: Occupation[], content?: string): HTMLElement {
+    const dirName = people.dirName
+    const titles = []
+    const classList = []
+    if (pseudoPeopleList.indexOf(people) >= 0) {
+      classList.push("pseudonym")
+      titles.push("(pseudonyme)")
+    }
+    if (people.hoax) {
+      classList.push("canular")
+    }
+    let birthTimeStr = people.birthTime as unknown as string
+    if (birthTimeStr) {
+      const birthTime = people.birthTime = Time.dateFromIso(birthTimeStr)
+      birthTimeStr = birthTime.getFullYear().toString()
+    }
+    let deathTimeStr = people.deathTime as unknown as string
+    if (deathTimeStr) {
+      const deathTime = people.deathTime = Time.dateFromIso(deathTimeStr)
+      deathTimeStr = deathTime.getFullYear().toString()
+    }
+    if (people.isDeceased()) {
+      classList.push("deceased")
+    }
+    if (birthTimeStr || deathTimeStr) {
+      const timeStr = birthTimeStr ? deathTimeStr ? birthTimeStr + "-" + deathTimeStr : birthTimeStr + "-" : "-" + deathTimeStr
+      titles.push(timeStr)
+    }
+    const age = people.getAge()
+    if (age) {
+      titles.push(`${age} ans`)
+    }
+    const countries = people.countries
+    if (countries) {
+      for (const country of countries) {
+        allCountries.add(country)
+        const countryLabel = context.messages.country[country]?.title
+        if (!countryLabel) {
+          throw new Error(`No title for country "${country}"`)
         }
+        titles.push(countryLabel)
+        classList.push(`country-${country}`)
       }
     }
+    const gender = people.gender || Gender.male
+    for (const occupation of people.occupations) {
+      if (filterOccupations.length > 1 || !filterOccupations.includes(occupation)) {
+        occupations.add(occupation)
+        const occupationMsg = context.messages.people.occupation[occupation]
+        if (!occupationMsg) {
+          throw Error(
+            `No message to translate occupation "${occupation}" in ${context.locale}, as specified in ${people.dirName}/people*.json`)
+        }
+        classList.push(`occupation-${occupation}`)
+        titles.push(occupationMsg(gender))
+      }
+    }
+    const text = content || people.title
+    let peopleLink = HtmlTag.toString("a", text, {href: `/${dirName}/`})
+    if (people.discredited) {
+      peopleLink += ` <img src="/people/lier.svg" title="Discrédité" class="people-icon" alt="discredited"/>`
+    }
+    const elem = context.outputFile.document.createElement("span")
+    if (titles.length) {
+      elem.title = titles.join(", ")
+    }
+    if (classList.length) {
+      elem.classList.add(...classList)
+    }
+    elem.innerHTML = peopleLink
+    return elem
+  }
+
+  static async getPeopleFromDirs(context: RR0SsgContext, dirNames: string[]): Promise<People[]> {
+    let peopleList: People[] = []
+    for (const dirName of dirNames) {
+      const list = await this.getPeopleFromDir(context, dirName)
+      peopleList.push(...list)
+    }
+    return peopleList
+  }
+
+  static async getPeopleFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
+    let peopleList: People[] = []
+    const fileSpec = `/people*.json`
+    const files = await glob(`${dirName}${fileSpec}`)
+    for (const file of files) {
+      const people = new People(dirName)
+      peopleList.push(people)
+      try {
+        const jsonFileInfo = SsgFile.read(context, file)
+        Object.assign(people, JSON.parse(jsonFileInfo.contents))
+      } catch (e) {
+        console.warn(`${dirName} has no ${fileSpec} description`)
+        // No json, just guess title.
+      }
+    }
+    return peopleList
+  }
+
+  protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
+    let peopleList = await PeopleDirectoryStep.getPeopleFromDirs(context, dirNames)
     if (this.filterOccupations.length > 0) {
       peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     }
@@ -54,87 +139,29 @@ export class PeopleDirectoryStep extends DirectoryStep {
       return prev
     }, [])
     peopleList = peopleList.concat(pseudoPeopleList).sort((p1, p2) => p1.title.localeCompare(p2.title))
-    const listItems = peopleList.map(people => {
-      const dirName = people.dirName
-      const attrs: { [name: string]: string } = {}
-      const titles = []
-      const classList = []
-      if (pseudoPeopleList.indexOf(people) >= 0) {
-        classList.push("pseudonym")
-        titles.push("(pseudonyme)")
-      }
-      if (people.hoax) {
-        classList.push("canular")
-      }
-      let birthTimeStr = people.birthTime as unknown as string
-      if (birthTimeStr) {
-        const birthTime = people.birthTime = Time.dateFromIso(birthTimeStr)
-        birthTimeStr = birthTime.getFullYear().toString()
-      }
-      let deathTimeStr = people.deathTime as unknown as string
-      if (deathTimeStr) {
-        const deathTime = people.deathTime = Time.dateFromIso(deathTimeStr)
-        deathTimeStr = deathTime.getFullYear().toString()
-      }
-      if (people.isDeceased()) {
-        classList.push("deceased")
-      }
-      if (birthTimeStr || deathTimeStr) {
-        const timeStr = birthTimeStr ? deathTimeStr ? birthTimeStr + "-" + deathTimeStr : birthTimeStr + "-" : "-" + deathTimeStr
-        titles.push(timeStr)
-      }
-      const age = people.getAge()
-      if (age) {
-        titles.push(`${age} ans`)
-      }
-      const countries = people.countries
-      if (countries) {
-        for (const country of countries) {
-          allCountries.add(country)
-          const countryLabel = context.messages.country[country]?.title
-          if (!countryLabel) {
-            throw new Error(`No title for country "${country}"`)
-          }
-          titles.push(countryLabel)
-          classList.push(`country-${country}`)
-        }
-      }
-      const gender = people.gender || Gender.male
-      for (const occupation of people.occupations) {
-        if (this.filterOccupations.length > 1 || !this.filterOccupations.includes(occupation)) {
-          occupations.add(occupation)
-          const occupationMsg = context.messages.people.occupation[occupation]
-          if (!occupationMsg) {
-            throw Error(
-              `No message to translate occupation "${occupation}" in ${context.locale}, as specified in ${people.dirName}/people*.json`)
-          }
-          classList.push(`occupation-${occupation}`)
-          titles.push(occupationMsg(gender))
-        }
-      }
-      const text: (string | string[])[] = [people.title]
-      let peopleLink = HtmlTag.toString("a", text.join(" "), {href: `/${dirName}/`})
-      if (people.discredited) {
-        peopleLink += ` <img src="/people/lier.svg" title="Discrédité" class="people-icon" alt="discredited"/>`
-      }
-      if (titles.length) {
-        attrs.title = titles.join(", ")
-      }
-      if (classList.length) {
-        attrs.class = classList.join(" ")
-      }
-      return HtmlTag.toString("li", peopleLink, attrs)
-    })
-    const directoriesHtml = HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
-    context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
-      directoriesHtml)
+    const allCountries = new Set<CountryCode>()
+    const occupations = new Set<Occupation>()
+    const outputFile = context.outputFile
+    const listItems = peopleList.map(
+      people => {
+        const elem = PeopleDirectoryStep.getPeopleLink(context, people, pseudoPeopleList, allCountries, occupations,
+          this.filterOccupations)
+        const item = outputFile.document.createElement("li")
+        item.appendChild(elem)
+        return item
+      })
+    const ul = outputFile.document.createElement("ul")
+    ul.append(...listItems)
+    ul.className = "links"
+    outputFile.contents = outputFile.contents.replace(`<!--#echo var="directories" -->`,
+      ul.outerHTML)
     {
       let countriesHtml = ""
       for (const country of Array.from(allCountries).sort()) {
         const countryStr = context.messages.country[country].title
         countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="find(event)"> ${countryStr}</label></span>`
       }
-      context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="countries" -->`,
+      outputFile.contents = outputFile.contents.replace(`<!--#echo var="countries" -->`,
         HtmlTag.toString("div", countriesHtml, {id: "countries"}))
     }
     {
@@ -144,10 +171,10 @@ export class PeopleDirectoryStep extends DirectoryStep {
           context.messages.people.occupation[occupation](Gender.male))
         occupationsHtml += `<span class="option"><label><input type="checkbox" id="occupation-${occupation}" onchange="find(event)"> ${occupationStr}</label></span>`
       }
-      context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="occupations" -->`,
+      outputFile.contents = outputFile.contents.replace(`<!--#echo var="occupations" -->`,
         HtmlTag.toString("div", occupationsHtml, {id: "occupations"}))
     }
-    await this.outputFunc(context, context.outputFile)
+    await this.outputFunc(context, outputFile)
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig,

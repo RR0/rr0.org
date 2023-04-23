@@ -1,7 +1,9 @@
-import {UrlUtil} from "../util/url/UrlUtil"
 import {PeopleFactory} from "./PeopleFactory"
 import {DomReplacement} from "../time/DomReplacement"
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import {PeopleDirectoryStep} from "./PeopleDirectoryStep"
+import {CountryCode} from "../org/CountryCode"
+import {Occupation} from "./Occupation"
 
 export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
@@ -25,19 +27,20 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
       people = this.factory.createFromString(peopleStr)
       cache.set(people.lastName, people)
     }
-    const titleAttr = peopleStr.indexOf(people.fullName) < 0 ? people.fullName : null
     let url = people.dirName
     let replacement: HTMLElement
     const currentFileName = context.inputFile.name
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
-      const anchor = context.outputFile.document.createElement("a") as HTMLAnchorElement
-      anchor.href = UrlUtil.absolute(url)
-      if (titleAttr) {
-        anchor.title = titleAttr
-      }
-      anchor.textContent = peopleContent
-      replacement = anchor
+      // const urlAbsolute = UrlUtil.absolute(url)
+      const peopleList = await PeopleDirectoryStep.getPeopleFromDir(context, url)
+      const pseudoPeopleList = []
+      const allCountries = new Set<CountryCode>()
+      const occupations = new Set<Occupation>
+      const peopl = peopleList[0] || people
+      replacement = PeopleDirectoryStep.getPeopleLink(context, peopl, pseudoPeopleList, allCountries,
+        occupations,
+        [], peopleContent)
     } else {
       const span = context.outputFile.document.createElement("span") as HTMLSpanElement
       span.className = "peopl"  // People not found

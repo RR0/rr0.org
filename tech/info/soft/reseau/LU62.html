@@ -1,0 +1,36 @@
+<!--#include virtual="/header-start.html" -->
+<title>LU 6.2</title>
+<!--#include virtual="/header-end.html" -->
+<p><i> Logical Unit type 6.2.</i></p>
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li> API pour <a href="protocole/SNA.html">SNA</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Structure</h2>
+  <p>Une unité logique est une session sur un terminal. LU 6.2 définit les opérations et réponses pour une demi-session
+    (qui peut être un terminal ou un programme dans un PC ou mainframe) qui communique avec une autre demi-session autre
+    part.</p></section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Egalement appelé APPC (<i>Advanced Program-to-Program Communication</i>) ; </li>
+    <li> Supporte la communication point à point (contrairement à LU 6.1) - par exemple n'importe quel partie peut
+      initier une connexion, et les deux parties peuvent être des stations de travail (des PC typiquement) alors que LU
+      6.1 demande qu'une partie soit un mainframe ;</li>
+    <li>Supporte la communication programme à programme (comme LU 6.1), où les programmes peuvent s'échanger directement
+      des données binaires (8-bits par octet) alors qu'avant <a href="protocole/SNA.html">SNA</a> ne supportait que les
+      caractères EBCDIC (images écrans et travaux d'impression) d'un mainframe à une imprimante ou des terminaux à
+      fonction fixe (terminaux bêtes). </li>
+    <li>Demande tant que RAM que non utilisable sous DOS.
+      <p></p>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>SNA</p>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -5,11 +5,6 @@
   display: none;
 }
 
-.deceased::after {
-  content: " †";
-  color: gray;
-}
-
 #searchForm .option {
   column-width: 12em;
 }
@@ -29,8 +24,4 @@
 
 #searchForm output {
   color: gray;
-}
-
-.pseudonym {
-  font-style: italic;
 }

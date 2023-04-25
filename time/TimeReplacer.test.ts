@@ -68,7 +68,7 @@ describe("TimeReplacer", () => {
     {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       const interval = "2003-12-24CDT"
-      const replacer = new TimeReplacer(["time/2/0/0/3/12/24/"])
+      const replacer = new TimeReplacer(["time/2/0/0/3/12/24/index.html"])
       const original = context.outputFile.document.createElement("time")
       original.textContent = interval
       const replacement = await replacer.replacement(context, original)
@@ -101,7 +101,7 @@ describe("TimeReplacer", () => {
     let value = "2004-09"
     const original = context.outputFile.document.createElement("time")
     original.textContent = value
-    const replacer = new TimeReplacer(["time/2/0/0/4/09/"])
+    const replacer = new TimeReplacer(["time/2/0/0/4/09/index.html"])
     const replacement = await replacer.replacement(context, original)
     expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/4/09/">septembre 2004</a>`)
     expect(context.time.getYear()).toBe(2004)

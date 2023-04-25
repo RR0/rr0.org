@@ -22,14 +22,14 @@ describe("PeopleReplacer", () => {
         "Hynek, Josef Allen (Northwestern University, Evanston, Illinois)")
       const replacement = await replacer.replacement(context, lastnameFirstElement)
       expect(replacement.outerHTML).toBe(
-        `<a href="/people/h/HynekJosefAllen/" title="Josef Allen Hynek" translate="no">Hynek, Josef Allen (Northwestern University, Evanston, Illinois)</a>`)
+        `<span title="1910-1986, 76 ans, USA, ufologue, astronome" class="deceased country-us occupation-ufologist occupation-astronomer" translate="no"><a href="/people/h/HynekJosefAllen/">Hynek, Josef Allen (Northwestern University, Evanston, Illinois)</a></span>`)
     }
     {
       const firstnameFirstElement = createPeopleElement(context,
         "Josef Allen Hynek (Northwestern University, Evanston, Illinois)")
       const replacement = await replacer.replacement(context, firstnameFirstElement)
       expect(replacement.outerHTML).toBe(
-        `<a href="/people/h/HynekJosefAllen/" translate="no">Josef Allen Hynek (Northwestern University, Evanston, Illinois)</a>`)
+        `<span title="1910-1986, 76 ans, USA, ufologue, astronome" class="deceased country-us occupation-ufologist occupation-astronomer" translate="no"><a href="/people/h/HynekJosefAllen/">Josef Allen Hynek (Northwestern University, Evanston, Illinois)</a></span>`)
     }
   })
 
@@ -39,17 +39,20 @@ describe("PeopleReplacer", () => {
     {
       const peopleWithTitle = createPeopleElement(context, "Ronald Reagan", "Ronald Wilson Reagan")
       let replacement = await replacer.replacement(context, peopleWithTitle)
-      expect(replacement.outerHTML).toBe(`<a href="/people/r/ReaganRonaldWilson/" translate="no">Ronald Reagan</a>`)
+      expect(replacement.outerHTML).toBe(
+        `<span translate="no"><a href="/people/r/ReaganRonaldWilson/">Ronald Reagan</a></span>`)
     }
     {
       const peopleWithFullName = createPeopleElement(context, "Jérôme Beau")
       let replacement = await replacer.replacement(context, peopleWithFullName)
-      expect(replacement.outerHTML).toBe(`<a href="/people/b/BeauJerome/" translate="no">Jérôme Beau</a>`)
+      expect(replacement.outerHTML).toBe(
+        `<span title="1972-, 50 ans, France, ufologue, Informaticien" class="country-fr occupation-ufologist occupation-softwareEngineer" translate="no"><a href="/people/b/BeauJerome/">Jérôme Beau</a></span>`)
     }
     {
       const peopleWithLastName = createPeopleElement(context, "Beau")
       let replacement = await replacer.replacement(context, peopleWithLastName)
-      expect(replacement.outerHTML).toBe(`<a href="/people/b/BeauJerome/" title="Jérôme Beau" translate="no">Beau</a>`)
+      expect(replacement.outerHTML).toBe(
+        `<span title="1972-, 50 ans, France, ufologue, Informaticien" class="country-fr occupation-ufologist occupation-softwareEngineer" translate="no" title="Jérôme Beau"><a href="/people/b/BeauJerome/" title="Jérôme Beau">Beau</a></span>`)
     }
   })
 })

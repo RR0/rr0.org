@@ -9,6 +9,10 @@
   --icon-color: gray;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body, aside {
   transition: width .3s ease
 }

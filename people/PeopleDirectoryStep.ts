@@ -225,6 +225,12 @@ export class PeopleDirectoryStep extends DirectoryStep {
       "people/pilotes.html",
       outputFunc, config, [Occupation.astronaut, Occupation.pilot])
 
+    const militaryDirectoryStep = new PeopleDirectoryStep(
+      peopleDirectories,
+      excludedPeopleDirs,
+      "people/militaires.html",
+      outputFunc, config, [Occupation.military])
+
     const peopleDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
       "people/index.html",
       outputFunc, config, [],
@@ -241,6 +247,6 @@ export class PeopleDirectoryStep extends DirectoryStep {
         `people/${c}/index.html`,
         outputFunc, config, []))
     }
-    return [scientistsDirectoryStep, ufologistsDirectoryStep, ufoWitnessesDirectoryStep, astronomersDirectoryStep, contacteesDirectoryStep, pilotsDirectoryStep, peopleDirectoryStep, ...letterDirectorySteps]
+    return [scientistsDirectoryStep, ufologistsDirectoryStep, ufoWitnessesDirectoryStep, astronomersDirectoryStep, contacteesDirectoryStep, pilotsDirectoryStep, militaryDirectoryStep, peopleDirectoryStep, ...letterDirectorySteps]
   }
 }

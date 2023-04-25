@@ -1106,6 +1106,15 @@ footer iframe {
   display: inline
 }
 
+.deceased::after {
+  content: " †";
+  color: gray;
+}
+
+.pseudonym {
+  font-style: italic;
+}
+
 .footer {
   line-height: 1.7em;
   color: #666;
@@ -1484,15 +1493,6 @@ abbr[title]:after {
     background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
     border-bottom: none;
     border-top-left-radius: 0.3em;
-  }
-
-  .deceased::after {
-    content: " †";
-    color: gray;
-  }
-
-  .pseudonym {
-    font-style: italic;
   }
 
   .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {

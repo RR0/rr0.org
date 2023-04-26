@@ -106,7 +106,7 @@ const timeFormat: Intl.DateTimeFormatOptions = {
 }
 const timeContext = new TimeContext(timeFormat)
 const context = new RR0SsgContextImpl("fr", timeContext)
-context.setVar("mail", "javarome@gmail.com")
+context.setVar("mail", "rr0@rr0.org")
 
 const siteBaseUrl = "https://rr0.org/"
 const htAccessToNetlifyConfig: ContentStepConfig = {

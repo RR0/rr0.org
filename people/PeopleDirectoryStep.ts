@@ -106,7 +106,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       portraitElem.alt = people.fullName
       portraitElem.className = "portrait"
       portraitElem.loading = "lazy"
-      portraitElem.width = portraitElem.height = 50
+      portraitElem.width = 75
       peopleLink.append(portraitElem)
     }
     elem.append(peopleLink)

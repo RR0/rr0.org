@@ -1419,14 +1419,35 @@ abbr[title]:after {
   }
 }
 
+@keyframes show-portrait {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.people-resolved {
+  position: relative;
+}
+
 .people-resolved .portrait {
   margin: 0;
-  display: none;
+  transform-origin: top;
+  position: absolute;
+  z-index: 1;
+  transform: scale(0);
+  opacity: 0;
+  display: block;
+  transition: 0.1s opacity ease, 0.1s box-shadow ease, 0.1s transform ease;
+  box-shadow: #0000006e 5px 12px 20px 0;;
 }
 
 .people-resolved:hover .portrait {
-  position: absolute;
-  display: block;
+  animation: show-portrait 0.3s 1s forwards;
 }
 
 @media (prefers-color-scheme: dark) {

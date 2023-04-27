@@ -12,6 +12,7 @@
   },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",
+    "books": "tsx Books.ts",
     "build": "tsx build.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "udb:build": "webpack"
@@ -23,7 +24,8 @@
     "glob-promise": "~5.0.0",
     "image-size": "^1.0.2",
     "skia-canvas": "~1.0.1",
-    "ssg-api": "~1.4.5"
+    "ssg-api": "~1.4.5",
+    "csv-parser": "^3.0.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "~7.19.6",

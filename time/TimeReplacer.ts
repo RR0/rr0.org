@@ -108,7 +108,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
       timeContext.setTimeZone(timeZone)
     }
     if (timeContext.isDefined()) {
-      const absoluteTimeStr = TimeUrlBuilder.build(context)
+      const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
       const url = this.matchExistingTimeFile(absoluteTimeStr)
       let title = TimeTextBuilder.build(context)
       if (approximate) {

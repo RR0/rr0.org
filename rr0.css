@@ -22,6 +22,7 @@ body, aside {
   height: 1em;
   display: inline-block;
   margin: 0;
+  margin-left: 0.3em;
 }
 
 .text section, .text ul {
@@ -1424,6 +1425,9 @@ abbr[title]:after {
     opacity: 0;
     transform: scale(0);
   }
+  10% {
+    transform: scale(1);
+  }
   100% {
     opacity: 1;
     transform: scale(1);
@@ -1439,10 +1443,11 @@ abbr[title]:after {
   transform-origin: top;
   position: absolute;
   z-index: 1;
+  left: 0;
   transform: scale(0);
   opacity: 0;
   display: block;
-  transition: 0.1s opacity ease, 0.1s box-shadow ease, 0.1s transform ease;
+  transition: 0.3s opacity ease, 0.3s box-shadow ease, 0.3s transform ease;
   box-shadow: #0000006e 5px 12px 20px 0;;
 }
 

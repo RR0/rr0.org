@@ -24,7 +24,8 @@ export class People {
     readonly discredited = false,
     public birthTime?: Date,
     public deathTime?: Date,
-    readonly gender?: Gender
+    readonly gender?: Gender,
+    public portraitUrl?: string
   ) {
     if (firstNames?.length <= 0 && !lastName && dirName) {
       const lastSlash = dirName.lastIndexOf("/")
@@ -39,7 +40,7 @@ export class People {
   }
 
   get fullName(): string {
-    return this.firstNames.join(" ") + " " + this.lastName
+    return this.title ? this.title : (this.firstNames.join(" ") + " " + this.lastName).trim()
   }
 
   static toYears(timeMs: number) {

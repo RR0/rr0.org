@@ -1419,6 +1419,16 @@ abbr[title]:after {
   }
 }
 
+.people-resolved .portrait {
+  margin: 0;
+  display: none;
+}
+
+.people-resolved:hover .portrait {
+  position: absolute;
+  display: block;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;

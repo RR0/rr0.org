@@ -5,16 +5,7 @@ import {TimeContext} from "./time/TimeContext"
 import {TimeUrlBuilder} from "./time/TimeUrlBuilder"
 import * as path from "path"
 import {StringUtil} from "./util/string/StringUtil"
-
-export interface Book {
-  authors: string[]
-  title: string
-  publication: {
-    time: string
-    publisher: string
-  }
-  isbn?: string
-}
+import {Book} from "./Book"
 
 export class Books {
 
@@ -37,7 +28,9 @@ export class Books {
     const COLUMN_AUTHOR = "Author"
     const COLUMN_AUTHOR_LAST_FIRST = "Author (Last, First)"
     const COLUMN_ISBN = "ISBN"
-    const columns = [COLUMN_TITLE, "Original Title", "Subtitle", "Series", "Volume", COLUMN_AUTHOR, COLUMN_AUTHOR_LAST_FIRST, COLUMN_PUBLISHER, COLUMN_YEAR_PUBLISHED, "Original Year Published", "Genre", "Summary", "Number of Pages", "Language", COLUMN_ISBN, "Rating", "Notes", "Google VolumeID", "Uploaded Image URL"]
+    const COLUMN_SUBTITLE = "Subtitle"
+    const COLUMN_SERIES = "Series"
+    const columns = [COLUMN_TITLE, "Original Title", COLUMN_SUBTITLE, COLUMN_SERIES, "Volume", COLUMN_AUTHOR, COLUMN_AUTHOR_LAST_FIRST, COLUMN_PUBLISHER, COLUMN_YEAR_PUBLISHED, "Original Year Published", "Genre", "Summary", "Number of Pages", "Language", COLUMN_ISBN, "Rating", "Notes", "Google VolumeID", "Uploaded Image URL"]
     const readStream = fs.createReadStream(fileName)
     const csvSeparator = ","
     const reader = new CSVFileReader<Record<string, string>>(
@@ -67,6 +60,14 @@ export class Books {
         const isbn = result[COLUMN_ISBN]
         if (isbn) {
           book.isbn = isbn
+        }
+        const subTitle = result[COLUMN_SUBTITLE]
+        if (subTitle) {
+          book.subTitle = subTitle
+        }
+        const series = result[COLUMN_SERIES]
+        if (series) {
+          book.series = series
         }
         const titleSlug = StringUtil.removeAccents(title.toLowerCase().replace(/[ .:;,\-+=*/#°@$€£%!?"'’]*/g, ""))
         const directory = TimeUrlBuilder.fromTimeContext(timeContext)

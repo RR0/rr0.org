@@ -8,6 +8,8 @@ import {HtmlRR0SsgContext, RR0SsgContext} from "../RR0SsgContext"
 import {HtmlTag} from "../util/HtmlTag"
 import {DirectoryStep, OutputFunc, SsgConfig, SsgFile, SsgStep} from "ssg-api"
 import {StringUtil} from "../util/string/StringUtil"
+import * as path from "path"
+import fs from "fs"
 
 /**
  * Scan directories for people information, then populates a template with collected data.
@@ -25,7 +27,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
                        occupations: Set<Occupation>, filterOccupations: Occupation[], content?: string): HTMLElement {
     const dirName = people.dirName
     const titles = []
-    const classList = []
+    const classList = ["people-resolved"]
     if (pseudoPeopleList.indexOf(people) >= 0) {
       classList.push("pseudonym")
       titles.push("(pseudonyme)")
@@ -80,18 +82,34 @@ export class PeopleDirectoryStep extends DirectoryStep {
       }
     }
     const text = content || people.title
-    let peopleLink = HtmlTag.toString("a", text, {href: `/${dirName}/`})
+    const document = context.outputFile.document
+    const peopleLink = document.createElement("a")
+    peopleLink.innerHTML = text
+    peopleLink.href = `/${dirName}/`
     if (people.discredited) {
-      peopleLink += ` <img src="/people/lier.svg" title="Discrédité" class="people-icon" alt="discredited"/>`
+      const lierImg = document.createElement("img")
+      lierImg.title = lierImg.alt = "Discrédité"
+      lierImg.className = "people-icon"
+      peopleLink.append(lierImg)
     }
-    const elem = context.outputFile.document.createElement("span")
+    const elem = document.createElement("span")
     if (titles.length) {
       elem.title = titles.join(", ")
     }
     if (classList.length) {
       elem.classList.add(...classList)
     }
-    elem.innerHTML = peopleLink
+    const portraitUrl = people.portraitUrl
+    if (portraitUrl) {
+      const portraitElem = document.createElement("img")
+      portraitElem.src = portraitUrl
+      portraitElem.alt = people.fullName
+      portraitElem.className = "portrait"
+      portraitElem.loading = "lazy"
+      portraitElem.width = portraitElem.height = 50
+      peopleLink.append(portraitElem)
+    }
+    elem.append(peopleLink)
     return elem
   }
 
@@ -114,6 +132,14 @@ export class PeopleDirectoryStep extends DirectoryStep {
       try {
         const jsonFileInfo = SsgFile.read(context, file)
         Object.assign(people, JSON.parse(jsonFileInfo.contents))
+        if (!people.portraitUrl) {
+          const portraitFile = "portrait.jpg"
+          const portraitPath = path.join(people.dirName, portraitFile)
+          const hasPortrait = fs.existsSync(portraitPath)
+          if (hasPortrait) {
+            people.portraitUrl = path.join("/", portraitPath)
+          }
+        }
       } catch (e) {
         console.warn(`${dirName} has no ${fileSpec} description`)
         // No json, just guess title.
@@ -131,7 +157,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (p.pseudonyms?.length > 0) {
         for (const pseudonym of p.pseudonyms) {
           const pseudo = new People(p.dirName, p.firstNames, p.lastName, p.pseudonyms, p.occupations, p.countries,
-            p.discredited, p.birthTime, p.deathTime, p.gender)
+            p.discredited, p.birthTime, p.deathTime, p.gender, p.portraitUrl)
           pseudo.title = pseudonym
           prev.push(pseudo)
         }

@@ -27,21 +27,23 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
           let imgPath = isExternal ? src : isAbsolute ? path.join(".", src) : path.join(
             path.dirname(context.inputFile.name),
             src)
-          const dimensions = sizeOf(imgPath)
-          let width = dimensions.width
-          let height = dimensions.height
-          if (width > this.maxWidth) {
-            const ratio = this.maxWidth / width
-            width = this.maxWidth
-            height *= ratio
+          if (!original.width && !original.height) {
+            const dimensions = sizeOf(imgPath)
+            let width = dimensions.width
+            let height = dimensions.height
+            if (width > this.maxWidth) {
+              const ratio = this.maxWidth / width
+              width = this.maxWidth
+              height *= ratio
+            }
+            if (height > this.maxHeight) {
+              const ratio = this.maxHeight / height
+              height = this.maxHeight
+              width *= ratio
+            }
+            original.width = width
+            original.height = height
           }
-          if (height > this.maxHeight) {
-            const ratio = this.maxHeight / height
-            height = this.maxHeight
-            width *= ratio
-          }
-          original.width = width
-          original.height = height
         } catch (e) {
           context.debug("Could not determine size of image ", src, e)
         }

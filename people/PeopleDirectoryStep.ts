@@ -89,6 +89,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     if (people.discredited) {
       const lierImg = document.createElement("img")
       lierImg.title = lierImg.alt = "Discrédité"
+      lierImg.src = "/people/lier.svg"
       lierImg.className = "people-icon"
       peopleLink.append(lierImg)
     }

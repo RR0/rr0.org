@@ -27,6 +27,7 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
           let imgPath = isExternal ? src : isAbsolute ? path.join(".", src) : path.join(
             path.dirname(context.inputFile.name),
             src)
+          original.loading = "lazy"
           if (!original.width && !original.height) {
             const dimensions = sizeOf(imgPath)
             let width = dimensions.width

@@ -381,12 +381,6 @@ nav ul > li {
   display: inline-block
 }
 
-.search {
-  cursor: pointer;
-  padding: .2rem .3rem;
-  margin: -.2rem -.3rem
-}
-
 .search:hover {
   border: none;
   background: rgba(184, 197, 212, .49)
@@ -400,12 +394,10 @@ nav ul > li {
   max-width: 100%;
   width: 100%;
   display: block;
-  padding-right: 1.5em
 }
 
 .search form .flexible input {
   width: 100%;
-  padding-right: .245em
 }
 
 .search form label {
@@ -1329,7 +1321,6 @@ abbr[title]:after {
 
   .search {
     width: 100%;
-    box-sizing: content-box
   }
 
   .search-result {

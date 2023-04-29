@@ -16,7 +16,7 @@ export class StringUtil {
     return StringUtil.removeAccents(camel.trim()
       .replace(/ [^ ]+/g,
         (substring: string, args: string[]) => substring.charAt(1).toUpperCase() + substring.substring(2)))
-      .replace(/[?!.'"/\\,;:°]/g, "")
+      .replace(/[ .:;,\-+=*/#°@$€£%!?"'’]/g, "")
   }
 
   static camelToText(camel: string): string {
@@ -25,7 +25,8 @@ export class StringUtil {
       .replace(/([0-9]+)/g, " $1")
       .replace(/( [A-Z] )/g, " $1. ")
       .replace(/( [A-Z]$)/g, " $1.")
-//    .replace(/([A-Z])([A-Z])/g, " $1. $2.")
+      //    .replace(/([A-Z])([A-Z])/g, " $1. $2.")
+      .replace(/ {2}/g, " ")
     return StringUtil.capitalizeFirstLetter(text).trim()
   }
 }

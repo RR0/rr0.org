@@ -1,7 +1,13 @@
 {
+  "firstNames": [
+    "Rémy"
+  ],
   "birthTime": "1913-10-10",
   "deathTime": "2009-12-09",
-  "occupations": ["ufologist", "biologist"],
+  "occupations": [
+    "ufologist",
+    "biologist"
+  ],
   "countries": [
     "fr"
   ]

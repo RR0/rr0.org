@@ -129,19 +129,9 @@ async function getTimeFiles(): Promise<string[]> {
     minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
 }
 
-async function findDirectoriesContaining(fileName) {
-  function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index
-  }
-
-  return (await glob("**/" + fileName))
-    .map(path => path.substring(0, path.lastIndexOf("/")))
-    .filter(onlyUnique)
-}
-
 getTimeFiles().then(async (timeFiles) => {
-  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, findDirectoriesContaining)
-  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, findDirectoriesContaining)
+  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config)
+  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config)
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {

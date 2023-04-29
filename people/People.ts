@@ -9,10 +9,9 @@ export class People {
    */
   hoax = false
 
-  title: string
+  lastAndFirstName: string
 
   constructor(
-    readonly dirName?: string,
     readonly firstNames: string[] = [],
     public lastName = "",
     readonly pseudonyms: string[] = [],
@@ -24,23 +23,25 @@ export class People {
     readonly discredited = false,
     public birthTime?: Date,
     public deathTime?: Date,
-    readonly gender?: Gender,
-    public portraitUrl?: string
+    readonly gender?: Gender
   ) {
-    if (firstNames?.length <= 0 && !lastName && dirName) {
-      const lastSlash = dirName.lastIndexOf("/")
-      const lastDir = dirName.substring(lastSlash + 1)
-      const title = StringUtil.camelToText(lastDir)
-      const firstSpace = title.indexOf(" ")
-      this.title = firstSpace > 0 ? title.substring(0, firstSpace) + ", " + title.substring(
-        firstSpace + 1) : title
-    } else {
-      this.title = StringUtil.camelToText(lastName) + (firstNames.length > 0 ? ", " + this.firstNames.join(" ") : "")
-    }
+    this.lastAndFirstName = this.getLastAndFirstName()
   }
 
-  get fullName(): string {
-    return this.title ? this.title : (this.firstNames.join(" ") + " " + this.lastName).trim()
+  protected getLastAndFirstName(): string {
+    const {lastNameStr, firstNameStr} = this.getLastAndFirstNames()
+    return lastNameStr && firstNameStr ? lastNameStr + ", " + firstNameStr : lastNameStr || firstNameStr
+  }
+
+  get firstAndLastName(): string {
+    const {lastNameStr, firstNameStr} = this.getLastAndFirstNames()
+    return lastNameStr && firstNameStr ? firstNameStr + " " + lastNameStr : lastNameStr || firstNameStr
+  }
+
+  protected getLastAndFirstNames() {
+    const lastNameStr = StringUtil.camelToText(this.lastName)
+    const firstNameStr = this.firstNames.length > 0 ? this.firstNames.join(" ") : ""
+    return {lastNameStr, firstNameStr}
   }
 
   static toYears(timeMs: number) {
@@ -82,5 +83,19 @@ export class People {
   probablyDead(birth: Date, at?: Date): boolean {
     const now = at?.getTime() ?? new Date().getTime()
     return People.toYears(now - birth.getTime()) > 120
+  }
+}
+
+export class KnownPeople extends People {
+  constructor(firstNames: string[] = [],
+              lastName = "",
+              pseudonyms: string[] = [],
+              occupations: Occupation[] = [],
+              countries: CountryCode[] = [],
+              discredited = false,
+              birthTime?: Date,
+              deathTime?: Date,
+              gender?: Gender, readonly dirName?: string, public portraitUrl?: string) {
+    super(firstNames, lastName, pseudonyms, occupations, countries, discredited, birthTime, deathTime, gender)
   }
 }

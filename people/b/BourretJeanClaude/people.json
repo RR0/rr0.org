@@ -1,6 +1,11 @@
 {
+  "firstName": [
+    "Jean-Claude"
+  ],
   "birthTime": "1941-07-17",
-  "occupations": ["ufologist"],
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "fr"
   ]

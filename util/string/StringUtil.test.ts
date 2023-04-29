@@ -14,6 +14,7 @@ describe("StringUtil", () => {
 
     expect(StringUtil.camelToText("camelCase")).toBe("Camel Case")
     expect(StringUtil.camelToText("superSimpleExample")).toBe("Super Simple Example")
+    expect(StringUtil.camelToText("AltschulerMartinD")).toBe("Altschuler Martin D.")
     //expect(camelToText("BakerRogerML")).toBe("Baker Roger M. L.")
     /*expect(camelToText("goodNumber90text")).toBe("Good Number 90 Text")
     expect(camelToText("aGoodIPAddress")).toBe("A Good IP Address")

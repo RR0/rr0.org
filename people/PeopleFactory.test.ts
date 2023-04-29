@@ -4,7 +4,7 @@ describe("PeopleFactory", () => {
 
   test("build people with one first name", () => {
     const factory = new PeopleFactory(["people/b/BeauJerome"])
-    expect(factory.createFromString("Jérôme Beau")).toEqual({
+    expect(factory.createFromFullName("Jérôme Beau")).toEqual({
       title: "Beau, Jérôme",
       countries: [],
       lastName: "Beau",
@@ -19,7 +19,7 @@ describe("PeopleFactory", () => {
 
   test("build people with two first names", () => {
     const factory = new PeopleFactory(["people/b/BeauJeromePierre"])
-    expect(factory.createFromString("Jérôme Pierre Beau")).toEqual({
+    expect(factory.createFromFullName("Jérôme Pierre Beau")).toEqual({
       title: "Beau, Jérôme Pierre",
       countries: [],
       lastName: "Beau",
@@ -34,7 +34,7 @@ describe("PeopleFactory", () => {
 
   test("build people with two last names", () => {
     const factory = new PeopleFactory(["people/v/VonBraunWerner"])
-    expect(factory.createFromString("Werner VonBraun")).toEqual({
+    expect(factory.createFromFullName("Werner VonBraun")).toEqual({
       title: "Von Braun, Werner",
       countries: [],
       lastName: "VonBraun",
@@ -49,7 +49,7 @@ describe("PeopleFactory", () => {
 
   test("build people with one initial first names", () => {
     const factory = new PeopleFactory(["people/c/CondonEdwardU"])
-    expect(factory.createFromString("Edward U. Condon")).toEqual({
+    expect(factory.createFromFullName("Edward U. Condon")).toEqual({
       title: "Condon, Edward U.",
       countries: [],
       lastName: "Condon",
@@ -64,7 +64,7 @@ describe("PeopleFactory", () => {
 
   test("build people with last name first", () => {
     const factory = new PeopleFactory(["people/h/HynekJosefAllen"])
-    expect(factory.createFromString("Hynek, Josef Allen")).toEqual({
+    expect(factory.createFromFullName("Hynek, Josef Allen")).toEqual({
       title: "Hynek, Josef Allen",
       countries: [],
       lastName: "Hynek",
@@ -79,7 +79,7 @@ describe("PeopleFactory", () => {
 
   test("Single name", () => {
     const factory = new PeopleFactory(["people/a/Aristote"])
-    expect(factory.createFromString("Aristote")).toEqual({
+    expect(factory.createFromFullName("Aristote")).toEqual({
       title: "Aristote",
       countries: [],
       lastName: "Aristote",

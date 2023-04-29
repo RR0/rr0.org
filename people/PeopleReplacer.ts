@@ -24,7 +24,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     const cache = context.people.cache
     let people = cache.get(peopleStr)
     if (!people) {
-      people = this.factory.createFromString(peopleStr)
+      people = this.factory.createFromFullName(peopleStr)
       cache.set(people.lastName, people)
     }
     let url = people.dirName

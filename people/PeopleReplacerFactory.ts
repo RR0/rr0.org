@@ -23,8 +23,7 @@ export class PeopleReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected async getInstance(): Promise<PeopleReplacer> {
     if (!this.singleton) {
-      const peopleFiles = await glob("people/*/*")
-      const factory = new PeopleFactory(peopleFiles)
+      const factory = await PeopleFactory.getInstance()
       this.singleton = new PeopleReplacer(factory)
     }
     return this.singleton

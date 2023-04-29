@@ -1,9 +1,11 @@
 import {People} from "./People"
+import {PeopleFactory} from "./PeopleFactory"
 
 describe("People", () => {
 
-  test("age", () => {
-    const hynek = new People("HynekJosefAllen")
+  test("age", async () => {
+    const factory = await PeopleFactory.getInstance()
+    const hynek = factory.createFromDirName("HynekJosefAllen")
     expect(hynek.isDeceased()).toBe(false)
     expect(hynek.getAge()).toBe(undefined)
 

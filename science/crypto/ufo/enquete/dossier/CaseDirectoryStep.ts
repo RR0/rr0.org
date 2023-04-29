@@ -3,6 +3,7 @@ import {RR0SsgContext} from "../../../../../RR0SsgContext"
 import {HtmlTag} from "../../../../../util/HtmlTag"
 import {StringUtil} from "../../../../../util/string/StringUtil"
 import {Time} from "../../../../../time/Time"
+import {RR0FileUtil} from "../../../../../util/file/RR0FileUtil"
 
 enum HynekClassification {
   NL = "NL",
@@ -98,9 +99,8 @@ export class CaseDirectoryStep extends DirectoryStep {
     await this.outputFunc(context, context.outputFile)
   }
 
-  static async create(outputFunc: OutputFunc, config: SsgConfig,
-                      findDirectoriesContaining: (fileName) => Promise<string[]>): Promise<CaseDirectoryStep> {
-    const ufoCasesDirectories = await findDirectoriesContaining("case.json")
+  static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<CaseDirectoryStep> {
+    const ufoCasesDirectories = await RR0FileUtil.findDirectoriesContaining("case.json")
     return new CaseDirectoryStep(
       ufoCasesDirectories,
       ["science/crypto/ufo/enquete/dossier/canular"],

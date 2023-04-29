@@ -1,7 +1,11 @@
 {
   "birthTime": "1951-10-30",
-  "occupations": ["ufologist", "writer"],
+  "occupations": [
+    "ufologist",
+    "writer"
+  ],
   "countries": [
     "uk"
-  ]
+  ],
+  "gender": "female"
 }

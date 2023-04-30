@@ -1,76 +1,75 @@
 <!--#include virtual="/header-start.html" -->
 <title>UP</title>
 <!--#include virtual="/header-end.html" -->
-<p><i>Unified Process</i> : processus (de d�veloppement) unifi�. </p>
+<p><i>Unified Process</i> : processus (de développement) unifié. </p>
 <section>
   <h2>Besoin</h2>
-  <p>D�finir une <a href="/tech/info/soft/proj/method">m�thode</a> de d�veloppement logiciel permettant : </p>
+  <p>Définir une <a href="/tech/info/soft/proj/method">méthode</a> de développement logiciel permettant : </p>
   <ul>
     <li>de livrer les projets en temps et en heure</li>
     <li>de satisfaire les besoins des clients finaux</li>
-    <li>de lever les risques au plus t�t</li>
+    <li>de lever les risques au plus tôt</li>
   </ul>
 </section>
 <section>
   <h2>Analyse</h2>
-  <img src="../../../images/RUP.gif" alt="Le RUP" width="518" height="331" hspace="20" vspace="20" border="0"
-       align="right" usemap="#Map">
+  <img alt="Le RUP" src="../../../images/RUP.gif" usemap="#Map">
   <map name="Map">
-    <area shape="rect" coords="-1,73,520,101" href="/tech/info/soft/proj/req">
-    <area shape="rect" coords="-9,20,153,57" href="../Discipline.html">
-    <area shape="rect" coords="-28,106,62,130" href="../Analyse.html">
-    <area shape="rect" coords="77,106,155,130" href="/tech/info/soft/proj/design">
-    <area shape="rect" coords="-2,131,579,157" href="../impl/index.html">
-    <area shape="rect" coords="-1,157,532,173" href="/tech/info/soft/proj/test">
-    <area shape="rect" coords="-1,173,579,195" href="../Deploiement.html">
-    <area shape="rect" coords="-5,199,153,219" href="../conf/index.html">
-    <area shape="rect" coords="0,222,152,232" href="../GestionChangement.html">
-    <area shape="rect" coords="-3,234,154,250" href="index.html">
-    <area shape="rect" coords="-1,252,153,271" href="../EnvironnementDev.html">
+    <area alt="Besoin" coords="-1,73,520,101" href="/tech/info/soft/proj/req" shape="rect">
+    <area alt="Discipline" coords="-9,20,153,57" href="../Discipline.html" shape="rect">
+    <area alt="Analyse" coords="-28,106,62,130" href="../Analyse.html" shape="rect">
+    <area alt="Conception" coords="77,106,155,130" href="/tech/info/soft/proj/design" shape="rect">
+    <area alt="Implémentation" coords="-2,131,579,157" href="../impl/index.html" shape="rect">
+    <area alt="Test" coords="-1,157,532,173" href="/tech/info/soft/proj/test" shape="rect">
+    <area alt="Déploiement" coords="-1,173,579,195" href="../Deploiement.html" shape="rect">
+    <area alt="Gestion de configuration" coords="-5,199,153,219" href="../conf/index.html" shape="rect">
+    <area alt="Gestion du changement" coords="0,222,152,232" href="../GestionChangement.html" shape="rect">
+    <area alt="Méthode" coords="-3,234,154,250" href="index.html" shape="rect">
+    <area alt="Environnement de développement" coords="-1,252,153,271" href="../EnvironnementDev.html" shape="rect">
   </map>
   Gestion
 
-  <p>Un cycle de d�veloppement de projet UP se divise en plusieurs phases :</p>
+  <p>Un cycle de développement de projet UP se divise en plusieurs phases :</p>
   <ol>
-    <li><b>Cr�ation </b>(<i>Inception</i>) :
+    <li><b>Création </b>(<i>Inception</i>) :
       <ul>
-        <li>La vision du produit et son opportunit� m�tier, d�finissant le p�rim�tre du projet</li>
+        <li>La vision du produit et son opportunité métier, définissant le périmètre du projet</li>
       </ul>
     </li>
     <li><b>Elaboration</b> :
       <ul>
-        <li>Planification des activit�s et ressources n�cessaires, sp�cification des fonctionnalit�s et conception de
+        <li>Planification des activités et ressources nécessaires, spécification des fonctionnalités et conception de
           l'architecture</li>
       </ul>
     </li>
     <li><b>Construction</b> :
       <ul>
-        <li>R�alisation du produit et, au travers de la vision, l'architecture et les plans jusqu'� ce que le produit -
-          la vision r�alis�e - soit pr�te � �tre transf�r�e aux utilisateurs</li>
+        <li>Réalisation du produit et, au travers de la vision, l'architecture et les plans jusqu'à ce que le produit -
+          la vision réalisée - soit prête à être transférée aux utilisateurs</li>
       </ul>
     </li>
     <li><b>Transition</b> : Transmission (packaging, livraison, formation, support, maintenance) du produit pour les
       utilisateurs</li>
-    <li>(optionel) <b>Evolution</b> : P�riode incluant les cycles suivants, produisant autant de g�n�rations du produit
+    <li>(optionnel) <b>Evolution</b> : Période incluant les cycles suivants, produisant autant de générations du produit
       <span class="source">[EUP]</span>.</li>
   </ol>
   <section>
     <h3>Technique</h3>
     <p>UP est un ensemble de bonnes pratiques techniques. C'est un processus :</p>
     <ul>
-      <li><b>incr�mental et it�ratif</b> : on construit le produit petit � petit, par ajouts successif de
-        fonctionnalit�s. Ces ajouts sont appel�s it�rations, produisant autant de versions ex�cutables (d�crites,
-        document�es, planifi�es, mais non compl�tes fonctionnellement) du produit. Chacune de ces it�rations consiste en
+      <li><b>incrémental et itératif</b> : on construit le produit petit à petit, par ajouts successifs de
+        fonctionnalités. Ces ajouts sont appelés itérations, produisant autant de versions exécutables (décrites,
+        documentées, planifiées, mais non complètes fonctionnellement) du produit. Chacune de ces itérations consiste en
         un effort variable dans les <a href="../Discipline.html">disciplines</a> de <a
             href="/tech/info/soft/proj/design">conception</a>, <a
-            href="../impl/index.html">impl�mentation</a>, <a href="/tech/info/soft/proj/test">test</a>, etc. Les
-        it�rations se r�partissent sur les diff�rentes phases de gestion du projet, en veillant � ce que la fin d'une
-        phase corresponde � la fin d'une it�ration.</li>
-      <li><b>pilot� par les cas d'utilisation</b> : le système d�velopp� r�pond aux besoins de l'utilisateur (<a
-          href="/tech/info/soft/proj/test">tests</a>, tracabilit�, suivi des impacts)</li>
-      <li><b>g�r� par les riques</b> : les risques techniques sont lev�s au plus t�t (<a
+            href="../impl/index.html">implémentation</a>, <a href="/tech/info/soft/proj/test">test</a>, etc. Les
+        itérations se répartissent sur les différentes phases de gestion du projet, en veillant à ce que la fin d'une
+        phase corresponde à la fin d'une itération.</li>
+      <li><b>piloté par les cas d'utilisation</b> : le système développé répond aux besoins de l'utilisateur (<a
+          href="/tech/info/soft/proj/test">tests</a>, traçabilité, suivi des impacts)</li>
+      <li><b>géré par les risques</b> : les risques techniques sont levés au plus tôt (<a
           href="/tech/info/soft/proj/test">tests</a>)</li>
-      <li><b>centr�</b> <b>sur l'architecture</b> : l'architecture de r�f�rence du système structure la conception et
+      <li><b>centré</b> <b>sur l'architecture</b> : l'architecture de référence du système structure la conception et
         limite les risques</li>
     </ul>
   </section>
@@ -78,22 +77,22 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Adapt� aux projets objets</li>
+    <li>Adapté aux projets objets</li>
     <li>Utilise <a href="../UML.html">UML</a></li>
   </ul>
 </section>
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li>n�cessite une formation</li>
-    <li>n�cessite une exp�rience</li>
-    <li>Des erreurs courantes sont d'appliquer le processus (RUP par exemple) � la lettre, de g�n�rer tous les artefacts
-      (documents), aboutissant � un effort inutile et des produits non exploitables.</li>
+    <li>nécessite une formation</li>
+    <li>nécessite une expérience</li>
+    <li>Des erreurs courantes sont d'appliquer le processus (RUP par exemple) à la lettre, de générer tous les artefacts
+      (documents), aboutissant à un effort inutile et des produits non exploitables.</li>
   </ul>
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Des exemples de m�thodologie respectant les principes de UP sont :</p>
+  <p>Des exemples de méthodologie respectant les principes de UP sont :</p>
   <ul>
     <li><span class="source">[RUP]</span> <i><a href="https://www.rational.com/products/rup/index.jsp">Rational Unified
       Process</a></i></li>

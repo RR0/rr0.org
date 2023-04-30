@@ -3,7 +3,7 @@
 <meta content="https://www.faqs.org/ftp/rfc/rfc1631.txt" name="url"/>
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Network Address Translator</i> (ou <i lang="en">Translation</i>) : traducteur (traduction) d'adresses
-  réseau.</p>
+  rÃ©seau.</p>
 <section>
   <h2>Besoin</h2>
   <ul>
@@ -13,49 +13,49 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Un périphérique (routeur, machine) constitue une interface entre :</p>
+  <p>Un pÃ©riphÃ©rique (routeur, machine) constitue une interface entre :</p>
   <ul>
-    <li>le <strong>réseau public</strong> (Internet typiquement) où les machines ont des adresses publiques déposées
+    <li>le <strong>rÃ©seau public</strong> (Internet typiquement) oÃ¹ les machines ont des adresses publiques dÃ©posÃ©es
     </li>
-    <li> le <strong>réseau privé</strong> ou <em>stub domain</em> (un LAN typiquement) où les machines ont des adresses
-      privées utilisées uniquement en interne.</li>
+    <li> le <strong>rÃ©seau privÃ©</strong> ou <em>stub domain</em> (un LAN typiquement) oÃ¹ les machines ont des adresses
+      privÃ©es utilisÃ©es uniquement en interne.</li>
   </ul>
-  <p>Le NAT peut être :</p>
+  <p>Le NAT peut Ãªtre :</p>
   <ul>
-    <li><strong>statique</strong> : remplacement d'une adresse publique par une adresse privée. Utile pour les machines
-      qui doivent être contactées depuis l'extérieur.</li>
-    <li><strong>dynamique</strong> : remplacement d'une adresse publique par une adresse privée non utilisée dans un
-      groupe d'adresses privées disponibles.
+    <li><strong>statique</strong> : remplacement d'une adresse publique par une adresse privÃ©e. Utile pour les machines
+      qui doivent Ãªtre contactÃ©es depuis l'extÃ©rieur.</li>
+    <li><strong>dynamique</strong> : remplacement d'une adresse publique par une adresse privÃ©e non utilisÃ©e dans un
+      groupe d'adresses privÃ©es disponibles.
       <ul>
         <li><strong>surcharge</strong> (<em>overloading</em>) : remplacement d'une adresse publique par une adresse
-          privée vers un port non utilisé dans un groupe de ports disponibles sur cette adresses privée. Cette méthode
-          utilise la fonctionnalité multiplexage de <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/<a
+          privÃ©e vers un port non utilisÃ© dans un groupe de ports disponibles sur cette adresses privÃ©e. Cette mÃ©thode
+          utilise la fonctionnalitÃ© multiplexage de <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/<a
               href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a>.</li>
       </ul>
     </li>
     <li><strong>recouvrement</strong> (<em>overlapping</em>) : remplacement d'une adresse publique par une adresse
-      privée selon une table de conversion.</li>
+      privÃ©e selon une table de conversion.</li>
   </ul>
 </section>
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Développé par Cisco en <time>1994</time>.</li>
-    <li>Défini par la <a href="https://www.faqs.org/ftp/rfc/rfc1631.txt">RFC 1631</a></li>
-    <li>On utilise souvent les termes "natter" ou "naté(e)(s)" en français.</li>
-    <li>Intéressant quand de nombreux postes ne nécessitent rien d'autre qu'un accès externe.</li>
-    <li>Souvent utilisé comme moyen de sécurité via à son "obscurcissement" des infos.</li>
-    <li>Très bien adapté avec DHCP (qui distribue des adresses internes à volonté).</li>
-    <li>Différents des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveurs proxies</a> car
-      opérant au niveau réseau (OSI 3) et non transport (OSI 4). Cela le rend
+    <li>DÃ©veloppÃ© par Cisco en <time>1994</time>.</li>
+    <li>DÃ©fini par la <a href="https://www.faqs.org/ftp/rfc/rfc1631.txt">RFC 1631</a></li>
+    <li>On utilise souvent les termes "natter" ou "natÃ©(e)(s)" en franÃ§ais.</li>
+    <li>IntÃ©ressant quand de nombreux postes ne nÃ©cessitent rien d'autre qu'un accÃ¨s externe.</li>
+    <li>Souvent utilisÃ© comme moyen de sÃ©curitÃ© via Ã  son "obscurcissement" des infos.</li>
+    <li>TrÃ¨s bien adaptÃ© avec DHCP (qui distribue des adresses internes Ã  volontÃ©).</li>
+    <li>DiffÃ©rents des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveurs proxies</a> car
+      opÃ©rant au niveau rÃ©seau (OSI 3) et non transport (OSI 4). Cela le rend
       <ul>
         <li>plus performant </li>
-        <li>plus transparent (pas de configuration nécessaire pour le client), simplifiant ainsi l'administration réseau
+        <li>plus transparent (pas de configuration nÃ©cessaire pour le client), simplifiant ainsi l'administration rÃ©seau
           :
           <ul>
-            <li>on peut changer l'adresse réelle/physique d'une machine accédée sans changer l'adresse accédée par les
+            <li>on peut changer l'adresse rÃ©elle/physique d'une machine accÃ©dÃ©e sans changer l'adresse accÃ©dÃ©e par les
               clients).</li>
-            <li>les adresses internes peuvent varier sans dépendances au réseau public</li>
+            <li>les adresses internes peuvent varier sans dÃ©pendances au rÃ©seau public</li>
           </ul>
         </li>
       </ul>
@@ -65,9 +65,9 @@
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li>Rend impossible certaines opérations (XWindows par exemple)</li>
-    <li>souvent substitut à une bonne conception de réseau (plus facile à mettre en place pour faire de la sécurité que
-      de configurer correctement un réseau par exemple).</li>
+    <li>Rend impossible certaines opÃ©rations (XWindows par exemple)</li>
+    <li>souvent substitut Ã  une bonne conception de rÃ©seau (plus facile Ã  mettre en place pour faire de la sÃ©curitÃ© que
+      de configurer correctement un rÃ©seau par exemple).</li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

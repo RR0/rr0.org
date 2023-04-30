@@ -7,32 +7,32 @@
   <h2>Besoin</h2>
   <ul>
     <li><strong>plug </strong>: permettre aux fournisseurs de <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a>
-      de s'intégrer avec des environnements Java de manière standard</li>
+      de s'intÃ©grer avec des environnements Java de maniÃ¨re standard</li>
     <li><strong>play </strong>: permettre aux applications <a href="/org/us/company/oracle/sun/ptf/java">Java</a>
-      d'exploiter des <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a> de manière standard</li>
+      d'exploiter des <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a> de maniÃ¨re standard</li>
   </ul>
 </section>
 <section>
   <h2>Conception</h2>
   <section>
     <h3>Architecture</h3>
-    <p>L'ensemble de ces interfaces JDBC est implémenté par les éditeurs sous forme de pilotes (<i>drivers</i>), classés
-      selons 4 catégories : </p>
+    <p>L'ensemble de ces interfaces JDBC est implÃ©mentÃ© par les Ã©diteurs sous forme de pilotes (<i>drivers</i>), classÃ©s
+      selons 4 catÃ©gories : </p>
     <ol>
       <li><b>Pont JDBC-ODBC</b> si vous avez un pilote <a href="/tech/info/soft/proj/impl/ODBC.html">ODBC</a> et pas de
         pilote JDBC</li>
-      <li><b>Client natif</b> si vous maîtrisez le poste client</li>
+      <li><b>Client natif</b> si vous maÃ®trisez le poste client</li>
       <li><b>Serveur</b>
         <ol>
-          <li>si vous accédez à un <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a> derrière un <a
+          <li>si vous accÃ©dez Ã  un <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a> derriÃ¨re un <a
               href="/tech/info/soft/reseau/PareFeu.html">pare-feu</a></li>
           <li> si votre pilote JDBC ne supporte pas la mutualisation de connexions</li>
-          <li>si vous souhaitez accéder à des <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a>
-            différents
+          <li>si vous souhaitez accÃ©der Ã  des <a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a>
+            diffÃ©rents
           </li>
         </ol>
       </li>
-      <li><b>Client Java</b> si vous ne maîtrisez pas le poste client</li>
+      <li><b>Client Java</b> si vous ne maÃ®trisez pas le poste client</li>
     </ol>
     <table>
       <tr>
@@ -70,7 +70,7 @@
         <th colspan="2">Protocole</th>
         <td><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></td>
         <td><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></td>
-        <td colspan="2">Pilote (généralement réseau, comme HTTP, etc.)</td>
+        <td colspan="2">Pilote (gÃ©nÃ©ralement rÃ©seau, comme HTTP, etc.)</td>
         <td><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></td>
       </tr>
       <tr>
@@ -94,26 +94,26 @@
     <h3>API</h3>
     <p>JDBC est une API de <a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a> comprenant :</p>
     <ul>
-      <li>un coeur définissant les notions de :
+      <li>un coeur dÃ©finissant les notions de :
         <ul>
-          <li><b><a href="/tech/info/soft/Connexion.html">connexion</a></b> à une base de données, sur laquelle peuvent
-            être émises :
+          <li><b><a href="/tech/info/soft/Connexion.html">connexion</a></b> Ã  une base de donnÃ©es, sur laquelle peuvent
+            Ãªtre Ã©mises :
             <ul>
-              <li>des <b>requêtes</b>
+              <li>des <b>requÃªtes</b>
                 <ul>
                   <li>de type
                     <ul>
                       <li>basique </li>
-                      <li>précompilées (<a href="/tech/info/soft/data/dbms/r/sql">SQL</a> dynamique)</li>
-                      <li>procédure stockée en base </li>
+                      <li>prÃ©compilÃ©es (<a href="/tech/info/soft/data/dbms/r/sql">SQL</a> dynamique)</li>
+                      <li>procÃ©dure stockÃ©e en base </li>
                     </ul>
                   </li>
-                  <li>retournant éventuellement des <b>résultat</b> éventuel de cette requête (contenant des données
+                  <li>retournant Ã©ventuellement des <b>rÃ©sultat</b> Ã©ventuel de cette requÃªte (contenant des donnÃ©es
                     lues dans la base typiquement) que l'on peut :
                     <ul>
-                      <li>parcourir en avant, arrière, absolu </li>
-                      <li>de manière isolée ou non (des modifications extérieures) </li>
-                      <li>mettre à jour</li>
+                      <li>parcourir en avant, arriÃ¨re, absolu </li>
+                      <li>de maniÃ¨re isolÃ©e ou non (des modifications extÃ©rieures) </li>
+                      <li>mettre Ã  jour</li>
                     </ul>
                   </li>
                 </ul>
@@ -124,24 +124,24 @@
       </li>
       <li>une extension ajoutant la notion de :
         <ul>
-          <li><strong>sources de données </strong>abstraites
+          <li><strong>sources de donnÃ©es </strong>abstraites
             <ul>
               <li>accessibles via <a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></li>
-              <li>fournissant généralement une mutualisation (<em>pooling</em>) des connexions</li>
+              <li>fournissant gÃ©nÃ©ralement une mutualisation (<em>pooling</em>) des connexions</li>
             </ul>
           </li>
-          <li><strong><a href="/tech/info/soft/data/dbms/tx">transactions</a> globales</strong> ou distribuées (support
+          <li><strong><a href="/tech/info/soft/data/dbms/tx">transactions</a> globales</strong> ou distribuÃ©es (support
             de XA)</li>
         </ul>
       </li>
     </ul>
 
-    <p>Le coeur de l'API de JDBC est intégrée à <a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a> depuis <a
+    <p>Le coeur de l'API de JDBC est intÃ©grÃ©e Ã  <a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a> depuis <a
         href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a> 1.1. Son extension est requise par <a
         href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a>.</p></section>
 </section>
 <section>
-  <h2>Implémentation</h2>
+  <h2>ImplÃ©mentation</h2>
   <ul>
     <table>
       <tr>
@@ -172,7 +172,7 @@
         <td class="oui" colspan="2">1.2</td>
         <td class="oui">1.3</td>
         <td class="oui">1.4</td>
-        <td>Plate-forme Java intégrante</td>
+        <td>Plate-forme Java intÃ©grante</td>
       </tr>
       <tr>
         <th rowspan="42">Core</th>
@@ -197,13 +197,13 @@
         <td></td>
         <td></td>
         <td class="oui" colspan="5">Oui</td>
-        <td>Requête</td>
+        <td>RequÃªte</td>
       </tr>
       <tr>
         <th>getGeneratedKeys</th>
         <td class="non" colspan="5">Non</td>
         <td class="oui" colspan="2">Oui</td>
-        <td>Clés auto-générées</td>
+        <td>ClÃ©s auto-gÃ©nÃ©rÃ©es</td>
       </tr>
       <tr>
         <th>getMoreResults</th>
@@ -221,13 +221,13 @@
         <th>Batch updates</th>
         <td class="non" colspan="3">Non</td>
         <td class="oui" colspan="4">Optionnel</td>
-        <td>Ajoute une requête SQL pour executeBatch</td>
+        <td>Ajoute une requÃªte SQL pour executeBatch</td>
       </tr>
       <tr>
         <th>resultSetType</th>
         <td class="non" colspan="3">Non</td>
         <td class="oui" colspan="4">Oui</td>
-        <td>En avant seulement, en avant/arrière, et isolé ou non</td>
+        <td>En avant seulement, en avant/arriÃ¨re, et isolÃ© ou non</td>
       </tr>
       <tr>
         <th>resultSetConcurrency</th>
@@ -253,7 +253,7 @@
         <td></td>
         <td></td>
         <td class="oui" colspan="5">Oui</td>
-        <td>Requête précompilée (SQL dynamique)</td>
+        <td>RequÃªte prÃ©compilÃ©e (SQL dynamique)</td>
       </tr>
       <tr>
         <th>CallableStatement</th>
@@ -261,7 +261,7 @@
         <td></td>
         <td></td>
         <td class="oui" colspan="5">Oui</td>
-        <td>Procédure stockée</td>
+        <td>ProcÃ©dure stockÃ©e</td>
       </tr>
       <tr>
         <th rowspan="29">ResultSet</th>
@@ -413,20 +413,20 @@
         <td></td>
         <td></td>
         <td class="oui" colspan="5">getObject</td>
-        <td>Le type <a href="/tech/info/soft/data/dbms/r/sql">SQL</a> est retourné comme un java.lang.Objet
+        <td>Le type <a href="/tech/info/soft/data/dbms/r/sql">SQL</a> est retournÃ© comme un java.lang.Objet
         </td>
       </tr>
       <tr>
         <th>Indice de ligne</th>
         <td class="non" colspan="2">Non</td>
         <td class="oui" colspan="5">getRow</td>
-        <td>Numéro de ligne courant</td>
+        <td>NumÃ©ro de ligne courant</td>
       </tr>
       <tr>
-        <th rowspan="2">Type structuré</th>
+        <th rowspan="2">Type structurÃ©</th>
         <td class="non" colspan="2">Non</td>
         <td class="oui" colspan="5">getRef</td>
-        <td>Référence sur un type structuré (object) <a href="/tech/info/soft/data/dbms/r/sql">SQL</a>3. Peut être lazy
+        <td>RÃ©fÃ©rence sur un type structurÃ© (object) <a href="/tech/info/soft/data/dbms/r/sql">SQL</a>3. Peut Ãªtre lazy
         </td>
       </tr>
       <tr>
@@ -480,12 +480,12 @@
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li> Les requêtes sont exprimées en texte libre (<a href="/tech/info/soft/data/dbms/r/sql">SQL</a> à priori),
-      laissant la possibilité d'émettre des requêtes propriétaires.</li>
+    <li> Les requÃªtes sont exprimÃ©es en texte libre (<a href="/tech/info/soft/data/dbms/r/sql">SQL</a> Ã  priori),
+      laissant la possibilitÃ© d'Ã©mettre des requÃªtes propriÃ©taires.</li>
 
-    <li>A moins de besoins simples, le développement peut se révéler lourd, fastidieux et difficile à mettre au
+    <li>A moins de besoins simples, le dÃ©veloppement peut se rÃ©vÃ©ler lourd, fastidieux et difficile Ã  mettre au
       point.</li>
-    <li>Possibilité d'écrire des requêtes propriétaires (ne fonctionnant que sur un <a
+    <li>PossibilitÃ© d'Ã©crire des requÃªtes propriÃ©taires (ne fonctionnant que sur un <a
         href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a> particulier)</li>
   </ul>
 </section>

@@ -7,7 +7,7 @@
 <section>
   <h2>Besoin</h2>
   <p>Définir un protocole réseau standard pour l'échange de documents sur le Web (pages <a
-      href="../../../../time/doc/html/index.html">HTML</a>).
+      href="/tech/info/soft/data/doc/html">HTML</a>).
   </p>
 </section>
 <section>
@@ -74,8 +74,8 @@
     <tr>
       <th>Technologie</th>
       <th>Année</th>
-      <th><a href="../../../../../1996.html">1996</a></th>
-      <th><a href="../../../../../1997.html">1997</a></th>
+      <th><time>1996</time></th>
+      <th><time>1997</time></th>
     </tr>
     <tr>
       <th rowspan="8">Méthodes</th>
@@ -103,7 +103,7 @@
       <th>Suppression</th>
       <td class="non">Non</td>
       <td class="oui"><code>DELETE</code></td>
-      <td>Supprimer un fichier (rarement autorisé, voire implémenté par les serveur Web)</td>
+      <td>Supprimer un fichier (rarement autorisé, voire implémenté par les serveurs Web)</td>
     </tr>
     <tr>
       <th>Options</th>
@@ -112,7 +112,7 @@
       <td></td>
     </tr>
     <tr>
-      <th>Mise � jour</th>
+      <th>Mise à jour</th>
       <td class="non">Non</td>
       <td class="oui"><code>UPGRADE</code></td>
       <td></td>
@@ -124,7 +124,7 @@
       <td></td>
     </tr>
     <tr>
-      <th rowspan="28">En-t�te</th>
+      <th rowspan="28">En-tête</th>
       <th>Type <a href="MIME.html">MIME</a> du contenu</th>
       <td class="oui" colspan="2"><code>Content-type</code></td>
       <td></td>
@@ -210,7 +210,7 @@
       <th>Connection</th>
       <td class="non">Non</td>
       <td class="oui">Oui</td>
-      <td>Permet au serveur d'indiquer que la connexion va être fermée (Connection: close)</td>
+      <td>Permet au serveur d'indiquer que la connexion va être fermée (<q>Connection: close</q>)</td>
     </tr>
     <tr>
       <th>Expires</th>
@@ -221,7 +221,7 @@
       <th>Keep-Alive</th>
       <td></td>
       <td></td>
-      <td>Ne fonctionne pas bien avec les proxy chaînés</td>
+      <td>Ne fonctionne pas bien avec les proxies chaînés</td>
     </tr>
     <tr>
       <th>Via</th>
@@ -269,13 +269,13 @@
       <th>Vary</th>
       <td class="non">Non</td>
       <td class="oui">Oui</td>
-      <td>Indique quelles dimensions de la r�ponse varie</td>
+      <td>Indique quelles dimensions de la réponse varie</td>
     </tr>
     <tr>
       <th>Alternates</th>
       <td class="non">Non</td>
       <td class="oui">Oui</td>
-      <td>Négotiation future de contenu : quelles sont les représentations alternatives possibles</td>
+      <td>Négociation future de contenu : quelles sont les représentations alternatives possibles</td>
     </tr>
     <tr>
       <th>Refresh: <em>n</em>;URL="<em>uneURL</em>"</th>
@@ -319,7 +319,7 @@
     <tr>
       <th>Interdit</th>
       <td class="oui" colspan="2">403</td>
-      <td>La requête est comprise mais l'accès n'est pas autorisé (étant donnés les droits déduits de
+      <td>La requête est comprise, mais l'accès n'est pas autorisé (étant donnés les droits déduits de
         l'authentification)
       </td>
     </tr>
@@ -357,7 +357,7 @@
       <th>Digest</th>
       <td class="non">Non</td>
       <td class="oui">Oui</td>
-      <td>Remplacement de Basic authentication (h�chage)</td>
+      <td>Remplacement de Basic authentication (hâchage)</td>
     </tr>
   </table>
   <h2>Exemples</h2>
@@ -397,8 +397,8 @@
   </li>
   <li><strong>Déconnecté</strong> : ne traite qu'une seule <a href="../../../../reseau/internet/URL.html">URL</a> par
     connection <a href="../../../../reseau/protocole/4/TCP.html">TCP</a>. Une fois la réponse à la requête envoyée, la
-    connexion est théoriquement terminée (close). Des contournement sont l'ouverture de plusieurs connexions simultanées
-    (4 par défaut pour Netscape).
+    connexion est théoriquement terminée (close). Des contournements sont l'ouverture de plusieurs connexions
+    simultanées (4 par défaut pour Netscape).
     <ul>
       <li>des alternatives pour faire du push sont :
         <ul>

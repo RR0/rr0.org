@@ -1,32 +1,32 @@
 <!--#include virtual="/header-start.html" -->
 <title>Regex</title>
 <!--#include virtual="/header-end.html" -->
-<p><em><strong>Reg</strong>ular <strong>ex</strong>pressions </em>: expressions r�guli�res.</p>
+<p><em><strong>Reg</strong>ular <strong>ex</strong>pressions </em>: expressions régulières.</p>
 <section>
   <h2>Besoin</h2>
-  <p>Reconna�tre des motifs (<em>pattern match</em>) textuels.</p></section>
+  <p>Reconnaître des motifs (<em>pattern match</em>) textuels.</p></section>
 <section>
   <h2>Analyse</h2>
-  <p>Les expressions d�crivant des motifs reconnaissables utilisent :</p>
+  <p>Les expressions décrivant des motifs reconnaissables utilisent :</p>
   <ul>
-    <li>des caract�res normaux (<code>a</code>, <code>b</code>, <code>0</code>, <code>_</code>, etc.), reconnu comme
+    <li>des caractères normaux (<code>a</code>, <code>b</code>, <code>0</code>, <code>_</code>, etc.), reconnu comme
       tels</li>
-    <li>des caract�res sp�ciaux ou "jokers" (<em>wildcards</em>) exprimant une s�mantique de motif (<code>*</code>,
+    <li>des caractères spéciaux ou "jokers" (<em>wildcards</em>) exprimant une sémantique de motif (<code>*</code>,
       <code>+</code>, <code>[</code>, <code>^</code>, etc.)</li>
   </ul>
-  <p>Pour d�signer des caract�res normaux ayant la forme de caract�re sp�ciaux, on les pr�c�de d'un caract�re
-    d'�chappement <code>\</code> (<code>\*</code>, <code>\+</code>, etc.)</p></section>
+  <p>Pour désigner des caractères normaux ayant la forme de caractères spéciaux, on les précède d'un caractère
+    d'échappement <code>\</code> (<code>\*</code>, <code>\+</code>, etc.)</p></section>
 <section>
-  <h2>D�ploiement</h2>
-  <p>Les regex sont int�gr�es dans la <a href="/org/us/company/oracle/sun/ptf/java/api/se">plate-forme standard</a>
+  <h2>Déploiement</h2>
+  <p>Les regex sont intégrées dans la <a href="/org/us/company/oracle/sun/ptf/java/api/se">plate-forme standard</a>
     depuis Java 1.4.
   </p></section>
 <section>
   <h2>Exemples</h2>
-  <p>Les expressions r�guli�res sont utilis�es dans nombre de domaines, comme :</p>
+  <p>Les expressions régulières sont utilisées dans nombre de domaines, comme :</p>
   <ul>
-    <li>la s�lection de fichiers (<code>mon?Fichier*.*</code>)</li>
-    <li>les moteurs de recherche (<code>motcl�*</code>)</li>
+    <li>la sélection de fichiers (<code>mon?Fichier*.*</code>)</li>
+    <li>les moteurs de recherche (<code>motclé*</code>)</li>
     <li>des utilitaires (awk, ed, ex, sed, grep, egrep, fgrep, vi)</li>
     <li>des <a href="../../prod/ide/index.html">IDE</a> (rechercher/remplacer)</li>
     <li>des <a href="/tech/info/soft/proj/impl/lang">langages</a> de programmation (<a
@@ -49,21 +49,21 @@
     </tr>
     <tr>
       <th rowspan="11">Motifs</th>
-      <th>Tout caract�re<br/>
+      <th>Tout caractère<br/>
       </th>
       <td><code><strong>.</strong></code></td>
     </tr>
     <tr>
-      <th> 0 ou 1 fois un caract�re<br/>
+      <th> 0 ou 1 fois un caractère<br/>
       </th>
       <td><code>c<strong>?</strong></code></td>
     </tr>
     <tr>
-      <th> Tout caract�re parmi un ensemble</th>
+      <th> Tout caractère parmi un ensemble</th>
       <td><code><strong>[</strong>ABC<strong>]</strong></code></td>
     </tr>
     <tr>
-      <th> Tout caract�re sauf ceux d'un ensemble</th>
+      <th> Tout caractère sauf ceux d'un ensemble</th>
       <td><code><strong>[^</strong>DEF<strong>]</strong></code></td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@
         <code><strong>\</strong>$</code> <code><strong>\</strong>^</code></td>
     </tr>
     <tr>
-      <th> D�but de ligne</th>
+      <th> Début de ligne</th>
       <td><code><strong>^</strong><strong></strong></code></td>
     </tr>
     <tr>
@@ -81,7 +81,7 @@
       <td><code><strong>$</strong><strong></strong></code></td>
     </tr>
     <tr>
-      <th>D�but d'un mot</th>
+      <th>Début d'un mot</th>
       <td><code><strong>\&lt;</strong><strong></strong></code></td>
     </tr>
     <tr>
@@ -89,46 +89,46 @@
       <td><code><strong>\&gt;</strong><strong></strong></code></td>
     </tr>
     <tr>
-      <th>D�but ou fin d'un mot</th>
+      <th>Début ou fin d'un mot</th>
       <td><code><strong>\b</strong></code></td>
     </tr>
     <tr>
-      <th>Sauf d�but ou fin de mot</th>
+      <th>Sauf début ou fin de mot</th>
       <td><code><strong>\B</strong></code></td>
     </tr>
     <tr>
-      <th rowspan="4">R�p�titions</th>
+      <th rowspan="4">Répétitions</th>
       <th> 0 ou n fois l'element</th>
-      <td><code>�l�ment<strong>*</strong></code></td>
+      <td><code>élément<strong>*</strong></code></td>
     </tr>
     <tr>
-      <th>1 ou n fois l'�l�ment</th>
-      <td><code>�l�ment<strong>+</strong></code></td>
+      <th>1 ou n fois l'élément</th>
+      <td><code>élément<strong>+</strong></code></td>
     </tr>
     <tr>
-      <th>n fois l'�l�ment</th>
-      <td><code>�l�ment<strong>{</strong>n<strong>}</strong></code></td>
+      <th>n fois l'élément</th>
+      <td><code>élément<strong>{</strong>n<strong>}</strong></code></td>
     </tr>
     <tr>
-      <th>Entre min et max fois l'�l�ment</th>
-      <td><code>�l�ment<strong>{</strong>min,max<strong>}</strong></code></td>
+      <th>Entre min et max fois l'élément</th>
+      <td><code>élément<strong>{</strong>min,max<strong>}</strong></code></td>
     </tr>
     <tr>
       <th>Conditions</th>
       <th>Ou</th>
-      <td><code><strong>(</strong>�l�ment1<strong>|</strong>�l�ment2<strong>)</strong></code></td>
+      <td><code><strong>(</strong>élément1<strong>|</strong>élément2<strong>)</strong></code></td>
     </tr>
   </table>
   <h2>Notes</h2>
   <ul>
-    <li>Issues des travaux de Stephen Kleene, math�maticien de l'informatique qui d�finit <q>l'alg�bre des ensembles
-      r�guliers</q>. Le caract�re joker <code>*</code> est formellement appel� <q>�toile de Kleene</q>.</li>
+    <li>Issues des travaux de Stephen Kleene, mathématicien de l'informatique qui définit <q>l'algèbre des ensembles
+      réguliers</q>. Le caractère joker <code>*</code> est formellement appelé <q>étoile de Kleene</q>.</li>
   </ul>
 </section>
 <section>
   <h2>Limitations</h2>
   <ul>
-    <li> Plus faciles � �crire qu'� relire</li>
+    <li> Plus faciles à écrire qu'à relire</li>
   </ul>
 </section>
 <section>

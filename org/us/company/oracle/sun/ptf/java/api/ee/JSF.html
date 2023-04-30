@@ -6,7 +6,7 @@
 <section>
   <h2>Besoin</h2>
   <ul>
-    <li>Permettre de développer facilement des applications serveur avec une <a href="/tech/info/soft/IHM.html">IHM</a>
+    <li>Permettre de dÃ©velopper facilement des applications serveur avec une <a href="/tech/info/soft/IHM.html">IHM</a>
       riche. </li>
     <li>supporter plusieurs types d'affichages (et donc plusieurs types de clients)</li>
   </ul>
@@ -15,18 +15,18 @@
   <h2>Analyse</h2>
   <p>JSF permet de : </p>
   <ul>
-    <li>développer des <strong>composants </strong><a href="/tech/info/soft/IHM.html">IHM</a> et
+    <li>dÃ©velopper des <strong>composants </strong><a href="/tech/info/soft/IHM.html">IHM</a> et
       <ul>
-        <li>gérer leurs états</li>
-        <li>gérer leurs événements </li>
+        <li>gÃ©rer leurs Ã©tats</li>
+        <li>gÃ©rer leurs Ã©vÃ©nements </li>
         <li>valider les saisies</li>
-        <li>définir la navigation des pages</li>
-        <li>supporter l'internationalisation et accessibilité.</li>
+        <li>dÃ©finir la navigation des pages</li>
+        <li>supporter l'internationalisation et accessibilitÃ©.</li>
       </ul>
     </li>
     <li>produit des <strong>rendus </strong>(<em>renderers</em>) de ces composants via un <strong>kit de rendu</strong>
-      (<em>RenderKit</em>) pour un type de client donné</li>
-    <li>gérer côté serveur les <strong>événements </strong>de ces composants venant du client </li>
+      (<em>RenderKit</em>) pour un type de client donnÃ©</li>
+    <li>gÃ©rer cÃ´tÃ© serveur les <strong>Ã©vÃ©nements </strong>de ces composants venant du client </li>
   </ul>
 </section>
 <section>
@@ -34,33 +34,33 @@
   <p>JSF applique le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> <a
       href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a> :</p>
   <ul>
-    <li>Le contrôleur <code>FaceServlet</code> reçoit les requêtes clientes</li>
+    <li>Le contrÃ´leur <code>FaceServlet</code> reÃ§oit les requÃªtes clientes</li>
   </ul>
-  <p>est composé de :</p>
+  <p>est composÃ© de :</p>
   <ul>
-    <li> un ensemble d'<a href="/tech/info/soft/API.html">API</a> permettant de représenter des composants <a
-        href="/tech/info/soft/IHM.html">IHM</a>, héritant tous de <code>UIComponent</code>. Par exemple le composant de
-      formulaire <code>HtmlForm</code> du RenderKit <a href="/tech/info/soft/data/doc/html">HTML</a> hérite d'un <code>UIForm</code>
-      neutre qui implémente lui-même <code>UIComponent</code>. </li>
-    <li>une TagLib représentant les concepts JSF dans une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>.
+    <li> un ensemble d'<a href="/tech/info/soft/API.html">API</a> permettant de reprÃ©senter des composants <a
+        href="/tech/info/soft/IHM.html">IHM</a>, hÃ©ritant tous de <code>UIComponent</code>. Par exemple le composant de
+      formulaire <code>HtmlForm</code> du RenderKit <a href="/tech/info/soft/data/doc/html">HTML</a> hÃ©rite d'un <code>UIForm</code>
+      neutre qui implÃ©mente lui-mÃªme <code>UIComponent</code>. </li>
+    <li>une TagLib reprÃ©sentant les concepts JSF dans une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>.
     </li>
   </ul>
 </section>
 <section>
-  <h2>Déploiement</h2>
+  <h2>DÃ©ploiement</h2>
   <ul>
-    <li>Intégré dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a> 1.4+
+    <li>IntÃ©grÃ© dans <a href="/org/us/company/oracle/sun/ptf/java/api/ee/">J2EE</a> 1.4+
       <ul>
-        <li>nécessite Servlet 2.3 et éventuellement JSP 1.2.</li>
+        <li>nÃ©cessite Servlet 2.3 et Ã©ventuellement JSP 1.2.</li>
       </ul>
     </li>
   </ul>
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Implémentations :</p>
+  <p>ImplÃ©mentations :</p>
   <ul>
-    <li><a href="https://java.sun.com/j2ee/javaserverfaces/download.html">Implémentation de référence</a> (RI)</li>
+    <li><a href="https://java.sun.com/j2ee/javaserverfaces/download.html">ImplÃ©mentation de rÃ©fÃ©rence</a> (RI)</li>
     <li>Apache <a href="https://myfaces.apache.org/">MyFaces </a></li>
   </ul>
   <p>IDEs :</p>
@@ -81,11 +81,11 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Standard similaire/complémentaire aux <a href="/tech/info/soft/Framework.html">frameworks</a> <a
+    <li>Standard similaire/complÃ©mentaire aux <a href="/tech/info/soft/Framework.html">frameworks</a> <a
         href="/org/int/asso/asf/server/web/Struts.html">Struts</a> ou <a href="https://tapestry.sourceforge.net">Tapestry</a>.
     </li>
     <li>JSR 127.</li>
-    <li>Nécessite le <a href="/org/us/company/oracle/sun/ptf/java/api/ext/webservice/JWSDP.html">JWSDP</a>.</li>
+    <li>NÃ©cessite le <a href="/org/us/company/oracle/sun/ptf/java/api/ext/webservice/JWSDP.html">JWSDP</a>.</li>
   </ul>
 </section>
 <section>

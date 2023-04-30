@@ -2,445 +2,446 @@
 <title>Struts</title>
 <meta name="url" content="https://struts.apache.org">
 <!--#include virtual="/header-end.html" -->
-<h2><a href="/tech/info/soft/proj/besoin/index.html">Besoin</a></h2>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="/tech/info/soft/Framework.html">framework</a> <a
+      href="/tech/info/soft/proj/design/arch/web/index.html">Web</a> <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee">Java</a> <a href="/tech/info/soft/prod/licence/oss">Open
+    Source</a> prenant en charge :</p>
+  <ul>
+    <li>la séparation des <a href="/tech/info/soft/IHM.html">IHM</a> et des processus métiers</li>
+    <li>le contrôle de saisie des formulaires</li>
+    <li>diverses optimisations (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Struts externalise les interactions entre requête et actions ainsi que le contrôle de validité des
+    formulaires. </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Struts applique le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> <a
+      href="/tech/info/soft/proj/design/pattern/MVC.html">MVC</a> qui répartit les responsabilités entre :</p>
+  <ul>
+    <li><b>(M)odèle </b>: les <i>form beans</i> représentant les données saisies dans des formulaires. D'un point de vue
+      global, les <i>form beans </i>ne représentent qu'un <em>modèle de présentation</em>, c'est-à-dire un moyen de
+      récolter les informations saisies par l'utilisateur, mais qui ne correspond pas forcément au véritable modèle,
+      généralement situé dans des JavaBeans ou des <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>
+      métier annexes.</li>
+    <li><b>(V)ue </b>: les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>, utilisant des balises
+      Struts.</li>
+    <li><b>(C)ontrôleur</b> MVC2, combinaison de :
+      <ul>
+        <li>une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlet</a> unique</li>
+        <li> des <strong>actions</strong> déclenchées par cette servlet (<a
+            href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande/Action).</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Lors de la réception d'une requête Web, la <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlet</a> de Struts examine l'<a
+      href="/tech/info/soft/reseau/internet/URL.html">URL</a> demandé et lui cherche une correspondance
+    (<em>mapping</em>) dans les classes d'actions spécifiées par le développeur. Une instance de cette classe d'action
+    est récupérée (d'un <a
+        href="/tech/info/soft/Pooling.html"><em>pool</em></a>) et exécutée. </p>
+  <p>Cette exécution effectue divers appels métiers, prépare généralement un formulaire (<em>form bean</em>) nécessaire
+    à la vue et retourne un code symbolique indiquant le résultat de son action. La servlet reçoit ce code et lui troue
+    une correspondance (<em>mapping</em>) de vue (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>)
+    à afficher.</p>
+  <p>La <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a> importe les balises Struts et les utilise
+    pour insérer simplement des données du formulaire (<em>form bean</em>) dans la page retournée à l'utilisateur.</p>
+  <h2><a href="/tech/info/soft/proj/impl/index.html">Implémentation</a></h2>
+  <p>Les formulaires sont des <strong>JavaBeans</strong> héritant de <code>org.apache.struts.action.ActionForm</code>.
+    Etant gérés dans un <a href="/tech/info/soft/Pooling.html">pool</a>, ils doivent avoir un constructeur par défaut.
+  </p>
+  <p>Les vues sont des <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html"><strong>JSP</strong></a> utilisant
+    des TagLibs Struts telles que :</p>
+  <ul>
+    <li><code>struts-html</code> pour la construction de code <a
+        href="/tech/info/soft/data/doc/html">HTML</a> (y compris formulaires depuis Struts 1.1)</li>
+    <li><code>struts-bean</code> pour l'accès aux propriétés de <a
+        href="/org/us/company/oracle/sun/ptf/java/api/se/beans">JavaBeans</a> (modèles) </li>
+    <li><code>struts-nested</code> pour la version de ces TagLib intégrant la notion de hiérarchie</li>
+    <li>etc.</li>
+  </ul>
+  <p>Tout formulaire se :</p>
+  <ol>
+    <li><strong>réinitialise</strong> via sa méthode <code>reset()</code></li>
+    <li><strong>remplit</strong> à partir d'une requête (soumission d'un formulaire HTML) via sa méthode <code>
+      populate()</code>
+    </li>
+    <li><strong>valide</strong> (accepte ou rejete les données qu'il contient) via sa méthode <code>validate()</code>.
+    </li>
+  </ol>
+  <h3>contrôleur</h3>
+  <p>Le contrôleur<strong> </strong>est constitué de :</p>
+  <ul>
+    <li>une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html"><strong>servlet</strong></a> unique :
+      <code>org.apache.struts.action.ActionServlet</code> fournie par Struts ou dérivée</li>
+    <li>des <strong>actions</strong> à implémenter, dérivant de <code>org.apache.struts.action.Action</code>. En tant
+      que commande, une action n'a qu'à redéfinir le code de sa méthode <code>execute()</code> pour indiquer ce qu'elle
+      fait lorsqu'on l'invoque. Cette méthode retourne un <code>ActionForward</code> représentant le résultat de
+      l'exécution. C'est en fonction de ce résultat que la prochaine vue à afficher (ou autre action à exécuter) est
+      choisie d'après la configuration Struts. Cependant, plusieurs autres actions plus spécialisées sont disponibles :
+      <ul>
+        <li><code>DispachAction</code>, qui exécute telle ou telle méthode (pas uniquement <code>execute()</code>) en
+          fonction d'un <strong>paramètre</strong> de la requête soumise. Ceci est pratique lorsque l'action varie
+          fortement en fonction des paramètres (création, suppression, mise à jour par exemple).
+          <ul>
+            <li><code>LookupDispatchAction</code> qui considère le paramètre d'action comme provenant directement des
+              boutons de l'interface utilisateur.</li>
+          </ul>
+        </li>
+        <li><code>ForwardAction</code>, qui n'effectue rien d'autre que de rediriger vers une destination (une vue
+          typiquement). Ceci évite d'avoir à écrire des classes d'action aussi simples.</li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Configuration</h3>
+  <p>Une <strong>WebApp </strong>utilisant Struts ajoute sous son répertoire <code>WEB-INF</code> un (ou plusieurs)
+    fichier(s) de configuration Struts définissant :</p>
+  <ul>
+    <li>les sources de données éventuelles. </li>
+    <li>les formulaires (<i>form-beans</i>)</li>
+    <li>les redirections globales (<i>global forwards</i>) </li>
+    <li>les correspondances (<i>action-mappings</i>) entre requêtes, actions à exécuter et formulaires utilisés</li>
+    <li>les ressources d'internationalisation</li>
+  </ul>
+  <blockquote>
+    <table>
+      <thead>
+      <tr>
+        <td colspan="2" rowspan="2">Struts</td>
+        <th> Version</th>
+        <th colspan="2"> 1</th>
+        <th rowspan="3"> Commentaire</th>
+      </tr>
+      <tr>
+        <th> Release</th>
+        <th>0</th>
+        <th>1</th>
+      </tr>
+      <tr>
+        <th> Module</th>
+        <th> Technologie</th>
+        <th>FixPack</th>
+        <th>1</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th rowspan="4">Java</th>
+        <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></th>
+        <td class="oui" colspan="2">1.2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
+        <td class="oui" colspan="2">2.0</td>
+        <td>Optionnel</td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
+        <td class="oui" colspan="2">2.2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
+        <td class="oui" colspan="2">1.1</td>
+        <td></td>
+      </tr>
+      </thead>
+      <tr>
+        <th rowspan="9"><a href="/org/int/asso/asf/Commons.html">Commons</a></th>
+        <th colspan="2">DBCP</th>
+        <td><code>GenericDataSource</code> (non JNDI)</td>
+        <td class="oui">Oui</td>
+        <td><i>DataBase Connection Pool</i></td>
+      </tr>
+      <tr>
+        <th colspan="2">File Upload</th>
+        <td></td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2">Logging</th>
+        <td></td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="https://jakarta.apache.org/commons/pool.html">Pool</a></th>
+        <td></td>
+        <td class="oui">Oui</td>
+        <td><a href="/tech/info/soft/Pooling.html">Pooling</a> d'objets</td>
+      </tr>
+      <tr>
+        <th colspan="2">Services</th>
+        <td></td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2">Validator</th>
+        <td>Contribution</td>
+        <td class="oui">Oui</td>
+        <td>Validation de formulaires via expressions régulières, code JavaScript généré</td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="https://jakarta.apache.org/commons/beanutils.html">BeanUtils</a></th>
+        <td><code>org.apache. struts.utils</code></td>
+        <td class="oui">Oui</td>
+        <td>Introspection via des scriplets</td>
+      </tr>
+      <tr>
+        <th colspan="2">Collections</th>
+        <td><code>org.apache. struts.utils</code></td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="https://jakarta.apache.org/commons/digester/">Digester</a></th>
+        <td><code>org.apache. struts.digester</code></td>
+        <td class="oui">Oui</td>
+        <td><a href="/tech/info/soft/data/doc/xml/">XML</a>Mapping XML vers Java, souvent utilisé pour la lecture de
+          fichiers de configuration.
+        </td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/time/doc/xml">XML</a></th>
+        <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
+        <td class="oui">1.0</td>
+        <td class="oui">1.1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>DTD</th>
+        <th colspan="2">Message-Resources</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td>Internationalisation</td>
+      </tr>
+      <tr>
+        <th>Erreurs</th>
+        <th colspan="2">Declarative</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2">Formulaires</th>
+        <th colspan="2">ActionForm</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td>Formulaires implémentés (classes)</td>
+      </tr>
+      <tr>
+        <th colspan="2">DynaBeans</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td>Formulaires déclaratifs (XML)</td>
+      </tr>
+      <tr>
+        <th rowspan="4">Actions</th>
+        <th colspan="2">Action</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2">DispachAction</th>
+        <th></th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>LookupDispatchAction</th>
+        <td class="non"></td>
+        <td class="oui"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2">ForwardAction</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="16">TagLib</th>
+        <th colspan="2"><a href="https://jakarta.apache.org/struts/userGuide/dev_tiles.html">Tiles</a></th>
+        <td></td>
+        <td></td>
+        <td>Framework d'assemblage de <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></td>
+      </tr>
+      <tr>
+        <th rowspan="9"><a href="https://jakarta.apache.org/struts/userGuide/dev_html.html">Html</a></th>
+        <th>options</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>option</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>optionsCollection</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td> Remplir des options HTML à partir d'une collection.</td>
+      </tr>
+      <tr>
+        <th>message</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td> Insertion d'un libellé.</td>
+      </tr>
+      <tr>
+        <th>messages</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td> Itération d'une collection de messages dans la classe ActionMessages.</td>
+      </tr>
+      <tr>
+        <th> ActionForm</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>image</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>img</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> SubmitTag, SelectTag, LinkTag.java, CheckboxTag, ButtonTag, ImageTag, RadioTag, and TextArea tags</th>
+        <td class="oui" colspan="2">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://jakarta.apache.org/struts/userGuide/dev_logic.html">Logic</a></th>
+        <th>empty/notEmpty</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2"><a href="https://jakarta.apache.org/struts/userGuide/dev_nested.html">Nested</a></th>
+        <td></td>
+        <td></td>
+        <td>Taglib</td>
+      </tr>
+      <tr>
+        <th rowspan="4"><a href="https://jakarta.apache.org/struts/userGuide/dev_bean.html">Beans</a></th>
+        <th>write</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>cookie</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>header</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>parameter</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="5">Util</th>
+        <th colspan="2"> LocalStrings</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th colspan="2">LabelValueBean</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td>Collection clés/valeurs utilisables pour la baslise &lt;html:options&gt; ou ailleurs.</td>
+      </tr>
+      <tr>
+        <th colspan="2">MessageResources</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td>Escape any single quote characters that are included in the specified message string.</td>
+      </tr>
+      <tr>
+        <th colspan="2">computeParameters</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td>Allow a transaction token to be the only parameter in .</td>
+      </tr>
+      <tr>
+        <th colspan="2">RequestUtils</th>
+        <td class="non">Non</td>
+        <td class="oui">Oui</td>
+        <td> Change to encode ampersands when building a query string.</td>
+      </tr>
+    </table>
+  </blockquote>
+  <h2>Notes</h2>
+  <ul>
 
-<p>Fournir un <a href="/tech/info/soft/Framework.html">framework</a> <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a>
-  <a href="/tech/info/soft/prog/oo/java/index.html">Java</a> <a href="/tech/info/soft/prod/licence/oss">Open Source</a> prenant
-  en charge :</p>
-<ul>
-  <li>la s�paration des <a href="/tech/info/soft/IHM.html">IHM</a> et des processus m�tiers</li>
-  <li>le contrôle de saisie des formulaires</li>
-  <li>diverses optimisations (<a href="/tech/info/soft/Pooling.html"><em>pooling</em></a>)</li>
-</ul>
-<h2><a href="/tech/info/soft/proj/Analyse.html">Analyse</a></h2>
-<p>Struts externalise les interactions entre requ�te et actions ainsi que le contrôle de validit� des formulaires. </p>
-<h2><a href="/tech/info/soft/proj/design/index.html">Conception</a></h2>
+    <li> les formulaires
 
-<p>Struts applique le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> <a href="/tech/info/soft/prog/oo/java/MVC.html">MVC</a> qui
-  r�partit les responsabilit�s entre :</p>
+      <ul>
 
-<ul>
-  <li><b>(M)od�le </b>: les <i>form beans</i> repr�sentant les donn�es saisies dans des formulaires. D'un point de vue
-    global, les <i>form beans </i>ne repr�sentent qu'un <em>mod�le de pr�sentation</em>, c'est-�-dire un moyen de
-    r�colter les informations saisies par l'utilisateur mais qui ne correspond pas forc�ment au v�ritable mod�le,
-    g�n�ralement situ� dans des JavaBeans ou des <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>
-    m�tier annexes.</li>
-  <li><b>(V)ue </b>: les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>, utilisant des balises
-    Struts.</li>
-  <li><b>(C)ontr�leur</b> MVC2, combinaison de :
-    <ul>
-      <li>une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlet</a> unique</li>
-      <li> des <strong>actions</strong> d�clench�es par cette servlet (<a
-          href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande/Action).</li>
-    </ul>
-  </li>
-</ul>
-<p>Lors de la r�ception d'une requ�te Web, la <a
-    href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">servlet</a> de Struts examine l'<a
-    href="/tech/info/soft/reseau/internet/URL.html">URL</a> demand� et lui cherche une correspondance (<em>mapping</em>)
-  dans les classes d'actions sp�cifi�es par le d�veloppeur. Une instance de cette classe d'action est r�cup�r�e (d'un <a
-      href="/tech/info/soft/Pooling.html"><em>pool</em></a>) et ex�cut�e. </p>
-<p>Cette ex�cution effectue divers appels m�tiers, pr�pare g�n�ralement un formulaire (<em>form bean</em>) n�cessaire �
-  la vue. et retourne un code symbolique indiquant le r�sultat de son action. La servlet re�oit ce code et lui troue une
-  correspondance (<em>mapping</em>) de vue (<a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>) �
-  afficher.</p>
-<p>La <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a> importe les balises Struts et les utilise
-  pour ins�rer simplement des donn�es du formulaire (<em>form bean</em>) dans la page retourn�e � l'utilisateur.</p>
-<h2><a href="/tech/info/soft/proj/impl/index.html">Impl�mentation</a></h2>
-<p>Les formulaires sont des <strong>JavaBeans</strong> h�ritant de <code>org.apache.struts.action.ActionForm</code>.
-  Etant g�r�s dans un <a href="/tech/info/soft/Pooling.html">pool</a>, ils doivent avoir un constructeur par d�faut.</p>
-<p>Les vues sont des <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html"><strong>JSP</strong></a> utilisant
-  des TagLibs Struts telles que :</p>
-<ul>
-  <li><code>struts-html</code> pour la construction de code <a href="/tech/info/soft/time/doc/html/index.html">HTML</a>
-    (y compris formulaires depuis Struts 1.1)</li>
-  <li><code>struts-bean</code> pour l'acc�s aux propri�t�s de <a href="/tech/info/soft/prog/oo/java/JavaBeans.html">JavaBeans</a>
-    (mod�les) </li>
-  <li><code>struts-nested</code> pour la version de ces TagLib int�grant la notion de hi�rarchie</li>
-  <li>etc.</li>
-</ul>
-<p>Tout formulaire se :</p>
-<ol>
-  <li><strong>r�initialise</strong> via sa m�thode <code>reset()</code></li>
-  <li><strong>remplit</strong> � partir d'une requ�te (soumission d'un formulaire HTML) via sa m�thode
-    <code>populate()</code></li>
-  <li><strong>valide</strong> (accepte ou rejete les donn�es qu'il contient) via sa m�thode <code>validate()</code>.
-  </li>
-</ol>
-<h3>contrôleur</h3>
-<p>Le contrôleur<strong> </strong>est constitu� de :</p>
-<ul>
-  <li>une <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html"><strong>servlet</strong></a> unique :
-    <code>org.apache.struts.action.ActionServlet</code> fournie par Struts ou d�riv�e</li>
-  <li>des <strong>actions </strong>� impl�menter, d�rivant de <code>org.apache.struts.action.Action</code>. En tant que
-    commande, une action n'a qu'� red�finir le code de sa m�thode <code>execute()</code> pour indiquer ce qu'elle fait
-    lorsqu'on l'invoque. Cette m�thode retourne un <code>ActionForward</code> repr�sentant le r�sultat de l'ex�cution.
-    C'est en fonction de ce r�sultat que la prochaine vue � afficher (ou autre action � ex�cuter) est choisie d'apr�s la
-    configuration
-    Struts. Cependant, plusieurs autres actions plus sp�cialis�es sont disponibles
-    :
-    <ul>
-      <li><code>DispachAction</code>, qui ex�cute telle ou telle m�thode (pas
-        uniquement <code>execute()</code>) en fonction d'un <strong>param�tre</strong> de la requ�te soumise.
-        Ceci est pratique lorsque l'action varie fortement en fonction des param�tres
-        (cr�ation, suppression, mise � jour par exemple).
-        <ul>
-          <li><code>LookupDispatchAction</code> qui consid�re le param�tre d'action
-            comme provenant directement des boutons de l'interface utilisateur.</li>
-        </ul>
-      </li>
-      <li><code>ForwardAction</code>, qui n'effectue rien d'autre que de rediriger
-        vers une destination (une vue typiquement). Ceci �vite d'avoir � �crire
-        des classes d'action aussi simples.</li>
-    </ul>
-  </li>
-</ul>
-<h3>Configuration</h3>
-<p>Une <strong>WebApp </strong>utilisant Struts ajoute sous son r�pertoire <code>WEB-INF</code> un
-  (ou plusieurs) fichier(s) de configuration Struts d�finissant :</p>
-<ul>
-  <li>les sources de donn�es �ventuelles. </li>
-  <li>les formulaires (<i>form-beans</i>)</li>
-  <li>les redirections globales (<i>global forwards</i>) </li>
-  <li>les correspondances (<i>action-mappings</i>) entre requ�tes, actions
-    � ex�cuter et formulaires utilis�s</li>
-  <li>les ressources d'internationalisation</li>
-</ul>
-<blockquote>
-  <table>
-    <thead>
-    <tr>
-      <td colspan="2" rowspan="2">Struts</td>
-      <th> Version</th>
-      <th colspan="2"> 1</th>
-      <th rowspan="3"> Commentaire</th>
-    </tr>
-    <tr>
-      <th> Release</th>
-      <th>0</th>
-      <th>1</th>
-    </tr>
-    <tr>
-      <th> Module</th>
-      <th> Technologie</th>
-      <th>FixPack</th>
-      <th>1 </th>
-      <th>  </th>
-    </tr>
-    <tr>
-      <th rowspan="4">Java</th>
-      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/">J2SE</a></th>
-      <td colspan="2" class="oui">1.2</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
-      <td colspan="2" class="oui">2.0</td>
-      <td>Optionnel</td>
-    </tr>
-    <tr>
-      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
-      <td colspan="2" class="oui">2.2</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
-      <td colspan="2" class="oui">1.1</td>
-      <td> </td>
-    </tr>
-  </thead>
-    <tr>
-      <th rowspan="9"><a href="/tech/info/soft/prog/oo/java/Commons.html">Commons</a></th>
-      <th colspan="2">DBCP</th>
-      <td><code>GenericDataSource</code> (non JNDI)</td>
-      <td class="oui">Oui</td>
-      <td><i>DataBase Connection Pool</i></td>
-    </tr>
-  <tr>
-    <th colspan="2">File Upload</th>
-    <td> </td>
-    <td class="oui">Oui</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th colspan="2">Logging</th>
-    <td> </td>
-    <td class="oui">Oui</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th colspan="2"><a href="https://jakarta.apache.org/commons/pool.html">Pool</a></th>
-    <td> </td>
-    <td class="oui">Oui</td>
-    <td><a href="/tech/info/soft/Pooling.html">Pooling</a> d'objets</td>
-  </tr>
-  <tr>
-    <th colspan="2">Services</th>
-    <td> </td>
-    <td class="oui">Oui</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th colspan="2">Validator</th>
-    <td>Contribution</td>
-    <td class="oui">Oui</td>
-    <td>Validation de formulaires via expressions r�guli�res, code
-      JavaScript g�n�r�</td>
-  </tr>
-  <tr>
-    <th colspan="2"><a href="https://jakarta.apache.org/commons/beanutils.html">BeanUtils</a></th>
-    <td><code>org.apache. struts.utils</code></td>
-    <td class="oui">Oui</td>
-    <td>Introspection via des scriplets</td>
-  </tr>
-  <tr>
-    <th colspan="2">Collections</th>
-    <td><code>org.apache. struts.utils</code></td>
-    <td class="oui">Oui</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th colspan="2"><a href="https://jakarta.apache.org/commons/digester/">Digester</a></th>
-    <td><code>org.apache. struts.digester</code></td>
-    <td class="oui">Oui</td>
-    <td><a href="/tech/info/soft/data/doc/xml/">XML</a>Mapping XML vers Java, souvent utilis� pour la lecture de
-      fichiers de configuration.
-    </td>
-  </tr>
-    <tr>
-      <th><a href="/tech/info/soft/time/doc/xml">XML</a></th>
-      <th colspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
-      <td class="oui">1.0</td>
-      <td class="oui">1.1</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>DTD</th>
-      <th colspan="2">Message-Resources</th>
-      <td class="non">Non</td>
-      <td class="oui">Oui</td>
-      <td>Internationalisation</td>
-    </tr>
-    <tr>
-      <th>Erreurs</th>
-      <th colspan="2">Declarative</th>
-      <td class="non">Non</td>
-      <td class="oui">Oui</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th rowspan="2">Formulaires</th>
-      <th colspan="2">ActionForm</th>
-      <td colspan="2" class="oui">Oui</td>
-      <td>Formulaires impl�ment�s (classes)</td>
-    </tr>
-  <tr>
-    <th colspan="2">DynaBeans</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>Formulaires d�claratifs (XML)</td>
-  </tr>
-    <tr>
-      <th rowspan="4">Actions</th>
-      <th colspan="2">Action</th>
-      <td colspan="2" class="oui">Oui</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th rowspan="2">DispachAction</th>
-      <th></th>
-      <td class="non">Non</td>
-      <td class="oui">Oui</td>
-      <td></td>
-    </tr>
-  <tr>
-    <th>LookupDispatchAction</th>
-    <td class="non"> </td>
-    <td class="oui"> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th colspan="2">ForwardAction</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td> </td>
-  </tr>
-    <tr>
-      <th rowspan="16">TagLib</th>
-      <th colspan="2"><a href="https://jakarta.apache.org/struts/userGuide/dev_tiles.html">Tiles</a></th>
-      <td></td>
-      <td></td>
-      <td>Framework d'assemblage de <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></td>
-    </tr>
-    <tr>
-      <th rowspan="9"><a href="https://jakarta.apache.org/struts/userGuide/dev_html.html">Html</a></th>
-      <th>options</th>
-      <td colspan="2" class="oui">Oui</td>
-      <td></td>
-    </tr>
-  <tr>
-    <th>option</th>
-    <td colspan="2" class="oui">Oui</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th>optionsCollection</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td> Remplir des options HTML � partir d'une collection.</td>
-  </tr>
-  <tr>
-    <th>message</th>
-    <td colspan="2" class="oui">Oui</td>
-    <td> Insertion d'un libell�.</td>
-  </tr>
-  <tr>
-    <th>messages</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td> It�ration d'une collection de messages dans la classe ActionMessages.</td>
-  </tr>
-  <tr>
-    <th> ActionForm</th>
-    <td colspan="2" class="oui">Oui</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th>image</th>
-    <td colspan="2" class="oui">Oui</td>
-    <td>  </td>
-  </tr>
-  <tr>
-    <th>img</th>
-    <td colspan="2" class="oui">Oui</td>
-    <td>  </td>
-  </tr>
-  <tr>
-    <th> SubmitTag, SelectTag, LinkTag.java, CheckboxTag, ButtonTag, ImageTag, RadioTag, and TextArea tags</th>
-    <td colspan="2" class="oui">Oui</td>
-    <td>  </td>
-  </tr>
-    <tr>
-      <th><a href="https://jakarta.apache.org/struts/userGuide/dev_logic.html">Logic</a></th>
-      <th>empty/notEmpty</th>
-      <td class="non">Non</td>
-      <td class="oui">Oui</td>
-      <td></td>
-    </tr>
-  <tr>
-    <th colspan="2"><a href="https://jakarta.apache.org/struts/userGuide/dev_nested.html">Nested</a></th>
-    <td> </td>
-    <td> </td>
-    <td>Taglib</td>
-  </tr>
-    <tr>
-      <th rowspan="4"><a href="https://jakarta.apache.org/struts/userGuide/dev_bean.html">Beans</a></th>
-      <th>write</th>
-      <td class="non">Non</td>
-      <td class="oui">Oui</td>
-      <td></td>
-    </tr>
-  <tr>
-    <th>cookie</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>  </td>
-  </tr>
-  <tr>
-    <th>header</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>  </td>
-  </tr>
-  <tr>
-    <th>parameter</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>  </td>
-  </tr>
-    <tr>
-      <th rowspan="5">Util</th>
-      <th colspan="2"> LocalStrings</th>
-      <td class="non">Non</td>
-      <td class="oui">Oui</td>
-      <td></td>
-    </tr>
-  <tr>
-    <th colspan="2">LabelValueBean</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>Collection cl�s/valeurs utilisables pour la baslise &lt;html:options&gt; ou
-      ailleurs.</td>
-  </tr>
-  <tr>
-    <th colspan="2">MessageResources</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>Escape any single quote characters that are included in the specified
-      message string.</td>
-  </tr>
-  <tr>
-    <th colspan="2">computeParameters</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td>Allow a transaction token to be the only parameter in .</td>
-  </tr>
-  <tr>
-    <th colspan="2">RequestUtils</th>
-    <td class="non">Non</td>
-    <td class="oui">Oui</td>
-    <td> Change to encode ampersands when building a query string.</td>
-  </tr>
-</table>
-</blockquote>
-<h2>Notes</h2>
-<ul>
+        <li>peuvent stocker des données relatives à une ou plusieurs
 
-  <li> les formulaires
+          pages</li>
 
-    <ul>
+      </ul>
 
-      <li>peuvent stocker des donn�es relatives � une ou plusieurs
+    </li>
 
-        pages</li>
+    <li>Les actions
 
-    </ul>
-
-  </li>
-
-  <li>Les actions
-
-    <ul>
-
-      <li> appliquent le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande.</li>
-      <li>sont le prolongement du code de la servlet contrôleur, ce qui implique que :
-        <ul>
-          <li>elles ne sont pas <i><a href="/tech/info/soft/prog/oo/java/Thread.html">thread</a>-safe</i></li>
-          <li>elles adaptent les requ�te <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> � la
-            v�ritable logique m�tier ind�pendante du Web (<a
-                href="/tech/info/soft/proj/design/pattern/index.html">DP</a> adaptateur)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>les sources de donn�es Struts
-    <ul>
-      <li>(obsol�te) une (<code>GenericDataSource</code>) est livr�e pour les infrastructures qui en manquent (<a
-          href="Tomcat.html">Tomcat</a> par exemple).</li>
-      <li>ne sont pas recommand�es � moins de ne disposez d'aucun pool de connexion (dans <a
-          href="Tomcat.html">Tomcat</a> par exemple). En effet elles ne sont pas performantes et ne sont accessibles
-        qu'� partir du <code>ServletContext</code> de la WebApp. Mieux vaut leurs pr�ferer les sources de donn�es
-        fournies par le serveur applicatif (<a
-            href="../../../../../us/company/ibm/product/soft/server/app/WAS.html">WAS</a>, <a
-            href="/tech/info/soft/prog/oo/java/WLS.html">WLS</a>), qui ont l'avantage d'�tre plus performantes et
-        accessibles via le service de nommage (API <a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a>).
-        Des DataSource <a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a> existent depuis Struts 1.1
-      </li>
-    </ul>
-  </li>
-  <li>Le travail d'initialisation/de terminaison peut �tre r�alis� via un plugin Struts plut�t que par une servlet de
-    contrôle sp�cialisant celle de Struts.</li>
-</ul>
+      <ul>
+        <li> appliquent le <a href="/tech/info/soft/proj/design/pattern/index.html">DP</a> Commande.</li>
+        <li>sont le prolongement du code de la servlet contrôleur, ce qui implique que :
+          <ul>
+            <li>elles ne sont pas <i><a href="/tech/info/soft/proj/design/arch/platform/Thread.html">thread</a>-safe</i>
+            </li>
+            <li>elles adaptent les requête <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> à la
+              véritable logique métier indépendante du Web (<a
+                  href="/tech/info/soft/proj/design/pattern/index.html">DP</a> adaptateur)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>les sources de données Struts
+      <ul>
+        <li>(obsolète) une (<code>GenericDataSource</code>) est livrée pour les infrastructures qui en manquent (<a
+            href="/org/int/asso/asf/server/web/apache/Tomcat.html">Tomcat</a> par exemple).</li>
+        <li>ne sont pas recommandées à moins de ne disposez d'aucun pool de connexion (dans <a
+            href="/org/int/asso/asf/server/web/apache/Tomcat.html">Tomcat</a> par exemple). En effet, elles ne sont pas
+          performantes et ne sont accessibles qu'à partir du <code>ServletContext</code> de la WebApp. Mieux vaut leurs
+          préferer les sources de données fournies par le serveur applicatif (<a
+              href="/org/us/company/ibm/product/soft/server/app/WAS.html">WAS</a>, <a
+              href="/org/us/company/oracle/bea/wls">WLS</a>), qui ont l'avantage d'être plus performantes et accessibles
+          via le service de nommage (API <a
+              href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a>). Des DataSource <a
+              href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a> existent depuis Struts 1.1
+        </li>
+      </ul>
+    </li>
+    <li>Le travail d'initialisation/de terminaison peut être réalisé via un plugin Struts plutôt que par une servlet de
+      contrôle spécialisant celle de Struts.</li>
+  </ul>
+</section>
 
 <h2>Exemples</h2>
 <ul>
@@ -448,7 +449,7 @@
     <ul>
       <li><a
           href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/Java/org/orange/kicsa/presentation/control/skill/">Gestion
-        des comp�tences KiCsa</a></li>
+        des compétences KiCsa</a></li>
     </ul>
   </li>
   <li>Configuration Struts
@@ -460,67 +461,68 @@
   </li>
   <li>JSP Struts
     <ul>
-      <li><a href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/WebAoo/">JSP
-        de la WebApp KiCsa</a></li>
+      <li><a href="https://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/kicsa/WebAoo/">JSP de la WebApp KiCsa</a></li>
     </ul>
   </li>
 </ul>
-<h2>Limitations</h2>
-
-<ul>
-  <li>Pas de v�rification de la provenance lors de l'ex�cution d'une
-    action (pas d'automate en somme).</li>
-<li>Commence � �tre relativement obsol�te, notamment � cause de sa contraire de compatibilit� ascendante. Voir son successeur <a href="/tech/info/soft/prog/oo/java/Shale.html">Shale</a>. </li>
-</ul>
-
-<h2>Voir</h2>
-<ul>
-  <li>Struts
-    <ul>
-      <li><a href="https://apache.i-connexion.net/dist/jakarta/struts/binaries">T�l�chargement</a></li>
-      <li><a href="https://jakarta.apache.org/struts/userGuide">Guide de l'utilisateur</a></li>
-      <li><a href="https://jakarta.apache.org/struts/api">API</a></li>
-      <li><a href="https://rollerjm.free.fr/pro/Struts.html">Validateur </a>
-        <ul>
-          <li><a href="https://home.earthlink.net/%7Edwinterfeldt">Struts validator</a> par David winterfeldt</li>
-        </ul>
-      </li>
-      <li>Didacticiel
-        <ul>
-          <li><a href="https://www.reumann.net/do/struts/main">Struttin' with
-              Struts</a> de <a href="mailto:struts@reumann.net">Rick Reumann</a></li>
-          <li><a href="https://www.onjava.com/pub/a/onjava/2002/10/30/jakarta.html?page=1">Jakarta
-              Struts : Seven lessons from the trenches</a> de <a href="https://www.onjava.com/pub/au/988">Chuck
-              Cavaness</a>            (onJava.com)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Alternatives/compl�ments
-<ul>
-      <li><a href="/tech/info/soft/prog/oo/java/JSTL.html">JSTL</a></li>
-      <li><a href="/tech/info/soft/prog/oo/java/JSF.html">JSF</a></li>
-      <li><a href="https://tapestry.sourceforge.net">Tapestry</a></li>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Pas de vérification de la provenance lors de l'exécution d'une action (pas d'automate en somme).</li>
+    <li>Commence à être relativement obsolète, notamment à cause de sa contraire de compatibilité ascendante. Voir son
+      successeur <a href="/org/int/asso/asf/server/web/apache/Shale.html">Shale</a>. </li>
   </ul>
-</li>
-  <li>D�veloppement
-    <ul>
-      <li>Javanovic <a href="https://www.javanovic.com/products/karapan-sapi.html">Karapan
-        Sapi Struts Generator</a></li>
-    </ul>
-  </li>
-  <li>Test
-    <ul>
-      <li><a href="https://strutstestcase.sourceforge.net/">Struts TestCase for JUnit</a> - Test des actions Struts hors
-        ou � l'int�rieur d'un conteneur Web.</li>
-    </ul>
-  </li>
-  <li>Husted - <a href="https://www.husted.com/struts/">More about Struts</a></li>
-  <li><a href="https://rollerjm.free.fr/pro/Struts.html">Struts controller UML
-    diagram</a> par Jean-Michel Garnier</li>
-  <li>2002 AJUG Meeting - <a href="https://www.ajug.org/meetings/download/ajug.pdf">Struts:
-    MVC framework for JSP</a></li>
-  <li>2002 AJUG Meeting - <a href="https://www.ajug.org/meetings/download/struts.pdf">Java
-    Struts 1.1: Ready for prime time</a></li>
-</ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Struts
+      <ul>
+        <li><a href="https://apache.i-connexion.net/dist/jakarta/struts/binaries">Téléchargement</a></li>
+        <li><a href="https://jakarta.apache.org/struts/userGuide">Guide de l'utilisateur</a></li>
+        <li><a href="https://jakarta.apache.org/struts/api">API</a></li>
+        <li><a href="https://rollerjm.free.fr/pro/Struts.html">Validateur </a>
+          <ul>
+            <li><a href="https://home.earthlink.net/%7Edwinterfeldt">Struts validator</a> par David winterfeldt</li>
+          </ul>
+        </li>
+        <li>Didacticiel
+          <ul>
+            <li><a href="https://www.reumann.net/do/struts/main">Struttin' with Struts</a> de <a
+                href="mailto:struts@reumann.net">Rick Reumann</a></li>
+            <li><a href="https://www.onjava.com/pub/a/onjava/2002/10/30/jakarta.html?page=1">Jakarta Struts : Seven
+              lessons from the trenches</a> de <a href="https://www.onjava.com/pub/au/988">Chuck Cavaness</a>
+              (onJava.com)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Alternatives/compléments
+      <ul>
+        <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSTL.html">JSTL</a></li>
+        <li><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSF.html">JSF</a></li>
+        <li><a href="https://tapestry.sourceforge.net">Tapestry</a></li>
+      </ul>
+    </li>
+    <li>Développement
+      <ul>
+        <li>Javanovic <a href="https://www.javanovic.com/products/karapan-sapi.html">Karapan Sapi Struts Generator</a>
+        </li>
+      </ul>
+    </li>
+    <li>Test
+      <ul>
+        <li><a href="https://strutstestcase.sourceforge.net/">Struts TestCase for JUnit</a> - Test des actions Struts
+          hors ou à l'intérieur d'un conteneur Web.</li>
+      </ul>
+    </li>
+    <li>Husted - <a href="https://www.husted.com/struts/">More about Struts</a></li>
+    <li><a href="https://rollerjm.free.fr/pro/Struts.html">Struts controller UML diagram</a> par Jean-Michel Garnier
+    </li>
+    <li>2002 AJUG Meeting - <a href="https://www.ajug.org/meetings/download/ajug.pdf">Struts: MVC framework for JSP</a>
+    </li>
+    <li>2002 AJUG Meeting - <a href="https://www.ajug.org/meetings/download/struts.pdf">Java Struts 1.1: Ready for prime
+      time</a></li>
+  </ul>
+</section>
 <!--#include virtual="/footer.html" -->

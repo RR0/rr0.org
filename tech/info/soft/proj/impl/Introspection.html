@@ -1,0 +1,28 @@
+<!--#include virtual="/header-start.html" -->
+<title>Introspection</title>
+<meta content="https://java.sun.com/j2se/1.5.0/docs/guide/reflection/spec/java-reflectionTOC.doc.html" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple d'utilisation de l'introspection est :</p>
+  <blockquote>
+    <p><code>Class beanClass = obj.<strong>getClass</strong>();<br/> String propertyName = <span class="codeString">"counter"</span>;<br/>
+      <strong>BeanInfo </strong>beanInfo = <strong>Introspector.getBeanInfo</strong>(beanClass);<br/> <strong>PropertyDescriptor</strong>[]
+      propertyDescriptors = beanInfo.<strong>getPropertyDescriptors</strong>();<br/> <br/> for (int i = 0; i &lt;
+      propertyDescriptors.length; i++) {<br/> <strong>PropertyDescriptor </strong>propertyDescriptor =
+      propertyDescriptors[i];<br/> String somePropertyName = propertyDescriptor.<strong>getName</strong>();
+    </code><code><br/> if (somePropertyName.equals (propertyName)) { <br/> <strong> Method</strong> method =
+      propertyDescriptor.<strong>getReadMethod</strong>(); <span class="codeComment">// Getter</span> <br/> Object
+      result = method.<strong>invoke</strong>(obj, new Object[0]); <br/> int value = ((Integer)result).intValue() + 1;
+      <span class="codeComment">  // Incrémente<br/>
+</span><strong> </strong>method = propertyDescriptor.<strong>getWriteMethod</strong>(); <span class="codeComment">      // Setter</span>
+      <br/> method.<strong>invoke</strong>(obj, new Object[] { new Integer(value) });<br/> break;</code><code><br/>
+      }<br/> }</code></p>
+  </blockquote>
+  <p>Des exemples d'introspection sont : </p>
+  <ul>
+    <li>celle des <a href="Reflexivite.html">JavaBeans</a>, qui utilise la réflexivité pour identifier des motifs
+      conforme à ses conventions (getters/setters). </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

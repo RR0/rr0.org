@@ -1,0 +1,798 @@
+<!--#include virtual="/header-start.html" -->
+<title>WAS</title>
+<meta content="https://www-4.ibm.com/software/webservers/appserv" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Websphere Application Server</i> : <a
+    href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur applicatif</a> WebSphere.
+</p>
+<p>Le terme WAS est parfois utilisé pour designer de manière plus générale les <a
+    href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs</a> Web (<em>Web
+  Application Servers</em>) mais cet emploi n'est pas recommandé pour éviter les confusions (préférer AS pour <em>Application
+  Server</em> par exemple).
+</p>
+<h2>Besoin</h2>
+<p>Fournir un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur applicatif</a> <a
+    href="../../../../index.html">IBM</a>.
+</p>
+<h2>Conception</h2>
+<p>WAS est livré avec</p>
+<ul>
+  <li>un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur applicatif</a></li>
+  <li> un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a>.</li>
+</ul>
+<h3>Serveur applicatif</h3>
+<p>Un <strong>domaine </strong>WAS est constitué de :</p>
+<ul>
+  <li><b>noeuds </b>réseau (machines) sur lequels résident des ;
+    <ul>
+      <li><b><a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs</a></b> <a
+          href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html"><b>d'applications</b></a><b> </b>
+        <ul>
+          <li>dans lequels se trouvent des :
+            <ul>
+              <li><b>conteneurs </b>
+                <ul>
+                  <li><b>Web </b>(ou <i>servlet engine</i>) dans lequels sont déployées des :
+                    <ul>
+                      <li><b>Applications Web </b>(<i>WebApps</i>) contenant des <b><a
+                          href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a></b>/<b><a
+                          href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></b>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><b>EJB</b> dans lesquels sont déployés des composants <b><a
+                      href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></b></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>démarrant un service de trace (<code>DrAdmin</code>) sur un port libre</li>
+        </ul>
+      </li>
+      <li><b>1 serveur d'administration </b>des serveurs du noeud
+        <ul>
+          <li>jouant les rôles de :
+            <ul>
+              <li>annuaire de ressources (composants, sources de données, etc.)</li>
+              <li>service de <a href="/org/us/company/oracle/sun/ptf/java/api/se/security">sécurité</a>
+              </li>
+              <li>service de localisation</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>surveillé par un processus "nounou" (<i>nanny process</i>) capable de le relancer automatiquement s'il tombe
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3>Serveur Web</h3>
+<p>Bien qu'il en soit capable, WAS n'est généralement pas exploité comme <a
+    href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a>. Cantonné à l'hébergement
+  d'application <a href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a>, il laisse le traitement des requêtes <a
+      href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> à des <a
+      href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveurs Web</a> tiers capables d'intégrer son
+  plugin, tels que :
+</p>
+<ul>
+  <li><a href="../../../../java/IHS.html">IHS</a></li>
+  <li>Netscape Enterprise Server</li>
+  <li>IIS</li>
+  <li>Apache Server Version</li>
+  <li>Domino</li>
+  <li>Lotus Domino Go Webserver</li>
+</ul>
+<p>Le plugin installé dans un tel <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a>
+  communique avec les serveurs WAS via :
+</p>
+<ul>
+  <li><span class="source">[3.x seulement]</span> la <b>Servlet Redirector </b>contactée par le plugin via OSE (local),
+    elle répartit la charge entre plusieurs serveurs applicatifs (via <a
+        href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>). Pour cela elle contacte le serveur d'administration
+    local (sur la machine où est installée le plugin) et lui demande quel prochain serveur contacter. Elle contacte
+    alors le <em>Remote SRP Bean</em> du serveur indiqué, qui la propage à son tour au servlet engine du serveur
+    contacté
+    <ul>
+      <li>cryptage <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a> possible</li>
+      <li>3 +n ports ouverts pour n clones</li>
+      <li>impossible avec <a href="/tech/info/soft/reseau/NAT.html">NAT</a></li>
+      <li>léger, lourd (application) ou administratif (dans le serveur d'admin, demande alors un accès à la base WAS)
+      </li>
+      <li>moins performant que OSE</li>
+      <li>serveur d'admin point unique de défaillance</li>
+    </ul>
+  </li>
+  <li><span class="source">[3.0.21]</span> <b>Remote OSE </b>(<em>Open Servlet Environment</em>) Remote
+    <ul>
+      <li>performant</li>
+      <li>pas de cryptage <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a></li>
+      <li>un port ouvert pour chaque servlet engine</li>
+      <li>un port ouvert pour la sécurité WAS</li>
+      <li>Supporte <a href="/tech/info/soft/reseau/NAT.html">NAT</a></li>
+    </ul>
+  </li>
+  <li><span class="source">[4.0]</span> <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a>/HTTPS</li>
+</ul>
+<p>Ce plugin est configuré en termes de :</p>
+<ul>
+  <li><b> hôtes virtuels</b> définis via :
+    <ul>
+      <li><span class="source">[3.x]</span> <code>vhosts.properties</code> qui contient pour chaque hôte virtuel :
+        <ul>
+          <li>son Adresse <a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a> (<code>9.24.104.109</code> par
+            exemple)
+          </li>
+          <li>son nom pleinement qualifié (<code>myhost.javarome.net</code> par exemple)</li>
+          <li>son nom court (<code>myhost</code> par exemple)</li>
+          <li>son alias localhost (<code>localhost</code> typiquement)</li>
+          <li>son adresse loopback (<code>127.0.0.1</code> typiquement)</li>
+        </ul>
+      </li>
+      <li><span class="source">[4.x]</span> <code>plugin-cfg.xml</code></li>
+    </ul>
+  </li>
+  <li><b>Règles</b>
+    <ul>
+      <li><span class="source">[3.x]</span> Le fichier <code>rules.properties</code></li>
+      <li><span class="source">[4.x]</span> <code>plugin-cfg.xml</code></li>
+    </ul>
+  </li>
+  <li><b>Fichiers</b>
+    <ul>
+      <li><span class="source">[3.x]</span> Le fichier <code>queues.properties</code></li>
+      <li><span class="source">[4.x]</span> <code>plugin-cfg.xml</code></li>
+    </ul>
+  </li>
+  <li><b>Démarrage</b>
+    <ul>
+      <li>Le fichier <code>bootstrap.properties</code></li>
+    </ul>
+  </li>
+</ul>
+<h3>Groupes de serveurs (cluster)</h3>
+<p>La répartition de charge peut être réalisée par le biais de :</p>
+<ul>
+  <li><b>Network Dispatcher</b> (ND) de WebSphere Edge Server, répartissant une charge <a
+      href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> sur plusieurs <a
+      href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveurs Web</a> (reverse proxy/ip forwarding)
+    selon une politique paramétrable (<i>round robin, load balancing, custom advisor, combining custom advisor with load
+      balancing, content-base</i>d)
+  </li>
+  <li><b>cloage</b>
+    <ul>
+      <li><b>horizontal</b> : plusieurs serveurs installés sur des noeuds différents</li>
+      <li><b>vertical</b>: plusieurs serveurs installés sur le même noeud</li>
+    </ul>
+  </li>
+  <li><b>Remote OSE</b> pour les composants Web (<a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>/ <a
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>)
+  </li>
+  <li><b>WLM</b> pour les composants <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>, via des <i>stubs </i>intelligents
+    (<i>smart stubs</i>) dialoguant avec le serveur d'administration pour connaître les clones actifs, puis répartissant
+    la charge entre ces clones selon une politique paramétrable (<i>round-robin</i>, <i>round-robin prefer local,
+      random</i>, <i>random prefer local</i>, peut-être <i>weight</i> dans le futur). Cependant la préférence est
+    toujours donnée aux EJB situés dans le même processus (<i>process affinity</i>), d'autant plus si l'on est dans une
+    transaction (<i>transaction affinity</i>).
+  </li>
+</ul>
+<h2>Notes</h2>
+<ul>
+  <li>Livré avec <a href="../../../../java/IHS.html">IHS</a></li>
+  <li><b>API</b>
+    <table>
+      <thead>
+      <tr>
+        <td rowspan="3"> WAS</td>
+        <th>Version</th>
+        <th colspan="8"> 3</th>
+        <th colspan="3"> 4</th>
+        <th> 5</th>
+        <th>6</th>
+        <th rowspan="4"> Commentaire</th>
+      </tr>
+      <tr>
+        <th>Release</th>
+        <th colspan="2"> 0</th>
+        <th colspan="6">
+          <a href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes.html">5</a></th>
+        <th colspan="3">
+          <a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/relnotes.html">0</a></th>
+        <th> 0</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th> Fixpack</th>
+        <th colspan="2"> 2</th>
+        <th><a
+            href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp1.html">1</a>
+        </th>
+        <th><a
+            href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp2.html">2</a>
+        </th>
+        <th><a
+            href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp3.html">3</a>
+        </th>
+        <th><a
+            href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp4.html">4</a>
+        </th>
+        <th><a
+            href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/relnotes_fp5.html">5</a>
+        </th>
+        <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/356RN.html">6</a></th>
+        <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/relnotes401.html">1</a>
+        </th>
+        <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/relnotes402.html">2</a>
+        </th>
+        <th><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/403RN.html">3</a></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th> Couche</th>
+        <th> Technologie</th>
+        <th> 0</th>
+        <th> 1</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tr>
+        <th rowspan="2"> Présentation / Contrôle</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
+        <td class="oui" colspan="3"> 2.1</td>
+        <td class="oui" colspan="8"> 2.2</td>
+        <td class="oui">2.3</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
+        <td class="oui" colspan="2"> 0.91</td>
+        <td class="oui"> 1.0</td>
+        <td class="oui" colspan="8">1.1</td>
+        <td class="oui">1.2</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Services / Domaine</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></th>
+        <td class="oui" colspan="8"> 1.0</td>
+        <td class="oui" colspan="3"> 1.1</td>
+        <td class="oui">2.0</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="8"> Intégration</th>
+        <th>
+          <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>/<a
+            href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>
+        </th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="10"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="10"> 1.2</td>
+        <td><code>com.ibm.ejs.ns.jndi.CNInitialContextFactory</code> <span class="source">[3.5]</span>
+          <p>
+            <code>com.ibm.websphere.naming.WsnInitialContextFactory<span class="source"></span></code><span
+              class="source">
+            [4.0]</span></p>
+        </td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
+        <td class="oui" colspan="13"> 2.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">J2C</a></th>
+        <td class="non" colspan="11"> Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a></th>
+        <td class="non" colspan="11"> Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/reseau/protocole/5/SOAP.html">SOAP</a></th>
+        <td class="non" colspan="4"> Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="5"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> UDDI</th>
+        <td class="non" colspan="4"> Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="5"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> WSDL</th>
+        <td class="non" colspan="4"> Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="5"> 1.0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/tech/info/soft/data/doc/xml">XML</a></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
+        <td></td>
+        <td></td>
+        <td> XML4J 2.0.15 (SAX 1, DOM 1), LotusXSL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="3"> 1.0</td>
+        <td class="oui" colspan="2">1.1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/security">Sécurité</a></th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">JAAS</a></th>
+        <td> ServerSide Authenticator, SSOToken</td>
+        <td></td>
+        <td> Certificat, LTPA Token</td>
+        <td class="non"> Non</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="oui" colspan="5"> 1.0</td>
+        <td> LoginContext</td>
+      </tr>
+      <tr>
+        <th> Journalisation (log)</th>
+        <th> JLA</th>
+        <td> OLT</td>
+        <td></td>
+        <td></td>
+        <td class="non" colspan="8">Non</td>
+        <td class="oui" colspan="2"> 1.0</td>
+        <td> Logger, Handler, Filter, Formatter</td>
+      </tr>
+      <tr>
+        <th> Gestion</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMX.html">JMX</a></th>
+        <td></td>
+        <td></td>
+        <td>WSCP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="td2"></td>
+        <td class="td2"></td>
+        <td class="td2"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Clustering</th>
+        <th></th>
+        <td></td>
+        <td></td>
+        <td> Affinité de session</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="td2"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="7"> Existant</th>
+        <th> DB2</th>
+        <td class="oui" colspan="8"> 5</td>
+        <td class="oui" colspan="3"> 6</td>
+        <td class="oui">7</td>
+        <td></td>
+        <td><code>5=COM.ibm.db2.jdbc.DB2ConnectionPoolDataSource, </code><code>com.ibm.as400.access.AS400JDBCConnectionPoolDataSource,
+          com.ibm.db2.jdbc.app.DB2StdConnectionPoolDataSource;
+          6=COM.ibm.db2.jdbc.DB2ConnectionPoolDataSource</code>,<code>
+          com.ibm.as400.access.AS400JDBCConnectionPoolDataSource, com.ibm.db2.jdbc.app.DB2StdConnectionPoolDataSource;
+          7=COM.ibm.db2.jdbc.DB2<b>XA</b>DataSource, </code><code>com.ibm.as400.access.AS400JDBC<b>XA</b>DataSource,
+          com.ibm.db2.jdbc.app.DB2Std<b>XA</b>DataSource </code></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/oracle">Oracle</a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><code>7=oracle.jdbc.pool.OracleConnectionPoolDataSource;
+          8=oracle.jdbc.xa.client.Oracle<b>XA</b>DataSource</code></td>
+      </tr>
+      <tr>
+        <th>Merant</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><code>com.merant.sequelink.jdbcx.datasource.SequeLinkDataSource</code> (XA) (Sauf Linux)</td>
+      </tr>
+      <tr>
+        <th>Informix</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><code>com.informix.jdbcx.IfxConnection PoolDataSource<br> </code>
+          <p><code>com.informix.jdbcx.Ifx<b>XA</b>DataSource</code></p>
+        </td>
+      </tr>
+      <tr>
+        <th>InstantDB</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><code>com.ibm.ejs.cm.portability.IDBConnectionPoolDataSource</code> (Sauf pour base d'administration)</td>
+      </tr>
+      <tr>
+        <th> MS SQL Server</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th> Sybase</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><code>11=com.sybase.jdbc2.jdbc.SybConnectionPoolDataSource, 12=com.sybase.jdbc2.jdbc.Syb<b>XA</b>DataSource</code>
+        </td>
+      </tr>
+      <tr>
+        <th rowspan="12">Plate-forme</th>
+        <th><a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a></th>
+        <td class="oui" colspan="2">1.1</td>
+        <td class="oui" colspan="6">1.2</td>
+        <td class="oui" colspan="3">1.3</td>
+        <td class="oui">1.4</td>
+        <td class="oui">1.5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>AIX</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Solaris</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>HP-UX</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="3">Linux</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Red Hat, Caldera, zSeries</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/Novell.html">Novell</a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>OS/390</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="/org/us/company/ibm/os/OS400.html">OS/400</a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2"><a href="../../../../../ms/product/soft/windows/index.html">Windows</a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>NT, 2000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+  <li><b>Versions</b>
+    <ul>
+      <li>
+        <i>Standard </i>(<a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>/<a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a> uniquement)
+      </li>
+      <li><i>Avancée </i>(<i>Standard</i> + <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>)
+        seule, ou en variante :
+        <ul>
+          <li><i>Mono-serveur </i>(pas de base d'administration)</li>
+          <li><i>Développeur</i></li>
+        </ul>
+      </li>
+      <li><i>Entreprise </i>(avancée + <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">connecteurs</a>)</li>
+      <li><i>Technologie pour développeurs </i>(préversion de la prochaine version)</li>
+    </ul>
+  </li>
+</ul>
+<h2>Voir</h2>
+<ul>
+  <li><a href="../../../../index.html">IBM</a>
+    <ul>
+      <li>
+        <a href="https://www14.software.ibm.com/webapp/download/product.jsp?cat=webservers&s=s&id=TDUN-49EVRT&pf=&k=ANY&q=&dt=TRIAL&v=&e=&rs=&S_TACT=&S_CMP=&presb=&type=t&postsb=">Téléchargement</a>
+      </li>
+      <li><a href="https://www-3.ibm.com/software/webservers/appserv/infocenter.html">Centres d'information </a>
+        <ul>
+          <li><a href="https://www-3.ibm.com/software/webservers/appserv/infocenter35.html">3.5</a>
+            <ul>
+              <li><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/0404010108.html">Meilleures
+                pratiques pour la gestion de session Web</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/03.html">Migrer vers
+            la version 4.0</a></li>
+        </ul>
+      </li>
+      <li><a href="https://publib-b.boulder.ibm.com/cgi-bin/searchsite.cgi?query=websphere">Redbooks</a>
+      </li>
+      <li>Guide de tuning (<a
+          href="https://www-3.ibm.com/software/webservers/appserv/doc/v40/ae/infocenter/was/0901.html">4.0</a>, <a
+          href="https://www-3.ibm.com/software/webservers/appserv/doc/v35/ae/infocenter/was/08010301_v35.html">3.5</a>)
+      </li>
+      <li>Meilleures pratiques de développement pour la <a
+          href="/tech/info/Performance.html">performance</a> et la scalabilité (<a
+          href="https://www-1.ibm.com/support/manager.wss?rt=4&org=SW&doc=7000615&aid=1">3.x</a>)
+      </li>
+      <li><a href="https://www-3.ibm.com/software/webservers/appserv/support.html">Support</a>
+        <ul>
+          <li><a href="https://www-3.ibm.com/software/webservers/appserv/efix-archive.html">Archives des e-fixes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://www.websphere-world.com">WebSphere-World</a></li>
+  <li><a href="https://www.webspherepro.com">WebSphere Professional</a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,233 @@
+<html>
+<head>
+  <title>Propriétés système</title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<h1><span class="sourceIdent1"></span> <span class="warning"></span> <span class="titre4"></span> Propriétés système
+</h1>
+<table width="100%">
+  <tr>
+    <th colspan="4"><a href="/tech/info/index.html">Home</a> | <a href="/tech/info/Contact.html">Contact</a></th>
+  </tr>
+</table>
+<h2>Besoin</h2>
+<p>Echanger des informations entre la plate-forme native et la plate-forme Java.</p>
+<h2>Analyse</h2>
+<p>L'accès aux propriétés système Java est sujet à autorisation.</p>
+<h2>Conception</h2>
+<h2>Implémentation</h2>
+<p>Les propriétés systèmes sont accédés via la classe <code>System</code>.</p>
+<p>Les méthodes concernées sont :</p>
+<ul>
+  <li><code>String <strong>getProperty</strong>(key) </code></li>
+  <li><code>Properties <strong>getProperties</strong>()</code></li>
+  <li><code><strong>setProperty</strong> (key, value)</code></li>
+</ul>
+<p>Des propriétés systèmes peuvent être spécifiées explicitement à la JVM à son démarrage :</p>
+<blockquote>
+  <p><code><strong>java -D</strong>myproperty=value <strong>-D</strong>myOtherProperty MyApplication</code></p>
+</blockquote>
+<h2>Exemples</h2>
+<p>Des exemples de propriétés systèmes sont :</p>
+<table>
+  <tr>
+    <td>Propriétés système Java</td>
+    <th>Propriété</th>
+    <th>Nom</th>
+    <th>Exemple</th>
+  </tr>
+  <tr>
+    <th rowspan="12">Java</th>
+    <th>Version de la spécification</th>
+    <td><code>java.specification.version </code></td>
+    <td><code>1.4</code></td>
+  </tr>
+  <tr>
+    <th>Nom de la spécification</th>
+    <td><code>java.specification.name </code></td>
+    <td><code>Java Platform API Specification</code></td>
+  </tr>
+  <tr>
+    <th>Version de la plate-forme</th>
+    <td><code>java.version</code></td>
+    <td><code>1.3.1_03</code></td>
+  </tr>
+  <tr>
+    <th>Version de la JVM</th>
+    <td><code>java.vm.version</code></td>
+    <td><code>1.3.1_03-b03</code></td>
+  </tr>
+  <tr>
+    <th>Libellé du fournisseur</th>
+    <td><code>java.vendor</code></td>
+    <td><code>Sun Microsystems Inc.</code></td>
+  </tr>
+  <tr>
+    <th>URL du fournisseur</th>
+    <td><code>java.vendor.url</code></td>
+    <td><code> https://java.sun.com/</code></td>
+  </tr>
+  <tr>
+    <th>Version des fichiers .class</th>
+    <td><code>java.class.version</code></td>
+    <td><code>47.0</code></td>
+  </tr>
+  <tr>
+    <th>Nom de la plate-forme</th>
+    <td><code>java.runtime.name </code></td>
+    <td><code>Java(TM) 2 Runtime Environment, Standard Edition</code></td>
+  </tr>
+  <tr>
+    <th>Version de la plate-forme</th>
+    <td><code>java.runtime.version</code></td>
+    <td><code>1.3.1_03-b03</code></td>
+  </tr>
+  <tr>
+    <th>Répertoire d'installation de la plate-forme Java</th>
+    <td><code>java.home</code></td>
+    <td><code>D:\java</code></td>
+  </tr>
+  <tr>
+    <th>Répertoires des extensions</th>
+    <td><code>java.ext.dirs </code></td>
+    <td><code>D:\java\jre\lib\ext</code></td>
+  </tr>
+  <tr>
+    <th>Chemins d'accès aux classes Java</th>
+    <td><code>java.class.path</code></td>
+    <td><code>D:\projects\javarome\classes;D:\javarome\libs\..\..\properties;D:\javarome\libs\mylib.jar</code></td>
+  </tr>
+  <tr>
+    <th rowspan="5">Fichiers</th>
+    <th>Séparateur de fichiers<br>
+    </th>
+    <td><code>file.separator</code></td>
+    <td><code>/</code> ou <code>\</code></td>
+  </tr>
+  <tr>
+    <th>Séparateur de chemins</th>
+    <td><code>path.separator</code></td>
+    <td><code>;</code> ou <code>:</code></td>
+  </tr>
+  <tr>
+    <th>Tables de caractères</th>
+    <td><code>file.encoding </code></td>
+    <td><code>Cp1252</code></td>
+  </tr>
+  <tr>
+    <th>Package de codage des caractères</th>
+    <td><code>file.encoding.pkg </code></td>
+    <td><code>sun.io</code></td>
+  </tr>
+  <tr>
+    <th>Caractères de retour à la ligne</th>
+    <td><code>line.separator</code></td>
+    <td><code>\n</code></td>
+  </tr>
+  <tr>
+    <th rowspan="3">OS</th>
+    <th>Architecture</th>
+    <td><code>os.arch</code></td>
+    <td><code> x86</code></td>
+  </tr>
+  <tr>
+    <th>Nom</th>
+    <td><code>os.name</code></td>
+    <td><code>Windows 2000</code></td>
+  </tr>
+  <tr>
+    <th>Version</th>
+    <td><code>os.version</code></td>
+    <td><code>5.0</code></td>
+  </tr>
+  <tr>
+    <th rowspan="6">Utilisateur</th>
+    <th>Répertoire courant</th>
+    <td><code>user.dir</code></td>
+    <td><code> D:\projects\javarome</code></td>
+  </tr>
+  <tr>
+    <th>Répertoire racine</th>
+    <td><code>user.home</code></td>
+    <td><code> C:\Documents and Settings\Default User</code></td>
+  </tr>
+  <tr>
+    <th>Langue</th>
+    <td><code>user.language</code></td>
+    <td><code>fr</code> ou <code>en</code> etc.</td>
+  </tr>
+  <tr>
+    <th>Zone géographique</th>
+    <td><code>user.region</code></td>
+    <td><code>FR</code> ou <code>US</code> ou <code>UK</code> ou <code>BE</code> etc.</td>
+  </tr>
+  <tr>
+    <th>Nom du compte</th>
+    <td><code>user.name</code></td>
+    <td><code>jbeau</code> ou <code>SYSTEM</code> etc.</td>
+  </tr>
+  <tr>
+    <th>Fuseau horaire</th>
+    <td><code>user.timezone </code></td>
+    <td><code>America/New_York</code></td>
+  </tr>
+  <tr>
+    <th rowspan="4">AWT</th>
+    <th>Toolkit AWT</th>
+    <td><code>awt.toolkit</code></td>
+    <td><code>sun.awt.windows.WToolkit</code></td>
+  </tr>
+  <tr>
+    <th>Fontes</th>
+    <td><code>java.awt.fonts</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><code>java.awt.graphicsenv</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><code>java.awt.printerjob </code></td>
+    <td><code>sun.awt.windows.WPrinterJob</code></td>
+  </tr>
+  <tr>
+    <th rowspan="3">CPU</th>
+    <th></th>
+    <td><code>sun.io.unicode.encoding </code></td>
+    <td><code>UnicodeLittle</code></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><code>sun.cpu.isalist </code></td>
+    <td><code>pentium i486 i386</code></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><code>sun.cpu.endian </code></td>
+    <td><code>little</code></td>
+  </tr>
+  <tr>
+    <th>Sécurité</th>
+    <th>Fichier de politique</th>
+    <td><code>java.security.policy </code></td>
+    <td><code>D:\CFusionMX\runtime\lib\jrun.policy</code></td>
+  </tr>
+  <tr>
+    <th>Protocoles</th>
+    <th>Packages gestionnaire</th>
+    <td><code>java.protocol.handler.pkgs </code></td>
+    <td><code>com.sun.net.ssl.internal.www.protocol</code></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <th colspan="4"><a href="/tech/info/index.html">Home</a> | <a href="/tech/info/Contact.html">Contact</a></th>
+  </tr>
+</table>
+</body>
+</html>

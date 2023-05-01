@@ -1,6 +1,12 @@
 {
   "birthTime": "1955",
-  "occupations": ["ufologist", "journalist"],
+  "occupations": [
+    "ufologist",
+    "journalist"
+  ],
+  "pseudonyms": [
+    "Henry Durrant"
+  ],
   "countries": [
     "fr"
   ]

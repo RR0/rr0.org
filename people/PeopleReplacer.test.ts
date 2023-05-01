@@ -40,7 +40,7 @@ describe("PeopleReplacer", () => {
       const peopleWithTitle = createPeopleElement(context, "Ronald Reagan", "Ronald Wilson Reagan")
       let replacement = await replacer.replacement(context, peopleWithTitle)
       expect(replacement.outerHTML).toBe(
-        `<span translate="no"><a href="/people/r/ReaganRonaldWilson/">Ronald Reagan</a></span>`)
+        `<span translate="no"><a href="/people/r/ReaganRonald/">Ronald Reagan</a></span>`)
     }
     {
       const peopleWithFullName = createPeopleElement(context, "Jérôme Beau")

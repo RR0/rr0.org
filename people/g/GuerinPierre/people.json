@@ -1,5 +1,5 @@
 {
-  "title": "Guérin, Pierre",
+  "lastName": "Guérin",
   "birthTime": "1926",
   "deathTime": "2000-10-07",
   "occupations": [
@@ -8,6 +8,9 @@
   ],
   "countries": [
     "fr"
+  ],
+  "pseudonyms": [
+    "Lemaître, Jacques"
   ],
   "portraitUrl": "/time/2/0/0/0/02/GuerinPierre.jpg"
 }

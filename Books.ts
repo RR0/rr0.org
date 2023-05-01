@@ -92,7 +92,7 @@ export class Books {
           book.series = series
         }
         const authorsLastNames = authors.map(author => author.lastName).join("-")
-        const dirName = authorsLastNames
+        const dirName = authorsLastNames.length > 0 ? authorsLastNames : authorsNames.map(StringUtil.textToCamel)
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(title.toLowerCase()))
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
         const parentDir = TimeUrlBuilder.fromTimeContext(timeContext)

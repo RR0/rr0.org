@@ -1,0 +1,909 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, user-scalable=no, minimal-ui" name="viewport">
+  <title>Jérôme Beau</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" rel="stylesheet">
+  <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+  body {
+    background: #fff;
+    font-family: Lato, sans-serif;
+    margin: 0 0 80px;
+  }
+
+  a {
+    color: #2ecc71;
+  }
+
+  a:focus, a:hover {
+    color: #f1c40f;
+    text-decoration: none;
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 10px;
+  }
+
+  h1, h2, h3, h4 {
+    margin-top: 0
+  }
+
+  section {
+    margin-top: 30px;
+  }
+
+  li {
+    line-height: 1.8;
+    list-style: none;
+  }
+
+  li:before {
+    content: "\f052";
+    float: left;
+    font: 13px Octicons;
+    margin-top: 6px;
+    margin-left: -20px;
+    opacity: .1;
+    position: absolute;
+  }
+
+  blockquote {
+    border-left: 5px solid #e7e9ec;
+    font-size: 14px;
+  }
+
+  em {
+    color: #95a5a6;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  h4 span:first-child {
+    color: #000;
+    font-weight: bold;
+  }
+
+  .container {
+    max-width: 750px;
+    padding: 0 30px;
+  }
+
+  .col-sm-6 {
+    margin-bottom: 10px;
+  }
+
+  .col-sm-12 h4 {
+    margin-top: 12px;
+  }
+
+  .col-sm-12 + .col-sm-12 {
+    margin-top: 30px;
+  }
+
+  #header {
+    background: #f4f6f6;
+    padding: 50px 0;
+    margin-bottom: 30px;
+  }
+
+  #header h2 {
+    color: #95a5a6;
+    font-size: 24px;
+  }
+
+  #content h3 {
+    color: #f1c40f;
+    font-size: 26px;
+    margin-top: -4px;
+  }
+
+  #content aside {
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  #profiles .network {
+    text-transform: capitalize;
+  }
+
+  #work .position, #volunteer .position {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  #education .area {
+    font-weight: bold;
+  }
+
+  #education .area:before {
+    content: "\f0d7";
+    font: 16px Octicons;
+    margin-right: 6px;
+  }
+
+  #education .studyType {
+    margin-left: 25px;
+  }
+
+  #awards .summary, #publications .summary {
+    margin-top: 8px;
+  }
+
+  #publications .website a:before {
+    content: attr(href);
+  }
+
+  @media (min-width: 480px) {
+    .strike-through {
+      border-top: 1px solid #f4f6f6;
+      height: 20px;
+      margin-top: 12px;
+      margin-bottom: -2px;
+      position: relative;
+    }
+
+    .strike-through span, .strike-through a {
+      background: #fff;
+      position: absolute;
+    }
+
+    .strike-through span:first-child {
+      padding-right: 20px;
+      margin-top: -12px;
+    }
+
+    .strike-through span + span {
+      font-size: 14px;
+      margin-top: -10px;
+      padding-left: 20px;
+      right: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .col-sm-6:last-child {
+      margin-bottom: 0px;
+    }
+
+    #content aside {
+      margin-bottom: 20px;
+      padding-right: 0;
+      text-align: left;
+    }
+
+    #publications .website a:before {
+      content: "View publication";
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 26px;
+    }
+
+    .date {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .strike-through span:first-child {
+      margin-bottom: 7px;
+    }
+
+    .strike-through span {
+      display: block;
+    }
+
+    #header {
+      margin-bottom: 10px;
+      padding: 40px 0;
+    }
+
+    #actions {
+      display: none;
+    }
+  }</style>
+</head>
+<body>
+<header id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-sm-push-3">
+        <h1>
+          Jérôme Beau
+        </h1>
+        <h2>
+          Senior Web developer
+        </h2>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container" id="content">
+  <section class="row" id="contact">
+    <aside class="col-sm-3">
+      <h3>Contact</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6">
+          <strong>Email</strong>
+          <div class="email"><a class="__cf_email__" data-cfemail="6208031403100d0f0722050f030b0e4c010d0f"
+              href="/cdn-cgi/l/email-protection">[email&#160;protected]</a>
+            <script data-cfhash="f9e31" type="text/javascript">/* <![CDATA[ */
+            !function (t, e, r, n, c, a, p) {
+              try {
+                t = document.currentScript || function () {
+                  for (t = document.getElementsByTagName("script"), e = t.length; e--;) if (t[e].getAttribute("data-cfhash")) return t[e]
+                }()
+                if (t && (c = t.previousSibling)) {
+                  p = t.parentNode
+                  if (a = c.getAttribute("data-cfemail")) {
+                    for (e = "", r = "0x" + a.substr(0, 2) | 0, n = 2; a.length - n; n += 2) e += "%" + ("0" + ("0x" + a.substr(n, 2) ^ r).toString(16)).slice(-2)
+                    p.replaceChild(document.createTextNode(decodeURIComponent(e)), c)
+                  }
+                  p.removeChild(t)
+                }
+              } catch (u) {
+              }
+            }()/* ]]> */</script>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <strong>Phone</strong>
+          <div class="phone">+33(0)6.79.79.65.18</div>
+        </div>
+        <div class="col-sm-6">
+          <strong>Website</strong>
+          <div class="website">
+            <a href="https://rr0.org">https://rr0.org</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="about">
+    <aside class="col-sm-3">
+      <h3>About</h3>
+    </aside>
+    <div class="col-sm-9">
+      <p>Jérôme hails from Nanterre, a close surburb of Paris, France. He&#x27;s been creative since a child, drawing
+        avidly, until he discovered the personal computer as a tool to build any creation. He wrote many small programs
+        on TO7, Amstrad, PCs, then officialized its experience through degrees from Velizy and Yvelines&#x27; Institutes
+        of Technology. He worked as a developer, a consultant, and a trainer on Java technologies for more than 15
+        years. He now focuses on all aspects of the promising next most portable and ubiquitous platform: the Web.</p>
+    </div>
+  </section>
+  <section class="row" id="profiles">
+    <aside class="col-sm-3">
+      <h3>Profiles</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6">
+          <strong class="network"> twitter </strong>
+          <div class="username">
+            <div class="url">
+              <a href="https://twitter.com/javarome">javarome</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <strong class="network"> Codepen </strong>
+          <div class="username">
+            <div class="url">
+              <a href="https://codepen.io/javarome">javarome</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <strong class="network"> Stack Overflow </strong>
+          <div class="username">
+            <div class="url">
+              <a href="https://stackoverflow.com/users/650104/javarome">javarome</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <strong class="network"> Github </strong>
+          <div class="username">
+            <div class="url">
+              <a href="https://github.com/Javarome">javarome</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <strong class="network"> linkedIn </strong>
+          <div class="username">
+            <div class="url">
+              <a href="https://www.linkedin.com/in/javarome">javarome</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="work">
+    <aside class="col-sm-3">
+      <h3>Work</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Famicity</span> <span class="date">
+2015-01-05 —
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.famicity.com">https://www.famicity.com</a>
+          </div>
+          <div class="position">
+            Senior Web developper
+          </div>
+          <div class="summary">
+            <p>Front end development of a website and hybrid app</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Maintained the evolved the website (AngularJS)</li>
+            <li class="bullet">Created platform-independent menu and navigation APIs to allow both web and native
+              deployments (AngularJS)</li>
+            <li class="bullet">Implemented the most critical CSS structures (Sass), including responsiveness, and wrote
+              guidelines about CSS coding</li>
+            <li class="bullet">Migrated technologies (Less to Sass, CoffeeScript to ES6 then Typescript, Angular 1.2 to
+              1.5, started Angular 2.0 migration)</li>
+            <li class="bullet">Managed 2 remote developpers</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Traveldoo</span> <span class="date">
+2013-01-01 — 2014-11-30
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.traveldoo.com">https://www.traveldoo.com</a>
+          </div>
+          <div class="position">
+            Senior developper
+          </div>
+          <div class="summary">
+            <p>Hotel booking mobile/tablet app, itinerary search website, new GDS datasource</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Server-side implementation (REST, J2EE), including call to third parties (Rome2Rio,
+              GDS)</li>
+            <li class="bullet">Client coding (AngularJS, Google Maps API)</li>
+            <li class="bullet">Native packaging (Phonegap)</li>
+            <li class="bullet">Implemented relevant (Sass), including responsiveness</li>
+            <li class="bullet">Responsible of technologies choice: AngularJS 1.2, Sass</li>
+            <li class="bullet">Managed one intern</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Xooloo</span> <span class="date">
+2010-09-01 — 2012-10-30
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.xooloo.net">https://www.xooloo.net</a>
+          </div>
+          <div class="position">
+            Senior developper &amp; quality manager
+          </div>
+          <div class="summary">
+            <p>Parental control software</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Maintenance &amp; evolution of the Xooloo Parental Control software (Java+native web
+              proxy that can be customized for time (hours, duration), website&#x27;s subject, exceptions, downloads
+              types, applications blocking) on Windows (32/64 bits), Mac (heavyweight clients)</li>
+            <li class="bullet">Redesigned the administration console (Swing)</li>
+            <li class="bullet">Android version of the console</li>
+            <li class="bullet">Added unit tests triggered by builds (JUnit, Ant)</li>
+            <li class="bullet">Setup continuous integration builds, quality metrics (Teamcity)</li>
+            <li class="bullet">Setup ticketing system (JIRA)</li>
+            <li class="bullet">Implemented automatic documentation &amp; snapshots (custom Java implementation)</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Xcalia</span> <span class="date">
+2003-01-01 — 2010-05-30
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.xcalia.com">https://www.xcalia.com</a>
+          </div>
+          <div class="position">
+            R&amp;D Team Leader
+          </div>
+          <div class="summary">
+            <p>Data access server (Xcalia was acquired by DataDirect, a Progress Software subsidiary, in 2008-02)</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">In charge of developing several generations of the product&#x27;s kernel,
+              datastore-agnostic persistence/query engine and its bingdings to relational or service-oriented storages
+              APIs.</li>
+            <li class="bullet">Management of the team of the &#x27;kernel/mediator&#x27; + &#x27;relational data access&#x27;
+              (4 people)</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Personal</span> <span class="date">
+2008-02-01 — 2010-11-01
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://stellarium4java.sourceforge.net">https://stellarium4java.sourceforge.net</a>
+          </div>
+          <div class="position">
+            Spare time
+          </div>
+          <div class="summary">
+            <p>Java port of Stellarium planetarium software</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Java 6 adaptation from C++, OpenGL (JOGL), Subversion (SVN), Maven, OSGI</li>
+            <li class="bullet">Presentation at Javaone 2008</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Valtech</span> <span class="date">
+1998-12-01 — 2002-12-01
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.valtech.com">https://www.valtech.com</a>
+          </div>
+          <div class="position">
+            Software Architect
+          </div>
+          <div class="summary">
+            <p>Consultancy and training on Java technologies</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Consultancy on Java technologies (EJB, persistence) and application design, wrote several
+              guidelines reports</li>
+            <li class="bullet">Worked as consultant and developper on various projects (Manpower, Accor, GIE Symphonie,
+              FT R&amp;D, IFP, IBM DeveloperWorks...)</li>
+            <li class="bullet">White paper on Java security technologies</li>
+            <li class="bullet">Gave a number of training course about Java technologies in France, Belgium, Switzerland,
+              UK</li>
+            <li class="bullet">Wrote and gave european training courses about EJBs, J2EE and JNDI</li>
+            <li class="bullet">Helped american trainers to give EJB courses (BEA for Motorola)</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>SQL Tech</span> <span class="date">
+1998-01-02 — 1998-11-01
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.chronopost.fr/transport-express/livraison-colis/suivi">https://www.chronopost.fr/transport-express/livraison-colis/suivi</a>
+          </div>
+          <div class="position">
+            Java Skill Center Expert
+          </div>
+          <div class="summary">
+            <p>Parcel tracking Web application</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Developed as an application server from scratch, integrated with Chronopost legacy
+              systems.</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>IBM EMEA Software Group</span> <span class="date">
+1997-05-01 — 1997-09-01
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.fnacspectacles.com">https://www.fnacspectacles.com</a>
+          </div>
+          <div class="position">
+            Intern
+          </div>
+          <div class="summary">
+            <p>Shows booking web app</p>
+          </div>
+          <h4>Highlights</h4>
+          <ul class="highlights">
+            <li class="bullet">Developed from scratch a quasi-equivalent of what will be later called an &#x27;application
+              server&#x27;, including a framework of implicitly-persistent entities (Java 1.02, JDBC, multi-threading,
+              sockets, LiveWire (server-side Javascript), interfacing with X25 network)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="education">
+    <aside class="col-sm-3">
+      <h3>Education</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>ISTY</span> <span class="date">
+1994-09-01 — 1997-06-01
+</span>
+          </h4>
+          <div class="area">
+            Computer Science
+          </div>
+          <div class="studyType">
+            Master’s Degree in Software Engineering
+          </div>
+          <h4>Courses</h4>
+          <ul class="courses">
+            <li>Databases</li>
+            <li>Networks</li>
+            <li>Algorithmics</li>
+            <li>Concurrency programming</li>
+            <li>Simulations programming</li>
+            <li>System programming</li>
+            <li>Mathematics</li>
+            <li>Signal processing</li>
+            <li>Communication</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>IUT Velizy</span> <span class="date">
+1992-09-01 — 1994-06-01
+</span>
+          </h4>
+          <div class="area">
+            Computer Science
+          </div>
+          <div class="studyType">
+            BTEC
+          </div>
+          <h4>Courses</h4>
+          <ul class="courses">
+            <li>Algorithmics</li>
+            <li>Mathematics</li>
+            <li>Communication</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Arago High School</span> <span class="date">
+1991-09-01 — 1992-06-01
+</span>
+          </h4>
+          <div class="area">
+            Science &amp; Techniques
+          </div>
+          <div class="studyType">
+            A Level
+          </div>
+          <h4>Courses</h4>
+          <ul class="courses">
+            <li>Electric Engineering</li>
+            <li>Mechanics Engineering</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="awards">
+    <aside class="col-sm-3">
+      <h3>Awards</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Javaone Speaker</span>
+          </h4>
+          <div class="date pull-right">
+            <em>Awarded</em> 2008-05-01
+          </div>
+          <div class="awarder">
+            <em>by</em> <strong>Sun Microsystems</strong>
+          </div>
+          <div class="summary">
+            Guest speaker to show the Stellarium for Java software I developped.
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Quoted in Java Specification</span>
+          </h4>
+          <div class="date pull-right">
+            <em>Awarded</em> 2005-11-01
+          </div>
+          <div class="awarder">
+            <em>by</em> <strong>Sun Microsystems</strong>
+          </div>
+          <div class="summary">
+            Quoted in acknowledgements for my indirect feedback through SDO 2.0.1. implementation by my company.
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Quoted in Java book</span>
+          </h4>
+          <div class="date pull-right">
+            <em>Awarded</em> 2002-01-01
+          </div>
+          <div class="awarder">
+            <em>by</em> <strong>Flyod Marinescu</strong>
+          </div>
+          <div class="summary">
+            Quoted in acknowledgements of &#x27;EJB Design Patterns&#x27; book for my discussions about some EJB design
+            patterns.
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Best High school educative project</span>
+          </h4>
+          <div class="date pull-right">
+            <em>Awarded</em> 1991-01-01
+          </div>
+          <div class="awarder">
+            <em>by</em> <strong>French National Education Department</strong>
+          </div>
+          <div class="summary">
+            Awarded prize from from French National Education for my didactic 1-bit microprocessor IDE &amp; simulator
+            (written in Turbo Pascal), and its hardware interface through parallel port.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="publications">
+    <aside class="col-sm-3">
+      <h3>Publications</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Interview d&#x27;experts sur &#x27;J2EE vs .NET&#x27;</span> <span class="date">
+2002-09
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://web.archive.org/web/20090428061530/https://www.dotnetguru.org/articles/Comparatifs/interview/InterviewJ2EEDotNet.htm"></a>
+          </div>
+          <div class="publisher">
+            <em>Published by</em> <strong>DotNetGuru</strong>
+          </div>
+          <div class="summary">
+            <p>Interview as a J2EE expert versus a .NET expert about the future of both platforms (french)</p>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="strike-through">
+            <span>Pushing Java OpenGL (JOGL) to the Limit with Stellarium</span> <span class="date">
+2008-05
+</span>
+          </h4>
+          <div class="website pull-right">
+            <a href="https://www.oracle.com/technetwork/java/j1sessn-jsp-156186.html"></a>
+          </div>
+          <div class="publisher">
+            <em>Published by</em> <strong>Sun Microsystems</strong>
+          </div>
+          <div class="summary">
+            <p>Stellarium for Java (S4J) is a Java platform version of Stellarium, free GNU General Public License (GPL)
+              software that renders realistic skies in real time. With Stellarium, you really see what you can see with
+              your eyes, binoculars, or a small telescope. The Stellarium C++ version is used in planetariums. The Java
+              platform enables both greater portability across platforms and low-level APIs (OpenGL, DirectX) and the
+              ability to evolve. It also provides lighter and easier coding. The power of reuse, the optimization tools,
+              and the available open-source libraries have boosted development on the Java platform way above that on
+              the C++ version. This session shows how Stellarium now integrates and capitalizes on JScience (JSR 275)
+              and other Java technology-based APIs. For example, Stellarium for Java has now implemented Vsop87 and
+              Elp82b. The ease of code reuse and the ability to separate and optimize the layers result in many
+              opportunities to surpass the C++ version, with elements such as a standard Julian day, TextRenderer, image
+              processing, user interface components, configuration management, and many more. The demo proves,
+              beautifully and amazingly, the power of Java Platform, Standard Edition (Java SE platform) and Java OpenGL
+              (JOGL) integration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="skills">
+    <aside class="col-sm-3">
+      <h3>Skills</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="name">
+            <h4>Web Development</h4>
+          </div>
+          <ul class="keywords">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <div class="name">
+            <h4>Java</h4>
+          </div>
+          <ul class="keywords">
+            <li>J2EE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="languages">
+    <aside class="col-sm-3">
+      <h3>Languages</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="language">
+            <strong>French</strong>
+          </div>
+          <div class="fluency">
+            Native speaker
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="language">
+            <strong>English</strong>
+          </div>
+          <div class="fluency">
+            Fluent
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="interests">
+    <aside class="col-sm-3">
+      <h3>Interests</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="name">
+            <h4>Sciences</h4>
+          </div>
+          <ul class="keywords">
+            <li>Astronomy</li>
+            <li>Astrophysics</li>
+            <li>Physics</li>
+            <li>Philosophy of sciences</li>
+            <li>Unexplained phenomena</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <div class="name">
+            <h4>Arts</h4>
+          </div>
+          <ul class="keywords">
+            <li>Drumming</li>
+            <li>Drawing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="references">
+    <aside class="col-sm-3">
+      <h3>References</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>Jérôme is a typical developer with whom you would like to work because of his broad knowledge on Java
+              technologies and his positive attitude toward colleagues. He is also an enthusiast in web technologies
+              like Javascript, CSS3 and I was listening many times his interesting vision to the modern web. As a senior
+              developer, Jérôme earns my highest recommendation.</p>
+            <p class="name">
+              <strong>— Manh-Ha VU (JavaEE Software Engineer @ Traveldoo Technologies (an Expedia, Inc company)),
+                2014-08-30</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>During the 7 years I&#x27;ve worked with Jerome, he has always demonstrated a strong ability in managing
+              highly technical topics. Additionally Jerome is someone who has a very good team spirit making him always
+              available for his colleagues. If you want to have very good software design discussion, just call him!</p>
+            <p class="name">
+              <strong>— Christophe Boutard (Software Development Manager @ Valipost), 2009-12-08</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>Very efficient, he well manages analysis and design. More, he&#x27;s able to drive a team, and his
+              natural ability to teach technologies is very great.</p>
+            <p class="name">
+              <strong>— Regis Le Brettevillois (Senior Architect &amp; Technical Expert), 2005-07-05</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>I have been working with Jerome for more than 2 years and he has always provided sound advices from both
+              design and technical point of views. I respect his knowledge of the Java world (and not only J2EE) and his
+              ability to transmit it to his colleagues. Working with Jerome has been and still is a great experience. I
+              warmly recommend Jerome as a key and a skilled Java architect.</p>
+            <p class="name">
+              <strong>— François Huaulmé (Software Engineer), 2010-01-08</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>I recommend Jerome highly, and especially applaud his ability and his strong skills to work with cutting
+              technologies such Java, J2EE, Enterprise Information Access...</p>
+            <p class="name">
+              <strong>— Francois-Xavier Kim (ADM Cloud computing @ Microsoft), 2005-09-26</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>Jérôme est un excellent architecte, rigoureux et méthodique. Sa trés bonne connaisance et son expérience
+              des environnements J2EE et Java en général lui ont permis de réaliser avec clairvoyance les logiciels dont
+              il a la charge. Son écoute et sa disponibilité font de lui un collégue valeureux, sur lequel on peut
+              compter.</p>
+            <p class="name">
+              <strong>— Stéphane Passignat (IOT Product Manager @ Infinity Telecom), 2009-12-07</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>Jérôme is an intelligent, brilliant engineer in the field of the new technologies for which he is always
+              eager to keep updated with the state of the art. Dedicated to his work, he always carried out his duties
+              carefully and with method. He constantly showed his desire to progress and to deepen his knowledge. That’s
+              probably why he undertook very early significant responsibilities in the projects in which he was
+              involved. His collaboration has always been greatly appreciated. I would like to mention that Jérôme has
+              always maintained good ties with his former colleagues (of the staff as well as with engineers), years
+              after years, even after his departure from Valtech. A rare mark of faithfulness.</p>
+            <p class="name">
+              <strong>— Eng4Biz Founder &amp; CEO, Chief Enterprise Architect (Freelance), 2007-07-23</strong>
+            </p>
+          </blockquote>
+        </div>
+        <div class="col-sm-12">
+          <blockquote class="reference">
+            <p>Jerome was one of the most skilled and efficient expert of our skill center. He is a reliable
+              professional.</p>
+            <p class="name">
+              <strong>— Jean-Yves Zaoui (iVision CEO)</strong>
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

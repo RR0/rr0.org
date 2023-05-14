@@ -75,9 +75,51 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return replacement
   }
 
-  private dateTimeReplacement(context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string,
-                              monthStr: string, dayOfMonthStr: string, hour: string, minutes: string, timeZone: string,
-                              approximate: boolean): HTMLElement | undefined {
+  static replaceElement(context: HtmlRR0SsgContext, approximate: boolean, timeFiles?: string[],
+                        previousContext?: RR0SsgContext): HTMLElement {
+    let replacement: HTMLElement | undefined = undefined
+    const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
+    const url = timeFiles ? TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles) : absoluteTimeStr
+    let title = TimeTextBuilder.build(context)
+    if (approximate) {
+      title = context.messages.context.time.approximate(title)
+    }
+    let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
+    if (text) {
+      if (approximate) {
+        text = context.messages.context.time.approximate(text)
+      }
+    } else {
+      text = title
+    }
+    const currentFileName = context.inputFile.name
+    const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
+    if (url && url !== dirName) {
+      const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
+      a.href = UrlUtil.absolute(url)
+    } else {
+      const span = replacement = context.outputFile.document.createElement("span")
+      span.className = "time"
+    }
+    if (text != title) {
+      replacement.title = title
+    }
+    replacement.textContent = text
+    return replacement
+  }
+
+  protected static matchExistingTimeFile(url: string, timeFiles: string[]): string | undefined {
+    while (url !== "time" && timeFiles.indexOf(`${url}/index.html`) < 0) {
+      const slash = url.lastIndexOf("/")
+      url = url.substring(0, slash)
+    }
+    return url === "time" ? undefined : url
+  }
+
+  protected dateTimeReplacement(context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string,
+                                monthStr: string, dayOfMonthStr: string, hour: string, minutes: string,
+                                timeZone: string,
+                                approximate: boolean): HTMLElement | undefined {
     let replacement: HTMLElement | undefined = undefined
     const timeContext = context.time
     if (yearStr) {
@@ -108,47 +150,13 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
       timeContext.setTimeZone(timeZone)
     }
     if (timeContext.isDefined()) {
-      const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
-      const url = this.matchExistingTimeFile(absoluteTimeStr)
-      let title = TimeTextBuilder.build(context)
-      if (approximate) {
-        title = context.messages.context.time.approximate(title)
-      }
-      let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
-      if (text) {
-        if (approximate) {
-          text = context.messages.context.time.approximate(text)
-        }
-      } else {
-        text = title
-      }
-      const currentFileName = context.inputFile.name
-      const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
-      if (url && url !== dirName) {
-        const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
-        a.href = UrlUtil.absolute(url)
-        if (text != title) {
-          replacement.title = title
-        }
-      } else {
-        const span = replacement = context.outputFile.document.createElement("span")
-        span.className = "time"
-      }
-      replacement.textContent = text
+      replacement = TimeReplacer.replaceElement(context, approximate, this.timeFiles, previousContext)
     }
     return replacement
   }
 
-  private matchExistingTimeFile(url: string): string | undefined {
-    while (url !== "time" && this.timeFiles.indexOf(`${url}/index.html`) < 0) {
-      const slash = url.lastIndexOf("/")
-      url = url.substring(0, slash)
-    }
-    return url === "time" ? undefined : url
-  }
-
-  private durationReplacement(context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
-                              secondsStr: string, approximate: boolean): HTMLElement | undefined {
+  protected durationReplacement(context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
+                                secondsStr: string, approximate: boolean): HTMLElement | undefined {
     const items = []
     const messages = context.messages.context.time.duration
     if (daysStr) {

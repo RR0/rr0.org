@@ -161,7 +161,7 @@ getTimeFiles().then(async (timeFiles) => {
           (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
         new SsiLastModifiedReplaceCommand(context.time.options),
         new SsiTitleReplaceCommand([timeDefaultHandler]),
-        new AuthorReplaceCommand(),
+        new AuthorReplaceCommand(timeFiles),
         new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
         new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),
         new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),

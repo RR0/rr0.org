@@ -75,11 +75,11 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return replacement
   }
 
-  static replaceElement(context: HtmlRR0SsgContext, approximate: boolean, timeFiles?: string[],
+  static replaceElement(context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[],
                         previousContext?: RR0SsgContext): HTMLElement {
     let replacement: HTMLElement | undefined = undefined
     const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
-    const url = timeFiles ? TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles) : absoluteTimeStr
+    const url = TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles)
     let title = TimeTextBuilder.build(context)
     if (approximate) {
       title = context.messages.context.time.approximate(title)

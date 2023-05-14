@@ -5,7 +5,7 @@ import {HtmlSsgFile} from "ssg-api"
 describe("AuthorReplaceCommand", () => {
 
   test("no author", async () => {
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeFiles)
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/index.html",
       `This is published by <!--#echo var="author" -->!`)
     const file = await command.execute(context) as HtmlSsgFile
@@ -14,7 +14,7 @@ describe("AuthorReplaceCommand", () => {
   })
 
   test("author only", async () => {
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeFiles)
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")
@@ -25,7 +25,7 @@ describe("AuthorReplaceCommand", () => {
   })
 
   test("copyright only", async () => {
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeFiles)
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.copyright = "Some publication"
@@ -36,7 +36,7 @@ describe("AuthorReplaceCommand", () => {
   })
 
   test("author with copyright", async () => {
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeFiles)
     const context = rr0TestUtil.newHtmlContext("time/1/9/5/4/10/index.html",
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")

@@ -8,7 +8,7 @@ import {TimeReplacer} from "../../time/TimeReplacer"
  */
 export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
 
-  constructor() {
+  constructor(protected timeFiles: string[]) {
     super("author")
   }
 
@@ -26,7 +26,7 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }
         if (authorsHtml) {
-          const timeElem = TimeReplacer.replaceElement(context, false)
+          const timeElem = TimeReplacer.replaceElement(context, false, this.timeFiles)
           authorsHtml += ", " + timeElem.outerHTML
         }
         if (authorsHtml) {

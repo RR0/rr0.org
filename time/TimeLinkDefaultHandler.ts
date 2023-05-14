@@ -59,7 +59,7 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
     }
   }
 
-  private isTimeFile(fileName: string) {
+  protected isTimeFile(fileName: string): boolean {
     return fileName.startsWith("time/")
   }
 }

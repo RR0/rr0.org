@@ -85,5 +85,9 @@ export class TimeContext {
 
   reset(): void {
     this.setYear(undefined)
+    this.setMonth(undefined)
+    this.setDayOfMonth(undefined)
+    this.setHour(undefined)
+    this.setMinutes(undefined)
   }
 }

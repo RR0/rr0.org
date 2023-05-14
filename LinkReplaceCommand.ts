@@ -52,8 +52,8 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
   private addLink(context: HtmlRR0SsgContext, ul: Element, link: Link) {
     const outputDoc = context.outputFile.document
     const li = outputDoc.createElement("li")
-    li.className = link.type
     const a = outputDoc.createElement("a")
+    a.className = link.type
     a.textContent = link.text
     a.href = link.url
     li.appendChild(a)

@@ -1264,10 +1264,29 @@ dl.bullet dd {
   width: auto;
 }
 
-#main-nav li {
+#main-nav ul {
   list-style: none;
+}
+
+#main-nav li {
   display: inline-block;
   padding: 0.6em;
+}
+
+#main-nav a:before {
+  margin-right: 0.4em;
+}
+
+#main-nav .start:before {
+  content: "⇤";
+}
+
+#main-nav .prev:before {
+  content: "←";
+}
+
+#main-nav .next:before {
+  content: "→";
 }
 
 .anchor {

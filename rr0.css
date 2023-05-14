@@ -5,7 +5,7 @@
   --header-height: 6rem;
   --nav-width: 18vw;
   --aside-width: 18vw;
-  --margin: 3vw;
+  --margin: 1em;
   --icon-color: gray;
 }
 
@@ -666,7 +666,7 @@ details[open] summary:hover {
 }
 
 .metadata {
-  margin-left: -2.25rem;
+  margin-left: calc(var(--margin) * -1);
 }
 
 .book .cover, .map {
@@ -1259,8 +1259,8 @@ dl.bullet dd {
   position: sticky;
   top: 0;
   z-index: 101;
-  margin-left: -3vw;
-  margin-right: -3vw;
+  margin-left: calc(var(--margin) * -1);
+  margin-right: calc(var(--margin) * -1);
   width: auto;
 }
 

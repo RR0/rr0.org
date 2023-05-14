@@ -25,7 +25,9 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
         if (copyright) {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }
-        authorsHtml += ", " + TimeTextBuilder.build(context)
+        if (authorsHtml) {
+          authorsHtml += ", " + TimeTextBuilder.build(context)
+        }
         if (authorsHtml) {
           authorsHtml = `<div class="document-author">${authorsHtml}</div>`
         }

@@ -1,7 +1,10 @@
-import {HtmlSsgContext, RegexReplacer, SsiEchoVarReplaceCommand} from "ssg-api"
+import {RegexReplacer, SsiEchoVarReplaceCommand} from "ssg-api"
+import {HtmlRR0SsgContext} from "../../RR0SsgContext"
+import {TimeTextBuilder} from "../../time/TimeTextBuilder"
 
 /**
- * Replaces "<!--#echo var="author" -->" by the page's <meta name="author">s' content.
+ * Replaces "<!--#echo var="author" -->" and "<!--#echo var="copyright" -->"
+ * by the page's <meta name="author">s' content.
  */
 export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
 
@@ -9,7 +12,7 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
     super("author")
   }
 
-  protected async createReplacer(context: HtmlSsgContext): Promise<RegexReplacer> {
+  protected async createReplacer(context: HtmlRR0SsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
         const SsgFile = context.inputFile
@@ -22,6 +25,7 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
         if (copyright) {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }
+        authorsHtml += ", " + TimeTextBuilder.build(context)
         if (authorsHtml) {
           authorsHtml = `<div class="document-author">${authorsHtml}</div>`
         }

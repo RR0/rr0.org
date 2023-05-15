@@ -1,7 +1,7 @@
 import {DomReplaceCommand, DomReplacer} from "ssg-api"
 import {HtmlRR0SsgContext} from "./RR0SsgContext"
 
-const path = require("path")
+import path from "path"
 
 export class BaseReplaceCommand extends DomReplaceCommand {
   constructor(protected baseUrl: string) {

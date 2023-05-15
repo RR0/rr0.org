@@ -29,10 +29,12 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
     let fileName = context.inputFile.name
     if (this.isTimeFile(fileName)) {
       const pos = this.timeFiles.indexOf(fileName)
-      const nextFile = this.timeFiles[pos + 1]
-      if (nextFile) {
-        const text = Time.titleFromFile(context, nextFile)!
-        return {type: LinkType.next, text, url: "/" + nextFile}
+      if (pos >= 0) {
+        const nextFile = this.timeFiles[pos + 1]
+        if (nextFile) {
+          const text = Time.titleFromFile(context, nextFile)!
+          return {type: LinkType.next, text, url: "/" + nextFile}
+        }
       }
     }
   }
@@ -41,10 +43,12 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
     let fileName = context.inputFile.name
     if (this.isTimeFile(fileName)) {
       const pos = this.timeFiles.indexOf(fileName)
-      const prevFile = this.timeFiles[pos - 1]
-      if (prevFile) {
-        const text = Time.titleFromFile(context, prevFile)!
-        return {type: LinkType.prev, text, url: "/" + prevFile}
+      if (pos >= 0) {
+        const prevFile = this.timeFiles[pos - 1]
+        if (prevFile) {
+          const text = Time.titleFromFile(context, prevFile)!
+          return {type: LinkType.prev, text, url: "/" + prevFile}
+        }
       }
     }
   }

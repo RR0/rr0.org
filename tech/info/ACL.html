@@ -1,0 +1,22 @@
+<!--#include virtual="/header-start.html" -->
+<title>ACL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Access Control List</i> : liste des contrôles d'accès.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir les permissions d'accès à une ressource.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <p>En <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> 1.1, exercer une permission implique de
+    disposer de cette permission par nature (provenance). l'API des ACL (<code>java.security.acl</code>)</p>
+  <p>À partir de Java 2, les <a href="soft/API.html">API</a> sont remplacées par le modèle de <a href="#permission">
+    permissions</a> défini dans <code>java.security</code>. Pattern de délégation : L'un des grands bouleversements dans
+    le modèle de sécurité apporté par Java 2 est de représenter une permission sous forme d'objet. On aboutit ainsi à un
+    modèle par "capacité" (permission) à effectuer une opération (<i lang="en">capabilities model</i>) plutôt qu'un
+    modèle d'autorisation (la <i lang="en">sandbox</i> autorise ou non) : posséder (accéder à) un objet (directement)
+    donne le droit de l'utiliser : c'est le modèle de l'"objet gardé", où l'on demande l'accès à un objet à un <i
+        lang="en">gatekeeper</i>. On peut exercer une permission par autorisation d'une autre partie, si l'autre partie
+    nous donne l'objet permission.
+  </p>
+</section>
+<!--#include virtual="/footer.html" -->

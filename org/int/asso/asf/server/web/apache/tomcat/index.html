@@ -1,0 +1,262 @@
+<!--#include virtual="/header-start.html" -->
+<title>Tomcat</title>
+<meta content="https://jakarta.apache.org/tomcat" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<figure class="right side">
+  <img alt="Tomcat" src="logo.gif">
+</figure>
+<h2>Besoin</h2>
+<p>Offrir un conteneur Web <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> <a
+    href="/tech/info/soft/prod/licence/oss">Open Source</a>.</p>
+<h2>Conception</h2>
+<p>Tomcat est un <strong>conteneur Web</strong> <a
+    href="/org/us/company/oracle/sun/ptf/java/api/ee/index.html">J2EE </a>, hébergeant des <strong>applications
+  Web</strong> composées de <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html"><strong>servlets</strong></a>
+  et/ou <a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html"><strong>JSP</strong></a>.</p>
+<p>Il peut également faire office de <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a>
+  grâce à une servlet dédiée au service de fichiers. On pourra lui adjoindre un serveur Web en amont (Apache Web Server
+  par exemple) pour le décharger de cette tâche de fourniture des ressources (pages HTML, images, etc.) statiques.</p>
+<h2>Implémentation</h2>
+<p>Tomcat peut faire office de <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a> grâce
+  à une servlet dédiée au service de fichiers (<code>FileServlet</code>). </p>
+<table>
+  <thead>
+  <tr>
+    <td rowspan="2">Tomcat</td>
+    <th>Version</th>
+    <th colspan="3"> 3</th>
+    <th colspan="2">4</th>
+    <th width="301">5</th>
+    <th rowspan="3" width="301"> Commentaire</th>
+  </tr>
+  <tr>
+    <th>Release</th>
+    <th> 1</th>
+    <th><a href="https://jakarta.apache.org/tomcat/tomcat-3.2-doc">2</a></th>
+    <th><a href="https://jakarta.apache.org/tomcat/tomcat-3.3-doc">3</a></th>
+    <th><a href="https://jakarta.apache.org/tomcat/tomcat-4.0-doc">0</a></th>
+    <th><a href="https://jakarta.apache.org/tomcat/tomcat-4.1-doc">1</a></th>
+    <th width="301"><a href="https://jakarta.apache.org/tomcat/tomcat-5.0-doc">0</a></th>
+  </tr>
+  <tr>
+    <th>Couche</th>
+    <th>FixPack</th>
+    <th> 1</th>
+    <th> 4</th>
+    <th> 1</th>
+    <th>3</th>
+    <th>0</th>
+    <th width="301"></th>
+  </tr>
+  </thead>
+  <tr>
+    <th rowspan="3"> Présentation / Contrôle</th>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a></th>
+    <td class="oui" colspan="2"> 2.1</td>
+    <td class="oui"> 2.2</td>
+    <td class="oui" colspan="2">2.3</td>
+    <td class="oui">2.4</td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a></th>
+    <td class="oui"> 0.91</td>
+    <td class="oui"> 1.0</td>
+    <td class="oui"> 1.1</td>
+    <td class="oui" colspan="2">1.2</td>
+    <td class="oui" width="301">2.0</td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="Struts.html">Struts</a></th>
+    <td class="non" colspan="4">Non</td>
+    <td class="oui"> Oui</td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th rowspan="8"> Intégration</th>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a>-IIOP</th>
+    <td></td>
+    <td></td>
+    <td class="oui">
+      <p>1.0</p>
+    </td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a></th>
+    <td></td>
+    <td></td>
+    <td class="oui"> 1.2</td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a></th>
+    <td class="oui"> 2.0</td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a></th>
+    <td class="non" colspan="3"> Non</td>
+    <td></td>
+    <td class="oui"> 1.0</td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a></th>
+    <td class="non" colspan="3"> Non</td>
+    <td></td>
+    <td class="oui"> 1.0</td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/tech/info/soft/reseau/protocole/5/SOAP.html">SOAP</a></th>
+    <td class="non" colspan="2"> Non</td>
+    <td class="oui"> 1.0</td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/tech/info/soft/reseau/webservice/UDDI.html">UDDI</a></th>
+    <td class="non" colspan="2"> Non</td>
+    <td class="oui"> 1.0</td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th><a href="/tech/info/soft/reseau/webservice/WSDL.html">WSDL</a></th>
+    <td class="non" colspan="2"> Non</td>
+    <td class="oui"> 1.0</td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th rowspan="2"> XML</th>
+    <th rowspan="2"><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAXP.html">JAXP</a></th>
+    <td></td>
+    <td> XML4J 2.0.15 (SAX 1, DOM 1), LotusXSL</td>
+    <td class="oui"> 1.0</td>
+    <td class="oui"></td>
+    <td class="oui"></td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <td class="non" colspan="3"> Non</td>
+    <td></td>
+    <td class="oui"> 1.1</td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th> Sécurité</th>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JAAS.html">JAAS</a></th>
+    <td> ServerSide Authenticator, SSOToken</td>
+    <td> Certificat, LTPA Token</td>
+    <td class="oui" colspan="3"> 1.0</td>
+    <td class="oui" width="301"></td>
+    <td width="301"> LoginContext</td>
+  </tr>
+  <tr>
+    <th> Journalisation (log)</th>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/se/JLA.html">JLA</a></th>
+    <td> OLT</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="oui"> 1.0</td>
+    <td class="oui" width="301"></td>
+    <td width="301"> Logger, Handler, Filter, Formatter</td>
+  </tr>
+  <tr>
+    <th> Gestion</th>
+    <th><a href="/org/us/company/oracle/sun/ptf/java/api/JMX.html">JMX</a></th>
+    <td class="non" colspan="4">Non</td>
+    <td class="oui">Oui</td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th rowspan="6"> Existant</th>
+    <th rowspan="2"> Coyote</th>
+    <td class="non" colspan="4"> Non</td>
+    <td class="oui"> Oui</td>
+    <td class="oui" width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td class="oui"> 6</td>
+    <td class="oui"></td>
+    <td class="oui">7</td>
+    <td class="oui" width="301"></td>
+    <td width="301">7=XA</td>
+  </tr>
+  <tr>
+    <th><a href="/org/us/company/oracle/index.html">Oracle</a></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td width="301"></td>
+    <td width="301">8=XA</td>
+  </tr>
+  <tr>
+    <th> MS SQL Server</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <th rowspan="2"> Sybase</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td width="301"></td>
+    <td width="301"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td width="301"></td>
+    <td width="301"></td>
+  </tr>
+</table>
+<h2>Notes</h2>
+<ul>
+  <li>Réalisé par Jakarta (Apache Java)</li>
+  <li>Utilisé comme implémentation de référence des spécifications Servlet/JSP/Web application.</li>
+  <li></li>
+</ul>
+<!--#include virtual="/footer.html" -->

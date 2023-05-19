@@ -1,0 +1,80 @@
+<!--#include virtual="/header-start.html" -->
+<title>FUD</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Fear, Uncertainty and Doubt</i> : peur, incertitude et doute.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Décrédibiliser une solution.</p>
+  <p>Le besoin de FUD nait souvent :</p>
+  <ul>
+    <li>d'une impossibilité à concurrencer la solution</li>
+    <li>d'une impossibilité de reproduire la solution (implémenter une spécification par exemple)</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les actes de FUD consistent à déclarer qu'une n'est pas perenne (qu'elle n'a pas d'avenir) parce que :</p>
+  <ul>
+    <li> elle est trop isolée : pas assez supportée par les principaux acteurs du marché</li>
+    <li>elle n'est pas efficace : technologiquement mal pensée (en cas de spécification) ou mal implémentée (en cas de
+      produit)</li>
+    <li>elle ne couvre pas le besoin : elle ne répond pas à tous les besoins</li>
+    <li>elle est inadaptée : trop lourde (avec perte de <a href="Performance.html">performance</a>) pour le besoin</li>
+  </ul>
+  <p>Des propos de FUD peuvent être :</p>
+  <ul>
+    <li>faux (intentionnellement ou par méconnaissance de la solution)</li>
+    <li>vrai, mais inappropriés, comme reprocher à la solution :
+      <ul>
+        <li>de ne pas faire quelque chose pour laquelle elle n'est pas conçue (i.e. un problème auquel répond une
+          solution d'un autre domaine)</li>
+        <li>de ne pas faire quelque chose qui n'est pas un réel besoin</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Les actes de FUD sont diffusées via :</p>
+  <ul>
+    <li>la presse : articles aux titres tapageurs, déclarations négatives d'acteurs importants</li>
+    <li> "Sondages" : tel pourcentage d'acteurs du marché ou d'utilisateurs ne croient pas en la solution</li>
+    <li> benchmarks : la solution produit des résultats inférieurs à une solution concurrente dans tel comparatif</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des actes de FUD ont été connus contre :</p>
+  <ul>
+    <li>La programmation OO</li>
+    <li>SQL
+      <ul>
+        <li><q><a href="/tech/info/soft/data/dbms/r/sql">SQL</a> est lent : il est interprété, mieux vaut utiliser
+          directement des API des SGBDR</q> : Aujourd'hui SQL est le langage utilisé partout pour accéder aux SGBDR</li>
+      </ul>
+    </li>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>
+      <ul>
+        <li><q>le code SQL sera toujours plus rapide</q> : le code JDBC/SQL moyen est généralement plus médiocre que le
+          code exécuté par une implémentation JDO (pooling, curseurs, batchs, spécificité de tel SGBD, etc.)</li>
+      </ul>
+    </li>
+    <li>Java
+      <ul>
+        <li><q><a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> ne vise que le côté client : il n'est
+          bon qu'à faire des applets et on ne peut l'utilisateur des applications côté serveur</q> : aujourd'hui Java
+          est plus utilisé côté serveur que côté client.</li>
+        <li><q>Java est lent : le code compilé nativement sera toujours plus rapide</q> : aujourd'hui Java est utilisé
+          dans des applications serveurs critiques de grande échelle. Ses JVM HotSpot permettent des optimisations
+          impossibles à réaliser pour du code nativement compilé.</li>
+      </ul>
+    </li>
+    <li>les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a>
+      <ul>
+        <li><q>les EJB sont lents</q> : les EJB ne sont pas faits pour une persistance à fine granularité, mais pour
+          réaliser des composants réutilisables.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

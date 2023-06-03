@@ -44,6 +44,7 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
             }
             original.width = width
             original.height = height
+            original.setAttribute("onclick", "this.requestFullscreen()")
           }
         } catch (e) {
           context.debug("Could not determine size of image ", src, e)

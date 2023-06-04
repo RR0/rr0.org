@@ -11,9 +11,12 @@ function siteSearchChange(e) {
   }
 }
 
+let loading = false
+
 function siteSearchLoad() {
   const datalist = document.querySelector("#search-site-values")
-  if (!siteIndex) {
+  if (!siteIndex && !loading) {
+    loading = true
     fetch("/search/index.json").then(async (response) => {
       if (response.ok) {
         siteIndex = await response.json()
@@ -23,6 +26,7 @@ function siteSearchLoad() {
           datalist.append(option)
         }
       }
+      loading = false
     })
   }
 }

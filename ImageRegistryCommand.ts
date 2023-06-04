@@ -44,7 +44,8 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
             }
             original.width = width
             original.height = height
-            original.setAttribute("onclick", "this.requestFullscreen()")
+            original.setAttribute("onclick",
+              `this.classList.contains('zoomed') ? document.exitFullscreen() && this.classList.toggle('zoomed', false): this.classList.toggle('zoomed', true) && this.requestFullscreen()`)
           }
         } catch (e) {
           context.debug("Could not determine size of image ", src, e)

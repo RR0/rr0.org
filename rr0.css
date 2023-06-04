@@ -700,7 +700,12 @@ th {
 }
 
 img {
-  margin: 1.25em 1.25em 1.5em
+  margin: 1.25em 1.25em 1.5em;
+  cursor: zoom-in;
+}
+
+img.zoomed {
+  cursor: zoom-out;
 }
 
 .image-container, .left, .leftImage, .right, .rightImage, figure {

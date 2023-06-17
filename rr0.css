@@ -4,7 +4,7 @@
   --mobile-nav-height: 2rem;
   --header-height: 6rem;
   --nav-width: 18vw;
-  --aside-width: 18vw;
+  --map-width: 18vw;
   --margin: 1em;
   --icon-color: gray;
 }
@@ -13,8 +13,17 @@
   box-sizing: border-box;
 }
 
-body, aside {
-  transition: width .3s ease
+.map {
+  position: fixed;
+  top: calc(var(--header-height) + var(--mobile-nav-height));
+  right: 0;
+  left: var(--nav-width);
+  transform: translateX(100%);
+  height: 100%;
+  bottom: 0;
+  border: 0;
+  padding: 0;
+  transition: transform .3s ease;
 }
 
 .people-icon {
@@ -47,15 +56,11 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1)
 }
 
-.search form .icon:hover, .search:hover, figure, iframe .wide, img {
-  border-radius: .2em
-}
-
 [data-ng-cloak] {
   display: none !important
 }
 
-aside h1, nav h1 {
+.map h1, nav h1 {
   display: none
 }
 
@@ -84,14 +89,6 @@ body.wait, body.wait * {
   cursor: wait
 }
 
-#aside {
-  position: fixed;
-  top: var(--header-height);
-  right: 0;
-  width: 0;
-  bottom: 0;
-}
-
 .text {
   transition: left .3s;
   margin: 2.25rem
@@ -115,7 +112,7 @@ body.wait, body.wait * {
   border-right: .4em solid rgba(255, 255, 255, 0)
 }
 
-.multi-list, form, header, header h1, ui-view .text {
+.multi-list, form, header, header h1, .text {
   margin: 0
 }
 
@@ -372,15 +369,6 @@ nav ul > li {
   cursor: pointer
 }
 
-.toggleMap {
-  float: right;
-  display: none
-}
-
-.search, .toggleMap * {
-  display: inline-block
-}
-
 .search:hover {
   border: none;
   background: rgba(184, 197, 212, .49)
@@ -606,7 +594,7 @@ p {
   hyphens: auto
 }
 
-a, details summary {
+a, details summary, .toggle {
   color: #069;
   text-decoration: none;
   cursor: pointer;
@@ -618,7 +606,7 @@ a, details summary {
   text-decoration: line-through
 }
 
-a:hover, details summary:hover {
+a:hover, details summary:hover, .toggle:hover {
   border: none;
   border-radius: .2em;
   background: rgba(184, 197, 212, .49)
@@ -665,7 +653,7 @@ details[open] summary:hover {
   margin-left: calc(var(--margin) * -1);
 }
 
-.book .cover, .map {
+.book .cover {
   position: absolute
 }
 
@@ -742,7 +730,6 @@ figure img {
 figure:hover figcaption, figcaption:hover {
   color: black;
 }
-
 
 blockquote ol > li, blockquote p, blockquote ul > li, q {
   background: repeat-x rgba(250, 255, 6, .1)
@@ -1054,19 +1041,6 @@ dt, dd {
   border: 0;
 }
 
-#map-canvas {
-  display: none;
-}
-
-.map {
-  transition: width .3s ease, height .3s ease;
-  box-shadow: .8em .8em 1.6em #555;
-  border: 0;
-  height: 0;
-  padding: 0;
-  width: 0
-}
-
 .hovered {
   border: none;
   border-radius: .2em;
@@ -1266,6 +1240,19 @@ dl.bullet dd {
 
 #main-nav ul {
   list-style: none;
+  width: 100%;
+}
+
+.map-toggle {
+  order: 100;
+  flex: 1;
+  text-align: right;
+}
+
+.toggle {
+  appearance: none;
+  border: none;
+  background-color: transparent;
 }
 
 #main-nav li {
@@ -1292,10 +1279,6 @@ dl.bullet dd {
 .anchor {
   position: relative;
   top: calc((var(--header-height) + 0.5rem) * -1);
-}
-
-aside {
-  width: 0
 }
 
 nav > ul {
@@ -1330,8 +1313,9 @@ abbr[title]:after {
     left: 0;
   }
 
-  #main-nav li {
-    display: list-item;
+  #main-nav ul {
+    display: flex;
+    flex-direction: column;
   }
 
   .label, .search label {
@@ -1417,10 +1401,15 @@ abbr[title]:after {
   }
 }
 
+body.with-map .map {
+  transform: translateX(0);
+}
+
 @media (min-width: 80em) {
 
-  #aside {
-    width: var(--aside-width);
+  .map {
+    left: auto;
+    width: var(--map-width);
   }
 
   body {
@@ -1508,7 +1497,7 @@ abbr[title]:after {
     color: lightgrey;
   }
 
-  a {
+  a, .toggle {
     color: lightblue;
   }
 

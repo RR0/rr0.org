@@ -66,7 +66,7 @@ describe("PlaceReplacer", () => {
     expect(replacement.className).toBe("plac")
     expect(replacement.href).toBe(`/${dirName}`)
     expect(replacement.textContent).toBe(text)
-    expect(replacement.getAttribute("onclick")).toBe(`showMap(${location.lat},${location.lng})`)
+    expect(replacement.getAttribute("onclick")).toBe(`showMap(event,${location.lat},${location.lng},true)`)
   })
 
   test("link to non-existing organization", async () => {
@@ -84,7 +84,7 @@ describe("PlaceReplacer", () => {
     expect(replacement.tagName).toBe("SPAN")
     expect(replacement.className).toBe("plac")
     expect(replacement.textContent).toBe(text)
-    expect(replacement.getAttribute("onclick")).toBe(`showMap('${text}')`)
+    expect(replacement.getAttribute("onclick")).toBe(`showMap(event,'${text}',true)`)
   })
 
 })

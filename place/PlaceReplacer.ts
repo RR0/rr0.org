@@ -12,7 +12,7 @@ export class PlaceReplacer {
     const address = original.textContent ? original.textContent.replace(/\n/g, " ") : ""
     const outputDoc = context.outputFile.document
     replacement = outputDoc.createElement("span")
-    replacement.setAttribute("onclick", `showMap('${address}')`)
+    replacement.setAttribute("onclick", `showMap(event,'${address}',true)`)
     replacement.innerHTML = address
     replacement.className = "plac"
     replacement.translate = false

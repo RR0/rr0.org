@@ -197,6 +197,6 @@ nav ul li a {
     border-radius: 0.2em
 }
 
-aside {
-    display: none
+.map {
+  display: none
 }

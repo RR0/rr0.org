@@ -1,11 +1,11 @@
 var currentAddress
 var mapEl
+var currentPlaceEl
 
 function showMap(event, address, display = true) {
   event.stopPropagation()
   document.body.classList.toggle("with-map", display)
   if (!address) {
-    const currentPlaceEl = document.querySelector(".plac")
     address = currentPlaceEl?.textContent
   }
   if (address !== currentAddress) {
@@ -15,15 +15,19 @@ function showMap(event, address, display = true) {
   }
 }
 
+const mapToggle = document.querySelector(".map-toggle .toggle")
 document.addEventListener("DOMContentLoaded", () => {
   mapEl = document.querySelector("#map-canvas")
+  currentPlaceEl = document.querySelector(".plac")
+  if (currentPlaceEl) {
+    mapToggle.style.display = "inline-block"
+  }
 })
 
 function hasMap() {
   return document.body.classList.contains("with-map")
 }
 
-const mapToggle = document.querySelector(".map-toggle .toggle")
 mapToggle.addEventListener("click", (event) => {
   showMap(event, currentAddress, !hasMap())
 })

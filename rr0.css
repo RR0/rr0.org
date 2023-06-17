@@ -1255,6 +1255,11 @@ dl.bullet dd {
   background-color: transparent;
 }
 
+.map-toggle .toggle {
+  font-size: 0.9rem;
+  display: none;
+}
+
 #main-nav li {
   display: inline-block;
   padding: 0.6em;

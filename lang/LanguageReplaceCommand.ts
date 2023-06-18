@@ -19,17 +19,37 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
           const langInfo = inputFile.lang
           const variants = langInfo.variants
           const foundLang = langInfo.lang
-          const lang = foundLang ? foundLang : variants.includes("en") ? "fr" : "en"
+          let lang: string
+          const fileName = inputFile.name
+          if (variants.includes("en")) {
+            lang = foundLang ? foundLang : "fr"
+          } else {
+            lang = foundLang ? foundLang : "en"
+            const timeStart = "time/"
+            if (fileName.startsWith(timeStart)) {
+              const dir = fileName.substring(timeStart.length, fileName.lastIndexOf("/"))
+              if (dir === "/") {
+                lang = "fr"
+              } else {
+                const lastChar = dir.charCodeAt(dir.length - 1)
+                const isANumber = lastChar >= 48 && lastChar <= 57
+                if (isANumber) {
+                  lang = "fr"
+                }
+              }
+            }
+          }
+          context.outputFile.document.documentElement.lang = lang
           const langVariants = variants.length == 1 && variants[0] == "" ? [lang == "fr" ? "en" : "fr"] : variants
           inputFile.lang.lang = lang
           for (let i = 0; i < langVariants.length; i++) {
             const langVariant = langVariants[i]
             const altLink = doc.createElement("a")
-            altLink.href = "/" + inputFile.name.replace((foundLang ? "_" + foundLang : "") + ".",
+            altLink.href = "/" + fileName.replace((foundLang ? "_" + foundLang : "") + ".",
               `${variants[i] == "" ? "" : "_" + langVariant}.`)
             altLink.textContent = langVariant === "en" ? "English translation" : "Traduction française"
             original.appendChild(altLink)
-            context.debug("Added translation link", original.outerHTML, "in", inputFile.name)
+            context.debug("Added translation link", original.outerHTML, "in", fileName)
           }
         }
         return original

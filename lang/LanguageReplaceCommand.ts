@@ -2,7 +2,7 @@ import {DomReplaceCommand, DomReplacer} from "ssg-api"
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
 /**
- * Add links to page language variants.
+ * Determine page language and ddd links to page language variants,
  */
 export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlRR0SsgContext> {
 
@@ -19,18 +19,14 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
           const langInfo = inputFile.lang
           const variants = langInfo.variants
           const foundLang = langInfo.lang
-          let lang: string
+          const pageLang = variants.includes("en") ?
+            foundLang ? foundLang : "fr" : variants.includes("fr") ?
+              foundLang ? foundLang : "en"
+              : "fr"
+          context.outputFile.document.documentElement.lang = pageLang
+          const langVariants = variants.length == 1 && variants[0] == "" ? [pageLang == "fr" ? "en" : "fr"] : variants
+          inputFile.lang.lang = pageLang
           const fileName = inputFile.name
-          if (variants.includes("en")) {
-            lang = foundLang ? foundLang : "fr"
-          } else if (variants.includes("fr")) {
-            lang = foundLang ? foundLang : "en"
-          } else {
-            lang = "fr"
-          }
-          context.outputFile.document.documentElement.lang = lang
-          const langVariants = variants.length == 1 && variants[0] == "" ? [lang == "fr" ? "en" : "fr"] : variants
-          inputFile.lang.lang = lang
           for (let i = 0; i < langVariants.length; i++) {
             const langVariant = langVariants[i]
             const altLink = doc.createElement("a")

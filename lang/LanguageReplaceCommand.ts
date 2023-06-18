@@ -23,21 +23,10 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
           const fileName = inputFile.name
           if (variants.includes("en")) {
             lang = foundLang ? foundLang : "fr"
-          } else {
+          } else if (variants.includes("fr")) {
             lang = foundLang ? foundLang : "en"
-            const timeStart = "time/"
-            if (fileName.startsWith(timeStart)) {
-              const dir = fileName.substring(timeStart.length, fileName.lastIndexOf("/"))
-              if (dir === "/") {
-                lang = "fr"
-              } else {
-                const lastChar = dir.charCodeAt(dir.length - 1)
-                const isANumber = lastChar >= 48 && lastChar <= 57
-                if (isANumber) {
-                  lang = "fr"
-                }
-              }
-            }
+          } else {
+            lang = "fr"
           }
           context.outputFile.document.documentElement.lang = lang
           const langVariants = variants.length == 1 && variants[0] == "" ? [lang == "fr" ? "en" : "fr"] : variants

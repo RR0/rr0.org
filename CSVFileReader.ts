@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 import {Logger} from "ssg-api"
 
-const csv = require("csv-parser")
+import csv from "csv-parser"
 
 export class CSVFileReader<T> {
   protected values: T[] = []

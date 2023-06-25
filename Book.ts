@@ -8,4 +8,5 @@ export interface Book {
     publisher: string
   }
   isbn?: string
+  summary: string
 }

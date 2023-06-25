@@ -45,7 +45,8 @@ export class Books {
     const COLUMN_ISBN = "ISBN"
     const COLUMN_SUBTITLE = "Subtitle"
     const COLUMN_SERIES = "Series"
-    const columns = [COLUMN_TITLE, "Original Title", COLUMN_SUBTITLE, COLUMN_SERIES, "Volume", COLUMN_AUTHOR, COLUMN_AUTHOR_LAST_FIRST, COLUMN_PUBLISHER, COLUMN_YEAR_PUBLISHED, "Original Year Published", "Genre", "Summary", "Number of Pages", "Language", COLUMN_ISBN, "Rating", "Notes", "Google VolumeID", "Uploaded Image URL"]
+    const COLUMN_SUMMARY = "Summary"
+    const columns = [COLUMN_TITLE, "Original Title", COLUMN_SUBTITLE, COLUMN_SERIES, "Volume", COLUMN_AUTHOR, COLUMN_AUTHOR_LAST_FIRST, COLUMN_PUBLISHER, COLUMN_YEAR_PUBLISHED, "Original Year Published", "Genre", COLUMN_SUMMARY, "Number of Pages", "Language", COLUMN_ISBN, "Rating", "Notes", "Google VolumeID", "Uploaded Image URL"]
     const readStream = fs.createReadStream(fileName)
     const csvSeparator = ","
     const reader = new CSVFileReader<Record<string, string>>(
@@ -63,6 +64,7 @@ export class Books {
         const year = parseInt(time, 10)
         const timeContext = new TimeContext(this.intlOptions, year)
         const author = result[COLUMN_AUTHOR]
+        const summary = result[COLUMN_SUMMARY]
         const authorLastFirst = result[COLUMN_AUTHOR_LAST_FIRST]
         const authorsNames = author ? author.split(",") : [authorLastFirst]
         const authors: KnownPeople[] = []
@@ -77,7 +79,8 @@ export class Books {
         const book: Book = {
           title,
           authors: authorsNames,
-          publication: {time, publisher}
+          publication: {time, publisher},
+          summary
         }
         const isbn = result[COLUMN_ISBN]
         if (isbn) {
@@ -92,7 +95,7 @@ export class Books {
           book.series = series
         }
         const authorsLastNames = authors.map(author => author.lastName).join("-")
-        const dirName = authorsLastNames.length > 0 ? authorsLastNames : authorsNames.map(StringUtil.textToCamel)
+        const dirName = (authorsLastNames.length > 0 ? authorsLastNames : authorsNames.map(StringUtil.textToCamel))
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(title.toLowerCase()))
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
         const parentDir = TimeUrlBuilder.fromTimeContext(timeContext)

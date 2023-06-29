@@ -1,16 +1,16 @@
 import * as fs from "fs"
-import {CSVFileReader} from "./CSVFileReader"
+import {CSVFileReader} from "../CSVFileReader"
 import {DefaultLogger, FileUtil, Logger} from "ssg-api"
-import {TimeContext} from "./time/TimeContext"
-import {TimeUrlBuilder} from "./time/TimeUrlBuilder"
+import {TimeContext} from "../time/TimeContext"
+import {TimeUrlBuilder} from "../time/TimeUrlBuilder"
 import * as path from "path"
-import {StringUtil} from "./util/string/StringUtil"
+import {StringUtil} from "../util/string/StringUtil"
 import {Book} from "./Book"
-import {PeopleDirectoryStep} from "./people/PeopleDirectoryStep"
-import {RR0SsgContext, RR0SsgContextImpl} from "./RR0SsgContext"
-import {KnownPeople, People} from "./people/People"
-import {RR0FileUtil} from "./util/file/RR0FileUtil"
-import {CLI} from "./util/cli/CLI"
+import {PeopleDirectoryStep} from "../people/PeopleDirectoryStep"
+import {RR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
+import {KnownPeople, People} from "../people/People"
+import {RR0FileUtil} from "../util/file/RR0FileUtil"
+import {CLI} from "../util/cli/CLI"
 
 export class Books {
 
@@ -126,7 +126,7 @@ export class Books {
 const logger = new DefaultLogger("rr0-books")
 const args = new CLI().getArgs()
 const fileName = args.import
-const dry = Boolean(args.dry)
+const dry = args.dry === "true"
 
 const books = new Books(logger, dry)
 books.import(fileName).then((result: Book[]) => {

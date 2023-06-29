@@ -13,7 +13,7 @@
   },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",
-    "books": "tsx Books.ts",
+    "books": "tsx book/Books.ts",
     "build": "tsx build.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "udb:build": "webpack"

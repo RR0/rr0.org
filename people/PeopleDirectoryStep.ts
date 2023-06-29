@@ -214,10 +214,10 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<SsgStep[]> {
-    const peopleDirectories = await RR0FileUtil.findDirectoriesContaining("people*.json")
-    const excludedPeopleDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
+    const dirs = await RR0FileUtil.findDirectoriesContaining("people*.json")
+    const excludedDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
 
-    const scientistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    const scientistsDirectoryStep = new PeopleDirectoryStep(dirs, excludedDirs,
       "people/scientifiques.html",
       outputFunc, config,
       [
@@ -236,49 +236,49 @@ export class PeopleDirectoryStep extends DirectoryStep {
       ],
       "scientists directories"
     )
-    const ufologistsDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    const ufologistsDirectoryStep = new PeopleDirectoryStep(dirs, excludedDirs,
       "people/ufologues.html",
       outputFunc, config,
       [Occupation.ufologist],
       "ufologists directories"
     )
-    const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    const ufoWitnessesDirectoryStep = new PeopleDirectoryStep(dirs, excludedDirs,
       "people/witness/index.html",
       outputFunc, config,
       [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee],
       "UFO witnesses directories"
     )
-    const astronomersDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    const astronomersDirectoryStep = new PeopleDirectoryStep(dirs, excludedDirs,
       "people/astronomes.html",
       outputFunc, config,
       [Occupation.astronomer],
       "astronomers directories"
     )
-    const contacteesDirectoryStep = new PeopleDirectoryStep(peopleDirectories, excludedPeopleDirs,
+    const contacteesDirectoryStep = new PeopleDirectoryStep(dirs, excludedDirs,
       "people/contactes.html",
       outputFunc, config,
       [Occupation.contactee],
       "contactees directories"
     )
     const pilotsDirectoryStep = new PeopleDirectoryStep(
-      peopleDirectories,
-      excludedPeopleDirs,
+      dirs,
+      excludedDirs,
       "people/pilotes.html",
       outputFunc, config,
       [Occupation.astronaut, Occupation.pilot],
       "pilots directories"
     )
     const militaryDirectoryStep = new PeopleDirectoryStep(
-      peopleDirectories,
-      excludedPeopleDirs,
+      dirs,
+      excludedDirs,
       "people/militaires.html",
       outputFunc, config,
       [Occupation.military],
       "military people directories"
     )
     const allPeopleDirectoryStep = new PeopleDirectoryStep(
-      peopleDirectories,
-      excludedPeopleDirs,
+      dirs,
+      excludedDirs,
       "people/index.html",
       outputFunc, config,
       [],

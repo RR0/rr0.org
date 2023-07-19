@@ -211,6 +211,10 @@ form {
   text-shadow: 0 0 .5em #fff
 }
 
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
 h2, h3, h4, nav ul li *, section h1, section section h1 {
   font-family: system-ui, sans-serif;
 }

@@ -28,7 +28,7 @@ export class People {
     this.lastAndFirstName = this.getLastAndFirstName()
   }
 
-  protected getLastAndFirstName(): string {
+  getLastAndFirstName(): string {
     const {lastNameStr, firstNameStr} = this.getLastAndFirstNames()
     return lastNameStr && firstNameStr ? lastNameStr + ", " + firstNameStr : lastNameStr || firstNameStr
   }

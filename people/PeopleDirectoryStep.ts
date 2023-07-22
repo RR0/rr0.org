@@ -135,12 +135,21 @@ export class PeopleDirectoryStep extends DirectoryStep {
       peopleList.push(people)
       try {
         const jsonFileInfo = SsgFile.read(context, file)
-        Object.assign(people, JSON.parse(jsonFileInfo.contents))
+        const peopleData = JSON.parse(jsonFileInfo.contents)
+        const title = peopleData.title
+        if (title) {
+          const names = title.split(", ")
+          people.lastName = names.splice(0, 1)[0]
+          people.firstNames.length = 0
+          people.firstNames.push(...names[0].split(" "))
+          people.lastAndFirstName = people.getLastAndFirstName()
+        }
+        Object.assign(people, peopleData)
         if (!people.portraitUrl) {
-          const portraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
+          const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
           let hasPortrait = false
-          for (let i = 0; i < portraitFiles.length; i++) {
-            const portraitFile = portraitFiles[i]
+          for (let i = 0; i < possiblePortraitFiles.length; i++) {
+            const portraitFile = possiblePortraitFiles[i]
             const portraitPath = path.join(people.dirName, portraitFile)
             hasPortrait = fs.existsSync(portraitPath)
             if (hasPortrait) {

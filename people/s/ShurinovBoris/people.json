@@ -1,6 +1,12 @@
 {
-  "occupations": ["ufologist"],
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "ru"
+  ],
+  "pseudonyms": [
+    "Boris Chourinov",
+    "Boris Chourinof"
   ]
 }

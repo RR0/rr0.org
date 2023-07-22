@@ -1,7 +1,9 @@
 {
-  "birthTime": "1913",
-  "deathTime": "1993",
-  "occupations": ["psychologist"],
+  "birthTime": "1913-04-17",
+  "deathTime": "1993-03-25",
+  "occupations": [
+    "psychologist"
+  ],
   "countries": [
     "us"
   ]

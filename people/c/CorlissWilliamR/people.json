@@ -1,7 +1,10 @@
 {
   "birthTime": "1926-08-26",
   "deathTime": "2011-07-08",
-  "occupations": ["physicist"],
+  "occupations": [
+    "physicist",
+    "writer"
+  ],
   "countries": [
     "us"
   ]

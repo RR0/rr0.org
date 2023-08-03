@@ -712,13 +712,7 @@ img.zoomed {
 caption, figcaption {
   font-size: 0.8em;
   color: dimgray;
-  text-align: justify;
-  vertical-align: bottom;
   margin: 0;
-  display: table-caption;
-  overflow: hidden;
-  caption-side: bottom;
-  transition: background-color 0.3s ease;
 }
 
 .exergue .source {

@@ -213,6 +213,7 @@ form {
   max-height: 4em;
   font-weight: 400;
   text-shadow: 0 0 .5em #fff;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -725,14 +726,28 @@ caption, figcaption {
 }
 
 figure {
-  display: table;
   max-height: 90%;
-  margin: 0 0 1.75em
+}
+
+figure.video {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  width: 100%;
 }
 
 figure img {
   margin: 0;
   display: block;
+}
+
+figure iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 figure:hover figcaption, figcaption:hover {

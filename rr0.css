@@ -201,14 +201,18 @@ form {
 }
 
 #main-header h1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-family: inherit;
   letter-spacing: 1px;
   color: #666;
   line-height: 1.5;
   padding: .7em;
   padding-left: 0.6em;
+  max-height: 4em;
   font-weight: 400;
-  text-shadow: 0 0 .5em #fff
+  text-shadow: 0 0 .5em #fff;
 }
 
 h1, h2, h3, h4 {

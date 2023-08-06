@@ -1,5 +1,5 @@
-import {DomReplaceCommand, DomReplacer} from "ssg-api"
-import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import { DomReplaceCommand, DomReplacer } from 'ssg-api';
+import { HtmlRR0SsgContext } from '../RR0SsgContext';
 
 /**
  * Determine page language and ddd links to page language variants,
@@ -32,7 +32,8 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
             const altLink = doc.createElement("a")
             altLink.href = "/" + fileName.replace((foundLang ? "_" + foundLang : "") + ".",
               `${variants[i] == "" ? "" : "_" + langVariant}.`)
-            altLink.textContent = langVariant === "en" ? "English translation" : "Traduction française"
+            const altText = langVariant === 'en' ? 'English version' : 'Version française';
+            altLink.textContent = Buffer.from(altText, 'utf-8').toString();
             original.appendChild(altLink)
             context.debug("Added translation link", original.outerHTML, "in", fileName)
           }

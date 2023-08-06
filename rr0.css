@@ -713,6 +713,9 @@ caption, figcaption {
   font-size: 0.8em;
   color: dimgray;
   margin: 0;
+  display: table-caption;
+  overflow: hidden;
+  caption-side: bottom;
 }
 
 .exergue .source {
@@ -720,6 +723,7 @@ caption, figcaption {
 }
 
 figure {
+  display: table;
   max-height: 90%;
 }
 

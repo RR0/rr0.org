@@ -684,6 +684,15 @@ table tbody {
   overflow-x: hidden
 }
 
+.scrollable {
+  width: 100%;
+  overflow: auto;
+}
+
+.scrollable table {
+  width: 200%;
+}
+
 td, th {
   width: auto;
   padding: .4em .7em;

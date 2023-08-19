@@ -30,10 +30,8 @@
   }
 </style>
 <form id="searchForm">
-  <label style="white-space: normal">Nom, date, classification <input disabled name="text"
-      oninput="findCase(event)"
-      placeholder="Activez JavaScript"
-      style="margin-left: 1em" type="search"> </label> <label>Canular <input checked disabled name="hoax"
+  <input disabled name="text" oninput="findCase(event)" placeholder="Activez JavaScript"
+      style="margin-left: 1em" type="search"> <label>Canular <input checked disabled name="hoax"
     onchange="findCase(event)" type="checkbox"/></label> <label>Méprise <input
     checked disabled name="misinterpretation" onchange="findCase(event)" type="checkbox"/></label>
   <output></output>
@@ -42,7 +40,7 @@
 <script>
   const textInput = document.querySelector("#searchForm input[name='text']")
   textInput.disabled = false
-  textInput.setAttribute("placeholder", "Recherche dossier")
+  textInput.setAttribute("placeholder", "Nom, date, classification")
 
   const hoaxInput = document.querySelector("#searchForm input[name='hoax']")
   hoaxInput.disabled = false

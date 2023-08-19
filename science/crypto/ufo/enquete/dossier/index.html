@@ -5,31 +5,6 @@
   <a href="/science/crypto/archeo/enquete/dossier">ceux relatifs à la crypto-archéologie</a>), certains cas se
   distinguent par leur popularité où <a href="BestCases.html">leur crédibilité</a>.
 </p>
-<script>
-  function findCase(e) {
-    const textInput = document.querySelector("#searchForm input[name='text']")
-    const value = textInput.value.toLowerCase()
-    const list = document.querySelector("#searchForm + ul")
-    const hoaxInput = document.querySelector("#searchForm input[name='hoax']")
-    const misinterpretationInput = document.querySelector("#searchForm input[name='misinterpretation']")
-    let found = 0
-    for (const child of list.children) {
-      const isHoax = child.classList.contains("canular")
-      const isMisinterpretation = child.classList.contains("meprise")
-      const matchHoax = hoaxInput.checked || (!hoaxInput.checked && !isHoax)
-      const matchMisinterpretation = misinterpretationInput.checked || (!misinterpretationInput.checked && !isMisinterpretation)
-      const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
-      if (matchText && matchHoax && matchMisinterpretation) {
-        child.style.display = "list-item"
-        found++
-      } else {
-        child.style.display = "none"
-      }
-    }
-    const output = document.querySelector("#searchForm output")
-    output.textContent = `(${found > 0 ? found : "Aucun"} cas)`
-  }
-</script>
 <style>
   #searchForm {
     padding: 1em 0.5em;
@@ -55,14 +30,49 @@
   }
 </style>
 <form id="searchForm">
-  <label style="white-space: normal">Nom, date, classification <input name="text" oninput="findCase(event)"
-      style="margin-left: 1em" type="search"></label> <label>Canular <input checked name="hoax"
+  <label style="white-space: normal">Nom, date, classification <input disabled name="text"
+      oninput="findCase(event)"
+      placeholder="Activez JavaScript"
+      style="margin-left: 1em" type="search"> </label> <label>Canular <input checked disabled name="hoax"
     onchange="findCase(event)" type="checkbox"/></label> <label>Méprise <input
-    checked name="misinterpretation" onchange="findCase(event)" type="checkbox"/></label>
+    checked disabled name="misinterpretation" onchange="findCase(event)" type="checkbox"/></label>
   <output></output>
 </form>
 <!--#echo var="directories" -->
-<script>document.querySelector("#searchForm input").dispatchEvent(new Event("input"))</script>
+<script>
+  const textInput = document.querySelector("#searchForm input[name='text']")
+  textInput.disabled = false
+  textInput.setAttribute("placeholder", "Recherche dossier")
+
+  const hoaxInput = document.querySelector("#searchForm input[name='hoax']")
+  hoaxInput.disabled = false
+
+  const misinterpretationInput = document.querySelector("#searchForm input[name='misinterpretation']")
+  misinterpretationInput.disabled = false
+
+  function findCase(e) {
+    const value = textInput.value.toLowerCase()
+    const list = document.querySelector("#searchForm + ul")
+    let found = 0
+    for (const child of list.children) {
+      const isHoax = child.classList.contains("canular")
+      const isMisinterpretation = child.classList.contains("meprise")
+      const matchHoax = hoaxInput.checked || (!hoaxInput.checked && !isHoax)
+      const matchMisinterpretation = misinterpretationInput.checked || (!misinterpretationInput.checked && !isMisinterpretation)
+      const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
+      if (matchText && matchHoax && matchMisinterpretation) {
+        child.style.display = "list-item"
+        found++
+      } else {
+        child.style.display = "none"
+      }
+    }
+    const output = document.querySelector("#searchForm output")
+    output.textContent = `(${found > 0 ? found : "Aucun"} cas)`
+  }
+
+  textInput.dispatchEvent(new Event("input"))
+</script>
 <section>
   <h2>Conspiration</h2>
   <ul style="column-width: 20em">
@@ -74,7 +84,7 @@
     <li><a href="NaziUFOs">Les soucoupes nazies</a></li>
     <li><span class="people" title="Jean-François Gille">Gille</span>
       <ul>
-        <li><a href="/org/au/base/PineGap/PineGap_Gille.html">PineGap - Contexte Mondial</a></li>
+        <li><a href="/time/1/9/8/9/PineGap/PineGap_Gille.html">PineGap - Contexte Mondial</a></li>
       </ul>
     </li>
     <li><a href="/people/w/WaltonBruceAlan">Branton</a>

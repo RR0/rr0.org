@@ -1,5 +1,5 @@
-import {MessageUtils, RR0Messages} from "./RR0Messages"
-import {Gender} from "../people/Gender"
+import { MessageUtils, RR0Messages } from './RR0Messages';
+import { Gender } from '../people/Gender';
 
 export class RR0Messages_fr implements RR0Messages {
   nonSignificantWords = [
@@ -180,6 +180,7 @@ export class RR0Messages_fr implements RR0Messages {
     ch: {title: "Suisse"},
     cl: {title: "Chili"},
     cn: {title: "Chine"},
+    cy: {title: 'Chypre'},
     de: {title: "Allemagne"},
     dk: {title: "Danemark"},
     es: {title: "Espagne"},
@@ -197,6 +198,7 @@ export class RR0Messages_fr implements RR0Messages {
     it: {title: "Italie"},
     ir: {title: "Iran"},
     jp: {title: "Japon"},
+    ma: {title: 'Maroc'},
     mx: {title: "Mexique"},
     nl: {title: "Pays-Bas"},
     no: {title: "Norvège"},

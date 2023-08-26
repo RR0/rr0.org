@@ -13,6 +13,7 @@ export enum Occupation {
   biochemist = "biochemist",
   biophysicist = "biophysicist",
   bishop = "bishop",
+  businessman = 'businessman',
   botanist = "botanist",
   cameraman = "cameraman",
   chemist = "chemist",

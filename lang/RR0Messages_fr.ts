@@ -103,6 +103,7 @@ export class RR0Messages_fr implements RR0Messages {
       biophysicist: (gender: Gender) => gender === Gender.male ? "biophysicien" : "biophysicienne",
       bishop: (_gender: Gender) => "évêque",
       botanist: (_gender: Gender) => "botaniste",
+      businessman: (gender: Gender) => gender === Gender.male ? 'homme d\'affaires' : 'femme d\'affaires',
       cameraman: (gender: Gender) => gender === Gender.male ? "cadreur" : "cadreuse",
       chemist: (_gender: Gender) => "chimiste",
       contactee: (gender: Gender) => gender === Gender.male ? "contacté" : "contactée",

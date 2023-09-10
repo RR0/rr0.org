@@ -1,11 +1,11 @@
-import {TimeContext} from "./time/TimeContext"
-import {CaseDirectoryStep} from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
-import {PeopleDirectoryStep} from "./people/PeopleDirectoryStep"
-import {promise as glob} from "glob-promise"
-import {GooglePlaceService} from "./place/GooglePlaceService"
-import {OrganizationService} from "./org/OrganizationService"
-import {RR0SsgContextImpl} from "./RR0SsgContext"
-import {CLI} from "./util/cli/CLI"
+import { TimeContext } from './time/TimeContext';
+import { CaseDirectoryStep } from './science/crypto/ufo/enquete/dossier/CaseDirectoryStep';
+import { PeopleDirectoryStep } from './people/PeopleDirectoryStep';
+import { promise as glob } from 'glob-promise';
+import { GooglePlaceService } from './place/GooglePlaceService';
+import { OrganizationService } from './org/OrganizationService';
+import { RR0SsgContextImpl } from './RR0SsgContext';
+import { CLI } from './util/cli/CLI';
 import {
   AngularExpressionReplaceCommand,
   ClassDomRegexReplaceCommand,
@@ -24,28 +24,29 @@ import {
   SsiLastModifiedReplaceCommand,
   SsiSetVarReplaceCommand,
   StringEchoVarReplaceCommand
-} from "ssg-api"
-import {LanguageReplaceCommand} from "./lang/LanguageReplaceCommand"
-import {SsiTitleReplaceCommand} from "./time/SsiTitleReplaceCommand"
-import {PeopleReplacerFactory} from "./people/PeopleReplacerFactory"
-import {SourceReplacerFactory} from "./source/SourceReplacerFactory"
-import {timeDefaultHandler} from "./time/TimeDefaultTitle"
-import {NoteReplacerFactory} from "./note/NoteReplacerFactory"
-import {WitnessReplacerFactory} from "./people/witness/WitnessReplacerFactory"
-import {AnchorReplaceCommand} from "./anchor/AnchorReplaceCommand"
-import {TimeLinkDefaultHandler} from "./time/TimeLinkDefaultHandler"
-import {AuthorReplaceCommand} from "./people/author/AuthorReplaceCommand"
-import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
-import {PlaceReplacerFactory} from "./place/PlaceReplacerFactory"
-import {TimeReplacerFactory} from "./time/TimeReplacerFactory"
-import {LinkReplaceCommand} from "./LinkReplaceCommand"
-import {OutlineReplaceCommand} from "./outline/OutlineReplaceCommand"
-import {RR0ContentStep} from "./RR0ContentStep"
-import {ImageRegistryCommand} from "./ImageRegistryCommand"
-import {SearchCommand} from "./search/SearchCommand"
-import {SearchIndexStep} from "./search/SearchIndexStep"
-import {OutputFunc} from "ssg-api/dist/src/Ssg"
-import {BaseReplaceCommand} from "./BaseReplaceCommand"
+} from 'ssg-api';
+import { LanguageReplaceCommand } from './lang/LanguageReplaceCommand';
+import { SsiTitleReplaceCommand } from './time/SsiTitleReplaceCommand';
+import { PeopleReplacerFactory } from './people/PeopleReplacerFactory';
+import { SourceReplacerFactory } from './source/SourceReplacerFactory';
+import { timeDefaultHandler } from './time/TimeDefaultTitle';
+import { NoteReplacerFactory } from './note/NoteReplacerFactory';
+import { WitnessReplacerFactory } from './people/witness/WitnessReplacerFactory';
+import { AnchorReplaceCommand } from './anchor/AnchorReplaceCommand';
+import { TimeLinkDefaultHandler } from './time/TimeLinkDefaultHandler';
+import { AuthorReplaceCommand } from './people/author/AuthorReplaceCommand';
+import { rr0DefaultCopyright } from './RR0DefaultCopyright';
+import { PlaceReplacerFactory } from './place/PlaceReplacerFactory';
+import { TimeReplacerFactory } from './time/TimeReplacerFactory';
+import { LinkReplaceCommand } from './LinkReplaceCommand';
+import { OutlineReplaceCommand } from './outline/OutlineReplaceCommand';
+import { RR0ContentStep } from './RR0ContentStep';
+import { ImageRegistryCommand } from './ImageRegistryCommand';
+import { SearchCommand } from './search/SearchCommand';
+import { SearchIndexStep } from './search/SearchIndexStep';
+import { OutputFunc } from 'ssg-api/dist/src/Ssg';
+import { BaseReplaceCommand } from './BaseReplaceCommand';
+import { OpenGraphCommand } from './OpenGraphCommand';
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -172,6 +173,7 @@ getTimeFiles().then(async (timeFiles) => {
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand(siteBaseUrl),
         new ImageRegistryCommand(config.outDir, 275, 500),
+        new OpenGraphCommand(config.outDir),
         searchCommand
       ],
       getOutputFile(context: SsgContext): SsgFile {

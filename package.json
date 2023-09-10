@@ -24,9 +24,9 @@
     "@rr0/udb": "^1.0.12",
     "glob-promise": "~6.0.3",
     "image-size": "^1.0.2",
-    "skia-canvas": "~1.0.1",
     "ssg-api": "~1.4.5",
-    "csv-parser": "^3.0.0"
+    "csv-parser": "^3.0.0",
+    "canvas": "^2.11.2"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "~7.22.5",

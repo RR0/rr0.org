@@ -20,11 +20,11 @@
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.3.34",
-    "@rr0/common": "~1.0.1",
+    "@rr0/common": "^1.0.1",
     "@rr0/udb": "^1.0.12",
-    "glob-promise": "~6.0.3",
+    "glob-promise": "^6.0.5",
     "image-size": "^1.0.2",
-    "ssg-api": "~1.4.5",
+    "ssg-api": "^1.5.0",
     "csv-parser": "^3.0.0",
     "canvas": "^2.11.2"
   },
@@ -39,7 +39,7 @@
     "ts-node": "~10.9.1",
     "ts-loader": "^9.4.4",
     "tsx": "~3.12.7",
-    "typescript": "~5.1.6",
+    "typescript": "^5.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "https-browserify": "^1.0.0",

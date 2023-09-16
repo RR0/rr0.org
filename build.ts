@@ -47,6 +47,7 @@ import { SearchIndexStep } from './search/SearchIndexStep';
 import { OutputFunc } from 'ssg-api/dist/src/Ssg';
 import { BaseReplaceCommand } from './BaseReplaceCommand';
 import { OpenGraphCommand } from './OpenGraphCommand';
+import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -172,6 +173,7 @@ getTimeFiles().then(async (timeFiles) => {
         new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand(siteBaseUrl),
+        new DescriptionReplaceCommand(),
         new ImageRegistryCommand(config.outDir, 275, 500),
         new OpenGraphCommand(config.outDir),
         searchCommand

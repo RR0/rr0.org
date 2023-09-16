@@ -9,10 +9,6 @@
   column-width: 12em;
 }
 
-#searchForm + ul {
-  column-width: 14em;
-}
-
 #searchForm label, output {
   padding: 0.5em 1em;
   white-space: nowrap;

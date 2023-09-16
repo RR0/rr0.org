@@ -6,7 +6,7 @@ import { SsgFile } from 'ssg-api/dist/src/util/file/SsgFile';
  * Adds an "abstract" HTML paragraph from a <meta name="description">, if any.
  */
 export class DescriptionReplaceCommand implements ReplaceCommand<HtmlRR0SsgContext> {
-  constructor(protected defaultDescription, protected abstractClass = 'abstract') {
+  constructor(protected readonly defaultDescription: string, protected readonly abstractClass = 'abstract') {
   }
 
   async execute(context: HtmlRR0SsgContext): Promise<SsgFile> {

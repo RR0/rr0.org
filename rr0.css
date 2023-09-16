@@ -98,6 +98,9 @@ body.wait, body.wait * {
   font-weight: 700
 }
 
+.links {
+  column-width: 14em;
+}
 .links li {
   margin-top: 2.5mm
 }

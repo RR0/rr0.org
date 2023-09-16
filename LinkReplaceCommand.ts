@@ -1,5 +1,5 @@
-import {HtmlSsgContext, HtmlSsgFile, Link, ReplaceCommand} from "ssg-api"
-import {HtmlRR0SsgContext} from "./RR0SsgContext"
+import { HtmlSsgContext, HtmlSsgFile, Link, ReplaceCommand } from 'ssg-api';
+import { HtmlRR0SsgContext } from './RR0SsgContext';
 
 export interface LinkHandler<C extends HtmlSsgContext> {
 
@@ -23,7 +23,7 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
     const inputFile = context.inputFile
     const outputFile = context.outputFile
     const dom = outputFile.dom
-    const outputDoc = dom.window.document
+    const outputDoc = outputFile.document;
     const ul = outputDoc.querySelector("nav ul")
     if (!ul) {
       context.error("Could not find nav list in " + context.outputFile.name)

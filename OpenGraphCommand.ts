@@ -6,6 +6,8 @@ import fs from 'fs';
 import path from 'path';
 
 export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
+  protected num = 0;
+
   constructor(protected outDir: string) {
   }
 
@@ -95,8 +97,16 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     ctx.fillText(context.outputFile.meta.copyright || 'RR0.org', margin, height - 50);
 
     const buffer = canvas.toBuffer('image/png');
-    const imageUrl = path.join('/', dir, '_og.png');
-    fs.writeFileSync(path.join(this.outDir, imageUrl), buffer);
+    this.num++;
+    const imageName = `rr0_og_${this.num}.png`;
+    const imageUrl = path.join('/', dir, imageName);
+    const imageOutPath = path.join(this.outDir, imageUrl);
+    const imageOutDir = path.dirname(imageOutPath);
+    if (!fs.existsSync(imageOutDir)) {
+      fs.mkdirSync(imageOutDir, {recursive: true});
+    }
+    context.debug('Writing OG image', imageOutPath);
+    fs.writeFileSync(imageOutPath, buffer);
 
     const ogMeta = outDoc.createElement('meta');
     ogMeta.setAttribute('property', 'og:image');

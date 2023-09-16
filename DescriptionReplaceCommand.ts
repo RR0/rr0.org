@@ -6,21 +6,35 @@ import { SsgFile } from 'ssg-api/dist/src/util/file/SsgFile';
  * Adds an "abstract" HTML paragraph from a <meta name="description">, if any.
  */
 export class DescriptionReplaceCommand implements ReplaceCommand<HtmlRR0SsgContext> {
-  static readonly abstractClass = 'abstract';
+  constructor(protected defaultDescription, protected abstractClass = 'abstract') {
+  }
 
   async execute(context: HtmlRR0SsgContext): Promise<SsgFile> {
     const SsgFile = context.inputFile;
-    let authors = SsgFile.meta.description;
+    const inDescription = SsgFile.meta.description;
     const outFile = context.outputFile;
     const outDoc = outFile.document;
-    const existingAbstract = outDoc.querySelector(`.${DescriptionReplaceCommand.abstractClass}`);
-    if (!existingAbstract) {
+    const existingAbstract = outDoc.querySelector(`.${this.abstractClass}`);
+    let outDescription: string;
+    if (existingAbstract) {
+      outDescription = inDescription || existingAbstract.textContent.toString();
+    } else if (inDescription) {
       const abstractFromDescription = outDoc.createElement('p');
-      abstractFromDescription.className = DescriptionReplaceCommand.abstractClass;
+      abstractFromDescription.className = this.abstractClass;
+      abstractFromDescription.textContent = inDescription;
       const body = outDoc.body;
       body.insertBefore(abstractFromDescription, body.firstChild);
-      outFile.contents = outDoc.documentElement.outerHTML;
+      outDescription = inDescription;
+    } else {
+      outDescription = this.defaultDescription;
     }
+    outDescription = outDescription.replace(/\s{2,}/g, ' ');
+    outFile.meta.description = outDescription;
+    const descriptionMeta = outDoc.createElement('meta') as HTMLMetaElement;
+    descriptionMeta.name = 'description';
+    descriptionMeta.content = outFile.meta.description;
+    outFile.document.head.append(descriptionMeta);
+    context.outputFile.contents = outDoc.documentElement.outerHTML;
     return outFile;
   }
 }

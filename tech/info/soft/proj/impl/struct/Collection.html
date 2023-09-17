@@ -1,0 +1,141 @@
+<!--#include virtual="/header-start.html" -->
+<title>Collection</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Contenir un ensemble d'objets.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>Les éléments d'une collection sont fournis à travers un <strong>itérateur</strong>.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <p>En <a href="/org/us/company/oracle/sun/ptf/java">Java</a> les collections implémentent l'interface <code>java.util.Collection</code>.
+  </p></section>
+<section>
+  <h2>Exemples</h2>
+  <table>
+    <tbody>
+    <tr>
+      <td class="titleCorner"></td>
+      <th rowspan="2">Doublons possibles</th>
+      <th colspan="2">Interface</th>
+      <th colspan="6">Implémentations</th>
+      <th rowspan="2">Commentaire</th>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+      <th colspan="2">Tableau à taille variable</th>
+      <th>Liste chaînée</th>
+      <th>Arbre équilibré</th>
+      <th>Tableau de hâchage</th>
+      <th>Tableau de hâchage + liste chaînée</th>
+    </tr>
+    <tr>
+      <th rowspan="2">Ensemble</th>
+      <td class="non" rowspan="2">Non</td>
+      <td rowspan="2"><code>Set</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><code></code></td>
+      <td></td>
+      <td><code>HashSet</code></td>
+      <td><code>LinkedHashSet</code></td>
+      <td>Elements non ordonnés ni triés</td>
+    </tr>
+    <tr>
+      <td><code>SortedSet</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><code>TreeSet</code></td>
+      <td></td>
+      <td></td>
+      <td>Eléments triés en fonction de leur valeur</td>
+    </tr>
+    <tr>
+      <th>Liste</th>
+      <td class="oui">Oui</td>
+      <td><code>List</code></td>
+      <td></td>
+      <td><code>Vector</code></td>
+      <td><code>ArrayList</code></td>
+      <td><code>LinkedList</code></td>
+      <td><code></code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>Eléments dans l'ordre où ils sont placés</td>
+    </tr>
+    <tr>
+      <th colspan="3">Coût accès parmi n éléments</th>
+      <td></td>
+      <td></td>
+      <td>n</td>
+      <td></td>
+      <td>log(n)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3">Synchronisé</th>
+      <td class="non"></td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3">Valeurs nulles acceptées</th>
+      <td class="oui"></td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3" height="32">Ordre d'indice</th>
+      <td></td>
+      <td class="oui" colspan="2">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="3">Ordre de valeur</th>
+      <td></td>
+      <td class="non" colspan="2">Non</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Une valeur contenue dans un ensemble (Set) peut changer son état de manière à devenir égale (equals()) à un
+      autre élément de cet ensemble.</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Les <a href="../../../Dictionnaire.html">dictionnaires</a>, qui sont des applications d'une collection vers une
+      autre.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

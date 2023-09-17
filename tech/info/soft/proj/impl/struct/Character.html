@@ -1,0 +1,65 @@
+<!--#include virtual="/header-start.html" -->
+<title>Character</title>
+<!--#include virtual="/header-end.html" -->
+<p>Caractère.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href="index.html">Structure</a> de données représentant un symbole imprimable/affichable.</p>
+  <h2>Analyse</h2>
+  <p>Un caractère peut être désigné par :</p>
+  <ul>
+    <li><strong>Référence </strong>: son indice dans une table de caractère par exemple.</li>
+    <li><strong>Valeur</strong> : les données de sa forme, de son aspect (fonte, police).</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Référence</h3>
+    <p>L'indice dans une table de caractères devra être codé sur plus ou moins de <a
+        href="/tech/info/soft/data/Bit.html">bits</a>, selon l'indice maximum (la taille) de la table. Par exemple :</p>
+    <ul>
+      <li>De 0 à 127 (ASCII) : 7 <a href="/tech/info/soft/data/Bit.html">bits</a></li>
+      <li>De 0 à 255 (ASCII étendu) 8 <a href="/tech/info/soft/data/Bit.html">bits</a></li>
+      <li>de 0 à 65535 (Unicode) : 16 <a href="/tech/info/soft/data/Bit.html">bits</a></li>
+    </ul>
+    <p>Le codage de ces indices peut cependant ne pas se résumer à la valeur du caractère, pour des raisons
+      d'optimisation. Par exemple le codage UTF-8 utilisera entre 8 et 32&nbsp;<a href="/tech/info/soft/data/Bit.html">bits</a>
+      pour coder un caractère, suivant sa valeur (permettant ainsi l'optimisation d'un codage sur 1 <a
+          href="/tech/info/soft/data/Byte.html">octet</a> au lieu de 2 pour les caractères les plus courants).</p>
+
+    <h3>Valeur</h3>
+  </section>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Référence</h3>
+    <p>Le type primitif <code>char</code> et le type objet <code>java.lang.Character</code>.</p></section>
+  <section>
+    <h3>Valeur</h3>
+    <p>La classe <code>java.awt.Font</code>.</p></section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <section>
+    <h3>Référence</h3>
+    <p><code><strong>char</strong> aChar = <span class="codeString"><strong>'</strong>a<strong>'</strong></span>;<br>
+      <strong>char</strong> eCirc = <span class="codeString"><strong>'</strong>\u00ea<strong>'</strong></span>;
+      &nbsp;<span class="codeComment">// 'ê' en Unicode</span></code></p>
+    <p><code><strong>Character</strong> aCharObject = new <strong>Character</strong>(aChar);</code></p></section>
+  <section>
+    <h3>Valeur</h3>
+    <p><code><strong>Font</strong> myFont = new <strong>Font</strong>(<span class="codeString">"Courier"</span>,
+      <strong>Font.BOLD</strong> + <strong>Font.ITALIC</strong>, 50);<br>
+      graphics.<strong>setFont</strong>(myFont);</code></p></section>
+  <section>
+    <h3>Tables de caractères
+    </h3>
+    <ul>
+      <li>ASCII</li>
+      <li>Unicode</li>
+    </ul>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->

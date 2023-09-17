@@ -1,0 +1,50 @@
+<!--#include virtual="/header-start.html" -->
+<title>Algorithme de Dijkstra</title>
+<meta content="DijkstraEdsgerW" name="author"/>
+<meta content="élaboré en 1956, publié en 1959" name="copyright"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Algorithme de <a href="../index.html">PCC</a> pour les coûts d'arêtes &gt;= 0 (ou variables). </p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>À partir d'un sommet de départ, examiner l'ensemble des nœuds les plus proches, plus l'ensemble des nœuds un niveau
+    plus loin, etc. </p></section>
+<section>
+  <h2>Conception</h2>
+  <p>Parcours du graphe depuis une source, <a href="../../../struct/graph/bfs.html">en largeur d'abord</a>.</p>
+  <p>Tout au long du calcul, on maintient 2 ensembles : </p>
+  <ul>
+    <li>Tant que C, l'ensemble des sommets qui restent à visiter (au départ C=S-départ) n'est pas vide :
+      <ul>
+        <li>Pour chaque somme de D, l'ensemble des sommets pour lesquels on connaît déjà leur plus petite distance à la
+          source (au départ, D=départ)
+          <ul>
+            <li>on conserve dans un tableau distances le poids du plus court chemin jusqu'à la source<br> et dans un
+              tableau parcours le sommet p qui le précède dans un plus court chemin de la source à s. Ainsi, pour
+              retrouver un chemin le plus court, il suffira de remonter de prédécesseur en prédécesseur jusqu'à la
+              source, ce qui pourra se faire grâce à un unique appel récursif (beaucoup moins coûteux que dans le cas de
+              Floyd...).
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Routage internet (<abbr title="Open Shortest Path First ">OSPF, IS-IS)</abbr></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Complexité en O(a<sup>2</sup> log(n)) où a est le nombre d'arêtes</li>
+  </ul>
+</section>
+<span class="source">Athanasios, Papagelis: "<a
+    href="http://students.ceid.upatras.gr/~papagel/project/kef5_7_1.htm">Dijkstra algorithm</a>", <i lang="en">You just
+    found... my message in Cyberspace Ocean</i></span>
+<!--#include virtual="/footer.html" -->

@@ -1,0 +1,70 @@
+<!--#include virtual="/header-start.html" -->
+<title>Graphe</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Graph</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p><a href="../index.html">Structure de données</a> pour modéliser un ensemble de chemins possibles.</p>
+  <p>Cette structure est généralement utilisée pour résoudre des problèmes de <strong>cheminement</strong> (<i
+      lang="en">pathfinding</i>) comme le <a href="../../algo/pcc/index.html">PCC</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Un graphe est composé de :</p>
+  <ul>
+    <li><strong>Sommets</strong> (<i lang="en">vertices</i>) ou <strong>nœuds</strong> (<i lang="en">nodes</i>) de degré
+      <em>n</em> s'il en part
+      <ul>
+        <li><em>n</em> <strong>arêtes</strong> (<em>edges</em>) <strong>orientées</strong> (ayant un sens unique) ou non
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Il peut être qualifié de :</p>
+  <ul>
+    <li><strong>Connexe</strong> (<i lang="en">connected</i>) : tous ses sommets sont reliés au moins indirectement
+      (atteignables par un chemin). S'il ne l'est pas il est alors constitué de <strong>composantes connexes</strong>
+      non reliées entre elles.
+    </li>
+    <li><strong>(a)cyclique</strong> (<i lang="en">with(out) cycles</i>) : ayant des boucles ou non.</li>
+    <li><strong>Orienté</strong> (<i lang="en">directed graph</i> ou <i lang="en">digraph</i>) si toutes ses arêtes sont
+      orientées.</li>
+    <li><strong>Complet</strong> si tous ses sommets sont reliés les uns avec les autres</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Représentation</h3>
+    <p>Un graphe peut être représenté sous forme de :</p>
+    <ul>
+      <li><a href="../../lang/oo/Objet.html">Objets</a> (nœuds) et pointeurs (arêtes)</li>
+      <li><a href="../Matrix.html">Matrice</a> 2D : coût d'un sommet à un autre (0 pour d'un sommet à lui-même, infini
+        pour des sommets non reliés ou, dans le cas d'un graphe orienté, reliés dans sens interdit)
+      </li>
+      <li>Liste d'adjacences (<em>adjency list</em>)</li>
+    </ul>
+    <section>
+      <h4>Parcours</h4>
+      <p>Il existe différentes méthodes pour parcourir un graphe, selon les besoins&nbsp;:</p>
+      <ul>
+        <li><strong><a href="dfs.html">En profondeur</a></strong></li>
+        <li><strong><a href="bfs.html">en largeur</a></strong></li>
+      </ul>
+    </section>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>Un <a href="tree/index.html">arbre</a> est un graphe connexe et acyclique dont les sommets sont de degré
+      <ul>
+        <li>1 pour les nœuds feuilles (1 seule arête vers le père)</li>
+        <li>n pour les autres nœuds internes (2 pour les <a href="tree/binary/index.html">arbres binaires</a> par
+          exemple)
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

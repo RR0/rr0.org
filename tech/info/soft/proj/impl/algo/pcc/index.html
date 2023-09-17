@@ -2,54 +2,44 @@
 <title>Plus Court Chemin</title>
 <!--#include virtual="/header-end.html" -->
 <p>Plus Court Chemin : <em>shortest path</em>.</p>
-
-<section title="Besoin">
-
-<p>Trouver le chemin le moins coûteux dans un <a href="../../struct/graph/index.html">graphe</a> (connexe évidemment).
-</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Trouver le chemin le moins coûteux dans un <a href="../../struct/graph/index.html">graphe</a> (connexe évidemment).
+  </p>
 </section>
-<section title="Analyse">
-
-<p>Le coût d'un chemin est généralement exprimé en terme de longueur/distance, mais pas forcément (on peut le remplacer
-    par le temps de parcours) ou seulement (on pourra ajouter une densité de traffic par exemple). Le problème peut
-    également être corsé en rajoutant des contraintes de temps : coût dynamique (variant selon le moment), passage
+<section>
+  <h2>Analyse</h2>
+  <p>Le coût d'un chemin est généralement exprimé en termes de longueur/distance, mais pas forcément (on peut le
+    remplacer par le temps de parcours) ou seulement (on pourra ajouter une densité de traffic par exemple). Le problème
+    peut également être corsé en rajoutant des contraintes de temps : coût dynamique (variant selon le moment), passage
     possible qu'à certains moments, etc.</p>
-
-<p>Les méthodes pour trouver le PCC sont généralement des <strong>algorithmes gloutons</strong> qui supposent le
+  <p>Les méthodes pour trouver le PCC sont généralement des <strong>algorithmes gloutons</strong> qui supposent le
     <strong>principe d'optimalité de Bellman</strong> (1955), qui considère que, si un chemin est optimal, un
     sous-chemin de ce chemin optimal est également optimal pour arriver à cette étape intermédiaire. Cette supposition
     permet de trouver le bon chemin progressivement, par une <strong>résolution ascendante</strong> (résolution à partir
-    de sous-solutions) <span class="note">Voir aussi le 3<sup>ème</sup> précepte de la méthode de Descartes</span>.</p>
+    de sous-solutions) <span class="note">Voir aussi le 3ᵉ précepte de la méthode de Descartes</span>.</p>
 </section>
-<section title="Conception">
-
-<p>Il existe plusieurs méthodes de résolution du problème, plus ou moins adaptés en fonction du contexte :</p>
-<ul>
+<section>
+  <h2>Conception</h2>
+  <p>Il existe plusieurs méthodes de résolution du problème, plus ou moins adaptés en fonction du contexte :</p>
+  <ul>
     <li><strong>Bellman-Ford</strong> : Lorsque le graphe ne comporte pas de cycle.</li>
     <li><strong><a href="dijkstra/index.html">Dijkstra</a></strong> lorsque les coûts des arêtes sont &gt;= 0</li>
     <li><strong>"Seuil" </strong>(<em>thresold</em> <span
-            class="source">Glover, Glover & Klingman en 1984</span>) : efficace en pratique, même si sa complexité
-        est supérieure.
+        class="source">Glover, Glover & Klingman en 1984</span>) : efficace en pratique, même si sa complexité est
+      supérieure.
     </li>
     <li><strong>Gabow</strong> :</li>
     <li><strong>Dantzig-Ford</strong> :</li>
     <li><strong>Warshall-<a href="floyd/index.html">Floyd</a></strong> :</li>
     <li><strong>Johnson</strong> :</li>
     <li><strong>"flot maximum"</strong> :</li>
-</ul>
+  </ul>
 </section>
-<section title="Exemples">
-<ul>
+<section>
+  <h2>Exemples</h2>
+  <ul>
     <li>Protocole <abbr title="open shortest path first ">OSPF</abbr></li>
-</ul>
+  </ul>
 </section>
-<section title="Notes">
-<ul>
-    <li></li>
-</ul>
-</section>
-<section title="Références">
-<ul>
-    <li></li>
-</ul>
-</section><!--#include virtual="/footer.html" -->
+<!--#include virtual="/footer.html" -->

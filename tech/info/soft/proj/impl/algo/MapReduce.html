@@ -1,4 +1,6 @@
-<!--#include virtual="/header-start.html" --><title>MapReduce</title><!--#include virtual="/header-end.html" -->
+<!--#include virtual="/header-start.html" -->
+<title>MapReduce</title>
+<!--#include virtual="/header-end.html" -->
 <p>.</p>
 <section>
   <h2>Besoin</h2>
@@ -17,15 +19,15 @@
         href="/tech/info/soft/prod/server/sgbd/NoSQL/oa/bdod">BDOD</a>) typiquement très grande (de l'ordre du To, voire
       du Po)
       <ol>
-        <li><strong>map</strong> : est partitionnée en différents <strong>lots</strong> (<em>splits</em>)
+        <li><strong>Map</strong> : est partitionnée en différents <strong>lots</strong> (<i lang="en">splits</i>)
           <ul>
-            <li>dont des <strong>mappers</strong> (parallélisables) produisent chacun une liste intermédiaire en sortie
+            <li>Dont des <strong>mappers</strong> (parallélisables) produisent chacun une liste intermédiaire en sortie
             </li>
           </ul>
         </li>
-        <li><strong>shuffle</strong> (une fois toutes les maps terminées) : Les résultats des opérations map sont
+        <li><strong>Shuffle</strong> (une fois toutes les maps terminées) : Les résultats des opérations map sont
           fusionnées et triées en fonction des valeurs de clés</li>
-        <li><strong>reduce</strong> : les listes intermédiaires sont traitées en fonction du problème à résoudre, pour
+        <li><strong>Reduce</strong> : les listes intermédiaires sont traitées en fonction du problème à résoudre, pour
           fournir un résultat agrégeable à un résultat total.</li>
       </ol>
     </li>

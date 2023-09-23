@@ -25,7 +25,7 @@ ErrorDocument 404 /404.shtml
 DirectoryIndex index_fr.html index.html
 Redirect /data https://rr0.org/time
 Redirect /personne https://rr0.org/people
-Redirect /lieu https://rr0.org/place
+Redirect /place https://rr0.org/place
 Redirect /lieux.html https://rr0.org/place
 Redirect /glossair.html https://rr0.org/science/crypto/ufo/glossair.html
 Redirect /DD.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/dd
@@ -555,7 +555,7 @@ Redirect /people/s/SchaefferRobert.html https://rr0.org/people/s/SchaefferRobert
 Redirect /people/s/SchmidtDonald.html https://rr0.org/people/s/SchmidtDonald
 Redirect /SchuesslerJohnF.html https://rr0.org/people/s/SchuesslerJohnF
 Redirect /ScornauxJacques.html https://rr0.org/people/s/ScornauxJacques
-Redirect /people/s/SeitzFrederick.html https://rr0.org/people/s/SeitzFrederick
+Redirect /people/s/SeitzFrederick https://rr0.org/people/s/SeitzFrederick
 Redirect /people/s/SerreDidier.html https://rr0.org/people/s/SerresDidier
 Redirect /ShuttlewoodArthur.html https://rr0.org/people/s/ShuttlewoodArthur
 Redirect /people/m/MaussanJaime.html https://rr0.org/people/m/MaussanJaime
@@ -796,15 +796,15 @@ Redirect /PrankBalloons.html https://rr0.org/science/crypto/ufo/enquete/meprise/
 Redirect /Gendarmerie.html https://rr0.org/org/eu/fr/dn/gendarmerie
 Redirect /Terre.html https://rr0.org/place/systeme/solaire/planete/terre
 Redirect /place/systeme/solaire/Soleil /place/systeme/solaire/Soleil
-Redirect /lieu/systeme/solaire/planete/terre/us/Socorro.html https://rr0.org/place/systeme/solaire/planete/terre/us/nm/Socorro.html
+Redirect /place/systeme/solaire/planete/terre/us/Socorro.html https://rr0.org/place/systeme/solaire/planete/terre/us/nm/Socorro.html
 Redirect /Jupiter.html https://rr0.org/place/systeme/solaire/planete/jupiter
-Redirect /lieu/systeme/solaire/planete/terre/lune/Lune.html https://rr0.org/place/systeme/solaire/planete/terre/lune
+Redirect /place/systeme/solaire/planete/terre/lune/Lune.html https://rr0.org/place/systeme/solaire/planete/terre/lune
 Redirect /Lune.html https://rr0.org/place/systeme/solaire/planete/terre/lune
 Redirect /ColDeVence.html https://rr0.org/place/systeme/solaire/planete/terre/eurafras/euras/eu/fr/ColDeVence
-Redirect /lieu/systeme/solaire/planete/terre/fr/ColDeVence https://rr0.org/place/systeme/solaire/planete/terre/eurafras/euras/eu/fr/ColDeVence
+Redirect /place/systeme/solaire/planete/terre/fr/ColDeVence https://rr0.org/place/systeme/solaire/planete/terre/eurafras/euras/eu/fr/ColDeVence
 Redirect /Rendelsham.html https://rr0.org/place/systeme/solaire/planete/terre/uk/rendlesham
 Redirect /Phobos.html https://rr0.org/place/systeme/solaire/planete/mars/Phobos.html
-Redirect /lieu/systeme/solaire/planete/venus/Venus.html https://rr0.org/place/systeme/solaire/planete/venus/
+Redirect /place/systeme/solaire/planete/venus/Venus.html https://rr0.org/place/systeme/solaire/planete/venus/
 Redirect /Nibiru.html https://rr0.org/place/systeme/solaire/planete/Nibiru.html
 Redirect /USA.html https://rr0.org/org/us
 Redirect /SETI.html https://rr0.org/science/crypto/ufo/observation/projet/seti

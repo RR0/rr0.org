@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (https://www.inkscape.org/) -->
+<svg
+        xmlns:dc="https://purl.org/dc/elements/1.1/"
+        xmlns:cc="https://web.resource.org/cc/"
+        xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:xlink="https://www.w3.org/1999/xlink"
+        xmlns:sodipodi="https://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns:inkscape="https://www.inkscape.org/namespaces/inkscape"
+        xmlns="https://www.w3.org/2000/svg"
+        id="svg1"
+        sodipodi:version="0.32"
+        inkscape:version="0.44"
+        width="300.00000mm"
+        height="300.00000mm"
+        sodipodi:docbase="C:\Documents and Settings\fvayssiere\Bureau"
+        sodipodi:docname="Anaximander_world_map-fr.svg">
+  <defs
+          id="defs3">
+    <linearGradient
+            id="linearGradient2776">
+      <stop
+              style="stop-color:#69c;stop-opacity:1;"
+              offset="0"
+              id="stop2778"/>
+      <stop
+              id="stop3699"
+              offset="0.5"
+              style="stop-color:#69c;stop-opacity:1;"/>
+      <stop
+              style="stop-color:#69c;stop-opacity:1;"
+              offset="0.75"
+              id="stop4589"/>
+      <stop
+              id="stop4591"
+              offset="0.875"
+              style="stop-color:#69c;stop-opacity:1;"/>
+      <stop
+              style="stop-color:#69c;stop-opacity:1;"
+              offset="0.9375"
+              id="stop5540"/>
+      <stop
+              id="stop6427"
+              offset="0.96875"
+              style="stop-color:#7ca5ce;stop-opacity:0.90588236;"/>
+      <stop
+              style="stop-color:#92b1d0;stop-opacity:0.68627453;"
+              offset="1"
+              id="stop2780"/>
+    </linearGradient>
+    <radialGradient
+            inkscape:collect="always"
+            xlink:href="#linearGradient2776"
+            id="radialGradient2782"
+            cx="753.26636"
+            cy="635.46252"
+            fx="753.26636"
+            fy="635.46252"
+            r="514.64319"
+            gradientTransform="matrix(1,0,0,0.944618,0,35.19316)"
+            gradientUnits="userSpaceOnUse"
+            spreadMethod="pad"/>
+  </defs>
+  <sodipodi:namedview
+          id="base"
+          pagecolor="#ffffff"
+          bordercolor="#666666"
+          borderopacity="1.0"
+          inkscape:pageopacity="0.0"
+          inkscape:pageshadow="2"
+          inkscape:zoom="0.61399264"
+          inkscape:cx="629.77831"
+          inkscape:cy="456.97777"
+          inkscape:window-width="1024"
+          inkscape:window-height="721"
+          inkscape:window-x="-4"
+          inkscape:window-y="-4"
+          inkscape:current-layer="svg1"/>
+  <metadata
+          id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+              rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+                rdf:resource="https://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license
+                rdf:resource="https://web.resource.org/cc/PublicDomain"/>
+        <dc:title>Carte du monde selon Anaximandre</dc:title>
+        <dc:date>12 décembre 2006</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Bibi Saint-Pol</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License
+              rdf:about="https://web.resource.org/cc/PublicDomain">
+        <cc:permits
+                rdf:resource="https://web.resource.org/cc/Reproduction"/>
+        <cc:permits
+                rdf:resource="https://web.resource.org/cc/Distribution"/>
+        <cc:permits
+                rdf:resource="https://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+          sodipodi:type="arc"
+          style="fill:url(#radialGradient2782);fill-opacity:1.0;fill-rule:evenodd;stroke:#000000;stroke-width:3.2154835;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;stroke-miterlimit:4.0000000;stroke-dasharray:none"
+          id="path909"
+          sodipodi:cx="753.26636"
+          sodipodi:cy="635.46252"
+          sodipodi:rx="513.03546"
+          sodipodi:ry="484.53351"
+          d="M 1266.3018 635.46252 A 513.03546 484.53351 0 1 0 240.23090,635.46252 A 513.03546 484.53351 0 1 0 1266.3018 635.46252 z"
+          transform="matrix(0.944512,0.000000,0.000000,1.000000,-184.1828,-109.9362)"/>
+  <path
+          style="fill:#ffffff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:#000000;stroke-width:3.1422452;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;stroke-miterlimit:4.0000000;stroke-dasharray:none;"
+          d="M 526.87500,143.12500 C 316.28736,143.12500 145.37499,314.33922 145.37500,525.31250 C 145.37500,544.14354 142.49502,526.64581 145.12500,544.75000 L 174.18750,590.81250 L 182.66497,590.23207 L 186.76332,584.28684 L 189.84375,544.75000 L 216.37500,524.59375 L 234.28125,523.15625 L 253.62500,490.06250 L 280.15625,472.78125 L 302.37500,485.71875 L 331.81250,511.65625 L 337.33503,522.31711 L 339.80378,532.97796 L 341.71875,550.50000 L 344.60707,559.73898 L 349.53125,564.90625 L 355.62730,562.80148 L 359.68750,556.62500 L 359.59836,539.05329 L 355.43750,529.62500 L 356.93577,524.66694 L 361.39408,524.48553 L 371.32862,530.23026 L 374.91086,525.43289 L 374.65855,514.52434 L 374.40625,508.70543 L 364.22747,506.77253 L 363.43594,503.85963 L 340.25000,496.87500 L 322.18750,479.46875 L 321.68750,462.06250 L 322.59375,450.40625 L 346.53125,433.00000 L 369.03125,432.87500 L 403.06250,454.34375 L 399.29226,461.31711 L 399.59375,464.21875 L 417.53125,471.09375 L 434.43750,488.09375 L 446.25000,503.09375 L 463.15625,507.90625 L 467.84375,514.75000 L 459.31250,522.62500 L 458.00000,538.25000 L 473.96875,542.65625 L 493.00000,550.12500 L 497.81250,545.37500 L 498.50000,528.43750 L 495.15625,520.62500 L 491.78125,515.87500 L 491.50000,512.15625 L 497.50000,514.53125 L 502.53125,518.90625 L 511.59375,518.21875 L 510.50000,510.40625 L 498.18750,490.34375 L 498.12500,471.34375 L 508.21875,468.59375 L 524.34375,487.59375 L 550.68750,479.12500 L 556.65625,469.62500 L 553.46875,462.15625 L 552.29918,448.56250 L 555.21875,440.09375 L 565.25000,433.62500 L 598.71875,425.46875 L 630.12500,423.37500 L 652.37500,428.43750 L 663.43750,423.28125 L 677.53125,405.93750 L 699.78125,370.28125 L 718.96875,353.93750 L 727.09375,334.34375 L 739.31250,329.00000 L 753.53125,316.53125 L 767.78125,310.15625 L 785.62500,297.78125 L 797.53125,286.75000 L 812.53125,272.18750 C 742.61915,193.07211 640.56151,143.12500 526.87500,143.12500 z M 820.81250,281.34375 L 806.06250,295.06250 L 791.12500,309.25000 L 781.18750,313.78125 L 767.18750,321.40625 L 759.31250,330.00000 L 745.22294,349.27266 L 738.25888,353.27640 L 725.18725,366.44150 L 719.24111,374.51695 L 704.13363,387.68205 L 691.06200,403.90092 L 685.11586,417.06602 L 673.17539,425.45542 L 667.34248,432.82690 L 664.56336,442.23424 L 665.85595,457.74914 L 664.09476,468.17440 L 658.26185,478.59966 L 647.33931,488.00699 L 634.64955,489.94635 L 612.79844,494.93950 L 601.12660,497.89679 L 579.27550,496.78237 L 573.71123,494.65002 L 566.11110,487.42804 L 563.60062,487.33154 L 557.88336,490.61568 L 547.07646,494.91775 L 535.25164,499.21982 L 531.53198,511.74702 L 531.88404,522.23837 L 535.28988,528.65801 L 544.79373,536.87945 L 558.36928,542.04710 L 571.94484,544.16097 L 576.35666,552.57838 L 572.62505,563.03164 L 564.82174,571.44905 L 552.69163,577.11615 L 544.63323,582.78325 L 545.73619,592.52205 L 545.82122,611.42221 L 550.17650,619.93617 L 549.44215,635.57562 L 554.81536,650.19715 L 558.15272,654.63941 L 557.41836,665.18922 L 559.73779,679.81075 L 566.12893,694.43228 L 567.94575,717.00025 L 567.72672,738.55028 L 568.52561,749.92104 L 575.43206,769.43523 L 580.30266,792.00318 L 584.15535,814.57115 L 592.07973,837.13911 L 591.26152,853.21486 L 593.49710,864.20097 L 601.84024,875.18708 L 605.09375,899.40625 C 778.19470,863.21762 908.37502,709.42362 908.37500,525.31250 C 908.37500,436.32043 878.90884,355.48237 820.81250,281.34375 z M 201.71875,629.68750 L 192.25000,631.12500 L 188.56250,646.96875 L 173.43750,668.56250 C 243.53162,821.95309 355.65800,895.98348 526.87500,907.50000 C 548.76334,907.50000 570.17878,905.55178 591.06250,902.00000 L 590.83437,881.88804 L 582.06793,867.25138 L 579.40905,856.68643 L 580.19885,835.55654 L 576.91694,814.42666 L 566.50954,804.49396 L 566.28142,782.34615 L 564.01744,762.23418 L 556.66382,745.17600 L 555.85675,721.70051 L 556.06760,698.22501 L 553.22467,686.96465 L 549.36382,678.75807 L 540.41332,660.37221 L 538.58832,632.82501 L 535.74539,608.33158 L 529.95975,594.56028 L 519.08447,588.93239 L 501.08369,586.35828 L 486.13670,587.85589 L 473.17340,591.81045 L 461.22802,592.71124 L 449.28265,585.46860 L 431.02103,589.07172 L 429.04627,592.67485 L 430.12528,609.51103 L 435.27601,614.13208 L 434.31916,617.73521 L 421.14720,621.33833 L 407.97523,618.83390 L 397.26673,609.99559 L 388.59408,605.22899 L 381.95729,606.56996 L 369.21293,615.03642 L 352.39686,624.52081 L 331.50908,626.87970 L 313.67509,633.31030 L 300.27992,633.85877 L 286.88475,636.44308 L 276.54336,632.91983 L 258.05856,631.43244 L 252.80681,627.90919 L 247.55506,633.54728 L 235.17782,635.11367 L 228.18750,637.90625 L 216.90625,635.43750 L 201.71875,629.68750 z "
+          id="path2152"
+          sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"/>
+  <text
+          xml:space="preserve"
+          style="font-size:60.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="-642.91846"
+          y="125.49417"
+          id="text2780"
+          sodipodi:linespacing="100%"
+          transform="matrix(1.824973e-3,-0.999998,0.999998,1.824973e-3,0.000000,0.000000)"><tspan
+       id="tspan2781">OCÉAN</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:60.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="421.89948"
+          y="-926.53900"
+          id="text2786"
+          sodipodi:linespacing="100%"
+          transform="matrix(-1.824973e-3,0.999998,-0.999998,-1.824973e-3,0.000000,0.000000)"><tspan
+       id="tspan2787">OCÉAN</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:56.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="352.20294"
+          y="352.47867"
+          id="text4652"
+          sodipodi:linespacing="100%"><tspan
+       id="tspan4653">EUROPE</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:56.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="322.42758"
+          y="775.96271"
+          id="text4655"
+          sodipodi:linespacing="100%"><tspan
+       id="tspan4656">LIBYE</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:56.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="653.54376"
+          y="633.48022"
+          id="text4658"
+          sodipodi:linespacing="100%"><tspan
+       id="tspan4659">ASIE</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:24.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="234.12332"
+          y="588.63782"
+          id="text4661"
+          sodipodi:linespacing="100%"><tspan
+       id="tspan4662">MÉDITERRANÉE</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:24.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:middle;writing-mode:lr;"
+          x="607.75281"
+          y="453.18326"
+          id="text4664"
+          sodipodi:linespacing="100%"><tspan
+       x="607.75281"
+       y="453.18326"
+       sodipodi:role="line"
+       id="tspan4669">MER</tspan>
+    <tspan
+            x="607.75281"
+            y="477.18326"
+            sodipodi:role="line"
+            id="tspan4671">NOIRE</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:24.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="781.13055"
+          y="-444.93665"
+          id="text4679"
+          sodipodi:linespacing="100%"
+          transform="matrix(0.177292,0.984157,-0.984157,0.177292,0.000000,0.000000)"><tspan
+       id="tspan4680">FLEUVE NIL</tspan></text>
+  <text
+          xml:space="preserve"
+          style="font-size:24.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:Bitstream Vera Sans;text-anchor:start;writing-mode:lr;"
+          x="146.50052"
+          y="750.86377"
+          id="text4682"
+          sodipodi:linespacing="100%"
+          transform="matrix(0.680996,-0.732287,0.732287,0.680996,0.000000,0.000000)"><tspan
+       id="tspan4683">FLEUVE PHASE</tspan></text>
+</svg>

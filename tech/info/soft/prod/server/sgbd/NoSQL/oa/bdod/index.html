@@ -10,10 +10,10 @@
   <h2>Analyse</h2>
   <p>Une BDOD est :</p>
   <ul>
-    <li>une <strong>collection</strong> de
+    <li>Une <strong>collection</strong> de
       <ul>
-        <li><strong>documents</strong> (de type variable, ce sera donc à l'application de les interpréter)
-          <ul><li>pouvant se <strong>référencer</strong> entre eux (DBRef)</li></ul>
+        <li><strong>Documents</strong> (de type variable, ce sera donc à l'application de les interpréter)
+          <ul><li>Pouvant se <strong>référencer</strong> entre eux (DBRef)</li></ul>
         </li>
       </ul>
     </li>
@@ -22,10 +22,10 @@
 <section>
   <h2>Conception</h2>
   <p>Une BDOD est semblable à un <a href="../ecv">ECV</a> dont les valeurs sont des documents semi-structurés (en <a
-      href="/tech/info/soft/time/doc/xml">XML</a>, <a href="/tech/info/soft/time/JSON.html">JSON</a>, etc.) qui peuvent
+      href="/tech/info/soft/time/doc/xml">XML</a>, <a href="/tech/info/soft/data/JSON.html">JSON</a>, etc.) qui peuvent
     être examinées sans nécessiter leur chargement intégral (contrairement aux <a href="../ecv">ECV</a>).
-  <p>La répartition de charge se fait généralement entre un noeud "maître" (chargé des écritures) et des noeuds
-    "esclaves" (chargés des lectures). Si le noeud maître tombe, les esclaves en élisent un nouveau (fonction de sa
+  <p>La répartition de charge se fait généralement entre un nœud "maître" (chargé des écritures) et des nœuds "esclaves"
+    (chargés des lectures). Si le nœud maître tombe, les esclaves en élisent un nouveau (fonction de sa
     distance aux autres, de ses disponibilités en mémoire). Elle utilise généralement le partitionnement horizontal
     (selon le type de document, ou <em>sharding</em>).</p>
 </section>

@@ -1,0 +1,32 @@
+.matrix {
+  min-width: 75%;
+}
+
+.matrix form {
+  width: 100%;
+}
+
+.matrix .tabs {
+  display: table;
+}
+
+.matrix .tabs .tab {
+  display: table-row;
+}
+
+.matrix .tabs .tab > * {
+  display: table-cell;
+}
+
+.matrix .tabs .tab label {
+  text-align: right;
+  padding-right: 0.5em;
+  width: 8em;
+}
+
+.matrix .tabs .tab input {
+  width: 100%;
+  font-family: monospace;
+}
+
+/*# sourceMappingURL=matrix.css.map */

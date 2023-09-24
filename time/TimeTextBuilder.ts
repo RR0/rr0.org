@@ -1,4 +1,4 @@
-import {RR0SsgContext} from "../RR0SsgContext"
+import { RR0SsgContext } from '../RR0SsgContext';
 
 export class TimeTextBuilder {
   /**
@@ -11,7 +11,6 @@ export class TimeTextBuilder {
     const time = context.time
     let printOptions: Intl.DateTimeFormatOptions = {}
     let date = new Date()
-
     const year = time.getYear()
     if (year) {
       date.setFullYear(year)

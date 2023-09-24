@@ -1,5 +1,5 @@
-import {LanguageReplaceCommand} from "./LanguageReplaceCommand"
-import {rr0TestUtil} from "../test/RR0TestUtil"
+import { LanguageReplaceCommand } from './LanguageReplaceCommand';
+import { rr0TestUtil } from '../test/RR0TestUtil';
 
 describe("LanguageReplaceCommand", () => {
 
@@ -8,7 +8,7 @@ describe("LanguageReplaceCommand", () => {
     const command = new LanguageReplaceCommand()
     const outputFile = await command.execute(context)
     expect(outputFile.contents).toBe(
-      `<html><head></head><body><span id="alternate"><a href="/time/1/9/6/8/CondonReport/index.html">English translation</a></span></body></html>`)
+      `<html><head></head><body><span id="alternate"><a href="/time/1/9/6/8/CondonReport/index.html">English version</a></span></body></html>`)
   })
 
   test("add french translation", async () => {
@@ -16,6 +16,6 @@ describe("LanguageReplaceCommand", () => {
     const command = new LanguageReplaceCommand()
     const outputFile = await command.execute(context)
     expect(outputFile.contents).toBe(
-      `<html><head></head><body><span id="alternate"><a href="/time/1/9/6/8/CondonReport/index_fr.html">Traduction française</a></span></body></html>`)
+      `<html><head></head><body><span id="alternate"><a href="/time/1/9/6/8/CondonReport/index_fr.html">Version française</a></span></body></html>`)
   })
 })

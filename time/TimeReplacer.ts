@@ -1,10 +1,10 @@
-import {TimeUrlBuilder} from "./TimeUrlBuilder"
-import {TimeTextBuilder} from "./TimeTextBuilder"
-import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
-import {HtmlRR0SsgContext, RR0SsgContext} from "../RR0SsgContext"
-import {UrlUtil} from "../util/url/UrlUtil"
-import {DomReplacement} from "./DomReplacement"
-import {ObjectUtils} from "@rr0/common"
+import { TimeUrlBuilder } from './TimeUrlBuilder';
+import { TimeTextBuilder } from './TimeTextBuilder';
+import { RelativeTimeTextBuilder } from './RelativeTimeTextBuilder';
+import { HtmlRR0SsgContext, RR0SsgContext } from '../RR0SsgContext';
+import { UrlUtil } from '../util/url/UrlUtil';
+import { DomReplacement } from './DomReplacement';
+import { ObjectUtils } from '@rr0/common';
 
 export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
@@ -77,7 +77,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
   static replaceElement(context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[],
                         previousContext?: RR0SsgContext): HTMLElement {
-    let replacement: HTMLElement | undefined = undefined
+    let replacement: HTMLElement | undefined;
     const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
     const url = TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles)
     let title = TimeTextBuilder.build(context)

@@ -13,7 +13,8 @@ import { RR0ContentStep } from './RR0ContentStep';
 export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
   protected num = 0;
 
-  constructor(protected outDir: string, protected width: number = 1200, protected height: number = 600) {
+  constructor(protected outDir: string, protected timeFiles: string[], protected width: number = 1200,
+              protected height: number = 600) {
   }
 
   async execute(context: HtmlRR0SsgContext): Promise<SsgFile> {
@@ -32,21 +33,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     canvasCtx.fillStyle = '#666';
     this.drawText(canvasCtx, title, margin, 70, '400 3em system-ui,sans-serif');
 
-    const authors = context.inputFile.meta.author;
-    const authorStr = authors && authors.length > 0 ? authors.join(' & ') + ' : ' : '';
-    let timeStr: string;
-    const timeContext = RR0ContentStep.setTimeFromPath(context, context.outputFile.name);
-    if (timeContext) {
-      context.time.setYear(timeContext.getYear());
-      context.time.setMonth(timeContext.getMonth());
-      context.time.setDayOfMonth(timeContext.getDayOfMonth());
-      context.time.setHour(undefined);
-      context.time.setMinutes(undefined);
-      timeStr = ', ' + TimeTextBuilder.build(context);
-    } else {
-      timeStr = '';
-    }
-    const infoStr = (authorStr + context.outputFile.meta.copyright + timeStr) || 'RR0.org';
+    const infoStr = this.getInfoStr(context);
     canvasCtx.font = '400 1.25em system-ui,sans-serif';
     canvasCtx.fillText(infoStr, margin, this.height - 50);
 
@@ -61,6 +48,39 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     context.outputFile.contents = outDoc.documentElement.outerHTML;
 
     return context.outputFile;
+  }
+
+  getInfoStr(context: HtmlRR0SsgContext) {
+    const authors = context.inputFile.meta.author;
+    const authorsStr = authors && authors.length > 0 ? authors.join(' & ') : '';
+
+    let timeStr = '';
+    const fileName = context.outputFile.name;
+    if (this.timeFiles.includes(fileName)) {
+      timeStr = 'Chronologie';
+    } else {
+      const timeContext = RR0ContentStep.setTimeFromPath(context, fileName);
+      if (timeContext) {
+        context.time.setYear(timeContext.getYear());
+        context.time.setMonth(timeContext.getMonth());
+        context.time.setDayOfMonth(timeContext.getDayOfMonth());
+        context.time.setHour(undefined);
+        context.time.setMinutes(undefined);
+        timeStr = TimeTextBuilder.build(context);
+      }
+    }
+
+    const copyrightStr = context.outputFile.meta.copyright || 'RR0.org';
+    let infoStr = authorsStr ? authorsStr : '';
+    infoStr = infoStr ? [infoStr, copyrightStr].join(' : ') : copyrightStr;
+    if (timeStr) {
+      if (timeStr === 'Chronologie') {
+        infoStr = [timeStr, infoStr].join(', ');
+      } else {
+        infoStr = [infoStr, timeStr].join(', ');
+      }
+    }
+    return infoStr;
   }
 
   /**

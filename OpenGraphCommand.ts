@@ -32,7 +32,8 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     canvasCtx.fillStyle = '#666';
     this.drawText(canvasCtx, title, margin, 70, '400 3em system-ui,sans-serif');
 
-    canvasCtx.font = '400 1.25em system-ui,sans-serif';
+    const authors = context.inputFile.meta.author;
+    const authorStr = authors && authors.length > 0 ? authors.join(' & ') + ' : ' : '';
     let timeStr: string;
     const timeContext = RR0ContentStep.setTimeFromPath(context, context.outputFile.name);
     if (timeContext) {
@@ -45,8 +46,9 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     } else {
       timeStr = '';
     }
-    const info = (context.outputFile.meta.copyright + timeStr) || 'RR0.org';
-    canvasCtx.fillText(info, margin, this.height - 50);
+    const infoStr = (authorStr + context.outputFile.meta.copyright + timeStr) || 'RR0.org';
+    canvasCtx.font = '400 1.25em system-ui,sans-serif';
+    canvasCtx.fillText(infoStr, margin, this.height - 50);
 
     this.num++;
     const imageUrl = this.writeImageFile(context, canvas);

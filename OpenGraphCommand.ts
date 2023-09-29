@@ -13,7 +13,8 @@ import { RR0ContentStep } from './RR0ContentStep';
 export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
   protected num = 0;
 
-  constructor(protected outDir: string, protected timeFiles: string[], protected width: number = 1200,
+  constructor(protected outDir: string, protected timeFiles: string[], protected baseUrl: string,
+              protected width: number = 1200,
               protected height: number = 600) {
   }
 
@@ -168,7 +169,9 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     let imageIndex = 0;
     if (imageIndex < docImages.length) {
       const firstImage = docImages[0];
-      const firstImageUrl = firstImage.getAttribute('src');
+      const firstImageSrc = firstImage.getAttribute('src');
+      const firstImageUrl = firstImageSrc.startsWith(this.baseUrl) ? firstImageSrc.substring(
+        this.baseUrl.length) : firstImageSrc;
       const dir = path.dirname(context.outputFile.name);
       try {
         const src = firstImageUrl.startsWith('/') ? firstImageUrl.substring(1) : path.join(dir, firstImageUrl);

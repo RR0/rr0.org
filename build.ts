@@ -145,6 +145,7 @@ getTimeFiles().then(async (timeFiles) => {
   const orgService = new OrganizationService('org');
 
   const searchCommand = new SearchCommand(['404.html', 'Referencement.html']);
+  const baseUrl = 'https://rr0.org';
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
@@ -174,8 +175,8 @@ getTimeFiles().then(async (timeFiles) => {
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand(siteBaseUrl),
         new DescriptionReplaceCommand('UFO data for french-reading people', 'abstract'),
-        new ImageRegistryCommand(config.outDir, 275, 500),
-        new OpenGraphCommand(config.outDir, timeFiles),
+        new ImageRegistryCommand(config.outDir, 275, 500, baseUrl),
+        new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
         searchCommand
       ],
       getOutputFile(context: SsgContext): SsgFile {

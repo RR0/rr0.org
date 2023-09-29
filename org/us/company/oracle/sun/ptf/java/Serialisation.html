@@ -1,102 +1,81 @@
-<html>
-
-<head>
-
-  <title>Serialisation</title>
-
-  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-
-  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
-
-</head>
-
-
-<body>
-<h1>Serialisation</h1>
-<table width="100%">
-  <tr>
-    <th colspan="4"><a href="javascript:history.go(-1)">Retour</a> | <a href="/tech/info/index.html">Home</a> | <a
-        href="/tech/info/Contact.html">Contact</a></th>
-  </tr>
-</table>
-
+<!--#include virtual="/header-start.html" -->
+<title>Serialisation</title>
+<!--#include virtual="/header-end.html" -->
 <p><i>Serialization</i>.</p>
-
-<h2>Besoin</h2>
-
-<p>Enregistrer l'état d'un objet Java pour :</p>
-<ul>
-  <li>le retrouver tel quel après relecture</li>
-  <li>le faire voyager via un réseau</li>
-</ul>
-<h2>Analyse</h2>
-<p>La sérialisation consiste à enregistrer tout ce qui constitue l'état d'un objet dans un flux quelconque (fichier, <a
-    href="/tech/info/soft/prog/oo/java/Socket.html">socket</a>, etc.). Cela peut inclure l'ensemble de ses attributs ou
-  une sélection de ceux-ci. Ces attributs peuvent être aussi bien des types simples que d'autres objets complexes,
-  incluant eux-même des attributs complexes, etc.</p>
-<h2>Conception</h2>
-<p>Un objet Java peut être sérialisé :</p>
-<ul>
-  <li>en étant de type Serializable. Cela ne fait en implémentant une interface, et permet donc à des objets héritant
-    d'autres objets d'être sérialisés.</li>
-  <li>en étant de type Externalizable</li>
-</ul>
-<h2>Implémentation</h2>
-<p><code>java.io.Serializable</code> + constructeur public par défaut</p>
-<h2>Limitations</h2>
-<ul>
-  <li>Pas de support du stockage dans un <a href="/tech/info/soft/prod/server/sgbd/index.html">SGBD</a></li>
-  <li>Pas de <a href="/tech/info/soft/prog/oo/java/Transaction.html">transactions</a> ni de gestion des accès
-    concurrents</li>
-  <li>Pas de possibilité de requêtes (recherche multicritères pamir un ensemble d'objets enregistrés)</li>
-</ul>
-<h2>Exemples</h2>
-
-<p>Un exemple d'objet sérialisable est :</p>
-<blockquote>
-  <p><code>class MonObject extends MonAncetre <strong>implements java.io.Serializable </strong>{<br> protected int id;
-    <span class="codeComment">//
+<section>
+  <h2>Besoin</h2>
+  <p>Enregistrer l'Ã©tat d'un objet pour :</p>
+  <ul>
+    <li>le retrouver tel quel aprÃ¨s relecture</li>
+    <li>le faire voyager via un rÃ©seau</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>La sÃ©rialisation consiste Ã  enregistrer tout ce qui constitue l'Ã©tat d'un objet dans un flux quelconque (fichier,
+    <a
+        href="/tech/info/soft/reseau/protocole/Socket.html">socket</a>, etc.). Cela peut inclure l'ensemble de ses
+    attributs ou une sÃ©lection de ceux-ci. Ces attributs peuvent Ãªtre aussi bien des types simples que d'autres objets
+    complexes, incluant eux-mÃªme des attributs complexes, etc.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Un objet Java peut Ãªtre sÃ©rialisÃ© :</p>
+  <ul>
+    <li>en Ã©tant de type Serializable. Cela ne fait en implÃ©mentant une interface, et permet donc Ã  des objets hÃ©ritant
+      d'autres objets d'Ãªtre sÃ©rialisÃ©s.</li>
+    <li>en Ã©tant de type Externalizable</li>
+  </ul>
+</section>
+<section>
+  <h2>ImplÃ©mentation</h2>
+  <p><code>java.io.Serializable</code> + constructeur public par dÃ©faut</p></section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Pas de support du stockage dans un <a href="/tech/info/soft/prod/server/sgbd/index.html">SGBD</a></li>
+    <li>Pas de <a href="/tech/info/soft/prog/oo/java/Transaction.html">transactions</a> ni de gestion des accÃ¨s
+      concurrents</li>
+    <li>Pas de possibilitÃ© de requÃªtes (recherche multicritÃ¨res pamir un ensemble d'objets enregistrÃ©s)</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple d'objet sÃ©rialisable est :</p>
+  <blockquote>
+    <p><code>class MonObject extends MonAncetre <strong>implements java.io.Serializable </strong>{<br> protected int id;
+      <span class="codeComment">//
     Sera
-    sérialisé</span><br> private String nom; <span class="codeComment">   //
-Sera sérialisé</span><br> private OtherObject objet; <span class="codeComment">    //
+    sÃ©rialisÃ©</span><br> private String nom; <span class="codeComment">   //
+Sera sÃ©rialisÃ©</span><br> private OtherObject objet; <span class="codeComment">    //
     Sera
-    sérialisé</span><br> private <strong>transient </strong>Thread traitement; <span class="codeComment">//
-Ne sera pas sérialisé</span><br> <br> <span class="codeComment">/**<br>
-   * Constructeur par défaut.<br>
-   * Nécessaire pour la désérialisation.<br>
+    sÃ©rialisÃ©</span><br> private <strong>transient </strong>Thread traitement; <span class="codeComment">//
+Ne sera pas sÃ©rialisÃ©</span><br> <br> <span class="codeComment">/**<br>
+   * Constructeur par dÃ©faut.<br>
+   * NÃ©cessaire pour la dÃ©sÃ©rialisation.<br>
    */</span><br> <strong>public MonObject() </strong>{<br> } <br> }</code></p>
-</blockquote>
-<p>Un exemple de sérialisation personnalisée est :</p>
-<blockquote>
-  <p><code>class MonObject extends MonAncetre implements java.io.Serializable<strong> </strong>{<br> protected int
-    id;<br> private String nom;<br> private OtherObject objet;<br> private transient Thread traitement;<br> <br> public
-    MonObject() {<br> } <br> </code> <code><br> <span class="codeComment">/**<br>
-   * Personalisation de la désérialisation<br>
+  </blockquote>
+  <p>Un exemple de sÃ©rialisation personnalisÃ©e est :</p>
+  <blockquote>
+    <p><code>class MonObject extends MonAncetre implements java.io.Serializable<strong> </strong>{<br> protected int id;<br>
+      private String nom;<br> private OtherObject objet;<br> private transient Thread traitement;<br> <br> public
+      MonObject() {<br> } <br> </code> <code><br> <span class="codeComment">/**<br>
+   * Personalisation de la dÃ©sÃ©rialisation<br>
    */</span><br> <strong> private void readObject(ObjectInputStream someObjectStream) {</strong><br> try {<br> <strong>someObjectStream.defaultReadObject();</strong>
-    <span class="codeComment">//
-Exécute la sérialisation par défaut d'abord</span><br> traitement = new Thread (nom); <span class="codeComment">//
-Récrée un Thread similaire (qui n'était pas sérialisable)</span><br> } catch (Exception e) {<br> throw new
-    RuntimeException(<span class="codeString">"Erreur lors
-de la désérialisation: "</span> + e);<br> }<br> }<br> }</code></p>
-</blockquote>
-<h2>Voir</h2>
-
-<ul>
-
-  <li><a href="https://java.sun.com/j2se/1.4.1/docs/guide/serialization/">Documentation J2SE sur la sérialisation </a>
-    par JavaSoft</li>
-  <li><a href="https://java.sun.com/docs/books/tutorial/essential/io/serialization.html">La sérialisation décrite dans
-    la didacticiel Java</a> de JavaSoft</li>
-</ul>
-
-<table width="100%">
-  <tr>
-    <th colspan="4"><a href="javascript:history.go(-1)">Retour</a> | <a href="/tech/info/index.html">Home</a> | <a
-        href="/tech/info/Contact.html">Contact</a></th>
-  </tr>
-</table>
-
-</body>
-
-</html>
-
+      <span class="codeComment">//
+ExÃ©cute la sÃ©rialisation par dÃ©faut d'abord</span><br> traitement = new Thread (nom); <span class="codeComment">//
+RÃ©crÃ©e un Thread similaire (qui n'Ã©tait pas sÃ©rialisable)</span><br> } catch (Exception e) {<br> throw new
+      RuntimeException(<span class="codeString">"Erreur lors
+de la dÃ©sÃ©rialisation: "</span> + e);<br> }<br> }<br> }</code></p>
+  </blockquote>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><a href="https://java.sun.com/j2se/1.4.1/docs/guide/serialization/">Documentation J2SE sur la sÃ©rialisation </a>
+      par JavaSoft</li>
+    <li><a href="https://java.sun.com/docs/books/tutorial/essential/io/serialization.html">La sÃ©rialisation dÃ©crite dans
+      la didacticiel Java</a> de JavaSoft</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

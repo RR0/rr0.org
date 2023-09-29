@@ -1,134 +1,139 @@
-<html>
-<head>
-  <title>Permission</title>
-  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-<h1><span class="sourceIdent1"></span> <span class="warning"></span> <span class="titre4"><a
-    href="https://java.sun.com/j2se/1.4.1/docs/guide/security/permissions.html">Permission</a></span></h1>
-<h2>Besoin</h2>
-<p>Autoriser un acteur donné à effectuer une opération sur une ressource.</p>
-<h2>Implémentation</h2>
-<h3>ACL/Permissions</h3>
-<p>A l'image de la hiérarchie des exceptions, les permissions sont représentées par une classe racine, <code>java.security.Permission</code>
-  (classe abstraite à ne pas confondre à l'interface obsolète <code>java.security.acl.Permission</code>), et diverses
-  classes dérivées représentant les permissions prédéfinies de la plate-forme Java 2. Comme pour les exceptions
-  également, il est possible de créer ses propres permissions au travers de classes dérivant de cette racine ou de l'une
-  des permissions prédéfinies.</p>
-<p>Il existe effectivement des permissions relatives à chaque aspects de la plate-forme Java (système de fichiers,
-  réseau, interface graphique, introspection...) dont les classes se trouvent dans les packages concernés (java.io,
-  java.net, java.awt, java.lang.reflect...). On peut trouver une liste complète des permissions possibles et des risques
-  encourus à les autoriser <a href="https://java.sun.com/j2se/1.4.1/docs/guide/security/permissions.html">dans la
-    documentation du JDK</a>.</p>
-<p><i>Comment fixer des permissions ?</i></p>
-<p>Il est possible de fixer des permissions de deux manières :</p>
-<ul>
-  <li>par programmation</li>
-  <li>dans un fichier définissant une politique de sécurité</li>
-</ul>
-<p>Notons toutefois que la programmation sera dans certains cas à préférer aux fichiers de politique de sécurité, dans
-  la mesure où certains types de permissions sont dépendantes de la plate-forme, comme les permissions liées au système
-  de fichier, dont le paramétrage peut avoir à spécifier des séparateurs de fichiers spécifiques ("/" sous Unix, "\"
-  sous Windows, ":" sous MacOS...).</p>
-<p>Concrètement, les permissions sont définies par :</p>
-<ul>
-  <li>un <b>type</b> (une classe de permission, <code>FilePermission</code> par exemple)</li>
-  <li>un <b>nom cible</b> désignant la donnée concernée par la permission (le nom d'un fichier, d'une machine, une
-    propriété...)</li>
-  <li>une <b>action</b> autorisée sur cette cible (lire, écrire...), fonction du type de la permission. Notons que
-    nombre de permissions ne spécifient pas d'action, puisque définissant une permission "tout ou rien" (les actions
-    seraient "autorise" et "interdit" mais la seule présence de la permission signifie "autorise"). Comme le seul nom
-    cible suffit à désigner ces permissions, on les appelle permissions "nommées".</li>
-</ul>
-<p>Une permission définie par ces trois composantes peut ensuite être accordée à un acteur identifié par son <a
-    href="#codesource">origine de code</a>, qui encapsule l'URL de la provenance du code (y compris pour du code local)
-  et/ou un certificat (il est donc possible de définir des permissions pour des acteurs ne disposant pas de certificat).
-</p>
-<p><span class="attention">Toute application Java (y compris les applets) aura
-  <i>toujours</i> le droit de <i>lire</i> le système de fichier à
-  partir du niveau défini par l'URL de leur <a href="#codesource">origine
-  de code</a> (sous-répertoires y compris donc). Elle n'aura <i>jamais</i>
+<!--#include virtual="/header-start.html" -->
+<title>Permission</title>
+<meta content="https://java.sun.com/j2se/1.4.1/docs/guide/security/permissions.html" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Autoriser un acteur donnÃ© Ã  effectuer une opÃ©ration sur une ressource.</p>
+</section>
+<section>
+  <h2>ImplÃ©mentation</h2>
+  <section>
+    <h3>ACL/Permissions</h3>
+    <p>A l'image de la hiÃ©rarchie des exceptions, les permissions sont reprÃ©sentÃ©es par une classe racine, <code>java.security.Permission</code>
+      (classe abstraite Ã  ne pas confondre Ã  l'interface obsolÃ¨te <code>java.security.acl.Permission</code>), et
+      diverses classes dÃ©rivÃ©es reprÃ©sentant les permissions prÃ©dÃ©finies de la plate-forme Java 2. Comme pour les
+      exceptions Ã©galement, il est possible de crÃ©er ses propres permissions au travers de classes dÃ©rivant de cette
+      racine ou de l'une des permissions prÃ©dÃ©finies.</p>
+    <p>Il existe effectivement des permissions relatives Ã  chaque aspects de la plate-forme Java (systÃ¨me de fichiers,
+      rÃ©seau, interface graphique, introspection...) dont les classes se trouvent dans les packages concernÃ©s (java.io,
+      java.net, java.awt, java.lang.reflect...). On peut trouver une liste complÃ¨te des permissions possibles et des
+      risques encourus Ã  les autoriser <a href="https://java.sun.com/j2se/1.4.1/docs/guide/security/permissions.html">dans
+        la documentation du JDK</a>.</p>
+    <p><i>Comment fixer des permissions ?</i></p>
+    <p>Il est possible de fixer des permissions de deux maniÃ¨res :</p>
+    <ul>
+      <li>par programmation</li>
+      <li>dans un fichier dÃ©finissant une politique de sÃ©curitÃ©</li>
+    </ul>
+    <p>Notons toutefois que la programmation sera dans certains cas Ã  prÃ©fÃ©rer aux fichiers de politique de sÃ©curitÃ©,
+      dans la mesure oÃ¹ certains types de permissions sont dÃ©pendantes de la plate-forme, comme les permissions liÃ©es au
+      systÃ¨me de fichier, dont le paramÃ©trage peut avoir Ã  spÃ©cifier des sÃ©parateurs de fichiers spÃ©cifiques ("/" sous
+      Unix, "\" sous Windows, ":" sous MacOS...).</p>
+    <p>ConcrÃ¨tement, les permissions sont dÃ©finies par :</p>
+    <ul>
+      <li>un <b>type</b> (une classe de permission, <code>FilePermission</code> par exemple)</li>
+      <li>un <b>nom cible</b> dÃ©signant la donnÃ©e concernÃ©e par la permission (le nom d'un fichier, d'une machine, une
+        propriÃ©tÃ©...)</li>
+      <li>une <b>action</b> autorisÃ©e sur cette cible (lire, Ã©crire...), fonction du type de la permission. Notons que
+        nombre de permissions ne spÃ©cifient pas d'action, puisque dÃ©finissant une permission "tout ou rien" (les actions
+        seraient "autorise" et "interdit" mais la seule prÃ©sence de la permission signifie "autorise"). Comme le seul
+        nom cible suffit Ã  dÃ©signer ces permissions, on les appelle permissions "nommÃ©es".</li>
+    </ul>
+    <p>Une permission dÃ©finie par ces trois composantes peut ensuite Ãªtre accordÃ©e Ã  un acteur identifiÃ© par son <a
+        href="#codesource">origine de code</a>, qui encapsule l'URL de la provenance du code (y compris pour du code
+      local) et/ou un certificat (il est donc possible de dÃ©finir des permissions pour des acteurs ne disposant pas de
+      certificat).
+    </p>
+    <p><span class="attention">Toute application Java (y compris les applets) aura
+  <i>toujours</i> le droit de <i>lire</i> le systÃ¨me de fichier Ã 
+  partir du niveau dÃ©fini par l'URL de leur <a href="#codesource">origine
+  de code</a> (sous-rÃ©pertoires y compris donc). Elle n'aura <i>jamais</i>
   besoin d'une quelconque permission pour cela. Ne placez donc pas de ressources
-  sensibles (données confidentielles, exécutables) dans le répertoire
-  d'origine ou sous le répertoire d'origine d'un code suspect.</span></p>
-<p>Par exemple :</p>
-<blockquote><code> <strong>grant codeBase</strong> "file:${java.home}/lib/ext/-" {<br/> <strong>permission
-  java.security.AllPermission</strong>;<br/> }; </code></blockquote>
-<p>autorise toutes les entités chargées à partir de l'URL <q>file:${java.home}/lib/ext</q> à effectuer toutes les
-  actions possibles, et :</p>
-<blockquote><code> <strong>grant signedBy</strong> "Duke", <strong>codeBase</strong> "https://buwin/plugintest" {<br/>
-  <strong>permission</strong> <strong>java.io.FilePermission</strong> "tmpFoo", "write";<br/> }; </code></blockquote>
-<p>autorise tout code signé par Duke et provenant de l'URL <code>https://buwin/plugintest</code> à écrire le fichier
-  <code>tmpFoo</code> .</p>
-<p>Chaque politique peut être associée aux opérations d'une plate-forme Java (JDK ou JRE/plugin), ainsi qu'à un
-  utilisateur particulier de cette plate-forme.</p>
-<p>Cette politique est définie dans un fichier, spécifié par le fichier de sécurité de Java 2,
-  <code>java.security</code> dans le sous-répertoire <code>lib/security/</code> de votre plate-forme Java.</p>
-<p>On trouvera par défaut dans ce fichier que la spécification de la politique de sécurité doit être lue depuis le
-  fichier <code>java.policy</code> dans le même sous-répertoire, ainsi que dans le répertoire HOME de l'utilisateur
-  courant :</p>
-<blockquote><code> policy.url.1=file:${java.home}/lib/security/java.policy<br/>
-  policy.url.2=file:${user.home}/.java.policy </code></blockquote>
-<p>Certificate, X509Certificate, CertificateFactory</p>
-<h3><b>Contrôleur d'accès</b></h3>
-<p>Le rôle du contrôleur d'accès est donc à terme de remplacer le Gestionnaire de Sécurité. Il s'agit d'une classe
-  statique (non-instantiable), contrôlant les accès aux ressources en fonction du Contexte de Sécurité courant.</p>
-<h6>Exécution privilégiée</h6>
-<p>Il est possible pour une classe privilégiée (disposant d'une permission donnée) de transmettre momentanément son
-  contexte de protection (les permissions qui lui sont accordées) à une autre classe non privilégiée. </p>
-<p>Il convient cependant d'être particulièrement précautionneux quant aux opérations effectuées dans de telles zones
-  temporairement privilégiées (attention à ce que l'on fait, ce que l'on permet de faire) et d'une manière générale d'y
-  effectuer le minimum possible d'opérations.</p>
-<h6>Cliché du contexte </h6>
-<p>(AccessControlContext / thread) pour examen d'une permission dans un autre contexte : rapport avec le GuardedObject
-  ?</p>
-<h3><b class="titre4">Domaine de Protection</b></h3>
-<p>Un domaine de protection représente un modèle similaire à celui de la sanbox de Java 1.1, où l'identification par
-  CODEBASE serait étendue au concept d'<a href="#codesource">origine de code</a>.</p>
-<p>Un domaine de protection associe un ensemble de <a href="#permission">permissions</a> à une <a href="#codesource">origine
-  de code</a> donnée.</p>
-<p>Il existe typiquement deux catégories de domaines de protection :</p>
-<ul>
-  <li>le <b>domaine "système"</b>, capable d'accéder aux ressources de la machine</li>
-  <li>le <b>domaine "applicatif"</b>, nécessitant parfois de recourir momentanément au fonctionnalités offertes au
-    domaine système (de la même manière que sous Unix on passe momentanément "root" pour effectuer certaines opérations
-    utilisateur) au travers d'une <a href="#privileged">exécution privilégiée</a>.
-  </li>
-</ul>
-<h4><b class="titre4">Contexte de Sécurité</b></h4>
-<p>L'exécution du code de plusieurs classes par un même thread implique donc la traversée de plusieurs domaines de
-  protection. On définit le Contexte de Sécurité comme l'<i>intersection</i> des permissions accordées par les Domaines
-  de Protection traversés.</p>
-<p>Une classe autorisée à écrire des fichiers pourra par exemple appeler une classe non autorisée à écrire de tels
-  fichiers. Dans ce cas, la règle de l'intersection des domaines de protection ne permettra pas au code de la classe non
-  privilégiée de disposer des privilèges de la classe appelante (l'intersection correspond à la permission la plus
-  faible des deux).</p>
-<p>Il est possible à tout moment de demander au Contrôleur d'Accès quel est le Contexte de Sécurité courant (du thread
-  courant), via la méthode statique <code>AccessControler.getContext()</code>. Cette méthode retourne un objet de type
-  <code>java.security.AccessControlContext</code> ou l'un de ces descendants (il pourra en effet être intéressant de
-  spécialiser le contexte de sécurité pour y inclure de nouveaux paramètres).</p>
-<h4><b class="titre4">Blocs et actions privilégiés</b></h4>
-<p>Il peut arriver qu'une classe privilégiée souhaite transmettre temporairement des privilèges à une classe moins
-  privilégiée. Cette opération s'effectue au travers de l'exécution d'un "bloc privilégié".</p>
-<p>L'exécution d'un Bloc Privilégié consiste à demander l'exécution d'une Action Privilégiée. Une Action Privilégiée est
-  une classe contenant le code devant disposer de privilèges. Une telle classe doit implémenter l'interface <code>java.security.PrivilegedAction</code>,
-  qui impose de fournir le code d'une méthode <code>run()</code>, où doit se trouver le code privilégié.</p>
-<p>Par exemple :</p>
-<blockquote><code> class PrivilegedUserNameAccess implements <strong>java.security.PrivilegedAction</strong> {<br/>
-  public Object run() {<br/> return System.getProperty (<span class="codeString">"user.name"</span>); <br/> }<br/>
-  }</code></blockquote>
-<p>L'exécution de cette action privilégiée est alors demandée au Contrôleur d'Accès :</p>
-<blockquote><code> String userName = (String) <strong>AccessControler.doPrivileged</strong> (new
-  PrivilegedUserNameAccess());</code></blockquote>
-<p>Dans cet exemple, le bloc permet de retourner la valeur d'une propriété qui ne serait pas accessible si la classe
-  appelante ne disposais pas de la permission nécessaire (en l'occurence <code>java.util.PropertyPermission
-    ("user.name", "read")</code>).</p>
-<p>Cependant, il est possible de faire bénéficier une action privilégiée d'un contexte de sécurité différent de celui de
-  la classe appelante (un contexte plus limité par exemple). Dans ce cas, il suffit de fournir à la méthode <code>doPrivileged</code>()
-  le contexte adéquat :</p>
-<blockquote><code> String userName = (String) <strong>AccessControler.doPrivileged</strong> (new
-  PrivilegedUserNameAccess(), someActionContext);</code></blockquote>
-</body>
-</html>
+  sensibles (donnÃ©es confidentielles, exÃ©cutables) dans le rÃ©pertoire
+  d'origine ou sous le rÃ©pertoire d'origine d'un code suspect.</span></p>
+    <p>Par exemple :</p>
+    <blockquote><code> <strong>grant codeBase</strong> "file:${java.home}/lib/ext/-" {<br/> <strong>permission
+      java.security.AllPermission</strong>;<br/> }; </code></blockquote>
+    <p>autorise toutes les entitÃ©s chargÃ©es Ã  partir de l'URL <q>file:${java.home}/lib/ext</q> Ã  effectuer toutes les
+      actions possibles, et :</p>
+    <blockquote><code> <strong>grant signedBy</strong> "Duke", <strong>codeBase</strong> "https://buwin/plugintest"
+      {<br/> <strong>permission</strong> <strong>java.io.FilePermission</strong> "tmpFoo", "write";<br/> }; </code>
+    </blockquote>
+    <p>autorise tout code signÃ© par Duke et provenant de l'URL <code>https://buwin/plugintest</code> Ã  Ã©crire le fichier
+      <code>tmpFoo</code> .</p>
+    <p>Chaque politique peut Ãªtre associÃ©e aux opÃ©rations d'une plate-forme Java (JDK ou JRE/plugin), ainsi qu'Ã  un
+      utilisateur particulier de cette plate-forme.</p>
+    <p>Cette politique est dÃ©finie dans un fichier, spÃ©cifiÃ© par le fichier de sÃ©curitÃ© de Java 2,
+      <code>java.security</code> dans le sous-rÃ©pertoire <code>lib/security/</code> de votre plate-forme Java.</p>
+    <p>On trouvera par dÃ©faut dans ce fichier que la spÃ©cification de la politique de sÃ©curitÃ© doit Ãªtre lue depuis le
+      fichier <code>java.policy</code> dans le mÃªme sous-rÃ©pertoire, ainsi que dans le rÃ©pertoire HOME de l'utilisateur
+      courant :</p>
+    <blockquote><code> policy.url.1=file:${java.home}/lib/security/java.policy<br/>
+      policy.url.2=file:${user.home}/.java.policy </code></blockquote>
+    <p>Certificate, X509Certificate, CertificateFactory</p></section>
+  <section>
+    <h3>ContrÃ´leur d'accÃ¨s</h3>
+    <p>Le rÃ´le du contrÃ´leur d'accÃ¨s est donc Ã  terme de remplacer le Gestionnaire de SÃ©curitÃ©. Il s'agit d'une classe
+      statique (non-instantiable), contrÃ´lant les accÃ¨s aux ressources en fonction du Contexte de SÃ©curitÃ© courant.</p>
+    <h6>ExÃ©cution privilÃ©giÃ©e</h6>
+    <p>Il est possible pour une classe privilÃ©giÃ©e (disposant d'une permission donnÃ©e) de transmettre momentanÃ©ment son
+      contexte de protection (les permissions qui lui sont accordÃ©es) Ã  une autre classe non privilÃ©giÃ©e. </p>
+    <p>Il convient cependant d'Ãªtre particuliÃ¨rement prÃ©cautionneux quant aux opÃ©rations effectuÃ©es dans de telles zones
+      temporairement privilÃ©giÃ©es (attention Ã  ce que l'on fait, ce que l'on permet de faire) et d'une maniÃ¨re gÃ©nÃ©rale
+      d'y effectuer le minimum possible d'opÃ©rations.</p>
+    <h6>ClichÃ© du contexte </h6>
+    <p>(AccessControlContext / thread) pour examen d'une permission dans un autre contexte : rapport avec le
+      GuardedObject ?</p>
+  </section>
+  <section>
+    <h3>Domaine de Protection</h3>
+    <p>Un domaine de protection reprÃ©sente un modÃ¨le similaire Ã  celui de la sanbox de Java 1.1, oÃ¹ l'identification par
+      CODEBASE serait Ã©tendue au concept d'<a href="#codesource">origine de code</a>.</p>
+    <p>Un domaine de protection associe un ensemble de <a href="#permission">permissions</a> Ã  une <a
+        href="#codesource">origine de code</a> donnÃ©e.</p>
+    <p>Il existe typiquement deux catÃ©gories de domaines de protection :</p>
+    <ul>
+      <li>le <b>domaine "systÃ¨me"</b>, capable d'accÃ©der aux ressources de la machine</li>
+      <li>le <b>domaine "applicatif"</b>, nÃ©cessitant parfois de recourir momentanÃ©ment au fonctionnalitÃ©s offertes au
+        domaine systÃ¨me (de la mÃªme maniÃ¨re que sous Unix on passe momentanÃ©ment "root" pour effectuer certaines
+        opÃ©rations utilisateur) au travers d'une <a href="#privileged">exÃ©cution privilÃ©giÃ©e</a>.
+      </li>
+    </ul>
+    <h4><b class="titre4">Contexte de SÃ©curitÃ©</b></h4>
+    <p>L'exÃ©cution du code de plusieurs classes par un mÃªme thread implique donc la traversÃ©e de plusieurs domaines de
+      protection. On dÃ©finit le Contexte de SÃ©curitÃ© comme l'<i>intersection</i> des permissions accordÃ©es par les
+      Domaines de Protection traversÃ©s.</p>
+    <p>Une classe autorisÃ©e Ã  Ã©crire des fichiers pourra par exemple appeler une classe non autorisÃ©e Ã  Ã©crire de tels
+      fichiers. Dans ce cas, la rÃ¨gle de l'intersection des domaines de protection ne permettra pas au code de la classe
+      non privilÃ©giÃ©e de disposer des privilÃ¨ges de la classe appelante (l'intersection correspond Ã  la permission la
+      plus faible des deux).</p>
+    <p>Il est possible Ã  tout moment de demander au ContrÃ´leur d'AccÃ¨s quel est le Contexte de SÃ©curitÃ© courant (du
+      thread courant), via la mÃ©thode statique <code>AccessControler.getContext()</code>. Cette mÃ©thode retourne un
+      objet de type <code>java.security.AccessControlContext</code> ou l'un de ces descendants (il pourra en effet Ãªtre
+      intÃ©ressant de spÃ©cialiser le contexte de sÃ©curitÃ© pour y inclure de nouveaux paramÃ¨tres).</p>
+    <h4><b class="titre4">Blocs et actions privilÃ©giÃ©s</b></h4>
+    <p>Il peut arriver qu'une classe privilÃ©giÃ©e souhaite transmettre temporairement des privilÃ¨ges Ã  une classe moins
+      privilÃ©giÃ©e. Cette opÃ©ration s'effectue au travers de l'exÃ©cution d'un "bloc privilÃ©giÃ©".</p>
+    <p>L'exÃ©cution d'un Bloc PrivilÃ©giÃ© consiste Ã  demander l'exÃ©cution d'une Action PrivilÃ©giÃ©e. Une Action PrivilÃ©giÃ©e
+      est une classe contenant le code devant disposer de privilÃ¨ges. Une telle classe doit implÃ©menter l'interface
+      <code>java.security.PrivilegedAction</code>, qui impose de fournir le code d'une mÃ©thode <code>run()</code>, oÃ¹
+      doit se trouver le code privilÃ©giÃ©.</p>
+    <p>Par exemple :</p>
+    <blockquote><code> class PrivilegedUserNameAccess implements <strong>java.security.PrivilegedAction</strong> {<br/>
+      public Object run() {<br/> return System.getProperty (<span class="codeString">"user.name"</span>); <br/> }<br/> }</code>
+    </blockquote>
+    <p>L'exÃ©cution de cette action privilÃ©giÃ©e est alors demandÃ©e au ContrÃ´leur d'AccÃ¨s :</p>
+    <blockquote><code> String userName = (String) <strong>AccessControler.doPrivileged</strong> (new
+      PrivilegedUserNameAccess());</code></blockquote>
+    <p>Dans cet exemple, le bloc permet de retourner la valeur d'une propriÃ©tÃ© qui ne serait pas accessible si la classe
+      appelante ne disposais pas de la permission nÃ©cessaire (en l'occurence <code>java.util.PropertyPermission
+        ("user.name", "read")</code>).</p>
+    <p>Cependant, il est possible de faire bÃ©nÃ©ficier une action privilÃ©giÃ©e d'un contexte de sÃ©curitÃ© diffÃ©rent de
+      celui de la classe appelante (un contexte plus limitÃ© par exemple). Dans ce cas, il suffit de fournir Ã  la mÃ©thode
+      <code>doPrivileged</code>() le contexte adÃ©quat :</p>
+    <blockquote><code> String userName = (String) <strong>AccessControler.doPrivileged</strong> (new
+      PrivilegedUserNameAccess(), someActionContext);</code></blockquote>
+  </section>
+</section>
+<!--#include virtual="/footer.html" -->

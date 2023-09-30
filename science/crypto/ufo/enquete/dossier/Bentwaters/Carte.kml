@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+  <name>Observations de Rendlesham</name>
+  <description>Le 26 decembre 1980</description>
+  <Style id="redDot">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="redPushpin">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+    <Style id="areaStyle">
+    <LineStyle>
+      <color>40000000</color>
+      <width>3</width>
+    </LineStyle>
+    <PolyStyle>
+      <color>33FF0000</color>
+      <fill>1</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+      <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_uk/mapfiles/ms/micons/pink.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_uk/mapfiles/ms/micons/pink.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_uk/mapfiles/ms/micons/blue-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_ALL/mapfiles/ms/micons/green.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <LineStyle>
+      <color>7333FF33</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style2">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_uk/mapfiles/ms/micons/grn-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style10">
+    <LineStyle>
+      <color>806666FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_uk/mapfiles/ms/micons/red.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_uk/mapfiles/ms/micons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Lieu "d&#39;atterrissage" de l&#39;ovni de Bentwaters</name>
+    <description><![CDATA[dans la foret de Rendlesham le 25 décembre 1980]]></description>
+    <styleUrl>#redDot</styleUrl>
+    <Point>
+      <coordinates>1.449358,52.088551,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Phare de Orfordness</name>
+    <description><![CDATA[<div dir="ltr">présenté par certains enquêteurs comme à l&apos;origine possible de l&apos;observation de Bentwaters</div>]]></description>
+    <styleUrl>#redPushpin</styleUrl>
+    <Point>
+      <coordinates>1.574242,52.083858,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Marlesham Heath!</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#redPushpin</styleUrl>
+    <Point>
+      <coordinates>1.270638,52.060883,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Base RAF de Woodbridge</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#areaStyle</styleUrl>
+    <Polygon>
+      <outerBoundaryIs>
+        <LinearRing>
+          <tessellate>1</tessellate>
+          <coordinates>
+            1.371780,52.085171,0.000000
+            1.375090,52.088810,0.000000
+            1.377280,52.088840,0.000000
+            1.377320,52.089359,0.000000
+            1.389890,52.090549,0.000000
+            1.389720,52.089970,0.000000
+            1.407960,52.091709,0.000000
+            1.407660,52.092049,0.000000
+            1.414140,52.092709,0.000000
+            1.414870,52.092289,0.000000
+            1.423330,52.093121,0.000000
+            1.423750,52.093021,0.000000
+            1.424830,52.093079,0.000000
+            1.425040,52.093288,0.000000
+            1.428240,52.093609,0.000000
+            1.428690,52.093479,0.000000
+            1.431023,52.093811,0.000000
+            1.436970,52.094990,0.000000
+            1.436030,52.092258,0.000000
+            1.435600,52.090679,0.000000
+            1.431990,52.090630,0.000000
+            1.431820,52.090260,0.000000
+            1.427170,52.090260,0.000000
+            1.426650,52.089691,0.000000
+            1.424650,52.089550,0.000000
+            1.423410,52.086750,0.000000
+            1.412170,52.085651,0.000000
+            1.411870,52.086250,0.000000
+            1.405900,52.085831,0.000000
+            1.406630,52.085300,0.000000
+            1.409340,52.084751,0.000000
+            1.417830,52.073959,0.000000
+            1.414010,52.070080,0.000000
+            1.403760,52.073219,0.000000
+            1.371780,52.085171,0.000000
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+  </Placemark>
+  <Placemark>
+    <name>Base RAF de Bentwaters</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#areaStyle</styleUrl>
+    <Polygon>
+      <outerBoundaryIs>
+        <LinearRing>
+          <tessellate>1</tessellate>
+          <coordinates>
+            1.403611,52.123596,0.000000
+            1.403933,52.122276,0.000000
+            1.405628,52.118904,0.000000
+            1.405692,52.117905,0.000000
+            1.409340,52.118233,0.000000
+            1.416378,52.117813,0.000000
+            1.416464,52.120434,0.000000
+            1.420820,52.121605,0.000000
+            1.423416,52.117786,0.000000
+            1.423180,52.116665,0.000000
+            1.427794,52.116627,0.000000
+            1.428995,52.118629,0.000000
+            1.436548,52.119419,0.000000
+            1.438351,52.116997,0.000000
+            1.447535,52.117889,0.000000
+            1.444638,52.122700,0.000000
+            1.449165,52.122711,0.000000
+            1.449573,52.126637,0.000000
+            1.449337,52.127747,0.000000
+            1.449444,52.129169,0.000000
+            1.450624,52.129536,0.000000
+            1.451139,52.130512,0.000000
+            1.453414,52.131142,0.000000
+            1.453693,52.131683,0.000000
+            1.453092,52.132328,0.000000
+            1.452148,52.132488,0.000000
+            1.450045,52.132011,0.000000
+            1.448736,52.132435,0.000000
+            1.443779,52.131275,0.000000
+            1.442020,52.131523,0.000000
+            1.440282,52.132000,0.000000
+            1.438758,52.132618,0.000000
+            1.437600,52.133331,0.000000
+            1.434488,52.133541,0.000000
+            1.430883,52.134541,0.000000
+            1.424360,52.130116,0.000000
+            1.419554,52.128590,0.000000
+            1.414490,52.125847,0.000000
+            1.403611,52.123596,0.000000
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+  </Placemark>
+  <Placemark>
+    <name>Portail Est</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#redDot</styleUrl>
+    <Point>
+      <coordinates>1.426973,52.090134,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Folly House</name>
+    <description><![CDATA[<div dir="ltr">Maison située juste à l'extérieur du périmètre de la base RAF de Woodbridge.</div>]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>1.435819,52.092087,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Farmhouse</name>
+    <description><![CDATA[<div dir="ltr">Maison située à l'extrêmité du champ.</div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>1.454487,52.088802,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Base RAF de Woodbridge&#39;s &#39;Portail Est&#39;</name>
+    <description><![CDATA[<div dir="ltr">&#39;Portail Est&#39; - d'où John Burroughs et Bud Steffens ont initialement repéré les lumières inhabituelles dans la forêt de Rendlesham (25/26 décembre 1980).</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>1.427525,52.090096,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>[1er incident] Route empruntée</name>
+    <description><![CDATA[<div dir="ltr">Steffens reste à la base RAF de Woodbridge. Cabansag, Penniston et Burroughs continuent dans un véhicule jusqu'à ce qu le terrain soit trop accidenté.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        1.428008,52.090134,0.000000
+        1.435540,52.090252,0.000000
+        1.434767,52.087761,0.000000
+        1.437299,52.087986,0.000000
+        1.438115,52.087917,0.000000
+        1.439638,52.087814,0.000000
+        1.441526,52.089237,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>[1er incident] site "d'atterrissage"</name>
+    <description><![CDATA[Lieu approximatif (sur la base d'une carte dans le témoignage signé par Penniston) du site d'"atterrissage" initial.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>1.441569,52.089249,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>[2nd incident] Point de rassemblement</name>
+    <description><![CDATA[<div dir="ltr">La 2ème nuit, Halt et les autres partent approximativement de cet endroit.</div>]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>1.435604,52.090424,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>[2nd incident] Route empruntée</name>
+    <description><![CDATA[<div dir="ltr">Route empruntée par Halt, Nevilles, et les autres. Après avoir découvert une "zone scruffed up" - un site d'"atterrissage" supposé - ils continuèrent, passant à la ferme et "s'écrasant dans une crique".</div>]]></description>
+    <styleUrl>#style11</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        1.435600,52.090389,0.000000
+        1.441970,52.089939,0.000000
+        1.447250,52.089970,0.000000
+        1.449766,52.089436,0.000000
+        1.452169,52.089066,0.000000
+        1.454500,52.088402,0.000000
+        1.458560,52.088890,0.000000
+        1.461650,52.090000,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>[2ème incident] site d'"atterrissage"</name>
+    <description><![CDATA[Lieux approximatif du 2nd site d'"atterrissage" supposé. Découvert par Halt, Nevilles et les autres.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>1.448178,52.089752,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>[3ème incident] Route empruntée</name>
+    <description><![CDATA[<div dir="ltr">Route empruntée (en véhicule de la base RAF de Bentwaters) par Larry Warren, Battram, Bustinza, et les autres. Ils tournent "à gauche au portail Est", ce qui les emmène sur une route boisée.</div>]]></description>
+    <styleUrl>#style10</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        1.427708,52.126980,0.000000
+        1.425176,52.129616,0.000000
+        1.424832,52.130035,0.000000
+        1.424103,52.129986,0.000000
+        1.420069,52.128902,0.000000
+        1.414146,52.126007,0.000000
+        1.404533,52.123844,0.000000
+        1.397924,52.123371,0.000000
+        1.390629,52.121475,0.000000
+        1.372948,52.109985,0.000000
+        1.370716,52.108032,0.000000
+        1.364965,52.102604,0.000000
+        1.371489,52.102448,0.000000
+        1.378441,52.103973,0.000000
+        1.387196,52.105766,0.000000
+        1.398783,52.104923,0.000000
+        1.401615,52.104504,0.000000
+        1.404362,52.104870,0.000000
+        1.406507,52.104187,0.000000
+        1.413717,52.102814,0.000000
+        1.422772,52.101101,0.000000
+        1.427536,52.100784,0.000000
+        1.438470,52.098881,0.000000
+        1.437960,52.097801,0.000000
+        1.436930,52.094818,0.000000
+        1.436110,52.092030,0.000000
+        1.434680,52.087700,0.000000
+        1.437270,52.087891,0.000000
+        1.440280,52.087742,0.000000
+        1.446410,52.087250,0.000000
+        1.451440,52.086941,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>[3ème nuit] Arrêt du véhicule</name>
+    <description><![CDATA[<div dir="ltr">Les véhicules sont laissés ici et les hommes (Larry Warren etc.) continuent à pied vers le champ.</div>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>1.446676,52.087181,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>[3ème incident] site d'"atterrissage"</name>
+    <description><![CDATA[<div dir="ltr">Site d'"atterrissage" supposé (3ème nuit - 28/29 décembre 1980). Larry Warren, Adrian Bustinza et d'autres disent avoir rencontré là un objet atterri inconnu.</div>]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>1.451483,52.086784,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

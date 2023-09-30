@@ -1,0 +1,99 @@
+/* :: Extranet Virtual Application	*/
+/* :: (c) 2002 Massimiliano Mattei 	*/
+
+/* :: Headlines Box ::	*/
+#star {
+  padding-bottom: 8px;
+}
+
+#star ul.star {
+  LIST-STYLE: none;
+  MARGIN: 0;
+  PADDING: 0;
+  WIDTH: 85px;
+  HEIGHT: 20px;
+  LEFT: 10px;
+  TOP: -5px;
+  POSITION: relative;
+  FLOAT: left;
+  BACKGROUND: url('../images/stars.gif') repeat-x;
+  CURSOR: pointer;
+}
+
+#star li {
+  PADDING: 0;
+  MARGIN: 0;
+  FLOAT: left;
+  DISPLAY: block;
+  WIDTH: 85px;
+  HEIGHT: 20px;
+  TEXT-DECORATION: none;
+  text-indent: -9000px;
+  Z-INDEX: 20;
+  POSITION: absolute;
+  PADDING: 0;
+}
+
+#star li.curr {
+  BACKGROUND: url('../images/stars.gif') left 25px;
+  FONT-SIZE: 1px;
+}
+
+#star div.user {
+  LEFT: 15px;
+  POSITION: relative;
+  FLOAT: left;
+  FONT-SIZE: 13px;
+  FONT-FAMILY: Arial;
+  COLOR: #888;
+}
+
+p.HLSummary1, p.HLSummary1Box {
+  color: #48432f;
+  font-weight: normal;
+  margin-top: 2px;
+  font-size: 9px;
+}
+
+li.HLFonteBox, li.HLFonte, p.HLFonte {
+  padding: 0px;
+  margin: 0px;
+  font-size: 9px;
+  text-decoration: underline;
+  color: #726841;
+}
+
+p.HLFonte {
+  margin-bottom: 6px;
+}
+
+a.HLMore:link, a.HLMore:visited, a.HLMore:active, a.HLMoreBox:link, a.HLMoreBox:visited, a.HLMoreBox:active, {
+  text-decoration: none;
+  font-weight: bold;
+  color: #a62a22;
+  font-size: 9px;
+  font-style: normal;
+}
+
+a.HLMore:hover, a.HLMoreBox:hover {
+  text-decoration: underline;
+}
+
+.HLTitoloBig {
+  color: #726841;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: left;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 13px;
+  margin: 0px;
+}
+
+.RSSHLTitle {
+  font-size: 16px;
+}
+
+table.CT4 {
+  font-size: 13px;
+}

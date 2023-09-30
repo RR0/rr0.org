@@ -1,0 +1,62 @@
+<!--#include virtual="/header-start.html" -->
+<title>Applet de statistiques</title>
+<!--#include virtual="/header-end.html" -->
+<figure class="right side">
+  <figcaption>
+    Statistiques Claude Poher (1971)
+  </figcaption>
+  <applet archive="StatUneColonneCouleur.jar" code="org.rr0.is.presentation.view.chart.StatUneColonneCouleur" height="490"
+      width="600">
+    <param name="maxFontSize" value="16">
+  </applet>
+</figure>
+<p>Dans ses <a href="https://universons.com/html_0/index8_fr.html">statistiques sur 735 témoignages d'observations
+  d'ovnis</a>, <span class="people">Claude Poher</span> présente divers résultats graphiques issus d'un programme écrit
+  en Future Basic.</p>
+<p>Voici une version <a href="/tech/info/soft/proj/impl/lang/java">Java</a> de ce programme <span class="note">[les utilisateurs d'une version récente de <a
+    href="/org/us/company/ms/MSIE.html">Internet Explorer</a> verront un bandeau jaune en haut de la page sur lequel
+    il faut cliquer pour activer le contenu "actif"]</span>. Comme le programme d'origine, il calcule les résultats
+  affichés en temps réel (il ne s'agit pas d'images précalculées affichées).
+</p>
+<p>Les différences de ce programme avec celui d'origine sont les suivantes :</p>
+<ul>
+  <li>Il <strong>affiche les libellés</strong> des "classes" de valeurs pour un caractère donné (au lieu de "A", "B",
+    etc.)
+  </li>
+  <li>Il affiche <strong>l'ensemble des caractères</strong> (du n° 5 au n° 80). Le caractère courant peut être
+    sélectionné à l'aide de la boîte de sélection en haut de l'applet ou des flèches (un caractère spécifique à afficher
+    au départ peut cependant être spécifié via le paramètre <code>characterNumber</code> - 22 est sélectionné par
+    défaut).
+  </li>
+  <li>Son affichage <strong>distingue plus clairement le pourcentage relatif des "non indiqués" de celui des
+    "indiqués"</strong>. Ces "valeurs nulles" (affichant parfois des pourcentages très grands) peuvent être affichés ou
+    non en fonction du paramètre <code>displayNullValues</code> (<code>true</code> ou <code>false</code>).
+  </li>
+  <li>Il peut <strong>prendre divers fichiers de données en entrée </strong>(du moment qu'ils respectent le même format)
+    via le paramètre <code>fileName</code>. Le fichier utilisé ici est celui de M. Poher.
+  </li>
+  <li>Sa <strong>mise en page s'adapte </strong>à l'espace qui lui est alloué : taille des lettres, multi-colonnes si
+    nécessaire (double-cliquez sur l'applet pour le tester en la redimensionnant dans une fenêtre indépendante).
+    Utilisez les paramètres <code>minFontSize</code> (9 par défaut) et <code>maxFontSize</code> (16 par défaut) pour
+    indiquez les valeurs tolérées.
+  </li>
+  <li>Il <strong>peut être exécuté comme programme autonome </strong>(depuis une ligne de commande, ouvrant une fenêtre)
+    ou comme une <a href="https://javarome.net/Applet.html">applet</a> (ci-contre) intégrée dans une page <a
+        href="https://javarome.net/Web.html">Web</a>.
+  </li>
+  <li>Il est <strong>internationalisé</strong>, c'est-à-dire que ses messages s'affichent dans la langue de
+    l'utilisateur (français et anglais par défaut sont supportés ici) telle qu'elle est spécifiée sur votre machine.
+    Ajouter le support d'une nouvelle langue se résume à ajouter un fichier contenant décrivant les versions des
+    messages dans cette langue.
+  </li>
+</ul>
+<p><strong>Références </strong>:</p>
+<ul>
+  <li><a href="StatUneColonneCouleur.jar">JAR exécutable</a> - Si <a href="/tech/info/soft/proj/impl/lang/java">Java</a>
+    est installé sur votre ordinateur, vous pourrez l'exécuter comme tout autre programme.
+  </li>
+  <li>
+    <a href="https://cvs.sourceforge.net/viewcvs.py/rr0/Java/ri/org/rr0/is/presentation/view/chart/StatUneColonneCouleur.java?view=markup">code
+      source</a></li>
+</ul>
+<!--#include virtual="/footer.html" -->

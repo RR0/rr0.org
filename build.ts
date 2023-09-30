@@ -175,7 +175,7 @@ getTimeFiles().then(async (timeFiles) => {
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand(siteBaseUrl),
         new DescriptionReplaceCommand('UFO data for french-reading people', 'abstract'),
-        new ImageRegistryCommand(config.outDir, 275, 500, baseUrl),
+        new ImageRegistryCommand(config.outDir, 275, 500),
         new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
         searchCommand
       ],

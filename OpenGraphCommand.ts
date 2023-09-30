@@ -170,7 +170,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     if (imageIndex < docImages.length) {
       const firstImage = docImages[0];
       const firstImageSrc = firstImage.getAttribute('src');
-      const firstImageUrl = firstImageSrc.startsWith(this.baseUrl) ? firstImageSrc.substring(
+      const firstImageUrl = firstImageSrc?.startsWith(this.baseUrl) ? firstImageSrc.substring(
         this.baseUrl.length) : firstImageSrc;
       const dir = path.dirname(context.outputFile.name);
       try {

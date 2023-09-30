@@ -12,8 +12,8 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
 
   protected readonly singleton: AnchorReplacer;
 
-  constructor(protected outDir: string, protected maxWidth: number, protected maxHeight: number,
-              protected baseUrl: string) {
+  constructor(protected outBaseDir: string, protected maxWidth: number, protected maxHeight: number,
+              protected baseUrl = '') {
     super('img');
   }
 
@@ -77,12 +77,16 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
       if (isLocal) {
         const contextDir = path.dirname(inputFile);
         const isAbsolute = path.isAbsolute(imageUrl);
-        const inFile = isAbsolute ? path.resolve(imageUrl) : path.resolve(path.join(contextDir, imageUrl));
-        const outDir = isAbsolute ? this.outDir : path.join(this.outDir, contextDir);
-        const outRel = path.join(outDir, imageUrl);
+        const inFile = isAbsolute ? path.resolve('.' + imageUrl) : path.resolve(path.join(contextDir, imageUrl));
+        const outBaseDir = isAbsolute ? this.outBaseDir : path.join(this.outBaseDir, contextDir);
+        const outRel = path.join(outBaseDir, imageUrl);
         context.debug('Copying', imageUrl, 'to', outRel);
         const outFile = path.resolve(outRel);
         try {
+          const outDir = path.dirname(outFile);
+          if (!fs.existsSync(outDir)) {
+            fs.mkdirSync(outDir, {recursive: true});
+          }
           fs.copyFileSync(inFile, outFile);
         } catch (e) {
           if (e.code === 'ENOENT') {

@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import sizeOf from 'image-size';
 
 /**
- * Register images  (`<img>` tags) required in an HTML file.
+ * Register images (`<img>` tags) required in an HTML file.
  */
 export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
 
@@ -19,20 +19,35 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
 
   protected async createReplacer(context: HtmlRR0SsgContext): Promise<DomReplacer<HTMLImageElement>> {
     return {
-      replace: async (original: HTMLImageElement): Promise<HTMLImageElement> => {
-        const src = original.src;
+      replace: async (imgEl: HTMLImageElement): Promise<HTMLImageElement> => {
+        const src = imgEl.src;
+        const imgParentEl = imgEl.parentElement;
+        if (imgParentEl.tagName === 'FIGURE') {
+          const captionEl = imgParentEl.querySelector('figcaption');
+          if (captionEl) {
+            const caption = captionEl.textContent;
+            imgEl.alt = caption.replace(/\n+/g, '').trim();
+          } else {
+            const caption = imgEl.alt;
+            if (caption) {
+              const newCaptionEl = imgParentEl.ownerDocument.createElement('figcaption');
+              newCaptionEl.textContent = caption;
+              imgParentEl.appendChild(newCaptionEl);
+            }
+          }
+        }
         context.debug(context.inputFile.name, 'requires image', src);
         try {
           let isExternal = src.startsWith('http');
           let isAbsolute = src.startsWith('/');
           if (isAbsolute) {
-            original.src = this.baseUrl + src;
+            imgEl.src = this.baseUrl + src;
           }
           let imgPath = isExternal ? src : isAbsolute ? path.join('.', src) : path.join(
             path.dirname(context.inputFile.name),
             src);
-          original.loading = 'lazy';
-          if (!original.width && !original.height) {
+          imgEl.loading = 'lazy';
+          if (!imgEl.width && !imgEl.height) {
             const dimensions = sizeOf(imgPath);
             let width = dimensions.width;
             let height = dimensions.height;
@@ -46,16 +61,16 @@ export class ImageRegistryCommand extends DomReplaceCommand<HTMLImageElement> {
               height = this.maxHeight;
               width *= ratio;
             }
-            original.width = width;
-            original.height = height;
-            original.setAttribute('onclick',
+            imgEl.width = width;
+            imgEl.height = height;
+            imgEl.setAttribute('onclick',
               `this.classList.contains('zoomed') ? document.exitFullscreen() && this.classList.toggle('zoomed', false): this.classList.toggle('zoomed', true) && this.requestFullscreen()`);
           }
         } catch (e) {
           context.debug('Could not determine size of image ', src, e);
         }
         context.images.add(src);
-        return original;
+        return imgEl;
       }
     };
   }

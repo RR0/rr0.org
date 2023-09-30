@@ -1,0 +1,91 @@
+<!--#include virtual="/header-start.html" -->
+<title>Mobile platform</title>
+<!--#include virtual="/header-end.html" -->
+<p><dfn>Plate-forme mobile</dfn></p>
+<section>
+  <h2>Analyse</h2>
+  <p>Une plate-forme mobile peut-être :</p>
+  <ul>
+    <li>native</li>
+    <li>Virtuelle / multi-plateformes (<i lang="en">cross-platform</i>)
+      <ul>
+        <li>Web</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<h2>Conception</h2>
+<section>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Web</h3>
+    <section>
+      <h4>Tailles</h4>
+      <p>Si vous souhaitez que vos layouts web soient adaptés aux résolutions de mobiles comme d'écrans plus grands,
+        n'utilisez pas de tailles en pixels. Préférez-y des proportions (pourcentages) et des <code>em</code>.</p>
+    </section>
+    <section>
+      <h4>Détection</h4>
+      <p>Une plate-forme mobile affichant du Web peut être détectée :</p>
+      <ul>
+        <li>Via une <strong>feuille de style</strong> adaptée :
+          <ul>
+            <li class="deprecated">au media <code>handheld</code>. Cependant, beaucoup de navigateurs pour mobiles ne
+              reconnaissent pas ce type de media.
+            </li>
+            <li>à une configuration typique de mobile, via les pour une CSS3 provides a new feature called media queries
+              that gives you more control over the style sheet for a web page. The downside is that older browsers don’t
+              support this feature so this technique isn’t backward compatible. For more information, see
+              https://www.w3.org/TR/css3-mediaqueries/.
+            </li>
+            <li>Include a link to a mobile version of the web site When you use this technique, you display the desktop
+              version of the web site no matter what device accesses it. Then, you include a link to a mobile version of
+              the site near the top of the home page. Use JavaScript to detect mobile devices and redirect When you use
+              this technique, you use JavaScript to detect mobile devices. Then, if a mobile device is detected, the
+              user is redirected to the mobile version of the web site. The problem with this is that there are so many
+              different mobile devices that it’s difficult to detect them all. Also, some mobile devices don’t support
+              JavaScript. Use a server-side scripting language to detect and redirect With this technique, you use a
+              server-side scripting language such as PHP to detect mobile devices. To do that, the script looks at the
+              web browser that made the request to see if a mobile device is being used. If so, the user is redirected
+              to the mobile version of the web site. The problem with this is that there are so many mobile browsers
+              that it’s difficult to detect them all. Use the WURFL to detect mobile devices The WURFL is an XML
+              configuration file that contains information about a variety of mobile devices, including the features and
+              capabilities they support. This file is updated frequently with new devices. To use the WURFL, you
+              implement the API (Application Programming Interface) using languages such as Java, PHP, C++, or C#.NET.
+              This API lets you determine the browser that’s being used and then retrieve information about that browser
+              from the XML file. When you use this technique, you have to download the XML configuration file
+              periodically so it’s up-to-date.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de plates-formes mobiles sont :</p>
+  <ul>
+    <li>natives
+      <ul>
+        <li>iOS</li>
+      </ul>
+    </li>
+    <li>virtuelles
+      <ul>
+        <li>Web
+          <ul>
+            <li><a href="/org/int/asso/asf/cordova/index.html">Cordova</a>/Phonegap</li>
+            <li><a href="https://rhomobile.com/">RhoMobile</a></li>
+            <li><a href="https://www.appcelerator.com">Appcelerator</a></li>
+            <li><a href="https://widgetpad.com">WidgetPad</a></li>
+            <li><a href="https://www.mosync.com">MoSync</a></li>
+          </ul>
+        </li>
+        <li>Android</li>
+        <li>JME</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,82 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtm20-scrict.dtd">
-<html>
-<head>
-  <title>JavaBeans</title>
-  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-<h1><a href="https://java.sun.com/products/javabeans">JavaBeans</a></h1>
-<p>Grains de café. </p>
-<h2><a href="../../../../../../../../../../tech/info/soft/proj/besoin/index.html">Besoin</a></h2>
-<p>Définir un modèle de composants <a
-    href="../../../../../../../../../../tech/info/soft/prog/oo/java/index.html">Java</a>.</p>
-<h2><a href="../../../../../../../../../../tech/info/soft/proj/design/index.html">Conception</a></h2>
-<p>Un JavaBean est un élément Java pouvant :</p>
-<ul>
-  <li>être paramétré via des <strong>propriétés </strong>en lecture et/ou écriture. </li>
-  <li>recevoir des ordres via des appels de ses <strong>méthodes </strong></li>
-  <li>émettre des <strong>événements</strong> (et non pas appeler les méthodes d'autres objets ou composants avec qui il
-    créerait ainsi des dépendances nuisant à sa réutilisabilité)</li>
-</ul>
-<p>L'ensemble de ces éléments est <strong>implicitement</strong> identifié par <a
-    href="../../../../../../../../../../tech/info/soft/proj/impl/Introspection.html">introspection</a> (motifs de
-  nommage des accesseurs aux propriétés ou des événements typiquement). Cependant il est également possible de les
-  spécifier <strong>explicitement</strong>, via une classe d'information annexe (BeanInfo). </p>
-<h2><a href="../../../../../../../../../../tech/info/soft/proj/impl/index.html">Implémentation</a></h2>
-<p>Un JavaBean est une classe Java :</p>
-<ul>
-  <li>publique (<code>public</code>) </li>
-  <li>sérializable (implémentant <code>java.io.Serializable)</code>
-    <ul>
-      <li>donc un constructeur par défaut permettant de l'instancier avant de le paramétrer ou le charger </li>
-    </ul>
-  </li>
-  <li>des accesseurs respectant les conventions de nommage (<em>naming patterns</em>) <code><strong>get</strong><em>Proprieté</em></code>/<code><strong>set</strong><em>Propriété</em></code>
-  </li>
-</ul>
-<p>La classe BeanInfo de <code>MaClasse</code> doit être nommée <code>MaClasseBeanInfo</code>. </p>
-<h2>Exemples</h2>
-<p>Un exemple de JavaBean très simple est :</p>
-<blockquote>
-  <p><code>public class Voiture <strong>implements java.io.Serializable</strong> {<br/> <br/> <strong> public Voiture
-    ()</strong> {<br/> } <br/> } </code></p>
-</blockquote>
-<p>Un autre exemple est :</p>
-<blockquote>
-  <p><code><strong>public class</strong> Voiture <strong>implements java.io.Serializable</strong> {<br/> <br/> <strong>
-    public Voiture ()</strong> {<br/> } <br/> <br/> <strong>public</strong> String <strong>get</strong>Marque() {<br/>
-    return marque;<br/> }<br/> <br/> <strong>public</strong> java.awt.Color <strong>get</strong>Color() {<br/> return
-    color;<br/> }<br/> <br/> <strong>public void set</strong>Color (java.awt.Color someColor) {<br/> color =
-    someColor;<br/> }<br/> <br/> private String marque;<br/> private java.awt.Color color;<br/> } </code></p>
-</blockquote>
-<h2>Notes</h2>
-<ul>
-  <li> Adapté aux composants visuels</li>
-  <li>Supporté par les <a href="../../../../../../../../../../tech/info/soft/prod/ide/index.html">EDI</a> visuels</li>
-  <li>Voir InfoBus</li>
-  <li>Diverses solutions de <a href="../../../../../../../../../../tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>
-    existent pour les JavaBeans :
-    <ul>
-      <li>sérialisation : une instance de JavaBean peut être enregistrée vers un flux (fichier, socket réseau)</li>
-      <li><a href="../../../../../../../../../../tech/info/soft/data/doc/xml/">XML</a> via
-        <ul>
-          <li>JAXB</li>
-          <li><i>Bean Markup Language. </i>(BML) defines an <a href="/tech/info/soft/data/doc/DTD.html"> that allow to
-            define JavaBeans structure. As interpreting a BML script generates JavaBeans and as BML language include
-            commands to create and use new beans, such a BML script can be run as an application.</li>
-        </ul>
-      </li>
-      <li><a href="../../../../../../../../../../tech/info/soft/prog/oo/java/JDO.html">JDO</a>, qui peut abstraire
-        divers types de persistance (SGBDR, XML, etc.)</li>
-    </ul>
-  </li>
-</ul>
-<h2>Limitations</h2>
-<ul>
-  <li>Non transactionnel</li>
-  <li>Non distribuable</li>
-</ul>
-</body>
-</html>
+<!--#include virtual="/header-start.html" -->
+<title>JavaBeans</title>
+<meta content="https://java.sun.com/products/javabeans" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p>Grains de cafÃ©.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>DÃ©finir un modÃ¨le de composants <a href="/org/us/company/oracle/sun/ptf/java">Java</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Un JavaBean est un Ã©lÃ©ment Java pouvant :</p>
+  <ul>
+    <li>Ãªtre paramÃ©trÃ© via des <strong>propriÃ©tÃ©s </strong>en lecture et/ou Ã©criture. </li>
+    <li>recevoir des ordres via des appels de ses <strong>mÃ©thodes </strong></li>
+    <li>Ã©mettre des <strong>Ã©vÃ©nements</strong> (et non pas appeler les mÃ©thodes d'autres objets ou composants avec qui
+      il crÃ©erait ainsi des dÃ©pendances nuisant Ã  sa rÃ©utilisabilitÃ©)</li>
+  </ul>
+  <p>L'ensemble de ces Ã©lÃ©ments est <strong>implicitement</strong> identifiÃ© par <a
+      href="/tech/info/soft/proj/impl/Introspection.html">introspection</a> (motifs de nommage des accesseurs aux
+    propriÃ©tÃ©s ou des Ã©vÃ©nements typiquement). Cependant il est Ã©galement possible de les spÃ©cifier <strong>explicitement</strong>,
+    via une classe d'information annexe (BeanInfo). </p></section>
+<section>
+  <h2>ImplÃ©mentation</h2>
+  <p>Un JavaBean est une classe Java :</p>
+  <ul>
+    <li>Publique (<code>public</code>) </li>
+    <li>SÃ©rializable (implÃ©mentant <code>java.io.Serializable)</code>
+      <ul>
+        <li>donc un constructeur par dÃ©faut permettant de l'instancier avant de le paramÃ©trer ou le charger </li>
+      </ul>
+    </li>
+    <li>des accesseurs respectant les conventions de nommage (<em>naming patterns</em>) <code><strong>get</strong><em>ProprietÃ©</em></code>/<code><strong>set</strong><em>PropriÃ©tÃ©</em></code>
+    </li>
+  </ul>
+  <p>La classe BeanInfo de <code>MaClasse</code> doit Ãªtre nommÃ©e <code>MaClasseBeanInfo</code>. </p></section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de JavaBean trÃ¨s simple est :</p>
+  <blockquote>
+    <p><code>public class Voiture <strong>implements java.io.Serializable</strong> {<br/> <br/> <strong> public Voiture
+      ()</strong> {<br/> } <br/> } </code></p>
+  </blockquote>
+  <p>Un autre exemple est :</p>
+  <blockquote>
+    <p><code><strong>public class</strong> Voiture <strong>implements java.io.Serializable</strong> {<br/> <br/>
+      <strong> public Voiture ()</strong> {<br/> } <br/> <br/> <strong>public</strong> String <strong>get</strong>Marque()
+      {<br/> return marque;<br/> }<br/> <br/> <strong>public</strong> java.awt.Color <strong>get</strong>Color() {<br/>
+      return color;<br/> }<br/> <br/> <strong>public void set</strong>Color (java.awt.Color someColor) {<br/> color =
+      someColor;<br/> }<br/> <br/> private String marque;<br/> private java.awt.Color color;<br/> } </code></p>
+  </blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li> AdaptÃ© aux composants visuels</li>
+    <li>SupportÃ© par les <a href="/tech/info/soft/prod/ide/index.html">EDI</a> visuels</li>
+    <li>Voir InfoBus</li>
+    <li>Diverses solutions de <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> existent pour
+      les JavaBeans :
+      <ul>
+        <li>SÃ©rialisation : une instance de JavaBean peut Ãªtre enregistrÃ©e vers un flux (fichier, socket rÃ©seau)</li>
+        <li><a href="/tech/info/soft/data/doc/xml/">XML</a> via
+          <ul>
+            <li>JAXB</li>
+            <li><i>Bean Markup Language. </i>(BML) defines an <a href="/tech/info/soft/data/doc/DTD.html">DTD</a> that
+              allow to define JavaBeans structure. As interpreting a BML script generates JavaBeans and as BML language
+              include commands to create and use new beans, such a BML script can be run as an application.</li>
+          </ul>
+        </li>
+        <li><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>, qui peut abstraire divers types de
+          persistance (SGBDR, XML, etc.)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Non transactionnel</li>
+    <li>Non distribuable</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

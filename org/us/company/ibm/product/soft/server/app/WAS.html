@@ -23,12 +23,12 @@
 <h3>Serveur applicatif</h3>
 <p>Un <strong>domaine </strong>WAS est constitué de :</p>
 <ul>
-  <li><b>noeuds </b>réseau (machines) sur lequels résident des ;
+  <li><b>Nœuds </b>réseau (machines) sur lequels résident des ;
     <ul>
       <li><b><a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs</a></b> <a
           href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html"><b>d'applications</b></a><b> </b>
         <ul>
-          <li>dans lequels se trouvent des :
+          <li>Dans lequels se trouvent des :
             <ul>
               <li><b>conteneurs </b>
                 <ul>
@@ -46,22 +46,22 @@
               </li>
             </ul>
           </li>
-          <li>démarrant un service de trace (<code>DrAdmin</code>) sur un port libre</li>
+          <li>Démarrant un service de trace (<code>DrAdmin</code>) sur un port libre</li>
         </ul>
       </li>
       <li><b>1 serveur d'administration </b>des serveurs du noeud
         <ul>
-          <li>jouant les rôles de :
+          <li>Jouant les rôles de :
             <ul>
-              <li>annuaire de ressources (composants, sources de données, etc.)</li>
-              <li>service de <a href="/org/us/company/oracle/sun/ptf/java/api/se/security">sécurité</a>
+              <li>Annuaire de ressources (composants, sources de données, etc.)</li>
+              <li>Service de <a href="/org/us/company/oracle/sun/ptf/java/api/se/security">sécurité</a>
               </li>
-              <li>service de localisation</li>
+              <li>Service de localisation</li>
             </ul>
           </li>
         </ul>
       </li>
-      <li>surveillé par un processus "nounou" (<i>nanny process</i>) capable de le relancer automatiquement s'il tombe
+      <li>Surveillé par un processus "nounou" (<i>nanny process</i>) capable de le relancer automatiquement s'il tombe
       </li>
     </ul>
   </li>
@@ -89,7 +89,7 @@
   <li><span class="source">[3.x seulement]</span> la <b>Servlet Redirector </b>contactée par le plugin via OSE (local),
     elle répartit la charge entre plusieurs serveurs applicatifs (via <a
         href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>). Pour cela elle contacte le serveur d'administration
-    local (sur la machine où est installée le plugin) et lui demande quel prochain serveur contacter. Elle contacte
+    local (sur la machine où est installé le plugin) et lui demande quel prochain serveur contacter. Elle contacte
     alors le <em>Remote SRP Bean</em> du serveur indiqué, qui la propage à son tour au servlet engine du serveur
     contacté
     <ul>

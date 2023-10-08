@@ -1,5 +1,5 @@
 import { HtmlRR0SsgContext, RR0SsgContext } from '../RR0SsgContext';
-import { DirectoryStep, OutputFunc, SsgConfig, SsgFile } from 'ssg-api';
+import { DirectoryStep, HtmlSsgFile, OutputFunc, SsgConfig, SsgFile } from 'ssg-api';
 import { RR0FileUtil } from '../util/file/RR0FileUtil';
 import { Book } from './Book';
 import { StringUtil } from '../util/string/StringUtil';
@@ -7,6 +7,7 @@ import { HtmlTag } from '../util/HtmlTag';
 import { Time } from '../time/Time';
 import fs from 'fs';
 import path from 'path';
+import { Chapter } from './Chapters';
 
 /**
  * Scan directories for book information, then populates a template with collected data.
@@ -31,6 +32,7 @@ export class BookDirectoryStep extends DirectoryStep {
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
     const books = this.read(context, dirNames);
+    await this.tocAll(context, books);
     const directoriesHtml = this.toList(context, books);
     context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
       directoriesHtml);
@@ -98,5 +100,35 @@ export class BookDirectoryStep extends DirectoryStep {
       attrs.title = titles.join(', ');
     }
     return HtmlTag.toString('li', a, attrs);
+  }
+
+  protected async tocAll(context: HtmlRR0SsgContext, books: Book[]) {
+    for (const book of books) {
+      await this.toc(context, book);
+    }
+  }
+
+  protected async toc(context: HtmlRR0SsgContext, book: Book) {
+    const startFileName = path.join(book.dirName, 'index.html');
+    try {
+      context.read(startFileName);
+      const startFileNames = [context.inputFile.name];
+      const variants = context.inputFile.lang.variants;
+      for (const variant of variants) {
+        const parsed = path.parse(startFileName);
+        const variantFileName = path.join(parsed.dir, `${parsed.name}_${variant}${parsed.ext}`);
+        startFileNames.push(variantFileName);
+      }
+      for (const startFileName of startFileNames) {
+        const chapter = new Chapter(context, startFileName);
+        await chapter.scan();
+        context.logger.debug('toc before:', chapter.toString());
+        await chapter.update();
+        context.logger.debug('toc after:', chapter.toString());
+        context.logger.log('Updated toc for', chapter.file.name);
+      }
+    } catch (e) {
+      context.logger.error('Could not check TOC of ' + startFileName, e.message);
+    }
   }
 }

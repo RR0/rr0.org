@@ -36,7 +36,7 @@
 <script>
   const textInput = document.querySelector("#searchForm input[name='text']")
   textInput.disabled = false
-  textInput.setAttribute("placeholder", "Nom, date, classification")
+  textInput.setAttribute("placeholder", "Nom, classification, date")
 
   const hoaxInput = document.querySelector("#searchForm input[name='hoax']")
   hoaxInput.disabled = false
@@ -62,7 +62,7 @@
       }
     }
     const output = document.querySelector("#searchForm output")
-    output.textContent = `(${found > 0 ? found : "Aucun"} cas)`
+    output.textContent = `${found > 0 ? found : "Aucun"} cas / ${list.children.length}`
   }
 
   textInput.dispatchEvent(new Event("input"))

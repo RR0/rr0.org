@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { TimeTextBuilder } from './time/TimeTextBuilder';
 import { RR0ContentStep } from './RR0ContentStep';
+import { StringUtil } from './util/string/StringUtil';
 
 /**
  * Create a preview image for each page sharing.
@@ -191,7 +192,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
 
   private writeImageFile(context: HtmlRR0SsgContext, canvas: Canvas) {
     const buffer = canvas.toBuffer('image/png');
-    const imageName = `rr0_og_${this.num}.png`;
+    const imageName = `rr0_og_${StringUtil.textToCamel(context.outputFile.name)}.png`;
     const dir = path.dirname(context.outputFile.name);
     const imageUrl = path.join('/', dir, imageName);
     const imageOutPath = path.join(this.outDir, imageUrl);

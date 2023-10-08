@@ -1,0 +1,110 @@
+import { CLI } from '../util/cli/CLI';
+import { promise as glob } from 'glob-promise';
+import { HtmlRR0SsgContext, RR0SsgContextImpl } from '../RR0SsgContext';
+import { TimeContext } from '../time/TimeContext';
+import { HtmlSsgFile, LinkType } from 'ssg-api';
+import path from 'path';
+
+export class Chapter {
+  file: HtmlSsgFile | undefined;
+  subs: Chapter[] = [];
+
+  constructor(protected context: HtmlRR0SsgContext, protected startFileName: string) {
+  }
+
+  async scan() {
+    this.file = HtmlSsgFile.read(this.context, this.startFileName);
+    const dir = path.dirname(this.file.name);
+    const fileName = path.basename(this.file.name);
+    const subFileNames = await glob(path.join(dir, '*/', fileName));
+    this.subs = [];
+    for (const subFileName of subFileNames) {
+      const subChapter = new Chapter(this.context, subFileName);
+      this.subs.push(subChapter);
+      await subChapter.scan();
+    }
+  }
+
+  toString(prefix = '- '): string {
+    const file = this.file;
+    return `${prefix + file.name}: "${file.title}", meta=${JSON.stringify(file.meta)}, links=${JSON.stringify(
+      file.links)}
+${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
+  }
+
+  async update(parent?: Chapter) {
+    const file = this.context.outputFile;
+    const meta = file.meta;
+    const links = file.links;
+    if (parent) {
+      const parentFile = parent.file;
+      const parentMeta = parentFile.meta;
+      meta.author = parentMeta.author;
+      meta.copyright = parentMeta.copyright;
+      links.contents = {
+        type: LinkType.contents,
+        url: parentFile.name,
+        text: parentFile.title
+      };
+      links.start = parentFile.links.start;
+    } else {
+      links.start = {
+        type: LinkType.start,
+        url: this.startFileName,
+        text: file.title
+      };
+    }
+    let prev: Chapter | undefined;
+    for (const sub of this.subs) {
+      const subFile = sub.file;
+      if (prev) {
+        prev.file.links.next = {
+          type: LinkType.next,
+          url: subFile.name,
+          text: subFile.title
+        };
+      }
+      sub.file.links.prev = prev ? {
+        type: LinkType.prev,
+        url: prev.file.name,
+        text: prev.file.title
+      } : undefined;
+      await sub.update(this);
+      prev = sub;
+    }
+  }
+}
+
+/*
+const args = new CLI().getArgs();
+const startFileName = args.start;
+
+const context = new RR0SsgContextImpl('fr', new TimeContext({
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long',
+    hour: '2-digit',
+    minute: '2-digit'
+  }
+));
+const file = HtmlSsgFile.read(context, startFileName);
+const startFileNames = [file.name];
+const variants = file.lang.variants;
+for (const variant of variants) {
+  const parsed = path.parse(startFileName);
+  const variantFileName = path.join(parsed.dir, `${parsed.name}_${variant}${parsed.ext}`);
+  startFileNames.push(variantFileName);
+}
+for (const startFileName of startFileNames) {
+  const chapter = new Chapter(context as unknown as HtmlRR0SsgContext, startFileName);
+  chapter.scan().then(async () => {
+    console.log('*** Before:\n', chapter.toString());
+    await chapter.update();
+    console.log('\n*** After:\n', chapter.toString());
+  }).catch(e => {
+    console.error(e);
+  });
+}
+
+*/

@@ -51,7 +51,7 @@
       }
     }
     const output = document.querySelector("#searchForm output")
-    output.textContent = `(${found > 0 ? found : "Aucun"} publication${found > 1 ? "s" : ""})`
+    output.textContent = `${found > 0 ? found : "Aucune"} publication${found > 1 ? "s" : ""} / ${list.children.length}`
   }
 
   textInput.dispatchEvent(new Event("input"))

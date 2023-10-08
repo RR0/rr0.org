@@ -187,14 +187,17 @@ getTimeFiles().then(async (timeFiles) => {
       }
     }
   ];
-  new Ssg(config)
+  const ssg = new Ssg(config)
     .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesStep)
     .add(booksStep)
     .add(...peopleSteps)
-    .add(new SearchIndexStep('search/index.json', searchCommand))
-    .add(new CopyStep(copies, config))
-    .start(context)
+    .add(new CopyStep(copies, config));
+
+  if (args.reindex) {
+    ssg.add(new SearchIndexStep('search/index.json', searchCommand));
+  }
+  ssg.start(context)
     .then(result => context.log('Completed', result))
     .catch(err => {
       try {

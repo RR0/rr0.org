@@ -36,7 +36,7 @@ function find(_e) {
     }
   }
   const output = form.querySelector("output")
-  output.textContent = `(${found > 0 ? found : "Aucune"} personne${found > 1 ? "s" : ""})`
+  output.textContent = `${found > 0 ? found : "Aucune"} personne${found > 1 ? "s" : ""} / ${list.children.length}`
 }
 
 countryInputs = Array.from(form.querySelectorAll("#countries input[type=checkbox]"))

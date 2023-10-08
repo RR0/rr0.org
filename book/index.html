@@ -1,0 +1,59 @@
+<!--#include virtual="/header-start.html" -->
+<title>Bibliographie</title>
+<!--#include virtual="/header-end.html" -->
+<p>Publications citées dans ce site.</p>
+<style>
+  #searchForm {
+    padding: 1em 0.5em;
+    border: 1px solid grey;
+    margin: 1em 0;
+  }
+
+  #searchForm + ul {
+    column-width: 14em;
+  }
+
+  #searchForm label, output {
+    padding: 0.5em 1em;
+    white-space: nowrap;
+  }
+
+  #searchForm input[name="text"] {
+    margin-left: 0.5em;
+  }
+
+  #searchForm output {
+    color: grey;
+  }
+</style>
+<form id="searchForm">
+  <input disabled name="text" oninput="findCase(event)" placeholder="Activez JavaScript"
+      size="24" style="margin-left: 1em" type="search">
+  <output></output>
+</form>
+<!--#echo var="directories" -->
+<script>
+  const textInput = document.querySelector("#searchForm input[name='text']")
+  textInput.disabled = false
+  textInput.setAttribute("placeholder", "Auteur, titre, année")
+
+  function findCase(e) {
+    const value = textInput.value.toLowerCase()
+    const list = document.querySelector("#searchForm + ul")
+    let found = 0
+    for (const child of list.children) {
+      const matchText = child.textContent.toLowerCase().indexOf(value) >= 0
+      if (matchText) {
+        child.style.display = "list-item"
+        found++
+      } else {
+        child.style.display = "none"
+      }
+    }
+    const output = document.querySelector("#searchForm output")
+    output.textContent = `(${found > 0 ? found : "Aucun"} publication${found > 1 ? "s" : ""})`
+  }
+
+  textInput.dispatchEvent(new Event("input"))
+</script>
+<!--#include virtual="/footer.html" -->

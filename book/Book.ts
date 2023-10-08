@@ -1,4 +1,5 @@
 export interface Book {
+  dirName?: string;
   title: string
   subTitle?: string
   authors: string[]

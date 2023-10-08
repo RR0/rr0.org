@@ -41,13 +41,14 @@ import { TimeReplacerFactory } from './time/TimeReplacerFactory';
 import { LinkReplaceCommand } from './LinkReplaceCommand';
 import { OutlineReplaceCommand } from './outline/OutlineReplaceCommand';
 import { RR0ContentStep } from './RR0ContentStep';
-import { ImageRegistryCommand } from './ImageRegistryCommand';
+import { ImageCommand } from './ImageCommand';
 import { SearchCommand } from './search/SearchCommand';
 import { SearchIndexStep } from './search/SearchIndexStep';
 import { OutputFunc } from 'ssg-api/dist/src/Ssg';
 import { BaseReplaceCommand } from './BaseReplaceCommand';
 import { OpenGraphCommand } from './OpenGraphCommand';
 import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';
+import { BookDirectoryStep } from './book/BookDirectoryStep';
 
 const args = new CLI().getArgs();
 const cliContents = args.contents;
@@ -57,6 +58,7 @@ const contentRoots = cliContents
     'croyance/**/*.html',
     'index.html', '404.html', 'googlebe03dcf00678bb7c.html', 'Contact.html', 'Copyright.html', 'preambule.html', 'FAQ.html', 'Referencement.html',
     'time/**/*.html',
+    'book/**/*.html',
     'droit/**/*.html',
     'org/**/*.html',
     'people/**/*.html',
@@ -133,6 +135,7 @@ async function getTimeFiles(): Promise<string[]> {
 
 getTimeFiles().then(async (timeFiles) => {
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config);
+  const booksStep = await BookDirectoryStep.create(outputFunc, config);
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config);
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
@@ -175,7 +178,7 @@ getTimeFiles().then(async (timeFiles) => {
         new OutlineReplaceCommand(),
         new AnchorReplaceCommand(siteBaseUrl),
         new DescriptionReplaceCommand('UFO data for french-reading people', 'abstract'),
-        new ImageRegistryCommand(config.outDir, 275, 500),
+        new ImageCommand(config.outDir, 275, 500),
         new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
         searchCommand
       ],
@@ -185,9 +188,9 @@ getTimeFiles().then(async (timeFiles) => {
     }
   ];
   new Ssg(config)
-    .add(new RR0ContentStep(
-      contentConfigs, outputFunc))
+    .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesStep)
+    .add(booksStep)
     .add(...peopleSteps)
     .add(new SearchIndexStep('search/index.json', searchCommand))
     .add(new CopyStep(copies, config))

@@ -1,0 +1,23 @@
+#searchForm {
+  padding: 1em 0.5em;
+  border: 1px solid grey;
+  margin: 1em 0;
+  display: none;
+}
+
+#searchForm .option {
+  column-width: 12em;
+}
+
+#searchForm label, output {
+  padding: 0.5em 1em;
+  white-space: nowrap;
+}
+
+#searchForm input[name="text"] {
+  margin-left: 0.5em;
+}
+
+#searchForm output {
+  color: gray;
+}

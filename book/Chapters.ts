@@ -1,21 +1,20 @@
-import { CLI } from '../util/cli/CLI';
 import { promise as glob } from 'glob-promise';
-import { HtmlRR0SsgContext, RR0SsgContextImpl } from '../RR0SsgContext';
-import { TimeContext } from '../time/TimeContext';
-import { HtmlSsgFile, LinkType } from 'ssg-api';
+import { HtmlRR0SsgContext } from '../RR0SsgContext';
+import { LinkType } from 'ssg-api';
 import path from 'path';
 
 export class Chapter {
-  file: HtmlSsgFile | undefined;
+  readonly context: HtmlRR0SsgContext;
   subs: Chapter[] = [];
 
-  constructor(protected context: HtmlRR0SsgContext, protected startFileName: string) {
+  constructor(parentContext: HtmlRR0SsgContext, protected startFileName: string) {
+    this.context = parentContext.clone();
   }
 
   async scan() {
-    this.file = HtmlSsgFile.read(this.context, this.startFileName);
-    const dir = path.dirname(this.file.name);
-    const fileName = path.basename(this.file.name);
+    this.context.read(this.startFileName);
+    const dir = path.dirname(this.context.inputFile.name);
+    const fileName = path.basename(this.context.inputFile.name);
     const subFileNames = await glob(path.join(dir, '*/', fileName));
     this.subs = [];
     for (const subFileName of subFileNames) {
@@ -26,7 +25,7 @@ export class Chapter {
   }
 
   toString(prefix = '- '): string {
-    const file = this.file;
+    const file = this.context.inputFile;
     return `${prefix + file.name}: "${file.title}", meta=${JSON.stringify(file.meta)}, links=${JSON.stringify(
       file.links)}
 ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
@@ -37,7 +36,7 @@ ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
     const meta = file.meta;
     const links = file.links;
     if (parent) {
-      const parentFile = parent.file;
+      const parentFile = parent.context.outputFile;
       const parentMeta = parentFile.meta;
       meta.author = parentMeta.author;
       meta.copyright = parentMeta.copyright;
@@ -56,18 +55,18 @@ ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
     }
     let prev: Chapter | undefined;
     for (const sub of this.subs) {
-      const subFile = sub.file;
+      const subFile = sub.context.outputFile;
       if (prev) {
-        prev.file.links.next = {
+        prev.context.outputFile.links.next = {
           type: LinkType.next,
           url: subFile.name,
           text: subFile.title
         };
       }
-      sub.file.links.prev = prev ? {
+      sub.context.outputFile.links.prev = prev ? {
         type: LinkType.prev,
-        url: prev.file.name,
-        text: prev.file.title
+        url: prev.context.outputFile.name,
+        text: prev.context.outputFile.title
       } : undefined;
       await sub.update(this);
       prev = sub;

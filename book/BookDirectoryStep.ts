@@ -1,5 +1,5 @@
-import { HtmlRR0SsgContext, RR0SsgContext } from '../RR0SsgContext';
-import { DirectoryStep, HtmlSsgFile, OutputFunc, SsgConfig, SsgFile } from 'ssg-api';
+import { HtmlRR0SsgContext } from '../RR0SsgContext';
+import { DirectoryStep, OutputFunc, SsgConfig, SsgFile } from 'ssg-api';
 import { RR0FileUtil } from '../util/file/RR0FileUtil';
 import { Book } from './Book';
 import { StringUtil } from '../util/string/StringUtil';
@@ -15,31 +15,31 @@ import { Chapter } from './Chapters';
 export class BookDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], template: string, protected outputFunc: OutputFunc,
-              config: SsgConfig, name = 'books') {
+              config: SsgConfig, protected outDir: string, name: string) {
     super(dirs, [], template, config, name);
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<BookDirectoryStep> {
     const dirs = await RR0FileUtil.findDirectoriesContaining('book*.json');
-    const excludedDirs = [];
     return new BookDirectoryStep(
       dirs,
       'book/index.html',
       outputFunc, config,
+      config.outDir,
       'all books'
     );
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    const books = this.read(context, dirNames);
+    const books = this.scan(context, dirNames);
     await this.tocAll(context, books);
-    const directoriesHtml = this.toList(context, books);
+    const directoriesHtml = this.toList(books);
     context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
       directoriesHtml);
     await this.outputFunc(context, context.outputFile);
   }
 
-  protected read(context: HtmlRR0SsgContext, dirNames: string[]): Book[] {
+  protected scan(context: HtmlRR0SsgContext, dirNames: string[]): Book[] {
     const books: Book[] = [];
     for (const dirName of dirNames) {
       const dirBook: Book = {dirName, authors: [], publication: {publisher: '', time: ''}, summary: '', title: ''};
@@ -57,17 +57,16 @@ export class BookDirectoryStep extends DirectoryStep {
   /**
    * Convert an array of Case[] to an <ul> HTML unordered list.
    *
-   * @param context
    * @param books
    */
-  protected toList(context: RR0SsgContext, books: Book[]) {
+  protected toList(books: Book[]) {
     const listItems = books.map(dirBook => {
       if (!dirBook.title) {
         const lastSlash = dirBook.dirName.lastIndexOf('/');
         const lastDir = dirBook.dirName.substring(lastSlash + 1);
         dirBook.title = StringUtil.camelToText(lastDir);
       }
-      return this.toListItem(context, dirBook);
+      return this.toListItem(dirBook);
     });
     return HtmlTag.toString('ul', listItems.join('\n'), {class: 'links'});
   }
@@ -75,10 +74,9 @@ export class BookDirectoryStep extends DirectoryStep {
   /**
    * Convert a Case object to an HTML list item.
    *
-   * @param context
    * @param dirBook
    */
-  protected toListItem(context: RR0SsgContext, dirBook: Book) {
+  protected toListItem(dirBook: Book) {
     const attrs: { [name: string]: string } = {};
     const titles = [];
     const details: string[] = [];
@@ -109,7 +107,7 @@ export class BookDirectoryStep extends DirectoryStep {
   }
 
   protected async toc(context: HtmlRR0SsgContext, book: Book) {
-    const startFileName = path.join(book.dirName, 'index.html');
+    const startFileName = path.join(this.outDir, book.dirName, 'index.html');
     try {
       context.read(startFileName);
       const startFileNames = [context.inputFile.name];
@@ -125,7 +123,8 @@ export class BookDirectoryStep extends DirectoryStep {
         context.logger.debug('toc before:', chapter.toString());
         await chapter.update();
         context.logger.debug('toc after:', chapter.toString());
-        context.logger.log('Updated toc for', chapter.file.name);
+        context.logger.log('Updated toc for', chapter.context.inputFile.name);
+        await this.outputFunc(chapter.context, chapter.context.outputFile);
       }
     } catch (e) {
       context.logger.error('Could not check TOC of ' + startFileName, e.message);

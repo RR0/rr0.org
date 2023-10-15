@@ -44,13 +44,7 @@ export class CaseDirectoryStep extends DirectoryStep {
     super(dirs, excludedDirs, template, config, "case directory")
   }
 
-  protected async processDirs(context: RR0SsgContext, dirNames: string[]): Promise<void> {
-    const cases = this.read(context, dirNames);
-    const directoriesHtml = this.toList(context, cases);
-    context.outputFile.contents = context.inputFile.contents.replace(`<!--#echo var="directories" -->`,
-      directoriesHtml);
-    await this.outputFunc(context, context.outputFile);
-  }
+  static readonly template = 'science/crypto/ufo/enquete/dossier/index.html';
 
   /**
    * Convert an array of Case[] to an <ul> HTML unordered list.
@@ -108,13 +102,30 @@ export class CaseDirectoryStep extends DirectoryStep {
     return HtmlTag.toString('li', a, attrs);
   }
 
+  static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<CaseDirectoryStep> {
+    const ufoCasesDirectories = await RR0FileUtil.findDirectoriesContaining("case.json")
+    return new CaseDirectoryStep(
+      ufoCasesDirectories,
+      ["science/crypto/ufo/enquete/dossier/canular"],
+      CaseDirectoryStep.template,
+      outputFunc, config)
+  }
+
+  protected async processDirs(context: RR0SsgContext, dirNames: string[]): Promise<void> {
+    const cases = this.scan(context, dirNames);
+    const directoriesHtml = this.toList(context, cases);
+    context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
+      directoriesHtml);
+    await this.outputFunc(context, context.outputFile);
+  }
+
   /**
    * Read case JSON files contents and instantiate them as Case objects.
    *
    * @param context
    * @param dirNames The directories to look for case.json files.
    */
-  protected read(context: RR0SsgContext, dirNames: string[]): Case[] {
+  protected scan(context: RR0SsgContext, dirNames: string[]): Case[] {
     const cases: Case[] = [];
     for (const dirName of dirNames) {
       const dirCase: Case = {dirName, time: '', title: ''};
@@ -123,19 +134,10 @@ export class CaseDirectoryStep extends DirectoryStep {
         const jsonFileInfo = SsgFile.read(context, `${dirName}/case.json`);
         Object.assign(dirCase, JSON.parse(jsonFileInfo.contents));
       } catch (e) {
-        console.warn(`${dirName} has no case.json description`);
+        context.warn(`${dirName} has no case.json description`);
         // No json, just guess title.
       }
     }
     return cases;
-  }
-
-  static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<CaseDirectoryStep> {
-    const ufoCasesDirectories = await RR0FileUtil.findDirectoriesContaining("case.json")
-    return new CaseDirectoryStep(
-      ufoCasesDirectories,
-      ["science/crypto/ufo/enquete/dossier/canular"],
-      "science/crypto/ufo/enquete/dossier/index.html",
-      outputFunc, config)
   }
 }

@@ -49,6 +49,7 @@ import { BaseReplaceCommand } from './BaseReplaceCommand';
 import { OpenGraphCommand } from './OpenGraphCommand';
 import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';
 import { BookDirectoryStep } from './book/BookDirectoryStep';
+import path from 'path';
 
 const args = new CLI().getArgs();
 const cliContents = args.contents;
@@ -89,7 +90,11 @@ const config: SsgConfig = {
 const outputFunc: OutputFunc
   = async (context: SsgContext, info: SsgFile, outDir = config.outDir + '/'): Promise<void> => {
   // TODO: Fix this
-  if (!info.name.startsWith(outDir)) {
+  if (info.name.startsWith(outDir)) {
+    if (info.name.startsWith(path.join(outDir, outDir))) {
+      info.name = info.name.substring(outDir.length);
+    }
+  } else {
     info.name = outDir + info.name;
   }
   try {
@@ -135,8 +140,8 @@ async function getTimeFiles(): Promise<string[]> {
 
 getTimeFiles().then(async (timeFiles) => {
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config);
-  const booksStep = await BookDirectoryStep.create(outputFunc, config);
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config);
+  const booksStep = await BookDirectoryStep.create(outputFunc, config);
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
   if (!apiKey) {
@@ -149,39 +154,40 @@ getTimeFiles().then(async (timeFiles) => {
 
   const searchCommand = new SearchCommand(['404.html', 'Referencement.html']);
   const baseUrl = 'https://rr0.org';
+  const contentReplacements = [
+    new SsiIncludeReplaceCommand(),
+    new BaseReplaceCommand('/'),
+    new LanguageReplaceCommand(),
+    new StringEchoVarReplaceCommand('mail'),
+    new StringEchoVarReplaceCommand('mapsApiKey'),
+    new AngularExpressionReplaceCommand(),
+    new SsiEchoVarReplaceCommand('copyright', [rr0DefaultCopyright]),
+    new SsiIfReplaceCommand(),
+    new SsiSetVarReplaceCommand('title', (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+    new SsiSetVarReplaceCommand('url',
+      (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+    new SsiLastModifiedReplaceCommand(context.time.options),
+    new SsiTitleReplaceCommand([timeDefaultHandler]),
+    new AuthorReplaceCommand(timeFiles),
+    new HtmlTagReplaceCommand('time', new TimeReplacerFactory(timeFiles)),
+    new ClassDomReplaceCommand('people', new PeopleReplacerFactory()),
+    new ClassDomReplaceCommand('place', new PlaceReplacerFactory(placeService, orgService)),
+    new ClassDomRegexReplaceCommand('temoin(.?)', new WitnessReplacerFactory()),
+    new ClassDomReplaceCommand('note', new NoteReplacerFactory()),
+    new ClassDomReplaceCommand('source', new SourceReplacerFactory()),
+    new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+    new OutlineReplaceCommand(),
+    new AnchorReplaceCommand(siteBaseUrl),
+    new DescriptionReplaceCommand('UFO data for french-reading people', 'abstract'),
+    new ImageCommand(config.outDir, 275, 500),
+    new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
+    searchCommand
+  ];
   const contentConfigs: ContentStepConfig[] = [
     htAccessToNetlifyConfig,
     {
       roots: contentRoots,
-      replacements: [
-        new SsiIncludeReplaceCommand(),
-        new BaseReplaceCommand('/'),
-        new LanguageReplaceCommand(),
-        new StringEchoVarReplaceCommand('mail'),
-        new StringEchoVarReplaceCommand('mapsApiKey'),
-        new AngularExpressionReplaceCommand(),
-        new SsiEchoVarReplaceCommand('copyright', [rr0DefaultCopyright]),
-        new SsiIfReplaceCommand(),
-        new SsiSetVarReplaceCommand('title', (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-        new SsiSetVarReplaceCommand('url',
-          (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-        new SsiLastModifiedReplaceCommand(context.time.options),
-        new SsiTitleReplaceCommand([timeDefaultHandler]),
-        new AuthorReplaceCommand(timeFiles),
-        new HtmlTagReplaceCommand('time', new TimeReplacerFactory(timeFiles)),
-        new ClassDomReplaceCommand('people', new PeopleReplacerFactory()),
-        new ClassDomReplaceCommand('place', new PlaceReplacerFactory(placeService, orgService)),
-        new ClassDomRegexReplaceCommand('temoin(.?)', new WitnessReplacerFactory()),
-        new ClassDomReplaceCommand('note', new NoteReplacerFactory()),
-        new ClassDomReplaceCommand('source', new SourceReplacerFactory()),
-        new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
-        new OutlineReplaceCommand(),
-        new AnchorReplaceCommand(siteBaseUrl),
-        new DescriptionReplaceCommand('UFO data for french-reading people', 'abstract'),
-        new ImageCommand(config.outDir, 275, 500),
-        new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
-        searchCommand
-      ],
+      replacements: contentReplacements,
       getOutputFile(context: SsgContext): SsgFile {
         return context.outputFile;
       }
@@ -190,8 +196,8 @@ getTimeFiles().then(async (timeFiles) => {
   const ssg = new Ssg(config)
     .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesStep)
-    .add(booksStep)
     .add(...peopleSteps)
+    .add(booksStep)
     .add(new CopyStep(copies, config));
 
   if (args.reindex) {

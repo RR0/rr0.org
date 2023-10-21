@@ -1,0 +1,33 @@
+<!--#include virtual="/header-start.html" -->
+<title>BPMN</title>
+<script src="https://unpkg.com/bpmn-js@14.2.0/dist/bpmn-viewer.development.js"></script>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Business Process Model and Notation</i> (ex-<i lang="en">Business Process Modeling Notation</i>)  :
+  modèle et notation de processus métier.</p>
+<section>
+  <h2>Motivation</h2>
+  <p><a href="..">Formaliser</a> des processus / flux de travail / algorithmes.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p><a href="dmn">DMN</a></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Créé par la éveloppée par la <abbr title="Business Process Management Initiative">BPMI</abbr>.</li>
+    <li>Géré par l'<a href="/org/us/company/OMG.html">OMG</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <div id="example"></div>
+</section>
+<script>
+  const viewer = new BpmnJS({container: "#example"})
+  fetch("./example.bpmn").then(response => response.text()).then(xml => {
+    viewer.importXML(xml)
+    document.querySelector(`a[href="http://bpmn.io"]`).remove()
+  })
+</script>
+<!--#include virtual="/footer.html" -->

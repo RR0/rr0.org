@@ -1,0 +1,48 @@
+<!--#include virtual="/header-start.html" -->
+<title>CMMN</title>
+<script src="https://unpkg.com/cmmn-js@0.19.2/dist/cmmn-viewer.development.js"></script>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Case Management Model and Notation</i> : modèle et notation de gestion de cas.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Compléter <a href="../bpmn">BPMN</a> par une gestion desj processus <i lang="lat">ad hoc</i> et non reproductibles.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <ul>
+    <li>Le <b>dossier</b> (<i lang="en">case</i>) représente le cas à traiter. Il comprend :
+      <ul>
+        <li>Le modèle du dossier, décrivant son fonctionnement ;</li>
+        <li>Le <b>classeur</b> (<i lang="en">case file</i>), contenant toutes ses informations  permettant de traiter le
+          dossier ;</li>
+        <li>Des <b>rôles</b> pouvant agir sur le dossier, ou qui sont concernés ;</li>
+        <li>Des <b>entrées/sorties</b> permettant les interactions avec son environnement ;</li>
+      </ul>
+    </li>
+    <li>Une <b>étape</b> (<i lang="en">stage</i>) est une unité du modèle / un sous-dossier dans le contexte du dossier
+      parent, pouvant avoir :
+      <ul>
+        <li>Des <b>entrées</b> (<i lang="en">inputs</i>), représentées par un diamant blanc</li>
+        <li>Des <b>sorties</b> (<i lang="en">outputs</i>), représentées par un diamant noir</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <div id="example"></div>
+</section>
+<script>
+  const viewer = new CmmnJS({container: "#example"})
+  fetch("./example.cmmn").then(response => response.text()).then(xml => {
+    viewer.importXML(xml, function (err) {
+      if (err) {
+        console.error("Could not display model", err)
+      } else {
+        document.querySelector(`a[href="http://bpmn.io"]`).remove()
+      }
+    })
+  })
+</script>
+<!--#include virtual="/footer.html" -->

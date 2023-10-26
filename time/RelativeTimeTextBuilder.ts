@@ -1,12 +1,12 @@
-import {TimeTextBuilder} from "./TimeTextBuilder"
-import {TimeContext} from "./TimeContext"
-import {RR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
+import { TimeTextBuilder } from './TimeTextBuilder';
+import { TimeContext } from './TimeContext';
+import { RR0SsgContext, RR0SsgContextImpl } from '../RR0SsgContext';
 
 export class RelativeTimeTextBuilder {
 
   static build(oldContext: RR0SsgContext, newContext: RR0SsgContext): string {
-    const previousTime = oldContext.time
-    if (!previousTime.isDefined()) {
+    const previousTime = oldContext?.time;
+    if (!previousTime?.isDefined()) {
       return TimeTextBuilder.build(newContext)
     }
     const deltaContext = new RR0SsgContextImpl(oldContext.locale, new TimeContext({...oldContext.time.options}))

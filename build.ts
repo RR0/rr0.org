@@ -75,8 +75,8 @@ const copiesArg = args.copies;
 const copies = copiesArg ? copiesArg.split(',') : [
   'favicon.ico', 'manifest.json', 'opensearch.xml', 'apple-touch-icon.png', 'apple-touch-icon_400x400.png', 'screenshot1.jpg',
   'rr0.css', 'print.css',
-  'rr0.js',
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
+  '**/*.cmmn', '**/*.bpmn',
   'people/index.js', 'people/lier.svg', 'people/index.css',
   'search/index.js', 'search/index.json',
   'udb/**/*.js',
@@ -193,12 +193,13 @@ getTimeFiles().then(async (timeFiles) => {
       }
     }
   ];
+  const copyStep = new CopyStep(copies, config);
   const ssg = new Ssg(config)
     .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesStep)
     .add(...peopleSteps)
     .add(booksStep)
-    .add(new CopyStep(copies, config));
+    .add(copyStep);
 
   if (args.reindex) {
     ssg.add(new SearchIndexStep('search/index.json', searchCommand));

@@ -1,6 +1,8 @@
 import { AuthorReplaceCommand } from './AuthorReplaceCommand';
 import { rr0TestUtil } from '../../test/RR0TestUtil';
 import { HtmlSsgFile } from 'ssg-api';
+import { describe, expect, test } from '@javarome/testscript';
+import { RelativeTimeTextBuilder } from '../../time/RelativeTimeTextBuilder';
 
 describe("AuthorReplaceCommand", () => {
 
@@ -20,10 +22,11 @@ describe("AuthorReplaceCommand", () => {
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.author.push("Beau, Jérôme")
+    const time = RelativeTimeTextBuilder.build(undefined, context);
     const file = await command.execute(context) as HtmlSsgFile
     expect(file.meta.author).toEqual(["Beau, Jérôme"])
     expect(file.contents).toBe(
-      `This is published by <div class="document-author"><span class="people">Beau, Jérôme</span></div>!`)
+      `This is published by <div class="document-author"><span class="people">Beau, Jérôme</span>, <span class="time">${time}</span></div>!`)
   })
 
   test("copyright only", async () => {
@@ -32,10 +35,12 @@ describe("AuthorReplaceCommand", () => {
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.inputFile.meta.copyright = "Some publication"
+    const time = RelativeTimeTextBuilder.build(undefined, context);
     const file = await command.execute(context) as HtmlSsgFile
     expect(file.meta.author).toEqual([])
     expect(file.meta.copyright).toBe("Some publication")
-    expect(file.contents).toBe(`This is published by <div class="document-author">Some publication</div>!`)
+    expect(file.contents).toBe(
+      `This is published by <div class="document-author">Some publication</div>, <span class="time">${time}</span></div>!`);
   })
 
   test("author with copyright", async () => {

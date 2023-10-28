@@ -1,8 +1,7 @@
-import {promise as glob} from "glob-promise"
-import {PeopleReplacer} from "./PeopleReplacer"
-import {DomReplacer, ReplacerFactory} from "ssg-api"
-import {PeopleFactory} from "./PeopleFactory"
-import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import { PeopleReplacer } from './PeopleReplacer';
+import { DomReplacer, ReplacerFactory } from 'ssg-api';
+import { PeopleFactory } from './PeopleFactory';
+import { HtmlRR0SsgContext } from '../RR0SsgContext';
 
 /**
  * Creates replacers for people HTML in a given context.

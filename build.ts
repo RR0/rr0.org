@@ -50,6 +50,7 @@ import { OpenGraphCommand } from './OpenGraphCommand';
 import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';
 import { BookDirectoryStep } from './book/BookDirectoryStep';
 import path from 'path';
+import { IndexedReplacerFactory } from './indexedReplacerFactory';
 
 const args = new CLI().getArgs();
 const cliContents = args.contents;
@@ -171,6 +172,7 @@ getTimeFiles().then(async (timeFiles) => {
     new AuthorReplaceCommand(timeFiles),
     new HtmlTagReplaceCommand('time', new TimeReplacerFactory(timeFiles)),
     new ClassDomReplaceCommand('people', new PeopleReplacerFactory()),
+    new ClassDomReplaceCommand('indexed', new IndexedReplacerFactory()),
     new ClassDomReplaceCommand('place', new PlaceReplacerFactory(placeService, orgService)),
     new ClassDomRegexReplaceCommand('temoin(.?)', new WitnessReplacerFactory()),
     new ClassDomReplaceCommand('note', new NoteReplacerFactory()),

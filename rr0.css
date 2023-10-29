@@ -1607,3 +1607,17 @@ body.with-map .map {
     content: "Do not print"
   }
 }
+
+.indexed li a {
+  display: block;
+  user-select: text;
+}
+
+.indexed li p {
+  margin: 0;
+}
+
+.indexed p[lang='ar-Latn'] {
+  font-style: italic;
+  text-align: right;
+}

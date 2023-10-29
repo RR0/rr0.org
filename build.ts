@@ -50,7 +50,7 @@ import { OpenGraphCommand } from './OpenGraphCommand';
 import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';
 import { BookDirectoryStep } from './book/BookDirectoryStep';
 import path from 'path';
-import { IndexedReplacerFactory } from './indexedReplacerFactory';
+import { IndexedReplacerFactory } from './index/indexedReplacerFactory';
 
 const args = new CLI().getArgs();
 const cliContents = args.contents;

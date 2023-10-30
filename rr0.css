@@ -711,6 +711,7 @@ th {
 img {
   margin: 1.25em 1.25em 1.5em;
   cursor: zoom-in;
+  height: auto;
 }
 
 img.zoomed {
@@ -1619,5 +1620,9 @@ body.with-map .map {
 
 .indexed p[lang='ar-Latn'] {
   font-style: italic;
+  text-align: right;
+}
+
+.lang-form {
   text-align: right;
 }

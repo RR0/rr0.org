@@ -12,7 +12,6 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
         const n = i + 1;
         item.id = String(n);
         item.innerHTML = `<a href="#${n}">${content}</a>`;
-        context.logger.log(item.outerHTML);
       }
     }
     return element;

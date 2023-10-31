@@ -39,10 +39,6 @@
   vertical-align: sub
 }
 
-#main, body {
-  height: 100%
-}
-
 html {
   font-family: system-ui, sans-serif;
   -webkit-text-size-adjust: 100%
@@ -1625,4 +1621,6 @@ body.with-map .map {
 
 .lang-form {
   text-align: right;
+  position: sticky;
+  top: 45px;
 }

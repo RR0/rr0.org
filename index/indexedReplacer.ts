@@ -3,7 +3,7 @@ import { HtmlRR0SsgContext } from '../RR0SsgContext';
 
 export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
-  async replacement(context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {
+  async replacement(_context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {
     const items = element.querySelectorAll('li');
     for (let i = 0; i < items.length; i++) {
       const item = items[i];

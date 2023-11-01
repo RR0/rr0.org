@@ -1619,7 +1619,11 @@ body.with-map .map {
   text-align: right;
 }
 
-.lang-form {
+.parts-form {
+  display: inline-block;
+}
+
+#lang-form {
   text-align: right;
   position: sticky;
   top: 45px;

@@ -80,7 +80,7 @@ const copies = copiesArg ? copiesArg.split(',') : [
   '**/*.cmmn', '**/*.bpmn',
   'people/index.js', 'people/lier.svg', 'people/index.css',
   'search/index.js', 'search/index.json',
-  'index/index.js',
+  'index/index.js', 'index/lang.js',
   'udb/**/*.js',
   'udb/netlify.toml',
   'udb/input/db/udb/data/*.*'

@@ -23,30 +23,32 @@ export class Filterform {
     const inputs = document.querySelectorAll(`form input[type="checkbox"]`)
     for (const input of inputs) {
       const paragraphs = this.getTags(input.value)
-      for (const paragraph of paragraphs) {
-        paragraph.style.display = input.checked ? "block" : "none"
+      for (let i = 0; i < paragraphs.length; i++) {
+        const paragraph = paragraphs[i]
+        paragraph.style.display = input.checked ? paragraph.nodeName === "LI" ? "list-item" : "block" : "none"
+        paragraph.setAttribute("value", paragraph.getAttribute("id"))
       }
     }
   }
 
   ready() {
     const ps = this.getTags()
-    const langs = ps.reduce((ls, p) => {
+    const values = ps.reduce((ls, p) => {
       ls.add(this.tagAttribute(p))
       return ls
     }, new Set())
     const form = document.querySelector(this.formSelector)
-    for (const lang of langs) {
+    for (const value of values) {
       const label = document.createElement("label")
       const input = document.createElement("input")
       input.type = "checkbox"
-      input.value = lang
+      input.value = value
       input.onclick = this.clicked.bind(this)
-      if (this.checked.includes(lang)) {
+      if (this.checked.includes(value)) {
         input.checked = true
       }
       label.appendChild(input)
-      label.append(" " + this.labels[lang])
+      label.append(" " + this.labels[value])
       form.append(label)
     }
     this.clicked()

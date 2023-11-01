@@ -202,13 +202,14 @@ getTimeFiles().then(async (timeFiles) => {
     .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesStep)
     .add(...peopleSteps)
-    .add(booksStep)
-    .add(copyStep);
+    .add(booksStep);
 
-  if (args.reindex) {
+  if (args.reindex === 'true') {
     ssg.add(new SearchIndexStep('search/index.json', searchCommand));
   }
-  ssg.start(context)
+  ssg
+    .add(copyStep)
+    .start(context)
     .then(result => context.log('Completed', result))
     .catch(err => {
       try {

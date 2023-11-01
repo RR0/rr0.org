@@ -81,6 +81,7 @@ const copies = copiesArg ? copiesArg.split(',') : [
   'people/index.js', 'people/lier.svg', 'people/index.css',
   'search/index.js', 'search/index.json',
   'index/index.js', 'index/lang.js',
+  'croyance/religion/theisme/mono/livre/islam/coran/index.js',
   'udb/**/*.js',
   'udb/netlify.toml',
   'udb/input/db/udb/data/*.*'

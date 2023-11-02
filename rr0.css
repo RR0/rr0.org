@@ -6,7 +6,7 @@
   --nav-width: 18vw;
   --map-width: 18vw;
   --margin: 1em;
-  --icon-color: gray;
+  --icon-color: grey;
 }
 
 * {
@@ -279,7 +279,7 @@ nav {
   box-shadow: 0 .5em 1em -.1em #555
 }
 
-.search form .icon:hover, .search:hover, a:hover, details summary:hover {
+.search form .icon:hover, .search:hover, a:hover, details summary:hover, .indexed li:hover {
   transition: background .2s ease-out
 }
 
@@ -614,7 +614,7 @@ a, details summary, .toggle {
   text-decoration: line-through
 }
 
-a:hover, details summary:hover, .toggle:hover {
+a:hover, details summary:hover, .toggle:hover, .indexed li:hover {
   border: none;
   border-radius: .2em;
   background: rgba(184, 197, 212, .49)
@@ -780,7 +780,7 @@ table img {
 
 cite {
   font-style: normal;
-  color: gray;
+  color: grey;
   margin-top: -0.4em;
   display: block;
   text-align: right;
@@ -1030,7 +1030,7 @@ dt, dd {
 .document-author {
   font-size: .8em;
   padding: .5em 1em;
-  color: gray;
+  color: grey;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZGZkZmYyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzklIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
   background: linear-gradient(135deg, #eaeaf9 0, rgba(255, 255, 255, 0) 79%)
 }
@@ -1046,7 +1046,7 @@ dt, dd {
 }
 
 .witness a {
-  color: gray;
+  color: grey;
 }
 
 .place, .plac {
@@ -1105,7 +1105,7 @@ footer iframe {
 
 .deceased::after {
   content: " †";
-  color: gray;
+  color: grey;
 }
 
 .pseudonym {
@@ -1130,7 +1130,7 @@ footer iframe {
 
 .note-contents {
   font-size: .8em;
-  color: gray;
+  color: grey;
   display: none;
 }
 
@@ -1146,7 +1146,7 @@ footer iframe {
 
 .source-contents {
   font-size: .8em;
-  color: gray;
+  color: grey;
   display: none;
 }
 
@@ -1495,7 +1495,7 @@ body.with-map .map {
   }
 
   .footer {
-    color: gray;
+    color: grey;
   }
 
   figcaption {
@@ -1523,7 +1523,7 @@ body.with-map .map {
   }
 
   .document-author {
-    color: gray;
+    color: grey;
     background: linear-gradient(135deg, #555555 0, rgba(255, 255, 255, 0) 79%)
   }
 
@@ -1603,11 +1603,6 @@ body.with-map .map {
   *:after {
     content: "Do not print"
   }
-}
-
-.indexed li a {
-  display: block;
-  user-select: text;
 }
 
 .indexed li p {

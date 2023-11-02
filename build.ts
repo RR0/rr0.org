@@ -197,7 +197,7 @@ getTimeFiles().then(async (timeFiles) => {
       }
     }
   ];
-  const copyStep = new CopyStep(copies, config);
+  const copyStep = new CopyStep(copies, config, {ignore: ['node_modules/**', 'out/**']});
   const ssg = new Ssg(config)
     .add(new RR0ContentStep(contentConfigs, outputFunc))
     .add(ufoCasesStep)

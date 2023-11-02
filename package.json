@@ -28,7 +28,7 @@
     "csv-parser": "^3.0.0",
     "glob-promise": "^6.0.5",
     "image-size": "^1.0.2",
-    "ssg-api": "^1.5.1"
+    "ssg-api": "^1.5.2"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "~0.7.0",

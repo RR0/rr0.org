@@ -3,7 +3,8 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
-  <p>Afficher une photo, un dessin, un schéma à l'écran ou sur imprimante.</p>
+  <p>Stocker des données permettant de reconstituer (afficher) une image (photo, dessin, schéma) à l'écran ou sur
+    imprimante.</p>
 </section>
 <section>
   <h2>Analyse</h2>
@@ -24,75 +25,10 @@
     <h3>Compression</h3>
     <p>Aujourd'hui les images sont rarement enregistrées sous leur forme brute (<i lang="en">raw</i>) car le stockage de
       chaque pixel avec sa couleur produit des volumes de données inutilement importants. </p>
-    <p>Des algorithmes de compression couramment utilisés sont : </p>
-    <table>
-      <thead>
-      <tr>
-        <th>Algorithme</th>
-        <td>CCITT (Huffman)</td>
-        <td>Delta</td>
-        <td>JPEG</td>
-        <td>LZW</td>
-        <td>RLC</td>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th>Signification</th>
-        <td><em>...Telecom ...</em></td>
-        <td>Codage différentiel</td>
-        <td><em>Tagged Image File Format</em></td>
-        <td><em>Lempel-Ziv Welch</em></td>
-        <td><em>Run Length Compression</em></td>
-      </tr>
-      <tr>
-        <th>Version</th>
-        <td class="non"></td>
-        <td class="oui"></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-      </tr>
-      <tr>
-        <th>Release</th>
-        <td class="non"></td>
-        <td class="oui"></td>
-        <td></td>
-        <td></td>
-        <td class="oui"></td>
-      </tr>
-      <tr>
-        <th>Copyright</th>
-        <td class="non">Compuserve</td>
-        <td class="oui">Libre</td>
-        <td></td>
-        <td class="oui">Libre</td>
-        <td class="oui">Libre</td>
-      </tr>
-      <tr>
-        <th>Compression</th>
-        <td class="oui">LZW</td>
-        <td></td>
-        <td class="oui">Delta</td>
-        <td class="oui">JPEG</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Non destructif</th>
-        <td class="oui"></td>
-        <td></td>
-        <td class="non">Indice de qualité</td>
-        <td class="oui">Oui</td>
-        <td></td>
-      </tr>
-      </tbody>
-    </table>
-    <p>Il existe plusieurs API Java pour manipuler des images :</p>
-    <ul>
-      <li>AWT</li>
-      <li>Jimi (JRE 1.1.x) pour lire/écrire différents formats d'image</li>
-      <li><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAI.html">JAI</a> (Java 2)</li>
-    </ul>
+    <p>Des exemples d'<a href="/tech/info/soft/data/compression">algorithmes de compression</a> d'images sont  CCITT
+      (Huffman), Delta, JPEG, <a href="/tech/info/soft/data/compression/LZW.html">LZW</a>, <a
+          href="/tech/info/soft/data/compression/RLC.html">RLC</a>, <a
+          href="/tech/info/soft/data/compression/RLE.html">RLE</a>.
   </section>
 </section>
 <section>
@@ -101,46 +37,45 @@
     <thead>
     <tr>
       <th>Format</th>
-      <td colspan="2">BMP</td>
-      <td>CUR</td>
-      <td>GIF</td>
-      <td>ICO</td>
-      <td>JPEG</td>
-      <td>PCX</td>
-      <td>PICT</td>
-      <td>PNG</td>
-      <td>PSD</td>
-      <td>Sunraster</td>
-      <td>TGA</td>
-      <td>TIFF</td>
-      <td>XBM</td>
-      <td>XPM</td>
+      <th>Compression</th>
+      <th>Transparence</th>
+      <th>Entrelacement</th>
+      <th>Alpha</th>
+      <th>Licence</th>
+      <th>Animation</th>
+      <th>Couleurs max</th>
+      <th>Type</th>
+      <th>Plate-forme</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <th>Signification</th>
-      <td colspan="2"><em>BitMaP</em></td>
-      <td><em>CURsor</em></td>
-      <td><em>Graphical Image Format</em></td>
-      <td><em>ICOn</em></td>
-      <td><em>Joint Photographic Expert Group</em></td>
+      <th>AI</th>
       <td></td>
-      <td><em>PICTure</em></td>
-      <td><em>Portable Network Graphics</em></td>
-      <td><em>PhotoShop</em></td>
-      <td><em>CURsor</em></td>
-      <td><em>Targa</em></td>
-      <td><em>Tagged Image File Format</em></td>
-      <td><em>CURsor</em></td>
-      <td><em>CURsor</em></td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td></td>
+      <td class="non">Adobe</td>
+      <td></td>
+      <td></td>
+      <td>Vectoriel</td>
+      <td></td>
     </tr>
     <tr>
-      <th>Version</th>
-      <td colspan="2">3</td>
-      <td></td>
-      <td class="non"></td>
-      <td></td>
+      <th><a href="BMP.html">BMP</a></th>
+      <td><a href="/tech/info/soft/data/compression/RLC.html">RLC</a></td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Non</td>
+      <td class="non">Microsoft</td>
+      <td class="non">Non</td>
+      <td class="oui">16,7 millions</td>
+      <td>Bitmap</td>
+      <td class="non">Windows</td>
+    </tr>
+    <tr>
+      <th><a href="CUR.html">CUR</a></th>
+      <td class="oui"></td>
       <td></td>
       <td></td>
       <td></td>
@@ -149,38 +84,48 @@
       <td></td>
       <td></td>
       <td></td>
+    </tr>
+    <tr>
+      <th>EPS</th>
       <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Bitmap</td>
       <td></td>
     </tr>
     <tr>
-      <th>Release</th>
-      <td></td>
-      <td>5</td>
-      <td></td>
-      <td class="non"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="oui"></td>
+      <th>FAX</th>
+      <td>CCITT (Huffman)</td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
+      <td>2</td>
+      <td>Bitmap</td>
       <td></td>
     </tr>
     <tr>
-      <th>Copyright</th>
-      <td></td>
-      <td></td>
+      <th><a href="GIF.html">GIF</a></th>
+      <td><a href="/tech/info/soft/data/compression/LZW.html">LZW</a></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
       <td></td>
       <td class="non">Compuserve</td>
+      <td class="oui">Oui</td>
+      <td class="non">256</td>
+      <td>Bitmap</td>
+      <td class="non">PC</td>
+    </tr>
+    <tr>
+      <th><a href="ICO.html">ICO</a></th>
       <td></td>
-      <td class="oui">Libre</td>
       <td></td>
       <td></td>
-      <td class="oui">Libre</td>
       <td></td>
       <td></td>
       <td></td>
@@ -189,24 +134,156 @@
       <td></td>
     </tr>
     <tr>
-      <th>Compression</th>
-      <td class="oui">RLC</td>
+      <th>IFF/ILB</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>IMG</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="JPG.html">JPEG</a></th>
+      <td>+/- destructif selon qualité demandée</td>
+      <td class="non">Non</td>
+      <td class="oui">Oui</td>
+      <td></td>
+      <td class="oui">Libre</td>
+      <td class="non">Non</td>
+      <td class="oui">16,7 millions</td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="PCX.html">PCX</a></th>
+      <td class="oui"><a href="/tech/info/soft/data/compression/RLC.html">RLC</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="PICT.html">PICT</a></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="PNG.html">PNG</a></th>
+      <td></td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Oui</td>
+      <td class="oui">Libre</td>
       <td class="oui"></td>
+      <td><span id="intelliTxt">256/16,7 milions </span></td>
+      <td>Bitmap</td>
       <td></td>
-      <td class="oui">LZW</td>
-      <td></td>
-      <td class="oui">JPEG</td>
-      <td class="oui">RLC</td>
-      <td></td>
+    </tr>
+    <tr>
+      <th><a href="PSD.html">PSD</a></th>
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="SunRaster.html">Sunraster</a></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="TGA.html">TGA</a></th>
       <td class="oui">Delta</td>
-      <td class="oui">Delta</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="TIFF.html">TIFF</a></th>
+      <td>Delta (Rare, non destructif)</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td class="non"></td>
+      <td class="oui">16,7 millions</td>
+      <td>Bitmap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="XBM.html">XBM</a></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><a href="XPM.html">XPM</a></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     </tbody>
   </table>
+  <p>Il existe plusieurs API Java pour manipuler des images :</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/se/ui/AWT.html">AWT</a></li>
+    <li>Jimi (JRE 1.1.x) pour lire/écrire différents formats d'image</li>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAI.html">JAI</a> (Java 2)</li>
+  </ul>
 </section>
 <!--#include virtual="/footer.html" -->

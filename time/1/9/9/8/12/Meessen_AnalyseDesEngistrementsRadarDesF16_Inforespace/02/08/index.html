@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <title>Il faut considérer la vitesse Doppler instantanée</title>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/notes.js" type="text/javascript"></script>
+  <script src="/js/highslide/highslide.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    hs.graphicsDir = "/js/highslide/graphics/"
+    hs.outlineType = "rounded-white"
+  </script>
+</head>
+<body id="bodyid" onLoad="footnotes();footsources()">
+<h1><a href="https://home.nordnet.fr/~phuleux/leradar.htm">Il faut considérer la vitesse Doppler instantanée</a></h1>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a> &gt; <a href="../../index.html">Analyse approfondie des mystérieux enregistrements radar
+      des F-16</a> &gt; <a href="../index.html">Le radar doppler à impulsion des F-16</a></th>
+  </tr>
+</table>
+<p> Le résultat essentiel est que le radar reçoit un signal qui est la somme de toutes les ondes réfléchies en des
+  endroits où l'humidité de l'air varie assez brusquement. Cela donne lieu à des interférences ! L'intensité du signal
+  résultant détermine <em>la probabilité de détection</em>, tandis que la <em>vitesse Doppler</em> du nuage invisible
+  est déterminée par la variation instantanée de la phase (df/dt).</p>
+<p> A première vue, on pourrait penser que même des turbulences assez violentes à l'intérieur d'une masse d'air humide
+  n'auraient aucune importance, puisque la valeur moyenne des écarts par rapport à la vitesse moyenne devrait s'annuler.
+  Il m'est revenu indirectement que Jean-Pierre Petit utilisait cet argument, mais il n'est pas correct. En effet, le
+  radar des F-16 détermine la vitesse Doppler au moyen des mesures effectuées pendant un intervalle de temps extrêmement
+  petit. Il est <em>infinitésimal</em> par rapport à l'échelle de temps qu'il faudrait considérer pour obtenir une
+  valeur moyenne.</p>
+<p> Quand on considère seulement la <em>probabilité de détection</em>, il faut considérer par contre la valeur moyenne
+  de la grandeur r du vecteur résultant sur la figure 10 , en supposant que les petits vecteurs varient d'une manière
+  aléatoire. On peut démontrer que la distribution des probabilités pour aboutir après N déplacements aléatoires à telle
+  ou telle distance r du point de départ correspond à une "courbe en cloche" de Gauss, centrée sur le point de départ,
+  mais le déplacement moyen après N pas n'est pas nul. Il augmente au contraire, pour des pas de même grandeur et
+  d'orientation quelconque, comme la racine carrée de N. Un marin qui se déplace en étant complètement soûl, tend à
+  s'écarter de son point de départ. Il en est de même pour le "mouvement brownien", c'est-à-dire le déplacement moyen
+  d'une particule très petite, mais visible au microscope optique, quand elle est bousculée par l'agitation thermique du
+  fluide qui la contient.</p>
+<p> Le radar d'un F-16 ne parvient pas toujours à détecter l'onde renvoyée par un nuage invisible, parce que les ondes
+  partielles qui sont renvoyées aux endroits où l'humidité varie brusquement peuvent interférer de manière destructive.
+  Quand il détecte un signal, il attribuera à la source de l'écho une distance réaliste (déterminée par le temps de
+  parcours des impulsions), mais une vitesse <em>instantanée</em> qui est en général différente de la vitesse moyenne
+  (v' sur la figure 7). Cet écho ne sera pas toujours éliminé par le filtrage électronique, défini par la bande
+  verticale de la figure 8.</p>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a> &gt; <a href="../../index.html">Analyse approfondie des mystérieux enregistrements radar
+      des F-16</a> &gt; <a href="../index.html">Le radar doppler à impulsion des F-16</a></th>
+  </tr>
+</table>
+<ol>
+  <div id="notes"></div>
+</ol>
+<ol>
+  <div id="sources"></div>
+</ol>
+<script src="https://www.assoc-amazon.fr/s/link-enhancer?tag=r047-21&o=8" type="text/javascript">
+</script>
+<noscript><img alt="" src="https://www.assoc-amazon.fr/s/noscript?tag=r047-21"/></noscript>
+</body>
+</html>

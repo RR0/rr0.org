@@ -25,7 +25,7 @@ ErrorDocument 404 /404.shtml
 DirectoryIndex index_fr.html index.html
 Redirect /data https://rr0.org/time
 Redirect /personne https://rr0.org/people
-Redirect /place https://rr0.org/place
+Redirect /lieu https://rr0.org/place
 Redirect /lieux.html https://rr0.org/place
 Redirect /glossair.html https://rr0.org/science/crypto/ufo/glossair.html
 Redirect /DD.html https://rr0.org/science/crypto/ufo/observation/classification/hynek/dd
@@ -74,7 +74,7 @@ Redirect /Documents/Articles/Vallee/1990_5ArgumentsContreHET_Vallee_fr.html http
 Redirect /Documents/Officiels/1990_LambrechtsRapport.html https://rr0.org/time/1/9/9/0/RapportLambrechts/
 Redirect /science/crypto/ufologie https://rr0.org/science/crypto/ufo
 Redirect /science/crypto/zoologie https://rr0.org/science/crypto/zoo
-Redirect /science/crypto/archeo https://rr0.org/science/crypto/archeo
+Redirect /science/crypto/archeologie https://rr0.org/science/crypto/archeo
 Redirect /Dossier/1996-01-20_Varginha https://rr0.org/science/crypto/ufo/enquete/dossier/Varginha
 Redirect /Dossier/1952-09-12_Flatwoods https://rr0.org/science/crypto/ufo/enquete/dossier/Flatwoods
 Redirect /Dossier/1957-10-15_VillasBoas https://rr0.org/science/crypto/ufo/enquete/dossier/VillasBoas
@@ -139,7 +139,7 @@ Redirect /Nuages.html https://rr0.org/science/crypto/ufo/enquete/meprise/nuage
 Redirect /FeuxFollets.html https://rr0.org/science/crypto/ufo/enquete/meprise/FeuxFollets.html
 Redirect /science/crypto/ufo/enquete/meprise/insectes/ https://rr0.org/science/crypto/ufo/enquete/meprise/insecte
 Redirect /PilierDeSoleil.html https://rr0.org/science/crypto/ufo/enquete/meprise/optique/PilierDeSoleil.html
-Redirect /pilier https://rr0.org/science/crypto/ufo/enquete/meprise/optique/pilier
+Redirect /PilierDeLumiere.html https://rr0.org/science/crypto/ufo/enquete/meprise/optique/pilier
 Redirect /science/crypto/ufologie/enquete/meprise/illusion/ https://rr0.org/science/crypto/ufo/enquete/meprise/optique/
 Redirect /SaintElme.html https://rr0.org/science/crypto/ufo/enquete/meprise/elme/
 Redirect /insectes/ https://rr0.org/science/crypto/ufo/enquete/meprise/insectes/
@@ -280,7 +280,7 @@ Redirect /1984.html https://rr0.org/time/1/9/8/4
 Redirect /1952_2.html https://rr0.org/time/1/9/5/2/07
 Redirect /Agobard.html https://rr0.org/science/crypto/ufo/enquete/dossier/GreleTonnerre
 Redirect /Astronomes.html https://rr0.org/people/Astronomes.html
-Redirect /people/a/Astronomes.html https://rr0.org/people/Astronomes.html
+Redirect /personne/a/Astronomes.html https://rr0.org/people/Astronomes.html
 Redirect /AllenCarlMeredith.html https://rr0.org/people/a/AllenCarlMeredith
 Redirect /AdairDavid.html https://rr0.org/people/a/AdairDavid
 Redirect /AdamskiGeorge.html https://rr0.org/people/a/AdamskiGeorge
@@ -293,7 +293,6 @@ Redirect /people/a/Aristote/Aristote.html https://rr0.org/people/a/Aristote
 Redirect /people/a/ArmstrongMaryLouise.html https://rr0.org/people/a/ArmstrongMaryLouise
 Redirect /AsselineMichel.html https://rr0.org/people/a/AsselineMichel
 Redirect /people/b/BormanFrank.html https://rr0.org/people/b/BormanFrank
-Redirect /people/b/BerknerLloydV https://rr0.org/people/b/BerknerLloydV
 Redirect /people/b/BowerDonald.html https://rr0.org/people/b/BowerDonald
 Redirect /BakerRobertML.html https://rr0.org/people/b/BakerRobertML
 Redirect /BallesterOlmosVicenteJuan.html https://rr0.org/people/b/BallesterOlmosVicenteJuan
@@ -339,7 +338,7 @@ Redirect /ChaloupekHenri.html https://rr0.org/people/c/ChaloupekHenri
 Redirect /CharrouxRobert.html https://rr0.org/people/c/CharrouxRobert
 Redirect /people/c/CharrouxRobert.html https://rr0.org/people/c/CharrouxRobert
 Redirect /ClarkeArthurC.html https://rr0.org/people/c/ClarkeArthurC
-Redirect /people/c/ClarkJerome https://rr0.org/people/c/ClarkJerome
+Redirect /people/c/ClarkJeromeE https://rr0.org/people/c/ClarkJerome
 Redirect /people/c/ClarkeArthurC.html https://rr0.org/people/c/ClarkeArthurC
 Redirect /people/c/Clarkson.html https://rr0.org/people/c/Clarkson
 Redirect /people/c/CorlissWilliamR https://rr0.org/people/c/CorlissWilliamRoger
@@ -367,7 +366,7 @@ Redirect /people/DotyRichardC https://rr0.org/people/d/DotyRichardC
 Redirect /people/d/DrakeWalterRaymond.html https://rr0.org/people/d/DrakeWalterRaymond
 Redirect /DubocJeanCharles.html https://rr0.org/people/d/DubocJeanCharles
 Redirect /FermiEnrico.html https://rr0.org/people/f/FermiEnrico/
-Redirect /people/f/FahrneyDelmerS https://rr0.org/people/f/FahrneyDelmerS/
+Redirect /people/f/FahrneyDelmerS.html https://rr0.org/people/f/FahrneyDelmerS/
 Redirect /people/f/FriendRobertJ.html https://rr0.org/people/f/FriendRobertJ/
 Redirect /people/FeyerabendPaul https://rr0.org/people/f/FeyerabendPaul/
 Redirect /people/f/FiguetMichel.html https://rr0.org/people/f/FiguetMichel/
@@ -380,7 +379,7 @@ Redirect /people/FouereRene https://rr0.org/people/f/FouereRene/
 Redirect /FowlerRaymondE.html https://rr0.org/people/f/FowlerRaymondE/
 Redirect /FriedmanStanton.html https://rr0.org/people/f/FriedmanStantonT
 Redirect /people/f/FregnaleAndre.html https://rr0.org/people/f/FregnaleAndre
-Redirect /people/f/FullerJohnG https://rr0.org/people/f/FullerJohnG
+Redirect /people/f/FullerJohnG.html https://rr0.org/people/f/FullerJohnG
 Redirect /pilotes.html https://rr0.org/people/pilotes.html
 Redirect /people/p/pilotes.html https://rr0.org/people/pilotes.html
 Redirect /PatenetJacques.html https://rr0.org/people/p/PatenetJacques
@@ -407,7 +406,7 @@ Redirect /HainesRichardF.html https://rr0.org/people/h/HainesRichardF
 Redirect /HalletMarc.html https://rr0.org/people/h/HalletMarc
 Redirect /HallRichardH.html https://rr0.org/people/h/HallRichardH
 Redirect /people/h/HalleyEdmund.html https://rr0.org/people/h/HalleyEdmund
-Redirect /people/h/HansenMyrna https://rr0.org/people/h/HansenMyrna
+Redirect /people/HansenMyrna https://rr0.org/people/h/HansenMyrna
 Redirect /HarderJamesA.html https://rr0.org/people/h/HarderJamesA
 Redirect /HartmannWilliamK.html https://rr0.org/people/h/HartmannWilliamK
 Redirect /people/h/HastingsRobert.html https://rr0.org/people/h/HastingsRobert
@@ -427,7 +426,7 @@ Redirect /KaplanJoseph.html https://rr0.org/people/k/KaplanJoseph
 Redirect /people/k/Kervandal.html https://rr0.org/people/k/KervendalGuillaume
 Redirect /people/k/KillianPeter.html https://rr0.org/people/k/KillianPeter
 Redirect /people/k/KirtonEdwinE.html https://rr0.org/people/k/KirtonEdwinE
-Redirect /people/k/KissingerHenri https://rr0.org/people/k/KissingerHenri
+Redirect /people/k/KissingerHenriAlfred https://rr0.org/people/k/KissingerHenri
 Redirect /people/k/KlassPhilipJ https://rr0.org/people/k/KlassPhilipJ
 Redirect /people/k/KlassPhillipJ https://rr0.org/people/k/KlassPhilipJ
 Redirect /people/k/KnowlesHerbert.html https://rr0.org/people/k/KnowlesHerbert
@@ -456,7 +455,7 @@ Redirect /people/l/Levinson.html https://rr0.org/people/l/LevinsonHenry
 Redirect /LhoteHenri.html https://rr0.org/people/l/LhoteHenri.html
 Redirect /LovellJamesA.html https://rr0.org/people/l/LovellJamesA
 Redirect /people/l/LovellJamesA.html https://rr0.org/people/l/LovellJamesA
-Redirect /LouangeFrancois https://rr0.org/people/l/LouangeFrancois
+Redirect /LouangeFrancois.html https://rr0.org/people/l/LouangeFrancois
 Redirect /LorenzenCoralE/ https://rr0.org/people/l/LorenzenCoralE
 Redirect /people/l/LorenzenCoralE/ https://rr0.org/people/l/LorenzenCoralE
 Redirect /people/l/LorenzenLJames.html https://rr0.org/people/l/LorenzenJames
@@ -518,7 +517,8 @@ Redirect /people/o/OswaldJohnPaul.html https://rr0.org/people/o/OswaldJohn
 Redirect /NicolaiRenato.html https://rr0.org/science/crypto/ufo/enquete/dossier/TransEnProvence
 Redirect /NicolaRenato.html https://rr0.org/science/crypto/ufo/enquete/dossier/TransEnProvence
 Redirect /people/p/PageThornton.html https://rr0.org/people/p/PageThornton
-Redirect /PalmerRay.html https://rr0.org/people/p/PalmerRay
+Redirect /PalmerRaymondA.html https://rr0.org/people/p/PalmerRay
+Redirect /PalmerRaymond https://rr0.org/people/p/PalmerRay
 Redirect /people/p/PatenetJacques.html https://rr0.org/people/p/PatenetJacques
 Redirect /PellatRene.html https://rr0.org/people/p/PellatRene
 Redirect /PetitJeanPierre.html https://rr0.org/people/p/PetitJeanPierre
@@ -553,7 +553,7 @@ Redirect /people/s/SaganCarl https://rr0.org/people/s/SaganCarl
 Redirect /people/s/SchirmerHebert.html https://rr0.org/science/crypto/ufo/enquete/dossier/SchirmerHerbert
 Redirect /science/crypto/ufo/enquete/dossier/SchirmerHebert https://rr0.org/science/crypto/ufo/enquete/dossier/SchirmerHerbert
 Redirect /people/s/SchaefferRobert.html https://rr0.org/people/s/SchaefferRobert
-Redirect /people/s/SchmidtDonald https://rr0.org/people/s/SchmidtDonald
+Redirect /people/s/SchmidtDonald.html https://rr0.org/people/s/SchmidtDonald
 Redirect /SchuesslerJohnF.html https://rr0.org/people/s/SchuesslerJohnF
 Redirect /ScornauxJacques.html https://rr0.org/people/s/ScornauxJacques
 Redirect /people/s/SeitzFrederick https://rr0.org/people/s/SeitzFrederick
@@ -568,7 +568,7 @@ Redirect /people/s/SiderJean.html https://rr0.org/people/s/SiderJean
 Redirect /SillardYves.html https://rr0.org/people/s/SillardYves
 Redirect /people/SillardYves https://rr0.org/people/s/SillardYves
 Redirect /people/s/SimonBenjamin.html https://rr0.org/people/s/SimonBenjamin
-Redirect /SparksBrad.html https://rr0.org/people/s/SparksBrad
+Redirect /SparksBrad https://rr0.org/people/s/SparksBrad
 Redirect /SmithEmilJ.html https://rr0.org/people/s/SmithEmilJ
 Redirect /SmithWilbertBrooker.html https://rr0.org/people/s/SmithWilbertBrooker
 Redirect /SmithMarciaS.html https://rr0.org/people/s/SmithMarciaS
@@ -774,10 +774,9 @@ Redirect /JASONS.html https://rr0.org/org/us/asso/JASONS.html
 Redirect /NICAP.html https://rr0.org/org/us/asso/nicap
 Redirect /org/us/asso/NARCAP.html https://rr0.org/org/us/asso/narcap
 Redirect /org/us/asso/nicap/ https://rr0.org/org/us/asso/nicap
-Redirect /nsf https://rr0.org/org/us/asso/nsf
+Redirect /NSF.html https://rr0.org/org/us/asso/nsf
 Redirect /CSETI.html https://rr0.org/org/us/asso/cseti
 Redirect /org/us/asso/CSETI.html https://rr0.org/org/us/asso/cseti
-Redirect /org/us/asso/nsf https://rr0.org/org/us/asso/nsf
 Redirect /org/us/dod/af/atic/projet/BlueBook https://rr0.org/org/us/dod/af/amc/atic/projet/bluebook
 Redirect /org/us/dod/af/atic/projet/bluebook https://rr0.org/org/us/dod/af/amc/atic/projet/bluebook
 Redirect /org/us/dod/af/projet/Grudge https://rr0.org/org/us/dod/af/amc/atic/projet/grudge

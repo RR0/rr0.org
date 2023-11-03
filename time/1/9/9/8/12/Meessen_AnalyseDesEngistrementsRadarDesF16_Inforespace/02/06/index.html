@@ -1,0 +1,102 @@
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <title>L'extraction des échos recherchés et l'élimination des autres</title>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/notes.js" type="text/javascript"></script>
+  <script src="/js/highslide/highslide.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    hs.graphicsDir = "/js/highslide/graphics/"
+    hs.outlineType = "rounded-white"
+  </script>
+</head>
+<body id="bodyid" onLoad="footnotes();footsources()">
+<h1><a href="https://home.nordnet.fr/~phuleux/leradar.htm">L'extraction des échos recherchés et l'élimination des
+  autres</a></h1>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a> &gt; <a href="../../index.html">Analyse approfondie des mystérieux enregistrements radar
+      des F-16</a> &gt; <a href="../index.html">Le radar doppler à impulsion des F-16</a></th>
+  </tr>
+</table>
+<p> Il est vital pour le pilote qu'il puisse se fier à son radar. Ce système doit donc capter et présenter les échos
+  provenant d'avions, en rejetant les échos anormaux. La figure 7 illustre la situation pour un vol horizontal. Le
+  faisceau radar peut toucher par exemple l'avion 1 qui se trouve à une distance d du F-16 et qui s'en approche avec une
+  vitesse relative v quand il est pourchassé. Nous savons qu'il peut y avoir des rétrodiffusions quand le faisceau radar
+  éclaire une masse d'air humide H ou quand il touche le sol en S, par exemple. Cet endroit s'approche du F-16 à une
+  vitesse vs que l'ordinateur calcule à partir d'autres données (la vitesse et l'altitude du F-16, ainsi que
+  l'orientation du faisceau).</p>
+<p><img height="146" src="https://home.nordnet.fr/%7Ephuleux/image7.GIF" width="383"><br> <em>Figure 7 : Les sources
+  possibles d'échos radar pour un chasseur F-16.</em></p>
+<p>En plus du faisceau formé par le lobe principal de l'antenne, il y a des <em>lobes secondaires</em>. L'émission et la
+  réception y sont nettement plus faibles, mais ils peuvent capter des échos venant de différents endroits du sol, aussi
+  bien derrière que devant l'avion, les vitesses relatives étant comprises entre plus et moins la vitesse de l'avion par
+  rapport au sol. La probabilité de ce type de détection est la plus grande pour la partie S' du sol, située juste
+  au-dessous de l'avion, puisque la distance à parcourir y est la plus courte. L'intensité du signal reçu varie en effet
+  comme 1/d4 (à cause de la divergence des rayons émis et diffusés). La vitesse relative de S' est nulle.</p>
+<p> L'ordinateur analyse les signaux qu'il capte au fur et à mesure de leur arrivée, afin d'en extraire les informations
+  utiles et d'en éliminer les échos perturbateurs. Puisque le chasseur F-16 peut se trouver en présence de plusieurs
+  avions, il doit pouvoir séparer ces échos. Il le fait au moyen des paramètres mesurés : <em>la distance et la vitesse
+    relative</em>. Pour un train d'onde donné, il s'agit de la distance ambiguë d et de la vitesse radiale v, comprise
+  entre -vm et +vm. Le signe est positif pour une vitesse d'approche (closing speed). Le radar peut donc réaliser une
+  classification des échos dans un plan d-v, comme le montre la figure 8.</p>
+<p> En fait, pour une orientation donnée du faisceau, le radar analyse d'abord la portion du signal qui a été renvoyée
+  le plus rapidement et ensuite, des portions qui arrivent de plus en plus tardivement. Cela correspond à des distances
+  croissantes. L'échantillonnage est réalisé de telle manière que le domaine des distances possibles d est découpé en
+  portions de même largeur d. Elle est déterminée par la largeur t des impulsions individuelles, puisqu'il est
+  impossible de séparer les impulsions les unes des autres, si les durées d'un aller-retour ne diffèrent pas au moins de
+  t/2. Le plus petit intervalle de distance mesurable sera donc d = ct/2. On ouvre l'une après l'autre des "portes de
+  distance" de cette largeur. Puisque la distance maximale dm dépend de la fréquence d'échantillonnage fo, on se
+  contente d'imposer un nombre maximal de portes de distance juxtaposées, pouvant aller jusqu'à 128.</p>
+<p><img height="208" src="https://home.nordnet.fr/%7Ephuleux/image8.GIF" width="289"><br> <em>Figure 8 : Classification
+  des échos radar dans le plan d-v.</em></p>
+<p>Pour chacune de ces portes de distance, c'est-à-dire pendant un laps de temps très bref, l'ordinateur examine
+  l'ensemble des impulsions qu'il reçoit en retour pour le train d'onde qui vient d'être envoyé. Il détermine les
+  vitesses relatives v des différents réflecteurs, en mesurant les changements de fréquence DF. Cela se fait au moyen
+  d'un processeur électronique et d'un banc de filtres qui découpent directement le spectre des fréquences en 64 parties
+  de même largeur. On obtient ainsi une certaine intensité du signal pour 64 <em>portes de vitesse</em>, en déterminant
+  aussi le signe. On définit donc un ensemble de "cases" pour une portion limitée du plan d-v. Quelques-unes de ces
+  cases sont indiquées dans le coin supérieur gauche de la figure 8.</p>
+<p> Les intensités du signal pour l'ensemble des cases créées dans le plan d-v définissent une <em>matrice</em> qui
+  contient toutes les informations reçues. La répartition des intensités peut présenter des maxima pour des cases qui
+  correspondent à des "cibles" différentes. Les points 1 et 2 en sont des exemples, mais il y aura aussi une répartition
+  d'intensités relativement importantes pour des réflecteurs situés au sol (ground clutter). Ce "fouillis" est
+  représenté sur la figure 8 par la plage en gris clair, avec des renforcements pour l'endroit (S) où le lobe principal
+  touche le sol et pour l'endroit (S') qui se trouve à la verticale de l'avion (figure 7). Nous avons déjà noté que
+  l'ordinateur peut calculer la vitesse relative vs de l'endroit (S) où le lobe principal touche le sol, mais la
+  distance peut dépendre du relief. On élimine donc tous les échos qui ont des vitesses assez proches de vs. Cela
+  correspond à une bande verticale sur la figure 8. On écarte aussi une bande horizontale près de d = 0.</p>
+<p> En fait, on ne commence l'analyse qu'à partir d'une certaine distance et on impose une transposition (électronique)
+  de tout le spectre des fréquences, de telle manière qu'il suffit de couper ensuite les fréquences proches de zéro. Ce
+  filtrage se réalise d'une manière <em>dynamique</em>, en utilisant constamment la valeur instantanée de vs. Autrement
+  dit, la bande verticale de la figure 8 est déplacée en fonction de la situation de l'avion en vol et de l'orientation
+  instantanée du faisceau. La largeur de cette bande est choisie de telle manière qu'on élimine aussi des échos
+  provenant de réflecteurs mobiles (voitures, trains,...). Le filtrage est assuré par le "suiveur de fouillis" et le
+  "suppresseur de fouillis", mais on prend des précautions pour ne pas éliminer des échos provenant d'avions, comme ce
+  serait normalement le cas pour le point 3 de la figure 8.</p>
+<p> On réalise donc pour chaque ligne du plan (d,v) un filtrage plus subtil, régi par <em>un seuil adaptatif</em>. Pour
+  cela, on groupe trois cases adjacentes et on retient le signal pour une des cases, s'il y est plus intense que la
+  valeur moyenne dans les deux autres cases, multiplié par une constante modifiable. C'est une procédure générale qui
+  réduit les effets du bruit et permet de maîtriser le fouillis des lobes secondaires. Pour lever l'ambiguïté des
+  distances, on compare ensuite les résultats obtenus pour différents trains d'ondes. Cette procédure est rapide et
+  efficace, mais nous nous demandons ce qui pourrait se passer pour une masse d'air humide (H). Puisqu'un nuage
+  invisible est pratiquement immobile par rapport au sol, la grandeur de sa vitesse v' par rapport au F-16 est proche de
+  la vitesse vs de la portion du sol que le faisceau éclaire en même temps. <em>L'écho devrait être éliminé</em>, à
+  moins que...</p>
+<table width="100%">
+  <tr>
+    <th><a href="/">Home</a> &gt; <a href="../../index.html">Analyse approfondie des mystérieux enregistrements radar
+      des F-16</a> &gt; <a href="../index.html">Le radar doppler à impulsion des F-16</a></th>
+  </tr>
+</table>
+<ol>
+  <div id="notes"></div>
+</ol>
+<ol>
+  <div id="sources"></div>
+</ol>
+<script src="https://www.assoc-amazon.fr/s/link-enhancer?tag=r047-21&o=8" type="text/javascript">
+</script>
+<noscript><img alt="" src="https://www.assoc-amazon.fr/s/noscript?tag=r047-21"/></noscript>
+</body>
+</html>

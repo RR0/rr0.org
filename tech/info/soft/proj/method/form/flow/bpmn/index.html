@@ -51,7 +51,8 @@
         height: currentViewbox.height
       })
       const width = document.getElementById("example").offsetWidth
-      canvas.zoom(width / this.width)
+      const height = document.getElementById("example").offsetHeight
+      canvas.zoom(Math.min(width / this.width, height / this.height))
     })
     document.querySelector(`a[href="http://bpmn.io"]`).remove()
   })

@@ -40,6 +40,20 @@
       if (err) {
         console.error("Could not display model", err)
       } else {
+        const matchPrefersDark = window.matchMedia("(prefers-color-scheme:dark)")
+        if (matchPrefersDark.matches) {
+          const filled = document.querySelectorAll("#example *")
+          filled.forEach(f => {
+            if (f.nodeName === "text" || f.nodeName === "tspan") {
+              f.style.fill = "#DDD"
+            } else {
+              f.style.fill = f.style.fill === "white" ? "black" : f.style.fill === "black" ? "white" : undefined
+              if (f.style.stroke) {
+                f.style.stroke = "#DDD"
+              }
+            }
+          })
+        }
         document.querySelector(`a[href="http://bpmn.io"]`).remove()
       }
     })

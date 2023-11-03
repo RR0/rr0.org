@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="UFO data for french-reading people" name="description">
+  <link href="/rr0.css" rel="stylesheet" type="text/css">
+  <link href="/manifest.json" rel="manifest">
+  <link href="/opensearch.xml" rel="search" title="Stack Overflow" type="application/opensearchdescription+xml">
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <base target="_top">
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+
+    gtag("js", new Date())
+
+    gtag("config", "G-CMV7R92GK1")
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({
+      "gtm.start":
+        new Date().getTime(), event: "gtm.js"
+    })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""
+    j.async = true
+    j.src =
+      "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, "script", "dataLayer", "GTM-NBPKWNM")</script>
+  <!-- End Google Tag Manager -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
+      style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="main-header">
+  <h1 class="full-page">Jeudi 31 juillet 1952</h1>
+</header>
+<nav id="main-nav">
+  <h1>Navigation</h1>
+  <ul>
+    <li class="full-page">
+      <a class="home" href="/" title="Home">RR0</a>
+    </li>
+    <li class="search">
+      <input id="search-site" list="search-site-values" type="search">
+      <datalist id="search-site-values">
+      </datalist>
+    </li>
+    <li id="summary">
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
+      <ul class="outline">
+      </ul>
+    </li>
+    <li>
+      <span id="alternate"></span>
+    </li>
+    <li class="contents" title="Sommaire"><a href="/time/">Chronologie</a></li><li class="prev" title="Précédent"><a
+      href="/time/1/9/5/2/07/30/index.html">Mercredi 30 juillet 1952</a></li><li class="next" title="Suivant"><a
+      href="/time/1/9/5/2/07/index.html">Juillet 1952</a></li></ul>
+  <script src="/search/index.js" type="text/javascript"></script>
+</nav>
+<script>
+  const summary = document.getElementById("out-top")
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : "Sommaire"
+  }, {threshold: [0, 0.3, 1]})
+  observer.observe(document.querySelector("#main-header"))
+
+  function showMap(address) {
+    const mapEl = document.querySelector("#map-canvas")
+    if (address) {
+      mapEl.style.display = "block"
+      mapEl.querySelector("iframe").src =
+        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I`
+    } else {
+      mapEl.style.display = "none"
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const firstPlace = document.querySelector(".plac")
+    if (firstPlace) {
+      showMap(firstPlace.textContent)
+    }
+  })
+
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
+<div class="metadata">
+
+</div>
+
+
+<ul>
+  <li>
+    <figure class="right side">
+      <figcaption><em>Le Maine Libre</em> du 31, titrant : <q>Est-ce la fin des soucoupes volantes ?</q></figcaption>
+      <img alt="Carrefour n° 404 du 11 avril, indique que Les soucoupes volantes n'étaient qu'une illusion d'optique créée par un courant d'air chaud"
+          src="LeMaineLibre.jpg">
+    </figure>
+    M. H. Siret, surveillant de nuit à <span class="plac" onclick="showMap('Puylaurens (Aude)')" translate="no">Puylaurens (Aude)</span>
+    fait part de ses observations de plusieurs objets suspects.
+  </li>
+</ul>
+<footer>
+  <div class="full-page" id="footerTable">
+    <div class="footer">
+      Dernière modification le dimanche 23 octobre 2022 à 17:31- © Copyright <span class="copyright"><a
+        href="/GFDL.html">RR0</a></span> - <a href="/Contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<aside id="aside">
+  <h1>Map</h1>
+  <div id="map-canvas">
+    <iframe allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</aside>
+
+<script>
+  let pathname = window.location.pathname
+  if (pathname.indexOf(".") < 0 && !pathname.endsWith("/")) {
+    pathname += "/"
+    history.replaceState(null, "", pathname)
+  }
+  if (window !== top) document.querySelectorAll(".full-page").forEach(elem => elem.style.display = "none")
+  /*  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }*/
+</script>
+
+
+</body>
+</html>

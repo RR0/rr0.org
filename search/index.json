@@ -33473,14 +33473,6 @@
       "url": "tech/info/Humour.html"
     },
     {
-      "title": "BMP",
-      "url": "tech/info/image/BMP.html"
-    },
-    {
-      "title": "Formats d'images",
-      "url": "tech/info/image/FormatsImages.html"
-    },
-    {
       "title": "Informatique",
       "url": "tech/info/index.html"
     },
@@ -33685,6 +33677,22 @@
       "url": "tech/info/soft/data/Byte.html"
     },
     {
+      "title": "Algorithmes de compression",
+      "url": "tech/info/soft/data/compression/index.html"
+    },
+    {
+      "title": "LZW",
+      "url": "tech/info/soft/data/compression/LZW.html"
+    },
+    {
+      "title": "RLC",
+      "url": "tech/info/soft/data/compression/RLC.html"
+    },
+    {
+      "title": "RLE",
+      "url": "tech/info/soft/data/compression/RLE.html"
+    },
+    {
       "title": "CRUD",
       "url": "tech/info/soft/data/dbms/CRUD.html"
     },
@@ -33781,8 +33789,20 @@
       "url": "tech/info/soft/data/doc/html/tag/template/index.html"
     },
     {
+      "title": "BMP",
+      "url": "tech/info/soft/data/doc/image/BMP.html"
+    },
+    {
+      "title": "CUR",
+      "url": "tech/info/soft/data/doc/image/CUR.html"
+    },
+    {
       "title": "GIF",
       "url": "tech/info/soft/data/doc/image/GIF.html"
+    },
+    {
+      "title": "CUR",
+      "url": "tech/info/soft/data/doc/image/ICO.html"
     },
     {
       "title": "Formats d'image",
@@ -33793,16 +33813,44 @@
       "url": "tech/info/soft/data/doc/image/JPG.html"
     },
     {
+      "title": "PCX",
+      "url": "tech/info/soft/data/doc/image/PCX.html"
+    },
+    {
+      "title": "PICT",
+      "url": "tech/info/soft/data/doc/image/PICT.html"
+    },
+    {
       "title": "PNG",
       "url": "tech/info/soft/data/doc/image/PNG.html"
+    },
+    {
+      "title": "PSD",
+      "url": "tech/info/soft/data/doc/image/PSD.html"
+    },
+    {
+      "title": "SunRaster",
+      "url": "tech/info/soft/data/doc/image/SunRaster.html"
     },
     {
       "title": "SVG",
       "url": "tech/info/soft/data/doc/image/svg/index.html"
     },
     {
+      "title": "TGA",
+      "url": "tech/info/soft/data/doc/image/TGA.html"
+    },
+    {
       "title": "TIFF",
       "url": "tech/info/soft/data/doc/image/TIFF.html"
+    },
+    {
+      "title": "XBM",
+      "url": "tech/info/soft/data/doc/image/XBM.html"
+    },
+    {
+      "title": "XPM",
+      "url": "tech/info/soft/data/doc/image/XPM.html"
     },
     {
       "title": "Markdown",
@@ -33975,10 +34023,6 @@
     {
       "title": "Logiciel",
       "url": "tech/info/soft/index.html"
-    },
-    {
-      "title": "LZW",
-      "url": "tech/info/soft/LZW.html"
     },
     {
       "title": "Metadata",

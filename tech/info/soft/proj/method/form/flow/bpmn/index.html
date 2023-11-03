@@ -33,9 +33,26 @@
       defaultStrokeColor: "#DDD"
     }
   }
-  const viewer = new BpmnJS({container: "#example", bpmnRenderer})
+  var bpmnViewer = new BpmnJS({container: "#example", bpmnRenderer})
   fetch("./example.bpmn").then(response => response.text()).then(xml => {
-    viewer.importXML(xml)
+    bpmnViewer.importXML(xml).then((x) => {
+      const canvas = bpmnViewer.get("canvas")
+      const currentViewbox = canvas.viewbox()
+      this.width = currentViewbox.inner.width
+      this.height = currentViewbox.inner.height
+      const elementMid = {
+        x: this.width / 2,
+        y: this.height / 2
+      }
+      canvas.viewbox({
+        x: elementMid.x - currentViewbox.width / 2,
+        y: elementMid.y - currentViewbox.height / 2,
+        width: currentViewbox.width,
+        height: currentViewbox.height
+      })
+      const width = document.getElementById("example").offsetWidth
+      canvas.zoom(width / this.width)
+    })
     document.querySelector(`a[href="http://bpmn.io"]`).remove()
   })
 </script>

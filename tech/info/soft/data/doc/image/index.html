@@ -1,0 +1,212 @@
+<!--#include virtual="/header-start.html" -->
+<title>Formats d'image</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Afficher une photo, un dessin, un schéma à l'écran ou sur imprimante.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Une image est caractérisée par :</p>
+  <ul>
+    <li>Sa <strong>résolution, </strong> c'est à dire l'ensemble de ses dimensions en :
+      <ul>
+        <li><b>Largeur</b> (en pixels ou autre)</li>
+        <li><b>Hauteur</b> (en pixels ou autre)</li>
+        <li><b>couleurs</b></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <section>
+    <h3>Compression</h3>
+    <p>Aujourd'hui les images sont rarement enregistrées sous leur forme brute (<i lang="en">raw</i>) car le stockage de
+      chaque pixel avec sa couleur produit des volumes de données inutilement importants. </p>
+    <p>Des algorithmes de compression couramment utilisés sont : </p>
+    <table>
+      <thead>
+      <tr>
+        <th>Algorithme</th>
+        <td>CCITT (Huffman)</td>
+        <td>Delta</td>
+        <td>JPEG</td>
+        <td>LZW</td>
+        <td>RLC</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>Signification</th>
+        <td><em>...Telecom ...</em></td>
+        <td>Codage différentiel</td>
+        <td><em>Tagged Image File Format</em></td>
+        <td><em>Lempel-Ziv Welch</em></td>
+        <td><em>Run Length Compression</em></td>
+      </tr>
+      <tr>
+        <th>Version</th>
+        <td class="non"></td>
+        <td class="oui"></td>
+        <td></td>
+        <td></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <th>Release</th>
+        <td class="non"></td>
+        <td class="oui"></td>
+        <td></td>
+        <td></td>
+        <td class="oui"></td>
+      </tr>
+      <tr>
+        <th>Copyright</th>
+        <td class="non">Compuserve</td>
+        <td class="oui">Libre</td>
+        <td></td>
+        <td class="oui">Libre</td>
+        <td class="oui">Libre</td>
+      </tr>
+      <tr>
+        <th>Compression</th>
+        <td class="oui">LZW</td>
+        <td></td>
+        <td class="oui">Delta</td>
+        <td class="oui">JPEG</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Non destructif</th>
+        <td class="oui"></td>
+        <td></td>
+        <td class="non">Indice de qualité</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+    <p>Il existe plusieurs API Java pour manipuler des images :</p>
+    <ul>
+      <li>AWT</li>
+      <li>Jimi (JRE 1.1.x) pour lire/écrire différents formats d'image</li>
+      <li><a href="/org/us/company/oracle/sun/ptf/java/api/ext/JAI.html">JAI</a> (Java 2)</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Format</th>
+      <td colspan="2">BMP</td>
+      <td>CUR</td>
+      <td>GIF</td>
+      <td>ICO</td>
+      <td>JPEG</td>
+      <td>PCX</td>
+      <td>PICT</td>
+      <td>PNG</td>
+      <td>PSD</td>
+      <td>Sunraster</td>
+      <td>TGA</td>
+      <td>TIFF</td>
+      <td>XBM</td>
+      <td>XPM</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Signification</th>
+      <td colspan="2"><em>BitMaP</em></td>
+      <td><em>CURsor</em></td>
+      <td><em>Graphical Image Format</em></td>
+      <td><em>ICOn</em></td>
+      <td><em>Joint Photographic Expert Group</em></td>
+      <td></td>
+      <td><em>PICTure</em></td>
+      <td><em>Portable Network Graphics</em></td>
+      <td><em>PhotoShop</em></td>
+      <td><em>CURsor</em></td>
+      <td><em>Targa</em></td>
+      <td><em>Tagged Image File Format</em></td>
+      <td><em>CURsor</em></td>
+      <td><em>CURsor</em></td>
+    </tr>
+    <tr>
+      <th>Version</th>
+      <td colspan="2">3</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Release</th>
+      <td></td>
+      <td>5</td>
+      <td></td>
+      <td class="non"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Copyright</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="non">Compuserve</td>
+      <td></td>
+      <td class="oui">Libre</td>
+      <td></td>
+      <td></td>
+      <td class="oui">Libre</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Compression</th>
+      <td class="oui">RLC</td>
+      <td class="oui"></td>
+      <td></td>
+      <td class="oui">LZW</td>
+      <td></td>
+      <td class="oui">JPEG</td>
+      <td class="oui">RLC</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="oui">Delta</td>
+      <td class="oui">Delta</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<!--#include virtual="/footer.html" -->

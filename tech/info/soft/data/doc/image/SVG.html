@@ -1,0 +1,59 @@
+<!--#include virtual="/header-start.html" -->
+<title>SVG</title>
+<meta content="https://www.w3.org/TR/SVG" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Scalable Vector Graphics</i> : graphiques vectoriels redimensionnables.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Décrire des graphiques et animations 2D précis et redimensionnables adaptés au Web.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>SVG supporte 3 types d'objets graphiques :</p>
+  <ul>
+    <li>les formes vectorielles (composées de lignes droites et courbes)</li>
+    <li>les images </li>
+    <li>le texte</li>
+  </ul>
+  <p>Ces objets graphiques peuvent être groupés, on peut leur appliquer des styles, les transformer et composés d'objets
+    préalablement rendus. SVG supporte les transformations embarquées, des tracés de clipping, les masques alpha, les
+    effets de filtre et les modèles d'objets.</p>
+  <p>Les dessins SVG peuvent être interactifs et dynamiques. Les animations peuvent être définies et déclenchées
+    déclarativement (i.e., en incluant des éléments d'animation dans le contenu SVG ) ou par script.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>SVG définit un schéma <a href="../xml">XML</a>.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de document RDF est :</p>
+  <blockquote><code>&lt;?xml version=<span class="codeString">"1.0"</span> standalone=<span
+      class="codeString">"no"</span>?&gt;<br>
+    &lt;!DOCTYPE svg PUBLIC <span class="codeString">"-//W3C//DTD SVG 1.1//EN"</span> <span class="codeString">"https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"</span>&gt;<br>
+    &lt;<strong>svg width</strong>=<span class="codeString">"12cm"</span> <strong>height</strong>=<span
+        class="codeString">"4cm"</span> <strong>viewBox</strong>=<span class="codeString">"0 0 1200 400"</span> <strong>xmlns</strong>=<span
+        class="codeString">"https://www.w3.org/2000/svg"</span> <strong>version</strong>=<span
+        class="codeString">"1.1"</span>&gt;<br>
+    &lt;<strong>desc</strong>&gt;Polygone d'exemple - Etoile et hexagone&lt;/<strong>desc</strong>&gt;<br>
+    &lt;!-- Montre le canvas via un rectangle --&gt;<br>
+    &lt;<strong>rect x</strong>=<span class="codeString">"1"</span> <strong>y</strong>=<span
+        class="codeString">"1"</span> <strong>width</strong>=<span class="codeString">"1198"</span>
+    <strong>height</strong>=<span class="codeString">"398"</span> <strong>fill</strong>=<span
+        class="codeString"><strong>"none"</strong></span> <strong>stroke=<span class="codeString">"blue"</span></strong>
+    <strong>stroke-width</strong>=<span class="codeString">"2"</span>/&gt;<br>
+    &lt;<strong>polygon fill=<span class="codeString">"red"</span> stroke=<span class="codeString">"blue"</span>
+      stroke-width</strong>=<span class="codeString">"10"</span> <strong>points</strong>=<span class="codeString">"350,75 379,161 469,161 397,215
+423,301 350,250 277,301 303,215
+231,161 321,161"</span>/&gt;<br>
+    &lt;<strong>polygon fill=<span class="codeString">"lime"</span></strong> <strong>stroke=<span class="codeString">"blue"</span>
+      stroke-width</strong>=<span class="codeString">"10"</span> <strong>points</strong>=<span class="codeString">"850,75 958,137.5 958,262.5
+850,325 742,262.6 742,137.5"</span>/&gt;<br>
+    &lt;/<strong>svg</strong>&gt;</code></blockquote>
+  <p>Des exemples d'implémentations de SVG sont :</p>
+  <ul>
+    <li>Apache <a href="https://xml.apache.org/batik">Batik</a></li>
+    <li>CSIRO <a href="https://sis.cmis.csiro.au/svg/">SVG Toolkit</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

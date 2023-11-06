@@ -2,28 +2,42 @@
 <title>Web components</title>
 <meta content="https://www.webcomponents.org" name="url"/>
 <!--#include virtual="/header-end.html" -->
-<dt><dfn lang="en">Web components</dfn></dt> :
 <dd>composants web</dd>.
 <section>
   <h2>Besoin</h2>
+  <p>Définir un <em>standard</em> de composants web.</p>
 </section>
 <section>
   <h2>Analyse</h2>
+  <p>Il existe 2 types de web components :</p>
+  <ul>
+    <li><b>Autonomes</b>, définissant leur propre nouveau tag</li>
+    <li><b>Personnalisés</b>, étendant un tag existant (<i lang="en">built in</i>).</li>
+  </ul>
+  <p>Parce que supportés par l'ensemble des navigateurs web, les composants web ne nécessitent pas de librarie ni
+    framework spécifiques.</p>
+  <p>En tant que composants, les web components permettent une <a
+      href="/tech/info/soft/proj/impl/lang/oo/Encapsulation.html">encapsulation</a> de leur contenu et de son style</p>
 </section>
 <section>
   <h2>Conception</h2>
   <p>Les composants web nécessitent :</p>
   <ul>
-    <li>des <a href="/tech/info/soft/time/doc/html/tag/custom">éléments personnalisés</a> et leur <a
+    <li>Des <a href="/tech/info/soft/time/doc/html/tag/custom">éléments personnalisés</a> et leur <a
         href="/tech/info/soft/time/doc/dom/shadow">DOM caché</a></li>
-    <li>Dinculescu, Monica: "<a href="https://meowni.ca/posts/web-components-with-otters/">An intro to web components
-      with otters</a>", Meowni, 2017-06-06</li>
   </ul>
 </section>
 <section>
-  <h2>Exemples</h2>
+  <h2>Implémentation</h2>
+  <p>Les web composants sont largement supportés par l'ensemble des navigateurs, à l'exception des components <i
+      lang="en">built-in</i> qui ne le sont pas nativement sur Safari. Cependant, ils peuvent l'être via <a
+      href="https://github.com/ungap/custom-elements">un polyfill</a>.</p>
+  <p>Des exemples de web components sont :</p>
+  <ul>
+    <li><a href="https://github.com/material-components/material-web"></a>Material Design</li>
+    <li><a href="https://shoelace.style">Shoelace</a></li>
+  </ul>
 </section>
-<section>
-  <h2>Notes</h2>
-</section>
+<span class="source">Dinculescu, Monica: "<a href="https://meowni.ca/posts/web-components-with-otters/">An intro to
+      web components with otters</a>", Meowni, 2017-06-06</span>
 <!--#include virtual="/footer.html" -->

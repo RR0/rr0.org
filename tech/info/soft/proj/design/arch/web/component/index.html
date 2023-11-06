@@ -21,11 +21,16 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Les composants web nécessitent :</p>
+  <p>Les <i lang="en">web components</i> nécessitent :</p>
   <ul>
-    <li>Des <a href="/tech/info/soft/time/doc/html/tag/custom">éléments personnalisés</a> et leur <a
-        href="/tech/info/soft/time/doc/dom/shadow">DOM caché</a></li>
+    <li>des <a href="/tech/info/soft/time/doc/html/tag/custom"><b>éléments personnalisés</b></a> (<i lang="en">custom
+      elements</i>) pour définir ses propres balises ;</li>
+    <li>Un <a href="/tech/info/soft/time/doc/dom/shadow"><b>DOM "fantôme"</b></a> (<i lang="en">shadow DOM</i>) pour
+      stocker son contenu et son style (éventuellement via des <b>modèles HTML</b> ou <i
+          lang="en">HTML templates</i>).</li>
   </ul>
+  <p>Comme toute balise HTML, un élément personnalisé peut avoir des éléments fils, qui peuvent être associé à des
+    inserts (<i lang="en">slots</i>) dans son DOM fantôme.</p>
 </section>
 <section>
   <h2>Implémentation</h2>

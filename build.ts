@@ -51,6 +51,7 @@ import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';
 import { BookDirectoryStep } from './book/BookDirectoryStep';
 import path from 'path';
 import { IndexedReplacerFactory } from './index/indexedReplacerFactory';
+import { CodeReplacerFactory } from './tech/info/soft/proj/impl/lang/CodeReplacerFactory';
 
 const args = new CLI().getArgs();
 const cliContents = args.contents;
@@ -173,6 +174,7 @@ getTimeFiles().then(async (timeFiles) => {
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new AuthorReplaceCommand(timeFiles),
     new HtmlTagReplaceCommand('time', new TimeReplacerFactory(timeFiles)),
+    new HtmlTagReplaceCommand('code', new CodeReplacerFactory()),
     new ClassDomReplaceCommand('people', new PeopleReplacerFactory()),
     new ClassDomReplaceCommand('place', new PlaceReplacerFactory(placeService, orgService)),
     new ClassDomRegexReplaceCommand('temoin(.?)', new WitnessReplacerFactory()),

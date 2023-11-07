@@ -17,7 +17,7 @@
     "build": "tsx build.ts",
     "chapters": "tsx Chapters.ts",
     "test": "tsx test/testAll.ts",
-    "test-one": "tsx people/author/AuthorReplaceCommandTest.ts",
+    "test-one": "tsx tech/info/soft/proj/impl/lang/CodeReplacerTest.ts",
     "udb:build": "webpack"
   },
   "dependencies": {
@@ -46,7 +46,7 @@
     "url": "^0.11.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "@javarome/testscript": "^0.6.0"
+    "@javarome/testscript": "^0.7.0"
   },
   "keywords": [
     "ufo",

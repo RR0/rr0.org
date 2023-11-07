@@ -5,7 +5,7 @@
     "allowJs": true,
     "moduleResolution": "node",
     "lib": [
-      "es2020",
+      "es2021",
       "dom"
     ],
     "outDir": "./dist/",

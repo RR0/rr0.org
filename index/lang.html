@@ -1,3 +1,23 @@
 <script src="/index/index.js" type="module"></script>
+<style>
+  .indexed p[lang='ar-Latn'] {
+    font-style: italic;
+    text-align: right;
+  }
+
+  #lang-form {
+    text-align: right;
+    position: sticky;
+    top: 41px;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  }
+
+  @media (min-width: 60em) {
+    #lang-form {
+      top: 99px;
+    }
+  }
+</style>
 <form id="lang-form"></form>
 <script src="/index/lang.js" type="module"></script>

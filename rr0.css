@@ -1341,6 +1341,7 @@ abbr[title]:after {
     margin: 0;
     z-index: 102;
     backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
   }
 
   #main-nav {
@@ -1610,19 +1611,4 @@ body.with-map .map {
 
 .indexed li p {
   margin: 0;
-}
-
-.indexed p[lang='ar-Latn'] {
-  font-style: italic;
-  text-align: right;
-}
-
-.parts-form {
-  display: inline-block;
-}
-
-#lang-form {
-  text-align: right;
-  position: sticky;
-  top: 45px;
 }

@@ -1,10 +1,27 @@
 export class Filterform {
+  /**
+   * @member {function}
+   */
+  #tagSelector
 
-  constructor(formSelector, tagSelector, checked, labels, tagAttribute) {
+  /**
+   * @member {object}
+   */
+  #langs
+
+  /**
+   *
+   * @param {string} formSelector
+   * @param {function} tagSelector
+   * @param {string[]} checked The array of initially-checked inputs.
+   * @param {object} langs Key-values of languages
+   * @param {function} tagAttribute returns the attribute that will provide a possible value to check.
+   */
+  constructor(formSelector, tagSelector, checked, langs, tagAttribute) {
     this.formSelector = formSelector
-    this.tagSelector = tagSelector
+    this.#tagSelector = tagSelector
     this.checked = checked
-    this.labels = labels
+    this.#langs = langs
     this.tagAttribute = tagAttribute
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", ready)
@@ -13,10 +30,20 @@ export class Filterform {
     }
   }
 
+  /**
+   *
+   * @param {string} value
+   * @return {HTMLElement[]}
+   */
   getTags(value) {
-    const selector = this.tagSelector(value)
+    const selector = this.#tagSelector(value)
     const tags = Array.from(document.querySelectorAll(selector))
-    return tags.filter(element => !["HTML", "I"].includes(element.nodeName))
+    const lang = this.#langs[value]
+    const transformed = lang ? tags.map(tag => {
+      const transform = lang.transform
+      return transform ? transform(tag) : tag
+    }) : tags
+    return transformed.filter(element => !["HTML", "I"].includes(element.nodeName))
   }
 
   clicked() {
@@ -48,7 +75,7 @@ export class Filterform {
         input.checked = true
       }
       label.appendChild(input)
-      label.append(" " + this.labels[value])
+      label.append(" " + this.#langs[value].label)
       form.append(label)
     }
     this.clicked()

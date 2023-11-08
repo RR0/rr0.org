@@ -1,13 +1,15 @@
 import {Filterform} from "/index/index.js"
 
-const juzLabels = [...Array(30)].map((arr, i) => i + 1).reduce((obj, n) => {
-  obj[String(n)] = "Juzz " + n
+const juzIndexes = [...Array(30)].map((arr, i) => i + 1).map(n => String(n))
+const juzLabels = juzIndexes.reduce((obj, n) => {
+  obj[n] = {label: "Juzz " + n}
   return obj
 }, {})
-new Filterform("#juzz-form", value => value ? `*[data-juzz="${value}"]` : "*[data-juzz]", ["1"], juzLabels, p => p.dataset.juzz)
+new Filterform("#juzz-form", value => value ? `*[data-juzz="${value}"]` : "*[data-juzz]", juzIndexes, juzLabels, p => p.dataset.juzz)
 
-const hizbLabels = [...Array(60)].map((arr, i) => i + 1).reduce((obj, n) => {
-  obj[String(n)] = "Hibz " + n
+const hizbIndexes = [...Array(60)].map((arr, i) => i + 1).map(n => String(n))
+const hizbLabels = hizbIndexes.reduce((obj, n) => {
+  obj[String(n)] = {label: "Hibz " + n}
   return obj
 }, {})
-new Filterform("#hizb-form", value => value ? `*[data-hizb="${value}"]` : "*[data-hizb]", ["1"], hizbLabels, p => p.dataset.hizb)
+new Filterform("#hizb-form", value => value ? `*[data-hizb="${value}"]` : "*[data-hizb]", hizbIndexes, hizbLabels, p => p.dataset.hizb)

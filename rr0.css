@@ -7,6 +7,8 @@
   --map-width: 18vw;
   --margin: 1rem;
   --icon-color: grey;
+  --background-color: white;
+  --color: black;
 }
 
 * {
@@ -125,8 +127,12 @@ body.wait, body.wait * {
   z-index: 2
 }
 
+body {
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
 #main {
-  background-color: #000;
   padding: 0
 }
 
@@ -1496,6 +1502,8 @@ body.with-map .map {
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
+    --background-color: black;
+    --color: lightgrey;
   }
 
   .footer {
@@ -1529,11 +1537,6 @@ body.with-map .map {
   .document-author {
     color: grey;
     background: linear-gradient(135deg, #555555 0, rgba(255, 255, 255, 0) 79%)
-  }
-
-  body {
-    background: black;
-    color: lightgrey;
   }
 
   a, .toggle {

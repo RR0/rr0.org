@@ -38,12 +38,12 @@ export class Filterform {
   getTags(value) {
     const selector = this.#tagSelector(value)
     const tags = Array.from(document.querySelectorAll(selector))
+      .filter(element => !["HTML", "I"].includes(element.nodeName))
     const lang = this.#langs[value]
-    const transformed = lang ? tags.map(tag => {
+    return lang ? tags.map(tag => {
       const transform = lang.transform
       return transform ? transform(tag) : tag
     }) : tags
-    return transformed.filter(element => !["HTML", "I"].includes(element.nodeName))
   }
 
   clicked() {

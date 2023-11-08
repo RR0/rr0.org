@@ -1,30 +1,88 @@
 import {Filterform} from "./index.js"
 
+const speechLabel = "🔈"
+let speechMsg = undefined
+
+const addSpeech = (e, lang = e.lang, text = e.textContent) => {
+  let speechEl = e.querySelector(".speech")
+  if (!speechEl) {
+    speechEl = document.createElement("button")
+    speechEl.className = "speech"
+    speechEl.textContent = speechLabel
+    const voices = speechSynthesis.getVoices()
+    speechEl.title = "Ecouter en " + langs[e.lang].label
+    speechEl.onclick = () => {
+      const anotherSpeech = speechMsg && speechMsg.text !== text
+      if (!speechMsg || anotherSpeech) {
+        if (anotherSpeech) {
+          speechSynthesis.cancel()
+        }
+        speechMsg = new SpeechSynthesisUtterance()
+        speechMsg.voice = voices[2]
+        speechMsg.lang = lang
+        speechMsg.text = text
+        speechMsg.onend = (e) => {
+          speechEl.textContent = speechLabel
+        }
+        speechMsg.onerror = (e) => {
+          console.error(e)
+          speechEl.textContent = speechLabel
+        }
+      }
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume()
+        speechEl.textContent = "🔇"
+      } else if (speechSynthesis.speaking) {
+        speechSynthesis.pause()
+        speechEl.textContent = speechLabel
+      } else {
+        console.log("playing", speechMsg)
+        speechSynthesis.speak(speechMsg)
+        speechEl.textContent = "🔇"
+      }
+    }
+    e.append(speechEl)
+    console.log("added", speechEl, "to", speechEl)
+  } else {
+    console.log("already added speech to", e)
+  }
+  return e
+}
+
 const langs = {
   "fr": {
-    label: "Français"
+    label: "Français",
+    transform: addSpeech
   },
   "fro": {
-    label: "Français ancien"
+    label: "Français ancien",
+    transform: addSpeech
   },
   "ar": {
-    label: "Arabe"
+    label: "Arabe",
+    transform: addSpeech
   },
   "ar-Latn": {
     label: "Arabe phonétique",
     transform: (e) => {
       e.innerHTML = e.innerHTML.replaceAll(/(dh|sh|gh|kh|th|hţ)/gi, `<u>$1</u>`)
+      const arEl = e.parentElement.querySelector("[lang=\"ar\"]")
+      const text = arEl.textContent.substring(0, arEl.textContent.indexOf(speechLabel))
+      addSpeech(e, "ar", text)
       return e
     }
   },
   "he": {
-    label: "Hébreu"
+    label: "Hébreu",
+    transform: addSpeech
   },
   "he-Latn": {
-    label: "Hébreu phonétique"
+    label: "Hébreu phonétique",
+    transform: (e) => addSpeech(e, "he")
   },
   "img": {
     label: "Image"
   }
 }
+
 new Filterform("#lang-form", value => value ? `*[lang="${value}"]` : "*[lang]", ["fr"], langs, p => p.lang)

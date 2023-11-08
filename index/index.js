@@ -49,11 +49,14 @@ export class Filterform {
   clicked() {
     const inputs = document.querySelectorAll(`form input[type="checkbox"]`)
     for (const input of inputs) {
-      const paragraphs = this.getTags(input.value)
-      for (let i = 0; i < paragraphs.length; i++) {
-        const paragraph = paragraphs[i]
-        paragraph.style.display = input.checked ? paragraph.nodeName === "LI" ? "list-item" : "block" : "none"
-        paragraph.setAttribute("value", paragraph.getAttribute("id"))
+      const tags = this.getTags(input.value)
+      for (let i = 0; i < tags.length; i++) {
+        const item = tags[i]
+        item.style.display = input.checked ? item.nodeName === "LI" ? "list-item" : "block" : "none"
+        const id = item.getAttribute("id")
+        if (id) {
+          item.setAttribute("value", id)
+        }
       }
     }
   }

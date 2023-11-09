@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Page non trouvée</title>
 <!--#include virtual="/header-end.html" -->
-<p>La page <code><!--#echo var="REQUEST_URI" --></code> n'a pas été trouvée.</p>
+<p>La page <code class="referrer"></code> n'a pas été trouvée.</p>
 <style type="text/css">
     #goog-wm {
     }
@@ -55,10 +55,13 @@
 <h3><strong>Correction</strong></h3>
 <ul>
     <li>Si vous veniez d'une autre page de RR0, n'hésitez pas à <a href="mailto:${mail}">en faire part</a> en indiquant
-      que la page <code><!--#echo var="REQUEST_URI" --></code> n'a pas été trouvée alors que vous veniez de <code>
+        que la page <code class="referrer"></code> n'a pas été trouvée alors que vous veniez de <code>
         <!--#echo var="REMOTE_HOST" --></code>. Si vous ne précisez pas ces informations l'erreur ne pourra être
       corrigée.
     </li>
     <li>Si vous veniez d'une page externe à RR0, veuillez avertir son auteur afin qu'il mette son lien à jour.</li>
 </ul>
+<script>
+    document.querySelectorAll('.referrer').forEach(el => el.textContent = Document.referrer)
+</script>
 <!--#include virtual="/footer.html" -->

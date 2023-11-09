@@ -40,7 +40,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
         const anchor = LocalAnchor.create(outputDoc, localAnchor)
         titleElem.prepend(anchor)
         const a = outputDoc.createElement("a")
-        a.href = context.inputFile.name + "#" + localAnchor
+        a.href = '/' + context.inputFile.name + "#" + localAnchor
         a.appendChild(outlineElem)
         const li = outputDoc.createElement("li")
         li.appendChild(a)

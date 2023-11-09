@@ -151,7 +151,7 @@ In case the last name contain multiple words, just write it in camel case, like 
 
 ### Setup
 
-1. Make sure NodeJS 18+ is installed
+1. Make sure [NodeJS](https://nodejs.org) 18+ is installed
 1. Install NodeJS packages required by this project: `npm install`
 
 ### Directory structure

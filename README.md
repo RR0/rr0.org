@@ -14,18 +14,31 @@ RR0 is:
   but also the ways they are assembled. For example a month tag can be resolved as in the context of a previous year
   tag.
 
+### To do
+
+* directives to handle measurements (lengths, weights, speed)
+* User settings to customize rendering of directives (i18n, how to display people names, which units to use for
+  expressing measurements)
+
+
 ## Design
 
-After a number of [technical generations](#history), RR0 is now pre-generated using
-the [ssg-api](https://www.npmjs.com/package/ssg-api).
+RR0 has been designed in different ways over the years:
 
-This basically converts page templates to page outputs.
+1. a vanilla JS app (parsing tags and updating the client HTML)
+2. an [AngularJS](https://angularjs.org/) app with RR0-specific directives.
+3. NodeJS-generated pages with a bit of client-side code, using the [ssg-api](https://www.npmjs.com/package/ssg-api).
 
-### time ###
+So today the design is basically about converting page templates to final HTML, including a bit of client-side JS.
+
+### Replacers
+
+During website generation, a number of tags are replaced by specific HTML:
+
+#### time ###
 
 This is an override of the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable
-date (including day
-of week) or duration.
+date (including day of week) or duration.
 
 For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration,
 respectively, as stated in the [ISO_8601 standard](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals).
@@ -58,7 +71,7 @@ this new time. For example :
 
 `<time datetime="05"></time>` will be rendered as `Samedi 5 Juillet 1952`, if stated after the latest date above.
 
-#### Durations ####
+##### Durations ####
 
 According to the HTML5 specification, Durations can be expressed in the datetime attribute if starting with a `P`.
 
@@ -75,11 +88,11 @@ as `<time datetime="P15M20S" class="duration">1 jour, 15 minutes et 20 secondes<
 
 `<time datetime="P2H/3H"></time>` renders as `<time datetime="P2H/3H" class="duration">2 à 3 heures</time>`.
 
-### place ###
+#### place ###
 
 This is a class-restricted directive that aims to provide additional information on a given place.
 
-#### Examples ####
+##### Examples ####
 
 `<span class="place">Hasselbach (Allemagne)</time>`
 
@@ -92,11 +105,11 @@ A click on the rendered element will trigger the display of a Google Map zoomed 
 latitude/longitude (as geocoded by
 the Google Geocoding API).
 
-### people ###
+### people
 
 This is a class-restricted directive that aims to provide a link to a people's bio.
 
-#### Examples ####
+#### Examples
 
 `<span class="people">Claude Poher</time>`
 
@@ -127,9 +140,9 @@ In case the last name contain multiple words, just write it in camel case, like 
 
 `<span class="people">Werner VonBraun</time>`
 
-### section ###
+### section
 
-#### Contextual effects ####
+#### Contextual effects
 
 * Adds a hierarchical entry (depending on the depth of the section, possibly in other sections) in the 'Contents'
   contextual menu.
@@ -140,6 +153,18 @@ In case the last name contain multiple words, just write it in camel case, like 
 
 1. Make sure NodeJS 18+ is installed
 1. Install NodeJS packages required by this project: `npm install`
+
+### Directory structure
+
+- `time/` hosts chronological data. Chronology is the base data of other data (for instance, a UFO case photograph will
+  be hosted in its relevant time directory, and the case file will link to it).
+  The subdirectories represent date components in the form `Y/Y/Y/Y/MM/DD/`
+- `croyance/` hosts beliefs data, that is, opinions that do not rely on proof.
+  This includes religion, conspirationism, occultism and other cults.
+- `org/` hosts data about all kinds of human organizations, from countries to towns, including state agencies,
+  universities, etc.
+- `org/` hosts data about people, regardless of their nationalities, occupations, etc.
+
 
 ## Deployment
 
@@ -159,42 +184,10 @@ run it:
 1. Link your current project dir to the relevant Netlify website: `netlify link`.
 1. Publish the generated website: `netlify deploy --prod`
 
-## Data
+## Test
 
-- `time/` hosts chronological data. Chronology is the base data of other data (for instance, a UFO case photograph will
-  be hosted in its relevant time directory, and the case file will link to it).
-  The subdirectories represent date components in the form `Y/Y/Y/Y/MM/DD/`
-- `croyance/` hosts beliefs data, that is, opinions that do not rely on proof.
-  This includes religion, conspirationism, occultism and other cults.
-- `org/` hosts data about all kinds of human organizations, from countries to towns, including state agencies,
-  universities, etc.
-- `org/` hosts data about people, regardless of their nationalities, occupations, etc.
+### Unit tests
 
-To do
------
-
-* directives to handle measurements (lengths, weights, speed)
-* User settings to customize rendering of directives (i18n, how to display people names, which units to use for
-  expressing measurements)
-
-# Build
-
-# Test
-
-## Unit tests
-
-## Pre-prod
-
-The build must be tested locally before deployment.
-
-# Deploy
-
-# Debug
-
-Load a page with the `?debug` suffix in the URL.
-
-## History
-
-1. Client-side vanilla JS app
-2. [AngularJS](https://angularjs.org/) migration.
-3. NodeJS-generated pages with a bit of client-side code.
+- To run all tests: `npm run test`
+- To run/debug a single test: specify its file name in the `test-one` script in `package.json`, then
+  run/debug `npm run test-one`.

@@ -20,7 +20,6 @@ RR0 is:
 * User settings to customize rendering of directives (i18n, how to display people names, which units to use for
   expressing measurements)
 
-
 ## Design
 
 RR0 has been designed in different ways over the years:
@@ -165,7 +164,6 @@ In case the last name contain multiple words, just write it in camel case, like 
   universities, etc.
 - `org/` hosts data about people, regardless of their nationalities, occupations, etc.
 
-
 ## Deployment
 
 ### Build
@@ -174,7 +172,7 @@ RR0.org is built through a Static Site Generation (SSG) using the [ssg-api](http
 run it:
 
 1. Make sure you have a Google Maps embed API keys and set its value to the `GOOGLE_MAPS_API_KEY` env var.
-1. To build the website, run `npm run build`. This will generate the website in the `out` subdirectory.
+1. To build the website, run `npm run build --reindex true`. This will generate the website in the `out` subdirectory, including a refreshed index of pages to be used in the search form.
 
 ### Publish
 

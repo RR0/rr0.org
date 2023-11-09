@@ -15,7 +15,7 @@ export class SourceReplacer {
     const a = outputDoc.createElement("a")
     a.className = "source-id"
     a.ariaLabel = "Source"
-    a.href = `#${sourceId}`
+    a.href = context.inputFile.name + `#${sourceId}`
     a.textContent = sourceStr
     replacement.appendChild(a)
     const contents = outputDoc.createElement("span")

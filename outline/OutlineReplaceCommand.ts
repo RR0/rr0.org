@@ -26,7 +26,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
     return outputFile
   }
 
-  private process(context: HtmlSsgContext, from: Element, target: Element, level: number): boolean {
+  protected process(context: HtmlSsgContext, from: Element, target: Element, level: number): boolean {
     let added = false
     const sectionsHeadings = from.querySelectorAll("section h" + level)
     const articlesHeadings = from.querySelectorAll("article h" + level)
@@ -40,7 +40,7 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
         const anchor = LocalAnchor.create(outputDoc, localAnchor)
         titleElem.prepend(anchor)
         const a = outputDoc.createElement("a")
-        a.href = "#" + localAnchor
+        a.href = context.inputFile.name + "#" + localAnchor
         a.appendChild(outlineElem)
         const li = outputDoc.createElement("li")
         li.appendChild(a)

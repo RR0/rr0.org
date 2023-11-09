@@ -17,7 +17,7 @@
     "build": "tsx build.ts",
     "chapters": "tsx Chapters.ts",
     "test": "tsx test/testAll.ts",
-    "test-one": "tsx tech/info/soft/proj/impl/lang/CodeReplacerTest.ts",
+    "test-one": "tsx lang/LanguageReplaceCommant.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Composant logiciel</title>
 <!--#include virtual="/header-end.html" -->
-<p><em>Software component.</em></p>
+<p><i lang="en">Software component</i>.</p>
 <section>
   <h2>Besoin</h2>
   <p>Définir une brique logicielle réutilisable.</p>
@@ -16,18 +16,17 @@
     composants est de <strong>limiter les dépendances</strong> du code d'un composant (avec un environnement donné, avec
     d'autres composants, etc.).
   </p>
-  <p>Ceci est généralement mis en oeuvre via un <strong>conteneur</strong>, où les composants sont
+  <p>Ceci est généralement mis en œuvre via un <strong>conteneur</strong>, où les composants sont
     <strong>déployés</strong>. Les composants ne dépendent alors plus que de ce conteneur, qui leur fournira
-    d'éventuelles dépendances de manière standardisée (injection ou <em>callbacks</em> par exemple).
+    d'éventuelles dépendances de manière standardisée (injection ou <i lang="en">callbacks</i> par exemple).
   </p>
-  <p>Ils intéragissent avec lui de manière :</p>
+  <p>Ils interagissent avec lui de manière :</p>
   <ul>
-    <li><strong>explicite</strong>, en lui demandant par exemple de contacter un autre composant. C'est alors le
-      conteneur seul qui connait les véritables coordonnées de ce composant (la machine où il se trouve, son type,
-      etc.), alors que le composant n'a indiqué que des coordonnées symboliques (traduites en véritables coordonnées par
-      le conteneur).
+    <li><b>Explicite</b>, en lui demandant par exemple de contacter un autre composant. C'est alors le conteneur seul
+      qui connait les véritables coordonnées de ce composant (la machine où il se trouve, son type, etc.), alors que le
+      composant n'a indiqué que des coordonnées symboliques (traduites en véritables coordonnées par le conteneur).
     </li>
-    <li><strong>implicite</strong>, en demandant par <strong>contrat </strong>à recevoir un certain nombre de services
+    <li><b>Implicite</b>, en demandant par <strong>contrat </strong>à recevoir un certain nombre de services
       (persistance, événements, sécurité, transactions, etc.). Le conteneur remplit alors ce contrat en <strong>s'interposant </strong>toujours
       entre le composant et ses clients (vérifiant les appels, démarrant des transactions, etc.) ou en appelant
       arbitraitrement le composant à des moments opportuns de son cycle de vie (je vais sauver ton état dans une base de
@@ -39,13 +38,12 @@
   <h2>Notes</h2>
   <ul>
     <li> Le contrat entre composant et conteneur peut être signé via une conformité du code à une <a
-        href="../../API.html">API</a> (<a href="../../Framework.html">framework</a>), via un descripteur externe, ou les
+      href="../../API.html">API</a> (<a href="../../Framework.html">framework</a>), via un descripteur externe, ou les
       deux.
     </li>
     <li>L'absence totale de dépendance est très difficile à assurer. La solution généralement choisie est de scinder un
       composant en une partie indépendante (code <a href="../impl/Compilation.html">compilé</a>) et une partie
-      dépendante, facilement modifiable car sous forme de descripteurs (textuels).
-    </li>
+      dépendante, facilement modifiable, car sous forme de descripteurs (textuels).</li>
   </ul>
 </section>
 <section>
@@ -54,9 +52,10 @@
   <ul>
     <li>les JavaBeans</li>
     <li>les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlets</a>/<a
-        href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>
+      href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>
     </li>
     <li>les <a href="/org/us/company/oracle/sun/ptf/java/api/ee/EJB.html">EJB</a></li>
+    <li>les <a href="/tech/info/soft/proj/design/arch/web/component">Web components</a></li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

@@ -1615,3 +1615,19 @@ body.with-map .map {
 .indexed li p {
   margin: 0;
 }
+
+.hidden {
+  display: none;
+}
+
+li.visible {
+  display: list-item;
+}
+
+p.visible {
+  display: block;
+}
+
+span.visible {
+  display: inline;
+}

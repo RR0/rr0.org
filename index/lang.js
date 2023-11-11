@@ -67,9 +67,7 @@ const langs = {
       if (!e.classList.contains(transformed)) {
         e.innerHTML = e.innerHTML.replaceAll(/(dh|sh|gh|kh|th|hţ)/gi, `<u>$1</u>`)
         const arEl = e.parentElement.querySelector('[lang=\'ar\']')
-        if (arE l
-      )
-        {
+        if (arEl) {
           const text = arEl.textContent.substring(0, arEl.textContent.indexOf(speechLabel))
           addSpeech(e, 'ar', text)
         }

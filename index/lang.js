@@ -75,7 +75,11 @@ const langs = {
       return e
     }
   }, 'he': {
-    label: 'Hébreu', transform: addSpeech
+    label: 'Hébreu', transform: (e) => {
+      e.dir = e.dir || 'rtl'
+      addSpeech(e)
+      return e
+    }
   }, 'he-Latn': {
     label: 'Hébreu phonétique', transform: (e) => {
       const heEl = e.parentElement.querySelector('[lang=\'he\']')

@@ -24,37 +24,80 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>SVG définit un schéma <a href="../xml">XML</a>.</p>
+  <p>SVG définit un schéma <a href="../xml">XML</a> pouvant contenir :</p>
+  <ul>
+    <li>une <code>&lt;viewBox&gt;</code> contenant une liste de valeur définissant un système de coordonnées :
+      <ul>
+        <li>minX</li>
+        <li>minY</li>
+        <li>largeur</li>
+        <li>hauteur</li>
+      </ul>
+    </li>
+    <li>des contextes graphiques <code>&lt;g&gt;</code>
+      <ul>
+        <li>des formes  ayant :
+          <ul>
+            <li>un nom avec des attributs spécifiques :
+              <ul>
+                <li><code>&lt;circ&gt;</code> avec les attributs <code>&lt;cx&gt;</code>, <code>&lt;cy&gt;</code>,
+                  <code>&lt;r&gt;</code></li>
+                <li><code>&lt;rect&gt;</code> avec les attributs <code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>, <code>&lt;width&gt;</code>,
+                  <code>&lt;height&gt;</code></li>
+                <li><code>&lt;line&gt;</code></li>
+                <Li><code>&lt;path&gt;</code></li>
+              </ul>
+            </li>
+            <li>des attributs communs :
+              <ul>
+                <li><code>&lt;stroke&gt;</code> pour la couleur de trait</li>
+                <li><code>&lt;stroke-width&gt;</code> pour la largeur de trait</li>
+                <li><code>&lt;stroke-dasharray&gt;</code> pour les largeurs de traits et espaces entre traits</li>
+                <li><code>&lt;stroke-dashoffset&gt;</code> pour le décalage des traits</li>
+                <li><code>&lt;pathLength&gt;</code> pour la longueur du trait</li>
+                <li><code>&lt;fill&gt;</code> pour la couleur de remplissage</li>
+                <li><code>&lt;transform&gt;</code> pour la tranformation à appliquer au contexte (<code>rotate
+                  (-10)</code> par ex)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section>
-  <h2>Exemples</h2>
-  <p>Un exemple de document SVG est :</p>
-  <code>&lt;?xml version=<span class="codeString">"1.0"</span> standalone=<span
-      class="codeString">"no"</span>?&gt;<br>
-    &lt;!DOCTYPE svg PUBLIC <span class="codeString">"-//W3C//DTD SVG 1.1//EN"</span> <span class="codeString">"https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"</span>&gt;<br>
-    &lt;<strong>svg width</strong>=<span class="codeString">"12cm"</span> <strong>height</strong>=<span
-        class="codeString">"4cm"</span> <strong>viewBox</strong>=<span class="codeString">"0 0 1200 400"</span> <strong>xmlns</strong>=<span
-        class="codeString">"https://www.w3.org/2000/svg"</span> <strong>version</strong>=<span
-        class="codeString">"1.1"</span>&gt;<br>
-    &lt;<strong>desc</strong>&gt;Polygone d'exemple - Etoile et hexagone&lt;/<strong>desc</strong>&gt;<br>
-    &lt;!-- Montre le canvas via un rectangle --&gt;<br>
-    &lt;<strong>rect x</strong>=<span class="codeString">"1"</span> <strong>y</strong>=<span
-        class="codeString">"1"</span> <strong>width</strong>=<span class="codeString">"1198"</span>
-    <strong>height</strong>=<span class="codeString">"398"</span> <strong>fill</strong>=<span
-        class="codeString"><strong>"none"</strong></span> <strong>stroke=<span class="codeString">"blue"</span></strong>
-    <strong>stroke-width</strong>=<span class="codeString">"2"</span>/&gt;<br>
-    &lt;<strong>polygon fill=<span class="codeString">"red"</span> stroke=<span class="codeString">"blue"</span>
-      stroke-width</strong>=<span class="codeString">"10"</span> <strong>points</strong>=<span class="codeString">"350,75 379,161 469,161 397,215
-423,301 350,250 277,301 303,215
-231,161 321,161"</span>/&gt;<br>
-    &lt;<strong>polygon fill=<span class="codeString">"lime"</span></strong> <strong>stroke=<span class="codeString">"blue"</span>
-      stroke-width</strong>=<span class="codeString">"10"</span> <strong>points</strong>=<span class="codeString">"850,75 958,137.5 958,262.5
-850,325 742,262.6 742,137.5"</span>/&gt;<br>
-    &lt;/<strong>svg</strong>&gt;</code>
-  <p>Des exemples d'implémentations de SVG sont :</p>
-  <ul>
-    <li>Apache <a href="https://xml.apache.org/batik">Batik</a></li>
-    <li>CSIRO <a href="https://sis.cmis.csiro.au/svg/">SVG Toolkit</a></li>
-  </ul>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Document</h3>
+    <p>Un exemple de document SVG est :</p>
+    <pre><code>
+    &lt;?xml version="1.0" standalone="no"?&gt;
+    &lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+    <svg height="4cm" version="1.1" viewBox="0 0 1200 400" width="12cm" xmlns="https://www.w3.org/2000/svg">
+      <desc>Polygone d'exemple - Etoile et hexagone</desc>
+      <!-- Montre le canvas via un rectangle -->
+      <rect fill="none" height="398" stroke="blue" stroke-width="2" width="1198" x="1" y="1"/>
+      <polygon fill="red" points="350,75 379,161 469,161 397,215 423,301 350,250 277,301 303,215 231,161 321,161" stroke="blue"
+        stroke-width="10"/>
+      <polygon fill="lime" points="850,75 958,137.5 958,262.5 850,325 742,262.6 742,137.5" stroke="blue"
+        stroke-width="10"/>
+    </svg>
+  </code></pre>
+  </section>
+  <section>
+    <h3>JavaScript</h3>
+    <p>La création de noeuds SVG doit se faire avec le namespace correspondant. Par exemple :</p>
+    <pre><code>
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    </code></pre>
+  </section>
+  <section>
+    <p>Des exemples d'implémentations de SVG sont :</p>
+    <ul>
+      <li>Apache <a href="https://xml.apache.org/batik">Batik</a></li>
+      <li>CSIRO <a href="https://sis.cmis.csiro.au/svg/">SVG Toolkit</a></li>
+    </ul>
+  </section>
 </section>
 <!--#include virtual="/footer.html" -->

@@ -1,5 +1,6 @@
 import {TimeReplacer} from "./TimeReplacer"
 import {rr0TestUtil} from "../test/RR0TestUtil"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("TimeReplacer", () => {
 

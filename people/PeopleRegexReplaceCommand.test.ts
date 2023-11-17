@@ -1,6 +1,7 @@
 import {PeopleReplacerFactory} from "./PeopleReplacerFactory"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 import {ClassDomReplaceCommand} from "ssg-api"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("ClassDomReplaceCommand", () => {
 

@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@javarome/testscript';
 import {CLI} from "./CLI"
 
 interface MyArgs {

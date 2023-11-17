@@ -1,6 +1,7 @@
 import {TimeReplacerFactory} from "./TimeReplacerFactory"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 import {HtmlTagReplaceCommand} from "ssg-api"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("HtmlTagReplaceCommand", () => {
 

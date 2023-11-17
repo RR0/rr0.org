@@ -1,5 +1,7 @@
 import { PeopleFactory } from './PeopleFactory';
 import { KnownPeople } from './People';
+import { describe, expect, test } from '@javarome/testscript';
+import { Gender } from './Gender';
 
 describe('PeopleFactory', () => {
 
@@ -13,7 +15,10 @@ describe('PeopleFactory', () => {
       [],
       false,
       undefined,
-      undefined));
+      undefined,
+      undefined,
+      'people/b/BeauJerome'
+    ));
   });
 
   test('build people with two first names', () => {

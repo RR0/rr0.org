@@ -2,6 +2,7 @@ import {PeopleReplacer} from "./PeopleReplacer"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 import {PeopleFactory} from "./PeopleFactory"
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("PeopleReplacer", () => {
 

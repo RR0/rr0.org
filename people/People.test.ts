@@ -1,5 +1,6 @@
 import {People} from "./People"
 import {PeopleFactory} from "./PeopleFactory"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("People", () => {
 

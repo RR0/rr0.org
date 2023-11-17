@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@javarome/testscript';
 import {StringUtil} from "./StringUtil"
 
 describe("StringUtil", () => {

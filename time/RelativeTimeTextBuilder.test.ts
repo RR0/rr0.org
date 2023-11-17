@@ -2,6 +2,7 @@ import {RelativeTimeTextBuilder} from "./RelativeTimeTextBuilder"
 import {TimeContext} from "./TimeContext"
 import {RR0SsgContextImpl} from "../RR0SsgContext"
 import {rr0TestUtil} from "../test/RR0TestUtil"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("RelativeTimeTextBuilder", () => {
 

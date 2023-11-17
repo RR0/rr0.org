@@ -2,6 +2,7 @@ import {timeDefaultHandler} from "./TimeDefaultTitle"
 import {SsiTitleReplaceCommand} from "./SsiTitleReplaceCommand"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 import {HtmlSsgFile} from "ssg-api"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("TitleReplaceCommand", () => {
 

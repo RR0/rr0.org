@@ -1,6 +1,7 @@
 import {rr0DefaultCopyright} from "./RR0DefaultCopyright"
 import {rr0TestUtil} from "./test/RR0TestUtil"
 import {HtmlSsgFile, SsiEchoVarReplaceCommand} from "ssg-api"
+import { describe, expect, test } from '@javarome/testscript';
 
 describe("CopyrightReplaceCommand", () => {
 

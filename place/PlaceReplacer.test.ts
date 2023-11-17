@@ -5,6 +5,7 @@ import {OrganizationService} from "../org/OrganizationService"
 import {Organization} from "../org"
 import {SsgContext} from "ssg-api"
 import {rr0TestUtil} from "../test/RR0TestUtil"
+import { describe, expect, test } from '@javarome/testscript';
 
 class MockPlaceService extends PlaceService {
 

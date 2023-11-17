@@ -16,7 +16,7 @@
     "books": "tsx book/Books.ts",
     "build": "tsx build.ts",
     "chapters": "tsx Chapters.ts",
-    "test": "tsx test/testAll.ts",
+    "test": "testscript",
     "test-one": "tsx lang/LanguageReplaceCommant.test.ts",
     "udb:build": "webpack"
   },
@@ -28,7 +28,8 @@
     "csv-parser": "^3.0.0",
     "glob-promise": "^6.0.5",
     "image-size": "^1.0.2",
-    "ssg-api": "^1.5.2"
+    "ssg-api": "^1.5.2",
+    "@rr0/lang": "^0.1.11"
   },
   "devDependencies": {
     "@types/detect-character-encoding": "~0.7.0",
@@ -46,7 +47,7 @@
     "url": "^0.11.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "@javarome/testscript": "^0.7.0"
+    "@javarome/testscript": "^0.8.5"
   },
   "keywords": [
     "ufo",

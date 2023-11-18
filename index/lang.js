@@ -12,7 +12,8 @@ const addSpeech = (e, lang = e.lang, text = e.textContent) => {
     speechEl.textContent = speechLabel
     const voices = speechSynthesis.getVoices().filter(voice => voice.localService === true)
     speechEl.title = 'Écouter en ' + langs[e.lang].label
-    speechEl.onclick = () => {
+    speechEl.onclick = (e) => {
+      e.stopPropagation()
       const anotherSpeech = speechMsg && speechMsg.text !== text
       if (!speechMsg || anotherSpeech) {
         if (anotherSpeech) {
@@ -52,9 +53,13 @@ const addSpeech = (e, lang = e.lang, text = e.textContent) => {
 }
 
 const langs = {
+  'en': {
+    label: 'Anglais', transform: addSpeech
+  },
   'fr': {
     label: 'Français', transform: addSpeech
-  }, 'fro': {
+  },
+  'fro': {
     label: 'Français ancien', transform: addSpeech
   }, 'ar': {
     label: 'Arabe', transform: (e) => {

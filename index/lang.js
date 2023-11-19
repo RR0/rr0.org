@@ -13,6 +13,7 @@ const addSpeech = (e, lang = e.lang, text = e.textContent) => {
     const voices = speechSynthesis.getVoices().filter(voice => voice.localService === true)
     speechEl.title = 'Écouter en ' + langs[e.lang].label
     speechEl.onclick = (e) => {
+      e.preventDefault()
       e.stopPropagation()
       const anotherSpeech = speechMsg && speechMsg.text !== text
       if (!speechMsg || anotherSpeech) {

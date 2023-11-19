@@ -3,14 +3,18 @@ import { HtmlRR0SsgContext } from '../RR0SsgContext';
 
 export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
-  async replacement(_context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {
+  async replacement(context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {
     const items = element.querySelectorAll('li');
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      const alreadyDone = item.hasAttribute('id');
-      if (!alreadyDone) {
-        const n = i + 1;
-        item.id = String(n);
+      const n = i + 1;
+      const id = item.getAttribute('id') || i + 1;
+      const anchor = item.querySelector('.anchor');
+      if (!anchor) {
+        const anchorEl = context.outputFile.document.createElement('span');
+        anchorEl.id = String(id);
+        anchorEl.className = 'anchor';
+        item.prepend(anchorEl);
         item.setAttribute('onclick', 'window.location.hash=' + n);
       }
     }

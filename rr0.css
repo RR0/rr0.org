@@ -740,6 +740,7 @@ caption, figcaption {
 figure {
   display: table;
   max-height: 90%;
+  position: relative;
 }
 
 figure.video {

@@ -1,4 +1,4 @@
-import {HtmlSsgContext} from "ssg-api"
+import { HtmlSsgContext } from 'ssg-api';
 
 export class SourceReplacer {
   /**
@@ -20,7 +20,8 @@ export class SourceReplacer {
     replacement.appendChild(a)
     const contents = outputDoc.createElement("span")
     contents.id = sourceId
-    contents.className = "source-contents"
+    contents.classList.add('source-contents');
+    contents.classList.add('anchor');
     contents.innerHTML = original.innerHTML
     replacement.appendChild(contents)
     return replacement

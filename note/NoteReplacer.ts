@@ -1,4 +1,4 @@
-import {HtmlSsgContext} from "ssg-api"
+import { HtmlSsgContext } from 'ssg-api';
 
 export class NoteReplacer {
 
@@ -18,7 +18,8 @@ export class NoteReplacer {
     replacement.appendChild(a)
     const contents = outputDoc.createElement("span")
     contents.id = noteId
-    contents.className = "note-contents"
+    contents.classList.add('note-contents');
+    contents.classList.add('anchor');
     contents.innerHTML = original.innerHTML
     replacement.appendChild(contents)
     return replacement

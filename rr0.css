@@ -1144,7 +1144,7 @@ footer iframe {
   display: none;
 }
 
-.note-contents:target {
+.anchor:target + .note-contents {
   display: inline-block;
 }
 
@@ -1160,7 +1160,7 @@ footer iframe {
   display: none;
 }
 
-.source-contents:target {
+.anchor:target + .source-contents {
   display: inline-block;
 }
 

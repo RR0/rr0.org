@@ -19,11 +19,12 @@ export class SourceReplacer {
     a.textContent = sourceStr
     replacement.appendChild(a)
     const contents = outputDoc.createElement("span")
-    contents.id = sourceId
-    contents.classList.add('source-contents');
-    contents.classList.add('anchor');
+    contents.className = 'source-contents';
     contents.innerHTML = original.innerHTML
-    replacement.appendChild(contents)
+    const anchor = outputDoc.createElement('span');
+    anchor.id = sourceId;
+    anchor.className = 'anchor';
+    replacement.append(anchor, contents);
     return replacement
   }
 }

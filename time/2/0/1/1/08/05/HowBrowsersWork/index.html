@@ -284,7 +284,7 @@
   <li> An operation is a plus token or a minus token</li>
   <li> A term is an integer token or an expression</li>
 </ol>
-</p><p>
+<p>
   Let's analyze the input <samp>2 + 3 - 1</samp>. <br> The first substring that matches a rule is <samp>2</samp>:
   according to rule #5 it is a term. The second match is <samp>2 + 3</samp>: this matches the third rule: a term
   followed by an operation followed by another term. The next match will only be hit at the end of the input. <samp>2 +
@@ -302,15 +302,16 @@ INTEGER: 0|[1-9][0-9]*
 PLUS: +
 MINUS: -
 </pre>
-As you see, integers are defined by a regular expression.</p><p>
+<p>As you see, integers are defined by a regular expression.</p>
+<p>
   Syntax is usually defined in a format called <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">BNF</a>.
-  Our language will be defined as:
+  Our language will be defined as:</p>
 <pre class="prettyprint">
 expression :=  term  operation  term
 operation :=  PLUS | MINUS
 term := INTEGER | expression
 </pre>
-</p><p>
+<p>
   We said that a language can be parsed by regular parsers if its grammar is a <a id="context_free_grammar">context free
   grammar</a>. An intuitive definition of a context free grammar is a grammar that can be entirely expressed in BNF. For
   a formal definition see <a href="https://en.wikipedia.org/wiki/Context-free_grammar">Wikipedia's article on
@@ -363,7 +364,7 @@ term := INTEGER | expression
     <td><samp> - </samp></td>
   </tr>
 </table>
-This type of bottom up parser is called a shift-reduce parser, because the input is shifted to the right (imagine a
+<p>This type of bottom up parser is called a shift-reduce parser, because the input is shifted to the right (imagine a
 pointer pointing first at the input start and moving to the right) and is gradually reduced to syntax rules.</p>
 <h3 id="Generating_parsers_automatically">Generating parsers automatically</h3>
 <p>
@@ -445,13 +446,11 @@ pointer pointing first at the input start and moving to the right) and is gradua
   &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-This markup would be translated to the following DOM tree:</p>
-
+<p>This markup would be translated to the following DOM tree:</p>
 <figure>
   <img height="219" src="image015.png" width="400"/>
   <figcaption><span>Figure </span>: DOM tree of the example markup</figcaption>
 </figure>
-
 <p>
   Like HTML, DOM is specified by the W3C organization. See <a
     href="https://www.w3.org/DOM/DOMTR">www.w3.org/DOM/DOMTR</a>. It is a generic specification for manipulating

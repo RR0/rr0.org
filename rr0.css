@@ -87,6 +87,14 @@ body.wait, body.wait * {
   cursor: wait
 }
 
+section {
+  transition: background-color .2s ease-out
+}
+
+section:hover {
+  background-color: rgba(127, 127, 127, 0.05);
+}
+
 .text {
   transition: left .3s;
   margin: 2.25rem
@@ -99,6 +107,7 @@ body.wait, body.wait * {
 .links {
   column-width: 14em;
 }
+
 .links li {
   margin-top: 2.5mm
 }
@@ -1505,6 +1514,10 @@ body.with-map .map {
     color-scheme: dark;
     --background-color: black;
     --color: lightgrey;
+  }
+
+  section:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .footer {

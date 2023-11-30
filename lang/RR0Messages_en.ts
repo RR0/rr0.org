@@ -101,6 +101,7 @@ export class RR0Messages_en implements RR0Messages {
       contactee: (_gender: Gender) => "contactee",
       cryptozoologist: (_gender: Gender) => "cryptozoologist",
       dentist: (_gender: Gender) => "dentist",
+      diplomat: (_gender: Gender) => 'diplomat',
       director: (_gender: Gender) => "director",
       diver: (_gender: Gender) => "diver",
       engineer: (_gender: Gender) => "engineer",

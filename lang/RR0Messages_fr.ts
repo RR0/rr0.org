@@ -109,6 +109,7 @@ export class RR0Messages_fr implements RR0Messages {
       contactee: (gender: Gender) => gender === Gender.male ? "contacté" : "contactée",
       cryptozoologist: (_gender: Gender) => "cryptozoologue",
       dentist: (_gender: Gender) => "dentiste",
+      diplomat: (_gender: Gender) => 'diplomate',
       director: (_gender: Gender) => "réalisateur",
       diver: (_gender: Gender) => "plongeur",
       engineer: (_gender: Gender) => "ingénieur",

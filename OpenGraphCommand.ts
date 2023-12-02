@@ -192,7 +192,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
   private writeImageFile(context: HtmlRR0SsgContext, canvas: Canvas) {
     const buffer = canvas.toBuffer('image/png');
     const outputName = context.outputFile.name;
-    const imageName = `rr0_og_${this.num++}.png`;
+    const imageName = 'og.png';
     const dir = path.dirname(outputName);
     const imageUrl = path.join('/', dir, imageName);
     const imageOutPath = path.join(this.outDir, imageUrl);

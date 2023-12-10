@@ -189,7 +189,11 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     return widthRatio;
   }
 
-  private writeImageFile(context: HtmlRR0SsgContext, canvas: Canvas) {
+  async contentStepEnd() {
+    // NOP
+  }
+
+  protected writeImageFile(context: HtmlRR0SsgContext, canvas: Canvas) {
     const buffer = canvas.toBuffer('image/png');
     const outputName = context.outputFile.name;
     const imageName = 'og.png';

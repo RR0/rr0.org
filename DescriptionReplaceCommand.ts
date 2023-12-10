@@ -37,4 +37,8 @@ export class DescriptionReplaceCommand implements ReplaceCommand<HtmlRR0SsgConte
     context.outputFile.contents = outDoc.documentElement.outerHTML;
     return outFile;
   }
+
+  async contentStepEnd() {
+    // NOP
+  }
 }

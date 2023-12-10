@@ -156,7 +156,11 @@ getTimeFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService('org');
 
-  const searchCommand = new SearchCommand(['404.html', 'Referencement.html']);
+  const searchCommand = new SearchCommand({
+    notIndexedUrls: ['404.html', 'Referencement.html'],
+    indexWords: false,
+    indexContent: 'contentsIndex.json'
+  });
   const baseUrl = 'https://rr0.org';
   const contentReplacements = [
     new SsiIncludeReplaceCommand(),

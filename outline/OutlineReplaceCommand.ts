@@ -1,6 +1,6 @@
-import {HtmlSsgContext, HtmlSsgFile, ReplaceCommand} from "ssg-api"
-import {StringUtil} from "../util/string/StringUtil"
-import {LocalAnchor} from "../LocalAnchor"
+import { HtmlSsgContext, HtmlSsgFile, ReplaceCommand } from 'ssg-api';
+import { StringUtil } from '../util/string/StringUtil';
+import { LocalAnchor } from '../LocalAnchor';
 
 /**
  * Creates page outline from sections tags.
@@ -50,5 +50,9 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
       }
     }
     return added
+  }
+
+  async contentStepEnd() {
+    // NOP
   }
 }

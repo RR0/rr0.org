@@ -49,7 +49,11 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
     return outputFile
   }
 
-  private addLink(context: HtmlRR0SsgContext, ul: Element, link: Link) {
+  async contentStepEnd() {
+    // NOP
+  }
+
+  protected addLink(context: HtmlRR0SsgContext, ul: Element, link: Link) {
     const outputDoc = context.outputFile.document
     const a = outputDoc.createElement("a")
     a.className = link.type

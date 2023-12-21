@@ -14,15 +14,15 @@
     </code><code><br/> if (somePropertyName.equals (propertyName)) { <br/> <strong> Method</strong> method =
       propertyDescriptor.<strong>getReadMethod</strong>(); <span class="codeComment">// Getter</span> <br/> Object
       result = method.<strong>invoke</strong>(obj, new Object[0]); <br/> int value = ((Integer)result).intValue() + 1;
-      <span class="codeComment">  // Incrémente<br/>
+      <span class="codeComment">  // Incrï¿½mente<br/>
 </span><strong> </strong>method = propertyDescriptor.<strong>getWriteMethod</strong>(); <span class="codeComment">      // Setter</span>
       <br/> method.<strong>invoke</strong>(obj, new Object[] { new Integer(value) });<br/> break;</code><code><br/>
       }<br/> }</code></p>
   </blockquote>
   <p>Des exemples d'introspection sont : </p>
   <ul>
-    <li>celle des <a href="Reflexivite.html">JavaBeans</a>, qui utilise la réflexivité pour identifier des motifs
-      conforme à ses conventions (getters/setters). </li>
+    <li>celle des <a href="Reflexivite.html">JavaBeans</a>, qui utilise la rï¿½flexivitï¿½ pour identifier des motifs
+      conforme Ã  ses conventions (getters/setters). </li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

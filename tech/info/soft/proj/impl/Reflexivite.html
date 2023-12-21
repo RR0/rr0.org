@@ -4,37 +4,37 @@
     href="https://java.sun.com/j2se/1.5.0/docs/guide/reflection/spec/java-reflectionTOC.doc.html">Reflection</a></span>
 </h1>
 <!--#include virtual="/header-end.html" -->
-<p>Réflexivité.</p>
+<p>Rï¿½flexivitï¿½.</p>
 <section>
   <h2>Besoin</h2>
-  <p>Découvrir et invoquer dynamiquement des interfaces d'objets.</p></section>
+  <p>Dï¿½couvrir et invoquer dynamiquement des interfaces d'objets.</p></section>
 <section>
   <h2>Analyse</h2>
-  <p>La réflexivité permet :</p>
+  <p>La rï¿½flexivitï¿½ permet :</p>
   <ul>
-    <li>d'obtenir des informations <strong>statiques </strong>: classe et ses méthodes (constructeurs compris)</li>
-    <li>d'exécuter des opérations <strong>dynamiques</strong> : appels de méthodes (constructeurs compris)</li>
+    <li>d'obtenir des informations <strong>statiques </strong>: classe et ses mï¿½thodes (constructeurs compris)</li>
+    <li>d'exï¿½cuter des opÃ©rations <strong>dynamiques</strong> : appels de mï¿½thodes (constructeurs compris)</li>
   </ul>
-  <p>Ces opérations sont soumises à des accréditations de sécurité (pas d'accès aux membres privés par exemple). </p>
+  <p>Ces opÃ©rations sont soumises Ã  des accrï¿½ditations de sï¿½curitï¿½ (pas d'accï¿½s aux membres privï¿½s par exemple). </p>
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Un exemple d'utilisation de la réflexivité est :</p>
+  <p>Un exemple d'utilisation de la rï¿½flexivitï¿½ est :</p>
   <blockquote>
     <p><code>Class objectClass = obj.<strong>getClass</strong>();<br/> String propertyName = <span class="codeString">"counter"</span>;<br/>
       String prop = Character.toUpperCase(propertyName.charAt(0)) + name.substring(1); <br/> <br/> String mname = <span
           class="codeString">"get"</span> + prop; <br/> Class[] types = new Class[] {}; <br/> <strong>Method</strong>
       method = objectClass.<strong>getMethod</strong>(mname, types); <span class="codeComment">// Getter</span> <br/>
       <br/> Object result = method.<strong>invoke</strong>(obj, new Object[0]); <br/> int value =
-      ((Integer)result).intValue() + 1; <span class="codeComment">// Incrémente</span> <br/> <br/> mname = <span
+      ((Integer)result).intValue() + 1; <span class="codeComment">// Incrï¿½mente</span> <br/> <br/> mname = <span
           class="codeString">"set"</span> + prop; <br/> types = new Class[] { int.class }; <br/> method =
       objectClass.<strong>getMethod</strong>(mname, types); <span class="codeComment">       // Setter</span> <br/>
       <br/> method.<strong>invoke</strong>(obj, new Object[] { new Integer(value) });</code></p>
   </blockquote>
-  <p>Des exemples d'utilisation de la réflexivité sont : </p>
+  <p>Des exemples d'utilisation de la rï¿½flexivitï¿½ sont : </p>
   <ul>
     <li>l'<strong>introspection</strong> des <a href="../../prog/oo/java/Reflexivite.html">JavaBeans</a>, qui utilise la
-      réflexivité pour identifier des motifs conforme à ses conventions (getters/setters). </li>
+      rï¿½flexivitï¿½ pour identifier des motifs conforme Ã  ses conventions (getters/setters). </li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

@@ -5,10 +5,10 @@
 <section>
   <h2>Besoin</h2>
   <p>Fournir un modèle de <a href="/tech/info/soft/proj/design/Composant.html"><strong>composants</strong></a> <a
-      href="/org/us/company/oracle/sun/ptf/java/ee/">Java</a> pouvant être :</p>
+    href="/org/us/company/oracle/sun/ptf/java/ee/">Java</a> pouvant être :</p>
   <ul>
     <li>distribuables</li>
-    <li><a href="/tech/info/soft/prog/oo/java/Transaction.html">transactionnels</a></li>
+    <li><a href="/tech/info/soft/proj/impl/algo/tx">transactionnels</a></li>
     <li><a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistants</a></li>
     <li><a href="/tech/info/soft/sec/">sécurisés</a></li>
   </ul>
@@ -33,22 +33,22 @@
 </section>
 <h2>Conception</h2>
 <h3>Développement</h3>
-<p>Chaque <a href="/tech/info/soft/proj/design/Composant.html">composant</a> EJB est mis en oeuvre par un ensemble
+<p>Chaque <a href="/tech/info/soft/proj/design/Composant.html">composant</a> EJB est mis en œuvre par un ensemble
   d'objets :</p>
 <ul>
   <li>une <strong>instance</strong> EJB, contenant l'implémentation des méthodes métier et l'état (ensemble de valeurs
     métier) du composant, s'il en a un. Cette instance est <a
-        href="/tech/info/soft/Pooling.html">poolée</a> et n'est donc en fait présente qu'au moment où l'on s'en sert
+      href="/tech/info/soft/Pooling.html">poolée</a> et n'est donc en fait présente qu'au moment où l'on s'en sert
     (lorsqu'un appel arrive sur l'EJB).</li>
   <li>un (ou plusieurs) <strong>objet d'interposition</strong> (EJBObject) du conteneur, placé entre le client et
     l'<strong>instance</strong>. En filtrant l'ensemble des appels adressés à l'instant, cet objet rend de manière
     automatisée et transparente divers services du conteneur (démarrage/arrêt de transactions, contrôle des droits
     d'appel en fonction de l'identité de l'appelant, chargement de l'instance à la demande - <em>lazy loading</em>). Cet
     objet peut adopter divers types d'interfaces : distribuée (<a
-        href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>), <a
-        href="/tech/info/soft/reseau/webservice/index.html">Service Web</a>, locale (intra-<a
-        href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a>) ou asynchrone (<a
-        href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>).</li>
+      href="/tech/info/soft/prod/orb/corba/IIOP.html">IIOP</a>), <a
+      href="/tech/info/soft/reseau/webservice/index.html">Service Web</a>, locale (intra-<a
+      href="/org/us/company/oracle/sun/ptf/java/vm/">JVM</a>) ou asynchrone (<a
+      href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>).</li>
 </ul>
 <p>Les composants trouvent les éléments externes (autres EJB, sources de données, files de messages, etc.) auxquels ils
   veulent accéder via un annuaire compatible <a href="/org/us/company/oracle/sun/ptf/java/api/JNDI.html">JNDI</a>.</p>
@@ -108,12 +108,12 @@
      * Constructeur par défaut, toujours vide <br>
      */</span><br> public SkillTree() {}<br> <br> <strong>public </strong>SkillKey <strong>ejbCreate </strong>(Skill
   someRootSkill) throws <strong>CreateException </strong>{ <br> setRoot (someRootSkill);<br> return null; <span
-      class="codeComment">// En CMP
+    class="codeComment">// En CMP
   la clé est déduite</span><br> </code><code>} <br> <br> <span class="codeComment"> /**<br>
      * Accesseurs CMP<br>
      */ </span><br> <strong>public abstract</strong> Object getRoot();<br> </code><code> <strong>public
   abstract</strong> void setRoot (Object);<br> <br> public void <strong>ejbStore</strong>() {<br> <span
-    class="codeComment">    // Rien à faire ici<br>
+  class="codeComment">    // Rien à faire ici<br>
   </span> }</code></p>
 <p><code> public void <strong>ejbLoad</strong>() {<br> <span class="codeComment">    // Rien à faire ici<br>
   </span> }</code></p>
@@ -162,7 +162,7 @@
         <td class="non" colspan="2">Non</td>
         <td class="oui" colspan="3">Oui</td>
         <td><em>Message-Driven Bean</em>. Invoqué par des messages asynchrones (<a
-            href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>)
+          href="/org/us/company/oracle/sun/ptf/java/api/JMS.html">JMS</a>)
         </td>
       </tr>
       <tr>
@@ -196,7 +196,7 @@
         <td class="non">N/A</td>
         <td class="oui" colspan="4">Oui</td>
         <td><em>Bean-Managed Persistence</em> : le composant gère lui-même sa <a
-            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>.
+          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a>.
         </td>
       </tr>
       <tr>
@@ -313,7 +313,7 @@
         <td></td>
       </tr>
       <tr>
-        <th rowspan="6"><a href="/tech/info/soft/prog/oo/java/Transaction.html">Transaction</a></th>
+        <th rowspan="6"><a href="/tech/info/soft/proj/impl/algo/tx">Transaction</a></th>
         <th>Requise</th>
         <th>Requise</th>
         <td><code>REQUIRED</code></td>
@@ -392,7 +392,8 @@
   <li>Langage de requêtes limité :
     <ul>
       <li>pas d'expression de contrainte possible sur les collections (pas d'expressions du type <code>champ.collection.champ</code>
-        dans EJBQL contrairement au <code>contains()</code> de <a href="/tech/info/soft/prog/oo/java/JDO.html">JDO</a>)
+        dans EJBQL contrairement au <code>contains()</code> de <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>)
       </li>
       <li>les <strong>méthodes select</strong> (<em>select methods</em>) ne permettent que de récupérer soit un champ
         unique soit une Entité (pas un objet léger ou ensemble de champs).</li>
@@ -402,26 +403,26 @@
     Il faut par exemple :
     <ul>
       <li><strong>éviter de modéliser tous les objets métier avec des EJB </strong>qui sont un modèle de <a
-          href="/tech/info/soft/proj/design/Composant.html">composants</a> et non un modèle objet. Tout objet (par
-        exemple un objet à granularité fine) n'a pas vocation à être un <a
-            href="/tech/info/soft/proj/design/Composant.html">composant </a>réutilisable. Par contre des EJB peuvent
+        href="/tech/info/soft/proj/design/Composant.html">composants</a> et non un modèle objet. Tout objet (par exemple
+        un objet à granularité fine) n'a pas vocation à être un <a
+          href="/tech/info/soft/proj/design/Composant.html">composant </a>réutilisable. Par contre des EJB peuvent
         encapsulant des graphes entiers d'objets (transitoires ou <a
-            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistants</a>).</li>
+          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistants</a>).</li>
       <li><strong>éviter de n'utiliser des Entités EJB que pour leur <a
-          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a></strong> CMP : les EJB ne sont pas
+        href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a></strong> CMP : les EJB ne sont pas
         conçus pour la <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'un modèle objet
         (pas d'héritage par exemple) et imposent un coût global de modèle de <a
-            href="/tech/info/soft/proj/design/Composant.html">composants </a>
+          href="/tech/info/soft/proj/design/Composant.html">composants </a>
         (sécurité+transactions+persistance+composant) alors que des solutions de simple <a
-            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'un modèle objet n'imposent pas
-        le coût ni les contraintes d'un modèle de composants tel que les EJB. On préfèrera typiquement <a
-            href="/tech/info/soft/prog/oo/java/JDO.html">JDO</a> comme service de <a
-            href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> des EJB, prenant en charge la
+          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'un modèle objet n'imposent pas le
+        coût ni les contraintes d'un modèle de composants tel que les EJB. On préfèrera typiquement <a
+          href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a> comme service de <a
+          href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> des EJB, prenant en charge la
         persistance d'objets complexes encapsulés dans un EJB.</li>
     </ul>
   </li>
 </ul>
-<p>On ne peut pas reprocher aux EJB &lt; 3 :</p>
+<p>On ne peut pas reprocher aux EJB < 3 :</p>
 <ul>
   <li><strong>l'absence d'héritage</strong> : un <a href="/tech/info/soft/proj/design/Composant.html">composant </a>n'est
     pas naturellement adapté à la notion d'héritage, qui limite sa réutilisabilité en introduisant une dépendance forte

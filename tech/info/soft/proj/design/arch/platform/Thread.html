@@ -25,7 +25,7 @@
   <ul>
     <li><strong>travailler sur des données communes </strong>: peut alors se poser le problème de modifications
       concurrentes sur les mêmes données (que se passe-t-il si 2 threads modifient en même temps les noms et prénoms
-      d'une personne et qu'un 3ème tente de lire ces noms et prénoms ? Ce dernier lira-t-il des informations cohérentes
+      d'une personne et qu'un 3ᵉ tente de lire ces noms et prénoms ? Ce dernier lira-t-il des informations cohérentes
       ou mélangées ?). Lorsqu'une <a href="../../../impl/struct/index.html">structure de données</a> (un <a
           href="../../../impl/lang/oo/Objet.html">objet</a> typiquement) contrôle ses accès afin de garantir sa
       cohérence malgré les accès concurrents, on dit qu'elle est <em>thread-safe</em>.</li>

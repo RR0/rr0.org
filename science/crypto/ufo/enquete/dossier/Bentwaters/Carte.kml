@@ -287,7 +287,7 @@
   </Placemark>
   <Placemark>
     <name>[2nd incident] Point de rassemblement</name>
-    <description><![CDATA[<div dir="ltr">La 2ème nuit, Halt et les autres partent approximativement de cet endroit.</div>]]></description>
+    <description><![CDATA[<div dir="ltr">La 2ᵉ nuit, Halt et les autres partent approximativement de cet endroit.</div>]]></description>
     <styleUrl>#style7</styleUrl>
     <Point>
       <coordinates>1.435604,52.090424,0.000000</coordinates>
@@ -312,7 +312,7 @@
     </LineString>
   </Placemark>
   <Placemark>
-    <name>[2ème incident] site d'"atterrissage"</name>
+    <name>[2ᵉ incident] site d'"atterrissage"</name>
     <description><![CDATA[Lieux approximatif du 2nd site d'"atterrissage" supposé. Découvert par Halt, Nevilles et les autres.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
@@ -320,7 +320,7 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>[3ème incident] Route empruntée</name>
+    <name>[3ᵉ incident] Route empruntée</name>
     <description><![CDATA[<div dir="ltr">Route empruntée (en véhicule de la base RAF de Bentwaters) par Larry Warren, Battram, Bustinza, et les autres. Ils tournent "à gauche au portail Est", ce qui les emmène sur une route boisée.</div>]]></description>
     <styleUrl>#style10</styleUrl>
     <LineString>
@@ -361,7 +361,7 @@
     </LineString>
   </Placemark>
   <Placemark>
-    <name>[3ème nuit] Arrêt du véhicule</name>
+    <name>[3ᵉ nuit] Arrêt du véhicule</name>
     <description><![CDATA[<div dir="ltr">Les véhicules sont laissés ici et les hommes (Larry Warren etc.) continuent à pied vers le champ.</div>]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
@@ -369,8 +369,8 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>[3ème incident] site d'"atterrissage"</name>
-    <description><![CDATA[<div dir="ltr">Site d'"atterrissage" supposé (3ème nuit - 28/29 décembre 1980). Larry Warren, Adrian Bustinza et d'autres disent avoir rencontré là un objet atterri inconnu.</div>]]></description>
+    <name>[3ᵉ incident] site d'"atterrissage"</name>
+    <description><![CDATA[<div dir="ltr">Site d'"atterrissage" supposé (3ᵉ nuit - 28/29 décembre 1980). Larry Warren, Adrian Bustinza et d'autres disent avoir rencontré là un objet atterri inconnu.</div>]]></description>
     <styleUrl>#style8</styleUrl>
     <Point>
       <coordinates>1.451483,52.086784,0.000000</coordinates>

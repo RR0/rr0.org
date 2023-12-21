@@ -4,3 +4,4 @@
 # Local Netlify folder
 .netlify
 /search/index.json
+/contentsIndex.json

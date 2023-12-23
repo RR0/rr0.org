@@ -62,13 +62,15 @@ const langs = {
   },
   'fro': {
     label: 'Français ancien', transform: addSpeech
-  }, 'ar': {
+  },
+  'ar': {
     label: 'Arabe', transform: (e) => {
       e.dir = e.dir || 'rtl'
       addSpeech(e)
       return e
     }
-  }, 'ar-Latn': {
+  },
+  'ar-Latn': {
     label: 'Arabe phonétique', transform: (e) => {
       if (!e.classList.contains(transformed)) {
         e.innerHTML = e.innerHTML.replaceAll(/(dh|sh|gh|kh|th|hţ)/gi, `<u>$1</u>`)
@@ -80,19 +82,22 @@ const langs = {
       }
       return e
     }
-  }, 'he': {
+  },
+  'he': {
     label: 'Hébreu', transform: (e) => {
       e.dir = e.dir || 'rtl'
       addSpeech(e)
       return e
     }
-  }, 'he-Latn': {
+  },
+  'he-Latn': {
     label: 'Hébreu phonétique', transform: (e) => {
       const heEl = e.parentElement.querySelector('[lang=\'he\']')
       const text = heEl.textContent.substring(0, heEl.textContent.indexOf(speechLabel))
       addSpeech(e, 'he', text)
     }
-  }, 'img': {
+  },
+  'img': {
     label: 'Image'
   }
 }

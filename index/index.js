@@ -70,6 +70,24 @@ export class Filterform {
     if (checkedOnes.length <= 1) {
       checkedOnes.forEach(checkedOne => {
         checkedOne.disabled = true
+        const list = document.querySelector('ol.indexed')
+        let listStyleType
+        let dir
+        switch (checkedOne.value) {
+          case 'he':
+            listStyleType = 'hebrew'
+            dir = 'rtl'
+            break
+          case 'ar':
+            listStyleType = 'arabic-indic'
+            dir = 'rtl'
+            break
+          default:
+            listStyleType = null
+            dir = null
+        }
+        list.style['list-style-type'] = listStyleType
+        list.setAttribute('dir', dir)
         this.hint(checkedOne, inputs.length > 1 ? 'Sélectionnez un autre choix avant de déselectionner celui-ci' : 'Seul choix disponible')
       })
     } else {

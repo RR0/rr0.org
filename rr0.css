@@ -1330,6 +1330,10 @@ dl.bullet dd {
   content: "→";
 }
 
+*[lang='en'] {
+  font-style: italic;
+}
+
 .anchor {
   position: relative;
   top: calc((var(--header-height) + 0.5rem) * -1);

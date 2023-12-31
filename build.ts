@@ -14,6 +14,7 @@ import {
   CopyStep,
   HtAccessToNetlifyConfigReplaceCommand,
   HtmlTagReplaceCommand,
+  OutputFunc,
   Ssg,
   SsgConfig,
   SsgContext,
@@ -44,7 +45,6 @@ import { RR0ContentStep } from './RR0ContentStep';
 import { ImageCommand } from './ImageCommand';
 import { SearchCommand } from './search/SearchCommand';
 import { SearchIndexStep } from './search/SearchIndexStep';
-import { OutputFunc } from 'ssg-api/dist/src/Ssg';
 import { BaseReplaceCommand } from './BaseReplaceCommand';
 import { OpenGraphCommand } from './OpenGraphCommand';
 import { DescriptionReplaceCommand } from './DescriptionReplaceCommand';

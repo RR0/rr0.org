@@ -617,22 +617,22 @@ p {
   hyphens: auto
 }
 
-a, details summary, .toggle {
+a, details summary, .toggle, form label {
   color: #069;
   text-decoration: none;
-  cursor: pointer;
   padding: .2rem .3rem;
   margin: -.2rem -.3rem
 }
 
-.canular, .deprecated {
-  text-decoration: line-through
-}
-
-a:hover, details summary:hover, .toggle:hover, .indexed li:hover {
+a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover {
+  cursor: pointer;
   border: none;
   border-radius: .2em;
   background: rgba(184, 197, 212, .49)
+}
+
+.canular, .deprecated {
+  text-decoration: line-through
 }
 
 abbr {

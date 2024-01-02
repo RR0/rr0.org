@@ -22,7 +22,7 @@ function find(_e) {
   const selectedOccupations = occupationInputs.filter(occupationInput => occupationInput.checked)
     .map(occupationInput => occupationInput.id)
   for (const child of list.children) {
-    const classes = Array.from(child.classList)
+    const classes = Array.from(child.querySelector('.people-resolved').classList)
     const countryClasses = classes.filter(c => c.startsWith("country-"))
     const occupationClasses = classes.filter(c => c.startsWith("occupation-"))
     const matchCountry = countryClasses.length <= 0 || countryClasses.some(o => selectedCountries.includes(o))

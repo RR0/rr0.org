@@ -11,7 +11,7 @@ const addSpeech = (e, lang = e.lang, text = e.textContent) => {
     speechEl.className = 'speech'
     speechEl.textContent = speechLabel
     const voices = speechSynthesis.getVoices().filter(voice => voice.localService === true)
-    speechEl.title = 'Écouter en ' + langs[e.lang].label
+    speechEl.title = 'Écouter en ' + supportedLangs[e.lang].label
     speechEl.onclick = (e) => {
       e.preventDefault()
       e.stopPropagation()
@@ -53,7 +53,7 @@ const addSpeech = (e, lang = e.lang, text = e.textContent) => {
   return e
 }
 
-const langs = {
+const supportedLangs = {
   'en': {
     label: 'Anglais', transform: addSpeech
   },
@@ -102,4 +102,7 @@ const langs = {
   }
 }
 
-new Filterform('#lang-form', value => value ? `*[lang="${value}"]` : '*[lang]', ['fr'], langs, p => p.lang)
+const userLangs = navigator.languages.map(lang => lang.substring(0, 2))
+const supportedLangCodes = Object.keys(supportedLangs)
+const langs = userLangs.filter(lang => supportedLangCodes.includes(lang))
+new Filterform('#lang-form', value => value ? `*[lang="${value}"]` : '*[lang]', langs.length > 0 ? langs : ['fr'], supportedLangs, p => p.lang)

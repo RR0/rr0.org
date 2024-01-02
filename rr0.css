@@ -618,12 +618,14 @@ p {
 }
 
 a, details summary, .toggle, form label {
-  color: #069;
   text-decoration: none;
   padding: .2rem .3rem;
   margin: -.2rem -.3rem
 }
 
+a, details summary, .toggle {
+  color: #069;
+}
 a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover {
   cursor: pointer;
   border: none;

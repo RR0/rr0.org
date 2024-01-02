@@ -322,11 +322,11 @@ p {
 a {
   color: #4183C4;
   text-decoration: none;
-  cursor: pointer;
 }
 
-a:hover, a:active {
+a:hover, a:active, form label:hover, form label:active {
   color: #4183C4;
+  cursor: pointer;
 }
 
 ul, ol {

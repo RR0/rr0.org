@@ -105,4 +105,5 @@ const supportedLangs = {
 const userLangs = navigator.languages.map(lang => lang.substring(0, 2))
 const supportedLangCodes = Object.keys(supportedLangs)
 const langs = userLangs.filter(lang => supportedLangCodes.includes(lang))
-new Filterform('#lang-form', value => value ? `*[lang="${value}"]` : '*[lang]', langs.length > 0 ? langs : ['fr'], supportedLangs, p => p.lang)
+const lang = langs.length > 0 ? langs[0] : ['fr']
+new Filterform('#lang-form', value => value ? `*[lang="${value}"]` : '*[lang]', lang, supportedLangs, p => p.lang)

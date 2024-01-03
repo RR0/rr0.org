@@ -10,7 +10,7 @@ const transformed = 'transformed'
  */
 function getText (el) {
   const nodes = Array.from(el.childNodes)
-  let filtered = nodes
+  return nodes
     .map(node => {
       switch (node.nodeType) {
         case 3:
@@ -18,8 +18,7 @@ function getText (el) {
         default:
           return node.childNodes[0].nodeValue
       }
-    })
-  return filtered.join('')
+    }).join('')
 }
 
 const addSpeech = (e, lang = e.lang, text = getText(e)) => {

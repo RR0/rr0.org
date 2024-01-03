@@ -1,7 +1,7 @@
-import {TimeTextBuilder} from "./TimeTextBuilder"
-import {TimeContext} from "./TimeContext"
-import {HtmlRR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
-import {StringUtil} from "../util/string/StringUtil"
+import { TimeTextBuilder } from './TimeTextBuilder';
+import { TimeContext } from './TimeContext';
+import { HtmlRR0SsgContext, RR0SsgContextImpl } from '../RR0SsgContext';
+import { StringUtil } from '../util/string/StringUtil';
 
 export class Time {
 
@@ -42,6 +42,8 @@ export class Time {
       timeContext.setMonth(monthStr ? parseInt(monthStr, 10) : undefined)
       const dayStr = timeExec[7]
       timeContext.setDayOfMonth(dayStr ? parseInt(dayStr, 10) : undefined)
+      timeContext.setHour(undefined);
+      timeContext.setMinutes(undefined);
     }
     return timeContext
   }

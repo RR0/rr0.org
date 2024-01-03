@@ -31,19 +31,19 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
     }
     const relStart = inputFile.links.start || this.defaultHandler?.start(context)
     if (relStart) {
-      this.addLink(context, ul, relStart)
+      ul.appendChild(this.linkItem(context, relStart));
     }
     const relContents = inputFile.links.contents || this.defaultHandler?.contents(context)
     if (relContents) {
-      this.addLink(context, ul, relContents)
+      ul.appendChild(this.linkItem(context, relContents));
     }
     const relPrev = inputFile.links.prev || this.defaultHandler?.prev(context)
     if (relPrev) {
-      this.addLink(context, ul, relPrev)
+      ul.appendChild(this.linkItem(context, relPrev));
     }
     const relNext = inputFile.links.next || this.defaultHandler?.next(context)
     if (relNext) {
-      this.addLink(context, ul, relNext)
+      ul.appendChild(this.linkItem(context, relNext));
     }
     outputFile.dom = dom
     return outputFile
@@ -53,7 +53,7 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
     // NOP
   }
 
-  protected addLink(context: HtmlRR0SsgContext, ul: Element, link: Link) {
+  protected linkItem(context: HtmlRR0SsgContext, link: Link): HTMLLIElement {
     const outputDoc = context.outputFile.document
     const a = outputDoc.createElement("a")
     a.className = link.type
@@ -62,6 +62,6 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
     const li = outputDoc.createElement("li")
     li.appendChild(a)
     li.title = context.messages.nav[link.type]
-    ul.appendChild(li)
+    return li;
   }
 }

@@ -4,7 +4,25 @@ const speechLabel = '🔈'
 let speechMsg
 const transformed = 'transformed'
 
-const addSpeech = (e, lang = e.lang, text = e.textContent) => {
+/**
+ * @param {HTMLElement} el
+ * @return {string}
+ */
+function getText (el) {
+  const nodes = Array.from(el.childNodes)
+  let filtered = nodes
+    .map(node => {
+      switch (node.nodeType) {
+        case 3:
+          return node.nodeValue
+        default:
+          return node.childNodes[0].nodeValue
+      }
+    })
+  return filtered.join('')
+}
+
+const addSpeech = (e, lang = e.lang, text = getText(e)) => {
   if (!e.classList.contains(transformed)) {
     e.classList.add(transformed)
     const speechEl = document.createElement('button')
@@ -76,8 +94,8 @@ const supportedLangs = {
         e.innerHTML = e.innerHTML.replaceAll(/(dh|sh|gh|kh|th|hţ)/gi, `<u>$1</u>`)
         const arEl = e.parentElement.querySelector('[lang=\'ar\']')
         if (arEl) {
-          const text = arEl.textContent.substring(0, arEl.textContent.indexOf(speechLabel))
-          addSpeech(e, 'ar', text)
+          const text = getText(arEl)
+          addSpeech(e, 'ar', text.substring(0, text.indexOf(speechLabel)))
         }
       }
       return e

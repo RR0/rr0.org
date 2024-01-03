@@ -1332,7 +1332,7 @@ dl.bullet dd {
   content: "→";
 }
 
-*[lang='en'] {
+*:not(html)[lang='en'] {
   font-style: italic;
 }
 

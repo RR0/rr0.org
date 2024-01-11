@@ -16,7 +16,7 @@ function getText (el) {
         case 3:
           return node.nodeValue
         default:
-          return node.childNodes[0].nodeValue
+          return node.hasChildNodes() ? node.childNodes[0].nodeValue : node.nodeValue
       }
     }).join('')
 }

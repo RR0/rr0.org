@@ -13,7 +13,8 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
         const id = item.getAttribute('id') || item.getAttribute('value') || i + 1;
         const idStr = String(id);
         anchorEl.id = idStr;
-        anchorEl.setAttribute('value', idStr);
+        item.removeAttribute('id');
+        item.setAttribute('value', idStr);
         anchorEl.classList.add('index-anchor', 'anchor');
         item.prepend(anchorEl);
         const n = i + 1;

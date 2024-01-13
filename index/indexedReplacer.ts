@@ -11,7 +11,9 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
       if (!anchor) {
         const anchorEl = context.outputFile.document.createElement('span');
         const id = item.getAttribute('id') || item.getAttribute('value') || i + 1;
-        anchorEl.id = String(id);
+        const idStr = String(id);
+        anchorEl.id = idStr;
+        anchorEl.setAttribute('value', idStr);
         anchorEl.className = 'anchor';
         item.prepend(anchorEl);
         const n = i + 1;

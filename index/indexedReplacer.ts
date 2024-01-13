@@ -7,14 +7,14 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
     const items = element.querySelectorAll('li');
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      const anchor = item.querySelector(':scope > .anchor');
+      const anchor = item.querySelector('.index-anchor');
       if (!anchor) {
         const anchorEl = context.outputFile.document.createElement('span');
         const id = item.getAttribute('id') || item.getAttribute('value') || i + 1;
         const idStr = String(id);
         anchorEl.id = idStr;
         anchorEl.setAttribute('value', idStr);
-        anchorEl.className = 'anchor';
+        anchorEl.classList.add('index-anchor', 'anchor');
         item.prepend(anchorEl);
         const n = i + 1;
         item.setAttribute('onclick', 'window.location.hash=' + n);

@@ -71,15 +71,6 @@ const addSpeech = (e, lang = e.lang, text = getText(e)) => {
 }
 
 const supportedLangs = {
-  'en': {
-    label: 'Anglais', transform: addSpeech
-  },
-  'fr': {
-    label: 'Français', transform: addSpeech
-  },
-  'fro': {
-    label: 'Français ancien', transform: addSpeech
-  },
   'ar': {
     label: 'Arabe', transform: (e) => {
       e.dir = e.dir || 'rtl'
@@ -100,6 +91,15 @@ const supportedLangs = {
       return e
     }
   },
+  'en': {
+    label: 'Anglais', transform: addSpeech
+  },
+  'fr': {
+    label: 'Français', transform: addSpeech
+  },
+  'fro': {
+    label: 'Français ancien', transform: addSpeech
+  },
   'he': {
     label: 'Hébreu', transform: (e) => {
       e.dir = e.dir || 'rtl'
@@ -113,6 +113,9 @@ const supportedLangs = {
       const text = heEl.textContent.substring(0, heEl.textContent.indexOf(speechLabel))
       addSpeech(e, 'he', text)
     }
+  },
+  'it': {
+    label: 'Italien', transform: addSpeech
   },
   'img': {
     label: 'Image'

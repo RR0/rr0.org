@@ -1026,6 +1026,7 @@ span:has(.note-id):hover .note-contents {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0.25em 0.25em 0.5em;
   border-radius: 0.25em;
+  z-index: 1;
 }
 
 .mois {

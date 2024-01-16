@@ -1018,8 +1018,12 @@ pre code {
   vertical-align: super
 }
 
-span:has(.source-id):hover .source-contents,
-span:has(.note-id):hover .note-contents {
+.source-id, .note-id {
+  color: #069;
+}
+
+.source-id:hover .source-contents,
+.note-id:hover .note-contents {
   position: absolute;
   display: inline-block;
   padding: 0.35em 0.5em;
@@ -1175,7 +1179,6 @@ footer iframe {
 }
 
 .source-contents {
-  font-size: .8em;
   color: grey;
   display: none;
 }

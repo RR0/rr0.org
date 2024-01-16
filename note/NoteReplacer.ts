@@ -10,19 +10,17 @@ export class NoteReplacer {
     const noteId = `note-${noteStr}`
     const outputDoc = context.outputFile.document
     const replacement = outputDoc.createElement("span")
-    const a = outputDoc.createElement("a")
-    a.className = 'note-id ';
-    a.ariaLabel = "Note"
-    a.href = `#${noteId}`
-    a.textContent = noteStr
-    replacement.appendChild(a)
+    replacement.className = 'note-id ';
+    replacement.ariaLabel = 'Note';
+    replacement.textContent = noteStr;
+    outputDoc.createElement('span').appendChild(replacement);
     const contents = outputDoc.createElement("span")
     contents.className = 'note-contents';
     contents.innerHTML = original.innerHTML
     const anchor = outputDoc.createElement('span');
     anchor.id = noteId;
     anchor.className = 'anchor';
-    replacement.append(anchor, contents);
-    return replacement
+    outputDoc.createElement('span').append(anchor, contents);
+    return outputDoc.createElement('span');
   }
 }

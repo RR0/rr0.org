@@ -12,12 +12,9 @@ export class SourceReplacer {
     const sourceId = `source-${sourceStr}`
     const outputDoc = context.outputFile.document
     const replacement = outputDoc.createElement("span")
-    const a = outputDoc.createElement("a")
-    a.className = "source-id"
-    a.ariaLabel = "Source"
-    a.href = '/' + context.inputFile.name + `#${sourceId}`
-    a.textContent = sourceStr
-    replacement.appendChild(a)
+    replacement.className = 'source-id';
+    replacement.ariaLabel = 'Source';
+    replacement.textContent = sourceStr;
     const contents = outputDoc.createElement("span")
     contents.className = 'source-contents';
     contents.innerHTML = original.innerHTML

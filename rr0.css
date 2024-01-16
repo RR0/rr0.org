@@ -1018,8 +1018,9 @@ pre code {
   vertical-align: super
 }
 
-span:has(.source-id):hover .source-contents, span:has(.note-id):hover .note-contents {
-  position: fixed;
+span:has(.source-id):hover .source-contents,
+span:has(.note-id):hover .note-contents {
+  position: absolute;
   display: inline-block;
   padding: 0.35em 0.5em;
   background: rgba(255, 255, 255, 0.95);

@@ -294,7 +294,7 @@ nav {
   box-shadow: 0 .5em 1em -.1em #555
 }
 
-.search form .icon:hover, .search:hover, a:hover, details summary:hover, .indexed li:hover {
+.search form .icon:hover, .search:hover, a:hover, details summary:hover, .indexed li:hover, .multilang:hover {
   transition: background .2s ease-out
 }
 
@@ -624,7 +624,8 @@ a, details summary, .toggle, form label {
 a, details summary, .toggle {
   color: #069;
 }
-a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover {
+
+a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {
   cursor: pointer;
   border: none;
   border-radius: .2em;
@@ -1645,7 +1646,7 @@ body.with-map .map {
   }
 }
 
-.indexed li p {
+.indexed li p, .multilang p {
   margin: 0;
 }
 

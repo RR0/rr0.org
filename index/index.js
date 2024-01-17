@@ -18,15 +18,15 @@ export class Filterform {
    *
    * @param {string} formSelector
    * @param {function} tagSelector
-   * @param {string[]} checked The array of initially-checked inputs.
-   * @param {object} langs Key-values of languages
+   * @param {string[]} checkedLangs The array of initially-checked inputs.
+   * @param {object} supportedLangs Key-values of languages
    * @param {function} tagAttribute returns the attribute that will provide a possible value to check.
    */
-  constructor (formSelector, tagSelector, checked, langs, tagAttribute) {
+  constructor (formSelector, tagSelector, checkedLangs, supportedLangs, tagAttribute) {
     this.#formSelector = formSelector
     this.#tagSelector = tagSelector
-    this.checked = checked
-    this.#langs = langs
+    this.checked = checkedLangs
+    this.#langs = supportedLangs
     this.tagAttribute = tagAttribute
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', ready)

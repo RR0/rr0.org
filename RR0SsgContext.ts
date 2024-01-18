@@ -1,8 +1,8 @@
-import {TimeContext} from "./time/TimeContext"
-import {ssgMessages} from "./lang"
-import {RR0Messages} from "./lang/RR0Messages"
-import {DefaultLogger, HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile} from "ssg-api"
-import {PeopleContext} from "./people/PeopleContext"
+import { TimeContext } from './time/TimeContext';
+import { ssgMessages } from './lang';
+import { RR0Messages } from './lang/RR0Messages';
+import { ConsoleLogger, HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile } from 'ssg-api';
+import { PeopleContext } from './people/PeopleContext';
 
 export interface RR0SsgContext extends SsgContext {
   readonly messages: RR0Messages
@@ -27,7 +27,7 @@ export class RR0SsgContextImpl extends SsgContextImpl {
 
   constructor(locale: string, readonly time: TimeContext, readonly people = new PeopleContext(),
               currentFile: SsgFile | undefined = undefined) {
-    super(locale, new Map(), "RR0", new DefaultLogger("RR0"), currentFile)
+    super(locale, new Map(), 'RR0', new ConsoleLogger('RR0'), currentFile);
     this.messages = ssgMessages[locale]
   }
 

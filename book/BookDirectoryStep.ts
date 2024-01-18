@@ -120,10 +120,13 @@ export class BookDirectoryStep extends DirectoryStep {
       for (const startFileName of startFileNames) {
         const chapter = new Chapter(context, startFileName);
         await chapter.scan();
-        context.logger.debug('toc before:', chapter.toString());
+        const chapterBefore = chapter.toString();
+        context.logger.debug('toc before:', chapterBefore);
         await chapter.update();
-        context.logger.debug('toc after:', chapter.toString());
+        const chapterAfter = chapter.toString();
+        context.logger.debug('toc after:', chapterAfter);
         context.logger.log('Updated toc for', chapter.context.inputFile.name);
+        chapter.context.outputFile.dom;
         await this.outputFunc(chapter.context, chapter.context.outputFile);
       }
     } catch (e) {

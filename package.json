@@ -31,7 +31,7 @@
     "image-size": "^1.0.2"
   },
   "devDependencies": {
-    "ssg-api": "^1.6.5",
+    "ssg-api": "^1.7.1",
     "@javarome/testscript": "^0.10.7",
     "@types/detect-character-encoding": "~0.7.0",
     "@types/jsdom": "~21.1.1",

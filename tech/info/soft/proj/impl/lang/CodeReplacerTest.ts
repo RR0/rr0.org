@@ -7,7 +7,7 @@ describe('CodeReplacer', () => {
   const replacer = new CodeReplacer([new HtmlCodeParser()]);
 
   test('replaces nothing', async () => {
-    const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/JavaScript.html',
+    const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/index.html',
       `<p>window.document.write("Hello!")</p>`);
     const codeEl = context.inputFile.document.querySelector('code');
     const replacement = await replacer.replacement(context, codeEl);
@@ -16,7 +16,7 @@ describe('CodeReplacer', () => {
 
   test('replaces tags', async () => {
     const code = 'window.document.write("Hello!")';
-    const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/JavaScript.html',
+    const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/index.html',
       `<code>${code}</code>`);
     const codeEl = context.inputFile.document.querySelector('code');
     const replacement = await replacer.replacement(context, codeEl);
@@ -36,7 +36,7 @@ describe('CodeReplacer', () => {
            }
          </script>
        `;
-    const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/JavaScript.html',
+    const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/index.html',
       `<pre><code>${code}</code></pre>`);
     const codeEl = context.inputFile.document.querySelector('code');
     const replacement = await replacer.replacement(context, codeEl);

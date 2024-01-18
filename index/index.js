@@ -70,7 +70,6 @@ export class Filterform {
     if (checkedOnes.length <= 1) {
       checkedOnes.forEach(checkedOne => {
         checkedOne.disabled = true
-        const list = document.querySelector('ol.indexed')
         let listStyleType
         let dir
         switch (checkedOne.value) {
@@ -86,8 +85,11 @@ export class Filterform {
             listStyleType = null
             dir = null
         }
-        list.style['list-style-type'] = listStyleType
-        list.setAttribute('dir', dir)
+        const list = document.querySelector('ol.indexed')
+        if (list) {
+          list.style['list-style-type'] = listStyleType
+          list.setAttribute('dir', dir)
+        }
         this.hint(checkedOne, inputs.length > 1 ? 'Sélectionnez un autre choix avant de déselectionner celui-ci' : 'Seul choix disponible')
       })
     } else {

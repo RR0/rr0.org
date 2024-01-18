@@ -119,9 +119,13 @@ const supportedLangs = {
   },
   'he-Latn': {
     label: 'Hébreu phonétique', transform: (e) => {
-      const heEl = e.parentElement.querySelector('[lang=\'he\']')
-      const text = heEl.textContent.substring(0, heEl.textContent.indexOf(speechLabel))
-      addSpeech(e, 'he', text)
+      if (!e.classList.contains(transformed)) {
+        const heEl = e.parentElement.querySelector('[lang=\'he\']')
+        if (heEl) {
+          const text = getText(heEl)
+          addSpeech(e, 'he', text.substring(0, text.indexOf(speechLabel)))
+        }
+      }
       return e
     }
   },

@@ -70,6 +70,16 @@ const addSpeech = (e, lang = e.lang, text = getText(e)) => {
   return e
 }
 
+/**
+ * @typedef SupportedLang
+ * @property {string} label
+ * @property {function(HTMLElement, string): HTMLElement} transform
+ */
+
+/**
+ *
+ * @type {{'he-Latn': SupportedLang, ar: SupportedLang, fro: SupportedLang, img: SupportedLang, en: SupportedLang, it: SupportedLang, fr: SupportedLang, he: SupportedLang}}
+ */
 const supportedLangs = {
   'ar': {
     label: 'Arabe', transform: (e) => {
@@ -112,6 +122,7 @@ const supportedLangs = {
       const heEl = e.parentElement.querySelector('[lang=\'he\']')
       const text = heEl.textContent.substring(0, heEl.textContent.indexOf(speechLabel))
       addSpeech(e, 'he', text)
+      return e
     }
   },
   'it': {

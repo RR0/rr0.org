@@ -9,6 +9,7 @@
   --icon-color: grey;
   --background-color: white;
   --color: black;
+  --link-color: lightblue;
 }
 
 * {
@@ -621,11 +622,16 @@ a, details summary, .toggle, form label {
   margin: -.2rem -.3rem
 }
 
-a, details summary, .toggle {
+.note-id, .source-id {
+  text-decoration: none;
+  padding: .2rem .3rem;
+}
+
+a, details summary, .toggle, .note-id, .source-id {
   color: #069;
 }
 
-a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {
+a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover, .note-id:hover, .source-id:hover {
   cursor: pointer;
   border: none;
   border-radius: .2em;
@@ -1023,14 +1029,19 @@ pre code {
   color: #069;
 }
 
+.source-id:hover, .note-id:hover {
+  color: var(--link-color);
+}
 .source-id:hover .source-contents,
 .note-id:hover .note-contents {
   position: absolute;
+  margin-top: 1em;
   display: inline-block;
   padding: 0.35em 0.5em;
   color: var(--color);
   background: var(--background-color);
-  box-shadow: 0.25em 0.25em 0.5em;
+  box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
+  border: 1px outset var(--icon-color);
   border-radius: 0.25em;
   z-index: 1;
 }
@@ -1578,7 +1589,7 @@ body.with-map .map {
   }
 
   a, .toggle {
-    color: lightblue;
+    color: var(--link-color);
   }
 
   #main-header {

@@ -159,7 +159,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
           }
         }
       } catch (e) {
-        console.warn(`${dirName} has no ${fileSpec} description`);
+        context.warn(`${dirName} has no ${fileSpec} description`);
         // No json, just guess title.
       }
     }

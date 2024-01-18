@@ -48,7 +48,7 @@ export class BookDirectoryStep extends DirectoryStep {
         const jsonFileInfo = SsgFile.read(context, `${dirName}/book.json`);
         Object.assign(dirBook, JSON.parse(jsonFileInfo.contents));
       } catch (e) {
-        console.warn(`${dirName} has no book*.json description`);
+        context.warn(`${dirName} has no book*.json description`);
       }
     }
     return books;

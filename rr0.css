@@ -631,7 +631,7 @@ a, details summary, .toggle, .note-id, .source-id {
   color: #069;
 }
 
-a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover, .note-id:hover, .source-id:hover {
+a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {
   cursor: pointer;
   border: none;
   border-radius: .2em;

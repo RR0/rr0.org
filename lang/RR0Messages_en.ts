@@ -212,6 +212,7 @@ export class RR0Messages_en implements RR0Messages {
         tn: "Tennessee"
       }
     },
+    sa: {title: 'Saudi Arabia'},
     se: {title: "Sweden"},
     ve: {title: "Venezuela"},
     za: {title: "South Africa"}

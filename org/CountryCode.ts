@@ -188,6 +188,11 @@ export enum CountryCode {
   se = "se",
 
   /**
+   * Saudi Arabia
+   */
+  sa = 'sa',
+
+  /**
    * VEnezuela
    */
   ve = "ve",

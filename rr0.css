@@ -78,8 +78,6 @@ body {
   margin: 0;
   padding: 0;
   padding-top: calc(var(--header-height) + var(--mobile-nav-height));
-  margin-left: var(--margin);
-  margin-right: var(--margin);
   -webkit-overflow-scrolling: touch;
   line-height: 1.5em;
 }
@@ -90,6 +88,11 @@ body.wait, body.wait * {
 
 section {
   transition: background-color .2s ease-out
+}
+
+p {
+  padding-left: var(--margin);
+  padding-right: var(--margin);
 }
 
 section:hover {
@@ -251,7 +254,7 @@ h2, h3, h4, section h1, section section h1 {
   background: linear-gradient(135deg, #eaeaf9 0, rgba(255, 255, 255, 0) 79%);
   padding-top: .35em;
   padding-bottom: .4em;
-  padding-left: 2.4rem;
+  padding-left: calc(2.4rem + var(--margin));
   letter-spacing: 1px;
   text-align: left
 }
@@ -1296,8 +1299,6 @@ dl.bullet dd {
 #main-header {
   position: sticky;
   top: -100%;
-  margin-left: calc(var(--margin) * -1);
-  margin-right: calc(var(--margin) * -1);
   margin-top: calc(var(--header-height) * -1 - var(--mobile-nav-height));
   background-size: cover !important;
   background-position: center !important;
@@ -1308,8 +1309,6 @@ dl.bullet dd {
   position: sticky;
   top: 0;
   z-index: 101;
-  margin-left: calc(var(--margin) * -1);
-  margin-right: calc(var(--margin) * -1);
   width: auto;
 }
 
@@ -1485,7 +1484,7 @@ abbr[title]:after {
 
   body {
     padding-top: var(--header-height);
-    margin-left: calc(var(--nav-width) + var(--margin));
+    margin-left: var(--nav-width);
     width: 76vw;
   }
 }

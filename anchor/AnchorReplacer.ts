@@ -1,4 +1,4 @@
-import {HtmlSsgContext} from "ssg-api"
+import { HtmlSsgContext } from "ssg-api"
 
 export class AnchorReplacer {
 
@@ -15,6 +15,7 @@ export class AnchorReplacer {
       const url = new URL(href, baseUrl)
       if (href.startsWith("http")) {
         a.target = "_blank"
+        a.title = "Lien externe"
         context.debug("Adding target in", a.outerHTML)
       } else if (url.protocol.startsWith("http")) {
         const pathname = url.pathname

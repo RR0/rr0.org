@@ -1095,6 +1095,10 @@ dt, dd {
   text-align: center
 }
 
+a[target="_blank"]::after {
+  content: " 🔗"
+}
+
 .witness a {
   color: grey;
 }

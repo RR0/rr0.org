@@ -5,13 +5,15 @@
     text-align: right;
   }
   .speech {
-    display: inline-block;
-    visibility: hidden;
-    margin: 0 0.5em;
+    position: absolute;
+    margin-top: 1em;
+    display: none;
+    box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
+    z-index: 1;
   }
 
   * *[lang]:hover .speech {
-    visibility: visible;
+    display: inline-block;
   }
   #lang-aside {
     text-align: right;

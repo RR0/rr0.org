@@ -1073,7 +1073,7 @@ pre code {
   box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
   border: 1px outset var(--icon-color);
   border-radius: 0.25em;
-  z-index: 1;
+  z-index: 2;
 }
 
 .mois {

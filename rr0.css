@@ -234,15 +234,15 @@ form {
   overflow: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   text-wrap: balance;
 }
 
-h2, h3, h4, nav ul li *, section h1, section section h1 {
+h2, h3, h4, h5, nav ul li *, section h1, section section h1 {
   font-family: system-ui, sans-serif;
 }
 
-h2, h3, h4, section h1, section section h1 {
+h2, h3, h4, h5, section h1, section section h1 {
   clear: both;
   text-decoration: none;
   font-size: 1.5em;
@@ -259,17 +259,32 @@ h2, h3, h4, section h1, section section h1 {
   text-align: left
 }
 
-h3, h4, section section h1 {
+h3 {
+  font-size: 1.4em
+}
+
+h4 {
+  font-size: 1.3em
+}
+
+h5 {
+  font-size: 1.2em
+}
+
+h3, h4, h5, section section h1 {
   background: 0 0;
-  font-size: 1.2em;
   margin-top: 1.25em;
   border-bottom: thin dotted #DBDBDB
 }
 
 h4 {
-  font-size: 16px;
   margin: 1.25em 0 0 .83em;
   padding: 5px
+}
+
+h5 {
+  margin: 1.25em 0 0 .83em;
+  padding: 4px
 }
 
 .title {
@@ -374,7 +389,7 @@ nav ul > li {
   border-top: 0.5px solid lightgray;
 }
 
-.outline li h2, .outline li h3, .outline li h4, .outline li section h1, section .outline li h1 {
+.outline li h2, .outline li h3, .outline li h4, .outline li h5, .outline li section h1, section .outline li h1 {
   background: 0 0;
   margin: 0;
   padding: 0;
@@ -383,10 +398,22 @@ nav ul > li {
   letter-spacing: normal;
 }
 
-.outline li h3, .outline li h4, .outline li section section h1, section section .outline li h1 {
+.outline li h3, .outline li h4, .outline li h5, .outline li section section h1, section section .outline li h1 {
   margin: 0;
   padding: 0;
   width: auto
+}
+
+.outline li h3 {
+  margin-left: 0.5em;
+}
+
+.outline li h4 {
+  margin-left: 1em;
+}
+
+.outline li h5 {
+  margin-left: 1.5em;
 }
 
 .outline li:focus {
@@ -460,14 +487,14 @@ nav ul > li {
   margin: 0
 }
 
-.search-result li h2, .search-result li h3, .search-result li h4, .search-result li section h1, section .search-result li h1 {
+.search-result li h2, .search-result li h3, .search-result li h4, .search-result li h5, .search-result li section h1, section .search-result li h1 {
   background: 0 0;
   margin: 0;
   padding: 0;
   width: auto
 }
 
-.search-result li h3, .search-result li h4, .search-result li section section h1, section section .search-result li h1 {
+.search-result li h3, .search-result li h4, .search-result li h5, .search-result li section section h1, section section .search-result li h1 {
   margin: 0;
   padding: 0;
   width: auto
@@ -1473,12 +1500,6 @@ abbr[title]:after {
     margin: 0
   }
 
-  .outline li h3, .outline li h4, .outline li section section h1, section section .outline li h1 {
-    margin: 0;
-    padding: 0;
-    width: auto
-  }
-
   .outline li:focus {
     color: #FFF;
     background-color: rgba(11, 117, 178, .4);
@@ -1616,7 +1637,7 @@ body.with-map .map {
     border-color: rgb(80, 80, 80);
   }
 
-  h2, h3, h4, section h1, section section h1 {
+  h2, h3, h4, h5, section h1, section section h1 {
     color: white;
     background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
     border-bottom: none;

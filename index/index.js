@@ -121,8 +121,13 @@ export class Filterform {
         input.checked = true
       }
       label.appendChild(input)
-      label.append(' ' + this.#langs[value].label)
-      form.append(label)
+      const lang = this.#langs[value]
+      if (lang) {
+        label.append(' ' + lang.label)
+        form.append(label)
+      } else {
+        console.warn('Unusupported lang', lang)
+      }
     }
     this.clicked()
   }

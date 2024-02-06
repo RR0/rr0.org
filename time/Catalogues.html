@@ -2,7 +2,16 @@
 <title>Catalogues de cas</title>
 <!--#include virtual="/header-end.html" -->
 <p>Systèmes de collecte et/ou gestion de données <a href="/science/crypto/ufo">ufologiques</a>.</p>
-<br/>
+<form id="searchForm">
+  <label style="white-space: normal">Nom <input autofocus oninput="find(event)" style="margin-left: 1em" type="search"></label>
+  <details id="countries">
+    <summary>Zone géographique</summary>
+  </details>
+  <details id="sighting-types">
+    <summary>Type d'observation</summary>
+  </details>
+  <output></output>
+</form>
 <style>th, td {
   vertical-align: top
 }</style>
@@ -29,7 +38,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr class="sightingType-air country-any">
       <td><a href="https://www.ufodatanet.org/report/aircat2002.pdf">AirCat</a></td>
       <td>Orlandi, Marco (<a href="/org/eu/it/asso/CISU">CISU</a>)</td>
       <td></td>
@@ -44,7 +53,7 @@
       <td></td>
       <td></td>
     </tr>
-    <tr>
+    <tr class="sightingType-air country-any">
       <td><a href="http://www.project1947.com/47cats/acufoe.htm">AIRPANC</a></td>
       <td><span class="people">Dominique Weinstein</span></td>
       <td>Non</td>
@@ -57,7 +66,7 @@
       <td>Gratuit</td>
       <td></td>
     </tr>
-    <tr>
+    <tr class="sightingType-ce1 country-any">
       <td>ArgentCat</td>
       <td>Guillermo C. Roncoroni (CIU, Buenos Aires)</td>
       <td></td>
@@ -71,8 +80,8 @@
       <td></td>
       <td></td>
     </tr>
-    <tr>
-      <td><a href="https://baseovnifrance.free.fr">Base OVNI France</a></td>
+    <tr class="sightingType-any country-fr">
+      <td><a href="http://baseovnifrance.free.fr">Base OVNI France</a></td>
       <td>Luc Chastan</td>
       <td>Lieu, date, heure, description, source (email), envoie de fichiers (scans d'articles de journaux, etc.)
       </td>
@@ -94,7 +103,7 @@
       <td>Gratuit</td>
       <td>Français</td>
     </tr>
-    <tr>
+    <tr class="sightingType-any country-us">
       <td><a href="/time/1/9/5/5/05/05/PBBSR14">Bear</a> (<a href="/org/us/bmi/projet/Stork.html">Stork</a>)
       </td>
       <td><a href="/org/us/bmi">BMI</a></td>
@@ -108,13 +117,13 @@
       <td></td>
       <td>Anglais</td>
     </tr>
-    <tr>
+    <tr class="sightingType-any country-fr">
       <td><a href="/science/crypto/ufo/analyse/Projet/Becassine.html">Bécassine</a></td>
       <td><span class="people">Denis Breysse</span></td>
       <td>Fiches papiers</td>
       <td>&gt;= 978 <a href="/science/crypto/ufo/observation/classification/hynek/rr/3">RR3</a> expliquées ou non
       </td>
-      <td> Indices (numéro de cas, quantité d'information, explicabilité), date (année, mois, jour, heure, durée), lieu
+      <td>Indices (numéro de cas, quantité d'information, explicabilité), date (année, mois, jour, heure, durée), lieu
         (pays, région, localisation, site), témoin (nombre, association entre les témoins, nom, sexe, âge, profession,
         activité au début de l'observation, façon dont l'attention a été retenue), ovni (nombre, forme, couleur,
         dimension, altitude, vitesse, bruit, luminosité, mode d'apparition, évolutions, mode de disparition), entités
@@ -132,13 +141,14 @@
       <td>Gratuit</td>
       <td>Français</td>
     </tr>
-    <tr>
+    <tr class="sightingType-any country-ca">
       <td><a href="https://casufo.blogspot.com">CasUFO</a></td>
       <td>Marc Leduc</td>
       <td>Livres sur les ovnis au Québec</td>
       <td>Milliers</td>
       <td>N° fiche, moment (jour, mois, année, heure début, heure fin), lieu et site, nombre d'objets, indices
-        (crédibilité, étrangeté) et cote résultante (A et B, crédible mais pas étrange, non crédible et étrange, ni
+        (crédibilité, étrangeté) et cote résultante (A et B, crédible, mais pas étrange, non crédible et étrange, ni
+        (crédibilité, étrangeté) et cote résultante (A et B, crédible, mais pas étrange, non crédible et étrange, ni
         crédible ni étrange), classification (Leduc, <span class="people">Josef Allen Hynek</span>), image, son,
         témoins, cause/code hypothèse, forme/code forme, description.
       </td>
@@ -149,24 +159,27 @@
       <td></td>
       <td>Français</td>
     </tr>
-    <tr>
-      <td><a href="https://www.geocities.com/Area51/Rampart/2653/sixthkind.html">Close encounters of the 6th kind</a>
+    <tr class="sightingType-ce6 country-any">
+      <td><a href="https://web.archive.org/web/20091019205639/http://geocities.com/Area51/Rampart/2653/sixthkind.html">Close
+        encounters of the 6th kind</a>
       </td>
       <td>Geoff Dittman</td>
       <td>Non</td>
-      <td>272 (de 1873 à <time>1997</time>)</td>
+      <td>272 (de <time>1873/1997</time>)</td>
       <td>Témoin (nom), type (blessure, disparition, mort), effets (brûlure, perte de conscience, malaise...),
         lieu/région/pays, date (jour, mois, année), heure, description de 2 lignes
       </td>
       <td>Non</td>
       <td>Statistiques statiques (par continent, pays, date, type de blessure, langue)</td>
-      <td> Web</td>
+      <td>Web</td>
       <td>Internet</td>
       <td>Gratuit</td>
       <td>Anglais</td>
     </tr>
-    <tr>
-      <td><a href="https://www.ufodatanet.org/progetti-dettaglio-en.php?id=1985">CrashCat</a></td>
+    <tr class="sightingType-crash country-it">
+      <td><a
+        href="https://web.archive.org/web/20130323143309/https://www.ufodatanet.org/progetti-dettaglio-en.php?id=1985">CrashCat</a>
+      </td>
       <td><s>Giuseppe Stilo</s>, Marco Bianchini</td>
       <td></td>
       <td>250 <a href="/science/crypto/ufo/observation/scenario/Crashes.html">crashes</a> d'objets sur la péninsule
@@ -180,8 +193,11 @@
       <td>Gratuit</td>
       <td>Anglais, Italien</td>
     </tr>
-    <tr>
-      <td>FiDUFO</td>
+    <tr class="sightingType-any country-fr">
+      <td><abbr title="Fichier Informatique de Documentation sur les UFO">FiDUFO</abbr> <span class="source">"<a
+        href="/time/1/9/7/1/04/LDLN-111/FiDUFO.html">FIDUFO</a>", LDLN n° 111, 1971-04</span> <span class="source">"<a
+        href="/time/1/9/7/2/02/LDLN-116/FiDUFO.html">FIDUFO</a>", LDLN n° 116, 1972-02</span>
+      </td>
       <td><a href="/org/eu/fr/asso/ldln">LDLN</a></td>
       <td></td>
       <td></td>
@@ -240,7 +256,7 @@
       <td><a href="https://www.fufor.com/reportinfo.htm">FUFOR reports forms</a></td>
       <td><a href="/org/us/asso/FUFOR.html">FUFOR</a></td>
       <td>15 champs de formulaire <a href="https://www.fufor.com/reportsighting.htm">d'observation</a> & <a
-          href="https://www.fufor.com/reportabduction.htm">d'enlèvement</a>.
+        href="https://www.fufor.com/reportabduction.htm">d'enlèvement</a>.
       </td>
       <td></td>
       <td></td>
@@ -254,8 +270,8 @@
     <tr>
       <td><a href="https://www.ldi5.net/ovni/sepra/nt1.php">GEPAN</a> (CNES)</td>
       <td><span class="people">Alain Esterle</span>, Jacques Duval, Paul Legendre, <span
-          class="people">Manuel Jimenez</span>, <span class="people">Jean-Pierre Rospars</span>, Michel Marcus (<a
-          href="/org/eu/fr/cnes/gepan">GEPAN</a>)
+        class="people">Manuel Jimenez</span>, <span class="people">Jean-Pierre Rospars</span>, Michel Marcus (<a
+        href="/org/eu/fr/cnes/gepan">GEPAN</a>)
       </td>
       <td><a href="/org/eu/fr/dn/gendarmerie">Gendarmerie</a></td>
       <td></td>
@@ -281,7 +297,7 @@
       <td><span class="people">Gilles Durand</span></td>
       <td></td>
       <td>600 cas d'ovnis "pré-<a href="../people/a/ArnoldKennethE">arnoldiens</a>" de l'Antiquité à avril <a
-          href="/time/1/9/4/7">1947</a></td>
+        href="/time/1/9/4/7">1947</a></td>
       <td></td>
       <td></td>
       <td></td>
@@ -297,7 +313,7 @@
       <td><a href="#Humcat">Humcat</a>, Bowen</td>
       <td>10 000 <a href="/science/crypto/ufo/observation/classification/hynek/rr/3">RR3</a></td>
       <td>Lieu, Date, Heure, Description, Source, <a
-          href="/science/crypto/ufo/observation/classification">Classification</a>
+        href="/science/crypto/ufo/observation/classification">Classification</a>
       </td>
       <td>Non</td>
       <td>Non</td>
@@ -322,15 +338,14 @@
     </tr>
     <tr>
       <td>IntCat</td>
-      <td><a href="/people/r/RogersonPeter"> Rogerson</a>, <span class="people">Jacques Bonabot</span> (cas
-        français)
+      <td><a href="/people/r/RogersonPeter"> Rogerson</a>, <span class="people">Jacques Bonabot</span> (cas français)
       </td>
       <td></td>
       <td>150 Cas internationaux sur la période <time>1865/1954</time></td>
       <td></td>
       <td></td>
       <td>Cartographie des lieux, recherche de cercles géodésiques inspirés des études de <span
-          class="people">Aimé Michel</span></td>
+        class="people">Aimé Michel</span></td>
       <td>ForTran sur mainframe</td>
       <td>Privé</td>
       <td></td>
@@ -653,15 +668,15 @@
     </tr>
     <tr>
       <td><a href="https://www.temporaldoorway.com/mufonct/report/"><em>UFO Cases In Connecticut</em></a><a
-          href="https://www.temporaldoorway.com/ufo/catalog/database/query.htm"></a></td>
+        href="https://www.temporaldoorway.com/ufo/catalog/database/query.htm"></a></td>
       <td>Mark Cashman (MUFON CT)</td>
       <td>Non</td>
       <td>2000 effets <a href="/science/crypto/ufo/enquete/indice/em">EM</a> du <a
-          href="/science/crypto/ufo/enquete/projet/Project1947.html">Projet 1947</a> + catalogue Magonie de Vallée.
+        href="/science/crypto/ufo/enquete/projet/Project1947.html">Projet 1947</a> + catalogue Magonie de Vallée.
       </td>
       <td> Date, un lieu, courte description (10 lignes), <a
-          href="/science/crypto/ufo/observation/classification/hynek">classifications Hynek</a> et <a
-          href="/science/crypto/ufo/observation/classification/vallee">Vallée</a>, distance minimale, apparence et
+        href="/science/crypto/ufo/observation/classification/hynek">classifications Hynek</a> et <a
+        href="/science/crypto/ufo/observation/classification/vallee">Vallée</a>, distance minimale, apparence et
         comportement de l'objet, effets physiques et médicaux, commentaires et notes.
       </td>
       <td>Langage de prédicats</td>
@@ -757,7 +772,7 @@
     <tr>
       <td><a href="https://www.cufos.org/UFOCAT.html">UFOCat</a></td>
       <td><a href="../people/s/SaundersDavidR">Saunders</a>, Vallée, Fred Merritt (<a
-          href="/org/us/asso/cufos">CUFOS</a>), <a href="../people/j/JohnsonDonaldA">Johnson</a>
+        href="/org/us/asso/cufos">CUFOS</a>), <a href="../people/j/JohnsonDonaldA">Johnson</a>
       </td>
       <td></td>
       <td>172 000 rapports bruts (1967-<a href="/time/1/9/8/2">1982</a>, <a href="/time/1/9/9/0">1990</a>-2003).
@@ -889,12 +904,12 @@
       <td><a href="https://www.phenomainon.com">phenomAInon</a></td>
       <td>0toAI, LLC</td>
       <td>Base de données du <a
-          href="/org/us/asso/nuforc">NUFORC</a> (partie), <a href="/org/us/asso/mufon">MUFON</a> (partie), <a
-          href="/org/us/dod/af/amc/atic/projet/bluebook">Blue Book</a>, <a
-          href="https://www.nicap.org/NSID/NSID_Menu.htm">NSID</a>, UKTNA, <a href="/org/us/asso/NIDS.html">NIDS</a>,
+        href="/org/us/asso/nuforc">NUFORC</a> (partie), <a href="/org/us/asso/mufon">MUFON</a> (partie), <a
+        href="/org/us/dod/af/amc/atic/projet/bluebook">Blue Book</a>, <a
+        href="https://www.nicap.org/NSID/NSID_Menu.htm">NSID</a>, UKTNA, <a href="/org/us/asso/NIDS.html">NIDS</a>,
         Gouvernement Canadien, Gouvernement Brésilien, <a
-            href="/org/us/state/ut/skinwalker">Skinwalker</a>, Pilotes, <a
-            href="https://www.cufos.org/UFOCAT.html">UFOCat</a>
+          href="/org/us/state/ut/skinwalker">Skinwalker</a>, Pilotes, <a
+          href="https://www.cufos.org/UFOCAT.html">UFOCat</a>
       </td>
       <td>Somme des bases agrégées</td>
       <td>Date, Case number, incident title, City, State, Country</td>
@@ -912,13 +927,13 @@
       <td><a href="https://updb.app">UPBD</a></td>
       <td><a href="mailto:uapublius@protonmail.com">Publius</a></td>
       <td><a href="https://report-a-ufo.com">Formulaire de signalement</a> + <a
-          href="/org/us/asso/nuforc">NUFORC</a> + <a href="/org/us/asso/mufon">MUFON</a> + bases de données importées de
+        href="/org/us/asso/nuforc">NUFORC</a> + <a href="/org/us/asso/mufon">MUFON</a> + bases de données importées de
         phenomAInon (<a href="/org/us/dod/af/amc/atic/projet/bluebook">Blue Book</a>, UKTNA, <a
-            href="/org/us/asso/NIDS.html">NIDS</a>, Gouvernement Canadien, Gouvernement Brésilien, <a
-            href="/org/us/state/ut/skinwalker">Skinwalker</a>, Pilotes, <a
-            href="/org/us/company/ba/ass">BAASS</a>) + <a
-            href="https://www.nicap.org/NSID/NSID_Menu.htm">NSID</a> + <a
-            href="https://web.archive.org/web/20110524161037/http://www.ufodna.com/index.html">UFODNA</a>
+          href="/org/us/asso/NIDS.html">NIDS</a>, Gouvernement Canadien, Gouvernement Brésilien, <a
+          href="/org/us/state/ut/skinwalker">Skinwalker</a>, Pilotes, <a
+          href="/org/us/company/ba/ass">BAASS</a>) + <a
+          href="https://www.nicap.org/NSID/NSID_Menu.htm">NSID</a> + <a
+          href="https://web.archive.org/web/20110524161037/http://www.ufodna.com/index.html">UFODNA</a>
       </td>
       <td>300000 cas + 500000 pages de documents OCRisés</td>
       <td>City, District, Country, Date, Source/SourceID, Tags</td>
@@ -932,4 +947,80 @@
     </tbody>
   </table>
 </div>
+<script>
+  let countryInputs = []
+  let sightingTypeInputs = []
+
+  const form = document.getElementById("searchForm")
+
+  function createChecks (prefix, host, values, inputs) {
+    for (const value of Array.from(values).sort()) {
+      const check = document.createElement("input")
+      check.type = "checkbox"
+      check.id = prefix + value
+      check.onchange = find
+      const label = document.createElement("label")
+      label.append(check)
+      label.append(value)
+      const option = document.createElement("span")
+      option.className = "option"
+      option.append(label)
+      inputs.push(check)
+      host.append(option)
+    }
+  }
+
+  const countryPrefix = "country-"
+  const sightingPrefix = "sightingType-"
+  const allCountries = new Set()
+  const allTypes = new Set()
+
+  function find (_e) {
+    const textInput = form.querySelector("input[type='search']")
+
+    function normalize (str) {
+      return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim()
+    }
+
+    const value = normalize(textInput.value)
+    const list = document.querySelector(".scrollable tbody")
+    let found = 0
+    const selectedCountries = countryInputs.filter(countryInput => countryInput.checked)
+      .map(countryInput => countryInput.id)
+    const selectedSightingTypes = sightingTypeInputs.filter(sightingTypeInput => sightingTypeInput.checked)
+      .map(sightingTypeInput => sightingTypeInput.id)
+    for (const child of list.children) {
+      const classes = Array.from(child.classList)
+      const countryClasses = classes.filter(c => c.startsWith(countryPrefix))
+      countryClasses.forEach(countryClass => allCountries.add(countryClass.substring(countryPrefix.length)))
+      const sightingTypeClasses = classes.filter(c => c.startsWith(sightingPrefix))
+      sightingTypeClasses.forEach(typeClass => allTypes.add(typeClass.substring(sightingPrefix.length)))
+      const matchCountry = countryClasses.length <= 0 || countryClasses.some(o => selectedCountries.includes(o))
+      const matchSightingType = sightingTypeClasses.length <= 0 || sightingTypeClasses.some(o => selectedSightingTypes.includes(o))
+      const matchText = normalize(child.textContent).indexOf(value) >= 0
+      if (matchText && matchCountry && matchSightingType) {
+        child.style.display = "table-row"
+        found++
+      } else {
+        child.style.display = "none"
+      }
+    }
+    const output = form.querySelector("output")
+    output.textContent = `${found > 0 ? found : "Aucune"} base${found > 1 ? "s" : ""} / ${list.children.length}`
+  }
+
+  find()
+  const hostCountry = document.getElementById("countries")
+  createChecks(countryPrefix, hostCountry, allCountries, countryInputs)
+  const hostTypes = document.getElementById("sighting-types")
+  createChecks(sightingPrefix, hostTypes, allTypes, sightingTypeInputs)
+  for (const countryInput of countryInputs) {
+    countryInput.checked = true
+  }
+  for (const sightingTypeInput of sightingTypeInputs) {
+    sightingTypeInput.checked = true
+  }
+  form.style.display = "block"
+  form.querySelector("input").dispatchEvent(new Event("input"))
+</script>
 <!--#include virtual="/footer.html" -->

@@ -2,8 +2,8 @@
  * Client-side code to filter directory listing.
  */
 
-var countryInputs
-var occupationInputs
+let countryInputs
+let occupationInputs
 
 const form = document.getElementById("searchForm")
 

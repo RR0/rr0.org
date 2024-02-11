@@ -124,7 +124,7 @@ export class BaseOvniFranceChronologySource extends HttpChrolologySource {
         description.push("avec effet physique")
       }
       if (c.witnessEffect) {
-        description.push("avec effet physique")
+        description.push("avec effet sur témoin")
       }
       item.append(description.join(", "))
       const sourceEl = this.thisSourceElement(context, c)

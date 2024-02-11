@@ -18,7 +18,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx lang/LanguageReplaceCommant.test.ts",
+    "test-one": "tsx time/datasource/BaseOvniFranceChronologySource.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {
@@ -29,7 +29,8 @@
     "canvas": "^2.11.2",
     "csv-parser": "^3.0.0",
     "glob-promise": "^6.0.5",
-    "image-size": "^1.0.2"
+    "image-size": "^1.0.2",
+    "jsdom": "^24.0.0"
   },
   "devDependencies": {
     "ssg-api": "^1.7.1",

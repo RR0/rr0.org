@@ -1,3 +1,4 @@
+
 /**
  * Time context for a RR0 page.
  */
@@ -89,5 +90,30 @@ export class TimeContext {
     this.setDayOfMonth(undefined)
     this.setHour(undefined)
     this.setMinutes(undefined)
+  }
+
+  toString(): string {
+    let s = String(this.getYear())
+    const month = this.getMonth()
+    if (this.isSet(month)) {
+      s += "-" + String(month).padStart(2, "0")
+    }
+    const day = this.getDayOfMonth()
+    if (this.isSet(day)) {
+      s += "-" + String(day).padStart(2, "0")
+    }
+    const hour = this.getHour()
+    if (this.isSet(hour)) {
+      s += " " + String(hour).padStart(2, "0")
+    }
+    const minutes = this.getMinutes()
+    if (this.isSet(minutes)) {
+      s += ":" + String(minutes).padStart(2, "0")
+    }
+    return s
+  }
+
+  protected isSet(value: any) {
+    return value != void 0 && value != null
   }
 }

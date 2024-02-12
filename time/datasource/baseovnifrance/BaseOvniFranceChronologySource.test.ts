@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@javarome/testscript"
 import { BaseOvniFranceChronologySource } from "./BaseOvniFranceChronologySource"
-import { rr0TestUtil } from "../../test/RR0TestUtil"
+import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
 describe("BaseOvniFranceChronologySource", () => {
 

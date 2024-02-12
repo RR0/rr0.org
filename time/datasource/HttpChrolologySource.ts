@@ -42,13 +42,10 @@ export abstract class HttpChrolologySource extends ChronologySource {
 
   abstract get(context: HtmlRR0SsgContext): Promise<HTMLLIElement[]>;
 
-  protected async submitForm<T>(url: string, obj: object, headers = {}): Promise<T> {
-    const formData = new FormData()
-    Object.entries(obj).forEach(entry => formData.append(entry[0], encodeURIComponent(entry[1])))
-    const init: RequestInit = {method: "POST", headers, body: formData}
+  protected async fetch<T>(url: string, init: RequestInit): Promise<T> {
     const response = await fetch(url, init)
     if (response.ok) {
-      const accept = headers["accept"]
+      const accept = init.headers["accept"]
       if (accept) {
         const buffer = await response.arrayBuffer()
         const charset = HttpChrolologySource.findParam(accept, ";", "charset")
@@ -67,5 +64,12 @@ export abstract class HttpChrolologySource extends ChronologySource {
     } else {
       throw Error(response.statusText)
     }
+  }
+
+  protected async submitForm<T>(url: string, obj: object, headers = {}): Promise<T> {
+    const formData = new FormData()
+    Object.entries(obj).forEach(entry => formData.append(entry[0], encodeURIComponent(entry[1])))
+    const init: RequestInit = {method: "POST", headers, body: formData}
+    return await this.fetch(url, init)
   }
 }

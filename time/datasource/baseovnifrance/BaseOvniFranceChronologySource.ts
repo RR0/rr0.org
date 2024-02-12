@@ -1,8 +1,8 @@
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { HttpChrolologySource } from "./HttpChrolologySource"
-import { UrlUtil } from "../../util/url/UrlUtil"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
+import { HttpChrolologySource } from "../HttpChrolologySource"
+import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { TimeContext } from "../TimeContext"
+import { TimeContext } from "../../TimeContext"
 
 enum ListType {
   perMonth = 20
@@ -20,13 +20,15 @@ interface FormData {
 }
 
 class BaseOvniFranceCase {
-  constructor(readonly url: string,
-              readonly place: string,
-              readonly dateTime: TimeContext,
-              readonly physicalEffect: boolean,
-              readonly witnessEffect: boolean,
-              readonly entities: boolean,
-              readonly landing: boolean) {
+  constructor(
+    readonly url: string,
+    readonly place: string,
+    readonly dateTime: TimeContext,
+    readonly physicalEffect: boolean,
+    readonly witnessEffect: boolean,
+    readonly entities: boolean,
+    readonly landing: boolean
+  ) {
   }
 
   get caseNumber() {
@@ -66,16 +68,16 @@ export class BaseOvniFranceChronologySource extends HttpChrolologySource {
     const decoder = new TextDecoder(charset)*/
     const rowEls = doc.querySelectorAll("#listgen2 tbody tr")
     const rows = Array.from(rowEls)
-    rows.shift()
+    rows.shift()  // Skip header row
     const dateFormat = /(\d\d)-(\d\d)-(\d\d\d\d)/
     const timeFormat = /(\d\d):(\d\d)/
     const cases: BaseOvniFranceCase[] = []
     for (const row of rows) {
+      const fields = row.querySelectorAll("td")
+      const caseLink = fields[0].firstElementChild as HTMLAnchorElement
+      const dateFields = dateFormat.exec(fields[1].textContent)
       const itemContext = context.clone()
       const itemTime = itemContext.time
-      const fields = row.querySelectorAll("td")
-      const placeLink = fields[0].firstElementChild as HTMLAnchorElement
-      const dateFields = dateFormat.exec(fields[1].textContent)
       itemTime.setYear(parseInt(dateFields[3], 10))
       itemTime.setMonth(parseInt(dateFields[2], 10))
       const dayOfMonth = dateFields[1]
@@ -92,8 +94,8 @@ export class BaseOvniFranceChronologySource extends HttpChrolologySource {
       itemTime.setHour(hour)
       itemTime.setMinutes(minutes)
       const c = new BaseOvniFranceCase(
-        placeLink.href,
-        placeLink.textContent,
+        caseLink.href,
+        caseLink.textContent,
         itemTime,
         fields[3].textContent === "Oui",
         fields[4].textContent === "Oui",

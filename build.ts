@@ -53,7 +53,8 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/indexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
-import { BaseOvniFranceChronologySource } from "./time/datasource/BaseOvniFranceChronologySource"
+import { BaseOvniFranceChronologySource } from "./time/datasource/baseovnifrance/BaseOvniFranceChronologySource"
+import { NuforcChronologySource } from "./time/datasource/nuforc/NuforcChronologySource"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -179,7 +180,8 @@ getTimeFiles().then(async (timeFiles) => {
     new SsiLastModifiedReplaceCommand(context.time.options),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new AuthorReplaceCommand(timeFiles),
-    new HtmlTagReplaceCommand("ul", new ChronologyReplacerFactory([new BaseOvniFranceChronologySource()])),
+    new HtmlTagReplaceCommand("ul",
+      new ChronologyReplacerFactory([new BaseOvniFranceChronologySource(), new NuforcChronologySource()])),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),

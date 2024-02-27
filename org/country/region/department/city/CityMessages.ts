@@ -8,12 +8,19 @@ export interface CityMessageOptions extends DepartmentMessagesOptions {
 }
 
 export class CityMessages {
+  readonly titles: string[]
+
   /**
    *
-   * @param {string} title The raw title.
+   * @param {string[]} titles The raw title.
    * @see toTitle() for more complex title strings.
    */
-  constructor(readonly title: string) {
+  constructor(...titles: string[]) {
+    this.titles = titles
+  }
+
+  get title(): string {
+    return this.titles[0]
   }
 
   toTitle(context: RR0SsgContext, city: City, opts?: Partial<CityMessageOptions>): string {

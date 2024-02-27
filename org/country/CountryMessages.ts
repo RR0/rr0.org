@@ -14,4 +14,8 @@ export class CountryMessages<R extends RegionsMessagesList = RegionsMessagesList
   toTitle(context: RR0SsgContext): string {
     return this.title
   }
+
+  cityName(cityStr: string): string {
+    return cityStr
+  }
 }

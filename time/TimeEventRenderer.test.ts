@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@javarome/testscript"
-import { TimeEventRenderer } from "./TimeEventRenderer"
+import { RR0CaseRenderer } from "./RR0CaseRenderer"
 import { rr0TestUtil } from "../test/RR0TestUtil"
 import { NamedPlace, RR0Case } from "./RR0Case"
 import { Place } from "../place/Place"
@@ -9,7 +9,7 @@ import { franceCity } from "../org/eu/fr/FranceCity"
 
 describe("TimeEventRenderer", () => {
 
-  const renderer = new TimeEventRenderer()
+  const renderer = new RR0CaseRenderer()
 
   test("render event", () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")

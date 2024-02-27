@@ -17,10 +17,13 @@ export class CityService {
       let found = Boolean(cityMessages)
       if (found) {
         const cityNameToFind = this.normalizeName(nameToFind)
-        const knownCityName = this.normalizeName(cityMessages.title)
-        const foundName = knownCityName === cityNameToFind
         const foundDep = !dep?.code || dep.code === city.departement.code
-        found = foundName && foundDep
+        found = false
+        for (let i = 0; !found && i < cityMessages.titles.length; i++) {
+          const knownCityName = this.normalizeName(cityMessages.titles[i])
+          const foundName = knownCityName === cityNameToFind
+          found = foundName && foundDep
+        }
       }
       return found ? city : undefined
     })

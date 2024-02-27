@@ -1,6 +1,6 @@
 import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { TimeEventRenderer } from "../TimeEventRenderer"
+import { RR0CaseRenderer } from "../RR0CaseRenderer"
 import { RR0Case } from "../RR0Case"
 import { CaseMapping } from "./CaseMapping"
 
@@ -11,7 +11,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
 
   protected readonly done = new Set<string>()
 
-  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: TimeEventRenderer) {
+  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: RR0CaseRenderer) {
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {

@@ -1,12 +1,8 @@
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext"
+import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { FuforaCase } from "./FuforaCase"
-import { NamedPlace, RR0Case } from "../../RR0Case"
-import { OnlineSource } from "../../../source/OnlineSource"
-import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
-import { CityService } from "../../../org/country/region/department/city/CityService"
 
 interface QueryParameters {
   sid: string
@@ -174,15 +170,17 @@ export class FuforaCaseSource extends HttpCaseSource<FuforaCase> {
     rows.shift()  // Skip header row
     const cases: FuforaCase[] = []
     for (const row of rows) {
-      cases.push(this.getNativeCase(context, row))
+      if (row.hasChildNodes()) {
+        cases.push(this.getNativeCase(context, row))
+      }
     }
     return cases
   }
 
   protected getNativeCase(context: RR0SsgContext, row: Element): FuforaCase {
-    const fields = row.querySelectorAll(".udb_u_25")
+    const fields = row.querySelectorAll("div")
     const caseLink = fields[0].firstElementChild as HTMLAnchorElement
-    const dateFormat = /(\d\d)-(\d\d)-(\d\d\d\d)/
+    const dateFormat = /(?:(\d\d).(\d\d).(\d\d\d\d))?\n?(.+)?/
     const dateFields = dateFormat.exec(fields[1].textContent)
     const itemContext = context.clone()
     const dateTime = itemContext.time
@@ -190,28 +188,22 @@ export class FuforaCaseSource extends HttpCaseSource<FuforaCase> {
     dateTime.setMonth(parseInt(dateFields[2], 10))
     const dayOfMonth = dateFields[1]
     dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
-    const timeFormat = /(\d\d):(\d\d)/
-    const timeFields = timeFormat.exec(fields[2].textContent)
-    const hour = timeFields ? parseInt(timeFields[1], 10) : undefined
-    const minutes = timeFields ? parseInt(timeFields[2], 10) : undefined
-    dateTime.setHour(hour)
-    dateTime.setMinutes(minutes)
-    dateTime.setTimeZone("GMT+1")
-    const result = /(.*?)\s+\((\d+)\)/.exec(caseLink.textContent)
-    const placeStr = result[1]
-    const placeItems = placeStr.split("\n")
-    const city = result[placeItems.length - 1]
-    const sightingPlace = placeItems.length > 1 ? result[0] : undefined
+    const dateTimeRefinement = dateFields[4] ? dateFields[4].trim() : undefined
+    const placeStr = fields[2].innerHTML
+    const placeRows = placeStr.split("<br>")
+    const sightingPlace = placeRows[0]
+    const city = placeRows.length > 1 ? context.messages.country.fi.cityName(placeRows[1]) : undefined
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "&", "u"), 10)
+    const classification = fields[3].textContent
     return {
       caseNumber,
       url,
       sightingPlace,
       city,
       dateTime,
-      timeDetails: fields[2].textContent,
-      classification: fields[3].textContent
+      dateTimeRefinement,
+      classification
     }
   }
 

@@ -1,0 +1,14 @@
+##
+POST https://www.fufora.fi/ufodb2/ufohaku.php?sid=
+Content-Type: application/x-www-form-urlencoded
+
+alkupv = 1 &
+alkukk = 11 &
+alkuvv = 1970 &
+loppupv = 31 &
+loppukk = 11 &
+loppuvv = 1970 &
+h_paikka =  &
+l1_valinta1 = 0 &
+l3_valinta1 = 0 &
+tark = 1

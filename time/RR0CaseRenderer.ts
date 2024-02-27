@@ -3,7 +3,7 @@ import { RR0Case } from "./RR0Case"
 import { Source } from "../source/Source"
 import { OnlineSource } from "../source/OnlineSource"
 
-export class TimeEventRenderer {
+export class RR0CaseRenderer {
 
   protected thisSourceElement(context: HtmlRR0SsgContext, source: Source) {
     const sourceEl = context.outputFile.document.createElement("span")

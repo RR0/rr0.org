@@ -1,14 +1,14 @@
-import { TimeContext } from './time/TimeContext';
-import { ssgMessages } from './lang';
-import { RR0Messages } from './lang/RR0Messages';
-import { ConsoleLogger, HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile } from 'ssg-api';
-import { PeopleContext } from './people/PeopleContext';
+import { TimeContext } from "./time/TimeContext"
+import { ssgMessages } from "./lang"
+import { RR0Messages } from "./lang/RR0Messages"
+import { ConsoleLogger, HtmlSsgContext, SsgContext, SsgContextImpl, SsgFile } from "ssg-api"
+import { PeopleContext } from "./people/PeopleContext"
 
 export interface RR0SsgContext extends SsgContext {
   readonly messages: RR0Messages
   readonly time: TimeContext
 
-  clone(): RR0SsgContext
+  clone(locale?: string): RR0SsgContext
 }
 
 export interface HtmlRR0SsgContext extends HtmlSsgContext {
@@ -17,7 +17,7 @@ export interface HtmlRR0SsgContext extends HtmlSsgContext {
   readonly people: PeopleContext
   readonly images: Set<string>
 
-  clone(): HtmlRR0SsgContext
+  clone(locale?: string): HtmlRR0SsgContext
 }
 
 export class RR0SsgContextImpl extends SsgContextImpl {
@@ -31,7 +31,7 @@ export class RR0SsgContextImpl extends SsgContextImpl {
     this.messages = ssgMessages[locale]
   }
 
-  clone(): RR0SsgContextImpl {
-    return new RR0SsgContextImpl(this.locale, this.time.clone(), this.people.clone(), this._inputFile)
+  clone(locale = this.locale): RR0SsgContextImpl {
+    return new RR0SsgContextImpl(locale, this.time.clone(), this.people.clone(), this._inputFile)
   }
 }

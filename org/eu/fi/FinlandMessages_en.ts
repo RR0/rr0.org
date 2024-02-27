@@ -1,8 +1,7 @@
 import { nkRegionMessages_en } from "./region/nk/NkRegionMessages_en"
-import { CountryMessages } from "../../country/CountryMessages"
-import { FinlandRegionsMessagesList } from "./FinlandMessages"
+import { FinlandMessages } from "./FinlandMessages"
 
-export const finlandMessages_en = new CountryMessages<FinlandRegionsMessagesList>(
+export const finlandMessages_en = new FinlandMessages(
   "Finland",
   {
     nk: nkRegionMessages_en

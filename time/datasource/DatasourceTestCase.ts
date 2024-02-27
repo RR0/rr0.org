@@ -5,15 +5,18 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 
 export class DatasourceTestCase<S> {
 
-  constructor(readonly mapping: RR0CaseMapping<S>, readonly sourceCases: S[]) {
+  constructor(
+    readonly mapping: RR0CaseMapping<S>,
+    readonly sourceCases: S[],
+    readonly sortComparator: (c1: S, c2: S) => number
+  ) {
   }
 
   async testFetch(context: RR0SsgContext) {
     const fetched = await this.mapping.datasource.getAll(context)
     const fetchSlice = fetched.slice(0, this.sourceCases.length)
-    const comparator = (c1, c2) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
-    const sortedFetch = fetchSlice.sort(comparator)
-    const sortedTestCases = this.sourceCases.sort(comparator)
+    const sortedFetch = fetchSlice.sort(this.sortComparator)
+    const sortedTestCases = this.sourceCases.sort(this.sortComparator)
     expect(sortedFetch).toEqual(sortedTestCases)
   }
 
@@ -28,7 +31,7 @@ export class DatasourceTestCase<S> {
       + String(nativeTime.getMinutes()).padStart(2, "0")
     const caseNumber = nativeCase.caseNumber
     expect(item.innerHTML).toBe(
-      `<time>${dateStr} ${timeStr}</time> À <span class="place">${expected.place.name}</span>, observation <span class="source">${datasource.author}: <a href="${nativeCase.url.href.replaceAll(
+      `<time>${dateStr} ${timeStr}</time> À <span class="place">${expected.place.name}</span>, ${expected.description} <span class="source">${datasource.author}: <a href="${nativeCase.url.href.replaceAll(
         "&",
         "&amp;")}">cas n°&nbsp;${caseNumber}</a>, <i>${datasource.copyright}</i>, ${expected.sources[0].publication.time}</span>`)
   }

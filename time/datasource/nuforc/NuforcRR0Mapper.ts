@@ -45,7 +45,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   ) {
   }
 
-  protected getDescription(c: NuforcCase): string {
+  getDescription(c: NuforcCase): string {
     const description = ["observation"]
     description.push(this.translations[c.shape])
     return description.join(", ")

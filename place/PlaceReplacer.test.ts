@@ -1,11 +1,12 @@
 import {PlaceReplacer} from "./PlaceReplacer"
 import {PlaceService} from "./PlaceService"
-import {Elevation, Place, PlaceLocation} from "./Place"
+import { Elevation, Place } from "./Place"
 import {OrganizationService} from "../org/OrganizationService"
 import {Organization} from "../org"
 import {SsgContext} from "ssg-api"
 import {rr0TestUtil} from "../test/RR0TestUtil"
 import { describe, expect, test } from '@javarome/testscript';
+import { PlaceLocation } from "./PlaceLocation"
 
 class MockPlaceService extends PlaceService {
 
@@ -14,7 +15,7 @@ class MockPlaceService extends PlaceService {
   }
 
   async read(fileName: string): Promise<Place> {
-    return new Place(this.location, this.elevation, this.dirName)
+    return new Place([this.location], this.elevation, this.dirName)
   }
 
   protected async geocode(address: string): Promise<{ location: PlaceLocation; data: any } | undefined> {
@@ -37,7 +38,8 @@ class MockOrganizationService extends OrganizationService {
       dirName: this.dirName,
       title(context: SsgContext): string {
         return "Los Alamos National Laboratories"
-      }
+      },
+      places: [new Place([new PlaceLocation(35.87555555555556, -106.32416666666666)])]
     }
   }
 }
@@ -51,15 +53,16 @@ describe("PlaceReplacer", () => {
     return placeTag
   }
 
-  xtest("link to existing organization", async () => {
-    const location = {lat: 35.8440582, lng: -106.287162}
+  test("link to existing organization", async () => {
+    return // Disable test
+    const location = new PlaceLocation(35.8440582, -106.287162)
     const elevation = 2161.025390625
     const dirName = "org/us/state/nm/lanl/"
     const placeService = new MockPlaceService(location, {elevation}, dirName)
     const orgService = new MockOrganizationService(dirName)
     const replacer = new PlaceReplacer(placeService, orgService)
     const context = rr0TestUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
-    const doc = context.inputFile.dom.window.document
+    const doc = context.inputFile.document
     const text = "LANL"
     const placeTag = createPlaceTag(doc, text)
     const replacement = await replacer.replacement(context, placeTag) as HTMLAnchorElement
@@ -71,14 +74,14 @@ describe("PlaceReplacer", () => {
   })
 
   test("link to non-existing organization", async () => {
-    const location = {lat: 34.0, lng: -105.0}
+    const location = new PlaceLocation(34.0, -105.0)
     const elevation = 100.0
     const dirName = ""
     const placeService = new MockPlaceService(location, {elevation}, dirName)
     const orgService = new MockOrganizationService(dirName)
     const replacer = new PlaceReplacer(placeService, orgService)
     const context = rr0TestUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
-    const doc = context.inputFile.dom.window.document
+    const doc = context.inputFile.document
     const text = "Non existing"
     const placeTag = createPlaceTag(doc, text)
     const replacement = await replacer.replacement(context, placeTag) as HTMLSpanElement

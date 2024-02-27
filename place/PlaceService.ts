@@ -1,6 +1,7 @@
-import {Elevation, Place, PlaceLocation} from "./Place"
+import { Elevation, Place } from "./Place"
 import fs from "fs"
-import {FileUtil} from "ssg-api"
+import { FileUtil } from "ssg-api"
+import { PlaceLocation } from "./PlaceLocation"
 
 export abstract class PlaceService {
 
@@ -17,16 +18,20 @@ export abstract class PlaceService {
     if (!execArray) {
       throw Error("file name must match " + this.regex.source)
     }
-    const location: PlaceLocation = {lat: parseFloat(execArray[1]), lng: parseFloat(execArray[2])}
+    const location = new PlaceLocation(parseFloat(execArray[1]), parseFloat(execArray[2]))
     const fileContent = fileBuffer.toString()
     try {
       const fileObj = JSON.parse(fileContent)
       const place = {location, ...fileObj} as Place
-      this.cache.set(this.key(place.location), place)
+      this.cachePlace(place)
       return place
     } catch (e) {
       throw e
     }
+  }
+
+  private cachePlace(place: Place) {
+    place.locations.forEach(location => this.cache.set(this.key(location), place))
   }
 
   async get(address: string): Promise<Place | undefined> {
@@ -35,7 +40,7 @@ export abstract class PlaceService {
       place = await this.create(address)
       if (place) {
         try {
-          const fileName = this.getFileName(place.location)
+          const fileName = this.getFileName(place.locations[0])
           place = await this.read(fileName)
         } catch (e) {
           if ((e as any).code === "ENOENT") {
@@ -44,7 +49,7 @@ export abstract class PlaceService {
             throw e
           }
         } finally {
-          this.cache.set(this.key(place.location), place)
+          this.cachePlace(place)
         }
       }
     }
@@ -64,7 +69,7 @@ export abstract class PlaceService {
     if (geocodeResult) {
       const {location, data} = geocodeResult
       const elevation = await this.getElevation(location)
-      return new Place(location, elevation, "", data)
+      return new Place([new PlaceLocation(location.lat, location.lng)], elevation, "", data)
     }
   }
 
@@ -73,8 +78,10 @@ export abstract class PlaceService {
   }
 
   private async save(place: Place) {
-    const fileName = this.getFileName(place.location)
-    const contents = JSON.stringify(place, null, 2)
-    await FileUtil.writeFile(fileName, contents, "utf-8")
+    for (const location of place.locations) {
+      const fileName = this.getFileName(location)
+      const contents = JSON.stringify(place, null, 2)
+      await FileUtil.writeFile(fileName, contents, "utf-8")
+    }
   }
 }

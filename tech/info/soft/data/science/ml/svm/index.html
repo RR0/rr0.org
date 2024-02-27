@@ -90,20 +90,20 @@
     showCopyright: false
   });
   y1.create('functiongraph', [function (x) {
-    return -Math.log(1 / (1 + Math.exp(-x + 1)));
-  }, -i, i], {dash: 1, strokeColor: 'green'});
+    return -Math.log(1 / (1 + Math.exp(-x + 1)))
+  }, -i, i], bookMeta, bookLinks);
   y1.create('functiongraph', [function (x) {
-    return x >= 1 ? 0 : -x + 1;
-  }, -i, i]);
+    return x >= 1 ? 0 : -x + 1
+  }, -i, i], bookMeta, bookLinks);
   var y0 = JXG.JSXGraph.initBoard('y0', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
   y0.create('functiongraph', [function (x) {
-    return -Math.log(1 - 1 / (1 + Math.exp(-x - 1)));
-  }, -i, i], {dash: 1, strokeColor: 'green'});
+    return -Math.log(1 - 1 / (1 + Math.exp(-x - 1)))
+  }, -i, i], bookMeta, bookLinks);
   y0.create('functiongraph', [function (x) {
-    return x <= -1 ? 0 : x + 1;
-  }, -i, i]);
+    return x <= -1 ? 0 : x + 1
+  }, -i, i], bookMeta, bookLinks);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

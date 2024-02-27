@@ -9,13 +9,14 @@ export class TimeTextBuilder {
    */
   static build(context: RR0SsgContext, print = true): string {
     const time = context.time
-    let printOptions: Intl.DateTimeFormatOptions = {}
-    let date = new Date()
+    const printOptions: Intl.DateTimeFormatOptions = {}
+    const date = new Date()
     const year = time.getYear()
+    const options = time.options
     if (year) {
       date.setFullYear(year)
       if (print) {
-        printOptions.year = context.time.options.year
+        printOptions.year = options.year
       }
     }
     const month = time.getMonth()
@@ -23,29 +24,29 @@ export class TimeTextBuilder {
       date.setDate(1) // Avoid increasing month if today is > 30
       date.setMonth(month - 1)
       if (print) {
-        printOptions.month = context.time.options.month
+        printOptions.month = options.month
       }
     }
     const dayOfMonth = time.getDayOfMonth()
     if (dayOfMonth) {
       date.setDate(dayOfMonth)
       // if (print) {
-      printOptions.day = context.time.options.day
-      printOptions.weekday = context.time.options.weekday
+      printOptions.day = options.day
+      printOptions.weekday = options.weekday
       //  }
     }
     const hour = time.getHour()
     if (hour) {
       date.setHours(hour)
       //    if (print) {
-      printOptions.hour = context.time.options.hour
+      printOptions.hour = options.hour
       //     }
     }
     const minutes = time.getMinutes()
     if (minutes) {
       date.setMinutes(minutes)
       //   if (print) {
-      printOptions.minute = context.time.options.minute
+      printOptions.minute = options.minute
       //   }
     }
     const timeZone = time.getTimeZone()

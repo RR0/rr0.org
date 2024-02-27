@@ -567,7 +567,7 @@ NN_trainer.prototype.initializeHeatmap = function () {
   this.heatmapY = d3.scaleQuantile()
     .domain(this.biasRange)
     .range(d3.range(this.heatmapSideNumberOfElements).map(function (d) {
-      return this.heatmapSideNumberOfElements - 1 - d;
+      return this.heatmapSideNumberOfElements - 1 - d
     }.bind(this)));
 
   //Color scale
@@ -834,5 +834,3 @@ var trainer2 = new NN_trainer("#training-one-gd-chart", "#training-one-gd",
   "#neural-network-gd-graph",
   "Basics of Neural Networks - Viz 2 gradient descent"
 );
-
-

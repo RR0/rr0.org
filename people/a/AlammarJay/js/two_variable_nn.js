@@ -81,7 +81,7 @@ var multiVariableNeuralNetworkTrainer = function (numberOfInputNodes,
   // Update with initial weight and bias values
   // This is needed to prime this.prediction for gradient descent
   d3.range(this.numberOfInputNodes).map(function (id) {
-    trainerSelf.updateParameter("weight", id, trainerSelf.weights[id], false)
+    trainerSelf.updateParameter('weight', id, trainerSelf.weights[id], false)
   });
   trainerSelf.updateParameter("bias", 0, this.bias, true);
 
@@ -487,7 +487,7 @@ multiVariableNeuralNetworkTrainer.prototype.gradientDescentStep = function (step
 
 
       d3.range(this.numberOfInputNodes).map(function (id) {
-        this.updateParameter("weight", id, newWeights[id], false)
+        this.updateParameter('weight', id, newWeights[id], false)
       }.bind(this));
       this.updateParameter("bias", 0, newBias, true);
 
@@ -495,7 +495,7 @@ multiVariableNeuralNetworkTrainer.prototype.gradientDescentStep = function (step
 
 
       d3.range(this.numberOfInputNodes).map(function (id) {
-        this.updateParameter("weight", id, newWeights[id], false)
+        this.updateParameter('weight', id, newWeights[id], false)
       }.bind(this));
       error = this.updateParameter("bias", 0, newBias, false);
 

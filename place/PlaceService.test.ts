@@ -23,14 +23,14 @@ describe("PlaceService", () => {
 
   test("build place with one first name", async () => {
     const laln = await service.get("LANL")
-    expect(laln?.location).toEqual(lanlPosition)
+    expect(laln?.locations).toEqual(lanlPosition)
     expect(laln?.elevation?.elevation).toBe(lanlElevation)
   })
 
   test("read", async () => {
     const fileName = service.getFileName(lanlPosition)
     const result = await service.read(fileName)
-    expect(result.location).toEqual(lanlPosition)
+    expect(result.locations).toEqual(lanlPosition)
     expect(result.elevation?.elevation).toBe(lanlElevation)
   })
 })

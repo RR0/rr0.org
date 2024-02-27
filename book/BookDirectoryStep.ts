@@ -1,13 +1,13 @@
-import { HtmlRR0SsgContext } from '../RR0SsgContext';
-import { DirectoryStep, OutputFunc, SsgConfig, SsgFile } from 'ssg-api';
-import { RR0FileUtil } from '../util/file/RR0FileUtil';
-import { Book } from './Book';
-import { StringUtil } from '../util/string/StringUtil';
-import { HtmlTag } from '../util/HtmlTag';
-import { Time } from '../time/Time';
-import fs from 'fs';
-import path from 'path';
-import { Chapter } from './Chapters';
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { DirectoryStep, HtmlLinks, HtmlMeta, OutputFunc, SsgConfig, SsgFile } from "ssg-api"
+import { RR0FileUtil } from "../util/file/RR0FileUtil"
+import { Book } from "./Book"
+import { StringUtil } from "../util/string/StringUtil"
+import { HtmlTag } from "../util/HtmlTag"
+import { Time } from "../time/Time"
+import fs from "fs"
+import path from "path"
+import { Chapter } from "./Chapters"
 
 /**
  * Scan directories for book information, then populates a template with collected data.
@@ -15,43 +15,53 @@ import { Chapter } from './Chapters';
 export class BookDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], template: string, protected outputFunc: OutputFunc,
-              config: SsgConfig, protected outDir: string, name: string) {
-    super(dirs, [], template, config, name);
+              config: SsgConfig, protected outDir: string, name: string,
+              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
+    super(dirs, [], template, config, name)
   }
 
-  static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<BookDirectoryStep> {
-    const dirs = await RR0FileUtil.findDirectoriesContaining('book*.json');
+  static async create(outputFunc: OutputFunc, config: SsgConfig, bookMeta: Map<string, HtmlMeta>,
+                      bookLinks: Map<string, HtmlLinks>): Promise<BookDirectoryStep> {
+    const dirs = await RR0FileUtil.findDirectoriesContaining("book*.json")
     return new BookDirectoryStep(
       dirs,
-      'book/index.html',
+      "book/index.html",
       outputFunc, config,
       config.outDir,
-      'all books'
-    );
+      "all books",
+      bookMeta, bookLinks
+    )
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    const books = this.scan(context, dirNames);
-    await this.tocAll(context, books);
-    const directoriesHtml = this.toList(books);
+    const books = this.scan(context, dirNames)
+    await this.tocAll(context, books)
+    const directoriesHtml = this.toList(books)
     context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
-      directoriesHtml);
-    await this.outputFunc(context, context.outputFile);
+      directoriesHtml)
+    await this.outputFunc(context, context.outputFile)
   }
 
   protected scan(context: HtmlRR0SsgContext, dirNames: string[]): Book[] {
-    const books: Book[] = [];
+    const books: Book[] = []
     for (const dirName of dirNames) {
-      const dirBook: Book = {dirName, authors: [], publication: {publisher: '', time: ''}, summary: '', title: ''};
-      books.push(dirBook);
+      const dirBook: Book = {
+        dirName,
+        authors: [],
+        publication: {publisher: "", time: ""},
+        summary: "",
+        title: "",
+        variants: []
+      }
+      books.push(dirBook)
       try {
-        const jsonFileInfo = SsgFile.read(context, `${dirName}/book.json`);
-        Object.assign(dirBook, JSON.parse(jsonFileInfo.contents));
+        const jsonFileInfo = SsgFile.read(context, `${dirName}/book.json`)
+        Object.assign(dirBook, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
-        context.warn(`${dirName} has no book*.json description`);
+        context.warn(`${dirName} has no book*.json description`)
       }
     }
-    return books;
+    return books
   }
 
   /**
@@ -62,13 +72,13 @@ export class BookDirectoryStep extends DirectoryStep {
   protected toList(books: Book[]) {
     const listItems = books.map(dirBook => {
       if (!dirBook.title) {
-        const lastSlash = dirBook.dirName.lastIndexOf('/');
-        const lastDir = dirBook.dirName.substring(lastSlash + 1);
-        dirBook.title = StringUtil.camelToText(lastDir);
+        const lastSlash = dirBook.dirName.lastIndexOf("/")
+        const lastDir = dirBook.dirName.substring(lastSlash + 1)
+        dirBook.title = StringUtil.camelToText(lastDir)
       }
-      return this.toListItem(dirBook);
-    });
-    return HtmlTag.toString('ul', listItems.join('\n'), {class: 'links'});
+      return this.toListItem(dirBook)
+    })
+    return HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
   }
 
   /**
@@ -77,60 +87,61 @@ export class BookDirectoryStep extends DirectoryStep {
    * @param dirBook
    */
   protected toListItem(dirBook: Book) {
-    const attrs: { [name: string]: string } = {};
-    const titles = [];
-    const details: string[] = [];
-    const authors = dirBook.authors;
-    const authorStr = authors ? authors.join(' & ') + ': ' : '';
-    const timeStr = dirBook.publication.time;
+    const attrs: { [name: string]: string } = {}
+    const titles = []
+    const details: string[] = []
+    const authors = dirBook.authors
+    const authorStr = authors ? authors.join(" & ") + ": " : ""
+    const timeStr = dirBook.publication.time
     if (timeStr) {
-      const timeDetail = Time.dateFromIso(timeStr).getFullYear();
-      details.push(HtmlTag.toString('time', timeDetail.toString()));
+      const timeDetail = Time.dateFromIso(timeStr).getFullYear()
+      details.push(HtmlTag.toString("time", timeDetail.toString()))
     }
-    const text: (string | string[])[] = [authorStr, dirBook.title];
+    const text: (string | string[])[] = [authorStr, dirBook.title]
     if (details.length > 0) {
-      text.push(`(${details.join(', ')})`);
+      text.push(`(${details.join(", ")})`)
     }
-    const innerHTML = text.join(' ').trim();
-    const a = fs.existsSync(path.join(dirBook.dirName, 'index.html')) ? HtmlTag.toString('a', innerHTML,
-      {href: '/' + dirBook.dirName + '/'}) : innerHTML;
+    const innerHTML = text.join(" ").trim()
+    const a = fs.existsSync(path.join(dirBook.dirName, "index.html")) ? HtmlTag.toString("a", innerHTML,
+      {href: "/" + dirBook.dirName + "/"}) : innerHTML
     if (titles.length) {
-      attrs.title = titles.join(', ');
+      attrs.title = titles.join(", ")
     }
-    return HtmlTag.toString('li', a, attrs);
+    return HtmlTag.toString("li", a, attrs)
   }
 
   protected async tocAll(context: HtmlRR0SsgContext, books: Book[]) {
     for (const book of books) {
-      await this.toc(context, book);
+      await this.toc(context, book)
     }
   }
 
   protected async toc(context: HtmlRR0SsgContext, book: Book) {
-    const startFileName = path.join(this.outDir, book.dirName, 'index.html');
+    const startFileName = path.join(book.dirName, "index.html")
     try {
-      context.read(startFileName);
-      const startFileNames = [context.inputFile.name];
-      const variants = context.inputFile.lang.variants;
+      context.read(startFileName)
+      const startFileNames = [context.inputFile.name]
+      const variants = context.inputFile.lang.variants
       for (const variant of variants) {
-        const parsed = path.parse(startFileName);
-        const variantFileName = path.join(parsed.dir, `${parsed.name}_${variant}${parsed.ext}`);
-        startFileNames.push(variantFileName);
+        const parsed = path.parse(startFileName)
+        const variantFileName = path.join(parsed.dir, `${parsed.name}_${variant}${parsed.ext}`)
+        startFileNames.push(variantFileName)
       }
       for (const startFileName of startFileNames) {
-        const chapter = new Chapter(context, startFileName);
-        await chapter.scan();
-        const chapterBefore = chapter.toString();
-        context.logger.debug('toc before:', chapterBefore);
-        await chapter.update();
-        const chapterAfter = chapter.toString();
-        context.logger.debug('toc after:', chapterAfter);
-        context.logger.log('Updated toc for', chapter.context.inputFile.name);
-        chapter.context.outputFile.dom;
-        await this.outputFunc(chapter.context, chapter.context.outputFile);
+        const chapter = new Chapter(context, startFileName)
+        await chapter.scan()
+        const chapterBefore = chapter.toString()
+        context.logger.debug("toc before:", chapterBefore)
+        await chapter.update()
+        const chapterAfter = chapter.toString()
+        context.logger.debug("toc after:", chapterAfter)
+        context.logger.log("Updated toc for", chapter.context.inputFile.name)
+        book.variants.push(chapter)
+        this.bookMeta.set(startFileName, chapter.context.outputFile.meta)
+        this.bookLinks.set(startFileName, chapter.context.outputFile.links)
       }
     } catch (e) {
-      context.logger.error('Could not check TOC of ' + startFileName, e.message);
+      context.logger.error("Could not check TOC of " + startFileName, e.message)
     }
   }
 }

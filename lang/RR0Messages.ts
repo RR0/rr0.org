@@ -1,20 +1,13 @@
-import {Gender} from "../people/Gender"
-import {CountryCode} from "../org/CountryCode"
-import {Occupation} from "../people/Occupation"
-import {FrCountryMessages} from "../org/eu/fr/FrCountry"
-import {CountryMessages} from "../org/Country"
-import {UsCountryMessages} from "../org/us/UsCountry"
+import { Gender } from "../people/Gender"
+import { Occupation } from "../people/Occupation"
+import { PlaceMessages } from "../place/PlaceMessages"
+import { CountryMessagesList } from "../org/CountryMessagesList"
 
 export class MessageUtils {
   static plural(n: number, word: string): string {
     return n ? `${n} ${word}${n > 1 ? "s" : ""}` : ""
   }
 }
-
-type CountriesMessages
-  = { [key in CountryCode]: CountryMessages }
-  & { us: UsCountryMessages }
-  & { fr: FrCountryMessages }
 
 type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
@@ -98,7 +91,8 @@ export interface RR0Messages {
   people: {
     occupation: OccupationMessages
   },
-  country: CountriesMessages
+  place: PlaceMessages;
+  country: CountryMessagesList
   nav: {
     start: string
     contents: string
@@ -106,4 +100,3 @@ export interface RR0Messages {
     next: string
   }
 }
-

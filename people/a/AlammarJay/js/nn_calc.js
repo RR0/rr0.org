@@ -117,7 +117,7 @@
 
     var inputLayerCoordinates = d3.range(inputNodeCount).map(function (i) {
       var y = getYCoordinateOfNodeInInputLayer(i)
-      return {x: inputLayerX, y: y, index: i, type: "input"}
+      return { x: inputLayerX, y: y, index: i, type: 'input' }
     }.bind(this))
 
     //  Add the bias node to the end of the input layer
@@ -452,7 +452,7 @@
   function getOutputNodeCoordinates(outputNodeCount, biasLayerX, getYCoordinateOfNodeInOutputLayer) {
     var outputLayerCoordinates = d3.range(outputNodeCount).map(function (i) {
       var y = getYCoordinateOfNodeInOutputLayer(i)
-      return {x: biasLayerX, y: y, index: i, type: "input"}
+      return { x: biasLayerX, y: y, index: i, type: 'input' }
     }.bind(this))
 
     return outputLayerCoordinates
@@ -580,7 +580,7 @@
           "</tr>"
 
         var sum_term = viz.layerValues[1].map(function (d) {
-          return "e^{" + numberFormatter(d, 2) + "}"
+          return 'e^{' + numberFormatter(d, 2) + '}'
         }).join(" + ")
         var exponential_terms = []
         var softMaxTopResult = viz.softmaxOutputs.indexOf(d3.max(viz.softmaxOutputs))
@@ -793,7 +793,7 @@
           "</tr>"
 
         var sum_term = viz.layerValues[1].map(function (d) {
-          return "e^{" + numberFormatter(d, 2) + "}"
+          return 'e^{' + numberFormatter(d, 2) + '}'
         }).join(" + ")
         var exponential_terms = []
 
@@ -1317,7 +1317,7 @@
 
     var inputLayerCoordinates = d3.range(inputNodeCount).map(function (i) {
       var y = getYCoordinateOfNodeInInputLayer(i)
-      return {x: inputLayerX, y: y, index: i, type: "input"}
+      return { x: inputLayerX, y: y, index: i, type: 'input' }
     })
 
     //  Add the bias node to the end of the input layer
@@ -1555,7 +1555,7 @@
 
     var nodeLayerCoordinates = d3.range(nodeCount).map(function (i) {
       var y = getYCoordinateOfNodeLayer(i)
-      return {x: layerXCoordinate, y: y, index: i, type: "input"}
+      return { x: layerXCoordinate, y: y, index: i, type: 'input' }
     })
 
     return nodeLayerCoordinates

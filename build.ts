@@ -13,6 +13,8 @@ import {
   ContentStepConfig,
   CopyStep,
   HtAccessToNetlifyConfigReplaceCommand,
+  HtmlLinks,
+  HtmlMeta,
   HtmlTagReplaceCommand,
   OutputFunc,
   Ssg,
@@ -53,8 +55,9 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/indexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
-import { BaseOvniFranceChronologySource } from "./time/datasource/baseovnifrance/BaseOvniFranceChronologySource"
-import { NuforcChronologySource } from "./time/datasource/nuforc/NuforcChronologySource"
+import { baseOvniFranceRR0Mapping } from "./time/datasource/baseovnifrance/BaseOvniFranceRR0Mapping"
+import { nuforcRR0Mapping } from "./time/datasource/nuforc/NuforcRR0Mapping"
+import { fuforaRR0Mapping } from "./time/datasource/fufora/FuforaRR0Mapping"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -95,20 +98,20 @@ const config: SsgConfig = {
 }
 
 const outputFunc: OutputFunc
-  = async (context: SsgContext, info: SsgFile, outDir = config.outDir + "/"): Promise<void> => {
+  = async (context: SsgContext, outFile: SsgFile, outDir = config.outDir + "/"): Promise<void> => {
   // TODO: Fix this
-  if (info.name.startsWith(outDir)) {
-    if (info.name.startsWith(path.join(outDir, outDir))) {
-      info.name = info.name.substring(outDir.length)
+  if (outFile.name.startsWith(outDir)) {
+    if (outFile.name.startsWith(path.join(outDir, outDir))) {
+      outFile.name = outFile.name.substring(outDir.length)
     }
   } else {
-    info.name = outDir + info.name
+    outFile.name = outDir + outFile.name
   }
   try {
-    context.log("Writing", info.name)
-    await info.write()
+    context.log("Writing", outFile.name)
+    await outFile.write()
   } catch (e) {
-    context.error(info.name, e)
+    context.error(outFile.name, e)
   }
 }
 
@@ -146,9 +149,11 @@ async function getTimeFiles(): Promise<string[]> {
 }
 
 getTimeFiles().then(async (timeFiles) => {
+  const bookMeta = new Map<string, HtmlMeta>()
+  const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config)
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config)
-  const booksStep = await BookDirectoryStep.create(outputFunc, config)
+  const booksStep = await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks)
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -181,7 +186,8 @@ getTimeFiles().then(async (timeFiles) => {
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new AuthorReplaceCommand(timeFiles),
     new HtmlTagReplaceCommand("ul",
-      new ChronologyReplacerFactory([new BaseOvniFranceChronologySource(), new NuforcChronologySource()])),
+      new ChronologyReplacerFactory(timeFiles, [baseOvniFranceRR0Mapping, nuforcRR0Mapping, fuforaRR0Mapping])
+    ),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),
@@ -210,10 +216,10 @@ getTimeFiles().then(async (timeFiles) => {
   ]
   const copyStep = new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]})
   const ssg = new Ssg(config)
-    .add(new RR0ContentStep(contentConfigs, outputFunc))
+    .add(booksStep)
+    .add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
     .add(ufoCasesStep)
     .add(...peopleSteps)
-    .add(booksStep)
 
   if (args.reindex === "true") {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))

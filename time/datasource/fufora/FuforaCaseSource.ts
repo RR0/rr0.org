@@ -1,0 +1,236 @@
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext"
+import { HttpCaseSource } from "../HttpCaseSource"
+import { UrlUtil } from "../../../util/url/UrlUtil"
+import { JSDOM } from "jsdom"
+import { FuforaCase } from "./FuforaCase"
+import { NamedPlace, RR0Case } from "../../RR0Case"
+import { OnlineSource } from "../../../source/OnlineSource"
+import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
+import { CityService } from "../../../org/country/region/department/city/CityService"
+
+interface QueryParameters {
+  sid: string
+}
+
+interface FormData {
+  /**
+   * Start day
+   */
+  alkupv: number
+  /**
+   * Start month
+   */
+  alkukk: number
+  /**
+   * Start year
+   */
+  alkuvv: number
+  /**
+   * End day
+   */
+  loppupv: number
+  /**
+   * End month
+   */
+  loppukk: number
+  /**
+   * End year
+   */
+  loppuvv: number
+  /**
+   * Sighting place (city)
+   */
+  h_paikka: string
+  /**
+   * Case importance (only or min)
+   * 0 = Not included in search, 1 = Peu d'importance, 9 = Très important
+   * Sélectionnez soit une valeur unique, soit recherchez entre les valeurs
+   */
+  l1_valinta1: number
+  /**
+   * Case importance (max if min)
+   * 0 = Not included in search, 1 = Peu d'importance, 9 = Très important
+   * Sélectionnez soit une valeur unique, soit recherchez entre les valeurs
+   */
+  l1_valinta2?: number
+
+  /**
+   * Case type: Ball of light
+   */
+  l2_vap?: "vap"
+  /**
+   * Case type: abduction
+   */
+  l2_sie?: "sie"
+  /**
+   * Case type: close encounter
+   */
+  l2_pres?: "pres"
+  /**
+   * Case type: close encounter
+   */
+  l2_kon?: "kon"
+  /**
+   * Case type: missing time
+   */
+  l2_mis?: "mis"
+  /**
+   * Case type: moving light
+   */
+  l2_liv?: "liv"
+  /**
+   * Case type: unclear target
+   */
+  l2_esk?: "esk"
+  /**
+   * Case type: clear bottom detection
+   */
+  l2_alu?: "alu"
+  /**
+   * Case type: clear bottom detection
+   */
+  l2_hum?: "hum"
+
+  /**
+   * Case reliability: only or min (1-9)
+   */
+  l3_valinta1: 0
+  /**
+   * Case reliability: max if min (1-9)
+   */
+  l3_valinta2?: 0
+
+  /**
+   * Night
+   */
+  l4_yo?: "y"
+  /**
+   * Dawn
+   */
+  l4_ham?: "h"
+  /**
+   * Day
+   */
+  l4_pai?: "p"
+
+  /**
+   * Sighting area: Finlande du Sud (par exemple Helsinki, Hämeenlinna, Kouvola)
+   */
+  l5_es?: 1
+  /**
+   * Sighting area: Sud-ouest de la Finlande (par exemple Turku)
+   */
+  l5_ls?: 2
+  /**
+   * Sighting area: Finlande orientale (par exemple Mikkeli, Kuopio, Joensuu)
+   */
+  l5_is?: 3
+  /**
+   * Sighting area: Finlande occidentale et orientale (par exemple Vaasa, Tampere, Jyväskylä)
+   */
+  l5_lsis?: 4
+  /**
+   * Sighting area: Finlande du Nord (par exemple Oulu)
+   */
+  l5_ps?: 5
+  /**
+   * Sighting area: Laponie (y compris Rovaniemi)
+   */
+  l5_la?: 6
+  /**
+   * Sighting area: Åland (par exemple Mariehamn)
+   */
+  l5_ah?: 7
+  /**
+   * Sighting area: Pays étrangers
+   */
+  l5_ul?: 0
+
+  tark: 1
+}
+
+export class FuforaCaseSource extends HttpCaseSource<FuforaCase> {
+
+  constructor(readonly baseUrl = "https://www.fufora.fi/ufodb2", readonly searchPath = "ufohaku.php") {
+    super("FUFORA", "Base de données observationnelle")
+  }
+
+  async getAll(context: RR0SsgContext): Promise<FuforaCase[]> {
+    const day = context.time.getDayOfMonth()
+    const month = context.time.getMonth()
+    const year = context.time.getYear()
+    const {formData, queryUrl} = this.queryUrl({sid: ""}, month, year)
+    const page = await this.submitForm<string>(queryUrl, formData)
+    const doc = new JSDOM(page).window.document.documentElement
+    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
+    const contentType = charSetMeta.getAttribute("content")
+    let charset = findParam(contentType, ";", "charset") as BufferEncoding
+    if (charset.startsWith("iso-8859")) {
+      charset = "latin1"
+    }
+    const decoder = new TextDecoder(charset)*/
+    const rowEls = doc.querySelectorAll(".udb_u_taulukko .rivi")
+    const rows = Array.from(rowEls)
+    rows.shift()  // Skip header row
+    const cases: FuforaCase[] = []
+    for (const row of rows) {
+      cases.push(this.getNativeCase(context, row))
+    }
+    return cases
+  }
+
+  protected getNativeCase(context: RR0SsgContext, row: Element): FuforaCase {
+    const fields = row.querySelectorAll(".udb_u_25")
+    const caseLink = fields[0].firstElementChild as HTMLAnchorElement
+    const dateFormat = /(\d\d)-(\d\d)-(\d\d\d\d)/
+    const dateFields = dateFormat.exec(fields[1].textContent)
+    const itemContext = context.clone()
+    const dateTime = itemContext.time
+    dateTime.setYear(parseInt(dateFields[3], 10))
+    dateTime.setMonth(parseInt(dateFields[2], 10))
+    const dayOfMonth = dateFields[1]
+    dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
+    const timeFormat = /(\d\d):(\d\d)/
+    const timeFields = timeFormat.exec(fields[2].textContent)
+    const hour = timeFields ? parseInt(timeFields[1], 10) : undefined
+    const minutes = timeFields ? parseInt(timeFields[2], 10) : undefined
+    dateTime.setHour(hour)
+    dateTime.setMinutes(minutes)
+    dateTime.setTimeZone("GMT+1")
+    const result = /(.*?)\s+\((\d+)\)/.exec(caseLink.textContent)
+    const placeStr = result[1]
+    const placeItems = placeStr.split("\n")
+    const city = result[placeItems.length - 1]
+    const sightingPlace = placeItems.length > 1 ? result[0] : undefined
+    const url = new URL(caseLink.href, this.baseUrl)
+    const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "&", "u"), 10)
+    return {
+      caseNumber,
+      url,
+      sightingPlace,
+      city,
+      dateTime,
+      timeDetails: fields[2].textContent,
+      classification: fields[3].textContent
+    }
+  }
+
+  protected queryUrl(queryParams: QueryParameters, month: number, year: number) {
+    const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
+    const formData: FormData = {
+      alkupv: 1,
+      alkukk: month,
+      alkuvv: year,
+      loppupv: 31,
+      loppukk: month,
+      loppuvv: year,
+      h_paikka: "",
+      l1_valinta1: 0,
+      l3_valinta1: 0,
+      tark: 1
+    }
+    const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
+    const queryUrl = UrlUtil.join(searchUrl, "?" + queryParamsStr)
+    return {formData, queryUrl}
+  }
+}

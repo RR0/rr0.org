@@ -55,8 +55,7 @@ describe("TimeReplacer", () => {
     const original = context.outputFile.document.createElement("time")
     original.textContent = interval
     const replacement = await replacer.replacement(context, original)
-    expect(replacement.outerHTML)
-      .toBe(`<time>moi</time>`)
+    expect(replacement.outerHTML).toBe(`<time>moi</time>`)
     expect(context.time.getYear()).toBe(undefined)
     expect(context.time.getMonth()).toBe(undefined)
     expect(context.time.getDayOfMonth()).toBe(undefined)

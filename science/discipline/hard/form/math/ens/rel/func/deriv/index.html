@@ -117,22 +117,22 @@ td:nth-child(2) div {
   var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
   cons.create('functiongraph', [function (x) {
-    return i/2;
-  }, -i, i]);
+    return i / 2
+  }, -i, i], bookMeta, bookLinks);
   var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
   x.create('functiongraph', [function (x) {
-    return x;
-  }, -i, i]);
+    return x
+  }, -i, i], bookMeta, bookLinks);
   var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
   axb.create('functiongraph', [function (x) {
-    return i/2 * x + i/2;
-  }, -i, i]);
+    return i / 2 * x + i / 2
+  }, -i, i], bookMeta, bookLinks);
   var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
   xn.create('functiongraph', [function (x) {
-    return x * x;
-  }, -i, i]);
+    return x * x
+  }, -i, i], bookMeta, bookLinks);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

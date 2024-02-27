@@ -1,5 +1,7 @@
-import { MessageUtils, RR0Messages } from './RR0Messages';
-import { Gender } from '../people/Gender';
+import { MessageUtils, RR0Messages } from "./RR0Messages"
+import { placeMessages_fr } from "../place/PlaceMessages_fr"
+import { peopleMessages_fr } from "../people/PeopleMessages_fr"
+import { countryMessageList_fr } from "../org/CountryMessageList_fr"
 
 export class RR0Messages_fr implements RR0Messages {
   nonSignificantWords = [
@@ -86,145 +88,9 @@ export class RR0Messages_fr implements RR0Messages {
       hoax: "canular"
     }
   }
-  people = {
-    occupation: {
-      actor: (gender: Gender) => gender === Gender.male ? "acteur" : "actrice",
-      anthropologist: (_gender: Gender) => "anthropologue",
-      archeologist: (_gender: Gender) => "archéologue",
-      artist: (_gender: Gender) => "artiste",
-      astronaut: (_gender: Gender) => "astronaute",
-      astronomer: (_gender: Gender) => "astronome",
-      astrologist: (_gender: Gender) => "astrologue",
-      astrophysicist: (gender: Gender) => gender === Gender.male ? "astrophysicien" : "astrophysicienne",
-      banker: (gender: Gender) => gender === Gender.male ? "banquier" : "banquière",
-      barman: (gender: Gender) => gender === Gender.male ? "barman" : "barmaid",
-      biologist: (_gender: Gender) => "biologiste",
-      biochemist: (_gender: Gender) => "biochimiste",
-      biophysicist: (gender: Gender) => gender === Gender.male ? "biophysicien" : "biophysicienne",
-      bishop: (_gender: Gender) => "évêque",
-      botanist: (_gender: Gender) => "botaniste",
-      businessman: (gender: Gender) => gender === Gender.male ? 'homme d\'affaires' : 'femme d\'affaires',
-      cameraman: (gender: Gender) => gender === Gender.male ? "cadreur" : "cadreuse",
-      chemist: (_gender: Gender) => "chimiste",
-      contactee: (gender: Gender) => gender === Gender.male ? "contacté" : "contactée",
-      cryptozoologist: (_gender: Gender) => "cryptozoologue",
-      dentist: (_gender: Gender) => "dentiste",
-      diplomat: (_gender: Gender) => 'diplomate',
-      director: (_gender: Gender) => "réalisateur",
-      diver: (_gender: Gender) => "plongeur",
-      engineer: (_gender: Gender) => "ingénieur",
-      electronics: (gender: Gender) => gender === Gender.male ? "électronicien" : "électronicienne",
-      ethnologist: (_gender: Gender) => "ethnologue",
-      exobiologist: (_gender: Gender) => "exobiologiste",
-      farmer: (gender: Gender) => gender === Gender.male ? "agriculteur" : "agricultrice",
-      firefighter: (gender: Gender) => gender === Gender.male ? "pompier" : "pompière",
-      flightAttendant: (gender: Gender) => gender === Gender.male ? "hôtesse de l'air" : "stewart",
-      geographer: (_gender: Gender) => "géographe",
-      geologist: (_gender: Gender) => "géologue",
-      geophysicist: (gender: Gender) => gender === Gender.male ? "géophysicien" : "géophysicienne",
-      historian: (gender: Gender) => gender === Gender.male ? "historien" : "historienne",
-      houseWife: (_gender: Gender) => "femme au foyer",
-      hypnotherapist: (_gender: Gender) => "hypnothérapeute",
-      illusionist: (_gender: Gender) => "illusionniste",
-      journalist: (_gender: Gender) => "journaliste",
-      lawyer: (gender: Gender) => gender === Gender.male ? "avocat" : "avocate",
-      librarian: (_gender: Gender) => "bibliothécaire",
-      logger: (gender: Gender) => gender === Gender.male ? "bucheron" : "bucheronne",
-      mathematician: (gender: Gender) => gender === Gender.male ? "mathématicien" : "mathématicienne",
-      meteorologist: (_gender: Gender) => "météorologue",
-      mechanic: (gender: Gender) => gender === Gender.male ? "mécanicien" : "mécanicienne",
-      military: (_gender: Gender) => "militaire",
-      musician: (gender: Gender) => gender === Gender.male ? "musicien" : "musicienne",
-      neurologist: (_gender: Gender) => "neurologue",
-      neuroscientist: (_gender: Gender) => "neuroscientifique",
-      neuropsychiatrist: (_gender: Gender) => "neuropsychiatre",
-      nurse: (gender: Gender) => gender === Gender.male ? "infirmier" : "infirmière",
-      oceanographer: (_gender: Gender) => "océanographe",
-      painter: (_gender: Gender) => "peintre",
-      parapsychologist: (_gender: Gender) => "parapsychologue",
-      philosopher: (_gender: Gender) => "philosophe",
-      photographer: (_gender: Gender) => "photographe",
-      physicist: (gender: Gender) => gender === Gender.male ? "physicien" : "physicienne",
-      physician: (_gender: Gender) => "médecin",
-      pilot: (_gender: Gender) => "pilote",
-      policeman: (gender: Gender) => gender === Gender.male ? "policier" : "policière",
-      politician: (gender: Gender) => gender === Gender.male ? "politicien" : "politicienne",
-      priest: (gender: Gender) => gender === Gender.male ? "prêtre" : "prêtresse",
-      producer: (gender: Gender) => gender === Gender.male ? "producteur" : "productrice",
-      prospector: (gender: Gender) => gender === Gender.male ? "prospecteur" : "prospectrice",
-      psychologist: (_gender: Gender) => "psychologue",
-      psychiatrist: (_gender: Gender) => "psychiatre",
-      radioastronomer: (_gender: Gender) => "radioastronome",
-      radioamateur: (gender: Gender) => gender === Gender.male ? "radio amateur" : "radio amatrice",
-      sailor: (_gender: Gender) => "marin",
-      salesman: (gender: Gender) => gender === Gender.male ? "commercial" : "commerciale",
-      sociologist: (_gender: Gender) => "sociologue",
-      softwareEngineer: (_gender: Gender) => "Informaticien",
-      stuntman: (_gender: Gender) => "cascadeur",
-      teacher: (gender: Gender) => gender === Gender.male ? "enseignant" : "enseignante",
-      truckDriver: (gender: Gender) => gender === Gender.male ? "camionneur" : "camionneuse",
-      taxiDriver: (_gender: Gender) => "taxi",
-      telegrapher: (_gender: Gender) => "télégraphiste",
-      ufologist: (_gender: Gender) => "ufologue",
-      ufoWitness: (_gender: Gender) => "témoin d'ovni",
-      ufoWitness2: (_gender: Gender) => "témoin indirect d'ovni",
-      worker: (gender: Gender) => gender === Gender.male ? "ouvrier" : "ouvrière",
-      writer: (gender: Gender) => gender === Gender.male ? "écrivain" : "écrivaine"
-    }
-  }
-  country = {
-    at: {title: "Autriche"},
-    ar: {title: "Argentine"},
-    au: {title: "Australie"},
-    be: {title: "Belgique"},
-    br: {title: "Brésil"},
-    ca: {title: "Canada"},
-    ch: {title: "Suisse"},
-    cl: {title: "Chili"},
-    cn: {title: "Chine"},
-    cy: {title: 'Chypre'},
-    de: {title: "Allemagne"},
-    dk: {title: "Danemark"},
-    es: {title: "Espagne"},
-    fi: {title: "Finlande"},
-    fr: {
-      title: "France",
-      region: {
-        idf: "Ile-de-France"
-      }
-    },
-    gr: {title: "Grèce"},
-    hu: {title: "Hongrie"},
-    ie: {title: "Irelande"},
-    il: {title: "Israël"},
-    it: {title: "Italie"},
-    ir: {title: "Iran"},
-    jp: {title: "Japon"},
-    ma: {title: 'Maroc'},
-    mx: {title: "Mexique"},
-    nl: {title: "Pays-Bas"},
-    no: {title: "Norvège"},
-    nz: {title: "Nouvelle-Zélande"},
-    pe: {title: "Pérou"},
-    pl: {title: "Pologne"},
-    pt: {title: "Portugal"},
-    ro: {title: "Roumanie"},
-    ru: {title: "Russie"},
-    tr: {title: "Turquie"},
-    ua: {title: "Ukraine"},
-    uk: {title: "Royaume-Uni"},
-    us: {
-      title: "USA",
-      state: {
-        nm: "Nouveau-Mexique",
-        tn: "Tennessee"
-      }
-    },
-    sa: {title: 'Arabie Saoudite'},
-    se: {title: "Suède"},
-    ve: {title: "Venezuela"},
-    za: {title: "Afrique du Sud"}
-  }
+  people = peopleMessages_fr
+  place = placeMessages_fr
+  country = countryMessageList_fr
   nav = {
     start: "Début",
     contents: "Sommaire",

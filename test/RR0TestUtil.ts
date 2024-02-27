@@ -1,6 +1,7 @@
 import {HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
 import {TimeContext} from "../time/TimeContext"
 import {HtmlSsgFile, SsgFile} from "ssg-api"
+import { Time } from "../time/Time"
 
 class RR0TestUtil {
 
@@ -34,7 +35,9 @@ class RR0TestUtil {
     context.inputFile = new HtmlSsgFile(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
     context.outputFile = context.inputFile  // By default
-    return context as HtmlRR0SsgContext
+    const htmlContext = context as HtmlRR0SsgContext
+    Object.assign(htmlContext.time, Time.contextFromFile(htmlContext, inputFileName))
+    return htmlContext
   }
 }
 

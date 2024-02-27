@@ -65,19 +65,19 @@ shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
   // Now the Y coordinates for each layer
   // Input layer
   this.inputLayerCoordinates = d3.range(this.inputNodeCount).map(function (i) {
-    var y = grapher.neuralNetworkMargin.top + (i + 1) * grapher.neuralNetworkHeight / (grapher.inputNodeCount + 1);
-    return {x: inputLayerX, y: y, index: i};
+    var y = grapher.neuralNetworkMargin.top + (i + 1) * grapher.neuralNetworkHeight / (grapher.inputNodeCount + 1)
+    return { x: inputLayerX, y: y, index: i }
   });
   // Bias layer
   this.biasLayerCoordinates = d3.range(this.outputNodeCount).map(function (i) {
 
-    var y = grapher.neuralNetworkMargin.top + (i + 1) * grapher.neuralNetworkHeight / (grapher.outputNodeCount + 1);
-    return {x: biasLayerX, y: y, index: i};
+    var y = grapher.neuralNetworkMargin.top + (i + 1) * grapher.neuralNetworkHeight / (grapher.outputNodeCount + 1)
+    return { x: biasLayerX, y: y, index: i }
   });
   // Output layer
   this.outputLayerCoordinates = d3.range(this.outputNodeCount).map(function (i) {
-    var y = grapher.neuralNetworkMargin.top + (i + 1) * grapher.neuralNetworkHeight / (grapher.outputNodeCount + 1);
-    return {x: outputLayerX, y: y, index: i};
+    var y = grapher.neuralNetworkMargin.top + (i + 1) * grapher.neuralNetworkHeight / (grapher.outputNodeCount + 1)
+    return { x: outputLayerX, y: y, index: i }
   });
 
   // Weights
@@ -90,7 +90,7 @@ shallowNeuralNetworkGrapher.prototype.drawGraph = function () {
     .domain([0, this.outputNodeCount - 1])
     .range([inputLayerX + weightMarginLeft, biasLayerX - weightMarginRight]);
   this.weightLayerXCoordinates = d3.range(this.outputNodeCount).map(function (i) {
-    return grapher.weightNodeX(i);
+    return grapher.weightNodeX(i)
   });
 
 

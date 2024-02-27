@@ -1,9 +1,14 @@
-import { ContentStep, ContentStepConfig, SsgContext } from "ssg-api"
+import { ContentStep, ContentStepConfig, HtmlLinks, HtmlMeta, OutputFunc, SsgContext } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import { Time } from "./time/Time"
 import { TimeContext } from "./time/TimeContext"
 
 export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
+  constructor(contentConfigs: ContentStepConfig[], outputFunc: OutputFunc,
+              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
+    super(contentConfigs, outputFunc)
+  }
+
 
   static setTimeFromPath(context: HtmlRR0SsgContext, filePath: string): TimeContext | undefined {
     const newTimeContext = Time.contextFromFile(context, filePath)
@@ -24,7 +29,11 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
     return super.processFile(context, filePath, contentsConfig, contentCount)
   }
 
-  protected shouldProcess(_context: SsgContext): boolean {
+  protected shouldProcess(context: HtmlRR0SsgContext): boolean {
+    const bookMeta = this.bookMeta.get(context.inputFile.name)
+    Object.assign(context.inputFile.meta, bookMeta)
+    const bookLinks = this.bookLinks.get(context.inputFile.name)
+    Object.assign(context.inputFile.links, bookLinks)
     return true // TODO: Don't process unmodified files
   }
 }

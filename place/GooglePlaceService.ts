@@ -1,7 +1,8 @@
-import {Client, Status} from "@googlemaps/google-maps-services-js"
+import { Client, Status } from "@googlemaps/google-maps-services-js"
 
-import {Elevation, PlaceLocation} from "./Place"
-import {PlaceService} from "./PlaceService"
+import { Elevation } from "./Place"
+import { PlaceService } from "./PlaceService"
+import { PlaceLocation } from "./PlaceLocation"
 
 export class GooglePlaceService extends PlaceService {
 
@@ -49,7 +50,8 @@ export class GooglePlaceService extends PlaceService {
             throw Error(`No results when geocoding "${address}"`)
           case 1:
             const singleResult = results[0]
-            const location = singleResult.geometry.location
+            const locationData = singleResult.geometry.location
+            const location = new PlaceLocation(locationData.lat, locationData.lng)
             return {location, data: singleResult}
           default:
             throw Error(`More than 1 result when geocoding "${address}": ${JSON.stringify(results)}`)

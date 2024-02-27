@@ -1,10 +1,10 @@
-import { TimeUrlBuilder } from './TimeUrlBuilder';
-import { TimeTextBuilder } from './TimeTextBuilder';
-import { RelativeTimeTextBuilder } from './RelativeTimeTextBuilder';
-import { HtmlRR0SsgContext, RR0SsgContext } from '../RR0SsgContext';
-import { UrlUtil } from '../util/url/UrlUtil';
-import { DomReplacement } from './DomReplacement';
-import { ObjectUtils } from '@rr0/common';
+import { TimeUrlBuilder } from "./TimeUrlBuilder"
+import { TimeTextBuilder } from "./TimeTextBuilder"
+import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
+import { UrlUtil } from "../util/url/UrlUtil"
+import { DomReplacement } from "./DomReplacement"
+import { ObjectUtils } from "@rr0/common"
 
 export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
@@ -75,9 +75,10 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return replacement
   }
 
-  static replaceElement(context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[],
-                        previousContext?: RR0SsgContext): HTMLElement {
-    let replacement: HTMLElement | undefined;
+  static replaceElement(
+    context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[], previousContext?: RR0SsgContext
+  ): HTMLElement {
+    let replacement: HTMLElement | undefined
     const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
     const url = TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles)
     let title = TimeTextBuilder.build(context)
@@ -116,10 +117,10 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return url === "time" ? undefined : url
   }
 
-  protected dateTimeReplacement(context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string,
-                                monthStr: string, dayOfMonthStr: string, hour: string, minutes: string,
-                                timeZone: string,
-                                approximate: boolean): HTMLElement | undefined {
+  protected dateTimeReplacement(
+    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string, monthStr: string,
+    dayOfMonthStr: string, hour: string, minutes: string, timeZone: string, approximate: boolean
+  ): HTMLElement | undefined {
     let replacement: HTMLElement | undefined = undefined
     const timeContext = context.time
     if (yearStr) {
@@ -155,8 +156,10 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return replacement
   }
 
-  protected durationReplacement(context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string,
-                                secondsStr: string, approximate: boolean): HTMLElement | undefined {
+  protected durationReplacement(
+    context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string,
+    approximate: boolean
+  ): HTMLElement | undefined {
     const items = []
     const messages = context.messages.context.time.duration
     if (daysStr) {
@@ -177,8 +180,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     }
     let replacement: HTMLElement | undefined
     if (items.length > 0) {
-      let replacementStr
-      replacementStr = items.join(", ")
+      let replacementStr = items.join(", ")
       if (items.length > 1) {
         let last = replacementStr.lastIndexOf(", ")
         replacementStr = replacementStr.substring(0, last) + messages.lastSeparator + items[items.length - 1]

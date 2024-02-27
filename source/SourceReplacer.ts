@@ -2,7 +2,7 @@ import { HtmlSsgContext } from "ssg-api"
 
 export class SourceReplacer {
   /**
-   * Source counter in the page.
+   * Source counter in the scope of page.
    */
   protected number = 0
 

@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/RR0/rr0.org.git"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",
     "books": "tsx book/Books.ts",
@@ -18,7 +21,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/nuforc/NuforcChronologySource.test.ts",
+    "test-one": "tsx time/datasource/nuforc/NuforcCaseSource.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {
@@ -33,25 +36,24 @@
     "jsdom": "^24.0.0"
   },
   "devDependencies": {
-    "ssg-api": "^1.7.1",
     "@javarome/testscript": "^0.10.7",
-    "@types/detect-character-encoding": "~0.7.0",
-    "@types/jsdom": "~21.1.1",
+    "@playwright/test": "^1.40.1",
+    "@types/jsdom": "~21.1.6",
     "buffer": "^6.0.3",
     "html-webpack-plugin": "^5.5.3",
     "https-browserify": "^1.0.0",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
+    "ssg-api": "^1.7.2",
     "stream-http": "^3.2.0",
     "ts-loader": "^9.4.4",
     "ts-node": "~10.9.1",
     "tsx": "~3.12.7",
     "typescript": "^5.2.2",
     "url": "^0.11.1",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
     "vite": "^5.0.4",
-    "@playwright/test": "^1.40.1"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "keywords": [
     "ufo",

@@ -6,8 +6,8 @@
 function zip(arrays) {
   return arrays[0].map(function (_, i) {
     return arrays.map(function (array) {
-      return array[i];
-    });
+      return array[i]
+    })
   });
 }
 
@@ -31,9 +31,9 @@ function numberWithCommas(x) {
 function standardDeviation(values) {
   var avg = average(values);
   var squareDiffs = values.map(function (value) {
-    var diff = value - avg;
-    var sqrDiff = diff * diff;
-    return sqrDiff;
+    var diff = value - avg
+    var sqrDiff = diff * diff
+    return sqrDiff
   });
   var avgSquareDiff = average(squareDiffs);
   var stdDev = Math.sqrt(avgSquareDiff);

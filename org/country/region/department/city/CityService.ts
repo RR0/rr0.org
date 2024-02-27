@@ -1,0 +1,28 @@
+import { City } from "./City"
+import { RR0SsgContext } from "../../../../../RR0SsgContext"
+import { Department } from "../Department"
+
+export class CityService {
+
+  constructor(readonly cities: { [p: string]: City }) {
+  }
+
+  normalizeName(name: string): string {
+    return name.toLowerCase().replaceAll(" ", "-")
+  }
+
+  find(context: RR0SsgContext, nameToFind: string, dep: Department): City | undefined {
+    return Object.values(this.cities).find(city => {
+      const cityMessages = city.messages(context)
+      let found = Boolean(cityMessages)
+      if (found) {
+        const cityNameToFind = this.normalizeName(nameToFind)
+        const knownCityName = this.normalizeName(cityMessages.title)
+        const foundName = knownCityName === cityNameToFind
+        const foundDep = !dep?.code || dep.code === city.departement.code
+        found = foundName && foundDep
+      }
+      return found ? city : undefined
+    })
+  }
+}

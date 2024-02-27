@@ -1,19 +1,30 @@
 import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { ChronologySource } from "./ChronologySource"
+import { TimeEventRenderer } from "../TimeEventRenderer"
+import { RR0Case } from "../RR0Case"
+import { CaseMapping } from "./CaseMapping"
 
-export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext> {
-  protected readonly done: Set<string>
+export interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0Case> {
+}
 
-  constructor(protected datasources: ChronologySource[]) {
-    this.done = new Set<string>()
+export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLUListElement> {
+
+  protected readonly done = new Set<string>()
+
+  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: TimeEventRenderer) {
   }
 
-  async replacement(context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {
-    for (const datasource of this.datasources) {
+  async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {
+    const existingItems = element.children
+    // TODO: Merge with existing those items
+    for (const mapping of this.mappings) {
+      const datasource = mapping.datasource
       const datasourceKey = context.inputFile.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
-        let items = await datasource.get(context)
+        const sourceCases = await datasource.getAll(context)
+        const fetchTime = new Date()
+        const targetCases = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
+        const items = targetCases.map(c => this.renderer.render(context, c))
         for (const item of items) {
           element.append(item)
         }

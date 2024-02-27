@@ -4,7 +4,9 @@ import { LinkType } from 'ssg-api';
 import path from 'path';
 
 export class Chapter {
+
   readonly context: HtmlRR0SsgContext;
+
   subs: Chapter[] = [];
 
   constructor(parentContext: HtmlRR0SsgContext, protected startFileName: string) {
@@ -42,14 +44,14 @@ ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
       meta.copyright = parentMeta.copyright;
       links.contents = {
         type: LinkType.contents,
-        url: parentFile.name,
+        url: path.join("/", parentFile.name),
         text: parentFile.title
       };
       links.start = parentFile.links.start;
     } else {
       links.start = {
         type: LinkType.start,
-        url: this.startFileName,
+        url: path.join("/", this.startFileName),
         text: file.title
       };
     }
@@ -59,13 +61,13 @@ ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
       if (prev) {
         prev.context.outputFile.links.next = {
           type: LinkType.next,
-          url: subFile.name,
+          url: path.join("/", subFile.name),
           text: subFile.title
         };
       }
       sub.context.outputFile.links.prev = prev ? {
         type: LinkType.prev,
-        url: prev.context.outputFile.name,
+        url: path.join("/", prev.context.outputFile.name),
         text: prev.context.outputFile.title
       } : undefined;
       await sub.update(this);

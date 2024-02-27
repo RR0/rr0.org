@@ -1,9 +1,5 @@
-import {Rr0Data} from "../Rr0Data"
-
-export type PlaceLocation = {
-  lat: number
-  lng: number
-}
+import { Rr0Data } from "../Rr0Data"
+import { PlaceLocation } from "./PlaceLocation"
 
 export type Elevation = {
   elevation: number,
@@ -13,7 +9,7 @@ export type Elevation = {
 export class Place implements Rr0Data {
 
   constructor(
-    readonly location: PlaceLocation,
+    readonly locations: PlaceLocation[],
     readonly elevation?: Elevation,
     readonly dirName?: string,
     /**
@@ -21,6 +17,14 @@ export class Place implements Rr0Data {
      */
     readonly data?: any
   ) {
+  }
+
+  static fromLocation(lat: number, lng: number) {
+    return new Place([new PlaceLocation(lat, lng)])
+  }
+
+  static fromDMS(latLng: string) {
+    return new Place([PlaceLocation.fromDMS(latLng)])
   }
 }
 

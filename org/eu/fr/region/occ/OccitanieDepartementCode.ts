@@ -1,5 +1,6 @@
 import { FranceDepartementCode } from "../FranceDepartementCode"
 
 export enum OccitanieDepartementCode {
-  Gers = FranceDepartementCode.Gers
+  Gers = FranceDepartementCode.Gers,
+  Herault = FranceDepartementCode.Herault,
 }

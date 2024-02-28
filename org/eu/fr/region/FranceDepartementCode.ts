@@ -4,6 +4,7 @@ export enum FranceDepartementCode {
   Charente = "16",
   Creuse = "23",
   Gers = "32",
+  Herault = "34",
   Landes = "40",
   Loire = "42",
   Oise = "60",

@@ -1,7 +1,4 @@
-import { NaqRegionMessages } from "./NaqRegionMessages"
 import { naqDepartementsList } from "./NaqDepartementsList"
+import { RegionMessages } from "../../../../country/region/RegionMessages"
 
-export const naqRegionMessages_fr: NaqRegionMessages = {
-  title: "Pays-de-la-Loire",
-  department: naqDepartementsList
-}
+export const naqRegionMessages_fr = new RegionMessages("Pays-de-la-Loire", naqDepartementsList)

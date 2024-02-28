@@ -5,6 +5,7 @@ import { nouvelleAquitaine } from "./naq/NouvelleAquitaine"
 import { normandie } from "./nor/Normandie"
 import { paca } from "./pac/Paca"
 import { bourgogneFrancheComte } from "./bfc/BourgogneFrancheComte"
+import { occitanie } from "./occ/Occitanie"
 
 export const franceRegions = {
   auvergneRhoneAlpes,
@@ -12,6 +13,7 @@ export const franceRegions = {
   ileDeFrance,
   nouvelleAquitaine,
   normandie,
+  occitanie,
   paca,
   paysDeLoire
 }

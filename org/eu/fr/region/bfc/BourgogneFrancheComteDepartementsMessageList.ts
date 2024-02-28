@@ -1,7 +1,7 @@
-import { BourgogneFrancheComteDepartmentMessages } from "./BourgogneFrancheComteDepartmentMessages"
+import { BourgogneFrancheComteDepartmentMessagesList } from "./BourgogneFrancheComteDepartmentMessagesList"
 import { saoneEtLoireMessages } from "./71/SaoneEtLoireMessages"
 import { BourgogneFrancheComteDepartementCode } from "./BourgogneFrancheComteDepartementCode"
 
-export const bourgogneFrancheComteDepartementsMessageList: BourgogneFrancheComteDepartmentMessages = {
+export const bourgogneFrancheComteDepartementsMessageList: BourgogneFrancheComteDepartmentMessagesList = {
   [BourgogneFrancheComteDepartementCode.SaoneEtLoire]: saoneEtLoireMessages
 }

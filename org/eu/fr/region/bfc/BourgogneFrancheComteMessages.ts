@@ -1,8 +1,8 @@
 import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { bourgogneFrancheComteDepartementsMessageList } from "./BourgogneFrancheComteDepartementsMessageList"
-import { BourgogneFrancheComteDepartmentMessages } from "./BourgogneFrancheComteDepartmentMessages"
+import { BourgogneFrancheComteDepartmentMessagesList } from "./BourgogneFrancheComteDepartmentMessagesList"
 
-export const bourgogneFrancheComteMessages = new RegionMessages<BourgogneFrancheComteDepartmentMessages>(
+export const bourgogneFrancheComteMessages = new RegionMessages<BourgogneFrancheComteDepartmentMessagesList>(
   "Bourgogne-Franche-Comté",
   bourgogneFrancheComteDepartementsMessageList
 )

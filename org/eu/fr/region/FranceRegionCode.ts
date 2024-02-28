@@ -25,6 +25,11 @@ export enum FranceRegionCode {
   pdl = "pdl",
 
   /**
+   * Occitania
+   */
+  occ = "occ",
+
+  /**
    * Nouvelle-Aquitaine
    */
   naq = "naq",

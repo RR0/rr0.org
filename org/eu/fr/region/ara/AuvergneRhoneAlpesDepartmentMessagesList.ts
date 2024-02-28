@@ -5,5 +5,5 @@ import { AuvergneRhoneAlpesDepartementCode } from "./AuvergneRhoneAlpesDeparteme
 export interface AuvergneRhoneAlpesDepartementMessages extends DepartmentMessages {
 }
 
-export type AuvergneRhoneAlpesDepartmentMessages = DepartmentMessagesList &
+export type AuvergneRhoneAlpesDepartmentMessagesList = DepartmentMessagesList &
   { [key in AuvergneRhoneAlpesDepartementCode]: AuvergneRhoneAlpesDepartementMessages }

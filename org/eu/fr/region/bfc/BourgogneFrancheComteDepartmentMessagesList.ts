@@ -2,5 +2,5 @@ import { DepartmentMessages } from "../../../../country/region/department/Depart
 import { DepartmentMessagesList } from "../../../../country/region/department/DepartmentMessagesList"
 import { BourgogneFrancheComteDepartementCode } from "./BourgogneFrancheComteDepartementCode"
 
-export type BourgogneFrancheComteDepartmentMessages = DepartmentMessagesList &
+export type BourgogneFrancheComteDepartmentMessagesList = DepartmentMessagesList &
   { [key in BourgogneFrancheComteDepartementCode]: DepartmentMessages }

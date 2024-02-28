@@ -7,6 +7,7 @@ import { pdlRegionMessages_fr } from "./region/pdl/PdlRegionMessages_fr"
 import { naqRegionMessages_fr } from "./region/naq/NaqRegionMessages_fr"
 import { CountryMessages } from "../../country/CountryMessages"
 import { bourgogneFrancheComteMessages } from "./region/bfc/BourgogneFrancheComteMessages"
+import { occitanieMessages_en } from "./region/occ/OccitanieMessages_en"
 
 export const franceMessages_en = new CountryMessages<FranceRegionsMessagesList>(
   "France",
@@ -17,5 +18,6 @@ export const franceMessages_en = new CountryMessages<FranceRegionsMessagesList>(
     nor: norRegionMessages_fr,
     pac: pacRegionMessages_fr,
     pdl: pdlRegionMessages_fr,
-    naq: naqRegionMessages_fr
+    naq: naqRegionMessages_fr,
+    occ: occitanieMessages_en
   })

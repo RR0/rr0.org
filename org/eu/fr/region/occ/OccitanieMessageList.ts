@@ -1,6 +1,9 @@
-import { OccitanieDepartmentMessagesList } from "./OccitanieDepartmentMessagesList"
 import { gersMessages } from "./32/GersMessages"
+import { OccitanieDepartementCode } from "./OccitanieDepartementCode"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
+
+export type OccitanieDepartmentMessagesList = { [key in OccitanieDepartementCode]: DepartmentMessages }
 
 export const occitanieMessageList: OccitanieDepartmentMessagesList = {
-  32: gersMessages
+  [OccitanieDepartementCode.Gers]: gersMessages
 }

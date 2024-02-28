@@ -1,5 +1,6 @@
-import { briancon05 } from "./Briancon"
+import { briancon05 } from "./briancon/Briancon"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const hautesAlpesCities = {
+export const hautesAlpesCities: { [key: string]: City } = {
   briancon05
 }

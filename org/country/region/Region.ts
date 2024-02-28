@@ -15,13 +15,13 @@ export type RegionCode_eu = FranceRegionCode | FinlandRegionCode
 
 export type RegionCode = RegionCode_eu | UsaRegionCode | CanadaRegionCode | RegionCode_in | RegionCode_au
 
-export class Region extends Organization<RegionMessages> {
+export class Region extends Organization<RegionMessages<any>> {
 
   constructor(readonly code: RegionCode, readonly country: Country, places: Place[], dirName: string) {
     super(places, dirName)
   }
 
-  messages(context: RR0SsgContext): RegionMessages {
+  messages(context: RR0SsgContext): RegionMessages<any> {
     const message = this.country.messages(context).region[this.code]
     assert.ok(message,
       `Could not find messages for region "${this.code}" in messages for country "${this.country.code}"`)

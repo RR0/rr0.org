@@ -1,5 +1,6 @@
 export enum FranceDepartementCode {
   HautesAlpes = "05",
+  AlpesMaritimes = "06",
   Calvados = "14",
   Charente = "16",
   Creuse = "23",

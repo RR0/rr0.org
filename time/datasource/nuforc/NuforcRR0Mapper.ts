@@ -5,7 +5,6 @@ import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import { NamedPlace, RR0Case } from "../../RR0Case"
 import assert from "assert"
-import { RegionService } from "../../../org/country/region/RegionService"
 import { CountryService } from "../../../org/country/CountryService"
 import { australia } from "../../../org/au/Country_au"
 import { canada } from "../../../org/ca/Canada"
@@ -39,9 +38,9 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   }
 
   constructor(
-    protected cityService: CityService, protected regionService: RegionService,
-    protected countryService: CountryService,
-    readonly baseUrl: string, readonly copyright: string, readonly author: string
+    protected cityService: CityService, protected countryService: CountryService,
+    readonly baseUrl: string,
+    readonly copyright: string, readonly author: string
   ) {
   }
 
@@ -62,12 +61,9 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
-    const stateCode = sourceCase.state.toLowerCase()
     const countryCode = NuforcRR0Mapper.countryMap[sourceCase.country]
     const country = this.countryService.get(countryCode)
     assert.ok(country, `Could not find country "${countryCode}"`)
-    const state = this.regionService.get(stateCode, country)
-    assert.ok(state, `Could not find state "${stateCode}"`)
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)
     const placeName = placeItems[1]
     const city = this.cityService.find(context, placeName, undefined)

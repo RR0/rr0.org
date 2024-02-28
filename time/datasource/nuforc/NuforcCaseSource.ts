@@ -2,8 +2,9 @@ import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { NuforcCase, NuforcCountry, NuforcShape, NuforcState } from "./NuforcCase"
+import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
 import { ObjectUtil } from "../../../util/ObjectUtil"
+import { NuforcState } from "./NuforcState"
 
 interface QueryParameters {
   id: string
@@ -55,7 +56,8 @@ export class NuforcCaseSource extends HttpCaseSource<NuforcCase> {
     itemTime.setMinutes(minutes)
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "?", "id"), 10)
-    const state = ObjectUtil.valueFromKey(NuforcState, fields[3].textContent)
+    const stateStr = fields[3].textContent
+    const state = ObjectUtil.valueFromKey<NuforcState>(NuforcState, stateStr)
     return {
       caseNumber,
       url,

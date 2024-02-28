@@ -4,7 +4,7 @@ import { regions } from "../../../../country/region/RegionService"
 import { FranceDepartementCode } from "../FranceDepartementCode"
 import { hautsDeSeine } from "./92/HautsDeSeine"
 
-export const idfDepartments = {
-  hautDeSeine: hautsDeSeine,
-  Oise: new Department(FranceDepartementCode.Oise, regions.ileDeFrance, Place.fromLocation(49.383333, 2.416667))
-}
+export const idfDepartments: Department[] = [
+  hautsDeSeine,
+  new Department(FranceDepartementCode.Oise, regions.ileDeFrance, Place.fromLocation(49.383333, 2.416667))
+]

@@ -1,10 +1,10 @@
 import { Department } from "../../../../country/region/department/Department"
-import { AuvergneRhoneAlpesDepartmenList } from "./AuvergneRhoneAlpesDepartmentMessagesList"
 import { loire } from "./42/Loire"
 import { rhone } from "./69/Rhone"
-import { AuvergneRhoneAlpesDepartementCode } from "./AuvergneRhoneAlpesDepartementCode"
+import { puyDeDome } from "./63/PuyDeDome"
 
-export const auvergneRhoneAlpesDepartments: AuvergneRhoneAlpesDepartmenList<Department> = {
-  [AuvergneRhoneAlpesDepartementCode.Loire]: loire,
-  [AuvergneRhoneAlpesDepartementCode.Rhone]: rhone
-}
+export const auvergneRhoneAlpesDepartments: Department[] = [
+  loire,
+  rhone,
+  puyDeDome
+]

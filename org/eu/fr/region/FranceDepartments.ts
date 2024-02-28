@@ -6,8 +6,9 @@ import { nouvelleAquitaineDepartments } from "./naq/NouvelleAquitaineDepartments
 import { paysDeLoireDepartments } from "./pdl/PaysDeLoireDepartments"
 import { bourgogneFrancheComteDepartments } from "./bfc/BourgogneFrancheComteDepartments"
 import { occitanieDepartments } from "./occ/OccitanieDepartments"
+import { Department } from "../../../country/region/department/Department"
 
-export const franceDepartments = {
+export const franceDepartments: Department[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
   ...idfDepartments,
@@ -16,4 +17,4 @@ export const franceDepartments = {
   ...occitanieDepartments,
   ...pacaDepartments,
   ...paysDeLoireDepartments
-}
+]

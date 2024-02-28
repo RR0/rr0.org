@@ -6,11 +6,11 @@ import { usaDepartments } from "../../../us/region/UsaDepartments"
 
 export class DepartmentService {
 
-  constructor(readonly departments: { [name: string]: Department }) {
+  constructor(readonly departments: Department[]) {
   }
 
   get(depCode: string, region: Region): Department | undefined {
-    return Object.values(this.departments).find(dep => {
+    return this.departments.find(dep => {
       const foundDep = dep.code === depCode
       const foundRegion = !region || region === dep.region
       const found = foundDep && foundRegion
@@ -19,9 +19,9 @@ export class DepartmentService {
   }
 }
 
-export const departments = {
+export const departments: Department[] = [
   ...finlandDepartments,
   ...franceDepartments,
   ...usaDepartments
-}
+]
 export const departmentService = new DepartmentService(departments)

@@ -20,10 +20,14 @@ describe("TimeEventRenderer", () => {
       place: city.places[0],
       name: villeMessages.toTitle(context, city)
     }
-    const source1 = new OnlineSource("https://somesite.com/case1", "Case 1", ["Some Author"],
+    const source1 = new OnlineSource(new URL("https://somesite.com/case1"), "Case 1", ["Some Author"],
       {time: context.time.toString(), publisher: "Some site"})
     const sources = [source1]
-    const c = new RR0Case(context.time, namedPlace, "some sighting", sources)
+    const c: RR0Case = {
+      time: context.time,
+      place: namedPlace,
+      description: "some sighting", sources
+    }
     const elem = renderer.render(context, c)
     expect(elem.innerHTML).toBe(
       `<time>1970-03</time> À <span class="place">Nanterre (Hauts-de-Seine, France)</span>, some sighting <span class="source">Some Author: <span><a href="https://somesite.com/case1">Case 1</a>, <i>Some site</i>, 1970-03</span></span>`)

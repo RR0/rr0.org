@@ -4,7 +4,7 @@ import { idfRegionMessages_fr } from "./region/idf/IdfRegionMessages_fr"
 import { norRegionMessages_fr } from "./region/nor/NorRegionMessages_fr"
 import { pacaMessages } from "./region/pac/PacaMessages"
 import { pdlRegionMessages_fr } from "./region/pdl/PdlRegionMessages_fr"
-import { naqRegionMessages_fr } from "./region/naq/NaqRegionMessages_fr"
+import { nouvelleAquitaineMessages } from "./region/naq/NouvelleAquitaineMessages"
 import { CountryMessages } from "../../country/CountryMessages"
 import { occitanieMessages_fr } from "./region/occ/OccitanieMessages_fr"
 import { bourgogneFrancheComteMessages } from "./region/bfc/BourgogneFrancheComteMessages"
@@ -18,7 +18,7 @@ export const franceMessages_fr = new CountryMessages<FranceRegionsMessagesList>(
     nor: norRegionMessages_fr,
     pac: pacaMessages,
     pdl: pdlRegionMessages_fr,
-    naq: naqRegionMessages_fr,
+    naq: nouvelleAquitaineMessages,
     occ: occitanieMessages_fr
   }
 )

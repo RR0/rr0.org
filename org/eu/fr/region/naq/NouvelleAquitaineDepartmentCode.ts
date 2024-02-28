@@ -1,6 +1,7 @@
 import { FranceDepartementCode } from "../FranceDepartementCode"
 
-export enum NaqDepartmentCode {
+export enum NouvelleAquitaineDepartmentCode {
   Charente = FranceDepartementCode.Charente,
   Creuse = FranceDepartementCode.Creuse,
+  Landes = FranceDepartementCode.Landes,
 }

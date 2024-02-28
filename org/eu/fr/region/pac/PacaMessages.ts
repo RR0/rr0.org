@@ -1,7 +1,7 @@
 import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { PacaDepartementCode } from "./PacaDepartementCode"
 import { hautesAlpesMessages } from "./05/HautesAlpesMessages"
-import { vaucluseMessages } from "./84/VaucluseCityMessages"
+import { vaucluseMessages } from "./84/VaucluseMessages"
 import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 
 export type PacaDepartmentMessagesList = { [key in PacaDepartementCode]: DepartmentMessages }

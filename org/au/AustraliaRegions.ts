@@ -7,6 +7,6 @@ function createRegion_au(code: RegionCode_au, place: Place) {
   return new Region(code, australia, [place], `${australia.code}/${code}`)
 }
 
-export const australiaRegions = {
-  westernAustralia: createRegion_au(RegionCode_au.WesternAustralia, Place.fromLocation(47.466667, 0.833333))
-}
+export const australiaRegions: Region[] = [
+  createRegion_au(RegionCode_au.WesternAustralia, Place.fromLocation(47.466667, 0.833333))
+]

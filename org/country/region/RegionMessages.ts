@@ -1,11 +1,12 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { Region } from "./Region"
+import { DepartmentMessagesList } from "./department/DepartmentMessagesList"
 
 export interface RegionMessagesOptions {
   country: boolean
 }
 
-export class RegionMessages<D> {
+export class RegionMessages<D = DepartmentMessagesList> {
   /**
    *
    * @param title

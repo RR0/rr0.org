@@ -1,4 +1,3 @@
-import { DepartmentMessagesList } from "../../../country/region/department/DepartmentMessagesList"
 import { UsaDepartementCode } from "../UsaDepartementCode"
 import { DepartmentMessages } from "../../../country/region/department/DepartmentMessages"
 
@@ -9,5 +8,4 @@ export enum CaDepartementCode {
 export interface CaDepartementMessages extends DepartmentMessages {
 }
 
-export type CaDepartmentMessagesList = DepartmentMessagesList &
-  { [key in CaDepartementCode]: CaDepartementMessages }
+export type CaDepartmentMessagesList = { [key in CaDepartementCode]: CaDepartementMessages }

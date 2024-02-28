@@ -7,7 +7,7 @@ function createRegion_in(code: RegionCode_in, place: Place) {
   return new Region(code, india, [place], `${india.code}/${code}`)
 }
 
-export const indiaRegions = {
-  Telangana: createRegion_in(RegionCode_in.Telangana, Place.fromLocation(47.466667, 0.833333)),
-  Maharashtra: createRegion_in(RegionCode_in.Maharashtra, Place.fromLocation(47.466667, 0.833333))
-}
+export const indiaRegions: Region[] = [
+  createRegion_in(RegionCode_in.Telangana, Place.fromLocation(47.466667, 0.833333)),
+  createRegion_in(RegionCode_in.Maharashtra, Place.fromLocation(47.466667, 0.833333))
+]

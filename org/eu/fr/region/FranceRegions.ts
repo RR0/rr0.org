@@ -6,8 +6,9 @@ import { normandie } from "./nor/Normandie"
 import { paca } from "./pac/Paca"
 import { bourgogneFrancheComte } from "./bfc/BourgogneFrancheComte"
 import { occitanie } from "./occ/Occitanie"
+import { Region } from "../../../country/region/Region"
 
-export const franceRegions = {
+export const franceRegions: Region[] = [
   auvergneRhoneAlpes,
   bourgogneFrancheComte,
   ileDeFrance,
@@ -16,4 +17,4 @@ export const franceRegions = {
   occitanie,
   paca,
   paysDeLoire
-}
+]

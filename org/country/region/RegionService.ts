@@ -9,11 +9,11 @@ import { canadaRegions } from "../../ca/region/CanadaRegions"
 
 export class RegionService {
 
-  constructor(readonly regions: { [p: string]: Region }) {
+  constructor(protected regions: Region[]) {
   }
 
   get(code: string, country: Country): Region | undefined {
-    return Object.values(this.regions).find(region => {
+    return this.regions.find(region => {
       const foundCountry = region.country === country
       const foundRegion = region.code === code ? region : undefined
       return foundCountry && foundRegion

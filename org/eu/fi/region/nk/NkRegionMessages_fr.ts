@@ -1,7 +1,4 @@
-import { NkRegionMessages } from "./NkRegionMessages"
 import { nkDepartementsList_fr } from "./NkDepartementsList_fr"
+import { RegionMessages } from "../../../../country/region/RegionMessages"
 
-export const nkRegionMessages_fr: NkRegionMessages = {
-  title: "Carélie du Nord",
-  department: nkDepartementsList_fr
-}
+export const nkRegionMessages_fr = new RegionMessages("Carélie du Nord", nkDepartementsList_fr)

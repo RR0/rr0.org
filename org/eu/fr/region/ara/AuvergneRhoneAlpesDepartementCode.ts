@@ -1,5 +1,6 @@
 import { FranceDepartementCode } from "../FranceDepartementCode"
 
 export enum AuvergneRhoneAlpesDepartementCode {
-  Rhone = FranceDepartementCode.Rhone
+  Loire = FranceDepartementCode.Loire,
+  Rhone = FranceDepartementCode.Rhone,
 }

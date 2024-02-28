@@ -1,6 +1,7 @@
-import { CreuseCityMessagesList } from "../NaqRegionMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { chambonMessages } from "./chambon/ChambonMessages"
+import { CreuseCityCode } from "./CreuseCityCode"
+import { CreuseCityMessagesList } from "./CreuseCityMessagesList"
 
 export const creuseCityMessages_fr: CreuseCityMessagesList = {
-  23170: new CityMessages("Chambon-sur-Voueize")
+  [CreuseCityCode.ChambonSurVoueize]: chambonMessages
 }

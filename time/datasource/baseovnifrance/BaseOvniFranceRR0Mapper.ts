@@ -37,10 +37,10 @@ export class BaseOvniFranceRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ba
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const depCode = sourceCase.depCode
     const dep = this.depService.get(depCode, undefined)
-    assert.ok(dep, `Could not find department #${depCode}`)
+    assert.ok(dep, `Could not find department "${depCode}"`)
     const placeName = sourceCase.place
     const city = this.cityService.find(context, placeName, dep)
-    assert.ok(city, `Could not find city of name "${placeName}"`)
+    assert.ok(city, `Could not find city of name "${placeName}" in department of code "${dep.code}"`)
     const place: NamedPlace = {name: city.title(context), place: city.places[0]}
     return {
       time: sourceCase.dateTime,

@@ -1,5 +1,6 @@
 import { FranceDepartementCode } from "../FranceDepartementCode"
 
 export enum NaqDepartmentCode {
-  Creuse = FranceDepartementCode.Creuse
+  Charente = FranceDepartementCode.Charente,
+  Creuse = FranceDepartementCode.Creuse,
 }

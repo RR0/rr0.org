@@ -1,6 +1,6 @@
 import { Region } from "./Region"
 import { Country } from "../Country"
-import { franceRegions } from "../../eu/fr/region/IleDeFrance"
+import { franceRegions } from "../../eu/fr/region/FranceRegions"
 import { australiaRegions } from "../../au/AustraliaRegions"
 import { indiaRegions } from "../../in/IndiaRegions"
 import { finlandRegions } from "../../eu/fi/region/FinlandRegions"

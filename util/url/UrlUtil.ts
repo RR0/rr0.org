@@ -25,6 +25,6 @@ export class UrlUtil {
   }
 
   static objToQueryParams(obj: object): string {
-    return Object.entries(obj).map(entry => entry[0] + "=" + encodeURIComponent(entry[1])).join("&")
+    return Object.entries(obj).map(entry => encodeURIComponent(entry[0]) + "=" + encodeURIComponent(entry[1])).join("&")
   }
 }

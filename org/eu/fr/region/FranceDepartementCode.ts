@@ -1,8 +1,9 @@
 export enum FranceDepartementCode {
   Calvados = "14",
   Creuse = "23",
+  HautsDeSeine = "92",
   Oise = "60",
   Rhone = "69",
-  Sarthe = "72",
-  HautsDeSeine = "92"
+  SaoneEtLoire = "71",
+  Sarthe = "72"
 }

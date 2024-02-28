@@ -1,7 +1,7 @@
-import { Gender } from './Gender';
-import { Occupation } from './Occupation';
-import { CountryCode } from '../org/CountryCode';
-import { StringUtil } from '../util/string/StringUtil';
+import { Occupation } from "./Occupation"
+import { StringUtil } from "../util/string/StringUtil"
+import { Gender } from "@rr0/common"
+import { CountryCode } from "../org/country/CountryCode"
 
 export class People {
   /**

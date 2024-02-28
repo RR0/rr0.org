@@ -1,6 +1,7 @@
 import { City } from "./City"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { Department } from "../Department"
+import { StringUtil } from "../../../../../util/string/StringUtil"
 
 export class CityService {
 
@@ -8,7 +9,7 @@ export class CityService {
   }
 
   normalizeName(name: string): string {
-    return name.toLowerCase().replaceAll(" ", "-")
+    return StringUtil.removeAccents(name.toLowerCase().replaceAll(" ", "-"))
   }
 
   find(context: RR0SsgContext, nameToFind: string, dep: Department): City | undefined {

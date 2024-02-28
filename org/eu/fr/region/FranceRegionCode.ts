@@ -5,6 +5,11 @@ export enum FranceRegionCode {
   ara = "ara",
 
   /**
+   * Bourgogne-Franche-Comté
+   */
+  bfc = "bfc",
+
+  /**
    * Ile-De-France
    */
   idf = "idf",

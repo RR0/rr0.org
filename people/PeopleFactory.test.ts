@@ -1,7 +1,6 @@
-import { PeopleFactory } from './PeopleFactory';
-import { KnownPeople } from './People';
-import { describe, expect, test } from '@javarome/testscript';
-import { Gender } from './Gender';
+import { PeopleFactory } from "./PeopleFactory"
+import { KnownPeople } from "./People"
+import { describe, expect, test } from "@javarome/testscript"
 
 describe('PeopleFactory', () => {
 

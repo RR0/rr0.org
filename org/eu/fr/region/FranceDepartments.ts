@@ -1,15 +1,17 @@
-import { araDepartments } from "./ara/AraDepartments"
+import { auvergneRhoneAlpesDepartments } from "./ara/AuvergneRhoneAlpesDepartments"
 import { idfDepartments } from "./idf/IdfDepartments"
-import { norDepartments } from "./nor/NorDepartments"
-import { pacDepartments } from "./pac/PacDepartments"
-import { naqDepartments } from "./naq/NaqDepartments"
-import { pdlDepartments } from "./pdl/PdlDepartments"
+import { normandieDepartments } from "./nor/NormandieDepartments"
+import { pacaDepartments } from "./pac/PacaDepartments"
+import { nouvelleAquitaineDepartments } from "./naq/NouvelleAquitaineDepartments"
+import { paysDeLoireDepartments } from "./pdl/PaysDeLoireDepartments"
+import { bourgogneFrancheComteDepartments } from "./bfc/BourgogneFrancheComteDepartments"
 
 export const franceDepartments = {
-  ...araDepartments,
+  ...auvergneRhoneAlpesDepartments,
+  ...bourgogneFrancheComteDepartments,
   ...idfDepartments,
-  ...norDepartments,
-  ...pacDepartments,
-  ...naqDepartments,
-  ...pdlDepartments
+  ...normandieDepartments,
+  ...nouvelleAquitaineDepartments,
+  ...pacaDepartments,
+  ...paysDeLoireDepartments
 }

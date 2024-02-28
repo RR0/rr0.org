@@ -1,5 +1,3 @@
-import { Gender } from "./Gender"
-import { CountryCode } from "../org/CountryCode"
 import { Occupation } from "./Occupation"
 import { Time } from "../time/Time"
 import { KnownPeople, People } from "./People"
@@ -12,6 +10,8 @@ import * as path from "path"
 import fs from "fs"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { PeopleFactory } from "./PeopleFactory"
+import { CountryCode } from "../org/country/CountryCode"
+import { Gender } from "@rr0/common"
 
 /**
  * Scan directories for people information, then populates a template with collected data.
@@ -89,11 +89,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     peopleLink.innerHTML = text
     peopleLink.href = `/${dirName}/`
     if (people.discredited) {
-      const lierImg = document.createElement("img")
-      lierImg.title = lierImg.alt = "Discrédité"
-      lierImg.src = "/people/lier.svg"
-      lierImg.className = "people-icon"
-      peopleLink.append(lierImg)
+      peopleLink.append("🤥")
     }
     const elem = document.createElement("span")
     if (titles.length) {

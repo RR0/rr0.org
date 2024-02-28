@@ -1,7 +1,7 @@
-import { Gender } from "../people/Gender"
 import { Occupation } from "../people/Occupation"
 import { PlaceMessages } from "../place/PlaceMessages"
 import { CountryMessagesList } from "../org/CountryMessagesList"
+import { Gender } from "@rr0/common"
 
 export class MessageUtils {
   static plural(n: number, word: string): string {

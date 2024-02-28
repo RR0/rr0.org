@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { idfRegionMessages_fr } from "../../eu/fr/region/idf/IdfRegionMessages_fr"
-import { franceRegions } from "../../eu/fr/region/IleDeFrance"
+import { franceRegions } from "../../eu/fr/region/FranceRegions"
 import { franceMessages_fr } from "../../eu/fr/FranceMessages_fr"
 
 describe("RegionMessages", () => {

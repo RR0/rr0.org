@@ -1,4 +1,4 @@
-import { Gender } from "./Gender"
+import { Gender } from "@rr0/common"
 
 export let peopleMessages_en = {
   occupation: {

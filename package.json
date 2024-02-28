@@ -21,7 +21,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/fufora/FuforaCaseSource.test.ts",
+    "test-one": "tsx time/datasource/geipan/GeipanCaseSource.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {

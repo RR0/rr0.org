@@ -3,7 +3,7 @@ import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { NuforcCase, NuforcCountry, NuforcShape, NuforcState } from "./NuforcCase"
-import assert from "assert"
+import { ObjectUtil } from "../../../util/ObjectUtil"
 
 interface QueryParameters {
   id: string
@@ -39,9 +39,9 @@ export class NuforcCaseSource extends HttpCaseSource<NuforcCase> {
   }
 
   protected getNativeCase(context: RR0SsgContext, row: Element): NuforcCase {
-    const dateFormat = /(\d\d)\/(\d\d)\/(\d\d\d\d) (\d\d):(\d\d)/
     const fields = row.querySelectorAll("td")
     const caseLink = fields[0].firstElementChild as HTMLAnchorElement
+    const dateFormat = /(\d\d)\/(\d\d)\/(\d\d\d\d) (\d\d):(\d\d)/
     const dateFields = dateFormat.exec(fields[1].textContent)
     const itemContext = context.clone()
     const itemTime = itemContext.time
@@ -55,14 +55,12 @@ export class NuforcCaseSource extends HttpCaseSource<NuforcCase> {
     itemTime.setMinutes(minutes)
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "?", "id"), 10)
-    const stateStr = fields[3].textContent
-    const stateEntry = Object.entries(NuforcState).find(entry => entry[1] == stateStr)
-    assert.ok(stateEntry, `Could not find NuforcState with value "${stateStr}"`)
+    const state = ObjectUtil.valueFromKey(NuforcState, fields[3].textContent)
     return {
       caseNumber,
       url,
       city: fields[2].textContent,
-      state: NuforcState[stateEntry[0]],
+      state,
       country: NuforcCountry[fields[4].textContent],
       dateTime: itemTime,
       shape: NuforcShape[fields[5].textContent],

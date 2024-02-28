@@ -1,5 +1,5 @@
 import { sarthe } from "./72/Sarthe"
 
-export const pdlDepartments = {
+export const paysDeLoireDepartments = {
   sarthe
 }

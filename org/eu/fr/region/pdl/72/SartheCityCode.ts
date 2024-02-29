@@ -1,3 +1,4 @@
 export enum SartheCityCode {
-  LeMans = 72000
+  LeMans = 72000,
+  SteCerotte = 72272
 }

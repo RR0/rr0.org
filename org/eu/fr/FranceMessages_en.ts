@@ -8,12 +8,14 @@ import { bourgogneFrancheComteMessages } from "./region/bfc/BourgogneFrancheComt
 import { occitanieMessages_en } from "./region/occ/OccitanieMessages_en"
 import { hautsDeFranceMessages } from "./region/hdf/HautsDeFranceMessages"
 import { normandieMessages_fr } from "./region/nor/NormandieMessages_fr"
+import { grandEstMessages } from "./region/ges/GrandEstMessages"
 
 export const franceMessages_en = new FranceMessages(
   "France",
   {
     ara: auvergneRhoneAlpesMessages,
     bfc: bourgogneFrancheComteMessages,
+    ges: grandEstMessages,
     idf: idfMessages,
     hdf: hautsDeFranceMessages,
     nor: normandieMessages_fr,

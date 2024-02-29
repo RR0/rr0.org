@@ -36,9 +36,9 @@ export class GeipanRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCase
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
-    const stateCode = String(sourceCase.depCode)
-    const state = this.departmentService.get(stateCode, undefined)
-    assert.ok(state, `Could not find department with code "${stateCode}" in country "${france.code}"`)
+    const depCode = String(sourceCase.depCode)
+    const dep = this.departmentService.get(depCode, undefined)
+    assert.ok(dep, `Could not find department with code "${depCode}" in country "${france.code}"`)
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)
     const placeName = placeItems[1]
     const city = this.cityService.find(context, placeName, undefined)

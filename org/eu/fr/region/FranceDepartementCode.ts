@@ -9,6 +9,7 @@ export enum FranceDepartementCode {
   Herault = "34",
   Landes = "40",
   Loire = "42",
+  MeurtheEtMoselle = "54",
   Nord = "59",
   Oise = "60",
   PuyDeDome = "63",

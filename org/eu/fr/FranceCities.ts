@@ -7,14 +7,16 @@ import { City } from "../../country/region/department/city/City"
 import { bourgogneFrancheComteCities } from "./region/bfc/BourgogneFrancheComteCities"
 import { occitanieCities } from "./region/occ/OccitanieCities"
 import { hautsDeFranceCities } from "./region/hdf/HautsDeFranceCities"
+import { grandEstCities } from "./region/ges/GrandEstCities"
 
 export const franceCities: City[] = [
   ...auvergneRhoneAlpesCities,
   ...bourgogneFrancheComteCities,
+  ...grandEstCities,
   ...idfCities,
   ...hautsDeFranceCities,
   ...pacaCities,
   ...nouvelleAquitaineCities,
   ...occitanieCities,
-  ...paysDeLoireCities,
+  ...paysDeLoireCities
 ]

@@ -8,10 +8,12 @@ import { bourgogneFrancheComteDepartments } from "./bfc/BourgogneFrancheComteDep
 import { occitanieDepartments } from "./occ/OccitanieDepartments"
 import { Department } from "../../../country/region/department/Department"
 import { hautsDeFranceDepartments } from "./hdf/HautsDeFranceDepartments"
+import { grandEstDepartments } from "./ges/GrandEstDepartments"
 
 export const franceDepartments: Department[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
+  ...grandEstDepartments,
   ...idfDepartments,
   ...hautsDeFranceDepartments,
   ...normandieDepartments,

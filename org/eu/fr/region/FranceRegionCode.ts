@@ -43,4 +43,9 @@ export enum FranceRegionCode {
    * Hauts-de-France
    */
   hdf = "hdf",
+
+  /**
+   * Grand Est
+   */
+  ges = "ges",
 }

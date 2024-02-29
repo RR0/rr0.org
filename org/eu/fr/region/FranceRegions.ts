@@ -8,10 +8,12 @@ import { bourgogneFrancheComte } from "./bfc/BourgogneFrancheComte"
 import { occitanie } from "./occ/Occitanie"
 import { Region } from "../../../country/region/Region"
 import { hautsDeFrance } from "./hdf/HautsDeFrance"
+import { grandEst } from "./ges/GrandEst"
 
 export const franceRegions: Region[] = [
   auvergneRhoneAlpes,
   bourgogneFrancheComte,
+  grandEst,
   hautsDeFrance,
   ileDeFrance,
   nouvelleAquitaine,

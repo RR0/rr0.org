@@ -8,11 +8,13 @@ import { nouvelleAquitaineCities } from "./region/naq/NouvelleAquitaineCities"
 import { City } from "../../country/region/department/city/City"
 import { bourgogneFrancheComteCities } from "./region/bfc/BourgogneFrancheComteCities"
 import { occitanieCities } from "./region/occ/OccitanieCities"
+import { hautsDeFranceCities } from "./region/hdf/HautsDeFranceCities"
 
 export const franceCities: { [p: string]: City } = {
   ...auvergneRhoneAlpesCities,
   ...bourgogneFrancheComteCities,
   ...idfCities,
+  ...hautsDeFranceCities,
   ...pacaCities,
   ...nouvelleAquitaineCities,
   ...occitanieCities,

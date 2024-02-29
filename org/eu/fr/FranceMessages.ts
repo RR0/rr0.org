@@ -9,11 +9,13 @@ import { DepartmentMessages } from "../../country/region/department/DepartmentMe
 import { OccitanieDepartementCode } from "./region/occ/OccitanieDepartementCode"
 import { NouvelleAquitaineDepartmentCode } from "./region/naq/NouvelleAquitaineDepartmentCode"
 import { CountryMessages } from "../../country/CountryMessages"
+import { HautsDeFranceDepartmentCode } from "./region/hdf/HautsDeFranceDepartmentCode"
 
 export type FranceRegionsMessagesList = {
   ara: RegionMessages<AuvergneRhoneAlpesDepartmentMessagesList>
   bfc: RegionMessages<BourgogneFrancheComteDepartmentMessagesList>
   idf: RegionMessages<IdfDepartmentMessagesList>
+  hdf: RegionMessages<{ [key in HautsDeFranceDepartmentCode]: DepartmentMessages }>
   nor: RegionMessages<NorDepartmentMessagesList>
   pac: RegionMessages<{ [key in PacaDepartementCode]: DepartmentMessages }>
   pdl: RegionMessages<PdlDepartmentMessagesList>

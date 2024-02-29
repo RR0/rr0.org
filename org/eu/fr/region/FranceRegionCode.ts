@@ -37,5 +37,10 @@ export enum FranceRegionCode {
   /**
    * Normandie
    */
-  nor = "nor"
+  nor = "nor",
+
+  /**
+   * Hauts-de-France
+   */
+  hdf = "hdf",
 }

@@ -8,7 +8,7 @@ import { StringUtil } from "../../../../../util/string/StringUtil"
  */
 export class CityService {
 
-  constructor(readonly cities: { [p: string]: City }) {
+  constructor(readonly cities: City[]) {
   }
 
   normalizeName(name: string): string {
@@ -16,7 +16,7 @@ export class CityService {
   }
 
   find(context: RR0SsgContext, nameToFind: string, dep: Department): City | undefined {
-    return Object.values(this.cities).find(city => {
+    return this.cities.find(city => {
       const cityMessages = city.messages(context)
       let found = Boolean(cityMessages)
       if (found) {

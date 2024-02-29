@@ -24,13 +24,13 @@ export class RegionService {
   }
 }
 
-export const regions = {
+export const regions: Region[] = [
   ...australiaRegions,
   ...canadaRegions,
   ...finlandRegions,
   ...franceRegions,
   ...indiaRegions,
   ...usaRegions
-}
+]
 
 export const regionService = new RegionService(regions)

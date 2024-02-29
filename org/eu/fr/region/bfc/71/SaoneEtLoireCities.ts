@@ -1,3 +1,3 @@
 import { City } from "../../../../../country/region/department/city/City"
 
-export const saoneEtLoireCities: { [p: string]: City } = {}
+export const saoneEtLoireCities: City[] = []

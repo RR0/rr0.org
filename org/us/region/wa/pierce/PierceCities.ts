@@ -1,6 +1,6 @@
 import { bonneyLake } from "./bonneylake/BonneyLake"
-import { City } from "../../../../../country/region/department/city/City"
+import { City } from "../../../../country/region/department/city/City"
 
-export const pierceCities: { [key: string]: City } = {
+export const pierceCities: City[] = [
   bonneyLake
-}
+]

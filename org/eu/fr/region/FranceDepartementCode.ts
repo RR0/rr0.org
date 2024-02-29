@@ -15,6 +15,7 @@ export enum FranceDepartementCode {
   Rhone = "69",
   SaoneEtLoire = "71",
   Sarthe = "72",
+  Var = "83",
   Vaucluse = "84",
   HautsDeSeine = "92",
 }

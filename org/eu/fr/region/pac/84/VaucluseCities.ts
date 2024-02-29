@@ -1,6 +1,6 @@
 import { City } from "../../../../../country/region/department/city/City"
 import { bollene } from "./bollene/Bollene"
 
-export const vaucluseCities: { [key: string]: City } = {
+export const vaucluseCities: City[] = [
   bollene
-}
+]

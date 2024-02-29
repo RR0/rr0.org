@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { RR0SsgContext } from "../../../../RR0SsgContext"
 import { rr0TestUtil } from "../../../../test/RR0TestUtil"
-import { franceDepartments } from "../../../eu/fr/region/FranceDepartments"
-import { hautDeSeineDepartmentMessages_fr } from "../../../eu/fr/region/idf/92/HautDeSeineDepartmentMessages_fr"
-import { idfRegionMessages_fr } from "../../../eu/fr/region/idf/IdfRegionMessages_fr"
+import { idfMessages } from "../../../eu/fr/region/idf/IdfMessages"
 import { franceMessages_fr } from "../../../eu/fr/FranceMessages_fr"
+import { hautsDeSeineMessages } from "../../../eu/fr/region/idf/92/HautsDeSeineMessages"
+import { hautsDeSeine } from "../../../eu/fr/region/idf/92/HautsDeSeine"
 
 describe("DepartmentMessages", () => {
 
@@ -15,18 +15,16 @@ describe("DepartmentMessages", () => {
   })
 
   test("toTitle", () => {
-    expect(hautDeSeineDepartmentMessages_fr.toTitle(context, franceDepartments.HautDeSeine)).toBe(
-      hautDeSeineDepartmentMessages_fr.title)
+    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine)).toBe(hautsDeSeineMessages.title)
   })
 
   test("toTitle with region", () => {
-    expect(hautDeSeineDepartmentMessages_fr.toTitle(context, franceDepartments.HautDeSeine, {region: true})).toBe(
-      `${hautDeSeineDepartmentMessages_fr.title}, ${idfRegionMessages_fr.title}`)
+    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {region: true})).toBe(
+      `${hautsDeSeineMessages.title}, ${idfMessages.title}`)
   })
 
   test("toTitle with region and country", () => {
-    expect(hautDeSeineDepartmentMessages_fr.toTitle(context, franceDepartments.HautDeSeine,
-      {region: true, country: true})).toBe(
-      `${hautDeSeineDepartmentMessages_fr.title}, ${idfRegionMessages_fr.title}, ${franceMessages_fr.title}`)
+    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {region: true, country: true})).toBe(
+      `${hautsDeSeineMessages.title}, ${idfMessages.title}, ${franceMessages_fr.title}`)
   })
 })

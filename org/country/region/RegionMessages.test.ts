@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { idfRegionMessages_fr } from "../../eu/fr/region/idf/IdfRegionMessages_fr"
+import { idfRegionMessages_fr } from "../../eu/fr/region/idf/IdfMessages"
 import { franceMessages_fr } from "../../eu/fr/FranceMessages_fr"
 import { ileDeFrance } from "../../eu/fr/region/idf/Idf"
 

@@ -1,6 +1,6 @@
 import { City } from "../../../../../country/region/department/city/City"
-import { leMans72 } from "./LeMans"
+import { leMans72 } from "./lemans/LeMans"
 
-export const sartheCities: { [key: string]: City } = {
+export const sartheCities: City[] = [
   leMans72
-}
+]

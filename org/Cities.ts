@@ -5,11 +5,11 @@ import { finlandCities } from "./eu/fi/FinlandCities"
 import { usaCities } from "./us/region/UsaCities"
 import { CityService } from "./country/region/department/city/CityService"
 
-export const cities: { [p: string]: City } = {
+const cities: City[] = [
   ...canadaCities,
   ...franceCities,
   ...finlandCities,
   ...usaCities
-}
+]
 
 export const cityService = new CityService(cities)

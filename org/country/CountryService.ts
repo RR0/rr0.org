@@ -4,7 +4,7 @@ import { france } from "../eu/fr/France"
 import { finland } from "../eu/fi/Finland"
 import { canada } from "../ca/Canada"
 import { usa } from "../us/Usa"
-import { australia } from "../au/Country_au"
+import { australia } from "../au/Australia"
 import { india } from "../in/Country_in"
 
 export class CountryService {

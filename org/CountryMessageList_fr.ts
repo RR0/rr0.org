@@ -3,9 +3,8 @@ import { franceMessages_fr } from "./eu/fr/FranceMessages_fr"
 import { usaMessages_fr } from "./us/UsaMessages_fr"
 import { finlandMessages_fr } from "./eu/fi/FinlandMessages_fr"
 import { CountryMessages } from "./country/CountryMessages"
-import { RegionMessages } from "./country/region/RegionMessages"
-import { canadaRegions } from "./ca/region/CanadaRegions"
 import { canadaMessages_fr } from "./ca/CanadaMessages_fr"
+import { australiaMessages_fr } from "./au/AustraliaMessages_fr"
 
 /**
  * Country messages in French language.
@@ -13,7 +12,7 @@ import { canadaMessages_fr } from "./ca/CanadaMessages_fr"
 export const countryMessageList_fr: CountryMessagesList = {
   at: new CountryMessages("Autriche"),
   ar: new CountryMessages("Argentine"),
-  au: new CountryMessages("Australie"),
+  au: australiaMessages_fr,
   be: new CountryMessages("Belgique"),
   br: new CountryMessages("Brésil"),
   ca: canadaMessages_fr,

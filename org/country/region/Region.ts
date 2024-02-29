@@ -1,6 +1,5 @@
 import { FranceRegionCode } from "../../eu/fr/region/FranceRegionCode"
 import { RegionCode_in } from "../../in/RegionCode_in"
-import { RegionCode_au } from "../../au/RegionCode_au"
 import { Organization } from "../../index"
 import { RegionMessages } from "./RegionMessages"
 import { Country } from "../Country"
@@ -10,15 +9,16 @@ import { FinlandRegionCode } from "../../eu/fi/region/FinlandRegionCode"
 import { UsaRegionCode } from "../../us/region/UsaRegionCode"
 import * as assert from "assert"
 import { CanadaRegionCode } from "../../ca/region/CanadaRegionCode"
+import { AustraliaRegionCode } from "../../au/region/AustraliaRegionCode"
 
 export type RegionCode_eu = FranceRegionCode | FinlandRegionCode
 
-export type RegionCode = RegionCode_eu | UsaRegionCode | CanadaRegionCode | RegionCode_in | RegionCode_au
+export type RegionCode = RegionCode_eu | UsaRegionCode | CanadaRegionCode | RegionCode_in | AustraliaRegionCode
 
 export class Region extends Organization<RegionMessages<any>> {
 
-  constructor(readonly code: RegionCode, readonly country: Country, places: Place[], dirName: string) {
-    super(places, dirName)
+  constructor(code: RegionCode, readonly country: Country, places: Place[]) {
+    super(code, places, country)
   }
 
   messages(context: RR0SsgContext): RegionMessages<any> {

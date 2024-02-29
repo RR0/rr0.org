@@ -1,4 +1,3 @@
-import path from "path"
 import * as assert from "assert"
 import { CityMessageOptions, CityMessages } from "./CityMessages"
 import { Organization } from "../../../../index"
@@ -8,14 +7,14 @@ import { RR0SsgContext } from "../../../../../RR0SsgContext"
 
 export class City extends Organization<CityMessages> {
 
-  constructor(readonly zipCode: string, place: Place, readonly departement: Department) {
-    super([place], path.join(departement.dirName, zipCode))
+  constructor(code: string, place: Place, parent: Department) {
+    super(code, [place], parent)
   }
 
   messages(context: RR0SsgContext): CityMessages {
-    const messages = this.departement.messages(context).city[this.zipCode]
+    const messages = this.parent.messages(context).city[this.code]
     assert.ok(messages,
-      `Could not find messages for city with code "${this.zipCode}" in messages for department "${this.departement.code}"`)
+      `Could not find messages for city with code "${this.code}" in messages for department "${this.parent.code}"`)
     return messages
   }
 

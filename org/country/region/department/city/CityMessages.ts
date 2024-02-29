@@ -4,10 +4,11 @@ import { DepartmentMessagesOptions } from "../DepartmentMessages"
 import assert from "assert"
 
 export interface CityMessageOptions extends DepartmentMessagesOptions {
-  department: boolean
+  parent: boolean
 }
 
 export class CityMessages {
+
   readonly titles: string[]
 
   /**
@@ -27,10 +28,10 @@ export class CityMessages {
     const options = Object.assign({region: false, country: false}, opts)
     const cityMessages = city.messages(context)
     assert.ok(cityMessages,
-      `Could not find name of city with ZIP code "${city.zipCode}" in departement "${city.departement.code}"`)
+      `Could not find name of city with ZIP code "${city.code}" in departement "${city.parent.code}"`)
     let str = cityMessages.title
-    if (options.department) {
-      const departement = city.departement
+    if (options.parent) {
+      const departement = city.parent
       const depMessages = departement.messages(context)
       str += ` (${depMessages.toTitle(context, departement, options)})`
     }

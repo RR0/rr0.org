@@ -18,7 +18,7 @@ export class CityService {
       let found = Boolean(cityMessages)
       if (found) {
         const cityNameToFind = this.normalizeName(nameToFind)
-        const foundDep = !dep?.code || dep.code === city.departement.code
+        const foundDep = !dep?.code || dep.code === city.parent.code
         found = false
         for (let i = 0; !found && i < cityMessages.titles.length; i++) {
           const knownCityName = this.normalizeName(cityMessages.titles[i])

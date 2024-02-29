@@ -1,7 +1,6 @@
-import { RegionsMessagesList } from "./region/RegionsMessagesList"
 import { RR0SsgContext } from "../../RR0SsgContext"
 
-export class CountryMessages<R extends RegionsMessagesList = RegionsMessagesList> {
+export class CountryMessages<R> {
   /**
    * Creates a new set of messages for a given country.
    *

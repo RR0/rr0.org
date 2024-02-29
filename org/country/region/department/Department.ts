@@ -1,4 +1,3 @@
-import path from "path"
 import { DepartmentMessages } from "./DepartmentMessages"
 import { Organization } from "../../../index"
 import { Region } from "../Region"
@@ -13,8 +12,8 @@ export class Department extends Organization<DepartmentMessages> {
    * @param region The above hierarchu.
    * @param place The geographical place of the department.
    */
-  constructor(readonly code: string, readonly region: Region, place: Place) {
-    super([place], path.join(region.dirName, String(code)))
+  constructor(code: string, readonly region: Region, place: Place) {
+    super(code, [place], region)
   }
 
   title(context: RR0SsgContext): string {

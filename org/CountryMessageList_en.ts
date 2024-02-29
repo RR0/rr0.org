@@ -4,11 +4,12 @@ import { usaMessages_en } from "./us/UsaMessages_en"
 import { CountryMessagesList } from "./CountryMessagesList"
 import { CountryMessages } from "./country/CountryMessages"
 import { canadaMessages_en } from "./ca/CanadaMessages_en"
+import { australiaMessages_en } from "./au/AustraliaMessages_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: new CountryMessages("Austria"),
   ar: new CountryMessages("Argentina"),
-  au: new CountryMessages("Australia"),
+  au: australiaMessages_en,
   be: new CountryMessages("Belgium"),
   br: new CountryMessages("Brasil"),
   ca: canadaMessages_en,

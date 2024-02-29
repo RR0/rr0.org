@@ -1,8 +1,7 @@
 import { RegionMessages } from "../../country/region/RegionMessages"
-import { RegionsMessagesList } from "../../country/region/RegionsMessagesList"
 import { CountryMessages } from "../../country/CountryMessages"
 
-export type FinlandRegionsMessagesList = RegionsMessagesList & {
+export type FinlandRegionsMessagesList = {
   nk: RegionMessages
 }
 

@@ -6,7 +6,7 @@ import { CityService } from "../../../org/country/region/department/city/CitySer
 import { NamedPlace, RR0Case } from "../../RR0Case"
 import assert from "assert"
 import { CountryService } from "../../../org/country/CountryService"
-import { australia } from "../../../org/au/Country_au"
+import { australia } from "../../../org/au/Australia"
 import { canada } from "../../../org/ca/Canada"
 import { india } from "../../../org/in/Country_in"
 import { usa } from "../../../org/us/Usa"

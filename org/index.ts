@@ -5,12 +5,12 @@ import path from "path"
 import { RR0SsgContext } from "../RR0SsgContext"
 import { RegionMessagesOptions } from "./country/region/RegionMessages"
 
-export abstract class Organization<M> implements Rr0Data {
+export class Organization<M> implements Rr0Data {
 
   readonly dirName: string
 
-  protected constructor(readonly places: Place[], dirName: string) {
-    this.dirName = path.join(orgDirName, dirName)
+  constructor(readonly code: string, readonly places: Place[], readonly parent?: Organization<any>) {
+    this.dirName = path.join(parent?.dirName ?? orgDirName, code)
   }
 
   abstract messages(context: RR0SsgContext): M

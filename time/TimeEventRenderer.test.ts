@@ -14,8 +14,8 @@ describe("TimeEventRenderer", () => {
   test("render event", () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")
     const city = franceCity(92000, Place.fromLocation(48.891944, 2.207222))
-    const dep = city.departement
-    const villeMessages = context.messages.country.fr.region[dep.region.code].department[dep.code].ville[city.zipCode]
+    const dep = city.parent
+    const villeMessages = context.messages.country.fr.region[dep.region.code].department[dep.code].ville[city.code]
     const namedPlace: NamedPlace = {
       place: city.places[0],
       name: villeMessages.toTitle(context, city)

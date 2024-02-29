@@ -4,7 +4,7 @@ import { DepartmentMessages } from "../../../../country/region/department/Depart
 import { CityMessagesList } from "../../../../country/region/department/city/CityMessagesList"
 import { IdfDepartmentCode } from "./IdfDepartmentCode"
 import { oiseMessages } from "./60/OiseCityMessages"
-
+import { parisMessages } from "./75/ParisCityMessages"
 
 export interface IdfDepartementMessages extends DepartmentMessages {
   city: CityMessagesList
@@ -13,8 +13,9 @@ export interface IdfDepartementMessages extends DepartmentMessages {
 export type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: IdfDepartementMessages }
 
 export const idfDepartmentMessages: IdfDepartmentMessagesList = {
-  60: oiseMessages,
-  92: hautsDeSeineMessages
+  [IdfDepartmentCode.Oise]: oiseMessages,
+  [IdfDepartmentCode.HautsDeSeine]: hautsDeSeineMessages,
+  [IdfDepartmentCode.Paris]: parisMessages
 }
 
 export const idfMessages = new RegionMessages<IdfDepartmentMessagesList>("Île-de-France", idfDepartmentMessages)

@@ -18,8 +18,11 @@ export enum NuforcState {
   Maine = "ME",
   Maryland = "MD",
   Massachussets = "MA",
-  Mississippi = "MI",
-  Montana = "MO",
+  Michigan = "MI",
+  Minnesota = "MN",
+  Mississippi = "MS",
+  Missouri = "MO",
+  Montana = "MT",
   Nebraska = "NE",
   NewHampshire = "NH",
   NewMexico = "NM",
@@ -42,6 +45,11 @@ export enum NuforcState {
    * Québec (Canada)
    */
   Quebec = "QC",
+
+  /**
+   * Ontario (Canada)
+   */
+  Ontario = "ON",
 
   SouthCarolina = "SC",
   Tennessee = "TN",

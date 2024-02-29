@@ -89,7 +89,8 @@ export class PeopleDirectoryStep extends DirectoryStep {
     peopleLink.innerHTML = text
     peopleLink.href = `/${dirName}/`
     if (people.discredited) {
-      peopleLink.append("🤥")
+      peopleLink.append(" 🤥")
+      titles.push("discrédité")
     }
     const elem = document.createElement("span")
     if (titles.length) {

@@ -15,6 +15,6 @@ export class CountryMessages<R> {
   }
 
   cityName(cityStr: string): string {
-    return cityStr
+    return cityStr.trim()
   }
 }

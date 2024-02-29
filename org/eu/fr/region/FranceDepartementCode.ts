@@ -3,6 +3,7 @@ export enum FranceDepartementCode {
   AlpesMaritimes = "06",
   Calvados = "14",
   Charente = "16",
+  CharenteMaritime = "17",
   Creuse = "23",
   Gers = "32",
   Herault = "34",

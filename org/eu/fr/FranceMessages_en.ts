@@ -1,15 +1,14 @@
-import { FranceRegionsMessagesList } from "./FranceMessages"
+import { FranceMessages } from "./FranceMessages"
 import { auvergneRhoneAlpesMessages } from "./region/ara/AuvergneRhoneAlpesMessages"
 import { idfRegionMessages_fr } from "./region/idf/IdfRegionMessages_fr"
 import { norRegionMessages_fr } from "./region/nor/NorRegionMessages_fr"
 import { pacaMessages } from "./region/pac/PacaMessages"
 import { pdlRegionMessages_fr } from "./region/pdl/PdlRegionMessages_fr"
 import { nouvelleAquitaineMessages } from "./region/naq/NouvelleAquitaineMessages"
-import { CountryMessages } from "../../country/CountryMessages"
 import { bourgogneFrancheComteMessages } from "./region/bfc/BourgogneFrancheComteMessages"
 import { occitanieMessages_en } from "./region/occ/OccitanieMessages_en"
 
-export const franceMessages_en = new CountryMessages<FranceRegionsMessagesList>(
+export const franceMessages_en = new FranceMessages(
   "France",
   {
     ara: auvergneRhoneAlpesMessages,

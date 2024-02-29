@@ -4,11 +4,13 @@ import { creuseMessages } from "./23/CreuseCityMessages"
 import { charenteMessages } from "./16/CharenteMessages"
 import { NouvelleAquitaineDepartmentCode } from "./NouvelleAquitaineDepartmentCode"
 import { landesMessages } from "./40/LandesMessages"
+import { charenteMaritimeMessages } from "./17/CharenteMaritimeMessages"
 
 export type NouvelleAquitaineDepartmentMessagesList = { [key in NouvelleAquitaineDepartmentCode]: DepartmentMessages }
 
 export const nouvelleAquitaineMessageList: NouvelleAquitaineDepartmentMessagesList = {
   [NouvelleAquitaineDepartmentCode.Charente]: charenteMessages,
+  [NouvelleAquitaineDepartmentCode.CharenteMaritime]: charenteMaritimeMessages,
   [NouvelleAquitaineDepartmentCode.Creuse]: creuseMessages,
   [NouvelleAquitaineDepartmentCode.Landes]: landesMessages
 }

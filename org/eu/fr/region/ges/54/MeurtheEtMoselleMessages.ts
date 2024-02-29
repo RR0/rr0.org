@@ -2,13 +2,15 @@ import { DepartmentMessages } from "../../../../../country/region/department/Dep
 import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 import { MeurtheEtMoselleCityCode } from "./MeurtheEtMoselleCityCode"
 import { cosnesEtRomainMessages } from "./cosnesetromain/CosnesEtRomainMessages"
+import { nancyMessages } from "./nancy/NancyMessages"
 
 export type MeurtheEtMoselleCityList<T> = {
   [key in MeurtheEtMoselleCityCode]: T
 }
 
 export const meurtheEtMoselleCityMessages: MeurtheEtMoselleCityList<CityMessages> = {
-  [MeurtheEtMoselleCityCode.CosnesEtRomain]: cosnesEtRomainMessages
+  [MeurtheEtMoselleCityCode.CosnesEtRomain]: cosnesEtRomainMessages,
+  [MeurtheEtMoselleCityCode.Nancy]: nancyMessages
 }
 
 export const meurtheEtMoselleMessages = new DepartmentMessages<MeurtheEtMoselleCityList<CityMessages>>(

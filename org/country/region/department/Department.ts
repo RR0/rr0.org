@@ -5,6 +5,9 @@ import { Place } from "../../../../place/Place"
 import { RR0SsgContext } from "../../../../RR0SsgContext"
 import assert from "assert"
 
+/**
+ * @deprecated
+ */
 export class Department extends Organization<DepartmentMessages> {
   /**
    *

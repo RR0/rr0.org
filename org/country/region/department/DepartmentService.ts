@@ -4,6 +4,9 @@ import { finlandDepartments } from "../../../eu/fi/FinlandDepartments"
 import { Region } from "../Region"
 import { usaDepartments } from "../../../us/region/UsaDepartments"
 
+/**
+ * @deprecated
+ */
 export class DepartmentService {
 
   constructor(readonly departments: Department[]) {

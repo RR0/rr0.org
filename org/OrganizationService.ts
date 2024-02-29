@@ -1,5 +1,5 @@
-import {Organization} from "./index"
-import {Place} from "../place/Place"
+import { Organization } from "./index"
+import { Place } from "../place/Place"
 import fs from "fs"
 
 export class OrganizationService {
@@ -9,7 +9,7 @@ export class OrganizationService {
   constructor(readonly rootDir: string) {
   }
 
-  async read(fileName: string): Promise<Organization> {
+  async read(fileName: string): Promise<Organization<any>> {
     const fileBuffer = fs.readFileSync(this.rootDir + fileName)
     const place = JSON.parse(fileBuffer.toString())
     this.cache.set(place.title, place)

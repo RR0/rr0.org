@@ -1,12 +1,15 @@
 import { Region } from "./Region"
 import { Country } from "../Country"
 import { franceRegions } from "../../eu/fr/region/FranceRegions"
-import { australiaRegions } from "../../au/AustraliaRegions"
 import { indiaRegions } from "../../in/IndiaRegions"
 import { finlandRegions } from "../../eu/fi/region/FinlandRegions"
 import { usaRegions } from "../../us/region/UsaRegions"
 import { canadaRegions } from "../../ca/region/CanadaRegions"
+import { australiaRegions } from "../../au/region/AustraliaRegions"
 
+/**
+ * @deprecated
+ */
 export class RegionService {
 
   constructor(protected regions: Region[]) {

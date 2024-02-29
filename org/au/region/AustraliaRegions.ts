@@ -1,6 +1,6 @@
-import { Region } from "../../country/region/Region"
 import { westernAustralia } from "./wa/WesternAustralia"
+import { Organization } from "../../index"
 
-export const australiaRegions: Region[] = [
+export const australiaRegions: Organization<any>[] = [
   westernAustralia
 ]

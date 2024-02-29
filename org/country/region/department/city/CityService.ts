@@ -3,6 +3,9 @@ import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { Department } from "../Department"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 
+/**
+ * @deprecated
+ */
 export class CityService {
 
   constructor(readonly cities: { [p: string]: City }) {

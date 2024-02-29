@@ -6,9 +6,12 @@ import { Organization } from "../index"
 import { Place } from "../../place/Place"
 import { Region } from "./region/Region"
 
+/**
+ * @deprecated
+ */
 export class Country<M extends CountryMessages<Region> = CountryMessages<Region>> extends Organization<M> {
 
-  constructor(readonly code: CountryCode, places: Place[]) {
+  constructor(code: CountryCode, places: Place[] = []) {
     super(code, places)
   }
 

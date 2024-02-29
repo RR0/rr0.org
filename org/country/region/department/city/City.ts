@@ -5,6 +5,9 @@ import { Place } from "../../../../../place/Place"
 import { Department } from "../Department"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
 
+/**
+ * @deprecated
+ */
 export class City extends Organization<CityMessages> {
 
   constructor(code: string, place: Place, parent: Department) {

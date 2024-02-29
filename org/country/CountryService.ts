@@ -7,6 +7,9 @@ import { usa } from "../us/Usa"
 import { australia } from "../au/Australia"
 import { india } from "../in/Country_in"
 
+/**
+ * @deprecated
+ */
 export class CountryService {
   /**
    * @param countries

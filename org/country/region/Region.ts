@@ -15,6 +15,9 @@ export type RegionCode_eu = FranceRegionCode | FinlandRegionCode
 
 export type RegionCode = RegionCode_eu | UsaRegionCode | CanadaRegionCode | RegionCode_in | AustraliaRegionCode
 
+/**
+ * @deprecated
+ */
 export class Region extends Organization<RegionMessages<any>> {
 
   constructor(code: RegionCode, readonly country: Country, places: Place[]) {

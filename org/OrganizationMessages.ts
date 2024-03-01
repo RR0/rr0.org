@@ -22,7 +22,7 @@ export class OrganizationMessages {
     return this.titles[0]
   }
 
-  toTitle(context: RR0SsgContext, org: Organization<any>, opts?: Partial<OrganizationMessageOptions>): string {
+  toTitle(context: RR0SsgContext, org: Organization, opts?: Partial<OrganizationMessageOptions>): string {
     const options = Object.assign({region: false, country: false}, opts)
     const cityMessages = org.messages(context)
     assert.ok(cityMessages,
@@ -31,7 +31,7 @@ export class OrganizationMessages {
     return this.toTitleFromName(context, org, title, options)
   }
 
-  toTitleFromName(context: RR0SsgContext, org: Organization<any>, title: string,
+  toTitleFromName(context: RR0SsgContext, org: Organization, title: string,
                   opts?: { country: boolean; region: boolean } & Partial<OrganizationMessageOptions>) {
     const options = Object.assign({region: false, country: false}, opts)
     let str = org.messages(context).cityName(title)

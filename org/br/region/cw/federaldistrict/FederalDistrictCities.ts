@@ -1,6 +1,6 @@
-import { City } from "../../../../country/region/department/city/City"
-import { brasilia } from "./brasilia/Brasilia"
+import { brasilia } from "./70000-000/Brasilia"
+import { Organization } from "../../../../Organization"
 
-export const federalDistrictCities: City[] = [
+export const federalDistrictCities: Organization[] = [
   brasilia
 ]

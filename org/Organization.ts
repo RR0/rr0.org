@@ -4,7 +4,7 @@ import path from "path"
 import { RR0SsgContext } from "../RR0SsgContext"
 import assert from "assert"
 import { OrgMessageOptions } from "./OrgMessages"
-import { TitleMessage } from "./index"
+import { OrganizationMessages } from "./OrganizationMessages"
 
 export enum OrganizationType {
   country = "country",
@@ -13,19 +13,19 @@ export enum OrganizationType {
   city = "city",
 }
 
-export class Organization<M extends TitleMessage> implements Rr0Data {
+export class Organization implements Rr0Data {
 
   readonly dirName: string
 
   constructor(readonly code: string, readonly places: Place[], readonly kind: OrganizationType,
-              readonly parent?: Organization<any>) {
+              readonly parent?: Organization) {
     this.dirName = path.join(parent?.dirName ?? "org/", code)
   }
 
-  messages(context: RR0SsgContext): M {
-    const root = this.parent ? this.parent.messages(context) : context.messages
-    const messageKind = root[this.kind]
-    assert.ok(messageKind, `Could not find messages of kind "${this.kind}" in ${JSON.stringify(root)}`)
+  messages(context: RR0SsgContext): OrganizationMessages {
+    const rootMessages = this.parent ? this.parent.messages(context) : context.messages
+    const messageKind = rootMessages[this.kind]
+    assert.ok(messageKind, `Could not find messages of kind "${this.kind}" in ${JSON.stringify(rootMessages)}`)
     const messages = messageKind[this.code]
     assert.ok(messages, `Could not find messages for org "${this.code}" in messages "${JSON.stringify(messageKind)}"`)
     return messages
@@ -35,9 +35,9 @@ export class Organization<M extends TitleMessage> implements Rr0Data {
     const messages = this.messages(context)
     assert.ok(messages, `Could not find name of org "${this.code}" in parent org "${this.parent.code}"`)
     let str = messages.title
-    if (options.parent) {
+    if (options.parent && this.parent) {
       const parentMessages = this.parent.messages(context)
-      str += ` (${parentMessages.toTitle(context, parent, options)})`
+      str += ` (${parentMessages.toTitle(context, this.parent, options)})`
     }
     return str
   }

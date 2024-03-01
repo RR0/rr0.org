@@ -5,5 +5,6 @@ export enum OccitanieDepartementCode {
   Gers = FranceDepartementCode.Gers,
   HauteGaronne = FranceDepartementCode.HauteGaronne,
   Herault = FranceDepartementCode.Herault,
+  Tarn = FranceDepartementCode.Tarn,
   TarnEtGaronne = FranceDepartementCode.TarnEtGaronne,
 }

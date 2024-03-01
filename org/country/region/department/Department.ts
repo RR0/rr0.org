@@ -1,9 +1,9 @@
 import { DepartmentMessages } from "./DepartmentMessages"
-import { Organization } from "../../../index"
 import { Region } from "../Region"
 import { Place } from "../../../../place/Place"
 import { RR0SsgContext } from "../../../../RR0SsgContext"
 import assert from "assert"
+import { Organization, OrganizationType } from "../../../Organization"
 
 /**
  * @deprecated
@@ -16,7 +16,7 @@ export class Department extends Organization<DepartmentMessages> {
    * @param place The geographical place of the department.
    */
   constructor(code: string, readonly region: Region, place: Place) {
-    super(code, [place], region)
+    super(code, [place], OrganizationType.department, region)
   }
 
   title(context: RR0SsgContext): string {

@@ -5,13 +5,13 @@ import { PacaDepartementCode } from "./region/pac/PacaDepartementCode"
 import { DepartmentMessages } from "../../country/region/department/DepartmentMessages"
 import { OccitanieDepartementCode } from "./region/occ/OccitanieDepartementCode"
 import { NouvelleAquitaineDepartmentCode } from "./region/naq/NouvelleAquitaineDepartmentCode"
-import { CountryMessages } from "../../country/CountryMessages"
 import { HautsDeFranceDepartmentCode } from "./region/hdf/HautsDeFranceDepartmentCode"
 import { NormandieDepartmentCode } from "./region/nor/NormandieDepartmentCode"
 import { IdfDepartmentCode } from "./region/idf/IdfDepartmentCode"
 import { PaysDeLoireDepartementCode } from "./region/pdl/PaysDeLoireDepartementCode"
 import { GrandEstDepartementCode } from "./region/ges/GrandEstDepartementCode"
 import { LaReunionDepartementCode } from "./region/lre/LaReunionDepartementCode"
+import { FrenchOrganizationMessages } from "./FrenchOrganization"
 
 export type FranceRegionsMessagesList = {
   ara: RegionMessages<AuvergneRhoneAlpesDepartmentMessagesList>
@@ -27,12 +27,9 @@ export type FranceRegionsMessagesList = {
   occ: RegionMessages<{ [key in OccitanieDepartementCode]: DepartmentMessages }>
 }
 
-export class FranceMessages extends CountryMessages<FranceRegionsMessagesList> {
+export class FranceMessages extends FrenchOrganizationMessages {
 
-  cityName(cityStr: string): string {
-    return super
-      .cityName(cityStr)
-      .replace(/^sainte/ig, "Ste")
-      .replace(/^saint/ig, "St")
+  constructor(...titles: string[]) {
+    super(...titles)
   }
 }

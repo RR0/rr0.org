@@ -1,8 +1,8 @@
 import { Place } from "../../../../place/Place"
-import { usaRegions } from "../UsaRegions"
 import { UsaDepartementCode } from "../UsaDepartementCode"
 import { Department } from "../../../country/region/department/Department"
+import { newMexico } from "./NewMexico"
 
-export const nmDepartments = {
-  Chaves: new Department(UsaDepartementCode.chaves, usaRegions.NewMexico, Place.fromLocation(48, 0.316667))
+export const newMexicoDepartments = {
+  Chaves: new Department(UsaDepartementCode.chaves, newMexico, Place.fromLocation(48, 0.316667))
 }

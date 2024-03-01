@@ -1,9 +1,9 @@
 import * as assert from "assert"
 import { CityMessageOptions, CityMessages } from "./CityMessages"
-import { Organization } from "../../../../index"
 import { Place } from "../../../../../place/Place"
 import { Department } from "../Department"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
+import { Organization, OrganizationType } from "../../../../Organization"
 
 /**
  * @deprecated
@@ -11,7 +11,7 @@ import { RR0SsgContext } from "../../../../../RR0SsgContext"
 export class City extends Organization<CityMessages> {
 
   constructor(code: string, place: Place, parent: Department) {
-    super(code, [place], parent)
+    super(code, [place], OrganizationType.city, parent)
   }
 
   messages(context: RR0SsgContext): CityMessages {

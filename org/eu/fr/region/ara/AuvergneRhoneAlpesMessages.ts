@@ -1,8 +1,6 @@
 import { auvergneRhoneAlpesDepartementsMessageList } from "./AuvergneRhoneAlpesDepartementsMessageList"
-import { RegionMessages } from "../../../../country/region/RegionMessages"
-import { AuvergneRhoneAlpesDepartmentMessagesList } from "./AuvergneRhoneAlpesDepartmentMessagesList"
+import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { OrganizationType } from "../../../../Organization"
 
-export const auvergneRhoneAlpesMessages = new RegionMessages<AuvergneRhoneAlpesDepartmentMessagesList>(
-  "Pays-de-la-Loire",
-  auvergneRhoneAlpesDepartementsMessageList
-)
+export const auvergneRhoneAlpesMessages = new OrganizationMessages("Pays-de-la-Loire")
+auvergneRhoneAlpesMessages[OrganizationType.department] = auvergneRhoneAlpesDepartementsMessageList

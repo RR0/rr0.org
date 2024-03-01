@@ -1,12 +1,12 @@
-import {PlaceReplacer} from "./PlaceReplacer"
-import {PlaceService} from "./PlaceService"
+import { PlaceReplacer } from "./PlaceReplacer"
+import { PlaceService } from "./PlaceService"
 import { Elevation, Place } from "./Place"
-import {OrganizationService} from "../org/OrganizationService"
-import {Organization} from "../org"
-import {SsgContext} from "ssg-api"
-import {rr0TestUtil} from "../test/RR0TestUtil"
-import { describe, expect, test } from '@javarome/testscript';
+import { OrganizationService } from "../org/OrganizationService"
+import { SsgContext } from "ssg-api"
+import { rr0TestUtil } from "../test/RR0TestUtil"
+import { describe, expect, test } from "@javarome/testscript"
 import { PlaceLocation } from "./PlaceLocation"
+import { Organization } from "../org/Organization"
 
 class MockPlaceService extends PlaceService {
 

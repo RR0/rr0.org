@@ -2,9 +2,9 @@ import { CountryCode } from "./CountryCode"
 import { CountryMessages } from "./CountryMessages"
 import { RR0SsgContext } from "../../RR0SsgContext"
 import * as assert from "assert"
-import { Organization } from "../index"
 import { Place } from "../../place/Place"
 import { Region } from "./region/Region"
+import { Organization, OrganizationType } from "../Organization"
 
 /**
  * @deprecated
@@ -12,7 +12,7 @@ import { Region } from "./region/Region"
 export class Country<M extends CountryMessages<Region> = CountryMessages<Region>> extends Organization<M> {
 
   constructor(code: CountryCode, places: Place[] = []) {
-    super(code, places)
+    super(code, places, OrganizationType.country)
   }
 
   title(context: RR0SsgContext): string {

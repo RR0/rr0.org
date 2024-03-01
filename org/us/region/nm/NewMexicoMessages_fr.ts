@@ -1,7 +1,7 @@
 import { CityMessages } from "../../../country/region/department/city/CityMessages"
 import { RegionMessages } from "../../../country/region/RegionMessages"
 
-export const nmMessages_fr = new RegionMessages(
+export const newMexicoMessages_fr = new RegionMessages(
   "Nouveau-Mexique",
   {
     chaves: {

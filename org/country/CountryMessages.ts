@@ -1,6 +1,7 @@
 import { RR0SsgContext } from "../../RR0SsgContext"
+import { TitleMessage } from "../index"
 
-export class CountryMessages<R> {
+export class CountryMessages<R> implements TitleMessage {
   /**
    * Creates a new set of messages for a given country.
    *

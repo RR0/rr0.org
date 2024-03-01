@@ -10,20 +10,21 @@ import { hautsDeFranceMessages } from "./region/hdf/HautsDeFranceMessages"
 import { normandieMessages_fr } from "./region/nor/NormandieMessages_fr"
 import { grandEstMessages } from "./region/ges/GrandEstMessages"
 import { laReunionMessages_fr } from "./region/lre/LaReunionMessages_fr"
+import { OrganizationType } from "../../Organization"
 
 export const franceMessages_fr = new FranceMessages(
-  "France",
-  {
-    ara: auvergneRhoneAlpesMessages,
-    bfc: bourgogneFrancheComteMessages,
-    ges: grandEstMessages,
-    idf: idfMessages,
-    hdf: hautsDeFranceMessages,
-    lre: laReunionMessages_fr,
-    nor: normandieMessages_fr,
-    pac: pacaMessages,
-    pdl: paysDeLoireMessages,
-    naq: nouvelleAquitaineMessages,
-    occ: occitanieMessages_fr
-  }
+  "France"
 )
+franceMessages_fr[OrganizationType.region] = {
+  ara: auvergneRhoneAlpesMessages,
+  bfc: bourgogneFrancheComteMessages,
+  ges: grandEstMessages,
+  idf: idfMessages,
+  hdf: hautsDeFranceMessages,
+  lre: laReunionMessages_fr,
+  nor: normandieMessages_fr,
+  pac: pacaMessages,
+  pdl: paysDeLoireMessages,
+  naq: nouvelleAquitaineMessages,
+  occ: occitanieMessages_fr
+}

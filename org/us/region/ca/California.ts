@@ -1,6 +1,6 @@
-import { usaRegion } from "../UsaRegion"
 import { UsaRegionCode } from "../UsaRegionCode"
 import { Place } from "../../../../place/Place"
+import { usaRegion } from "../../Usa"
 
 export const california = usaRegion(
   UsaRegionCode.ca,

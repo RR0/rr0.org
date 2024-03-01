@@ -1,6 +1,5 @@
 import { UsaRegionCode } from "./UsaRegionCode"
 import { Place } from "../../../place/Place"
-import { usaRegion } from "./UsaRegion"
 import { alabama } from "./al/Alabama"
 import { california } from "./ca/California"
 import { texas } from "./tx/Texas"
@@ -8,6 +7,8 @@ import { florida } from "./fl/Florida"
 import { pennsylvania } from "./pa/Pennsylvania"
 import { washington } from "./wa/Washington"
 import { Region } from "../../country/region/Region"
+import { usaRegion } from "../Usa"
+import { newMexico } from "./nm/NewMexico"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -29,7 +30,7 @@ export const usaRegions: Region[] = [
   usaRegion(UsaRegionCode.mt, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.ne, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.nh, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaRegionCode.nm, Place.fromLocation(47.466667, 0.833333)),
+  newMexico,
   usaRegion(UsaRegionCode.nc, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.nj, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.ny, Place.fromLocation(47.466667, 0.833333)),

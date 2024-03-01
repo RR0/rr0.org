@@ -3,10 +3,16 @@ import { Department } from "./Department"
 import { RegionMessagesOptions } from "../RegionMessages"
 import { CityMessagesList } from "./city/CityMessagesList"
 
+/**
+ * @deprecated Use OrganizationMessagesOptions
+ */
 export interface DepartmentMessagesOptions extends RegionMessagesOptions {
   region: boolean
 }
 
+/**
+ * @deprecated Use OrganizationMessages
+ */
 export class DepartmentMessages<C extends CityMessagesList = CityMessagesList> {
   /**
    *

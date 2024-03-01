@@ -1,6 +1,6 @@
-import { Organization } from "./index"
 import { Place } from "../place/Place"
 import fs from "fs"
+import { Organization } from "./Organization"
 
 export class OrganizationService {
 

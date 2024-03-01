@@ -1,6 +1,7 @@
 import assert from "assert"
 import { RR0SsgContext } from "../RR0SsgContext"
-import { Organization } from "./index"
+
+import { Organization } from "./Organization"
 
 export interface OrgMessageOptions {
   parent: boolean

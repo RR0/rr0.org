@@ -36,9 +36,15 @@ export class CityMessages {
   toTitleFromName(context: RR0SsgContext, city: City, title: string,
                   opts?: { country: boolean; region: boolean } & Partial<CityMessageOptions>) {
     const options = Object.assign({region: false, country: false}, opts)
-    let str = city.parent.parent.parent.messages(context).cityName(title)
+    const dep = city.parent
+    assert.ok(dep, `Could not find department of city "${city.code}"`)
+    const region = dep.parent
+    assert.ok(region, `Could not find region of department "${dep.code}"`)
+    const country = region.parent
+    assert.ok(country, `Could not find country of region "${region.code}"`)
+    let str = country.messages(context).cityName(title)
     if (options.parent) {
-      const departement = city.parent
+      const departement = dep
       const depMessages = departement.messages(context)
       str += ` (${depMessages.toTitle(context, departement, options)})`
     }

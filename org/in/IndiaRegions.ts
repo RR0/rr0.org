@@ -4,7 +4,7 @@ import { india } from "./Country_in"
 import { Region } from "../country/region/Region"
 
 function createRegion_in(code: RegionCode_in, place: Place) {
-  return new Region(code, india, [place], `${india.code}/${code}`)
+  return new Region(code, india, [place])
 }
 
 export const indiaRegions: Region[] = [

@@ -9,6 +9,7 @@ import { occitanie } from "./occ/Occitanie"
 import { Region } from "../../../country/region/Region"
 import { hautsDeFrance } from "./hdf/HautsDeFrance"
 import { grandEst } from "./ges/GrandEst"
+import { laReunion } from "./lre/LaReunion"
 
 export const franceRegions: Region[] = [
   auvergneRhoneAlpes,
@@ -16,6 +17,7 @@ export const franceRegions: Region[] = [
   grandEst,
   hautsDeFrance,
   ileDeFrance,
+  laReunion,
   nouvelleAquitaine,
   normandie,
   occitanie,

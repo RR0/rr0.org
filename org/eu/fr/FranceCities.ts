@@ -8,6 +8,8 @@ import { bourgogneFrancheComteCities } from "./region/bfc/BourgogneFrancheComteC
 import { occitanieCities } from "./region/occ/OccitanieCities"
 import { hautsDeFranceCities } from "./region/hdf/HautsDeFranceCities"
 import { grandEstCities } from "./region/ges/GrandEstCities"
+import { laReunionCities } from "./region/lre/LaReunionCities"
+import { normandieCities } from "./region/nor/NormandieCities"
 
 export const franceCities: City[] = [
   ...auvergneRhoneAlpesCities,
@@ -15,8 +17,10 @@ export const franceCities: City[] = [
   ...grandEstCities,
   ...idfCities,
   ...hautsDeFranceCities,
-  ...pacaCities,
+  ...laReunionCities,
+  ...normandieCities,
   ...nouvelleAquitaineCities,
   ...occitanieCities,
+  ...pacaCities,
   ...paysDeLoireCities
 ]

@@ -7,8 +7,9 @@ import { nouvelleAquitaineMessages } from "./region/naq/NouvelleAquitaineMessage
 import { bourgogneFrancheComteMessages } from "./region/bfc/BourgogneFrancheComteMessages"
 import { occitanieMessages_en } from "./region/occ/OccitanieMessages_en"
 import { hautsDeFranceMessages } from "./region/hdf/HautsDeFranceMessages"
-import { normandieMessages_fr } from "./region/nor/NormandieMessages_fr"
 import { grandEstMessages } from "./region/ges/GrandEstMessages"
+import { normandieMessages_en } from "./region/nor/NormandieMessages_en"
+import { laReunionMessages_en } from "./region/lre/LaReunionMessages_en"
 
 export const franceMessages_en = new FranceMessages(
   "France",
@@ -18,7 +19,8 @@ export const franceMessages_en = new FranceMessages(
     ges: grandEstMessages,
     idf: idfMessages,
     hdf: hautsDeFranceMessages,
-    nor: normandieMessages_fr,
+    lre: laReunionMessages_en,
+    nor: normandieMessages_en,
     pac: pacaMessages,
     pdl: paysDeLoireMessages,
     naq: nouvelleAquitaineMessages,

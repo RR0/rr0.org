@@ -9,6 +9,7 @@ import { occitanieDepartments } from "./occ/OccitanieDepartments"
 import { Department } from "../../../country/region/department/Department"
 import { hautsDeFranceDepartments } from "./hdf/HautsDeFranceDepartments"
 import { grandEstDepartments } from "./ges/GrandEstDepartments"
+import { laReunionDepartments } from "./lre/LaReunionDepartments"
 
 export const franceDepartments: Department[] = [
   ...auvergneRhoneAlpesDepartments,
@@ -16,6 +17,7 @@ export const franceDepartments: Department[] = [
   ...grandEstDepartments,
   ...idfDepartments,
   ...hautsDeFranceDepartments,
+  ...laReunionDepartments,
   ...normandieDepartments,
   ...nouvelleAquitaineDepartments,
   ...occitanieDepartments,

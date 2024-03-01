@@ -48,4 +48,9 @@ export enum FranceRegionCode {
    * Grand Est
    */
   ges = "ges",
+
+  /**
+   * La Réunion
+   */
+  lre = "lre",
 }

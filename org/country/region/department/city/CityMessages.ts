@@ -29,7 +29,14 @@ export class CityMessages {
     const cityMessages = city.messages(context)
     assert.ok(cityMessages,
       `Could not find name of city with ZIP code "${city.code}" in departement "${city.parent.code}"`)
-    let str = city.parent.parent.parent.messages(context).cityName(cityMessages.title)
+    let title = cityMessages.title
+    return this.toTitleFromName(context, city, title, options)
+  }
+
+  toTitleFromName(context: RR0SsgContext, city: City, title: string,
+                  opts?: { country: boolean; region: boolean } & Partial<CityMessageOptions>) {
+    const options = Object.assign({region: false, country: false}, opts)
+    let str = city.parent.parent.parent.messages(context).cityName(title)
     if (options.parent) {
       const departement = city.parent
       const depMessages = departement.messages(context)

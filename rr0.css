@@ -1118,7 +1118,7 @@ dt, dd {
 }
 
 a[target="_blank"]::after {
-  content: " 🔗"
+  content: " 🔗"
 }
 
 .witness a {

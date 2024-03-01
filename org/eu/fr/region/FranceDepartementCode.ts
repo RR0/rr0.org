@@ -1,10 +1,12 @@
 export enum FranceDepartementCode {
   HautesAlpes = "05",
   AlpesMaritimes = "06",
+  Aude = "11",
   Calvados = "14",
   Charente = "16",
   CharenteMaritime = "17",
   Creuse = "23",
+  HauteGaronne = "31",
   Gers = "32",
   Herault = "34",
   Landes = "40",
@@ -18,6 +20,8 @@ export enum FranceDepartementCode {
   Sarthe = "72",
   Paris = "75",
   Var = "83",
+  Vienne = "86",
+  TarnEtGaronne = "82",
   Vaucluse = "84",
   HautsDeSeine = "92",
 }

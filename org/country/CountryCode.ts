@@ -23,7 +23,7 @@ export enum CountryCode {
   be = "be",
 
   /**
-   * BRasil
+   * BRazil
    */
   br = "br",
 

@@ -5,6 +5,8 @@ import { finlandMessages_fr } from "./eu/fi/FinlandMessages_fr"
 import { CountryMessages } from "./country/CountryMessages"
 import { canadaMessages_fr } from "./ca/CanadaMessages_fr"
 import { australiaMessages_fr } from "./au/AustraliaMessages_fr"
+import { brazilMessages_fr } from "./br/BrazilMessages_fr"
+import { newZealandMessages_fr } from "./nz/NewZealandMessages_fr"
 
 /**
  * Country messages in French language.
@@ -14,7 +16,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   ar: new CountryMessages("Argentine"),
   au: australiaMessages_fr,
   be: new CountryMessages("Belgique"),
-  br: new CountryMessages("Brésil"),
+  br: brazilMessages_fr,
   ca: canadaMessages_fr,
   ch: new CountryMessages("Suisse"),
   cl: new CountryMessages("Chili"),
@@ -37,7 +39,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   mx: new CountryMessages("Mexique"),
   nl: new CountryMessages("Pays-Bas"),
   no: new CountryMessages("Norvège"),
-  nz: new CountryMessages("Nouvelle-Zélande"),
+  nz: newZealandMessages_fr,
   pe: new CountryMessages("Pérou"),
   pl: new CountryMessages("Pologne"),
   pt: new CountryMessages("Portugal"),

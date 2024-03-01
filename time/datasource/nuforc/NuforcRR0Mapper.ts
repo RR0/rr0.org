@@ -1,5 +1,5 @@
 import { CaseMapper } from "../CaseMapper"
-import { NuforcCase, NuforcShape } from "./NuforcCase"
+import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
@@ -10,6 +10,8 @@ import { australia } from "../../../org/au/Australia"
 import { canada } from "../../../org/ca/Canada"
 import { india } from "../../../org/in/Country_in"
 import { usa } from "../../../org/us/Usa"
+import { brazil } from "../../../org/br/Brazil"
+import { newZealand } from "../../../org/nz/NewZealand"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase, RR0Case> {
 
@@ -50,9 +52,11 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
     return description.join(", ")
   }
 
-  static readonly countryMap = {
+  static readonly countryMap: { [key in NuforcCountry]: string } = {
+    Brazil: brazil.code,
     Australia: australia.code,
     Canada: canada.code,
+    NewZealand: newZealand.code,
     India: india.code,
     USA: usa.code
   }
@@ -61,7 +65,9 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
+    assert.ok(sourceCase.country, `NUFORC country code is ${sourceCase.country}`)
     const countryCode = NuforcRR0Mapper.countryMap[sourceCase.country]
+    assert.ok(countryCode, `Could not find RR0 country to map from NUFORC code ${countryCode}`)
     const country = this.countryService.get(countryCode)
     assert.ok(country, `Could not find country "${countryCode}"`)
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)

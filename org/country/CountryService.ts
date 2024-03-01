@@ -6,6 +6,8 @@ import { canada } from "../ca/Canada"
 import { usa } from "../us/Usa"
 import { australia } from "../au/Australia"
 import { india } from "../in/Country_in"
+import { brazil } from "../br/Brazil"
+import { newZealand } from "../nz/NewZealand"
 
 /**
  * @deprecated
@@ -32,7 +34,7 @@ const countries: CountryList = {
   at: new Country(CountryCode.at),
   au: australia,
   be: new Country(CountryCode.be),
-  br: new Country(CountryCode.br),
+  br: brazil,
   ca: canada,
   ch: new Country(CountryCode.ch),
   cl: new Country(CountryCode.cl),
@@ -55,7 +57,7 @@ const countries: CountryList = {
   mx: new Country(CountryCode.mx),
   nl: new Country(CountryCode.nl),
   no: new Country(CountryCode.no),
-  nz: new Country(CountryCode.nz),
+  nz: newZealand,
   pe: new Country(CountryCode.pe),
   pl: new Country(CountryCode.pl),
   pt: new Country(CountryCode.pt),

@@ -1,4 +1,5 @@
 export enum FranceDepartementCode {
+  Allier = "03",
   HautesAlpes = "05",
   AlpesMaritimes = "06",
   Aude = "11",

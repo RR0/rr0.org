@@ -5,7 +5,7 @@ import { UsaRegionMessagesList } from "./us/UsaMessages"
 import { FinlandRegionsMessagesList } from "./eu/fi/FinlandMessages"
 
 export type CountryMessagesList
-  = { [key in CountryCode]: CountryMessages }
+  = { [key in CountryCode]: CountryMessages<any> }
   & { fi: CountryMessages<FinlandRegionsMessagesList> }
   & { us: CountryMessages<UsaRegionMessagesList> }
   & { fr: CountryMessages<FranceRegionsMessagesList> }

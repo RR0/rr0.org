@@ -5,6 +5,7 @@ import { JSDOM } from "jsdom"
 import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import { NuforcState } from "./NuforcState"
+import assert from "assert"
 
 interface QueryParameters {
   id: string
@@ -45,28 +46,27 @@ export class NuforcCaseSource extends HttpCaseSource<NuforcCase> {
     const dateFormat = /(\d\d)\/(\d\d)\/(\d\d\d\d) (\d\d):(\d\d)/
     const dateFields = dateFormat.exec(fields[1].textContent)
     const itemContext = context.clone()
-    const itemTime = itemContext.time
-    itemTime.setYear(parseInt(dateFields[3], 10))
-    itemTime.setMonth(parseInt(dateFields[1], 10))
+    const dateTime = itemContext.time
+    dateTime.setYear(parseInt(dateFields[3], 10))
+    dateTime.setMonth(parseInt(dateFields[1], 10))
     const dayOfMonth = dateFields[2]
-    itemTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
+    dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
     const hour = parseInt(dateFields[4], 10)
     const minutes = parseInt(dateFields[5], 10)
-    itemTime.setHour(hour)
-    itemTime.setMinutes(minutes)
+    dateTime.setHour(hour)
+    dateTime.setMinutes(minutes)
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "?", "id"), 10)
     const stateStr = fields[3].textContent
     const state = ObjectUtil.valueFromKey<NuforcState>(NuforcState, stateStr)
+    const countryStr = fields[4].textContent
+    const country = ObjectUtil.valueFromKey<NuforcCountry>(NuforcCountry, countryStr)
+    assert.ok(country, `Unknown NUFORC country "${countryStr}"`)
+    const city = fields[2].textContent
+    const shape = NuforcShape[fields[5].textContent]
+    const summary = fields[6].textContent
     return {
-      caseNumber,
-      url,
-      city: fields[2].textContent,
-      state,
-      country: NuforcCountry[fields[4].textContent],
-      dateTime: itemTime,
-      shape: NuforcShape[fields[5].textContent],
-      summary: fields[6].textContent,
+      caseNumber, url, city, state, country, dateTime, shape, summary,
       reportDate: new Date(fields[7].textContent),
       postDate: new Date(fields[8].textContent),
       image: fields[9].textContent === "Y"

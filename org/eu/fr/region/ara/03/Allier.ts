@@ -3,5 +3,4 @@ import { FranceDepartementCode } from "../../FranceDepartementCode"
 import { Place } from "../../../../../../place/Place"
 import { auvergneRhoneAlpes } from "../AuvergneRhoneAlpes"
 
-export const loire = new Department(FranceDepartementCode.Loire, auvergneRhoneAlpes,
-  Place.fromDMS("45°26′23″N,4°23′16″E"))
+export const allier = new Department(FranceDepartementCode.Allier, auvergneRhoneAlpes, Place.fromDMS("46°25′N,3°10′E"))

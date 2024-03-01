@@ -1,5 +1,5 @@
 import { ParisCityCode } from "./ParisCityCode"
-import { paris75Messages } from "./pontleveque/ParisMessages"
+import { paris75Messages } from "./paris/ParisMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 

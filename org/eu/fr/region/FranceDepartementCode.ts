@@ -20,6 +20,7 @@ export enum FranceDepartementCode {
   SaoneEtLoire = "71",
   Sarthe = "72",
   Paris = "75",
+  Yvelines = "78",
   Var = "83",
   Vienne = "86",
   Tarn = "81",

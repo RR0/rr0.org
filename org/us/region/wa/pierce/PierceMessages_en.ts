@@ -1,10 +1,9 @@
 import { bonneyLakeMessages } from "./bonneylake/BonneyLakeMessages"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { PierceCityCode } from "./PierceCityCode"
+import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { OrganizationType } from "../../../../Organization"
 
-export let pierceMessages_en = new DepartmentMessages(
-  "Pierce County",
-  {
-    [PierceCityCode.BonneyLake]: bonneyLakeMessages
-  }
-)
+export const pierceMessages_en = new OrganizationMessages("Pierce County")
+pierceMessages_en[OrganizationType.city] = {
+  [PierceCityCode.BonneyLake]: bonneyLakeMessages
+}

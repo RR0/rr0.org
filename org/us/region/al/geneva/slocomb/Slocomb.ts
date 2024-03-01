@@ -1,5 +1,7 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { Place } from "../../../../../../place/Place"
 import { geneva } from "../Geneva"
+import { Organization, OrganizationType } from "../../../../../Organization"
+import { GenevaCityCode } from "../GenevaCityCode"
 
-export let slocomb = new City("36375", Place.fromLocation(44.896389, 6.635556), geneva)
+export let slocomb = new Organization(GenevaCityCode.Slocomb, [Place.fromLocation(44.896389, 6.635556)],
+  OrganizationType.city, geneva)

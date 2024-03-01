@@ -1,11 +1,10 @@
-import { Country } from "../country/Country"
 import { CountryCode } from "../country/CountryCode"
 import { UsaRegionCode } from "./region/UsaRegionCode"
 import { Place } from "../../place/Place"
-import { Region } from "../country/region/Region"
+import { Organization, OrganizationType } from "../Organization"
 
-export const usa = new Country(CountryCode.us)
+export const usa = new Organization(CountryCode.us, [], OrganizationType.country)
 
 export function usaRegion(code: UsaRegionCode, place: Place) {
-  return new Region(code, usa, [place])
+  return new Organization(code, [place], OrganizationType.region, usa)
 }

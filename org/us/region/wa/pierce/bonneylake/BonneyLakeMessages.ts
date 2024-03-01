@@ -1,3 +1,3 @@
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
-export let bonneyLakeMessages = new CityMessages("Bonney Lake")
+export let bonneyLakeMessages = new OrganizationMessages("Bonney Lake")

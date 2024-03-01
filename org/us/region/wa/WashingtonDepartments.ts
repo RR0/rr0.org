@@ -1,6 +1,6 @@
-import { Department } from "../../../country/region/department/Department"
 import { pierce } from "./pierce/Pierce"
+import { Organization } from "../../../Organization"
 
-export const washingtonDepartments: Department[] = [
+export const washingtonDepartments: Organization[] = [
   pierce
 ]

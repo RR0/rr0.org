@@ -4,12 +4,14 @@ import { texasCities } from "./tx/TexasCities"
 import { floridaCities } from "./fl/FloridaCities"
 import { pennsylvaniaCities } from "./pa/PennsylvaniaCities"
 import { washingtonCities } from "./wa/WashingtonCities"
-import { City } from "../../country/region/department/city/City"
+import { Organization } from "../../Organization"
+import { indianaCities } from "./in/IndianaCities"
 
-export const usaCities: City[] = [
+export const usaCities: Organization[] = [
   ...alabamaCities,
   ...californiaCities,
   ...floridaCities,
+  ...indianaCities,
   ...pennsylvaniaCities,
   ...texasCities,
   ...washingtonCities

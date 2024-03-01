@@ -1,3 +1,3 @@
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
-export let slocombMessages = new OrganizationMessages("Slocomb")
+export let bloomingtonMessages = new OrganizationMessages("Bloomington")

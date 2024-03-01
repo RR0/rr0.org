@@ -3,9 +3,10 @@ import { CountryMessages } from "./country/CountryMessages"
 import { FranceRegionsMessagesList } from "./eu/fr/FranceMessages"
 import { UsaRegionMessagesList } from "./us/UsaMessages"
 import { FinlandRegionsMessagesList } from "./eu/fi/FinlandMessages"
+import { OrganizationMessages } from "./OrganizationMessages"
 
 export type CountryMessagesList
-  = { [key in CountryCode]: CountryMessages<any> }
+  = { [key in CountryCode]: CountryMessages<any> | OrganizationMessages }
   & { fi: CountryMessages<FinlandRegionsMessagesList> }
   & { us: CountryMessages<UsaRegionMessagesList> }
   & { fr: CountryMessages<FranceRegionsMessagesList> }

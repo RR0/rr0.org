@@ -1,9 +1,9 @@
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { slocombMessages } from "./slocomb/SlocombMessages"
+import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { OrganizationType } from "../../../../Organization"
+import { GenevaCityCode } from "./GenevaCityCode"
 
-export let genevaMessages_en = new DepartmentMessages(
-  "Geneva County",
-  {
-    36375: slocombMessages
-  }
-)
+export const genevaMessages_en = new OrganizationMessages("Geneva County")
+genevaMessages_en[OrganizationType.city] = {
+  [GenevaCityCode.Slocomb]: slocombMessages
+}

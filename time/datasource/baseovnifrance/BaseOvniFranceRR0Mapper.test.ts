@@ -4,12 +4,12 @@ import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
 import { OnlineSource } from "../../../source/OnlineSource"
-import { briancon05 } from "../../../org/eu/fr/region/pac/05/Briancon"
-import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/ChambonSurVoueize"
-import { lyon69 } from "../../../org/eu/fr/region/ara/69/Lyon"
-import { leMans72 } from "../../../org/eu/fr/region/pdl/72/LeMans"
 import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
 import { baseOvniFranceDatasource, baseOvniFranceRR0Mapper } from "./BaseOvniFranceRR0Mapping"
+import { leMans72 } from "../../../org/eu/fr/region/pdl/72/lemans/LeMans"
+import { lyon69 } from "../../../org/eu/fr/region/ara/69/lyon/Lyon"
+import { briancon05 } from "../../../org/eu/fr/region/pac/05/briancon/Briancon"
+import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/chambon/Chambon"
 
 function expectedSource(datasource: BaseOvniFranceCaseSource, dataDate: Date, caseNumber: number) {
   const url = new URL(datasource.searchPath + "?typlist=20&page=0&numobs=" + caseNumber, datasource.baseUrl)

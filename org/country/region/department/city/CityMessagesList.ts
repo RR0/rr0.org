@@ -1,5 +1,5 @@
-import { DepartmentMessages } from "./DepartmentMessages"
+import { OrganizationMessages } from "../../../../OrganizationMessages"
 
 export interface CityMessagesList {
-  [zip: string]: DepartmentMessages
+  [zip: string]: OrganizationMessages
 }

@@ -58,6 +58,7 @@ import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerF
 import { baseOvniFranceRR0Mapping } from "./time/datasource/baseovnifrance/BaseOvniFranceRR0Mapping"
 import { nuforcRR0Mapping } from "./time/datasource/nuforc/NuforcRR0Mapping"
 import { geipanRR0Mapping } from "./time/datasource/geipan/GeipanRR0Mapping"
+import { fuforaRR0Mapping } from "./time/datasource/fufora/FuforaRR0Mapping"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -187,7 +188,7 @@ getTimeFiles().then(async (timeFiles) => {
     new AuthorReplaceCommand(timeFiles),
     new HtmlTagReplaceCommand("ul",
       new ChronologyReplacerFactory(timeFiles,
-        [baseOvniFranceRR0Mapping, geipanRR0Mapping, nuforcRR0Mapping /**, fuforaRR0Mapping*/])
+        [baseOvniFranceRR0Mapping, geipanRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping])
     ),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),

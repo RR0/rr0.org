@@ -2,5 +2,10 @@ export enum FinlandRegionCode {
   /**
    * North Karelia
    */
-  nk = "nk"
+  nk = "nk",
+
+  /**
+   * Pirkanmaa
+   */
+  p = "p"
 }

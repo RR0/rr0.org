@@ -10,6 +10,11 @@ import { hautsDeFranceDepartments } from "./hdf/HautsDeFranceDepartments"
 import { grandEstDepartments } from "./ges/GrandEstDepartments"
 import { laReunionDepartments } from "./lre/LaReunionDepartments"
 import { Organization } from "../../../Organization"
+import { Department } from "../../../country/region/department/Department"
+import { FranceDepartementCode } from "./FranceDepartementCode"
+import { paysDeLoire } from "./pdl/PaysDeLoire"
+import { Place } from "../../../../place/Place"
+import { Region } from "../../../country/region/Region"
 
 export const franceDepartments: Organization[] = [
   ...auvergneRhoneAlpesDepartments,
@@ -24,3 +29,7 @@ export const franceDepartments: Organization[] = [
   ...pacaDepartments,
   ...paysDeLoireDepartments
 ]
+
+export function franceDepartment(code: FranceDepartementCode, region: Region, place: Place) {
+  return new Department(code, paysDeLoire, place)
+}

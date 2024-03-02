@@ -1,9 +1,7 @@
 import { stEtienne42Messages } from "./stetienne/StEtienneMessages"
 import { LoireCityCode } from "./LoireCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { OrganizationType } from "../../../../../Organization"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export const loireMessages = new OrganizationMessages("Loire")
-loireMessages[OrganizationType.city] = {
+export const loireMessages = DepartmentMessages.create("Loire", {
   [LoireCityCode.StEtienne]: stEtienne42Messages
-}
+})

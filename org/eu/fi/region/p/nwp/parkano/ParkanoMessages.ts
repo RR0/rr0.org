@@ -1,3 +1,3 @@
 import { OrganizationMessages } from "../../../../../../OrganizationMessages"
 
-export const leMansMessages = new OrganizationMessages("Le Mans")
+export const parkanoMessages = new OrganizationMessages("Parkano")

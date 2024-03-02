@@ -1,14 +1,10 @@
 import { chambonMessages } from "./chambon/ChambonMessages"
 import { CreuseCityCode } from "./CreuseCityCode"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-type CreuseCityMessagesList = {
-  [key in CreuseCityCode]: CityMessages
-}
-
+type CreuseCityMessagesList = { [key in CreuseCityCode]: OrganizationMessages }
 const creuseCityMessages: CreuseCityMessagesList = {
   [CreuseCityCode.ChambonSurVoueize]: chambonMessages
 }
-
-export const creuseMessages = new DepartmentMessages<CreuseCityMessagesList>("Creuse", creuseCityMessages)
+export const creuseMessages = DepartmentMessages.create<CreuseCityMessagesList>("Creuse", creuseCityMessages)

@@ -1,7 +1,6 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { SaoneEtLoireCityMessagesList } from "./SaoneEtLoireCityMessagesList"
-
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
 export const saoneEtLoireCityMessages: SaoneEtLoireCityMessagesList = {}
 
-export const saoneEtLoireMessages = new DepartmentMessages("Saône-et-Loire", saoneEtLoireCityMessages)
+export const saoneEtLoireMessages = DepartmentMessages.create("Saône-et-Loire", saoneEtLoireCityMessages)

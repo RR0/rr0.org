@@ -1,14 +1,10 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { HeraultCityCode } from "./HeraultCityCode"
 import { montpellier34Messages } from "./montpellier/MontpellierMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
-export type HeraultCityList<T> = {
-  [key in HeraultCityCode]: T
-}
-
-export const heraultCityMessages: HeraultCityList<CityMessages> = {
+type HeraultMessages = { [key in HeraultCityCode]: OrganizationMessages }
+const heraultCityMessages: HeraultMessages = {
   [HeraultCityCode.Montpellier]: montpellier34Messages
 }
-
-export const heraultMessages = new DepartmentMessages<HeraultCityList<CityMessages>>("Hérault", heraultCityMessages)
+export const heraultMessages = new DepartmentMessages<HeraultMessages>(["Hérault"], heraultCityMessages)

@@ -1,9 +1,8 @@
 import { ParisCityCode } from "./ParisCityCode"
 import { paris75Messages } from "./paris/ParisMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export const parisCityMessages: { [key in ParisCityCode]: CityMessages } = {
+export const parisCityMessages: { [key in ParisCityCode]: OrganizationMessages } = {
   [ParisCityCode.Paris]: paris75Messages
 }
 

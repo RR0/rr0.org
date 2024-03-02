@@ -1,5 +1,5 @@
-import { CityMessages } from "./CityMessages"
+import { DepartmentMessages } from "./DepartmentMessages"
 
 export interface CityMessagesList {
-  [zip: string]: CityMessages
+  [zip: string]: DepartmentMessages
 }

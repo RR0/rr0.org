@@ -1,6 +1,7 @@
-import { Department } from "../../../../../country/region/department/Department"
 import { FranceDepartementCode } from "../../FranceDepartementCode"
 import { Place } from "../../../../../../place/Place"
+import { Organization, OrganizationType } from "../../../../../Organization"
 import { auvergneRhoneAlpes } from "../AuvergneRhoneAlpes"
 
-export const allier = new Department(FranceDepartementCode.Allier, auvergneRhoneAlpes, Place.fromDMS("46°25′N,3°10′E"))
+export const allier = new Organization(FranceDepartementCode.Allier, [Place.fromDMS("46°25′N,3°10′E")],
+  OrganizationType.department, auvergneRhoneAlpes)

@@ -1,9 +1,8 @@
 import { VienneCityCode } from "./VienneCityCode"
 import { montDeMarsanMessages } from "./montigne/MontigneMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
-type VienneCityMessagesList = { [key in VienneCityCode]: CityMessages }
+type VienneCityMessagesList = { [key in VienneCityCode]: OrganizationMessages }
 
 const vienneCityMessages: VienneCityMessagesList = {
   [VienneCityCode.MontDeMarsan]: montDeMarsanMessages

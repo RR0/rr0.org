@@ -1,12 +1,10 @@
 import { CharenteCityCode } from "./CharenteCityCode"
 import { montigne16Messages } from "./montigne/MontigneMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-type CharenteCityMessagesList = { [key in CharenteCityCode]: CityMessages }
-
+type CharenteCityMessagesList = { [key in CharenteCityCode]: OrganizationMessages }
 const charenteCityMessages: CharenteCityMessagesList = {
   [CharenteCityCode.Montigne]: montigne16Messages
 }
-
-export const charenteMessages = new DepartmentMessages<CharenteCityMessagesList>("Charente", charenteCityMessages)
+export const charenteMessages = DepartmentMessages.create<CharenteCityMessagesList>("Charente", charenteCityMessages)

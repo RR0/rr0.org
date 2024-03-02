@@ -1,8 +1,6 @@
-import { RegionMessages } from "../../../../country/region/RegionMessages"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { GrandEstDepartementCode } from "./GrandEstDepartementCode"
 import { grandEstDepartmentsMessages } from "./GrandEstDepartmentsMessages"
+import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { OrganizationType } from "../../../../Organization"
 
-export const grandEstMessages = new RegionMessages<{ [key in GrandEstDepartementCode]: DepartmentMessages }>(
-  "Occitanie", grandEstDepartmentsMessages
-)
+export const grandEstMessages = new OrganizationMessages("Occitanie")
+grandEstMessages[OrganizationType.department] = grandEstDepartmentsMessages

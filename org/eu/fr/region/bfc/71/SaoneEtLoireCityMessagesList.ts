@@ -1,6 +1,6 @@
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 import { SaoneEtLoireCityCode } from "./SaoneEtLoireCityCode"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
 export type SaoneEtLoireCityMessagesList = {
-  [key in SaoneEtLoireCityCode]: CityMessages
+  [key in SaoneEtLoireCityCode]: OrganizationMessages
 }

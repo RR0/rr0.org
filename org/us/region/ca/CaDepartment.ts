@@ -1,7 +1,7 @@
 import { Place } from "../../../../place/Place"
-import { Department } from "../../../country/region/department/Department"
+import { Organization, OrganizationType } from "../../../Organization"
 import { california } from "./California"
 
-export function caDepartment(code: string, place: Place): Department {
-  return new Department(code, california, place)
+export function caDepartment(code: string, place: Place): Organization {
+  return new Organization(code, [place], OrganizationType.department, california)
 }

@@ -4,10 +4,12 @@ import { AuvergneRhoneAlpesDepartementCode } from "./AuvergneRhoneAlpesDeparteme
 import { loireMessages } from "./42/LoireMessages"
 import { puyDeDomeMessages } from "./63/RhoneMessages"
 import { allierMessages } from "./03/AllierMessages"
+import { isereMessages } from "./38/IsereMessages"
 
 export const auvergneRhoneAlpesDepartementsMessageList: AuvergneRhoneAlpesDepartmentMessagesList = {
   [AuvergneRhoneAlpesDepartementCode.Allier]: allierMessages,
-  [AuvergneRhoneAlpesDepartementCode.Rhone]: rhoneMessages,
+  [AuvergneRhoneAlpesDepartementCode.Isere]: isereMessages,
   [AuvergneRhoneAlpesDepartementCode.Loire]: loireMessages,
-  [AuvergneRhoneAlpesDepartementCode.PuyDeDome]: puyDeDomeMessages
+  [AuvergneRhoneAlpesDepartementCode.PuyDeDome]: puyDeDomeMessages,
+  [AuvergneRhoneAlpesDepartementCode.Rhone]: rhoneMessages
 }

@@ -1,6 +1,7 @@
-import { Department } from "../../../../../country/region/department/Department"
 import { FranceDepartementCode } from "../../FranceDepartementCode"
-import { ileDeFrance } from "../Idf"
 import { Place } from "../../../../../../place/Place"
+import { Organization, OrganizationType } from "../../../../../Organization"
+import { ileDeFrance } from "../Idf"
 
-export const paris = new Department(FranceDepartementCode.Paris, ileDeFrance, Place.fromDMS("48°51′24″N,2°21′07″E"))
+export const paris = new Organization(FranceDepartementCode.Paris, [Place.fromDMS("48°51′24″N,2°21′07″E")],
+  OrganizationType.department, ileDeFrance)

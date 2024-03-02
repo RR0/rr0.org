@@ -1,6 +1,6 @@
 import { sarthe } from "./72/Sarthe"
-import { Department } from "../../../../country/region/department/Department"
+import { Organization } from "../../../../Organization"
 
-export const paysDeLoireDepartments: Department[] = [
+export const paysDeLoireDepartments: Organization[] = [
   sarthe
 ]

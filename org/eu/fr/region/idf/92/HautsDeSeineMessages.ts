@@ -1,9 +1,8 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { HautsDeSeineCityCode } from "./HautsDeSeineCityCode"
 import { nanterreMessages } from "./nanterre/NanterreMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-type HautDeSeineCityMessagesList = { [key in HautsDeSeineCityCode]: CityMessages }
+type HautDeSeineCityMessagesList = { [key in HautsDeSeineCityCode]: OrganizationMessages }
 
 export const hautsDeSeineCityMessages: HautDeSeineCityMessagesList = {
   [HautsDeSeineCityCode.Nanterre]: nanterreMessages

@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { montpellier } from "./montpellier/Montpellier"
+import { Organization } from "../../../../../Organization"
 
-export const heraultCities: City[] = [
+export const heraultCities: Organization[] = [
   montpellier
 ]

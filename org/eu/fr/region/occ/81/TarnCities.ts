@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { albi } from "./albi/Albi"
+import { Organization } from "../../../../../Organization"
 
-export const tarnCities: City[] = [
+export const tarnCities: Organization[] = [
   albi
 ]

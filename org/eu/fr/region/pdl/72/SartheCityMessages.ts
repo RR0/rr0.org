@@ -1,16 +1,12 @@
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 import { SartheCityCode } from "./SartheCityCode"
 import { leMansMessages } from "./lemans/LeMansMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { steCerotteMessages } from "./stecerotte/SteCerotteMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
-export type SartheCityMessagesList = {
-  [key in SartheCityCode]: CityMessages
-}
-
-export const sartheCityMessages: SartheCityMessagesList = {
+type SartheCityMessagesList = { [key in SartheCityCode]: OrganizationMessages }
+const sartheCityMessages: SartheCityMessagesList = {
   [SartheCityCode.LeMans]: leMansMessages,
   [SartheCityCode.SteCerotte]: steCerotteMessages
 }
-
-export const sartheMessages = new DepartmentMessages<SartheCityMessagesList>("Sarthe", sartheCityMessages)
+export const sartheMessages = DepartmentMessages.create<SartheCityMessagesList>("Sarthe", sartheCityMessages)

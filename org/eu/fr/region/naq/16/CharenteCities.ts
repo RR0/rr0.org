@@ -1,6 +1,6 @@
 import { montigne16 } from "./montigne/Montigne"
-import { City } from "../../../../../country/region/department/city/City"
+import { Organization } from "../../../../../Organization"
 
-export const charenteCities: City[] = [
+export const charenteCities: Organization[] = [
   montigne16
 ]

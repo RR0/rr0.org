@@ -1,17 +1,11 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 import { MeurtheEtMoselleCityCode } from "./MeurtheEtMoselleCityCode"
 import { cosnesEtRomainMessages } from "./cosnesetromain/CosnesEtRomainMessages"
 import { nancyMessages } from "./nancy/NancyMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { OrganizationType } from "../../../../../Organization"
 
-export type MeurtheEtMoselleCityList<T> = {
-  [key in MeurtheEtMoselleCityCode]: T
-}
-
-export const meurtheEtMoselleCityMessages: MeurtheEtMoselleCityList<CityMessages> = {
+export const meurtheEtMoselleMessages = new OrganizationMessages("Meurthe-et-Moselle")
+meurtheEtMoselleMessages[OrganizationType.city] = {
   [MeurtheEtMoselleCityCode.CosnesEtRomain]: cosnesEtRomainMessages,
   [MeurtheEtMoselleCityCode.Nancy]: nancyMessages
 }
-
-export const meurtheEtMoselleMessages = new DepartmentMessages<MeurtheEtMoselleCityList<CityMessages>>(
-  "Meurthe-et-Moselle", meurtheEtMoselleCityMessages)

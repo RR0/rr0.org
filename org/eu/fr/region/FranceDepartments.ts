@@ -6,12 +6,12 @@ import { nouvelleAquitaineDepartments } from "./naq/NouvelleAquitaineDepartments
 import { paysDeLoireDepartments } from "./pdl/PaysDeLoireDepartments"
 import { bourgogneFrancheComteDepartments } from "./bfc/BourgogneFrancheComteDepartments"
 import { occitanieDepartments } from "./occ/OccitanieDepartments"
-import { Department } from "../../../country/region/department/Department"
 import { hautsDeFranceDepartments } from "./hdf/HautsDeFranceDepartments"
 import { grandEstDepartments } from "./ges/GrandEstDepartments"
 import { laReunionDepartments } from "./lre/LaReunionDepartments"
+import { Organization } from "../../../Organization"
 
-export const franceDepartments: Department[] = [
+export const franceDepartments: Organization[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
   ...grandEstDepartments,

@@ -1,13 +1,10 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { TarnEtGaronneCityCode } from "./TarnEtGaronneCityCode"
 import { touffaillesMessages } from "./touffailles/TouffaillesMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
-export type TarnEtGaronneCityList<T> = { [key in TarnEtGaronneCityCode]: T }
-
-const tarnEtGaronneCityMessages: TarnEtGaronneCityList<CityMessages> = {
+const tarnEtGaronneCityMessages: { [key in TarnEtGaronneCityCode]: OrganizationMessages } = {
   [TarnEtGaronneCityCode.Touffailles]: touffaillesMessages
 }
 
-export const tarnEtGaronneMessages = new DepartmentMessages<TarnEtGaronneCityList<CityMessages>>("Tarn-et-Garonne",
-  tarnEtGaronneCityMessages)
+export const tarnEtGaronneMessages = DepartmentMessages.create("Tarn-et-Garonne", tarnEtGaronneCityMessages)

@@ -116,23 +116,23 @@ td:nth-child(2) div {
   var i = 3;
   var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  cons.create('functiongraph', [function (x) {
+  cons.create('functiongraph', bookMeta, [function (x) {
     return i / 2
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  x.create('functiongraph', [function (x) {
+  x.create('functiongraph', bookMeta, [function (x) {
     return x
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  axb.create('functiongraph', [function (x) {
+  axb.create('functiongraph', bookMeta, [function (x) {
     return i / 2 * x + i / 2
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  xn.create('functiongraph', [function (x) {
+  xn.create('functiongraph', bookMeta, [function (x) {
     return x * x
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

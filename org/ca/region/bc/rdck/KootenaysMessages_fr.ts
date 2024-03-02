@@ -1,4 +1,4 @@
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { kootenaysCityMessages_fr } from "./KootenaysCityMessages_fr"
+import { kootenaysCityMessages } from "./KootenaysCityMessages"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
-export const kootenaysMessages_fr = new DepartmentMessages("Kootenay", kootenaysCityMessages_fr)
+export const kootenaysMessages_fr = DepartmentMessages.create("Kootenay", kootenaysCityMessages)

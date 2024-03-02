@@ -42,7 +42,7 @@ export class GeipanRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCase
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)
     const placeName = placeItems[1]
     const city = this.cityService.find(context, placeName, undefined)
-    assert.ok(city, `Could not find city of name "${placeName}"`)
+    assert.ok(city, `Could not find city "${placeName}" in department "${depCode}" of country "${france.code}"`)
     const place: NamedPlace = {name: city.title(context), place: city.places[0]}
     return {
       time: sourceCase.dateTime,

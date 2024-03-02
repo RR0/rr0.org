@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { estang } from "./estang/Estang"
+import { Organization } from "../../../../../Organization"
 
-export const gersCities: City[] = [
+export const gersCities: Organization[] = [
   estang
 ]

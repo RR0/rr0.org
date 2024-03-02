@@ -2,7 +2,8 @@ import { FranceDepartementCode } from "../FranceDepartementCode"
 
 export enum AuvergneRhoneAlpesDepartementCode {
   Allier = FranceDepartementCode.Allier,
+  Isere = FranceDepartementCode.Isere,
   Loire = FranceDepartementCode.Loire,
-  Rhone = FranceDepartementCode.Rhone,
   PuyDeDome = FranceDepartementCode.PuyDeDome,
+  Rhone = FranceDepartementCode.Rhone,
 }

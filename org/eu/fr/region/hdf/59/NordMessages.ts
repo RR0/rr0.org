@@ -1,12 +1,10 @@
 import { NordCityCode } from "./NordCityCode"
 import { aniche60Messages } from "./aniche/AnicheMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-type NordCityMessagesList = { [key in NordCityCode]: CityMessages }
-
+type NordCityMessagesList = { [key in NordCityCode]: OrganizationMessages }
 const nordCityMessages: NordCityMessagesList = {
   [NordCityCode.Aniche]: aniche60Messages
 }
-
-export const nordMessages = new DepartmentMessages<NordCityMessagesList>("Nord", nordCityMessages)
+export const nordMessages = DepartmentMessages.create<NordCityMessagesList>("Nord", nordCityMessages)

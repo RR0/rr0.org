@@ -84,25 +84,25 @@ td:nth-child(3) div {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  Gompertz.create('functiongraph', [function (x) {
+  Gompertz.create('functiongraph', bookMeta, [function (x) {
     var a = 1
     var b = 1
     var c = 1
     return a * Math.exp(-b * Math.exp(-c * x))
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var tanh = JXG.JSXGraph.initBoard('tanh', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  tanh.create('functiongraph', [function (x) {
+  tanh.create('functiongraph', bookMeta, [function (x) {
     return (Math.exp(x) - Math.exp(-x)) / (Math.exp(x) + Math.exp(-x))
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var logistic = JXG.JSXGraph.initBoard('logistic', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  logistic.create('functiongraph', [function (x) {
+  logistic.create('functiongraph', bookMeta, [function (x) {
     return 1 / (1 + Math.exp(-x))
-  }, -7, 7], bookMeta, bookLinks);
+  }, -7, 7]);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

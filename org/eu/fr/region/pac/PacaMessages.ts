@@ -3,7 +3,7 @@ import { PacaDepartementCode } from "./PacaDepartementCode"
 import { hautesAlpesMessages } from "./05/HautesAlpesMessages"
 import { vaucluseMessages } from "./84/VaucluseMessages"
 import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { alpesMaritimesMessages } from "./06/HautesAlpesMessages"
+import { alpesMaritimesMessages } from "./06/AlpesMaritimesMessages"
 import { varMessages } from "./83/VarMessages"
 import { bouchesDuRhoneMessages } from "./13/BouchesDuRhoneMessages"
 

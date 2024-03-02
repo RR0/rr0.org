@@ -57,6 +57,7 @@ import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplace
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
 import { baseOvniFranceRR0Mapping } from "./time/datasource/baseovnifrance/BaseOvniFranceRR0Mapping"
 import { nuforcRR0Mapping } from "./time/datasource/nuforc/NuforcRR0Mapping"
+import { geipanRR0Mapping } from "./time/datasource/geipan/GeipanRR0Mapping"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -186,7 +187,7 @@ getTimeFiles().then(async (timeFiles) => {
     new AuthorReplaceCommand(timeFiles),
     new HtmlTagReplaceCommand("ul",
       new ChronologyReplacerFactory(timeFiles,
-        [baseOvniFranceRR0Mapping, nuforcRR0Mapping /**, geipanRR0Mapping, fuforaRR0Mapping*/])
+        [baseOvniFranceRR0Mapping, geipanRR0Mapping, nuforcRR0Mapping /**, fuforaRR0Mapping*/])
     ),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
@@ -216,7 +217,7 @@ getTimeFiles().then(async (timeFiles) => {
   ]
   const copyStep = new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]})
   const ssg = new Ssg(config)
-    .add(booksStep)
+    // .add(booksStep)
     .add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
     .add(ufoCasesStep)
     .add(...peopleSteps)

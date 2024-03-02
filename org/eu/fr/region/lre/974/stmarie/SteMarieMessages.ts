@@ -1,3 +1,3 @@
-import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
+import { OrganizationMessages } from "../../../../../../OrganizationMessages"
 
-export const steMarie874Messages = new CityMessages("Sainte-Marie", "Ste-Marie")
+export const steMarie874Messages = new OrganizationMessages("Sainte-Marie", "Ste-Marie")

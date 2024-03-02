@@ -1,12 +1,12 @@
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { VarCityCode } from "./VarCityCode"
 import { foxAmphouxMessages } from "./foxamphoux/FoxAmphouxMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
 export type VarCityList<T> = { [key in VarCityCode]: T }
 
-export const varCityMessages: VarCityList<CityMessages> = {
+export const varCityMessages: VarCityList<OrganizationMessages> = {
   [VarCityCode.FoxAmphoux]: foxAmphouxMessages
 }
 
-export const varMessages = new DepartmentMessages<VarCityList<CityMessages>>("Var", varCityMessages)
+export const varMessages = DepartmentMessages.create<VarCityList<OrganizationMessages>>("Var", varCityMessages)

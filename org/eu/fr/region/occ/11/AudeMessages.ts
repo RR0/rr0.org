@@ -1,12 +1,10 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { AudeCityCode } from "./AudeCityCode"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 import { cucugnanMessages } from "./cucugnan/CucugnanMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export type AudeCityList<T> = { [key in AudeCityCode]: T }
-
-export const audeCityMessages: AudeCityList<CityMessages> = {
+type AudeCityMessages = { [key in AudeCityCode]: OrganizationMessages }
+const audeCityMessages: AudeCityMessages = {
   [AudeCityCode.Cucugnan]: cucugnanMessages
 }
-
-export const audeMessages = new DepartmentMessages<AudeCityList<CityMessages>>("Aude", audeCityMessages)
+export const audeMessages = DepartmentMessages.create<AudeCityMessages>("Aude", audeCityMessages)

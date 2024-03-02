@@ -1,12 +1,10 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { TarnCityCode } from "./TarnCityCode"
 import { albiMessages } from "./albi/AlbiMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
-export type TarnCityList<T> = { [key in TarnCityCode]: T }
-
-const tarnCityMessages: TarnCityList<CityMessages> = {
+const tarnCityMessages: { [key in TarnCityCode]: OrganizationMessages } = {
   [TarnCityCode.Albi]: albiMessages
 }
 
-export const tarnMessages = new DepartmentMessages<TarnCityList<CityMessages>>("Tarn", tarnCityMessages)
+export const tarnMessages = DepartmentMessages.create("Tarn", tarnCityMessages)

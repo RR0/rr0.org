@@ -1,10 +1,10 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
 import { YvelinesCityCode } from "./YvelinesCityCode"
 import { neauphleLeChateauMessages } from "./neauphleLechateau/NeauphleLeChateauMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export const yvelinesCityMessages: { [key in YvelinesCityCode]: CityMessages } = {
+type YvelinesCityMessages = { [key in YvelinesCityCode]: OrganizationMessages }
+export const yvelinesCityMessages: YvelinesCityMessages = {
   [YvelinesCityCode.NeauphleLeChateau]: neauphleLeChateauMessages
 }
-
-export const yvelinesMessages = new DepartmentMessages("Yvelines", yvelinesCityMessages)
+export const yvelinesMessages = DepartmentMessages.create<YvelinesCityMessages>("Yvelines", yvelinesCityMessages)

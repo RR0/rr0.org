@@ -1,6 +1,6 @@
-import { Department } from "../../../../country/region/department/Department"
 import { saoneEtLoire } from "./71/SaoneEtLoire"
+import { Organization } from "../../../../Organization"
 
-export const bourgogneFrancheComteDepartments: Department[] = [
+export const bourgogneFrancheComteDepartments: Organization[] = [
   saoneEtLoire
 ]

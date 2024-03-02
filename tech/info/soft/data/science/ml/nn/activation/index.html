@@ -83,29 +83,29 @@ td:nth-child(3) div {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  sign.create('functiongraph', [function (x) {
+  sign.create('functiongraph', bookMeta, [function (x) {
     return x < 0 ? -1 : x === 0 ? 0 : 1
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var heaviside = JXG.JSXGraph.initBoard('heaviside', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  heaviside.create('functiongraph', [function (x) {
+  heaviside.create('functiongraph', bookMeta, [function (x) {
     return x < 0 ? 0 : 1
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var logistic = JXG.JSXGraph.initBoard('logistic', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  logistic.create('functiongraph', [function (x) {
+  logistic.create('functiongraph', bookMeta, [function (x) {
     return 1 / (1 + Math.exp(-x))
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
   var relu = JXG.JSXGraph.initBoard('relu', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  relu.create('functiongraph', [function (x) {
+  relu.create('functiongraph', bookMeta, [function (x) {
     return x < 0 ? 0 : x === 0 ? 0 : x
-  }, -i, i], bookMeta, bookLinks);
+  }, -i, i]);
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

@@ -1,12 +1,11 @@
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { VaucluseCityCode } from "./VaucluseCityCode"
 import { bolleneMessages } from "./bollene/BolleneMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export type VaucluseCityList<T> = { [key in VaucluseCityCode]: T }
-
-export const vaucluseCityMessages: VaucluseCityList<CityMessages> = {
+type VaucluseCityList<T> = { [key in VaucluseCityCode]: T }
+const vaucluseCityMessages: VaucluseCityList<OrganizationMessages> = {
   [VaucluseCityCode.Bollene]: bolleneMessages
 }
-
-export const vaucluseMessages = new DepartmentMessages<VaucluseCityList<CityMessages>>("Vaucluse", vaucluseCityMessages)
+export const vaucluseMessages = new DepartmentMessages<VaucluseCityList<OrganizationMessages>>("Vaucluse",
+  vaucluseCityMessages)

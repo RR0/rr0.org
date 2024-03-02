@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { cucugnan } from "./cucugnan/Cucugnan"
+import { Organization } from "../../../../../Organization"
 
-export const audeCities: City[] = [
+export const audeCities: Organization[] = [
   cucugnan
 ]

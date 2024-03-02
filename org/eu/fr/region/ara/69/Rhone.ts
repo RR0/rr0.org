@@ -1,6 +1,7 @@
-import { Department } from "../../../../../country/region/department/Department"
 import { FranceDepartementCode } from "../../FranceDepartementCode"
 import { Place } from "../../../../../../place/Place"
+import { Organization, OrganizationType } from "../../../../../Organization"
 import { auvergneRhoneAlpes } from "../AuvergneRhoneAlpes"
 
-export const rhone = new Department(FranceDepartementCode.Rhone, auvergneRhoneAlpes, Place.fromLocation(48, 0.316667))
+export const rhone = new Organization(FranceDepartementCode.Rhone, [Place.fromLocation(48, 0.316667)],
+  OrganizationType.department, auvergneRhoneAlpes)

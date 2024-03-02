@@ -1,13 +1,12 @@
 import { eyraguesMessages } from "./eyragues/EyraguesMessages"
 import { BouchesDuRhoneCityCode } from "./BouchesDuRhoneCityCode"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export type BouchesDuRhoneCityList<T> = { [key in BouchesDuRhoneCityCode]: T }
-
-export const bouchesDuRhoneCityMessages: BouchesDuRhoneCityList<CityMessages> = {
+type BouchesDuRhoneCityList<T> = { [key in BouchesDuRhoneCityCode]: T }
+const bouchesDuRhoneCityMessages: BouchesDuRhoneCityList<OrganizationMessages> = {
   [BouchesDuRhoneCityCode.Eyragues]: eyraguesMessages
 }
-
-export const bouchesDuRhoneMessages = new DepartmentMessages<BouchesDuRhoneCityList<CityMessages>>("Bouches-du-Rhône",
+export const bouchesDuRhoneMessages = DepartmentMessages.create<BouchesDuRhoneCityList<OrganizationMessages>>(
+  "Bouches-du-Rhône",
   bouchesDuRhoneCityMessages)

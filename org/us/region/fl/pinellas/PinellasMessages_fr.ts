@@ -1,7 +1,7 @@
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { stPetersburgMessages } from "./stpetersburg/StPetersburgMessages"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
-export let pinellasMessages_fr = new DepartmentMessages(
+export let pinellasMessages_fr = DepartmentMessages.create(
   "Comté de Pinellas",
   {
     33701: stPetersburgMessages

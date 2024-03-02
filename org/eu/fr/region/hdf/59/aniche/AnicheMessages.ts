@@ -1,3 +1,3 @@
-import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../../country/region/department/city/DepartmentMessages"
 
-export let aniche60Messages = new CityMessages("Aniche")
+export let aniche60Messages = new DepartmentMessages("Aniche")

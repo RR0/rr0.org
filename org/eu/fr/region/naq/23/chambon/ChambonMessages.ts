@@ -1,3 +1,3 @@
-import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../../country/region/department/city/DepartmentMessages"
 
-export let chambonMessages = new CityMessages("Chambon-sur-Voueize")
+export let chambonMessages = new DepartmentMessages("Chambon-sur-Voueize")

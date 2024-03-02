@@ -1,9 +1,4 @@
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { AuvergneRhoneAlpesDepartementCode } from "./AuvergneRhoneAlpesDepartementCode"
+import { OrganizationMessages } from "../../../../OrganizationMessages"
 
-interface AuvergneRhoneAlpesDepartementMessages extends DepartmentMessages {
-}
-
-type AuvergneRhoneAlpesDepartmentList<T> = { [key in AuvergneRhoneAlpesDepartementCode]: T }
-
-export type AuvergneRhoneAlpesDepartmentMessagesList = AuvergneRhoneAlpesDepartmentList<AuvergneRhoneAlpesDepartementMessages>
+export type AuvergneRhoneAlpesDepartmentMessagesList = { [key in AuvergneRhoneAlpesDepartementCode]: OrganizationMessages }

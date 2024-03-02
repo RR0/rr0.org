@@ -1,10 +1,10 @@
 import { creuseCities } from "./23/CreuseCities"
-import { City } from "../../../../country/region/department/city/City"
 import { charenteCities } from "./16/CharenteCities"
 import { landesCities } from "./40/LandesCities"
 import { charenteMaritimeCities } from "./17/CharenteMaritimeCities"
+import { Organization } from "../../../../Organization"
 
-export const nouvelleAquitaineCities: City[] = [
+export const nouvelleAquitaineCities: Organization[] = [
   ...charenteCities,
   ...charenteMaritimeCities,
   ...creuseCities,

@@ -1,13 +1,13 @@
 import { brianconMessages } from "./briancon/BrianconMessages"
 import { HautesAlpesCityCode } from "./HautesAlpesCityCode"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
 export type HautesAlpesCityList<T> = { [key in HautesAlpesCityCode]: T }
 
-export const hautesAlpesCityMessages: HautesAlpesCityList<CityMessages> = {
+export const hautesAlpesCityMessages: HautesAlpesCityList<OrganizationMessages> = {
   [HautesAlpesCityCode.Briancon]: brianconMessages
 }
 
-export const hautesAlpesMessages = new DepartmentMessages<HautesAlpesCityList<CityMessages>>("Gers",
+export const hautesAlpesMessages = new DepartmentMessages<HautesAlpesCityList<OrganizationMessages>>("Gers",
   hautesAlpesCityMessages)

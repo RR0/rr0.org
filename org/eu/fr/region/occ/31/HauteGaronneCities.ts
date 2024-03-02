@@ -1,8 +1,8 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { loudet } from "./loudet/Loudet"
 import { stPlancard } from "./stplancard/StPlancard"
+import { Organization } from "../../../../../Organization"
 
-export const hauteGaronneCities: City[] = [
+export const hauteGaronneCities: Organization[] = [
   loudet,
   stPlancard
 ]

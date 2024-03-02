@@ -1,12 +1,12 @@
 import { LandesCityCode } from "./LandesCityCode"
 import { montDeMarsanMessages } from "./montigne/MontigneMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-type LandesCityMessagesList = { [key in LandesCityCode]: CityMessages }
+type LandesCityMessagesList = { [key in LandesCityCode]: OrganizationMessages }
 
 const landesCityMessages: LandesCityMessagesList = {
   [LandesCityCode.MontDeMarsan]: montDeMarsanMessages
 }
 
-export const landesMessages = new DepartmentMessages<LandesCityMessagesList>("Landes", landesCityMessages)
+export const landesMessages = new DepartmentMessages<LandesCityMessagesList>(["Landes"], landesCityMessages)

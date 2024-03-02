@@ -2,5 +2,5 @@ import { auvergneRhoneAlpesDepartementsMessageList } from "./AuvergneRhoneAlpesD
 import { OrganizationMessages } from "../../../../OrganizationMessages"
 import { OrganizationType } from "../../../../Organization"
 
-export const auvergneRhoneAlpesMessages = new OrganizationMessages("Pays-de-la-Loire")
+export const auvergneRhoneAlpesMessages = new OrganizationMessages("Auvergne-Rhône-Alpes")
 auvergneRhoneAlpesMessages[OrganizationType.department] = auvergneRhoneAlpesDepartementsMessageList

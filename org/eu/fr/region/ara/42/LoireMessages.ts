@@ -1,12 +1,9 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { stEtienne42Messages } from "./stetienne/StEtienneMessages"
 import { LoireCityCode } from "./LoireCityCode"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { OrganizationType } from "../../../../../Organization"
 
-type LoireCityMessagesList = {
-  [key in LoireCityCode]: CityMessages
-}
-const loireCityMessages: LoireCityMessagesList = {
+export const loireMessages = new OrganizationMessages("Loire")
+loireMessages[OrganizationType.city] = {
   [LoireCityCode.StEtienne]: stEtienne42Messages
 }
-export const loireMessages = new DepartmentMessages<LoireCityMessagesList>("Loire", loireCityMessages)

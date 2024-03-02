@@ -1,7 +1,7 @@
 import { NkDepartementMessagesList } from "./NkDepartementMessagesList"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { pkCityMessages } from "./pk/PkCityMessages"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
 export const nkDepartementsList_fr: NkDepartementMessagesList = {
-  pk: new DepartmentMessages("Carélie du Pielinen", pkCityMessages)
+  pk: DepartmentMessages.create("Carélie du Pielinen", pkCityMessages)
 }

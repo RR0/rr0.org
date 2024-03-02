@@ -1,8 +1,8 @@
 import { CanadaRegionCode } from "./CanadaRegionCode"
 import { Place } from "../../../place/Place"
-import { Region } from "../../country/region/Region"
+import { Organization, OrganizationType } from "../../Organization"
 import { canada } from "../Canada"
 
 export function canadaRegion(code: CanadaRegionCode, place: Place) {
-  return new Region(code, canada, [place])
+  return new Organization(code, [place], OrganizationType.region, canada)
 }

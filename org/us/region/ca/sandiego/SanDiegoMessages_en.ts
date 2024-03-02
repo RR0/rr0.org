@@ -1,8 +1,8 @@
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { oceansideMessages } from "./oceanside/OceansideMessages"
 import { campPendletonMessages } from "./camppendleton/CampPendletonMessages"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
-export const sanDiegoMessages_en = new DepartmentMessages(
+export const sanDiegoMessages_en = DepartmentMessages.create(
   "San Diego County",
   {
     92058: oceansideMessages,

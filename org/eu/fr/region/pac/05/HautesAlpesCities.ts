@@ -1,6 +1,6 @@
 import { briancon05 } from "./briancon/Briancon"
-import { City } from "../../../../../country/region/department/city/City"
+import { Organization } from "../../../../../Organization"
 
-export const hautesAlpesCities: City[] = [
+export const hautesAlpesCities: Organization[] = [
   briancon05
 ]

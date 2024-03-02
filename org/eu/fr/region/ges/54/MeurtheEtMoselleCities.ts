@@ -1,8 +1,8 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { cosnesEtRomain } from "./cosnesetromain/CosnesEtRomain"
 import { nancy } from "./nancy/Nancy"
+import { Organization } from "../../../../../Organization"
 
-export const meurtheEtMoselleCities: City[] = [
+export const meurtheEtMoselleCities: Organization[] = [
   cosnesEtRomain,
   nancy
 ]

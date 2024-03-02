@@ -1,9 +1,8 @@
 import { OiseCityCode } from "./OiseCityCode"
 import { pontLEveque60Messages } from "./pontleveque/PontLEvequeMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
-export const oiseCityMessages: { [key in OiseCityCode]: CityMessages } = {
+export const oiseCityMessages: { [key in OiseCityCode]: OrganizationMessages } = {
   [OiseCityCode.PontLEveque]: pontLEveque60Messages
 }
 

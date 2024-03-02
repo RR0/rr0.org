@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
 import { riom63 } from "./riom/Riom"
+import { Organization } from "../../../../../Organization"
 
-export const puyDeDomeCities: City[] = [
+export const puyDeDomeCities: Organization[] = [
   riom63
 ]

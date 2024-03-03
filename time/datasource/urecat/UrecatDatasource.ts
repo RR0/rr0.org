@@ -104,6 +104,7 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
         dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
       }
     }
+    dateTime.options.weekday = undefined
     return itemContext
   }
 

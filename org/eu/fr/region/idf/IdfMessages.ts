@@ -1,17 +1,12 @@
 import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { hautsDeSeineMessages } from "./92/HautsDeSeineMessages"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { CityMessagesList } from "../../../../country/region/department/city/CityMessagesList"
 import { IdfDepartmentCode } from "./IdfDepartmentCode"
 import { oiseMessages } from "./60/OiseCityMessages"
 import { parisMessages } from "./75/ParisMessages"
 import { yvelinesMessages } from "./78/YvelinesCityMessages"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
-export interface IdfDepartementMessages extends DepartmentMessages {
-  city: CityMessagesList
-}
-
-export type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: IdfDepartementMessages }
+export type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: DepartmentMessages<any> }
 
 export const idfDepartmentMessages: IdfDepartmentMessagesList = {
   [IdfDepartmentCode.Oise]: oiseMessages,

@@ -1,6 +1,7 @@
-import { castlegarMessages_fr } from "./Castlegar/CastegarMessages"
+import { castlegarMessages } from "./Castlegar/CastegarMessages"
 import { CityMessagesList } from "../../../../country/region/department/city/CityMessagesList"
+import { KootenaysCityCode } from "./KootenaysCityCode"
 
 export const kootenaysCityMessages: CityMessagesList = {
-  "V1N": castlegarMessages_fr
+  [KootenaysCityCode.Castegar]: castlegarMessages
 }

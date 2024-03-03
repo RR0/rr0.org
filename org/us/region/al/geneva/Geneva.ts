@@ -1,7 +1,6 @@
 import { UsaDepartementCode } from "../../UsaDepartementCode"
 import { Place } from "../../../../../place/Place"
 import { alabama } from "../Alabama"
-import { Organization, OrganizationType } from "../../../../Organization"
+import { Department } from "../../../../country/region/department/Department"
 
-export const geneva = new Organization(UsaDepartementCode.geneva, [Place.fromLocation(48, 0.316667)],
-  OrganizationType.department, alabama)
+export const geneva = new Department(UsaDepartementCode.geneva, alabama, Place.fromLocation(48, 0.316667))

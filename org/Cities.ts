@@ -6,6 +6,7 @@ import { usaCities } from "./us/region/UsaCities"
 import { CityService } from "./country/region/department/city/CityService"
 import { brazilCities } from "./br/region/BrazilCities"
 import { australiaCities } from "./au/region/AustraliaCities"
+import { newZealandCities } from "./nz/region/NewZealandCities"
 
 const cities: City[] = [
   ...australiaCities,
@@ -13,6 +14,7 @@ const cities: City[] = [
   ...canadaCities,
   ...franceCities,
   ...finlandCities,
+  ...newZealandCities,
   ...usaCities
 ]
 

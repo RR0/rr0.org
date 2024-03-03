@@ -3,10 +3,14 @@ import { OrganizationMessages } from "../../OrganizationMessages"
 export class RegionMessages<D> extends OrganizationMessages {
   /**
    *
-   * @param title
+   * @param titles
    * @param department
    */
-  constructor(title: string, readonly department?: D) {
-    super(...[title])
+  constructor(titles: string[], readonly department?: D) {
+    super(...titles)
+  }
+
+  static create<D>(title: string, department?: D) {
+    return new RegionMessages([title], department)
   }
 }

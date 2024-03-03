@@ -1,6 +1,7 @@
 import { VienneCityCode } from "./VienneCityCode"
 import { montDeMarsanMessages } from "./montigne/MontigneMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 
 type VienneCityMessagesList = { [key in VienneCityCode]: OrganizationMessages }
 
@@ -8,4 +9,4 @@ const vienneCityMessages: VienneCityMessagesList = {
   [VienneCityCode.MontDeMarsan]: montDeMarsanMessages
 }
 
-export const vienneMessages = new DepartmentMessages<VienneCityMessagesList>("Vienne", vienneCityMessages)
+export const vienneMessages = DepartmentMessages.create<VienneCityMessagesList>("Vienne", vienneCityMessages)

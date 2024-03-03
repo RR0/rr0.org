@@ -20,4 +20,4 @@ export const idfDepartmentMessages: IdfDepartmentMessagesList = {
   [IdfDepartmentCode.Yvelines]: yvelinesMessages
 }
 
-export const idfMessages = new RegionMessages<IdfDepartmentMessagesList>("Île-de-France", idfDepartmentMessages)
+export const idfMessages = RegionMessages.create<IdfDepartmentMessagesList>("Île-de-France", idfDepartmentMessages)

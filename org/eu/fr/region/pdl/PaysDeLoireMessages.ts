@@ -8,4 +8,4 @@ export type PayDeLoireDepartmentMessagesList = { [key in PaysDeLoireDepartementC
 export const paysDeLoireDepartmentsMessages: PayDeLoireDepartmentMessagesList = {
   [PaysDeLoireDepartementCode.Sarthe]: sartheMessages
 }
-export const paysDeLoireMessages = new RegionMessages("Pays-de-la-Loire", paysDeLoireDepartmentsMessages)
+export const paysDeLoireMessages = RegionMessages.create("Pays-de-la-Loire", paysDeLoireDepartmentsMessages)

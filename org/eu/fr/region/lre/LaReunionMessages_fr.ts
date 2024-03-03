@@ -1,14 +1,11 @@
 import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { LaReunionDepartementCode } from "./LaReunionDepartementCode"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { laReunion974Messages_fr } from "./974/LaReunionCityMessages_fr"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
-export type LaReunionDepartmentMessagesList = { [key in LaReunionDepartementCode]: DepartmentMessages }
-
-export const laReunionDepartmentsMessages_fr: LaReunionDepartmentMessagesList = {
+export const laReunionDepartmentsMessages_fr: { [key in LaReunionDepartementCode]: DepartmentMessages<any> } = {
   [LaReunionDepartementCode.LaReunion]: laReunion974Messages_fr
 }
-
-export const laReunionMessages_fr = new RegionMessages<{ [key in LaReunionDepartementCode]: DepartmentMessages }>(
+export const laReunionMessages_fr = RegionMessages.create<{ [key in LaReunionDepartementCode]: DepartmentMessages<any> }>(
   "La Réunion", laReunionDepartmentsMessages_fr
 )

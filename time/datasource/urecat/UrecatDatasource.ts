@@ -3,6 +3,7 @@ import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { UrecatCase, UrecatWitness } from "./UrecatCase"
+import { TimeTextBuilder } from "../../TimeTextBuilder"
 
 export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
 
@@ -89,7 +90,7 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
     return {placeName, country, departmentOrState}
   }
 
-  protected getDate(context: RR0SsgContext, url: URL) {
+  protected getDate(context: RR0SsgContext, url: URL): RR0SsgContext {
     const timeStr = url.href.substring(this.getSearchUrl().length + 1)
     const dateFields = UrecatDatasource.urlDateFormat.exec(timeStr)
     const itemContext = context.clone()
@@ -103,7 +104,7 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
         dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
       }
     }
-    return dateTime
+    return itemContext
   }
 
   protected getLink(linkCol: HTMLTableCellElement) {
@@ -114,19 +115,12 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
   protected getFromRow(context: RR0SsgContext, row: Element): UrecatCase {
     const columns = row.querySelectorAll("td")
     const url = this.getLink(columns[1])
-    const sightingDate = this.getDate(context, url)
+    const timeContext = this.getDate(context, url)
     const {placeName, departmentOrState, country} = this.getLocation(columns[1])
     const witnesses = this.getWitnesses(columns[2].textContent)
-    return {
-      url,
-      title: `${sightingDate.toString()}, ${placeName}, ${departmentOrState}, ${country}, ${witnesses.length} personne(s)`,
-      basicInfo: {
-        base: {
-          sightingDate,
-          location: {placeName, country, departmentOrState},
-          witnesses
-        }
-      }
-    }
+    const timeStr = TimeTextBuilder.build(timeContext)
+    const sightingDate = timeContext.time
+    const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${witnesses.length} personne(s)`.toUpperCase()
+    return {url, title, basicInfo: {base: {sightingDate, location: {placeName, country, departmentOrState}, witnesses}}}
   }
 }

@@ -4,14 +4,15 @@ import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
 export const urecatTestCases: UrecatCase[] = [
   {
+    url: new URL("https://ufologie.patrickgross.org/ce3/1977-03-12-nzealand-gisbornef.htm"),
     title: "12 MARS 1977, GISBORNE, GISBORNE DISTRICT COUNCIL, NOUVELLE ZELANDE, TROIS FEMMES",
     basicInfo: {
       base: {
         sightingDate: new TimeContext(rr0TestUtil.intlOptions, 1977, 3, 12),
         location: {
           placeName: "Gisborne",
-          departmentOrState: "Gisborne District Council",
-          country: "Nouvelle Zélande"
+          country: "Nouvelle Zélande",
+          departmentOrState: "Gisborne District Council"
         },
         witnesses: [
           {name: "femme 1"},
@@ -19,24 +20,23 @@ export const urecatTestCases: UrecatCase[] = [
           {name: "femme 3"}
         ]
       }
-    },
-    url: new URL("https://ufologie.patrickgross.org/ce3/1977-03-12-nzealand-gisbornef.htm")
+    }
   },
   {
+    url: new URL("https://ufologie.patrickgross.org/ce3/1977-03-04-canada-sundownf.htm"),
     title: "4 MARS 1977, SUNDOWN, MANITOBA, CANADA, UN HOMME",
     basicInfo: {
       base: {
         sightingDate: new TimeContext(rr0TestUtil.intlOptions, 1977, 3, 4),
         location: {
           placeName: "Sundown",
-          departmentOrState: "Manitoba",
-          country: "Canada"
+          country: "Canada",
+          departmentOrState: "Manitoba"
         },
         witnesses: [
           {name: "homme"}
         ]
       }
-    },
-    url: new URL("https://ufologie.patrickgross.org/ce3/1977-03-04-canada-sundownf.htm")
+    }
   }
 ]

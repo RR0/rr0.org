@@ -1,3 +1,3 @@
 import { RegionMessages } from "../../../country/region/RegionMessages"
 
-export const westernAustralia_fr = new RegionMessages("Australie-Occidentale", {})
+export const westernAustralia_fr = RegionMessages.create("Australie-Occidentale", {})

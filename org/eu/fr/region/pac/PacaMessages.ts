@@ -17,6 +17,6 @@ export const pacaMessageList: PacaDepartmentMessagesList = {
   [PacaDepartementCode.Var]: varMessages
 }
 
-export const pacaMessages = new RegionMessages<PacaDepartmentMessagesList>(
+export const pacaMessages = RegionMessages.create<PacaDepartmentMessagesList>(
   "Provence-Alpes-Côte d'Azur", pacaMessageList
 )

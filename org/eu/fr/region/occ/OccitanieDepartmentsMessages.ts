@@ -8,7 +8,8 @@ import { tarnMessages } from "./81/TarnMessages"
 import { gardMessages } from "./30/GardMessages"
 import { OrganizationMessages } from "../../../../OrganizationMessages"
 
-export const occitanieDepartmentsMessages: { [key in OccitanieDepartementCode]: OrganizationMessages } = {
+export type OccitanieDepartmentsMessages = { [key in OccitanieDepartementCode]: OrganizationMessages }
+export const occitanieDepartmentsMessages: OccitanieDepartmentsMessages = {
   [OccitanieDepartementCode.Aude]: audeMessages,
   [OccitanieDepartementCode.Gard]: gardMessages,
   [OccitanieDepartementCode.Gers]: gersMessages,

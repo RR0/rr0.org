@@ -1,10 +1,10 @@
 import { NuforcRR0Mapper } from "./NuforcRR0Mapper"
 import { countryService } from "../../../org/country/CountryService"
-import { NuforcCaseSource } from "./NuforcCaseSource"
+import { NuforcDatasource } from "./NuforcDatasource"
 import { cityService } from "../../../org/Cities"
 import { NuforcCase } from "./NuforcCase"
 
-export const nuforcDatasource = new NuforcCaseSource()
+export const nuforcDatasource = new NuforcDatasource()
 
 export const nuforcRR0Mapper = new NuforcRR0Mapper(cityService, countryService, nuforcDatasource.baseUrl,
   nuforcDatasource.copyright, nuforcDatasource.author)

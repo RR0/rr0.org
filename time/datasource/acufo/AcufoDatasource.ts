@@ -2,31 +2,28 @@ import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
 import { ObjectUtil } from "../../../util/ObjectUtil"
-import { NuforcState } from "./NuforcState"
 import assert from "assert"
+import { AcufoCase } from "./AcufoCase"
 
 interface QueryParameters {
-  id: string
 }
 
-export class NuforcCaseSource extends HttpCaseSource<NuforcCase> {
+export class AcufoDatasource extends HttpCaseSource<AcufoCase> {
 
-  constructor(readonly baseUrl = "https://nuforc.org", readonly searchPath = "subndx") {
-    super("NUFORC", "Online Database")
+  constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "alsacat") {
+    super("Patrick Gross", "ACUFO/ALSACAT (Les ovnis vus de près)")
   }
 
-  async getAll(context: RR0SsgContext): Promise<NuforcCase[]> {
+  async getAll(context: RR0SsgContext): Promise<AcufoCase[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    const queryParams: QueryParameters = {
-      id: "e" + year + String(month).padStart(2, "0")
-    }
+    const queryParams: QueryParameters = {}
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
-    const page = await this.fetch<string>(UrlUtil.join(searchUrl, "?" + queryParamsStr),
+    const lang = context.locale === "fr" ? "f" : ""
+    const page = await this.fetch<string>(UrlUtil.join(searchUrl, "_" + year + lang),
       {headers: {accept: "text/html;charset=utf-8"}})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
@@ -36,11 +33,11 @@ export class NuforcCaseSource extends HttpCaseSource<NuforcCase> {
       charset = "latin1"
     }
     const decoder = new TextDecoder(charset)*/
-    const rowEls = doc.querySelectorAll("#table_1 tbody tr")
+    const rowEls = doc.querySelectorAll("table")
     return Array.from(rowEls).map(row => this.getNativeCase(context, row))
   }
 
-  protected getNativeCase(context: RR0SsgContext, row: Element): NuforcCase {
+  protected getNativeCase(context: RR0SsgContext, row: Element): AcufoCase {
     const fields = row.querySelectorAll("td")
     const caseLink = fields[0].firstElementChild as HTMLAnchorElement
     const dateFormat = /(\d\d)\/(\d\d)\/(\d\d\d\d) (\d\d):(\d\d)/

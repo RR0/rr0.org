@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { BaseOvniFranceCaseSource } from "./BaseOvniFranceCaseSource"
+import { BaseOvniFranceDatasource } from "./BaseOvniFranceDatasource"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
@@ -11,7 +11,7 @@ import { lyon69 } from "../../../org/eu/fr/region/ara/69/lyon/Lyon"
 import { briancon05 } from "../../../org/eu/fr/region/pac/05/briancon/Briancon"
 import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/chambon/Chambon"
 
-function expectedSource(datasource: BaseOvniFranceCaseSource, dataDate: Date, caseNumber: number) {
+function expectedSource(datasource: BaseOvniFranceDatasource, dataDate: Date, caseNumber: number) {
   const url = new URL(datasource.searchPath + "?typlist=20&page=0&numobs=" + caseNumber, datasource.baseUrl)
   return new OnlineSource(url, "cas n° " + caseNumber, [datasource.author],
     {publisher: datasource.copyright, time: dataDate.toLocaleString()})

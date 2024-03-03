@@ -3,6 +3,7 @@ import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { TimeContext } from "../../TimeContext"
 
 enum ListType {
   perMonth = 20
@@ -19,7 +20,7 @@ interface FormData {
   B1: "Envoyer"
 }
 
-export class BaseOvniFranceCaseSource extends HttpCaseSource<BaseOvniFranceCase> {
+export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase> {
 
   constructor(readonly baseUrl = "http://baseovnifrance.free.fr", readonly searchPath = "listgen.php") {
     super("Luc Chastan", "Base OVNI France")
@@ -44,7 +45,7 @@ export class BaseOvniFranceCaseSource extends HttpCaseSource<BaseOvniFranceCase>
     rows.shift()  // Skip header row
     const cases: BaseOvniFranceCase[] = []
     for (const row of rows) {
-      cases.push(this.get(context, row))
+      cases.push(this.getFromRow(context, row))
     }
     return cases
   }
@@ -57,39 +58,46 @@ export class BaseOvniFranceCaseSource extends HttpCaseSource<BaseOvniFranceCase>
     return {formData, queryUrl}
   }
 
-  protected get(context: RR0SsgContext, row: Element): BaseOvniFranceCase {
-    const fields = row.querySelectorAll("td")
-    const caseLink = fields[0].firstElementChild as HTMLAnchorElement
+  protected getBoolean(field: HTMLTableCellElement) {
+    return field.textContent === "Oui"
+  }
+
+  protected getDate(context: RR0SsgContext, dateField: HTMLTableCellElement) {
     const dateFormat = /(\d\d)-(\d\d)-(\d\d\d\d)/
-    const dateFields = dateFormat.exec(fields[1].textContent)
+    const dateFields = dateFormat.exec(dateField.textContent)
     const itemContext = context.clone()
     const dateTime = itemContext.time
     dateTime.setYear(parseInt(dateFields[3], 10))
     dateTime.setMonth(parseInt(dateFields[2], 10))
     const dayOfMonth = dateFields[1]
     dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
+    return dateTime
+  }
+
+  protected setTime(dateTime: TimeContext, timeField: HTMLTableCellElement) {
     const timeFormat = /(\d\d):(\d\d)/
-    const timeFields = timeFormat.exec(fields[2].textContent)
+    const timeFields = timeFormat.exec(timeField.textContent)
     const hour = timeFields ? parseInt(timeFields[1], 10) : undefined
     const minutes = timeFields ? parseInt(timeFields[2], 10) : undefined
     dateTime.setHour(hour)
     dateTime.setMinutes(minutes)
     dateTime.setTimeZone("GMT+1")
-    const result = /(.*?)\s+\((\d+)\)/.exec(caseLink.textContent)
-    const place = result[1]
-    const depCode = result[2].padStart(2, "0")
+  }
+
+  protected getFromRow(context: RR0SsgContext, row: Element): BaseOvniFranceCase {
+    const columns = row.querySelectorAll("td")
+    const caseLink = columns[0].firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "&", "numobs"), 10)
-    return {
-      caseNumber,
-      url,
-      place,
-      depCode,
-      dateTime,
-      physicalEffect: fields[3].textContent === "Oui",
-      witnessEffect: fields[4].textContent === "Oui",
-      entities: fields[5].textContent === "Oui",
-      landing: fields[6].textContent === "Oui"
-    }
+    const linkParse = /(.*?)\s+\((\d+)\)/.exec(caseLink.textContent)
+    const place = linkParse[1]
+    const depCode = linkParse[2].padStart(2, "0")
+    const dateTime = this.getDate(context, columns[1])
+    this.setTime(dateTime, columns[2])
+    const physicalEffect = this.getBoolean(columns[3])
+    const witnessEffect = this.getBoolean(columns[4])
+    const entities = this.getBoolean(columns[5])
+    const landing = this.getBoolean(columns[6])
+    return {caseNumber, url, place, depCode, dateTime, physicalEffect, witnessEffect, entities, landing}
   }
 }

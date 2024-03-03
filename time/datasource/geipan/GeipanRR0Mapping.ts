@@ -1,10 +1,10 @@
-import { GeipanCaseSource } from "./GeipanCaseSource"
+import { GeipanDatasource } from "./GeipanDatasource"
 import { cityService } from "../../../org/Cities"
 import { GeipanCase } from "./GeipanCase"
 import { GeipanRR0Mapper } from "./GeipanRR0Mapper"
 import { departmentService } from "../../../org/country/region/department/DepartmentService"
 
-export const geipanDatasource = new GeipanCaseSource()
+export const geipanDatasource = new GeipanDatasource()
 
 export const geipanRR0Mapper = new GeipanRR0Mapper(
   cityService, departmentService,

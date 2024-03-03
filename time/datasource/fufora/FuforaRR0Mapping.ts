@@ -1,9 +1,9 @@
-import { FuforaCaseSource } from "./FuforaCaseSource"
+import { FuforaDatasource } from "./FuforaDatasource"
 import { FuforaRR0Mapper } from "./FuforaRR0Mapper"
 import { cityService } from "../../../org/Cities"
 import { FuforaCase } from "./FuforaCase"
 
-export const fuforaDatasource = new FuforaCaseSource()
+export const fuforaDatasource = new FuforaDatasource()
 
 export const fuforaRR0Mapper = new FuforaRR0Mapper(cityService, fuforaDatasource.baseUrl, fuforaDatasource.copyright,
   fuforaDatasource.author)

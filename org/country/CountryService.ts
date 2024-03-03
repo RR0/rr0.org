@@ -8,6 +8,7 @@ import { australia } from "../au/Australia"
 import { india } from "../in/Country_in"
 import { brazil } from "../br/Brazil"
 import { newZealand } from "../nz/NewZealand"
+import { RR0SsgContext } from "../../RR0SsgContext"
 
 /**
  * @deprecated
@@ -16,61 +17,65 @@ export class CountryService {
   /**
    * @param countries
    */
-  constructor(readonly countries: { [name: string]: Country }) {
+  constructor(readonly countries: Country[]) {
   }
 
   get(code: string): Country | undefined {
-    return Object.values(this.countries).find(country => {
+    return this.countries.find(country => {
       return country.code === code
+    })
+  }
+
+  findByName(context: RR0SsgContext, name: string): Country | undefined {
+    name = name.replaceAll(" ", "-")
+    return this.countries.find(country => {
+      return country.messages(context).title === name
     })
   }
 }
 
-export type CountryList
-  = { [key in CountryCode]: Country }
-
-const countries: CountryList = {
-  ar: new Country(CountryCode.ar),
-  at: new Country(CountryCode.at),
-  au: australia,
-  be: new Country(CountryCode.be),
-  br: brazil,
-  ca: canada,
-  ch: new Country(CountryCode.ch),
-  cl: new Country(CountryCode.cl),
-  cn: new Country(CountryCode.cn),
-  cy: new Country(CountryCode.cy),
-  de: new Country(CountryCode.de),
-  dk: new Country(CountryCode.dk),
-  es: new Country(CountryCode.es),
-  fi: finland,
-  fr: france,
-  gr: new Country(CountryCode.gr),
-  hu: new Country(CountryCode.hu),
-  ie: new Country(CountryCode.ie),
-  il: new Country(CountryCode.il),
-  in: india,
-  ir: new Country(CountryCode.ir),
-  it: new Country(CountryCode.it),
-  jp: new Country(CountryCode.jp),
-  ma: new Country(CountryCode.ma),
-  mx: new Country(CountryCode.mx),
-  nl: new Country(CountryCode.nl),
-  no: new Country(CountryCode.no),
-  nz: newZealand,
-  pe: new Country(CountryCode.pe),
-  pl: new Country(CountryCode.pl),
-  pt: new Country(CountryCode.pt),
-  ro: new Country(CountryCode.ro),
-  ru: new Country(CountryCode.ru),
-  sa: new Country(CountryCode.sa),
-  se: new Country(CountryCode.se),
-  tr: new Country(CountryCode.tr),
-  ua: new Country(CountryCode.ua),
-  uk: new Country(CountryCode.uk),
-  us: usa,
-  ve: new Country(CountryCode.ve),
-  za: new Country(CountryCode.za)
-}
+const countries: Country[] = [
+  new Country(CountryCode.ar),
+  new Country(CountryCode.at),
+  australia,
+  new Country(CountryCode.be),
+  brazil,
+  canada,
+  new Country(CountryCode.ch),
+  new Country(CountryCode.cl),
+  new Country(CountryCode.cn),
+  new Country(CountryCode.cy),
+  new Country(CountryCode.de),
+  new Country(CountryCode.dk),
+  new Country(CountryCode.es),
+  finland,
+  france,
+  new Country(CountryCode.gr),
+  new Country(CountryCode.hu),
+  new Country(CountryCode.ie),
+  new Country(CountryCode.il),
+  india,
+  new Country(CountryCode.ir),
+  new Country(CountryCode.it),
+  new Country(CountryCode.jp),
+  new Country(CountryCode.ma),
+  new Country(CountryCode.mx),
+  new Country(CountryCode.nl),
+  new Country(CountryCode.no),
+  newZealand,
+  new Country(CountryCode.pe),
+  new Country(CountryCode.pl),
+  new Country(CountryCode.pt),
+  new Country(CountryCode.ro),
+  new Country(CountryCode.ru),
+  new Country(CountryCode.sa),
+  new Country(CountryCode.se),
+  new Country(CountryCode.tr),
+  new Country(CountryCode.ua),
+  new Country(CountryCode.uk),
+  usa,
+  new Country(CountryCode.ve),
+  new Country(CountryCode.za)
+]
 
 export const countryService = new CountryService(countries)

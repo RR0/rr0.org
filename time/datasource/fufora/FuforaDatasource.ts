@@ -145,7 +145,7 @@ interface FormData {
   tark: 1
 }
 
-export class FuforaCaseSource extends HttpCaseSource<FuforaCase> {
+export class FuforaDatasource extends HttpCaseSource<FuforaCase> {
 
   constructor(readonly baseUrl = "https://www.fufora.fi/ufodb2", readonly searchPath = "ufohaku.php") {
     super("FUFORA", "Base de données observationnelle")

@@ -29,7 +29,7 @@ interface QueryParameters {
   field_agregation_index_value: string
 }
 
-export class GeipanCaseSource extends HttpCaseSource<GeipanCase> {
+export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
 
   static readonly dateFormat = /(.+?)\s+\((\d+)\)\s+(\d+).(\d+).(\d+)/
 
@@ -79,7 +79,7 @@ export class GeipanCaseSource extends HttpCaseSource<GeipanCase> {
     const caseLink = linkField.firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
     const caseField = row.querySelector(".cas_title")
-    const fields = GeipanCaseSource.dateFormat.exec(caseField.textContent)
+    const fields = GeipanDatasource.dateFormat.exec(caseField.textContent)
     const city = fields[1].trim()
     const depCode = parseInt(fields[2], 10)
     const dateTime = this.getTime(context, fields, 5)

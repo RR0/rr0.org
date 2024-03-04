@@ -2,12 +2,12 @@ import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { PacaDepartementCode } from "./PacaDepartementCode"
 import { hautesAlpesMessages } from "./05/HautesAlpesMessages"
 import { vaucluseMessages } from "./84/VaucluseMessages"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { alpesMaritimesMessages } from "./06/AlpesMaritimesMessages"
 import { varMessages } from "./83/VarMessages"
 import { bouchesDuRhoneMessages } from "./13/BouchesDuRhoneMessages"
+import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
 
-export type PacaDepartmentMessagesList = { [key in PacaDepartementCode]: DepartmentMessages }
+export type PacaDepartmentMessagesList = { [key in PacaDepartementCode]: DepartmentMessages<any> }
 
 export const pacaMessageList: PacaDepartmentMessagesList = {
   [PacaDepartementCode.AlpesMaritimes]: alpesMaritimesMessages,

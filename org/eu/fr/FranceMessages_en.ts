@@ -12,9 +12,7 @@ import { normandieMessages_en } from "./region/nor/NormandieMessages_en"
 import { laReunionMessages_en } from "./region/lre/LaReunionMessages_en"
 import { OrganizationType } from "../../Organization"
 
-export const franceMessages_en = new FranceMessages(
-  "France"
-)
+export const franceMessages_en = new FranceMessages("France")
 franceMessages_en[OrganizationType.region] = {
   ara: auvergneRhoneAlpesMessages,
   bfc: bourgogneFrancheComteMessages,

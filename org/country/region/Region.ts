@@ -1,20 +1,17 @@
-import { FranceRegionCode } from "../../eu/fr/region/FranceRegionCode"
-import { RegionCode_in } from "../../in/RegionCode_in"
+import { IndiaRegionCode } from "../../in/IndiaRegionCode"
 import { Place } from "../../../place/Place"
-import { FinlandRegionCode } from "../../eu/fi/region/FinlandRegionCode"
 import { UsaRegionCode } from "../../us/region/UsaRegionCode"
 import { CanadaRegionCode } from "../../ca/region/CanadaRegionCode"
 import { AustraliaRegionCode } from "../../au/region/AustraliaRegionCode"
 import { BrazilRegionCode } from "../../br/region/BrazilRegionCode"
 import { Organization, OrganizationType } from "../../Organization"
-
-export type RegionCode_eu = FranceRegionCode | FinlandRegionCode
+import { EuropeRegionCode } from "../../eu/EuropeRegionCode"
 
 export type RegionCode =
-  RegionCode_eu
+  EuropeRegionCode
   | UsaRegionCode
   | CanadaRegionCode
-  | RegionCode_in
+  | IndiaRegionCode
   | AustraliaRegionCode
   | BrazilRegionCode
 

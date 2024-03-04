@@ -1,13 +1,13 @@
-import { RegionCode_in } from "./RegionCode_in"
+import { IndiaRegionCode } from "./IndiaRegionCode"
 import { Place } from "../../place/Place"
 import { india } from "./Country_in"
 import { Region } from "../country/region/Region"
 
-function createRegion_in(code: RegionCode_in, place: Place) {
+function createRegion_in(code: IndiaRegionCode, place: Place) {
   return new Region(code, india, [place])
 }
 
 export const indiaRegions: Region[] = [
-  createRegion_in(RegionCode_in.Telangana, Place.fromLocation(47.466667, 0.833333)),
-  createRegion_in(RegionCode_in.Maharashtra, Place.fromLocation(47.466667, 0.833333))
+  createRegion_in(IndiaRegionCode.Telangana, Place.fromLocation(47.466667, 0.833333)),
+  createRegion_in(IndiaRegionCode.Maharashtra, Place.fromLocation(47.466667, 0.833333))
 ]

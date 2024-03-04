@@ -1,4 +1,4 @@
-import { vallonEnSullyMessages } from "./stetienne/VallonEnSullyMessages"
+import { vallonEnSullyMessages } from "./valonensully/VallonEnSullyMessages"
 import { AllierCityCode } from "./AllierCityCode"
 import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
 

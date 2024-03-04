@@ -7,6 +7,7 @@ import { canadaMessages_en } from "./ca/CanadaMessages_en"
 import { australiaMessages_en } from "./au/AustraliaMessages_en"
 import { brazilMessages_en } from "./br/BrazilMessages_en"
 import { newZealandMessages_en } from "./nz/NewZealandMessages_en"
+import { spainMessages_en } from "./eu/es/region/SpainMessages_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: new CountryMessages("Austria"),
@@ -21,7 +22,7 @@ export const countryMessageList_en: CountryMessagesList = {
   cy: new CountryMessages("Cyprus"),
   de: new CountryMessages("Germany"),
   dk: new CountryMessages("Denmark"),
-  es: new CountryMessages("Spain"),
+  es: spainMessages_en,
   fi: finlandMessages_en,
   fr: franceMessages_en,
   gr: new CountryMessages("Greece"),

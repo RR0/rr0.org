@@ -23,7 +23,7 @@ export class CityService {
         const foundDep = !dep?.code || dep.code === city.parent.code
         found = false
         for (let i = 0; !found && i < cityMessages.titles.length; i++) {
-          const cityName = cityMessages.toTitleFromName(context, city, cityMessages.titles[i])
+          const cityName = this.normalizeName(cityMessages.toTitleFromName(context, city, cityMessages.titles[i]))
           const knownCityName = this.normalizeName(cityName)
           const foundName = knownCityName === cityNameToFind
           found = foundName && foundDep

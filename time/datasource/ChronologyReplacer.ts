@@ -6,6 +6,7 @@ import { CaseMapping } from "./CaseMapping"
 import { CsvMapper } from "./CsvMapper"
 import fs from "fs"
 import path from "path"
+import { StringUtil } from "../../util/string/StringUtil"
 
 export interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0Case> {
 }
@@ -30,10 +31,10 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
         if (this.save) {
           const csvContents = new CsvMapper().reduce(context, sourceCases, fetchTime)
           const specialChars = /[ -?!&*#.:;=°',]/g
-          fs.writeFileSync(path.join(path.dirname(context.inputFile.name),
-              datasource.author.replace(specialChars, "") + "_" + datasource.copyright.replace(specialChars, "")
-              + ".csv"),
-            csvContents, {encoding: "utf-8"})
+          const fileName = path.join(path.dirname(context.inputFile.name),
+            StringUtil.removeAccents(datasource.author).replace(specialChars, "") + "_"
+            + StringUtil.removeAccents(datasource.copyright).replace(specialChars, "") + ".csv")
+          fs.writeFileSync(fileName, csvContents, {encoding: "utf-8"})
         }
         if (this.merge) {
           const targetCases = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))

@@ -16,10 +16,14 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
     } else if (value instanceof URL || value instanceof TimeContext) {
       return value.toString()
     } else if (Array.isArray(value)) {
-      return value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(",")
+      return value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(";")
     } else if (typeof value === "object") {
-      const subMapper = new CsvMapper(this.sep, this.escapeChar, key + ".")
-      return subMapper.map(context, value, sourceTime)
+      const objectKeyPos = this.fields.indexOf(this.prefix + key)
+      this.fields.splice(objectKeyPos, 1)
+      const subMapper = new CsvMapper(this.sep, this.escapeChar, this.prefix + key + ".")
+      const subValues = subMapper.map(context, value, sourceTime)
+      this.fields.push(...subMapper.fields)
+      return subValues
     } else {
       return value
     }

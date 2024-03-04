@@ -2,13 +2,15 @@ import { expect } from "@javarome/testscript"
 import { RR0CaseRenderer } from "../RR0CaseRenderer"
 import { RR0CaseMapping } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
+import { TimeContext } from "../TimeContext"
 
 export class DatasourceTestCase<S> {
 
   constructor(
     readonly mapping: RR0CaseMapping<S>,
     readonly sourceCases: S[],
-    readonly sortComparator: (c1: S, c2: S) => number
+    readonly sortComparator: (c1: S, c2: S) => number,
+    readonly getTime: (c: S) => TimeContext
   ) {
   }
 
@@ -23,7 +25,7 @@ export class DatasourceTestCase<S> {
   checkCaseHTML(context: HtmlRR0SsgContext, nativeCase: S, item: HTMLLIElement, dataDate: Date) {
     const datasource = this.mapping.datasource
     const expected = this.mapping.mapper.map(context, nativeCase, dataDate)
-    const nativeTime = nativeCase.dateTime
+    const nativeTime = this.getTime(nativeCase)
     const dayOfMonth = nativeTime.getDayOfMonth()
     const dateStr = `${nativeTime.getYear()}-${String(nativeTime.getMonth()).padStart(2, "0")}`
       + (dayOfMonth ? "-" + String(dayOfMonth).padStart(2, "0") : "")

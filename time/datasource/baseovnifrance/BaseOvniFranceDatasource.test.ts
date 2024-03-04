@@ -4,12 +4,16 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
 import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { baseOvniFranceRR0Mapping, baseOvniFranceSortComparator } from "./BaseOvniFranceRR0Mapping"
+import {
+  baseOvniFranceRR0Mapping,
+  baseOvniFranceSortComparator,
+  baseOvniFranceTimeAccessor
+} from "./BaseOvniFranceRR0Mapping"
 
 describe("BaseOvniFranceCaseSource", () => {
 
   const testCase = new DatasourceTestCase<BaseOvniFranceCase>(
-    baseOvniFranceRR0Mapping, baseOvniFranceTestCases, baseOvniFranceSortComparator
+    baseOvniFranceRR0Mapping, baseOvniFranceTestCases, baseOvniFranceSortComparator, baseOvniFranceTimeAccessor
   )
   let context: HtmlRR0SsgContext
 

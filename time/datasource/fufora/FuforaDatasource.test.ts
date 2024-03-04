@@ -4,11 +4,12 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { FuforaCase } from "./FuforaCase"
 import { fuforaTestCases } from "./FuforaTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { fuforaRR0Mapping, fuforaSortComparator } from "./FuforaRR0Mapping"
+import { fuforaRR0Mapping, fuforaSortComparator, fuforaTimeAccessor } from "./FuforaRR0Mapping"
 
 describe("FuforaCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<FuforaCase>(fuforaRR0Mapping, fuforaTestCases, fuforaSortComparator)
+  const testCase = new DatasourceTestCase<FuforaCase>(fuforaRR0Mapping, fuforaTestCases, fuforaSortComparator,
+    fuforaTimeAccessor)
   let context: HtmlRR0SsgContext
 
   beforeEach(() => {

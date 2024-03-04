@@ -16,3 +16,5 @@ export const nuforcRR0Mapping = {
 
 export const nuforcSortComparator
   = (c1: NuforcCase, c2: NuforcCase) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+
+export const nuforcTimeAccessor = (c: NuforcCase) => c.dateTime

@@ -2,14 +2,15 @@ import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { UrecatCase } from "./UrecatCase"
-import { urecatRR0Mapping, urecatSortComparator } from "./UrecatRR0Mapping"
+import { urecatRR0Mapping, urecatSortComparator, urecatTimeAccessor } from "./UrecatRR0Mapping"
 import { urecatTestCases } from "./UrecatTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { UrecatDatasource } from "./UrecatDatasource"
 
 describe("UrecatCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<UrecatCase>(urecatRR0Mapping, urecatTestCases, urecatSortComparator)
+  const testCase = new DatasourceTestCase<UrecatCase>(urecatRR0Mapping, urecatTestCases, urecatSortComparator,
+    urecatTimeAccessor)
 
   let context: HtmlRR0SsgContext
 

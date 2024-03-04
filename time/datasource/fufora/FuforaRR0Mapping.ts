@@ -15,3 +15,5 @@ export const fuforaRR0Mapping = {
 
 export const fuforaSortComparator
   = (c1: FuforaCase, c2: FuforaCase) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+
+export const fuforaTimeAccessor = (c: FuforaCase) => c.dateTime

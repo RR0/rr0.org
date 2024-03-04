@@ -18,3 +18,5 @@ export const geipanRR0Mapping = {
 
 export const geipanSortComparator
   = (c1: GeipanCase, c2: GeipanCase) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+
+export const geipanTimeAccessor = (c: GeipanCase) => c.dateTime

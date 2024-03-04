@@ -2,9 +2,11 @@ import { franceCities } from "./fr/FranceCities"
 import { finlandCities } from "./fi/FinlandCities"
 import { City } from "../country/region/department/city/City"
 import { spainCities } from "./es/region/SpainCities"
+import { polandCities } from "./pl/region/PolandCities"
 
 export const europeCities: City[] = [
   ...spainCities,
   ...franceCities,
-  ...finlandCities
+  ...finlandCities,
+  ...polandCities
 ]

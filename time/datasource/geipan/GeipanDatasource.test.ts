@@ -2,13 +2,14 @@ import { beforeEach, describe, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { GeipanCase } from "./GeipanCase"
-import { geipanRR0Mapping, geipanSortComparator } from "./GeipanRR0Mapping"
+import { geipanRR0Mapping, geipanSortComparator, geipanTimeAccessor } from "./GeipanRR0Mapping"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { geipanTestCases } from "./GeipanTestCases"
 
 describe("GeipanCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<GeipanCase>(geipanRR0Mapping, geipanTestCases, geipanSortComparator)
+  const testCase = new DatasourceTestCase<GeipanCase>(geipanRR0Mapping, geipanTestCases, geipanSortComparator,
+    geipanTimeAccessor)
 
   let context: HtmlRR0SsgContext
 

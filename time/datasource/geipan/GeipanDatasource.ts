@@ -94,7 +94,7 @@ export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
 
     const postDatefields = /(\d+).(\d+).(\d+)/.exec(getLabeledText(".date-update"))
     const postTime = this.getTime(context, postDatefields, 3)
-    const classification = ObjectUtil.valueFromKey<GeipanClassification>(GeipanClassification,
+    const classification = ObjectUtil.enumFromValue<GeipanClassification>(GeipanClassification,
       getLabeledText(".classification"))
     return {depCode, caseNumber, url, city, dateTime, postTime, classification}
   }

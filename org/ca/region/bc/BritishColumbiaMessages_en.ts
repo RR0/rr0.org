@@ -1,9 +1,10 @@
 import { kootenaysMessages_en } from "./rdck/KootenaysMessages_en"
 import { RegionMessages } from "../../../country/region/RegionMessages"
+import { BritishColumbiaDepartmentCode } from "./BritishColumbiaDepartmentCode"
 
 export const britishColumbiaMessages_en = RegionMessages.create(
   "British Columbia",
   {
-    rdck: kootenaysMessages_en
+    [BritishColumbiaDepartmentCode.kootenays]: kootenaysMessages_en
   }
 )

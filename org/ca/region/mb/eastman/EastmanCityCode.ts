@@ -1,3 +1,3 @@
 export enum EastmanCityCode {
-  Sundown = "R0A 2C0"
+  Sundown = "R0A2C0"
 }

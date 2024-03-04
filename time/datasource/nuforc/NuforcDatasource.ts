@@ -49,14 +49,14 @@ export class NuforcDatasource extends HttpCaseSource<NuforcCase> {
 
   protected getCountry(countryField: HTMLTableCellElement): NuforcCountry {
     const countryStr = countryField.textContent
-    const country = ObjectUtil.valueFromKey<NuforcCountry>(NuforcCountry, countryStr)
+    const country = ObjectUtil.enumFromValue<NuforcCountry>(NuforcCountry, countryStr)
     assert.ok(country, `Unknown NUFORC country "${countryStr}"`)
     return country
   }
 
   protected getState(caseField: HTMLTableCellElement): NuforcState {
     const stateStr = caseField.textContent
-    return ObjectUtil.valueFromKey<NuforcState>(NuforcState, stateStr)
+    return ObjectUtil.enumFromValue<NuforcState>(NuforcState, stateStr)
   }
 
   protected getTime(dateField: HTMLTableCellElement, context: RR0SsgContext): TimeContext {

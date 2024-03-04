@@ -15,9 +15,9 @@ export const urecatTestCases: UrecatCase[] = [
           departmentOrState: "Gisborne District Council"
         },
         witnesses: [
-          {name: "femme 1"},
-          {name: "femme 2"},
-          {name: "femme 3"}
+          {name: "femme 1", type: "femme"},
+          {name: "femme 2", type: "femme"},
+          {name: "femme 3", type: "femme"}
         ]
       }
     }
@@ -34,7 +34,7 @@ export const urecatTestCases: UrecatCase[] = [
           departmentOrState: "Manitoba"
         },
         witnesses: [
-          {name: "homme"}
+          {name: "homme", type: "homme"}
         ]
       }
     }

@@ -4,11 +4,15 @@ import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { UrecatCase, UrecatWitness } from "./UrecatCase"
 import { TimeTextBuilder } from "../../TimeTextBuilder"
+import { MessageUtils } from "../../../lang/RR0Messages"
+import { ObjectUtil } from "../../../util/ObjectUtil"
 
 export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
 
   protected static readonly urlDateFormat = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d))?)?/
-  protected static readonly count: { [key: string]: number } = {
+  protected static readonly wordToCount: { [key: string]: number } = {
+    "une": 1,
+    "un": 1,
     "deux": 2,
     "trois": 3,
     "quatre": 4,
@@ -53,18 +57,18 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
       .map(m => m.replace(/^ses /, ""))
       .flatMap(name => {
         const lowName = name.toLowerCase()
-        const countEntry = Object.entries(UrecatDatasource.count).find(entry => {
+        const countEntry = Object.entries(UrecatDatasource.wordToCount).find(entry => {
           if (lowName.startsWith(entry[0] + " ")) {
             return entry
           }
         })
-        if (countEntry) {
+        if (countEntry && countEntry[1] > 1) {
           const oneName = lowName.substring(countEntry[0].length + 1).slice(0, -1)
-          const witnesses = []
+          const witnessesNames = []
           for (let i = 1; i <= countEntry[1]; i++) {
-            witnesses.push(oneName + " " + i)
+            witnessesNames.push(oneName + " " + i)
           }
-          return witnesses
+          return witnessesNames
         } else {
           const names = name.split(" ")
           if (names.length > 1) {
@@ -121,7 +125,9 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
     const witnesses = this.getWitnesses(columns[2].textContent)
     const timeStr = TimeTextBuilder.build(timeContext)
     const sightingDate = timeContext.time
-    const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${witnesses.length} personne(s)`.toUpperCase()
+    const countStr = ObjectUtil.keyFromValue(UrecatDatasource.wordToCount, witnesses.length)
+    const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${countStr} ${MessageUtils.pluralWord(
+      witnesses.length, "personne")}`.toUpperCase()
     return {url, title, basicInfo: {base: {sightingDate, location: {placeName, country, departmentOrState}, witnesses}}}
   }
 }

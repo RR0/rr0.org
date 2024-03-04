@@ -4,8 +4,13 @@ import { CountryMessagesList } from "../org/CountryMessagesList"
 import { Gender } from "@rr0/common"
 
 export class MessageUtils {
+
   static plural(n: number, word: string): string {
-    return n ? `${n} ${word}${n > 1 ? "s" : ""}` : ""
+    return n ? `${n} ${MessageUtils.pluralWord(n, word)}` : ""
+  }
+
+  static pluralWord(n: number, word: string): string {
+    return n ? `${word}${n > 1 ? "s" : ""}` : ""
   }
 }
 

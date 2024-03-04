@@ -55,9 +55,9 @@ export class AcufoDatasource extends HttpCaseSource<AcufoCase> {
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "?", "id"), 10)
     const stateStr = fields[3].textContent
-    const state = ObjectUtil.valueFromKey<NuforcState>(NuforcState, stateStr)
+    const state = ObjectUtil.enumFromValue<NuforcState>(NuforcState, stateStr)
     const countryStr = fields[4].textContent
-    const country = ObjectUtil.valueFromKey<NuforcCountry>(NuforcCountry, countryStr)
+    const country = ObjectUtil.enumFromValue<NuforcCountry>(NuforcCountry, countryStr)
     assert.ok(country, `Unknown NUFORC country "${countryStr}"`)
     const city = fields[2].textContent
     const shape = NuforcShape[fields[5].textContent]

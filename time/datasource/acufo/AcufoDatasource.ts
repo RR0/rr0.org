@@ -12,15 +12,13 @@ interface QueryParameters {
 export class AcufoDatasource extends HttpCaseSource<AcufoCase> {
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "alsacat") {
-    super("Patrick Gross", "ACUFO/ALSACAT (Les ovnis vus de près)")
+    super("Gross, Patrick", "ACUFO/ALSACAT (Les ovnis vus de près)")
   }
 
   async getAll(context: RR0SsgContext): Promise<AcufoCase[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    const queryParams: QueryParameters = {}
-    const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
     const lang = context.locale === "fr" ? "f" : ""
     const page = await this.fetch<string>(UrlUtil.join(searchUrl, "_" + year + lang),

@@ -3,8 +3,11 @@ import { RR0CaseRenderer } from "../RR0CaseRenderer"
 import { RR0CaseMapping } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
+import { CsvMapper } from "./CsvMapper"
 
 export class DatasourceTestCase<S> {
+
+  readonly csvMapper = new CsvMapper<S>()
 
   constructor(
     readonly mapping: RR0CaseMapping<S>,

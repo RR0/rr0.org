@@ -22,7 +22,7 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
   }
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "ce3") {
-    super("Patrick Gross", "URECAT (Les ovnis vus de près)")
+    super("Gross, Patrick", "URECAT (Les ovnis vus de près)")
   }
 
   async getAll(context: RR0SsgContext): Promise<UrecatCase[]> {

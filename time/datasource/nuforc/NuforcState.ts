@@ -51,6 +51,7 @@ export enum NuforcState {
    */
   Ontario = "ON",
 
+  RhodeIsland = "RI",
   SouthCarolina = "SC",
   Tennessee = "TN",
   Texas = "TX",

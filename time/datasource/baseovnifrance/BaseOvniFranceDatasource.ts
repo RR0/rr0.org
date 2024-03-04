@@ -23,7 +23,7 @@ interface FormData {
 export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase> {
 
   constructor(readonly baseUrl = "http://baseovnifrance.free.fr", readonly searchPath = "listgen.php") {
-    super("Luc Chastan", "Base OVNI France")
+    super("Chastan, Luc", "Base OVNI France")
   }
 
   async getAll(context: RR0SsgContext): Promise<BaseOvniFranceCase[]> {

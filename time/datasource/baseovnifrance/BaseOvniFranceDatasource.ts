@@ -31,7 +31,7 @@ export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase>
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    const {formData, queryUrl} = this.queryUrl({typlist: ListType.perMonth, page: 0}, month, year)
+    const {formData, queryUrl} = this.queryUrl(month, year)
     const page = await this.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
@@ -51,7 +51,8 @@ export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase>
     return cases
   }
 
-  protected queryUrl(queryParams: QueryParameters, month: number, year: number) {
+  queryUrl(month: number, year: number): { formData: FormData, queryUrl: string } {
+    const queryParams: QueryParameters = {typlist: ListType.perMonth, page: 0}
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const formData: FormData = {mois: String(month).padStart(2, "0"), an: year, B1: "Envoyer"}
     const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
@@ -103,6 +104,16 @@ export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase>
     const witnessEffect = this.getBoolean(columns[4])
     const entities = this.getBoolean(columns[5])
     const landing = this.getBoolean(columns[6])
-    return {caseNumber, url, place, depCode, dateTime, physicalEffect, witnessEffect, entities, landing}
+    return {
+      caseNumber: caseNumber,
+      url,
+      city: place,
+      depCode: depCode,
+      dateTime: dateTime,
+      physicalEffect,
+      witnessEffect,
+      entities,
+      landing
+    }
   }
 }

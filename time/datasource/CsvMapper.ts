@@ -3,9 +3,11 @@ import { RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 
 export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
+
   readonly fields = new Set<string>()
 
-  constructor(readonly sep = ",", readonly escapeChar = "\"", readonly prefix = "") {
+  constructor(
+    readonly sep = ",", readonly escapeChar = "\"", readonly prefix = "") {
   }
 
   readonly fieldMapper = (context: RR0SsgContext, key: string, value: any, sourceTime: Date): string => {
@@ -63,5 +65,25 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
 
   escape(value: string): string {
     return value.indexOf(this.sep) >= 0 ? this.escapeChar + value + this.escapeChar : value
+  }
+
+  readLine(line: string): S {
+    const c = {}
+    const values = line.split(this.sep)
+    const fields = Array.from(this.fields)
+    for (let i = 0; i < fields.length; i++) {
+      const field = fields[i]
+      c[field] = values[i]
+    }
+    return c as S
+  }
+
+  read(context: RR0SsgContext, data: string): S[] {
+    const lines = data.split("\n")
+    const header = lines.shift()
+    this.fields.clear()
+    const columns = header.split(this.sep)
+    columns.forEach(column => this.fields.add(column))
+    return lines.filter(l => l.trim()).map(l => this.readLine(l))
   }
 }

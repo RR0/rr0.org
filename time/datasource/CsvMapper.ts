@@ -3,30 +3,38 @@ import { RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 
 export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
-  readonly fields: string[] = []
+  readonly fields = new Set<string>()
 
   constructor(readonly sep = ",", readonly escapeChar = "\"", readonly prefix = "") {
   }
 
   readonly fieldMapper = (context: RR0SsgContext, key: string, value: any, sourceTime: Date): string => {
+    let addField = true
+    let val: any
     if (value instanceof Date) {
-      return value.toISOString()
+      val = value.toISOString()
     } else if (typeof value === "string") {
-      return this.escape(value)
+      val = this.escape(value)
     } else if (value instanceof URL || value instanceof TimeContext) {
-      return value.toString()
+      val = value.toString()
     } else if (Array.isArray(value)) {
-      return value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(";")
+      val = value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(";")
     } else if (typeof value === "object") {
-      const objectKeyPos = this.fields.indexOf(this.prefix + key)
-      this.fields.splice(objectKeyPos, 1)
       const subMapper = new CsvMapper(this.sep, this.escapeChar, this.prefix + key + ".")
       const subValues = subMapper.map(context, value, sourceTime)
-      this.fields.push(...subMapper.fields)
-      return subValues
+      let addSubFields = !isFinite(key)
+      if (addSubFields) {
+        subMapper.fields.forEach(subField => this.fields.add(subField))
+      }
+      addField = false
+      val = subValues
     } else {
-      return value
+      val = value
     }
+    if (addField) {
+      this.fields.add(this.prefix + key)
+    }
+    return val
   }
 
   /**
@@ -37,9 +45,6 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
    * @param sourceTime
    */
   map(context: RR0SsgContext, sourceCase: S, sourceTime: Date): string {
-    if (this.fields.length <= 0) {
-      this.fields.push(...Object.keys(sourceCase).map(key => this.prefix + key))
-    }
     return Object.entries(sourceCase).map(entry => this.fieldMapper(context, entry[0], entry[1], sourceTime)).join(
       this.sep)
   }
@@ -53,7 +58,7 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
    */
   reduce(context: RR0SsgContext, sourceCases: S[], sourceTime: Date): string {
     const values = sourceCases.map(c => this.map(context, c, sourceTime))
-    return this.fields.join(this.sep) + "\n" + values.join("\n")
+    return Array.from(this.fields).join(this.sep) + "\n" + values.join("\n")
   }
 
   escape(value: string): string {

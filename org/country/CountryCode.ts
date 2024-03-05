@@ -148,6 +148,11 @@ export enum CountryCode {
   pe = "pe",
 
   /**
+   * PHilippines
+   */
+  ph = "ph",
+
+  /**
    * PoLand
    */
   pl = "pl",

@@ -9,6 +9,7 @@ import { india } from "../in/Country_in"
 import { brazil } from "../br/Brazil"
 import { newZealand } from "../nz/NewZealand"
 import { RR0SsgContext } from "../../RR0SsgContext"
+import { philippines } from "../ph/Philippines"
 
 /**
  * @deprecated
@@ -64,6 +65,7 @@ const countries: Country[] = [
   new Country(CountryCode.no),
   newZealand,
   new Country(CountryCode.pe),
+  philippines,
   new Country(CountryCode.pl),
   new Country(CountryCode.pt),
   new Country(CountryCode.ro),

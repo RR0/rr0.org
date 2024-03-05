@@ -12,6 +12,7 @@ import { india } from "../../../org/in/Country_in"
 import { usa } from "../../../org/us/Usa"
 import { brazil } from "../../../org/br/Brazil"
 import { newZealand } from "../../../org/nz/NewZealand"
+import { philippines } from "../../../org/ph/Philippines"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase, RR0Case> {
 
@@ -56,8 +57,9 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
     Brazil: brazil.code,
     Australia: australia.code,
     Canada: canada.code,
-    NewZealand: newZealand.code,
     India: india.code,
+    NewZealand: newZealand.code,
+    Philippines: philippines.code,
     USA: usa.code
   }
 

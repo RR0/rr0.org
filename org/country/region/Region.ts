@@ -8,15 +8,21 @@ import { Organization, OrganizationType } from "../../Organization"
 import { EuropeRegionCode } from "../../eu/EuropeRegionCode"
 import { MexicoRegionCode } from "../../mx/region/MexicoRegionCode"
 import { PhilippinesRegionCode } from "../../ph/region/PhilippinesRegionCode"
+import { SeychellesRegionCode } from "../../sc/region/SeychellesRegionCode"
+import { PeruRegionCode } from "../../pe/region/PeruRegionCode"
+import { DominicanRepublicRegionCode } from "../../do/region/DominicanRepublicRegionCode"
 
 export type RegionCode =
   | AustraliaRegionCode
   | BrazilRegionCode
   | CanadaRegionCode
+  | DominicanRepublicRegionCode
   | EuropeRegionCode
   | IndiaRegionCode
   | MexicoRegionCode
+  | PeruRegionCode
   | PhilippinesRegionCode
+  | SeychellesRegionCode
   | UsaRegionCode
 
 export class Region extends Organization {

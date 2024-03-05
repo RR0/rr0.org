@@ -1,0 +1,8 @@
+caseNumber,url,place,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
+2700,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2700,Incheville,76,1978-03 23:00,false,false,false,false
+2740,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2740,Bennecourt,78,1978-03-08 06:45,false,false,false,true
+2741,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2741,Le Pecq,78,1978-03-11 20:00,false,false,false,false
+1097,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1097,Amanlis,35,1978-03-25 21:30,false,false,false,false
+1098,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1098,St Armel,35,1978-03-25 00:30,true,true,false,false
+1099,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1099,St Armel,35,1978-03-25 23:15,false,true,false,false
+1726,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1726,Cambrai,59,1978-03-29,true,true,true,true

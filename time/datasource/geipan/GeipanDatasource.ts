@@ -5,6 +5,7 @@ import { JSDOM } from "jsdom"
 import { GeipanCase, GeipanClassification } from "./GeipanCase"
 import { TimeContext } from "../../TimeContext"
 import { ObjectUtil } from "../../../util/ObjectUtil"
+import assert from "assert"
 
 interface QueryParameters {
   /**
@@ -31,7 +32,7 @@ interface QueryParameters {
 
 export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
 
-  static readonly dateFormat = /(.+?)\s+\((\d+)\)\s+(\d+).(\d+).(\d+)/
+  static readonly dateFormat = /(.+?)\s*\((\d+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
 
   constructor(readonly baseUrl = "https://geipan.fr", readonly searchPath = "fr/recherche/cas") {
     super("GEIPAN", "Catalogue de cas")
@@ -79,7 +80,9 @@ export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
     const caseLink = linkField.firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
     const caseField = row.querySelector(".cas_title")
-    const fields = GeipanDatasource.dateFormat.exec(caseField.textContent)
+    const fields = GeipanDatasource.dateFormat.exec(caseField.textContent.trim())
+    assert.ok(fields,
+      `Case title "${caseField.textContent}" does not match pattern ${GeipanDatasource.dateFormat.source}`)
     const city = fields[1].trim()
     const depCode = parseInt(fields[2], 10)
     const dateTime = this.getTime(context, fields, 5)

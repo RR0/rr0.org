@@ -1,4 +1,9 @@
 export enum NuforcState {
+  /**
+   * Alberta (Canada)
+   */
+  Alberta = "AB",
+
   Alaska = "AK",
   Alabama = "AL",
   Arkansas = "AR",
@@ -34,6 +39,12 @@ export enum NuforcState {
   NewMexico = "NM",
   NorthCarolina = "NC",
   NewJersey = "NJ",
+
+  /**
+   * ? (UK/England)
+   */
+  NT = "NT",
+
   NewYork = "NY",
   Nevada = "NV",
   Ohio = "OH",

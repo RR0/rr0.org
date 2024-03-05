@@ -19,6 +19,7 @@ export class Organization implements Rr0Data {
 
   constructor(readonly code: string, readonly places: Place[], readonly kind: OrganizationType,
               readonly parent?: Organization) {
+    assert.ok(code, `Code must be defined for organization of type ${kind}`)
     this.dirName = path.join(parent?.dirName ?? "org/", code)
   }
 

@@ -11,6 +11,10 @@ import { newZealand } from "../nz/NewZealand"
 import { RR0SsgContext } from "../../RR0SsgContext"
 import { philippines } from "../ph/Philippines"
 import { mexico } from "../mx/Mexico"
+import { seychelles } from "../sc/Seychelles"
+import { peru } from "../pe/Peru"
+import { germany } from "../de/Germany"
+import { dominicanRepublic } from "../do/DominicanRepublic"
 
 /**
  * @deprecated
@@ -47,8 +51,9 @@ const countries: Country[] = [
   new Country(CountryCode.cl),
   new Country(CountryCode.cn),
   new Country(CountryCode.cy),
-  new Country(CountryCode.de),
+  germany,
   new Country(CountryCode.dk),
+  dominicanRepublic,
   new Country(CountryCode.es),
   finland,
   france,
@@ -65,7 +70,7 @@ const countries: Country[] = [
   new Country(CountryCode.nl),
   new Country(CountryCode.no),
   newZealand,
-  new Country(CountryCode.pe),
+  peru,
   philippines,
   new Country(CountryCode.pl),
   new Country(CountryCode.pt),
@@ -73,6 +78,7 @@ const countries: Country[] = [
   new Country(CountryCode.ru),
   new Country(CountryCode.sa),
   new Country(CountryCode.se),
+  seychelles,
   new Country(CountryCode.tr),
   new Country(CountryCode.ua),
   new Country(CountryCode.uk),

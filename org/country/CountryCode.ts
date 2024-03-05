@@ -53,7 +53,7 @@ export enum CountryCode {
   cy = 'cy',
 
   /**
-   * DEutshland/germary)
+   * DEutshland/germany
    */
   de = "de",
 
@@ -61,6 +61,11 @@ export enum CountryCode {
    * DanemarK
    */
   dk = "dk",
+
+  /**
+   * Dominican Republic
+   */
+  do = "do",
 
   /**
    * GReece
@@ -171,6 +176,11 @@ export enum CountryCode {
    * RUssia
    */
   ru = "ru",
+
+  /**
+   * SeyChelles
+   */
+  sc = "sc",
 
   /**
    * TuRquey

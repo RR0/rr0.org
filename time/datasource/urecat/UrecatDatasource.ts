@@ -90,7 +90,11 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
   }
 
   protected getLocation(column: HTMLTableCellElement) {
-    const [placeName, departmentOrState, country] = column.textContent.split(",").map(s => s.trim())
+    let [placeName, departmentOrState, country] = column.textContent.split(",").map(s => s.trim())
+    if (!country) {
+      country = departmentOrState
+      departmentOrState = undefined
+    }
     return {placeName, country, departmentOrState}
   }
 

@@ -6,14 +6,18 @@ import { AustraliaRegionCode } from "../../au/region/AustraliaRegionCode"
 import { BrazilRegionCode } from "../../br/region/BrazilRegionCode"
 import { Organization, OrganizationType } from "../../Organization"
 import { EuropeRegionCode } from "../../eu/EuropeRegionCode"
+import { MexicoRegionCode } from "../../mx/region/MexicoRegionCode"
+import { PhilippinesRegionCode } from "../../ph/region/PhilippinesRegionCode"
 
 export type RegionCode =
-  EuropeRegionCode
-  | UsaRegionCode
-  | CanadaRegionCode
-  | IndiaRegionCode
   | AustraliaRegionCode
   | BrazilRegionCode
+  | CanadaRegionCode
+  | EuropeRegionCode
+  | IndiaRegionCode
+  | MexicoRegionCode
+  | PhilippinesRegionCode
+  | UsaRegionCode
 
 export class Region extends Organization {
 

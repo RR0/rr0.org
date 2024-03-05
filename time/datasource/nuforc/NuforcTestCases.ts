@@ -1,8 +1,9 @@
-import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
+import { NuforcCase, NuforcShape } from "./NuforcCase"
 import { nuforcDatasource } from "./NuforcRR0Mapping"
 import { TimeContext } from "../../TimeContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { NuforcState } from "./NuforcState"
+import { NuforcCountry } from "./NuforcCountry"
 
 export const nuforcTestCases: NuforcCase[] = [
   {

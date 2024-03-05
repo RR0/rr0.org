@@ -10,6 +10,7 @@ import { brazil } from "../br/Brazil"
 import { newZealand } from "../nz/NewZealand"
 import { RR0SsgContext } from "../../RR0SsgContext"
 import { philippines } from "../ph/Philippines"
+import { mexico } from "../mx/Mexico"
 
 /**
  * @deprecated
@@ -60,7 +61,7 @@ const countries: Country[] = [
   new Country(CountryCode.it),
   new Country(CountryCode.jp),
   new Country(CountryCode.ma),
-  new Country(CountryCode.mx),
+  mexico,
   new Country(CountryCode.nl),
   new Country(CountryCode.no),
   newZealand,

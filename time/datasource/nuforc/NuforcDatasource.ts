@@ -2,11 +2,12 @@ import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpCaseSource } from "../HttpCaseSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
+import { NuforcCase, NuforcShape } from "./NuforcCase"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import { NuforcState } from "./NuforcState"
 import assert from "assert"
 import { TimeContext } from "../../TimeContext"
+import { NuforcCountry } from "./NuforcCountry"
 
 interface QueryParameters {
   id: string

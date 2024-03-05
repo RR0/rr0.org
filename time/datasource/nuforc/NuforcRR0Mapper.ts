@@ -1,5 +1,5 @@
 import { CaseMapper } from "../CaseMapper"
-import { NuforcCase, NuforcCountry, NuforcShape } from "./NuforcCase"
+import { NuforcCase, NuforcShape } from "./NuforcCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
@@ -13,6 +13,7 @@ import { usa } from "../../../org/us/Usa"
 import { brazil } from "../../../org/br/Brazil"
 import { newZealand } from "../../../org/nz/NewZealand"
 import { philippines } from "../../../org/ph/Philippines"
+import { NuforcCountry } from "./NuforcCountry"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase, RR0Case> {
 

@@ -1,14 +1,6 @@
 import { TimeContext } from "../../TimeContext"
 import { NuforcState } from "./NuforcState"
-
-export enum NuforcCountry {
-  Australia = "Australia",
-  Brazil = "Brazil",
-  Canada = "Canada",
-  India = "India",
-  NewZealand = "New Zealand",
-  USA = "USA"
-}
+import { NuforcCountry } from "./NuforcCountry"
 
 export enum NuforcShape {
   Cigar = "Cigar",

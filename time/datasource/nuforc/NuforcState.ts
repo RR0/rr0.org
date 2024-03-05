@@ -2,6 +2,7 @@ export enum NuforcState {
   Alaska = "AK",
   Alabama = "AL",
   Arkansas = "AR",
+  Arizona = "AZ",
 
   /**
    * British Columbia (Canada)
@@ -12,9 +13,14 @@ export enum NuforcState {
   Connecticut = "CT",
   Colorado = "CO",
   Florida = "FL",
+  Georgia = "GA",
+  Iowa = "IA",
+  Idaho = "ID",
   Illinois = "IL",
   Indiana = "IN",
   Kentucky = "KY",
+  Kansas = "KS",
+  Louisiana = "LA",
   Maine = "ME",
   Maryland = "MD",
   Massachussets = "MA",
@@ -35,6 +41,8 @@ export enum NuforcState {
   Oregon = "OR",
   Pennsylvania = "PA",
   PuertoRico = "PR",
+  NorthDakota = "ND",
+  SouthDakota = "SD",
 
   /**
    * Manitoba (Canada)

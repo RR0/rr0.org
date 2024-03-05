@@ -172,6 +172,10 @@ getTimeFiles().then(async (timeFiles) => {
     indexContent: "contentsIndex.json"
   })
   const baseUrl = "https://rr0.org"
+  const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
+    new ChronologyReplacerFactory(timeFiles,
+      [baseOvniFranceRR0Mapping, geipanRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping])
+  )
   const contentReplacements = [
     new SsiIncludeReplaceCommand(),
     new BaseReplaceCommand("/"),
@@ -187,10 +191,7 @@ getTimeFiles().then(async (timeFiles) => {
     new SsiLastModifiedReplaceCommand(context.time.options),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new AuthorReplaceCommand(timeFiles),
-    new HtmlTagReplaceCommand("ul",
-      new ChronologyReplacerFactory(timeFiles,
-        [baseOvniFranceRR0Mapping, geipanRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping])
-    ),
+    // databaseAggregationCommand,
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),

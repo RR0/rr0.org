@@ -11,18 +11,26 @@ import { PhilippinesRegionCode } from "../../ph/region/PhilippinesRegionCode"
 import { SeychellesRegionCode } from "../../sc/region/SeychellesRegionCode"
 import { PeruRegionCode } from "../../pe/region/PeruRegionCode"
 import { DominicanRepublicRegionCode } from "../../do/region/DominicanRepublicRegionCode"
+import { SouthKoreaRegionCode } from "../../kr/region/SouthKoreaRegionCode"
+import { ColombiaRegionCode } from "../../co/region/ColombiaRegionCode"
+import { NewZealandRegionCode } from "../../nz/region/NewZealandRegionCode"
+import { UkRegionCode } from "../../uk/region/UkRegionCode"
 
 export type RegionCode =
   | AustraliaRegionCode
   | BrazilRegionCode
   | CanadaRegionCode
+  | ColombiaRegionCode
   | DominicanRepublicRegionCode
+  | UkRegionCode
   | EuropeRegionCode
   | IndiaRegionCode
   | MexicoRegionCode
+  | NewZealandRegionCode
   | PeruRegionCode
   | PhilippinesRegionCode
   | SeychellesRegionCode
+  | SouthKoreaRegionCode
   | UsaRegionCode
 
 export class Region extends Organization {

@@ -15,6 +15,9 @@ import { seychelles } from "../sc/Seychelles"
 import { peru } from "../pe/Peru"
 import { germany } from "../de/Germany"
 import { dominicanRepublic } from "../do/DominicanRepublic"
+import { southKorea } from "../kr/SouthKorea"
+import { colombia } from "../co/Colombia"
+import { uk } from "../uk/Uk"
 
 /**
  * @deprecated
@@ -50,6 +53,7 @@ const countries: Country[] = [
   new Country(CountryCode.ch),
   new Country(CountryCode.cl),
   new Country(CountryCode.cn),
+  colombia,
   new Country(CountryCode.cy),
   germany,
   new Country(CountryCode.dk),
@@ -79,9 +83,10 @@ const countries: Country[] = [
   new Country(CountryCode.sa),
   new Country(CountryCode.se),
   seychelles,
+  southKorea,
   new Country(CountryCode.tr),
   new Country(CountryCode.ua),
-  new Country(CountryCode.uk),
+  uk,
   usa,
   new Country(CountryCode.ve),
   new Country(CountryCode.za)

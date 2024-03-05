@@ -48,6 +48,11 @@ export enum CountryCode {
   ch = "ch",
 
   /**
+   * COlombia
+   */
+  co = "co",
+
+  /**
    * Cyprus
    */
   cy = 'cy',
@@ -121,6 +126,11 @@ export enum CountryCode {
    * JaPan
    */
   jp = "jp",
+
+  /**
+   * south KoRea
+   */
+  kr = "kr",
 
   /**
    * Morocco

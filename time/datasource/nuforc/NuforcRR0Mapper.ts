@@ -19,6 +19,9 @@ import { mexico } from "../../../org/mx/Mexico"
 import { seychelles } from "../../../org/sc/Seychelles"
 import { germany } from "../../../org/de/Germany"
 import { dominicanRepublic } from "../../../org/do/DominicanRepublic"
+import { southKorea } from "../../../org/kr/SouthKorea"
+import { uk } from "../../../org/uk/Uk"
+import { colombia } from "../../../org/co/Colombia"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase, RR0Case> {
 
@@ -60,17 +63,20 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   }
 
   static readonly countryMap: { [key in NuforcCountry]: string } = {
-    Brazil: brazil.code,
     Australia: australia.code,
+    Brazil: brazil.code,
     Canada: canada.code,
+    Colombia: colombia.code,
     DominicanRepublic: dominicanRepublic.code,
     Germany: germany.code,
     India: india.code,
-    Mexico: mexico.code,
-    NewZealand: newZealand.code,
     Peru: peru.code,
     Philippines: philippines.code,
+    Mexico: mexico.code,
+    NewZealand: newZealand.code,
     Seychelles: seychelles.code,
+    SouthKorea: southKorea.code,
+    UnitedKingdom: uk.code,
     Unspecified: "?",
     USA: usa.code
   }

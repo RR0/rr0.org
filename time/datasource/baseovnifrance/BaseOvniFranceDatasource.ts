@@ -4,6 +4,7 @@ import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
 import { TimeContext } from "../../TimeContext"
+import assert from "assert"
 
 enum ListType {
   perMonth = 20
@@ -84,12 +85,16 @@ export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase>
     dateTime.setTimeZone("GMT+1")
   }
 
+  private static readonly regExp = /(.*?)\s+\(([\dAB]+)\)/
+
   protected getFromRow(context: RR0SsgContext, row: Element): BaseOvniFranceCase {
     const columns = row.querySelectorAll("td")
     const caseLink = columns[0].firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "&", "numobs"), 10)
-    const linkParse = /(.*?)\s+\((\d+)\)/.exec(caseLink.textContent)
+    const linkParse = BaseOvniFranceDatasource.regExp.exec(caseLink.textContent)
+    assert.ok(linkParse,
+      `Case title "${caseLink.textContent}" does not match pattern ${BaseOvniFranceDatasource.regExp.source}`)
     const place = linkParse[1]
     const depCode = linkParse[2].padStart(2, "0")
     const dateTime = this.getDate(context, columns[1])

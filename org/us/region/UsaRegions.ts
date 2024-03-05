@@ -9,6 +9,8 @@ import { washington } from "./wa/Washington"
 import { Region } from "../../country/region/Region"
 import { usaRegion } from "../Usa"
 import { newMexico } from "./nm/NewMexico"
+import { wyoming } from "./wy/Wyoming"
+import { delaware } from "./de/Delaware"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -16,6 +18,7 @@ export const usaRegions: Region[] = [
   california,
   usaRegion(UsaRegionCode.ct, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.co, Place.fromLocation(47.466667, 0.833333)),
+  delaware,
   florida,
   usaRegion(UsaRegionCode.il, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.in, Place.fromLocation(47.466667, 0.833333)),
@@ -49,5 +52,6 @@ export const usaRegions: Region[] = [
   usaRegion(UsaRegionCode.vi, Place.fromLocation(47.466667, 0.833333)),
   washington,
   usaRegion(UsaRegionCode.wi, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaRegionCode.wv, Place.fromLocation(47.466667, 0.833333))
+  usaRegion(UsaRegionCode.wv, Place.fromLocation(47.466667, 0.833333)),
+  wyoming
 ]

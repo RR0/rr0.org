@@ -32,7 +32,7 @@ interface QueryParameters {
 
 export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
 
-  static readonly dateFormat = /(.+?)\s*\((\d+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
+  static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
 
   constructor(readonly baseUrl = "https://geipan.fr", readonly searchPath = "fr/recherche/cas") {
     super("GEIPAN", "Catalogue de cas")
@@ -72,10 +72,10 @@ export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
     }
     const decoder = new TextDecoder(charset)*/
     const rowEls = doc.querySelectorAll(".views-row")
-    return Array.from(rowEls).map(row => this.getNativeCase(context, row))
+    return Array.from(rowEls).map(row => this.getFromRow(context, row))
   }
 
-  protected getNativeCase(context: RR0SsgContext, row: Element): GeipanCase {
+  protected getFromRow(context: RR0SsgContext, row: Element): GeipanCase {
     const linkField = row.querySelector(".fiche-download-icon")
     const caseLink = linkField.firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)

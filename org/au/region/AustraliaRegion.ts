@@ -1,8 +1,8 @@
 import { AustraliaRegionCode } from "./AustraliaRegionCode"
 import { Place } from "../../../place/Place"
 import { australia } from "../Australia"
-import { Organization, OrganizationType } from "../../Organization"
+import { Region } from "../../country/region/Region"
 
 export function australiaRegion(code: AustraliaRegionCode, place: Place) {
-  return new Organization(code, [place], OrganizationType.region, australia)
+  return new Region(code, australia, [place])
 }

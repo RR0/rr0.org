@@ -17,6 +17,13 @@ export enum NuforcState {
   California = "CA",
   Connecticut = "CT",
   Colorado = "CO",
+  Delaware = "DE",
+
+  /**
+   * England (UK)
+   */
+  England = "England",
+
   Florida = "FL",
   Georgia = "GA",
   Iowa = "IA",
@@ -71,6 +78,12 @@ export enum NuforcState {
   Ontario = "ON",
 
   RhodeIsland = "RI",
+
+  /**
+   * South Australia
+   */
+  SouthAustralia = "SA",
+
   SouthCarolina = "SC",
   Tennessee = "TN",
   Texas = "TX",
@@ -81,6 +94,7 @@ export enum NuforcState {
   Washington = "WA",
   Wisconsin = "WI",
   WesternVirginia = "WV",
+  Wyoming = "WY",
 
   /**
    * Western Australia (Australia)

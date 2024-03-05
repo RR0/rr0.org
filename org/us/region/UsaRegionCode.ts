@@ -6,6 +6,7 @@ export enum UsaRegionCode {
   ca = "ca",
   ct = "ct",
   co = "co",
+  de = "de",
   fl = "fl",
   ga = "ga",
   id = "id",
@@ -47,4 +48,5 @@ export enum UsaRegionCode {
   wa = "wa",
   wi = "wi",
   wv = "wv",
+  wy = "wy",
 }

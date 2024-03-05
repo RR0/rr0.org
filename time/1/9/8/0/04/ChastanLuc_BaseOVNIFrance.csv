@@ -1,0 +1,5 @@
+caseNumber,url,place,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
+14,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=14,Kembs,68,1980-04-09 23:30,true,false,false,false
+2535,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2535,Folgensbourg,68,1980-04-09 23:50,false,false,false,false
+2533,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2533,Rixheim,68,1980-04-11 23:10,false,false,false,false
+2534,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2534,Goersdorf,67,1980-04-11 23:30,false,false,false,false

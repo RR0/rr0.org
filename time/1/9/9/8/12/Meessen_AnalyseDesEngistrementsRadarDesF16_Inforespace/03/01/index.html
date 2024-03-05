@@ -1,84 +1,52 @@
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-  <title>Le troisième verrouillage</title>
-  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
-
-
-  <script type="text/javascript">
-    hs.graphicsDir = "/js/highslide/graphics/"
-    hs.outlineType = "rounded-white"
-  </script>
-</head>
-<body id="bodyid" onLoad="footnotes();footsources()">
-<h1><a href="https://home.nordnet.fr/~phuleux/leradar.htm">Le troisième verrouillage</a></h1>
-<table width="100%">
-  <tr>
-    <th><a href="/">Home</a> &gt; <a href="../../index.html">Analyse approfondie des mystérieux enregistrements radar
-      des F-16</a> &gt; <a href="../index.html">Les enregistrements radar des F-16</a></th>
-  </tr>
-</table>
-<p> C'est le plus long et le plus significatif, celui que le général De Brouwer a présenté à la presse. La figure 11
-  fournit l'ensemble des données enregistrées, aux instants où les valeurs indiquées de manière digitale ou analogique
-  (par chiffres ou curseurs) étaient modifiées. Nous voyons que la grandeur de la <em>vitesse</em> par rapport au sol
-  s'est accrue, pour atteindre finalement une valeur énorme : plus de 1800 km/h, tandis que les chasseurs F-16 volaient
-  à environ 740 km/h. Il est encore plus étonnant que la source des échos radar non identifiés aurait atteint des
-  vitesses aussi élevées quand elle descendait à très basse altitude. On ne pouvait pas l'exclure pourtant, justement
-  pour être réaliste. Il fallait qu'on envisage l'hypothèse d'une technologie inconnue.</p>
-<p> Continuons donc l'analyse des données. Nous savons que la vitesse par rapport au sol est calculée, tandis que la
-  <em>vitesse relative</em> par rapport au F-16 est mesurée par effet Doppler. Nous constatons cependant que les valeurs
-  affichée présentent des variations linéaires, résultant d'une intervention de l'ordinateur. C'est logique, puisque le
-  radar peut perdre la "cible" poursuivie, soit parce qu'elle se présente sous un angle défavorable, rendant la
-  rétrodiffusion trop faible, soit parce que le faisceau doit continuer à explorer le ciel. L'écho peut même être
-  éliminé par le suppresseur de fouillis ou disparaître quand la vitesse relative est nulle (trajectoires
-  perpendiculaires). Il arrive même que les ambiguïtés ne puissent pas être levées (blind zones <span class="source">G.W. Salmon : "Introduction to airborne radar",  Hughes Aircraft Company. El Segundo. Cal. 621 pages, 1983 (le  radar APG-66 du F-16 a été développé en 1980).</span>).
-  Il faut donc que le radar soit capable de retrouver la "cible" dont il a perdu la trace. Pour cette raison, on a prévu
-  <em>une extrapolation linéaire</em> des derniers résultats de mesure. Elle est effectuée par le "prédicteur de
+<!--#include virtual="/header-start.html" -->
+<title>Le troisiÃ¨me verrouillage</title>
+<meta content="https://home.nordnet.fr/~phuleux/leradar.htm" name="url">
+<!--#include virtual="/header-end.html" -->
+<p> C'est le plus long et le plus significatif, celui que le gÃ©nÃ©ral De Brouwer a prÃ©sentÃ© Ã  la presse. La figure 11
+  fournit l'ensemble des donnÃ©es enregistrÃ©es, aux instants oÃ¹ les valeurs indiquÃ©es de maniÃ¨re digitale ou analogique
+  (par chiffres ou curseurs) Ã©taient modifiÃ©es. Nous voyons que la grandeur de la <em>vitesse</em> par rapport au sol
+  s'est accrue, pour atteindre finalement une valeur Ã©norme : plus de 1800 km/h, tandis que les chasseurs F-16 volaient
+  Ã  environ 740 km/h. Il est encore plus Ã©tonnant que la source des Ã©chos radar non identifiÃ©s aurait atteint des
+  vitesses aussi Ã©levÃ©es quand elle descendait Ã  trÃ¨s basse altitude. On ne pouvait pas l'exclure pourtant, justement
+  pour Ãªtre rÃ©aliste. Il fallait qu'on envisage l'hypothÃ¨se d'une technologie inconnue.</p>
+<p> Continuons donc l'analyse des donnÃ©es. Nous savons que la vitesse par rapport au sol est calculÃ©e, tandis que la
+  <em>vitesse relative</em> par rapport au F-16 est mesurÃ©e par effet Doppler. Nous constatons cependant que les valeurs
+  affichÃ©e prÃ©sentent des variations linÃ©aires, rÃ©sultant d'une intervention de l'ordinateur. C'est logique, puisque le
+  radar peut perdre la "cible" poursuivie, soit parce qu'elle se prÃ©sente sous un angle dÃ©favorable, rendant la
+  rÃ©trodiffusion trop faible, soit parce que le faisceau doit continuer Ã  explorer le ciel. L'Ã©cho peut mÃªme Ãªtre
+  Ã©liminÃ© par le suppresseur de fouillis ou disparaÃ®tre quand la vitesse relative est nulle (trajectoires
+  perpendiculaires). Il arrive mÃªme que les ambiguÃ¯tÃ©s ne puissent pas Ãªtre levÃ©es (blind zones <span class="source">G.W. Salmon : "Introduction to airborne radar",  Hughes Aircraft Company. El Segundo. Cal. 621 pages, 1983 (le  radar APG-66 du F-16 a Ã©tÃ© dÃ©veloppÃ© en 1980).</span>).
+  Il faut donc que le radar soit capable de retrouver la "cible" dont il a perdu la trace. Pour cette raison, on a prÃ©vu
+  <em>une extrapolation linÃ©aire</em> des derniers rÃ©sultats de mesure. Elle est effectuÃ©e par le "prÃ©dicteur de
   Kalman".</p>
-<p> Les résultats sont affichés, sans distinction entre calculs et mesures, pour que le pilote sache à quoi il doit
-  s'attendre. L'ordinateur se sert d'ailleurs de ses prévisions, pour renforcer la recherche dans une <em>fenêtre</em>
-  appropriée. On parle donc aussi d'un "filtre de Kalman". J'en avais fait la connaissance en analysant les données des
-  radars militaires au sol (I.361). M. Gilmard <span class="source">F. Gilmard : "Analyse des observations, le radar F-16 et  résultats du modèle", rapport interne (confidentiel) d'une  étude effectuée au Centre de Guerre Electronique sous la  direction du colonel Salmon, mai 1991.</span>
-  a vérifié que les valeurs affichées pour la vitesse relative changeaient parfois assez nettement quand le radar des
-  F-16 passait au mode "search". Il le fait automatiquement pour scruter le ciel, en analysant les données qu'il reçoit
-  avec une sensibilité accrue dans une fenêtre déterminée par le filtre de Kalman. Quand le radar n'y trouve rien
+<p> Les rÃ©sultats sont affichÃ©s, sans distinction entre calculs et mesures, pour que le pilote sache Ã  quoi il doit
+  s'attendre. L'ordinateur se sert d'ailleurs de ses prÃ©visions, pour renforcer la recherche dans une <em>fenÃªtre</em>
+  appropriÃ©e. On parle donc aussi d'un "filtre de Kalman". J'en avais fait la connaissance en analysant les donnÃ©es des
+  radars militaires au sol (I.361). M. Gilmard <span class="source">F. Gilmard : "Analyse des observations, le radar F-16 et  rÃ©sultats du modÃ¨le", rapport interne (confidentiel) d'une  Ã©tude effectuÃ©e au Centre de Guerre Electronique sous la  direction du colonel Salmon, mai 1991.</span>
+  a vÃ©rifiÃ© que les valeurs affichÃ©es pour la vitesse relative changeaient parfois assez nettement quand le radar des
+  F-16 passait au mode "search". Il le fait automatiquement pour scruter le ciel, en analysant les donnÃ©es qu'il reÃ§oit
+  avec une sensibilitÃ© accrue dans une fenÃªtre dÃ©terminÃ©e par le filtre de Kalman. Quand le radar n'y trouve rien
   pendant un certain temps, il termine la recherche.</p>
-<p> Ceci permet de comprendre l'évolution générale des données de la figure 11. Il y a eu des mesures réelles, malgré
-  les extrapolations, mais les grandeurs mesurées (vitesse relative, azimut, élévation et distance au F-16) varient de
-  manière progressive, parce que la recherche s'est poursuivie dans une fenêtre qui se déplace en fonction des dernières
-  données reçues. Cela tend à produire des corrélations, même s'il s'agit uniquement d'échos anormaux, résultant d'une
-  présence de vapeur d'eau à différents endroits. <em>Les échos individuels ne sont pas fictifs, mais leur enchaînement
+<p> Ceci permet de comprendre l'Ã©volution gÃ©nÃ©rale des donnÃ©es de la figure 11. Il y a eu des mesures rÃ©elles, malgrÃ©
+  les extrapolations, mais les grandeurs mesurÃ©es (vitesse relative, azimut, Ã©lÃ©vation et distance au F-16) varient de
+  maniÃ¨re progressive, parce que la recherche s'est poursuivie dans une fenÃªtre qui se dÃ©place en fonction des derniÃ¨res
+  donnÃ©es reÃ§ues. Cela tend Ã  produire des corrÃ©lations, mÃªme s'il s'agit uniquement d'Ã©chos anormaux, rÃ©sultant d'une
+  prÃ©sence de vapeur d'eau Ã  diffÃ©rents endroits. <em>Les Ã©chos individuels ne sont pas fictifs, mais leur enchaÃ®nement
     est illusoire</em>.</p>
-<p> Pourquoi ces échos anormaux n'ont-ils pas été éliminés s'ils proviennent de masses d'air humide? A cet égard, il est
-  essentiel de se référer aux valeurs mesurées pour la vitesse relative. La série des mesures a été initialisée à 400
-  noeuds. C'est la vitesse nominale des F-16 par rapport au sol, mais d'après les pilotes elle a pu varier entre 350 et
-  450 noeuds (sans postcombustion). Nous ne connaissons pas la vitesse du second F-16 au moment où il a effectué cette
-  mesure. D'autres mesures (débuts des variations linéaires) fournissent des valeurs plus basses. Ceci est compatible
-  avec l'idée que le radar a mesuré des vitesses Doppler instantanées <em>différentes</em> de la vitesse moyenne. Notons
-  cependant qu'il s'agit toujours d'une vitesse d'approche (v est positif) et que l'écart moyen n'est "que" de l'ordre
-  de 100 noeuds. C'est énorme par rapport aux fluctuations possibles pour les vitesses Doppler des gouttes de pluie,
-  mais ne semble pas être impossible et cela explique en tout cas le fait que ces échos ne pouvaient pas être éliminés
+<p> Pourquoi ces Ã©chos anormaux n'ont-ils pas Ã©tÃ© Ã©liminÃ©s s'ils proviennent de masses d'air humide? A cet Ã©gard, il est
+  essentiel de se rÃ©fÃ©rer aux valeurs mesurÃ©es pour la vitesse relative. La sÃ©rie des mesures a Ã©tÃ© initialisÃ©e Ã  400
+  nÅ“uds. C'est la vitesse nominale des F-16 par rapport au sol, mais d'aprÃ¨s les pilotes elle a pu varier entre 350 et
+  450 nÅ“uds (sans postcombustion). Nous ne connaissons pas la vitesse du second F-16 au moment oÃ¹ il a effectuÃ© cette
+  mesure. D'autres mesures (dÃ©buts des variations linÃ©aires) fournissent des valeurs plus basses. Ceci est compatible
+  avec l'idÃ©e que le radar a mesurÃ© des vitesses Doppler instantanÃ©es <em>diffÃ©rentes</em> de la vitesse moyenne. Notons
+  cependant qu'il s'agit toujours d'une vitesse d'approche (v est positif) et que l'Ã©cart moyen n'est "que" de l'ordre
+  de 100 nÅ“uds. C'est Ã©norme par rapport aux fluctuations possibles pour les vitesses Doppler des gouttes de pluie, mais
+  ne semble pas Ãªtre impossible et cela explique en tout cas le fait que ces Ã©chos ne pouvaient pas Ãªtre Ã©liminÃ©s
   par le suiveur et le suppresseur de fouillis.</p>
-<p> Des corrélations verticales entre toutes les données indiquent que des mesures réelles pourraient avoir été
-  effectuées aux instants qui sont indiqués par des petits traits au-dessus des échelles inférieures de la figure 11. Le
-  nombre de ces nouvelles acquisitions de données est plus élevé que je ne le pensais (II.405), mais il reste limité. La
-  dernière partie de l'enregistrement correspond à des altitudes très basses, ce qui est acceptable s'il y avait une
-  colonne convective ascendante ou simplement des variations de l'humidité à différentes endroit, détectés à cause d'une
-  sensibilité accrue.</p>
-<table width="100%">
-  <tr>
-    <th><a href="/">Home</a> &gt; <a href="../../index.html">Analyse approfondie des mystérieux enregistrements radar
-      des F-16</a> &gt; <a href="../index.html">Les enregistrements radar des F-16</a></th>
-  </tr>
-</table>
-<ol>
-  <div id="notes"></div>
-</ol>
-<ol>
-  <div id="sources"></div>
-</ol>
-<script type="text/javascript" src="https://www.assoc-amazon.fr/s/link-enhancer?tag=r047-21&o=8">
-</script>
-<noscript><img src="https://www.assoc-amazon.fr/s/noscript?tag=r047-21" alt=""/></noscript>
-</body>
-</html>
+<p> Des corrÃ©lations verticales entre toutes les donnÃ©es indiquent que des mesures rÃ©elles pourraient avoir Ã©tÃ©
+  effectuÃ©es aux instants qui sont indiquÃ©s par des petits traits au-dessus des Ã©chelles infÃ©rieures de la figure 11. Le
+  nombre de ces nouvelles acquisitions de donnÃ©es est plus Ã©levÃ© que je ne le pensais (II.405), mais il reste limitÃ©. La
+  derniÃ¨re partie de l'enregistrement correspond Ã  des altitudes trÃ¨s basses, ce qui est acceptable s'il y avait une
+  colonne convective ascendante ou simplement des variations de l'humiditÃ© Ã  diffÃ©rentes endroit, dÃ©tectÃ©s Ã  cause d'une
+  sensibilitÃ© accrue.</p>
+<!--#include virtual="/footer.html" -->

@@ -1,7 +1,10 @@
 import { westernAustralia } from "./wa/WesternAustralia"
+import { City } from "../../country/region/department/city/City"
+import { southAustralia } from "./sa/SouthAustralia"
+import { victoria } from "./vic/Victoria"
 
-import { Organization } from "../../Organization"
-
-export const australiaRegions: Organization<any>[] = [
-  westernAustralia
+export const australiaRegions: City[] = [
+  westernAustralia,
+  victoria,
+  southAustralia
 ]

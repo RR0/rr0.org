@@ -7,6 +7,6 @@ import { GermanyRegionCode } from "../de/region/GermanyRegionCode"
 export type EuropeRegionCode =
   FranceRegionCode
   | FinlandRegionCode
-  | SpainRegionCode
-  | PolandRegionCode
   | GermanyRegionCode
+  | PolandRegionCode
+  | SpainRegionCode

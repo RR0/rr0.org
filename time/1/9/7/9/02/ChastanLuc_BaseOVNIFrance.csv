@@ -1,0 +1,5 @@
+caseNumber,url,place,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
+3269,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3269,Montpellier,34,1979-02-07 05:00,false,false,false,false
+3277,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3277,Gréasque,13,1979-02-14,false,false,false,false
+3271,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3271,Entraygues sur Truyère,12,1979-02-18 02:30,true,true,false,false
+3275,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3275,St Julien en St Alban,07,1979-02-24 18:00,true,false,false,false

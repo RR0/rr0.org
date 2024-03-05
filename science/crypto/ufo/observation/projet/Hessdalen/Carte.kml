@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+  <name>Hessdalen</name>
+  <description>>Region de Hessdalen</description>
+  <Style id="redDot">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="grnPushpin">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/icons/grn-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="redPushpin">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/icons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style125">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>1er ovni d&#39;Aurigny</name>
+    <description><![CDATA[Tel que localise par Bowyer]]></description>
+    <styleUrl>#redDot</styleUrl>
+    <Point>
+      <coordinates>-2.377167,49.664070,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Usine de retraitement de la Hague</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#grnPushpin</styleUrl>
+    <Point>
+      <coordinates>-1.880035,49.678070,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Aeroport de Cherbourg-Maupertus</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#grnPushpin</styleUrl>
+    <Point>
+      <coordinates>-1.468692,49.649986,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>2eme ovni d&#39;Aurigny</name>
+    <description><![CDATA[tel que localise par Bowyer]]></description>
+    <styleUrl>#redDot</styleUrl>
+    <Point>
+      <coordinates>-2.513123,49.545708,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bowyer</name>
+    <description><![CDATA[A 5 à 10 miles nautiques de Ortac]]></description>
+    <styleUrl>#redPushpin</styleUrl>
+    <Point>
+      <coordinates>-2.09800,49.85296,752.39927</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>2eme observateur</name>
+    <description><![CDATA[A 14 h 14 au nord-est de Sark, en direction de Jersey]]></description>
+    <styleUrl>#redPushpin</styleUrl>
+    <Point>
+      <coordinates>-2.34158,49.45963,1510.00000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Trajet du vol de Bowyer</name>
+    <styleUrl>#style125</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+		-1.357327,50.949669,0.000000
+		-1.90894,50.06251,1385.00000
+		-1.91532,50.05038,1385.00000
+		-1.92450,50.03958,1385.00000
+		-1.93433,50.02943,1385.00000
+		-1.94479,50.01730,1385.00000
+		-1.95282,50.00592,1385.00000
+		-1.96328,49.99511,1385.00000
+		-1.97425,49.98636,1385.00000
+		-1.98637,49.97424,1385.00000
+		-1.99569,49.96483,1385.00000
+		-2.00832,49.95270,1385.00000
+		-2.01699,49.94190,1385.00000
+		-2.02860,49.93109,1385.00000
+		-2.04136,49.91830,1336.61290
+		-2.05169,49.90824,1285.00000
+		-2.06266,49.89875,1181.77419
+		-2.07133,49.88596,1085.00000
+		-2.08065,49.87524,936.85185
+		-2.09213,49.86509,818.33333
+		-2.09800,49.85296,752.39927
+		-2.10310,49.83885,685.00000
+		-2.10667,49.82607,567.05128
+		-2.11126,49.81460,451.66667
+		-2.11586,49.79909,385.73260
+		-2.12287,49.78564,318.33333
+		-2.12912,49.77145,301.48352
+		-2.13665,49.76139,285.00000
+		-2.14137,49.74654,285.00000
+		-2.14826,49.73441,285.00000
+		-2.15744,49.72500,251.30037
+		-2.16561,49.71758,218.33333
+		-2.17773,49.71081,185.36630
+		-2.19393,49.70611,151.66667
+		-2.20426,49.70611,119.72222
+		-2.21472,49.70611,85.00000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Trajet du 2nd pilote</name>
+    <styleUrl>#style125</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+		-4.523706,54.353855,0.000000
+		-3.10284,49.98404,6043.33333
+		-3.07861,49.96517,5910.00000
+		-3.05311,49.94524,5726.66667
+		-3.02760,49.92321,5543.33333
+		-2.99955,49.90328,5393.33333
+		-2.97532,49.88650,5243.33333
+		-2.95110,49.86762,5076.66667
+		-2.92177,49.84665,4910.00000
+		-2.89244,49.82672,4760.00000
+		-2.86694,49.80889,4610.00000
+		-2.83633,49.78581,4426.66667
+		-2.81338,49.77008,4243.33333
+		-2.78533,49.75015,4076.66667
+		-2.75983,49.73337,3910.00000
+		-2.73050,49.71240,3793.33333
+		-2.70754,49.69666,3676.66667
+		-2.68204,49.67883,3510.00000
+		-2.65526,49.65995,3343.33333
+		-2.62976,49.64212,3193.33333
+		-2.60936,49.62639,3043.33333
+		-2.58003,49.60646,2910.00000
+		-2.55198,49.58444,2776.66667
+		-2.52647,49.56556,2610.00000
+		-2.51117,49.55297,2443.33333
+		-2.48695,49.53409,2310.00000
+		-2.46144,49.51626,2176.66667
+		-2.43211,49.50158,2010.00000
+		-2.40151,49.48585,1843.33333
+		-2.36836,49.47011,1676.66667
+		-2.34158,49.45963,1510.00000
+		-2.193660,49.208172,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+    <Placemark>
+    <name>Les Casquets</name>
+    <description><![CDATA[Groupe de rochers a 13 km d'Aurigny sur lequel se trouve un phare]]></description>
+    <styleUrl>#grnPushpin</styleUrl>
+    <Point>
+      <coordinates>-2.378540,49.800770,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

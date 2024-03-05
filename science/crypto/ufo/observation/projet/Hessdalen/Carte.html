@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+  <title>Carte de l'observation d'Aurigny</title>
+  <script src="/js/notes.js" type="text/javascript"></script>
+  <script
+    src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAA0F5PCNh_gr_7qvmBnnCc9hSCXz57HFqdqHYuG1R39Ganzi6F4BQK_8aWqWKccr2UIE_VQlwSTihjjw"
+    type="text/javascript"></script>
+  <style type="text/css">
+    v\: * {
+      behavior: url(#default#VML);
+    }
+  </style>
+  <script type="text/javascript">
+    //<![CDATA[
+    function onLoad () {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById('map'))
+        map.setCenter(new GLatLng(49.688955, -2.243958), 10, G_NORMAL_MAP)
+        var geoXml = new GGeoXml('http://rr0.org/science/crypto/ufo/enquete/dossier/Aurigny/Carte.kml')
+        map.addControl(new GLargeMapControl())
+        map.addControl(new GScaleControl())
+        map.addOverlay(geoXml)
+      }
+    }
+
+    //]]>
+  </script>
+</head>
+<body onLoad="onLoad()" onUnload="GUnload()">
+<div id="map" style="width: 500px; height: 600px">Observations d'Aurigny</div>
+</body>
+</html>

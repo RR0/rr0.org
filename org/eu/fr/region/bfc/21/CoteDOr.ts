@@ -3,5 +3,5 @@ import { Place } from "../../../../../../place/Place"
 import { bourgogneFrancheComte } from "../BourgogneFrancheComte"
 import { Department } from "../../../../../country/region/department/Department"
 
-export const saoneEtLoire = Department.create(FranceDepartementCode.SaoneEtLoire, bourgogneFrancheComte,
-  Place.fromDMS("46°40′N,4°42′E"))
+export const coteDOr = Department.create(FranceDepartementCode.CoteDOr, bourgogneFrancheComte,
+  Place.fromDMS("47°25′N,4°50′E"))

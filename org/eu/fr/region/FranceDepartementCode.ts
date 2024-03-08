@@ -10,6 +10,7 @@ export enum FranceDepartementCode {
   Charente = "16",
   CharenteMaritime = "17",
   Correze = "19",
+  CoteDOr = "21",
   Creuse = "23",
   Drome = "26",
   Gard = "30",

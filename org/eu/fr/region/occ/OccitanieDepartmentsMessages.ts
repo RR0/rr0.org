@@ -8,9 +8,11 @@ import { tarnMessages } from "./81/TarnMessages"
 import { gardMessages } from "./30/GardMessages"
 import { OrganizationMessages } from "../../../../OrganizationMessages"
 import { pyreneesOrientalesMessages } from "./66/PyreneesOrientalesMessages"
+import { ariegeMessages } from "./09/AriegeMessages"
 
 export type OccitanieDepartmentsMessages = { [key in OccitanieDepartementCode]: OrganizationMessages }
 export const occitanieDepartmentsMessages: OccitanieDepartmentsMessages = {
+  [OccitanieDepartementCode.Ariege]: ariegeMessages,
   [OccitanieDepartementCode.Aude]: audeMessages,
   [OccitanieDepartementCode.Gard]: gardMessages,
   [OccitanieDepartementCode.Gers]: gersMessages,

@@ -7,8 +7,10 @@ import { tarn } from "./81/Tarn"
 import { Organization } from "../../../../Organization"
 import { gard } from "./30/Gard"
 import { pyreneesOrientales } from "./66/PyreneesOrientales"
+import { ariege } from "./09/Ariege"
 
 export const occitanieDepartments: Organization[] = [
+  ariege,
   aude,
   gers,
   gard,

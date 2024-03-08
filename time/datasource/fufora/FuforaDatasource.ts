@@ -146,12 +146,12 @@ interface FormData {
   tark: 1
 }
 
-export class FuforaDatasource extends HttpSource implements CaseSource<FuforaCaseSummary> {
+export class FuforaDatasource implements CaseSource<FuforaCaseSummary> {
   readonly author = "FUFORA"
   readonly copyright = "Base de données observationnelle"
+  protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl = "https://www.fufora.fi/ufodb2", readonly searchPath = "ufohaku.php") {
-    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
@@ -159,7 +159,7 @@ export class FuforaDatasource extends HttpSource implements CaseSource<FuforaCas
     const month = context.time.getMonth()
     const year = context.time.getYear()
     const {formData, queryUrl} = this.queryUrl({sid: ""}, month, year)
-    const page = await this.submitForm<string>(queryUrl, formData)
+    const page = await this.http.submitForm<string>(queryUrl, formData)
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
     const contentType = charSetMeta.getAttribute("content")

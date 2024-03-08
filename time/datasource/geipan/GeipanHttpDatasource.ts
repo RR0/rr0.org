@@ -7,7 +7,11 @@ import { TimeContext } from "../../TimeContext"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
 import { CaseSource } from "../CaseSource"
-import { GeipanCaseClassification } from "./GeipanCaseClassification"
+import {
+  GeipanCaseClassification,
+  GeipanCaseClassification_calc,
+  GeipanCaseClassification_minus
+} from "./GeipanCaseClassification"
 
 interface QueryParameters {
   /**
@@ -32,13 +36,13 @@ interface QueryParameters {
   field_agregation_index_value: string
 }
 
-export class GeipanDatasource extends HttpSource implements CaseSource<GeipanCaseSummary> {
+export class GeipanHttpDatasource implements CaseSource<GeipanCaseSummary> {
   protected static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
   readonly author = "GEIPAN"
   readonly copyright = "Catalogue de cas"
+  protected readonly http = new HttpSource()
 
-  constructor(readonly baseUrl = "https://geipan.fr", readonly searchPath = "fr/recherche/cas") {
-    super()
+  constructor(readonly baseUrl: string, readonly searchPath: string) {
   }
 
   async getAll(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
@@ -64,7 +68,7 @@ export class GeipanDatasource extends HttpSource implements CaseSource<GeipanCas
     }
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
-    const page = await this.fetch<string>(searchUrl + "?" + queryParamsStr,
+    const page = await this.http.fetch<string>(searchUrl + "?" + queryParamsStr,
       {headers: {accept: "text/html;charset=utf-8"}})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
@@ -83,11 +87,11 @@ export class GeipanDatasource extends HttpSource implements CaseSource<GeipanCas
     const caseLink = linkField.firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
     const caseField = row.querySelector(".cas_title")
-    const fields = GeipanDatasource.dateFormat.exec(caseField.textContent.trim())
+    const fields = GeipanHttpDatasource.dateFormat.exec(caseField.textContent.trim())
     assert.ok(fields,
-      `Case title "${caseField.textContent}" does not match pattern ${GeipanDatasource.dateFormat.source}`)
+      `Case title "${caseField.textContent}" does not match pattern ${GeipanHttpDatasource.dateFormat.source}`)
     const city = fields[1].trim()
-    const depCode = parseInt(fields[2], 10)
+    const depCode = fields[2]
     const dateTime = this.getTime(context, fields, 5)
     const caseNumber = url.pathname.substring(url.pathname.lastIndexOf("/") + 1)
 
@@ -100,12 +104,22 @@ export class GeipanDatasource extends HttpSource implements CaseSource<GeipanCas
 
     const postDatefields = /(\d+).(\d+).(\d+)/.exec(getLabeledText(".date-update"))
     const postTime = this.getTime(context, postDatefields, 3)
-    const classification = ObjectUtil.enumFromValue<GeipanCaseClassification>(GeipanCaseClassification,
-      getLabeledText(".classification"))
-    return {depCode, caseNumber, url, city, dateTime, postTime, classification}
+    const classificationLabel = getLabeledText(".classification")
+    const classification = classificationLabel ? classificationLabel.endsWith("-")
+      ? ObjectUtil.enumFromValue(GeipanCaseClassification_minus, classificationLabel)
+      : ObjectUtil.enumFromValue(GeipanCaseClassification, classificationLabel) : undefined
+    return {
+      depCode,
+      caseNumber,
+      url,
+      city,
+      dateTime,
+      postTime,
+      classification: classification as GeipanCaseClassification_calc
+    }
   }
 
-  private getTime(context: RR0SsgContext, fields: RegExpExecArray, index: number): TimeContext {
+  protected getTime(context: RR0SsgContext, fields: RegExpExecArray, index: number): TimeContext {
     const itemContext = context.clone()
     const dateTime = itemContext.time
     dateTime.setYear(parseInt(fields[index], 10))

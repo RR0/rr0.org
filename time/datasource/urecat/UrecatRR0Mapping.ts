@@ -1,10 +1,10 @@
 import { UrecatRR0Mapper } from "./UrecatRR0Mapper"
 import { countryService } from "../../../org/country/CountryService"
-import { UrecatDatasource } from "./UrecatDatasource"
+import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
 import { cityService } from "../../../org/Cities"
 import { UrecatCase } from "./UrecatCase"
 
-export const urecatDatasource = new UrecatDatasource()
+export const urecatDatasource = new UrecatHttpDatasource()
 
 export const urecatRR0Mapper = new UrecatRR0Mapper(cityService, countryService, urecatDatasource.baseUrl,
   urecatDatasource.copyright, urecatDatasource.author)

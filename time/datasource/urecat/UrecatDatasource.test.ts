@@ -5,7 +5,7 @@ import { UrecatCase } from "./UrecatCase"
 import { urecatRR0Mapping, urecatSortComparator, urecatTimeAccessor } from "./UrecatRR0Mapping"
 import { urecatTestCases } from "./UrecatTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { UrecatDatasource } from "./UrecatDatasource"
+import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
 
 describe("UrecatCaseSource", () => {
 
@@ -21,7 +21,7 @@ describe("UrecatCaseSource", () => {
   })
 
   test("witnesses", () => {
-    const datasource = testCase.mapping.datasource as UrecatDatasource
+    const datasource = testCase.mapping.datasource as UrecatHttpDatasource
     expect(datasource.getWitnesses("")).toEqual([{name: ""}])
     expect(datasource.getWitnesses("Scott C. Waring")).toEqual([{name: "Scott C. Waring"}])
     expect(datasource.getWitnesses("Un couple anonyme")).toEqual([{name: "Un couple anonyme"}])

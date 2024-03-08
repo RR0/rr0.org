@@ -24,7 +24,7 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
     } else if (typeof value === "object") {
       const subMapper = new CsvMapper(this.sep, this.escapeStr, this.prefix + key + ".")
       const subValues = subMapper.map(context, value, sourceTime)
-      let addSubFields = !isFinite(key)
+      let addSubFields = !isFinite(key as any)
       if (addSubFields) {
         subMapper.fields.forEach(subField => this.fields.add(subField))
       }
@@ -100,9 +100,8 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
             }
             records.push(c as S)
             values = []
-            data = data.substring(regex.lastIndex)
-            regex = new RegExp(`(?:${this.escapeStr}(.*?)${this.escapeStr}(?:${this.sep}|\n))|(?:(.*?)(?:${this.sep}|\n))`,
-              "gs")
+            // data = data.substring(regex.lastIndex)
+            //regex.lastIndex = 0
           }
         }
       })

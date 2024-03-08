@@ -8,9 +8,10 @@ import { MessageUtils } from "../../../lang/RR0Messages"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import { CaseSource } from "../CaseSource"
 
-export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCase> {
+export class UrecatHttpDatasource implements CaseSource<UrecatCase> {
   readonly author = "Gross, Patrick"
   readonly copyright = "URECAT (Les ovnis vus de près)"
+  protected readonly http = new HttpSource()
 
   protected static readonly urlDateFormat = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d))?)?/
   protected static readonly wordToCount: { [key: string]: number } = {
@@ -25,7 +26,6 @@ export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCas
   }
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "ce3") {
-    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<UrecatCase[]> {
@@ -35,7 +35,7 @@ export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCas
     const searchUrl = this.getSearchUrl()
     const lang = context.locale === "fr" ? "f" : ""
     const requestUrl = UrlUtil.join(searchUrl, `_${year}${lang}.htm`)
-    const page = await this.fetch<string>(requestUrl, {headers: {accept: "text/html;charset=iso-8859-1"}})
+    const page = await this.http.fetch<string>(requestUrl, {headers: {accept: "text/html;charset=iso-8859-1"}})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
     const contentType = charSetMeta.getAttribute("content")
@@ -60,7 +60,7 @@ export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCas
       .map(m => m.replace(/^ses /, ""))
       .flatMap(name => {
         const lowName = name.toLowerCase()
-        const countEntry = Object.entries(UrecatDatasource.wordToCount).find(entry => {
+        const countEntry = Object.entries(UrecatHttpDatasource.wordToCount).find(entry => {
           if (lowName.startsWith(entry[0] + " ")) {
             return entry
           }
@@ -103,7 +103,7 @@ export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCas
 
   protected getDate(context: RR0SsgContext, url: URL): RR0SsgContext {
     const timeStr = url.href.substring(this.getSearchUrl().length + 1)
-    const dateFields = UrecatDatasource.urlDateFormat.exec(timeStr)
+    const dateFields = UrecatHttpDatasource.urlDateFormat.exec(timeStr)
     const itemContext = context.clone()
     const dateTime = itemContext.time
     dateTime.setYear(parseInt(dateFields[1], 10))
@@ -132,7 +132,7 @@ export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCas
     const witnesses = this.getWitnesses(columns[2].textContent)
     const timeStr = TimeTextBuilder.build(timeContext)
     const sightingDate = timeContext.time
-    const countStr = ObjectUtil.keyFromValue(UrecatDatasource.wordToCount, witnesses.length)
+    const countStr = ObjectUtil.keyFromValue(UrecatHttpDatasource.wordToCount, witnesses.length)
     const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${countStr} ${MessageUtils.pluralWord(
       witnesses.length, "personne")}`.toUpperCase()
     return {url, title, basicInfo: {base: {sightingDate, location: {placeName, country, departmentOrState}, witnesses}}}

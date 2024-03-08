@@ -29,13 +29,13 @@ interface FormData {
   B1: "Envoyer"
 }
 
-export class BaseOvniFranceDatasource extends HttpSource implements CaseSource<BaseOvniFranceCaseSummary> {
+export class BaseOvniFranceDatasource implements CaseSource<BaseOvniFranceCaseSummary> {
   protected static readonly regExp = /(.*?)\s+\(([\dAB]+)\)/
   readonly author = "Chastan, Luc"
   readonly copyright = "Base OVNI France"
+  protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl = "http://baseovnifrance.free.fr", readonly searchPath = "listgen.php") {
-    super()
   }
 
   queryUrl(month: number, year: number): { formData: FormData, queryUrl: string } {
@@ -78,7 +78,7 @@ export class BaseOvniFranceDatasource extends HttpSource implements CaseSource<B
     const month = context.time.getMonth()
     const year = context.time.getYear()
     const {formData, queryUrl} = this.queryUrl(month, year)
-    const page = await this.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
+    const page = await this.http.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
     const contentType = charSetMeta.getAttribute("content")

@@ -5,7 +5,7 @@ import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { geipanTestCaseSummaries } from "./GeipanTestCases"
 import fs from "fs"
-import { geipanDatasource, geipanSortComparator } from "./GeipanRR0Mapping"
+import { geipanHttpDatasource } from "./GeipanRR0Mapping"
 import { GeipanCase } from "./GeipanCase"
 import { GeipanCaseSummaryMapper } from "./GeipanCaseSummaryMapper"
 
@@ -46,16 +46,14 @@ describe("GEIPAN", () => {
   test("read", () => {
     const exportMapper = new CsvMapper<GeipanCase>(";")
     const data = fs.readFileSync("time/datasource/geipan/export_cas_pub_20210219111412.csv", {encoding: "latin1"})
-    const csvMapper = new GeipanCaseSummaryMapper(geipanDatasource.baseUrl, geipanDatasource.searchPath,
-      geipanDatasource.author)
-    const cases = exportMapper.read(context, data)
-      .map(csvCase => csvMapper.map(context, csvCase, dataDate))
-      .sort(geipanSortComparator)
-    const expected = geipanTestCaseSummaries.sort(geipanSortComparator)
-    const expected1 = expected[0]
+    const csvMapper = new GeipanCaseSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,
+      geipanHttpDatasource.author)
+    const cases = exportMapper.read(context, data).map(csvCase => csvMapper.map(context, csvCase, dataDate))
+    expect(cases.length).toEqual(2768)
+    const expected1 = geipanTestCaseSummaries[0]
     const case1 = cases.find(c => c.caseNumber === expected1.caseNumber)
     expect(case1).toEqual(expected1)
-    const expected2 = expected[1]
+    const expected2 = geipanTestCaseSummaries[1]
     const case2 = cases.find(c => c.caseNumber === expected2.caseNumber)
     expect(case2).toEqual(expected2)
   })

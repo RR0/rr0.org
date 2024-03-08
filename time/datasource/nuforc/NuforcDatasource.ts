@@ -15,12 +15,12 @@ interface QueryParameters {
   id: string
 }
 
-export class NuforcDatasource extends HttpSource implements CaseSource<NuforcCaseSummary> {
+export class NuforcDatasource implements CaseSource<NuforcCaseSummary> {
   readonly author = "NUFORC"
   readonly copyright = "Online Database"
+  protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl = "https://nuforc.org", readonly searchPath = "subndx") {
-    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<NuforcCaseSummary[]> {
@@ -32,7 +32,7 @@ export class NuforcDatasource extends HttpSource implements CaseSource<NuforcCas
     }
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
-    const page = await this.fetch<string>(UrlUtil.join(searchUrl, "?" + queryParamsStr),
+    const page = await this.http.fetch<string>(UrlUtil.join(searchUrl, "?" + queryParamsStr),
       {headers: {accept: "text/html;charset=utf-8"}})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")

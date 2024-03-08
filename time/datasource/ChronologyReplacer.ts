@@ -15,8 +15,10 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
 
   protected readonly done = new Set<string>()
 
-  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: RR0CaseRenderer, protected merge = false,
-              protected save = true) {
+  constructor(
+    protected mappings: RR0CaseMapping<any>[], protected renderer: RR0CaseRenderer,
+    protected merge: boolean, protected save: boolean
+  ) {
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {

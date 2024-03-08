@@ -19,6 +19,7 @@ export enum FranceDepartementCode {
   Isere = "38",
   Landes = "40",
   Loire = "42",
+  Loiret = "45",
   MaineEtLoire = "49",
   Marne = "51",
   MeurtheEtMoselle = "54",

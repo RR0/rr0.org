@@ -122,6 +122,8 @@ export type AcufoCase = {
    * "ACUFO-1945-07-16-NUMAZU-1"
    */
   caseNumber: string
+
+  url: URL
   summary: string
   data: AcufoCaseData
   sources: AcufoCaseSource[]

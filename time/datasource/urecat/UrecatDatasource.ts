@@ -1,13 +1,16 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpCaseSource } from "../HttpCaseSource"
+import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { UrecatCase, UrecatWitness } from "./UrecatCase"
 import { TimeTextBuilder } from "../../TimeTextBuilder"
 import { MessageUtils } from "../../../lang/RR0Messages"
 import { ObjectUtil } from "../../../util/ObjectUtil"
+import { CaseSource } from "../CaseSource"
 
-export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
+export class UrecatDatasource extends HttpSource implements CaseSource<UrecatCase> {
+  readonly author = "Gross, Patrick"
+  readonly copyright = "URECAT (Les ovnis vus de près)"
 
   protected static readonly urlDateFormat = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d))?)?/
   protected static readonly wordToCount: { [key: string]: number } = {
@@ -22,7 +25,7 @@ export class UrecatDatasource extends HttpCaseSource<UrecatCase> {
   }
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "ce3") {
-    super("Gross, Patrick", "URECAT (Les ovnis vus de près)")
+    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<UrecatCase[]> {

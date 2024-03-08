@@ -1,5 +1,5 @@
 import { CaseMapper } from "../CaseMapper"
-import { GeipanCase } from "./GeipanCase"
+import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
@@ -12,7 +12,7 @@ import { usa } from "../../../org/us/Usa"
 import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
 import { france } from "../../../org/eu/fr/France"
 
-export class GeipanRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCase, RR0Case> {
+export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCaseSummary, RR0Case> {
 
   static readonly countryMap = {
     Australia: australia.code,
@@ -27,12 +27,12 @@ export class GeipanRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCase
   ) {
   }
 
-  getDescription(c: GeipanCase): string {
+  getDescription(c: GeipanCaseSummary): string {
     const description = ["observation"]
     return description.join(", ")
   }
 
-  map(context: HtmlRR0SsgContext, sourceCase: GeipanCase, sourceTime: Date): RR0Case {
+  map(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary, sourceTime: Date): RR0Case {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})

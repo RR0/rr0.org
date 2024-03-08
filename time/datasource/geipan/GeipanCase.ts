@@ -1,85 +1,176 @@
-import { TimeContext } from "../../TimeContext"
-import { GeipanTestimonial } from "./GeipanTestimonial"
+import { GeipanCaseClassification, GeipanCaseClassification_minus } from "./GeipanCaseClassification"
 
-export enum GeipanClassification {
-  Identified = "A",
-  LikelyIdentified = "B",
-
-  /**
-   * Missing reliable info.
-   */
-  MissingInfo = "C",
-
-  Unidentified = "D",
-  Unidentified1 = "D1",
-  Unidentified2 = "D2",
-}
-
-enum IdentifiedPhenomenon {
-  ThaiLanterns = "ThaiLanterns",
-}
-
-enum DocumentType {
-  pdf, mov
-}
-
-type Document = {
-  type: DocumentType
-  contents: any
-}
-
-type Testimonial = {}
-
-enum SightingType {
-  FromGround,
-  FromSea,
-  FromAir,
+export enum GeipanCaseZoneType {
+  Department = "(D) Département"
 }
 
 export type GeipanCase = {
   /**
-   * "AAAA-MM-number"
+   * 108
    */
-  caseNumber: string
-
-  url: URL
-
-  sightingType?: SightingType
+  id_cas: number
 
   /**
-   * Sighting date.
+   * "NANTES (44) 08.10.1969"
    */
-  dateTime: TimeContext
-
-  city: string
-
-  depCode: number
-
-  postTime: TimeContext
-
-  classification: GeipanClassification
-
-  summary?: string
+  cas_nom_dossier: string
 
   /**
-   * Between 0 and 1
+   * "Loire-Atlantique"
    */
-  strangeness?: number
+  cas_zone_nom: string
 
   /**
-   * Between 0 and 1
+   * ("44", "972", "MA.01", "SN.DK" for instance)
    */
-  consistency?: number
+  cas_zone_code: string
 
-  description?: string
-
-  identification?: IdentifiedPhenomenon
-
-  documents?: Document[]
-  testimonials?: GeipanTestimonial[]
+  cas_zone_type: GeipanCaseZoneType
 
   /**
-   * With photo/video
+   * Sighting year
    */
-  withMedia?: boolean
+  cas_AAAA: string
+
+  /**
+   * Sighting month ("02" for instance)
+   */
+  cas_MM: string
+
+  /**
+   * Sighting day of month ("06" for instance)
+   */
+  cas_JJ: string
+
+  /**
+   * Sighting description ("Les 18,19 et 20 mars 1977 plusieurs personnes dont des gendarmes observent à partir de 20h30 la présence d'une étrange lueur dans le ciel. Celle-ci se déplace lentement et semble par moment grossir ou diminuer. La couleur peut varier du blanc au jaune orangé. La lueur disparaît vers 21h. L'hypothèse d'une observation astronomique n'a pu être confirmée par manque d'informations.")
+   */
+  cas_resume: string
+
+  /**
+   * Sighting summary ("Observations périodiques d'une lueur. Déplacement lent.")
+   */
+  cas_resume_web: string
+
+  /**
+   * Allowed for public display.
+   */
+  cas_public: boolean
+
+  /**
+   * Testimonials count (2 or undefined for instance)
+   */
+  cas_temoignages_nb?: number
+
+  /**
+   * Witnesses count (2 or undefined for instance)
+   */
+  cas_temoins_nb?: number
+
+  /**
+   * Approximated count of witnesses.
+   */
+  cas_temoins_nb_approx?: number
+
+  /**
+   * UFOs count.
+   */
+  cas_nb_PAN?: number
+
+  /**
+   * Approximate UFOs count.
+   */
+  cas_nb_PAN_approx?: number
+
+  /**
+   *
+   */
+  cas_MinCercleInscrit_Lat?: any
+
+  /**
+   *
+   */
+  cas_MinCercleInscrit_Lng?: any
+
+  /**
+   *
+   */
+  cas_MinCercleInscrit_Err?: any
+
+  /**
+   * Update ("2015-12-07" for instance)
+   */
+  cas_date_maj: string
+
+  /**
+   * Strangeness index (0.25 for instance)
+   */
+  cas_etrangete?: number
+
+  /**
+   *
+   */
+  cas_etrangete_err?: number
+
+  /**
+   * Computed strangeness index (0.38 for instance)
+   */
+  cas_etrangete_calc: number
+
+  /**
+   * (0.13 for instance)
+   */
+  cas_etrangete_calc_err: number
+
+  /**
+   * Case reliability (0.80 for instance)
+   */
+  cas_fiabilite?: number
+
+  /**
+   *
+   */
+  cas_fiabilite_err?: any
+
+  /**
+   * Computed case reliability (0.70 for instance)
+   */
+  cas_fiabilite_calc?: number
+
+  /**
+   * Data amount index
+   */
+  cas_qte_information?: number
+
+  /**
+   * Computed data amount index
+   */
+  cas_qte_information_calc?: number
+
+  /**
+   * Case consistency (0.56 for instance)
+   */
+  cas_consistance?: number
+
+  /**
+   * Computed case consistency (0.56 for instance)
+   */
+  cas_consistance_calc: number
+
+  /**
+   * 0.00
+   */
+  cas_consistance_calc_err: number
+
+  cas_classification: GeipanCaseClassification
+
+  /**
+   *
+   */
+  cas_classification_calc?: GeipanCaseClassification & GeipanCaseClassification_minus
+
+  /**
+   * ("2018-02-50473" for instance)
+   */
+  cas_numEtude: string
 }

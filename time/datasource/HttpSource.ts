@@ -1,7 +1,3 @@
-import { CaseSource } from "./CaseSource"
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { RR0Case } from "../RR0Case"
-
 export class MimeType {
   static readonly csv: string = "text/csv"
   static readonly json: string = "application/json"
@@ -12,11 +8,9 @@ export class MimeType {
 /**
  * A source for cases that can be fetched online.
  */
-export abstract class HttpCaseSource<S> extends CaseSource<S> {
+export class HttpSource {
 
   protected constructor(
-    author: string,
-    copyright: string,
     protected userAgents = [
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64)  AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
       "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
@@ -26,7 +20,6 @@ export abstract class HttpCaseSource<S> extends CaseSource<S> {
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
     ]
   ) {
-    super(author, copyright)
   }
 
   static findParam(str: string, separator: string, param: string): string {
@@ -43,19 +36,19 @@ export abstract class HttpCaseSource<S> extends CaseSource<S> {
     return foundParam.substring(key.length)
   }
 
-  protected randomUA() {
+  randomUA() {
     const randomNumber = Math.floor(Math.random() * this.userAgents.length)
     return this.userAgents[randomNumber]
   }
 
-  protected async fetch<T>(url: string, init: RequestInit): Promise<T> {
+  async fetch<T>(url: string, init: RequestInit): Promise<T> {
     init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
     const response = await fetch(url, init)
     if (response.ok) {
       const accept = init.headers["accept"]
       if (accept) {
         const buffer = await response.arrayBuffer()
-        const charset = HttpCaseSource.findParam(accept, ";", "charset")
+        const charset = HttpSource.findParam(accept, ";", "charset")
         const decoder = new TextDecoder(charset)
         return decoder.decode(buffer) as T
       } else {
@@ -73,7 +66,7 @@ export abstract class HttpCaseSource<S> extends CaseSource<S> {
     }
   }
 
-  protected async submitForm<T>(url: string, obj: object, headers = {}): Promise<T> {
+  async submitForm<T>(url: string, obj: object, headers = {}): Promise<T> {
     const formData = new FormData()
     Object.entries(obj).forEach(entry => formData.append(entry[0], encodeURIComponent(entry[1])))
     const init: RequestInit = {method: "POST", headers, body: formData}

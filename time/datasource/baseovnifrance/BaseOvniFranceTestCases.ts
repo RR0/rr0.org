@@ -1,9 +1,9 @@
-import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { baseOvniFranceDatasource } from "./BaseOvniFranceRR0Mapping"
 
-export const baseOvniFranceTestCases: BaseOvniFranceCase[] = [
+export const baseOvniFranceTestCases: BaseOvniFranceCaseSummary[] = [
   {
     caseNumber: 2760,
     url: new URL("listgen.php?typlist=20&page=0&numobs=2760", baseOvniFranceDatasource.baseUrl),

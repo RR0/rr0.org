@@ -1,25 +1,29 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpCaseSource } from "../HttpCaseSource"
+import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { NuforcCase, NuforcShape } from "./NuforcCase"
+import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import { NuforcState } from "./NuforcState"
 import assert from "assert"
 import { TimeContext } from "../../TimeContext"
 import { NuforcCountry } from "./NuforcCountry"
+import { CaseSource } from "../CaseSource"
+import { NuforcShape } from "./NuforcShape"
 
 interface QueryParameters {
   id: string
 }
 
-export class NuforcDatasource extends HttpCaseSource<NuforcCase> {
+export class NuforcDatasource extends HttpSource implements CaseSource<NuforcCaseSummary> {
+  readonly author = "NUFORC"
+  readonly copyright = "Online Database"
 
   constructor(readonly baseUrl = "https://nuforc.org", readonly searchPath = "subndx") {
-    super("NUFORC", "Online Database")
+    super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<NuforcCase[]> {
+  async getAll(context: RR0SsgContext): Promise<NuforcCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
@@ -88,10 +92,10 @@ export class NuforcDatasource extends HttpCaseSource<NuforcCase> {
     return imageField.textContent === "Y"
   }
 
-  protected getNativeCase(context: RR0SsgContext, row: Element): NuforcCase {
+  protected getNativeCase(context: RR0SsgContext, row: Element): NuforcCaseSummary {
     const columns = row.querySelectorAll("td")
     const url = this.getLink(columns[0])
-    const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "?", "id"), 10)
+    const caseNumber = parseInt(HttpSource.findParam(url.href, "?", "id"), 10)
     const dateTime = this.getTime(columns[1], context)
     const city = columns[2].textContent
     const state = this.getState(columns[3])

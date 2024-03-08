@@ -1,11 +1,13 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpCaseSource } from "../HttpCaseSource"
+import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { GeipanCase, GeipanClassification } from "./GeipanCase"
+import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
+import { CaseSource } from "../CaseSource"
+import { GeipanCaseClassification } from "./GeipanCaseClassification"
 
 interface QueryParameters {
   /**
@@ -30,15 +32,16 @@ interface QueryParameters {
   field_agregation_index_value: string
 }
 
-export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
-
-  static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
+export class GeipanDatasource extends HttpSource implements CaseSource<GeipanCaseSummary> {
+  protected static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
+  readonly author = "GEIPAN"
+  readonly copyright = "Catalogue de cas"
 
   constructor(readonly baseUrl = "https://geipan.fr", readonly searchPath = "fr/recherche/cas") {
-    super("GEIPAN", "Catalogue de cas")
+    super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<GeipanCase[]> {
+  async getAll(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const dayStartStr = day ? String(day).padStart(2, "0") : "01"
     const dayEndStr = day ? String(day).padStart(2, "0") : "31"
@@ -75,7 +78,7 @@ export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
     return Array.from(rowEls).map(row => this.getFromRow(context, row))
   }
 
-  protected getFromRow(context: RR0SsgContext, row: Element): GeipanCase {
+  protected getFromRow(context: RR0SsgContext, row: Element): GeipanCaseSummary {
     const linkField = row.querySelector(".fiche-download-icon")
     const caseLink = linkField.firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
@@ -97,7 +100,7 @@ export class GeipanDatasource extends HttpCaseSource<GeipanCase> {
 
     const postDatefields = /(\d+).(\d+).(\d+)/.exec(getLabeledText(".date-update"))
     const postTime = this.getTime(context, postDatefields, 3)
-    const classification = ObjectUtil.enumFromValue<GeipanClassification>(GeipanClassification,
+    const classification = ObjectUtil.enumFromValue<GeipanCaseClassification>(GeipanCaseClassification,
       getLabeledText(".classification"))
     return {depCode, caseNumber, url, city, dateTime, postTime, classification}
   }

@@ -1,14 +1,14 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { NuforcCase } from "./NuforcCase"
+import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { nuforcRR0Mapping, nuforcSortComparator, nuforcTimeAccessor } from "./NuforcRR0Mapping"
 import { nuforcTestCases } from "./NuforcTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 
 describe("NuforcCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<NuforcCase>(nuforcRR0Mapping, nuforcTestCases, nuforcSortComparator,
+  const testCase = new DatasourceTestCase<NuforcCaseSummary>(nuforcRR0Mapping, nuforcTestCases, nuforcSortComparator,
     nuforcTimeAccessor)
 
   let context: HtmlRR0SsgContext

@@ -7,7 +7,7 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
   readonly fields = new Set<string>()
 
   constructor(
-    readonly sep = ",", readonly escapeChar = "\"", readonly prefix = "") {
+    readonly sep = ",", readonly escapeStr = "\"", readonly prefix = "") {
   }
 
   readonly fieldMapper = (context: RR0SsgContext, key: string, value: any, sourceTime: Date): string => {
@@ -22,7 +22,7 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
     } else if (Array.isArray(value)) {
       val = value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(";")
     } else if (typeof value === "object") {
-      const subMapper = new CsvMapper(this.sep, this.escapeChar, this.prefix + key + ".")
+      const subMapper = new CsvMapper(this.sep, this.escapeStr, this.prefix + key + ".")
       const subValues = subMapper.map(context, value, sourceTime)
       let addSubFields = !isFinite(key)
       if (addSubFields) {
@@ -64,26 +64,49 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
   }
 
   escape(value: string): string {
-    return value.indexOf(this.sep) >= 0 ? this.escapeChar + value + this.escapeChar : value
-  }
-
-  readLine(line: string): S {
-    const c = {}
-    const values = line.split(this.sep)
-    const fields = Array.from(this.fields)
-    for (let i = 0; i < fields.length; i++) {
-      const field = fields[i]
-      c[field] = values[i]
-    }
-    return c as S
+    return this.escapeStr && value.indexOf(this.sep) >= 0 ? this.escapeStr + value + this.escapeStr : value
   }
 
   read(context: RR0SsgContext, data: string): S[] {
-    const lines = data.split("\n")
-    const header = lines.shift()
+    let eol = data.indexOf("\n")
+    const header = data.substring(0, eol)
+    data = data.substring(eol + 1).replaceAll(`""`, "''")
     this.fields.clear()
     const columns = header.split(this.sep)
     columns.forEach(column => this.fields.add(column))
-    return lines.filter(l => l.trim()).map(l => this.readLine(l))
+    const records: S[] = []
+    let regex = new RegExp(`(?:${this.escapeStr}(.*?)${this.escapeStr}(?:${this.sep}|\n))|(?:(.*?)(?:${this.sep}|\n))`,
+      "gs")
+    let values = []
+    let m
+    const fields = Array.from(this.fields)
+    while ((m = regex.exec(data)) !== null) {
+      if (m.index === regex.lastIndex) {  // This is necessary to avoid infinite loops with zero-width matches
+        regex.lastIndex++
+        if (regex.lastIndex > data.length) {
+          break
+        }
+      }
+      m.forEach((match, group) => {
+        let empty = match === this.sep && group
+        if (match !== undefined && group) {
+          const val = empty ? "" : match
+          values.push(val)
+          const c = {}
+          if (values.length === fields.length) {
+            for (let i = 0; i < fields.length; i++) {
+              const field = fields[i]
+              c[field] = values[i]
+            }
+            records.push(c as S)
+            values = []
+            data = data.substring(regex.lastIndex)
+            regex = new RegExp(`(?:${this.escapeStr}(.*?)${this.escapeStr}(?:${this.sep}|\n))|(?:(.*?)(?:${this.sep}|\n))`,
+              "gs")
+          }
+        }
+      })
+    }
+    return records
   }
 }

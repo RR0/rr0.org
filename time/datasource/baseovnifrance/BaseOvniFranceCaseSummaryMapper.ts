@@ -1,0 +1,38 @@
+import { CaseMapper } from "../CaseMapper"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
+import { RR0SsgContext } from "../../../RR0SsgContext"
+import { TimeContext } from "../../TimeContext"
+import { rr0TestUtil } from "../../../test/RR0TestUtil"
+import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+
+/**
+ * Maps a Base OVNI France CSV case to a Base OVNI France case.
+ */
+export class BaseOvniFranceCaseSummaryMapper implements CaseMapper<RR0SsgContext, BaseOvniFranceCase, BaseOvniFranceCaseSummary> {
+
+  constructor(
+    readonly baseUrl: string, readonly copyright: string, readonly author: string
+  ) {
+  }
+
+  map(context: RR0SsgContext, csvCase: BaseOvniFranceCase, sourceTime: Date): BaseOvniFranceCaseSummary {
+    const caseNumber = parseInt(csvCase["Num cas"], 10)
+    const dateFields = csvCase["Date"].split("-")
+    const timeFields = csvCase["Heure"].split(":")
+    let dayField = dateFields[0]
+    const dayOfMonth = dayField && dayField !== "00" ? parseInt(dayField, 10) : undefined
+    const c: BaseOvniFranceCaseSummary = {
+      caseNumber,
+      url: new URL("listgen.php?typlist=20&page=0&numobs=" + caseNumber, this.baseUrl),
+      city: csvCase.Ville,
+      depCode: csvCase["Départ."],
+      dateTime: new TimeContext(rr0TestUtil.intlOptions, parseInt(dateFields[2], 10), parseInt(dateFields[1], 10),
+        dayOfMonth, parseInt(timeFields[0], 10), parseInt(timeFields[1], 10), "GMT+1"),
+      physicalEffect: Boolean(csvCase["Effet Physique"]),
+      witnessEffect: Boolean(csvCase["Effet témoin"]),
+      entities: csvCase["Nbre entité"] > 0,
+      landing: Boolean(csvCase["Atter"])
+    }
+    return c
+  }
+}

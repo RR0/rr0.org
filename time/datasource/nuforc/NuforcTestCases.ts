@@ -1,11 +1,12 @@
-import { NuforcCase, NuforcShape } from "./NuforcCase"
+import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { nuforcDatasource } from "./NuforcRR0Mapping"
 import { TimeContext } from "../../TimeContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { NuforcState } from "./NuforcState"
 import { NuforcCountry } from "./NuforcCountry"
+import { NuforcShape } from "./NuforcShape"
 
-export const nuforcTestCases: NuforcCase[] = [
+export const nuforcTestCases: NuforcCaseSummary[] = [
   {
     caseNumber: 34046,
     url: new URL("/sighting/?id=34046", nuforcDatasource.baseUrl),

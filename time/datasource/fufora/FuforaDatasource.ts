@@ -1,8 +1,9 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpCaseSource } from "../HttpCaseSource"
+import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { FuforaCase } from "./FuforaCase"
+import { FuforaCaseSummary } from "./FuforaCaseSummary"
+import { CaseSource } from "../CaseSource"
 
 interface QueryParameters {
   sid: string
@@ -145,13 +146,15 @@ interface FormData {
   tark: 1
 }
 
-export class FuforaDatasource extends HttpCaseSource<FuforaCase> {
+export class FuforaDatasource extends HttpSource implements CaseSource<FuforaCaseSummary> {
+  readonly author = "FUFORA"
+  readonly copyright = "Base de données observationnelle"
 
   constructor(readonly baseUrl = "https://www.fufora.fi/ufodb2", readonly searchPath = "ufohaku.php") {
-    super("FUFORA", "Base de données observationnelle")
+    super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<FuforaCase[]> {
+  async getAll(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
@@ -168,7 +171,7 @@ export class FuforaDatasource extends HttpCaseSource<FuforaCase> {
     const rowEls = doc.querySelectorAll(".udb_u_taulukko .rivi")
     const rows = Array.from(rowEls)
     rows.shift()  // Skip header row
-    const cases: FuforaCase[] = []
+    const cases: FuforaCaseSummary[] = []
     for (const row of rows) {
       if (row.hasChildNodes()) {
         cases.push(this.getNativeCase(context, row))
@@ -177,7 +180,7 @@ export class FuforaDatasource extends HttpCaseSource<FuforaCase> {
     return cases
   }
 
-  protected getNativeCase(context: RR0SsgContext, row: Element): FuforaCase {
+  protected getNativeCase(context: RR0SsgContext, row: Element): FuforaCaseSummary {
     const fields = row.querySelectorAll("div")
     const caseLink = fields[0].firstElementChild as HTMLAnchorElement
     const dateFormat = /(?:(\d\d).(\d\d).(\d\d\d\d))?\n?(.+)?/
@@ -194,7 +197,7 @@ export class FuforaDatasource extends HttpCaseSource<FuforaCase> {
     const sightingPlace = placeRows[0]
     const city = placeRows.length > 1 ? context.messages.country.fi.cityName(placeRows[1]) : undefined
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "&", "u"), 10)
+    const caseNumber = parseInt(HttpSource.findParam(url.href, "&", "u"), 10)
     const classification = fields[3].textContent
     return {
       caseNumber,

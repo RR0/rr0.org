@@ -1,9 +1,9 @@
-import { FuforaCase } from "./FuforaCase"
+import { FuforaCaseSummary } from "./FuforaCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { fuforaDatasource } from "./FuforaRR0Mapping"
 
-export const fuforaTestCases: FuforaCase[] = [
+export const fuforaTestCases: FuforaCaseSummary[] = [
   {
     caseNumber: 40,
     url: new URL("ufodata.php?u=40&p=1&sid=", fuforaDatasource.baseUrl),

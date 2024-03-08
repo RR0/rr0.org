@@ -1,6 +1,6 @@
 import { TimeContext } from "../../TimeContext"
 
-export type FuforaCase = {
+export type FuforaCaseSummary = {
   readonly caseNumber: number
   readonly url: URL,
   readonly city: string,

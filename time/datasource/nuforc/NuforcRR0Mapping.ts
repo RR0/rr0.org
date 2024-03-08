@@ -2,7 +2,7 @@ import { NuforcRR0Mapper } from "./NuforcRR0Mapper"
 import { countryService } from "../../../org/country/CountryService"
 import { NuforcDatasource } from "./NuforcDatasource"
 import { cityService } from "../../../org/Cities"
-import { NuforcCase } from "./NuforcCase"
+import { NuforcCaseSummary } from "./NuforcCaseSummary"
 
 export const nuforcDatasource = new NuforcDatasource()
 
@@ -15,6 +15,7 @@ export const nuforcRR0Mapping = {
 }
 
 export const nuforcSortComparator
-  = (c1: NuforcCase, c2: NuforcCase) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+  = (c1: NuforcCaseSummary,
+     c2: NuforcCaseSummary) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
 
-export const nuforcTimeAccessor = (c: NuforcCase) => c.dateTime
+export const nuforcTimeAccessor = (c: NuforcCaseSummary) => c.dateTime

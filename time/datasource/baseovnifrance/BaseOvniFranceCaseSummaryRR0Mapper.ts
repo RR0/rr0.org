@@ -1,5 +1,5 @@
 import { CaseMapper } from "../CaseMapper"
-import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
@@ -7,7 +7,10 @@ import { CityService } from "../../../org/country/region/department/city/CitySer
 import { NamedPlace, RR0Case } from "../../RR0Case"
 import assert from "assert"
 
-export class BaseOvniFranceRR0Mapper implements CaseMapper<HtmlRR0SsgContext, BaseOvniFranceCase, RR0Case> {
+/**
+ * Maps a Base OVNI France case to a RR0 case.
+ */
+export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, BaseOvniFranceCaseSummary, RR0Case> {
 
   constructor(
     protected depService: DepartmentService, protected cityService: CityService,
@@ -15,24 +18,7 @@ export class BaseOvniFranceRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ba
   ) {
   }
 
-  protected getDescription(c: BaseOvniFranceCase): string {
-    const description = ["observation"]
-    if (c.landing) {
-      description.push("avec atterrissage")
-    }
-    if (c.entities) {
-      description.push("avec entités")
-    }
-    if (c.physicalEffect) {
-      description.push("avec effet physique")
-    }
-    if (c.witnessEffect) {
-      description.push("avec effet sur témoin")
-    }
-    return description.join(", ")
-  }
-
-  map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCase, sourceTime: Date): RR0Case {
+  map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0Case {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const depCode = sourceCase.depCode
@@ -48,5 +34,22 @@ export class BaseOvniFranceRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ba
       description: this.getDescription(sourceCase),
       sources: [caseSource]
     }
+  }
+
+  protected getDescription(c: BaseOvniFranceCaseSummary): string {
+    const description = ["observation"]
+    if (c.landing) {
+      description.push("avec atterrissage")
+    }
+    if (c.entities) {
+      description.push("avec entités")
+    }
+    if (c.physicalEffect) {
+      description.push("avec effet physique")
+    }
+    if (c.witnessEffect) {
+      description.push("avec effet sur témoin")
+    }
+    return description.join(", ")
   }
 }

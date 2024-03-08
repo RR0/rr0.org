@@ -1,18 +1,25 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpCaseSource } from "../HttpCaseSource"
+import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
 import { AcufoCase } from "./AcufoCase"
+import { CaseSource } from "../CaseSource"
+import { NuforcState } from "../nuforc/NuforcState"
+import { NuforcCountry } from "../nuforc/NuforcCountry"
+
+import { NuforcShape } from "../nuforc/NuforcShape"
 
 interface QueryParameters {
 }
 
-export class AcufoDatasource extends HttpCaseSource<AcufoCase> {
+export class AcufoDatasource extends HttpSource implements CaseSource<AcufoCase> {
+  readonly author = "Gross, Patrick"
+  readonly copyright = "ACUFO/ALSACAT (Les ovnis vus de près)"
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "alsacat") {
-    super("Gross, Patrick", "ACUFO/ALSACAT (Les ovnis vus de près)")
+    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<AcufoCase[]> {
@@ -51,7 +58,7 @@ export class AcufoDatasource extends HttpCaseSource<AcufoCase> {
     dateTime.setHour(hour)
     dateTime.setMinutes(minutes)
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "?", "id"), 10)
+    const caseNumber = HttpSource.findParam(url.href, "?", "id")
     const stateStr = fields[3].textContent
     const state = ObjectUtil.enumFromValue<NuforcState>(NuforcState, stateStr)
     const countryStr = fields[4].textContent

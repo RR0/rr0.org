@@ -1,7 +1,7 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import {
@@ -12,7 +12,7 @@ import {
 
 describe("BaseOvniFranceCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<BaseOvniFranceCase>(
+  const testCase = new DatasourceTestCase<BaseOvniFranceCaseSummary>(
     baseOvniFranceRR0Mapping, baseOvniFranceTestCases, baseOvniFranceSortComparator, baseOvniFranceTimeAccessor
   )
   let context: HtmlRR0SsgContext

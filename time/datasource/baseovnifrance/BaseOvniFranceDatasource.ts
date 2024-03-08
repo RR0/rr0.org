@@ -1,18 +1,26 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpCaseSource } from "../HttpCaseSource"
+import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import assert from "assert"
+import { CaseSource } from "../CaseSource"
 
 enum ListType {
   perMonth = 20
 }
 
+enum Cre {
+  export = 1
+}
+
 interface QueryParameters {
   typlist: ListType
-  page: number
+  cre?: Cre
+  an?: number
+  mois?: number
+  page?: number
 }
 
 interface FormData {
@@ -21,34 +29,13 @@ interface FormData {
   B1: "Envoyer"
 }
 
-export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase> {
+export class BaseOvniFranceDatasource extends HttpSource implements CaseSource<BaseOvniFranceCaseSummary> {
+  protected static readonly regExp = /(.*?)\s+\(([\dAB]+)\)/
+  readonly author = "Chastan, Luc"
+  readonly copyright = "Base OVNI France"
 
   constructor(readonly baseUrl = "http://baseovnifrance.free.fr", readonly searchPath = "listgen.php") {
-    super("Chastan, Luc", "Base OVNI France")
-  }
-
-  async getAll(context: RR0SsgContext): Promise<BaseOvniFranceCase[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
-    const {formData, queryUrl} = this.queryUrl(month, year)
-    const page = await this.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
-    const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
-    const rowEls = doc.querySelectorAll("#listgen2 tbody tr")
-    const rows = Array.from(rowEls)
-    rows.shift()  // Skip header row
-    const cases: BaseOvniFranceCase[] = []
-    for (const row of rows) {
-      cases.push(this.getFromRow(context, row))
-    }
-    return cases
+    super()
   }
 
   queryUrl(month: number, year: number): { formData: FormData, queryUrl: string } {
@@ -86,13 +73,35 @@ export class BaseOvniFranceDatasource extends HttpCaseSource<BaseOvniFranceCase>
     dateTime.setTimeZone("GMT+1")
   }
 
-  private static readonly regExp = /(.*?)\s+\(([\dAB]+)\)/
+  async getAll(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
+    const day = context.time.getDayOfMonth()
+    const month = context.time.getMonth()
+    const year = context.time.getYear()
+    const {formData, queryUrl} = this.queryUrl(month, year)
+    const page = await this.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
+    const doc = new JSDOM(page).window.document.documentElement
+    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
+    const contentType = charSetMeta.getAttribute("content")
+    let charset = findParam(contentType, ";", "charset") as BufferEncoding
+    if (charset.startsWith("iso-8859")) {
+      charset = "latin1"
+    }
+    const decoder = new TextDecoder(charset)*/
+    const rowEls = doc.querySelectorAll("#listgen2 tbody tr")
+    const rows = Array.from(rowEls)
+    rows.shift()  // Skip header row
+    const cases: BaseOvniFranceCaseSummary[] = []
+    for (const row of rows) {
+      cases.push(this.getFromRow(context, row))
+    }
+    return cases
+  }
 
-  protected getFromRow(context: RR0SsgContext, row: Element): BaseOvniFranceCase {
+  protected getFromRow(context: RR0SsgContext, row: Element): BaseOvniFranceCaseSummary {
     const columns = row.querySelectorAll("td")
     const caseLink = columns[0].firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = parseInt(HttpCaseSource.findParam(url.href, "&", "numobs"), 10)
+    const caseNumber = parseInt(HttpSource.findParam(url.href, "&", "numobs"), 10)
     const linkParse = BaseOvniFranceDatasource.regExp.exec(caseLink.textContent)
     assert.ok(linkParse,
       `Case title "${caseLink.textContent}" does not match pattern ${BaseOvniFranceDatasource.regExp.source}`)

@@ -21,7 +21,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/baseovnifrance/BaseOvniFranceCsv.test.ts",
+    "test-one": "tsx time/datasource/geipan/GeipanCsv.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {
@@ -33,7 +33,8 @@
     "csv-parser": "^3.0.0",
     "glob-promise": "^6.0.5",
     "image-size": "^1.0.2",
-    "jsdom": "^24.0.0"
+    "jsdom": "^24.0.0",
+    "csv": "^6.3.8"
   },
   "devDependencies": {
     "@javarome/testscript": "^0.10.7",

@@ -4,8 +4,10 @@ import { alpesMaritimes } from "./06/AlpesMaritimes"
 import { Var } from "./83/Var"
 import { bouchesDuRhone } from "./13/BouchesDuRhone"
 import { Organization } from "../../../../Organization"
+import { alpesDeHauteProvence } from "./04/AlpesDeHauteProvence"
 
 export const pacaDepartments: Organization[] = [
+  alpesDeHauteProvence,
   alpesMaritimes,
   bouchesDuRhone,
   hautesAlpes,

@@ -1,5 +1,4 @@
 import { RegionMessages } from "../../country/region/RegionMessages"
-import { AuvergneRhoneAlpesDepartmentMessagesList } from "./region/ara/AuvergneRhoneAlpesDepartmentMessagesList"
 import { BourgogneFrancheComteDepartmentMessagesList } from "./region/bfc/BourgogneFrancheComteDepartmentMessagesList"
 import { PacaDepartementCode } from "./region/pac/PacaDepartementCode"
 import { OccitanieDepartementCode } from "./region/occ/OccitanieDepartementCode"
@@ -13,9 +12,10 @@ import { LaReunionDepartementCode } from "./region/lre/LaReunionDepartementCode"
 import { FrenchOrganizationMessages } from "./FrenchOrganization"
 import { DepartmentMessages } from "../../country/region/department/DepartmentMessages"
 import { CentreValDeLoireDepartementCode } from "./region/cvl/CentreValDeLoireDepartementCode"
+import { AuvergneRhoneAlpesDepartementCode } from "./region/ara/AuvergneRhoneAlpesDepartementCode"
 
 export type FranceRegionsMessagesList = {
-  ara: RegionMessages<AuvergneRhoneAlpesDepartmentMessagesList>
+  ara: RegionMessages<{ [key in AuvergneRhoneAlpesDepartementCode]: DepartmentMessages<any> }>
   bfc: RegionMessages<BourgogneFrancheComteDepartmentMessagesList>
   ges: RegionMessages<{ [key in GrandEstDepartementCode]: DepartmentMessages<any> }>
   cvl: RegionMessages<{ [key in CentreValDeLoireDepartementCode]: DepartmentMessages<any> }>

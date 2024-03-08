@@ -11,13 +11,13 @@ import { normandieMessages_fr } from "./region/nor/NormandieMessages_fr"
 import { grandEstMessages } from "./region/ges/GrandEstMessages"
 import { laReunionMessages_fr } from "./region/lre/LaReunionMessages_fr"
 import { OrganizationType } from "../../Organization"
+import { centreValDeLoireMessages } from "./region/cvl/CentreValDeLoireMessages"
 
-export const franceMessages_fr = new FranceMessages(
-  "France"
-)
+export const franceMessages_fr = new FranceMessages("France")
 franceMessages_fr[OrganizationType.region] = {
   ara: auvergneRhoneAlpesMessages,
   bfc: bourgogneFrancheComteMessages,
+  cvl: centreValDeLoireMessages,
   ges: grandEstMessages,
   idf: idfMessages,
   hdf: hautsDeFranceMessages,

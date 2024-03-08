@@ -1,7 +1,7 @@
 import { VictoriaCityCode } from "../VictoriaCityCode"
 import { Place } from "../../../../../place/Place"
 import { victoria } from "../Victoria"
-import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { Organization, OrganizationType } from "../../../../Organization"
 
 export const melbourneVic = new Organization<DepartmentMessages>(

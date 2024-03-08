@@ -1,7 +1,7 @@
 import { FranceDepartementCode } from "../../FranceDepartementCode"
 import { Place } from "../../../../../../place/Place"
-import { Organization, OrganizationType } from "../../../../../Organization"
 import { grandEst } from "../GrandEst"
+import { Department } from "../../../../../country/region/department/Department"
 
-export const meurtheEtMoselle = new Organization(FranceDepartementCode.MeurtheEtMoselle,
-  [Place.fromDMS(`48°40′N,6°10′E`)], OrganizationType.department, grandEst)
+export const meurtheEtMoselle = Department.create(FranceDepartementCode.MeurtheEtMoselle, grandEst,
+  Place.fromDMS(`48°40′N,6°10′E`))

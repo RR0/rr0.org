@@ -6,9 +6,11 @@ import { loireMessages } from "./42/LoireMessages"
 import { puyDeDomeMessages } from "./63/RhoneMessages"
 import { rhoneMessages } from "./69/RhoneMessages"
 import { RegionMessages } from "../../../../country/region/RegionMessages"
+import { dromeMessages } from "./26/DromeMessages"
 
 export const auvergneRhoneAlpesDepartementsMessageList: AuvergneRhoneAlpesDepartmentMessagesList = {
   [AuvergneRhoneAlpesDepartementCode.Allier]: allierMessages,
+  [AuvergneRhoneAlpesDepartementCode.Drome]: dromeMessages,
   [AuvergneRhoneAlpesDepartementCode.Isere]: isereMessages,
   [AuvergneRhoneAlpesDepartementCode.Loire]: loireMessages,
   [AuvergneRhoneAlpesDepartementCode.PuyDeDome]: puyDeDomeMessages,

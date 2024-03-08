@@ -1,6 +1,8 @@
 import { City } from "../../../../../country/region/department/city/City"
-import { neauphleLeChateau } from "./neauphleLechateau/NeauphleLeChateau"
+import { neauphleLeChateau } from "./neauphlelechateau/NeauphleLeChateau"
+import { mesnilLeRoi } from "./mesnilleroi/MesnilLeRoi"
 
 export const yvelinesCities: City[] = [
-  neauphleLeChateau
+  neauphleLeChateau,
+  mesnilLeRoi
 ]

@@ -1,6 +1,7 @@
-import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { OrganizationMessages } from "../../../OrganizationMessages"
+import { CityMessagesList } from "./city/CityMessagesList"
 
-export class DepartmentMessages<M> extends OrganizationMessages {
+export class DepartmentMessages<M = CityMessagesList> extends OrganizationMessages {
   /**
    *
    * @param titles

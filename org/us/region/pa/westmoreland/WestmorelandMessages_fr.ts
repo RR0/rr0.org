@@ -1,5 +1,5 @@
 import { monessenMessages } from "./monessen/MonessenMessages"
-import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 
 export let westmorelandMessages_fr = DepartmentMessages.create(
   "Comté de Westmoreland",

@@ -1,7 +1,7 @@
 import { LandesCityCode } from "./LandesCityCode"
 import { montDeMarsanMessages } from "./montigne/MontigneMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 type LandesCityMessagesList = { [key in LandesCityCode]: OrganizationMessages }
 

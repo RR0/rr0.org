@@ -1,7 +1,7 @@
 import { NordCityCode } from "./NordCityCode"
 import { aniche60Messages } from "./aniche/AnicheMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 type NordCityMessagesList = { [key in NordCityCode]: OrganizationMessages }
 const nordCityMessages: NordCityMessagesList = {

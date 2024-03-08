@@ -11,12 +11,14 @@ import { PaysDeLoireDepartementCode } from "./region/pdl/PaysDeLoireDepartementC
 import { GrandEstDepartementCode } from "./region/ges/GrandEstDepartementCode"
 import { LaReunionDepartementCode } from "./region/lre/LaReunionDepartementCode"
 import { FrenchOrganizationMessages } from "./FrenchOrganization"
-import { DepartmentMessages } from "../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../country/region/department/DepartmentMessages"
+import { CentreValDeLoireDepartementCode } from "./region/cvl/CentreValDeLoireDepartementCode"
 
 export type FranceRegionsMessagesList = {
   ara: RegionMessages<AuvergneRhoneAlpesDepartmentMessagesList>
   bfc: RegionMessages<BourgogneFrancheComteDepartmentMessagesList>
   ges: RegionMessages<{ [key in GrandEstDepartementCode]: DepartmentMessages<any> }>
+  cvl: RegionMessages<{ [key in CentreValDeLoireDepartementCode]: DepartmentMessages<any> }>
   idf: RegionMessages<{ [key in IdfDepartmentCode]: DepartmentMessages<any> }>
   hdf: RegionMessages<{ [key in HautsDeFranceDepartmentCode]: DepartmentMessages<any> }>
   lre: RegionMessages<{ [key in LaReunionDepartementCode]: DepartmentMessages<any> }>

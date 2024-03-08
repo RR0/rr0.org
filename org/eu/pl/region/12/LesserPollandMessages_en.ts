@@ -1,5 +1,5 @@
 import { RegionMessages } from "../../../../country/region/RegionMessages"
-import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { LesserPolandDepartementCode } from "./LesserPolandDepartementCode"
 import { suchaMessages_en } from "./sucha/SuchaMessages_en"
 

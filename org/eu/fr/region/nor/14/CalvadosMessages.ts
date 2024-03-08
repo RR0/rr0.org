@@ -1,7 +1,7 @@
 import { CalvadosCityCode } from "./CalvadosCityCode"
 import { pontLeveque14Messages } from "./pontleveque/PontLevequeMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 type CalvadosCityMessagesList = { [key in CalvadosCityCode]: OrganizationMessages }
 const calvadosCityMessages: CalvadosCityMessagesList = {

@@ -1,6 +1,9 @@
 import { TimeContext } from "../../TimeContext"
 import { GeipanCaseClassification_calc } from "./GeipanCaseClassification"
 import { GeipanSightingType } from "./GeipanSightingType"
+import { CountryCode } from "../../../org/country/CountryCode"
+import { FranceRegionCode } from "../../../org/eu/fr/region/FranceRegionCode"
+import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 
 export type GeipanCaseSummary = {
   /**
@@ -19,7 +22,9 @@ export type GeipanCaseSummary = {
 
   city: string
 
-  depCode: string
+  depCode?: FranceDepartementCode
+  regionCode?: FranceRegionCode
+  countryCode?: CountryCode.fr
 
   postTime: TimeContext
 

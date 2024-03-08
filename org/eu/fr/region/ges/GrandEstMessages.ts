@@ -1,6 +1,4 @@
 import { grandEstDepartmentsMessages } from "./GrandEstDepartmentsMessages"
-import { OrganizationMessages } from "../../../../OrganizationMessages"
-import { OrganizationType } from "../../../../Organization"
+import { RegionMessages } from "../../../../country/region/RegionMessages"
 
-export const grandEstMessages = new OrganizationMessages("Occitanie")
-grandEstMessages[OrganizationType.department] = grandEstDepartmentsMessages
+export const grandEstMessages = RegionMessages.create("Grand Est", grandEstDepartmentsMessages)

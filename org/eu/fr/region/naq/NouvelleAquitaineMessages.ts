@@ -5,7 +5,7 @@ import { charenteMessages } from "./16/CharenteMessages"
 import { landesMessages } from "./40/LandesMessages"
 import { charenteMaritimeMessages } from "./17/CharenteMaritimeMessages"
 import { vienneMessages } from "./86/VienneMessages"
-import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 
 export const nouvelleAquitaineMessageList: { [key in NouvelleAquitaineDepartmentCode]: DepartmentMessages<any> } = {
   [NouvelleAquitaineDepartmentCode.Charente]: charenteMessages,

@@ -1,4 +1,4 @@
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { LleidaCityCode } from "./LleidaCityCode"
 import { lleidaCityMessages_en } from "./lleida/LleidaCityMessages_en"
 

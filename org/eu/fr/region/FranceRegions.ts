@@ -10,6 +10,7 @@ import { hautsDeFrance } from "./hdf/HautsDeFrance"
 import { grandEst } from "./ges/GrandEst"
 import { laReunion } from "./lre/LaReunion"
 import { Organization } from "../../../Organization"
+import { centreValDeLoire } from "./cvl/CentreValDeLoire"
 
 export const franceRegions: Organization[] = [
   auvergneRhoneAlpes,
@@ -22,5 +23,6 @@ export const franceRegions: Organization[] = [
   normandie,
   occitanie,
   paca,
-  paysDeLoire
+  paysDeLoire,
+  centreValDeLoire
 ]

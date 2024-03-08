@@ -6,6 +6,7 @@ import { aude } from "./11/Aude"
 import { tarn } from "./81/Tarn"
 import { Organization } from "../../../../Organization"
 import { gard } from "./30/Gard"
+import { pyreneesOrientales } from "./66/PyreneesOrientales"
 
 export const occitanieDepartments: Organization[] = [
   aude,
@@ -14,5 +15,6 @@ export const occitanieDepartments: Organization[] = [
   hauteGaronne,
   herault,
   tarn,
-  tarnEtGaronne
+  tarnEtGaronne,
+  pyreneesOrientales
 ]

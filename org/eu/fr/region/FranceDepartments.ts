@@ -12,13 +12,14 @@ import { laReunionDepartments } from "./lre/LaReunionDepartments"
 import { Organization } from "../../../Organization"
 import { Department } from "../../../country/region/department/Department"
 import { FranceDepartementCode } from "./FranceDepartementCode"
-import { paysDeLoire } from "./pdl/PaysDeLoire"
 import { Place } from "../../../../place/Place"
 import { Region } from "../../../country/region/Region"
+import { centreValDeLoireDepartments } from "./cvl/CentreValDeLoireDepartments"
 
 export const franceDepartments: Organization[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
+  ...centreValDeLoireDepartments,
   ...grandEstDepartments,
   ...idfDepartments,
   ...hautsDeFranceDepartments,
@@ -31,5 +32,5 @@ export const franceDepartments: Organization[] = [
 ]
 
 export function franceDepartment(code: FranceDepartementCode, region: Region, place: Place) {
-  return new Department(code, paysDeLoire, place)
+  return Department.create(code, region, place)
 }

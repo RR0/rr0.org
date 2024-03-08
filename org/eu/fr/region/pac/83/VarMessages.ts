@@ -1,7 +1,7 @@
 import { VarCityCode } from "./VarCityCode"
 import { foxAmphouxMessages } from "./foxamphoux/FoxAmphouxMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 export type VarCityList<T> = { [key in VarCityCode]: T }
 

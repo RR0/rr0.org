@@ -5,6 +5,7 @@ import { RR0SsgContext } from "../RR0SsgContext"
 import assert from "assert"
 import { OrgMessageOptions } from "./OrgMessages"
 import { OrganizationMessages } from "./OrganizationMessages"
+import { TitleMessage } from "./index"
 
 export enum OrganizationType {
   country = "country",
@@ -13,7 +14,7 @@ export enum OrganizationType {
   city = "city",
 }
 
-export class Organization implements Rr0Data {
+export class Organization<M extends TitleMessage = OrganizationMessages> implements Rr0Data {
 
   readonly dirName: string
 
@@ -23,7 +24,7 @@ export class Organization implements Rr0Data {
     this.dirName = path.join(parent?.dirName ?? "org/", code)
   }
 
-  messages(context: RR0SsgContext): OrganizationMessages {
+  messages(context: RR0SsgContext): M {
     const rootMessages = this.parent ? this.parent.messages(context) : context.messages
     const messageKind = rootMessages[this.kind]
     assert.ok(messageKind, `Could not find messages of kind "${this.kind}" in ${JSON.stringify(rootMessages)}`)

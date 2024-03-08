@@ -1,7 +1,7 @@
 import { LaReunionCityCode } from "./LaReunionCityCode"
 import { steMarie874Messages } from "./stmarie/SteMarieMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 type LaReunionCityMessages = { [key in LaReunionCityCode]: OrganizationMessages }
 export const laReunionCityMessages_fr: LaReunionCityMessages = {

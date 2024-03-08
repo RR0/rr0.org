@@ -53,4 +53,9 @@ export enum FranceRegionCode {
    * La Réunion
    */
   lre = "lre",
+
+  /**
+   * Centre-Val de Loire
+   */
+  cvl = "cvl",
 }

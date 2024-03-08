@@ -6,6 +6,7 @@ import { audeCities } from "./11/AudeCities"
 import { tarnCities } from "./81/TarnCities"
 import { Organization } from "../../../../Organization"
 import { gardCities } from "./30/GardCities"
+import { pyreneesOrientalesCities } from "./66/PyreneesOrientalesCities"
 
 export const occitanieCities: Organization[] = [
   ...audeCities,
@@ -14,5 +15,6 @@ export const occitanieCities: Organization[] = [
   ...hauteGaronneCities,
   ...heraultCities,
   ...tarnCities,
-  ...tarnEtGaronneCities
+  ...tarnEtGaronneCities,
+  ...pyreneesOrientalesCities
 ]

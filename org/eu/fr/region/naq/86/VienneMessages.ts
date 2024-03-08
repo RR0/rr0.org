@@ -1,7 +1,7 @@
 import { VienneCityCode } from "./VienneCityCode"
 import { montDeMarsanMessages } from "./montigne/MontigneMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 type VienneCityMessagesList = { [key in VienneCityCode]: OrganizationMessages }
 

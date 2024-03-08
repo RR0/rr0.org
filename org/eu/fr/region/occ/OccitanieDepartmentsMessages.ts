@@ -7,6 +7,7 @@ import { audeMessages } from "./11/AudeMessages"
 import { tarnMessages } from "./81/TarnMessages"
 import { gardMessages } from "./30/GardMessages"
 import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { pyreneesOrientalesMessages } from "./66/PyreneesOrientalesMessages"
 
 export type OccitanieDepartmentsMessages = { [key in OccitanieDepartementCode]: OrganizationMessages }
 export const occitanieDepartmentsMessages: OccitanieDepartmentsMessages = {
@@ -16,5 +17,6 @@ export const occitanieDepartmentsMessages: OccitanieDepartmentsMessages = {
   [OccitanieDepartementCode.HauteGaronne]: hauteGaronneMessages,
   [OccitanieDepartementCode.Herault]: heraultMessages,
   [OccitanieDepartementCode.Tarn]: tarnMessages,
-  [OccitanieDepartementCode.TarnEtGaronne]: tarnEtGaronneMessages
+  [OccitanieDepartementCode.TarnEtGaronne]: tarnEtGaronneMessages,
+  [OccitanieDepartementCode.PyreneesOrientales]: pyreneesOrientalesMessages
 }

@@ -1,6 +1,6 @@
 import { HautsDeSeineCityCode } from "./HautsDeSeineCityCode"
 import { nanterreMessages } from "./nanterre/NanterreMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 type HautDeSeineCityMessagesList = { [key in HautsDeSeineCityCode]: OrganizationMessages }
 

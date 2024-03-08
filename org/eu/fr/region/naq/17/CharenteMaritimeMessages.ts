@@ -1,6 +1,6 @@
 import { CharenteMaritimeCityCode } from "./CharenteMaritimeCityCode"
 import { stMartinDeRe17Messages } from "./stmartindere/StMartinDeReMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
 type CharenteCityMessagesList = { [key in CharenteMaritimeCityCode]: OrganizationMessages }

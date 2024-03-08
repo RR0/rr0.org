@@ -1,6 +1,6 @@
 import { HeraultCityCode } from "./HeraultCityCode"
 import { montpellier34Messages } from "./montpellier/MontpellierMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 
 type HeraultMessages = { [key in HeraultCityCode]: OrganizationMessages }

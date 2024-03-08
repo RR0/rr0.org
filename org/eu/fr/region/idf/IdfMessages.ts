@@ -4,7 +4,7 @@ import { IdfDepartmentCode } from "./IdfDepartmentCode"
 import { oiseMessages } from "./60/OiseCityMessages"
 import { parisMessages } from "./75/ParisMessages"
 import { yvelinesMessages } from "./78/YvelinesCityMessages"
-import { DepartmentMessages } from "../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 
 export type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: DepartmentMessages<any> }
 

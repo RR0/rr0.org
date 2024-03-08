@@ -15,6 +15,8 @@ import { SouthKoreaRegionCode } from "../../kr/region/SouthKoreaRegionCode"
 import { ColombiaRegionCode } from "../../co/region/ColombiaRegionCode"
 import { NewZealandRegionCode } from "../../nz/region/NewZealandRegionCode"
 import { UkRegionCode } from "../../uk/region/UkRegionCode"
+import { RegionMessages } from "./RegionMessages"
+import { TitleMessage } from "../../index"
 
 export type RegionCode =
   | AustraliaRegionCode
@@ -33,7 +35,7 @@ export type RegionCode =
   | SouthKoreaRegionCode
   | UsaRegionCode
 
-export class Region extends Organization {
+export class Region<M extends TitleMessage = RegionMessages<any>> extends Organization<M> {
 
   constructor(code: RegionCode, country: Organization, places: Place[]) {
     super(code, places, OrganizationType.region, country)

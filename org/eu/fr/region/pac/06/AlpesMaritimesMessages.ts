@@ -1,7 +1,7 @@
 import { cannesMessages } from "./cannes/CannesMessages"
 import { AlpesMaritimesCityCode } from "./AlpesMaritimesCityCode"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/city/DepartmentMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 export type alpesMaritimesCityList<T> = { [key in AlpesMaritimesCityCode]: T }
 

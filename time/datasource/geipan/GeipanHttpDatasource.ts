@@ -12,6 +12,7 @@ import {
   GeipanCaseClassification_calc,
   GeipanCaseClassification_minus
 } from "./GeipanCaseClassification"
+import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 
 interface QueryParameters {
   /**
@@ -91,7 +92,7 @@ export class GeipanHttpDatasource implements CaseSource<GeipanCaseSummary> {
     assert.ok(fields,
       `Case title "${caseField.textContent}" does not match pattern ${GeipanHttpDatasource.dateFormat.source}`)
     const city = fields[1].trim()
-    const depCode = fields[2]
+    const depCode = fields[2] as FranceDepartementCode
     const dateTime = this.getTime(context, fields, 5)
     const caseNumber = url.pathname.substring(url.pathname.lastIndexOf("/") + 1)
 

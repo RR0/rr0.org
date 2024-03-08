@@ -35,7 +35,7 @@ export class Organization<M extends TitleMessage = OrganizationMessages> impleme
 
   title(context: RR0SsgContext, options: OrgMessageOptions = {parent: false}): string {
     const messages = this.messages(context)
-    assert.ok(messages, `Could not find name of org "${this.code}" in parent org "${this.parent.code}"`)
+    assert.ok(messages, `Could not find name of org "${this.code}" in parent org "${this.parent?.code}"`)
     let str = messages.title
     if (options.parent && this.parent) {
       const parentMessages = this.parent.messages(context)

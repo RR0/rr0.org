@@ -1,4 +1,4 @@
-import { DepartmentMessages } from "../../../../../../country/region/department/DepartmentMessages"
+import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
 
-export const belleville69Messages = new DepartmentMessages("Belleville-en-Beaujolais", "Belleville",
+export const belleville69Messages = new CityMessages("Belleville-en-Beaujolais", "Belleville",
   "Belleville-sur-Saône")

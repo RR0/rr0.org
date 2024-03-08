@@ -41,16 +41,26 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
       default:
         description.push(c.classification)
     }
-    return description.join(", ")
+    return description.join(" ")
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary, sourceTime: Date): RR0Case {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
+    const place = this.getPlace(context, sourceCase)
+    return {
+      time: sourceCase.dateTime,
+      place,
+      description: this.getDescription(sourceCase),
+      sources: [caseSource]
+    }
+  }
+
+  protected getPlace(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary): NamedPlace {
     let place: NamedPlace
-    if (sourceCase.depCode) {
-      const depCode = String(sourceCase.depCode)
+    const depCode = sourceCase.depCode
+    if (depCode) {
       assert.ok(depCode, `Should at least have one of department,region or country code`)
       const dep = this.departmentService.get(depCode, undefined)
       assert.ok(dep, `Could not find department with code "${depCode}" in country "${france.code}"`)
@@ -63,15 +73,12 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
       const region = this.regionService.get(sourceCase.regionCode, undefined)
       place = {name: region.title(context), place: region.places[0]}
     } else if (sourceCase.countryCode) {
-      assert.equal(sourceCase.countryCode === CountryCode.fr,
+      assert.equal(sourceCase.countryCode, CountryCode.fr,
         `GEIPAN country code "${sourceCase.countryCode}" is not France`)
       place = {name: france.title(context), place: france.places[0]}
+    } else {
+      assert.fail("No place for case " + JSON.stringify(sourceCase))
     }
-    return {
-      time: sourceCase.dateTime,
-      place,
-      description: this.getDescription(sourceCase),
-      sources: [caseSource]
-    }
+    return place
   }
 }

@@ -3,7 +3,7 @@ import { GeipanCaseClassification, GeipanCaseClassification_minus } from "./Geip
 export enum GeipanCaseZoneType {
   Aerial = "(A) Aérien",
   Department = "(D) Département",
-  National = "(N) Département",
+  National = "(N) National",
   Region = "(R) Région"
 }
 

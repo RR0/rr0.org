@@ -1,6 +1,6 @@
 import { stMartinDeRe17 } from "./stmartindere/StMartinDeRe"
-import { Organization } from "../../../../../Organization"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const charenteMaritimeCities: Organization[] = [
+export const charenteMaritimeCities: City[] = [
   stMartinDeRe17
 ]

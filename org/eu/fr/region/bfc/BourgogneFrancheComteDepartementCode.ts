@@ -1,6 +1,7 @@
 import { FranceDepartementCode } from "../FranceDepartementCode"
 
 export enum BourgogneFrancheComteDepartementCode {
-  SaoneEtLoire = FranceDepartementCode.SaoneEtLoire,
-  CoteDOr = FranceDepartementCode.CoteDOr
+  CoteDOr = FranceDepartementCode.CoteDOr,
+  Jura = FranceDepartementCode.Jura,
+  SaoneEtLoire = FranceDepartementCode.SaoneEtLoire
 }

@@ -20,6 +20,7 @@ export enum FranceDepartementCode {
   Herault = "34",
   Indre = "36",
   Isere = "38",
+  Jura = "39",
   Landes = "40",
   Loire = "42",
   Loiret = "45",

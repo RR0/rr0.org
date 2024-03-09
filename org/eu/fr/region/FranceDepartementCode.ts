@@ -17,6 +17,7 @@ export enum FranceDepartementCode {
   Gard = "30",
   HauteGaronne = "31",
   Gers = "32",
+  Gironde = "33",
   Herault = "34",
   Indre = "36",
   Isere = "38",

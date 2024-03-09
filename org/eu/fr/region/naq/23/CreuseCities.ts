@@ -1,6 +1,6 @@
 import { chambonSurVoueize23 } from "./chambon/Chambon"
-import { Organization } from "../../../../../Organization"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const creuseCities: Organization[] = [
+export const creuseCities: City[] = [
   chambonSurVoueize23
 ]

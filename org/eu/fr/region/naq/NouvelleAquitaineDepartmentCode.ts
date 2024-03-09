@@ -5,6 +5,7 @@ export enum NouvelleAquitaineDepartmentCode {
   CharenteMaritime = FranceDepartementCode.CharenteMaritime,
   Correze = FranceDepartementCode.Correze,
   Creuse = FranceDepartementCode.Creuse,
+  Gironde = FranceDepartementCode.Gironde,
   Landes = FranceDepartementCode.Landes,
   Vienne = FranceDepartementCode.Vienne,
 }

@@ -1,3 +1,3 @@
 import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
 
-export const chambonMessages = new CityMessages("Chambon-sur-Voueize")
+export const saintAndreDeCubzacMessages = new CityMessages("Saint-André-de-Cubzac")

@@ -3,5 +3,5 @@ import { Place } from "../../../../../../place/Place"
 import { nouvelleAquitaine } from "../NouvelleAquitaine"
 import { Department } from "../../../../../country/region/department/Department"
 
-export const creuse = Department.create(NouvelleAquitaineDepartmentCode.Creuse,
-  nouvelleAquitaine, Place.fromLocation(46.189722, 2.085556))
+export const gironde = Department.create(NouvelleAquitaineDepartmentCode.Gironde,
+  nouvelleAquitaine, Place.fromDMS("44°50′14″N,0°35′12″O"))

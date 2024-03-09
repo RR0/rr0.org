@@ -1,9 +1,7 @@
 import { MeuseCityCode } from "./MeuseCityCode"
 import { vaucouleursMessages } from "./vaucouleurs/VaucouleursMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { OrganizationType } from "../../../../../Organization"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
-export const meuseMessages = new OrganizationMessages("Meurthe-et-Moselle")
-meuseMessages[OrganizationType.city] = {
+export const meuseMessages = DepartmentMessages.create("Meurthe-et-Moselle", {
   [MeuseCityCode.Vaucouleurs]: vaucouleursMessages
-}
+})

@@ -33,6 +33,7 @@ export enum FranceDepartementCode {
   PasDeCalais = "62",
   PuyDeDome = "63",
   PyreneesOrientales = "66",
+  BasRhin = "67",
   Rhone = "69",
   SaoneEtLoire = "71",
   Sarthe = "72",

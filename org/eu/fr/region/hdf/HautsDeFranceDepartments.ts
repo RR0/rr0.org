@@ -1,6 +1,8 @@
 import { nord } from "./59/Nord"
-import { Organization } from "../../../../Organization"
+import { pasDeCalais } from "./62/PasDeCalais"
+import { Department } from "../../../../country/region/department/Department"
 
-export const hautsDeFranceDepartments: Organization[] = [
+export const hautsDeFranceDepartments: Department[] = [
+  pasDeCalais,
   nord
 ]

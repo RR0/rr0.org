@@ -30,6 +30,7 @@ export enum FranceDepartementCode {
   Meuse = "55",
   Nord = "59",
   Oise = "60",
+  PasDeCalais = "62",
   PuyDeDome = "63",
   PyreneesOrientales = "66",
   Rhone = "69",

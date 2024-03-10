@@ -10,6 +10,7 @@ import { france } from "../../../org/eu/fr/France"
 import { RegionService } from "../../../org/country/region/RegionService"
 import { CountryCode } from "../../../org/country/CountryCode"
 import { GeipanCaseClassification } from "./GeipanCaseClassification"
+import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 
 export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCaseSummary, RR0Case> {
 
@@ -67,8 +68,16 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
       const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)
       const placeName = placeItems[1]
       const city = this.cityService.find(context, placeName, undefined)
-      assert.ok(city, `Could not find city "${placeName}" in department "${depCode}" of country "${france.code}"`)
-      place = {name: city.title(context), place: city.places[0]}
+      if (!city) {
+        const depWithCityName = this.departmentService.find(context, placeName, undefined)
+        assert.ok(depWithCityName,
+          `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
+        sourceCase.city = undefined
+        sourceCase.depCode = depWithCityName.code as FranceDepartementCode
+        place = {name: depWithCityName.title(context), place: depWithCityName.places[0]}
+      } else {
+        place = {name: city.title(context), place: city.places[0]}
+      }
     } else if (sourceCase.regionCode) {
       const region = this.regionService.get(sourceCase.regionCode, undefined)
       place = {name: region.title(context), place: region.places[0]}

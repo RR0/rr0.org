@@ -1,7 +1,6 @@
 import { FranceDepartementCode } from "../../FranceDepartementCode"
 import { Place } from "../../../../../../place/Place"
-import { Organization, OrganizationType } from "../../../../../Organization"
 import { ileDeFrance } from "../Idf"
+import { Department } from "../../../../../country/region/department/Department"
 
-export const oise = new Organization(FranceDepartementCode.Oise, [Place.fromLocation(49.383333, 2.416667)],
-  OrganizationType.department, ileDeFrance)
+export const oise = Department.create(FranceDepartementCode.Oise, ileDeFrance, Place.fromLocation(49.383333, 2.416667))

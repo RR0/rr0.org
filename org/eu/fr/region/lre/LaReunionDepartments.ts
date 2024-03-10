@@ -1,6 +1,6 @@
 import { laReunion974 } from "./974/LaReunion"
-import { Organization } from "../../../../Organization"
+import { Department } from "../../../../country/region/department/Department"
 
-export const laReunionDepartments: Organization[] = [
+export const laReunionDepartments: Department[] = [
   laReunion974
 ]

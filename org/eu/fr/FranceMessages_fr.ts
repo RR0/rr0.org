@@ -12,6 +12,7 @@ import { grandEstMessages } from "./region/ges/GrandEstMessages"
 import { laReunionMessages_fr } from "./region/lre/LaReunionMessages_fr"
 import { OrganizationType } from "../../Organization"
 import { centreValDeLoireMessages } from "./region/cvl/CentreValDeLoireMessages"
+import { guadeloupeMessages_fr } from "./region/gua/GuadeloupeMessages_fr"
 
 export const franceMessages_fr = new FranceMessages("France")
 franceMessages_fr[OrganizationType.region] = {
@@ -19,6 +20,7 @@ franceMessages_fr[OrganizationType.region] = {
   bfc: bourgogneFrancheComteMessages,
   cvl: centreValDeLoireMessages,
   ges: grandEstMessages,
+  gua: guadeloupeMessages_fr,
   idf: idfMessages,
   hdf: hautsDeFranceMessages,
   lre: laReunionMessages_fr,

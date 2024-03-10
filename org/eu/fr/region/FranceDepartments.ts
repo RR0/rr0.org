@@ -15,12 +15,14 @@ import { FranceDepartementCode } from "./FranceDepartementCode"
 import { Place } from "../../../../place/Place"
 import { Region } from "../../../country/region/Region"
 import { centreValDeLoireDepartments } from "./cvl/CentreValDeLoireDepartments"
+import { guadeloupeDepartments } from "./gua/GuadeloupeDepartments"
 
 export const franceDepartments: Organization[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
   ...centreValDeLoireDepartments,
   ...grandEstDepartments,
+  ...guadeloupeDepartments,
   ...idfDepartments,
   ...hautsDeFranceDepartments,
   ...laReunionDepartments,

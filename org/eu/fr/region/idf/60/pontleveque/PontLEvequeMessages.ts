@@ -1,3 +1,3 @@
-import { DepartmentMessages } from "../../../../../../country/region/department/DepartmentMessages"
+import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
 
-export const pontLEveque60Messages = new DepartmentMessages("Pont-l'Évêque")
+export const pontLEveque60Messages = new CityMessages("Pont-l'Évêque")

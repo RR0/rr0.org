@@ -50,6 +50,11 @@ export enum FranceRegionCode {
   ges = "ges",
 
   /**
+   * la Guadeloupe
+   */
+  gua = "gua",
+
+  /**
    * La Réunion
    */
   lre = "lre",

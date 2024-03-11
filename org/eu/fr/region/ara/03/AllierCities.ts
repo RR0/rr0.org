@@ -1,6 +1,8 @@
 import { vallonEnSully } from "./valonensully/VallonEnSully"
-import { Organization } from "../../../../../Organization"
+import { City } from "../../../../../country/region/department/city/City"
+import { montmarault } from "./montmarault/Montmarault"
 
-export const allierCities: Organization[] = [
+export const allierCities: City[] = [
+  montmarault,
   vallonEnSully
 ]

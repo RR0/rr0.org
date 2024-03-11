@@ -7,9 +7,11 @@ import { yvelinesMessages } from "./78/YvelinesCityMessages"
 import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { seineEtMarneMessages } from "./77/SeineEtMarneMessages"
 import { valDOiseMessages } from "./95/ValDOiseMessages"
+import { essonneMessages } from "./91/EssonneMessages"
 
 type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: DepartmentMessages<any> }
 const idfDepartmentMessages: IdfDepartmentMessagesList = {
+  [IdfDepartmentCode.Essonne]: essonneMessages,
   [IdfDepartmentCode.Oise]: oiseMessages,
   [IdfDepartmentCode.HautsDeSeine]: hautsDeSeineMessages,
   [IdfDepartmentCode.Paris]: parisMessages,

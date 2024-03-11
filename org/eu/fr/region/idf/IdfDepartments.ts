@@ -5,8 +5,10 @@ import { yvelines } from "./78/Yvelines"
 import { Organization } from "../../../../Organization"
 import { seineEtMarne } from "./77/SeineEtMarne"
 import { valDOise } from "./95/ValDOise"
+import { essonne } from "./91/Essonne"
 
 export const idfDepartments: Organization[] = [
+  essonne,
   hautsDeSeine,
   oise,
   paris,

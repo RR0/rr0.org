@@ -1,8 +1,8 @@
 import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { CentreValDeLoireDepartementCode } from "./CentreValDeLoireDepartementCode"
-import { indreMessages } from "./36/IndreCityMessages"
+import { indreMessages } from "./36/IndreMessages"
 import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { loiretMessages } from "./45/LoiretCityMessages"
+import { loiretMessages } from "./45/LoiretMessages"
 
 export type CentreValDeLoireDepartmentMessagesList = { [key in CentreValDeLoireDepartementCode]: DepartmentMessages<any> }
 export const centreValDeLoireDepartmentsMessages: CentreValDeLoireDepartmentMessagesList = {

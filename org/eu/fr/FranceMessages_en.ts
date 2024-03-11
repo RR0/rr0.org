@@ -13,10 +13,12 @@ import { laReunionMessages_en } from "./region/lre/LaReunionMessages_en"
 import { OrganizationType } from "../../Organization"
 import { centreValDeLoireMessages } from "./region/cvl/CentreValDeLoireMessages"
 import { guadeloupeMessages_en } from "./region/gua/GuadeloupeMessages_en"
+import { bretagneMessages_en } from "./region/bre/BretagneMessages_en"
 
 export const franceMessages_en = new FranceMessages("France")
 franceMessages_en[OrganizationType.region] = {
   ara: auvergneRhoneAlpesMessages,
+  bre: bretagneMessages_en,
   bfc: bourgogneFrancheComteMessages,
   cvl: centreValDeLoireMessages,
   ges: grandEstMessages,

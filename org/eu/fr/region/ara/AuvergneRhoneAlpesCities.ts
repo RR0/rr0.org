@@ -6,10 +6,12 @@ import { isereCities } from "./38/IsereCities"
 import { Organization } from "../../../../Organization"
 import { dromeCities } from "./26/DromeCities"
 import { ardecheCities } from "./07/ArdecheCities"
+import { cantalCities } from "./15/CantalCities"
 
 export const auvergneRhoneAlpesCities: Organization[] = [
   ...ardecheCities,
   ...allierCities,
+  ...cantalCities,
   ...dromeCities,
   ...isereCities,
   ...loireCities,

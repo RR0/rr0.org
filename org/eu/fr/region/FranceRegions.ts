@@ -12,10 +12,12 @@ import { laReunion } from "./lre/LaReunion"
 import { Organization } from "../../../Organization"
 import { centreValDeLoire } from "./cvl/CentreValDeLoire"
 import { guadeloupe } from "./gua/Guadeloupe"
+import { bretagne } from "./bre/Bretagne"
 
 export const franceRegions: Organization[] = [
   auvergneRhoneAlpes,
   bourgogneFrancheComte,
+  bretagne,
   grandEst,
   guadeloupe,
   hautsDeFrance,

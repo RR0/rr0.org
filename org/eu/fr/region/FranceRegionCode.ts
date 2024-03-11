@@ -10,9 +10,39 @@ export enum FranceRegionCode {
   bfc = "bfc",
 
   /**
+   * BREtagne
+   */
+  bre = "bre",
+
+  /**
+   * Centre-Val de Loire
+   */
+  cvl = "cvl",
+
+  /**
+   * Grand Est
+   */
+  ges = "ges",
+
+  /**
+   * la Guadeloupe
+   */
+  gua = "gua",
+
+  /**
+   * Hauts-de-France
+   */
+  hdf = "hdf",
+
+  /**
    * Ile-De-France
    */
   idf = "idf",
+
+  /**
+   * La Réunion
+   */
+  lre = "lre",
 
   /**
    * Provence-Alpes-Côte d'Azur
@@ -38,29 +68,4 @@ export enum FranceRegionCode {
    * Normandie
    */
   nor = "nor",
-
-  /**
-   * Hauts-de-France
-   */
-  hdf = "hdf",
-
-  /**
-   * Grand Est
-   */
-  ges = "ges",
-
-  /**
-   * la Guadeloupe
-   */
-  gua = "gua",
-
-  /**
-   * La Réunion
-   */
-  lre = "lre",
-
-  /**
-   * Centre-Val de Loire
-   */
-  cvl = "cvl",
 }

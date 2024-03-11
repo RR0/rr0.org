@@ -6,10 +6,12 @@ import { isere } from "./38/Isere"
 import { drome } from "./26/Drome"
 import { ardeche } from "./07/Ardeche"
 import { Department } from "../../../../country/region/department/Department"
+import { cantal } from "./15/Cantal"
 
 export const auvergneRhoneAlpesDepartments: Department[] = [
   allier,
   ardeche,
+  cantal,
   drome,
   isere,
   loire,

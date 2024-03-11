@@ -16,10 +16,12 @@ import { Place } from "../../../../place/Place"
 import { Region } from "../../../country/region/Region"
 import { centreValDeLoireDepartments } from "./cvl/CentreValDeLoireDepartments"
 import { guadeloupeDepartments } from "./gua/GuadeloupeDepartments"
+import { bretagneDepartments } from "./bre/BretagneDepartments"
 
 export const franceDepartments: Organization[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
+  ...bretagneDepartments,
   ...centreValDeLoireDepartments,
   ...grandEstDepartments,
   ...guadeloupeDepartments,

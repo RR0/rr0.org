@@ -3,10 +3,12 @@ import { Organization } from "../../../../Organization"
 import { marne } from "./51/Marne"
 import { meuse } from "./55/Meuse"
 import { basRhin } from "./67/BasRhin"
+import { moselle } from "./57/Moselle"
 
 export const grandEstDepartments: Organization[] = [
   basRhin,
   marne,
   meurtheEtMoselle,
-  meuse
+  meuse,
+  moselle
 ]

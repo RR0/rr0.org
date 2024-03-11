@@ -11,10 +11,12 @@ import { grandEstCities } from "./region/ges/GrandEstCities"
 import { laReunionCities } from "./region/lre/LaReunionCities"
 import { normandieCities } from "./region/nor/NormandieCities"
 import { centreValDeLoireCities } from "./region/cvl/CentreValDeLoireCities"
+import { bretagneCities } from "./region/bre/BretagneCities"
 
 export const franceCities: City[] = [
   ...auvergneRhoneAlpesCities,
   ...bourgogneFrancheComteCities,
+  ...bretagneCities,
   ...centreValDeLoireCities,
   ...grandEstCities,
   ...idfCities,

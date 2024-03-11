@@ -13,10 +13,12 @@ import { DepartmentMessages } from "../../country/region/department/DepartmentMe
 import { CentreValDeLoireDepartementCode } from "./region/cvl/CentreValDeLoireDepartementCode"
 import { AuvergneRhoneAlpesDepartementCode } from "./region/ara/AuvergneRhoneAlpesDepartementCode"
 import { BourgogneFrancheComteDepartementCode } from "./region/bfc/BourgogneFrancheComteDepartementCode"
+import { BretagneDepartementCode } from "./region/bre/BretagneDepartementCode"
 
 export type FranceRegionsMessagesList = {
   ara: RegionMessages<{ [key in AuvergneRhoneAlpesDepartementCode]: DepartmentMessages<any> }>
   bfc: RegionMessages<{ [key in BourgogneFrancheComteDepartementCode]: DepartmentMessages<any> }>
+  bre: RegionMessages<{ [key in BretagneDepartementCode]: DepartmentMessages<any> }>
   ges: RegionMessages<{ [key in GrandEstDepartementCode]: DepartmentMessages<any> }>
   cvl: RegionMessages<{ [key in CentreValDeLoireDepartementCode]: DepartmentMessages<any> }>
   idf: RegionMessages<{ [key in IdfDepartmentCode]: DepartmentMessages<any> }>

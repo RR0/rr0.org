@@ -5,4 +5,5 @@ export enum GrandEstDepartementCode {
   MeurtheEtMoselle = FranceDepartementCode.MeurtheEtMoselle,
   Marne = FranceDepartementCode.Marne,
   Meuse = FranceDepartementCode.Meuse,
+  Moselle = FranceDepartementCode.Moselle,
 }

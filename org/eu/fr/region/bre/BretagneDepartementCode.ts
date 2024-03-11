@@ -1,0 +1,5 @@
+import { FranceDepartementCode } from "../FranceDepartementCode"
+
+export enum BretagneDepartementCode {
+  CotesDArmor = FranceDepartementCode.CotesDArmor,
+}

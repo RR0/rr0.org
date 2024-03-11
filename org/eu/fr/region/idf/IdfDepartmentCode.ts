@@ -5,5 +5,6 @@ export enum IdfDepartmentCode {
   Oise = FranceDepartementCode.Oise,
   Paris = FranceDepartementCode.Paris,
   SeineEtMarne = FranceDepartementCode.SeineEtMarne,
+  ValDOise = FranceDepartementCode.ValDOise,
   Yvelines = FranceDepartementCode.Yvelines
 }

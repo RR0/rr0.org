@@ -4,11 +4,13 @@ import { paris } from "./75/Paris"
 import { yvelines } from "./78/Yvelines"
 import { Organization } from "../../../../Organization"
 import { seineEtMarne } from "./77/SeineEtMarne"
+import { valDOise } from "./95/ValDOise"
 
 export const idfDepartments: Organization[] = [
   hautsDeSeine,
   oise,
   paris,
   seineEtMarne,
+  valDOise,
   yvelines
 ]

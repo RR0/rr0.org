@@ -6,15 +6,15 @@ import { parisMessages } from "./75/ParisMessages"
 import { yvelinesMessages } from "./78/YvelinesCityMessages"
 import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { seineEtMarneMessages } from "./77/SeineEtMarneMessages"
+import { valDOiseMessages } from "./95/ValDOiseMessages"
 
-export type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: DepartmentMessages<any> }
-
-export const idfDepartmentMessages: IdfDepartmentMessagesList = {
+type IdfDepartmentMessagesList = & { [key in IdfDepartmentCode]: DepartmentMessages<any> }
+const idfDepartmentMessages: IdfDepartmentMessagesList = {
   [IdfDepartmentCode.Oise]: oiseMessages,
   [IdfDepartmentCode.HautsDeSeine]: hautsDeSeineMessages,
   [IdfDepartmentCode.Paris]: parisMessages,
   [IdfDepartmentCode.SeineEtMarne]: seineEtMarneMessages,
+  [IdfDepartmentCode.ValDOise]: valDOiseMessages,
   [IdfDepartmentCode.Yvelines]: yvelinesMessages
 }
-
 export const idfMessages = RegionMessages.create<IdfDepartmentMessagesList>("Île-de-France", idfDepartmentMessages)

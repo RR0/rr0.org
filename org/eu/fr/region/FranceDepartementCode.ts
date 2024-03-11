@@ -54,6 +54,7 @@ export enum FranceDepartementCode {
   TarnEtGaronne = "82",
   Vaucluse = "84",
   HautsDeSeine = "92",
+  ValDOise = "95",
   Guadeloupe = "971",
   LaReunion = "974",
 }

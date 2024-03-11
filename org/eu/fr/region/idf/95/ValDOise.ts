@@ -3,5 +3,4 @@ import { Place } from "../../../../../../place/Place"
 import { ileDeFrance } from "../Idf"
 import { Department } from "../../../../../country/region/department/Department"
 
-export const hautsDeSeine = Department.create(FranceDepartementCode.HautsDeSeine, ileDeFrance,
-  Place.fromLocation(48.83333, 2.2))
+export const valDOise = Department.create(FranceDepartementCode.ValDOise, ileDeFrance, Place.fromDMS("49°04′N,2°14′E"))

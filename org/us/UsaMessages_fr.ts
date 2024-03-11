@@ -6,12 +6,11 @@ import { texasMessages_fr } from "./region/tx/TexasMessages_fr"
 import { floridaMessages_fr } from "./region/fl/FloridaMessages_fr"
 import { pennsylvaniaMessages_fr } from "./region/pa/PennsylvaniaMessages_fr"
 import { washingtonMessages_fr } from "./region/wa/WashingtonMessages_fr"
-import { OrganizationMessages } from "../OrganizationMessages"
-import { OrganizationType } from "../Organization"
 import { indianaMessages_fr } from "./region/in/IndianaMessages_fr"
+import { CountryMessages } from "../country/CountryMessages"
+import { UsaRegionMessagesList } from "./UsaMessages"
 
-export const usaMessages_fr = new OrganizationMessages("USA")
-usaMessages_fr[OrganizationType.region] = {
+export const usaMessages_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   al: alabamaMessages_fr,
   ca: californiaMessages_fr,
   in: indianaMessages_fr,
@@ -21,4 +20,4 @@ usaMessages_fr[OrganizationType.region] = {
   tn: tennesseeMessages_fr,
   tx: texasMessages_fr,
   wa: washingtonMessages_fr
-}
+})

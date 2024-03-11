@@ -9,50 +9,62 @@ import { brazilMessages_fr } from "./br/BrazilMessages_fr"
 import { newZealandMessages_fr } from "./nz/NewZealandMessages_fr"
 import { spainMessages_fr } from "./eu/es/region/SpainMessages_fr"
 import { polandMessages_fr } from "./eu/pl/region/PolandMessages_fr"
+import { southKoreaMessages_fr } from "./kr/SouthKoreaMessages_fr"
+import { colombiaMessages_fr } from "./co/ColombiaMessages_fr"
+import { dominicanRepublicMessages_fr } from "./do/DominicanRepublicMessages_fr"
+import { peruMessages_fr } from "./pe/region/PeruMessages_fr"
+import { philippinesMessages_fr } from "./ph/PhilippinesMessages_fr"
+import { seychellesMessages_fr } from "./sc/SeychellesMessages_fr"
+import { ukMessages_fr } from "./uk/UkMessages_fr"
 
 /**
  * Country messages in French language.
  */
 export const countryMessageList_fr: CountryMessagesList = {
-  at: new CountryMessages("Autriche"),
-  ar: new CountryMessages("Argentine"),
+  at: CountryMessages.create("Autriche"),
+  ar: CountryMessages.create("Argentine"),
   au: australiaMessages_fr,
-  be: new CountryMessages("Belgique"),
+  be: CountryMessages.create("Belgique"),
   br: brazilMessages_fr,
   ca: canadaMessages_fr,
-  ch: new CountryMessages("Suisse"),
-  cl: new CountryMessages("Chili"),
-  cn: new CountryMessages("Chine"),
-  cy: new CountryMessages("Chypre"),
-  de: new CountryMessages("Allemagne"),
-  dk: new CountryMessages("Danemark"),
+  ch: CountryMessages.create("Suisse"),
+  cl: CountryMessages.create("Chili"),
+  cn: CountryMessages.create("Chine"),
+  co: colombiaMessages_fr,
+  cy: CountryMessages.create("Chypre"),
+  de: CountryMessages.create("Allemagne"),
+  dk: CountryMessages.create("Danemark"),
+  do: dominicanRepublicMessages_fr,
   es: spainMessages_fr,
   fi: finlandMessages_fr,
   fr: franceMessages_fr,
-  gr: new CountryMessages("Grèce"),
-  hu: new CountryMessages("Hongrie"),
-  ie: new CountryMessages("Irelande"),
-  il: new CountryMessages("Israël"),
-  in: new CountryMessages("Inde"),
-  it: new CountryMessages("Italie"),
-  ir: new CountryMessages("Iran"),
-  jp: new CountryMessages("Japon"),
-  ma: new CountryMessages("Maroc"),
-  mx: new CountryMessages("Mexique"),
-  nl: new CountryMessages("Pays-Bas"),
-  no: new CountryMessages("Norvège"),
+  gr: CountryMessages.create("Grèce"),
+  hu: CountryMessages.create("Hongrie"),
+  ie: CountryMessages.create("Irelande"),
+  il: CountryMessages.create("Israël"),
+  in: CountryMessages.create("Inde"),
+  it: CountryMessages.create("Italie"),
+  ir: CountryMessages.create("Iran"),
+  jp: CountryMessages.create("Japon"),
+  kr: southKoreaMessages_fr,
+  ma: CountryMessages.create("Maroc"),
+  mx: CountryMessages.create("Mexique"),
+  nl: CountryMessages.create("Pays-Bas"),
+  no: CountryMessages.create("Norvège"),
   nz: newZealandMessages_fr,
-  pe: new CountryMessages("Pérou"),
+  pe: peruMessages_fr,
+  ph: philippinesMessages_fr,
   pl: polandMessages_fr,
-  pt: new CountryMessages("Portugal"),
-  ro: new CountryMessages("Roumanie"),
-  ru: new CountryMessages("Russie"),
-  tr: new CountryMessages("Turquie"),
-  ua: new CountryMessages("Ukraine"),
-  uk: new CountryMessages("Royaume-Uni"),
+  pt: CountryMessages.create("Portugal"),
+  ro: CountryMessages.create("Roumanie"),
+  ru: CountryMessages.create("Russie"),
+  sc: seychellesMessages_fr,
+  tr: CountryMessages.create("Turquie"),
+  ua: CountryMessages.create("Ukraine"),
+  uk: ukMessages_fr,
   us: usaMessages_fr,
-  sa: new CountryMessages("Arabie Saoudite"),
-  se: new CountryMessages("Suède"),
-  ve: new CountryMessages("Venezuela"),
-  za: new CountryMessages("Afrique du Sud")
+  sa: CountryMessages.create("Arabie Saoudite"),
+  se: CountryMessages.create("Suède"),
+  ve: CountryMessages.create("Venezuela"),
+  za: CountryMessages.create("Afrique du Sud")
 }

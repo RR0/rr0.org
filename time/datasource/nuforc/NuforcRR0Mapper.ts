@@ -17,12 +17,12 @@ import { NuforcCountry } from "./NuforcCountry"
 import { peru } from "../../../org/pe/Peru"
 import { mexico } from "../../../org/mx/Mexico"
 import { seychelles } from "../../../org/sc/Seychelles"
-import { germany } from "../../../org/de/Germany"
 import { dominicanRepublic } from "../../../org/do/DominicanRepublic"
 import { southKorea } from "../../../org/kr/SouthKorea"
 import { uk } from "../../../org/uk/Uk"
 import { colombia } from "../../../org/co/Colombia"
 import { NuforcShape } from "./NuforcShape"
+import { germany } from "../../../org/eu/de/Germany"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCaseSummary, RR0Case> {
 

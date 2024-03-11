@@ -1,5 +1,5 @@
-import { PhilippinesDepartementCode } from "../PhilippinesDepartementCode"
+import { PeruDepartementCode } from "../PeruDepartementCode"
 
 export enum LesserPolandDepartementCode {
-  Sucha = PhilippinesDepartementCode.Sucha,
+  Sucha = PeruDepartementCode.Sucha,
 }

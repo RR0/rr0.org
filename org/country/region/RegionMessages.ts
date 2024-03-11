@@ -1,6 +1,6 @@
 import { OrganizationMessages } from "../../OrganizationMessages"
 
-export class RegionMessages<D> extends OrganizationMessages {
+export class RegionMessages<D = OrganizationMessages> extends OrganizationMessages {
   /**
    *
    * @param titles

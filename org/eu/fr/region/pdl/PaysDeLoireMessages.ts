@@ -5,9 +5,8 @@ import { DepartmentMessages } from "../../../../country/region/department/Depart
 import { maineEtLoireMessages } from "./49/MaineEtLoireMessages"
 import { loireAtlantiqueMessages } from "./44/LoireAtlantiqueMessages"
 
-export type PayDeLoireDepartmentMessagesList = { [key in PaysDeLoireDepartementCode]: DepartmentMessages<any> }
-
-export const paysDeLoireDepartmentsMessages: PayDeLoireDepartmentMessagesList = {
+type PayDeLoireDepartmentMessagesList = { [key in PaysDeLoireDepartementCode]: DepartmentMessages<any> }
+const paysDeLoireDepartmentsMessages: PayDeLoireDepartmentMessagesList = {
   [PaysDeLoireDepartementCode.LoireAtlantique]: loireAtlantiqueMessages,
   [PaysDeLoireDepartementCode.MaineEtLoire]: maineEtLoireMessages,
   [PaysDeLoireDepartementCode.Sarthe]: sartheMessages

@@ -1,8 +1,6 @@
 import { monroeMessages_fr } from "./monroe/MonroeMessages_fr"
-import { OrganizationType } from "../../../Organization"
-import { OrganizationMessages } from "../../../OrganizationMessages"
+import { RegionMessages } from "../../../country/region/RegionMessages"
 
-export const indianaMessages_fr = new OrganizationMessages("Indiana")
-indianaMessages_fr[OrganizationType.department] = {
+export const indianaMessages_fr = RegionMessages.create("Indiana", {
   monroe: monroeMessages_fr
-}
+})

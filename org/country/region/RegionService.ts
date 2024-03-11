@@ -7,22 +7,9 @@ import { canadaRegions } from "../../ca/region/CanadaRegions"
 import { australiaRegions } from "../../au/region/AustraliaRegions"
 import { brazilRegions } from "../../br/region/BrazilRegions"
 import { Region } from "./Region"
+import { OrganizationService } from "../../OrganizationService"
 
-/**
- * @deprecated
- */
-export class RegionService {
-
-  constructor(protected regions: Region[]) {
-  }
-
-  get(code: string, country: Country): Region | undefined {
-    return this.regions.find(region => {
-      const foundCountry = !country || region.parent === country
-      const foundRegion = region.code === code ? region : undefined
-      return foundCountry && foundRegion
-    })
-  }
+export class RegionService extends OrganizationService<Region, Country> {
 }
 
 export const regions: Region[] = [

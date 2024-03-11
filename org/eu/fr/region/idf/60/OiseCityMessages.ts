@@ -5,9 +5,11 @@ import { CityMessages } from "../../../../../country/region/department/city/City
 import { compiegneMessages } from "./compiegne/CompiegneMessages"
 import { neuillyEnThelleMessages } from "./neuillyenthelle/NeuillyEnThelleMessages"
 import { ribecourtDreslincourtMessages } from "./ribecourtdreslincourt/RibecourtDreslincourtMessages"
+import { morlincourtMessages } from "./morlincourt/MorlincourtMessages"
 
 const oiseCityMessages: { [key in OiseCityCode]: CityMessages } = {
   [OiseCityCode.Compiegne]: compiegneMessages,
+  [OiseCityCode.Morlincourt]: morlincourtMessages,
   [OiseCityCode.NeuillyEnThelle]: neuillyEnThelleMessages,
   [OiseCityCode.PontLEveque]: pontLEveque60Messages,
   [OiseCityCode.RibecourtDreslincourt]: ribecourtDreslincourtMessages

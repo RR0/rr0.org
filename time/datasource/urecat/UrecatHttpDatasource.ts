@@ -44,7 +44,8 @@ export class UrecatHttpDatasource implements CaseSource<UrecatCase> {
       charset = "latin1"
     }
     const decoder = new TextDecoder(charset)*/
-    const rowEls = doc.querySelectorAll("table tr")
+    const tableBody = doc.querySelector("th").parentElement.parentElement
+    const rowEls = tableBody.querySelectorAll("tr")
     const rows = Array.from(rowEls)
     rows.shift()
     const cases = Array.from(rows).map(row => this.getFromRow(context, row))

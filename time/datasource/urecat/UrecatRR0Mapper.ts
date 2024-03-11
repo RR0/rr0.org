@@ -28,7 +28,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
     const location = sourceCase.basicInfo.base.location
     const sourceCountry = location.country
     assert.ok(sourceCountry, `URECAT country is ${sourceCountry}`)
-    const country = this.countryService.findByName(context, sourceCountry)
+    const country = this.countryService.find(context, sourceCountry, undefined)
     assert.ok(country, `Could not find country "${sourceCountry}"`)
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(location.placeName)
     const placeName = placeItems[1]

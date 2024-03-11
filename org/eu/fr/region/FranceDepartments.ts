@@ -9,7 +9,6 @@ import { occitanieDepartments } from "./occ/OccitanieDepartments"
 import { hautsDeFranceDepartments } from "./hdf/HautsDeFranceDepartments"
 import { grandEstDepartments } from "./ges/GrandEstDepartments"
 import { laReunionDepartments } from "./lre/LaReunionDepartments"
-import { Organization } from "../../../Organization"
 import { Department } from "../../../country/region/department/Department"
 import { FranceDepartementCode } from "./FranceDepartementCode"
 import { Place } from "../../../../place/Place"
@@ -18,7 +17,7 @@ import { centreValDeLoireDepartments } from "./cvl/CentreValDeLoireDepartments"
 import { guadeloupeDepartments } from "./gua/GuadeloupeDepartments"
 import { bretagneDepartments } from "./bre/BretagneDepartments"
 
-export const franceDepartments: Organization[] = [
+export const franceDepartments: Department[] = [
   ...auvergneRhoneAlpesDepartments,
   ...bourgogneFrancheComteDepartments,
   ...bretagneDepartments,

@@ -8,39 +8,18 @@ import { australia } from "../au/Australia"
 import { india } from "../in/Country_in"
 import { brazil } from "../br/Brazil"
 import { newZealand } from "../nz/NewZealand"
-import { RR0SsgContext } from "../../RR0SsgContext"
 import { philippines } from "../ph/Philippines"
 import { mexico } from "../mx/Mexico"
 import { seychelles } from "../sc/Seychelles"
 import { peru } from "../pe/Peru"
-import { germany } from "../de/Germany"
 import { dominicanRepublic } from "../do/DominicanRepublic"
 import { southKorea } from "../kr/SouthKorea"
 import { colombia } from "../co/Colombia"
 import { uk } from "../uk/Uk"
+import { OrganizationService } from "../OrganizationService"
+import { germany } from "../eu/de/Germany"
 
-/**
- * @deprecated
- */
-export class CountryService {
-  /**
-   * @param countries
-   */
-  constructor(readonly countries: Country[]) {
-  }
-
-  get(code: string): Country | undefined {
-    return this.countries.find(country => {
-      return country.code === code
-    })
-  }
-
-  findByName(context: RR0SsgContext, name: string): Country | undefined {
-    name = name.replaceAll(" ", "-")
-    return this.countries.find(country => {
-      return country.messages(context).title === name
-    })
-  }
+export class CountryService extends OrganizationService<Country> {
 }
 
 const countries: Country[] = [

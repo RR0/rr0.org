@@ -1,32 +1,12 @@
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
-import { Organization } from "../../../../Organization"
 import { OrganizationService } from "../../../../OrganizationService"
+import { Department } from "../Department"
+import { City } from "./City"
 
-/**
- * @deprecated
- */
-export class CityService {
+export class CityService extends OrganizationService<City, Department> {
 
-  constructor(readonly cities: Organization[]) {
-  }
-
-  find(context: RR0SsgContext, nameToFind: string, dep: Organization): Organization | undefined {
-    return this.cities.find(city => {
-      const cityMessages = city.messages(context)
-      let found = Boolean(cityMessages)
-      if (found) {
-        const cityNameToFind = cityMessages.cityName(OrganizationService.normalizeName(nameToFind))
-        const foundDep = !dep?.code || dep.code === city.parent.code
-        found = false
-        for (let i = 0; !found && i < cityMessages.titles.length; i++) {
-          const cityName = OrganizationService.normalizeName(
-            cityMessages.toTitleFromName(context, city, cityMessages.titles[i]))
-          const knownCityName = OrganizationService.normalizeName(cityName)
-          const foundName = knownCityName === cityNameToFind
-          found = foundName && foundDep
-        }
-      }
-      return found ? city : undefined
-    })
+  protected nameToFind(context: RR0SsgContext, city: City, nameToFind: string): string {
+    const cityMessages = city.messages(context)
+    return cityMessages.cityName(OrganizationService.normalizeName(nameToFind))
   }
 }

@@ -1,6 +1,8 @@
 import { City } from "../../../../../country/region/department/city/City"
-import { blere } from "./issoudun/Blere"
+import { blere } from "./blere/Blere"
+import { monts37 } from "./monts/Monts"
 
 export const indreEtLoireCities: City[] = [
-  blere
+  blere,
+  monts37
 ]

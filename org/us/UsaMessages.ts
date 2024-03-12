@@ -8,6 +8,7 @@ export type UsaRegionMessagesList = {
   in: RegionMessages
   nc: RegionMessages
   nm: RegionMessages
+  ny: RegionMessages
   pa: RegionMessages
   tn: RegionMessages
   tx: RegionMessages

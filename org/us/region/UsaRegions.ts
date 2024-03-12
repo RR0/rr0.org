@@ -13,6 +13,7 @@ import { wyoming } from "./wy/Wyoming"
 import { delaware } from "./de/Delaware"
 import { northCarolina } from "./nc/NorthCarolina"
 import { newJersey } from "./nj/NewJersey"
+import { newYork } from "./ny/NewYork"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -39,7 +40,7 @@ export const usaRegions: Region[] = [
   newMexico,
   usaRegion(UsaRegionCode.nc, Place.fromLocation(47.466667, 0.833333)),
   newJersey,
-  usaRegion(UsaRegionCode.ny, Place.fromLocation(47.466667, 0.833333)),
+  newYork,
   usaRegion(UsaRegionCode.nv, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.oh, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaRegionCode.ok, Place.fromLocation(47.466667, 0.833333)),

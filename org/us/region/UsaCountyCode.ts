@@ -6,6 +6,7 @@ export enum UsaCountyCode {
   pinellas = "pinellas",
   pierce = "pierce",
   monroe = "monroe",
+  niagara = "niagara",
   westmoreland = "westmoreland",
   sandiego = "sandiego",
   tarrant = "tarrant",

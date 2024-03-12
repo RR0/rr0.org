@@ -7,6 +7,7 @@ import { washingtonDepartments } from "./wa/WashingtonDepartments"
 import { Organization } from "../../Organization"
 import { newMexicoDepartments } from "./nm/NewMexicoDepartments"
 import { newJerseyCounties } from "./nj/NewJerseyCounties"
+import { newYorkCounties } from "./ny/NewYorkCounties"
 
 export const usaDepartments: Organization[] = [
   ...alabamaDepartments,
@@ -15,6 +16,7 @@ export const usaDepartments: Organization[] = [
   ...pennsylvaniaDepartments,
   ...newJerseyCounties,
   ...newMexicoDepartments,
+  ...newYorkCounties,
   ...texasDepartments,
   ...washingtonDepartments
 ]

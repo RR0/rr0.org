@@ -1,7 +1,6 @@
 import { UsaCountyCode } from "../../UsaCountyCode"
 import { Place } from "../../../../../place/Place"
-import { Organization, OrganizationType } from "../../../../Organization"
 import { washington } from "../Washington"
+import { Department } from "../../../../country/region/department/Department"
 
-export const pierce = new Organization(UsaCountyCode.pierce, [Place.fromDMS("47°03′N 122°07′W")],
-  OrganizationType.department, washington)
+export const pierce = Department.create(UsaCountyCode.pierce, washington, Place.fromDMS("47°03′N 122°07′W"))

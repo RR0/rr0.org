@@ -1,8 +1,6 @@
 import { pierceMessages_en } from "./pierce/PierceMessages_en"
-import { OrganizationMessages } from "../../../OrganizationMessages"
-import { OrganizationType } from "../../../Organization"
+import { RegionMessages } from "../../../country/region/RegionMessages"
 
-export const washingtonMessages_en = new OrganizationMessages("Washington state")
-washingtonMessages_en[OrganizationType.department] = {
+export const washingtonMessages_en = RegionMessages.create("Washington state", {
   pierce: pierceMessages_en
-}
+})

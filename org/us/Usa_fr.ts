@@ -13,6 +13,7 @@ import { northCarolina_fr } from "./region/nc/NorthCarolina_fr"
 import { newJersey_fr } from "./region/nj/NewJersey_fr"
 import { newYork_fr } from "./region/ny/NewYork_fr"
 import { westVirginia_fr } from "./region/wv/WestVirginia_fr"
+import { virginia_fr } from "./region/va/Virginia_fr"
 
 export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   al: alabamaMessages_fr,
@@ -26,6 +27,7 @@ export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   pa: pennsylvaniaMessages_fr,
   tn: tennesseeMessages_fr,
   tx: texas_fr,
+  va: virginia_fr,
   wa: washingtonMessages_fr,
   wv: westVirginia_fr
 })

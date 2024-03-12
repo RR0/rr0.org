@@ -9,6 +9,7 @@ import { newMexicoDepartments } from "./nm/NewMexicoDepartments"
 import { newJerseyCounties } from "./nj/NewJerseyCounties"
 import { newYorkCounties } from "./ny/NewYorkCounties"
 import { westVirginaCounties } from "./wv/WestVirginiaCounties"
+import { virginiaCounties } from "./va/VirginiaCounties"
 
 export const usaDepartments: Organization[] = [
   ...alabamaDepartments,
@@ -19,6 +20,7 @@ export const usaDepartments: Organization[] = [
   ...newMexicoDepartments,
   ...newYorkCounties,
   ...texasDepartments,
+  ...virginiaCounties,
   ...washingtonDepartments,
   ...westVirginaCounties
 ]

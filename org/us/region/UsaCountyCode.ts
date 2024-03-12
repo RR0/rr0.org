@@ -14,4 +14,5 @@ export enum UsaCountyCode {
   westmoreland = "westmoreland",
   sandiego = "sandiego",
   tarrant = "tarrant",
+  whitley = "whitley",
 }

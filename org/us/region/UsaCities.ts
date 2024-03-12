@@ -6,8 +6,6 @@ import { pennsylvaniaCities } from "./pa/PennsylvaniaCities"
 import { washingtonCities } from "./wa/WashingtonCities"
 import { indianaCities } from "./in/IndianaCities"
 import { City } from "../../country/region/department/city/City"
-import { Department } from "../../country/region/department/Department"
-import { Place } from "../../../place/Place"
 import { northCarolinaCities } from "./nc/NorthCarolinaCities"
 import { newJerseyCities } from "./nj/NewJerseyCities"
 import { newYorkCities } from "./ny/NewYorkCities"
@@ -30,7 +28,3 @@ export const usaCities: City[] = [
   ...washingtonCities,
   ...westVirginiaCities
 ]
-
-export function usaCity(code: string, county: Department, place: Place): City {
-  return new City(code, county, [place])
-}

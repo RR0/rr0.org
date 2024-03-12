@@ -1,7 +1,6 @@
-import { UsaDepartementCode } from "../../UsaDepartementCode"
+import { UsaCountyCode } from "../../UsaCountyCode"
 import { Place } from "../../../../../place/Place"
-import { Organization, OrganizationType } from "../../../../Organization"
 import { texas } from "../Texas"
+import { Department } from "../../../../country/region/department/Department"
 
-export const tarrant = new Organization(UsaDepartementCode.tarrant, Place.fromDMS("32°46′N 97°17′W"),
-  OrganizationType.department, texas)
+export const tarrant = Department.create(UsaCountyCode.tarrant, texas, Place.fromDMS("32°46′N 97°17′W"))

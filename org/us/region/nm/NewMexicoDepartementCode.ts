@@ -1,5 +1,5 @@
-import { UsaDepartementCode } from "../UsaDepartementCode"
+import { UsaCountyCode } from "../UsaCountyCode"
 
 export enum NewMexicoDepartementCode {
-  geneva = UsaDepartementCode.geneva
+  chaves = UsaCountyCode.chaves
 }

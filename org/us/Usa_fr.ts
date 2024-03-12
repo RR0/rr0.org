@@ -9,12 +9,14 @@ import { washingtonMessages_fr } from "./region/wa/WashingtonMessages_fr"
 import { indianaMessages_fr } from "./region/in/IndianaMessages_fr"
 import { CountryMessages } from "../country/CountryMessages"
 import { UsaRegionMessagesList } from "./UsaMessages"
+import { northCarolina_fr } from "./region/nc/NorthCarolina_fr"
 
 export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   al: alabamaMessages_fr,
   ca: californiaMessages_fr,
   in: indianaMessages_fr,
   fl: floridaMessages_fr,
+  nc: northCarolina_fr,
   nm: newMexicoMessages_fr,
   pa: pennsylvaniaMessages_fr,
   tn: tennesseeMessages_fr,

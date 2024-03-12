@@ -1,8 +1,8 @@
-import { UsaDepartementCode } from "../UsaDepartementCode"
+import { UsaCountyCode } from "../UsaCountyCode"
 import { DepartmentMessages } from "../../../country/region/department/DepartmentMessages"
 
 export enum CaDepartementCode {
-  sandiego = UsaDepartementCode.sandiego
+  sandiego = UsaCountyCode.sandiego
 }
 
 export interface CaDepartementMessages extends DepartmentMessages {

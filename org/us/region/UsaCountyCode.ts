@@ -1,6 +1,7 @@
-export enum UsaDepartementCode {
+export enum UsaCountyCode {
   chaves = "chaves",
   geneva = "geneva",
+  guilford = "guilford",
   pinellas = "pinellas",
   pierce = "pierce",
   monroe = "monroe",

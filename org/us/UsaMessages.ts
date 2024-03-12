@@ -6,6 +6,7 @@ export type UsaRegionMessagesList = {
   ca: RegionMessages<CaDepartmentMessagesList>
   fl: RegionMessages
   in: RegionMessages
+  nc: RegionMessages
   nm: RegionMessages
   pa: RegionMessages
   tn: RegionMessages

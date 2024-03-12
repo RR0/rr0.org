@@ -1,9 +1,7 @@
 import { RegionMessages } from "../../../country/region/RegionMessages"
-import { tarrantMessages_fr } from "./tarrant/TarrantMessages_fr"
+import { tarrant_fr } from "./tarrant/Tarrant_fr"
 
-export const texasMessages_fr = RegionMessages.create(
-  "Texas",
-  {
-    tarrant: tarrantMessages_fr
+export const texasMessages_fr = RegionMessages.create("Texas", {
+  tarrant: tarrant_fr
   }
 )

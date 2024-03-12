@@ -6,7 +6,7 @@ import { texas_fr } from "./region/tx/Texas_fr"
 import { floridaMessages_fr } from "./region/fl/FloridaMessages_fr"
 import { pennsylvaniaMessages_fr } from "./region/pa/PennsylvaniaMessages_fr"
 import { washingtonMessages_fr } from "./region/wa/WashingtonMessages_fr"
-import { indianaMessages_fr } from "./region/in/IndianaMessages_fr"
+import { indiana_fr } from "./region/in/Indiana_fr"
 import { CountryMessages } from "../country/CountryMessages"
 import { UsaRegionMessagesList } from "./UsaMessages"
 import { northCarolina_fr } from "./region/nc/NorthCarolina_fr"
@@ -16,7 +16,7 @@ import { newYork_fr } from "./region/ny/NewYork_fr"
 export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   al: alabamaMessages_fr,
   ca: californiaMessages_fr,
-  in: indianaMessages_fr,
+  in: indiana_fr,
   fl: floridaMessages_fr,
   nc: northCarolina_fr,
   nj: newJersey_fr,

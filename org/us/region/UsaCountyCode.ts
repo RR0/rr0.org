@@ -1,6 +1,7 @@
 export enum UsaCountyCode {
   burlington = "burlington",
   chaves = "chaves",
+  elkhart = "elkhart",
   geneva = "geneva",
   guilford = "guilford",
   pinellas = "pinellas",

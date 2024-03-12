@@ -1,40 +1,41 @@
-import { finlandMessages_en } from "./eu/fi/FinlandMessages_en"
-import { franceMessages_en } from "./eu/fr/FranceMessages_en"
-import { usaMessages_en } from "./us/UsaMessages_en"
+import { finland_en } from "./eu/fi/Finland_en"
+import { france_en } from "./eu/fr/France_en"
+import { usa_en } from "./us/Usa_en"
 import { CountryMessagesList } from "./CountryMessagesList"
 import { CountryMessages } from "./country/CountryMessages"
-import { canadaMessages_en } from "./ca/CanadaMessages_en"
-import { australiaMessages_en } from "./au/AustraliaMessages_en"
-import { brazilMessages_en } from "./br/BrazilMessages_en"
-import { newZealandMessages_en } from "./nz/NewZealandMessages_en"
-import { spainMessages_en } from "./eu/es/region/SpainMessages_en"
-import { polandMessages_en } from "./eu/pl/region/PolandMessages_en"
-import { southKoreaMessages_en } from "./kr/SouthKoreaMessages_en"
-import { colombiaMessages_en } from "./co/ColombiaMessages_en"
-import { dominicanRepublicMessages_en } from "./do/DominicanRepublicMessages_en"
-import { philippinesMessages_en } from "./ph/PhilippinesMessages_en"
-import { peruMessages_en } from "./pe/region/PeruMessages_en"
-import { seychellesMessages_en } from "./sc/SeychellesMessages_en"
-import { ukMessages_en } from "./uk/UkMessages_en"
+import { canada_en } from "./ca/Canada_en"
+import { australia_en } from "./au/Australia_en"
+import { brazil_en } from "./br/Brazil_en"
+import { newZealand_en } from "./nz/NewZealand_en"
+import { spain_en } from "./eu/es/region/Spain_en"
+import { poland_en } from "./eu/pl/region/Poland_en"
+import { southKorea_en } from "./kr/SouthKorea_en"
+import { colombia_en } from "./co/Colombia_en"
+import { dominicanRepublic_en } from "./do/DominicanRepublic_en"
+import { philippines_en } from "./ph/Philippines_en"
+import { peru_en } from "./pe/region/Peru_en"
+import { seychelles_en } from "./sc/Seychelles_en"
+import { uk_en } from "./uk/Uk_en"
+import { russia_en } from "./ru/Russia_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
   ar: CountryMessages.create("Argentina"),
-  au: australiaMessages_en,
+  au: australia_en,
   be: CountryMessages.create("Belgium"),
-  br: brazilMessages_en,
-  ca: canadaMessages_en,
+  br: brazil_en,
+  ca: canada_en,
   ch: CountryMessages.create("Switzerland"),
   cl: CountryMessages.create("Chile"),
   cn: CountryMessages.create("China"),
-  co: colombiaMessages_en,
+  co: colombia_en,
   cy: CountryMessages.create("Cyprus"),
   de: CountryMessages.create("Germany"),
   dk: CountryMessages.create("Denmark"),
-  do: dominicanRepublicMessages_en,
-  es: spainMessages_en,
-  fi: finlandMessages_en,
-  fr: franceMessages_en,
+  do: dominicanRepublic_en,
+  es: spain_en,
+  fi: finland_en,
+  fr: france_en,
   gr: CountryMessages.create("Greece"),
   hu: CountryMessages.create("Hungary"),
   ie: CountryMessages.create("Ireland"),
@@ -43,23 +44,23 @@ export const countryMessageList_en: CountryMessagesList = {
   it: CountryMessages.create("Italia"),
   ir: CountryMessages.create("Iran"),
   jp: CountryMessages.create("Japan"),
-  kr: southKoreaMessages_en,
+  kr: southKorea_en,
   ma: CountryMessages.create("Morocco"),
   mx: CountryMessages.create("Mexico"),
   nl: CountryMessages.create("Netherlands"),
   no: CountryMessages.create("Norway"),
-  nz: newZealandMessages_en,
-  pe: peruMessages_en,
-  ph: philippinesMessages_en,
-  pl: polandMessages_en,
+  nz: newZealand_en,
+  pe: peru_en,
+  ph: philippines_en,
+  pl: poland_en,
   pt: CountryMessages.create("Portugal"),
   ro: CountryMessages.create("Romania"),
-  ru: CountryMessages.create("Russia"),
-  sc: seychellesMessages_en,
+  ru: russia_en,
+  sc: seychelles_en,
   tr: CountryMessages.create("Turkey"),
   ua: CountryMessages.create("Ukraine"),
-  uk: ukMessages_en,
-  us: usaMessages_en,
+  uk: uk_en,
+  us: usa_en,
   sa: CountryMessages.create("Saudi Arabia"),
   se: CountryMessages.create("Sweden"),
   ve: CountryMessages.create("Venezuela"),

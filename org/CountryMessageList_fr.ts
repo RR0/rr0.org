@@ -1,21 +1,22 @@
 import { CountryMessagesList } from "./CountryMessagesList"
-import { franceMessages_fr } from "./eu/fr/FranceMessages_fr"
-import { usaMessages_fr } from "./us/UsaMessages_fr"
-import { finlandMessages_fr } from "./eu/fi/FinlandMessages_fr"
+import { france_fr } from "./eu/fr/France_fr"
+import { usa_fr } from "./us/Usa_fr"
+import { finland_fr } from "./eu/fi/Finland_fr"
 import { CountryMessages } from "./country/CountryMessages"
-import { canadaMessages_fr } from "./ca/CanadaMessages_fr"
-import { australiaMessages_fr } from "./au/AustraliaMessages_fr"
-import { brazilMessages_fr } from "./br/BrazilMessages_fr"
-import { newZealandMessages_fr } from "./nz/NewZealandMessages_fr"
-import { spainMessages_fr } from "./eu/es/region/SpainMessages_fr"
-import { polandMessages_fr } from "./eu/pl/region/PolandMessages_fr"
-import { southKoreaMessages_fr } from "./kr/SouthKoreaMessages_fr"
-import { colombiaMessages_fr } from "./co/ColombiaMessages_fr"
-import { dominicanRepublicMessages_fr } from "./do/DominicanRepublicMessages_fr"
-import { peruMessages_fr } from "./pe/region/PeruMessages_fr"
-import { philippinesMessages_fr } from "./ph/PhilippinesMessages_fr"
-import { seychellesMessages_fr } from "./sc/SeychellesMessages_fr"
-import { ukMessages_fr } from "./uk/UkMessages_fr"
+import { canada_fr } from "./ca/Canada_fr"
+import { australia_fr } from "./au/Australia_fr"
+import { brazil_fr } from "./br/Brazil_fr"
+import { newZealand_fr } from "./nz/NewZealand_fr"
+import { spain_fr } from "./eu/es/region/Spain_fr"
+import { poland_fr } from "./eu/pl/region/Poland_fr"
+import { southKorea_fr } from "./kr/SouthKorea_fr"
+import { colombia_fr } from "./co/Colombia_fr"
+import { dominicanRepublic_fr } from "./do/DominicanRepublic_fr"
+import { peru_fr } from "./pe/region/Peru_fr"
+import { philippines_fr } from "./ph/Philippines_fr"
+import { seychelles_fr } from "./sc/Seychelles_fr"
+import { uk_fr } from "./uk/Uk_fr"
+import { russia_fr } from "./ru/Russia_fr"
 
 /**
  * Country messages in French language.
@@ -23,21 +24,21 @@ import { ukMessages_fr } from "./uk/UkMessages_fr"
 export const countryMessageList_fr: CountryMessagesList = {
   at: CountryMessages.create("Autriche"),
   ar: CountryMessages.create("Argentine"),
-  au: australiaMessages_fr,
+  au: australia_fr,
   be: CountryMessages.create("Belgique"),
-  br: brazilMessages_fr,
-  ca: canadaMessages_fr,
+  br: brazil_fr,
+  ca: canada_fr,
   ch: CountryMessages.create("Suisse"),
   cl: CountryMessages.create("Chili"),
   cn: CountryMessages.create("Chine"),
-  co: colombiaMessages_fr,
+  co: colombia_fr,
   cy: CountryMessages.create("Chypre"),
   de: CountryMessages.create("Allemagne"),
   dk: CountryMessages.create("Danemark"),
-  do: dominicanRepublicMessages_fr,
-  es: spainMessages_fr,
-  fi: finlandMessages_fr,
-  fr: franceMessages_fr,
+  do: dominicanRepublic_fr,
+  es: spain_fr,
+  fi: finland_fr,
+  fr: france_fr,
   gr: CountryMessages.create("Grèce"),
   hu: CountryMessages.create("Hongrie"),
   ie: CountryMessages.create("Irelande"),
@@ -46,23 +47,23 @@ export const countryMessageList_fr: CountryMessagesList = {
   it: CountryMessages.create("Italie"),
   ir: CountryMessages.create("Iran"),
   jp: CountryMessages.create("Japon"),
-  kr: southKoreaMessages_fr,
+  kr: southKorea_fr,
   ma: CountryMessages.create("Maroc"),
   mx: CountryMessages.create("Mexique"),
   nl: CountryMessages.create("Pays-Bas"),
   no: CountryMessages.create("Norvège"),
-  nz: newZealandMessages_fr,
-  pe: peruMessages_fr,
-  ph: philippinesMessages_fr,
-  pl: polandMessages_fr,
+  nz: newZealand_fr,
+  pe: peru_fr,
+  ph: philippines_fr,
+  pl: poland_fr,
   pt: CountryMessages.create("Portugal"),
   ro: CountryMessages.create("Roumanie"),
-  ru: CountryMessages.create("Russie"),
-  sc: seychellesMessages_fr,
+  ru: russia_fr,
+  sc: seychelles_fr,
   tr: CountryMessages.create("Turquie"),
   ua: CountryMessages.create("Ukraine"),
-  uk: ukMessages_fr,
-  us: usaMessages_fr,
+  uk: uk_fr,
+  us: usa_fr,
   sa: CountryMessages.create("Arabie Saoudite"),
   se: CountryMessages.create("Suède"),
   ve: CountryMessages.create("Venezuela"),

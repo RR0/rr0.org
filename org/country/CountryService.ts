@@ -18,6 +18,7 @@ import { colombia } from "../co/Colombia"
 import { uk } from "../uk/Uk"
 import { OrganizationService } from "../OrganizationService"
 import { germany } from "../eu/de/Germany"
+import { russia } from "../ru/Russia"
 
 export class CountryService extends OrganizationService<Country> {
 }
@@ -58,7 +59,7 @@ const countries: Country[] = [
   new Country(CountryCode.pl),
   new Country(CountryCode.pt),
   new Country(CountryCode.ro),
-  new Country(CountryCode.ru),
+  russia,
   new Country(CountryCode.sa),
   new Country(CountryCode.se),
   seychelles,

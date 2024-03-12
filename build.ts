@@ -164,7 +164,7 @@ getTimeFiles().then(async (timeFiles) => {
   context.setVar("mapsApiKey", apiKey)
   const placeService = new GooglePlaceService("place", apiKey)
 
-  const orgService = new OrganizationService("org")
+  const orgService = new OrganizationService([], "org")
 
   const searchCommand = new SearchCommand({
     notIndexedUrls: ["404.html", "Referencement.html"],

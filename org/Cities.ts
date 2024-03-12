@@ -7,6 +7,7 @@ import { australiaCities } from "./au/region/AustraliaCities"
 import { newZealandCities } from "./nz/region/NewZealandCities"
 import { europeCities } from "./eu/EuropeCities"
 import { ukCities } from "./uk/region/UkCities"
+import { russiaCities } from "./ru/region/RussiaCities"
 
 const cities: City[] = [
   ...australiaCities,
@@ -15,6 +16,7 @@ const cities: City[] = [
   ...europeCities,
   ...ukCities,
   ...newZealandCities,
+  ...russiaCities,
   ...usaCities
 ]
 

@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { idfRegionMessages_fr } from "../../eu/fr/region/idf/IdfMessages"
-import { franceMessages_fr } from "../../eu/fr/FranceMessages_fr"
 import { ileDeFrance } from "../../eu/fr/region/idf/Idf"
 
 describe("RegionMessages", () => {
@@ -19,6 +18,6 @@ describe("RegionMessages", () => {
 
   test("toTitle with country", () => {
     expect(idfRegionMessages_fr.toTitle(context, ileDeFrance, {country: true})).toBe(
-      `${idfRegionMessages_fr.title}, ${franceMessages_fr.title}`)
+      `${idfRegionMessages_fr.title}, ${france_fr.title}`)
   })
 })

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
-import { franceMessages_fr } from "../../../../eu/fr/FranceMessages_fr"
+import { france_fr } from "../../../../eu/fr/France_fr"
 import { nanterreMessages } from "../../../../eu/fr/region/idf/92/nanterre/NanterreMessages"
 import { nanterre92 } from "../../../../eu/fr/region/idf/92/nanterre/Nanterre"
 import { castlegar } from "../../../../ca/region/bc/rdck/Castlegar/Castlegar"
@@ -10,7 +10,7 @@ import { hautsDeSeineMessages } from "../../../../eu/fr/region/idf/92/HautsDeSei
 import { kootenaysMessages_fr } from "../../../../ca/region/bc/rdck/KootenaysMessages_fr"
 import { idfMessages } from "../../../../eu/fr/region/idf/IdfMessages"
 import { britishColumbiaMessages_fr } from "../../../../ca/region/bc/BritishColumbiaMessages_fr"
-import { canadaMessages_fr } from "../../../../ca/CanadaMessages_fr"
+import { canada_fr } from "../../../../ca/Canada_fr"
 
 describe("CityMessages", () => {
 
@@ -42,9 +42,9 @@ describe("CityMessages", () => {
   test("toTitle with department and region and country", () => {
     expect(castlegarMessages.toTitle(context, castlegar,
       {parent: true})).toBe(
-      `${castlegarMessages.title} (${kootenaysMessages_fr.title}, ${britishColumbiaMessages_fr.title}, ${canadaMessages_fr.title})`)
+      `${castlegarMessages.title} (${kootenaysMessages_fr.title}, ${britishColumbiaMessages_fr.title}, ${canada_fr.title})`)
     expect(nanterreMessages.toTitle(context, nanterre92,
       {parent: true})).toBe(
-      `${nanterreMessages.title} (${hautsDeSeineMessages.title}, ${idfMessages.title}, ${franceMessages_fr.title})`)
+      `${nanterreMessages.title} (${hautsDeSeineMessages.title}, ${idfMessages.title}, ${france_fr.title})`)
   })
 })

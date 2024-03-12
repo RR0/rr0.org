@@ -1,4 +1,4 @@
 import { RegionMessages } from "../country/region/RegionMessages"
-import { UsaRegionCode } from "./region/UsaRegionCode"
+import { UsaSates } from "./region/UsaSates"
 
-export type UsaRegionMessagesList = { [key in UsaRegionCode]: RegionMessages }
+export type UsaRegionMessagesList = { [key in UsaSates]: RegionMessages }

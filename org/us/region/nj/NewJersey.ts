@@ -1,5 +1,5 @@
 import { usaRegion } from "../../Usa"
-import { UsaRegionCode } from "../UsaRegionCode"
+import { UsaSates } from "../UsaSates"
 import { Place } from "../../../../place/Place"
 
-export let newJersey = usaRegion(UsaRegionCode.nj, Place.fromLocation(40.02795, -74.886984))
+export let newJersey = usaRegion(UsaSates.nj, Place.fromLocation(40.02795, -74.886984))

@@ -14,12 +14,14 @@ import { newJersey_en } from "./region/nj/NewJersey_en"
 import { newYork_en } from "./region/ny/NewYork_en"
 import { westVirginia_en } from "./region/wv/WestVirginia_en"
 import { virginia_en } from "./region/va/Virginia_en"
+import { hawai_en } from "./region/hi/Hawai_en"
 
 export const usa_en = CountryMessages.create<UsaRegionMessagesList>("USA", {
   al: alabamaMessages_en,
   ca: californiaMessages_en,
-  in: indiana_en,
   fl: floridaMessages_en,
+  hi: hawai_en,
+  in: indiana_en,
   nc: northCarolina_en,
   nj: newJersey_en,
   nm: newMexicoMessages_en,

@@ -13,11 +13,13 @@ import { newJerseyCities } from "./nj/NewJerseyCities"
 import { newYorkCities } from "./ny/NewYorkCities"
 import { westVirginiaCities } from "./wv/WestVirginiaCities"
 import { virginiaCities } from "./va/VirginiaCities"
+import { hawaiiCities } from "./hi/HawaiiCities"
 
 export const usaCities: City[] = [
   ...alabamaCities,
   ...californiaCities,
   ...floridaCities,
+  ...hawaiiCities,
   ...indianaCities,
   ...pennsylvaniaCities,
   ...newJerseyCities,

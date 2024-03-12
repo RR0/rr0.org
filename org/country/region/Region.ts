@@ -1,6 +1,6 @@
 import { IndiaRegionCode } from "../../in/IndiaRegionCode"
 import { Place } from "../../../place/Place"
-import { UsaRegionCode } from "../../us/region/UsaRegionCode"
+import { UsaSates } from "../../us/region/UsaSates"
 import { CanadaRegionCode } from "../../ca/region/CanadaRegionCode"
 import { AustraliaRegionCode } from "../../au/region/AustraliaRegionCode"
 import { BrazilRegionCode } from "../../br/region/BrazilRegionCode"
@@ -33,7 +33,7 @@ export type RegionCode =
   | PhilippinesRegionCode
   | SeychellesRegionCode
   | SouthKoreaRegionCode
-  | UsaRegionCode
+  | UsaSates
 
 export class Region<M extends TitleMessage = RegionMessages<any>> extends Organization<M> {
 

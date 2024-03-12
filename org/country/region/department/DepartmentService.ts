@@ -1,4 +1,4 @@
-import { usaDepartments } from "../../../us/region/UsaDepartments"
+import { usaCounties } from "../../../us/region/UsaCounties"
 import { OrganizationService } from "../../../OrganizationService"
 import { Department } from "./Department"
 import { Region } from "../Region"
@@ -11,6 +11,6 @@ export class DepartmentService extends OrganizationService<Department, Region> {
 export const departments: Department[] = [
   ...europeDepartments,
   ...ukDepartments,
-  ...usaDepartments
+  ...usaCounties
 ]
 export const departmentService = new DepartmentService(departments)

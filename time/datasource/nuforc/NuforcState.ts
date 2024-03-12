@@ -26,6 +26,7 @@ export enum NuforcState {
 
   Florida = "FL",
   Georgia = "GA",
+  Hawaii = "HI",
   Iowa = "IA",
   Idaho = "ID",
   Illinois = "IL",

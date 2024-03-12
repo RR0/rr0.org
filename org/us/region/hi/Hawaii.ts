@@ -3,4 +3,4 @@ import { UsaSates } from "../UsaSates"
 import { PlaceLocation } from "../../../../place/PlaceLocation"
 import { usaRegion } from "../../Usa"
 
-export const indiana = usaRegion(UsaSates.in, new Place([PlaceLocation.fromDMS("39°09′44″N,86°31′45″O")]))
+export const hawaii = usaRegion(UsaSates.hi, new Place([PlaceLocation.fromDMS("21°28′00″N,157°58′00″W")]))

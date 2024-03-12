@@ -1,4 +1,4 @@
-export enum UsaRegionCode {
+export enum UsaSates {
   ak = "ak",
   al = "al",
   ar = "ar",
@@ -9,6 +9,7 @@ export enum UsaRegionCode {
   de = "de",
   fl = "fl",
   ga = "ga",
+  hi = "hi",
   id = "id",
   ia = "ia",
   il = "il",

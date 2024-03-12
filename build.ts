@@ -191,7 +191,7 @@ getTimeFiles().then(async (timeFiles) => {
     new SsiLastModifiedReplaceCommand(context.time.options),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new AuthorReplaceCommand(timeFiles),
-    databaseAggregationCommand,
+    // databaseAggregationCommand,
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),

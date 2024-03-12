@@ -1,7 +1,6 @@
 import { GisborneCityCode } from "../GisborneCityCode"
-import { Organization, OrganizationType } from "../../../../Organization"
 import { Place } from "../../../../../place/Place"
-import { gisborne } from "../Gisborne"
+import { gisborneRegion } from "../Gisborne"
+import { City } from "../../../../country/region/department/city/City"
 
-export let gisborne06 = new Organization(GisborneCityCode.Gisborne, [Place.fromLocation(44.896389, 6.635556)],
-  OrganizationType.city, gisborne)
+export let gisborneCity = new City(GisborneCityCode.Gisborne, gisborneRegion, [Place.fromLocation(44.896389, 6.635556)])

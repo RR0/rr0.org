@@ -1,6 +1,4 @@
 import { RegionMessages } from "../country/region/RegionMessages"
+import { AustraliaRegionCode } from "./region/AustraliaRegionCode"
 
-export interface AustraliaMessages {
-  wa: RegionMessages<any>
-  vic: RegionMessages<any>
-}
+export type AustraliaMessages = { [key in AustraliaRegionCode]: RegionMessages }

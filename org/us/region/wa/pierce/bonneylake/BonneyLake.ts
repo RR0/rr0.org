@@ -1,7 +1,6 @@
 import { Place } from "../../../../../../place/Place"
 import { PierceCityCode } from "../PierceCityCode"
-import { Organization, OrganizationType } from "../../../../../Organization"
 import { pierce } from "../Pierce"
+import { usaCity } from "../../../UsaCities"
 
-export let bonneyLake = new Organization(PierceCityCode.BonneyLake, [Place.fromDMS("47°11′13″N 122°10′12″W")],
-  OrganizationType.city, pierce)
+export let bonneyLake = usaCity(PierceCityCode.BonneyLake, pierce, Place.fromDMS("47°11′13″N 122°10′12″W"))

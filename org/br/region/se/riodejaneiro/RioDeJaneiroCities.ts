@@ -1,6 +1,6 @@
-import { rioDeJaneiroCity } from "./20000-000/RioDeJaneiroCity"
-import { Organization } from "../../../../Organization"
+import { rioDeJaneiroCity } from "./20000-000/RioDeJaneiro"
+import { City } from "../../../../country/region/department/city/City"
 
-export const rioDeJaneiroCities: Organization[] = [
+export const rioDeJaneiroCities: City[] = [
   rioDeJaneiroCity
 ]

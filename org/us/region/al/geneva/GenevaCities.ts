@@ -1,6 +1,6 @@
 import { slocomb } from "./slocomb/Slocomb"
-import { Organization } from "../../../../Organization"
+import { City } from "../../../../country/region/department/city/City"
 
-export const genevaCities: Organization[] = [
+export const genevaCities: City[] = [
   slocomb
 ]

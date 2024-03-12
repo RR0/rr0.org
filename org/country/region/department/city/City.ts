@@ -1,9 +1,9 @@
 import { Place } from "../../../../../place/Place"
 import { Organization, OrganizationType } from "../../../../Organization"
 
-export class City extends Organization {
+export class City<P extends Organization = Organization> extends Organization {
 
-  constructor(code: string, parent: Organization, places: Place[]) {
+  constructor(code: string, parent: P, places: Place[]) {
     super(code, places, OrganizationType.city, parent)
   }
 

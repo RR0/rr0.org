@@ -1,4 +1,4 @@
 import { CountryCode } from "../country/CountryCode"
-import { Organization, OrganizationType } from "../Organization"
+import { Country } from "../country/Country"
 
-export const australia = new Organization(CountryCode.au, [], OrganizationType.country)
+export const australia = new Country(CountryCode.au, [])

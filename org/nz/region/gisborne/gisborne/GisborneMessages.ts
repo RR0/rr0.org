@@ -1,3 +1,3 @@
-import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { CityMessages } from "../../../../country/region/department/city/CityMessages"
 
-export let gisborneMessages = new OrganizationMessages("Gisborne")
+export let gisborneCityMessages = new CityMessages("Gisborne")

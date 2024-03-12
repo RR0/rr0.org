@@ -1,5 +1,6 @@
 export enum AustraliaRegionCode {
+  nsw = "nsw",
   sa = "sa",
-  wa = "wa",
   vic = "vic",
+  wa = "wa",
 }

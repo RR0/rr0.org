@@ -1,6 +1,6 @@
 import { monroeCities } from "./monroe/MonroeCities"
-import { Organization } from "../../../Organization"
+import { City } from "../../../country/region/department/city/City"
 
-export const indianaCities: Organization[] = [
+export const indianaCities: City[] = [
   ...monroeCities
 ]

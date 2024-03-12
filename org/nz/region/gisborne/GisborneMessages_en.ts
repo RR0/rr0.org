@@ -1,7 +1,9 @@
-import { RegionMessages } from "../../../country/region/RegionMessages"
-import { gisborneMessages } from "./gisborne/GisborneMessages"
-import { NewZealandRegionCode } from "../NewZealandRegionCode"
+import { gisborneCityMessages } from "./gisborne/GisborneMessages"
+import { OrganizationMessages } from "../../../OrganizationMessages"
+import { OrganizationType } from "../../../Organization"
+import { GisborneCityCode } from "./GisborneCityCode"
 
-export const gisborneMessages_en = new RegionMessages(["Gisborne District", "East Coast", "Eastland"], {
-  [NewZealandRegionCode.gis]: gisborneMessages
-})
+export const gisborneMessages_en = new OrganizationMessages("Gisborne District", "East Coast", "Eastland")
+gisborneMessages_en[OrganizationType.city] = {
+  [GisborneCityCode.Gisborne]: gisborneCityMessages
+}

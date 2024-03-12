@@ -33,18 +33,18 @@ describe("CityMessages", () => {
   })
 
   test("toTitle with department and region", () => {
-    expect(castlegarMessages.toTitle(context, castlegar, {parent: true, region: true})).toBe(
+    expect(castlegarMessages.toTitle(context, castlegar, {parent: true})).toBe(
       `${castlegarMessages.title} (${kootenaysMessages_fr.title}, ${britishColumbiaMessages_fr.title})`)
-    expect(nanterreMessages.toTitle(context, nanterre92, {parent: true, region: true})).toBe(
+    expect(nanterreMessages.toTitle(context, nanterre92, {parent: true})).toBe(
       `${nanterreMessages.title} (${hautsDeSeineMessages.title}, ${idfMessages.title})`)
   })
 
   test("toTitle with department and region and country", () => {
     expect(castlegarMessages.toTitle(context, castlegar,
-      {parent: true, region: true, country: true})).toBe(
+      {parent: true})).toBe(
       `${castlegarMessages.title} (${kootenaysMessages_fr.title}, ${britishColumbiaMessages_fr.title}, ${canadaMessages_fr.title})`)
     expect(nanterreMessages.toTitle(context, nanterre92,
-      {parent: true, region: true, country: true})).toBe(
+      {parent: true})).toBe(
       `${nanterreMessages.title} (${hautsDeSeineMessages.title}, ${idfMessages.title}, ${franceMessages_fr.title})`)
   })
 })

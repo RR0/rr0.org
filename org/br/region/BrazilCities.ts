@@ -1,8 +1,8 @@
 import { centralWestCities } from "./cw/CentralWestCities"
 import { southEastCities } from "./se/SouthEastCities"
-import { Organization } from "../../Organization"
+import { City } from "../../country/region/department/city/City"
 
-export const brazilCities: Organization[] = [
+export const brazilCities: City[] = [
   ...centralWestCities,
   ...southEastCities
 ]

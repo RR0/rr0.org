@@ -12,6 +12,7 @@ import { newYorkCities } from "./ny/NewYorkCities"
 import { westVirginiaCities } from "./wv/WestVirginiaCities"
 import { virginiaCities } from "./va/VirginiaCities"
 import { hawaiiCities } from "./hi/HawaiiCities"
+import { nebraskaCities } from "./ne/NebraskaCities"
 
 export const usaCities: City[] = [
   ...alabamaCities,
@@ -20,6 +21,7 @@ export const usaCities: City[] = [
   ...hawaiiCities,
   ...indianaCities,
   ...pennsylvaniaCities,
+  ...nebraskaCities,
   ...newJerseyCities,
   ...newYorkCities,
   ...northCarolinaCities,

@@ -1,4 +1,4 @@
-export enum UsaSates {
+export enum UsaStates {
   ak = "ak",
   al = "al",
   ar = "ar",
@@ -25,8 +25,8 @@ export enum UsaSates {
   mo = "mo",
   ms = "ms",
   mt = "mt",
-  ne = "ne",
   nc = "nc",
+  ne = "ne",
   nd = "nd",
   nh = "nh",
   nj = "nj",

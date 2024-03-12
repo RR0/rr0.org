@@ -1,5 +1,5 @@
 import { usaRegion } from "../../Usa"
-import { UsaSates } from "../UsaSates"
+import { UsaStates } from "../UsaStates"
 import { Place } from "../../../../place/Place"
 
-export let northCarolina = usaRegion(UsaSates.nc, Place.fromDMS("35°30′N,80°00′W"))
+export let northCarolina = usaRegion(UsaStates.nc, Place.fromDMS("35°30′N,80°00′W"))

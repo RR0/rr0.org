@@ -1,6 +1,6 @@
 import { RegionMessages } from "../../../country/region/RegionMessages"
 
-export const tennesseeMessages_en = RegionMessages.create(
+export const tennessee_en = RegionMessages.create(
   "Tennessee",
   {}
 )

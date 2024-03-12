@@ -11,6 +11,7 @@ import { newYorkCounties } from "./ny/NewYorkCounties"
 import { westVirginaCounties } from "./wv/WestVirginiaCounties"
 import { virginiaCounties } from "./va/VirginiaCounties"
 import { hawaiiCounties } from "./hi/HawaiiCounties"
+import { nebraskaCounties } from "./ne/NebraskaCounties"
 
 export const usaCounties: Organization[] = [
   ...alabamaCounties,
@@ -18,6 +19,7 @@ export const usaCounties: Organization[] = [
   ...floridaCounties,
   ...hawaiiCounties,
   ...pennsylvaniaCounties,
+  ...nebraskaCounties,
   ...newJerseyCounties,
   ...newMexicoCounties,
   ...newYorkCounties,

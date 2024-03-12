@@ -1,16 +1,4 @@
 import { RegionMessages } from "../country/region/RegionMessages"
-import { CaDepartmentMessagesList } from "./region/ca/CaDepartmentMessagesList"
+import { UsaRegionCode } from "./region/UsaRegionCode"
 
-export type UsaRegionMessagesList = {
-  al: RegionMessages
-  ca: RegionMessages<CaDepartmentMessagesList>
-  fl: RegionMessages
-  in: RegionMessages
-  nc: RegionMessages
-  nm: RegionMessages
-  ny: RegionMessages
-  pa: RegionMessages
-  tn: RegionMessages
-  tx: RegionMessages
-  wa: RegionMessages
-}
+export type UsaRegionMessagesList = { [key in UsaRegionCode]: RegionMessages }

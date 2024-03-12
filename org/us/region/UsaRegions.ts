@@ -14,6 +14,7 @@ import { delaware } from "./de/Delaware"
 import { northCarolina } from "./nc/NorthCarolina"
 import { newJersey } from "./nj/NewJersey"
 import { newYork } from "./ny/NewYork"
+import { westVirginia } from "./wv/WestVirginia"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -56,6 +57,6 @@ export const usaRegions: Region[] = [
   usaRegion(UsaRegionCode.vi, Place.fromLocation(47.466667, 0.833333)),
   washington,
   usaRegion(UsaRegionCode.wi, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaRegionCode.wv, Place.fromLocation(47.466667, 0.833333)),
+  westVirginia,
   wyoming
 ]

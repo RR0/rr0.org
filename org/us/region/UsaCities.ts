@@ -11,6 +11,7 @@ import { Place } from "../../../place/Place"
 import { northCarolinaCities } from "./nc/NorthCarolinaCities"
 import { newJerseyCities } from "./nj/NewJerseyCities"
 import { newYorkCities } from "./ny/NewYorkCities"
+import { westVirginiaCities } from "./wv/WestVirginiaCities"
 
 export const usaCities: City[] = [
   ...alabamaCities,
@@ -22,7 +23,8 @@ export const usaCities: City[] = [
   ...newYorkCities,
   ...northCarolinaCities,
   ...texasCities,
-  ...washingtonCities
+  ...washingtonCities,
+  ...westVirginiaCities
 ]
 
 export function usaCity(code: string, county: Department, place: Place): City {

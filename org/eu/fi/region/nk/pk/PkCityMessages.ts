@@ -4,5 +4,5 @@ import { LieskaMessages } from "./lieksa/LieskaMessages"
 
 export type PkCityMessagesList = { [key in PkCityCode]: OrganizationMessages }
 export const pkCityMessages: PkCityMessagesList = {
-  [PkCityCode.Kieksa]: LieskaMessages
+  [PkCityCode.Aalborg]: LieskaMessages
 }

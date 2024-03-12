@@ -3,7 +3,7 @@ import { FinlandMessages } from "./FinlandMessages"
 import { pirkanmaaMessages_fr } from "./region/p/PirkanmaaMessages_fr"
 
 export const finland_fr = new FinlandMessages(
-  "Finlande",
+  ["Finlande"],
   {
     nk: northKareliaMessages_fr,
     p: pirkanmaaMessages_fr

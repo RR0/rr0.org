@@ -1,3 +1,3 @@
 export enum PkCityCode {
-  Kieksa = "81700"
+  Aalborg = "81700"
 }

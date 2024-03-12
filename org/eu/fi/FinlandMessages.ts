@@ -4,7 +4,7 @@ import { CountryMessages } from "../../country/CountryMessages"
 
 export type FinlandRegionsMessagesList = { [key in FinlandRegionCode]: RegionMessages<any> }
 
-export class FinlandMessages extends CountryMessages<any> {
+export class FinlandMessages extends CountryMessages<FinlandRegionsMessagesList> {
 
   cityName(cityStr: string): string {
     let base = super.cityName(cityStr)

@@ -17,6 +17,7 @@ import { peru_en } from "./pe/region/Peru_en"
 import { seychelles_en } from "./sc/Seychelles_en"
 import { uk_en } from "./uk/Uk_en"
 import { russia_en } from "./ru/Russia_en"
+import { denmark_en } from "./eu/dk/Denmark_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -31,7 +32,7 @@ export const countryMessageList_en: CountryMessagesList = {
   co: colombia_en,
   cy: CountryMessages.create("Cyprus"),
   de: CountryMessages.create("Germany"),
-  dk: CountryMessages.create("Denmark"),
+  dk: denmark_en,
   do: dominicanRepublic_en,
   es: spain_en,
   fi: finland_en,

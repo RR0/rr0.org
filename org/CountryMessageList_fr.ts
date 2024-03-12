@@ -17,6 +17,7 @@ import { philippines_fr } from "./ph/Philippines_fr"
 import { seychelles_fr } from "./sc/Seychelles_fr"
 import { uk_fr } from "./uk/Uk_fr"
 import { russia_fr } from "./ru/Russia_fr"
+import { denmark_fr } from "./eu/dk/Denmark_fr"
 
 /**
  * Country messages in French language.
@@ -34,7 +35,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   co: colombia_fr,
   cy: CountryMessages.create("Chypre"),
   de: CountryMessages.create("Allemagne"),
-  dk: CountryMessages.create("Danemark"),
+  dk: denmark_fr,
   do: dominicanRepublic_fr,
   es: spain_fr,
   fi: finland_fr,

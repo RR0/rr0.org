@@ -18,6 +18,7 @@ import { seychelles_fr } from "./sc/Seychelles_fr"
 import { uk_fr } from "./uk/Uk_fr"
 import { russia_fr } from "./ru/Russia_fr"
 import { denmark_fr } from "./eu/dk/Denmark_fr"
+import { mozambique_fr } from "./mz/Mozambique_fr"
 
 /**
  * Country messages in French language.
@@ -51,6 +52,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   kr: southKorea_fr,
   ma: CountryMessages.create("Maroc"),
   mx: CountryMessages.create("Mexique"),
+  mz: mozambique_fr,
   nl: CountryMessages.create("Pays-Bas"),
   no: CountryMessages.create("Norvège"),
   nz: newZealand_fr,

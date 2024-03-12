@@ -1,3 +1,3 @@
 export enum SussexCityCode {
-  Frant = "01892",
+  Beira = "01892",
 }

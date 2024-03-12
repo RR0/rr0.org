@@ -143,6 +143,11 @@ export enum CountryCode {
   mx = "mx",
 
   /**
+   * MoZambique
+   */
+  mz = "mz",
+
+  /**
    * NetherLands
    */
   nl = "nl",

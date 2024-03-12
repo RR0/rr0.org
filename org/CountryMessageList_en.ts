@@ -18,6 +18,7 @@ import { seychelles_en } from "./sc/Seychelles_en"
 import { uk_en } from "./uk/Uk_en"
 import { russia_en } from "./ru/Russia_en"
 import { denmark_en } from "./eu/dk/Denmark_en"
+import { mozambique_en } from "./mz/Mozambique_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -48,6 +49,7 @@ export const countryMessageList_en: CountryMessagesList = {
   kr: southKorea_en,
   ma: CountryMessages.create("Morocco"),
   mx: CountryMessages.create("Mexico"),
+  mz: mozambique_en,
   nl: CountryMessages.create("Netherlands"),
   no: CountryMessages.create("Norway"),
   nz: newZealand_en,

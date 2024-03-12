@@ -19,6 +19,7 @@ import { uk } from "../uk/Uk"
 import { OrganizationService } from "../OrganizationService"
 import { germany } from "../eu/de/Germany"
 import { russia } from "../ru/Russia"
+import { mozambique } from "../mz/Mozambique"
 
 export class CountryService extends OrganizationService<Country> {
 }
@@ -51,6 +52,7 @@ const countries: Country[] = [
   new Country(CountryCode.jp),
   new Country(CountryCode.ma),
   mexico,
+  mozambique,
   new Country(CountryCode.nl),
   new Country(CountryCode.no),
   newZealand,

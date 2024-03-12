@@ -5,6 +5,6 @@ import { DepartmentMessages } from "../../../../country/region/department/Depart
 
 type SussexCityMessagesList = { [key in SussexCityCode]: CityMessages }
 const sussexCityMessages: SussexCityMessagesList = {
-  [SussexCityCode.Frant]: frantMessages
+  [SussexCityCode.Beira]: frantMessages
 }
 export const sussexMessages = DepartmentMessages.create<SussexCityMessagesList>("Sussex", sussexCityMessages)

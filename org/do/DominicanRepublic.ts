@@ -6,6 +6,6 @@ import { DominicanRepublicRegionCode } from "./region/DominicanRepublicRegionCod
 
 export const dominicanRepublic = new Country(CountryCode.do)
 
-export function germanyRegion(code: DominicanRepublicRegionCode, place: Place) {
+export function dominicanRepublicRegion(code: DominicanRepublicRegionCode, place: Place) {
   return new Region(code, dominicanRepublic, [place])
 }

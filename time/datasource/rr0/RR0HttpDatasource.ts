@@ -43,24 +43,31 @@ export class RR0HttpDatasource extends RR0Datasource {
     return cases
   }
 
-  getFromRow(context: RR0SsgContext, row: Element): RR0CaseSummary {
+  getFromRow(context: RR0SsgContext, r: Element): RR0CaseSummary {
+    const row = r.cloneNode(true)
     const caseLink = context.inputFile.name
+    const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
     let time: TimeContext
     if (timeEl) {
       const itemContext = context.clone()
       time = itemContext.time
+      url.hash = time
       const dateTime = new Date(timeEl.dateTime)
       time.setYear(dateTime.getFullYear())
       time.setMonth(dateTime.getMonth() + 1)
       time.setDayOfMonth(dateTime.getDate())
+      timeEl.remove()
     }
+    let namedPlace: NamedPlace
     const placeEl = row.querySelector(".place")
-    const name = placeEl.textContent
-    const place = new Place()
-    const namedPlace: NamedPlace = {name, place}
-    const url = new URL(caseLink.href, this.baseUrl)
-    const description = row.textContent
+    if (placeEl) {
+      const name = placeEl.textContent
+      const place = new Place()
+      namedPlace = {name, place}
+      placeEl.remove()
+    }
+    const description = row.textContent.trim().replaceAll("\n", "").replaceAll(/  /g, " ")
     return {
       url,
       place: namedPlace,

@@ -6,11 +6,9 @@ import { UrecatCase, UrecatWitness } from "./UrecatCase"
 import { TimeTextBuilder } from "../../TimeTextBuilder"
 import { MessageUtils } from "../../../lang/RR0Messages"
 import { ObjectUtil } from "../../../util/ObjectUtil"
-import { CaseSource } from "../CaseSource"
+import { UrecatDatasource } from "./UrecatDatasource"
 
-export class UrecatHttpDatasource implements CaseSource<UrecatCase> {
-  readonly author = "Gross, Patrick"
-  readonly copyright = "URECAT (Les ovnis vus de près)"
+export class UrecatHttpDatasource extends UrecatDatasource {
   protected readonly http = new HttpSource()
 
   protected static readonly urlDateFormat = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d))?)?/
@@ -26,6 +24,7 @@ export class UrecatHttpDatasource implements CaseSource<UrecatCase> {
   }
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "ce3") {
+    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<UrecatCase[]> {

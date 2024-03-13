@@ -6,14 +6,16 @@ import { UrlUtil } from "../util/url/UrlUtil"
 import { DomReplacement } from "./DomReplacement"
 import { ObjectUtils } from "@rr0/common"
 
-export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
+/**
+ * Replaces a <time> tag.
+ */
+export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeElement> {
 
   static readonly dateTimeRegexp = new RegExp(
     "^(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
   /**
-   *
    * @param timeFiles The existing time files that we can link to (i.e. we won't link to non-existing ones).
    */
   constructor(protected timeFiles: string[]) {
@@ -48,33 +50,6 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
     return replacement
   }
 
-  async replacement(context: HtmlRR0SsgContext, original: HTMLElement): Promise<HTMLElement> {
-    const noContext = original.dataset["context"] === "none"
-    const contents = original.textContent
-    const parts = contents.split("/")
-    let replacement: HTMLElement | undefined
-    const isTimeInterval = parts.length > 1
-    if (isTimeInterval) {
-      const startTime = parts[0]
-      const startReplacement = this.valueReplacement(context, startTime, noContext)
-      if (startReplacement) {
-        const endTime = parts[1]
-        const endReplacement = this.valueReplacement(context, endTime, noContext)
-        if (endReplacement) {
-          replacement = context.outputFile.document.createElement("span")
-          replacement.className = "time-interval"
-          replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
-            endReplacement.outerHTML)
-        }
-      }
-    }
-    if (!replacement) {
-      replacement = this.valueReplacement(context, contents, noContext) || original
-    }
-    context.debug("\tReplacing time", original.outerHTML, "with", ObjectUtils.asSet<HTMLElement>(replacement).outerHTML)
-    return replacement
-  }
-
   static replaceElement(
     context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[], previousContext?: RR0SsgContext
   ): HTMLElement {
@@ -99,13 +74,45 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext> {
       const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
       a.href = UrlUtil.absolute(url)
     } else {
-      const span = replacement = context.outputFile.document.createElement("span")
-      span.className = "time"
+      replacement = context.outputFile.document.createElement("time")
     }
     if (text != title) {
       replacement.title = title
     }
     replacement.textContent = text
+    return replacement
+  }
+
+  async replacement(context: HtmlRR0SsgContext, original: HTMLTimeElement): Promise<HTMLElement> {
+    let replacement: HTMLElement | undefined
+    if (original.dateTime) {
+      replacement = original
+    } else {
+      const noContext = original.dataset["context"] === "none"
+      const contents = original.textContent
+      const parts = contents.split("/")
+      const isTimeInterval = parts.length > 1
+      if (isTimeInterval) {
+        const startTime = parts[0]
+        const startReplacement = this.valueReplacement(context, startTime, noContext)
+        if (startReplacement) {
+          const endTime = parts[1]
+          const endReplacement = this.valueReplacement(context, endTime, noContext)
+          if (endReplacement) {
+            replacement = context.outputFile.document.createElement("span")
+            replacement.className = "time-interval"
+            replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
+              endReplacement.outerHTML)
+          }
+        }
+      }
+      if (!replacement) {
+        replacement = this.valueReplacement(context, contents, noContext) || original
+      }
+      context.debug("\tReplacing time", original.outerHTML, "with",
+        ObjectUtils.asSet<HTMLElement>(replacement).outerHTML)
+      replacement.setAttribute("datetime", contents)
+    }
     return replacement
   }
 

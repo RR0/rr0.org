@@ -2,8 +2,6 @@ import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { RR0CaseSummary } from "./RR0CaseSummary"
-import { RR0CaseSummary } from "../../RR0CaseSummary"
 import { RR0Datasource } from "./RR0Datasource"
 
 export class RR0HttpDatasource extends RR0Datasource {
@@ -27,7 +25,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       charset = "latin1"
     }
     const decoder = new TextDecoder(charset)*/
-    const rowEls = doc.querySelectorAll("ul li")
+    const rowEls = doc.querySelectorAll("ul.indexed li")
     return this.getFromRows(context, rowEls)
   }
 

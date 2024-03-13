@@ -2,10 +2,10 @@ import { BaseOvniFranceCaseSummaryRR0Mapper } from "./BaseOvniFranceCaseSummaryR
 import { departmentService } from "../../../org/country/region/department/DepartmentService"
 import { RR0CaseMapping } from "../ChronologyReplacer"
 import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
-import { BaseOvniFranceDatasource } from "./BaseOvniFranceDatasource"
+import { BaseOvniFranceHttpDatasource } from "./BaseOvniFranceHttpDatasource"
 import { cityService } from "../../../org/Cities"
 
-export const baseOvniFranceDatasource = new BaseOvniFranceDatasource()
+export const baseOvniFranceDatasource = new BaseOvniFranceHttpDatasource()
 
 export const baseOvniFranceRR0Mapper = new BaseOvniFranceCaseSummaryRR0Mapper(
   departmentService, cityService,

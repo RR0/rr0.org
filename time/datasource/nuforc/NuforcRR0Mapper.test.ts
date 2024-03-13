@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { NuforcDatasource } from "./NuforcDatasource"
+import { NuforcHttpDatasource } from "./NuforcHttpDatasource"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
@@ -14,7 +14,7 @@ import { stPetersburg } from "../../../org/us/region/fl/pinellas/stpetersburg/St
 import { monessen } from "../../../org/us/region/pa/westmoreland/monessen/Monessen"
 import { bonneyLake } from "../../../org/us/region/wa/pierce/bonneylake/BonneyLake"
 
-function expectedSource(datasource: NuforcDatasource, dataDate: Date, caseNumber: number) {
+function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: number) {
   const url = new URL("sighting/?id=" + caseNumber, datasource.baseUrl)
   return new OnlineSource(url, "cas n° " + caseNumber, [datasource.author],
     {publisher: datasource.copyright, time: dataDate.toLocaleString()})

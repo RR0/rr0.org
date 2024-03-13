@@ -170,16 +170,20 @@ export class FuforaHttpDatasource extends FuforaDatasource {
     const rowEls = doc.querySelectorAll(".udb_u_taulukko .rivi")
     const rows = Array.from(rowEls)
     rows.shift()  // Skip header row
+    return this.getFromRows(context, rows)
+  }
+
+  getFromRows(context: RR0SsgContext, rows: Element[]): FuforaCaseSummary[] {
     const cases: FuforaCaseSummary[] = []
     for (const row of rows) {
       if (row.hasChildNodes()) {
-        cases.push(this.getNativeCase(context, row))
+        cases.push(this.getFromRow(context, row))
       }
     }
     return cases
   }
 
-  protected getNativeCase(context: RR0SsgContext, row: Element): FuforaCaseSummary {
+  protected getFromRow(context: RR0SsgContext, row: Element): FuforaCaseSummary {
     const fields = row.querySelectorAll("div")
     const caseLink = fields[0].firstElementChild as HTMLAnchorElement
     const dateFormat = /(?:(\d\d).(\d\d).(\d\d\d\d))?\n?(.+)?/

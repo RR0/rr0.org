@@ -14,16 +14,22 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
   protected replaceItem(context: HtmlRR0SsgContext, item: HTMLLIElement, i: number) {
     const anchor = item.querySelector(".index-anchor")
-    const hasNote = item.innerHTML.includes("<span>")
     if (!anchor) {
+      const idOrValue = item.getAttribute("id") || item.getAttribute("value")
+      let dateTime: string
+      if (!idOrValue) {
+        dateTime = (item.querySelector("time") as HTMLTimeElement)?.dateTime
+      }
+      const id = idOrValue || dateTime || String(i + 1)
       const anchorEl = context.outputFile.document.createElement("span")
-      const id = item.getAttribute("id") || item.getAttribute("value") || String(i + 1)
       anchorEl.id = id
       item.removeAttribute("id")
-      item.setAttribute("value", id)
+      if (!dateTime) {
+        item.setAttribute("value", id)
+      }
       anchorEl.classList.add("index-anchor", "anchor")
       item.prepend(anchorEl)
-      item.setAttribute("onclick", "window.location.hash=" + id)
+      item.setAttribute("onclick", `window.location.hash='${id}'`)
     }
   }
 }

@@ -1,5 +1,5 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { RR0Case } from "./RR0Case"
+import { RR0CaseSummary } from "./RR0CaseSummary"
 import { Source } from "../source/Source"
 import { OnlineSource } from "../source/OnlineSource"
 
@@ -25,7 +25,7 @@ export class RR0CaseRenderer {
     return sourceEl
   }
 
-  render(context: HtmlRR0SsgContext, rr0Case: RR0Case): HTMLLIElement {
+  render(context: HtmlRR0SsgContext, rr0Case: RR0CaseSummary): HTMLLIElement {
     const outDoc = context.outputFile.document
     const item = outDoc.createElement("li")
     const timeEl = outDoc.createElement("time")

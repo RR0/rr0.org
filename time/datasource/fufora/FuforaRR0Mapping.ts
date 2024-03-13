@@ -1,18 +1,15 @@
-import { FuforaDatasource } from "./FuforaDatasource"
+import { FuforaHttpDatasource } from "./FuforaHttpDatasource"
 import { FuforaCaseSummaryRR0Mapper } from "./FuforaCaseSummaryRR0Mapper"
 import { cityService } from "../../../org/Cities"
 import { FuforaCaseSummary } from "./FuforaCaseSummary"
 
-export const fuforaDatasource = new FuforaDatasource()
+export const fuforaDatasource = new FuforaHttpDatasource()
 
 export const fuforaRR0Mapper = new FuforaCaseSummaryRR0Mapper(cityService, fuforaDatasource.baseUrl,
   fuforaDatasource.copyright,
   fuforaDatasource.author)
 
-export const fuforaRR0Mapping = {
-  datasource: fuforaDatasource,
-  mapper: fuforaRR0Mapper
-}
+export const fuforaRR0Mapping = {datasource: fuforaDatasource, mapper: fuforaRR0Mapper}
 
 export const fuforaSortComparator
   = (c1: FuforaCaseSummary,

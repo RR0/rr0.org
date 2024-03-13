@@ -7,7 +7,7 @@ export type NamedPlace = {
   readonly name: string
 }
 
-export type RR0Case = {
+export type RR0CaseSummary = {
   readonly time: TimeContext
   readonly place: NamedPlace
   readonly description: string

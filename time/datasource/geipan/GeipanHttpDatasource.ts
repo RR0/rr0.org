@@ -13,6 +13,7 @@ import {
   GeipanCaseClassification_minus
 } from "./GeipanCaseClassification"
 import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
+import { GeipanDatasource } from "./GeipanDatasource"
 
 interface QueryParameters {
   /**
@@ -37,13 +38,12 @@ interface QueryParameters {
   field_agregation_index_value: string
 }
 
-export class GeipanHttpDatasource implements CaseSource<GeipanCaseSummary> {
+export class GeipanHttpDatasource extends GeipanDatasource implements CaseSource<GeipanCaseSummary> {
   protected static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
-  readonly author = "GEIPAN"
-  readonly copyright = "Catalogue de cas"
   protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl: string, readonly searchPath: string) {
+    super()
   }
 
   async getAll(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {

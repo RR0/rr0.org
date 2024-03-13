@@ -9,10 +9,7 @@ export const nuforcDatasource = new NuforcDatasource()
 export const nuforcRR0Mapper = new NuforcRR0Mapper(cityService, countryService, nuforcDatasource.baseUrl,
   nuforcDatasource.copyright, nuforcDatasource.author)
 
-export const nuforcRR0Mapping = {
-  datasource: nuforcDatasource,
-  mapper: nuforcRR0Mapper
-}
+export const nuforcRR0Mapping = {datasource: nuforcDatasource, mapper: nuforcRR0Mapper}
 
 export const nuforcSortComparator
   = (c1: NuforcCaseSummary,

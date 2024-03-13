@@ -3,7 +3,7 @@ import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
-import { NamedPlace, RR0Case } from "../../RR0Case"
+import { NamedPlace, RR0CaseSummary } from "../../RR0CaseSummary"
 import assert from "assert"
 import { CountryService } from "../../../org/country/CountryService"
 import { australia } from "../../../org/au/Australia"
@@ -24,7 +24,7 @@ import { colombia } from "../../../org/co/Colombia"
 import { NuforcShape } from "./NuforcShape"
 import { germany } from "../../../org/eu/de/Germany"
 
-export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCaseSummary, RR0Case> {
+export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCaseSummary, RR0CaseSummary> {
 
   readonly translations: { [key in NuforcShape]: string } = {
     [NuforcShape.Circle]: "d'un cercle",
@@ -82,7 +82,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
     USA: usa.code
   }
 
-  map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0Case {
+  map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})

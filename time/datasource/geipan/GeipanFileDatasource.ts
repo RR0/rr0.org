@@ -6,13 +6,13 @@ import { GeipanCase } from "./GeipanCase"
 import { GeipanCaseSummaryMapper } from "./GeipanCaseSummaryMapper"
 import { geipanHttpDatasource } from "./GeipanRR0Mapping"
 import { SsgFile } from "ssg-api"
+import { GeipanDatasource } from "./GeipanDatasource"
 
-export class GeipanFileDatasource implements CaseSource<GeipanCaseSummary> {
-  readonly author = "GEIPAN"
-  readonly copyright = "Catalogue de cas"
+export class GeipanFileDatasource extends GeipanDatasource implements CaseSource<GeipanCaseSummary> {
   private summaries: GeipanCaseSummary[]
 
   constructor(readonly fileName: string) {
+    super()
   }
 
   getSummaries(context: RR0SsgContext): GeipanCaseSummary[] {

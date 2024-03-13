@@ -3,13 +3,13 @@ import { FuforaCaseSummary } from "./FuforaCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
-import { NamedPlace, RR0Case } from "../../RR0Case"
+import { NamedPlace, RR0CaseSummary } from "../../RR0CaseSummary"
 import assert from "assert"
 
 /**
  * Maps FUFORA cases to RR0 cases.
  */
-export class FuforaCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, FuforaCaseSummary, RR0Case> {
+export class FuforaCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, FuforaCaseSummary, RR0CaseSummary> {
 
   constructor(
     protected cityService: CityService,
@@ -17,7 +17,7 @@ export class FuforaCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
   ) {
   }
 
-  map(context: HtmlRR0SsgContext, sourceCase: FuforaCaseSummary, sourceTime: Date): RR0Case {
+  map(context: HtmlRR0SsgContext, sourceCase: FuforaCaseSummary, sourceTime: Date): RR0CaseSummary {
     const source = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const cityName = sourceCase.city || sourceCase.sightingPlace

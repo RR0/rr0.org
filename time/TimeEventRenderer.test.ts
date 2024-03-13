@@ -1,7 +1,7 @@
 import { describe, expect, test } from "@javarome/testscript"
 import { RR0CaseRenderer } from "./RR0CaseRenderer"
 import { rr0TestUtil } from "../test/RR0TestUtil"
-import { NamedPlace, RR0Case } from "./RR0Case"
+import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../place/Place"
 import { OnlineSource } from "../source/OnlineSource"
 import { franceCity } from "../org/eu/fr/FranceCity"
@@ -23,7 +23,7 @@ describe("TimeEventRenderer", () => {
     const source1 = new OnlineSource(new URL("https://somesite.com/case1"), "Case 1", ["Some Author"],
       {time: context.time.toString(), publisher: "Some site"})
     const sources = [source1]
-    const c: RR0Case = {
+    const c: RR0CaseSummary = {
       time: context.time,
       place: namedPlace,
       description: "some sighting", sources

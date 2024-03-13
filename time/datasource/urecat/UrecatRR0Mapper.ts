@@ -3,11 +3,11 @@ import { UrecatCase } from "./UrecatCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
-import { NamedPlace, RR0Case } from "../../RR0Case"
+import { NamedPlace, RR0CaseSummary } from "../../RR0CaseSummary"
 import assert from "assert"
 import { CountryService } from "../../../org/country/CountryService"
 
-export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase, RR0Case> {
+export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase, RR0CaseSummary> {
 
   constructor(
     protected cityService: CityService, protected countryService: CountryService,
@@ -21,7 +21,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
     return description.join(", ")
   }
 
-  map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0Case {
+  map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0CaseSummary {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
       [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})

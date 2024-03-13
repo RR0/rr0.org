@@ -9,10 +9,7 @@ export const urecatDatasource = new UrecatHttpDatasource()
 export const urecatRR0Mapper = new UrecatRR0Mapper(cityService, countryService, urecatDatasource.baseUrl,
   urecatDatasource.copyright, urecatDatasource.author)
 
-export const urecatRR0Mapping = {
-  datasource: urecatDatasource,
-  mapper: urecatRR0Mapper
-}
+export const urecatRR0Mapping = {datasource: urecatDatasource, mapper: urecatRR0Mapper}
 
 export const urecatSortComparator
   = (c1: UrecatCase, c2: UrecatCase) => c1.url < c2.url ? -1 : c1.url > c2.url ? 1 : 0

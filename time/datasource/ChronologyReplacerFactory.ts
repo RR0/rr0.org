@@ -8,7 +8,7 @@ export class ChronologyReplacerFactory implements ReplacerFactory<DomReplacer> {
   protected readonly replacer: ChronologyReplacer
 
   constructor(protected timeFiles: string[], datasources: RR0CaseMapping<any>[]) {
-    this.replacer = new ChronologyReplacer(datasources, new RR0CaseRenderer(), true, true)
+    this.replacer = new ChronologyReplacer(datasources, new RR0CaseRenderer(), false, false)
   }
 
   /**

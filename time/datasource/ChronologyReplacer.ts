@@ -1,14 +1,14 @@
 import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { RR0CaseRenderer } from "../RR0CaseRenderer"
-import { RR0Case } from "../RR0Case"
+import { RR0CaseSummary } from "../RR0CaseSummary"
 import { CaseMapping } from "./CaseMapping"
 import { CsvMapper } from "./CsvMapper"
 import fs from "fs"
 import path from "path"
 import { StringUtil } from "../../util/string/StringUtil"
 
-export interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0Case> {
+export interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
 }
 
 export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLUListElement> {
@@ -23,7 +23,15 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {
     const existingItems = element.children
+    element.classList.add("indexed")
     // TODO: Merge with existing those items
+    if (this.save || this.merge) {
+      await this.aggregate(context, element)
+    }
+    return element
+  }
+
+  private async aggregate(context: HtmlRR0SsgContext, element: HTMLUListElement) {
     for (const mapping of this.mappings) {
       const datasource = mapping.datasource
       const datasourceKey = context.inputFile.name + "$" + datasource.copyright
@@ -48,6 +56,5 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
         this.done.add(datasourceKey)
       }
     }
-    return element
   }
 }

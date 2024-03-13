@@ -4,13 +4,13 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
 import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
 import { CityService } from "../../../org/country/region/department/city/CityService"
-import { NamedPlace, RR0Case } from "../../RR0Case"
+import { NamedPlace, RR0CaseSummary } from "../../RR0CaseSummary"
 import assert from "assert"
 
 /**
  * Maps a Base OVNI France case to a RR0 case.
  */
-export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, BaseOvniFranceCaseSummary, RR0Case> {
+export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, BaseOvniFranceCaseSummary, RR0CaseSummary> {
 
   constructor(
     protected depService: DepartmentService, protected cityService: CityService,
@@ -18,7 +18,7 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
   ) {
   }
 
-  map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0Case {
+  map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, [this.author],
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const depCode = sourceCase.depCode

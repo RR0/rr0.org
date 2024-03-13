@@ -41,7 +41,7 @@ export class HttpSource {
     return this.userAgents[randomNumber]
   }
 
-  async fetch<T>(url: string, init: RequestInit): Promise<T> {
+  async fetch<T>(url: string, init: RequestInit = {}): Promise<T> {
     init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
     const response = await fetch(url, init)
     if (response.ok) {

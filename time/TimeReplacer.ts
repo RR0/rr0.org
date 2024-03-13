@@ -21,7 +21,8 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   constructor(protected timeFiles: string[]) {
   }
 
-  valueReplacement(context: HtmlRR0SsgContext, timeStr: string, noContext = false): HTMLElement | undefined {
+  valueReplacement(context: HtmlRR0SsgContext, timeStr: string,
+                   previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
     const approximate = timeStr.charAt(0) === "~"
@@ -31,7 +32,6 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
     if (dateTimeValues && dateTimeValues[0]) {
       const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
-      const previousContext: RR0SsgContext | null = noContext ? null : context.clone()
       replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes,
         timeZone, approximate)
     } else {
@@ -85,19 +85,19 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
 
   async replacement(context: HtmlRR0SsgContext, original: HTMLTimeElement): Promise<HTMLElement> {
     let replacement: HTMLElement | undefined
-    if (original.dateTime) {
+    if (original.dateTime) {  // Already done?
       replacement = original
     } else {
-      const noContext = original.dataset["context"] === "none"
+      const previousContext = original.dataset["context"] === "none" ? undefined : context.clone()
       const contents = original.textContent
       const parts = contents.split("/")
       const isTimeInterval = parts.length > 1
       if (isTimeInterval) {
         const startTime = parts[0]
-        const startReplacement = this.valueReplacement(context, startTime, noContext)
+        const startReplacement = this.valueReplacement(context, startTime, previousContext)
         if (startReplacement) {
           const endTime = parts[1]
-          const endReplacement = this.valueReplacement(context, endTime, noContext)
+          const endReplacement = this.valueReplacement(context, endTime, previousContext)
           if (endReplacement) {
             replacement = context.outputFile.document.createElement("span")
             replacement.className = "time-interval"
@@ -107,7 +107,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
         }
       }
       if (!replacement) {
-        replacement = this.valueReplacement(context, contents, noContext) || original
+        replacement = this.valueReplacement(context, contents, previousContext) || original
       }
       context.debug("\tReplacing time", original.outerHTML, "with",
         ObjectUtils.asSet<HTMLElement>(replacement).outerHTML)

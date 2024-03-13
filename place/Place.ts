@@ -8,10 +8,7 @@ export type Elevation = {
 
 export class Place implements Rr0Data {
 
-  constructor(
-    readonly locations: PlaceLocation[],
-    readonly elevation?: Elevation,
-    readonly dirName?: string,
+  constructor(readonly locations: PlaceLocation[], readonly elevation?: Elevation, readonly dirName?: string,
     /**
      * Remote service specific data.
      */

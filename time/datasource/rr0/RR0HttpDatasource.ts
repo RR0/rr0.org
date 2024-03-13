@@ -3,6 +3,9 @@ import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { RR0Datasource } from "./RR0Datasource"
+import { TimeContext } from "../../TimeContext"
+import { NamedPlace } from "./RR0CaseSummary"
+import { Place } from "../../../place/Place"
 
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()
@@ -42,30 +45,27 @@ export class RR0HttpDatasource extends RR0Datasource {
 
   getFromRow(context: RR0SsgContext, row: Element): RR0CaseSummary {
     const caseLink = context.inputFile.name
-    const dateFormat = /(?:(\d\d).(\d\d).(\d\d\d\d))?\n?(.+)?/
-    const dateFields = dateFormat.exec(fields[1].textContent)
-    const itemContext = context.clone()
-    const dateTime = itemContext.time
-    dateTime.setYear(parseInt(dateFields[3], 10))
-    dateTime.setMonth(parseInt(dateFields[2], 10))
-    const dayOfMonth = dateFields[1]
-    dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
-    const dateTimeRefinement = dateFields[4] ? dateFields[4].trim() : undefined
-    const placeStr = fields[2].innerHTML
-    const placeRows = placeStr.split("<br>")
-    const sightingPlace = placeRows[0]
-    const city = placeRows.length > 1 ? context.messages.country.fi.cityName(placeRows[1]) : undefined
+    const timeEl = row.querySelector("time") as HTMLTimeElement
+    let time: TimeContext
+    if (timeEl) {
+      const itemContext = context.clone()
+      time = itemContext.time
+      const dateTime = new Date(timeEl.dateTime)
+      time.setYear(dateTime.getFullYear())
+      time.setMonth(dateTime.getMonth() + 1)
+      time.setDayOfMonth(dateTime.getDate())
+    }
+    const placeEl = row.querySelector(".place")
+    const name = placeEl.textContent
+    const place = new Place()
+    const namedPlace: NamedPlace = {name, place}
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = parseInt(HttpSource.findParam(url.href, "&", "u"), 10)
-    const classification = fields[3].textContent
+    const description = row.textContent
     return {
-      caseNumber,
       url,
-      sightingPlace,
-      city,
-      dateTime,
-      dateTimeRefinement,
-      classification
+      place: namedPlace,
+      time,
+      description
     }
   }
 

@@ -99,7 +99,7 @@ section:hover {
   background-color: rgba(127, 127, 127, 0.05);
 }
 
-.contents ul .time {
+.contents ul time {
   font-weight: 700
 }
 
@@ -657,7 +657,6 @@ a, details summary, .toggle, .note-id, .source-id {
 }
 
 a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {
-  cursor: pointer;
   border: none;
   border-radius: .2em;
   background: rgba(184, 197, 212, .49)

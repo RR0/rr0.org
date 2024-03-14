@@ -1,4 +1,3 @@
-
 /**
  * Time context for a RR0 page.
  */
@@ -115,5 +114,13 @@ export class TimeContext {
 
   protected isSet(value: any) {
     return value != void 0 && value != null
+  }
+
+  isBefore(other: TimeContext): boolean {
+    return this.toString().localeCompare(other.toString()) < 0
+  }
+
+  isAfter(other: TimeContext): boolean {
+    return this.toString().localeCompare(other.toString()) > 0
   }
 }

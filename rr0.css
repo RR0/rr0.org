@@ -659,7 +659,7 @@ a, details summary, .toggle, .note-id, .source-id {
 a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {
   border: none;
   border-radius: .2em;
-  background: rgba(184, 197, 212, .49)
+  background: rgba(184, 197, 212, .19)
 }
 
 .canular, .deprecated {

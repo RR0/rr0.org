@@ -4,8 +4,10 @@ import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { RR0Datasource } from "./RR0Datasource"
 import { TimeContext } from "../../TimeContext"
-import { NamedPlace } from "./RR0CaseSummary"
+import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
+import { Source } from "../../../source/Source"
+import { TimeReplacer } from "../../TimeReplacer"
 
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()
@@ -48,32 +50,78 @@ export class RR0HttpDatasource extends RR0Datasource {
     const caseLink = context.inputFile.name
     const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
-    let time: TimeContext
+    const itemContext = context.clone()
+    let timeContext = itemContext.time
     if (timeEl) {
-      const itemContext = context.clone()
-      time = itemContext.time
-      url.hash = time
-      const dateTime = new Date(timeEl.dateTime)
-      time.setYear(dateTime.getFullYear())
-      time.setMonth(dateTime.getMonth() + 1)
-      time.setDayOfMonth(dateTime.getDate())
+      url.hash = timeEl.dateTime
+      this.getTime(timeContext, timeEl)
       timeEl.remove()
     }
     let namedPlace: NamedPlace
-    const placeEl = row.querySelector(".place")
+    const placeEl = row.querySelector(".plac")
     if (placeEl) {
-      const name = placeEl.textContent
-      const place = new Place()
-      namedPlace = {name, place}
-      placeEl.remove()
+      namedPlace = this.getPlace(placeEl)
+      const toRemove = ["", " À ", " A ", ", "]
+      Array.from(row.childNodes).forEach(childNode => {
+        if (childNode.nodeType === 3 && toRemove.includes(childNode.nodeValue)) {
+          childNode.remove()
+        }
+      })
     }
-    const description = row.textContent.trim().replaceAll("\n", "").replaceAll(/  /g, " ")
-    return {
-      url,
-      place: namedPlace,
-      time,
-      description
+    const sources = this.getSources(row)
+    const description = this.getDescription(row)
+    return {url, place: namedPlace, time: timeContext, description, sources}
+  }
+
+  protected getSources(row: HTMLElement): Source[] {
+    const sources: Source[] = []
+    const sourceIds = row.querySelectorAll(".source-id")
+    for (const sourceId of sourceIds) {
+      const sourceContent = sourceId.querySelector(".source-contents")
+      const title = this.getDescription(sourceContent)
+      sourceId.remove()
+      sources.push(new Source(title))
     }
+    return sources
+  }
+
+  protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
+    const result = TimeReplacer.parseDateTime(timeEl.dateTime)
+    if (result) {
+      const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = result
+      time.setYear(parseInt(yearStr, 10))
+      if (monthStr) {
+        time.setMonth(parseInt(monthStr, 10))
+      }
+      if (dayOfMonthStr) {
+        time.setDayOfMonth(parseInt(dayOfMonthStr, 10))
+      }
+      if (hour) {
+        time.setHour(parseInt(hour, 10))
+      }
+      if (minutes) {
+        time.setMinutes(parseInt(minutes, 10))
+      }
+      if (timeZone) {
+        time.setTimeZone(timeZone)
+      }
+    }
+  }
+
+  protected getPlace(placeEl: HTMLElement): NamedPlace {
+    const name = placeEl.textContent
+    const place = new Place()
+    placeEl.remove()
+    return {name, place}
+  }
+
+  protected getDescription(el: HTMLElement): string {
+    const notes = el.querySelectorAll(".note-id")
+    for (const note of notes) {
+      const noteContents = note.querySelector(".note-contents")
+      note.replaceWith(` (${noteContents.textContent})`)
+    }
+    return el.textContent.trim().replaceAll("\n", "").replace(/\s{2,}/g, " ").replaceAll(" .", ".")
   }
 
   protected queryUrl(year: number, month: number, day: number): string {

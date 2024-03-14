@@ -12,7 +12,7 @@ export const rr0Mapper = new RR0CaseSummaryMapper(cityService, rr0Datasource.bas
 export const rr0Mapping = {datasource: rr0Datasource, mapper: rr0Mapper}
 
 export const rr0SortComparator
-  = (c1: RR0CaseSummary,
-     c2: RR0CaseSummary) => c1.time < c2.time ? -1 : c1.time > c2.time ? 1 : 0
+  = (c1: RR0CaseSummary, c2: RR0CaseSummary) => !c1.time || c2.time && c1.time.isBefore(
+  c2.time) ? -1 : !c2.time || c1.time.isAfter(c2.time) ? 1 : 0
 
 export const rr0TimeAccessor = (c: RR0CaseSummary) => c.time

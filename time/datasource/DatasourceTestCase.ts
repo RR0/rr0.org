@@ -3,6 +3,7 @@ import { RR0CaseRenderer } from "../RR0CaseRenderer"
 import { RR0CaseMapping } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
+import { TimeTextBuilder } from "../TimeTextBuilder"
 
 export class DatasourceTestCase<S> {
 
@@ -25,18 +26,22 @@ export class DatasourceTestCase<S> {
   checkCaseHTML(context: HtmlRR0SsgContext, nativeCase: S, item: HTMLLIElement, dataDate: Date) {
     const datasource = this.mapping.datasource
     const expected = this.mapping.mapper.map(context, nativeCase, dataDate)
-    const nativeTime = this.getTime(nativeCase)
-    const dayOfMonth = nativeTime.getDayOfMonth()
-    const dateStr = `${nativeTime.getYear()}-${String(nativeTime.getMonth()).padStart(2, "0")}`
-      + (dayOfMonth ? "-" + String(dayOfMonth).padStart(2, "0") : "")
-    const hour = nativeTime.getHour()
-    const timeStr = hour ? " " + String(hour).padStart(2, "0") + ":"
-      + String(nativeTime.getMinutes()).padStart(2, "0") : ""
+    const time = this.getTime(nativeCase)
+    const caseContext = context.clone()
+    Object.assign(caseContext, {time})
+    const timeStr = TimeTextBuilder.build(caseContext)
     const caseNumber = nativeCase.caseNumber
-    expect(item.innerHTML).toBe(
-      `<time>${dateStr}${timeStr}</time> À <span class="place">${expected.place.name}</span>, ${expected.description} <span class="source">${datasource.author}: <a href="${nativeCase.url.href.replaceAll(
+    const placeStr = expected.place ? ` À <span class="place">${expected.place.name}</span>` : ""
+    let sources = expected.sources
+    if (sources?.length > 0) {
+      const source = sources[0]
+      const publicationStr = source.publication ? `, ${source.publication.time}` : ""
+      const sourceStr = ` <span class="source">${datasource.author}: <a href="${nativeCase.url.href.replaceAll(
         "&",
-        "&amp;")}">cas n°&nbsp;${caseNumber}</a>, <i>${datasource.copyright}</i>, ${expected.sources[0].publication.time}</span>`)
+        "&amp;")}">cas n°&nbsp;${caseNumber}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
+      expect(item.innerHTML).toBe(
+        `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}`)
+    }
   }
 
   async testRender(context: HtmlRR0SsgContext) {

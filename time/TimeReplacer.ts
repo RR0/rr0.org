@@ -21,6 +21,47 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   constructor(protected timeFiles: string[]) {
   }
 
+  static parseDateTime(timeStr: string): [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] {
+    const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
+    if (dateTimeValues && dateTimeValues[0]) {
+      return dateTimeValues.slice(1)
+    }
+    return undefined
+  }
+
+  static replaceElement(
+    context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[], previousContext?: RR0SsgContext
+  ): HTMLElement {
+    let replacement: HTMLElement | undefined
+    const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
+    let title = TimeTextBuilder.build(context)
+    if (approximate) {
+      title = context.messages.context.time.approximate(title)
+    }
+    let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
+    if (text) {
+      if (approximate) {
+        text = context.messages.context.time.approximate(text)
+      }
+    } else {
+      text = title
+    }
+    const currentFileName = context.inputFile.name
+    const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
+    const url = TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles)
+    if (url && url !== dirName) {
+      const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
+      a.href = UrlUtil.absolute(url)
+    } else {
+      replacement = context.outputFile.document.createElement("time")
+    }
+    if (text != title) {
+      replacement.title = title
+    }
+    replacement.textContent = text
+    return replacement
+  }
+
   valueReplacement(context: HtmlRR0SsgContext, timeStr: string,
                    previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
     let replacement = undefined
@@ -29,9 +70,8 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     if (approximate) {
       timeStr = timeStr.substring(1)
     }
-    const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
-    if (dateTimeValues && dateTimeValues[0]) {
-      const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
+    const result = [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = parseDateTime(parseDateTime)
+    if (result) {
       replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes,
         timeZone, approximate)
     } else {
@@ -47,39 +87,6 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
         replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr, approximate)
       }
     }
-    return replacement
-  }
-
-  static replaceElement(
-    context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[], previousContext?: RR0SsgContext
-  ): HTMLElement {
-    let replacement: HTMLElement | undefined
-    const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
-    const url = TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles)
-    let title = TimeTextBuilder.build(context)
-    if (approximate) {
-      title = context.messages.context.time.approximate(title)
-    }
-    let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
-    if (text) {
-      if (approximate) {
-        text = context.messages.context.time.approximate(text)
-      }
-    } else {
-      text = title
-    }
-    const currentFileName = context.inputFile.name
-    const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
-    if (url && url !== dirName) {
-      const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
-      a.href = UrlUtil.absolute(url)
-    } else {
-      replacement = context.outputFile.document.createElement("time")
-    }
-    if (text != title) {
-      replacement.title = title
-    }
-    replacement.textContent = text
     return replacement
   }
 

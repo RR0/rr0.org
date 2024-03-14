@@ -1,6 +1,6 @@
-import { Place } from "../place/Place"
-import { TimeContext } from "./TimeContext"
-import { Source } from "../source/Source"
+import { Place } from "../../../place/Place"
+import { TimeContext } from "../../TimeContext"
+import { Source } from "../../../source/Source"
 
 export type NamedPlace = {
   readonly place: Place
@@ -9,7 +9,7 @@ export type NamedPlace = {
 
 export type RR0CaseSummary = {
   readonly time: TimeContext
-  readonly place: NamedPlace
+  readonly place?: NamedPlace
   readonly description: string
   readonly sources: Source[]
 }

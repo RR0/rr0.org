@@ -1,6 +1,6 @@
-import { TimeTextBuilder } from './TimeTextBuilder';
-import { TimeContext } from './TimeContext';
-import { RR0SsgContext, RR0SsgContextImpl } from '../RR0SsgContext';
+import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeContext } from "./TimeContext"
+import { RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
 
 export class RelativeTimeTextBuilder {
 
@@ -158,6 +158,7 @@ export class RelativeTimeTextBuilder {
         const dayOfMonth = defaultContext.time.getDayOfMonth()
         if (dayOfMonth && shouldSetDay()) {
           defaultContext.time.setMonth(newContext.time.getMonth() || previousTime.getMonth(), false)  // give month
+          defaultContext.time.setYear(newContext.time.getYear() || previousTime.getYear(), false)  // give year
           // context for the day but won't
           print = false
         }

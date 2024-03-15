@@ -6,7 +6,7 @@ import { RR0Datasource } from "./RR0Datasource"
 import { TimeContext } from "../../TimeContext"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
-import { Source } from "../../../source/Source"
+import { Publication, Source } from "../../../source/Source"
 import { TimeReplacer } from "../../TimeReplacer"
 
 export class RR0HttpDatasource extends RR0Datasource {
@@ -46,7 +46,7 @@ export class RR0HttpDatasource extends RR0Datasource {
   }
 
   getFromRow(context: RR0SsgContext, r: Element): RR0CaseSummary {
-    const row = r.cloneNode(true)
+    const row = r.cloneNode(true) as Element
     const caseLink = context.inputFile.name
     const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
@@ -73,14 +73,18 @@ export class RR0HttpDatasource extends RR0Datasource {
     return {url, place: namedPlace, time: timeContext, description, sources}
   }
 
-  protected getSources(row: HTMLElement): Source[] {
+  protected getSources(row: Element): Source[] {
     const sources: Source[] = []
     const sourceIds = row.querySelectorAll(".source-id")
     for (const sourceId of sourceIds) {
       const sourceContent = sourceId.querySelector(".source-contents")
       const title = this.getDescription(sourceContent)
       sourceId.remove()
-      sources.push(new Source(title, this.authors))
+      const publication: Publication = {
+        publisher: this.copyright,
+        time: ""
+      }
+      sources.push(new Source(title, this.authors, publication))
     }
     return sources
   }
@@ -88,7 +92,7 @@ export class RR0HttpDatasource extends RR0Datasource {
   protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
     const result = TimeReplacer.parseDateTime(timeEl.dateTime)
     if (result) {
-      const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = result
+      const {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
       time.setYear(parseInt(yearStr, 10))
       if (monthStr) {
         time.setMonth(parseInt(monthStr, 10))
@@ -108,7 +112,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     }
   }
 
-  protected getPlace(placeEl: HTMLElement): NamedPlace {
+  protected getPlace(placeEl: Element): NamedPlace {
     const name = placeEl.textContent
     const place = new Place()
     placeEl.remove()

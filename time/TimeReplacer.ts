@@ -6,6 +6,15 @@ import { UrlUtil } from "../util/url/UrlUtil"
 import { DomReplacement } from "./DomReplacement"
 import { ObjectUtils } from "@rr0/common"
 
+export type TimeParseResult = {
+  yearStr: string
+  monthStr: string
+  dayOfMonthStr: string
+  hour: string
+  minutes: string
+  timeZone: string
+}
+
 /**
  * Replaces a <time> tag.
  */
@@ -21,10 +30,11 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   constructor(protected timeFiles: string[]) {
   }
 
-  static parseDateTime(timeStr: string): [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] {
+  static parseDateTime(timeStr: string): TimeParseResult {
     const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
     if (dateTimeValues && dateTimeValues[0]) {
-      return dateTimeValues.slice(1)
+      const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
+      return {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone}
     }
     return undefined
   }
@@ -70,8 +80,9 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     if (approximate) {
       timeStr = timeStr.substring(1)
     }
-    const result = [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = parseDateTime(parseDateTime)
-    if (result) {
+    const parsed = TimeReplacer.parseDateTime(timeStr)
+    if (parsed) {
+      const {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = parsed
       replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes,
         timeZone, approximate)
     } else {

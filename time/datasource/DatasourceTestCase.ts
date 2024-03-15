@@ -36,7 +36,8 @@ export class DatasourceTestCase<S> {
     if (sources?.length > 0) {
       const source = sources[0]
       const publicationStr = source.publication ? `, ${source.publication.time}` : ""
-      const sourceStr = ` <span class="source">${datasource.author}: <a href="${nativeCase.url.href.replaceAll(
+      const authorStr = datasource.authors.join(", ")
+      const sourceStr = ` <span class="source">${authorStr}: <a href="${nativeCase.url.href.replaceAll(
         "&",
         "&amp;")}">cas n°&nbsp;${caseNumber}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
       expect(item.innerHTML).toBe(

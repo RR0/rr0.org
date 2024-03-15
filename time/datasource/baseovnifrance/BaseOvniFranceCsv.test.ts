@@ -49,7 +49,7 @@ ${case1.caseNumber},http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&
     const data = fs.readFileSync("time/1/9/7/7/03/05_03_24_1709676761.txt", {encoding: "latin1"})
     const csvMapper = new BaseOvniFranceCaseSummaryMapper(baseOvniFranceDatasource.baseUrl,
       baseOvniFranceDatasource.searchPath,
-      baseOvniFranceDatasource.author)
+      baseOvniFranceDatasource.authors)
     const cases = exportMapper.read(context, data)
       .map(csvCase => csvMapper.map(context, csvCase, dataDate))
       .sort(baseOvniFranceSortComparator)

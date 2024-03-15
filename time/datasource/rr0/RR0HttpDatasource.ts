@@ -80,7 +80,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       const sourceContent = sourceId.querySelector(".source-contents")
       const title = this.getDescription(sourceContent)
       sourceId.remove()
-      sources.push(new Source(title))
+      sources.push(new Source(title, this.authors))
     }
     return sources
   }
@@ -115,7 +115,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     return {name, place}
   }
 
-  protected getDescription(el: HTMLElement): string {
+  protected getDescription(el: Element): string {
     const notes = el.querySelectorAll(".note-id")
     for (const note of notes) {
       const noteContents = note.querySelector(".note-contents")

@@ -1,7 +1,10 @@
 import { UrecatCase } from "./UrecatCase"
 import { CaseSource } from "../CaseSource"
+import { RR0SsgContext } from "../../../RR0SsgContext"
 
 export abstract class UrecatDatasource implements CaseSource<UrecatCase> {
-  readonly author = "Gross, Patrick"
+  readonly authors = ["Gross, Patrick"]
   readonly copyright = "URECAT (Les ovnis vus de près)"
+
+  abstract getAll(context: RR0SsgContext): Promise<UrecatCase[]>
 }

@@ -14,12 +14,12 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
 
   constructor(
     protected depService: DepartmentService, protected cityService: CityService,
-    readonly baseUrl: string, readonly copyright: string, readonly author: string
+    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]
   ) {
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0CaseSummary {
-    const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, [this.author],
+    const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, this.authors,
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const depCode = sourceCase.depCode
     const dep = this.depService.get(depCode, undefined)

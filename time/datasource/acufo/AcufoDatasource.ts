@@ -15,7 +15,7 @@ interface QueryParameters {
 }
 
 export class AcufoDatasource extends HttpSource implements CaseSource<AcufoCase> {
-  readonly author = "Gross, Patrick"
+  readonly authors = ["Gross, Patrick"]
   readonly copyright = "ACUFO/ALSACAT (Les ovnis vus de près)"
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "alsacat") {

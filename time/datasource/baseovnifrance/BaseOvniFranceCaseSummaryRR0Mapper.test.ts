@@ -13,7 +13,7 @@ import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/chambon/Ch
 
 function expectedSource(datasource: BaseOvniFranceHttpDatasource, dataDate: Date, caseNumber: number) {
   const url = new URL(datasource.searchPath + "?typlist=20&page=0&numobs=" + caseNumber, datasource.baseUrl)
-  return new OnlineSource(url, "cas n° " + caseNumber, [datasource.author],
+  return new OnlineSource(url, "cas n° " + caseNumber, datasource.authors,
     {publisher: datasource.copyright, time: dataDate.toLocaleString()})
 }
 

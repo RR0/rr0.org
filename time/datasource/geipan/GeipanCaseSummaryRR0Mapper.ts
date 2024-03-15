@@ -17,7 +17,7 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
   constructor(
     protected cityService: CityService, protected departmentService: DepartmentService,
     protected regionService: RegionService,
-    readonly baseUrl: string, readonly copyright: string, readonly author: string
+    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]
   ) {
   }
 
@@ -47,7 +47,7 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
 
   map(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
-      [this.author],
+      this.authors,
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const place = this.getPlace(context, sourceCase)
     return {

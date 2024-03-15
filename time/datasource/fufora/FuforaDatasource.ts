@@ -1,7 +1,10 @@
 import { FuforaCaseSummary } from "./FuforaCaseSummary"
 import { CaseSource } from "../CaseSource"
+import { RR0SsgContext } from "../../../RR0SsgContext"
 
 export abstract class FuforaDatasource implements CaseSource<FuforaCaseSummary> {
-  readonly author = "FUFORA"
+  readonly authors = ["FUFORA"]
   readonly copyright = "Base de données observationnelle"
+
+  abstract getAll(context: RR0SsgContext): Promise<FuforaCaseSummary[]>
 }

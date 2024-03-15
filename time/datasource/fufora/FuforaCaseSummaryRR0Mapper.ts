@@ -13,12 +13,12 @@ export class FuforaCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
 
   constructor(
     protected cityService: CityService,
-    readonly baseUrl: string, readonly copyright: string, readonly author: string
+    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]
   ) {
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: FuforaCaseSummary, sourceTime: Date): RR0CaseSummary {
-    const source = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, [this.author],
+    const source = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber, this.authors,
       {publisher: this.copyright, time: sourceTime.toLocaleString()})
     const cityName = sourceCase.city || sourceCase.sightingPlace
     const city = this.cityService.find(context, cityName, undefined)

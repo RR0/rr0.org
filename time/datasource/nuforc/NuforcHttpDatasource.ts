@@ -9,6 +9,7 @@ import assert from "assert"
 import { TimeContext } from "../../TimeContext"
 import { NuforcCountry } from "./NuforcCountry"
 import { NuforcShape } from "./NuforcShape"
+import { NuforcDatasource } from "./NuforcDatasource"
 
 interface QueryParameters {
   id: string

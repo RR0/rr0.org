@@ -6,7 +6,6 @@ import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
-import { CaseSource } from "../CaseSource"
 import {
   GeipanCaseClassification,
   GeipanCaseClassification_calc,
@@ -38,7 +37,7 @@ interface QueryParameters {
   field_agregation_index_value: string
 }
 
-export class GeipanHttpDatasource extends GeipanDatasource implements CaseSource<GeipanCaseSummary> {
+export class GeipanHttpDatasource extends GeipanDatasource {
   protected static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
   protected readonly http = new HttpSource()
 

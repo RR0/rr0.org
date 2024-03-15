@@ -39,8 +39,10 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
         if (this.save) {
           const csvContents = new CsvMapper().reduce(context, sourceCases, fetchTime)
           const specialChars = /[ -?!&*#.:;=°',]/g
+          const authorsStr = datasource.authors.map(
+            author => StringUtil.removeAccents(author).replace(specialChars, "")).join("-")
           const fileName = path.join(path.dirname(context.inputFile.name),
-            StringUtil.removeAccents(datasource.author).replace(specialChars, "") + "_"
+            authorsStr + "_"
             + StringUtil.removeAccents(datasource.copyright).replace(specialChars, "") + ".csv")
           fs.writeFileSync(fileName, csvContents, {encoding: "utf-8"})
         }

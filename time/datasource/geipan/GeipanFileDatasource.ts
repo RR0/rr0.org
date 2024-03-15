@@ -36,7 +36,7 @@ export class GeipanFileDatasource extends GeipanDatasource implements CaseSource
     const exportMapper = new CsvMapper<GeipanCase>(";")
     const file = SsgFile.read(context, this.fileName, "latin1")
     const csvMapper = new GeipanCaseSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,
-      geipanHttpDatasource.author)
+      geipanHttpDatasource.authors)
     return exportMapper.read(context, file.contents).map(csvCase => csvMapper.map(context, csvCase, file.lastModified))
   }
 }

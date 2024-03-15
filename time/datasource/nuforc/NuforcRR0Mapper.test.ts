@@ -16,7 +16,7 @@ import { bonneyLake } from "../../../org/us/region/wa/pierce/bonneylake/BonneyLa
 
 function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: number) {
   const url = new URL("sighting/?id=" + caseNumber, datasource.baseUrl)
-  return new OnlineSource(url, "cas n° " + caseNumber, [datasource.author],
+  return new OnlineSource(url, "cas n° " + caseNumber, datasource.authors,
     {publisher: datasource.copyright, time: dataDate.toLocaleString()})
 }
 

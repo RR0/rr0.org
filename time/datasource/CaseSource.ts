@@ -5,11 +5,12 @@ import { RR0SsgContext } from "../../RR0SsgContext"
  */
 export interface CaseSource<S> {
   /**
-   * @param author The datasource author to mention as a source.
-   * @param copyright The datasource name/copyright to mention as a source.
-   * @protected
+   * @member {string[]} authors The datasource authors to mention as a source.
    */
-  readonly author: string
+  readonly authors: string[]
+  /**
+   * @member {string} authors The datasource name to mention as a source.
+   */
   readonly copyright: string
 
   /**

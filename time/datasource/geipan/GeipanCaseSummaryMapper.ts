@@ -13,7 +13,7 @@ import { CountryCode } from "../../../org/country/CountryCode"
  */
 export class GeipanCaseSummaryMapper implements CaseMapper<RR0SsgContext, GeipanCase, GeipanCaseSummary> {
 
-  constructor(readonly baseUrl: string, readonly copyright: string, readonly author: string) {
+  constructor(readonly baseUrl: string, readonly copyright: string, readonly authors: string[]) {
   }
 
   map(context: RR0SsgContext, csvCase: GeipanCase, sourceTime: Date): GeipanCaseSummary {

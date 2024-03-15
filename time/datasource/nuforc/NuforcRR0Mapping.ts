@@ -6,8 +6,8 @@ import { NuforcCaseSummary } from "./NuforcCaseSummary"
 
 export const nuforcDatasource = new NuforcHttpDatasource()
 
-export const nuforcRR0Mapper = new NuforcRR0Mapper(cityService, countryService, nuforcDatasource.baseUrl,
-  nuforcDatasource.copyright, nuforcDatasource.author)
+export const nuforcRR0Mapper = new NuforcRR0Mapper(cityService, countryService,
+  nuforcDatasource.baseUrl, nuforcDatasource.copyright, nuforcDatasource.authors)
 
 export const nuforcRR0Mapping = {datasource: nuforcDatasource, mapper: nuforcRR0Mapper}
 

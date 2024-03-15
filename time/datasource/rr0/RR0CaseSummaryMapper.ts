@@ -1,12 +1,10 @@
 import { CaseMapper } from "../CaseMapper"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { RR0CaseSummary } from "../../RR0CaseSummary"
+import { RR0CaseSummary } from "./RR0CaseSummary"
 
 export class RR0CaseSummaryMapper implements CaseMapper<HtmlRR0SsgContext, RR0CaseSummary, RR0CaseSummary> {
 
-  constructor(
-    readonly baseUrl: string, readonly copyright: string, readonly author: string
-  ) {
+  constructor(readonly baseUrl: string, readonly copyright: string, readonly authors: string[]) {
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: RR0CaseSummary, sourceTime: Date): RR0CaseSummary {

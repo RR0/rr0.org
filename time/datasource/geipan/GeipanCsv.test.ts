@@ -47,7 +47,7 @@ describe("GEIPAN", () => {
     const exportMapper = new CsvMapper<GeipanCase>(";")
     const data = fs.readFileSync("time/datasource/geipan/export_cas_pub_20210219111412.csv", {encoding: "latin1"})
     const csvMapper = new GeipanCaseSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,
-      geipanHttpDatasource.author)
+      geipanHttpDatasource.authors)
     const cases = exportMapper.read(context, data).map(csvCase => csvMapper.map(context, csvCase, dataDate))
     expect(cases.length).toEqual(2768)
     const expected1 = geipanTestCaseSummaries[0]

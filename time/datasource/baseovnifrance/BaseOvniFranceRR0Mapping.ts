@@ -9,7 +9,7 @@ export const baseOvniFranceDatasource = new BaseOvniFranceHttpDatasource()
 
 export const baseOvniFranceRR0Mapper = new BaseOvniFranceCaseSummaryRR0Mapper(
   departmentService, cityService,
-  baseOvniFranceDatasource.baseUrl, baseOvniFranceDatasource.copyright, baseOvniFranceDatasource.author
+  baseOvniFranceDatasource.baseUrl, baseOvniFranceDatasource.copyright, baseOvniFranceDatasource.authors
 )
 
 export const baseOvniFranceRR0Mapping: RR0CaseMapping<BaseOvniFranceCaseSummary> = {

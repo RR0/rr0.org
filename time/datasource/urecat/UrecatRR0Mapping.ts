@@ -7,7 +7,7 @@ import { UrecatCase } from "./UrecatCase"
 export const urecatDatasource = new UrecatHttpDatasource()
 
 export const urecatRR0Mapper = new UrecatRR0Mapper(cityService, countryService, urecatDatasource.baseUrl,
-  urecatDatasource.copyright, urecatDatasource.author)
+  urecatDatasource.copyright, urecatDatasource.authors)
 
 export const urecatRR0Mapping = {datasource: urecatDatasource, mapper: urecatRR0Mapper}
 

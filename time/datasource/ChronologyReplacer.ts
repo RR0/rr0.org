@@ -1,12 +1,13 @@
 import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { RR0CaseRenderer } from "../RR0CaseRenderer"
-import { RR0CaseSummary } from "../RR0CaseSummary"
 import { CaseMapping } from "./CaseMapping"
 import { CsvMapper } from "./CsvMapper"
 import fs from "fs"
 import path from "path"
 import { StringUtil } from "../../util/string/StringUtil"
+import { RR0HttpDatasource } from "./rr0/RR0HttpDatasource"
+import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 
 export interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
 }
@@ -20,7 +21,6 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {
-    const existingItems = element.children
     element.classList.add("indexed")
     // TODO: Merge with existing those items
     if (this.save || this.merge) {
@@ -29,7 +29,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     return element
   }
 
-  private async aggregate(context: HtmlRR0SsgContext, element: HTMLUListElement) {
+  protected async aggregate(context: HtmlRR0SsgContext, element: HTMLUListElement) {
     for (const mapping of this.mappings) {
       const datasource = mapping.datasource
       const datasourceKey = context.inputFile.name + "$" + datasource.copyright
@@ -47,6 +47,9 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
           fs.writeFileSync(fileName, csvContents, {encoding: "utf-8"})
         }
         if (this.merge) {
+          const existingItems = Array.from(element.children)
+          const rr0Datasource = new RR0HttpDatasource()
+          rr0Datasource.getFromRows(context, existingItems)
           const targetCases = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
           const items = targetCases.map(c => this.renderer.render(context, c))
           for (const item of items) {

@@ -16,9 +16,3 @@ export const baseOvniFranceRR0Mapping: RR0CaseMapping<BaseOvniFranceCaseSummary>
   datasource: baseOvniFranceDatasource,
   mapper: baseOvniFranceRR0Mapper
 }
-
-export const baseOvniFranceSortComparator
-  = (c1: BaseOvniFranceCaseSummary,
-     c2: BaseOvniFranceCaseSummary) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
-
-export const baseOvniFranceTimeAccessor = (c: BaseOvniFranceCaseSummary) => c.dateTime

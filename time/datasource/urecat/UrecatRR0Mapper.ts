@@ -21,9 +21,10 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0CaseSummary {
-    const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
-      this.authors,
-      {publisher: this.copyright, time: sourceTime.toLocaleString()})
+    const caseSource: OnlineSource = {
+      url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
+      publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+    }
     const location = sourceCase.basicInfo.base.location
     const sourceCountry = location.country
     assert.ok(sourceCountry, `URECAT country is ${sourceCountry}`)

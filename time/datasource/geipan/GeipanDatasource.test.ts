@@ -2,15 +2,27 @@ import { beforeEach, describe, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { geipanRR0Mapping, geipanSortComparator, geipanTimeAccessor } from "./GeipanRR0Mapping"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { geipanTestCaseSummaries } from "./GeipanTestCases"
+import { RR0CaseMapping } from "../ChronologyReplacer"
+import { TimeContext } from "../../TimeContext"
+import { geipanRR0Mapping } from "./GeipanRR0Mapping"
 
 describe("GeipanCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<GeipanCaseSummary>(geipanRR0Mapping, geipanTestCaseSummaries,
-    geipanSortComparator,
-    geipanTimeAccessor)
+  const testCase = new class extends DatasourceTestCase<GeipanCaseSummary> {
+    constructor(mapping: RR0CaseMapping<GeipanCaseSummary>, sourceCases: GeipanCaseSummary[]) {
+      super(mapping, sourceCases)
+    }
+
+    protected getTime(c: GeipanCaseSummary): TimeContext {
+      return c.dateTime
+    }
+
+    protected sortComparator(c1: GeipanCaseSummary, c2: GeipanCaseSummary): number {
+      return c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+    }
+  }(geipanRR0Mapping, geipanTestCaseSummaries)
 
   let context: HtmlRR0SsgContext
 

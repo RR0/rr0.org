@@ -3,8 +3,7 @@ import { NuforcHttpDatasource } from "./NuforcHttpDatasource"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
-import { OnlineSource } from "../../../source/OnlineSource"
-import { nuforcDatasource, nuforcRR0Mapper, nuforcSortComparator } from "./NuforcRR0Mapping"
+import { nuforcDatasource, nuforcRR0Mapper } from "./NuforcRR0Mapping"
 import { nuforcTestCases } from "./NuforcTestCases"
 import { slocomb } from "../../../org/us/region/al/geneva/slocomb/Slocomb"
 import { castlegar } from "../../../org/ca/region/bc/rdck/Castlegar/Castlegar"
@@ -13,11 +12,14 @@ import { campPendleton } from "../../../org/us/region/ca/sandiego/camppendleton/
 import { stPetersburg } from "../../../org/us/region/fl/pinellas/stpetersburg/StPetersburg"
 import { monessen } from "../../../org/us/region/pa/westmoreland/monessen/Monessen"
 import { bonneyLake } from "../../../org/us/region/wa/pierce/bonneylake/BonneyLake"
+import { OnlineSource } from "../../../source/OnlineSource"
 
-function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: number) {
+function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: number): OnlineSource {
   const url = new URL("sighting/?id=" + caseNumber, datasource.baseUrl)
-  return new OnlineSource(url, "cas n° " + caseNumber, datasource.authors,
-    {publisher: datasource.copyright, time: dataDate.toLocaleString()})
+  return {
+    url, title: "cas n° " + caseNumber, authors: datasource.authors,
+    publication: {publisher: datasource.copyright, time: dataDate.toLocaleString()}
+  }
 }
 
 describe("NuforcRR0Mapper", () => {
@@ -36,7 +38,8 @@ describe("NuforcRR0Mapper", () => {
 
   test("fetch and map as RR0 cases", async () => {
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
-    const testCases = nuforcTestCases.sort(nuforcSortComparator)
+    const testCases = nuforcTestCases.sort(
+      (c1, c2) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0)
     const mapped = testCases.map(sourceCase => nuforcRR0Mapper.map(context, sourceCase, dataDate))
     const nativeCase1 = testCases[0]
     const nativeCase1Time = nativeCase1.dateTime

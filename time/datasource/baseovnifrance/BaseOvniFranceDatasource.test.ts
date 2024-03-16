@@ -1,20 +1,29 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import {
-  baseOvniFranceRR0Mapping,
-  baseOvniFranceSortComparator,
-  baseOvniFranceTimeAccessor
-} from "./BaseOvniFranceRR0Mapping"
+import { RR0CaseMapping } from "../ChronologyReplacer"
+import { TimeContext } from "../../TimeContext"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
+import { baseOvniFranceRR0Mapping } from "./BaseOvniFranceRR0Mapping"
 
 describe("BaseOvniFranceCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<BaseOvniFranceCaseSummary>(
-    baseOvniFranceRR0Mapping, baseOvniFranceTestCases, baseOvniFranceSortComparator, baseOvniFranceTimeAccessor
-  )
+  const testCase = new class extends DatasourceTestCase<BaseOvniFranceCaseSummary> {
+    constructor(mapping: RR0CaseMapping<BaseOvniFranceCaseSummary>, sourceCases: BaseOvniFranceCaseSummary[]) {
+      super(mapping, sourceCases)
+    }
+
+    protected getTime(c: BaseOvniFranceCaseSummary): TimeContext {
+      return c.dateTime
+    }
+
+    protected sortComparator(c1: BaseOvniFranceCaseSummary, c2: BaseOvniFranceCaseSummary): number {
+      return c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+    }
+  }(baseOvniFranceRR0Mapping, baseOvniFranceTestCases)
+
   let context: HtmlRR0SsgContext
 
   beforeEach(() => {

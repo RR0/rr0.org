@@ -12,5 +12,5 @@ export type RR0CaseSummary = {
   readonly place?: NamedPlace
   readonly description: string
   readonly sources: Source[]
-  readonly url: URL
+  readonly url?: URL
 }

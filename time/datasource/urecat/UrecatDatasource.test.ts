@@ -2,15 +2,28 @@ import { beforeEach, describe, expect, test } from "@javarome/testscript"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { UrecatCase } from "./UrecatCase"
-import { urecatRR0Mapping, urecatSortComparator, urecatTimeAccessor } from "./UrecatRR0Mapping"
+import { urecatRR0Mapping } from "./UrecatRR0Mapping"
 import { urecatTestCases } from "./UrecatTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
+import { RR0CaseMapping } from "../ChronologyReplacer"
+import { TimeContext } from "../../TimeContext"
 
 describe("UrecatCaseSource", () => {
 
-  const testCase = new DatasourceTestCase<UrecatCase>(urecatRR0Mapping, urecatTestCases, urecatSortComparator,
-    urecatTimeAccessor)
+  const testCase = new class extends DatasourceTestCase<UrecatCase> {
+    constructor(mapping: RR0CaseMapping<UrecatCase>, sourceCases: UrecatCase[]) {
+      super(mapping, sourceCases)
+    }
+
+    protected getTime(c: UrecatCase): TimeContext {
+      return c.basicInfo.base.sightingDate
+    }
+
+    protected sortComparator(c1: UrecatCase, c2: UrecatCase): number {
+      return c1.url < c2.url ? -1 : c1.url > c2.url ? 1 : 0
+    }
+  }(urecatRR0Mapping, urecatTestCases)
 
   let context: HtmlRR0SsgContext
 

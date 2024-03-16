@@ -5,22 +5,9 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
 
-export class DatasourceTestCase<S> {
+export abstract class DatasourceTestCase<S> {
 
-  constructor(
-    readonly mapping: RR0CaseMapping<S>,
-    readonly sourceCases: S[],
-    readonly sortComparator: (c1: S, c2: S) => number,
-    readonly getTime: (c: S) => TimeContext
-  ) {
-  }
-
-  async testFetch(context: RR0SsgContext) {
-    const fetched = await this.mapping.datasource.getAll(context)
-    const fetchSlice = fetched.slice(0, this.sourceCases.length)
-    const sortedFetch = fetchSlice.sort(this.sortComparator)
-    const sortedTestCases = this.sourceCases.sort(this.sortComparator)
-    expect(sortedFetch).toEqual(sortedTestCases)
+  protected constructor(readonly mapping: RR0CaseMapping<S>, readonly sourceCases: S[]) {
   }
 
   checkCaseHTML(context: HtmlRR0SsgContext, nativeCase: S, item: HTMLLIElement, dataDate: Date) {
@@ -30,19 +17,35 @@ export class DatasourceTestCase<S> {
     const caseContext = context.clone()
     Object.assign(caseContext, {time})
     const timeStr = TimeTextBuilder.build(caseContext)
-    const caseNumber = nativeCase.caseNumber
     const placeStr = expected.place ? ` À <span class="place">${expected.place.name}</span>` : ""
     let sources = expected.sources
     if (sources?.length > 0) {
       const source = sources[0]
       const publicationStr = source.publication ? `, ${source.publication.time}` : ""
       const authorStr = datasource.authors.join(", ")
+      const title = this.expectedSourceTitle(caseContext, nativeCase)
       const sourceStr = ` <span class="source">${authorStr}: <a href="${nativeCase.url.href.replaceAll(
         "&",
-        "&amp;")}">cas n°&nbsp;${caseNumber}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
+        "&amp;")}">${title}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
       expect(item.innerHTML).toBe(
         `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}`)
     }
+  }
+
+  protected abstract sortComparator(c1: S, c2: S): number
+
+  async testFetch(context: RR0SsgContext) {
+    const fetched = await this.mapping.datasource.getAll(context)
+    const fetchSlice = fetched.slice(0, this.sourceCases.length)
+    const sortedFetch = fetchSlice.sort(this.sortComparator)
+    const sortedTestCases = this.sourceCases.sort(this.sortComparator)
+    expect(sortedFetch).toEqual(sortedTestCases)
+  }
+
+  protected abstract getTime(c: S): TimeContext
+
+  protected expectedSourceTitle(context: HtmlRR0SsgContext, nativeCase: S): string {
+    return `cas n°&nbsp;${nativeCase.caseNumber}`
   }
 
   async testRender(context: HtmlRR0SsgContext) {

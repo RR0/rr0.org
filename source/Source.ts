@@ -3,11 +3,14 @@ export type Publication = {
   time: string
 }
 
-export class Source {
-  constructor(
-    readonly title: string, readonly authors: string[], readonly publication: Publication,
-    readonly subTitle: string = undefined, readonly series: string = undefined,
-    readonly summary: string = undefined, readonly dirName: string = undefined
-  ) {
-  }
+export type Source = {
+  readonly previousSourceRefs?: string[]
+  readonly id?: string
+  readonly title?: string
+  readonly authors?: string[]
+  readonly publication?: Publication
+  readonly subTitle?: string
+  readonly series?: string
+  readonly summary?: string,
+  readonly dirName?: string
 }

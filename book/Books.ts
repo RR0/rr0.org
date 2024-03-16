@@ -74,8 +74,16 @@ export class Books {
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
         const parentDir = TimeUrlBuilder.fromTimeContext(timeContext)
         const bookDir = path.join(parentDir, dirName)
-        const book = new Book(title, authorsNames, result[COLUMN_SUBTITLE], result[COLUMN_SERIES], {time, publisher},
-          bookDir, summary, [], result[COLUMN_ISBN])
+        const book: Book = {
+          title,
+          authors: authorsNames,
+          subTitle: result[COLUMN_SUBTITLE],
+          series: result[COLUMN_SERIES],
+          publication: {time, publisher},
+          dirName: bookDir, summary,
+          variants: [],
+          isbn: result[COLUMN_ISBN]
+        }
         const authorStr = authors?.map(author => author.dirName)
         if (fs.existsSync(bookDir)) {
           logger.log("Book directory", bookDir, "already exists, with authors", authorStr)

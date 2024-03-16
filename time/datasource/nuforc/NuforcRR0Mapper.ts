@@ -82,8 +82,10 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {
-    const caseSource = new OnlineSource(sourceCase.url, "cas n° " + sourceCase.caseNumber,
-      this.authors, {publisher: this.copyright, time: sourceTime.toLocaleString()})
+    const caseSource: OnlineSource = {
+      url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber,
+      authors: this.authors, publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+    }
     assert.ok(sourceCase.country, `NUFORC country code is ${sourceCase.country}`)
     const countryCode = NuforcRR0Mapper.countryMap[sourceCase.country]
     assert.ok(countryCode, `Could not find RR0 country to map from NUFORC code ${countryCode}`)

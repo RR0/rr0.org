@@ -16,11 +16,15 @@ export class RR0CaseRenderer {
     Object.assign(caseContext, {time})
     timeEl.textContent = TimeTextBuilder.build(caseContext)
     item.append(timeEl)
-    item.append(" À ")
-    const placeEl = outDoc.createElement("span")
-    placeEl.className = "place"
-    placeEl.textContent = rr0Case.place?.name || ""
-    item.append(placeEl, ", ", rr0Case.description)
+    const place = rr0Case.place
+    if (place) {
+      item.append(" À ")
+      const placeEl = outDoc.createElement("span")
+      placeEl.className = "place"
+      placeEl.textContent = place?.name || ""
+      item.append(placeEl)
+    }
+    item.append(", ", rr0Case.description)
     rr0Case.sources.forEach(source => {
       const sourceEl = this.thisSourceElement(context, source)
       item.append(" ", sourceEl)
@@ -31,22 +35,28 @@ export class RR0CaseRenderer {
   protected thisSourceElement(context: HtmlRR0SsgContext, source: Source) {
     const sourceEl = context.outputFile.document.createElement("span")
     sourceEl.className = "source"
-    sourceEl.innerHTML = source.authors?.join(" & ") + `: `
+    sourceEl.append(source.authors?.join(" & "), `: `)
     const doc = context.outputFile.document
-    if (source instanceof OnlineSource) {
-      const onlineSource = source as OnlineSource
-      const caseLink = doc.createElement("a") as HTMLAnchorElement
-      caseLink.textContent = source.title
-      caseLink.href = onlineSource.url.href
-      sourceEl.appendChild(caseLink)
-    } else {
-      sourceEl.textContent = source.title
+    const title = source.title
+    if (title) {
+      if ((source as OnlineSource).url) {   // Online source?
+        const onlineSource = source as OnlineSource
+        const caseLink = doc.createElement("a") as HTMLAnchorElement
+        caseLink.textContent = title
+        caseLink.href = onlineSource.url.href
+        sourceEl.appendChild(caseLink)
+      } else {
+        sourceEl.append(title)
+      }
     }
-    const copyright = doc.createElement("i")
     const publication = source.publication
     if (publication) {
+      if (title) {
+        sourceEl.append(", ")
+      }
+      const copyright = doc.createElement("i")
       copyright.textContent = publication.publisher
-      sourceEl.append(", ", copyright, ", ", publication.time)
+      sourceEl.append(copyright, ", ", publication.time)
     }
     return sourceEl
   }

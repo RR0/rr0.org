@@ -1,4 +1,4 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
@@ -6,8 +6,11 @@ import { RR0Datasource } from "./RR0Datasource"
 import { TimeContext } from "../../TimeContext"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
-import { Publication, Source } from "../../../source/Source"
+import { Source } from "../../../source/Source"
 import { TimeReplacer } from "../../TimeReplacer"
+import { OnlineSource } from "../../../source/OnlineSource"
+import { TimeTextBuilder } from "../../TimeTextBuilder"
+import { StringUtil } from "../../../util/string/StringUtil"
 
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()
@@ -16,7 +19,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<RR0CaseSummary[]> {
+  async getAll(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
@@ -31,11 +34,11 @@ export class RR0HttpDatasource extends RR0Datasource {
     }
     const decoder = new TextDecoder(charset)*/
     const rowEls = doc.querySelectorAll("ul.indexed li")
-    return this.getFromRows(context, rowEls)
+    const rows = Array.from(rowEls)
+    return this.getFromRows(context, rows)
   }
 
-  getFromRows(context: RR0SsgContext, rowEls: NodeListOf<Element>): RR0CaseSummary[] {
-    const rows = Array.from(rowEls)
+  getFromRows(context: HtmlRR0SsgContext, rows: Element[]): RR0CaseSummary[] {
     const cases: RR0CaseSummary[] = []
     for (const row of rows) {
       if (row.hasChildNodes()) {
@@ -45,7 +48,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     return cases
   }
 
-  getFromRow(context: RR0SsgContext, r: Element): RR0CaseSummary {
+  getFromRow(context: HtmlRR0SsgContext, r: Element): RR0CaseSummary {
     const row = r.cloneNode(true) as Element
     const caseLink = context.inputFile.name
     const url = new URL(caseLink, this.baseUrl)
@@ -68,24 +71,39 @@ export class RR0HttpDatasource extends RR0Datasource {
         }
       })
     }
-    const sources = this.getSources(row)
+    const sources = this.getSources(itemContext, row)
     const description = this.getDescription(row)
     return {url, place: namedPlace, time: timeContext, description, sources}
   }
 
-  protected getSources(row: Element): Source[] {
+  protected getSources(context: HtmlRR0SsgContext, row: Element): Source[] {
     const sources: Source[] = []
-    const sourceIds = row.querySelectorAll(".source-id")
-    for (const sourceId of sourceIds) {
-      const sourceContent = sourceId.querySelector(".source-contents")
-      const title = this.getDescription(sourceContent)
-      sourceId.remove()
-      const publication: Publication = {
+    const sourceEls = row.querySelectorAll(".source-id")
+    for (const sourceEl of sourceEls) {
+      const id = sourceEl.childNodes[0].textContent
+      const sourceContent = sourceEl.querySelector(".source-contents")
+      let title = this.getDescription(sourceContent)
+      const authorEnd = title.indexOf(":")
+      const authors = title.substring(0, authorEnd).split("&").map(s => s.trim())
+      title = title.substring(authorEnd + 1).trim()
+      sourceEl.remove()
+      const source: Source = {title, id, authors}
+      sources.push(source)
+    }
+    const title = StringUtil.capitalizeFirstLetter(context.inputFile.title || TimeTextBuilder.build(context))
+    const url = new URL(context.inputFile.name, this.baseUrl)
+    url.hash = context.time.toString()
+    const rr0Source: OnlineSource = {
+      url,
+      previousSourceRefs: sources.map(source => source.id),
+      authors: this.authors,
+      title,
+      publication: {
         publisher: this.copyright,
         time: ""
       }
-      sources.push(new Source(title, this.authors, publication))
     }
+    sources.push(rr0Source)
     return sources
   }
 
@@ -114,7 +132,7 @@ export class RR0HttpDatasource extends RR0Datasource {
 
   protected getPlace(placeEl: Element): NamedPlace {
     const name = placeEl.textContent
-    const place = new Place()
+    const place = new Place([])
     placeEl.remove()
     return {name, place}
   }

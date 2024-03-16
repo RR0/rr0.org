@@ -1365,7 +1365,7 @@ dl.bullet dd {
 }
 
 #main-nav a:before {
-  margin-right: 0.4em;
+  margin-right: 0.2em;
 }
 
 #main-nav .start:before {
@@ -1387,6 +1387,7 @@ dl.bullet dd {
 .anchor {
   position: relative;
   top: calc((var(--header-height) + 0.5rem) * -1);
+  cursor: default;
 }
 
 .index-anchor {

@@ -1,6 +1,8 @@
+import { TimeContext } from "../time/TimeContext"
+
 export type Publication = {
   publisher: string
-  time: string
+  time: TimeContext
 }
 
 export type Source = {

@@ -1,0 +1,64 @@
+<!--#include virtual="/header-start.html" -->
+<title>SSH</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Secure SHell</i> : coquille sécurisée.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir des communications sécurisées entre machines sur Internet.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p><a href="/tech/info/soft/reseau/protocole">Protocole</a>.</p>
+  <table>
+    <thead>
+    <tr>
+      <td>SSH</td>
+      <th>Version</th>
+      <th>1</th>
+      <th>2</th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th></th>
+      <th><a href="../Cryptographie.html">Cryptographie</a> à clé publique</th>
+      <td><a href="/org/us/company/RSA.html">RSA</a></td>
+      <td><a href="DSA.html">DSA</a></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p>Une suite SSH consiste typiquement en 2 ou 3 applications :</p>
+  <ul>
+    <li> (toujours) <strong>ssh</strong>, qui établit et accède une session sécurisée interactive (un invite de
+      commandes) sur une machine distante.</li>
+    <li> (souvent) <strong>scp </strong>(<em>Secure CoPy</em>), utilisé pour les transferts sécurisés de fichiers d'un
+      point à un autre.</li>
+    <li> (parfois) <strong>sftp </strong>(<em>Secure FTP</em>), proposant généralement une <a href="../../../IHM.html">IHM</a>
+      similaire aux clients <a href="../../../reseau/protocole/5/FTP.html">FTP</a>, utilisé pour transférer des fichiers
+      de manière sécurisée depuis ou vers une machine distante.</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>préféré aux protocoles <a href="../../../reseau/protocole/5/FTP.html">FTP</a> et TelNet qui sont des protocoles
+      historiques non sécurisés.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples de suites SSH sont :</p>
+  <ul>
+    <li><a href="https://www.openssh.com/fr/index.html" target="_blank">OpenSSH</a>
+      <ul>
+        <li><a href="https://www.openssh.com/fr/java.html" target="_blank">clients Java</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

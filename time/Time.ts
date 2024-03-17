@@ -1,7 +1,7 @@
-import { TimeTextBuilder } from './TimeTextBuilder';
-import { TimeContext } from './TimeContext';
-import { HtmlRR0SsgContext, RR0SsgContextImpl } from '../RR0SsgContext';
-import { StringUtil } from '../util/string/StringUtil';
+import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeContext } from "./TimeContext"
+import { HtmlRR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
+import { StringUtil } from "../util/string/StringUtil"
 
 export class Time {
 
@@ -22,13 +22,13 @@ export class Time {
     return new Date(isoDate)
   }
 
-  static parse(fileName: string): RegExpExecArray | null {
+  static parseFileName(fileName: string): RegExpExecArray | null {
     return Time.timeRegex.exec(fileName)
   }
 
   static contextFromFile(context: HtmlRR0SsgContext, fileName = context.inputFile.name): TimeContext | undefined {
     let timeContext: TimeContext | undefined
-    const timeExec = Time.parse(fileName)
+    const timeExec = Time.parseFileName(fileName)
     if (timeExec && timeExec.length > 5) {
       const pageContext = context.clone()
       timeContext = pageContext.time

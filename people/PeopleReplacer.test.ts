@@ -1,8 +1,8 @@
-import {PeopleReplacer} from "./PeopleReplacer"
-import {rr0TestUtil} from "../test/RR0TestUtil"
-import {PeopleFactory} from "./PeopleFactory"
-import {HtmlRR0SsgContext} from "../RR0SsgContext"
-import { describe, expect, test } from '@javarome/testscript';
+import { PeopleReplacer } from "./PeopleReplacer"
+import { rr0TestUtil } from "../test/RR0TestUtil"
+import { PeopleFactory } from "./PeopleFactory"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { describe, expect, test } from "@javarome/testscript"
 
 describe("PeopleReplacer", () => {
 
@@ -35,7 +35,7 @@ describe("PeopleReplacer", () => {
   })
 
   test("replace people tags", async () => {
-    const replacer = new PeopleReplacer(new PeopleFactory(["people/b/BeauJerome", "people/r/ReaganRonaldWilson"]))
+    const replacer = new PeopleReplacer(new PeopleFactory(["people/b/BeauJerome", "people/r/ReaganRonald"]))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const peopleWithTitle = createPeopleElement(context, "Ronald Reagan", "Ronald Wilson Reagan")

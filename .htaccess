@@ -357,7 +357,7 @@ Redirect /people/c/CorsoPhilipJames https://rr0.org/people/c/CorsoPhilipJ
 Redirect /people/c/CortileLinda.html https://rr0.org/people/n/NapolitanoLinda
 Redirect /people/n/NeashamRobertS.html https://rr0.org/people/n/NeashamRobertS
 Redirect /people/n/NimitzChesterW.html https://rr0.org/people/n/NimitzChester
-Redirect /people/n/NixonRichardMilhous https://rr0.org/people/n/NixonRichard
+Redirect /people/n/NixonRichard https://rr0.org/people/n/NixonRichard
 Redirect /CunninghamRWalter.html https://rr0.org/people/c/CunninghamRWalter
 Redirect /CrismanFredLee.html https://rr0.org/people/c/CrismanFredLee
 Redirect /DEscathaYannick.html https://rr0.org/people/d/DEscathaYannick
@@ -531,7 +531,7 @@ Redirect /PopeNick.html https://rr0.org/people/p/PopeNick
 Redirect /people/p/PopeNicholas https://rr0.org/people/p/PopeNick
 Redirect /PoherClaude.html https://rr0.org/people/p/PoherClaude
 Redirect /RameyRogerM.html https://rr0.org/people/r/RameyRogerM
-Redirect /ReaganRonaldWilson.html https://rr0.org/people/r/ReaganRonaldWilson
+Redirect /ReaganRonald.html https://rr0.org/people/r/ReaganRonald
 Redirect /ReichWilhelm.html https://rr0.org/people/r/ReichWilhelm
 Redirect /RibesJeanClaude.html https://rr0.org/people/r/RibesJeanClaude
 Redirect /RiberaAntonio.htm https://rr0.org/people/r/RiberaAntonio
@@ -962,4 +962,3 @@ RewriteCond %{HTTP_REFERER} !^https://vraiufo.com$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.fr/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://vraiufo.fr$      [NC]
 RewriteRule .*\.(jpg|jpeg|jpe|gif|bmp|png)$ https://rr0.org/Referencement.html [R,NC]
-

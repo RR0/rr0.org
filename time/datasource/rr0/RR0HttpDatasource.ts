@@ -6,11 +6,8 @@ import { RR0Datasource } from "./RR0Datasource"
 import { TimeContext } from "../../TimeContext"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
-import { Source } from "../../../source/Source"
+import { Publication, Source } from "../../../source/Source"
 import { TimeReplacer } from "../../TimeReplacer"
-import { OnlineSource } from "../../../source/OnlineSource"
-import { TimeTextBuilder } from "../../TimeTextBuilder"
-import { StringUtil } from "../../../util/string/StringUtil"
 
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()
@@ -54,16 +51,16 @@ export class RR0HttpDatasource extends RR0Datasource {
     const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
     const itemContext = context.clone()
-    let timeContext = itemContext.time
+    const time = itemContext.time
     if (timeEl) {
       url.hash = timeEl.dateTime
-      this.getTime(timeContext, timeEl)
+      this.getTime(time, timeEl)
       timeEl.remove()
     }
-    let namedPlace: NamedPlace
+    let place: NamedPlace
     const placeEl = row.querySelector(".plac")
     if (placeEl) {
-      namedPlace = this.getPlace(placeEl)
+      place = this.getPlace(placeEl)
       const toRemove = ["", " À ", " A ", ", "]
       Array.from(row.childNodes).forEach(childNode => {
         if (childNode.nodeType === 3 && toRemove.includes(childNode.nodeValue)) {
@@ -71,44 +68,13 @@ export class RR0HttpDatasource extends RR0Datasource {
         }
       })
     }
-    const sources = this.getSources(itemContext, row)
+    const sources = this.getSources(row)
     const description = this.getDescription(row)
-    return {url, place: namedPlace, time: timeContext, description, sources}
+    return {url, place, time, description, sources}
   }
 
-  protected getSources(context: HtmlRR0SsgContext, row: Element): Source[] {
-    const sources: Source[] = []
-    const sourceEls = row.querySelectorAll(".source-id")
-    for (const sourceEl of sourceEls) {
-      const id = sourceEl.childNodes[0].textContent
-      const sourceContent = sourceEl.querySelector(".source-contents")
-      let title = this.getDescription(sourceContent)
-      const authorEnd = title.indexOf(":")
-      const authors = title.substring(0, authorEnd).split("&").map(s => s.trim())
-      title = title.substring(authorEnd + 1).trim()
-      sourceEl.remove()
-      const source: Source = {title, id, authors}
-      sources.push(source)
-    }
-    const title = StringUtil.capitalizeFirstLetter(context.inputFile.title || TimeTextBuilder.build(context))
-    const url = new URL(context.inputFile.name, this.baseUrl)
-    url.hash = context.time.toString()
-    const rr0Source: OnlineSource = {
-      url,
-      previousSourceRefs: sources.map(source => source.id),
-      authors: this.authors,
-      title,
-      publication: {
-        publisher: this.copyright,
-        time: ""
-      }
-    }
-    sources.push(rr0Source)
-    return sources
-  }
-
-  protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
-    const result = TimeReplacer.parseDateTime(timeEl.dateTime)
+  updateTimeFromStr(time: TimeContext, timeStr: string) {
+    const result = TimeReplacer.parseDateTime(timeStr)
     if (result) {
       const {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
       time.setYear(parseInt(yearStr, 10))
@@ -128,6 +94,39 @@ export class RR0HttpDatasource extends RR0Datasource {
         time.setTimeZone(timeZone)
       }
     }
+  }
+
+  protected getSources(row: Element): Source[] {
+    const sources: Source[] = []
+    const sourceEls = row.querySelectorAll(".source-id")
+    for (const sourceEl of sourceEls) {
+      const id = sourceEl.childNodes[0].textContent
+      const sourceContent = sourceEl.querySelector(".source-contents")
+      let title = this.getDescription(sourceContent)
+      const authorEnd = title.indexOf(":")
+      const authors = title.substring(0, authorEnd).split("&").map(s => s.trim())
+      title = title.substring(authorEnd + 1).trim()
+      sourceEl.remove()
+      const pubSeparator = title.lastIndexOf(",")
+      const timeStr = title.substring(pubSeparator + 1).trim()
+      const time = TimeReplacer.parseDateTime(timeStr)
+      let pubSep = pubSeparator - 1
+      while (pubSep > 0 && title.charAt(pubSep) != ",") {
+        pubSep--
+      }
+      const publication: Publication = {
+        publisher: title.substring(pubSep + 1, pubSeparator),
+        time
+      }
+      title = title.substring(0, pubSep)
+      const source: Source = {title, id, authors, publication}
+      sources.push(source)
+    }
+    return sources
+  }
+
+  protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
+    this.updateTimeFromStr(time, timeEl.dateTime)
   }
 
   protected getPlace(placeEl: Element): NamedPlace {

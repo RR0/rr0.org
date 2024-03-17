@@ -9,16 +9,16 @@
 <section>
   <h2>Conception</h2>
   <p>Contrairement à ce que semble indiquer son nom, Castor-JDO est un <a href="../Framework.html">framework</a> de <a
-      href="../proj/impl/lang/oo/Persistance.html">persistance</a> qui ne respecte pas la norme <a
-      href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>. Il utilise la <strong>réflexivité</strong> de
+    href="../proj/impl/lang/oo/Persistance.html">persistance</a> qui ne respecte pas la norme <a
+    href="/org/us/company/oracle/sun/ptf/java/api/ext/JDO.html">JDO</a>. Il utilise la <strong>réflexivité</strong> de
     <a href="/org/us/company/oracle/sun/ptf/java/index.html">Java</a> pour accéder (en lecture ou écriture) à l'état des
     objets métiers persistants. Ceux-ci doivent donc fournir des <strong>accesseurs</strong> de type <a
-        href="/org/us/company/oracle/sun/ptf/java/api/se/beans/index.html">JavaBeans</a> standard permettant à
-    Castor-JDO d'accéder à leur état.</p>
+      href="/org/us/company/oracle/sun/ptf/java/api/se/beans/index.html">JavaBeans</a> standard permettant à Castor-JDO
+    d'accéder à leur état.</p>
   <p>Castor permet de configurer :</p>
   <ul>
     <li><strong>la source de données </strong>: Castor fournit des connecteurs pour plusieurs <a
-        href="server/sgbd/r/index.html">SGBDR</a></li>
+      href="server/sgbd/r/index.html">SGBDR</a></li>
     <li><strong>le mapping </strong>entre le modèle objet et le modèle relationnel.</li>
   </ul>
 </section>
@@ -37,8 +37,8 @@
       <ul>
         <li>Chaque objet est représenté par un élément <code><strong>class</strong></code> contenant :
           <ul>
-            <li>un élément <code><strong>map-to</strong></code> qui l'associe à une <strong>table</strong> de la
-              base de données relationnelle</li>
+            <li>un élément <code><strong>map-to</strong></code> qui l'associe à une <strong>table</strong> de la base de
+              données relationnelle</li>
             <li>des éléments <code><strong>field</strong></code> qui définissent les mappings
               <strong>table/champ</strong>-<strong>classe/attribut</strong>.</li>
           </ul>
@@ -53,7 +53,7 @@
   <blockquote>
     <p><q><code><strong>Database</strong> myDatabase = jdo.<strong>getDatabase</strong>();<br>
       myDatabase.<strong>begin</strong>();<br> Adresse adresse = new Adresse();<br> adresse.setLibelle (<span
-          class="codeString">&#8220;34 avenue des fleurs en
+        class="codeString">&#8220;34 avenue des fleurs en
     pot 06000 NICE&#8220;</span>);<br> adresse.setDepartement (Departement);<br> </code></q><q><code>myDatabase.<strong>load</strong>
       (Departement.class, 6);<br> myDatabase.<strong>create </strong>(adresse);<br> myDatabase.<strong>commit</strong>();<br>
       myDatabase.<strong>close</strong>();</code></q></p>
@@ -61,7 +61,7 @@
   <p>Un exemple de requête Castor OQL est :</p>
   <blockquote>
     <p><code><strong>Query</strong> myQuery = <q><code>myDatabase</code></q>.<strong>getOQLQuery </strong>(<span
-        class="codeString">"SELECT a FROM Adresse WHERE a.id
+      class="codeString">"SELECT a FROM Adresse WHERE a.id
     = $1</span>");<br> myQuery.<strong>bind</strong> (new Long (idAdresse));<br> <strong>QueryResults</strong>
       myQueryResults = myQuery.<strong>execute</strong>();<br> Adresse adresse = (Adresse)
       myQueryResults.<strong>next</strong>();</code></p>
@@ -69,42 +69,42 @@
   <p> Un exemple de descripteur Castor-JDO est :</p>
   <blockquote>
     <p><code>&lt;<strong>class access</strong>=<strong><span class="codeString">"</span></strong><span
-        class="codeString"><strong>shared</strong></span><span class="codeString">"</span> <strong>name</strong>=<span
-        class="codeString">"Adresse"</span> <strong>identity</strong>=<span class="codeString">"id"</span> <strong>key-generator</strong>=<span
-        class="codeString">"<strong>IDENTITY</strong>"</span>&gt;<br> <br>
+      class="codeString"><strong>shared</strong></span><span class="codeString">"</span> <strong>name</strong>=<span
+      class="codeString">"Adresse"</span> <strong>identity</strong>=<span class="codeString">"id"</span> <strong>key-generator</strong>=<span
+      class="codeString">"<strong>IDENTITY</strong>"</span>&gt;<br> <br>
       &lt;<strong>description</strong>&gt;Adresse&lt;/<strong>description</strong>&gt;<br> <br>
       &lt;<strong>map-to table</strong>=<span class="codeString">"ADRESSE"</span> <strong>xml</strong>=<span
-          class="codeString">"adresse"</span>/&gt;<br> <br>
+        class="codeString">"adresse"</span>/&gt;<br> <br>
       &lt;<strong>field name</strong>=<span class="codeString">"id"</span> <strong>type</strong>=<span
-          class="codeString">"long"</span> <strong>dirty</strong>=<span
-          class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
-          class="codeString">"<strong>true</strong>"</span>&gt;<br>
+        class="codeString">"long"</span> <strong>dirty</strong>=<span
+        class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
+        class="codeString">"<strong>true</strong>"</span>&gt;<br>
       &lt;<strong>sql name</strong>=<span class="codeString">"ID_ADRESSE"</span> <strong>type</strong>=<span
-          class="codeString">"<strong>numeric</strong>"</span>/&gt;<br>
+        class="codeString">"<strong>numeric</strong>"</span>/&gt;<br>
       &lt;<strong>xml node</strong>=<span class="codeString">"attribute"</span>/&gt;<br>
       &lt;/<strong>field</strong>&gt;<br> <br>
       &lt;<strong>field name</strong>=<span class="codeString">"adresse"</span> <strong>type</strong>=<span
-          class="codeString">"java.lang.String"</span> <strong>dirty</strong>=<span
-          class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
-          class="codeString">"<strong>true</strong>"</span>
+        class="codeString">"java.lang.String"</span> <strong>dirty</strong>=<span
+        class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
+        class="codeString">"<strong>true</strong>"</span>
       &gt;<br>
       &lt;<strong>sql name</strong>=<span class="codeString">"ADRESSE"</span> <strong>type</strong>=<span
-          class="codeString">"char"</span>/&gt;<br>
+        class="codeString">"char"</span>/&gt;<br>
       &lt;<strong>xml node</strong>=<span class="codeString">"element"</span>/&gt;
       <br>
       &lt;/<strong>field</strong>&gt; <br> <br> <span class="codeComment">&lt;!-- References &#8211; Clés
     étrangères --&gt;</span> <br>
       &lt;<strong>field name</strong>=<span class="codeString">"departement"</span> <strong>type</strong>=<span
-          class="codeString">"Departement"</span> <strong>dirty</strong>=<span
-          class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
-          class="codeString">"<strong>false</strong>"</span>&gt;<br>
+        class="codeString">"Departement"</span> <strong>dirty</strong>=<span
+        class="codeString">"<strong>ignore</strong>"</span> <strong>required</strong>=<span
+        class="codeString">"<strong>false</strong>"</span>&gt;<br>
       &lt;<strong>sql name</strong>=<span class="codeString">"ID_DEPARTEMENT_ADRESSE"</span>/&gt;<br>
       &lt;<strong>xml node</strong>=<span class="codeString">"attribute"</span> <strong>reference</strong>=<span
-          class="codeString">"<strong>true</strong>"</span>/&gt;<br>
+        class="codeString">"<strong>true</strong>"</span>/&gt;<br>
       &lt;/<strong>field</strong>&gt;<br> <br> <span class="codeComment">&lt;!-- many-references --&gt;</span><br>
       &lt;<strong>field</strong> <strong>name</strong>=<span class="codeString">"dsvsAdresse"</span>
       <strong>type</strong>=<span class="codeString">"Personne"</span> <strong>collection</strong>=<span
-          class="codeString">"<strong>vector</strong>"</span>&gt;<br>
+        class="codeString">"<strong>vector</strong>"</span>&gt;<br>
       &lt;<strong>sql</strong> <strong>many-key</strong>=<span class="codeString">"ID_ADRESSE_PERSONNE"</span>/&gt;<br>
       &lt;<strong>xml</strong> <strong>node</strong>=<span class="codeString">"element"</span>/&gt;
       <br>
@@ -116,12 +116,12 @@
   <h2>Notes</h2>
   <table>
     <tr>
-      <td rowspan="2" width="107">Persistance</td>
-      <th width="93">Solution</th>
-      <th width="106"><a href="CastorJDO.html">Castor-JDO</a></th>
+      <td rowspan="2">Persistance</td>
+      <th>Solution</th>
+      <th><a href="CastorJDO.html">Castor-JDO</a></th>
     </tr>
     <tr>
-      <th width="93">Version</th>
+      <th>Version</th>
       <th>0.9</th>
     </tr>
     <tr>
@@ -237,8 +237,8 @@
     <tr>
       <th rowspan="2">Stockage</th>
       <th>Paradigme libre</th>
-      <td class="non"><a href="server/sgbd/r/index.html">SGBDR</a>, <a href="../time/doc/xml/XML.html">XML</a>, <a
-          href="../time/dbms/ldap/index.html">LDAP</a></td>
+      <td class="non"><a href="server/sgbd/r/index.html">SGBDR</a>, <a href="/tech/info/soft/data/doc/xml">XML</a>, <a
+        href="/tech/info/soft/data/dbms/ldap">LDAP</a></td>
     </tr>
     <tr>
       <th>Support d'une base existante</th>

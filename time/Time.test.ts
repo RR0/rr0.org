@@ -1,14 +1,14 @@
-import {Time} from "./Time"
-import {TimeContext} from "./TimeContext"
-import {rr0TestUtil} from "../test/RR0TestUtil"
-import {RR0SsgContextImpl} from "../RR0SsgContext"
-import {SsgFile} from "ssg-api"
-import { describe, expect, test } from '@javarome/testscript';
+import { Time } from "./Time"
+import { TimeContext } from "./TimeContext"
+import { rr0TestUtil } from "../test/RR0TestUtil"
+import { RR0SsgContextImpl } from "../RR0SsgContext"
+import { SsgFile } from "ssg-api"
+import { describe, expect, test } from "@javarome/testscript"
 
 describe("Time", () => {
 
   test("parse", () => {
-    const exec = Time.parse("time/-0/0/1/1/index.html")
+    const exec = Time.parseFileName("time/-0/0/1/1/index.html")
     let pos = 0
     expect(exec[++pos]).toBe("-")
     expect(exec[++pos]).toBe("0")

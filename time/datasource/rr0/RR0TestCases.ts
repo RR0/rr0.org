@@ -4,28 +4,12 @@ import { rr0Datasource } from "./RR0Mapping"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { Source } from "../../../source/Source"
-import { OnlineSource } from "../../../source/OnlineSource"
-import { TimeTextBuilder } from "../../TimeTextBuilder"
-
-const rr0SourceProto: Source = {
-  "previousSourceRefs": [],
-  "authors": [
-    "Jérôme Beau"
-  ],
-  "publication": {
-    "publisher": "RR0",
-    "time": ""
-  }
-}
 
 function testCase(urlPath: string, time: TimeContext, description: string, sources: Source[],
                   place?: NamedPlace): RR0CaseSummary {
   const path = UrlUtil.join(rr0Datasource.searchPath, urlPath)
   const url = new URL(path, rr0Datasource.baseUrl)
-  const context = rr0TestUtil.newHtmlContext(url.pathname.substring(1))
-  const title = TimeTextBuilder.build({...context, time})
-  const rr0Source: OnlineSource = {url, ...rr0SourceProto, title, previousSourceRefs: sources.map(source => source.id)}
-  return {url, place, time, description, sources: [...sources, rr0Source]}
+  return {url, place, time, description, sources}
 }
 
 export const rr0TestCases: RR0CaseSummary[] = [

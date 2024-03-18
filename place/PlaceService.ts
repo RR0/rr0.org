@@ -9,7 +9,7 @@ export abstract class PlaceService {
 
   protected readonly regex = /lat([\d.\-]+)lng([\d.\-]+)/
 
-  constructor(readonly rootDir: string) {
+  protected constructor(readonly rootDir: string) {
   }
 
   async read(fileName: string): Promise<Place> {

@@ -24,18 +24,26 @@ export class OrganizationService<O extends Organization = Organization, P extend
   find(context: RR0SsgContext, nameToFind: string, parent: P): Organization | undefined {
     return this.orgs.find(org => {
       const orgMessages = org.messages(context)
-      let found = Boolean(orgMessages)
-      if (found) {
+      const hasMessages = Boolean(orgMessages)
+      let found: boolean
+      if (hasMessages) {
         const orgNameToFind = this.nameToFind(context, org, nameToFind)
-        const foundDep = !parent?.code || parent.code === org.parent.code
-        found = false
-        for (let i = 0; !found && i < orgMessages.titles.length; i++) {
-          const depName = OrganizationService.normalizeName(
-            orgMessages.toTitleFromName(context, org, orgMessages.titles[i]))
-          const depCityName = OrganizationService.normalizeName(depName)
-          const foundName = depCityName === orgNameToFind
-          found = foundName && foundDep
+        const hasParent = Boolean(parent?.code)
+        const parentCheck = !hasParent || parent.code === org.parent.code
+        if (parentCheck) {
+          let foundName: boolean
+          for (let i = 0; !foundName && i < orgMessages.titles.length; i++) {
+            const depName = OrganizationService.normalizeName(
+              orgMessages.toTitleFromName(context, org, orgMessages.titles[i]))
+            const depCityName = OrganizationService.normalizeName(depName)
+            foundName = depCityName === orgNameToFind
+          }
+          found = foundName
+        } else {
+          found = false
         }
+      } else {
+        found = false
       }
       return found ? org : undefined
     })

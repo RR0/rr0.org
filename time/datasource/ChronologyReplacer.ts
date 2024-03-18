@@ -49,9 +49,17 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
         if (this.merge) {
           const existingItems = Array.from(element.children)
           const rr0Datasource = new RR0HttpDatasource()
-          rr0Datasource.getFromRows(context, existingItems)
-          const targetCases = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
-          const items = targetCases.map(c => this.renderer.render(context, c))
+          const existingCases = rr0Datasource.getFromRows(context, existingItems)
+          const casesToMerge = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
+          for (const caseToMerge of casesToMerge) {
+            const foundExisting = existingCases
+              .filter(existingCase => existingCase.time === caseToMerge.time)
+              .filter(existingCase => existingCase.place === caseToMerge.place)
+            if (foundExisting?.length) {
+              context.logger.debug("Merging ", caseToMerge, " into ", foundExisting)
+            }
+          }
+          const items = casesToMerge.map(c => this.renderer.render(context, c))
           for (const item of items) {
             element.append(item)
           }

@@ -11,6 +11,7 @@ import { CountryCode } from "../../../org/country/CountryCode"
 import { GeipanCaseClassification } from "./GeipanCaseClassification"
 import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
+import { TimeContext } from "../../TimeContext"
 
 export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCaseSummary, RR0CaseSummary> {
 
@@ -48,7 +49,7 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
   map(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
       url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
-      publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const place = this.getPlace(context, sourceCase)
     return {
@@ -70,9 +71,10 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
       const placeName = placeItems[1]
       const city = this.cityService.find(context, placeName, undefined)
       if (!city) {
-        const depWithCityName = this.departmentService.find(context, placeName, undefined)
+        const depName = placeName.replace("(DPT)", "").trim()
+        const depWithCityName = this.departmentService.find(context, depName, undefined)
         assert.ok(depWithCityName,
-          `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
+          `Could not find city "${depName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
         sourceCase.city = undefined
         sourceCase.depCode = depWithCityName.code as FranceDepartementCode
         place = {name: depWithCityName.title(context), place: depWithCityName.places[0]}

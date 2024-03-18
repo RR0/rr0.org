@@ -83,6 +83,12 @@ export class TimeContext {
       this._timeZone)
   }
 
+  static fromDate(date: Date, options: Intl.DateTimeFormatOptions): TimeContext {
+    return new TimeContext({...options}, date.getFullYear(), date.getMonth() + 1, date.getDate(), date.getHours(),
+      date.getMinutes(),
+      "UTC" + (date.getTimezoneOffset() < 0 ? "-" : "+") + date.getTimezoneOffset())
+  }
+
   reset(): void {
     this.setYear(undefined)
     this.setMonth(undefined)

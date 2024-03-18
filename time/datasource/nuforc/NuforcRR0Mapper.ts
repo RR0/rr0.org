@@ -23,6 +23,7 @@ import { colombia } from "../../../org/co/Colombia"
 import { NuforcShape } from "./NuforcShape"
 import { germany } from "../../../org/eu/de/Germany"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
+import { TimeContext } from "../../TimeContext"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCaseSummary, RR0CaseSummary> {
 
@@ -83,8 +84,10 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
 
   map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
-      url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber,
-      authors: this.authors, publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+      url: sourceCase.url,
+      title: "cas n° " + sourceCase.caseNumber,
+      authors: this.authors,
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     assert.ok(sourceCase.country, `NUFORC country code is ${sourceCase.country}`)
     const countryCode = NuforcRR0Mapper.countryMap[sourceCase.country]

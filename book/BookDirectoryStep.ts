@@ -4,7 +4,6 @@ import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { Book } from "./Book"
 import { StringUtil } from "../util/string/StringUtil"
 import { HtmlTag } from "../util/HtmlTag"
-import { Time } from "../time/Time"
 import fs from "fs"
 import path from "path"
 import { Chapter } from "./Chapters"
@@ -48,7 +47,7 @@ export class BookDirectoryStep extends DirectoryStep {
       const dirBook: Book = {
         dirName,
         authors: [],
-        publication: {publisher: "", time: ""},
+        publication: {publisher: "", time: undefined},
         summary: "",
         title: "",
         variants: []
@@ -92,9 +91,9 @@ export class BookDirectoryStep extends DirectoryStep {
     const details: string[] = []
     const authors = dirBook.authors
     const authorStr = authors ? authors.join(" & ") + ": " : ""
-    const timeStr = dirBook.publication.time
-    if (timeStr) {
-      const timeDetail = Time.dateFromIso(timeStr).getFullYear()
+    const time = dirBook.publication.time
+    if (time) {
+      const timeDetail = time.getYear()
       details.push(HtmlTag.toString("time", timeDetail.toString()))
     }
     const text: (string | string[])[] = [authorStr, dirBook.title]

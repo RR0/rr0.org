@@ -2,7 +2,7 @@ import { TimeContext } from "../time/TimeContext"
 
 export type Publication = {
   publisher: string
-  time: TimeContext
+  time: TimeContext | undefined
 }
 
 export type Source = {

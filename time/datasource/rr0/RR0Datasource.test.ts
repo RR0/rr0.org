@@ -7,8 +7,8 @@ import { rr0Mapping } from "./RR0Mapping"
 import { RR0CaseSummary } from "./RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { RR0CaseMapping } from "../ChronologyReplacer"
-import { TimeTextBuilder } from "../../TimeTextBuilder"
-import { StringUtil } from "../../../util/string/StringUtil"
+import { Source } from "../../../source/Source"
+import { HtmlTag } from "../../../util/HtmlTag"
 
 describe("RR0CaseSource", () => {
 
@@ -25,8 +25,29 @@ describe("RR0CaseSource", () => {
       return !c1.time || c2.time && c1.time.isBefore(c2.time) ? -1 : !c2.time || c1.time.isAfter(c2.time) ? 1 : 0
     }
 
-    protected expectedSourceTitle(context: HtmlRR0SsgContext, nativeCase: RR0CaseSummary): string {
-      return StringUtil.capitalizeFirstLetter(TimeTextBuilder.build(context))
+
+    protected expectedSourceStr(caseContext: HtmlRR0SsgContext, expectedSources: Source[],
+                                nativeCase: RR0CaseSummary): string {
+      return expectedSources.map(source => {
+        const sourceItems: string[] = []
+        let authorStr = source.authors.join(", ")
+        if (authorStr) {
+          authorStr += ": "
+        }
+        if (source.title) {
+          sourceItems.push(source.title)
+        }
+        const publication = source.publication
+        if (publication) {
+          if (publication.publisher) {
+            sourceItems.push(`<i>${publication.publisher}</i>`)
+          }
+          if (publication.time) {
+            sourceItems.push(publication.time.toString())
+          }
+        }
+        return " " + HtmlTag.toString("span", authorStr + sourceItems.join(", "), {class: "source"})
+      }).join("")
     }
   }(rr0Mapping, rr0TestCases)
 

@@ -54,9 +54,19 @@ export class RR0CaseRenderer {
       if (title) {
         sourceEl.append(", ")
       }
-      const copyright = doc.createElement("i")
-      copyright.textContent = publication.publisher
-      sourceEl.append(copyright, ", ", publication.time)
+      const publisher = publication.publisher
+      if (publisher) {
+        const copyright = doc.createElement("i")
+        copyright.textContent = publisher
+        sourceEl.append(copyright)
+      }
+      let time = publication.time
+      if (time) {
+        if (publisher) {
+          sourceEl.append(", ")
+        }
+        sourceEl.append(time.toString())
+      }
     }
     return sourceEl
   }

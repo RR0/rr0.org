@@ -6,6 +6,7 @@ import { DepartmentService } from "../../../org/country/region/department/Depart
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
+import { TimeContext } from "../../TimeContext"
 
 /**
  * Maps a Base OVNI France case to a RR0 case.
@@ -21,7 +22,7 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
   map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
       url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
-      publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const depCode = sourceCase.depCode
     const dep = this.depService.get(depCode, undefined)

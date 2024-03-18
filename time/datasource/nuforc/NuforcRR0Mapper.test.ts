@@ -18,7 +18,7 @@ function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNu
   const url = new URL("sighting/?id=" + caseNumber, datasource.baseUrl)
   return {
     url, title: "cas n° " + caseNumber, authors: datasource.authors,
-    publication: {publisher: datasource.copyright, time: dataDate.toLocaleString()}
+    publication: {publisher: datasource.copyright, time: TimeContext.fromDate(dataDate, rr0TestUtil.intlOptions)}
   }
 }
 

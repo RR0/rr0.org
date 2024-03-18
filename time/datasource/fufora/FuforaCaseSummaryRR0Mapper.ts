@@ -5,6 +5,7 @@ import { OnlineSource } from "../../../source/OnlineSource"
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
+import { TimeContext } from "../../TimeContext"
 
 /**
  * Maps FUFORA cases to RR0 cases.
@@ -20,7 +21,7 @@ export class FuforaCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
   map(context: HtmlRR0SsgContext, sourceCase: FuforaCaseSummary, sourceTime: Date): RR0CaseSummary {
     const source: OnlineSource = {
       url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
-      publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const cityName = sourceCase.city || sourceCase.sightingPlace
     const city = this.cityService.find(context, cityName, undefined)

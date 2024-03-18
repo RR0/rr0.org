@@ -68,7 +68,7 @@ export class RR0HttpDatasource extends RR0Datasource {
         }
       })
     }
-    const sources = this.getSources(row)
+    const sources = this.getSources(row, itemContext)
     const description = this.getDescription(row)
     return {url, place, time, description, sources}
   }
@@ -96,7 +96,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     }
   }
 
-  protected getSources(row: Element): Source[] {
+  protected getSources(row: Element, itemContext: HtmlRR0SsgContext): Source[] {
     const sources: Source[] = []
     const sourceEls = row.querySelectorAll(".source-id")
     for (const sourceEl of sourceEls) {
@@ -107,18 +107,19 @@ export class RR0HttpDatasource extends RR0Datasource {
       const authors = title.substring(0, authorEnd).split("&").map(s => s.trim())
       title = title.substring(authorEnd + 1).trim()
       sourceEl.remove()
-      const pubSeparator = title.lastIndexOf(",")
-      const timeStr = title.substring(pubSeparator + 1).trim()
-      const time = TimeReplacer.parseDateTime(timeStr)
-      let pubSep = pubSeparator - 1
-      while (pubSep > 0 && title.charAt(pubSep) != ",") {
-        pubSep--
+      const pubItems = title.split(",")
+      const timeStr = pubItems[pubItems.length - 1].trim()
+      const parsedTime = TimeReplacer.parseDateTime(timeStr)
+      let time: TimeContext
+      let publisher: string
+      if (parsedTime) {
+        time = new TimeContext({...itemContext.time.options})
+        TimeReplacer.setTimeContextFrom(time, parsedTime)
+        pubItems.pop()
       }
-      const publication: Publication = {
-        publisher: title.substring(pubSep + 1, pubSeparator),
-        time
-      }
-      title = title.substring(0, pubSep)
+      publisher = pubItems.splice(1, pubItems.length - 1).map(item => item.trim()).join(", ").trim()
+      const publication: Publication = {publisher, time}
+      title = pubItems[0]
       const source: Source = {title, id, authors, publication}
       sources.push(source)
     }

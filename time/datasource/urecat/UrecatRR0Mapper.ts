@@ -6,6 +6,7 @@ import { CityService } from "../../../org/country/region/department/city/CitySer
 import assert from "assert"
 import { CountryService } from "../../../org/country/CountryService"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
+import { TimeContext } from "../../TimeContext"
 
 export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase, RR0CaseSummary> {
 
@@ -23,7 +24,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
   map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
       url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
-      publication: {publisher: this.copyright, time: sourceTime.toLocaleString()}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const location = sourceCase.basicInfo.base.location
     const sourceCountry = location.country

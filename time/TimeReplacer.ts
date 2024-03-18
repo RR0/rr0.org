@@ -5,6 +5,7 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
 import { UrlUtil } from "../util/url/UrlUtil"
 import { DomReplacement } from "./DomReplacement"
 import { ObjectUtils } from "@rr0/common"
+import { TimeContext } from "./TimeContext"
 
 export type TimeParseResult = {
   yearStr: string
@@ -21,7 +22,8 @@ export type TimeParseResult = {
 export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeElement> {
 
   static readonly dateTimeRegexp = new RegExp(
-    "^(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?")
+    "^(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?"
+  )
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
   /**
@@ -72,33 +74,34 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     return replacement
   }
 
-  valueReplacement(context: HtmlRR0SsgContext, timeStr: string,
-                   previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
-    let replacement = undefined
-    timeStr = timeStr.trim()
-    const approximate = timeStr.charAt(0) === "~"
-    if (approximate) {
-      timeStr = timeStr.substring(1)
-    }
-    const parsed = TimeReplacer.parseDateTime(timeStr)
-    if (parsed) {
-      const {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = parsed
-      replacement = this.dateTimeReplacement(context, previousContext, yearStr, monthStr, dayOfMonthStr, hour, minutes,
-        timeZone, approximate)
-    } else {
-      const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
-      if (durationValues && durationValues[0]) {
-        const map = durationValues.slice(1)
-        const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
-          if (i % 2 !== 0) {
-            reduced.push(current)
-          }
-          return reduced
-        }, [])
-        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr, approximate)
+  static setTimeContextFrom(timeContext: TimeContext, parsed: TimeParseResult) {
+    if (parsed.yearStr) {
+      const year = parseInt(parsed.yearStr, 10)
+      if (!Number.isNaN(year)) {
+        timeContext.setYear(year)
       }
     }
-    return replacement
+    if (parsed.monthStr) {
+      const month = parseInt(parsed.monthStr, 10)
+      if (!Number.isNaN(month)) {
+        timeContext.setMonth(month)
+      }
+    }
+    if (parsed.dayOfMonthStr) {
+      const dayOfMonth = parseInt(parsed.dayOfMonthStr, 10)
+      if (!Number.isNaN(dayOfMonth)) {
+        timeContext.setDayOfMonth(dayOfMonth)
+      }
+    }
+    if (parsed.hour) {
+      timeContext.setHour(parseInt(parsed.hour, 10))
+    }
+    if (parsed.minutes) {
+      timeContext.setMinutes(parseInt(parsed.minutes, 10))
+    }
+    if (parsed.timeZone) {
+      timeContext.setTimeZone(parsed.timeZone)
+    }
   }
 
   async replacement(context: HtmlRR0SsgContext, original: HTMLTimeElement): Promise<HTMLElement> {
@@ -142,40 +145,40 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     return url === "time" ? undefined : url
   }
 
+  valueReplacement(context: HtmlRR0SsgContext, timeStr: string,
+                   previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
+    let replacement = undefined
+    timeStr = timeStr.trim()
+    const approximate = timeStr.charAt(0) === "~"
+    if (approximate) {
+      timeStr = timeStr.substring(1)
+    }
+    const parsed = TimeReplacer.parseDateTime(timeStr)
+    if (parsed) {
+      replacement = this.dateTimeReplacement(context, previousContext, parsed, approximate)
+    } else {
+      const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
+      if (durationValues && durationValues[0]) {
+        const map = durationValues.slice(1)
+        const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
+          if (i % 2 !== 0) {
+            reduced.push(current)
+          }
+          return reduced
+        }, [])
+        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr, approximate)
+      }
+    }
+    return replacement
+  }
+
   protected dateTimeReplacement(
-    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, yearStr: string, monthStr: string,
-    dayOfMonthStr: string, hour: string, minutes: string, timeZone: string, approximate: boolean
+    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult, approximate: boolean
   ): HTMLElement | undefined {
-    let replacement: HTMLElement | undefined = undefined
     const timeContext = context.time
-    if (yearStr) {
-      const year = parseInt(yearStr, 10)
-      if (!Number.isNaN(year)) {
-        timeContext.setYear(year)
-      }
-    }
-    if (monthStr) {
-      const month = parseInt(monthStr, 10)
-      if (!Number.isNaN(month)) {
-        timeContext.setMonth(month)
-      }
-    }
-    if (dayOfMonthStr) {
-      const dayOfMonth = parseInt(dayOfMonthStr, 10)
-      if (!Number.isNaN(dayOfMonth)) {
-        timeContext.setDayOfMonth(dayOfMonth)
-      }
-    }
-    if (hour) {
-      timeContext.setHour(parseInt(hour, 10))
-    }
-    if (minutes) {
-      timeContext.setMinutes(parseInt(minutes, 10))
-    }
-    if (timeZone) {
-      timeContext.setTimeZone(timeZone)
-    }
-    if (timeContext.isDefined()) {
+    TimeReplacer.setTimeContextFrom(timeContext, parsed)
+    let replacement: HTMLElement | undefined = undefined
+    if (context.time.isDefined()) {
       replacement = TimeReplacer.replaceElement(context, approximate, this.timeFiles, previousContext)
     }
     return replacement

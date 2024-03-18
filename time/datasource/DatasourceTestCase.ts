@@ -4,6 +4,7 @@ import { RR0CaseMapping } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
+import { Source } from "../../source/Source"
 
 export abstract class DatasourceTestCase<S> {
 
@@ -18,18 +19,21 @@ export abstract class DatasourceTestCase<S> {
     Object.assign(caseContext, {time})
     const timeStr = TimeTextBuilder.build(caseContext)
     const placeStr = expected.place ? ` À <span class="place">${expected.place.name}</span>` : ""
-    let sources = expected.sources
-    if (sources?.length > 0) {
-      const source = sources[0]
-      const publicationStr = source.publication ? `, ${source.publication.time}` : ""
-      const authorStr = datasource.authors.join(", ")
-      const title = this.expectedSourceTitle(caseContext, nativeCase)
-      const sourceStr = ` <span class="source">${authorStr}: <a href="${nativeCase.url.href.replaceAll(
-        "&",
-        "&amp;")}">${title}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
-      expect(item.innerHTML).toBe(
-        `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}`)
-    }
+    const sourceStr = expected.sources?.length > 0 ? this.expectedSourceStr(caseContext, expected.sources,
+      nativeCase) : ""
+    expect(item.innerHTML).toBe(
+      `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}`)
+  }
+
+  protected expectedSourceStr(caseContext: HtmlRR0SsgContext, expectedSources: Source[], nativeCase: S) {
+    const datasource = this.mapping.datasource
+    const source = expectedSources[0]
+    const publicationStr = source.publication ? `, ${source.publication.time}` : ""
+    const authorStr = datasource.authors.join(", ")
+    const title = `cas n°&nbsp;${nativeCase.caseNumber}`
+    return ` <span class="source">${authorStr}: <a href="${nativeCase.url.href.replaceAll(
+      "&",
+      "&amp;")}">${title}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
   }
 
   protected abstract sortComparator(c1: S, c2: S): number
@@ -43,10 +47,6 @@ export abstract class DatasourceTestCase<S> {
   }
 
   protected abstract getTime(c: S): TimeContext
-
-  protected expectedSourceTitle(context: HtmlRR0SsgContext, nativeCase: S): string {
-    return `cas n°&nbsp;${nativeCase.caseNumber}`
-  }
 
   async testRender(context: HtmlRR0SsgContext) {
     const sourceCases = await this.mapping.datasource.getAll(context)

@@ -23,6 +23,10 @@ import { delaware_en } from "./region/de/Delaware_en"
 import { illinois_en } from "./region/il/Illinois_en"
 import { kentucky_en } from "./region/ky/Kentucky_en"
 import { maine_en } from "./region/me/Maine_en"
+import { maryland_en } from "./region/md/Maryland_en"
+import { massachusetts_en } from "./region/ma/Massachusetts_en"
+import { michigan_en } from "./region/mi/Michigan_en"
+import { minnesota_en } from "./region/mn/Minnesota_en"
 
 export const usa_en = CountryMessages.create<UsaRegionMessagesList>("USA", {
   ak: arkansas_en,
@@ -36,7 +40,11 @@ export const usa_en = CountryMessages.create<UsaRegionMessagesList>("USA", {
   il: illinois_en,
   in: indiana_en,
   ky: kentucky_en,
+  ma: massachusetts_en,
+  md: maryland_en,
   me: maine_en,
+  mi: michigan_en,
+  mn: minnesota_en,
   nc: northCarolina_en,
   nj: newJersey_en,
   ne: nebraska_en,

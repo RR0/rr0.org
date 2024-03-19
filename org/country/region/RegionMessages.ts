@@ -10,7 +10,7 @@ export class RegionMessages<D = OrganizationMessages> extends OrganizationMessag
     super(...titles)
   }
 
-  static create<D>(title: string, department?: D) {
-    return new RegionMessages([title], department)
+  static create<D>(title: string, department?: D): RegionMessages<D> {
+    return new RegionMessages<D>([title], department)
   }
 }

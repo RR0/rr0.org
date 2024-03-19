@@ -25,6 +25,10 @@ import { illinois } from "./il/Illinois"
 import { indiana } from "./in/Indiana"
 import { kentucky } from "./ky/Kentucky"
 import { maine } from "./me/Maine"
+import { maryland } from "./md/Maryland"
+import { massachusetts } from "./ma/Massachusetts"
+import { michigan } from "./mi/Michigan"
+import { minnesota } from "./mn/Minnesota"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -39,10 +43,10 @@ export const usaRegions: Region[] = [
   hawaii,
   kentucky,
   maine,
-  usaRegion(UsaStates.md, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.ma, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.mi, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.mn, Place.fromLocation(47.466667, 0.833333)),
+  maryland,
+  massachusetts,
+  michigan,
+  minnesota,
   usaRegion(UsaStates.ms, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaStates.mo, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaStates.mt, Place.fromLocation(47.466667, 0.833333)),

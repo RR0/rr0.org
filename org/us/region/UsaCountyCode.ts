@@ -16,4 +16,6 @@ export enum UsaCountyCode {
   tarrant = "tarrant",
   whitley = "whitley",
   scottsBluff = "scottsBluff",
+  middlesex = "middlesex",
+  kalamazoo = "kalamazoo",
 }

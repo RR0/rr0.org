@@ -19,6 +19,10 @@ import { delawareCounties } from "./de/DelawareCounties"
 import { illinoisCounties } from "./il/IllinoisCounties"
 import { kentuckyCounties } from "./ky/KentuckyCounties"
 import { maineCounties } from "./me/MaineCounties"
+import { marylandCounties } from "./md/MarylandCounties"
+import { massachusettsCounties } from "./ma/MassachusettsCounties"
+import { michiganCounties } from "./mi/MichiganCounties"
+import { minnesotaCounties } from "./mn/MinnesotaCounties"
 
 export const usaCounties: Organization[] = [
   ...alabamaCounties,
@@ -32,6 +36,10 @@ export const usaCounties: Organization[] = [
   ...illinoisCounties,
   ...kentuckyCounties,
   ...maineCounties,
+  ...marylandCounties,
+  ...massachusettsCounties,
+  ...michiganCounties,
+  ...minnesotaCounties,
   ...pennsylvaniaCounties,
   ...nebraskaCounties,
   ...newJerseyCounties,

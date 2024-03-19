@@ -20,6 +20,11 @@ import { delawareCities } from "./de/DelawareCities"
 import { illinoisCities } from "./il/IllinoisCities"
 import { kentuckyCities } from "./ky/KentuckyCities"
 import { maineCities } from "./me/MaineCities"
+import { marylandCities } from "./md/MarylandCities"
+import { massachusetts } from "./ma/Massachusetts"
+import { massachusettsCities } from "./ma/MassachusettsCities"
+import { michiganCities } from "./mi/MichiganCities"
+import { minnesotaCities } from "./mn/MinnesotaCities"
 
 export const usaCities: City[] = [
   ...alabamaCities,
@@ -34,6 +39,10 @@ export const usaCities: City[] = [
   ...indianaCities,
   ...kentuckyCities,
   ...maineCities,
+  ...marylandCities,
+  ...massachusettsCities,
+  ...michiganCities,
+  ...minnesotaCities,
   ...pennsylvaniaCities,
   ...nebraskaCities,
   ...newJerseyCities,

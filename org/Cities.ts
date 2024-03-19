@@ -9,12 +9,15 @@ import { europeCities } from "./eu/EuropeCities"
 import { ukCities } from "./uk/region/UkCities"
 import { russiaCities } from "./ru/region/RussiaCities"
 import { mozambiqueCities } from "./mz/region/MozambiqueCities"
+import { departmentService } from "./country/region/department/DepartmentService"
+import { indiaCities } from "./in/region/IndiaCities"
 
 const cities: City[] = [
   ...australiaCities,
   ...brazilCities,
   ...canadaCities,
   ...europeCities,
+  ...indiaCities,
   ...ukCities,
   ...mozambiqueCities,
   ...newZealandCities,
@@ -22,4 +25,4 @@ const cities: City[] = [
   ...usaCities
 ]
 
-export const cityService = new CityService(cities)
+export const cityService = new CityService(cities, "org", departmentService)

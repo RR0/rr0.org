@@ -31,14 +31,14 @@ describe("GEIPAN", () => {
     const obj = geipanTestCaseSummaries[0]
     const csvRow = mapper.map(context, obj, dataDate)
     expect(csvRow).toBe(
-      `${obj.caseNumber},${obj.url},${obj.city},${obj.depCode},${obj.dateTime},${obj.postTime},${obj.classification}`)
+      `${obj.caseNumber},${obj.url},${obj.city},${obj.zoneCode},${obj.dateTime},${obj.postTime},${obj.classification}`)
   })
 
   test("write", () => {
     const csvContents = mapper.reduce(context, geipanTestCaseSummaries, dataDate)
     const expectedCsv = "caseNumber,url,city,depCode,dateTime,postTime,classification\n"
       + geipanTestCaseSummaries
-        .map(c => `${c.caseNumber},${c.url},${c.city},${c.depCode},${c.dateTime},${c.postTime},${c.classification}`)
+        .map(c => `${c.caseNumber},${c.url},${c.city},${c.zoneCode},${c.dateTime},${c.postTime},${c.classification}`)
         .join("\n")
     expect(csvContents).toBe(expectedCsv)
   })

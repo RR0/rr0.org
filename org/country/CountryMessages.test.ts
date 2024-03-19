@@ -17,9 +17,9 @@ describe("CountryMessages", () => {
   })
 
   test("toTitle", () => {
-    expect(france_fr.toTitle(context, france)).toBe(france_fr.title)
-    expect(france_en.toTitle(context, france)).toBe(france_en.title)
-    expect(usa_fr.toTitle(context, usa)).toBe(usa_fr.title)
-    expect(usa_en.toTitle(context, usa)).toBe(usa_en.title)
+    expect(france_fr.toTitle(context, france, {parent: false})).toBe(france_fr.title)
+    expect(france_en.toTitle(context, france, {parent: false})).toBe(france_en.title)
+    expect(usa_fr.toTitle(context, usa, {parent: false})).toBe(usa_fr.title)
+    expect(usa_en.toTitle(context, usa, {parent: false})).toBe(usa_en.title)
   })
 })

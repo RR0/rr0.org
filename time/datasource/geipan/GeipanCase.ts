@@ -1,6 +1,6 @@
 import { GeipanCaseClassification, GeipanCaseClassification_minus } from "./GeipanCaseClassification"
 
-export enum GeipanCaseZoneType {
+export enum GeipanZoneType {
   Aerial = "(A) Aérien",
   Department = "(D) Département",
   National = "(N) National",
@@ -28,7 +28,7 @@ export type GeipanCase = {
    */
   cas_zone_code: string
 
-  cas_zone_type?: GeipanCaseZoneType
+  cas_zone_type?: GeipanZoneType
 
   /**
    * Sighting year

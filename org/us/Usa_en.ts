@@ -16,13 +16,27 @@ import { westVirginia_en } from "./region/wv/WestVirginia_en"
 import { virginia_en } from "./region/va/Virginia_en"
 import { hawai_en } from "./region/hi/Hawai_en"
 import { nebraska_en } from "./region/ne/Nebraska_en"
+import { arkansas_en } from "./region/ak/Arkansas_en"
+import { connecticut_en } from "./region/ct/Connecticut_en"
+import { colorado_en } from "./region/co/Colorado_en"
+import { delaware_en } from "./region/de/Delaware_en"
+import { illinois_en } from "./region/il/Illinois_en"
+import { kentucky_en } from "./region/ky/Kentucky_en"
+import { maine_en } from "./region/me/Maine_en"
 
 export const usa_en = CountryMessages.create<UsaRegionMessagesList>("USA", {
+  ak: arkansas_en,
   al: alabama_en,
   ca: california_en,
+  co: colorado_en,
+  ct: connecticut_en,
+  de: delaware_en,
   fl: florida_en,
   hi: hawai_en,
+  il: illinois_en,
   in: indiana_en,
+  ky: kentucky_en,
+  me: maine_en,
   nc: northCarolina_en,
   nj: newJersey_en,
   ne: nebraska_en,

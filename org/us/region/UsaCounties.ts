@@ -12,12 +12,26 @@ import { westVirginaCounties } from "./wv/WestVirginiaCounties"
 import { virginiaCounties } from "./va/VirginiaCounties"
 import { hawaiiCounties } from "./hi/HawaiiCounties"
 import { nebraskaCounties } from "./ne/NebraskaCounties"
+import { arkansasCounties } from "./ak/ArkansasCounties"
+import { connecticutCounties } from "./ct/ConnecticutCounties"
+import { coloradoCounties } from "./co/ColoradoCounties"
+import { delawareCounties } from "./de/DelawareCounties"
+import { illinoisCounties } from "./il/IllinoisCounties"
+import { kentuckyCounties } from "./ky/KentuckyCounties"
+import { maineCounties } from "./me/MaineCounties"
 
 export const usaCounties: Organization[] = [
   ...alabamaCounties,
+  ...arkansasCounties,
   ...californiaCounties,
+  ...coloradoCounties,
+  ...connecticutCounties,
+  ...delawareCounties,
   ...floridaCounties,
   ...hawaiiCounties,
+  ...illinoisCounties,
+  ...kentuckyCounties,
+  ...maineCounties,
   ...pennsylvaniaCounties,
   ...nebraskaCounties,
   ...newJerseyCounties,

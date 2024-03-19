@@ -153,7 +153,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       place = new Place([])
     }
     placeEl.remove()
-    return {name, place}
+    return {name, org, place}
   }
 
   protected getDescription(el: Element): string {

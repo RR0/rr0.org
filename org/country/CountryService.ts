@@ -5,7 +5,7 @@ import { finland } from "../eu/fi/Finland"
 import { canada } from "../ca/Canada"
 import { usa } from "../us/Usa"
 import { australia } from "../au/Australia"
-import { india } from "../in/Country_in"
+import { india } from "../in/India"
 import { brazil } from "../br/Brazil"
 import { newZealand } from "../nz/NewZealand"
 import { philippines } from "../ph/Philippines"
@@ -74,4 +74,4 @@ const countries: Country[] = [
   new Country(CountryCode.za)
 ]
 
-export const countryService = new CountryService(countries)
+export const countryService = new CountryService(countries, "org", undefined)

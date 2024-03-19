@@ -18,20 +18,27 @@ import { westVirginia } from "./wv/WestVirginia"
 import { virginia } from "./va/Virginia"
 import { hawaii } from "./hi/Hawaii"
 import { nebraska } from "./ne/Nebraska"
+import { arkansas } from "./ak/Arkansas"
+import { connecticut } from "./ct/Connecticut"
+import { colorado } from "./co/Colorado"
+import { illinois } from "./il/Illinois"
+import { indiana } from "./in/Indiana"
+import { kentucky } from "./ky/Kentucky"
+import { maine } from "./me/Maine"
 
 export const usaRegions: Region[] = [
   alabama,
-  usaRegion(UsaStates.ak, Place.fromLocation(47.466667, 0.833333)),
+  arkansas,
   california,
-  usaRegion(UsaStates.ct, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.co, Place.fromLocation(47.466667, 0.833333)),
+  connecticut,
+  colorado,
   delaware,
   florida,
-  usaRegion(UsaStates.il, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.in, Place.fromLocation(47.466667, 0.833333)),
+  illinois,
+  indiana,
   hawaii,
-  usaRegion(UsaStates.ky, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.me, Place.fromLocation(47.466667, 0.833333)),
+  kentucky,
+  maine,
   usaRegion(UsaStates.md, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaStates.ma, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaStates.mi, Place.fromLocation(47.466667, 0.833333)),

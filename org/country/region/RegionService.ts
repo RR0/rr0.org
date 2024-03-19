@@ -7,6 +7,7 @@ import { brazilRegions } from "../../br/region/BrazilRegions"
 import { europeRegions } from "../../eu/EuropeRegions"
 import { Region } from "./Region"
 import { OrganizationService } from "../../OrganizationService"
+import { countryService } from "../CountryService"
 
 export class RegionService extends OrganizationService<Region, Country> {
 }
@@ -20,4 +21,4 @@ export const regions: Region[] = [
   ...usaRegions
 ]
 
-export const regionService = new RegionService(regions)
+export const regionService = new RegionService(regions, "org", countryService)

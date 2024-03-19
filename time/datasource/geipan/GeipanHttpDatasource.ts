@@ -2,7 +2,7 @@ import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
-import { GeipanCaseSummary } from "./GeipanCaseSummary"
+import { GeipanCaseSummary, GeipanZoneCode } from "./GeipanCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
@@ -11,7 +11,6 @@ import {
   GeipanCaseClassification_calc,
   GeipanCaseClassification_minus
 } from "./GeipanCaseClassification"
-import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 import { GeipanDatasource } from "./GeipanDatasource"
 
 interface QueryParameters {
@@ -91,7 +90,7 @@ export class GeipanHttpDatasource extends GeipanDatasource {
     assert.ok(fields,
       `Case title "${caseField.textContent}" does not match pattern ${GeipanHttpDatasource.dateFormat.source}`)
     const city = fields[1].trim()
-    const depCode = fields[2] as FranceDepartementCode
+    const zoneCode = fields[2] as GeipanZoneCode
     const dateTime = this.getTime(context, fields, 5)
     const caseNumber = url.pathname.substring(url.pathname.lastIndexOf("/") + 1)
 
@@ -109,7 +108,7 @@ export class GeipanHttpDatasource extends GeipanDatasource {
       ? ObjectUtil.enumFromValue(GeipanCaseClassification_minus, classificationLabel)
       : ObjectUtil.enumFromValue(GeipanCaseClassification, classificationLabel) : undefined
     return {
-      depCode,
+      zoneCode,
       caseNumber,
       url,
       city,

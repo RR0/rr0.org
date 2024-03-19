@@ -19,6 +19,7 @@ import { uk_fr } from "./uk/Uk_fr"
 import { russia_fr } from "./ru/Russia_fr"
 import { denmark_fr } from "./eu/dk/Denmark_fr"
 import { mozambique_fr } from "./mz/Mozambique_fr"
+import { india_fr } from "./in/India_fr"
 
 /**
  * Country messages in French language.
@@ -45,7 +46,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   hu: CountryMessages.create("Hongrie"),
   ie: CountryMessages.create("Irelande"),
   il: CountryMessages.create("Israël"),
-  in: CountryMessages.create("Inde"),
+  in: india_fr,
   it: CountryMessages.create("Italie"),
   ir: CountryMessages.create("Iran"),
   jp: CountryMessages.create("Japon"),

@@ -19,6 +19,7 @@ import { uk_en } from "./uk/Uk_en"
 import { russia_en } from "./ru/Russia_en"
 import { denmark_en } from "./eu/dk/Denmark_en"
 import { mozambique_en } from "./mz/Mozambique_en"
+import { india_en } from "./in/India_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -42,7 +43,7 @@ export const countryMessageList_en: CountryMessagesList = {
   hu: CountryMessages.create("Hungary"),
   ie: CountryMessages.create("Ireland"),
   il: CountryMessages.create("Israel"),
-  in: CountryMessages.create("India"),
+  in: india_en,
   it: CountryMessages.create("Italia"),
   ir: CountryMessages.create("Iran"),
   jp: CountryMessages.create("Japan"),

@@ -5,7 +5,7 @@ import { RR0SsgContext } from "../RR0SsgContext"
 
 export class OrganizationService<O extends Organization = Organization, P extends Organization = undefined> {
 
-  constructor(readonly orgs: O[] = [], readonly rootDir: string = "org") {
+  constructor(readonly orgs: O[] = [], readonly rootDir: string, readonly parentService: OrganizationService) {
   }
 
   static normalizeName(name: string): string {
@@ -22,7 +22,7 @@ export class OrganizationService<O extends Organization = Organization, P extend
   }
 
   find(context: RR0SsgContext, nameToFind: string, parent: P): Organization | undefined {
-    return this.orgs.find(org => {
+    let foundOrg = this.orgs.find(org => {
       const orgMessages = org.messages(context)
       const hasMessages = Boolean(orgMessages)
       let found: boolean
@@ -47,6 +47,10 @@ export class OrganizationService<O extends Organization = Organization, P extend
       }
       return found ? org : undefined
     })
+    if (this.parentService && !foundOrg) {
+      foundOrg = this.parentService.find(context, nameToFind, undefined) as any
+    }
+    return foundOrg
   }
 
   async read(fileName: string): Promise<Organization<any>> {

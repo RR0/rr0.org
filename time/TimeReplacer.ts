@@ -187,7 +187,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   protected durationReplacement(
     context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string,
     approximate: boolean
-  ): HTMLElement | undefined {
+  ): HTMLTimeElement | undefined {
     const items = []
     const messages = context.messages.context.time.duration
     if (daysStr) {
@@ -206,7 +206,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
       const seconds = parseInt(secondsStr, 10)
       items.push(messages.seconds(seconds))
     }
-    let replacement: HTMLElement | undefined
+    let replacement: HTMLTimeElement | undefined
     if (items.length > 0) {
       let replacementStr = items.join(", ")
       if (items.length > 1) {

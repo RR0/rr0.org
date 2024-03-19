@@ -1,4 +1,4 @@
 export enum IndiaRegionCode {
-  Telangana = "Telangana",
-  Maharashtra = "Maharashtra"
+  mh = "mh",
+  tg = "tg"
 }

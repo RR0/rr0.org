@@ -5,6 +5,7 @@ export enum OccitanieDepartementCode {
   Aude = FranceDepartementCode.Aude,
   Gard = FranceDepartementCode.Gard,
   Gers = FranceDepartementCode.Gers,
+  HauteVienne = FranceDepartementCode.HauteVienne,
   HauteGaronne = FranceDepartementCode.HauteGaronne,
   Herault = FranceDepartementCode.Herault,
   Tarn = FranceDepartementCode.Tarn,

@@ -22,23 +22,22 @@ export class OrganizationMessages {
     return this.titles[0]
   }
 
-  toTitle(context: RR0SsgContext, org: Organization, opts?: Partial<OrganizationMessageOptions>): string {
-    const options = Object.assign({region: false, country: false}, opts)
-    const cityMessages = org.messages(context)
-    assert.ok(cityMessages,
-      `Could not find name of city with ZIP code "${org.code}" in departement "${org.parent.code}"`)
-    let title = cityMessages.title
+  toTitle(context: RR0SsgContext, org: Organization, options: OrganizationMessageOptions): string {
+    const orgMessages = org.messages(context)
+    assert.ok(orgMessages,
+      `Could not find name of city with ZIP code "${org.code}" in departement "${org.parent?.code}"`)
+    let title = orgMessages.title
     return this.toTitleFromName(context, org, title, options)
   }
 
-  toTitleFromName(context: RR0SsgContext, org: Organization, title: string,
-                  opts?: { country: boolean; region: boolean } & Partial<OrganizationMessageOptions>) {
-    const options = Object.assign({region: false, country: false}, opts)
+  toTitleFromName(context: RR0SsgContext, org: Organization, title: string, options: OrganizationMessageOptions) {
     let str = org.messages(context).cityName(title)
     if (options.parent) {
-      const departement = org.parent
-      const depMessages = departement.messages(context)
-      str += ` (${depMessages.toTitle(context, departement, options)})`
+      const parent = org.parent
+      if (parent) {
+        const depMessages = parent.messages(context)
+        str += ` (${depMessages.toTitle(context, parent, options)})`
+      }
     }
     return str
   }

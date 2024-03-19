@@ -34,7 +34,7 @@ export class OrganizationService<O extends Organization = Organization, P extend
           let foundName: boolean
           for (let i = 0; !foundName && i < orgMessages.titles.length; i++) {
             const depName = OrganizationService.normalizeName(
-              orgMessages.toTitleFromName(context, org, orgMessages.titles[i]))
+              orgMessages.toTitleFromName(context, org, orgMessages.titles[i], {parent: false}))
             const depCityName = OrganizationService.normalizeName(depName)
             foundName = depCityName === orgNameToFind
           }

@@ -1,9 +1,11 @@
 import { Place } from "../../../place/Place"
 import { TimeContext } from "../../TimeContext"
 import { Source } from "../../../source/Source"
+import { Organization } from "../../../org/Organization"
 
 export type NamedPlace = {
   readonly place: Place
+  readonly org?: Organization
   readonly name: string
 }
 

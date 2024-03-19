@@ -129,4 +129,8 @@ export class TimeContext {
   isAfter(other: TimeContext): boolean {
     return this.toString().localeCompare(other.toString()) > 0
   }
+
+  equals(other: TimeContext): boolean {
+    return this.toString() === other.toString()
+  }
 }

@@ -8,11 +8,13 @@ import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
 import { Publication, Source } from "../../../source/Source"
 import { TimeReplacer } from "../../TimeReplacer"
+import { CityService } from "../../../org/country/region/department/city/CityService"
+import { Organization } from "../../../org/Organization"
 
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()
 
-  constructor(readonly baseUrl = "https://rr0.org", readonly searchPath = "time") {
+  constructor(readonly baseUrl: string, readonly searchPath: string, protected cityService: CityService) {
     super()
   }
 
@@ -60,7 +62,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     let place: NamedPlace
     const placeEl = row.querySelector(".plac")
     if (placeEl) {
-      place = this.getPlace(placeEl)
+      place = this.getPlace(itemContext, placeEl)
       const toRemove = ["", " À ", " A ", ", "]
       Array.from(row.childNodes).forEach(childNode => {
         if (childNode.nodeType === 3 && toRemove.includes(childNode.nodeValue)) {
@@ -130,9 +132,26 @@ export class RR0HttpDatasource extends RR0Datasource {
     this.updateTimeFromStr(time, timeEl.dateTime)
   }
 
-  protected getPlace(placeEl: Element): NamedPlace {
-    const name = placeEl.textContent
-    const place = new Place([])
+  protected getPlace(context: HtmlRR0SsgContext, placeEl: Element): NamedPlace {
+    const placeStr = placeEl.textContent
+    const placeParsed = RR0HttpDatasource.placeRegex.exec(placeStr)
+    let name: string
+    let place: Place
+    let org: Organization | undefined
+    if (placeParsed) {
+      const parent = undefined  // TODO: Find region from placeParsed[2]
+      org = this.cityService.find(context, placeParsed[1], parent)
+      if (org) {
+        name = org.messages(context).toTitle(context, org, {parent: true})
+        place = org.places[0]
+      } else {
+        context.debug(`Could not find place named "${placeParsed[1]}"`)
+      }
+    }
+    if (!org) {
+      name = placeStr
+      place = new Place([])
+    }
     placeEl.remove()
     return {name, place}
   }

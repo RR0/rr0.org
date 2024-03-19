@@ -1,6 +1,6 @@
 import { touffailles } from "./touffailles/Touffailles"
-import { Organization } from "../../../../../Organization"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const tarnEtGaronneCities: Organization[] = [
+export const tarnEtGaronneCities: City[] = [
   touffailles
 ]

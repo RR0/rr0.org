@@ -56,6 +56,7 @@ import { IndexedReplacerFactory } from "./index/indexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
 import { geipanRR0Mapping } from "./time/datasource/geipan/GeipanRR0Mapping"
+import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -170,7 +171,8 @@ getTimeFiles().then(async (timeFiles) => {
   const baseUrl = "https://rr0.org"
   const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
     new ChronologyReplacerFactory(timeFiles,
-      [geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/])
+      [geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
+      rr0Datasource)
   )
   const contentReplacements = [
     new SsiIncludeReplaceCommand(),
@@ -187,7 +189,6 @@ getTimeFiles().then(async (timeFiles) => {
     new SsiLastModifiedReplaceCommand(context.time.options),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new AuthorReplaceCommand(timeFiles),
-    databaseAggregationCommand,
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),
@@ -201,6 +202,7 @@ getTimeFiles().then(async (timeFiles) => {
     new AnchorReplaceCommand(siteBaseUrl),
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new ImageCommand(config.outDir, 275, 500),
+    databaseAggregationCommand,
     new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
     searchCommand
   ]

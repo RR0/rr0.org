@@ -1,6 +1,6 @@
-import { montDeMarsan } from "./montigne/Montigne"
-import { Organization } from "../../../../../Organization"
+import { montDeMarsan } from "./MontDeMarsan/MontDeMarsan"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const landesCities: Organization[] = [
+export const landesCities: City[] = [
   montDeMarsan
 ]

@@ -8,14 +8,18 @@ import { vienneMessages } from "./86/VienneMessages"
 import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
 import { correzeMessages } from "./19/CorrezeMessages"
 import { girondeMessages } from "./33/GirondeMessages"
+import { lotEtGaronneMessages } from "./47/LotEtGaronneMessages"
+import { dordogneMessages } from "./24/DordogneMessages"
 
-export const nouvelleAquitaineMessageList: { [key in NouvelleAquitaineDepartmentCode]: DepartmentMessages<any> } = {
+const nouvelleAquitaineMessageList: { [key in NouvelleAquitaineDepartmentCode]: DepartmentMessages<any> } = {
   [NouvelleAquitaineDepartmentCode.Charente]: charenteMessages,
   [NouvelleAquitaineDepartmentCode.CharenteMaritime]: charenteMaritimeMessages,
   [NouvelleAquitaineDepartmentCode.Correze]: correzeMessages,
   [NouvelleAquitaineDepartmentCode.Creuse]: creuseMessages,
+  [NouvelleAquitaineDepartmentCode.Dordogne]: dordogneMessages,
   [NouvelleAquitaineDepartmentCode.Gironde]: girondeMessages,
   [NouvelleAquitaineDepartmentCode.Landes]: landesMessages,
+  [NouvelleAquitaineDepartmentCode.LotEtGaronne]: lotEtGaronneMessages,
   [NouvelleAquitaineDepartmentCode.Vienne]: vienneMessages
 }
 export const nouvelleAquitaineMessages = RegionMessages.create("Nouvelle Aquitaine", nouvelleAquitaineMessageList)

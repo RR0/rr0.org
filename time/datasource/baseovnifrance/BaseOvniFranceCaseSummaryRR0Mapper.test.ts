@@ -8,7 +8,7 @@ import { baseOvniFranceDatasource, baseOvniFranceRR0Mapper } from "./BaseOvniFra
 import { leMans72 } from "../../../org/eu/fr/region/pdl/72/lemans/LeMans"
 import { lyon69 } from "../../../org/eu/fr/region/ara/69/lyon/Lyon"
 import { briancon05 } from "../../../org/eu/fr/region/pac/05/briancon/Briancon"
-import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/chambon/Chambon"
+import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/Chambon/Chambon"
 import { OnlineSource } from "../../../source/OnlineSource"
 
 function expectedSource(datasource: BaseOvniFranceHttpDatasource, dataDate: Date, caseNumber: number): OnlineSource {

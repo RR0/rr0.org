@@ -8,4 +8,6 @@ export enum NouvelleAquitaineDepartmentCode {
   Gironde = FranceDepartementCode.Gironde,
   Landes = FranceDepartementCode.Landes,
   Vienne = FranceDepartementCode.Vienne,
+  LotEtGaronne = FranceDepartementCode.LotEtGaronne,
+  Dordogne = FranceDepartementCode.Dordogne,
 }

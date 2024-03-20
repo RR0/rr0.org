@@ -6,13 +6,17 @@ import { vienne } from "./86/Vienne"
 import { Organization } from "../../../../Organization"
 import { correze } from "./19/Correze"
 import { gironde } from "./33/Gironde"
+import { lotEtGaronne } from "./47/LotEtGaronne"
+import { dordogne } from "./24/Dordogne"
 
 export const nouvelleAquitaineDepartments: Organization[] = [
   charente,
   charenteMaritime,
   correze,
   creuse,
+  dordogne,
   gironde,
   landes,
+  lotEtGaronne,
   vienne
 ]

@@ -1,3 +1,4 @@
 export enum PyreneesOrientalesCityCode {
-  PortePuymorens = 66147
+  PortePuymorens = 66147,
+  Thuir = 66210
 }

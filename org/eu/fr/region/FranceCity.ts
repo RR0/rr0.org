@@ -1,8 +1,8 @@
-import { Place } from "../../../place/Place"
-import { departmentService } from "../../country/region/department/DepartmentService"
+import { Place } from "../../../../place/Place"
+import { Organization } from "../../../Organization"
+import { departmentService } from "../../../country/region/department/DepartmentService"
 import assert from "assert"
-import { Organization } from "../../Organization"
-import { City } from "../../country/region/department/city/City"
+import { City } from "../../../country/region/department/city/City"
 
 export function franceCity(code: number, place: Place): Organization {
   const depCode = String(Math.floor(code / 1000)).padStart(2, "0")

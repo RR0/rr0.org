@@ -12,7 +12,7 @@ import { normandieMessages_en } from "./region/nor/NormandieMessages_en"
 import { laReunionMessages_en } from "./region/lre/LaReunionMessages_en"
 import { OrganizationType } from "../../Organization"
 import { centreValDeLoireMessages } from "./region/cvl/CentreValDeLoireMessages"
-import { guadeloupeMessages_en } from "./region/gua/GuadeloupeMessages_en"
+import { guadeloupeRegion_en } from "./region/gua/GuadeloupeRegion_en"
 import { bretagneMessages_en } from "./region/bre/BretagneMessages_en"
 import { FranceRegionCode } from "./region/FranceRegionCode"
 import { martiniqueRegionMessage } from "./region/mtq/MartiniqueRegionMessage"
@@ -26,7 +26,7 @@ france_en[OrganizationType.region] = {
   com: collectiviteOutreMerMessage_en,
   cvl: centreValDeLoireMessages,
   ges: grandEstMessages,
-  gua: guadeloupeMessages_en,
+  gua: guadeloupeRegion_en,
   idf: idfMessages,
   hdf: hautsDeFranceMessages,
   [FranceRegionCode.mtq]: martiniqueRegionMessage,

@@ -1,4 +1,4 @@
-import { franceCity } from "../../../../FranceCity"
+import { franceCity } from "../../../FranceCity"
 import { Place } from "../../../../../../../place/Place"
 import { ArdecheCityCode } from "../ArdecheCityCode"
 

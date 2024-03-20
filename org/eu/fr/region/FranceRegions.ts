@@ -11,7 +11,7 @@ import { grandEst } from "./ges/GrandEst"
 import { laReunion } from "./lre/LaReunion"
 import { Organization } from "../../../Organization"
 import { centreValDeLoire } from "./cvl/CentreValDeLoire"
-import { guadeloupe } from "./gua/Guadeloupe"
+import { guadeloupeRegion } from "./gua/GuadeloupeRegion"
 import { bretagne } from "./bre/Bretagne"
 import { martiniqueRegion } from "./mtq/MartiniqueRegion"
 import { collectiviteOutreMer } from "./com/CollectiviteOutreMer"
@@ -22,7 +22,7 @@ export const franceRegions: Organization[] = [
   bretagne,
   collectiviteOutreMer,
   grandEst,
-  guadeloupe,
+  guadeloupeRegion,
   hautsDeFrance,
   ileDeFrance,
   laReunion,

@@ -1,10 +1,11 @@
 import { PyreneesOrientalesCityCode } from "./PyreneesOrientalesCityCode"
-import { portePuymorensMessages } from "./albi/PortePuymorensMessages"
+import { portePuymorensMessages } from "./PortePuymorens/PortePuymorensMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { thuirMessages } from "./Thuir/ThuirMessages"
 
-const tarnCityMessages: { [key in PyreneesOrientalesCityCode]: OrganizationMessages } = {
-  [PyreneesOrientalesCityCode.PortePuymorens]: portePuymorensMessages
-}
-
-export const pyreneesOrientalesMessages = DepartmentMessages.create("Pyrénées-Orientales", tarnCityMessages)
+type DepMessages = { [key in PyreneesOrientalesCityCode]: OrganizationMessages }
+export const pyreneesOrientalesMessages = DepartmentMessages.create<DepMessages>("Pyrénées-Orientales", {
+  [PyreneesOrientalesCityCode.PortePuymorens]: portePuymorensMessages,
+  [PyreneesOrientalesCityCode.Thuir]: thuirMessages
+})

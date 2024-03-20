@@ -1,3 +1,4 @@
 export enum VarCityCode {
-  FoxAmphoux = 83060
+  FoxAmphoux = 83060,
+  Carces = 83032,
 }

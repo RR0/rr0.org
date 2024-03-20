@@ -59,5 +59,6 @@ export enum FranceDepartementCode {
   HautsDeSeine = "92",
   ValDOise = "95",
   Guadeloupe = "971",
+  Martinique = "972",
   LaReunion = "974",
 }

@@ -14,6 +14,8 @@ import { OrganizationType } from "../../Organization"
 import { centreValDeLoireMessages } from "./region/cvl/CentreValDeLoireMessages"
 import { guadeloupeMessages_en } from "./region/gua/GuadeloupeMessages_en"
 import { bretagneMessages_en } from "./region/bre/BretagneMessages_en"
+import { FranceRegionCode } from "./region/FranceRegionCode"
+import { martiniqueRegionMessage } from "./region/mtq/MartiniqueRegionMessage"
 
 export const france_en = new FranceMessages("France")
 france_en[OrganizationType.region] = {
@@ -25,6 +27,7 @@ france_en[OrganizationType.region] = {
   gua: guadeloupeMessages_en,
   idf: idfMessages,
   hdf: hautsDeFranceMessages,
+  [FranceRegionCode.mtq]: martiniqueRegionMessage,
   lre: laReunionMessages_en,
   nor: normandieMessages_en,
   pac: pacaMessages,

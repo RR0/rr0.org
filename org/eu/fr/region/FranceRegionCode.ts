@@ -60,6 +60,11 @@ export enum FranceRegionCode {
   occ = "occ",
 
   /**
+   * Martinique
+   */
+  mtq = "mtq",
+
+  /**
    * Nouvelle-Aquitaine
    */
   naq = "naq",

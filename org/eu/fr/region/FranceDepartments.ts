@@ -16,6 +16,7 @@ import { Region } from "../../../country/region/Region"
 import { centreValDeLoireDepartments } from "./cvl/CentreValDeLoireDepartments"
 import { guadeloupeDepartments } from "./gua/GuadeloupeDepartments"
 import { bretagneDepartments } from "./bre/BretagneDepartments"
+import { martiniqueDepartments } from "./mtq/MartiniqueDepartments"
 
 export const franceDepartments: Department[] = [
   ...auvergneRhoneAlpesDepartments,
@@ -27,6 +28,7 @@ export const franceDepartments: Department[] = [
   ...idfDepartments,
   ...hautsDeFranceDepartments,
   ...laReunionDepartments,
+  ...martiniqueDepartments,
   ...normandieDepartments,
   ...nouvelleAquitaineDepartments,
   ...occitanieDepartments,

@@ -13,6 +13,7 @@ import { Organization } from "../../../Organization"
 import { centreValDeLoire } from "./cvl/CentreValDeLoire"
 import { guadeloupe } from "./gua/Guadeloupe"
 import { bretagne } from "./bre/Bretagne"
+import { martiniqueRegion } from "./mtq/MartiniqueRegion"
 
 export const franceRegions: Organization[] = [
   auvergneRhoneAlpes,
@@ -23,6 +24,7 @@ export const franceRegions: Organization[] = [
   hautsDeFrance,
   ileDeFrance,
   laReunion,
+  martiniqueRegion,
   nouvelleAquitaine,
   normandie,
   occitanie,

@@ -12,6 +12,7 @@ import { laReunionCities } from "./region/lre/LaReunionCities"
 import { normandieCities } from "./region/nor/NormandieCities"
 import { centreValDeLoireCities } from "./region/cvl/CentreValDeLoireCities"
 import { bretagneCities } from "./region/bre/BretagneCities"
+import { martiniqueRegionCities } from "./region/mtq/MartiniqueRegionCities"
 
 export const franceCities: City[] = [
   ...auvergneRhoneAlpesCities,
@@ -22,6 +23,7 @@ export const franceCities: City[] = [
   ...idfCities,
   ...hautsDeFranceCities,
   ...laReunionCities,
+  ...martiniqueRegionCities,
   ...normandieCities,
   ...nouvelleAquitaineCities,
   ...occitanieCities,

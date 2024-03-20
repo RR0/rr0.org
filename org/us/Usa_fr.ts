@@ -27,6 +27,17 @@ import { maryland_fr } from "./region/md/Maryland_fr"
 import { massachusetts_fr } from "./region/ma/Massachusetts_fr"
 import { michigan_fr } from "./region/mi/Michigan_fr"
 import { minnesota_fr } from "./region/mn/Minnesota_fr"
+import { mississippi_fr } from "./region/ms/Mississippi_fr"
+import { missouri_fr } from "./region/mo/Missouri_fr"
+import { montana_fr } from "./region/mt/Montana_fr"
+import { newHampshire_fr } from "./region/nh/NewHampshire_fr"
+import { nevada_fr } from "./region/nv/Nevada_fr"
+import { ohio_fr } from "./region/oh/Ohio_fr"
+import { oklahoma_fr } from "./region/ok/Oklahoma_fr"
+import { oregon_fr } from "./region/or/Oregon_fr"
+import { puertoRico_fr } from "./region/pr/PuertoRico_fr"
+import { southCarolina_fr } from "./region/sc/SouthCarolina_fr"
+import { utah_fr } from "./region/ut/Utah_fr"
 
 export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   ak: arkansas_fr,
@@ -45,14 +56,25 @@ export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   me: maine_fr,
   mi: michigan_fr,
   mn: minnesota_fr,
+  mo: missouri_fr,
+  ms: mississippi_fr,
+  mt: montana_fr,
   nc: northCarolina_fr,
   ne: nebraska_fr,
+  nh: newHampshire_fr,
   nj: newJersey_fr,
   nm: newMexicoMessages_fr,
   ny: newYork_fr,
+  nv: nevada_fr,
+  oh: ohio_fr,
+  ok: oklahoma_fr,
+  or: oregon_fr,
   pa: pennsylvaniaMessages_fr,
+  pr: puertoRico_fr,
+  sc: southCarolina_fr,
   tn: tennesseeMessages_fr,
   tx: texas_fr,
+  ut: utah_fr,
   va: virginia_fr,
   wa: washingtonMessages_fr,
   wv: westVirginia_fr

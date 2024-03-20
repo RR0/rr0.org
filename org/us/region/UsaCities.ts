@@ -21,10 +21,20 @@ import { illinoisCities } from "./il/IllinoisCities"
 import { kentuckyCities } from "./ky/KentuckyCities"
 import { maineCities } from "./me/MaineCities"
 import { marylandCities } from "./md/MarylandCities"
-import { massachusetts } from "./ma/Massachusetts"
 import { massachusettsCities } from "./ma/MassachusettsCities"
 import { michiganCities } from "./mi/MichiganCities"
 import { minnesotaCities } from "./mn/MinnesotaCities"
+import { mississippiCities } from "./ms/MississippiCities"
+import { missouriCities } from "./mo/MissouriCities"
+import { montanaCities } from "./mt/MontanaCities"
+import { newHampshireCities } from "./nh/NewHampshireCities"
+import { nevadaCities } from "./nv/NevadaCities"
+import { ohioCities } from "./oh/OhioCities"
+import { oklahomaCities } from "./ok/OklahomaCities"
+import { oregonCities } from "./or/OregonCities"
+import { puertoRicoCities } from "./pr/PuertoRicoCities"
+import { southCarolinaCities } from "./sc/SouthCarolinaCities"
+import { utahCities } from "./ut/UtahCities"
 
 export const usaCities: City[] = [
   ...alabamaCities,
@@ -43,12 +53,23 @@ export const usaCities: City[] = [
   ...massachusettsCities,
   ...michiganCities,
   ...minnesotaCities,
+  ...mississippiCities,
+  ...missouriCities,
+  ...montanaCities,
+  ...nevadaCities,
+  ...newHampshireCities,
+  ...ohioCities,
+  ...oklahomaCities,
+  ...oregonCities,
   ...pennsylvaniaCities,
+  ...puertoRicoCities,
   ...nebraskaCities,
   ...newJerseyCities,
   ...newYorkCities,
   ...northCarolinaCities,
+  ...southCarolinaCities,
   ...texasCities,
+  ...utahCities,
   ...virginiaCities,
   ...washingtonCities,
   ...westVirginiaCities

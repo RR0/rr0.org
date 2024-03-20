@@ -23,6 +23,17 @@ import { marylandCounties } from "./md/MarylandCounties"
 import { massachusettsCounties } from "./ma/MassachusettsCounties"
 import { michiganCounties } from "./mi/MichiganCounties"
 import { minnesotaCounties } from "./mn/MinnesotaCounties"
+import { mississippiCounties } from "./ms/MississippiCounties"
+import { missouriCounties } from "./mo/MissouriCounties"
+import { montanaCounties } from "./mt/MontanaCounties"
+import { newHampshireCounties } from "./nh/NewHampshireCounties"
+import { nevadaCounties } from "./nv/NevadaCounties"
+import { ohioCounties } from "./oh/OhioCounties"
+import { oklahomaCounties } from "./ok/OklahomaCounties"
+import { oregonCounties } from "./or/OregonCounties"
+import { puertoRicoCounties } from "./pr/PuertoRicoCounties"
+import { southCarolinaCities } from "./sc/SouthCarolinaCities"
+import { utahCounties } from "./ut/UtahCounties"
 
 export const usaCounties: Organization[] = [
   ...alabamaCounties,
@@ -40,12 +51,23 @@ export const usaCounties: Organization[] = [
   ...massachusettsCounties,
   ...michiganCounties,
   ...minnesotaCounties,
-  ...pennsylvaniaCounties,
+  ...mississippiCounties,
+  ...missouriCounties,
+  ...montanaCounties,
+  ...nevadaCounties,
+  ...newHampshireCounties,
   ...nebraskaCounties,
   ...newJerseyCounties,
   ...newMexicoCounties,
   ...newYorkCounties,
+  ...ohioCounties,
+  ...oklahomaCounties,
+  ...oregonCounties,
+  ...pennsylvaniaCounties,
+  ...puertoRicoCounties,
+  ...southCarolinaCities,
   ...texasCounties,
+  ...utahCounties,
   ...virginiaCounties,
   ...washingtonCounties,
   ...westVirginaCounties

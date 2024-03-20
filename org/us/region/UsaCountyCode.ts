@@ -18,4 +18,5 @@ export enum UsaCountyCode {
   scottsBluff = "scottsBluff",
   middlesex = "middlesex",
   kalamazoo = "kalamazoo",
+  uintah = "uintah",
 }

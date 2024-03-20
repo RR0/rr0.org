@@ -29,6 +29,17 @@ import { maryland } from "./md/Maryland"
 import { massachusetts } from "./ma/Massachusetts"
 import { michigan } from "./mi/Michigan"
 import { minnesota } from "./mn/Minnesota"
+import { mississippi } from "./ms/Mississippi"
+import { missouri } from "./mo/Missouri"
+import { montana } from "./mt/Montana"
+import { newHampshire } from "./nh/NewHampshire"
+import { nevada } from "./nv/Nevada"
+import { ohio } from "./oh/Ohio"
+import { oklahoma } from "./ok/Oklahoma"
+import { oregon } from "./or/Oregon"
+import { puertoRico } from "./pr/PuertoRico"
+import { southCarolina } from "./sc/SouthCarolina"
+import { utah } from "./ut/Utah"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -47,27 +58,25 @@ export const usaRegions: Region[] = [
   massachusetts,
   michigan,
   minnesota,
-  usaRegion(UsaStates.ms, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.mo, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.mt, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.ne, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.nh, Place.fromLocation(47.466667, 0.833333)),
+  mississippi,
+  missouri,
+  montana,
+  newHampshire,
   newMexico,
-  usaRegion(UsaStates.nc, Place.fromLocation(47.466667, 0.833333)),
   nebraska,
   newJersey,
   newYork,
   northCarolina,
-  usaRegion(UsaStates.nv, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.oh, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.ok, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.or, Place.fromLocation(47.466667, 0.833333)),
+  nevada,
+  ohio,
+  oklahoma,
+  oregon,
   pennsylvania,
-  usaRegion(UsaStates.pr, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.sc, Place.fromLocation(47.466667, 0.833333)),
+  puertoRico,
+  southCarolina,
   usaRegion(UsaStates.tn, Place.fromLocation(47.466667, 0.833333)),
   texas,
-  usaRegion(UsaStates.ut, Place.fromLocation(47.466667, 0.833333)),
+  utah,
   virginia,
   usaRegion(UsaStates.vt, Place.fromLocation(47.466667, 0.833333)),
   usaRegion(UsaStates.vi, Place.fromLocation(47.466667, 0.833333)),

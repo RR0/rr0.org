@@ -8,6 +8,7 @@ import { france } from "../../../org/eu/fr/France"
 import { GeipanCaseClassification } from "./GeipanCaseClassification"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
+import { Organization } from "../../../org/Organization"
 
 export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCaseSummary, RR0CaseSummary> {
 
@@ -57,10 +58,16 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
     const depCode = sourceCase.zoneCode
     assert.ok(depCode, `Should at least have one of department,region or country code`)
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)
-    const placeName = placeItems[1].replace("(DPT)", "").replace("(DEP)", "").trim()
-    const org = this.cityService.find(context, placeName, undefined)
-    assert.ok(org,
-      `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
+    const title = placeItems[1]
+    let org: Organization
+    if (title === "NATIONAL") {
+      org = france
+    } else {
+      const placeName = title.replace("(DPT)", "").replace("(DEP)", "").trim()
+      org = this.cityService.find(context, placeName, undefined)
+      assert.ok(org,
+        `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
+    }
     return {name: org.messages(context).toTitle(context, org, {parent: true}), org, place: org.places[0]}
   }
 }

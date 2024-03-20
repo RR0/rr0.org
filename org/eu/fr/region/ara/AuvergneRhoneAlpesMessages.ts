@@ -2,7 +2,7 @@ import { AuvergneRhoneAlpesDepartementCode } from "./AuvergneRhoneAlpesDeparteme
 import { allierMessages } from "./03/AllierMessages"
 import { isereMessages } from "./38/IsereMessages"
 import { loireMessages } from "./42/LoireMessages"
-import { puyDeDomeMessages } from "./63/RhoneMessages"
+import { puyDeDomeMessages } from "./63/PuyDeDomeMessages"
 import { rhoneMessages } from "./69/RhoneMessages"
 import { RegionMessages } from "../../../../country/region/RegionMessages"
 import { dromeMessages } from "./26/DromeMessages"

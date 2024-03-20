@@ -7,4 +7,5 @@ export enum PacaDepartementCode {
   HautesAlpes = FranceDepartementCode.HautesAlpes,
   Var = FranceDepartementCode.Var,
   Vaucluse = FranceDepartementCode.Vaucluse,
+  Vendee = FranceDepartementCode.Vendee,
 }

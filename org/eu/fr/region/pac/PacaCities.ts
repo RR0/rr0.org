@@ -5,6 +5,7 @@ import { alpesMaritimesCities } from "./06/AlpesMaritimesCities"
 import { varCities } from "./83/VarCities"
 import { bouchesDuRhoneCities } from "./13/BouchesDuRhoneCities"
 import { alpesDeHauteProvenceCities } from "./04/AlpesDeHauteProvenceCities"
+import { vendeeCities } from "./85/VendeeCities"
 
 export const pacaCities: City[] = [
   ...alpesDeHauteProvenceCities,
@@ -12,5 +13,6 @@ export const pacaCities: City[] = [
   ...bouchesDuRhoneCities,
   ...hautesAlpesCities,
   ...vaucluseCities,
-  ...varCities
+  ...varCities,
+  ...vendeeCities
 ]

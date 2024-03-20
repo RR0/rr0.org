@@ -1,6 +1,7 @@
 import { FranceDepartementCode } from "../FranceDepartementCode"
 
 export enum OccitanieDepartementCode {
+  Aveyron = FranceDepartementCode.Aveyron,
   Ariege = FranceDepartementCode.Ariege,
   Aude = FranceDepartementCode.Aude,
   Gard = FranceDepartementCode.Gard,

@@ -10,11 +10,13 @@ import { OrganizationMessages } from "../../../../OrganizationMessages"
 import { pyreneesOrientalesMessages } from "./66/PyreneesOrientalesMessages"
 import { ariegeMessages } from "./09/AriegeMessages"
 import { hauteVienneMessages } from "./87/HauteVienneMessages"
+import { aveyronMessages } from "./12/AveyronMessages"
 
 export type OccitanieDepartmentsMessages = { [key in OccitanieDepartementCode]: OrganizationMessages }
 export const occitanieDepartmentsMessages: OccitanieDepartmentsMessages = {
   [OccitanieDepartementCode.Ariege]: ariegeMessages,
   [OccitanieDepartementCode.Aude]: audeMessages,
+  [OccitanieDepartementCode.Aveyron]: aveyronMessages,
   [OccitanieDepartementCode.Gard]: gardMessages,
   [OccitanieDepartementCode.Gers]: gersMessages,
   [OccitanieDepartementCode.HauteGaronne]: hauteGaronneMessages,

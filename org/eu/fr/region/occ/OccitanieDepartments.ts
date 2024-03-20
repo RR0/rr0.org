@@ -9,10 +9,12 @@ import { gard } from "./30/Gard"
 import { pyreneesOrientales } from "./66/PyreneesOrientales"
 import { ariege } from "./09/Ariege"
 import { hauteVienne } from "./87/HauteVienne"
+import { aveyron } from "./12/Aveyron"
 
 export const occitanieDepartments: Organization[] = [
   ariege,
   aude,
+  aveyron,
   gers,
   gard,
   hauteGaronne,

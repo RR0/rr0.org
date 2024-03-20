@@ -1,8 +1,10 @@
 import { City } from "../../../../../country/region/department/city/City"
-import { stMarie974 } from "./stmarie/SainteMarie"
-import { stBenoit974 } from "./stbenoit/SaintBenoit"
+import { stMarie974 } from "./SainteMarie/SainteMarie"
+import { stBenoit974 } from "./SaintBenoit/SaintBenoit"
+import { saintPierre974 } from "./SaintPierre/SaintPierre"
 
 export const laReunion974Cities: City[] = [
+  stBenoit974,
   stMarie974,
-  stBenoit974
+  saintPierre974
 ]

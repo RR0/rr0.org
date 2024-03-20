@@ -1,5 +1,6 @@
 export enum FranceDepartementCode {
   Ain = "01",
+  Aisne = "02",
   Allier = "03",
   AlpesDeHauteProvence = "04",
   HautesAlpes = "05",
@@ -7,6 +8,7 @@ export enum FranceDepartementCode {
   Ardeche = "07",
   Ariege = "09",
   Aude = "11",
+  Aveyron = "12",
   BouchesDuRhone = "13",
   Calvados = "14",
   Cantal = "15",
@@ -55,6 +57,7 @@ export enum FranceDepartementCode {
   TarnEtGaronne = "82",
   Var = "83",
   Vaucluse = "84",
+  Vendee = "85",
   Vienne = "86",
   HauteVienne = "87",
   Essonne = "91",

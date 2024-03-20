@@ -1,3 +1,3 @@
 import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
 
-export const ledignanMessages = new CityMessages("Lédignan")
+export const stGillesMessages = new CityMessages("Saint-Gilles")

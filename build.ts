@@ -195,7 +195,6 @@ getTimeFiles().then(async (timeFiles) => {
     new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
     new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
     new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
-    new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
     new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),
     new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
     new OutlineReplaceCommand(),
@@ -203,6 +202,7 @@ getTimeFiles().then(async (timeFiles) => {
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new ImageCommand(config.outDir, 275, 500),
     databaseAggregationCommand,
+    new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
     new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
     searchCommand
   ]

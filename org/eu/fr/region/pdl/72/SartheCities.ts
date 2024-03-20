@@ -1,10 +1,12 @@
 import { City } from "../../../../../country/region/department/city/City"
 import { leMans72 } from "./lemans/LeMans"
-import { steCerotte } from "./stecerotte/SteCerotte"
+import { steCerotte } from "./SteCerotte/SteCerotte"
 import { bazoge } from "./bazoge/Bazoge"
+import { sougeLeGanelon } from "./SougeLeGanelon/SougeLeGanelon"
 
 export const sartheCities: City[] = [
+  bazoge,
   leMans72,
   steCerotte,
-  bazoge
+  sougeLeGanelon
 ]

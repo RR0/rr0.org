@@ -174,7 +174,7 @@ getTimeFiles().then(async (timeFiles) => {
       [geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
       rr0Datasource)
   )
-  const contentReplacements = [
+  const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),
     new BaseReplaceCommand("/"),
     new LanguageReplaceCommand(),
@@ -188,7 +188,12 @@ getTimeFiles().then(async (timeFiles) => {
       (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
     new SsiLastModifiedReplaceCommand(context.time.options),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
-    new AuthorReplaceCommand(timeFiles),
+    new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
+    new AuthorReplaceCommand(timeFiles)
+  ]
+  const contentsReplaceCommand = [
+    databaseAggregationCommand,
+    new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),
@@ -196,13 +201,14 @@ getTimeFiles().then(async (timeFiles) => {
     new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
     new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
     new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),
-    new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+    new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
+  ]
+  const contentReplacements = [
+    ...pageReplaceCommands,
+    ...contentsReplaceCommand,
     new OutlineReplaceCommand(),
     new AnchorReplaceCommand(siteBaseUrl),
-    new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new ImageCommand(config.outDir, 275, 500),
-    databaseAggregationCommand,
-    new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
     new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
     searchCommand
   ]

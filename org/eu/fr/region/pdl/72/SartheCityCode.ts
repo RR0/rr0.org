@@ -1,5 +1,6 @@
 export enum SartheCityCode {
-  LeMans = 72000,
-  SteCerotte = 72272,
   Bazoge = 72024,
+  LeMans = 72000,
+  SougeLeGanelon = 72337,
+  SteCerotte = 72272,
 }

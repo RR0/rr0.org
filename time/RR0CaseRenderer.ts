@@ -29,6 +29,7 @@ export class RR0CaseRenderer {
       const sourceEl = this.thisSourceElement(context, source)
       item.append(" ", sourceEl)
     })
+    item.append(".")
     return item
   }
 

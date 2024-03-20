@@ -17,6 +17,7 @@ export enum FranceDepartementCode {
   CotesDArmor = "22",
   Creuse = "23",
   Drome = "26",
+  Finistere = "29",
   Gard = "30",
   HauteGaronne = "31",
   Gers = "32",

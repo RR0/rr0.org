@@ -70,7 +70,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     for (const caseToMerge of casesToMerge) {
       const foundExisting = existingCases
         .filter(existingCase => existingCase.time.equals(caseToMerge.time))
-        .filter(existingCase => existingCase.place.name === caseToMerge.place.name)
+        .filter(existingCase => existingCase.place?.name === caseToMerge.place?.name)
       if (foundExisting?.length > 0) {
         context.logger.debug("Merging ", caseToMerge, " into ", foundExisting)
       } else {

@@ -1,6 +1,8 @@
-import { stEtienne42 } from "./stetienne/StEtienne"
-import { Organization } from "../../../../../Organization"
+import { stEtienne42 } from "./SaintEtienne/SaintEtienne"
+import { roanne } from "./Roanne/Roanne"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const loireCities: Organization[] = [
+export const loireCities: City[] = [
+  roanne,
   stEtienne42
 ]

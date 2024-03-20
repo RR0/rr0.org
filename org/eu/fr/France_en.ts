@@ -9,7 +9,7 @@ import { occitanieMessages_en } from "./region/occ/OccitanieMessages_en"
 import { hautsDeFranceMessages } from "./region/hdf/HautsDeFranceMessages"
 import { grandEstMessages } from "./region/ges/GrandEstMessages"
 import { normandieMessages_en } from "./region/nor/NormandieMessages_en"
-import { laReunionMessages_en } from "./region/lre/LaReunionMessages_en"
+import { laReunionRegion_en } from "./region/lre/LaReunionRegion_en"
 import { OrganizationType } from "../../Organization"
 import { centreValDeLoireMessages } from "./region/cvl/CentreValDeLoireMessages"
 import { guadeloupeRegion_en } from "./region/gua/GuadeloupeRegion_en"
@@ -30,7 +30,7 @@ france_en[OrganizationType.region] = {
   idf: idfMessages,
   hdf: hautsDeFranceMessages,
   [FranceRegionCode.mtq]: martiniqueRegionMessage,
-  lre: laReunionMessages_en,
+  lre: laReunionRegion_en,
   nor: normandieMessages_en,
   pac: pacaMessages,
   pdl: paysDeLoireMessages,

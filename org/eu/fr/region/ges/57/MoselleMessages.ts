@@ -1,5 +1,5 @@
 import { MoselleCityCode } from "./MoselleCityCode"
-import { arsSurMoselleMessages } from "./arssurmoselle/ArsSurMoselleMessages"
+import { arsSurMoselleMessages } from "./ArsSurMoselle/ArsSurMoselleMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
 export const moselleMessages = DepartmentMessages.create("Moselle", {

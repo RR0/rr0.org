@@ -1,5 +1,5 @@
 import { MarneCityCode } from "./MarneCityCode"
-import { reimsMessages } from "./reims/ReimsMessages"
+import { reimsMessages } from "./Reims/ReimsMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 import { OrganizationType } from "../../../../../Organization"
 

@@ -1,7 +1,11 @@
 import { BasRhinCityCode } from "./BasRhinCityCode"
-import { urmattMessages } from "./urmatt/UrmattMessages"
+import { urmattMessages } from "./Urmatt/UrmattMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { bischwillerMessages } from "./Bischwiller/BischwillerMessages"
 
-export const basRhinMessages = DepartmentMessages.create("Bas-Rhin", {
-  [BasRhinCityCode.Urmatt]: urmattMessages
+type DepMessages = { [key in BasRhinCityCode]: CityMessages }
+export const basRhinMessages = DepartmentMessages.create<DepMessages>("Bas-Rhin", {
+  [BasRhinCityCode.Urmatt]: urmattMessages,
+  [BasRhinCityCode.Bischwiller]: bischwillerMessages
 })

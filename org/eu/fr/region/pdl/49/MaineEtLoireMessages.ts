@@ -1,11 +1,11 @@
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { MaineEtLoireCityCode } from "./MaineEtLoireCityCode"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { angersMessages } from "./angers/AngersMessages"
+import { angersMessages } from "./Angers/AngersMessages"
+import { choletMessages } from "./Cholet/CholetMessages"
 
-type SartheCityMessagesList = { [key in MaineEtLoireCityCode]: OrganizationMessages }
-const maineEtLoireCityMessages: SartheCityMessagesList = {
-  [MaineEtLoireCityCode.Angers]: angersMessages
-}
-export const maineEtLoireMessages = DepartmentMessages.create<SartheCityMessagesList>("Maine-et-Loire",
-  maineEtLoireCityMessages)
+type DepMessages = { [key in MaineEtLoireCityCode]: OrganizationMessages }
+export const maineEtLoireMessages = DepartmentMessages.create<DepMessages>("Maine-et-Loire", {
+  [MaineEtLoireCityCode.Angers]: angersMessages,
+  [MaineEtLoireCityCode.Cholet]: choletMessages
+})

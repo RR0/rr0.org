@@ -1,3 +1,4 @@
 export enum SaoneEtLoireCityCode {
-  Verosvres = 71571
+  Joncy = 71242,
+  Verosvres = 71571,
 }

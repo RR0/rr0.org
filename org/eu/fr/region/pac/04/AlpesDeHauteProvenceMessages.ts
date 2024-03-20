@@ -1,13 +1,12 @@
 import { AlpesDeHauteProvenceCityCode } from "./AlpesDeHauteProvenceCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { barcelonnetteMessages } from "./Barcelonnette/BarcelonnetteMessages"
 import { lauzetUbayeMessages } from "./LauzetUbaye/LauzetUbayeMessages"
+import { entrevauxMessages } from "./Entrevaux/EntrevauxMessages"
 
-type HautesAlpesCityList<T> = { [key in AlpesDeHauteProvenceCityCode]: T }
-const alpesDeHauteProvenceCityMessages: HautesAlpesCityList<OrganizationMessages> = {
+type DepMessages<T> = { [key in AlpesDeHauteProvenceCityCode]: T }
+export const alpesDeHauteProvenceMessages = DepartmentMessages.create<DepMessages>("Alpes-de-Haute-Provence", {
   [AlpesDeHauteProvenceCityCode.Barcelonnette]: barcelonnetteMessages,
+  [AlpesDeHauteProvenceCityCode.Entrevaux]: entrevauxMessages,
   [AlpesDeHauteProvenceCityCode.LauzetUbaye]: lauzetUbayeMessages
-}
-export const alpesDeHauteProvenceMessages = DepartmentMessages.create("Alpes-de-Haute-Provence",
-  alpesDeHauteProvenceCityMessages)
+})

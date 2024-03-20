@@ -3,5 +3,4 @@ import { UsaStates } from "../UsaStates"
 import { usa } from "../../Usa"
 import { Region } from "../../../country/region/Region"
 
-export const wyoming = new Region(UsaStates.wy, usa,
-  [Place.fromDMS("41°0'N,104°03′W"), Place.fromDMS("45°0'N,111°03′W")])
+export const virginIslands = new Region(UsaStates.vi, usa, [Place.fromDMS("18°34′N 64°90′W")])

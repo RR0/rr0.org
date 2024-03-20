@@ -5,7 +5,7 @@ import { tennessee_en } from "./region/tn/Tennessee_en"
 import { texas_en } from "./region/tx/Texas_en"
 import { florida_en } from "./region/fl/Florida_en"
 import { pennsylvania_en } from "./region/pa/Pennsylvania_en"
-import { washington_en } from "./region/wa/Washington_en"
+import { washingtonState_en } from "./region/wa/WashingtonState_en"
 import { indiana_en } from "./region/in/Indiana_en"
 import { CountryMessages } from "../country/CountryMessages"
 import { UsaRegionMessagesList } from "./UsaMessages"
@@ -38,6 +38,10 @@ import { oregon_en } from "./region/or/Oregon_en"
 import { puertoRico_en } from "./region/pr/PuertoRico_en"
 import { southCarolina_en } from "./region/sc/SouthCarolina_en"
 import { utah_en } from "./region/ut/Utah_en"
+import { vermont_en } from "./region/vt/Vermont_en"
+import { virginIslands_en } from "./region/vi/VirginIslands_en"
+import { wisconsin_en } from "./region/wi/Wisconsin_en"
+import { wyoming_en } from "./region/wy/Wyoming_en"
 
 export const usa_en = CountryMessages.create<UsaRegionMessagesList>("USA", {
   ak: arkansas_en,
@@ -76,6 +80,10 @@ export const usa_en = CountryMessages.create<UsaRegionMessagesList>("USA", {
   tx: texas_en,
   ut: utah_en,
   va: virginia_en,
-  wa: washington_en,
-  wv: westVirginia_en
+  vi: virginIslands_en,
+  vt: vermont_en,
+  wa: washingtonState_en,
+  wi: wisconsin_en,
+  wv: westVirginia_en,
+  wy: wyoming_en
 })

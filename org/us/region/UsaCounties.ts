@@ -34,6 +34,10 @@ import { oregonCounties } from "./or/OregonCounties"
 import { puertoRicoCounties } from "./pr/PuertoRicoCounties"
 import { southCarolinaCities } from "./sc/SouthCarolinaCities"
 import { utahCounties } from "./ut/UtahCounties"
+import { vermontCounties } from "./vt/VermontCounties"
+import { virginIslandsCounties } from "./vi/VirginIslandsCounties"
+import { wisconsinCounties } from "./wi/WisconsinCounties"
+import { wyomingCounties } from "./wy/WyomingCounties"
 
 export const usaCounties: Organization[] = [
   ...alabamaCounties,
@@ -68,7 +72,11 @@ export const usaCounties: Organization[] = [
   ...southCarolinaCities,
   ...texasCounties,
   ...utahCounties,
+  ...vermontCounties,
   ...virginiaCounties,
+  ...virginIslandsCounties,
   ...washingtonCounties,
-  ...westVirginaCounties
+  ...westVirginaCounties,
+  ...wisconsinCounties,
+  ...wyomingCounties
 ]

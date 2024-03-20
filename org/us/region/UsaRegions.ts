@@ -40,6 +40,9 @@ import { oregon } from "./or/Oregon"
 import { puertoRico } from "./pr/PuertoRico"
 import { southCarolina } from "./sc/SouthCarolina"
 import { utah } from "./ut/Utah"
+import { vermont } from "./vt/Vermont"
+import { virginIslands } from "./vi/VirginIslands"
+import { wisconsin } from "./wi/Wisconsin"
 
 export const usaRegions: Region[] = [
   alabama,
@@ -78,10 +81,11 @@ export const usaRegions: Region[] = [
   texas,
   utah,
   virginia,
-  usaRegion(UsaStates.vt, Place.fromLocation(47.466667, 0.833333)),
-  usaRegion(UsaStates.vi, Place.fromLocation(47.466667, 0.833333)),
+  vermont,
+  virginIslands,
   washington,
   usaRegion(UsaStates.wi, Place.fromLocation(47.466667, 0.833333)),
   westVirginia,
+  wisconsin,
   wyoming
 ]

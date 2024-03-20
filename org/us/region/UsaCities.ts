@@ -35,6 +35,10 @@ import { oregonCities } from "./or/OregonCities"
 import { puertoRicoCities } from "./pr/PuertoRicoCities"
 import { southCarolinaCities } from "./sc/SouthCarolinaCities"
 import { utahCities } from "./ut/UtahCities"
+import { vermontCities } from "./vt/VermontCities"
+import { virginIslandsCities } from "./vi/VirginIslandsCities"
+import { wisconsinCities } from "./wi/WisconsinCities"
+import { wyomingCities } from "./wy/WyomingCities"
 
 export const usaCities: City[] = [
   ...alabamaCities,
@@ -70,7 +74,11 @@ export const usaCities: City[] = [
   ...southCarolinaCities,
   ...texasCities,
   ...utahCities,
+  ...vermontCities,
   ...virginiaCities,
+  ...virginIslandsCities,
   ...washingtonCities,
-  ...westVirginiaCities
+  ...westVirginiaCities,
+  ...wisconsinCities,
+  ...wyomingCities
 ]

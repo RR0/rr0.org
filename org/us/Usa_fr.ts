@@ -1,11 +1,11 @@
-import { alabamaMessages_fr } from "./region/al/AlabamaMessages_fr"
-import { californiaMessages_fr } from "./region/ca/CaliforniaMessages_fr"
-import { newMexicoMessages_fr } from "./region/nm/NewMexicoMessages_fr"
-import { tennesseeMessages_fr } from "./region/tn/TennesseeMessages_fr"
+import { alabama_fr } from "./region/al/Alabama_fr"
+import { california_fr } from "./region/ca/California_fr"
+import { newMexico_fr } from "./region/nm/NewMexico_fr"
+import { tennessee_fr } from "./region/tn/Tennessee_fr"
 import { texas_fr } from "./region/tx/Texas_fr"
-import { floridaMessages_fr } from "./region/fl/FloridaMessages_fr"
-import { pennsylvaniaMessages_fr } from "./region/pa/PennsylvaniaMessages_fr"
-import { washingtonMessages_fr } from "./region/wa/WashingtonMessages_fr"
+import { florida_fr } from "./region/fl/Florida_fr"
+import { pennsylvania_fr } from "./region/pa/Pennsylvania_fr"
+import { washingtonState_fr } from "./region/wa/WashingtonState_fr"
 import { indiana_fr } from "./region/in/Indiana_fr"
 import { CountryMessages } from "../country/CountryMessages"
 import { UsaRegionMessagesList } from "./UsaMessages"
@@ -38,15 +38,19 @@ import { oregon_fr } from "./region/or/Oregon_fr"
 import { puertoRico_fr } from "./region/pr/PuertoRico_fr"
 import { southCarolina_fr } from "./region/sc/SouthCarolina_fr"
 import { utah_fr } from "./region/ut/Utah_fr"
+import { vermont_fr } from "./region/vt/Vermont_fr"
+import { virginIslands_fr } from "./region/vi/VirginIslands_fr"
+import { wisconsin_fr } from "./region/wi/Wisconsin_fr"
+import { wyoming_fr } from "./region/wy/Wyoming_fr"
 
 export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   ak: arkansas_fr,
-  al: alabamaMessages_fr,
-  ca: californiaMessages_fr,
+  al: alabama_fr,
+  ca: california_fr,
   co: colorado_fr,
   ct: connecticut_fr,
   de: delaware_fr,
-  fl: floridaMessages_fr,
+  fl: florida_fr,
   hi: hawai_fr,
   il: illinois_fr,
   in: indiana_fr,
@@ -63,19 +67,23 @@ export const usa_fr = CountryMessages.create<UsaRegionMessagesList>("USA", {
   ne: nebraska_fr,
   nh: newHampshire_fr,
   nj: newJersey_fr,
-  nm: newMexicoMessages_fr,
+  nm: newMexico_fr,
   ny: newYork_fr,
   nv: nevada_fr,
   oh: ohio_fr,
   ok: oklahoma_fr,
   or: oregon_fr,
-  pa: pennsylvaniaMessages_fr,
+  pa: pennsylvania_fr,
   pr: puertoRico_fr,
   sc: southCarolina_fr,
-  tn: tennesseeMessages_fr,
+  tn: tennessee_fr,
   tx: texas_fr,
   ut: utah_fr,
   va: virginia_fr,
-  wa: washingtonMessages_fr,
-  wv: westVirginia_fr
+  vi: virginIslands_fr,
+  vt: vermont_fr,
+  wa: washingtonState_fr,
+  wi: wisconsin_fr,
+  wv: westVirginia_fr,
+  wy: wyoming_fr
 })

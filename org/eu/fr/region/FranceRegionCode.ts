@@ -15,6 +15,11 @@ export enum FranceRegionCode {
   bre = "bre",
 
   /**
+   * Collectivités d'Outre-Mer
+   */
+  com = "com",
+
+  /**
    * Centre-Val de Loire
    */
   cvl = "cvl",

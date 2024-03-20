@@ -16,12 +16,14 @@ import { guadeloupeMessages_fr } from "./region/gua/GuadeloupeMessages_fr"
 import { bretagneMessages_fr } from "./region/bre/BretagneMessages_fr"
 import { martiniqueRegionMessage } from "./region/mtq/MartiniqueRegionMessage"
 import { FranceRegionCode } from "./region/FranceRegionCode"
+import { collectiviteOutreMerMessage_fr } from "./region/com/CollectiviteOutreMerMessage_fr"
 
 export const france_fr = new FranceMessages("France")
 france_fr[OrganizationType.region] = {
   ara: auvergneRhoneAlpesMessages,
   bre: bretagneMessages_fr,
   bfc: bourgogneFrancheComteMessages,
+  com: collectiviteOutreMerMessage_fr,
   cvl: centreValDeLoireMessages,
   ges: grandEstMessages,
   gua: guadeloupeMessages_fr,

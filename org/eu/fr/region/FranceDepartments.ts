@@ -17,6 +17,7 @@ import { centreValDeLoireDepartments } from "./cvl/CentreValDeLoireDepartments"
 import { guadeloupeDepartments } from "./gua/GuadeloupeDepartments"
 import { bretagneDepartments } from "./bre/BretagneDepartments"
 import { martiniqueDepartments } from "./mtq/MartiniqueDepartments"
+import { collectiviteOutreMerDepartments } from "./com/CollectiviteOutreMerDepartments"
 
 export const franceDepartments: Department[] = [
   ...auvergneRhoneAlpesDepartments,
@@ -31,6 +32,7 @@ export const franceDepartments: Department[] = [
   ...martiniqueDepartments,
   ...normandieDepartments,
   ...nouvelleAquitaineDepartments,
+  ...collectiviteOutreMerDepartments,
   ...occitanieDepartments,
   ...pacaDepartments,
   ...paysDeLoireDepartments

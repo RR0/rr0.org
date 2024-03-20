@@ -14,13 +14,15 @@ import { CentreValDeLoireDepartementCode } from "./region/cvl/CentreValDeLoireDe
 import { AuvergneRhoneAlpesDepartementCode } from "./region/ara/AuvergneRhoneAlpesDepartementCode"
 import { BourgogneFrancheComteDepartementCode } from "./region/bfc/BourgogneFrancheComteDepartementCode"
 import { BretagneDepartementCode } from "./region/bre/BretagneDepartementCode"
+import { CollectiviteOutreMerDepartementCode } from "./region/com/CollectiviteOutreMerDepartementCode"
 
 export type FranceRegionsMessagesList = {
   ara: RegionMessages<{ [key in AuvergneRhoneAlpesDepartementCode]: DepartmentMessages<any> }>
   bfc: RegionMessages<{ [key in BourgogneFrancheComteDepartementCode]: DepartmentMessages<any> }>
   bre: RegionMessages<{ [key in BretagneDepartementCode]: DepartmentMessages<any> }>
-  ges: RegionMessages<{ [key in GrandEstDepartementCode]: DepartmentMessages<any> }>
+  com: RegionMessages<{ [key in CollectiviteOutreMerDepartementCode]: DepartmentMessages<any> }>
   cvl: RegionMessages<{ [key in CentreValDeLoireDepartementCode]: DepartmentMessages<any> }>
+  ges: RegionMessages<{ [key in GrandEstDepartementCode]: DepartmentMessages<any> }>
   idf: RegionMessages<{ [key in IdfDepartmentCode]: DepartmentMessages<any> }>
   hdf: RegionMessages<{ [key in HautsDeFranceDepartmentCode]: DepartmentMessages<any> }>
   lre: RegionMessages<{ [key in LaReunionDepartementCode]: DepartmentMessages<any> }>

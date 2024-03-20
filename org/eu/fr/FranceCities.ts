@@ -13,12 +13,14 @@ import { normandieCities } from "./region/nor/NormandieCities"
 import { centreValDeLoireCities } from "./region/cvl/CentreValDeLoireCities"
 import { bretagneCities } from "./region/bre/BretagneCities"
 import { martiniqueRegionCities } from "./region/mtq/MartiniqueRegionCities"
+import { collectiviteOutreMerCities } from "./region/com/CollectiviteOutreMerCities"
 
 export const franceCities: City[] = [
   ...auvergneRhoneAlpesCities,
   ...bourgogneFrancheComteCities,
   ...bretagneCities,
   ...centreValDeLoireCities,
+  ...collectiviteOutreMerCities,
   ...grandEstCities,
   ...idfCities,
   ...hautsDeFranceCities,

@@ -14,11 +14,13 @@ import { centreValDeLoire } from "./cvl/CentreValDeLoire"
 import { guadeloupe } from "./gua/Guadeloupe"
 import { bretagne } from "./bre/Bretagne"
 import { martiniqueRegion } from "./mtq/MartiniqueRegion"
+import { collectiviteOutreMer } from "./com/CollectiviteOutreMer"
 
 export const franceRegions: Organization[] = [
   auvergneRhoneAlpes,
   bourgogneFrancheComte,
   bretagne,
+  collectiviteOutreMer,
   grandEst,
   guadeloupe,
   hautsDeFrance,

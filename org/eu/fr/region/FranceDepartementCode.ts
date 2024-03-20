@@ -62,4 +62,5 @@ export enum FranceDepartementCode {
   Guadeloupe = "971",
   Martinique = "972",
   LaReunion = "974",
+  NouvelleCaledonie = "988",
 }

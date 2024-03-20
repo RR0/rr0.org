@@ -9,9 +9,11 @@ import { dromeMessages } from "./26/DromeMessages"
 import { OrganizationMessages } from "../../../../OrganizationMessages"
 import { ardecheMessages } from "./07/ArdecheMessages"
 import { cantalMessages } from "./15/CantalMessages"
+import { ainMessages } from "./01/AinMessages"
 
 export type AuvergneRhoneAlpesDepartmentMessagesList = { [key in AuvergneRhoneAlpesDepartementCode]: OrganizationMessages }
 export const auvergneRhoneAlpesDepartementsMessageList: AuvergneRhoneAlpesDepartmentMessagesList = {
+  [AuvergneRhoneAlpesDepartementCode.Ain]: ainMessages,
   [AuvergneRhoneAlpesDepartementCode.Allier]: allierMessages,
   [AuvergneRhoneAlpesDepartementCode.Ardeche]: ardecheMessages,
   [AuvergneRhoneAlpesDepartementCode.Cantal]: cantalMessages,

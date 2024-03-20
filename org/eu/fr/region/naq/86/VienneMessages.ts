@@ -1,12 +1,9 @@
 import { VienneCityCode } from "./VienneCityCode"
-import { montDeMarsanMessages } from "./montigne/MontigneMessages"
+import { magneMessages } from "./Magne/MagneMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 
-type VienneCityMessagesList = { [key in VienneCityCode]: OrganizationMessages }
-
-const vienneCityMessages: VienneCityMessagesList = {
-  [VienneCityCode.MontDeMarsan]: montDeMarsanMessages
-}
-
-export const vienneMessages = DepartmentMessages.create<VienneCityMessagesList>("Vienne", vienneCityMessages)
+type DepMessages = { [key in VienneCityCode]: OrganizationMessages }
+export const vienneMessages = DepartmentMessages.create<DepMessages>("Vienne", {
+  [VienneCityCode.Magne]: magneMessages
+})

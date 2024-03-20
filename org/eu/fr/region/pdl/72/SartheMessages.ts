@@ -1,6 +1,6 @@
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { SartheCityCode } from "./SartheCityCode"
-import { leMansMessages } from "./lemans/LeMansMessages"
+import { leMansMessages } from "./LeMans/LeMansMessages"
 import { steCerotteMessages } from "./SteCerotte/SteCerotteMessages"
 import { bazogeMessages } from "./bazoge/BazogeMessages"
 import { CityMessages } from "../../../../../country/region/department/city/CityMessages"

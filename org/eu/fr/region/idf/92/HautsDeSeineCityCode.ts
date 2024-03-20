@@ -1,3 +1,4 @@
 export enum HautsDeSeineCityCode {
-  Nanterre = 92000
+  Colombes = 92025,
+  Nanterre = 92050,
 }

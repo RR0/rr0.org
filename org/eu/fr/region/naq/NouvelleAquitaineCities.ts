@@ -7,6 +7,7 @@ import { correzeCities } from "./19/CorrezeCities"
 import { girondeCities } from "./33/GirondeCities"
 import { lotEtGaronneCities } from "./47/LotEtGaronneCities"
 import { dordogneCities } from "./24/DordogneCities"
+import { vienneCities } from "./86/VienneCities"
 
 export const nouvelleAquitaineCities: Organization[] = [
   ...charenteCities,
@@ -16,5 +17,6 @@ export const nouvelleAquitaineCities: Organization[] = [
   ...dordogneCities,
   ...girondeCities,
   ...landesCities,
-  ...lotEtGaronneCities
+  ...lotEtGaronneCities,
+  ...vienneCities
 ]

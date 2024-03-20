@@ -1,6 +1,6 @@
-import { montDeMarsan } from "./montigne/Montigne"
+import { magne } from "./Magne/Magne"
 import { City } from "../../../../../country/region/department/city/City"
 
 export const vienneCities: City[] = [
-  montDeMarsan
+  magne
 ]

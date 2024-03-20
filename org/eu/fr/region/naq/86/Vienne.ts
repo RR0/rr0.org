@@ -1,7 +1,7 @@
 import { NouvelleAquitaineDepartmentCode } from "../NouvelleAquitaineDepartmentCode"
 import { Place } from "../../../../../../place/Place"
-import { Organization, OrganizationType } from "../../../../../Organization"
 import { nouvelleAquitaine } from "../NouvelleAquitaine"
+import { Department } from "../../../../../country/region/department/Department"
 
-export const vienne = new Organization(NouvelleAquitaineDepartmentCode.Vienne,
-  [Place.fromDMS("46°30′N,0°30′E")], OrganizationType.department, nouvelleAquitaine)
+export const vienne = Department.create(NouvelleAquitaineDepartmentCode.Vienne, nouvelleAquitaine,
+  Place.fromDMS("46°30′N,0°30′E"))

@@ -1,5 +1,5 @@
 import { City } from "../../../../../country/region/department/city/City"
-import { leMans72 } from "./lemans/LeMans"
+import { leMans72 } from "./LeMans/LeMans"
 import { steCerotte } from "./SteCerotte/SteCerotte"
 import { bazoge } from "./bazoge/Bazoge"
 import { sougeLeGanelon } from "./SougeLeGanelon/SougeLeGanelon"

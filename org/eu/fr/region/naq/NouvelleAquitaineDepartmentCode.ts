@@ -5,9 +5,9 @@ export enum NouvelleAquitaineDepartmentCode {
   CharenteMaritime = FranceDepartementCode.CharenteMaritime,
   Correze = FranceDepartementCode.Correze,
   Creuse = FranceDepartementCode.Creuse,
+  Dordogne = FranceDepartementCode.Dordogne,
   Gironde = FranceDepartementCode.Gironde,
   Landes = FranceDepartementCode.Landes,
-  Vienne = FranceDepartementCode.Vienne,
   LotEtGaronne = FranceDepartementCode.LotEtGaronne,
-  Dordogne = FranceDepartementCode.Dordogne,
+  Vienne = FranceDepartementCode.Vienne,
 }

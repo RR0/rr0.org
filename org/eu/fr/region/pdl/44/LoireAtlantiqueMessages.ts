@@ -1,8 +1,8 @@
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { LoireAtlantiqueCityCode } from "./LoireAtlantiqueCityCode"
-import { leCroisicMessages } from "./lecroisic/LeCroisicMessages"
+import { leCroisicMessages } from "./LeCroisic/LeCroisicMessages"
 import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { lorouxBottereauMessages } from "./lorouxbottereau/LorouxBottereauMessages"
+import { lorouxBottereauMessages } from "./LorouxBottereau/LorouxBottereauMessages"
 
 type LoireAtlantiqueCityMessagesList = { [key in LoireAtlantiqueCityCode]: CityMessages }
 const loireAtlantiqueCityMessages: LoireAtlantiqueCityMessagesList = {

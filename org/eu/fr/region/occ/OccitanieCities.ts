@@ -10,6 +10,7 @@ import { pyreneesOrientalesCities } from "./66/PyreneesOrientalesCities"
 import { ariegeCities } from "./09/AriegeCities"
 import { hauteVienneCities } from "./87/HauteVienneCities"
 import { aveyronCities } from "./12/AveyronCities"
+import { hautesPyreneesCities } from "./65/HautesPyreneesCities"
 
 export const occitanieCities: Organization[] = [
   ...ariegeCities,
@@ -18,6 +19,7 @@ export const occitanieCities: Organization[] = [
   ...gardCities,
   ...gersCities,
   ...hauteGaronneCities,
+  ...hautesPyreneesCities,
   ...hauteVienneCities,
   ...heraultCities,
   ...tarnCities,

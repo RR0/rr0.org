@@ -1,10 +1,11 @@
 import { HeraultCityCode } from "./HeraultCityCode"
-import { montpellier34Messages } from "./montpellier/MontpellierMessages"
+import { montpellier34Messages } from "./Montpellier/MontpellierMessages"
 import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { saintGeniesDesMourguesMessages } from "./SaintGeniesDesMourgues/SaintGeniesDesMourguesMessages"
 
-type HeraultMessages = { [key in HeraultCityCode]: OrganizationMessages }
-const heraultCityMessages: HeraultMessages = {
-  [HeraultCityCode.Montpellier]: montpellier34Messages
-}
-export const heraultMessages = new DepartmentMessages<HeraultMessages>(["Hérault"], heraultCityMessages)
+type DepMessages = { [key in HeraultCityCode]: OrganizationMessages }
+export const heraultMessages = new DepartmentMessages<DepMessages>(["Hérault"], {
+  [HeraultCityCode.Montpellier]: montpellier34Messages,
+  [HeraultCityCode.SaintGeniesDesMourgues]: saintGeniesDesMourguesMessages
+})

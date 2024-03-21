@@ -55,9 +55,8 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/indexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
-import { geipanRR0Mapping } from "./time/datasource/geipan/GeipanRR0Mapping"
 import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
-import { baseOvniFranceRR0Mapping } from "./time/datasource/baseovnifrance/BaseOvniFranceRR0Mapping"
+import { urecatRR0Mapping } from "./time/datasource/urecat/UrecatRR0Mapping"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -172,7 +171,7 @@ getTimeFiles().then(async (timeFiles) => {
   const baseUrl = "https://rr0.org"
   const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
     new ChronologyReplacerFactory(timeFiles,
-      [geipanRR0Mapping, baseOvniFranceRR0Mapping/*, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
+      [/*geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping,*/ urecatRR0Mapping],
       rr0Datasource)
   )
   const pageReplaceCommands = [

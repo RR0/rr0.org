@@ -20,6 +20,8 @@ import { russia_fr } from "./ru/Russia_fr"
 import { denmark_fr } from "./eu/dk/Denmark_fr"
 import { mozambique_fr } from "./mz/Mozambique_fr"
 import { india_fr } from "./in/India_fr"
+import { algeria_fr } from "./dz/Algeria_fr"
+import { panama_fr } from "./pa/Panama_fr"
 
 /**
  * Country messages in French language.
@@ -39,6 +41,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   de: CountryMessages.create("Allemagne"),
   dk: denmark_fr,
   do: dominicanRepublic_fr,
+  dz: algeria_fr,
   es: spain_fr,
   fi: finland_fr,
   fr: france_fr,
@@ -57,6 +60,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   nl: CountryMessages.create("Pays-Bas"),
   no: CountryMessages.create("Norvège"),
   nz: newZealand_fr,
+  pa: panama_fr,
   pe: peru_fr,
   ph: philippines_fr,
   pl: poland_fr,

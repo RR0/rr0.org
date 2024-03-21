@@ -1,3 +1,5 @@
+import { SouthSavoDepartmentCode } from "./ss/SouthSavoDepartmentCode"
+
 export enum FinlandDepartementCode {
   /**
    * Pielinen Karelia
@@ -8,4 +10,9 @@ export enum FinlandDepartementCode {
    *
    */
   nwp = "nwp",
+
+  /**
+   * pieksamaki sub-region
+   */
+  Pieksamaki = SouthSavoDepartmentCode.Pieksamaki
 }

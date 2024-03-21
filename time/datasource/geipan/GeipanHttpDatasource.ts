@@ -44,7 +44,7 @@ export class GeipanHttpDatasource extends GeipanDatasource {
     super()
   }
 
-  async fetch(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
+  protected readSummaries(context: RR0SsgContext): GeipanCaseSummary[] {
     const day = context.time.getDayOfMonth()
     const dayStartStr = day ? String(day).padStart(2, "0") : "01"
     const dayEndStr = day ? String(day).padStart(2, "0") : "31"

@@ -27,28 +27,20 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     super()
   }
 
-  async fetch(context: RR0SsgContext): Promise<UrecatCase[]> {
+  protected async readSummaries(context: RR0SsgContext): Promise<UrecatCase[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
-    const year = context.time.getYear()
+    const year = context.time.getYear() ?? "full"
     const searchUrl = this.getSearchUrl()
     const lang = context.locale === "fr" ? "f" : ""
     const requestUrl = UrlUtil.join(searchUrl, `_${year}${lang}.htm`)
     const page = await this.http.fetch<string>(requestUrl, {headers: {accept: "text/html;charset=iso-8859-1"}})
     const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
     const tableBody = doc.querySelector("th").parentElement.parentElement
     const rowEls = tableBody.querySelectorAll("tr")
     const rows = Array.from(rowEls)
     rows.shift()
-    const cases = Array.from(rows).map(row => this.getFromRow(context, row))
-    return cases.filter(c => c.basicInfo.base.sightingDate.getMonth() === month)
+    return Array.from(rows).map(row => this.getFromRow(context, row))
   }
 
   getWitnesses(witnessesStr: string): UrecatWitness[] {

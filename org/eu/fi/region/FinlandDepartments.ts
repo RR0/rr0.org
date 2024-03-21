@@ -1,7 +1,9 @@
-import { pk } from "./nk/pk/Pk"
-import { nwp } from "./p/nwp/Nwp"
+import { southSavoDepartments } from "./ss/SouthSavoDepartments"
+import { pirkanmaaDepartments } from "./p/PirkanmaaDepartments"
+import { northKareliaDepartments } from "./nk/NorthKareliaDepartments"
 
 export const finlandDepartments = {
-  pk,
-  nwp
+  ...northKareliaDepartments,
+  ...pirkanmaaDepartments,
+  ...southSavoDepartments
 }

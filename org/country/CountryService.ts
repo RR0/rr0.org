@@ -20,11 +20,14 @@ import { OrganizationService } from "../OrganizationService"
 import { germany } from "../eu/de/Germany"
 import { russia } from "../ru/Russia"
 import { mozambique } from "../mz/Mozambique"
+import { algeria } from "../dz/Algeria"
+import { panama } from "../pa/Panama"
 
 export class CountryService extends OrganizationService<Country> {
 }
 
 const countries: Country[] = [
+  algeria,
   new Country(CountryCode.ar),
   new Country(CountryCode.at),
   australia,
@@ -56,6 +59,7 @@ const countries: Country[] = [
   new Country(CountryCode.nl),
   new Country(CountryCode.no),
   newZealand,
+  panama,
   peru,
   philippines,
   new Country(CountryCode.pl),

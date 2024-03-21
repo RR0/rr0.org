@@ -29,8 +29,8 @@ describe("UrecatCaseSource", () => {
 
   beforeEach(() => {
     context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")
-    context.time.setYear(1977)
-    context.time.setMonth(3)
+    context.time.setYear(undefined)
+//    context.time.setMonth(3)*/
   })
 
   test("witnesses", () => {

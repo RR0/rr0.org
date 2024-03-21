@@ -1,4 +1,5 @@
 export enum NuforcCountry {
+  Algeria = "Algeria",
   Australia = "Australia",
   Brazil = "Brazil",
   Canada = "Canada",
@@ -8,6 +9,7 @@ export enum NuforcCountry {
   India = "India",
   Mexico = "Mexico",
   NewZealand = "New Zealand",
+  Panama = "Panama",
   Peru = "Peru",
   Philippines = "Philippines",
   Seychelles = "Seychelles",

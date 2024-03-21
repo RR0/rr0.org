@@ -1,4 +1,6 @@
-import { pirkanmaaDepartementsList_en } from "./PirkanmaaDepartementsList_en"
 import { RegionMessages } from "../../../../country/region/RegionMessages"
+import { nwpMessages_en } from "./nwp/NwpMessages_en"
 
-export const pirkanmaaMessages_en = RegionMessages.create("North Karelia", pirkanmaaDepartementsList_en)
+export const pirkanmaaMessages_en = RegionMessages.create("North Karelia", {
+  nwp: nwpMessages_en
+})

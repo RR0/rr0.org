@@ -73,6 +73,11 @@ export enum CountryCode {
   do = "do",
 
   /**
+   * "DZair" (algeria)
+   */
+  dz = "dz",
+
+  /**
    * GReece
    */
   gr = "gr",
@@ -161,6 +166,11 @@ export enum CountryCode {
    * New Zealand
    */
   nz = "nz",
+
+  /**
+   * PAnama
+   */
+  pa = "pa",
 
   /**
    * PEru

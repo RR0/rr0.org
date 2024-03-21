@@ -43,8 +43,10 @@ export class HttpSource {
 
   async fetch<T>(url: string, init: RequestInit = {}): Promise<T> {
     init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
+    console.debug("Fetching", url, "with", init)
     const response = await fetch(url, init)
     if (response.ok) {
+      console.debug("Got response")
       const accept = init.headers["accept"]
       if (accept) {
         const buffer = await response.arrayBuffer()

@@ -20,7 +20,8 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
     } else if (value instanceof URL || value instanceof TimeContext) {
       val = value.toString()
     } else if (Array.isArray(value)) {
-      val = value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(";")
+      val = this.escape(value.map((item, i) => this.fieldMapper(context, String(i), item, sourceTime)).join(this.sep),
+        true)
     } else if (typeof value === "object") {
       const subMapper = new CsvMapper(this.sep, this.escapeStr, this.prefix + key + ".")
       const subValues = subMapper.map(context, value, sourceTime)
@@ -58,15 +59,26 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
    * @param sourceCases
    * @param sourceTime
    */
-  reduce(context: RR0SsgContext, sourceCases: S[], sourceTime: Date): string {
+  mapAll(context: RR0SsgContext, sourceCases: S[], sourceTime: Date): string {
     const values = sourceCases.map(c => this.map(context, c, sourceTime))
     return Array.from(this.fields).join(this.sep) + "\n" + values.join("\n")
   }
 
-  escape(value: string): string {
-    return this.escapeStr && value.indexOf(this.sep) >= 0 ? this.escapeStr + value + this.escapeStr : value
+  escape(value: string, force?: boolean): string {
+    if (this.escapeStr && (force || value.indexOf(this.sep) >= 0)) {
+      value = value.replaceAll(this.escapeStr, this.escapeStr + this.escapeStr)
+      return this.escapeStr + value + this.escapeStr
+    } else {
+      return value
+    }
   }
 
+  /**
+   * Converts CSV contents to a list of cases.
+   *
+   * @param context
+   * @param data
+   */
   read(context: RR0SsgContext, data: string): S[] {
     let eol = data.indexOf("\n")
     const header = data.substring(0, eol)

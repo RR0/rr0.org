@@ -20,6 +20,8 @@ import { russia_en } from "./ru/Russia_en"
 import { denmark_en } from "./eu/dk/Denmark_en"
 import { mozambique_en } from "./mz/Mozambique_en"
 import { india_en } from "./in/India_en"
+import { algeria_en } from "./dz/Algeria_en"
+import { panama_en } from "./pa/Panama_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -35,6 +37,7 @@ export const countryMessageList_en: CountryMessagesList = {
   cy: CountryMessages.create("Cyprus"),
   de: CountryMessages.create("Germany"),
   dk: denmark_en,
+  dz: algeria_en,
   do: dominicanRepublic_en,
   es: spain_en,
   fi: finland_en,
@@ -54,6 +57,7 @@ export const countryMessageList_en: CountryMessagesList = {
   nl: CountryMessages.create("Netherlands"),
   no: CountryMessages.create("Norway"),
   nz: newZealand_en,
+  pa: panama_en,
   pe: peru_en,
   ph: philippines_en,
   pl: poland_en,

@@ -35,7 +35,7 @@ describe("Base OVNI France CSV mapping", () => {
   })
 
   test("write", () => {
-    const csvContents = mapper.reduce(context, baseOvniFranceTestCases, dataDate)
+    const csvContents = mapper.mapAll(context, baseOvniFranceTestCases, dataDate)
     const case1 = baseOvniFranceTestCases[0]
     expect(csvContents).toBe(`caseNumber,url,city,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
 ${case1.caseNumber},http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2760,Le Mans,72,1970-03 16:00,false,false,false,false

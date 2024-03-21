@@ -1,3 +1,3 @@
-import { OrganizationMessages } from "../../../../../../OrganizationMessages"
+import { CityMessages } from "../../../../../../country/region/department/city/CityMessages"
 
-export const LieskaMessages = new OrganizationMessages("Lieksa", "Pielisjärvi", "Pielisjärvi-Lieksa")
+export const LieskaMessages = new CityMessages("Lieksa", "Pielisjärvi", "Pielisjärvi-Lieksa")

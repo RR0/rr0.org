@@ -35,7 +35,7 @@ describe("GEIPAN", () => {
   })
 
   test("write", () => {
-    const csvContents = mapper.reduce(context, geipanTestCaseSummaries, dataDate)
+    const csvContents = mapper.mapAll(context, geipanTestCaseSummaries, dataDate)
     const expectedCsv = "caseNumber,url,city,depCode,dateTime,postTime,classification\n"
       + geipanTestCaseSummaries
         .map(c => `${c.caseNumber},${c.url},${c.city},${c.zoneCode},${c.dateTime},${c.postTime},${c.classification}`)

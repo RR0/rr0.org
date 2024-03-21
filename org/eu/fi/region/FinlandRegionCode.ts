@@ -5,6 +5,11 @@ export enum FinlandRegionCode {
   nk = "nk",
 
   /**
+   * South Savonia
+   */
+  ss = "ss",
+
+  /**
    * Pirkanmaa
    */
   p = "p"

@@ -8,6 +8,7 @@ import { dromeCities } from "./26/DromeCities"
 import { ardecheCities } from "./07/ArdecheCities"
 import { cantalCities } from "./15/CantalCities"
 import { ainCities } from "./01/AinCities"
+import { savoieCities } from "./73/SavoieCities"
 
 export const auvergneRhoneAlpesCities: Organization[] = [
   ...ainCities,
@@ -18,5 +19,6 @@ export const auvergneRhoneAlpesCities: Organization[] = [
   ...isereCities,
   ...loireCities,
   ...puyDeDomeCities,
-  ...rhoneCities
+  ...rhoneCities,
+  ...savoieCities
 ]

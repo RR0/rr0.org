@@ -1,0 +1,5 @@
+caseNumber,url,city,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
+304,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=304,Mulhouse,68,1970-04-20 22:30,false,false,false,false
+305,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=305,Mulhouse,68,1970-04-24 22:30,true,true,false,false
+367,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=367,Montbrison,42,1970-04-26 17:15,false,false,false,false
+1322,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1322,Ouhans,25,1970-04-30 03:00,false,true,false,false

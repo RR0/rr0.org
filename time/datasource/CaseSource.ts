@@ -2,14 +2,17 @@ import { RR0SsgContext } from "../../RR0SsgContext"
 
 /**
  * A source for cases.
+ *
+ * @param T The source case type.
  */
 export interface CaseSource<S> {
   /**
-   * @member {string[]} authors The datasource authors to mention as a source.
+   * The datasource authors to mention as a source.
    */
   readonly authors: string[]
+
   /**
-   * @member {string} authors The datasource name to mention as a source.
+   * The datasource name to mention as a source.
    */
   readonly copyright: string
 
@@ -18,5 +21,5 @@ export interface CaseSource<S> {
    *
    * @param context
    */
-  getAll(context: RR0SsgContext): Promise<S[]>
+  fetch(context: RR0SsgContext): Promise<S[]>
 }

@@ -6,10 +6,12 @@ import { basRhinCities } from "./67/BasRhinCities"
 import { moselleCities } from "./57/MoselleCities"
 import { vosgesCities } from "./88/VosgesCities"
 import { ardennesCities } from "./08/ArdennesCities"
+import { hautRhinCities } from "./68/HautRhinCities"
 
 export const grandEstCities: City[] = [
   ...ardennesCities,
   ...basRhinCities,
+  ...hautRhinCities,
   ...marneCities,
   ...meurtheEtMoselleCities,
   ...meuseCities,

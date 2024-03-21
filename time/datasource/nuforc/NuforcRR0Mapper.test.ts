@@ -32,7 +32,7 @@ describe("NuforcRR0Mapper", () => {
   })
 
   test("fetch native cases", async () => {
-    const items = await nuforcDatasource.getAll(context)
+    const items = await nuforcDatasource.fetch(context)
     expect(items).toEqual(nuforcTestCases)
   })
 

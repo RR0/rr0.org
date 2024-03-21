@@ -27,7 +27,7 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<UrecatCase[]> {
+  async fetch(context: RR0SsgContext): Promise<UrecatCase[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

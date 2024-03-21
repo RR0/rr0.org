@@ -1,6 +1,6 @@
 import { MeurtheEtMoselleCityCode } from "./MeurtheEtMoselleCityCode"
 import { cosnesEtRomainMessages } from "./CosnesEtRomain/CosnesEtRomainMessages"
-import { nancyMessages } from "./nancy/NancyMessages"
+import { nancyMessages } from "./Nancy/NancyMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 import { OrganizationType } from "../../../../../Organization"
 import { neuvesMaisonsMessages } from "./NeuvesMaisons/NeuvesMaisonsMessages"

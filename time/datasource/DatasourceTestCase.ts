@@ -12,7 +12,6 @@ export abstract class DatasourceTestCase<S> {
   }
 
   checkCaseHTML(context: HtmlRR0SsgContext, nativeCase: S, item: HTMLLIElement, dataDate: Date) {
-    const datasource = this.mapping.datasource
     const expected = this.mapping.mapper.map(context, nativeCase, dataDate)
     const time = this.getTime(nativeCase)
     const caseContext = context.clone()
@@ -39,7 +38,7 @@ export abstract class DatasourceTestCase<S> {
   protected abstract sortComparator(c1: S, c2: S): number
 
   async testFetch(context: RR0SsgContext) {
-    const fetched = await this.mapping.datasource.getAll(context)
+    const fetched = await this.mapping.datasource.fetch(context)
     const fetchSlice = fetched.slice(0, this.sourceCases.length)
     const sortedFetch = fetchSlice.sort(this.sortComparator)
     const sortedTestCases = this.sourceCases.sort(this.sortComparator)
@@ -49,7 +48,7 @@ export abstract class DatasourceTestCase<S> {
   protected abstract getTime(c: S): TimeContext
 
   async testRender(context: HtmlRR0SsgContext) {
-    const sourceCases = await this.mapping.datasource.getAll(context)
+    const sourceCases = await this.mapping.datasource.fetch(context)
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
     const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
     const eventRenderer = new RR0CaseRenderer()

@@ -6,5 +6,5 @@ export abstract class GeipanDatasource implements CaseSource<GeipanCaseSummary> 
   readonly authors = ["GEIPAN"]
   readonly copyright = "Catalogue de cas"
 
-  abstract getAll(context: RR0SsgContext): Promise<GeipanCaseSummary[]>
+  abstract fetch(context: RR0SsgContext): Promise<GeipanCaseSummary[]>
 }

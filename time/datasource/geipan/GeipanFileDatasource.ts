@@ -22,7 +22,7 @@ export class GeipanFileDatasource extends GeipanDatasource implements CaseSource
     return this.summaries
   }
 
-  async getAll(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
+  async fetch(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

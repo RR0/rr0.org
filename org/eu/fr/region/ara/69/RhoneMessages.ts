@@ -1,6 +1,6 @@
-import { lyon69Messages } from "./lyon/Lyon69Messages"
+import { lyon69Messages } from "./Lyon/Lyon69Messages"
 import { RhoneCityCode } from "./RhoneCityCode"
-import { belleville69Messages } from "./belleville/BellevilleMessages"
+import { belleville69Messages } from "./Belleville/BellevilleMessages"
 import { OrganizationMessages } from "../../../../../OrganizationMessages"
 import { OrganizationType } from "../../../../../Organization"
 

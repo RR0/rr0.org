@@ -5,9 +5,11 @@ import { juraCities } from "./39/JuraCities"
 import { yonneCities } from "./89/YonneCities"
 import { nievreCities } from "./58/NievreCities"
 import { morbihanCities } from "./56/MorbihanCities"
+import { doubsCities } from "./25/DoubsCities"
 
 export const bourgogneFrancheComteCities: City[] = [
   ...coteDOrCities,
+  ...doubsCities,
   ...juraCities,
   ...morbihanCities,
   ...nievreCities,

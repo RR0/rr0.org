@@ -1,0 +1,7 @@
+caseNumber,url,city,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
+3134,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3134,St Moré,89,1970-07-09,false,false,false,false
+1913,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1913,Vienne,38,1970-07-11 21:55,false,false,false,false
+3135,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3135,Vermenton,89,1970-07-16 21:15,false,false,false,false
+3136,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3136,Précy le Sec,89,1970-07-17 05:45,false,false,false,false
+1642,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1642,Avesnes les Aubert,59,1970-07-21 23:00,true,false,false,false
+1533,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1533,Jabreilles les Bordes,87,1970-07-25 17:30,true,true,false,true

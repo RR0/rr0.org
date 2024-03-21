@@ -6,5 +6,5 @@ export abstract class FuforaDatasource implements CaseSource<FuforaCaseSummary> 
   readonly authors = ["FUFORA"]
   readonly copyright = "Base de données observationnelle"
 
-  abstract getAll(context: RR0SsgContext): Promise<FuforaCaseSummary[]>
+  abstract fetch(context: RR0SsgContext): Promise<FuforaCaseSummary[]>
 }

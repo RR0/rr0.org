@@ -8,6 +8,7 @@ import { ardeche } from "./07/Ardeche"
 import { Department } from "../../../../country/region/department/Department"
 import { cantal } from "./15/Cantal"
 import { ain } from "./01/Ain"
+import { savoie } from "./73/Savoie"
 
 export const auvergneRhoneAlpesDepartments: Department[] = [
   ain,
@@ -18,5 +19,6 @@ export const auvergneRhoneAlpesDepartments: Department[] = [
   isere,
   loire,
   rhone,
-  puyDeDome
+  puyDeDome,
+  savoie
 ]

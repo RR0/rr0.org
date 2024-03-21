@@ -18,7 +18,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     super()
   }
 
-  async getAll(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
+  async fetch(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

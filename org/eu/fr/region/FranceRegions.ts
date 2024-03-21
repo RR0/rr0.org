@@ -20,6 +20,7 @@ export const franceRegions: Organization[] = [
   auvergneRhoneAlpes,
   bourgogneFrancheComte,
   bretagne,
+  centreValDeLoire,
   collectiviteOutreMer,
   grandEst,
   guadeloupeRegion,
@@ -31,6 +32,5 @@ export const franceRegions: Organization[] = [
   normandie,
   occitanie,
   paca,
-  paysDeLoire,
-  centreValDeLoire
+  paysDeLoire
 ]

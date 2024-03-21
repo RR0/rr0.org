@@ -6,5 +6,5 @@ export abstract class BaseOvniFranceDatasource implements CaseSource<BaseOvniFra
   readonly authors = ["Chastan, Luc"]
   readonly copyright = "Base OVNI France"
 
-  abstract getAll(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]>
+  abstract fetch(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]>
 }

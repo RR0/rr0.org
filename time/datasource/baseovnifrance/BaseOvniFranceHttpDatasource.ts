@@ -46,7 +46,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     return {formData, queryUrl}
   }
 
-  async getAll(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
+  async fetch(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

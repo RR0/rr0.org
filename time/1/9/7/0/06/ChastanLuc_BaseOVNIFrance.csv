@@ -1,0 +1,6 @@
+caseNumber,url,city,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
+2555,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2555,Brive la Gaillarde,19,1970-06,false,false,true,true
+401,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=401,St Jean de Maurienne,73,1970-06-06 19:40,false,false,false,false
+3089,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3089,Saujon,17,1970-06-10 20:30,false,false,false,false
+3090,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3090,Rezé,44,1970-06-10 22:30,false,false,false,false
+1532,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1532,Angoulème,16,1970-06-13 23:40,true,false,false,true

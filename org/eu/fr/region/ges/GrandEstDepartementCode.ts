@@ -3,6 +3,7 @@ import { FranceDepartementCode } from "../FranceDepartementCode"
 export enum GrandEstDepartementCode {
   Ardennes = FranceDepartementCode.Ardennes,
   BasRhin = FranceDepartementCode.BasRhin,
+  HautRhin = FranceDepartementCode.HautRhin,
   MeurtheEtMoselle = FranceDepartementCode.MeurtheEtMoselle,
   Marne = FranceDepartementCode.Marne,
   Meuse = FranceDepartementCode.Meuse,

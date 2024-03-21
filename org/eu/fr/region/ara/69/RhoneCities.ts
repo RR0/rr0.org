@@ -1,5 +1,5 @@
-import { lyon69 } from "./lyon/Lyon"
-import { belleville69 } from "./belleville/Belleville"
+import { lyon69 } from "./Lyon/Lyon"
+import { belleville69 } from "./Belleville/Belleville"
 import { Organization } from "../../../../../Organization"
 
 export const rhoneCities: Organization[] = [

@@ -6,5 +6,5 @@ export abstract class NuforcDatasource implements CaseSource<NuforcCaseSummary> 
   readonly authors = ["NUFORC"]
   readonly copyright = "Online Database"
 
-  abstract getAll(context: RR0SsgContext): Promise<NuforcCaseSummary[]>
+  abstract fetch(context: RR0SsgContext): Promise<NuforcCaseSummary[]>
 }

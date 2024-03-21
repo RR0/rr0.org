@@ -22,7 +22,7 @@ export class AcufoDatasource extends HttpSource implements CaseSource<AcufoCase>
     super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<AcufoCase[]> {
+  async fetch(context: RR0SsgContext): Promise<AcufoCase[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

@@ -6,5 +6,5 @@ export abstract class UrecatDatasource implements CaseSource<UrecatCase> {
   readonly authors = ["Gross, Patrick"]
   readonly copyright = "URECAT (Les ovnis vus de près)"
 
-  abstract getAll(context: RR0SsgContext): Promise<UrecatCase[]>
+  abstract fetch(context: RR0SsgContext): Promise<UrecatCase[]>
 }

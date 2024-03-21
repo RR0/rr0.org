@@ -1,6 +1,6 @@
-import { chateaudouble } from "./chateaudouble/Chateaudouble"
-import { Organization } from "../../../../../Organization"
+import { chateaudouble } from "./Chateaudouble/Chateaudouble"
+import { City } from "../../../../../country/region/department/city/City"
 
-export const dromeCities: Organization[] = [
+export const dromeCities: City[] = [
   chateaudouble
 ]

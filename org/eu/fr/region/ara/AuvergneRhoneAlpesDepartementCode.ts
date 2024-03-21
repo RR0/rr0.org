@@ -10,4 +10,5 @@ export enum AuvergneRhoneAlpesDepartementCode {
   Loire = FranceDepartementCode.Loire,
   PuyDeDome = FranceDepartementCode.PuyDeDome,
   Rhone = FranceDepartementCode.Rhone,
+  Savoie = FranceDepartementCode.Savoie,
 }

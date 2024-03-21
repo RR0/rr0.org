@@ -153,7 +153,7 @@ export class FuforaHttpDatasource extends FuforaDatasource {
     super()
   }
 
-  async getAll(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
+  async fetch(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

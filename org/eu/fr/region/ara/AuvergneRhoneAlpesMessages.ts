@@ -10,18 +10,20 @@ import { OrganizationMessages } from "../../../../OrganizationMessages"
 import { ardecheMessages } from "./07/ArdecheMessages"
 import { cantalMessages } from "./15/CantalMessages"
 import { ainMessages } from "./01/AinMessages"
+import { savoieMessages } from "./73/SavoieMessages"
 
-export type AuvergneRhoneAlpesDepartmentMessagesList = { [key in AuvergneRhoneAlpesDepartementCode]: OrganizationMessages }
-export const auvergneRhoneAlpesDepartementsMessageList: AuvergneRhoneAlpesDepartmentMessagesList = {
-  [AuvergneRhoneAlpesDepartementCode.Ain]: ainMessages,
-  [AuvergneRhoneAlpesDepartementCode.Allier]: allierMessages,
-  [AuvergneRhoneAlpesDepartementCode.Ardeche]: ardecheMessages,
-  [AuvergneRhoneAlpesDepartementCode.Cantal]: cantalMessages,
-  [AuvergneRhoneAlpesDepartementCode.Drome]: dromeMessages,
-  [AuvergneRhoneAlpesDepartementCode.Isere]: isereMessages,
-  [AuvergneRhoneAlpesDepartementCode.Loire]: loireMessages,
-  [AuvergneRhoneAlpesDepartementCode.PuyDeDome]: puyDeDomeMessages,
-  [AuvergneRhoneAlpesDepartementCode.Rhone]: rhoneMessages
-}
-export const auvergneRhoneAlpesMessages = RegionMessages.create("Auvergne-Rhône-Alpes",
-  auvergneRhoneAlpesDepartementsMessageList)
+type AuvergneRhoneAlpesDepartmentMessagesList = { [key in AuvergneRhoneAlpesDepartementCode]: OrganizationMessages }
+export const auvergneRhoneAlpesMessages = RegionMessages.create<AuvergneRhoneAlpesDepartmentMessagesList>(
+  "Auvergne-Rhône-Alpes",
+  {
+    [AuvergneRhoneAlpesDepartementCode.Ain]: ainMessages,
+    [AuvergneRhoneAlpesDepartementCode.Allier]: allierMessages,
+    [AuvergneRhoneAlpesDepartementCode.Ardeche]: ardecheMessages,
+    [AuvergneRhoneAlpesDepartementCode.Cantal]: cantalMessages,
+    [AuvergneRhoneAlpesDepartementCode.Drome]: dromeMessages,
+    [AuvergneRhoneAlpesDepartementCode.Isere]: isereMessages,
+    [AuvergneRhoneAlpesDepartementCode.Loire]: loireMessages,
+    [AuvergneRhoneAlpesDepartementCode.PuyDeDome]: puyDeDomeMessages,
+    [AuvergneRhoneAlpesDepartementCode.Rhone]: rhoneMessages,
+    [AuvergneRhoneAlpesDepartementCode.Savoie]: savoieMessages
+  })

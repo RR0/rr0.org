@@ -7,7 +7,7 @@ export abstract class RR0Datasource implements CaseSource<RR0CaseSummary> {
   readonly copyright = "RR0"
   readonly authors = ["Beau, Jérôme"]
 
-  abstract getAll(context: RR0SsgContext): Promise<RR0CaseSummary[]>
+  abstract fetch(context: RR0SsgContext): Promise<RR0CaseSummary[]>
 
   abstract getFromRows(context: HtmlRR0SsgContext, rows: Element[]): RR0CaseSummary[]
 }

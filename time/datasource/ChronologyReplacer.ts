@@ -44,7 +44,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
       const datasource = mapping.datasource
       const datasourceKey = context.inputFile.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
-        const sourceCases = await datasource.getAll(context)
+        const sourceCases = await datasource.fetch(context)
         const fetchTime = new Date()
         if (this.actions.save) {
           this.save(context, sourceCases, fetchTime, datasource)

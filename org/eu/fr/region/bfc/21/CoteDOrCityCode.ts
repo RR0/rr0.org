@@ -1,3 +1,4 @@
 export enum CoteDOrCityCode {
-  Vitteaux = 21710
+  MirebeauSurBeze = 21416,
+  Vitteaux = 21710,
 }

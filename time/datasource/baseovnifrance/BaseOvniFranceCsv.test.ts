@@ -45,12 +45,12 @@ ${case1.caseNumber},http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&
   })
 
   test("read", () => {
-    const exportMapper = new CsvMapper<BaseOvniFranceCase>("&")
+    const fileMapper = new CsvMapper<BaseOvniFranceCase>("&")
     const data = fs.readFileSync("time/1/9/7/7/03/05_03_24_1709676761.txt", {encoding: "latin1"})
     const csvMapper = new BaseOvniFranceCaseSummaryMapper(baseOvniFranceDatasource.baseUrl,
       baseOvniFranceDatasource.searchPath,
       baseOvniFranceDatasource.authors)
-    const cases = exportMapper.read(context, data)
+    const cases = fileMapper.parse(context, data)
       .map(csvCase => csvMapper.map(context, csvCase, dataDate))
       .sort(baseOvniFranceSortComparator)
     const expected = baseOvniFranceTestCases.sort(baseOvniFranceSortComparator)

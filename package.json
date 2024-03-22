@@ -21,7 +21,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/ChronologyReplacer.test.ts",
+    "test-one": "tsx time/datasource/JsonMapper.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {

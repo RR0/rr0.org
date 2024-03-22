@@ -79,7 +79,7 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
    * @param context
    * @param data
    */
-  read(context: RR0SsgContext, data: string): S[] {
+  parse(context: RR0SsgContext, data: string): S[] {
     let eol = data.indexOf("\n")
     const header = data.substring(0, eol)
     data = data.substring(eol + 1).replaceAll(`""`, "''")

@@ -1,3 +1,5 @@
+import { Browser, Builder, WebDriver } from "selenium-webdriver"
+
 export class MimeType {
   static readonly csv: string = "text/csv"
   static readonly json: string = "application/json"
@@ -9,6 +11,8 @@ export class MimeType {
  * A source for cases that can be fetched online.
  */
 export class HttpSource {
+
+  protected driver: WebDriver
 
   constructor(
     protected userAgents = [
@@ -39,6 +43,14 @@ export class HttpSource {
   randomUA() {
     const randomNumber = Math.floor(Math.random() * this.userAgents.length)
     return this.userAgents[randomNumber]
+  }
+
+  async getDriver(): Promise<WebDriver> {
+    if (!this.driver) {
+      this.driver = await new Builder().forBrowser(Browser.CHROME).build()
+      await this.driver.manage().setTimeouts({implicit: 5000})
+    }
+    return this.driver
   }
 
   async fetch<T>(url: string, init: RequestInit = {}): Promise<T> {
@@ -73,5 +85,12 @@ export class HttpSource {
     Object.entries(obj).forEach(entry => formData.append(entry[0], encodeURIComponent(entry[1])))
     const init: RequestInit = {method: "POST", headers, body: formData}
     return await this.fetch(url, init)
+  }
+
+  async close() {
+    if (this.driver) {
+      await this.driver.quit()
+      this.driver = undefined
+    }
   }
 }

@@ -17,11 +17,12 @@ export class UrlUtil {
   static join(first: string, second: string): string {
     const firstEndsWithSlash = first.endsWith("/")
     const secondStartsWithSlash = second.startsWith("/")
-    return firstEndsWithSlash ?
-      secondStartsWithSlash ? first + second.substring(1)
-        : first + second
-      : secondStartsWithSlash ? first + second
-        : first + "/" + second
+    if (firstEndsWithSlash) {
+      return secondStartsWithSlash ? first + second.substring(1) : first + second
+    } else {
+      const firstEndsWithExtension = first.lastIndexOf(".") >= first.length - 5
+      return secondStartsWithSlash || firstEndsWithExtension ? first + second : first + "/" + second
+    }
   }
 
   static objToQueryParams(obj: object): string {

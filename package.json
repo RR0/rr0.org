@@ -21,7 +21,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/JsonMapper.test.ts",
+    "test-one": "tsx time/datasource/ufo-search/UfoSearchDatasource.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {
@@ -34,9 +34,11 @@
     "glob-promise": "^6.0.5",
     "image-size": "^1.0.2",
     "jsdom": "^24.0.0",
-    "csv": "^6.3.8"
+    "csv": "^6.3.8",
+    "selenium-webdriver": "^4.18.1"
   },
   "devDependencies": {
+    "@types/selenium-webdriver": "^4.1.22",
     "@javarome/testscript": "^0.10.7",
     "@playwright/test": "^1.40.1",
     "@types/jsdom": "~21.1.6",

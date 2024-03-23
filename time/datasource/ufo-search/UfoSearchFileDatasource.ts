@@ -17,7 +17,7 @@ export class UfoSearchFileDatasource extends UfoSearchDatasource implements Case
     super()
   }
 
-  protected readSummaries(context: RR0SsgContext): UfoSearchCase[] {
+  protected async readSummaries(context: RR0SsgContext): Promise<UfoSearchCase[]> {
     const file = SsgFile.read(context, this.fileName, "utf-8")
     return this.fileMapper.parse(context, file.contents)
   }

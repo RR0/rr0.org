@@ -21,7 +21,7 @@ export abstract class DatasourceTestCase<S> {
     const sourceStr = expected.sources?.length > 0 ? this.expectedSourceStr(caseContext, expected.sources,
       nativeCase) : ""
     expect(item.innerHTML).toBe(
-      `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}`)
+      `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}.`)
   }
 
   protected expectedSourceStr(caseContext: HtmlRR0SsgContext, expectedSources: Source[], nativeCase: S) {

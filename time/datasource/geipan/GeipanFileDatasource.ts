@@ -14,7 +14,7 @@ export class GeipanFileDatasource extends GeipanDatasource implements CaseSource
     super()
   }
 
-  protected readSummaries(context: RR0SsgContext): GeipanCaseSummary[] {
+  protected async readSummaries(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
     const fileMapper = new CsvMapper<GeipanCase>(";")
     const file = SsgFile.read(context, this.fileName, "latin1")
     const csvMapper = new GeipanCaseSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,

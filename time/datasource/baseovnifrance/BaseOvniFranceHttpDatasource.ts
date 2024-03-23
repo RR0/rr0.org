@@ -37,7 +37,10 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     super()
   }
 
-  queryUrl(month: number, year: number): { formData: FormData, queryUrl: string } {
+  queryUrl(year: number | undefined, month: number | undefined, day: number | undefined): {
+    formData: FormData;
+    queryUrl: string
+  } {
     const queryParams: QueryParameters = {typlist: ListType.perMonth, page: 0}
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const formData: FormData = {mois: String(month).padStart(2, "0"), an: year, B1: "Envoyer"}
@@ -46,20 +49,13 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     return {formData, queryUrl}
   }
 
-  async fetch(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
+  protected async readSummaries(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    const {formData, queryUrl} = this.queryUrl(month, year)
+    const {formData, queryUrl} = this.queryUrl(year, month, day)
     const page = await this.http.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
     const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
     const rowEls = doc.querySelectorAll("#listgen2 tbody tr")
     const rows = Array.from(rowEls)
     rows.shift()  // Skip header row
@@ -70,11 +66,11 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     return cases
   }
 
-  protected getBoolean(field: HTMLTableCellElement) {
+  protected getBoolean(field: HTMLTableCellElement): boolean {
     return field.textContent === "Oui"
   }
 
-  protected getDate(context: RR0SsgContext, dateField: HTMLTableCellElement) {
+  protected getDate(context: RR0SsgContext, dateField: HTMLTableCellElement): TimeContext {
     const dateFormat = /(\d\d)-(\d\d)-(\d\d\d\d)/
     const dateFields = dateFormat.exec(dateField.textContent)
     const itemContext = context.clone()

@@ -4,9 +4,9 @@ import { CaseSource } from "./CaseSource"
 export abstract class AbstractCaseSource<S> implements CaseSource<S> {
   protected summaries: S[]
 
-  getSummaries(context: RR0SsgContext): S[] {
+  async getSummaries(context: RR0SsgContext): Promise<S[]> {
     if (!this.summaries) {
-      this.summaries = this.readSummaries(context)
+      this.summaries = await this.readSummaries(context)
     }
     return this.summaries
   }
@@ -15,11 +15,12 @@ export abstract class AbstractCaseSource<S> implements CaseSource<S> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    return this.getSummaries(context).filter(c => {
+    const summaries = await this.getSummaries(context)
+    return summaries.filter(c => {
       const sightingTime = c.dateTime
       return (!year || year === sightingTime.getYear()) && (!month || month === sightingTime.getMonth()) && (!day || day === sightingTime.getDayOfMonth())
     })
   }
 
-  protected abstract readSummaries(context: RR0SsgContext): S[]
+  protected abstract readSummaries(context: RR0SsgContext): Promise<S[]>
 }

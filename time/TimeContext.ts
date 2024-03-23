@@ -6,7 +6,9 @@ export class TimeContext {
   constructor(
     readonly options: Intl.DateTimeFormatOptions,
     protected _year?: number, protected _month?: number, protected _dayOfMonth?: number,
-    protected _hour?: number, protected _minutes?: number, protected _timeZone?: string
+    protected _hour?: number, protected _minutes?: number, protected _timeZone?: string,
+    public approximate: boolean = false,
+    public approximateTime: boolean = false
   ) {
   }
 
@@ -89,12 +91,13 @@ export class TimeContext {
       "UTC" + (date.getTimezoneOffset() < 0 ? "-" : "+") + date.getTimezoneOffset())
   }
 
-  reset(): void {
+  reset(): this {
     this.setYear(undefined)
     this.setMonth(undefined)
     this.setDayOfMonth(undefined)
     this.setHour(undefined)
     this.setMinutes(undefined)
+    return this
   }
 
   toString(): string {

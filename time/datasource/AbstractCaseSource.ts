@@ -1,14 +1,22 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
 import { CaseSource } from "./CaseSource"
+import { RR0SsgContext } from "../../RR0SsgContext"
+import { UfoCase } from "./UfoCase"
 
-export abstract class AbstractCaseSource<S> implements CaseSource<S> {
-  protected summaries: S[]
+/**
+ * Cache cases which were already fetched, and filter out cases in memory according to (time) context.
+ */
+export abstract class AbstractCaseSource<S extends UfoCase> implements CaseSource<S> {
+
+  protected cases: S[]
+
+  protected constructor(readonly authors: string[], readonly copyright: string) {
+  }
 
   async getSummaries(context: RR0SsgContext): Promise<S[]> {
-    if (!this.summaries) {
-      this.summaries = await this.readSummaries(context)
+    if (!this.cases) {
+      this.cases = await this.readCases(context)
     }
-    return this.summaries
+    return this.cases
   }
 
   async fetch(context: RR0SsgContext): Promise<S[]> {
@@ -22,5 +30,5 @@ export abstract class AbstractCaseSource<S> implements CaseSource<S> {
     })
   }
 
-  protected abstract readSummaries(context: RR0SsgContext): Promise<S[]>
+  protected abstract readCases(context: RR0SsgContext): Promise<S[]>
 }

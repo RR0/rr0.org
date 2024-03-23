@@ -5,30 +5,18 @@ import { CountryCode } from "../../../org/country/CountryCode"
 import { FranceRegionCode } from "../../../org/eu/fr/region/FranceRegionCode"
 import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 import { GeipanZoneType } from "./GeipanCase"
+import { UfoCase } from "../UfoCase"
 
 export type GeipanZoneCode = FranceDepartementCode | FranceRegionCode | CountryCode.fr
 
-export type GeipanCaseSummary = {
-  /**
-   * "AAAA-MM-number"
-   */
-  caseNumber: string
-
-  url: URL
-
+/**
+ * caseNumber is like "AAAA-MM-number"
+ */
+export interface GeipanCaseSummary extends UfoCase {
   sightingType?: GeipanSightingType
-
-  /**
-   * Sighting date.
-   */
-  dateTime: TimeContext
-
   city: string
-
   zoneCode?: GeipanZoneCode
   zoneType?: GeipanZoneType
-
   postTime: TimeContext
-
   classification?: GeipanCaseClassification_calc
 }

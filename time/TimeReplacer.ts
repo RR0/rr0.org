@@ -177,6 +177,9 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   ): HTMLElement | undefined {
     const timeContext = context.time
     TimeReplacer.setTimeContextFrom(timeContext, parsed)
+    if (approximate) {
+      timeContext.setApproximate(true)
+    }
     let replacement: HTMLElement | undefined = undefined
     if (context.time.isDefined()) {
       replacement = TimeReplacer.replaceElement(context, approximate, this.timeFiles, previousContext)

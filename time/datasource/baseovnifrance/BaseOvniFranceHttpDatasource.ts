@@ -49,7 +49,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     return {formData, queryUrl}
   }
 
-  protected async readSummaries(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
+  protected async readCases(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()

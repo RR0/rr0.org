@@ -1,12 +1,11 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { UfoSearchDatasource } from "./UfoSearchDatasource"
+import { EssexPoliceDatasource, UfoSearchCase, UfoSearchCaseType } from "./EssexPoliceDatasource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { TimeContext } from "../../TimeContext"
 import { HttpSource } from "../HttpSource"
 import { By } from "selenium-webdriver"
 import assert from "assert"
-import { UfoSearchCase, UfoSearchCaseType } from "./UfoSearchCase"
 
 interface QueryParameters {
   sy?: number
@@ -17,13 +16,13 @@ interface QueryParameters {
   ed?: number
 }
 
-export class UfoSearchHttpDatasource extends UfoSearchDatasource {
+export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
+
+  protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl: string, readonly searchPath: string) {
     super()
   }
-
-  protected readonly http = new HttpSource()
 
   queryUrl(year: number | undefined, month: number | undefined, day: number | undefined): string {
     const queryParams: QueryParameters = {}
@@ -66,10 +65,16 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
     }
   }
 
-  protected setDate(time: TimeContext, dateStr: string) {
+  protected getBoolean(field: HTMLTableCellElement) {
+    return field.textContent === "Oui"
+  }
+
+  protected getDate(context: RR0SsgContext, dateStr: string): TimeContext {
     const dateFields = /(Late\s+)?(?:(\d{1,2})\/)?(?:(\d{1,2})\/)?(\d+)('s)?(\s+\(approximate\))?\s+#(\d+)/.exec(
       dateStr)
     assert.ok(dateFields, `Could not parse date "${dateStr}"`)
+    const itemContext = context.clone()
+    const time = itemContext.time
     const yearStr = dateFields[4]
     time.setYear(yearStr ? parseInt(yearStr, 10) : undefined)
     const monthStr = dateFields[2]
@@ -77,42 +82,29 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
     const dayOfMonthStr = dateFields[3]
     time.setDayOfMonth(dayOfMonthStr ? parseInt(dayOfMonthStr, 10) : undefined)
     time.approximate = Boolean(dateFields[6])
+    return time
+  }
+
+  protected setTime(dateTime: TimeContext, timeField: HTMLTableCellElement) {
+    const timeFormat = /(\d\d):(\d\d)/
+    const timeFields = timeFormat.exec(timeField.textContent)
+    const hour = timeFields ? parseInt(timeFields[1], 10) : undefined
+    const minutes = timeFields ? parseInt(timeFields[2], 10) : undefined
+    dateTime.setHour(hour)
+    dateTime.setMinutes(minutes)
+    dateTime.setTimeZone("GMT+1")
   }
 
   protected async getFromRow(context: RR0SsgContext, row: Element): Promise<UfoSearchCase> {
-    const fieldsHeadings = Array.from(row.querySelectorAll("strong"))
-    const dateLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Date") >= 0)
-    const itemContext = context.clone()
-    const dateTime = itemContext.time.reset()
-    let url: URL
-    let caseNumber
-    if (dateLabel) {
-      const dateLink = dateLabel.nextElementSibling as HTMLAnchorElement
-      url = new URL(dateLink.href, this.baseUrl)
-      caseNumber = url.hash.substring(1)
-      this.setDate(dateTime, dateLink.textContent)
-    }
-    const timeLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Time") >= 0)
-    if (timeLabel) {
-      this.setTime(dateTime, timeLabel)
-    }
-    const locationLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Location") >= 0)
-    let location
-    if (locationLabel) {
-      location = locationLabel.nextSibling.textContent.trim()
-    }
-    const descriptionLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Description") >= 0)
-    let desc
-    if (descriptionLabel) {
-      desc = descriptionLabel.nextSibling.textContent.trim()
-    }
-    const typeLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Type") >= 0)
-    let type
-    if (typeLabel) {
-      type = typeLabel.nextSibling.textContent.trim() as UfoSearchCaseType
-    }
+    const fieldsHeadings = row.querySelectorAll("strong")
+    const dateLabel = fieldsHeadings[0]
+    const dateLink = dateLabel.nextElementSibling as HTMLAnchorElement
+    const url = dateLink.href
+    const date = this.getDate(context, dateLink.textContent)
     return {
-      caseNumber, dateTime, location, desc: type,
+      date,
+      location: "",
+      desc: "",
       key_vals: {
         url
       },
@@ -121,21 +113,6 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
       source: "",
       source_id: "",
       type: UfoSearchCaseType.ufoSightings
-    }
-  }
-
-  protected setTime(dateTime: TimeContext, timeLabel: HTMLElement) {
-    const timeValue = timeLabel.nextSibling.textContent
-    const timeFields = /(~)?(\d{1,2}):(\d{1,2})(\?)?/.exec(timeValue)
-    assert.ok(timeFields, `Could not parse time "${timeValue}"`)
-    dateTime.approximateTime = Boolean(timeFields[0] || timeFields[4])
-    const hourStr = timeFields[1]
-    if (hourStr) {
-      dateTime.setHour(parseInt(hourStr, 10))
-    }
-    const minutesStr = timeFields[2]
-    if (minutesStr) {
-      dateTime.setHour(parseInt(minutesStr, 10))
     }
   }
 }

@@ -1,4 +1,4 @@
-import { RR0SsgContext } from '../RR0SsgContext';
+import { RR0SsgContext } from "../RR0SsgContext"
 
 export class TimeTextBuilder {
   /**
@@ -61,6 +61,9 @@ export class TimeTextBuilder {
       // TODO: Handle partial date (month only, etc.)
     } else {  // Valid date?
       text = date.toLocaleString(context.locale, printOptions)
+    }
+    if (time.approximate) {
+      text = context.messages.context.time.approximate(text)
     }
     return text
   }

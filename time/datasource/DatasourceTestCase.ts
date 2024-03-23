@@ -5,8 +5,9 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
 import { Source } from "../../source/Source"
+import { UfoCase } from "./UfoCase"
 
-export abstract class DatasourceTestCase<S> {
+export abstract class DatasourceTestCase<S extends UfoCase> {
 
   protected constructor(readonly mapping: RR0CaseMapping<S>, readonly sourceCases: S[]) {
   }

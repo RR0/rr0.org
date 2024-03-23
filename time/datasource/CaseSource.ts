@@ -1,11 +1,12 @@
 import { RR0SsgContext } from "../../RR0SsgContext"
+import { UfoCase } from "./UfoCase"
 
 /**
  * A source for cases.
  *
  * @param T The source case type.
  */
-export interface CaseSource<S> {
+export interface CaseSource<S extends UfoCase> {
   /**
    * The datasource authors to mention as a source.
    */

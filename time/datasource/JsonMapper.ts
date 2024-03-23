@@ -1,7 +1,7 @@
 import { CaseMapper } from "./CaseMapper"
 import { RR0SsgContext } from "../../RR0SsgContext"
 
-export class JsonMapper implements CaseMapper<RR0SsgContext, S, Object> {
+export class JsonMapper<S> implements CaseMapper<RR0SsgContext, S, Object> {
 
   map(context: RR0SsgContext, sourceCase: S, sourceTime: Date): Object {
     return undefined

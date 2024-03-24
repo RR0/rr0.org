@@ -1,11 +1,6 @@
-import { TimeContext } from "../../TimeContext"
+import { UfoCase } from "../UfoCase"
 
-export type EssexPoliceCaseSummary = {
-  /**
-   * Year.
-   */
-  date: TimeContext
-
+export interface EssexPoliceCaseSummary extends UfoCase {
   /**
    * Essex District
    */

@@ -1,11 +1,11 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { EssexPoliceDatasource, UfoSearchCase, UfoSearchCaseType } from "./EssexPoliceDatasource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { TimeContext } from "../../TimeContext"
 import { HttpSource } from "../HttpSource"
-import { By } from "selenium-webdriver"
 import assert from "assert"
+import { EssexPoliceDatasource } from "./EssexPoliceDatasource"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
 
 interface QueryParameters {
   sy?: number
@@ -41,21 +41,18 @@ export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
     return searchUrl.href
   }
 
-  protected async readCases(context: RR0SsgContext): Promise<UfoSearchCase[]> {
+  protected async readCases(context: RR0SsgContext): Promise<EssexPoliceCaseSummary[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
     const queryUrl = this.queryUrl(year, month, day)
-    const driver = await this.http.getDriver()
     try {
-      await driver.get(queryUrl)
+      const page = await this.http.fetch<string>(queryUrl)
       const resultSelector = "#output hr + p"
-      await driver.findElements(By.css(resultSelector))
-      const page = await driver.getPageSource()
       const doc = new JSDOM(page).window.document.documentElement
       const rowEls = doc.querySelectorAll(resultSelector)
       const rows = Array.from(rowEls)
-      const cases: UfoSearchCase[] = []
+      const cases: EssexPoliceCaseSummary[] = []
       for (const row of rows) {
         cases.push(await this.getFromRow(context, row))
       }
@@ -63,10 +60,6 @@ export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
     } finally {
       await this.http.close()
     }
-  }
-
-  protected getBoolean(field: HTMLTableCellElement) {
-    return field.textContent === "Oui"
   }
 
   protected getDate(context: RR0SsgContext, dateStr: string): TimeContext {
@@ -95,24 +88,17 @@ export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
     dateTime.setTimeZone("GMT+1")
   }
 
-  protected async getFromRow(context: RR0SsgContext, row: Element): Promise<UfoSearchCase> {
-    const fieldsHeadings = row.querySelectorAll("strong")
-    const dateLabel = fieldsHeadings[0]
-    const dateLink = dateLabel.nextElementSibling as HTMLAnchorElement
-    const url = dateLink.href
-    const date = this.getDate(context, dateLink.textContent)
+  protected async getFromRow(context: RR0SsgContext, row: Element): Promise<EssexPoliceCaseSummary> {
+    const dateTime = this.getDate(context, "")
+    let district = ""
+    let comments = ""
+    const url = new URL(this.searchPath, this.baseUrl)
     return {
-      date,
-      location: "",
-      desc: "",
-      key_vals: {
-        url
-      },
-      ref: "",
-      search: "",
-      source: "",
-      source_id: "",
-      type: UfoSearchCaseType.ufoSightings
+      caseNumber: "",
+      url,
+      dateTime,
+      district,
+      comments
     }
   }
 }

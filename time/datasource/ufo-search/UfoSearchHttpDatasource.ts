@@ -97,7 +97,7 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
       this.setTime(dateTime, timeLabel)
     }
     const locationLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Location") >= 0)
-    let location
+    let location: string | undefined
     if (locationLabel) {
       location = locationLabel.nextSibling.textContent.trim()
     }
@@ -107,20 +107,22 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
       desc = descriptionLabel.nextSibling.textContent.trim()
     }
     const typeLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Type") >= 0)
-    let type
+    let type: UfoSearchCaseType
     if (typeLabel) {
       type = typeLabel.nextSibling.textContent.trim() as UfoSearchCaseType
     }
+    let attributes
+    let extraData
     return {
       caseNumber, dateTime, location, desc: type,
-      key_vals: {
-        url
-      },
+      key_vals: {url},
+      attributes,
       ref: "",
       search: "",
       source: "",
       source_id: "",
-      type: UfoSearchCaseType.ufoSightings
+      type: UfoSearchCaseType.ufoSightings,
+      extraData
     }
   }
 

@@ -161,7 +161,7 @@ getTimeFiles().then(async (timeFiles) => {
   context.setVar("mapsApiKey", apiKey)
   const placeService = new GooglePlaceService("place", apiKey)
 
-  const orgService = new OrganizationService([], "org")
+  const orgService = new OrganizationService([], "org", undefined)
 
   const searchCommand = new SearchCommand({
     notIndexedUrls: ["404.html", "Referencement.html"],
@@ -171,7 +171,7 @@ getTimeFiles().then(async (timeFiles) => {
   const baseUrl = "https://rr0.org"
   const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
     new ChronologyReplacerFactory(timeFiles,
-      [/*geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping,*/ urecatRR0Mapping],
+      [/*geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
       rr0Datasource)
   )
   const pageReplaceCommands = [

@@ -1,6 +1,7 @@
 import { CaseSource } from "./CaseSource"
 import { RR0SsgContext } from "../../RR0SsgContext"
 import { UfoCase } from "./UfoCase"
+import { UfoCaseContextTimeFilter } from "./UfoCaseContextTimefilter"
 
 /**
  * Cache cases which were already fetched, and filter out cases in memory according to (time) context.
@@ -20,14 +21,9 @@ export abstract class AbstractCaseSource<S extends UfoCase> implements CaseSourc
   }
 
   async fetch(context: RR0SsgContext): Promise<S[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
     const summaries = await this.getSummaries(context)
-    return summaries.filter(c => {
-      const sightingTime = c.dateTime
-      return (!year || year === sightingTime.getYear()) && (!month || month === sightingTime.getMonth()) && (!day || day === sightingTime.getDayOfMonth())
-    })
+    const timeFilter = new UfoCaseContextTimeFilter(context)
+    return summaries.filter(timeFilter.filter)
   }
 
   protected abstract readCases(context: RR0SsgContext): Promise<S[]>

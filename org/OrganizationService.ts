@@ -2,6 +2,7 @@ import fs from "fs"
 import { Organization } from "./Organization"
 import { StringUtil } from "../util/string/StringUtil"
 import { RR0SsgContext } from "../RR0SsgContext"
+import assert from "assert"
 
 export class OrganizationService<O extends Organization = Organization, P extends Organization = undefined> {
 
@@ -24,24 +25,20 @@ export class OrganizationService<O extends Organization = Organization, P extend
   find(context: RR0SsgContext, nameToFind: string, parent: P): Organization | undefined {
     let foundOrg = this.orgs.find(org => {
       const orgMessages = org.messages(context)
-      const hasMessages = Boolean(orgMessages)
+      assert.ok(orgMessages, `Organization with code "${org.code}" has no messages`)
       let found: boolean
-      if (hasMessages) {
-        const orgNameToFind = this.nameToFind(context, org, nameToFind)
-        const hasParent = Boolean(parent?.code)
-        const parentCheck = !hasParent || parent.code === org.parent.code
-        if (parentCheck) {
-          let foundName: boolean
-          for (let i = 0; !foundName && i < orgMessages.titles.length; i++) {
-            const depName = OrganizationService.normalizeName(
-              orgMessages.toTitleFromName(context, org, orgMessages.titles[i], {parent: false}))
-            const depCityName = OrganizationService.normalizeName(depName)
-            foundName = depCityName === orgNameToFind
-          }
-          found = foundName
-        } else {
-          found = false
+      const orgNameToFind = this.nameToFind(context, org, nameToFind)
+      const hasParent = Boolean(parent?.code)
+      const parentCheck = !hasParent || parent.code === org.parent.code
+      if (parentCheck) {
+        let foundName: boolean
+        for (let i = 0; !foundName && i < orgMessages.titles.length; i++) {
+          const depName = OrganizationService.normalizeName(
+            orgMessages.toTitleFromName(context, org, orgMessages.titles[i], {parent: false}))
+          const depCityName = OrganizationService.normalizeName(depName)
+          foundName = depCityName === orgNameToFind
         }
+        found = foundName
       } else {
         found = false
       }

@@ -1,4 +1,4 @@
-import { TimeContext } from "../../TimeContext"
+import { UfoCase } from "../UfoCase"
 
 export enum BaseOvniFranceTypeObservation {
   visualClose = "Visuel : proche",
@@ -101,12 +101,9 @@ export enum BaseOvniFranceSize {
   pearl = "taille d'une bille (apparente)",
 }
 
-export type BaseOvniFranceCaseSummary = {
-  readonly caseNumber: number,
-  readonly url: URL,
+export interface BaseOvniFranceCaseSummary extends UfoCase {
   readonly city: string,
   readonly depCode: string,
-  readonly dateTime: TimeContext,
 
   /**
    * Number of seconds, or "N.C."

@@ -1,20 +1,11 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { TimeContext } from "../../TimeContext"
 import { HttpSource } from "../HttpSource"
 import assert from "assert"
 import { EssexPoliceDatasource } from "./EssexPoliceDatasource"
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
-
-interface QueryParameters {
-  sy?: number
-  sm?: number
-  sd?: number
-  ey?: number
-  em?: number
-  ed?: number
-}
+import { By } from "selenium-webdriver"
 
 export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
 
@@ -25,19 +16,7 @@ export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
   }
 
   queryUrl(year: number | undefined, month: number | undefined, day: number | undefined): string {
-    const queryParams: QueryParameters = {}
-    if (year) {
-      queryParams.ey = queryParams.sy = year
-    }
-    if (month) {
-      queryParams.em = queryParams.sm = month
-    }
-    if (day) {
-      queryParams.sd = queryParams.ed = day
-    }
-    const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const searchUrl = new URL(this.searchPath, this.baseUrl)
-    searchUrl.search = queryParamsStr
     return searchUrl.href
   }
 
@@ -46,9 +25,12 @@ export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
     const month = context.time.getMonth()
     const year = context.time.getYear()
     const queryUrl = this.queryUrl(year, month, day)
+    const driver = await this.http.getDriver()
     try {
-      const page = await this.http.fetch<string>(queryUrl)
+      await driver.get(queryUrl)
       const resultSelector = "#output hr + p"
+      await driver.findElements(By.css(resultSelector))
+      const page = await driver.getPageSource()
       const doc = new JSDOM(page).window.document.documentElement
       const rowEls = doc.querySelectorAll(resultSelector)
       const rows = Array.from(rowEls)

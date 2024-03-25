@@ -6,6 +6,7 @@ import fs from "fs"
 import path from "path"
 import { TimeTextBuilder } from "./time/TimeTextBuilder"
 import { RR0ContentStep } from "./RR0ContentStep"
+import assert from "assert"
 
 /**
  * Create a preview image for each page sharing.
@@ -171,8 +172,10 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     if (imageIndex < docImages.length) {
       const firstImage = docImages[0]
       const firstImageSrc = firstImage.getAttribute("src")
+      assert.ok(firstImageSrc, "Undefined image src")
       const firstImageUrl = firstImageSrc?.startsWith(this.baseUrl) ? firstImageSrc.substring(
         this.baseUrl.length) : firstImageSrc
+      assert.ok(firstImageUrl, "Undefined image url")
       const dir = path.dirname(context.outputFile.name)
       try {
         const src = firstImageUrl.startsWith("/") ? firstImageUrl.substring(1) : path.join(dir, firstImageUrl)
@@ -183,7 +186,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
         widthRatio = dx / this.width
         canvasCtx.drawImage(image, dx, dy, dw, this.height)
       } catch (e) {
-        context.error("Error loading image", firstImageUrl, ", skipping it")
+        context.error(`Error loading image "${firstImageUrl}", skipping it`)
         imageIndex++ // Try next image
       }
     }

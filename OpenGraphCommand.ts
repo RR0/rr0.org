@@ -172,12 +172,13 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     if (imageIndex < docImages.length) {
       const firstImage = docImages[0]
       const firstImageSrc = firstImage.getAttribute("src")
-      assert.ok(firstImageSrc, "Undefined image src")
-      const firstImageUrl = firstImageSrc?.startsWith(this.baseUrl) ? firstImageSrc.substring(
-        this.baseUrl.length) : firstImageSrc
-      assert.ok(firstImageUrl, "Undefined image url")
-      const dir = path.dirname(context.outputFile.name)
+      let firstImageUrl: string
       try {
+        assert.ok(firstImageSrc, "Undefined image src")
+        firstImageUrl = firstImageSrc?.startsWith(this.baseUrl) ? firstImageSrc.substring(
+          this.baseUrl.length) : firstImageSrc
+        assert.ok(firstImageUrl, "Undefined image url")
+        const dir = path.dirname(context.outputFile.name)
         const src = firstImageUrl.startsWith("/") ? firstImageUrl.substring(1) : path.join(dir, firstImageUrl)
         const image = await loadImage(src)
         const heightRatio = this.height / image.height

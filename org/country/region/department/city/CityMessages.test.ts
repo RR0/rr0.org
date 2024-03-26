@@ -21,8 +21,8 @@ describe("CityMessages", () => {
   })
 
   test("toTitle", () => {
-    expect(castlegarMessages.toTitle(context, castlegar)).toBe(castlegarMessages.title)
-    expect(nanterreMessages.toTitle(context, nanterre92)).toBe(nanterreMessages.title)
+    expect(castlegarMessages.toTitle(context, castlegar, {parent: false})).toBe(castlegarMessages.title)
+    expect(nanterreMessages.toTitle(context, nanterre92, {parent: false})).toBe(nanterreMessages.title)
   })
 
   test("toTitle with department", () => {

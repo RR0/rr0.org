@@ -2,7 +2,7 @@ import { TimeReplacer } from "./TimeReplacer"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { DomReplacer, ReplacerFactory } from "ssg-api"
 
-export class TimeReplacerFactory implements ReplacerFactory<DomReplacer> {
+export class TimeReplacerFactory implements ReplacerFactory<DomReplacer<HTMLTimeElement>> {
 
   protected readonly replacer: TimeReplacer
 
@@ -15,9 +15,9 @@ export class TimeReplacerFactory implements ReplacerFactory<DomReplacer> {
    *
    * @param context
    */
-  async create(context: HtmlRR0SsgContext): Promise<DomReplacer> {
+  async create(context: HtmlRR0SsgContext): Promise<DomReplacer<HTMLTimeElement>> {
     return {
-      replace: (original: HTMLElement): Promise<HTMLElement> => {
+      replace: (original: HTMLTimeElement): Promise<HTMLTimeElement> => {
         return this.replacer.replacement(
           this.timeFiles.includes(context.inputFile.name) ? context.clone() : context, original)
       }

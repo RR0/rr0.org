@@ -1,8 +1,8 @@
 import { City } from "../../country/region/department/city/City"
-import { britishColumbiaCities } from "./bc/BritishColumbiaCities"
-import { manitobaCities } from "./mb/ManitobaCities"
-import { quebecCities } from "./qc/QuebecCities"
 import { algerCities } from "./al/AlgerCities"
+import { britishColumbiaCities } from "../../ca/region/bc/BritishColumbiaCities"
+import { manitobaCities } from "../../ca/region/mb/ManitobaCities"
+import { quebecCities } from "../../ca/region/qc/QuebecCities"
 
 export const algeriaCities: City[] = [
   ...algerCities,

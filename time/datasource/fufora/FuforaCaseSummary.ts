@@ -1,8 +1,7 @@
 import { TimeContext } from "../../TimeContext"
+import { UfoCase } from "../UfoCase"
 
-export type FuforaCaseSummary = {
-  readonly caseNumber: number
-  readonly url: URL,
+export interface FuforaCaseSummary extends UfoCase {
   readonly city: string,
   readonly sightingPlace: string | undefined,
   readonly dateTime: TimeContext,

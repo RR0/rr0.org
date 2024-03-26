@@ -1,29 +1,24 @@
-import { UfoSearchCase } from "./EssexPoliceDatasource"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
+import { TimeContext } from "../../TimeContext"
+import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
-export const essexPoliceTestCases: UfoSearchCase[] = [
+export const essexPoliceTestCases: EssexPoliceCaseSummary[] = [
   {
-    date: "0's",
-    desc: "Greek and Roman records of UFO's",
-    key_vals: {
-      url: `<a href="timeline.html#979AEFAA">0's #0</a>`
-    },
-    ref: "[Keziah Poster](https://github.com/richgel999/uap_resources/blob/main/Keziah58.pdf)",
-    search: "greek roman record ufo keziah poster",
-    source: "Maj2",
-    source_id: "Maj2_1",
-    type: "ufo sightings"
+    caseNumber: "1",
+    dateTime: new TimeContext(rr0TestUtil.intlOptions, 2018),
+    url: new URL(
+      "https://www.essex.police.uk/foi-ai/essex-police/other-information/previous-foi-requests/ufo-reports-2018-to-2023/"),
+    district: "M25",
+    comments: "INC HAPPENED ABOUT 4 MINS AGO INF SAW A GREEN FLOURESCENT LIGHT LIKE A COMET COMING FROM THE SKY, INF SAW 2 PLANES ABOVE IT AND A SMALLER PLANE"
   },
   {
-    date: "4/34",
-    desc: "A white, round object, accompanied by 10 small stars, flew overhead. The pattern suggests the stars might have been in formation with the main object, making it an unusual possible meteor event.",
-    key_vals: {
-      url: `<a href="timeline.html#F91D10A9">4/34 #1</a>`
-    },
-    location: "China",
-    ref: "[_Wonders in the Sky: Unexplained Aerial Objects From Antiquity To Modern Times_, by Jacques Vallée and Chris Aubeck, 2009](https://archive.org/details/JacquesValleeChrisAubeckWondersInTheSkyUnexplainedAerialObjectsFromAntiquityToModernTimes/mode/2up)",
-    search: "white round object accompani 10 small star flew overhead pattern suggest star might format main object make unusu possibl meteor event wonder sky unexplain aerial object antiqu modern time jacqu valle chri aubeck 2009 china",
-    source: "WondersInTheSky",
-    source_id: "WondersInTheSky_23",
-    type: "ufo sighting"
-  }
+    caseNumber: "2019",
+    dateTime: new TimeContext(rr0TestUtil.intlOptions, 2019),
+    url: new URL(
+      "https://www.essex.police.uk/foi-ai/essex-police/other-information/previous-foi-requests/ufo-reports-2018-to-2023/"),
+    district: "BASILDON",
+    comments: `INFT HEARD A HGIH PITCH NOISE AT AROUND 00:00HRS
+INFT STATING THIS WAS ABOUT 300FT HIGH
+IT WAS THERE FOR ABOUT 12-14 MINUTES, INFT THEN WENT BACK INSIDE AND DID NOT SEE WHERE THE UFO HEADED ONCE IT LEFT`
+  },
 ]

@@ -1,13 +1,13 @@
-import {PeopleFactory} from "./PeopleFactory"
-import {DomReplacement} from "../time/DomReplacement"
-import {HtmlRR0SsgContext} from "../RR0SsgContext"
-import {PeopleDirectoryStep} from "./PeopleDirectoryStep"
-import {CountryCode} from "../org/CountryCode"
-import {Occupation} from "./Occupation"
+import { PeopleService } from "./PeopleService"
+import { DomReplacement } from "../time/DomReplacement"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { PeopleDirectoryStep } from "./PeopleDirectoryStep"
+import { Occupation } from "./Occupation"
+import { CountryCode } from "../org/country/CountryCode"
 
 export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
-  constructor(protected factory: PeopleFactory) {
+  constructor(protected service: PeopleService) {
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {
@@ -24,7 +24,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     const cache = context.people.cache
     let people = cache.get(peopleStr)
     if (!people) {
-      people = this.factory.createFromFullName(peopleStr)
+      people = this.service.createFromFullName(peopleStr)
       cache.set(people.lastName, people)
     }
     let url = people.dirName
@@ -33,7 +33,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
       // const urlAbsolute = UrlUtil.absolute(url)
-      const peopleList = await PeopleDirectoryStep.getPeopleFromDir(context, url)
+      const peopleList = await this.service.getPeopleFromDir(context, url)
       const pseudoPeopleList = []
       const allCountries = new Set<CountryCode>()
       const occupations = new Set<Occupation>

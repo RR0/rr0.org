@@ -16,7 +16,7 @@
   },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",
-    "books": "tsx book/Books.ts",
+    "books": "tsx book/BookService.ts",
     "build": "tsx build.ts",
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",

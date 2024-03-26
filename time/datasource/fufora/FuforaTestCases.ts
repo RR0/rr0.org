@@ -5,7 +5,7 @@ import { fuforaDatasource } from "./FuforaRR0Mapping"
 
 export const fuforaTestCases: FuforaCaseSummary[] = [
   {
-    caseNumber: 40,
+    caseNumber: "40",
     url: new URL("ufodata.php?u=40&p=1&sid=", fuforaDatasource.baseUrl),
     sightingPlace: "Kotini kylänlahden VR:n talo, opiston lähellä",
     city: "Pielisjärvi",
@@ -14,7 +14,7 @@ export const fuforaTestCases: FuforaCaseSummary[] = [
     classification: "8LIV7Y3"
   },
   {
-    caseNumber: 1818,
+    caseNumber: "1818",
     url: new URL("ufodata.php?u=1818&p=1&sid=", fuforaDatasource.baseUrl),
     sightingPlace: "Märjälahden ranta",
     city: "Pielisjärvi Lieksa",

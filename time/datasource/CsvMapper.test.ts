@@ -1,14 +1,13 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { CsvMapper } from "../CsvMapper"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { geipanTestCaseSummaries } from "./GeipanTestCases"
 import fs from "fs"
-import { geipanHttpDatasource } from "./GeipanRR0Mapping"
-import { GeipanCase } from "./GeipanCase"
-import { GeipanCaseSummaryMapper } from "./GeipanCaseSummaryMapper"
-import { geipanFileDatasource } from "./geipan/GeipanRR0Mapping"
+import { geipanFileDatasource, geipanHttpDatasource } from "./geipan/GeipanRR0Mapping"
+import { RR0SsgContext } from "../../RR0SsgContext"
+import { CsvMapper } from "./CsvMapper"
+import { GeipanCaseSummary } from "./geipan/GeipanCaseSummary"
+import { rr0TestUtil } from "../../test/RR0TestUtil"
+import { geipanTestCaseSummaries } from "./geipan/GeipanTestCases"
+import { GeipanCase } from "./geipan/GeipanCase"
+import { GeipanCaseSummaryMapper } from "./geipan/GeipanCaseSummaryMapper"
 
 describe("CsvMapper", () => {
 

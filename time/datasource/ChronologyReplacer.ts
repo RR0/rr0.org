@@ -9,8 +9,9 @@ import { StringUtil } from "../../util/string/StringUtil"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 import { RR0Datasource } from "./rr0/RR0Datasource"
 import { CaseSource } from "./CaseSource"
+import { UfoCase } from "./UfoCase"
 
-export interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
+export interface RR0CaseMapping<S extends UfoCase> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
 }
 
 export type ChronologyReplacerActions = {

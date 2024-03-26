@@ -8,6 +8,7 @@ import { girondeCities } from "./33/GirondeCities"
 import { lotEtGaronneCities } from "./47/LotEtGaronneCities"
 import { dordogneCities } from "./24/DordogneCities"
 import { vienneCities } from "./86/VienneCities"
+import { pyreneesAtlantiquesCities } from "./64/PyreneesAtlantiquesCities"
 
 export const nouvelleAquitaineCities: Organization[] = [
   ...charenteCities,
@@ -18,5 +19,6 @@ export const nouvelleAquitaineCities: Organization[] = [
   ...girondeCities,
   ...landesCities,
   ...lotEtGaronneCities,
+  ...pyreneesAtlantiquesCities,
   ...vienneCities
 ]

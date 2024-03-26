@@ -56,7 +56,7 @@ import { IndexedReplacerFactory } from "./index/indexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
 import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
-import { urecatRR0Mapping } from "./time/datasource/urecat/UrecatRR0Mapping"
+import { PeopleService } from "./people/PeopleService"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -148,11 +148,13 @@ async function getTimeFiles(): Promise<string[]> {
 }
 
 getTimeFiles().then(async (timeFiles) => {
+  const peopleFiles = await glob("people/*/*")
+  const peopleService = new PeopleService(peopleFiles)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config)
-  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config)
-  const booksStep = await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks)
+  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
+  const booksStep = await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService)
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -196,7 +198,7 @@ getTimeFiles().then(async (timeFiles) => {
     new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
-    new ClassDomReplaceCommand("people", new PeopleReplacerFactory()),
+    new ClassDomReplaceCommand("people", new PeopleReplacerFactory(peopleService)),
     new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
     new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
     new ClassDomReplaceCommand("note", new NoteReplacerFactory()),

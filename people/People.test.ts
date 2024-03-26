@@ -1,12 +1,19 @@
-import {People} from "./People"
-import {PeopleFactory} from "./PeopleFactory"
-import { describe, expect, test } from '@javarome/testscript';
+import { People } from "./People"
+import { PeopleService } from "./PeopleService"
+import { beforeAll, describe, expect, test } from "@javarome/testscript"
+import { promise as glob } from "glob-promise"
 
 describe("People", () => {
 
+  let service: PeopleService
+
+  beforeAll(async () => {
+    const peopleFiles = await glob("people/*/*")
+    service = new PeopleService(peopleFiles)
+  })
+
   test("age", async () => {
-    const factory = await PeopleFactory.getInstance()
-    const hynek = factory.createFromDirName("HynekJosefAllen")
+    const hynek = service.createFromDirName("HynekJosefAllen")
     expect(hynek.isDeceased()).toBe(false)
     expect(hynek.getAge()).toBe(undefined)
 

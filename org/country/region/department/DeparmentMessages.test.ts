@@ -15,16 +15,16 @@ describe("DepartmentMessages", () => {
   })
 
   test("toTitle", () => {
-    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine)).toBe(hautsDeSeineMessages.title)
+    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {parent: false})).toBe(hautsDeSeineMessages.title)
   })
 
-  test("toTitle with region", () => {
-    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {region: true})).toBe(
-      `${hautsDeSeineMessages.title}, ${idfMessages.title}`)
-  })
+  /*  test("toTitle with region", () => {
+      expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {parent: true})).toBe(
+        `${hautsDeSeineMessages.title}, ${idfMessages.title}`)
+    })*/
 
   test("toTitle with region and country", () => {
-    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {region: true, country: true})).toBe(
+    expect(hautsDeSeineMessages.toTitle(context, hautsDeSeine, {parent: true})).toBe(
       `${hautsDeSeineMessages.title}, ${idfMessages.title}, ${france_fr.title}`)
   })
 })

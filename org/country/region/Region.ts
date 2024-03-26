@@ -35,9 +35,9 @@ export type RegionCode =
   | SouthKoreaRegionCode
   | UsaStates
 
-export class Region<M extends TitleMessage = RegionMessages<any>> extends Organization<M> {
+export class Region<M extends TitleMessage = RegionMessages<any>, R = RegionCode> extends Organization<M> {
 
-  constructor(code: RegionCode, country: Organization, places: Place[]) {
+  constructor(code: R, country: Organization, places: Place[]) {
     super(code, places, OrganizationType.region, country)
   }
 }

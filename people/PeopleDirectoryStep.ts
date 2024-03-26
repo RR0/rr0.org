@@ -2,14 +2,12 @@ import { Occupation } from "./Occupation"
 import { Time } from "../time/Time"
 import { KnownPeople, People } from "./People"
 import { promise as glob } from "glob-promise"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { HtmlTag } from "../util/HtmlTag"
-import { DirectoryStep, OutputFunc, SsgConfig, SsgFile, SsgStep } from "ssg-api"
+import { DirectoryStep, OutputFunc, SsgConfig, SsgStep } from "ssg-api"
 import { StringUtil } from "../util/string/StringUtil"
-import * as path from "path"
-import fs from "fs"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
-import { PeopleFactory } from "./PeopleFactory"
+import { PeopleService } from "./PeopleService"
 import { CountryCode } from "../org/country/CountryCode"
 import { Gender } from "@rr0/common"
 
@@ -19,8 +17,8 @@ import { Gender } from "@rr0/common"
 export class PeopleDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc,
-              config: SsgConfig,
-              protected filterOccupations: Occupation[], name = "people directory") {
+              config: SsgConfig, protected filterOccupations: Occupation[], protected service: PeopleService,
+              name = "people directory") {
     super(dirs, excludedDirs, template, config, name)
   }
 
@@ -113,81 +111,18 @@ export class PeopleDirectoryStep extends DirectoryStep {
     return elem
   }
 
-  static async getPeopleFromDirs(context: RR0SsgContext, dirNames: string[]): Promise<KnownPeople[]> {
-    let peopleList: People[] = []
-    for (const dirName of dirNames) {
-      const list = await this.getPeopleFromDir(context, dirName)
-      peopleList.push(...list)
-    }
-    return peopleList
-  }
-
-  static async getPeopleFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
-    let peopleList: People[] = []
-    const fileSpec = `/people*.json`
-    const files = await glob(`${dirName}${fileSpec}`)
-    const peopleFactory = await PeopleFactory.getInstance()
-    for (const file of files) {
-      const people = peopleFactory.createFromDirName(dirName)
-      peopleList.push(people)
-      try {
-        const jsonFileInfo = SsgFile.read(context, file)
-        const peopleData = JSON.parse(jsonFileInfo.contents)
-        const title = peopleData.title
-        if (title) {
-          try {
-            const names = title.split(", ")
-            people.lastName = names.splice(0, 1)[0]
-            people.firstNames.length = 0
-            people.firstNames.push(...names[0].split(" "))
-            people.lastAndFirstName = people.getLastAndFirstName()
-          } catch (e) {
-            const words = title.split(" ")
-            if (words.length === 2) {
-              people.firstNames.length = 0
-              people.firstNames.push(words[0])
-              people.lastName = words[1]
-            } else {
-              context.warn(`Could not determine first and last name from "${title}" in ${jsonFileInfo.name}`)
-              context.debug(e)
-            }
-            people.lastAndFirstName = title
-          }
-        }
-        Object.assign(people, peopleData)
-        if (!people.portraitUrl) {
-          const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
-          let hasPortrait = false
-          for (let i = 0; i < possiblePortraitFiles.length; i++) {
-            const portraitFile = possiblePortraitFiles[i]
-            const portraitPath = path.join(people.dirName, portraitFile)
-            hasPortrait = fs.existsSync(portraitPath)
-            if (hasPortrait) {
-              people.portraitUrl = path.join("/", portraitPath)
-              break
-            }
-          }
-        }
-      } catch (e) {
-        context.warn(`${dirName} has no ${fileSpec} description`)
-        // No json, just guess title.
-      }
-    }
-    return peopleList
-  }
-
-  static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<SsgStep[]> {
+  static async create(outputFunc: OutputFunc, config: SsgConfig, service: PeopleService): Promise<SsgStep[]> {
     const dirs = await RR0FileUtil.findDirectoriesContaining("people*.json")
     const excludedDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
-    const scientistsDirectoryStep = this.createScientists(dirs, excludedDirs, outputFunc, config)
-    const ufologistsDirectoryStep = this.createUfologists(dirs, excludedDirs, outputFunc, config)
-    const ufoWitnessesDirectoryStep = this.createWitnesses(dirs, excludedDirs, outputFunc, config)
-    const astronomersDirectoryStep = this.createAstronomers(dirs, excludedDirs, outputFunc, config)
-    const contacteesDirectoryStep = this.createContactees(dirs, excludedDirs, outputFunc, config)
-    const pilotsDirectoryStep = this.createPilots(dirs, excludedDirs, outputFunc, config)
-    const militaryDirectoryStep = this.createMilitary(dirs, excludedDirs, outputFunc, config)
-    const allPeopleDirectoryStep = this.createAll(dirs, excludedDirs, outputFunc, config)
-    const letterDirectorySteps = await this.createLetters(outputFunc, config)
+    const scientistsDirectoryStep = this.createScientists(dirs, excludedDirs, outputFunc, config, service)
+    const ufologistsDirectoryStep = this.createUfologists(dirs, excludedDirs, outputFunc, config, service)
+    const ufoWitnessesDirectoryStep = this.createWitnesses(dirs, excludedDirs, outputFunc, config, service)
+    const astronomersDirectoryStep = this.createAstronomers(dirs, excludedDirs, outputFunc, config, service)
+    const contacteesDirectoryStep = this.createContactees(dirs, excludedDirs, outputFunc, config, service)
+    const pilotsDirectoryStep = this.createPilots(dirs, excludedDirs, outputFunc, config, service)
+    const militaryDirectoryStep = this.createMilitary(dirs, excludedDirs, outputFunc, config, service)
+    const allPeopleDirectoryStep = this.createAll(dirs, excludedDirs, outputFunc, config, service)
+    const letterDirectorySteps = await this.createLetters(outputFunc, config, service)
     return [
       scientistsDirectoryStep,
       ufologistsDirectoryStep,
@@ -201,8 +136,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     ]
   }
 
-  static async createLetters(outputFunc: OutputFunc,
-                             config: SsgConfig) {
+  static async createLetters(outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
     const letterDirs = await glob("people/*/")
     const peopleLetterFiles = letterDirs.filter(l => /(.*?)\/[a-z]\//.test(l))
     const letterDirectorySteps: PeopleDirectoryStep[] = []
@@ -212,89 +146,55 @@ export class PeopleDirectoryStep extends DirectoryStep {
         [`people/${c}/*/`],
         [],
         `people/${c}/index.html`,
-        outputFunc, config, []))
+        outputFunc, config, [], service))
     }
     return letterDirectorySteps
   }
 
   static createAll(dirs: string[], excludedDirs: string[],
-                   outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(
-      dirs,
-      excludedDirs,
-      "people/index.html",
-      outputFunc, config,
-      [],
-      "all people directories"
-    )
+                   outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/index.html", outputFunc, config, [], service,
+      "all people directories")
   }
 
   static createMilitary(dirs: string[], excludedDirs: string[],
-                        outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(
-      dirs,
-      excludedDirs,
-      "people/militaires.html",
-      outputFunc, config,
-      [Occupation.military],
-      "military people directories"
-    )
+                        outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/militaires.html", outputFunc, config,
+      [Occupation.military], service, "military people directories")
   }
 
-  static createPilots(dirs: string[], excludedDirs: string[],
-                      outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(
-      dirs,
-      excludedDirs,
-      "people/pilotes.html",
-      outputFunc, config,
-      [Occupation.astronaut, Occupation.pilot],
-      "pilots directories"
-    )
+  static createPilots(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
+                      service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/pilotes.html", outputFunc, config,
+      [Occupation.astronaut, Occupation.pilot], service, "pilots directories")
   }
 
-  static createContactees(dirs: string[], excludedDirs: string[],
-                          outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(dirs, excludedDirs,
-      "people/contactes.html",
-      outputFunc, config,
-      [Occupation.contactee],
-      "contactees directories"
-    )
+  static createContactees(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
+                          service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/contactes.html", outputFunc, config,
+      [Occupation.contactee], service, "contactees directories")
   }
 
-  static createAstronomers(dirs: string[], excludedDirs: string[],
-                           outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(dirs, excludedDirs,
-      "people/astronomes.html",
-      outputFunc, config,
-      [Occupation.astronomer],
-      "astronomers directories"
-    )
+  static createAstronomers(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
+                           service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/astronomes.html", outputFunc, config,
+      [Occupation.astronomer], service, "astronomers directories")
   }
 
-  static createWitnesses(dirs: string[], excludedDirs: string[],
-                         outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(dirs, excludedDirs,
-      "people/witness/index.html",
-      outputFunc, config,
-      [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee],
-      "UFO witnesses directories"
-    )
+  static createWitnesses(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
+                         service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/witness/index.html", outputFunc, config,
+      [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee], service, "UFO witnesses directories")
   }
 
-  static createUfologists(dirs: string[], excludedDirs: string[],
-                          outputFunc: OutputFunc, config: SsgConfig) {
-    return new PeopleDirectoryStep(dirs, excludedDirs,
-      "people/ufologues.html",
-      outputFunc, config,
-      [Occupation.ufologist],
-      "ufologists directories"
-    )
+  static createUfologists(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
+                          service: PeopleService) {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "people/ufologues.html", outputFunc, config,
+      [Occupation.ufologist], service, "ufologists directories")
   }
 
-  static createScientists(dirs: string[], excludedDirs: string[],
-                          outputFunc: OutputFunc, config: SsgConfig) {
+  static createScientists(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
+                          service: PeopleService) {
     return new PeopleDirectoryStep(dirs, excludedDirs,
       "people/scientifiques.html",
       outputFunc, config,
@@ -312,12 +212,13 @@ export class PeopleDirectoryStep extends DirectoryStep {
         Occupation.radioastronomer,
         Occupation.sociologist, Occupation.softwareEngineer
       ],
+      service,
       "scientists directories"
     )
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    let peopleList = await PeopleDirectoryStep.getPeopleFromDirs(context, dirNames)
+    let peopleList = await this.service.getPeopleFromDirs(context, dirNames)
     if (this.filterOccupations.length > 0) {
       peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     }

@@ -1,6 +1,6 @@
 import { PeopleReplacer } from "./PeopleReplacer"
 import { rr0TestUtil } from "../test/RR0TestUtil"
-import { PeopleFactory } from "./PeopleFactory"
+import { PeopleService } from "./PeopleService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { describe, expect, test } from "@javarome/testscript"
 
@@ -16,7 +16,7 @@ describe("PeopleReplacer", () => {
   }
 
   test("ignore brackets", async () => {
-    const replacer = new PeopleReplacer(new PeopleFactory(["people/h/HynekJosefAllen"]))
+    const replacer = new PeopleReplacer(new PeopleService(["people/h/HynekJosefAllen"]))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const lastnameFirstElement = createPeopleElement(context,
@@ -35,7 +35,7 @@ describe("PeopleReplacer", () => {
   })
 
   test("replace people tags", async () => {
-    const replacer = new PeopleReplacer(new PeopleFactory(["people/b/BeauJerome", "people/r/ReaganRonald"]))
+    const replacer = new PeopleReplacer(new PeopleService(["people/b/BeauJerome", "people/r/ReaganRonald"]))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const peopleWithTitle = createPeopleElement(context, "Ronald Reagan", "Ronald Wilson Reagan")

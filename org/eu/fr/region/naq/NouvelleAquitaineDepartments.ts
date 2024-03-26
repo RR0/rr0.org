@@ -8,6 +8,7 @@ import { correze } from "./19/Correze"
 import { gironde } from "./33/Gironde"
 import { lotEtGaronne } from "./47/LotEtGaronne"
 import { dordogne } from "./24/Dordogne"
+import { pyreneesAtlantiques } from "./64/PyreneesAtlantiques"
 
 export const nouvelleAquitaineDepartments: Organization[] = [
   charente,
@@ -18,5 +19,6 @@ export const nouvelleAquitaineDepartments: Organization[] = [
   gironde,
   landes,
   lotEtGaronne,
+  pyreneesAtlantiques,
   vienne
 ]

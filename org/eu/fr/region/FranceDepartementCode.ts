@@ -51,6 +51,7 @@ export enum FranceDepartementCode {
   Oise = "60",
   PasDeCalais = "62",
   PuyDeDome = "63",
+  PyreneesAtlantiques = "64",
   HautesPyrenees = "65",
   PyreneesOrientales = "66",
   BasRhin = "67",

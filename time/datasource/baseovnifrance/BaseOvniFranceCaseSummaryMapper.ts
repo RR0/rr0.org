@@ -10,13 +10,11 @@ import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
  */
 export class BaseOvniFranceCaseSummaryMapper implements CaseMapper<RR0SsgContext, BaseOvniFranceCase, BaseOvniFranceCaseSummary> {
 
-  constructor(
-    readonly baseUrl: string, readonly copyright: string, readonly authors: string
-  ) {
+  constructor(readonly baseUrl: string, readonly copyright: string, readonly authors: string[]) {
   }
 
   map(context: RR0SsgContext, csvCase: BaseOvniFranceCase, sourceTime: Date): BaseOvniFranceCaseSummary {
-    const caseNumber = parseInt(csvCase["Num cas"], 10)
+    const caseNumber = csvCase["Num cas"]
     const dateFields = csvCase["Date"].split("-")
     const timeFields = csvCase["Heure"].split(":")
     let dayField = dateFields[0]

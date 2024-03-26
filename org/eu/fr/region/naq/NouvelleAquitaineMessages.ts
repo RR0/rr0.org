@@ -10,6 +10,7 @@ import { correzeMessages } from "./19/CorrezeMessages"
 import { girondeMessages } from "./33/GirondeMessages"
 import { lotEtGaronneMessages } from "./47/LotEtGaronneMessages"
 import { dordogneMessages } from "./24/DordogneMessages"
+import { pyreneesOrientalesMessages } from "../occ/66/PyreneesOrientalesMessages"
 
 const nouvelleAquitaineMessageList: { [key in NouvelleAquitaineDepartmentCode]: DepartmentMessages<any> } = {
   [NouvelleAquitaineDepartmentCode.Charente]: charenteMessages,
@@ -20,6 +21,7 @@ const nouvelleAquitaineMessageList: { [key in NouvelleAquitaineDepartmentCode]: 
   [NouvelleAquitaineDepartmentCode.Gironde]: girondeMessages,
   [NouvelleAquitaineDepartmentCode.Landes]: landesMessages,
   [NouvelleAquitaineDepartmentCode.LotEtGaronne]: lotEtGaronneMessages,
+  [NouvelleAquitaineDepartmentCode.PyreneesAtlantiques]: pyreneesOrientalesMessages,
   [NouvelleAquitaineDepartmentCode.Vienne]: vienneMessages
 }
 export const nouvelleAquitaineMessages = RegionMessages.create("Nouvelle Aquitaine", nouvelleAquitaineMessageList)

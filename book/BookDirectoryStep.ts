@@ -7,6 +7,7 @@ import { HtmlTag } from "../util/HtmlTag"
 import fs from "fs"
 import path from "path"
 import { Chapter } from "./Chapters"
+import { PeopleService } from "../people/PeopleService"
 
 /**
  * Scan directories for book information, then populates a template with collected data.
@@ -15,21 +16,16 @@ export class BookDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], template: string, protected outputFunc: OutputFunc,
               config: SsgConfig, protected outDir: string, name: string,
-              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
+              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>,
+              protected peopleService: PeopleService) {
     super(dirs, [], template, config, name)
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, bookMeta: Map<string, HtmlMeta>,
-                      bookLinks: Map<string, HtmlLinks>): Promise<BookDirectoryStep> {
+                      bookLinks: Map<string, HtmlLinks>, peopleService: PeopleService): Promise<BookDirectoryStep> {
     const dirs = await RR0FileUtil.findDirectoriesContaining("book*.json")
-    return new BookDirectoryStep(
-      dirs,
-      "book/index.html",
-      outputFunc, config,
-      config.outDir,
-      "all books",
-      bookMeta, bookLinks
-    )
+    return new BookDirectoryStep(dirs, "book/index.html", outputFunc, config, config.outDir, "all books", bookMeta,
+      bookLinks, peopleService)
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {

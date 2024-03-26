@@ -11,11 +11,11 @@ import { briancon05 } from "../../../org/eu/fr/region/pac/05/briancon/Briancon"
 import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/Chambon/Chambon"
 import { OnlineSource } from "../../../source/OnlineSource"
 
-function expectedSource(datasource: BaseOvniFranceHttpDatasource, dataDate: Date, caseNumber: number): OnlineSource {
+function expectedSource(datasource: BaseOvniFranceHttpDatasource, dataDate: Date, caseNumber: string): OnlineSource {
   const url = new URL(datasource.searchPath + "?typlist=20&page=0&numobs=" + caseNumber, datasource.baseUrl)
   return {
     url, title: "cas n° " + caseNumber, authors: datasource.authors,
-    publication: {publisher: datasource.copyright, time: dataDate.toLocaleString()}
+    publication: {publisher: datasource.copyright, time: TimeContext.fromDate(dataDate, rr0TestUtil.intlOptions)}
   }
 }
 

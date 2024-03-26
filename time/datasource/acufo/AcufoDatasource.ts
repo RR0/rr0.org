@@ -5,30 +5,30 @@ import { JSDOM } from "jsdom"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
 import { AcufoCase } from "./AcufoCase"
-import { CaseSource } from "../CaseSource"
 import { NuforcState } from "../nuforc/NuforcState"
 import { NuforcCountry } from "../nuforc/NuforcCountry"
 
 import { NuforcShape } from "../nuforc/NuforcShape"
+import { AbstractCaseSource } from "../AbstractCaseSource"
 
 interface QueryParameters {
 }
 
-export class AcufoDatasource extends HttpSource implements CaseSource<AcufoCase> {
-  readonly authors = ["Gross, Patrick"]
-  readonly copyright = "ACUFO/ALSACAT (Les ovnis vus de près)"
+export class AcufoDatasource extends AbstractCaseSource<AcufoCase> {
+
+  protected http = new HttpSource()
 
   constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "alsacat") {
-    super()
+    super(["Gross, Patrick"], "ACUFO/ALSACAT (Les ovnis vus de près)")
   }
 
-  async fetch(context: RR0SsgContext): Promise<AcufoCase[]> {
+  protected async readCases(context: RR0SsgContext): Promise<AcufoCase[]> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
     const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
     const lang = context.locale === "fr" ? "f" : ""
-    const page = await this.fetch<string>(UrlUtil.join(searchUrl, "_" + year + lang),
+    const page = await this.http.fetch<string>(UrlUtil.join(searchUrl, "_" + year + lang),
       {headers: {accept: "text/html;charset=utf-8"}})
     const doc = new JSDOM(page).window.document.documentElement
     /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")

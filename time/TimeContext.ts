@@ -82,7 +82,7 @@ export class TimeContext {
 
   clone(): TimeContext {
     return new TimeContext({...this.options}, this._year, this._month, this._dayOfMonth, this._hour, this._minutes,
-      this._timeZone)
+      this._timeZone, this.approximate)
   }
 
   static fromDate(date: Date, options: Intl.DateTimeFormatOptions): TimeContext {
@@ -97,6 +97,8 @@ export class TimeContext {
     this.setDayOfMonth(undefined)
     this.setHour(undefined)
     this.setMinutes(undefined)
+    this.approximate = false
+    this.approximateTime = false
     return this
   }
 

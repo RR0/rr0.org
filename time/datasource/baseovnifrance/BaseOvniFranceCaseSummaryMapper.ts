@@ -20,7 +20,7 @@ export class BaseOvniFranceCaseSummaryMapper implements CaseMapper<RR0SsgContext
     let dayField = dateFields[0]
     const dayOfMonth = dayField && dayField !== "00" ? parseInt(dayField, 10) : undefined
     const c: BaseOvniFranceCaseSummary = {
-      caseNumber,
+      id: caseNumber,
       url: new URL("listgen.php?typlist=20&page=0&numobs=" + caseNumber, this.baseUrl),
       city: csvCase.Ville,
       depCode: csvCase["Départ."],

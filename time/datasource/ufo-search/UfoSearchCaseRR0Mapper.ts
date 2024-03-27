@@ -20,12 +20,12 @@ export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ufo
 
   map(context: HtmlRR0SsgContext, sourceCase: UfoSearchCase, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
-      url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
+      url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const place = this.getPlace(context, sourceCase)
     return {
-      time: sourceCase.dateTime,
+      dateTime: sourceCase.dateTime,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

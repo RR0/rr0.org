@@ -31,14 +31,14 @@ describe("CsvMapper", () => {
     const obj = geipanTestCaseSummaries[0]
     const csvRow = mapper.map(context, obj, dataDate)
     expect(csvRow).toBe(
-      `${obj.caseNumber},${obj.url},${obj.city},${obj.zoneCode},${obj.dateTime},${obj.postTime},${obj.classification}`)
+      `${obj.id},${obj.url},${obj.city},${obj.zoneCode},${obj.dateTime},${obj.postTime},${obj.classification}`)
   })
 
   test("write", () => {
     const csvContents = mapper.mapAll(context, geipanTestCaseSummaries, dataDate)
     const expectedCsv = "caseNumber,url,city,depCode,dateTime,postTime,classification\n"
       + geipanTestCaseSummaries
-        .map(c => `${c.caseNumber},${c.url},${c.city},${c.zoneCode},${c.dateTime},${c.postTime},${c.classification}`)
+        .map(c => `${c.id},${c.url},${c.city},${c.zoneCode},${c.dateTime},${c.postTime},${c.classification}`)
         .join("\n")
     expect(csvContents).toBe(expectedCsv)
   })
@@ -51,10 +51,10 @@ describe("CsvMapper", () => {
     const cases = fileMapper.parse(context, data).map(csvCase => csvMapper.map(context, csvCase, dataDate))
     expect(cases.length).toEqual(2768)
     const expected1 = geipanTestCaseSummaries[0]
-    const case1 = cases.find(c => c.caseNumber === expected1.caseNumber)
+    const case1 = cases.find(c => c.id === expected1.id)
     expect(case1).toEqual(expected1)
     const expected2 = geipanTestCaseSummaries[1]
-    const case2 = cases.find(c => c.caseNumber === expected2.caseNumber)
+    const case2 = cases.find(c => c.id === expected2.id)
     expect(case2).toEqual(expected2)
   })
 })

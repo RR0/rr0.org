@@ -1,7 +1,6 @@
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
-import { JSDOM } from "jsdom"
 import { RR0Datasource } from "./RR0Datasource"
 import { TimeContext } from "../../TimeContext"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
@@ -14,27 +13,12 @@ import { Organization } from "../../../org/Organization"
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()
 
-  constructor(readonly baseUrl: string, readonly searchPath: string, protected cityService: CityService) {
+  constructor(readonly baseUrl: URL, readonly searchPath: string, protected cityService: CityService) {
     super()
   }
 
-  async fetch(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
-    const queryUrl = this.queryUrl(year, month, day)
-    const page = await this.http.fetch<string>(queryUrl)
-    const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
-    const rowEls = doc.querySelectorAll("ul.indexed li")
-    const rows = Array.from(rowEls)
-    return this.getFromRows(context, rows)
+  static id(dateTime: TimeContext, place: NamedPlace | undefined): string {
+    return dateTime.toString() + (place?.org ? "$" + place.org?.dirName.replaceAll("/", "_") : "")
   }
 
   getFromRows(context: HtmlRR0SsgContext, rows: Element[]): RR0CaseSummary[] {
@@ -47,16 +31,28 @@ export class RR0HttpDatasource extends RR0Datasource {
     return cases
   }
 
+  async fetch(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
+    const time = context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear()
+    const queryUrl = this.queryUrl(year, month, day)
+    const doc = await this.http.get(queryUrl.href)
+    const rowEls = doc.querySelectorAll("ul.indexed li")
+    const rows = Array.from(rowEls)
+    return this.getFromRows(context, rows)
+  }
+
   getFromRow(context: HtmlRR0SsgContext, r: Element): RR0CaseSummary {
     const row = r.cloneNode(true) as Element
     const caseLink = context.inputFile.name
     const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
     const itemContext = context.clone()
-    const time = itemContext.time
+    const dateTime = itemContext.time
     if (timeEl) {
       url.hash = timeEl.dateTime
-      this.getTime(time, timeEl)
+      this.getTime(dateTime, timeEl)
       timeEl.remove()
     }
     let place: NamedPlace
@@ -72,7 +68,8 @@ export class RR0HttpDatasource extends RR0Datasource {
     }
     const sources = this.getSources(row, itemContext)
     const description = this.getDescription(row)
-    return {url, place, time, description, sources}
+    const id = RR0HttpDatasource.id(dateTime, place)
+    return {url, place, dateTime, description, sources, id}
   }
 
   updateTimeFromStr(time: TimeContext, timeStr: string) {
@@ -165,8 +162,8 @@ export class RR0HttpDatasource extends RR0Datasource {
     return el.textContent.trim().replaceAll("\n", "").replace(/\s{2,}/g, " ").replaceAll(" .", ".")
   }
 
-  protected queryUrl(year: number, month: number, day: number): string {
-    const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
+  protected queryUrl(year: number, month: number, day: number): URL {
+    const searchUrl = new URL(this.searchPath, this.baseUrl)
     let timeStr = String(year).padStart(4, "0").split("").join("/")
     if (month) {
       timeStr = UrlUtil.join(timeStr, String(month).padStart(2, "0"))
@@ -174,6 +171,7 @@ export class RR0HttpDatasource extends RR0Datasource {
         timeStr = UrlUtil.join(timeStr, String(day).padStart(2, "0"))
       }
     }
-    return UrlUtil.join(searchUrl, timeStr)
+    searchUrl.pathname = UrlUtil.join(searchUrl.pathname, timeStr)
+    return searchUrl
   }
 }

@@ -1,7 +1,6 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpSource } from "../HttpSource"
 import { UrlUtil } from "../../../util/url/UrlUtil"
-import { JSDOM } from "jsdom"
 import { GeipanCaseSummary, GeipanZoneCode } from "./GeipanCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { ObjectUtil } from "../../../util/ObjectUtil"
@@ -66,17 +65,9 @@ export class GeipanHttpDatasource extends GeipanDatasource {
       "select-category-export": "nothing"
     }
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
-    const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
-    const page = await this.http.fetch<string>(searchUrl + "?" + queryParamsStr,
-      {headers: {accept: "text/html;charset=utf-8"}})
-    const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
+    const searchUrl = new URL(this.searchPath, this.baseUrl)
+    searchUrl.search = queryParamsStr
+    const doc = await this.http.get(searchUrl.href, {headers: {accept: "text/html;charset=utf-8"}})
     const rowEls = doc.querySelectorAll(".views-row")
     return Array.from(rowEls).map(row => this.getFromRow(context, row))
   }
@@ -109,7 +100,7 @@ export class GeipanHttpDatasource extends GeipanDatasource {
       : ObjectUtil.enumFromValue(GeipanCaseClassification, classificationLabel) : undefined
     return {
       zoneCode,
-      caseNumber,
+      id: caseNumber,
       url,
       city,
       dateTime,

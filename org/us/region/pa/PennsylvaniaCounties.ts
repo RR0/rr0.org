@@ -1,6 +1,6 @@
 import { westmoreland } from "./westmoreland/Westmoreland"
-import { Organization } from "../../../Organization"
+import { Department } from "../../../country/region/department/Department"
 
-export const pennsylvaniaCounties: Organization[] = [
+export const pennsylvaniaCounties: Department[] = [
   westmoreland
 ]

@@ -20,7 +20,7 @@ describe("BaseOvniFranceCaseSource", () => {
     }
 
     protected sortComparator(c1: BaseOvniFranceCaseSummary, c2: BaseOvniFranceCaseSummary): number {
-      return c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+      return c1.id < c2.id ? -1 : c1.id > c2.id ? 1 : 0
     }
   }(baseOvniFranceRR0Mapping, baseOvniFranceTestCases)
 

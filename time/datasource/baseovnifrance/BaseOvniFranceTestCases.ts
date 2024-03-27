@@ -5,7 +5,7 @@ import { baseOvniFranceDatasource } from "./BaseOvniFranceRR0Mapping"
 
 export const baseOvniFranceTestCases: BaseOvniFranceCaseSummary[] = [
   {
-    caseNumber: "2760",
+    id: "2760",
     url: new URL("listgen.php?typlist=20&page=0&numobs=2760", baseOvniFranceDatasource.baseUrl),
     city: "Le Mans",
     depCode: "72",
@@ -16,7 +16,7 @@ export const baseOvniFranceTestCases: BaseOvniFranceCaseSummary[] = [
     landing: false
   },
   {
-    caseNumber: "1650",
+    id: "1650",
     url: new URL("listgen.php?typlist=20&page=0&numobs=1650", baseOvniFranceDatasource.baseUrl),
     city: "Lyon",
     depCode: "69",
@@ -27,7 +27,7 @@ export const baseOvniFranceTestCases: BaseOvniFranceCaseSummary[] = [
     landing: false
   },
   {
-    caseNumber: "3088",
+    id: "3088",
     url: new URL("listgen.php?typlist=20&page=0&numobs=3088", baseOvniFranceDatasource.baseUrl),
     city: "Briançon",
     depCode: "05",
@@ -38,7 +38,7 @@ export const baseOvniFranceTestCases: BaseOvniFranceCaseSummary[] = [
     landing: false
   },
   {
-    caseNumber: "1655",
+    id: "1655",
     url: new URL("listgen.php?typlist=20&page=0&numobs=1655", baseOvniFranceDatasource.baseUrl),
     city: "Chambon sur Voueize",
     depCode: "23",

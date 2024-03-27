@@ -20,7 +20,7 @@ describe("GeipanCaseSource", () => {
     }
 
     protected sortComparator(c1: GeipanCaseSummary, c2: GeipanCaseSummary): number {
-      return c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0
+      return c1.id < c2.id ? -1 : c1.id > c2.id ? 1 : 0
     }
   }(geipanRR0Mapping, geipanTestCaseSummaries)
 

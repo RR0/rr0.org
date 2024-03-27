@@ -1,7 +1,7 @@
 import { TimeContext } from "../TimeContext"
 
 export interface UfoCase {
-  caseNumber: string
+  id: string
   dateTime: TimeContext
   url?: URL
 }

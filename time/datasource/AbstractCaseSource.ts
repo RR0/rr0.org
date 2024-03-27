@@ -23,7 +23,7 @@ export abstract class AbstractCaseSource<S extends UfoCase> implements CaseSourc
   async fetch(context: RR0SsgContext): Promise<S[]> {
     const summaries = await this.getSummaries(context)
     const timeFilter = new UfoCaseContextTimeFilter(context)
-    return summaries.filter(timeFilter.filter)
+    return summaries.filter(timeFilter.filter.bind(timeFilter))
   }
 
   protected abstract readCases(context: RR0SsgContext): Promise<S[]>

@@ -68,7 +68,7 @@ export class AcufoDatasource extends AbstractCaseSource<AcufoCase> {
     const shape = NuforcShape[fields[5].textContent]
     const summary = fields[6].textContent
     return {
-      caseNumber, url, city, state, country, dateTime, shape, summary,
+      id: caseNumber, url, city, state, country, dateTime, shape, summary,
       reportDate: new Date(fields[7].textContent),
       postDate: new Date(fields[8].textContent),
       image: fields[9].textContent === "Y"

@@ -38,7 +38,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
       `Could not find city of name "${placeName}" in state "${location.departmentOrState}" of country "${sourceCountry}"`)
     const place: NamedPlace = {name: city.title(context), place: city.places[0]}
     return {
-      time: sourceCase.basicInfo.base.sightingDate,
+      dateTime: sourceCase.basicInfo.base.sightingDate,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

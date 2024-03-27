@@ -15,8 +15,16 @@ export interface HttpSourceSeleniumOptions {
 }
 
 export interface HttpSourceOptions {
-  selenium: HttpSourceSeleniumOptions
+  selenium?: HttpSourceSeleniumOptions
   userAgents: string[]
+}
+
+export const defaultSeleniumOptions = {
+  browser: Browser.CHROME,
+  timeout: {
+    implicit: 5000
+  },
+  selector: "html"
 }
 
 /**
@@ -35,13 +43,6 @@ export class HttpSource {
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
     ],
-    selenium: {
-      browser: Browser.CHROME,
-      timeout: {
-        implicit: 5000
-      },
-      selector: "html"
-    }
   }) {
   }
 

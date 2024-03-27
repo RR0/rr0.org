@@ -4,12 +4,14 @@ import { rr0Datasource } from "./RR0Mapping"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { Source } from "../../../source/Source"
+import { RR0HttpDatasource } from "./RR0HttpDatasource"
 
-function testCase(urlPath: string, time: TimeContext, description: string, sources: Source[],
+function testCase(urlPath: string, dateTime: TimeContext, description: string, sources: Source[],
                   place?: NamedPlace): RR0CaseSummary {
   const path = UrlUtil.join(rr0Datasource.searchPath, urlPath)
   const url = new URL(path, rr0Datasource.baseUrl)
-  return {url, place, time, description, sources}
+  const id = RR0HttpDatasource.id(dateTime, place)
+  return {url, place, dateTime, description, sources, id}
 }
 
 export const rr0TestCases: RR0CaseSummary[] = [

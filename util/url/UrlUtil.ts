@@ -20,7 +20,7 @@ export class UrlUtil {
     if (firstEndsWithSlash) {
       return secondStartsWithSlash ? first + second.substring(1) : first + second
     } else {
-      const firstEndsWithExtension = first.lastIndexOf(".") >= first.length - 5
+      const firstEndsWithExtension = first.length > 5 && first.lastIndexOf(".") >= first.length - 5
       return secondStartsWithSlash || firstEndsWithExtension ? first + second : first + "/" + second
     }
   }

@@ -47,7 +47,7 @@ describe("BaseOvniFranceCaseSource", () => {
           nativeCase1Time.getTimeZone()),
         place: {name: "Le Mans", place: leMans72.places[0]},
         description: "observation",
-        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase1.caseNumber)]
+        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase1.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase2Time.getYear(), nativeCase2Time.getMonth(),
@@ -55,7 +55,7 @@ describe("BaseOvniFranceCaseSource", () => {
           nativeCase2Time.getTimeZone()),
         place: {name: "Lyon", place: lyon69.places[0]},
         description: "observation",
-        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase2.caseNumber)]
+        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase2.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase3Time.getYear(), nativeCase3Time.getMonth(),
@@ -63,7 +63,7 @@ describe("BaseOvniFranceCaseSource", () => {
           nativeCase3Time.getTimeZone()),
         place: {name: "Briançon", place: briancon05.places[0]},
         description: "observation",
-        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase3.caseNumber)]
+        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase3.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase4Time.getYear(), nativeCase4Time.getMonth(),
@@ -71,7 +71,7 @@ describe("BaseOvniFranceCaseSource", () => {
           nativeCase4Time.getTimeZone()),
         place: {name: "Chambon-sur-Voueize", place: chambonSurVoueize23.places[0]},
         description: "observation",
-        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase4.caseNumber)]
+        sources: [expectedSource(baseOvniFranceDatasource, dataDate, nativeCase4.id)]
       }
     ]
     expect(mapped).toEqual(expected)

@@ -14,7 +14,7 @@ import { monessen } from "../../../org/us/region/pa/westmoreland/monessen/Moness
 import { bonneyLake } from "../../../org/us/region/wa/pierce/bonneylake/BonneyLake"
 import { OnlineSource } from "../../../source/OnlineSource"
 
-function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: number): OnlineSource {
+function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: string): OnlineSource {
   const url = new URL("sighting/?id=" + caseNumber, datasource.baseUrl)
   return {
     url, title: "cas n° " + caseNumber, authors: datasource.authors,
@@ -39,7 +39,7 @@ describe("NuforcRR0Mapper", () => {
   test("fetch and map as RR0 cases", async () => {
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
     const testCases = nuforcTestCases.sort(
-      (c1, c2) => c1.caseNumber < c2.caseNumber ? -1 : c1.caseNumber > c2.caseNumber ? 1 : 0)
+      (c1, c2) => c1.id < c2.id ? -1 : c1.id > c2.id ? 1 : 0)
     const mapped = testCases.map(sourceCase => nuforcRR0Mapper.map(context, sourceCase, dataDate))
     const nativeCase1 = testCases[0]
     const nativeCase1Time = nativeCase1.dateTime
@@ -62,7 +62,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase1Time.getTimeZone()),
         place: {name: slocomb.messages(context).title, place: slocomb.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase1),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase1.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase1.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase2Time.getYear(), nativeCase2Time.getMonth(),
@@ -70,7 +70,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase2Time.getTimeZone()),
         place: {name: castlegar.messages(context).title, place: castlegar.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase2),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase2.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase2.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase3Time.getYear(), nativeCase3Time.getMonth(),
@@ -78,7 +78,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase3Time.getTimeZone()),
         place: {name: fortWorth.messages(context).title, place: fortWorth.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase3),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase3.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase3.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase4Time.getYear(), nativeCase4Time.getMonth(),
@@ -86,7 +86,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase4Time.getTimeZone()),
         place: {name: campPendleton.messages(context).title, place: campPendleton.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase4),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase4.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase4.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase5Time.getYear(), nativeCase5Time.getMonth(),
@@ -94,7 +94,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase5Time.getTimeZone()),
         place: {name: stPetersburg.messages(context).title, place: stPetersburg.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase5),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase5.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase5.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase6Time.getYear(), nativeCase6Time.getMonth(),
@@ -102,7 +102,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase6Time.getTimeZone()),
         place: {name: monessen.messages(context).title, place: monessen.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase6),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase6.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase6.id)]
       },
       {
         time: new TimeContext(context.time.options, nativeCase7Time.getYear(), nativeCase7Time.getMonth(),
@@ -110,7 +110,7 @@ describe("NuforcRR0Mapper", () => {
           nativeCase7Time.getTimeZone()),
         place: {name: bonneyLake.messages(context).title, place: bonneyLake.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase7),
-        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase7.caseNumber)]
+        sources: [expectedSource(nuforcDatasource, dataDate, nativeCase7.id)]
       }
     ]
     expect(mapped).toEqual(expected)

@@ -114,7 +114,7 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
     let attributes
     let extraData
     return {
-      caseNumber, dateTime, location, desc: type,
+      id: caseNumber, dateTime, location, desc: type,
       key_vals: {url},
       attributes,
       ref: "",

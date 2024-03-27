@@ -5,7 +5,7 @@ import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
 export const ufoSearchTestCases: UfoSearchCase[] = [
   {
-    caseNumber: "979AEFAA",
+    id: "979AEFAA",
     dateTime: new TimeContext(rr0TestUtil.intlOptions, 0),
     desc: "Greek and Roman records of UFO's",
     key_vals: {
@@ -18,7 +18,7 @@ export const ufoSearchTestCases: UfoSearchCase[] = [
     type: UfoSearchCaseType.sighting
   },
   {
-    caseNumber: "F91D10A9",
+    id: "F91D10A9",
     dateTime: new TimeContext(rr0TestUtil.intlOptions, 34, 4),
     desc: "A white, round object, accompanied by 10 small stars, flew overhead. The pattern suggests the stars might have been in formation with the main object, making it an unusual possible meteor event.",
     key_vals: {

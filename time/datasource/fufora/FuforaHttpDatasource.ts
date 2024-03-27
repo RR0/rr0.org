@@ -203,7 +203,7 @@ export class FuforaHttpDatasource extends FuforaDatasource {
     const caseNumber = HttpSource.findParam(url.href, "&", "u")
     const classification = fields[3].textContent
     return {
-      caseNumber,
+      id: caseNumber,
       url,
       sightingPlace,
       city,

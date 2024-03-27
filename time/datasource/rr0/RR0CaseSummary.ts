@@ -1,7 +1,7 @@
 import { Place } from "../../../place/Place"
-import { TimeContext } from "../../TimeContext"
 import { Source } from "../../../source/Source"
 import { Organization } from "../../../org/Organization"
+import { UfoCase } from "../UfoCase"
 
 export type NamedPlace = {
   readonly place: Place
@@ -9,10 +9,8 @@ export type NamedPlace = {
   readonly name: string
 }
 
-export type RR0CaseSummary = {
-  readonly time: TimeContext
+export interface RR0CaseSummary extends UfoCase {
   readonly place?: NamedPlace
   readonly description: string
   readonly sources: Source[]
-  readonly url?: URL
 }

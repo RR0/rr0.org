@@ -31,14 +31,14 @@ describe("Base OVNI France CSV mapping", () => {
     const obj = baseOvniFranceTestCases[0]
     const csvRow = mapper.map(context, obj, dataDate)
     expect(csvRow).toBe(
-      `${obj.caseNumber},${obj.url},${obj.city},${obj.depCode},${obj.dateTime},${obj.landing},${obj.entities},${obj.witnessEffect},${obj.physicalEffect}`)
+      `${obj.id},${obj.url},${obj.city},${obj.depCode},${obj.dateTime},${obj.landing},${obj.entities},${obj.witnessEffect},${obj.physicalEffect}`)
   })
 
   test("write", () => {
     const csvContents = mapper.mapAll(context, baseOvniFranceTestCases, dataDate)
     const case1 = baseOvniFranceTestCases[0]
     expect(csvContents).toBe(`caseNumber,url,city,depCode,dateTime,physicalEffect,witnessEffect,entities,landing
-${case1.caseNumber},http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2760,Le Mans,72,1970-03 16:00,false,false,false,false
+${case1.id},http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2760,Le Mans,72,1970-03 16:00,false,false,false,false
 1650,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1650,Lyon,69,1970-03-12 07:40,false,false,false,false
 3088,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=3088,Briançon,05,1970-03-16 20:00,false,false,false,false
 1655,http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=1655,Chambon sur Voueize,23,1970-03-17 19:15,false,false,false,false`)

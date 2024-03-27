@@ -10,9 +10,10 @@ export class UfoCaseContextTimeFilter extends UfoCaseContextFilter {
 
   filter(c: UfoCase): boolean {
     const sightingTime = c.dateTime
-    const day = this.context.time.getDayOfMonth()
-    const month = this.context.time.getMonth()
-    const year = this.context.time.getYear()
+    const time = this.context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear()
     return (!year || year === sightingTime.getYear()) && (!month || month === sightingTime.getMonth()) && (!day || day === sightingTime.getDayOfMonth())
   }
 }

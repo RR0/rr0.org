@@ -9,7 +9,7 @@ export class RR0CaseRenderer {
   render(context: HtmlRR0SsgContext, rr0Case: RR0CaseSummary): HTMLLIElement {
     const outDoc = context.outputFile.document
     const item = outDoc.createElement("li")
-    const time = rr0Case.time
+    const time = rr0Case.dateTime
     const timeEl = outDoc.createElement("time") as HTMLTimeElement
     timeEl.dateTime = time.toString()
     const caseContext = context.clone()

@@ -18,11 +18,12 @@ describe("RR0CaseSource", () => {
     }
 
     protected getTime(c: RR0CaseSummary): TimeContext {
-      return c.time
+      return c.dateTime
     }
 
     protected sortComparator(c1: RR0CaseSummary, c2: RR0CaseSummary): number {
-      return !c1.time || c2.time && c1.time.isBefore(c2.time) ? -1 : !c2.time || c1.time.isAfter(c2.time) ? 1 : 0
+      return !c1.dateTime || c2.dateTime && c1.dateTime.isBefore(
+        c2.dateTime) ? -1 : !c2.dateTime || c1.dateTime.isAfter(c2.dateTime) ? 1 : 0
     }
 
 

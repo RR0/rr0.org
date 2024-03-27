@@ -85,7 +85,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
       url: sourceCase.url,
-      title: "cas n° " + sourceCase.caseNumber,
+      title: "cas n° " + sourceCase.id,
       authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
@@ -101,7 +101,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
       `Could not find city of name "${placeName}" in state "${sourceCase.state}" of country "${countryCode}"`)
     const place: NamedPlace = {name: city.title(context), place: city.places[0]}
     return {
-      time: sourceCase.dateTime,
+      dateTime: sourceCase.dateTime,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

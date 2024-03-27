@@ -30,7 +30,7 @@ export abstract class DatasourceTestCase<S extends UfoCase> {
     const source = expectedSources[0]
     const publicationStr = source.publication ? `, ${source.publication.time}` : ""
     const authorStr = datasource.authors.join(", ")
-    const title = `cas n°&nbsp;${nativeCase.caseNumber}`
+    const title = `cas n°&nbsp;${nativeCase.id}`
     return ` <span class="source">${authorStr}: <a href="${nativeCase.url.href.replaceAll(
       "&",
       "&amp;")}">${title}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`

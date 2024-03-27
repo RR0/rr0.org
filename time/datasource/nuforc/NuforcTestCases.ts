@@ -8,7 +8,7 @@ import { NuforcShape } from "./NuforcShape"
 
 export const nuforcTestCases: NuforcCaseSummary[] = [
   {
-    caseNumber: 34046,
+    id: "34046",
     url: new URL("/sighting/?id=34046", nuforcDatasource.baseUrl),
     city: "Slocomb",
     state: NuforcState.Alabama,
@@ -21,7 +21,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     image: false
   },
   {
-    caseNumber: 44702,
+    id: "44702",
     url: new URL("/sighting/?id=44702", nuforcDatasource.baseUrl),
     city: "Camp Pendleton",
     state: NuforcState.California,
@@ -34,7 +34,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     image: false
   },
   {
-    caseNumber: 35880,
+    id: "35880",
     url: new URL("/sighting/?id=35880", nuforcDatasource.baseUrl),
     city: "Fort Worth",
     state: NuforcState.Texas,
@@ -47,7 +47,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     image: false
   },
   {
-    caseNumber: 35488,
+    id: "35488",
     url: new URL("/sighting/?id=35488", nuforcDatasource.baseUrl),
     city: "Castlegar (Canada)",
     state: NuforcState.BritishColumbia,
@@ -60,7 +60,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     image: false
   },
   {
-    caseNumber: 97066,
+    id: "97066",
     url: new URL("/sighting/?id=97066", nuforcDatasource.baseUrl),
     city: "Monessen",
     state: NuforcState.Pennsylvania,
@@ -73,7 +73,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     image: false
   },
   {
-    caseNumber: 61361,
+    id: "61361",
     url: new URL("/sighting/?id=61361", nuforcDatasource.baseUrl),
     city: "St. Petersburg",
     state: NuforcState.Florida,
@@ -86,7 +86,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     image: false
   },
   {
-    caseNumber: 171536,
+    id: "171536",
     url: new URL("/sighting/?id=171536", nuforcDatasource.baseUrl),
     city: "Bonney lake",
     state: NuforcState.Washington,

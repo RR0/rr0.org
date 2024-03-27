@@ -76,7 +76,7 @@ export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {
     let comments = ""
     const url = new URL(this.searchPath, this.baseUrl)
     return {
-      caseNumber: "",
+      id: "",
       url,
       dateTime,
       district,

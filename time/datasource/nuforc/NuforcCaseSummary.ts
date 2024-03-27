@@ -1,15 +1,12 @@
-import { TimeContext } from "../../TimeContext"
 import { NuforcState } from "./NuforcState"
 import { NuforcCountry } from "./NuforcCountry"
 import { NuforcShape } from "./NuforcShape"
+import { UfoCase } from "../UfoCase"
 
-export type NuforcCaseSummary = {
-  readonly caseNumber: number
-  readonly url: URL
+export interface NuforcCaseSummary extends UfoCase {
   readonly city: string
   readonly state: NuforcState
   readonly country: NuforcCountry
-  readonly dateTime: TimeContext
   readonly shape: NuforcShape
   readonly summary: string
   readonly reportDate: Date

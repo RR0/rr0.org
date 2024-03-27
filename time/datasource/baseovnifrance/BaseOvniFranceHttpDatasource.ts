@@ -33,28 +33,29 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
   protected static readonly regExp = /(.*?)\s+\(([\dAB]+)\)/
   protected readonly http = new HttpSource()
 
-  constructor(readonly baseUrl = "http://baseovnifrance.free.fr", readonly searchPath = "listgen.php") {
+  constructor(readonly baseUrl: URL = new URL("http://baseovnifrance.free.fr"), readonly searchPath = "listgen.php") {
     super()
   }
 
   queryUrl(year: number | undefined, month: number | undefined, day: number | undefined): {
     formData: FormData;
-    queryUrl: string
+    queryUrl: URL
   } {
     const queryParams: QueryParameters = {typlist: ListType.perMonth, page: 0}
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const formData: FormData = {mois: String(month).padStart(2, "0"), an: year, B1: "Envoyer"}
-    const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
-    const queryUrl = UrlUtil.join(searchUrl, "?" + queryParamsStr)
+    const queryUrl = new URL(this.searchPath, this.baseUrl)
+    queryUrl.search = queryParamsStr
     return {formData, queryUrl}
   }
 
   protected async readCases(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
+    const time = context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear()
     const {formData, queryUrl} = this.queryUrl(year, month, day)
-    const page = await this.http.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
+    const page = await this.http.submitForm<string>(queryUrl.href, formData, {accept: "text/html;charset=iso-8859-1"})
     const doc = new JSDOM(page).window.document.documentElement
     const rowEls = doc.querySelectorAll("#listgen2 tbody tr")
     const rows = Array.from(rowEls)
@@ -109,7 +110,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     const entities = this.getBoolean(columns[5])
     const landing = this.getBoolean(columns[6])
     return {
-      caseNumber,
+      id: caseNumber,
       url,
       city: place,
       depCode: depCode,

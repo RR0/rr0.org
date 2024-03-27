@@ -22,7 +22,7 @@ export class NuforcHttpDatasource extends NuforcDatasource {
     super()
   }
 
-  protected async readCases(context: RR0SsgContext): Promise<NuforcCaseSummary[]> {
+  protected queryUrl(context: RR0SsgContext): URL {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
@@ -32,6 +32,11 @@ export class NuforcHttpDatasource extends NuforcDatasource {
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const searchUrl = new URL(this.searchPath, this.baseUrl)
     searchUrl.search = queryParamsStr
+    return searchUrl
+  }
+
+  protected async readCases(context: RR0SsgContext): Promise<NuforcCaseSummary[]> {
+    const searchUrl = this.queryUrl(context)
     const doc = await this.http.get(searchUrl.href, {headers: {accept: "text/html;charset=utf-8"}})
     const rowEls = doc.querySelectorAll("#table_1 tbody tr")
     return Array.from(rowEls).map(row => this.getNativeCase(context, row))

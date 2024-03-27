@@ -12,7 +12,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
 
   constructor(
     protected cityService: CityService, protected countryService: CountryService,
-    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]
+    readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]
   ) {
   }
 
@@ -23,12 +23,16 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
 
   map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0CaseSummary {
     const caseSource: OnlineSource = {
-      url: sourceCase.url, title: "cas n° " + sourceCase.caseNumber, authors: this.authors,
+      url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const location = sourceCase.basicInfo.base.location
-    const sourceCountry = location.country
+    let sourceCountry = location.country
     assert.ok(sourceCountry, `URECAT country is ${sourceCountry}`)
+    const fromPrefix = "depuis "
+    if (sourceCountry.startsWith(fromPrefix)) {
+      sourceCountry = sourceCountry.substring(fromPrefix.length)
+    }
     const country = this.countryService.find(context, sourceCountry, undefined)
     assert.ok(country, `Could not find country "${sourceCountry}"`)
     const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(location.placeName)
@@ -38,6 +42,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
       `Could not find city of name "${placeName}" in state "${location.departmentOrState}" of country "${sourceCountry}"`)
     const place: NamedPlace = {name: city.title(context), place: city.places[0]}
     return {
+      id: sourceCase.id,
       dateTime: sourceCase.basicInfo.base.sightingDate,
       place,
       description: this.getDescription(sourceCase),

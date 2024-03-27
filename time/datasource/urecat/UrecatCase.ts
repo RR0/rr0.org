@@ -1,4 +1,5 @@
 import { TimeContext } from "../../TimeContext"
+import { UfoCase } from "../UfoCase"
 
 export type UrecatCaseHistoryRedaction = {
   mainAuthor: string
@@ -122,8 +123,7 @@ export type UrecatCaseIssue = {
   status: UrecatCaseIssueStatus
 }
 
-export type UrecatCase = {
-  caseNumber?: string
+export interface UrecatCase extends UfoCase {
   title: string
   summary?: string
   basicInfo: UrecatBasicInfo
@@ -132,5 +132,4 @@ export type UrecatCase = {
   issues?: UrecatCaseIssue[]
   evaluation?: string
   history?: UrecatCaseHistory
-  url: URL
 }

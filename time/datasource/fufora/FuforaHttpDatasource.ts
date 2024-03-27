@@ -149,24 +149,14 @@ interface FormData {
 export class FuforaHttpDatasource extends FuforaDatasource {
   protected readonly http = new HttpSource()
 
-  constructor(readonly baseUrl = "https://www.fufora.fi/ufodb2", readonly searchPath = "ufohaku.php") {
+  constructor(readonly baseUrl: URL, readonly searchPath: string) {
     super()
   }
 
   async fetch(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
-    const {formData, queryUrl} = this.queryUrl({sid: ""}, year, month, day)
-    const page = await this.http.submitForm<string>(queryUrl, formData)
+    const {formData, searchUrl} = this.queryUrl(context)
+    const page = await this.http.submitForm<string>(searchUrl.href, formData)
     const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
     const rowEls = doc.querySelectorAll(".udb_u_taulukko .rivi")
     const rows = Array.from(rowEls)
     rows.shift()  // Skip header row
@@ -213,7 +203,11 @@ export class FuforaHttpDatasource extends FuforaDatasource {
     }
   }
 
-  protected queryUrl(queryParams: QueryParameters, year: number, month: number, day: number) {
+  queryUrl(context: RR0SsgContext) {
+    const day = context.time.getDayOfMonth()
+    const month = context.time.getMonth()
+    const year = context.time.getYear()
+    const queryParams = {sid: ""}
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const formData: FormData = {
       alkupv: 1,
@@ -227,8 +221,8 @@ export class FuforaHttpDatasource extends FuforaDatasource {
       l3_valinta1: 0,
       tark: 1
     }
-    const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
-    const queryUrl = UrlUtil.join(searchUrl, "?" + queryParamsStr)
-    return {formData, queryUrl}
+    const searchUrl = new URL(this.searchPath, this.baseUrl)
+    searchUrl.search = queryParamsStr
+    return {formData, searchUrl}
   }
 }

@@ -8,12 +8,12 @@ import { australia_en } from "./au/Australia_en"
 import { brazil_en } from "./br/Brazil_en"
 import { newZealand_en } from "./nz/NewZealand_en"
 import { spain_en } from "./eu/es/region/Spain_en"
-import { poland_en } from "./eu/pl/region/Poland_en"
+import { poland_en } from "./eu/pl/Poland_en"
 import { southKorea_en } from "./kr/SouthKorea_en"
 import { colombia_en } from "./co/Colombia_en"
 import { dominicanRepublic_en } from "./do/DominicanRepublic_en"
 import { philippines_en } from "./ph/Philippines_en"
-import { peru_en } from "./pe/region/Peru_en"
+import { peru_en } from "./pe/Peru_en"
 import { seychelles_en } from "./sc/Seychelles_en"
 import { uk_en } from "./uk/Uk_en"
 import { russia_en } from "./ru/Russia_en"
@@ -22,6 +22,7 @@ import { mozambique_en } from "./mz/Mozambique_en"
 import { india_en } from "./in/India_en"
 import { algeria_en } from "./dz/Algeria_en"
 import { panama_en } from "./pa/Panama_en"
+import { taiwan_en } from "./tw/Taiwan_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -64,13 +65,14 @@ export const countryMessageList_en: CountryMessagesList = {
   pt: CountryMessages.create("Portugal"),
   ro: CountryMessages.create("Romania"),
   ru: russia_en,
+  sa: CountryMessages.create("Saudi Arabia"),
   sc: seychelles_en,
+  se: CountryMessages.create("Sweden"),
   tr: CountryMessages.create("Turkey"),
+  tw: taiwan_en,
   ua: CountryMessages.create("Ukraine"),
   uk: uk_en,
   us: usa_en,
-  sa: CountryMessages.create("Saudi Arabia"),
-  se: CountryMessages.create("Sweden"),
   ve: CountryMessages.create("Venezuela"),
   za: CountryMessages.create("South Africa")
 }

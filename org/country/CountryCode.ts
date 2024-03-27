@@ -228,14 +228,19 @@ export enum CountryCode {
   us = "us",
 
   /**
+   * Saudi Arabia
+   */
+  sa = 'sa',
+
+  /**
    * SwEden
    */
   se = "se",
 
   /**
-   * Saudi Arabia
+   * TaiWan
    */
-  sa = 'sa',
+  tw = "tw",
 
   /**
    * VEnezuela

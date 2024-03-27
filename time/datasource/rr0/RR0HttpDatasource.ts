@@ -32,11 +32,7 @@ export class RR0HttpDatasource extends RR0Datasource {
   }
 
   async fetch(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
-    const time = context.time
-    const day = time.getDayOfMonth()
-    const month = time.getMonth()
-    const year = time.getYear()
-    const queryUrl = this.queryUrl(year, month, day)
+    const queryUrl = this.queryUrl(context)
     const doc = await this.http.get(queryUrl.href)
     const rowEls = doc.querySelectorAll("ul.indexed li")
     const rows = Array.from(rowEls)
@@ -162,7 +158,11 @@ export class RR0HttpDatasource extends RR0Datasource {
     return el.textContent.trim().replaceAll("\n", "").replace(/\s{2,}/g, " ").replaceAll(" .", ".")
   }
 
-  protected queryUrl(year: number, month: number, day: number): URL {
+  protected queryUrl(context: HtmlRR0SsgContext): URL {
+    const time = context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear()
     const searchUrl = new URL(this.searchPath, this.baseUrl)
     let timeStr = String(year).padStart(4, "0").split("").join("/")
     if (month) {

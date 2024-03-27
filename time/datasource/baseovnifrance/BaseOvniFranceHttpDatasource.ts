@@ -37,10 +37,11 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     super()
   }
 
-  queryUrl(year: number | undefined, month: number | undefined, day: number | undefined): {
-    formData: FormData;
-    queryUrl: URL
-  } {
+  queryUrl(context: RR0SsgContext): { formData: FormData; queryUrl: URL } {
+    const time = context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear()
     const queryParams: QueryParameters = {typlist: ListType.perMonth, page: 0}
     const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
     const formData: FormData = {mois: String(month).padStart(2, "0"), an: year, B1: "Envoyer"}
@@ -50,11 +51,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
   }
 
   protected async readCases(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
-    const time = context.time
-    const day = time.getDayOfMonth()
-    const month = time.getMonth()
-    const year = time.getYear()
-    const {formData, queryUrl} = this.queryUrl(year, month, day)
+    const {formData, queryUrl} = this.queryUrl(context)
     const page = await this.http.submitForm<string>(queryUrl.href, formData, {accept: "text/html;charset=iso-8859-1"})
     const doc = new JSDOM(page).window.document.documentElement
     const rowEls = doc.querySelectorAll("#listgen2 tbody tr")

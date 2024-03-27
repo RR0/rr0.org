@@ -2,10 +2,7 @@ import assert from "assert"
 import { RR0SsgContext } from "../RR0SsgContext"
 
 import { Organization } from "./Organization"
-
-export interface OrgMessageOptions {
-  parent: boolean
-}
+import { OrganizationMessageOptions } from "./OrganizationMessages"
 
 export class OrgMessages {
 
@@ -24,7 +21,7 @@ export class OrgMessages {
     return this.titles[0]
   }
 
-  toTitle(context: RR0SsgContext, org: Organization<any>, opts?: Partial<OrgMessageOptions>): string {
+  toTitle(context: RR0SsgContext, org: Organization<any>, opts?: OrganizationMessageOptions): string {
     const options = opts || {parent: false}
     const OrgMessages = org.messages(context)
     assert.ok(OrgMessages, `Could not find organization "${org.code}" in organization "${org.parent.code}"`)

@@ -39,16 +39,17 @@ export class GeipanHttpDatasource extends GeipanDatasource {
   protected static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
   protected readonly http = new HttpSource()
 
-  constructor(readonly baseUrl: string, readonly searchPath: string) {
+  constructor(readonly baseUrl: URL, readonly searchPath: string) {
     super()
   }
 
   protected async readCases(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
-    const day = context.time.getDayOfMonth()
+    const time = context.time
+    const day = time.getDayOfMonth()
     const dayStartStr = day ? String(day).padStart(2, "0") : "01"
     const dayEndStr = day ? String(day).padStart(2, "0") : "31"
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
+    const month = time.getMonth()
+    const year = time.getYear()
     const monthStr = String(month).padStart(2, "0")
     const queryParams: QueryParameters = {
       "field_latitude_value[max]": "",

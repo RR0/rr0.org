@@ -23,18 +23,23 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     "sept": 7
   }
 
-  constructor(readonly baseUrl = "https://ufologie.patrickgross.org", readonly searchPath = "ce3") {
+  constructor(readonly baseUrl: URL, readonly searchPath = "ce3") {
     super()
   }
 
-  protected async readSummaries(context: RR0SsgContext): Promise<UrecatCase[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear() ?? "full"
-    const searchUrl = this.getSearchUrl()
+  queryUrl(context: RR0SsgContext): URL {
+    const time = context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear() ?? "full"
     const lang = context.locale === "fr" ? "f" : ""
-    const requestUrl = UrlUtil.join(searchUrl, `_${year}${lang}.htm`)
-    const page = await this.http.fetch<string>(requestUrl, {headers: {accept: "text/html;charset=iso-8859-1"}})
+    const requestUrl = UrlUtil.join(this.searchPath, `_${year}${lang}.htm`)
+    return new URL(requestUrl, this.baseUrl)
+  }
+
+  protected async readSummaries(context: RR0SsgContext): Promise<UrecatCase[]> {
+    const searchUrl = this.queryUrl(context)
+    const page = await this.http.fetch<string>(searchUrl.href, {headers: {accept: "text/html;charset=iso-8859-1"}})
     const doc = new JSDOM(page).window.document.documentElement
     const tableBody = doc.querySelector("th").parentElement.parentElement
     const rowEls = tableBody.querySelectorAll("tr")
@@ -80,10 +85,6 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     })
   }
 
-  protected getSearchUrl(): string {
-    return UrlUtil.join(this.baseUrl, this.searchPath)
-  }
-
   protected getLocation(column: HTMLTableCellElement) {
     let [placeName, departmentOrState, country] = column.textContent.split(",").map(s => s.trim())
     if (!country) {
@@ -93,8 +94,8 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     return {placeName, country, departmentOrState}
   }
 
-  protected getDate(context: RR0SsgContext, url: URL): RR0SsgContext {
-    const timeStr = url.href.substring(this.getSearchUrl().length + 1)
+  protected getDate(context: RR0SsgContext, caseLink: URL, row: Element): RR0SsgContext {
+    const timeStr = caseLink.pathname.substring(this.searchPath.length + 2)
     const dateFields = UrecatHttpDatasource.urlDateFormat.exec(timeStr)
     const itemContext = context.clone()
     const dateTime = itemContext.time
@@ -119,7 +120,7 @@ export class UrecatHttpDatasource extends UrecatDatasource {
   protected getFromRow(context: RR0SsgContext, row: Element): UrecatCase {
     const columns = row.querySelectorAll("td")
     const url = this.getLink(columns[1])
-    const timeContext = this.getDate(context, url)
+    const timeContext = this.getDate(context, url, row)
     const {placeName, departmentOrState, country} = this.getLocation(columns[1])
     const witnesses = this.getWitnesses(columns[2].textContent)
     const timeStr = TimeTextBuilder.build(timeContext)
@@ -127,6 +128,13 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     const countStr = ObjectUtil.keyFromValue(UrecatHttpDatasource.wordToCount, witnesses.length)
     const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${countStr} ${MessageUtils.pluralWord(
       witnesses.length, "personne")}`.toUpperCase()
-    return {url, title, basicInfo: {base: {sightingDate, location: {placeName, country, departmentOrState}, witnesses}}}
+    const id = url.pathname.substring(this.searchPath.length + 2)
+    return {
+      id,
+      dateTime: sightingDate,
+      url,
+      title,
+      basicInfo: {base: {sightingDate, location: {placeName, country, departmentOrState}, witnesses}}
+    }
   }
 }

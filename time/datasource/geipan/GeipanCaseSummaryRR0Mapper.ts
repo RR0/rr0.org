@@ -12,7 +12,7 @@ import { Organization } from "../../../org/Organization"
 
 export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCaseSummary, RR0CaseSummary> {
 
-  constructor(protected cityService: CityService, readonly baseUrl: string, readonly copyright: string,
+  constructor(protected cityService: CityService, readonly baseUrl: URL, readonly copyright: string,
               readonly authors: string[]) {
   }
 
@@ -41,12 +41,14 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary, sourceTime: Date): RR0CaseSummary {
+    const id = sourceCase.id
     const caseSource: OnlineSource = {
-      url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
+      url: sourceCase.url, title: "cas n° " + id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const place = this.getPlace(context, sourceCase)
     return {
+      id,
       dateTime: sourceCase.dateTime,
       place,
       description: this.getDescription(sourceCase),

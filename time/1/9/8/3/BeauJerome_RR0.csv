@@ -1,30 +1,30 @@
-url,place,time,description,sources
-https://rr0.org/time/1/9/8/3/index.html,,1983,L'ANSI et le conseil 802 du groupe de normalisation IEEE approuve la norme IEEE 802.3 basé sur Ethernet version 1.0.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,L'IAB est créé afin d'apporter des conseils d'ordre technique pour Internet.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Le CA de Compaq atteint 111 M$.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Record historique de toute l'industrie américaine pour une 1ʳᵉ année d'existence.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Lotus 1-2-3 surclasse VisiCalc.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,PC Junior IBM.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Super-calculateur Cray 2.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Osborne Executive.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Canon X07.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Tandy TRS-80 modèle 100.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Novell lance son système d'exploitation réseau Netware.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Bjarne Stroustrup ajoute une touche objet au C pour donner le C++.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,IBM annonce DB2.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,"Photographie d'un ovni au-dessus d'une église à Jaroslavl, près de Moscou Photographie (ci-contre) d'un ovni au-dessus d'une église à Jaroslavl (Russie), près de Moscou.",""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,"Analyse du cliché de Tony Dodd par le GSW L'ovni photographié par Tony Dodd Tony Dodd photographie le phénomène ci-contre près de la ville anglaise d'Addingham (Yorkshire). Tirages et négatifs ont été analysés par le GSW, à l'aide de techniques de traitement informatique. La technique du découpage par intensité (Density Slicing) a montré que l'ovni était en l'air, et situé au-dessus de l'horizon. La granulométrie du film a été analysée par enrichissement de bordure (Edge Enhancement), indiquant que l'objet n'était relié à aucun fil ou câble. Le GSW a pu identifier la vapeur entourant l'objet et situer l'ovni dans une zone rectangulaire à droite du nuage vaporeux. Enfin, par une technique de définition des bordures colorées (Colour Contouring), il fut confirmé que l'objet était sphérique. Conclusions du GSW : cet ovni semble structuré, son diamètre avoisine 9 m. Il s'agit de la première photo confirmée d'ovni en Grande-Bretagne.",""
-https://rr0.org/time/1/9/8/3/index.html,,1983,William L. Moore transmet le (faux) document Aquarius à Paul Bennewitz.,""
-https://rr0.org/time/1/9/8/3/index.html,,1983,Remaniement du GEPAN.,""
+url,place,dateTime,description,sources,id
+https://rr0.org/time/1/9/8/3/index.html,,1983,L'ANSI et le conseil 802 du groupe de normalisation IEEE approuve la norme IEEE 802.3 basé sur Ethernet version 1.0.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,L'IAB est créé afin d'apporter des conseils d'ordre technique pour Internet.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Le CA de Compaq atteint 111 M$.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Record historique de toute l'industrie américaine pour une 1ʳᵉ année d'existence.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Lotus 1-2-3 surclasse VisiCalc.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,PC Junior IBM.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Super-calculateur Cray 2.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Osborne Executive.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Canon X07.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Tandy TRS-80 modèle 100.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Novell lance son système d'exploitation réseau Netware.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Bjarne Stroustrup ajoute une touche objet au C pour donner le C++.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,IBM annonce DB2.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,"Photographie d'un ovni au-dessus d'une église à Jaroslavl, près de Moscou Photographie (ci-contre) d'un ovni au-dessus d'une église à Jaroslavl (Russie), près de Moscou.","",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,"Analyse du cliché de Tony Dodd par le GSW L'ovni photographié par Tony Dodd Tony Dodd photographie le phénomène ci-contre près de la ville anglaise d'Addingham (Yorkshire). Tirages et négatifs ont été analysés par le GSW, à l'aide de techniques de traitement informatique. La technique du découpage par intensité (Density Slicing) a montré que l'ovni était en l'air, et situé au-dessus de l'horizon. La granulométrie du film a été analysée par enrichissement de bordure (Edge Enhancement), indiquant que l'objet n'était relié à aucun fil ou câble. Le GSW a pu identifier la vapeur entourant l'objet et situer l'ovni dans une zone rectangulaire à droite du nuage vaporeux. Enfin, par une technique de définition des bordures colorées (Colour Contouring), il fut confirmé que l'objet était sphérique. Conclusions du GSW : cet ovni semble structuré, son diamètre avoisine 9 m. Il s'agit de la première photo confirmée d'ovni en Grande-Bretagne.","",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,William L. Moore transmet le (faux) document Aquarius à Paul Bennewitz.,"",1983
+https://rr0.org/time/1/9/8/3/index.html,,1983,Remaniement du GEPAN.,"",1983

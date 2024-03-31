@@ -1,7 +1,7 @@
-url,place,time,description,sources
-https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,"Lancement de Tiros, 1er satellite météo.",""
-https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,"Dans le cadre de son projet OZMA, Frank Drake braque l'antenne réceptrice du NRAO d'un diamètre de 29,5 m, nouvellement équipée, sur 2 étoiles situées à 11 années-lumière de la Terre, écoutant avec attention sur la fréquence de 1420 mégahertz, indiquée comme idéale dans l'article de Cocconi et Morrison l'année précédente. Dès le premier jour, Drake croit avoir mis dans le mille. Visant Epsilon Eridani, il enregistre aussitôt un signal pulsant d'origine manifestement artificielle qui ne dure que 5 mn. On pense aujourd'hui qu'il s'agissait d'un avion volant à très haute altitude.",""
-https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,Observation à La Camp (Louisiane) Cas Blue Book n° 6711 non résolu.,""
-https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,Explosion de la première bombe atomique française.,""
-https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,"Observation à Richards, Gebaur AB (Missouri) Cas Blue Book n° 6721 non résolu.",""
-https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,Observation à Shelby (Montana) Cas Blue Book n° 6727 non résolu.,""
+url,place,dateTime,description,sources,id
+https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,"Lancement de Tiros, 1er satellite météo.","",1960-04
+https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,"Dans le cadre de son projet OZMA, Frank Drake braque l'antenne réceptrice du NRAO d'un diamètre de 29,5 m, nouvellement équipée, sur 2 étoiles situées à 11 années-lumière de la Terre, écoutant avec attention sur la fréquence de 1420 mégahertz, indiquée comme idéale dans l'article de Cocconi et Morrison l'année précédente. Dès le premier jour, Drake croit avoir mis dans le mille. Visant Epsilon Eridani, il enregistre aussitôt un signal pulsant d'origine manifestement artificielle qui ne dure que 5 mn. On pense aujourd'hui qu'il s'agissait d'un avion volant à très haute altitude.","",1960-04
+https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,Observation à La Camp (Louisiane) Cas Blue Book n° 6711 non résolu.,"",1960-04
+https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,Explosion de la première bombe atomique française.,"",1960-04
+https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,"Observation à Richards, Gebaur AB (Missouri) Cas Blue Book n° 6721 non résolu.","",1960-04
+https://rr0.org/time/1/9/6/0/04/index.html,,1960-04,Observation à Shelby (Montana) Cas Blue Book n° 6727 non résolu.,"",1960-04

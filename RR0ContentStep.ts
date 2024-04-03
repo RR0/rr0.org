@@ -1,4 +1,4 @@
-import { ContentStep, ContentStepConfig, HtmlLinks, HtmlMeta, OutputFunc, SsgContext } from "ssg-api"
+import { ContentStep, ContentStepConfig, HtmlLinks, HtmlMeta, OutputFunc } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import { Time } from "./time/Time"
 import { TimeContext } from "./time/TimeContext"
@@ -11,13 +11,13 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
 
 
   static setTimeFromPath(context: HtmlRR0SsgContext, filePath: string): TimeContext | undefined {
+    context.time.reset()
     const newTimeContext = Time.contextFromFile(context, filePath)
     if (newTimeContext) {
       context.time.setYear(newTimeContext.getYear())
       context.time.setMonth(newTimeContext.getMonth())
       context.time.setDayOfMonth(newTimeContext.getDayOfMonth())
-      context.time.setHour(undefined)
-      context.time.setMinutes(undefined)
+      context.time.from = context.time
     }
     return newTimeContext
   }

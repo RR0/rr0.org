@@ -10,7 +10,7 @@ export class TimeTextBuilder {
   static build(context: RR0SsgContext, print = true): string {
     const time = context.time
     const printOptions: Intl.DateTimeFormatOptions = {}
-    const date = new Date()
+    const date = new Date(undefined, undefined, undefined)
     const year = time.getYear()
     const options = time.options
     if (year) {
@@ -61,9 +61,9 @@ export class TimeTextBuilder {
       // TODO: Handle partial date (month only, etc.)
     } else {  // Valid date?
       text = date.toLocaleString(context.locale, printOptions)
-    }
-    if (time.approximate) {
-      text = context.messages.context.time.approximate(text)
+      if (time.approximate) {
+        text = context.messages.context.time.approximate(text)
+      }
     }
     return text
   }

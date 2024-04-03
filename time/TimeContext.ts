@@ -3,6 +3,8 @@
  */
 export class TimeContext {
 
+  from?: TimeContext
+
   constructor(
     readonly options: Intl.DateTimeFormatOptions,
     protected _year?: number, protected _month?: number, protected _dayOfMonth?: number,
@@ -21,6 +23,7 @@ export class TimeContext {
       this.setMonth(undefined, print)
     }
     this._year = year
+    return this
   }
 
   getMonth(): number | undefined {
@@ -32,6 +35,7 @@ export class TimeContext {
       this.setDayOfMonth(undefined, print)
     }
     this._month = month
+    return this
   }
 
   getDayOfMonth(): number | undefined {
@@ -43,6 +47,7 @@ export class TimeContext {
       this.setHour(undefined, print)
     }
     this._dayOfMonth = dayOfMonth
+    return this
   }
 
   getHour(): number | undefined {
@@ -54,6 +59,7 @@ export class TimeContext {
       this.setMinutes(undefined, print)
     }
     this._hour = hour
+    return this
   }
 
   getMinutes(): number | undefined {
@@ -62,6 +68,7 @@ export class TimeContext {
 
   setMinutes(minutes: number | undefined, print = true) {
     this._minutes = minutes
+    return this
   }
 
   getTimeZone(): string | undefined {
@@ -70,6 +77,7 @@ export class TimeContext {
 
   setTimeZone(timeZone: string | undefined) {
     this._timeZone = timeZone
+    return this
   }
 
   isDefined(): boolean {

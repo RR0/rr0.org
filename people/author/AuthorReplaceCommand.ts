@@ -26,7 +26,7 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }
         if (authorsHtml && context.time.getYear()) {
-          const timeElem = TimeReplacer.replaceElement(context, false, this.timeFiles)
+          const timeElem = TimeReplacer.replaceElement(context, this.timeFiles)
           authorsHtml += ", " + timeElem.outerHTML
         }
         if (authorsHtml) {

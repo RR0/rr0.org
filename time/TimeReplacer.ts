@@ -41,21 +41,12 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     return undefined
   }
 
-  static replaceElement(
-    context: HtmlRR0SsgContext, approximate: boolean, timeFiles: string[], previousContext?: RR0SsgContext
-  ): HTMLElement {
+  static replaceElement(context: HtmlRR0SsgContext, timeFiles: string[], previousContext?: RR0SsgContext): HTMLElement {
     let replacement: HTMLElement | undefined
     const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
     let title = TimeTextBuilder.build(context)
-    if (approximate) {
-      title = context.messages.context.time.approximate(title)
-    }
     let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
-    if (text) {
-      if (approximate) {
-        text = context.messages.context.time.approximate(text)
-      }
-    } else {
+    if (!text) {
       text = title
     }
     const currentFileName = context.inputFile.name
@@ -149,13 +140,13 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
                    previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
-    const approximate = timeStr.charAt(0) === "~"
-    if (approximate) {
+    context.time.approximate = timeStr.charAt(0) === "~"
+    if (context.time.approximate) {
       timeStr = timeStr.substring(1)
     }
     const parsed = TimeReplacer.parseDateTime(timeStr)
     if (parsed) {
-      replacement = this.dateTimeReplacement(context, previousContext, parsed, approximate)
+      replacement = this.dateTimeReplacement(context, previousContext, parsed)
     } else {
       const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
       if (durationValues && durationValues[0]) {
@@ -166,30 +157,26 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
           }
           return reduced
         }, [])
-        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr, approximate)
+        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr)
       }
     }
     return replacement
   }
 
   protected dateTimeReplacement(
-    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult, approximate: boolean
+    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult
   ): HTMLElement | undefined {
     const timeContext = context.time
     TimeReplacer.setTimeContextFrom(timeContext, parsed)
-    if (approximate) {
-      timeContext.approximate = true
-    }
     let replacement: HTMLElement | undefined = undefined
     if (context.time.isDefined()) {
-      replacement = TimeReplacer.replaceElement(context, approximate, this.timeFiles, previousContext)
+      replacement = TimeReplacer.replaceElement(context, this.timeFiles, previousContext)
     }
     return replacement
   }
 
   protected durationReplacement(
-    context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string,
-    approximate: boolean
+    context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string
   ): HTMLTimeElement | undefined {
     const items = []
     const messages = context.messages.context.time.duration
@@ -216,7 +203,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
         let last = replacementStr.lastIndexOf(", ")
         replacementStr = replacementStr.substring(0, last) + messages.lastSeparator + items[items.length - 1]
       }
-      if (approximate) {
+      if (context.time.approximate) {
         replacementStr = messages.approximate(replacementStr)
       }
       replacement = context.outputFile.document.createElement("time")

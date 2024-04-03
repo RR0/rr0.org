@@ -64,8 +64,8 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       }
       const indexContext = context.clone()
       indexContext.time.options.weekday = undefined
-      const dateStr = TimeTextBuilder.build(indexContext)
-      const indexTitle = title + (dateStr !== title ? ` (${dateStr})` : "")
+      const timeStr = TimeTextBuilder.build(indexContext).toLowerCase()
+      const indexTitle = title + (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
       indexedPages.push({title: indexTitle, url})
     }
     if (this.options.indexWords) {

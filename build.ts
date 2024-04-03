@@ -12,6 +12,7 @@ import {
   ClassDomReplaceCommand,
   ContentStepConfig,
   CopyStep,
+  FileUtil,
   HtAccessToNetlifyConfigReplaceCommand,
   HtmlLinks,
   HtmlMeta,
@@ -148,12 +149,14 @@ async function getTimeFiles(): Promise<string[]> {
 }
 
 getTimeFiles().then(async (timeFiles) => {
-  const peopleFiles = await glob("people/*/*")
+  const peopleFiles = await glob("people/?/*")
   const peopleService = new PeopleService(peopleFiles)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config)
+  await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
+  await FileUtil.writeFile(path.join(config.outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
   const booksStep = await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService)
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY

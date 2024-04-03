@@ -1,15 +1,12 @@
 import { HtmlSsgContext, HtmlSsgFile, ReplaceCommand } from "ssg-api"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import fs from "fs"
+import { TimeTextBuilder } from "../time/TimeTextBuilder"
 
-interface PageKey {
+type PageInfo = {
   title: string
   url: string
-}
-
-interface PageInfo extends PageKey {
-  html: string
-  time: string
+  html?: string
 }
 
 type WordCount = {
@@ -18,7 +15,7 @@ type WordCount = {
 }
 
 type SearchIndex = {
-  pages: PageKey[],
+  pages: PageInfo[],
   words: {
     [key: string]: WordCount[]
   }
@@ -27,7 +24,7 @@ type SearchIndex = {
 export type SearchCommandOptions = {
   notIndexedUrls: string[]
   indexWords: boolean
-  indexContent: string
+  indexContent?: string
 }
 
 /**
@@ -65,7 +62,11 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       if (titleIndexed) {
         context.warn(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`);
       }
-      indexedPages.push({title, url});
+      const indexContext = context.clone()
+      indexContext.time.options.weekday = undefined
+      const dateStr = TimeTextBuilder.build(indexContext)
+      const indexTitle = title + (dateStr !== title ? ` (${dateStr})` : "")
+      indexedPages.push({title: indexTitle, url})
     }
     if (this.options.indexWords) {
       this.indexWords(context, outputFile);
@@ -91,7 +92,6 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       title: outputFile.title,
       url: context.outputFile.name,
       html: contents,
-      time: context.time.toString()
     };
     const prefix = this.contentStream.bytesWritten === 0 ? '[\n' : ',\n';
     let str = prefix + JSON.stringify(contentsRecord);

@@ -167,8 +167,7 @@ getTimeFiles().then(async (timeFiles) => {
 
   const searchCommand = new SearchCommand({
     notIndexedUrls: ["404.html", "Referencement.html"],
-    indexWords: false,
-    indexContent: "contentsIndex.json"
+    indexWords: false
   })
   const baseUrl = "https://rr0.org"
   const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",

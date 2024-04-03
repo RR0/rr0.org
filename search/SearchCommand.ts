@@ -1,18 +1,24 @@
-import { HtmlSsgContext, HtmlSsgFile, ReplaceCommand } from 'ssg-api';
-import { HtmlRR0SsgContext } from '../RR0SsgContext';
-import fs from 'fs';
+import { HtmlSsgContext, HtmlSsgFile, ReplaceCommand } from "ssg-api"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import fs from "fs"
 
-type PageInfo = {
-  title: string,
+interface PageKey {
+  title: string
   url: string
+}
+
+interface PageInfo extends PageKey {
+  html: string
+  time: string
 }
 
 type WordCount = {
   pageIndex: number;
   count: number;
 }
+
 type SearchIndex = {
-  pages: PageInfo[],
+  pages: PageKey[],
   words: {
     [key: string]: WordCount[]
   }
@@ -81,10 +87,11 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
 
   protected indexContent(context: HtmlRR0SsgContext, outputFile: HtmlSsgFile) {
     const contents = this.getContents(outputFile.document);
-    const contentsRecord = {
+    const contentsRecord: PageInfo = {
       title: outputFile.title,
       url: context.outputFile.name,
-      html: contents
+      html: contents,
+      time: context.time.toString()
     };
     const prefix = this.contentStream.bytesWritten === 0 ? '[\n' : ',\n';
     let str = prefix + JSON.stringify(contentsRecord);

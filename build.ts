@@ -57,7 +57,6 @@ import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplace
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
 import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
-import { RR0ContentStep } from "./RR0ContentStep"
 
 const args = new CLI().getArgs()
 const cliContents = args.contents
@@ -230,7 +229,7 @@ getTimeFiles().then(async (timeFiles) => {
   const copyStep = new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]})
   const ssg = new Ssg(config)
     // .add(booksStep)
-    .add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
+    //.add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
     .add(ufoCasesStep)
     .add(...peopleSteps)
 

@@ -44,7 +44,6 @@ import { PlaceReplacerFactory } from "./place/PlaceReplacerFactory"
 import { TimeReplacerFactory } from "./time/TimeReplacerFactory"
 import { LinkReplaceCommand } from "./LinkReplaceCommand"
 import { OutlineReplaceCommand } from "./outline/OutlineReplaceCommand"
-import { RR0ContentStep } from "./RR0ContentStep"
 import { ImageCommand } from "./ImageCommand"
 import { SearchCommand } from "./search/SearchCommand"
 import { SearchIndexStep } from "./search/SearchIndexStep"
@@ -154,6 +153,7 @@ getTimeFiles().then(async (timeFiles) => {
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config)
+  copies.push(...(ufoCasesStep.dirs).map(dir => dir + "/case.json"))
   await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
   await FileUtil.writeFile(path.join(config.outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
@@ -229,7 +229,7 @@ getTimeFiles().then(async (timeFiles) => {
   const copyStep = new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]})
   const ssg = new Ssg(config)
     // .add(booksStep)
-    .add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
+    // .add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
     .add(ufoCasesStep)
     .add(...peopleSteps)
 

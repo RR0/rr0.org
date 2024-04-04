@@ -23,7 +23,7 @@ export class BookDirectoryStep extends DirectoryStep {
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, bookMeta: Map<string, HtmlMeta>,
                       bookLinks: Map<string, HtmlLinks>, peopleService: PeopleService): Promise<BookDirectoryStep> {
-    const dirs = await RR0FileUtil.findDirectoriesContaining("book*.json")
+    const dirs = RR0FileUtil.findDirectoriesContaining("book*.json")
     return new BookDirectoryStep(dirs, "book/index.html", outputFunc, config, config.outDir, "all books", bookMeta,
       bookLinks, peopleService)
   }

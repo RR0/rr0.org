@@ -112,7 +112,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, service: PeopleService): Promise<SsgStep[]> {
-    const dirs = await RR0FileUtil.findDirectoriesContaining("people*.json")
+    const dirs = RR0FileUtil.findDirectoriesContaining("people*.json")
     const excludedDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
     const scientistsDirectoryStep = this.createScientists(dirs, excludedDirs, outputFunc, config, service)
     const ufologistsDirectoryStep = this.createUfologists(dirs, excludedDirs, outputFunc, config, service)

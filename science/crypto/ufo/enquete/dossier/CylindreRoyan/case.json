@@ -1,6 +1,10 @@
 {
-  "time": "1985",
+  "title": "Le cylindre de Royan",
+  "time": "1985-02-25",
+  "place": "Saint Sulpice de Royan (Charente-Maritime)",
   "classification": {
     "hynek": "CE1"
-  }
+  },
+  "image": "science/crypto/ufo/enquete/dossier/CylindreRoyan/portrait.jpg",
+  "conclusion": "misinterpretation"
 }

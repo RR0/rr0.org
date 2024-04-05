@@ -94,7 +94,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     const columns = row.querySelectorAll("td")
     const caseLink = columns[0].firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = HttpSource.findParam(url.href, "&", "numobs")
+    const id = new URLSearchParams(url.search).get("numobs")
     const linkParse = BaseOvniFranceHttpDatasource.regExp.exec(caseLink.textContent)
     assert.ok(linkParse,
       `Case title "${caseLink.textContent}" does not match pattern ${BaseOvniFranceHttpDatasource.regExp.source}`)
@@ -107,7 +107,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
     const entities = this.getBoolean(columns[5])
     const landing = this.getBoolean(columns[6])
     return {
-      id: caseNumber,
+      id,
       url,
       city: place,
       depCode: depCode,

@@ -57,8 +57,28 @@ import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplace
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
 import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
+import { RR0ContentStep } from "./RR0ContentStep"
 
-const args = new CLI().getArgs()
+interface RR0BuildArgs {
+  reindex?: "true" | "false"
+
+  /**
+   * Comma-separated list of file patterns to parse as contents.
+   */
+  contents?: string
+
+  /**
+   * Comma-separated list of file patterns to copy to out dir.
+   */
+  copies?: string
+
+  /**
+   * Comma-separated list of file patterns to books to generate TOCs for.
+   */
+  books?: string
+}
+
+const args = new CLI().getArgs<RR0BuildArgs>()
 const cliContents = args.contents
 const contentRoots = cliContents
   ? cliContents.split(",")
@@ -157,7 +177,6 @@ getTimeFiles().then(async (timeFiles) => {
   await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
   await FileUtil.writeFile(path.join(config.outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
-  const booksStep = await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService)
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -216,28 +235,31 @@ getTimeFiles().then(async (timeFiles) => {
     new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
     searchCommand
   ]
-  const contentConfigs: ContentStepConfig[] = [
-    htAccessToNetlifyConfig,
-    {
-      roots: contentRoots,
-      replacements: contentReplacements,
-      getOutputFile(context: SsgContext): SsgFile {
-        return context.outputFile
-      }
-    }
-  ]
-  const copyStep = new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]})
   const ssg = new Ssg(config)
-    // .add(booksStep)
-    //.add(new RR0ContentStep(contentConfigs, outputFunc, bookMeta, bookLinks))
-    .add(ufoCasesStep)
+  if (args.contents) {
+    ssg.add(new RR0ContentStep([
+      htAccessToNetlifyConfig,
+      {
+        roots: contentRoots,
+        replacements: contentReplacements,
+        getOutputFile(context: SsgContext): SsgFile {
+          return context.outputFile
+        }
+      }
+    ], outputFunc, bookMeta, bookLinks))
+  }
+  if (args.books) {
+    ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService))
+  }
+  ssg.add(ufoCasesStep)
     .add(...peopleSteps)
-
   if (args.reindex === "true") {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))
   }
+  if (copies) {
+    ssg.add(new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]}))
+  }
   ssg
-    .add(copyStep)
     .start(context)
     .then(result => context.log("Completed", result))
     .catch(err => {

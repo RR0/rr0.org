@@ -89,7 +89,7 @@ export class NuforcHttpDatasource extends NuforcDatasource {
   protected getNativeCase(context: RR0SsgContext, row: Element): NuforcCaseSummary {
     const columns = row.querySelectorAll("td")
     const url = this.getLink(columns[0])
-    const caseNumber = HttpSource.findParam(url.href, "?", "id")
+    const caseNumber = new URLSearchParams(url.search).get("id")
     const dateTime = this.getTime(columns[1], context)
     const city = columns[2].textContent
     const state = this.getState(columns[3])

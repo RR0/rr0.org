@@ -21,7 +21,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/urecat/UrecatDatasource.test.ts",
+    "test-one": "tsx time/datasource/nuforc/NuforcDatasource.test.ts",
     "udb:build": "webpack"
   },
   "dependencies": {

@@ -190,10 +190,10 @@ export class FuforaHttpDatasource extends FuforaDatasource {
     const sightingPlace = placeRows[0]
     const city = placeRows.length > 1 ? context.messages.country.fi.cityName(placeRows[1]) : undefined
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = HttpSource.findParam(url.href, "&", "u")
+    const id = new URLSearchParams(url.search).get("u")
     const classification = fields[3].textContent
     return {
-      id: caseNumber,
+      id,
       url,
       sightingPlace,
       city,

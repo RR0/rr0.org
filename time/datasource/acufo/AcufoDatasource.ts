@@ -31,13 +31,6 @@ export class AcufoDatasource extends AbstractCaseSource<AcufoCase> {
     const page = await this.http.fetch<string>(UrlUtil.join(searchUrl, "_" + year + lang),
       {headers: {accept: "text/html;charset=utf-8"}})
     const doc = new JSDOM(page).window.document.documentElement
-    /*const charSetMeta = doc.querySelector("meta[http-equiv='Content-Type']")
-    const contentType = charSetMeta.getAttribute("content")
-    let charset = findParam(contentType, ";", "charset") as BufferEncoding
-    if (charset.startsWith("iso-8859")) {
-      charset = "latin1"
-    }
-    const decoder = new TextDecoder(charset)*/
     const rowEls = doc.querySelectorAll("table")
     return Array.from(rowEls).map(row => this.getNativeCase(context, row))
   }
@@ -58,7 +51,7 @@ export class AcufoDatasource extends AbstractCaseSource<AcufoCase> {
     dateTime.setHour(hour)
     dateTime.setMinutes(minutes)
     const url = new URL(caseLink.href, this.baseUrl)
-    const caseNumber = HttpSource.findParam(url.href, "?", "id")
+    const caseNumber = new URLSearchParams(url.search).get("id")
     const stateStr = fields[3].textContent
     const state = ObjectUtil.enumFromValue<NuforcState>(NuforcState, stateStr)
     const countryStr = fields[4].textContent

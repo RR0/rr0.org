@@ -236,7 +236,7 @@ getTimeFiles().then(async (timeFiles) => {
     searchCommand
   ]
   const ssg = new Ssg(config)
-  if (args.contents) {
+  if (contentRoots) {
     ssg.add(new RR0ContentStep([
       htAccessToNetlifyConfig,
       {

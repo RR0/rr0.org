@@ -1,7 +1,10 @@
 {
-  "time": "1975",
+  "title": "La disparition de Travis Walton",
+  "time": "1975-11-05 ~18:00",
+  "place": "Snow-flake (Arizona)",
   "classification": {
     "hynek": "CE4"
   },
+  "image": "science/crypto/ufo/enquete/dossier/WaltonTravis/walton.jpg",
   "conclusion": "hoax"
 }

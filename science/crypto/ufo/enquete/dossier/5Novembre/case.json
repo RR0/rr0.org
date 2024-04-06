@@ -1,7 +1,10 @@
 {
-  "time": "1990-11-05",
+  "title": "L'observation du 5 Novembre 1990",
+  "time": "1990-11-05 19:00",
+  "place": "France",
   "classification": {
     "hynek": "RV"
   },
+  "image": "science/crypto/ufo/enquete/dossier/5Novembre/colmar.gif",
   "conclusion": "misinterpretation"
 }

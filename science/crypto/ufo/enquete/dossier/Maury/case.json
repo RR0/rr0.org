@@ -1,7 +1,10 @@
 {
-  "time": "1947",
+  "title": "L'affaire de l'île Maury",
+  "time": "1947-06-21 14:00",
+  "place": "île Maury",
   "classification": {
     "hynek": "CE2"
   },
+  "image": "science/crypto/ufo/enquete/dossier/Maury/1947-06-21.jpg",
   "conclusion": "hoax"
 }

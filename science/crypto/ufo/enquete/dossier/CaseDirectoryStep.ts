@@ -4,6 +4,7 @@ import { HtmlTag } from "../../../../../util/HtmlTag"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 import { Time } from "../../../../../time/Time"
 import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
+import { RR0CaseSummary } from "../../../../../time/datasource/rr0/RR0CaseSummary"
 
 enum HynekClassification {
   NL = "NL",
@@ -22,7 +23,7 @@ enum CaseConclusion {
   hoax = "hoax"
 }
 
-interface Case {
+interface Case extends RR0CaseSummary {
   dirName: string
   title: string
   time: string
@@ -104,7 +105,7 @@ export class CaseDirectoryStep extends DirectoryStep {
     if (details.length > 0) {
       text.push(`(${details.join(", ")})`)
     }
-    const a = HtmlTag.toString("a", text.join(" "), {href: "/" + dirCase.dirName + "/"})
+    const a = HtmlTag.toString("a", text.join(" "), {href: `/${dirCase.dirName}/`})
     if (titles.length) {
       attrs.title = titles.join(", ")
     }

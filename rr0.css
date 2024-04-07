@@ -99,7 +99,7 @@ section:hover {
   background-color: rgba(127, 127, 127, 0.05);
 }
 
-.contents ul time {
+.indexed time {
   font-weight: 700
 }
 

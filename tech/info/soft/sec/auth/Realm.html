@@ -1,0 +1,28 @@
+<!--#include virtual="/header-start.html" -->
+<title>Realm</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Security realm</i> : domaine de sécurité.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Associer des informations émises par le client (login/mot de passe, certificat) à une <a
+    href="/tech/info/soft/sec/auth/Identite.html">identité</a> connue du serveur.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>On peut imaginer divers types de <i lang="en">realms</i> tels que <i>UnixPasswordRealm, NTPasswordRealm,
+    DatabaseRealm, CertificateRealm,</i> etc.</p>
+</section>
+<h2>Exemples</h2>
+<section>
+  <p>Proposent des realms :</p>
+  <ul>
+    <li><a href="/org/us/company/oracle/bea/wls">WLS</a> (<a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> Realm, <a
+      href="/tech/info/soft/data/dbms/ldap">LDAP</a>, custom...)</li>
+    <li><a href="/org/int/asso/asf/server/web/apache/tomcat">Tomcat</a> (<a
+      href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> Realm...)</li>
+    <li><a href="/org/us/company/oracle/sun/ptf/java/impl/J2EE-RI.html">J2EE RI</a> (default realm)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

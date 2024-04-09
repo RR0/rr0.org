@@ -1,0 +1,9 @@
+pre.mermaid {
+  font-family: var(--font-family) !important;
+}
+
+.mermaid {
+  margin: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  max-height: none;
+}

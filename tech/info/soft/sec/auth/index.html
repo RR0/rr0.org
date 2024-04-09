@@ -11,40 +11,41 @@
   <p>L'authentification est réalisée par des <a href="sign">signatures</a> des messages à authentifier.</p>
   <section>
     <h3>Client</h3>
-    <p>Par authentification d'un client on entend identification du client par le serveur avec qui il communique.</p>
-    <p>Une telle identification suppose :</p>
+    <p>Par authentification d'un client, on entend identification du client par le serveur avec qui il communique.</p>
+    <p>Une telle identification suppose :</p>
     <ul>
-      <li>un <i><a href="#realm"><strong>realm</strong></a></i> : mécanisme permettant d'associer des informations
-        émises par le client (login/mot de passe, <a href="cert">certificat</a>) à une <a
-            href="/tech/info/soft/sec/auth/Identite.html">identité</a> connue du serveur.</li>
-      <li>une <a href="../../../ACL.html"><strong>ACL</strong></a> : mécanisme permettant d'associer cette <a
-          href="/tech/info/soft/sec/auth/Identite.html">identité</a> à un ensemble de permissions (ou privilèges,
+      <li>un <i><a href="/tech/info/soft/sec/auth/Realm.html"><strong>realm</strong></a></i> : mécanisme permettant
+        d'associer des informations émises par le client (login/mot de passe, <a href="cert">certificat</a>) à une <a
+          href="/tech/info/soft/sec/auth/Identite.html">identité</a> connue du serveur.</li>
+      <li>une <a href="../../../ACL.html"><strong>ACL</strong></a> : mécanisme permettant d'associer cette <a
+        href="/tech/info/soft/sec/auth/Identite.html">identité</a> à un ensemble de permissions (ou privilèges,
         autorisations).</li>
     </ul>
-    <p>Cela peut s'effectuer de 2 manières :</p>
+    <p>Cela peut s'effectuer de différentes manières :</p>
     <ul>
       <li><b>le client s'identifie par login et mot de passe</b>.
         <ul>
           <li>Ce type d'opération était problématique avant Java 2, dans la mesure où elle imposait au client de fournir
             son identification au travers d'une boîte de dialogue modale. L'exploitation de la syntaxe d'<a
-                href="../../reseau/internet/URL.html">URL</a> de type <span class="code">https://user:password@machine.domaine/ressource</span>
-            était également problématique puisqu'affichant le mot de passe en clair.</li>
+              href="../../reseau/internet/URL.html">URL</a> de type <span class="code">https://user:password@machine.domaine/ressource</span>
+            était également problématique puisque affichant le mot de passe en clair.</li>
           <li>Java 2 fournit la classe abstraite <span class="code">java.net.Authenticator</span>, dont doivent dériver
             les applications pour définir l'authentification à fournir. Ces applications doivent alors invoquer <span
-                class="code">java.net.Authenticator.setDefault(myAuthenticator)</span> pour spécifier au système quel
+              class="code">java.net.Authenticator.setDefault(myAuthenticator)</span> pour spécifier au système quelle
             authentification fournir lorsque cela sera nécessaire. Le système pourra alors fournir un mot de passe via
             un objet <span class="code">java.net.PasswordAuthentication</span>.
           </li>
         </ul>
       </li>
       <li><b>le client fournit un <a href="cert">certificat</a> au serveur</b>.</li>
+      <li><a href="oauth/index.html">OAuth</a></li>
     </ul>
     <section>
       <h4>Applet non plugin</h4>
       <p>Dans le cas d'un client de type applet non-plugin, celle-ci doit fournir un <a
-          href="cert">certificat</a> installé dans la base de <a href="cert">certificats</a> du navigateur, ce qui est
+        href="cert">certificat</a> installé dans la base de <a href="cert">certificats</a> du navigateur, ce qui est
         impossible directement. L'applet peut alors confier cette tâche à une servlet qui se charge de récupérer le <a
-            href="cert">certificat</a> pour elle depuis le navigateur.
+          href="cert">certificat</a> pour elle depuis le navigateur.
       </p>
     </section>
   </section>

@@ -1,0 +1,42 @@
+<!--#include virtual="/header-start.html" -->
+<title>OAuth</title>
+<link href="/diagram.css" rel="stylesheet">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Autoriser un accès à ses ressources par une partie tierce, sans donner ses identifiants (<i
+    lang="en">credentials</i>).</p>
+</section>
+<section>
+  <h3>Analyse</h3>
+  <p>OAuth vise à :</p>
+  <ul>
+    <li>vérifier l'autorisation conférée au propriétaire de ressource</li>
+    <li>vérifier l'identité du client faisant une requête</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>OAuth ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client/serveur</a> :
+  </p>
+  <ul>
+    <li>le <b>serveur</b> héberge les ressources protégées</li>
+    <li>le <b>propriétaire de ressources</b> (<i lang="en">resource owner</i>) contrôle l'accès aux ressources du
+      serveur</li>
+    <li>le <b>client</b> (qui n'est pas propriétaire de la resource, mais agit en son nom ) accède aux ressources
+      contrôlées par le propriétaire de ressource ;</li>
+  </ul>
+  <pre class="mermaid">
+    graph LR
+    A --- B
+    B-->C[fa:fa-ban forbidden]
+    B-->D(fa:fa-spinner);
+</pre>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Stabilisé en <time>2007-10</time>, revisé en <time>2009-06</time> (<a href="http://oauth.net/core/1.0a">révision
+    A</a>).</p>
+</section>
+<script type="module"></script>
+<!--#include virtual="/footer.html" -->

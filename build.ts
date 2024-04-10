@@ -101,7 +101,7 @@ const contentRoots = cliContents
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
-  "rr0.css", "print.css",
+  "rr0.css", "map.css", "diagram.css", "print.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "people/index.js", "people/lier.svg", "people/index.css",

@@ -1,11 +1,13 @@
 <!--#include virtual="/header-start.html" -->
 <title>OAuth</title>
+<meta content="https://oauth.net" name="url"/>
 <link href="/diagram.css" rel="stylesheet">
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Motivation</h2>
-  <p>Autoriser un accès à ses ressources par une partie tierce, sans donner ses identifiants (<i
-    lang="en">credentials</i>).</p>
+  <p>Autoriser un accès <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> à ses ressources par une
+    partie tierce, sans donner ses identifiants (<i
+      lang="en">credentials</i>).</p>
 </section>
 <section>
   <h3>Analyse</h3>
@@ -20,11 +22,23 @@
   <p>OAuth ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client/serveur</a> :
   </p>
   <ul>
-    <li>le <b>serveur</b> héberge les ressources protégées</li>
-    <li>le <b>propriétaire de ressources</b> (<i lang="en">resource owner</i>) contrôle l'accès aux ressources du
+    <li>le <b>serveur/service provider</b> héberge les ressources protégées</li>
+    <li>le <b>propriétaire de ressources/user</b> (<i lang="en">resource owner</i>) contrôle l'accès aux ressources du
       serveur</li>
-    <li>le <b>client</b> (qui n'est pas propriétaire de la resource, mais agit en son nom ) accède aux ressources
+    <li>le <b>client/consumer</b> (qui n'est pas propriétaire de la resource, mais agit en son nom ) accède aux
+      ressources
       contrôlées par le propriétaire de ressource ;</li>
+  </ul>
+  <p>Il définit 2 process :</p>
+  <ul>
+    <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
+    <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
+  </ul>
+  <p>OAuth définit 3 types de credentials :</p>
+  <ul>
+    <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le client faisant la requête</li>
+    <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
+    <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
   </ul>
   <pre class="mermaid">
     graph LR

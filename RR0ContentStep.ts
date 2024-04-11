@@ -22,11 +22,12 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
     return newTimeContext
   }
 
-  protected processFile(context: HtmlRR0SsgContext, filePath: string, contentsConfig: ContentStepConfig,
-                        contentCount: number): Promise<number> {
+  protected async processFile(context: HtmlRR0SsgContext, filePath: string,
+                              contentsConfig: ContentStepConfig): Promise<boolean> {
     context.time.reset()  // Don't use time context from previous page.
     RR0ContentStep.setTimeFromPath(context, filePath)
-    return super.processFile(context, filePath, contentsConfig, contentCount)
+    const processed = await super.processFile(context, filePath, contentsConfig)
+    return processed
   }
 
   protected shouldProcess(context: HtmlRR0SsgContext): boolean {

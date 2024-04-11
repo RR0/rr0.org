@@ -19,38 +19,102 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>OAuth ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client/serveur</a> :
-  </p>
-  <ul>
-    <li>le <b>serveur/service provider</b> héberge les ressources protégées</li>
-    <li>le <b>propriétaire de ressources/user</b> (<i lang="en">resource owner</i>) contrôle l'accès aux ressources du
-      serveur</li>
-    <li>le <b>client/consumer</b> (qui n'est pas propriétaire de la resource, mais agit en son nom ) accède aux
-      ressources
-      contrôlées par le propriétaire de ressource ;</li>
-  </ul>
-  <p>Il définit 2 process :</p>
-  <ul>
-    <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
-    <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
-  </ul>
-  <p>OAuth définit 3 types de credentials :</p>
-  <ul>
-    <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le client faisant la requête</li>
-    <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
-    <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
-  </ul>
-  <pre class="mermaid">
-    graph LR
-    A --- B
-    B-->C[fa:fa-ban forbidden]
-    B-->D(fa:fa-spinner);
-</pre>
+  <section>
+    <h3>1.x</h3>
+    <p>OAuth 1.x ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client
+      /serveur</a> :
+    </p>
+    <ul>
+      <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>, <i lang="en">end user</i>) qui a le
+        contrôle d'accès aux ressources du serveur</li>
+      <li>le <b>serveur</b> (<span class="place">service provider</span>) héberge les ressources protégées</li>
+      <li>le <b>client</b> (<i lang="en">consumer</i>) qui n'est pas propriétaire de la resource, mais agit en son nom 
+        accède aux ressources contrôlées par le propriétaire de ressource ;</li>
+    </ul>
+    <p>Il définit 2 processus :</p>
+    <ul>
+      <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
+      <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
+    </ul>
+    <p>OAuth définit 3 types de credentials :</p>
+    <ul>
+      <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le client faisant la requête</li>
+      <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
+      <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
+    </ul>
+    <pre class="mermaid">
+sequenceDiagram
+    Title OAuth 1.x worfklow
+    Actor Resource Owner
+    Resource Owner->>Server: signup (username, password)
+    Resource Owner->>Server: upload (resource)
+    Client->>Server: signup (clientId, clientSharedSecret)
+    Resource Owner->>Client: useMyResourceFrom (Server)
+    Client->>Server: initiate (realm,clientId,callback,hmacSha1Signature)
+    Server-->>Client: oauth_token,oauth_token_secret
+    Client-->>Resource Owner: redirectTo (server/authorize?oauth_token)
+    Resource Owner->>Server: authorize (oauth_token)
+    Server-->>Resource Owner: 401 need to sign
+    Resource Owner->>Server: signin (username, password)
+    Server-->>Resource Owner: Ok to share resource to Client?
+    Resource Owner->>Server: yes
+    Server-->>Resource Owner: redirect?client/ready?oauth_token&oauth_verifier
+    Resource Owner->>Client: ready(oauth_token,oauth_verifier)
+    Client->>Server: token(consumer_key,oauth_token,oauth_verifier,signature)
+    Server-->>Client: ok(oauth_token,oauth_token_secret)
+    Client->>Server: getResource(realm,consumer_key,oauth_token,signature)
+    Server-->>Client: resource
+ </pre>
+  </section>
+  <section>
+    <h3>2.x</h3>
+    <p>OAuth 2.x ajoute un 4ᵉ rôle en permettant de séparer le rôle <i lang="en">serveur</i> de OAuth 1.x en :</p>
+    <ul>
+      <li><b>serveur de ressource</b> (<i lang="en">resource server</i>), recevant les demandes de ressources avec
+        jetons d'accès (<i lang="en">access tokens</i>) et les fournissant si elles sont valides ;</li>
+      <li><b>serveur d'autorisation</b> (<i lang="en">authorization server</i>) qui fournit des jetons d'accès aux
+        clients après authentification et autorisation du propriétaire de ressources.</li>
+    </ul>
+    <pre class="mermaid">
+sequenceDiagram
+    Title OAuth 2.x worfklow
+    Actor Resource Owner
+    Resource Owner->>Resource Server: signup (username, password)
+    Resource Owner->>Resource Server: upload (resource)
+    Client->>Resource Server: signup (clientId, clientSharedSecret)
+    Resource Owner->>Client: useMyResourceFrom (Server)
+    Client->>Resource Server: initiate (realm,clientId,callback,hmacSha1Signature)
+    Resource Server-->>Client: oauth_token,oauth_token_secret
+    alt direct
+    Client-->>Resource Owner: redirectTo (server/authorize?oauth_token)
+    else indirect
+    Client-->>Authorization server: redirectTo (server/authorize?oauth_token)
+    Authorization server-->Resource Owner: redirectTo (server/authorize?oauth_token)
+    end
+    Resource Owner->>Resource Server: authorize (oauth_token)
+    Resource Server-->>Resource Owner: 401 need to sign
+    Resource Owner->>Resource Server: signin (username, password)
+    Resource Server-->>Resource Owner: Ok to share resource to Client?
+    Resource Owner->>Resource Server: yes
+    Resource Server-->>Resource Owner: redirect?client/ready?oauth_token&oauth_verifier
+    Resource Owner->>Client: ready(oauth_token,oauth_verifier)
+    Client->>Authorization server: token(consumer_key,oauth_token,oauth_verifier,signature)
+    Authorization server-->>Client: ok(oauth_token,oauth_token_secret)
+    Client->>Resource Server: getResource(realm,consumer_key,oauth_token,signature)
+    Resource Server-->>Client: resource
+ </pre>
+  </section>
 </section>
 <section>
   <h2>Notes</h2>
   <p>Stabilisé en <time>2007-10</time>, revisé en <time>2009-06</time> (<a href="http://oauth.net/core/1.0a">révision
     A</a>).</p>
 </section>
-<script type="module"></script>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/+esm'
+
+  mermaid.initialize({
+    securityLevel: 'loose'
+  })
+</script>
 <!--#include virtual="/footer.html" -->

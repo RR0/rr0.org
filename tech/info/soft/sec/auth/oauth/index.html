@@ -28,19 +28,13 @@
       <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>, <i lang="en">end user</i>) qui a le
         contrôle d'accès aux ressources du serveur</li>
       <li>le <b>serveur</b> (<span class="place">service provider</span>) héberge les ressources protégées</li>
-      <li>le <b>client</b> (<i lang="en">consumer</i>) qui n'est pas propriétaire de la resource, mais agit en son nom 
-        accède aux ressources contrôlées par le propriétaire de ressource ;</li>
+      <li>le <b>client</b> ou consommateur (<i lang="en">consumer</i>) qui n'est pas propriétaire de la resource, mais
+        agit en son nom  accède aux ressources contrôlées par le propriétaire de ressource ;</li>
     </ul>
     <p>Il définit 2 processus :</p>
     <ul>
       <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
       <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
-    </ul>
-    <p>OAuth définit 3 types de credentials :</p>
-    <ul>
-      <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le client faisant la requête</li>
-      <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
-      <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
     </ul>
     <pre class="mermaid">
 sequenceDiagram
@@ -65,6 +59,12 @@ sequenceDiagram
     Client->>Server: getResource(realm,consumer_key,oauth_token,signature)
     Server-->>Client: resource
  </pre>
+    <p>On voit donc qu'il existe 3 types d'identifiants (<i lang="en">credentials</i>) dans OAuth :</p>
+    <ul>
+      <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le Client faisant la requête</li>
+      <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
+      <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
+    </ul>
   </section>
   <section>
     <h3>2.x</h3>
@@ -85,24 +85,28 @@ sequenceDiagram
     Resource Owner->>Client: useMyResourceFrom (Server)
     Client->>Resource Server: initiate (realm,clientId,callback,hmacSha1Signature)
     Resource Server-->>Client: oauth_token,oauth_token_secret
-    alt direct
-    Client-->>Resource Owner: redirectTo (server/authorize?oauth_token)
-    else indirect
-    Client-->>Authorization server: redirectTo (server/authorize?oauth_token)
-    Authorization server-->Resource Owner: redirectTo (server/authorize?oauth_token)
-    end
-    Resource Owner->>Resource Server: authorize (oauth_token)
-    Resource Server-->>Resource Owner: 401 need to sign
-    Resource Owner->>Resource Server: signin (username, password)
-    Resource Server-->>Resource Owner: Ok to share resource to Client?
-    Resource Owner->>Resource Server: yes
-    Resource Server-->>Resource Owner: redirect?client/ready?oauth_token&oauth_verifier
+    Client-->>Resource Owner: redirectTo (authorizationServer/authorize?oauth_token)
+    Resource Owner->>Authorization Server: authorize (oauth_token)
+    Authorization Server-->>Resource Owner: 401 need to sign
+    Resource Owner->>Authorization Server: signin (username, password)
+    Authorization Server-->>Resource Owner: Ok to share resource to Client?
+    Resource Owner->>Authorization Server: yes
+    Authorization Server-->>Resource Owner: redirect?client/ready?oauth_token&oauth_verifier
     Resource Owner->>Client: ready(oauth_token,oauth_verifier)
-    Client->>Authorization server: token(consumer_key,oauth_token,oauth_verifier,signature)
-    Authorization server-->>Client: ok(oauth_token,oauth_token_secret)
+    Client->>Authorization Server: token(consumer_key,oauth_token,oauth_verifier,signature)
+    Authorization Server-->>Client: ok(oauth_token,oauth_token_secret)
     Client->>Resource Server: getResource(realm,consumer_key,oauth_token,signature)
     Resource Server-->>Client: resource
  </pre>
+    <p>OAuth 2.x définit également les formes possibles d'une autorisation donnée par le propriétaire de ressource :</p>
+    <ul>
+      <li>un <b>code d'autorisation</b> (<i lang="en">authorization code</i>)</li>
+      <li>une <b>autorisation implicite</b> (<i lang="en">implicit</i>) qui évite la phase d'authentification du client
+      </li>
+      <li>un <b>mot de passe</b> (<i lang="en">password</i>)</li>
+      <li>des <b>identifiants client</b> (<i lang="en">client credentials</i>)</li>
+    </ul>
+    <p>Il existe également un mécanisme d'extensibilité pour ajouter d'autres formes d'autorisation.</p>
   </section>
 </section>
 <section>

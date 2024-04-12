@@ -1,5 +1,5 @@
-import { DomReplaceCommand, DomReplacer } from 'ssg-api';
-import { HtmlRR0SsgContext } from '../RR0SsgContext';
+import { DomReplaceCommand, DomReplacer } from "ssg-api"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
 
 /**
  * Determine page language and ddd links to page language variants,
@@ -23,9 +23,8 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
             foundLang ? foundLang : "fr" : variants.includes("fr") ?
               foundLang ? foundLang : "en"
               : "fr"
-          context.outputFile.document.documentElement.lang = pageLang
+          context.outputFile.document.documentElement.lang = inputFile.lang.lang = pageLang
           const langVariants = variants.length == 1 && variants[0] == "" ? [pageLang == "fr" ? "en" : "fr"] : variants
-          inputFile.lang.lang = pageLang
           const fileName = inputFile.name
           for (let i = 0; i < langVariants.length; i++) {
             const langVariant = langVariants[i]

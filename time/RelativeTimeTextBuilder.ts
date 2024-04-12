@@ -1,6 +1,5 @@
 import { TimeTextBuilder } from "./TimeTextBuilder"
-import { TimeContext } from "./TimeContext"
-import { RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
+import { RR0SsgContext } from "../RR0SsgContext"
 
 export class RelativeTimeTextBuilder {
 
@@ -9,7 +8,7 @@ export class RelativeTimeTextBuilder {
     if (!previousTime?.isDefined()) {
       return TimeTextBuilder.build(newContext)
     }
-    const deltaContext = new RR0SsgContextImpl(oldContext.locale, new TimeContext({...oldContext.time.options}))
+    const deltaContext = oldContext.clone()
     const deltaTime = deltaContext.time
     let dayOfMonthDelta: number | undefined
     let yearDelta: number | undefined

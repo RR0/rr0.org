@@ -60,7 +60,7 @@ export class TimeTextBuilder {
       text = ""
       // TODO: Handle partial date (month only, etc.)
     } else {  // Valid date?
-      text = date.toLocaleString(context.locale, printOptions)
+      text = date.toLocaleString(context.inputFile.lang.lang || context.locale, printOptions)
       if (time.approximate) {
         text = context.messages.context.time.approximate(text)
       }

@@ -1,0 +1,27 @@
+.search {
+  width: 3.7em;
+  transition: background .2s ease-out, width 0.3s ease;
+}
+
+.search:has(input:focus) {
+  width: 12em;
+}
+
+.search input {
+  width: 100%;
+}
+
+.search:hover {
+  border: none;
+  background: rgba(184, 197, 212, .49)
+}
+
+@media (min-width: 60em) {
+  .search label {
+    display: inline
+  }
+
+  .search, .search:has(input:focus) {
+    width: 100%;
+  }
+}

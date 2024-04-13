@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "map.css";
+@import "search/search.css";
 
 :root {
   --mobile-nav-height: 2rem;
@@ -38,10 +39,6 @@ html {
 
 html, body {
   scroll-behavior: smooth;
-}
-
-.outline, .search-result, nav ul {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header-from-color', endColorstr='$header-to-color', GradientType=1)
 }
 
 [data-ng-cloak] {
@@ -292,18 +289,6 @@ nav {
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset
 }
 
-.outline, .search-result {
-  box-shadow: 0 .5em 1em -.1em #555
-}
-
-.search form .icon:hover, .search:hover, a:hover, details summary:hover, .indexed li:hover, .multilang:hover {
-  transition: background .2s ease-out
-}
-
-.search input {
-  width: 100%;
-}
-
 nav.collapsed {
   top: 0;
   position: fixed;
@@ -406,95 +391,7 @@ nav ul > li {
   cursor: pointer
 }
 
-.search:hover {
-  border: none;
-  background: rgba(184, 197, 212, .49)
-}
-
-.search form {
-  position: relative
-}
-
-.search form .flexible {
-  max-width: 100%;
-  width: 100%;
-  display: block;
-}
-
-.search form .flexible input {
-  width: 100%;
-}
-
-.search form label {
-  display: none
-}
-
-.search form .icon {
-  width: 1.5em;
-  position: absolute;
-  right: .25em;
-  top: .3em;
-  padding: .2rem .3rem;
-  margin: -.2rem -.3rem;
-  cursor: pointer
-}
-
-.search form .icon:hover {
-  border: none;
-  background: rgba(184, 197, 212, .49)
-}
-
-.search-result {
-  display: block;
-  overflow: auto;
-  padding: 0;
-  background: rgba(242, 242, 248, .95);
-  background: linear-gradient(left top, rgba(242, 242, 248, .95), rgba(255, 255, 255, .95));
-  position: absolute;
-  height: 0
-}
-
-.search-result li {
-  width: 100%;
-  display: block;
-  padding: .2rem .3rem;
-  float: none
-}
-
-.search-result li a, .search-result li details summary, details .search-result li summary {
-  display: block
-}
-
-.search-result li h1 {
-  padding: 0;
-  margin: 0
-}
-
-.search-result li h2, .search-result li h3, .search-result li h4, .search-result li h5, .search-result li section h1, section .search-result li h1 {
-  background: 0 0;
-  margin: 0;
-  padding: 0;
-  width: auto
-}
-
-.search-result li h3, .search-result li h4, .search-result li h5, .search-result li section section h1, section section .search-result li h1 {
-  margin: 0;
-  padding: 0;
-  width: auto
-}
-
-.search-result li:focus {
-  color: #FFF;
-  background-color: rgba(11, 117, 178, .4);
-  text-decoration: none;
-  cursor: pointer
-}
-
-.search-result > * {
-  border-top: 1px #d3d3d3 dotted
-}
-
-.outline-title:hover + .outline, .outline:hover, .search form:hover + .search-result, .search-result:hover {
+.outline-title:hover + .outline, .outline:hover {
   height: auto
 }
 
@@ -691,8 +588,8 @@ details[open] summary:hover {
   margin-right: 1em
 }
 
-.metadata {
-  margin-left: calc(var(--margin) * -1);
+a:hover, details summary:hover, .indexed li:hover, .multilang:hover {
+  transition: background .2s ease-out
 }
 
 .book .cover {
@@ -1413,18 +1310,8 @@ abbr[title]:after {
     flex-direction: column;
   }
 
-  .label, .search label {
+  .label {
     display: inline
-  }
-
-  .search {
-    width: 100%;
-  }
-
-  .search-result {
-    min-width: 30em;
-    max-width: 82vw;
-    z-index: 1
   }
 
   nav {

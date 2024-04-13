@@ -105,7 +105,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "people/index.js", "people/lier.svg", "people/index.css",
-  "search/index.js", "search/index.json",
+  "search/index.js", "search/index.json", "search/search.css",
   "index/index.js", "index/lang.js",
   "croyance/religion/theisme/mono/livre/islam/coran/index.js",
   "udb/**/*.js",

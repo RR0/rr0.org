@@ -1,0 +1,77 @@
+img {
+  margin: 1.25em 1.25em 1.5em;
+  cursor: zoom-in;
+  height: auto;
+}
+
+img.zoomed {
+  cursor: zoom-out;
+}
+
+table img {
+  margin: 0
+}
+
+.image-container, .left, .leftImage, .right, .rightImage, figure {
+  max-width: 75%
+}
+
+caption, figcaption {
+  font-size: 0.8em;
+  color: dimgray;
+  margin: 0;
+  display: table-caption;
+  overflow: hidden;
+  caption-side: bottom;
+  background: inherit;
+}
+
+figure {
+  display: table;
+  max-height: 90%;
+  position: relative;
+  transition: background-color .2s ease-out
+}
+
+figure ul {
+  padding-left: 1em;
+}
+
+figure.video {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+
+figure img {
+  margin: 0;
+}
+
+figure:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+figure iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+figure:hover figcaption, figcaption:hover {
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  figcaption {
+    color: darkgray;
+  }
+
+  figure:hover figcaption, figcaption:hover {
+    color: white;
+  }
+}

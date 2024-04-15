@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "map.css";
 @import "search/search.css";
+@import "figure.css";
 
 :root {
   --mobile-nav-height: 2rem;
@@ -635,61 +636,8 @@ th {
   text-align: left
 }
 
-img {
-  margin: 1.25em 1.25em 1.5em;
-  cursor: zoom-in;
-  height: auto;
-}
-
-img.zoomed {
-  cursor: zoom-out;
-}
-
-.image-container, .left, .leftImage, .right, .rightImage, figure {
-  max-width: 75%
-}
-
-caption, figcaption {
-  font-size: 0.8em;
-  color: dimgray;
-  margin: 0;
-  display: table-caption;
-  overflow: hidden;
-  caption-side: bottom;
-}
-
 .exergue .source {
   vertical-align: baseline
-}
-
-figure {
-  display: table;
-  max-height: 90%;
-  position: relative;
-}
-
-figure.video {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-  width: 100%;
-}
-
-figure img {
-  margin: 0;
-}
-
-figure iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-figure:hover figcaption, figcaption:hover {
-  color: black;
 }
 
 blockquote ol > li, blockquote p, blockquote ul > li, q {
@@ -699,10 +647,6 @@ blockquote ol > li, blockquote p, blockquote ul > li, q {
 iframe.long {
   height: 80vh;
   transition: all .8s ease-out
-}
-
-table img {
-  margin: 0
 }
 
 .image-container td, .left td, .leftImage td, .right td, .rightImage td {
@@ -1443,14 +1387,6 @@ body.with-map .map {
 
   .footer {
     color: grey;
-  }
-
-  figcaption {
-    color: darkgray;
-  }
-
-  figure:hover figcaption, figcaption:hover {
-    color: white;
   }
 
   .witness, .temoin, .temoin1, .temoin2, .temoin3 {

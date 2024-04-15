@@ -1,11 +1,11 @@
-import { AnchorReplaceCommand } from './AnchorReplaceCommand';
-import { rr0TestUtil } from '../test/RR0TestUtil';
-import { describe, expect, test } from '@javarome/testscript';
+import { AnchorReplaceCommand } from "./AnchorReplaceCommand"
+import { rr0TestUtil } from "../test/RR0TestUtil"
+import { describe, expect, test } from "@javarome/testscript"
 
 describe("AnchorReplaceCommand", () => {
 
   test("replace anchor tag", async () => {
-    const command = new AnchorReplaceCommand("https://rr0.org/")
+    const command = new AnchorReplaceCommand("https://rr0.org/", caseService)
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html",
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
     const file = await command.execute(context)
@@ -13,4 +13,3 @@ describe("AnchorReplaceCommand", () => {
       `<html><head></head><body><time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell/">Roswell</a></body></html>`)
   })
 })
-

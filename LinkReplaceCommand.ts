@@ -1,5 +1,5 @@
-import { HtmlSsgContext, HtmlSsgFile, Link, ReplaceCommand } from 'ssg-api';
-import { HtmlRR0SsgContext } from './RR0SsgContext';
+import { HtmlSsgContext, HtmlSsgFile, Link, ReplaceCommand } from "ssg-api"
+import { HtmlRR0SsgContext } from "./RR0SsgContext"
 
 export interface LinkHandler<C extends HtmlSsgContext> {
 
@@ -13,6 +13,7 @@ export interface LinkHandler<C extends HtmlSsgContext> {
 }
 
 /**
+ * Convert meta <link> to HTML <nav> links.
  */
 export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext> implements ReplaceCommand<C> {
 

@@ -1,37 +1,10 @@
-import { DirectoryStep, OutputFunc, SsgConfig, SsgFile } from "ssg-api"
+import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { HtmlTag } from "../../../../../util/HtmlTag"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 import { Time } from "../../../../../time/Time"
-import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
-import { RR0CaseSummary } from "../../../../../time/datasource/rr0/RR0CaseSummary"
-
-enum HynekClassification {
-  NL = "NL",
-  DD = "DD",
-  RV = "RV",
-  CE1 = "CE1",
-  CE2 = "CE2",
-  CE3 = "CE3",
-  CE4 = "CE3",
-  CE5 = "CE3"
-}
-
-enum CaseConclusion {
-  unknown = "unknown",
-  misinterpretation = "misinterpretation",
-  hoax = "hoax"
-}
-
-interface Case extends RR0CaseSummary {
-  dirName: string
-  title: string
-  time: string
-  classification?: {
-    hynek: HynekClassification
-  },
-  conclusion?: CaseConclusion
-}
+import { CaseService } from "./CaseService"
+import { Case } from "./Case"
 
 const cssClasses: Record<string, string> = {
   hoax: "canular",
@@ -40,20 +13,16 @@ const cssClasses: Record<string, string> = {
 
 export class CaseDirectoryStep extends DirectoryStep {
 
-  constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc,
-              config: SsgConfig) {
-    super(dirs, excludedDirs, template, config, "case directory")
+  constructor(protected caseService: CaseService, excludedDirs: string[], template: string,
+              protected outputFunc: OutputFunc, config: SsgConfig) {
+    super(caseService.dirs, excludedDirs, template, config, "case directory")
   }
 
   static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
 
-  static async create(outputFunc: OutputFunc, config: SsgConfig): Promise<CaseDirectoryStep> {
-    const ufoCasesDirectories = RR0FileUtil.findDirectoriesContaining("case.json")
-    return new CaseDirectoryStep(
-      ufoCasesDirectories,
-      ["science/crypto/ufo/enquete/dossier/canular"],
-      CaseDirectoryStep.template,
-      outputFunc, config)
+  static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: CaseService): Promise<CaseDirectoryStep> {
+    return new CaseDirectoryStep(caseService, ["science/crypto/ufo/enquete/dossier/canular"],
+      CaseDirectoryStep.template, outputFunc, config)
   }
 
   /**
@@ -129,15 +98,7 @@ export class CaseDirectoryStep extends DirectoryStep {
   protected scan(context: RR0SsgContext, dirNames: string[]): Case[] {
     const cases: Case[] = []
     for (const dirName of dirNames) {
-      const dirCase: Case = {dirName, time: "", title: ""}
-      cases.push(dirCase)
-      try {
-        const jsonFileInfo = SsgFile.read(context, `${dirName}/case.json`)
-        Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
-      } catch (e) {
-        context.warn(`${dirName} has no case.json description`)
-        // No json, just guess title.
-      }
+      cases.push(this.caseService.read(context, dirName))
     }
     return cases
   }

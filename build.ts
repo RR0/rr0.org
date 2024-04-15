@@ -58,6 +58,7 @@ import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerF
 import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { RR0ContentStep } from "./RR0ContentStep"
+import { CaseService } from "./science/crypto/ufo/enquete/dossier/CaseService"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -172,7 +173,8 @@ getTimeFiles().then(async (timeFiles) => {
   const peopleService = new PeopleService(peopleFiles)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
-  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config)
+  const caseService = await CaseService.create()
+  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
   copies.push(...(ufoCasesStep.dirs).map(dir => dir + "/case.json"))
   await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
@@ -230,7 +232,7 @@ getTimeFiles().then(async (timeFiles) => {
     ...pageReplaceCommands,
     ...contentsReplaceCommand,
     new OutlineReplaceCommand(),
-    new AnchorReplaceCommand(siteBaseUrl),
+    new AnchorReplaceCommand(siteBaseUrl, caseService),
     new ImageCommand(config.outDir, 275, 500),
     new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
     searchCommand

@@ -548,7 +548,7 @@ a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hov
   background: rgba(184, 197, 212, .19)
 }
 
-.canular, .deprecated {
+.canular, .hoax, .deprecated {
   text-decoration: line-through
 }
 

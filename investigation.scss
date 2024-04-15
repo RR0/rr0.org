@@ -1,10 +1,10 @@
 @import "mixins";
 
-.canular {
+.canular, .hoax {
   text-decoration: line-through;
 }
 
-.meprise:after {
+.misinterpretation:after, .meprise:after {
   color: lightgray;
   font-size: 0.5em;
   vertical-align: super;
@@ -19,4 +19,3 @@
   font-variant: normal;
   color: #666666;
 }
-

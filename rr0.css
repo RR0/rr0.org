@@ -873,7 +873,7 @@ pre code {
   font-style: normal
 }
 
-.disappeared:after, .meprise:after, .note, .source {
+.disappeared::after, .meprise::after, .misinterpretation::after, .note, .source {
   vertical-align: super
 }
 
@@ -975,7 +975,7 @@ a[target="_blank"]::after {
   transition: background .2s ease-out
 }
 
-.meprise:after {
+.meprise:after, .misinterpretation::after {
   color: #d3d3d3;
   font-size: .5em;
   content: " m\E9prise"

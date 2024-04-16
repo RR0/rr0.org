@@ -1,5 +1,9 @@
 {
+  "title": "Le crash de Magenta",
   "time": "1933-04-11",
   "place": "Magenta (Lombardie, Italie)",
+  "classification": {
+    "hynek": "CE4"
+  },
   "conclusion": "hoax"
 }

@@ -6,11 +6,6 @@ import { Time } from "../../../../../time/Time"
 import { CaseService } from "./CaseService"
 import { Case } from "./Case"
 
-const cssClasses: Record<string, string> = {
-  hoax: "canular",
-  misinterpretation: "meprise"
-}
-
 export class CaseDirectoryStep extends DirectoryStep {
 
   constructor(protected caseService: CaseService, excludedDirs: string[], template: string,
@@ -67,7 +62,7 @@ export class CaseDirectoryStep extends DirectoryStep {
     }
     const conclusion = dirCase.conclusion
     if (conclusion) {
-      attrs.class = cssClasses[conclusion]
+      attrs.class = conclusion
       titles.push(context.messages.case.conclusion[conclusion])
     }
     const text: (string | string[])[] = [dirCase.title]
@@ -98,7 +93,12 @@ export class CaseDirectoryStep extends DirectoryStep {
   protected scan(context: RR0SsgContext, dirNames: string[]): Case[] {
     const cases: Case[] = []
     for (const dirName of dirNames) {
-      cases.push(this.caseService.read(context, dirName))
+      try {
+        cases.push(this.caseService.read(context, dirName))
+      } catch (e) {
+        context.warn(`${dirName} has no case.json description`)
+        // No json, just guess title.
+      }
     }
     return cases
   }

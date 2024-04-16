@@ -16,16 +16,16 @@ export class CaseService {
 
   read(context: RR0SsgContext, dirName: string) {
     let dirCase = this.dirToCase.get(dirName)
-    if (!dirCase) {
-      dirCase = {dirName, time: "", title: ""}
+    if (dirCase === undefined) {
       try {
+        dirCase = {dirName, time: "", title: ""}
         const jsonFileInfo = SsgFile.read(context, `${dirName}/case.json`)
         Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
-        this.dirToCase.set(dirName, dirCase)
       } catch (e) {
-        context.warn(`${dirName} has no case.json description`)
-        // No json, just guess title.
+        console.warn(`${dirName} has no case.json description`)
+        dirCase = null
       }
+      this.dirToCase.set(dirName, dirCase)
     }
     return dirCase
   }

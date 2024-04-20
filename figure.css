@@ -50,7 +50,7 @@ figure img {
 }
 
 figure:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(127, 127, 127, 0.1);
 }
 
 figure iframe {
@@ -69,6 +69,10 @@ figure:hover figcaption, figcaption:hover {
 
   figcaption {
     color: darkgray;
+  }
+
+  figure:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   figure:hover figcaption, figcaption:hover {

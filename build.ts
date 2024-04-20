@@ -79,6 +79,7 @@ interface RR0BuildArgs {
   books?: string
 }
 
+console.time("ssg")
 const args = new CLI().getArgs<RR0BuildArgs>()
 const cliContents = args.contents
 const contentRoots = cliContents
@@ -238,6 +239,7 @@ getTimeFiles().then(async (timeFiles) => {
     searchCommand
   ]
   const ssg = new Ssg(config)
+  ssg.add(ufoCasesStep)
   if (contentRoots) {
     ssg.add(new RR0ContentStep([
       htAccessToNetlifyConfig,
@@ -253,22 +255,23 @@ getTimeFiles().then(async (timeFiles) => {
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService))
   }
-  ssg.add(ufoCasesStep)
-    .add(...peopleSteps)
+  ssg.add(...peopleSteps)
   if (args.reindex === "true") {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))
   }
   if (copies) {
     ssg.add(new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]}))
   }
-  ssg
-    .start(context)
-    .then(result => context.log("Completed", result))
-    .catch(err => {
-      try {
-        context.error(err, context.inputFile.name, "=>", context.outputFile?.name)
-      } catch (e) {
-        context.error(err)
-      }
-    })
+  try {
+    const result = await ssg.start(context)
+    context.log("Completed", result)
+  } catch (err) {
+    try {
+      context.error(err, context.inputFile.name, "=>", context.outputFile?.name)
+    } catch (e) {
+      context.error(err)
+    }
+  } finally {
+    console.timeEnd("ssg")
+  }
 })

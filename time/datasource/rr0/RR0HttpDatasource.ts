@@ -68,29 +68,6 @@ export class RR0HttpDatasource extends RR0Datasource {
     return {url, place, dateTime, description, sources, id}
   }
 
-  updateTimeFromStr(time: TimeContext, timeStr: string) {
-    const result = TimeReplacer.parseDateTime(timeStr)
-    if (result) {
-      const {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
-      time.setYear(parseInt(yearStr, 10))
-      if (monthStr) {
-        time.setMonth(parseInt(monthStr, 10))
-      }
-      if (dayOfMonthStr) {
-        time.setDayOfMonth(parseInt(dayOfMonthStr, 10))
-      }
-      if (hour) {
-        time.setHour(parseInt(hour, 10))
-      }
-      if (minutes) {
-        time.setMinutes(parseInt(minutes, 10))
-      }
-      if (timeZone) {
-        time.setTimeZone(timeZone)
-      }
-    }
-  }
-
   protected getSources(row: Element, itemContext: HtmlRR0SsgContext): Source[] {
     const sources: Source[] = []
     const sourceEls = row.querySelectorAll(".source-id")
@@ -122,7 +99,7 @@ export class RR0HttpDatasource extends RR0Datasource {
   }
 
   protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
-    this.updateTimeFromStr(time, timeEl.dateTime)
+    TimeReplacer.updateTimeFromStr(time, timeEl.dateTime)
   }
 
   protected getPlace(context: HtmlRR0SsgContext, placeEl: Element): NamedPlace {

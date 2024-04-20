@@ -1,10 +1,11 @@
 import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { SsgFile } from "ssg-api"
+import { Case } from "./Case"
 
 export class CaseService {
 
-  protected readonly dirToCase = new Map()
+  protected readonly dirToCase = new Map<string, Case>()
 
   constructor(readonly dirs: string[]) {
   }
@@ -14,7 +15,7 @@ export class CaseService {
     return new CaseService(dirs)
   }
 
-  read(context: RR0SsgContext, dirName: string) {
+  read(context: RR0SsgContext, dirName: string): Case {
     let dirCase = this.dirToCase.get(dirName)
     if (dirCase === undefined) {
       try {

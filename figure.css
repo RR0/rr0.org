@@ -12,7 +12,7 @@ table img {
   margin: 0
 }
 
-.image-container, .left, .leftImage, .right, .rightImage, figure {
+.image-container, .left, .left side, .right, .right side, figure {
   max-width: 75%
 }
 

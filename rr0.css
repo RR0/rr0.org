@@ -97,7 +97,7 @@ section:hover {
   margin-top: 2.5mm
 }
 
-.left figcaption, .leftImage figcaption, .multi-list li {
+.left figcaption, .left side figcaption, .multi-list li {
   text-align: left
 }
 
@@ -458,19 +458,19 @@ iframe .wide {
   border-style: ridge
 }
 
-.left, .leftImage {
+.left, .left side {
   float: left;
   margin-left: 0;
   margin-right: 1.5em
 }
 
-.right, .rightImage {
+.right, .right side {
   float: right;
   margin-left: 1.5em;
   margin-right: 0
 }
 
-.right figcaption, .rightImage figcaption {
+.right figcaption, .right side figcaption {
   text-align: right
 }
 
@@ -649,7 +649,7 @@ iframe.long {
   transition: all .8s ease-out
 }
 
-.image-container td, .left td, .leftImage td, .right td, .rightImage td {
+.image-container td, .left td, .left side td, .right td, .right side td {
   height: 100%
 }
 

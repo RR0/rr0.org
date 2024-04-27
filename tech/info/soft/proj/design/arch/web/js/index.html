@@ -1,14 +1,17 @@
 <!--#include virtual="/header-start.html" -->
-<title>Javascript sur le web</title>
+<title>Javascript client</title>
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
   <p>Ajouter de la logique programmable aux pages <a href="../index.html">Web</a>.</p>
 </section>
 <section>
+  <h2>Analyse</h2>
+</section>
+<section>
   <h2>Conception</h2>
   <p>JavaScript est un <a href="/tech/info/soft/proj/impl/lang">langage</a> interprété.</p>
-  <p>Il est exécuté :</p>
+  <p>Il est exécuté :</p>
   <ul>
     <li>(très souvent) côté <a href="../client/index.html">client</a></li>
     <li>(rarement) côté <a href="../server/index.html">serveur</a>
@@ -26,14 +29,16 @@
   <p>Sa syntaxe s'inspire de celle du <a href="/tech/info/soft/proj/impl/lang/java">langage Java</a> (d'où son nom),
     mais c'est là leur seul point commun. En effet Javascript :</p>
   <ul>
-    <li>n'est pas réellement orienté objet, mais utilise des prototypes de fonctions. Créer ses propres classes requiert
-      des astuces.</li>
+    <li>n'est pas réellement <a href="/tech/info/soft/proj/impl/lang/oo">orienté objet</a>, mais utilise des prototypes
+      de fonctions. Avant ES6, créer ses propres <a href="/tech/info/soft/proj/impl/lang/oo/Classe.html">classes</a>
+      requierait des astuces.</li>
     <li>n'est pas strictement typé (bien qu'il possède des opérateurs de comparaison stricte).</li>
-    <li>Est dynamique : il est capable d'exécuter du code source passé en paramètre (<code>eval</code>).</li>
+    <li>Est dynamique : il est capable d'exécuter du <a href="/tech/info/soft/proj/impl/CodeSource.html">code source</a>
+      passé en paramètre (<code>eval</code>).</li>
   </ul>
   <p>Il est typiquement intégré à une page <a href="/tech/info/soft/data/doc/html">HTML</a> :</p>
   <ul>
-    <li>par référence :
+    <li>par référence :
       <ul>
         <li>
           <pre class="prettyprint"><code>&lt;script src="monCodeJavascript.js"&gt;&lt;/script&gt;</code></pre>
@@ -50,65 +55,203 @@
       </ul>
     </li>
   </ul>
-  <table>
-    <thead>
-    <tr>
-      <td class="titleCorner" colspan="2" rowspan="2"></td>
-      <th> Version</th>
-      <th colspan="3">1</th>
-      <th rowspan="3"> Commentaires</th>
-    </tr>
-    <tr>
-      <th> Release</th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-    </tr>
-    <tr>
-      <th> Domaine</th>
-      <th> Produit</th>
-      <th> Service Pack</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th rowspan="5"><a href="../client/index.html">Navigateur Web</a></th>
-      <th rowspan="3"><a href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a></th>
-      <th>2.0</th>
-      <td class="oui">Oui</td>
-      <td class="non" colspan="2">Non</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>3.0</th>
-      <td>Obsolète</td>
-      <td class="oui">Oui</td>
-      <td class="non">Non</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>4.0</th>
-      <td colspan="2">Obsolète</td>
-      <td class="oui">Oui</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th rowspan="2"><a href="/org/us/company/ms/MSIE.html">MSIE</a></th>
-      <th>3.0</th>
-      <td class="oui">Oui</td>
-      <td class="non" colspan="2">Non</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>4.0</th>
-      <td>Obsolète</td>
-      <td class="oui">Oui</td>
-      <td class="non">Non</td>
-      <td></td>
-    </tr>
-    </thead>
-  </table>
+  <section>
+    <h3>Versions</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Version</th>
+        <th>Date</th>
+        <th>Features</th>
+        <th>Commentaire</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>ES1</td>
+        <td><time>1997-06</time></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES2</td>
+        <td><time>1998-06</time></td>
+        <td></td>
+        <td>Conforme à <a href="https://www.iso.org/fr/standard/55755.html">ISO/CEI 16262</a></td>
+      </tr>
+      <tr>
+        <td>ES3</td>
+        <td><time>1999-06</time></td>
+        <td>RegExp, manipulation de chaînes de caractères, gestion des <a
+          href="/tech/info/soft/proj/impl/lang/Exception.html">exceptions</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES3.1</td>
+        <td><time>2000</time></td>
+        <td></td>
+        <td>Fork de Yahoo, Microsoft, Google</td>
+      </tr>
+      <tr>
+        <td><del>ES4</del> Microsoft JScript</td>
+        <td><time>2000</time></td>
+        <td></td>
+        <td>Implémenté dans <a href="/org/us/company/ms/MSIE.html">IE</a></td>
+      </tr>
+      <tr>
+        <td>"</td>
+        <td><time>2005</time></td>
+        <td><a href="/tech/info/AJAX.html">AJaX</a>, <a href="/tech/info/soft/data/JSON.html">JSON</a></td>
+        <td>Emergence des <a href="/tech/info/soft/proj/design/arch/web/client/app/SPA.html">SPA</a></td>
+      </tr>
+      <tr>
+        <td>"</td>
+        <td><time>2008-09</time></td>
+        <td><a href="https://v8.dev/">V8 engine</a></td>
+        <td>Boost de <a href="/tech/info/Performance.html">performance</a></td>
+      </tr>
+      <tr>
+        <td>ES5</td>
+        <td><time>2008-12</time></td>
+        <td><code>strict</code> mode, <a href="/tech/info/soft/data/JSON.html">JSON</a>.<code>parse/stringify</code>,
+          String .<code>trim</code>, <code>map/filter/reduce/forEach</code> array functions
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES5.1</td>
+        <td><time>2011-06</time></td>
+        <td></td>
+        <td>Mise à jour mineure</td>
+      </tr>
+      <tr>
+        <td>ES6/ES2015</td>
+        <td><time>2011-06</time></td>
+        <td>ES <a href="/tech/info/soft/proj/impl/lang/js/module">modules</a>, let/const, arrow functions, class,
+          ellipsis, default values, WeakMap, <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template
+            literals</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES7/ES2016</td>
+        <td></td>
+        <td>exponential operator, Observable API</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES8/ES2017</td>
+        <td></td>
+        <td><code>async/await</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES9/ES2018</td>
+        <td></td>
+        <td><code>spread operator, Promise.finally</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES10/ES2019</td>
+        <td></td>
+        <td><code>Array.flat/flatMap, Object.fromEntries</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES11/ES2020</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES12/ES2021</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES13/ES2022</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES14/ES2023</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ES15/ES2024</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h3>Support</h3>
+    <table>
+      <thead>
+      <tr>
+        <td class="titleCorner" colspan="2" rowspan="2"></td>
+        <th>Version</th>
+        <th colspan="3">1</th>
+        <th rowspan="3"> Commentaires</th>
+      </tr>
+      <tr>
+        <th> Release</th>
+        <th>0</th>
+        <th>1</th>
+        <th>2</th>
+      </tr>
+      <tr>
+        <th>Domaine</th>
+        <th>Produit</th>
+        <th>Service Pack</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th rowspan="5"><a href="../client/index.html">Navigateur Web</a></th>
+        <th rowspan="3"><a href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a></th>
+        <th>2.0</th>
+        <td class="oui">Oui</td>
+        <td class="non" colspan="2">Non</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>3.0</th>
+        <td>Obsolète</td>
+        <td class="oui">Oui</td>
+        <td class="non">Non</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>4.0</th>
+        <td colspan="2">Obsolète</td>
+        <td class="oui">Oui</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2"><a href="/org/us/company/ms/MSIE.html">MSIE</a></th>
+        <th>3.0</th>
+        <td class="oui">Oui</td>
+        <td class="non" colspan="2">Non</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>4.0</th>
+        <td>Obsolète</td>
+        <td class="oui">Oui</td>
+        <td class="non">Non</td>
+        <td></td>
+      </tr>
+      </thead>
+    </table>
+  </section>
 </section>
 <section>
   <h2>Exemples</h2>
@@ -380,13 +523,13 @@
         <td>
           <ul>
             <li>Framework Javascript ne pouvant être appelé depuis <a
-                href="/org/int/asso/asf/Ant.html">Ant</a></li>
+              href="/org/int/asso/asf/Ant.html">Ant</a></li>
           </ul>
         </td>
       </tr>
       <tr>
         <td><a href="https://pivotal.github.com/jasmine/">Jasmine</a>, <a
-            href="https://rudylattae.github.com/jasmine-species/">Jasmine species</a></td>
+          href="https://rudylattae.github.com/jasmine-species/">Jasmine species</a></td>
         <td>
           <ul>
             <li>S'exécute dans le navigateur</li>
@@ -464,7 +607,7 @@
         <td>
           <ul>
             <li>Nécessite le moteur Javascript V8 de <a
-                href="/org/us/company/alphabet/google/product/soft/chrome/index.html">Chrome</a></li>
+              href="/org/us/company/alphabet/google/product/soft/chrome/index.html">Chrome</a></li>
           </ul>
         </td>
       </tr>
@@ -532,8 +675,8 @@
     <h3>Faire communiquer une applet Java avec JavaScript</h3>
     <p> La communication entre JavaScript et une applet <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> est
       possible grâce à <i>LiveConnect,</i> qui est automatiquement fourni à partir de <a
-          href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> 3.0 et activé par la double activation
-      de <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> et JavaScript dans la configuration du navigateur.</p>
+        href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> 3.0 et activé par la double activation de
+      <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> et JavaScript dans la configuration du navigateur.</p>
     <p> Une applet ne peut accéder à JavaScript et les objets que si elle importe le package
       <code>netscape.javascript</code> qui définit les classes <code>JSObject</code> et <code>JSException</code> :</p>
     <blockquote><code>import netscape.javascript.*; </code></blockquote>

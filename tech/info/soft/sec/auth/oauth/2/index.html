@@ -1,0 +1,95 @@
+<!--#include virtual="/header-start.html" -->
+<title>OAuth 2.0</title>
+<meta content="https://datatracker.ietf.org/doc/html/rfc6749" name="url"/>
+<link href="/diagram.css" rel="stylesheet">
+<!--#include virtual="/header-end.html" -->
+<link href="/diagram.css" rel="stylesheet">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Open AUTHorization</i> : autorisation ouverte/libre.</p>
+<section>
+  <h2>Motivation</h2>
+  <p><b>Autoriser</b> un accès <a href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> à ses ressources par
+    une partie tierce, sans donner ses identifiants (<i lang="en">credentials</i>).</p>
+</section>
+<section>
+  <h3>Analyse</h3>
+  <p>OAuth vise à :</p>
+  <ul>
+    <li>vérifier l'autorisation conférée au propriétaire de ressource</li>
+    <li>vérifier l'identité du client faisant une requête</li>
+  </ul>
+  <p>OAuth 2.0 définit 4 rôles  en déclinant le "serveur" de OAuth 1.0 en 2 rôles distincts:</p>
+  <ol>
+    <li>le <b>client</b> (<i lang="en">front end</i> ou <i lang="en">consumer</i>)</li>
+    <li><b>serveur de ressource</b> (<i lang="en">resource server</i>), recevant les demandes de ressources avec jetons
+      d'accès (<i lang="en">access tokens</i>) et les fournissant si elles sont valides ;</li>
+    <li><b>serveur d'autorisation</b> (<i lang="en">authorization server</i>) qui fournit au client des <b>jetons
+      d'accès</b> (<i lang="en">access tokens</i>, en échange d'un code d'autorisation typiquement) aux ressources
+      demandées, après authentification et autorisation du propriétaire de ressources.</li>
+    <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>) ou "utilisateur final" (<i
+      lang="en">end user</i>) vers qui on se tournera pour lui demander s'il autorise u, accès, sans pour autant
+      dévoiler son identité.</li>
+  </ol>
+  <p>Il existe également des spécialisations de OAuth 2.0 pour :</p>
+  <ul>
+    <li><a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps">applications web</a></li>
+    <li><a href="https://datatracker.ietf.org/doc/html/rfc8252">applications natives</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client /serveur</a> :
+  </p>
+  <p>Pour permettre de <b>déléguer l'autorisation</b> à un service tiers (Google par exemple), OAuth 2.x ajoute un 4ᵉ
+    rôle en permettant de séparer le rôle <i lang="en">serveur </i> de OAuth 1.x en :</p></ul>
+  <pre class="mermaid">
+sequenceDiagram
+    Title OAuth 2.x worfklow
+    Actor Resource Owner
+    Resource Owner->>Resource Server: signup (username, password)
+    Resource Owner->>Resource Server: upload (resource)
+    Client->>Resource Server: signup (clientId, clientSharedSecret)
+    Resource Owner->>Client: useMyResourceFrom (Server)
+    Client->>Resource Server: initiate (realm,clientId,callback,hmacSha1Signature)
+    Resource Server-->>Client: oauth_token,oauth_token_secret
+    Client-->>Resource Owner: redirectTo (authorizationServer/authorize?oauth_token)
+    Resource Owner->>Authorization Server: authorize (oauth_token)
+    Authorization Server-->>Resource Owner: 401 need to sign
+    Resource Owner->>Authorization Server: signin (username, password)
+    Authorization Server-->>Resource Owner: Ok to share resource to Client?
+    Resource Owner->>Authorization Server: yes
+    Authorization Server-->>Resource Owner: redirect?client/ready?oauth_token&oauth_verifier
+    Resource Owner->>Client: ready(oauth_token,oauth_verifier)
+    Client->>Authorization Server: token(consumer_key,oauth_token,oauth_verifier,signature)
+    Authorization Server-->>Client: ok(oauth_token,oauth_token_secret)
+    Client->>Resource Server: getResource(realm,consumer_key,oauth_token,signature)
+    Resource Server-->>Client: resource
+    </pre>
+  <p>OAuth 2.x définit également les formes possibles d'une autorisation donnée par le propriétaire de ressource :</p>
+  <ul>
+    <li>un <b>code</b> d'autorisation (<i lang="en">authorization code</i>)</li>
+    <li>une autorisation <b>implicite</b> (<i lang="en">implicit</i>) qui évite la phase d'authentification du client
+    </li>
+    <li>un <b>mot de passe</b> (<i lang="en">password</i>)</li>
+    <li>des <b>identifiants client</b> (<i lang="en">client credentials</i>)</li>
+  </ul>
+  <p>Il existe également un mécanisme d'extensibilité pour ajouter d'autres formes d'autorisation.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <p><a href="https://oauthdebugger.com/">Debugger</a></p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <p>Publié en <time>2012</time>.</p>
+  <p>Etendu par <a href="../openIdConnect">OpenID Connect</a> en ajoutant des fonctionnalités standards
+    d'identification.</p>
+</section>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/+esm'
+
+  mermaid.initialize({
+    securityLevel: 'loose'
+  })
+</script>
+<!--#include virtual="/footer.html" -->

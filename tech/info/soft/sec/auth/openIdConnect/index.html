@@ -1,0 +1,37 @@
+<!--#include virtual="/header-start.html" -->
+<title>OIDC</title>
+<meta content="https://openid.net" name="url"/>
+<link href="/diagram.css" rel="stylesheet">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Open ID Connect</i> : connection Open ID.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Partager un profil authentifié.</p>
+</section>
+<section>
+  <h3>Analyse</h3>
+  <p>Token</p>
+  <ul>
+    <li>URL du demandeur</li>
+    <li>ID utilisateur</li>
+    <li>ID du client</li>
+    <li>Durée de vie</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>OpenID Connect étend la specification <a href="../oauth">OAuth 2.x</a> pour y ajouter des <b>portées</b> (<i
+    lang="en">scopes</i>) d'accès aux données du profil authentifié.</p>
+  <p>Le JWT est signé, déchiffré avec la clé publique du serveur</p>
+  <ul>
+    <li>iss</li>
+    <li>sub</li>
+    <li>aud : client</li>
+    <li>exp : expiration</li>
+    <li>iat</li>
+    <li>nonce</li>
+    <li>acr</li>
+  </ul>
+  <p>GET/POST URL endpoint pour récupérer les preuves</p>
+</section>
+<!--#include virtual="/footer.html" -->

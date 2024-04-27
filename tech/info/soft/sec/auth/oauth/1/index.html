@@ -1,6 +1,8 @@
 <!--#include virtual="/header-start.html" -->
-<title>OAuth</title>
-<meta content="https://oauth.net" name="url"/>
+<title>OAuth 1.0</title>
+<meta content="https://datatracker.ietf.org/doc/html/rfc5849" name="url"/>
+<link href="/diagram.css" rel="stylesheet">
+<!--#include virtual="/header-end.html" -->
 <link href="/diagram.css" rel="stylesheet">
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Open AUTHorization</i> : autorisation ouverte/libre.</p>
@@ -16,35 +18,35 @@
     <li>vérifier l'autorisation conférée au propriétaire de ressource</li>
     <li>vérifier l'identité du client faisant une requête</li>
   </ul>
-  <p>OAuth définit différents rôles côté client et côté serveur, selon la version <a href="1">1</a> ou <a href="2">2</a>
-    du protocole.</p>
+  <p>OAuth définit 3 rôles :</p>
+  <ol>
+    <li>le <b>client</b> (<i lang="en">front end</i> ou <i lang="en">consumer</i>)</li>
+    <li>le <b>serveur</b> (<i lang="en">back end</i>) hébergeant des ressources</li>
+    <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>) ou "utilisateur final" (<i
+      lang="en">end user</i>) vers qui on se tournera pour lui demander s'il autorise u, accès, sans pour autant
+      dévoiler son identité.</li>
+  </ol>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Au-delà du modèle architectural <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client/serveur</a>
-    qui définit :</p>
-  <ol>
-    <li>une application cliente (<i lang="en">front end</i> ou <i lang="en">consumer</i>)</li>
-    <li>un serveur (<i lang="en">back end</i>) hébergeant des ressources</li>
-  </ol>
-  <p>OAuth définit clairement le 3ᵉ rôle :</p>
-  <ol start="3">
-    <li><b>propriétaire de ressource</b> (<i lang="en">resource owner</i>) ou "utilisateur final" (<i
-      lang="en">end user</i>) vers qui on se tournera pour lui demander s'il autorise u, accès, sans pour autant
-      dévoiler son identité.
-    </li>
-  </ol>
-  <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>, <i lang="en">end user</i>) qui a le contrôle
-    d'accès aux ressources du serveur</li>
-  <li>le <b>serveur</b> (<span class="place">service provider</span>) héberge les ressources protégées</li>
-  <li>le <b>client</b> ou consommateur (<i lang="en">consumer</i>) qui n'est pas propriétaire de la resource, mais agit
-    en son nom  accède aux ressources contrôlées par le propriétaire de ressource ;</li></ul><p>Il définit 2
-  processus :</p>
-  <ul>
-    <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
-    <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
-  </ul>
-  <pre class="mermaid">
+  <section>
+    <h3>1.x</h3>
+    <p>OAuth 1.x ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client
+      /serveur</a> :
+    </p>
+    <ul>
+      <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>, <i lang="en">end user</i>) qui a le
+        contrôle d'accès aux ressources du serveur</li>
+      <li>le <b>serveur</b> (<span class="place">service provider</span>) héberge les ressources protégées</li>
+      <li>le <b>client</b> ou consommateur (<i lang="en">consumer</i>) qui n'est pas propriétaire de la resource, mais
+        agit en son nom  accède aux ressources contrôlées par le propriétaire de ressource ;</li>
+    </ul>
+    <p>Il définit 2 processus :</p>
+    <ul>
+      <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
+      <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
+    </ul>
+    <pre class="mermaid">
 sequenceDiagram
     Title OAuth 1.x worfklow
     Actor Resource Owner
@@ -67,25 +69,25 @@ sequenceDiagram
     Client->>Server: getResource(realm,consumer_key,oauth_token,signature)
     Server-->>Client: resource
  </pre>
-  <p>On voit donc qu'il existe 3 types d'identifiants (<i lang="en">credentials</i>) dans OAuth :</p>
-  <ul>
-    <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le Client faisant la requête</li>
-    <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
-    <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
-  </ul>
-</section>
-<section>
-  <h3>2.x</h3>
-  <p>Pour permettre de <b>déléguer l'autorisation</b> à un service tiers (Google par exemple), OAuth 2.x ajoute un 4ᵉ
-    rôle en permettant de séparer le rôle <i lang="en">serveur </i> de OAuth 1.x en :</p>
-  <ul>
-    <li><b>serveur de ressource</b> (<i lang="en">resource server</i>), recevant les demandes de ressources avec jetons
-      d'accès (<i lang="en">access tokens</i>) et les fournissant si elles sont valides ;</li>
-    <li><b>serveur d'autorisation</b> (<i lang="en">authorization server</i>) qui fournit au client des <b>jetons
-      d'accès</b> (<i lang="en">access tokens</i>, en échange d'un code d'autorisation typiquement) aux ressources
-      demandées, après authentification et autorisation du propriétaire de ressources.</li>
-  </ul>
-  <pre class="mermaid">
+    <p>On voit donc qu'il existe 3 types d'identifiants (<i lang="en">credentials</i>) dans OAuth :</p>
+    <ul>
+      <li><b>client</b> (<i lang="en">consumer key & secret</i>) pour identifier le Client faisant la requête</li>
+      <li><b>temporaire</b> (<i lang="en">request token & secret</i>) pour la demande d'autorisation</li>
+      <li><b>token</b> (<i lang="en">access token & secret</i>) pour l'autorisation d'accès</li>
+    </ul>
+  </section>
+  <section>
+    <h3>2.x</h3>
+    <p>Pour permettre de <b>déléguer l'autorisation</b> à un service tiers (Google par exemple), OAuth 2.x ajoute un 4ᵉ
+      rôle en permettant de séparer le rôle <i lang="en">serveur </i> de OAuth 1.x en :</p>
+    <ul>
+      <li><b>serveur de ressource</b> (<i lang="en">resource server</i>), recevant les demandes de ressources avec
+        jetons d'accès (<i lang="en">access tokens</i>) et les fournissant si elles sont valides ;</li>
+      <li><b>serveur d'autorisation</b> (<i lang="en">authorization server</i>) qui fournit au client des <b>jetons
+        d'accès</b> (<i lang="en">access tokens</i>, en échange d'un code d'autorisation typiquement) aux ressources
+        demandées, après authentification et autorisation du propriétaire de ressources.</li>
+    </ul>
+    <pre class="mermaid">
 sequenceDiagram
     Title OAuth 2.x worfklow
     Actor Resource Owner
@@ -108,15 +110,16 @@ sequenceDiagram
     Client->>Resource Server: getResource(realm,consumer_key,oauth_token,signature)
     Resource Server-->>Client: resource
     </pre>
-  <p>OAuth 2.x définit également les formes possibles d'une autorisation donnée par le propriétaire de ressource :</p>
-  <ul>
-    <li>un <b>code</b> d'autorisation (<i lang="en">authorization code</i>)</li>
-    <li>une autorisation <b>implicite</b> (<i lang="en">implicit</i>) qui évite la phase d'authentification du client
-    </li>
-    <li>un <b>mot de passe</b> (<i lang="en">password</i>)</li>
-    <li>des <b>identifiants client</b> (<i lang="en">client credentials</i>)</li>
-  </ul>
-  <p>Il existe également un mécanisme d'extensibilité pour ajouter d'autres formes d'autorisation.</p>
+    <p>OAuth 2.x définit également les formes possibles d'une autorisation donnée par le propriétaire de ressource :</p>
+    <ul>
+      <li>un <b>code</b> d'autorisation (<i lang="en">authorization code</i>)</li>
+      <li>une autorisation <b>implicite</b> (<i lang="en">implicit</i>) qui évite la phase d'authentification du client
+      </li>
+      <li>un <b>mot de passe</b> (<i lang="en">password</i>)</li>
+      <li>des <b>identifiants client</b> (<i lang="en">client credentials</i>)</li>
+    </ul>
+    <p>Il existe également un mécanisme d'extensibilité pour ajouter d'autres formes d'autorisation.</p>
+  </section>
 </section>
 <section>
   <h2>Implémentation</h2>

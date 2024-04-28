@@ -36,10 +36,10 @@
     certificats révoqués.</p>
   <h4>X.509</h4>
   <p>En l'occurrence Java ne définit qu'un type particulier de certificat, le <a
-      href="../../priv/crypt/X509.html">X.509</a>, largement utilisé par la plupart des protocoles. Il est représenté
+    href="../../privacy/crypto/X509.html">X.509</a>, largement utilisé par la plupart des protocoles. Il est représenté
     par la classe <code>java.security.cert.X509Certificate</code>. Cette classe n'est cependant pas jamais instanciée,
     et dérivable par différents fournisseurs souhaitant fournir une implémentation de certificats <a
-        href="../../priv/crypt/X509.html">X.509</a>. </p>
+      href="../../privacy/crypto/X509.html">X.509</a>. </p>
   <p>Afin de pouvoir valider d'autres certificats, la plate-forme Java [1.2+] (<a href="#JDK">JDK</a> ou <a href="#JRE">JRE</a>/<a
       href="/org/us/company/oracle/sun/ptf/java/JPI.html">plugin</a>) inclut — comme les <a
       href="../../../proj/design/arch/web/client">navigateurs</a>
@@ -53,7 +53,8 @@
   sur votre machine.</span></p>
   <p>La génération d'un tel certificat s'effectue via l'option <code>-genkey</code> de <code>keytool</code>. Sont alors
     stockées dans la <a href="#keystore">base de clés</a> (<code>%HOME%\.keystore</code> par défaut) une nouvelle clé
-    privée et une nouvelle clé publique associée, ainsi qu'un certificat (<a href="../../priv/crypt/X509.html">X.509</a>
+    privée et une nouvelle clé publique associée, ainsi qu'un certificat (<a
+      href="../../privacy/crypto/X509.html">X.509</a>
     v1 uniquement pour l'instant) auto-signé certifiant la valeur de sa propre clé-publique. A chacune de ces identités
     générées est associé un alias qui peut être spécifié à <code>keytool</code> (<code>mykey</code> par défaut). Par
     exemple :</p>
@@ -66,7 +67,7 @@
   <h2>Exemples</h2>
   <p>Des exemples de formats de certificats sont :</p>
   <ul>
-    <li><a href="../../priv/crypt/X509.html">X.509</a></li>
+    <li><a href="../../privacy/crypto/X509.html">X.509</a></li>
   </ul>
 </section>
 <section>
@@ -76,11 +77,11 @@
       une <a href="/tech/info/soft/sec/auth/cert/CSR.html">CSR</a>.</li>
     <li><b></b> Le format ASN (<i>Abstract Syntax Notation</i>) est un standard définissant le format d'un certificat.
       ASN.1 peut par exemple être utilisé pour représenter un certificat <a
-          href="../../priv/crypt/X509.html">X.509</a>.</li>
+        href="../../privacy/crypto/X509.html">X.509</a>.</li>
     <li> On peut récupérer la version codée (à écrire dans un fichier, à télécharger...) d'un certificat sous forme d'un
       tableau d'octets. Cette méthode abstraite (<code>getEncoded()</code>) sera donc implémentée différemment par les
       différents types de certificats (un certificat <a
-          href="../../priv/crypt/X509.html">X.509</a> retournera un ensemble d'octets au format ASN.1/<a
+        href="../../privacy/crypto/X509.html">X.509</a> retournera un ensemble d'octets au format ASN.1/<a
           href="DER.html">DER</a> par exemple).
     </li>
     <li>On peut vérifier si un certificat a bien été signé par une identité donnée si l'on dispose de la clé publique

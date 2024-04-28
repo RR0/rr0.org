@@ -3,28 +3,27 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
-  <p>Définir un ensemble des techniques permettant de fournir :</p>
+  <p>Définir un ensemble des techniques permettant de fournir :</p>
   <ul>
     <li><a href="../auth">authentification</a></li>
-    <li><a href="/tech/info/soft/sec/integ">intégrité</a></li>
+    <li><a href="../integrity">intégrité</a></li>
     <li><a href=".">confidentialité</a></li>
   </ul>
 </section>
 <section>
   <h2>Implémentation</h2>
-  <p><a href="/org/us/company/oracle/sun/ptf/java">Java</a> offre des <a href="../../API.html">API</a> cryptographiques
-    mettant en œuvre :</p>
+  <p><a href="/org/us/company/oracle/sun/ptf/java">Java</a> offre des <a href="/tech/info/soft/API.html">API</a>
+    cryptographiques mettant en œuvre :</p>
   <ul>
-    <li><strong>authentification</strong> : savoir d'où vient un code</li>
-    <li><strong><a href="/tech/info/soft/sec/integ">intégrité</a></strong> : garantir qu'un message (code
-      ou autre) n'a pas été modifié
+    <li><b>authentification</b> : savoir d'où vient un code</li>
+    <li><b><a href="../integrity">intégrité</a></b> : garantir qu'un message (code ou autre) n'a pas été modifié
     </li>
-    <li><strong>confidentialité </strong>: cryper le transit</li>
-    <li><strong>Non-rejouabilité</strong> : Même en ne comprenant rien aux messages échangés entre deux parties, une
-      partie intermédiaire peut toujours enregistrer ces messages pour les ré-émettre ("rejouer") ensuite. Il est donc
-      important de toujours introduire une partie variable dans chaque message (identifiant de session ou <i>token</i>,
-      fonction du temps...)et d'éviter l'utilisation de mots de passe constants et donc rejouables,que l'on préférera
-      remplacer par des système d'authentificationnon-rejouables (<em>one-time password</em>, etc.)</li>
+    <li><b>confidentialité</b> : cryper le transit</li>
+    <li><b>Non-rejouabilité</b> : Même en ne comprenant rien aux messages échangés entre deux parties, une partie
+      intermédiaire peut toujours enregistrer ces messages pour les réémettre ("rejouer") ensuite. Il est donc important
+      de toujours introduire une partie variable dans chaque message (identifiant de session ou <i>token</i>, fonction
+      du temps...) et d'éviter l'utilisation de mots de passe constants et donc rejouables, que l'on préférera remplacer
+      par des systèmes d'authentification non-rejouables (<i lang="en">one-time password</i>, etc.)</li>
   </ul>
   <table>
     <thead>
@@ -32,7 +31,7 @@
       <td colspan="2" class="titleCorner"></td>
       <th> Version</th>
       <th colspan="2">1</th>
-      <th width="301" rowspan="2"> Commentaire</th>
+      <th rowspan="2"> Commentaire</th>
     </tr>
     <tr>
       <th> Domaine</th>
@@ -93,8 +92,9 @@
     </tr>
   </table>
   <p>Afin de permettre à tout éditeur de fournir une implémentationd'un ou de plusieurs concepts de sécurité introduits
-    dans Java2, tout classe de sécurité générique (<i>engineclass</i>) est implémentée sous forme de fabrique (<i>factory</i>)retournant
-    les implémentations paramétrées dans la plate-forme(on retrouve là le modèle de <a href="../../SPI.html">SPI</a>)
+    dans Java2, tout classe de sécurité générique (<i lang="en">engineclass</i>) est implémentée sous forme de fabrique
+    (<i>factory</i>)retournant les implémentations paramétrées dans la plate-forme (on retrouve là le modèle de <a
+      href="/tech/info/soft/SPI.html">SPI</a>)
   </p>
   <p>Tout fournisseur est effectivement susceptible de ne pas implémenterun protocole demandé par une application (il
     pourra fournir une implémentation de signature RSA/MD2 mais pas de RSA/MD5 par exemple). Il est donc
@@ -106,14 +106,13 @@
   <ul>
     <li>les clés publiques et privées (génération DSA ou RSA, mapping sur une clé abstraite)
     </li>
-    <li>les <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensés de message</a> (MD2, MD5, SHA)</li>
+    <li>les <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés de message</a> (MD2, MD5, SHA)</li>
     <li>les <a href="../auth/sign">signatures</a> (DSA + SHA, RSA + MD5...)</li>
-    <li>les <a href="../auth/cert">certificats</a> (<a href="crypt/X509.html">X.509</a>) et leurs listes de révocation
-      (CRL)
+    <li>les <a href="../auth/cert">certificats</a> (<a href="X509.html">X.509</a>) et leurs listes de révocation (CRL)
     </li>
     <li>la base locale d'informations sur les clés et <a
-        href="../auth/cert">certificats</a> (permettant différentes implémentation du stockage, sur une carte à puce,
-      sur un Java Ring, par exemple)
+      href="../auth/cert">certificats</a> (permettant différentes implémentation du stockage, sur une carte à puce, sur
+      un Java Ring, par exemple)
     </li>
     <li>Paramètres d'algorithme</li>
     <li>Générateur de paramètres d'algorithme</li>
@@ -121,13 +120,13 @@
   </ul>
   <section>
     <h3>Base de clés</h3>
-    <p>L'implémentation par défaut de la base de <a href="../../proj/impl/struct/Key.html">clés</a>est la base "JKS"
-      (<i>Java Key Store</i>) de Sun. Cette implémentationeffectue la persistance de l'objet <code>java.security.KeyStore</code>
+    <p>L'implémentation par défaut de la base de clés est la base "<abbr
+      title="Java Key Store">JKS</abbr>" de Sun. Cette implémentationeffectue la persistance de l'objet <code>java.security.KeyStore</code>
       dansun fichier au format propriétaire.</p>
     <p>Sun fournit de plus dans le JDK 1.2 l'outil <code>keytool</code>, qui permetun accès utilisateur (bien qu'en
       ligne de commande) à un objetKeyStore stocké dans un tel fichier.</p>
     <p>Si l'on utilise la base de clé JKS de Sun, le fichier chargépar défaut par la plate-forme (et par
-      <code>keytool</code>) est par ordrede préférence :</p>
+      <code>keytool</code>) est par ordre de préférence :</p>
     <ol>
       <li>le fichier <code>.keystore</code> trouvé dans le répertoire HOME de l'utilisateur courant (<code>d:\WINNT\Profiles\Administrateur</code>
         par exemple, mais c'est à l'utilisateur de le créer)
@@ -155,46 +154,45 @@
   <ul>
     <li>L'approche cryptographique n'est pas suffisante en elle-même pour assurer une <a href="..">sécurité</a>.
       D'autres aspects doivent être pris en compte (<a href="../../proj/design/arch">architecture</a>, <a
-          href="../../proj/impl/lang">langage</a>, OS).
+        href="../../proj/impl/lang">langage</a>, OS).
     </li>
   </ul>
 </section>
 <section>
   <h2>Notes</h2>
   <ul>
-    <li> A partir de <time>1998-03</time>, le cryptage "fort" (utilisant des clés de plus de 40 bits) peut être (enfin)
-      autorisé s'il est déclaré auprès d'un "tiers de confiance", une société agréée "secret-défense" tenue de révéler
-      le secret de ses coffres aux militaires (on doit y déposer les clés utilisées). Il n'existe en fait qu'une société
-      de ce type en France : Trithème, filiale de Thomson-CSF. Le <time>1999-01-19</time>, le 1er ministre annonce qu'un
-      décret de Février va porter la limite du cryptage libre de 40 (déchiffrable en 2 semaines avec un PC) à 128 bits.
-      Cependant, des accords internationaux (accords de Wassenaar signés en <time>
-        1998-12</time>) interdisent l'exportation de logiciels de cryptage utilisant des clés supérieures à 56 bits. On
-      a donc le droit de crypter, mais avec des logiciels nationaux (ce qui n'est pas le cas de PGP par exemple).
-    </li>
+    <li>À partir de <time>1998-03</time>, le chiffrement "fort" (utilisant des clés de plus de 40 bits) peut être
+      (enfin) autorisé s'il est déclaré auprès d'un "tiers de confiance", une société agréée "secret-défense" tenue de
+      révéler le secret de ses coffres aux militaires (on doit y déposer les clés utilisées). Il n'existe en fait qu'une
+      société de ce type en France : Trithème, filiale de Thomson-CSF. Le <time>1999-01-19</time>, le 1er ministre
+      annonce qu'un décret de février va porter la limite du chiffrement libre de 40 (déchiffrable en 2 semaines avec un
+      PC) à 128 bits. Cependant, des accords internationaux (accords de Wassenaar signés en <time>1998-12</time>)
+      interdisent l'exportation de logiciels de chiffrement utilisant des clés supérieures à 56 bits. On a donc le droit
+      de crypter, mais avec des logiciels nationaux (ce qui n'est pas le cas de PGP par exemple).</li>
     <li>Comme pour les plugins, le modèle de sécurité ActiveX autorise tout par défaut (non signé), alors que Java
       n'autorise rien par défaut. ActiveX repose entièrement sur le jugement de l'utilisateur. Lorsqu'une fenêtre
       s'affiche en indiquant que Verisign garantit que Joe Schmoe est bien l'auteur du programme téléchargé, on ne peut
-      prendre de décision raisonnable si l'on ne sais pas qui est Joe Schmoe.
-    </li>
+      prendre de décision raisonnable si l'on ne sait pas qui est Joe Schmoe.</li>
   </ul>
   <p><b><a id="Blowfish"> </a>Blowfish</b></p>
-  <p>Algorithme de cryptage.</p>
+  <p>Algorithme de chiffrement.</p>
   <p><b><a id="Diffie-Hellman"></a>Diffie-Hellman</b></p>
-  <p>Algorithme de cryptage du nom de ses deux auteurs, Whit Diffie (l'un des plus grands experts mondiaux en matière de
-    sécurité) et Hellman.</p>
+  <p>Algorithme de chiffrement du nom de ses deux auteurs, Whit Diffie (l'un des plus grands experts mondiaux en matière
+    de sécurité) et Hellman.</p>
   <p> Diffie Hellman est disponible dans la <a
-      href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>.
+    href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>.
   </p>
   <p><b><a id="MOSS"></a>MOSS</b></p>
   <p>Standard de sécurisation du courrier électronique conçu pour dépasser les limites de <a
-      href="../auth/cert/PEM.html">PEM</a> en supportant les messages <a href="../../proj/design/arch/web/MIME.html">MIME</a>.
+    href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a> en supportant les messages <a
+    href="/tech/info/soft/proj/design/arch/web/MIME.html">MIME</a>.
   </p>
   <p>Parce que MOSS est plus un framework qu'une spécification, et parce qu'il dispose de nombreuses implémentations
     différentes, deux correspondants MOSS peuvent avoir des difficultés à communiquer. On pourra donc lui préférer <a
-        href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>, clairement défini.</p>
+      href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>, clairement défini.</p>
   <p><b><a id="RIPEMD"></a>RIPEMD-160</b></p>
-  <p>Acronyme pour <i>RIPE Message Digest,</i> algorithme de hâchage permettant de générer des <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensés
-    de messages</a>.</p>
+  <p>Acronyme pour <i>RIPE Message Digest,</i> algorithme de hâchage permettant de générer des <a
+    href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés de messages</a>.</p>
   <p>RIPEMD-160 ou <a href="#SHA">SHA</a> sont considérés comme plus sûr que MD5, dans la mesure ou MD5 a été cassé
     (pour des messages courts cependant). <a href="#MD5">RSA</a> elle-même ne recommande plus l'utilisation de MD5.</p>
   <p><b><a id="RNG"></a>RNG</b></p>
@@ -208,20 +206,21 @@
   </p>
   <p><b><a id="SET"></a>SET</b></p>
   <p>Acronyme pour <i>Secure Electronic Transaction</i>s.</p>
-  <p> Protocole de commerce électronique situé au-dessus de <a href="crypt/SSL.html">SSL</a>, permettant les
-    authentifications des clients porteurs de cartes de crédit, des commerçants et des fournisseurs, l'<a
-        href="/tech/info/soft/sec/integ">intégrité</a> et la confidentialité des informations de paiement
-    (du client vers le commerçant) et de commande (du commerçant vers le fournisseur).</p>
-  <p>Comme <a href="crypt/SSL.html">SSL</a>, SET exploite les <a
-      href="../auth/cert">certificats</a> <a href="crypt/X509.html">X509</a>.</p>
+  <p> Protocole de commerce électronique situé au-dessus de <a
+    href="SSL.html">SSL</a>, permettant les authentifications des clients porteurs de cartes de crédit, des commerçants
+    et des fournisseurs, l'<a
+      href="../integrity">intégrité</a> et la confidentialité des informations de paiement (du client vers le
+    commerçant) et de commande (du commerçant vers le fournisseur).</p>
+  <p>Comme <a href="SSL.html">SSL</a>, SET exploite les <a
+    href="../auth/cert">certificats</a> <a href="X509.html">X509</a>.</p>
   <p><b><a id="SKIP"></a>SKIP</b></p>
   <p>Acronyme pour <i>Secure Key Internet Protocol</i>.</p>
   <p><b><a id="TLS"></a>TLS</b></p>
-  <p>Nouvelle génération de <a href="crypt/SSL.html">SSL</a>.</p>
+  <p>Nouvelle génération de <a href="SSL.html">SSL</a>.</p>
   <p><b><a id="TIPEM"></a>TIPEM</b></p>
   <p>Acronyme pour <i>Toolkit for Interoperable Privacy Ehanced Mail</i>, librarie de <a
-      href="/org/us/company/RSA.html">RSA</a> permettant de développer des produits intégrant <a
-      href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a> dans les applications de courrier électronique.</p>
+    href="/org/us/company/RSA.html">RSA</a> permettant de développer des produits intégrant <a
+    href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a> dans les applications de courrier électronique.</p>
   <h2> Voir</h2>
   <ul>
     <li><a href="https://www.ibm.com/java/education/papers-security.html" class="code"> IBM Java Education - White
@@ -244,13 +243,13 @@
         <li><a href="https://java.sun.com/products/jdk/1.2/docs/guide/security/CryptoSpec.html" class="code">Java
           Cryptography Architecture Security API Specification &amp; Reference</a></li>
         <li><a href="https://java.sun.com/products/jdk/1.2/docs/guide/security/HowToImplAProvider.html"
-            class="code">How to implement a provider for the Java Cryptography Architecture</a></li>
+          class="code">How to implement a provider for the Java Cryptography Architecture</a></li>
         <li><a href="https://java.sun.com/products/jdk/1.2/docs/guide/security/doprivileged.html"><span
-            class="code">API
+          class="code">API
         for Privileged Blocks</span></a></li>
         <li>
           <a href="https://developper.javasoft.com/developper/technicalArticles/monicap/Security/Crypto/crypto.html"
-              class="code">Cryptography : The Ancien Art of Secret Messages</a></li>
+            class="code">Cryptography : The Ancien Art of Secret Messages</a></li>
         <li><a href="https://developper.javasoft.com/developper/technicalArticles/JCE" class="code">Java 2 Cryptography
           Extension (JCE) : Encrypting and Decrypting Data</a></li>
       </ul>
@@ -260,7 +259,7 @@
         <li><a href="https://java.sun.com/security/signExample/" class="code">Exemple d'applet signée</a></li>
         <li>
           <a href="https://developer.javasoft.com/developer/technicalArticles/monicap/Security/Tools/signed.html"
-              class="code">Applets signées, navigateurs, et accès aux fichiers</a></li>
+            class="code">Applets signées, navigateurs, et accès aux fichiers</a></li>
       </ul>
     </li>
     <li>Formation
@@ -285,7 +284,8 @@
         <li><i>La Science du Secret</i> de Jacques Stern (Odile Jacob).</li>
         <li><a href="https://www.liberation.com/multi/cahier/articles/sem99.05/cah990129i.html">Liberation du 29 janvier
           1999 - Les Clés du Secret</a></li>
-        <li>RSA Laboratories - <a href="https://www.rsasecurity.com/rsalabs/faq/"><em>FAQ about today's cryptography</em></a>
+        <li>RSA Laboratories - <a href="https://www.rsasecurity.com/rsalabs/faq/"><em>FAQ about today's
+          cryptography</em></a>
         </li>
       </ul>
     </li>

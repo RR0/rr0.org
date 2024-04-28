@@ -1,15 +1,25 @@
-import {Logger} from "ssg-api"
+import { Logger } from "ssg-api"
 
 import csv from "csv-parser"
+import fs from "fs"
+
+export type ReadResultFactory<T> = (data: any) => T
 
 export class CSVFileReader<T> {
   protected values: T[] = []
 
   constructor(
-    protected stream: any,
+    protected stream: fs.ReadStream,
     protected logger: Logger,
     protected columnNames: string[],
-    protected separator = ";"
+    protected separator = ";",
+    protected create: ReadResultFactory<T> = (data: any): T => {
+      const obj = {}
+      for (const column of columnNames) {
+        obj[column] = data[column]
+      }
+      return obj as T
+    }
   ) {
   }
 
@@ -32,11 +42,8 @@ export class CSVFileReader<T> {
           }
         })
         .on("data", (data: any) => {
-          const columnValue: any = {}
-          for (const column of columnNames) {
-            columnValue[column] = data[column]
-          }
-          readValues.push(columnValue as T)
+          const columnValue = this.create(data)
+          readValues.push(columnValue)
         })
         .on("end", () => {
           this.logger.debug("Read", readValues)

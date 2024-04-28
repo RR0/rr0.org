@@ -6,31 +6,31 @@
   <ul>
     <li>Fonctionnel
       <ul>
-        <li><b><a href="priv/Cryptographie.html">cryptographie</a></b> (<a href="priv">confidentialité</a>, <a
-            href="auth">authenticité</a>, <a
-            href="/tech/info/soft/sec/integ">intégrité</a>)
+        <li><b><a href="privacy/crypto">cryptographie</a></b> (<a href="privacy">confidentialité</a>, <a
+          href="auth">authenticité</a>, <a
+          href="integrity">intégrité</a>)
         </li>
         <li><b>Audit </b>: la trace des transactions doit être conservée en cas de contestation d'une partie ou pour des
           statistiques commerciales</li>
         <li><b>Légalité </b>: les transactions doivent être conformes aux lois des pays impliqués (législation de vente,
-          restrictions <a href="priv/Cryptographie.html">cryptographiques</a>)</li>
+          restrictions <a href="privacy/crypto">cryptographiques</a>)</li>
       </ul>
     </li>
     <li>Technique
       <ul>
         <li><b>Evolutivité </b>(ouvertures à de nouvelles solutions de paiement par exemple)</li>
-        <li><b>Intéropérabilité </b> entre les différents prestataires de services commerciaux (boutiques, fournisseurs,
+        <li><b>Intéropérabilité</b> entre les différents prestataires de services commerciaux (boutiques, fournisseurs,
           banques...)</li>
-        <li><b>Distribution</b> : l'informatique d'aujourd'hui est dominée par le réseau et adopte un modèle coopératif,
+        <li><b>Distribution</b> : l'informatique d'aujourd'hui est dominée par le réseau et adopte un modèle coopératif,
           plus souple. Il implique cependant de nouvelles contraintes de sécurité distribuée. </li>
-        <li><b>Portabilité </b> : les architectures logicielles sont aujourd'hui dynamiques, et dépendent de moins en
+        <li><b>Portabilité</b> : les architectures logicielles sont aujourd'hui dynamiques, et dépendent de moins en
           moins d'une l'architecture matérielle. Une même architecture logicielle peut se déployer sur différentes
           architectures matérielles (exploitant des postes clients tels que <a href="/tech/info/hard/computer/PC.html">PC</a>,
           <a href="/org/us/company/apple/soft/MacOS">Mac</a> ou NC, des serveurs divers ainsi que d'autres plates-formes
           telles que les appareils portables) et les exploiter différemment (exploitation de la puissance de traitement,
           exploitation des périphériques). Cette capacité implique la mobilité du code et donc de nouvelles contraintes
           de sécurité.</li>
-        <li><b>Simplicité</b> : les opérations techniques, et notamment les opérations de sécurité doivent être
+        <li><b>Simplicité</b> : les opérations techniques, et notamment les opérations de sécurité doivent être
           transparentes pour l'utilisateur, et non pas constituer une contrainte à l'accès au service</li>
       </ul>
     </li>
@@ -41,19 +41,19 @@
   <p>La sécurité peut être abordée sous différents angles :</p>
   <ul>
     <li>la définition d'une <b><a href="../proj/design/arch">architecture</a> </b>matérielle/<a
-        href="/tech/info/soft/reseau">réseau</a> (<a href="/tech/info/soft/reseau/PareFeu.html">firewalls</a>, <a
-        href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">proxies</a>, etc.). La compréhension des
+      href="/tech/info/soft/reseau">réseau</a> (<a href="/tech/info/soft/reseau/PareFeu.html">firewalls</a>, <a
+      href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">proxies</a>, etc.). La compréhension des
       problématiques <a
-          href="/tech/info/soft/reseau">réseau</a> liées à la sécurité est effectivement importante dans la mesure où
+        href="/tech/info/soft/reseau">réseau</a> liées à la sécurité est effectivement importante dans la mesure où
       elles ont un impact sur les possibilités des applications développées (un <a
-          href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveur proxy</a> peut fortement limiter les
+        href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveur proxy</a> peut fortement limiter les
       possibilités d'une <a
-          href="../Application.html">application</a> par exemple, et il faut savoir comment intégrer une application
-      dans une telle architecture).</li>
-    <li>l'utilisation de procédés <b><a href="priv/Cryptographie.html">cryptographiques</a></b></li>
+        href="../Application.html">application</a> par exemple, et il faut savoir comment intégrer une application dans
+      une telle architecture).</li>
+    <li>l'utilisation de procédés <b><a href="privacy/crypto">cryptographiques</a></b></li>
     <li>l'utilisation des caractéristiques de sécurité d'un <a href="/tech/info/soft/proj/impl/lang"> <b>langage</b></a>
       : Cette dernière approche est relativement nouvelle, et trouve un nouvel essort grâce à <a
-          href="/org/us/company/oracle/sun/ptf/java">Java</a>.</li>
+        href="/org/us/company/oracle/sun/ptf/java">Java</a>.</li>
     <li>le paramétrage de l'<strong>OS</strong></li>
   </ul>
   <p>C'est au travers d'une approche par composants qu'il convient de considérer les problématiques de sécurité, chaque
@@ -119,8 +119,8 @@
     <h3>API</h3>
     <p><a href="/org/us/company/oracle/sun/ptf/java">Java</a> offre des <a href="../API.html">API</a> cryptographiques
       ainsi que des moyens de s'interfacer avec des composants matériels (réseau typiquement) tels que les <a
-          href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">proxies</a> ou suites cryptographiques via
-      des API adéquates.</p>
+        href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">proxies</a> ou suites cryptographiques via des
+      API adéquates.</p>
     <p>Les objectifs de <a href="/org/us/company/oracle/sun/ptf/java">Java</a> en matière de sécurité sont de : </p>
     <ul>
       <li><b>Maximiser la sécurité pour le code suspect</b></li>
@@ -134,8 +134,7 @@
     <ul>
       <li><strong>authentification</strong> : vous savez d'où vient le code
       </li>
-      <li><strong><a href="/tech/info/soft/sec/integ">intégrité</a></strong> : on vous garantit que le code n'a pas été
-        modifié </li>
+      <li><strong><a href="integrity">intégrité</a></strong> : on vous garantit que le code n'a pas été modifié </li>
       <li><strong>confidentialité </strong>: le transit a été crypté</li>
       <li><strong>contrôle d'accès</strong> : la sandbox ou les domaines de protection ont protégé vos ressources
         locales.
@@ -144,7 +143,7 @@
     <p>Afin de permettre à tout éditeur de fournir une implémentation d'un ou plusieurs de ces concepts de sécurité, à
       toute classe de sécurité générique (<i>engine class</i>) est associée une fabrique (<i>factory</i>) retournant les
       implémentations paramétrées dans la plate-forme (on retrouve là le modèle de <a
-          href="/tech/info/soft/SPI.html">SPI</a>).</p>
+        href="/tech/info/soft/SPI.html">SPI</a>).</p>
     <p>Tout fournisseur est effectivement susceptible de ne pas implémenter un protocole demandé par une application (il
       pourra fournir une implémentation de signature RSA/MD2 mais pas de RSA/MD5 par exemple). Il est donc possible
       d'installer dans la plate-forme plusieurs implémentations des classes de sécurité, avec un ordre de préférence.
@@ -153,10 +152,10 @@
     <p>Les concepts implémentables par un fournisseur sont :</p>
     <ul>
       <li>les clés publiques et privées (génération DSA ou RSA, mapping sur une clé abstraite)</li>
-      <li>les <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensés de message</a> (MD2, MD5, SHA)</li>
+      <li>les <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés de message</a> (MD2, MD5, SHA)</li>
       <li>les <a href="/tech/info/soft/sec/auth/sign">signatures</a> (DSA + SHA, RSA + MD5...)</li>
       <li>les <a href="auth/cert">certificats</a> (<a
-          href="priv/crypt/X509.html">X.509</a>) et leurs listes de révocation (CRL)</li>
+        href="privacy/crypto/X509.html">X.509</a>) et leurs listes de révocation (CRL)</li>
       <li>la base locale d'informations sur les clés et <a href="auth/cert">certificats</a> (permettant différentes
         implémentation du stockage, sur une carte à puce, sur un Java Ring, par exemple)</li>
       <li>Paramètres d'algorithme</li>
@@ -169,7 +168,7 @@
         <td colspan="2" class="titleCorner"></td>
         <th> Version</th>
         <th colspan="2">1</th>
-        <th width="301" rowspan="2"> Commentaire</th>
+        <th rowspan="2"> Commentaire</th>
       </tr>
       <tr>
         <th> Domaine</th>
@@ -200,7 +199,7 @@
         <td></td>
       </tr>
       <tr>
-        <th><a href="priv/Cryptographie.html">Cryptographie</a></th>
+        <th><a href="privacy/crypto">Cryptographie</a></th>
         <th>Implémentations</th>
         <th></th>
         <td>JDK</td>
@@ -254,8 +253,8 @@
       <li>robustesse
         <ul>
           <li><b>l'exécution dans un <a
-              href="/tech/info/soft/proj/design/arch/platform/Processus.html">processus</a></b> (celui de la <a
-              href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a>) garantit généralement un espace d'adressage mémoire
+            href="/tech/info/soft/proj/design/arch/platform/Processus.html">processus</a></b> (celui de la <a
+            href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a>) garantit généralement un espace d'adressage mémoire
             limité en lecture et en écriture, voire un jeu d'instructions limité. Il offre de plus une protection contre
             les plantages de la machine (une erreur fatale plante le processus, mais pas l'OS).</li>
         </ul>
@@ -267,9 +266,9 @@
             garantit l'intégrité de l'état (des données) d'un objet (moyennant un développement vertueux, que des
             attributs privés par exemple). D'une manière générale, l'accès aux données est contrôlé par l'interface du
             type de ces données, à l'exception malheureuse des classes internes (<i>inner classes</i> du <a
-                href="/tech/info/soft/proj/impl/lang/java">langage Java</a>). Cette sécurité permet d'autoriser
-            plusieurs flots d'exécutions (code + <a
-                href="/tech/info/soft/proj/design/arch/platform/Thread.html">threads</a>) à partager le même espace
+              href="/tech/info/soft/proj/impl/lang/java">langage Java</a>). Cette sécurité permet d'autoriser plusieurs
+            flots d'exécutions (code + <a
+              href="/tech/info/soft/proj/design/arch/platform/Thread.html">threads</a>) à partager le même espace
             d'adressage, ce qui est plus performant que d'exécuter plusieurs applications dans des espaces d'adressage
             différents ou d'utiliser une zone d'échange commune.</li>
           <li><b>Modificateurs d'accès </b>(<code>private</code>, <code>protected</code>, <code>final</code>). Encore
@@ -295,7 +294,7 @@
       <li><b>Pas de préprocesseur</b> - </li>
       <li><strong><a href="/tech/info/soft/proj/impl/lang/Exception.html">Exceptions</a> </strong>systématiquement
         remontées, doivent être gérées (compilateur), ou sont gérées par la <a
-            href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a> (stacktrace output).
+          href="/org/us/company/oracle/sun/ptf/java/vm">JVM</a> (stacktrace output).
       </li>
     </ul>
   </section>
@@ -311,7 +310,7 @@
       gagner...). Mettre en place une politique de sécurité consiste toujours en définitive à définir quel niveau de
       risque est acceptable pour un système donné. Plus vous avez à perdre, plus vous êtes prêt à payer pour le
       préserver. <span
-          class="note">La sécurité
+        class="note">La sécurité
     implémentée dans la plate-forme Java se doit donc d'être
     souple, et non rigide, afin de pouvoir s'adapter aux contraintes de chacun.
     Elle ne doit pas (comme dans ses premières versions), imposer <i>par
@@ -332,7 +331,8 @@
     <li><b>Plus un algorithme est connu, plus il est sûr :</b> il est illusoire de penser qu'une bonne implémentation
       d'un algorithme de sécurité est une implémentation confidentielle. Au contraire, tout bon algorithme de sécurité
       (et tout bon système en général) est un algorithme connu de tous, dont chacun peut déceler les failles et les
-      corriger. Nombre d'implémentations d'algorithmes sont disponibles en <a href="../OpenSource.html">OSS</a>.</li>
+      corriger. Nombre d'implémentations d'algorithmes sont disponibles en <a href="/tech/info/soft/prod/licence/oss">OSS</a>.
+    </li>
     <li><b>Un modèle de sécurité efficace est un modèle en couches</b>. La responsabilité de la sécurité doit être
       l'affaire de différentes composantes, et non d'une seule (le modèle de <i>sandbox </i>de Java 1.1 est donc un
       mauvait modèle, corrigé dans Java 2). Chaque composante à son rôle dans la politique de sécurité, et l'ensemble du
@@ -361,8 +361,8 @@
     <li><b>le modèle objet</b> masque l'implémentation derrière une interface, autorisant ainsi le remplacement d'une
       implémentation par une autre sans que le client n'en soit conscient. Un code hostile peut ainsi être accédé à
       distance ou téléchargé. De la même manière, l'utilisation de noms symboliques (services d'annuaires tels que <a
-          href="../reseau/protocole/5/DNS.html">DNS</a> ou autres) permet de remplacer une implémentation par une autre et donc de
-      redéfinir des services de confiance. </li>
+        href="../reseau/protocole/5/DNS.html">DNS</a> ou autres) permet de remplacer une implémentation par une autre et
+      donc de redéfinir des services de confiance. </li>
     <li><b>la redondance de divers mécanismes de sécurité</b> implémentés dans la plate-forme Java alors qu'ils sont
       parfois offerts par les couches sous-jacentes (OS, matériel, réseau, cryptographie des communications). Ceci peut
       nuire à la <a href="/tech/info/Performance.html">performance</a>.
@@ -375,23 +375,23 @@
     <li><b>le manque de standards de sécurité aboutis, implémentés et largement diffusés</b> (dans les navigateurs
       notamment), manque comblé par des implémentations propriétaires (par Netscape, Microsoft). Ces implémentations
       propriétaires de la plate-forme Java sont aujourd'hui contournables grâce au <a
-          href="/org/us/company/oracle/sun/ptf/java/JPI.html">Plugin Java</a>
+        href="/org/us/company/oracle/sun/ptf/java/JPI.html">Plugin Java</a>
     </li>
     <li>avant Java 1.2 :
       <ul>
-        <li>la complexité de la mise en œuvre de mécanismes de sécurité dans Java 1.1 (dérivation de SecurityManagers
-          et de ClassLoaders). Ceci est résolu depuis Java 2 [J2SE 1.2] par l'implémentation de politiques de sécurité
-          est simplifiée (plus besoin de dériver des SecurityManagers ou ClassLoaders).</li>
+        <li>la complexité de la mise en œuvre de mécanismes de sécurité dans Java 1.1 (dérivation de SecurityManagers et
+          de ClassLoaders). Ceci est résolu depuis Java 2 [J2SE 1.2] par l'implémentation de politiques de sécurité est
+          simplifiée (plus besoin de dériver des SecurityManagers ou ClassLoaders).</li>
         <li>l'immaturité de la plate-forme Java dans le domaine de la sécurité en Java 1.1 : API limitée aux <a
-            href="/tech/info/soft/sec/auth/sign">signatures</a> et <a
-            href="/tech/info/soft/proj/impl/lang/Exception.html">condensés de messages</a> (pas de <a href="auth/cert">certificats</a>),
+          href="/tech/info/soft/sec/auth/sign">signatures</a> et <a
+          href="/tech/info/soft/proj/impl/lang/Exception.html">condensés de messages</a> (pas de <a href="auth/cert">certificats</a>),
           absence de permissions fines pour du code téléchargé (logique "tout ou rien" de la <i>sandbox</i> 1.1). Ce
           manque a été comblé à nouveau par des implémentations propriétaires (<i>Netscape Capabilities API</i> par
           exemple). Cependant Java 2 [J2SE 1.2] a introduit la <a
-              href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCA.html">JCA</a>, définissant une véritable
+            href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCA.html">JCA</a>, définissant une véritable
           architecture de sécurité supportant des protocoles importants du monde de la sécurité (<a
-              href="auth/cert">certificats</a> <a
-              href="priv/crypt/X509.html">X.509</a>, etc.).</li>
+            href="auth/cert">certificats</a> <a
+            href="privacy/crypto/X509.html">X.509</a>, etc.).</li>
       </ul>
     </li>
     <li>limitations du <a href="/tech/info/soft/proj/impl/lang/java">langage Java</a>.</li>
@@ -408,14 +408,14 @@
     télécharger des nouveaux gestionnaires de protocoles (JAF ?) et du code (applications) en général.</p>
   <p><b><a id="MOSS"></a>MOSS</b></p>
   <p>Standard de sécurisation du courrier électronique conçu pour dépasser les limites de <a
-      href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a> en supportant les messages <a
-      href="/tech/info/soft/proj/design/arch/web/MIME.html">MIME</a>.</p>
+    href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a> en supportant les messages <a
+    href="/tech/info/soft/proj/design/arch/web/MIME.html">MIME</a>.</p>
   <p>Parce que MOSS est plus un framework qu'une spécification, et parce qu'il dispose de nombreuses implémentations
     différentes, deux correspondants MOSS peuvent avoir des difficultés à communiquer. On pourra donc lui préférer <a
-        href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>, clairement défini.</p>
+      href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>, clairement défini.</p>
   <p><b><a id="RIPEMD"></a>RIPEMD-160</b></p>
   <p>Acronyme pour <i>RIPE Message Digest,</i> algorithme de hâchage permettant de générer des <a
-      href="/tech/info/soft/sec/integ/MessageDigest.html">condensés de messages</a>.</p>
+    href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés de messages</a>.</p>
   <p>RIPEMD-160 ou <a href="#SHA">SHA</a> sont considérés comme plus sûr que MD5, dans la mesure ou MD5 a été cassé
     (pour des messages courts cependant). <a href="/org/us/company/RSA.html">RSA</a> elle-même ne recommande plus
     l'utilisation de MD5.</p>
@@ -430,13 +430,14 @@
   </p>
   <p><b><a id="SET"></a>SET</b></p>
   <p>Acronyme pour <i>Secure Electronic Transaction</i>s.</p>
-  <p> Protocole de commerce électronique situé au-dessus de <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a>,
-    permettant les authentifications des clients porteurs de cartes de crédit, des commerçants et des fournisseurs, l'<a
-        href="/tech/info/soft/sec/integ">intégrité</a> et la confidentialité des informations de paiement (du client
-    vers le commerçant) et de commande (du commerçant vers le fournisseur).</p>
-  <p>Comme <a href="/tech/info/soft/sec/priv/crypt/SSL.html">SSL</a>, SET exploite les <a
-      href="auth/cert">certificats</a> <a
-      href="priv/crypt/X509.html">X509</a>.</p>
+  <p> Protocole de commerce électronique situé au-dessus de <a
+    href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a>, permettant les authentifications des clients porteurs de
+    cartes de crédit, des commerçants et des fournisseurs, l'<a
+      href="integrity">intégrité</a> et la confidentialité des informations de paiement (du client vers le commerçant)
+    et de commande (du commerçant vers le fournisseur).</p>
+  <p>Comme <a href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a>, SET exploite les <a
+    href="auth/cert">certificats</a> <a
+    href="privacy/crypto/X509.html">X509</a>.</p>
   <p><b><a id="SKIP"></a>SKIP</b></p>
   <p>Acronyme pour <i>Secure Key Internet Protocol</i>.</p>
   <p><b><a id="SWAN"></a>S/WAN</b></p>
@@ -444,8 +445,8 @@
   <p> Permet d'intégrer de la sécurité pour les WAN au sein de réseaux privées virtuels.</p>
   <p><b><a id="TIPEM"></a>TIPEM</b></p>
   <p>Acronyme pour <i>Toolkit for Interoperable Privacy Ehanced Mail</i>, librarie de <a
-      href="/org/us/company/RSA.html">RSA</a> permettant de développer des produits intégrant <a
-      href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a> dans les applications de courrier électronique.</p>
+    href="/org/us/company/RSA.html">RSA</a> permettant de développer des produits intégrant <a
+    href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a> dans les applications de courrier électronique.</p>
   <h3 class="titre1"> Le modèle de sécurité ActiveX</h3>
   <p>Comme pour les plugins, le modèle de sécurité ActiveX :</p>
   <ul>
@@ -458,7 +459,7 @@
       machine (définir un sécuritymanager en Java 1.1 ou utiliser java2 permet de spécifier les actions autorisées). Si
       vous refusez, il ne peut théoriquement rien faire. Mais il s'agit de code natif, donc il peut tout faire (ou
       presque). Il existe également une option permettant de *tout* accepter systématiqueemnt en provenance d'une <a
-          href="/tech/info/soft/sec/auth/Identite.html">identité</a> donnée.</li>
+        href="/tech/info/soft/sec/auth/Identite.html">identité</a> donnée.</li>
     <li>les plugins/activeX ne sont pas téléchargés à chaque fois et restent sur votre poste</li>
   </ul>
   <p>Evolution de OLE.</p>
@@ -493,7 +494,7 @@
         <li><a href="https://java.sun.com/products/jdk/1.2/docs/guide/security/doprivileged.html"><span class="code">API
         for Privileged Blocks</span></a></li>
         <li><a href="https://developper.javasoft.com/developper/technicalArticles/monicap/Security/Crypto/crypto.html"
-            class="code">Cryptography : The Ancien Art of Secret Messages</a></li>
+          class="code">Cryptography : The Ancien Art of Secret Messages</a></li>
         <li><a href="https://developper.javasoft.com/developper/technicalArticles/JCE" class="code">Java 2 Cryptography
           Extension (JCE) : Encrypting and Decrypting Data</a></li>
       </ul>
@@ -514,7 +515,7 @@
       <ul>
         <li><a href="https://java.sun.com/security/signExample/" class="code">Exemple d'applet signée</a></li>
         <li><a href="https://developer.javasoft.com/developer/technicalArticles/monicap/Security/Tools/signed.html"
-            class="code">Applets signées, navigateurs, et accès aux fichiers</a></li>
+          class="code">Applets signées, navigateurs, et accès aux fichiers</a></li>
       </ul>
     </li>
     <li>Formation
@@ -528,10 +529,11 @@
       <ul>
         <li><a href="https://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/keytool.html"><code>keytool</code></a>
         </li>
-        <li><a href="https://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/jarsigner.html"><code>jarsigner</code></a>
+        <li><a
+          href="https://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/jarsigner.html"><code>jarsigner</code></a>
         </li>
         <li><code><a
-            href="https://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/policytool.html">policytool</a></code>
+          href="https://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/policytool.html">policytool</a></code>
         </li>
       </ul>
     </li>
@@ -540,7 +542,8 @@
         <li><i>La Science du Secret</i> de Jacques Stern (Odile Jacob).</li>
         <li><a href="https://www.liberation.com/multi/cahier/articles/sem99.05/cah990129i.html">Liberation du 29 janvier
           1999 - Les Clés du Secret</a></li>
-        <li>RSA Laboratories - <a href="https://www.rsasecurity.com/rsalabs/faq/"><em>FAQ about today's cryptography</em></a>
+        <li>RSA Laboratories - <a href="https://www.rsasecurity.com/rsalabs/faq/"><em>FAQ about today's
+          cryptography</em></a>
         </li>
       </ul>
     </li>

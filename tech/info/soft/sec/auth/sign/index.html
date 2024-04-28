@@ -25,7 +25,8 @@
     <li><b>il faut signer le message dans sa totalité </b>pour l'authentifier, ce qui peut être très consommateur en
       temps <a href="../../../../hard/cpu">CPU</a> et en débit <a href="/tech/info/soft/reseau">réseau</a> lors du
       transfert du message signé. Pour résoudre ce problème, on remplace le message signé par un <a
-          href="/tech/info/soft/sec/integ/MessageDigest.html">condensé de message</a>, toujours signé, mais plus petit,
+        href="/tech/info/soft/sec/integrity/MessageDigest.html">condensé de message</a>, toujours signé, mais plus
+      petit,
       et tout aussi unique.</li>
     <li><b>une signature garantit une provenance mais pas une identité</b>. Pour résoudre ce problème, on utilise des <a
         href="/tech/info/soft/sec/auth/cert">certificats</a>, où la <a href="/tech/info/soft/sec/auth/PublicKey.html">clé
@@ -35,7 +36,8 @@
   </ul>
   <p>En pratique donc, l'envoi d'un message signé (mais non crypté) consiste à :</p>
   <ol>
-    <li>générer un <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensé du message</a> qu'on souhaite envoyer
+    <li>générer un <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensé du message</a> qu'on souhaite
+      envoyer
     </li>
     <li> crypter ce condensé de message avec sa clé privée</li>
     <li>envoiyer le condensé crypté + le message en clair</li>
@@ -47,7 +49,7 @@
   </ol>
   <p>Un algorithme de signature est donc toujours composé d'algorithmes :</p>
   <ul>
-    <li>de <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensé de message</a></li>
+    <li>de <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensé de message</a></li>
     <li> de cryptage</li>
   </ul>
 </section>
@@ -146,23 +148,23 @@
     <tbody>
     <tr>
       <td>SHA1</td>
-      <td><a href="/tech/info/soft/sec/priv/crypt/DSA.html">DSA</a></td>
+      <td><a href="/tech/info/soft/sec/privacy/crypto/DSA.html">DSA</a></td>
       <td>Pour les signatures définies dans documents FIPS PUB 186</td>
     </tr>
     <tr>
       <td>MD2</td>
       <td><a href="/org/us/company/RSA.html">RSA</a></td>
-      <td>pour les signatures conformes à <a href="/tech/info/soft/sec/priv/crypt/pkcs">PKCS</a>#1</td>
+      <td>pour les signatures conformes à <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>#1</td>
     </tr>
     <tr>
       <td>MD5</td>
       <td><a href="/org/us/company/RSA.html">RSA</a></td>
-      <td>pour les signatures conformes à <a href="/tech/info/soft/sec/priv/crypt/pkcs">PKCS</a>#1</td>
+      <td>pour les signatures conformes à <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>#1</td>
     </tr>
     <tr>
       <td>SHA1</td>
       <td><a href="/org/us/company/RSA.html">RSA</a></td>
-      <td>pour les signatures conformes à <a href="/tech/info/soft/sec/priv/crypt/pkcs">PKCS</a>#1</td>
+      <td>pour les signatures conformes à <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>#1</td>
     </tr>
     </tbody>
   </table>
@@ -171,7 +173,8 @@
   <h2><span class="chapitre"><span class="titre1">Limitations</span></span></h2>
   <ul>
     <li> Ne garantit pas la confidentialité</li>
-    <li>En Java 1.1, l'API limitée aux signatures et <a href="/tech/info/soft/sec/integ/MessageDigest.html">condensés de
+    <li>En Java 1.1, l'API limitée aux signatures et <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés
+      de
       messages</a> (abscence de certificats). Ce manque a été comblé par des implémentations propriétaires (<i>Netscape
       Capabilities API</i> par exemple), puis par l'évolution de Java [1.2+].</li>
   </ul>

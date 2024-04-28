@@ -5,8 +5,13 @@ import { BookService } from "./BookService"
 import { PeopleService } from "../people/PeopleService"
 import { promise as glob } from "glob-promise"
 
+interface BookImportArgs {
+  import: string
+  dry?: "true" | "false"
+}
+
 const logger = new ConsoleLogger("rr0-books")
-const args = new CLI().getArgs()
+const args = new CLI().getArgs<BookImportArgs>()
 const fileName = args.import
 const dry = args.dry === "true"
 

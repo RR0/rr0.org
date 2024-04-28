@@ -3,16 +3,17 @@
 <meta content="https://java.sun.com/products/jsse/" name="url"/>
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Java Secure Socket Extension</i> : extension Java pour les <a
-    href="/tech/info/soft/reseau/protocole/Socket.html">sockets</a> <a href="/tech/info/soft/sec/">sécurisées</a>.</p>
+  href="/tech/info/soft/reseau/protocole/Socket.html">sockets</a> <a href="/tech/info/soft/sec/">sécurisées</a>.</p>
 <section>
   <h2>Besoin</h2>
   <p> Fournir une API <a href="/org/us/company/oracle/sun/ptf/java">Java</a> standard pour utiliser <a
-    href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a> et TLS.</p></section>
+    href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a> et <a href="/tech/info/soft/sec/privacy/crypto/TLS.html">TLS</a>.
+  </p></section>
 <section>
   <h2>Analyse</h2>
   <p>La JSSE offre une abstraction des mécanismes de :</p>
   <ul>
-    <li>cryptage</li>
+    <li>chiffrement</li>
     <li>authentication du serveur et (optionnel) du client </li>
     <li>intégrité</li>
   </ul>
@@ -112,8 +113,9 @@
   <h2>Notes</h2>
   <ul>
     <li>API 100 % Java et donc portable.</li>
-    <li>Par défaut, le fournisseur <code>SunJSSE</code> est installé, proposant des implémentations de SSL 3.0 et TLS
-      1.0.
+    <li>Par défaut, le fournisseur <code>SunJSSE</code> est installé, proposant des implémentations de <a
+      href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a> 3.0 et <a
+      href="/tech/info/soft/sec/privacy/crypto/TLS.html">TLS</a> 1.0.
     </li>
   </ul>
 </section>

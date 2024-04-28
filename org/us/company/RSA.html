@@ -5,19 +5,20 @@
 <p><i>Rivest, Shamir, Adleman </i>: noms des inventeurs du système RSA.</p>
 <section>
   <h2>Besoin</h2>
-  <p>Fournir un système de <a href="/tech/info/soft/sec/privacy/crypto/Asymetrique.html">cryptage asymétrique</a> (à clé
+  <p>Fournir un système de <a href="/tech/info/soft/sec/privacy/crypto/Asymetrique.html">chiffrement asymétrique</a> (à
+    clé
     publique).</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Le cryptage RSA constitue la première composante de <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>
+  <p>Le chiffrement RSA constitue la première composante de <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>
     (PKCS#1). </p>
 </section>
 <section>
   <h2>Conception</h2>
   <p>Un des principes de RSA est l'enveloppe électronique (<i>digital envelope</i>), combinant les technologies de
-    cryptage symétrique et asymétrique : il consiste à générer une clé <a
-      href="/tech/info/soft/sec/privacy/crypto/DES.html">DES</a> aléatoire, à crypter le message à transmettre avec
+    chiffrement symétrique et asymétrique : il consiste à générer une clé <a
+      href="/tech/info/soft/sec/privacy/crypto/des">DES</a> aléatoire, à crypter le message à transmettre avec
     cette
     clé, à crypter la clé elle-même avec la clé publique du destinataire, puis à mettre le tout dans l'enveloppe envoyée
     à celui-ci. Ce système tend à être de plus en plus utilisé.</p>
@@ -25,7 +26,8 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>RSA est également le nom de la compagnie des inventeurs du système de cryptage à clé publique RSA, fondée en <a
+    <li>RSA est également le nom de la compagnie des inventeurs du système de chiffrement à clé publique RSA, fondée en
+      <a
         href="/tech/info/1982.html">1982</a>, et division de SDT (<i>Security Dynamics Technologies, Inc.</i>) depuis <a
         href="/tech/info/1996.html">1996</a>.</li>
     <li>disponible dans la <a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>.</li>

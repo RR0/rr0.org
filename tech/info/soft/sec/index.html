@@ -152,10 +152,10 @@
     <p>Les concepts implémentables par un fournisseur sont :</p>
     <ul>
       <li>les clés publiques et privées (génération DSA ou RSA, mapping sur une clé abstraite)</li>
-      <li>les <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés de message</a> (MD2, MD5, SHA)</li>
+      <li>les <a href="/tech/info/soft/sec/integrity/digest">condensés de message</a> (MD2, MD5, SHA)</li>
       <li>les <a href="/tech/info/soft/sec/auth/sign">signatures</a> (DSA + SHA, RSA + MD5...)</li>
       <li>les <a href="auth/cert">certificats</a> (<a
-        href="privacy/crypto/X509.html">X.509</a>) et leurs listes de révocation (CRL)</li>
+        href="privacy/cert/X509.html">X.509</a>) et leurs listes de révocation (CRL)</li>
       <li>la base locale d'informations sur les clés et <a href="auth/cert">certificats</a> (permettant différentes
         implémentation du stockage, sur une carte à puce, sur un Java Ring, par exemple)</li>
       <li>Paramètres d'algorithme</li>
@@ -371,7 +371,8 @@
       anciens <a href="../proj/design/arch/web/client">navigateurs Web</a> par exemple) contenant des bugs connus ou
       inconnus représentant des failles de sécurité ou représentant des solutions propriétaires de sécurité moins
       interopérables et moins éprouvées que des standards. Cependant aujourd'hui des extensions standards verticales
-      existent pour le cryptage (<a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>).</li>
+      existent pour le chiffrement (<a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>).
+    </li>
     <li><b>le manque de standards de sécurité aboutis, implémentés et largement diffusés</b> (dans les navigateurs
       notamment), manque comblé par des implémentations propriétaires (par Netscape, Microsoft). Ces implémentations
       propriétaires de la plate-forme Java sont aujourd'hui contournables grâce au <a
@@ -391,7 +392,7 @@
             href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCA.html">JCA</a>, définissant une véritable
           architecture de sécurité supportant des protocoles importants du monde de la sécurité (<a
             href="auth/cert">certificats</a> <a
-            href="privacy/crypto/X509.html">X.509</a>, etc.).</li>
+            href="privacy/cert/X509.html">X.509</a>, etc.).</li>
       </ul>
     </li>
     <li>limitations du <a href="/tech/info/soft/proj/impl/lang/java">langage Java</a>.</li>
@@ -406,17 +407,11 @@
     paiement.</p>
   <p>La première implémentation de JEPI est celle de CommerceNet, en Java, mais n'exploite pas la possibilité de Java de
     télécharger des nouveaux gestionnaires de protocoles (JAF ?) et du code (applications) en général.</p>
-  <p><b><a id="MOSS"></a>MOSS</b></p>
-  <p>Standard de sécurisation du courrier électronique conçu pour dépasser les limites de <a
-    href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a> en supportant les messages <a
-    href="/tech/info/soft/proj/design/arch/web/MIME.html">MIME</a>.</p>
-  <p>Parce que MOSS est plus un framework qu'une spécification, et parce qu'il dispose de nombreuses implémentations
-    différentes, deux correspondants MOSS peuvent avoir des difficultés à communiquer. On pourra donc lui préférer <a
-      href="/tech/info/soft/reseau/protocole/SMIME.html">S/MIME</a>, clairement défini.</p>
   <p><b><a id="RIPEMD"></a>RIPEMD-160</b></p>
   <p>Acronyme pour <i>RIPE Message Digest,</i> algorithme de hâchage permettant de générer des <a
-    href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés de messages</a>.</p>
-  <p>RIPEMD-160 ou <a href="#SHA">SHA</a> sont considérés comme plus sûr que MD5, dans la mesure ou MD5 a été cassé
+    href="/tech/info/soft/sec/integrity/digest">condensés de messages</a>.</p>
+  <p>RIPEMD-160 ou <a href="/tech/info/soft/sec/integrity/digest/sha">SHA</a> sont considérés comme plus sûr que MD5,
+    dans la mesure ou MD5 a été cassé
     (pour des messages courts cependant). <a href="/org/us/company/RSA.html">RSA</a> elle-même ne recommande plus
     l'utilisation de MD5.</p>
   <p><b><a id="RNG"></a>RNG</b></p>
@@ -437,9 +432,7 @@
     et de commande (du commerçant vers le fournisseur).</p>
   <p>Comme <a href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a>, SET exploite les <a
     href="auth/cert">certificats</a> <a
-    href="privacy/crypto/X509.html">X509</a>.</p>
-  <p><b><a id="SKIP"></a>SKIP</b></p>
-  <p>Acronyme pour <i>Secure Key Internet Protocol</i>.</p>
+    href="auth/cert/X509.html">X509</a>.</p>
   <p><b><a id="SWAN"></a>S/WAN</b></p>
   <p>Acronyme pour <i>Secure Wide Area Network.</i></p>
   <p> Permet d'intégrer de la sécurité pour les WAN au sein de réseaux privées virtuels.</p>

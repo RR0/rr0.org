@@ -2,11 +2,11 @@
 <title>SSL</title>
 <!--#include virtual="/header-end.html" -->
 <p><i>Secure Socket Layer </i>: couche de <a href="/tech/info/soft/reseau/protocole/Socket.html">prises</a> <a
-    href="/tech/info/soft/sec">sécurisées</a>.</p>
+  href="/tech/info/soft/sec">sécurisées</a>.</p>
 <section>
   <h2>Besoin</h2>
   <p>Sécuriser les échanges sur <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/IP (donc <a
-      href="../../../proj/design/arch/web/index.html">Web</a> y compris)</p>
+    href="../../../proj/design/arch/web/index.html">Web</a> y compris)</p>
 </section>
 <section>
   <h2>Analyse</h2>
@@ -39,17 +39,17 @@
     </tr>
   </table>
   <p>L'<a href="../../auth/index.html"><strong>authentification</strong></a> est réalisée via un <a
-      href="Asymetrique.html">cryptage asymétrique</a> : le 1er message est crypté avec la <a
-      href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> du destinataire certifié (un serveur généralement)
+    href="Asymetrique.html">chiffrement asymétrique</a> : le 1er message est crypté avec la <a
+    href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> du destinataire certifié (un serveur généralement)
     par un certificat <a href="X509.html">X509</a>.</p>
   <p> L'<strong>intégrité</strong> des messages échangés est réalisée via un <a
-    href="/tech/info/soft/sec/privacy/crypto/Asymetrique.html">cryptage symétrique</a> (<a href="DES.html">DES</a>, <a
+    href="/tech/info/soft/sec/privacy/crypto/Asymetrique.html">chiffrement symétrique</a> (<a href="des">DES</a>, <a
     href="/tech/info/soft/sec/privacy/crypto/RC4.html">RC4</a>) plus rapide : une fois l'une des parties certifiée, une
-    clé de cryptage unique (une <a href="#clesecrete">clé secrète</a> de cryptage de session, ou <i>token</i>) est
+    clé de chiffrement unique (une <a href="#clesecrete">clé secrète</a> de chiffrement de session, ou <i>token</i>) est
     générée et transmise au destinataire authentifié. Cette clé n'est pas visible puisqu'insérée dans le message lisible
     uniquement par le destinaire (le serveur typiquement). Elle reste néanmoins connue du client qui l'a générée et du
     serveur qui l'a reçue dans son premier message crypté avec sa <a
-        href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a>. Les deux parties peuvent alors s'échanger des
+      href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a>. Les deux parties peuvent alors s'échanger des
     messages cryptés avec cette clé de session partagée.</p>
   <table>
     <thead>
@@ -145,25 +145,24 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>SSL 3.0 a été perfectionné pour donner TLS (<em>Transport Layer Security</em>), largement adopté.</li>
     <li>SET est un Protocole de commerce électronique situé au-dessus de SSL</li>
     <li>Créé par <a href="/org/us/company/netscape">Netscape</a> en <a href="../../../../1994.html">1994</a>
     </li>
-    <li>La dernières version est SSL 3.0.</li>
-    <li>Une nouvelle génération de SSL est TLS.</li>
+    <li>La dernière version est SSL 3.0.</li>
+    <li>SSL 3.0 a été perfectionné pour donner <a href="TLS.html">TLS</a>.</li>
   </ul>
 </section>
 <section>
   <h2> Limitations</h2>
   <ul>
-    <li>Ne supporte pas certaines caractéristiques de TCP/IP comme des données hors de bande (<em>out of band data</em>).
-    </li>
+    <li>Ne supporte pas certaines caractéristiques de <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/IP
+      comme des données hors de bande (<i lang="en">out of band data</i>).</li>
   </ul>
 </section>
 <section>
   <h2>Voir</h2>
   <ul>
-    <li> Implémentations
+    <li>Implémentations
       <ul>
         <li><a href="https://www.vonnieda.org/jSSL/">expreSSL - A free SSL Java Implementation</a></li>
         <li><a href="https://www.bpsinfo.com/javassl/">Java SSL</a></li>

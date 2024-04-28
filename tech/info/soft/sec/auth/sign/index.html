@@ -20,60 +20,57 @@
       l'émetteur</li>
     <li> vérifie si le résultat correspond au message en clair.</li>
   </ul>
-  <p>En pratique, ce principe n'est pas vraiment satisfaisant car :</p>
+  <p>En pratique, ce principe n'est pas vraiment satisfaisant car :</p>
   <ul>
     <li><b>il faut signer le message dans sa totalité </b>pour l'authentifier, ce qui peut être très consommateur en
       temps <a href="../../../../hard/cpu">CPU</a> et en débit <a href="/tech/info/soft/reseau">réseau</a> lors du
       transfert du message signé. Pour résoudre ce problème, on remplace le message signé par un <a
-        href="/tech/info/soft/sec/integrity/MessageDigest.html">condensé de message</a>, toujours signé, mais plus
-      petit,
-      et tout aussi unique.</li>
+        href="/tech/info/soft/sec/integrity/digest">condensé de message</a>, toujours signé, mais plus petit, et tout
+      aussi unique.</li>
     <li><b>une signature garantit une provenance mais pas une identité</b>. Pour résoudre ce problème, on utilise des <a
-        href="/tech/info/soft/sec/auth/cert">certificats</a>, où la <a href="/tech/info/soft/sec/auth/PublicKey.html">clé
+      href="/tech/info/soft/sec/auth/cert">certificats</a>, où la <a href="/tech/info/soft/sec/auth/PublicKey.html">clé
       publique</a> d'un émetteur est certifiée par celle d'un autre, qui est elle-même certifiée par un autre, etc.
       jusqu'à parvenir à la clé publique d'un auteur dont l'identité est incontestable (une <a
-          href="/tech/info/soft/sec/auth/cert/CA.html">Autorité de Certification</a>).</li>
+        href="/tech/info/soft/sec/auth/cert/CA.html">Autorité de Certification</a>).</li>
   </ul>
   <p>En pratique donc, l'envoi d'un message signé (mais non crypté) consiste à :</p>
   <ol>
-    <li>générer un <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensé du message</a> qu'on souhaite
-      envoyer
+    <li>générer un <a href="/tech/info/soft/sec/integrity/digest">condensé du message</a> qu'on souhaite envoyer
     </li>
-    <li> crypter ce condensé de message avec sa clé privée</li>
-    <li>envoiyer le condensé crypté + le message en clair</li>
+    <li>crypter ce condensé de message avec sa clé privée</li>
+    <li>envoyer le condensé crypté + le message en clair</li>
   </ol>
-  <p>Pour vérifier si le message est bien celui de l'émetteur, le récepteur :</p>
+  <p>Pour vérifier si le message est bien celui de l'émetteur, le récepteur :</p>
   <ol>
     <li>décrypte le condensé avec la clé publique de l'émetteur supposé</li>
     <li>vérifie si le condensé obtenu est égal au condensé du message en clair</li>
   </ol>
-  <p>Un algorithme de signature est donc toujours composé d'algorithmes :</p>
+  <p>Un algorithme de signature est donc toujours composé d'algorithmes :</p>
   <ul>
-    <li>de <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensé de message</a></li>
-    <li> de cryptage</li>
+    <li>de <a href="/tech/info/soft/sec/integrity/digest">condensé de message</a></li>
+    <li>de chiffrement</li>
   </ul>
 </section>
 <section>
   <h2> Implémentation</h2>
   <p>Dans le monde <a href="/org/us/company/oracle/sun/ptf/java">Java</a>, le concept de signature peut être appliqué
-    dans divers buts :</p>
+    dans divers buts :</p>
   <ul>
     <li><b>signer (auto-signer) un <a href="/tech/info/soft/sec/auth/cert">certificat</a></b> : L'outil
       <code>keytool </code> de Java [1.2+] ne permet que de générer des certificats auto-signés. Parce que le rôle d'un
       certificat est d'authentifier, la signature d'un certificat requiert la clé privée de l'identité certifiante. Si
       vous n'en disposez pas déjà, vous pouvez générer votre paire de clés et un certificat par défaut (auto-signé) à
       l'aide de l'outil <span class="code">keytool</span>. Pour générer votre paire de clés, <code>keytool</code> a
-      besoin :
+      besoin :
       <ul>
         <li>d'un alias vous identifiant (identifiant votre paire de clés dans la base de clés qu'il examine)</li>
         <li>d'un mot de passe limitant l'accès à votre paire de clés (<i>keypass</i>).</li>
       </ul>
-      <p>Par exemple :</p>
+      <p>Par exemple :</p>
       <p><span class="codeIdent1"><code>keytool -genkey -alias <b>monNom</b> -keypass
         <b>monMotDePasse</b></code></span></p>
       <p>(keytool vous demandera le mot de passe d'accès à la base de clés) A la génération de votre paire de clés,
-        <span
-            class="code">keytool</span> en profite pour vous générer un certificat auto-signé (signé par vous-même).
+        <span class="code">keytool</span> en profite pour vous générer un certificat auto-signé (signé par vous-même).
         Pour générer un certificat en général, et ce certificat en particulier, <span class="code">keytool</span> a
         besoin de votre <a href="/tech/info/soft/data/dbms/ldap/DN.html">DN</a>. Une fois ces informations entrées,
         <code>keytool</code> génère une paire de clés et un certificat auto-signé et l'insère dans la base de clés sous
@@ -86,7 +83,7 @@
       <p>La spécification des algorithmes est obligatoire pour l'objet Signature, contrairement à keytool qui utilise
         <code>SHA1withDSA</code> par défaut. L'objet <code>Signature</code> ne vous permet que de signer des données
         avec une clé privée. La signature identifiant l'émetteur de l'objet, elle nécessite ensuite la <a
-            href="/tech/info/soft/sec/auth/PrivateKey.html">clé privée</a> de cet émetteur (de type <code>java.security.PrivateKey</code>)
+          href="/tech/info/soft/sec/auth/PrivateKey.html">clé privée</a> de cet émetteur (de type <code>java.security.PrivateKey</code>)
         :</p>
       <p><code>maSignature.initSign (maClePrivee);</code></p>
       <p>La technique fournissant les données et générant la signature finale est ensuite similaire à celle du condensé
@@ -95,27 +92,29 @@
         (donnees1);<br> maSignature.update (donnees2);</code></p>
       <p>et la génération de la signature se faisant via la méthode <span class="code">sign()</span>.</p>
       <p><code>byte[] donneesSignature = maSignature.sign();</code></p>
-      <p>les données retournées constituant le condensé (SHA, MD2, MD5) signé (DSA, RSA) du message dépendant des
-        algorithmes spécifiés à la création de l'objet signature ;</p>
+      <p>les données retournées constituant le condensé (<a href="/tech/info/soft/sec/integrity/digest/sha">SHA</a>, <a
+        href="/tech/info/soft/sec/integrity/digest/md2">MD2</a>, <a
+        href="/tech/info/soft/sec/integrity/digest/md5">MD5</a>) signé (<a
+        href="/tech/info/soft/sec/privacy/crypto/DSA.html">DSA</a>, <a href="/org/us/company/RSA.html">RSA</a>) du
+        message dépendant des algorithmes spécifiés à la création de l'objet signature ;</p>
     </li>
     <li><b>vérifier la signature d'un objet Java</b> : Comme pour l'opération de signature, la vérification nécessite un
       objet <span class="code"><code>java.security.Signature</code></span>. La vérification consistant à vérifier
       l'identité de l'émetteur de l'objet, elle nécessite ensuite la <a href="/tech/info/soft/sec/auth/PublicKey.html">clé
-        publique</a> de cette émetteur (de type <span class="code"><code>java.security.PublicKey</code></span>) :
+        publique</a> de cet émetteur (de type <code>java.security.PublicKey</code>) :
       <p><code>telleSignature.initVerify (telleClePublique);</code></p>
       <p>et la vérification de la signature se fait via la méthode <span class="code">verify()</span>.</p>
       <p><code>boolean signatureOk = maSignature.verify();</code></p>
     </li>
-    <li><b>signer une applet</b> : Signer une applet consiste à signer le fichier JAR contenant cette applet. On pourra
+    <li><b>signer une applet</b> : Signer une applet consiste à signer le fichier JAR contenant cette applet. On pourra
       par exemple signer une applet afin de lui permettre d'effectuer des opérations uniquement autorisées à une
       identité spécifique par la politique de sécurité en vigueur sur le ou les postes de déploiement. La signature du
       fichier JAR contenant l'applet s'effectue via l'outil <span class="codeIdent1"><span class="code">jarsigner</span></span>,
       qui supporte les combinaisons d'algorithmes fournies avec Java 2 (SHA1withDSA et MD5withRSA). Pour pouvoir signer,
       <span
-          class="code">jarsigner</span> a besoin de l'alias correspondant à votre clé privée dans la <a
-          href="#keystore">base de clés</a> ainsi que le nom du fichier JAR (déjà existant) à signer. Par exemple :
-      <span
-          class="codeIdent1"><code>jarsigner
+        class="code">jarsigner</span> a besoin de l'alias correspondant à votre clé privée dans la <a
+        href="#keystore">base de clés</a> ainsi que le nom du fichier JAR (déjà existant) à signer. Par exemple : <span
+        class="codeIdent1"><code>jarsigner
     <b>MyApplet.jar monAlias</b></code></span>. Cette opération de signature consiste en l'ajout de deux fichiers dans
       le répertoire <span class="code"><code>META-INF/</code></span> cette archive :
       <ul>
@@ -127,8 +126,8 @@
       <ul>
         <li>un fichier bloc de signature de type <code>alias.dsa</code> ou <code>alias.rsa</code> contenant une
           signature pour le fichier <span
-              class="code">alias.sf</span> ainsi que le certificat (et la <a
-              href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> donc) du signataire.</li>
+            class="code">alias.sf</span> ainsi que le certificat (et la <a
+            href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> donc) du signataire.</li>
       </ul>
     </li>
   </ul>
@@ -141,7 +140,7 @@
     <thead>
     <tr>
       <th>Algorithme de condensé</th>
-      <th>Algorithme de cryptage (clé)</th>
+      <th>Algorithme de chiffrement (clé)</th>
       <th>Description</th>
     </tr>
     </thead>
@@ -152,17 +151,17 @@
       <td>Pour les signatures définies dans documents FIPS PUB 186</td>
     </tr>
     <tr>
-      <td>MD2</td>
+      <td><a href="/tech/info/soft/sec/integrity/digest/md2">MD2</a></td>
       <td><a href="/org/us/company/RSA.html">RSA</a></td>
       <td>pour les signatures conformes à <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>#1</td>
     </tr>
     <tr>
-      <td>MD5</td>
+      <td><a href="/tech/info/soft/sec/integrity/digest/md5">MD5</a></td>
       <td><a href="/org/us/company/RSA.html">RSA</a></td>
       <td>pour les signatures conformes à <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>#1</td>
     </tr>
     <tr>
-      <td>SHA1</td>
+      <td><a href="/tech/info/soft/sec/integrity/digest/sha">SHA</a>1</td>
       <td><a href="/org/us/company/RSA.html">RSA</a></td>
       <td>pour les signatures conformes à <a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a>#1</td>
     </tr>
@@ -172,9 +171,8 @@
     (signer des données) et vérifier des signatures (des données signées).</p>
   <h2><span class="chapitre"><span class="titre1">Limitations</span></span></h2>
   <ul>
-    <li> Ne garantit pas la confidentialité</li>
-    <li>En Java 1.1, l'API limitée aux signatures et <a href="/tech/info/soft/sec/integrity/MessageDigest.html">condensés
-      de
+    <li>Ne garantit pas la confidentialité</li>
+    <li>En Java 1.1, l'API limitée aux signatures et <a href="/tech/info/soft/sec/integrity/digest">condensés de
       messages</a> (abscence de certificats). Ce manque a été comblé par des implémentations propriétaires (<i>Netscape
       Capabilities API</i> par exemple), puis par l'évolution de Java [1.2+].</li>
   </ul>

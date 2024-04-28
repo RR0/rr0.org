@@ -11,14 +11,14 @@
       href="JCA.html">Java Cryptography Architecture</a>, offrant des fonctionnalités de :
   </p>
   <ul>
-    <li><b>Cryptage</b>
+    <li><b>Chiffrement</b>
       <ul>
         <li>à une ou plusieurs passes </li>
         <li>appliqué à des flux non typés ou à des flux d'objets sérialisés </li>
       </ul>
     </li>
     <li><b>Génération de clés symétriques</b> (clé secrète) en plus des clés asymétriques de la <a
-        href="JCA.html">Java Cryptography Architecture</a>. Une telle clé secrète de cryptage peut être transmise selon
+      href="JCA.html">Java Cryptography Architecture</a>. Une telle clé secrète de chiffrement peut être transmise selon
       deux techniques :
       <ul>
         <li><i>l'enveloppe électronique</i> (cryptée avec la clé publique du destinataire qui pourra la lire grâce à sa
@@ -29,7 +29,7 @@
     </li>
     <li><b>Contrôle d'Intégrité</b> (via <a href="/tech/info/soft/sec/integrity/MAC.html">MAC</a>)</li>
   </ul>
-  <p>La JCE intègre <a href="/tech/info/soft/sec/privacy/crypto/DES.html">DES</a>. Elle ne peut être exportée en-dehors
+  <p>La JCE intègre <a href="/tech/info/soft/sec/privacy/crypto/des">DES</a>. Elle ne peut être exportée en-dehors
     des
     USA.</p>
 </section>
@@ -47,7 +47,7 @@
     <li><b>Génération de clés symétriques</b> (clé secrète via les classes <code>KeyGenerator</code>,
       <code>SecretKey</code>, <code>SecretKeyFactory</code>) en plus des clés asymétriques de la <a
           href="JCA.html">Java Cryptography Architecture</a> (<code>java.security.KeyPairGenerator</code>). Une telle
-      clé secrète de cryptage peut être transmise selon deux techniques :
+      clé secrète de chiffrement peut être transmise selon deux techniques :
       <ul>
         <li><i>l'enveloppe électronique</i> (cryptée avec la clé publique du destinataire qui pourra la lire grâce à sa
           clé privée) </li>

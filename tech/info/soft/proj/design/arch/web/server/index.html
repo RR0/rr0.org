@@ -1,9 +1,13 @@
-<!--#include virtual="/header-start.html" --><title>Web site</title><!--#include virtual="/header-end.html" -->
+<!--#include virtual="/header-start.html" -->
+<title>Web site</title>
+<!--#include virtual="/header-end.html" -->
 <p>Site <a href="../index.html">Web</a>.</p>
-<section title="Besoin">
+<section>
+  <h2>Besoin</h2>
   <p>Mettre à disposition pour consultation un ensemble de pages <a href="../index.html">Web</a>.</p>
 </section>
-<section title="Analyse">
+<section>
+  <h2>Analyse</h2>
   <p>Un site <a href="../index.html">Web</a> a une <strong>adresse </strong>qui l'identifie de manière unique sur
     Internet. Les documents qui le constituent sont stockés chez un <strong>hébergeur</strong>.
   </p>
@@ -11,13 +15,16 @@
     chez l'hébergeur.
   </p>
 </section>
-<section title="Conception">
+<section>
+  <h2>Conception</h2>
   <p>L'adresse d'un site Web est représentée par une <a href="../../../../../reseau/internet/URL.html">URL</a>.</p>
-  <p>La publication chez l'hébergeur se fait généralement via <a href="../../../../../reseau/protocole/5/FTP.html">FTP</a>,
-    <a href="../../../../../WebDAV.html">WebDAV</a> ou une interface utilisateur <a href="../index.html">Web</a>.
+  <p>La publication chez l'hébergeur se fait généralement via <a
+    href="../../../../../reseau/protocole/5/FTP.html">FTP</a>, <a href="../../../../../WebDAV.html">WebDAV</a> ou une
+    interface utilisateur <a href="../index.html">Web</a>.
   </p>
 </section>
-<section title="Notes">
+<section>
+  <h2>Notes</h2>
   <section title="Etre vu">
     <section title="Nom de domaine">
       <p>Même s'il n'est pas obligatoire, un nom de domaine propre à votre site est plus qu'appréciable. L'objectif est
@@ -33,9 +40,8 @@
           commercial, .org pour le non lucratif, .net pour le réseau, .fr pour la france uniquement, etc.).
         </li>
       </ul>
-      <p>Evitez également les URL valides mais inhabituels (ne commençant pas par www, ne finissant pas directement par
-        .com .org ou .fr).
-      </p>
+      <p>Evitez également les URL valides, mais inhabituels (ne commençant pas par www, ne finissant pas directement par
+        .com .org ou .fr).</p>
       <p>L'achat d'un nom de domaine est abordable aujourd'hui (on peut en trouver pour une dizaine d'euros/an). Si
         votre hébergeur ne supporte pas l'hébergement de noms de domaine, changez-en ou à défaut utilisez un service de
         redirection de votre nom vers l'URL de votre hébergement (les <em>registrars</em> en offrent souvent un).
@@ -45,8 +51,8 @@
       <p>Les informations contenues dans vos pages doivent être exploitables. C'est-à-dire :</p>
       <ul>
         <li><strong>visibles </strong>: atteignables par des moteurs de recherche et donc <a
-            href="../../../../../time/doc/html/index.html">HTML</a>, texte. Le <a href="../Flash.html">flash</a> n'est
-          aujourd'hui pas analysé par ces moteurs.
+          href="/tech/info/soft/data/doc/html">HTML</a>, texte. Le <a href="../Flash.html">flash</a> n'est aujourd'hui
+          pas analysé par ces moteurs.
         </li>
         <li>extractibles</li>
         <li>RDF</li>
@@ -54,24 +60,25 @@
       </ul>
     </section>
   </section>
-  <section title="Etre lu">
-    <section title="Structure">
-      <p>Lorsqu'une de vos page sera élue dans un résultat de recherche sur Internet, il est important que le visiteur
+  <section>
+    <h3>Etre lu</h3>
+    <section>
+      <h4>Structure</h4>
+      <p>Lorsqu'une de vos pages sera élue dans un résultat de recherche sur Internet, il est important que le visiteur
         qui s'y rendra ne soit pas désemparé et puisse juger de l'ensemble de la qualité du site sur lequel il est
-        arrivé. Il faut pour cela :
-      </p>
+        arrivé. Il faut pour cela :</p>
       <ul>
-        <li>éviter les ensembles de cadres (<em>frameset</em>) dont votre page pourrait constituer qu'une partie peu
-          exploitable sans les autres cadres. Les cadres ne facilitent pas non plus la pose de signets
-          (<em>bookmarks</em>), alors posés sur l'ensemble invariable des cadres que sur le cadre particulier visité.
-        </li>
-        <li>toujours fournir au moins un lien vers la page d'accueil (<em>home</em>) de votre site.</li>
+        <li>éviter les ensembles de cadres (<i lang="en">frameset</i>) dont votre page pourrait constituer qu'une partie
+          peu exploitable sans les autres cadres. Les cadres ne facilitent pas non plus la pose de signets (<i
+            lang="en">bookmarks</i>), alors posés sur l'ensemble invariable des cadres que sur le cadre particulier
+          visité.</li>
+        <li>toujours fournir au moins un lien vers la page d'accueil (<i lang="en">home</i>) de votre site.</li>
         <li>toujours fournir un moyen de vous contacter (via la page courante ou au moins la page d'accueil) pour une
-          raison quelconque (remarque, problème juridique, etc.).
-        </li>
+          raison quelconque (remarque, problème juridique, etc.).</li>
       </ul>
     </section>
-    <section title="Liens">
+    <section>
+      <h4>Liens</h4>
       <ul>
         <li>Mettez autant de liens que possible. Plus un site est inter-lié, plus il est facile et agréable à utiliser,
           et plus il est considéré pertinent par les robots
@@ -80,50 +87,55 @@
         <li>W3C</li>
       </ul>
     </section>
-    <section title="Accents">
+    <section>
+      <h4>Accents</h4>
       <p>Les caractères accentués que vous tapez ont un code qui est spécifique à votre locale, ce qui n'est peut-être
         pas le cas de vos visiteurs. Afin que ceux-ci voient vos caractères accentués quelle que soit leur locale,
         veillez à ce que vos caractères accentués utilisent les expressions HTML adéquates (<code>&amp;eacute;
-          egrave;</code> etc.).
-      </p>
+          egrave;</code> etc.) ou spécifier que votre document est encodé avec un ensemble de caractères (<i
+          lang="en">charset</i>) supportant ces accents, comme UTF-8.</p>
     </section>
-    <section title="Ponctuation">
+    <section>
+      <h4>Ponctuation</h4>
       <p>Contrairement à l'anglais, le français précède d'un espace un certain nombre de ponctuactions (?, !, :). En
         HTML, un espace est par défaut un caractère sécable, c'est-à-dire autorisant ce qui le suit à passer à la ligne
-        suivante. Afin de conserver ces ponctuation à côté du texte qu'elles ponctuent, précédez-les d'un espace non
+        suivante. Afin de conserver ces ponctuations à côté du texte qu'elles ponctuent, précédez-les d'un espace non
         sécable (<code> &amp;nbsp;</code>)
       </p>
     </section>
-    <section title="Les compteurs">
+    <section>
+      <h4>Les compteurs</h4>
       <p>Les compteurs n'intéressent que vous. Outre le fait qu'ils soient souvent interprété comme une marque de
         puérilité ("c'est moi le plus fort"), ils sont inutiles : personne n'ira voir votre page parce que d'autres vont
         la voir. Personne n'est non plus dupe sur le fait que ces compteurs sont trucables à volonté (total de départ,
         modifications).
       </p>
     </section>
-    <section title="Les pubs">
+    <section>
+      <h4>Les pubs</h4>
       <p>Vos visiteurs ne viennent pas sur votre site pour voir de la pub. N'utilisez les pubs que si vous en avez
         vraiment besoin (vivre d'un site typiquement).
       </p>
     </section>
   </section>
-  <section title="Abherrations">
-    <section title="Anachronismes">
+  <section>
+    <h3>Abherrations</h3>
+    <section>
+      <h4>Anachronismes</h4>
       <p>On a parfois tendance à reproduire sur le Web les principes que l'on a trouvé dans les supports papier (livres,
         revues, etc.). Cela mène souvent à des abherrations, ignorant complètement les avantage d'un support
-        informatisé. On trouve parmi ces abherrations :
-      </p>
+        informatisé. On trouve parmi ces abherrations :</p>
       <ul>
-        <li><strong>les numéros </strong>(de page, de chapitre, paragraphe, etc.) qui étaient destinés à designer un
+        <li><b>les numéros</b> (de page, de chapitre, paragraphe, etc.) qui étaient destinés à designer un
           endroit dans un texte sur papier. Dans un document Web, ils sont remplacés par des hyperliens qui permettent
           un accès direct et univoque à un document ou une portion de document (lien interne). Lorsque vous utilisez des
           numéros dans un document Web, c'est généralement pour afficher des listes ordonnées (exprimer un ordre, une
           priorité d'éléments).
         </li>
-        <li><strong>les index </strong>: pour les mêmes raisons, ces associations mot-&gt;numéro de page sont remplacées
+        <li><b>les index</b> : pour les mêmes raisons, ces associations mot-&gt;numéro de page sont remplacées
           par la fonction de recherche plein texte (sur un mot ou plusieurs).
         </li>
-        <li><strong>les guillemets de citation</strong> qui servaient à délimiter celles-ci sur des livres sans styles
+        <li><b>les guillemets de citation</b> qui servaient à délimiter celles-ci sur des livres sans styles
           ni couleurs. Un document Web peut utiliser divers styles, dont celui d'un passage de citation clairement
           délimiter (<code>&lt;cite&gt;</code>) et auquel on peut donner l'apparence de son choix. Les guillemets
           gardent toutefois un sens quand ils veulent exprimer, non pas une citation, mais une expression ou une
@@ -131,7 +143,8 @@
         </li>
       </ul>
     </section>
-    <section title="Mauvaise utilisation des moyens modernes">
+    <section>
+      <h4>Mauvaise utilisation des moyens modernes</h4>
       <p>Il existe également des abherrations dans l'utilisation des moyens modernes eux-mêmes. Elles ne correspondent
         pas à la reproduction d'un réflexe issu d'un paradigme antérieur comme celui des livres, mais sont directement
         issues d'une mauvaise compréhension du nouveau paradigme Web. Il s'agit notamment de :
@@ -189,87 +202,96 @@
         </li>
       </ul>
     </section>
-    <section title="Aberrations comportementales">
+    <section>
+      <h4>Aberrations comportementales</h4>
       <p>Il existe enfin d'autres abherrations, mais du côté des utilisateurs cette fois, et qui n'influent pas
         directement sur l'élaboration d'un site Web. On peut trouver parmi celles-ci l'impression de documents Web (un
-        document Web n'est pas fait pour être imprimé - pas de saut de page - et un bon document Web n'est jamais long
+        document Web n'est pas fait pour être imprimé - pas de saut de page - et un bon document Web n'est jamais long,
         mais utilise des hyperliens qui sont abolis par l'impression).
       </p>
     </section>
   </section>
-  <section title="Référencement">
-    <p>La meilleure manière d'être référencé pour un sujet donné, au delà des astuces de mots-clés meta, etc. c'est
+  <section>
+    <h3>Référencement</h3>
+    <p>La meilleure manière d'être référencé pour un sujet donné, au-delà des astuces de mots-clés meta, etc. c'est
       encore d'avoir un contenu de qualité et pertinent par rapport à ce sujet.
     </p>
-    <p>Parmi des règles simples ont peut citer :</p>
+    <p>Parmi des règles simples, on peut citer :</p>
     <ul>
       <li>Une page avec un titre pertinent</li>
-      <li>Une premier mot pertinent avec un style de titre</li>
+      <li>Un premier mot pertinent avec un style de titre</li>
       <li>pointer vers une référence sur le sujet traité</li>
       <li>être référencé de l'extérieur</li>
     </ul>
-    <section title="Liens externes">
-
+    <section>
+      <h4>Liens externes</h4>
       <p>Les liens que vous proposez vers d'autres sites sont censés refléter un intérêt que vous leur porter. C'est du
         moins la valeur que leur portent vos visiteurs. Si vous choisissez de pointer vers des sites au terme d'un
         simple accord mutuel avec le webmestre de ce site, juste pour être référencé, cela ôte toute valeur à vos liens,
         et donc à une partie du contenu de votre site. On fera moins confiance à ce que vous écrivez.
-      </p></section>
+      </p>
+    </section>
   </section>
-  <h3>Les plaies</h3>
-  <h4>Bande passante </h4>
-
-  <p>En induisant un traffic sur le réseau, votre site Web implique une consommation de la bande passante que celui-ci
-    peut supporter. Les hébergeurs vous font payer cette consommation au forfait, proportionnellement, ou vous imposent
-    un maximum (par mois typiquement, coupant tout accès une fois ce maximum atteint). Dans tous les cas, une
-    consommation excessive devient un problème.
-  </p>
-  <p>Cette consommation est induite par :</p>
-  <ul>
-    <li>vos <strong>visiteurs normaux </strong>: pas de problème, le site est pour eux</li>
-    <li>les sites référençant vos fichiers
+  <section>
+    <h3>Les plaies</h3>
+    <section>
+      <h4>Bande passante </h4>
+      <p>En induisant un traffic sur le réseau, votre site Web implique une consommation de la bande passante que
+        celui-ci peut supporter. Les hébergeurs vous font payer cette consommation au forfait, proportionnellement, ou
+        vous imposent un maximum (par mois typiquement, coupant tout accès une fois ce maximum atteint). Dans tous les
+        cas, une consommation excessive devient un problème.
+      </p>
+      <p>Cette consommation est induite par :</p>
       <ul>
-        <li><strong>pages Web </strong>: pas de problème, interdire qu'on référence vos pages serait abherrant (autant
-          ne pas placer votre site sur Internet sinon)
+        <li>vos <b>visiteurs normaux</b> : pas de problème, le site est pour eux</li>
+        <li>les sites référençant vos fichiers
+          <ul>
+            <li><b>pages Web </b>: pas de problème, interdire qu'on référence vos pages serait abherrant (autant ne pas
+              placer votre site sur Internet sinon)
+            </li>
+            <li><b>images, videos, documents PDF</b> : ces documents sont généralement beaucoup plus volumineux que de
+              simples pages Web et, si votre quota de bande passante est maigre, il est recommandé d'interdire leur
+              accès en dehors de votre site Web (concrètement, refuser si le REFERRER de la requête ne vient pas de
+              votre site).
+            </li>
+          </ul>
         </li>
-        <li><strong>images, videos, documents PDF </strong>: ces documents sont généralement beaucoup plus volumineux
-          que de simples pages Web et, si votre quota de bande passante est maigre, il est recommandé d'interdire leur
-          accès en dehors de votre site Web (concrètement, refuser si le REFERRER de la requête ne vient pas de votre
-          site).
+        <li>les <b>robots</b> : ils parcourent l'Internet pour l'indexer dans leurs moteurs de recherche. Ils inspectent
+          en tout premier lieu votre fichier robots.txt, où vous avez l'opportunité d'indiquer ce que vous attendez ou
+          refusez d'eux.
+        </li>
+        <li>vos <b>visiteurs aspirant votre site </b> : ce sont des parasites n'ayant rien compris au principe de
+          l'Internet. Si vous êtes certains de les différencier des robots, plusieurs mesures sont envisageables :
+          <ul>
+            <li>bannir leurs adresses IP si celles-ci sont fixes</li>
+            <li>restreindre l'accès à votre site par un login/mot de passe</li>
+          </ul>
         </li>
       </ul>
-    </li>
-    <li>les <strong>robots </strong>: ils parcourent l'Internet pour l'indexer dans leurs moteurs de recherche. Ils
-      inspectent en tout premier lieu votre fichier robots.txt, où vous avez l'opportunité d'indiquer ce que vous
-      attendez ou refusez d'eux.
-    </li>
-    <li>vos <strong>visiteurs aspirant votre site </strong>: ce sont des parasites n'ayant rien compris au principe de
-      l'Internet. Si vous êtes certains de les différencier des robots, plusieurs mesures sont envisageables :
+    </section>
+    <section>
+      <h4>Spam</h4>
+      <p>Chaque fois que vous incluez une adresse email dans une page Web, un robot est susceptible de scruter cette
+        page, détecter l'adresse, et l'ajouter à la prochaine liste de ses victimes de spam (voire d'émetteur de virus).
+        Il est donc important de ne jamais placer de telles adresses en clair (que ce soit à l'affichage, mais aussi
+        dans le code source HTML) mais de manière déguisée. Plusieurs options s'offrent à vous pour cela :
+      </p>
       <ul>
-        <li>bannir leurs adresses IP si celles-ci sont fixes</li>
-        <li>restreindre l'accès à votre site par un login/mot de passe</li>
+        <li>une fonction <a href="../../../../impl/lang/js/index.html">JavaScript</a> calculant l'adresse (par
+          concaténations de plusieurs chaînes par exemple).
+        </li>
+        <li>une image affichant l'adresse email</li>
       </ul>
-    </li>
-  </ul>
-  <h4>Spam</h4>
-
-  <p>Chaque fois que vous incluez une adresse email dans une page Web, un robot est susceptible de scruter cette page,
-    détecter l'adresse, et l'ajouter à la prochaine liste de ses victime de spam (voire d'émetteur de virus). Il est
-    donc important de ne jamais placer de telles adresses en clair (que ce soit à l'affichage mais aussi dans le code
-    source HTML) mais de manière déguisée. Plusieurs options s'offrent à vous pour cela :
-  </p>
-  <ul>
-    <li>une fonction <a href="../../../../impl/lang/js/index.html">JavaScript</a> calculant l'adresse (par
-      concaténations de plusieurs chaînes par exemple).
-    </li>
-    <li>une image affichant l'adresse email</li>
-  </ul>
+    </section>
+  </section>
   <p>Referrers</p>
   <p>stats 404</p>
 </section>
-<section title="Voir aussi">
+<section>
+  <h2>Voir aussi</h2>
   <ul>
     <li>W3C</li>
     <li>La Netiquette</li>
   </ul>
-</section><!--#include virtual="/footer.html" -->
+</section>
+<!--#include virtual="/footer.html" -->

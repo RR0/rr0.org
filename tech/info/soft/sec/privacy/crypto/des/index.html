@@ -1,0 +1,63 @@
+<!--#include virtual="/header-start.html" -->
+<title>DES</title>
+<meta content="https://www.itl.nist.gov/fipspubs/fip46-2.htm" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Data Encryption Standard</i> : standard de <a href="index.html">chiffrement</a> de données.</p>
+<section>
+  <h2>Analyse</h2>
+  <p>DES fait partie de la famille des systèmes de <a href="../Symetrique.html">chiffrement symétrique</a>. </p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Utilisant des blocs de 64 bits et une <a href="../../../../proj/impl/struct/Key.html">clé</a> de taille fixe (56
+    bits).</p>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>initialement créé par <a href="/org/us/company/ibm/index.html">IBM</a> pour son insertion dans ses périphériques
+    </li>
+    <li>adopté en <time>1977</time> comme standard par le gouvernement américain. </li>
+    <li>algorithme de chiffrement le plus connu et le plus utilisé dans le monde.</li>
+    <li>certifié tous les 5 ans par le <a href="/org/us/doc/NIST.html">NIST</a> comme standard de chiffrement
+      gouvernemental aux Etats-Unis.</li>
+    <li>peu sûr, lent et donc à éviter. Sa taille de clé est invariablement de 56 bits, ce qui est notoirement
+      insuffisant aujourd'hui (on peut le casser en 3 jours avec un matériel de 200000 $). DES a été officiellement
+      cassé le <time>1997-06-17</time>, grâce aux concours et primes offertes par <a
+        href="/org/us/company/RSA.html">RSA</a>.
+    </li>
+    <li>Suite à son l'obsolescence, DES est remplacé par <a href="/tech/info/soft/sec/privacy/crypto/aes">AES</a>.</li>
+    <li>Il existe une version doublant la taille de la clé DES, nommée <a href="3DES.html">3DES</a>.</li>
+    <li>disponible dans la <a href="/org/us/company/oracle/sun/ptf/java/api/se/security/JCE.html">JCE</a>.</li>
+    <li> Un <a href="../Symetrique.html">chiffrement symétrique</a> tel que DES (ou <a href="../RC4.html">RC4</a>), plus
+      simple et plus rapide, peut être utilisé une fois qu'une des parties est certifiée (c'est ce que fait <a
+        href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a>). Lors du premier message crypté avec la <a
+        href="../../../../proj/impl/struct/Key.html">clé</a> publique du destinataire certifié (un serveur
+      généralement), une clé de chiffrement unique (une <a href="../../../../proj/impl/struct/Key.html">clé</a> secrète
+      de chiffrement de session, ou <i>token</i>) est générée et transmise au destinataire authentifié. Cette <a
+        href="../../../../proj/impl/struct/Key.html">clé</a> n'est pas visible puisque insérée dans le message lisible
+      uniquement par le serveur destinaire. Elle reste néanmoins connue du client qui l'a générée et du serveur qui l'a
+      reçue dans son premier message crypté avec sa <a href="../../../../proj/impl/struct/Key.html">clé</a> publique.
+      Les deux parties peuvent alors s'échanger des messages cryptés avec cette clé de session partagée. Un problème
+      subsiste cependant : une partie intermédiaire peut toujours essayer de modifier les messages cryptés échangés,
+      qui, rappelons-le, sont maintenant considérés comme sûr par le client. Ces messages étant cryptés, les chances de
+      succès d'une telle tentative varient en fonction du protocole utilisé, mais existent belles et bien.</li>
+    <li>Le principe de l'enveloppe électronique <a href="/org/us/company/RSA.html">RSA</a> consiste à générer une clé
+      DES aléatoire, à crypter le message à transmettre avec cette clé, à crypter la clé elle-même avec la clé publique
+      du destinataire, puis à mettre le tout dans l'enveloppe envoyée à celui-ci.</li>
+    <li>Le <a href="/org/us/doc/NIST.html">NIST</a> émet des documents <a href="#FIPS">FIPS</a>, et a été autorisé, en
+      collaboration avec la <a href="/org/us/ic/nsa">NSA</a>, à valider les systèmes cryptographiques nationaux aux
+      Etats-Unis. Il a notamment validé le système de chiffrement DES jusqu'en <time>1998</time>.</li>
+    <li>RC2 a cependant l'avantage de pouvoir paramétrer la taille de la clé utilisée (ce qui est pratique pour se
+      conformer aux limitations d'exportation de la technologie en dehors des USA en ne dépassant pas 40 bits alors que
+      <i lang="en">DES</i> nécessite 56 bits).</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><code><a href="https://www.cs.uwf.edu/%7Ewilde/CEN6990/papers/boone/DES.htm">https://www.cs.uwf.edu/~wilde/CEN6990/papers/boone/DES.htm</a></code>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

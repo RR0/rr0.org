@@ -1,14 +1,12 @@
 import { HtmlSsgContext } from "ssg-api"
-import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { TimeTextBuilder } from "../time/TimeTextBuilder"
-import { TimeReplacer } from "../time/TimeReplacer"
+import { AnchorHandler } from "./AnchorHandler"
 
 export class AnchorReplacer {
 
   protected readonly baseUrl: string
 
-  constructor(baseUrl: string, protected caseService: CaseService) {
+  constructor(baseUrl: string, protected handlers: AnchorHandler[]) {
     this.baseUrl = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"
   }
 
@@ -38,33 +36,9 @@ export class AnchorReplacer {
     if (url.protocol.startsWith("http")) {
       const pathname = url.pathname
       const pathToSearch = pathname.substring(1)
-      if (pathToSearch && this.caseService.dirs.find(dir => dir.startsWith(pathToSearch))) {
-        const aCase = this.caseService.read(context, pathToSearch)
-        if (aCase) {
-          if (!a.title) {
-            const titleElems: string[] = []
-            const caseContext = context.clone()
-            caseContext.time.reset()
-            const caseTitle = aCase.title
-            if (caseTitle && !titleElems.includes(caseTitle)) {
-              titleElems.push(caseTitle)
-            }
-            const time = aCase.time
-            if (time && !titleElems.includes(time)) {
-              TimeReplacer.updateTimeFromStr(caseContext.time, time)
-              titleElems.push(TimeTextBuilder.build(caseContext))
-            }
-            const place = aCase.place
-            if (place && !titleElems.includes(place)) {
-              titleElems.push(place)
-            }
-            const conclusion = aCase.conclusion
-            if (conclusion && !titleElems.includes(conclusion)) {
-              a.classList.add(conclusion)
-              titleElems.push(context.messages.case.conclusion[conclusion])
-            }
-            a.title = titleElems.join(", ")
-          }
+      if (pathToSearch) {
+        for (const handler of this.handlers) {
+          handler.handle(context, a, pathToSearch)
         }
       }
       if (pathname.indexOf(".") < 0 && !pathname.endsWith("/") && !url.hash) {

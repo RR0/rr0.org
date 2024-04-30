@@ -8,13 +8,13 @@ describe("AnchorReplacer", () => {
 
   let document: Document
 
-  beforeEach(() => {
+  beforeEach(async () => {
     document = new JSDOM().window.document
   })
 
   test("parse relative internal url", async () => {
     const context = rr0TestUtil.newHtmlContext("/science/crypto/ufo/enquete/dossier", "")
-    const replacer = new AnchorReplacer("https://rr0.org/", caseService)
+    const replacer = new AnchorReplacer("https://rr0.org/", [])
     const a = document.createElement("a")
     a.href = "Roswell"
     a.textContent = "Roswell"
@@ -25,7 +25,7 @@ describe("AnchorReplacer", () => {
 
   test("parse absolute internal file", async () => {
     const context = rr0TestUtil.newHtmlContext("/science/crypto/ufo/enquete/dossier", "")
-    const replacer = new AnchorReplacer("https://rr0.org/", caseService)
+    const replacer = new AnchorReplacer("https://rr0.org/", [])
     const a = document.createElement("a")
     a.href = "/Contact.html"
     a.textContent = "Contact"
@@ -36,7 +36,7 @@ describe("AnchorReplacer", () => {
 
   test("parse absolute internal url", async () => {
     const context = rr0TestUtil.newHtmlContext("/science/crypto/ufo/enquete/dossier", "")
-    const replacer = new AnchorReplacer("https://rr0.org/", caseService)
+    const replacer = new AnchorReplacer("https://rr0.org/", [])
     const a = document.createElement("a")
     a.href = "/time/pluies"
     a.textContent = "pluies"
@@ -47,7 +47,7 @@ describe("AnchorReplacer", () => {
 
   test("parse absolute external url", async () => {
     const context = rr0TestUtil.newHtmlContext("/science/crypto/ufo/enquete/dossier", "")
-    const replacer = new AnchorReplacer("https://rr0.org/", caseService)
+    const replacer = new AnchorReplacer("https://rr0.org/", [])
     const a = document.createElement("a")
     a.href = "https://wikipedia.org"
     a.textContent = "Wikipedia"
@@ -58,7 +58,7 @@ describe("AnchorReplacer", () => {
 
   test("parse url with anchor", async () => {
     const context = rr0TestUtil.newHtmlContext("/science/crypto/ufo/enquete/dossier", "")
-    const replacer = new AnchorReplacer("https://rr0.org/", caseService)
+    const replacer = new AnchorReplacer("https://rr0.org/", [])
     const a = document.createElement("a")
     a.href = "enquete/dossier/11Septembre/WTC/crashes#passeport"
     a.textContent = "Passeports"

@@ -10,7 +10,7 @@ import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
  */
 export class BaseOvniFranceCaseSummaryMapper implements CaseMapper<RR0SsgContext, BaseOvniFranceCase, BaseOvniFranceCaseSummary> {
 
-  constructor(readonly baseUrl: string, readonly copyright: string, readonly authors: string[]) {
+  constructor(readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]) {
   }
 
   map(context: RR0SsgContext, csvCase: BaseOvniFranceCase, sourceTime: Date): BaseOvniFranceCaseSummary {

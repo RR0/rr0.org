@@ -6,8 +6,9 @@ import { quebecMessages_en } from "./region/qc/QuebecMessages_en"
 import { CanadaMessages } from "./CanadaMessages"
 import { albertaMessages_en } from "./region/ab/AlbertaMessages_en"
 
-export const canada_en = CountryMessages.create<CanadaMessages>("Canada", {
-  [CanadaRegionCode.ab]: albertaMessages_en,
+export const canada_en = CountryMessages.create<CanadaMessages>("Canada",
+  {
+    [CanadaRegionCode.ab]: albertaMessages_en,
     [CanadaRegionCode.bc]: britishColumbiaMessages_en,
     [CanadaRegionCode.qc]: quebecMessages_en,
     [CanadaRegionCode.mb]: manitobaMessages_en

@@ -122,14 +122,14 @@ caseExecution.setVariable("caseSuccessful", true);]]></camunda:script>
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNShape id="EntryCriterion_02cf2iv_di" cmmnElementRef="EntryCriterion_02cf2iv">
-        <dc:Bounds x="406" y="184" width="20" height="28" />
+        <dc:Bounds x="406" y="184" width="20" />
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNEdge id="PlanItemOnPart_1i5o90m_di" cmmnElementRef="PlanItemOnPart_1i5o90m" targetCMMNElementRef="EntryCriterion_02cf2iv" isStandardEventVisible="true">
         <di:waypoint xsi:type="dc:Point" x="349" y="198" />
         <di:waypoint xsi:type="dc:Point" x="406" y="198" />
         <cmmndi:CMMNLabel>
-          <dc:Bounds x="357" y="211" width="50" height="12" />
+          <dc:Bounds x="357" y="211" height="12" />
         </cmmndi:CMMNLabel>
       </cmmndi:CMMNEdge>
       <cmmndi:CMMNShape id="PlanItem_1cst0lf_di" cmmnElementRef="PlanItem_1cst0lf">
@@ -137,7 +137,7 @@ caseExecution.setVariable("caseSuccessful", true);]]></camunda:script>
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNShape id="EntryCriterion_0r3cjvl_di" cmmnElementRef="EntryCriterion_0r3cjvl">
-        <dc:Bounds x="406" y="343" width="20" height="28" />
+        <dc:Bounds x="406" y="343" width="20" />
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNEdge id="PlanItemOnPart_1vxl4wh_di" cmmnElementRef="PlanItemOnPart_1vxl4wh" targetCMMNElementRef="EntryCriterion_0r3cjvl" isStandardEventVisible="true">
@@ -145,11 +145,11 @@ caseExecution.setVariable("caseSuccessful", true);]]></camunda:script>
         <di:waypoint xsi:type="dc:Point" x="349" y="357" />
         <di:waypoint xsi:type="dc:Point" x="406" y="357" />
         <cmmndi:CMMNLabel>
-          <dc:Bounds x="354" y="360" width="50" height="12" />
+          <dc:Bounds x="354" y="360" height="12" />
         </cmmndi:CMMNLabel>
       </cmmndi:CMMNEdge>
       <cmmndi:CMMNShape id="EntryCriterion_1chyu4l_di" cmmnElementRef="EntryCriterion_1chyu4l">
-        <dc:Bounds x="570" y="186" width="20" height="28" />
+        <dc:Bounds x="570" y="186" width="20" />
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNEdge id="PlanItemOnPart_1nhof0c_di" cmmnElementRef="PlanItemOnPart_1nhof0c" targetCMMNElementRef="EntryCriterion_1chyu4l" isStandardEventVisible="true">
@@ -170,18 +170,18 @@ caseExecution.setVariable("caseSuccessful", true);]]></camunda:script>
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNShape id="EntryCriterion_1gg1urd_di" cmmnElementRef="EntryCriterion_1gg1urd">
-        <dc:Bounds x="832" y="185" width="20" height="28" />
+        <dc:Bounds x="832" y="185" width="20" />
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNEdge id="PlanItemOnPart_17s2b8g_di" cmmnElementRef="PlanItemOnPart_17s2b8g" targetCMMNElementRef="EntryCriterion_1gg1urd" isStandardEventVisible="true">
         <di:waypoint xsi:type="dc:Point" x="758" y="199" />
         <di:waypoint xsi:type="dc:Point" x="832" y="199" />
         <cmmndi:CMMNLabel>
-          <dc:Bounds x="772" y="202" width="50" height="12" />
+          <dc:Bounds x="772" y="202" height="12" />
         </cmmndi:CMMNLabel>
       </cmmndi:CMMNEdge>
       <cmmndi:CMMNShape id="ExitCriterion_07ha75l_di" cmmnElementRef="ExitCriterion_07ha75l">
-        <dc:Bounds x="338" y="295" width="20" height="28" />
+        <dc:Bounds x="338" y="295" width="20" />
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNEdge id="PlanItemOnPart_0vs5eb1_di" cmmnElementRef="PlanItemOnPart_0vs5eb1" targetCMMNElementRef="ExitCriterion_07ha75l" isStandardEventVisible="true">
@@ -190,11 +190,11 @@ caseExecution.setVariable("caseSuccessful", true);]]></camunda:script>
         <di:waypoint xsi:type="dc:Point" x="306" y="309" />
         <di:waypoint xsi:type="dc:Point" x="338" y="309" />
         <cmmndi:CMMNLabel>
-          <dc:Bounds x="282" y="311" width="50" height="12" />
+          <dc:Bounds x="282" y="311" height="12" />
         </cmmndi:CMMNLabel>
       </cmmndi:CMMNEdge>
       <cmmndi:CMMNShape id="EntryCriterion_1nu7tbl_di" cmmnElementRef="EntryCriterion_1nu7tbl">
-        <dc:Bounds x="610" y="288" width="20" height="28" />
+        <dc:Bounds x="610" y="288" width="20" />
         <cmmndi:CMMNLabel />
       </cmmndi:CMMNShape>
       <cmmndi:CMMNShape id="PlanItem_04x1kuu_di" cmmnElementRef="conditionalActivateHumanTask">

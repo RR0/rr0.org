@@ -19,7 +19,6 @@ enum CaseConclusion {
 }
 
 export interface Case extends RR0CaseSummary {
-  dirName: string
   title: string
   time: string
   classification?: {

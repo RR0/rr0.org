@@ -15,7 +15,7 @@
   <blockquote>
     <p>À l'époque de la domination d'IE à 90% il n'y avait rien d'autre à faire que de considérer le navigateur comme
       une "boîte noire", mais aujourd'hui, avec les navigateurs open représentant <a
-          href="https://techcrunch.com/2011/08/01/open-web-browsers/">plus de la moitié des utilisateurs du marché</a>,
+        href="https://techcrunch.com/2011/08/01/open-web-browsers/">plus de la moitié des utilisateurs du marché</a>,
       c'est le bon moment pour jeter un œil sous le capot et regarder ce qui se trouve sans un navigateur. Eh bien, ce
       qu'on y trouve sont des millions de lignes de C++...</p>
   </blockquote>
@@ -29,16 +29,16 @@
   <div style="border-left: 3px solid hsl(177, 27%, 43%); padding: 7px;">
     <p>
       Cet article a été traduit en différentes langues : HTML5 Rocks héberge les versions en <a
-        href="index.html">anglais</a>, <a
-        href="https://www.html5rocks.com/de/tutorials/internals/howbrowserswork/">allemand</a>, <a
-        href="https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/">espagnol</a>, <a
-        href="https://www.html5rocks.com/ja/tutorials/internals/howbrowserswork/">japonais</a>, <a
-        href="https://www.html5rocks.com/pt/tutorials/internals/howbrowserswork/">portugais</a>, <a
-        href="https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/">russe</a> et <a
-        href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/">chinois simplifié</a>. Vous pouvez
+      href="index.html">anglais</a>, <a
+      href="https://www.html5rocks.com/de/tutorials/internals/howbrowserswork/">allemand</a>, <a
+      href="https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/">espagnol</a>, <a
+      href="https://www.html5rocks.com/ja/tutorials/internals/howbrowserswork/">japonais</a>, <a
+      href="https://www.html5rocks.com/pt/tutorials/internals/howbrowserswork/">portugais</a>, <a
+      href="https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/">russe</a> et <a
+      href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/">chinois simplifié</a>. Vous pouvez
       également lire des traductions stockées ailleurs en <a
-        href="https://helloworld.naver.com/helloworld/59361">coréen</a> et <a
-        href="https://sonsuzdongu.com/blog/tarayicilar-nasil-calisir-modern-web-tarayicilarin-perde-arkasi-cevirisi">truc </a>.
+      href="https://helloworld.naver.com/helloworld/59361">coréen</a> et <a
+      href="https://sonsuzdongu.com/blog/tarayicilar-nasil-calisir-modern-web-tarayicilarin-perde-arkasi-cevirisi">truc </a>.
     <p>
       Vous pouvez aussi regarder <a href="https://vimeo.com/44182484">Tali Garsiel donnant une conférence sur ce
       sujet</a> sur Vimeo:
@@ -62,7 +62,7 @@
     Mobile, UC Browser, les navigateurs du Nokia S40/S60 browsers et Chrome&ndash;tous, à l'exception des navigateurs
     Opéra, étant basés sur WebKit. Je donnerai des exemples des navigateurs open source Firefox et Chrome, ainsi que
     Safari (qui est en partie open source). Selon <a
-      href="https://gs.statcounter.com/">StatCounter statistics</a> (en Juin 2013) Chrome, Firefox et Safari représentent
+    href="https://gs.statcounter.com/">StatCounter statistics</a> (en Juin 2013) Chrome, Firefox et Safari représentent
     près de 71% de l'utilisation globale des navigateurs sur ordinateur de bureau. Sur mobile, Android Browser, iPhone
     et Chrome constituent près de 54% de cette utilisation.
   </p>
@@ -74,7 +74,7 @@
     demandant au serveur et en l'affichant dans la fenêtre de navigation. La ressource en question est généralement un
     document HTML, mais pourrait aussi être un PDF, une image, ou n'importe quel autre type de contenu. La localisation
     de la ressource est spécifiée par l'utilisateur au travers d'un <abbr
-      title="Uniform Resource Identifier">URI</abbr> (Identificateur Uniforme de Ressource).
+    title="Uniform Resource Identifier">URI</abbr> (Identificateur Uniforme de Ressource).
   </p>
   <p>
     La manière dont le navigateur interprète et affiche les fichiers HTML est décrite dans les spécifications HTML et
@@ -164,19 +164,19 @@
     Après cela, il s'agit du flux de base du moteur de rendu :
   </p>
   <figure>
-    <img alt="Flux de base du moteur de rendu" height="66" src="flow.png" title="" width="600"/>
+    <img alt="Flux de base du moteur de rendu" height="66" src="flow.png" title=""/>
     <figcaption><span>Figure </span> : Flux de base du moteur de rendu</figcaption>
   </figure>
   <p>Le moteur de rendu commencera à analyser syntaxiquement le document HTML et à convertir les éléments en nœuds <a
-      href="#DOM">DOM</a> dans un arbre appelé "arbre de contenu". Le moteur analysera syntaxiquement les données de
+    href="#DOM">DOM</a> dans un arbre appelé "arbre de contenu". Le moteur analysera syntaxiquement les données de
     style, qu'elles viennent de fichiers CSS externes ou d'éléments de style dans le contenu. Les informations de style,
     couplées aux instructions visuelles du HTML, seront utilisés pour créer un autre arbre : l'<a
-        href="#Render_tree_construction">arbre de rendu</a>.</p>
+      href="#Render_tree_construction">arbre de rendu</a>.</p>
   <p>L'arbre de rendu contient des rectangles avec des attributs visuels comme la couleur et les dimensions. Les
     rectangles sont dans le bon ordre pour être affichés à l'écran.</p>
   <p>Après sa construction, l'arbre de rendu passe par un processus de "<a href="#layout">layout</a>". Cela veut dire
     donner à chaque nœud les coordonnées exactes de là où il devrait apparaître à l'écran. L'étape suivante est de <a
-        href="#Painting">peindre</a>&ndash;l'arbre de rendu va être traversé et chaque nœud sera dessiné en utilisant la
+      href="#Painting">peindre</a>&ndash;l'arbre de rendu va être traversé et chaque nœud sera dessiné en utilisant la
     couche de backend IU.</p>
   <p>Il est important de comprendre qu'il s'agit d'un processus progressif. Pour une meilleure expérience utilisateur,
     le moteur de rendu essaiera d'afficher du contenu à l'écran aussi tôt que possible. Il n'attendra pas que tout le
@@ -192,7 +192,7 @@
     <figure>
       <img alt="" height="290" src="image008.jpg" width="624"/>
       <figcaption><span>Figure </span> : Flux principal du moteur de rendu Gecko de Mozilla (<a
-          href="#3_6">3.6</a>)
+        href="#3_6">3.6</a>)
       </figcaption>
     </figure>
     <p>
@@ -237,8 +237,8 @@
       L'analyse syntaxique est basée sur les règles syntaxiques auxquelles obéit le document : le langage ou le format
       dans lequel il a été rédigé. Chaque format que vous analysez doit avoir une grammaire déterministe constituée d'un
       vocabulaire et de règles de syntaxe. On parle de <a
-        href="#context_free_grammar">grammaire non contextuelle</a>. Les langues humaines ne sont pas de tels langages
-      et ne peuvent donc pas être analysées avec des techniques d'analyse syntaxique conventionnelles.
+      href="#context_free_grammar">grammaire non contextuelle</a>. Les langues humaines ne sont pas de tels langages et
+      ne peuvent donc pas être analysées avec des techniques d'analyse syntaxique conventionnelles.
     </p>
   </section>
   <section>
@@ -334,7 +334,7 @@ MOINS: -
 </pre>
     Comme vous pouvez le voir, les entiers sont définis par une expression régulière.</p><p>
     La syntaxe est généralement définie dans un format appelé <a
-      href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">BNF </a>. Our language will be defined as:
+    href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">BNF </a>. Our language will be defined as:
     <pre class="prettyprint">
 expression :=  terme  opération  terme
 opération :=  PLUS | MOINS
@@ -342,9 +342,9 @@ terme := ENTIER | expression
 </pre>
     </p><p>
     Nous avons dit qu'un langage peut être analysé par des analyseurs syntaxiques réguliers si sa grammaire est une <a
-      id="context_free_grammar">grammaire non contextuelle</a>. Une définition intuitive d'une grammaire non
-    contextuelle est une grammaire qui peut être entièrement exprimée en BNF. Pour une définition formelle, voir l'<a
-      href="https://en.wikipedia.org/wiki/Context-free_grammar">article de Wikipedia sur les grammaires non
+    id="context_free_grammar">grammaire non contextuelle</a>. Une définition intuitive d'une grammaire non contextuelle
+    est une grammaire qui peut être entièrement exprimée en BNF. Pour une définition formelle, voir l'<a
+    href="https://en.wikipedia.org/wiki/Context-free_grammar">article de Wikipedia sur les grammaires non
     contextuelles</a>
   </section>
   <section>
@@ -417,8 +417,8 @@ terme := ENTIER | expression
     </p>
     <p>
       <a id="parser_generators">WebKit</a> utilise deux générateurs d'analyseurs syntaxique bien connus : <a
-        href="https://en.wikipedia.org/wiki/Flex_lexical_analyser">Flex</a> pour créer un analyseur lexical, et <a
-        href="https://www.gnu.org/software/bison/">Bison</a> pour créer un analyseur syntaxique (il est possible que vous
+      href="https://en.wikipedia.org/wiki/Flex_lexical_analyser">Flex</a> pour créer un analyseur lexical, et <a
+      href="https://www.gnu.org/software/bison/">Bison</a> pour créer un analyseur syntaxique (il est possible que vous
       les trouviez sous les noms de Lex et Yacc). L'entrée de Flex est un fichier contenu les définitions d'expressions
       régulières des tokens. L'entrée de Bison est l'ensemble des règles de syntax du langage, au format BNF.
     </p>
@@ -470,7 +470,7 @@ terme := ENTIER | expression
     <h3>DTD HTML</h3>
     <p>
       La définition de HTML est au format DTD. Ce format est utilisé pour définir des langages de la famille <a
-        href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a>. Le format contient les
+      href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a>. Le format contient les
       définitions de tous les éléments autorisés, leurs attributs et leur hiérarchie. Comme nous l'avons vu auparavant,
       la DTD HTML ne forme pas une grammaire non contextuelle.
     </p>
@@ -478,16 +478,16 @@ terme := ENTIER | expression
       Il existe quelques variations de la DTD. Le mode strict se conforme uniquement aux spécifications mais d'autres
       modes contiennent un support de balises utilisées par des navigateurs dans le passé. Le but est la compatibilité
       ascendante avec des contenus plus anciens. La DTD stricte actuelle est ici : <a
-        href="https://www.w3.org/TR/html4/strict.dtd">www.w3.org/TR/html4/strict.dtd</a>
+      href="https://www.w3.org/TR/html4/strict.dtd">www.w3.org/TR/html4/strict.dtd</a>
     </p></section>
   <section>
     <h3>DOM</h3>
     <p>
       L'arbre de sortie (l'"arbre d'analyse") est un arbre d'attributs et éléments DOM. <abbr
-        title="Document Object Model">DOM</abbr> est l'abbréviation de Modèle Objet de Document. C'est la représentation
+      title="Document Object Model">DOM</abbr> est l'abbréviation de Modèle Objet de Document. C'est la représentation
       objet du document HTML et l'interface des éléments HTML avec le monde extérieur comme JavaScript. <br> La racine
       de l'arbre est l'objet "<a
-        href="https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/level-one-core.html#i-Document">Document</a>".
+      href="https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/level-one-core.html#i-Document">Document</a>".
     </p>
     <p>
       Le DOM a presque une relation un-pour-un avec les balises. Par exemple :
@@ -512,7 +512,7 @@ terme := ENTIER | expression
       Comme HTML, le DOM est spécifié par l'organisation W3C. Voir <a href="https://www.w3.org/DOM/DOMTR">www.w3.org/DOM/DOMTR</a>.
       Il s'agit d'une spécification générique pour manipuler les documents. Un module spécifique décrit les éléments
       HTML en particulier. Les définitions HTML peuvent être trouvées ici : <a
-        href="https://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/idl-definitions.html">www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/idl-definitions.html</a>.
+      href="https://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/idl-definitions.html">www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/idl-definitions.html</a>.
     </p>
     <p>
       Quand je dis que l'arbre contient des nœuds DOM, je veux dire que l'arbre est construit avec des éléments qui
@@ -671,9 +671,8 @@ terme := ENTIER | expression
       recevrons maintenant la balise de fin de html qui nous placera dans le mode <b>"après après corps de document"</b>.
       Recevoir le token de fin de fichier terminera l'analyse syntaxique.
     </p>
-
     <figure>
-      <img alt="Construction d'arbre du html d'exemple" height="769" src="image022.gif" width="532"/>
+      <img alt="Construction d'arbre du html d'exemple" src="image022.gif"/>
       <figcaption><span>Figure </span> : construction d'arbre du html d'exemple</figcaption>
     </figure>
   </section>
@@ -684,7 +683,6 @@ terme := ENTIER | expression
       mode "deferred" : ceux qui doivent être exécutés après l'analyse du document. L'état du document sera alors fixé à
       "complet" et un événement "load" va être émis.
     </p>
-
     <p>
       Vous pouvez voir <a href="https://www.w3.org/TR/html5/syntax.html#html-parser">les algorithmes complets de
       tokenisation et construction d'arbre dans la spécification HTML5</a>
@@ -834,8 +832,8 @@ if (t->tagName == htmlTag || t->tagName == bodyTag )
     Vous vous souvenez des concepts d'analyse syntaxique dans l'introduction ? Eh bien, contrairement à HTML, CSS est
     une grammaire non contextuelle et peut être analysé en utilisant les types d'analyseurs décrits dans l'introduction.
     En fait <a
-      href="https://www.w3.org/TR/CSS2/grammar.html">les spécification CSS définissent la grammaire lexicale et
-    syntaxique de CSS</a>.
+    href="https://www.w3.org/TR/CSS2/grammar.html">les spécification CSS définissent la grammaire lexicale et syntaxique
+    de CSS</a>.
   </p>
   <p>
     Voyons quelques exemples : <br> La grammaire lexicale (le vocabulaire) est définie par les expressions régulières de
@@ -977,7 +975,7 @@ class RenderObject{
   Chaque rendu représente une zone rectangulaire correspondant généralement à la boîte CSS d'un nœud, comme c'est décrit
   dans la spec CSS2. Cela inclut des informations géometriques comme la largeur, la hauteur et la position. <br> Le type
   de boîte dépend de la valeur "display" de l'attribut de style associé au nœud (voir la section de <a
-    href="#style_computation">calcul du style</a>). Voici le code de WebKit pour décider quel type de rendu devrait être
+  href="#style_computation">calcul du style</a>). Voici le code de WebKit pour décider quel type de rendu devrait être
   créé pour un nœud DOM, en fonction de l'attribut display :
   <pre class="prettyprint">
 RenderObject* RenderObject::createObject(Node* node, RenderStyle* style)
@@ -1035,7 +1033,7 @@ RenderObject* RenderObject::createObject(Node* node, RenderStyle* style)
   <figure>
     <img alt="L'arbre de rendu et l'arbre DOM associé" height="396" src="image025.png" width="731">
     <figcaption><span>Figure </span> : L'arbre de rendu et l'arbre DOM associé (<a
-        href="#3_1">3.1</a>). Le "viewport" est le bloc conteneur initial. Dans WebKit ce sera l'objet "RenderView"
+      href="#3_1">3.1</a>). Le "viewport" est le bloc conteneur initial. Dans WebKit ce sera l'objet "RenderView"
     </figcaption>
   </figure>
 
@@ -1344,7 +1342,7 @@ p {color: blue}
     beaucoup la recherche de correspondance de règles. Il n'y a pas besoin de rechercher dans chaque déclaration : on
     peut extraire de ces maps les règles à associer à un élément. Cette optimisation élimine 95+% des règles, de sorte
     qu'il n'y a même plus besoin de les prendre en compte durant le process de recherche de correspondances (<a
-      href="#4_1">4.1</a>).
+    href="#4_1">4.1</a>).
   </p>
   <p>
     Voyons par exemple les règles de style suivantes :
@@ -1394,14 +1392,14 @@ table div {margin: 5px}
   </p><p>
   Les déclarations du navigateur sont moins importantes et l'utilisateur ne passe devant l'auteur que lorsque ses
   déclarations sont marquées comme importantes. Les déclarations du même ordre seront triées par <a
-    href="#Specificity">spécificité</a> puis en fonction de l'ordre dans lequel elles sont spécifiées. Les attributs
+  href="#Specificity">spécificité</a> puis en fonction de l'ordre dans lequel elles sont spécifiées. Les attributs
   visuels HTML sont traduits sous forme de déclarations CSS. Ils sont traités comme des règles de l'auteur avec une
   faible priorité.
 </p>
   <h3 id="Specificity">Spécificité</h3>
   <p>
     La spécificité du sélecteur est définie par la <a
-      href="https://www.w3.org/TR/CSS2/cascade.html#specificity">spécification CSS2</a> comme suit :
+    href="https://www.w3.org/TR/CSS2/cascade.html#specificity">spécification CSS2</a> comme suit :
   <ul>
     <li>compter 1 si la déclaration vient d'un attribut 'style' plutôt que d'une règle avec un sélecteur, 0 sinon (=
       a)</li>
@@ -1669,10 +1667,10 @@ while (!mExiting)
     </p></section>
   <section>
     <h3>Modèle de boîte CSS</h3>
-    <p>Le <a href="https://www.w3.org/TR/CSS2/box.html">modèle de boîte CSS</a> décrit des boîtes rectangulaires qui sont
-      générées pour les éléments de l'arbre du document et affichées conformément au modèle de formatage visuel. <br>
-      Chaque boîte dispose d'une zone de contenu (e.g. du texte, une image, etc.) ainsi que d'éventuelles bordure et
-      marges interne et externe.</p>
+    <p>Le <a href="https://www.w3.org/TR/CSS2/box.html">modèle de boîte CSS</a> décrit des boîtes rectangulaires qui
+      sont générées pour les éléments de l'arbre du document et affichées conformément au modèle de formatage visuel.
+      <br> Chaque boîte dispose d'une zone de contenu (e.g. du texte, une image, etc.) ainsi que d'éventuelles bordure
+      et marges interne et externe.</p>
     <figure>
       <img alt="Le modèle de boîte CSS2" height="348" src="image046.jpg" width="509">
       <figcaption>Le modèle de boîte CSS2</figcaption>
@@ -1726,7 +1724,7 @@ none : aucune boîte n'est générée.
     </figure>
     <p>Boîte en ligne : ne possède pas son propre bloc, mais se trouve à l'intérieur un bloc conteneur.</p>
     <figure>
-      <img alt="Boîtes en ligne" height="233" src="image059.png" width="300"/>
+      <img alt="Boîtes en ligne" height="233" src="image059.png"/>
       <figcaption><span>Figure </span> : Boîtes en ligne</figcaption>
     </figure>
     <p>Les blocs sont formatés verticalement l'un après l'autre. Les boîtes en lignes sont formatées
@@ -1789,8 +1787,8 @@ none : aucune boîte n'est générée.
   <section>
     <h3>Représentation en couches</h3>
     <p>
-      Ceci est spécifié par la propriété CSS z-index. Elle représente la 3ᵉ dimension de la boîte : sa position le
-      long de l'"axe z".</p>
+      Ceci est spécifié par la propriété CSS z-index. Elle représente la 3ᵉ dimension de la boîte : sa position le long
+      de l'"axe z".</p>
     <p>Les boîtes sont réparties en <a id="stackingcontext">piles</a> (appelées contextes d'empilement). Dans chaque
       pile les éléments à l'arrière seront dessinés en premier et les éléments à l'avant par-dessus, plus près de
       l'utilisateur. Dans le cas d'un recouvrement, l'élément le plus proche masquera l'élément précédent. <br> Les
@@ -1835,7 +1833,7 @@ none : aucune boîte n'est générée.
           <li id="1_1">Grosskurth, Alan. <a href="https://grosskurth.ca/papers/browser-refarch.pdf">A Reference
             Architecture for Web Browsers (pdf)</a>
           <li id="1_2">Gupta, Vineet. <a
-              href="https://www.vineetgupta.com/2010/11/how-browsers-work-part-1-architecture/">How Browsers Work&ndash;Part
+          href="https://www.vineetgupta.com/2010/11/how-browsers-work-part-1-architecture/">How Browsers Work&ndash;Part
             1&ndash;Architecture</a>
         </ol>
 
@@ -1844,8 +1842,8 @@ none : aucune boîte n'est générée.
           <li id="2_1">Aho, Sethi, Ullman, Compilers: Principles, Techniques, and Tools (aka the "Dragon book"),
             Addison-Wesley, 1986
           <li id="2_2"> Rick Jelliffe. <a
-              href="https://broadcast.oreilly.com/2009/05/the-bold-and-the-beautiful-two.html">The Bold and the
-            Beautiful: two new drafts for HTML 5.</a>
+          href="https://broadcast.oreilly.com/2009/05/the-bold-and-the-beautiful-two.html">The Bold and the Beautiful:
+          two new drafts for HTML 5.</a>
         </ol>
 
       <li id="3">Firefox
@@ -1895,15 +1893,16 @@ none : aucune boîte n'est générée.
     web en 2000, et a appris à connaître le modèle de couche "diabolique" de Netscape. Tout comme Richard Feynmann, elle
     a développé une fascination à comprendre comment les choses fonctionnent et elle a donc commencé à chercher dans les
     internes des navigateurs et à commencer à documenter ce qu'elle trouvait. Tali a aussi publié un court <a
-        href="https://taligarsiel.com/ClientSidePerformance.html">guide sur la performance côté client</a>.
+      href="https://taligarsiel.com/ClientSidePerformance.html">guide sur la performance côté client</a>.
   </p>
 </aside>
 <section>
   <h4>Traductions</h4>
   <p>Cette page a été traduite en Japonais, deux fois ! <a
-      href="https://cou929.nu/docs/how-browsers-work/">How Browsers Work&ndash;Behind the Scenes of Modern Web Browsers
+    href="https://cou929.nu/docs/how-browsers-work/">How Browsers Work&ndash;Behind the Scenes of Modern Web Browsers
     (ja)</a> by <a href="https://twitter.com/#!/_kosei_">@_kosei_</a> and also <a
-      href="https://shanon-tech.blogspot.com/2011/09/web.html">ブラウザってどうやって動いてるの？（モダンWEBブラウザシーンの裏側</a> by <a
+    href="https://shanon-tech.blogspot.com/2011/09/web.html">ブラウザってどうやって動いてるの？（モダンWEBブラウザシーンの裏側</a>
+    by <a
       href="https://twitter.com/#!/ikeike443">@ikeike443</a> and <a href="https://twitter.com/#!/kiyoto01">@kiyoto01</a>.
     Thanks everyone!</p></section>
 <!--#include virtual="/footer.html" -->

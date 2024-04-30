@@ -6,9 +6,10 @@ import { southAustralia_en } from "./region/sa/SouthAustraliaMessages_en"
 import { AustraliaRegionCode } from "./region/AustraliaRegionCode"
 import { newSouthWales_en } from "./region/nsw/NewSouthWalesMessages_en"
 
-export const australia_en = CountryMessages.create<AustraliaMessages>("Australie", {
-  [AustraliaRegionCode.nsw]: newSouthWales_en,
-  sa: southAustralia_en,
+export const australia_en = CountryMessages.create<AustraliaMessages>("Australie",
+  {
+    [AustraliaRegionCode.nsw]: newSouthWales_en,
+    sa: southAustralia_en,
     wa: westernAustralia_en,
     vic: victoria_en
   }

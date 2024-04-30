@@ -1,12 +1,13 @@
 import { AnchorHandler } from "./AnchorHandler"
-import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { TimeReplacer } from "../time/TimeReplacer"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
+import { DataService } from "../DataService"
+import { Case } from "../science/crypto/ufo/enquete/dossier/Case"
 
 export class CaseAnchorHandler implements AnchorHandler {
 
-  constructor(protected caseService: CaseService) {
+  constructor(protected caseService: DataService<Case>) {
   }
 
   handle(context: HtmlRR0SsgContext, a: HTMLAnchorElement, pathToSearch: string) {

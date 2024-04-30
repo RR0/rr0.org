@@ -5,4 +5,8 @@ export interface Rr0Data {
    * Should end with a trailing slash ("/").
    */
   dirName?: string
+
+  type?: string
+
+  supersededBy?: string
 }

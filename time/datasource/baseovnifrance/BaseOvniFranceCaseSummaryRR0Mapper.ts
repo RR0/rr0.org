@@ -15,7 +15,7 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
 
   constructor(
     protected depService: DepartmentService, protected cityService: CityService,
-    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]
+    readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]
   ) {
   }
 

@@ -3,19 +3,20 @@ import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { HtmlTag } from "../../../../../util/HtmlTag"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 import { Time } from "../../../../../time/Time"
-import { CaseService } from "./CaseService"
 import { Case } from "./Case"
+import { DataService } from "../../../../../DataService"
 
 export class CaseDirectoryStep extends DirectoryStep {
 
-  constructor(protected caseService: CaseService, excludedDirs: string[], template: string,
+  constructor(protected caseService: DataService<Case>, excludedDirs: string[], template: string,
               protected outputFunc: OutputFunc, config: SsgConfig) {
     super(caseService.dirs, excludedDirs, template, config, "case directory")
   }
 
   static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
 
-  static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: CaseService): Promise<CaseDirectoryStep> {
+  static async create(outputFunc: OutputFunc, config: SsgConfig,
+                      caseService: DataService<Case>): Promise<CaseDirectoryStep> {
     return new CaseDirectoryStep(caseService, ["science/crypto/ufo/enquete/dossier/canular"],
       CaseDirectoryStep.template, outputFunc, config)
   }

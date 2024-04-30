@@ -1,8 +1,7 @@
 import { DomReplaceCommand, DomReplacer } from "ssg-api"
 import { AnchorReplacer } from "./AnchorReplacer"
-import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { CaseAnchorHandler } from "./CaseAnchorHandler"
+import { AnchorHandler } from "./AnchorHandler"
 
 /**
  * Contextual replacement of anchors (`<a>` tags).
@@ -11,11 +10,9 @@ export class AnchorReplaceCommand extends DomReplaceCommand<HTMLAnchorElement> {
 
   protected readonly singleton: AnchorReplacer
 
-  constructor(baseUrl: string, caseService: CaseService) {
+  constructor(baseUrl: string, handlers: AnchorHandler[]) {
     super("a")
-    this.singleton = new AnchorReplacer(baseUrl, [
-      new CaseAnchorHandler(caseService)
-    ])
+    this.singleton = new AnchorReplacer(baseUrl, handlers)
   }
 
   protected async createReplacer(context: HtmlRR0SsgContext): Promise<DomReplacer<HTMLAnchorElement>> {

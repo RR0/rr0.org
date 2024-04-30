@@ -10,7 +10,7 @@ import { GeipanCase } from "./GeipanCase"
  */
 export class GeipanCaseSummaryMapper implements CaseMapper<RR0SsgContext, GeipanCase, GeipanCaseSummary> {
 
-  constructor(readonly baseUrl: string, readonly copyright: string, readonly authors: string[]) {
+  constructor(readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]) {
   }
 
   map(context: RR0SsgContext, csvCase: GeipanCase, sourceTime: Date): GeipanCaseSummary {

@@ -1,32 +1,36 @@
 import { SsgFile } from "ssg-api"
 import { RR0FileUtil } from "./util/file/RR0FileUtil"
 import { RR0SsgContext } from "./RR0SsgContext"
+import path from "path"
+import { Rr0Data } from "./Rr0Data"
 
-export class DataService<T> {
+export class DataService<T extends Rr0Data> {
 
-  protected readonly dirToData = new Map<string, T>()
+  protected readonly pathToData = new Map<string, T>()
 
   constructor(readonly dirs: string[], protected fileName: string) {
   }
 
-  static async create<T>(fileName: string): Promise<DataService<T>> {
+  static async create<T>(name: string): Promise<DataService<T>> {
+    const fileName = name + ".json"
     const dirs = RR0FileUtil.findDirectoriesContaining(fileName)
     return new DataService<T>(dirs, fileName)
   }
 
   read(context: RR0SsgContext, dirName: string): T {
-    let dirCase = this.dirToData.get(dirName)
-    if (dirCase === undefined) {
+    let data = this.pathToData.get(dirName)
+    if (data === undefined) {
       try {
-        dirCase = {dirName, time: "", title: ""}
-        const jsonFileInfo = SsgFile.read(context, `${dirName}/` + this.fileName)
-        Object.assign(dirCase, JSON.parse(jsonFileInfo.contents))
+        data = {dirName, time: "", title: ""}
+        const p = path.join(dirName, this.fileName)
+        const jsonFileInfo = SsgFile.read(context, p)
+        Object.assign(data, JSON.parse(jsonFileInfo.contents))
+        this.pathToData.set(dirName, data)
       } catch (e) {
-        console.warn(`${dirName} has no case.json description`)
-        dirCase = null
+        console.warn(`${dirName} has no ${this.fileName} description`)
+        data = null
       }
-      this.dirToData.set(dirName, dirCase)
     }
-    return dirCase
+    return data
   }
 }

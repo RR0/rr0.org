@@ -1,0 +1,5 @@
+{
+  "type": "api",
+  "deprecated": true,
+  "note": "Remplacé par <a href='/tech/info/soft/sec/integrity/digest/sha'>SHA</a>"
+}

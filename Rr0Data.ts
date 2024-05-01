@@ -8,5 +8,7 @@ export interface Rr0Data {
 
   type?: string
 
-  supersededBy?: string
+  deprecated?: boolean
+
+  note?: string
 }

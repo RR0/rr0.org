@@ -8,7 +8,7 @@ import { Case } from "../science/crypto/ufo/enquete/dossier/Case"
 describe("AnchorReplaceCommand", () => {
 
   test("replace anchor tag", async () => {
-    const caseService = await DataService.create<Case>("case.json")
+    const caseService = await DataService.create<Case>("case")
     const command = new AnchorReplaceCommand("https://rr0.org/", [new CaseAnchorHandler(caseService)])
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html",
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)

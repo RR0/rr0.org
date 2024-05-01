@@ -2,13 +2,13 @@ import { CaseMapper } from "../CaseMapper"
 import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
-import { CityService } from "../../../org/country/region/department/city/CityService"
+import { CityService } from "/org/country/region/department/city/CityService"
 import assert from "assert"
-import { france } from "../../../org/eu/fr/France"
+import { france } from "/org/eu/fr/France"
 import { GeipanCaseClassification } from "./GeipanCaseClassification"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
-import { Organization } from "../../../org/Organization"
+import { Organization } from "/org/Organization"
 
 export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, GeipanCaseSummary, RR0CaseSummary> {
 

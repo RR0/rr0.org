@@ -47,17 +47,21 @@
       défaut (1099), ce qui amène automatiquement (si la propriété <code>http.proxyHost</code> est spécifiée, voir plus
       bas) le client <a
           href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> à tenter un tunneling <a
-          href="../proj/design/arch/web/HTTP.html">HTTP</a>. Si cette tentative de tunnelling n'est pas souhaitée, on
+        href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>. Si cette tentative de tunnelling n'est pas
+      souhaitée, on
       fixera la propriété <code>java.rmi.server.disableHttp=true</code>.</p>
-    <p>Parce les requêtes <a href="../proj/design/arch/web/HTTP.html">HTTP</a> ne peuvent être émises que dans une
+    <p>Parce les requêtes <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> ne peuvent être émises que
+      dans une
       direction au travers d'un pare-feu, un client ne peut exporter ses propres objets au-delà du pare-feu, parce
       qu'une machine au-delà de ce pare-feu ne peut invoquer une méthode en retour vers le client (à vérifier si le
-      pare-feu autorise les requêtes entrantes sur le port <a href="../proj/design/arch/web/HTTP.html">HTTP</a>).</p>
+      pare-feu autorise les requêtes entrantes sur le port <a
+        href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>).</p>
   </section>
   <section>
     <h3>DNS</h3>
     <p>Il arrive également que le pare-feu d'un utilisateur empêche ce dernier de se connecter à un serveur <a
-        href="protocole/5/DNS.html">DNS</a> externe, et donc de résoudre des noms symboliques (<code>www.javarome.org</code> par
+      href="/tech/info/soft/reseau/protocole/7/DNS.html">DNS</a> externe, et donc de résoudre des noms symboliques
+      (<code>www.javarome.org</code> par
       exemple) en adresses physique (195.102.32.38 par exemple). Une applet sera par exemple incapable de charger une de
       ses ressources, parce qu'utilisant son codebase exprimé sous forme de nom symbolique pour récupérer cette
       ressource.
@@ -68,7 +72,8 @@
         et non pas le nom symbolique. Ceci impose de ne plus changer d'adresse <a
             href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a>.
       </li>
-      <li>Spécifiez la résolution du nom symbolique dans le fichier de votre <a href="protocole/5/DNS.html">DNS</a> local.
+      <li>Spécifiez la résolution du nom symbolique dans le fichier de votre <a
+        href="/tech/info/soft/reseau/protocole/7/DNS.html">DNS</a> local.
         <ul>
           <li>dans <code>/etc/hosts</code> pour les systèmes <a href="../prod/os/unix">Unix</a></li>
           <li>dans <code>c:\windows\hosts</code> pour les systèmes <a
@@ -84,36 +89,44 @@
   </section>
   <section>
     <h3>HTTP</h3>
-    <p>L'utilisation du protocole <a href="../proj/design/arch/web/HTTP.html">HTTP</a> est donc une règle quasi-générale
+    <p>L'utilisation du protocole <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> est donc une règle
+      quasi-générale
       pour franchir les pare-feux. Ce protocole possède cependant de nombreux désavantages, qu'il peut être nécessaire
       de contourner afin que le support des pare-feux n'handicape pas fonctionnellement notre application.</p>
-    <p><a href="../proj/design/arch/web/HTTP.html">HTTP</a> n'est en effet pas un protocole dit "connecté", ce qui
+    <p><a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> n'est en effet pas un protocole dit "connecté",
+      ce qui
       signifie que la connection établie par le client est censée être fermée une fois la réponse envoyée à ce premier.
     </p>
     <p>Ce n'est heureusement pas toujours vrai.</p>
     <section><h4>Connexions Persistantes</h4>
-      <p>De nombreuses implémentations de <a href="../proj/design/arch/web/HTTP.html">HTTP</a> ont introduit une
+      <p>De nombreuses implémentations de <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> ont introduit
+        une
         optimisation de ce principe, au travers des "connexions persistantes".</p>
       <p>Le principe des Connexions Persistantes consiste à réutiliser une connexion établie au lieu de la fermer et
         d'en réouvrir une autre.</p>
       <p>Ce mécanisme est fourni dans de nombreuses implémentations de <a
-          href="../proj/design/arch/web/HTTP.html">HTTP</a>, au travers de l'option <code>Keep-Alive</code>. Elle devait
+        href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>, au travers de l'option <code>Keep-Alive</code>.
+        Elle devait
         cependant être négotiée avec le serveur (qui devait la comprendre) et ne constituait pas le comportement par
         défaut de <a
-            href="../proj/design/arch/web/HTTP.html">HTTP</a> 1.0. Ceci pouvait en outre poser des problèmes lorsqu'un
+          href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> 1.0. Ceci pouvait en outre poser des problèmes
+        lorsqu'un
         client souhaitait se connecter à un tel serveur via un proxy <a
-            href="../proj/design/arch/web/HTTP.html">HTTP</a> qui ne comprenait pas cette option, et se bornait à la
+          href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> qui ne comprenait pas cette option, et se bornait
+        à la
         transmettre au serveur final. Ce dernier, qui comprenait l'option, ne fermait pas sa connexion, ce qui bloquait
         le proxy qui, lui, attendait une fermeture.</p>
-      <p><a href="../proj/design/arch/web/HTTP.html">HTTP</a> 1.1 a apporté de nombreuses optimisations, dont
+      <p><a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> 1.1 a apporté de nombreuses optimisations, dont
         l'utilisation par défaut des connexions persistantes, où l'exception consiste donc à fermer une connexion (la
         partie effectuant cette fermeture devant en informer l'autre via l'option <code>Connection: close</code>).
         L'utilisation de connexions persistantes par défaut permit par la suite diverses autres optimisations, comme
-        l'envoi de plusieurs requêtes <a href="../proj/design/arch/web/HTTP.html">HTTP</a>à la suite (les réponses sont
+        l'envoi de plusieurs requêtes <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>à la suite (les
+        réponses sont
         renvoyées dans l'ordre).</p>
-      <p>Un client <a href="../proj/design/arch/web/HTTP.html">HTTP</a> (<a
+      <p>Un client <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> (<a
           href="../proj/design/arch/web/client">navigateur Web</a> typiquement), tentera donc d'envoyer des requêtes <a
-          href="../proj/design/arch/web/HTTP.html">HTTP</a> sur une connexion existante (pour peu que le même serveur
+        href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> sur une connexion existante (pour peu que le même
+        serveur
         soit visé) tant que cette connexion n'a pas été fermée. Le nombre de requêtes acceptées sur une même connexion
         peut être paramétrable côté serveur (dans la configuration d'un serveur Web par exemple), ainsi que le délai
         d'inactivité accepté avant la fermeture d'une connexion (<i>timeout</i>). </p></section>
@@ -142,13 +155,13 @@
         proviennent du serveur mandataire)</li>
       <li>de contrôler les requêtes provenant des machines internes (on pourra par exemple n'autoriser que les requêtes
         <a
-            href="../proj/design/arch/web/HTTP.html">HTTP</a>)</li>
+          href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>)</li>
       <li>de contrôler les réponses provenant des machines externes</li>
     </ul>
     <p>Il existe deux grandes catégories de serveurs mandataires :</p>
     <ul>
       <li><b>les serveurs agissant au niveau application</b>, qui attendent des requêtes dans un protocole applicatif
-        donné (<a href="../proj/design/arch/web/HTTP.html">HTTP</a>, S-HTTP, <a href="protocole/5/FTP.html">FTP</a>,
+        donné (<a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>, S-HTTP, <a href="protocole/5/FTP.html">FTP</a>,
         Gopher). Le contenu de ces requêtes n'a pas besoin d'être modifié. Il est reçu tel quel par le serveur
         mandataire qui les redirige après examen et validation vers la machine destinataire du réseau externe.</li>
       <li><b>les serveurs agissant au niveau transport</b>, qui attendent des requêtes dans un protocole spécifique,

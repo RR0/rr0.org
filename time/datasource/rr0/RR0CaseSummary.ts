@@ -1,6 +1,6 @@
 import { Place } from "../../../place/Place"
 import { Source } from "../../../source/Source"
-import { Organization } from "../../../org/Organization"
+import { Organization } from "/org/Organization"
 import { UfoCase } from "../UfoCase"
 
 export type NamedPlace = {

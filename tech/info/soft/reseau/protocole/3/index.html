@@ -1,0 +1,29 @@
+<!--#include virtual="/header-start.html" -->
+<title>Protocoles réseau de l'ISO</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Définir le chemin emprunté par les données sur le <a href="../..">réseau</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Couche 3 du <a href="..">modèle ISO</a>.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ul>
+    <li>À l'<i>envoi</i>, décompose des segments de la couche 4 supérieure en <b>paquets</b> à transmettre.</li>
+    <li>À la <i>réception</i>, réassemble les <b>paquets</b> en segments de données.</li>
+  </ul>
+  <p>Si émetteur et récepteur sont sur le même réseau, cette couche est généralement évitée.</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><a href="ARP.html">ARP</a>, <a href="RARP.html">RARP</a></li>
+    <li><a href="IP.html">IP</a>, <a href="IPSec.html">IPSec</a>, <a href="IPX.html">IPX</a>, SPX</li>
+    <li><a href="NetBIOS.html">IPSec</a>, <a href="NetBEUI.html">IP</a></li>
+    <li><a href="ICMP.html">IPSec</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,6 +1,6 @@
 import { UfoSearchHttpDatasource } from "./UfoSearchHttpDatasource"
 import { UfoSearchFileDatasource } from "./UfoSearchFileDatasource"
-import { cityService } from "../../../org/Cities"
+import { cityService } from "/org/Cities"
 import { UfoSearchCaseRR0Mapper } from "./UfoSearchCaseRR0Mapper"
 
 export const ufoSearchHttpDatasource = new UfoSearchHttpDatasource("https://www.ufo-search.com", "timeline/search.html")

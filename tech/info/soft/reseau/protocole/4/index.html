@@ -1,0 +1,31 @@
+<!--#include virtual="/header-start.html" -->
+<title>Protocoles de transport de l'ISO</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <p>Assurer un traffic de données correct entre systèmes du <a href="../..">réseau</a>.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>Couche 4 du <a href="..">modèle ISO</a>.</p>
+  <ul>
+    <li>régule la vitesse de transmission</li>
+    <li>Gère le contrôle de flux et des erreurs (demande des retransmissions si nécessaire)</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ul>
+    <li>À l'<i>envoi</i>, décompose des données de la couche 5 supérieure en <b>segments</b> à transmettre.</li>
+    <li>À la <i>réception</i>, réassemble les <b>segments</b> en segments de données et les passe à la couche 5
+      supérieure.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li><a href="TCP.html">TCP</a>, <a href="UDP.html">UDP</a></li>
+    <li><a href="POP.html">IPSec</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

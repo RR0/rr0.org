@@ -2,18 +2,19 @@
 <title>HTTP</title>
 <meta name="url" content="https://www.w3.org/HTTP"/>
 <!--#include virtual="/header-end.html" -->
-<p><i>Hyper-Text Transfer Protocol</i> : <a href="../../../../reseau/protocole/index.html">protocole</a> de transfert
-  d'hyper-texte.</p>
+<p><i>Hyper-Text Transfer Protocol</i> : <a href="/tech/info/soft/reseau/protocole/index.html">protocole</a> de
+  transfert d'hyper-texte.</p>
 <section>
   <h2>Besoin</h2>
   <p>Définir un protocole réseau standard pour l'échange de documents sur le Web (pages <a
-      href="/tech/info/soft/data/doc/html">HTML</a>).
+    href="/tech/info/soft/data/doc/html">HTML</a>).
   </p>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>HTTP est un protocole de l'<a href="../../../../reseau/internet/index.html">Internet</a>, basé sur <a
-      href="../../../../reseau/protocole/4/TCP.html">TCP</a>/<a href="../../../../reseau/protocole/3/IP.html">IP</a> :
+  <p>HTTP est un protocole de l'<a href="/tech/info/soft/reseau/internet/index.html">Internet</a>, basé sur <a
+    href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>/<a
+    href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a> :
   </p>
   <table>
     <tr>
@@ -25,24 +26,25 @@
     <tr>
       <th>Transport</th>
       <td>
-        <div><a href="../../../../reseau/protocole/4/TCP.html">TCP</a></div>
+        <div><a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a></div>
       </td>
     </tr>
     <tr>
       <th>Réseau</th>
       <td>
-        <div><a href="../../../../reseau/protocole/3/IP.html">IP</a></div>
+        <div><a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a></div>
       </td>
     </tr>
   </table>
-  <p>Une trame HTTP est échangée entre un client HTTP (<a href="client/index.html">navigateur Web</a>) et un serveur
-    HTTP (<a href="../serveur/ServeurWeb.html">serveur Web</a>).</p>
+  <p>Une trame HTTP est échangée entre un client HTTP (<a href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateur
+    Web</a>) et un serveur HTTP (<a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveur Web</a>).
+  </p>
   <p>Elle est constituée de :</p>
   <ul>
     <li>Un <strong>en-tête</strong> (<em>header</em>) constitué de :
       <ul>
         <li>Une commande</li>
-        <li>Une <a href="../../../../reseau/internet/URI.html">URI</a> de ressource à obtenir (monChemin/maResource)
+        <li>Une <a href="/tech/info/soft/reseau/internet/URI.html">URI</a> de ressource à obtenir (monChemin/maResource)
         </li>
         <li>Des champs d'en-tête</li>
       </ul>
@@ -125,7 +127,7 @@
     </tr>
     <tr>
       <th rowspan="28">En-tête</th>
-      <th>Type <a href="MIME.html">MIME</a> du contenu</th>
+      <th>Type <a href="/tech/info/soft/reseau/protocole/6/MIME.html">MIME</a> du contenu</th>
       <td class="oui" colspan="2"><code>Content-type</code></td>
       <td></td>
     </tr>
@@ -281,7 +283,7 @@
       <th>Refresh: <em>n</em>;URL="<em>uneURL</em>"</th>
       <td></td>
       <td></td>
-      <td>Recharge une <a href="../../../../reseau/internet/URL.html">URL</a> au bout de <em>n</em> secondes.</td>
+      <td>Recharge une <a href="/tech/info/soft/reseau/internet/URL.html">URL</a> au bout de <em>n</em> secondes.</td>
     </tr>
     <tr>
       <th>Age</th>
@@ -337,8 +339,8 @@
       <th>Erreur interne du serveur</th>
       <td class="oui" colspan="2">500</td>
       <td>Erreur inatendue ayant empêché de servir la requête. Toutes les erreurs de modules annexes (<a
-          href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a>/<a
-          href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>, CGI, etc.) du serveur provoquent cette
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/Servlets.html">Servlet</a>/<a
+        href="/org/us/company/oracle/sun/ptf/java/api/ee/JSP.html">JSP</a>, CGI, etc.) du serveur provoquent cette
         erreur.
       </td>
     </tr>
@@ -369,36 +371,39 @@
   </blockquote>
   <h2>Notes</h2>
   <ul>
-    <li>Les <a href="../serveur/ServeurWeb.html">serveurs HTTP</a> sont également appelés serveurs Web</li>
-    <li>Des clients HTTP typiques sont les <a href="client/index.html">navigateurs Web</a></li>
-    <li>Une ressource HTTP sur Internet est localisée via une <a href="../../../../reseau/internet/URL.html">URL</a>
+    <li>Les <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveurs HTTP</a> sont également appelés
+      serveurs Web</li>
+    <li>Des clients HTTP typiques sont les <a href="/tech/info/soft/proj/design/arch/web/client/index.html">navigateurs
+      Web</a></li>
+    <li>Une ressource HTTP sur Internet est localisée via une <a href="/tech/info/soft/reseau/internet/URL.html">URL</a>
       HTTP
     </li>
-    <li>Les <a href="../serveur/ServeurApplicatif.html">serveurs applicatifs</a> sont souvent également des serveurs
-      HTTP
+    <li>Les <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs</a> sont
+      souvent également des serveurs HTTP
     </li>
-    <li>Utilise les types <a href="MIME.html">MIME</a></li>
-    <li><a href="client/Cookie.html">Cookies</a></li>
+    <li>Utilise les types <a href="/tech/info/soft/reseau/protocole/6/MIME.html">MIME</a></li>
+    <li><a href="/tech/info/soft/proj/design/arch/web/client/Cookie.html">Cookies</a></li>
     <li>chunked encoding [1.1]</li>
-    <li>Respect du TTL des <a href="../../../../reseau/protocole/5/DNS.html">DNS</a> [1.1]</li>
+    <li>Respect du TTL des <a href="/tech/info/soft/reseau/protocole/7/DNS.html">DNS</a> [1.1]</li>
     <li>Diverses extensions existent, comme <a href="../../../../WebDAV.html">WebDAV</a>.</li>
   </ul>
 </section>
 <h2>Limitations</h2>
 <ul>
-  <li>Basé sur les protocoles de courrier Internet (<a href="../../../../reseau/protocole/5/SMTP.html">SMTP</a>, <a
-      href="MIME.html">MIME</a>) et donc long à décoder, verbeux, découverte de la longueur à la fin de la lecture.</li>
+  <li>Basé sur les protocoles de courrier Internet (<a href="/tech/info/soft/reseau/protocole/5/SMTP.html">SMTP</a>, <a
+    href="/tech/info/soft/reseau/protocole/6/MIME.html">MIME</a>) et donc long à décoder, verbeux, découverte de la
+    longueur à la fin de la lecture.</li>
   <li><strong>Sans état </strong>: Aucun état n'est conservé entre deux requêtes/réponses HTTP. Ceci est généralement
     contourné par :
     <ul>
-      <li>les <a href="client/Cookie.html">cookies</a> HTTP</li>
-      <li>la réécriture d'<a href="../../../../reseau/internet/URL.html">URL</a> (<em>URL rewriting</em>)</li>
+      <li>les <a href="/tech/info/soft/proj/design/arch/web/client/Cookie.html">cookies</a> HTTP</li>
+      <li>la réécriture d'<a href="/tech/info/soft/reseau/internet/URL.html">URL</a> (<em>URL rewriting</em>)</li>
     </ul>
   </li>
-  <li><strong>Déconnecté</strong> : ne traite qu'une seule <a href="../../../../reseau/internet/URL.html">URL</a> par
-    connection <a href="../../../../reseau/protocole/4/TCP.html">TCP</a>. Une fois la réponse à la requête envoyée, la
-    connexion est théoriquement terminée (close). Des contournements sont l'ouverture de plusieurs connexions
-    simultanées (4 par défaut pour Netscape).
+  <li><strong>Déconnecté</strong> : ne traite qu'une seule <a href="/tech/info/soft/reseau/internet/URL.html">URL</a>
+    par connection <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>. Une fois la réponse à la requête
+    envoyée, la connexion est théoriquement terminée (close). Des contournements sont l'ouverture de plusieurs
+    connexions simultanées (4 par défaut pour Netscape).
     <ul>
       <li>des alternatives pour faire du push sont :
         <ul>
@@ -411,4 +416,3 @@
   </li>
 </ul>
 <!--#include virtual="/footer.html" -->
-

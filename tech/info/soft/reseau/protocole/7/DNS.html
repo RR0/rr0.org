@@ -11,35 +11,33 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Le DNS permet de convertir les noms recherchés en adresses <a href="../3/IP.html">IP</a> et inversement.
-  </p>
-  <p>Par ce biais il permet de router les requêtes <a href="../../../proj/design/arch/web/index.html">Web</a> ou de <a
-      href="../../internet/eMail.html">courrier électronique</a>.</p>
+  <p>Le DNS permet de convertir les noms recherchés en adresses <a href="../3/IP.html">IP</a> et inversement.</p>
+  <p>Par ce biais, il permet de router les requêtes <a href="../../../proj/design/arch/web/index.html">Web</a> ou de <a
+    href="../../internet/eMail.html">courrier électronique</a>.</p>
   <section>
     <h3>Entrées</h3>
-    <p>Chaque entrée d'une zone DNS définit une correspondance un <b>nom</b>, et :</p>
+    <p>Chaque entrée d'une zone DNS définit une correspondance un <b>nom</b>, et :</p>
     <ul>
       <li>une <b>addresse</b> IP (<code>A</code> ou <code>AAAA</code> pour les adresses IPv6) : le plus courant.</li>
-      <li>un <b>alias</b> (<code><abbr title="Canonical NAME">CNAME</abbr></code>, ou <code>ANAME</code> pour la racine
+      <li>un <b>alias</b> (<abbr title="Canonical NAME"><code>CNAME</code></abbr>, ou <code>ANAME</code> pour la racine
         du domaine ou <code>ALIAS</code> pour les domaines apex) pour indiquer que le nom de domaine donné est un alias
         vers un autre nom.</li>
       <li>un <b>serveur de mail</b> (<code><abbr title="Mail eXchanger">MX</abbr></code>) associé au domaine.</li>
       <li>un <b>texte</b> (<code>TXT</code>) enregistré.</li>
       <li>des serveurs de <b>services</b> connus (<code><abbr title="Well Known Services">WKS</abbr></code>) comme <a
-          href="/tech/info/soft/proj/design/arch/web/HTTP.html">HTTP</a> ou <a
-          href="/tech/info/soft/reseau/protocole/4/POP.html">POP</a>3.</li>
-      <li><strong><code>SPF</code></strong> (Sender Policy Framework) norme de vérification du nom de domaine de
-        l'expéditeur d'un courrier électronique.</li>
-      <li><strong><code>SRV</code></strong> (SeRVice record) enregistrement d'informations sur les services disponibles
-        (défini dans la RFC 2782).</li>
+        href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> ou <a
+        href="/tech/info/soft/reseau/protocole/4/POP.html">POP</a>3.</li>
+      <li><b><code>SPF</code></b> (Sender Policy Framework) norme de vérification du nom de domaine de l'expéditeur d'un
+        courrier électronique.</li>
+      <li><b><code>SRV</code></b> (SeRVice record) enregistrement d'informations sur les services disponibles (défini
+        dans la RFC 2782).</li>
     </ul>
   </section>
   <section>
     <h3>Un système hiérarchique</h3>
     <p>Le système de noms de domaine définit une arborescence, constituée de : </p>
     <ul>
-      <li><strong>TLD </strong>(<em>Top-Level Domain</em>) : domaines de plus haut niveau (<code>.net</code> par
-        exemple)
+      <li><b>TLD </b>(<em>Top-Level Domain</em>) : domaines de plus haut niveau (<code>.net</code> par exemple)
       </li>
       <li>nom de domaine associé au TLD (<code>javarome</code> par exemple)</li>
     </ul>
@@ -50,12 +48,12 @@
   <p>La résolution d'un nom en adresse <a href="../3/IP.html">IP</a> se fait par interrogation d'un Serveur de Nom de
     Domaine (ou serveur DNS). Désigné dans la configuration réseau de la machine cliente, un serveur DNS peut être :</p>
   <ul>
-    <li><strong>primaire </strong>de la zone hiérarchique (<code>net</code>, <code>rr0.org</code> par exemple) d'où part
-      la requête.</li>
-    <li><strong>secondaire</strong>, copie de secours du premier (la recopie des données du serveur primaire est
-      effectuée automatiquement toutes les x secondes), </li>
+    <li><b>primaire</b> de la zone hiérarchique (<code>net</code>, <code>rr0.org</code> par exemple) d'où part la
+      requête.</li>
+    <li><b>secondaire</b>, copie de secours du premier (la recopie des données du serveur primaire est effectuée
+      automatiquement toutes les x secondes), </li>
   </ul>
-  <p>DNS est basé sur <a href="../4/UDP.html">UDP</a> (encapsulé dans les datagrammes UDP) :</p>
+  <p>DNS est encapsulé dans les datagrammes <a href="../4/UDP.html">UDP</a> :</p>
   <table>
     <tr>
       <th>Application</th>
@@ -152,8 +150,8 @@
     www.monsite.com<br/> www.monsite.com 20 IN TXT Texte divers</code></blockquote>
   <p>Les noms peuvent être exprimés de manière :</p>
   <ul>
-    <li><strong>absolue</strong> : <code>www.rr0.org</code></li>
-    <li><strong>relative</strong>, en fonction du domaine courant (<code>rr0.org</code> par exemple) : <code>www.javarome</code>,
+    <li><b>absolue</b> : <code>www.rr0.org</code></li>
+    <li><b>relative</b>, en fonction du domaine courant (<code>rr0.org</code> par exemple) : <code>www.javarome</code>,
       <code>www</code></li>
   </ul>
   <p>Un serveur DNS peut être configuré via :</p>

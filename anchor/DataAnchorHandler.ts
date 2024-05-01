@@ -24,6 +24,9 @@ export class DataAnchorHandler implements AnchorHandler {
         case "product":
           this.handleProduct(context, data, linkEl)
           break
+        case "org":
+          //  this.handleOrg(context, data, linkEl)
+          break
       }
     }
   }
@@ -59,6 +62,10 @@ export class DataAnchorHandler implements AnchorHandler {
   }
 
   protected handleProduct(context: HtmlRR0SsgContext, data: Rr0Data, linkEl: HTMLAnchorElement) {
+    return this.handleApi(context, data, linkEl)
+  }
+
+  protected handleOrg(context: HtmlRR0SsgContext, data: Rr0Data, linkEl: HTMLAnchorElement) {
     return this.handleApi(context, data, linkEl)
   }
 }

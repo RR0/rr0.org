@@ -1,7 +1,7 @@
 import { UrecatRR0Mapper } from "./UrecatRR0Mapper"
-import { countryService } from "../../../org/country/CountryService"
+import { countryService } from "/org/country/CountryService"
 import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
-import { cityService } from "../../../org/Cities"
+import { cityService } from "/org/Cities"
 
 export const urecatDatasource = new UrecatHttpDatasource(new URL("https://ufologie.patrickgross.org"), "ce3")
 

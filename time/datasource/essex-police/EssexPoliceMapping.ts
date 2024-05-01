@@ -1,5 +1,5 @@
 import { EssexPoliceHttpDatasource } from "./EssexPoliceHttpDatasource"
-import { cityService } from "../../../org/Cities"
+import { cityService } from "/org/Cities"
 import { EssexPoliceCaseSummaryRR0Mapper } from "./EssexPoliceCaseSummaryRR0Mapper"
 
 export const essexPoliceHttpDatasource = new EssexPoliceHttpDatasource("https://www.essex.police.uk",

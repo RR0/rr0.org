@@ -1,7 +1,7 @@
 import { NuforcRR0Mapper } from "./NuforcRR0Mapper"
-import { countryService } from "../../../org/country/CountryService"
+import { countryService } from "/org/country/CountryService"
 import { NuforcHttpDatasource } from "./NuforcHttpDatasource"
-import { cityService } from "../../../org/Cities"
+import { cityService } from "/org/Cities"
 
 export const nuforcDatasource = new NuforcHttpDatasource()
 

@@ -1,0 +1,156 @@
+<!--#include virtual="/header-start.html" -->
+<title>ODMG</title>
+<meta content="https://www.odbms.org/odmg-standard/" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Object Data Management Group</i> : groupe de gestion des données objet.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Développer des standards pour les SGBDO, dont :</p>
+  <ul>
+    <li> une <a href="/tech/info/soft/API.html">API</a> standard de <a
+      href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> d'<a
+      href="/tech/info/soft/proj/impl/lang/oo/Objet.html">objets</a> pour divers langages, outils, et <a
+      href="/tech/info/soft/prod/server/sgbd/index.html">SGBD</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>L'ODMG définit un modèle objet et une <a href="/tech/info/soft/API.html">API</a> "neutre", déclinée (<i lang="en">binding</i>)
+    ensuite pour divers langages de programmation.</p>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <ul>
+    <li>
+      <table>
+        <tr>
+          <td rowspan="2">ODMG</td>
+          <th>Version</th>
+          <th colspan="3">1 (ODMG-93)</th>
+          <th>2 (ODMG-97)</th>
+          <th>3 (ODMG-2000)</th>
+          <th rowspan="2">Commentaire</th>
+        </tr>
+        <tr>
+          <th>Release</th>
+          <th>0</th>
+          <th>1</th>
+          <th>2</th>
+          <th>0</th>
+          <th>0</th>
+        </tr>
+        <tr>
+          <th rowspan="3">OML (<em>Bindings</em>)</th>
+          <th><a href="/tech/info/soft/proj/impl/lang/smalltalk">Smalltalk</a></th>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th><a href="/tech/info/soft/proj/impl/lang/cpp">C++</a></th>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th><a href="/org/us/company/oracle/sun/ptf/java">Java</a></th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">1.1</td>
+          <td class="oui">1.2</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Modèle objet</th>
+          <th>Meta-object</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Langages de spécification</th>
+          <th>ODL</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>IDL</td>
+          <td></td>
+          <td><em>Object Definition Language</em>, équivalent objet des DDL (<em>Data Definition Langage</em>) associés
+            à SQL, est basé sur IDL.
+          </td>
+        </tr>
+        <tr>
+          <th>OIF</th>
+          <td class="non" colspan="3">Non</td>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td><em>Object Interchange Format</em>, pour l'échange d'objets entre SGBD, documentation, ou en entrée de
+            suites de tests.
+          </td>
+        </tr>
+        <tr>
+          <th>Langage de requête</th>
+          <th>OQL</th>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td><em>Object Query Language</em>. Inspiré de <a
+            href="../../tech/info/soft/data/dbms/r/sql/index.html">SQL</a>-92.
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2">Stockage</th>
+          <th><a href="/tech/info/soft/prod/server/sgbd/o/index.html">SGBDO</a></th>
+          <td class="oui">Oui</td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td class="oui"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th><a href="/tech/info/soft/prod/server/sgbd/r/index.html">SGBDR</a></th>
+          <td class="non" colspan="4">Non</td>
+          <td class="oui">Oui</td>
+          <td>Mapping O/R</td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Formé en 1991 à l'initiative de Rick Cattell.</li>
+    <li>Développé par les fournisseurs de <a href="/tech/info/soft/prod/server/sgbd/o/index.html">SGBDO</a> et <a
+      href="/org/us/company/oracle/sun">Sun Microsystems</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'implémentation conformes à l'ODMG sont :</p>
+  <ul>
+    <li>Apache <a href="https://attic.apache.org/projects/ojb.html">OJB</a></li>
+    <li><del>Poet Software</del>
+      <ins>Actian</ins>
+      <a href="https://www.actian.com/databases/nosql">
+        <ins>NoSQL</ins>
+        FastObjects</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li><i lang="en">The Object Data Standard: ODMG 3.0</i> par R. G. G. Cattell (Editor), Douglas K. Barry (Editor),
+      et. al. (ISBN: 1558606475).</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

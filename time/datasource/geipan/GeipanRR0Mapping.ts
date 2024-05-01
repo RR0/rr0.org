@@ -1,5 +1,5 @@
 import { GeipanHttpDatasource } from "./GeipanHttpDatasource"
-import { cityService } from "../../../org/Cities"
+import { cityService } from "/org/Cities"
 import { GeipanCaseSummaryRR0Mapper } from "./GeipanCaseSummaryRR0Mapper"
 import { GeipanFileDatasource } from "./GeipanFileDatasource"
 

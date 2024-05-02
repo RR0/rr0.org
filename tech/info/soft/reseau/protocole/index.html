@@ -1,5 +1,5 @@
 <!--#include virtual="/header-start.html" -->
-<title>Protocole</title>
+<title>Protocole réseau</title>
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Besoin</h2>
@@ -7,31 +7,30 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>Les protocoles peuvent être :</p>
-  <ul>
-    <li><strong><a href="..">réseau</a></strong></li>
-  </ul>
-  <section>
-    <h3>Réseau</h3>
-    <p>Le modèle de référence de l'<a href="/org/int/iso">ISO</a> (OSI/RM) répartit les protocoles réseaux en couches.
-      Seule la couche n dépend de la couche n-1 :</p>
-    <ol>
-      <li><a href="7"><b>Application</b></a> :</li>
-      <li><a href="6"><b>Présentation</b></a></li>
-      <li><a href="5"><b>Session</b></a> : </li>
-      <li><a href="4"><b>Transport</b></a> : </li>
-      <li><a href="3"><b>Réseau</b></a> : niveau des routeurs par exemple</li>
-      <li><a href="2"><b>Liaison</b></a> de données : niveau des <i lang="en">switches</i> par exemple</li>
-      <li><a href="1"><b>Physique</b></a> : niveau des <i lang="en">hubs</i> par exemple</li>
-    </ol>
-    <p>Java exploite la pile <a href="4/TCP.html">TCP</a>/IP présente sur la plate-forme native (OS).</p></section>
+  <p>Le modèle de référence de l'<a href="/org/int/iso">ISO</a> (OSI/RM) répartit les protocoles réseaux en couches.
+    Seule la couche n dépend de la couche n-1 :</p>
+  <ol>
+    <li><a href="7"><b>Application</b></a> :</li>
+    <li><a href="6"><b>Présentation</b></a></li>
+    <li><a href="5"><b>Session</b></a> : </li>
+    <li><a href="4"><b>Transport</b></a> : </li>
+    <li><a href="3"><b>Réseau</b></a> : niveau des routeurs par exemple</li>
+    <li><a href="2"><b>Liaison</b></a> de données : niveau des <i lang="en">switches</i> par exemple</li>
+    <li><a href="1"><b>Physique</b></a> : niveau des <i lang="en">hubs</i> par exemple</li>
+  </ol>
 </section>
 <section>
-  <h2>Notes</h2>
-  <ul>
-    <li>Sous <a href="/tech/info/soft/prod/os/unix">Unix</a>, le fichier <code>/etc/protocols</code> fait correspondre
-      un numéro (propre au système) de protocole avec un nom officiel ou des synonymes. Par exemple : <br/> <code>ip 0
-        IP<br/> icmp 1 ICMP<br/> tcp 6 TCP<br/> udp 17 UDP</code></li>
-  </ul>
+  <h2>Implémentation</h2>
+  <section>
+    <h3>Unix</h3>
+    <p>Sous <a href="/tech/info/soft/prod/os/unix">Unix</a>, le fichier <code>/etc/protocols</code> fait correspondre un
+      numéro (propre au système) de protocole avec un nom officiel ou des synonymes. Par exemple :
+    <pre><code>ip    0 IP
+icmp  1 ICMP
+tcp   6 TCP
+udp  17 UDP
+</code></pre>
+    </p>
+  </section>
 </section>
 <!--#include virtual="/footer.html" -->

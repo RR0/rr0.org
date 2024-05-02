@@ -7,11 +7,12 @@
 <section>
   <h2>Besoin</h2>
   <p>Définir un protocole réseau standard et fiable pour l'échange de documents sur le Web (pages <a
-      href="/time/doc/html/index.html">HTML</a>)</p>
+    href="/tech/info/soft/data/doc/html">HTML</a>)</p>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>TCP est basé sur <a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a> (encapsulé dans les datagrammes IP). </p>
+  <p>TCP est basé sur <a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a> (encapsulé dans les datagrammes IP).
+  </p>
   <table>
     <tr>
       <th>Transport</th>
@@ -63,7 +64,7 @@
     <tr>
       <th></th>
       <td>8-11</td>
-      <td>Numéro d'accusé réception</td>
+      <td>Numéro d'accusé-réception</td>
       <td></td>
     </tr>
     <tr>
@@ -111,20 +112,19 @@
     </tbody>
   </table>
   <p>Les <a href="../../../API.html">API</a> (<a href="/tech/info/soft/proj/impl/lang/c">C</a>, <a
-      href="/org/us/company/oracle/sun/ptf/java">Java</a>) utilisées pour établir des connexions TCP utilisent le
-    principe de <em><a href="/tech/info/soft/reseau/protocole/Socket.html">socket</a></em>.</p>
+    href="/org/us/company/oracle/sun/ptf/java">Java</a>) utilisées pour établir des connexions TCP utilisent le principe
+    de <a href="/tech/info/soft/reseau/protocole/Socket.html"><i lang="en">socket</i></a>.</p>
   <p>L'utilisation de sockets TCP implique typiquement les opérations suivantes : </p>
   <ol>
-    <li><strong>Création </strong>de la <em><a href="/tech/info/soft/reseau/protocole/Socket.html">socket</a></em> en
-      mode :
+    <li><strong>Création </strong>de la <a href="/tech/info/soft/reseau/protocole/Socket.html"><i
+      lang="en">socket</i></a> en mode :
       <ul>
-        <li>passif (serveur) : Accepter et attendre les connexions ;</li>
-        <li>actif (client) : Contacter l'application distante et s'y connecter.</li>
+        <li>passif (serveur) : Accepter et attendre les connexions ;</li>
+        <li>actif (client) : Contacter l'application distante et s'y connecter.</li>
       </ul>
     </li>
-    <li><strong>Communication </strong>établie (bind, listen, connect ou accept)</li>
-    <li><strong>Echange </strong>de données (<code>read</code>/<code>write</code> ou
-      <code>sendto</code>/<code>recvfrom</code>).
+    <li><b>Communication</b> établie (bind, listen, connect ou accept)</li>
+    <li><b>Echange</b> de données (<code>read</code>/<code>write</code> ou <code>sendto</code>/<code>recvfrom</code>).
       <ul>
         <li>Pour éviter une lecture bloquant infiniment en attente de données ou de fermeture de socket, on peut fixer
           un temps d'expiration de la tentative de lecture (l'option Berkeley <code>SO_TIMEOUT</code>, en
@@ -135,7 +135,7 @@
           paquet 11 quand réception de l'accusé du paquet 1 si la fenêtre est de taille 10 par exemple). Ce système peut
           être contourné pour des applications "temps réel" désirant des accusés réception immédiats pour chaque envoi
           (via l'option Berkeley <code>TCP_NODELAY</code>), par exemple un client de serveur X <a
-              href="../../../prod/os/unix/index.html">Unix</a> recevant les mouvement d'une souris.</li>
+            href="../../../prod/os/unix/index.html">Unix</a> recevant les mouvements d'une souris.</li>
       </ul>
     </li>
     <li><strong>Fermeture </strong>de la communication (close ou shutdown)
@@ -264,7 +264,7 @@
     <tr>
       <td>FTP-Data</td>
       <td>20</td>
-      <td>Données <a href="../5/FTP.html">FTP</a> (par défaut)</td>
+      <td>Données <a href="/tech/info/soft/reseau/protocole/7/FTP.html">FTP</a> (par défaut)</td>
     </tr>
     <tr>
       <td>FTP</td>
@@ -327,7 +327,7 @@
       <td></td>
     </tr>
     <tr>
-      <td><a href="../../../proj/design/arch/web/HTTP.html">HTTP</a></td>
+      <td><a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a></td>
       <td>80</td>
       <td><a href="../../../proj/design/arch/web/index.html">Web</a></td>
     </tr>
@@ -379,7 +379,8 @@
     <tr>
       <td>PortMap</td>
       <td>111</td>
-      <td>Gère un annuaire des ports réservés par des applications (<a href="/tech/info/soft/RPC.html">RPC</a> de Sun)
+      <td>Gère un annuaire des ports réservés par des applications (<a
+        href="/tech/info/soft/reseau/protocole/5/rpc/index.html">RPC</a> de Sun)
       </td>
     </tr>
     <tr>
@@ -554,9 +555,9 @@
     <li>Circuit virtuel</li>
     <li>Transferts bufferisés</li>
     <li>Full duplex</li>
-    <li>Utilise la notion de port (16 <a href="/tech/info/soft/time/Bit.html">bits</a>) pour faire communiquer 2 <a
-        href="../../../Application.html">applications</a> sur des <a
-        href="/tech/info/soft/proj/design/arch/serveur/Host.html">machines</a>.</li>
+    <li>Utilise la notion de port (16 <a href="/tech/info/soft/data/Bit.html">bits</a>) pour faire communiquer 2 <a
+      href="../../../Application.html">applications</a> sur des <a
+      href="/tech/info/soft/proj/design/arch/serveur/Host.html">machines</a>.</li>
   </ul>
 </section>
 <section>

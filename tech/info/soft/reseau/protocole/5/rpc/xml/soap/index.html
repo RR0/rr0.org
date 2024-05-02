@@ -8,7 +8,7 @@
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>SOAP est constitué de :</p>
+  <p>SOAP est constitué de :</p>
   <ul>
     <li><b>une enveloppe</b> qui définit un framework de description du contenu d'un message et la manière de le traiter
     </li>
@@ -18,18 +18,19 @@
   <p>L'ensemble de ces éléments exploitent <a href="/tech/info/soft/time/doc/xml">XML</a>.
   </p>
   <p>SOAP peut être potentiellement utilisé au-dessus de divers <a
-      href="/tech/info/soft/reseau/protocole">protocoles</a>, mais l'est généralement au-dessus de <a
-      href="../../../proj/design/arch/web/HTTP.html">HTTP</a>. Il utilise dans ce cas le framework d'extension de <a
-      href="../../../proj/design/arch/web/HTTP.html">HTTP</a> pour ajouter des champs spécifiques à SOAP dans l'en-tête <a
-      href="../../../proj/design/arch/web/HTTP.html">HTTP</a>.</p></section>
+    href="/tech/info/soft/reseau/protocole">protocoles</a>, mais l'est généralement au-dessus de <a
+    href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>. Il utilise dans ce cas le framework d'extension de <a
+    href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> pour ajouter des champs spécifiques à SOAP dans
+    l'en-tête <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>.</p>
+</section>
 <section>
   <h2>Exemples</h2>
   <section>
     <h3>Message</h3>
-    <p>Voici un exemple de message SOAP dans une requête <a href="../../../proj/design/arch/web/HTTP.html">HTTP</a>. On y
-      reconnaît l'en-tête <a href="../../../proj/design/arch/web/HTTP.html">HTTP</a> étendu pour SOAP (avec le champ
-      d'en-tête <code>SOAPAction</code>), l'enveloppe SOAP (balise <code>SOAP-ENV</code>), l'appel de <a
-          href="../../webservice">service Web</a> (balise <code>ns1:getRate</code>) avec ses paramètres (deux paramètres
+    <p>Voici un exemple de message SOAP dans une requête <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>.
+      On y reconnaît l'en-tête <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> étendu pour SOAP (avec le
+      champ d'en-tête <code>SOAPAction</code>), l'enveloppe SOAP (balise <code>SOAP-ENV</code>), l'appel de <a
+        href="../../webservice">service Web</a> (balise <code>ns1:getRate</code>) avec ses paramètres (deux paramètres
       via les balises <code>country1</code> et <code>country2</code> en l'occurence) :</p>
     <p><code>POST /servlet/rpcrouter HTTP/1.0<br> Host:www.javarome.net<br> Content-Type:text/xml;charset=utf-8<br>
       Content-Length:494<br> <strong>SOAPAction</strong>:""<br>
@@ -51,18 +52,17 @@
   </section>
   <section>
     <h3>Fournisseur</h3>
-    <p><code>public class Exchange <br> {<br> public float getRate (String country1, String country2)<br> {<br>
-      <span class="codeComment">// Recherche taux de change dans la base</span><br> return rate;<br> }<br> }</code>
+    <p><code>public class Exchange <br> {<br> public float getRate (String country1, String country2)<br> {<br> <span
+      class="codeComment">// Recherche taux de change dans la base</span><br> return rate;<br> }<br> }</code>
     </p>
   </section>
   <section>
     <h3>Client</h3>
-    <p><code>public class SoapClient <br> {<br> public void static main (String[] args) <br> {<br> <b>Call</b>
-      call = new <b>Call</b>();<br> <br> call.<b>setEncodingStyleURI</b> (<b>Constants.NS_URI_SOAP_ENC</b>);<br>
-      call.<b>setTargetObjectURI</b> (<span class="codeString">"<b>urn:</b>Exchange"</span>);<br> call.<b>setMethod</b>
-      (<span class="codeString">"getRate"</span>);<br> <br> Vector params = new Vector();<br> params.addElement (new <b>Parameter</b>
-      (<span
-          class="codeString">"country1"</span>, String.class, <span class="codeString">"USA"</span>, <b>Constants.NS_URI_SOAP_ENC</b>);
+    <p><code>public class SoapClient <br> {<br> public void static main (String[] args) <br> {<br> <b>Call</b> call =
+      new <b>Call</b>();<br> <br> call.<b>setEncodingStyleURI</b> (<b>Constants.NS_URI_SOAP_ENC</b>);<br> call.<b>setTargetObjectURI</b>
+      (<span class="codeString">"<b>urn:</b>Exchange"</span>);<br> call.<b>setMethod</b> (<span class="codeString">"getRate"</span>);<br>
+      <br> Vector params = new Vector();<br> params.addElement (new <b>Parameter</b> (<span
+        class="codeString">"country1"</span>, String.class, <span class="codeString">"USA"</span>, <b>Constants.NS_URI_SOAP_ENC</b>);
       <span class="codeComment">//
   2nd param</span><br> call.setParams (params);<br> <br> URL url = new URL (<span class="codeString">"https://www.exch.com/soap/servlet/rpcrouter"</span>);<br>
       <br> <b>Response</b> resp = call.<b>invoke</b> (url, <span class="codeString">"<b>urn:</b>Exchange"</span>);<br>
@@ -162,8 +162,8 @@
     </li>
     <li>Intégré par <a href="/org/us/company/ibm">IBM</a> (WebSphere), <a href="/org/us/company/oracle/sun">Sun</a> (Sun
       ONE), BEA (WebLogic), <a href="/org/us/company/ms">Microsoft</a> (<a
-          href="/org/us/company/ms/product/soft/windows/dotnet">.Net</a>)</li>
-    <li>Défini par le <a href="../../../../../../org/int/asso/w3c/index.html">W3C</a></li>
+        href="/org/us/company/ms/product/soft/windows/dotnet">.Net</a>)</li>
+    <li>Défini par le <a href="/org/int/asso/w3c/index.html">W3C</a></li>
   </ul>
 </section>
 <!--#include virtual="/footer.html" -->

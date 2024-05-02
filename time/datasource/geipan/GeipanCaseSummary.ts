@@ -1,11 +1,11 @@
 import { TimeContext } from "../../TimeContext"
 import { GeipanCaseClassification_calc } from "./GeipanCaseClassification"
 import { GeipanSightingType } from "./GeipanSightingType"
-import { CountryCode } from "/org/country/CountryCode"
-import { FranceRegionCode } from "/org/eu/fr/region/FranceRegionCode"
-import { FranceDepartementCode } from "/org/eu/fr/region/FranceDepartementCode"
 import { GeipanZoneType } from "./GeipanCase"
 import { UfoCase } from "../UfoCase"
+import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
+import { FranceRegionCode } from "../../../org/eu/fr/region/FranceRegionCode"
+import { CountryCode } from "../../../org/country/CountryCode"
 
 export type GeipanZoneCode = FranceDepartementCode | FranceRegionCode | CountryCode.fr
 

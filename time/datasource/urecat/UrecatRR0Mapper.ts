@@ -2,11 +2,11 @@ import { CaseMapper } from "../CaseMapper"
 import { UrecatCase } from "./UrecatCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
-import { CityService } from "/org/country/region/department/city/CityService"
 import assert from "assert"
-import { CountryService } from "/org/country/CountryService"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
+import { CityService } from "../../../org/country/region/department/city/CityService"
+import { CountryService } from "../../../org/country/CountryService"
 
 export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase, RR0CaseSummary> {
 

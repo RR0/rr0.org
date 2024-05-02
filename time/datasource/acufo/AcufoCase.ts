@@ -1,6 +1,6 @@
 import { TimeContext } from "../../TimeContext"
-import { City } from "/org/country/region/department/city/City"
 import { UfoCase } from "../UfoCase"
+import { City } from "../../../org/country/region/department/city/City"
 
 export type AcufoCaseDataTime = {
   dateTime: TimeContext

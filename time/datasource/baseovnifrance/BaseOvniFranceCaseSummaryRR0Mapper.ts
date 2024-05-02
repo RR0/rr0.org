@@ -2,11 +2,11 @@ import { CaseMapper } from "../CaseMapper"
 import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
-import { DepartmentService } from "/org/country/region/department/DepartmentService"
-import { CityService } from "/org/country/region/department/city/CityService"
 import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
+import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
+import { CityService } from "../../../org/country/region/department/city/CityService"
 
 /**
  * Maps a Base OVNI France case to a RR0 case.

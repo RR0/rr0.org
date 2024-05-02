@@ -2,12 +2,12 @@ import { CaseMapper } from "../CaseMapper"
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
-import { CityService } from "/org/country/region/department/city/CityService"
 import assert from "assert"
-import { france } from "/org/eu/fr/France"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
-import { Organization } from "/org/Organization"
+import { CityService } from "../../../org/country/region/department/city/CityService"
+import { Organization } from "../../../org/Organization"
+import { france } from "../../../org/eu/fr/France"
 
 export class EssexPoliceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, EssexPoliceCaseSummary, RR0CaseSummary> {
 

@@ -3,8 +3,8 @@ import { geipanHttpDatasource } from "./GeipanRR0Mapping"
 import { TimeContext } from "../../TimeContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { GeipanCaseClassification } from "./GeipanCaseClassification"
-import { FranceDepartementCode } from "/org/eu/fr/region/FranceDepartementCode"
 import { GeipanZoneType } from "./GeipanCase"
+import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
 
 export const geipanTestCaseSummaries: GeipanCaseSummary[] = [
   {

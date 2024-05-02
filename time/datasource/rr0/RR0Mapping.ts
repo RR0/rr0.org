@@ -1,6 +1,6 @@
 import { RR0CaseSummaryMapper } from "./RR0CaseSummaryMapper"
 import { RR0HttpDatasource } from "./RR0HttpDatasource"
-import { cityService } from "/org/Cities"
+import { cityService } from "../../../org/Cities"
 
 export const rr0Datasource = new RR0HttpDatasource(new URL("https://rr0.org"), "time", cityService)
 

@@ -1,7 +1,7 @@
 import { Place } from "../../../place/Place"
 import { Source } from "../../../source/Source"
-import { Organization } from "/org/Organization"
 import { UfoCase } from "../UfoCase"
+import { Organization } from "../../../org/Organization"
 
 export type NamedPlace = {
   readonly place: Place

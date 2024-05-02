@@ -2,10 +2,10 @@ import { CaseMapper } from "../CaseMapper"
 import { UfoSearchCase } from "./UfoSearchCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { OnlineSource } from "../../../source/OnlineSource"
-import { CityService } from "/org/country/region/department/city/CityService"
 import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
+import { CityService } from "../../../org/country/region/department/city/CityService"
 
 export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UfoSearchCase, RR0CaseSummary> {
 

@@ -7,8 +7,8 @@ import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
 import { Publication, Source } from "../../../source/Source"
 import { TimeReplacer } from "../../TimeReplacer"
-import { CityService } from "/org/country/region/department/city/CityService"
-import { Organization } from "/org/Organization"
+import { CityService } from "../../../org/country/region/department/city/CityService"
+import { Organization } from "../../../org/Organization"
 
 export class RR0HttpDatasource extends RR0Datasource {
   protected readonly http = new HttpSource()

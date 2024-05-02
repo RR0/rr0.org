@@ -1,8 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>FTP</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">File Transfer Protocol</i> : <a href="..">protocole</a> de transfert de
-  fichiers.</p>
+<p><i lang="en">File Transfer Protocol</i> : <a href="..">protocole</a> de transfert de fichiers.</p>
 <section>
   <h2>Besoin</h2>
   <p>Définir un protocole réseau standard pour l'échange de fichier entre machines distantes (sur Internet
@@ -10,7 +9,7 @@
 <section>
   <h2>Conception</h2>
   <p>FTP est un protocole de l'<a href="../../internet">Internet</a>, basé sur <a href="../4/TCP.html">TCP</a>/<a
-      href="../3/IP.html">IP</a> :</p>
+    href="../3/IP.html">IP</a> :</p>
   <table>
     <tr>
       <th>Application</th>
@@ -34,8 +33,9 @@
   <p>En théorie, tous les transferts de données doivent être réalisés via une seule connexion : une ouverture active est
     faite par le serveur, depuis son port 20 vers un port sur la machine cliente. Le client effectue alors une ouverture
     passive.</p>
-  <p> Une commande FTP est chaîne Telnet terminée par une fin de ligne Telnet. Le mot-clé d'une commande lui-même est
-    une chaîne de caractères, eventuellement suivi d'un espace et de paramètres.</p></section>
+  <p>Une commande FTP est une chaîne Telnet terminée par une fin de ligne Telnet. Le mot-clé d'une commande lui-même est
+    une chaîne de caractères, eventuellement suivi d'un espace et de paramètres.</p>
+</section>
 <section>
   <h2>Notes</h2>
   <ul>
@@ -44,34 +44,34 @@
       PORT pour en avertir le serveur.
       <table>
         <thead>
-          <tr>
-            <td class="titleCorner"></td>
-            <td class="titleCorner"></td>
-            <th>Version</th>
-            <th></th>
-            <th>Caractéristiques standard</th>
-          </tr>
-          <tr>
-            <td class="titleCorner"></td>
-            <td class="titleCorner"></td>
-            <th>Release</th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr>
-            <td class="titleCorner"></td>
-            <td class="titleCorner"></td>
-            <th>RFC</th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr>
-            <th>Domaine</th>
-            <th>Technologie</th>
-            <th>Année</th>
-            <th></th>
-            <th></th>
-          </tr>
+        <tr>
+          <td class="titleCorner"></td>
+          <td class="titleCorner"></td>
+          <th>Version</th>
+          <th></th>
+          <th>Caractéristiques standard</th>
+        </tr>
+        <tr>
+          <td class="titleCorner"></td>
+          <td class="titleCorner"></td>
+          <th>Release</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td class="titleCorner"></td>
+          <td class="titleCorner"></td>
+          <th>RFC</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th>Année</th>
+          <th></th>
+          <th></th>
+        </tr>
         </thead>
         <tr>
           <th rowspan="48">Commandes</th>

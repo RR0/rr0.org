@@ -1,23 +1,23 @@
 <!--#include virtual="/header-start.html" -->
 <title>SOCKS</title>
 <!--#include virtual="/header-end.html" -->
-<p><i>SOCKet-and-Sec</i>ure.</p>
+<p><i>SOCKet-and-Sec</i>ure : prise sécurisée.</p>
 <section>
   <h2>Motivation</h2>
   <p>Protocole de proxy pour les environnements client/serveur. </p></section>
 <section>
   <h2>Principes</h2>
-  <p>SOCKS définit le dialogue entre :</p>
+  <p>SOCKS définit le dialogue entre :</p>
   <ul>
-    <li>un client SOCKS (un application implémentant l'API SOCKS, un navigateur par exemple) </li>
-    <li>un serveur SOCKS (un proxy), implémenté au niveau de la couche Application (au-dessus de la couche Transport,
-      et donc au-dessus de <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>).</li>
+    <li>un client SOCKS (une application implémentant l'API SOCKS, un navigateur par exemple) </li>
+    <li>un serveur SOCKS (un proxy), implémenté au niveau de la couche Application (au-dessus de la couche Transport, et
+      donc au-dessus de <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP</a>).</li>
   </ul>
   <p> Deux versions de SOCKS sont principalement utilisées</p>
   <ul>
     <li><b>SOCKS V4</b>, qui fournit les fonctions de base de requête/réponse, mais uniquement sur TCP-IP. <span
-        class="note">Avant SOCKS V4.3, le client
-    SOCKS doit résoudre les adresses <a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a>. A partir de SOCKS V4.3, un client
+      class="note">Avant SOCKS V4.3, le client
+    SOCKS doit résoudre les adresses <a href="/tech/info/soft/reseau/protocole/3/IP.html">IP</a>. À partir de SOCKS V4.3, un client
     SOCKS peut fournir des adresses IP non résolues au serveur SOCKS.</span></li>
     <li><b>SOCKS V5</b>, qui supporte les proxy UDP et ajoute une fonctionalité d'authentification selon diverses
       méthodes. Bien que ce soit souvent le cas (NEC par exemple), il n'est pas garanti que les implémentations de SOCKS
@@ -35,7 +35,7 @@
   <ul>
     <li><span class="attention">Ne pas confondre un serveur SOCKS avec un proxy
     HTTP. Le serveur SOCKS attend des requêtes dans le protocole SOCKS et
-    non <a href="../../proj/design/arch/web/HTTP.html">HTTP </a>: si l'on spécifie l'adresse d'un
+    non <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP </a>: si l'on spécifie l'adresse d'un
     serveur SOCKS comme proxy HTTP (dans un navigateur, dans le <a href="/org/us/company/oracle/sun/ptf/java/JPI.html">JPI</a>,
     etc.), on pourra observer des erreurs telles que <q>Incompatible version
     number: 71</q>, parce que 71 est le code <a href="/tech/info/soft/data/doc/encoding/ASCII.html">ASCII</a>
@@ -44,15 +44,15 @@
     <li><span class="attention">Mettre un <a href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur
     applicatif</a> derrière un serveur SOCKS est possible, mais implique
     que les clients de ce <a
-          href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur applicatif</a>
+        href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveur applicatif</a>
     (navigateurs par exemple) soient au courant de l'existence du serveur SOCKS
     (qu'ils contactent le serveur SOCKS sur son port et via le protocole SOCKS,
     et non directement le serveur applicatif).</span></li>
     <li><span class="attention">Des clients ping ou traceroute ne pourront pas non
     plus traverser un serveur SOCKS, dans la mesure où ces utilitaires
-    utilisent <a href="/tech/info/soft/reseau/protocole/4/ICMP.html">ICMP</a>, et non pas un des protocoles sur lequels
+    utilisent <a href="/tech/info/soft/reseau/protocole/3/ICMP.html">ICMP</a>, et non pas un des protocoles sur lequels
     SOCKS est basé, à savoir <a href="/tech/info/soft/reseau/protocole/4/TCP.html">TCP-IP</a> et <a
-          href="/tech/info/soft/reseau/protocole/4/UDP.html">UDP</a>.
+        href="/tech/info/soft/reseau/protocole/4/UDP.html">UDP</a>.
     </span>
     </li>
     <li>SOCKS V5 est un standard de l'IETF (RFC 1928).</li>

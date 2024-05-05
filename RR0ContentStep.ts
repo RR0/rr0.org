@@ -1,14 +1,18 @@
-import { ContentStep, ContentStepConfig, HtmlLinks, HtmlMeta, OutputFunc } from "ssg-api"
+import { ContentStep, ContentStepConfig, OutputFunc } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import { Time } from "./time/Time"
 import { TimeContext } from "./time/TimeContext"
 
+export interface ContentVisitor {
+  visit(context: HtmlRR0SsgContext): void
+}
+
 export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
+
   constructor(contentConfigs: ContentStepConfig[], outputFunc: OutputFunc,
-              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
+              protected contentVisitors: ContentVisitor[] = []) {
     super(contentConfigs, outputFunc)
   }
-
 
   static setTimeFromPath(context: HtmlRR0SsgContext, filePath: string): TimeContext | undefined {
     context.time.reset()
@@ -31,10 +35,9 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
   }
 
   protected shouldProcess(context: HtmlRR0SsgContext): boolean {
-    const bookMeta = this.bookMeta.get(context.inputFile.name)
-    Object.assign(context.inputFile.meta, bookMeta)
-    const bookLinks = this.bookLinks.get(context.inputFile.name)
-    Object.assign(context.inputFile.links, bookLinks)
+    for (const contentVisitor of this.contentVisitors) {
+      contentVisitor.visit(context)
+    }
     return true // TODO: Don't process unmodified files
   }
 }

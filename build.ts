@@ -4,7 +4,7 @@ import { PeopleDirectoryStep } from "./people/PeopleDirectoryStep"
 import { promise as glob } from "glob-promise"
 import { GooglePlaceService } from "./place/GooglePlaceService"
 import { OrganizationService } from "./org/OrganizationService"
-import { RR0SsgContextImpl } from "./RR0SsgContext"
+import { HtmlRR0SsgContext, RR0SsgContextImpl } from "./RR0SsgContext"
 import { CLI } from "./util/cli/CLI"
 import {
   AngularExpressionReplaceCommand,
@@ -57,7 +57,7 @@ import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplace
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
 import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
-import { RR0ContentStep } from "./RR0ContentStep"
+import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
 import { Case } from "./science/crypto/ufo/enquete/dossier/Case"
 import { DataService } from "./DataService"
@@ -173,6 +173,18 @@ async function getTimeFiles(): Promise<string[]> {
     minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
 }
 
+class BookContentVisitor implements ContentVisitor {
+  constructor(protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
+  }
+
+  visit(context: HtmlRR0SsgContext): void {
+    const bookMeta = this.bookMeta.get(context.inputFile.name)
+    Object.assign(context.inputFile.meta, bookMeta)
+    const bookLinks = this.bookLinks.get(context.inputFile.name)
+    Object.assign(context.inputFile.links, bookLinks)
+  }
+}
+
 getTimeFiles().then(async (timeFiles) => {
   const peopleFiles = await glob("people/?/*")
   const peopleService = new PeopleService(peopleFiles)
@@ -246,6 +258,10 @@ getTimeFiles().then(async (timeFiles) => {
   const ssg = new Ssg(config)
   ssg.add(ufoCasesStep)
   if (contentRoots) {
+    const contentVisitors: ContentVisitor[] = []
+    if (args.books) {
+      contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))
+    }
     ssg.add(new RR0ContentStep([
       htAccessToNetlifyConfig,
       {
@@ -255,7 +271,7 @@ getTimeFiles().then(async (timeFiles) => {
           return context.outputFile
         }
       }
-    ], outputFunc, bookMeta, bookLinks))
+    ], outputFunc, contentVisitors))
   }
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService))

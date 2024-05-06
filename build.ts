@@ -62,7 +62,10 @@ import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
 import { Case } from "./science/crypto/ufo/enquete/dossier/Case"
 import { DataService } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
-import { Rr0Data } from "./Rr0Data"
+import { RR0Data } from "./RR0Data"
+import { SourceRenderer } from "./time/SourceRenderer"
+import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
+import { EventReplacerFactory } from "./time/EventReplacerFactory"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -191,7 +194,7 @@ getTimeFiles().then(async (timeFiles) => {
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const caseService = await DataService.create<Case>("case")
-  const dataService = await DataService.create<Rr0Data>("index")
+  const dataService = await DataService.create<RR0Data>("index")
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
   copies.push(...(ufoCasesStep.dirs).map(dir => dir + "/case.json"))
   await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
@@ -212,10 +215,12 @@ getTimeFiles().then(async (timeFiles) => {
     indexWords: false
   })
   const baseUrl = "https://rr0.org"
+  const sourceRenderer = new SourceRenderer()
+  const caseRenderer = new CaseSummaryRenderer(sourceRenderer)
   const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
     new ChronologyReplacerFactory(timeFiles,
       [/*geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
-      rr0Datasource)
+      rr0Datasource, {merge: false, save: true}, caseRenderer)
   )
   const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),
@@ -234,9 +239,11 @@ getTimeFiles().then(async (timeFiles) => {
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new AuthorReplaceCommand(timeFiles)
   ]
+  const sourceReplacerFactory = new SourceReplacerFactory(sourceRenderer, dataService)
   const contentsReplaceCommand = [
     databaseAggregationCommand,
-    new ClassDomReplaceCommand("source", new SourceReplacerFactory()),
+    new ClassDomReplaceCommand("event", new EventReplacerFactory(caseRenderer, sourceReplacerFactory)),
+    new ClassDomReplaceCommand("source", sourceReplacerFactory),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory(peopleService)),

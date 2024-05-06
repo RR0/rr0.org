@@ -1,5 +1,5 @@
-import { UfoCase } from "./UfoCase"
+import { RR0UfoCase } from "./RR0UfoCase"
 
 export interface UfoCaseFilter {
-  filter(c: UfoCase): boolean
+  filter(c: RR0UfoCase): boolean
 }

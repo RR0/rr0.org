@@ -1,4 +1,4 @@
-import { UfoCase } from "../UfoCase"
+import { RR0UfoCase } from "../RR0UfoCase"
 
 export enum UfoSearchCaseType {
   letter = "letter",
@@ -101,7 +101,7 @@ export type UfoSearchCaseKeyValues = {
   url: URL
 }
 
-export interface UfoSearchCase extends UfoCase {
+export interface UfoSearchCase extends RR0UfoCase {  // TODO: Remove dependency to RR0UfoCase
   location?: string
   desc: string,
   key_vals: UfoSearchCaseKeyValues,

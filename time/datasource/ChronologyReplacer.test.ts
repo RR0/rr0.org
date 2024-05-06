@@ -1,10 +1,11 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
 import { ChronologyReplacer } from "./ChronologyReplacer"
-import { RR0CaseRenderer } from "../RR0CaseRenderer"
+import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { rr0Datasource } from "./rr0/RR0Mapping"
 import { urecatRR0Mapping } from "./urecat/UrecatRR0Mapping"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { rr0TestUtil } from "../../test/RR0TestUtil"
+import { SourceRenderer } from "../SourceRenderer"
 
 describe("ChronologyReplacer", () => {
 
@@ -12,7 +13,8 @@ describe("ChronologyReplacer", () => {
   let chronologyReplacer: ChronologyReplacer
 
   beforeEach(() => {
-    chronologyReplacer = new ChronologyReplacer([urecatRR0Mapping], new RR0CaseRenderer(), {merge: false, save: true},
+    const caseRenderer = new CaseSummaryRenderer(new SourceRenderer())
+    chronologyReplacer = new ChronologyReplacer([urecatRR0Mapping], caseRenderer, {merge: false, save: true},
       rr0Datasource)
     context = rr0TestUtil.newHtmlContext("time/index.html")
     context.time.setYear(undefined)

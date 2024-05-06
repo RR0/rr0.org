@@ -1,5 +1,5 @@
 import { Source } from "./Source"
 
-export type OnlineSource = Source & {
+export interface OnlineSource extends Source {
   readonly url: URL
 }

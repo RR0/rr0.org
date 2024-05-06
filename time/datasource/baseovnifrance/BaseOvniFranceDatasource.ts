@@ -1,8 +1,8 @@
 import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { AbstractCaseSource } from "../AbstractCaseSource"
+import { AbstractDatasource } from "../AbstractDatasource"
 
-export abstract class BaseOvniFranceDatasource extends AbstractCaseSource<BaseOvniFranceCaseSummary> {
+export abstract class BaseOvniFranceDatasource extends AbstractDatasource<BaseOvniFranceCaseSummary> {
 
   protected constructor(authors = ["Chastan, Luc"], copyright = "Base OVNI France") {
     super(authors, copyright)

@@ -1,6 +1,6 @@
 import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { RR0CaseRenderer } from "../RR0CaseRenderer"
+import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { CaseMapping } from "./CaseMapping"
 import { CsvMapper } from "./CsvMapper"
 import fs from "fs"
@@ -8,10 +8,10 @@ import path from "path"
 import { StringUtil } from "../../util/string/StringUtil"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 import { RR0Datasource } from "./rr0/RR0Datasource"
-import { CaseSource } from "./CaseSource"
-import { UfoCase } from "./UfoCase"
+import { Datasource } from "./Datasource"
+import { RR0UfoCase } from "./RR0UfoCase"
 
-export interface RR0CaseMapping<S extends UfoCase> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
+export interface RR0CaseMapping<S extends RR0UfoCase> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
 }
 
 export type ChronologyReplacerActions = {
@@ -23,7 +23,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
 
   protected readonly done = new Set<string>()
 
-  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: RR0CaseRenderer,
+  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: CaseSummaryRenderer,
               protected actions: ChronologyReplacerActions, protected rr0Datasource: RR0Datasource) {
   }
 
@@ -45,14 +45,15 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
       const datasource = mapping.datasource
       const datasourceKey = context.inputFile.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
-        const sourceCases = await datasource.fetch(context)
+        const datasourceCases = await datasource.fetch(context)
         const fetchTime = new Date()
         if (this.actions.save) {
-          this.save(context, sourceCases, fetchTime, datasource)
+          this.save(context, datasourceCases, fetchTime, datasource)
         }
         if (this.actions.merge) {
-          const toAddFromThisSource = this.merge(context, sourceCases, fetchTime, element, mapping, existingCases)
-          casesToAdd.concat(toAddFromThisSource)
+          const toAddFromThisDatasource = this.merge(context, datasourceCases, fetchTime, element, mapping,
+            existingCases)
+          casesToAdd.concat(toAddFromThisDatasource)
         }
         this.done.add(datasourceKey)
       }
@@ -87,8 +88,8 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     return casesToAdd
   }
 
-  protected save(context: HtmlRR0SsgContext, sourceCases: any[], fetchTime: Date, datasource: CaseSource<any>) {
-    const csvContents = new CsvMapper().mapAll(context, sourceCases, fetchTime)
+  protected save(context: HtmlRR0SsgContext, datasourceCases: any[], fetchTime: Date, datasource: Datasource<any>) {
+    const csvContents = new CsvMapper().mapAll(context, datasourceCases, fetchTime)
     const specialChars = /[ \-?!&*#().:\/\\;=°',]/g
     const authorsStr = datasource.authors.map(
       author => StringUtil.removeAccents(author).replace(specialChars, "")).join("-")

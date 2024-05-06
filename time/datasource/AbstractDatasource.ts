@@ -1,12 +1,12 @@
-import { CaseSource } from "./CaseSource"
+import { Datasource } from "./Datasource"
 import { RR0SsgContext } from "../../RR0SsgContext"
-import { UfoCase } from "./UfoCase"
+import { RR0UfoCase } from "./RR0UfoCase"
 import { UfoCaseContextTimeFilter } from "./UfoCaseContextTimefilter"
 
 /**
  * Cache cases which were already fetched, and filter out cases in memory according to (time) context.
  */
-export abstract class AbstractCaseSource<S extends UfoCase> implements CaseSource<S> {
+export abstract class AbstractDatasource<S extends RR0UfoCase> implements Datasource<S> {
 
   protected cases: S[]
 

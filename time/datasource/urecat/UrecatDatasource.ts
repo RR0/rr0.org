@@ -1,8 +1,8 @@
 import { UrecatCase } from "./UrecatCase"
-import { CaseSource } from "../CaseSource"
+import { Datasource } from "../Datasource"
 import { RR0SsgContext } from "../../../RR0SsgContext"
 
-export abstract class UrecatDatasource implements CaseSource<UrecatCase> {
+export abstract class UrecatDatasource implements Datasource<UrecatCase> {
   readonly authors = ["Gross, Patrick"]
   readonly copyright = "URECAT (Les ovnis vus de près)"
 

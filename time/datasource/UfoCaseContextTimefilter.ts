@@ -1,6 +1,6 @@
 import { UfoCaseContextFilter } from "./UfoCaseContextFilter"
 import { RR0SsgContext } from "../../RR0SsgContext"
-import { UfoCase } from "./UfoCase"
+import { RR0UfoCase } from "./RR0UfoCase"
 
 export class UfoCaseContextTimeFilter extends UfoCaseContextFilter {
 
@@ -8,7 +8,7 @@ export class UfoCaseContextTimeFilter extends UfoCaseContextFilter {
     super(context)
   }
 
-  filter(c: UfoCase): boolean {
+  filter(c: RR0UfoCase): boolean {
     const sightingTime = c.dateTime
     const time = this.context.time
     const day = time.getDayOfMonth()

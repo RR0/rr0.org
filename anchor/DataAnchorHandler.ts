@@ -1,7 +1,7 @@
 import { AnchorHandler } from "./AnchorHandler"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { DataService } from "../DataService"
-import { Rr0Data } from "../Rr0Data"
+import { RR0Data } from "../RR0Data"
 
 export class DataAnchorHandler implements AnchorHandler {
 
@@ -10,7 +10,7 @@ export class DataAnchorHandler implements AnchorHandler {
    */
   protected number = 0
 
-  constructor(protected dataService: DataService<Rr0Data>) {
+  constructor(protected dataService: DataService<RR0Data>) {
   }
 
   handle(context: HtmlRR0SsgContext, linkEl: HTMLAnchorElement, pathToSearch: string) {
@@ -50,7 +50,7 @@ export class DataAnchorHandler implements AnchorHandler {
     linkEl.parentNode.insertBefore(replacement, linkEl.nextSibling)
   }
 
-  protected handleApi(context: HtmlRR0SsgContext, data: Rr0Data, linkEl: HTMLAnchorElement) {
+  protected handleApi(context: HtmlRR0SsgContext, data: RR0Data, linkEl: HTMLAnchorElement) {
     const deprecated = data.deprecated
     if (deprecated) {
       linkEl.classList.add("deprecated")
@@ -61,11 +61,11 @@ export class DataAnchorHandler implements AnchorHandler {
     }
   }
 
-  protected handleProduct(context: HtmlRR0SsgContext, data: Rr0Data, linkEl: HTMLAnchorElement) {
+  protected handleProduct(context: HtmlRR0SsgContext, data: RR0Data, linkEl: HTMLAnchorElement) {
     return this.handleApi(context, data, linkEl)
   }
 
-  protected handleOrg(context: HtmlRR0SsgContext, data: Rr0Data, linkEl: HTMLAnchorElement) {
+  protected handleOrg(context: HtmlRR0SsgContext, data: RR0Data, linkEl: HTMLAnchorElement) {
     return this.handleApi(context, data, linkEl)
   }
 }

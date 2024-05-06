@@ -1,7 +1,7 @@
 import { TimeContext } from "../../TimeContext"
-import { UfoCase } from "../UfoCase"
+import { RR0UfoCase } from "../RR0UfoCase"
 
-export interface FuforaCaseSummary extends UfoCase {
+export interface FuforaCaseSummary extends RR0UfoCase {
   readonly city: string,
   readonly sightingPlace: string | undefined,
   readonly dateTime: TimeContext,

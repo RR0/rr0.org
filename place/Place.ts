@@ -1,4 +1,4 @@
-import { Rr0Data } from "../Rr0Data"
+import { RR0Data } from "../RR0Data"
 import { PlaceLocation } from "./PlaceLocation"
 
 export type Elevation = {
@@ -6,7 +6,7 @@ export type Elevation = {
   data?: any
 }
 
-export class Place implements Rr0Data {
+export class Place implements RR0Data {
 
   constructor(readonly locations: PlaceLocation[], readonly elevation?: Elevation, readonly dirName?: string,
     /**

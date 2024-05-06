@@ -1,6 +1,6 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { CaseSource } from "../CaseSource"
+import { Datasource } from "../Datasource"
 import { CsvMapper } from "../CsvMapper"
 import { GeipanCase } from "./GeipanCase"
 import { GeipanCaseSummaryMapper } from "./GeipanCaseSummaryMapper"
@@ -8,7 +8,7 @@ import { geipanHttpDatasource } from "./GeipanRR0Mapping"
 import { SsgFile } from "ssg-api"
 import { GeipanDatasource } from "./GeipanDatasource"
 
-export class GeipanFileDatasource extends GeipanDatasource implements CaseSource<GeipanCaseSummary> {
+export class GeipanFileDatasource extends GeipanDatasource implements Datasource<GeipanCaseSummary> {
 
   constructor(readonly fileName: string) {
     super()

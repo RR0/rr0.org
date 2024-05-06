@@ -1,0 +1,22 @@
+{
+  "type": "sighting",
+  "dateTime": "2020-12-21 ~06:00",
+  "place": {
+    "name": "Spicheren (Moselle)"
+  },
+  "description": "conjonction de Jupiter et Saturne dans le ciel, pris en photo par le Dr Sebastian Voltmer astro-photographe allemand résidant en Moselle-Est",
+  "image": "saturne-jupiter.jpg",
+  "sources": [
+    {
+      "authors": [
+        "Stéphane MAZZUCOTELLI"
+      ],
+      "url": "https://www.republicain-lorrain.fr/culture-loisirs/2020/12/21/planetes-le-rapprochement-de-jupiter-et-saturne-dans-le-ciel-de-spicheren-pres-de-forbach",
+      "title": "Planètes : le rapprochement de Jupiter et Saturne dans le ciel de Spicheren, près de Forbach",
+      "publication": {
+        "publisher": "Le Républicain Lorrain",
+        "time": "2020-12-21"
+      }
+    }
+  ]
+}

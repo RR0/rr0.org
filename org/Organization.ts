@@ -1,4 +1,4 @@
-import { Rr0Data } from "../Rr0Data"
+import { RR0Data } from "../RR0Data"
 import { Place } from "../place/Place"
 import path from "path"
 import { RR0SsgContext } from "../RR0SsgContext"
@@ -14,7 +14,7 @@ export enum OrganizationType {
   city = "city",
 }
 
-export class Organization<M extends TitleMessage = OrganizationMessages> implements Rr0Data {
+export class Organization<M extends TitleMessage = OrganizationMessages> implements RR0Data {
 
   readonly dirName: string
 

@@ -1,8 +1,8 @@
 import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { AbstractCaseSource } from "../AbstractCaseSource"
+import { AbstractDatasource } from "../AbstractDatasource"
 
-export abstract class NuforcDatasource extends AbstractCaseSource<NuforcCaseSummary> {
+export abstract class NuforcDatasource extends AbstractDatasource<NuforcCaseSummary> {
 
   protected constructor(authors: string[] = ["NUFORC"], copyright = "Online Database") {
     super(authors, copyright)

@@ -2,9 +2,9 @@ import { SsgFile } from "ssg-api"
 import { RR0FileUtil } from "./util/file/RR0FileUtil"
 import { RR0SsgContext } from "./RR0SsgContext"
 import path from "path"
-import { Rr0Data } from "./Rr0Data"
+import { RR0Data } from "./RR0Data"
 
-export class DataService<T extends Rr0Data> {
+export class DataService<T extends RR0Data> {
 
   protected readonly pathToData = new Map<string, T>()
 

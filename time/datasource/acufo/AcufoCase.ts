@@ -1,5 +1,5 @@
 import { TimeContext } from "../../TimeContext"
-import { UfoCase } from "../UfoCase"
+import { RR0UfoCase } from "../RR0UfoCase"
 import { City } from "../../../org/country/region/department/city/City"
 
 export type AcufoCaseDataTime = {
@@ -121,7 +121,7 @@ export type AcufoCaseHistory = {
 /**
  * case number will be like "ACUFO-1945-07-16-NUMAZU-1"
  */
-export interface AcufoCase extends UfoCase {
+export interface AcufoCase extends RR0UfoCase {
   summary: string
   data: AcufoCaseData
   sources: AcufoCaseSource[]

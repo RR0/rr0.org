@@ -1,6 +1,5 @@
 import { Place } from "../../../place/Place"
-import { Source } from "../../../source/Source"
-import { UfoCase } from "../UfoCase"
+import { RR0UfoCase } from "../RR0UfoCase"
 import { Organization } from "../../../org/Organization"
 
 export type NamedPlace = {
@@ -9,8 +8,5 @@ export type NamedPlace = {
   readonly name: string
 }
 
-export interface RR0CaseSummary extends UfoCase {
-  readonly place?: NamedPlace
-  readonly description: string
-  readonly sources: Source[]
+export interface RR0CaseSummary extends RR0UfoCase {
 }

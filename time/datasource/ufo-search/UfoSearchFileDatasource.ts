@@ -1,5 +1,5 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { CaseSource } from "../CaseSource"
+import { Datasource } from "../Datasource"
 import { SsgFile } from "ssg-api"
 import { UfoSearchDatasource } from "./UfoSearchDatasource"
 import { JsonMapper } from "../JsonMapper"
@@ -12,7 +12,7 @@ class FileMapper extends JsonMapper<UfoSearchCase> {
   }
 }
 
-export class UfoSearchFileDatasource extends UfoSearchDatasource implements CaseSource<UfoSearchCase> {
+export class UfoSearchFileDatasource extends UfoSearchDatasource implements Datasource<UfoSearchCase> {
 
   readonly fileMapper = new FileMapper()
 

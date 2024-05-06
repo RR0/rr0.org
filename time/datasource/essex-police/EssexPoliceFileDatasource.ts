@@ -1,11 +1,11 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
-import { CaseSource } from "../CaseSource"
+import { Datasource } from "../Datasource"
 import { SsgFile } from "ssg-api"
 import { EssexPoliceDatasource } from "./EssexPoliceDatasource"
 import { JsonMapper } from "../JsonMapper"
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
 
-export class EssexPoliceFileDatasource extends EssexPoliceDatasource implements CaseSource<EssexPoliceCaseSummary> {
+export class EssexPoliceFileDatasource extends EssexPoliceDatasource implements Datasource<EssexPoliceCaseSummary> {
 
   readonly fileMapper = new class extends JsonMapper<EssexPoliceCaseSummary> {
     parse(context: RR0SsgContext, data: string): EssexPoliceCaseSummary[] {

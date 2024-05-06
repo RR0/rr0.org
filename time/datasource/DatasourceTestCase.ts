@@ -1,13 +1,14 @@
 import { expect } from "@javarome/testscript"
-import { RR0CaseRenderer } from "../RR0CaseRenderer"
+import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { RR0CaseMapping } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
 import { Source } from "../../source/Source"
-import { UfoCase } from "./UfoCase"
+import { RR0UfoCase } from "./RR0UfoCase"
+import { SourceRenderer } from "../SourceRenderer"
 
-export abstract class DatasourceTestCase<S extends UfoCase> {
+export abstract class DatasourceTestCase<S extends RR0UfoCase> {
 
   protected constructor(readonly mapping: RR0CaseMapping<S>, readonly sourceCases: S[]) {
   }
@@ -52,7 +53,7 @@ export abstract class DatasourceTestCase<S extends UfoCase> {
     const sourceCases = await this.mapping.datasource.fetch(context)
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
     const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
-    const eventRenderer = new RR0CaseRenderer()
+    const eventRenderer = new CaseSummaryRenderer(new SourceRenderer())
     const items = cases.map(c => eventRenderer.render(context, c))
     expect(items.length).toBe(sourceCases.length)
     for (let i = 0; i < sourceCases.length; i++) {

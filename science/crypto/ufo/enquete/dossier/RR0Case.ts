@@ -18,7 +18,7 @@ enum CaseConclusion {
   hoax = "hoax"
 }
 
-export interface Case extends RR0CaseSummary {
+export interface RR0Case extends RR0CaseSummary {
   title: string
   time: string
   classification?: {

@@ -218,7 +218,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    let peopleList = await this.service.getPeopleFromDirs(context, dirNames)
+    let peopleList = await this.service.getFromDirs(context, dirNames)
     if (this.filterOccupations.length > 0) {
       peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     }

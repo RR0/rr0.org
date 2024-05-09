@@ -10,23 +10,25 @@ export class DataAnchorHandler implements AnchorHandler {
    */
   protected number = 0
 
-  constructor(protected dataService: DataService<RR0Data>) {
+  constructor(protected dataService: DataService) {
   }
 
-  handle(context: HtmlRR0SsgContext, linkEl: HTMLAnchorElement, pathToSearch: string) {
+  async handle(context: HtmlRR0SsgContext, linkEl: HTMLAnchorElement, pathToSearch: string): Promise<void> {
     if (this.dataService.dirs.find(dir => dir.startsWith(pathToSearch))) {
-      const data = this.dataService.read(context, pathToSearch)
-      const type = data?.type
-      switch (type) {
-        case "api":
-          this.handleApi(context, data, linkEl)
-          break
-        case "product":
-          this.handleProduct(context, data, linkEl)
-          break
-        case "org":
-          //  this.handleOrg(context, data, linkEl)
-          break
+      const dataList = await this.dataService.get(context, pathToSearch, ["api", "product", "org"], ["index.json"])
+      for (const data of dataList) {
+        const type = data?.type
+        switch (type) {
+          case "api":
+            this.handleApi(context, data, linkEl)
+            break
+          case "product":
+            this.handleProduct(context, data, linkEl)
+            break
+          case "org":
+            //  this.handleOrg(context, data, linkEl)
+            break
+        }
       }
     }
   }

@@ -1,3 +1,6 @@
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { Time } from "./Time"
+
 /**
  * Time context for a RR0 page.
  */
@@ -145,5 +148,27 @@ export class TimeContext {
 
   equals(other: TimeContext): boolean {
     return this.toString() === other.toString()
+  }
+
+  static fromFileName(context: HtmlRR0SsgContext, fileName = context.inputFile.name): TimeContext | undefined {
+    let timeContext: TimeContext | undefined
+    const timeExec = Time.parseFileName(fileName)
+    if (timeExec && timeExec.length > 5) {
+      const pageContext = context.clone()
+      timeContext = pageContext.time
+      const m = parseInt(timeExec[2], 10)
+      const c = parseInt(timeExec[3], 10)
+      const d = parseInt(timeExec[4], 10)
+      const u = parseInt(timeExec[5], 10)
+      const year = (timeExec[1] ? -1 : 1) * (m * 1000 + c * 100 + d * 10 + u)
+      timeContext.setYear(year)
+      const monthStr = timeExec[6]
+      timeContext.setMonth(monthStr ? parseInt(monthStr, 10) : undefined)
+      const dayStr = timeExec[7]
+      timeContext.setDayOfMonth(dayStr ? parseInt(dayStr, 10) : undefined)
+      timeContext.setHour(undefined)
+      timeContext.setMinutes(undefined)
+    }
+    return timeContext
   }
 }

@@ -1,0 +1,11 @@
+.witness, .temoin, .temoin1, .temoin2, .temoin3 {
+  display: inline-block;
+  color: #333;
+  background: linear-gradient(to right, #fff, #333 2%, #333 98%, #fff);
+  transform: rotate(-1.5deg);
+  text-align: center
+}
+
+.witness a {
+  color: grey;
+}

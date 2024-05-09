@@ -7,7 +7,7 @@ import { EventRenderer } from "./EventRenderer"
 
 export class EventReplacer<D extends RR0Data> {
 
-  constructor(protected renderer: EventRenderer<D>, protected dataService: DataService<D>) {
+  constructor(protected renderer: EventRenderer<D>, protected dataService: DataService) {
   }
 
   async replacement(context: HtmlRR0SsgContext, original: HTMLElement): Promise<HTMLElement> {
@@ -19,11 +19,11 @@ export class EventReplacer<D extends RR0Data> {
   }
 
   protected async sourceFromFile(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
-    const event = this.dataService.read(context, href)
-    if (!event) {
+    const events = await this.dataService.get<D>(context, href, ["sighting"], ["index.json"])
+    if (events.length <= 0) {
       throw new Error("Could not find metadata in " + href)
     }
-    this.renderer.renderContent(context, event, container)
+    this.renderer.renderContent(context, events[0], container)
   }
 }
 

@@ -108,7 +108,7 @@ export class BookService {
   protected async findPeople(context: RR0SsgContext, fullName: string): Promise<KnownPeople | undefined> {
     if (this.peopleList.length <= 0) {
       const peopleDirectories = RR0FileUtil.findDirectoriesContaining("people*.json")
-      this.peopleList = await this.peopleService.getPeopleFromDirs(context, peopleDirectories)
+      this.peopleList = await this.peopleService.getFromDirs(context, peopleDirectories)
     }
     return this.peopleList.find(people => people.firstAndLastName === fullName)
   }

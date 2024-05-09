@@ -16,7 +16,7 @@ const fileName = args.import
 const dry = args.dry === "true"
 
 glob("people/*/*").then(peopleFiles => {
-  const books = new BookService(logger, dry, new PeopleService(peopleFiles))
+  const books = new BookService(logger, dry, new PeopleService(peopleFiles, dataService))
   books.import(fileName).then((result: Book[]) => {
       logger.log("Wrote", result.length, "books")
     }

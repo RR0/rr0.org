@@ -3,6 +3,7 @@ import { Source } from "../source/Source"
 import { OnlineSource } from "../source/OnlineSource"
 import { TimeTextBuilder } from "./TimeTextBuilder"
 import { TimeReplacer } from "./TimeReplacer"
+import { TimeContext } from "./TimeContext"
 
 /**
  * Render a case summary for a RR0 web page.
@@ -19,16 +20,18 @@ export class SourceRenderer {
   renderContent(context: HtmlRR0SsgContext, source: Source, container: HTMLElement): void {
     const doc = context.outputFile.document
     const sourceContext = context.clone()
-    container.append(source.authors?.join(" & "), `: `)
+    if (source.authors?.length > 0) {
+      container.append(source.authors.join(" & "), `: `)
+    }
     const title = source.title
     if (title) {
       if ((source as OnlineSource).url) {   // Online source?
         const onlineSource = source as OnlineSource
-        const caseLink = doc.createElement("a") as HTMLAnchorElement
-        caseLink.textContent = title
+        const sourceLink = doc.createElement("a") as HTMLAnchorElement
+        sourceLink.textContent = title
         const url = onlineSource.url
-        caseLink.href = url instanceof URL ? url.href : url
-        container.appendChild(caseLink)
+        sourceLink.href = url instanceof URL ? url.href : url
+        container.appendChild(sourceLink)
       } else {
         container.append(title)
       }
@@ -50,10 +53,10 @@ export class SourceRenderer {
         if (publisher) {
           container.append(", ")
         }
-        if (typeof timeValue === "string") {
-          TimeReplacer.updateTimeFromStr(sourceContext.time, timeValue)
-        } else {
+        if (timeValue instanceof TimeContext) {
           Object.assign(sourceContext.time, timeValue)
+        } else {
+          TimeReplacer.updateTimeFromStr(sourceContext.time, timeValue)
         }
         container.append(TimeTextBuilder.build(sourceContext))
       }

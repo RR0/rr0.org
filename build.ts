@@ -59,13 +59,14 @@ import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
-import { Case } from "./science/crypto/ufo/enquete/dossier/Case"
+import { RR0Case } from "./science/crypto/ufo/enquete/dossier/RR0Case"
 import { DataService } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
 import { RR0Data } from "./RR0Data"
 import { SourceRenderer } from "./time/SourceRenderer"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
 import { EventReplacerFactory } from "./time/EventReplacerFactory"
+import { HttpSource } from "./time/datasource/HttpSource"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -190,12 +191,11 @@ class BookContentVisitor implements ContentVisitor {
 
 getTimeFiles().then(async (timeFiles) => {
   const peopleFiles = await glob("people/?/*")
-  const peopleService = new PeopleService(peopleFiles)
+  const dataService = await DataService.create<RR0Data>("index")
+  const peopleService = new PeopleService(peopleFiles, dataService)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
-  const caseService = await DataService.create<Case>("case")
-  const dataService = await DataService.create<RR0Data>("index")
-  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
+  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, dataService)
   copies.push(...(ufoCasesStep.dirs).map(dir => dir + "/case.json"))
   await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
@@ -239,7 +239,8 @@ getTimeFiles().then(async (timeFiles) => {
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new AuthorReplaceCommand(timeFiles)
   ]
-  const sourceReplacerFactory = new SourceReplacerFactory(sourceRenderer, dataService)
+  const http = new HttpSource()
+  const sourceReplacerFactory = new SourceReplacerFactory(sourceRenderer, dataService, http, baseUrl)
   const contentsReplaceCommand = [
     databaseAggregationCommand,
     new ClassDomReplaceCommand("event", new EventReplacerFactory(caseRenderer, sourceReplacerFactory)),
@@ -257,7 +258,7 @@ getTimeFiles().then(async (timeFiles) => {
     ...pageReplaceCommands,
     ...contentsReplaceCommand,
     new OutlineReplaceCommand(),
-    new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(caseService), new DataAnchorHandler(dataService)]),
+    new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(dataService), new DataAnchorHandler(dataService)]),
     new ImageCommand(config.outDir, 275, 500),
     new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
     searchCommand

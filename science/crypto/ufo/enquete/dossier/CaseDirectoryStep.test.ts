@@ -3,7 +3,7 @@ import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
 import { SsgConfig, SsgContext, SsgFile } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
 import { DataService } from "../../../../../DataService"
-import { Case } from "./Case"
+import { RR0Case } from "./RR0Case"
 
 describe("DirectoryStep", () => {
 
@@ -26,7 +26,7 @@ describe("DirectoryStep", () => {
 <!--#include virtual="/footer.html" -->`
     const context = rr0TestUtil.newContext("/science/crypto/ufo/enquete/dossier/index.html", template)
     const step = new CaseDirectoryStep(
-      await DataService.create<Case>("case"),
+      await DataService.create<RR0Case>("case"),
       [],
       "/science/crypto/ufo/enquete/dossier/index.html",
       outputFunc, config)

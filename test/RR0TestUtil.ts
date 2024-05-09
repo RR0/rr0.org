@@ -1,7 +1,6 @@
-import {HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl} from "../RR0SsgContext"
-import {TimeContext} from "../time/TimeContext"
-import {HtmlSsgFile, SsgFile} from "ssg-api"
-import { Time } from "../time/Time"
+import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
+import { TimeContext } from "../time/TimeContext"
+import { HtmlSsgFile, SsgFile } from "ssg-api"
 
 class RR0TestUtil {
 
@@ -36,7 +35,7 @@ class RR0TestUtil {
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
     context.outputFile = context.inputFile  // By default
     const htmlContext = context as HtmlRR0SsgContext
-    Object.assign(htmlContext.time, Time.contextFromFile(htmlContext, inputFileName))
+    Object.assign(htmlContext.time, TimeContext.fromFileName(htmlContext, inputFileName))
     return htmlContext
   }
 }

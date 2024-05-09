@@ -2,6 +2,7 @@ import { Occupation } from "./Occupation"
 import { StringUtil } from "../util/string/StringUtil"
 import { Gender } from "@rr0/common"
 import { CountryCode } from "../org/country/CountryCode"
+import { RR0Data } from "../RR0Data"
 
 export class People {
   /**

@@ -1,16 +1,15 @@
 import { KnownPeople, People } from "./People"
 import { StringUtil } from "../util/string/StringUtil"
-import { promise as glob } from "glob-promise"
 import { RR0SsgContext } from "../RR0SsgContext"
-import { SsgFile } from "ssg-api"
 import path from "path"
 import fs from "fs"
+import { DataService } from "../DataService"
 
 export class PeopleService {
 
   readonly cache = new Map<string, KnownPeople>()
 
-  constructor(protected peopleFiles: string[]) {
+  constructor(protected peopleFiles: string[], protected readonly dataService: DataService) {
   }
 
   createFromFullName(fullName: string): KnownPeople {
@@ -43,66 +42,64 @@ export class PeopleService {
     }
   }
 
-  async getPeopleFromDirs(context: RR0SsgContext, dirNames: string[]): Promise<KnownPeople[]> {
+  async getFromDirs(context: RR0SsgContext, dirNames: string[]): Promise<KnownPeople[]> {
     let peopleList: People[] = []
     for (const dirName of dirNames) {
-      const list = await this.getPeopleFromDir(context, dirName)
+      const list = await this.getFromDir(context, dirName)
       peopleList.push(...list)
     }
     return peopleList
   }
 
-  async getPeopleFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
+  async getFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
     let peopleList: People[] = []
-    const fileSpec = `/people*.json`
-    const files = await glob(`${dirName}${fileSpec}`)
-    for (const file of files) {
-      const people = this.createFromDirName(dirName)
+    const fileSpec = ["/people*.json"]
+    const peopleDataList = await this.dataService.get(context, dirName, ["people"], fileSpec) as People[]
+    for (const peopleData of peopleDataList) {
+      const people = this.createFromData(context, dirName, peopleData)
       peopleList.push(people)
-      try {
-        const jsonFileInfo = SsgFile.read(context, file)
-        const peopleData = JSON.parse(jsonFileInfo.contents)
-        const title = peopleData.title
-        if (title) {
-          try {
-            const names = title.split(", ")
-            people.lastName = names.splice(0, 1)[0]
-            people.firstNames.length = 0
-            people.firstNames.push(...names[0].split(" "))
-            people.lastAndFirstName = people.getLastAndFirstName()
-          } catch (e) {
-            const words = title.split(" ")
-            if (words.length === 2) {
-              people.firstNames.length = 0
-              people.firstNames.push(words[0])
-              people.lastName = words[1]
-            } else {
-              context.warn(`Could not determine first and last name from "${title}" in ${jsonFileInfo.name}`)
-              context.debug(e)
-            }
-            people.lastAndFirstName = title
-          }
-        }
-        Object.assign(people, peopleData)
-        if (!people.portraitUrl) {
-          const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
-          let hasPortrait = false
-          for (let i = 0; i < possiblePortraitFiles.length; i++) {
-            const portraitFile = possiblePortraitFiles[i]
-            const portraitPath = path.join(people.dirName, portraitFile)
-            hasPortrait = fs.existsSync(portraitPath)
-            if (hasPortrait) {
-              people.portraitUrl = path.join("/", portraitPath)
-              break
-            }
-          }
-        }
-      } catch (e) {
-        context.warn(`${dirName} has no ${fileSpec} description`)
-        // No json, just guess title.
-      }
     }
     return peopleList
+  }
+
+  createFromData(context: RR0SsgContext, dirName: string, data: People): People {
+    const people = this.createFromDirName(dirName)
+    const title = data.title
+    if (title) {
+      try {
+        const names = title.split(", ")
+        people.lastName = names.splice(0, 1)[0]
+        people.firstNames.length = 0
+        people.firstNames.push(...names[0].split(" "))
+        people.lastAndFirstName = people.getLastAndFirstName()
+      } catch (e) {
+        const words = title.split(" ")
+        if (words.length === 2) {
+          people.firstNames.length = 0
+          people.firstNames.push(words[0])
+          people.lastName = words[1]
+        } else {
+          context.warn(`Could not determine first and last name from "${title}"}`)
+          context.debug(e)
+        }
+        people.lastAndFirstName = title
+      }
+    }
+    Object.assign(people, data)
+    if (!people.portraitUrl) {
+      const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
+      let hasPortrait = false
+      for (let i = 0; i < possiblePortraitFiles.length; i++) {
+        const portraitFile = possiblePortraitFiles[i]
+        const portraitPath = path.join(people.dirName, portraitFile)
+        hasPortrait = fs.existsSync(portraitPath)
+        if (hasPortrait) {
+          people.portraitUrl = path.join("/", portraitPath)
+          break
+        }
+      }
+    }
+    return people
   }
 
   createFromDirName(dirName: string): KnownPeople {

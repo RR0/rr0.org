@@ -68,8 +68,8 @@ export class WebFileInput {
     readRecord(recordIndex) {
         return new Promise((resolve, reject) => {
             this.getBuffer()
-            let inputRecord = this.recordReader.read(this.filePos)
-            inputRecord.id = recordIndex
+          let inputRecord = this.recordReader.read(undefined, undefined, this.filePos)
+          inputRecord.id = recordIndex
             resolve(inputRecord)
         })
     }

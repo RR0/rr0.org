@@ -5,7 +5,7 @@ import { describe, expect, test } from "@javarome/testscript"
 describe('PeopleFactory', () => {
 
   test('build people with one first name', () => {
-    const factory = new PeopleService(["people/b/BeauJerome"])
+    const factory = new PeopleService(["people/b/BeauJerome"], dataService)
     expect(factory.createFromFullName('Jérôme Beau')).toEqual(new KnownPeople(
       ['Jérôme'],
       'Beau',
@@ -21,7 +21,7 @@ describe('PeopleFactory', () => {
   });
 
   test('build people with two first names', () => {
-    const factory = new PeopleService(["people/b/BeauJeromePierre"])
+    const factory = new PeopleService(["people/b/BeauJeromePierre"], dataService)
     expect(factory.createFromFullName('Jérôme Pierre Beau')).toEqual({
       title: 'Beau, Jérôme Pierre',
       countries: [],
@@ -36,7 +36,7 @@ describe('PeopleFactory', () => {
   });
 
   test('build people with two last names', () => {
-    const factory = new PeopleService(["people/v/VonBraunWerner"])
+    const factory = new PeopleService(["people/v/VonBraunWerner"], dataService)
     expect(factory.createFromFullName('Werner VonBraun')).toEqual({
       title: 'Von Braun, Werner',
       countries: [],
@@ -51,7 +51,7 @@ describe('PeopleFactory', () => {
   });
 
   test('build people with one initial first names', () => {
-    const factory = new PeopleService(["people/c/CondonEdwardU"])
+    const factory = new PeopleService(["people/c/CondonEdwardU"], dataService)
     expect(factory.createFromFullName('Edward U. Condon')).toEqual({
       title: 'Condon, Edward U.',
       countries: [],
@@ -66,7 +66,7 @@ describe('PeopleFactory', () => {
   });
 
   test('build people with last name first', () => {
-    const factory = new PeopleService(["people/h/HynekJosefAllen"])
+    const factory = new PeopleService(["people/h/HynekJosefAllen"], dataService)
     expect(factory.createFromFullName('Hynek, Josef Allen')).toEqual({
       title: 'Hynek, Josef Allen',
       countries: [],
@@ -81,7 +81,7 @@ describe('PeopleFactory', () => {
   });
 
   test('Single name', () => {
-    const factory = new PeopleService(["people/a/Aristote"])
+    const factory = new PeopleService(["people/a/Aristote"], dataService)
     expect(factory.createFromFullName('Aristote')).toEqual({
       title: 'Aristote',
       countries: [],

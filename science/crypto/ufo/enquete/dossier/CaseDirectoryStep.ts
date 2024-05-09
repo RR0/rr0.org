@@ -3,12 +3,12 @@ import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { HtmlTag } from "../../../../../util/HtmlTag"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 import { Time } from "../../../../../time/Time"
-import { Case } from "./Case"
+import { RR0Case } from "./RR0Case"
 import { DataService } from "../../../../../DataService"
 
 export class CaseDirectoryStep extends DirectoryStep {
 
-  constructor(protected caseService: DataService<Case>, excludedDirs: string[], template: string,
+  constructor(protected caseService: DataService, excludedDirs: string[], template: string,
               protected outputFunc: OutputFunc, config: SsgConfig) {
     super(caseService.dirs, excludedDirs, template, config, "case directory")
   }
@@ -16,7 +16,7 @@ export class CaseDirectoryStep extends DirectoryStep {
   static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
 
   static async create(outputFunc: OutputFunc, config: SsgConfig,
-                      caseService: DataService<Case>): Promise<CaseDirectoryStep> {
+                      caseService: DataService): Promise<CaseDirectoryStep> {
     return new CaseDirectoryStep(caseService, ["science/crypto/ufo/enquete/dossier/canular"],
       CaseDirectoryStep.template, outputFunc, config)
   }
@@ -27,7 +27,7 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param cases
    */
-  protected toList(context: RR0SsgContext, cases: Case[]) {
+  protected toList(context: RR0SsgContext, cases: RR0Case[]) {
     const listItems = cases.map(dirCase => {
       if (!dirCase.title) {
         const lastSlash = dirCase.dirName.lastIndexOf("/")
@@ -45,7 +45,7 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param dirCase
    */
-  protected toListItem(context: RR0SsgContext, dirCase: Case) {
+  protected toListItem(context: RR0SsgContext, dirCase: RR0Case) {
     const attrs: { [name: string]: string } = {}
     const titles = []
     const details: string[] = []
@@ -78,7 +78,7 @@ export class CaseDirectoryStep extends DirectoryStep {
   }
 
   protected async processDirs(context: RR0SsgContext, dirNames: string[]): Promise<void> {
-    const cases = this.scan(context, dirNames)
+    const cases = await this.scan(context, dirNames)
     const directoriesHtml = this.toList(context, cases)
     context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
       directoriesHtml)
@@ -91,11 +91,12 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param dirNames The directories to look for case.json files.
    */
-  protected scan(context: RR0SsgContext, dirNames: string[]): Case[] {
-    const cases: Case[] = []
+  protected async scan(context: RR0SsgContext, dirNames: string[]): Promise<RR0Case[]> {
+    const cases: RR0Case[] = []
     for (const dirName of dirNames) {
       try {
-        cases.push(this.caseService.read(context, dirName))
+        const cases = await this.caseService.get(context, dirName, ["case"], ["case*.json"])
+        cases.push(...cases)
       } catch (e) {
         context.warn(`${dirName} has no case.json description`)
         // No json, just guess title.

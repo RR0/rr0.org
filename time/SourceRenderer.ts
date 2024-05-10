@@ -60,6 +60,9 @@ export class SourceRenderer {
         }
         container.append(TimeTextBuilder.build(sourceContext))
       }
+      if (source.index) {
+        container.append(", " + source.index)
+      }
     }
   }
 }

@@ -7,11 +7,20 @@ export type Publication = {
 }
 
 export interface Source extends RR0Data {
+  /**
+   * Dependent sources.
+   */
   readonly previousSourceRefs?: string[]
+
   readonly title?: string
   readonly authors?: string[]
   readonly publication?: Publication
   readonly subTitle?: string
   readonly series?: string
-  readonly summary?: string,
+  readonly summary?: string
+
+  /**
+   * Chapter, page, etc.
+   */
+  index?: string
 }

@@ -59,7 +59,6 @@ import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
-import { RR0Case } from "./science/crypto/ufo/enquete/dossier/RR0Case"
 import { DataService } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
 import { RR0Data } from "./RR0Data"
@@ -111,7 +110,7 @@ const contentRoots = cliContents
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
-  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css",
+  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "people/index.js", "people/lier.svg", "people/index.css",

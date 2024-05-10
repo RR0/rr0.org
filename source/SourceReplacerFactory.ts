@@ -16,6 +16,8 @@ export class SourceReplacer {
    */
   protected number = 0
 
+  protected readonly pageSource = new Map()
+
   constructor(protected renderer: SourceRenderer, protected dataService: DataService, protected http: HttpSource,
               protected baseUrl: string) {
   }
@@ -31,17 +33,21 @@ export class SourceReplacer {
     replacement.textContent = "s" + sourceStr
     const contents = outputDoc.createElement("span")
     contents.className = "source-contents"
+    await this.content(context, original, contents)
+    const anchor = outputDoc.createElement("span")
+    anchor.id = sourceId
+    anchor.className = "anchor"
+    replacement.append(anchor, contents)
+    return replacement
+  }
+
+  protected async content(context: HtmlRR0SsgContext, original: HTMLElement, contents: HTMLSpanElement) {
     const href = (original as HTMLAnchorElement).href || original.dataset.href
     if (href) {
       await this.sourceFromLink(context, contents, href)
     } else {
       contents.innerHTML = original.innerHTML
     }
-    const anchor = outputDoc.createElement("span")
-    anchor.id = sourceId
-    anchor.className = "anchor"
-    replacement.append(anchor, contents)
-    return replacement
   }
 
   protected async sourceFromLink(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
@@ -54,15 +60,42 @@ export class SourceReplacer {
     if (path.dirname(href).startsWith("/")) {
       href = href.substring(1)
     }
-    const isFile = Boolean(path.extname(href))
-    const sources = await this.dataService.get(context, isFile ? path.dirname(href) : href,
-      ["article", "book", "website",
-        undefined   // TODO: Remove undefined when type is set in all .json files
-      ],
-      ["index.json", "people.json"])
-    let source: Source = sources[0]
-    if (!source) {
-      source = this.fromPage(context, href)
+    const hashPos = href.lastIndexOf("#")
+    let hash: string
+    if (hashPos > 0) {
+      hash = href.substring(hashPos + 1)
+      href = href.substring(0, hashPos)
+    } else {
+      hash = undefined
+    }
+    const ext = path.extname(href)
+    let source: Source
+    const sourceTypes = ["article", "book", "website",
+      undefined   // TODO: Remove undefined when type is set in all .json files
+    ]
+    switch (ext) {
+      case ".htm":
+      case ".html":
+        source = this.fromPage(context, href)
+        break
+      case ".json":
+        const sources = await this.dataService.get(context, path.dirname(href), sourceTypes, [path.basename(href)])
+        source = sources?.[0]
+        break
+      default: {
+        const sources = await this.dataService.get(context, ext ? path.dirname(href) : href, sourceTypes,
+          ["index.json", "people.json"])
+        source = sources?.[0]
+        if (!source) {
+          source = this.fromPage(context, path.join(href, "index.html"))
+        }
+      }
+    }
+    if (!source.publication.time) {
+      source.publication.time = TimeContext.fromFileName(context, href)
+    }
+    if (hash) {
+      source.index = hash
     }
     return source as Source
   }
@@ -74,8 +107,7 @@ export class SourceReplacer {
       title: doc.querySelector("title").textContent,
       authors: Array.from(doc.querySelectorAll("meta[name='author']")).map(meta => meta.getAttribute("content")),
       publication: {
-        publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content"),
-        time: TimeContext.fromFileName(context, ssgFile.name)
+        publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content")
       },
       url: new URL(href, this.baseUrl)
     } as OnlineSource

@@ -3,6 +3,7 @@
 @import "search/search.css";
 @import "figure.css";
 @import "people/index.css";
+@import "section.css";
 
 :root {
   --mobile-nav-height: 2rem;
@@ -21,6 +22,16 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: var(--font-family);
+  -webkit-text-size-adjust: 100%
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+
 .people-icon {
   width: 1em;
   height: 1em;
@@ -32,19 +43,6 @@
 .text section, .text ul {
   text-align: justify;
   vertical-align: sub
-}
-
-html {
-  font-family: var(--font-family);
-  -webkit-text-size-adjust: 100%
-}
-
-html, body {
-  scroll-behavior: smooth;
-}
-
-[data-ng-cloak] {
-  display: none !important
 }
 
 .map h1, nav h1 {
@@ -73,17 +71,9 @@ body.wait, body.wait * {
   cursor: wait
 }
 
-section {
-  transition: background-color .2s ease-out
-}
-
 p {
   padding-left: var(--margin);
   padding-right: var(--margin);
-}
-
-section:hover {
-  background-color: rgba(127, 127, 127, 0.05);
 }
 
 .indexed time {
@@ -98,14 +88,8 @@ section:hover {
   margin-top: 2.5mm
 }
 
-.left figcaption, .left side figcaption, .multi-list li {
+.left figcaption, .left.side figcaption, .multi-list li {
   text-align: left
-}
-
-.text section article {
-  margin-top: .5em;
-  padding-right: .8em;
-  border-right: .4em solid rgba(255, 255, 255, 0)
 }
 
 .multi-list, form, header, header h1, .text {
@@ -214,59 +198,6 @@ form {
   font-weight: 400;
   text-shadow: 0 0 .5em #fff;
   overflow: hidden;
-}
-
-h1, h2, h3, h4, h5 {
-  text-wrap: balance;
-}
-
-h2, h3, h4, h5, nav ul li *, section h1, section section h1 {
-  font-family: system-ui, sans-serif;
-}
-
-h2, h3, h4, h5, section h1, section section h1 {
-  clear: both;
-  text-decoration: none;
-  font-size: 1.5em;
-  line-height: 1.5;
-  font-weight: 400;
-  margin: 1.5em 0 .8em -2.25rem;
-  color: #666;
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZGZkZmYyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzklIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-  background: linear-gradient(135deg, #eaeaf9 0, rgba(255, 255, 255, 0) 79%);
-  padding-top: .35em;
-  padding-bottom: .4em;
-  padding-left: calc(2.4rem + var(--margin));
-  letter-spacing: 1px;
-  text-align: left
-}
-
-h3 {
-  font-size: 1.4em
-}
-
-h4 {
-  font-size: 1.3em
-}
-
-h5 {
-  font-size: 1.2em
-}
-
-h3, h4, h5, section section h1 {
-  background: 0 0;
-  margin-top: 1.25em;
-  border-bottom: thin dotted #DBDBDB
-}
-
-h4 {
-  margin: 1.25em 0 0 .83em;
-  padding: 5px
-}
-
-h5 {
-  margin: 1.25em 0 0 .83em;
-  padding: 4px
 }
 
 .title {
@@ -510,16 +441,6 @@ p, td {
 #rr0-context-select > * {
   text-align: right;
   display: block;
-}
-
-section:after {
-  content: "";
-  display: block;
-  width: 50%;
-  margin-left: 50%;
-  color: #666;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 1.5em
 }
 
 p {
@@ -1369,10 +1290,6 @@ body.with-map .map {
     --color: lightgrey;
   }
 
-  section:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
   .footer {
     color: grey;
   }
@@ -1424,13 +1341,6 @@ body.with-map .map {
     border-color: rgb(80, 80, 80);
   }
 
-  h2, h3, h4, h5, section h1, section section h1 {
-    color: white;
-    background: linear-gradient(135deg, #384858 0, rgba(255, 255, 255, 0) 79%);
-    border-bottom: none;
-    border-top-left-radius: 0.3em;
-  }
-
   .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {
     color: white;
     background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
@@ -1454,10 +1364,6 @@ body.with-map .map {
 
   code, pre {
     background-color: #2f3032;
-  }
-
-  section:after {
-    border-bottom-color: #555;
   }
 }
 

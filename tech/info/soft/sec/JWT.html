@@ -1,0 +1,37 @@
+<!--#include virtual="/header-start.html" -->
+<title>JWT</title>
+<meta content="https://jwt.io" name="url">
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">JSON Web Token</i> : jeton web au format <a href="/tech/info/soft/data/doc/json">JSON</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p></p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Un jeton se compose de :</p>
+  <ul>
+    <li>Un <b>en-tête</b> (<i lang="en">header</i>) décrivant le jeton au format <a
+      href="/tech/info/soft/data/doc/json">JSON</a> :
+      <ul>
+        <li><code>typ</code> : Type de jeton ("jwt" ou autre)</li>
+        <li><code>alg</code>" : Algorithme de signature ("HS512" ou autre)</li>
+      </ul>
+    </li>
+    <li>Une <b>charge utile</b> (<i lang="en">payload</i>) qui représente les informations transmises par le jeton, au
+      format <a href="/tech/info/soft/data/doc/json">JSON</a>.</li>
+    <li>Une <b>signature</b> numérique au format header.alg.</li>
+  </ul>
+  <p>Le JWT à transmettre est généré via forme : signature(header + "." + payload, signPrivKey)</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Normalisé par la RFC 7519.</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

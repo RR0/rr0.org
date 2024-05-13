@@ -91,8 +91,9 @@ export class SourceReplacer {
         }
       }
     }
-    if (!source.publication.time) {
-      source.publication.time = TimeContext.fromFileName(context, href)
+    const publication = source.publication
+    if (publication && !publication.time) {
+      publication.time = TimeContext.fromFileName(context, href)
     }
     if (hash) {
       source.index = hash

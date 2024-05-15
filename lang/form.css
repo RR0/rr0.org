@@ -1,0 +1,20 @@
+@import "/lang/speech.css";
+
+.indexed p[lang='ar-Latn'], .indexed p[lang='he-Latn'] {
+  font-style: italic;
+  text-align: right;
+}
+
+#lang-aside {
+  text-align: right;
+  position: sticky;
+  top: 41px;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
+}
+
+@media (min-width: 60em) {
+  #lang-aside {
+    top: 99px;
+  }
+}

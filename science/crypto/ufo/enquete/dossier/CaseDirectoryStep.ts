@@ -8,15 +8,14 @@ import { DataService } from "../../../../../DataService"
 
 export class CaseDirectoryStep extends DirectoryStep {
 
-  constructor(protected caseService: DataService, excludedDirs: string[], template: string,
+  constructor(protected caseService: DataService, excludedDirs: string[], templateFileName: string,
               protected outputFunc: OutputFunc, config: SsgConfig) {
-    super(caseService.dirs, excludedDirs, template, config, "case directory")
+    super(caseService.dirs, excludedDirs, templateFileName, config, "case directory")
   }
 
   static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
 
-  static async create(outputFunc: OutputFunc, config: SsgConfig,
-                      caseService: DataService): Promise<CaseDirectoryStep> {
+  static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: DataService): Promise<CaseDirectoryStep> {
     return new CaseDirectoryStep(caseService, ["science/crypto/ufo/enquete/dossier/canular"],
       CaseDirectoryStep.template, outputFunc, config)
   }
@@ -95,8 +94,8 @@ export class CaseDirectoryStep extends DirectoryStep {
     const cases: RR0Case[] = []
     for (const dirName of dirNames) {
       try {
-        const cases = await this.caseService.get(context, dirName, ["case"], ["case*.json"])
-        cases.push(...cases)
+        const dirCases = await this.caseService.get<RR0Case>(context, dirName, ["case", undefined], ["case*.json"])
+        cases.push(...dirCases)
       } catch (e) {
         context.warn(`${dirName} has no case.json description`)
         // No json, just guess title.

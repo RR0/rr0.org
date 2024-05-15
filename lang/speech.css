@@ -1,0 +1,11 @@
+.speech {
+  position: absolute;
+  margin-top: 1em;
+  display: none;
+  box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
+  z-index: 1;
+}
+
+* *[lang]:hover .speech {
+  display: inline-block;
+}

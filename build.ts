@@ -61,11 +61,11 @@ import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
 import { DataService } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
-import { RR0Data } from "./RR0Data"
 import { SourceRenderer } from "./time/SourceRenderer"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
 import { EventReplacerFactory } from "./time/EventReplacerFactory"
 import { HttpSource } from "./time/datasource/HttpSource"
+import { RR0FileUtil } from "./util/file/RR0FileUtil"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -110,12 +110,12 @@ const contentRoots = cliContents
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
-  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css",
+  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "people/index.js", "people/lier.svg", "people/index.css",
   "search/index.js", "search/index.json", "search/search.css",
-  "index/index.js", "index/lang.js",
+  "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/religion/theisme/mono/livre/islam/coran/index.js",
   "udb/**/*.js",
   "udb/netlify.toml",
@@ -190,13 +190,16 @@ class BookContentVisitor implements ContentVisitor {
 
 getTimeFiles().then(async (timeFiles) => {
   const peopleFiles = await glob("people/?/*")
-  const dataService = await DataService.create<RR0Data>("index")
+  const fileNames = ["index.json", "case.json", "people.json"]
+  const dirs = fileNames.reduce((dirs, fileName) => dirs.concat(RR0FileUtil.findDirectoriesContaining(fileName)), [])
+  const dataService = new DataService(dirs, fileNames)
   const peopleService = new PeopleService(peopleFiles, dataService)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, dataService)
-  copies.push(...(ufoCasesStep.dirs).map(dir => dir + "/case.json"))
-  await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.dirs), "utf-8")
+  // Publish case.json files so that vraiufo.com will find them
+  copies.push(...(ufoCasesStep.rootDirs).map(dir => dir + "/case.json"))
+  await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.rootDirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
   await FileUtil.writeFile(path.join(config.outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
 

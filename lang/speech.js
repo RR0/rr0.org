@@ -1,14 +1,12 @@
-import { Filterform } from './index.js'
-
 const speechLabel = '🔈'
 let speechMsg
-const transformed = 'transformed'
+export const transformed = 'transformed'
 
 /**
  * @param {HTMLElement} el
  * @return {string}
  */
-function getText (el) {
+export function getText (el) {
   const nodes = Array.from(el.childNodes)
   return nodes
     .map(node => {
@@ -21,7 +19,7 @@ function getText (el) {
     }).join('')
 }
 
-const addSpeech = (e, lang = e.lang, text = getText(e)) => {
+export const addSpeech = (e, lang = e.lang, text = getText(e)) => {
   if (!e.classList.contains(transformed)) {
     e.classList.add(transformed)
     const speechEl = document.createElement('button')
@@ -71,25 +69,21 @@ const addSpeech = (e, lang = e.lang, text = getText(e)) => {
 }
 
 /**
- * @typedef SupportedLang
- * @property {string} label
- * @property {function(HTMLElement, string): HTMLElement} transform
- */
-
-/**
  *
  * @type {{'he-Latn': SupportedLang, ar: SupportedLang, fro: SupportedLang, img: SupportedLang, en: SupportedLang, it: SupportedLang, fr: SupportedLang, he: SupportedLang}}
  */
-const supportedLangs = {
+export const supportedLangs = {
   'ar': {
-    label: 'Arabe', transform: (e) => {
+    label: 'Arabe',
+    transform: (e) => {
       e.dir = e.dir || 'rtl'
       addSpeech(e)
       return e
     }
   },
   'ar-Latn': {
-    label: 'Arabe phonétique', transform: (e) => {
+    label: 'Arabe phonétique',
+    transform: (e) => {
       if (!e.classList.contains(transformed)) {
         e.innerHTML = e.innerHTML.replaceAll(/(dh|sh|gh|kh|th|hţ)/gi, `<u>$1</u>`)
         const arEl = e.parentElement.querySelector('[lang=\'ar\']')
@@ -111,14 +105,16 @@ const supportedLangs = {
     label: 'Français ancien', transform: addSpeech
   },
   'he': {
-    label: 'Hébreu', transform: (e) => {
+    label: 'Hébreu',
+    transform: (e) => {
       e.dir = e.dir || 'rtl'
       addSpeech(e)
       return e
     }
   },
   'he-Latn': {
-    label: 'Hébreu phonétique', transform: (e) => {
+    label: 'Hébreu phonétique',
+    transform: (e) => {
       if (!e.classList.contains(transformed)) {
         const heEl = e.parentElement.querySelector('[lang=\'he\']')
         if (heEl) {
@@ -136,10 +132,3 @@ const supportedLangs = {
     label: 'Image'
   }
 }
-
-const userLangs = navigator.languages.map(lang => lang.substring(0, 2))
-const supportedLangCodes = Object.keys(supportedLangs)
-const langs = userLangs.filter(lang => supportedLangCodes.includes(lang))
-const checkedLangs = langs.length > 0 ? langs[0] : ['fr']
-const tagSelector = value => value ? `*[lang="${value}"]` : '*[lang]'
-new Filterform('#lang-form', tagSelector, checkedLangs, supportedLangs, p => p.lang)

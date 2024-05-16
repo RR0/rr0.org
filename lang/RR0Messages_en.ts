@@ -1,7 +1,50 @@
-import { MessageUtils, RR0Messages } from "./RR0Messages"
+import { CaseClassificationMessages, CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages"
 import { placeMessages_en } from "../place/PlaceMessages_en"
 import { countryMessageList_en } from "../org/CountryMessageList_en"
 import { peopleMessages_en } from "../people/PeopleMessages_en"
+
+const caseClassification_en: CaseClassificationMessages = {
+  hynek: {
+    NL: {
+      short: "NL",
+      long: "Noctunal Light"
+    },
+    DD: {
+      short: "DD",
+      long: "Daylight Disc"
+    },
+    RV: {
+      short: "RV",
+      long: "Radar Visual"
+    },
+    CE1: {
+      short: "CE1",
+      long: "Close Encounter of the 1st kind"
+    },
+    CE2: {
+      short: "CE2",
+      long: "Close Encounter of the 2d kind"
+    },
+    CE3: {
+      short: "CE3",
+      long: "Close Encounter of the 3rd kind"
+    },
+    CE4: {
+      short: "CE4",
+      long: "Close Encounter of the 4th kind"
+    },
+    CE5: {
+      short: "CE5",
+      long: "Close Encounter of the 5th kind"
+    }
+  }
+}
+
+const caseConclusion_en: CaseConclusionMessages = {
+  unknown: "unexplained",
+  misinterpretation: "misinterpretation",
+  hoax: "hoax"
+}
 
 export class RR0Messages_en implements RR0Messages {
   nonSignificantWords = ["my", "the", "we", "they", "want", "she", "them"]
@@ -38,47 +81,8 @@ export class RR0Messages_en implements RR0Messages {
     }
   }
   case = {
-    classification: {
-      hynek: {
-        NL: {
-          short: "NL",
-          long: "Noctunal Light"
-        },
-        DD: {
-          short: "DD",
-          long: "Daylight Disc"
-        },
-        RV: {
-          short: "RV",
-          long: "Radar Visual"
-        },
-        CE1: {
-          short: "CE1",
-          long: "Close Encounter of the 1st kind"
-        },
-        CE2: {
-          short: "CE2",
-          long: "Close Encounter of the 2d kind"
-        },
-        CE3: {
-          short: "CE3",
-          long: "Close Encounter of the 3rd kind"
-        },
-        CE4: {
-          short: "CE4",
-          long: "Close Encounter of the 4th kind"
-        },
-        CE5: {
-          short: "CE5",
-          long: "Close Encounter of the 5th kind"
-        }
-      }
-    },
-    conclusion: {
-      unknown: "unexplained",
-      misinterpretation: "misinterpretation",
-      hoax: "hoax"
-    }
+    classification: caseClassification_en,
+    conclusion: caseConclusion_en
   }
   people = peopleMessages_en
   place = placeMessages_en

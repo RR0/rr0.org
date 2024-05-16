@@ -2,6 +2,7 @@ import { Occupation } from "../people/Occupation"
 import { PlaceMessages } from "../place/PlaceMessages"
 import { CountryMessagesList } from "../org/CountryMessagesList"
 import { Gender } from "@rr0/common"
+import { CaseConclusion } from "../science/crypto/ufo/enquete/dossier/RR0Case"
 
 export class MessageUtils {
 
@@ -15,6 +16,49 @@ export class MessageUtils {
 }
 
 type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
+
+export type CaseConclusionMessages = { [key in CaseConclusion]: string }
+
+export type CaseClassificationMessages = {
+  hynek: {
+    NL: {
+      short: string
+      long: string
+    }
+    DD: {
+      short: string
+      long: string
+    }
+    RV: {
+      short: string
+      long: string
+    }
+    CE1: {
+      short: string
+      long: string
+    }
+    CE2: {
+      short: string
+      long: string
+    }
+    CE3: {
+      short: string
+      long: string
+    }
+    CE4: {
+      short: string
+      long: string
+    }
+    CE5: {
+      short: string
+      long: string
+    }
+  }
+}
+export type CaseMessages = {
+  classification: CaseClassificationMessages,
+  conclusion: CaseConclusionMessages
+}
 
 export interface RR0Messages {
   nonSignificantWords: string[]
@@ -50,49 +94,7 @@ export interface RR0Messages {
       approximate(title: string): string
     }
   }
-  case: {
-    classification: {
-      hynek: {
-        NL: {
-          short: string
-          long: string
-        }
-        DD: {
-          short: string
-          long: string
-        }
-        RV: {
-          short: string
-          long: string
-        }
-        CE1: {
-          short: string
-          long: string
-        }
-        CE2: {
-          short: string
-          long: string
-        }
-        CE3: {
-          short: string
-          long: string
-        }
-        CE4: {
-          short: string
-          long: string
-        }
-        CE5: {
-          short: string
-          long: string
-        }
-      }
-    },
-    conclusion: {
-      unknown: string
-      misinterpretation: string
-      hoax: string
-    }
-  }
+  case: CaseMessages
   people: {
     occupation: OccupationMessages
   },

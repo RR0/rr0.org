@@ -12,7 +12,7 @@ enum HynekClassification {
   CE5 = "CE3"
 }
 
-enum CaseConclusion {
+export enum CaseConclusion {
   unknown = "unknown",
   misinterpretation = "misinterpretation",
   hoax = "hoax"

@@ -60,11 +60,6 @@ export class CaseDirectoryStep extends DirectoryStep {
       const timeDetail = Time.dateFromIso(timeStr).getFullYear()
       details.push(HtmlTag.toString("time", timeDetail.toString()))
     }
-    const conclusion = dirCase.conclusion
-    if (conclusion) {
-      attrs.class = conclusion
-      titles.push(context.messages.case.conclusion[conclusion])
-    }
     const text: (string | string[])[] = [dirCase.title]
     if (details.length > 0) {
       text.push(`(${details.join(", ")})`)

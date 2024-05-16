@@ -96,7 +96,7 @@ export class HttpSource {
     console.debug("Fetching", url, "with", init)
     const response = await fetch(url, init)
     if (response.ok) {
-      Object.assign(resOut, response)
+      resOut.headers = response.headers
       const accept = init.headers["accept"]
       if (accept) {
         const buffer = await response.arrayBuffer()

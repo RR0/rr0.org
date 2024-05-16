@@ -34,14 +34,15 @@
 </form>
 <!--#echo var="directories" -->
 <script>
-  const textInput = document.querySelector("#searchForm input[name='text']")
+  const form = document.querySelector('#searchForm')
+  const textInput = form.querySelector('input[name=\'text\']')
   textInput.disabled = false
   textInput.setAttribute('placeholder', 'Nom (type, date)')
 
-  const hoaxInput = document.querySelector("#searchForm input[name='hoax']")
+  const hoaxInput = form.querySelector('input[name=\'hoax\']')
   hoaxInput.disabled = false
 
-  const misinterpretationInput = document.querySelector("#searchForm input[name='misinterpretation']")
+  const misinterpretationInput = form.querySelector('input[name=\'misinterpretation\']')
   misinterpretationInput.disabled = false
 
   function findCase(e) {
@@ -61,10 +62,11 @@
         child.style.display = "none"
       }
     }
-    const output = document.querySelector("#searchForm output")
+    const output = form.querySelector('output')
     output.textContent = `${found > 0 ? found : "Aucun"} cas / ${list.children.length}`
   }
 
+  form.style.display = 'block'
   textInput.dispatchEvent(new Event("input"))
 </script>
 <section>

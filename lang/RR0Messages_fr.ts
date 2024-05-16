@@ -1,7 +1,13 @@
-import { MessageUtils, RR0Messages } from "./RR0Messages"
+import { CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages"
 import { placeMessages_fr } from "../place/PlaceMessages_fr"
 import { peopleMessages_fr } from "../people/PeopleMessages_fr"
 import { countryMessageList_fr } from "../org/CountryMessageList_fr"
+
+const caseConclusion_fr: CaseConclusionMessages = {
+  unknown: "inexpliqué",
+  misinterpretation: "méprise",
+  hoax: "canular"
+}
 
 export class RR0Messages_fr implements RR0Messages {
   nonSignificantWords = [
@@ -82,11 +88,7 @@ export class RR0Messages_fr implements RR0Messages {
         }
       }
     },
-    conclusion: {
-      unknown: "inexpliqué",
-      misinterpretation: "méprise",
-      hoax: "canular"
-    }
+    conclusion: caseConclusion_fr
   }
   people = peopleMessages_fr
   place = placeMessages_fr

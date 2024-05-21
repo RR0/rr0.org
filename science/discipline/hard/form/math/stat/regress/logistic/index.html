@@ -141,14 +141,14 @@
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  y1.create('functiongraph', bookMeta, [function (x) {
+  y1.create(bookMeta, [function (x) {
     return -Math.log(1 / (1 + Math.exp(-x)))
   }, -i, i]);
   var y0 = JXG.JSXGraph.initBoard('y0', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  y0.create('functiongraph', bookMeta, [function (x) {
+  y0.create(bookMeta, [function (x) {
     return -Math.log(1 - 1 / (1 + Math.exp(-x)))
   }, -i, i]);
 </script>

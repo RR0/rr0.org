@@ -21,7 +21,7 @@ export class ChronologyReplacerFactory implements ReplacerFactory<DomReplacer> {
   async create(context: HtmlRR0SsgContext): Promise<DomReplacer> {
     return {
       replace: async (ul: HTMLUListElement): Promise<HTMLUListElement> => {
-        return this.timeFiles.includes(context.inputFile.name) && ul.parentElement.classList.contains(
+        return this.timeFiles.includes(context.file.name) && ul.parentElement.classList.contains(
           "contents") ? this.replacer.replacement(context, ul) : ul
       }
     }

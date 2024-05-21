@@ -12,7 +12,7 @@ export class AnchorReplacer {
 
   async replacement(context: HtmlRR0SsgContext, a: HTMLAnchorElement): Promise<HTMLAnchorElement> {
     const href = a.href
-    const baseUrl = this.baseUrl + context.inputFile.name
+    const baseUrl = this.baseUrl + context.file.name
     try {
       if (href.startsWith("http")) {
         this.handleExternal(context, a)
@@ -38,7 +38,7 @@ export class AnchorReplacer {
       const pathToSearch = pathname.substring(1)
       if (pathToSearch) {
         for (const handler of this.handlers) {
-          handler.handle(context, a, pathToSearch)
+          await handler.handle(context, a, pathToSearch)
         }
       }
       if (pathname.indexOf(".") < 0 && !pathname.endsWith("/") && !url.hash) {

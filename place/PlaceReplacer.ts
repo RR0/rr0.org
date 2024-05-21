@@ -10,7 +10,7 @@ export class PlaceReplacer {
   async replacement(context: HtmlSsgContext, original: HTMLElement): Promise<HTMLElement> {
     let replacement: HTMLElement
     const address = original.textContent ? original.textContent.replace(/\n/g, " ") : ""
-    const outputDoc = context.outputFile.document
+    const outputDoc = context.file.document
     replacement = outputDoc.createElement("span")
     replacement.setAttribute("onclick", `showMap(event,'${address}',true)`)
     replacement.innerHTML = address

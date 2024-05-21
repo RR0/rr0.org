@@ -24,8 +24,8 @@ export class Organization<M extends TitleMessage = OrganizationMessages> impleme
     this.dirName = path.join(parent?.dirName ?? "org/", code)
   }
 
-  messages(context: RR0SsgContext): M {
-    const rootMessages = this.parent ? this.parent.messages(context) : context.messages
+  getMessages(context: RR0SsgContext): M {
+    const rootMessages = this.parent ? this.parent.getMessages(context) : context.messages
     const messageKind = rootMessages[this.kind]
     assert.ok(messageKind, `Could not find messages of kind "${this.kind}" in ${JSON.stringify(rootMessages)}`)
     const messages = messageKind[this.code]
@@ -33,12 +33,12 @@ export class Organization<M extends TitleMessage = OrganizationMessages> impleme
     return messages
   }
 
-  title(context: RR0SsgContext, options: OrgMessageOptions = {parent: false}): string {
-    const messages = this.messages(context)
+  getTitle(context: RR0SsgContext, options: OrgMessageOptions = {parent: false}): string {
+    const messages = this.getMessages(context)
     assert.ok(messages, `Could not find name of org "${this.code}" in parent org "${this.parent?.code}"`)
     let str = messages.title
     if (options.parent && this.parent) {
-      const parentMessages = this.parent.messages(context)
+      const parentMessages = this.parent.getMessages(context)
       str += ` (${parentMessages.toTitle(context, this.parent, options)})`
     }
     return str

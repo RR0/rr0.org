@@ -7,6 +7,7 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { describe, expect, test } from "@javarome/testscript"
 import { PlaceLocation } from "./PlaceLocation"
 import { Organization } from "../org/Organization"
+import { RR0Messages_fr } from "../lang/RR0Messages_fr"
 
 class MockPlaceService extends PlaceService {
 
@@ -30,16 +31,18 @@ class MockPlaceService extends PlaceService {
 class MockOrganizationService extends OrganizationService {
 
   constructor(readonly dirName: string) {
-    super("org")
+    super([], "org", null)
   }
 
-  async read(fileName: string): Promise<Organization> {
+  async read(_fileName: string): Promise<Organization> {
     return {
+      code: "laln",
       dirName: this.dirName,
-      title(context: SsgContext): string {
+      getTitle(_context: SsgContext): string {
         return "Los Alamos National Laboratories"
       },
-      places: [new Place([new PlaceLocation(35.87555555555556, -106.32416666666666)])]
+      places: [new Place([new PlaceLocation(35.87555555555556, -106.32416666666666)])],
+      getMessages: new RR0Messages_fr().org
     }
   }
 }
@@ -62,7 +65,7 @@ describe("PlaceReplacer", () => {
     const orgService = new MockOrganizationService(dirName)
     const replacer = new PlaceReplacer(placeService, orgService)
     const context = rr0TestUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
-    const doc = context.inputFile.document
+    const doc = context.file.document
     const text = "LANL"
     const placeTag = createPlaceTag(doc, text)
     const replacement = await replacer.replacement(context, placeTag) as HTMLAnchorElement
@@ -81,7 +84,7 @@ describe("PlaceReplacer", () => {
     const orgService = new MockOrganizationService(dirName)
     const replacer = new PlaceReplacer(placeService, orgService)
     const context = rr0TestUtil.newHtmlContext("people/a/AlexanderJohnB/index.html", "")
-    const doc = context.inputFile.document
+    const doc = context.file.document
     const text = "Non existing"
     const placeTag = createPlaceTag(doc, text)
     const replacement = await replacer.replacement(context, placeTag) as HTMLSpanElement

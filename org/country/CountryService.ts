@@ -23,6 +23,7 @@ import { mozambique } from "../mz/Mozambique"
 import { algeria } from "../dz/Algeria"
 import { panama } from "../pa/Panama"
 import { taiwan } from "../tw/Taiwan"
+import { tunisia } from "../tn/Tunisia"
 
 export class CountryService extends OrganizationService<Country> {
 }
@@ -73,6 +74,7 @@ const countries: Country[] = [
   southKorea,
   new Country(CountryCode.tr),
   taiwan,
+  tunisia,
   new Country(CountryCode.ua),
   uk,
   usa,

@@ -12,6 +12,7 @@ import {
   ClassDomReplaceCommand,
   ContentStepConfig,
   CopyStep,
+  CopyStepConfig,
   FileUtil,
   HtAccessToNetlifyConfigReplaceCommand,
   HtmlLinks,
@@ -59,13 +60,14 @@ import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
-import { DataService } from "./DataService"
+import { DataService, DefaultDataFactory } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
-import { SourceRenderer } from "./time/SourceRenderer"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
 import { EventReplacerFactory } from "./time/EventReplacerFactory"
 import { HttpSource } from "./time/datasource/HttpSource"
-import { RR0FileUtil } from "./util/file/RR0FileUtil"
+import { SourceRenderer } from "./source/SourceRenderer"
+
+import { TimeRenderer } from "./time/TimeRenderer"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -122,24 +124,22 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "udb/input/db/udb/data/*.*"
 ]
 const config: SsgConfig = {
-  outDir: "out"
+  getOutputPath(context: SsgContext): string {
+    return path.join("out", context.file.name)
+  }
 }
 
 const outputFunc: OutputFunc
-  = async (context: SsgContext, outFile: SsgFile, outDir = config.outDir + "/"): Promise<void> => {
-  // TODO: Fix this
-  if (outFile.name.startsWith(outDir)) {
-    if (outFile.name.startsWith(path.join(outDir, outDir))) {
-      outFile.name = outFile.name.substring(outDir.length)
-    }
-  } else {
-    outFile.name = outDir + outFile.name
+  = async (context: SsgContext, outFile: SsgFile): Promise<void> => {
+  let outFileName = outFile.name
+  if (!outFileName.startsWith("out")) {
+    outFileName = path.join("out", outFileName)
   }
   try {
-    context.log("Writing", outFile.name)
+    context.log("Writing", outFileName)
     await outFile.write()
   } catch (e) {
-    context.error(outFile.name, e)
+    context.error(outFileName, e)
   }
 }
 
@@ -152,15 +152,15 @@ const timeFormat: Intl.DateTimeFormatOptions = {
   minute: "2-digit"
 }
 const timeContext = new TimeContext(timeFormat)
-const context = new RR0SsgContextImpl("fr", timeContext)
+const context = new RR0SsgContextImpl("fr", timeContext, config)
 context.setVar("mail", "rr0@rr0.org")
 
 const siteBaseUrl = "https://rr0.org/"
 const htAccessToNetlifyConfig: ContentStepConfig = {
   replacements: [new HtAccessToNetlifyConfigReplaceCommand(siteBaseUrl)],
   roots: [".htaccess"],
-  getOutputFile(context: SsgContext): SsgFile {
-    return SsgFile.read(context, "netlify.toml", "utf-8")
+  getOutputPath(_context: SsgContext): string {
+    return path.join("out", "netlify.toml")
   }
 }
 
@@ -181,27 +181,31 @@ class BookContentVisitor implements ContentVisitor {
   }
 
   visit(context: HtmlRR0SsgContext): void {
-    const bookMeta = this.bookMeta.get(context.inputFile.name)
-    Object.assign(context.inputFile.meta, bookMeta)
-    const bookLinks = this.bookLinks.get(context.inputFile.name)
-    Object.assign(context.inputFile.links, bookLinks)
+    const bookMeta = this.bookMeta.get(context.file.name)
+    Object.assign(context.file.meta, bookMeta)
+    const bookLinks = this.bookLinks.get(context.file.name)
+    Object.assign(context.file.links, bookLinks)
   }
 }
 
 getTimeFiles().then(async (timeFiles) => {
   const peopleFiles = await glob("people/?/*")
-  const fileNames = ["index.json", "case.json", "people.json"]
-  const dirs = fileNames.reduce((dirs, fileName) => dirs.concat(RR0FileUtil.findDirectoriesContaining(fileName)), [])
-  const dataService = new DataService(dirs, fileNames)
+  const orgFactory = new DefaultDataFactory("org", ["index"])
+  const caseFactory = new DefaultDataFactory("case")
+  const peopleFactory = new DefaultDataFactory("people")
+  const bookFactory = new DefaultDataFactory("book")
+  const factories = [orgFactory, caseFactory, peopleFactory, bookFactory]
+
+  const dataService = new DataService(factories)
   const peopleService = new PeopleService(peopleFiles, dataService)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, dataService)
   // Publish case.json files so that vraiufo.com will find them
-  copies.push(...(ufoCasesStep.rootDirs).map(dir => dir + "/case.json"))
-  await FileUtil.writeFile(path.join(config.outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.rootDirs), "utf-8")
+  copies.push(...(ufoCasesStep.config.rootDirs).map(dir => path.join(dir, "case.json")))
+  await FileUtil.writeFile(path.join("out", "casesDirs.json"), JSON.stringify(ufoCasesStep.config.rootDirs), "utf-8")
   const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
-  await FileUtil.writeFile(path.join(config.outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
+  await FileUtil.writeFile(path.join("out", "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY
   if (!apiKey) {
@@ -224,6 +228,7 @@ getTimeFiles().then(async (timeFiles) => {
       [/*geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
       rr0Datasource, {merge: false, save: true}, caseRenderer)
   )
+  const timeRenderer = new TimeRenderer()
   const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),
     new BaseReplaceCommand("/"),
@@ -233,13 +238,13 @@ getTimeFiles().then(async (timeFiles) => {
     new AngularExpressionReplaceCommand(),
     new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
     new SsiIfReplaceCommand(),
-    new SsiSetVarReplaceCommand("title", (match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+    new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
     new SsiSetVarReplaceCommand("url",
-      (match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+      (_match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
     new SsiLastModifiedReplaceCommand(context.time.options),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
-    new AuthorReplaceCommand(timeFiles)
+    new AuthorReplaceCommand(timeFiles, timeRenderer)
   ]
   const http = new HttpSource()
   const sourceReplacerFactory = new SourceReplacerFactory(sourceRenderer, dataService, http, baseUrl)
@@ -247,7 +252,7 @@ getTimeFiles().then(async (timeFiles) => {
     databaseAggregationCommand,
     new ClassDomReplaceCommand("event", new EventReplacerFactory(caseRenderer, sourceReplacerFactory)),
     new ClassDomReplaceCommand("source", sourceReplacerFactory),
-    new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles)),
+    new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeFiles, timeRenderer)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory(peopleService)),
     new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
@@ -256,49 +261,71 @@ getTimeFiles().then(async (timeFiles) => {
     new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),
     new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
   ]
-  const contentReplacements = [
-    ...pageReplaceCommands,
-    ...contentsReplaceCommand,
-    new OutlineReplaceCommand(),
-    new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(dataService), new DataAnchorHandler(dataService)]),
-    new ImageCommand(config.outDir, 275, 500),
-    new OpenGraphCommand(config.outDir, timeFiles, baseUrl),
-    searchCommand
-  ]
   const ssg = new Ssg(config)
+  const getOutputPath = (context: SsgContext): string => {
+    let outputFile = context.file.name
+    if (!outputFile.startsWith("out")) {
+      outputFile = path.join("out", outputFile)
+    }
+    return outputFile
+  }
+  const structuralStep = new RR0ContentStep([
+    htAccessToNetlifyConfig,
+    {
+      roots: contentRoots,
+      replacements: [
+        new SsiIncludeReplaceCommand()
+      ],
+      getOutputPath
+    }
+  ], outputFunc, [])
+  ssg.add(structuralStep)
   ssg.add(ufoCasesStep)
+  ssg.add(...peopleSteps)
   if (contentRoots) {
     const contentVisitors: ContentVisitor[] = []
     if (args.books) {
       contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))
     }
+    const contentReplacements = [
+      ...pageReplaceCommands,
+      ...contentsReplaceCommand,
+      new OutlineReplaceCommand(),
+      new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(dataService), new DataAnchorHandler(dataService)]),
+      new ImageCommand("out", 275, 500),
+      new OpenGraphCommand("out", timeFiles, baseUrl),
+      searchCommand
+    ]
     ssg.add(new RR0ContentStep([
       htAccessToNetlifyConfig,
       {
         roots: contentRoots,
         replacements: contentReplacements,
-        getOutputFile(context: SsgContext): SsgFile {
-          return context.outputFile
-        }
+        getOutputPath
       }
     ], outputFunc, contentVisitors))
   }
   if (args.books) {
-    ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks, peopleService))
+    ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))
   }
-  ssg.add(...peopleSteps)
   if (args.reindex === "true") {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))
   }
   if (copies) {
-    ssg.add(new CopyStep(copies, config, {ignore: ["node_modules/**", "out/**"]}))
+    const copyConfig: CopyStepConfig = {
+      getOutputPath,
+      destDir: "out",
+      sourcePatterns: copies,
+      options: {ignore: ["node_modules/**", "out/**"]}
+    }
+    ssg.add(new CopyStep(copyConfig))
   }
   try {
     const result = await ssg.start(context)
     context.log("Completed", result)
   } catch (err) {
     try {
-      context.error(err, context.inputFile.name, "=>", context.outputFile?.name)
+      context.error(err, context.file.name)
     } catch (e) {
       context.error(err)
     }

@@ -23,6 +23,7 @@ import { india_fr } from "./in/India_fr"
 import { algeria_fr } from "./dz/Algeria_fr"
 import { panama_fr } from "./pa/Panama_fr"
 import { taiwan_fr } from "./tw/Taiwan_fr"
+import { tunisia_fr } from "./tn/Tunisia_fr"
 
 /**
  * Country messages in French language.
@@ -71,6 +72,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   sa: CountryMessages.create("Arabie Saoudite"),
   sc: seychelles_fr,
   se: CountryMessages.create("Suède"),
+  tn: tunisia_fr,
   tr: CountryMessages.create("Turquie"),
   tw: taiwan_fr,
   ua: CountryMessages.create("Ukraine"),

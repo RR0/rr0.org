@@ -26,7 +26,7 @@ export class SourceReplacer {
     this.number++
     const sourceStr = this.number.toString()
     const sourceId = `source-${sourceStr}`
-    const outputDoc = context.outputFile.document
+    const outputDoc = context.file.document
     const replacement = outputDoc.createElement("span")
     replacement.className = "source-id"
     replacement.ariaLabel = "Source"
@@ -115,7 +115,7 @@ export class SourceReplacer {
   }
 
   protected async sourceFromExternalLink(href: string, context: HtmlRR0SsgContext) {
-    const resOut = {}
+    const resOut: Partial<Response> = {}
     let title: string
     let lastModif: string
     try {

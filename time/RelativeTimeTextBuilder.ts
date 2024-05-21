@@ -40,8 +40,8 @@ export class RelativeTimeTextBuilder {
 
     function setMonth(month: number) {
       const previousMonth = previousTime.getMonth()
-      if (yearDelta === 0 && previousMonth) {
-        monthDelta = month - previousMonth
+      if (yearDelta === 0) {
+        monthDelta = month - (previousMonth || 0)
         if (monthDelta != 0) {
           deltaTime.setMonth(month)
         }

@@ -1,13 +1,396 @@
-<!--#include virtual="/header-start.html" -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <base/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <link href="/manifest.json" rel="manifest">
+  <link href="/opensearch.xml" rel="search" title="RR0" type="application/opensearchdescription+xml"/>
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag () {
+      dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+    gtag('config', 'G-CMV7R92GK1')
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
+    j.async = true
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'dataLayer', 'GTM-NBPKWNM')</script>
+  <!-- End Google Tag Manager -->
+
 <title>Pilotes</title>
 <link href="index.css" rel="stylesheet"/>
-<!--#include virtual="/header-end.html" -->
-<p class="exergue">Étonnamment, les pilotes de vols commerciaux et militaires paraissent faire des témoins relativement
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
+    style="display:none;visibility:hidden" title="GTM"
+    width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="main-header">
+  <h1 class="full-page"><!--#echo var="title" --></h1>
+</header>
+<nav id="main-nav">
+  <h1>Navigation</h1>
+  <ul>
+    <li class="full-page">
+      <a class="home" href="/" title="Home">RR0</a>
+    </li>
+    <li class="search full-page">
+      <input disabled id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
+      <datalist id="search-site-values">
+      </datalist>
+    </li>
+    <li id="summary">
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
+      <ul class="outline">
+      </ul>
+    </li>
+    <li>
+      <span id="alternate"></span>
+    </li>
+    <li class="map-toggle">
+      <button class="toggle">Carte</button>
+    </li>
+  </ul>
+  <script async src="/search/index.js" type="text/javascript"></script>
+</nav>
+<script>
+  const summary = document.getElementById('out-top')
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : 'Sommaire'
+  }, { threshold: [0, 0.3, 1] })
+  observer.observe(document.querySelector('#main-header'))
+  var currentAddress
+  var mapEl
+  var currentPlaceEl
+
+  function showMap (event, address, display = true) {
+    event.stopPropagation()
+    document.body.classList.toggle('with-map', display)
+    if (!address) {
+      address = currentPlaceEl?.textContent
+    }
+    if (address !== currentAddress) {
+      currentAddress = address
+      mapEl.querySelector('iframe').src =
+        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
+    }
+  }
+
+  const mapToggle = document.querySelector('.map-toggle .toggle')
+  document.addEventListener('DOMContentLoaded', () => {
+    mapEl = document.querySelector('#map-canvas')
+    currentPlaceEl = document.querySelector('.plac')
+    if (currentPlaceEl) {
+      mapToggle.style.display = 'inline-block'
+    }
+  })
+
+  function hasMap () {
+    return document.body.classList.contains('with-map')
+  }
+
+  mapToggle.addEventListener('click', (event) => {
+    showMap(event, currentAddress, !hasMap())
+  })
+  document.body.addEventListener('click', (event) => {
+    if (hasMap()) {
+      showMap(event, currentAddress, false)
+    }
+  })
+
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
+<div class="metadata">
+  <!--#echo var="author" -->
+</div>
+<div class="contents">
+
+  <p class="exergue">Étonnamment, les pilotes de vols commerciaux et militaires paraissent faire des témoins relativement
   médiocres... <cite><span class="people">Hynek, Josef Allen</span>: "The Hynek UFO Report", p. 261 (ré-édition de
     Barnes & Noble) (p. 271 dans le Dell d'origine, 1977-12)</cite>
 </p>
-<!--#include virtual="form.html" -->
-<script async src="index.js" type="text/javascript"></script>
+  <form id="searchForm">
+    <label style="white-space: normal">Nom <input autofocus oninput="findPeople(event)" style="margin-left: 1em"
+      type="search"></label>
+    <details>
+      <summary>Pays</summary>
+      <div id="countries"><span class="option"><label><input id="country-au" onchange="findPeople(event)"
+        type="checkbox"> Australie</label></span><span class="option"><label><input id="country-be"
+        onchange="findPeople(event)" type="checkbox"> Belgique</label></span><span class="option"><label><input
+        id="country-br" onchange="findPeople(event)" type="checkbox"> Brésil</label></span><span
+        class="option"><label><input id="country-ca" onchange="findPeople(event)" type="checkbox"> Canada</label></span><span
+        class="option"><label><input id="country-fr" onchange="findPeople(event)" type="checkbox"> France</label></span><span
+        class="option"><label><input id="country-ir" onchange="findPeople(event)"
+        type="checkbox"> Iran</label></span><span class="option"><label><input id="country-jp"
+        onchange="findPeople(event)" type="checkbox"> Japon</label></span><span class="option"><label><input
+        id="country-mx" onchange="findPeople(event)" type="checkbox"> Mexique</label></span><span class="option"><label><input
+        id="country-ru" onchange="findPeople(event)" type="checkbox"> Russie</label></span><span
+        class="option"><label><input id="country-ua" onchange="findPeople(event)"
+        type="checkbox"> Ukraine</label></span><span class="option"><label><input id="country-uk"
+        onchange="findPeople(event)" type="checkbox"> Royaume-Uni</label></span><span class="option"><label><input
+        id="country-us" onchange="findPeople(event)" type="checkbox"> USA</label></span></div>
+    </details>
+    <details>
+      <summary>Profession</summary>
+      <div id="occupations"><span class="option"><label><input id="occupation-astronaut" onchange="findPeople(event)"
+        type="checkbox"> Astronaute</label></span><span class="option"><label><input id="occupation-contactee"
+        onchange="findPeople(event)" type="checkbox"> Contacté</label></span><span
+        class="option"><label><input id="occupation-engineer" onchange="findPeople(event)"
+        type="checkbox"> Ingénieur</label></span><span class="option"><label><input id="occupation-geologist"
+        onchange="findPeople(event)" type="checkbox"> Géologue</label></span><span
+        class="option"><label><input id="occupation-military" onchange="findPeople(event)"
+        type="checkbox"> Militaire</label></span><span class="option"><label><input id="occupation-neurologist"
+        onchange="findPeople(event)" type="checkbox"> Neurologue</label></span><span
+        class="option"><label><input id="occupation-parapsychologist" onchange="findPeople(event)" type="checkbox"> Parapsychologue</label></span><span
+        class="option"><label><input id="occupation-physician" onchange="findPeople(event)"
+        type="checkbox"> Médecin</label></span><span class="option"><label><input id="occupation-physicist"
+        onchange="findPeople(event)" type="checkbox"> Physicien</label></span><span
+        class="option"><label><input id="occupation-pilot" onchange="findPeople(event)" type="checkbox"> Pilote</label></span><span
+        class="option"><label><input id="occupation-psychologist" onchange="findPeople(event)" type="checkbox"> Psychologue</label></span><span
+        class="option"><label><input id="occupation-salesman" onchange="findPeople(event)"
+        type="checkbox"> Commercial</label></span><span class="option"><label><input id="occupation-sociologist"
+        onchange="findPeople(event)" type="checkbox"> Sociologue</label></span><span
+        class="option"><label><input id="occupation-ufoWitness" onchange="findPeople(event)" type="checkbox"> Témoin d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufologist" onchange="findPeople(event)"
+        type="checkbox"> Ufologue</label></span><span class="option"><label><input id="occupation-writer"
+        onchange="findPeople(event)" type="checkbox"> Écrivain</label></span></div>
+    </details>
+    <output></output>
+  </form>
+  <ul class="links"><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+    title="USA, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Goshen/">Adickes, Robert</a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-astronaut"
+    title="1930-, 94 ans, USA, pilote, astronaute"><a href="/people/a/AldrinBuzz/">Aldrin, Buzz<img
+    alt="Aldrin, Buzz" class="portrait" src="/people/a/AldrinBuzz/portrait.gif" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-pilot occupation-astronaut"
+    title="1930-2012, 82 ans, USA, pilote, astronaute"><a
+    href="/people/a/ArmstrongNeilA/">Armstrong, Neil A.<img alt="Armstrong, Neil A."
+    class="portrait" src="/people/a/ArmstrongNeilA/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+    title="1915-1984, 68 ans, USA, pilote, témoin d'ovni"><a
+    href="/people/a/ArnoldKennethE/">Arnold, Kenneth E.<img alt="Arnold, Kenneth E."
+    class="portrait" src="/people/a/ArnoldKennethE/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-fr occupation-pilot occupation-ufoWitness"
+    title="1944-2014, 69 ans, France, pilote, témoin d'ovni"><a
+    href="/people/a/AsselineMichel/">Asseline, Michel<img alt="Asseline, Michel"
+    class="portrait" src="/people/a/AsselineMichel/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-be occupation-ufologist occupation-pilot occupation-military"
+    title="1940-2017, 77 ans, Belgique, ufologue, pilote, militaire"><a
+    href="/people/b/BonabotJacques/">Bonabot, Jacques</a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-astronaut occupation-ufoWitness"
+    title="1928-, 96 ans, USA, pilote, astronaute, témoin d'ovni"><a
+    href="/people/b/BormanFrank/">Borman, Frank<img alt="Borman, Frank" class="portrait"
+    src="/people/b/BormanFrank/portrait.gif" width="75"></a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a href="/people/b/BoscClaude/">Bosc, Claude</a></span>
+  </li><li><span class="people-resolved country-uk occupation-pilot occupation-ufoWitness"
+    title="Royaume-Uni, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Aurigny/">Bowyer, Ray Anthony</a></span></li><li><span
+    class="people-resolved country-ca occupation-ufologist occupation-pilot"
+    title="1925-, 99 ans, Canada, ufologue, pilote"><a href="/people/b/BrayArthurReid/">Bray, Arthur Reid<img
+    alt="Bray, Arthur Reid" class="portrait" src="/people/b/BrayArthurReid/portrait.gif" width="75"></a></span></li><li>
+    <span class="people-resolved deceased country-fr occupation-engineer occupation-pilot"
+      title="1880-1955, 75 ans, France, ingénieur, pilote"><a
+      href="/people/b/BreguetLouis/">Breguet, Louis</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+    title="USA, pilote, témoin d'ovni"><a
+    href="/people/b/Brigham/">Brigham</a></span></li><li><span
+    class="people-resolved deceased country-us occupation-physicist occupation-pilot occupation-neurologist occupation-physician"
+    title="1897-1975, 78 ans, USA, physicien, pilote, neurologue, médecin"><a
+    href="/people/b/BronkDetlevWulf/">Bronk, Detlev Wulf<img alt="Bronk, Detlev Wulf"
+    class="portrait" src="/people/b/BronkDetlevWulf/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Tananarive/">Campagnac, Edmond</a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+    href="/people/c/CaseyGerry/">Casey, Gerry</a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Draguignan/">Cavasse, F.</a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+    href="/people/c/ChaseLewisD/">Chase, Lewis D.</a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Draguignan/">Clément M.</a></span></li><li><span
+    class="people-resolved country-be occupation-astronaut" title="1958-, 65 ans, Belgique, astronaute"><a
+    href="/people/c/ClervoyJeanFrancois/">Clervoy, Jean Francois<img alt="Clervoy, Jean Francois"
+    class="portrait" src="/people/c/ClervoyJeanFrancois/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-pilot occupation-astronaut"
+    title="1930-2021, 90 ans, USA, pilote, astronaute"><a
+    href="/people/c/CollinsMichael/">Collins, Michael<img alt="Collins, Michael"
+    class="portrait" src="/people/c/CollinsMichael/portrait.gif" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-pilot occupation-astronaut"
+    title="1927-2004, 77 ans, USA, pilote, astronaute"><a
+    href="/people/c/CooperLeroyGordon/">Cooper, Leroy Gordon<img alt="Cooper, Leroy Gordon"
+    class="portrait" src="/people/c/CooperLeroyGordon/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+    title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a href="/people/k/KirkwoodGuy/">Cornwell, Bryce<img
+    alt="Cornwell, Bryce" class="portrait" src="/people/k/KirkwoodGuy/portrait.png" width="75"></a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Coyne/">Coyne, Lawrence J.</a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-astronaut"
+    title="1932-, 92 ans, USA, pilote, astronaute"><a href="/people/c/CunninghamRWalter/">Cunningham, RWalter<img
+    alt="Cunningham, RWalter" class="portrait" src="/people/c/CunninghamRWalter/portrait.jpg" width="75"></a></span>
+  </li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+    title="USA, pilote, témoin d'ovni"><a
+    href="/people/d/DougherEE/">Dougher, EE</a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a href="/people/d/DubocJeanCharles/">Duboc, Jean-Charles<img
+    alt="Duboc, Jean-Charles" class="portrait" src="/people/d/DubocJeanCharles/portrait.gif" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-us occupation-pilot occupation-military"
+      title="1916-2005, 89 ans, USA, pilote, militaire"><a href="/people/e/ExonArthurE/">Exon, Arthur E.<img
+      alt="Exon, Arthur E." class="portrait" src="/people/e/ExonArthurE/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved country-us occupation-pilot" title="USA, pilote"><a
+        href="/people/f/FortenberryWilliamH/">Fortenberry, William H.</a></span></li><li><span
+      class="people-resolved country-mx occupation-ufologist occupation-pilot"
+      title="1947-, 77 ans, Mexique, ufologue, pilote"><a href="/people/f/FranzAlejandro/">Franz, Alejandro</a></span>
+    </li><li><span class="people-resolved country-fr occupation-pilot occupation-ufologist"
+      title="France, pilote, ufologue"><a href="/people/g/GiraudJean/">Giraud, Jean</a></span>
+    </li><li><span class="people-resolved country-fr occupation-pilot occupation-ufologist"
+      title="France, pilote, ufologue"><a href="/people/g/GiraudRene/">Giraud, Rene</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-pilot occupation-astronaut"
+      title="1921-2016, 95 ans, USA, pilote, astronaute"><a href="/people/g/GlennJohn/">Glenn, John<img
+      alt="Glenn, John" class="portrait" src="/people/g/GlennJohn/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-fr occupation-ufologist occupation-pilot occupation-writer"
+      title="1932-, 91 ans, France, ufologue, pilote, écrivain"><a
+      href="/people/g/GresleJeanGabriel/">Gresle, Jean Gabriel<img alt="Gresle, Jean Gabriel"
+      class="portrait" src="/people/g/GresleJeanGabriel/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-sociologist occupation-psychologist"
+      title="1924-2013, 89 ans, USA, pilote, sociologue, psychologue"><a
+      href="/people/h/HallRobertL/">Hall, Robert L.<img alt="Hall, Robert L." class="portrait"
+      src="/people/h/HallRobertL/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-ir occupation-pilot occupation-ufoWitness"
+      title="Iran, pilote, témoin d'ovni"><a href="/people/j/JafariParviz/">Jafari, Parviz</a></span>
+    </li><li><span class="people-resolved pseudonym country-fr occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1961-, 63 ans, France, pilote, contacté"><a
+      href="/people/j/JulienEric/">Jean Ederman<img alt="Jean Ederman" class="portrait"
+      src="/people/j/JulienEric/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufologist occupation-pilot"
+      title="USA, ufologue, pilote"><a href="/people/j/JeffreyKent/">Jeffrey, Kent<img
+      alt="Jeffrey, Kent" class="portrait" src="/people/j/JeffreyKent/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-fr occupation-pilot occupation-contactee"
+      title="1961-, 63 ans, France, pilote, contacté"><a href="/people/j/JulienEric/">Julien, Eric<img
+      alt="Julien, Eric" class="portrait" src="/people/j/JulienEric/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+      href="/people/k/KillianPeter/">Killian, Peter</a></span></li><li><span
+      class="people-resolved country-us occupation-pilot occupation-contactee"
+      title="1930-, 94 ans, USA, pilote, contacté"><a href="/people/k/KirkwoodGuy/">Kirkwood, Guy<img
+      alt="Kirkwood, Guy" class="portrait" src="/people/k/KirkwoodGuy/portrait.png" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-pilot occupation-ufoWitness"
+      title="1929-2017, 88 ans, France, pilote, témoin d'ovni"><a
+      href="/people/k/KislingJean/">Kisling, Jean<img alt="Kisling, Jean" class="portrait"
+      src="/people/k/KislingJean/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+      title="1944-, 80 ans, France, pilote, témoin d'ovni"><a href="/people/k/KrineJack/">Krine, Jack<img
+      alt="Krine, Jack" class="portrait" src="/people/k/KrineJack/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-us occupation-military occupation-engineer occupation-pilot"
+      title="1964-, 59 ans, USA, militaire, ingénieur, pilote"><a
+      href="/people/k/KurthDouglas/">Kurth, Douglas<img alt="Kurth, Douglas" class="portrait"
+      src="/people/k/KurthDouglas/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufologist occupation-pilot"
+      title="1942-, 81 ans, USA, ufologue, pilote"><a
+      href="/people/l/LearJohn/">Lear, John</a></span></li><li><span class="people-resolved deceased country-us occupation-pilot"
+      title="-1978, USA, pilote"><a
+      href="/people/l/LearWilliamP/">Lear, William P.</a></span></li><li><span class="people-resolved country-ca occupation-ufologist occupation-pilot"
+      title="Canada, ufologue, pilote"><a href="/people/l/LedgerDonald/">Ledger, Donald</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-engineer occupation-astronaut"
+      title="1913-2001, 88 ans, USA, ingénieur, astronaute"><a
+      href="/people/m/MacClellandClark/">Mac, Clelland Clark</a></span></li><li><span
+      class="people-resolved country-us occupation-pilot occupation-astronaut"
+      title="1942-, 81 ans, USA, pilote, astronaute"><a href="/people/m/MacDivittJames/">Mac, Divitt James<img
+      alt="Mac, Divitt James" class="portrait" src="/people/m/MacDivittJames/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved country-us occupation-pilot occupation-salesman occupation-contactee"
+      title="USA, pilote, commercial, contacté"><a
+      href="/people/m/MacmillanKen/">Macmillan, Ken</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+      title="USA, pilote, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Goshen/">Manning, Robert F.</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+      title="1922-1948, 25 ans, USA, pilote, témoin d'ovni"><a
+      href="/people/m/MantellThomas/">Mantell, Thomas Francis<img alt="Mantell, Thomas Francis"
+      class="portrait" src="/people/m/MantellThomas/portrait.png" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-jp occupation-pilot occupation-contactee"
+      title="1929-2000, 71 ans, Japon, pilote, contacté"><a
+      href="/people/m/MatsumuraYusuke/">Matsumura, Yusuke</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufologist"
+      title="USA, pilote, ufologue"><a href="/people/m/McGahaJames/">Mc, Gaha James</a></span>
+    </li><li><span class="people-resolved country-be occupation-pilot" title="Belgique, pilote"><a
+      href="/people/m/MeelbergsYves/">Meelbergs, Yves</a></span></li><li><span
+      class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Mel Noel<img alt="Mel Noel" class="portrait"
+      src="/people/k/KirkwoodGuy/portrait.png" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-ufologist occupation-parapsychologist occupation-astronaut"
+      title="1930-2016, 85 ans, USA, pilote, ufologue, parapsychologue, astronaute"><a
+      href="/people/m/MitchellEdgar/">Mitchell, Edgar<img alt="Mitchell, Edgar"
+      class="portrait" src="/people/m/MitchellEdgar/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+      title="USA, pilote, témoin d'ovni"><a href="/people/n/NashWilliamB/">Nash, William B.</a></span>
+    </li><li><span class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Noall<img alt="Noall" class="portrait" src="/people/k/KirkwoodGuy/portrait.png"
+      width="75"></a></span></li><li><span class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Noel<img alt="Noel" class="portrait" src="/people/k/KirkwoodGuy/portrait.png"
+      width="75"></a></span></li><li><span class="people-resolved deceased country-fr occupation-pilot occupation-engineer occupation-ufologist"
+      title="-2016, France, pilote, ingénieur, ufologue"><a
+      href="/people/p/PlantierJean/">Plantier, Jean<img alt="Plantier, Jean" class="portrait"
+      src="/people/p/PlantierJean/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-ru occupation-pilot occupation-astronaut occupation-ufoWitness"
+      title="Russie, pilote, astronaute, témoin d'ovni"><a
+      href="/people/p/PopovitchMarin/">Popovitch, Marin</a></span></li><li><span
+      class="people-resolved deceased country-ua country-ru occupation-military occupation-astronaut"
+      title="1930-2009, 79 ans, Ukraine, Russie, militaire, astronaute"><a
+      href="/people/p/PopovitchPavelRomanovitch/">Popovitch, Pavel Romanovitch<img
+      alt="Popovitch, Pavel Romanovitch" class="portrait" src="/people/p/PopovitchPavelRomanovitch/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot" title="USA, pilote"><a
+      href="/people/d/RobertDurant/">Robert, Durant<img alt="Robert, Durant" class="portrait"
+      src="/people/d/RobertDurant/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-astronaut occupation-geologist"
+      title="USA, astronaute, géologue"><a href="/people/s/SchmittHarrison/">Schmitt, Harrison</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-astronaut occupation-geologist"
+      title="1947-1996, 48 ans, USA, astronaute, géologue"><a
+      href="/people/s/SchneiderPhil/">Schneider, Phil<img alt="Schneider, Phil"
+      class="portrait" src="/people/s/SchneiderPhil/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-engineer"
+      title="1942-2005, 62 ans, USA, pilote, ingénieur"><a
+      href="/people/s/SheppardGraham/">Sheppard, Graham</a></span></li><li><span class="people-resolved country-br occupation-ufologist occupation-pilot"
+      title="Brésil, ufologue, pilote"><a
+      href="/people/s/SimoesAuripheboBerrance/">Simoes, Auriphebo Berrance</a></span></li><li><span class="people-resolved country-us occupation-pilot"
+      title="USA, pilote"><a href="/people/s/SlaytonDonaldK/">Slayton, Donald K.<img
+      alt="Slayton, Donald K." class="portrait" src="/people/s/SlaytonDonaldK/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+      title="1929-2022, 93 ans, USA, pilote, témoin d'ovni"><a
+      href="/people/s/SmithEmilJ/">Smith, Emil J.<img alt="Smith, Emil J." class="portrait"
+      src="/people/s/SmithEmilJ/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-uk occupation-ufoWitness occupation-pilot"
+      title="Royaume-Uni, témoin d'ovni, pilote"><a href="/people/s/StuartMark/">Stuart, Mark</a></span>
+    </li><li><span class="people-resolved country-us occupation-pilot" title="USA, pilote"><a
+      href="/people/t/ThompsonRoderick/">Thompson, Roderick</a></span></li><li><span
+      class="people-resolved deceased country-au occupation-pilot occupation-ufoWitness"
+      title="1958-1978, 20 ans, Australie, pilote, témoin d'ovni"><a
+      href="/people/v/ValentichFrederik/">Valentich, Frederik</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-contactee occupation-pilot occupation-writer"
+      title="1910-1978, 67 ans, USA, contacté, pilote, écrivain"><a
+      href="/people/v/VanTasselGeorge/">Van, Tassel George</a></span></li><li><span
+      class="people-resolved country-fr occupation-physicist occupation-engineer occupation-pilot"
+      title="1946-, 78 ans, France, physicien, ingénieur, pilote"><a
+      href="/people/v/VeyretBernard/">Veyret, Bernard</a></span></li><li><span class="people-resolved country-us occupation-pilot"
+      title="USA, pilote"><a
+      href="/people/w/WalkerJosephA/">Walker, Joseph A.</a></span></li><li><span class="people-resolved deceased country-us occupation-pilot occupation-astronaut"
+      title="-1967, USA, pilote, astronaute"><a
+      href="/people/w/WhiteEdward/">White, Edward</a></span></li><li><span class="people-resolved deceased country-us occupation-pilot"
+      title="1924-2010, 86 ans, USA, pilote"><a href="/people/w/WhiteRobertMichael/">White, Robert Michael</a></span>
+    </li></ul>
+  <script async src="/people/index.js" type="module"></script>
+
+  <script async src="index.js" type="text/javascript"></script>
 <p>Comme d'autres <abbr title="Catégories Socio-Professionnelles">CSP</abbr> de témoins, les pilotes, qu'ils soient
   amateurs ou professionnels, civils ou militaires, d'avions ou d'hélicoptères, voire astronautes (<a
       href="/org/us/index.html">USA</a>), cosmonautes (URSS) ou spationautes (<a href="/org/eu/fr/index.html">FR</a>),
@@ -46,4 +429,24 @@
     href="/org/us/asso/nicap/index.html">NICAP</a>, <a href="../time/1/9/6/4/index.html">1964</a>.</span> <span
     class="source"><a href="m/McDonaldJamesE/index.html">McDonald, J. E.</a>: "<a
     href="../time/1/9/6/8/07/29/Symposium/McDonald/index_fr.html#pilots">Pourquoi les pilotes ne voient-ils pas d'ovnis ?</a>", Déclaration au Symposium sur les ovnis, 1968</span>
-<!--#include virtual="/footer.html" -->
+</div>
+<footer>
+  <div class="full-page" id="footerTable">
+    <div class="footer">
+      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
+      Copyright <span class="copyright"><!--#echo var="copyright" --></span> - <a href="/Contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<aside class="map">
+  <h1>Map</h1>
+  <div id="map-canvas">
+    <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
+  </div>
+</aside>
+
+<script>
+  if (window !== top) document.querySelectorAll('.full-page').forEach(elem => elem.style.display = 'none')
+</script>
+</body>
+</html>

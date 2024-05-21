@@ -238,6 +238,11 @@ export enum CountryCode {
   se = "se",
 
   /**
+   * TuNisia
+   */
+  tn = "tn",
+
+  /**
    * TaiWan
    */
   tw = "tw",

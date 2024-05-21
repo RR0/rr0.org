@@ -99,7 +99,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
     const city = this.cityService.find(context, placeName, undefined)
     assert.ok(city,
       `Could not find city of name "${placeName}" in state "${sourceCase.state}" of country "${countryCode}"`)
-    const place: NamedPlace = {name: city.title(context), place: city.places[0]}
+    const place: NamedPlace = {name: city.getTitle(context), place: city.places[0]}
     return {
       dateTime: sourceCase.dateTime,
       place,

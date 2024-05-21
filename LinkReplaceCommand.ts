@@ -1,4 +1,4 @@
-import { HtmlSsgContext, HtmlSsgFile, Link, ReplaceCommand } from "ssg-api"
+import { HtmlSsgContext, Link, ReplaceCommand } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 
 export interface LinkHandler<C extends HtmlSsgContext> {
@@ -20,34 +20,32 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
   constructor(protected defaultHandler?: LinkHandler<C>) {
   }
 
-  async execute(context: C): Promise<HtmlSsgFile> {
-    const inputFile = context.inputFile
-    const outputFile = context.outputFile
-    const dom = outputFile.dom
-    const outputDoc = outputFile.document;
-    const ul = outputDoc.querySelector("nav ul")
+  async execute(context: C): Promise<void> {
+    const file = context.file
+    const dom = file.dom
+    const doc = file.document
+    const ul = doc.querySelector("nav ul")
     if (!ul) {
-      context.error("Could not find nav list in " + context.outputFile.name)
-      return inputFile
+      context.error("Could not find nav list in " + context.file.name)
+      return
     }
-    const relStart = inputFile.links.start || this.defaultHandler?.start(context)
+    const relStart = file.links.start || this.defaultHandler?.start(context)
     if (relStart) {
       ul.appendChild(this.linkItem(context, relStart));
     }
-    const relContents = inputFile.links.contents || this.defaultHandler?.contents(context)
+    const relContents = file.links.contents || this.defaultHandler?.contents(context)
     if (relContents) {
       ul.appendChild(this.linkItem(context, relContents));
     }
-    const relPrev = inputFile.links.prev || this.defaultHandler?.prev(context)
+    const relPrev = file.links.prev || this.defaultHandler?.prev(context)
     if (relPrev) {
       ul.appendChild(this.linkItem(context, relPrev));
     }
-    const relNext = inputFile.links.next || this.defaultHandler?.next(context)
+    const relNext = file.links.next || this.defaultHandler?.next(context)
     if (relNext) {
       ul.appendChild(this.linkItem(context, relNext));
     }
-    outputFile.dom = dom
-    return outputFile
+    file.dom = dom
   }
 
   async contentStepEnd() {
@@ -55,12 +53,12 @@ export class LinkReplaceCommand<C extends HtmlRR0SsgContext = HtmlRR0SsgContext>
   }
 
   protected linkItem(context: HtmlRR0SsgContext, link: Link): HTMLLIElement {
-    const outputDoc = context.outputFile.document
-    const a = outputDoc.createElement("a")
+    const doc = context.file.document
+    const a = doc.createElement("a")
     a.className = link.type
     a.textContent = link.text
     a.href = link.url
-    const li = outputDoc.createElement("li")
+    const li = doc.createElement("li")
     li.appendChild(a)
     li.title = context.messages.nav[link.type]
     return li;

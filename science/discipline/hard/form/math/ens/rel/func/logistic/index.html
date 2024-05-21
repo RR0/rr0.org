@@ -49,21 +49,21 @@
     boundingbox: [-1, i, 5, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  log.create('functiongraph', bookMeta, [function (x) {
+  log.create(bookMeta, [function (x) {
     return Math.log10(x)
   }, -i, i]);
   var log2 = JXG.JSXGraph.initBoard('log2', {
     boundingbox: [-1, i, 5, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  log2.create('functiongraph', bookMeta, [function (x) {
+  log2.create(bookMeta, [function (x) {
     return Math.log2(x)
   }, -i, i]);
   var ln = JXG.JSXGraph.initBoard('ln', {
     boundingbox: [-1, i, 5, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  ln.create('functiongraph', bookMeta, [function (x) {
+  ln.create(bookMeta, [function (x) {
     return Math.log(x)
   }, -i, i]);
 </script>

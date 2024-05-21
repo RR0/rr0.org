@@ -1,11 +1,145 @@
-<!--#include virtual="/header-start.html" -->
+<html lang="fr">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <base href="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/">
+  <link href="/rr0.css" rel="stylesheet" type="text/css">
+  <link href="/manifest.json" rel="manifest">
+  <link href="/opensearch.xml" rel="search" title="RR0" type="application/opensearchdescription+xml">
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag () {
+      dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+    gtag('config', 'G-CMV7R92GK1')
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
+    j.async = true
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'dataLayer', 'GTM-NBPKWNM')</script>
+  <!-- End Google Tag Manager -->
+
 <title>Alphabet arabe</title>
 <link href="/lang/speech.css" rel="stylesheet">
-<!--#include virtual="/header-end.html" -->
-<table>
+  <meta content="ssg-api" name="generator">
+  <meta content="UFO data for french-reading people" name="description">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+  <meta content="/lang/chamitosemitic/semitic/occidental/south/arab/alphabet/og.png" property="og:image">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
+    style="display:none;visibility:hidden" title="GTM" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="main-header">
+  <h1 class="full-page">Alphabet arabe</h1>
+</header>
+<nav id="main-nav">
+  <h1>Navigation</h1>
+  <ul>
+    <li class="full-page">
+      <a class="home" href="/" title="Home">RR0</a>
+    </li>
+    <li class="search full-page">
+      <input disabled="" id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
+      <datalist id="search-site-values">
+      </datalist>
+    </li>
+    <li id="summary">
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
+      <ul class="outline">
+      </ul>
+    </li>
+    <li>
+      <span id="alternate"></span>
+    </li>
+    <li class="map-toggle">
+      <button class="toggle">Carte</button>
+    </li>
+  </ul>
+  <script async="" src="/search/index.js" type="text/javascript"></script>
+</nav>
+<script>
+  const summary = document.getElementById('out-top')
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : 'Sommaire'
+  }, { threshold: [0, 0.3, 1] })
+  observer.observe(document.querySelector('#main-header'))
+  var currentAddress
+  var mapEl
+  var currentPlaceEl
+
+  function showMap (event, address, display = true) {
+    event.stopPropagation()
+    document.body.classList.toggle('with-map', display)
+    if (!address) {
+      address = currentPlaceEl?.textContent
+    }
+    if (address !== currentAddress) {
+      currentAddress = address
+      mapEl.querySelector('iframe').src =
+        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I`
+    }
+  }
+
+  const mapToggle = document.querySelector('.map-toggle .toggle')
+  document.addEventListener('DOMContentLoaded', () => {
+    mapEl = document.querySelector('#map-canvas')
+    currentPlaceEl = document.querySelector('.plac')
+    if (currentPlaceEl) {
+      mapToggle.style.display = 'inline-block'
+    }
+  })
+
+  function hasMap () {
+    return document.body.classList.contains('with-map')
+  }
+
+  mapToggle.addEventListener('click', (event) => {
+    showMap(event, currentAddress, !hasMap())
+  })
+  document.body.addEventListener('click', (event) => {
+    if (hasMap()) {
+      showMap(event, currentAddress, false)
+    }
+  })
+
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
+<div class="metadata">
+
+</div>
+<div class="contents">
+
+  <table>
   <thead>
   <tr>
-    <th>Translitération</th>
+    <th>Translitération / son</th>
     <th>Lettre</th>
     <th>Nom</th>
     <th>Finale</th>
@@ -15,12 +149,14 @@
   </thead>
   <tbody>
   <tr data-value="1">
-    <td lang="ar-Latn">ā</td>
+    <td lang="ar-Latn">ā / aa</td>
     <td lang="ar">ا</td>
     <td lang="ar-Latn">alif</td>
     <td lang="ar">‍ا</td>
-    <td><i>Lettre orpheline</i></td>
-    <td><i>Lettre orpheline</i></td>
+    <td><span lang="ar">ـاـ</span><span aria-label="Note" class="note-id">n1<span class="anchor"
+      id="note-1"></span><span class="note-contents">Lettre orpheline</span></span></td>
+    <td><span lang="ar">اـ</span><span aria-label="Note" class="note-id">n2<span class="anchor" id="note-2"></span><span
+      class="note-contents">Lettre orpheline</span></span></td>
   </tr>
   <tr data-value="70">
     <td lang="ar-Latn">ʻ</td>
@@ -31,7 +167,7 @@
     <td lang="ar">عـ</td>
   </tr>
   <tr data-value="2">
-    <td lang="ar-Latn">b</td>
+    <td lang="ar-Latn">b / ba</td>
     <td lang="ar">ب</td>
     <td lang="ar-Latn">bāʼ</td>
     <td lang="ar">ـب</td>
@@ -43,15 +179,17 @@
     <td lang="ar">ذ</td>
     <td lang="ar-Latn">dhāl</td>
     <td lang="ar">ـ‍ذ</td>
-    <td><i>Lettre orpheline</i></td>
-    <td><i>Lettre orpheline</i></td>
+    <td lang="ar">ـذـ<span aria-label="Note" class="note-id">n3<span class="anchor" id="note-3"></span><span
+      class="note-contents">Lettre orpheline</span></span></td>
+    <td lang="ar">ذـ<span aria-label="Note" class="note-id">n4<span class="anchor" id="note-4"></span><span
+      class="note-contents">Lettre orpheline</span></span></td>
   </tr>
   <tr data-value="4">
     <td lang="ar-Latn">d</td>
     <td lang="ar">د</td>
     <td lang="ar-Latn">dāl</td>
     <td lang="ar">ـ‍د</td>
-    <td lang="ar">ـ</td>
+    <td lang="ar">ـ‍دـ</td>
     <td lang="ar">دـ</td>
   </tr>
   <tr data-value="800">
@@ -191,7 +329,7 @@
     <td lang="ar">ﺷـ</td>
   </tr>
   <tr data-value="400">
-    <td lang="ar-Latn">t</td>
+    <td lang="ar-Latn">t / ta</td>
     <td lang="ar">ت</td>
     <td lang="ar-Latn">tāʼ</td>
     <td lang="ar">ـت</td>
@@ -245,4 +383,26 @@
 
   document.querySelectorAll('*[lang=\'ar\']').forEach(e => addSpeech(e))
 </script>
-<!--#include virtual="/footer.html" -->
+</div>
+<footer>
+  <div class="full-page" id="footerTable">
+    <div class="footer">
+      Dernière modification le lundi 20 mai 2024 à 14:19- © Copyright <span class="copyright"><a
+      href="/GFDL.html">RR0</a></span> - <a href="/Contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<aside class="map">
+  <h1>Map</h1>
+  <div id="map-canvas">
+    <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
+  </div>
+</aside>
+
+<script>
+  if (window !== top) document.querySelectorAll('.full-page').forEach(elem => elem.style.display = 'none')
+</script>
+
+
+</body>
+</html>

@@ -7,7 +7,6 @@ import { HtmlTag } from "../util/HtmlTag"
 import fs from "fs"
 import path from "path"
 import { Chapter } from "./Chapters"
-import { PeopleService } from "../people/PeopleService"
 
 /**
  * Scan directories for book information, then populates a template with collected data.
@@ -16,25 +15,23 @@ export class BookDirectoryStep extends DirectoryStep {
 
   constructor(dirs: string[], template: string, protected outputFunc: OutputFunc,
               config: SsgConfig, protected outDir: string, name: string,
-              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>,
-              protected peopleService: PeopleService) {
+              protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
     super(dirs, [], template, config, name)
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, bookMeta: Map<string, HtmlMeta>,
-                      bookLinks: Map<string, HtmlLinks>, peopleService: PeopleService): Promise<BookDirectoryStep> {
+                      bookLinks: Map<string, HtmlLinks>): Promise<BookDirectoryStep> {
     const dirs = RR0FileUtil.findDirectoriesContaining("book*.json")
     return new BookDirectoryStep(dirs, "book/index.html", outputFunc, config, config.outDir, "all books", bookMeta,
-      bookLinks, peopleService)
+      bookLinks)
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
     const books = this.scan(context, dirNames)
     await this.tocAll(context, books)
     const directoriesHtml = this.toList(books)
-    context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
-      directoriesHtml)
-    await this.outputFunc(context, context.outputFile)
+    context.file.contents = context.file.contents.replace(`<!--#echo var="directories" -->`, directoriesHtml)
+    await this.outputFunc(context, context.file)
   }
 
   protected scan(context: HtmlRR0SsgContext, dirNames: string[]): Book[] {
@@ -114,9 +111,9 @@ export class BookDirectoryStep extends DirectoryStep {
   protected async toc(context: HtmlRR0SsgContext, book: Book) {
     const startFileName = path.join(book.dirName, "index.html")
     try {
-      context.read(startFileName)
-      const startFileNames = [context.inputFile.name]
-      const variants = context.inputFile.lang.variants
+      context.getInputFrom(startFileName)
+      const startFileNames = [context.file.name]
+      const variants = context.file.lang.variants
       for (const variant of variants) {
         const parsed = path.parse(startFileName)
         const variantFileName = path.join(parsed.dir, `${parsed.name}_${variant}${parsed.ext}`)
@@ -130,10 +127,10 @@ export class BookDirectoryStep extends DirectoryStep {
         await chapter.update()
         const chapterAfter = chapter.toString()
         context.logger.debug("toc after:", chapterAfter)
-        context.logger.log("Updated toc for", chapter.context.inputFile.name)
+        context.logger.log("Updated toc for", chapter.context.file.name)
         book.variants.push(chapter)
-        this.bookMeta.set(startFileName, chapter.context.outputFile.meta)
-        this.bookLinks.set(startFileName, chapter.context.outputFile.links)
+        this.bookMeta.set(startFileName, chapter.context.file.meta)
+        this.bookLinks.set(startFileName, chapter.context.file.links)
       }
     } catch (e) {
       context.logger.error("Could not check TOC of " + startFileName, e.message)

@@ -13,14 +13,14 @@ export class EventRenderer<D extends RR0Data> {
   }
 
   render(context: HtmlRR0SsgContext, rr0Case: D): HTMLLIElement {
-    const outDoc = context.outputFile.document
+    const outDoc = context.file.document
     const item = outDoc.createElement("li")
     this.renderContent(context, rr0Case, item)
     return item
   }
 
   renderContent(context: HtmlRR0SsgContext, rr0Data: D, container: HTMLElement): void {
-    const outDoc = context.outputFile.document
+    const outDoc = context.file.document
     const time = rr0Data.dateTime
     const timeEl = outDoc.createElement("time") as HTMLTimeElement
     const timeValue = timeEl.dateTime = time.toString()

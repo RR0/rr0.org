@@ -10,7 +10,7 @@ export class NoteReplacer {
     this.number++
     const noteStr = this.number.toString()
     const noteId = `note-${noteStr}`
-    const outputDoc = context.outputFile.document
+    const outputDoc = context.file.document
     const replacement = outputDoc.createElement("span")
     replacement.className = "note-id"
     replacement.ariaLabel = "Note"

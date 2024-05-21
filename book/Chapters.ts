@@ -14,9 +14,9 @@ export class Chapter {
   }
 
   async scan() {
-    this.context.read(this.startFileName);
-    const dir = path.dirname(this.context.inputFile.name);
-    const fileName = path.basename(this.context.inputFile.name);
+    this.context.getInputFrom(this.startFileName)
+    const dir = path.dirname(this.context.file.name)
+    const fileName = path.basename(this.context.file.name)
     const subFileNames = await glob(path.join(dir, '*/', fileName));
     this.subs = [];
     for (const subFileName of subFileNames) {
@@ -27,18 +27,18 @@ export class Chapter {
   }
 
   toString(prefix = '- '): string {
-    const file = this.context.inputFile;
+    const file = this.context.file
     return `${prefix + file.name}: "${file.title}", meta=${JSON.stringify(file.meta)}, links=${JSON.stringify(
       file.links)}
 ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
   }
 
   async update(parent?: Chapter) {
-    const file = this.context.outputFile;
+    const file = this.context.file
     const meta = file.meta;
     const links = file.links;
     if (parent) {
-      const parentFile = parent.context.outputFile;
+      const parentFile = parent.context.file
       const parentMeta = parentFile.meta;
       meta.author = parentMeta.author;
       meta.copyright = parentMeta.copyright;
@@ -57,18 +57,18 @@ ${this.subs.map(subFile => subFile.toString('  ' + prefix)).join('')}`;
     }
     let prev: Chapter | undefined;
     for (const sub of this.subs) {
-      const subFile = sub.context.outputFile;
+      const subFile = sub.context.file
       if (prev) {
-        prev.context.outputFile.links.next = {
+        prev.context.file.links.next = {
           type: LinkType.next,
           url: path.join("/", subFile.name),
           text: subFile.title
         };
       }
-      sub.context.outputFile.links.prev = prev ? {
+      sub.context.file.links.prev = prev ? {
         type: LinkType.prev,
-        url: path.join("/", prev.context.outputFile.name),
-        text: prev.context.outputFile.title
+        url: path.join("/", prev.context.file.name),
+        text: prev.context.file.title
       } : undefined;
       await sub.update(this);
       prev = sub;

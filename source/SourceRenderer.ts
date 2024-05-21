@@ -1,9 +1,9 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { Source } from "../source/Source"
-import { OnlineSource } from "../source/OnlineSource"
-import { TimeTextBuilder } from "./TimeTextBuilder"
-import { TimeReplacer } from "./TimeReplacer"
-import { TimeContext } from "./TimeContext"
+import { Source } from "./Source"
+import { OnlineSource } from "./OnlineSource"
+import { TimeContext } from "../time/TimeContext"
+import { TimeReplacer } from "../time/TimeReplacer"
+import { TimeTextBuilder } from "../time/TimeTextBuilder"
 
 /**
  * Render a case summary for a RR0 web page.
@@ -11,17 +11,26 @@ import { TimeContext } from "./TimeContext"
 export class SourceRenderer {
 
   render(context: HtmlRR0SsgContext, source: Source): HTMLElement {
-    const sourceEl = context.outputFile.document.createElement("span")
+    const sourceEl = context.file.document.createElement("span")
     sourceEl.className = "source"
     this.renderContent(context, source, sourceEl)
     return sourceEl
   }
 
   renderContent(context: HtmlRR0SsgContext, source: Source, container: HTMLElement): void {
-    const doc = context.outputFile.document
+    const doc = context.file.document
     const sourceContext = context.clone()
-    if (source.authors?.length > 0) {
-      container.append(source.authors.join(" & "), `: `)
+    const authors = source.authors
+    if (authors?.length > 0) {
+      let sep: string = ""
+      for (const author of authors) {
+        const peopleTag = doc.createElement("span")
+        peopleTag.className = "people"
+        peopleTag.textContent = author
+        container.append(peopleTag, sep)
+        sep = " & "
+      }
+      container.append(` : `)
     }
     const title = source.title
     if (title) {

@@ -59,7 +59,7 @@ export class TimeContext {
 
   setHour(hour: number | undefined, print = true) {
     if (hour != this._hour && print) {
-      this.setMinutes(undefined, print)
+      this.setMinutes(undefined)
     }
     this._hour = hour
     return this
@@ -69,7 +69,7 @@ export class TimeContext {
     return this._minutes
   }
 
-  setMinutes(minutes: number | undefined, print = true) {
+  setMinutes(minutes: number | undefined) {
     this._minutes = minutes
     return this
   }
@@ -150,7 +150,7 @@ export class TimeContext {
     return this.toString() === other.toString()
   }
 
-  static fromFileName(context: HtmlRR0SsgContext, fileName = context.inputFile.name): TimeContext | undefined {
+  static fromFileName(context: HtmlRR0SsgContext, fileName = context.file.name): TimeContext | undefined {
     let timeContext: TimeContext | undefined
     const timeExec = Time.parseFileName(fileName)
     if (timeExec && timeExec.length > 5) {

@@ -1,5 +1,6 @@
 <form id="searchForm">
-  <label style="white-space: normal">Nom <input autofocus oninput="find(event)" style="margin-left: 1em" type="search"></label>
+  <label style="white-space: normal">Nom <input autofocus oninput="findPeople(event)" style="margin-left: 1em"
+    type="search"></label>
   <details>
     <summary>Pays</summary>
     <!--#echo var="countries" -->
@@ -11,3 +12,4 @@
   <output></output>
 </form>
 <!--#echo var="directories" -->
+<script async src="/people/index.js" type="module"></script>

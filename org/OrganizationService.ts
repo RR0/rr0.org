@@ -24,7 +24,7 @@ export class OrganizationService<O extends Organization = Organization, P extend
 
   find(context: RR0SsgContext, nameToFind: string, parent: P): Organization | undefined {
     let foundOrg = this.orgs.find(org => {
-      const orgMessages = org.messages(context)
+      const orgMessages = org.getMessages(context)
       assert.ok(orgMessages, `Organization with code "${org.code}" has no messages`)
       let found: boolean
       const orgNameToFind = this.nameToFind(context, org, nameToFind)

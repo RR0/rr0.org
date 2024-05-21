@@ -4,7 +4,7 @@ import { Gender } from "@rr0/common"
 import { CountryCode } from "../org/country/CountryCode"
 import { RR0Data } from "../RR0Data"
 
-export class People {
+export class People implements RR0Data {
   /**
    * The people actually doesn't exist.
    */

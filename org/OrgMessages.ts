@@ -23,12 +23,12 @@ export class OrgMessages {
 
   toTitle(context: RR0SsgContext, org: Organization<any>, opts?: OrganizationMessageOptions): string {
     const options = opts || {parent: false}
-    const OrgMessages = org.messages(context)
+    const OrgMessages = org.getMessages(context)
     assert.ok(OrgMessages, `Could not find organization "${org.code}" in organization "${org.parent.code}"`)
     let str = OrgMessages.title
     if (options.parent) {
       const parent = org.parent
-      const parentMessages = parent.messages(context)
+      const parentMessages = parent.getMessages(context)
       str += ` (${parentMessages.toTitle(context, parent, options)})`
     }
     return str

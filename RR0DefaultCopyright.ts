@@ -1,6 +1,5 @@
-import {HtmlSsgContext, StringContextHandler} from "ssg-api"
+import { HtmlSsgContext, StringContextHandler } from "ssg-api"
 
 export const rr0DefaultCopyright: StringContextHandler = (context: HtmlSsgContext): string | undefined => {
-  const SsgFile = context.inputFile
-  return SsgFile.meta.copyright || `<a href="/GFDL.html">RR0</a>`
+  return context.file.meta.copyright || `<a href="/GFDL.html">RR0</a>`
 }

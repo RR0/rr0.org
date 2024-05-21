@@ -26,7 +26,7 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
   }
 
   next(context: HtmlRR0SsgContext): Link | undefined {
-    let fileName = context.inputFile.name;
+    let fileName = context.file.name
     if (this.isTimeFile(fileName)) {
       const pos = this.timeFiles.indexOf(fileName);
       if (pos >= 0) {
@@ -40,7 +40,7 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
   }
 
   prev(context: HtmlRR0SsgContext): Link | undefined {
-    let fileName = context.inputFile.name;
+    let fileName = context.file.name
     if (this.isTimeFile(fileName)) {
       const pos = this.timeFiles.indexOf(fileName);
       if (pos >= 0) {
@@ -56,7 +56,7 @@ export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
   }
 
   start(context: HtmlRR0SsgContext): Link | undefined {
-    if (this.isTimeFile(context.inputFile.name)) {
+    if (this.isTimeFile(context.file.name)) {
       return {
         type: LinkType.contents,
         text: 'Chronologie',

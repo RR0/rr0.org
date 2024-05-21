@@ -1,13 +1,788 @@
-<!--#include virtual="/header-start.html" -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <base/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <link href="/manifest.json" rel="manifest">
+  <link href="/opensearch.xml" rel="search" title="RR0" type="application/opensearchdescription+xml"/>
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag () {
+      dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+    gtag('config', 'G-CMV7R92GK1')
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
+    j.async = true
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'dataLayer', 'GTM-NBPKWNM')</script>
+  <!-- End Google Tag Manager -->
+
 <title>Témoins d'ovni</title>
 <link href="../index.css" rel="stylesheet"/>
-<!--#include virtual="/header-end.html" -->
-<p class="exergue">Au lieu d'enquêter sur les apparitions d'ovnis, on ferait mieux d'enquêter sur les gens qui les
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
+    style="display:none;visibility:hidden" title="GTM"
+    width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="main-header">
+  <h1 class="full-page"><!--#echo var="title" --></h1>
+</header>
+<nav id="main-nav">
+  <h1>Navigation</h1>
+  <ul>
+    <li class="full-page">
+      <a class="home" href="/" title="Home">RR0</a>
+    </li>
+    <li class="search full-page">
+      <input disabled id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
+      <datalist id="search-site-values">
+      </datalist>
+    </li>
+    <li id="summary">
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
+      <ul class="outline">
+      </ul>
+    </li>
+    <li>
+      <span id="alternate"></span>
+    </li>
+    <li class="map-toggle">
+      <button class="toggle">Carte</button>
+    </li>
+  </ul>
+  <script async src="/search/index.js" type="text/javascript"></script>
+</nav>
+<script>
+  const summary = document.getElementById('out-top')
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : 'Sommaire'
+  }, { threshold: [0, 0.3, 1] })
+  observer.observe(document.querySelector('#main-header'))
+  var currentAddress
+  var mapEl
+  var currentPlaceEl
+
+  function showMap (event, address, display = true) {
+    event.stopPropagation()
+    document.body.classList.toggle('with-map', display)
+    if (!address) {
+      address = currentPlaceEl?.textContent
+    }
+    if (address !== currentAddress) {
+      currentAddress = address
+      mapEl.querySelector('iframe').src =
+        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
+    }
+  }
+
+  const mapToggle = document.querySelector('.map-toggle .toggle')
+  document.addEventListener('DOMContentLoaded', () => {
+    mapEl = document.querySelector('#map-canvas')
+    currentPlaceEl = document.querySelector('.plac')
+    if (currentPlaceEl) {
+      mapToggle.style.display = 'inline-block'
+    }
+  })
+
+  function hasMap () {
+    return document.body.classList.contains('with-map')
+  }
+
+  mapToggle.addEventListener('click', (event) => {
+    showMap(event, currentAddress, !hasMap())
+  })
+  document.body.addEventListener('click', (event) => {
+    if (hasMap()) {
+      showMap(event, currentAddress, false)
+    }
+  })
+
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
+<div class="metadata">
+  <!--#echo var="author" -->
+</div>
+<div class="contents">
+
+  <p class="exergue">Au lieu d'enquêter sur les apparitions d'ovnis, on ferait mieux d'enquêter sur les gens qui les
   signalent <cite><span class="people">Hynek, J. Allen</span>: 8 novembre 1965</cite></p>
 <p>Ayant déclaré avoir observé des <a href="/science/crypto/ufo/PAN.html">PAN</a>s ou leurs occupants supposés, voir
   avoir interagi avec eux.</p>
-<!--#include virtual="../form.html" -->
-<script async src="../index.js" type="text/javascript"></script>
+  <form id="searchForm">
+    <label style="white-space: normal">Nom <input autofocus oninput="findPeople(event)" style="margin-left: 1em"
+      type="search"></label>
+    <details>
+      <summary>Pays</summary>
+      <div id="countries"><span class="option"><label><input id="country-ar" onchange="findPeople(event)"
+        type="checkbox"> Argentine</label></span><span class="option"><label><input id="country-au"
+        onchange="findPeople(event)" type="checkbox"> Australie</label></span><span class="option"><label><input
+        id="country-be" onchange="findPeople(event)" type="checkbox"> Belgique</label></span><span
+        class="option"><label><input id="country-br" onchange="findPeople(event)" type="checkbox"> Brésil</label></span><span
+        class="option"><label><input id="country-ca" onchange="findPeople(event)" type="checkbox"> Canada</label></span><span
+        class="option"><label><input id="country-ch" onchange="findPeople(event)" type="checkbox"> Suisse</label></span><span
+        class="option"><label><input id="country-cl" onchange="findPeople(event)"
+        type="checkbox"> Chili</label></span><span class="option"><label><input id="country-cn"
+        onchange="findPeople(event)" type="checkbox"> Chine</label></span><span class="option"><label><input
+        id="country-de" onchange="findPeople(event)" type="checkbox"> Allemagne</label></span><span
+        class="option"><label><input id="country-es" onchange="findPeople(event)"
+        type="checkbox"> Espagne</label></span><span class="option"><label><input id="country-fi"
+        onchange="findPeople(event)" type="checkbox"> Finlande</label></span><span class="option"><label><input
+        id="country-fr" onchange="findPeople(event)" type="checkbox"> France</label></span><span
+        class="option"><label><input id="country-il" onchange="findPeople(event)" type="checkbox"> Israël</label></span><span
+        class="option"><label><input id="country-ir" onchange="findPeople(event)"
+        type="checkbox"> Iran</label></span><span class="option"><label><input id="country-it"
+        onchange="findPeople(event)" type="checkbox"> Italie</label></span><span class="option"><label><input
+        id="country-jp" onchange="findPeople(event)" type="checkbox"> Japon</label></span><span
+        class="option"><label><input id="country-mx" onchange="findPeople(event)"
+        type="checkbox"> Mexique</label></span><span class="option"><label><input id="country-nz"
+        onchange="findPeople(event)" type="checkbox"> Nouvelle-Zélande</label></span><span class="option"><label><input
+        id="country-pl" onchange="findPeople(event)" type="checkbox"> Pologne</label></span><span class="option"><label><input
+        id="country-ro" onchange="findPeople(event)" type="checkbox"> Roumanie</label></span><span
+        class="option"><label><input id="country-ru" onchange="findPeople(event)" type="checkbox"> Russie</label></span><span
+        class="option"><label><input id="country-uk" onchange="findPeople(event)"
+        type="checkbox"> Royaume-Uni</label></span><span class="option"><label><input id="country-us"
+        onchange="findPeople(event)" type="checkbox"> USA</label></span><span class="option"><label><input
+        id="country-ve" onchange="findPeople(event)" type="checkbox"> Venezuela</label></span><span
+        class="option"><label><input id="country-za" onchange="findPeople(event)"
+        type="checkbox"> Afrique du Sud</label></span></div>
+    </details>
+    <details>
+      <summary>Profession</summary>
+      <div id="occupations"><span class="option"><label><input id="occupation-actor" onchange="findPeople(event)"
+        type="checkbox"> Acteur</label></span><span class="option"><label><input id="occupation-artist"
+        onchange="findPeople(event)" type="checkbox"> Artiste</label></span><span class="option"><label><input
+        id="occupation-astronaut" onchange="findPeople(event)" type="checkbox"> Astronaute</label></span><span
+        class="option"><label><input id="occupation-astronomer" onchange="findPeople(event)" type="checkbox"> Astronome</label></span><span
+        class="option"><label><input id="occupation-astrophysicist" onchange="findPeople(event)" type="checkbox"> Astrophysicien</label></span><span
+        class="option"><label><input id="occupation-barman" onchange="findPeople(event)" type="checkbox"> Barman</label></span><span
+        class="option"><label><input id="occupation-bishop" onchange="findPeople(event)" type="checkbox"> Évêque</label></span><span
+        class="option"><label><input id="occupation-cameraman" onchange="findPeople(event)"
+        type="checkbox"> Cadreur</label></span><span class="option"><label><input id="occupation-chemist"
+        onchange="findPeople(event)" type="checkbox"> Chimiste</label></span><span class="option"><label><input
+        id="occupation-contactee" onchange="findPeople(event)" type="checkbox"> Contacté</label></span><span
+        class="option"><label><input id="occupation-engineer" onchange="findPeople(event)"
+        type="checkbox"> Ingénieur</label></span><span class="option"><label><input id="occupation-farmer"
+        onchange="findPeople(event)" type="checkbox"> Agriculteur</label></span><span
+        class="option"><label><input id="occupation-firefighter" onchange="findPeople(event)"
+        type="checkbox"> Pompier</label></span><span class="option"><label><input id="occupation-flightAttendant"
+        onchange="findPeople(event)" type="checkbox"> Hôtesse de l'air</label></span><span
+        class="option"><label><input id="occupation-geologist" onchange="findPeople(event)"
+        type="checkbox"> Géologue</label></span><span class="option"><label><input id="occupation-historian"
+        onchange="findPeople(event)" type="checkbox"> Historien</label></span><span
+        class="option"><label><input id="occupation-houseWife" onchange="findPeople(event)" type="checkbox"> Femme au foyer</label></span><span
+        class="option"><label><input id="occupation-hypnotherapist" onchange="findPeople(event)" type="checkbox"> Hypnothérapeute</label></span><span
+        class="option"><label><input id="occupation-illusionist" onchange="findPeople(event)" type="checkbox"> Illusionniste</label></span><span
+        class="option"><label><input id="occupation-journalist" onchange="findPeople(event)" type="checkbox"> Journaliste</label></span><span
+        class="option"><label><input id="occupation-logger" onchange="findPeople(event)"
+        type="checkbox"> Bucheron</label></span><span class="option"><label><input id="occupation-mathematician"
+        onchange="findPeople(event)" type="checkbox"> Mathématicien</label></span><span
+        class="option"><label><input id="occupation-mechanic" onchange="findPeople(event)"
+        type="checkbox"> Mécanicien</label></span><span class="option"><label><input id="occupation-meteorologist"
+        onchange="findPeople(event)" type="checkbox"> Météorologue</label></span><span
+        class="option"><label><input id="occupation-military" onchange="findPeople(event)"
+        type="checkbox"> Militaire</label></span><span class="option"><label><input id="occupation-nurse"
+        onchange="findPeople(event)" type="checkbox"> Infirmier</label></span><span class="option"><label><input
+        id="occupation-photographer" onchange="findPeople(event)" type="checkbox"> Photographe</label></span><span
+        class="option"><label><input id="occupation-physician" onchange="findPeople(event)"
+        type="checkbox"> Médecin</label></span><span class="option"><label><input id="occupation-physicist"
+        onchange="findPeople(event)" type="checkbox"> Physicien</label></span><span
+        class="option"><label><input id="occupation-pilot" onchange="findPeople(event)" type="checkbox"> Pilote</label></span><span
+        class="option"><label><input id="occupation-policeman" onchange="findPeople(event)"
+        type="checkbox"> Policier</label></span><span class="option"><label><input id="occupation-politician"
+        onchange="findPeople(event)" type="checkbox"> Politicien</label></span><span
+        class="option"><label><input id="occupation-priest" onchange="findPeople(event)" type="checkbox"> Prêtre</label></span><span
+        class="option"><label><input id="occupation-prospector" onchange="findPeople(event)" type="checkbox"> Prospecteur</label></span><span
+        class="option"><label><input id="occupation-radioamateur" onchange="findPeople(event)" type="checkbox"> Radio amateur</label></span><span
+        class="option"><label><input id="occupation-sailor" onchange="findPeople(event)" type="checkbox"> Marin</label></span><span
+        class="option"><label><input id="occupation-salesman" onchange="findPeople(event)"
+        type="checkbox"> Commercial</label></span><span class="option"><label><input id="occupation-taxiDriver"
+        onchange="findPeople(event)" type="checkbox"> Taxi</label></span><span class="option"><label><input
+        id="occupation-teacher" onchange="findPeople(event)" type="checkbox"> Enseignant</label></span><span
+        class="option"><label><input id="occupation-telegrapher" onchange="findPeople(event)" type="checkbox"> Télégraphiste</label></span><span
+        class="option"><label><input id="occupation-truckDriver" onchange="findPeople(event)" type="checkbox"> Camionneur</label></span><span
+        class="option"><label><input id="occupation-ufoWitness" onchange="findPeople(event)" type="checkbox"> Témoin d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufoWitness2" onchange="findPeople(event)" type="checkbox"> Témoin indirect d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufologist" onchange="findPeople(event)"
+        type="checkbox"> Ufologue</label></span><span class="option"><label><input id="occupation-worker"
+        onchange="findPeople(event)" type="checkbox"> Ouvrier</label></span><span class="option"><label><input
+        id="occupation-writer" onchange="findPeople(event)" type="checkbox"> Écrivain</label></span></div>
+    </details>
+    <output></output>
+  </form>
+  <ul class="links"><li><span class="people-resolved deceased country-pl country-us occupation-contactee occupation-farmer"
+    title="1891-1965, 74 ans, Pologne, USA, contacté, agriculteur"><a
+    href="/people/a/AdamskiGeorge/">Adamski, George<img alt="Adamski, George" class="portrait"
+    src="/people/a/AdamskiGeorge/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+    title="USA, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Goshen/">Adickes, Robert</a></span></li><li><span
+    class="people-resolved deceased occupation-ufoWitness2 occupation-bishop"
+    title="769-840, 71 ans, témoin indirect d'ovni, évêque"><a
+    href="/people/a/Agobard/">Agobard</a></span></li><li><span class="people-resolved deceased country-us occupation-contactee occupation-farmer"
+    title="1916-2006, 89 ans, USA, contacté, agriculteur"><a href="/people/a/AhoWayne/">Aho, Wayne</a></span>
+  </li><li><span class="people-resolved deceased country-us occupation-ufologist occupation-ufoWitness"
+    title="1925-1994, 68 ans, USA, ufologue, témoin d'ovni, discrédité"><a
+    href="/people/a/AllenCarlMeredith/">Allen, Carl Meredith&nbsp;🤥<img alt="Allen, Carl Meredith"
+    class="portrait" src="/people/a/AllenCarlMeredith/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved pseudonym deceased country-us occupation-ufologist occupation-ufoWitness"
+    title="(pseudonyme), 1925-1994, 68 ans, USA, ufologue, témoin d'ovni, discrédité"><a
+    href="/people/a/AllenCarlMeredith/">Allen, Carlos M.&nbsp;🤥<img alt="Allen, Carlos M."
+    class="portrait" src="/people/a/AllenCarlMeredith/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved pseudonym deceased country-us occupation-ufologist occupation-ufoWitness"
+    title="(pseudonyme), 1925-1994, 68 ans, USA, ufologue, témoin d'ovni, discrédité"><a
+    href="/people/a/AllenCarlMeredith/">Allende, Carlos Miguel&nbsp;🤥<img alt="Allende, Carlos Miguel"
+    class="portrait" src="/people/a/AllenCarlMeredith/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-jp occupation-barman occupation-radioamateur occupation-ufoWitness"
+    title="Japon, barman, radio amateur, témoin d'ovni"><a
+    href="/people/a/AmanoHideichi/">Amano, Hideichi</a></span></li><li><span
+    class="people-resolved country-us occupation-ufoWitness" title="1941-, 83 ans, USA, témoin d'ovni, discrédité"><a
+    href="/people/a/AndersonGerald/">Anderson, Gerald&nbsp;🤥</a></span></li><li><span
+    class="people-resolved country-us occupation-ufoWitness" title="1937-, 87 ans, USA, témoin d'ovni"><a
+    href="/people/a/AndreassonBetty/">Andreasson, Betty<img alt="Andreasson, Betty"
+    class="portrait" src="/people/a/AndreassonBetty/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-contactee occupation-worker"
+    title="1912-1993, 81 ans, USA, contacté, ouvrier"><a
+    href="/people/a/AngelucciOrfeo/">Angelucci, Orfeo<img alt="Angelucci, Orfeo"
+    class="portrait" src="/people/a/AngelucciOrfeo/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+    title="1915-1984, 68 ans, USA, pilote, témoin d'ovni"><a
+    href="/people/a/ArnoldKennethE/">Arnold, Kenneth E.<img alt="Arnold, Kenneth E."
+    class="portrait" src="/people/a/ArnoldKennethE/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-fr occupation-pilot occupation-ufoWitness"
+    title="1944-2014, 69 ans, France, pilote, témoin d'ovni"><a
+    href="/people/a/AsselineMichel/">Asseline, Michel<img alt="Asseline, Michel"
+    class="portrait" src="/people/a/AsselineMichel/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-br occupation-photographer occupation-ufoWitness"
+    title="1916-2000, 84 ans, Brésil, photographe, témoin d'ovni"><a
+    href="/people/b/BaraunaAlmiro/">Baraúna, Almiro<img alt="Baraúna, Almiro" class="portrait"
+    src="/people/b/BaraunaAlmiro/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-ro occupation-ufoWitness"
+    title="1923-, 101 ans, Roumanie, témoin d'ovni"><a href="/science/crypto/ufo/enquete/dossier/Cluj/">Barnea, Emil</a></span>
+  </li><li><span class="people-resolved deceased country-us occupation-cameraman occupation-ufoWitness"
+    title="1913-1967, 54 ans, USA, cadreur, témoin d'ovni"><a
+    href="/people/b/BarnettJack/">Barnett, Jack</a></span></li><li><span class="people-resolved country-us occupation-astronomer occupation-ufoWitness"
+    title="USA, astronome, témoin d'ovni"><a href="/people/b/BartlettJamesC/">Bartlett, James C.</a></span>
+  </li><li><span class="people-resolved deceased country-us occupation-contactee occupation-truckDriver occupation-mechanic"
+    title="1898-1969, 70 ans, USA, contacté, camionneur, mécanicien"><a
+    href="/people/b/BethurumTruman/">Bethurum, Truman</a></span></li><li><span
+    class="people-resolved deceased country-uk occupation-astronomer occupation-physician occupation-ufoWitness"
+    title="1695-1771, 76 ans, Royaume-Uni, astronome, médecin, témoin d'ovni"><a
+    href="/people/b/BevisJohn/">Bevis, John</a></span></li><li><span
+    class="people-resolved deceased country-us occupation-military occupation-ufoWitness"
+    title="1916-1966, 50 ans, USA, militaire, témoin d'ovni"><a
+    href="/people/b/BlanchardWilliamHugh/">Blanchard, William Hugh<img alt="Blanchard, William Hugh"
+    class="portrait" src="/people/b/BlanchardWilliamHugh/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-astronaut occupation-ufoWitness"
+    title="1928-, 96 ans, USA, pilote, astronaute, témoin d'ovni"><a
+    href="/people/b/BormanFrank/">Borman, Frank<img alt="Borman, Frank" class="portrait"
+    src="/people/b/BormanFrank/portrait.gif" width="75"></a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a href="/people/b/BoscClaude/">Bosc, Claude</a></span>
+  </li><li><span class="people-resolved country-uk occupation-pilot occupation-ufoWitness"
+    title="Royaume-Uni, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Aurigny/">Bowyer, Ray Anthony</a></span></li><li><span
+    class="people-resolved pseudonym deceased country-us occupation-farmer occupation-ufoWitness"
+    title="(pseudonyme), 1899-1963, 64 ans, USA, agriculteur, témoin d'ovni"><a
+    href="/people/b/BrazelWilliamWare/">Brazel, Mack<img alt="Brazel, Mack"
+    class="portrait" src="/people/b/BrazelWilliamWare/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-farmer occupation-ufoWitness2"
+    title="1932-2008, 75 ans, USA, agricultrice, témoin indirect d'ovni"><a
+    href="/people/b/BrazelSchreiberBessie/">Brazel, Schreiber Bessie<img
+    alt="Brazel, Schreiber Bessie" class="portrait" src="/people/b/BrazelSchreiberBessie/portrait.jpg"
+    width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-farmer occupation-ufoWitness2"
+    title="1924-2003, 78 ans, USA, agriculteur, témoin indirect d'ovni"><a
+    href="/people/b/BrazelWilliamJunior/">Brazel, William Junior</a></span></li><li><span
+    class="people-resolved deceased country-us occupation-farmer occupation-ufoWitness2"
+    title="1924-2003, 78 ans, USA, agriculteur, témoin indirect d'ovni"><a
+    href="/people/b/BrazelWilliamRaymond/">Brazel, William Raymond<img alt="Brazel, William Raymond"
+    class="portrait" src="/people/b/BrazelWilliamRaymond/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-farmer occupation-ufoWitness"
+    title="1899-1963, 64 ans, USA, agriculteur, témoin d'ovni"><a
+    href="/people/b/BrazelWilliamWare/">Brazel, William Ware<img alt="Brazel, William Ware"
+    class="portrait" src="/people/b/BrazelWilliamWare/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+    title="USA, pilote, témoin d'ovni"><a
+    href="/people/b/Brigham/">Brigham</a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+    title="France, pilote, témoin d'ovni"><a
+    href="/science/crypto/ufo/enquete/dossier/Tananarive/">Campagnac, Edmond</a></span></li><li><span
+    class="people-resolved country-fr occupation-ufoWitness occupation-mathematician occupation-physicist"
+    title="1973-, 51 ans, France, témoin d'ovni, mathématicien, physicien"><a
+    href="/people/c/CardanFacius/">Cardan, Facius</a></span></li><li><span
+    class="people-resolved country-us occupation-physicist occupation-astronomer occupation-ufoWitness"
+    title="USA, physicien, astronome, témoin d'ovni"><a
+    href="/people/c/CarlockHenry/">Carlock, Henry</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+    title="USA, pilote, témoin d'ovni"><a href="/people/c/CaseyGerry/">Casey, Gerry</a></span>
+  </li><li><span class="people-resolved deceased country-us occupation-ufoWitness occupation-nurse"
+    title="1929-1998, 69 ans, USA, témoin d'ovni, infirmière"><a href="/people/c/CashBetty/">Cash, Betty<img
+    alt="Cash, Betty" class="portrait" src="/people/c/CashBetty/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-it occupation-contactee occupation-teacher"
+    title="1952-, 72 ans, Italie, contacté, enseignant"><a href="/people/c/CavalloMaurizio/">Cavallo, Maurizio<img
+    alt="Cavallo, Maurizio" class="portrait" src="/people/c/CavalloMaurizio/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+      title="France, pilote, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Draguignan/">Cavasse, F.</a></span></li><li><span
+      class="people-resolved country-us occupation-astronomer occupation-ufoWitness"
+      title="USA, astronome, témoin d'ovni"><a
+      href="/people/c/ChapuisJacques/">Chapuis, Jacques</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+      title="USA, pilote, témoin d'ovni"><a href="/people/c/ChaseLewisD/">Chase, Lewis D.</a></span>
+    </li><li><span class="people-resolved country-us occupation-ufoWitness" title="USA, témoin d'ovni"><a
+      href="/people/c/ClarkEverett/">Clark, Everett</a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+      title="France, pilote, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Draguignan/">Clément M.</a></span></li><li><span
+      class="people-resolved country-us occupation-ufoWitness" title="1939-, 85 ans, USA, témoin d'ovni"><a
+      href="/people/c/CliftClifford/">Clift, Clifford</a></span></li><li><span class="people-resolved country-us occupation-military occupation-ufoWitness"
+      title="USA, militaire, témoin d'ovni"><a href="/people/c/ColemanWilliamT/">Coleman, William T.<img
+      alt="Coleman, William T." class="portrait" src="/people/c/ColemanWilliamT/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved country-us occupation-geologist occupation-ufoWitness"
+      title="USA, géologue, témoin d'ovni"><a href="/people/c/CornetBruce/">Cornet, Bruce<img
+      alt="Cornet, Bruce" class="portrait" src="/people/c/CornetBruce/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Cornwell, Bryce<img alt="Cornwell, Bryce" class="portrait"
+      src="/people/k/KirkwoodGuy/portrait.png" width="75"></a></span></li><li><span class="people-resolved pseudonym country-us occupation-ufoWitness"
+      title="(pseudonyme), USA, témoin d'ovni, discrédité"><a href="/people/n/NapolitanoLinda/">Cortile, Linda&nbsp;🤥</a></span>
+    </li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+      title="USA, pilote, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Coyne/">Coyne, Lawrence J.</a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-sailor occupation-ufoWitness"
+      title="1932-1969, 37 ans, Royaume-Uni, marin, témoin d'ovni"><a
+      href="/people/c/CrowhurstDonaldC/">Crowhurst, Donald C.<img alt="Crowhurst, Donald C."
+      class="portrait" src="/people/c/CrowhurstDonaldC/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness" title="1925-2015, 90 ans, USA, témoin d'ovni"><a
+      href="/people/d/DennisGlenn/">Dennis, Glenn<img alt="Dennis, Glenn" class="portrait"
+      src="/people/d/DennisGlenn/portrait.gif" width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-salesman occupation-ufoWitness"
+      title="1916-1990, 73 ans, USA, commercial, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Derenberger/">Derenberger, Woodraw<img
+      alt="Derenberger, Woodraw" class="portrait" src="/science/crypto/ufo/enquete/dossier/Derenberger/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved deceased country-fr occupation-ufoWitness"
+      title="1921-1996, 75 ans, France, témoin d'ovni"><a href="/people/d/DewildeMarius/">Dewilde, Marius</a></span>
+    </li><li><span class="people-resolved country-fr occupation-physician occupation-ufoWitness"
+      title="France, médecin, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/DocteurX/">Docteur X</a></span></li><li><span
+      class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+      href="/people/d/DougherEE/">Dougher, EE</a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+      title="France, pilote, témoin d'ovni"><a href="/people/d/DubocJeanCharles/">Duboc, Jean-Charles<img
+      alt="Duboc, Jean-Charles" class="portrait" src="/people/d/DubocJeanCharles/portrait.gif" width="75"></a></span>
+    </li><li><span class="people-resolved country-us occupation-ufoWitness2" title="USA, témoin indirect d'ovni"><a
+      href="/people/d/DuggerBarbara/">Dugger, Barbara<img alt="Dugger, Barbara"
+      class="portrait" src="/people/d/DuggerBarbara/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-il occupation-ufoWitness"
+      title="-627--570, 57 ans, Israël, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Ezechiel/">Ezechiel</a></span></li><li><span
+      class="people-resolved country-uk occupation-ufoWitness occupation-truckDriver"
+      title="Royaume-Uni, témoin d'ovni, camionneur"><a href="/people/f/FarlowCarl/">Farlow, Carl</a></span>
+    </li><li><span class="people-resolved country-uk occupation-ufoWitness" title="Royaume-Uni, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Flaxton/">Flaxton, John</a></span></li><li><span
+      class="people-resolved country-nz occupation-ufoWitness" title="Nouvelle-Zélande, témoin d'ovni"><a
+      href="/people/f/FogartyQuentin/">Fogarty, Quentin</a></span></li><li><span class="people-resolved country-uk occupation-ufoWitness"
+      title="Royaume-Uni, témoin d'ovni"><a href="/people/f/FoglThad/">Fogl, Thad</a></span></li>
+    <li><span class="people-resolved country-fr occupation-ufoWitness" title="France, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/Cergy/">Fontaine, Frank&nbsp;🤥<img
+      alt="Fontaine, Frank" class="portrait" src="/science/crypto/ufo/enquete/dossier/Cergy/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved country-us occupation-policeman occupation-ufoWitness"
+      title="USA, policier, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Levelland/">Fowler, A. J.</a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-geologist occupation-ufoWitness"
+      title="1916-1981, 64 ans, France, géologue, témoin d'ovni"><a
+      href="/people/f/FregnaleAndre/">Fregnale, Andre<img alt="Fregnale, Andre"
+      class="portrait" src="/people/f/FregnaleAndre/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-contactee occupation-worker"
+      title="1908-1992, 84 ans, USA, contacté, ouvrier"><a href="/people/f/FryDaniel/">Fry, Daniel</a></span>
+    </li><li><span class="people-resolved country-fr occupation-worker occupation-ufoWitness"
+      title="France, ouvrier, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Marcilly/">Gatay, Georges</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-engineer occupation-ufoWitness"
+      title="1903-, USA, ingénieur, témoin d'ovni, discrédité"><a
+      href="/people/g/GebauerLeoA/">Gebauer, Leo A.&nbsp;🤥<img alt="Gebauer, Leo A."
+      class="portrait" src="/people/g/GebauerLeoA/portrait.gif" width="75"></a></span></li><li><span
+      class="people-resolved country-il occupation-illusionist occupation-ufoWitness"
+      title="1946-, 77 ans, Israël, illusionniste, témoin d'ovni, discrédité"><a href="/people/g/GellerUri/">Geller, Uri&nbsp;🤥<img
+      alt="Geller, Uri" class="portrait" src="/people/g/GellerUri/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-it country-mx occupation-contactee occupation-writer"
+      title="1911-1982, 71 ans, Italie, Mexique, contacté, écrivain"><a
+      href="/people/g/GenoveseNarciso/">Genovese, Narciso<img alt="Genovese, Narciso"
+      class="portrait" src="/people/g/GenoveseNarciso/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-ca occupation-contactee occupation-writer"
+      title="Canada, contacté, écrivain"><a href="/people/g/GesnerHarry/">Gesner, Harry</a></span>
+    </li><li><span class="people-resolved country-us occupation-contactee occupation-writer"
+      title="1948-, 76 ans, USA, contactée, écrivaine"><a href="/people/g/GibsonSheila/">Gibson, Sheila</a></span>
+    </li><li><span class="people-resolved deceased country-uk occupation-ufoWitness occupation-policeman"
+      title="1921-2016, 95 ans, Royaume-Uni, témoin d'ovni, policier"><a
+      href="/people/g/GodfreyAlan/">Godfrey, Alan</a></span></li><li><span class="people-resolved country-ve occupation-ufoWitness"
+      title="Venezuela, témoin d'ovni"><a
+      href="/people/g/GonzalezGustavo/">Gonzalez, Gustavo</a></span></li><li><span class="people-resolved country-us occupation-astronomer occupation-ufoWitness"
+      title="USA, astronome, témoin d'ovni"><a href="/people/g/GrahamWGordon/">Graham, WGordon</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-contactee occupation-photographer"
+      title="1924-2001, 76 ans, USA, contacté, photographe"><a
+      href="/people/g/GreenGabriel/">Green, Gabriel<img alt="Green, Gabriel" class="portrait"
+      src="/people/g/GreenGabriel/portrait.gif" width="75"></a></span></li><li><span class="people-resolved country-ar occupation-meteorologist occupation-ufoWitness"
+      title="Argentine, météorologue, témoin d'ovni"><a
+      href="/people/g/GuerciMarcos/">Guerci, Marcos</a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-astronomer occupation-ufoWitness"
+      title="1656-1742, 85 ans, Royaume-Uni, astronome, témoin d'ovni"><a
+      href="/people/h/HalleyEdmund/">Halley, Edmund<img alt="Halley, Edmund" class="portrait"
+      src="/people/h/HalleyEdmund/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-astronomer occupation-ufoWitness"
+      title="1883-1967, 84 ans, USA, astronome, témoin d'ovni"><a
+      href="/people/h/HalsteadFrank/">Halstead, Frank<img alt="Halstead, Frank"
+      class="portrait" src="/people/h/HalsteadFrank/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-us occupation-military occupation-ufoWitness"
+      title="1939-, 85 ans, USA, militaire, témoin d'ovni"><a href="/people/h/HaltCharlesI/">Halt, Charles I.<img
+      alt="Halt, Charles I." class="portrait" src="/people/h/HaltCharlesI/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved country-us occupation-ufologist occupation-ufoWitness2"
+        title="1950-, 74 ans, USA, ufologue, témoin indirect d'ovni"><a
+        href="/people/h/HastingsRobert/">Hastings, Robert<img alt="Hastings, Robert"
+        class="portrait" src="/people/h/HastingsRobert/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-fi occupation-worker occupation-contactee"
+      title="Finlande, ouvrier, contacté"><a href="/people/h/HeinonenAarno/">Heinonen, Aarno</a></span>
+    </li><li><span class="people-resolved country-ca occupation-politician occupation-ufoWitness"
+      title="Canada, politicien, témoin d'ovni"><a href="/people/h/HellyerPaul/">Hellyer, Paul<img
+      alt="Hellyer, Paul" class="portrait" src="/people/h/HellyerPaul/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-de country-uk occupation-astronomer occupation-ufoWitness"
+      title="1738-1822, 83 ans, Allemagne, Royaume-Uni, astronome, témoin d'ovni"><a
+      href="/people/h/HerschelWilliam/">Herschel, William<img alt="Herschel, William"
+      class="portrait" src="/people/h/HerschelWilliam/portrait.gif" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/HigdonCarl/">Higdon, Carl<img
+      alt="Higdon, Carl" class="portrait" src="/science/crypto/ufo/enquete/dossier/HigdonCarl/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-ufoWitness"
+      title="1922-1969, 47 ans, USA, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Hill/">Hill, Barney Jr.</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness" title="1919-2004, 85 ans, USA, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Hill/">Hill, Betty</a></span></li><li><span
+      class="people-resolved country-au occupation-physicist occupation-astronomer occupation-ufoWitness"
+      title="Australie, physicien, astronome, témoin d'ovni"><a
+      href="/people/h/HoggArthurRobert/">Hogg, Arthur Robert</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness occupation-chemist occupation-physician occupation-hypnotherapist"
+      title="1919-2005, 86 ans, USA, témoin d'ovni, chimiste, médecin, hypnothérapeute"><a
+      href="/people/h/HopkinsHerbert/">Hopkins, Herbert</a></span></li><li><span class="people-resolved country-us occupation-contactee occupation-writer"
+      title="USA, contactée, écrivaine"><a href="/people/h/HowardDana/">Howard, Dana<img
+      alt="Howard, Dana" class="portrait" src="/people/h/HowardDana/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-writer occupation-contactee"
+      title="1926-1986, 59 ans, USA, ufologue, écrivain, contacté"><a
+      href="/people/h/HuntWilliamsonGeorge/">Hunt-Williamson, George<img
+      alt="Hunt-Williamson, George" class="portrait" src="/people/h/HuntWilliamsonGeorge/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved country-us occupation-engineer occupation-ufoWitness"
+      title="USA, ingénieur, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/IrwinGerry/">Irwin, Gerry</a></span></li><li><span
+      class="people-resolved country-ir occupation-pilot occupation-ufoWitness" title="Iran, pilote, témoin d'ovni"><a
+      href="/people/j/JafariParviz/">Jafari, Parviz</a></span></li><li><span
+      class="people-resolved pseudonym country-fr occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1961-, 63 ans, France, pilote, contacté"><a
+      href="/people/j/JulienEric/">Jean Ederman<img alt="Jean Ederman" class="portrait"
+      src="/people/j/JulienEric/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved pseudonym country-fr occupation-ufoWitness"
+      title="(pseudonyme), France, témoin d'ovni"><a
+      href="/people/j/JeanNoel/">Jean, M. G.</a></span></li><li><span class="people-resolved country-fr occupation-ufoWitness"
+      title="France, témoin d'ovni"><a href="/people/j/JeanNoel/">Jean, Noël</a></span></li>
+    <li><span class="people-resolved country-br occupation-journalist occupation-ufoWitness"
+      title="Brésil, journaliste, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/BarraDaTijuca/">João Martins&nbsp;🤥</a></span></li><li><span
+      class="people-resolved country-fr occupation-pilot occupation-contactee"
+      title="1961-, 63 ans, France, pilote, contacté"><a href="/people/j/JulienEric/">Julien, Eric<img
+      alt="Julien, Eric" class="portrait" src="/people/j/JulienEric/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness occupation-military"
+      title="1917-2001, 84 ans, USA, témoin d'ovni, militaire, discrédité"><a
+      href="/people/k/KaufmannFrank/">Kaufmann, Frank&nbsp;🤥<img alt="Kaufmann, Frank"
+      class="portrait" src="/people/k/KaufmannFrank/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-br occupation-journalist occupation-photographer occupation-ufoWitness"
+      title="Brésil, journaliste, photographe, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/BarraDaTijuca/">Keffel, Eduardo&nbsp;🤥</a></span></li><li><span
+      class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+      href="/people/k/KillianPeter/">Killian, Peter</a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-contactee occupation-taxiDriver"
+      title="1919-1997, 78 ans, Royaume-Uni, contacté, taxi"><a
+      href="/people/k/KingGeorge/">King, George<img alt="King, George" class="portrait"
+      src="/people/k/KingGeorge/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-contactee"
+      title="1930-, 94 ans, USA, pilote, contacté"><a href="/people/k/KirkwoodGuy/">Kirkwood, Guy<img
+      alt="Kirkwood, Guy" class="portrait" src="/people/k/KirkwoodGuy/portrait.png" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-pilot occupation-ufoWitness"
+      title="1929-2017, 88 ans, France, pilote, témoin d'ovni"><a
+      href="/people/k/KislingJean/">Kisling, Jean<img alt="Kisling, Jean" class="portrait"
+      src="/people/k/KislingJean/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-za occupation-meteorologist occupation-astronomer occupation-ufoWitness"
+      title="Afrique du Sud, météorologue, astronome, témoin d'ovni"><a
+      href="/people/k/KleywegRH/">Kleyweg, RH</a></span></li><li><span
+      class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+      title="1944-, 80 ans, France, pilote, témoin d'ovni"><a href="/people/k/KrineJack/">Krine, Jack<img
+      alt="Krine, Jack" class="portrait" src="/people/k/KrineJack/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-jp occupation-ufoWitness" title="Japon, témoin d'ovni"><a
+      href="/people/k/KudouMasaaki/">Kudou, Masaaki</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness" title="1923-2007, 84 ans, USA, témoin d'ovni"><a
+      href="/people/l/LandrumVickie/">Landrum, Vickie</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-astronomer occupation-ufoWitness"
+      title="1897-1985, 88 ans, USA, astronome, témoin d'ovni"><a
+      href="/people/l/LaPazLincoln/">LaPaz, Lincoln</a></span></li><li><span
+      class="people-resolved pseudonym deceased country-us occupation-writer occupation-contactee"
+      title="(pseudonyme), 1913-1989, 76 ans, USA, écrivain, contacté"><a
+      href="/people/m/MundoLaura/">Laura Marxer</a></span></li><li><span
+      class="people-resolved country-us occupation-engineer occupation-ufoWitness"
+      title="1959-, 65 ans, USA, ingénieur, témoin d'ovni"><a href="/people/l/LazarRobert/">Lazar, Robert<img
+      alt="Lazar, Robert" class="portrait" src="/people/l/LazarRobert/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-fr occupation-ufoWitness" title="France, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Chabeuil/">Lebœuf, Lucette</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-contactee occupation-flightAttendant"
+      title="1926-1962, 36 ans, USA, contactée, stewart"><a
+      href="/people/l/LeeGloria/">Lee, Gloria</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-salesman occupation-contactee"
+      title="USA, pilote, commercial, contacté"><a
+      href="/people/m/MacmillanKen/">Macmillan, Ken</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-physicist occupation-ufoWitness"
+      title="1891-1966, 75 ans, USA, physicien, témoin d'ovni"><a
+      href="/people/m/ManeyCharlesA/">Maney, Charles A.</a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+      title="USA, pilote, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Goshen/">Manning, Robert F.</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+      title="1922-1948, 25 ans, USA, pilote, témoin d'ovni"><a
+      href="/people/m/MantellThomas/">Mantell, Thomas Francis<img alt="Mantell, Thomas Francis"
+      class="portrait" src="/people/m/MantellThomas/portrait.png" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-military occupation-ufoWitness"
+      title="1907-1986, 79 ans, USA, militaire, témoin d'ovni"><a
+      href="/people/m/MarcelJesseA/">Marcel, Jesse A.<img alt="Marcel, Jesse A."
+      class="portrait" src="/people/m/MarcelJesseA/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-military occupation-ufoWitness2"
+      title="1936-2013, 77 ans, USA, militaire, témoin indirect d'ovni"><a
+      href="/people/m/MarcelJesseJunior/">Marcel, Jesse Junior<img alt="Marcel, Jesse Junior"
+      class="portrait" src="/people/m/MarcelJesseJunior/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-be occupation-worker occupation-ufoWitness"
+      title="1970-, 54 ans, Belgique, ouvrier, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/PetitRechain/">Maréchal, Patrick&nbsp;🤥</a></span></li><li><span
+      class="people-resolved pseudonym country-us occupation-contactee occupation-houseWife"
+      title="(pseudonyme), 1950-, 74 ans, USA, contactée, femme au foyer"><a
+      href="/people/m/MartinDorothy/">Marion Keech<img alt="Marion Keech" class="portrait"
+      src="/people/m/MartinDorothy/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-contactee occupation-houseWife"
+      title="1950-, 74 ans, USA, contactée, femme au foyer"><a href="/people/m/MartinDorothy/">Martin, Dorothy<img
+      alt="Martin, Dorothy" class="portrait" src="/people/m/MartinDorothy/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved deceased country-fr occupation-farmer occupation-ufoWitness"
+        title="1923-2004, 81 ans, France, agriculteur, témoin d'ovni"><a
+        href="/science/crypto/ufo/enquete/dossier/Valensole/">Masse, Maurice</a></span></li><li><span
+      class="people-resolved country-ro occupation-ufoWitness occupation-military"
+      title="1934-, 90 ans, Roumanie, témoin d'ovni, militaire"><a
+      href="/science/crypto/ufo/enquete/dossier/Cluj/">Matea, Zamfira</a></span></li><li><span
+      class="people-resolved deceased country-jp occupation-pilot occupation-contactee"
+      title="1929-2000, 71 ans, Japon, pilote, contacté"><a
+      href="/people/m/MatsumuraYusuke/">Matsumura, Yusuke</a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-astronomer occupation-ufoWitness"
+      title="1851-1928, 77 ans, Royaume-Uni, astronome, témoin d'ovni"><a
+      href="/people/m/MaunderEdwardWalter/">Maunder, Edward Walter<img alt="Maunder, Edward Walter"
+      class="portrait" src="/people/m/MaunderEdwardWalter/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness2"
+      title="1922-2008, 86 ans, USA, témoin indirect d'ovni"><a href="/people/m/McGuirePhyllis/">Mc, Guire Phyllis<img
+      alt="Mc, Guire Phyllis" class="portrait" src="/people/m/McGuirePhyllis/portrait.webp" width="75"></a></span></li>
+    <li><span class="people-resolved country-ch occupation-writer occupation-ufoWitness occupation-contactee"
+      title="1937-, 87 ans, Suisse, écrivain, témoin d'ovni, contacté"><a
+      href="/people/m/MeierEduardAlbert/">Meier, Eduard Albert</a></span></li><li><span
+      class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Mel Noel<img alt="Mel Noel" class="portrait"
+      src="/people/k/KirkwoodGuy/portrait.png" width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-writer occupation-contactee"
+      title="1922-2009, 87 ans, USA, écrivain, contacté"><a
+      href="/people/m/MengerHoward/">Menger, Howard<img alt="Menger, Howard" class="portrait"
+      src="/people/m/MengerHoward/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-astronomer occupation-astrophysicist occupation-ufoWitness"
+      title="1901-1976, 75 ans, USA, ufologue, astronome, astrophysicien, témoin d'ovni"><a
+      href="/people/m/MenzelDonaldH/">Menzel, Donald H.<img alt="Menzel, Donald H."
+      class="portrait" src="/people/m/MenzelDonaldH/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-ca occupation-prospector occupation-ufoWitness"
+      title="1916-1999, 83 ans, Canada, prospecteur, témoin d'ovni"><a
+      href="/people/m/MichalakStephen/">Michalak, Stephen</a></span></li><li><span
+      class="people-resolved pseudonym deceased country-us occupation-ufologist occupation-writer occupation-contactee"
+      title="(pseudonyme), 1926-1986, 59 ans, USA, ufologue, écrivain, contacté"><a
+      href="/people/h/HuntWilliamsonGeorge/">Michel d'Obrenovic<img alt="Michel d'Obrenovic"
+      class="portrait" src="/people/h/HuntWilliamsonGeorge/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-writer occupation-contactee"
+      title="1940-1992, 52 ans, France, écrivain, contacté"><a
+      href="/people/m/MigueresJean/">Migueres, Jean<img alt="Migueres, Jean" class="portrait"
+      src="/people/m/MigueresJean/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a href="/people/m/MillerPaul/">Miller, Paul</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-physicist occupation-astronomer occupation-ufoWitness"
+      title="1907-1994, 86 ans, USA, physicien, astronome, témoin d'ovni"><a
+      href="/people/m/MitchellCarl/">Mitchell, Carl</a></span></li><li><span class="people-resolved deceased country-fr occupation-writer occupation-contactee"
+      title="-2009, France, écrivain, contacté"><a
+      href="/people/m/MonnetPierre/">Monnet, Pierre</a></span></li><li><span
+      class="people-resolved deceased country-br occupation-military occupation-ufoWitness"
+      title="1919-1983, 63 ans, Brésil, militaire, témoin d'ovni"><a
+      href="/people/m/MoreiraDaSilvaPauloDeCastro/">Moreira, Da Silva Paulo De Castro<img
+      alt="Moreira, Da Silva Paulo De Castro" class="portrait" src="/people/m/MoreiraDaSilvaPauloDeCastro/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved country-ar occupation-ufoWitness"
+      title="Argentine, témoin d'ovni"><a href="/people/m/MorenoYolieDeValle/">Moreno, Yolie De Valle</a></span>
+    </li><li><span class="people-resolved deceased country-fr occupation-ufoWitness occupation-actor"
+      title="1920-2016, 96 ans, France, témoin d'ovni, actrice"><a
+      href="/people/m/MorganMichele/">Morgan, Michele</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-writer occupation-contactee"
+      title="1913-1989, 76 ans, USA, écrivain, contacté"><a
+      href="/people/m/MundoLaura/">Mundo, Laura</a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni, discrédité"><a href="/people/n/NapolitanoLinda/">Napolitano, Linda&nbsp;🤥</a></span>
+    </li><li><span class="people-resolved country-us occupation-pilot occupation-ufoWitness"
+      title="USA, pilote, témoin d'ovni"><a href="/people/n/NashWilliamB/">Nash, William B.</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-contactee occupation-farmer occupation-writer"
+      title="1895-1982, 86 ans, USA, contacté, agriculteur, écrivain"><a
+      href="/people/n/NelsonBuck/">Nelson, Buck<img alt="Nelson, Buck" class="portrait"
+      src="/people/n/NelsonBuck/portrait.png" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness2 occupation-geologist occupation-artist"
+      title="1887-1972, 84 ans, USA, témoin indirect d'ovni, géologue, artiste, discrédité"><a
+      href="/people/n/NewtonSilasM/">Newton, Silas M.&nbsp;🤥<img alt="Newton, Silas M."
+      class="portrait" src="/people/n/NewtonSilasM/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-fr occupation-worker occupation-ufoWitness"
+      title="1929-, 95 ans, France, ouvrier, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/TransEnProvence/">Nicolaï, Renato</a></span></li><li><span
+      class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Noall<img alt="Noall" class="portrait" src="/people/k/KirkwoodGuy/portrait.png"
+      width="75"></a></span></li><li><span class="people-resolved pseudonym country-us occupation-pilot occupation-contactee"
+      title="(pseudonyme), 1930-, 94 ans, USA, pilote, contacté"><a
+      href="/people/k/KirkwoodGuy/">Noel<img alt="Noel" class="portrait" src="/people/k/KirkwoodGuy/portrait.png"
+      width="75"></a></span></li><li><span class="people-resolved pseudonym country-us occupation-contactee occupation-writer"
+      title="(pseudonyme), 1948-, 76 ans, USA, contactée, écrivaine"><a
+      href="/people/g/GibsonSheila/">Omnec Onec</a></span></li><li><span
+      class="people-resolved pseudonym deceased country-us occupation-contactee occupation-mechanic"
+      title="(pseudonyme), 1916-1980, 64 ans, USA, contacté, mécanicien"><a
+      href="/science/crypto/ufo/enquete/dossier/Villa/">Paul Villa<img
+      alt="Paul Villa" class="portrait" src="/science/crypto/ufo/enquete/dossier/Villa/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-contactee occupation-journalist occupation-writer"
+      title="1890-1965, 75 ans, USA, contacté, journaliste, écrivain"><a
+      href="/people/p/PelleyWilliamDudley/">Pelley, William Dudley</a></span></li><li><span
+      class="people-resolved deceased country-es occupation-ufoWitness occupation-engineer"
+      title="1931-2014, 82 ans, Espagne, témoin d'ovni, ingénieur, discrédité"><a
+      href="/people/p/PenaJoseLuisJordan/">Peña, José Luis Jordán&nbsp;🤥<img
+      alt="Peña, José Luis Jordán" class="portrait" src="/people/p/PenaJoseLuisJordan/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-ufologist occupation-ufoWitness"
+      title="1943-2006, 63 ans, USA, ufologue, témoin d'ovni"><a
+      href="/people/p/PflockKarlT/">Pflock, Karl T.</a></span></li><li><span
+      class="people-resolved country-ru occupation-pilot occupation-astronaut occupation-ufoWitness"
+      title="Russie, pilote, astronaute, témoin d'ovni"><a
+      href="/people/p/PopovitchMarin/">Popovitch, Marin</a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a
+      href="/people/p/ProctorFloyd/">Proctor, Floyd</a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a href="/people/p/ProctorLoretta/">Proctor, Loretta</a></span>
+    </li><li><span class="people-resolved deceased country-pl country-au occupation-astronomer occupation-ufoWitness"
+      title="1913-1985, 72 ans, Pologne, Australie, astronome, témoin d'ovni"><a
+      href="/people/p/PrzybylskiAntoni/">Przybylski, Antoni</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness occupation-engineer"
+      title="1925-1995, 70 ans, USA, témoin d'ovni, ingénieur, discrédité"><a
+      href="/people/r/RagsdaleJamesR/">Ragsdale, James R.&nbsp;🤥<img alt="Ragsdale, James R."
+      class="portrait" src="/people/r/RagsdaleJamesR/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a
+      href="/people/r/RichardsonRobert/">Richardson, Robert</a></span></li><li><span
+      class="people-resolved country-uk occupation-military occupation-ufoWitness"
+      title="Royaume-Uni, militaire, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Bentwaters/">Robbins, Peter</a></span></li><li><span
+      class="people-resolved country-es occupation-contactee occupation-nurse occupation-writer"
+      title="Espagne, contacté, infirmier, écrivain"><a
+      href="/people/s/SanmartinComes/">Sanmartin, Comes<img alt="Sanmartin, Comes"
+      class="portrait" src="/people/s/SanmartinComes/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-us occupation-farmer occupation-ufoWitness"
+      title="USA, agriculteur, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Levelland/">Saucedo, Pedro</a></span></li><li><span
+      class="people-resolved deceased country-es occupation-contactee occupation-telegrapher"
+      title="1908-1982, 74 ans, Espagne, contacté, télégraphiste"><a
+      href="/people/s/SesmaManzanoFernando/">Sesma, Manzano Fernando</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-worker occupation-ufoWitness"
+      title="1907-1975, 68 ans, USA, ouvrier, témoin d'ovni"><a
+      href="/people/s/ShaverRichardSharpe/">Shaver, Richard Sharpe<img alt="Shaver, Richard Sharpe"
+      class="portrait" src="/people/s/ShaverRichardSharpe/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-br occupation-ufoWitness"
+      title="Brésil, témoin d'ovni"><a href="/science/crypto/ufo/enquete/dossier/Varginha/">Silva, Liliane Fatima</a></span>
+    </li><li><span class="people-resolved country-br occupation-ufoWitness" title="Brésil, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Varginha/">Silva, Valquira Silva</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+      title="1929-2022, 93 ans, USA, pilote, témoin d'ovni"><a
+      href="/people/s/SmithEmilJ/">Smith, Emil J.<img alt="Smith, Emil J." class="portrait"
+      src="/people/s/SmithEmilJ/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-fr occupation-contactee occupation-priest"
+      title="1844-1879, 35 ans, France, contactée, prêtresse"><a
+      href="/people/s/SoubirousBernadette/">Soubirous, Bernadette<img alt="Soubirous, Bernadette"
+      class="portrait" src="/people/s/SoubirousBernadette/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-uk occupation-ufoWitness" title="Royaume-Uni, témoin d'ovni"><a
+      href="/people/s/SpencerPhilip/">Spencer, Philip</a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-astronomer occupation-ufoWitness"
+      title="1695-1771, 76 ans, Royaume-Uni, astronome, témoin d'ovni"><a
+      href="/people/s/StaveleyJohn/">Staveley, John</a></span></li><li><span
+      class="people-resolved country-us occupation-ufologist occupation-ufoWitness occupation-writer"
+      title="1945-, 78 ans, USA, ufologue, témoin d'ovni, écrivain"><a
+      href="/people/s/StrieberWhitley/">Strieber, Whitley<img alt="Strieber, Whitley"
+      class="portrait" src="/people/s/StrieberWhitley/portrait.gif" width="75"></a></span></li><li><span
+      class="people-resolved country-uk occupation-ufoWitness occupation-pilot"
+      title="Royaume-Uni, témoin d'ovni, pilote"><a href="/people/s/StuartMark/">Stuart, Mark</a></span>
+    </li><li><span class="people-resolved country-us occupation-contactee occupation-writer"
+      title="USA, contactée, écrivaine"><a href="/people/s/SwanFrances/">Swan, Frances</a></span>
+    </li><li><span class="people-resolved country-fr occupation-ufoWitness" title="France, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Taize/">Tantot, François</a></span></li><li><span
+      class="people-resolved country-ca occupation-mechanic occupation-ufoWitness"
+      title="1948-, 75 ans, Canada, mécanicien, témoin d'ovni"><a href="/people/t/TaylorGranger/">Taylor, Granger</a></span>
+    </li><li><span class="people-resolved deceased country-uk occupation-firefighter occupation-ufoWitness occupation-photographer occupation-historian"
+      title="1920-2011, 91 ans, Royaume-Uni, pompier, témoin d'ovni, photographe, historien"><a
+      href="/science/crypto/ufo/enquete/dossier/Cumberland/">Templeton, James</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-astronomer occupation-ufoWitness"
+      title="1906-1997, 91 ans, USA, astronome, témoin d'ovni"><a
+      href="/people/t/TombaughClydeWilliam/">Tombaugh, Clyde William<img
+      alt="Tombaugh, Clyde William" class="portrait" src="/people/t/TombaughClydeWilliam/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-farmer occupation-ufoWitness"
+      title="1926-1997, 71 ans, USA, agriculteur, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/McMinnville/">Trent, Evelyn Mae Eades&nbsp;🤥</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-farmer occupation-ufoWitness"
+      title="1917-1998, 81 ans, USA, agriculteur, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/McMinnville/">Trent, Paul Arthur&nbsp;🤥</a></span></li><li><span
+      class="people-resolved country-us occupation-contactee occupation-writer" title="USA, contacté, écrivain"><a
+      href="/people/t/TrudelHarold/">Trudel, Harold</a></span></li><li><span
+      class="people-resolved country-us occupation-ufoWitness2" title="1923-, 101 ans, USA, témoin indirect d'ovni"><a
+      href="/people/t/TulkElizabeth/">Tulk, Elizabeth</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufoWitness" title="1941-2021, 79 ans, USA, témoin d'ovni"><a
+      href="/people/u/UryThomas/">Ury, Thomas</a></span></li><li><span class="people-resolved country-cl occupation-military occupation-ufoWitness"
+      title="Chili, militaire, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Valdes/">Valdés Garrido, Armando</a></span></li><li><span
+      class="people-resolved deceased country-au occupation-pilot occupation-ufoWitness"
+      title="1958-1978, 20 ans, Australie, pilote, témoin d'ovni"><a
+      href="/people/v/ValentichFrederik/">Valentich, Frederik</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-contactee occupation-pilot occupation-writer"
+      title="1910-1978, 67 ans, USA, contacté, pilote, écrivain"><a
+      href="/people/v/VanTasselGeorge/">Van, Tassel George</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-contactee occupation-mechanic"
+      title="1916-1980, 64 ans, USA, contacté, mécanicien"><a
+      href="/science/crypto/ufo/enquete/dossier/Villa/">Villa<img
+      alt="Villa" class="portrait" src="/science/crypto/ufo/enquete/dossier/Villa/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved deceased country-br occupation-farmer occupation-ufoWitness"
+      title="1934-1991, 57 ans, Brésil, agriculteur, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/VillasBoas/">Villas Boas, Antônio</a></span></li><li><span
+      class="people-resolved country-br occupation-meteorologist occupation-ufoWitness"
+      title="Brésil, météorologue, témoin d'ovni"><a
+      href="/people/v/VillelaRubensJ/">Villela, Rubens J.</a></span></li><li><span class="people-resolved country-fr occupation-contactee occupation-journalist"
+      title="France, contacté, journaliste"><a href="/people/v/VorilhonClaude/">Vorilhon, Claude</a></span>
+    </li><li><span class="people-resolved country-us occupation-logger occupation-ufoWitness"
+      title="1953-, 71 ans, USA, bucheron, témoin d'ovni, discrédité"><a
+      href="/science/crypto/ufo/enquete/dossier/WaltonTravis/">Walton, Travis&nbsp;🤥</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-astronomer occupation-ufoWitness"
+      title="1896-1960, 63 ans, USA, astronome, témoin d'ovni"><a
+      href="/people/w/WilkinsHughPercy/">Wilkins, Hugh Percy</a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a href="/people/w/WilmotDan/">Wilmot, Dan<img
+      alt="Wilmot, Dan" class="portrait" src="/people/w/WilmotDan/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-ca occupation-astronomer occupation-ufoWitness"
+      title="Canada, astronome, témoin d'ovni"><a href="/people/w/WoolleyJames/">Woolley, James</a></span>
+    </li><li><span class="people-resolved country-br occupation-ufoWitness" title="Brésil, témoin d'ovni"><a
+      href="/science/crypto/ufo/enquete/dossier/Varginha/">Xavier, Katia Andrade</a></span></li><li><span
+      class="people-resolved country-us occupation-policeman occupation-ufoWitness"
+      title="USA, policier, témoin d'ovni"><a href="/people/z/ZamoraLonnie/">Zamora, Dionicio<img
+      alt="Zamora, Dionicio" class="portrait" src="/people/z/ZamoraLonnie/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved pseudonym country-us occupation-policeman occupation-ufoWitness"
+        title="(pseudonyme), USA, policier, témoin d'ovni"><a
+        href="/people/z/ZamoraLonnie/">Zamora, Lonnie<img alt="Zamora, Lonnie" class="portrait"
+        src="/people/z/ZamoraLonnie/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-cn occupation-astronomer occupation-ufoWitness"
+      title="Chine, astronome, témoin d'ovni"><a
+      href="/people/z/ZhoushengZhang/">Zhousheng, Zhang</a></span></li></ul>
+  <script async src="/people/index.js" type="module"></script>
+
+  <script async src="../index.js" type="text/javascript"></script>
 <table class="right">
   <caption>Exemples de témoins dans des affaires d'ovnis</caption>
   <tbody>
@@ -144,4 +919,24 @@ entendu)</span>.
 </section>
 <span class="source"><a href="https://faculty.washington.edu/eloftus/">Loftus, Elizabeth F.</a>: Sur la fragilité du témoignage</span>
 <span class="source">Méheust, Bertrand: <i>Science-fiction et soucoupes volantes</i>, 1978</span>
-<!--#include virtual="/footer.html" -->
+</div>
+<footer>
+  <div class="full-page" id="footerTable">
+    <div class="footer">
+      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
+      Copyright <span class="copyright"><!--#echo var="copyright" --></span> - <a href="/Contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<aside class="map">
+  <h1>Map</h1>
+  <div id="map-canvas">
+    <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
+  </div>
+</aside>
+
+<script>
+  if (window !== top) document.querySelectorAll('.full-page').forEach(elem => elem.style.display = 'none')
+</script>
+</body>
+</html>

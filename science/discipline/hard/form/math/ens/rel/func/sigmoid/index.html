@@ -84,7 +84,7 @@ td:nth-child(3) div {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  Gompertz.create('functiongraph', bookMeta, [function (x) {
+  Gompertz.create(bookMeta, [function (x) {
     var a = 1
     var b = 1
     var c = 1
@@ -94,14 +94,14 @@ td:nth-child(3) div {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  tanh.create('functiongraph', bookMeta, [function (x) {
+  tanh.create(bookMeta, [function (x) {
     return (Math.exp(x) - Math.exp(-x)) / (Math.exp(x) + Math.exp(-x))
   }, -i, i]);
   var logistic = JXG.JSXGraph.initBoard('logistic', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  logistic.create('functiongraph', bookMeta, [function (x) {
+  logistic.create(bookMeta, [function (x) {
     return 1 / (1 + Math.exp(-x))
   }, -7, 7]);
 </script>

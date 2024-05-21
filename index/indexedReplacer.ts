@@ -21,7 +21,7 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
         dateTime = (item.querySelector("time") as HTMLTimeElement)?.dateTime
       }
       const id = idOrValue || dateTime || String(i + 1)
-      const anchorEl = context.outputFile.document.createElement("span")
+      const anchorEl = context.file.document.createElement("span")
       anchorEl.id = id
       item.removeAttribute("id")
       if (!dateTime) {
@@ -29,7 +29,7 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
       }
       anchorEl.classList.add("index-anchor", "anchor")
       item.prepend(anchorEl)
-      item.setAttribute("onclick", `window.location.hash='${id}'`)
+      item.setAttribute("onclick", `window.location.hash='${id};event.preventDefault();event.stopPropagation()'`)
     }
   }
 }

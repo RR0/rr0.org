@@ -1,24 +1,49 @@
 import { SsgFile } from "ssg-api"
-import { RR0FileUtil } from "./util/file/RR0FileUtil"
 import { RR0SsgContext } from "./RR0SsgContext"
 import { RR0Data } from "./RR0Data"
 import { sync as glob } from "glob-promise"
+import path from "path"
+
+export interface DataFactory<T extends RR0Data> {
+
+  readonly type: string
+  readonly fileNames: string[]
+
+  create(file: SsgFile): T | undefined
+}
+
+export class DefaultDataFactory<T extends RR0Data> implements DataFactory<T> {
+  constructor(readonly type: string, readonly fileNames: string[] = [type]) {
+  }
+
+  create(file: SsgFile): T | undefined {
+    const data = JSON.parse(file.contents)
+    const basename = path.basename(file.name)
+    let t: T | undefined
+    if (data.type === this.type || this.fileNames.reduce(
+      (hasIt: boolean, fileName) => basename.startsWith(fileName) ? true : hasIt,
+      false)) {
+      t = Object.assign({dirName: path.dirname(file.name), title: "", time: ""}, data)
+    }
+    return t
+  }
+}
 
 export class DataService {
 
   protected readonly pathToData = new Map<string, RR0Data[]>()
 
-  constructor(readonly dirs: string[], protected fileNames: string[]) {
+  constructor(readonly factories: DataFactory<RR0Data>[]) {
   }
 
   static async create<T>(name: string): Promise<DataService> {
-    const fileName = name + ".json"
-    const dirs = RR0FileUtil.findDirectoriesContaining(fileName)
-    return new DataService(dirs, [fileName])
+    return new DataService([new DefaultDataFactory<T>(name)])
   }
 
   async get<T extends RR0Data = RR0Data>(context: RR0SsgContext, dirName: string, types: string[],
-                                         fileNames: string[] = this.fileNames): Promise<T[]> {
+                                         fileNames: string[] = this.factories.reduce((allFileNames,
+                                                                                      factory) => factory.fileNames.concat(
+                                           allFileNames), [])): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
     if (dataList === undefined) {
@@ -28,17 +53,23 @@ export class DataService {
     return dataList.filter(data => types.includes(data.type)) as T[]
   }
 
-  protected async read(context: RR0SsgContext, dirName: string,
-                       fileNames: string[] = this.fileNames): Promise<RR0Data[]> {
+  protected async read(context: RR0SsgContext, dirName: string, fileNames: string[]): Promise<RR0Data[]> {
     const dataList: RR0Data[] = []
     const p = dirName + "/*(" + fileNames.join("|") + ")"
     const files = glob(p)
     for (const file of files) {
       try {
-        const jsonFileInfo = SsgFile.read(context, file)
-        const data: RR0Data = {dirName, time: "", title: ""}
-        Object.assign(data, JSON.parse(jsonFileInfo.contents))
-        dataList.push(data)
+        const dataFile = SsgFile.read(context, file)
+        let data: RR0Data
+        for (let i = 0; !data && i < this.factories.length; i++) {
+          const factory = this.factories[i]
+          data = factory.create(dataFile)
+        }
+        if (data) {
+          dataList.push(data)
+        } else {
+          throw new Error("No factory to handle " + dataFile)
+        }
       } catch (e) {
         console.warn(`${dirName} has no ${fileNames} description`)
       }

@@ -55,7 +55,7 @@
     boundingbox: [-7, 1.25, 7, -0.25], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
-  b.create('functiongraph', bookMeta, [function (x) {
+  b.create(bookMeta, [function (x) {
     return 1 / (1 + Math.exp(-x))
   }, -7, 7]);
 </script>

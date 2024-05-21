@@ -23,6 +23,7 @@ import { india_en } from "./in/India_en"
 import { algeria_en } from "./dz/Algeria_en"
 import { panama_en } from "./pa/Panama_en"
 import { taiwan_en } from "./tw/Taiwan_en"
+import { tunisia_en } from "./tn/Tunisia_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -68,6 +69,7 @@ export const countryMessageList_en: CountryMessagesList = {
   sa: CountryMessages.create("Saudi Arabia"),
   sc: seychelles_en,
   se: CountryMessages.create("Sweden"),
+  tn: tunisia_en,
   tr: CountryMessages.create("Turkey"),
   tw: taiwan_en,
   ua: CountryMessages.create("Ukraine"),

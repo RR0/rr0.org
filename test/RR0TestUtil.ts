@@ -15,14 +15,14 @@ class RR0TestUtil {
   }
 
   newContext(inputFileName: string, contents?: string): RR0SsgContext {
-    const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions))
+    const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), {outDir: "out"})
     if (contents !== undefined && contents != null) {
       const langInfo = SsgFile.getLang(context, inputFileName)
-      context.inputFile = new SsgFile(inputFileName, "utf8", contents, new Date(), langInfo)
+      context.file = new SsgFile(inputFileName, "utf8", contents, new Date(), langInfo)
     } else {
-      context.inputFile = SsgFile.read(context, inputFileName)
+      context.file = SsgFile.read(context, inputFileName)
     }
-    context.outputFile = context.inputFile  // By default
+    context.file = context.file  // By default
     return context
   }
 
@@ -30,10 +30,9 @@ class RR0TestUtil {
     const context = this.newContext(inputFileName, contents)
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : undefined
-    const currentFile = context.inputFile
-    context.inputFile = new HtmlSsgFile(currentFile.name, currentFile.encoding, currentFile.contents,
+    const currentFile = context.file
+    context.file = new HtmlSsgFile(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
-    context.outputFile = context.inputFile  // By default
     const htmlContext = context as HtmlRR0SsgContext
     Object.assign(htmlContext.time, TimeContext.fromFileName(htmlContext, inputFileName))
     return htmlContext

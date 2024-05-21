@@ -2,7 +2,7 @@ import {RegexReplacer, SsiEchoVarReplaceCommand, StringContextHandler} from "ssg
 import {HtmlRR0SsgContext} from "../RR0SsgContext"
 
 /**
- * Replaces "<!--#echo var="title" -->" by the page's <title> content,
+ * Replaces the SSI expression "<!--#echo var="title" -->" by the page's <title> content,
  * with a link if there's a <meta name="url"> content.
  */
 export class SsiTitleReplaceCommand extends SsiEchoVarReplaceCommand {
@@ -14,7 +14,7 @@ export class SsiTitleReplaceCommand extends SsiEchoVarReplaceCommand {
   protected async createReplacer(context: HtmlRR0SsgContext): Promise<RegexReplacer> {
     return {
       replace: (_match: string, ..._args: any[]): string => {
-        const inputFile = context.inputFile
+        const inputFile = context.file
         let title = inputFile.title
         if (!title) {
           this.defaultHandlers.some(handle => !title && (title = handle(context)))

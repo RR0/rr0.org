@@ -8,7 +8,7 @@ export class CodeReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
   async replacement(context: HtmlRR0SsgContext, codeElement: HTMLElement): Promise<HTMLElement> {
     if (codeElement) {
-      const output = context.outputFile.document.createElement('code');
+      const output = context.file.document.createElement("code")
       const innerHTML = codeElement.innerHTML;
       const lines = innerHTML.split('\n');
       this.trimEnd(lines);

@@ -11,7 +11,7 @@ export class EventReplacer<D extends RR0Data> {
   }
 
   async replacement(context: HtmlRR0SsgContext, original: HTMLElement): Promise<HTMLElement> {
-    const outputDoc = context.outputFile.document
+    const outputDoc = context.file.document
     const replacement = outputDoc.createElement("span")
     const href = (original as HTMLAnchorElement).href || original.dataset.href
     await this.sourceFromFile(context, replacement, href)

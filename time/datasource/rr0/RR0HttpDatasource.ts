@@ -41,7 +41,7 @@ export class RR0HttpDatasource extends RR0Datasource {
 
   getFromRow(context: HtmlRR0SsgContext, r: Element): RR0CaseSummary {
     const row = r.cloneNode(true) as Element
-    const caseLink = context.inputFile.name
+    const caseLink = context.file.name
     const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
     const itemContext = context.clone()
@@ -112,7 +112,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       const parent = undefined  // TODO: Find region from placeParsed[2]
       org = this.cityService.find(context, placeParsed[1], parent)
       if (org) {
-        name = org.messages(context).toTitle(context, org, {parent: true})
+        name = org.getMessages(context).toTitle(context, org, {parent: true})
         place = org.places[0]
       } else {
         context.debug(`Could not find place named "${placeParsed[1]}"`)

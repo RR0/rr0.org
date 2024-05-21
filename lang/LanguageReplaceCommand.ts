@@ -11,11 +11,11 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
   }
 
   protected async createReplacer(context: HtmlRR0SsgContext): Promise<DomReplacer> {
-    const doc = context.outputFile.document
+    const doc = context.file.document
     return new class implements DomReplacer {
       async replace(original: HTMLElement): Promise<HTMLElement> {
         if (!original.hasChildNodes()) {
-          const inputFile = context.inputFile
+          const inputFile = context.file
           const langInfo = inputFile.lang
           const variants = langInfo.variants
           const foundLang = langInfo.lang
@@ -23,7 +23,7 @@ export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlR
             foundLang ? foundLang : "fr" : variants.includes("fr") ?
               foundLang ? foundLang : "en"
               : "fr"
-          context.outputFile.document.documentElement.lang = inputFile.lang.lang = pageLang
+          context.file.document.documentElement.lang = inputFile.lang.lang = pageLang
           const langVariants = variants.length == 1 && variants[0] == "" ? [pageLang == "fr" ? "en" : "fr"] : variants
           const fileName = inputFile.name
           for (let i = 0; i < langVariants.length; i++) {

@@ -60,7 +60,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase1Time.getYear(), nativeCase1Time.getMonth(),
           nativeCase1Time.getDayOfMonth(), nativeCase1Time.getHour(), nativeCase1Time.getMinutes(),
           nativeCase1Time.getTimeZone()),
-        place: {name: slocomb.messages(context).title, place: slocomb.places[0]},
+        place: {name: slocomb.getMessages(context).title, place: slocomb.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase1),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase1.id)]
       },
@@ -68,7 +68,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase2Time.getYear(), nativeCase2Time.getMonth(),
           nativeCase2Time.getDayOfMonth(), nativeCase2Time.getHour(), nativeCase2Time.getMinutes(),
           nativeCase2Time.getTimeZone()),
-        place: {name: castlegar.messages(context).title, place: castlegar.places[0]},
+        place: {name: castlegar.getMessages(context).title, place: castlegar.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase2),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase2.id)]
       },
@@ -76,7 +76,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase3Time.getYear(), nativeCase3Time.getMonth(),
           nativeCase3Time.getDayOfMonth(), nativeCase3Time.getHour(), nativeCase3Time.getMinutes(),
           nativeCase3Time.getTimeZone()),
-        place: {name: fortWorth.messages(context).title, place: fortWorth.places[0]},
+        place: {name: fortWorth.getMessages(context).title, place: fortWorth.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase3),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase3.id)]
       },
@@ -84,7 +84,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase4Time.getYear(), nativeCase4Time.getMonth(),
           nativeCase4Time.getDayOfMonth(), nativeCase4Time.getHour(), nativeCase4Time.getMinutes(),
           nativeCase4Time.getTimeZone()),
-        place: {name: campPendleton.messages(context).title, place: campPendleton.places[0]},
+        place: {name: campPendleton.getMessages(context).title, place: campPendleton.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase4),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase4.id)]
       },
@@ -92,7 +92,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase5Time.getYear(), nativeCase5Time.getMonth(),
           nativeCase5Time.getDayOfMonth(), nativeCase5Time.getHour(), nativeCase5Time.getMinutes(),
           nativeCase5Time.getTimeZone()),
-        place: {name: stPetersburg.messages(context).title, place: stPetersburg.places[0]},
+        place: {name: stPetersburg.getMessages(context).title, place: stPetersburg.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase5),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase5.id)]
       },
@@ -100,7 +100,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase6Time.getYear(), nativeCase6Time.getMonth(),
           nativeCase6Time.getDayOfMonth(), nativeCase6Time.getHour(), nativeCase6Time.getMinutes(),
           nativeCase6Time.getTimeZone()),
-        place: {name: monessen.messages(context).title, place: monessen.places[0]},
+        place: {name: monessen.getMessages(context).title, place: monessen.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase6),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase6.id)]
       },
@@ -108,7 +108,7 @@ describe("NuforcRR0Mapper", () => {
         time: new TimeContext(context.time.options, nativeCase7Time.getYear(), nativeCase7Time.getMonth(),
           nativeCase7Time.getDayOfMonth(), nativeCase7Time.getHour(), nativeCase7Time.getMinutes(),
           nativeCase7Time.getTimeZone()),
-        place: {name: bonneyLake.messages(context).title, place: bonneyLake.places[0]},
+        place: {name: bonneyLake.getMessages(context).title, place: bonneyLake.places[0]},
         description: nuforcRR0Mapper.getDescription(nativeCase7),
         sources: [expectedSource(nuforcDatasource, dataDate, nativeCase7.id)]
       }

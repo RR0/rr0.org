@@ -24,7 +24,8 @@ export class BookService {
 
   protected peopleList: People[] = []
 
-  constructor(readonly logger: Logger, protected dry: boolean, protected peopleService: PeopleService) {
+  constructor(readonly logger: Logger, protected dry: boolean, protected peopleService: PeopleService,
+              protected outDir: string) {
   }
 
   async import(fileName: string) {
@@ -59,7 +60,7 @@ export class BookService {
         const authorLastFirst = result[COLUMN_AUTHOR_LAST_FIRST]
         const authorsNames = author ? author.split(",") : [authorLastFirst]
         const authors: KnownPeople[] = []
-        const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions))
+        const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), this.outDir)
         for (const authorName of authorsNames) {
           const authorFound = await this.findPeople(context, authorName)
           if (authorFound) {
@@ -71,7 +72,7 @@ export class BookService {
         const dirName = (authorsLastNames.length > 0 ? authorsLastNames : authorsNames.map(StringUtil.textToCamel))
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(title.toLowerCase()))
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
-        const parentDir = TimeUrlBuilder.fromTimeContext(time)
+        const parentDir = TimeUrlBuilder.fromContext(time)
         const bookDir = path.join(parentDir, dirName)
         const book: Book = {
           title,

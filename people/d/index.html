@@ -1,7 +1,273 @@
-<!--#include virtual="/header-start.html" -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <base/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <link href="/manifest.json" rel="manifest">
+  <link href="/opensearch.xml" rel="search" title="RR0" type="application/opensearchdescription+xml"/>
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag () {
+      dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+    gtag('config', 'G-CMV7R92GK1')
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
+    j.async = true
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'dataLayer', 'GTM-NBPKWNM')</script>
+  <!-- End Google Tag Manager -->
+
 <title>Personnes au nom commençant par "D"</title>
 <link href="../index.css" rel="stylesheet"/>
-<!--#include virtual="/header-end.html" -->
-<!--#include virtual="../form.html" -->
-<script async src="../index.js" type="text/javascript"></script>
-<!--#include virtual="/footer.html" -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
+    style="display:none;visibility:hidden" title="GTM"
+    width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="main-header">
+  <h1 class="full-page"><!--#echo var="title" --></h1>
+</header>
+<nav id="main-nav">
+  <h1>Navigation</h1>
+  <ul>
+    <li class="full-page">
+      <a class="home" href="/" title="Home">RR0</a>
+    </li>
+    <li class="search full-page">
+      <input disabled id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
+      <datalist id="search-site-values">
+      </datalist>
+    </li>
+    <li id="summary">
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
+      <ul class="outline">
+      </ul>
+    </li>
+    <li>
+      <span id="alternate"></span>
+    </li>
+    <li class="map-toggle">
+      <button class="toggle">Carte</button>
+    </li>
+  </ul>
+  <script async src="/search/index.js" type="text/javascript"></script>
+</nav>
+<script>
+  const summary = document.getElementById('out-top')
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : 'Sommaire'
+  }, { threshold: [0, 0.3, 1] })
+  observer.observe(document.querySelector('#main-header'))
+  var currentAddress
+  var mapEl
+  var currentPlaceEl
+
+  function showMap (event, address, display = true) {
+    event.stopPropagation()
+    document.body.classList.toggle('with-map', display)
+    if (!address) {
+      address = currentPlaceEl?.textContent
+    }
+    if (address !== currentAddress) {
+      currentAddress = address
+      mapEl.querySelector('iframe').src =
+        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
+    }
+  }
+
+  const mapToggle = document.querySelector('.map-toggle .toggle')
+  document.addEventListener('DOMContentLoaded', () => {
+    mapEl = document.querySelector('#map-canvas')
+    currentPlaceEl = document.querySelector('.plac')
+    if (currentPlaceEl) {
+      mapToggle.style.display = 'inline-block'
+    }
+  })
+
+  function hasMap () {
+    return document.body.classList.contains('with-map')
+  }
+
+  mapToggle.addEventListener('click', (event) => {
+    showMap(event, currentAddress, !hasMap())
+  })
+  document.body.addEventListener('click', (event) => {
+    if (hasMap()) {
+      showMap(event, currentAddress, false)
+    }
+  })
+
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
+<div class="metadata">
+  <!--#echo var="author" -->
+</div>
+<div class="contents">
+
+  <form id="searchForm">
+    <label style="white-space: normal">Nom <input autofocus oninput="findPeople(event)" style="margin-left: 1em"
+      type="search"></label>
+    <details>
+      <summary>Pays</summary>
+      <div id="countries"><span class="option"><label><input id="country-ca" onchange="findPeople(event)"
+        type="checkbox"> Canada</label></span><span class="option"><label><input id="country-es"
+        onchange="findPeople(event)" type="checkbox"> Espagne</label></span><span class="option"><label><input
+        id="country-fr" onchange="findPeople(event)" type="checkbox"> France</label></span><span
+        class="option"><label><input id="country-uk" onchange="findPeople(event)"
+        type="checkbox"> Royaume-Uni</label></span><span class="option"><label><input id="country-us"
+        onchange="findPeople(event)" type="checkbox"> USA</label></span></div>
+    </details>
+    <details>
+      <summary>Profession</summary>
+      <div id="occupations"><span class="option"><label><input id="occupation-astronomer" onchange="findPeople(event)"
+        type="checkbox"> Astronome</label></span><span class="option"><label><input id="occupation-biochemist"
+        onchange="findPeople(event)" type="checkbox"> Biochimiste</label></span><span
+        class="option"><label><input id="occupation-biologist" onchange="findPeople(event)" type="checkbox"> Biologiste</label></span><span
+        class="option"><label><input id="occupation-chemist" onchange="findPeople(event)"
+        type="checkbox"> Chimiste</label></span><span class="option"><label><input id="occupation-engineer"
+        onchange="findPeople(event)" type="checkbox"> Ingénieur</label></span><span
+        class="option"><label><input id="occupation-historian" onchange="findPeople(event)"
+        type="checkbox"> Historien</label></span><span class="option"><label><input id="occupation-journalist"
+        onchange="findPeople(event)" type="checkbox"> Journaliste</label></span><span
+        class="option"><label><input id="occupation-mathematician" onchange="findPeople(event)" type="checkbox"> Mathématicien</label></span><span
+        class="option"><label><input id="occupation-military" onchange="findPeople(event)"
+        type="checkbox"> Militaire</label></span><span class="option"><label><input id="occupation-philosopher"
+        onchange="findPeople(event)" type="checkbox"> Philosophe</label></span><span
+        class="option"><label><input id="occupation-physicist" onchange="findPeople(event)"
+        type="checkbox"> Physicien</label></span><span class="option"><label><input id="occupation-pilot"
+        onchange="findPeople(event)" type="checkbox"> Pilote</label></span><span class="option"><label><input
+        id="occupation-softwareEngineer" onchange="findPeople(event)" type="checkbox"> Informaticien</label></span><span
+        class="option"><label><input id="occupation-teacher" onchange="findPeople(event)"
+        type="checkbox"> Enseignant</label></span><span class="option"><label><input id="occupation-ufoWitness"
+        onchange="findPeople(event)" type="checkbox"> Témoin d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufoWitness2" onchange="findPeople(event)" type="checkbox"> Témoin indirect d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufologist" onchange="findPeople(event)"
+        type="checkbox"> Ufologue</label></span><span class="option"><label><input id="occupation-writer"
+        onchange="findPeople(event)" type="checkbox"> Écrivain</label></span></div>
+    </details>
+    <output></output>
+  </form>
+  <ul class="links"><li><span class="people-resolved country-fr occupation-physicist occupation-engineer"
+    title="1948-, 76 ans, France, physicien, ingénieur"><a href="/people/d/DEscathaYannick/">D'Escatha, Yannick<img
+    alt="D'Escatha, Yannick" class="portrait" src="/people/d/DEscathaYannick/portrait.png" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-es occupation-ufologist"
+      title="1931-2018, 87 ans, Espagne, ufologue"><a href="/people/d/DardaudeIgnacio/">Dardaude, Ignacio<img
+      alt="Dardaude, Ignacio" class="portrait" src="/people/d/DardaudeIgnacio/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-es occupation-ufologist occupation-biologist occupation-biochemist"
+      title="1948-2018, 70 ans, Espagne, ufologue, biologiste, biochimiste"><a
+      href="/people/d/DavenportPeter/">Davenport, Peter</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-chemist"
+      title="1922-2007, 84 ans, USA, ufologue, chimiste"><a
+      href="/people/d/DavidsonLeon/">Davidson, Leon</a></span></li><li><span class="people-resolved deceased country-us occupation-ufologist"
+      title="1904-1984, 80 ans, USA, ufologue"><a href="/people/d/DavisIsabelL/">Davis, Isabel L.<img
+      alt="Davis, Isabel L." class="portrait" src="/people/d/DavisIsabelL/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved deceased country-fr occupation-astronomer"
+        title="-310--230, 80 ans, France, astronome"><a href="/people/d/DeSamosAristarque/">De Samos, Artistarque</a></span>
+    </li><li><span class="people-resolved country-fr occupation-writer occupation-journalist"
+      title="France, écrivaine, journaliste"><a
+      href="/people/d/DeBrossesMarieTherese/">De, Brosses Marie Therese</a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-writer" title="1948-2022, 74 ans, France, écrivain"><a
+      href="/people/d/DePlaigeDidier/">De, Plaige Didier</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-military"
+      title="1929-2018, 89 ans, USA, ufologue, militaire"><a
+      href="/people/d/DeanRobertO/">Dean, Robert O.</a></span></li><li><span
+      class="people-resolved country-fr occupation-ufologist occupation-teacher"
+      title="1940-, 84 ans, France, ufologue, enseignant"><a href="/people/d/DeforgeGerard/">Deforge, Gerard</a></span>
+    </li><li><span class="people-resolved country-fr occupation-ufologist occupation-teacher"
+      title="1973-, 51 ans, France, ufologue, enseignant"><a href="/people/d/DeliyannisYannis/">Deliyannis, Yannis<img
+      alt="Deliyannis, Yannis" class="portrait" src="/people/d/DeliyannisYannis/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-ufoWitness"
+      title="1925-2015, 90 ans, USA, témoin d'ovni"><a
+      href="/people/d/DennisGlenn/">Dennis, Glenn<img alt="Dennis, Glenn" class="portrait"
+      src="/people/d/DennisGlenn/portrait.gif" width="75"></a></span></li><li><span class="people-resolved deceased country-fr occupation-mathematician"
+      title="1596-1650, 53 ans, France, mathématicien"><a href="/people/d/DescartesRene/">Descartes, Rene</a></span>
+    </li><li><span class="people-resolved deceased country-fr occupation-ufoWitness"
+      title="1921-1996, 75 ans, France, témoin d'ovni"><a href="/people/d/DewildeMarius/">Dewilde, Marius</a></span>
+    </li><li><span class="people-resolved occupation-softwareEngineer" title="Informaticien"><a
+      href="/people/d/DijkstraEdsgerW/">Dijkstra, Edsger W.<img alt="Dijkstra, Edsger W."
+      class="portrait" src="/people/d/DijkstraEdsgerW/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-uk occupation-ufologist"
+      title="Royaume-Uni, ufologue"><a href="/people/d/DoddTony/">Dodd, Tony</a></span></li>
+    <li><span class="people-resolved country-us occupation-ufologist occupation-historian"
+      title="1962-, 61 ans, USA, ufologue, historien"><a href="/people/d/DolanRichard/">Dolan, Richard<img
+      alt="Dolan, Richard" class="portrait" src="/people/d/DolanRichard/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved deceased country-us occupation-military" title="1896-1993, 96 ans, USA, militaire"><a
+        href="/people/d/DoolittleJamesH/">Doolittle, James H.<img alt="Doolittle, James H."
+        class="portrait" src="/people/d/DoolittleJamesH/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-us occupation-pilot occupation-ufoWitness" title="USA, pilote, témoin d'ovni"><a
+      href="/people/d/DougherEE/">Dougher, EE</a></span></li><li><span class="people-resolved deceased country-us occupation-astronomer"
+      title="1930-2022, 92 ans, USA, astronome"><a href="/people/d/DrakeFrank/">Drake, Frank<img
+      alt="Drake, Frank" class="portrait" src="/people/d/DrakeFrank/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-ufologist" title="1913-1989, 76 ans, Royaume-Uni, ufologue"><a
+      href="/people/d/DrakeWalterRaymond/">Drake, Walter Raymond</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist" title="1926-2020, 93 ans, USA, ufologue"><a
+      href="/people/d/DruffelAnn/">Druffel, Ann<img alt="Druffel, Ann" class="portrait"
+      src="/people/d/DruffelAnn/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-engineer occupation-philosopher"
+      title="1898-1965, 67 ans, USA, ingénieur, philosophe"><a
+      href="/people/d/DrydenHughL/">Dryden, Hugh L.<img alt="Dryden, Hugh L." class="portrait"
+      src="/people/d/DrydenHughL/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-fr occupation-pilot occupation-ufoWitness"
+      title="France, pilote, témoin d'ovni"><a href="/people/d/DubocJeanCharles/">Duboc, Jean-Charles<img
+      alt="Duboc, Jean-Charles" class="portrait" src="/people/d/DubocJeanCharles/portrait.gif" width="75"></a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-military"
+      title="1902-1992, 90 ans, USA, militaire"><a href="/people/d/DuboseThomasJefferson/">Dubose, Thomas Jefferson<img
+      alt="Dubose, Thomas Jefferson" class="portrait" src="/people/d/DuboseThomasJefferson/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved country-us occupation-ufoWitness2" title="USA, témoin indirect d'ovni"><a
+      href="/people/d/DuggerBarbara/">Dugger, Barbara<img alt="Dugger, Barbara"
+      class="portrait" src="/people/d/DuggerBarbara/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-fr occupation-ufologist" title="1954-, 70 ans, France, ufologue"><a
+      href="/people/d/DumerchatFrederic/">Dumerchat, Frederic</a></span></li><li><span class="people-resolved country-ca occupation-ufologist"
+      title="Canada, ufologue"><a
+      href="/people/d/DumontJacques/">Dumont, Jacques</a></span></li><li><span class="people-resolved country-fr occupation-ufologist"
+      title="1955-, 69 ans, France, ufologue"><a href="/people/d/DurandGilles/">Durand, Gilles<img
+      alt="Durand, Gilles" class="portrait" src="/people/d/DurandGilles/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved deceased country-us occupation-physicist"
+        title="1923-2020, 96 ans, USA, physicien"><a href="/people/d/DysonFreemanJohn/">Dyson, Freeman John<img
+        alt="Dyson, Freeman John" class="portrait" src="/people/d/DysonFreemanJohn/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved country-us occupation-pilot" title="USA, pilote"><a
+      href="/people/d/RobertDurant/">Robert, Durant<img alt="Robert, Durant" class="portrait"
+      src="/people/d/RobertDurant/portrait.jpg" width="75"></a></span></li></ul>
+  <script async src="/people/index.js" type="module"></script>
+
+  <script async src="../index.js" type="text/javascript"></script>
+</div>
+<footer>
+  <div class="full-page" id="footerTable">
+    <div class="footer">
+      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
+      Copyright <span class="copyright"><!--#echo var="copyright" --></span> - <a href="/Contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<aside class="map">
+  <h1>Map</h1>
+  <div id="map-canvas">
+    <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
+  </div>
+</aside>
+
+<script>
+  if (window !== top) document.querySelectorAll('.full-page').forEach(elem => elem.style.display = 'none')
+</script>
+</body>
+</html>

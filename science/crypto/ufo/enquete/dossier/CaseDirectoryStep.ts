@@ -5,18 +5,22 @@ import { StringUtil } from "../../../../../util/string/StringUtil"
 import { Time } from "../../../../../time/Time"
 import { RR0Case } from "./RR0Case"
 import { DataService } from "../../../../../DataService"
+import { TimeContext } from "../../../../../time/TimeContext"
+import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
 
 export class CaseDirectoryStep extends DirectoryStep {
 
-  constructor(protected caseService: DataService, excludedDirs: string[], templateFileName: string,
+  constructor(protected caseService: DataService, rootDirs: string[], excludedDirs: string[], templateFileName: string,
               protected outputFunc: OutputFunc, config: SsgConfig) {
-    super(caseService.dirs, excludedDirs, templateFileName, config, "case directory")
+    super({rootDirs, excludedDirs, templateFileName, getOutputPath: config.getOutputPath}, "case directory")
   }
 
   static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: DataService): Promise<CaseDirectoryStep> {
-    return new CaseDirectoryStep(caseService, ["science/crypto/ufo/enquete/dossier/canular"],
+    const caseFactory = caseService.factories.find(factory => factory.type === "case")
+    const rootDirs = RR0FileUtil.findDirectoriesContaining(caseFactory.fileNames[0] + ".json", "out")
+    return new CaseDirectoryStep(caseService, rootDirs, ["science/crypto/ufo/enquete/dossier/canular"],
       CaseDirectoryStep.template, outputFunc, config)
   }
 
@@ -46,7 +50,7 @@ export class CaseDirectoryStep extends DirectoryStep {
    */
   protected toListItem(context: RR0SsgContext, dirCase: RR0Case) {
     const attrs: { [name: string]: string } = {}
-    const titles = []
+    const titles: string[] = []
     const details: string[] = []
     const classification = dirCase.classification
     const hynek = classification?.hynek
@@ -57,8 +61,9 @@ export class CaseDirectoryStep extends DirectoryStep {
     }
     const timeStr = dirCase.time
     if (timeStr) {
-      const timeDetail = Time.dateFromIso(timeStr).getFullYear()
-      details.push(HtmlTag.toString("time", timeDetail.toString()))
+      const timeDetail = TimeContext.fromDate(Time.dateFromIso(timeStr), context.time.options).getYear()
+      const timeDetailStr = timeDetail.toString()
+      details.push(HtmlTag.toString("time", timeDetailStr))
     }
     const text: (string | string[])[] = [dirCase.title]
     if (details.length > 0) {
@@ -74,9 +79,9 @@ export class CaseDirectoryStep extends DirectoryStep {
   protected async processDirs(context: RR0SsgContext, dirNames: string[]): Promise<void> {
     const cases = await this.scan(context, dirNames)
     const directoriesHtml = this.toList(context, cases)
-    context.outputFile.contents = context.outputFile.contents.replace(`<!--#echo var="directories" -->`,
+    context.file.contents = context.file.contents.replace(`<!--#echo var="directories" -->`,
       directoriesHtml)
-    await this.outputFunc(context, context.outputFile)
+    await this.outputFunc(context, context.file)
   }
 
   /**

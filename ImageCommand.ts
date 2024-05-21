@@ -36,7 +36,7 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
             }
           }
         }
-        context.debug(context.inputFile.name, 'requires image', src);
+        context.debug(context.file.name, "requires image", src)
         try {
           let isExternal = src.startsWith('http');
           let isAbsolute = src.startsWith('/');
@@ -44,7 +44,7 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
             imgEl.src = this.baseUrl + src;
           }
           let imgPath = isExternal ? src : isAbsolute ? path.join('.', src) : path.join(
-            path.dirname(context.inputFile.name),
+            path.dirname(context.file.name),
             src);
           imgEl.loading = 'lazy';
           if (!imgEl.width && !imgEl.height) {
@@ -86,7 +86,7 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
   }
 
   private handleImage(context: HtmlRR0SsgContext, imageUrl: string) {
-    const inputFile = context.inputFile.name;
+    const inputFile = context.file.name
     if (imageUrl) {
       const isLocal = !imageUrl.startsWith('http');
       if (isLocal) {

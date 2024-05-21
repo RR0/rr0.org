@@ -116,22 +116,22 @@ td:nth-child(2) div {
   var i = 3;
   var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  cons.create('functiongraph', bookMeta, [function (x) {
+  cons.create(bookMeta, [function (x) {
     return i / 2
   }, -i, i]);
   var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  x.create('functiongraph', bookMeta, [function (x) {
+  x.create(bookMeta, [function (x) {
     return x
   }, -i, i]);
   var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  axb.create('functiongraph', bookMeta, [function (x) {
+  axb.create(bookMeta, [function (x) {
     return i / 2 * x + i / 2
   }, -i, i]);
   var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false});
-  xn.create('functiongraph', bookMeta, [function (x) {
+  xn.create(bookMeta, [function (x) {
     return x * x
   }, -i, i]);
 </script>

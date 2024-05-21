@@ -1,29 +1,28 @@
-import { HtmlSsgContext, HtmlSsgFile, ReplaceCommand } from 'ssg-api';
-import { StringUtil } from '../util/string/StringUtil';
-import { LocalAnchor } from '../LocalAnchor';
+import { HtmlSsgContext, ReplaceCommand } from "ssg-api"
+import { StringUtil } from "../util/string/StringUtil"
+import { LocalAnchor } from "../LocalAnchor"
+import path from "path"
 
 /**
  * Creates page outline from sections tags.
  */
 export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
 
-  async execute(context: HtmlSsgContext): Promise<HtmlSsgFile> {
-    const inputFile = context.inputFile
-    const outputFile = context.outputFile
-    const dom = outputFile.dom
-    const outputDoc = outputFile.document
-    const inputDoc = inputFile.document
+  async execute(context: HtmlSsgContext): Promise<void> {
+    const file = context.file
+    const dom = file.dom
+    const outputDoc = file.document
+    const inputDoc = file.document
     const ul = outputDoc.querySelector(".outline")
     if (!ul) {
-      context.error("Could not find .outline in", context.inputFile.name)
-      return inputFile
+      context.error("Could not find .outline in", context.file.name)
+      return
     }
     const from = inputDoc.documentElement
     if (this.process(context, from, ul, 2)) {
       outputDoc.querySelector(".outline-title").textContent = "Sommaire"
     }
-    outputFile.dom = dom
-    return outputFile
+    file.dom = dom
   }
 
   protected process(context: HtmlSsgContext, from: Element, target: Element, level: number): boolean {
@@ -36,11 +35,14 @@ export class OutlineReplaceCommand implements ReplaceCommand<HtmlSsgContext> {
       if (text) {
         const localAnchor = StringUtil.textToCamel(text)
         const outlineElem = titleElem.cloneNode(true)
-        const outputDoc = context.outputFile.document
+        const outputDoc = context.file.document
         const anchor = LocalAnchor.create(outputDoc, localAnchor)
         titleElem.prepend(anchor)
         const a = outputDoc.createElement("a")
-        a.href = '/' + context.inputFile.name + "#" + localAnchor
+        const outDir = "/out"
+        const fileName = context.file.name.startsWith(outDir) ? context.file.name.substring(
+          outDir.length) : context.file.name
+        a.href = path.join("/", fileName) + "#" + localAnchor
         a.appendChild(outlineElem)
         const li = outputDoc.createElement("li")
         li.appendChild(a)

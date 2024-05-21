@@ -14,21 +14,19 @@ export class DataAnchorHandler implements AnchorHandler {
   }
 
   async handle(context: HtmlRR0SsgContext, linkEl: HTMLAnchorElement, pathToSearch: string): Promise<void> {
-    if (this.dataService.dirs.find(dir => dir.startsWith(pathToSearch))) {
-      const dataList = await this.dataService.get(context, pathToSearch, ["api", "product", "org"], ["index.json"])
-      for (const data of dataList) {
-        const type = data?.type
-        switch (type) {
-          case "api":
-            this.handleApi(context, data, linkEl)
-            break
-          case "product":
-            this.handleProduct(context, data, linkEl)
-            break
-          case "org":
-            //  this.handleOrg(context, data, linkEl)
-            break
-        }
+    const dataList = await this.dataService.get(context, pathToSearch, ["api", "product", "org"], ["index.json"])
+    for (const data of dataList) {
+      const type = data?.type
+      switch (type) {
+        case "api":
+          this.handleApi(context, data, linkEl)
+          break
+        case "product":
+          this.handleProduct(context, data, linkEl)
+          break
+        case "org":
+          //  this.handleOrg(context, data, linkEl)
+          break
       }
     }
   }
@@ -37,7 +35,7 @@ export class DataAnchorHandler implements AnchorHandler {
     this.number++
     const noteStr = this.number.toString()
     const noteId = `deprecated-${noteStr}`
-    const outputDoc = context.outputFile.document
+    const outputDoc = context.file.document
     const replacement = outputDoc.createElement("span")
     replacement.className = "note-id"
     replacement.ariaLabel = "Note"
@@ -54,6 +52,9 @@ export class DataAnchorHandler implements AnchorHandler {
 
   protected handleApi(context: HtmlRR0SsgContext, data: RR0Data, linkEl: HTMLAnchorElement) {
     const deprecated = data.deprecated
+    if (linkEl.classList.contains("deprecated")) {
+      return
+    }
     if (deprecated) {
       linkEl.classList.add("deprecated")
     }

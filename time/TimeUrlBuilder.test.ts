@@ -1,8 +1,8 @@
-import {TimeUrlBuilder} from "./TimeUrlBuilder"
-import {TimeContext} from "./TimeContext"
-import {RR0SsgContextImpl} from "../RR0SsgContext"
-import {rr0TestUtil} from "../test/RR0TestUtil"
-import { describe, expect, test } from '@javarome/testscript';
+import { TimeUrlBuilder } from "./TimeUrlBuilder"
+import { TimeContext } from "./TimeContext"
+import { RR0SsgContextImpl } from "../RR0SsgContext"
+import { rr0TestUtil } from "../test/RR0TestUtil"
+import { describe, expect, test } from "@javarome/testscript"
 
 describe("TimeUrlBuilder", () => {
 
@@ -10,7 +10,7 @@ describe("TimeUrlBuilder", () => {
     {
       const context = new RR0SsgContextImpl("fr", new TimeContext(rr0TestUtil.intlOptions))
       context.time.setYear(2008)
-      const url = TimeUrlBuilder.fromContext(context)
+      const url = TimeUrlBuilder.fromContext(context.time)
       expect(url).toEqual("time/2/0/0/8")
     }
     {
@@ -19,7 +19,7 @@ describe("TimeUrlBuilder", () => {
       context.time.setMonth(8)
       context.time.setDayOfMonth(12)
       context.time.setYear(2020)  // Resets month and day
-      const url = TimeUrlBuilder.fromContext(context)
+      const url = TimeUrlBuilder.fromContext(context.time)
       expect(url).toEqual("time/2/0/2/0")
     }
   })
@@ -29,7 +29,7 @@ describe("TimeUrlBuilder", () => {
       const context = new RR0SsgContextImpl("fr", new TimeContext(rr0TestUtil.intlOptions))
       context.time.setYear(2001)
       context.time.setMonth(9)
-      const url = TimeUrlBuilder.fromContext(context)
+      const url = TimeUrlBuilder.fromContext(context.time)
       expect(url).toBe("time/2/0/0/1/09")
     }
     {
@@ -38,7 +38,7 @@ describe("TimeUrlBuilder", () => {
       context.time.setMonth(8)
       context.time.setDayOfMonth(12)
       context.time.setMonth(2)
-      const url = TimeUrlBuilder.fromContext(context)
+      const url = TimeUrlBuilder.fromContext(context.time)
       expect(url).toEqual("time/2/0/1/2/02")
     }
   })

@@ -1,5 +1,4 @@
 import { ReplaceCommand } from "ssg-api/dist/src/step/content/replace/ReplaceCommand"
-import { SsgFile } from "ssg-api/dist/src/util/file/SsgFile"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import { Canvas, CanvasRenderingContext2D, createCanvas, loadImage } from "canvas"
 import fs from "fs"
@@ -20,10 +19,10 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
   ) {
   }
 
-  async execute(context: HtmlRR0SsgContext): Promise<SsgFile> {
-    const title = context.inputFile.title
+  async execute(context: HtmlRR0SsgContext): Promise<void> {
+    const title = context.file.title
     if (!title) { // Nothing to write in preview?
-      return context.outputFile
+      return
     }
     const canvas = createCanvas(this.width, this.height)
     const canvasCtx = canvas.getContext("2d")
@@ -43,22 +42,20 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
     this.num++
     const imageUrl = this.writeImageFile(context, canvas)
 
-    const outDoc = context.outputFile.document
+    const outDoc = context.file.document
     const ogMeta = outDoc.createElement("meta")
     ogMeta.setAttribute("property", "og:image")
     ogMeta.setAttribute("content", imageUrl)
     outDoc.head.append(ogMeta)
-    context.outputFile.contents = outDoc.documentElement.outerHTML
-
-    return context.outputFile
+    context.file.contents = outDoc.documentElement.outerHTML
   }
 
   getInfoStr(context: HtmlRR0SsgContext) {
-    const authors = context.inputFile.meta.author
+    const authors = context.file.meta.author
     const authorsStr = authors && authors.length > 0 ? authors.join(" & ") : ""
 
     let timeStr = ""
-    const fileName = context.outputFile.name
+    const fileName = context.file.name
     if (this.timeFiles.includes(fileName)) {
       timeStr = "Chronologie"
     } else {
@@ -73,7 +70,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
       }
     }
 
-    const copyrightStr = context.outputFile.meta.copyright || "RR0.org"
+    const copyrightStr = context.file.meta.copyright || "RR0.org"
     let infoStr = authorsStr ? authorsStr : ""
     infoStr = infoStr ? [infoStr, copyrightStr].join(" : ") : copyrightStr
     if (timeStr) {
@@ -165,7 +162,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
    * @protected
    */
   protected async drawImage(context: HtmlRR0SsgContext, canvasCtx: CanvasRenderingContext2D, dy = 0) {
-    const outDoc = context.outputFile.document
+    const outDoc = context.file.document
     const docImages = outDoc.documentElement.getElementsByTagName("img")
     let widthRatio = 0.5
     let imageIndex = 0
@@ -178,7 +175,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
         firstImageUrl = firstImageSrc?.startsWith(this.baseUrl) ? firstImageSrc.substring(
           this.baseUrl.length) : firstImageSrc
         assert.ok(firstImageUrl, "Undefined image url")
-        const dir = path.dirname(context.outputFile.name)
+        const dir = path.dirname(context.file.name)
         const src = firstImageUrl.startsWith("/") ? firstImageUrl.substring(1) : path.join(dir, firstImageUrl)
         const image = await loadImage(src)
         const heightRatio = this.height / image.height
@@ -200,7 +197,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
 
   protected writeImageFile(context: HtmlRR0SsgContext, canvas: Canvas) {
     const buffer = canvas.toBuffer("image/png")
-    const outputName = context.outputFile.name
+    const outputName = context.file.name
     const imageName = "og.png"
     const dir = path.dirname(outputName)
     const imageUrl = path.join("/", dir, imageName)

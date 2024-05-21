@@ -1,11 +1,8 @@
-import { TimeUrlBuilder } from "./TimeUrlBuilder"
-import { TimeTextBuilder } from "./TimeTextBuilder"
-import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
-import { UrlUtil } from "../util/url/UrlUtil"
 import { DomReplacement } from "./DomReplacement"
 import { ObjectUtils } from "@rr0/common"
 import { TimeContext } from "./TimeContext"
+import { TimeRenderer } from "./TimeRenderer"
 
 export type TimeParseResult = {
   yearStr: string
@@ -28,8 +25,9 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
 
   /**
    * @param timeFiles The existing time files that we can link to (i.e. we won't link to non-existing ones).
+   * @param renderer
    */
-  constructor(protected timeFiles: string[]) {
+  constructor(protected timeFiles: string[], protected renderer = new TimeRenderer()) {
   }
 
   static parseDateTime(timeStr: string): TimeParseResult {
@@ -62,30 +60,6 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
         time.setTimeZone(timeZone)
       }
     }
-  }
-
-  static replaceElement(context: HtmlRR0SsgContext, timeFiles: string[], previousContext?: RR0SsgContext): HTMLElement {
-    let replacement: HTMLElement | undefined
-    const absoluteTimeStr = TimeUrlBuilder.fromContext(context)
-    let title = TimeTextBuilder.build(context)
-    let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
-    if (!text) {
-      text = title
-    }
-    const currentFileName = context.inputFile.name
-    const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
-    const url = TimeReplacer.matchExistingTimeFile(absoluteTimeStr, timeFiles)
-    if (url && url !== dirName) {
-      const a = replacement = context.outputFile.document.createElement("a") as HTMLAnchorElement
-      a.href = UrlUtil.absolute(url)
-    } else {
-      replacement = context.outputFile.document.createElement("time")
-    }
-    if (text != title) {
-      replacement.title = title
-    }
-    replacement.textContent = text
-    return replacement
   }
 
   static setTimeContextFrom(timeContext: TimeContext, parsed: TimeParseResult) {
@@ -134,7 +108,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
           const endTime = parts[1]
           const endReplacement = this.valueReplacement(context, endTime, previousContext)
           if (endReplacement) {
-            replacement = context.outputFile.document.createElement("span")
+            replacement = context.file.document.createElement("span")
             replacement.className = "time-interval"
             replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
               endReplacement.outerHTML)
@@ -151,20 +125,13 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     return replacement
   }
 
-  protected static matchExistingTimeFile(url: string, timeFiles: string[]): string | undefined {
-    while (url !== "time" && timeFiles.indexOf(`${url}/index.html`) < 0) {
-      const slash = url.lastIndexOf("/")
-      url = url.substring(0, slash)
-    }
-    return url === "time" ? undefined : url
-  }
-
   valueReplacement(context: HtmlRR0SsgContext, timeStr: string,
                    previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
-    context.time.approximate = timeStr.charAt(0) === "~"
-    if (context.time.approximate) {
+    const time = context.time
+    time.approximate = timeStr.charAt(0) === "~"
+    if (time.approximate) {
       timeStr = timeStr.substring(1)
     }
     const parsed = TimeReplacer.parseDateTime(timeStr)
@@ -189,11 +156,11 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   protected dateTimeReplacement(
     context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult
   ): HTMLElement | undefined {
-    const timeContext = context.time
-    TimeReplacer.setTimeContextFrom(timeContext, parsed)
+    const time = context.time
+    TimeReplacer.setTimeContextFrom(time, parsed)
     let replacement: HTMLElement | undefined = undefined
     if (context.time.isDefined()) {
-      replacement = TimeReplacer.replaceElement(context, this.timeFiles, previousContext)
+      replacement = this.renderer.render(context, this.timeFiles, previousContext)
     }
     return replacement
   }
@@ -229,7 +196,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
       if (context.time.approximate) {
         replacementStr = messages.approximate(replacementStr)
       }
-      replacement = context.outputFile.document.createElement("time")
+      replacement = context.file.document.createElement("time")
       replacement.className = "duration"
       replacement.textContent = replacementStr
     }

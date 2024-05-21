@@ -48,6 +48,6 @@ export class EssexPoliceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgCon
       assert.ok(org,
         `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
     }
-    return {name: org.messages(context).toTitle(context, org, {parent: true}), org, place: org.places[0]}
+    return {name: org.getMessages(context).toTitle(context, org, {parent: true}), org, place: org.places[0]}
   }
 }

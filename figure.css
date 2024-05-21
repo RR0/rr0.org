@@ -12,7 +12,7 @@ table img {
   margin: 0
 }
 
-.image-container, .left, .left side, .right, .right side, figure {
+.image-container, .left, .left .side, .right, .right .side, figure {
   max-width: 75%
 }
 
@@ -21,7 +21,6 @@ caption, figcaption {
   color: dimgray;
   margin: 0;
   display: table-caption;
-  overflow: hidden;
   caption-side: bottom;
   background: inherit;
 }
@@ -63,6 +62,14 @@ figure iframe {
 
 figure:hover figcaption, figcaption:hover {
   color: black;
+}
+
+.right figcaption, .right .side figcaption {
+  text-align: right
+}
+
+.left figcaption, .left.side figcaption {
+  text-align: left
 }
 
 @media (prefers-color-scheme: dark) {

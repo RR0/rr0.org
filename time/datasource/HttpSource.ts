@@ -75,7 +75,7 @@ export class HttpSource {
     return this.driver
   }
 
-  async get(queryUrl: string, init: RequestInit = {}, resOut = {}): Promise<HTMLElement> {
+  async get(queryUrl: string, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<HTMLElement> {
     let pageSource: string
     const seleniumOptions = this.options.selenium
     if (seleniumOptions) {
@@ -91,7 +91,7 @@ export class HttpSource {
     return new JSDOM(pageSource).window.document.documentElement
   }
 
-  async fetch<T>(url: string, init: RequestInit = {}, resOut = {}): Promise<T> {
+  async fetch<T>(url: string, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<T> {
     init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
     console.debug("Fetching", url, "with", init)
     const response = await fetch(url, init)

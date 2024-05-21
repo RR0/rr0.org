@@ -89,7 +89,7 @@ p {
   margin-top: 2.5mm
 }
 
-.left figcaption, .left.side figcaption, .multi-list li {
+.multi-list li {
   text-align: left
 }
 
@@ -401,10 +401,6 @@ iframe .wide {
   float: right;
   margin-left: 1.5em;
   margin-right: 0
-}
-
-.right figcaption, .right side figcaption {
-  text-align: right
 }
 
 p, td {

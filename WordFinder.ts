@@ -48,7 +48,7 @@ const timeFormat: Intl.DateTimeFormatOptions = {
   minute: "2-digit"
 }
 const timeContext = new TimeContext(timeFormat)
-const context = new RR0SsgContextImpl("fr", timeContext)
+const context = new RR0SsgContextImpl("fr", timeContext, "out")
 
 glob(inputPattern).then(async (inputFiles) => {
   const dictionary = new Dictionary(logger)

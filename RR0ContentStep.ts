@@ -1,6 +1,5 @@
 import { ContentStep, ContentStepConfig, OutputFunc } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
-import { Time } from "./time/Time"
 import { TimeContext } from "./time/TimeContext"
 
 export interface ContentVisitor {
@@ -34,7 +33,7 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
     return processed
   }
 
-  protected shouldProcess(context: HtmlRR0SsgContext): boolean {
+  protected shouldProcess(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): boolean {
     for (const contentVisitor of this.contentVisitors) {
       contentVisitor.visit(context)
     }

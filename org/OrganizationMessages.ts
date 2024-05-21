@@ -23,7 +23,7 @@ export class OrganizationMessages {
   }
 
   toTitle(context: RR0SsgContext, org: Organization, options: OrganizationMessageOptions): string {
-    const orgMessages = org.messages(context)
+    const orgMessages = org.getMessages(context)
     assert.ok(orgMessages,
       `Could not find name of city with ZIP code "${org.code}" in departement "${org.parent?.code}"`)
     let title = orgMessages.title
@@ -31,11 +31,11 @@ export class OrganizationMessages {
   }
 
   toTitleFromName(context: RR0SsgContext, org: Organization, title: string, options: OrganizationMessageOptions) {
-    let str = org.messages(context).cityName(title)
+    let str = org.getMessages(context).cityName(title)
     if (options.parent) {
       const parent = org.parent
       if (parent) {
-        const depMessages = parent.messages(context)
+        const depMessages = parent.getMessages(context)
         str += ` (${depMessages.toTitle(context, parent, options)})`
       }
     }

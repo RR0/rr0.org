@@ -53,8 +53,8 @@ export class PeopleService {
 
   async getFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
     let peopleList: People[] = []
-    const fileSpec = ["/people*.json"]
-    const peopleDataList = await this.dataService.get(context, dirName, ["people"], fileSpec) as People[]
+    const fileSpec = ["people*.json"]
+    const peopleDataList = await this.dataService.get(context, dirName, ["people", undefined], fileSpec) as People[]
     for (const peopleData of peopleDataList) {
       const people = this.createFromData(context, dirName, peopleData)
       peopleList.push(people)
@@ -66,21 +66,20 @@ export class PeopleService {
     const people = this.createFromDirName(dirName)
     const title = data.title
     if (title) {
-      try {
-        const names = title.split(", ")
+      const names = title.split(", ")
+      if (names > 0) {
         people.lastName = names.splice(0, 1)[0]
         people.firstNames.length = 0
         people.firstNames.push(...names[0].split(" "))
         people.lastAndFirstName = people.getLastAndFirstName()
-      } catch (e) {
-        const words = title.split(" ")
-        if (words.length === 2) {
+      } else {
+        const names = title.split(" ")
+        if (names.length === 2) {
           people.firstNames.length = 0
-          people.firstNames.push(words[0])
-          people.lastName = words[1]
+          people.firstNames.push(names[0])
+          people.lastName = names[1]
         } else {
           context.warn(`Could not determine first and last name from "${title}"}`)
-          context.debug(e)
         }
         people.lastAndFirstName = title
       }

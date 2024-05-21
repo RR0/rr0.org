@@ -36,6 +36,6 @@ export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ufo
     const placeName = sourceCase.location
     const org = this.cityService.find(context, placeName, undefined)
     assert.ok(org, `Could not find place "${placeName}"}"`)
-    return {name: org.messages(context).toTitle(context, org, {parent: true}), org, place: org.places[0]}
+    return {name: org.getMessages(context).toTitle(context, org, {parent: true}), org, place: org.places[0]}
   }
 }

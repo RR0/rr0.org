@@ -22,6 +22,6 @@ describe("ChronologyReplacer", () => {
   })
 
   test("save", () => {
-    const replacement = chronologyReplacer.replacement(context, context.inputFile.document.querySelector("ul"))
+    const replacement = chronologyReplacer.replacement(context, context.file.document.querySelector("ul"))
   })
 })

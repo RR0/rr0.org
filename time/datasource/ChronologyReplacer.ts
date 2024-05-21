@@ -43,7 +43,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     const casesToAdd: RR0CaseSummary[] = []
     for (const mapping of this.mappings) {
       const datasource = mapping.datasource
-      const datasourceKey = context.inputFile.name + "$" + datasource.copyright
+      const datasourceKey = context.file.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
         const datasourceCases = await datasource.fetch(context)
         const fetchTime = new Date()
@@ -93,7 +93,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     const specialChars = /[ \-?!&*#().:\/\\;=°',]/g
     const authorsStr = datasource.authors.map(
       author => StringUtil.removeAccents(author).replace(specialChars, "")).join("-")
-    const fileName = path.join(path.dirname(context.inputFile.name),
+    const fileName = path.join(path.dirname(context.file.name),
       authorsStr + "_" + StringUtil.removeAccents(datasource.copyright).replace(specialChars, "-") + ".csv")
     fs.writeFileSync(fileName, csvContents, {encoding: "utf-8"})
   }

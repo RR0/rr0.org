@@ -29,7 +29,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     }
     let url = people.dirName
     let replacement: HTMLElement
-    const currentFileName = context.inputFile.name
+    const currentFileName = context.file.name
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
       // const urlAbsolute = UrlUtil.absolute(url)
@@ -42,7 +42,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
         occupations,
         [], peopleContent)
     } else {
-      const span = context.outputFile.document.createElement("span") as HTMLSpanElement
+      const span = context.file.document.createElement("span") as HTMLSpanElement
       span.className = "peopl"  // People not found
       span.textContent = peopleStr
       replacement = span

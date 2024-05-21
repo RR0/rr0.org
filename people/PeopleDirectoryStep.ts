@@ -16,10 +16,15 @@ import { Gender } from "@rr0/common"
  */
 export class PeopleDirectoryStep extends DirectoryStep {
 
-  constructor(dirs: string[], excludedDirs: string[], template: string, protected outputFunc: OutputFunc,
+  constructor(rootDirs: string[], excludedDirs: string[], templateFileName: string, protected outputFunc: OutputFunc,
               config: SsgConfig, protected filterOccupations: Occupation[], protected service: PeopleService,
               name = "people directory") {
-    super(dirs, excludedDirs, template, config, name)
+    super({
+      rootDirs,
+      excludedDirs,
+      templateFileName,
+      getOutputPath: config.getOutputPath
+    }, name)
   }
 
   static getPeopleLink(context: HtmlRR0SsgContext,
@@ -82,15 +87,15 @@ export class PeopleDirectoryStep extends DirectoryStep {
       }
     }
     const text = content || people.lastAndFirstName
-    const document = context.outputFile.document
-    const peopleLink = document.createElement("a")
+    const doc = context.file.document
+    const peopleLink = doc.createElement("a")
     peopleLink.innerHTML = text
     peopleLink.href = `/${dirName}/`
     if (people.discredited) {
       peopleLink.append(" 🤥")
       titles.push("discrédité")
     }
-    const elem = document.createElement("span")
+    const elem = doc.createElement("span")
     if (titles.length) {
       elem.title = titles.join(", ")
     }
@@ -99,7 +104,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     }
     const portraitUrl = people.portraitUrl
     if (portraitUrl) {
-      const portraitElem = document.createElement("img")
+      const portraitElem = doc.createElement("img")
       portraitElem.src = portraitUrl
       portraitElem.alt = people.lastAndFirstName
       portraitElem.className = "portrait"
@@ -237,27 +242,27 @@ export class PeopleDirectoryStep extends DirectoryStep {
       (p1, p2) => p1.lastAndFirstName.localeCompare(p2.lastAndFirstName))
     const allCountries = new Set<CountryCode>()
     const occupations = new Set<Occupation>()
-    const outputFile = context.outputFile
+    const file = context.file
     const listItems = peopleList.map(
       people => {
         const elem = PeopleDirectoryStep.getPeopleLink(context, people, pseudoPeopleList, allCountries, occupations,
           this.filterOccupations)
-        const item = outputFile.document.createElement("li")
+        const item = file.document.createElement("li")
         item.appendChild(elem)
         return item
       })
-    const ul = outputFile.document.createElement("ul")
+    const ul = file.document.createElement("ul")
     ul.append(...listItems)
     ul.className = "links"
-    outputFile.contents = outputFile.contents.replace(`<!--#echo var="directories" -->`,
+    file.contents = file.contents.replace(`<!--#echo var="directories" -->`,
       ul.outerHTML)
     {
       let countriesHtml = ""
       for (const country of Array.from(allCountries).sort()) {
         const countryStr = context.messages.country[country].title
-        countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="find(event)"> ${countryStr}</label></span>`
+        countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="findPeople(event)"> ${countryStr}</label></span>`
       }
-      outputFile.contents = outputFile.contents.replace(`<!--#echo var="countries" -->`,
+      file.contents = file.contents.replace(`<!--#echo var="countries" -->`,
         HtmlTag.toString("div", countriesHtml, {id: "countries"}))
     }
     {
@@ -265,11 +270,11 @@ export class PeopleDirectoryStep extends DirectoryStep {
       for (const occupation of Array.from(occupations).sort()) {
         const occupationStr = StringUtil.capitalizeFirstLetter(
           context.messages.people.occupation[occupation](Gender.male))
-        occupationsHtml += `<span class="option"><label><input type="checkbox" id="occupation-${occupation}" onchange="find(event)"> ${occupationStr}</label></span>`
+        occupationsHtml += `<span class="option"><label><input type="checkbox" id="occupation-${occupation}" onchange="findPeople(event)"> ${occupationStr}</label></span>`
       }
-      outputFile.contents = outputFile.contents.replace(`<!--#echo var="occupations" -->`,
+      file.contents = file.contents.replace(`<!--#echo var="occupations" -->`,
         HtmlTag.toString("div", occupationsHtml, {id: "occupations"}))
     }
-    await this.outputFunc(context, outputFile)
+    await this.outputFunc(context, file)
   }
 }

@@ -3,11 +3,13 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { PeopleService } from "./PeopleService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { describe, expect, test } from "@javarome/testscript"
+import { promise as glob } from "glob-promise"
+import { DataService } from "../DataService"
 
 describe("PeopleReplacer", () => {
 
   function createPeopleElement(context: HtmlRR0SsgContext, content: string, title?: string): HTMLSpanElement {
-    const peopleElement = context.inputFile.document.createElement("span") as HTMLSpanElement
+    const peopleElement = context.file.document.createElement("span") as HTMLSpanElement
     peopleElement.textContent = content
     if (title) {
       peopleElement.title = title
@@ -16,7 +18,10 @@ describe("PeopleReplacer", () => {
   }
 
   test("ignore brackets", async () => {
-    const replacer = new PeopleReplacer(new PeopleService(["people/h/HynekJosefAllen"], dataService))
+    const peopleFiles = await glob("people/*/*")
+    const dirs = ["people/h/HynekJosefAllen"]
+    const dataService = new DataService(dirs, ["people*.json"])
+    const replacer = new PeopleReplacer(new PeopleService(dirs, dataService))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const lastnameFirstElement = createPeopleElement(context,
@@ -35,8 +40,10 @@ describe("PeopleReplacer", () => {
   })
 
   test("replace people tags", async () => {
+    const dirs = ["people/b/BeauJerome", "people/r/ReaganRonald"]
+    const dataService = new DataService(dirs, ["people*.json"])
     const replacer = new PeopleReplacer(
-      new PeopleService(["people/b/BeauJerome", "people/r/ReaganRonald"], dataService))
+      new PeopleService(dirs, dataService))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const peopleWithTitle = createPeopleElement(context, "Ronald Reagan", "Ronald Wilson Reagan")

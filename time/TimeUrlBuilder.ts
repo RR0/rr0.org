@@ -1,16 +1,10 @@
-import {RR0SsgContext} from "../RR0SsgContext"
-import {TimeContext} from "./TimeContext"
+import { TimeContext } from "./TimeContext"
 
 export class TimeUrlBuilder {
 
   static readonly root = "time/"
 
-  static fromContext(context: RR0SsgContext): string {
-    let time = context.time
-    return this.fromTimeContext(time)
-  }
-
-  static fromTimeContext(time: TimeContext) {
+  static fromContext(time: TimeContext) {
     let url = this.root
     const year = time.getYear()
     if (year) {

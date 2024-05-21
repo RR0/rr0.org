@@ -9,7 +9,7 @@ describe('CodeReplacer', () => {
   test('replaces nothing', async () => {
     const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/index.html',
       `<p>window.document.write("Hello!")</p>`);
-    const codeEl = context.inputFile.document.querySelector('code');
+    const codeEl = context.file.document.querySelector("code")
     const replacement = await replacer.replacement(context, codeEl);
     expect(replacement).toBeNull();
   });
@@ -18,7 +18,7 @@ describe('CodeReplacer', () => {
     const code = 'window.document.write("Hello!")';
     const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/index.html',
       `<code>${code}</code>`);
-    const codeEl = context.inputFile.document.querySelector('code');
+    const codeEl = context.file.document.querySelector("code")
     const replacement = await replacer.replacement(context, codeEl);
     expect(replacement.innerHTML).toBe(code);
   });
@@ -38,7 +38,7 @@ describe('CodeReplacer', () => {
        `;
     const context = rr0TestUtil.newHtmlContext('tech/info/soft/proj/design/arch/web/js/index.html',
       `<pre><code>${code}</code></pre>`);
-    const codeEl = context.inputFile.document.querySelector('code');
+    const codeEl = context.file.document.querySelector("code")
     const replacement = await replacer.replacement(context, codeEl);
     const innerHTML = replacement.innerHTML;
     expect(innerHTML).toBe(`

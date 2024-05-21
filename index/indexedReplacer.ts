@@ -29,7 +29,7 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
       }
       anchorEl.classList.add("index-anchor", "anchor")
       item.prepend(anchorEl)
-      item.setAttribute("onclick", `window.location.hash='${id};event.preventDefault();event.stopPropagation()'`)
+      item.setAttribute("onclick", `window.location.hash='${id}';event.stopPropagation()`)
     }
   }
 }

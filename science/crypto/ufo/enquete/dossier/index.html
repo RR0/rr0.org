@@ -50,8 +50,9 @@
     const list = document.querySelector("#searchForm + ul")
     let found = 0
     for (const child of list.children) {
-      const isHoax = child.classList.contains('canular')
-      const isMisinterpretation = child.classList.contains('meprise')
+      const childContentClasses = child.firstElementChild.classList
+      const isHoax = childContentClasses.contains('hoax')
+      const isMisinterpretation = childContentClasses.contains('misinterpretation')
       const matchHoax = hoaxInput.checked || (!hoaxInput.checked && !isHoax)
       const matchMisinterpretation = misinterpretationInput.checked || (!misinterpretationInput.checked && !isMisinterpretation)
       const matchText = child.textContent.toLowerCase().indexOf(value) >= 0

@@ -7,8 +7,8 @@ export class TimeReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected readonly replacer: TimeReplacer
 
-  constructor(protected timeFiles: string[], renderer: TimeRenderer) {
-    this.replacer = new TimeReplacer(timeFiles, renderer)
+  constructor(protected renderer: TimeRenderer) {
+    this.replacer = new TimeReplacer(renderer)
   }
 
   /**
@@ -20,7 +20,7 @@ export class TimeReplacerFactory implements ReplacerFactory<DomReplacer> {
     return {
       replace: (original: HTMLTimeElement): Promise<HTMLElement> => {
         return this.replacer.replacement(
-          this.timeFiles.includes(context.file.name) ? context.clone() : context, original)
+          this.renderer.timeFiles.includes(context.file.name) ? context.clone() : context, original)
       }
     }
   }

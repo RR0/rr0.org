@@ -1,27 +1,31 @@
 import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
-import { RR0SsgContext } from "../../../../../RR0SsgContext"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
 import { HtmlTag } from "../../../../../util/HtmlTag"
 import { StringUtil } from "../../../../../util/string/StringUtil"
-import { Time } from "../../../../../time/Time"
 import { RR0Case } from "./RR0Case"
 import { DataService } from "../../../../../DataService"
-import { TimeContext } from "../../../../../time/TimeContext"
 import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
+import { TimeService } from "../../../../../time/TimeService"
+import { TimeReplacer } from "../../../../../time/TimeReplacer"
+import path from "path"
 
 export class CaseDirectoryStep extends DirectoryStep {
+  protected readonly timeReplacer: TimeReplacer
 
   constructor(protected caseService: DataService, rootDirs: string[], excludedDirs: string[], templateFileName: string,
-              protected outputFunc: OutputFunc, config: SsgConfig) {
+              protected outputFunc: OutputFunc, config: SsgConfig, protected timeService: TimeService) {
     super({rootDirs, excludedDirs, templateFileName, getOutputPath: config.getOutputPath}, "case directory")
+    this.timeReplacer = new TimeReplacer(timeService.renderer)
   }
 
   static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
 
-  static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: DataService): Promise<CaseDirectoryStep> {
+  static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: DataService,
+                      timeService: TimeService): Promise<CaseDirectoryStep> {
     const caseFactory = caseService.factories.find(factory => factory.type === "case")
     const rootDirs = RR0FileUtil.findDirectoriesContaining(caseFactory.fileNames[0] + ".json", "out")
     return new CaseDirectoryStep(caseService, rootDirs, ["science/crypto/ufo/enquete/dossier/canular"],
-      CaseDirectoryStep.template, outputFunc, config)
+      CaseDirectoryStep.template, outputFunc, config, timeService)
   }
 
   /**
@@ -30,7 +34,7 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param cases
    */
-  protected toList(context: RR0SsgContext, cases: RR0Case[]) {
+  protected toList(context: HtmlRR0SsgContext, cases: RR0Case[]) {
     const listItems = cases.map(dirCase => {
       if (!dirCase.title) {
         const lastSlash = dirCase.dirName.lastIndexOf("/")
@@ -48,7 +52,7 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param dirCase
    */
-  protected toListItem(context: RR0SsgContext, dirCase: RR0Case) {
+  protected toListItem(context: HtmlRR0SsgContext, dirCase: RR0Case) {
     const attrs: { [name: string]: string } = {}
     const titles: string[] = []
     const details: string[] = []
@@ -60,10 +64,16 @@ export class CaseDirectoryStep extends DirectoryStep {
       titles.push(classificationLabels.long)
     }
     const timeStr = dirCase.time
+    const caseContext = context.clone()
     if (timeStr) {
-      const timeDetail = TimeContext.fromDate(Time.dateFromIso(timeStr), context.time.options).getYear()
-      const timeDetailStr = timeDetail.toString()
-      details.push(HtmlTag.toString("time", timeDetailStr))
+      const options = caseContext.time.options
+      options.month = undefined
+      options.day = undefined
+      options.hour = undefined
+      options.weekday = undefined
+      options.minute = undefined
+      const elem = this.timeReplacer.create(caseContext, timeStr, undefined)
+      details.push(elem.outerHTML)
     }
     const text: (string | string[])[] = [dirCase.title]
     if (details.length > 0) {
@@ -76,12 +86,13 @@ export class CaseDirectoryStep extends DirectoryStep {
     return HtmlTag.toString("li", a, attrs)
   }
 
-  protected async processDirs(context: RR0SsgContext, dirNames: string[]): Promise<void> {
+  protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
     const cases = await this.scan(context, dirNames)
     const directoriesHtml = this.toList(context, cases)
-    context.file.contents = context.file.contents.replace(`<!--#echo var="directories" -->`,
-      directoriesHtml)
-    await this.outputFunc(context, context.file)
+    const outputPath = this.config.getOutputPath(context)
+    const output = context.newOutput(outputPath)
+    output.contents = context.file.contents.replace(`<!--#echo var="directories" -->`, directoriesHtml)
+    await this.outputFunc(context, output)
   }
 
   /**

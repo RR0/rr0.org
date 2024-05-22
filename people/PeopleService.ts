@@ -66,11 +66,11 @@ export class PeopleService {
     const people = this.createFromDirName(dirName)
     const title = data.title
     if (title) {
-      const names = title.split(", ")
-      if (names > 0) {
-        people.lastName = names.splice(0, 1)[0]
+      const names = title.split(",")
+      if (names.length > 1) {
+        people.lastName = names.splice(0, 1)[0].trim()
         people.firstNames.length = 0
-        people.firstNames.push(...names[0].split(" "))
+        people.firstNames.push(...names[0].trim().split(" "))
         people.lastAndFirstName = people.getLastAndFirstName()
       } else {
         const names = title.split(" ")

@@ -6,10 +6,11 @@ import { TimeRenderer } from "./TimeRenderer"
 
 describe("HtmlTagReplaceCommand", () => {
 
-  const renderer = new TimeRenderer()
+  const timeFiles = []
+  const renderer = new TimeRenderer(timeFiles)
 
   test("replace time tag", async () => {
-    const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory(["time/2/0/0/4/index.html"], renderer))
+    const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory(renderer))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html",
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
     await command.execute(context)

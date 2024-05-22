@@ -1,7 +1,458 @@
-<!--#include virtual="/header-start.html" -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <base/>
+  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
+  <link href="/manifest.json" rel="manifest">
+  <link href="/opensearch.xml" rel="search" title="RR0" type="application/opensearchdescription+xml"/>
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag () {
+      dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+    gtag('config', 'G-CMV7R92GK1')
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
+    j.async = true
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'dataLayer', 'GTM-NBPKWNM')</script>
+  <!-- End Google Tag Manager -->
+
 <title>Personnes au nom commençant par "M"</title>
 <link href="../index.css" rel="stylesheet"/>
-<!--#include virtual="/header-end.html" -->
-<!--#include virtual="../form.html" -->
-<script async src="../index.js" type="text/javascript"></script>
-<!--#include virtual="/footer.html" -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
+    style="display:none;visibility:hidden" title="GTM"
+    width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="main-header">
+  <h1 class="full-page"><!--#echo var="title" --></h1>
+</header>
+<nav id="main-nav">
+  <h1>Navigation</h1>
+  <ul>
+    <li class="full-page">
+      <a class="home" href="/" title="Home">RR0</a>
+    </li>
+    <li class="search full-page">
+      <input disabled id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
+      <datalist id="search-site-values">
+      </datalist>
+    </li>
+    <li id="summary">
+      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
+      <ul class="outline">
+      </ul>
+    </li>
+    <li>
+      <span id="alternate"></span>
+    </li>
+    <li class="map-toggle">
+      <button class="toggle">Carte</button>
+    </li>
+  </ul>
+  <script async src="/search/index.js" type="text/javascript"></script>
+</nav>
+<script>
+  const summary = document.getElementById('out-top')
+  const observer = new IntersectionObserver(function (entries) {
+    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : 'Sommaire'
+  }, { threshold: [0, 0.3, 1] })
+  observer.observe(document.querySelector('#main-header'))
+  var currentAddress
+  var mapEl
+  var currentPlaceEl
+
+  function showMap (event, address, display = true) {
+    event.stopPropagation()
+    document.body.classList.toggle('with-map', display)
+    if (!address) {
+      address = currentPlaceEl?.textContent
+    }
+    if (address !== currentAddress) {
+      currentAddress = address
+      mapEl.querySelector('iframe').src =
+        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
+    }
+  }
+
+  const mapToggle = document.querySelector('.map-toggle .toggle')
+  document.addEventListener('DOMContentLoaded', () => {
+    mapEl = document.querySelector('#map-canvas')
+    currentPlaceEl = document.querySelector('.plac')
+    if (currentPlaceEl) {
+      mapToggle.style.display = 'inline-block'
+    }
+  })
+
+  function hasMap () {
+    return document.body.classList.contains('with-map')
+  }
+
+  mapToggle.addEventListener('click', (event) => {
+    showMap(event, currentAddress, !hasMap())
+  })
+  document.body.addEventListener('click', (event) => {
+    if (hasMap()) {
+      showMap(event, currentAddress, false)
+    }
+  })
+
+</script>
+<div aria-hidden="true" class="anchor" id="_top"></div>
+<div class="metadata">
+  <!--#echo var="author" -->
+</div>
+<div class="contents">
+
+  <form id="searchForm">
+    <label style="white-space: normal">Nom <input autofocus oninput="findPeople(event)" style="margin-left: 1em"
+      type="search"></label>
+    <details>
+      <summary>Pays</summary>
+      <div id="countries"><span class="option"><label><input id="country-ar" onchange="findPeople(event)"
+        type="checkbox"> Argentine</label></span><span class="option"><label><input id="country-au"
+        onchange="findPeople(event)" type="checkbox"> Australie</label></span><span class="option"><label><input
+        id="country-be" onchange="findPeople(event)" type="checkbox"> Belgique</label></span><span
+        class="option"><label><input id="country-br" onchange="findPeople(event)" type="checkbox"> Brésil</label></span><span
+        class="option"><label><input id="country-ca" onchange="findPeople(event)" type="checkbox"> Canada</label></span><span
+        class="option"><label><input id="country-ch" onchange="findPeople(event)" type="checkbox"> Suisse</label></span><span
+        class="option"><label><input id="country-cy" onchange="findPeople(event)" type="checkbox"> Chypre</label></span><span
+        class="option"><label><input id="country-fr" onchange="findPeople(event)" type="checkbox"> France</label></span><span
+        class="option"><label><input id="country-it" onchange="findPeople(event)" type="checkbox"> Italie</label></span><span
+        class="option"><label><input id="country-jp" onchange="findPeople(event)"
+        type="checkbox"> Japon</label></span><span class="option"><label><input id="country-ma"
+        onchange="findPeople(event)" type="checkbox"> Maroc</label></span><span class="option"><label><input
+        id="country-mx" onchange="findPeople(event)" type="checkbox"> Mexique</label></span><span class="option"><label><input
+        id="country-uk" onchange="findPeople(event)" type="checkbox"> Royaume-Uni</label></span><span
+        class="option"><label><input id="country-us" onchange="findPeople(event)" type="checkbox"> USA</label></span>
+      </div>
+    </details>
+    <details>
+      <summary>Profession</summary>
+      <div id="occupations"><span class="option"><label><input id="occupation-actor" onchange="findPeople(event)"
+        type="checkbox"> Acteur</label></span><span class="option"><label><input id="occupation-anthropologist"
+        onchange="findPeople(event)" type="checkbox"> Anthropologue</label></span><span
+        class="option"><label><input id="occupation-artist" onchange="findPeople(event)"
+        type="checkbox"> Artiste</label></span><span class="option"><label><input id="occupation-astronaut"
+        onchange="findPeople(event)" type="checkbox"> Astronaute</label></span><span
+        class="option"><label><input id="occupation-astronomer" onchange="findPeople(event)" type="checkbox"> Astronome</label></span><span
+        class="option"><label><input id="occupation-astrophysicist" onchange="findPeople(event)" type="checkbox"> Astrophysicien</label></span><span
+        class="option"><label><input id="occupation-banker" onchange="findPeople(event)"
+        type="checkbox"> Banquier</label></span><span class="option"><label><input id="occupation-biophysicist"
+        onchange="findPeople(event)" type="checkbox"> Biophysicien</label></span><span
+        class="option"><label><input id="occupation-chemist" onchange="findPeople(event)"
+        type="checkbox"> Chimiste</label></span><span class="option"><label><input id="occupation-contactee"
+        onchange="findPeople(event)" type="checkbox"> Contacté</label></span><span
+        class="option"><label><input id="occupation-engineer" onchange="findPeople(event)"
+        type="checkbox"> Ingénieur</label></span><span class="option"><label><input id="occupation-geographer"
+        onchange="findPeople(event)" type="checkbox"> Géographe</label></span><span
+        class="option"><label><input id="occupation-houseWife" onchange="findPeople(event)" type="checkbox"> Femme au foyer</label></span><span
+        class="option"><label><input id="occupation-illusionist" onchange="findPeople(event)" type="checkbox"> Illusionniste</label></span><span
+        class="option"><label><input id="occupation-journalist" onchange="findPeople(event)" type="checkbox"> Journaliste</label></span><span
+        class="option"><label><input id="occupation-mathematician" onchange="findPeople(event)" type="checkbox"> Mathématicien</label></span><span
+        class="option"><label><input id="occupation-meteorologist" onchange="findPeople(event)" type="checkbox"> Météorologue</label></span><span
+        class="option"><label><input id="occupation-military" onchange="findPeople(event)"
+        type="checkbox"> Militaire</label></span><span class="option"><label><input id="occupation-musician"
+        onchange="findPeople(event)" type="checkbox"> Musicien</label></span><span class="option"><label><input
+        id="occupation-parapsychologist" onchange="findPeople(event)"
+        type="checkbox"> Parapsychologue</label></span><span class="option"><label><input id="occupation-physicist"
+        onchange="findPeople(event)" type="checkbox"> Physicien</label></span><span
+        class="option"><label><input id="occupation-pilot" onchange="findPeople(event)" type="checkbox"> Pilote</label></span><span
+        class="option"><label><input id="occupation-politician" onchange="findPeople(event)" type="checkbox"> Politicien</label></span><span
+        class="option"><label><input id="occupation-priest" onchange="findPeople(event)" type="checkbox"> Prêtre</label></span><span
+        class="option"><label><input id="occupation-producer" onchange="findPeople(event)"
+        type="checkbox"> Producteur</label></span><span class="option"><label><input id="occupation-prospector"
+        onchange="findPeople(event)" type="checkbox"> Prospecteur</label></span><span
+        class="option"><label><input id="occupation-psychiatrist" onchange="findPeople(event)" type="checkbox"> Psychiatre</label></span><span
+        class="option"><label><input id="occupation-psychologist" onchange="findPeople(event)" type="checkbox"> Psychologue</label></span><span
+        class="option"><label><input id="occupation-salesman" onchange="findPeople(event)"
+        type="checkbox"> Commercial</label></span><span class="option"><label><input id="occupation-softwareEngineer"
+        onchange="findPeople(event)" type="checkbox"> Informaticien</label></span><span class="option"><label><input
+        id="occupation-teacher" onchange="findPeople(event)" type="checkbox"> Enseignant</label></span><span
+        class="option"><label><input id="occupation-ufoWitness" onchange="findPeople(event)" type="checkbox"> Témoin d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufoWitness2" onchange="findPeople(event)" type="checkbox"> Témoin indirect d'ovni</label></span><span
+        class="option"><label><input id="occupation-ufologist" onchange="findPeople(event)"
+        type="checkbox"> Ufologue</label></span><span class="option"><label><input id="occupation-writer"
+        onchange="findPeople(event)" type="checkbox"> Écrivain</label></span></div>
+    </details>
+    <output></output>
+  </form>
+  <ul class="links"><li><span class="people-resolved pseudonym deceased country-fr occupation-ufologist occupation-artist occupation-musician"
+    title="(pseudonyme), 1930-2002, 72 ans, France, ufologue, artiste, musicien"><a
+    href="/people/m/MaryRogerLuc/">Courcel, Roger</a></span></li><li><span
+    class="people-resolved pseudonym deceased country-us occupation-writer occupation-contactee"
+    title="(pseudonyme), 1913-1989, 76 ans, USA, écrivain, contacté"><a
+    href="/people/m/MundoLaura/">Laura Marxer</a></span></li><li><span
+    class="people-resolved deceased country-us occupation-engineer occupation-astronaut"
+    title="1913-2001, 88 ans, USA, ingénieur, astronaute"><a
+    href="/people/m/MacClellandClark/">Mac, Clelland Clark</a></span></li><li><span
+    class="people-resolved country-us occupation-pilot occupation-astronaut"
+    title="1942-, 81 ans, USA, pilote, astronaute"><a href="/people/m/MacDivittJames/">Mac, Divitt James<img
+    alt="Mac, Divitt James" class="portrait" src="/people/m/MacDivittJames/portrait.jpg" width="75"></a></span></li><li>
+    <span class="people-resolved deceased country-us occupation-physicist occupation-ufologist"
+      title="1942-2024, 82 ans, USA, physicien, ufologue"><a
+      href="/people/m/MaccabeeBruce/">Maccabee, Bruce<img alt="Maccabee, Bruce"
+      class="portrait" src="/people/m/MaccabeeBruce/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-fr occupation-ufologist" title="1953-, 70 ans, France, ufologue"><a
+    href="/people/m/MaceChristian/">Macé, Christian</a></span></li><li><span
+    class="people-resolved deceased country-us occupation-psychiatrist occupation-ufologist"
+    title="1929-2004, 75 ans, USA, psychiatre, ufologue"><a
+    href="/people/m/MackJohnE/">Mack, John E.<img alt="Mack, John E." class="portrait"
+    src="/people/m/MackJohnE/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-salesman occupation-contactee"
+    title="USA, pilote, commercial, contacté"><a
+    href="/people/m/MacmillanKen/">Macmillan, Ken</a></span></li><li><span
+    class="people-resolved deceased country-fr occupation-ufologist occupation-journalist"
+    title="1969-2000, 31 ans, France, ufologue, journaliste"><a
+    href="/people/m/MaillardNicolas/">Maillard, Nicolas<img alt="Maillard, Nicolas"
+    class="portrait" src="/people/m/MaillardNicolas/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-fr occupation-ufologist occupation-teacher"
+    title="1959-, 65 ans, France, ufologue, enseignant"><a href="/people/m/MaillotEric/">Maillot, Éric<img
+    alt="Maillot, Éric" class="portrait" src="/people/m/MaillotEric/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-ch occupation-ufologist occupation-chemist"
+    title="1960-, 64 ans, Suisse, ufologue, chimiste"><a href="/people/m/MancusiBruno/">Mancusi, Bruno<img
+    alt="Mancusi, Bruno" class="portrait" src="/people/m/MancusiBruno/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-physicist occupation-ufoWitness"
+    title="1891-1966, 75 ans, USA, physicien, témoin d'ovni"><a
+    href="/people/m/ManeyCharlesA/">Maney, Charles A.</a></span></li><li><span
+    class="people-resolved deceased country-us occupation-pilot occupation-ufoWitness"
+    title="1922-1948, 25 ans, USA, pilote, témoin d'ovni"><a
+    href="/people/m/MantellThomas/">Mantell, Thomas Francis<img alt="Mantell, Thomas Francis"
+    class="portrait" src="/people/m/MantellThomas/portrait.png" width="75"></a></span></li><li><span
+    class="people-resolved country-uk occupation-ufologist occupation-writer"
+    title="1958-, 66 ans, Royaume-Uni, ufologue, écrivain"><a href="/people/m/MantlePhilip/">Mantle, Philip<img
+    alt="Mantle, Philip" class="portrait" src="/people/m/MantlePhilip/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-military occupation-ufoWitness"
+    title="1907-1986, 79 ans, USA, militaire, témoin d'ovni"><a
+    href="/people/m/MarcelJesseA/">Marcel, Jesse A.<img alt="Marcel, Jesse A." class="portrait"
+    src="/people/m/MarcelJesseA/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-us occupation-military occupation-ufoWitness2"
+    title="1936-2013, 77 ans, USA, militaire, témoin indirect d'ovni"><a
+    href="/people/m/MarcelJesseJunior/">Marcel, Jesse Junior<img alt="Marcel, Jesse Junior"
+    class="portrait" src="/people/m/MarcelJesseJunior/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved deceased country-it occupation-physicist" title="1874-1937, 63 ans, Italie, physicien"><a
+    href="/people/m/MarconiGuglielmo/">Marconi, Guglielmo<img alt="Marconi, Guglielmo"
+    class="portrait" src="/people/m/MarconiGuglielmo/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-fr occupation-ufologist occupation-journalist"
+    title="1965-, 59 ans, France, ufologue, journaliste"><a href="/people/m/MarhicRenaud/">Marhic, Renaud<img
+    alt="Marhic, Renaud" class="portrait" src="/people/m/MarhicRenaud/portrait.jpg" width="75"></a></span></li><li><span
+    class="people-resolved country-fr occupation-ufologist" title="France, ufologue"><a href="/people/m/MarieFranck/">Marie, Franck</a></span>
+  </li><li><span class="people-resolved pseudonym country-us occupation-contactee occupation-houseWife"
+    title="(pseudonyme), 1950-, 74 ans, USA, contactée, femme au foyer"><a
+    href="/people/m/MartinDorothy/">Marion Keech<img alt="Marion Keech" class="portrait"
+    src="/people/m/MartinDorothy/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-us occupation-astronomer"
+    title="1907-1998, 91 ans, USA, astronome"><a href="/people/m/MarkowitzWilliam/">Markowitz, William<img
+    alt="Markowitz, William" class="portrait" src="/people/m/MarkowitzWilliam/portrait.gif" width="75"></a></span></li>
+    <li><span class="people-resolved country-us occupation-contactee occupation-houseWife"
+      title="1950-, 74 ans, USA, contactée, femme au foyer"><a href="/people/m/MartinDorothy/">Martin, Dorothy<img
+      alt="Martin, Dorothy" class="portrait" src="/people/m/MartinDorothy/portrait.jpg" width="75"></a></span></li><li>
+      <span class="people-resolved country-fr occupation-physicist" title="France, physicien"><a
+        href="/people/m/MartinJeanNoel/">Martin, Jean-Noël</a></span></li><li><span
+      class="people-resolved country-br occupation-ufologist occupation-journalist"
+      title="Brésil, ufologue, journaliste"><a href="/people/m/MartinsJoao/">Martins, Joao</a></span>
+    </li><li><span class="people-resolved pseudonym deceased country-fr occupation-ufologist occupation-artist occupation-musician"
+      title="(pseudonyme), 1930-2002, 72 ans, France, ufologue, artiste, musicien"><a
+      href="/people/m/MaryRogerLuc/">Mary, Lucien Roger</a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-ufologist occupation-artist occupation-musician"
+      title="1930-2002, 72 ans, France, ufologue, artiste, musicien"><a
+      href="/people/m/MaryRogerLuc/">Mary, Roger Luc</a></span></li><li><span
+      class="people-resolved deceased country-jp occupation-pilot occupation-contactee"
+      title="1929-2000, 71 ans, Japon, pilote, contacté"><a
+      href="/people/m/MatsumuraYusuke/">Matsumura, Yusuke</a></span></li><li><span
+      class="people-resolved country-fr occupation-ufologist occupation-physicist occupation-psychologist"
+      title="1946-, 78 ans, France, ufologue, physicien, psychologue"><a
+      href="/people/m/MaugeClaude/">Maugé, Claude<img alt="Maugé, Claude" class="portrait"
+      src="/people/m/MaugeClaude/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-uk occupation-astronomer occupation-ufoWitness"
+      title="1851-1928, 77 ans, Royaume-Uni, astronome, témoin d'ovni"><a
+      href="/people/m/MaunderEdwardWalter/">Maunder, Edward Walter<img alt="Maunder, Edward Walter"
+      class="portrait" src="/people/m/MaunderEdwardWalter/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-mx occupation-ufologist occupation-writer occupation-producer"
+      title="1953-, 71 ans, Mexique, ufologue, écrivain, producteur"><a
+      href="/people/m/MaussanJaime/">Maussan, Jaime<img alt="Maussan, Jaime" class="portrait"
+      src="/people/m/MaussanJaime/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-physicist"
+      title="USA, physicien"><a href="/people/m/MayEdwin/">May, Edwin<img
+      alt="May, Edwin" class="portrait" src="/people/m/MayEdwin/portrait.webp" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-meteorologist occupation-ufologist occupation-physicist"
+      title="1920-1971, 51 ans, USA, météorologue, ufologue, physicien"><a
+      href="/people/m/McDonaldJamesE/">Mc Donald, James E.<img alt="Mc Donald, James E."
+      class="portrait" src="/people/m/McDonaldJamesE/portrait.gif" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-physicist occupation-engineer"
+      title="1924-2008, 84 ans, USA, ufologue, physicien, ingénieur"><a
+      href="/people/m/McCampbellJamesM/">Mc, Campbell James M.<img alt="Mc, Campbell James M."
+      class="portrait" src="/people/m/McCampbellJamesM/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-military" title="1892-1969, 77 ans, USA, militaire"><a
+      href="/people/m/McDonaldGeorgeClement/">Mc, Donald George Clement<img
+      alt="Mc, Donald George Clement" class="portrait" src="/people/m/McDonaldGeorgeClement/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved country-us occupation-pilot occupation-ufologist"
+      title="USA, pilote, ufologue"><a href="/people/m/McGahaJames/">Mc, Gaha James</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-ufoWitness2"
+      title="1922-2008, 86 ans, USA, témoin indirect d'ovni"><a href="/people/m/McGuirePhyllis/">Mc, Guire Phyllis<img
+      alt="Mc, Guire Phyllis" class="portrait" src="/people/m/McGuirePhyllis/portrait.webp" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-us occupation-politician occupation-ufologist"
+      title="1906-2002, 95 ans, USA, politicien, ufologue"><a
+      href="/people/m/McIntireCarl/">Mc, Intire Carl</a></span></li><li><span
+      class="people-resolved country-uk occupation-softwareEngineer occupation-ufologist"
+      title="1966-, 58 ans, Royaume-Uni, Informaticien, ufologue"><a
+      href="/people/m/McKinnonGary/">Mc, Kinnon Gary<img alt="Mc, Kinnon Gary" class="portrait"
+      src="/people/m/McKinnonGary/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-military"
+      title="1913-, 111 ans, USA, militaire"><a href="/people/m/McLaughlinRobertB/">Mc, Laughlin Robert B.</a></span>
+    </li><li><span class="people-resolved country-us occupation-military" title="1946-, 78 ans, USA, militaire"><a
+      href="/people/m/McMoneagleJo/">Mc, Moneagle Jo</a></span></li><li><span class="people-resolved country-us occupation-journalist"
+      title="USA, journaliste"><a
+      href="/people/m/McQuiddyArthurR/">Mc, Quiddy Arthur R.</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-chemist"
+      title="1923-2004, 81 ans, USA, ufologue, chimiste"><a
+      href="/people/m/MebaneAlexander/">Mebane, Alexander</a></span></li><li><span class="people-resolved country-be occupation-pilot"
+      title="Belgique, pilote"><a href="/people/m/MeelbergsYves/">Meelbergs, Yves</a></span>
+    </li><li><span class="people-resolved country-be occupation-ufologist occupation-physicist"
+      title="1932-, 92 ans, Belgique, ufologue, physicien"><a href="/people/m/MeessenAuguste/">Meessen, Auguste<img
+      alt="Meessen, Auguste" class="portrait" src="/people/m/MeessenAuguste/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved country-fr occupation-ufologist occupation-writer"
+      title="1947-, 76 ans, France, ufologue, écrivain"><a href="/people/m/MeheustBertrand/">Meheust, Bertrand<img
+      alt="Meheust, Bertrand" class="portrait" src="/people/m/MeheustBertrand/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved country-ch occupation-writer occupation-ufoWitness occupation-contactee"
+      title="1937-, 87 ans, Suisse, écrivain, témoin d'ovni, contacté"><a
+      href="/people/m/MeierEduardAlbert/">Meier, Eduard Albert</a></span></li><li><span
+      class="people-resolved country-cy country-uk occupation-writer occupation-illusionist"
+      title="1959-, 65 ans, Chypre, Royaume-Uni, écrivain, illusionniste"><a
+      href="/people/m/MelarisSpyros/">Melaris, Spyros</a></span></li><li><span
+      class="people-resolved country-ma country-fr occupation-writer occupation-politician"
+      title="1951-, 72 ans, Maroc, France, écrivain, politicien"><a
+      href="/people/m/MelenchonJeanLuc/">Melenchon, Jean Luc</a></span></li><li><span
+      class="people-resolved country-us occupation-writer occupation-politician"
+      title="1957-, 66 ans, USA, écrivain, politicien"><a href="/people/m/MellonChris/">Mellon, Chris<img
+      alt="Mellon, Chris" class="portrait" src="/people/m/MellonChris/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-writer occupation-contactee"
+      title="1922-2009, 87 ans, USA, écrivain, contacté"><a
+      href="/people/m/MengerHoward/">Menger, Howard<img alt="Menger, Howard" class="portrait"
+      src="/people/m/MengerHoward/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved deceased country-us occupation-ufologist occupation-astronomer occupation-astrophysicist occupation-ufoWitness"
+      title="1901-1976, 75 ans, USA, ufologue, astronome, astrophysicien, témoin d'ovni"><a
+      href="/people/m/MenzelDonaldH/">Menzel, Donald H.<img alt="Menzel, Donald H."
+      class="portrait" src="/people/m/MenzelDonaldH/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-anthropologist"
+      title="USA, anthropologue"><a
+      href="/people/m/MercadoSaul/">Mercado, Saul</a></span></li><li><span class="people-resolved deceased country-us occupation-engineer"
+      title="1912-1991, 78 ans, USA, ingénieur"><a href="/people/m/MerrittEverett/">Merritt, Everett</a></span>
+    </li><li><span class="people-resolved deceased country-fr occupation-mathematician occupation-teacher occupation-ufologist"
+      title="1943-2022, 79 ans, France, mathématicien, enseignant, ufologue"><a
+      href="/people/m/MesnardJoel/">Mesnard, Joel<img alt="Mesnard, Joel" class="portrait"
+      src="/people/m/MesnardJoel/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-au occupation-physicist"
+      title="1922-2015, 93 ans, Australie, physicien"><a
+      href="/people/m/MesselHarry/">Messel, Harry</a></span></li><li><span class="people-resolved deceased country-fr occupation-astronomer"
+      title="1730-1817, 86 ans, France, astronome"><a href="/people/m/MessierCharles/">Messier, Charles<img
+      alt="Messier, Charles" class="portrait" src="/people/m/MessierCharles/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-ca occupation-prospector occupation-ufoWitness"
+      title="1916-1999, 83 ans, Canada, prospecteur, témoin d'ovni"><a
+      href="/people/m/MichalakStephen/">Michalak, Stephen</a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-ufologist occupation-writer"
+      title="1919-1992, 73 ans, France, ufologue, écrivain"><a
+      href="/people/m/MichelAime/">Michel, Aime</a></span></li><li><span
+      class="people-resolved deceased country-fr occupation-writer occupation-contactee"
+      title="1940-1992, 52 ans, France, écrivain, contacté"><a
+      href="/people/m/MigueresJean/">Migueres, Jean<img alt="Migueres, Jean" class="portrait"
+      src="/people/m/MigueresJean/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
+      title="USA, témoin d'ovni"><a href="/people/m/MillerPaul/">Miller, Paul</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-military"
+      title="1906-1996, 90 ans, USA, militaire"><a href="/people/m/MillsJohnStewart/">Mills, John Stewart<img
+      alt="Mills, John Stewart" class="portrait" src="/people/m/MillsJohnStewart/portrait.jpg" width="75"></a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-physicist occupation-astronomer occupation-ufoWitness"
+      title="1907-1994, 86 ans, USA, physicien, astronome, témoin d'ovni"><a
+      href="/people/m/MitchellCarl/">Mitchell, Carl</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-pilot occupation-ufologist occupation-parapsychologist occupation-astronaut"
+      title="1930-2016, 85 ans, USA, pilote, ufologue, parapsychologue, astronaute"><a
+      href="/people/m/MitchellEdgar/">Mitchell, Edgar<img alt="Mitchell, Edgar"
+      class="portrait" src="/people/m/MitchellEdgar/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-ar occupation-priest"
+      title="Argentine, prêtre"><a href="/people/m/Mohammed/">Mohammed</a></span></li><li>
+      <span class="people-resolved deceased country-ca occupation-writer" title="1945-1996, 51 ans, Canada, écrivain"><a
+        href="/people/m/MonastSerge/">Monast, Serge</a></span></li><li><span
+      class="people-resolved country-fr occupation-ufologist occupation-writer"
+      title="1940-, 84 ans, France, ufologue, écrivain"><a href="/people/m/MonnerieMichel/">Monnerie, Michel<img
+      alt="Monnerie, Michel" class="portrait" src="/people/m/MonnerieMichel/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved deceased country-fr occupation-writer occupation-contactee"
+      title="-2009, France, écrivain, contacté"><a
+      href="/people/m/MonnetPierre/">Monnet, Pierre</a></span></li><li><span class="people-resolved country-fr occupation-ufologist"
+      title="1973-, 50 ans, France, ufologue"><a
+      href="/people/m/MontigianiNicolas/">Montigiani, Nicolas</a></span></li><li><span
+      class="people-resolved deceased country-us occupation-chemist occupation-meteorologist"
+      title="1920-2010, 89 ans, USA, chimiste, météorologue"><a
+      href="/people/m/MooreCharlesB/">Moore, Charles B.<img alt="Moore, Charles B."
+      class="portrait" src="/people/m/MooreCharlesB/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-us occupation-ufologist occupation-writer"
+      title="1943-, 80 ans, USA, ufologue, écrivain"><a href="/people/m/MooreWilliamL/">Moore, William L.</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-engineer"
+      title="1892-1974, 81 ans, USA, ingénieur"><a
+      href="/people/m/MorayHenryT/">Moray, Henry T.</a></span></li><li><span
+      class="people-resolved deceased country-br occupation-military occupation-ufoWitness"
+      title="1919-1983, 63 ans, Brésil, militaire, témoin d'ovni"><a
+      href="/people/m/MoreiraDaSilvaPauloDeCastro/">Moreira, Da Silva Paulo De Castro<img
+      alt="Moreira, Da Silva Paulo De Castro" class="portrait" src="/people/m/MoreiraDaSilvaPauloDeCastro/portrait.jpg"
+      width="75"></a></span></li><li><span class="people-resolved country-ar occupation-ufoWitness"
+      title="Argentine, témoin d'ovni"><a href="/people/m/MorenoYolieDeValle/">Moreno, Yolie De Valle</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-banker"
+      title="1837-1913, 76 ans, USA, banquier"><a href="/people/m/MorganJohnPierpont/">Morgan, John Pierpont</a></span>
+    </li><li><span class="people-resolved deceased country-fr occupation-ufoWitness occupation-actor"
+      title="1920-2016, 96 ans, France, témoin d'ovni, actrice"><a
+      href="/people/m/MorganMichele/">Morgan, Michele</a></span></li><li><span class="people-resolved country-fr occupation-ufologist"
+      title="1954-, 70 ans, France, ufologue"><a href="/people/m/MorgenthalerChristian/">Morgenthaler, Christian</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-physicist"
+      title="1915-2005, 89 ans, USA, physicien"><a href="/people/m/MorrisonPhilip/">Morrison, Philip<img
+      alt="Morrison, Philip" class="portrait" src="/people/m/MorrisonPhilip/portrait.jpg" width="75"></a></span></li>
+    <li><span class="people-resolved country-us occupation-ufologist occupation-writer" title="USA, ufologue, écrivain"><a
+      href="/people/m/MoseleyJames/">Moseley, James<img alt="Moseley, James" class="portrait"
+      src="/people/m/MoseleyJames/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufologist occupation-writer occupation-producer"
+      title="USA, ufologue, écrivaine, productrice"><a
+      href="/people/m/MoultonHoweLinda/">Moulton, Howe Linda<img alt="Moulton, Howe Linda"
+      class="portrait" src="/people/m/MoultonHoweLinda/portrait.jpg" width="75"></a></span></li><li><span
+      class="people-resolved country-ca occupation-biophysicist occupation-geographer"
+      title="1940-, 84 ans, Canada, biophysicien, géographe"><a href="/people/m/MundayJohnC/">Munday, John C.</a></span>
+    </li><li><span class="people-resolved deceased country-us occupation-writer occupation-contactee"
+      title="1913-1989, 76 ans, USA, écrivain, contacté"><a
+      href="/people/m/MundoLaura/">Mundo, Laura</a></span></li><li><span class="people-resolved country-fr occupation-ufologist"
+      title="France, ufologue"><a
+      href="/people/m/MunschGilles/">Munsch, Gilles</a></span></li></ul>
+  <script async src="/people/index.js" type="module"></script>
+
+  <script async src="../index.js" type="text/javascript"></script>
+</div>
+<footer>
+  <div class="full-page" id="footerTable">
+    <div class="footer">
+      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
+      Copyright <span class="copyright"><!--#echo var="copyright" --></span> - <a href="/Contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<aside class="map">
+  <h1>Map</h1>
+  <div id="map-canvas">
+    <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
+  </div>
+</aside>
+
+<script>
+  if (window !== top) document.querySelectorAll('.full-page').forEach(elem => elem.style.display = 'none')
+</script>
+</body>
+</html>

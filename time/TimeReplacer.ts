@@ -24,10 +24,9 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
   /**
-   * @param timeFiles The existing time files that we can link to (i.e. we won't link to non-existing ones).
    * @param renderer
    */
-  constructor(protected timeFiles: string[], protected renderer = new TimeRenderer()) {
+  constructor(protected renderer: TimeRenderer) {
   }
 
   static parseDateTime(timeStr: string): TimeParseResult {
@@ -99,29 +98,40 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     } else {
       const previousContext = original.dataset["context"] === "none" ? undefined : context.clone()
       const contents = original.textContent
-      const parts = contents.split("/")
-      const isTimeInterval = parts.length > 1
-      if (isTimeInterval) {
-        const startTime = parts[0]
-        const startReplacement = this.valueReplacement(context, startTime, previousContext)
-        if (startReplacement) {
-          const endTime = parts[1]
-          const endReplacement = this.valueReplacement(context, endTime, previousContext)
-          if (endReplacement) {
-            replacement = context.file.document.createElement("span")
-            replacement.className = "time-interval"
-            replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
-              endReplacement.outerHTML)
-          }
-        }
-      }
+      replacement = this.create(context, contents, previousContext)
       if (!replacement) {
-        replacement = this.valueReplacement(context, contents, previousContext) || original
+        replacement = original
+        replacement.setAttribute("datetime", contents)
       }
       context.debug("\tReplacing time", original.outerHTML, "with",
         ObjectUtils.asSet<HTMLElement>(replacement).outerHTML)
-      replacement.setAttribute("datetime", contents)
     }
+    return replacement
+  }
+
+  create(context: HtmlRR0SsgContext, contents: string,
+         previousContext: HtmlRR0SsgContext | undefined): HTMLElement | undefined {
+    let replacement: HTMLElement | undefined
+    const parts = contents.split("/")
+    const isTimeInterval = parts.length > 1
+    if (isTimeInterval) {
+      const startTime = parts[0]
+      const startReplacement = this.valueReplacement(context, startTime, previousContext)
+      if (startReplacement) {
+        const endTime = parts[1]
+        const endReplacement = this.valueReplacement(context, endTime, previousContext)
+        if (endReplacement) {
+          replacement = context.file.document.createElement("span")
+          replacement.className = "time-interval"
+          replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
+            endReplacement.outerHTML)
+        }
+      }
+    }
+    if (!replacement) {
+      replacement = this.valueReplacement(context, contents, previousContext)
+    }
+    replacement?.setAttribute("datetime", contents)
     return replacement
   }
 
@@ -160,7 +170,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     TimeReplacer.setTimeContextFrom(time, parsed)
     let replacement: HTMLElement | undefined = undefined
     if (context.time.isDefined()) {
-      replacement = this.renderer.render(context, this.timeFiles, previousContext)
+      replacement = this.renderer.render(context, previousContext)
     }
     return replacement
   }

@@ -1,6 +1,6 @@
 import { RR0CaseSummary } from "./datasource/rr0/RR0CaseSummary"
-import { SourceRenderer } from "./SourceRenderer"
 import { EventRenderer } from "./EventRenderer"
+import { SourceRenderer } from "../source/SourceRenderer"
 
 /**
  * Render a case summary as HTML.

@@ -3,12 +3,13 @@ import { ChronologyReplacer, ChronologyReplacerActions, RR0CaseMapping } from ".
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { RR0Datasource } from "./rr0/RR0Datasource"
+import { TimeService } from "../TimeService"
 
 export class ChronologyReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected readonly replacer: ChronologyReplacer
 
-  constructor(protected timeFiles: string[], datasources: RR0CaseMapping<any>[], rr0Datasource: RR0Datasource,
+  constructor(protected timeService: TimeService, datasources: RR0CaseMapping<any>[], rr0Datasource: RR0Datasource,
               actions: ChronologyReplacerActions, caseRenderer: CaseSummaryRenderer) {
     this.replacer = new ChronologyReplacer(datasources, caseRenderer, actions, rr0Datasource)
   }
@@ -21,8 +22,9 @@ export class ChronologyReplacerFactory implements ReplacerFactory<DomReplacer> {
   async create(context: HtmlRR0SsgContext): Promise<DomReplacer> {
     return {
       replace: async (ul: HTMLUListElement): Promise<HTMLUListElement> => {
-        return this.timeFiles.includes(context.file.name) && ul.parentElement.classList.contains(
-          "contents") ? this.replacer.replacement(context, ul) : ul
+        const isTimeFile = await this.timeService.isTimeFile(context.file.name)
+        const chronologyPage = ul.parentElement.classList.contains("contents")
+        return isTimeFile && chronologyPage ? this.replacer.replacement(context, ul) : ul
       }
     }
   }

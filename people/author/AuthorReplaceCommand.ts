@@ -1,6 +1,6 @@
 import { RegexReplacer, SsiEchoVarReplaceCommand } from "ssg-api"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { TimeRenderer } from "../../time/TimeRenderer"
+import { TimeService } from "../../time/TimeService"
 
 /**
  * Replaces "<!--#echo var="author" -->" and "<!--#echo var="copyright" -->"
@@ -8,7 +8,7 @@ import { TimeRenderer } from "../../time/TimeRenderer"
  */
 export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
 
-  constructor(protected timeFiles: string[], protected timeRenderer: TimeRenderer) {
+  constructor(protected timeService: TimeService) {
     super("author")
   }
 
@@ -26,7 +26,7 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }
         if (authorsHtml && context.time.getYear()) {
-          const timeElem = this.timeRenderer.render(context, this.timeFiles)
+          const timeElem = this.timeService.renderer.render(context)
           authorsHtml += ", " + timeElem.outerHTML
         }
         if (authorsHtml) {

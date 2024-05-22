@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Dérivées</title>
 <script type="text/javascript" charset="UTF-8"
-    src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+  src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"/>
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Derivative</i>.</p>
@@ -18,7 +18,7 @@
   <p>On considère que la pente est donnée par la <strong>tangente</strong> (plus précisément le <strong>coefficient
     directeur</strong> de cette tangente) à la fonction en un point.</p>
   <p>On note `f'(x)` ou `(df)/(dx)` ou `(δf)/(δx)` la fonction dérivée de `f(x)` (où `dx` et `df` représentent des
-    accroissement infinitésimaux de `x` et `f(x + dx)`).</p>
+    accroissements infinitésimaux de `x` et `f(x + dx)`).</p>
   <section>
     <h3>Plusieurs variables</h3>
     <figure class="left side">
@@ -31,8 +31,8 @@
     <p>Si la fonction implique plusieurs variables/dimensions `x_1, x_2, ..., x_n`, la dérivée est la somme des dérivées
       dans chaque variable/dimension :</p>
     <p>`df = (δf)/(δx_1) + (δf)/(δx_2) + ... + (δf)/(δx_n)`</p>
-    <p>de sorte que l'on peut calculer chacune de ces <strong>dérivées partielles</strong> indépendamment (comme si
-      les autres variables étaient constantes).</p>
+    <p>de sorte que l'on peut calculer chacune de ces <strong>dérivées partielles</strong> indépendamment (comme si les
+      autres variables étaient constantes).</p>
   </section>
 </section>
 <section>
@@ -42,7 +42,7 @@
     <img src="taux.png" alt="Taux d'accroissement"/>
   </figure>
   <p>Pour trouver la tangente, on la définit comme passant par 2 points de la fonction (espacés d'un petit écart `h` en
-    abscisse), et l'on chercher à trouver quelle sera la pente lorsque ces points seront rapprochés au maximum (i .e.
+    abscisse), et l'on cherchera à trouver quelle sera la pente lorsque ces points seront rapprochés au maximum (i .e.
     lorsque `h` tend vers 0).</p>
 </section>
 <section>
@@ -113,26 +113,34 @@ td:nth-child(2) div {
 }
 </style>
 <script>
-  var i = 3;
-  var cons = JXG.JSXGraph.initBoard('const', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
-  cons.create([function (x) {
+  var i = 3
+  var cons = JXG.JSXGraph.initBoard('const', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  })
+  cons.create('functiongraph', [function (x) {
     return i / 2
-  }, -i, i], bookMeta, undefined);
-  var x = JXG.JSXGraph.initBoard('x', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
-  x.create([function (x) {
+  }, -i, i])
+  var x = JXG.JSXGraph.initBoard('x', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  })
+  x.create('functiongraph', [function (x) {
     return x
-  }, -i, i], bookMeta, undefined);
-  var axb = JXG.JSXGraph.initBoard('axb', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
-  axb.create([function (x) {
+  }, -i, i])
+  var axb = JXG.JSXGraph.initBoard('axb', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  })
+  axb.create('functiongraph', [function (x) {
     return i / 2 * x + i / 2
-  }, -i, i], bookMeta, undefined);
-  var xn = JXG.JSXGraph.initBoard('xn', {boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
-    showCopyright: false});
-  xn.create([function (x) {
+  }, -i, i])
+  var xn = JXG.JSXGraph.initBoard('xn', {
+    boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
+    showCopyright: false
+  })
+  xn.create('functiongraph', [function (x) {
     return x * x
-  }, -i, i], bookMeta, undefined);
+  }, -i, i])
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

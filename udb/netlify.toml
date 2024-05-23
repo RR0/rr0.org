@@ -1,3 +1,7 @@
 [build.processing.js]
   bundle = false
   minify = false
+
+[[redirects]]
+  from = "/"
+  to = "/dist"

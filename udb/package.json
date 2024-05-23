@@ -1,0 +1,33 @@
+{
+  "name": "rr0-udb-web",
+  "version": "1.0.0",
+  "description": "Udb web app",
+  "author": "Jérôme Beau (javarome@gmail.com)",
+  "main": "index.html",
+  "scripts": {
+    "test": "node --test",
+    "prebuild": "npm run test",
+    "build": "copyfiles --flat node_modules/@rr0/udb/data/udb/input/usources.txt ../out/udb && copyfiles --flat node_modules/@rr0/udb/data/udb/input/U.RND ../out/udb && vite build --mode production",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RR0/rr0.org.git"
+  },
+  "dependencies": {
+    "@rr0/udb": "^2.0.1"
+  },
+  "devDependencies": {
+    "vite": "^5.2.9",
+    "copyfiles": "^2.4.1"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js"
+    },
+    "./cv": {
+      "import": "./cv/index.mjs"
+    }
+  },
+  "private": true
+}

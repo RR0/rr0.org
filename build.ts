@@ -90,6 +90,7 @@ interface RR0BuildArgs {
 console.time("ssg")
 const args = new CLI().getArgs<RR0BuildArgs>()
 const cliContents = args.contents
+console.debug("contents", cliContents)
 const contentRoots = cliContents
   ? cliContents.split(",")
   : [
@@ -117,10 +118,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "people/index.js", "people/lier.svg", "people/index.css", "people/witness/index.css",
   "search/index.js", "search/index.json", "search/search.css",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
-  "croyance/religion/theisme/mono/livre/islam/coran/index.js",
-  "udb/**/*.js",
-  "udb/netlify.toml",
-  "udb/input/db/udb/data/*.*"
+  "croyance/religion/theisme/mono/livre/islam/coran/index.js"
 ]
 
 const outDir = "out"

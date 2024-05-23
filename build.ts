@@ -244,7 +244,7 @@ timeService.getFiles().then(async (timeFiles) => {
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand("people", new PeopleReplacerFactory(peopleService)),
-    new ClassDomReplaceCommand("place", new PlaceReplacerFactory(placeService, orgService)),
+    new ClassDomReplaceCommand("place", new PlaceReplacerFactory()),
     new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
     new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
     new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),

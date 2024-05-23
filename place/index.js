@@ -2,7 +2,7 @@ var currentAddress
 var mapEl
 var currentPlaceEl
 
-function showMap(event, address, display = true) {
+function showMap (event, address, display = true, mode = 'place') {
   event.stopPropagation()
   document.body.classList.toggle("with-map", display)
   if (!address) {
@@ -10,12 +10,21 @@ function showMap(event, address, display = true) {
   }
   if (address !== currentAddress) {
     currentAddress = address
+    let qs
+    switch (mode) {
+      case 'streetview':
+        qs = address
+        break
+      default:
+        qs = `q=${address}&maptype=satellite`
+    }
     mapEl.querySelector("iframe").src =
-      `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
+      `https://www.google.com/maps/embed/v1/${mode}?${qs}&key=${mapsApiKey}`
   }
 }
 
 const mapToggle = document.querySelector(".map-toggle .toggle")
+
 document.addEventListener("DOMContentLoaded", () => {
   mapEl = document.querySelector("#map-canvas")
   currentPlaceEl = document.querySelector(".plac")

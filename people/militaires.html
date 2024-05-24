@@ -1,346 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <base/>
-  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
-  <link href="/manifest.json" rel="manifest">
-  <link href="/opensearch.xml" rel="search" title="RR0" type="application/opensearchdescription+xml"/>
-  <meta content="initial-scale=1, width=device-width" name="viewport">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMV7R92GK1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || []
-
-    function gtag () {
-      dataLayer.push(arguments)
-    }
-
-    gtag('js', new Date())
-    gtag('config', 'G-CMV7R92GK1')
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-    w[l] = w[l] || []
-    w[l].push({
-      'gtm.start':
-        new Date().getTime(), event: 'gtm.js'
-    })
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
-    j.async = true
-    j.src =
-      'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-    f.parentNode.insertBefore(j, f)
-  })(window, document, 'script', 'dataLayer', 'GTM-NBPKWNM')</script>
-  <!-- End Google Tag Manager -->
-
+<!--#include virtual="/header-start.html" -->
 <title>Militaires</title>
 <link href="index.css" rel="stylesheet"/>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
-    style="display:none;visibility:hidden" title="GTM"
-    width="0"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-<header id="main-header">
-  <h1 class="full-page"><!--#echo var="title" --></h1>
-</header>
-<nav id="main-nav">
-  <h1>Navigation</h1>
-  <ul>
-    <li class="full-page">
-      <a class="home" href="/" title="Home">RR0</a>
-    </li>
-    <li class="search full-page">
-      <input disabled id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
-      <datalist id="search-site-values">
-      </datalist>
-    </li>
-    <li id="summary">
-      <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
-      <ul class="outline">
-      </ul>
-    </li>
-    <li>
-      <span id="alternate"></span>
-    </li>
-    <li class="map-toggle">
-      <button class="toggle">Carte</button>
-    </li>
-  </ul>
-  <script async src="/search/index.js" type="text/javascript"></script>
-</nav>
-<script>
-  const summary = document.getElementById('out-top')
-  const observer = new IntersectionObserver(function (entries) {
-    summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : 'Sommaire'
-  }, { threshold: [0, 0.3, 1] })
-  observer.observe(document.querySelector('#main-header'))
-  var currentAddress
-  var mapEl
-  var currentPlaceEl
-
-  function showMap (event, address, display = true) {
-    event.stopPropagation()
-    document.body.classList.toggle('with-map', display)
-    if (!address) {
-      address = currentPlaceEl?.textContent
-    }
-    if (address !== currentAddress) {
-      currentAddress = address
-      mapEl.querySelector('iframe').src =
-        `https://www.google.com/maps/embed/v1/place?q=${address}&maptype=satellite&key=${mapsApiKey}`
-    }
-  }
-
-  const mapToggle = document.querySelector('.map-toggle .toggle')
-  document.addEventListener('DOMContentLoaded', () => {
-    mapEl = document.querySelector('#map-canvas')
-    currentPlaceEl = document.querySelector('.plac')
-    if (currentPlaceEl) {
-      mapToggle.style.display = 'inline-block'
-    }
-  })
-
-  function hasMap () {
-    return document.body.classList.contains('with-map')
-  }
-
-  mapToggle.addEventListener('click', (event) => {
-    showMap(event, currentAddress, !hasMap())
-  })
-  document.body.addEventListener('click', (event) => {
-    if (hasMap()) {
-      showMap(event, currentAddress, false)
-    }
-  })
-
-</script>
-<div aria-hidden="true" class="anchor" id="_top"></div>
-<div class="metadata">
-  <!--#echo var="author" -->
-</div>
-<div class="contents">
-
-  <p>Militaires associés de près ou de loin à des affaires d'ovnis ou à leur étude.</p>
-  <form id="searchForm">
-    <label style="white-space: normal">Nom <input autofocus oninput="findPeople(event)" style="margin-left: 1em"
-      type="search"></label>
-    <details>
-      <summary>Pays</summary>
-      <div id="countries"><span class="option"><label><input id="country-be" onchange="findPeople(event)"
-        type="checkbox"> Belgique</label></span><span class="option"><label><input id="country-br"
-        onchange="findPeople(event)" type="checkbox"> Brésil</label></span><span class="option"><label><input
-        id="country-cl" onchange="findPeople(event)" type="checkbox"> Chili</label></span><span
-        class="option"><label><input id="country-fr" onchange="findPeople(event)" type="checkbox"> France</label></span><span
-        class="option"><label><input id="country-it" onchange="findPeople(event)" type="checkbox"> Italie</label></span><span
-        class="option"><label><input id="country-ro" onchange="findPeople(event)"
-        type="checkbox"> Roumanie</label></span><span class="option"><label><input id="country-ru"
-        onchange="findPeople(event)" type="checkbox"> Russie</label></span><span class="option"><label><input
-        id="country-sa" onchange="findPeople(event)" type="checkbox"> Arabie Saoudite</label></span><span
-        class="option"><label><input id="country-ua" onchange="findPeople(event)"
-        type="checkbox"> Ukraine</label></span><span class="option"><label><input id="country-uk"
-        onchange="findPeople(event)" type="checkbox"> Royaume-Uni</label></span><span class="option"><label><input
-        id="country-us" onchange="findPeople(event)" type="checkbox"> USA</label></span></div>
-    </details>
-    <details>
-      <summary>Profession</summary>
-      <div id="occupations"><span class="option"><label><input id="occupation-astronaut" onchange="findPeople(event)"
-        type="checkbox"> Astronaute</label></span><span class="option"><label><input id="occupation-engineer"
-        onchange="findPeople(event)" type="checkbox"> Ingénieur</label></span><span
-        class="option"><label><input id="occupation-pilot" onchange="findPeople(event)" type="checkbox"> Pilote</label></span><span
-        class="option"><label><input id="occupation-politician" onchange="findPeople(event)" type="checkbox"> Politicien</label></span><span
-        class="option"><label><input id="occupation-priest" onchange="findPeople(event)" type="checkbox"> Prêtre</label></span><span
-        class="option"><label><input id="occupation-ufoWitness" onchange="findPeople(event)" type="checkbox"> Témoin d'ovni</label></span><span
-        class="option"><label><input id="occupation-ufoWitness2" onchange="findPeople(event)" type="checkbox"> Témoin indirect d'ovni</label></span><span
-        class="option"><label><input id="occupation-ufologist" onchange="findPeople(event)"
-        type="checkbox"> Ufologue</label></span></div>
-    </details>
-    <output></output>
-  </form>
-  <ul class="links"><li><span class="people-resolved country-us" title="1937-, 87 ans, USA"><a
-    href="/people/a/AlexanderJohnB/">Alexander, John B.<img alt="Alexander, John B."
-    class="portrait" src="/people/a/AlexanderJohnB/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-fr"
-    title="France"><a href="/people/a/AlexisGaston/">Alexis, Gaston<img
-    alt="Alexis, Gaston" class="portrait" src="/people/a/AlexisGaston/portrait.jpg" width="75"></a></span></li><li><span
-    class="people-resolved deceased country-us" title="1881-1981, 100 ans, USA"><a href="/people/a/AndersonWalterS/">Anderson, Walter S.</a></span>
-  </li><li><span class="people-resolved deceased country-us occupation-ufoWitness"
-    title="1916-1966, 50 ans, USA, témoin d'ovni"><a href="/people/b/BlanchardWilliamHugh/">Blanchard, William Hugh<img
-    alt="Blanchard, William Hugh" class="portrait" src="/people/b/BlanchardWilliamHugh/portrait.jpg"
-    width="75"></a></span></li><li><span class="people-resolved deceased country-us" title="1919-1988, 68 ans, USA"><a
-    href="/people/b/BolenderCarrollHerdus/">Bolender, Carroll Herdus</a></span></li><li><span
-    class="people-resolved deceased country-be occupation-ufologist occupation-pilot"
-    title="1940-2017, 77 ans, Belgique, ufologue, pilote"><a
-    href="/people/b/BonabotJacques/">Bonabot, Jacques</a></span></li><li><span class="people-resolved country-us"
-    title="USA"><a href="/people/b/BostromPeter/">Bostrom, Peter</a></span></li><li><span
-    class="people-resolved deceased country-us" title="1908-1997, 89 ans, USA"><a href="/people/b/BowerDonald/">Bower, Donald</a></span>
-  </li><li><span class="people-resolved deceased country-us" title="1890-1967, 77 ans, USA"><a
-    href="/people/b/BrerentonLewisHyde/">Brerenton, Lewis Hyde<img alt="Brerenton, Lewis Hyde"
-    class="portrait" src="/people/b/BrerentonLewisHyde/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-us"
-    title="1918-1978, 60 ans, USA"><a href="/people/b/BrownGeorgeScratchley/">Brown, George Scratchley<img
-    alt="Brown, George Scratchley" class="portrait" src="/people/b/BrownGeorgeScratchley/portrait.jpg"
-    width="75"></a></span></li><li><span class="people-resolved deceased country-us" title="1926-1977, 51 ans, USA"><a
-    href="/people/b/BryanJoseph/">Bryan, Joseph</a></span></li><li><span class="people-resolved deceased country-us"
-    title="1888-1957, 68 ans, USA"><a href="/people/b/ByrdRichardE/">Byrd, Richard E.<img
-    alt="Byrd, Richard E." class="portrait" src="/people/b/ByrdRichardE/portrait.jpg" width="75"></a></span></li><li>
-    <span class="people-resolved deceased country-us" title="1903-1971, 68 ans, USA"><a
-      href="/people/c/CabellCharlesPearre/">Cabell, Charles Pearre<img alt="Cabell, Charles Pearre"
-      class="portrait" src="/people/c/CabellCharlesPearre/portrait.jpg" width="75"></a></span></li><li><span
-    class="people-resolved deceased country-it" title="1919-1999, 80 ans, Italie"><a href="/people/c/CavittSheridan/">Cavitt, Sheridan<img
-    alt="Cavitt, Sheridan" class="portrait" src="/people/c/CavittSheridan/portrait.jpg" width="75"></a></span></li><li>
-    <span class="people-resolved deceased country-fr" title="1902-1970, 68 ans, France"><a
-      href="/people/c/ChassinLionelMax/">Chassin, Lionel Max<img alt="Chassin, Lionel Max"
-      class="portrait" src="/people/c/ChassinLionelMax/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-us"
-    title="1900-1939, 39 ans, USA"><a href="/people/c/ChildlawBenjaminWiley/">Childlaw, Benjamin Wiley<img
-    alt="Childlaw, Benjamin Wiley" class="portrait" src="/people/c/ChildlawBenjaminWiley/portrait.jpg"
-    width="75"></a></span></li><li><span class="people-resolved deceased country-us" title="1874-1965, 90 ans, USA"><a
-    href="/people/c/ClarkAlanD/">Clark, Alan D.</a></span></li><li><span class="people-resolved country-fr"
-    title="France"><a href="/people/c/Clerouin/">Clerouin</a></span></li><li><span class="people-resolved country-us"
-    title="USA"><a href="/people/c/ClingermanWilliam/">Clingerman, William<img
-    alt="Clingerman, William" class="portrait" src="/people/c/ClingermanWilliam/portrait.jpg" width="75"></a></span>
-  </li><li><span class="people-resolved country-fr" title="France"><a href="/people/c/CochardJeanPierre/">Cochard, Jean Pierre</a></span>
-  </li><li><span class="people-resolved country-fr" title="France"><a href="/people/c/CochereauBernard/">Cochereau, Bernard</a></span>
-  </li><li><span class="people-resolved country-us occupation-ufoWitness" title="USA, témoin d'ovni"><a
-    href="/people/c/ColemanWilliamT/">Coleman, William T.<img alt="Coleman, William T."
-    class="portrait" src="/people/c/ColemanWilliamT/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufologist"
-    title="USA, ufologue"><a href="/people/c/CollinsRobertM/">Collins, Robert M.<img
-    alt="Collins, Robert M." class="portrait" src="/people/c/CollinsRobertM/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved country-us" title="1948-, 75 ans, USA"><a href="/people/c/CooperTimothyS/">Cooper, Timothy S.<img
-      alt="Cooper, Timothy S." class="portrait" src="/people/c/CooperTimothyS/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved deceased country-us occupation-ufologist" title="1943-2001, 58 ans, USA, ufologue"><a
-      href="/people/c/CooperWilliamMilton/">Cooper, William Milton<img alt="Cooper, William Milton"
-      class="portrait" src="/people/c/CooperWilliamMilton/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufologist"
-      title="USA, ufologue"><a href="/people/c/CorbinLou/">Corbin, Lou<img
-      alt="Corbin, Lou" class="portrait" src="/people/c/CorbinLou/portrait.jpg" width="75"></a></span></li><li><span
-      class="people-resolved deceased country-us" title="1915-1998, 83 ans, USA"><a href="/people/c/CorsoPhilipJ/">Corso, Philip J.<img
-      alt="Corso, Philip J." class="portrait" src="/people/c/CorsoPhilipJ/portrait.jpg" width="75"></a></span></li><li>
-      <span class="people-resolved deceased country-us" title="1919-1975, 56 ans, USA"><a
-        href="/people/c/CrismanFredLee/">Crisman, Fred Lee</a></span></li><li><span class="people-resolved country-us"
-      title="USA"><a href="/people/c/CummingsJerry/">Cummings, Jerry</a></span></li><li><span
-      class="people-resolved deceased country-us" title="1895-1974, 78 ans, USA"><a href="/people/c/CutlerRobert/">Cutler, Robert</a></span>
-    </li><li><span class="people-resolved deceased country-us occupation-ufologist"
-      title="1929-2018, 89 ans, USA, ufologue"><a
-      href="/people/d/DeanRobertO/">Dean, Robert O.</a></span></li><li><span class="people-resolved deceased country-us"
-      title="1896-1993, 96 ans, USA"><a href="/people/d/DoolittleJamesH/">Doolittle, James H.<img
-      alt="Doolittle, James H." class="portrait" src="/people/d/DoolittleJamesH/portrait.jpg" width="75"></a></span>
-    </li><li><span class="people-resolved deceased country-us" title="1902-1992, 90 ans, USA"><a
-      href="/people/d/DuboseThomasJefferson/">Dubose, Thomas Jefferson<img
-      alt="Dubose, Thomas Jefferson" class="portrait" src="/people/d/DuboseThomasJefferson/portrait.jpg" width="75"></a></span>
-    </li><li><span class="people-resolved country-us" title="USA"><a href="/people/e/EnglishBill/">English, Bill<img
-      alt="English, Bill" class="portrait" src="/people/e/EnglishBill/portrait.gif" width="75"></a></span></li><li><span
-      class="people-resolved deceased country-us occupation-pilot" title="1916-2005, 89 ans, USA, pilote"><a
-      href="/people/e/ExonArthurE/">Exon, Arthur E.<img alt="Exon, Arthur E." class="portrait"
-      src="/people/e/ExonArthurE/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-us"
-      title="1911-1991, 80 ans, USA"><a
-      href="/people/f/FisherWilliamParker/">Fisher, William Parker</a></span></li><li><span
-      class="people-resolved deceased country-us occupation-politician" title="1892-1949, 57 ans, USA, politicien"><a
-      href="/people/f/ForrestalJamesVincent/">Forrestal, James Vincent<img
-      alt="Forrestal, James Vincent" class="portrait" src="/people/f/ForrestalJamesVincent/portrait.jpg" width="75"></a></span>
-    </li><li><span class="people-resolved deceased country-us occupation-ufologist"
-      title="1921-2000, 78 ans, USA, ufologue"><a href="/people/f/FournetDeweyJ/">Fournet, Dewey J.<img
-      alt="Fournet, Dewey J." class="portrait" src="/people/f/FournetDeweyJ/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved country-us" title="1985-, 39 ans, USA"><a href="/people/g/GravesRyan/">Graves, Ryan<img
-      alt="Graves, Ryan" class="portrait" src="/people/g/GravesRyan/portrait.jpg" width="75"></a></span></li><li><span
-      class="people-resolved country-us occupation-ufologist" title="USA, ufologue"><a href="/people/g/GregoryGeorgeT/">Gregory, George T.<img
-      alt="Gregory, George T." class="portrait" src="/people/g/GregoryGeorgeT/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved deceased country-fr occupation-engineer"
-      title="1933-2007, 74 ans, France, ingénieur"><a
-      href="/people/g/GruauJean/">Gruau, Jean</a></span></li><li><span class="people-resolved country-us"
-      title="1987-, 37 ans, USA"><a href="/people/g/GruschDavid/">Grusch, David<img
-      alt="Grusch, David" class="portrait" src="/people/g/GruschDavid/portrait.png" width="75"></a></span></li><li><span
-      class="people-resolved pseudonym deceased country-fr" title="(pseudonyme), 1902-1970, 68 ans, France"><a
-      href="/people/c/ChassinLionelMax/">Guy Severac<img alt="Guy Severac" class="portrait"
-      src="/people/c/ChassinLionelMax/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-us occupation-ufoWitness"
-      title="1939-, 85 ans, USA, témoin d'ovni"><a href="/people/h/HaltCharlesI/">Halt, Charles I.<img
-      alt="Halt, Charles I." class="portrait" src="/people/h/HaltCharlesI/portrait.jpg" width="75"></a></span></li><li>
-      <span class="people-resolved deceased country-us" title="2005-1922, -84 ans, USA"><a
-        href="/people/h/HautWalterG/">Haut, Walter G.<img alt="Haut, Walter G." class="portrait"
-        src="/people/h/HautWalterG/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved deceased country-uk occupation-politician"
-      title="1915-2004, 89 ans, Royaume-Uni, politicien"><a href="/people/h/HillNortonPeterJohn/">Hill, Norton Peter John<img
-      alt="Hill, Norton Peter John" class="portrait" src="/people/h/HillNortonPeterJohn/portrait.jpg"
-      width="75"></a></span></li><li><span class="people-resolved deceased country-us" title="1897-1982, 85 ans, USA"><a
-      href="/people/h/HillenkoetterRoscoeHenry/">Hillenkoetter, Roscoe Henry<img
-      alt="Hillenkoetter, Roscoe Henry" class="portrait" src="/people/h/HillenkoetterRoscoeHenry/portrait.jpg"
-      width="75"></a></span></li><li><span class="people-resolved deceased country-sa occupation-priest"
-      title="584-644, 60 ans, Arabie Saoudite, prêtre"><a href="/people/k/KhattabOmar/">ibn Al-Khattâb, Omar</a></span>
-    </li><li><span class="people-resolved country-us" title="1931-, 93 ans, USA"><a href="/people/i/InmanRobertRay/">Inman, Robert Ray<img
-      alt="Inman, Robert Ray" class="portrait" src="/people/i/InmanRobertRay/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved deceased country-us occupation-ufoWitness"
-      title="1917-2001, 84 ans, USA, témoin d'ovni, discrédité"><a href="/people/k/KaufmannFrank/">Kaufmann, Frank&nbsp;🤥<img
-      alt="Kaufmann, Frank" class="portrait" src="/people/k/KaufmannFrank/portrait.jpg" width="75"></a></span></li><li>
-      <span class="people-resolved deceased country-us" title="1894-1976, 82 ans, USA"><a
-        href="/people/k/KnowlesHerbert/">Knowles, Herbert</a></span></li><li><span
-      class="people-resolved country-us occupation-engineer occupation-pilot"
-      title="1964-, 59 ans, USA, ingénieur, pilote"><a href="/people/k/KurthDouglas/">Kurth, Douglas<img
-      alt="Kurth, Douglas" class="portrait" src="/people/k/KurthDouglas/portrait.jpg" width="75"></a></span></li><li>
-      <span class="people-resolved deceased country-us" title="1906-1990, 83 ans, USA"><a
-        href="/people/l/LeMayCurtisE/">Le, May Curtis E.<img alt="Le, May Curtis E."
-        class="portrait" src="/people/l/LeMayCurtisE/portrait.gif" width="75"></a></span></li><li><span
-      class="people-resolved deceased country-us occupation-ufoWitness" title="1907-1986, 79 ans, USA, témoin d'ovni"><a
-      href="/people/m/MarcelJesseA/">Marcel, Jesse A.<img alt="Marcel, Jesse A."
-      class="portrait" src="/people/m/MarcelJesseA/portrait.jpg" width="75"></a></span></li><li><span
-      class="people-resolved deceased country-us occupation-ufoWitness2"
-      title="1936-2013, 77 ans, USA, témoin indirect d'ovni"><a href="/people/m/MarcelJesseJunior/">Marcel, Jesse Junior<img
-      alt="Marcel, Jesse Junior" class="portrait" src="/people/m/MarcelJesseJunior/portrait.jpg" width="75"></a></span>
-    </li><li><span class="people-resolved country-ro occupation-ufoWitness"
-      title="1934-, 90 ans, Roumanie, témoin d'ovni"><a href="/science/crypto/ufo/enquete/dossier/Cluj/">Matea, Zamfira</a></span>
-    </li><li><span class="people-resolved deceased country-us" title="1892-1969, 77 ans, USA"><a
-      href="/people/m/McDonaldGeorgeClement/">Mc, Donald George Clement<img
-      alt="Mc, Donald George Clement" class="portrait" src="/people/m/McDonaldGeorgeClement/portrait.jpg"
-      width="75"></a></span></li><li><span class="people-resolved country-us" title="1913-, 111 ans, USA"><a
-      href="/people/m/McLaughlinRobertB/">Mc, Laughlin Robert B.</a></span></li><li><span class="people-resolved country-us"
-      title="1946-, 78 ans, USA"><a href="/people/m/McMoneagleJo/">Mc, Moneagle Jo</a></span></li><li><span
-      class="people-resolved deceased country-us" title="1906-1996, 90 ans, USA"><a href="/people/m/MillsJohnStewart/">Mills, John Stewart<img
-      alt="Mills, John Stewart" class="portrait" src="/people/m/MillsJohnStewart/portrait.jpg" width="75"></a></span>
-    </li><li><span class="people-resolved deceased country-br occupation-ufoWitness"
-      title="1919-1983, 63 ans, Brésil, témoin d'ovni"><a
-      href="/people/m/MoreiraDaSilvaPauloDeCastro/">Moreira, Da Silva Paulo De Castro<img
-      alt="Moreira, Da Silva Paulo De Castro" class="portrait" src="/people/m/MoreiraDaSilvaPauloDeCastro/portrait.jpg"
-      width="75"></a></span></li><li><span class="people-resolved country-fr" title="1939-, 84 ans, France"><a
-      href="/people/n/NorlainBernard/">Norlain, Bernard</a></span></li><li><span
-      class="people-resolved deceased country-fr occupation-ufologist" title="1942-2009, 67 ans, France, ufologue"><a
-      href="/people/p/PinonGilles/">Pinon, Gilles<img alt="Pinon, Gilles" class="portrait"
-      src="/people/p/PinonGilles/portrait.jpg" width="75"></a></span></li><li><span class="people-resolved country-it occupation-ufologist"
-      title="1944-, 79 ans, Italie, ufologue"><a href="/people/p/PinottiRoberto/">Pinotti, Roberto<img
-      alt="Pinotti, Roberto" class="portrait" src="/people/p/PinottiRoberto/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved deceased country-ua country-ru occupation-astronaut"
-      title="1930-2009, 79 ans, Ukraine, Russie, astronaute"><a
-      href="/people/p/PopovitchPavelRomanovitch/">Popovitch, Pavel Romanovitch<img
-      alt="Popovitch, Pavel Romanovitch" class="portrait" src="/people/p/PopovitchPavelRomanovitch/portrait.jpg"
-      width="75"></a></span></li><li><span class="people-resolved pseudonym deceased country-us occupation-ufologist"
-      title="(pseudonyme), 1923-1960, 37 ans, USA, ufologue"><a href="/people/r/RuppeltEdwardJ/">Pratt, Bob<img
-      alt="Pratt, Bob" class="portrait" src="/people/r/RuppeltEdwardJ/portrait.jpg" width="75"></a></span></li><li><span
-      class="people-resolved country-uk occupation-ufoWitness" title="Royaume-Uni, témoin d'ovni"><a
-      href="/science/crypto/ufo/enquete/dossier/Bentwaters/">Robbins, Peter</a></span></li><li><span
-      class="people-resolved deceased country-us" title="1915-2017, 101 ans, USA"><a href="/people/r/RosengartenNR/">Rosengarten, NR</a></span>
-    </li><li><span class="people-resolved deceased country-us occupation-ufologist"
-      title="1923-1960, 37 ans, USA, ufologue"><a href="/people/r/RuppeltEdwardJ/">Ruppelt, Edward J.<img
-      alt="Ruppelt, Edward J." class="portrait" src="/people/r/RuppeltEdwardJ/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved deceased country-us" title="1889-, USA"><a href="/people/s/ScanlonMartinFrancis/">Scanlon, Martin Francis<img
-      alt="Scanlon, Martin Francis" class="portrait" src="/people/s/ScanlonMartinFrancis/portrait.jpg"
-      width="75"></a></span></li><li><span class="people-resolved deceased country-us" title="1869-1942, 73 ans, USA"><a
-      href="/people/s/SchofieldFrankH/">Schofield, Frank H.</a></span></li><li><span class="people-resolved deceased country-us"
-      title="1900-, USA"><a href="/people/s/SchulgenGeorgeF/">Schulgen, George F.<img
-      alt="Schulgen, George F." class="portrait" src="/people/s/SchulgenGeorgeF/portrait.gif" width="75"></a></span>
-    </li><li><span class="people-resolved deceased country-us" title="1926-2006, 80 ans, USA"><a
-      href="/people/s/ShapiroSumner/">Shapiro, Sumner</a></span></li><li><span class="people-resolved country-us"
-      title="USA"><a href="/people/s/StrattonJay/">Stratton, Jay<img
-      alt="Stratton, Jay" class="portrait" src="/people/s/StrattonJay/portrait.jpg" width="75"></a></span></li><li><span
-      class="people-resolved deceased country-us" title="1897-1982, 84 ans, USA"><a href="/people/t/TwiningNathanF/">Twining, Nathan F.<img
-      alt="Twining, Nathan F." class="portrait" src="/people/t/TwiningNathanF/portrait.jpg" width="75"></a></span></li>
-    <li><span class="people-resolved country-cl occupation-ufoWitness" title="Chili, témoin d'ovni"><a
-      href="/science/crypto/ufo/enquete/dossier/Valdes/">Valdés Garrido, Armando</a></span></li><li><span
-      class="people-resolved deceased country-us" title="1917-2010, 92 ans, USA"><a
-      href="/people/w/WeinbrennerGeorgeRyan/">Weinbrenner, George Ryan<img
-      alt="Weinbrenner, George Ryan" class="portrait" src="/people/w/WeinbrennerGeorgeRyan/portrait.jpg" width="75"></a></span>
-    </li></ul>
-  <script async src="/people/index.js" type="module"></script>
-
-  <script async src="index.js" type="text/javascript"></script>
+<!--#include virtual="/header-end.html" -->
+<p>Militaires associés de près ou de loin à des affaires d'ovnis ou à leur étude.</p>
+<!--#include virtual="form.html" -->
+<script async src="index.js" type="text/javascript"></script>
 <h2><a id="americains"></a>Américains</h2>
 <table>
   <tr>
@@ -395,7 +59,7 @@
         <li><a href="m/MarcelJesseA">Marcel, Jesse A.</a></li>
         <li><a href="m/MarshallGeorgeCatlett">Marshall, George Catlett</a></li>
         <li>Miller, Luther D.</li>
-        <li><a href="m/MillsJohnStewart">Mills, John Stewart</a></li>
+        <li><a href="m/MillsJohnStewart.html">Mills, John Stewart</a></li>
         <li><a href="m/MontagueRobertM">Montague, Robert M.</a></li>
         <li><a href="m/MooreWilliamL">Moore, William Leonard</a></li>
         <li><a href="n/NeashamRobertS">Neasham, Robert S.</a></li>
@@ -685,7 +349,7 @@
 <h2><a id="CollinsLawtonJ"></a>Collins, Lawton J. (general)
 </h2>
 <p>Collins fut Deputy Chief of Staff dans l'<a href="/org/us/dod/army">US Army</a>. Il est cité dans des <a
-    href="/science/crypto/ufo/enquete/dossier/MJDocs">documents MJ</a>.</p>
+  href="/science/crypto/ufo/enquete/dossier/MJDocs">documents MJ</a>.</p>
 <h2><a id="Cornine"></a>Cornine (lieutenant-colonel)</h2>
 <p>Militaire américain ayant révélé l'existence de l'<a href="/org/us/IPU.html">IPU</a>.</p>
 <h2><a id="GingrichJohnE"></a>Gingrich, John E. (amiral)</h2>
@@ -697,16 +361,16 @@
 <h2><a id="HabererHarry"></a>Haberer, Harry
 </h2>
 <p>Haberer aurait été un as des relations publiques de l'aviation, délégué par les gens du <a
-    href="/org/us/dod/af/amc/atic/projet/grudge">Projet Grudge</a> pour "informer", ou plutôt dicter au journaliste <a
-    href="ufologues.html#ShalletSidney">Sidney Shallet </a>ce qu'il devait écrire sur les ovnis.</p>
+  href="/org/us/dod/af/amc/atic/projet/grudge">Projet Grudge</a> pour "informer", ou plutôt dicter au journaliste <a
+  href="ufologues.html#ShalletSidney">Sidney Shallet </a>ce qu'il devait écrire sur les ovnis.</p>
 <h2><a id="LeePaulF"></a>Lee, Paul F. (amiral)</h2>
 <p>Lee dirigea l'<a href="/org/us/dod/navy/onr/index.html">ONR</a> de la Navy. Il est cité dans le <a
-    href="/science/crypto/ufo/enquete/dossier/MJDocs/FirstAnnualMJReport.html">premier rapport annuel du MJ12</a>.
+  href="/science/crypto/ufo/enquete/dossier/MJDocs/FirstAnnualMJReport.html">premier rapport annuel du MJ12</a>.
 </p>
 <h2><a id="LemnitzerLyman"></a>Lemnitzer, Lyman (général)</h2>
 <p>Commandant suprême des forces alliées (<a href="/org/int/otan">OTAN</a>) en Europe, Lemnitzer dirigea en 1963, le
   Centre Opérationnel du Haut Commandement (<a href="/org/int/otan/SHOC.html">SHOC</a>), la chambre militaire de <a
-      href="/org/int/otan/SHAPE.html">SHAPE</a>.
+    href="/org/int/otan/SHAPE.html">SHAPE</a>.
 </p>
 <p><a href="d/DeanRobertO">Robert Dean</a> déclare avoir pu lire à cette époque le rapport détaillé de 30 cm d'épaisseur
   sur les ovnis.</p>
@@ -715,11 +379,11 @@
   ovnis. </p>
 <h2><a id="Mann"></a>Mann (sergent)</h2>
 <p>Militaire cité dans la description de l'atterrissage à la base de <a
-    href="/science/crypto/ufo/enquete/dossier/Holloman">Holloman</a> par <a href="e/EmeneggerRobert">Robert
-  Emenegger</a>. </p>
+  href="/science/crypto/ufo/enquete/dossier/Holloman">Holloman</a> par <a href="e/EmeneggerRobert">Robert Emenegger</a>.
+</p>
 <h2><a id="MillerLutherD"></a>Miller, Luther D. (major général)</h2>
 <p>Miller fut Chief of Chaplains dans l'<a href="/org/us/dod/army">US Army</a>. Il est cité dans le <a
-    href="/science/crypto/ufo/enquete/dossier/MJDocs">premier rapport annuel du MJ12</a>.
+  href="/science/crypto/ufo/enquete/dossier/MJDocs">premier rapport annuel du MJ12</a>.
 </p>
 <h2><a id="NurjadinRoesmin"></a>Nurjadin, Roesmin</h2>
 <p>Commandant en chef de l'Armée de l'Air indonésienne. </p>
@@ -740,7 +404,7 @@
 <p>Nommé premier directeur du projet <a href="/org/us/dod/af/amc/atic/projet/sign"> Sign</a> en 1948.</p>
 <h2><a id="WalkerJoseph"></a>Walker, Joseph</h2>
 <p>Ancien pilote d'essai de <a href="/tech/aero/appareil/avion/X15.html">X-15</a> à la <a
-    href="/org/us/nasa">NASA</a>. </p>
+  href="/org/us/nasa">NASA</a>. </p>
 <p>En mai 1962, Walker déclara lors d'un discours à la Conférence nationale sur les utilisations pacifiques de la
   recherche spatiale qu'il avait rencontré 2 objets non-identifiés en forme de disque, lors d'un vol remontant au mois
   précédent, le 30 avril exactement. Il les avait même filmés.
@@ -749,8 +413,7 @@
 </p>
 <h2><a id="WarrenLarry"></a>Warren, Larry</h2>
 <p><img alt="Larry Warren" height="149" nosave src="/images/warren.jpg" width="124"
-   />Témoin de l'affaire de <a href="/science/crypto/ufo/enquete/dossier/Bentwaters">Bentwaters</a> /
-  Rendlesham Forest.
+/>Témoin de l'affaire de <a href="/science/crypto/ufo/enquete/dossier/Bentwaters">Bentwaters</a> / Rendlesham Forest.
 </p>
 <p>Warren, soldat agé de 19 ans à l'époque, eu la mauvaise idée de rapporter son expérience à sa famille. Il fut alors
   contraint de quitter l'armée américaine, qui a depuis toujours refusé de le réintégrer.
@@ -764,26 +427,6 @@
 <ul>
   <li><a href="h/HallRichardH">Hall, Richard</a>, "<a href="https://www.nicap.org/ufoe/ufoe30_31.htm">Other Military
     Sightings</a>", <em>The UFO Evidence</em>, <a href="/org/us/asso/nicap">NICAP</a>, <a
-      href="../time/1/9/6/4">1964</a></li>
+    href="../time/1/9/6/4">1964</a></li>
 </ul>
-</div>
-<footer>
-  <div class="full-page" id="footerTable">
-    <div class="footer">
-      Dernière modification le <!--#config timefmt="%d %B %Y %H:%M (%Z)" --><!--#flastmod virtual="$DOCUMENT_URI" -->- ©
-      Copyright <span class="copyright"><!--#echo var="copyright" --></span> - <a href="/Contact.html">Contact</a>
-    </div>
-  </div>
-</footer>
-<aside class="map">
-  <h1>Map</h1>
-  <div id="map-canvas">
-    <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
-  </div>
-</aside>
-
-<script>
-  if (window !== top) document.querySelectorAll('.full-page').forEach(elem => elem.style.display = 'none')
-</script>
-</body>
-</html>
+<!--#include virtual="/footer.html" -->

@@ -36,6 +36,7 @@
   <!-- End Google Tag Manager -->
 
   <title>*U* UFO Database</title>
+  <link href="/index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -133,45 +134,6 @@
   <!--#echo var="author" -->
 </div>
 <div class="contents">
-
-  <style>
-    tbody {
-      display: table-row-group !important;
-      width: auto !important;
-    }
-
-    .criteria {
-      font-family: monospace, Courier;
-    }
-
-    thead {
-      display: table-header-group !important;
-      width: auto !important;
-    }
-
-    tr {
-      display: table-row !important;
-      width: auto !important;
-    }
-
-    th, td {
-      display: table-cell !important;
-      width: auto !important;
-    }
-
-    .log {
-      height: 3em;
-      overflow: auto;
-    }
-
-    label input {
-      width: 77vw;
-    }
-
-    nav {
-      background: white;
-    }
-  </style>
   <p>This is the web front of <a href="https://github.com/RR0/uDb">uDb</a>, a project to make <a
     href="http://web.archive.org/web/20060701162044/http://www.larryhatch.net/">Larry Hatch database</a> available
     again.
@@ -180,7 +142,8 @@
   <script src="./index.mjs" type="module"></script>
   <div>
     <form action="javascript:submitIt()" id="searchForm">
-      <label>Match criteria <input type="search"/></label> <input type="submit" value="Search">
+      <label>Match criteria&nbsp;<input type="search" value="year=1972&month=8|month=7&country=France"></label> <input
+      type="submit" value="Search">
     </form>
     <p>Supported operators are equal (<code>=</code>), not equal (<code>!=</code> or <code>&lt;&gt;</code>), below
       (<code>&lt;</code> or <code>&lt;=</code>), above (<code>&gt;</code> or <code>&gt;=</code>). They can be combined
@@ -190,7 +153,7 @@
       1972, or in July of any year in France.
     </p>
     <div id="logs"></div>
-    <output id="matchResult"></output>
+    <output class="scrollable" id="matchResult"></output>
   </div>
   <script>
     const form = document.getElementById('searchForm')
@@ -243,7 +206,7 @@
     }
 
     form.onsubmit = submitIt
-    form.style.display = 'block'
+    form.style.display = 'flex'
   </script>
 </div>
 <footer>

@@ -1,0 +1,47 @@
+#searchForm {
+  flex-direction: row;
+  width: 100%;
+
+  label {
+    display: flex;
+    flex: 1;
+  }
+
+  input[type="search"] {
+    font-family: monospace;
+    flex: 1
+  }
+}
+
+tbody {
+  display: table-row-group !important;
+  width: auto !important;
+}
+
+.criteria {
+  font-family: monospace, Courier;
+}
+
+thead {
+  display: table-header-group !important;
+  width: auto !important;
+}
+
+tr {
+  display: table-row !important;
+  width: auto !important;
+}
+
+th, td {
+  display: table-cell !important;
+  width: auto !important;
+}
+
+.log {
+  height: 3em;
+  overflow: auto;
+}
+
+nav {
+  background: white;
+}

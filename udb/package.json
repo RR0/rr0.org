@@ -15,19 +15,12 @@
     "url": "git+https://github.com/RR0/rr0.org.git"
   },
   "dependencies": {
-    "@rr0/udb": "^2.0.1"
+    "@rr0/udb": "^2.1.8"
   },
   "devDependencies": {
     "vite": "^5.2.9",
     "copyfiles": "^2.4.1"
   },
-  "exports": {
-    ".": {
-      "import": "./index.js"
-    },
-    "./cv": {
-      "import": "./cv/index.mjs"
-    }
-  },
+  "exports": "./index.js",
   "private": true
 }

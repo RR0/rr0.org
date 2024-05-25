@@ -19,6 +19,10 @@
   --font-family: system-ui, sans-serif;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -59,7 +59,7 @@ export class DataService {
     const files = glob(p)
     for (const file of files) {
       try {
-        const dataFile = SsgFile.read(context, file)
+        const dataFile = SsgFile.read(context, file, "utf-8")
         let data: RR0Data
         for (let i = 0; !data && i < this.factories.length; i++) {
           const factory = this.factories[i]

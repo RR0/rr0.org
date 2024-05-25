@@ -1,0 +1,3638 @@
+0 HEAD
+1 SOUR GeneWeb
+2 VERS 7.0.0
+2 NAME gwb2ged
+2 CORP INRIA
+3 ADDR http://www.geneweb.org
+2 DATA rrzero.gwb
+1 DATE 25 MAY 2024
+2 TIME 11:49:19
+1 FILE base.ged.tmp
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+2 SOUR
+3 PAGE geneweb wiki notes: notes
+0 @I1@ INDI
+1 NAME Jean-Louis /Beau/
+1 SEX M
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Edith /Schoenhenz/
+1 SEX F
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Jérôme /Beau/
+1 SEX M
+1 BIRT
+2 DATE 12 AUG 1972
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Jesse Antoine /Marcel/
+1 SEX M
+1 BIRT
+2 DATE 27 MAY 1907
+2 PLAC Houma, Terrebonne Parish, Louisiane, USA
+1 DEAT
+2 DATE 24 JUN 1986
+2 PLAC Houma, Terrebonne Parish, Louisiane, USA
+2 NOTE https://fr.findagrave.com/memorial/19717326/jesse-antoine-marcel
+2 SOUR Houma Newspaper Deaths 1986, p. 114
+1 FAMC @F2@
+1 FAMS @F3@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/de/37/48533335/medium.jpg?t=1682443062
+0 @I5@ INDI
+1 NAME Viaud /Abrams/
+1 SEX F
+1 BIRT
+2 DATE 22 DEC 1913
+2 SOUR Louisiane
+1 FAMS @F3@
+0 @I6@ INDI
+1 NAME Theodule Joseph /Marcel/
+1 SEX M
+1 BIRT
+2 DATE 17 MAY 1859
+2 PLAC Houma, Terrebonne Parish, Louisiane, USA
+1 DEAT
+2 DATE 21 JUL 1928
+2 PLAC Lafourche Parish, Louisiane, USA
+1 FAMS @F2@
+0 @I7@ INDI
+1 NAME Adelaide Marie /Bergeron/
+1 SEX F
+1 BIRT
+2 DATE 17 SEP 1859
+2 PLAC Houma, Terrebonne Parish, Louisiane, USA
+1 DEAT
+2 DATE 09 JUN 1961
+2 PLAC Lafourche Parish, Louisiane, USA
+1 FAMS @F2@
+0 @I8@ INDI
+1 NAME Jesse Antoine /Marcel/
+1 SEX M
+1 BIRT
+2 DATE 30 AUG 1936
+2 PLAC Harris County, Texas, USA
+1 DEAT
+2 DATE 23 AUG 2013
+2 PLAC Helena, Lewis and Clark County, Montana, USA
+1 FAMC @F3@
+1 FAMS @F4@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/9c/b4/48533599/medium.jpg?t=1682443685
+0 @I9@ INDI
+1 NAME Carol Ida /Manley/
+1 SEX F
+1 BIRT
+2 DATE 11 MAY 1941
+1 DEAT
+2 DATE 12 NOV 1980
+1 FAMS @F4@
+0 @I10@ INDI
+1 NAME William Ware /Brazel/
+2 NICK Mack
+1 SEX M
+1 BIRT
+2 DATE 28 APR 1899
+2 PLAC Cooks Peak (Santa Rita), Nouveau Mexique, USA
+1 DEAT
+2 DATE 01 OCT 1963
+2 PLAC Ranch de comté de Catron County, Nouveau Mexique
+1 FAMC @F5@
+1 FAMS @F6@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/20/1e/48534822/medium.png?t=1682446373
+0 @I11@ INDI
+1 NAME Margaret /May Wilson/
+1 SEX F
+1 BIRT
+2 DATE 23 JUL 1902
+2 PLAC Pauls Valley, Garvin, Oklahoma, USA
+1 DEAT
+2 DATE 09 SEP 1975
+1 FAMS @F6@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/56/3b/48589666/medium.png?t=1682628261
+0 @I12@ INDI
+1 NAME Bessie Irene /Brazel/
+1 SEX F
+1 BIRT
+2 DATE 17 DEC 1932
+2 PLAC Oscura (Nouveau-Mexique)
+1 DEAT
+2 DATE 02 NOV 2008
+2 SOUR "Bessie Irene Schreiber", The Columbian on Nov. 5, 2008
+1 FAMC @F6@
+1 FAMS @F7@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/c9/5f/48535158/medium.jpg?t=1682447175
+0 @I13@ INDI
+1 NAME Paul Taylor /Brazel/
+2 NICK Popo
+1 SEX M
+1 BIRT
+2 DATE 30 OCT 1919
+2 PLAC Carrizozo, Lincoln County, New Mexico, USA
+1 DEAT
+2 DATE 27 NOV 1997
+2 PLAC Bandon, Coos County, Oregon, USA
+1 FAMC @F6@
+1 FAMS @F8@
+0 @I14@ INDI
+1 NAME William Ware /Brazel/
+1 SEX M
+1 BIRT
+2 DATE 22 JUL 1873
+2 PLAC Greenwood (aujourd'hui Eurika), Kansas, USA
+1 DEAT
+2 DATE 07 JAN 1954
+2 PLAC Tularosa Hotel, Otero, New Mexico, United States
+1 FAMS @F5@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/14/5b/48534414/medium.jpg?t=1682445333
+0 @I15@ INDI
+1 NAME Anna Jane /Wiggins/
+1 SEX F
+1 BIRT
+2 DATE 1875
+2 PLAC Corinth, Adams, Mississippi, USA
+1 DEAT
+2 DATE 1959
+1 FAMS @F5@
+0 @I16@ INDI
+1 NAME Garland Floyd /Brazel/
+2 NICK Jack
+1 SEX M
+1 BIRT
+2 DATE 04 APR 1901
+1 DEAT
+2 DATE 20 APR 1969
+1 FAMC @F5@
+1 FAMS @F9@
+0 @I17@ INDI
+1 NAME Claretta /Brazel/
+2 NICK Clara
+1 SEX F
+1 BIRT
+2 DATE 06 APR 1898
+2 PLAC Alto, Lincoln County, New Mexico, USA
+1 DEAT
+2 DATE 16 FEB 1981
+2 PLAC Lincoln County, New Mexico, USA
+1 FAMC @F5@
+1 FAMS @F10@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/89/ba/48589545/medium.jpg?t=1682627779
+0 @I18@ INDI
+1 NAME Beulah /Brazel/
+1 SEX F
+1 BIRT
+2 DATE 1895
+1 DEAT
+2 DATE 23 JUL 1958
+2 PLAC Capitan, Lincoln County, New Mexico, USA
+1 FAMC @F5@
+1 FAMS @F11@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/cb/e3/48589464/medium.jpg?t=1682627468
+0 @I19@ INDI
+1 NAME Lorene /Brazel/
+1 SEX F
+1 BIRT
+2 DATE 22 JAN 1903
+2 PLAC Carrizozo, Lincoln, New Mexico, USA
+1 DEAT
+2 DATE SEP 1982
+2 PLAC Capitan, Lincoln, New Mexico, USA
+1 FAMC @F5@
+1 FAMS @F12@
+0 @I20@ INDI
+1 NAME Champ Clark /Ferguson/
+1 SEX M
+1 BIRT
+2 DATE 03 JUL 1900
+1 DEAT
+2 DATE MAY 1983
+1 FAMS @F12@
+0 @I21@ INDI
+1 NAME James E. Jr /Schreiber/
+1 SEX M
+1 FAMS @F7@
+0 @I22@ INDI
+1 NAME Eugene /Schreiber/
+1 SEX M
+1 DEAT Y
+1 FAMC @F7@
+0 @I23@ INDI
+1 NAME James E., III. /Schreiber/
+2 NICK Tim
+1 SEX M
+1 DEAT Y
+1 FAMC @F7@
+0 @I24@ INDI
+1 NAME Brazel /Schreiber/
+1 SEX M
+1 FAMC @F7@
+0 @I25@ INDI
+1 NAME Robin /Schreiber/
+1 SEX M
+1 FAMC @F7@
+0 @I26@ INDI
+1 NAME Vernon Richard /Brazel/
+1 SEX M
+1 BIRT
+2 DATE 31 JUL 1938
+1 DEAT
+2 DATE 22 JUN 1967
+2 PLAC Lewis and Clark, Montana, USA
+1 FAMC @F6@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/2c/b0/48535523/medium.jpg?t=1682448239
+0 @I27@ INDI
+1 NAME William Raymond /Brazel/
+1 SEX M
+1 BIRT
+2 DATE 23 NOV 1924
+2 PLAC Carrizozo, Lincoln, Nouveau-Mexique, USA
+1 DEAT
+2 DATE 02 APR 2003
+2 PLAC Ruidoso, Lincoln, Nouveau-Mexique, USA
+1 FAMC @F6@
+1 FAMS @F13@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/8d/fd/48591007/medium.jpg?t=1682635035
+0 @I28@ INDI
+1 NAME Auguste /Meessen/
+1 SEX M
+1 BIRT
+2 DATE 1932
+1 FAMS @F14@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/62/32/48536321/medium.jpg?t=1682450470
+0 @I29@ INDI
+1 NAME Christophe /Meessen/
+1 SEX M
+1 FAMC @F14@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/bf/ce/48536277/medium.jpg?t=1682450359
+0 @I30@ INDI
+1 NAME John Davison /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 24 JAN 1874
+2 PLAC Cleveland
+1 DEAT
+2 DATE 11 MAY 1960
+2 PLAC Tucson
+1 FAMC @F15@
+1 FAMS @F16@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/ce/de/48536655/medium.jpg?t=1682451238
+0 @I31@ INDI
+1 NAME Abby /Aldrich/
+1 SEX F
+1 BIRT
+2 DATE 26 OCT 1874
+2 PLAC Providence (Rhode Island)
+1 DEAT
+2 DATE 05 APR 1948
+2 PLAC New York
+1 FAMS @F16@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/95/4d/48536713/medium.jpg?t=1682451337
+0 @I32@ INDI
+1 NAME John Davison /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 08 JUL 1839
+2 PLAC Richford (État de New York)
+1 DEAT
+2 DATE 23 MAY 1937
+2 PLAC Ormond Beach (Floride)
+1 FAMC @F17@
+1 FAMS @F15@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/0b/df/48536633/medium.jpg?t=1682451196
+0 @I33@ INDI
+1 NAME Laura Celestia /Spelman/
+2 NICK Cettie
+1 SEX F
+1 BIRT
+2 DATE 09 SEP 1839
+1 DEAT
+2 DATE 12 MAR 1915
+1 FAMS @F15@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/77/d1/48536911/medium.png?t=1682451634
+0 @I34@ INDI
+1 NAME William Avery /Rockefeller/
+1 SEX M
+1 DEAT Y
+1 FAMS @F17@
+0 @I35@ INDI
+1 NAME Eliza /Davison/
+1 SEX F
+1 DEAT Y
+1 FAMS @F17@
+0 @I36@ INDI
+1 NAME William /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 31 MAY 1841
+2 PLAC Richford (État de New York)
+1 DEAT
+2 DATE 24 JUN 1922
+1 FAMC @F17@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/fa/8e/48536818/medium.jpg?t=1682451523
+0 @I37@ INDI
+1 NAME Bessie /Rockefeller/
+1 SEX F
+1 BIRT
+2 DATE 1866
+1 DEAT
+2 DATE 1906
+1 FAMC @F15@
+0 @I38@ INDI
+1 NAME Alice /Rockefeller/
+1 SEX F
+1 BIRT
+2 DATE 1869
+1 DEAT
+2 DATE 1870
+1 FAMC @F15@
+0 @I39@ INDI
+1 NAME Alta /Rockefeller/
+1 SEX F
+1 BIRT
+2 DATE 1871
+1 DEAT
+2 DATE 1962
+1 FAMC @F15@
+0 @I40@ INDI
+1 NAME Edith /Rockefeller/
+1 SEX F
+1 BIRT
+2 DATE 31 AUG 1872
+1 DEAT
+2 DATE 25 AUG 1932
+1 FAMC @F15@
+0 @I41@ INDI
+1 NAME Abby /Rockefeller/
+1 SEX F
+1 BIRT
+2 DATE 09 NOV 1903
+1 DEAT
+2 DATE 27 MAY 1976
+1 FAMC @F16@
+0 @I42@ INDI
+1 NAME John Davison /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 21 MAR 1906
+2 PLAC New York City, New York, USA
+1 DEAT
+2 DATE 10 JUL 1978
+2 PLAC Mount Pleasant, New York, USA
+1 FAMC @F16@
+1 FAMS @F18@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/09/ee/48537796/medium.jpg?t=1682453311
+0 @I43@ INDI
+1 NAME Nelson Aldrich /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 08 JUL 1908
+1 DEAT
+2 DATE 26 JAN 1979
+1 FAMC @F16@
+1 FAMS @F19@
+1 FAMS @F20@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/05/39/48537197/medium.jpg?t=1682452115
+0 @I44@ INDI
+1 NAME Laurance Spelman /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 26 OCT 1910
+1 DEAT
+2 DATE 11 JUL 2004
+1 FAMC @F16@
+1 FAMS @F21@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/c9/77/48537228/medium.jpg?t=1682452173
+0 @I45@ INDI
+1 NAME Winthrop /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 01 MAY 1912
+1 DEAT
+2 DATE 22 FEB 1973
+2 PLAC Palm Springs (Californie)
+1 FAMC @F16@
+0 @I46@ INDI
+1 NAME David /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 12 JUN 1915
+1 DEAT
+2 DATE 20 MAR 2017
+1 FAMC @F16@
+1 FAMS @F22@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/fe/4d/48537267/medium.jpg?t=1682452275
+0 @I47@ INDI
+1 NAME Blanchette /Ferry Hooker/
+1 SEX F
+1 FAMS @F18@
+0 @I48@ INDI
+1 NAME John Davison /Rockefeller/
+2 NICK Jay
+1 SEX M
+1 FAMC @F18@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/d9/21/48537400/medium.jpg?t=1682452564
+0 @I49@ INDI
+1 NAME Hope /Rockefeller Aldrich/
+1 SEX F
+1 FAMC @F18@
+0 @I50@ INDI
+1 NAME Alida /Rockefeller/
+1 SEX F
+1 FAMC @F18@
+0 @I51@ INDI
+1 NAME Sandra /Ferry Rockefeller/
+1 SEX F
+1 FAMC @F18@
+0 @I52@ INDI
+1 NAME Mary /Todhunter Clark/
+1 SEX F
+1 FAMS @F19@
+0 @I53@ INDI
+1 NAME Rodman /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 02 MAY 1932
+1 DEAT
+2 DATE 14 MAY 2000
+1 FAMC @F19@
+0 @I54@ INDI
+1 NAME Michael Clark /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 18 MAY 1938
+1 DEAT
+2 DATE 19 NOV 1961
+1 FAMC @F19@
+0 @I55@ INDI
+1 NAME Steven Clark /Rockefeller/
+1 SEX M
+1 FAMC @F19@
+0 @I56@ INDI
+1 NAME Mary /Billings French/
+1 SEX F
+1 BIRT
+2 DATE 01 MAY 1910
+2 PLAC New York
+1 DEAT
+2 DATE 17 APR 1997
+1 FAMS @F21@
+0 @I57@ INDI
+1 NAME Laura /Rockefeller Chasin/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 FAMC @F21@
+0 @I58@ INDI
+1 NAME Marion /Rockefeller Weber/
+1 SEX F
+1 BIRT
+2 DATE 1938
+1 FAMC @F21@
+0 @I59@ INDI
+1 NAME Lucy /Rockefeller Aldrich/
+1 SEX F
+1 BIRT
+2 DATE 1941
+1 FAMC @F21@
+0 @I60@ INDI
+1 NAME Laurance Spelman /Rockefeller/
+1 SEX M
+1 BIRT
+2 DATE 1944
+1 OCCU Avocat
+1 FAMC @F21@
+0 @I61@ INDI
+1 NAME Margaret /McGrath/
+1 SEX F
+1 FAMS @F22@
+0 @I62@ INDI
+1 NAME David /Rockefeller/
+1 SEX M
+1 FAMC @F22@
+0 @I63@ INDI
+1 NAME Abby /Rockefeller/
+1 SEX F
+1 FAMC @F22@
+0 @I64@ INDI
+1 NAME Neva /Rockefeller Goodwin/
+1 SEX F
+1 FAMC @F22@
+0 @I65@ INDI
+1 NAME Peggy /Rockefeller Dulany/
+1 SEX F
+1 FAMC @F22@
+0 @I66@ INDI
+1 NAME Richard /Rockefeller/
+1 SEX M
+1 FAMC @F22@
+0 @I67@ INDI
+1 NAME Eileen /Rockefeller Growald/
+1 SEX F
+1 FAMC @F22@
+0 @I68@ INDI
+1 NAME Ann /Rockefeller/
+1 SEX F
+1 FAMC @F19@
+0 @I69@ INDI
+1 NAME Mary /Rockefeller/
+1 SEX F
+1 FAMC @F19@
+0 @I70@ INDI
+1 NAME Margaretta Large /Fitler/
+2 NICK Happy
+1 SEX F
+1 FAMS @F20@
+0 @I71@ INDI
+1 NAME Mark /Fitler Rockefeller/
+1 SEX M
+1 FAMC @F20@
+0 @I72@ INDI
+1 NAME Nelson Aldrich /Rockefeller/
+1 SEX M
+1 FAMC @F20@
+0 @I73@ INDI
+1 NAME William P. /Lear/
+1 SEX M
+1 BIRT
+2 DATE 26 JUN 1902
+1 DEAT
+2 DATE 14 MAY 1978
+1 FAMS @F23@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/c6/44/48538021/medium.jpg?t=1682454316
+0 @I74@ INDI
+1 NAME Moya Marie /Olsen/
+1 SEX F
+1 BIRT
+2 DATE 27 MAR 1915
+1 DEAT
+2 DATE 05 DEC 2001
+1 FAMS @F23@
+0 @I75@ INDI
+1 NAME John Olsen /Lear/
+1 SEX M
+1 BIRT
+2 DATE 04 DEC 1942
+1 FAMC @F23@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/15/53/48538003/medium.jpg?t=1682454253
+0 @I76@ INDI
+1 NAME Shanda /Lear/
+1 SEX F
+1 FAMC @F23@
+0 @I77@ INDI
+1 NAME David /Lear/
+1 SEX M
+1 BIRT
+2 DATE 1948
+1 FAMC @F23@
+0 @I78@ INDI
+1 NAME Tina /Lear/
+1 SEX F
+1 FAMC @F23@
+0 @I79@ INDI
+1 NAME George Matt /Wilcox/
+1 SEX M
+1 BIRT
+2 DATE 1894
+1 DEAT
+2 DATE 19 MAR 1961
+1 FAMS @F24@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/f5/2f/48573588/medium.jpg?t=1682589897
+0 @I80@ INDI
+1 NAME Inez /Holland/
+1 SEX F
+1 BIRT
+2 DATE 08 SEP 1896
+2 PLAC Bartlett, Williamson County, Texas, USA
+1 DEAT
+2 DATE 25 MAY 1988
+2 PLAC Paris, Lamar County, Texas, USA
+1 FAMS @F24@
+0 @I81@ INDI
+1 NAME Phyllis Inez /Wilcox/
+1 SEX F
+1 BIRT
+2 DATE 1922
+1 DEAT
+2 DATE 16 APR 2008
+1 FAMC @F24@
+1 FAMS @F25@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/b9/ee/48574066/medium.png?t=1682591000
+0 @I82@ INDI
+1 NAME Emily Elizabeth /Wilcox/
+1 SEX F
+1 BIRT
+2 DATE ABT 1924
+1 FAMC @F24@
+1 FAMS @F26@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/12/85/48574100/medium.png?t=1682591148
+0 @I83@ INDI
+1 NAME James Wesley /Tulk/
+2 NICK Jay
+1 SEX M
+1 BIRT
+2 DATE 1921
+1 FAMS @F26@
+0 @I84@ INDI
+1 NAME Barbara /Dugger/
+1 SEX F
+1 FAMC @F26@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/a1/ac/48574010/medium.jpg?t=1682590823
+0 @I85@ INDI
+1 NAME Christine /Tulk/
+1 SEX F
+1 FAMC @F26@
+0 @I86@ INDI
+1 NAME Ralph Gordon /McGuire/
+1 SEX M
+1 BIRT
+2 DATE 1922
+1 FAMS @F25@
+0 @I87@ INDI
+1 NAME Carl /Hartley/
+1 SEX M
+1 BIRT
+2 DATE 05 SEP 1881
+1 DEAT
+2 DATE 05 AUG 1961
+1 FAMS @F11@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/6f/ed/48589426/medium.jpg?t=1682627311
+0 @I88@ INDI
+1 NAME Juanita /Hall/
+1 SEX F
+1 DEAT Y
+1 FAMS @F9@
+0 @I89@ INDI
+1 NAME Yvonne Estelle /Melton/
+1 SEX F
+1 BIRT
+2 DATE 28 MAR 1927
+2 PLAC Carrizozo, Lincoln County, New Mexico, USA
+1 DEAT
+2 DATE 01 FEB 1994
+2 PLAC Bandon, Coos County, Oregon, USA
+1 FAMS @F8@
+0 @I90@ INDI
+1 NAME Preston /Brazel/
+1 SEX M
+1 BIRT
+2 DATE 05 JUL 1946
+2 PLAC Camden, Camden County, New Jersey, USA
+1 DEAT
+2 DATE 09 JUL 1978
+2 PLAC USA
+1 FAMC @F8@
+0 @I91@ INDI
+1 NAME Charles Albert /Snow/
+1 SEX M
+1 BIRT
+2 DATE 02 JAN 1890
+2 PLAC Webster County, Mississippi, USA
+1 DEAT
+2 DATE 01 FEB 1983
+2 PLAC Lincoln County, New Mexico, USA
+1 FAMS @F10@
+0 @I92@ INDI
+1 NAME Charles Albert /Snow/
+1 SEX M
+1 BIRT
+2 DATE 07 OCT 1921
+2 PLAC Carrizozo, Lincoln County, New Mexico, USA
+1 DEAT
+2 DATE 04 JUL 1965
+2 PLAC Newfoundland and Labrador, Canada
+1 FAMC @F10@
+0 @I93@ INDI
+1 NAME Shirley /Bushnell/
+1 SEX F
+1 BIRT
+2 DATE 1928
+2 PLAC Madrid, Sante Fe, New Mexico
+1 DEAT
+2 DATE 1996
+1 FAMS @F13@
+0 @I94@ INDI
+1 NAME William Richard /Brazel/
+1 SEX M
+1 BIRT
+2 DATE 1951
+2 PLAC Ruidoso, Lincoln, New Mexico, USA
+1 DEAT
+2 DATE 1964
+1 FAMC @F13@
+0 @I95@ INDI
+1 NAME Abraham /./
+1 SEX M
+1 FAMC @F27@
+1 FAMS @F28@
+1 FAMS @F29@
+1 FAMS @F30@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/6d/7c/53628235/medium.jpg?t=1698752965
+0 @I96@ INDI
+1 NAME Sarah /./
+1 SEX F
+1 DEAT Y
+1 FAMC @F27@
+1 FAMS @F28@
+0 @I97@ INDI
+1 NAME Terah /./
+1 SEX M
+1 BIRT
+2 DATE -1883
+1 DEAT
+2 DATE -1678
+2 PLAC Haran
+1 FAMC @F31@
+1 FAMS @F27@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/1a/65/53628155/medium.jpg?t=1698752680
+0 @I98@ INDI
+1 NAME Amatlai /./
+1 SEX F
+1 FAMS @F27@
+0 @I99@ INDI
+1 NAME Nahor /./
+1 SEX M
+1 FAMC @F27@
+1 FAMS @F32@
+0 @I100@ INDI
+1 NAME Haran /./
+1 SEX M
+1 FAMC @F27@
+1 FAMS @F33@
+0 @I101@ INDI
+1 NAME Nahor /./
+1 SEX M
+1 BIRT
+2 DATE -1912
+2 PLAC Ur Kaśdim
+1 DEAT
+2 DATE -1764
+1 FAMC @F34@
+1 FAMS @F31@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/fa/cb/53628135/medium.jpg?t=1698752566
+0 @I102@ INDI
+1 NAME Seroug /./
+1 SEX M
+1 BIRT
+2 DATE -1942
+2 PLAC Ur Kaśdim
+1 DEAT
+2 DATE -1712
+1 FAMC @F35@
+1 FAMS @F34@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/52/0d/53628106/medium.jpg?t=1698752469
+0 @I103@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F34@
+0 @I104@ INDI
+1 NAME Réou /./
+1 SEX M
+1 BIRT
+2 DATE -1974
+2 PLAC Ur
+1 DEAT
+2 DATE -1735
+1 FAMC @F36@
+1 FAMS @F35@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/09/f3/53628063/medium.jpg?t=1698752322
+0 @I105@ INDI
+1 NAME Ora /Bat Hur/
+1 SEX F
+1 DEAT Y
+1 FAMS @F35@
+0 @I106@ INDI
+1 NAME Péleg /./
+1 SEX M
+1 BIRT
+2 DATE -2004
+1 DEAT
+2 DATE -1765
+1 FAMC @F37@
+1 FAMS @F36@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/91/e5/53628037/medium.jpg?t=1698752253
+0 @I107@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F36@
+0 @I108@ INDI
+1 NAME Eber /./
+1 SEX M
+1 BIRT
+2 DATE -2283
+2 PLAC Ur, Sumer
+1 DEAT
+2 DATE -1819
+2 PLAC Ur, Sumer
+1 FAMC @F38@
+1 FAMS @F37@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/a6/98/53628009/medium.jpg?t=1698752171
+0 @I109@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F37@
+0 @I110@ INDI
+1 NAME Yoktan /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F37@
+1 FAMS @F39@
+0 @I111@ INDI
+1 NAME Shélah /./
+1 SEX M
+1 BIRT
+2 DATE -2068
+1 DEAT
+2 DATE -1635
+1 FAMC @F40@
+1 FAMS @F38@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/ef/69/53627967/medium.jpg?t=1698752068
+0 @I112@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F38@
+0 @I113@ INDI
+1 NAME Arpakshad /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F41@
+1 FAMS @F40@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/73/2e/53627883/medium.jpg?t=1698751859
+0 @I114@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F40@
+0 @I115@ INDI
+1 NAME Sem /./
+1 SEX M
+1 BIRT
+2 DATE -2003
+1 DEAT
+2 DATE -1503
+1 FAMC @F42@
+1 FAMS @F41@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/70/bd/53626980/medium.jpg?t=1698749488
+0 @I116@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F41@
+0 @I117@ INDI
+1 NAME Élam /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F41@
+0 @I118@ INDI
+1 NAME Assur /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F41@
+0 @I119@ INDI
+1 NAME Lud /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F41@
+0 @I120@ INDI
+1 NAME Aramet /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F41@
+1 FAMS @F43@
+0 @I121@ INDI
+1 NAME Noé /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F44@
+1 FAMS @F42@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/42/6a/53627053/medium.jpg?t=1698749641
+0 @I122@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F42@
+0 @I123@ INDI
+1 NAME Cham /./
+1 SEX M
+1 FAMC @F42@
+1 FAMS @F45@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/82/9d/53627743/medium.jpg?t=1698751469
+0 @I124@ INDI
+1 NAME Japhet /./
+1 SEX M
+1 FAMC @F42@
+1 FAMS @F46@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/55/27/53627788/medium.jpg?t=1698751599
+0 @I125@ INDI
+1 NAME Lémec /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F47@
+1 FAMS @F44@
+0 @I126@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F44@
+0 @I127@ INDI
+1 NAME Edna /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F47@
+0 @I128@ INDI
+1 NAME Mathusalem /?/
+1 SEX M
+1 DEAT Y
+1 FAMC @F48@
+1 FAMS @F47@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/e5/d6/53627714/medium.png?t=1698751370
+0 @I129@ INDI
+1 NAME "Hénoc"h /?/
+1 SEX M
+1 DEAT Y
+1 FAMC @F49@
+1 FAMS @F48@
+0 @I130@ INDI
+1 NAME Edni /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F48@
+0 @I131@ INDI
+1 NAME Jéred /?/
+1 SEX M
+1 BIRT
+2 DATE -3544
+1 DEAT
+2 DATE -2582
+1 FAMC @F50@
+1 FAMS @F49@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/f3/e5/53627654/medium.png?t=1698751196
+0 @I132@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F49@
+0 @I133@ INDI
+1 NAME Azrial /./
+1 SEX M
+1 FAMC @F49@
+0 @I134@ INDI
+1 NAME Mahalalel /?/
+1 SEX M
+1 BIRT
+2 DATE -3609
+1 DEAT
+2 DATE -2714
+1 FAMC @F51@
+1 FAMS @F50@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/00/4b/53627627/medium.png?t=1698751125
+0 @I135@ INDI
+1 NAME Dinah /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F50@
+0 @I136@ INDI
+1 NAME Kénan /?/
+1 SEX M
+1 DEAT Y
+1 FAMC @F52@
+1 FAMS @F51@
+0 @I137@ INDI
+1 NAME Mualeleth /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F51@
+0 @I138@ INDI
+1 NAME Énosh /?/
+1 SEX M
+1 DEAT Y
+1 FAMC @F53@
+1 FAMS @F52@
+0 @I139@ INDI
+1 NAME Noam /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F52@
+0 @I140@ INDI
+1 NAME Seth /?/
+1 NAME Shehîd ibn Jerr
+1 SEX M
+1 BIRT
+2 DATE -3900
+1 DEAT Y
+1 FAMC @F54@
+1 FAMS @F53@
+0 @I141@ INDI
+1 NAME Azûrâ /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F53@
+0 @I142@ INDI
+1 NAME Adam /?/
+1 SEX M
+1 BIRT
+2 DATE -4026
+1 DEAT Y
+1 FAMC @F55@
+1 FAMS @F54@
+0 @I143@ INDI
+1 NAME Ève /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F54@
+0 @I144@ INDI
+1 NAME Abel /./
+1 SEX M
+1 OCCU Berger
+1 FAMC @F54@
+0 @I145@ INDI
+1 NAME Caïn /./
+1 SEX M
+1 FAMC @F54@
+1 FAMS @F56@
+0 @I146@ INDI
+1 NAME Noam /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F53@
+0 @I147@ INDI
+1 NAME Awan /./
+1 SEX F
+1 DEAT Y
+1 FAMC @F54@
+1 FAMS @F56@
+0 @I148@ INDI
+1 NAME Naamah /./
+1 SEX F
+1 FAMC @F48@
+0 @I149@ INDI
+1 NAME Koush /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F45@
+0 @I150@ INDI
+1 NAME Misraïm /./
+1 SEX M
+1 FAMC @F45@
+0 @I151@ INDI
+1 NAME Pout /./
+1 SEX M
+1 FAMC @F45@
+0 @I152@ INDI
+1 NAME Canaan /./
+1 SEX M
+1 FAMC @F45@
+0 @I153@ INDI
+1 NAME Adâtanêsès /./
+1 SEX F
+1 FAMS @F46@
+0 @I154@ INDI
+1 NAME Gomère /./
+1 SEX M
+1 FAMC @F46@
+0 @I155@ INDI
+1 NAME Magog /./
+1 SEX M
+1 FAMC @F46@
+0 @I156@ INDI
+1 NAME Madaï /./
+1 SEX M
+1 FAMC @F46@
+0 @I157@ INDI
+1 NAME Javane /./
+1 SEX M
+1 FAMC @F46@
+0 @I158@ INDI
+1 NAME Tubal /./
+1 SEX M
+1 FAMC @F46@
+0 @I159@ INDI
+1 NAME Mèshek /./
+1 SEX M
+1 FAMC @F46@
+0 @I160@ INDI
+1 NAME Tirace /./
+1 SEX M
+1 FAMC @F46@
+0 @I161@ INDI
+1 NAME Thorgama /./
+1 SEX M
+1 FAMC @F46@
+0 @I162@ INDI
+1 NAME Moroch /./
+1 SEX M
+1 FAMC @F46@
+0 @I163@ INDI
+1 NAME Tharses /./
+1 SEX M
+1 FAMC @F46@
+0 @I164@ INDI
+1 NAME Chéteim /./
+1 SEX M
+1 FAMC @F46@
+0 @I165@ INDI
+1 NAME Caïnan /./
+1 SEX M
+1 FAMC @F40@
+0 @I166@ INDI
+1 NAME Isaac /./
+1 SEX M
+1 FAMC @F28@
+1 FAMS @F57@
+0 @I167@ INDI
+1 NAME Loth /./
+1 SEX M
+1 FAMC @F33@
+0 @I168@ INDI
+1 NAME Zimran /./
+1 SEX M
+1 FAMC @F28@
+0 @I169@ INDI
+1 NAME Yokshan /./
+1 SEX M
+1 FAMC @F28@
+0 @I170@ INDI
+1 NAME Medan /./
+1 SEX M
+1 FAMC @F28@
+0 @I171@ INDI
+1 NAME Ishbak /./
+1 SEX M
+1 FAMC @F28@
+0 @I172@ INDI
+1 NAME Shouah /./
+1 SEX M
+1 FAMC @F28@
+0 @I173@ INDI
+1 NAME Ketourah /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F29@
+0 @I174@ INDI
+1 NAME Madian /./
+1 SEX M
+1 FAMC @F29@
+0 @I175@ INDI
+1 NAME Agar /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F30@
+0 @I176@ INDI
+1 NAME Ismaël /./
+1 NAME Ishmael
+1 SEX M
+1 DEAT Y
+1 FAMC @F30@
+1 FAMS @F58@
+0 @I177@ INDI
+1 NAME Rebecca /./
+1 SEX F
+1 FAMS @F57@
+0 @I178@ INDI
+1 NAME Ésaü /./
+1 SEX M
+1 FAMC @F57@
+0 @I179@ INDI
+1 NAME Jacob /./
+1 NAME Israël
+1 SEX M
+1 FAMC @F57@
+1 FAMS @F59@
+1 FAMS @F60@
+1 FAMS @F61@
+0 @I180@ INDI
+1 NAME Léa /./
+1 SEX F
+1 FAMS @F59@
+0 @I181@ INDI
+1 NAME Rachel /./
+1 SEX F
+1 FAMS @F60@
+0 @I182@ INDI
+1 NAME Nebajoth /./
+1 NAME Nebaioth
+1 NAME Nĕbayowth
+1 SEX M
+1 FAMC @F58@
+0 @I183@ INDI
+1 NAME Kédar /./
+1 SEX M
+1 FAMC @F58@
+0 @I184@ INDI
+1 NAME Adbeel /./
+1 SEX M
+1 FAMC @F58@
+0 @I185@ INDI
+1 NAME Mibsam /./
+1 SEX M
+1 FAMC @F58@
+0 @I186@ INDI
+1 NAME Mischma /./
+1 SEX M
+1 FAMC @F58@
+0 @I187@ INDI
+1 NAME Duma /./
+1 SEX M
+1 FAMC @F58@
+0 @I188@ INDI
+1 NAME Massa /./
+1 SEX M
+1 FAMC @F58@
+0 @I189@ INDI
+1 NAME Hadad /./
+1 SEX M
+1 FAMC @F58@
+0 @I190@ INDI
+1 NAME Théma /./
+1 SEX M
+1 FAMC @F58@
+0 @I191@ INDI
+1 NAME Jethur /./
+1 SEX M
+1 FAMC @F58@
+0 @I192@ INDI
+1 NAME Naphisch /./
+1 SEX M
+1 FAMC @F58@
+0 @I193@ INDI
+1 NAME Kedma /./
+1 SEX M
+1 FAMC @F58@
+0 @I194@ INDI
+1 NAME Mahalath /./
+1 SEX M
+1 FAMC @F58@
+0 @I195@ INDI
+1 NAME Joseph /./
+1 SEX M
+1 FAMC @F59@
+1 FAMS @F62@
+0 @I196@ INDI
+1 NAME Lévi /./
+1 SEX M
+1 FAMC @F59@
+1 FAMS @F63@
+0 @I197@ INDI
+1 NAME Juda /./
+1 SEX M
+1 FAMC @F59@
+1 FAMS @F64@
+0 @I198@ INDI
+1 NAME Asnath /?/
+1 SEX F
+1 FAMC @F65@
+1 FAMS @F62@
+0 @I199@ INDI
+1 NAME Ephraïm /./
+1 SEX M
+1 FAMC @F62@
+1 FAMS @F66@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/23/4d/56866625/medium.jpg?t=1706697351
+0 @I200@ INDI
+1 NAME Noun /./
+1 SEX M
+1 FAMC @F66@
+1 FAMS @F67@
+0 @I201@ INDI
+1 NAME Josué /./
+1 SEX M
+1 FAMC @F67@
+0 @I202@ INDI
+1 NAME Kehath /./
+1 SEX M
+1 FAMC @F63@
+1 FAMS @F68@
+0 @I203@ INDI
+1 NAME Amram /./
+1 SEX M
+1 FAMC @F68@
+1 FAMS @F69@
+0 @I204@ INDI
+1 NAME Jokébed /?/
+1 SEX F
+1 FAMS @F69@
+0 @I205@ INDI
+1 NAME Moïse /./
+1 SEX M
+1 FAMC @F69@
+1 FAMS @F70@
+0 @I206@ INDI
+1 NAME Aaron /./
+1 SEX M
+1 FAMC @F69@
+1 FAMS @F71@
+0 @I207@ INDI
+1 NAME Myriam /./
+1 SEX F
+1 FAMC @F69@
+0 @I208@ INDI
+1 NAME Séphora /./
+1 SEX F
+1 FAMS @F70@
+0 @I209@ INDI
+1 NAME Gershom /./
+1 SEX M
+1 FAMC @F70@
+1 FAMS @F72@
+0 @I210@ INDI
+1 NAME Éliézer /./
+1 SEX M
+1 FAMC @F70@
+0 @I211@ INDI
+1 NAME Shebuel /./
+1 SEX M
+1 FAMC @F72@
+0 @I212@ INDI
+1 NAME Tamar /?/
+1 SEX F
+1 FAMS @F64@
+0 @I213@ INDI
+1 NAME Perets /./
+1 SEX M
+1 FAMC @F64@
+1 FAMS @F73@
+0 @I214@ INDI
+1 NAME Zérah /./
+1 SEX M
+1 FAMC @F64@
+0 @I215@ INDI
+1 NAME Zérah /?/
+1 SEX F
+1 FAMS @F73@
+0 @I216@ INDI
+1 NAME Hesron /./
+1 SEX M
+1 FAMC @F73@
+1 FAMS @F74@
+0 @I217@ INDI
+1 NAME Hamul /./
+1 SEX M
+1 FAMC @F73@
+0 @I218@ INDI
+1 NAME Jérahméel /./
+1 SEX M
+1 FAMC @F74@
+0 @I219@ INDI
+1 NAME Aram /./
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F75@
+0 @I220@ INDI
+1 NAME Caleb /./
+1 SEX M
+1 FAMC @F74@
+0 @I221@ INDI
+1 NAME Amminadab /./
+1 SEX M
+1 FAMC @F75@
+1 FAMS @F76@
+0 @I222@ INDI
+1 NAME Nahshon /./
+1 SEX M
+1 FAMC @F76@
+1 FAMS @F77@
+0 @I223@ INDI
+1 NAME Elishéba /./
+1 SEX F
+1 FAMC @F76@
+1 FAMS @F71@
+0 @I224@ INDI
+1 NAME Salmôn /./
+1 SEX M
+1 FAMC @F77@
+1 FAMS @F78@
+0 @I225@ INDI
+1 NAME Rahab /./
+1 SEX F
+1 FAMS @F78@
+0 @I226@ INDI
+1 NAME Boaz /./
+1 SEX M
+1 BIRT
+2 DATE -1283
+1 DEAT Y
+1 FAMC @F78@
+1 FAMS @F79@
+0 @I227@ INDI
+1 NAME Ruth /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F79@
+0 @I228@ INDI
+1 NAME Obed /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F79@
+1 FAMS @F80@
+0 @I229@ INDI
+1 NAME Jessé /./
+1 SEX M
+1 FAMC @F80@
+1 FAMS @F81@
+0 @I230@ INDI
+1 NAME Nitzevet /?/
+1 SEX F
+1 FAMC @F82@
+1 FAMS @F81@
+0 @I231@ INDI
+1 NAME David /./
+1 SEX M
+1 BIRT
+2 DATE ABT -1000
+1 DEAT Y
+1 FAMC @F81@
+1 FAMS @F83@
+0 @I232@ INDI
+1 NAME Adael /?/
+1 SEX M
+1 FAMS @F82@
+0 @I233@ INDI
+1 NAME Bethsabée /?/
+1 SEX F
+1 FAMS @F83@
+0 @I234@ INDI
+1 NAME Amnon /./
+1 SEX M
+1 FAMC @F83@
+0 @I235@ INDI
+1 NAME Kileab /./
+1 SEX M
+1 FAMC @F83@
+0 @I236@ INDI
+1 NAME Absalom /./
+1 SEX M
+1 FAMC @F83@
+0 @I237@ INDI
+1 NAME Adonias /./
+1 SEX M
+1 FAMC @F83@
+0 @I238@ INDI
+1 NAME Schephathia /./
+1 SEX F
+1 FAMC @F83@
+0 @I239@ INDI
+1 NAME Jithream /./
+1 SEX M
+1 FAMC @F83@
+0 @I240@ INDI
+1 NAME Schammua /./
+1 FAMC @F83@
+0 @I241@ INDI
+1 NAME Schobab /./
+1 SEX M
+1 FAMC @F83@
+0 @I242@ INDI
+1 NAME Nathan /./
+1 SEX M
+1 FAMC @F83@
+0 @I243@ INDI
+1 NAME Salomon /./
+1 SEX M
+1 FAMC @F83@
+1 FAMS @F84@
+0 @I244@ INDI
+1 NAME Jibhar /./
+1 SEX M
+1 FAMC @F83@
+0 @I245@ INDI
+1 NAME Élischua /./
+1 FAMC @F83@
+0 @I246@ INDI
+1 NAME Népheg /./
+1 FAMC @F83@
+0 @I247@ INDI
+1 NAME Japhia /./
+1 SEX F
+1 FAMC @F83@
+0 @I248@ INDI
+1 NAME Élischama /./
+1 SEX F
+1 FAMC @F83@
+0 @I249@ INDI
+1 NAME Éliada /./
+1 SEX F
+1 FAMC @F83@
+0 @I250@ INDI
+1 NAME Éliphéleth /./
+1 FAMC @F83@
+0 @I251@ INDI
+1 NAME Tamar /./
+1 SEX F
+1 FAMC @F83@
+0 @I252@ INDI
+1 NAME Roboam /./
+1 SEX M
+1 FAMC @F84@
+0 @I253@ INDI
+1 NAME Jesus /./
+1 SEX M
+1 BIRT
+2 DATE BET -7 AND -5
+2 PLAC Nazareth
+1 DEAT
+2 DATE BET 30 AND 33
+2 PLAC Jerusalem
+1 FAMC @F85@
+1 FAMS @F86@
+0 @I254@ INDI
+1 NAME Joseph /?/
+1 SEX M
+1 FAMC @F61@
+1 FAMS @F85@
+0 @I255@ INDI
+1 NAME Marie /?/
+1 SEX F
+1 FAMS @F85@
+0 @I256@ INDI
+1 NAME Jacques /./
+1 SEX M
+1 FAMC @F85@
+0 @I257@ INDI
+1 NAME Joseph /./
+1 SEX M
+1 FAMC @F85@
+0 @I258@ INDI
+1 NAME Jude /./
+1 SEX M
+1 FAMC @F85@
+0 @I259@ INDI
+1 NAME Simon /./
+1 SEX M
+1 FAMC @F85@
+0 @I260@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F61@
+0 @I261@ INDI
+1 NAME Uz /./
+1 SEX M
+1 FAMC @F43@
+0 @I262@ INDI
+1 NAME Hul /./
+1 SEX M
+1 FAMC @F43@
+0 @I263@ INDI
+1 NAME Gether /./
+1 SEX M
+1 FAMC @F43@
+0 @I264@ INDI
+1 NAME Mash /./
+1 SEX M
+1 FAMC @F43@
+0 @I265@ INDI
+1 NAME Almodad /./
+1 SEX M
+1 FAMC @F39@
+0 @I266@ INDI
+1 NAME Sheleph /./
+1 SEX M
+1 FAMC @F39@
+0 @I267@ INDI
+1 NAME Hazarmaveth /./
+1 SEX M
+1 FAMC @F39@
+0 @I268@ INDI
+1 NAME Yerah /./
+1 SEX M
+1 FAMC @F39@
+0 @I269@ INDI
+1 NAME Hadoram /./
+1 SEX M
+1 FAMC @F39@
+0 @I270@ INDI
+1 NAME Uzal /./
+1 SEX M
+1 FAMC @F39@
+0 @I271@ INDI
+1 NAME Diqla /./
+1 SEX M
+1 FAMC @F39@
+0 @I272@ INDI
+1 NAME Obal /./
+1 SEX M
+1 FAMC @F39@
+0 @I273@ INDI
+1 NAME Abimael /./
+1 SEX M
+1 FAMC @F39@
+0 @I274@ INDI
+1 NAME Sheba /./
+1 SEX M
+1 FAMC @F39@
+0 @I275@ INDI
+1 NAME Ophir /./
+1 SEX M
+1 FAMC @F39@
+0 @I276@ INDI
+1 NAME Havila /./
+1 SEX M
+1 FAMC @F39@
+0 @I277@ INDI
+1 NAME Yobab /./
+1 SEX M
+1 FAMC @F39@
+0 @I278@ INDI
+1 NAME Milka /./
+1 SEX F
+1 FAMC @F33@
+1 FAMS @F32@
+0 @I279@ INDI
+1 NAME Muhammad /ibn ʿAbd Allāh/
+1 SEX M
+1 BIRT
+2 DATE ABT 570
+2 PLAC La Mecque
+1 DEAT
+2 DATE 08 JUN 632
+2 PLAC Médine
+1 FAMC @F87@
+1 FAMS @F88@
+1 FAMS @F89@
+1 FAMS @F90@
+1 FAMS @F91@
+1 FAMS @F92@
+1 FAMS @F93@
+1 FAMS @F94@
+1 FAMS @F95@
+1 FAMS @F96@
+1 FAMS @F97@
+1 FAMS @F98@
+1 FAMS @F99@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/54/ce/56464107/medium.jpg?t=1705787058
+0 @I280@ INDI
+1 NAME Khadidja /bint Khuwaylid/
+1 SEX F
+1 BIRT
+2 DATE 556
+2 PLAC La Mecque
+1 DEAT
+2 DATE 619
+2 PLAC La Mecque
+1 OCCU Marchande aristocrate
+1 FAMC @F100@
+1 FAMS @F88@
+1 FAMS @F101@
+1 FAMS @F102@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/4b/55/56465138/medium.jpg?t=1705791476
+0 @I281@ INDI
+1 NAME 'Abdullah /ibn 'Abdil-Mouttalib/
+1 SEX M
+1 BIRT
+2 DATE ABT 545
+2 PLAC La Mecque
+1 DEAT
+2 DATE 570
+2 PLAC Médine
+1 OCCU Commerçant
+1 FAMC @F103@
+1 FAMS @F87@
+0 @I282@ INDI
+1 NAME Amina /bint Wahb/
+1 SEX F
+1 BIRT
+2 DATE 549
+2 PLAC La Mecque
+1 DEAT
+2 DATE 23 MAY 577
+2 PLAC Al-Abwa
+1 OCCU Poétesse
+1 FAMC @F104@
+1 FAMS @F87@
+0 @I283@ INDI
+1 NAME Shayba /Ibn Hashim/
+2 GIVN Abd al-Muttalib
+2 SURN Ibn Hashim
+1 SEX M
+1 BIRT
+2 DATE 497
+2 PLAC Médine
+1 DEAT
+2 DATE 578
+2 PLAC La Mecque
+1 OCCU Commerçant
+1 FAMC @F105@
+1 FAMS @F103@
+1 FAMS @F106@
+1 FAMS @F107@
+1 FAMS @F108@
+1 FAMS @F109@
+1 FAMS @F110@
+0 @I284@ INDI
+1 NAME Fâtima /bint ’Amr/
+1 SEX F
+1 DEAT
+2 DATE ABT 576
+1 FAMS @F103@
+0 @I285@ INDI
+1 NAME ʿAmr /al-ʿUlā/
+2 GIVN Hachim ibn Abd Manaf
+2 SURN al-ʿUlā
+1 SEX M
+1 DEAT
+2 DATE ABT 497
+2 PLAC Gaza
+1 OCCU Commerçant
+1 FAMC @F111@
+1 FAMS @F105@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/6c/aa/56463431/medium.jpg?t=1705784994
+0 @I286@ INDI
+1 NAME Salma /bint Amr/
+1 SEX F
+1 BIRT
+2 PLAC Hedjaz
+1 DEAT
+2 PLAC Médine, Arabie Saoudite
+1 OCCU Marchand
+1 FAMS @F105@
+0 @I287@ INDI
+1 NAME Abd Manaf /ibn Qusay/
+1 SEX M
+1 DEAT Y
+1 FAMC @F112@
+1 FAMS @F111@
+0 @I288@ INDI
+1 NAME Atika /bint Mourra/
+1 SEX F
+1 DEAT Y
+1 FAMS @F111@
+0 @I289@ INDI
+1 NAME Asad /ibn Hashim/
+1 SEX M
+1 DEAT Y
+1 FAMC @F105@
+0 @I290@ INDI
+1 NAME Abd Shams /ibn Abd Manaf/
+1 SEX M
+1 FAMC @F111@
+0 @I291@ INDI
+1 NAME Abd /al Amr/
+1 SEX M
+1 FAMC @F111@
+0 @I292@ INDI
+1 NAME Muttalib /ibn Abd Manaf/
+1 SEX M
+1 FAMC @F111@
+0 @I293@ INDI
+1 NAME 'Abd /ad-Dar/
+1 SEX M
+1 FAMC @F112@
+0 @I294@ INDI
+1 NAME Lubna /bint Hajar/
+1 SEX F
+1 DEAT Y
+1 FAMS @F106@
+0 @I295@ INDI
+1 NAME Nutayla /bint Janab/
+1 SEX F
+1 DEAT Y
+1 FAMS @F107@
+0 @I296@ INDI
+1 NAME Sumra /bint Jundab/
+1 SEX F
+1 DEAT Y
+1 FAMS @F108@
+0 @I297@ INDI
+1 NAME Halah /bint Wahb/
+1 SEX F
+1 DEAT Y
+1 FAMS @F109@
+0 @I298@ INDI
+1 NAME Mumanna'a /bint 'Amr/
+1 SEX F
+1 DEAT Y
+1 FAMS @F110@
+0 @I299@ INDI
+1 NAME Abû Tâlib /ibn 'Abdil-Mouttalib/
+1 SEX M
+1 BIRT
+2 DATE 539
+2 PLAC La Mecque
+1 DEAT
+2 DATE 619
+2 PLAC La Mecque
+1 OCCU Commerçant, poète
+1 FAMC @F103@
+1 FAMS @F113@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/e3/48/56465045/medium.png?t=1705791076
+0 @I300@ INDI
+1 NAME Umm Hakim /bint Abdul Muttalib/
+1 SEX F
+1 BIRT
+2 DATE ABT 546
+1 DEAT Y
+1 OCCU Poétesse
+1 FAMC @F103@
+0 @I301@ INDI
+1 NAME Urwa /bint Kariz/
+1 SEX F
+1 DEAT Y
+1 FAMC @F87@
+1 FAMS @F114@
+0 @I302@ INDI
+1 NAME Abu Lahab /ibn `Abd al-Muttalib ibn Hicham al-Qurachî/
+1 SEX M
+1 BIRT
+2 DATE 549
+2 PLAC La Mecque
+1 DEAT
+2 DATE 624
+2 PLAC La Mecque
+1 OCCU Commerçant, homme politique, dissident
+1 FAMC @F106@
+0 @I303@ INDI
+1 NAME Hamza /ibn Abd al-Muttalib/
+1 SEX M
+1 BIRT
+2 DATE 568
+2 PLAC La Mecque
+1 DEAT
+2 DATE 22 MAR 625
+2 PLAC Mont Uhud
+1 OCCU Chasseur, écrivain
+1 FAMC @F109@
+0 @I304@ INDI
+1 NAME Al-Abbas /ibn Abd al-Muttalib/
+1 SEX M
+1 BIRT
+2 DATE ABT 568
+2 PLAC La Mecque
+1 DEAT
+2 DATE 15 FEB 653
+2 PLAC Médine
+1 OCCU Commerçant
+1 FAMC @F107@
+1 FAMS @F115@
+0 @I305@ INDI
+1 NAME Umayma /bint Abd al-Muttalib/
+1 SEX F
+1 BIRT
+2 PLAC La Mecque
+1 DEAT Y
+1 OCCU Poétesse
+1 FAMC @F103@
+1 FAMS @F116@
+0 @I306@ INDI
+1 NAME Jahsh /ibn Riyab/
+1 SEX M
+1 DEAT Y
+1 FAMS @F116@
+0 @I307@ INDI
+1 NAME Wahb /ibn 'Abd Manaf/
+1 SEX M
+1 DEAT Y
+1 FAMS @F104@
+0 @I308@ INDI
+1 NAME Barrah /bint Abdul Uzza/
+1 SEX F
+1 DEAT Y
+1 FAMS @F104@
+0 @I309@ INDI
+1 NAME Al-Zubayr /ibn Abd al-Muttalib/
+1 SEX M
+1 DEAT Y
+1 FAMC @F103@
+1 FAMS @F117@
+0 @I310@ INDI
+1 NAME Atika /bint Abi Wahb/
+1 SEX F
+1 DEAT Y
+1 FAMS @F117@
+0 @I311@ INDI
+1 NAME Duba'a /bint Al-Zubayr/
+1 SEX F
+1 FAMC @F117@
+0 @I312@ INDI
+1 NAME Umm al-Hakam /ibn Abd al-Muttalib/
+1 SEX F
+1 FAMC @F117@
+1 FAMS @F118@
+0 @I313@ INDI
+1 NAME Safiya /ibn Abd al-Muttalib/
+1 SEX F
+1 FAMC @F117@
+0 @I314@ INDI
+1 NAME Umm al-Zubayr /ibn Abd al-Muttalib/
+1 SEX F
+1 FAMC @F117@
+0 @I315@ INDI
+1 NAME AbdAllah /ibn Abd al-Muttalib/
+1 SEX M
+1 FAMC @F117@
+0 @I316@ INDI
+1 NAME Rabi'ah /ibn al-Harith/
+1 SEX M
+1 FAMS @F118@
+0 @I317@ INDI
+1 NAME Ruqayya /bint Muhammad/
+1 SEX F
+1 BIRT
+2 DATE BET 599 AND 601
+2 PLAC La Mecque
+1 DEAT
+2 DATE 14 MAR 624
+2 PLAC Médine
+1 FAMC @F88@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/c3/80/56464501/medium.png?t=1705788436
+0 @I318@ INDI
+1 NAME Qasim /ibn Mouhammed/
+1 SEX M
+1 BIRT
+2 DATE JAN 598
+2 PLAC La Mecque
+1 DEAT
+2 DATE 601
+2 PLAC Médine
+1 FAMC @F88@
+0 @I319@ INDI
+1 NAME Zaynab /bint Muhammad/
+1 SEX F
+1 BIRT
+2 DATE ABT 599
+1 DEAT
+2 DATE 629
+2 PLAC Médine
+1 FAMC @F88@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/54/b0/56464512/medium.png?t=1705788480
+0 @I320@ INDI
+1 NAME Oumm Koulthoum /bint Muhammad/
+1 SEX F
+1 BIRT
+2 DATE BET 603 AND 604
+2 PLAC La Mecque
+1 DEAT
+2 DATE 10 DEC 630
+2 PLAC Médine
+1 FAMC @F88@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/8d/e1/56464526/medium.png?t=1705788513
+0 @I321@ INDI
+1 NAME Fatima Zahra /bint Muhammad/
+1 SEX F
+1 BIRT
+2 DATE BET 604 AND 615
+2 PLAC La Mecque
+1 DEAT
+2 DATE ABT 632
+2 PLAC Médine
+1 FAMC @F88@
+1 FAMS @F119@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/85/4c/56464450/medium.jpg?t=1705788284
+0 @I322@ INDI
+1 NAME Abdullah /ibn Muhammad/
+1 SEX M
+1 BIRT
+2 DATE ABT 610
+2 PLAC La Mecque
+1 DEAT
+2 DATE 615
+2 PLAC La Mecque
+1 FAMC @F88@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/d7/3e/56464489/medium.png?t=1705788408
+0 @I323@ INDI
+1 NAME Maria /al-Qibtiyya/
+2 NICK Maria la Copte
+1 SEX F
+1 BIRT
+2 PLAC Empire byzantin
+1 DEAT
+2 DATE 16 FEB 637
+2 PLAC Médine
+1 FAMC @F120@
+1 FAMS @F99@
+0 @I324@ INDI
+1 NAME Ibrahim /ibn Muhammad/
+1 SEX M
+1 BIRT
+2 DATE 01 MAR 630
+2 PLAC Médine
+1 DEAT
+2 DATE 27 JAN 632
+2 PLAC Médine
+1 FAMC @F99@
+0 @I325@ INDI
+1 NAME Aicha /bint Abī Bakr/
+1 SEX F
+1 BIRT
+2 DATE 614
+2 PLAC La Mecque
+1 DEAT
+2 DATE 13 JUL 678
+2 PLAC Médine
+1 OCCU Poétesse
+1 FAMC @F121@
+1 FAMS @F90@
+0 @I326@ INDI
+1 NAME Abou Bakr /As-Siddiq/
+1 SEX M
+1 BIRT
+2 DATE 27 OCT 573
+2 PLAC La Mecque
+1 DEAT
+2 DATE 23 AUG 634
+2 PLAC Médine
+1 OCCU Homme politique, poète, commerçant
+1 FAMC @F122@
+1 FAMS @F121@
+1 FAMS @F123@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/e5/5a/56464781/medium.png?t=1705789808
+0 @I327@ INDI
+1 NAME Umm Rûmmân /bint 'Âmir Al Kinâniyyah/
+1 SEX F
+1 DEAT
+2 DATE 628
+2 PLAC Médine, Arabie Saoudite
+1 FAMS @F121@
+1 FAMS @F124@
+0 @I328@ INDI
+1 NAME Abd al-Rahman /ibn Abi Bakr/
+1 SEX M
+1 BIRT
+2 DATE BET 596 AND 605
+2 PLAC La Mecque
+1 DEAT
+2 DATE ABT 675
+2 PLAC La Mecque
+1 FAMC @F121@
+0 @I329@ INDI
+1 NAME 'Abdu Llâh /ibn Al Hârith Ibn Sakhbarah Al Azdî/
+1 SEX M
+1 DEAT Y
+1 FAMS @F124@
+0 @I330@ INDI
+1 NAME Tufayl /Ibn 'Abdi Llâh/
+1 SEX M
+1 DEAT Y
+1 FAMC @F124@
+0 @I331@ INDI
+1 NAME Qutaylah /bint 'Abd Il 'Uzzah/
+1 SEX F
+1 DEAT Y
+1 FAMS @F123@
+0 @I332@ INDI
+1 NAME Asmâ /Ibn Al Hârith Al Azdî/
+1 SEX F
+1 DEAT Y
+1 FAMC @F124@
+0 @I333@ INDI
+1 NAME 'Abdu Llâh /ibn Al Hârith/
+1 SEX M
+1 DEAT Y
+1 FAMC @F124@
+0 @I334@ INDI
+1 NAME Uthman /Abu Quhafa/
+2 GIVN Abu Quhafa
+2 SURN Abu Quhafa
+1 SEX M
+1 BIRT
+2 DATE 01 JUL 538
+2 PLAC La Mecque
+1 DEAT
+2 DATE 01 MAR 635
+2 PLAC La Mecque
+1 FAMS @F122@
+0 @I335@ INDI
+1 NAME Salma /Umm-ul-Khair/
+1 SEX F
+1 DEAT Y
+1 FAMS @F122@
+0 @I336@ INDI
+1 NAME Fatima /bint Asad/
+1 SEX F
+1 BIRT
+2 DATE ABT 555
+2 PLAC Hejaz, Arabia
+1 DEAT
+2 DATE ABT 626
+2 PLAC Médine
+1 FAMS @F113@
+0 @I337@ INDI
+1 NAME Talib /ibn Abi Talib/
+1 SEX M
+1 BIRT
+2 DATE ABT 570
+2 PLAC Hejaz, Arabia
+1 DEAT
+2 DATE 624
+2 PLAC La Mecque (ou Syrie)
+1 FAMC @F113@
+0 @I338@ INDI
+1 NAME Fakhita /bint Abi Taleb el-Coreïchiyya el-Hachemiyya/
+2 GIVN Oumm Hani
+2 SURN bint Abi Taleb el-Coreïchiyya el-Hachemiyya
+1 SEX F
+1 BIRT
+2 DATE 576
+2 PLAC La Mecque
+1 DEAT
+2 DATE AFT 661
+2 PLAC Médine
+1 FAMC @F113@
+0 @I339@ INDI
+1 NAME Jaafar /ibn Abī Tālib/
+1 SEX M
+1 BIRT
+2 DATE 589
+2 PLAC La Mecque
+1 DEAT
+2 DATE 629
+2 PLAC Mu'tah
+1 OCCU Prédicateur, chef militaire
+1 FAMC @F113@
+0 @I340@ INDI
+1 NAME Aquil /ibn Abi Talib/
+1 SEX M
+1 BIRT
+2 DATE ABT 580
+2 PLAC Hejaz, Arabie
+1 DEAT
+2 DATE BET 670 AND 680
+2 PLAC Médine, Arabie
+1 FAMC @F113@
+0 @I341@ INDI
+1 NAME Jumanah /bint Abi Talib/
+1 SEX F
+1 DEAT Y
+1 FAMC @F113@
+0 @I342@ INDI
+1 NAME Ali /ibn Abi Talib/
+1 SEX M
+1 BIRT
+2 DATE ABT 600
+2 PLAC La Mecque
+1 DEAT
+2 DATE 29 JAN 661
+2 PLAC Koufa
+1 FAMC @F113@
+1 FAMS @F119@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/32/8f/56465093/medium.png?t=1705791250
+0 @I343@ INDI
+1 NAME Khuwaylid /ibn Asad/
+1 SEX M
+1 DEAT
+2 DATE BET 585 AND 595
+1 FAMS @F100@
+0 @I344@ INDI
+1 NAME Fatima /bint Za'idah/
+1 SEX F
+1 DEAT Y
+1 FAMS @F100@
+0 @I345@ INDI
+1 NAME Hizam /ibn Khuwaylid/
+1 SEX M
+1 DEAT Y
+1 FAMC @F100@
+0 @I346@ INDI
+1 NAME Halah /bint Khuwailid/
+1 SEX F
+1 DEAT Y
+1 FAMC @F100@
+0 @I347@ INDI
+1 NAME Awwam /ibn Khuwaylid/
+1 SEX M
+1 DEAT Y
+1 FAMC @F100@
+0 @I348@ INDI
+1 NAME Nawfal /ibn Khuwaylid/
+1 SEX M
+1 DEAT Y
+1 FAMC @F100@
+0 @I349@ INDI
+1 NAME Abou Hāla /hind b. al-Nabbāsh de Tamīm/
+1 SEX M
+1 DEAT Y
+1 FAMS @F101@
+0 @I350@ INDI
+1 NAME Hind /hind b. al-Nabbāsh de Tamīm/
+1 SEX M
+1 DEAT Y
+1 FAMC @F101@
+0 @I351@ INDI
+1 NAME Hala /hind b. al-Nabbāsh de Tamīm/
+1 SEX F
+1 DEAT Y
+1 FAMC @F101@
+0 @I352@ INDI
+1 NAME Atīq /b. 'Ābid de Makhzūm/
+1 SEX M
+1 DEAT Y
+1 FAMS @F102@
+0 @I353@ INDI
+1 NAME Hind /b. 'Ābid de Makhzūm/
+1 SEX F
+1 DEAT Y
+1 FAMC @F102@
+0 @I354@ INDI
+1 NAME Sham'un /x/
+1 SEX M
+1 DEAT Y
+1 FAMS @F120@
+0 @I355@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F120@
+0 @I356@ INDI
+1 NAME Sirin /al-Qibtiyya/
+1 SEX F
+1 FAMC @F120@
+0 @I357@ INDI
+1 NAME Sawda /bint Zama/
+1 SEX F
+1 BIRT
+2 DATE 589
+2 PLAC La Mecque
+1 DEAT
+2 DATE 01 SEP 674
+2 PLAC Médine
+1 OCCU Garde malade
+1 FAMS @F89@
+1 FAMS @F125@
+0 @I358@ INDI
+1 NAME Sakrān /b. 'Amr/
+1 SEX M
+1 DEAT Y
+1 FAMS @F125@
+0 @I359@ INDI
+1 NAME Hafsa /bint Omar ben al-Khattâb/
+1 SEX F
+1 BIRT
+2 DATE ABT 605
+2 PLAC La Mecque
+1 DEAT
+2 DATE 667
+2 PLAC Médine
+1 FAMC @F126@
+1 FAMS @F127@
+1 FAMS @F91@
+0 @I360@ INDI
+1 NAME Khoumays /ibn Hudhafa/
+1 SEX M
+1 DEAT Y
+1 FAMS @F127@
+0 @I361@ INDI
+1 NAME Omar /ibn al-Khattâb/
+1 SEX M
+1 BIRT
+2 DATE 584
+2 PLAC La Mecque
+1 DEAT
+2 DATE 07 NOV 644
+2 PLAC Médine
+1 FAMS @F126@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/08/e6/56465611/medium.png?t=1705794313
+0 @I362@ INDI
+1 NAME Zaynab /bint Madhun/
+1 SEX F
+1 DEAT Y
+1 FAMS @F126@
+0 @I363@ INDI
+1 NAME Abd-Allah /ibn Jahsh/
+1 SEX M
+1 BIRT
+2 DATE 580
+2 PLAC La Mecque
+1 DEAT
+2 DATE 625
+2 PLAC Mont Uhud
+1 FAMC @F116@
+0 @I364@ INDI
+1 NAME Ubaydullah /ibn Riyab/
+1 FAMC @F116@
+0 @I365@ INDI
+1 NAME Zaynab /bint Jahsh/
+1 SEX F
+1 BIRT
+2 DATE 592
+2 PLAC La Mecque
+1 DEAT
+2 DATE 642
+2 PLAC Médine
+1 FAMC @F116@
+1 FAMS @F128@
+1 FAMS @F94@
+0 @I366@ INDI
+1 NAME Abd /ibn Riyab/
+1 SEX M
+1 FAMC @F116@
+0 @I367@ INDI
+1 NAME Habiba /ibn Riyab/
+1 FAMC @F116@
+0 @I368@ INDI
+1 NAME Hamna /ibn Riyab/
+1 SEX F
+1 FAMC @F116@
+0 @I369@ INDI
+1 NAME Zaïd /ibn Harithah ibn Shurâhîl Ibn Ka'b Ibn 'Abd Al'Uzzâ Ibn Umru' ul Qays Al Ka'bî/
+1 SEX M
+1 BIRT
+2 DATE 581
+2 PLAC Arabie
+1 DEAT
+2 DATE 629
+2 PLAC Mu'tah
+1 OCCU Chef militaire
+1 FAMC @F129@
+1 FAMS @F128@
+1 FAMS @F130@
+1 NOTE Fils adoptif de Muhammad
+0 @I370@ INDI
+1 NAME Su'dâ /bint Tha'laba/
+1 SEX F
+1 DEAT Y
+1 FAMS @F129@
+0 @I371@ INDI
+1 NAME Harithah /ibn shrahel/
+1 SEX M
+1 DEAT Y
+1 FAMS @F129@
+0 @I372@ INDI
+1 NAME Oum Kalsoum /bint Uqb/
+1 SEX F
+1 BIRT
+2 PLAC La Mecque
+1 DEAT Y
+1 FAMC @F114@
+1 FAMS @F130@
+0 @I373@ INDI
+1 NAME Okba /ibn Abu Mu'ayt/
+1 SEX M
+1 FAMS @F114@
+0 @I374@ INDI
+1 NAME Ousama /ibn Zayd/
+1 SEX M
+1 BIRT
+2 DATE 615
+2 PLAC La Mecque
+1 DEAT
+2 DATE 678
+2 PLAC Al-Jurf
+1 FAMC @F130@
+0 @I375@ INDI
+1 NAME Jabala /ibn Hàritha/
+1 SEX M
+1 FAMC @F129@
+0 @I376@ INDI
+1 NAME Oumm Salama /bint Abi Oumaya/
+1 SEX F
+1 BIRT
+2 DATE ABT 595
+1 DEAT
+2 DATE 680
+1 FAMC @F131@
+1 FAMS @F93@
+0 @I377@ INDI
+1 NAME Abu Umayya Huzaifa /bin Al Mughira/
+1 SEX M
+1 DEAT Y
+1 FAMS @F131@
+0 @I378@ INDI
+1 NAME 'Atikah /bint 'Amer bin Rabi'ah/
+1 SEX F
+1 DEAT Y
+1 FAMS @F131@
+0 @I379@ INDI
+1 NAME Juwayriya /bint Harith/
+1 SEX F
+1 BIRT
+2 DATE ABT 608
+2 PLAC Médine
+1 DEAT
+2 DATE ABT APR 676
+2 PLAC Médine
+1 FAMS @F95@
+0 @I380@ INDI
+1 NAME Maymuna /bint al-Harith/
+1 SEX F
+1 BIRT
+2 DATE 594
+2 PLAC La Mecque
+1 DEAT
+2 DATE JAN 672
+2 PLAC La Mecque (ou Califat omeyyade)
+1 FAMC @F132@
+1 FAMS @F97@
+0 @I381@ INDI
+1 NAME Hind /bint Awf/
+1 SEX F
+1 DEAT Y
+1 FAMS @F132@
+0 @I382@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F132@
+0 @I383@ INDI
+1 NAME Lubaba /bint al-Harith/
+1 SEX F
+1 FAMC @F132@
+1 FAMS @F115@
+0 @I384@ INDI
+1 NAME Zaynab /bint Khouzayma/
+1 SEX F
+1 BIRT
+2 DATE 595
+2 PLAC La Mecque
+1 DEAT
+2 DATE 625
+2 PLAC Médine
+1 FAMC @F132@
+1 FAMS @F133@
+1 FAMS @F134@
+1 FAMS @F92@
+0 @I385@ INDI
+1 NAME al-Tufail /ibn al-Harith/
+1 SEX M
+1 DEAT Y
+1 FAMS @F133@
+0 @I386@ INDI
+1 NAME Ubaïda /ibn al-Harith/
+1 SEX M
+1 DEAT Y
+1 FAMS @F134@
+0 @I387@ INDI
+1 NAME Rumleh /bint Abi-Sufyan/
+2 GIVN Oumm Habiba
+2 SURN bint Abi-Sufyan
+1 SEX F
+1 BIRT
+2 DATE ABT 594
+2 PLAC La Mecque
+1 DEAT
+2 DATE ABT 665
+1 FAMS @F96@
+0 @I388@ INDI
+1 NAME Safiya /bint Houyay/
+1 SEX F
+1 BIRT
+2 DATE ABT 610
+2 PLAC Médine
+1 DEAT
+2 DATE 670
+2 PLAC Médine
+1 FAMS @F135@
+1 FAMS @F98@
+0 @I389@ INDI
+1 NAME Kinana /ben al-Rabl'/
+1 SEX M
+1 DEAT Y
+1 FAMS @F135@
+0 @I390@ INDI
+1 NAME Abdullah /ibn Omar/
+1 SEX M
+1 BIRT
+2 DATE 610
+2 PLAC La Mecque
+1 DEAT
+2 DATE 693
+2 PLAC La Mecque
+1 OCCU Chef militaire, moufassir, muhaddith, mufti
+1 FAMC @F126@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/b3/55/56466015/medium.png?t=1705798063
+0 @I391@ INDI
+1 NAME Asim /ibn Umar/
+1 SEX M
+1 DEAT Y
+1 FAMC @F126@
+0 @I392@ INDI
+1 NAME Obaidullah /bin Omar bin al-Khattab/
+1 SEX M
+1 DEAT Y
+1 FAMC @F126@
+0 @I393@ INDI
+1 NAME Manassé /./
+1 SEX M
+1 FAMC @F62@
+0 @I394@ INDI
+1 NAME Potiphar /?/
+1 SEX M
+1 OCCU prêtre d'On
+1 FAMS @F65@
+0 @I395@ INDI
+1 NAME Toutânkhamon /./
+1 SEX M
+1 BIRT
+2 DATE ABT -1345
+1 DEAT
+2 DATE ABT -1327
+1 OCCU Pharaon
+1 FAMC @F136@
+1 FAMS @F137@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/fe/25/57059706/medium.jpg?t=1707045683
+0 @I396@ INDI
+1 NAME Ânkhésenamon /./
+1 SEX F
+1 BIRT
+2 DATE ABT -1350
+1 DEAT Y
+1 FAMC @F138@
+1 FAMS @F137@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/42/17/57060278/medium.png?t=1707046729
+0 @I397@ INDI
+1 NAME Akhetaton /./
+1 NAME Aménophis 4
+1 NAME Amenhotep 4
+1 SEX M
+1 BIRT
+2 DATE BET -1371 AND -1365
+1 DEAT
+2 DATE BET -1338 AND -1337
+1 OCCU Pharaon
+1 FAMC @F139@
+1 FAMS @F136@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/bd/ae/57059715/medium.jpg?t=1707045699
+0 @I398@ INDI
+1 NAME Amenhotep /./
+1 SEX M
+1 BIRT
+2 DATE ABT -1403
+1 DEAT
+2 DATE BET -1353 AND -1352
+2 PLAC Malqata
+1 FAMC @F140@
+1 FAMS @F139@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/b8/b5/57059743/medium.jpg?t=1707045761
+0 @I399@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F139@
+0 @I400@ INDI
+1 NAME Thoutmôsis /./
+1 SEX M
+1 DEAT
+2 DATE ABT -1390
+1 FAMC @F141@
+1 FAMS @F140@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/92/fa/57059841/medium.jpg?t=1707045855
+0 @I401@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F140@
+0 @I402@ INDI
+1 NAME Amenhotep /./
+1 SEX M
+1 DEAT Y
+1 FAMC @F142@
+1 FAMS @F141@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/5a/0a/57059869/medium.jpg?t=1707045921
+0 @I403@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F141@
+0 @I404@ INDI
+1 NAME Thoutmôsis /./
+1 SEX M
+1 BIRT
+2 DATE -1481
+1 DEAT
+2 DATE -1425
+1 FAMC @F143@
+1 FAMS @F142@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/5f/b0/57059914/medium.jpg?t=1707046016
+0 @I405@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F142@
+0 @I406@ INDI
+1 NAME Thoutmôsis /./
+1 SEX M
+1 BIRT
+2 DATE -1510
+1 DEAT
+2 DATE -1479
+1 FAMC @F144@
+1 FAMS @F143@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/6f/53/57059941/medium.jpg?t=1707046084
+0 @I407@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F143@
+0 @I408@ INDI
+1 NAME Thoutmôsis /./
+1 SEX M
+1 DEAT
+2 DATE -1493
+1 FAMC @F145@
+1 FAMS @F144@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/13/99/57059989/medium.jpg?t=1707046198
+0 @I409@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F144@
+0 @I410@ INDI
+1 NAME Amenhotep /./
+1 SEX M
+1 DEAT
+2 DATE BET -1504 AND -1506
+1 FAMC @F146@
+1 FAMS @F145@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/6c/c7/57064032/medium.jpg?t=1707047640
+0 @I411@ INDI
+1 NAME Senseneb /./
+1 SEX F
+1 DEAT Y
+1 FAMS @F145@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/dc/27/57060261/medium.png?t=1707046664
+0 @I412@ INDI
+1 NAME . /./
+1 SEX M
+1 DEAT Y
+1 FAMS @F138@
+0 @I413@ INDI
+1 NAME . /Néfertiti/
+1 SEX F
+1 BIRT
+2 DATE ABT -1370
+1 DEAT
+2 DATE BET -1334 AND -1333
+1 FAMS @F138@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/3b/e9/57060402/medium.jpg?t=1707047032
+0 @I414@ INDI
+1 NAME Ahmôsis /./
+1 SEX M
+1 DEAT
+2 DATE BET -1525 AND -1524
+1 FAMC @F147@
+1 FAMS @F146@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/dd/69/57069073/medium.jpg?t=1707047721
+0 @I415@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F146@
+0 @I416@ INDI
+1 NAME Seqenenrê /Tâa/
+1 SEX M
+1 DEAT Y
+1 FAMS @F147@
+1 OBJE
+2 FILE http://gw.geneanet.org/public/img/media/deposits/a5/69/57070675/medium.png?t=1707047838
+0 @I417@ INDI
+1 NAME ? /?/
+1 SEX F
+1 DEAT Y
+1 FAMS @F147@
+0 @F1@ FAM
+1 MARR Y
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+0 @F3@ FAM
+1 MARR Y
+1 HUSB @I4@
+1 WIFE @I5@
+1 CHIL @I8@
+0 @F2@ FAM
+1 MARR Y
+1 HUSB @I6@
+1 WIFE @I7@
+1 CHIL @I4@
+0 @F148@ FAM
+1 MARR Y
+0 @F149@ FAM
+1 MARR Y
+0 @F4@ FAM
+1 MARR Y
+1 HUSB @I8@
+1 WIFE @I9@
+0 @F6@ FAM
+1 MARR
+2 DATE 1919
+2 PLAC Nouveau-Mexique
+1 HUSB @I10@
+1 WIFE @I11@
+1 CHIL @I13@
+1 CHIL @I27@
+1 CHIL @I12@
+1 CHIL @I26@
+0 @F5@ FAM
+1 MARR
+2 DATE 19 JUL 1894
+1 HUSB @I14@
+1 WIFE @I15@
+1 CHIL @I18@
+1 CHIL @I17@
+1 CHIL @I10@
+1 CHIL @I16@
+1 CHIL @I19@
+0 @F12@ FAM
+1 MARR
+2 DATE ABT 1925
+2 PLAC Lincoln, New Mexico, USA
+1 HUSB @I20@
+1 WIFE @I19@
+0 @F7@ FAM
+1 MARR Y
+1 HUSB @I21@
+1 WIFE @I12@
+1 CHIL @I22@
+1 CHIL @I23@
+1 CHIL @I24@
+1 CHIL @I25@
+0 @F14@ FAM
+1 MARR Y
+1 HUSB @I28@
+1 CHIL @I29@
+0 @F16@ FAM
+1 MARR Y
+1 HUSB @I30@
+1 WIFE @I31@
+1 CHIL @I41@
+1 CHIL @I42@
+1 CHIL @I43@
+1 CHIL @I44@
+1 CHIL @I45@
+1 CHIL @I46@
+0 @F15@ FAM
+1 MARR Y
+1 HUSB @I32@
+1 WIFE @I33@
+1 CHIL @I37@
+1 CHIL @I38@
+1 CHIL @I39@
+1 CHIL @I40@
+1 CHIL @I30@
+0 @F17@ FAM
+1 MARR Y
+1 HUSB @I34@
+1 WIFE @I35@
+1 CHIL @I32@
+1 CHIL @I36@
+0 @F18@ FAM
+1 MARR Y
+1 HUSB @I42@
+1 WIFE @I47@
+1 CHIL @I48@
+1 CHIL @I49@
+1 CHIL @I50@
+1 CHIL @I51@
+0 @F19@ FAM
+1 MARR Y
+1 HUSB @I43@
+1 WIFE @I52@
+1 CHIL @I53@
+1 CHIL @I54@
+1 CHIL @I55@
+1 CHIL @I68@
+1 CHIL @I69@
+0 @F21@ FAM
+1 MARR Y
+1 HUSB @I44@
+1 WIFE @I56@
+1 CHIL @I57@
+1 CHIL @I58@
+1 CHIL @I59@
+1 CHIL @I60@
+0 @F22@ FAM
+1 MARR Y
+1 HUSB @I46@
+1 WIFE @I61@
+1 CHIL @I62@
+1 CHIL @I63@
+1 CHIL @I64@
+1 CHIL @I65@
+1 CHIL @I66@
+1 CHIL @I67@
+0 @F20@ FAM
+1 MARR Y
+1 HUSB @I43@
+1 WIFE @I70@
+1 CHIL @I71@
+1 CHIL @I72@
+0 @F23@ FAM
+1 MARR Y
+1 HUSB @I73@
+1 WIFE @I74@
+1 CHIL @I75@
+1 CHIL @I76@
+1 CHIL @I77@
+1 CHIL @I78@
+0 @F24@ FAM
+1 MARR Y
+1 HUSB @I79@
+1 WIFE @I80@
+1 CHIL @I81@
+1 CHIL @I82@
+0 @F26@ FAM
+1 MARR Y
+1 HUSB @I83@
+1 WIFE @I82@
+1 CHIL @I84@
+1 CHIL @I85@
+0 @F25@ FAM
+1 MARR Y
+1 HUSB @I86@
+1 WIFE @I81@
+0 @F11@ FAM
+1 MARR Y
+1 HUSB @I87@
+1 WIFE @I18@
+0 @F9@ FAM
+1 MARR
+2 DATE 25 FEB 1941
+2 PLAC Carlsbad, New Mexico, Etats-Unis d'Amérique
+1 HUSB @I16@
+1 WIFE @I88@
+0 @F8@ FAM
+1 MARR Y
+1 HUSB @I13@
+1 WIFE @I89@
+1 CHIL @I90@
+0 @F10@ FAM
+1 MARR Y
+1 HUSB @I91@
+1 WIFE @I17@
+1 CHIL @I92@
+0 @F13@ FAM
+1 MARR Y
+1 HUSB @I27@
+1 WIFE @I93@
+1 CHIL @I94@
+0 @F28@ FAM
+1 MARR Y
+1 HUSB @I95@
+1 WIFE @I96@
+1 CHIL @I166@
+1 CHIL @I168@
+1 CHIL @I169@
+1 CHIL @I170@
+1 CHIL @I171@
+1 CHIL @I172@
+0 @F27@ FAM
+1 MARR Y
+1 HUSB @I97@
+1 WIFE @I98@
+1 CHIL @I95@
+1 CHIL @I99@
+1 CHIL @I100@
+1 CHIL @I96@
+0 @F31@ FAM
+1 MARR Y
+1 HUSB @I101@
+1 CHIL @I97@
+0 @F34@ FAM
+1 MARR Y
+1 HUSB @I102@
+1 WIFE @I103@
+1 CHIL @I101@
+0 @F35@ FAM
+1 MARR Y
+1 HUSB @I104@
+1 WIFE @I105@
+1 CHIL @I102@
+0 @F36@ FAM
+1 MARR Y
+1 HUSB @I106@
+1 WIFE @I107@
+1 CHIL @I104@
+0 @F37@ FAM
+1 MARR Y
+1 HUSB @I108@
+1 WIFE @I109@
+1 CHIL @I106@
+1 CHIL @I110@
+0 @F38@ FAM
+1 MARR Y
+1 HUSB @I111@
+1 WIFE @I112@
+1 CHIL @I108@
+0 @F40@ FAM
+1 MARR Y
+1 HUSB @I113@
+1 WIFE @I114@
+1 CHIL @I111@
+1 CHIL @I165@
+0 @F41@ FAM
+1 MARR Y
+1 HUSB @I115@
+1 WIFE @I116@
+1 CHIL @I113@
+1 CHIL @I117@
+1 CHIL @I118@
+1 CHIL @I119@
+1 CHIL @I120@
+0 @F42@ FAM
+1 MARR Y
+1 HUSB @I121@
+1 WIFE @I122@
+1 CHIL @I115@
+1 CHIL @I123@
+1 CHIL @I124@
+0 @F44@ FAM
+1 MARR Y
+1 HUSB @I125@
+1 WIFE @I126@
+1 CHIL @I121@
+0 @F47@ FAM
+1 MARR Y
+1 HUSB @I127@
+1 WIFE @I128@
+1 CHIL @I125@
+0 @F48@ FAM
+1 MARR Y
+1 HUSB @I129@
+1 WIFE @I130@
+1 CHIL @I128@
+1 CHIL @I148@
+0 @F49@ FAM
+1 MARR Y
+1 HUSB @I131@
+1 WIFE @I132@
+1 CHIL @I129@
+1 CHIL @I133@
+0 @F50@ FAM
+1 MARR Y
+1 HUSB @I134@
+1 WIFE @I135@
+1 CHIL @I131@
+0 @F51@ FAM
+1 MARR Y
+1 HUSB @I136@
+1 WIFE @I137@
+1 CHIL @I134@
+0 @F52@ FAM
+1 MARR Y
+1 HUSB @I138@
+1 WIFE @I139@
+1 CHIL @I136@
+0 @F53@ FAM
+1 MARR Y
+1 HUSB @I140@
+1 WIFE @I141@
+1 CHIL @I138@
+1 CHIL @I146@
+0 @F54@ FAM
+1 MARR Y
+1 HUSB @I142@
+1 WIFE @I143@
+1 CHIL @I140@
+1 CHIL @I144@
+1 CHIL @I145@
+1 CHIL @I147@
+0 @F55@ FAM
+1 MARR Y
+1 CHIL @I142@
+0 @F56@ FAM
+1 MARR Y
+1 HUSB @I145@
+1 WIFE @I147@
+0 @F45@ FAM
+1 MARR Y
+1 HUSB @I123@
+1 CHIL @I149@
+1 CHIL @I150@
+1 CHIL @I151@
+1 CHIL @I152@
+0 @F46@ FAM
+1 MARR Y
+1 HUSB @I124@
+1 WIFE @I153@
+1 CHIL @I154@
+1 CHIL @I155@
+1 CHIL @I156@
+1 CHIL @I157@
+1 CHIL @I158@
+1 CHIL @I159@
+1 CHIL @I160@
+1 CHIL @I161@
+1 CHIL @I162@
+1 CHIL @I163@
+1 CHIL @I164@
+0 @F33@ FAM
+1 MARR Y
+1 HUSB @I100@
+1 CHIL @I167@
+1 CHIL @I278@
+0 @F29@ FAM
+1 MARR Y
+1 HUSB @I95@
+1 WIFE @I173@
+1 CHIL @I174@
+0 @F30@ FAM
+1 MARR Y
+1 HUSB @I95@
+1 WIFE @I175@
+1 CHIL @I176@
+0 @F57@ FAM
+1 MARR Y
+1 HUSB @I166@
+1 WIFE @I177@
+1 CHIL @I178@
+1 CHIL @I179@
+0 @F59@ FAM
+1 MARR Y
+1 HUSB @I179@
+1 WIFE @I180@
+1 CHIL @I195@
+1 CHIL @I196@
+1 CHIL @I197@
+0 @F60@ FAM
+1 MARR Y
+1 HUSB @I179@
+1 WIFE @I181@
+0 @F58@ FAM
+1 MARR Y
+1 HUSB @I176@
+1 CHIL @I182@
+1 CHIL @I183@
+1 CHIL @I184@
+1 CHIL @I185@
+1 CHIL @I186@
+1 CHIL @I187@
+1 CHIL @I188@
+1 CHIL @I189@
+1 CHIL @I190@
+1 CHIL @I191@
+1 CHIL @I192@
+1 CHIL @I193@
+1 CHIL @I194@
+0 @F62@ FAM
+1 MARR Y
+1 HUSB @I195@
+1 WIFE @I198@
+1 CHIL @I199@
+1 CHIL @I393@
+0 @F66@ FAM
+1 MARR Y
+1 HUSB @I199@
+1 CHIL @I200@
+0 @F67@ FAM
+1 MARR Y
+1 HUSB @I200@
+1 CHIL @I201@
+0 @F63@ FAM
+1 MARR Y
+1 HUSB @I196@
+1 CHIL @I202@
+0 @F68@ FAM
+1 MARR Y
+1 HUSB @I202@
+1 CHIL @I203@
+0 @F69@ FAM
+1 MARR Y
+1 HUSB @I203@
+1 WIFE @I204@
+1 CHIL @I205@
+1 CHIL @I206@
+1 CHIL @I207@
+0 @F70@ FAM
+1 MARR Y
+1 HUSB @I205@
+1 WIFE @I208@
+1 CHIL @I209@
+1 CHIL @I210@
+0 @F72@ FAM
+1 MARR Y
+1 HUSB @I209@
+1 CHIL @I211@
+0 @F64@ FAM
+1 MARR Y
+1 HUSB @I197@
+1 WIFE @I212@
+1 CHIL @I213@
+1 CHIL @I214@
+0 @F73@ FAM
+1 MARR Y
+1 HUSB @I213@
+1 WIFE @I215@
+1 CHIL @I216@
+1 CHIL @I217@
+0 @F74@ FAM
+1 MARR Y
+1 HUSB @I216@
+1 CHIL @I218@
+1 CHIL @I219@
+1 CHIL @I220@
+0 @F75@ FAM
+1 MARR Y
+1 HUSB @I219@
+1 CHIL @I221@
+0 @F76@ FAM
+1 MARR Y
+1 HUSB @I221@
+1 CHIL @I222@
+1 CHIL @I223@
+0 @F77@ FAM
+1 MARR Y
+1 HUSB @I222@
+1 CHIL @I224@
+0 @F71@ FAM
+1 MARR Y
+1 HUSB @I223@
+1 WIFE @I206@
+0 @F78@ FAM
+1 MARR Y
+1 HUSB @I224@
+1 WIFE @I225@
+1 CHIL @I226@
+0 @F79@ FAM
+1 MARR Y
+1 HUSB @I226@
+1 WIFE @I227@
+1 CHIL @I228@
+0 @F80@ FAM
+1 MARR Y
+1 HUSB @I228@
+1 CHIL @I229@
+0 @F81@ FAM
+1 MARR Y
+1 HUSB @I229@
+1 WIFE @I230@
+1 CHIL @I231@
+0 @F82@ FAM
+1 MARR Y
+1 HUSB @I232@
+1 CHIL @I230@
+0 @F83@ FAM
+1 MARR Y
+1 HUSB @I231@
+1 WIFE @I233@
+1 CHIL @I234@
+1 CHIL @I235@
+1 CHIL @I236@
+1 CHIL @I237@
+1 CHIL @I238@
+1 CHIL @I239@
+1 CHIL @I240@
+1 CHIL @I241@
+1 CHIL @I242@
+1 CHIL @I243@
+1 CHIL @I244@
+1 CHIL @I245@
+1 CHIL @I246@
+1 CHIL @I247@
+1 CHIL @I248@
+1 CHIL @I249@
+1 CHIL @I250@
+1 CHIL @I251@
+0 @F84@ FAM
+1 MARR Y
+1 HUSB @I243@
+1 CHIL @I252@
+0 @F86@ FAM
+1 MARR Y
+1 HUSB @I253@
+0 @F85@ FAM
+1 MARR Y
+1 HUSB @I254@
+1 WIFE @I255@
+1 CHIL @I253@
+1 CHIL @I256@
+1 CHIL @I257@
+1 CHIL @I258@
+1 CHIL @I259@
+0 @F61@ FAM
+1 MARR Y
+1 HUSB @I179@
+1 WIFE @I260@
+1 CHIL @I254@
+0 @F43@ FAM
+1 MARR Y
+1 HUSB @I120@
+1 CHIL @I261@
+1 CHIL @I262@
+1 CHIL @I263@
+1 CHIL @I264@
+0 @F39@ FAM
+1 MARR Y
+1 HUSB @I110@
+1 CHIL @I265@
+1 CHIL @I266@
+1 CHIL @I267@
+1 CHIL @I268@
+1 CHIL @I269@
+1 CHIL @I270@
+1 CHIL @I271@
+1 CHIL @I272@
+1 CHIL @I273@
+1 CHIL @I274@
+1 CHIL @I275@
+1 CHIL @I276@
+1 CHIL @I277@
+0 @F32@ FAM
+1 MARR Y
+1 HUSB @I99@
+1 WIFE @I278@
+0 @F88@ FAM
+1 MARR
+2 DATE 595
+1 HUSB @I279@
+1 WIFE @I280@
+1 CHIL @I318@
+1 CHIL @I317@
+1 CHIL @I319@
+1 CHIL @I320@
+1 CHIL @I321@
+1 CHIL @I322@
+0 @F87@ FAM
+1 MARR Y
+1 HUSB @I281@
+1 WIFE @I282@
+1 CHIL @I279@
+1 CHIL @I301@
+0 @F103@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I284@
+1 CHIL @I299@
+1 CHIL @I281@
+1 CHIL @I300@
+1 CHIL @I305@
+1 CHIL @I309@
+0 @F105@ FAM
+1 MARR Y
+1 HUSB @I285@
+1 WIFE @I286@
+1 CHIL @I283@
+1 CHIL @I289@
+0 @F111@ FAM
+1 MARR Y
+1 HUSB @I287@
+1 WIFE @I288@
+1 CHIL @I285@
+1 CHIL @I290@
+1 CHIL @I291@
+1 CHIL @I292@
+0 @F112@ FAM
+1 MARR Y
+1 CHIL @I287@
+1 CHIL @I293@
+0 @F106@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I294@
+1 CHIL @I302@
+0 @F107@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I295@
+1 CHIL @I304@
+0 @F108@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I296@
+0 @F109@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I297@
+1 CHIL @I303@
+0 @F110@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I298@
+0 @F116@ FAM
+1 MARR Y
+1 HUSB @I306@
+1 WIFE @I305@
+1 CHIL @I363@
+1 CHIL @I364@
+1 CHIL @I365@
+1 CHIL @I366@
+1 CHIL @I367@
+1 CHIL @I368@
+0 @F104@ FAM
+1 MARR Y
+1 HUSB @I307@
+1 WIFE @I308@
+1 CHIL @I282@
+0 @F117@ FAM
+1 MARR Y
+1 HUSB @I309@
+1 WIFE @I310@
+1 CHIL @I311@
+1 CHIL @I312@
+1 CHIL @I313@
+1 CHIL @I314@
+1 CHIL @I315@
+0 @F118@ FAM
+1 MARR Y
+1 HUSB @I316@
+1 WIFE @I312@
+0 @F99@ FAM
+1 MARR
+2 DATE 630
+1 HUSB @I279@
+1 WIFE @I323@
+1 CHIL @I324@
+0 @F90@ FAM
+1 MARR
+2 DATE 620
+1 HUSB @I279@
+1 WIFE @I325@
+0 @F121@ FAM
+1 MARR Y
+1 HUSB @I326@
+1 WIFE @I327@
+1 CHIL @I328@
+1 CHIL @I325@
+0 @F124@ FAM
+1 MARR Y
+1 HUSB @I329@
+1 WIFE @I327@
+1 CHIL @I330@
+1 CHIL @I332@
+1 CHIL @I333@
+0 @F123@ FAM
+1 MARR Y
+1 HUSB @I326@
+1 WIFE @I331@
+0 @F122@ FAM
+1 MARR Y
+1 HUSB @I334@
+1 WIFE @I335@
+1 CHIL @I326@
+0 @F113@ FAM
+1 MARR Y
+1 HUSB @I299@
+1 WIFE @I336@
+1 CHIL @I337@
+1 CHIL @I338@
+1 CHIL @I340@
+1 CHIL @I339@
+1 CHIL @I341@
+1 CHIL @I342@
+0 @F119@ FAM
+1 MARR Y
+1 HUSB @I342@
+1 WIFE @I321@
+0 @F100@ FAM
+1 MARR Y
+1 HUSB @I343@
+1 WIFE @I344@
+1 CHIL @I280@
+1 CHIL @I345@
+1 CHIL @I346@
+1 CHIL @I347@
+1 CHIL @I348@
+0 @F101@ FAM
+1 MARR Y
+1 HUSB @I349@
+1 WIFE @I280@
+1 CHIL @I350@
+1 CHIL @I351@
+0 @F102@ FAM
+1 MARR Y
+1 HUSB @I352@
+1 WIFE @I280@
+1 CHIL @I353@
+0 @F120@ FAM
+1 MARR Y
+1 HUSB @I354@
+1 WIFE @I355@
+1 CHIL @I323@
+1 CHIL @I356@
+0 @F89@ FAM
+1 MARR
+2 DATE 619
+1 HUSB @I279@
+1 WIFE @I357@
+0 @F125@ FAM
+1 MARR Y
+1 HUSB @I358@
+1 WIFE @I357@
+0 @F91@ FAM
+1 MARR
+2 DATE 625
+1 HUSB @I279@
+1 WIFE @I359@
+0 @F127@ FAM
+1 MARR Y
+1 HUSB @I360@
+1 WIFE @I359@
+0 @F126@ FAM
+1 MARR Y
+1 HUSB @I361@
+1 WIFE @I362@
+1 CHIL @I359@
+1 CHIL @I390@
+1 CHIL @I391@
+1 CHIL @I392@
+0 @F128@ FAM
+1 MARR
+2 DATE 625
+1 HUSB @I369@
+1 WIFE @I365@
+0 @F129@ FAM
+1 MARR Y
+1 HUSB @I370@
+1 WIFE @I371@
+1 CHIL @I369@
+1 CHIL @I375@
+0 @F130@ FAM
+1 MARR Y
+1 HUSB @I369@
+1 WIFE @I372@
+1 CHIL @I374@
+0 @F114@ FAM
+1 MARR Y
+1 HUSB @I373@
+1 WIFE @I301@
+1 CHIL @I372@
+0 @F94@ FAM
+1 MARR
+2 DATE 27 MAR 627
+1 HUSB @I279@
+1 WIFE @I365@
+0 @F93@ FAM
+1 MARR
+2 DATE 626
+1 HUSB @I279@
+1 WIFE @I376@
+0 @F131@ FAM
+1 MARR Y
+1 HUSB @I377@
+1 WIFE @I378@
+1 CHIL @I376@
+0 @F95@ FAM
+1 MARR
+2 DATE ABT 628
+1 HUSB @I279@
+1 WIFE @I379@
+0 @F97@ FAM
+1 MARR
+2 DATE 629
+1 HUSB @I279@
+1 WIFE @I380@
+0 @F132@ FAM
+1 MARR Y
+1 HUSB @I381@
+1 WIFE @I382@
+1 CHIL @I380@
+1 CHIL @I383@
+1 CHIL @I384@
+0 @F115@ FAM
+1 MARR Y
+1 HUSB @I304@
+1 WIFE @I383@
+0 @F92@ FAM
+1 MARR
+2 DATE 625
+1 HUSB @I279@
+1 WIFE @I384@
+0 @F133@ FAM
+1 MARR Y
+1 HUSB @I385@
+1 WIFE @I384@
+0 @F134@ FAM
+1 MARR Y
+1 HUSB @I386@
+1 WIFE @I384@
+0 @F96@ FAM
+1 MARR
+2 DATE ABT 628
+1 HUSB @I279@
+1 WIFE @I387@
+0 @F98@ FAM
+1 MARR
+2 DATE 629
+1 HUSB @I279@
+1 WIFE @I388@
+0 @F135@ FAM
+1 MARR Y
+1 HUSB @I389@
+1 WIFE @I388@
+0 @F65@ FAM
+1 MARR Y
+1 HUSB @I394@
+1 CHIL @I198@
+0 @F137@ FAM
+1 MARR Y
+1 HUSB @I395@
+1 WIFE @I396@
+0 @F136@ FAM
+1 MARR Y
+1 HUSB @I397@
+1 CHIL @I395@
+0 @F139@ FAM
+1 MARR Y
+1 HUSB @I398@
+1 WIFE @I399@
+1 CHIL @I397@
+0 @F140@ FAM
+1 MARR Y
+1 HUSB @I400@
+1 WIFE @I401@
+1 CHIL @I398@
+0 @F141@ FAM
+1 MARR Y
+1 HUSB @I402@
+1 WIFE @I403@
+1 CHIL @I400@
+0 @F142@ FAM
+1 MARR Y
+1 HUSB @I404@
+1 WIFE @I405@
+1 CHIL @I402@
+0 @F143@ FAM
+1 MARR Y
+1 HUSB @I406@
+1 WIFE @I407@
+1 CHIL @I404@
+0 @F144@ FAM
+1 MARR Y
+1 HUSB @I408@
+1 WIFE @I409@
+1 CHIL @I406@
+0 @F145@ FAM
+1 MARR Y
+1 HUSB @I410@
+1 WIFE @I411@
+1 CHIL @I408@
+0 @F138@ FAM
+1 MARR Y
+1 HUSB @I412@
+1 WIFE @I413@
+1 CHIL @I396@
+0 @F146@ FAM
+1 MARR Y
+1 HUSB @I414@
+1 WIFE @I415@
+1 CHIL @I410@
+0 @F147@ FAM
+1 MARR Y
+1 HUSB @I416@
+1 WIFE @I417@
+1 CHIL @I414@
+0 TRLR

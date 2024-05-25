@@ -91,8 +91,9 @@ console.time("ssg")
 const args = new CLI().getArgs<RR0BuildArgs>()
 const cliContents = args.contents
 console.debug("contents", cliContents)
+const mandatoryRoots = ["people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
 const contentRoots = cliContents
-  ? cliContents.split(",")
+  ? cliContents.split(",").concat(mandatoryRoots)
   : [
     "croyance/**/*.html",
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",

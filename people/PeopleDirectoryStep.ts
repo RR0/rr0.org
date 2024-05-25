@@ -117,7 +117,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, service: PeopleService): Promise<SsgStep[]> {
-    const dirs = RR0FileUtil.findDirectoriesContaining("people*.json")
+    const dirs = RR0FileUtil.findDirectoriesContaining("people*.json", "out")
     const excludedDirs = ["people/Astronomers_fichiers", "people/witness", "people/author"]
     const scientistsDirectoryStep = this.createScientists(dirs, excludedDirs, outputFunc, config, service)
     const ufologistsDirectoryStep = this.createUfologists(dirs, excludedDirs, outputFunc, config, service)
@@ -224,6 +224,8 @@ export class PeopleDirectoryStep extends DirectoryStep {
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
     let peopleList = await this.service.getFromDirs(context, dirNames)
+    const outputPath = this.config.getOutputPath(context)
+    const output = context.newOutput(outputPath)
     if (this.filterOccupations.length > 0) {
       peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     }
@@ -254,15 +256,14 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const ul = file.document.createElement("ul")
     ul.append(...listItems)
     ul.className = "links"
-    file.contents = file.contents.replace(`<!--#echo var="directories" -->`,
-      ul.outerHTML)
+    output.contents = file.contents.replace(`<!--#echo var="directories" -->`, ul.outerHTML)
     {
       let countriesHtml = ""
       for (const country of Array.from(allCountries).sort()) {
         const countryStr = context.messages.country[country].title
         countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="findPeople(event)"> ${countryStr}</label></span>`
       }
-      file.contents = file.contents.replace(`<!--#echo var="countries" -->`,
+      output.contents = output.contents.replace(`<!--#echo var="countries" -->`,
         HtmlTag.toString("div", countriesHtml, {id: "countries"}))
     }
     {
@@ -272,9 +273,9 @@ export class PeopleDirectoryStep extends DirectoryStep {
           context.messages.people.occupation[occupation](Gender.male))
         occupationsHtml += `<span class="option"><label><input type="checkbox" id="occupation-${occupation}" onchange="findPeople(event)"> ${occupationStr}</label></span>`
       }
-      file.contents = file.contents.replace(`<!--#echo var="occupations" -->`,
+      output.contents = output.contents.replace(`<!--#echo var="occupations" -->`,
         HtmlTag.toString("div", occupationsHtml, {id: "occupations"}))
     }
-    await this.outputFunc(context, file)
+    await this.outputFunc(context, output)
   }
 }

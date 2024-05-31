@@ -1,7 +1,6 @@
 import { PeopleService } from "./PeopleService"
 import { DomReplacement } from "../time/DomReplacement"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { PeopleDirectoryStep } from "./PeopleDirectoryStep"
 import { Occupation } from "./Occupation"
 import { CountryCode } from "../org/country/CountryCode"
 
@@ -38,7 +37,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
       const allCountries = new Set<CountryCode>()
       const occupations = new Set<Occupation>
       const peopl = peopleList[0] || people
-      replacement = PeopleDirectoryStep.getPeopleLink(context, peopl, pseudoPeopleList, allCountries,
+      replacement = this.service.getLink(context, peopl, pseudoPeopleList, allCountries,
         occupations,
         [], peopleContent)
     } else {

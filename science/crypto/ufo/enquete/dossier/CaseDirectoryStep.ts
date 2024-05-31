@@ -1,6 +1,5 @@
 import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
-import { HtmlTag } from "../../../../../util/HtmlTag"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 import { RR0Case } from "./RR0Case"
 import { DataService } from "../../../../../DataService"
@@ -34,7 +33,7 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param cases
    */
-  protected toList(context: HtmlRR0SsgContext, cases: RR0Case[]) {
+  protected toList(context: HtmlRR0SsgContext, cases: RR0Case[]): HTMLUListElement {
     const listItems = cases.map(dirCase => {
       if (!dirCase.title) {
         const lastSlash = dirCase.dirName.lastIndexOf("/")
@@ -43,7 +42,10 @@ export class CaseDirectoryStep extends DirectoryStep {
       }
       return this.toListItem(context, dirCase)
     })
-    return HtmlTag.toString("ul", listItems.join("\n"), {class: "links"})
+    const ul = context.file.document.createElement("ul")
+    ul.append(...listItems)
+    ul.className = "links"
+    return ul
   }
 
   /**
@@ -52,10 +54,18 @@ export class CaseDirectoryStep extends DirectoryStep {
    * @param context
    * @param dirCase
    */
-  protected toListItem(context: HtmlRR0SsgContext, dirCase: RR0Case) {
-    const attrs: { [name: string]: string } = {}
+  protected toListItem(context: HtmlRR0SsgContext, dirCase: RR0Case): HTMLLIElement {
+    const item = context.file.document.createElement("li")
+    const ref = this.getLink(context, dirCase, item)
+    item.appendChild(ref)
+    return item
+  }
+
+  protected getLink(context: HtmlRR0SsgContext, dirCase: RR0Case, item: HTMLLIElement): HTMLElement {
+    const doc = context.file.document
     const titles: string[] = []
     const details: string[] = []
+    const classList = ["data-resolved"]
     const classification = dirCase.classification
     const hynek = classification?.hynek
     if (hynek) {
@@ -79,19 +89,36 @@ export class CaseDirectoryStep extends DirectoryStep {
     if (details.length > 0) {
       text.push(`(${details.join(", ")})`)
     }
-    const a = HtmlTag.toString("a", text.join(" "), {href: `/${dirCase.dirName}/`})
-    if (titles.length) {
-      attrs.title = titles.join(", ")
+    const link = doc.createElement("a")
+    link.innerHTML = text.join(" ")
+    link.href = path.join("/", dirCase.dirName)
+    const elem = doc.createElement("span")
+    if (titles.length > 0) {
+      elem.title = titles.join(", ")
     }
-    return HtmlTag.toString("li", a, attrs)
+    if (classList.length > 0) {
+      elem.classList.add(...classList)
+    }
+    const portraitUrl = (dirCase as any).image
+    if (portraitUrl) {
+      const portraitElem = doc.createElement("img")
+      portraitElem.src = path.join("/", portraitUrl)
+      portraitElem.alt = dirCase.title
+      portraitElem.className = "portrait"
+      portraitElem.loading = "lazy"
+      portraitElem.width = 75
+      link.append(portraitElem)
+    }
+    elem.append(link)
+    return elem
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
     const cases = await this.scan(context, dirNames)
-    const directoriesHtml = this.toList(context, cases)
+    const ul = this.toList(context, cases)
     const outputPath = this.config.getOutputPath(context)
     const output = context.newOutput(outputPath)
-    output.contents = context.file.contents.replace(`<!--#echo var="directories" -->`, directoriesHtml)
+    output.contents = context.file.contents.replace(`<!--#echo var="directories" -->`, ul.outerHTML)
     await this.outputFunc(context, output)
   }
 

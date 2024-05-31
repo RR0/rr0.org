@@ -27,7 +27,7 @@ export class CaseAnchorHandler implements AnchorHandler {
           titleElems.push(TimeTextBuilder.build(caseContext))
         }
         const place = aCase.place
-        if (place && !titleElems.includes(place)) {
+        if (typeof place === "string" && !titleElems.includes(place)) {
           titleElems.push(place)
         }
         const conclusion = aCase.conclusion

@@ -1225,11 +1225,11 @@ body.with-map .map {
   }
 }
 
-.people-resolved {
+.data-resolved {
   position: relative;
 }
 
-.people-resolved .portrait {
+.data-resolved .portrait {
   margin: 0;
   transform-origin: top;
   position: absolute;
@@ -1242,7 +1242,7 @@ body.with-map .map {
   box-shadow: #0000006e 5px 12px 20px 0;;
 }
 
-.people-resolved:hover .portrait {
+.data-resolved:hover .portrait {
   animation: show-portrait 0.3s 1s forwards;
 }
 

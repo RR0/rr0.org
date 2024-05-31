@@ -1,9 +1,13 @@
 import { KnownPeople, People } from "./People"
 import { StringUtil } from "../util/string/StringUtil"
-import { RR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
 import path from "path"
 import fs from "fs"
 import { DataService } from "../DataService"
+import { CountryCode } from "../org/country/CountryCode"
+import { Occupation } from "./Occupation"
+import { Time } from "../time/Time"
+import { Gender } from "@rr0/common"
 
 export class PeopleService {
 
@@ -64,7 +68,7 @@ export class PeopleService {
 
   createFromData(context: RR0SsgContext, dirName: string, data: People): People {
     const people = this.createFromDirName(dirName)
-    const title = data.title
+    const title = (data as any).title
     if (title) {
       const names = title.split(",")
       if (names.length > 1) {
@@ -111,5 +115,94 @@ export class PeopleService {
     const firstNames = firstNameStr.split(" ")
     return new KnownPeople(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
       undefined, dirName)
+  }
+
+  getLink(context: HtmlRR0SsgContext,
+          people: KnownPeople, pseudoPeopleList: People[], allCountries: Set<CountryCode>,
+          occupations: Set<Occupation>, filterOccupations: Occupation[], content?: string): HTMLElement {
+    const dirName = people.dirName
+    const titles = []
+    const classList = ["data-resolved"]
+    if (pseudoPeopleList.indexOf(people) >= 0) {
+      classList.push("pseudonym")
+      titles.push("(pseudonyme)")
+    }
+    if (people.hoax) {
+      classList.push("canular")
+    }
+    let birthTimeStr = people.birthTime as unknown as string
+    if (birthTimeStr) {
+      const birthTime = people.birthTime = Time.dateFromIso(birthTimeStr)
+      birthTimeStr = birthTime.getFullYear().toString()
+    }
+    let deathTimeStr = people.deathTime as unknown as string
+    if (deathTimeStr) {
+      const deathTime = people.deathTime = Time.dateFromIso(deathTimeStr)
+      deathTimeStr = deathTime.getFullYear().toString()
+    }
+    if (people.isDeceased()) {
+      classList.push("deceased")
+    }
+    if (birthTimeStr || deathTimeStr) {
+      const timeStr = birthTimeStr ? deathTimeStr ? birthTimeStr + "-" + deathTimeStr : birthTimeStr + "-" : "-" + deathTimeStr
+      titles.push(timeStr)
+    }
+    const age = people.getAge()
+    if (age) {
+      titles.push(`${age} ans`)
+    }
+    const countries = people.countries
+    if (countries) {
+      for (const country of countries) {
+        allCountries.add(country)
+        const countryLabel = context.messages.country[country]?.title
+        if (!countryLabel) {
+          throw new Error(`No title for country "${country}"`)
+        }
+        titles.push(countryLabel)
+        classList.push(`country-${country}`)
+      }
+    }
+    const gender = people.gender || Gender.male
+    for (const occupation of people.occupations) {
+      if (filterOccupations.length > 1 || !filterOccupations.includes(occupation)) {
+        occupations.add(occupation)
+        const occupationMsg = context.messages.people.occupation[occupation]
+        if (!occupationMsg) {
+          throw Error(
+            `No message to translate occupation "${occupation}" in ${context.locale}, as specified in ${people.dirName}/people*.json`)
+        }
+        classList.push(`occupation-${occupation}`)
+        titles.push(occupationMsg(gender))
+      }
+    }
+    const text = content || people.lastAndFirstName
+    const doc = context.file.document
+    const link = doc.createElement("a")
+    link.innerHTML = text
+    link.href = `/${dirName}/`
+    if (people.discredited) {
+      link.append(" 🤥")
+      titles.push("discrédité")
+    }
+    const elem = doc.createElement("span")
+    if (titles.length > 0) {
+      elem.title = titles.join(", ")
+    }
+    if (classList.length > 0) {
+      elem.classList.add(...classList)
+    }
+    const portraitUrl = people.portraitUrl
+    if (portraitUrl) {
+      const portraitElem = doc.createElement("img")
+      portraitElem.src = portraitUrl
+      portraitElem.alt = people.lastAndFirstName
+      portraitElem.className = "portrait"
+      portraitElem.loading = "lazy"
+      portraitElem.width = 75
+      link.append(portraitElem)
+    }
+    elem.append(link)
+    return elem
   }
 }

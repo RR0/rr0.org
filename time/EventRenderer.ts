@@ -1,8 +1,8 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { TimeTextBuilder } from "./TimeTextBuilder"
-import { SourceRenderer } from "./SourceRenderer"
 import { RR0Data } from "../RR0Data"
 import { TimeReplacer } from "./TimeReplacer"
+import { SourceRenderer } from "../source/SourceRenderer"
 
 /**
  * Render a case summary as HTML.

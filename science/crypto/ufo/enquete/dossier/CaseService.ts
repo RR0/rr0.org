@@ -18,19 +18,16 @@ export class CaseService {
     return this.dataService.get<RR0Case>(context, path, [this.type, undefined], [this.type + ".json"])
   }
 
-  getLink(context: HtmlRR0SsgContext, dirCase: RR0Case): HTMLElement {
-    const doc = context.file.document
-    const titles: string[] = []
+  getLink(context: HtmlRR0SsgContext, aCase: RR0Case): HTMLElement {
     const details: string[] = []
     const classList = ["data-resolved"]
-    const classification = dirCase.classification
+    const classification = aCase.classification
     const hynek = classification?.hynek
     if (hynek) {
       const classificationLabels = context.messages.case.classification.hynek[hynek]
       details.push(classificationLabels.short)
-      titles.push(classificationLabels.long)
     }
-    const timeStr = dirCase.time
+    const timeStr = aCase.time
     const caseContext = context.clone()
     if (timeStr) {
       const options = caseContext.time.options
@@ -42,29 +39,17 @@ export class CaseService {
       const elem = this.timeReplacer.create(caseContext, timeStr, undefined, {url: false})
       details.push(elem.outerHTML)
     }
-    const text: (string | string[])[] = [dirCase.title]
+    const text: (string | string[])[] = [aCase.title]
     if (details.length > 0) {
       text.push(`(${details.join(", ")})`)
     }
+    const doc = context.file.document
     const link = doc.createElement("a")
     link.innerHTML = text.join(" ")
-    link.href = path.join("/", dirCase.dirName)
+    link.href = path.join("/", aCase.dirName)
     const span = doc.createElement("span")
-    if (titles.length > 0) {
-      span.title = titles.join(", ")
-    }
     if (classList.length > 0) {
       span.classList.add(...classList)
-    }
-    const image = (dirCase as any).image
-    if (image) {
-      const imgEl = doc.createElement("img")
-      imgEl.src = path.join("/", image)
-      imgEl.alt = dirCase.title
-      imgEl.className = "portrait"
-      imgEl.loading = "lazy"
-      imgEl.width = 75
-      link.append(imgEl)
     }
     span.append(link)
     return span

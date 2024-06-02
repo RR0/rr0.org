@@ -36,7 +36,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-
 .people-icon {
   width: 1em;
   height: 1em;
@@ -1229,7 +1228,7 @@ body.with-map .map {
   position: relative;
 }
 
-.data-resolved .portrait {
+.portrait {
   margin: 0;
   transform-origin: top;
   position: absolute;
@@ -1242,8 +1241,12 @@ body.with-map .map {
   box-shadow: #0000006e 5px 12px 20px 0;;
 }
 
-.data-resolved:hover .portrait {
-  animation: show-portrait 0.3s 1s forwards;
+a:hover {
+  position: relative;
+
+  .portrait {
+    animation: show-portrait 0.3s 1s forwards;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

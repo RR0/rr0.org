@@ -89,7 +89,7 @@ export class PeopleService {
       }
     }
     Object.assign(people, data)
-    if (!people.portraitUrl) {
+    if (!people.image) {
       const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
       let hasPortrait = false
       for (let i = 0; i < possiblePortraitFiles.length; i++) {
@@ -97,7 +97,7 @@ export class PeopleService {
         const portraitPath = path.join(people.dirName, portraitFile)
         hasPortrait = fs.existsSync(portraitPath)
         if (hasPortrait) {
-          people.portraitUrl = path.join("/", portraitPath)
+          people.image = path.join("/", portraitPath)
           break
         }
       }
@@ -122,7 +122,7 @@ export class PeopleService {
           occupations: Set<Occupation>, filterOccupations: Occupation[], content?: string): HTMLElement {
     const dirName = people.dirName
     const titles = []
-    const classList = ["data-resolved"]
+    const classList = ["data-resolved", "people-resolved"]
     if (pseudoPeopleList.indexOf(people) >= 0) {
       classList.push("pseudonym")
       titles.push("(pseudonyme)")
@@ -192,10 +192,10 @@ export class PeopleService {
     if (classList.length > 0) {
       elem.classList.add(...classList)
     }
-    const portraitUrl = people.portraitUrl
+    const portraitUrl = people.image
     if (portraitUrl) {
       const portraitElem = doc.createElement("img")
-      portraitElem.src = portraitUrl
+      portraitElem.src = path.join("/", portraitUrl)
       portraitElem.alt = people.lastAndFirstName
       portraitElem.className = "portrait"
       portraitElem.loading = "lazy"

@@ -2,7 +2,7 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
 import { DomReplacement } from "./DomReplacement"
 import { ObjectUtils } from "@rr0/common"
 import { TimeContext } from "./TimeContext"
-import { TimeRenderer } from "./TimeRenderer"
+import { TimeRenderer, TimeRenderOptions } from "./TimeRenderer"
 
 export type TimeParseResult = {
   yearStr: string
@@ -109,18 +109,24 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     return replacement
   }
 
-  create(context: HtmlRR0SsgContext, contents: string,
-         previousContext: HtmlRR0SsgContext | undefined): HTMLElement | undefined {
+  static resolvedTime(context: HtmlRR0SsgContext, dateTime: string): HTMLTimeElement {
+    const replacement = context.file.document.createElement("time") as HTMLTimeElement
+    replacement.dateTime = dateTime
+    return replacement
+  }
+
+  create(context: HtmlRR0SsgContext, contents: string, previousContext: HtmlRR0SsgContext | undefined,
+         options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
     let replacement: HTMLElement | undefined
     const parts = contents.split("/")
     const isTimeInterval = parts.length > 1
     if (isTimeInterval) {
       const startTime = parts[0]
-      const startReplacement = this.valueReplacement(context, startTime, previousContext)
+      const startReplacement = this.valueReplacement(context, startTime, previousContext, options)
       if (startReplacement) {
         const endTime = parts[1]
-        const endReplacement = this.valueReplacement(context, endTime, previousContext)
-        if (endReplacement) {
+        const endReplacement = this.valueReplacement(context, endTime, previousContext, options)
+        if (endReplacement && endReplacement.outerHTML !== startReplacement.outerHTML) {
           replacement = context.file.document.createElement("span")
           replacement.className = "time-interval"
           replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
@@ -129,14 +135,14 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
       }
     }
     if (!replacement) {
-      replacement = this.valueReplacement(context, contents, previousContext)
+      replacement = this.valueReplacement(context, contents, previousContext, options)
     }
     replacement?.setAttribute("datetime", contents)
     return replacement
   }
 
-  valueReplacement(context: HtmlRR0SsgContext, timeStr: string,
-                   previousContext: RR0SsgContext | undefined): HTMLElement | undefined {
+  valueReplacement(context: HtmlRR0SsgContext, timeStr: string, previousContext: RR0SsgContext | undefined,
+                   options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
     let replacement = undefined
     timeStr = timeStr.trim()
     const time = context.time
@@ -146,7 +152,7 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     }
     const parsed = TimeReplacer.parseDateTime(timeStr)
     if (parsed) {
-      replacement = this.dateTimeReplacement(context, previousContext, parsed)
+      replacement = this.dateTimeReplacement(context, previousContext, parsed, options)
     } else {
       const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
       if (durationValues && durationValues[0]) {
@@ -164,13 +170,14 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
   }
 
   protected dateTimeReplacement(
-    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult
+    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult,
+    options: TimeRenderOptions = {url: true}
   ): HTMLElement | undefined {
     const time = context.time
     TimeReplacer.setTimeContextFrom(time, parsed)
     let replacement: HTMLElement | undefined = undefined
     if (context.time.isDefined()) {
-      replacement = this.renderer.render(context, previousContext)
+      replacement = this.renderer.render(context, previousContext, options)
     }
     return replacement
   }
@@ -206,8 +213,9 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
       if (context.time.approximate) {
         replacementStr = messages.approximate(replacementStr)
       }
-      replacement = context.file.document.createElement("time")
-      replacement.className = "duration"
+      replacement = TimeReplacer.resolvedTime(context,
+        "T" + (daysStr ? daysStr + "D" : "") + (hoursStr ? hoursStr + "H" : "") + (minutesStr ? minutesStr + "M" : "") + (secondsStr ? secondsStr + "S" : ""))
+      replacement.classList.add("duration")
       replacement.textContent = replacementStr
     }
     return replacement

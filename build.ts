@@ -67,6 +67,8 @@ import { EventReplacerFactory } from "./time/EventReplacerFactory"
 import { HttpSource } from "./time/datasource/HttpSource"
 import { SourceRenderer } from "./source/SourceRenderer"
 import { TimeService } from "./time/TimeService"
+import { CaseService } from "./science/crypto/ufo/enquete/dossier/CaseService"
+import { TimeReplacer } from "./time/TimeReplacer"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -186,10 +188,12 @@ timeService.getFiles().then(async (timeFiles) => {
   const factories = [orgFactory, caseFactory, peopleFactory, bookFactory]
 
   const dataService = new DataService(factories)
+  const timeReplacer = new TimeReplacer(timeService.renderer)
+  const caseService = new CaseService(dataService, timeReplacer)
   const peopleService = new PeopleService(peopleFiles, dataService)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
-  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, dataService, timeService)
+  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
   // Publish case.json files so that vraiufo.com will find them
   copies.push(...(ufoCasesStep.config.rootDirs).map(dir => path.join(dir, "case.json")))
   await FileUtil.writeFile(path.join(outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.config.rootDirs), "utf-8")
@@ -273,7 +277,7 @@ timeService.getFiles().then(async (timeFiles) => {
       ...pageReplaceCommands,
       ...contentsReplaceCommand,
       new OutlineReplaceCommand(),
-      new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(dataService), new DataAnchorHandler(dataService)]),
+      new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(caseService), new DataAnchorHandler(dataService)]),
       new ImageCommand(outDir, 275, 500),
       new OpenGraphCommand(outDir, timeFiles, baseUrl),
       searchCommand

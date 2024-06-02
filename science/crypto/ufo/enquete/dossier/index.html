@@ -24,6 +24,10 @@
   #searchForm output {
     color: grey;
   }
+
+  ul.links {
+    view-transition-name: "list"
+  }
 </style>
 <form id="searchForm">
   <input disabled name="text" oninput="findCase(event)" placeholder="Activez JavaScript"
@@ -50,7 +54,7 @@
     const list = document.querySelector("#searchForm + ul")
     let found = 0
     for (const child of list.children) {
-      const childContentClasses = child.firstElementChild.classList
+      const childContentClasses = child.querySelector("a").classList
       const isHoax = childContentClasses.contains('hoax')
       const isMisinterpretation = childContentClasses.contains('misinterpretation')
       const matchHoax = hoaxInput.checked || (!hoaxInput.checked && !isHoax)

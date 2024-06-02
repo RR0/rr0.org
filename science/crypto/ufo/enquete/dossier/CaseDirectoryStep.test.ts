@@ -2,10 +2,10 @@ import { CaseDirectoryStep } from "./CaseDirectoryStep"
 import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
 import { SsgConfig, SsgContext, SsgFile } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
-import { DataService } from "../../../../../DataService"
+import { DataService, DefaultDataFactory } from "../../../../../DataService"
 import { RR0Case } from "./RR0Case"
 import path from "path"
-import { TimeService } from "../../../../../time/TimeService"
+import { CaseService } from "./CaseService"
 
 describe("DirectoryStep", () => {
 
@@ -31,10 +31,11 @@ describe("DirectoryStep", () => {
 <p>After</p>
 <!--#include virtual="/footer.html" -->`
     const context = rr0TestUtil.newContext("/science/crypto/ufo/enquete/dossier/index.html", template)
-    const caseService = await DataService.create<RR0Case>("case")
+    const dataService = new DataService([new DefaultDataFactory<RR0Case>("case")])
+    const caseService = new CaseService(dataService)
     const timeFiles = []
     const step = new CaseDirectoryStep(caseService, [], [], "/science/crypto/ufo/enquete/dossier/index.html",
-      outputFunc, config, new TimeService())
+      outputFunc, config)
     const stepResult = await step.execute(context)
     expect(stepResult.directoryCount).toBe(239)
   })

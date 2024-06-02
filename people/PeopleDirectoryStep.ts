@@ -143,7 +143,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       if (p.pseudonyms?.length > 0) {
         for (const pseudonym of p.pseudonyms) {
           const pseudo = new KnownPeople(p.firstNames, p.lastName, p.pseudonyms, p.occupations, p.countries,
-            p.discredited, p.birthTime, p.deathTime, p.gender, p.dirName, p.portraitUrl)
+            p.discredited, p.birthTime, p.deathTime, p.gender, p.dirName, p.image)
           pseudo.lastAndFirstName = pseudonym
           prev.push(pseudo)
         }

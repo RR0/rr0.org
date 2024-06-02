@@ -3,6 +3,11 @@ import { TimeUrlBuilder } from "./TimeUrlBuilder"
 import { TimeTextBuilder } from "./TimeTextBuilder"
 import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder"
 import { UrlUtil } from "../util/url/UrlUtil"
+import { TimeReplacer } from "./TimeReplacer"
+
+export interface TimeRenderOptions {
+  url: boolean
+}
 
 export class TimeRenderer {
 
@@ -17,7 +22,8 @@ export class TimeRenderer {
     return url === "time" ? undefined : url
   }
 
-  render(context: HtmlRR0SsgContext, previousContext?: RR0SsgContext): HTMLElement {
+  render(context: HtmlRR0SsgContext, previousContext?: RR0SsgContext,
+         options: TimeRenderOptions = {url: true}): HTMLElement {
     const absoluteTimeStr = TimeUrlBuilder.fromContext(context.time)
     const title = TimeTextBuilder.build(context)
     let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
@@ -27,14 +33,14 @@ export class TimeRenderer {
     const file = context.file
     const currentFileName = file.name
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
-    const url = this.matchExistingTimeFile(absoluteTimeStr)
+    const url = options.url && this.matchExistingTimeFile(absoluteTimeStr)
     const doc = file.document
     let replacement: HTMLElement | undefined
     if (url && url !== dirName) {
       const a = replacement = doc.createElement("a") as HTMLAnchorElement
       a.href = UrlUtil.absolute(url)
     } else {
-      replacement = doc.createElement("time")
+      replacement = TimeReplacer.resolvedTime(context, absoluteTimeStr)
     }
     if (title !== text) {
       replacement.title = title

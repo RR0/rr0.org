@@ -4,15 +4,35 @@ import { RR0Data } from "./RR0Data"
 import { sync as glob } from "glob-promise"
 import path from "path"
 
-export interface DataFactory<T extends RR0Data> {
+/**
+ * Instantiates RR0Data from (JSON) file contents.
+ */
+export interface RR0DataFactory<T extends RR0Data> {
 
+  /**
+   * The data type ("case", "people", "org", etc.)
+   */
   readonly type: string
+
+  /**
+   * The supported file names ("case.json", "index.json", etc.).
+   */
   readonly fileNames: string[]
 
+  /**
+   * Instantiate data from a file.
+   *
+   * @param file The file to read
+   * @return the RR0Data subtype (People, RR0Case, etc.) instance,
+   * or undefined if the file name/contents are not supported by this factory.
+   */
   create(file: SsgFile): T | undefined
 }
 
-export class DefaultDataFactory<T extends RR0Data> implements DataFactory<T> {
+/**
+ * A RR0Data factory which can read either <someType>.json files of index.json with a "type": "<someType>" property.
+ */
+export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> {
   constructor(readonly type: string, readonly fileNames: string[] = [type]) {
   }
 
@@ -33,11 +53,11 @@ export class DataService {
 
   protected readonly pathToData = new Map<string, RR0Data[]>()
 
-  constructor(readonly factories: DataFactory<RR0Data>[]) {
-  }
-
-  static async create<T>(name: string): Promise<DataService> {
-    return new DataService([new DefaultDataFactory<T>(name)])
+  /**
+   *
+   * @param factories The factories to instantiate different RR0Data types.
+   */
+  constructor(readonly factories: RR0DataFactory<RR0Data>[]) {
   }
 
   async get<T extends RR0Data = RR0Data>(context: RR0SsgContext, dirName: string, types: string[],

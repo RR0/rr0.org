@@ -20,6 +20,18 @@ table tbody {
   overflow-x: hidden
 }
 
+table.no-border {
+  border: none;
+
+  tbody {
+    box-shadow: none;
+  }
+
+  td {
+    border: none;
+  }
+}
+
 .scrollable table {
   width: 200%;
 }

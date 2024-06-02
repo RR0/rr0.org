@@ -2,12 +2,15 @@ import { AuthorReplaceCommand } from "./AuthorReplaceCommand"
 import { rr0TestUtil } from "../../test/RR0TestUtil"
 import { describe, expect, test } from "@javarome/testscript"
 import { RelativeTimeTextBuilder } from "../../time/RelativeTimeTextBuilder"
+import { TimeService } from "../../time/TimeService"
 
 describe("AuthorReplaceCommand", () => {
 
+  const timeService = new TimeService()
+
   test("no author", async () => {
     const timeFile = "time/1/9/5/4/index.html"
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeService)
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     await command.execute(context)
@@ -17,7 +20,7 @@ describe("AuthorReplaceCommand", () => {
 
   test("author only", async () => {
     const timeFile = "time/1/9/5/4/10/index.html"
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeService)
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.file.meta.author.push("Beau, Jérôme")
@@ -30,7 +33,7 @@ describe("AuthorReplaceCommand", () => {
 
   test("copyright only", async () => {
     const timeFile = "time/1/9/5/4/10/index.html"
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeService)
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.file.meta.copyright = "Some publication"
@@ -44,7 +47,7 @@ describe("AuthorReplaceCommand", () => {
 
   test("author with copyright", async () => {
     const timeFile = "time/1/9/5/4/10/index.html"
-    const command = new AuthorReplaceCommand()
+    const command = new AuthorReplaceCommand(timeService)
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.file.meta.author.push("Beau, Jérôme")

@@ -2,18 +2,17 @@ import { AnchorHandler } from "./AnchorHandler"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { TimeReplacer } from "../time/TimeReplacer"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
-import { DataService } from "../DataService"
-import { RR0Case } from "../science/crypto/ufo/enquete/dossier/RR0Case"
+import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 
 export class CaseAnchorHandler implements AnchorHandler {
 
-  constructor(protected caseService: DataService) {
+  constructor(protected caseService: CaseService) {
   }
 
   async handle(context: HtmlRR0SsgContext, a: HTMLAnchorElement, pathToSearch: string) {
     if (!a.title) {
-      const cases = await this.caseService.get<RR0Case>(context, pathToSearch, ["case", undefined], ["case.json"])
-      for (const aCase of cases) {
+      const aCase = (await this.caseService.get(context, pathToSearch))[0]
+      if (aCase) {
         const titleElems: string[] = []
         const caseContext = context.clone()
         caseContext.time.reset()

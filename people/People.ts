@@ -99,7 +99,7 @@ export class KnownPeople extends People {
     deathTime?: Date,
     gender?: Gender,
     readonly dirName?: string,
-    public portraitUrl?: string
+    public image?: string
   ) {
     super(firstNames, lastName, pseudonyms, occupations, countries, discredited, birthTime, deathTime, gender);
   }

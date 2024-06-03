@@ -180,7 +180,9 @@ class BookContentVisitor implements ContentVisitor {
 }
 
 timeService.getFiles().then(async (timeFiles) => {
+  context.setVar("timeFilesCount", timeFiles.length)
   const peopleFiles = await glob("people/?/*")
+  context.setVar("peopleFilesCount", peopleFiles.length)
   const orgFactory = new DefaultDataFactory("org", ["index"])
   const caseFactory = new DefaultDataFactory("case")
   const peopleFactory = new DefaultDataFactory("people")
@@ -225,10 +227,9 @@ timeService.getFiles().then(async (timeFiles) => {
     new SsiIncludeReplaceCommand(),
     new BaseReplaceCommand("/"),
     new LanguageReplaceCommand(),
-    new StringEchoVarReplaceCommand("mail"),
-    new StringEchoVarReplaceCommand("mapsApiKey"),
-    new AngularExpressionReplaceCommand(),
     new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
+    new StringEchoVarReplaceCommand(),
+    new AngularExpressionReplaceCommand(),
     new SsiIfReplaceCommand(),
     new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
     new SsiSetVarReplaceCommand("url",

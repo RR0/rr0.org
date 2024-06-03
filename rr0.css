@@ -23,6 +23,12 @@
   navigation: auto;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    view-transition-name: unset !important;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

@@ -55,9 +55,9 @@ export class SourceRenderer {
         pubItems.push(copyright)
       }
       let timeValue = publication.time
-      if (timeValue?.isDefined()) {
+      if (timeValue) {
         sourceContext.time.reset()
-        if (timeValue instanceof TimeContext) {
+        if (timeValue instanceof TimeContext && timeValue.isDefined()) {
           Object.assign(sourceContext.time, timeValue)
         } else {
           TimeReplacer.updateTimeFromStr(sourceContext.time, timeValue)

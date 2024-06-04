@@ -33,6 +33,7 @@ export interface RR0DataFactory<T extends RR0Data> {
  * A RR0Data factory which can read either <someType>.json files of index.json with a "type": "<someType>" property.
  */
 export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> {
+
   constructor(readonly type: string, readonly fileNames: string[] = [type]) {
   }
 
@@ -51,7 +52,7 @@ export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> 
 
 export class DataService {
 
-  protected readonly pathToData = new Map<string, RR0Data[]>()
+  readonly pathToData = new Map<string, RR0Data[]>()
 
   /**
    *

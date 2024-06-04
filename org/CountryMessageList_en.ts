@@ -24,6 +24,8 @@ import { algeria_en } from "./dz/Algeria_en"
 import { panama_en } from "./pa/Panama_en"
 import { taiwan_en } from "./tw/Taiwan_en"
 import { tunisia_en } from "./tn/Tunisia_en"
+import { ecuador_en } from "./ec/Ecuador_en"
+import { egypt_en } from "./eg/Egypt_en"
 
 export const countryMessageList_en: CountryMessagesList = {
   at: CountryMessages.create("Austria"),
@@ -41,6 +43,8 @@ export const countryMessageList_en: CountryMessagesList = {
   dk: denmark_en,
   dz: algeria_en,
   do: dominicanRepublic_en,
+  ec: ecuador_en,
+  eg: egypt_en,
   es: spain_en,
   fi: finland_en,
   fr: france_en,

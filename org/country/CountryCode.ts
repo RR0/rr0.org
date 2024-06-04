@@ -83,6 +83,16 @@ export enum CountryCode {
   gr = "gr",
 
   /**
+   * Ecuador
+   */
+  ec = "ec",
+
+  /**
+   * EGypte
+   */
+  eg = "eg",
+
+  /**
    * ESpagna/spain
    */
   es = "es",

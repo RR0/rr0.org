@@ -14,7 +14,7 @@ export class AnchorReplacer {
     const href = a.href
     const baseUrl = this.baseUrl + context.file.name
     try {
-      if (href.startsWith("http")) {
+      if (href.startsWith("http") && !href.startsWith(this.baseUrl)) {
         this.handleExternal(context, a)
       } else {
         const url = new URL(href, baseUrl)

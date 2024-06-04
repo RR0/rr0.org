@@ -39,7 +39,7 @@ export class UrecatHttpDatasource extends UrecatDatasource {
 
   protected async readSummaries(context: RR0SsgContext): Promise<UrecatCase[]> {
     const searchUrl = this.queryUrl(context)
-    const page = await this.http.fetch<string>(searchUrl.href, {headers: {accept: "text/html;charset=iso-8859-1"}})
+    const page = await this.http.fetch<string>(searchUrl, {headers: {accept: "text/html;charset=iso-8859-1"}})
     const doc = new JSDOM(page).window.document.documentElement
     const tableBody = doc.querySelector("th").parentElement.parentElement
     const rowEls = tableBody.querySelectorAll("tr")

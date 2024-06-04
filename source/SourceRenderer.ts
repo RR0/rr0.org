@@ -47,30 +47,28 @@ export class SourceRenderer {
     }
     const publication = source.publication
     if (publication) {
-      if (title) {
-        container.append(", ")
-      }
+      const pubItems = []
       const publisher = publication.publisher
       if (publisher) {
         const copyright = doc.createElement("i")
         copyright.textContent = publisher
-        container.append(copyright)
+        pubItems.push(copyright)
       }
       let timeValue = publication.time
-      if (timeValue) {
+      if (timeValue?.isDefined()) {
         sourceContext.time.reset()
-        if (publisher) {
-          container.append(", ")
-        }
         if (timeValue instanceof TimeContext) {
           Object.assign(sourceContext.time, timeValue)
         } else {
           TimeReplacer.updateTimeFromStr(sourceContext.time, timeValue)
         }
-        container.append(TimeTextBuilder.build(sourceContext))
+        pubItems.push(TimeTextBuilder.build(sourceContext))
       }
       if (source.index) {
-        container.append(", " + source.index)
+        pubItems.push(source.index)
+      }
+      for (const pubItem of pubItems) {
+        container.append(", ", pubItem)
       }
     }
   }

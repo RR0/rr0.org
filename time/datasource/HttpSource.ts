@@ -1,5 +1,7 @@
 import { Browser, Builder, By, ITimeouts, WebDriver } from "selenium-webdriver"
 import { JSDOM } from "jsdom"
+import { FetchHttpFetcher } from "./FetchHttpFetcher"
+import { ArchiveHttpFetcher } from "./ArchiveHttpFetcher"
 
 export class MimeType {
   static readonly csv: string = "text/csv"
@@ -14,17 +16,19 @@ export interface HttpSourceSeleniumOptions {
   selector: string
 }
 
-export interface HttpSourceOptions {
-  selenium?: HttpSourceSeleniumOptions
-  userAgents: string[]
+export interface HttpFetcher {
+  fetch<T>(url: URL, init?: RequestInit, resOut?: Partial<Response>, error?: HttpSourceError): Promise<T>
 }
 
-export const defaultSeleniumOptions = {
-  browser: Browser.CHROME,
-  timeout: {
-    implicit: 5000
-  },
-  selector: "html"
+export interface HttpSourceOptions {
+  selenium?: HttpSourceSeleniumOptions
+  fetchers: HttpFetcher[]
+}
+
+export class HttpSourceError extends Error {
+  constructor(url: string, readonly status: number, readonly statusText?: string) {
+    super(`Could not fetch ${url}: ${`${statusText}(${status})` || `HTTP error ${status}`}`)
+  }
 }
 
 /**
@@ -34,36 +38,7 @@ export class HttpSource {
 
   protected driver: WebDriver
 
-  constructor(protected options: HttpSourceOptions = {
-    userAgents: [
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64)  AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-      "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36",
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36",
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36",
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
-    ],
-  }) {
-  }
-
-  static findParam(str: string, separator: string, param: string): string {
-    const params = str.split(separator).map(s => {
-      let t = s.trim()
-      const q = t.indexOf("?")
-      if (q) {
-        t = t.substring(q + 1)
-      }
-      return t
-    })
-    const key = param + "="
-    const foundParam = params.find(p => p.startsWith(key))
-    return foundParam.substring(key.length)
-  }
-
-  randomUA(): string {
-    const userAgents = this.options.userAgents
-    const randomNumber = Math.floor(Math.random() * userAgents.length)
-    return userAgents[randomNumber]
+  constructor(protected options: HttpSourceOptions = {fetchers: [new FetchHttpFetcher(), new ArchiveHttpFetcher()]}) {
   }
 
   async getDriver(): Promise<WebDriver> {
@@ -75,12 +50,12 @@ export class HttpSource {
     return this.driver
   }
 
-  async get(queryUrl: string, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<HTMLElement> {
+  async get(queryUrl: URL, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<HTMLElement> {
     let pageSource: string
     const seleniumOptions = this.options.selenium
     if (seleniumOptions) {
       const driver = await this.getDriver()
-      await driver.get(queryUrl)
+      await driver.get(queryUrl.href)
       const resultSelector = seleniumOptions.selector || "html"
       const selector = By.css(resultSelector)
       await driver.findElements(selector)
@@ -91,34 +66,19 @@ export class HttpSource {
     return new JSDOM(pageSource).window.document.documentElement
   }
 
-  async fetch<T>(url: string, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<T> {
-    init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
-    console.debug("Fetching", url, "with", init)
-    const response = await fetch(url, init)
-    if (response.ok) {
-      resOut.headers = response.headers
-      const accept = init.headers["accept"]
-      if (accept) {
-        const buffer = await response.arrayBuffer()
-        const charset = HttpSource.findParam(accept, ";", "charset")
-        const decoder = new TextDecoder(charset)
-        return decoder.decode(buffer) as T
-      } else {
-        switch (response.headers.get("content-type")) {
-          case MimeType.json:
-            return await response.json()
-          case MimeType.xls:
-            return await response.arrayBuffer() as T
-          default:
-            return await response.text() as T
-        }
+  async fetch<T>(url: URL, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<T> {
+    let previousError: HttpSourceError | undefined
+    for (const fetcher of this.options.fetchers) {
+      try {
+        return await fetcher.fetch(url, init, resOut, previousError)
+      } catch (e) {
+        previousError = e
       }
-    } else {
-      throw Error(response.statusText)
     }
+    throw previousError
   }
 
-  async submitForm<T>(url: string, obj: object, headers = {}): Promise<T> {
+  async submitForm<T>(url: URL, obj: object, headers = {}): Promise<T> {
     const formData = new FormData()
     Object.entries(obj).forEach(entry => formData.append(entry[0], encodeURIComponent(entry[1])))
     const init: RequestInit = {method: "POST", headers, body: formData}

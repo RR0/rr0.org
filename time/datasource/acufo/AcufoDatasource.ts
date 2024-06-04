@@ -1,6 +1,5 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { HttpSource } from "../HttpSource"
-import { UrlUtil } from "../../../util/url/UrlUtil"
 import { JSDOM } from "jsdom"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
@@ -26,10 +25,10 @@ export class AcufoDatasource extends AbstractDatasource<AcufoCase> {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    const searchUrl = UrlUtil.join(this.baseUrl, this.searchPath)
+    const searchUrl = new URL(this.searchPath, this.baseUrl)
     const lang = context.locale === "fr" ? "f" : ""
-    const page = await this.http.fetch<string>(UrlUtil.join(searchUrl, "_" + year + lang),
-      {headers: {accept: "text/html;charset=utf-8"}})
+    searchUrl.pathname += "_" + year + lang
+    const page = await this.http.fetch<string>(searchUrl, {headers: {accept: "text/html;charset=utf-8"}})
     const doc = new JSDOM(page).window.document.documentElement
     const rowEls = doc.querySelectorAll("table")
     return Array.from(rowEls).map(row => this.getNativeCase(context, row))

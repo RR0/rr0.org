@@ -1,22 +1,19 @@
 import { DomReplacer, ReplacerFactory, SsgFile } from "ssg-api"
-import { SourceRenderer } from "../time/SourceRenderer"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { DataService } from "../DataService"
 import { Publication, Source } from "./Source"
 import { HttpSource } from "../time/datasource/HttpSource"
-import { TimeReplacer } from "../time/TimeReplacer"
 import path from "path"
 import { JSDOM } from "jsdom"
 import { TimeContext } from "../time/TimeContext"
 import { OnlineSource } from "./OnlineSource"
+import { SourceRenderer } from "./SourceRenderer"
 
 export class SourceReplacer {
   /**
    * Source counter in the scope of the current page/context.
    */
   protected number = 0
-
-  protected readonly pageSource = new Map()
 
   constructor(protected renderer: SourceRenderer, protected dataService: DataService, protected http: HttpSource,
               protected baseUrl: string) {
@@ -52,7 +49,7 @@ export class SourceReplacer {
 
   protected async sourceFromLink(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
     const source = href.startsWith("http") ?
-      await this.sourceFromExternalLink(href, context) : await this.fromInternalLink(href, context)
+      await this.sourceFromExternalLink(context, href) : await this.fromInternalLink(href, context)
     this.renderer.renderContent(context, source, container)
   }
 
@@ -114,26 +111,24 @@ export class SourceReplacer {
     } as OnlineSource
   }
 
-  protected async sourceFromExternalLink(href: string, context: HtmlRR0SsgContext) {
+  protected async sourceFromExternalLink(context: HtmlRR0SsgContext, href: string) {
     const resOut: Partial<Response> = {}
     let title: string
     let lastModif: string
+    let publisher: string
     try {
-      const doc = await this.http.get(href, {}, resOut)
+      const doc = await this.http.get(new URL(href), {}, resOut)
+      href = resOut.url || href
       title = doc.querySelector("title").textContent
-      lastModif = resOut.headers["lastModified"]
+      lastModif = resOut.headers.get("last-modified")
     } catch (e) {
-      console.error("Could not fetch source from " + href, e.message)
+      context.error("Could not fetch source from " + href, e.message)
       title = href
       lastModif = new Date().toISOString()
     }
-    const sourceContext = context.clone()
-    TimeReplacer.updateTimeFromStr(sourceContext.time, lastModif)
+    publisher = resOut.headers.get("host")
     const url = new URL(href)
-    const publication: Publication = {
-      publisher: url.hostname,
-      time: sourceContext.time
-    }
+    const publication: Publication = {publisher, time: TimeContext.fromDate(new Date(lastModif), context.time.options)}
     return {title, url, publication}
   }
 }

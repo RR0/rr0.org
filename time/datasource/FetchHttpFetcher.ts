@@ -43,7 +43,7 @@ export class FetchHttpFetcher implements HttpFetcher {
     console.debug("Fetching", url, "with", init)
     const response = await fetch(url, init)
     if (response.ok) {
-      resOut.headers = response.headers
+      Object.assign(resOut, {headers: response.headers})
       const accept = init.headers["accept"]
       if (accept) {
         const buffer = await response.arrayBuffer()
@@ -55,6 +55,7 @@ export class FetchHttpFetcher implements HttpFetcher {
           case MimeType.json:
             return await response.json()
           case MimeType.xls:
+          case MimeType.pdf:
             return await response.arrayBuffer() as T
           default:
             return await response.text() as T

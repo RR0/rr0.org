@@ -8,6 +8,7 @@ export class MimeType {
   static readonly json: string = "application/json"
   static readonly txt: string = "text/plain"
   static readonly xls: string = "application/vnd.ms-excel"
+  static readonly pdf: string = "application/pdf"
 }
 
 export interface HttpSourceSeleniumOptions {

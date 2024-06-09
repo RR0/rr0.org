@@ -1,7 +1,7 @@
 import { TimeContext } from "./time/TimeContext"
 import { ssgMessages } from "./lang"
 import { RR0Messages } from "./lang/RR0Messages"
-import { ConsoleLogger, HtmlSsgContext, SsgConfig, SsgContext, SsgContextImpl, SsgFile } from "ssg-api"
+import { ConsoleLogger, FileContents, HtmlSsgContext, SsgConfig, SsgContext, SsgContextImpl } from "ssg-api"
 import { PeopleContext } from "./people/PeopleContext"
 
 export interface RR0SsgContext extends SsgContext {
@@ -25,15 +25,15 @@ export class RR0SsgContextImpl extends SsgContextImpl {
 
   readonly messages: RR0Messages
   readonly images = new Set<string>()
-  protected readonly fileMap = new Map<string, SsgFile>()
+  protected readonly fileMap = new Map<string, FileContents>()
 
   constructor(locale: string, readonly time: TimeContext, readonly config: SsgConfig,
-              readonly people = new PeopleContext(), currentFile: SsgFile | undefined = undefined) {
+              readonly people = new PeopleContext(), currentFile: FileContents | undefined = undefined) {
     super(locale, new Map(), "RR0", new ConsoleLogger("RR0"), currentFile)
     this.messages = ssgMessages[locale]
   }
 
-  read(filePath: string): SsgFile {
+  read(filePath: string): FileContents {
     let file = this.fileMap.get(filePath)
     if (file) {
       this.logger.debug("Reusing output file for", filePath)

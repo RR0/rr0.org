@@ -1,6 +1,6 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { Datasource } from "../Datasource"
-import { SsgFile } from "ssg-api"
+import { FileContents } from "ssg-api"
 import { EssexPoliceDatasource } from "./EssexPoliceDatasource"
 import { JsonMapper } from "../JsonMapper"
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
@@ -19,7 +19,7 @@ export class EssexPoliceFileDatasource extends EssexPoliceDatasource implements 
   }
 
   protected async readCases(context: RR0SsgContext): Promise<EssexPoliceCaseSummary[]> {
-    const file = SsgFile.read(context, this.fileName, "utf-8")
+    const file = FileContents.read(context, this.fileName, "utf-8")
     return this.fileMapper.parse(context, file.contents)
   }
 }

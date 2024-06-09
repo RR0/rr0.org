@@ -13,6 +13,7 @@ import {
   ContentStepConfig,
   CopyStep,
   CopyStepConfig,
+  FileContents,
   FileUtil,
   HtAccessToNetlifyConfigReplaceCommand,
   HtmlLinks,
@@ -22,7 +23,6 @@ import {
   Ssg,
   SsgConfig,
   SsgContext,
-  SsgFile,
   SsiEchoVarReplaceCommand,
   SsiIfReplaceCommand,
   SsiIncludeReplaceCommand,
@@ -133,7 +133,7 @@ const config: SsgConfig = {
 }
 
 const outputFunc: OutputFunc
-  = async (context: SsgContext, outFile: SsgFile): Promise<void> => {
+  = async (context: SsgContext, outFile: FileContents): Promise<void> => {
   try {
     context.log("Writing", outFile.name)
     await outFile.write()

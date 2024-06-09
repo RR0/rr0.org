@@ -5,12 +5,16 @@ import { CaseAnchorHandler } from "./CaseAnchorHandler"
 import { DataService, DefaultDataFactory } from "../DataService"
 import { RR0Case } from "../science/crypto/ufo/enquete/dossier/RR0Case"
 import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
+import { TimeRenderer } from "../time/TimeRenderer"
+import { TimeReplacer } from "../time/TimeReplacer"
 
 describe("AnchorReplaceCommand", () => {
 
   test("replace anchor tag", async () => {
     const dataService = new DataService([new DefaultDataFactory<RR0Case>("case")])
-    const caseService = new CaseService(dataService)
+    const timeRenderer = new TimeRenderer([])
+    const timeReplacer = new TimeReplacer(timeRenderer)
+    const caseService = new CaseService(dataService, timeReplacer)
     const command = new AnchorReplaceCommand("https://rr0.org/", [new CaseAnchorHandler(caseService)])
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html",
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)

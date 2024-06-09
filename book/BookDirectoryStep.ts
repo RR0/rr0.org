@@ -1,5 +1,5 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { DirectoryStep, HtmlLinks, HtmlMeta, OutputFunc, SsgConfig, SsgFile } from "ssg-api"
+import { DirectoryStep, FileContents, HtmlLinks, HtmlMeta, OutputFunc, SsgConfig } from "ssg-api"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { Book } from "./Book"
 import { StringUtil } from "../util/string/StringUtil"
@@ -47,7 +47,7 @@ export class BookDirectoryStep extends DirectoryStep {
       }
       books.push(dirBook)
       try {
-        const jsonFileInfo = SsgFile.read(context, `${dirName}/book.json`)
+        const jsonFileInfo = FileContents.read(context, `${dirName}/book.json`)
         Object.assign(dirBook, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
         context.warn(`${dirName} has no book*.json description`)

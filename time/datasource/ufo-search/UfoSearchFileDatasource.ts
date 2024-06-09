@@ -1,6 +1,6 @@
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { Datasource } from "../Datasource"
-import { SsgFile } from "ssg-api"
+import { FileContents } from "ssg-api"
 import { UfoSearchDatasource } from "./UfoSearchDatasource"
 import { JsonMapper } from "../JsonMapper"
 import { UfoSearchCase } from "./UfoSearchCase"
@@ -21,7 +21,7 @@ export class UfoSearchFileDatasource extends UfoSearchDatasource implements Data
   }
 
   protected async readCases(context: RR0SsgContext): Promise<UfoSearchCase[]> {
-    const file = SsgFile.read(context, this.fileName, "utf-8")
+    const file = FileContents.read(context, this.fileName, "utf-8")
     return this.fileMapper.parse(context, file.contents)
   }
 }

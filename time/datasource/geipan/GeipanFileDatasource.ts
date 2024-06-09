@@ -5,7 +5,7 @@ import { CsvMapper } from "../CsvMapper"
 import { GeipanCase } from "./GeipanCase"
 import { GeipanCaseSummaryMapper } from "./GeipanCaseSummaryMapper"
 import { geipanHttpDatasource } from "./GeipanRR0Mapping"
-import { SsgFile } from "ssg-api"
+import { FileContents } from "ssg-api"
 import { GeipanDatasource } from "./GeipanDatasource"
 
 export class GeipanFileDatasource extends GeipanDatasource implements Datasource<GeipanCaseSummary> {
@@ -16,7 +16,7 @@ export class GeipanFileDatasource extends GeipanDatasource implements Datasource
 
   protected async readCases(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
     const fileMapper = new CsvMapper<GeipanCase>(";")
-    const file = SsgFile.read(context, this.fileName, "latin1")
+    const file = FileContents.read(context, this.fileName, "latin1")
     const csvMapper = new GeipanCaseSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,
       geipanHttpDatasource.authors)
     return fileMapper.parse(context, file.contents).map(csvCase => csvMapper.map(context, csvCase, file.lastModified))

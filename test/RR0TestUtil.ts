@@ -1,6 +1,6 @@
 import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
 import { TimeContext } from "../time/TimeContext"
-import { HtmlSsgFile, SsgFile } from "ssg-api"
+import { FileContents, HtmlSsgFile } from "ssg-api"
 
 class RR0TestUtil {
 
@@ -17,10 +17,10 @@ class RR0TestUtil {
   newContext(inputFileName: string, contents?: string): RR0SsgContext {
     const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), {outDir: "out"})
     if (contents !== undefined && contents != null) {
-      const langInfo = SsgFile.getLang(context, inputFileName)
-      context.file = new SsgFile(inputFileName, "utf8", contents, new Date(), langInfo)
+      const langInfo = FileContents.getLang(context, inputFileName)
+      context.file = new FileContents(inputFileName, "utf8", contents, new Date(), langInfo)
     } else {
-      context.file = SsgFile.read(context, inputFileName)
+      context.file = FileContents.read(context, inputFileName)
     }
     context.file = context.file  // By default
     return context

@@ -2,7 +2,7 @@ import { Time } from "./Time"
 import { TimeContext } from "./TimeContext"
 import { rr0TestUtil } from "../test/RR0TestUtil"
 import { RR0SsgContextImpl } from "../RR0SsgContext"
-import { SsgConfig, SsgFile } from "ssg-api"
+import { FileContents, SsgConfig } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
 
 describe("Time", () => {
@@ -26,21 +26,21 @@ describe("Time", () => {
     const context = new RR0SsgContextImpl("fr", timeContext, config)
 
     test("recognize year before 0 AD", () => {
-      context.file = new SsgFile("time/-0/0/1/1/index.html", "utf-8", "", new Date("2012-08-12"),
+      context.file = new FileContents("time/-0/0/1/1/index.html", "utf-8", "", new Date("2012-08-12"),
         {lang: "fr", variants: []})
       const newTimeContext = TimeContext.fromFileName(context as any)
       expect(newTimeContext.getYear()).toBe(-11)
     })
 
     test("recognize year after 0 AD", () => {
-      context.file = new SsgFile("time/1/9/7/2/index.html", "utf-8", "", new Date("2012-08-12"),
+      context.file = new FileContents("time/1/9/7/2/index.html", "utf-8", "", new Date("2012-08-12"),
         {lang: "fr", variants: []})
       const newTimeContext = TimeContext.fromFileName(context as any)
       expect(newTimeContext.getYear()).toBe(1972)
     })
 
     test("recognize month", () => {
-      context.file = new SsgFile("time/1/9/7/2/08/index.html", "utf-8", "", new Date("2012-08-12"),
+      context.file = new FileContents("time/1/9/7/2/08/index.html", "utf-8", "", new Date("2012-08-12"),
         {lang: "fr", variants: []})
       const newTimeContext = TimeContext.fromFileName(context as any)
       expect(newTimeContext.getYear()).toBe(1972)
@@ -48,7 +48,7 @@ describe("Time", () => {
     })
 
     test("recognize day", () => {
-      context.file = new SsgFile("time/1/9/7/2/08/12/index.html", "utf-8", "", new Date("2012-08-12"),
+      context.file = new FileContents("time/1/9/7/2/08/12/index.html", "utf-8", "", new Date("2012-08-12"),
         {lang: "fr", variants: []})
       const newTimeContext = TimeContext.fromFileName(context as any)
       expect(newTimeContext.getYear()).toBe(1972)

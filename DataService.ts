@@ -1,4 +1,4 @@
-import { SsgFile } from "ssg-api"
+import { FileContents } from "ssg-api"
 import { RR0SsgContext } from "./RR0SsgContext"
 import { RR0Data } from "./RR0Data"
 import { sync as glob } from "glob-promise"
@@ -26,7 +26,7 @@ export interface RR0DataFactory<T extends RR0Data> {
    * @return the RR0Data subtype (People, RR0Case, etc.) instance,
    * or undefined if the file name/contents are not supported by this factory.
    */
-  create(file: SsgFile): T | undefined
+  create(file: FileContents): T | undefined
 }
 
 /**
@@ -37,7 +37,7 @@ export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> 
   constructor(readonly type: string, readonly fileNames: string[] = [type]) {
   }
 
-  create(file: SsgFile): T | undefined {
+  create(file: FileContents): T | undefined {
     const data = JSON.parse(file.contents)
     const basename = path.basename(file.name)
     let t: T | undefined
@@ -80,7 +80,7 @@ export class DataService {
     const files = glob(p)
     for (const file of files) {
       try {
-        const dataFile = SsgFile.read(context, file, "utf-8")
+        const dataFile = FileContents.read(context, file, "utf-8")
         let data: RR0Data
         for (let i = 0; !data && i < this.factories.length; i++) {
           const factory = this.factories[i]

@@ -1,11 +1,13 @@
 import { CaseDirectoryStep } from "./CaseDirectoryStep"
 import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
-import { SsgConfig, SsgContext, SsgFile } from "ssg-api"
+import { FileContents, SsgConfig, SsgContext } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
 import { DataService, DefaultDataFactory } from "../../../../../DataService"
 import { RR0Case } from "./RR0Case"
 import path from "path"
 import { CaseService } from "./CaseService"
+import { TimeReplacer } from "../../../../../time/TimeReplacer"
+import { TimeRenderer } from "../../../../../time/TimeRenderer"
 
 describe("DirectoryStep", () => {
 
@@ -17,7 +19,7 @@ describe("DirectoryStep", () => {
     }
   }
 
-  async function outputFunc(context: SsgContext, info: SsgFile, oudDir = outDir + "/"): Promise<void> {
+  async function outputFunc(context: SsgContext, info: FileContents, oudDir = outDir + "/"): Promise<void> {
     info.name = `${oudDir}${info.name}`
   }
 
@@ -32,8 +34,9 @@ describe("DirectoryStep", () => {
 <!--#include virtual="/footer.html" -->`
     const context = rr0TestUtil.newContext("/science/crypto/ufo/enquete/dossier/index.html", template)
     const dataService = new DataService([new DefaultDataFactory<RR0Case>("case")])
-    const caseService = new CaseService(dataService)
-    const timeFiles = []
+    const timeRenderer = new TimeRenderer([])
+    const timeReplacer = new TimeReplacer(timeRenderer)
+    const caseService = new CaseService(dataService, timeReplacer)
     const step = new CaseDirectoryStep(caseService, [], [], "/science/crypto/ufo/enquete/dossier/index.html",
       outputFunc, config)
     const stepResult = await step.execute(context)

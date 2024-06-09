@@ -4,10 +4,191 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Motivation</h2>
-  <p> OS de machines de bureau (<em>desktop</em>) <a href="../../index.html">Apple</a>.</p></section>
+  <p> OS de machines de bureau (<i lang="en">desktop</i>) <a href="../../index.html">Apple</a>.</p>
+</section>
 <section>
   <h2>Analyse</h2>
+  <section>
+    <h3>Système de fichiers</h3>
+    <details>
+      <summary><code>/Applications</code></summary>
+      Applications installées pour tous les utilisateurs.
+    </details>
+    <details>
+      <summary><code>/bin</code></summary>
+      Exécutables en ligne de commande.
+    </details>
+    <details>
+      <summary><code>/cores</code></summary>
+      Stockage des dumps de core, si besoin.
+    </details>
+    <details>
+      <summary><code>/dev</code></summary>
+      Appareils (<i lang="en">devices</i>) connectés.
+    </details>
+    <details>
+      <summary><code>/etc</code></summary>
+      Fichiers de configuration.
+    </details>
+    <details>
+      <summary><code>/Library</code></summary>
+      Beaucoup de sous-répertoires et fichiers liés aux préférences, caches et journaux. Voir aussi le même répertoire
+      dans chaque sous-répertoire de <code>/Users</code>.
+      <details>
+        <summary><code>Application Support/</code></summary>
+        Données d'applications s'exécutant avec les droits root
+      </details>
+      <details>
+        <summary><code>Extensions/</code></summary>
+        Extensions tierces du kernel.
+      </details>
+      <details>
+        <summary><code>Preferences/</code></summary>
+        <details>
+          <summary><code>SystemConfiguration/</code></summary>
+          <details>
+            <summary><code>com.apple.airport.preferences.plist</code></summary>
+            Données sur les points d'accès sans fil.
+          </details>
+        </details>
+      </details>
+      <details>
+        <summary><code>PrivilegedHelperTools/</code></summary>
+        Démons d'applications tierces devant s'exécuter avec les droits root.
+      </details>
+    </details>
+    <details>
+      <summary><code>/private</code></summary>
+      Non documenté, mais beaucoup des répertoires mentionnés ici sont en fait des liés symboliques vers ce dossier.
+      <details>
+        <summary><code>var/</code></summary>
+        <details>
+          <summary><code>db/</code></summary>
+          <details>
+            <summary><code>launch.db/</code></summary>
+            <details>
+              <summary><code>com.apple.launchd/</code></summary>
+              <details>
+                <summary><code>overrides.plist</code></summary>
+                Liste des démons désactivés.
+              </details>
+            </details>
+          </details>
+        </details>
+      </details>
+    </details>
+    <details>
+      <summary><code>/sbin</code></summary>
+      (<i lang="en">System BINaries</i>) Binaires essentiels (liés à l'administration) du système
+    </details>
+    <details>
+      <summary><code>/System</code></summary>
+      Fichiers Apple nécessaires à l'exécution d'OS X.
+      <details>
+        <summary><code>Applications/</code></summary>
+        Applications du système.
+      </details>
+      <details>
+        <summary><code>Library/</code></summary>
+        <details>
+          <summary><code>Kernels/</code></summary>
+          <details>
+            <summary><code>kernel/</code></summary>
+            Kernel
+          </details>
+        </details>
+        <details>
+          <summary><code>Extensions/</code></summary>
+          Extensions du kernel d'Apple
+        </details>
+      </details>
+      <details>
+        <summary><code>Volumes/</code></summary>
+        <details>
+          <summary><code>Preboot/</code></summary>
+          <details>
+            <summary><code>Cryptexes/</code></summary>
+            <details>
+              <summary><code>OS/</code></summary>
+              <details>
+                <summary><code>System/</code></summary>
+                <details>
+                  <summary><code>Library/</code></summary>
+                  <details>
+                    <summary><code>dyld/</code></summary>
+                    (and iOS) cache partagé (<i lang="en">shared cache</i>) : toutes les bibliothèques système partagées
+                    (frameworks et dylibs) combinées en un seul fichier <span
+                    class="note">pour améliorer la performance</span>). Anciennement dans in
+                    <code>/System/Library/dyld/</code> <span class="note">Dans iOS c'est <code>/System/Library/Caches/com.apple.dyld/</code></span>
+                  </details>
+                </details>
+              </details>
+            </details>
+          </details>
+        </details>
+      </details>
+    </details>
+    <details>
+      <summary><code>/tmp</code></summary>
+      Fichiers effacés après 3 jours (raccourci vers <code>/private/tmp</code>)
+    </details>
+    <details>
+      <summary><code>/Users</code></summary>
+      Racine des répertoires des utilisateurs.
+      <details>
+        <summary><code>~/</code></summary>
+        (remplacer <code>~</code> par un nom d'utilisateur)
+        <details>
+          <summary><code>Library/</code></summary>
+          <details>
+            <summary><code>Application Support/</code></summary>
+            Données d'applications s'exécutant avec les droits de l'utilisateur.
+          </details>
+          <details>
+            <summary><code>Containers/</code></summary>
+            Les application isolées (<i lang="en">sandboxed</i>) sont liées ici à des répertoires ici ayant leur ID de
+            bundle (<code>com.apple.Safari</code> par exemple).
+          </details>
+        </details>
+      </details>
+    </details>
+    <details>
+      <summary><code>/usr</code></summary>
+      Exécutables de configurations du système.
+    </details>
+    <details>
+      <summary><code>/var</code></summary>
+      Fichiers de journalisation (<i lang="en">logs</i>).
+      <details>
+        <summary><code>log/</code></summary>
+        Fichiers de journalisation (<i lang="en">logs</i>).
+        <details>
+          <summary><code>system.log</code></summary>
+          Journal principal des systèmes OS X. <code>com.apple.syslogd.plist</code> rest responsable de l'exécution du
+          syslogging (vous pouvez vérifier s'il est désactivé en cherchant <code>com.apple.syslogd</code> dans <code>launchctl
+          list</code>.
+        </details>
+      </details>
+    </details>
+    <details>
+      <summary><code>/Volumes</code></summary>
+      Les lecteurs/unités de stockage montés (<i lang="en">mounted</i>).
+    </details>
+    <details>
+      <summary><code>/.vol</code></summary>
+      Si vous exécutez <code>stat a.txt</code> vous obtiendrez quelque chose comme <code>16777223 7545753 -rw-r--r-- 1
+      username wheel ...</code> où le 1er nombre est l'id du volume où se trouve le fichier et le 2d le numéro d'inode.
+      Vous pouvez accéder au contenu de ce fichier via <code>/.vol/</code> avec cette information en exécutant <code>cat
+      /.vol/16777223/7545753</code>
+    </details>
+    <a class="source"
+      href="https://book.hacktricks.xyz/macos-hardening/macos-security-and-privilege-escalation/macos-files-folders-and-binaries"></a>
+  </section>
+</section>
+<section>
+  <h2>Deploiement</h2>
   <table>
+    <thead>
     <tr>
       <td class="titleCorner"></td>
       <th>Tiger (10.4)</th>
@@ -16,6 +197,8 @@
       <th>Lion (10.7)</th>
       <th>Mountain Lion (10.8)</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <th><a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">Serveur Web</a> Apache</th>
       <td>2.0</td>
@@ -56,11 +239,12 @@
       <td>1.6.0_33</td>
       <td></td>
     </tr>
+    </tbody>
   </table>
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>iOS est l'OS pour :</p>
+  <p>iOS est l'OS pour :</p>
   <ul>
     <li>iMac</li>
     <li>MacBook

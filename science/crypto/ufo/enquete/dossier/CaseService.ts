@@ -15,7 +15,7 @@ export class CaseService {
   }
 
   async get(context: RR0SsgContext, path: string): Promise<RR0Case[] | undefined> {
-    return this.dataService.get<RR0Case>(context, path, [this.type, undefined], [this.type + ".json"])
+    return this.dataService.get<RR0Case>(path, [this.type, undefined], [this.type + ".json"])
   }
 
   getLink(context: HtmlRR0SsgContext, aCase: RR0Case): HTMLElement {

@@ -183,11 +183,12 @@ timeService.getFiles().then(async (timeFiles) => {
   context.setVar("timeFilesCount", timeFiles.length)
   const peopleFiles = await glob("people/?/*")
   context.setVar("peopleFilesCount", peopleFiles.length)
+  const sightingFactory = new DefaultDataFactory("sighting", ["index"])
   const orgFactory = new DefaultDataFactory("org", ["index"])
   const caseFactory = new DefaultDataFactory("case")
   const peopleFactory = new DefaultDataFactory("people")
   const bookFactory = new DefaultDataFactory("book")
-  const factories = [orgFactory, caseFactory, peopleFactory, bookFactory]
+  const factories = [orgFactory, caseFactory, peopleFactory, bookFactory, sightingFactory]
 
   const dataService = new DataService(factories)
   const timeReplacer = new TimeReplacer(timeService.renderer)

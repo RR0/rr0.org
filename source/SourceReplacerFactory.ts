@@ -76,11 +76,11 @@ export class SourceReplacer {
         source = this.fromPage(href)
         break
       case ".json":
-        const sources = await this.dataService.get(context, path.dirname(href), sourceTypes, [path.basename(href)])
+        const sources = await this.dataService.get(path.dirname(href), sourceTypes, [path.basename(href)])
         source = sources?.[0]
         break
       default: {
-        const sources = await this.dataService.get(context, ext ? path.dirname(href) : href, sourceTypes,
+        const sources = await this.dataService.get(ext ? path.dirname(href) : href, sourceTypes,
           ["index.json", "people.json"])
         source = sources?.[0]
         if (!source) {

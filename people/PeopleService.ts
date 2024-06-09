@@ -58,7 +58,7 @@ export class PeopleService {
   async getFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
     let peopleList: People[] = []
     const fileSpec = ["people*.json"]
-    const peopleDataList = await this.dataService.get(context, dirName, ["people", undefined], fileSpec) as People[]
+    const peopleDataList = await this.dataService.get(dirName, ["people", undefined], fileSpec) as People[]
     for (const peopleData of peopleDataList) {
       const people = this.createFromData(context, dirName, peopleData)
       peopleList.push(people)

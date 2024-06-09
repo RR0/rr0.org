@@ -1,5 +1,4 @@
 import { FileContents } from "ssg-api"
-import { RR0SsgContext } from "./RR0SsgContext"
 import { RR0Data } from "./RR0Data"
 import { sync as glob } from "glob-promise"
 import path from "path"
@@ -61,26 +60,26 @@ export class DataService {
   constructor(readonly factories: RR0DataFactory<RR0Data>[]) {
   }
 
-  async get<T extends RR0Data = RR0Data>(context: RR0SsgContext, dirName: string, types: string[],
-                                         fileNames: string[] = this.factories.reduce((allFileNames,
-                                                                                      factory) => factory.fileNames.concat(
-                                           allFileNames), [])): Promise<T[]> {
+  async get<T extends RR0Data = RR0Data>(dirName: string, types: string[], fileNames: string[] = this.factories.reduce(
+    (allFileNames,
+     factory) => factory.fileNames.concat(
+      allFileNames), [])): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
     if (dataList === undefined) {
-      dataList = await this.read(context, dirName, fileNames)
+      dataList = await this.read(dirName, fileNames)
       this.pathToData.set(key, dataList)
     }
     return dataList.filter(data => types.includes(data.type)) as T[]
   }
 
-  protected async read(context: RR0SsgContext, dirName: string, fileNames: string[]): Promise<RR0Data[]> {
+  protected async read(dirName: string, fileNames: string[]): Promise<RR0Data[]> {
     const dataList: RR0Data[] = []
     const p = dirName + "/*(" + fileNames.join("|") + ")"
     const files = glob(p)
     for (const file of files) {
       try {
-        const dataFile = FileContents.read(context, file, "utf-8")
+        const dataFile = FileContents.read(file, "utf-8")
         let data: RR0Data
         for (let i = 0; !data && i < this.factories.length; i++) {
           const factory = this.factories[i]

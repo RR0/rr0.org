@@ -86,7 +86,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       new PeopleDirectoryStep(dirs, excludedDirs, "people/politicians.html", outputFunc, config,
         [Occupation.politician], service, "politicians directories"),
       new PeopleDirectoryStep(dirs, excludedDirs, "people/dirigeants.html", outputFunc, config,
-        [Occupation.politician, Occupation.leader], service, "politcian leaders directories")
+        [Occupation.leader], service, "politcian leaders directories")
     ]
   }
 

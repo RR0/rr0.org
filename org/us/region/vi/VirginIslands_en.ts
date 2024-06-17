@@ -1,6 +1,6 @@
-import { uintah_en } from "./uintah/Uintah_en"
+import { stThomas_en } from "./stthomas/StThomas_en"
 import { RegionMessages } from "../../../country/region/RegionMessages"
 
 export const virginIslands_en = RegionMessages.create("Virgin Islands", {
-  uintah: uintah_en
+  uintah: stThomas_en
 })

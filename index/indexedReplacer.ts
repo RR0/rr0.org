@@ -19,7 +19,6 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
     if (!anchor) {
       const value = item.getAttribute("value")
       const valueIndex = parseInt(value, 10)
-      nextIndex = Number.isInteger(valueIndex) ? valueIndex + 1 : i + 1
       const idOrValue = item.getAttribute("id") || value
       let dateTime: string
       if (!idOrValue) {

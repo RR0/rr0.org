@@ -108,7 +108,6 @@ const contentRoots = cliContents
     "politique/**/*.html",
     "science/**/*.html",
     "tech/**/*.html",
-    "politique/**/*.html",
     "udb/*.html",
     "js/**/*.html"
   ]
@@ -118,7 +117,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
-  "people/index.js", "people/lier.svg", "people/index.css", "people/witness/index.css",
+  "people/index.js", "people/index.css", "people/witness/index.css",
   "search/index.js", "search/index.json", "search/search.css",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/religion/theisme/mono/livre/islam/coran/index.js"

@@ -108,6 +108,11 @@ export enum CountryCode {
   fr = "fr",
 
   /**
+   * GEorgia
+   */
+  ge = "ge",
+
+  /**
    * HUngary
    */
   hu = "hu",
@@ -246,6 +251,11 @@ export enum CountryCode {
    * SwEden
    */
   se = "se",
+
+  /**
+   * USRR
+   */
+  su = "su",
 
   /**
    * TuNisia

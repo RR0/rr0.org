@@ -43,6 +43,7 @@ export let peopleMessages_fr = {
     journalist: (_gender: Gender) => "journaliste",
     lawyer: (gender: Gender) => gender === Gender.male ? "avocat" : "avocate",
     librarian: (_gender: Gender) => "bibliothécaire",
+    leader: (gender: Gender) => gender === Gender.male ? "dirigeant" : "dirigeante",
     logger: (gender: Gender) => gender === Gender.male ? "bucheron" : "bucheronne",
     mathematician: (gender: Gender) => gender === Gender.male ? "mathématicien" : "mathématicienne",
     meteorologist: (_gender: Gender) => "météorologue",

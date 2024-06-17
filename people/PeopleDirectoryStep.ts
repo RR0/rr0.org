@@ -36,6 +36,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const contacteesDirectoryStep = this.createContactees(dirs, excludedDirs, outputFunc, config, service)
     const pilotsDirectoryStep = this.createPilots(dirs, excludedDirs, outputFunc, config, service)
     const militaryDirectoryStep = this.createMilitary(dirs, excludedDirs, outputFunc, config, service)
+    const politiciansDirectoryStep = this.createPolicitians(dirs, excludedDirs, outputFunc, config, service)
     const allPeopleDirectoryStep = this.createAll(dirs, excludedDirs, outputFunc, config, service)
     const letterDirectorySteps = await this.createLetters(outputFunc, config, service)
     return [
@@ -46,6 +47,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       contacteesDirectoryStep,
       pilotsDirectoryStep,
       militaryDirectoryStep,
+      ...politiciansDirectoryStep,
       allPeopleDirectoryStep,
       ...letterDirectorySteps
     ]
@@ -76,6 +78,16 @@ export class PeopleDirectoryStep extends DirectoryStep {
                         outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
     return new PeopleDirectoryStep(dirs, excludedDirs, "people/militaires.html", outputFunc, config,
       [Occupation.military], service, "military people directories")
+  }
+
+  static createPolicitians(dirs: string[], excludedDirs: string[],
+                           outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
+    return [
+      new PeopleDirectoryStep(dirs, excludedDirs, "people/politicians.html", outputFunc, config,
+        [Occupation.politician], service, "politicians directories"),
+      new PeopleDirectoryStep(dirs, excludedDirs, "people/leaders.html", outputFunc, config,
+        [Occupation.politician, Occupation.leader], service, "politcian leaders directories")
+    ]
   }
 
   static createPilots(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,

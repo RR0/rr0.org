@@ -26,6 +26,7 @@ import { taiwan_fr } from "./tw/Taiwan_fr"
 import { tunisia_fr } from "./tn/Tunisia_fr"
 import { ecuador_fr } from "./ec/Ecuador_fr"
 import { egypt_fr } from "./eg/Egypt_fr"
+import { georgia_fr } from "./ge/Georgia_fr"
 
 /**
  * Country messages in French language.
@@ -51,6 +52,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   es: spain_fr,
   fi: finland_fr,
   fr: france_fr,
+  ge: georgia_fr,
   gr: CountryMessages.create("Grèce"),
   hu: CountryMessages.create("Hongrie"),
   ie: CountryMessages.create("Irelande"),
@@ -79,6 +81,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   tn: tunisia_fr,
   tr: CountryMessages.create("Turquie"),
   tw: taiwan_fr,
+  su: CountryMessages.create("URSS"),
   ua: CountryMessages.create("Ukraine"),
   uk: uk_fr,
   us: usa_fr,

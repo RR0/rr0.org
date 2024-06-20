@@ -124,11 +124,11 @@ export class SourceReplacer {
     } catch (e) {
       context.error("Could not fetch source from " + href, e.message)
       title = href
-      lastModif = new Date().toISOString()
     }
     publisher = resOut.headers.get("host")
     const url = new URL(href)
-    const publication: Publication = {publisher, time: TimeContext.fromDate(new Date(lastModif), context.time.options)}
+    const time = lastModif ? TimeContext.fromDate(new Date(lastModif), context.time.options) : context.time
+    const publication: Publication = {publisher, time}
     return {title, url, publication}
   }
 }

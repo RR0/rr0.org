@@ -60,7 +60,12 @@ export class TimeTextBuilder {
       text = ""
       // TODO: Handle partial date (month only, etc.)
     } else {  // Valid date?
-      text = date.toLocaleString(context.file.lang.lang || context.locale, printOptions)
+      const locale = context.file.lang.lang || context.locale
+      if (year < 0) {
+        date.setFullYear(date.getFullYear() + 1)
+        printOptions.era = "narrow"
+      }
+      text = date.toLocaleString(locale, printOptions)
       if (time.approximate) {
         text = context.messages.context.time.approximate(text)
       }

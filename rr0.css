@@ -208,7 +208,6 @@ form {
   font-weight: 400;
   text-shadow: 0 0 .5em #fff;
   overflow: hidden;
-  view-transition-name: page-title;
 }
 
 .title {
@@ -469,7 +468,6 @@ a, details summary, .toggle, form label {
 
 a, details summary, .toggle, .note-id, .source-id {
   color: #069;
-  view-transition-name: page-title;
 }
 
 a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {

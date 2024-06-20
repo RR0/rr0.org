@@ -43,7 +43,7 @@ import { AuthorReplaceCommand } from "./people/author/AuthorReplaceCommand"
 import { rr0DefaultCopyright } from "./RR0DefaultCopyright"
 import { PlaceReplacerFactory } from "./place/PlaceReplacerFactory"
 import { TimeReplacerFactory } from "./time/TimeReplacerFactory"
-import { LinkReplaceCommand } from "./LinkReplaceCommand"
+import { MetaLinkReplaceCommand } from "./MetaLinkReplaceCommand"
 import { OutlineReplaceCommand } from "./outline/OutlineReplaceCommand"
 import { ImageCommand } from "./ImageCommand"
 import { SearchCommand } from "./search/SearchCommand"
@@ -252,7 +252,7 @@ timeService.getFiles().then(async (timeFiles) => {
     new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
     new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
     new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),
-    new LinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
+    new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
   ]
   const ssg = new Ssg(config)
   const getOutputPath = (context: SsgContext): string => path.join(outDir, context.file.name)

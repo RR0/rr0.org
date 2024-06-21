@@ -73,7 +73,7 @@ export class SourceReplacer {
     switch (ext) {
       case ".htm":
       case ".html":
-        source = this.fromPage(href)
+        source = this.fromPage(href, hash)
         break
       case ".json":
         const sources = await this.dataService.get(path.dirname(href), sourceTypes, [path.basename(href)])
@@ -84,7 +84,7 @@ export class SourceReplacer {
           ["index.json", "people.json"])
         source = sources?.[0]
         if (!source) {
-          source = this.fromPage(path.join(href, "index.html"))
+          source = this.fromPage(path.join(href, "index.html"), hash)
         }
       }
     }
@@ -98,16 +98,19 @@ export class SourceReplacer {
     return source as Source
   }
 
-  protected fromPage(href: string): OnlineSource {
-    const fileContents = FileContents.read(path.extname(href) ? href : path.join(href, "index.html"))
+  protected fromPage(href: string, hash = ""): OnlineSource {
+    const filePath = path.extname(href) ? href : path.join(href, "index.html")
+    const fileContents = FileContents.read(filePath)
     const doc = new JSDOM(fileContents.contents).window.document.documentElement
+    const url = new URL(href, this.baseUrl)
+    if (hash) {
+      url.hash = hash
+    }
     return {
       title: doc.querySelector("title").textContent,
       authors: Array.from(doc.querySelectorAll("meta[name='author']")).map(meta => meta.getAttribute("content")),
-      publication: {
-        publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content")
-      },
-      url: new URL(href, this.baseUrl)
+      publication: {publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content")},
+      url
     } as OnlineSource
   }
 

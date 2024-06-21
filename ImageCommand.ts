@@ -1,9 +1,9 @@
-import { DomReplaceCommand, DomReplacer } from 'ssg-api';
-import { AnchorReplacer } from './anchor/AnchorReplacer';
-import { HtmlRR0SsgContext } from './RR0SsgContext';
-import * as path from 'path';
-import * as fs from 'fs';
-import sizeOf from 'image-size';
+import { DomReplaceCommand, DomReplacer } from "ssg-api"
+import { AnchorReplacer } from "./anchor/AnchorReplacer"
+import { HtmlRR0SsgContext } from "./RR0SsgContext"
+import * as path from "path"
+import * as fs from "fs"
+import sizeOf from "image-size"
 
 /**
  * Register images (`<img>` tags) required in an HTML file.
@@ -47,7 +47,7 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
             path.dirname(context.file.name),
             src);
           imgEl.loading = 'lazy';
-          if (!imgEl.width && !imgEl.height) {
+          if (!isExternal && !imgEl.width && !imgEl.height) {
             const dimensions = sizeOf(imgPath);
             let width = dimensions.width;
             let height = dimensions.height;
@@ -67,7 +67,7 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
               `this.classList.contains('zoomed') ? document.exitFullscreen() && this.classList.toggle('zoomed', false): this.classList.toggle('zoomed', true) && this.requestFullscreen()`);
           }
         } catch (e) {
-          context.debug('Could not determine size of image ', src, e);
+          context.warn("Could not determine size of image ", src, e)
         }
         context.images.add(src);
         return imgEl;
@@ -110,6 +110,8 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
             throw e;
           }
         }
+      } else {
+        context.warn(`File ${imageUrl} is external; will not copy it.`)
       }
     } else {
       context.warn(`Empty image src in ${inputFile}`);

@@ -16,7 +16,7 @@
   --background-color: white;
   --color: black;
   --link-color: lightblue;
-  --font-family: system-ui, sans-serif;
+  --font-family: system-ui;
 }
 
 @view-transition {
@@ -34,7 +34,7 @@
 }
 
 html {
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   -webkit-text-size-adjust: 100%
 }
 
@@ -98,11 +98,44 @@ p {
   margin-top: 2.5mm
 }
 
-.multi-list li {
-  text-align: left
+.columns {
+  -webkit-column-width: 15em;
+  -moz-column-width: 15em;
+  column-width: 15em;
+
+  section {
+    h2 {
+      margin-left: 0;
+      padding-left: 1em;
+    }
+
+    break-inside: avoid-column;
+  }
 }
 
-.multi-list, form, header, header h1, .text {
+.columns a, .columns details summary, details .columns summary {
+  width: 100%
+}
+
+.multi-list {
+  width: 100%;
+  padding: 0;
+  list-style: none
+}
+
+.multi-list li {
+  text-align: left;
+  float: left;
+  width: 45%;
+  margin: 0;
+  padding: 0
+}
+
+.multi-list {
+  margin: 0
+}
+
+form, header, header h1, .text {
   margin: 0
 }
 
@@ -122,29 +155,6 @@ body {
 }
 
 #main {
-  padding: 0
-}
-
-.columns {
-  -webkit-column-width: 15em;
-  -moz-column-width: 15em;
-  column-width: 15em
-}
-
-.columns a, .columns details summary, details .columns summary {
-  width: 100%
-}
-
-.multi-list {
-  width: 100%;
-  padding: 0;
-  list-style: none
-}
-
-.multi-list li {
-  float: left;
-  width: 45%;
-  margin: 0;
   padding: 0
 }
 

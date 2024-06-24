@@ -4,6 +4,7 @@ section {
 
 section:hover {
   background-color: rgba(127, 127, 127, 0.05);
+  background: linear-gradient(316deg, #f3f7fb 0, rgba(255, 255, 255, 0) 79%);
 }
 
 section:after {
@@ -52,6 +53,10 @@ h2, h3, h4, h5, section h1, section section h1 {
   padding-left: calc(2.4rem + var(--margin));
   letter-spacing: 1px;
   text-align: left
+}
+
+h2:first-of-type {
+  margin-top: 0;
 }
 
 h3 {

@@ -1,8 +1,10 @@
 {
-  "birthTime": "1922",
-  "deathTime": "1974",
+  "birthTime": "1922-11-09",
+  "deathTime": "1974-02-02",
   "occupations": [
     "writer",
+    "mathematician",
+    "physicist",
     "philosopher"
   ],
   "countries": [

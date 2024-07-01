@@ -77,7 +77,7 @@ export function portSearchLoad (filter) {
   portSearchInput.oninput = (event) => portSearchChange(filter)
   if (!portIndex && !portLoading) {
     portLoading = true
-    fetch("/tech/info/soft/reseau/protocole/ports.json").then(async (response) => {
+    fetch("https://raw.githubusercontent.com/djcas9/ports.json/master/ports.json").then(async (response) => {
       if (response.ok) {
         portIndex = await response.json()
         portSearchChange(filter)

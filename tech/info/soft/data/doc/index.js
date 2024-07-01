@@ -28,7 +28,7 @@ function fileSearchChange (e) {
 
   for (const filesig of fileIndex.filesigs) {
     const desc = filesig["File description"]
-    const ext = filesig["File extension"]
+    const ext = filesig["File extension"].split("|").join(" ")
     const type = filesig["FileClass"]
     const header = filesig["Header (hex)"]
     const headerOffset = filesig["Header offset"]

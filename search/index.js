@@ -14,10 +14,10 @@ function siteSearchChange(e) {
 let loading = false
 
 function siteSearchLoad() {
-  const datalist = document.querySelector("#search-site-values")
   if (!siteIndex && !loading) {
     loading = true
     fetch("/search/index.json").then(async (response) => {
+      const datalist = document.querySelector("#search-site-values")
       if (response.ok) {
         siteIndex = await response.json()
         for (const page of siteIndex.pages) {
@@ -35,5 +35,5 @@ const search = document.querySelector("#main-nav .search")
 search.onmouseover = siteSearchLoad
 const searchInput = document.querySelector("#search-site")
 searchInput.disabled = false
-searchInput.setAttribute('placeHolder', '🔎 Recherche')
+searchInput.setAttribute("placeHolder", "Recherche")
 searchInput.oninput = (event) => siteSearchChange(event)

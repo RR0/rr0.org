@@ -1,91 +1,88 @@
 <!--#include virtual="/header-start.html" -->
 <title>Fonte</title>
 <!--#include virtual="/header-end.html" -->
-<p><em>Font</em>.</p>
-<section><h2>Besoin</h2>
-
-    <p>Définir un variante de <a href="../index.html">police</a>.</p>
-</section>
-<section><h2>Analyse</h2>
-
-    <p>Les variations d'une police sont caractérisées par :</p>
-    <ul>
-        <li>sa casse : majuscules ou minuscules</li>
-        <li>sa graisse : non-gras par défaut (ou hérité)</li>
-        <li>sa taille : 1em (16 px) par défaut</li>
-    </ul>
+<p><i lang="en">Font</i>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Définir un variante de <a href="../index.html">police</a>.</p>
 </section>
 <section>
-    <h2>Conception</h2>
-
-    <p></p>
+  <h2>Analyse</h2>
+  <p>Les variations d'une police sont caractérisées par :</p>
+  <ul>
+    <li>sa casse : majuscules ou minuscules</li>
+    <li>sa graisse : non-gras par défaut (ou hérité)</li>
+    <li>sa taille : 1em (16 px) par défaut</li>
+  </ul>
 </section>
 <section>
-    <h2>Implémentation</h2>
-    <table>
-        <thead>
-        <tr>
-            <td class="titleCorner"></td>
-            <th>Utilisation</th>
-            <th>Taille</th>
-            <th>Style</th>
-            <th>Création</th>
-        </tr>
-        </thead>
-        <tr>
-            <td rowspan="2"><a href="/tech/info/soft/proj/design/arch/web/client/css">CSS</a></td>
-            <td colspan="3"><code><strong>font:</strong>15<strong>px arial,sans-serif;<br/> <br/> font:italic bold
-            </strong>12<strong>px/</strong>30<strong>px Georgia, serif;</strong></code></td>
-            <td><pre><code>@font-face {
+  <h2>Implémentation</h2>
+  <table>
+    <thead>
+    <tr>
+      <td class="titleCorner"></td>
+      <th>Utilisation</th>
+      <th>Taille</th>
+      <th>Style</th>
+      <th>Création</th>
+    </tr>
+    </thead>
+    <tr>
+      <td rowspan="2"><a href="/tech/info/soft/proj/design/arch/web/client/css">CSS</a></td>
+      <td colspan="3"><code><strong>font:</strong>15<strong>px arial,sans-serif;<br/> <br/> font:italic bold </strong>12<strong>px/</strong>30<strong>px
+        Georgia, serif;</strong></code></td>
+      <td><pre><code>@font-face {
   font-family: 'IconicFill';
   src: url("iconic/iconic_fill.eot");
   src: url("iconic/iconic_fill.eot?#iefix") format("embedded-opentype"), url("iconic_fill.ttf") format("truetype"), url("iconic/iconic_fill.svg#iconic") format("svg");
   font-weight: normal;
-  font-style: normal; }</code></pre></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><code><strong> font-family</strong>: TellePolice;<br/> <br/> </code></td>
-            <td><code> <span class="deprecated"><strong>font-size:</strong> 10<strong>px</strong>;</span><br/> <strong>font-size:</strong>
-                2.5<strong>em</strong>; </code></td>
-            <td><code><strong>font-style: normal</strong>|<strong>italic</strong>|<strong>oblique</strong>;</code>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><a href="/tech/info/soft/data/doc/html">HTML</a></td>
-            <td colspan="3"><code class="deprecated">&lt;font <strong>face</strong>=<span class="codeString">"TellePolice"</span>&gt;
-            </code></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Javascript</td>
-            <td colspan="3"><code>object.style.font=<span class="codeString">"italic small-caps bold 12px arial,sans-serif"</span></code>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">Java</td>
-            <td colspan="3"><code><strong>Font</strong> someFont = new
-                java.awt.<strong>Font</strong>(<span class="codeString">"TellePolice"</span>, telleGraisse,
-                telleTaille);<br/> someGraphics.<strong>setFont</strong>(someFont);<br/> <br/> </code></td>
-            <td><code>Font myFont = Font.<strong>createFont</strong>(<strong>Font.TRUETYPE_FONT</strong>, new
-                File(<span class="codeString">"myFont.TTF"</span>));</code></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td><code>someFont.<strong>deriveFont</strong>(20f);</code></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+  font-style: normal; }</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code><strong> font-family</strong>: TellePolice;<br/> <br/> </code></td>
+      <td><code> <span class="deprecated"><strong>font-size:</strong> 10<strong>px</strong>;</span><br/> <strong>font-size:</strong>
+        2.5<strong>em</strong>; </code></td>
+      <td><code><strong>font-style: normal</strong>|<strong>italic</strong>|<strong>oblique</strong>;</code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="/tech/info/soft/data/doc/html">HTML</a></td>
+      <td colspan="3"><code class="deprecated">&lt;font <strong>face</strong>=<span
+        class="codeString">"TellePolice"</span>&gt; </code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Javascript</td>
+      <td colspan="3"><code>object.style.font=<span
+        class="codeString">"italic small-caps bold 12px arial,sans-serif"</span></code>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Java</td>
+      <td colspan="3"><code><strong>Font</strong> someFont = new java.awt.<strong>Font</strong>(<span
+        class="codeString">"TellePolice"</span>, telleGraisse, telleTaille);<br/> someGraphics.<strong>setFont</strong>(someFont);<br/>
+        <br/> </code></td>
+      <td><code>Font myFont = Font.<strong>createFont</strong>(<strong>Font.TRUETYPE_FONT</strong>, new File(<span
+        class="codeString">"myFont.TTF"</span>));</code></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><code>someFont.<strong>deriveFont</strong>(20f);</code></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
 </section>
 <section>
-    <h2>Exemples</h2>
+  <h2>Exemples</h2>
 
-    <p>Un exemple de feuille de style CSS est :</p>
-    <pre><code><strong>&lt;style type=</strong><span class="codeString">"text/css"</span>&gt;<br/> <br/> .mainTitle
+  <p>Un exemple de feuille de style CSS est :</p>
+  <pre><code><strong>&lt;style type=</strong><span class="codeString">"text/css"</span>&gt;<br/> <br/> .mainTitle
         <strong>{</strong> <strong> <span class="codeComment">// class</span><br/> font-family</strong>: Verdana, Arial,
         Helvetica, sans-serif; <strong><br/> font-size: larger</strong><br/> }<br/> <br/> h1 { <br/>
         <strong>font-family</strong>: <span class="codeString">"Bookman Old
@@ -93,19 +90,21 @@
             font-variant: normal; </strong><strong><br/> }</strong><br/> <br/> p { <strong><br/> font-size: small; <br/>
             font-style: normal; <br/> color:</strong> #000000; <strong><br/>
             font-family:</strong> <span class="codeString">"Bookman
-  Old Style"</span>; <strong><br/> </strong><strong>}</strong><br/> <br/> address <strong>{ <br/> font-family:</strong> <span class="codeString">"Courier
+  Old Style"</span>; <strong><br/> </strong><strong>}</strong><br/> <br/> address <strong>{ <br/> font-family:</strong> <span
+      class="codeString">"Courier
   New"</span>, Courier, mono; <strong><br/> font-size: small; <br/> </strong><strong>}</strong><br/> <strong>&lt;/style&gt;</strong></code>
     </pre>
-
-    <p>Java :</p>
-    <p><span><code>someGraphics.<strong>setFont</strong>(new java.awt.<strong>Font</strong>(<span class="codeString">"Courier"</span>,
+  <p>Java :</p>
+  <p><span><code>someGraphics.<strong>setFont</strong>(new java.awt.<strong>Font</strong>(<span class="codeString">"Courier"</span>,
         Font.BOLD, 36));</code></span></p>
-    <p>Un exemple de page Web (HTML) utilisant une feuille de style est :</p>
-<pre> <code>    &lt;h1&gt;Ce titre 1 est bleu&lt;/h1&gt;<br/> &lt;p <strong>style=<span class="codeString">"color:
+  <p>Un exemple de page Web (HTML) utilisant une feuille de style est :</p>
+  <pre> <code>    &lt;h1&gt;Ce titre 1 est bleu&lt;/h1&gt;<br/> &lt;p <strong>style=<span class="codeString">"color:
   green"</span></strong>&gt;Alors que ce paragraphe est vert.</code></pre>
 </section>
-<section><h2>Références</h2>
-    <ul>
-        <li><a href="https://www.dafont.com/fr/">DaFont</a></li>
-    </ul>
-</section><!--#include virtual="/footer.html" -->
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li><a href="https://www.dafont.com/fr/">DaFont</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

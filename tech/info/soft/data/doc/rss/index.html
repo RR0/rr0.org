@@ -1,0 +1,387 @@
+<!--#include virtual="/header-start.html" -->
+<title>RSS</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">RDF Site Summary</i> (0.9, 1.0), <i lang="en">Rich Site Summary</i> (0.91), <i lang="en">Really Simple
+  Syndication</i> (0.94).</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Décrire des mises à jour d'informations par abonnement. Des flux RSS sont typiquement générés par des applications
+    (des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveurs web</a>/<a
+      href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs</a>) pour d'autres
+    applications (<i lang="en">news aggregators</i>).</p>
+  <h2><a href="../../../java/ana">Analyse</a></h2>
+  <p>RSS définit un vocabulaire de métadonnées (description de données) de sites Web permettant de décrire des <strong>canaux</strong>
+    (<i lang="en">channels</i>) d'information pouvant contenir un certain nombre d'<strong>objets</strong> (<i
+      lang="en">items</i>) d'information. Les canaux comme les objets peuvent possèder un <strong>titre</strong>, un
+    <strong>lien</strong>, et une <strong>description</strong>.</p>
+  <p>Des éléments plus détaillés peuvent être définis par des <strong>modules</strong>.</p></section>
+<section>
+  <h2>Conception</h2>
+  <p>RSS utilise <a href="/tech/info/soft/data/doc/rdf">RDF</a>.</p></section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <tr>
+      <td class="titleCorner" rowspan="2"></td>
+      <th>Version</th>
+      <th colspan="4">0</th>
+      <th><a href="https://purl.org/rss/1.0/spec">1</a></th>
+      <th>2</th>
+      <th>Commentaire</th>
+    </tr>
+    <tr>
+      <th>Release</th>
+      <th colspan="4"><a href="https://my.netscape.com/publish/formats/rss-0.9.dtd">9</a></th>
+      <th><a href="https://purl.org/rss/1.0/spec">0</a></th>
+      <th>0</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Element</th>
+      <th>Fixpack</th>
+      <th></th>
+      <th><a href="https://my.netscape.com/publish/formats/rss-spec-0.91.html">1</a></th>
+      <th>2</th>
+      <th>4</th>
+      <th></th>
+      <th></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th colspan="2">Version</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>@version</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="17">channel</th>
+      <th>Description</th>
+      <td class="oui" colspan="6"><code>description</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Lien</th>
+      <td class="oui" colspan="6"><code>link</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Titre</th>
+      <td class="oui" colspan="6"><code>title</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Copyright</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>copyright</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Docs</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>docs</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Langue</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>language</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Date de génération</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>lastBuildDate</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Rédacteur responsable</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>managingEditor</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Date de publication</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>pudDate</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Note</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>rating</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Heures passées</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>skipHours</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Jours passés</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>skipDays</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Webmestre</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>webMaster</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Nuage</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>cloud</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Générateur</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>generator</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Durée de vie</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>ttl</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td><em>Time To Live</em> : durée de vie</td>
+    </tr>
+    <tr>
+      <th>A propos</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2"><code>@about</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="6">image</th>
+      <th>URL</th>
+      <td class="oui" colspan="6"><code>url</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Lien</th>
+      <td class="oui" colspan="6"><code>link</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Titre</th>
+      <td class="oui" colspan="6"><code>title</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Hauteur</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>height</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Largeur</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="3"><code>width</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>A propos</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2"><code>@about</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="15">item</th>
+      <th>Lien</th>
+      <td class="oui" colspan="6"><code>link</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Titre</th>
+      <td class="oui" colspan="6"><code>title</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td class="non">Non</td>
+      <td class="oui" colspan="5"><code>description</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Catégorie</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>category</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Domaine</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>@domain</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Inclusion</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>enclosure</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Longueur</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>@length</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>@type</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>URL</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2"><code>@url</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Auteur</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>author</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaires</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>comments</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Guide</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>guid</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Lien permanent</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>@isPermaLink</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Date de publication</th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui"><code>pubDate</code></td>
+      <td class="oui" colspan="2">Modules</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>A propos</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2"><code>@about</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan="5">textInput</th>
+      <th>Description</th>
+      <td class="oui" colspan="6"><code>description</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Lien</th>
+      <td class="oui" colspan="6"><code>link</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Titre</th>
+      <td class="oui" colspan="6"><code>title</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Nom</th>
+      <td class="oui" colspan="6"><code>name</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>A propos</th>
+      <td class="non" colspan="4">Non</td>
+      <td class="oui" colspan="2"><code>@about</code></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de document RSS est :</p>
+  <pre><code>&lt;?xml version=<span class="codeString">"1.0"</span>?&gt; </code>
+  <p><code>&lt;!DOCTYPE rss PUBLIC <span class="codeString">"-//Netscape
+  Communications//DTD RSS 0.91//EN"</span> <span class="codeString">"https://my.netscape.com/publish/formats/rss-0.91.dtd"</span>&gt;</code>
+  </p>
+  <p><code>&lt;<strong>rss</strong> version="0.91"&gt;</code><code><br>
+    &lt;<strong>channel</strong>&gt;<br>
+  </code><code>&lt;<strong>title</strong>&gt;Javarome.net&lt;/<strong>title</strong>&gt;<br>
+    &lt;<strong>description</strong>&gt;Java data for french-reading people&lt;/<strong>description</strong>&gt;<br>
+    &lt;<strong>link</strong>&gt;https://javarome.net&lt;/<strong>link</strong>&gt;<br>
+    &lt;<strong>language</strong>&gt;fr&lt;/<strong>language</strong>&gt;<br> <br>
+    &lt;<strong>item</strong>&gt;<br>
+    &lt;<strong>title</strong>&gt;RDF&lt;/<strong>title</strong>&gt;<br>
+    &lt;<strong>link</strong>&gt;https://javarome.net/RDF.html&lt;/<strong>link</strong>&gt;<br>
+    &lt;<strong>description</strong>&gt;Description de RSS comme sous-type de
+    RDF&lt;/<strong>description</strong>&gt;<br>
+    &lt;/<strong>item</strong>&gt;</code></p>
+  <p><code> &lt;<strong>item</strong>&gt;<br>
+    &lt;<strong>title</strong>&gt;RSS&lt;/<strong>title</strong>&gt;<br>
+    &lt;<strong>link</strong>&gt;https://javarome.net/RSS.html&lt;/<strong>link</strong>&gt;<br>
+    &lt;<strong>description</strong>&gt;Ajout de cette page consacrée au RDF Site
+    Summary&lt;/<strong>description</strong>&gt;<br>
+    &lt;/<strong>item</strong>&gt;</code></p>
+  <p><code> &lt;/<strong>channel</strong>&gt;<br> </code><code>&lt;/<strong>rss</strong>&gt;</code></p>
+</pre>
+  <p>Des exemples de sites utilisant RDF et/ou RSS sont :</p>
+  <ul>
+    <li><a href="https://sourceforge.net">SourceForge.net</a> fournissant l'actualité de ses projets via RSS</li>
+    <li>Canaux de <em>MyNetscape</em>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li> Spécification (<a href="https://purl.org/rss/1.0/spec">1.0)</a>
+      <ul>
+        <li>Modules (<a href="https://purl.org/rss/1.0/modules/">1.0</a>)</li>
+      </ul>
+    </li>
+    <li><a href="https://www.w3.org/2001/10/glance/doc/howto"><em>RSS 1.0 news feed creation how-to</em></a> par le W3C
+    </li>
+    <li>Outils/API
+      <ul>
+        <li>le <a href="https://jakarta.apache.org/commons/digester.html">XML Digester</a> des <a
+          href="/org/int/asso/asf/Commons.html">Commons</a> de Jakarta (Apache) supporte RSS.</li>
+        <li><a href="https://enigmastation.com/rsslibj/">RSSLibJ</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

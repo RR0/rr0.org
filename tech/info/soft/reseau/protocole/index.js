@@ -32,33 +32,33 @@ function portSearchChange (filter) {
   const entries = Object.entries(portIndex.ports)
 
   function addRow (portItem) {
-    const filtered = filter(portItem)
 
-    function add (item) {
-      const desc = item.description
-      const port = item.port
-      if (desc.toLowerCase().indexOf(input) >= 0
-        || port.toLowerCase().indexOf(input) >= 0
-      ) {
-        const row = document.createElement("tr")
-        addCol(row, item, "description")
-        addCol(row, item, "port", document.createElement("code"))
-        addCol(row, item, "status")
-        addCol(row, item, "tcp")
-        addCol(row, item, "udp")
-        tableBody.append(row)
+    function add (i) {
+      const item = filter(i)
+      if (item) {
+        const desc = item.description
+        const port = item.port
+        if (desc.toLowerCase().indexOf(input) >= 0
+          || port.toLowerCase().indexOf(input) >= 0
+        ) {
+          const row = document.createElement("tr")
+          addCol(row, item, "description")
+          addCol(row, item, "port", document.createElement("code"))
+          addCol(row, item, "status")
+          addCol(row, item, "tcp")
+          addCol(row, item, "udp")
+          tableBody.append(row)
+        }
       }
     }
 
-    if (filtered) {
-      if (Array.isArray(filtered)) {
-        for (const filteredElement of filtered) {
+    if (Array.isArray(portItem)) {
+      for (const filteredElement of portItem) {
           add(filteredElement)
         }
       } else {
-        add(filtered)
+      add(portItem)
       }
-    }
   }
 
   for (let i = 0; i < entries.length; i++) {

@@ -3,7 +3,7 @@ var portIndex
 const tableBody = document.querySelector("#port-table tbody")
 const portSearchInput = document.querySelector("#port-form input[type='search']")
 portSearchInput.disabled = false
-portSearchInput.setAttribute("placeHolder", "extension, en-tete...")
+portSearchInput.setAttribute("placeHolder", "nom, port...")
 
 function portSearchChange (filter) {
   tableBody.innerHTML = ""

@@ -24,8 +24,26 @@
 <section>
   <h2>Exemples</h2>
   <ul>
-    <li><a href="TCP.html">TCP</a>, <a href="UDP.html">UDP</a></li>
+    <li><a href="tcp">TCP</a>, <a href="udp">UDP</a></li>
     <li><a href="POP.html">IPSec</a></li>
   </ul>
+  <form id="port-form">
+    <input disabled placeholder="Activez Javascript" type="search">
+  </form>
+  <table id="port-table">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>Port</th>
+      <th>Statut</th>
+      <th class="tcp">TCP</th>
+      <th class="udp">UDP</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script type="module">import { portSearchLoad } from "../index.js"
+
+  portSearchLoad(rec => rec)</script>
 </section>
 <!--#include virtual="/footer.html" -->

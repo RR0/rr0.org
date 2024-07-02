@@ -16,6 +16,16 @@ table img {
   max-width: 75%
 }
 
+.left img {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+.right img {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
 caption, figcaption {
   font-size: 0.8em;
   color: dimgray;

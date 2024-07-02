@@ -106,4 +106,10 @@ export interface RR0Messages {
     prev: string
     next: string
   }
+  unit: {
+    smi: (miles: number) => string
+    fot: (feet: number) => string
+    hm: (milesPerHour: number) => string
+    inh: (inches: number) => string
+  }
 }

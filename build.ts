@@ -69,6 +69,7 @@ import { SourceRenderer } from "./source/SourceRenderer"
 import { TimeService } from "./time/TimeService"
 import { CaseService } from "./science/crypto/ufo/enquete/dossier/CaseService"
 import { TimeReplacer } from "./time/TimeReplacer"
+import { UnitReplaceCommand } from "./value/UnitReplaceCommand"
 
 interface RR0BuildArgs {
   reindex?: "true" | "false"
@@ -254,6 +255,7 @@ timeService.getFiles().then(async (timeFiles) => {
     new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
     new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
     new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),
+    new UnitReplaceCommand(),
     new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
   ]
   const ssg = new Ssg(config)

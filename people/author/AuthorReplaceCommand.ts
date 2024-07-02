@@ -17,10 +17,7 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
       replace: (_match: string, ..._args: any[]): string => {
         const file = context.file
         let authors = file.meta.author
-        let authorsHtml = ""
-        for (const author of authors) {
-          authorsHtml += `<span class="people">${author}</span>`
-        }
+        let authorsHtml = authors.map(author => `<span class="people">${author}</span>`).join(" & ")
         const copyright = file.meta.copyright
         if (copyright) {
           authorsHtml += authorsHtml ? ": " + copyright : copyright

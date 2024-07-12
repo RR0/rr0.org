@@ -1,5 +1,3 @@
-import {HtmlTag} from "./util/HtmlTag"
-
 export class LocalAnchor {
 
   static create(outputDoc: Document, localAnchor: string): HTMLElement {
@@ -8,9 +6,5 @@ export class LocalAnchor {
     anchor.ariaHidden = "true"
     anchor.id = localAnchor
     return anchor
-  }
-
-  static createHTML(outputDoc: Document, localAnchor: string): string {
-    return HtmlTag.toString("span", "", {class: "anchor", "aria-hidden": true, id: localAnchor})
   }
 }

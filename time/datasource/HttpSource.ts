@@ -73,6 +73,7 @@ export class HttpSource {
       try {
         return await fetcher.fetch(url, init, resOut, previousError)
       } catch (e) {
+        console.warn(e.toString())
         previousError = e
       }
     }

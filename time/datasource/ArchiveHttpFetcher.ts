@@ -26,14 +26,14 @@ export class ArchiveHttpFetcher implements HttpFetcher {
 
   async fetch<T>(url: URL, init?: RequestInit, resOut?: Partial<Response>,
                  error?: HttpSourceError): Promise<T> {
-    const archiveUrl = "http://archive.org/wayback/available?url=" + url
+    const archiveUrl = new URL("http://archive.org/wayback/available?url=" + url)
     const archiveInit = {headers: {"content-type": MimeType.json}}
     const archiveJson: ArchiveHttpFetcherResponse = await this.fetcher.fetch(archiveUrl, archiveInit, resOut)
     const closest = archiveJson.archived_snapshots["closest"]
     if (!closest) {
       throw error
     }
-    const archivedUrl = closest.url
+    const archivedUrl = new URL(closest.url)
     const result = await this.fetcher.fetch<T>(archivedUrl, init, resOut)
     const timestamp = closest.timestamp
     const archiveDate = new Date(

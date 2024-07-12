@@ -40,7 +40,7 @@ export class FetchHttpFetcher implements HttpFetcher {
 
   async fetch<T>(url: URL, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<T> {
     init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
-    console.debug("Fetching", url, "with", init)
+    console.debug("Fetching", url.toString(), "with", init)
     const response = await fetch(url, init)
     if (response.ok) {
       Object.assign(resOut, {headers: response.headers})

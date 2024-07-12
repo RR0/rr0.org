@@ -20,11 +20,10 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     if (leftParent > 0) {
       peopleStr = peopleStr.substring(0, leftParent).trim()
     }
-    const cache = context.people.cache
-    let people = cache.get(peopleStr)
+    const registry = context.people.registry
+    let people = this.service.cache.get(peopleStr.toLowerCase())
     if (!people) {
       people = this.service.createFromFullName(peopleStr)
-      cache.set(people.lastName, people)
     }
     let url = people.dirName
     let replacement: HTMLElement

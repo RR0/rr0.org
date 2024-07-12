@@ -12,8 +12,8 @@ export class StringUtil {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
   }
 
-  static textToCamel(camel: string): string {
-    return StringUtil.removeAccents(camel.trim()
+  static textToCamel(text: string): string {
+    return StringUtil.removeAccents(text.trim()
       .replace(/ [^ ]+/g,
         (substring: string, args: string[]) => substring.charAt(1).toUpperCase() + substring.substring(2)))
       .replace(/[ .:;,()\-+=*/#°@$€£%!&?"'’]/g, "")

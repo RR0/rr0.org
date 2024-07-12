@@ -34,7 +34,8 @@ export class PeopleService {
         firstNames = []
       }
     }
-    let dirName: string | undefined = this.cache.get(lastName)?.dirName || People.getUrl(lastName, firstNames)
+    let dirName: string | undefined = this.cache.get(lastName.toLowerCase())?.dirName || People.getUrl(lastName,
+      firstNames)
     if (this.peopleFiles.indexOf(dirName) < 0) {
       dirName = undefined
     }

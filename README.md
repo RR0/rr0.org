@@ -1,6 +1,11 @@
 # RR0  [![Build Status](https://travis-ci.org/RR0/rr0.org.svg?branch=master)](https://travis-ci.org/RR0/rr0.org) [![Code Climate](https://codeclimate.com/github/RR0/rr0.org/badges/gpa.svg)](https://codeclimate.com/github/RR0/rr0.org) [![Test Coverage](https://codeclimate.com/github/RR0/rr0.org/badges/coverage.svg)](https://codeclimate.com/github/RR0/rr0.org)
 
-This repository hosts both data and code of the [RR0 website](https://rr0.org).
+This repository hosts both data and code for the [RR0 website](https://rr0.org).
+
+## Motivation
+
+This website was created around 1998 as the publication of personal notes regarding the study of Unidentified Flying Objects (UFOs).
+It was further motivated by the lack of french-speaking resources about the subject, especially when it comes to cases synthesis, history and objective reporting.
 
 ## Analysis
 
@@ -16,7 +21,6 @@ RR0 is:
 
 ### To do
 
-* directives to handle measurements (lengths, weights, speed)
 * User settings to customize rendering of directives (i18n, how to display people names, which units to use for
   expressing measurements)
 
@@ -26,9 +30,9 @@ RR0 has been designed in different ways over the years:
 
 1. a vanilla JS app (parsing tags and updating the client HTML)
 2. an [AngularJS](https://angularjs.org/) app with RR0-specific directives.
-3. NodeJS-generated pages with a bit of client-side code, using the [ssg-api](https://www.npmjs.com/package/ssg-api).
+3. Static Site Generated (SSG) pages with a bit of client-side code, using the [ssg-api](https://www.npmjs.com/package/ssg-api).
 
-So today the design is basically about converting page templates to final HTML, including a bit of client-side JS.
+So today the design is basically about converting page templates to final HTML, including a bit of client-side JS when interactivity is supported.
 
 ### Replacers
 
@@ -47,9 +51,9 @@ respectively, as stated in the [ISO_8601 standard](https://en.wikipedia.org/wiki
 By default, rendered dates add a `checkedLink` towards a possible page documenting this date (all examples below using a
 french locale):
 
-`<time datetime="1952"></time>` renders as `<a href="/time/1/9/5/2/" title="1952">1952</a>`.
+`<time>1952</time>` renders as `<a href="/time/1/9/5/2/">1952</a>`.
 
-`<time datetime="1952-07"></time>` renders as `<a href="/time/1/9/5/2/07" title="Juillet 1952">Juillet 1952</a>`.
+`<time datetime="">1952-07</time>` renders as `<a href="/time/1/9/5/2/07" title="Juillet 1952">Juillet 1952</a>`.
 
 `<time datetime="1952-07-01"></time>` renders
 as `<a href="/time/1/9/5/2/07/01" title="Mardi 1er Juillet 1952">Mardi 1er Juillet 1952</a>`.
@@ -172,7 +176,7 @@ RR0.org is built through a Static Site Generation (SSG) using the [ssg-api](http
 run it:
 
 1. Make sure you have a Google Maps embed API keys and set its value to the `GOOGLE_MAPS_API_KEY` env var.
-1. To build the website, run `npm run build --reindex true`. This will generate the website in the `out` subdirectory, including a refreshed index of pages to be used in the search form.
+1. Build the website using  `npm run build --reindex true`. This will generate the website in the `out` subdirectory, including a refreshed index of pages to be used in the search form.
 
 ### Publish
 

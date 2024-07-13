@@ -1,6 +1,6 @@
 import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
 import { TimeContext } from "../time/TimeContext"
-import { FileContents, HtmlSsgFile } from "ssg-api"
+import { FileContents, HtmlFileContents } from "ssg-api"
 
 class RR0TestUtil {
 
@@ -31,7 +31,7 @@ class RR0TestUtil {
     const titleExec = /<title>(.*)<\/title>/.exec(contents)
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : undefined
     const currentFile = context.file
-    context.file = new HtmlSsgFile(currentFile.name, currentFile.encoding, currentFile.contents,
+    context.file = new HtmlFileContents(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
     const htmlContext = context as HtmlRR0SsgContext
     Object.assign(htmlContext.time, TimeContext.fromFileName(htmlContext, inputFileName))

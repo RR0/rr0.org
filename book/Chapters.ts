@@ -1,7 +1,7 @@
-import { promise as glob } from 'glob-promise';
-import { HtmlRR0SsgContext } from '../RR0SsgContext';
-import { LinkType } from 'ssg-api';
-import path from 'path';
+import { promise as glob } from "glob-promise"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { LinkType } from "ssg-api"
+import path from "path"
 
 export class Chapter {
 
@@ -89,7 +89,7 @@ const context = new RR0SsgContextImpl('fr', new TimeContext({
     minute: '2-digit'
   }
 ));
-const file = HtmlSsgFile.read(context, startFileName);
+const file = HtmlFileContents.read(context, startFileName);
 const startFileNames = [file.name];
 const variants = file.lang.variants;
 for (const variant of variants) {

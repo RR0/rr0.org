@@ -6,7 +6,7 @@ import { TimeRenderer } from "./TimeRenderer"
 
 describe("HtmlTagReplaceCommand", () => {
 
-  const timeFiles = []
+  const timeFiles = ["time/2/0/0/4/index.html"]
   const renderer = new TimeRenderer(timeFiles)
 
   test("replace time tag", async () => {

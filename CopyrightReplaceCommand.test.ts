@@ -12,7 +12,7 @@ describe("CopyrightReplaceCommand", () => {
     context.file.meta.copyright = undefined
     await command.execute(context)
     expect(context.file.meta.copyright).toBeUndefined()
-    expect(context.file.contents).toBe(`This is published by !`)
+    expect(context.file.contents).toBe(`This is published by <!--#echo var="copyright" -->!`)
   })
 
   test("default copyright with handler", async () => {

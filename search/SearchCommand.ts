@@ -1,4 +1,4 @@
-import { HtmlSsgContext, HtmlSsgFile, ReplaceCommand } from "ssg-api"
+import { HtmlFileContents, HtmlSsgContext, ReplaceCommand } from "ssg-api"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import fs from "fs"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
@@ -86,7 +86,7 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
     return div.textContent
   }
 
-  protected indexContent(context: HtmlRR0SsgContext, outputFile: HtmlSsgFile) {
+  protected indexContent(context: HtmlRR0SsgContext, outputFile: HtmlFileContents) {
     const contents = this.getContents(outputFile.document)
     const contentsRecord: PageInfo = {
       title: outputFile.title,
@@ -98,7 +98,7 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
     this.contentStream.write(str)
   }
 
-  protected indexWords(context: HtmlRR0SsgContext, outputFile: HtmlSsgFile) {
+  protected indexWords(context: HtmlRR0SsgContext, outputFile: HtmlFileContents) {
     const pageIndex = this.index.pages.length
     const nonSignificant = context.messages.nonSignificantWords
     const contents = this.getContents(outputFile.document)

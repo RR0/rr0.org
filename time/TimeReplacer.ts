@@ -91,19 +91,19 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     }
   }
 
-  async replacement(context: HtmlRR0SsgContext, original: HTMLTimeElement): Promise<HTMLElement> {
+  async replacement(context: HtmlRR0SsgContext, origEl: HTMLTimeElement): Promise<HTMLElement> {
     let replacement: HTMLElement | undefined
-    if (original.dateTime) {  // Already done?
-      replacement = original
+    if (origEl.dateTime) {  // Already done?
+      replacement = origEl
     } else {
-      const previousContext = original.dataset["context"] === "none" ? undefined : context.clone()
-      const contents = original.textContent
+      const previousContext = origEl.dataset["context"] === "none" ? undefined : context.clone()
+      const contents = origEl.textContent
       replacement = this.create(context, contents, previousContext)
       if (!replacement) {
-        replacement = original
-        replacement.setAttribute("datetime", contents)
+        replacement = origEl
+        replacement.setAttribute("datetime", context.time.toString())
       }
-      context.debug("\tReplacing time", original.outerHTML, "with",
+      context.debug("\tReplacing time", origEl.outerHTML, "with",
         ObjectUtils.asSet<HTMLElement>(replacement).outerHTML)
     }
     return replacement
@@ -121,23 +121,29 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     const parts = contents.split("/")
     const isTimeInterval = parts.length > 1
     if (isTimeInterval) {
-      const startTime = parts[0]
-      const startReplacement = this.valueReplacement(context, startTime, previousContext, options)
-      if (startReplacement) {
-        const endTime = parts[1]
-        const endReplacement = this.valueReplacement(context, endTime, previousContext, options)
-        if (endReplacement && endReplacement.outerHTML !== startReplacement.outerHTML) {
-          replacement = context.file.document.createElement("span")
-          replacement.className = "time-interval"
-          replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
-            endReplacement.outerHTML)
-        }
-      }
+      replacement = this.createInterval(context, previousContext, parts, options, replacement)
     }
     if (!replacement) {
       replacement = this.valueReplacement(context, contents, previousContext, options)
     }
     replacement?.setAttribute("datetime", contents)
+    return replacement
+  }
+
+  createInterval(context: HtmlRR0SsgContext, previousContext: HtmlRR0SsgContext, parts: string[],
+                 options: TimeRenderOptions, replacement: HTMLElement): HTMLElement | undefined {
+    const startTime = parts[0]
+    const startReplacement = this.valueReplacement(context, startTime, previousContext, options)
+    if (startReplacement) {
+      const endTime = parts[1]
+      const endReplacement = this.valueReplacement(context, endTime, previousContext, options)
+      if (endReplacement && endReplacement.outerHTML !== startReplacement.outerHTML) {
+        replacement = context.file.document.createElement("span")
+        replacement.className = "time-interval"
+        replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
+          endReplacement.outerHTML)
+      }
+    }
     return replacement
   }
 

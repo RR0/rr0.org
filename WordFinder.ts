@@ -1,4 +1,4 @@
-import { ConsoleLogger, HtmlSsgFile, Logger } from "ssg-api"
+import { ConsoleLogger, HtmlFileContents, Logger } from "ssg-api"
 import { promise as glob } from "glob-promise"
 import { CLI } from "./util/cli/CLI"
 import { CSVFileReader } from "./CSVFileReader"
@@ -55,7 +55,7 @@ glob(inputPattern).then(async (inputFiles) => {
   const dictWords = await dictionary.read(dictionaryFile)
   logger.debug("Looking for files", inputPattern)
   for (const inputFile of inputFiles) {
-    const file = HtmlSsgFile.read(context, inputFile)
+    const file = HtmlFileContents.read(context, inputFile)
     const contents = file.contents
     let pos: number
     let errorToFix: boolean

@@ -11,6 +11,7 @@ import assert from "assert"
  * Create a preview image for each page sharing.
  */
 export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
+
   protected num = 0
 
   constructor(

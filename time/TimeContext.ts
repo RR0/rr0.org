@@ -113,6 +113,10 @@ export class TimeContext {
     return this
   }
 
+  toDate(): Date {
+    return new Date(this.toString())
+  }
+
   toString(): string {
     let s = String(this.getYear())
     const month = this.getMonth()

@@ -126,7 +126,6 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     if (!replacement) {
       replacement = this.valueReplacement(context, contents, previousContext, options)
     }
-    replacement?.setAttribute("datetime", contents)
     return replacement
   }
 

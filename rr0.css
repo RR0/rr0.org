@@ -1276,10 +1276,6 @@ a:hover {
     color: grey;
   }
 
-  .witness, .temoin, .temoin1, .temoin2, .temoin3 {
-    background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
-  }
-
   blockquote ol > li, blockquote p, blockquote ul > li, q {
     background: repeat-x rgba(250, 250, 255, .3)
   }
@@ -1321,11 +1317,6 @@ a:hover {
 
   .outline li {
     border-color: rgb(80, 80, 80);
-  }
-
-  .people.witness, .temoin, .temoin1, .temoin2, .temoin3 {
-    color: white;
-    background: linear-gradient(to right, #000, #333 2%, #333 98%, #000);
   }
 
   .place, .plac {

@@ -10,7 +10,8 @@ describe("TimeReplacer", () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       const timeRenderer = new TimeRenderer(["time/2/0/0/3/index.html"])
       const replacer = new TimeReplacer(timeRenderer)
-      expect(replacer.valueReplacement(context, "2003", undefined).outerHTML).toBe(`<a href="/time/2/0/0/3/">2003</a>`)
+      expect(replacer.valueReplacement(context, "2003", undefined).outerHTML).toBe(
+        `<a href="/time/2/0/0/3/"><time datetime="2003">2003</time></a>`)
       expect(context.time.getYear()).toBe(2003)
       expect(context.time.getMonth()).toBe(undefined)
       expect(context.time.getDayOfMonth()).toBe(undefined)
@@ -23,7 +24,7 @@ describe("TimeReplacer", () => {
       const timeRenderer = new TimeRenderer(["time/2/0/2/5/index.html"])
       const replacer = new TimeReplacer(timeRenderer)
       expect(replacer.valueReplacement(context, "2025\n      ", undefined).outerHTML).toBe(
-        `<a href="/time/2/0/2/5/">2025</a>`)
+        `<a href="/time/2/0/2/5/"><time datetime="2025">2025</time></a>`)
       expect(context.time.getYear()).toBe(2025)
       expect(context.time.getMonth()).toBe(undefined)
       expect(context.time.getDayOfMonth()).toBe(undefined)
@@ -42,7 +43,8 @@ describe("TimeReplacer", () => {
     original.textContent = interval
     const replaced = await replacer.replacement(context, original)
     expect(replaced.outerHTML)
-      .toBe(`<span class="time-interval"><a href="/time/2/0/1/2/">2012</a> à <a href="/time/2/0/1/6/">2016</a></span>`)
+      .toBe(
+        `<span class="time-interval"><a href="/time/2/0/1/2/"><time datetime="2012">2012</time></a> à <a href="/time/2/0/1/6/"><time datetime="2016">2016</time></a></span>`)
     expect(context.time.getYear()).toBe(2016)
     expect(context.time.getMonth()).toBe(undefined)
     expect(context.time.getDayOfMonth()).toBe(undefined)
@@ -124,7 +126,8 @@ describe("TimeReplacer", () => {
       const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"])
       const replacer = new TimeReplacer(timeRenderer)
       const replacement = replacer.valueReplacement(context, "2005-08-23", undefined)
-      expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/5/08/23/">mardi 23 août 2005</a>`)
+      expect(replacement.outerHTML).toBe(
+        `<a href="/time/2/0/0/5/08/23/"><time datetime="2005-08-23">mardi 23 août 2005</time></a>`)
       expect(context.time.getYear()).toBe(2005)
       expect(context.time.getMonth()).toBe(8)
       expect(context.time.getDayOfMonth()).toBe(23)
@@ -140,7 +143,8 @@ describe("TimeReplacer", () => {
       const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"])
       const replacer = new TimeReplacer(timeRenderer)
       const replacement2 = replacer.valueReplacement(context, "23", currentContext)
-      expect(replacement2.outerHTML).toBe(`<a href="/time/2/0/0/5/08/23/" title="mardi 23 août 2005">mardi 23</a>`)
+      expect(replacement2.outerHTML).toBe(
+        `<a href="/time/2/0/0/5/08/23/"><time datetime="2005-08-23" title="mardi 23 août 2005">mardi 23</time></a>`)
       expect(context.time.getYear()).toBe(2005)
       expect(context.time.getMonth()).toBe(8)
       expect(context.time.getDayOfMonth()).toBe(23)
@@ -157,7 +161,8 @@ describe("TimeReplacer", () => {
       const replacer = new TimeReplacer(timeRenderer)
       const replacement1 = replacer.valueReplacement(context, "23 18:45", currentContext)
       expect(replacement1.outerHTML)
-        .toBe(`<a href="/time/2/0/0/5/08/23/" title="mardi 23 août 2005 à 18:45">mardi 23 18:45</a>`)
+        .toBe(
+          `<a href="/time/2/0/0/5/08/23/"><time datetime="2005-08-23 18:45" title="mardi 23 août 2005 à 18:45">mardi 23 18:45</time></a>`)
       expect(context.time.getYear()).toBe(2005)
       expect(context.time.getMonth()).toBe(8)
       expect(context.time.getDayOfMonth()).toBe(23)

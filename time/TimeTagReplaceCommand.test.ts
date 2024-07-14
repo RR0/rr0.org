@@ -15,6 +15,6 @@ describe("HtmlTagReplaceCommand", () => {
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)
     await command.execute(context)
     expect(context.file.contents).toBe(
-      `<html><head><meta name="generator" content="ssg-api"></head><body><a href="/time/2/0/0/4/" datetime="2004">2004</a> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a></body></html>`)
+      `<html><head><meta name="generator" content="ssg-api"></head><body><a href="/time/2/0/0/4/"><time datetime="2004">2004</time></a> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a></body></html>`)
   })
 })

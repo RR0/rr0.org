@@ -36,16 +36,18 @@ export class TimeRenderer {
     const url = options.url && this.matchExistingTimeFile(absoluteTimeStr)
     const doc = file.document
     let replacement: HTMLElement | undefined
+    const timeEl = TimeReplacer.resolvedTime(context, context.time.toString())
+    if (title !== text) {
+      timeEl.title = title
+    }
+    timeEl.textContent = text
     if (url && url !== dirName) {
       const a = replacement = doc.createElement("a") as HTMLAnchorElement
       a.href = UrlUtil.absolute(url)
+      a.append(timeEl)
     } else {
-      replacement = TimeReplacer.resolvedTime(context, absoluteTimeStr)
+      replacement = timeEl
     }
-    if (title !== text) {
-      replacement.title = title
-    }
-    replacement.textContent = text
     return replacement
   }
 }

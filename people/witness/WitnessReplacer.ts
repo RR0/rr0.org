@@ -6,12 +6,29 @@ export class WitnessReplacer {
 
   private max = 60
 
-  replacement(context: HtmlRR0SsgContext, match: string, witnessName: string, witnessNumber: string): string {
+  /**
+   *
+   * @param context
+   * @param witnessName The actual name of the witness (even if to be anonymized)
+   * @param witnessId The unique id (a number typically) to identify the witness in this case.
+   */
+  replacement(context: HtmlRR0SsgContext, witnessName: string, witnessId?: string): HTMLElement {
+    const doc = context.file.document
+    const span = doc.createElement("span")
     if (this.now.getFullYear() - context.time.getYear() <= this.max) {
       const witnessLength = Math.max(6.5, witnessName.length)
-      return `<span class="witness" title="Nom du témoin anonymisé" style="width:${witnessLength}em"><a href="/FAQ.html#privacy">témoin${witnessNumber ? " n° " + witnessNumber : ""}</a></span>`
+      span.className = "witness"
+      span.title = "Nom du témoin anonymisé"
+      span.style.width = witnessLength + "em"
+      const privacyLink = doc.createElement("a")
+      privacyLink.href = "/FAQ.html#privacy"
+      privacyLink.textContent = `témoin${witnessId ? " n° " + witnessId : ""}`
+      span.append(privacyLink)
     } else {
-      return `<span class="witness-revelead" title="Nom du témoin révélé après ${this.max} ans">${witnessName}</span>`
+      span.className = "witness-revelead"
+      span.title = `Nom du témoin révélé après ${this.max} ans`
+      span.textContent = witnessName
     }
+    return span
   }
 }

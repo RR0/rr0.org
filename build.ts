@@ -8,7 +8,6 @@ import { HtmlRR0SsgContext, RR0SsgContextImpl } from "./RR0SsgContext"
 import { CLI } from "./util/cli/CLI"
 import {
   AngularExpressionReplaceCommand,
-  ClassDomRegexReplaceCommand,
   ClassDomReplaceCommand,
   ContentStepConfig,
   CopyStep,
@@ -246,15 +245,15 @@ timeService.getFiles().then(async (timeFiles) => {
   const sourceReplacerFactory = new SourceReplacerFactory(sourceRenderer, dataService, http, baseUrl)
   const contentsReplaceCommand = [
     databaseAggregationCommand,
-    new ClassDomReplaceCommand("event", new EventReplacerFactory(caseRenderer, sourceReplacerFactory)),
-    new ClassDomReplaceCommand("source", sourceReplacerFactory),
+    new ClassDomReplaceCommand(new EventReplacerFactory(caseRenderer, sourceReplacerFactory), "event"),
+    new ClassDomReplaceCommand(sourceReplacerFactory, "source"),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
-    new ClassDomReplaceCommand("people", new PeopleReplacerFactory(peopleService)),
-    new ClassDomReplaceCommand("place", new PlaceReplacerFactory()),
-    new ClassDomRegexReplaceCommand("temoin(.?)", new WitnessReplacerFactory()),
-    new ClassDomReplaceCommand("note", new NoteReplacerFactory()),
-    new ClassDomReplaceCommand("indexed", new IndexedReplacerFactory()),
+    new ClassDomReplaceCommand(new PeopleReplacerFactory(peopleService), "people"),
+    new ClassDomReplaceCommand(new PlaceReplacerFactory(), "place"),
+    new ClassDomReplaceCommand(new WitnessReplacerFactory(), "temoin", "temoin1", "temoin2", "temoin3"),
+    new ClassDomReplaceCommand(new NoteReplacerFactory(), "note"),
+    new ClassDomReplaceCommand(new IndexedReplacerFactory(), "indexed"),
     new UnitReplaceCommand(),
     new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
   ]

@@ -51,3 +51,13 @@ th {
 .image-container td, .left td, .left .side td, .right td, .right .side td {
   height: 100%
 }
+
+@media (prefers-color-scheme: dark) {
+  td, th {
+    border-color: grey
+  }
+
+  thead {
+    background-color: #2f2f2f;
+  }
+}

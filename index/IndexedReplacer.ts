@@ -18,7 +18,6 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
     let nextIndex: number
     if (!anchor) {
       const value = item.getAttribute("value")
-      const valueIndex = parseInt(value, 10)
       const idOrValue = item.getAttribute("id") || value
       let dateTime: string
       if (!idOrValue) {
@@ -29,7 +28,16 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
       anchorEl.id = id
       item.removeAttribute("id")
       if (!dateTime) {
-        item.setAttribute("value", id)
+        let valueStr: string
+        if (value) {
+          valueStr = value
+        } else {
+          const idNum = parseInt(id, 10)
+          if (idNum) {
+            valueStr = id
+          }
+        }
+        item.setAttribute("value", valueStr)
       }
       anchorEl.classList.add("index-anchor", "anchor")
       item.prepend(anchorEl)

@@ -1,5 +1,5 @@
-url,place,dateTime,description,sources,id
-https://rr0.org/time/1/9/5/5/09/index.html,,1955-09,Observation Ã  Bellingham (Washington) Cas Blue Book nÂ° 3743 non rÃ©solu.,"",1955-09
-https://rr0.org/time/1/9/5/5/09/index.html,,1955-09,"Observation Ã  Washington, D. C. Cas Blue Book nÂ° 3750 non rÃ©solu.","",1955-09
-https://rr0.org/time/1/9/5/5/09/index.html,,1955-09,Observation Ã  Rock Garden (Tennessee) Cas Blue Book nÂ° 3757 non rÃ©solu.,"",1955-09
-https://rr0.org/time/1/9/5/5/09/index.html,,1955-09,Observation de Jean-Gabriel GreslÃ© Ã  Cap Saint Jacques (Vietnam).,"",1955-09
+url;place;dateTime;description;sources;id;place.name;place.org;place.place.locations;place.place.elevation;place.place.dirName;place.place.data
+https://rr0.org/time/1/9/5/5/09/index.html;;1955-09;Observation à Bellingham (Washington) Cas Blue Book n° 3743 non résolu.;"";1955-09
+https://rr0.org/time/1/9/5/5/09/index.html;;1955-09;Observation à Washington, D. C. Cas Blue Book n° 3750 non résolu.;"";1955-09
+https://rr0.org/time/1/9/5/5/09/index.html;;1955-09;Observation à Rock Garden (Tennessee) Cas Blue Book n° 3757 non résolu.;"";1955-09
+https://rr0.org/time/1/9/5/5/09/index.html;;1955-09;Observation de Jean-Gabriel Greslé à Cap Saint Jacques (Vietnam).;"";1955-09

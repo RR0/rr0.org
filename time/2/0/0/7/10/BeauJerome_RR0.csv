@@ -1,3 +1,3 @@
-url,place,dateTime,description,sources,id
-https://rr0.org/time/2/0/0/7/10/index.html,,2007-10,"A Gardanne (Bouches-du-Rhône, Provence Alpes Cote d'azur), observation d'un cercle lumineux se déplaçant selon une trajectoire descendante. Aucun bruit. GEIPAN: PAN classé ?.","",2007-10
-https://rr0.org/time/2/0/0/7/10/index.html,,2007-10,"Avec la commémoration du lancement de Sputnik, l'exploration spatiale fête son 50ème anniversaire.","",2007-10
+url;place;dateTime;description;sources;id;place.name;place.org;place.place.locations;place.place.elevation;place.place.dirName;place.place.data
+https://rr0.org/time/2/0/0/7/10/index.html;;2007-10;A Gardanne (Bouches-du-Rh�ne,Provence Alpes Cote d'azur),observation d'un cercle lumineux se d�pla�ant selon une trajectoire descendante. Aucun bruit. GEIPAN: PAN class� ?.;"";2007-10
+https://rr0.org/time/2/0/0/7/10/index.html;;2007-10;Avec la comm�moration du lancement de Sputnik, l'exploration spatiale f�te son 50�me anniversaire.;"";2007-10

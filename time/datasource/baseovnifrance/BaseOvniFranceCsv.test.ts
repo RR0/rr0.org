@@ -50,7 +50,7 @@ ${case1.id},http://baseovnifrance.free.fr/listgen.php?typlist=20&page=0&numobs=2
     const csvMapper = new BaseOvniFranceCaseSummaryMapper(baseOvniFranceDatasource.baseUrl,
       baseOvniFranceDatasource.searchPath,
       baseOvniFranceDatasource.authors)
-    const cases = fileMapper.parse(context, data)
+    const cases = fileMapper.parse(data)
       .map(csvCase => csvMapper.map(context, csvCase, dataDate))
       .sort(baseOvniFranceSortComparator)
     const expected = baseOvniFranceTestCases.sort(baseOvniFranceSortComparator)

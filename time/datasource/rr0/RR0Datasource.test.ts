@@ -6,9 +6,9 @@ import { DatasourceTestCase } from "../DatasourceTestCase"
 import { rr0Mapping } from "./RR0Mapping"
 import { RR0CaseSummary } from "./RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { Source } from "../../../source/Source"
 import { HtmlTag } from "../../../util/HtmlTag"
+import { RR0CaseMapping } from "./RR0CaseMapping"
 
 describe("RR0CaseSource", () => {
 

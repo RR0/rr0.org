@@ -1,8 +1,10 @@
-import { saintAndreDeCubzac } from "./saintandredecubzac/SaintAndreDeCubzac"
+import { stAndreDeCubzac } from "./StAndreDeCubzac/StAndreDeCubzac"
 import { City } from "../../../../../country/region/department/city/City"
-import { etauliers } from "./etauliers/Etauliers"
+import { etauliers } from "./Etauliers/Etauliers"
+import { cestas } from "./Cestas/Cestas"
 
 export const girondeCities: City[] = [
+  cestas,
   etauliers,
-  saintAndreDeCubzac
+  stAndreDeCubzac
 ]

@@ -1,8 +1,37 @@
 import { Datasource } from "./Datasource"
 import { CaseMapper } from "./CaseMapper"
-import { RR0UfoCase } from "./RR0UfoCase"
+import { FileDatasource } from "./FileDatasource"
 
-export interface CaseMapping<C, S extends RR0UfoCase, T> {
-  datasource: Datasource<S>
-  mapper: CaseMapper<C, S, T>
+import { ChronologyReplacerActions } from "./ChronologyReplacerActions"
+
+/**
+ * @param C The context type to use.
+ * @param S The source case type (FuforaCaseSummary for instance).
+ * @param T The target case type (RR0CaseSummary for instance).
+ */
+export interface CaseMapping<C, S, T> {
+  /**
+   * The source to fetch cases from.
+   *
+   * @param S The source case type.
+   */
+  readonly datasource: Datasource<S>
+
+  /**
+   * The source to read/write cases from (for backup).
+   *
+   * @param S The source case type.
+   */
+  readonly backupDatasource?: FileDatasource<S>
+
+  /**
+   * Maps source case to target case.
+   *
+   * @param C The context type
+   * @param S The source case type
+   * @param T The target case type
+   */
+  readonly mapper: CaseMapper<C, S, T>
+
+  readonly actions: ChronologyReplacerActions
 }

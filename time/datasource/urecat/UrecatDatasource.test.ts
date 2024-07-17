@@ -6,8 +6,8 @@ import { urecatRR0Mapping } from "./UrecatRR0Mapping"
 import { urecatTestCases } from "./UrecatTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("UrecatCaseSource", () => {
 

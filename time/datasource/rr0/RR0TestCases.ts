@@ -1,6 +1,6 @@
 import { TimeContext } from "../../TimeContext"
 import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { rr0Datasource } from "./RR0Mapping"
+import { rr0HttpDatasource } from "./RR0Mapping"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { UrlUtil } from "../../../util/url/UrlUtil"
 import { Source } from "../../../source/Source"
@@ -8,8 +8,8 @@ import { RR0HttpDatasource } from "./RR0HttpDatasource"
 
 function testCase(urlPath: string, dateTime: TimeContext, description: string, sources: Source[],
                   place?: NamedPlace): RR0CaseSummary {
-  const path = UrlUtil.join(rr0Datasource.searchPath, urlPath)
-  const url = new URL(path, rr0Datasource.baseUrl)
+  const path = UrlUtil.join(rr0HttpDatasource.searchPath, urlPath)
+  const url = new URL(path, rr0HttpDatasource.baseUrl)
   const id = RR0HttpDatasource.id(dateTime, place)
   return {url, place, dateTime, description, sources, id}
 }

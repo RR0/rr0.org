@@ -11,6 +11,9 @@ import {
   GeipanCaseClassification_minus
 } from "./GeipanCaseClassification"
 import { GeipanDatasource } from "./GeipanDatasource"
+import { FranceDepartementCode } from "../../../org/eu/fr/region/FranceDepartementCode"
+import { FranceRegionCode } from "../../../org/eu/fr/region/FranceRegionCode"
+import { CountryCode } from "../../../org/country/CountryCode"
 
 interface QueryParameters {
   /**
@@ -27,16 +30,23 @@ interface QueryParameters {
   field_type_de_cas_target_id: "All"
   "select-category-export": "nothing"
   field_departement_target_id: string
-  "field_latitude_value[max]": string
-  "field_latitude_value[min]": string
-  "field_longitude_value[max]": string
-  "field_longitude_value[min]": string
+  "field_latitude_value[max]"?: string
+  "field_latitude_value[min]"?: string
+  "field_longitude_value[max]"?: string
+  "field_longitude_value[min]"?: string
   field_phenomene_target_id: string
   field_agregation_index_value: string
+  page?: string
 }
 
+/**
+ * This datasource will issue queries like
+ * https://geipan.fr/fr/recherche/cas?field_agregation_index_value=&field_departement_target_id=&field_type_de_cas_target_id=All&field_phenomene_target_id=&field_date_d_observation_value%5Bmin%5D=2019%2F07%2F01&field_date_d_observation_value%5Bmax%5D=2019%2F12%2F31&field_document_existe_ou_pas_value=All&select-category-export=nothing
+ */
 export class GeipanHttpDatasource extends GeipanDatasource {
-  protected static readonly dateFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
+
+  protected static readonly caseFormat = /(.+?)\s*\(([\d-AB]+)\)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
+  protected static readonly dateFormat = /(.+?)\s+(\d+)(?:.(\d+)(?:.(\d+))?)?/
   protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl: URL, readonly searchPath: string) {
@@ -49,28 +59,33 @@ export class GeipanHttpDatasource extends GeipanDatasource {
     const dayStartStr = day ? String(day).padStart(2, "0") : "01"
     const dayEndStr = day ? String(day).padStart(2, "0") : "31"
     const month = time.getMonth()
-    const year = time.getYear()
-    const monthStr = String(month).padStart(2, "0")
+    const monthStartStr = month ? String(month).padStart(2, "0") : "01"
+    const monthEndStr = month ? String(month).padStart(2, "0") : "12"
+    const yearStart = time.getYear()
+    const yearEnd = time.getYear()
     const queryParams: QueryParameters = {
-      "field_latitude_value[max]": "",
-      "field_latitude_value[min]": "",
-      "field_longitude_value[max]": "",
-      "field_longitude_value[min]": "",
       field_phenomene_target_id: "",
       field_agregation_index_value: "",
       field_departement_target_id: "",
-      "field_date_d_observation_value[min]": `${year}/${monthStr}/${dayStartStr}`,
-      "field_date_d_observation_value[max]": `${year}/${monthStr}/${dayEndStr}`,
+      "field_date_d_observation_value[min]": `${yearStart}/${monthStartStr}/${dayStartStr}`,
+      "field_date_d_observation_value[max]": `${yearEnd}/${monthEndStr}/${dayEndStr}`,
       field_document_existe_ou_pas_value: "All",
       field_type_de_cas_target_id: "All",
       "select-category-export": "nothing"
     }
-    const queryParamsStr = UrlUtil.objToQueryParams(queryParams)
+    let nextEl: Element
+    let result = []
     const searchUrl = new URL(this.searchPath, this.baseUrl)
-    searchUrl.search = queryParamsStr
-    const doc = await this.http.get(searchUrl.href, {headers: {accept: "text/html;charset=utf-8"}})
-    const rowEls = doc.querySelectorAll(".views-row")
-    return Array.from(rowEls).map(row => this.getFromRow(context, row))
+    let page = 0
+    do {
+      queryParams.page = "," + (++page)
+      searchUrl.search = UrlUtil.objToQueryParams(queryParams)
+      const doc = await this.http.get(searchUrl, {headers: {accept: "text/html;charset=utf-8"}})
+      const rowEls = doc.querySelectorAll(".views-row")
+      result = result.concat(Array.from(rowEls).map(row => this.getFromRow(context, row)))
+      nextEl = doc.querySelector(".pager__item--next")
+    } while (nextEl)
+    return result
   }
 
   protected getFromRow(context: RR0SsgContext, row: Element): GeipanCaseSummary {
@@ -78,12 +93,22 @@ export class GeipanHttpDatasource extends GeipanDatasource {
     const caseLink = linkField.firstElementChild as HTMLAnchorElement
     const url = new URL(caseLink.href, this.baseUrl)
     const caseField = row.querySelector(".cas_title")
-    const fields = GeipanHttpDatasource.dateFormat.exec(caseField.textContent.trim())
-    assert.ok(fields,
-      `Case title "${caseField.textContent}" does not match pattern ${GeipanHttpDatasource.dateFormat.source}`)
-    const city = fields[1].trim()
-    const zoneCode = fields[2] as GeipanZoneCode
-    const dateTime = this.getTime(context, fields, 5)
+    const caseText = caseField.textContent.trim()
+    let fields = GeipanHttpDatasource.caseFormat.exec(caseText)
+    let city: string
+    let zoneCode: FranceDepartementCode | FranceRegionCode | CountryCode.fr
+    let dateTime: TimeContext
+    if (fields) {
+      city = fields[1].trim()
+      zoneCode = fields[2] as GeipanZoneCode
+      dateTime = this.getTime(context, fields, 5)
+    } else {
+      fields = GeipanHttpDatasource.dateFormat.exec(caseText)
+      city = fields[1].trim()
+      assert.ok(fields,
+        `Case title "${caseField.textContent}" does not match pattern ${GeipanHttpDatasource.caseFormat.source} nor ${GeipanHttpDatasource.dateFormat.source}`)
+      dateTime = this.getTime(context, fields, 4)
+    }
     const caseNumber = url.pathname.substring(url.pathname.lastIndexOf("/") + 1)
 
     function getLabeledText(clazz: string) {

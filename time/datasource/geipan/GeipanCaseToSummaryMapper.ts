@@ -8,7 +8,7 @@ import { GeipanCase } from "./GeipanCase"
 /**
  * Maps a GEIPAN CSV case to a GEIPAN summary case.
  */
-export class GeipanCaseSummaryMapper implements CaseMapper<RR0SsgContext, GeipanCase, GeipanCaseSummary> {
+export class GeipanCaseToSummaryMapper implements CaseMapper<RR0SsgContext, GeipanCase, GeipanCaseSummary> {
 
   constructor(readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]) {
   }

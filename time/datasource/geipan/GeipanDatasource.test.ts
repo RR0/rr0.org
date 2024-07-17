@@ -4,9 +4,9 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { geipanTestCaseSummaries } from "./GeipanTestCases"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
 import { geipanRR0Mapping } from "./GeipanRR0Mapping"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("GeipanCaseSource", () => {
 

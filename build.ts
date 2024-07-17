@@ -4,7 +4,7 @@ import { PeopleDirectoryStep } from "./people/PeopleDirectoryStep"
 import { promise as glob } from "glob-promise"
 import { GooglePlaceService } from "./place/GooglePlaceService"
 import { OrganizationService } from "./org/OrganizationService"
-import { HtmlRR0SsgContext, RR0SsgContextImpl } from "./RR0SsgContext"
+import { RR0SsgContextImpl } from "./RR0SsgContext"
 import { CLI } from "./util/cli/CLI"
 import {
   AngularExpressionReplaceCommand,
@@ -55,7 +55,7 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/indexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
-import { rr0Datasource } from "./time/datasource/rr0/RR0Mapping"
+import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
@@ -69,8 +69,13 @@ import { TimeService } from "./time/TimeService"
 import { CaseService } from "./science/crypto/ufo/enquete/dossier/CaseService"
 import { TimeReplacer } from "./time/TimeReplacer"
 import { UnitReplaceCommand } from "./value/UnitReplaceCommand"
+import { BookContentVisitor } from "./book/BookContentVisitor"
+import { ChronologyReplacerActions } from "./time/datasource/ChronologyReplacerActions"
 
 interface RR0BuildArgs {
+  /**
+   * If the search index must be regenerated or not.
+   */
   reindex?: "true" | "false"
 
   /**
@@ -167,19 +172,6 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
 
 const timeService = new TimeService()
 
-class BookContentVisitor implements ContentVisitor {
-
-  constructor(protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
-  }
-
-  visit(context: HtmlRR0SsgContext): void {
-    const bookMeta = this.bookMeta.get(context.file.name)
-    Object.assign(context.file.meta, bookMeta)
-    const bookLinks = this.bookLinks.get(context.file.name)
-    Object.assign(context.file.links, bookLinks)
-  }
-}
-
 timeService.getFiles().then(async (timeFiles) => {
   context.setVar("timeFilesCount", timeFiles.length)
   const peopleFiles = await glob("people/?/*")
@@ -220,10 +212,14 @@ timeService.getFiles().then(async (timeFiles) => {
   const baseUrl = "https://rr0.org"
   const sourceRenderer = new SourceRenderer()
   const caseRenderer = new CaseSummaryRenderer(sourceRenderer)
+  // const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
+  const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
   const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
     new ChronologyReplacerFactory(timeService,
-      [/*geipanRR0Mapping/*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/],
-      rr0Datasource, {merge: false, save: true}, caseRenderer)
+      [/*new GeipanRR0Mapping(actions),
+        /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
+      ],
+      rr0Mapping, actions, caseRenderer)
   )
   const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),

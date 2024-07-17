@@ -31,9 +31,9 @@ export class RR0HttpDatasource extends RR0Datasource {
     return cases
   }
 
-  async fetch(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
+  protected async readCases(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
     const queryUrl = this.queryUrl(context)
-    const doc = await this.http.get(queryUrl.href)
+    const doc = await this.http.get(queryUrl)
     const rowEls = doc.querySelectorAll("ul.indexed li")
     const rows = Array.from(rowEls)
     return this.getFromRows(context, rows)

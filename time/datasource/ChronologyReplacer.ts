@@ -1,36 +1,30 @@
 import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
-import { CaseMapping } from "./CaseMapping"
-import { CsvMapper } from "./CsvMapper"
-import fs from "fs"
-import path from "path"
-import { StringUtil } from "../../util/string/StringUtil"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
-import { RR0Datasource } from "./rr0/RR0Datasource"
 import { Datasource } from "./Datasource"
-import { RR0UfoCase } from "./RR0UfoCase"
+import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
+import { ChronologyReplacerActions } from "./ChronologyReplacerActions"
+import { RR0Mapping } from "./rr0/RR0Mapping"
 
-export interface RR0CaseMapping<S extends RR0UfoCase> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {
-}
-
-export type ChronologyReplacerActions = {
-  readonly merge: boolean
-  readonly save: boolean
-}
-
+/**
+ * Replaces a (ul) tag from (chronology) files with case summaries from external datasources.
+ */
 export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLUListElement> {
-
+  /**
+   * Remember already processed datasources.
+   *
+   * @protected
+   */
   protected readonly done = new Set<string>()
 
   constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: CaseSummaryRenderer,
-              protected actions: ChronologyReplacerActions, protected rr0Datasource: RR0Datasource) {
+              protected actions: ChronologyReplacerActions, protected rr0Mapping: RR0Mapping) {
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {
-    element.classList.add("indexed")
-    // TODO: Merge with existing those items
-    if (this.actions.save || this.actions.merge) {
+    element.classList.add("indexed")  // Make sure the user can share an anchor to a list item.
+    if (this.actions.read.length > 0 || this.actions.write.length > 0) {
       await this.aggregate(context, element)
     }
     return element
@@ -38,36 +32,69 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
 
   protected async aggregate(context: HtmlRR0SsgContext, element: HTMLUListElement) {
     const existingItems = Array.from(element.children)
-    // TODO: Get cases from local RR0, not the remote one
-    const existingCases = this.rr0Datasource.getFromRows(context, existingItems)
+    const existingCases = this.rr0Mapping.datasource.getFromRows(context, existingItems)
     const casesToAdd: RR0CaseSummary[] = []
     for (const mapping of this.mappings) {
       const datasource = mapping.datasource
       const datasourceKey = context.file.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
-        const datasourceCases = await datasource.fetch(context)
-        const fetchTime = new Date()
-        if (this.actions.save) {
-          this.save(context, datasourceCases, fetchTime, datasource)
-        }
-        if (this.actions.merge) {
-          const toAddFromThisDatasource = this.merge(context, datasourceCases, fetchTime, element, mapping,
-            existingCases)
-          casesToAdd.concat(toAddFromThisDatasource)
-        }
-        this.done.add(datasourceKey)
+        await this.aggregateDatasource(mapping, context, datasource, element, existingCases, casesToAdd, datasourceKey)
       }
     }
-    if (this.actions.merge) {
+    const merge = this.actions.write.includes("pages")
+    if (merge) {
       const allCases = existingCases.concat(casesToAdd)
       const items = allCases.map(c => this.renderer.render(context, c))
       for (const item of items) {
         element.append(item)
       }
     }
-    if (this.actions.save) {
-      this.save(context, existingCases.concat(casesToAdd), new Date(), this.rr0Datasource)
+    if (this.actions.write.includes("backup")) {
+      this.rr0Mapping.backupDatasource.save(context, existingCases.concat(casesToAdd), new Date())
     }
+  }
+
+  protected async aggregateDatasource(
+    mapping: RR0CaseMapping<any>, context: HtmlRR0SsgContext, datasource: Datasource<any>, element: HTMLUListElement,
+    existingCases: RR0CaseSummary[], casesToAdd: RR0CaseSummary[], datasourceKey: string) {
+    let fetched: any[]
+    const backupDatasource = mapping.backupDatasource
+    for (const readMethod of this.actions.read) {
+      if (fetched) {
+        break
+      }
+      switch (readMethod) {
+        case "backup":
+          try {
+            fetched = await backupDatasource.fetch(context)
+          } catch (e) {
+            if (e.code !== "ENOENT") {
+              throw e
+            } else {
+              context.debug("No backup file to read for " + context.time)
+            }
+          }
+          break
+        case "fetch":
+          fetched = await datasource.fetch(context)
+          break
+        default:
+          throw new Error(`Unsupported "${(this.actions.read)}" read method`)
+      }
+    }
+    const fetchTime = new Date()
+    for (const writeMethod of this.actions.write) {
+      switch (writeMethod) {
+        case "backup":
+          backupDatasource.save(context, fetched, fetchTime)
+          break
+        case "pages":
+          const toAddFromThisDatasource = this.merge(context, fetched, fetchTime, element, mapping, existingCases)
+          casesToAdd.concat(toAddFromThisDatasource)
+          break
+      }
+    }
+    this.done.add(datasourceKey)
   }
 
   protected merge(
@@ -86,15 +113,5 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
       }
     }
     return casesToAdd
-  }
-
-  protected save(context: HtmlRR0SsgContext, datasourceCases: any[], fetchTime: Date, datasource: Datasource<any>) {
-    const csvContents = new CsvMapper().mapAll(context, datasourceCases, fetchTime)
-    const specialChars = /[ \-?!&*#().:\/\\;=°',]/g
-    const authorsStr = datasource.authors.map(
-      author => StringUtil.removeAccents(author).replace(specialChars, "")).join("-")
-    const fileName = path.join(path.dirname(context.file.name),
-      authorsStr + "_" + StringUtil.removeAccents(datasource.copyright).replace(specialChars, "-") + ".csv")
-    fs.writeFileSync(fileName, csvContents, {encoding: "utf-8"})
   }
 }

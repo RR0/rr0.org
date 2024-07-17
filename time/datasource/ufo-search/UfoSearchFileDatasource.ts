@@ -21,7 +21,7 @@ export class UfoSearchFileDatasource extends UfoSearchDatasource implements Data
   }
 
   protected async readCases(context: RR0SsgContext): Promise<UfoSearchCase[]> {
-    const file = FileContents.read(context, this.fileName, "utf-8")
+    const file = FileContents.read(this.fileName, "utf-8")
     return this.fileMapper.parse(context, file.contents)
   }
 }

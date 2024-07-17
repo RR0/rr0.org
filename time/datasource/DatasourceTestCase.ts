@@ -1,12 +1,12 @@
 import { expect } from "@javarome/testscript"
 import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
-import { RR0CaseMapping } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
 import { Source } from "../../source/Source"
 import { RR0UfoCase } from "./RR0UfoCase"
 import { SourceRenderer } from "../SourceRenderer"
+import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
 
 export abstract class DatasourceTestCase<S extends RR0UfoCase> {
 

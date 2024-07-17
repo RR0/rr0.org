@@ -1,24 +1,34 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { GeipanCaseSummary } from "./GeipanCaseSummary"
 import { Datasource } from "../Datasource"
-import { CsvMapper } from "../CsvMapper"
-import { GeipanCase } from "./GeipanCase"
-import { GeipanCaseSummaryMapper } from "./GeipanCaseSummaryMapper"
+import { GeipanCaseToSummaryMapper } from "./GeipanCaseToSummaryMapper"
 import { geipanHttpDatasource } from "./GeipanRR0Mapping"
-import { FileContents } from "ssg-api"
 import { GeipanDatasource } from "./GeipanDatasource"
+import { FileDatasource } from "../FileDatasource"
+import { CsvFileSource } from "../CsvFileSource"
+import { GeipanSummaryToCaseMapper } from "./GeipanSummaryToCaseMapper"
+import { GeipanCase } from "./GeipanCase"
 
-export class GeipanFileDatasource extends GeipanDatasource implements Datasource<GeipanCaseSummary> {
+export class GeipanFileDatasource extends GeipanDatasource implements Datasource<GeipanCaseSummary>, FileDatasource<GeipanCaseSummary> {
 
-  constructor(readonly fileName: string) {
+  protected readonly file = new CsvFileSource<GeipanCase>("latin1", ";")
+  private writeMapper = new GeipanSummaryToCaseMapper(geipanHttpDatasource.baseUrl,
+    geipanHttpDatasource.searchPath,
+    geipanHttpDatasource.authors)
+
+  constructor(readonly defaultFileName: string, protected encoding: BufferEncoding) {
     super()
   }
 
-  protected async readCases(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {
-    const fileMapper = new CsvMapper<GeipanCase>(";")
-    const file = FileContents.read(context, this.fileName, "latin1")
-    const csvMapper = new GeipanCaseSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,
+  save(context: HtmlRR0SsgContext, fetched: GeipanCaseSummary[], fetchTime: Date): void {
+    const nativeCases = fetched.map(summary => this.writeMapper.map(context, summary, fetchTime))
+    return this.file.write<GeipanCase>(context, nativeCases, fetchTime, this)
+  }
+
+  protected async readCases(context: HtmlRR0SsgContext): Promise<GeipanCaseSummary[]> {
+    const file = await this.file.read(context, this)
+    const csvMapper = new GeipanCaseToSummaryMapper(geipanHttpDatasource.baseUrl, geipanHttpDatasource.searchPath,
       geipanHttpDatasource.authors)
-    return fileMapper.parse(context, file.contents).map(csvCase => csvMapper.map(context, csvCase, file.lastModified))
+    return this.file.mapper.parse(file.contents).map(csvCase => csvMapper.map(context, csvCase, file.lastModified))
   }
 }

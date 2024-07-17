@@ -9,6 +9,9 @@ import { TimeContext } from "../time/TimeContext"
 import { OnlineSource } from "./OnlineSource"
 import { SourceRenderer } from "./SourceRenderer"
 
+/**
+ * Replaces a source tag with the actual source web UI.
+ */
 export class SourceReplacer {
   /**
    * Source counter in the scope of the current page/context.

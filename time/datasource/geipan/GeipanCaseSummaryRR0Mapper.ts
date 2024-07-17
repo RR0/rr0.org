@@ -59,8 +59,9 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
   protected getPlace(context: HtmlRR0SsgContext, sourceCase: GeipanCaseSummary): NamedPlace {
     const depCode = sourceCase.zoneCode
     assert.ok(depCode, `Should at least have one of department,region or country code`)
-    const placeItems = /(.+?)(:?\s+\((.+)\))?$/.exec(sourceCase.city)
-    const title = placeItems[1]
+    const placeItems = /(.+?)(:?\s+\(([A-Z]+)\))?(:?\s+\((\d+)\))?$/.exec(sourceCase.city)
+    const prefix = placeItems[3] ? placeItems[3] + " " : ""
+    const title = prefix + placeItems[1]
     let org: Organization
     if (title === "NATIONAL") {
       org = france

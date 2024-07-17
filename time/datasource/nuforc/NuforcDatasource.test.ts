@@ -5,8 +5,8 @@ import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { nuforcRR0Mapping } from "./NuforcRR0Mapping"
 import { nuforcTestCases } from "./NuforcTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("NuforcCaseSource", () => {
 

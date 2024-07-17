@@ -10,6 +10,7 @@ import { chirensMessages } from "./Chirens/ChirensMessages"
 import { saintVerandMessages } from "./SaintVerand/SaintVerandMessages"
 import { allevardMessages } from "./Allevard/AllevardMessages"
 import { venonMessages } from "./Venon/VenonMessages"
+import { renageMessages } from "./Renage/RenageMessages"
 
 type DepCityMessages = { [key in IsereCityCode]: CityMessages }
 export const isereMessages = DepartmentMessages.create<DepCityMessages>("Isère", {
@@ -17,6 +18,7 @@ export const isereMessages = DepartmentMessages.create<DepCityMessages>("Isère"
   [IsereCityCode.Chirens]: chirensMessages,
   [IsereCityCode.Domene]: domeneMessages,
   [IsereCityCode.Meylan]: meylanMessages,
+  [IsereCityCode.Renage]: renageMessages,
   [IsereCityCode.SaintGeoireEnValdaine]: saintGeoireEnValdaineMessages,
   [IsereCityCode.SaintMarcellin]: saintMarcellinMessages,
   [IsereCityCode.SaintVerand]: saintVerandMessages,

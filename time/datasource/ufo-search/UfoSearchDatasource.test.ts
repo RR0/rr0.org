@@ -4,9 +4,9 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { UfoSearchCase } from "./UfoSearchCase"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { ufoSearchTestCases } from "./UfoSearchTestCases"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
 import { ufoSearchRR0Mapping } from "./UfoSearchMapping"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("UfoSearchCaseSource", () => {
 

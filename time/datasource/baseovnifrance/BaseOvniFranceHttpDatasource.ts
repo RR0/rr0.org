@@ -52,7 +52,7 @@ export class BaseOvniFranceHttpDatasource extends BaseOvniFranceDatasource {
 
   protected async readCases(context: RR0SsgContext): Promise<BaseOvniFranceCaseSummary[]> {
     const {formData, queryUrl} = this.queryUrl(context)
-    const page = await this.http.submitForm<string>(queryUrl.href, formData, {accept: "text/html;charset=iso-8859-1"})
+    const page = await this.http.submitForm<string>(queryUrl, formData, {accept: "text/html;charset=iso-8859-1"})
     const doc = new JSDOM(page).window.document.documentElement
     const rowEls = doc.querySelectorAll("#listgen2 tbody tr")
     const rows = Array.from(rowEls)

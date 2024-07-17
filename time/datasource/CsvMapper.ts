@@ -76,10 +76,9 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
   /**
    * Converts CSV contents to a list of cases.
    *
-   * @param context
    * @param data
    */
-  parse(context: RR0SsgContext, data: string): S[] {
+  parse(data: string): S[] {
     let eol = data.indexOf("\n")
     const header = data.substring(0, eol)
     data = data.substring(eol + 1).replaceAll(`""`, "''")

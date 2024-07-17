@@ -1,17 +1,19 @@
 import { DomReplacer, ReplacerFactory } from "ssg-api"
-import { ChronologyReplacer, ChronologyReplacerActions, RR0CaseMapping } from "./ChronologyReplacer"
+import { ChronologyReplacer } from "./ChronologyReplacer"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
-import { RR0Datasource } from "./rr0/RR0Datasource"
 import { TimeService } from "../TimeService"
+import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
+import { ChronologyReplacerActions } from "./ChronologyReplacerActions"
+import { RR0Mapping } from "./rr0/RR0Mapping"
 
 export class ChronologyReplacerFactory implements ReplacerFactory<DomReplacer> {
 
   protected readonly replacer: ChronologyReplacer
 
-  constructor(protected timeService: TimeService, datasources: RR0CaseMapping<any>[], rr0Datasource: RR0Datasource,
+  constructor(protected timeService: TimeService, datasources: RR0CaseMapping<any>[], rr0Mapping: RR0Mapping,
               actions: ChronologyReplacerActions, caseRenderer: CaseSummaryRenderer) {
-    this.replacer = new ChronologyReplacer(datasources, caseRenderer, actions, rr0Datasource)
+    this.replacer = new ChronologyReplacer(datasources, caseRenderer, actions, rr0Mapping)
   }
 
   /**

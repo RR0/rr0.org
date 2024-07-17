@@ -1,12 +1,11 @@
-import { RR0SsgContext } from "../../RR0SsgContext"
-import { RR0UfoCase } from "./RR0UfoCase"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 
 /**
  * A source for cases.
  *
- * @param T The source case type.
+ * @param S The source case type.
  */
-export interface Datasource<S extends RR0UfoCase> {
+export interface Datasource<S> {
   /**
    * The datasource authors to mention as a source.
    */
@@ -21,6 +20,7 @@ export interface Datasource<S extends RR0UfoCase> {
    * Get cases matching a context, in the datasource native format.
    *
    * @param context
+   * @return Promise<S[]>
    */
-  fetch(context: RR0SsgContext): Promise<S[]>
+  fetch(context: HtmlRR0SsgContext): Promise<S[]>
 }

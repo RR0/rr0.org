@@ -4,9 +4,9 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { essexPoliceTestCases } from "./EssexPoliceTestCases"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
 import { essexPoliceRR0Mapping } from "./EssexPoliceMapping"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("EssexPoliceCaseSource", () => {
 

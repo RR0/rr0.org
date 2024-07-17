@@ -3,10 +3,10 @@ import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
 import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { baseOvniFranceRR0Mapping } from "./BaseOvniFranceRR0Mapping"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("BaseOvniFranceCaseSource", () => {
 

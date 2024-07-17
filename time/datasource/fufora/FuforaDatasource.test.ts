@@ -4,9 +4,9 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { fuforaTestCases } from "./FuforaTestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
 import { fuforaRR0Mapping } from "./FuforaRR0Mapping"
-import { RR0CaseMapping } from "../ChronologyReplacer"
 import { TimeContext } from "../../TimeContext"
 import { FuforaCaseSummary } from "./FuforaCaseSummary"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
 
 describe("FuforaCaseSource", () => {
 

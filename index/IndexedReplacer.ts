@@ -37,7 +37,9 @@ export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
             valueStr = id
           }
         }
-        item.setAttribute("value", valueStr)
+        if (valueStr) {
+          item.setAttribute("value", valueStr)
+        }
       }
       anchorEl.classList.add("index-anchor", "anchor")
       item.prepend(anchorEl)

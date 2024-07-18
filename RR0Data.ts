@@ -58,4 +58,9 @@ export interface RR0Data {
    * External data from which this data was devised.
    */
   readonly sources?: Source[]
+
+  /**
+   * Keywords about that data.
+   */
+  tags?: string[]
 }

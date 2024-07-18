@@ -1,2 +1,2 @@
-url;place;dateTime;description;sources;id;place.name;place.org;place.place.locations;place.place.elevation;place.place.dirName;place.place.data
-https://rr0.org/time/1/9/9/0/03/index.html;;1990-03;,la nuit,en Belgique,observation d'ovni triangulaire Lambrecht: "Rapport sur les observations d'OVNIs au cours de la nuit du 30 au 31 mars 1990".;"";1990-03
+url,place,dateTime,description,sources,id,place.name,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
+https://rr0.org/time/1/9/9/0/03/index.html,,1990-03,", la nuit, en Belgique, observation d'ovni triangulaire Lambrecht: ""Rapport sur les observations d'OVNIs au cours de la nuit du 30 au 31 mars 1990"".","",1990-03

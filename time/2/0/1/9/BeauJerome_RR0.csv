@@ -1,3 +1,3 @@
-url;place;dateTime;description;sources;id
-https://rr0.org/time/2/0/1/9/index.html;;2019;La Navy met en place un mécanisme de signalement standardisé des PANs "Preliminary Assessment: Unidentified Aerial Phenomena", Office of the Director of National Intelligence, 2021-06-25.;"";2019
-https://rr0.org/time/2/0/1/9/index.html;;2019;En Argentine, création du CIAE.;"";2019
+url,place,dateTime,description,sources,id,place.name,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
+https://rr0.org/time/2/0/1/9/index.html,,2019,"La Navy met en place un mÃ©canisme de signalement standardisÃ© des PANs ""Preliminary Assessment: Unidentified Aerial Phenomena"", Office of the Director of National Intelligence, 2021-06-25.","",2019
+https://rr0.org/time/2/0/1/9/index.html,,2019,"En Argentine, crÃ©ation du CIAE.","",2019

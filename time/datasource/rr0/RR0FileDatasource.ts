@@ -11,7 +11,7 @@ import { RR0Datasource } from "./RR0Datasource"
 
 export class RR0FileDatasource extends RR0Datasource implements Datasource<RR0CaseSummary>, FileDatasource<RR0CaseSummary> {
 
-  protected readonly file = new CsvFileSource("latin1", ";")
+  protected readonly file = new CsvFileSource()
 
   constructor(protected encoding: BufferEncoding = "utf-8") {
     super()

@@ -10,7 +10,7 @@ export class CsvFileSource<S> extends FileSource {
 
   readonly mapper: CsvMapper<S>
 
-  constructor(encoding: BufferEncoding, separator: string) {
+  constructor(encoding: BufferEncoding = "utf-8", separator = ",") {
     super(encoding)
     this.mapper = new CsvMapper<S>(separator)
   }

@@ -1,4 +1,4 @@
-url;place;dateTime;description;sources;id;place.name;place.org;place.place.locations;place.place.elevation;place.place.dirName;place.place.data
-https://rr0.org/time/1/9/8/9/08/index.html;;1989-08;Le satellite europÈen Hipparcos (catalogue des Ètoiles) est lancÈ par Ariane 4.;"";1989-08
-https://rr0.org/time/1/9/8/9/08/index.html;;1989-08;Au Conquet (FinistËre), 1 gendarme de retour de service et son Èpouse observent au-dessus des b‚timents de la brigade une grosse lueur orangÈe (4 fois plus grosse qu'une Ètoile). Soudain, le phÈnomËne part brusquement ‡ grande vitesse jusqu'‡ perte de vue SEPRA: Cas de type C.;"";1989-08
-https://rr0.org/time/1/9/8/9/08/index.html;;1989-08;Survol de Neptune par Voyager 2.;"";1989-08
+url,place,dateTime,description,sources,id,place.name,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
+https://rr0.org/time/1/9/8/9/08/index.html,,1989-08,Le satellite europ√©en Hipparcos (catalogue des √©toiles) est lanc√© par Ariane 4.,"",1989-08
+https://rr0.org/time/1/9/8/9/08/index.html,,1989-08,"Au Conquet (Finist√®re), 1 gendarme de retour de service et son √©pouse observent au-dessus des b√¢timents de la brigade une grosse lueur orang√©e (4 fois plus grosse qu'une √©toile). Soudain, le ph√©nom√®ne part brusquement √† grande vitesse jusqu'√† perte de vue SEPRA: Cas de type C.","",1989-08
+https://rr0.org/time/1/9/8/9/08/index.html,,1989-08,Survol de Neptune par Voyager 2.,"",1989-08

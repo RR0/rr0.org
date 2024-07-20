@@ -125,7 +125,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "tech/info/soft/reseau/protocole/index.js", "tech/info/soft/reseau/protocole/ports.json", "tech/info/soft/reseau/protocole/index.css",
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
   "people/index.js", "people/index.css", "people/witness/index.css",
-  "search/index.js", "search/index.json", "search/search.css",
+  "search/SearchComponent.mjs", "search/index.json", "search/search.css",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/religion/theisme/mono/livre/islam/coran/index.js"
 ]

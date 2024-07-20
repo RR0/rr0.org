@@ -17,9 +17,7 @@
       <a class="home" href="/" title="Home">RR0</a>
     </li>
     <li class="search full-page">
-      <input disabled id="search-site" list="search-site-values" placeholder="Activez JavaScript" type="search">
-      <datalist id="search-site-values">
-      </datalist>
+      <rr0-search></rr0-search>
     </li>
     <li id="summary">
       <a class="outline-title" href="#_top" id="out-top" title="Début de l'article"></a>
@@ -33,7 +31,7 @@
       <button class="toggle">Carte</button>
     </li>
   </ul>
-  <script async src="/search/index.js" type="text/javascript"></script>
+  <script async src="/search/SearchComponent.mjs" type="module"></script>
 </nav>
 <script>
   const summary = document.getElementById("out-top")

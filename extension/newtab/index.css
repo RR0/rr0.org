@@ -1,0 +1,54 @@
+@import "../index.css";
+
+:root {
+  --header-height: 4em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100svh;
+  width: 100vw;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.google-search input, rr0-search::part(input) {
+  font-size: 2em;
+  width: 100%;
+  padding: 0.25em;
+  border-radius: 0.25em;
+}
+
+.contents {
+  display: table;
+  margin: auto;
+
+  > * {
+    display: table-row;
+
+    > * {
+      display: table-cell;
+      padding: 0.5em;
+    }
+  }
+}
+
+.home:hover {
+  background: none;
+}
+
+.logo {
+  max-height: var(--header-height);
+}
+
+rr0-search {
+  width: 100%;
+}
+
+#today-time {
+  font-size: 3em;
+}

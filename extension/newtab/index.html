@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>RR0 web extension</title>
+  <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="contents">
+  <form action="https://www.google.com/search" class="google-search">
+    <div>
+      <input name="q" placeholder="Chercher sur le web avec Google" type="search">
+    </div>
+  </form>
+  <div id="today-time">
+    <time></time>
+  </div>
+  <form>
+    <rr0-search placeholder="Rechercher sur RR0"></rr0-search>
+  </form>
+  <footer>
+    <div>
+      <a href="https://rr0.org">RR0</a> - <a href="https://vraiufo.com">VraiUfo</a> - <a href="mailto:rr0@rr0.org">
+      Contact</a> - <a href="https://rr0.medium.com">Blog</a> - <a href="https://www.facebook.com/rrzero">Facebook</a> -
+      <a href="https://www.instagram.com/r_r_zero">Instagram</a> - <a href="https://twitter.com/r_r_0">X/Twitter</a> -
+      <a
+        href="https://www.youtube.com/@r_r_0">YouTube</a>
+    </div>
+  </footer>
+</div>
+</body>
+<script src="index.js" type="module"></script>
+<script async src="../SearchComponent.mjs" type="module"></script>

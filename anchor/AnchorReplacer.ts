@@ -15,10 +15,10 @@ export class AnchorReplacer {
     const baseUrl = this.baseUrl + context.file.name
     try {
       if (href.startsWith("http") && !href.startsWith(this.baseUrl)) {
-        this.handleExternal(context, a)
+        this.updateLinkExternal(context, a)
       } else {
         const url = new URL(href, baseUrl)
-        await this.handleInternal(context, a, url)
+        await this.updateLinkInternal(context, a, url)
       }
     } catch (e) {
       throw Error(e + ": " + href)
@@ -26,13 +26,13 @@ export class AnchorReplacer {
     return a
   }
 
-  protected handleExternal(context: HtmlSsgContext, a: HTMLAnchorElement) {
+  protected updateLinkExternal(context: HtmlSsgContext, a: HTMLAnchorElement) {
     a.target = "_blank"
     a.title = "Lien externe"
     context.debug("Adding target in", a.outerHTML)
   }
 
-  protected async handleInternal(context: HtmlRR0SsgContext, a: HTMLAnchorElement, url: URL) {
+  protected async updateLinkInternal(context: HtmlRR0SsgContext, a: HTMLAnchorElement, url: URL) {
     if (url.protocol.startsWith("http")) {
       const pathname = url.pathname
       const pathToSearch = pathname.substring(1)

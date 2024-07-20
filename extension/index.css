@@ -1,0 +1,22 @@
+html {
+  font-family: var(--font-family), sans-serif;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  margin: 0;
+  padding: 1em;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  padding: .2rem .3rem;
+  margin: -.2rem -.3rem
+}
+
+a:hover {
+  border: none;
+  border-radius: .2em;
+  background: rgba(184, 197, 212, .19)
+}

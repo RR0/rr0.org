@@ -52,7 +52,7 @@ export class SourceReplacer {
 
   protected async sourceFromLink(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
     const source = href.startsWith("http") ?
-      await this.sourceFromExternalLink(context, href) : await this.fromInternalLink(href, context)
+      await this.fromExternalLink(context, href) : await this.fromInternalLink(href, context)
     this.renderer.renderContent(context, source, container)
   }
 
@@ -117,7 +117,7 @@ export class SourceReplacer {
     } as OnlineSource
   }
 
-  protected async sourceFromExternalLink(context: HtmlRR0SsgContext, href: string) {
+  protected async fromExternalLink(context: HtmlRR0SsgContext, href: string): Promise<Source> {
     const resOut: Partial<Response> = {}
     let title: string
     let lastModif: string

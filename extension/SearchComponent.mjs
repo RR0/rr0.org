@@ -1,17 +1,15 @@
 const template = document.createElement("template")
-const html = `
-<input list="values" type="search" part="input">
-<datalist id="values">
-</datalist>`
-const style = `
+template.innerHTML = `<style>
 :host {
   display: inline-block;
 }
 input {
   width: 100%;
 }
-`
-template.innerHTML = `<style>${style}</style>${html}`
+</style>
+<input list="values" type="search" part="input">
+<datalist id="values">
+</datalist>`
 
 export class SearchComponent extends HTMLElement {
   /**

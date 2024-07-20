@@ -18,3 +18,7 @@
     top: 99px;
   }
 }
+
+.with-lang-selector {
+  position: relative;
+}

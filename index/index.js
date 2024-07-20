@@ -110,6 +110,11 @@ export class Filterform {
       ls.add(this.tagAttribute(p))
       return ls
     }, new Set())
+    const valuesArr = Array.from(values)
+    let checked = valuesArr.filter(value => this.checked.includes(value))
+    if (checked.length <= 0) {
+      checked = valuesArr[0]
+    }
     const form = document.querySelector(this.#formSelector)
     for (const value of values) {
       const label = document.createElement('label')
@@ -117,7 +122,7 @@ export class Filterform {
       input.type = 'checkbox'
       input.value = value
       input.onclick = this.clicked.bind(this)
-      if (this.checked.includes(value)) {
+      if (checked.includes(value)) {
         input.checked = true
       }
       label.appendChild(input)

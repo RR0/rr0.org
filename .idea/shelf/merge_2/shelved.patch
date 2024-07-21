@@ -1,0 +1,68 @@
+Index: time/datasource/ChronologyReplacer.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { DomReplacement } from \"../DomReplacement\"\nimport { HtmlRR0SsgContext } from \"../../RR0SsgContext\"\nimport { RR0CaseRenderer } from \"../RR0CaseRenderer\"\nimport { CaseMapping } from \"./CaseMapping\"\nimport { CsvMapper } from \"./CsvMapper\"\nimport fs from \"fs\"\nimport path from \"path\"\nimport { StringUtil } from \"../../util/string/StringUtil\"\nimport { RR0CaseSummary } from \"./rr0/RR0CaseSummary\"\nimport { RR0Datasource } from \"./rr0/RR0Datasource\"\nimport { CaseSource } from \"./CaseSource\"\n\nexport interface RR0CaseMapping<S> extends CaseMapping<HtmlRR0SsgContext, S, RR0CaseSummary> {\n}\n\nexport type ChronologyReplacerActions = {\n  readonly merge: boolean\n  readonly save: boolean\n}\n\nexport class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLUListElement> {\n\n  protected readonly done = new Set<string>()\n\n  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: RR0CaseRenderer,\n              protected actions: ChronologyReplacerActions, protected rr0Datasource: RR0Datasource) {\n  }\n\n  async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {\n    element.classList.add(\"indexed\")\n    // TODO: Merge with existing those items\n    if (this.actions.save || this.actions.merge) {\n      await this.aggregate(context, element)\n    }\n    return element\n  }\n\n  protected async aggregate(context: HtmlRR0SsgContext, element: HTMLUListElement) {\n    const existingItems = Array.from(element.children)\n    // TODO: Get cases from local RR0, not the remote one\n    const existingCases = this.rr0Datasource.getFromRows(context, existingItems)\n    const casesToAdd: RR0CaseSummary[] = []\n    for (const mapping of this.mappings) {\n      const datasource = mapping.datasource\n      const datasourceKey = context.inputFile.name + \"$\" + datasource.copyright\n      if (!this.done.has(datasourceKey)) {\n        const sourceCases = await datasource.fetch(context)\n        const fetchTime = new Date()\n        if (this.actions.save) {\n          this.save(context, sourceCases, fetchTime, datasource)\n        }\n        if (this.actions.merge) {\n          const toAddFromThisSource = this.merge(context, sourceCases, fetchTime, element, mapping, existingCases)\n          casesToAdd.concat(toAddFromThisSource)\n        }\n        this.done.add(datasourceKey)\n      }\n    }\n    if (this.actions.save) {\n      this.save(context, existingCases.concat(casesToAdd), new Date(), this.rr0Datasource)\n    }\n  }\n\n  protected merge(\n    context: HtmlRR0SsgContext, sourceCases: any[], fetchTime: Date, element: HTMLUListElement,\n    mapping: RR0CaseMapping<any>, existingCases: RR0CaseSummary[]\n  ): RR0CaseSummary[] {\n    const casesToMerge = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))\n    const casesToAdd: RR0CaseSummary[] = []\n    for (const caseToMerge of casesToMerge) {\n      const foundExisting = existingCases\n        .filter(existingCase => existingCase.time.equals(caseToMerge.time))\n        .filter(existingCase => existingCase.place?.name === caseToMerge.place?.name)\n      if (foundExisting?.length > 0) {\n        context.logger.debug(\"Merging \", caseToMerge, \" into \", foundExisting)\n      } else {\n        casesToAdd.push(caseToMerge)\n      }\n    }\n    const items = casesToAdd.map(c => this.renderer.render(context, c))\n    for (const item of items) {\n      element.append(item)\n    }\n    return casesToAdd\n  }\n\n  protected save(context: HtmlRR0SsgContext, sourceCases: any[], fetchTime: Date, datasource: CaseSource<any>) {\n    const csvContents = new CsvMapper().reduce(context, sourceCases, fetchTime)\n    const specialChars = /[ \\-?!&*#.:\\/\\\\;=°',]/g\n    const authorsStr = datasource.authors.map(\n      author => StringUtil.removeAccents(author).replace(specialChars, \"\")).join(\"-\")\n    const fileName = path.join(path.dirname(context.inputFile.name),\n      authorsStr + \"_\" + StringUtil.removeAccents(datasource.copyright).replace(specialChars, \"\") + \".csv\")\n    fs.writeFileSync(fileName, csvContents, {encoding: \"utf-8\"})\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/time/datasource/ChronologyReplacer.ts b/time/datasource/ChronologyReplacer.ts
+--- a/time/datasource/ChronologyReplacer.ts	(revision 86e6546d13284bc41ba9786be65ebc8869f84876)
++++ b/time/datasource/ChronologyReplacer.ts	(date 1711011370521)
+@@ -56,6 +56,13 @@
+         this.done.add(datasourceKey)
+       }
+     }
++    if (this.actions.merge) {
++      const allCases = existingCases.concat(casesToAdd)
++      const items = allCases.map(c => this.renderer.render(context, c))
++      for (const item of items) {
++        element.append(item)
++      }
++    }
+     if (this.actions.save) {
+       this.save(context, existingCases.concat(casesToAdd), new Date(), this.rr0Datasource)
+     }
+@@ -68,19 +75,14 @@
+     const casesToMerge = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
+     const casesToAdd: RR0CaseSummary[] = []
+     for (const caseToMerge of casesToMerge) {
+-      const foundExisting = existingCases
+-        .filter(existingCase => existingCase.time.equals(caseToMerge.time))
+-        .filter(existingCase => existingCase.place?.name === caseToMerge.place?.name)
+-      if (foundExisting?.length > 0) {
++      const foundExisting = existingCases.find(existingCase => existingCase.time.equals(caseToMerge.time)
++        && existingCase.place?.name === caseToMerge.place?.name)
++      if (foundExisting) {
+         context.logger.debug("Merging ", caseToMerge, " into ", foundExisting)
+       } else {
+         casesToAdd.push(caseToMerge)
+       }
+     }
+-    const items = casesToAdd.map(c => this.renderer.render(context, c))
+-    for (const item of items) {
+-      element.append(item)
+-    }
+     return casesToAdd
+   }
+ 
+Index: time/datasource/HttpSource.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export class MimeType {\n  static readonly csv: string = \"text/csv\"\n  static readonly json: string = \"application/json\"\n  static readonly txt: string = \"text/plain\"\n  static readonly xls: string = \"application/vnd.ms-excel\"\n}\n\n/**\n * A source for cases that can be fetched online.\n */\nexport class HttpSource {\n\n  constructor(\n    protected userAgents = [\n      \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)  AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36\",\n      \"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\",\n      \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36\",\n      \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\",\n      \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36\",\n      \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36\"\n    ]\n  ) {\n  }\n\n  static findParam(str: string, separator: string, param: string): string {\n    const params = str.split(separator).map(s => {\n      let t = s.trim()\n      const q = t.indexOf(\"?\")\n      if (q) {\n        t = t.substring(q + 1)\n      }\n      return t\n    })\n    const key = param + \"=\"\n    const foundParam = params.find(p => p.startsWith(key))\n    return foundParam.substring(key.length)\n  }\n\n  randomUA() {\n    const randomNumber = Math.floor(Math.random() * this.userAgents.length)\n    return this.userAgents[randomNumber]\n  }\n\n  async fetch<T>(url: string, init: RequestInit = {}): Promise<T> {\n    init.headers = Object.assign({\"User-Agent\": this.randomUA()}, init.headers)\n    const response = await fetch(url, init)\n    if (response.ok) {\n      const accept = init.headers[\"accept\"]\n      if (accept) {\n        const buffer = await response.arrayBuffer()\n        const charset = HttpSource.findParam(accept, \";\", \"charset\")\n        const decoder = new TextDecoder(charset)\n        return decoder.decode(buffer) as T\n      } else {\n        switch (response.headers.get(\"content-type\")) {\n          case MimeType.json:\n            return await response.json()\n          case MimeType.xls:\n            return await response.arrayBuffer() as T\n          default:\n            return await response.text() as T\n        }\n      }\n    } else {\n      throw Error(response.statusText)\n    }\n  }\n\n  async submitForm<T>(url: string, obj: object, headers = {}): Promise<T> {\n    const formData = new FormData()\n    Object.entries(obj).forEach(entry => formData.append(entry[0], encodeURIComponent(entry[1])))\n    const init: RequestInit = {method: \"POST\", headers, body: formData}\n    return await this.fetch(url, init)\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/time/datasource/HttpSource.ts b/time/datasource/HttpSource.ts
+--- a/time/datasource/HttpSource.ts	(revision 86e6546d13284bc41ba9786be65ebc8869f84876)
++++ b/time/datasource/HttpSource.ts	(date 1711013155381)
+@@ -43,8 +43,10 @@
+ 
+   async fetch<T>(url: string, init: RequestInit = {}): Promise<T> {
+     init.headers = Object.assign({"User-Agent": this.randomUA()}, init.headers)
++    console.debug("Fetching", url, "with", init)
+     const response = await fetch(url, init)
+     if (response.ok) {
++      console.debug("Got response")
+       const accept = init.headers["accept"]
+       if (accept) {
+         const buffer = await response.arrayBuffer()

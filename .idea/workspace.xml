@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ef585b2-a25c-4490-83c8-4a6983faa89f" name="Changes" comment="docs">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/javarome.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-12-21T095902.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-12-21T095913.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-25T165705.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T130451.500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T130707.500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T145356.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T221812.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T221831.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/rr0.org.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/merge_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/merge_2/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prichett_MSGIST_Masters_Report.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reliability_I-06_Maillot_Abrassart.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UFO_Waves.__An_International_Bibliography__November__1___2015.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cover.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cover_full.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/bible/01/torah_genese_1_hb.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/bible/01/torah_genese_1_hb.textClipping" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/Généalogie-Islam-schéma_III.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/015/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/016/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/017/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/018/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/019/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/020/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/021/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/022/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/023/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/025/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/026/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/027/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/028/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/029/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/030/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/031/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/032/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/034/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/035/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/036/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/037/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/038/IbnKathir-tafsir.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-1--1-2-.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-1--2-2-.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/ibnkathir/021/21.-Les-Prophetes.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/ibnkathir/068/68.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/texte-video-lislam-est-faux-04-02-2019.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/LargeIcon.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Base.lproj/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Resources/Icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Resources/Script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Resources/Style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/ViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/_locales/en/messages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/_locales/fr/messages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/background/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/browser-polyfill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-256.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/SafariWebExtensionHandler.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/xcuserdata/javarome.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/xcuserdata/javarome.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/SceneDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/iOS (Extension)/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/macOS (App)/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/macOS (App)/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/macOS (App)/extension.entitlements" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/macOS (Extension)/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/macOS (Extension)/extension.entitlements" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/people/b/BurkelClaude/portrait.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/people/c/CanutiThibaut/portrait.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Calvine/61333227-11106737-This_is_the_exact_spot_today_where_the_hidden_photograph_was_tak-a-14_1689096288076.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Calvine/61333273-11106737-Revealed_after_32_years_The_most_spectacular_UFO_photo_ever_capt-a-12_1689096286152.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time/1/9/8/3/Chronique-de-Tabari-Tome-2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time/1/9/8/3/libislam-L0556-Tabari-commentaire-CoranT1_text.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time/1/9/8/3/libislam-L0558-Tabari-commentaire-Coran-T3_text.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time/2/0/1/7/12/08/Margout_LeSoucoupismeEnFrance/These-2017-STT-Histoire-MARGOUT_Thomas-Tome1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time/2/0/1/7/12/08/Margout_LeSoucoupismeEnFrance/These-2017-STT-Histoire-MARGOUT_Thomas-Tome2_annexes.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time/2/0/1/7/12/08/Margout_LeSoucoupismeEnFrance/thesteps.to_background2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple-touch-icon_400x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/apple-touch-icon_400x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/SearchComponent.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/SearchComponent.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/icons/128.png" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/icons/48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/icons/96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/newtab/google-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/google-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/newtab/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/newtab/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/newtab/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/newtab/rr0-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/rr0-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/popup/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/popup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/popup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index_fr.html" beforeDir="false" afterPath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index_fr.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Public Environment File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Javarome&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RR0/rr0.org.git&quot;,
+    &quot;accountId&quot;: &quot;06a2b385-c6b1-452d-a484-d665c8bcca53&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$APPLICATION_HOME_DIR$/lib/app.jar!/resources/html5-schema/html5/web-forms.rnc" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/@types/node/path.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/csv-parser/index.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/ssg-api/dist/src/Ssg.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/ssg-api/dist/src/step/content/replace/html/ssi/SsiEchoVarCommand.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/ssg-api/dist/src/step/content/replace/html/ssi/SsiIncludeReplaceCommand.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es2015.collection.d.ts" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$PROJECT_DIR$/test.http" environment="prod" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2Xtu7ROz4T9hv3Tbc6wAmcgc5Cl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "HTTP Request.FuforaTestCases | #1.executor": "Run",
+    "HTTP Request.GeipanTestCases | #1.executor": "Run",
+    "HTTP Request.GeipanTestCases | Find cases between 01/03/1977 and 31/03/1977.executor": "Run",
+    "HTTP Request.GeipanTestCases | dd.executor": "Run",
+    "HTTP Request.test | #1.executor": "Run",
+    "Node.js.scratch_1.js.executor": "Debug",
+    "Node.js.scratch_3.js.executor": "Run",
+    "Playwright.BaseOvniFranceChronologySource.fetch month.executor": "Run",
+    "Playwright.BaseOvniFranceChronologySource.fetch native cases.executor": "Debug",
+    "Playwright.BaseOvniFranceChronologySource.test.ts.executor": "Run",
+    "Playwright.CopyrightReplaceCommand.executor": "Run",
+    "Playwright.PlaceLocation.from degrees minutes seconds.executor": "Run",
+    "Playwright.RegionMessages.toTitle with country.executor": "Run",
+    "Playwright.TimeReplacer.executor": "Run",
+    "Playwright.UrecatCaseSource.witnesses.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "20.11.1",
+    "javascript.nodejs.core.library.typings.version": "20.11.30",
+    "js.last.introduce.type": "CONST",
+    "last.edited.regexp": "3/30/1977 (approximate) #",
+    "last_opened_file_path": "/Users/javarome/project/@rr0/rr0.org/extension/Shared (Extension)/Resources/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.mocha.mocha_node_package_dir": "",
+    "nodejs_package_manager_path": "npm",
+    "npm.build -- --reindex true (1).executor": "Debug",
+    "npm.build -- --reindex true.executor": "Run",
+    "npm.build contents.executor": "Run",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.preview.executor": "Run",
+    "npm.test-one.executor": "Run",
+    "npm.test.executor": "Run",
+    "npm.udb/build.executor": "Run",
+    "npm.udb:build.executor": "Run",
+    "npm.words repair.executor": "Debug",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "/Users/javarome/project/@rr0/rr0.org/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "HTML",
+      "JavaScript",
+      "JSON"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images" />
+      <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources/_locales" />
+      <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources" />
+      <recent name="$PROJECT_DIR$/extension" />
+      <recent name="$PROJECT_DIR$/people/m/McGovernDaniel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources" />
+      <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources/background" />
+      <recent name="$PROJECT_DIR$/extension/icons" />
+      <recent name="$PROJECT_DIR$/people/m/McGovernDaniel" />
+      <recent name="$PROJECT_DIR$/people/m/MacMullenClements" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/org/us/region/UsaCity.ts" />
+      <recent name="$PROJECT_DIR$/org/organization.ts" />
+      <recent name="$PROJECT_DIR$/org/us/Usa.ts" />
+      <recent name="$PROJECT_DIR$/org/Usa.ts" />
+      <recent name="$PROJECT_DIR$/org/eu/fi/region/nk/pk/PkCity.ts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build contents">
+    <configuration name="CopyrightReplaceCommand" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/CopyrightReplaceCommand.test.ts" />
+      <test-names>
+        <test-name value="CopyrightReplaceCommand" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_3.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="build -- --reindex true" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <arguments value="-- --reindex true" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="build books" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <arguments value="-- --books --contents croyance/religion/theisme/mono/livre/islam/coran/index.html" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
+        <env name="LOG_LEVEL" value="error,warn,info,debug" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="build contents" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <arguments value="-- --contents croyance/divin/theisme/mono/livre/islam/coran/index.html" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
+        <env name="LOG_LEVEL" value="error,warn,info,debug" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="preview" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs>
+        <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
+        <env name="LOG_LEVEL" value="error,warn,info,debug" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="test-one" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test-one" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="udb/build" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/udb/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs>
+        <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
+        <env name="LOG_LEVEL" value="error,warn,info,debug" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="words repair" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="word-finder" />
+      </scripts>
+      <arguments value="-- --contents time/1/9/6/8/CondonReport/s7/u/*_fr.html --dict ../../@hbenbel/French-Dictionary/dictionary/dictionary.csv" />
+      <node-interpreter value="project" />
+      <envs>
+        <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
+        <env name="LOG_LEVEL" value="error,warn,info,debug" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.scratch_1.js" />
+      <item itemvalue="Node.js.scratch_3.js" />
+      <item itemvalue="npm.build -- --reindex true" />
+      <item itemvalue="npm.build books" />
+      <item itemvalue="npm.build contents" />
+      <item itemvalue="npm.preview" />
+      <item itemvalue="npm.test-one" />
+      <item itemvalue="npm.test" />
+      <item itemvalue="npm.udb/build" />
+      <item itemvalue="npm.words repair" />
+      <item itemvalue="Playwright.CopyrightReplaceCommand" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Playwright.CopyrightReplaceCommand" />
+        <item itemvalue="Node.js.scratch_3.js" />
+        <item itemvalue="Node.js.scratch_1.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ef585b2-a25c-4490-83c8-4a6983faa89f" name="Changes" comment="" />
+      <created>1699460531381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699460531381</updated>
+      <workItem from="1699460532796" duration="38000" />
+      <workItem from="1699460577828" duration="16027000" />
+    </task>
+    <task id="LOCAL-00544" summary="docs">
+      <option name="closed" value="true" />
+      <created>1718891763432</created>
+      <option name="number" value="00544" />
+      <option name="presentableId" value="LOCAL-00544" />
+      <option name="project" value="LOCAL" />
+      <updated>1718891763432</updated>
+    </task>
+    <task id="LOCAL-00545" summary="docs">
+      <option name="closed" value="true" />
+      <created>1718956293109</created>
+      <option name="number" value="00545" />
+      <option name="presentableId" value="LOCAL-00545" />
+      <option name="project" value="LOCAL" />
+      <updated>1718956293109</updated>
+    </task>
+    <task id="LOCAL-00546" summary="docs">
+      <option name="closed" value="true" />
+      <created>1718985608270</created>
+      <option name="number" value="00546" />
+      <option name="presentableId" value="LOCAL-00546" />
+      <option name="project" value="LOCAL" />
+      <updated>1718985608270</updated>
+    </task>
+    <task id="LOCAL-00547" summary="docs">
+      <option name="closed" value="true" />
+      <created>1718985904246</created>
+      <option name="number" value="00547" />
+      <option name="presentableId" value="LOCAL-00547" />
+      <option name="project" value="LOCAL" />
+      <updated>1718985904247</updated>
+    </task>
+    <task id="LOCAL-00548" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719000007167</created>
+      <option name="number" value="00548" />
+      <option name="presentableId" value="LOCAL-00548" />
+      <option name="project" value="LOCAL" />
+      <updated>1719000007167</updated>
+    </task>
+    <task id="LOCAL-00549" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719004828386</created>
+      <option name="number" value="00549" />
+      <option name="presentableId" value="LOCAL-00549" />
+      <option name="project" value="LOCAL" />
+      <updated>1719004828387</updated>
+    </task>
+    <task id="LOCAL-00550" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719151491456</created>
+      <option name="number" value="00550" />
+      <option name="presentableId" value="LOCAL-00550" />
+      <option name="project" value="LOCAL" />
+      <updated>1719151491456</updated>
+    </task>
+    <task id="LOCAL-00551" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719180139916</created>
+      <option name="number" value="00551" />
+      <option name="presentableId" value="LOCAL-00551" />
+      <option name="project" value="LOCAL" />
+      <updated>1719180139916</updated>
+    </task>
+    <task id="LOCAL-00552" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719218645358</created>
+      <option name="number" value="00552" />
+      <option name="presentableId" value="LOCAL-00552" />
+      <option name="project" value="LOCAL" />
+      <updated>1719218645358</updated>
+    </task>
+    <task id="LOCAL-00553" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719228199078</created>
+      <option name="number" value="00553" />
+      <option name="presentableId" value="LOCAL-00553" />
+      <option name="project" value="LOCAL" />
+      <updated>1719228199078</updated>
+    </task>
+    <task id="LOCAL-00554" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719670965070</created>
+      <option name="number" value="00554" />
+      <option name="presentableId" value="LOCAL-00554" />
+      <option name="project" value="LOCAL" />
+      <updated>1719670965070</updated>
+    </task>
+    <task id="LOCAL-00555" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719737252749</created>
+      <option name="number" value="00555" />
+      <option name="presentableId" value="LOCAL-00555" />
+      <option name="project" value="LOCAL" />
+      <updated>1719737252749</updated>
+    </task>
+    <task id="LOCAL-00556" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719832276349</created>
+      <option name="number" value="00556" />
+      <option name="presentableId" value="LOCAL-00556" />
+      <option name="project" value="LOCAL" />
+      <updated>1719832276349</updated>
+    </task>
+    <task id="LOCAL-00557" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719834104703</created>
+      <option name="number" value="00557" />
+      <option name="presentableId" value="LOCAL-00557" />
+      <option name="project" value="LOCAL" />
+      <updated>1719834104703</updated>
+    </task>
+    <task id="LOCAL-00558" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719851079580</created>
+      <option name="number" value="00558" />
+      <option name="presentableId" value="LOCAL-00558" />
+      <option name="project" value="LOCAL" />
+      <updated>1719851079580</updated>
+    </task>
+    <task id="LOCAL-00559" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719866066408</created>
+      <option name="number" value="00559" />
+      <option name="presentableId" value="LOCAL-00559" />
+      <option name="project" value="LOCAL" />
+      <updated>1719866066408</updated>
+    </task>
+    <task id="LOCAL-00560" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719866397945</created>
+      <option name="number" value="00560" />
+      <option name="presentableId" value="LOCAL-00560" />
+      <option name="project" value="LOCAL" />
+      <updated>1719866397945</updated>
+    </task>
+    <task id="LOCAL-00561" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719868229296</created>
+      <option name="number" value="00561" />
+      <option name="presentableId" value="LOCAL-00561" />
+      <option name="project" value="LOCAL" />
+      <updated>1719868229296</updated>
+    </task>
+    <task id="LOCAL-00562" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719872333394</created>
+      <option name="number" value="00562" />
+      <option name="presentableId" value="LOCAL-00562" />
+      <option name="project" value="LOCAL" />
+      <updated>1719872333394</updated>
+    </task>
+    <task id="LOCAL-00563" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719872713384</created>
+      <option name="number" value="00563" />
+      <option name="presentableId" value="LOCAL-00563" />
+      <option name="project" value="LOCAL" />
+      <updated>1719872713384</updated>
+    </task>
+    <task id="LOCAL-00564" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719874907543</created>
+      <option name="number" value="00564" />
+      <option name="presentableId" value="LOCAL-00564" />
+      <option name="project" value="LOCAL" />
+      <updated>1719874907543</updated>
+    </task>
+    <task id="LOCAL-00565" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719922782360</created>
+      <option name="number" value="00565" />
+      <option name="presentableId" value="LOCAL-00565" />
+      <option name="project" value="LOCAL" />
+      <updated>1719922782360</updated>
+    </task>
+    <task id="LOCAL-00566" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719924145991</created>
+      <option name="number" value="00566" />
+      <option name="presentableId" value="LOCAL-00566" />
+      <option name="project" value="LOCAL" />
+      <updated>1719924145991</updated>
+    </task>
+    <task id="LOCAL-00567" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719934354050</created>
+      <option name="number" value="00567" />
+      <option name="presentableId" value="LOCAL-00567" />
+      <option name="project" value="LOCAL" />
+      <updated>1719934354050</updated>
+    </task>
+    <task id="LOCAL-00568" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719937043905</created>
+      <option name="number" value="00568" />
+      <option name="presentableId" value="LOCAL-00568" />
+      <option name="project" value="LOCAL" />
+      <updated>1719937043905</updated>
+    </task>
+    <task id="LOCAL-00569" summary="docs">
+      <option name="closed" value="true" />
+      <created>1719950369879</created>
+      <option name="number" value="00569" />
+      <option name="presentableId" value="LOCAL-00569" />
+      <option name="project" value="LOCAL" />
+      <updated>1719950369879</updated>
+    </task>
+    <task id="LOCAL-00570" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720778973131</created>
+      <option name="number" value="00570" />
+      <option name="presentableId" value="LOCAL-00570" />
+      <option name="project" value="LOCAL" />
+      <updated>1720778973131</updated>
+    </task>
+    <task id="LOCAL-00571" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720788283399</created>
+      <option name="number" value="00571" />
+      <option name="presentableId" value="LOCAL-00571" />
+      <option name="project" value="LOCAL" />
+      <updated>1720788283399</updated>
+    </task>
+    <task id="LOCAL-00572" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720798049452</created>
+      <option name="number" value="00572" />
+      <option name="presentableId" value="LOCAL-00572" />
+      <option name="project" value="LOCAL" />
+      <updated>1720798049452</updated>
+    </task>
+    <task id="LOCAL-00573" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720814102075</created>
+      <option name="number" value="00573" />
+      <option name="presentableId" value="LOCAL-00573" />
+      <option name="project" value="LOCAL" />
+      <updated>1720814102075</updated>
+    </task>
+    <task id="LOCAL-00574" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720821347693</created>
+      <option name="number" value="00574" />
+      <option name="presentableId" value="LOCAL-00574" />
+      <option name="project" value="LOCAL" />
+      <updated>1720821347693</updated>
+    </task>
+    <task id="LOCAL-00575" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720823267204</created>
+      <option name="number" value="00575" />
+      <option name="presentableId" value="LOCAL-00575" />
+      <option name="project" value="LOCAL" />
+      <updated>1720823267204</updated>
+    </task>
+    <task id="LOCAL-00576" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720826420619</created>
+      <option name="number" value="00576" />
+      <option name="presentableId" value="LOCAL-00576" />
+      <option name="project" value="LOCAL" />
+      <updated>1720826420619</updated>
+    </task>
+    <task id="LOCAL-00577" summary="fix some tests">
+      <option name="closed" value="true" />
+      <created>1720871457034</created>
+      <option name="number" value="00577" />
+      <option name="presentableId" value="LOCAL-00577" />
+      <option name="project" value="LOCAL" />
+      <updated>1720871457034</updated>
+    </task>
+    <task id="LOCAL-00578" summary="docs">
+      <option name="closed" value="true" />
+      <created>1720998562200</created>
+      <option name="number" value="00578" />
+      <option name="presentableId" value="LOCAL-00578" />
+      <option name="project" value="LOCAL" />
+      <updated>1720998562200</updated>
+    </task>
+    <task id="LOCAL-00579" summary="use latest ssg-api">
+      <option name="closed" value="true" />
+      <created>1721052065381</created>
+      <option name="number" value="00579" />
+      <option name="presentableId" value="LOCAL-00579" />
+      <option name="project" value="LOCAL" />
+      <updated>1721052065381</updated>
+    </task>
+    <task id="LOCAL-00580" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721221250519</created>
+      <option name="number" value="00580" />
+      <option name="presentableId" value="LOCAL-00580" />
+      <option name="project" value="LOCAL" />
+      <updated>1721221250519</updated>
+    </task>
+    <task id="LOCAL-00581" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721223065040</created>
+      <option name="number" value="00581" />
+      <option name="presentableId" value="LOCAL-00581" />
+      <option name="project" value="LOCAL" />
+      <updated>1721223065040</updated>
+    </task>
+    <task id="LOCAL-00582" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721229306371</created>
+      <option name="number" value="00582" />
+      <option name="presentableId" value="LOCAL-00582" />
+      <option name="project" value="LOCAL" />
+      <updated>1721229306371</updated>
+    </task>
+    <task id="LOCAL-00583" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721232795799</created>
+      <option name="number" value="00583" />
+      <option name="presentableId" value="LOCAL-00583" />
+      <option name="project" value="LOCAL" />
+      <updated>1721232795799</updated>
+    </task>
+    <task id="LOCAL-00584" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721237316119</created>
+      <option name="number" value="00584" />
+      <option name="presentableId" value="LOCAL-00584" />
+      <option name="project" value="LOCAL" />
+      <updated>1721237316119</updated>
+    </task>
+    <task id="LOCAL-00585" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721246803250</created>
+      <option name="number" value="00585" />
+      <option name="presentableId" value="LOCAL-00585" />
+      <option name="project" value="LOCAL" />
+      <updated>1721246803250</updated>
+    </task>
+    <task id="LOCAL-00586" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721299734684</created>
+      <option name="number" value="00586" />
+      <option name="presentableId" value="LOCAL-00586" />
+      <option name="project" value="LOCAL" />
+      <updated>1721299734684</updated>
+    </task>
+    <task id="LOCAL-00587" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721299847209</created>
+      <option name="number" value="00587" />
+      <option name="presentableId" value="LOCAL-00587" />
+      <option name="project" value="LOCAL" />
+      <updated>1721299847209</updated>
+    </task>
+    <task id="LOCAL-00588" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721309955212</created>
+      <option name="number" value="00588" />
+      <option name="presentableId" value="LOCAL-00588" />
+      <option name="project" value="LOCAL" />
+      <updated>1721309955212</updated>
+    </task>
+    <task id="LOCAL-00589" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721310015590</created>
+      <option name="number" value="00589" />
+      <option name="presentableId" value="LOCAL-00589" />
+      <option name="project" value="LOCAL" />
+      <updated>1721310015590</updated>
+    </task>
+    <task id="LOCAL-00590" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721464431851</created>
+      <option name="number" value="00590" />
+      <option name="presentableId" value="LOCAL-00590" />
+      <option name="project" value="LOCAL" />
+      <updated>1721464431851</updated>
+    </task>
+    <task id="LOCAL-00591" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721467127096</created>
+      <option name="number" value="00591" />
+      <option name="presentableId" value="LOCAL-00591" />
+      <option name="project" value="LOCAL" />
+      <updated>1721467127096</updated>
+    </task>
+    <task id="LOCAL-00592" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721482756446</created>
+      <option name="number" value="00592" />
+      <option name="presentableId" value="LOCAL-00592" />
+      <option name="project" value="LOCAL" />
+      <updated>1721482756446</updated>
+    </task>
+    <option name="localTasksCounter" value="593" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="support finding geipan department cases" />
+    <MESSAGE value="add haute vienne" />
+    <MESSAGE value="add us states" />
+    <MESSAGE value="add fort-de-france" />
+    <MESSAGE value="add ain department" />
+    <MESSAGE value="add noumea city" />
+    <MESSAGE value="add city" />
+    <MESSAGE value="merge 2" />
+    <MESSAGE value="fix csv export" />
+    <MESSAGE value="add ufo-search data" />
+    <MESSAGE value="add ufo-search scrapping" />
+    <MESSAGE value="fix imported stylesheets" />
+    <MESSAGE value="improve search style for small width" />
+    <MESSAGE value="render cases links with their status" />
+    <MESSAGE value="fix use of data service" />
+    <MESSAGE value="restore people templates" />
+    <MESSAGE value="restore cases templates" />
+    <MESSAGE value="udb fix" />
+    <MESSAGE value="web archive fallback" />
+    <MESSAGE value="Use ssg-api 1.10.3" />
+    <MESSAGE value="remove useless context param" />
+    <MESSAGE value="remove skinwalker duplicates" />
+    <MESSAGE value="fix some tests" />
+    <MESSAGE value="use latest ssg-api" />
+    <MESSAGE value="docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="!stateEntry" language="TypeScript" />
+          <url>file://$PROJECT_DIR$/util/ObjectUtil.ts</url>
+          <line>10</line>
+          <option name="timeStamp" value="537" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="!city" language="TypeScript" />
+          <url>file://$PROJECT_DIR$/time/datasource/nuforc/NuforcRR0Mapper.ts</url>
+          <line>99</line>
+          <option name="timeStamp" value="596" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="!timeFields" language="TypeScript" />
+          <url>file://$PROJECT_DIR$/time/datasource/ufo-search/UfoSearchHttpDatasource.ts</url>
+          <line>131</line>
+          <option name="timeStamp" value="813" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="!org" language="TypeScript" />
+          <url>file://$PROJECT_DIR$/time/datasource/ufo-search/UfoSearchCaseRR0Mapper.ts</url>
+          <line>37</line>
+          <option name="timeStamp" value="818" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/time/datasource/essex-police/EssexPoliceHttpDatasource.ts</url>
+          <line>33</line>
+          <option name="timeStamp" value="820" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/time/datasource/rr0/RR0TestCases.ts</url>
+          <line>11</line>
+          <option name="timeStamp" value="831" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/time/datasource/fufora/FuforaHttpDatasource.ts</url>
+          <line>193</line>
+          <option name="timeStamp" value="850" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/time/datasource/baseovnifrance/BaseOvniFranceHttpDatasource.ts</url>
+          <line>97</line>
+          <option name="timeStamp" value="851" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/WordFinder.ts</url>
+          <line>91</line>
+          <option name="timeStamp" value="861" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/WordFinder.ts</url>
+          <line>86</line>
+          <option name="timeStamp" value="863" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/WordFinder.ts</url>
+          <line>83</line>
+          <option name="timeStamp" value="864" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/anchor/DataAnchorHandler.ts</url>
+          <line>67</line>
+          <option name="timeStamp" value="1052" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/ssg-api/dist/src/util/file/FileUtil.js</url>
+          <line>113</line>
+          <option name="timeStamp" value="1191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/OpenGraphCommand.ts</url>
+          <line>187</line>
+          <option name="timeStamp" value="1196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/people/witness/WitnessReplacerFactory.ts</url>
+          <line>15</line>
+          <option name="timeStamp" value="1220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="city.indexOf(&quot;MOULE&quot;)&gt;=0" language="TypeScript" />
+          <url>file://$PROJECT_DIR$/time/datasource/geipan/GeipanHttpDatasource.ts</url>
+          <line>111</line>
+          <option name="timeStamp" value="1264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="i==10" language="TypeScript" />
+          <url>file://$PROJECT_DIR$/index/IndexedReplacer.ts</url>
+          <line>27</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/build.ts</url>
+          <line>306</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1272" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="js.build_tools.npm">
+        <watch expression="row.outerHTML" language="TypeScript" />
+        <watch expression="doc.outerHTML" language="TypeScript" />
+        <watch expression="rowEls.length" language="TypeScript" />
+        <watch expression="searchUrl.toString()" language="TypeScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

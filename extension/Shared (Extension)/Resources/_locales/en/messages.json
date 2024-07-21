@@ -1,0 +1,10 @@
+{
+  "extension_name": {
+    "message": "extension",
+    "description": "RR0"
+  },
+  "extension_description": {
+    "message": "This is extension. You should tell us what your extension does here.",
+    "description": "RR0 links & search"
+  }
+}

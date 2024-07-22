@@ -39,7 +39,7 @@
     <li>du <strong>support de stockage</strong> (<em>datastore</em>), qui peut être un <a
         href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>, un <a
         href="/tech/info/soft/prod/server/sgbd/o">SGBDO</a>, des fichiers <a
-        href="/tech/info/soft/time/doc/xml">XML</a>, un <a
+      href="/tech/info/soft/data/doc/xml">XML</a>, un <a
         href="/tech/info/hard/computer/mainframe">mainframe</a>, etc.</li>
     <li>du <strong>fournisseur</strong> de l'implémentation JDO, car l'<a
         href="/tech/info/soft/API.html">API</a> et l'enrichissement (<em>enhancement</em>) de code sont garanties
@@ -185,7 +185,7 @@
   </ul>
   <p>La correspondance (<em>mapping</em>) entre l'état mémoire de l'objet et son état persistant est rédigé dans un
     descripteur standard, externe au code (fichier <a
-        href="/tech/info/soft/time/doc/xml">XML</a>), pouvant comporter des extensions propriétaires.</p>
+      href="/tech/info/soft/data/doc/xml">XML</a>), pouvant comporter des extensions propriétaires.</p>
   <p>L'accès aux données peut être :</p>
   <ul>
     <li><strong>explicite</strong>, en fournissant à la fabrique de PersistenceManager un ensemble de propriétés (pilote
@@ -444,15 +444,15 @@
           href="/org/us/company/oracle/sun/ptf/java/api/ee/Connectors.html">JCA</a> s'intégrant dans tout serveur
       compatible <a
           href="/org/us/company/oracle/sun/ptf/java/api/ee">J2EE</a> 1.3 ou supérieur.</li>
-    <li><strong>Peut-on faire du <a href="/tech/info/soft/time/dbms/r/sql">SQL</a> avec JDO ?</strong> La plupart des
+    <li><strong>Peut-on faire du <a href="/tech/info/soft/data/dbms/r/sql">SQL</a> avec JDO ?</strong> La plupart des
       implémentations existantes le permettent. En fait une Query JDO peut être paramètrée pour utiliser le langage de
       votre choix, et pas seulement JDO QL. Lorsque <a
-          href="/tech/info/soft/time/dbms/r/sql">SQL</a> est supporté, c'est aussi souvent en apportant une valeur
+        href="/tech/info/soft/data/dbms/r/sql">SQL</a> est supporté, c'est aussi souvent en apportant une valeur
       ajoutée, comme la construction automatique d'objets en fonction d'une clause <code>WHERE</code>, le support de
       l'héritage, etc.</li>
     <li><strong>Peut-on précompiler des requêtes JDO ? </strong>Oui. De la même manière que les PreparedStatement JDBC
       sont censées précompiler des requêtes <a
-          href="/tech/info/soft/time/dbms/r/sql">SQL</a> (ce qui n'est en réalité pas supporté par tous les <a
+        href="/tech/info/soft/data/dbms/r/sql">SQL</a> (ce qui n'est en réalité pas supporté par tous les <a
           href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>), une requête JDO peut être compilée avant une utilisation
       repétée. Cette compilation s'effectue dans l'implémentation JDO et n'est donc pas dépendante des SGBD
       sous-jacents. De plus les implémentations JDO utilisent généralement elle-même des PreparedStatements (poolées,
@@ -530,7 +530,7 @@
               href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a>, et que l'on a pas besoin de
           connaître autre chose que l'<a href="/tech/info/soft/API.html">API</a> bas-niveau du SGBDR (ce que disaient
           les développeurs comme argument contre <a
-              href="/tech/info/soft/time/dbms/r/sql">SQL</a> quand il est apparu à la fin des années 1980s, ou contre <a
+            href="/tech/info/soft/data/dbms/r/sql">SQL</a> quand il est apparu à la fin des années 1980s, ou contre <a
               href="/org/us/company/oracle/sun/ptf/java">Java</a> qui était décrit comme sans avenir par rapport aux <a
               href="/tech/info/Performance.html">performances</a> du <a
               href="//tech/info/soft/proj/impl/lang/c">C</a> ou du <a
@@ -541,7 +541,7 @@
           de la source de données.</li>
         <li><strong>Je peux aller plus/aussi vite en JDBC </strong>: C'est l'évidence en théorie, puisqu'une
           implémentation JDO va utiliser du <a
-              href="/tech/info/soft/time/dbms/r/sql">SQL</a> pour accéder à des <a
+            href="/tech/info/soft/data/dbms/r/sql">SQL</a> pour accéder à des <a
               href="/tech/info/soft/prod/server/sgbd/r">SGBDR</a>. Dans la réalité, c'est autre chose. Aller aussi vite
           qu'une implémentation JDO connaître aussi bien les optimisations pour chaque SGBD que ne le connaît l'éditeur
           JDO, mais aussi implémenter divers niveaux de <strong>cache</strong> ou d'<strong>optimisations
@@ -1353,7 +1353,7 @@
     </tr>
     <tr>
       <th rowspan="2"><a
-          href="/tech/info/soft/time/dbms/r/sql">SQL</a></th>
+        href="/tech/info/soft/data/dbms/r/sql">SQL</a></th>
       <th colspan="2">Libre</th>
       <td></td>
       <td></td>
@@ -1907,7 +1907,7 @@
       <td></td>
     </tr>
     <tr>
-      <th colspan="2"><a href="/tech/info/soft/time/doc/xml">XML</a>
+      <th colspan="2"><a href="/tech/info/soft/data/doc/xml">XML</a>
       </th>
       <td class="non">Non</td>
       <td></td>

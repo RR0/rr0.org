@@ -5,11 +5,6 @@ class RR0Data {
   title
 
   /**
-   * @type {"case" | "people"}
-   */
-  type
-
-  /**
    * @type string
    */
   url

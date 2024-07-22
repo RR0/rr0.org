@@ -875,9 +875,9 @@ Redirect /java/ https://rr0.org/tech/info/soft/proj/impl/lang/java
 Redirect /tech/info/soft/prog/pascal/langage https://rr0.org/tech/info/soft/proj/impl/lang/pascal
 Redirect /tech/info/soft/OpenSource.html https://rr0.org/tech/info/soft/prod/licence/oss
 Redirect /tech/info/1986.html /time/1/9/8/6
-Redirect /tech/info/soft/time/doc/xml/XML.html https://rr0.org/tech/info/soft/time/doc/xml/
-Redirect /tech/info/soft/time/doc/xml/ https://rr0.org/tech/info/soft/data/doc/xml/
-Redirect /tech/info/soft/time/doc/xml/html https://rr0.org/tech/info/soft/time/doc/html
+Redirect /tech/info/soft/data/doc/xml/XML.html https://rr0.org/tech/info/soft/data/doc/xml/
+Redirect /tech/info/soft/data/doc/xml/ https://rr0.org/tech/info/soft/data/doc/xml/
+Redirect /tech/info/soft/data/doc/xml/html https://rr0.org/tech/info/soft/data/doc/html
 Redirect /tech/info/soft/securite https://rr0.org/tech/info/soft/sec
 Redirect //tech/info/soft/sec/confidentialite/Cryptographie.html https://rr0.org/tech/info/soft/sec/priv/Cryptographie.html
 Redirect /tech/info/soft/proj/impl/lang/SmallTalk.html https://rr0.org/tech/info/soft/proj/impl/lang/smalltalk

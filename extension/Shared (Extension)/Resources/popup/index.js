@@ -46,8 +46,9 @@ const linksAnchor = document.querySelector("#matching-links")
 function addItem (data, count) {
   const item = document.createElement("li")
   const a = document.createElement("a")
-  a.href = data.url.href
+  a.href = data.url
   a.textContent = `${data.title} (${count})`
+  a.target = "_blank"
   item.append(a)
   linksAnchor.append(item)
 }

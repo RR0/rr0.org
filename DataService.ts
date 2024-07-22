@@ -49,6 +49,9 @@ export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> 
   }
 }
 
+/**
+ * Fetch RR0 data from JSON files.
+ */
 export class DataService {
 
   readonly pathToData = new Map<string, RR0Data[]>()

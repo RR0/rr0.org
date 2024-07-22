@@ -8,138 +8,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ef585b2-a25c-4490-83c8-4a6983faa89f" name="Changes" comment="docs">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/javarome.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-12-21T095902.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-12-21T095913.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-25T165705.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T130451.500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T130707.500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T145356.200.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T221812.200.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-02-27T221831.200.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/rr0.org.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/merge_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/merge_2/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prichett_MSGIST_Masters_Report.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reliability_I-06_Maillot_Abrassart.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UFO_Waves.__An_International_Bibliography__November__1___2015.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cover.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cover_full.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/bible/01/torah_genese_1_hb.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/bible/01/torah_genese_1_hb.textClipping" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/Généalogie-Islam-schéma_III.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/015/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/016/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/017/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/018/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/019/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/020/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/021/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/022/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/023/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/025/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/026/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/027/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/028/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/029/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/030/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/031/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/032/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/034/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/035/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/036/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/037/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/038/IbnKathir-tafsir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-1--1-2-.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-1--2-2-.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-3.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/Sahih-Al-Boukhari-tome-4.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/ibnkathir/021/21.-Les-Prophetes.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/ibnkathir/068/68.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/texte-video-lislam-est-faux-04-02-2019.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Assets.xcassets/LargeIcon.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Base.lproj/Main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Resources/Icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Resources/Script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/Resources/Style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (App)/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/_locales/en/messages.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/_locales/fr/messages.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/background/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/browser-polyfill.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-128.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-256.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/icon-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/SafariWebExtensionHandler.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/xcuserdata/javarome.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/xcuserdata/javarome.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/iOS (App)/SceneDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/iOS (Extension)/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/macOS (App)/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/macOS (App)/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/macOS (App)/extension.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/macOS (Extension)/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/macOS (Extension)/extension.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/b/BurkelClaude/portrait.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/c/CanutiThibaut/portrait.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Calvine/61333227-11106737-This_is_the_exact_spot_today_where_the_hidden_photograph_was_tak-a-14_1689096288076.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Calvine/61333273-11106737-Revealed_after_32_years_The_most_spectacular_UFO_photo_ever_capt-a-12_1689096286152.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time/1/9/8/3/Chronique-de-Tabari-Tome-2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time/1/9/8/3/libislam-L0556-Tabari-commentaire-CoranT1_text.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time/1/9/8/3/libislam-L0558-Tabari-commentaire-Coran-T3_text.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time/2/0/1/7/12/08/Margout_LeSoucoupismeEnFrance/These-2017-STT-Histoire-MARGOUT_Thomas-Tome1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time/2/0/1/7/12/08/Margout_LeSoucoupismeEnFrance/These-2017-STT-Histoire-MARGOUT_Thomas-Tome2_annexes.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time/2/0/1/7/12/08/Margout_LeSoucoupismeEnFrance/thesteps.to_background2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple-touch-icon_400x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/apple-touch-icon_400x400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/SearchComponent.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/SearchComponent.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/content/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/icons/128.png" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images/toolbar-icon-128.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/icons/48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/icons/96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/newtab/google-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/google-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/newtab/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/newtab/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/newtab/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/newtab/rr0-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/newtab/rr0-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/popup/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/popup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/popup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index_fr.html" beforeDir="false" afterPath="$PROJECT_DIR$/time/1/9/5/4/11/19/FlyingSaucerIn1945/index_fr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/clothing/woman/clothing.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/clothing/woman/hijab/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/nasai/47/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/ContentHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DataService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.ts" beforeDir="false" afterPath="$PROJECT_DIR$/build.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/Hijab.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/clothing/woman/hijab/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/002/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/002/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/004/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/004/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/005/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/005/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/006/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/006/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/008/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/008/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/009/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/009/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/011/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/011/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/013/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/013/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/014/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/014/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/017/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/017/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/019/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/019/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/020/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/020/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/021/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/021/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/022/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/022/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/024/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/024/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/027/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/027/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/029/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/029/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/030/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/030/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/031/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/031/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/033/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/033/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/035/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/035/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/041/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/041/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/042/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/042/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/058/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/058/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/062/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/062/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/070/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/070/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/073/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/073/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/087/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/087/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/096/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/096/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/098/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/098/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/107/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/107/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/108/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/108/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/Zakat.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/Zakat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/coran/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/04/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/79/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/bukhari/79/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/ibnmajah/00/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/ibnmajah/00/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/muslim/01/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/muslim/01/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/muslim/39/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/muslim/39/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/nasai/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/nasai/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/background/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/background/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/Shared (Extension)/Resources/popup/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/xcuserdata/javarome.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/extension/extension.xcodeproj/project.xcworkspace/xcuserdata/javarome.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/PeopleDirectoryStep.ts" beforeDir="false" afterPath="$PROJECT_DIR$/people/PeopleDirectoryStep.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time/datasource/ufo-search/UfoSearchCase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/time/datasource/ufo-search/UfoSearchCase.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +157,7 @@
     "javascript.nodejs.core.library.typings.version": "20.11.30",
     "js.last.introduce.type": "CONST",
     "last.edited.regexp": "3/30/1977 (approximate) #",
-    "last_opened_file_path": "/Users/javarome/project/@rr0/rr0.org/extension/Shared (Extension)/Resources/images",
+    "last_opened_file_path": "/Users/javarome/project/@rr0/rr0.org/croyance/divin/theisme/mono/livre/islam/hadith/nasai",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -266,18 +190,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/hadith/nasai" />
       <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources/images" />
       <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources/_locales" />
       <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources" />
       <recent name="$PROJECT_DIR$/extension" />
-      <recent name="$PROJECT_DIR$/people/m/McGovernDaniel" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/clothing/woman" />
+      <recent name="$PROJECT_DIR$/croyance/divin/theisme/mono/livre/islam/clothing/woman/hijab" />
       <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources" />
       <recent name="$PROJECT_DIR$/extension/Shared (Extension)/Resources/background" />
       <recent name="$PROJECT_DIR$/extension/icons" />
-      <recent name="$PROJECT_DIR$/people/m/McGovernDaniel" />
-      <recent name="$PROJECT_DIR$/people/m/MacMullenClements" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/org/us/region/UsaCity.ts" />
@@ -339,7 +263,7 @@
       <scripts>
         <script value="build" />
       </scripts>
-      <arguments value="-- --contents croyance/divin/theisme/mono/livre/islam/coran/index.html" />
+      <arguments value="-- --contents croyance/divin/theisme/mono/livre/islam/**/*.html" />
       <node-interpreter value="project" />
       <envs>
         <env name="GOOGLE_MAPS_API_KEY" value="AIzaSyDqiEN85qBXI9QJFlJM5E0LMOcllLvuR4I" />
@@ -445,158 +369,6 @@
       <updated>1699460531381</updated>
       <workItem from="1699460532796" duration="38000" />
       <workItem from="1699460577828" duration="16027000" />
-    </task>
-    <task id="LOCAL-00544" summary="docs">
-      <option name="closed" value="true" />
-      <created>1718891763432</created>
-      <option name="number" value="00544" />
-      <option name="presentableId" value="LOCAL-00544" />
-      <option name="project" value="LOCAL" />
-      <updated>1718891763432</updated>
-    </task>
-    <task id="LOCAL-00545" summary="docs">
-      <option name="closed" value="true" />
-      <created>1718956293109</created>
-      <option name="number" value="00545" />
-      <option name="presentableId" value="LOCAL-00545" />
-      <option name="project" value="LOCAL" />
-      <updated>1718956293109</updated>
-    </task>
-    <task id="LOCAL-00546" summary="docs">
-      <option name="closed" value="true" />
-      <created>1718985608270</created>
-      <option name="number" value="00546" />
-      <option name="presentableId" value="LOCAL-00546" />
-      <option name="project" value="LOCAL" />
-      <updated>1718985608270</updated>
-    </task>
-    <task id="LOCAL-00547" summary="docs">
-      <option name="closed" value="true" />
-      <created>1718985904246</created>
-      <option name="number" value="00547" />
-      <option name="presentableId" value="LOCAL-00547" />
-      <option name="project" value="LOCAL" />
-      <updated>1718985904247</updated>
-    </task>
-    <task id="LOCAL-00548" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719000007167</created>
-      <option name="number" value="00548" />
-      <option name="presentableId" value="LOCAL-00548" />
-      <option name="project" value="LOCAL" />
-      <updated>1719000007167</updated>
-    </task>
-    <task id="LOCAL-00549" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719004828386</created>
-      <option name="number" value="00549" />
-      <option name="presentableId" value="LOCAL-00549" />
-      <option name="project" value="LOCAL" />
-      <updated>1719004828387</updated>
-    </task>
-    <task id="LOCAL-00550" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719151491456</created>
-      <option name="number" value="00550" />
-      <option name="presentableId" value="LOCAL-00550" />
-      <option name="project" value="LOCAL" />
-      <updated>1719151491456</updated>
-    </task>
-    <task id="LOCAL-00551" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719180139916</created>
-      <option name="number" value="00551" />
-      <option name="presentableId" value="LOCAL-00551" />
-      <option name="project" value="LOCAL" />
-      <updated>1719180139916</updated>
-    </task>
-    <task id="LOCAL-00552" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719218645358</created>
-      <option name="number" value="00552" />
-      <option name="presentableId" value="LOCAL-00552" />
-      <option name="project" value="LOCAL" />
-      <updated>1719218645358</updated>
-    </task>
-    <task id="LOCAL-00553" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719228199078</created>
-      <option name="number" value="00553" />
-      <option name="presentableId" value="LOCAL-00553" />
-      <option name="project" value="LOCAL" />
-      <updated>1719228199078</updated>
-    </task>
-    <task id="LOCAL-00554" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719670965070</created>
-      <option name="number" value="00554" />
-      <option name="presentableId" value="LOCAL-00554" />
-      <option name="project" value="LOCAL" />
-      <updated>1719670965070</updated>
-    </task>
-    <task id="LOCAL-00555" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719737252749</created>
-      <option name="number" value="00555" />
-      <option name="presentableId" value="LOCAL-00555" />
-      <option name="project" value="LOCAL" />
-      <updated>1719737252749</updated>
-    </task>
-    <task id="LOCAL-00556" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719832276349</created>
-      <option name="number" value="00556" />
-      <option name="presentableId" value="LOCAL-00556" />
-      <option name="project" value="LOCAL" />
-      <updated>1719832276349</updated>
-    </task>
-    <task id="LOCAL-00557" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719834104703</created>
-      <option name="number" value="00557" />
-      <option name="presentableId" value="LOCAL-00557" />
-      <option name="project" value="LOCAL" />
-      <updated>1719834104703</updated>
-    </task>
-    <task id="LOCAL-00558" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719851079580</created>
-      <option name="number" value="00558" />
-      <option name="presentableId" value="LOCAL-00558" />
-      <option name="project" value="LOCAL" />
-      <updated>1719851079580</updated>
-    </task>
-    <task id="LOCAL-00559" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719866066408</created>
-      <option name="number" value="00559" />
-      <option name="presentableId" value="LOCAL-00559" />
-      <option name="project" value="LOCAL" />
-      <updated>1719866066408</updated>
-    </task>
-    <task id="LOCAL-00560" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719866397945</created>
-      <option name="number" value="00560" />
-      <option name="presentableId" value="LOCAL-00560" />
-      <option name="project" value="LOCAL" />
-      <updated>1719866397945</updated>
-    </task>
-    <task id="LOCAL-00561" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719868229296</created>
-      <option name="number" value="00561" />
-      <option name="presentableId" value="LOCAL-00561" />
-      <option name="project" value="LOCAL" />
-      <updated>1719868229296</updated>
-    </task>
-    <task id="LOCAL-00562" summary="docs">
-      <option name="closed" value="true" />
-      <created>1719872333394</created>
-      <option name="number" value="00562" />
-      <option name="presentableId" value="LOCAL-00562" />
-      <option name="project" value="LOCAL" />
-      <updated>1719872333394</updated>
     </task>
     <task id="LOCAL-00563" summary="docs">
       <option name="closed" value="true" />
@@ -838,7 +610,159 @@
       <option name="project" value="LOCAL" />
       <updated>1721482756446</updated>
     </task>
-    <option name="localTasksCounter" value="593" />
+    <task id="LOCAL-00593" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595343605</created>
+      <option name="number" value="00593" />
+      <option name="presentableId" value="LOCAL-00593" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595343605</updated>
+    </task>
+    <task id="LOCAL-00594" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595361635</created>
+      <option name="number" value="00594" />
+      <option name="presentableId" value="LOCAL-00594" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595361635</updated>
+    </task>
+    <task id="LOCAL-00595" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595365483</created>
+      <option name="number" value="00595" />
+      <option name="presentableId" value="LOCAL-00595" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595365484</updated>
+    </task>
+    <task id="LOCAL-00596" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595403006</created>
+      <option name="number" value="00596" />
+      <option name="presentableId" value="LOCAL-00596" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595403006</updated>
+    </task>
+    <task id="LOCAL-00597" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595410161</created>
+      <option name="number" value="00597" />
+      <option name="presentableId" value="LOCAL-00597" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595410161</updated>
+    </task>
+    <task id="LOCAL-00598" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595444913</created>
+      <option name="number" value="00598" />
+      <option name="presentableId" value="LOCAL-00598" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595444913</updated>
+    </task>
+    <task id="LOCAL-00599" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595453554</created>
+      <option name="number" value="00599" />
+      <option name="presentableId" value="LOCAL-00599" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595453554</updated>
+    </task>
+    <task id="LOCAL-00600" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595457301</created>
+      <option name="number" value="00600" />
+      <option name="presentableId" value="LOCAL-00600" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595457301</updated>
+    </task>
+    <task id="LOCAL-00601" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595460392</created>
+      <option name="number" value="00601" />
+      <option name="presentableId" value="LOCAL-00601" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595460392</updated>
+    </task>
+    <task id="LOCAL-00602" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595463518</created>
+      <option name="number" value="00602" />
+      <option name="presentableId" value="LOCAL-00602" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595463518</updated>
+    </task>
+    <task id="LOCAL-00603" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595466917</created>
+      <option name="number" value="00603" />
+      <option name="presentableId" value="LOCAL-00603" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595466917</updated>
+    </task>
+    <task id="LOCAL-00604" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595470878</created>
+      <option name="number" value="00604" />
+      <option name="presentableId" value="LOCAL-00604" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595470878</updated>
+    </task>
+    <task id="LOCAL-00605" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595475266</created>
+      <option name="number" value="00605" />
+      <option name="presentableId" value="LOCAL-00605" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595475266</updated>
+    </task>
+    <task id="LOCAL-00606" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595479373</created>
+      <option name="number" value="00606" />
+      <option name="presentableId" value="LOCAL-00606" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595479373</updated>
+    </task>
+    <task id="LOCAL-00607" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595484742</created>
+      <option name="number" value="00607" />
+      <option name="presentableId" value="LOCAL-00607" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595484742</updated>
+    </task>
+    <task id="LOCAL-00608" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595488527</created>
+      <option name="number" value="00608" />
+      <option name="presentableId" value="LOCAL-00608" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595488528</updated>
+    </task>
+    <task id="LOCAL-00609" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595493970</created>
+      <option name="number" value="00609" />
+      <option name="presentableId" value="LOCAL-00609" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595493970</updated>
+    </task>
+    <task id="LOCAL-00610" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595507227</created>
+      <option name="number" value="00610" />
+      <option name="presentableId" value="LOCAL-00610" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595507227</updated>
+    </task>
+    <task id="LOCAL-00611" summary="docs">
+      <option name="closed" value="true" />
+      <created>1721595511052</created>
+      <option name="number" value="00611" />
+      <option name="presentableId" value="LOCAL-00611" />
+      <option name="project" value="LOCAL" />
+      <updated>1721595511052</updated>
+    </task>
+    <option name="localTasksCounter" value="612" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -995,24 +919,10 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1271" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/build.ts</url>
-          <line>306</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1272" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception" />
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="js.build_tools.npm">
-        <watch expression="row.outerHTML" language="TypeScript" />
-        <watch expression="doc.outerHTML" language="TypeScript" />
-        <watch expression="rowEls.length" language="TypeScript" />
-        <watch expression="searchUrl.toString()" language="TypeScript" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

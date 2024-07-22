@@ -101,7 +101,7 @@ export type UfoSearchCaseKeyValues = {
   url: URL
 }
 
-export interface UfoSearchCase extends RR0UfoCase {  // TODO: Remove dependency to RR0UfoCase
+export interface UfoSearchCase {  // TODO: Remove dependency to RR0UfoCase
   location?: string
   desc: string,
   key_vals: UfoSearchCaseKeyValues,

@@ -36,12 +36,44 @@ search.onmouseover = siteSearchLoad
 const searchInput = document.querySelector("#search-site")
 searchInput.oninput = (event) => siteSearchChange(event)
 
-/*chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
+const linksAnchor = document.querySelector("#matching-links")
+
+/**
+ *
+ * @param {RR0Data} data
+ * @param {number} count
+ */
+function addItem (data, count) {
+  const item = document.createElement("li")
+  const a = document.createElement("a")
+  a.href = data.url.href
+  a.textContent = `${data.title} (${count})`
+  item.append(a)
+  linksAnchor.append(item)
+}
+
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.debug("Popup receives message", message)
+  switch (message.type) {
+    case "resetItems":
+      linksAnchor.innerHTML = ""
+      browser.action.setBadgeText({ text: "" })
+      break
+    case "addItem":
+      addItem(message.data, message.count)
+      browser.action.setBadgeText({ text: String(linksAnchor.childElementCount) })
+      break
+    default:
+      console.warn("Popup received unsupported message", message)
+  }
+})
+
+/* browser.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
   chrome.scripting.executeScript({
     target: { tabId: tabs[0]?.id },
     files: ["src/saveAllImagesToPreview.ts.js"]
   })
-})*/
+})
 
 /*  chrome.storage.local.set({
     images_preview: sources.map((source) => ({

@@ -127,7 +127,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "people/index.js", "people/index.css", "people/witness/index.css",
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
-  "croyance/religion/theisme/mono/livre/islam/coran/index.js"
+  "croyance/divin/theisme/mono/livre/islam/coran/index.js"
 ]
 
 const outDir = "out"
@@ -190,10 +190,14 @@ timeService.getFiles().then(async (timeFiles) => {
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
+  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
   // Publish case.json files so that vraiufo.com will find them
   copies.push(...(ufoCasesStep.config.rootDirs).map(dir => path.join(dir, "case.json")))
   await FileUtil.writeFile(path.join(outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.config.rootDirs), "utf-8")
-  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
+  copies.push(...(peopleSteps.reduce((rootDirs, peopleStep) => {
+    rootDirs.push(...peopleStep.config.rootDirs)
+    return rootDirs
+  }, [])).map(dir => path.join(dir, "people.json")))
   await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
 
   const apiKey = process.env.GOOGLE_MAPS_API_KEY

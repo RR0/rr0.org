@@ -5,7 +5,7 @@
   "description": "RR0 links & search",
   "version": "1.0",
   "chrome_url_overrides": {
-    "newtab": "newtab/index.html"
+    "newtab": "newtab/newtab.html"
   },
   "icons": {
     "48": "images/icon-48.png",
@@ -17,16 +17,16 @@
   "background": {
     "scripts": [
       "browser-polyfill.js",
-      "background/index.js"
+      "background.js"
     ],
-    "service_worker": "background/index.js",
+    "service_worker": "background.js",
     "type": "module"
   },
   "content_scripts": [
     {
       "js": [
         "browser-polyfill.js",
-        "content/index.js"
+        "content.js"
       ],
       "matches": [
         "*://*/*"
@@ -34,7 +34,7 @@
     }
   ],
   "action": {
-    "default_popup": "popup/index.html",
+    "default_popup": "popup/popup.html",
     "default_title": "RR0 extension popup",
     "default_icon": {
       "16": "images/toolbar-icon-16.png",

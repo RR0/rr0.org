@@ -61,11 +61,14 @@ export class SearchComponent extends HTMLElement {
         const datalist = this.shadow.querySelector("#values")
         if (response.ok) {
           this.#siteIndex = await response.json()
-          for (const page of this.#siteIndex.pages) {
+          const pages = this.#siteIndex.pages
+          for (let i = 0; i < pages.length; i++) {
+            const page = pages[i]
             const option = document.createElement("option")
             const timeStr = page.time
             const title = page.title
-            option.value = title + (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
+            page.title += (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
+            option.value = page.title
             datalist.append(option)
           }
         }

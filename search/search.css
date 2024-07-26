@@ -4,7 +4,6 @@ rr0-search {
 }
 
 rr0-search::part(input) {
-  letter-spacing: inherit;
   line-height: inherit;
   box-sizing: inherit;
 }

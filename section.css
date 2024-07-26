@@ -50,7 +50,6 @@ h2, h3, h4, h5, section h1, section section h1 {
   padding-top: .35em;
   padding-bottom: .4em;
   padding-left: calc(2.4rem + var(--margin));
-  letter-spacing: 1px;
   text-align: left
 }
 

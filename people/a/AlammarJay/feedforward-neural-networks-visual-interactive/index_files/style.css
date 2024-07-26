@@ -1384,7 +1384,6 @@ img {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 28px;
-  letter-spacing: 1px;
 }
 
 .site-description {
@@ -1420,7 +1419,6 @@ nav a {
   color: #333;
   text-align: right;
   font-weight: 300;
-  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 640px) {

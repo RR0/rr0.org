@@ -60,7 +60,6 @@ html, body {
 }
 
 * {
-  letter-spacing: .01rem;
   line-height: 1.7;
   box-sizing: border-box
 }
@@ -209,7 +208,6 @@ form {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   font-family: inherit;
-  letter-spacing: 1px;
   color: #666;
   line-height: 1.5;
   padding: .7em;
@@ -316,7 +314,6 @@ nav ul > li {
   padding: 0;
   width: auto;
   line-height: 1.3;
-  letter-spacing: normal;
 }
 
 .outline li h3, .outline li h4, .outline li h5, .outline li section section h1, section section .outline li h1 {
@@ -758,7 +755,6 @@ pre code {
   border-style: solid solid none none;
   border-top: medium #FFF;
   border-right: medium #D7E2EA;
-  letter-spacing: 3px
 }
 
 .dateStart {
@@ -766,7 +762,6 @@ pre code {
   border-style: none;
   border-right: medium solid #D7E2EA;
   border-bottom: medium solid #D7E2EA;
-  letter-spacing: 3px
 }
 
 .explanation, .heure, .note, .source {

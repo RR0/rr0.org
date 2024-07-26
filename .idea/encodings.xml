@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/droit/entreprise/societe/Independant.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/eu/de/sap/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/eu/fr/Kelua.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/groupes.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/int/asso/iso/ISO9000.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/orgsScientifiques.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/orgsSecretes.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/company/oracle/sun/ptf/java/api/ext/JAXB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/base/EdwardsAFB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/base/LoringAFB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/base/Marshall_AFB.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/ic/cia/FSA.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/ic/cia/PSB.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/ic/cia/SOD.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/ic/cia/TSS.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/co/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/nh/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/nj/monmouth/FortMonmouth/index.html" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/org/us/region/nv/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/region/tx/ElPaso.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/tx/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/wa/Brookings/projet/brook-2_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/wa/Brookings/projet/brook-3_fr.html" charset="UTF-8" />
@@ -81,6 +89,7 @@
     <file url="file://$PROJECT_DIR$/time/1/4/9/3/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/5/1/9/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/5/3/0/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/5/5/3/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/5/5/4/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/5/6/0/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/5/6/3/index.html" charset="UTF-8" />
@@ -122,6 +131,7 @@
     <file url="file://$PROJECT_DIR$/time/1/7/8/3/09/05/Edgeworth_Windsor/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/7/8/3/11/06/Aubert_Windsor/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/7/8/3/11/06/Aubert_Windsor/index_fr.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/7/8/3/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/7/8/4/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/7/8/6/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/7/8/7/index.html" charset="UTF-8" />
@@ -150,8 +160,11 @@
     <file url="file://$PROJECT_DIR$/time/1/8/6/1/10/05/ABalloonAstray_NYT/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/6/7/12/12/ACuriousPhenomenonOnLakeErie/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/6/7/12/12/ACuriousPhenomenonOnLakeErie/index_fr.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/8/7/0/02/15/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/8/7/0/02/15/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/7/0/12/31/ArmyInTheSky_StJosephHerald/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/7/0/12/31/ArmyInTheSky_StJosephHerald/index_fr.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/8/8/1/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/8/4/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/9/6/11/18/SacramentoAirship/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/9/6/11/18/SacramentoAirship/index_fr.html" charset="UTF-8" />
@@ -430,6 +443,8 @@
     <file url="file://$PROJECT_DIR$/time/1/9/8/1/10/Rodeghier_VehiclesInterference/09/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/8/1/10/Rodeghier_VehiclesInterference/09/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/8/1/10/Rodeghier_VehiclesInterference/11/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/9/8/3/06/20/SmithMarcia_UfoEnigma/s2/Limitations.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/9/8/3/06/20/SmithMarcia_UfoEnigma/s2/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/8/9/Haines-Vallee_PhotoAnalysesOfAnAerialDiscOverCostaRica/1.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/8/9/Haines-Vallee_PhotoAnalysesOfAnAerialDiscOverCostaRica/11.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/8/9/Haines-Vallee_PhotoAnalysesOfAnAerialDiscOverCostaRica/12.html" charset="UTF-8" />

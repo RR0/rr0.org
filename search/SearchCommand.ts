@@ -6,6 +6,7 @@ import { TimeTextBuilder } from "../time/TimeTextBuilder"
 type PageInfo = {
   title: string
   url: string
+  time: string
   html?: string
 }
 
@@ -65,9 +66,8 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       }
       const indexContext = context.clone()
       indexContext.time.options.weekday = undefined
-      const timeStr = TimeTextBuilder.build(indexContext).toLowerCase()
-      const indexTitle = title + (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
-      indexedPages.push({title: indexTitle, url})
+      const time = TimeTextBuilder.build(indexContext).toLowerCase()
+      indexedPages.push({title, url, time})
     }
     if (this.config.indexWords) {
       this.indexWords(context, file)

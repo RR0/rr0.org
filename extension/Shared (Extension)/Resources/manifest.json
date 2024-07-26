@@ -17,17 +17,18 @@
   "background": {
     "scripts": [
       "browser-polyfill.js",
-      "background.js"
+      "rr0-background.js"
     ],
-    "service_worker": "background.js",
+    "service_worker": "rr0-background.js",
     "type": "module"
   },
   "content_scripts": [
     {
       "js": [
         "browser-polyfill.js",
-        "content.js"
+        "rr0-content.js"
       ],
+      "run_at": "document_start",
       "matches": [
         "*://*/*"
       ]
@@ -52,6 +53,7 @@
   ],
   "host_permissions": [
     "https://rr0.org/",
-    "https://archive.org/"
+    "https://archive.org/",
+    "*://*/*"
   ]
 }

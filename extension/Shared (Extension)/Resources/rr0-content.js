@@ -3,6 +3,7 @@ const containers = ["HTML", "BODY", "NAV", "UL", "OL", "SECTION", "ARTICLE", "AS
 const textToElems = new Map()
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.debug("content.js", "onMessage", message)
   switch (message.type) {
     case "getText":
       const title = message.title
@@ -14,7 +15,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
         textToElems.set(title, elems)
       }
       const count = matchingElems.length
-      console.debug("Found", count, "items containing", title, ":", matchingElems)
+      console.debug("content.js", "Found", count, "items containing", title, ":", matchingElems)
       sendResponse({ count })
       break
   }

@@ -3,8 +3,7 @@ import { Place } from "../place/Place"
 import path from "path"
 import { RR0SsgContext } from "../RR0SsgContext"
 import assert from "assert"
-import { OrgMessageOptions } from "./OrgMessages"
-import { OrganizationMessages } from "./OrganizationMessages"
+import { OrganizationMessageOptions, OrganizationMessages } from "./OrganizationMessages"
 import { TitleMessage } from "./index"
 
 export enum OrganizationType {
@@ -33,7 +32,7 @@ export class Organization<M extends TitleMessage = OrganizationMessages> impleme
     return messages
   }
 
-  getTitle(context: RR0SsgContext, options: OrgMessageOptions = {parent: false}): string {
+  getTitle(context: RR0SsgContext, options: OrganizationMessageOptions = {parent: false}): string {
     const messages = this.getMessages(context)
     assert.ok(messages, `Could not find name of org "${this.code}" in parent org "${this.parent?.code}"`)
     let str = messages.title

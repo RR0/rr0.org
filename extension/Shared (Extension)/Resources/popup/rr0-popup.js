@@ -1,3 +1,5 @@
+import { ContentHandler } from "../ContentHandler.js"
+
 let loading = false
 
 function siteSearchLoad () {
@@ -53,20 +55,28 @@ function addItem (data, count) {
   linksAnchor.append(item)
 }
 
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  console.debug("Popup receives message", message)
-  switch (message.type) {
-    case "resetItems":
-      linksAnchor.innerHTML = ""
-      browser.action.setBadgeText({ text: "" })
-      break
-    case "addItem":
-      addItem(message.data, message.count)
-      browser.action.setBadgeText({ text: String(linksAnchor.childElementCount) })
-      break
-    default:
-      console.warn("Popup received unsupported message", message)
+const contentHandlerProm = ContentHandler.getInstance()
+
+/**
+ *
+ * @param {Map<RR0Data, count>} occurences
+ */
+function updateLinks (occurences) {
+  console.debug("popup.js", "updateLinks", occurences)
+  for (const occurence of occurences) {
+    const datum = occurence[0]
+    const count = parseInt(occurence[1], 10)
+    addItem(datum, count)
   }
+}
+
+contentHandlerProm.then(async (contentHandler) => {
+  updateLinks(contentHandler.occurences)
+  browser.tabs.onActivated.addListener(async (activeInfo) => {
+    console.debug("popup.js", "onActivated", activeInfo)
+    const occurences = await contentHandler.scanOccurrences(activeInfo.tabId)
+    updateLinks(occurences)
+  })
 })
 
 /* browser.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {

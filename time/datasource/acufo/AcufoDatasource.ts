@@ -4,7 +4,6 @@ import { JSDOM } from "jsdom"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import assert from "assert"
 import { AcufoCase } from "./AcufoCase"
-import { NuforcState } from "../nuforc/NuforcState"
 import { NuforcCountry } from "../nuforc/NuforcCountry"
 
 import { NuforcShape } from "../nuforc/NuforcShape"
@@ -52,7 +51,7 @@ export class AcufoDatasource extends AbstractDatasource<AcufoCase> {
     const url = new URL(caseLink.href, this.baseUrl)
     const caseNumber = new URLSearchParams(url.search).get("id")
     const stateStr = fields[3].textContent
-    const state = ObjectUtil.enumFromValue<NuforcState>(NuforcState, stateStr)
+    const state = stateStr
     const countryStr = fields[4].textContent
     const country = ObjectUtil.enumFromValue<NuforcCountry>(NuforcCountry, countryStr)
     assert.ok(country, `Unknown NUFORC country "${countryStr}"`)
@@ -60,6 +59,7 @@ export class AcufoDatasource extends AbstractDatasource<AcufoCase> {
     const shape = NuforcShape[fields[5].textContent]
     const summary = fields[6].textContent
     return {
+      aircraftInfo: undefined, data: undefined, discussion: "", evaluation: "", history: undefined, sources: [],
       id: caseNumber,
       url, city, state, country, dateTime, shape, summary,
       reportDate: new Date(fields[7].textContent),

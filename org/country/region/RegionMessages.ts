@@ -4,12 +4,17 @@ export class RegionMessages<D = OrganizationMessages> extends OrganizationMessag
   /**
    *
    * @param titles
-   * @param department
+   * @param {object} department The object holding departments in its properties.
    */
   constructor(titles: string[], readonly department?: D) {
     super(...titles)
   }
 
+  /**
+   *
+   * @param title
+   * @param {object} department The object holding departments in its properties.
+   */
   static create<D>(title: string, department?: D): RegionMessages<D> {
     return new RegionMessages<D>([title], department)
   }

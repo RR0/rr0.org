@@ -63,7 +63,9 @@ export class SearchComponent extends HTMLElement {
           this.#siteIndex = await response.json()
           for (const page of this.#siteIndex.pages) {
             const option = document.createElement("option")
-            option.value = page.title
+            const timeStr = page.time
+            const title = page.title
+            option.value = title + (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
             datalist.append(option)
           }
         }

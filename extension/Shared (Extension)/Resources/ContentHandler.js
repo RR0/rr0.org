@@ -30,6 +30,11 @@ export class ContentHandler {
   #peopleDirsUrl = "peopleDirs.json"
 
   /**
+   * @type ContentHandler
+   */
+  static instance
+
+  /**
    *
    * @param {URL} url
    * @param {string} suffix
@@ -98,13 +103,23 @@ export class ContentHandler {
    * @type {RR0Data[]}
    */
   #rr0Data = []
+  /**
+   * @type {Map<RR0Data, number>}
+   */
+  #occurrences = new Map()
+
+  /**
+   * @return {Map<RR0Data, number>}
+   */
+  get occurences () {
+    return this.#occurrences
+  }
 
   async init () {
     // await this.readCasesData()
     // await this.readPeopleData()
     this.#rr0Data = await this.fetchJson(new URL("search/index.json", this.#baseUrl))
     console.debug(this.#rr0Data)
-    return this.#rr0Data
   }
 
   async readPeopleData () {
@@ -123,12 +138,56 @@ export class ContentHandler {
     }
   }
 
-  find (text) {
-    return this.#rr0Data.filter(rr0Case => rr0Case.title === text)
-  }
-
   get data () {
     return this.#rr0Data
+  }
+
+  /**
+   * @return {Promise<ContentHandler>}
+   */
+  static async getInstance () {
+    if (!ContentHandler.instance) {
+      ContentHandler.instance = new ContentHandler()
+      await ContentHandler.instance.init()
+    }
+    return ContentHandler.instance
+  }
+
+  #logDebug (...msg) {
+    return console.debug(this.constructor.name, ...msg)
+  }
+
+  /**
+   *
+   * @param {number} tabId
+   * @param {string} title
+   * @return {Promise<number>} The count of the title.
+   */
+  async getTextCount (tabId, title) {
+    // this.#logDebug("getTextCount", tabId, title)
+    const getTextMsg = { type: "getText", title }
+    console.debug("sends to tab", tabId, getTextMsg)
+    //  const response = await browser.tabs.sendMessage(tabId, getTextMsg)
+    return response.count
+  }
+
+  /**
+   *
+   * @param {number} tabId
+   * @return {Map<RR0Data, number>}
+   */
+  async scanOccurrences (tabId) {
+    this.#logDebug("scanOccurrences", tabId)
+    let total = 0
+    this.#occurrences.clear()
+    for (const datum of this.#rr0Data.pages) {
+      const title = datum.title
+      const titleCount = await this.getTextCount(tabId, title)
+      this.#occurrences.set(datum, titleCount)
+      total += titleCount
+    }
+    browser.action.setBadgeText({ text: total ? String(total) : "" })
+    return this.#occurrences
   }
 
   /**
@@ -148,9 +207,7 @@ export class ContentHandler {
     const archivedUrl = new URL(closest.url)
     const result = await fetch(archivedUrl, init)
     const timestamp = closest.timestamp
-    const archiveDate = new Date(
-      timestamp.substring(0, 4) + "-" + timestamp.substring(4, 6) + "-" + timestamp.substring(6, 8) + " "
-      + timestamp.substring(8, 10) + ":" + timestamp.substring(10, 12) + ":" + timestamp.substring(12, 14))
+    const archiveDate = new Date(timestamp.substring(0, 4) + "-" + timestamp.substring(4, 6) + "-" + timestamp.substring(6, 8) + " " + timestamp.substring(8, 10) + ":" + timestamp.substring(10, 12) + ":" + timestamp.substring(12, 14))
     return result
   }
 }

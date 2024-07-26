@@ -1,5 +1,4 @@
 import { TimeContext } from "../../TimeContext"
-import { RR0UfoCase } from "../RR0UfoCase"
 import { City } from "../../../org/country/region/department/city/City"
 
 export type AcufoCaseDataTime = {
@@ -121,8 +120,18 @@ export type AcufoCaseHistory = {
 /**
  * case number will be like "ACUFO-1945-07-16-NUMAZU-1"
  */
-export interface AcufoCase extends RR0UfoCase {
+export interface AcufoCase {
+  id: string
+  url: URL
+  city: string
+  state: string
+  country: string
   summary: string
+  dateTime: TimeContext
+  reportDate: Date,
+  postDate: Date,
+  image: boolean,
+  shape: string
   data: AcufoCaseData
   sources: AcufoCaseSource[]
   aircraftInfo: AcufoCaseAircraftInfo

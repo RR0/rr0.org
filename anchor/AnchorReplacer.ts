@@ -26,6 +26,13 @@ export class AnchorReplacer {
     return a
   }
 
+  /**
+   * Update a link to denote it as external.
+   *
+   * @param context
+   * @param a
+   * @protected
+   */
   protected updateLinkExternal(context: HtmlSsgContext, a: HTMLAnchorElement) {
     a.target = "_blank"
     a.title = "Lien externe"

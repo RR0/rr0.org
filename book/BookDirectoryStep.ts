@@ -47,7 +47,7 @@ export class BookDirectoryStep extends DirectoryStep {
       }
       books.push(dirBook)
       try {
-        const jsonFileInfo = FileContents.read(context, `${dirName}/book.json`)
+        const jsonFileInfo = FileContents.read(`${dirName}/book.json`)
         Object.assign(dirBook, JSON.parse(jsonFileInfo.contents))
       } catch (e) {
         context.warn(`${dirName} has no book*.json description`)

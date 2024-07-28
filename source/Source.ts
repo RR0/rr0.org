@@ -2,7 +2,14 @@ import { TimeContext } from "../time/TimeContext"
 import { RR0Data } from "../RR0Data"
 
 export type Publication = {
+  /**
+   * The editor of the publication
+   */
   publisher: string
+
+  /**
+   * When the publication occurred.
+   */
   time: TimeContext | undefined
 }
 
@@ -21,17 +28,17 @@ export interface Source extends RR0Data {
   readonly title?: string
 
   /**
-   * A possible sub-title of this source.
+   * A possible subtitle of this source.
    */
   readonly subTitle?: string
 
   /**
-   * The author(s)' name(s) of this source document.
+   * The author(s) name(s) of this source document.
    */
   readonly authors?: string[]
 
   /**
-   * The details about when the sources was published (editor, date)
+   * The details about where and when the source was published.
    */
   readonly publication?: Publication
 

@@ -10,7 +10,7 @@ export class SearchIndexStep implements SsgStep {
   }
 
   execute(context: SsgContext): Promise<any> {
-    context.log("Saving index at", this.fileName)
+    context.log("Saving search index at", this.fileName)
     const index = this.searchCommand.index
     index.pages.sort(
       (pageInfo1, pageInfo2) => pageInfo1.title > pageInfo2.title ? 1 : pageInfo1.title < pageInfo2.title ? -1 : 0)

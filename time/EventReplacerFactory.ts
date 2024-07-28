@@ -2,7 +2,6 @@ import { DomReplacer, ReplacerFactory } from "ssg-api"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { DataService } from "../DataService"
 import { RR0Data } from "../RR0Data"
-import { SourceReplacerFactory } from "../source/SourceReplacerFactory"
 import { EventRenderer } from "./EventRenderer"
 
 export class EventReplacer<D extends RR0Data> {
@@ -32,11 +31,11 @@ export class EventReplacer<D extends RR0Data> {
  */
 export class EventReplacerFactory<D extends RR0Data> implements ReplacerFactory<DomReplacer> {
 
-  constructor(protected renderer: EventRenderer<D>, protected sourceReplacerFactory: SourceReplacerFactory) {
+  constructor(protected replacer: EventReplacer<D>) {
   }
 
   async create(context: HtmlRR0SsgContext): Promise<DomReplacer> {
-    const replacer = new EventReplacer<D>(this.renderer, this.sourceReplacerFactory.dataService)
+    const replacer = this.replacer
     return {
       async replace(original: HTMLElement): Promise<HTMLElement> {
         return replacer.replacement(context, original)

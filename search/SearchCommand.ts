@@ -32,10 +32,12 @@ export type SearchCommandConfig = {
  * Builds an index of pages.
  */
 export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
+
   readonly index: SearchIndex = {
     pages: [],
     words: {}
   }
+
   protected readonly contentStream: fs.WriteStream | undefined
 
   constructor(protected config: SearchCommandConfig) {

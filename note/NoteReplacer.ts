@@ -1,20 +1,18 @@
 import { HtmlSsgContext } from "ssg-api"
+import { ReferenceGenerator } from "../ReferenceGenerator"
 
 export class NoteReplacer {
-  /**
-   * Source counter in the page.
-   */
-  protected number = 0
+
+  constructor(protected counter: ReferenceGenerator<any>) {
+  }
 
   replacement(context: HtmlSsgContext, original: HTMLElement): HTMLElement {
-    this.number++
-    const noteStr = this.number.toString()
-    const noteId = `note-${noteStr}`
+    const noteId = this.counter.next(context)
     const outputDoc = context.file.document
     const replacement = outputDoc.createElement("span")
     replacement.className = "note-id"
     replacement.ariaLabel = "Note"
-    replacement.textContent = "n" + noteStr
+    replacement.textContent = noteId
     const contents = outputDoc.createElement("span")
     contents.className = "note-contents"
     contents.innerHTML = original.innerHTML

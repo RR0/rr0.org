@@ -20,7 +20,7 @@ class RR0TestUtil {
       const langInfo = FileContents.getLang(context, inputFileName)
       context.file = new FileContents(inputFileName, "utf8", contents, new Date(), langInfo)
     } else {
-      context.file = FileContents.read(context, inputFileName)
+      context.file = FileContents.read(inputFileName)
     }
     context.file = context.file  // By default
     return context

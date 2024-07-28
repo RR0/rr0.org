@@ -8,15 +8,30 @@ import { JSDOM } from "jsdom"
 import { DataService } from "../DataService"
 import { HttpSource } from "../time/datasource/HttpSource"
 
+/**
+ * Create Source objects.
+ */
 export class SourceFactory {
 
   constructor(protected dataService: DataService, protected http: HttpSource, protected baseUrl: string) {
   }
 
+  /**
+   * Create a Source object from an anchor's URL.
+   *
+   * @param context
+   * @param href The anchor's URL string.
+   */
   async create(context: HtmlRR0SsgContext, href: string): Promise<Source> {
     return href.startsWith("http") ? await this.createExternal(context, href) : await this.createInternal(context, href)
   }
 
+  /**
+   * Create a Source object from a link referencing an internal page of the site.
+   *
+   * @param context
+   * @param href
+   */
   async createInternal(context: HtmlRR0SsgContext, href: string): Promise<Source> {
     if (path.dirname(href).startsWith("/")) {
       href = href.substring(1)
@@ -62,6 +77,12 @@ export class SourceFactory {
     return source as Source
   }
 
+  /**
+   * Create a Source object from a link referencing a page outside the site.
+   *
+   * @param context
+   * @param href
+   */
   async createExternal(context: HtmlRR0SsgContext, href: string): Promise<Source> {
     const resOut: Partial<Response> = {}
     let title: string
@@ -83,7 +104,7 @@ export class SourceFactory {
     return {title, url, publication}
   }
 
-  protected fromPage(href: string, hash = ""): OnlineSource {
+  fromPage(href: string, hash = ""): OnlineSource {
     const filePath = path.extname(href) ? href : path.join(href, "index.html")
     const fileContents = FileContents.read(filePath)
     const doc = new JSDOM(fileContents.contents).window.document.documentElement

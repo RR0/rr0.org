@@ -62,7 +62,7 @@ import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
 import { DataService, DefaultDataFactory } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
-import { EventReplacerFactory } from "./time/EventReplacerFactory"
+import { EventReplacer, EventReplacerFactory } from "./time/EventReplacerFactory"
 import { HttpSource } from "./time/datasource/HttpSource"
 import { SourceRenderer } from "./source/SourceRenderer"
 import { TimeService } from "./time/TimeService"
@@ -71,6 +71,12 @@ import { TimeReplacer } from "./time/TimeReplacer"
 import { UnitReplaceCommand } from "./value/UnitReplaceCommand"
 import { BookContentVisitor } from "./book/BookContentVisitor"
 import { ChronologyReplacerActions } from "./time/datasource/ChronologyReplacerActions"
+import { SourceReplacer } from "./source/SourceReplacer"
+import { NoteReplacer } from "./note/NoteReplacer"
+import { NoteFileCounter } from "./note/NoteFileCounter"
+import { SourceSiteCounter } from "./source/SourceSiteCounter"
+import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
+import { SourceIndexStep } from "./source/SourceIndexStep"
 
 interface RR0BuildArgs {
   /**
@@ -209,10 +215,7 @@ timeService.getFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService([], "org", undefined)
 
-  const searchCommand = new SearchCommand({
-    notIndexedUrls: ["404.html", "Referencement.html"],
-    indexWords: false
-  })
+  const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false})
   const baseUrl = "https://rr0.org"
   const sourceRenderer = new SourceRenderer()
   const caseRenderer = new CaseSummaryRenderer(sourceRenderer)
@@ -242,17 +245,26 @@ timeService.getFiles().then(async (timeFiles) => {
     new AuthorReplaceCommand(timeService)
   ]
   const http = new HttpSource()
-  const sourceReplacerFactory = new SourceReplacerFactory(sourceRenderer, dataService, http, baseUrl)
+  const sourceRegistryFileName = "source/index.json"
+  const sourceFactory = new PersisentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName)
+//  const sourceCounter = new SourceFileCounter()
+  const sourceCounter = new SourceSiteCounter()
+  const sourceReplacer = new SourceReplacer(sourceRenderer, sourceFactory, sourceCounter)
+  const sourceReplacerFactory = new SourceReplacerFactory(sourceReplacer)
+  const noteCounter = new NoteFileCounter()
+  const noteReplacer = new NoteReplacer(noteCounter)
+  const noteReplacerFactory = new NoteReplacerFactory(noteReplacer)
+  const eventReplacer = new EventReplacer(caseRenderer, dataService)
   const contentsReplaceCommand = [
     databaseAggregationCommand,
-    new ClassDomReplaceCommand(new EventReplacerFactory(caseRenderer, sourceReplacerFactory), "event"),
+    new ClassDomReplaceCommand(new EventReplacerFactory(eventReplacer), "event"),
     new ClassDomReplaceCommand(sourceReplacerFactory, "source"),
     new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
     new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand(new PeopleReplacerFactory(peopleService), "people"),
     new ClassDomReplaceCommand(new PlaceReplacerFactory(), "place"),
     new ClassDomReplaceCommand(new WitnessReplacerFactory(), "temoin", "temoin1", "temoin2", "temoin3"),
-    new ClassDomReplaceCommand(new NoteReplacerFactory(), "note"),
+    new ClassDomReplaceCommand(noteReplacerFactory, "note"),
     new ClassDomReplaceCommand(new IndexedReplacerFactory(), "indexed"),
     new UnitReplaceCommand(),
     new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
@@ -300,6 +312,7 @@ timeService.getFiles().then(async (timeFiles) => {
   }
   if (args.reindex === "true") {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))
+    ssg.add(new SourceIndexStep(sourceRegistryFileName, sourceFactory))
   }
   if (copies) {
     const copyConfig: CopyStepConfig = {

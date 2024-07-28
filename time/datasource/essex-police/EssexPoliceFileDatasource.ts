@@ -19,7 +19,7 @@ export class EssexPoliceFileDatasource extends EssexPoliceDatasource implements 
   }
 
   protected async readCases(context: RR0SsgContext): Promise<EssexPoliceCaseSummary[]> {
-    const file = FileContents.read(context, this.fileName, "utf-8")
+    const file = FileContents.read(this.fileName, "utf-8")
     return this.fileMapper.parse(context, file.contents)
   }
 }

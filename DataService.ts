@@ -64,9 +64,7 @@ export class DataService {
   }
 
   async get<T extends RR0Data = RR0Data>(dirName: string, types: string[], fileNames: string[] = this.factories.reduce(
-    (allFileNames,
-     factory) => factory.fileNames.concat(
-      allFileNames), [])): Promise<T[]> {
+    (allFileNames, factory) => factory.fileNames.concat(allFileNames), [])): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
     if (dataList === undefined) {

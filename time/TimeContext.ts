@@ -118,7 +118,11 @@ export class TimeContext {
   }
 
   toString(): string {
-    let s = String(this.getYear())
+    const year = this.getYear()
+    if (!year) {
+      return undefined
+    }
+    let s = String(year)
     const month = this.getMonth()
     if (this.isSet(month)) {
       s += "-" + String(month).padStart(2, "0")
@@ -174,5 +178,9 @@ export class TimeContext {
       timeContext.setMinutes(undefined)
     }
     return timeContext
+  }
+
+  toJSON() {
+    return this.toString()
   }
 }

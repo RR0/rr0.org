@@ -8,6 +8,7 @@ import { SourceFactory } from "./SourceFactory"
  * Create Source objects and register them.
  */
 export class SourceRegistry extends SourceFactory {
+
   readonly registry = {}
 
   constructor(dataService: DataService, http: HttpSource, baseUrl: string) {

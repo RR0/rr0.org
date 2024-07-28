@@ -78,11 +78,13 @@ import { SourceSiteCounter } from "./source/SourceSiteCounter"
 import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
 import { SourceIndexStep } from "./source/SourceIndexStep"
 
+type ReindexOption = "pages" | "sources"
+
 interface RR0BuildArgs {
   /**
    * If the search index must be regenerated or not.
    */
-  reindex?: "true" | "false"
+  reindex: string
 
   /**
    * Comma-separated list of file patterns to parse as contents.
@@ -310,8 +312,11 @@ timeService.getFiles().then(async (timeFiles) => {
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))
   }
-  if (args.reindex === "true") {
+  const reindex = args.reindex.split(",")
+  if (reindex.includes("search")) {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))
+  }
+  if (reindex.includes("sources")) {
     ssg.add(new SourceIndexStep(sourceRegistryFileName, sourceFactory))
   }
   if (copies) {

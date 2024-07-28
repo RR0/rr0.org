@@ -15,11 +15,11 @@ export class SourceReplacer {
   }
 
   async replacement(context: HtmlRR0SsgContext, original: HTMLElement): Promise<HTMLElement> {
-    const sourceId = this.counter.next(context)
     const outputDoc = context.file.document
     const replacement = outputDoc.createElement("span")
     replacement.className = "source-id"
     replacement.ariaLabel = "Source"
+    const sourceId = this.counter.next(context)
     replacement.textContent = sourceId
     const contents = outputDoc.createElement("span")
     contents.className = "source-contents"
@@ -32,7 +32,7 @@ export class SourceReplacer {
   }
 
   protected async content(context: HtmlRR0SsgContext, original: HTMLElement, contents: HTMLSpanElement) {
-    const href = (original as HTMLAnchorElement).href || original.dataset.href
+    const href = (original as HTMLAnchorElement).href
     if (href) {
       await this.renderFromLink(context, contents, href)
     } else {

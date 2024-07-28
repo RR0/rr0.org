@@ -1,17 +1,20 @@
-import { PerFileCounter } from "../PerFileCounter"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { HtmlSsgContext } from "ssg-api/dist/src/HtmlSsgContext"
+import { ReferenceGenerator } from "../ReferenceGenerator"
 
 /**
  * Count sources in the whole website.
  */
-export class SourceSiteCounter extends PerFileCounter<HtmlRR0SsgContext> {
+export class SourceSiteCounter<C extends HtmlSsgContext> implements ReferenceGenerator<C> {
+  /**
+   * Source counter in the scope of the current page/context.
+   */
+  protected number = 1
 
   get value(): string {
-    const value = super.value
-    return "s" + value
+    return "s" + this.number
   }
 
-  next(_context: HtmlRR0SsgContext): string {
+  next(_context: C): string {
     this.number++
     return this.value
   }

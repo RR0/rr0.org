@@ -46,7 +46,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
       replacement = span
     }
     replacement.translate = false  // Don't translate names
-    context.debug("\tReplacing people", element, "with", replacement)
+    context.debug("\tReplacing people", element.outerHTML, "with", replacement.outerHTML)
     return replacement
   }
 }

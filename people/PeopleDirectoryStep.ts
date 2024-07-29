@@ -3,7 +3,7 @@ import { KnownPeople, People } from "./People"
 import { promise as glob } from "glob-promise"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { HtmlTag } from "../util/HtmlTag"
-import { DirectoryStep, OutputFunc, SsgConfig, SsgStep } from "ssg-api"
+import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
 import { StringUtil } from "../util/string/StringUtil"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { PeopleService } from "./PeopleService"
@@ -38,6 +38,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const pilotsDirectoryStep = this.createPilots(dirs, excludedDirs, outputFunc, config, service)
     const militaryDirectoryStep = this.createMilitary(dirs, excludedDirs, outputFunc, config, service)
     const politiciansDirectoryStep = this.createPolicitians(dirs, excludedDirs, outputFunc, config, service)
+    const softwareEngineersDirectoryStep = this.createSoftwareEngineers(dirs, excludedDirs, outputFunc, config, service)
     const allPeopleDirectoryStep = this.createAll(dirs, excludedDirs, outputFunc, config, service)
     const letterDirectorySteps = await this.createLetters(outputFunc, config, service)
     return [
@@ -48,6 +49,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
       contacteesDirectoryStep,
       pilotsDirectoryStep,
       militaryDirectoryStep,
+      softwareEngineersDirectoryStep,
       ...politiciansDirectoryStep,
       allPeopleDirectoryStep,
       ...letterDirectorySteps
@@ -76,19 +78,26 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   static createMilitary(dirs: string[], excludedDirs: string[],
-                        outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
+                        outputFunc: OutputFunc, config: SsgConfig, service: PeopleService): PeopleDirectoryStep {
     return new PeopleDirectoryStep(dirs, excludedDirs, "people/militaires.html", outputFunc, config,
       [Occupation.military], service, "military people directories")
   }
 
   static createPolicitians(dirs: string[], excludedDirs: string[],
-                           outputFunc: OutputFunc, config: SsgConfig, service: PeopleService) {
+                           outputFunc: OutputFunc, config: SsgConfig, service: PeopleService): PeopleDirectoryStep[] {
     return [
       new PeopleDirectoryStep(dirs, excludedDirs, "people/politicians.html", outputFunc, config,
         [Occupation.politician], service, "politicians directories"),
       new PeopleDirectoryStep(dirs, excludedDirs, "people/dirigeants.html", outputFunc, config,
         [Occupation.leader], service, "politcian leaders directories")
     ]
+  }
+
+  static createSoftwareEngineers(dirs: string[], excludedDirs: string[],
+                                 outputFunc: OutputFunc, config: SsgConfig,
+                                 service: PeopleService): PeopleDirectoryStep {
+    return new PeopleDirectoryStep(dirs, excludedDirs, "tech/info/Personnes.html", outputFunc, config,
+      [Occupation.softwareEngineer], service, "software engineers directories")
   }
 
   static createPilots(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
@@ -112,7 +121,8 @@ export class PeopleDirectoryStep extends DirectoryStep {
   static createWitnesses(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,
                          service: PeopleService) {
     return new PeopleDirectoryStep(dirs, excludedDirs, "people/witness/index.html", outputFunc, config,
-      [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.contactee], service, "UFO witnesses directories")
+      [Occupation.ufoWitness, Occupation.ufoWitness2, Occupation.abductee, Occupation.contactee], service,
+      `UFO witnesses directories`)
   }
 
   static createUfologists(dirs: string[], excludedDirs: string[], outputFunc: OutputFunc, config: SsgConfig,

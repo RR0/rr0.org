@@ -1,4 +1,5 @@
 export enum Occupation {
+  abductee = "abductee",
   actor = "actor",
   artist = "artist",
   anthropologist = "anthropologist",

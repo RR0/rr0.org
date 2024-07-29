@@ -2,6 +2,7 @@ import { Gender } from "@rr0/common"
 
 export let peopleMessages_fr = {
   occupation: {
+    abductee: (gender: Gender) => gender === Gender.male ? "enlevé" : "enlevée",
     actor: (gender: Gender) => gender === Gender.male ? "acteur" : "actrice",
     anthropologist: (_gender: Gender) => "anthropologue",
     archeologist: (_gender: Gender) => "archéologue",

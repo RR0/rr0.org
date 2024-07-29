@@ -1,5 +1,5 @@
 <!--#include virtual="/header-start.html" -->
-<title>C</title>
+<title>Langage C</title>
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>Motivation</h2>
@@ -14,24 +14,37 @@
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Un exemple de programme C est :</p>
-  <blockquote><code><strong>#include</strong> &lt;stdio.h&gt;<br/> <br/> <span class="codeComment"><strong>/*</strong> Demande à l'utilisateur un nombre entre 1 et 10 <strong>*/</strong></span><br/>
-    <strong>int </strong>Get_X<strong>() {<br/> int </strong>x<strong>;<br/> <br/> do<br/> {<br/> </strong>printf
-    <strong>(<span class="codeString">"\n</span></strong><span class="codeString">Entrez un
-  nombre entre 0 et 10 <strong>"</strong></span><strong>);<br/> </strong>scanf<strong> (<span
-        class="codeString">"%d"</span>, &</strong>x<strong>);<br/> <br/> } while (</strong>x<strong>
-      &lt; </strong>0<strong> || </strong>x<strong> &gt; </strong>10<strong>);<br/> <br/> return
-      (</strong>x<strong>);<br/> } <br/> <br/> main</strong>() <strong>{</strong><br/> <strong>int </strong>c, c1; c =
-    c1 = 0;<br/> <strong>while </strong>((c = getchar()) != EOF)<br/> <strong>{</strong><br/> <strong>if </strong>(c !=
-    <span class="codeString">' '</span> && c != <span class="codeString">'\t'</span> && c != <span class="codeString">'\n'</span>)<br/>
-    printf ("%c", c);<br/> <strong>else</strong><br/> <strong>if</strong> (c1 != <span class="codeString">' '</span> &
-    c1 != <span class="codeString">'\t'</span> && c1 != <span class="codeString">'\n'</span>)<br/> printf (<span
-        class="codeString">"\n"</span>);<br/> <br/> c1 = c;<br/> <strong>}<br/> }</strong></code>
-  </blockquote>
-  <p>Un exemple de compilation C est :</p>
-  <p><code><strong>cc</strong> MonSource.c</code></p>
+  <p>Un exemple de programme en C est :</p>
+  <pre><code>
+#include &lt;stdio.h&gt;
+/* Demandeà l'utilisateur un nombre entre 1 et 10 */
+int Get_X() {
+  int x;
+
+  do {
+    printf("\nEntrez un nombre entre 0 et 10 ");
+    scanf ("%d", &x);
+  } while (x < 0 || x > 10);
+
+  return (x);
+}
+
+main() {
+  int c, c1; c = c1 = 0;
+  while ((c = getchar()) != EOF) {
+    if (c != ' ' && c != '\t' && c != '\n')
+      printf ("%c", c);
+    else
+      if (c1 != ' ' & c1 != '\t' && c1 != '\n')
+        printf ("\n");
+    c1 = c;
+  }
+}
+</code></pre>
+  <p>Un exemple de compilation C est :</p>
+  <p><code>cc MonSource.c</code></p>
   <p>ou avec un compilateur <a href="/org/us/asso/fsf/gnu">GNU</a>/Linux :</p>
-  <p><code><strong>gcc</strong> MonSource.c</code></p>
+  <p><code>gcc MonSource.c</code></p>
 </section>
 <section>
   <h2>Notes</h2>

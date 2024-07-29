@@ -25,9 +25,9 @@
             <li>HEAD</li>
           </ul>
         </li>
-        <li>Une <a href="/tech/info/soft/reseau/internet/URI.html">URI</a> de ressource &agrave; obtenir
-          (monChemin/maResource) ;</li>
-        <li>Des champs d'en-tête (<cite>Content-type</cite>, <cite>Content-length</cite>, etc.)</li>
+        <li>Une <a href="/tech/info/soft/reseau/internet/URI.html">URI</a> de ressource à obtenir (monChemin/maResource)
+          ;</li>
+        <li>Des champs d'en-tête (<code>Content-type</code>, <code>Content-length</code>, etc.)</li>
       </ul>
     </li>
     <li>Des éventuelles données (POST, upload)</li>
@@ -36,13 +36,15 @@
 <section>
   <h2>Exemples</h2>
   <p>Un exemple de réponse <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> envoyant un cookie est :</p>
-  <blockquote><cite> <strong>HTTP/1.1 200 OK<br> Content-type:</strong> text/html<br> <strong>Content-length:</strong>
-    148<br> <strong>Set-cookie:</strong> Customer=&quot;WILE_E_COYOTE&quot;; Version=&quot;1&quot;; Path=&quot;/acme&quot;</cite>
-  </blockquote>
+  <code><pre> HTTP/1.1 200 OK<br> Content-type: text/html
+Content-length: 148
+Set-cookie: Customer="WILE_E_COYOTE"; Version="1"; Path="/acme"</pre>
+  </code>
   <p>Un exemple de requête HTTP retournant un cookie :</p>
-  <blockquote><cite><strong>GET</strong> javarome/SecondRequest.html<br> <strong>Content-length:</strong> 148<br>
-    <strong>Cookie:</strong> $Version=&quot;1&quot;; Customer=&quot;WILE_E_COYOTE&quot;; $Path=&quot;/acme&quot;</cite>
-  </blockquote>
+  <code><pre>GET javarome/SecondRequest.html
+Content-length: 148
+Cookie: $Version="1"; Customer="WILE_E_COYOTE"; $Path="/acme"</pre>
+  </code>
 </section>
 <section>
   <h2>Caractéristiques</h2>
@@ -50,12 +52,14 @@
     <li>Créés par <a href="/org/us/company/netscape/index.html">Netscape</a> ;</li>
     <li>Standardisés par la RFC 2109 ;</li>
     <li>Stockés dans <code>C:\Documents and Settings\</code>login<code>\Cookies</code> par <a
-        href="/org/us/company/ms/MSIE.html">MSIE</a>/Windows ;</li>
+      href="/org/us/company/ms/MSIE.html">MSIE</a>/Windows ;</li>
   </ul>
 </section>
-<h2>Limitations</h2>
-<ul>
-  <li>4096 octets maximum ;</li>
-  <li>Leur support peut être désactivé sur certains navigateurs ; </li>
-</ul>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>4096 octets maximum ;</li>
+    <li>Leur support peut être désactivé sur certains navigateurs ; </li>
+  </ul>
+</section>
 <!--#include virtual="/footer.html" -->

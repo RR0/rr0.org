@@ -74,9 +74,9 @@ import { ChronologyReplacerActions } from "./time/datasource/ChronologyReplacerA
 import { SourceReplacer } from "./source/SourceReplacer"
 import { NoteReplacer } from "./note/NoteReplacer"
 import { NoteFileCounter } from "./note/NoteFileCounter"
-import { SourceSiteCounter } from "./source/SourceSiteCounter"
 import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
 import { SourceIndexStep } from "./source/SourceIndexStep"
+import { SourceFileCounter } from "./source/SourceFileCounter"
 
 type ReindexOption = "pages" | "sources"
 
@@ -250,7 +250,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const sourceRegistryFileName = "source/index.json"
   const sourceFactory = new PersisentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName)
 //  const sourceCounter = new SourceFileCounter()
-  const sourceCounter = new SourceSiteCounter()
+  const sourceCounter = new SourceFileCounter()
   const sourceReplacer = new SourceReplacer(sourceRenderer, sourceFactory, sourceCounter)
   const sourceReplacerFactory = new SourceReplacerFactory(sourceReplacer)
   const noteCounter = new NoteFileCounter()

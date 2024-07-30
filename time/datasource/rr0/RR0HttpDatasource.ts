@@ -18,7 +18,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     super()
   }
 
-  static id(dateTime: TimeContext, place: NamedPlace | undefined): string {
+  id(dateTime: TimeContext, place: NamedPlace | undefined): string {
     return dateTime.toString() + (place?.org ? "$" + place.org?.dirName.replaceAll("/", "_") : "")
   }
 
@@ -69,7 +69,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     }
     const sources = this.getSources(row, itemContext)
     const description = this.getDescription(row)
-    const id = RR0HttpDatasource.id(dateTime, place)
+    const id = this.id(dateTime, place)
     return {url, place, dateTime, description, sources, id}
   }
 

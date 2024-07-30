@@ -32,7 +32,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
       const datasource = mapping.datasource
       if (datasource instanceof RR0HttpDatasource) {
         datasource.findRows = (_doc: HTMLElement) => {
-          return Array.from(element.children)
+          return Array.from(element.children)   // Use local RR0 rows instead of remote ones
         }
       }
       const datasourceKey = context.file.name + "$" + datasource.copyright

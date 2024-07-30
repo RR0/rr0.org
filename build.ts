@@ -55,7 +55,6 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/IndexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
-import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
@@ -224,7 +223,7 @@ timeService.getFiles().then(async (timeFiles) => {
   // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
   const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
     new ChronologyReplacerFactory(timeService,
-      [rr0Mapping /*new GeipanRR0Mapping(actions)
+      [/*rr0Mapping /*new GeipanRR0Mapping(actions)
         /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
       ], caseRenderer)
   )

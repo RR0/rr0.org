@@ -1,12 +1,12 @@
-url,place,dateTime,description,sources,id,place.name,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,Photographie en Suisse cette année-là,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
-https://rr0.org/time/1/9/7/5/index.html,,1975,,"",1975
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data,place.org.parent.dirName,place.org.parent.code,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.code,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.code,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
+https://rr0.org/time/1/9/7/5/index.html#1975-01,,1975-01,,"",1975-01
+https://rr0.org/time/1/9/7/5/index.html#1975-03,,1975-03,,"",1975-03
+https://rr0.org/time/1/9/7/5/index.html#1975-04,,1975-04,,"",1975-04
+https://rr0.org/time/1/9/7/5/index.html#1975-05,,1975-05,,"",1975-05
+https://rr0.org/time/1/9/7/5/index.html#1975-06,,1975-06,,"",1975-06
+https://rr0.org/time/1/9/7/5/index.html#1975-07,,1975-07,,"",1975-07
+https://rr0.org/time/1/9/7/5/index.html#1975-08,,1975-08,Photographie en Suisse cette année-là,"",1975-08
+https://rr0.org/time/1/9/7/5/index.html#1975-09,,1975-09,,"",1975-09
+https://rr0.org/time/1/9/7/5/index.html#1975-10,,1975-10,,"",1975-10
+https://rr0.org/time/1/9/7/5/index.html#1975-11,,1975-11,,"",1975-11
 https://rr0.org/time/1/9/7/5/index.html,,1975,Il échoit formellement à la gendarmerie la charge de recueillir systématiquement les rapports d'observations d'ovni.,"",1975

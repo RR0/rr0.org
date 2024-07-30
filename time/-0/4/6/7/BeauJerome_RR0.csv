@@ -1,2 +1,2 @@
-url,place,dateTime,description,sources,id
-https://rr0.org/time/-0/4/6/7/index.html,,-467,"(ou 466) Un gigantesque globe de feu parcours à plusieurs reprises durant 75 jours avant la chute d'un ""bolide"" au cours de la 78ᵉ Olympiade Daimachos, Traité de la Piété.","",-467
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
+https://rr0.org/time/-0/4/6/7/index.html,,-467,(ou 466) Un gigantesque globe de feu parcours à plusieurs reprises durant 75 jours avant la chute d'un "bolide" au cours de la 78ᵉ Olympiade.,"Daimachos,s1,"""",,",-467

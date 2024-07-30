@@ -1,2 +1,2 @@
-url,place,dateTime,description,sources,id
-https://rr0.org/time/-0/0/1/9/index.html,,-19,"(ou -18) En Italie, observation d'une torche traversant le pays du Sud au Nord en émettant une si vive clarté que la nuit en est balayée Julius Obsequens, Prodiges, CXXXI, 70.","",-19
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place
+https://rr0.org/time/-0/0/1/9/index.html,Italie,org/it,it,"",country,,,-19,"(ou -18) En , observation d'une torche traversant le pays du Sud au Nord en émettant une si vive clarté que la nuit en est balayée.","Julius Obsequens,s1,"""",""Prodiges, CXXXI, 70"",",-19$org_it

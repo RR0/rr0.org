@@ -1,6 +1,9 @@
 import { DomReplacement } from "../time/DomReplacement"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 
+/**
+ * Adds an index anchor element with the index id.
+ */
 export class IndexedReplacer implements DomReplacement<HtmlRR0SsgContext> {
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLElement): Promise<HTMLElement> {

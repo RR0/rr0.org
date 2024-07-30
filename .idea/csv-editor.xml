@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/org/eu/fr/cnes/geipan/export_cas_pub_20210219111412.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/org/us/region/Counties.csv">
           <value>
             <Attribute>

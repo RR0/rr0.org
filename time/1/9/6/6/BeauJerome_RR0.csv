@@ -1,11 +1,11 @@
-url,place,dateTime,description,sources,id,place.name,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,"Eté 1966-07 1966-08 Au Pérou, un ""objet extraterrestre"" arrive pour atterrir à la base aérienne de Talara ""Peruvian Air Force Conceals UFO Information"", El Chino, 27 mai 2005.","",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
-https://rr0.org/time/1/9/6/6/index.html,,1966,,"",1966
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data,place.org.parent.dirName,place.org.parent.code,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.code,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.code,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
+https://rr0.org/time/1/9/6/6/index.html#1966-01,,1966-01,,"",1966-01
+https://rr0.org/time/1/9/6/6/index.html#1966-02,,1966-02,,"",1966-02
+https://rr0.org/time/1/9/6/6/index.html#1966-03,,1966-03,,"",1966-03
+https://rr0.org/time/1/9/6/6/index.html#1966-04,,1966-04,,"",1966-04
+https://rr0.org/time/1/9/6/6/index.html#1966-05,,1966-05,,"",1966-05
+https://rr0.org/time/1/9/6/6/index.html#1966-06,,1966-06,"Eté juillet 1966 août 1966 Au Pérou, un ""objet extraterrestre"" arrive pour atterrir à la base aérienne de Talara.","""Peruvian Air Force Conceals UFO Information"",s1,"""",El Chino,",1966-06
+https://rr0.org/time/1/9/6/6/index.html#1966-09,,1966-09,,"",1966-09
+https://rr0.org/time/1/9/6/6/index.html#1966-10,,1966-10,,"",1966-10
+https://rr0.org/time/1/9/6/6/index.html#1966-11,,1966-11,,"",1966-11
+https://rr0.org/time/1/9/6/6/index.html#1966-12,,1966-12,,"",1966-12

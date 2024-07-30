@@ -12,7 +12,7 @@ import { Organization } from "../../../org/Organization"
 
 export class RR0HttpDatasource extends RR0Datasource {
 
-  protected readonly http = new HttpSource()
+  http = new HttpSource()
 
   constructor(readonly baseUrl: URL, readonly searchPath: string, protected cityService: CityService) {
     super()
@@ -146,7 +146,8 @@ export class RR0HttpDatasource extends RR0Datasource {
     const month = time.getMonth()
     const year = time.getYear()
     const searchUrl = new URL(this.searchPath, this.baseUrl)
-    let timeStr = String(year).padStart(4, "0").split("").join("/")
+    const sign = year < 0 ? "-" : ""
+    let timeStr = sign + String(Math.abs(year)).padStart(4, "0").split("").join("/")
     if (month) {
       timeStr = UrlUtil.join(timeStr, String(month).padStart(2, "0"))
       if (day) {

@@ -1,2 +1,2 @@
-url,place,dateTime,description,sources,id
-https://rr0.org/time/-0/0/6/6/index.html,,-66,"Une ""étincelle"" tombe d'une étoile sur la Terre, devient plus grosse que la Lune puis, diminuant de taille, s'en retourne au ciel [Pline l'Ancien (23-79), Historia Naturalis].","",-66
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
+https://rr0.org/time/-0/0/6/6/index.html,,-66,"Une ""étincelle"" tombe d'une étoile sur la Terre, devient plus grosse que la Lune puis, diminuant de taille, s'en retourne au ciel.","[Pline l'Ancien (23-79),s1,"""",Historia Naturalis],",-66

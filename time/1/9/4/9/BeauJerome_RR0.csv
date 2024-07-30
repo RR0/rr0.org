@@ -1,16 +1,16 @@
-url,place,dateTime,description,sources,id
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data,place.org.parent.dirName,place.org.parent.code,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.code,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.code,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
 https://rr0.org/time/1/9/4/9/index.html,,1949,Le Secrétaire à la Défense James Vincent Forrestal est contraint de démissionner après que l'on constate que des forces préparent la guerre en Corée.,"",1949
 https://rr0.org/time/1/9/4/9/index.html,,1949,Début de la construction des installations de Groom Lake sur une zone du Nevada appartenant à l'AEC.,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,"France Soir instaure une rubrique intermittente sur les mystérieuses lumières qui apparaissent dans les cieux des USA Chaloupek, Henri 1997.","",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,"Avant 1950 Un certain Roy L. Dimmick, chef des ventes de la société Apache Powder, de Los Angeles, affirme avoir discuté avec un mexicain et un équatorien qui ont vu une soucoupe s'écraser près de la ville de Mexico. L'histoire est racontée par Frank ScullyScully qui n'hésitait pas à répéter sans les vérifier les bobards les plus étranges qui circulaient à son époque.","",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,,"",1949
-https://rr0.org/time/1/9/4/9/index.html,,1949,"A Tulsa (Oklahoma), Don Bushnell (directeur administratif de Southwestem Porcelain Steel Corp.), voit 1 objet se poser devant sa voiture tandis que sa radio s'arrêtait brusquement. Il bloqua les freins, mais l'objet s'évanouit Keyhoe, Donald E. S.","",1949
+https://rr0.org/time/1/9/4/9/index.html,,1949,France Soir instaure une rubrique intermittente sur les mystérieuses lumières qui apparaissent dans les cieux des USA.,"Chaloupek,s1,"""",Henri 1997,",1949
+https://rr0.org/time/1/9/4/9/index.html#1949-01,,1949-01,,"",1949-01
+https://rr0.org/time/1/9/4/9/index.html#1949-02,,1949-02,,"",1949-02
+https://rr0.org/time/1/9/4/9/index.html#1949-03,,1949-03,,"",1949-03
+https://rr0.org/time/1/9/4/9/index.html#1949-04,,1949-04,,"",1949-04
+https://rr0.org/time/1/9/4/9/index.html#1949-05,,1949-05,,"",1949-05
+https://rr0.org/time/1/9/4/9/index.html#1949-07,,1949-07,,"",1949-07
+https://rr0.org/time/1/9/4/9/index.html#1949-08,,1949-08,,"",1949-08
+https://rr0.org/time/1/9/4/9/index.html,,1949,"Avant 1950 Un certain Roy L. Dimmick, chef des ventes de la société Apache Powder, de Los Angeles, affirme avoir discuté avec un mexicain et un équatorien qui ont vu une soucoupe s'écraser près de la ville de Mexico. L'histoire est racontée par Frank Scully (Scully qui n'hésitait pas à répéter sans les vérifier les bobards les plus étranges qui circulaient à son époque).","",1949
+https://rr0.org/time/1/9/4/9/index.html#1949-09,,1949-09,,"",1949-09
+https://rr0.org/time/1/9/4/9/index.html#1949-10,,1949-10,,"",1949-10
+https://rr0.org/time/1/9/4/9/index.html#1949-12,,1949-12,,"",1949-12
+https://rr0.org/time/1/9/4/9/index.html,Tulsa (Oklahoma),,"",,,,1949,"A Don Bushnell (directeur administratif de Southwestem Porcelain Steel Corp.), voit 1 objet se poser devant sa voiture tandis que sa radio s'arrêtait brusquement. Il bloqua les freins, mais l'objet s'évanouit.","Keyhoe,s2,"""",Donald E. S,",1949

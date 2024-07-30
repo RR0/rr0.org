@@ -117,49 +117,14 @@ export class TimeContext {
     return new Date(this.toString())
   }
 
-  toString(): string {
-    const year = this.getYear()
-    if (!year) {
-      return undefined
-    }
-    let s = String(year)
-    const month = this.getMonth()
-    if (this.isSet(month)) {
-      s += "-" + String(month).padStart(2, "0")
-    }
-    const day = this.getDayOfMonth()
-    if (this.isSet(day)) {
-      s += "-" + String(day).padStart(2, "0")
-    }
-    const hour = this.getHour()
-    if (this.isSet(hour)) {
-      s += " " + String(hour).padStart(2, "0")
-    }
-    const minutes = this.getMinutes()
-    if (this.isSet(minutes)) {
-      s += ":" + String(minutes).padStart(2, "0")
-    }
-    return s
-  }
-
-  protected isSet(value: any) {
-    return value != void 0 && value != null
-  }
-
-  isBefore(other: TimeContext): boolean {
-    return this.toString().localeCompare(other.toString()) < 0
-  }
-
-  isAfter(other: TimeContext): boolean {
-    return this.toString().localeCompare(other.toString()) > 0
-  }
-
-  equals(other: TimeContext): boolean {
-    return this.toString() === other.toString()
-  }
-
   static fromFileName(context: HtmlRR0SsgContext, fileName = context.file.name): TimeContext | undefined {
     let timeContext: TimeContext | undefined
+    let elems
+    if (fileName.endsWith("index.html")) {
+      while ((elems = fileName.split("/")).length < 6) {
+        fileName = elems.slice(0, elems.length - 1).join("/") + "/0/index.html"
+      }
+    }
     const timeExec = Time.parseFileName(fileName)
     if (timeExec && timeExec.length > 5) {
       const pageContext = context.clone()
@@ -178,6 +143,47 @@ export class TimeContext {
       timeContext.setMinutes(undefined)
     }
     return timeContext
+  }
+
+  protected isSet(value: any) {
+    return value != void 0 && value != null
+  }
+
+  isBefore(other: TimeContext): boolean {
+    return this.toString().localeCompare(other.toString()) < 0
+  }
+
+  isAfter(other: TimeContext): boolean {
+    return this.toString().localeCompare(other.toString()) > 0
+  }
+
+  equals(other: TimeContext): boolean {
+    return this.toString() === other.toString()
+  }
+
+  toString(): string {
+    const year = this.getYear()
+    if (!year) {
+      return undefined
+    }
+    let s = String(year)
+    const month = this.getMonth()
+    if (this.isSet(month)) {
+      s += "-" + String(month).padStart(2, "0")
+    }
+    const day = this.getDayOfMonth()
+    if (this.isSet(day)) {
+      s += "-" + String(day).padStart(2, "0")
+    }
+    const hour = this.getHour()
+    if (this.isSet(hour)) {
+      s += "T" + String(hour).padStart(2, "0")
+    }
+    const minutes = this.getMinutes()
+    if (this.isSet(minutes)) {
+      s += ":" + String(minutes).padStart(2, "0")
+    }
+    return s
   }
 
   toJSON() {

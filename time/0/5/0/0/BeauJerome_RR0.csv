@@ -1,2 +1,2 @@
-url,place,dateTime,description,sources,id
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
 https://rr0.org/time/0/5/0/0/index.html,,500,"Peuplement probable de l'île de Pâques, par des navigateurs venus des îles la Société ou des îles Marquises, via les îles Gambier.","",500

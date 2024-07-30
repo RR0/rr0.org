@@ -55,6 +55,7 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/IndexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
+import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
@@ -223,7 +224,7 @@ timeService.getFiles().then(async (timeFiles) => {
   // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
   const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
     new ChronologyReplacerFactory(timeService,
-      [/*rr0Mapping /*new GeipanRR0Mapping(actions)
+      [rr0Mapping /*new GeipanRR0Mapping(actions)
         /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
       ], caseRenderer)
   )
@@ -255,7 +256,6 @@ timeService.getFiles().then(async (timeFiles) => {
   const noteReplacerFactory = new NoteReplacerFactory(noteReplacer)
   const eventReplacer = new EventReplacer(caseRenderer, dataService)
   const contentsReplaceCommand = [
-    databaseAggregationCommand,
     new ClassDomReplaceCommand(new EventReplacerFactory(eventReplacer), "event"),
     new ClassDomReplaceCommand(sourceReplacerFactory, "source"),
     new DomReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
@@ -266,7 +266,8 @@ timeService.getFiles().then(async (timeFiles) => {
     new ClassDomReplaceCommand(noteReplacerFactory, "note"),
     new ClassDomReplaceCommand(new IndexedReplacerFactory(), "indexed"),
     new UnitReplaceCommand(),
-    new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles))
+    new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+    databaseAggregationCommand
   ]
   const ssg = new Ssg(config)
   const getOutputPath = (context: SsgContext): string => path.join(outDir, context.file.name)

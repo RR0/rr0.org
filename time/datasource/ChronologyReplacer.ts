@@ -4,6 +4,7 @@ import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
 import { RR0HttpDatasource } from "./rr0/RR0HttpDatasource"
+import { HttpSource } from "./HttpSource"
 
 /**
  * Replaces a (ul) tag from (chronology) files with case summaries from external datasources.
@@ -31,6 +32,12 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     for (const mapping of this.mappings) {
       const datasource = mapping.datasource
       if (datasource instanceof RR0HttpDatasource) {
+        datasource.http = new class extends HttpSource {
+
+          async get(queryUrl: URL, init: RequestInit = {}, resOut: Partial<Response> = {}): Promise<HTMLElement> {
+            return context.file.document.documentElement
+          }
+        }()
         datasource.findRows = (_doc: HTMLElement) => {
           return Array.from(element.children)   // Use local RR0 rows instead of remote ones
         }

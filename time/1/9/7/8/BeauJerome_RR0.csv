@@ -1,16 +1,15 @@
-url,place,dateTime,description,sources,id,place.name,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,L'ovni phographié à I-Petry en Crimée Photographie (ci-contre) d'un ovni à I-Petry (Crimée).,"",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,"En Louisianne Stanton T. Friedman rencontre le directeur d'une chaîne de télévision qui lui suggère au cours d'une discussion de se mettre en rapport avec un certain Jesse A. Marcel, qui aurait eu entre les mains, lorsqu'il était à l'armée, des morceaux d'une soucoupe volante qui l'intéressent.","",1978
-https://rr0.org/time/1/9/7/8/index.html,,1978,Le suédois Anders Liljegren découvrira que l'armée de l'air suédoise avait créé un bureau d'enquête lors des observations d'aéroplanes de.,"",1978
+url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data,place.org.parent.dirName,place.org.parent.code,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.code,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.code,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
+https://rr0.org/time/1/9/7/8/index.html#1978-01,,1978-01,,"",1978-01
+https://rr0.org/time/1/9/7/8/index.html#1978-02,,1978-02,,"",1978-02
+https://rr0.org/time/1/9/7/8/index.html#1978-03,,1978-03,,"",1978-03
+https://rr0.org/time/1/9/7/8/index.html#1978-04,,1978-04,,"",1978-04
+https://rr0.org/time/1/9/7/8/index.html#1978-05,,1978-05,,"",1978-05
+https://rr0.org/time/1/9/7/8/index.html#1978-06,,1978-06,,"",1978-06
+https://rr0.org/time/1/9/7/8/index.html#1978-07,,1978-07,,"",1978-07
+https://rr0.org/time/1/9/7/8/index.html#1978-08,,1978-08,,"",1978-08
+https://rr0.org/time/1/9/7/8/index.html#1978-09,,1978-09,,"",1978-09
+https://rr0.org/time/1/9/7/8/index.html#1978-10,,1978-10,,"",1978-10
+https://rr0.org/time/1/9/7/8/index.html#1978-11,,1978-11,,"",1978-11
+https://rr0.org/time/1/9/7/8/index.html#1978-12,,1978-12,,"",1978-12
+https://rr0.org/time/1/9/7/8/index.html,I-Petry (Crimée),,"",,,,1978,L'ovni phographié à I-Petry en Crimée Photographie (ci-contre) d'un ovni à.,"",1978
+https://rr0.org/time/1/9/7/8/index.html,Louisianne,,"",,,,1978,"En Stanton T. Friedman rencontre le directeur d'une chaîne de télévision qui lui suggère au cours d'une discussion de se mettre en rapport avec un certain Jesse A. Marcel, qui aurait eu entre les mains, lorsqu'il était à l'armée, des morceaux d'une soucoupe volante qui l'intéressent.","",1978

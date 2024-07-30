@@ -2,7 +2,6 @@ import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { Publication, Source } from "./Source"
 import path from "path"
 import { TimeContext } from "../time/TimeContext"
-import { OnlineSource } from "./OnlineSource"
 import { FileContents } from "ssg-api"
 import { JSDOM } from "jsdom"
 import { DataService } from "../DataService"
@@ -104,7 +103,7 @@ export class SourceFactory {
     return {title, url, publication}
   }
 
-  fromPage(href: string, hash = ""): OnlineSource {
+  fromPage(href: string, hash = ""): Source {
     const filePath = path.extname(href) ? href : path.join(href, "index.html")
     const fileContents = FileContents.read(filePath)
     const doc = new JSDOM(fileContents.contents).window.document.documentElement
@@ -117,6 +116,6 @@ export class SourceFactory {
       authors: Array.from(doc.querySelectorAll("meta[name='author']")).map(meta => meta.getAttribute("content")),
       publication: {publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content")},
       url
-    } as OnlineSource
+    } as Source
   }
 }

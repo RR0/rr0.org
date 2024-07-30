@@ -4,7 +4,6 @@ import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 import { Datasource } from "./Datasource"
 import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
-import { ChronologyReplacerActions } from "./ChronologyReplacerActions"
 import { RR0Mapping } from "./rr0/RR0Mapping"
 
 /**
@@ -19,14 +18,12 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
   protected readonly done = new Set<string>()
 
   constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: CaseSummaryRenderer,
-              protected actions: ChronologyReplacerActions, protected rr0Mapping: RR0Mapping) {
+              protected rr0Mapping: RR0Mapping) {
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {
     element.classList.add("indexed")  // Make sure the user can share an anchor to a list item.
-    if (this.actions.read.length > 0 || this.actions.write.length > 0) {
-      await this.aggregate(context, element)
-    }
+    await this.aggregate(context, element)
     return element
   }
 
@@ -39,18 +36,16 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
       const datasourceKey = context.file.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
         await this.aggregateDatasource(mapping, context, datasource, element, existingCases, casesToAdd, datasourceKey)
+        this.done.add(datasourceKey)
+        const merge = mapping.actions.write.includes("pages")
+        if (merge) {
+          const allCases = existingCases.concat(casesToAdd)
+          const items = allCases.map(c => this.renderer.render(context, c))
+          for (const item of items) {
+            element.append(item)
+          }
+        }
       }
-    }
-    const merge = this.actions.write.includes("pages")
-    if (merge) {
-      const allCases = existingCases.concat(casesToAdd)
-      const items = allCases.map(c => this.renderer.render(context, c))
-      for (const item of items) {
-        element.append(item)
-      }
-    }
-    if (this.actions.write.includes("backup")) {
-      this.rr0Mapping.backupDatasource.save(context, existingCases.concat(casesToAdd), new Date())
     }
   }
 
@@ -59,7 +54,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     existingCases: RR0CaseSummary[], casesToAdd: RR0CaseSummary[], datasourceKey: string) {
     let fetched: any[]
     const backupDatasource = mapping.backupDatasource
-    for (const readMethod of this.actions.read) {
+    for (const readMethod of mapping.actions.read) {
       if (fetched) {
         break
       }
@@ -79,11 +74,11 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
           fetched = await datasource.fetch(context)
           break
         default:
-          throw new Error(`Unsupported "${(this.actions.read)}" read method`)
+          throw new Error(`Unsupported "${(mapping.actions.read)}" read method`)
       }
     }
     const fetchTime = new Date()
-    for (const writeMethod of this.actions.write) {
+    for (const writeMethod of mapping.actions.write) {
       switch (writeMethod) {
         case "backup":
           backupDatasource.save(context, fetched, fetchTime)
@@ -94,7 +89,6 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
           break
       }
     }
-    this.done.add(datasourceKey)
   }
 
   protected merge(

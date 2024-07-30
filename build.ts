@@ -12,12 +12,12 @@ import {
   ContentStepConfig,
   CopyStep,
   CopyStepConfig,
+  DomReplaceCommand,
   FileContents,
   FileUtil,
   HtAccessToNetlifyConfigReplaceCommand,
   HtmlLinks,
   HtmlMeta,
-  HtmlTagReplaceCommand,
   OutputFunc,
   Ssg,
   SsgConfig,
@@ -78,11 +78,10 @@ import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
 import { SourceIndexStep } from "./source/SourceIndexStep"
 import { SourceFileCounter } from "./source/SourceFileCounter"
 
-type ReindexOption = "pages" | "sources"
-
 interface RR0BuildArgs {
   /**
    * If the search index must be regenerated or not.
+   * For ex: "pages,sources"
    */
   reindex: string
 
@@ -221,14 +220,14 @@ timeService.getFiles().then(async (timeFiles) => {
   const baseUrl = "https://rr0.org"
   const sourceRenderer = new SourceRenderer()
   const caseRenderer = new CaseSummaryRenderer(sourceRenderer)
-  // const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
-  const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
-  const databaseAggregationCommand = new HtmlTagReplaceCommand("ul",
+  const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
+  // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
+  const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
     new ChronologyReplacerFactory(timeService,
       [/*new GeipanRR0Mapping(actions),
         /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
       ],
-      rr0Mapping, actions, caseRenderer)
+      rr0Mapping, caseRenderer)
   )
   const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),
@@ -261,8 +260,8 @@ timeService.getFiles().then(async (timeFiles) => {
     databaseAggregationCommand,
     new ClassDomReplaceCommand(new EventReplacerFactory(eventReplacer), "event"),
     new ClassDomReplaceCommand(sourceReplacerFactory, "source"),
-    new HtmlTagReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
-    new HtmlTagReplaceCommand("code", new CodeReplacerFactory()),
+    new DomReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
+    new DomReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand(new PeopleReplacerFactory(peopleService), "people"),
     new ClassDomReplaceCommand(new PlaceReplacerFactory(), "place"),
     new ClassDomReplaceCommand(new WitnessReplacerFactory(), "temoin", "temoin1", "temoin2", "temoin3"),
@@ -322,7 +321,6 @@ timeService.getFiles().then(async (timeFiles) => {
   if (copies) {
     const copyConfig: CopyStepConfig = {
       getOutputPath,
-      destDir: outDir,
       sourcePatterns: copies,
       options: {ignore: ["node_modules/**", "out/**"]}
     }

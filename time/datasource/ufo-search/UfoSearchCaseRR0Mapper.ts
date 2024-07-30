@@ -1,11 +1,11 @@
+import assert from "assert"
 import { CaseMapper } from "../CaseMapper"
 import { UfoSearchCase } from "./UfoSearchCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { OnlineSource } from "../../../source/OnlineSource"
-import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { CityService } from "../../../org/country/region/department/city/CityService"
+import { Source } from "../../../source/Source"
 
 export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UfoSearchCase, RR0CaseSummary> {
 
@@ -19,7 +19,7 @@ export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ufo
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: UfoSearchCase, sourceTime: Date): RR0CaseSummary {
-    const caseSource: OnlineSource = {
+    const caseSource: Source = {
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }

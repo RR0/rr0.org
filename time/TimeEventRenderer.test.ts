@@ -2,11 +2,11 @@ import { describe, expect, test } from "@javarome/testscript"
 import { CaseSummaryRenderer } from "./CaseSummaryRenderer"
 import { rr0TestUtil } from "../test/RR0TestUtil"
 import { Place } from "../place/Place"
-import { OnlineSource } from "../source/OnlineSource"
-import { SourceRenderer } from "./SourceRenderer"
 import { franceCity } from "../org/eu/fr/region/FranceCity"
 import { NamedPlace, RR0CaseSummary } from "./datasource/rr0/RR0CaseSummary"
 import { TimeContext } from "./TimeContext"
+import { SourceRenderer } from "../source/SourceRenderer"
+import { Source } from "../source/Source"
 
 
 describe("TimeEventRenderer", () => {
@@ -22,7 +22,7 @@ describe("TimeEventRenderer", () => {
       place: city.places[0],
       name: villeMessages.toTitle(context, city)
     }
-    const source1: OnlineSource = {
+    const source1: Source = {
       url: new URL("https://somesite.com/case1"),
       title: "Case 1",
       authors: ["Some Author"],

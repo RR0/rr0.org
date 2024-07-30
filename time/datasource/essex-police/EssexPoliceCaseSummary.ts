@@ -1,6 +1,4 @@
-import { RR0UfoCase } from "../RR0UfoCase"
-
-export interface EssexPoliceCaseSummary extends RR0UfoCase {
+export interface EssexPoliceCaseSummary {
   /**
    * Essex District
    */
@@ -9,5 +7,5 @@ export interface EssexPoliceCaseSummary extends RR0UfoCase {
   /**
    * Recorded Incident Comments
    */
-  comments: string,
+  comments: string
 }

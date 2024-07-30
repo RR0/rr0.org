@@ -1,6 +1,5 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { Source } from "./Source"
-import { OnlineSource } from "./OnlineSource"
 import { TimeContext } from "../time/TimeContext"
 import { TimeReplacer } from "../time/TimeReplacer"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
@@ -34,8 +33,8 @@ export class SourceRenderer {
     }
     const title = source.title
     if (title) {
-      if ((source as OnlineSource).url) {   // Online source?
-        const onlineSource = source as OnlineSource
+      if ((source as Source).url) {   // Online source?
+        const onlineSource = source as Source
         const sourceLink = doc.createElement("a") as HTMLAnchorElement
         sourceLink.textContent = title
         const url = onlineSource.url

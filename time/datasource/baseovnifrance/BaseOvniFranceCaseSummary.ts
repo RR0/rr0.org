@@ -1,5 +1,3 @@
-import { RR0UfoCase } from "../RR0UfoCase"
-
 export enum BaseOvniFranceTypeObservation {
   visualClose = "Visuel : proche",
   visualFar = "Visuel : Eloigné",
@@ -101,7 +99,7 @@ export enum BaseOvniFranceSize {
   pearl = "taille d'une bille (apparente)",
 }
 
-export interface BaseOvniFranceCaseSummary extends RR0UfoCase {
+export interface BaseOvniFranceCaseSummary {
   readonly city: string,
   readonly depCode: string,
 

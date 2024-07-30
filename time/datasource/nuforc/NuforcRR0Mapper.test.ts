@@ -5,7 +5,6 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
 import { nuforcDatasource, nuforcRR0Mapper } from "./NuforcRR0Mapping"
 import { nuforcTestCases } from "./NuforcTestCases"
-import { OnlineSource } from "../../../source/OnlineSource"
 import { slocomb } from "../../../org/us/region/ak/geneva/slocomb/Slocomb"
 import { castlegar } from "../../../org/ca/region/bc/rdck/Castlegar/Castlegar"
 import { fortWorth } from "../../../org/us/region/tx/tarrant/fortworth/FortWorth"
@@ -13,8 +12,9 @@ import { campPendleton } from "../../../org/us/region/ca/sandiego/camppendleton/
 import { stPetersburg } from "../../../org/us/region/fl/pinellas/stpetersburg/StPetersburg"
 import { monessen } from "../../../org/us/region/pa/westmoreland/monessen/Monessen"
 import { bonneyLake } from "../../../org/us/region/wa/pierce/bonneylake/BonneyLake"
+import { Source } from "../../../source/Source"
 
-function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: string): OnlineSource {
+function expectedSource(datasource: NuforcHttpDatasource, dataDate: Date, caseNumber: string): Source {
   const url = new URL("sighting/?id=" + caseNumber, datasource.baseUrl)
   return {
     url, title: "cas n° " + caseNumber, authors: datasource.authors,

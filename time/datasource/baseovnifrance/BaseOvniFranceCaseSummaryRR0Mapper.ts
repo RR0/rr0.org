@@ -1,12 +1,12 @@
+import assert from "assert"
 import { CaseMapper } from "../CaseMapper"
 import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { OnlineSource } from "../../../source/OnlineSource"
-import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
 import { CityService } from "../../../org/country/region/department/city/CityService"
+import { Source } from "../../../source/Source"
 
 /**
  * Maps a Base OVNI France case to a RR0 case.
@@ -20,7 +20,7 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0CaseSummary {
-    const caseSource: OnlineSource = {
+    const caseSource: Source = {
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }

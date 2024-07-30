@@ -1,13 +1,13 @@
+import assert from "assert"
 import { CaseMapper } from "../CaseMapper"
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { OnlineSource } from "../../../source/OnlineSource"
-import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import { Organization } from "../../../org/Organization"
 import { france } from "../../../org/eu/fr/France"
+import { Source } from "../../../source/Source"
 
 export class EssexPoliceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, EssexPoliceCaseSummary, RR0CaseSummary> {
 
@@ -21,7 +21,7 @@ export class EssexPoliceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgCon
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: EssexPoliceCaseSummary, sourceTime: Date): RR0CaseSummary {
-    const caseSource: OnlineSource = {
+    const caseSource: Source = {
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }

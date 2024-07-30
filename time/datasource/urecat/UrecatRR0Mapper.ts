@@ -1,12 +1,12 @@
+import assert from "assert"
 import { CaseMapper } from "../CaseMapper"
 import { UrecatCase } from "./UrecatCase"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { OnlineSource } from "../../../source/OnlineSource"
-import assert from "assert"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import { CountryService } from "../../../org/country/CountryService"
+import { Source } from "../../../source/Source"
 
 export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase, RR0CaseSummary> {
 
@@ -22,7 +22,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0CaseSummary {
-    const caseSource: OnlineSource = {
+    const caseSource: Source = {
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }

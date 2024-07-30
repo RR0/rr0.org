@@ -5,13 +5,13 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
 import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
 import { baseOvniFranceDatasource, baseOvniFranceRR0Mapper } from "./BaseOvniFranceRR0Mapping"
-import { OnlineSource } from "../../../source/OnlineSource"
 import { leMans72 } from "../../../org/eu/fr/region/pdl/72/LeMans/LeMans"
 import { lyon69 } from "../../../org/eu/fr/region/ara/69/Lyon/Lyon"
 import { briancon05 } from "../../../org/eu/fr/region/pac/05/briancon/Briancon"
 import { chambonSurVoueize23 } from "../../../org/eu/fr/region/naq/23/Chambon/Chambon"
+import { Source } from "../../../source/Source"
 
-function expectedSource(datasource: BaseOvniFranceHttpDatasource, dataDate: Date, caseNumber: string): OnlineSource {
+function expectedSource(datasource: BaseOvniFranceHttpDatasource, dataDate: Date, caseNumber: string): Source {
   const url = new URL(datasource.searchPath + "?typlist=20&page=0&numobs=" + caseNumber, datasource.baseUrl)
   return {
     url, title: "cas n° " + caseNumber, authors: datasource.authors,

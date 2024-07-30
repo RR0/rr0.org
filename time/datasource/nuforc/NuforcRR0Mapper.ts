@@ -1,8 +1,7 @@
+import assert from "assert"
 import { CaseMapper } from "../CaseMapper"
 import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { OnlineSource } from "../../../source/OnlineSource"
-import assert from "assert"
 import { NuforcCountry } from "./NuforcCountry"
 import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
@@ -24,6 +23,7 @@ import { seychelles } from "../../../org/sc/Seychelles"
 import { southKorea } from "../../../org/kr/SouthKorea"
 import { uk } from "../../../org/uk/Uk"
 import { usa } from "../../../org/us/Usa"
+import { Source } from "../../../source/Source"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCaseSummary, RR0CaseSummary> {
 
@@ -83,7 +83,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {
-    const caseSource: OnlineSource = {
+    const caseSource: Source = {
       url: sourceCase.url,
       title: "cas n° " + sourceCase.id,
       authors: this.authors,

@@ -11,6 +11,7 @@ import { CityService } from "../../../org/country/region/department/city/CitySer
 import { Organization } from "../../../org/Organization"
 
 export class RR0HttpDatasource extends RR0Datasource {
+
   protected readonly http = new HttpSource()
 
   constructor(readonly baseUrl: URL, readonly searchPath: string, protected cityService: CityService) {
@@ -31,11 +32,15 @@ export class RR0HttpDatasource extends RR0Datasource {
     return cases
   }
 
+  findRows(doc: HTMLElement) {
+    const rowEls = doc.querySelectorAll("ul.indexed li")
+    return Array.from(rowEls)
+  }
+
   protected async readCases(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
     const queryUrl = this.queryUrl(context)
     const doc = await this.http.get(queryUrl)
-    const rowEls = doc.querySelectorAll("ul.indexed li")
-    const rows = Array.from(rowEls)
+    const rows = this.findRows(doc)
     return this.getFromRows(context, rows)
   }
 

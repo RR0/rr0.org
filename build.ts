@@ -77,7 +77,6 @@ import { NoteFileCounter } from "./note/NoteFileCounter"
 import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
 import { SourceIndexStep } from "./source/SourceIndexStep"
 import { SourceFileCounter } from "./source/SourceFileCounter"
-import { GeipanRR0Mapping } from "./org/eu/fr/cnes/geipan/GeipanRR0Mapping"
 
 interface RR0BuildArgs {
   /**
@@ -225,10 +224,9 @@ timeService.getFiles().then(async (timeFiles) => {
   // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
   const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
     new ChronologyReplacerFactory(timeService,
-      [new GeipanRR0Mapping(actions)
+      [rr0Mapping /*new GeipanRR0Mapping(actions)
         /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
-      ],
-      rr0Mapping, caseRenderer)
+      ], caseRenderer)
   )
   const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),

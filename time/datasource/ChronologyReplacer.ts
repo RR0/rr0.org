@@ -2,9 +2,8 @@ import { DomReplacement } from "../DomReplacement"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
-import { Datasource } from "./Datasource"
 import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
-import { RR0Mapping } from "./rr0/RR0Mapping"
+import { RR0HttpDatasource } from "./rr0/RR0HttpDatasource"
 
 /**
  * Replaces a (ul) tag from (chronology) files with case summaries from external datasources.
@@ -17,8 +16,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
    */
   protected readonly done = new Set<string>()
 
-  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: CaseSummaryRenderer,
-              protected rr0Mapping: RR0Mapping) {
+  constructor(protected mappings: RR0CaseMapping<any>[], protected renderer: CaseSummaryRenderer) {
   }
 
   async replacement(context: HtmlRR0SsgContext, element: HTMLUListElement): Promise<HTMLUListElement> {
@@ -28,14 +26,18 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
   }
 
   protected async aggregate(context: HtmlRR0SsgContext, element: HTMLUListElement) {
-    const existingItems = Array.from(element.children)
-    const existingCases = this.rr0Mapping.datasource.getFromRows(context, existingItems)
+    const existingCases: RR0CaseSummary[] = []
     const casesToAdd: RR0CaseSummary[] = []
     for (const mapping of this.mappings) {
       const datasource = mapping.datasource
+      if (datasource instanceof RR0HttpDatasource) {
+        datasource.findRows = (_doc: HTMLElement) => {
+          return Array.from(element.children)
+        }
+      }
       const datasourceKey = context.file.name + "$" + datasource.copyright
       if (!this.done.has(datasourceKey)) {
-        await this.aggregateDatasource(mapping, context, datasource, element, existingCases, casesToAdd, datasourceKey)
+        await this.aggregateDatasource(mapping, context, existingCases, casesToAdd)
         this.done.add(datasourceKey)
         const merge = mapping.actions.write.includes("pages")
         if (merge) {
@@ -49,10 +51,10 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     }
   }
 
-  protected async aggregateDatasource(
-    mapping: RR0CaseMapping<any>, context: HtmlRR0SsgContext, datasource: Datasource<any>, element: HTMLUListElement,
-    existingCases: RR0CaseSummary[], casesToAdd: RR0CaseSummary[], datasourceKey: string) {
+  protected async aggregateDatasource(mapping: RR0CaseMapping<any>, context: HtmlRR0SsgContext,
+                                      existingCases: RR0CaseSummary[], casesToAdd: RR0CaseSummary[]) {
     let fetched: any[]
+    const datasource = mapping.datasource
     const backupDatasource = mapping.backupDatasource
     for (const readMethod of mapping.actions.read) {
       if (fetched) {
@@ -66,7 +68,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
             if (e.code !== "ENOENT") {
               throw e
             } else {
-              context.debug("No backup file to read for " + context.time)
+              context.debug("No backup file to read for" + context.time)
             }
           }
           break
@@ -84,16 +86,15 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
           backupDatasource.save(context, fetched, fetchTime)
           break
         case "pages":
-          const toAddFromThisDatasource = this.merge(context, fetched, fetchTime, element, mapping, existingCases)
+          const toAddFromThisDatasource = this.merge(context, fetched, fetchTime, mapping, existingCases)
           casesToAdd.concat(toAddFromThisDatasource)
           break
       }
     }
   }
 
-  protected merge(
-    context: HtmlRR0SsgContext, sourceCases: any[], fetchTime: Date, element: HTMLUListElement,
-    mapping: RR0CaseMapping<any>, existingCases: RR0CaseSummary[]
+  protected merge(context: HtmlRR0SsgContext, sourceCases: any[], fetchTime: Date, mapping: RR0CaseMapping<any>,
+                  existingCases: RR0CaseSummary[]
   ): RR0CaseSummary[] {
     const casesToMerge = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
     const casesToAdd: RR0CaseSummary[] = []

@@ -1,8 +1,8 @@
-import { UfoCaseContextFilter } from "./UfoCaseContextFilter"
+import { ContextFilter } from "./ContextFilter"
 import { RR0SsgContext } from "../../RR0SsgContext"
 import { RR0UfoCase } from "./RR0UfoCase"
 
-export class UfoCaseContextTimeFilter extends UfoCaseContextFilter {
+export class RR0UfoCaseContextFilter extends ContextFilter<RR0UfoCase> {
 
   constructor(context: RR0SsgContext) {
     super(context)

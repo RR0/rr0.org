@@ -1,10 +1,10 @@
 import { UfoCaseFilter } from "./UfoCaseFilter"
 import { RR0SsgContext } from "../../RR0SsgContext"
-import { RR0UfoCase } from "./RR0UfoCase"
 
-export abstract class UfoCaseContextFilter implements UfoCaseFilter {
+export abstract class ContextFilter<T> implements UfoCaseFilter<T> {
+
   protected constructor(protected context: RR0SsgContext) {
   }
 
-  abstract filter(c: RR0UfoCase): boolean
+  abstract filter(c: T): boolean
 }

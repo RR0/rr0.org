@@ -1,30 +1,36 @@
 import { Datasource } from "./Datasource"
 import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { UfoCaseContextTimeFilter } from "./UfoCaseContextTimefilter"
+import { RR0UfoCaseContextFilter } from "./RR0UfoCaseContextFilter"
 
 /**
  * Cache cases which were already fetched, and filter out cases in memory according to (time) context.
  */
 export abstract class AbstractDatasource<S> implements Datasource<S> {
 
-  protected cases: S[]
+  protected cases = new Map<string, S[]>()
 
   protected constructor(readonly authors: string[], readonly copyright: string) {
   }
 
   async getSummaries(context: HtmlRR0SsgContext): Promise<S[]> {
-    // TODO: Cases should be cached per context (time, place, etc.)
-    if (!this.cases) {
-      this.cases = await this.readCases(context)
+    const contextKey = this.contextKey(context)
+    let found = this.cases.get(contextKey)
+    if (!found) {
+      found = await this.readCases(context)
+      this.cases.set(contextKey, found)
     }
-    return this.cases
+    return found
   }
 
   async fetch(context: HtmlRR0SsgContext): Promise<S[]> {
     const summaries = await this.getSummaries(context)
     // TODO: This filter can only apply to RROUfoCases[], not S[]
-    const timeFilter = new UfoCaseContextTimeFilter(context)
+    const timeFilter = new RR0UfoCaseContextFilter(context)
     return summaries.filter(timeFilter.filter.bind(timeFilter))
+  }
+
+  protected contextKey(context: HtmlRR0SsgContext) {
+    return context.time.toString()
   }
 
   protected abstract readCases(context: HtmlRR0SsgContext): Promise<S[]>

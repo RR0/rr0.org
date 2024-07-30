@@ -21,5 +21,5 @@ export class RR0Mapping implements RR0CaseMapping<RR0CaseSummary> {
   }
 }
 
-const actions: ChronologyReplacerActions = {read: ["backup"], write: ["backup", "pages"]}
+const actions: ChronologyReplacerActions = {read: ["fetch"], write: ["backup"]}
 export const rr0Mapping = new RR0Mapping(actions)

@@ -64,7 +64,7 @@ html, body {
   box-sizing: border-box
 }
 
-.text section time.duration, .text ul time.duration {
+time.duration {
   font-weight: 400;
   font-family: monospace
 }
@@ -85,8 +85,8 @@ p {
   padding-right: var(--margin);
 }
 
-.indexed time {
-  font-weight: 700
+.indexed time:not(.duration) {
+  font-weight: 700;
 }
 
 .links {

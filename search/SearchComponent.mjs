@@ -24,11 +24,6 @@ export class SearchComponent extends HTMLElement {
 
   #loading = false
 
-  /**
-   * @type string
-   */
-  #prefix
-
   constructor () {
     super()
     this.shadow = this.attachShadow({ mode: "closed" })
@@ -39,7 +34,6 @@ export class SearchComponent extends HTMLElement {
     this.onmouseover = this.#siteSearchLoad.bind(this)
     const input = this.shadow.querySelector("input")
     input.oninput = this.#siteSearchChange.bind(this)
-    this.#prefix = this.getAttribute("url-prefix") || "https://rr0.org/"
     input.placeholder = this.getAttribute("placeholder") || "Recherche"
   }
 
@@ -49,7 +43,7 @@ export class SearchComponent extends HTMLElement {
       const pageIndex = this.#siteIndex.pages.findIndex(page => page.title === value)
       if (pageIndex >= 0) {
         const page = this.#siteIndex.pages[pageIndex]
-        window.location.href = this.#prefix + page.url
+        window.location.href = "/" + page.url
       }
     }
   }
@@ -57,7 +51,7 @@ export class SearchComponent extends HTMLElement {
   #siteSearchLoad () {
     if (!this.#siteIndex && !this.#loading) {
       this.#loading = true
-      fetch(this.#prefix + "search/index.json").then(async (response) => {
+      fetch("/search/index.json").then(async (response) => {
         const datalist = this.shadow.querySelector("#values")
         if (response.ok) {
           this.#siteIndex = await response.json()

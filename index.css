@@ -43,7 +43,7 @@ nav ul li a {
   text-decoration: none;
   color: darkslategray;
   font-size: 1.5em;
-  font-family: "Arial", sans-serif;
+  font-family: inherit;
   text-shadow: 0 0 10px white
 }
 

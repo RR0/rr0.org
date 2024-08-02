@@ -1,9 +1,8 @@
 import { Gender } from "@rr0/common"
-import { TimeContext } from "../time/TimeContext"
 
 export let peopleMessages_fr = {
-  birth: (time: TimeContext) => " naît " + (time.getDayOfMonth() ? "le" : "en") + " ",
-  death: (time: TimeContext) => " décède " + (time.getDayOfMonth() ? "le" : "en") + " ",
+  birth: " naît ",
+  death: " décède ",
   occupation: {
     abductee: (gender: Gender) => gender === Gender.male ? "enlevé" : "enlevée",
     actor: (gender: Gender) => gender === Gender.male ? "acteur" : "actrice",

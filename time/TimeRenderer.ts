@@ -27,7 +27,8 @@ export class TimeRenderer {
 
   render(context: HtmlRR0SsgContext, previousContext?: RR0SsgContext,
          options: TimeRenderOptions = {url: true}): HTMLElement {
-    const absoluteTimeStr = TimeUrlBuilder.fromContext(context.time)
+    const time = context.time
+    const absoluteTimeStr = TimeUrlBuilder.fromContext(time)
     const title = TimeTextBuilder.build(context)
     let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
     if (!text) {
@@ -39,7 +40,7 @@ export class TimeRenderer {
     const url = options.url && this.matchExistingTimeFile(absoluteTimeStr)
     const doc = file.document
     let replacement: HTMLElement | undefined
-    const timeEl = TimeReplacer.resolvedTime(context, context.time.toString())
+    const timeEl = TimeReplacer.resolvedTime(context, time.toString())
     if (title !== text) {
       timeEl.title = title
     }
@@ -51,6 +52,13 @@ export class TimeRenderer {
     } else {
       replacement = timeEl
     }
-    return replacement
+    let result = context.file.document.createElement("span")
+    result.className = "time-resolved"
+    if (time.getDayOfMonth()) {
+      result.append(context.messages.context.time.on(time.approximate), replacement)
+    } else {
+      result.append(context.messages.context.time.in(time.approximate), replacement)
+    }
+    return result
   }
 }

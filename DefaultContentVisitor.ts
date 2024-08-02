@@ -71,7 +71,7 @@ export class DefaultContentVisitor implements ContentVisitor {
         const birthTimeStr = birthData.time as unknown as string
         const birthDateEl = this.timeElementFactory.create(birthContext, birthTimeStr, context)
         birthEl.append(name)
-        birthEl.append(context.messages[data.type].birth(birthContext.time))
+        birthEl.append(context.messages[data.type].birth)
         birthEl.append(birthDateEl)
         if (birthData.place) {
           birthEl.append(" à ")
@@ -98,7 +98,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       const timeStr = deathData.time as unknown as string
       const timeEl = this.timeElementFactory.create(timeContext, timeStr, context)
       deathEl.append(name)
-      deathEl.append(context.messages[data.type].death(timeContext.time))
+      deathEl.append(context.messages[data.type].death)
       deathEl.append(timeEl)
       if (deathData.place) {
         deathEl.append(" à ")

@@ -2,6 +2,7 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
 import { TimeRenderer, TimeRenderOptions } from "./TimeRenderer"
 import { TimeParseResult, TimeReplacer } from "./TimeReplacer"
 import { TimeContext } from "./TimeContext"
+import assert from "assert"
 
 /**
  * Creates <time> elements from time strings.
@@ -75,6 +76,7 @@ export class TimeElementFactory {
 
   create(context: HtmlRR0SsgContext, contents: string, previousContext: HtmlRR0SsgContext | undefined,
          options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
+    assert.ok(contents, "Time string expected")
     let replacement: HTMLElement | undefined
     const parts = contents.split("/")
     const isTimeInterval = parts.length > 1

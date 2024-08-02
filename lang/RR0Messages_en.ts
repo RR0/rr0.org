@@ -77,8 +77,8 @@ export class RR0Messages_en implements RR0Messages {
           after: "one hour later"
         }
       },
-      on: (title: string, approximate: boolean): string => (approximate ? "around " : "on ") + title,
-      in: (title: string, approximate: boolean): string => (approximate ? "around " : "") + title,
+      on: (approximate: boolean): string => (approximate ? "around " : "on "),
+      in: (approximate: boolean): string => (approximate ? "around " : ""),
       fromTo: (startReplacement: string, endReplacement: string): string => startReplacement + " to " + endReplacement
     }
   }

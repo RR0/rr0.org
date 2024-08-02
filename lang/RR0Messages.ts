@@ -89,8 +89,8 @@ export interface RR0Messages {
         }
       },
       fromTo(startReplacement: string, endReplacement: string): string
-      on(title: string, approximate: boolean): string
-      in(title: string, approximate: boolean): string
+      on(approximate: boolean): string
+      in(approximate: boolean): string
     }
   }
   case: CaseMessages

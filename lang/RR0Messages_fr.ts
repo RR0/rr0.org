@@ -2,7 +2,6 @@ import { CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages
 import { placeMessages_fr } from "../place/PlaceMessages_fr"
 import { peopleMessages_fr } from "../people/PeopleMessages_fr"
 import { countryMessageList_fr } from "../org/CountryMessageList_fr"
-import { orgMessages_en } from "../org/OrgRR0Messages_en"
 import { orgMessages_fr } from "../org/OrgRR0Messages_fr"
 
 const caseConclusion_fr: CaseConclusionMessages = {
@@ -49,9 +48,8 @@ export class RR0Messages_fr implements RR0Messages {
           after: "une heure plus tard"
         }
       },
-      approximate: (title: string): string => `vers ${title}`,
-      on: (title: string, approximate: boolean): string => (approximate ? "vers " : "") + `le ${title}`,
-      in: (title: string, approximate: boolean): string => (approximate ? "vers " : "") + title,
+      on: (approximate: boolean): string => (approximate ? "vers " : "") + "le ",
+      in: (approximate: boolean): string => (approximate ? "vers " : ""),
       fromTo: (startReplacement: string, endReplacement: string): string => `${startReplacement} à ${endReplacement}`
     }
   }

@@ -9,7 +9,7 @@ describe("ClassDomReplaceCommand", () => {
 
   test("replaces", async () => {
     const command = new ClassDomReplaceCommand("people", new PeopleReplacerFactory(new PeopleService([],
-      new DataService([], []))))
+      new DataService([], []), peopleFactory)))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", `<span class="people">Jérôme Beau</span>`)
     const file = await command.execute(context)
     expect(file.contents).toBe(

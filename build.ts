@@ -77,6 +77,9 @@ import { NoteFileCounter } from "./note/NoteFileCounter"
 import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
 import { SourceIndexStep } from "./source/SourceIndexStep"
 import { SourceFileCounter } from "./source/SourceFileCounter"
+import { TimeElementFactory } from "./time/TimeElementFactory"
+import { DefaultContentVisitor } from "./DefaultContentVisitor"
+import { PeopleFactory } from "./people/PeopleFactory"
 
 interface RR0BuildArgs {
   /**
@@ -178,22 +181,22 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
 }
 
 const timeService = new TimeService()
-
 timeService.getFiles().then(async (timeFiles) => {
+  const timeElementFactory = new TimeElementFactory(timeService.renderer)
   context.setVar("timeFilesCount", timeFiles.length)
   const peopleFiles = await glob("people/?/*")
   context.setVar("peopleFilesCount", peopleFiles.length)
   const sightingFactory = new DefaultDataFactory("sighting", ["index"])
   const orgFactory = new DefaultDataFactory("org", ["index"])
   const caseFactory = new DefaultDataFactory("case")
-  const peopleFactory = new DefaultDataFactory("people")
+  const peopleFactory = new PeopleFactory()
   const bookFactory = new DefaultDataFactory("book")
   const factories = [orgFactory, caseFactory, peopleFactory, bookFactory, sightingFactory]
 
   const dataService = new DataService(factories)
-  const timeReplacer = new TimeReplacer(timeService.renderer)
-  const caseService = new CaseService(dataService, timeReplacer)
-  const peopleService = new PeopleService(peopleFiles, dataService)
+  const timeReplacer = new TimeReplacer(timeElementFactory)
+  const caseService = new CaseService(dataService, timeElementFactory)
+  const peopleService = new PeopleService(peopleFiles, dataService, peopleFactory)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
@@ -258,7 +261,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const contentsReplaceCommand = [
     new ClassDomReplaceCommand(new EventReplacerFactory(eventReplacer), "event"),
     new ClassDomReplaceCommand(sourceReplacerFactory, "source"),
-    new DomReplaceCommand("time", new TimeReplacerFactory(timeService.renderer)),
+    new DomReplaceCommand("time", new TimeReplacerFactory(timeReplacer)),
     new DomReplaceCommand("code", new CodeReplacerFactory()),
     new ClassDomReplaceCommand(new PeopleReplacerFactory(peopleService), "people"),
     new ClassDomReplaceCommand(new PlaceReplacerFactory(), "place"),
@@ -285,7 +288,7 @@ timeService.getFiles().then(async (timeFiles) => {
   ssg.add(ufoCasesStep)
   ssg.add(...peopleSteps)
   if (contentRoots) {
-    const contentVisitors: ContentVisitor[] = []
+    const contentVisitors: ContentVisitor[] = [new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory)]
     if (args.books) {
       contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))
     }

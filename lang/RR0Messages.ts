@@ -1,8 +1,8 @@
-import { Occupation } from "../people/Occupation"
 import { PlaceMessages } from "../place/PlaceMessages"
 import { CountryMessagesList } from "../org/CountryMessagesList"
-import { Gender } from "@rr0/common"
 import { CaseConclusion } from "../science/crypto/ufo/enquete/dossier/RR0Case"
+import { PeopleMessages } from "../people/PeopleMessages"
+import { OrgRR0Messages } from "../org/OrgRR0Messages"
 
 export class MessageUtils {
 
@@ -14,8 +14,6 @@ export class MessageUtils {
     return n ? `${word}${n > 1 ? "s" : ""}` : ""
   }
 }
-
-type OccupationMessages = { [key in Occupation]: (gender: Gender) => string }
 
 export type CaseConclusionMessages = { [key in CaseConclusion]: string }
 
@@ -91,13 +89,13 @@ export interface RR0Messages {
         }
       },
       fromTo(startReplacement: string, endReplacement: string): string
-      approximate(title: string): string
+      on(title: string, approximate: boolean): string
+      in(title: string, approximate: boolean): string
     }
   }
   case: CaseMessages
-  people: {
-    occupation: OccupationMessages
-  },
+  org: OrgRR0Messages,
+  people: PeopleMessages,
   place: PlaceMessages;
   country: CountryMessagesList
   nav: {

@@ -11,7 +11,7 @@ function testCase(urlPath: string, dateTime: TimeContext, description: string, s
   const path = UrlUtil.join(rr0HttpDatasource.searchPath, urlPath)
   const url = new URL(path, rr0HttpDatasource.baseUrl)
   const id = RR0HttpDatasource.id(dateTime, place)
-  return {url, place, dateTime, description, sources, id}
+  return {url, place, time: dateTime, description, sources, id}
 }
 
 export const rr0TestCases: RR0CaseSummary[] = [

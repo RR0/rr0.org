@@ -1,6 +1,4 @@
 {
-  "birthTime": "1925-05-31",
-  "deathTime": "1994",
   "occupations": [
     "ufologist",
     "ufoWitness"
@@ -12,5 +10,26 @@
   "countries": [
     "us"
   ],
-  "discredited": true
+  "discredited": true,
+  "events": [
+    {
+      "type": "birth",
+      "time": "1925-05-31",
+      "place": "Springdale (Pennsylvanie)",
+      "sources": [
+        {
+          "title": "Robert A. Goerman & William L. Moore, SSDI"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1994",
+      "sources": [
+        {
+          "url": "http://www.starfiretor.com/PE/BiographiesPhotos.htm"
+        }
+      ]
+    }
+  ]
 }

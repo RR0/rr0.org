@@ -19,8 +19,6 @@ export enum CaseConclusion {
 }
 
 export interface RR0Case extends RR0CaseSummary {
-  title: string
-  time: string
   classification?: {
     hynek: HynekClassification
   },

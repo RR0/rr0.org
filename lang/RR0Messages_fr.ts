@@ -2,6 +2,8 @@ import { CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages
 import { placeMessages_fr } from "../place/PlaceMessages_fr"
 import { peopleMessages_fr } from "../people/PeopleMessages_fr"
 import { countryMessageList_fr } from "../org/CountryMessageList_fr"
+import { orgMessages_en } from "../org/OrgRR0Messages_en"
+import { orgMessages_fr } from "../org/OrgRR0Messages_fr"
 
 const caseConclusion_fr: CaseConclusionMessages = {
   unknown: "inexpliqué",
@@ -48,6 +50,8 @@ export class RR0Messages_fr implements RR0Messages {
         }
       },
       approximate: (title: string): string => `vers ${title}`,
+      on: (title: string, approximate: boolean): string => (approximate ? "vers " : "") + `le ${title}`,
+      in: (title: string, approximate: boolean): string => (approximate ? "vers " : "") + title,
       fromTo: (startReplacement: string, endReplacement: string): string => `${startReplacement} à ${endReplacement}`
     }
   }
@@ -90,6 +94,7 @@ export class RR0Messages_fr implements RR0Messages {
     },
     conclusion: caseConclusion_fr
   }
+  org = orgMessages_fr
   people = peopleMessages_fr
   place = placeMessages_fr
   country = countryMessageList_fr

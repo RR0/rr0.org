@@ -3,10 +3,11 @@ import { RR0Case } from "./RR0Case"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
 import path from "path"
 import { TimeReplacer } from "../../../../../time/TimeReplacer"
+import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
 
 export class CaseService {
 
-  constructor(protected dataService: DataService, protected readonly timeReplacer: TimeReplacer,
+  constructor(protected dataService: DataService, protected readonly timeElementFactory: TimeElementFactory,
               readonly type = "case") {
   }
 
@@ -15,7 +16,7 @@ export class CaseService {
   }
 
   async get(context: RR0SsgContext, path: string): Promise<RR0Case[] | undefined> {
-    return this.dataService.get<RR0Case>(path, [this.type, undefined], [this.type + ".json"])
+    return this.dataService.getFromDir<RR0Case>(path, [this.type, undefined], [this.type + ".json"])
   }
 
   getLink(context: HtmlRR0SsgContext, aCase: RR0Case): HTMLElement {
@@ -36,7 +37,7 @@ export class CaseService {
       options.hour = undefined
       options.weekday = undefined
       options.minute = undefined
-      const elem = this.timeReplacer.create(caseContext, timeStr, undefined, {url: false})
+      const elem = this.timeElementFactory.create(caseContext, timeStr, undefined, {url: false})
       details.push(elem.outerHTML)
     }
     const text: (string | string[])[] = [aCase.title]

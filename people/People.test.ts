@@ -10,7 +10,7 @@ describe("People", () => {
 
   beforeAll(async () => {
     const peopleFiles = await glob("people/*/*")
-    service = new PeopleService(peopleFiles, new DataService([], []))
+    service = new PeopleService(peopleFiles, new DataService([], []), peopleFactory)
   })
 
   test("age", async () => {

@@ -3,6 +3,7 @@ import { Source } from "./Source"
 import { TimeContext } from "../time/TimeContext"
 import { TimeReplacer } from "../time/TimeReplacer"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
+import { TimeElementFactory } from "../time/TimeElementFactory"
 
 /**
  * Render a case summary for a RR0 web page.
@@ -59,7 +60,7 @@ export class SourceRenderer {
         if (timeValue instanceof TimeContext && timeValue.isDefined()) {
           Object.assign(sourceContext.time, timeValue)
         } else {
-          TimeReplacer.updateTimeFromStr(sourceContext.time, timeValue)
+          TimeElementFactory.updateTimeFromStr(sourceContext.time, timeValue as unknown as string)
         }
         pubItems.push(TimeTextBuilder.build(sourceContext))
       }

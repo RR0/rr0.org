@@ -32,7 +32,7 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
     assert.ok(city, `Could not find city of name "${placeName}" in department of code "${dep.code}"`)
     const place: NamedPlace = {name: city.getTitle(context), place: city.places[0]}
     return {
-      dateTime: sourceCase.dateTime,
+      time: sourceCase.dateTime,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

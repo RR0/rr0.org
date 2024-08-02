@@ -1,19 +1,19 @@
 import { KnownPeople, People } from "./People"
-import { StringUtil } from "../util/string/StringUtil"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import path from "path"
-import fs from "fs"
 import { DataService } from "../DataService"
 import { CountryCode } from "../org/country/CountryCode"
 import { Occupation } from "./Occupation"
 import { Time } from "../time/Time"
 import { Gender } from "@rr0/common"
+import { PeopleFactory } from "./PeopleFactory"
 
 export class PeopleService {
 
   readonly cache = new Map<string, KnownPeople>()
 
-  constructor(protected peopleFiles: string[], protected readonly dataService: DataService) {
+  constructor(protected files: string[], protected readonly dataService: DataService,
+              protected factory: PeopleFactory) {
   }
 
   createFromFullName(fullName: string): KnownPeople {
@@ -36,86 +36,35 @@ export class PeopleService {
     }
     let dirName: string | undefined = this.cache.get(lastName.toLowerCase())?.dirName || People.getUrl(lastName,
       firstNames)
-    if (this.peopleFiles.indexOf(dirName) < 0) {
+    if (this.files.indexOf(dirName) < 0) {
       dirName = undefined
     }
     if (dirName && !lastName && firstNames?.length <= 0) {
-      return this.createFromDirName(dirName)
+      return this.factory.createFromDirName(dirName)
     } else {
       return new KnownPeople(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
         undefined, dirName)
     }
   }
 
-  async getFromDirs(context: RR0SsgContext, dirNames: string[]): Promise<KnownPeople[]> {
-    let peopleList: People[] = []
+  async getFromDirs(dirNames: string[]): Promise<KnownPeople[]> {
+    let peopleList: KnownPeople[] = []
     for (const dirName of dirNames) {
-      const list = await this.getFromDir(context, dirName)
+      const list = await this.getFromDir(dirName)
       peopleList.push(...list)
     }
     return peopleList
   }
 
-  async getFromDir(context: RR0SsgContext, dirName: string): Promise<People[]> {
-    let peopleList: People[] = []
+  async getFromDir(dirName: string): Promise<KnownPeople[]> {
+    let peopleList: KnownPeople[] = []
     const fileSpec = ["people*.json"]
-    const peopleDataList = await this.dataService.get(dirName, ["people", undefined], fileSpec) as People[]
+    const peopleDataList = await this.dataService.getFromDir(dirName, ["people", undefined], fileSpec) as People[]
     for (const peopleData of peopleDataList) {
-      const people = this.createFromData(context, dirName, peopleData)
+      const people = this.factory.createFromData(dirName, peopleData)
       peopleList.push(people)
     }
     return peopleList
-  }
-
-  createFromData(context: RR0SsgContext, dirName: string, data: People): People {
-    const people = this.createFromDirName(dirName)
-    const title = (data as any).title
-    if (title) {
-      const names = title.split(",")
-      if (names.length > 1) {
-        people.lastName = names.splice(0, 1)[0].trim()
-        people.firstNames.length = 0
-        people.firstNames.push(...names[0].trim().split(" "))
-        people.lastAndFirstName = people.getLastAndFirstName()
-      } else {
-        const names = title.split(" ")
-        if (names.length === 2) {
-          people.firstNames.length = 0
-          people.firstNames.push(names[0])
-          people.lastName = names[1]
-        } else {
-          context.warn(`Could not determine first and last name from "${title}"}`)
-        }
-        people.lastAndFirstName = title
-      }
-    }
-    Object.assign(people, data)
-    if (!people.image) {
-      const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
-      let hasPortrait = false
-      for (let i = 0; i < possiblePortraitFiles.length; i++) {
-        const portraitFile = possiblePortraitFiles[i]
-        const portraitPath = path.join(people.dirName, portraitFile)
-        hasPortrait = fs.existsSync(portraitPath)
-        if (hasPortrait) {
-          people.image = path.join("/", portraitPath)
-          break
-        }
-      }
-    }
-    return people
-  }
-
-  createFromDirName(dirName: string): KnownPeople {
-    const lastSlash = dirName.lastIndexOf("/")
-    const lastDir = dirName.substring(lastSlash + 1)
-    const title = StringUtil.camelToText(lastDir)
-    const firstSpace = title.indexOf(" ")
-    const lastName = title.substring(0, firstSpace)
-    const firstNameStr = title.substring(firstSpace + 1)
-    const firstNames = firstNameStr.split(" ")
-    return new KnownPeople(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
-      undefined, dirName)
   }
 
   getLink(context: HtmlRR0SsgContext,

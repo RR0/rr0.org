@@ -9,7 +9,7 @@ export class RR0UfoCaseContextFilter extends ContextFilter<RR0UfoCase> {
   }
 
   filter(c: RR0UfoCase): boolean {
-    const sightingTime = c.dateTime
+    const sightingTime = c.time
     const time = this.context.time
     const day = time.getDayOfMonth()
     const month = time.getMonth()

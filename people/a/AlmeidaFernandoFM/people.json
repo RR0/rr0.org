@@ -1,11 +1,22 @@
 {
-  "birthTime": "1916-02-18",
-  "deathTime": "2013-08-02",
+  "title": "Fernando Flávio Marques Almeida",
   "occupations": [
     "geologist",
     "geophysicist"
   ],
   "countries": [
     "br"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1916-02-18",
+      "place": "Rio de Janeiro (Brasil)"
+    },
+    {
+      "type": "birth",
+      "time": "2013-08-02",
+      "place": "São Paulo (Brasil)"
+    }
   ]
 }

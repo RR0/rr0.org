@@ -21,7 +21,7 @@ describe("PeopleReplacer", () => {
   test("ignore brackets", async () => {
     const dirs = ["people/h/HynekJosefAllen"]
     const dataService = new DataService([peopleFactory])
-    const replacer = new PeopleReplacer(new PeopleService(dirs, dataService))
+    const replacer = new PeopleReplacer(new PeopleService(dirs, dataService, peopleFactory))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const lastnameFirstElement = createPeopleElement(context,
@@ -43,7 +43,7 @@ describe("PeopleReplacer", () => {
     const dirs = ["people/b/BeauJerome", "people/r/ReaganRonald"]
     const dataService = new DataService([peopleFactory])
     const replacer = new PeopleReplacer(
-      new PeopleService(dirs, dataService))
+      new PeopleService(dirs, dataService, peopleFactory))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
       const peopleWithTitle = createPeopleElement(context, "Ronald Reagan", "Ronald Wilson Reagan")

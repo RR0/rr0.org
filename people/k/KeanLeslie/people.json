@@ -1,5 +1,5 @@
 {
-  "birthTime": "1952",
+  "title": "Leslie K. Kean",
   "occupations": [
     "ufologist",
     "journalist",
@@ -8,5 +8,11 @@
   "countries": [
     "us"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1952"
+    }
+  ]
 }

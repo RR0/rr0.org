@@ -43,7 +43,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
     const place: NamedPlace = {name: city.getTitle(context), place: city.places[0]}
     return {
       id: sourceCase.id,
-      dateTime: sourceCase.basicInfo.base.sightingDate,
+      time: sourceCase.basicInfo.base.sightingDate,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

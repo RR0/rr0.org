@@ -14,7 +14,7 @@ export class DataAnchorHandler implements AnchorHandler {
   }
 
   async handle(context: HtmlRR0SsgContext, linkEl: HTMLAnchorElement, pathToSearch: string): Promise<void> {
-    const dataList = await this.dataService.get(pathToSearch, ["api", "product", "org"], ["index.json"])
+    const dataList = await this.dataService.getFromDir(pathToSearch, ["api", "product", "org"], ["index.json"])
     for (const data of dataList) {
       const type = data?.type
       switch (type) {

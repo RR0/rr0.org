@@ -1,7 +1,15 @@
 {
-  "birthTime": "1977",
   "occupations": ["ufologist"],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1977",
+      "place": {
+        "name": "Milan (Italie)"
+      }
+    }
   ]
 }

@@ -1,6 +1,7 @@
 {
-  "title": "Abou Bakr",
-  "birthTime": "~573",
+  "title": "Abou Bakr As-Siddiq",
+  "name": "Abou Bakr",
+  "surname": "Abou-Beker",
   "deathTime": "634-08-23",
   "occupations": [
     "priest"
@@ -10,5 +11,17 @@
   ],
   "countries": [
     "sa"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "~573",
+      "place": "La Mecque (Arabie Saoudite)"
+    },
+    {
+      "type": "death",
+      "time": "634-08-23",
+      "place": "Médine (Arabie Saoudite)"
+    }
   ]
 }

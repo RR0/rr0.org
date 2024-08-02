@@ -31,7 +31,7 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
     if (url && url !== dirName) {
       // const urlAbsolute = UrlUtil.absolute(url)
-      const peopleList = await this.service.getFromDir(context, url)
+      const peopleList = await this.service.getFromDir(url)
       const pseudoPeopleList = []
       const allCountries = new Set<CountryCode>()
       const occupations = new Set<Occupation>

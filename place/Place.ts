@@ -12,7 +12,7 @@ export class Place implements RR0Data {
     /**
      * Remote service specific data.
      */
-    readonly data?: any
+              readonly events?: any
   ) {
   }
 

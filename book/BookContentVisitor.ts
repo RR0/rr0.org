@@ -7,7 +7,7 @@ export class BookContentVisitor implements ContentVisitor {
   constructor(protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
   }
 
-  visit(context: HtmlRR0SsgContext): void {
+  async visit(context: HtmlRR0SsgContext) {
     const bookMeta = this.bookMeta.get(context.file.name)
     Object.assign(context.file.meta, bookMeta)
     const bookLinks = this.bookLinks.get(context.file.name)

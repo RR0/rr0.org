@@ -1,5 +1,4 @@
 {
-  "birthTime": "1940",
   "occupations": [
     "astronomer",
     "physicist",
@@ -7,5 +6,11 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940"
+    }
   ]
 }

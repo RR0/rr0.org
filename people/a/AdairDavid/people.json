@@ -1,9 +1,18 @@
 {
-  "birthTime": "1954-08-20",
+  "title": "David John Adair",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1954-08-20",
+      "place": {
+        "name": "Portsmouth (Virginia)"
+      }
+    }
   ]
 }

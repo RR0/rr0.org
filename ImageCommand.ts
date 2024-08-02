@@ -23,7 +23,9 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
           const captionEl = imgParentEl.querySelector("figcaption")
           if (captionEl) {
             const caption = captionEl.textContent
-            imgEl.alt = caption.replace(/\n+/g, "").trim()
+            if (!imgEl.alt) {
+              imgEl.alt = caption.replace(/\n+/g, "").trim()
+            }
           } else {
             const caption = imgEl.alt
             if (caption) {

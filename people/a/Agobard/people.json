@@ -1,8 +1,17 @@
 {
-  "birthTime": "769",
-  "deathTime": "840",
   "occupations": [
     "ufoWitness2",
     "bishop"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "769",
+      "place": "Spain"
+    },
+    {
+      "type": "death",
+      "time": "840"
+    }
   ]
 }

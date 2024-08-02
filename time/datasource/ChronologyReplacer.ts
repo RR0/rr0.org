@@ -106,7 +106,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
     const casesToMerge = sourceCases.map(sourceCase => mapping.mapper.map(context, sourceCase, fetchTime))
     const casesToAdd: RR0CaseSummary[] = []
     for (const caseToMerge of casesToMerge) {
-      const foundExisting = existingCases.find(existingCase => existingCase.dateTime.equals(caseToMerge.dateTime)
+      const foundExisting = existingCases.find(existingCase => existingCase.time.equals(caseToMerge.time)
         && existingCase.place?.name === caseToMerge.place?.name)
       if (foundExisting) {
         context.logger.debug("Merging ", caseToMerge, " into ", foundExisting)

@@ -1,0 +1,16 @@
+{
+  "title": "Collectif d'Intervenants sur le Phénomène Ovni",
+  "name": "CIPO",
+  "url": "https://www.cipofrance.com",
+  "type": "org",
+  "subtype": "nonprofit",
+  "events": [
+    {
+      "type": "birth",
+      "time": "2021",
+      "place": {
+        "name": "Colomiers (France)"
+      }
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 import { AnchorHandler } from "./AnchorHandler"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { TimeReplacer } from "../time/TimeReplacer"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
 import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 import path from "path"
+import { TimeElementFactory } from "../time/TimeElementFactory"
 
 export class CaseAnchorHandler implements AnchorHandler {
 
@@ -29,7 +29,7 @@ export class CaseAnchorHandler implements AnchorHandler {
         }
         const timeStr = aCase.time
         if (timeStr && !titles.includes(timeStr)) {
-          TimeReplacer.updateTimeFromStr(caseContext.time, timeStr)
+          TimeElementFactory.updateTimeFromStr(caseContext.time, timeStr)
           titles.push(TimeTextBuilder.build(caseContext))
         }
         const place = aCase.place

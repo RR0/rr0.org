@@ -1,0 +1,17 @@
+{
+  "surname": "Osman",
+  "occupations": [
+    "military",
+    "priest"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "574"
+    },
+    {
+      "type": "death",
+      "time": "656"
+    }
+  ]
+}

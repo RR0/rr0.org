@@ -1,0 +1,30 @@
+{
+  "url": "https://investigationsoanisetoceanographiee.com",
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1966-11-10",
+      "place": {
+        "name": "Montceau-les-Mines (Saône-et-Loire)"
+      },
+      "sources": [
+        {
+          "type": "article",
+          "url": "https://montceau-news.com/saone_et_loire/579912-un-montcellien-enquete-sur-les-oani.html"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2016-01",
+      "title": "OVNI/ OANI Enquête, méthode, réflexion",
+      "publisher": "Saint-Martin"
+    }
+  ]
+}

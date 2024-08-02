@@ -1,0 +1,13 @@
+{
+  "title": "UAP Check",
+  "url": "https://www.uapcheck.com",
+  "type": "org",
+  "subtype": "nonprofit",
+  "events": [
+    {
+      "type": "birth",
+      "time": "2023-10-16",
+      "place": "Toulouse (France)"
+    }
+  ]
+}

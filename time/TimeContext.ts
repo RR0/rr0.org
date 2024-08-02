@@ -102,6 +102,10 @@ export class TimeContext {
       "UTC" + (date.getTimezoneOffset() < 0 ? "-" : "+") + date.getTimezoneOffset())
   }
 
+  static fromIsoString(isoString: string, options: Intl.DateTimeFormatOptions): TimeContext {
+    return TimeContext.fromDate(new Date(isoString), options)
+  }
+
   reset(): this {
     this.setYear(undefined)
     this.setMonth(undefined)

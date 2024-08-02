@@ -1,0 +1,17 @@
+{
+  "occupations": [
+    "anthropologist"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1955",
+      "place": {
+        "name": "Santander"
+      }
+    }
+  ]
+}

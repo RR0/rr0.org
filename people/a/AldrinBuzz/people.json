@@ -1,10 +1,20 @@
 {
-  "birthTime": "1930-01-20",
+  "title": "Edwin Eugene Aldrin",
+  "surname": "Buzz",
   "occupations": [
     "pilot",
     "astronaut"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1930-01-20",
+      "place": {
+        "name": "Montclair (New Jersey)"
+      }
+    }
   ]
 }

@@ -6,9 +6,9 @@ import { TimeContext } from "../../TimeContext"
 import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
 import { Place } from "../../../place/Place"
 import { Publication, Source } from "../../../source/Source"
-import { TimeReplacer } from "../../TimeReplacer"
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import { Organization } from "../../../org/Organization"
+import { TimeElementFactory } from "../../TimeElementFactory"
 
 export class RR0HttpDatasource extends RR0Datasource {
 
@@ -70,7 +70,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     const sources = this.getSources(row, itemContext)
     const description = this.getDescription(row)
     const id = this.id(dateTime, place)
-    return {url, place, dateTime, description, sources, id}
+    return {url, place, time: dateTime, description, sources, id}
   }
 
   protected getSources(row: Element, itemContext: HtmlRR0SsgContext): Source[] {
@@ -86,12 +86,12 @@ export class RR0HttpDatasource extends RR0Datasource {
       sourceEl.remove()
       const pubItems = title.split(",")
       const timeStr = pubItems[pubItems.length - 1].trim()
-      const parsedTime = TimeReplacer.parseDateTime(timeStr)
+      const parsedTime = TimeElementFactory.parseDateTime(timeStr)
       let time: TimeContext
       let publisher: string
       if (parsedTime) {
         time = new TimeContext({...itemContext.time.options})
-        TimeReplacer.setTimeContextFrom(time, parsedTime)
+        TimeElementFactory.setTimeContextFrom(time, parsedTime)
         pubItems.pop()
       }
       publisher = pubItems.splice(1, pubItems.length - 1).map(item => item.trim()).join(", ").trim()
@@ -104,7 +104,7 @@ export class RR0HttpDatasource extends RR0Datasource {
   }
 
   protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
-    TimeReplacer.updateTimeFromStr(time, timeEl.dateTime)
+    TimeElementFactory.updateTimeFromStr(time, timeEl.dateTime)
   }
 
   protected getPlace(context: HtmlRR0SsgContext, placeEl: Element): NamedPlace {

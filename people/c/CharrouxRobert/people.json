@@ -1,9 +1,19 @@
 {
-  "birthTime": "1909-04-07",
-  "deathTime": "1978-06-24",
   "occupations": ["ufologist"],
   "pseudonyms": ["Robert Grugeau"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1909-04-07",
+      "place": "Payroux (Vienne)"
+    },
+    {
+      "type": "death",
+      "time": "1978-06-24",
+      "place": "Vienne (Isère)"
+    }
   ]
 }

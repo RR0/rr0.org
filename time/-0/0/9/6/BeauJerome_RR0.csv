@@ -1,2 +1,2 @@
-url,place,dateTime,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.data
+url,place,time,description,sources,id,place.name,place.org.dirName,place.org.code,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.locations,place.place.elevation,place.place.dirName,place.place.events
 https://rr0.org/time/-0/0/9/6/index.html,Italie,,"",,,,-96,"En , observation d'un objet celeste.","[Julius Obsequens,s1,"""",""Prodiges, CXI, 50]"",",-96

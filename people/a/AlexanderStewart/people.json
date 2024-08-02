@@ -1,9 +1,15 @@
 {
-  "birthTime": "1946",
   "occupations": [
     "priest"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946",
+      "place": "Hull (Nord-Est de l'Angleterre)"
+    }
   ]
 }

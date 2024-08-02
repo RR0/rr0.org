@@ -1,10 +1,16 @@
 {
-  "birthTime": "1932",
+  "url": "https://www.meessen.net/AMeessen",
   "occupations": [
     "ufologist",
     "physicist"
   ],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1932"
+    }
   ]
 }

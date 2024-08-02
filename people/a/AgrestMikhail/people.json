@@ -1,5 +1,6 @@
 {
-  "birthTime": "1949",
+  "title": "Mikhail M. Agrest",
+  "url": "https://www.cofc.edu/%7Eagrestm/",
   "occupations": [
     "physicist",
     "astronomer",
@@ -8,5 +9,12 @@
   "countries": [
     "ru",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1949",
+      "place": "Moscou (Russia)"
+    }
   ]
 }

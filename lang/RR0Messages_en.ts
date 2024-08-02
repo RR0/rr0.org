@@ -2,6 +2,7 @@ import { CaseClassificationMessages, CaseConclusionMessages, MessageUtils, RR0Me
 import { placeMessages_en } from "../place/PlaceMessages_en"
 import { countryMessageList_en } from "../org/CountryMessageList_en"
 import { peopleMessages_en } from "../people/PeopleMessages_en"
+import { orgMessages_en } from "../org/OrgRR0Messages_en"
 
 const caseClassification_en: CaseClassificationMessages = {
   hynek: {
@@ -76,7 +77,8 @@ export class RR0Messages_en implements RR0Messages {
           after: "one hour later"
         }
       },
-      approximate: (title: string): string => `around ${title}`,
+      on: (title: string, approximate: boolean): string => (approximate ? "around " : "on ") + title,
+      in: (title: string, approximate: boolean): string => (approximate ? "around " : "") + title,
       fromTo: (startReplacement: string, endReplacement: string): string => startReplacement + " to " + endReplacement
     }
   }
@@ -84,6 +86,7 @@ export class RR0Messages_en implements RR0Messages {
     classification: caseClassification_en,
     conclusion: caseConclusion_en
   }
+  org = orgMessages_en
   people = peopleMessages_en
   place = placeMessages_en
   country = countryMessageList_en

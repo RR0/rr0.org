@@ -1,6 +1,4 @@
 {
-  "birthTime": "1926-10-15",
-  "deathTime": "1998-09-24",
   "occupations": [
     "astronomer",
     "engineer"
@@ -10,5 +8,17 @@
   ],
   "countries": [
     "ru"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1926-10-15",
+      "place": "Tachkent (Ouzbékistan, URSS)"
+    },
+    {
+      "type": "death",
+      "time": "1998-09-24",
+      "place": "Petrozavodsk (Russie)"
+    }
   ]
 }

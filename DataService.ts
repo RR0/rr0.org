@@ -39,13 +39,18 @@ export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> 
   create(file: FileContents): T | undefined {
     const data = JSON.parse(file.contents)
     const basename = path.basename(file.name)
-    let t: T | undefined
+    let datum: T | undefined
     if (data.type === this.type || this.fileNames.reduce(
       (hasIt: boolean, fileName) => basename.startsWith(fileName) ? true : hasIt,
       false)) {
-      t = Object.assign({dirName: path.dirname(file.name), title: "", time: ""}, data)
+      const dirName = path.dirname(file.name)
+      datum = this.createFromData(dirName, data)
     }
-    return t
+    return datum
+  }
+
+  protected createFromData(dirName: string, data: any): T {
+    return Object.assign({dirName, title: "", time: ""}, data) as unknown as T
   }
 }
 
@@ -63,7 +68,8 @@ export class DataService {
   constructor(readonly factories: RR0DataFactory<RR0Data>[]) {
   }
 
-  async get<T extends RR0Data = RR0Data>(dirName: string, types: string[], fileNames: string[] = this.factories.reduce(
+  async getFromDir<T extends RR0Data = RR0Data>(dirName: string, types: string[],
+                                                fileNames: string[] = this.factories.reduce(
     (allFileNames, factory) => factory.fileNames.concat(allFileNames), [])): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)

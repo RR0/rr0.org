@@ -1,11 +1,36 @@
 {
-  "birthTime": "1915-03-29",
-  "deathTime": "1984",
   "occupations": [
     "pilot",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1915-03-29",
+      "place": {
+        "name": "Sebeka (Minnesota)"
+      },
+      "sources": [
+        {
+          "type": "document",
+          "title": "Exhibit 'A' - Some life data on Kenneth Arnold",
+          "publication": {
+            "publisher": "Memorandum for the officer in charge, Incident 4AF 1208 I",
+            "time": "1947-07-16"
+          },
+          "url": "/time/1/9/4/7/07/16/Memorandum/ExhibitA/"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1984",
+      "place": {
+        "name": "Sebeka (Minnesota)"
+      }
+    }
   ]
 }

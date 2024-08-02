@@ -156,22 +156,24 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    let peopleList = await this.service.getFromDirs(context, dirNames)
+    let peopleList = await this.service.getFromDirs(dirNames)
     const outputPath = this.config.getOutputPath(context)
     const output = context.newOutput(outputPath)
     if (this.filterOccupations.length > 0) {
       peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     }
-    const pseudoPeopleList = peopleList.reduce((prev: KnownPeople[], p: KnownPeople) => {
-      if (p.pseudonyms?.length > 0) {
-        for (const pseudonym of p.pseudonyms) {
-          const pseudo = new KnownPeople(p.firstNames, p.lastName, p.pseudonyms, p.occupations, p.countries,
-            p.discredited, p.birthTime, p.deathTime, p.gender, p.dirName, p.image)
+    const pseudoPeopleList = peopleList.reduce((prevPeopleList: KnownPeople[], peopleInfo: KnownPeople) => {
+      if (peopleInfo.pseudonyms?.length > 0) {
+        for (const pseudonym of peopleInfo.pseudonyms) {
+          const pseudo = new KnownPeople(peopleInfo.firstNames, peopleInfo.lastName, peopleInfo.pseudonyms,
+            peopleInfo.occupations, peopleInfo.countries,
+            peopleInfo.discredited, peopleInfo.birthTime, peopleInfo.deathTime, peopleInfo.gender, peopleInfo.dirName,
+            peopleInfo.image)
           pseudo.lastAndFirstName = pseudonym
-          prev.push(pseudo)
+          prevPeopleList.push(pseudo)
         }
       }
-      return prev
+      return prevPeopleList
     }, [])
     peopleList = peopleList.concat(pseudoPeopleList).sort(
       (p1, p2) => p1.lastAndFirstName.localeCompare(p2.lastAndFirstName))
@@ -212,7 +214,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     return ul
   }
 
-  protected toListItem(context: HtmlRR0SsgContext, people: People, pseudoPeopleList: KnownPeople[],
+  protected toListItem(context: HtmlRR0SsgContext, people: KnownPeople, pseudoPeopleList: KnownPeople[],
                        allCountries: Set<CountryCode>, occupations: Set<Occupation>) {
     const ref = this.service.getLink(context, people, pseudoPeopleList, allCountries, occupations,
       this.filterOccupations)

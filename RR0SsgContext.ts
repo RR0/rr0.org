@@ -3,8 +3,10 @@ import { ssgMessages } from "./lang"
 import { RR0Messages } from "./lang/RR0Messages"
 import { ConsoleLogger, FileContents, HtmlSsgContext, SsgConfig, SsgContext, SsgContextImpl } from "ssg-api"
 import { PeopleContext } from "./people/PeopleContext"
+import { RR0Data } from "./RR0Data"
 
 export interface RR0SsgContext extends SsgContext {
+
   readonly messages: RR0Messages
   readonly time: TimeContext
 
@@ -27,9 +29,14 @@ export class RR0SsgContextImpl extends SsgContextImpl {
   readonly images = new Set<string>()
   protected readonly fileMap = new Map<string, FileContents>()
 
+  data: RR0Data
+
   constructor(locale: string, readonly time: TimeContext, readonly config: SsgConfig,
               readonly people = new PeopleContext(), currentFile: FileContents | undefined = undefined) {
     super(locale, new Map(), "RR0", new ConsoleLogger("RR0"), currentFile)
+    this.data = {
+      time: time
+    }
     this.messages = ssgMessages[locale]
   }
 

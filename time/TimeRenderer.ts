@@ -14,6 +14,9 @@ export class TimeRenderer {
   constructor(readonly timeFiles: string[]) {
   }
 
+  /**
+   * Creates <time> elements from time contexts.
+   */
   protected matchExistingTimeFile(url: string): string | undefined {
     while (url !== "time" && this.timeFiles.indexOf(`${url}/index.html`) < 0) {
       const slash = url.lastIndexOf("/")

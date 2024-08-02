@@ -21,7 +21,7 @@ const dirs = fileNames.reduce((dirs, fileName) => dirs.concat(RR0FileUtil.findDi
 const dataService = new DataService(dirs, fileNames)
 
 glob("people/*/*").then(peopleFiles => {
-  const books = new BookService(logger, dry, new PeopleService(peopleFiles, dataService), "out")
+  const books = new BookService(logger, dry, new PeopleService(peopleFiles, dataService, peopleFactory), "out")
   books.import(fileName).then((result: Book[]) => {
       logger.log("Wrote", result.length, "books")
     }

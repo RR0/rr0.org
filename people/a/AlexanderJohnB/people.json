@@ -1,9 +1,16 @@
 {
-  "birthTime": "1937",
+  "url": "https://www.johnbalexander.com",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1937",
+      "place": "New York (USA)"
+    }
   ]
 }

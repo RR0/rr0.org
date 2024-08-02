@@ -1,9 +1,9 @@
-import { ContentStep, ContentStepConfig, OutputFunc } from "ssg-api"
+import { ContentStep, ContentStepConfig, FileContents, OutputFunc } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import { TimeContext } from "./time/TimeContext"
 
 export interface ContentVisitor {
-  visit(context: HtmlRR0SsgContext): void
+  visit(context: HtmlRR0SsgContext): Promise<void>
 }
 
 export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
@@ -27,16 +27,31 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
 
   protected async processFile(context: HtmlRR0SsgContext, filePath: string,
                               contentsConfig: ContentStepConfig): Promise<boolean> {
-    context.time.reset()  // Don't use time context from previous page.
-    RR0ContentStep.setTimeFromPath(context, filePath)
-    const processed = await super.processFile(context, filePath, contentsConfig)
-    return processed
+    this.setContextFromFile(context, filePath)
+    return super.processFile(context, filePath, contentsConfig)
   }
 
-  protected shouldProcess(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): boolean {
-    for (const contentVisitor of this.contentVisitors) {
-      contentVisitor.visit(context)
+  protected setContextFromFile(context: HtmlRR0SsgContext, filePath: string) {
+    this.setTimeFromPath(context, filePath)
+  }
+
+  protected setTimeFromPath(context: HtmlRR0SsgContext, filePath: string) {
+    context.time.reset()  // Don't use time context from previous page.
+    RR0ContentStep.setTimeFromPath(context, filePath)
+  }
+
+  async write(context: HtmlRR0SsgContext, outputFile: FileContents): Promise<void> {
+    context.file.contents = context.file.serialize()
+    return super.write(context, outputFile)
+  }
+
+  protected async shouldProcess(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): Promise<boolean> {
+    const should = true   // TODO: Don't process unmodified files
+    if (should) {
+      for (const contentVisitor of this.contentVisitors) {
+        await contentVisitor.visit(context)
+      }
     }
-    return true // TODO: Don't process unmodified files
+    return should
   }
 }

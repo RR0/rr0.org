@@ -1,0 +1,24 @@
+{
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1964"
+    },
+    {
+      "type": "death",
+      "time": "2021",
+      "sources": [
+        {
+          "type": "article",
+          "url": "https://www.mufonfrance.fr/post/hommage-%C3%A0-hugues-no%C3%ABl"
+        }
+      ]
+    }
+  ]
+}

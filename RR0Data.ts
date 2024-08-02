@@ -13,7 +13,22 @@ export interface RR0Data {
   id?: string
 
   /**
-   * The data type.
+   * Short name
+   */
+  name?: string
+
+  /**
+   * Unofficial name
+   */
+  surname?: string
+
+  /**
+   * Long name
+   */
+  title?: string
+
+  /**
+   * The data type ("people", "place", "org", "book", "case", "sighting"...)
    */
   type?: string
 
@@ -22,17 +37,17 @@ export interface RR0Data {
    * Should end with a trailing slash ("/").
    * @deprecated Use #url instead.
    */
-  dirName?: string
+  readonly dirName?: string
 
   /**
    * Where the data is stored, relatively to RR0's root.
    */
-  url?: URL
+  readonly url?: URL
 
   /**
    * When this data occurred.
    */
-  dateTime?: TimeContext
+  time?: TimeContext
 
   /**
    * If this data is not more relevant, not the latest version, or state of art.
@@ -63,4 +78,11 @@ export interface RR0Data {
    * Keywords about that data.
    */
   tags?: string[]
+
+  /**
+   * Sub-data
+   */
+  events?: RR0Data[]
+
+  image?: string
 }

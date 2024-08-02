@@ -1,0 +1,16 @@
+{
+  "occupations": [
+    "teacher",
+    "artist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1986",
+      "place": "Chauny"
+    }
+  ]
+}

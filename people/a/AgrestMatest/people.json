@@ -1,10 +1,21 @@
 {
-  "birthTime": "1915-07-20",
-  "deathTime": "2005-09-20",
+  "title": "Matest Mendelevich Agrest",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "ru"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1915-07-20",
+      "place": "Mogilev (Bielorussie)"
+    },
+    {
+      "type": "death",
+      "time": "2005-09-20",
+      "place": "Charleston (South Carolina, USA)"
+    }
   ]
 }

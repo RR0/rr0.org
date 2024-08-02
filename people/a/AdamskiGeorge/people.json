@@ -1,6 +1,4 @@
 {
-  "birthTime": "1891-04-17",
-  "deathTime": "1965-04-23",
   "occupations": [
     "contactee",
     "farmer"
@@ -8,5 +6,23 @@
   "countries": [
     "pl",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1891-04-17",
+      "place": "Bydgoszcz (Pologne)",
+      "notes": [
+        "alors partie de l'empire germanique"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1965-04-23",
+      "place": "Silver Springs (Maryland)",
+      "notes": [
+        "d'une crise cardiaque"
+      ]
+    }
   ]
 }

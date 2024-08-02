@@ -66,8 +66,10 @@ export class TimeTextBuilder {
         printOptions.era = "narrow"
       }
       text = date.toLocaleString(locale, printOptions)
-      if (time.approximate) {
-        text = context.messages.context.time.approximate(text)
+      if (printOptions.day === "numeric") {
+        text = context.messages.context.time.on(text, time.approximate)
+      } else {
+        text = context.messages.context.time.in(text, time.approximate)
       }
     }
     return text

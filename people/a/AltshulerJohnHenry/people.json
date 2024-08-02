@@ -1,6 +1,5 @@
 {
-  "birthTime": "1940",
-  "deathTime": "2004",
+  "url": "https://postcardfrommagonia.blogspot.com/",
   "occupations": [
     "astronomer",
     "physicist",
@@ -8,5 +7,15 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940"
+    },
+    {
+      "type": "death",
+      "time": "2004"
+    }
   ]
 }

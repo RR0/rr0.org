@@ -1,10 +1,27 @@
 {
-  "birthTime": "1911-06-13",
-  "deathTime": "1988-08-31",
+  "title": "Luis Walter Alvarez",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "title": "Alvarez en 1962"
+    },
+    {
+      "type": "birth",
+      "time": "1911-06-13"
+    },
+    {
+      "type": "death",
+      "time": "1988-08-31",
+      "notes": [
+        "d'un cancer"
+      ]
+    }
   ]
 }

@@ -54,11 +54,11 @@ export class SourceFactory {
         source = this.fromPage(href, hash)
         break
       case ".json":
-        const sources = await this.dataService.get(path.dirname(href), sourceTypes, [path.basename(href)])
+        const sources = await this.dataService.getFromDir(path.dirname(href), sourceTypes, [path.basename(href)])
         source = sources?.[0]
         break
       default: {
-        const sources = await this.dataService.get(ext ? path.dirname(href) : href, sourceTypes,
+        const sources = await this.dataService.getFromDir(ext ? path.dirname(href) : href, sourceTypes,
           ["index.json", "people.json"])
         source = sources?.[0]
         if (!source) {

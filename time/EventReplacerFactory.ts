@@ -18,7 +18,7 @@ export class EventReplacer<D extends RR0Data> {
   }
 
   protected async sourceFromFile(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
-    const events = await this.dataService.get<D>(href, ["sighting"], ["index.json"])
+    const events = await this.dataService.getFromDir<D>(href, ["sighting"], ["index.json"])
     if (events.length <= 0) {
       throw new Error("Could not find metadata in " + href)
     }

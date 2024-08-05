@@ -35,7 +35,7 @@ export class AnchorReplacer {
    */
   protected updateLinkExternal(context: HtmlSsgContext, a: HTMLAnchorElement) {
     a.target = "_blank"
-    a.title = "Lien externe"
+    a.title = new URL(a.href).host
     context.debug("Adding target in", a.outerHTML)
   }
 

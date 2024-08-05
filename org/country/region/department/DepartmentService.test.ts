@@ -8,8 +8,8 @@ import { california } from "../../../us/region/ca/California"
 describe("DepartmentService", () => {
 
   test("get", () => {
-    expect(departmentService.get(hautsDeSeine.code, ileDeFrance)).toBe(hautsDeSeine)
-    expect(departmentService.get(hautsDeSeine.code, undefined)).toBe(hautsDeSeine)
-    expect(departmentService.get(sanDiego.code, california)).toBe(sanDiego)
+    expect(departmentService.get(hautsDeSeine.id, ileDeFrance)).toBe(hautsDeSeine)
+    expect(departmentService.get(hautsDeSeine.id, undefined)).toBe(hautsDeSeine)
+    expect(departmentService.get(sanDiego.id, california)).toBe(sanDiego)
   })
 })

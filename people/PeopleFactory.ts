@@ -1,27 +1,18 @@
 import { DefaultDataFactory } from "../DataService"
-import { KnownPeople, People } from "./People"
+import { People } from "./People"
 import path from "path"
 import fs from "fs"
-import { RR0Data } from "../RR0Data"
 import { StringUtil } from "../util/string/StringUtil"
 
-export class PeopleFactory extends DefaultDataFactory<KnownPeople> {
+export class PeopleFactory extends DefaultDataFactory<People> {
+
+  static readonly defaultPortraitFileNames = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
+
   constructor() {
     super("people")
   }
 
-  protected parseData(data: RR0Data[]) {
-    for (const datum of data) {
-      switch (datum.type) {
-        default:
-          if (typeof datum.place === "string") {
-            datum.place = {name: datum.place}
-          }
-      }
-    }
-  }
-
-  createFromDirName(dirName: string): KnownPeople {
+  createFromDirName(dirName: string): People {
     const lastSlash = dirName.lastIndexOf("/")
     const lastDir = dirName.substring(lastSlash + 1)
     const title = StringUtil.camelToText(lastDir)
@@ -30,11 +21,11 @@ export class PeopleFactory extends DefaultDataFactory<KnownPeople> {
     const firstNameStr = title.substring(firstSpace + 1)
     const firstNames = firstNameStr.split(" ")
     const id = path.basename(dirName)
-    return new KnownPeople(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
+    return new People(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
       undefined, id, dirName)
   }
 
-  createFromData(dirName: string, data: People): KnownPeople {
+  createFromData(dirName: string, data: People): People {
     const people = this.createFromDirName(dirName)
     const title = (data as any).title
     if (title) {
@@ -58,21 +49,19 @@ export class PeopleFactory extends DefaultDataFactory<KnownPeople> {
     }
     Object.assign(people, data)
     const birthTime = people.birthTime as unknown as string
-    let subData = people.events
-    if (!subData) {
-      people.events = subData = []
+    let events = people.events
+    if (!events) {
+      people.events = events = []
     }
     if (birthTime) {
       delete people.birthTime
-      subData.push({type: "birth", time: birthTime as any})
+      events.push({type: "birth", time: birthTime as any, events: []})
     }
-    this.parseData(subData)
+    this.parseEvents(events)
     if (!people.image) {
-      const possiblePortraitFiles = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
       let hasPortrait = false
-      for (let i = 0; i < possiblePortraitFiles.length; i++) {
-        const portraitFile = possiblePortraitFiles[i]
-        const portraitPath = path.join(people.dirName, portraitFile)
+      for (const defaultPortraitFileName of PeopleFactory.defaultPortraitFileNames) {
+        const portraitPath = path.join(people.dirName, defaultPortraitFileName)
         hasPortrait = fs.existsSync(portraitPath)
         if (hasPortrait) {
           people.image = path.join("/", portraitPath)

@@ -1,10 +1,18 @@
 {
-  "birthTime": "1958",
+  "title": "Christopher A. Rutkowski",
+  "url": "https://www.geocities.com/thecynicalview",
   "occupations": [
     "astronomer",
     "ufologist"
   ],
   "countries": [
     "ca"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1958",
+      "place": "Winnipeg (Manitoba)"
+    }
   ]
 }

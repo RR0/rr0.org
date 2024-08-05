@@ -2,6 +2,8 @@ import { FileContents } from "ssg-api"
 import { RR0Data } from "./RR0Data"
 import { sync as glob } from "glob-promise"
 import path from "path"
+import { TimeContext } from "./time/TimeContext"
+import { TimeElementFactory } from "./time/TimeElementFactory"
 
 /**
  * Instantiates RR0Data from (JSON) file contents.
@@ -37,7 +39,7 @@ export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> 
   }
 
   create(file: FileContents): T | undefined {
-    const data = JSON.parse(file.contents)
+    const data = JSON.parse(file.contents) as RR0Data
     const basename = path.basename(file.name)
     let datum: T | undefined
     if (data.type === this.type || this.fileNames.reduce(
@@ -49,8 +51,32 @@ export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> 
     return datum
   }
 
+  createTimeFromString(timeStr: string): TimeContext | undefined {
+    if (timeStr) {
+      const time = new TimeContext({})
+      TimeElementFactory.updateTimeFromStr(time, timeStr)
+      return time
+    } else {
+      return undefined
+    }
+  }
+
   protected createFromData(dirName: string, data: any): T {
-    return Object.assign({dirName, title: "", time: ""}, data) as unknown as T
+    const t = Object.assign({dirName, title: ""}, data) as unknown as T
+    t.time = this.createTimeFromString(data.time as any)
+    return t
+  }
+
+  protected parseEvents(data: RR0Data[]) {
+    for (const datum of data) {
+      datum.time = this.createTimeFromString(datum.time)
+      switch (datum.type) {
+        default:
+          if (typeof datum.place === "string") {
+            datum.place = {name: datum.place}
+          }
+      }
+    }
   }
 }
 
@@ -70,7 +96,8 @@ export class DataService {
 
   async getFromDir<T extends RR0Data = RR0Data>(dirName: string, types: string[],
                                                 fileNames: string[] = this.factories.reduce(
-    (allFileNames, factory) => factory.fileNames.concat(allFileNames), [])): Promise<T[]> {
+                                                  (allFileNames, factory) => factory.fileNames.concat(allFileNames),
+                                                  [])): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
     if (dataList === undefined) {
@@ -90,7 +117,11 @@ export class DataService {
         let data: RR0Data
         for (let i = 0; !data && i < this.factories.length; i++) {
           const factory = this.factories[i]
-          data = factory.create(dataFile)
+          try {
+            data = factory.create(dataFile)
+          } catch (e) {
+            console.warn("Could not create a", factory.type, "from", dataFile)
+          }
         }
         if (data) {
           dataList.push(data)
@@ -98,7 +129,7 @@ export class DataService {
           throw new Error("No factory to handle " + dataFile)
         }
       } catch (e) {
-        console.warn(`${dirName} has no ${fileNames} description`)
+        console.warn(dirName, "has no", fileNames, "description")
       }
     }
     return dataList

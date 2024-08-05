@@ -1,6 +1,7 @@
 {
   "occupations": [
-    "anthropologist"
+    "anthropologist",
+    "ufologist"
   ],
   "countries": [
     "us"
@@ -10,7 +11,7 @@
       "type": "birth",
       "time": "1955",
       "place": {
-        "name": "Santander"
+        "name": "Santander (Espagne)"
       }
     }
   ]

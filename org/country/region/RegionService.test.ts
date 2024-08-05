@@ -8,8 +8,8 @@ import { usa } from "../../us/Usa"
 describe("RegionService", () => {
 
   test("get", () => {
-    expect(regionService.get(ileDeFrance.code, france)).toBe(ileDeFrance)
-    expect(regionService.get(alabama.code, usa)).toBe(alabama)
-    expect(regionService.get(alabama.code, france)).toBeUndefined()
+    expect(regionService.get(ileDeFrance.id, france)).toBe(ileDeFrance)
+    expect(regionService.get(alabama.id, usa)).toBe(alabama)
+    expect(regionService.get(alabama.id, france)).toBeUndefined()
   })
 })

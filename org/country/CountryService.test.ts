@@ -6,8 +6,8 @@ import { usa } from "../us/Usa"
 describe("CountryService", () => {
 
   test("get", () => {
-    expect(countryService.get(france.code)).toBe(france)
-    expect(countryService.get(usa.code)).toBe(usa)
-    expect(countryService.get(usa.code)).not.toBe(france)
+    expect(countryService.get(france.id)).toBe(france)
+    expect(countryService.get(usa.id)).toBe(usa)
+    expect(countryService.get(usa.id)).not.toBe(france)
   })
 })

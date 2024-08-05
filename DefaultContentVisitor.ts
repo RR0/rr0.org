@@ -6,6 +6,8 @@ import path from "path"
 import { RR0Data } from "./RR0Data"
 import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
 import { EventRenderer } from "./time/EventRenderer"
+import { People } from "./people/People"
+import { PeopleFactory } from "./people/PeopleFactory"
 
 export class DefaultContentVisitor implements ContentVisitor {
 
@@ -32,23 +34,47 @@ export class DefaultContentVisitor implements ContentVisitor {
   protected process(context: HtmlRR0SsgContext, data: RR0Data) {
     this.processTitle(context, data)
     this.processURL(context, data)
-    this.processBirth(context, data)
-    this.processImage(context, data)
-    this.processDeath(context, data)
+    const events = data.events.sort(
+      (event1, event2) => event1.time ? event2.time ? event1.time.isBefore(event2.time) ? -1 : 1 : -1 : 1)
+    if (!events.find(event => event.type === "image" && PeopleFactory.defaultPortraitFileNames.includes(
+      event.url as unknown as string))) {
+      events.push({type: "image", url: data.image as any, name: data.name, events: []})
+    }
+    for (const event of events) {
+      switch (event.type) {
+        case "birth":
+          this.processBirth(context, event, data)
+          break
+        case "book":
+          this.processBook(context, event)
+          break
+        case "image":
+          this.processImage(context, event)
+          break
+        case "death":
+          this.processDeath(context, event)
+          break
+        default:
+          const eventEl = this.eventRenderer.render(context, event)
+          context.file.document.append(eventEl)
+      }
+    }
     context.file.contents = context.file.serialize()
   }
 
-  protected processImage(context: HtmlRR0SsgContext, data: RR0Data) {
+  protected processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {
     const doc = context.file.document
-    const side = data.type === "people" ? "left" : "right"
-    if (data.image && !doc.querySelector(`.contents > figure.${side}.side`)) {
+    const side = context.people ? "left" : "right"
+    const portraitEl = doc.querySelector(`.contents figcaption`)
+    const caption = imageData.name
+    if (!portraitEl || portraitEl.textContent !== caption) {
       const parentEl = doc.querySelector(".contents")
       if (parentEl) {
         const imgEl = doc.createElement("img")
-        imgEl.src = data.image
-        imgEl.alt = data.title
+        imgEl.src = imageData.url as any
+        imgEl.alt = imageData.title
         const figcaptionEl = doc.createElement("figcaption")
-        figcaptionEl.textContent = data.name
+        figcaptionEl.textContent = caption
         const figureEl = doc.createElement("figure")
         figureEl.classList.add(side, "side")
         figureEl.append(imgEl)
@@ -59,32 +85,49 @@ export class DefaultContentVisitor implements ContentVisitor {
     }
   }
 
-  protected processBirth(context: HtmlRR0SsgContext, data: RR0Data) {
-    const birthData = data.events?.find(data => data.type === "birth")
-    if (birthData) {
-      const doc = context.file.document
-      const parentEl = doc.querySelector(".contents")
-      if (parentEl) {
-        const birthEl = doc.createElement("p")
-        const name = data.surname ? "\"" + data.surname + "'" : data.name
-        const birthContext = context.clone()
-        const birthTimeStr = birthData.time as unknown as string
-        const birthDateEl = this.timeElementFactory.create(birthContext, birthTimeStr, context)
-        birthEl.append(name)
-        birthEl.append(context.messages[data.type].birth)
-        birthEl.append(birthDateEl)
-        if (birthData.place) {
-          birthEl.append(" à ")
-          const birthPlace = this.placeElement(context, birthData.place)
-          birthEl.append(birthPlace)
-        }
-        this.eventRenderer.renderSources(context, birthData, birthEl)
-        birthEl.append(".")
-        const insertEl = parentEl.firstElementChild
-        parentEl.insertBefore(birthEl, insertEl)
-      } else {
-        context.warn("no .content in " + context.file.name)
+  protected processBirth(context: HtmlRR0SsgContext, birthData: RR0Data, data: RR0Data) {
+    const doc = context.file.document
+    const parentEl = doc.querySelector(".contents")
+    if (parentEl) {
+      const birthEl = doc.createElement("p")
+      const people = context.people as unknown as People
+      const name = data.surname ? "\"" + data.surname + "'" : data.name || data.title
+      const birthContext = context.clone()
+      const birthTimeStr = birthData.time
+      const birthDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
+      birthEl.append(name)
+      birthEl.append(context.messages[data.type].birth)
+      birthEl.append(birthDateEl)
+      if (birthData.place) {
+        birthEl.append(" à ")
+        const birthPlace = this.placeElement(context, birthData.place)
+        birthEl.append(birthPlace)
       }
+      this.eventRenderer.renderSources(context, birthData, birthEl)
+      birthEl.append(".")
+      const insertEl = parentEl.firstElementChild
+      parentEl.insertBefore(birthEl, insertEl)
+    } else {
+      context.warn("no .content in " + context.file.name)
+    }
+  }
+
+  protected processBook(context: HtmlRR0SsgContext, bookData: RR0Data) {
+    const doc = context.file.document
+    const parentEl = doc.querySelector(".contents")
+    if (parentEl) {
+      const bookEl = doc.createElement("p")
+      const people = context.people as unknown as People
+      const birthContext = context.clone()
+      const birthTimeStr = bookData.time
+      const bookDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
+      bookEl.append(bookDateEl, " ")
+      bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
+      this.eventRenderer.renderSources(context, bookData, bookEl)
+      bookEl.append(".")
+      parentEl.append(bookEl)
+    } else {
+      context.warn("no .content in " + context.file.name)
     }
   }
 
@@ -127,10 +170,11 @@ export class DefaultContentVisitor implements ContentVisitor {
     }
   }
 
-  protected processURL(context: HtmlRR0SsgContext, people: RR0Data) {
+  protected processURL(context: HtmlRR0SsgContext, data: RR0Data) {
     const doc = context.file.document
-    if (people.url && !context.file.meta.url) {
-      context.file.meta.url = people.url as unknown as string
+    const url = data.url
+    if (url && !context.file.meta.url) {
+      context.file.meta.url = url as unknown as string
     }
   }
 }

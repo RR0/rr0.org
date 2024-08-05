@@ -2,8 +2,8 @@ import { TimeContext } from "./time/TimeContext"
 import { ssgMessages } from "./lang"
 import { RR0Messages } from "./lang/RR0Messages"
 import { ConsoleLogger, FileContents, HtmlSsgContext, SsgConfig, SsgContext, SsgContextImpl } from "ssg-api"
-import { PeopleContext } from "./people/PeopleContext"
 import { RR0Data } from "./RR0Data"
+import { People } from "./people/People"
 
 export interface RR0SsgContext extends SsgContext {
 
@@ -16,7 +16,7 @@ export interface RR0SsgContext extends SsgContext {
 export interface HtmlRR0SsgContext extends HtmlSsgContext {
   readonly messages: RR0Messages
   readonly time: TimeContext
-  readonly people: PeopleContext
+  readonly people: People
   readonly images: Set<string>
   readonly config: SsgConfig
 
@@ -32,7 +32,7 @@ export class RR0SsgContextImpl extends SsgContextImpl {
   data: RR0Data
 
   constructor(locale: string, readonly time: TimeContext, readonly config: SsgConfig,
-              readonly people = new PeopleContext(), currentFile: FileContents | undefined = undefined) {
+              readonly people = undefined, currentFile: FileContents | undefined = undefined) {
     super(locale, new Map(), "RR0", new ConsoleLogger("RR0"), currentFile)
     this.data = {
       time: time
@@ -53,6 +53,6 @@ export class RR0SsgContextImpl extends SsgContextImpl {
   }
 
   clone(locale = this.locale): RR0SsgContextImpl {
-    return new RR0SsgContextImpl(locale, this.time.clone(), this.config, this.people.clone(), this._file)
+    return new RR0SsgContextImpl(locale, this.time.clone(), this.config, this.people?.clone(), this._file)
   }
 }

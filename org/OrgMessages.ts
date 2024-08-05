@@ -24,7 +24,7 @@ export class OrgMessages {
   toTitle(context: RR0SsgContext, org: Organization<any>, opts?: OrganizationMessageOptions): string {
     const options = opts || {parent: false}
     const OrgMessages = org.getMessages(context)
-    assert.ok(OrgMessages, `Could not find organization "${org.code}" in organization "${org.parent.code}"`)
+    assert.ok(OrgMessages, `Could not find organization "${org.id}" in organization "${org.parent.id}"`)
     let str = OrgMessages.title
     if (options.parent) {
       const parent = org.parent

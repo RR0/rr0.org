@@ -4,7 +4,7 @@ import { Gender } from "@rr0/common"
 import { CountryCode } from "../org/country/CountryCode"
 import { RR0Data } from "../RR0Data"
 
-export class People {
+export class People extends RR0Data {
   /**
    * The people actually doesn't exist.
    */
@@ -27,9 +27,17 @@ export class People {
      */
     public birthTime?: Date,
     public deathTime?: Date,
-    readonly gender?: Gender
+    readonly gender?: Gender,
+    id = lastName + firstNames.join(""),
+    dirName?: string,
+    public image?: string,
+    url?: URL,
+    events: RR0Data[] = []
   ) {
+    super(id, dirName, url, events, "people")
     this.lastAndFirstName = this.getLastAndFirstName()
+    this.title = this.firstAndLastName
+    this.name = this.lastName
   }
 
   getLastAndFirstName(): string {
@@ -88,52 +96,9 @@ export class People {
     const now = at?.getTime() ?? new Date().getTime()
     return People.toYears(now - birth.getTime()) > 120
   }
-}
 
-/**
- * People stored in RR0.
- */
-export class KnownPeople extends People implements RR0Data {
-
-  readonly type = "people"
-
-  constructor(
-    firstNames: string[] = [],
-    lastName = "",
-    pseudonyms: string[] = [],
-    occupations: Occupation[] = [],
-    countries: CountryCode[] = [],
-    discredited = false,
-    birthTime?: Date,
-    deathTime?: Date,
-    gender?: Gender,
-    readonly id = lastName + firstNames.join(""),
-    readonly dirName = `people/${lastName.charAt(0).toLowerCase()}/${id}`,
-    public image?: string,
-    readonly url = new URL(dirName, "https://rr0.org"),
-    public events: RR0Data[] = []
-  ) {
-    super(firstNames, lastName, pseudonyms, occupations, countries, discredited, birthTime, deathTime, gender)
-  }
-
-  get name(): string {
-    return this.lastName
-  }
-
-  set name(name: string) {
-    this.lastName = name
-  }
-
-  get title(): string {
-    return this.firstAndLastName
-  }
-
-  set title(_: string) {
-    // NOP
-  }
-
-  clone(): KnownPeople {
-    return new KnownPeople(
+  clone(): People {
+    return new People(
       this.firstNames,
       this.lastName,
       this.pseudonyms,

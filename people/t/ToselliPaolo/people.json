@@ -4,5 +4,26 @@
   ],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1960",
+      "place": "Acqui Terme (Alexandria, Italie)"
+    },
+    {
+      "url": "portrait.jpg",
+      "type": "image",
+      "title": "Toselli Piccioni",
+      "sources": [
+        {
+          "people": "Alessandro",
+          "url": "https://www.leggendemetropolitane.net/leggende.asp?id=226",
+          "title": "Intervista a Paolo Toselli",
+          "publisher": "Leggende Metropolitane.net",
+          "time": "2005-02-14"
+        }
+      ]
+    }
   ]
 }

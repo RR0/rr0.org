@@ -1,12 +1,12 @@
 import { PeopleService } from "./PeopleService"
-import { KnownPeople } from "./People"
+import { People } from "./People"
 import { describe, expect, test } from "@javarome/testscript"
 
 describe('PeopleFactory', () => {
 
   test('build people with one first name', () => {
     const factory = new PeopleService(["people/b/BeauJerome"], dataService, peopleFactory)
-    expect(factory.createFromFullName('Jérôme Beau')).toEqual(new KnownPeople(
+    expect(factory.createFromFullName("Jérôme Beau")).toEqual(new People(
       ['Jérôme'],
       'Beau',
       [],

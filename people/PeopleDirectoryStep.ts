@@ -1,5 +1,5 @@
 import { Occupation } from "./Occupation"
-import { KnownPeople, People } from "./People"
+import { People } from "./People"
 import { promise as glob } from "glob-promise"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { HtmlTag } from "../util/HtmlTag"
@@ -146,9 +146,9 @@ export class PeopleDirectoryStep extends DirectoryStep {
         Occupation.mathematician, Occupation.meteorologist,
         Occupation.neuroscientist, Occupation.neurologist, Occupation.neuropsychiatrist,
         Occupation.oceanographer,
-        Occupation.philosopher, Occupation.physician, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
+        Occupation.philosopher, Occupation.psychologist, Occupation.physicist, Occupation.psychiatrist,
         Occupation.radioastronomer,
-        Occupation.sociologist, Occupation.softwareEngineer
+        Occupation.sociologist
       ],
       service,
       "scientists directories"
@@ -162,12 +162,13 @@ export class PeopleDirectoryStep extends DirectoryStep {
     if (this.filterOccupations.length > 0) {
       peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
     }
-    const pseudoPeopleList = peopleList.reduce((prevPeopleList: KnownPeople[], peopleInfo: KnownPeople) => {
+    const pseudoPeopleList = peopleList.reduce((prevPeopleList: People[], peopleInfo: People) => {
       if (peopleInfo.pseudonyms?.length > 0) {
         for (const pseudonym of peopleInfo.pseudonyms) {
-          const pseudo = new KnownPeople(peopleInfo.firstNames, peopleInfo.lastName, peopleInfo.pseudonyms,
+          const pseudo = new People(peopleInfo.firstNames, peopleInfo.lastName, peopleInfo.pseudonyms,
             peopleInfo.occupations, peopleInfo.countries,
-            peopleInfo.discredited, peopleInfo.birthTime, peopleInfo.deathTime, peopleInfo.gender, peopleInfo.dirName,
+            peopleInfo.discredited, peopleInfo.birthTime, peopleInfo.deathTime, peopleInfo.gender, peopleInfo.id,
+            peopleInfo.dirName,
             peopleInfo.image)
           pseudo.lastAndFirstName = pseudonym
           prevPeopleList.push(pseudo)
@@ -203,7 +204,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     await this.outputFunc(context, output)
   }
 
-  protected toList(context: HtmlRR0SsgContext, peopleList: KnownPeople[], pseudoPeopleList: KnownPeople[],
+  protected toList(context: HtmlRR0SsgContext, peopleList: People[], pseudoPeopleList: People[],
                    allCountries: Set<CountryCode>, occupations: Set<Occupation>): HTMLUListElement {
     const file = context.file
     const listItems = peopleList.map(
@@ -214,7 +215,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
     return ul
   }
 
-  protected toListItem(context: HtmlRR0SsgContext, people: KnownPeople, pseudoPeopleList: KnownPeople[],
+  protected toListItem(context: HtmlRR0SsgContext, people: People, pseudoPeopleList: People[],
                        allCountries: Set<CountryCode>, occupations: Set<Occupation>) {
     const ref = this.service.getLink(context, people, pseudoPeopleList, allCountries, occupations,
       this.filterOccupations)

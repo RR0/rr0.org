@@ -20,8 +20,8 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
     if (leftParent > 0) {
       peopleStr = peopleStr.substring(0, leftParent).trim()
     }
-    const registry = context.people.registry
-    let people = this.service.cache.get(peopleStr.toLowerCase())
+    peopleStr = peopleStr.trim().replaceAll("\n", "").replace(/  /g, " ")
+    let people = this.service.cache.get(peopleStr)
     if (!people) {
       people = this.service.createFromFullName(peopleStr)
     }

@@ -1,4 +1,4 @@
-import { KnownPeople, People } from "./People"
+import { People } from "./People"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import path from "path"
 import { DataService } from "../DataService"
@@ -10,13 +10,13 @@ import { PeopleFactory } from "./PeopleFactory"
 
 export class PeopleService {
 
-  readonly cache = new Map<string, KnownPeople>()
+  readonly cache = new Map<string, People>()
 
   constructor(protected files: string[], protected readonly dataService: DataService,
               protected factory: PeopleFactory) {
   }
 
-  createFromFullName(fullName: string): KnownPeople {
+  createFromFullName(fullName: string): People {
     let lastName: string
     let firstNames: string[]
     let commaPos = fullName.indexOf(",")
@@ -39,16 +39,19 @@ export class PeopleService {
     if (this.files.indexOf(dirName) < 0) {
       dirName = undefined
     }
+    let created: People
     if (dirName && !lastName && firstNames?.length <= 0) {
-      return this.factory.createFromDirName(dirName)
+      created = this.factory.createFromDirName(dirName)
     } else {
-      return new KnownPeople(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
-        undefined, dirName)
+      created = new People(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
+        undefined, undefined, dirName)
     }
+    this.cache.set(fullName, created)
+    return created
   }
 
-  async getFromDirs(dirNames: string[]): Promise<KnownPeople[]> {
-    let peopleList: KnownPeople[] = []
+  async getFromDirs(dirNames: string[]): Promise<People[]> {
+    let peopleList: People[] = []
     for (const dirName of dirNames) {
       const list = await this.getFromDir(dirName)
       peopleList.push(...list)
@@ -56,8 +59,8 @@ export class PeopleService {
     return peopleList
   }
 
-  async getFromDir(dirName: string): Promise<KnownPeople[]> {
-    let peopleList: KnownPeople[] = []
+  async getFromDir(dirName: string): Promise<People[]> {
+    let peopleList: People[] = []
     const fileSpec = ["people*.json"]
     const peopleDataList = await this.dataService.getFromDir(dirName, ["people", undefined], fileSpec) as People[]
     for (const peopleData of peopleDataList) {
@@ -68,7 +71,7 @@ export class PeopleService {
   }
 
   getLink(context: HtmlRR0SsgContext,
-          people: KnownPeople, pseudoPeopleList: People[], allCountries: Set<CountryCode>,
+          people: People, pseudoPeopleList: People[], allCountries: Set<CountryCode>,
           occupations: Set<Occupation>, filterOccupations: Occupation[], content?: string): HTMLElement {
     const dirName = people.dirName
     const titles = []

@@ -1,13 +1,17 @@
 {
+  "id": "924714199",
   "title": "UAP Check",
   "url": "https://www.uapcheck.com",
   "type": "org",
-  "subtype": "nonprofit",
+  "kind": "nonprofit",
+  "image": "logo.png",
   "events": [
     {
       "type": "birth",
       "time": "2023-10-16",
-      "place": "Toulouse (France)"
+      "place": {
+        "name": "Toulouse (France)"
+      }
     }
   ]
 }

@@ -5,12 +5,33 @@ import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
 /**
  * Any kind of data on RR0 (see implementing classes).
  */
-export interface RR0Data {
-  /**
-   * A unique identifier for this data.
-   * // TODO: Make it mandatory
-   */
-  id?: string
+export class RR0Data {
+
+  constructor(
+    /**
+     * The data type ("people", "place", "org", "book", "case", "sighting"...)
+     */
+    public id?: string,
+    /**
+     * A unique identifier for this data.
+     * // TODO: Make it mandatory
+     */
+    readonly dirName?: string,
+    /**
+     * The directory where the data is stored, relatively to RR0's root.
+     * Should end with a trailing slash ("/").
+     */
+    readonly url?: URL,
+    /**
+     * Public URL of the data (not the RR0 URL)
+     */
+    public events: RR0Data[] = [],
+    /**
+     * Sub-data
+     */
+    readonly type?: string
+  ) {
+  }
 
   /**
    * Short name
@@ -26,23 +47,6 @@ export interface RR0Data {
    * Long name
    */
   title?: string
-
-  /**
-   * The data type ("people", "place", "org", "book", "case", "sighting"...)
-   */
-  type?: string
-
-  /**
-   * The directory where the data is stored, relatively to RR0's root.
-   * Should end with a trailing slash ("/").
-   * @deprecated Use #url instead.
-   */
-  readonly dirName?: string
-
-  /**
-   * Where the data is stored, relatively to RR0's root.
-   */
-  readonly url?: URL
 
   /**
    * When this data occurred.
@@ -78,11 +82,6 @@ export interface RR0Data {
    * Keywords about that data.
    */
   tags?: string[]
-
-  /**
-   * Sub-data
-   */
-  events?: RR0Data[]
 
   image?: string
 }

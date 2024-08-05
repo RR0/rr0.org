@@ -69,7 +69,7 @@ export class GeipanCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
       const placeName = title.replace("(DPT)", "").replace("(DEP)", "").trim()
       org = this.cityService.find(context, placeName, undefined)
       assert.ok(org,
-        `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.code}"`)
+        `Could not find city "${placeName}" in department "${depCode}" nor department with this name in country "${france.id}"`)
     }
     return {name: org.getMessages(context).toTitle(context, org, {parent: true}), org, place: org.places[0]}
   }

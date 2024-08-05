@@ -1,7 +1,12 @@
 {
-  "birthTime": "1973",
   "occupations": ["ufologist", "librarian", "writer"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1973"
+    }
   ]
 }

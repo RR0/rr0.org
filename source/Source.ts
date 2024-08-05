@@ -23,11 +23,6 @@ export interface Source extends RR0Data {
   readonly previousSourceRefs?: string[]
 
   /**
-   * The title of this source (book, article, etc.)
-   */
-  readonly title?: string
-
-  /**
    * A possible subtitle of this source.
    */
   readonly subTitle?: string

@@ -80,6 +80,8 @@ import { SourceFileCounter } from "./source/SourceFileCounter"
 import { TimeElementFactory } from "./time/TimeElementFactory"
 import { DefaultContentVisitor } from "./DefaultContentVisitor"
 import { PeopleFactory } from "./people/PeopleFactory"
+import { OrganizationFactory } from "./org/OrganizationFactory"
+import { APIFactory } from "./tech/info/soft/APIFactory"
 
 interface RR0BuildArgs {
   /**
@@ -185,18 +187,20 @@ timeService.getFiles().then(async (timeFiles) => {
   const timeElementFactory = new TimeElementFactory(timeService.renderer)
   context.setVar("timeFilesCount", timeFiles.length)
   const peopleFiles = await glob("people/?/*")
-  context.setVar("peopleFilesCount", peopleFiles.length)
   const sightingFactory = new DefaultDataFactory("sighting", ["index"])
-  const orgFactory = new DefaultDataFactory("org", ["index"])
+  const orgFactory = new OrganizationFactory()
   const caseFactory = new DefaultDataFactory("case")
   const peopleFactory = new PeopleFactory()
+  const apiFactory = new APIFactory()
   const bookFactory = new DefaultDataFactory("book")
-  const factories = [orgFactory, caseFactory, peopleFactory, bookFactory, sightingFactory]
+  const articleFactory = new DefaultDataFactory("article")
+  const dataService = new DataService(
+    [orgFactory, caseFactory, peopleFactory, bookFactory, articleFactory, sightingFactory, apiFactory])
 
-  const dataService = new DataService(factories)
   const timeReplacer = new TimeReplacer(timeElementFactory)
   const caseService = new CaseService(dataService, timeElementFactory)
   const peopleService = new PeopleService(peopleFiles, dataService, peopleFactory)
+  context.setVar("peopleFilesCount", peopleService.cache.size)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)

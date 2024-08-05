@@ -5,5 +5,22 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Vaillant interviewé à Télématin",
+      "place": "France Télévision",
+      "sources": [
+        {
+          "people": "Télématin",
+          "type": "video",
+          "url": "https://www.france.tv/france-2/telematin/5408922-l-interview-d-actualite-michael-vaillant.html",
+          "publisher": "\"Comment expliquer l'inexplicable ?\", France 2",
+          "time": "2023-11-03 09:42"
+        }
+      ]
+    }
   ]
 }

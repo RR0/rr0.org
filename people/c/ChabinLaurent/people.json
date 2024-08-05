@@ -1,7 +1,15 @@
 {
-  "birthTime": "1970",
-  "occupations": ["ufologist"],
+  "url": "https://ufowaves.org",
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1970"
+    }
   ]
 }

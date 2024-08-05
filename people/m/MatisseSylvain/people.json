@@ -23,8 +23,14 @@
     {
       "type": "book",
       "time": "2016-01",
-      "title": "OVNI/ OANI Enquête, méthode, réflexion",
-      "publisher": "Saint-Martin"
+      "sources": [
+        {
+          "type": "book",
+          "people": "Matisse, Silvain",
+          "title": "OVNI/ OANI Enquête, méthode, réflexion",
+          "publisher": "Saint-Martin"
+        }
+      ]
     }
   ]
 }

@@ -64,22 +64,22 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   }
 
   static readonly countryMap: { [key in NuforcCountry]: string } = {
-    Australia: australia.code,
-    Brazil: brazil.code,
-    Canada: canada.code,
-    Colombia: colombia.code,
-    DominicanRepublic: dominicanRepublic.code,
-    Germany: germany.code,
-    India: india.code,
-    Peru: peru.code,
-    Philippines: philippines.code,
-    Mexico: mexico.code,
-    NewZealand: newZealand.code,
-    Seychelles: seychelles.code,
-    SouthKorea: southKorea.code,
-    UnitedKingdom: uk.code,
+    Australia: australia.id,
+    Brazil: brazil.id,
+    Canada: canada.id,
+    Colombia: colombia.id,
+    DominicanRepublic: dominicanRepublic.id,
+    Germany: germany.id,
+    India: india.id,
+    Peru: peru.id,
+    Philippines: philippines.id,
+    Mexico: mexico.id,
+    NewZealand: newZealand.id,
+    Seychelles: seychelles.id,
+    SouthKorea: southKorea.id,
+    UnitedKingdom: uk.id,
     Unspecified: "?",
-    USA: usa.code
+    USA: usa.id
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {

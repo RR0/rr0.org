@@ -1,10 +1,16 @@
 {
-  "birthTime": "1960",
   "occupations": [
     "ufologist",
     "chemist"
   ],
   "countries": [
     "ch"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1960",
+      "place": "Lausanne (Suisse)"
+    }
   ]
 }

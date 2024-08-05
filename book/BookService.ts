@@ -7,7 +7,7 @@ import * as path from "path"
 import { StringUtil } from "../util/string/StringUtil"
 import { Book } from "./Book"
 import { RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
-import { KnownPeople, People } from "../people/People"
+import { People } from "../people/People"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { PeopleService } from "../people/PeopleService"
 
@@ -59,7 +59,7 @@ export class BookService {
         const summary = result[COLUMN_SUMMARY]
         const authorLastFirst = result[COLUMN_AUTHOR_LAST_FIRST]
         const authorsNames = author ? author.split(",") : [authorLastFirst]
-        const authors: KnownPeople[] = []
+        const authors: People[] = []
         const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), this.outDir)
         for (const authorName of authorsNames) {
           const authorFound = await this.findPeople(context, authorName)
@@ -106,7 +106,7 @@ export class BookService {
     return books
   }
 
-  protected async findPeople(context: RR0SsgContext, fullName: string): Promise<KnownPeople | undefined> {
+  protected async findPeople(context: RR0SsgContext, fullName: string): Promise<People | undefined> {
     if (this.peopleList.length <= 0) {
       const peopleDirectories = RR0FileUtil.findDirectoriesContaining("people*.json")
       this.peopleList = await this.peopleService.getFromDirs(peopleDirectories)

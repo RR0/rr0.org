@@ -25,7 +25,7 @@ export class OrganizationMessages {
   toTitle(context: RR0SsgContext, org: Organization, options: OrganizationMessageOptions): string {
     const orgMessages = org.getMessages(context)
     assert.ok(orgMessages,
-      `Could not find name of city with ZIP code "${org.code}" in departement "${org.parent?.code}"`)
+      `Could not find name of city with ZIP code "${org.id}" in departement "${org.parent?.id}"`)
     let title = orgMessages.title
     return this.toTitleFromName(context, org, title, options)
   }

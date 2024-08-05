@@ -13,28 +13,26 @@ export enum OrganizationType {
   city = "city",
 }
 
-export class Organization<M extends TitleMessage = OrganizationMessages> implements RR0Data {
+export class Organization<M extends TitleMessage = OrganizationMessages> extends RR0Data {
 
-  readonly dirName: string
-
-  constructor(readonly code: string, readonly places: Place[], readonly kind: OrganizationType,
+  constructor(id: string, readonly places: Place[], readonly kind: OrganizationType,
               readonly parent?: Organization) {
-    assert.ok(code, `Code must be defined for organization of type ${kind}`)
-    this.dirName = path.join(parent?.dirName ?? "org/", code)
+    super(id, path.join(parent?.dirName ?? "org/", id), undefined, [], "org")
+    assert.ok(id, `Code must be defined for organization of type ${kind}`)
   }
 
   getMessages(context: RR0SsgContext): M {
     const rootMessages = this.parent ? this.parent.getMessages(context) : context.messages
     const messageKind = rootMessages[this.kind]
     assert.ok(messageKind, `Could not find messages of kind "${this.kind}" in ${JSON.stringify(rootMessages)}`)
-    const messages = messageKind[this.code]
-    assert.ok(messages, `Could not find messages for org "${this.code}" in messages "${JSON.stringify(messageKind)}"`)
+    const messages = messageKind[this.id]
+    assert.ok(messages, `Could not find messages for org "${this.id}" in messages "${JSON.stringify(messageKind)}"`)
     return messages
   }
 
   getTitle(context: RR0SsgContext, options: OrganizationMessageOptions = {parent: false}): string {
     const messages = this.getMessages(context)
-    assert.ok(messages, `Could not find name of org "${this.code}" in parent org "${this.parent?.code}"`)
+    assert.ok(messages, `Could not find name of org "${this.id}" in parent org "${this.parent?.id}"`)
     let str = messages.title
     if (options.parent && this.parent) {
       const parentMessages = this.parent.getMessages(context)

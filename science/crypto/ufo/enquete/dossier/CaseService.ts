@@ -2,7 +2,6 @@ import { DataService, RR0DataFactory } from "../../../../../DataService"
 import { RR0Case } from "./RR0Case"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
 import path from "path"
-import { TimeReplacer } from "../../../../../time/TimeReplacer"
 import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
 
 export class CaseService {
@@ -28,17 +27,19 @@ export class CaseService {
       const classificationLabels = context.messages.case.classification.hynek[hynek]
       details.push(classificationLabels.short)
     }
-    const timeStr = aCase.time
+    const time = aCase.time
     const caseContext = context.clone()
-    if (timeStr) {
+    if (time) {
       const options = caseContext.time.options
       options.month = undefined
       options.day = undefined
       options.hour = undefined
       options.weekday = undefined
       options.minute = undefined
-      const elem = this.timeElementFactory.create(caseContext, timeStr, undefined, {url: false})
-      details.push(elem.outerHTML)
+      const elem = this.timeElementFactory.create(caseContext, time.toString(), undefined, {url: false})
+      if (elem) {
+        details.push(elem.outerHTML)
+      }
     }
     const text: (string | string[])[] = [aCase.title]
     if (details.length > 0) {

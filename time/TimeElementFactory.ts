@@ -2,7 +2,6 @@ import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
 import { TimeRenderer, TimeRenderOptions } from "./TimeRenderer"
 import { TimeParseResult, TimeReplacer } from "./TimeReplacer"
 import { TimeContext } from "./TimeContext"
-import assert from "assert"
 
 /**
  * Creates <time> elements from time strings.
@@ -76,15 +75,16 @@ export class TimeElementFactory {
 
   create(context: HtmlRR0SsgContext, contents: string, previousContext: HtmlRR0SsgContext | undefined,
          options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
-    assert.ok(contents, "Time string expected")
     let replacement: HTMLElement | undefined
-    const parts = contents.split("/")
-    const isTimeInterval = parts.length > 1
-    if (isTimeInterval) {
-      replacement = this.createInterval(context, previousContext, parts, options)
-    }
-    if (!replacement) {
-      replacement = this.valueReplacement(context, contents, previousContext, options)
+    if (contents) {
+      const parts = contents.split("/")
+      const isTimeInterval = parts.length > 1
+      if (isTimeInterval) {
+        replacement = this.createInterval(context, previousContext, parts, options)
+      }
+      if (!replacement) {
+        replacement = this.valueReplacement(context, contents, previousContext, options)
+      }
     }
     return replacement
   }
@@ -107,15 +107,32 @@ export class TimeElementFactory {
     return replacement
   }
 
-  protected dateTimeReplacement(
-    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, parsed: TimeParseResult,
-    options: TimeRenderOptions = {url: true}
-  ): HTMLElement | undefined {
+  valueReplacement(context: HtmlRR0SsgContext, timeStr: string, previousContext: RR0SsgContext | undefined,
+                   options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
+    let replacement = undefined
+    timeStr = timeStr.trim()
     const time = context.time
-    TimeElementFactory.setTimeContextFrom(time, parsed)
-    let replacement: HTMLElement | undefined = undefined
-    if (context.time.isDefined()) {
-      replacement = this.renderer.render(context, previousContext, options)
+    time.approximate = timeStr.charAt(0) === "~"
+    if (time.approximate) {
+      timeStr = timeStr.substring(1)
+    }
+    const parsed = TimeElementFactory.parseDateTime(timeStr)
+    if (parsed) {
+      const time = context.time
+      TimeElementFactory.setTimeContextFrom(time, parsed)
+      replacement = this.dateTimeReplacement(context, previousContext, options)
+    } else {
+      const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
+      if (durationValues && durationValues[0]) {
+        const map = durationValues.slice(1)
+        const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
+          if (i % 2 !== 0) {
+            reduced.push(current)
+          }
+          return reduced
+        }, [])
+        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr)
+      }
     }
     return replacement
   }
@@ -159,30 +176,12 @@ export class TimeElementFactory {
     return replacement
   }
 
-  valueReplacement(context: HtmlRR0SsgContext, timeStr: string, previousContext: RR0SsgContext | undefined,
-                   options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
-    let replacement = undefined
-    timeStr = timeStr.trim()
-    const time = context.time
-    time.approximate = timeStr.charAt(0) === "~"
-    if (time.approximate) {
-      timeStr = timeStr.substring(1)
-    }
-    const parsed = TimeElementFactory.parseDateTime(timeStr)
-    if (parsed) {
-      replacement = this.dateTimeReplacement(context, previousContext, parsed, options)
-    } else {
-      const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
-      if (durationValues && durationValues[0]) {
-        const map = durationValues.slice(1)
-        const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
-          if (i % 2 !== 0) {
-            reduced.push(current)
-          }
-          return reduced
-        }, [])
-        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr)
-      }
+  protected dateTimeReplacement(
+    context: HtmlRR0SsgContext, previousContext: RR0SsgContext | null, options: TimeRenderOptions = {url: true}
+  ): HTMLElement | undefined {
+    let replacement: HTMLElement | undefined = undefined
+    if (context.time.isDefined()) {
+      replacement = this.renderer.render(context, previousContext, options)
     }
     return replacement
   }

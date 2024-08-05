@@ -18,11 +18,11 @@ export class EventReplacer<D extends RR0Data> {
   }
 
   protected async sourceFromFile(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
-    const events = await this.dataService.getFromDir<D>(href, ["sighting"], ["index.json"])
-    if (events.length <= 0) {
+    const data = await this.dataService.getFromDir<D>(href, ["sighting"], ["index.json"])
+    if (data.length <= 0) {
       throw new Error("Could not find metadata in " + href)
     }
-    this.renderer.renderContent(context, events[0], container)
+    this.renderer.renderContent(context, data[0], container)
   }
 }
 

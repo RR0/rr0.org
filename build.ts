@@ -292,7 +292,8 @@ timeService.getFiles().then(async (timeFiles) => {
   ssg.add(ufoCasesStep)
   ssg.add(...peopleSteps)
   if (contentRoots) {
-    const contentVisitors: ContentVisitor[] = [new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory)]
+    const contentVisitor = new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory, sourceFactory)
+    const contentVisitors: ContentVisitor[] = [contentVisitor]
     if (args.books) {
       contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))
     }

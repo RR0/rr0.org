@@ -21,27 +21,23 @@ export class SourceReplacer {
     replacement.ariaLabel = "Source"
     const sourceId = this.counter.next(context)
     replacement.textContent = sourceId
-    const contents = outputDoc.createElement("span")
-    contents.className = "source-contents"
-    await this.content(context, original, contents)
+    const sourceContentsEl = outputDoc.createElement("span")
+    sourceContentsEl.className = "source-contents"
+    await this.content(context, original, sourceContentsEl)
     const anchor = outputDoc.createElement("span")
     anchor.id = sourceId
     anchor.className = "anchor"
-    replacement.append(anchor, contents)
+    replacement.append(anchor, sourceContentsEl)
     return replacement
   }
 
-  protected async content(context: HtmlRR0SsgContext, original: HTMLElement, contents: HTMLSpanElement) {
+  protected async content(context: HtmlRR0SsgContext, original: HTMLElement, container: HTMLElement) {
     const href = (original as HTMLAnchorElement).href
     if (href) {
-      await this.renderFromLink(context, contents, href)
+      const source = await this.factory.create(context, href)
+      await this.renderer.renderContent(context, source, container)
     } else {
-      contents.innerHTML = original.innerHTML
+      container.innerHTML = original.innerHTML
     }
-  }
-
-  protected async renderFromLink(context: HtmlRR0SsgContext, container: HTMLElement, href: string) {
-    const source = await this.factory.create(context, href)
-    this.renderer.renderContent(context, source, container)
   }
 }

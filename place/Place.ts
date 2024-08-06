@@ -14,7 +14,7 @@ export class Place extends RR0Data {
                */
               data?: any
   ) {
-    super(dirName, undefined, undefined, [], "place")
+    super(dirName, dirName, undefined, [], "place")
   }
 
   /**

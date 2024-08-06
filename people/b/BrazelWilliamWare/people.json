@@ -1,6 +1,6 @@
 {
-  "birthTime": "1899-04-28",
-  "deathTime": "1963-10-01",
+  "type": "people",
+  "surname": "Mack",
   "pseudonyms": [
     "Brazel, Mack"
   ],
@@ -10,5 +10,33 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1899-04-28",
+      "place": "Cooks Peak (Santa Rita, Nouveau-Mexique)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.png",
+      "name": "Brazel photographié en 1947",
+      "sources": [
+        {
+          "people": "Loraine Brazel Ferguson"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "/time/1/9/5/1/BrazelMaggie_Mack.jpg",
+      "name": "Maggie et William Brazel",
+      "time": "1951"
+    },
+    {
+      "type": "death",
+      "time": "1963-10-01",
+      "place": "comté de Catron (Nouveau-Mexique)"
+    }
   ]
 }

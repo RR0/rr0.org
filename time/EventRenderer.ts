@@ -3,6 +3,7 @@ import { TimeTextBuilder } from "./TimeTextBuilder"
 import { RR0Data } from "../RR0Data"
 import { SourceRenderer } from "../source/SourceRenderer"
 import { TimeElementFactory } from "./TimeElementFactory"
+import { Source } from "../source/Source"
 
 /**
  * Render a case summary as HTML.
@@ -12,14 +13,14 @@ export class EventRenderer<D extends RR0Data> {
   constructor(readonly sourceRenderer: SourceRenderer) {
   }
 
-  render(context: HtmlRR0SsgContext, rr0Case: D): HTMLLIElement {
+  async render(context: HtmlRR0SsgContext, rr0Case: D): Promise<HTMLLIElement> {
     const outDoc = context.file.document
     const item = outDoc.createElement("li")
-    this.renderContent(context, rr0Case, item)
+    await this.renderContent(context, rr0Case, item)
     return item
   }
 
-  renderContent(context: HtmlRR0SsgContext, rr0Data: D, container: HTMLElement): void {
+  async renderContent(context: HtmlRR0SsgContext, rr0Data: D, container: HTMLElement) {
     const outDoc = context.file.document
     const time = rr0Data.time
     const timeEl = outDoc.createElement("time") as HTMLTimeElement
@@ -41,17 +42,17 @@ export class EventRenderer<D extends RR0Data> {
       container.append(placeEl)
     }
     container.append(", ", rr0Data.description)
-    this.renderSources(context, rr0Data, container)
+    const sources = rr0Data.sources
+    if (sources) {
+      await this.renderSources(context, sources, container)
+    }
     container.append(".")
   }
 
-  renderSources(context: HtmlRR0SsgContext, rr0Data: D, container: HTMLElement) {
-    const sources = rr0Data.sources
-    if (sources) {
-      sources.forEach(source => {
-        const sourceEl = this.sourceRenderer.render(context, source)
-        container.append(" ", sourceEl)
-      })
-    }
+  async renderSources(context: HtmlRR0SsgContext, sources: Source[], container: HTMLElement) {
+    sources.forEach(source => {
+      const sourceEl = this.sourceRenderer.render(context, source)
+      container.append(" ", sourceEl)
+    })
   }
 }

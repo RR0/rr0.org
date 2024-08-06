@@ -1,8 +1,30 @@
 {
-  "birthTime": "1934-07-29",
-  "deathTime": "2019-05-14",
+  "title": "Stanton Terry Friedman",
+  "url": "https://www.stantonfriedman.com",
   "occupations": ["ufologist", "physicist"],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1934-07-29",
+      "place": "Elizabeth (New Jersey)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Stanton T. Friedman, consultant en physique nucléaire pour le MUFON"
+    },
+    {
+      "type": "death",
+      "time": "2019-05-14",
+      "place": "aéroport Pearson de Toronto (Canada)",
+      "sources": [
+        {
+          "url": "https://www.cbc.ca/news/canada/new-brunswick/stanton-friedman-ufologist-dead-1.5135588"
+        }
+      ]
+    }
   ]
 }

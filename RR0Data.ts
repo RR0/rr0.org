@@ -1,6 +1,7 @@
 import { TimeContext } from "./time/TimeContext"
 import { Source } from "./source/Source"
 import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
+import { RR0Event } from "./RR0Event"
 
 /**
  * Any kind of data on RR0 (see implementing classes).
@@ -22,12 +23,14 @@ export class RR0Data {
      * Should end with a trailing slash ("/").
      */
     readonly url?: URL,
+
     /**
      * Public URL of the data (not the RR0 URL)
      */
-    public events: RR0Data[] = [],
+    public events: RR0Event[] = [],
+
     /**
-     * Sub-data
+     * Data type
      */
     readonly type?: string
   ) {

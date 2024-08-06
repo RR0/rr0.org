@@ -1,12 +1,12 @@
 import { expect } from "@javarome/testscript"
 import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
 import { Source } from "../../source/Source"
 import { RR0UfoCase } from "./RR0UfoCase"
-import { SourceRenderer } from "../SourceRenderer"
 import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
+import { SourceRenderer } from "../../source/SourceRenderer"
 
 export abstract class DatasourceTestCase<S extends RR0UfoCase> {
 
@@ -39,7 +39,7 @@ export abstract class DatasourceTestCase<S extends RR0UfoCase> {
 
   protected abstract sortComparator(c1: S, c2: S): number
 
-  async testFetch(context: RR0SsgContext) {
+  async testFetch(context: HtmlRR0SsgContext) {
     const fetched = await this.mapping.datasource.fetch(context)
     const fetchSlice = fetched.slice(0, this.sourceCases.length)
     const sortedFetch = fetchSlice.sort(this.sortComparator)
@@ -54,7 +54,8 @@ export abstract class DatasourceTestCase<S extends RR0UfoCase> {
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
     const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
     const eventRenderer = new CaseSummaryRenderer(new SourceRenderer())
-    const items = cases.map(c => eventRenderer.render(context, c))
+    const itemsPromises = cases.map(c => eventRenderer.render(context, c))
+    const items = await Promise.all(itemsPromises)
     expect(items.length).toBe(sourceCases.length)
     for (let i = 0; i < sourceCases.length; i++) {
       this.checkCaseHTML(context, sourceCases[i], items[i], dataDate)

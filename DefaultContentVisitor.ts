@@ -8,11 +8,14 @@ import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
 import { EventRenderer } from "./time/EventRenderer"
 import { People } from "./people/People"
 import { PeopleFactory } from "./people/PeopleFactory"
+import { RR0Event } from "./RR0Event"
+import { SourceFactory } from "./source/SourceFactory"
+import { Source } from "./source/Source"
 
 export class DefaultContentVisitor implements ContentVisitor {
 
   constructor(protected service: DataService, protected eventRenderer: EventRenderer<RR0Data>,
-              protected timeElementFactory: TimeElementFactory) {
+              protected timeElementFactory: TimeElementFactory, protected sourceFactory: SourceFactory) {
   }
 
   async visit(context: HtmlRR0SsgContext) {
@@ -26,12 +29,12 @@ export class DefaultContentVisitor implements ContentVisitor {
             context.people = data
             break
         }
-        this.process(context, data)
+        await this.process(context, data)
       }
     }
   }
 
-  protected process(context: HtmlRR0SsgContext, data: RR0Data) {
+  protected async process(context: HtmlRR0SsgContext, data: RR0Data) {
     this.processTitle(context, data)
     this.processURL(context, data)
     const events = data.events.sort(
@@ -43,26 +46,26 @@ export class DefaultContentVisitor implements ContentVisitor {
     for (const event of events) {
       switch (event.type) {
         case "birth":
-          this.processBirth(context, event, data)
+          await this.processBirth(context, event, data)
           break
         case "book":
-          this.processBook(context, event)
+          await this.processBook(context, event)
           break
         case "image":
-          this.processImage(context, event)
+          await this.processImage(context, event)
           break
         case "death":
-          this.processDeath(context, event)
+          await this.processDeath(context, event, data)
           break
         default:
-          const eventEl = this.eventRenderer.render(context, event)
+          const eventEl = await this.eventRenderer.render(context, event)
           context.file.document.append(eventEl)
       }
     }
     context.file.contents = context.file.serialize()
   }
 
-  protected processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {
+  protected async processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {
     const doc = context.file.document
     const side = context.people ? "left" : "right"
     const portraitEl = doc.querySelector(`.contents figcaption`)
@@ -85,34 +88,70 @@ export class DefaultContentVisitor implements ContentVisitor {
     }
   }
 
-  protected processBirth(context: HtmlRR0SsgContext, birthData: RR0Data, data: RR0Data) {
+  protected async renderSources(context: HtmlRR0SsgContext, sources: Source[], eventP: HTMLParagraphElement) {
+    const resolvedSources: Source[] = []
+    for (const source of sources) {
+      const href = source.url
+      const resolvedSource = href ? await this.sourceFactory.create(context, href.toString()) : source
+      resolvedSources.push(resolvedSource)
+    }
+    await this.eventRenderer.renderSources(context, resolvedSources, eventP)
+  }
+
+  protected async processBirth(context: HtmlRR0SsgContext, event: RR0Data, entity: RR0Data) {
     const doc = context.file.document
     const parentEl = doc.querySelector(".contents")
     if (parentEl) {
-      const birthEl = doc.createElement("p")
-      const people = context.people as unknown as People
-      const name = data.surname ? "\"" + data.surname + "'" : data.name || data.title
+      const eventP = doc.createElement("p")
+      const name = entity.surname ? "\"" + entity.surname + "\"" : entity.name || entity.title
       const birthContext = context.clone()
-      const birthTimeStr = birthData.time
+      const birthTimeStr = event.time
       const birthDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
-      birthEl.append(name)
-      birthEl.append(context.messages[data.type].birth)
-      birthEl.append(birthDateEl)
-      if (birthData.place) {
-        birthEl.append(" à ")
-        const birthPlace = this.placeElement(context, birthData.place)
-        birthEl.append(birthPlace)
+      eventP.append(name)
+      eventP.append(context.messages[entity.type].birth)
+      eventP.append(birthDateEl)
+      if (event.place) {
+        eventP.append(" à ")
+        const birthPlace = this.placeElement(context, event.place)
+        eventP.append(birthPlace)
       }
-      this.eventRenderer.renderSources(context, birthData, birthEl)
-      birthEl.append(".")
+      const sources = event.sources
+      if (sources) {
+        await this.eventRenderer.renderSources(context, sources, eventP)
+      }
+      eventP.append(".")
       const insertEl = parentEl.firstElementChild
-      parentEl.insertBefore(birthEl, insertEl)
+      parentEl.insertBefore(eventP, insertEl)
     } else {
-      context.warn("no .content in " + context.file.name)
+      context.warn("no .content in", context.file.name)
     }
   }
 
-  protected processBook(context: HtmlRR0SsgContext, bookData: RR0Data) {
+  protected async processDeath(context: HtmlRR0SsgContext, event: RR0Event, entity: RR0Data) {
+    const doc = context.file.document
+    const eventP = doc.createElement("p")
+    const name = entity.name
+    const timeContext = context.clone()
+    const timeStr = event.time as unknown as string
+    const timeEl = this.timeElementFactory.create(timeContext, timeStr.toString(), context)
+    eventP.append(name)
+    eventP.append(context.messages[entity.type].death)
+    eventP.append(timeEl)
+    if (event.place) {
+      eventP.append(" à ")
+      const birthPlace = this.placeElement(context, event.place)
+      eventP.append(birthPlace)
+    }
+    const sources = event.sources
+    if (sources) {
+      await this.renderSources(context, sources, eventP)
+    }
+    eventP.append(".")
+    const insertEl = doc.querySelector(".contents > p:last-of-type")
+    insertEl.parentNode.append(eventP)
+  }
+
+  protected async processBook(context: HtmlRR0SsgContext, bookData: RR0Data) {
     const doc = context.file.document
     const parentEl = doc.querySelector(".contents")
     if (parentEl) {
@@ -123,35 +162,11 @@ export class DefaultContentVisitor implements ContentVisitor {
       const bookDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
       bookEl.append(bookDateEl, " ")
       bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
-      this.eventRenderer.renderSources(context, bookData, bookEl)
+      await this.renderSources(context, bookData.sources, bookEl)
       bookEl.append(".")
       parentEl.append(bookEl)
     } else {
       context.warn("no .content in " + context.file.name)
-    }
-  }
-
-  protected processDeath(context: HtmlRR0SsgContext, data: RR0Data) {
-    const deathData = data.events?.find(data => data.type === "death")
-    if (deathData) {
-      const doc = context.file.document
-      const deathEl = doc.createElement("p")
-      const name = data.name
-      const timeContext = context.clone()
-      const timeStr = deathData.time as unknown as string
-      const timeEl = this.timeElementFactory.create(timeContext, timeStr, context)
-      deathEl.append(name)
-      deathEl.append(context.messages[data.type].death)
-      deathEl.append(timeEl)
-      if (deathData.place) {
-        deathEl.append(" à ")
-        const birthPlace = this.placeElement(context, deathData.place)
-        deathEl.append(birthPlace)
-      }
-      this.eventRenderer.renderSources(context, deathData, deathEl)
-      deathEl.append(".")
-      const insertEl = doc.querySelector(".contents > p:last-of-type")
-      insertEl.parentNode.append(deathEl)
     }
   }
 

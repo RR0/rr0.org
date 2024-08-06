@@ -64,11 +64,11 @@ export class ImageCommand extends DomReplaceCommand<HTMLImageElement> {
             imgEl.height = height
             imgEl.setAttribute("onclick",
               `this.classList.contains('zoomed') ? document.exitFullscreen() && this.classList.toggle('zoomed', false): this.classList.toggle('zoomed', true) && this.requestFullscreen()`)
+            context.images.add(src)
           }
         } catch (e) {
           context.warn("Could not determine size of image ", src, e)
         }
-        context.images.add(src)
         return imgEl
       }
     }

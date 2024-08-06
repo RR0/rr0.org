@@ -131,13 +131,14 @@ const contentRoots = cliContents
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg.split(",") : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
-  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css",
+  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "tech/info/soft/reseau/protocole/index.js", "tech/info/soft/reseau/protocole/ports.json", "tech/info/soft/reseau/protocole/index.css",
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
   "people/index.js", "people/index.css", "people/witness/index.css",
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
+  "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/divin/theisme/mono/livre/islam/coran/index.js"
 ]

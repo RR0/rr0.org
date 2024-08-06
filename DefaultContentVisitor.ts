@@ -43,6 +43,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       event.url as unknown as string))) {
       events.push({type: "image", url: data.image as any, name: data.name, events: []})
     }
+    const doc = context.file.document
     for (const event of events) {
       switch (event.type) {
         case "birth":
@@ -59,9 +60,12 @@ export class DefaultContentVisitor implements ContentVisitor {
           break
         default:
           const eventEl = await this.eventRenderer.render(context, event)
-          context.file.document.append(eventEl)
+          doc.append(eventEl)
       }
     }
+    const timeScript = doc.createElement("script")
+    timeScript.textContent = `customElements.whenDefined('rr0-dual-range').then(() => initTime("${context.time.min.toString()}","${context.time.max.toString()}"))`
+    doc.documentElement.append(timeScript)
     context.file.contents = context.file.serialize()
   }
 
@@ -98,18 +102,31 @@ export class DefaultContentVisitor implements ContentVisitor {
     await this.eventRenderer.renderSources(context, resolvedSources, eventP)
   }
 
+  protected timeParagraph(context: HtmlRR0SsgContext, event: RR0Data) {
+    const eventP = context.file.document.createElement("p")
+    const eventContext = context.clone()
+    const eventTime = event.time
+    const time = context.time
+    if (!time.min || eventTime.isBefore(time.min)) {
+      time.min = eventTime.getYear()
+    }
+    if (!time.max || eventTime.isAfter(time.max)) {
+      time.max = eventTime.getYear()
+    }
+    const timeStr = eventTime.toString()
+    eventP.dataset.time = timeStr
+    const timeEl = this.timeElementFactory.create(eventContext, timeStr, context)
+    return {eventP, timeEl}
+  }
+
   protected async processBirth(context: HtmlRR0SsgContext, event: RR0Data, entity: RR0Data) {
-    const doc = context.file.document
-    const parentEl = doc.querySelector(".contents")
+    const parentEl = context.file.document.querySelector(".contents")
     if (parentEl) {
-      const eventP = doc.createElement("p")
+      const {eventP, timeEl} = this.timeParagraph(context, event)
       const name = entity.surname ? "\"" + entity.surname + "\"" : entity.name || entity.title
-      const birthContext = context.clone()
-      const birthTimeStr = event.time
-      const birthDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
       eventP.append(name)
       eventP.append(context.messages[entity.type].birth)
-      eventP.append(birthDateEl)
+      eventP.append(timeEl)
       if (event.place) {
         eventP.append(" à ")
         const birthPlace = this.placeElement(context, event.place)
@@ -128,12 +145,8 @@ export class DefaultContentVisitor implements ContentVisitor {
   }
 
   protected async processDeath(context: HtmlRR0SsgContext, event: RR0Event, entity: RR0Data) {
-    const doc = context.file.document
-    const eventP = doc.createElement("p")
+    const {eventP, timeEl} = this.timeParagraph(context, event)
     const name = entity.name
-    const timeContext = context.clone()
-    const timeStr = event.time as unknown as string
-    const timeEl = this.timeElementFactory.create(timeContext, timeStr.toString(), context)
     eventP.append(name)
     eventP.append(context.messages[entity.type].death)
     eventP.append(timeEl)
@@ -147,7 +160,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       await this.renderSources(context, sources, eventP)
     }
     eventP.append(".")
-    const insertEl = doc.querySelector(".contents > p:last-of-type")
+    const insertEl = context.file.document.querySelector(".contents > p:last-of-type")
     insertEl.parentNode.append(eventP)
   }
 

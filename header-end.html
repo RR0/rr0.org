@@ -3,8 +3,8 @@
 <!-- Google Tag Manager (noscript) -->
 <noscript>
   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBPKWNM"
-      style="display:none;visibility:hidden" title="GTM"
-      width="0"></iframe>
+    style="display:none;visibility:hidden" title="GTM"
+    width="0"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header id="main-header">
@@ -12,6 +12,7 @@
 </header>
 <nav id="main-nav">
   <h1>Navigation</h1>
+  <rr0-dual-range></rr0-dual-range>
   <ul>
     <li class="full-page">
       <a class="home" href="/" title="Home">RR0</a>
@@ -32,13 +33,20 @@
     </li>
   </ul>
   <script async src="/search/SearchComponent.mjs" type="module"></script>
+  <script async src="/time/DualRangeComponent.mjs" type="module"></script>
 </nav>
 <script>
   const summary = document.getElementById("out-top")
   const observer = new IntersectionObserver(function (entries) {
     summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : "Sommaire"
-  }, {threshold: [0, 0.3, 1]})
+  }, { threshold: [0, 0.3, 1] })
   observer.observe(document.querySelector("#main-header"))
+  window.initTime = function (min, max) {
+    const timeDualRange = document.querySelector("rr0-dual-range")
+    timeDualRange.setMin(min)
+    timeDualRange.setMax(max)
+    console.log(timeDualRange)
+  }
   <!--#include virtual="/place/index.js" -->
 </script>
 <div aria-hidden="true" class="anchor" id="_top"></div>

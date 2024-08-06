@@ -1,8 +1,21 @@
 {
-  "birthTime": "1908",
-  "deathTime": "1967-06-23",
-  "occupations": ["ufologist", "journalist"],
+  "occupations": [
+    "ufologist",
+    "journalist",
+    "writer"
+  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1908-08-04",
+      "place": "Mattoon (Illinois)"
+    },
+    {
+      "type": "death",
+      "time": "1967-06-23"
+    }
   ]
 }

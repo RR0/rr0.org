@@ -1,10 +1,25 @@
 {
-  "birthTime": "1894",
-  "deathTime": "1961",
+  "title": "George Matt Wilcox",
   "occupations": [
     "policeman"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1894",
+      "place": "Lakewood"
+    },
+    {
+      "type": "death",
+      "time": "1961-02-27",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/37237010/george-matt-wilcox"
+        }
+      ]
+    }
   ]
 }

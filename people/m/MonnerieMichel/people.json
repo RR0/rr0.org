@@ -1,10 +1,15 @@
 {
-  "birthTime": "1940",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "tile": "1940"
+    }
   ]
 }

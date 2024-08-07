@@ -63,9 +63,12 @@ export class DefaultContentVisitor implements ContentVisitor {
           doc.append(eventEl)
       }
     }
-    const timeScript = doc.createElement("script")
-    timeScript.textContent = `customElements.whenDefined('rr0-dual-range').then(() => initTime("${context.time.min.toString()}","${context.time.max.toString()}"))`
-    doc.documentElement.append(timeScript)
+    const minTime = context.time.min
+    if (minTime) {
+      const timeScript = doc.createElement("script")
+      timeScript.textContent = `customElements.whenDefined('rr0-dual-range').then(() => initTime("${minTime.getYear()}","${context.time.max.getYear()}"))`
+      doc.documentElement.append(timeScript)
+    }
     context.file.contents = context.file.serialize()
   }
 
@@ -108,10 +111,10 @@ export class DefaultContentVisitor implements ContentVisitor {
     const eventTime = event.time
     const time = context.time
     if (!time.min || eventTime.isBefore(time.min)) {
-      time.min = eventTime.getYear()
+      time.min = eventTime
     }
     if (!time.max || eventTime.isAfter(time.max)) {
-      time.max = eventTime.getYear()
+      time.max = eventTime
     }
     const timeStr = eventTime.toString()
     eventP.dataset.time = timeStr

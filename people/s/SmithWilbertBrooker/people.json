@@ -1,11 +1,24 @@
 {
-  "birthTime": "1910",
-  "deathTime": "1962-12-27",
+  "title": "James Wilbert Brockhouse Smith",
   "occupations": [
     "ufologist",
     "engineer"
   ],
   "countries": [
     "ca"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1910",
+      "place": "Lethbridge (Alberta)"
+    },
+    {
+      "type": "death",
+      "time": "1962-12-27",
+      "notes": [
+        "d'un cancer"
+      ]
+    }
   ]
 }

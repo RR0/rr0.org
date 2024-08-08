@@ -1,10 +1,22 @@
 {
-  "birthTime": "1900",
-  "deathTime": "1939-03-09",
+  "title": "Benjamin Wiley Childlaw",
+  "surname": "Ben",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1900-12-18",
+      "place": "Cleves (Ohio)"
+    },
+    {
+      "type": "death",
+      "time": "1977-02-21",
+      "place": "Colorado Springs (Ohio)"
+    }
   ]
 }

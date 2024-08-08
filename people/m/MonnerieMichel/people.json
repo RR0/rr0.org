@@ -9,7 +9,13 @@
   "events": [
     {
       "type": "birth",
-      "tile": "1940"
+      "time": "1941",
+      "place": "Le Val-Saint-Père",
+      "sources": [
+        {
+          "url": "https://www.mobilis-paysdelaloire.fr/annuaire/auteurs/monnerie-michel"
+        }
+      ]
     }
   ]
 }

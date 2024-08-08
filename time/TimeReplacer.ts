@@ -4,6 +4,7 @@ import { ObjectUtils } from "@rr0/common"
 import { TimeElementFactory } from "./TimeElementFactory"
 
 export type TimeParseResult = {
+  approximate: string
   yearStr: string
   monthStr: string
   dayOfMonthStr: string
@@ -17,9 +18,6 @@ export type TimeParseResult = {
  */
 export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeElement> {
 
-  static readonly dateTimeRegexp = new RegExp(
-    "^(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?"
-  )
   static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
 
   /**

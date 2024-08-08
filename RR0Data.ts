@@ -1,7 +1,7 @@
 import { TimeContext } from "./time/TimeContext"
 import { Source } from "./source/Source"
 import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
-import { RR0Event } from "./RR0Event"
+import { RR0Event } from "./event/RR0Event"
 
 /**
  * Any kind of data on RR0 (see implementing classes).
@@ -13,11 +13,13 @@ export class RR0Data {
      * The data type ("people", "place", "org", "book", "case", "sighting"...)
      */
     public id?: string,
+
     /**
      * A unique identifier for this data.
      * // TODO: Make it mandatory
      */
-    readonly dirName?: string,
+    public dirName?: string,
+
     /**
      * The directory where the data is stored, relatively to RR0's root.
      * Should end with a trailing slash ("/").

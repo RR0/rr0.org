@@ -1,10 +1,23 @@
 {
-  "birthTime": "1909",
-  "deathTime": "1993",
+  "title": "Omond M. Solandt",
   "occupations": [
     "physician"
   ],
   "countries": [
     "ca"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1909",
+      "place": "Winnipeg"
+    },
+    {
+      "type": "death",
+      "time": "1993",
+      "notes": [
+        "d'un cancer"
+      ]
+    }
   ]
 }

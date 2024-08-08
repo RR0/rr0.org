@@ -59,7 +59,7 @@ import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
-import { DataService, DefaultDataFactory } from "./DataService"
+import { DataService } from "./DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
 import { EventReplacer, EventReplacerFactory } from "./time/EventReplacerFactory"
@@ -82,6 +82,8 @@ import { DefaultContentVisitor } from "./DefaultContentVisitor"
 import { PeopleFactory } from "./people/PeopleFactory"
 import { OrganizationFactory } from "./org/OrganizationFactory"
 import { APIFactory } from "./tech/info/soft/APIFactory"
+import { RR0EventFactory } from "./event/RR0EventFactory"
+import { DefaultDataFactory } from "./DefaultDataFactory"
 
 interface RR0BuildArgs {
   /**
@@ -188,13 +190,14 @@ timeService.getFiles().then(async (timeFiles) => {
   const timeElementFactory = new TimeElementFactory(timeService.renderer)
   context.setVar("timeFilesCount", timeFiles.length)
   const peopleFiles = await glob("people/?/*")
-  const sightingFactory = new DefaultDataFactory("sighting", ["index"])
-  const orgFactory = new OrganizationFactory()
-  const caseFactory = new DefaultDataFactory("case")
-  const peopleFactory = new PeopleFactory()
+  const eventFactory = new RR0EventFactory()
+  const sightingFactory = new DefaultDataFactory(eventFactory, "sighting", ["index"])
+  const orgFactory = new OrganizationFactory(eventFactory)
+  const caseFactory = new DefaultDataFactory(eventFactory, "case")
+  const peopleFactory = new PeopleFactory(eventFactory)
   const apiFactory = new APIFactory()
-  const bookFactory = new DefaultDataFactory("book")
-  const articleFactory = new DefaultDataFactory("article")
+  const bookFactory = new DefaultDataFactory(eventFactory, "book")
+  const articleFactory = new DefaultDataFactory(eventFactory, "article")
   const dataService = new DataService(
     [orgFactory, caseFactory, peopleFactory, bookFactory, articleFactory, sightingFactory, apiFactory])
 

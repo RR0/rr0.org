@@ -11,29 +11,6 @@ export class TimeElementFactory {
   constructor(readonly renderer: TimeRenderer) {
   }
 
-  static updateTimeFromStr(time: TimeContext, timeStr: string) {
-    const result = TimeElementFactory.parseDateTime(timeStr)
-    if (result) {
-      const {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
-      time.setYear(parseInt(yearStr, 10))
-      if (monthStr) {
-        time.setMonth(parseInt(monthStr, 10))
-      }
-      if (dayOfMonthStr) {
-        time.setDayOfMonth(parseInt(dayOfMonthStr, 10))
-      }
-      if (hour) {
-        time.setHour(parseInt(hour, 10))
-      }
-      if (minutes) {
-        time.setMinutes(parseInt(minutes, 10))
-      }
-      if (timeZone) {
-        time.setTimeZone(timeZone)
-      }
-    }
-  }
-
   static setTimeContextFrom(timeContext: TimeContext, parsed: TimeParseResult) {
     if (parsed.yearStr) {
       const year = parseInt(parsed.yearStr, 10)
@@ -62,15 +39,6 @@ export class TimeElementFactory {
     if (parsed.timeZone) {
       timeContext.setTimeZone(parsed.timeZone)
     }
-  }
-
-  static parseDateTime(timeStr: string): TimeParseResult {
-    const dateTimeValues = TimeReplacer.dateTimeRegexp.exec(timeStr)
-    if (dateTimeValues && dateTimeValues[0]) {
-      const [yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
-      return {yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone}
-    }
-    return undefined
   }
 
   create(context: HtmlRR0SsgContext, contents: string, previousContext: HtmlRR0SsgContext | undefined,
@@ -116,7 +84,7 @@ export class TimeElementFactory {
     if (time.approximate) {
       timeStr = timeStr.substring(1)
     }
-    const parsed = TimeElementFactory.parseDateTime(timeStr)
+    const parsed = TimeContext.parseDateTime(timeStr)
     if (parsed) {
       const time = context.time
       TimeElementFactory.setTimeContextFrom(time, parsed)

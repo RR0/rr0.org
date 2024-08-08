@@ -1,17 +1,21 @@
-import { DefaultDataFactory } from "../DataService"
 import { People } from "./People"
 import path from "path"
-import fs from "fs"
 import { StringUtil } from "../util/string/StringUtil"
+import { DefaultDataFactory } from "../DefaultDataFactory"
+import { RR0EventFactory } from "../event/RR0EventFactory"
+import { RR0Data } from "../RR0Data"
 
 export class PeopleFactory extends DefaultDataFactory<People> {
 
-  static readonly defaultPortraitFileNames = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
-
-  constructor() {
-    super("people")
+  constructor(eventFactory: RR0EventFactory) {
+    super(eventFactory, "people")
   }
 
+  /**
+   * Determine people name from directory name.
+   *
+   * @param dirName
+   */
   createFromDirName(dirName: string): People {
     const lastSlash = dirName.lastIndexOf("/")
     const lastDir = dirName.substring(lastSlash + 1)
@@ -25,9 +29,11 @@ export class PeopleFactory extends DefaultDataFactory<People> {
       undefined, id, dirName)
   }
 
-  createFromData(dirName: string, data: People): People {
-    const people = this.createFromDirName(dirName)
-    const title = (data as any).title
+  createFromData(data: RR0Data): People {
+    const people = this.createFromDirName(data.dirName)
+    data.name = people.name
+    Object.assign(people, super.createFromData(data))
+    const title = data.title
     if (title) {
       const names = title.split(",")
       if (names.length > 1) {
@@ -37,38 +43,12 @@ export class PeopleFactory extends DefaultDataFactory<People> {
         people.lastAndFirstName = people.getLastAndFirstName()
       } else {
         const names = title.split(" ")
-        if (names.length === 2) {
-          people.firstNames.length = 0
-          people.firstNames.push(names[0])
-          people.lastName = names[1]
-        } else {
-          console.warn(`Could not determine first and last name from "${title}"}`)
-        }
+        people.firstNames = names.slice(0, names.length - 1)
+        people.name = people.lastName = names[names.length - 1]
         people.lastAndFirstName = title
       }
     }
-    Object.assign(people, data)
-    const birthTime = people.birthTime as unknown as string
-    let events = people.events
-    if (!events) {
-      people.events = events = []
-    }
-    if (birthTime) {
-      delete people.birthTime
-      events.push({type: "birth", time: birthTime as any, events: []})
-    }
-    this.parseEvents(events)
-    if (!people.image) {
-      let hasPortrait = false
-      for (const defaultPortraitFileName of PeopleFactory.defaultPortraitFileNames) {
-        const portraitPath = path.join(people.dirName, defaultPortraitFileName)
-        hasPortrait = fs.existsSync(portraitPath)
-        if (hasPortrait) {
-          people.image = path.join("/", portraitPath)
-          break
-        }
-      }
-    }
+    people.title = people.firstAndLastName
     return people
   }
 }

@@ -2,11 +2,12 @@ import { AnchorReplaceCommand } from "./AnchorReplaceCommand"
 import { rr0TestUtil } from "../test/RR0TestUtil"
 import { describe, expect, test } from "@javarome/testscript"
 import { CaseAnchorHandler } from "./CaseAnchorHandler"
-import { DataService, DefaultDataFactory } from "../DataService"
+import { DataService } from "../DataService"
 import { RR0Case } from "../science/crypto/ufo/enquete/dossier/RR0Case"
 import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 import { TimeRenderer } from "../time/TimeRenderer"
 import { TimeReplacer } from "../time/TimeReplacer"
+import { DefaultDataFactory } from "../DefaultDataFactory"
 
 describe("AnchorReplaceCommand", () => {
 

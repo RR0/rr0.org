@@ -1,11 +1,25 @@
 {
-  "birthTime": "1923-07-17",
-  "deathTime": "1960-09-15",
+  "title": "Edward J. Ruppelt",
   "occupations": [
     "ufologist",
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1923-07-17",
+      "place": "Iowa (USA)"
+    },
+    {
+      "type": "death",
+      "time": "1960-09-15",
+      "place": "Long Beach (Californie)",
+      "notes": [
+        "d'un infarctus"
+      ]
+    }
   ]
 }

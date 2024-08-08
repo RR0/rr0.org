@@ -13,7 +13,7 @@ export class People extends RR0Data {
   lastAndFirstName: string
 
   constructor(
-    readonly firstNames: string[] = [],
+    public firstNames: string[] = [],
     public lastName = "",
     readonly pseudonyms: string[] = [],
     readonly occupations: Occupation[] = [],

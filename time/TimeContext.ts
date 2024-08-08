@@ -1,10 +1,24 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { Time } from "./Time"
+import { TimeParseResult } from "./TimeReplacer"
 
 /**
  * Time context for a RR0 page.
  */
 export class TimeContext {
+
+  static readonly dateTimeRegexp = new RegExp(
+    "^(~)?(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?"
+  )
+
+  static parseDateTime(timeStr: string): TimeParseResult {
+    const dateTimeValues = TimeContext.dateTimeRegexp.exec(timeStr)
+    if (dateTimeValues && dateTimeValues[0]) {
+      const [approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
+      return {approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone}
+    }
+    return undefined
+  }
 
   from?: TimeContext
 
@@ -19,6 +33,30 @@ export class TimeContext {
 
   getYear(): number | undefined {
     return this._year
+  }
+
+  updateFromStr(timeStr: string) {
+    const result = TimeContext.parseDateTime(timeStr)
+    if (result) {
+      const {approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
+      this.approximate = Boolean(approximate)
+      this.setYear(parseInt(yearStr, 10))
+      if (monthStr) {
+        this.setMonth(parseInt(monthStr, 10))
+      }
+      if (dayOfMonthStr) {
+        this.setDayOfMonth(parseInt(dayOfMonthStr, 10))
+      }
+      if (hour) {
+        this.setHour(parseInt(hour, 10))
+      }
+      if (minutes) {
+        this.setMinutes(parseInt(minutes, 10))
+      }
+      if (timeZone) {
+        this.setTimeZone(timeZone)
+      }
+    }
   }
 
   setYear(year: number | undefined, print = true) {
@@ -102,10 +140,6 @@ export class TimeContext {
       "UTC" + (date.getTimezoneOffset() < 0 ? "-" : "+") + date.getTimezoneOffset())
   }
 
-  static fromIsoString(isoString: string, options: Intl.DateTimeFormatOptions): TimeContext {
-    return TimeContext.fromDate(new Date(isoString), options)
-  }
-
   reset(): this {
     this.setYear(undefined)
     this.setMonth(undefined)
@@ -115,10 +149,6 @@ export class TimeContext {
     this.approximate = false
     this.approximateTime = false
     return this
-  }
-
-  toDate(): Date {
-    return new Date(this.toString())
   }
 
   static fromFileName(context: HtmlRR0SsgContext, fileName = context.file.name): TimeContext | undefined {
@@ -167,10 +197,10 @@ export class TimeContext {
 
   toString(): string {
     const year = this.getYear()
-    if (!year) {
-      return undefined
+    let s = this.approximate ? "~" : ""
+    if (this.isSet(year)) {
+      s += String(year)
     }
-    let s = String(year)
     const month = this.getMonth()
     if (this.isSet(month)) {
       s += "-" + String(month).padStart(2, "0")

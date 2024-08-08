@@ -1,8 +1,38 @@
 {
+  "title": "Jean-Luc Vertongen",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1939-07-15",
+      "place": "Bruxelles (Belgique)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "people": "Ferryn, Patrick",
+          "url": "https://www.cobeps.org/fr/jean-luc-vertongen",
+          "title": "Hommage à Jean-Luc Vertongen (1939–2015)",
+          "place": "COBEPS"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2015-12-12",
+      "place": "Neufvilles (Belgique)",
+      "sources": [
+        {
+          "url": "https://www.enaos.net/P1220.aspx?IdPer=376653"
+        }
+      ]
+    }
   ]
 }

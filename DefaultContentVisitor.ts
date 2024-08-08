@@ -7,10 +7,10 @@ import { RR0Data } from "./RR0Data"
 import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
 import { EventRenderer } from "./time/EventRenderer"
 import { People } from "./people/People"
-import { PeopleFactory } from "./people/PeopleFactory"
-import { RR0Event } from "./RR0Event"
+import { RR0Event } from "./event/RR0Event"
 import { SourceFactory } from "./source/SourceFactory"
 import { Source } from "./source/Source"
+import assert from "assert"
 
 export class DefaultContentVisitor implements ContentVisitor {
 
@@ -39,10 +39,6 @@ export class DefaultContentVisitor implements ContentVisitor {
     this.processURL(context, data)
     const events = data.events.sort(
       (event1, event2) => event1.time ? event2.time ? event1.time.isBefore(event2.time) ? -1 : 1 : -1 : 1)
-    if (!events.find(event => event.type === "image" && PeopleFactory.defaultPortraitFileNames.includes(
-      event.url as unknown as string))) {
-      events.push({type: "image", url: data.image as any, name: data.name, events: []})
-    }
     const doc = context.file.document
     for (const event of events) {
       switch (event.type) {
@@ -74,14 +70,16 @@ export class DefaultContentVisitor implements ContentVisitor {
 
   protected async processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {
     const doc = context.file.document
-    const side = context.people ? "left" : "right"
-    const portraitEl = doc.querySelector(`.contents figcaption`)
-    const caption = imageData.name
-    if (!portraitEl || portraitEl.textContent !== caption) {
-      const parentEl = doc.querySelector(".contents")
-      if (parentEl) {
+    const contents = doc.querySelector(".contents")
+    if (contents) {
+      const side = context.people ? "left" : "right"
+      const imgEl = contents.querySelector("img")
+      const captionEl = contents.querySelector("figcaption")
+      const caption = imageData.name
+      const src = imageData.url as any
+      if (imgEl?.src !== src || captionEl?.textContent !== caption) {
         const imgEl = doc.createElement("img")
-        imgEl.src = imageData.url as any
+        imgEl.src = src
         imgEl.alt = imageData.title
         const figcaptionEl = doc.createElement("figcaption")
         figcaptionEl.textContent = caption
@@ -89,8 +87,8 @@ export class DefaultContentVisitor implements ContentVisitor {
         figureEl.classList.add(side, "side")
         figureEl.append(imgEl)
         figureEl.append(figcaptionEl)
-        const insertEl = parentEl.querySelector("*")
-        parentEl.insertBefore(figureEl, insertEl)
+        const insertEl = contents.querySelector("*")
+        contents.insertBefore(figureEl, insertEl)
       }
     }
   }
@@ -109,6 +107,7 @@ export class DefaultContentVisitor implements ContentVisitor {
     const eventP = context.file.document.createElement("p")
     const eventContext = context.clone()
     const eventTime = event.time
+    assert.ok(eventTime, "Event has no time: " + JSON.stringify(event))
     const time = context.time
     if (!time.min || eventTime.isBefore(time.min)) {
       time.min = eventTime

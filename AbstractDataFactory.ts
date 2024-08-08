@@ -1,0 +1,62 @@
+import { RR0Data } from "./RR0Data"
+import { TimeContext } from "./time/TimeContext"
+
+import { RR0DataFactory } from "./RR0DataFactory"
+import path from "path"
+import fs from "fs"
+import { RR0Event } from "./event/RR0Event"
+import { RR0EventFactory } from "./event/RR0EventFactory"
+
+export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T> {
+
+  static readonly defaultImageFileNames = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
+
+  constructor(protected eventFactory: RR0EventFactory) {
+  }
+
+  createTimeFromString(timeStr: string): TimeContext | undefined {
+    if (timeStr) {
+      const time = new TimeContext({})
+      time.updateFromStr(timeStr)
+      return time
+    } else {
+      return undefined
+    }
+  }
+
+  createFromData(data: RR0Data): T {
+    data.time = this.createTimeFromString(data.time as any)
+    const events = data.events || []
+    const birthTime = (data as any).birthTime as unknown as string
+    if (birthTime) {
+      delete (data as any).birthTime
+      events.push({type: "birth", time: birthTime as any, events: []})
+    }
+    const deathTime = (data as any).deathTime as unknown as string
+    if (deathTime) {
+      delete (data as any).deathTime
+      events.push({type: "death", time: deathTime as any, events: []})
+    }
+    if (!data.image) {
+      let hasPortrait = false
+      for (const defaultImageFile of AbstractDataFactory.defaultImageFileNames) {
+        const portraitPath = path.join(data.dirName, defaultImageFile)
+        hasPortrait = fs.existsSync(path.join(data.dirName, defaultImageFile))
+        if (hasPortrait) {
+          events.push({type: "image", url: defaultImageFile as any, name: data.name, events: []})
+          break
+        }
+      }
+    }
+    data.events = this.parseEvents(events)
+    return data as T
+  }
+
+  protected parseEvents(events: RR0Data[] = []): RR0Event[] {
+    const parsed: RR0Event[] = []
+    for (const event of events) {
+      parsed.push(this.eventFactory.createFromData(event))
+    }
+    return parsed
+  }
+}

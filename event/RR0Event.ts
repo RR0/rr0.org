@@ -1,4 +1,4 @@
-import { RR0Data } from "./RR0Data"
+import { RR0Data } from "../RR0Data"
 
 export type RR0EventType =
   "birth"

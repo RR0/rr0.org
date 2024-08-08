@@ -2,7 +2,6 @@ import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { TimeTextBuilder } from "./TimeTextBuilder"
 import { RR0Data } from "../RR0Data"
 import { SourceRenderer } from "../source/SourceRenderer"
-import { TimeElementFactory } from "./TimeElementFactory"
 import { Source } from "../source/Source"
 
 /**
@@ -27,7 +26,7 @@ export class EventRenderer<D extends RR0Data> {
     const timeValue = timeEl.dateTime = time.toString()
     const dataContext = context.clone()
     if (typeof timeValue === "string") {
-      TimeElementFactory.updateTimeFromStr(dataContext.time, timeValue)
+      dataContext.time.updateFromStr(timeValue)
     } else {
       Object.assign(dataContext.time, timeValue)
     }

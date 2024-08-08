@@ -1,11 +1,24 @@
 {
-  "birthTime": "1907",
-  "deathTime": "1986-05",
   "occupations": [
     "military",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1907",
+      "place": "Houma (Louisiane)"
+    },
+    {
+      "type": "death",
+      "time": "1986-06-24",
+      "place": "Houma",
+      "notes": [
+        "la ville où il est né"
+      ]
+    }
   ]
 }

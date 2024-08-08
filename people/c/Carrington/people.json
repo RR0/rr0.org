@@ -1,10 +1,21 @@
 {
-  "birthTime": "1826-05-26",
-  "deathTime": "1875-11-27",
+  "title": "Richard Christopher Carrington",
   "occupations": [
     "astronomer"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1826-05-26",
+      "place": "Chelsea, Londres (Angleterre)"
+    },
+    {
+      "type": "death",
+      "time": "1875-11-27",
+      "place": "Churt (Angleterre)"
+    }
   ]
 }

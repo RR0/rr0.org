@@ -1,9 +1,15 @@
 {
-  "deathTime": "2005-08",
+  "title": "Jean-Luc Bruneau",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "2005-08"
+    }
   ]
 }

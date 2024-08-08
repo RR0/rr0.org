@@ -1,8 +1,21 @@
 {
-  "birthTime": "1596-03-31",
-  "deathTime": "1650-02-11",
-  "occupations": ["mathematician"],
+  "title": "René Descartes",
+  "occupations": [
+    "mathematician"
+  ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1596-03-31",
+      "place": "La Haye-en-Touraine (Indre-et-Loire)"
+    },
+    {
+      "type": "death",
+      "time": "1650-02-11",
+      "place": "Stockholm (Suède)"
+    }
   ]
 }

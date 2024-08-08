@@ -1,7 +1,14 @@
 {
-  "birthTime": "1948-12-27",
+  "title": "Vicente-Juan Ballester-Olmos",
   "occupations": ["ufologist"],
   "countries": [
     "es"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1948-12-27",
+      "place": "Valence (Espagne)"
+    }
   ]
 }

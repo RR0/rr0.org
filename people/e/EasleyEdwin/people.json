@@ -4,5 +4,20 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-02-02"
+    },
+    {
+      "type": "death",
+      "time": "1992-01-15",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/42373439/edwin-dean-easley"
+        }
+      ]
+    }
   ]
 }

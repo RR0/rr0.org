@@ -1,10 +1,25 @@
 {
-  "birthTime": "1905-08-29",
-  "deathTime": "1968-12-01",
+  "title": "John Alexander Samford",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1905-08-29",
+      "place": "Hagerman (Nouveau-Mexique)"
+    },
+    {
+      "type": "death",
+      "time": "1968-12-01",
+      "notes": [
+        {
+          "title": "Il est inhummé avec tous les honneurs militaires à la section 2 du cimetière national d'Arlington."
+        }
+      ]
+    }
   ]
 }

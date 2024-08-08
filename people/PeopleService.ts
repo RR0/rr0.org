@@ -64,7 +64,7 @@ export class PeopleService {
     const fileSpec = ["people*.json"]
     const peopleDataList = await this.dataService.getFromDir(dirName, ["people", undefined], fileSpec) as People[]
     for (const peopleData of peopleDataList) {
-      const people = this.factory.createFromData(dirName, peopleData)
+      const people = this.factory.createFromData(peopleData)
       peopleList.push(people)
     }
     return peopleList

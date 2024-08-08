@@ -50,10 +50,10 @@ export class RR0HttpDatasource extends RR0Datasource {
     const url = new URL(caseLink, this.baseUrl)
     const timeEl = row.querySelector("time") as HTMLTimeElement
     const itemContext = context.clone()
-    const dateTime = itemContext.time
+    const itemTime = itemContext.time
     if (timeEl) {
       url.hash = timeEl.dateTime
-      this.getTime(dateTime, timeEl)
+      itemTime.updateFromStr(timeEl.dateTime)
       timeEl.remove()
     }
     let place: NamedPlace
@@ -69,8 +69,8 @@ export class RR0HttpDatasource extends RR0Datasource {
     }
     const sources = this.getSources(row, itemContext)
     const description = this.getDescription(row)
-    const id = this.id(dateTime, place)
-    return {url, place, time: dateTime, description, sources, id}
+    const id = this.id(itemTime, place)
+    return {url, place, time: itemTime, description, sources, id}
   }
 
   protected getSources(row: Element, itemContext: HtmlRR0SsgContext): Source[] {
@@ -86,7 +86,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       sourceEl.remove()
       const pubItems = title.split(",")
       const timeStr = pubItems[pubItems.length - 1].trim()
-      const parsedTime = TimeElementFactory.parseDateTime(timeStr)
+      const parsedTime = TimeContext.parseDateTime(timeStr)
       let time: TimeContext
       let publisher: string
       if (parsedTime) {
@@ -101,10 +101,6 @@ export class RR0HttpDatasource extends RR0Datasource {
       sources.push(source)
     }
     return sources
-  }
-
-  protected getTime(time: TimeContext, timeEl: HTMLTimeElement) {
-    TimeElementFactory.updateTimeFromStr(time, timeEl.dateTime)
   }
 
   protected getPlace(context: HtmlRR0SsgContext, placeEl: Element): NamedPlace {

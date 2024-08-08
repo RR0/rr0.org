@@ -1,11 +1,22 @@
 {
-  "birthTime": "1774-04-21",
-  "deathTime": "1862-02-03",
+  "title": "Jean-Baptiste Biot",
   "occupations": [
     "mathematician",
     "physicist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1774-04-21",
+      "place": "Paris (France)"
+    },
+    {
+      "type": "death",
+      "time": "1862-02-03",
+      "place": "Paris (France)"
+    }
   ]
 }

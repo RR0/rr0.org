@@ -1,5 +1,5 @@
 {
-  "birthTime": "1951-08-19",
+  "title": "Jean-Luc Mélenchon",
   "occupations": [
     "writer",
     "politician"
@@ -7,5 +7,15 @@
   "countries": [
     "ma",
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1951-08-19",
+      "place": "Tanger (Maroc)",
+      "notes": [
+        "Tanger (Maroc) est alors en zone internationale"
+      ]
+    }
   ]
 }

@@ -1,10 +1,32 @@
 {
-  "birthTime": "1953-11-20",
-  "deathTime": "2007-03-22",
+  "title": "Robert Greer Todd",
+  "surname": "Bob",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953-11-20"
+    },
+    {
+      "type": "death",
+      "time": "2007-03-22",
+      "place": "Ardmore (Pennsylvanie)",
+      "notes": [
+        {
+          "title": "chez lui, d'une longue maladie",
+          "sources": [
+            {
+              "people": "Graeber, Matthew J.",
+              "url": "http://216.92.132.216/2007/apr/m01-004.shtml"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

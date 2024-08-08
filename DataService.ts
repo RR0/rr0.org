@@ -1,84 +1,7 @@
+import { sync as glob } from "glob-promise"
 import { FileContents } from "ssg-api"
 import { RR0Data } from "./RR0Data"
-import { sync as glob } from "glob-promise"
-import path from "path"
-import { TimeContext } from "./time/TimeContext"
-import { TimeElementFactory } from "./time/TimeElementFactory"
-
-/**
- * Instantiates RR0Data from (JSON) file contents.
- */
-export interface RR0DataFactory<T extends RR0Data> {
-
-  /**
-   * The data type ("case", "people", "org", etc.)
-   */
-  readonly type: string
-
-  /**
-   * The supported file names ("case.json", "index.json", etc.).
-   */
-  readonly fileNames: string[]
-
-  /**
-   * Instantiate data from a file.
-   *
-   * @param file The file to read
-   * @return the RR0Data subtype (People, RR0Case, etc.) instance,
-   * or undefined if the file name/contents are not supported by this factory.
-   */
-  create(file: FileContents): T | undefined
-}
-
-/**
- * A RR0Data factory which can read either <someType>.json files of index.json with a "type": "<someType>" property.
- */
-export class DefaultDataFactory<T extends RR0Data> implements RR0DataFactory<T> {
-
-  constructor(readonly type: string, readonly fileNames: string[] = [type]) {
-  }
-
-  create(file: FileContents): T | undefined {
-    const data = JSON.parse(file.contents) as RR0Data
-    const basename = path.basename(file.name)
-    let datum: T | undefined
-    if (data.type === this.type || this.fileNames.reduce(
-      (hasIt: boolean, fileName) => basename.startsWith(fileName) ? true : hasIt,
-      false)) {
-      const dirName = path.dirname(file.name)
-      datum = this.createFromData(dirName, data)
-    }
-    return datum
-  }
-
-  createTimeFromString(timeStr: string): TimeContext | undefined {
-    if (timeStr) {
-      const time = new TimeContext({})
-      TimeElementFactory.updateTimeFromStr(time, timeStr)
-      return time
-    } else {
-      return undefined
-    }
-  }
-
-  protected createFromData(dirName: string, data: any): T {
-    const t = Object.assign({dirName, title: ""}, data) as unknown as T
-    t.time = this.createTimeFromString(data.time as any)
-    return t
-  }
-
-  protected parseEvents(data: RR0Data[]) {
-    for (const datum of data) {
-      datum.time = this.createTimeFromString(datum.time)
-      switch (datum.type) {
-        default:
-          if (typeof datum.place === "string") {
-            datum.place = {name: datum.place}
-          }
-      }
-    }
-  }
-}
+import { DefaultDataFactory } from "./DefaultDataFactory"
 
 /**
  * Fetch RR0 data from JSON files.
@@ -91,7 +14,7 @@ export class DataService {
    *
    * @param factories The factories to instantiate different RR0Data types.
    */
-  constructor(readonly factories: RR0DataFactory<RR0Data>[]) {
+  constructor(readonly factories: DefaultDataFactory<RR0Data>[]) {
   }
 
   async getFromDir<T extends RR0Data = RR0Data>(dirName: string, types: string[],
@@ -120,7 +43,7 @@ export class DataService {
           try {
             data = factory.create(dataFile)
           } catch (e) {
-            console.warn("Could not create a", factory.type, "from", dataFile)
+            console.warn("Could not create a", factory.type, "from", dataFile, "because of", e)
           }
         }
         if (data) {

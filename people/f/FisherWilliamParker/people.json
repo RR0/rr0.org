@@ -1,10 +1,20 @@
 {
-  "birthTime": "1911",
-  "deathTime": "1991-07-24",
+  "title": "William Parker Fisher",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1911",
+      "place": "Atlanta (Georgia)"
+    },
+    {
+      "type": "death",
+      "time": "1991-07-24"
+    }
   ]
 }

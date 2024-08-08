@@ -1,11 +1,18 @@
 {
-  "birthTime": "~570",
-  "deathTime": "632-06-06",
   "occupations": [
     "priest"
   ],
   "countries": [
     "sa"
   ],
-  "gender": "male"
+  "events": [
+    {
+      "type": "birth",
+      "time": "~570"
+    },
+    {
+      "type": "death",
+      "time": "632-06-06"
+    }
+  ]
 }

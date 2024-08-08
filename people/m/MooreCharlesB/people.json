@@ -1,11 +1,22 @@
 {
-  "birthTime": "1920-10-28",
-  "deathTime": "2010-03-02",
+  "title": "Charles B. Moore",
   "occupations": [
     "chemist",
     "meteorologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1920-10-28",
+      "place": "Maryville (Tennessee)"
+    },
+    {
+      "type": "death",
+      "time": "2010-03-02",
+      "place": "Socorro (Nouveau-Mexique)"
+    }
   ]
 }

@@ -86,6 +86,10 @@ p {
   padding-right: var(--margin);
 }
 
+p::first-letter {
+  text-transform: uppercase;
+}
+
 .indexed time:not(.duration) {
   font-weight: 700;
 }

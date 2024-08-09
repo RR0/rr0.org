@@ -322,11 +322,11 @@ timeService.getFiles().then(async (timeFiles) => {
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))
   }
-  const reindex = args.reindex.split(",")
-  if (reindex.includes("search")) {
+  const reindex = args.reindex?.split(",")
+  if (reindex?.includes("search")) {
     ssg.add(new SearchIndexStep("search/index.json", searchCommand))
   }
-  if (reindex.includes("sources")) {
+  if (reindex?.includes("sources")) {
     ssg.add(new SourceIndexStep(sourceRegistryFileName, sourceFactory))
   }
   if (copies) {

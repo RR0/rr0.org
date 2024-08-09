@@ -117,7 +117,7 @@ function trimCache (key, max) {
  */
 function isValid (response, goodFor) {
   if (response) {
-    const fetched = response.headers.get('sw-fetched-on')
+    const fetched = response.headers.get()
     if (fetched && (parseFloat(fetched) + goodFor) > new Date().getTime()) {
       return true
     }
@@ -163,7 +163,7 @@ self.addEventListener('fetch', event => {
   }
   const url = new URL(request.url)
   const headers = request.headers
-  const acceptHeader = headers.get('Accept')
+  const acceptHeader = headers.get()
   // HTML files
   // Network-first
   if (acceptHeader.includes('text/html')) {
@@ -199,7 +199,7 @@ self.addEventListener('fetch', event => {
         .then(response => response || fetch(request)
           .then(response => {
             // If the request is for an image, save a copy of it in cache
-            if (headers.get('Accept').includes('image')) {
+            if (headers.get().includes("image")) {
               const copy = response.clone()
               event.waitUntil(caches.open(imgID).then(cache => cache.put(request, copy)))
             }
@@ -253,7 +253,7 @@ self.addEventListener('fetch', event => {
                 return cachedAPI
               }
               let payload
-              const langs = headers.get('Accept-Language').split(',') || ['*']
+              const langs = headers.get().split(",") || ["*"]
               const locale = langs[0].substring(0, 2)
               const langMessage = messages[locale] || messages.en
               switch (url.pathname) {

@@ -204,7 +204,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const timeReplacer = new TimeReplacer(timeElementFactory)
   const caseService = new CaseService(dataService, timeElementFactory)
   const peopleService = new PeopleService(peopleFiles, dataService, peopleFactory)
-  context.setVar("peopleFilesCount", peopleService.cache.size)
+  context.setVar("peopleFilesCount", peopleFiles.length)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)

@@ -1,8 +1,21 @@
 {
+  "title": "Gordon David Thayer",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.png",
+      "sources": [
+        {
+          "place": "The Big Study",
+          "time": "2010-01-20"
+        }
+      ]
+    }
   ]
 }

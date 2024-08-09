@@ -1,5 +1,11 @@
 <!--#include virtual="/header-start.html" -->
 <title>RR0</title>
+<style>.count {
+  display: block;
+  float: left;
+  font-size: 3em;
+  padding-right: 0.5em;
+}</style>
 <!--#include virtual="/header-end.html" -->
 <p>Bienvenue sur <q>R. R. Zéro</q> !</p>
 <p>Vous trouverez ici divers articles de synthèse en français sur des sujets variés :</p>
@@ -12,7 +18,8 @@
   </section>
   <section>
     <h2><a href="time">Historique</a></h2>
-    <p>Chronologie rassemblant ${timeFilesCount} pages de faits étudiés par ce site. La plupart des autres sections s'y
+    <p><span class="count">${timeFilesCount}</span> pages de faits étudiés par ce site. La plupart des autres sections
+      s'y
       réfère pour en proposer des commentaires, analyses.</p>
   </section>
   <section>
@@ -27,7 +34,8 @@
   </section>
   <section>
     <h2><a href="people">Personnes</a></h2>
-    <p>Ensemble de ${peopleFilesCount} personnes mentionnées dans ce site et pour lesquelles une page biographique a été
+    <p><span class="count">${peopleFilesCount}</span> personnes mentionnées dans ce site et pour lesquelles une page
+      biographique a été
       rédigée. Des sous-sections permettent de les filtrer par occupation. Comme pour la chronologie, diverses autres
       sections peuvent donc s'y référer pour détailler certaines personalités de tel ou tel milieu (<a
         href="/people/ufologues.html">ufologique</a>, <a href="/people/scientifiques.html">scientifique</a>, <a

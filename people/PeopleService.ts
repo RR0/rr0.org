@@ -7,6 +7,7 @@ import { Occupation } from "./Occupation"
 import { Time } from "../time/Time"
 import { Gender } from "@rr0/common"
 import { PeopleFactory } from "./PeopleFactory"
+import { AbstractDataFactory } from "../AbstractDataFactory"
 
 export class PeopleService {
 
@@ -145,7 +146,14 @@ export class PeopleService {
     if (classList.length > 0) {
       elem.classList.add(...classList)
     }
-    const portraitUrl = people.image
+    let portraitUrl = people.image
+    if (!portraitUrl) {
+      const portraitEvent = people.events.find(
+        event => event.type === "image" && AbstractDataFactory.defaultImageFileNames.includes(event.url))
+      if (portraitEvent) {
+        portraitUrl = path.join("/", people.dirName, portraitEvent.url)
+      }
+    }
     if (portraitUrl) {
       const portraitElem = doc.createElement("img")
       portraitElem.src = path.join("/", portraitUrl)

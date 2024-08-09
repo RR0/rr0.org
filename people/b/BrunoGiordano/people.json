@@ -1,10 +1,25 @@
 {
-  "birthTime": "1548-01",
-  "deathTime": "1600-02-17",
+  "title": "Filippo Bruno",
+  "surname": "Giordano",
   "occupations": [
     "astronomer"
   ],
+  "pseudonyms": [
+    "Giordano Bruno"
+  ],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1548-01",
+      "place": "Nola (Italie)"
+    },
+    {
+      "type": "death",
+      "time": "1600-02-17",
+      "place": "Campo Dei Fiori"
+    }
   ]
 }

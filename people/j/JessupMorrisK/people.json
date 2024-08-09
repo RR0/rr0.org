@@ -1,6 +1,5 @@
 {
-  "birthTime": "1900-03-02",
-  "deathTime": "1959-04-20",
+  "title": "Morris Ketchum Jessup",
   "occupations": [
     "ufologist",
     "astronomer",
@@ -8,5 +7,17 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1900-03-02",
+      "place": "Rockville"
+    },
+    {
+      "type": "death",
+      "time": "1959-04-20",
+      "place": "Comté de Dade"
+    }
   ]
 }

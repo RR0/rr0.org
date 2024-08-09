@@ -121,6 +121,7 @@ nav ul > li {
   top: 0;
   z-index: 101;
   width: auto;
+  transform: var(--transform);
 }
 
 rr0-dual-range {

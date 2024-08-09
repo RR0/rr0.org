@@ -36,7 +36,7 @@
   var bpmnViewer = new BpmnJS({container: "#example", bpmnRenderer})
   fetch("./example.bpmn").then(response => response.text()).then(xml => {
     bpmnViewer.importXML(xml).then((x) => {
-      const canvas = bpmnViewer.get("canvas")
+      const canvas = bpmnViewer.get()
       const currentViewbox = canvas.viewbox()
       this.width = currentViewbox.inner.width
       this.height = currentViewbox.inner.height

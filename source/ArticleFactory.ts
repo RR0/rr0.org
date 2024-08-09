@@ -8,8 +8,8 @@ export class ArticleFactory extends DefaultDataFactory<Article> {
     super("article")
   }
 
-  createFromData(data: RR0Data): T {
-    const api = new Article(data.id, dirName, data.url, data.events)
+  createFromData(data: RR0Data): Article {
+    const api = new Article(data.id, data.dirName, data.url, data.events)
     Object.assign(api, data)
     return api
   }

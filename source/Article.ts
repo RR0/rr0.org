@@ -5,7 +5,7 @@ export class Article extends RR0Data {
   constructor(
     id?: string,
     dirName?: string,
-    url?: URL,
+    url?: string,
     events: RR0Data[] = []
   ) {
     super(id, dirName, url, events, "article")

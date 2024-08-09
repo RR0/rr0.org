@@ -11,6 +11,10 @@ export class RR0EventFactory extends AbstractDataFactory<RR0Event> {
   createFromData(event: RR0Data): RR0Event {
     event.time = this.createTimeFromString(event.time)
     switch (event.type) {
+      case "image":
+        event.name = event.name || event.parent?.name
+        event.title = event.title || event.parent?.title
+        break
       default:
         if (typeof event.place === "string") {
           event.place = {name: event.place}

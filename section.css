@@ -24,6 +24,7 @@ section:after {
 
 h1, h2, h3, h4, h5 {
   text-wrap: balance;
+  transform: var(--transform);
 }
 
 h2, h3, h4, h5, section h1, section section h1 {

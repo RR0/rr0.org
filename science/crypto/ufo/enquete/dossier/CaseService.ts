@@ -1,6 +1,6 @@
 import { DataService } from "../../../../../DataService"
 import { RR0Case } from "./RR0Case"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext"
 import path from "path"
 import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
 import { RR0DataFactory } from "../../../../../RR0DataFactory"
@@ -15,7 +15,7 @@ export class CaseService {
     return this.dataService.factories.find(factory => factory.type === this.type) as RR0DataFactory<RR0Case>
   }
 
-  async get(context: RR0SsgContext, path: string): Promise<RR0Case[] | undefined> {
+  async get(path: string): Promise<RR0Case[] | undefined> {
     return this.dataService.getFromDir<RR0Case>(path, [this.type, undefined], [this.type + ".json"])
   }
 

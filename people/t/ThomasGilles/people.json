@@ -1,9 +1,27 @@
 {
-  "birthTime": "1985-02-16",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1985-02-16"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Thomas présentant \"Y a-t-il encore une ufologie de terrain ?\"",
+      "sources": [
+        {
+          "place": "ODH TV Archives, Youtube",
+          "url": "https://www.youtube.com/watch?v=uSj-xltl9jk",
+          "title": "Y-a-t-il encore une ufologie de terrain ? avec Gilles Thomas (2/2)",
+          "time": "2015-10-13"
+        }
+      ]
+    }
   ]
 }

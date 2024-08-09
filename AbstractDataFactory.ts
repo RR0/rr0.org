@@ -38,23 +38,25 @@ export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T>
       events.push({type: "death", time: deathTime as any, events: []})
     }
     if (!data.image) {
-      let hasPortrait = false
+      let hasDefaultFile = false
       for (const defaultImageFile of AbstractDataFactory.defaultImageFileNames) {
-        hasPortrait = fs.existsSync(path.join(data.dirName, defaultImageFile))
-        if (hasPortrait) {
+        hasDefaultFile = fs.existsSync(path.join(data.dirName, defaultImageFile))
+        if (hasDefaultFile) {
           events.push({type: "image", url: defaultImageFile as any, name: data.name, events: []})
           break
         }
       }
     }
-    data.events = this.parseEvents(events)
+    data.events = this.parseEvents(events, data)
     return data as T
   }
 
-  protected parseEvents(events: RR0Data[] = []): RR0Event[] {
+  protected parseEvents(events: RR0Data[] = [], defaultParent: RR0Data): RR0Event[] {
     const parsed: RR0Event[] = []
     for (const event of events) {
-      parsed.push(this.eventFactory.createFromData(event))
+      event.parent = event.parent || defaultParent
+      const resolvedEvent = this.eventFactory.createFromData(event)
+      parsed.push(resolvedEvent)
     }
     return parsed
   }

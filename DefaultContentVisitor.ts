@@ -74,9 +74,8 @@ export class DefaultContentVisitor implements ContentVisitor {
     if (contents) {
       const side = context.people ? "left" : "right"
       const imgEl = contents.querySelector("img")
-      const captionEl = contents.querySelector("figcaption")
       const caption = imageData.name
-      const src = imageData.url as any
+      const src = imageData.url
       if (imgEl?.src !== src) {
         const imgEl = doc.createElement("img")
         imgEl.src = src
@@ -107,7 +106,7 @@ export class DefaultContentVisitor implements ContentVisitor {
     const eventP = context.file.document.createElement("p")
     const eventContext = context.clone()
     const eventTime = event.time
-    assert.ok(eventTime, "Event has no time: " + JSON.stringify(event))
+    assert.ok(eventTime, `Event of type "${event.type}" has no time`)
     const time = context.time
     if (!time.min || eventTime.isBefore(time.min)) {
       time.min = eventTime

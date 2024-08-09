@@ -18,6 +18,7 @@
   --color: black;
   --link-color: lightblue;
   --font-family: system-ui;
+  --transform: none;
 }
 
 @view-transition {
@@ -922,8 +923,8 @@ dl.bullet dd {
   background-size: cover !important;
   background-position: center !important;
   background-image: linear-gradient(to right, rgba(224, 224, 233, 0.5) 0, rgba(255, 255, 255, .5) 100%);
+  transform: var(--transform)
 }
-
 
 .map-toggle {
   order: 100;

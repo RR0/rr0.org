@@ -13,28 +13,28 @@ export class RR0Data {
      * The data type ("people", "place", "org", "book", "case", "sighting"...)
      */
     public id?: string,
-
     /**
      * A unique identifier for this data.
      * // TODO: Make it mandatory
      */
     public dirName?: string,
-
     /**
      * The directory where the data is stored, relatively to RR0's root.
      * Should end with a trailing slash ("/").
      */
-    readonly url?: URL,
-
+    readonly url?: string,
     /**
      * Public URL of the data (not the RR0 URL)
      */
     public events: RR0Event[] = [],
-
     /**
      * Data type
      */
-    readonly type?: string
+    readonly type?: string,
+    /**
+     * Parent data.
+     */
+    public parent?: RR0Data
   ) {
   }
 
@@ -89,4 +89,15 @@ export class RR0Data {
   tags?: string[]
 
   image?: string
+
+  clone(withParent = true) {
+    const clonedEvents = this.events.map(event => event.clone())
+    return new RR0Data(this.id, this.dirName, this.url, clonedEvents, this.type, withParent ? this.parent : undefined)
+  }
+
+  toJSON(): string {
+    const clone = this.clone(false)
+    delete clone.parent
+    return JSON.stringify(clone)
+  }
 }

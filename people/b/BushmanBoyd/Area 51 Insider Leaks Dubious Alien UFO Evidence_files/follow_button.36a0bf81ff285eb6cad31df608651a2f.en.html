@@ -828,17 +828,17 @@ window._ = function (s, reps) {
       }
 
       function d() {
-        var t = f(Y.get("config.followURL") + "?" + M.encode(l()), {height: 520, width: 550})
+        var t = f(Y.get() + "?" + M.encode(l()), { height: 520, width: 550 })
         m(t, tt)
       }
 
       function h(t) {
-        var e = f(Y.get("config.userIntentURL") + "?" + M.encode(l(t)))
+        var e = f(Y.get() + "?" + M.encode(l(t)))
         m(e, t)
       }
 
       function p(t) {
-        var e = f(Y.get("config.mentionIntentURL") + "?" + M.encode(l(t)))
+        var e = f(Y.get() + "?" + M.encode(l(t)))
         m(e, t)
       }
 
@@ -858,14 +858,14 @@ window._ = function (s, reps) {
           language: X.lang,
           message: [X.size, ft ? "withcount" : "nocount"].join(":") + ":",
           widget_origin: Q
-        }, !1), st.title = _("Twitter Follow Button"), I.innerHTML = ct ? _("Follow %{screen_name}", {screen_name: "<b>" + t + "</b>"}) : _("Follow"), ct && !X._ && O.offsetWidth < I.offsetWidth - 10 && (ct = !1, I.innerHTML = _("Follow")), u(!1), j.label = _("%{name} on Twitter", {name: t}), S.label = _("Follow"), L.label = _("Tweet to %{name}", {name: t}), C.href = Y.get("config.followURL") + "?" + M.encode(l(et)), P.href = Y.get("config.userIntentURL") + "?" + M.encode(l(it)), i(O, "ready"), i(O.parentNode, dt), ft || i(O, "ncount"), lt && i(O, lt), G(N)
+        }, !1), st.title = _("Twitter Follow Button"), I.innerHTML = ct ? _("Follow %{screen_name}", { screen_name: "<b>" + t + "</b>" }) : _("Follow"), ct && !X._ && O.offsetWidth < I.offsetWidth - 10 && (ct = !1, I.innerHTML = _("Follow")), u(!1), j.label = _("%{name} on Twitter", { name: t }), S.label = _("Follow"), L.label = _("Tweet to %{name}", { name: t }), C.href = Y.get() + "?" + M.encode(l(et)), P.href = Y.get() + "?" + M.encode(l(it)), i(O, "ready"), i(O.parentNode, dt), ft || i(O, "ncount"), lt && i(O, lt), G(N)
       }
 
       function v() {
         function t(t, e) {
           return B.interaction(t, {}, !1), z.withHub(function (t) {
             t.trigger("click", {region: e}, X.id)
-          }), !(t.altKey || t.shiftKey || t.metaKey) || t.shiftKey && t.metaKey ? (J.ios() || J.android() || b ? A.open(Y.get("config.twitterHost") + "/" + ut + "?" + M.encode(l())) : E || c() || t && t.metaKey && t.shiftKey ? h(e) : d(), a(t)) : void 0
+          }), !(t.altKey || t.shiftKey || t.metaKey) || t.shiftKey && t.metaKey ? (J.ios() || J.android() || b ? A.open(Y.get() + "/" + ut + "?" + M.encode(l())) : E || c() || t && t.metaKey && t.shiftKey ? h(e) : d(), a(t)) : void 0
         }
 
         function e(t, e) {
@@ -889,12 +889,12 @@ window._ = function (s, reps) {
 
       function w() {
         var t, e
-        H.isLoggedIn() ? e = M.url(Y.get("config.followersInfoURL"), {
+        H.isLoggedIn() ? e = M.url(Y.get(), {
           screen_names: ut,
           requester_id: H.getUserId(),
           lang: dt,
           callback: Y.fullPath("setFollowersCountAndFollowing")
-        }) : ft && (e = M.url(Y.get("config.cdnFollowersInfoURL"), {
+        }) : ft && (e = M.url(Y.get(), {
           screen_names: ut,
           lang: dt,
           callback: Y.fullPath("setFollowersCountAndFollowing")
@@ -1151,9 +1151,9 @@ window._ = function (s, reps) {
       }
 
       var c = t(3), f = t(22), l = t(36), d = t(38), h = t(9), p = d.version,
-        m = h.get("endpoints.rufous") || "https://syndication.twitter.com/i/jot",
-        g = h.get("endpoints.rufousAudience") || "https://syndication.twitter.com/i/jot/syndication",
-        v = h.get("endpoints.rufousRedirect") || "https://platform.twitter.com/jot.html"
+        m = h.get() || "https://syndication.twitter.com/i/jot",
+        g = h.get() || "https://syndication.twitter.com/i/jot/syndication",
+        v = h.get() || "https://platform.twitter.com/jot.html"
       e.exports = {
         extractTermsFromDOM: r,
         flattenClientEventPayload: a,

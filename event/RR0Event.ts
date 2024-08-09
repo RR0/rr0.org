@@ -13,7 +13,7 @@ export type RR0EventType =
 
 export class RR0Event extends RR0Data {
 
-  constructor(id: string, dirName: string, url: URL, events: RR0Event[], type: RR0EventType) {
+  constructor(id: string, dirName: string, url: string, events: RR0Event[], type: RR0EventType) {
     super(id, dirName, url, events, type)
   }
 }

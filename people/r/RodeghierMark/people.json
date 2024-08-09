@@ -1,9 +1,15 @@
 {
-  "birthTime": "1953",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953",
+      "place": "Hammond (Indiana)"
+    }
   ]
 }

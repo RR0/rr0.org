@@ -1,5 +1,5 @@
 {
-  "title": "Villas Boas, Antônio",
+  "title": "Vilas Boas, Antônio",
   "occupations": [
     "farmer",
     "ufoWitness"
@@ -10,7 +10,8 @@
   "events": [
     {
       "type": "birth",
-      "time": "1934"
+      "time": "1934-05-07",
+      "place": "Brésil"
     },
     {
       "type": "death",

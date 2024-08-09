@@ -1,10 +1,20 @@
 {
-  "birthTime": "1919-07-22",
-  "deathTime": "1999-12",
+  "title": "Sheridan Wear Cavitt",
+  "surname": "Cav",
   "occupations": [
     "military"
   ],
   "countries": [
-    "it"
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1919-07-22"
+    },
+    {
+      "type": "death",
+      "time": "1999-12"
+    }
   ]
 }

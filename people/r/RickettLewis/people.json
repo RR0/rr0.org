@@ -1,10 +1,36 @@
 {
-  "birthTime": "1923-05-07",
-  "deathTime": "1998-05-18",
+  "title": "Lewis S. Rickett",
+  "surname": "Bill",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1910-01-10",
+      "place": "Virginie"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "Mrs. Rickett"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1992-10-31",
+      "place": "Seminole (comté de Pinellas, Floride, USA)",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/47990919/lewis-s_-rickett"
+        }
+      ]
+    }
   ]
 }

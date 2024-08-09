@@ -201,6 +201,10 @@ nav > ul {
     box-shadow: 0 1px 4px rgb(255 255 255 / 30%), 0 0 40px rgb(255 255 255 / 10%) inset
   }
 
+  .outline {
+    color: lightsteelblue;
+  }
+
   .outline, nav ul {
     background: rgb(20, 20, 25);
   }

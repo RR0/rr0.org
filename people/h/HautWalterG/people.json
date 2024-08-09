@@ -1,10 +1,29 @@
 {
-  "birthTime": "2005-12",
-  "deathTime": "1922-06-02",
+  "title": "Walter G. Haut",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1922-06-02",
+      "place": "Chicago"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "RAAF Yearbook"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2005-12"
+    }
   ]
 }

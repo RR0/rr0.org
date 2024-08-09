@@ -1,11 +1,26 @@
 {
-  "birthTime": "1916-02-06",
-  "deathTime": "1966-05-31",
+  "title": "William Hugh Blanchard",
+  "surname": "Butch",
   "occupations": [
     "military",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1916-02-06",
+      "place": "Boston (Massachusetts)"
+    },
+    {
+      "type": "death",
+      "time": "1966-05-31",
+      "place": "Washington (DC)",
+      "notes": [
+        "en service"
+      ]
+    }
   ]
 }

@@ -1,10 +1,21 @@
 {
-  "birthTime": "1892-02-05",
-  "deathTime": "1859-01-09",
+  "title": "Clements Mac Mullen",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1892-02-05",
+      "place": "Largo (Floride)"
+    },
+    {
+      "type": "death",
+      "time": "1859-01-09",
+      "place": "San Antonio (Texas)"
+    }
   ]
 }

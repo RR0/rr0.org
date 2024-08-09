@@ -1,10 +1,19 @@
 {
-  "birthTime": "1902",
-  "deathTime": "1992-02-24",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1902",
+      "place": "San Antonio (Texas)"
+    },
+    {
+      "type": "death",
+      "time": "1992-02-24"
+    }
   ]
 }

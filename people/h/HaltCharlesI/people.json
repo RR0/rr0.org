@@ -1,10 +1,16 @@
 {
-  "birthTime": "1939",
+  "title": "Charles I. Halt",
   "occupations": [
     "military",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1939"
+    }
   ]
 }

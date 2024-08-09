@@ -1,10 +1,21 @@
 {
-  "birthTime": "1909-09-28",
-  "deathTime": "1995-10-28",
+  "title": "Maurice G. Chatelain",
   "occupations": [
     "engineer"
   ],
   "countries": [
-    "fr","us"
+    "fr",
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1909-09-28"
+    },
+    {
+      "type": "death",
+      "time": "1995-10-28",
+      "place": "San Diego (Californie)"
+    }
   ]
 }

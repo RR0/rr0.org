@@ -1,10 +1,35 @@
 {
-  "birthTime": "1911-01-30",
+  "title": "Ivan T. Sanderson",
   "occupations": [
     "ufologist",
     "cryptozoologist"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1911-01-30",
+      "place": "Edinburgh (Ecosse)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "people": "Halsman, Philippe",
+          "title": "Book of great jungles",
+          "place": "&copy; 1965 Pocket Books, Inc."
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1973-02-19",
+      "notes": [
+        "d'une tumeur cérébrale"
+      ]
+    }
   ]
 }

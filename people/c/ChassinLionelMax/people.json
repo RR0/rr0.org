@@ -1,6 +1,5 @@
 {
-  "birthTime": "1902-04-26",
-  "deathTime": "1970-08-16",
+  "title": "Guillaume Jean Max Chassin",
   "occupations": [
     "military"
   ],
@@ -9,5 +8,16 @@
   ],
   "pseudonyms": [
     "Guy Severac"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1902-04-26",
+      "place": "Bordeaux (Gironde)"
+    },
+    {
+      "type": "death",
+      "time": "1970-08-16"
+    }
   ]
 }

@@ -1,5 +1,4 @@
 {
-  "deathTime": "2016-06-07",
   "occupations": [
     "pilot",
     "engineer",
@@ -7,5 +6,33 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924-11-29",
+      "place": "Saint-Just-d'Ardèche (Ardèche)",
+      "sources": [
+        {
+          "url": "https://lecercle-leblog.over-blog.com/article-la-theorie-du-lieutenant-plantier-par-jean-et-michel-plantier-38538885.html",
+          "title": "La théorie du Lieutenant Plantier, par Jean et Michel Plantier</a>",
+          "place": "Le Cercle",
+          "time": "2009-10-31"
+        },
+        {
+          "url": "https://www.acte-deces.fr/recherche-deces-famille-plantier"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2016-06-02",
+      "place": "Bordeaux",
+      "sources": [
+        {
+          "url": "https://carnet.sudouest.fr/deces/jean-plantier-1245207"
+        }
+      ]
+    }
   ]
 }

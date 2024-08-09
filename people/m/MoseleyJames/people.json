@@ -1,9 +1,33 @@
 {
+  "url": "https://www.jimmoseley.com",
+  "surname": "Jim",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "&copy; Grégory Gutierez"
+        }
+      ],
+      "name": "Moseley à la <i lang=\"en\">UNCONvention</i> de <time>2002</time>"
+    },
+    {
+      "type": "death",
+      "time": "2012-11-16",
+      "place": "hôpital de Key West",
+      "sources": [
+        {
+          "url": "https://copycateffect.blogspot.fr/2012/11/moseley-obit.html"
+        }
+      ]
+    }
   ]
 }

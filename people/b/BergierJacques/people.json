@@ -1,8 +1,19 @@
 {
-  "birthTime": "1912-08-08",
-  "deathTime": "1978-11-23",
-  "occupations": ["ufologist"],
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1912-08-08",
+      "place": "Odessa (Russie)"
+    },
+    {
+      "type": "death",
+      "time": "1978-11-23"
+    }
   ]
 }

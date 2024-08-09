@@ -1,10 +1,18 @@
 {
-  "birthTime": "1949",
+  "title": "Kevin Douglas Randle",
+  "url": "https://kevinrandle.blogspot.com",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1949",
+      "place": "Cheyenne (Wyoming)"
+    }
   ]
 }

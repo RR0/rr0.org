@@ -1,6 +1,5 @@
 {
-  "birthTime": "1901-04-11",
-  "deathTime": "1976-12-14",
+  "title": "Donald Howard Menzel",
   "occupations": [
     "ufologist",
     "astronomer",
@@ -9,5 +8,17 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1901-04-11",
+      "place": "Florence (Colorado)"
+    },
+    {
+      "type": "death",
+      "time": "1976-12-14",
+      "place": "Boston (Massachusetts)"
+    }
   ]
 }

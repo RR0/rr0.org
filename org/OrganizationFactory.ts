@@ -11,7 +11,7 @@ export class OrganizationFactory extends DefaultDataFactory<Organization> {
   createFromData(data: Organization): Organization {
     const id = data.id || data.dirName.replaceAll("/", "-")
     const org = new Organization(id, data.places, data.kind, data.parent)
-    Object.assign(org, data)
+    Object.assign(org, super.createFromData(data))
     return org
   }
 }

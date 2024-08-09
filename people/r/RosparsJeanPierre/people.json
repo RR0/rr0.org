@@ -1,9 +1,23 @@
 {
+  "title": "Jean-Pierre Rospars",
   "occupations": [
     "ufologist",
     "engineer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "url": "https://www-physiologie-insecte.versailles.inra.fr/pageJPR.php",
+          "title": "Jean-Pierre ROSPARS",
+          "place": "Pisc"
+        }
+      ]
+    }
   ]
 }

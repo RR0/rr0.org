@@ -1,10 +1,15 @@
 {
-  "birthTime": "1954-02-25",
   "occupations": [
     "ufologist",
     "engineer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1954-02-25"
+    }
   ]
 }

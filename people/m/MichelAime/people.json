@@ -2,13 +2,21 @@
   "firstNames": [
     "Aimé"
   ],
-  "birthTime": "1919",
-  "deathTime": "1992",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1919"
+    },
+    {
+      "type": "death",
+      "time": "1992"
+    }
   ]
 }

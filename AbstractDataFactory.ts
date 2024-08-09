@@ -40,7 +40,6 @@ export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T>
     if (!data.image) {
       let hasPortrait = false
       for (const defaultImageFile of AbstractDataFactory.defaultImageFileNames) {
-        const portraitPath = path.join(data.dirName, defaultImageFile)
         hasPortrait = fs.existsSync(path.join(data.dirName, defaultImageFile))
         if (hasPortrait) {
           events.push({type: "image", url: defaultImageFile as any, name: data.name, events: []})

@@ -1,8 +1,19 @@
 {
-  "birthTime": "1914-11-20",
-  "deathTime": "2003-12-18",
+  "title": "Charles Frambach Berlitz",
   "occupations": ["ufologist", "writer"],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1914-11-20",
+      "place": "New York"
+    },
+    {
+      "type": "death",
+      "time": "2003-12-18",
+      "place": "Fort Lauderdale (Floride)"
+    }
   ]
 }

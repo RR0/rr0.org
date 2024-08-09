@@ -1,8 +1,23 @@
 {
+  "title": "Yves Meelbergs",
+  "surname": "Meel",
   "occupations": [
     "pilot"
   ],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "OVNIS : Les preuves scientifiques",
+          "place": "VSD HS",
+          "time": "1998-07"
+        }
+      ]
+    }
   ]
 }

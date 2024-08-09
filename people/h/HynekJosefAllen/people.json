@@ -1,8 +1,32 @@
 {
-  "birthTime": "1910-05-01",
-  "deathTime": "1986-04-27",
+  "title": "Josef Allen Hynek",
   "occupations": ["ufologist", "astronomer"],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1910-05-01",
+      "place": "Chicago (Illinois)",
+      "notes": [
+        "Peu après le passage de la comète de Halley fin <time>1910-04</time>"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1986-04-27",
+      "place": "Memorial Hospital de Scottsdale (Arizona)",
+      "notes": [
+        {
+          "title": "Peu après le passage de la comète de Halley fin 1910-04",
+          "sources": [
+            {
+              "url": "/time/1/9/8/6/05/01/JAllenHynekAstronomerAndUFOConsultantDies_NYT"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

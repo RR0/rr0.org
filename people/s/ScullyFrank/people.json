@@ -1,6 +1,4 @@
 {
-  "birthTime": "1892",
-  "deathTime": "1964-06-23",
   "occupations": [
     "ufologist",
     "journalist",
@@ -8,5 +6,15 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1892"
+    },
+    {
+      "type": "death",
+      "time": "1964-06-23"
+    }
   ]
 }

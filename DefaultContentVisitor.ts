@@ -77,7 +77,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       const captionEl = contents.querySelector("figcaption")
       const caption = imageData.name
       const src = imageData.url as any
-      if (imgEl?.src !== src || captionEl?.textContent !== caption) {
+      if (imgEl?.src !== src) {
         const imgEl = doc.createElement("img")
         imgEl.src = src
         imgEl.alt = imageData.title
@@ -163,7 +163,9 @@ export class DefaultContentVisitor implements ContentVisitor {
     }
     eventP.append(".")
     const insertEl = context.file.document.querySelector(".contents > p:last-of-type")
-    insertEl.parentNode.append(eventP)
+    if (insertEl) {
+      insertEl.parentNode.append(eventP)
+    }
   }
 
   protected async processBook(context: HtmlRR0SsgContext, bookData: RR0Data) {

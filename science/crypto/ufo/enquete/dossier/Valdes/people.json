@@ -6,5 +6,12 @@
   ],
   "countries": [
     "cl"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Valdés Garrido"
+    }
   ]
 }

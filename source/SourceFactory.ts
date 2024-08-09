@@ -51,7 +51,7 @@ export class SourceFactory {
     switch (ext) {
       case ".htm":
       case ".html":
-        source = this.fromPage(href, hash)
+        source = await this.fromPage(href, hash)
         break
       case ".json":
         const sources = await this.dataService.getFromDir(path.dirname(href), sourceTypes, [path.basename(href)])
@@ -103,7 +103,7 @@ export class SourceFactory {
     return {title, url, publication}
   }
 
-  fromPage(href: string, hash = ""): Source {
+  async fromPage(href: string, hash = ""): Promise<Source> {
     const filePath = path.extname(href) ? href : path.join(href, "index.html")
     const fileContents = FileContents.read(filePath)
     const doc = new JSDOM(fileContents.contents).window.document.documentElement
@@ -111,8 +111,16 @@ export class SourceFactory {
     if (hash) {
       url.hash = hash
     }
+    const values = Array.from(this.dataService.pathToData.values())
+    const data = values.find(value => filePath.startsWith(value[0]?.dirName))
+    let title: string
+    if (data) {
+      title = data[0].title
+    } else {
+      title = doc.querySelector("title").textContent
+    }
     return {
-      title: doc.querySelector("title").textContent,
+      title: title,
       authors: Array.from(doc.querySelectorAll("meta[name='author']")).map(meta => meta.getAttribute("content")),
       publication: {publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content")},
       url

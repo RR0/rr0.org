@@ -1,11 +1,22 @@
 {
-  "birthTime": "1903-05-22",
-  "deathTime": "1992-03-16",
+  "title": "Yves André Rocard",
   "occupations": [
     "physicist",
     "engineer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1903-05-22",
+      "place": "Vannes (France)"
+    },
+    {
+      "type": "death",
+      "time": "1992-03-16",
+      "place": "Paris"
+    }
   ]
 }

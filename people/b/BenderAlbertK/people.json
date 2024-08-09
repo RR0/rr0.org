@@ -1,8 +1,25 @@
 {
-  "birthTime": "1921-06-21",
-  "deathTime": "2016-03-29",
-  "occupations": ["ufologist"],
+  "title": "Albert K. Bender",
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1921-06-21"
+    },
+    {
+      "type": "death",
+      "time": "2016-03-29",
+      "place": "Los Angeles",
+      "sources": [
+        {
+          "url": "https://copycateffect.blogspot.com/2016/04/Bender-obit.html"
+        }
+      ]
+    }
   ]
 }

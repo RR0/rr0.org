@@ -1,8 +1,38 @@
 {
-  "birthTime": "1926-03-19",
-  "deathTime": "2000-01-02",
-  "occupations": ["ufologist", "writer"],
+  "title": "Henri-René Guieu",
+  "surname": "Jimmy",
+  "occupations": [
+    "ufologist",
+    "writer"
+  ],
+  "pseudonyms": [
+    "Jimmy G. Quint",
+    "Claude Vauzière",
+    "Dominique Verseau",
+    "Jimmy Guieu"
+  ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1926-03-19",
+      "place": "Aix-en-Provence (France)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "Fleuve noir"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2000-01-02",
+      "place": "Vernouillet"
+    }
   ]
 }

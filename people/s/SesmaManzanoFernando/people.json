@@ -1,11 +1,20 @@
 {
-  "birthTime": "1908",
-  "deathTime": "1982",
+  "title": "Fernando Sesma Manzano",
   "occupations": [
     "contactee",
     "telegrapher"
   ],
   "countries": [
     "es"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1908"
+    },
+    {
+      "type": "death",
+      "time": "1982"
+    }
   ]
 }

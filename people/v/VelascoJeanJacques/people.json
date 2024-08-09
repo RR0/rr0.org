@@ -1,9 +1,15 @@
 {
-  "birthTime": "1946",
+  "title": "Jean-Jacques Velasco",
   "occupations": [
     "engineer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946"
+    }
   ]
 }

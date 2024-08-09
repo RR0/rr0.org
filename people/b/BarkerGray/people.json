@@ -1,8 +1,25 @@
 {
-  "birthTime": "1925-05-02",
-  "deathTime": "1984-12-06",
+  "title": "Gray Roscoe Barker",
   "occupations": ["ufologist"],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1925-05-02",
+      "place": "comté de Braxton (Western Virginia)",
+      "notes": [
+        "dans une ferme isolée"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1984-12-06",
+      "place": "hôpital de Charleston (Virginie-Occidentale)",
+      "notes": [
+        "d'une pneumonie"
+      ]
+    }
   ]
 }

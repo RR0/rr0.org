@@ -1,9 +1,5 @@
 {
-  "lastName": "Greslé",
-  "firstNames": [
-    "Jean-Gabriel"
-  ],
-  "birthTime": "1932-11-16",
+  "title": "Jean-Gabriel Greslé",
   "occupations": [
     "ufologist",
     "pilot",
@@ -11,5 +7,12 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1932-11-16",
+      "place": "Aubervilliers"
+    }
   ]
 }

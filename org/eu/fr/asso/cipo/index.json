@@ -8,9 +8,7 @@
     {
       "type": "birth",
       "time": "2021",
-      "place": {
-        "name": "Colomiers (France)"
-      }
+      "place": "Colomiers (France)"
     }
   ]
 }

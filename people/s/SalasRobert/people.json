@@ -1,0 +1,19 @@
+{
+  "title": "Robert L. Salas",
+  "surname": "Bob",
+  "occupations": [
+    "military",
+    "engineer",
+    "teacher"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Salas à l'Air Force"
+    }
+  ]
+}

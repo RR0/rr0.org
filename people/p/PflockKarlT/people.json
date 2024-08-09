@@ -1,11 +1,21 @@
 {
-  "birthTime": "1943",
-  "deathTime": "2006-06-05",
+  "title": "Karl T. Pflock",
   "occupations": [
     "ufologist",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1943"
+    },
+    {
+      "type": "death",
+      "time": "2006-06-05",
+      "place": "Placitas (Nouveau-Mexique)"
+    }
   ]
 }

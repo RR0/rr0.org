@@ -1,15 +1,37 @@
 {
-  "birthTime": "1936-02-19",
-  "deathTime": "2018-05-06",
+  "title": "Eugene E. Olson",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "pseudonyms": [
+    "Brad Steiger",
     "Brad Olson",
     "Eric Norman"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1936-02-19",
+      "place": "Fort Dodge Lutheran Hospital",
+      "notes": [
+        {
+          "title": "durant un blizzard"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2018-05-06",
+      "place": "hospice Muse Norris de Mason City (Iowa)",
+      "sources": [
+        {
+          "url": "https://www.majorericksonfuneralhome.com/obituaries/brad-e-steiger"
+        }
+      ]
+    }
   ]
 }

@@ -1,10 +1,19 @@
 {
-  "birthTime": "1915-05-22",
-  "deathTime": "1998-07-16",
+  "title": "Philip James Corso",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1915-05-22"
+    },
+    {
+      "type": "death",
+      "time": "1998-07-16"
+    }
   ]
 }

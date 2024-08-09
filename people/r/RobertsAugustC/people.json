@@ -1,10 +1,17 @@
 {
-  "deathTime": "1994",
+  "title": "August C. Roberts",
+  "surname": "Augie",
   "occupations": [
     "ufologist",
     "photographer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "death",
+      "time": "1994"
+    }
   ]
 }

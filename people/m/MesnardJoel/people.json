@@ -1,9 +1,5 @@
 {
-  "firstNames": [
-    "Joël"
-  ],
-  "birthTime": "1943-05-12",
-  "deathTime": "2022-11-14",
+  "title": "Joël Jean-Louis Mesnard",
   "occupations": [
     "mathematician",
     "teacher",
@@ -11,5 +7,30 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1943-05-12"
+    },
+    {
+      "type": "image",
+      "name": "Mesnard aux <a href=\"https://www.les-repas-ufologiques.com/rencontres%20ufo%20chalons-en-champagne.htm\">rencontres de Châlons-en-Champagne</a> <time>2005-10</time>",
+      "sources": [
+        {
+          "title": "RUP"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2022-11-14",
+      "place": "Poitiers",
+      "sources": [
+        {
+          "title": "Acte numéro 2207"
+        }
+      ]
+    }
   ]
 }

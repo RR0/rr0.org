@@ -1,12 +1,21 @@
 {
   "title": "Villas Boas, Antônio",
-  "birthTime": "1934",
-  "deathTime": "1991-01-17",
   "occupations": [
     "farmer",
     "ufoWitness"
   ],
   "countries": [
     "br"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1934"
+    },
+    {
+      "type": "death",
+      "time": "1991-01-17",
+      "place": "Uberaba (Minas Gerais, Brésil)"
+    }
   ]
 }

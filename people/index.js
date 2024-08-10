@@ -7,13 +7,13 @@ let occupationInputs
 
 const form = document.getElementById('searchForm')
 
+function normalize (str) {
+  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim()
+}
+
+const textInput = form.querySelector("input[type='search']")
+
 window.findPeople = (_e) => {
-  const textInput = form.querySelector('input[type=\'search\']')
-
-  function normalize (str) {
-    return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim()
-  }
-
   const value = normalize(textInput.value)
   const list = document.querySelector('#searchForm + ul')
   let found = 0
@@ -39,6 +39,11 @@ window.findPeople = (_e) => {
   output.textContent = `${found > 0 ? found : 'Aucune'} personne${found > 1 ? 's' : ''} / ${list.children.length}`
 }
 
+window.setAll = function (type, value) {
+  document.querySelectorAll(`[id^=${type}-]`).forEach(el => el.checked = value)
+  textInput.dispatchEvent(new Event("input"))
+}
+
 countryInputs = Array.from(form.querySelectorAll('#countries input[type=checkbox]'))
 for (const countryInput of countryInputs) {
   countryInput.checked = true
@@ -48,4 +53,4 @@ for (const occupationInput of occupationInputs) {
   occupationInput.checked = true
 }
 form.style.display = 'block'
-form.querySelector('input').dispatchEvent(new Event('input'))
+textInput.dispatchEvent(new Event("input"))

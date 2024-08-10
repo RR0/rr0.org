@@ -5,21 +5,25 @@
   border: 1px solid gray;
   margin: 1em 0;
   display: none;
-}
 
-#searchForm .option {
-  column-width: 12em;
-}
+  .option {
+    column-width: 12em;
+  }
 
-#searchForm label, output {
-  padding: 0.5em 1em;
-  white-space: nowrap;
-}
+  .all {
+    text-align: right;
+  }
 
-#searchForm input[name="text"] {
-  margin-left: 0.5em;
-}
+  label, output {
+    padding: 0.5em 1em;
+    white-space: nowrap;
+  }
 
-#searchForm output {
-  color: gray;
+  input[name="text"] {
+    margin-left: 0.5em;
+  }
+
+  output {
+    color: gray;
+  }
 }

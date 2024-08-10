@@ -4,6 +4,9 @@
     "military",
     "priest"
   ],
+  "countries": [
+    "sa"
+  ],
   "events": [
     {
       "type": "birth",

@@ -3,6 +3,9 @@
     "ufoWitness2",
     "bishop"
   ],
+  "countries": [
+    "fr"
+  ],
   "events": [
     {
       "type": "birth",

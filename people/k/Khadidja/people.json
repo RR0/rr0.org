@@ -1,7 +1,19 @@
 {
-  "birthTime": "555",
-  "deathTime": "619",
-  "occupations": [],
+  "occupations": [
+    "salesman"
+  ],
   "countries": [
+    "sa"
+  ],
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "555"
+    },
+    {
+      "type": "death",
+      "time": "619"
+    }
   ]
 }

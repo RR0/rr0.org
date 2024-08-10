@@ -1,7 +1,28 @@
 {
-  "birthTime": "",
+  "title": "Edsger W. Dijkstra",
+  "surname": "Edgar",
   "occupations": [
     "softwareEngineer"
   ],
-  "countries": []
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1930-05-11",
+      "place": "Rotterdam (Pays-Bas)"
+    },
+    {
+      "type": "image",
+      "time": "1955",
+      "name": "Dijkstra <time>1955</time>",
+      "url": "/time/1/9/5/5/Dijkstra.jpg"
+    },
+    {
+      "type": "death",
+      "time": "2002-08-06",
+      "place": "Nuenen (Pays-Bas)"
+    }
+  ]
 }

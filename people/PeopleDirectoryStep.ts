@@ -183,7 +183,10 @@ export class PeopleDirectoryStep extends DirectoryStep {
     const ul = this.toList(context, peopleList, pseudoPeopleList, allCountries, occupations)
     output.contents = context.file.contents.replace(`<!--#echo var="directories" -->`, ul.outerHTML)
     {
-      let countriesHtml = ""
+      let countriesHtml = "<div class='all'>"
+      countriesHtml += `<label><input type="button" id="country-none" value="Aucun" onclick="setAll('country', false)"></label>`
+      countriesHtml += `<label><input type="button" id="country-all" value="Tous" onclick="setAll('country', true)"></label>`
+      countriesHtml += `</div>`
       for (const country of Array.from(allCountries).sort()) {
         const countryStr = context.messages.country[country].title
         countriesHtml += `<span class="option"><label><input type="checkbox" id="country-${country}" onchange="findPeople(event)"> ${countryStr}</label></span>`
@@ -192,7 +195,10 @@ export class PeopleDirectoryStep extends DirectoryStep {
         HtmlTag.toString("div", countriesHtml, {id: "countries"}))
     }
     {
-      let occupationsHtml = ""
+      let occupationsHtml = "<div class='all'>"
+      occupationsHtml += `<label><input type="button" id="occupation-none" value="Aucun" onclick="setAll('occupation', false)"></label>`
+      occupationsHtml += `<label><input type="button" id="occupation-all" value="Tous" onclick="setAll('occupation', true)"></label>`
+      occupationsHtml += `</div>`
       for (const occupation of Array.from(occupations).sort()) {
         const occupationStr = StringUtil.capitalizeFirstLetter(
           context.messages.people.occupation[occupation](Gender.male))

@@ -31,7 +31,8 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
     if (origEl.dateTime) {  // Already done?
       replacement = origEl
     } else {
-      const previousContext = origEl.dataset["context"] === "none" ? undefined : context.clone()
+      const previousContext = origEl.dataset.context === "none" ? undefined : context.clone()
+      const starting = origEl.dataset.starting && origEl.dataset.starting !== "false"
       const timeStr = origEl.textContent
       replacement = this.factory.create(context, timeStr, previousContext)
       if (!replacement) {

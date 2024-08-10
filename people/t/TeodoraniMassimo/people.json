@@ -1,5 +1,4 @@
 {
-  "birthTime": "1956",
   "occupations": [
     "ufologist",
     "astronomer",
@@ -7,5 +6,11 @@
   ],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1956"
+    }
   ]
 }

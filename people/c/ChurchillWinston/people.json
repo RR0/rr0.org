@@ -1,11 +1,32 @@
 {
-  "birthTime": "1874-11-30",
-  "deathTime": "1965-01-24",
   "occupations": [
     "politician",
     "leader"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1874-11-30",
+      "place": "Woodstock"
+    },
+    {
+      "type": "image",
+      "url": "/time/1/9/5/1/Berlin_ChurchillWinston.jpg",
+      "time": "1951"
+    },
+    {
+      "type": "image",
+      "url": "/time/1/9/5/2/07/28/Churchill-Cherwell.jpg",
+      "name": "La question de Churchill sur les ovnis",
+      "time": "1952-07-28"
+    },
+    {
+      "type": "death",
+      "time": "1965-01-24",
+      "place": "London (UK)"
+    }
   ]
 }

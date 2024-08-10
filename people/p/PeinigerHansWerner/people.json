@@ -1,0 +1,15 @@
+{
+  "occupations": [
+    "engineer"
+  ],
+  "countries": [
+    "de"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1957-03-18",
+      "place": "Allemagne"
+    }
+  ]
+}

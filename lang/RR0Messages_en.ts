@@ -79,6 +79,7 @@ export class RR0Messages_en implements RR0Messages {
       },
       on: (approximate: boolean): string => (approximate ? "around " : "on "),
       in: (approximate: boolean): string => (approximate ? "around " : ""),
+      starting: (approximate: boolean): string => "Starting " + (approximate ? "" : "the "),
       fromTo: (startReplacement: string, endReplacement: string): string => startReplacement + " to " + endReplacement
     }
   }

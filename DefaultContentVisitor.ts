@@ -4,7 +4,6 @@ import { ContentVisitor } from "./RR0ContentStep"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import path from "path"
 import { RR0Data } from "./RR0Data"
-import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
 import { EventRenderer } from "./time/EventRenderer"
 import { People } from "./people/People"
 import { RR0Event } from "./event/RR0Event"
@@ -118,7 +117,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       eventP.append(timeEl)
       if (event.place) {
         eventP.append(" à ")
-        const birthPlace = this.placeElement(context, event.place)
+        const birthPlace = this.eventRenderer.placeElement(context, event.place)
         eventP.append(birthPlace)
       }
       const sources = event.sources
@@ -145,7 +144,7 @@ export class DefaultContentVisitor implements ContentVisitor {
     eventP.append(timeEl)
     if (event.place) {
       eventP.append(" à ")
-      const birthPlace = this.placeElement(context, event.place)
+      const birthPlace = this.eventRenderer.placeElement(context, event.place)
       eventP.append(birthPlace)
     }
     const sources = event.sources
@@ -180,14 +179,6 @@ export class DefaultContentVisitor implements ContentVisitor {
     } else {
       context.warn("no .content in " + context.file.name)
     }
-  }
-
-  private placeElement(context: HtmlRR0SsgContext, namedPlace: NamedPlace) {
-    const doc = context.file.document
-    const birthPlace = doc.createElement("span")
-    birthPlace.className = "place"
-    birthPlace.textContent = namedPlace.name
-    return birthPlace
   }
 
   protected processTitle(context: HtmlRR0SsgContext, data: RR0Data) {

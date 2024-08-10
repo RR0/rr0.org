@@ -5,6 +5,7 @@ import { SourceRenderer } from "../source/SourceRenderer"
 import { Source } from "../source/Source"
 import { SourceFactory } from "../source/SourceFactory"
 import { NoteRenderer } from "../note/NoteRenderer"
+import { NamedPlace } from "./datasource/rr0/RR0CaseSummary"
 
 /**
  * Render a case summary as HTML.
@@ -15,16 +16,24 @@ export class EventRenderer<D extends RR0Data> {
               readonly sourceRenderer: SourceRenderer) {
   }
 
-  async render(context: HtmlRR0SsgContext, rr0Case: D): Promise<HTMLLIElement> {
+  async render(context: HtmlRR0SsgContext, data: D): Promise<HTMLLIElement> {
     const outDoc = context.file.document
     const item = outDoc.createElement("li")
-    await this.renderContent(context, rr0Case, item)
+    await this.renderContent(context, data, item)
     return item
   }
 
-  async renderContent(context: HtmlRR0SsgContext, rr0Data: D, container: HTMLElement) {
+  placeElement(context: HtmlRR0SsgContext, namedPlace: NamedPlace) {
+    const doc = context.file.document
+    const birthPlace = doc.createElement("span")
+    birthPlace.className = "place"
+    birthPlace.textContent = namedPlace.name || ""
+    return birthPlace
+  }
+
+  async renderContent(context: HtmlRR0SsgContext, data: D, container: HTMLElement) {
     const outDoc = context.file.document
-    const time = rr0Data.time
+    const time = data.time
     const timeEl = outDoc.createElement("time") as HTMLTimeElement
     const timeValue = timeEl.dateTime = time.toString()
     const dataContext = context.clone()
@@ -35,20 +44,17 @@ export class EventRenderer<D extends RR0Data> {
     }
     timeEl.textContent = TimeTextBuilder.build(dataContext)
     container.append(timeEl)
-    const place = rr0Data.place
+    const place = data.place
     if (place) {
       container.append(" À ")
-      const placeEl = outDoc.createElement("span")
-      placeEl.className = "place"
-      placeEl.textContent = place?.name || ""
-      container.append(placeEl)
+      container.append(this.placeElement(context, place))
     }
-    container.append(", ", rr0Data.description)
-    const notes = rr0Data.notes
+    container.append(", ", data.description)
+    const notes = data.notes
     if (notes) {
       await this.renderNotes(context, notes, container)
     }
-    const sources = rr0Data.sources
+    const sources = data.sources
     if (sources) {
       await this.renderSources(context, sources, container)
     }

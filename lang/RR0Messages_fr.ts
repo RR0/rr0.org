@@ -50,6 +50,7 @@ export class RR0Messages_fr implements RR0Messages {
       },
       on: (approximate: boolean): string => (approximate ? "vers " : "") + "le ",
       in: (approximate: boolean): string => (approximate ? "vers " : "en "),
+      starting: (approximate: boolean): string => "À partir " + (approximate ? "de " : "du "),
       fromTo: (startReplacement: string, endReplacement: string): string => `${startReplacement} à ${endReplacement}`
     }
   }

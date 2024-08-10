@@ -1,0 +1,16 @@
+{
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "ga",
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1982-09-13",
+      "place": "Libreville (Gabon)"
+    }
+  ]
+}

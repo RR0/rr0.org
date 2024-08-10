@@ -91,6 +91,7 @@ export interface RR0Messages {
       fromTo(startReplacement: string, endReplacement: string): string
       on(approximate: boolean): string
       in(approximate: boolean): string
+      starting(approximate: boolean): string
     }
   }
   case: CaseMessages

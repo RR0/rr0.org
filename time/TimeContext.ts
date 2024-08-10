@@ -27,7 +27,8 @@ export class TimeContext {
     protected _year?: number, protected _month?: number, protected _dayOfMonth?: number,
     protected _hour?: number, protected _minutes?: number, protected _timeZone?: string,
     public approximate: boolean = false,
-    public approximateTime: boolean = false
+    public approximateTime: boolean = false,
+    public starting: boolean = false
   ) {
   }
 

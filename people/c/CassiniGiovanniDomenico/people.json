@@ -1,0 +1,28 @@
+{
+  "title": "Giovanni Domenico Cassini",
+  "occupations": [
+    "astronomer"
+  ],
+  "pseudonyms": [
+    "Jean-Dominique Cassini"
+  ],
+  "countries": [
+    "it",
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1625-06-08",
+      "place": "Perinaldo (comté de Nice, Savoie)",
+      "notes": [
+        "alors italienne"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1712-09-14",
+      "place": "Paris (France)"
+    }
+  ]
+}

@@ -1,13 +1,11 @@
 {
-  "title": "Gesellschaft für Anomalistik",
-  "name": "GfA",
+  "title": "GfA",
   "kind": "nonprofit",
   "url": "https://www.anomalistik.de",
   "events": [
     {
-      "people": "Hans-Werner Peiniger",
       "type": "birth",
-      "time": "1972"
+      "time": "1999"
     }
   ]
 }

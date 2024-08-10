@@ -52,6 +52,7 @@ export const countryMessageList_fr: CountryMessagesList = {
   es: spain_fr,
   fi: finland_fr,
   fr: france_fr,
+  ga: CountryMessages.create("Gabon"),
   ge: georgia_fr,
   gr: CountryMessages.create("Grèce"),
   hu: CountryMessages.create("Hongrie"),

@@ -108,6 +108,11 @@ export enum CountryCode {
   fr = "fr",
 
   /**
+   * GAbon
+   */
+  ga = "ga",
+
+  /**
    * GEorgia
    */
   ge = "ge",

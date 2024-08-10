@@ -1,7 +1,19 @@
 {
-  "birthTime": "1955-11-11",
+  "url": "https://village.flashnet.it/users/rm5992ax",
   "occupations": ["ufologist", "dentist"],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1955-11-11",
+      "place": "Imola (Bologne, Italie)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Conti à une convention à Pavia <time>2002-12-13</time>, (organisée par Paul Bolognesi et Carl Sabadin) \"les lumières de <a href=\"/science/crypto/ufo/observation/projet/Hessdalen\">Hessdalen</a> et l'ufologie instrumentale\""
+    }
   ]
 }

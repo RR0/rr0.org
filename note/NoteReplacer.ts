@@ -1,25 +1,12 @@
-import { HtmlSsgContext } from "ssg-api"
-import { ReferenceGenerator } from "../ReferenceGenerator"
+import { NoteRenderer } from "./NoteRenderer"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
 
 export class NoteReplacer {
 
-  constructor(protected counter: ReferenceGenerator<any>) {
+  constructor(protected renderer: NoteRenderer) {
   }
 
-  replacement(context: HtmlSsgContext, original: HTMLElement): HTMLElement {
-    const noteId = this.counter.next(context)
-    const outputDoc = context.file.document
-    const replacement = outputDoc.createElement("span")
-    replacement.className = "note-id"
-    replacement.ariaLabel = "Note"
-    replacement.textContent = noteId
-    const contents = outputDoc.createElement("span")
-    contents.className = "note-contents"
-    contents.innerHTML = original.innerHTML
-    const anchor = outputDoc.createElement("span")
-    anchor.id = noteId
-    anchor.className = "anchor"
-    replacement.append(anchor, contents)
-    return replacement
+  replacement(context: HtmlRR0SsgContext, original: HTMLElement): HTMLElement {
+    return this.renderer.render(context, original.innerHTML)
   }
 }

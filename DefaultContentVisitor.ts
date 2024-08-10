@@ -8,14 +8,12 @@ import { NamedPlace } from "./time/datasource/rr0/RR0CaseSummary"
 import { EventRenderer } from "./time/EventRenderer"
 import { People } from "./people/People"
 import { RR0Event } from "./event/RR0Event"
-import { SourceFactory } from "./source/SourceFactory"
-import { Source } from "./source/Source"
 import assert from "assert"
 
 export class DefaultContentVisitor implements ContentVisitor {
 
   constructor(protected service: DataService, protected eventRenderer: EventRenderer<RR0Data>,
-              protected timeElementFactory: TimeElementFactory, protected sourceFactory: SourceFactory) {
+              protected timeElementFactory: TimeElementFactory) {
   }
 
   async visit(context: HtmlRR0SsgContext) {
@@ -81,7 +79,7 @@ export class DefaultContentVisitor implements ContentVisitor {
         imgEl.src = src
         imgEl.alt = imageData.title
         const figcaptionEl = doc.createElement("figcaption")
-        figcaptionEl.textContent = caption
+        figcaptionEl.innerHTML = caption
         const figureEl = doc.createElement("figure")
         figureEl.classList.add(side, "side")
         figureEl.append(imgEl)
@@ -90,16 +88,6 @@ export class DefaultContentVisitor implements ContentVisitor {
         contents.insertBefore(figureEl, insertEl)
       }
     }
-  }
-
-  protected async renderSources(context: HtmlRR0SsgContext, sources: Source[], eventP: HTMLParagraphElement) {
-    const resolvedSources: Source[] = []
-    for (const source of sources) {
-      const href = source.url
-      const resolvedSource = href ? await this.sourceFactory.create(context, href.toString()) : source
-      resolvedSources.push(resolvedSource)
-    }
-    await this.eventRenderer.renderSources(context, resolvedSources, eventP)
   }
 
   protected timeParagraph(context: HtmlRR0SsgContext, event: RR0Data) {
@@ -137,6 +125,10 @@ export class DefaultContentVisitor implements ContentVisitor {
       if (sources) {
         await this.eventRenderer.renderSources(context, sources, eventP)
       }
+      const notes = event.notes
+      if (notes) {
+        await this.eventRenderer.renderNotes(context, notes, eventP)
+      }
       eventP.append(".")
       const insertEl = parentEl.firstElementChild
       parentEl.insertBefore(eventP, insertEl)
@@ -158,7 +150,11 @@ export class DefaultContentVisitor implements ContentVisitor {
     }
     const sources = event.sources
     if (sources) {
-      await this.renderSources(context, sources, eventP)
+      await this.eventRenderer.renderSources(context, sources, eventP)
+    }
+    const notes = event.notes
+    if (notes) {
+      await this.eventRenderer.renderNotes(context, notes, eventP)
     }
     eventP.append(".")
     const insertEl = context.file.document.querySelector(".contents > p:last-of-type")
@@ -178,7 +174,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       const bookDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
       bookEl.append(bookDateEl, " ")
       bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
-      await this.renderSources(context, bookData.sources, bookEl)
+      await this.eventRenderer.renderSources(context, bookData.sources, bookEl)
       bookEl.append(".")
       parentEl.append(bookEl)
     } else {

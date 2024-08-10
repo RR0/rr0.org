@@ -13,6 +13,17 @@
   "discredited": true,
   "events": [
     {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Allen entre la fin des années 1980s et le début des années 1990s"
+    },
+    {
+      "type": "image",
+      "time": "~1983",
+      "url": "AllendeCarlos.jpg",
+      "name": "Allende photographié par <span class=\"people\">Linda Strand</span> vers<time>1983</time>"
+    },
+    {
       "type": "birth",
       "time": "1925-05-31",
       "place": "Springdale (Pennsylvanie)",

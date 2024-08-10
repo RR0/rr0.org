@@ -3,13 +3,16 @@ import { TimeTextBuilder } from "./TimeTextBuilder"
 import { RR0Data } from "../RR0Data"
 import { SourceRenderer } from "../source/SourceRenderer"
 import { Source } from "../source/Source"
+import { SourceFactory } from "../source/SourceFactory"
+import { NoteRenderer } from "../note/NoteRenderer"
 
 /**
  * Render a case summary as HTML.
  */
 export class EventRenderer<D extends RR0Data> {
 
-  constructor(readonly sourceRenderer: SourceRenderer) {
+  constructor(protected noteRenderer: NoteRenderer, protected sourceFactory: SourceFactory,
+              readonly sourceRenderer: SourceRenderer) {
   }
 
   async render(context: HtmlRR0SsgContext, rr0Case: D): Promise<HTMLLIElement> {
@@ -41,6 +44,10 @@ export class EventRenderer<D extends RR0Data> {
       container.append(placeEl)
     }
     container.append(", ", rr0Data.description)
+    const notes = rr0Data.notes
+    if (notes) {
+      await this.renderNotes(context, notes, container)
+    }
     const sources = rr0Data.sources
     if (sources) {
       await this.renderSources(context, sources, container)
@@ -48,10 +55,18 @@ export class EventRenderer<D extends RR0Data> {
     container.append(".")
   }
 
-  async renderSources(context: HtmlRR0SsgContext, sources: Source[], container: HTMLElement) {
-    sources.forEach(source => {
-      const sourceEl = this.sourceRenderer.render(context, source)
+  async renderNotes(context: HtmlRR0SsgContext, notes: string[], container: HTMLElement) {
+    for (const noteStr of notes) {
+      const sourceEl = this.noteRenderer.render(context, noteStr)
       container.append(" ", sourceEl)
-    })
+    }
+  }
+  async renderSources(context: HtmlRR0SsgContext, sources: Source[], container: HTMLElement) {
+    for (const source of sources) {
+      const href = source.url
+      const resolvedSource = href ? await this.sourceFactory.create(context, href.toString()) : source
+      const sourceEl = this.sourceRenderer.render(context, resolvedSource)
+      container.append(" ", sourceEl)
+    }
   }
 }

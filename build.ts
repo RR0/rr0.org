@@ -84,6 +84,7 @@ import { OrganizationFactory } from "./org/OrganizationFactory"
 import { APIFactory } from "./tech/info/soft/APIFactory"
 import { RR0EventFactory } from "./event/RR0EventFactory"
 import { DefaultDataFactory } from "./DefaultDataFactory"
+import { NoteRenderer } from "./note/NoteRenderer"
 
 interface RR0BuildArgs {
   /**
@@ -230,7 +231,12 @@ timeService.getFiles().then(async (timeFiles) => {
   const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false})
   const baseUrl = "https://rr0.org"
   const sourceRenderer = new SourceRenderer()
-  const caseRenderer = new CaseSummaryRenderer(sourceRenderer)
+  const sourceRegistryFileName = "source/index.json"
+  const http = new HttpSource()
+  const sourceFactory = new PersisentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName)
+  const noteCounter = new NoteFileCounter()
+  const noteRenderer = new NoteRenderer(noteCounter)
+  const caseRenderer = new CaseSummaryRenderer(noteRenderer, sourceFactory, sourceRenderer)
   const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
   // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
   const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
@@ -255,15 +261,11 @@ timeService.getFiles().then(async (timeFiles) => {
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new AuthorReplaceCommand(timeService)
   ]
-  const http = new HttpSource()
-  const sourceRegistryFileName = "source/index.json"
-  const sourceFactory = new PersisentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName)
 //  const sourceCounter = new SourceFileCounter()
   const sourceCounter = new SourceFileCounter()
   const sourceReplacer = new SourceReplacer(sourceRenderer, sourceFactory, sourceCounter)
   const sourceReplacerFactory = new SourceReplacerFactory(sourceReplacer)
-  const noteCounter = new NoteFileCounter()
-  const noteReplacer = new NoteReplacer(noteCounter)
+  const noteReplacer = new NoteReplacer(noteRenderer)
   const noteReplacerFactory = new NoteReplacerFactory(noteReplacer)
   const eventReplacer = new EventReplacer(caseRenderer, dataService)
   const contentsReplaceCommand = [
@@ -296,7 +298,7 @@ timeService.getFiles().then(async (timeFiles) => {
   ssg.add(ufoCasesStep)
   ssg.add(...peopleSteps)
   if (contentRoots) {
-    const contentVisitor = new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory, sourceFactory)
+    const contentVisitor = new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory)
     const contentVisitors: ContentVisitor[] = [contentVisitor]
     if (args.books) {
       contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))

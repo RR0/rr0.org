@@ -84,6 +84,11 @@ export class RR0Data {
   readonly sources?: Source[]
 
   /**
+   *
+   */
+  readonly notes?: string[]
+
+  /**
    * Keywords about that data.
    */
   tags?: string[]

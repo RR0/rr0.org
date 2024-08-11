@@ -1,7 +1,13 @@
 {
-  "birthTime": "1959",
   "occupations": ["ufologist"],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1959",
+      "place": "Grande Bretagne"
+    }
   ]
 }

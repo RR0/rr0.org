@@ -1,9 +1,17 @@
 {
-  "birthTime": "1946-01-10",
+  "title": "Joseph McMoneagle",
+  "surname": "Jo",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946-01-10",
+      "place": "Miami (Floride)"
+    }
   ]
 }

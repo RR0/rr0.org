@@ -1,9 +1,15 @@
 {
-  "birthTime": "1913",
+  "title": "Robert Bright McLaughlin",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913"
+    }
   ]
 }

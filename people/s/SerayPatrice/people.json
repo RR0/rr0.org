@@ -1,9 +1,15 @@
 {
-  "birthTime": "1957-05-27",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1957-05-27",
+      "place": "Paris 13ᵉ"
+    }
   ]
 }

@@ -1,5 +1,4 @@
 {
-  "birthTime": "1955",
   "occupations": [
     "ufologist",
     "journalist"
@@ -9,5 +8,17 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-08-03",
+      "place": "Castres",
+      "sources": [
+        {
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb13185541k"
+        }
+      ]
+    }
   ]
 }

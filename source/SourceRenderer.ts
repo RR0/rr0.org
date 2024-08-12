@@ -35,12 +35,14 @@ export class SourceRenderer {
       if ((source as Source).url) {   // Online source?
         const onlineSource = source as Source
         const sourceLink = doc.createElement("a") as HTMLAnchorElement
-        sourceLink.textContent = title
+        sourceLink.innerHTML = title
         const url = onlineSource.url
         sourceLink.href = url instanceof URL ? url.href : url
         container.appendChild(sourceLink)
       } else {
-        container.append(title)
+        const titleEl = doc.createElement("span")
+        titleEl.innerHTML = title
+        container.append(titleEl)
       }
     }
     const publication = source.publication

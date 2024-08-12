@@ -1,9 +1,25 @@
 {
-  "birthTime": "2003-09",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1960-08-29",
+      "place": "Issy-les-Moulineaux (Hauts-de-Seine)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Rocher <time>2003-09</time> à la foire régionale de Chalons-en-Champagne",
+      "sources": [
+        {
+          "title": "RUP"
+        }
+      ]
+    }
   ]
 }

@@ -79,10 +79,19 @@ export class DefaultContentVisitor implements ContentVisitor {
         imgEl.alt = imageData.title
         const figcaptionEl = doc.createElement("figcaption")
         figcaptionEl.innerHTML = caption
+        const sources = imageData.sources
+        if (sources) {
+          await this.eventRenderer.renderSources(context, sources, figcaptionEl)
+        }
+        const notes = imageData.notes
+        if (notes) {
+          await this.eventRenderer.renderNotes(context, notes, figcaptionEl)
+        }
         const figureEl = doc.createElement("figure")
         figureEl.classList.add(side, "side")
         figureEl.append(imgEl)
         figureEl.append(figcaptionEl)
+
         const insertEl = contents.querySelector("*")
         contents.insertBefore(figureEl, insertEl)
       }
@@ -117,8 +126,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       eventP.append(timeEl)
       if (event.place) {
         eventP.append(" à ")
-        const birthPlace = this.eventRenderer.placeElement(context, event.place)
-        eventP.append(birthPlace)
+        eventP.append(this.eventRenderer.placeElement(context, event.place))
       }
       const sources = event.sources
       if (sources) {
@@ -129,6 +137,7 @@ export class DefaultContentVisitor implements ContentVisitor {
         await this.eventRenderer.renderNotes(context, notes, eventP)
       }
       eventP.append(".")
+
       const insertEl = parentEl.firstElementChild
       parentEl.insertBefore(eventP, insertEl)
     } else {

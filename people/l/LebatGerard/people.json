@@ -1,8 +1,26 @@
 {
-  "birthTime": "1949-11-07",
-  "occupations": ["ufologist"],
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "fr"
   ],
-  "image": "time/2/0/0/5/10/Lebat_Chalons.jpg"
+  "image": "time/2/0/0/5/10/Lebat_Chalons.jpg",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1949-11-07"
+    },
+    {
+      "type": "image",
+      "url": "/time/1/9/6/8/Lebat1.jpg",
+      "time": "1968",
+      "title": "Lebat",
+      "sources": [
+        {
+          "place": "Bulletin des Postes et Télécommunications"
+        }
+      ]
+    }
+  ]
 }

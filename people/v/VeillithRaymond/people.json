@@ -1,9 +1,40 @@
 {
-  "birthTime": "1920",
+  "title": "Raymond Eugène Leopold Veillith",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1920-07-05",
+      "place": "Saint-Étienne (Loire)",
+      "sources": [
+        {
+          "title": "Veillith, <a href=\"mailto:lucas_rv@hotmail.fr\">Lucas Rocher</a>: Courrier à RR0",
+          "time": "2008-09-28"
+        },
+        {
+          "url": "https://gw.geneanet.org/aveillith?n=veillith&oc=&p=raymond+eugene+leopold"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2009-09-08",
+      "place": "Tence (Haute Loire)",
+      "sources": [
+        {
+          "url": "https://www.libramemoria.com/defunts/veillith-raymond/be363b13d1f24dd3853e4d6c9351248b"
+        },
+        {
+          "title": "raymond veillith, 1920-2009",
+          "time": "2009-11",
+          "place": "Lumières dans la nuit n° 396"
+        }
+      ]
+    }
   ]
 }

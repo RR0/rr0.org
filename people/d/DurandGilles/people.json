@@ -1,7 +1,23 @@
 {
-  "birthTime": "1955",
   "occupations": ["ufologist"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1955"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "Gilles Durand, secrétaire du <a href=\"/org/eu/fr/asso/sceau\">SCEAU</a>",
+          "people": "Jean-Pierre Laviano",
+          "place": "Repas Ufologiques Parisiens"
+        }
+      ]
+    }
   ]
 }

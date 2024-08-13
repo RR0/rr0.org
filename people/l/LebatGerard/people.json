@@ -1,4 +1,5 @@
 {
+  "url": "https://ovni-maroc.blogspot.com",
   "occupations": [
     "ufologist"
   ],
@@ -19,6 +20,15 @@
       "sources": [
         {
           "place": "Bulletin des Postes et Télécommunications"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2012-11",
+      "sources": [
+        {
+          "title": "L'histoire des ovnis au Maroc"
         }
       ]
     }

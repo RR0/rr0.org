@@ -52,8 +52,9 @@ export class DefaultContentVisitor implements ContentVisitor {
           await this.processDeath(context, event, data)
           break
         default:
-          const eventEl = await this.eventRenderer.render(context, event)
-          doc.append(eventEl)
+          const {eventP, timeEl} = this.timeParagraph(context, event)
+          await this.eventRenderer.renderContent(context, event, eventP)
+          doc.append(eventP)
       }
     }
     const minTime = context.time.min
@@ -182,7 +183,10 @@ export class DefaultContentVisitor implements ContentVisitor {
       const bookDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
       bookEl.append(bookDateEl, " ")
       bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
-      await this.eventRenderer.renderSources(context, bookData.sources, bookEl)
+      const sources = bookData.sources
+      if (sources) {
+        await this.eventRenderer.renderSources(context, sources, bookEl)
+      }
       bookEl.append(".")
       parentEl.append(bookEl)
     } else {

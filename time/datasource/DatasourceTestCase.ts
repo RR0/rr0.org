@@ -7,6 +7,7 @@ import { Source } from "../../source/Source"
 import { RR0UfoCase } from "./RR0UfoCase"
 import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
 import { SourceRenderer } from "../../source/SourceRenderer"
+import { NoteRenderer } from "../../note/NoteRenderer"
 
 export abstract class DatasourceTestCase<S extends RR0UfoCase> {
 
@@ -53,7 +54,7 @@ export abstract class DatasourceTestCase<S extends RR0UfoCase> {
     const sourceCases = await this.mapping.datasource.fetch(context)
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
     const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
-    const eventRenderer = new CaseSummaryRenderer(new SourceRenderer())
+    const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(), new SourceFactory(), new SourceRenderer())
     const itemsPromises = cases.map(c => eventRenderer.render(context, c))
     const items = await Promise.all(itemsPromises)
     expect(items.length).toBe(sourceCases.length)

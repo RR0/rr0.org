@@ -1,0 +1,46 @@
+{
+  "title": "Rémy Fauchereau",
+  "occupations": [
+    "nurse",
+    "ufologist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953"
+    },
+    {
+      "type": "book",
+      "time": "2008",
+      "sources": [
+        {
+          "title": "Cinquante ans de manifestations OVNI dans l'Yonne",
+          "place": "La Gazette 89 éditions, Egriselles-le-Bocage"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2009",
+      "sources": [
+        {
+          "title": "OVNI dans l'Yonne : la vague de novembre 1990",
+          "place": "La Gazette 89 éditions, Egriselles-le-Bocage"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2014",
+      "sources": [
+        {
+          "title": "Inventaire 1872-2014 des manifestations OVNI dans l'Yonne",
+          "place": "La Gazette 89 éditions, Egriselles-le-Bocage"
+        }
+      ]
+    }
+  ]
+}

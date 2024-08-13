@@ -49,9 +49,11 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
         const merge = mapping.actions.write.includes("pages")
         if (merge) {
           const allCases = existingCases.concat(casesToAdd)
-          const itemsPromises = allCases.map(c => this.renderer.render(context, c))
-          for await (const item of itemsPromises) {
-            element.append(item)
+          for (const c of allCases) {
+            const outDoc = context.file.document
+            const eventEl = outDoc.createElement("li")
+            await this.renderer.renderContent(context, c, eventEl)
+            element.append(eventEl)
           }
         }
       }

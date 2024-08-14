@@ -1,11 +1,20 @@
 {
-  "birthTime": "-287",
-  "deathTime": "-212",
+  "title": "Archimède",
   "occupations": [
     "physicist",
     "mathematician"
   ],
   "countries": [
     "gr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "~-287"
+    },
+    {
+      "type": "death",
+      "time": "~-212"
+    }
   ]
 }

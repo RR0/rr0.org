@@ -66,38 +66,6 @@ export class DefaultContentVisitor implements ContentVisitor {
     context.file.contents = context.file.serialize()
   }
 
-  protected async processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {
-    const doc = context.file.document
-    const contents = doc.querySelector(".contents")
-    if (contents) {
-      const side = context.people ? "left" : "right"
-      const imgEl = contents.querySelector("img")
-      const caption = imageData.name
-      const src = imageData.url
-      if (imgEl?.src !== src) {
-        const imgEl = doc.createElement("img")
-        imgEl.src = src
-        imgEl.alt = imageData.title
-        const figcaptionEl = doc.createElement("figcaption")
-        figcaptionEl.innerHTML = caption
-        const sources = imageData.sources
-        if (sources) {
-          await this.eventRenderer.renderSources(context, sources, figcaptionEl)
-        }
-        const notes = imageData.notes
-        if (notes) {
-          await this.eventRenderer.renderNotes(context, notes, figcaptionEl)
-        }
-        const figureEl = doc.createElement("figure")
-        figureEl.classList.add(side, "side")
-        figureEl.append(imgEl)
-        figureEl.append(figcaptionEl)
-
-        const insertEl = contents.querySelector("*")
-        contents.insertBefore(figureEl, insertEl)
-      }
-    }
-  }
 
   protected timeParagraph(context: HtmlRR0SsgContext, event: RR0Data) {
     const eventP = context.file.document.createElement("p")
@@ -117,6 +85,33 @@ export class DefaultContentVisitor implements ContentVisitor {
     return {eventP, timeEl}
   }
 
+  protected async processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {
+    const doc = context.file.document
+    const contents = doc.querySelector(".contents")
+    if (contents) {
+      const side = context.people ? "left" : "right"
+      const imgEl = contents.querySelector("img")
+      const caption = imageData.name
+      const src = imageData.url
+      if (imgEl?.src !== src) {
+        const imgEl = doc.createElement("img")
+        imgEl.src = src
+        imgEl.alt = imageData.title
+        const figcaptionEl = doc.createElement("figcaption")
+        figcaptionEl.innerHTML = caption
+        await this.eventRenderer.renderEnd(context, imageData, figcaptionEl)
+
+        const figureEl = doc.createElement("figure")
+        figureEl.classList.add(side, "side")
+        figureEl.append(imgEl)
+        figureEl.append(figcaptionEl)
+
+        const insertEl = contents.querySelector("*")
+        contents.insertBefore(figureEl, insertEl)
+      }
+    }
+  }
+
   protected async processBirth(context: HtmlRR0SsgContext, event: RR0Data, entity: RR0Data) {
     const parentEl = context.file.document.querySelector(".contents")
     if (parentEl) {
@@ -129,15 +124,7 @@ export class DefaultContentVisitor implements ContentVisitor {
         eventP.append(" à ")
         eventP.append(this.eventRenderer.placeElement(context, event.place))
       }
-      const sources = event.sources
-      if (sources) {
-        await this.eventRenderer.renderSources(context, sources, eventP)
-      }
-      const notes = event.notes
-      if (notes) {
-        await this.eventRenderer.renderNotes(context, notes, eventP)
-      }
-      eventP.append(".")
+      await this.eventRenderer.renderEnd(context, event, eventP)
 
       const insertEl = parentEl.firstElementChild
       parentEl.insertBefore(eventP, insertEl)
@@ -157,15 +144,8 @@ export class DefaultContentVisitor implements ContentVisitor {
       const birthPlace = this.eventRenderer.placeElement(context, event.place)
       eventP.append(birthPlace)
     }
-    const sources = event.sources
-    if (sources) {
-      await this.eventRenderer.renderSources(context, sources, eventP)
-    }
-    const notes = event.notes
-    if (notes) {
-      await this.eventRenderer.renderNotes(context, notes, eventP)
-    }
-    eventP.append(".")
+    await this.eventRenderer.renderEnd(context, event, eventP)
+
     const insertEl = context.file.document.querySelector(".contents > p:last-of-type")
     if (insertEl) {
       insertEl.parentNode.append(eventP)
@@ -183,11 +163,8 @@ export class DefaultContentVisitor implements ContentVisitor {
       const bookDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
       bookEl.append(bookDateEl, " ")
       bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
-      const sources = bookData.sources
-      if (sources) {
-        await this.eventRenderer.renderSources(context, sources, bookEl)
-      }
-      bookEl.append(".")
+      await this.eventRenderer.renderEnd(context, bookData, bookEl)
+
       parentEl.append(bookEl)
     } else {
       context.warn("no .content in " + context.file.name)

@@ -1,11 +1,26 @@
 {
-  "birthTime": "1930-08-05",
-  "deathTime": "2012-08-25",
+  "title": "Neil A. Armstrong",
   "occupations": [
     "pilot",
     "astronaut"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1930-08-05",
+      "place": "Wapakoneta (Ohio)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Armstrong juste après sa 1ère marche sur la Lune"
+    },
+    {
+      "type": "death",
+      "time": "2012-08-25"
+    }
   ]
 }

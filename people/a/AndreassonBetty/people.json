@@ -1,9 +1,14 @@
 {
-  "birthTime": "1937",
   "occupations": [
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1937"
+    }
   ]
 }

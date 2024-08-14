@@ -1,6 +1,25 @@
 {
-  "birthTime": "1924-05-10",
-  "deathTime": "2004-03-18",
+  "title": "Roy F. Craig",
   "occupations": ["physicist", "chemist"],
-  "countries": ["us"]
+  "pseudonyms": [
+    "John D'Arcey"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924-05-10",
+      "place": "Florida Mesa"
+    },
+    {
+      "type": "death",
+      "time": "2004-03-18",
+      "place": "La Boca (Colorado, USA)",
+      "notes": [
+        "Ranch au Sud d'Ignacio"
+      ]
+    }
+  ]
 }

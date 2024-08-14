@@ -31,6 +31,18 @@ export class EventRenderer<D extends RR0Data> {
     return birthPlace
   }
 
+  async renderEnd(context: HtmlRR0SsgContext, event: RR0Data, container: HTMLElement) {
+    const sources = event.sources
+    if (sources) {
+      await this.renderSources(context, sources, container)
+    }
+    const notes = event.notes
+    if (notes) {
+      await this.renderNotes(context, notes, container)
+    }
+    container.append(".")
+  }
+
   async renderContent(context: HtmlRR0SsgContext, data: D, container: HTMLElement) {
     const outDoc = context.file.document
     const time = data.time

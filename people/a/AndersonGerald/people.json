@@ -1,10 +1,16 @@
 {
-  "birthTime": "1941",
+  "surname": "Gerry",
   "occupations": [
     "ufoWitness"
   ],
   "countries": [
     "us"
   ],
-  "discredited": true
+  "discredited": true,
+  "events": [
+    {
+      "type": "birth",
+      "time": "1941"
+    }
+  ]
 }

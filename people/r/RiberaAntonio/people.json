@@ -1,10 +1,24 @@
 {
-  "birthTime": "1920-01-15",
-  "deathTime": "2001-09-23",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "es"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1920-01-15",
+      "place": "Barcelone (Espagne)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Ribera <time>1968</time>, alors élu président d'honneur du CEI"
+    },
+    {
+      "type": "death",
+      "time": "2001-09-23"
+    }
   ]
 }

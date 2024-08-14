@@ -1,6 +1,14 @@
 {
+  "title": "Frantz Crébely",
   "occupations": ["ufologist"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946",
+      "place": "Tourves"
+    }
   ]
 }

@@ -1,6 +1,5 @@
 import { TimeContext } from "./time/TimeContext"
 import { CaseDirectoryStep } from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
-import { PeopleDirectoryStep } from "./people/PeopleDirectoryStep"
 import { promise as glob } from "glob-promise"
 import { GooglePlaceService } from "./place/GooglePlaceService"
 import { OrganizationService } from "./org/OrganizationService"
@@ -85,6 +84,7 @@ import { APIFactory } from "./tech/info/soft/APIFactory"
 import { RR0EventFactory } from "./event/RR0EventFactory"
 import { DefaultDataFactory } from "./DefaultDataFactory"
 import { NoteRenderer } from "./note/NoteRenderer"
+import { PeopleDirectoryFactory } from "./people/PeopleDirectoryFactory"
 
 interface RR0BuildArgs {
   /**
@@ -209,7 +209,8 @@ timeService.getFiles().then(async (timeFiles) => {
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
-  const peopleSteps = await PeopleDirectoryStep.create(outputFunc, config, peopleService)
+  const peopleDirectoryFactory = new PeopleDirectoryFactory(outputFunc, config, peopleService)
+  const peopleSteps = await peopleDirectoryFactory.create()
   // Publish case.json files so that vraiufo.com will find them
   copies.push(...(ufoCasesStep.config.rootDirs).map(dir => path.join(dir, "case.json")))
   await FileUtil.writeFile(path.join(outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.config.rootDirs), "utf-8")

@@ -1,9 +1,26 @@
 {
+  "title": "Raoul Robé",
   "occupations": [
     "ufologist",
     "artist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1958"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Robé pendant la chronique de Jean Librero <time>2017-11-07</time>, où il présentera \"l'imagerie soucoupique dans la BD\"",
+      "sources": [
+        {
+          "url": "https://www.ovniparis.fr/album-photos/ovniparis/soiree-du-7-novembre-2017-avec-raoul-robe/"
+        }
+      ]
+    }
   ]
 }

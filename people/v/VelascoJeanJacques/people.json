@@ -9,7 +9,8 @@
   "events": [
     {
       "type": "birth",
-      "time": "1946"
+      "time": "1946",
+      "place": "Paris"
     }
   ]
 }

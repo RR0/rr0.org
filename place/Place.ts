@@ -1,20 +1,24 @@
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 import { PlaceLocation } from "./PlaceLocation"
+import { RR0Event } from "../event/RR0Event"
 
 export type Elevation = {
   elevation: number,
   data?: any
 }
 
-export class Place extends RR0Data {
+export class Place implements RR0Data {
+  readonly id: string
+  readonly events: RR0Event[] = []
 
-  constructor(readonly locations: PlaceLocation[], readonly elevation?: Elevation, dirName?: string,
-              /**
-               * Remote service specific data.
-               */
-              data?: any
+  constructor(
+    readonly locations: PlaceLocation[], readonly elevation?: Elevation, readonly dirName?: string,
+    /**
+     * Remote geo IP service specific data.
+     */
+    data?: any
   ) {
-    super(dirName, dirName, undefined, [], "place")
+    this.id = dirName
   }
 
   /**

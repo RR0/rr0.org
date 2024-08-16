@@ -1,6 +1,6 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { TimeTextBuilder } from "./TimeTextBuilder"
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 import { SourceRenderer } from "../source/SourceRenderer"
 import { Source } from "../source/Source"
 import { SourceFactory } from "../source/SourceFactory"

@@ -4,12 +4,16 @@ import { HtmlRR0SsgContext } from "../../RR0SsgContext"
 import { TimeContext } from "../TimeContext"
 import { TimeTextBuilder } from "../TimeTextBuilder"
 import { Source } from "../../source/Source"
-import { RR0UfoCase } from "./RR0UfoCase"
 import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
 import { SourceRenderer } from "../../source/SourceRenderer"
 import { NoteRenderer } from "../../note/NoteRenderer"
+import { SourceFactory } from "../../source/SourceFactory"
+import { NoteFileCounter } from "../../note/NoteFileCounter"
+import { DataService } from "../../data/DataService"
+import { HttpSource } from "./HttpSource"
+import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 
-export abstract class DatasourceTestCase<S extends RR0UfoCase> {
+export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
 
   protected constructor(readonly mapping: RR0CaseMapping<S>, readonly sourceCases: S[]) {
   }
@@ -21,21 +25,28 @@ export abstract class DatasourceTestCase<S extends RR0UfoCase> {
     Object.assign(caseContext, {time})
     const timeStr = TimeTextBuilder.build(caseContext)
     const placeStr = expected.place ? ` À <span class="place">${expected.place.name}</span>` : ""
-    const sourceStr = expected.sources?.length > 0 ? this.expectedSourceStr(caseContext, expected.sources,
-      nativeCase) : ""
+    const expectedSources = expected.sources
+    const sourceStr = expectedSources?.length > 0 ? this.expectedSourceStr(context, expectedSources, nativeCase) : ""
     expect(item.innerHTML).toBe(
       `<time datetime="${time.toString()}">${timeStr}</time>${placeStr}, ${expected.description}${sourceStr}.`)
   }
 
-  protected expectedSourceStr(caseContext: HtmlRR0SsgContext, expectedSources: Source[], nativeCase: S) {
-    const datasource = this.mapping.datasource
-    const source = expectedSources[0]
-    const publicationStr = source.publication ? `, ${source.publication.time}` : ""
-    const authorStr = datasource.authors.join(", ")
-    const title = `cas n°&nbsp;${nativeCase.id}`
-    return ` <span class="source">${authorStr}: <a href="${nativeCase.url.href.replaceAll(
-      "&",
-      "&amp;")}">${title}</a>, <i>${datasource.copyright}</i>${publicationStr}</span>`
+  async testRender(context: HtmlRR0SsgContext) {
+    const sourceCases = await this.mapping.datasource.fetch(context)
+    const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
+    const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
+    const dataService = new DataService([])
+    const baseUrl = "https://rr0.org"
+    const http = new HttpSource()
+    const sourceFactory = new SourceFactory(dataService, http, baseUrl)
+    const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
+      new SourceRenderer())
+    const itemsPromises = cases.map(c => eventRenderer.render(context, c))
+    const items = await Promise.all(itemsPromises)
+    expect(items.length).toBe(sourceCases.length)
+    for (let i = 0; i < sourceCases.length; i++) {
+      this.checkCaseHTML(context, sourceCases[i], items[i], dataDate)
+    }
   }
 
   protected abstract sortComparator(c1: S, c2: S): number
@@ -50,16 +61,17 @@ export abstract class DatasourceTestCase<S extends RR0UfoCase> {
 
   protected abstract getTime(c: S): TimeContext
 
-  async testRender(context: HtmlRR0SsgContext) {
-    const sourceCases = await this.mapping.datasource.fetch(context)
-    const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
-    const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
-    const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(), new SourceFactory(), new SourceRenderer())
-    const itemsPromises = cases.map(c => eventRenderer.render(context, c))
-    const items = await Promise.all(itemsPromises)
-    expect(items.length).toBe(sourceCases.length)
-    for (let i = 0; i < sourceCases.length; i++) {
-      this.checkCaseHTML(context, sourceCases[i], items[i], dataDate)
-    }
+  protected expectedSourceStr(context: HtmlRR0SsgContext, expectedSources: Source[], nativeCase: S) {
+    const datasource = this.mapping.datasource
+    const source = expectedSources[0]
+    const sourceContext = context.clone()
+    sourceContext.time = source.publication.time
+    const publicationStr = source.publication ? `, ${TimeTextBuilder.build(sourceContext)}` : ""
+    const indexStr = source.index ? `, ${source.index}` : ""
+    const authorStr = datasource.authors.map(authorStr => `<span class="people">${authorStr}</span>`).join(" &amp; ")
+    const title = `cas n° ${nativeCase.id}`
+    return ` <span class="source">${authorStr}: <a href="${nativeCase.url.replaceAll(
+      "&",
+      "&amp;")}">${title}</a>, <i>${datasource.copyright}</i>${publicationStr}${indexStr}</span>`
   }
 }

@@ -3,7 +3,7 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { ClassDomReplaceCommand } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
 import { PeopleService } from "./PeopleService"
-import { DataService } from "../DataService"
+import { DataService } from "../data/DataService"
 
 describe("ClassDomReplaceCommand", () => {
 

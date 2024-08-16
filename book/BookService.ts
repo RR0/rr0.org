@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import { CSVFileReader } from "../CSVFileReader"
-import { FileUtil, Logger } from "ssg-api"
+import { FileUtil, Logger, SsgConfig } from "ssg-api"
 import { TimeContext } from "../time/TimeContext"
 import { TimeUrlBuilder } from "../time/TimeUrlBuilder"
 import * as path from "path"
@@ -25,7 +25,7 @@ export class BookService {
   protected peopleList: People[] = []
 
   constructor(readonly logger: Logger, protected dry: boolean, protected peopleService: PeopleService,
-              protected outDir: string) {
+              protected config: SsgConfig) {
   }
 
   async import(fileName: string) {
@@ -60,7 +60,7 @@ export class BookService {
         const authorLastFirst = result[COLUMN_AUTHOR_LAST_FIRST]
         const authorsNames = author ? author.split(",") : [authorLastFirst]
         const authors: People[] = []
-        const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), this.outDir)
+        const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), this.config)
         for (const authorName of authorsNames) {
           const authorFound = await this.findPeople(context, authorName)
           if (authorFound) {
@@ -74,16 +74,16 @@ export class BookService {
           + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
         const parentDir = TimeUrlBuilder.fromContext(time)
         const bookDir = path.join(parentDir, dirName)
-        const book: Book = {
-          title,
-          authors: authorsNames,
-          subTitle: result[COLUMN_SUBTITLE],
-          series: result[COLUMN_SERIES],
-          publication: {time, publisher},
-          dirName: bookDir, summary,
-          variants: [],
-          isbn: result[COLUMN_ISBN]
-        }
+        const id = result[COLUMN_ISBN]
+        const book: Book = new Book(id)
+        book.title = title
+        book.authors = authorsNames
+        book.subTitle = result[COLUMN_SUBTITLE]
+        book.series = result[COLUMN_SERIES]
+        book.publication = {time, publisher}
+        book.dirName = bookDir
+        book.summary = summary
+        book.variants = []
         const authorStr = authors?.map(author => author.dirName)
         if (fs.existsSync(bookDir)) {
           this.logger.log("Book directory", bookDir, "already exists, with authors", authorStr)

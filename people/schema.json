@@ -1,0 +1,11 @@
+{
+  "$schema": "https://rr0.org/people/schema",
+  "$id": "https://rr0.org/people/schema.json",
+  "title": "People",
+  "description": "A people",
+  "type": "object",
+  "properties": {
+    "type": "string",
+    "birthTime": "string"
+  }
+}

@@ -2,13 +2,13 @@ import { CaseDirectoryStep } from "./CaseDirectoryStep"
 import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
 import { FileContents, SsgConfig, SsgContext } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
-import { DataService } from "../../../../../DataService"
+import { DataService } from "../../../../../data/DataService"
 import { RR0Case } from "./RR0Case"
 import path from "path"
 import { CaseService } from "./CaseService"
 import { TimeReplacer } from "../../../../../time/TimeReplacer"
 import { TimeRenderer } from "../../../../../time/TimeRenderer"
-import { DefaultDataFactory } from "../../../../../DefaultDataFactory"
+import { DefaultDataFactory } from "../../../../../data/DefaultDataFactory"
 
 describe("DirectoryStep", () => {
 

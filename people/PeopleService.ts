@@ -1,13 +1,13 @@
 import { People } from "./People"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import path from "path"
-import { DataService } from "../DataService"
+import { DataService } from "../data/DataService"
 import { CountryCode } from "../org/country/CountryCode"
 import { Occupation } from "./Occupation"
 import { Time } from "../time/Time"
 import { Gender } from "@rr0/common"
 import { PeopleFactory } from "./PeopleFactory"
-import { AbstractDataFactory } from "../AbstractDataFactory"
+import { AbstractDataFactory } from "../data/AbstractDataFactory"
 
 export class PeopleService {
 

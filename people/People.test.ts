@@ -2,7 +2,7 @@ import { People } from "./People"
 import { PeopleService } from "./PeopleService"
 import { beforeAll, describe, expect, test } from "@javarome/testscript"
 import { promise as glob } from "glob-promise"
-import { DataService } from "../DataService"
+import { DataService } from "../data/DataService"
 
 describe("People", () => {
 

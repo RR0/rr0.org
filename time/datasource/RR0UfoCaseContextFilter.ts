@@ -1,14 +1,14 @@
 import { ContextFilter } from "./ContextFilter"
 import { RR0SsgContext } from "../../RR0SsgContext"
-import { RR0UfoCase } from "./RR0UfoCase"
+import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 
-export class RR0UfoCaseContextFilter extends ContextFilter<RR0UfoCase> {
+export class RR0CaseSummaryContextFilter extends ContextFilter<RR0CaseSummary> {
 
   constructor(context: RR0SsgContext) {
     super(context)
   }
 
-  filter(c: RR0UfoCase): boolean {
+  filter(c: RR0CaseSummary): boolean {
     const sightingTime = c.time
     const time = this.context.time
     const day = time.getDayOfMonth()

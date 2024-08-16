@@ -2,9 +2,14 @@ import { Occupation } from "./Occupation"
 import { StringUtil } from "../util/string/StringUtil"
 import { Gender } from "@rr0/common"
 import { CountryCode } from "../org/country/CountryCode"
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 
-export class People extends RR0Data {
+export class People implements RR0Data {
+  readonly title: string
+  readonly name: string
+
+  readonly type = "people"
+
   /**
    * The people actually doesn't exist.
    */
@@ -28,13 +33,12 @@ export class People extends RR0Data {
     public birthTime?: Date,
     public deathTime?: Date,
     readonly gender?: Gender,
-    id = lastName + firstNames.join(""),
-    dirName?: string,
+    readonly id = lastName + firstNames.join(""),
+    readonly dirName?: string,
     public image?: string,
-    url?: URL,
-    events: RR0Data[] = []
+    readonly url?: string,
+    readonly events: RR0Data[] = []
   ) {
-    super(id, dirName, url, events, "people")
     this.lastAndFirstName = this.getLastAndFirstName()
     this.title = this.firstAndLastName
     this.name = this.lastName

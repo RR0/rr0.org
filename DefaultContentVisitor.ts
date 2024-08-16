@@ -1,9 +1,9 @@
-import { DataService } from "./DataService"
+import { DataService } from "./data/DataService"
 import { TimeElementFactory } from "./time/TimeElementFactory"
 import { ContentVisitor } from "./RR0ContentStep"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import path from "path"
-import { RR0Data } from "./RR0Data"
+import { RR0Data } from "./data/RR0Data"
 import { EventRenderer } from "./time/EventRenderer"
 import { People } from "./people/People"
 import { RR0Event } from "./event/RR0Event"
@@ -116,7 +116,7 @@ export class DefaultContentVisitor implements ContentVisitor {
     const parentEl = context.file.document.querySelector(".contents")
     if (parentEl) {
       const {eventP, timeEl} = this.timeParagraph(context, event)
-      const name = entity.surname ? "\"" + entity.surname + "\"" : entity.name || entity.title
+      const name = entity.surname ? `"${entity.surname}"` : entity.name || entity.title
       eventP.append(name)
       eventP.append(context.messages[entity.type].birth)
       eventP.append(timeEl)

@@ -70,7 +70,7 @@ export class RR0HttpDatasource extends RR0Datasource {
     const sources = this.getSources(row, itemContext)
     const description = this.getDescription(row)
     const id = this.id(itemTime, place)
-    return {url, place, time: itemTime, description, sources, id}
+    return {url: url.href, place, time: itemTime, description, sources, id}
   }
 
   protected getSources(row: Element, itemContext: HtmlRR0SsgContext): Source[] {
@@ -97,7 +97,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       publisher = pubItems.splice(1, pubItems.length - 1).map(item => item.trim()).join(", ").trim()
       const publication: Publication = {publisher, time}
       title = pubItems[0]
-      const source: Source = {title, id, authors, publication}
+      const source: Source = {events: [], title, id, authors, publication, previousSourceRefs: []}
       sources.push(source)
     }
     return sources

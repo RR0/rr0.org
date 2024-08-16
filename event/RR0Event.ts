@@ -1,4 +1,4 @@
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 
 export type RR0EventType =
   "birth"
@@ -11,9 +11,6 @@ export type RR0EventType =
   | "degree"
   | "affiliate"
 
-export class RR0Event extends RR0Data {
+export interface RR0Event extends RR0Data {
 
-  constructor(id: string, dirName: string, url: string, events: RR0Event[], type: RR0EventType) {
-    super(id, dirName, url, events, type)
-  }
 }

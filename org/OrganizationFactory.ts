@@ -1,5 +1,5 @@
 import { Organization } from "./Organization"
-import { DefaultDataFactory } from "../DefaultDataFactory"
+import { DefaultDataFactory } from "../data/DefaultDataFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
 
 export class OrganizationFactory extends DefaultDataFactory<Organization> {

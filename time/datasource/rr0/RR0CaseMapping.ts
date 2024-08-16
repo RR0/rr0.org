@@ -3,7 +3,7 @@ import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { RR0CaseSummary } from "./RR0CaseSummary"
 
 /**
- * A mapping of some datasource case to a RR0 case.
+ * Maps some datasource case to a RR0 case.
  *
  * @param S The source case type.
  */

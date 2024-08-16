@@ -1,9 +1,9 @@
 import { People } from "./People"
 import path from "path"
 import { StringUtil } from "../util/string/StringUtil"
-import { DefaultDataFactory } from "../DefaultDataFactory"
+import { DefaultDataFactory } from "../data/DefaultDataFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 
 export class PeopleFactory extends DefaultDataFactory<People> {
 

@@ -8,6 +8,6 @@ export class RR0CaseSummaryMapper implements CaseMapper<HtmlRR0SsgContext, RR0Ca
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: RR0CaseSummary, sourceTime: Date): RR0CaseSummary {
-    return sourceCase
+    return sourceCase   // Mapping RR0 to RR0 is idle
   }
 }

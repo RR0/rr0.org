@@ -1,6 +1,6 @@
 import { Article } from "./Article"
-import { RR0Data } from "../RR0Data"
-import { DefaultDataFactory } from "../DefaultDataFactory"
+import { RR0Data } from "../data/RR0Data"
+import { DefaultDataFactory } from "../data/DefaultDataFactory"
 
 export class ArticleFactory extends DefaultDataFactory<Article> {
 

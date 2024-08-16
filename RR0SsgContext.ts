@@ -2,7 +2,7 @@ import { TimeContext } from "./time/TimeContext"
 import { ssgMessages } from "./lang"
 import { RR0Messages } from "./lang/RR0Messages"
 import { ConsoleLogger, FileContents, HtmlSsgContext, SsgConfig, SsgContext, SsgContextImpl } from "ssg-api"
-import { RR0Data } from "./RR0Data"
+import { RR0Data } from "./data/RR0Data"
 import { People } from "./people/People"
 
 export interface RR0SsgContext extends SsgContext {

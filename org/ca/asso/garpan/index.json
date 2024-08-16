@@ -1,0 +1,14 @@
+{
+  "type": "org",
+  "title": "GARPAN",
+  "name": "Groupe d’assistance et de recherche sur les phénomènes aérospatiaux non-identifiés",
+  "url": "https://garpan.ca",
+  "events": [
+    {
+      "type": "birth",
+      "time": "2012",
+      "people": "Yann Vadnais",
+      "title": "Inspiré par le <a href=\"/org/eu/fr/cnes/gepan\">GEPAN</a>"
+    }
+  ]
+}

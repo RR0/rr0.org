@@ -2,11 +2,10 @@ import { promise as glob } from "glob-promise"
 
 export class RR0FileUtil {
 
-  static findDirectoriesContaining(fileName: string, exclude: string): string[] {
+  static findDirectoriesContaining(fileName: string, exclude = ""): string[] {
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index
     }
-
     return (glob.sync(`!(${exclude})/**/${fileName}`))
       .map(path => path.substring(0, path.lastIndexOf("/")))
       .filter(onlyUnique)

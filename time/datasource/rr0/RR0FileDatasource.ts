@@ -4,7 +4,6 @@ import { CsvMapper } from "../CsvMapper"
 import { FileDatasource } from "../FileDatasource"
 import { CsvFileSource } from "../CsvFileSource"
 import { RR0CaseSummary } from "./RR0CaseSummary"
-import { RR0UfoCase } from "../RR0UfoCase"
 import { RR0CaseSummaryMapper } from "./RR0CaseSummaryMapper"
 import { rr0HttpDatasource } from "./RR0Mapping"
 import { RR0Datasource } from "./RR0Datasource"
@@ -22,7 +21,7 @@ export class RR0FileDatasource extends RR0Datasource implements Datasource<RR0Ca
   }
 
   protected async readCases(context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
-    const fileMapper = new CsvMapper<RR0UfoCase>()
+    const fileMapper = new CsvMapper<RR0CaseSummary>()
     const file = await this.file.read(context, this)
     const csvMapper = new RR0CaseSummaryMapper(rr0HttpDatasource.baseUrl, rr0HttpDatasource.searchPath,
       rr0HttpDatasource.authors)

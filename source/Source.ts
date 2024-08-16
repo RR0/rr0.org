@@ -1,5 +1,5 @@
 import { TimeContext } from "../time/TimeContext"
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 
 export type Publication = {
   /**
@@ -20,32 +20,32 @@ export interface Source extends RR0Data {
   /**
    * Dependent sources.
    */
-  readonly previousSourceRefs?: string[]
+  previousSourceRefs: string[]
 
   /**
    * A possible subtitle of this source.
    */
-  readonly subTitle?: string
+  subTitle?: string
 
   /**
    * The author(s) name(s) of this source document.
    */
-  readonly authors?: string[]
+  authors?: string[]
 
   /**
    * The details about where and when the source was published.
    */
-  readonly publication?: Publication
+  publication?: Publication
 
   /**
    * A possible series this source was part of.
    */
-  readonly series?: string
+  series?: string
 
   /**
    * A possible summary of the source's contents.
    */
-  readonly summary?: string
+  summary?: string
 
   /**
    * Chapter, page, etc.

@@ -25,29 +25,26 @@ export class SourceRenderer {
         const peopleTag = doc.createElement("span")
         peopleTag.className = "people"
         peopleTag.textContent = author
-        container.append(peopleTag, sep)
-        sep = " & "
+        container.append(sep, peopleTag)
+        sep = " & "   // Will be escaped as &amp;
       }
       container.append(` : `)
     }
+    const pubItems: (HTMLElement | string)[] = []
     const title = source.title
     if (title) {
       if ((source as Source).url) {   // Online source?
         const onlineSource = source as Source
         const sourceLink = doc.createElement("a") as HTMLAnchorElement
         sourceLink.innerHTML = title
-        const url = onlineSource.url
-        sourceLink.href = url instanceof URL ? url.href : url
-        container.appendChild(sourceLink)
+        sourceLink.href = onlineSource.url
+        pubItems.push(sourceLink)
       } else {
-        const titleEl = doc.createElement("span")
-        titleEl.innerHTML = title
-        container.append(titleEl)
+        pubItems.push(title)
       }
     }
     const publication = source.publication
     if (publication) {
-      const pubItems = []
       const publisher = publication.publisher
       if (publisher) {
         const copyright = doc.createElement("i")
@@ -65,10 +62,12 @@ export class SourceRenderer {
         pubItems.push(TimeTextBuilder.build(sourceContext))
       }
       if (source.index) {
-        pubItems.push(source.index)
+        pubItems.push(source.index.toString())
       }
+      let sep = ""
       for (const pubItem of pubItems) {
-        container.append(", ", pubItem)
+        container.append(sep, pubItem)
+        sep = ", "
       }
     }
   }

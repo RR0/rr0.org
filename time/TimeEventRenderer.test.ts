@@ -7,11 +7,20 @@ import { NamedPlace, RR0CaseSummary } from "./datasource/rr0/RR0CaseSummary"
 import { TimeContext } from "./TimeContext"
 import { SourceRenderer } from "../source/SourceRenderer"
 import { Source } from "../source/Source"
-
+import { SourceFactory } from "../source/SourceFactory"
+import { NoteRenderer } from "../note/NoteRenderer"
+import { NoteFileCounter } from "../note/NoteFileCounter"
+import { DataService } from "../data/DataService"
+import { HttpSource } from "./datasource/HttpSource"
 
 describe("TimeEventRenderer", () => {
 
-  const renderer = new CaseSummaryRenderer(new SourceRenderer())
+  const dataService = new DataService([])
+  const baseUrl = "https://rr0.org"
+  const http = new HttpSource()
+  const sourceFactory = new SourceFactory(dataService, http, baseUrl)
+  const renderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
+    new SourceRenderer())
 
   test("render event", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")
@@ -23,7 +32,8 @@ describe("TimeEventRenderer", () => {
       name: villeMessages.toTitle(context, city)
     }
     const source1: Source = {
-      url: new URL("https://somesite.com/case1"),
+      events: [], previousSourceRefs: [],
+      url: "https://somesite.com/case1",
       title: "Case 1",
       authors: ["Some Author"],
       publication: {
@@ -33,6 +43,7 @@ describe("TimeEventRenderer", () => {
     }
     const sources = [source1]
     const c: RR0CaseSummary = {
+      events: [], type: "case",
       time: context.time,
       place: namedPlace,
       description: "some sighting", sources

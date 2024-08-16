@@ -1,9 +1,9 @@
-import { DataService } from "../../../../../DataService"
+import { DataService } from "../../../../../data/DataService"
 import { RR0Case } from "./RR0Case"
 import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext"
 import path from "path"
 import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
-import { RR0DataFactory } from "../../../../../RR0DataFactory"
+import { RR0DataFactory } from "../../../../../data/RR0DataFactory"
 
 export class CaseService {
 

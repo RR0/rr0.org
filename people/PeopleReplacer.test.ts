@@ -3,8 +3,8 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { PeopleService } from "./PeopleService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { describe, expect, test } from "@javarome/testscript"
-import { DataService } from "../DataService"
-import { DefaultDataFactory } from "../DefaultDataFactory"
+import { DataService } from "../data/DataService"
+import { DefaultDataFactory } from "../data/DefaultDataFactory"
 
 describe("PeopleReplacer", () => {
 

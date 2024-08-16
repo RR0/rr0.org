@@ -3,12 +3,37 @@ import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
 import { rr0TestCases } from "./RR0TestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { rr0Mapping } from "./RR0Mapping"
+import { rr0FileDatasource, rr0Mapper } from "./RR0Mapping"
 import { RR0CaseSummary } from "./RR0CaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { Source } from "../../../source/Source"
 import { HtmlTag } from "../../../util/HtmlTag"
 import { RR0CaseMapping } from "./RR0CaseMapping"
+import { RR0Datasource } from "./RR0Datasource"
+import { Datasource } from "../Datasource"
+import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
+import { TimeTextBuilder } from "../../TimeTextBuilder"
+
+export class RR0TestDatasource extends RR0Datasource implements Datasource<RR0CaseSummary> {
+
+  constructor() {
+    super()
+  }
+
+  protected async readCases(_context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
+    return rr0TestCases
+  }
+}
+
+export class RR0TestMapping implements RR0CaseMapping<RR0CaseSummary> {
+  readonly datasource = new RR0TestDatasource()
+  readonly backupDatasource = rr0FileDatasource
+  readonly mapper = rr0Mapper
+
+  constructor(readonly actions: ChronologyReplacerActions) {
+  }
+}
+
 
 describe("RR0CaseSource", () => {
 
@@ -26,14 +51,15 @@ describe("RR0CaseSource", () => {
         c2.time) ? -1 : !c2.time || c1.time.isAfter(c2.time) ? 1 : 0
     }
 
-
-    protected expectedSourceStr(caseContext: HtmlRR0SsgContext, expectedSources: Source[],
-                                nativeCase: RR0CaseSummary): string {
+    /**
+     * Specialization of sources for RR0 cases
+     */
+    protected expectedSourceStr(context: HtmlRR0SsgContext, expectedSources: Source[], _nativeCase: RR0CaseSummary) {
       return expectedSources.map(source => {
         const sourceItems: string[] = []
-        let authorStr = source.authors.join(", ")
+        let authorStr = source.authors.map(author => `<span class="people">${author}</span>`).join(" &amp; ")
         if (authorStr) {
-          authorStr += ": "
+          authorStr += "&nbsp;: "
         }
         if (source.title) {
           sourceItems.push(source.title)
@@ -44,13 +70,20 @@ describe("RR0CaseSource", () => {
             sourceItems.push(`<i>${publication.publisher}</i>`)
           }
           if (publication.time) {
-            sourceItems.push(publication.time.toString())
+            const sourceContext = context.clone()
+            sourceContext.time = source.publication.time
+            const timeStr = TimeTextBuilder.build(sourceContext)
+            sourceItems.push(timeStr)
           }
+        }
+        const index = source.index
+        if (index) {
+          sourceItems.push(index)
         }
         return " " + HtmlTag.toString("span", authorStr + sourceItems.join(", "), {class: "source"})
       }).join("")
     }
-  }(rr0Mapping, rr0TestCases)
+  }(new RR0TestMapping({read: ["fetch"], write: []}), rr0TestCases)
 
   let context: HtmlRR0SsgContext
 

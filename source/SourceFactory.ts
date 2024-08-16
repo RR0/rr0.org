@@ -4,7 +4,7 @@ import path from "path"
 import { TimeContext } from "../time/TimeContext"
 import { FileContents } from "ssg-api"
 import { JSDOM } from "jsdom"
-import { DataService } from "../DataService"
+import { DataService } from "../data/DataService"
 import { HttpSource } from "../time/datasource/HttpSource"
 
 /**
@@ -97,10 +97,9 @@ export class SourceFactory {
       title = href
     }
     publisher = resOut.headers.get("host")
-    const url = new URL(href)
     const time = lastModif ? TimeContext.fromDate(new Date(lastModif), context.time.options) : context.time
     const publication: Publication = {publisher, time}
-    return {title, url, publication}
+    return {title, url: href, publication}
   }
 
   async fromPage(href: string, hash = ""): Promise<Source> {

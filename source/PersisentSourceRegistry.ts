@@ -1,5 +1,5 @@
 import { Source } from "./Source"
-import { DataService } from "../DataService"
+import { DataService } from "../data/DataService"
 import { HttpSource } from "../time/datasource/HttpSource"
 import { SourceRegistry } from "./SourceRegistry"
 import { FileContents } from "ssg-api"

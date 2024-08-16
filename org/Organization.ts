@@ -1,10 +1,11 @@
-import { RR0Data } from "../RR0Data"
+import { RR0Data } from "../data/RR0Data"
 import { Place } from "../place/Place"
 import path from "path"
 import { RR0SsgContext } from "../RR0SsgContext"
 import assert from "assert"
 import { OrganizationMessageOptions, OrganizationMessages } from "./OrganizationMessages"
 import { TitleMessage } from "./index"
+import { RR0Event } from "../event/RR0Event"
 
 export enum OrganizationType {
   country = "country",
@@ -13,10 +14,18 @@ export enum OrganizationType {
   city = "city",
 }
 
-export class Organization<M extends TitleMessage = OrganizationMessages> extends RR0Data {
+export class Organization<M extends TitleMessage = OrganizationMessages> implements RR0Data {
 
-  constructor(id: string, readonly places: Place[], readonly kind: OrganizationType, parent?: Organization) {
-    super(id, path.join(parent?.dirName ?? "org/", id), undefined, [], "org", parent)
+  readonly type = "org"
+
+  readonly dirName: string
+
+  events: RR0Event[] = []
+
+  constructor(readonly id: string, readonly places: Place[], readonly kind: OrganizationType,
+              readonly parent?: Organization) {
+    assert.ok(id, `id must be defined for organization of type ${kind}`)
+    this.dirName = path.join(parent?.dirName ?? "org/", id)
     assert.ok(id, `Code must be defined for organization of type ${kind}`)
   }
 

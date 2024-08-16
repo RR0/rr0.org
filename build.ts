@@ -58,7 +58,7 @@ import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
-import { DataService } from "./DataService"
+import { DataService } from "./data/DataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
 import { EventReplacer, EventReplacerFactory } from "./time/EventReplacerFactory"
@@ -82,7 +82,7 @@ import { PeopleFactory } from "./people/PeopleFactory"
 import { OrganizationFactory } from "./org/OrganizationFactory"
 import { APIFactory } from "./tech/info/soft/APIFactory"
 import { RR0EventFactory } from "./event/RR0EventFactory"
-import { DefaultDataFactory } from "./DefaultDataFactory"
+import { DefaultDataFactory } from "./data/DefaultDataFactory"
 import { NoteRenderer } from "./note/NoteRenderer"
 import { PeopleDirectoryFactory } from "./people/PeopleDirectoryFactory"
 
@@ -230,9 +230,9 @@ timeService.getFiles().then(async (timeFiles) => {
   const orgService = new OrganizationService([], "org", undefined)
 
   const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false})
-  const baseUrl = "https://rr0.org"
   const sourceRenderer = new SourceRenderer()
   const sourceRegistryFileName = "source/index.json"
+  const baseUrl = "https://rr0.org"
   const http = new HttpSource()
   const sourceFactory = new PersisentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName)
   const noteCounter = new NoteFileCounter()

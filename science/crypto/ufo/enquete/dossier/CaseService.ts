@@ -37,7 +37,7 @@ export class CaseService {
       options.hour = undefined
       options.weekday = undefined
       options.minute = undefined
-      const elem = this.timeElementFactory.create(caseContext, time.toString(), undefined, {url: false})
+      const elem = this.timeElementFactory.create(caseContext, undefined, {url: false})
       if (elem) {
         details.push(elem.outerHTML)
       }

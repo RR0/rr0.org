@@ -1,18 +1,22 @@
 import { RR0SsgContext } from "../RR0SsgContext"
 
 export class TimeTextBuilder {
+
+  constructor(readonly options: Intl.DateTimeFormatOptions) {
+  }
+
   /**
    * Build a textual representation of context's time, according to context's locale.
    *
    * @param context
    * @param print
    */
-  static build(context: RR0SsgContext, print = true): string {
+  build(context: RR0SsgContext, print = true): string {
     const time = context.time
     const printOptions: Intl.DateTimeFormatOptions = {}
     const date = new Date(undefined, undefined, undefined)
     const year = time.getYear()
-    const options = time.options
+    const options = this.options
     if (year) {
       date.setFullYear(year)
       if (print) {

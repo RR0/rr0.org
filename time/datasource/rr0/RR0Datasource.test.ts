@@ -16,6 +16,8 @@ import { TimeTextBuilder } from "../../TimeTextBuilder"
 
 export class RR0TestDatasource extends RR0Datasource implements Datasource<RR0CaseSummary> {
 
+  timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
+
   constructor() {
     super()
   }
@@ -72,7 +74,7 @@ describe("RR0CaseSource", () => {
           if (publication.time) {
             const sourceContext = context.clone()
             sourceContext.time = source.publication.time
-            const timeStr = TimeTextBuilder.build(sourceContext)
+            const timeStr = this.timeTextBuilder.build(sourceContext)
             sourceItems.push(timeStr)
           }
         }

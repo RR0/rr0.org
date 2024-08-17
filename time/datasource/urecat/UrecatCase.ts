@@ -123,6 +123,9 @@ export type UrecatCaseIssue = {
 }
 
 export interface UrecatCase {
+  id: string
+  time: TimeContext
+  url: string
   title: string
   summary?: string
   basicInfo: UrecatBasicInfo

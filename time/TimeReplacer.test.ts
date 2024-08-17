@@ -8,7 +8,7 @@ describe("TimeReplacer", () => {
   test("parses year", () => {
     {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/2/0/0/3/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/3/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       expect(replacer.valueReplacement(context, "2003", undefined).outerHTML).toBe(
         `<a href="/time/2/0/0/3/"><time datetime="2003">2003</time></a>`)
@@ -21,7 +21,7 @@ describe("TimeReplacer", () => {
     }
     {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/2/0/2/5/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/2/5/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       expect(replacer.valueReplacement(context, "2025\n      ", undefined).outerHTML).toBe(
         `<a href="/time/2/0/2/5/"><time datetime="2025">2025</time></a>`)
@@ -37,7 +37,7 @@ describe("TimeReplacer", () => {
   test("parses interval", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     const interval = "2012/2016"
-    const timeRenderer = new TimeRenderer(["time/2/0/1/2/index.html", "time/2/0/1/6/index.html"])
+    const timeRenderer = new TimeRenderer(["time/2/0/1/2/index.html", "time/2/0/1/6/index.html"], this.options)
     const replacer = new TimeReplacer(timeRenderer)
     const original = context.file.document.createElement("time")
     original.textContent = interval
@@ -56,7 +56,7 @@ describe("TimeReplacer", () => {
   test("parses unsupported", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     const interval = "moi"
-    const timeRenderer = new TimeRenderer(["time/1/9/9/0/08/index.html"])
+    const timeRenderer = new TimeRenderer(["time/1/9/9/0/08/index.html"], this.options)
     const replacer = new TimeReplacer(timeRenderer)
     const original = context.file.document.createElement("time")
     original.textContent = interval
@@ -74,7 +74,7 @@ describe("TimeReplacer", () => {
     {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       const interval = "2003-12-24CDT"
-      const timeRenderer = new TimeRenderer(["time/2/0/0/3/12/24/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/3/12/24/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const original = context.file.document.createElement("time")
       original.textContent = interval
@@ -108,7 +108,7 @@ describe("TimeReplacer", () => {
     let value = "2004-09"
     const original = context.file.document.createElement("time")
     original.textContent = value
-    const timeRenderer = new TimeRenderer(["/time/2/0/0/4/09/index.html"])
+    const timeRenderer = new TimeRenderer(["/time/2/0/0/4/09/index.html"], this.options)
     const replacer = new TimeReplacer(timeRenderer)
     const replacement = await replacer.replacement(context, original)
     expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/4/09/">septembre 2004</a>`)
@@ -123,7 +123,7 @@ describe("TimeReplacer", () => {
 
     test("from full date", () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const replacement = replacer.valueReplacement(context, "2005-08-23", undefined)
       expect(replacement.outerHTML).toBe(
@@ -140,7 +140,7 @@ describe("TimeReplacer", () => {
       currentContext.time.setYear(2005)
       currentContext.time.setMonth(8)
       const context = currentContext.clone()
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const replacement2 = replacer.valueReplacement(context, "23", currentContext)
       expect(replacement2.outerHTML).toBe(
@@ -157,7 +157,7 @@ describe("TimeReplacer", () => {
       currentContext.time.setYear(2005)
       currentContext.time.setMonth(8)
       const context = currentContext.clone()
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const replacement1 = replacer.valueReplacement(context, "23 18:45", currentContext)
       expect(replacement1.outerHTML)
@@ -175,7 +175,7 @@ describe("TimeReplacer", () => {
       currentContext.time.setYear(2005)
       currentContext.time.setMonth(8)
       const context = currentContext.clone()
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const replacement = replacer.valueReplacement(context, "23 18:45/19:00", currentContext)
       expect(replacement.outerHTML)
@@ -191,7 +191,7 @@ describe("TimeReplacer", () => {
 
   test("reset context", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-    const timeRenderer = new TimeRenderer(["time/2/0/0/5/index.html", "time/2/0/0/6/index.html"])
+    const timeRenderer = new TimeRenderer(["time/2/0/0/5/index.html", "time/2/0/0/6/index.html"], this.options)
     const replacer = new TimeReplacer(timeRenderer)
     const replacement = replacer.valueReplacement(context, "2005", undefined)
     expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/5/">2005</a>`)
@@ -203,7 +203,7 @@ describe("TimeReplacer", () => {
 
   test("avoids linking to current file", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-    const timeRenderer = new TimeRenderer(["time/1/9/5/4/10/01/index.html"])
+    const timeRenderer = new TimeRenderer(["time/1/9/5/4/10/01/index.html"], this.options)
     const replacer = new TimeReplacer(timeRenderer)
     const original = context.file.document.createElement("time")
     original.textContent = "1954-10-01"
@@ -216,7 +216,7 @@ describe("TimeReplacer", () => {
 
     test("with days, hours, minutes and seconds", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer([])
+      const timeRenderer = new TimeRenderer([], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const original = context.file.document.createElement("time")
       original.textContent = "P2D10H23M45S"
@@ -226,7 +226,7 @@ describe("TimeReplacer", () => {
 
     test("with context", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/1/9/4/7/07/02/index.html"])
+      const timeRenderer = new TimeRenderer(["time/1/9/4/7/07/02/index.html"], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       {
         const ctxElement = context.file.document.createElement("time")
@@ -244,7 +244,7 @@ describe("TimeReplacer", () => {
 
     test("with approximation", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer([])
+      const timeRenderer = new TimeRenderer([], this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const original = context.file.document.createElement("time")
       original.textContent = "~P2H"
@@ -258,7 +258,8 @@ describe("TimeReplacer", () => {
     test("with context", () => {
       // Empty context
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/2/0/0/6/07/14/index.html", "/time/2/0/0/7/06/15/index.html"])
+      const timeRenderer = new TimeRenderer(["time/2/0/0/6/07/14/index.html", "/time/2/0/0/7/06/15/index.html"],
+        this.options)
       const replacer = new TimeReplacer(timeRenderer)
       const replacement = replacer.valueReplacement(context, "2006-07-14 17:56", undefined)
       expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/6/07/14/">vendredi 14 juillet 2006 à 17:56</a>`)
@@ -294,7 +295,7 @@ describe("TimeReplacer", () => {
         context.time.setYear(2007)
         context.time.setMonth(6)
         context.time.setDayOfMonth(15)
-        const timeRenderer = new TimeRenderer(["time/2/0/0/7/06/15/index.html"])
+        const timeRenderer = new TimeRenderer(["time/2/0/0/7/06/15/index.html"], this.options)
         const replacer = new TimeReplacer(timeRenderer)
         const replacement = replacer.valueReplacement(context, "~18:45", undefined)
         expect(replacement.outerHTML).toBe(

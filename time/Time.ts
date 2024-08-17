@@ -26,13 +26,14 @@ export class Time {
     return Time.timeRegex.exec(fileName)
   }
 
-  static titleFromFile(context: HtmlRR0SsgContext, fileName = context.file.name): string | undefined {
+  static titleFromFile(context: HtmlRR0SsgContext, fileName: string,
+                       timeTextBuilder: TimeTextBuilder): string | undefined {
     let title: string | undefined
     const timeContext = TimeContext.fromFileName(context, fileName)
     if (timeContext) {
       const pageContext = new RR0SsgContextImpl(context.locale, timeContext, context.config, context.people,
         context.file)
-      title = TimeTextBuilder.build(pageContext)
+      title = timeTextBuilder.build(pageContext)
       title = StringUtil.capitalizeFirstLetter(title)
     }
     return title

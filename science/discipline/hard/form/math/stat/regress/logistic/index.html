@@ -143,13 +143,13 @@
   });
   y1.create([function (x) {
     return -Math.log(1 / (1 + Math.exp(-x)))
-  }, -i, i], bookMeta, undefined);
+  }, -i, i], undefined);
   var y0 = JXG.JSXGraph.initBoard('y0', {
     boundingbox: [-i, i, i, -i], axis: true, grid: true, showNavigation: false,
     showCopyright: false
   });
   y0.create([function (x) {
     return -Math.log(1 - 1 / (1 + Math.exp(-x)))
-  }, -i, i], bookMeta, undefined);
+  }, -i, i], undefined);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

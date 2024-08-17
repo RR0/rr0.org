@@ -37,13 +37,15 @@ export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
       const occupations = new Set<Occupation>
       const peopl = peopleList[0] || people
       replacement = this.service.getLink(context, peopl, pseudoPeopleList, allCountries,
-        occupations,
-        [], peopleContent)
+        occupations, [], peopleContent)
     } else {
       const span = context.file.document.createElement("span") as HTMLSpanElement
       span.className = "peopl"  // People not found
       span.textContent = peopleStr
       replacement = span
+    }
+    if (people.pseudonyms.includes(peopleContent)) {
+      replacement.classList.add("pseudonym")
     }
     replacement.translate = false  // Don't translate names
     context.debug("\tReplacing people", element.outerHTML, "with", replacement.outerHTML)

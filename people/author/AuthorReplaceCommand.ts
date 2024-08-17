@@ -23,8 +23,9 @@ export class AuthorReplaceCommand extends SsiEchoVarReplaceCommand {
           authorsHtml += authorsHtml ? ": " + copyright : copyright
         }
         if (authorsHtml && context.time.getYear()) {
-          const timeElem = this.timeService.renderer.render(context)
-          authorsHtml += ", " + timeElem.outerHTML
+          const {result, replacement} = this.timeService.renderer.renderContent(context, undefined, {url: true})
+          result.append(replacement)
+          authorsHtml += ", " + result.outerHTML
         }
         if (authorsHtml) {
           authorsHtml = `<div class="document-author">${authorsHtml}</div>`

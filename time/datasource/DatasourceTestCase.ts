@@ -12,8 +12,11 @@ import { NoteFileCounter } from "../../note/NoteFileCounter"
 import { DataService } from "../../data/DataService"
 import { HttpSource } from "./HttpSource"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
+import { rr0TestUtil } from "../../test/RR0TestUtil"
 
 export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
+
+  timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
 
   protected constructor(readonly mapping: RR0CaseMapping<S>, readonly sourceCases: S[]) {
   }
@@ -23,7 +26,7 @@ export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
     const time = this.getTime(nativeCase)
     const caseContext = context.clone()
     Object.assign(caseContext, {time})
-    const timeStr = TimeTextBuilder.build(caseContext)
+    const timeStr = this.timeTextBuilder.build(caseContext)
     const placeStr = expected.place ? ` À <span class="place">${expected.place.name}</span>` : ""
     const expectedSources = expected.sources
     const sourceStr = expectedSources?.length > 0 ? this.expectedSourceStr(context, expectedSources, nativeCase) : ""
@@ -40,7 +43,7 @@ export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
     const http = new HttpSource()
     const sourceFactory = new SourceFactory(dataService, http, baseUrl)
     const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
-      new SourceRenderer())
+      new SourceRenderer(timeTextBuilder))
     const itemsPromises = cases.map(c => eventRenderer.render(context, c))
     const items = await Promise.all(itemsPromises)
     expect(items.length).toBe(sourceCases.length)
@@ -66,7 +69,7 @@ export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
     const source = expectedSources[0]
     const sourceContext = context.clone()
     sourceContext.time = source.publication.time
-    const publicationStr = source.publication ? `, ${TimeTextBuilder.build(sourceContext)}` : ""
+    const publicationStr = source.publication ? `, ${this.timeTextBuilder.build(sourceContext)}` : ""
     const indexStr = source.index ? `, ${source.index}` : ""
     const authorStr = datasource.authors.map(authorStr => `<span class="people">${authorStr}</span>`).join(" &amp; ")
     const title = `cas n° ${nativeCase.id}`

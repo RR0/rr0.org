@@ -22,7 +22,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/rr0/RR0Datasource.test.ts"
+    "test-one": "tsx time/TimeContext.test.ts"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.0",

@@ -47,7 +47,7 @@ export class PeopleService {
       created = new People(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
         undefined, undefined, dirName)
     }
-    this.cache.set(fullName, created)
+    this.cache.set(lastName, created)
     return created
   }
 
@@ -77,9 +77,9 @@ export class PeopleService {
     const dirName = people.dirName
     const titles = []
     const classList = ["data-resolved", "people-resolved"]
-    if (pseudoPeopleList.indexOf(people) >= 0) {
+    if (pseudoPeopleList.indexOf(people) >= 0 || people.pseudonyms.includes(content)) {
       classList.push("pseudonym")
-      titles.push("(pseudonyme)")
+      titles.push(`(pseudonyme de ${people.firstAndLastName})`)
     }
     if (people.hoax) {
       classList.push("canular")

@@ -9,6 +9,8 @@ import { CaseService } from "./CaseService"
 import { TimeReplacer } from "../../../../../time/TimeReplacer"
 import { TimeRenderer } from "../../../../../time/TimeRenderer"
 import { DefaultDataFactory } from "../../../../../data/DefaultDataFactory"
+import { RR0EventFactory } from "../../../../../event/RR0EventFactory"
+import { TimeTextBuilder } from "../../../../../time/TimeTextBuilder"
 
 describe("DirectoryStep", () => {
 
@@ -34,8 +36,10 @@ describe("DirectoryStep", () => {
 <p>After</p>
 <!--#include virtual="/footer.html" -->`
     const context = rr0TestUtil.newContext("/science/crypto/ufo/enquete/dossier/index.html", template)
-    const dataService = new DataService([new DefaultDataFactory<RR0Case>("case")])
-    const timeRenderer = new TimeRenderer([])
+    const eventFactory = new RR0EventFactory()
+    const dataService = new DataService([new DefaultDataFactory<RR0Case>(eventFactory, "case")])
+    const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
+    const timeRenderer = new TimeRenderer([], timeTextBuilder)
     const timeReplacer = new TimeReplacer(timeRenderer)
     const caseService = new CaseService(dataService, timeReplacer)
     const step = new CaseDirectoryStep(caseService, [], [], "/science/crypto/ufo/enquete/dossier/index.html",

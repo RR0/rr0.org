@@ -1,10 +1,14 @@
 import { promise as glob } from "glob-promise"
 import { TimeRenderer } from "./TimeRenderer"
+import { TimeTextBuilder } from "./TimeTextBuilder"
 
 export class TimeService {
 
   protected files: string[]
   protected _renderer: TimeRenderer
+
+  constructor(readonly textBuilder: TimeTextBuilder) {
+  }
 
   get renderer(): TimeRenderer {
     return this._renderer
@@ -21,7 +25,7 @@ export class TimeService {
       const dayFiles = await glob("time/?/?/?/?/??/??/index.html")
       const files = this.files = year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
         minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
-      this._renderer = new TimeRenderer(files)
+      this._renderer = new TimeRenderer(files, this.textBuilder)
     }
     return this.files
   }

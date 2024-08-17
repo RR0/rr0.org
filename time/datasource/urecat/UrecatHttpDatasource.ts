@@ -7,8 +7,10 @@ import { TimeTextBuilder } from "../../TimeTextBuilder"
 import { MessageUtils } from "../../../lang/RR0Messages"
 import { ObjectUtil } from "../../../util/ObjectUtil"
 import { UrecatDatasource } from "./UrecatDatasource"
+import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
 export class UrecatHttpDatasource extends UrecatDatasource {
+
   protected readonly http = new HttpSource()
 
   protected static readonly urlDateFormat = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d))?)?/
@@ -120,19 +122,19 @@ export class UrecatHttpDatasource extends UrecatDatasource {
   protected getFromRow(context: RR0SsgContext, row: Element): UrecatCase {
     const columns = row.querySelectorAll("td")
     const url = this.getLink(columns[1])
-    const timeContext = this.getDate(context, url, row)
+    const caseContext = this.getDate(context, url, row)
     const {placeName, departmentOrState, country} = this.getLocation(columns[1])
     const witnesses = this.getWitnesses(columns[2].textContent)
-    const timeStr = TimeTextBuilder.build(timeContext)
-    const sightingDate = timeContext.time
+    const timeStr = new TimeTextBuilder(rr0TestUtil.intlOptions).build(caseContext)
+    const sightingDate = caseContext.time
     const countStr = ObjectUtil.keyFromValue(UrecatHttpDatasource.wordToCount, witnesses.length)
     const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${countStr} ${MessageUtils.pluralWord(
       witnesses.length, "personne")}`.toUpperCase()
     const id = url.pathname.substring(this.searchPath.length + 2)
     return {
       id,
-      dateTime: sightingDate,
-      url,
+      time: sightingDate,
+      url: url.href,
       title,
       basicInfo: {base: {sightingDate, location: {placeName, country, departmentOrState}, witnesses}}
     }

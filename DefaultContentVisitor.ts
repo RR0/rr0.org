@@ -70,7 +70,7 @@ export class DefaultContentVisitor implements ContentVisitor {
   protected timeParagraph(context: HtmlRR0SsgContext, event: RR0Data) {
     const eventP = context.file.document.createElement("p")
     const eventContext = context.clone()
-    const eventTime = event.time
+    const eventTime = eventContext.time = event.time
     assert.ok(eventTime, `Event of type "${event.type}" has no time`)
     const time = context.time
     if (!time.min || eventTime.isBefore(time.min)) {
@@ -79,9 +79,8 @@ export class DefaultContentVisitor implements ContentVisitor {
     if (!time.max || eventTime.isAfter(time.max)) {
       time.max = eventTime
     }
-    const timeStr = eventTime.toString()
-    eventP.dataset.time = timeStr
-    const timeEl = this.timeElementFactory.create(eventContext, timeStr, context)
+    eventP.dataset.time = eventTime.toString()
+    const timeEl = this.timeElementFactory.create(eventContext, context)
     return {eventP, timeEl}
   }
 
@@ -160,7 +159,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       const people = context.people as unknown as People
       const birthContext = context.clone()
       const birthTimeStr = bookData.time
-      const bookDateEl = this.timeElementFactory.create(birthContext, birthTimeStr.toString(), context)
+      const bookDateEl = this.timeElementFactory.create(birthContext, context)
       bookEl.append(bookDateEl, " ")
       bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
       await this.eventRenderer.renderEnd(context, bookData, bookEl)

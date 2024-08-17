@@ -16,6 +16,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
 
   constructor(
     protected outDir: string, protected timeFiles: string[], protected baseUrl: string,
+    protected timeTextBuilder: TimeTextBuilder,
     protected width: number = 1200, protected height: number = 600
   ) {
   }
@@ -67,7 +68,7 @@ export class OpenGraphCommand implements ReplaceCommand<HtmlRR0SsgContext> {
         context.time.setDayOfMonth(timeContext.getDayOfMonth())
         context.time.setHour(undefined)
         context.time.setMinutes(undefined)
-        timeStr = TimeTextBuilder.build(context)
+        timeStr = this.timeTextBuilder.build(context)
       }
     }
 

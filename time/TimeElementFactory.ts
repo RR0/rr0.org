@@ -41,90 +41,92 @@ export class TimeElementFactory {
     }
   }
 
-  create(context: HtmlRR0SsgContext, contents: string, previousContext: HtmlRR0SsgContext | undefined,
+  create(context: HtmlRR0SsgContext, previousContext: HtmlRR0SsgContext | undefined,
          options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
     let replacement: HTMLElement | undefined
-    if (contents) {
-      const parts = contents.split("/")
-      const isTimeInterval = parts.length > 1
-      if (isTimeInterval) {
-        replacement = this.createInterval(context, previousContext, parts, options)
+    const time = context.time
+    if (time.from) {
+      const fromContext = context.clone()
+      fromContext.time = time.from
+      if (time.to) {
+        const toContext = context.clone()
+        toContext.time = time.to
+        replacement = this.createInterval(fromContext, toContext, previousContext, options)
+      } else {
+        replacement = this.createStarting(fromContext, previousContext, options)
       }
-      if (!replacement) {
-        replacement = this.valueReplacement(context, contents, previousContext, options)
-      }
+    }
+    if (!replacement) {
+      replacement = this.valueReplacement(context, previousContext, options)
     }
     return replacement
   }
 
-  createInterval(context: HtmlRR0SsgContext, previousContext: HtmlRR0SsgContext, parts: string[],
+  createInterval(fromContext: HtmlRR0SsgContext, toContext: HtmlRR0SsgContext, previousContext: HtmlRR0SsgContext,
                  options: TimeRenderOptions): HTMLElement | undefined {
     let replacement: HTMLElement
-    const startTime = parts[0]
-    const startReplacement = this.valueReplacement(context, startTime, previousContext, options)
+    const startReplacement = this.valueReplacement(fromContext, previousContext, options)
     if (startReplacement) {
-      const endTime = parts[1]
-      const endReplacement = this.valueReplacement(context, endTime, previousContext, options)
+      const endReplacement = this.valueReplacement(toContext, previousContext, options)
       if (endReplacement && endReplacement.outerHTML !== startReplacement.outerHTML) {
-        replacement = context.file.document.createElement("span")
+        replacement = fromContext.file.document.createElement("span")
         replacement.className = "time-interval"
-        replacement.innerHTML = context.messages.context.time.fromTo(startReplacement.outerHTML,
+        replacement.innerHTML = fromContext.messages.context.time.fromTo(startReplacement.outerHTML,
           endReplacement.outerHTML)
       }
     }
     return replacement
   }
 
-  valueReplacement(context: HtmlRR0SsgContext, timeStr: string, previousContext: RR0SsgContext | undefined,
+  createStarting(fromContext: HtmlRR0SsgContext, previousContext: HtmlRR0SsgContext,
+                 options: TimeRenderOptions): HTMLElement | undefined {
+    const {result, replacement} = this.renderer.renderContent(fromContext, previousContext, options)
+    let startingReplacement: HTMLElement
+    startingReplacement = fromContext.file.document.createElement("span")
+    startingReplacement.className = "time-interval"
+    const approximate = !fromContext.time.getDayOfMonth()
+    startingReplacement.innerHTML = fromContext.messages.context.time.starting(approximate) + " " + result.outerHTML
+    result.append(startingReplacement, replacement)
+    return result
+  }
+
+  valueReplacement(context: HtmlRR0SsgContext, previousContext: RR0SsgContext | undefined,
                    options: TimeRenderOptions = {url: true}): HTMLElement | undefined {
-    let replacement = undefined
-    timeStr = timeStr.trim()
-    const time = context.time
-    time.approximate = timeStr.charAt(0) === "~"
-    if (time.approximate) {
-      timeStr = timeStr.substring(1)
-    }
-    const parsed = TimeContext.parseDateTime(timeStr)
-    if (parsed) {
-      const time = context.time
-      TimeElementFactory.setTimeContextFrom(time, parsed)
-      replacement = this.dateTimeReplacement(context, previousContext, options)
+    let replacement
+    if (context.time.duration) {
+      replacement = this.durationReplacement(context)
     } else {
-      const durationValues = TimeReplacer.durationRegexp.exec(timeStr)
-      if (durationValues && durationValues[0]) {
-        const map = durationValues.slice(1)
-        const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
-          if (i % 2 !== 0) {
-            reduced.push(current)
-          }
-          return reduced
-        }, [])
-        replacement = this.durationReplacement(context, daysStr, hoursStr, minutesStr, secondsStr)
-      }
+      replacement = this.dateTimeReplacement(context, previousContext, options)
     }
     return replacement
   }
 
-  protected durationReplacement(
-    context: HtmlRR0SsgContext, daysStr: string, hoursStr: string, minutesStr: string, secondsStr: string
-  ): HTMLTimeElement | undefined {
+  protected durationReplacement(context: HtmlRR0SsgContext): HTMLTimeElement | undefined {
     const items = []
+    let duration = context.time.duration
     const messages = context.messages.context.time.duration
-    if (daysStr) {
-      const days = parseInt(daysStr, 10)
+    let datetime = "P"
+    const days = Math.floor(duration / TimeContext.DAY)
+    if (days > 0) {
       items.push(messages.days(days))
+      datetime += days + "D"
     }
-    if (hoursStr) {
-      const hours = parseInt(hoursStr, 10)
+    duration %= TimeContext.DAY
+    const hours = Math.floor(duration / TimeContext.HOUR)
+    if (hours > 0) {
       items.push(messages.hours(hours))
+      datetime += hours + "H"
     }
-    if (minutesStr) {
-      const minutes = parseInt(minutesStr, 10)
+    duration %= TimeContext.HOUR
+    const minutes = Math.floor(duration / TimeContext.MINUTE)
+    if (minutes > 0) {
       items.push(messages.minutes(minutes))
+      datetime += minutes + "M"
     }
-    if (secondsStr) {
-      const seconds = parseInt(secondsStr, 10)
-      items.push(messages.seconds(seconds))
+    duration %= TimeContext.MINUTE
+    if (duration > 0) {
+      items.push(messages.seconds(duration))
+      datetime += duration + "S"
     }
     let replacement: HTMLTimeElement | undefined
     if (items.length > 0) {
@@ -136,8 +138,7 @@ export class TimeElementFactory {
       if (context.time.approximate) {
         replacementStr = messages.approximate(replacementStr)
       }
-      replacement = TimeReplacer.resolvedTime(context,
-        "T" + (daysStr ? daysStr + "D" : "") + (hoursStr ? hoursStr + "H" : "") + (minutesStr ? minutesStr + "M" : "") + (secondsStr ? secondsStr + "S" : ""))
+      replacement = TimeReplacer.resolvedTime(context, datetime)
       replacement.classList.add("duration")
       replacement.textContent = replacementStr
     }

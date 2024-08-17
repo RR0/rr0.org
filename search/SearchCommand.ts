@@ -40,7 +40,7 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
 
   protected readonly contentStream: fs.WriteStream | undefined
 
-  constructor(protected config: SearchCommandConfig) {
+  constructor(protected config: SearchCommandConfig, protected timeTextBuilder: TimeTextBuilder) {
     const indexContent = this.config.indexContent
     if (indexContent) {
       this.contentStream = fs.createWriteStream(indexContent)
@@ -68,7 +68,7 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
       }
       const indexContext = context.clone()
       indexContext.time.options.weekday = undefined
-      const time = TimeTextBuilder.build(indexContext).toLowerCase()
+      const time = this.timeTextBuilder.build(indexContext).toLowerCase()
       indexedPages.push({title, url, time})
     }
     if (this.config.indexWords) {
@@ -93,6 +93,7 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
     const contentsRecord: PageInfo = {
       title: outputFile.title,
       url: context.file.name,
+      time: context.time.toString(),
       html: contents
     }
     const prefix = this.contentStream.bytesWritten === 0 ? "[\n" : ",\n"

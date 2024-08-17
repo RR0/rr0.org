@@ -8,6 +8,9 @@ import { TimeTextBuilder } from "../time/TimeTextBuilder"
  */
 export class SourceRenderer {
 
+  constructor(readonly timeTextBuilder: TimeTextBuilder) {
+  }
+
   render(context: HtmlRR0SsgContext, source: Source): HTMLElement {
     const sourceEl = context.file.document.createElement("span")
     sourceEl.className = "source"
@@ -59,7 +62,7 @@ export class SourceRenderer {
         } else {
           sourceContext.time.updateFromStr(timeValue as unknown as string)
         }
-        pubItems.push(TimeTextBuilder.build(sourceContext))
+        pubItems.push(this.timeTextBuilder.build(sourceContext))
       }
       if (source.index) {
         pubItems.push(source.index.toString())

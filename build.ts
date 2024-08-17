@@ -3,7 +3,7 @@ import { CaseDirectoryStep } from "./science/crypto/ufo/enquete/dossier/CaseDire
 import { promise as glob } from "glob-promise"
 import { GooglePlaceService } from "./place/GooglePlaceService"
 import { OrganizationService } from "./org/OrganizationService"
-import { RR0SsgContextImpl } from "./RR0SsgContext"
+import { HtmlRR0SsgContext, RR0SsgContextImpl } from "./RR0SsgContext"
 import { CLI } from "./util/cli/CLI"
 import {
   AngularExpressionReplaceCommand,
@@ -32,7 +32,6 @@ import { LanguageReplaceCommand } from "./lang/LanguageReplaceCommand"
 import { SsiTitleReplaceCommand } from "./time/SsiTitleReplaceCommand"
 import { PeopleReplacerFactory } from "./people/PeopleReplacerFactory"
 import { SourceReplacerFactory } from "./source/SourceReplacerFactory"
-import { timeDefaultHandler } from "./time/TimeDefaultTitle"
 import { NoteReplacerFactory } from "./note/NoteReplacerFactory"
 import { WitnessReplacerFactory } from "./people/witness/WitnessReplacerFactory"
 import { AnchorReplaceCommand } from "./anchor/AnchorReplaceCommand"
@@ -85,6 +84,8 @@ import { RR0EventFactory } from "./event/RR0EventFactory"
 import { DefaultDataFactory } from "./data/DefaultDataFactory"
 import { NoteRenderer } from "./note/NoteRenderer"
 import { PeopleDirectoryFactory } from "./people/PeopleDirectoryFactory"
+import { TimeTextBuilder } from "./time/TimeTextBuilder"
+import { Time } from "./time/Time"
 
 interface RR0BuildArgs {
   /**
@@ -185,8 +186,8 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
     return path.join(outDir, "netlify.toml")
   }
 }
-
-const timeService = new TimeService()
+const timeTextBuilder = new TimeTextBuilder(timeFormat)
+const timeService = new TimeService(timeTextBuilder)
 timeService.getFiles().then(async (timeFiles) => {
   const timeElementFactory = new TimeElementFactory(timeService.renderer)
   context.setVar("timeFilesCount", timeFiles.length)
@@ -196,7 +197,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const orgFactory = new OrganizationFactory(eventFactory)
   const caseFactory = new DefaultDataFactory(eventFactory, "case")
   const peopleFactory = new PeopleFactory(eventFactory)
-  const apiFactory = new APIFactory()
+  const apiFactory = new APIFactory(eventFactory)
   const bookFactory = new DefaultDataFactory(eventFactory, "book")
   const articleFactory = new DefaultDataFactory(eventFactory, "article")
   const dataService = new DataService(
@@ -229,8 +230,9 @@ timeService.getFiles().then(async (timeFiles) => {
 
   const orgService = new OrganizationService([], "org", undefined)
 
-  const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false})
-  const sourceRenderer = new SourceRenderer()
+  const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false},
+    timeTextBuilder)
+  const sourceRenderer = new SourceRenderer(timeTextBuilder)
   const sourceRegistryFileName = "source/index.json"
   const baseUrl = "https://rr0.org"
   const http = new HttpSource()
@@ -246,6 +248,11 @@ timeService.getFiles().then(async (timeFiles) => {
         /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
       ], caseRenderer)
   )
+  const timeDefaultHandler = (context: HtmlRR0SsgContext): string | undefined => {
+    let title: string | undefined
+    title = Time.titleFromFile(context, context.file.name, timeTextBuilder)
+    return title
+  }
   const pageReplaceCommands = [
     new SsiIncludeReplaceCommand(),
     new BaseReplaceCommand("/"),
@@ -280,7 +287,7 @@ timeService.getFiles().then(async (timeFiles) => {
     new ClassDomReplaceCommand(noteReplacerFactory, "note"),
     new ClassDomReplaceCommand(new IndexedReplacerFactory(), "indexed"),
     new UnitReplaceCommand(),
-    new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles)),
+    new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles, timeTextBuilder)),
     databaseAggregationCommand
   ]
   const ssg = new Ssg(config)
@@ -308,9 +315,10 @@ timeService.getFiles().then(async (timeFiles) => {
       ...pageReplaceCommands,
       ...contentsReplaceCommand,
       new OutlineReplaceCommand(),
-      new AnchorReplaceCommand(siteBaseUrl, [new CaseAnchorHandler(caseService), new DataAnchorHandler(dataService)]),
+      new AnchorReplaceCommand(siteBaseUrl,
+        [new CaseAnchorHandler(caseService, timeTextBuilder), new DataAnchorHandler(dataService)]),
       new ImageCommand(outDir, 275, 500),
-      new OpenGraphCommand(outDir, timeFiles, baseUrl),
+      new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder),
       searchCommand
     ]
     ssg.add(new RR0ContentStep([

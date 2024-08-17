@@ -7,6 +7,8 @@ import { TimeParseResult } from "./TimeReplacer"
  */
 export class TimeContext {
 
+  static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
+
   static readonly dateTimeRegexp = new RegExp(
     "^(~)?(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?"
   )
@@ -20,15 +22,15 @@ export class TimeContext {
     return undefined
   }
 
-  from?: TimeContext
-
   constructor(
     readonly options: Intl.DateTimeFormatOptions,
     protected _year?: number, protected _month?: number, protected _dayOfMonth?: number,
     protected _hour?: number, protected _minutes?: number, protected _timeZone?: string,
     public approximate: boolean = false,
     public approximateTime: boolean = false,
-    public starting: boolean = false
+    public from: TimeContext | undefined = undefined,
+    public to: TimeContext | undefined = undefined,
+    public duration: number | undefined = undefined
   ) {
   }
 
@@ -37,27 +39,79 @@ export class TimeContext {
   }
 
   updateFromStr(timeStr: string) {
+    if (timeStr) {
+      const intervalDelimiter = timeStr.indexOf("/")
+      this.reset()
+      if (intervalDelimiter >= 0) {
+        const startStr = timeStr.substring(0, intervalDelimiter)
+        const endStr = timeStr.substring(intervalDelimiter + 1)
+        if (startStr) {
+          this.from = this.clone()
+          TimeContext.updateValueFromStr(this.from, startStr)
+          if (endStr) {
+            this.to = this.clone()
+            TimeContext.updateValueFromStr(this.to, endStr)
+          } else {
+            this.to = undefined
+          }
+        } else {
+          this.from = undefined
+          this.to = this.clone()
+          TimeContext.updateValueFromStr(this.to, endStr)
+        }
+      } else {
+        TimeContext.updateValueFromStr(this, timeStr)
+      }
+    }
+  }
+
+  static readonly MINUTE = 60
+  static readonly HOUR = 60 * TimeContext.MINUTE
+  static readonly DAY = 24 * TimeContext.HOUR
+
+  static updateValueFromStr(context: TimeContext, timeStr: string) {
+    const durationValues = TimeContext.durationRegexp.exec(timeStr)
+    if (durationValues && durationValues[0]) {
+      const map = durationValues.slice(1)
+      const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
+        if (i % 2 !== 0) {
+          reduced.push(current)
+        }
+        return reduced
+      }, [])
+      const days = parseInt(daysStr, 10) || 0
+      const hours = parseInt(hoursStr, 10) || 0
+      const minutes = parseInt(minutesStr, 10) || 0
+      const seconds = parseInt(secondsStr, 10) || 0
+      context.duration = seconds + (minutes * TimeContext.MINUTE) + (hours * TimeContext.HOUR) + (days * TimeContext.DAY)
+    } else {
+      TimeContext.updateTimeFromStr(context, timeStr)
+    }
+  }
+
+  static updateTimeFromStr(context: TimeContext, timeStr: string): TimeContext {
     const result = TimeContext.parseDateTime(timeStr)
     if (result) {
       const {approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
-      this.approximate = Boolean(approximate)
-      this.setYear(parseInt(yearStr, 10))
+      context.approximate = Boolean(approximate)
+      context.setYear(parseInt(yearStr, 10))
       if (monthStr) {
-        this.setMonth(parseInt(monthStr, 10))
+        context.setMonth(parseInt(monthStr, 10))
       }
       if (dayOfMonthStr) {
-        this.setDayOfMonth(parseInt(dayOfMonthStr, 10))
+        context.setDayOfMonth(parseInt(dayOfMonthStr, 10))
       }
       if (hour) {
-        this.setHour(parseInt(hour, 10))
+        context.setHour(parseInt(hour, 10))
       }
       if (minutes) {
-        this.setMinutes(parseInt(minutes, 10))
+        context.setMinutes(parseInt(minutes, 10))
       }
       if (timeZone) {
-        this.setTimeZone(timeZone)
+        context.setTimeZone(timeZone)
       }
     }
+    return context
   }
 
   setYear(year: number | undefined, print = true) {
@@ -132,7 +186,7 @@ export class TimeContext {
 
   clone(): TimeContext {
     return new TimeContext({...this.options}, this._year, this._month, this._dayOfMonth, this._hour, this._minutes,
-      this._timeZone, this.approximate)
+      this._timeZone, this.approximate, this.approximateTime, this.from, this.to, this.duration)
   }
 
   static fromDate(date: Date, options: Intl.DateTimeFormatOptions): TimeContext {
@@ -149,6 +203,9 @@ export class TimeContext {
     this.setMinutes(undefined)
     this.approximate = false
     this.approximateTime = false
+    this.from = undefined
+    this.to = undefined
+    this.duration = undefined
     return this
   }
 

@@ -11,7 +11,7 @@ export interface TimeRenderOptions {
 
 export class TimeRenderer {
 
-  constructor(readonly timeFiles: string[]) {
+  constructor(readonly timeFiles: string[], protected textBuilder: TimeTextBuilder) {
   }
 
   /**
@@ -27,10 +27,26 @@ export class TimeRenderer {
 
   render(context: HtmlRR0SsgContext, previousContext?: RR0SsgContext,
          options: TimeRenderOptions = {url: true}): HTMLElement {
+    const {result, replacement} = this.renderContent(context, previousContext, options)
+    const timeMessages = context.messages.context.time
     const time = context.time
-    const absoluteTimeStr = TimeUrlBuilder.fromContext(time)
-    const title = TimeTextBuilder.build(context)
-    let text = previousContext ? RelativeTimeTextBuilder.build(previousContext, context) : undefined
+    if (time.getDayOfMonth()) {
+      result.append(timeMessages.on(time.approximate), replacement)
+    } else {
+      result.append(timeMessages.in(time.approximate), replacement)
+    }
+    return result
+  }
+
+  renderContent(context: HtmlRR0SsgContext, previousContext: RR0SsgContext, options: TimeRenderOptions): {
+    result: HTMLElement,
+    replacement: HTMLElement
+  } {
+    const time = context.time
+    const absoluteTimeUrl = TimeUrlBuilder.fromContext(time)
+    const title = this.textBuilder.build(context)
+    let text = previousContext ? new RelativeTimeTextBuilder(this.textBuilder).build(previousContext,
+      context) : undefined
     if (!text) {
       text = title
     }
@@ -44,7 +60,7 @@ export class TimeRenderer {
     }
     timeEl.textContent = text
     const dirName = currentFileName.substring(0, currentFileName.indexOf("/index"))
-    const url = options.url && this.matchExistingTimeFile(absoluteTimeStr)
+    const url = options.url && this.matchExistingTimeFile(absoluteTimeUrl)
     if (url && url !== dirName) {
       const a = replacement = doc.createElement("a") as HTMLAnchorElement
       a.href = UrlUtil.absolute(url)
@@ -54,11 +70,6 @@ export class TimeRenderer {
     }
     let result = context.file.document.createElement("span")
     result.className = "time-resolved"
-    if (time.getDayOfMonth()) {
-      result.append(context.messages.context.time.on(time.approximate), replacement)
-    } else {
-      result.append(context.messages.context.time.in(time.approximate), replacement)
-    }
-    return result
+    return {result, replacement}
   }
 }

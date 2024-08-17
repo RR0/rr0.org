@@ -34,9 +34,7 @@ export class RR0SsgContextImpl extends SsgContextImpl {
   constructor(locale: string, readonly time: TimeContext, readonly config: SsgConfig,
               readonly people = undefined, currentFile: FileContents | undefined = undefined) {
     super(locale, new Map(), "RR0", new ConsoleLogger("RR0"), currentFile)
-    this.data = {
-      time: time
-    }
+    this.data = {time}
     this.messages = ssgMessages[locale]
   }
 

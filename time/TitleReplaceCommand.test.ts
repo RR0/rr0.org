@@ -1,9 +1,19 @@
-import { timeDefaultHandler } from "./TimeDefaultTitle"
 import { SsiTitleReplaceCommand } from "./SsiTitleReplaceCommand"
 import { rr0TestUtil } from "../test/RR0TestUtil"
 import { describe, expect, test } from "@javarome/testscript"
+import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { Time } from "./Time"
+import { TimeTextBuilder } from "./TimeTextBuilder"
 
 describe("TitleReplaceCommand", () => {
+
+  let timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
+
+  const timeDefaultHandler = (context: HtmlRR0SsgContext): string | undefined => {
+    let title: string | undefined
+    title = Time.titleFromFile(context, context.file.name, timeTextBuilder)
+    return title
+  }
 
   describe("Time page", () => {
 

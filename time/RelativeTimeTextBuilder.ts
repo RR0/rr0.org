@@ -3,10 +3,13 @@ import { RR0SsgContext } from "../RR0SsgContext"
 
 export class RelativeTimeTextBuilder {
 
-  static build(oldContext: RR0SsgContext, newContext: RR0SsgContext): string {
+  constructor(protected timeTextBuilder: TimeTextBuilder) {
+  }
+
+  build(oldContext: RR0SsgContext, newContext: RR0SsgContext): string {
     const previousTime = oldContext?.time;
     if (!previousTime?.isDefined()) {
-      return TimeTextBuilder.build(newContext)
+      return this.timeTextBuilder.build(newContext)
     }
     const deltaContext = oldContext.clone()
     const deltaTime = deltaContext.time
@@ -164,7 +167,7 @@ export class RelativeTimeTextBuilder {
       } else {
         defaultContext = newContext
       }
-      text = TimeTextBuilder.build(defaultContext, print)
+      text = this.timeTextBuilder.build(defaultContext, print)
     }
     return text
   }

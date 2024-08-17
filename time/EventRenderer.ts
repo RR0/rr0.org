@@ -1,5 +1,4 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { TimeTextBuilder } from "./TimeTextBuilder"
 import { RR0Data } from "../data/RR0Data"
 import { SourceRenderer } from "../source/SourceRenderer"
 import { Source } from "../source/Source"
@@ -54,7 +53,7 @@ export class EventRenderer<D extends RR0Data> {
     } else {
       Object.assign(dataContext.time, timeValue)
     }
-    timeEl.textContent = TimeTextBuilder.build(dataContext)
+    timeEl.textContent = this.sourceRenderer.timeTextBuilder.build(dataContext)
     container.append(timeEl)
     const place = data.place
     if (place) {
@@ -79,6 +78,7 @@ export class EventRenderer<D extends RR0Data> {
       container.append(" ", sourceEl)
     }
   }
+
   async renderSources(context: HtmlRR0SsgContext, sources: Source[], container: HTMLElement) {
     for (const source of sources) {
       const href = source.url

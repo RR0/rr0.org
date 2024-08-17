@@ -18,8 +18,6 @@ export type TimeParseResult = {
  */
 export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeElement> {
 
-  static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
-
   /**
    * @param factory
    */
@@ -32,9 +30,9 @@ export class TimeReplacer implements DomReplacement<HtmlRR0SsgContext, HTMLTimeE
       replacement = origEl
     } else {
       const previousContext = origEl.dataset.context === "none" ? undefined : context.clone()
-      const starting = origEl.dataset.starting && origEl.dataset.starting !== "false"
       const timeStr = origEl.textContent
-      replacement = this.factory.create(context, timeStr, previousContext)
+      context.time.updateFromStr(timeStr)
+      replacement = this.factory.create(context, previousContext)
       if (!replacement) {
         replacement = origEl
         replacement.setAttribute("datetime", context.time.toString())

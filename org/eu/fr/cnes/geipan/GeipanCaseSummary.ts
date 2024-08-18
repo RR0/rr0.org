@@ -13,7 +13,7 @@ export type GeipanZoneCode = FranceDepartementCode | FranceRegionCode | CountryC
  */
 export interface GeipanCaseSummary {
   id: string
-  url: URL
+  url: string
   dateTime: TimeContext
   sightingType?: GeipanSightingType
   city: string

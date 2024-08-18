@@ -37,7 +37,7 @@ export class NuforcHttpDatasource extends NuforcDatasource {
 
   protected async readCases(context: RR0SsgContext): Promise<NuforcCaseSummary[]> {
     const searchUrl = this.queryUrl(context)
-    const doc = await this.http.get(searchUrl.href, {headers: {accept: "text/html;charset=utf-8"}})
+    const doc = await this.http.get(searchUrl, {headers: {accept: "text/html;charset=utf-8"}})
     const rowEls = doc.querySelectorAll("#table_1 tbody tr")
     return Array.from(rowEls).map(row => this.getNativeCase(context, row))
   }
@@ -90,7 +90,7 @@ export class NuforcHttpDatasource extends NuforcDatasource {
     const columns = row.querySelectorAll("td")
     const url = this.getLink(columns[0])
     const caseNumber = new URLSearchParams(url.search).get("id")
-    const dateTime = this.getTime(columns[1], context)
+    const time = this.getTime(columns[1], context)
     const city = columns[2].textContent
     const state = this.getState(columns[3])
     const country = this.getCountry(columns[4])
@@ -99,6 +99,6 @@ export class NuforcHttpDatasource extends NuforcDatasource {
     const reportDate = this.dateFromField(columns[7])
     const postDate = this.dateFromField(columns[8])
     const image = this.getImage(columns[9])
-    return {id: caseNumber, url, city, state, country, dateTime, shape, summary, reportDate, postDate, image}
+    return {id: caseNumber, url: url.href, city, state, country, time, shape, summary, reportDate, postDate, image}
   }
 }

@@ -72,7 +72,7 @@ import { ChronologyReplacerActions } from "./time/datasource/ChronologyReplacerA
 import { SourceReplacer } from "./source/SourceReplacer"
 import { NoteReplacer } from "./note/NoteReplacer"
 import { NoteFileCounter } from "./note/NoteFileCounter"
-import { PersisentSourceRegistry } from "./source/PersisentSourceRegistry"
+import { PersistentSourceRegistry } from "./source/PersistentSourceRegistry"
 import { SourceIndexStep } from "./source/SourceIndexStep"
 import { SourceFileCounter } from "./source/SourceFileCounter"
 import { TimeElementFactory } from "./time/TimeElementFactory"
@@ -236,7 +236,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const sourceRegistryFileName = "source/index.json"
   const baseUrl = "https://rr0.org"
   const http = new HttpSource()
-  const sourceFactory = new PersisentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName)
+  const sourceFactory = new PersistentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName, timeFormat)
   const noteCounter = new NoteFileCounter()
   const noteRenderer = new NoteRenderer(noteCounter)
   const caseRenderer = new CaseSummaryRenderer(noteRenderer, sourceFactory, sourceRenderer)
@@ -264,7 +264,7 @@ timeService.getFiles().then(async (timeFiles) => {
     new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
     new SsiSetVarReplaceCommand("url",
       (_match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-    new SsiLastModifiedReplaceCommand(context.time.options),
+    new SsiLastModifiedReplaceCommand(timeFormat),
     new SsiTitleReplaceCommand([timeDefaultHandler]),
     new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
     new AuthorReplaceCommand(timeService)

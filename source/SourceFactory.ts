@@ -12,7 +12,8 @@ import { HttpSource } from "../time/datasource/HttpSource"
  */
 export class SourceFactory {
 
-  constructor(protected dataService: DataService, protected http: HttpSource, protected baseUrl: string) {
+  constructor(protected dataService: DataService, protected http: HttpSource, protected baseUrl: string,
+              protected options: Intl.DateTimeFormatOptions) {
   }
 
   /**
@@ -54,15 +55,16 @@ export class SourceFactory {
         source = await this.fromPage(href, hash)
         break
       case ".json":
-        const sources = await this.dataService.getFromDir(path.dirname(href), sourceTypes, [path.basename(href)])
+        const sources = await this.dataService.getFromDir<Source>(path.dirname(href), sourceTypes,
+          [path.basename(href)])
         source = sources?.[0]
         break
       default: {
-        const sources = await this.dataService.getFromDir(ext ? path.dirname(href) : href, sourceTypes,
+        const sources = await this.dataService.getFromDir<Source>(ext ? path.dirname(href) : href, sourceTypes,
           ["index.json", "people.json"])
         source = sources?.[0]
         if (!source) {
-          source = this.fromPage(path.join(href, "index.html"), hash)
+          source = await this.fromPage(path.join(href, "index.html"), hash)
         }
       }
     }
@@ -97,9 +99,15 @@ export class SourceFactory {
       title = href
     }
     publisher = resOut.headers.get("host")
-    const time = lastModif ? TimeContext.fromDate(new Date(lastModif), context.time.options) : context.time
+    const time = lastModif ? TimeContext.fromDate(new Date(lastModif), this.options) : context.time
     const publication: Publication = {publisher, time}
-    return {title, url: href, publication}
+    return {
+      title,
+      url: href,
+      events: [],
+      previousSourceRefs: [],
+      publication
+    }
   }
 
   async fromPage(href: string, hash = ""): Promise<Source> {
@@ -118,11 +126,15 @@ export class SourceFactory {
     } else {
       title = doc.querySelector("title").textContent
     }
+    const publisher = doc.querySelector("meta[name='copyright']")?.getAttribute("content")
+    const authors = Array.from(doc.querySelectorAll("meta[name='author']")).map(meta => meta.getAttribute("content"))
     return {
-      title: title,
-      authors: Array.from(doc.querySelectorAll("meta[name='author']")).map(meta => meta.getAttribute("content")),
-      publication: {publisher: doc.querySelector("meta[name='copyright']")?.getAttribute("content")},
-      url
-    } as Source
+      title,
+      url: url.href,
+      events: [],
+      previousSourceRefs: [],
+      authors,
+      publication: {publisher, time: undefined}
+    }
   }
 }

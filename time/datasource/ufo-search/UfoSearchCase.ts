@@ -1,3 +1,4 @@
+import { TimeContext } from "../../TimeContext"
 
 export enum UfoSearchCaseType {
   letter = "letter",
@@ -101,6 +102,9 @@ export type UfoSearchCaseKeyValues = {
 }
 
 export interface UfoSearchCase {
+  id: string
+  url: string
+  time: TimeContext
   location?: string
   desc: string,
   key_vals: UfoSearchCaseKeyValues,

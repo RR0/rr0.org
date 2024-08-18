@@ -83,18 +83,18 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
     const fieldsHeadings = Array.from(row.querySelectorAll("strong"))
     const dateLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Date") >= 0)
     const itemContext = context.clone()
-    const dateTime = itemContext.time.reset()
+    const time = itemContext.time.reset()
     let url: URL
     let caseNumber
     if (dateLabel) {
       const dateLink = dateLabel.nextElementSibling as HTMLAnchorElement
       url = new URL(dateLink.href, this.baseUrl)
       caseNumber = url.hash.substring(1)
-      this.setDate(dateTime, dateLink.textContent)
+      this.setDate(time, dateLink.textContent)
     }
     const timeLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Time") >= 0)
     if (timeLabel) {
-      this.setTime(dateTime, timeLabel)
+      this.setTime(time, timeLabel)
     }
     const locationLabel = fieldsHeadings.find(heading => heading.textContent.indexOf("Location") >= 0)
     let location: string | undefined
@@ -114,7 +114,11 @@ export class UfoSearchHttpDatasource extends UfoSearchDatasource {
     let attributes
     let extraData
     return {
-      id: caseNumber, dateTime, location, desc: type,
+      id: caseNumber,
+      time,
+      url: url.href,
+      location,
+      desc: type,
       key_vals: {url},
       attributes,
       ref: "",

@@ -11,8 +11,8 @@ export class SourceRegistry extends SourceFactory {
 
   protected registry = {}
 
-  constructor(dataService: DataService, http: HttpSource, baseUrl: string) {
-    super(dataService, http, baseUrl)
+  constructor(dataService: DataService, http: HttpSource, baseUrl: string, options: Intl.DateTimeFormatOptions) {
+    super(dataService, http, baseUrl, options)
   }
 
   /**

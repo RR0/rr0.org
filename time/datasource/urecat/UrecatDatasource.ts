@@ -14,12 +14,13 @@ export abstract class UrecatDatasource implements Datasource<UrecatCase> {
   }
 
   async fetch(context: RR0SsgContext): Promise<UrecatCase[]> {
-    const day = context.time.getDayOfMonth()
-    const month = context.time.getMonth()
-    const year = context.time.getYear()
+    const time = context.time
+    const day = time.getDayOfMonth()
+    const month = time.getMonth()
+    const year = time.getYear()
     const summaries = await this.getSummaries(context)
     return summaries.filter(c => {
-      const sightingTime = c.dateTime
+      const sightingTime = c.time
       return (!year || year === sightingTime.getYear()) && (!month || month === sightingTime.getMonth()) && (!day || day === sightingTime.getDayOfMonth())
     })
   }

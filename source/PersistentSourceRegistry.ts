@@ -7,10 +7,11 @@ import { FileContents } from "ssg-api"
 /**
  * Create Source objects and register them.
  */
-export class PersisentSourceRegistry extends SourceRegistry {
+export class PersistentSourceRegistry extends SourceRegistry {
 
-  constructor(dataService: DataService, http: HttpSource, baseUrl: string, protected fileName: string) {
-    super(dataService, http, baseUrl)
+  constructor(dataService: DataService, http: HttpSource, baseUrl: string, protected fileName: string,
+              options: Intl.DateTimeFormatOptions) {
+    super(dataService, http, baseUrl, options)
     const registryFileContents = FileContents.read(fileName, "utf-8").contents
     this.registry = JSON.parse(registryFileContents)
   }

@@ -24,6 +24,8 @@ import { southKorea } from "../../../org/kr/SouthKorea"
 import { uk } from "../../../org/uk/Uk"
 import { usa } from "../../../org/us/Usa"
 import { Source } from "../../../source/Source"
+import { algeria } from "../../../org/dz/Algeria"
+import { panama } from "../../../org/pa/Panama"
 
 export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCaseSummary, RR0CaseSummary> {
 
@@ -64,26 +66,30 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
   }
 
   static readonly countryMap: { [key in NuforcCountry]: string } = {
+    Algeria: algeria.id,
     Australia: australia.id,
     Brazil: brazil.id,
     Canada: canada.id,
     Colombia: colombia.id,
-    DominicanRepublic: dominicanRepublic.id,
+    "Dominican Republic": dominicanRepublic.id,
     Germany: germany.id,
     India: india.id,
+    Panama: panama.id,
     Peru: peru.id,
     Philippines: philippines.id,
     Mexico: mexico.id,
-    NewZealand: newZealand.id,
+    "New Zealand": newZealand.id,
     Seychelles: seychelles.id,
-    SouthKorea: southKorea.id,
-    UnitedKingdom: uk.id,
+    "South Korea": southKorea.id,
+    "United Kingdom": uk.id,
     Unspecified: "?",
     USA: usa.id
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: NuforcCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: Source = {
+      previousSourceRefs: [],
+      events: [],
       url: sourceCase.url,
       title: "cas n° " + sourceCase.id,
       authors: this.authors,
@@ -101,7 +107,9 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
       `Could not find city of name "${placeName}" in state "${sourceCase.state}" of country "${countryCode}"`)
     const place: NamedPlace = {name: city.getTitle(context), place: city.places[0]}
     return {
-      time: sourceCase.dateTime,
+      type: "case",
+      events: [],
+      time: sourceCase.time,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

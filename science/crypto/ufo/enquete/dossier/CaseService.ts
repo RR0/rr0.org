@@ -32,13 +32,7 @@ export class CaseService {
     const caseContext = context.clone()
     if (time) {
       caseContext.time = time
-      const options = caseContext.time.options
-      options.year = "numeric"
-      options.month = undefined
-      options.day = undefined
-      options.hour = undefined
-      options.weekday = undefined
-      options.minute = undefined
+      const options: Intl.DateTimeFormatOptions = {year: "numeric"}
       const {result, replacement} = this.timeElementFactory.renderer.renderContent(caseContext, undefined, {url: true},
         options)
       result.append(replacement)

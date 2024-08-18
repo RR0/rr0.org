@@ -23,6 +23,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
 
   map(context: HtmlRR0SsgContext, sourceCase: UrecatCase, sourceTime: Date): RR0CaseSummary {
     const caseSource: Source = {
+      events: [], previousSourceRefs: [],
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
@@ -42,7 +43,10 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
       `Could not find city of name "${placeName}" in state "${location.departmentOrState}" of country "${sourceCountry}"`)
     const place: NamedPlace = {name: city.getTitle(context), place: city.places[0]}
     return {
+      type: "case",
       id: sourceCase.id,
+      url: sourceCase.url,
+      events: [],
       time: sourceCase.basicInfo.base.sightingDate,
       place,
       description: this.getDescription(sourceCase),

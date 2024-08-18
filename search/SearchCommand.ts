@@ -67,8 +67,8 @@ export class SearchCommand implements ReplaceCommand<HtmlSsgContext> {
         context.warn(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`)
       }
       const indexContext = context.clone()
-      indexContext.time.options.weekday = undefined
-      const time = this.timeTextBuilder.build(indexContext).toLowerCase()
+      const time = this.timeTextBuilder.build(indexContext, true,
+        {year: "numeric", month: "short", day: "numeric"}).toLowerCase()
       indexedPages.push({title, url, time})
     }
     if (this.config.indexWords) {

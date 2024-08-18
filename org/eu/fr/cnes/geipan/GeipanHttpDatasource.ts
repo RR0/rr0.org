@@ -127,7 +127,7 @@ export class GeipanHttpDatasource extends GeipanDatasource {
     return {
       zoneCode,
       id: caseNumber,
-      url,
+      url: url.href,
       city,
       dateTime,
       postTime,

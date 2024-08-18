@@ -38,13 +38,14 @@ export class TimeRenderer {
     return result
   }
 
-  renderContent(context: HtmlRR0SsgContext, previousContext: RR0SsgContext, options: TimeRenderOptions): {
+  renderContent(context: HtmlRR0SsgContext, previousContext: RR0SsgContext, options: TimeRenderOptions,
+                renderOptions: Intl.DateTimeFormatOptions = this.textBuilder.options): {
     result: HTMLElement,
     replacement: HTMLElement
   } {
     const time = context.time
     const absoluteTimeUrl = TimeUrlBuilder.fromContext(time)
-    const title = this.textBuilder.build(context)
+    const title = this.textBuilder.build(context, true, renderOptions)
     let text = previousContext ? new RelativeTimeTextBuilder(this.textBuilder).build(previousContext,
       context) : undefined
     if (!text) {

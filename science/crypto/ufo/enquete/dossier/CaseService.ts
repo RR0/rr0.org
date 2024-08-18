@@ -31,16 +31,18 @@ export class CaseService {
     const time = aCase.time
     const caseContext = context.clone()
     if (time) {
+      caseContext.time = time
       const options = caseContext.time.options
+      options.year = "numeric"
       options.month = undefined
       options.day = undefined
       options.hour = undefined
       options.weekday = undefined
       options.minute = undefined
-      const elem = this.timeElementFactory.create(caseContext, undefined, {url: false})
-      if (elem) {
-        details.push(elem.outerHTML)
-      }
+      const {result, replacement} = this.timeElementFactory.renderer.renderContent(caseContext, undefined, {url: true},
+        options)
+      result.append(replacement)
+      details.push(result.outerHTML)
     }
     const text: (string | string[])[] = [aCase.title]
     if (details.length > 0) {

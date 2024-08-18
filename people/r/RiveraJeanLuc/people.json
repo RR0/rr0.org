@@ -17,7 +17,11 @@
       "url": "portrait.png",
       "name": "Rivera présentant la Gazette Fortéenne aux RUP le 2004-02-03",
       "sources": [
-        "Jean-Pierre Laviano"
+        {
+          "authors": [
+            "Jean-Pierre Laviano"
+          ]
+        }
       ]
     }
   ]

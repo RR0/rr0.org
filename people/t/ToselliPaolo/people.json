@@ -17,10 +17,12 @@
       "title": "Toselli Piccioni",
       "sources": [
         {
-          "people": "Alessandro",
+          "authors": [
+            "Alessandro"
+          ],
           "url": "https://www.leggendemetropolitane.net/leggende.asp?id=226",
           "title": "Intervista a Paolo Toselli",
-          "publisher": "Leggende Metropolitane.net",
+          "place": "Leggende Metropolitane.net",
           "time": "2005-02-14"
         }
       ]

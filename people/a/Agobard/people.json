@@ -10,7 +10,20 @@
     {
       "type": "birth",
       "time": "769",
-      "place": "Spain"
+      "place": "Espagne",
+      "notes": [
+        "La date de <time>779</time> fut également citée, mais corrigée par Pertz. On a voulu cependant la contester"
+      ],
+      "sources": [
+        {
+          "authors": [
+            "Bressolles (Monseigneur)"
+          ],
+          "title": "Doctrine et Action Politique d'Agobard",
+          "place": "J. Vrin",
+          "time": "1949"
+        }
+      ]
     },
     {
       "type": "death",

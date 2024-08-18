@@ -67,11 +67,11 @@ export class SourceRenderer {
       if (source.index) {
         pubItems.push(source.index.toString())
       }
-      let sep = ""
-      for (const pubItem of pubItems) {
-        container.append(sep, pubItem)
-        sep = ", "
-      }
+    }
+    let sep = ""
+    for (const pubItem of pubItems) {
+      container.append(sep, pubItem)
+      sep = ", "
     }
   }
 }

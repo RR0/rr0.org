@@ -17,7 +17,9 @@
       "url": "portrait.jpg",
       "sources": [
         {
-          "people": "Ferryn, Patrick",
+          "authors": [
+            "Ferryn, Patrick"
+          ],
           "url": "https://www.cobeps.org/fr/jean-luc-vertongen",
           "title": "Hommage à Jean-Luc Vertongen (1939–2015)",
           "place": "COBEPS"

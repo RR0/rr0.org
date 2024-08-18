@@ -18,7 +18,9 @@
       "url": "portrait.jpg",
       "sources": [
         {
-          "people": "Halsman, Philippe",
+          "authors": [
+            "Halsman, Philippe"
+          ],
           "title": "Book of great jungles",
           "place": "&copy; 1965 Pocket Books, Inc."
         }

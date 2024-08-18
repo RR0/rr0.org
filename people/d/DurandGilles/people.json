@@ -14,7 +14,9 @@
       "sources": [
         {
           "title": "Gilles Durand, secrétaire du <a href=\"/org/eu/fr/asso/sceau\">SCEAU</a>",
-          "people": "Jean-Pierre Laviano",
+          "authors": [
+            "Jean-Pierre Laviano"
+          ],
           "place": "Repas Ufologiques Parisiens"
         }
       ]

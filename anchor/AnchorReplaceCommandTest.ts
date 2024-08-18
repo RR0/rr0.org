@@ -6,18 +6,19 @@ import { DataService } from "../data/DataService"
 import { RR0Case } from "../science/crypto/ufo/enquete/dossier/RR0Case"
 import { CaseService } from "../science/crypto/ufo/enquete/dossier/CaseService"
 import { TimeRenderer } from "../time/TimeRenderer"
-import { TimeReplacer } from "../time/TimeReplacer"
 import { DefaultDataFactory } from "../data/DefaultDataFactory"
 import { TimeTextBuilder } from "../time/TimeTextBuilder"
+import { TimeElementFactory } from "../time/TimeElementFactory"
+import { RR0EventFactory } from "../event/RR0EventFactory"
 
 describe("AnchorReplaceCommand", () => {
 
   test("replace anchor tag", async () => {
-    const dataService = new DataService([new DefaultDataFactory<RR0Case>("case")])
-    const timeRenderer = new TimeRenderer([], this.options)
-    const timeReplacer = new TimeReplacer(timeRenderer)
-    const caseService = new CaseService(dataService, timeReplacer)
+    const dataService = new DataService([new DefaultDataFactory<RR0Case>(new RR0EventFactory(), "case")])
     const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
+    const timeRenderer = new TimeRenderer([], timeTextBuilder)
+    const timeElementFactory = new TimeElementFactory(timeRenderer)
+    const caseService = new CaseService(dataService, timeElementFactory)
     const command = new AnchorReplaceCommand("https://rr0.org/", [new CaseAnchorHandler(caseService, timeTextBuilder)])
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html",
       `<time>2004</time> <a href="/science/crypto/ufo/enquete/dossier/Roswell">Roswell</a>`)

@@ -1,9 +1,18 @@
 {
-  "birthTime": "1930-09-01",
+  "title": "Robert M. L. Baker",
+  "url": "https://www.drrobertbaker.com",
+  "surname": "Bob",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1930-09-01",
+      "place": "Los Angeles (Californie)"
+    }
   ]
 }

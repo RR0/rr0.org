@@ -1,9 +1,26 @@
 {
-  "birthTime": "1940",
+  "title": "Christopher Canfield Green",
+  "surname": "Kit",
   "occupations": [
     "physician"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940",
+      "sources": [
+        {
+          "url": "https://michiganvoters.info/mobile/by_number/00000100/76409_christopher_canfield_green.html"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Green mène des recherches médicales"
+    }
   ]
 }

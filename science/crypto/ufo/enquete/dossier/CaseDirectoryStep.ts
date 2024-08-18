@@ -4,20 +4,31 @@ import { StringUtil } from "../../../../../util/string/StringUtil"
 import { RR0Case } from "./RR0Case"
 import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
 import { CaseService } from "./CaseService"
+import { DefaultDataFactory } from "../../../../../data/DefaultDataFactory"
 
+/**
+ * Builds a directory page for UFO cases.
+ */
 export class CaseDirectoryStep extends DirectoryStep {
-
+  /**
+   *
+   * @param caseService
+   * @param rootDirs The directories where UFO cases info can be found.
+   * @param excludedDirs The directories to exclude from the UFO case directory search.
+   * @param templateFileName The template of the directory page to build.
+   * @param outputFunc
+   * @param config
+   */
   constructor(protected caseService: CaseService, rootDirs: string[], excludedDirs: string[], templateFileName: string,
               protected outputFunc: OutputFunc, config: SsgConfig) {
     super({rootDirs, excludedDirs, templateFileName, getOutputPath: config.getOutputPath}, "case directory")
   }
 
-  static readonly template = "science/crypto/ufo/enquete/dossier/index.html"
-
   static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: CaseService): Promise<CaseDirectoryStep> {
-    const rootDirs = RR0FileUtil.findDirectoriesContaining(caseService.factory.fileNames[0] + ".json", "out")
+    const caseFactory = caseService.factory as DefaultDataFactory<RR0Case>
+    const rootDirs = RR0FileUtil.findDirectoriesContaining(caseFactory.fileNames[0] + ".json", "out")
     return new CaseDirectoryStep(caseService, rootDirs, ["science/crypto/ufo/enquete/dossier/canular"],
-      CaseDirectoryStep.template, outputFunc, config)
+      "science/crypto/ufo/enquete/dossier/index.html", outputFunc, config)
   }
 
   /**

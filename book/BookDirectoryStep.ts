@@ -13,10 +13,10 @@ import { Chapter } from "./Chapters"
  */
 export class BookDirectoryStep extends DirectoryStep {
 
-  constructor(dirs: string[], template: string, protected outputFunc: OutputFunc,
+  constructor(rootDirs: string[], templateFileName: string, protected outputFunc: OutputFunc,
               config: SsgConfig, protected outDir: string, name: string,
               protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
-    super(dirs, [], template, config, name)
+    super({rootDirs, excludedDirs: [], templateFileName, getOutputPath: config.getOutputPath}, name)
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, bookMeta: Map<string, HtmlMeta>,
@@ -38,6 +38,7 @@ export class BookDirectoryStep extends DirectoryStep {
     const books: Book[] = []
     for (const dirName of dirNames) {
       const dirBook: Book = {
+        events: [], previousSourceRefs: [], type: "book",
         dirName,
         authors: [],
         publication: {publisher: "", time: undefined},
@@ -111,7 +112,7 @@ export class BookDirectoryStep extends DirectoryStep {
   protected async toc(context: HtmlRR0SsgContext, book: Book) {
     const startFileName = path.join(book.dirName, "index.html")
     try {
-      context.getInputFrom(startFileName)
+      context.read(startFileName)
       const startFileNames = [context.file.name]
       const variants = context.file.lang.variants
       for (const variant of variants) {

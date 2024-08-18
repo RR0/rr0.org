@@ -6,11 +6,11 @@ import { DataService } from "../../../../../data/DataService"
 import { RR0Case } from "./RR0Case"
 import path from "path"
 import { CaseService } from "./CaseService"
-import { TimeReplacer } from "../../../../../time/TimeReplacer"
 import { TimeRenderer } from "../../../../../time/TimeRenderer"
 import { DefaultDataFactory } from "../../../../../data/DefaultDataFactory"
 import { RR0EventFactory } from "../../../../../event/RR0EventFactory"
 import { TimeTextBuilder } from "../../../../../time/TimeTextBuilder"
+import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
 
 describe("DirectoryStep", () => {
 
@@ -40,10 +40,9 @@ describe("DirectoryStep", () => {
     const dataService = new DataService([new DefaultDataFactory<RR0Case>(eventFactory, "case")])
     const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
     const timeRenderer = new TimeRenderer([], timeTextBuilder)
-    const timeReplacer = new TimeReplacer(timeRenderer)
-    const caseService = new CaseService(dataService, timeReplacer)
-    const step = new CaseDirectoryStep(caseService, [], [], "/science/crypto/ufo/enquete/dossier/index.html",
-      outputFunc, config)
+    const timeElementFactory = new TimeElementFactory(timeRenderer)
+    const caseService = new CaseService(dataService, timeElementFactory)
+    const step = new CaseDirectoryStep(caseService, [], [], "/science/crypto/ufo/enquete/dossier/index.html", config)
     const stepResult = await step.execute(context)
     expect(stepResult.directoryCount).toBe(239)
   })

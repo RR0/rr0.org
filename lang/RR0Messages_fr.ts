@@ -104,7 +104,7 @@ export class RR0Messages_fr implements RR0Messages {
     next: "Suivant"
   }
   unit = {
-    smi: (miles: number): string => (miles / 1.60934).toFixed(0) + " km",
+    smi: (miles: number): string => (miles * 1.60934).toFixed(0) + " km",
     fot: (feet: number): string => (feet * 0.3048).toFixed(0) + " m",
     hm: (milesPerHour: number): string => this.unit.smi(milesPerHour) + "/h",
     inh: (inches: number): string => (inches * 2.54).toFixed(0) + " cm"

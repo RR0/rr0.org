@@ -41,9 +41,9 @@ export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
     const dataService = new DataService([])
     const baseUrl = "https://rr0.org"
     const http = new HttpSource()
-    const sourceFactory = new SourceFactory(dataService, http, baseUrl)
+    const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)
     const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
-      new SourceRenderer(timeTextBuilder))
+      new SourceRenderer(this.timeTextBuilder))
     const itemsPromises = cases.map(c => eventRenderer.render(context, c))
     const items = await Promise.all(itemsPromises)
     expect(items.length).toBe(sourceCases.length)

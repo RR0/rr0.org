@@ -4,15 +4,15 @@ import { HtmlRR0SsgContext } from "../RR0SsgContext"
 /**
  * Register images (`<img>` tags) required in an HTML file.
  */
-export class UnitReplaceCommand extends DomReplaceCommand<HTMLElement> {
+export class UnitReplaceCommand extends DomReplaceCommand {
 
   constructor() {
     super("*[itemscope]")
   }
 
-  protected async createReplacer(context: HtmlRR0SsgContext): Promise<DomReplacer<HTMLImageElement>> {
+  protected async createReplacer(context: HtmlRR0SsgContext): Promise<DomReplacer> {
     return {
-      replace: async (itemEl: HTMLElement): Promise<HTMLImageElement> => {
+      replace: async (itemEl: HTMLElement) => {
         if (itemEl.getAttribute("itemtype") === "https://schema.org/QuantitativeValue") {
           const propEls = Array.from(itemEl.querySelectorAll("*[itemprop]"))
           const unitPropEl = propEls.find(propEl => propEl.getAttribute("itemprop") === "unitCode")

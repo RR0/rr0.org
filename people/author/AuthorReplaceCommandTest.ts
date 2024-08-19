@@ -3,10 +3,13 @@ import { rr0TestUtil } from "../../test/RR0TestUtil"
 import { describe, expect, test } from "@javarome/testscript"
 import { RelativeTimeTextBuilder } from "../../time/RelativeTimeTextBuilder"
 import { TimeService } from "../../time/TimeService"
+import { TimeTextBuilder } from "../../time/TimeTextBuilder"
 
 describe("AuthorReplaceCommand", () => {
 
-  const timeService = new TimeService()
+  const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
+  const relativeTimeTextBuilder = new RelativeTimeTextBuilder(timeTextBuilder)
+  const timeService = new TimeService(timeTextBuilder)
 
   test("no author", async () => {
     const timeFile = "time/1/9/5/4/index.html"
@@ -24,7 +27,7 @@ describe("AuthorReplaceCommand", () => {
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.file.meta.author.push("Beau, Jérôme")
-    const time = RelativeTimeTextBuilder.build(undefined, context)
+    const time = relativeTimeTextBuilder.build(undefined, context)
     await command.execute(context)
     expect(context.file.meta.author).toEqual(["Beau, Jérôme"])
     expect(context.file.contents).toBe(
@@ -37,7 +40,7 @@ describe("AuthorReplaceCommand", () => {
     const context = rr0TestUtil.newHtmlContext(timeFile,
       `This is published by <!--#echo var="author" -->!`)
     context.file.meta.copyright = "Some publication"
-    const time = RelativeTimeTextBuilder.build(undefined, context)
+    const time = relativeTimeTextBuilder.build(undefined, context)
     await command.execute(context)
     expect(context.file.meta.author).toEqual([])
     expect(context.file.meta.copyright).toBe("Some publication")

@@ -1,3 +1,5 @@
+import { TimeContext } from "../../TimeContext"
+
 export enum BaseOvniFranceTypeObservation {
   visualClose = "Visuel : proche",
   visualFar = "Visuel : Eloigné",
@@ -100,6 +102,9 @@ export enum BaseOvniFranceSize {
 }
 
 export interface BaseOvniFranceCaseSummary {
+  readonly id: string
+  readonly url: string
+  readonly time: TimeContext
   readonly city: string,
   readonly depCode: string,
 

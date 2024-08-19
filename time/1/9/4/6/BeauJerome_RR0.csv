@@ -1,16 +1,16 @@
-url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
-https://rr0.org/time/1/9/4/6/index.html#1946-01,,1946-01,en,"",1946-01
-https://rr0.org/time/1/9/4/6/index.html#1946-02,,1946-02,en,"",1946-02
-https://rr0.org/time/1/9/4/6/index.html#1946-03,,1946-03,"en le jeudi 21 L'AAF crée le SAC, le TAC et l'ADC.","",1946-03
-https://rr0.org/time/1/9/4/6/index.html#1946-05,,1946-05,en,"",1946-05
-https://rr0.org/time/1/9/4/6/index.html#1946-06,,1946-06,en,"",1946-06
-https://rr0.org/time/1/9/4/6/index.html#1946-07,,1946-07,en,"",1946-07
-https://rr0.org/time/1/9/4/6/index.html#1946-08,,1946-08,en,"",1946-08
-https://rr0.org/time/1/9/4/6/index.html#1946-09,,1946-09,en,"",1946-09
-https://rr0.org/time/1/9/4/6/index.html#1946-10,,1946-10,en,"",1946-10
-https://rr0.org/time/1/9/4/6/index.html,,1946,Automne Déclin de la vague d'observation suédoise.,"",1946
-https://rr0.org/time/1/9/4/6/index.html#1946-12,,1946-12,en,"",1946-12
-https://rr0.org/time/1/9/4/6/index.html,,1946,Alexandr N. Kazantsev décrit dans une nouvelle de science-fiction que l'affaire de Tunguska en 1908 serait due à l'explosion d'un vaisseau "martien" propulsé par énergie nucléaire.,"",1946
-https://rr0.org/time/1/9/4/6/index.html,,1946,Les Etats-Unis disposent d'une majorité à l'ONU et contrôlent 25 % du FMI.,"",1946
-https://rr0.org/time/1/9/4/6/index.html,,1946,"Au Brésil, Joao Prestes Filho (39 ans) vient d'être éclairé par un violent rayon de lumière alors qu'il rentre de la pêche. Rapidement la scène tourne à l'horreur : Les chairs de Prestes commencèrent à devenir visibles, à prendre le même aspect que si elles avaient été cuites pendant de longues heures (...). Elles se mirent à se décoller des os. (...). Le malheureux mourra dans des conditions atroces, sans qu'aucune cause n'ait jamais pu être identifiée.",""""",Bertrand Meheust,s1,"""",""Science-fiction et soucoupes volantes, Mercure de France"",1978,""""",1946
-https://rr0.org/time/1/9/4/6/index.html,,1946,Lancement du projet RAND.,"",1946
+type,events,url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-01,,1946-01,en,"",1946-01
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-02,,1946-02,en,"",1946-02
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-03,,1946-03,"en le jeudi 21 L'AAF crée le SAC, le TAC et l'ADC.","",1946-03
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-05,,1946-05,en,"",1946-05
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-06,,1946-06,en,"",1946-06
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-07,,1946-07,en,"",1946-07
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-08,,1946-08,en,"",1946-08
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-09,,1946-09,en,"",1946-09
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-10,,1946-10,en,"",1946-10
+case,"",https://rr0.org/time/1/9/4/6/index.html,,1946,Automne Déclin de la vague d'observation suédoise.,"",1946
+case,"",https://rr0.org/time/1/9/4/6/index.html#1946-12,,1946-12,en,"",1946-12
+case,"",https://rr0.org/time/1/9/4/6/index.html,,1946,Alexandr N. Kazantsev décrit dans une nouvelle de science-fiction que l'affaire de Tunguska en 1908 serait due à l'explosion d'un vaisseau "martien" propulsé par énergie nucléaire.,"",1946
+case,"",https://rr0.org/time/1/9/4/6/index.html,,1946,Les Etats-Unis disposent d'une majorité à l'ONU et contrôlent 25 % du FMI.,"",1946
+case,"",https://rr0.org/time/1/9/4/6/index.html,,1946,"Au Brésil, Joao Prestes Filho (39 ans) vient d'être éclairé par un violent rayon de lumière alors qu'il rentre de la pêche. Rapidement la scène tourne à l'horreur : Les chairs de Prestes commencèrent à devenir visibles, à prendre le même aspect que si elles avaient été cuites pendant de longues heures (...). Elles se mirent à se décoller des os. (...). Le malheureux mourra dans des conditions atroces, sans qu'aucune cause n'ait jamais pu être identifiée.",""""",Bertrand Meheust,s1,"""",""Science-fiction et soucoupes volantes, Mercure de France"",1978,""""",1946
+case,"",https://rr0.org/time/1/9/4/6/index.html,,1946,Lancement du projet RAND.,"",1946

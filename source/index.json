@@ -1062,5 +1062,25 @@
       "publisher": null,
       "time": "2024-08-19T00:55"
     }
+  },
+  "https://gw.geneanet.org/hphilippart?n=cometta&oc=&p=lucien": {
+    "title": "Lucien COMETTA : généalogie par Hugo PHILIPPART (hphilippart) - Geneanet",
+    "url": "https://gw.geneanet.org/hphilippart?n=cometta&oc=&p=lucien",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": ""
+    }
+  },
+  "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/44f65e4e-ac10-4184-af30-df8a9d99d339/content": {
+    "title": "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/44f65e4e-ac10-4184-af30-df8a9d99d339/content",
+    "url": "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/44f65e4e-ac10-4184-af30-df8a9d99d339/content",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": ""
+    }
   }
 }

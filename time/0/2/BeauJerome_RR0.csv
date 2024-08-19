@@ -1,4 +1,4 @@
-url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName
-https://rr0.org/time/0/2/index.html,,200,234,"",200
-https://rr0.org/time/0/2/index.html,,200,235,"",200
-https://rr0.org/time/0/2/index.html,,200,251,"",200
+type,events,url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName
+case,"",https://rr0.org/time/0/2/index.html,,200,234,"",200
+case,"",https://rr0.org/time/0/2/index.html,,200,235,"",200
+case,"",https://rr0.org/time/0/2/index.html,,200,251,"",200

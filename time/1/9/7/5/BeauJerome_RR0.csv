@@ -1,12 +1,12 @@
-url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
-https://rr0.org/time/1/9/7/5/index.html#1975-01,,1975-01,en,"",1975-01
-https://rr0.org/time/1/9/7/5/index.html#1975-03,,1975-03,en,"",1975-03
-https://rr0.org/time/1/9/7/5/index.html#1975-04,,1975-04,en,"",1975-04
-https://rr0.org/time/1/9/7/5/index.html#1975-05,,1975-05,en,"",1975-05
-https://rr0.org/time/1/9/7/5/index.html#1975-06,,1975-06,en,"",1975-06
-https://rr0.org/time/1/9/7/5/index.html#1975-07,,1975-07,en,"",1975-07
-https://rr0.org/time/1/9/7/5/index.html#1975-08,,1975-08,Photographie en Suisse cette année-là en,"",1975-08
-https://rr0.org/time/1/9/7/5/index.html#1975-09,,1975-09,en,"",1975-09
-https://rr0.org/time/1/9/7/5/index.html#1975-10,,1975-10,en,"",1975-10
-https://rr0.org/time/1/9/7/5/index.html#1975-11,,1975-11,en,"",1975-11
-https://rr0.org/time/1/9/7/5/index.html,,1975,Il échoit formellement à la gendarmerie la charge de recueillir systématiquement les rapports d'observations d'ovni.,"",1975
+type,events,url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-01,,1975-01,en,"",1975-01
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-03,,1975-03,en,"",1975-03
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-04,,1975-04,en,"",1975-04
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-05,,1975-05,en,"",1975-05
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-06,,1975-06,en,"",1975-06
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-07,,1975-07,en,"",1975-07
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-08,,1975-08,Photographie en Suisse cette année-là en,"",1975-08
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-09,,1975-09,en,"",1975-09
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-10,,1975-10,en,"",1975-10
+case,"",https://rr0.org/time/1/9/7/5/index.html#1975-11,,1975-11,en,"",1975-11
+case,"",https://rr0.org/time/1/9/7/5/index.html,,1975,Il échoit formellement à la gendarmerie la charge de recueillir systématiquement les rapports d'observations d'ovni.,"",1975

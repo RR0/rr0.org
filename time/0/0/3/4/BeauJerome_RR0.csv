@@ -1,1 +1,1 @@
-url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName
+type,events,url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName

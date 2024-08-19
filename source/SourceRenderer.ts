@@ -57,8 +57,10 @@ export class SourceRenderer {
       let timeValue = publication.time
       if (timeValue) {
         sourceContext.time.reset()
-        if (timeValue instanceof TimeContext && timeValue.isDefined()) {
-          Object.assign(sourceContext.time, timeValue)
+        if (timeValue instanceof TimeContext) {
+          if (timeValue.isDefined()) {
+            Object.assign(sourceContext.time, timeValue)
+          }
         } else {
           sourceContext.time.updateFromStr(timeValue as unknown as string)
         }

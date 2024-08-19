@@ -4,5 +4,17 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1923-02-14",
+      "place": "Casablanca (Maroc)"
+    },
+    {
+      "type": "death",
+      "time": "1993-10-31",
+      "place": "Australie"
+    }
   ]
 }

@@ -1,16 +1,16 @@
 <!--#include virtual="/header-start.html" -->
-<title>N. N.</title>
+<title>Réseaux de neurones</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Neural network</i> : Réseau de Neurones (RN).</p>
+<p><i lang="en">Neural network</i> (NN) : Réseau de Neurones (RN).</p>
 <section>
   <h2>Motivation</h2>
   <p><a href="..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
-      href="/science/discipline/hard/form/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
+    href="/science/discipline/hard/form/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
 </section>
 <section>
   <h2>Analyse</h2>
   <p>Lorsque le nombre de critères est trop grand (<a href="../ir">IR</a> par ex), <a
-      href="/science/discipline/hard/form/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse
+    href="/science/discipline/hard/form/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse
     en calcul (autant de <i lang="en">features</i> que de pixels) et il devient plus intéressant d'utiliser une
     alternative comme un réseau de neurones.</p>
   <p>À l'image des <a href="/science/discipline/hard/nat/vie/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un
@@ -29,13 +29,13 @@
     <p>Un réseau est constitué de `L` couches (souvent représentées de gauche à droite) :</p>
     <ol>
       <li>couche de `s_1` <strong>entrées</strong> (où l'on insèrera les valeurs de `x_1, x_2, ..., x_n`)</li>
-      <li>`L-2` couches "<strong>cachées</strong>" : contient `s_n` <strong>unités</strong> d'activation (noeuds)
-        `a_0^i, a_1^i, ..., a_n^i`. À noter que 1 seule couche cachée peut suffire à beaucoup de besoins, pour peu
-        qu'elle contienne assez de neurones (généralement plus que dans les couches d'entrée et de sortie). Si plus
-        d'une couche cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones.
-        Enfin, plus le réseau sera complexe, plus il demandera du temps de calcul (amoindrissant la rapidité de réponse
-        donc) et plus il sera succeptible de faire du <a
-            href="/science/discipline/hard/form/math/stat/regress/overfit">surapprentissage</a>.
+      <li>`L-2` couches "<strong>cachées</strong>" : contient `s_n` <strong>unités</strong> d'activation (nœuds) `a_0^i,
+        a_1^i, ..., a_n^i`. À noter que 1 seule couche cachée peut suffire à beaucoup de besoins, pour peu qu'elle
+        contienne assez de neurones (généralement plus que dans les couches d'entrée et de sortie). Si plus d'une couche
+        cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones. Enfin, plus le
+        réseau sera complexe, plus il demandera du temps de calcul (amoindrissant la rapidité de réponse donc) et plus
+        il sera susceptible de faire du <a
+          href="/science/discipline/hard/form/math/stat/regress/overfit">surapprentissage</a>.
       </li>
       <li>couche de `s_L` <strong>sorties</strong> (typiquement constituée de `n` neurones de sorties si la prédiction
         recherchée à `n` possibilités de réponses, par exemple 26 s'il s'agit de reconnaître une lettre de l'alphabet)
@@ -43,18 +43,18 @@
     </ol>
     <p>Par exemple pour 1 seule couche "cachée" (2) :</p>
     <p>`[[x_0],[x_1],[x_2],[x_3]] -> [[a_1^((2))],[a_2^((2))],[a_3^((2))]] -> hθ(x)`</p>
-    <p>Lorsqu'un réseau contient plusieurs couches cachées (impliquant autant de autant de niveaux d'<a
-        href="/tech/info/soft/proj/impl/lang/oo/Abstraction.html">abstraction</a>), on parle d'<a
-        href="deep"><strong>apprentissage profond</strong> (<i lang="en">deep learning</i>)</a>.</p>
+    <p>Lorsqu'un réseau contient plusieurs couches cachées (impliquant autant de niveaux d'<a
+      href="/tech/info/soft/proj/impl/lang/oo/Abstraction.html">abstraction</a>), on parle d'<a
+      href="deep"><strong>apprentissage profond</strong> (<i lang="en">deep learning</i>)</a>.</p>
   </section>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>On définit pour chacun des `n` noeuds d'une couche `j` un résultat dépendant de la couche précédente `j-1` et de sa
+  <p>On définit pour chacun des `n` nœuds d'une couche `j` un résultat dépendant de la couche précédente `j-1` et de sa
     matrice de poids `Θ_j` :</p>
   <p>`z_i^((j))=Θ_(i,0)^((j-1)) x_0 + Θ_(i,1)^((j-1)) x_1 + Θ_(i,2)^((j-1)) x_2 + Θ_(i,3)^((j-1)) x_3`</p>
   <p>et l'on définit alors la <strong>fonction d'activation</strong> comme une fonction <a
-      href="/science/discipline/hard/form/math/ens/rel/func/sigmoid/logistic">logistique</a> `g` :</p>
+    href="/science/discipline/hard/form/math/ens/rel/func/sigmoid/logistic">logistique</a> `g` :</p>
   <p>`a_i^((j))=g(z_i^((j)))`</p>
   <p>et l'on considère la sortie `h_Θ(x)` comme `a_1^(3)` par exemple (s'il y a 3 couches), recevant la couche 2 comme
     `X` (i.e. `x_i = a_i`) :</p>
@@ -66,7 +66,7 @@
   <p>On parlera donc plus généralement de `h_Θ(x)_k` comme étant le `k`<sup>ième</sup> résultat dans la couche de sortie
     .</p>
   <p>Comme pour d'autres algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a>, avant de prédire, le réseau
-    doit être "entraîné" (<i lang="en">trained</i>) en 2 phases à répéter jusqu'à convergence :</p>
+    doit être "entraîné" (<i lang="en">trained</i>) en 2 phases à répéter jusqu'à convergence :</p>
   <ul>
     <li>pour chaque ligne de données (`i` de 1 à `m`)
       <ol>
@@ -79,26 +79,17 @@
 </section>
 <section>
   <h2>Exemples</h2>
-  <p>Des exemples de RN sont :</p>
+  <p>Des exemples de RN sont :</p>
   <ul>
-    <li>les <strong><abbr title="Feed-Forward Neural Network">FNN</abbr></strong> : RN à <a href="forward">propagation
-      avant</a> uniquement (<em>perceptrons</em>). Il peuvent être :
+    <li>les <b><abbr title="Feed-Forward Neural Network">FNN</abbr></b> : RN à <a href="forward">propagation avant</a>
+      uniquement (<i lang="en">perceptrons</i>). Ils peuvent être :
       <ul>
-        <li>mono-couche (perceptron simple) pour classifier linéairement (2 classes de sorties possible
+        <li>mono-couche (perceptron simple) pour classifier linéairement (2 classes de sorties possibles
           uniquement).</li>
-        <li>multi-couches ou "<a href="deep">profonds</a>" (<abbr title="Deep Neural Network">DNN</abbr>). Ces réseaux
-          peuvent eux-mêmes connectés :
-          <ul>
-            <li><strong>pleinement</strong>, ce qui a l'inconvénient d'être prompt à l'<a
-                href="/science/discipline/hard/form/math/stat/regress/overfit">overfitting</a></li>
-            <li><strong>hiérarchiquement</strong> (<abbr title="Convolutional Neural Network">CNN</abbr> ou CovNet) avec
-              une couche de <a
-                  href="https://openclassrooms.com/fr/courses/4500266-analysez-les-signaux-1d/4507446-quest-ce-quune-convolution">convolution</a>
-              (et une couche de pooling) qui permettent de se concentrer sur les éléments les plus significatifs.</li>
-          </ul>
-        </li>
+        <li>multi-couches ou "<a href="deep">profonds</a>" (<abbr title="Deep Neural Network">DNN</abbr>).</li>
       </ul>
     </li>
+    <li>les <a href="rnn/index.html"><b><abbr title="Recurrent Neural Network">RNN</abbr></b></a></li>
   </ul>
 </section>
 <section>

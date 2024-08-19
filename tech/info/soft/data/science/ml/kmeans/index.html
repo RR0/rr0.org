@@ -17,8 +17,7 @@
     <figcaption>3 points tirés au hasard se sont progressivement déplacés pour minimiser la moyenne de leur distances
       aux 3 groupes de valeurs
     </figcaption>
-    <img src="kmeans.png" alt="3 points tirés au hasards se sont progressivement déplacés pour minimiser la moyenne de
-      leur distances aux 3 groupes de valeurs"/>
+    <img src="kmeans.png"/>
   </figure>
   <p>L'algorithme des K-moyennes consiste à associer des points à des groupes en fonction de leur distance à leurs
     <strong>barycentres</strong> (<i lang="en">centroids</i>) :</p>
@@ -35,7 +34,7 @@
     <h3>Affectation aux groupes</h3>
     <p>Pour déterminer le groupe (<i lang="en">cluster</i>) appartient (en attendant la convergence) chaque point
       `x^((i))` (avec `i` de 1 à `m`), on va chercher de quel barycentre `μ_k` il est le plus proche. On affectera alors
-      à `c^((i))` l'indice du `k` groupe trouvé (par conséquent `μ_(c^((i)))` représente le barycentre auxquel `x^((i))`
+      à `c^((i))` l'indice du `k` groupe trouvé (par conséquent `μ_(c^((i)))` représente le barycentre auquel `x^((i))`
       est affecté).</p>
     <p>Mathématiquement, cette opération revient à minimiser la <a
         href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a> suivante (dite "<strong>fonction
@@ -55,7 +54,7 @@
   <ul>
     <li>L'algorithme K-Means ne peut que converger.</li>
     <li>Le résultat trouvé ne sera pas forcément optimal, mais dépendra des points initialement choisis au hasard. C'est
-      pour cela qu'il convient de réitérer l'algorithmes avec des points initiaux différents et de choisir le cas qui
+      pour cela qu'il convient de réitérer l'algorithme avec des points initiaux différents et de choisir le cas qui
       aura donné une fonction J de coût minimale.</li>
   </ul>
 </section>
@@ -65,7 +64,7 @@
   <ul>
     <li>Déterminer des segments de marché : par exemple à partir d'un ensemble de ventes de tee-shirts, déterminer
       quelles sont les populations pour des tailles S, M et L.</li>
-    <li>Compresser une image : regrouper les couleurs d'une image en "groupes" et réduires ces couleurs à leur
+    <li>Compresser une image : regrouper les couleurs d'une image en "groupes" et réduire ces couleurs à leur
       moyenne (permettant ainsi de passer de millions de couleurs 16 couleurs/groupes seulement par exemple).</li>
   </ul>
 </section>

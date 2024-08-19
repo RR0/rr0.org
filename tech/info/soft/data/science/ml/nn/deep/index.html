@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>Deep learning</title>
 <!--#include virtual="/header-end.html" -->
-<p><a href="../..">Apprentissage</a> profond.</p>
+<p><a href="../..">Apprentissage</a> profond : <abbr title="Deep Neural Network">DNN</abbr>.</p>
 <section>
   <h2>Motivation</h2>
   <p>Reconnaissance d'<a href="/tech/info/soft/proj/impl/lang/oo/Abstraction.html">abstractions</a>.</p>
@@ -13,7 +13,14 @@
 </section>
 <section>
   <h2>Conception</h2>
-  <p>Une manière de représenter cette profondeur est celle d'un <a href="..">réseau de neurones</a>.</p>
+  <p>Une manière de représenter cette profondeur est celle d'un <a href="..">réseau de neurones</a> multi-couches. Ces
+    réseaux peuvent eux-mêmes être connectés :
+  <ul>
+    <li><b>pleinement</b>, ce qui a l'inconvénient d'être prompt à l'<a
+      href="/science/discipline/hard/form/math/stat/regress/overfit">overfitting</a></li>
+    <li><b>hiérarchiquement</b> : <a href="cnn/index.html"><abbr title="Convolutional Neural Network">CNN</abbr></a>.
+    </li>
+  </ul>
 </section>
 <section>
   <h2>Exemples</h2>
@@ -22,6 +29,8 @@
       <ul>
         <li>PyTorch</li>
         <li>Caffe2</li>
+        <li><a href="https://mil-tokyo.github.io/webdnn/">WebDNN</a> pour les exécuter (via <a
+          href="/tech/info/hard/gpu">GPU</a>) dans un navigateur</li>
       </ul>
     </li>
     <li>Frameworks
@@ -46,7 +55,7 @@
       <ul>
         <li><a href="https://pytorch.org">Pytorch</a> en <a href="/tech/info/soft/proj/impl/lang/python">Python</a></li>
         <li><a href="/org/us/company/alphabet/x/brain/product/soft/tensorflow">Tensorflow</a> de <a
-            href="/org/us/company/alphabet/x/brain">Google Brain</a></li>
+          href="/org/us/company/alphabet/x/brain">Google Brain</a></li>
       </ul>
     </li>
   </ul>

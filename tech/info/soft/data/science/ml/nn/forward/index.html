@@ -1,19 +1,19 @@
 <!--#include virtual="/header-start.html" -->
 <title>Propagation avant</title>
 <!--#include virtual="/header-end.html" -->
-<p><i lang="en">Forward propagation</i>.</p>
+<p><i lang="en">Forward propagation</i>, <span lang="en">feed forward NN</span>.</p>
 <section>
   <h2>Motivation</h2>
   <p>Reconnaissance de formes, etc.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>La propagation avant consiste à calculer :</p>
+  <p>La propagation avant consiste à calculer :</p>
   <ul>
     <li>pour chaque feature (`j` de 0 à `n` en incluant la feature de biais n° 0)
       <ul>
-        <li>sa valeur d'activation `a_j^((i)) = g(z_j^((i)))` où `z_j^((i))` est la somme des noeuds (toujours en
-          commençant par le noeud de biais d'indice 0) de la couche précédente en entrée multipliés par leurs poids
+        <li>sa valeur d'activation `a_j^((i)) = g(z_j^((i)))` où `z_j^((i))` est la somme des nœuds (toujours en
+          commençant par le nœud de biais d'indice 0) de la couche précédente en entrée multipliés par leurs poids
           `Θ_(i,j)^((i))`.</li>
       </ul>
     </li>
@@ -106,6 +106,15 @@
     <p>`a^((3))=g(Θ^((2)) * a^((2)))`</p>
     <p>ce qui donne :</p>
     <p>`h_Θ(x)=a^((3))`</p>
+  </section>
+  <section>
+    <h3>Bibliothèques</h3>
+    <p>Des exemples de libraries FNN sont :</p>
+    <ul>
+      <li><a href="https://brain.js.org">Brain.js</a> qui supporte aussi les <abbr
+        title="Recurrent Neural Network">RNN</abbr></li>
+      <li><a href="https://caza.la/synaptic">Synaptic.js</a></li>
+    </ul>
   </section>
 </section>
 <!--#include virtual="/footer.html" -->

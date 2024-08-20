@@ -40,7 +40,7 @@ describe("TimeEventRenderer", () => {
       authors: ["Some Author"],
       publication: {
         publisher: "Some site",
-        time: TimeContext.fromDate(new Date(2001, 12, 13), rr0TestUtil.intlOptions)
+        time: TimeContext.fromDate(new Date(2001, 12, 13))
       }
     }
     const sources = [source1]

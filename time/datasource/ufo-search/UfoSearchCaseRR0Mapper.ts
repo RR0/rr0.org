@@ -22,7 +22,7 @@ export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, Ufo
     const caseSource: Source = {
       events: [], previousSourceRefs: [],
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
-      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime)}
     }
     const place = this.getPlace(context, sourceCase)
     return {

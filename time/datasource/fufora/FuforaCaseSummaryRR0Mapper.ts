@@ -21,7 +21,7 @@ export class FuforaCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext,
     const source: Source = {
       previousSourceRefs: [], events: [],
       url: sourceCase.url, title: "cas n° " + id, authors: this.authors,
-      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime)}
     }
     const cityName = sourceCase.city || sourceCase.sightingPlace
     const city = this.cityService.find(context, cityName, undefined)

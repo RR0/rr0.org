@@ -1,12 +1,11 @@
 import { UfoSearchCase, UfoSearchCaseType } from "./UfoSearchCase"
 import { ufoSearchHttpDatasource } from "./UfoSearchMapping"
 import { TimeContext } from "../../TimeContext"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
 export const ufoSearchTestCases: UfoSearchCase[] = [
   {
     id: "979AEFAA",
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 0),
+    dateTime: new TimeContext(0),
     desc: "Greek and Roman records of UFO's",
     key_vals: {
       url: new URL("timeline.html#979AEFAA", ufoSearchHttpDatasource.baseUrl)
@@ -19,7 +18,7 @@ export const ufoSearchTestCases: UfoSearchCase[] = [
   },
   {
     id: "F91D10A9",
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 34, 4),
+    dateTime: new TimeContext(34, 4),
     desc: "A white, round object, accompanied by 10 small stars, flew overhead. The pattern suggests the stars might have been in formation with the main object, making it an unusual possible meteor event.",
     key_vals: {
       url: new URL("timeline.html#F91D10A9", ufoSearchHttpDatasource.baseUrl)

@@ -15,7 +15,7 @@ class RR0TestUtil {
   }
 
   newContext(inputFileName: string, contents?: string): RR0SsgContext {
-    const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), {outDir: "out"})
+    const context = new RR0SsgContextImpl("fr", new TimeContext(), {outDir: "out"})
     if (contents !== undefined && contents != null) {
       const langInfo = FileContents.getLang(context, inputFileName)
       context.file = new FileContents(inputFileName, "utf8", contents, new Date(), langInfo)

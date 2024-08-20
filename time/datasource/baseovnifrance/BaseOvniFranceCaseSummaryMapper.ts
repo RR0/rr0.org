@@ -2,7 +2,6 @@ import { CaseMapper } from "../CaseMapper"
 import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
 import { RR0SsgContext } from "../../../RR0SsgContext"
 import { TimeContext } from "../../TimeContext"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
 
 /**
@@ -21,11 +20,11 @@ export class BaseOvniFranceCaseSummaryMapper implements CaseMapper<RR0SsgContext
     const dayOfMonth = dayField && dayField !== "00" ? parseInt(dayField, 10) : undefined
     const c: BaseOvniFranceCaseSummary = {
       id: caseNumber,
-      url: new URL("listgen.php?typlist=20&page=0&numobs=" + caseNumber, this.baseUrl),
+      url: new URL("listgen.php?typlist=20&page=0&numobs=" + caseNumber, this.baseUrl).href,
       city: csvCase.Ville,
       depCode: csvCase["Départ."],
-      dateTime: new TimeContext(rr0TestUtil.intlOptions, parseInt(dateFields[2], 10), parseInt(dateFields[1], 10),
-        dayOfMonth, parseInt(timeFields[0], 10), parseInt(timeFields[1], 10), "GMT+1"),
+      time: new TimeContext(parseInt(dateFields[2], 10), parseInt(dateFields[1], 10), dayOfMonth,
+        parseInt(timeFields[0], 10), parseInt(timeFields[1], 10), "GMT+1"),
       physicalEffect: Boolean(csvCase["Effet Physique"]),
       witnessEffect: Boolean(csvCase["Effet témoin"]),
       entities: csvCase["Nbre entité"] > 0,

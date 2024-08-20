@@ -4,7 +4,6 @@ import { GeipanCaseClassification } from "./GeipanCaseClassification"
 import { GeipanZoneType } from "./GeipanCase"
 import { FranceDepartementCode } from "../../region/FranceDepartementCode"
 import { TimeContext } from "../../../../../time/TimeContext"
-import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
 
 export const geipanTestCaseSummaries: GeipanCaseSummary[] = [
   {
@@ -15,8 +14,8 @@ export const geipanTestCaseSummaries: GeipanCaseSummary[] = [
     city: "BELLEVILLE-SUR-SAONE",
     zoneType: GeipanZoneType.Department,
     zoneCode: FranceDepartementCode.Rhone,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1977, 3, 19),
-    postTime: new TimeContext(rr0TestUtil.intlOptions, 2010, 8, 6),
+    dateTime: new TimeContext(1977, 3, 19),
+    postTime: new TimeContext(2010, 8, 6),
     classification: GeipanCaseClassification.MissingInfo
   },
   {
@@ -27,8 +26,8 @@ export const geipanTestCaseSummaries: GeipanCaseSummary[] = [
     city: "ESTANG",
     zoneType: GeipanZoneType.Department,
     zoneCode: FranceDepartementCode.Gers,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1977, 3),
-    postTime: new TimeContext(rr0TestUtil.intlOptions, 2011, 5, 18),
+    dateTime: new TimeContext(1977, 3),
+    postTime: new TimeContext(2011, 5, 18),
     classification: GeipanCaseClassification.Identified
   }
 ]

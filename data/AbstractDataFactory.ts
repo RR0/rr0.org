@@ -19,7 +19,7 @@ export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T>
       return timeStr
     }
     if (timeStr) {
-      const time = new TimeContext({})
+      const time = new TimeContext()
       time.updateFromStr(timeStr)
       return time
     } else {

@@ -1,7 +1,6 @@
 import { NuforcCaseSummary } from "./NuforcCaseSummary"
 import { nuforcDatasource } from "./NuforcRR0Mapping"
 import { TimeContext } from "../../TimeContext"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
 import { NuforcState } from "./NuforcState"
 import { NuforcCountry } from "./NuforcCountry"
 import { NuforcShape } from "./NuforcShape"
@@ -13,7 +12,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "Slocomb",
     state: NuforcState.Alabama,
     country: NuforcCountry.USA,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 30, 21, 0),
+    dateTime: new TimeContext(1970, 3, 30, 21, 0),
     shape: NuforcShape.Circle,
     summary: "craft just above the trees moving slowly, silent,circular solid white light. witnessed by 5 of us",
     reportDate: new Date("12/21/2003"),
@@ -26,7 +25,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "Camp Pendleton",
     state: NuforcState.California,
     country: NuforcCountry.USA,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 21, 20, 0),
+    dateTime: new TimeContext(1970, 3, 21, 20, 0),
     shape: NuforcShape.Disk,
     summary: "While using night vison scopes , 28 Marines witness 3 saucer craft hovering near Camp Pendleton rifle range during night firing exersi",
     reportDate: new Date("07/01/2005"),
@@ -39,7 +38,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "Fort Worth",
     state: NuforcState.Texas,
     country: NuforcCountry.USA,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 20, 16, 0),
+    dateTime: new TimeContext(1970, 3, 20, 16, 0),
     shape: NuforcShape.Disk,
     summary: "Scintillating silvery, metallic object, probably disk-shaped, apparently changing attitude",
     reportDate: new Date("03/28/2004"),
@@ -52,7 +51,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "Castlegar (Canada)",
     state: NuforcState.BritishColumbia,
     country: NuforcCountry.Canada,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 15, 22, 0),
+    dateTime: new TimeContext(1970, 3, 15, 22, 0),
     shape: NuforcShape.Light,
     summary: "HBCCUFO CANADIAN REPORT:  At least seven, emerged from the light and were flying around the still stationary larger object.",
     reportDate: new Date("03/09/2004"),
@@ -65,7 +64,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "Monessen",
     state: NuforcState.Pennsylvania,
     country: NuforcCountry.USA,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 12, 3, 0),
+    dateTime: new TimeContext(1970, 3, 12, 3, 0),
     shape: NuforcShape.Cylinder,
     summary: "Probe Flourescent Bulb Sized Object.",
     reportDate: new Date("04/10/2013"),
@@ -78,7 +77,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "St. Petersburg",
     state: NuforcState.Florida,
     country: NuforcCountry.USA,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 10, 0, 0),
+    dateTime: new TimeContext(1970, 3, 10, 0, 0),
     shape: NuforcShape.Disk,
     summary: "Encounter with disked shape UFO on campus of Florida Presbyterian College with 30 others",
     reportDate: new Date("02/01/2008"),
@@ -91,7 +90,7 @@ export const nuforcTestCases: NuforcCaseSummary[] = [
     city: "Bonney lake",
     state: NuforcState.Washington,
     country: NuforcCountry.USA,
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 1970, 3, 7, 9, 0),
+    dateTime: new TimeContext(1970, 3, 7, 9, 0),
     shape: NuforcShape.Circle,
     summary: "2 ufos 20ft and 5ft",
     reportDate: new Date("09/02/2022"),

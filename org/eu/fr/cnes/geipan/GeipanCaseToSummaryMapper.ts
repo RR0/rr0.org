@@ -3,7 +3,6 @@ import { GeipanCase } from "./GeipanCase"
 import { CaseMapper } from "../../../../../time/datasource/CaseMapper"
 import { RR0SsgContext } from "../../../../../RR0SsgContext"
 import { TimeContext } from "../../../../../time/TimeContext"
-import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
 
 /**
  * Maps a GEIPAN CSV case to a GEIPAN summary case.
@@ -31,12 +30,12 @@ export class GeipanCaseToSummaryMapper implements CaseMapper<RR0SsgContext, Geip
       id: caseNumber,
       url: new URL(
         `https://geipan.fr/fr/cas/${caseNumber}?field_agregation_index_value=&field_date_d_observation_value%5Bmax%5D=1977%2F03%2F31&field_date_d_observation_value%5Bmin%5D=1977%2F03%2F01&field_departement_target_id=&field_document_existe_ou_pas_value=All&field_latitude_value%5Bmax%5D=&field_latitude_value%5Bmin%5D=&field_longitude_value%5Bmax%5D=&field_longitude_value%5Bmin%5D=&field_phenomene_target_id=&field_type_de_cas_target_id=All&select-category-export=nothing${caseNumber}`,
-        this.baseUrl),
+        this.baseUrl).href,
       city,
       zoneType: csvCase.cas_zone_type,
       zoneCode: csvCase.cas_zone_code as GeipanZoneCode,
-      dateTime: new TimeContext(rr0TestUtil.intlOptions, sightingYear, sightingMonth, sightingDayOfMonth),
-      postTime: new TimeContext(rr0TestUtil.intlOptions, postYear, postMonth, postDayOfMonth),
+      dateTime: new TimeContext(sightingYear, sightingMonth, sightingDayOfMonth),
+      postTime: new TimeContext(postYear, postMonth, postDayOfMonth),
       classification
     }
   }

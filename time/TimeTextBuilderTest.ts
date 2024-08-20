@@ -1,14 +1,13 @@
-import { TimeTextBuilder } from './TimeTextBuilder';
-import { TimeContext } from './TimeContext';
-import { RR0SsgContextImpl } from '../RR0SsgContext';
-import { rr0TestUtil } from '../test/RR0TestUtil';
-import { describe, expect, test } from '@javarome/testscript';
+import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeContext } from "./TimeContext"
+import { RR0SsgContextImpl } from "../RR0SsgContext"
+import { describe, expect, test } from "@javarome/testscript"
 
 describe("TimeTextBuilder", () => {
 
   test("prints year", () => {
     {
-      const context = new RR0SsgContextImpl("fr", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("fr", new TimeContext())
       context.time.setYear(2003)
       expect(TimeTextBuilder.build(context)).toBe("2003")
     }
@@ -16,13 +15,13 @@ describe("TimeTextBuilder", () => {
 
   test("prints month", () => {
     {
-      const context = new RR0SsgContextImpl("fr", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("fr", new TimeContext())
       context.time.setYear(2003)
       context.time.setMonth(9)
       expect(TimeTextBuilder.build(context)).toBe("septembre 2003")
     }
     {
-      const context = new RR0SsgContextImpl("en", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("en", new TimeContext())
       context.time.setYear(2003)
       context.time.setMonth(9)
       expect(TimeTextBuilder.build(context)).toBe("September 2003")
@@ -31,14 +30,14 @@ describe("TimeTextBuilder", () => {
 
   test("prints day", () => {
     {
-      const context = new RR0SsgContextImpl("fr", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("fr", new TimeContext())
       context.time.setYear(2003)
       context.time.setMonth(9)
       context.time.setDayOfMonth(23)
       expect(TimeTextBuilder.build(context)).toBe("mardi 23 septembre 2003")
     }
     {
-      const context = new RR0SsgContextImpl("en", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("en", new TimeContext())
       context.time.setYear(2003)
       context.time.setMonth(9)
       context.time.setDayOfMonth(23)
@@ -48,7 +47,7 @@ describe("TimeTextBuilder", () => {
 
   test("prints hour", () => {
     {
-      const context = new RR0SsgContextImpl("fr", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("fr", new TimeContext())
       context.time.setYear(2003)
       context.time.setMonth(9)
       context.time.setDayOfMonth(23)
@@ -56,7 +55,7 @@ describe("TimeTextBuilder", () => {
       expect(TimeTextBuilder.build(context)).toBe("mardi 23 septembre 2003 à 16 h")
     }
     {
-      const context = new RR0SsgContextImpl("en", new TimeContext(rr0TestUtil.intlOptions))
+      const context = new RR0SsgContextImpl("en", new TimeContext())
       context.time.setYear(2003)
       context.time.setMonth(9)
       context.time.setDayOfMonth(23)

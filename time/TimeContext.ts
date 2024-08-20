@@ -23,10 +23,9 @@ export class TimeContext {
   }
 
   constructor(
-    readonly options: Intl.DateTimeFormatOptions,
-    protected _year?: number, protected _month?: number, protected _dayOfMonth?: number,
-    protected _hour?: number, protected _minutes?: number, protected _timeZone?: string,
-    public approximate: boolean = false,
+    protected _year?: number,
+    protected _month?: number, protected _dayOfMonth?: number, protected _hour?: number,
+    protected _minutes?: number, protected _timeZone?: string, public approximate: boolean = false,
     public approximateTime: boolean = false,
     public from: TimeContext | undefined = undefined,
     public to: TimeContext | undefined = undefined,
@@ -184,15 +183,14 @@ export class TimeContext {
       || this._minutes != undefined
   }
 
-  clone(): TimeContext {
-    return new TimeContext({...this.options}, this._year, this._month, this._dayOfMonth, this._hour, this._minutes,
-      this._timeZone, this.approximate, this.approximateTime, this.from, this.to, this.duration)
+  static fromDate(date: Date): TimeContext {
+    return new TimeContext(date.getFullYear(), date.getMonth() + 1, date.getDate(), date.getHours(), date.getMinutes(),
+      "UTC" + (date.getTimezoneOffset() < 0 ? "-" : "+") + date.getTimezoneOffset())
   }
 
-  static fromDate(date: Date, options: Intl.DateTimeFormatOptions): TimeContext {
-    return new TimeContext({...options}, date.getFullYear(), date.getMonth() + 1, date.getDate(), date.getHours(),
-      date.getMinutes(),
-      "UTC" + (date.getTimezoneOffset() < 0 ? "-" : "+") + date.getTimezoneOffset())
+  clone(): TimeContext {
+    return new TimeContext(this._year, this._month, this._dayOfMonth, this._hour, this._minutes, this._timeZone,
+      this.approximate, this.approximateTime, this.from, this.to, this.duration)
   }
 
   reset(): this {

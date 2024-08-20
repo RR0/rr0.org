@@ -99,7 +99,7 @@ export class SourceFactory {
       title = href
     }
     publisher = resOut.headers.get("host")
-    const time = lastModif ? TimeContext.fromDate(new Date(lastModif), this.options) : context.time
+    const time = lastModif ? TimeContext.fromDate(new Date(lastModif)) : context.time
     const publication: Publication = {publisher, time}
     return {
       title,

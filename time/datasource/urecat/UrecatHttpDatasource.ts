@@ -110,7 +110,6 @@ export class UrecatHttpDatasource extends UrecatDatasource {
         dateTime.setDayOfMonth(dayOfMonth !== "00" ? parseInt(dayOfMonth, 10) : undefined)
       }
     }
-    dateTime.options.weekday = undefined
     return itemContext
   }
 
@@ -125,7 +124,14 @@ export class UrecatHttpDatasource extends UrecatDatasource {
     const caseContext = this.getDate(context, url, row)
     const {placeName, departmentOrState, country} = this.getLocation(columns[1])
     const witnesses = this.getWitnesses(columns[2].textContent)
-    const timeStr = new TimeTextBuilder(rr0TestUtil.intlOptions).build(caseContext)
+    const timeStr = new TimeTextBuilder(rr0TestUtil.intlOptions).build(caseContext, true, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      }
+    )
     const sightingDate = caseContext.time
     const countStr = ObjectUtil.keyFromValue(UrecatHttpDatasource.wordToCount, witnesses.length)
     const title = `${timeStr}, ${placeName}, ${departmentOrState}, ${country}, ${countStr} ${MessageUtils.pluralWord(

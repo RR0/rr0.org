@@ -54,13 +54,13 @@ export class BookService {
       const title = result[COLUMN_TITLE]
       if (timeStr) {
         const year = parseInt(timeStr, 10)
-        const time = new TimeContext(this.intlOptions, year)
+        const time = new TimeContext(year)
         const author = result[COLUMN_AUTHOR]
         const summary = result[COLUMN_SUMMARY]
         const authorLastFirst = result[COLUMN_AUTHOR_LAST_FIRST]
         const authorsNames = author ? author.split(",") : [authorLastFirst]
         const authors: People[] = []
-        const context = new RR0SsgContextImpl("fr", new TimeContext(this.intlOptions), this.config)
+        const context = new RR0SsgContextImpl("fr", new TimeContext(), this.config)
         for (const authorName of authorsNames) {
           const authorFound = await this.findPeople(context, authorName)
           if (authorFound) {

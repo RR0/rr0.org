@@ -1,11 +1,10 @@
 import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
 import { TimeContext } from "../../TimeContext"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
 
 export const essexPoliceTestCases: EssexPoliceCaseSummary[] = [
   {
     id: "1",
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 2018),
+    dateTime: new TimeContext(2018),
     url: new URL(
       "https://www.essex.police.uk/foi-ai/essex-police/other-information/previous-foi-requests/ufo-reports-2018-to-2023/"),
     district: "M25",
@@ -13,7 +12,7 @@ export const essexPoliceTestCases: EssexPoliceCaseSummary[] = [
   },
   {
     id: "2019",
-    dateTime: new TimeContext(rr0TestUtil.intlOptions, 2019),
+    dateTime: new TimeContext(2019),
     url: new URL(
       "https://www.essex.police.uk/foi-ai/essex-police/other-information/previous-foi-requests/ufo-reports-2018-to-2023/"),
     district: "BASILDON",

@@ -15,15 +15,14 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
 
   constructor(
     protected depService: DepartmentService, protected cityService: CityService,
-    readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]
-  ) {
+    readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]) {
   }
 
   map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: Source = {
       previousSourceRefs: [], events: [],
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
-      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime)}
     }
     const depCode = sourceCase.depCode
     const dep = this.depService.get(depCode, undefined)

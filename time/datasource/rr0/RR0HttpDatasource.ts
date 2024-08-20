@@ -90,7 +90,7 @@ export class RR0HttpDatasource extends RR0Datasource {
       let time: TimeContext
       let publisher: string
       if (parsedTime) {
-        time = new TimeContext({...itemContext.time.options})
+        time = new TimeContext()
         TimeElementFactory.setTimeContextFrom(time, parsedTime)
         pubItems.pop()
       }

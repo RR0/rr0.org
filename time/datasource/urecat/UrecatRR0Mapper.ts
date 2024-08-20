@@ -12,8 +12,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
 
   constructor(
     protected cityService: CityService, protected countryService: CountryService,
-    readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]
-  ) {
+    readonly baseUrl: URL, readonly copyright: string, readonly authors: string[]) {
   }
 
   getDescription(c: UrecatCase): string {
@@ -25,7 +24,7 @@ export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase
     const caseSource: Source = {
       events: [], previousSourceRefs: [],
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
-      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime)}
     }
     const location = sourceCase.basicInfo.base.location
     let sourceCountry = location.country

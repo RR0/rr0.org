@@ -174,7 +174,7 @@ const timeFormat: Intl.DateTimeFormatOptions = {
   hour: "2-digit",
   minute: "2-digit"
 }
-const timeContext = new TimeContext(timeFormat)
+const timeContext = new TimeContext()
 const context = new RR0SsgContextImpl("fr", timeContext, config)
 context.setVar("mail", "rr0@rr0.org")
 

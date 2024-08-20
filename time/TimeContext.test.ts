@@ -1,10 +1,9 @@
 import { describe, expect, test } from "@javarome/testscript"
 import { TimeContext } from "./TimeContext"
-import { rr0TestUtil } from "../test/RR0TestUtil"
 
 describe("TimeContext", () => {
 
-  const timeContext = new TimeContext(rr0TestUtil.intlOptions)
+  const timeContext = new TimeContext()
 
   test("duration seconds", () => {
     timeContext.updateFromStr("P10S")

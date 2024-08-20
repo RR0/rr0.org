@@ -55,8 +55,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
 
   constructor(
     protected cityService: CityService, protected countryService: CountryService,
-    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]
-  ) {
+    readonly baseUrl: string, readonly copyright: string, readonly authors: string[]) {
   }
 
   getDescription(c: NuforcCaseSummary): string {
@@ -93,7 +92,7 @@ export class NuforcRR0Mapper implements CaseMapper<HtmlRR0SsgContext, NuforcCase
       url: sourceCase.url,
       title: "cas n° " + sourceCase.id,
       authors: this.authors,
-      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
+      publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime)}
     }
     assert.ok(sourceCase.country, `NUFORC country code is ${sourceCase.country}`)
     const countryCode = NuforcRR0Mapper.countryMap[sourceCase.country]

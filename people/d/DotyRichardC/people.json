@@ -1,9 +1,18 @@
 {
-  "birthTime": "1950-02-15",
+  "title": "Richard C. Doty",
+  "surname": "Rick",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
-  ]
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1950-02-15",
+      "place": "Barton (New York)"
+    }
+  ],
+  "discredited": "true"
 }

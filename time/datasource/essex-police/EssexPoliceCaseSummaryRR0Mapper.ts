@@ -22,12 +22,15 @@ export class EssexPoliceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgCon
 
   map(context: HtmlRR0SsgContext, sourceCase: EssexPoliceCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: Source = {
+      previousSourceRefs: [], events: [],
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
     const place = this.getPlace(context, sourceCase)
     return {
-      time: sourceCase.dateTime,
+      type: "case",
+      events: [],
+      time: sourceCase.time,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

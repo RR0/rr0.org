@@ -21,6 +21,7 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
 
   map(context: HtmlRR0SsgContext, sourceCase: BaseOvniFranceCaseSummary, sourceTime: Date): RR0CaseSummary {
     const caseSource: Source = {
+      previousSourceRefs: [], events: [],
       url: sourceCase.url, title: "cas n° " + sourceCase.id, authors: this.authors,
       publication: {publisher: this.copyright, time: TimeContext.fromDate(sourceTime, context.time.options)}
     }
@@ -32,7 +33,9 @@ export class BaseOvniFranceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0Ssg
     assert.ok(city, `Could not find city of name "${placeName}" in department of code "${dep.id}"`)
     const place: NamedPlace = {name: city.getTitle(context), place: city.places[0]}
     return {
-      time: sourceCase.dateTime,
+      type: "case",
+      events: [],
+      time: sourceCase.time,
       place,
       description: this.getDescription(sourceCase),
       sources: [caseSource]

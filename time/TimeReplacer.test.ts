@@ -8,14 +8,16 @@ import { TimeTextBuilder } from "./TimeTextBuilder"
 describe("TimeReplacer", () => {
 
   const textBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
-  const timeRenderer = new TimeRenderer(["time/2/0/0/3/index.html", "time/2/0/0/4/index.html"], textBuilder)
+  const timeRenderer = new TimeRenderer(
+    ["time/1/9/4/7/07/02/index.html", "time/2/0/0/3/index.html", "time/2/0/0/3/12/24/index.html", "time/2/0/0/4/index.html", "/time/2/0/0/4/09/index.html", "time/2/0/0/5/08/23/index.html", "time/2/0/0/6/07/14/index.html", "/time/2/0/0/7/06/15/index.html"],
+    textBuilder)
   const timeElementFactory = new TimeElementFactory(timeRenderer)
   const replacer = new TimeReplacer(timeElementFactory)
   const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
 
   test("parses year", async () => {
     {
-      const timeEl = document.createElement("time")
+      const timeEl = context.file.document.createElement("time")
       timeEl.textContent = "2003"
       const replacement = await replacer.replacement(context, timeEl)
       expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/3/"><time datetime="2003">2003</time></a>`)
@@ -27,7 +29,7 @@ describe("TimeReplacer", () => {
       expect(context.time.getTimeZone()).toBe(undefined)
     }
     {
-      const timeEl = document.createElement("time")
+      const timeEl = context.file.document.createElement("time")
       timeEl.innerHTML = "2003\n      "
       const replacement = await replacer.replacement(context, timeEl)
       expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/3/"><time datetime="2003">2003</time></a>`)
@@ -72,11 +74,8 @@ describe("TimeReplacer", () => {
 
   test("parses timezone", async () => {
     {
-      const interval = "2003-12-24CDT"
-      const timeRenderer = new TimeRenderer(["time/2/0/0/3/12/24/index.html"], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
       const original = context.file.document.createElement("time")
-      original.textContent = interval
+      original.textContent = "2003-12-24CDT"
       const replacement = await replacer.replacement(context, original)
       expect(replacement.outerHTML)
         .toBe(`<a href="/time/2/0/0/3/12/24/">mercredi 24 décembre 2003</a>`)  // TODO: Text should have timezone info
@@ -103,11 +102,8 @@ describe("TimeReplacer", () => {
   })
 
   test("parses month", async () => {
-    let value = "2004-09"
     const original = context.file.document.createElement("time")
-    original.textContent = value
-    const timeRenderer = new TimeRenderer(["/time/2/0/0/4/09/index.html"], this.options)
-    const replacer = new TimeReplacer(timeRenderer)
+    original.textContent = "2004-09"
     const replacement = await replacer.replacement(context, original)
     expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/4/09/">septembre 2004</a>`)
     expect(context.time.getYear()).toBe(2004)
@@ -119,11 +115,10 @@ describe("TimeReplacer", () => {
 
   describe("parses day", () => {
 
-    test("from full date", () => {
-      const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
-      const replacement = replacer.valueReplacement(context, "2005-08-23", undefined)
+    test("from full date", async () => {
+      const timeEl = context.file.document.createElement("time")
+      timeEl.textContent = "2005-08-23"
+      const replacement = await replacer.replacement(context, timeEl)
       expect(replacement.outerHTML).toBe(
         `<a href="/time/2/0/0/5/08/23/"><time datetime="2005-08-23">mardi 23 août 2005</time></a>`)
       expect(context.time.getYear()).toBe(2005)
@@ -133,14 +128,14 @@ describe("TimeReplacer", () => {
       expect(context.time.getMinutes()).toBe(undefined)
     })
 
-    test("from current date", () => {
+    test("from current date", async () => {
       const currentContext = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       currentContext.time.setYear(2005)
       currentContext.time.setMonth(8)
       const context = currentContext.clone()
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
-      const replacement2 = replacer.valueReplacement(context, "23", currentContext)
+      const timeEl = context.file.document.createElement("time")
+      timeEl.textContent = "23"
+      const replacement2 = await replacer.replacement(currentContext, timeEl)
       expect(replacement2.outerHTML).toBe(
         `<a href="/time/2/0/0/5/08/23/"><time datetime="2005-08-23" title="mardi 23 août 2005">mardi 23</time></a>`)
       expect(context.time.getYear()).toBe(2005)
@@ -150,14 +145,14 @@ describe("TimeReplacer", () => {
       expect(context.time.getMinutes()).toBe(undefined)
     })
 
-    test("from current date with hour", () => {
+    test("from current date with hour", async () => {
       const currentContext = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       currentContext.time.setYear(2005)
       currentContext.time.setMonth(8)
       const context = currentContext.clone()
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
-      const replacement1 = replacer.valueReplacement(context, "23 18:45", currentContext)
+      const timeEl = context.file.document.createElement("time")
+      timeEl.textContent = "23 18:45"
+      const replacement1 = await replacer.replacement(currentContext, timeEl)
       expect(replacement1.outerHTML)
         .toBe(
           `<a href="/time/2/0/0/5/08/23/"><time datetime="2005-08-23 18:45" title="mardi 23 août 2005 à 18:45">mardi 23 18:45</time></a>`)
@@ -168,14 +163,14 @@ describe("TimeReplacer", () => {
       expect(context.time.getMinutes()).toBe(45)
     })
 
-    test("with hour interval", () => {
+    test("with hour interval", async () => {
       const currentContext = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
       currentContext.time.setYear(2005)
       currentContext.time.setMonth(8)
       const context = currentContext.clone()
-      const timeRenderer = new TimeRenderer(["time/2/0/0/5/08/23/index.html"], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
-      const replacement = replacer.valueReplacement(context, "23 18:45/19:00", currentContext)
+      const timeEl = context.file.document.createElement("time")
+      timeEl.textContent = "23 18:45/19:00"
+      const replacement = await replacer.replacement(currentContext, timeEl)
       expect(replacement.outerHTML)
         .toBe(
           `<a href="/time/2/0/0/5/08/23/" title="mardi 23 août 2005 entre 18:45 et 19:00">mardi 23, entre 18:45 et 19:00</a>`)
@@ -189,9 +184,9 @@ describe("TimeReplacer", () => {
 
   test("reset context", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-    const timeRenderer = new TimeRenderer(["time/2/0/0/5/index.html", "time/2/0/0/6/index.html"], this.options)
-    const replacer = new TimeReplacer(timeRenderer)
-    const replacement = replacer.valueReplacement(context, "2005", undefined)
+    const timeEl = context.file.document.createElement("time")
+    timeEl.textContent = "2005"
+    const replacement = await replacer.replacement(context, timeEl)
     expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/5/">2005</a>`)
     const original = context.file.document.createElement("time")
     original.textContent = "2006"
@@ -201,11 +196,9 @@ describe("TimeReplacer", () => {
 
   test("avoids linking to current file", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-    const timeRenderer = new TimeRenderer(["time/1/9/5/4/10/01/index.html"], this.options)
-    const replacer = new TimeReplacer(timeRenderer)
-    const original = context.file.document.createElement("time")
-    original.textContent = "1954-10-01"
-    const replacement = await replacer.replacement(context, original)
+    const timeEl = context.file.document.createElement("time")
+    timeEl.textContent = "1954-10-01"
+    const replacement = await replacer.replacement(context, timeEl)
     expect(replacement.outerHTML)
       .toBe(`<span class="time">vendredi 1 octobre 1954</span>`)
   })
@@ -214,18 +207,15 @@ describe("TimeReplacer", () => {
 
     test("with days, hours, minutes and seconds", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer([], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
-      const original = context.file.document.createElement("time")
-      original.textContent = "P2D10H23M45S"
-      const replacement = await replacer.replacement(context, original)
+      const timeEl = context.file.document.createElement("time")
+      timeEl.textContent = "P2D10H23M45S"
+      const replacement = await replacer.replacement(context, timeEl)
       expect(replacement.outerHTML).toBe(`<time class="duration">2 jours, 10 heures, 23 minutes et 45 secondes</time>`)
     })
 
     test("with context", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/1/9/4/7/07/02/index.html"], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
+      const timeRenderer = new TimeRenderer(["time/1/9/4/7/07/02/index.html"], textBuilder)
       {
         const ctxElement = context.file.document.createElement("time")
         ctxElement.textContent = "1947-07-02"
@@ -242,8 +232,6 @@ describe("TimeReplacer", () => {
 
     test("with approximation", async () => {
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer([], this.options)
-      const replacer = new TimeReplacer(timeRenderer)
       const original = context.file.document.createElement("time")
       original.textContent = "~P2H"
       const replacement = await replacer.replacement(context, original)
@@ -253,13 +241,12 @@ describe("TimeReplacer", () => {
 
   describe("parses hour", () => {
 
-    test("with context", () => {
+    test("with context", async () => {
       // Empty context
       const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
-      const timeRenderer = new TimeRenderer(["time/2/0/0/6/07/14/index.html", "/time/2/0/0/7/06/15/index.html"],
-        this.options)
-      const replacer = new TimeReplacer(timeRenderer)
-      const replacement = replacer.valueReplacement(context, "2006-07-14 17:56", undefined)
+      const timeEl = context.file.document.createElement("time")
+      timeEl.textContent = "2006-07-14 17:56"
+      const replacement = await replacer.replacement(context, timeEl)
       expect(replacement.outerHTML).toBe(`<a href="/time/2/0/0/6/07/14/">vendredi 14 juillet 2006 à 17:56</a>`)
       expect(context.time.getYear()).toBe(2006)
       expect(context.time.getMonth()).toBe(7)
@@ -268,7 +255,9 @@ describe("TimeReplacer", () => {
       expect(context.time.getMinutes()).toBe(56)
 
       // Change day + hour
-      const replacement1 = replacer.valueReplacement(context, "2007-06-15 18:47", undefined)
+      const timeEl1 = context.file.document.createElement("time")
+      timeEl1.textContent = "2007-06-15 18:47"
+      const replacement1 = await replacer.replacement(context, timeEl)
       expect(replacement1.outerHTML).toBe(`<a href="/time/2/0/0/7/06/15/">vendredi 15 juin 2007 à 18:47</a>`)
       expect(context.time.getYear()).toBe(2007)
       expect(context.time.getMonth()).toBe(6)
@@ -277,7 +266,7 @@ describe("TimeReplacer", () => {
       expect(context.time.getMinutes()).toBe(47)
 
       // Change hour only
-      const hourReplacement = replacer.valueReplacement(context, "19:47", undefined)
+      const hourReplacement = await replacer.replacement(context, "19:47", undefined)
       expect(hourReplacement.outerHTML).toBe(
         `<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007 à 19:47">19:47</a>`)
       expect(context.time.getYear()).toBe(2007)
@@ -287,15 +276,13 @@ describe("TimeReplacer", () => {
       expect(context.time.getMinutes()).toBe(47)
     })
 
-    test("with approximation", () => {
+    test("with approximation", async () => {
       {
         const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
         context.time.setYear(2007)
         context.time.setMonth(6)
         context.time.setDayOfMonth(15)
-        const timeRenderer = new TimeRenderer(["time/2/0/0/7/06/15/index.html"], this.options)
-        const replacer = new TimeReplacer(timeRenderer)
-        const replacement = replacer.valueReplacement(context, "~18:45", undefined)
+        const replacement = await replacer.replacement(context, "~18:45", undefined)
         expect(replacement.outerHTML).toBe(
           `<a href="/time/2/0/0/7/06/15/" title="vendredi 15 juin 2007, vers 18:45">vers 18:45</a>`)
         expect(context.time.getYear()).toBe(2007)

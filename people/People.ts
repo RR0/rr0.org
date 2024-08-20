@@ -5,10 +5,11 @@ import { CountryCode } from "../org/country/CountryCode"
 import { RR0Data } from "../data/RR0Data"
 
 export class People implements RR0Data {
-  readonly title: string
-  readonly name: string
-
   readonly type = "people"
+
+  title: string
+
+  name: string
 
   /**
    * The people actually doesn't exist.

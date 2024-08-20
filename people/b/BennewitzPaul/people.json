@@ -1,8 +1,31 @@
 {
-  "birthTime": "1927-09-30",
-  "deathTime": "2003-06-23",
-  "occupations": ["ufologist"],
+  "title": "Paul Frederick Bennewitz (Junior)",
+  "name": "Bennewitz",
+  "occupations": [
+    "ufologist",
+    "pilot",
+    "engineer"
+  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1927-09-30",
+      "place": "Kansas"
+    },
+    {
+      "type": "death",
+      "time": "2003-06-23",
+      "sources": [
+        {
+          "url": "https://www.newspapers.com/article/albuquerque-journal-paul-f-bennewitz-ob/116778334/?fbclid=IwZXh0bgNhZW0CMTEAAR1EDTVjJpxRqOc4tTAomIsmISn1CcYUfIyv7kTvBq67TovNkVu2up3J-9s_aem_aJ95U36Yy-Cnf7M-luqemw"
+        }
+      ],
+      "notes": [
+        "D'un cancer. Il est enterré au cimetière national de <span class=\"place\">Santa Fe</span>"
+      ]
+    }
   ]
 }

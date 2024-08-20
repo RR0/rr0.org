@@ -12,15 +12,17 @@ import { NoteRenderer } from "../note/NoteRenderer"
 import { NoteFileCounter } from "../note/NoteFileCounter"
 import { DataService } from "../data/DataService"
 import { HttpSource } from "./datasource/HttpSource"
+import { TimeTextBuilder } from "./TimeTextBuilder"
 
 describe("TimeEventRenderer", () => {
 
   const dataService = new DataService([])
   const baseUrl = "https://rr0.org"
   const http = new HttpSource()
-  const sourceFactory = new SourceFactory(dataService, http, baseUrl)
+  const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)
+  const textBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
   const renderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
-    new SourceRenderer())
+    new SourceRenderer(textBuilder))
 
   test("render event", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")

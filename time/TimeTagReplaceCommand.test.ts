@@ -3,11 +3,13 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { HtmlTagReplaceCommand } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
 import { TimeRenderer } from "./TimeRenderer"
+import { TimeTextBuilder } from "./TimeTextBuilder"
 
 describe("HtmlTagReplaceCommand", () => {
 
   const timeFiles = ["time/2/0/0/4/index.html"]
-  const renderer = new TimeRenderer(timeFiles, this.options)
+  const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
+  const renderer = new TimeRenderer(timeFiles, timeTextBuilder)
 
   test("replace time tag", async () => {
     const command = new HtmlTagReplaceCommand("time", new TimeReplacerFactory(renderer))

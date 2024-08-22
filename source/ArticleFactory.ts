@@ -1,8 +1,8 @@
 import { Article } from "./Article"
 import { RR0Data } from "../data/RR0Data"
-import { DefaultDataFactory } from "../data/DefaultDataFactory"
+import { TypedDataFactory } from "../data/TypedDataFactory"
 
-export class ArticleFactory extends DefaultDataFactory<Article> {
+export class ArticleFactory extends TypedDataFactory<Article> {
 
   constructor() {
     super("article")

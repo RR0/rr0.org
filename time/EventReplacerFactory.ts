@@ -1,12 +1,12 @@
 import { DomReplacer, ReplacerFactory } from "ssg-api"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { RR0Data } from "../data/RR0Data"
 import { EventRenderer } from "./EventRenderer"
 
 export class EventReplacer<D extends RR0Data> {
 
-  constructor(protected renderer: EventRenderer<D>, protected dataService: DataService) {
+  constructor(protected renderer: EventRenderer<D>, protected dataService: AllDataService) {
   }
 
   async replacement(context: HtmlRR0SsgContext, original: HTMLElement): Promise<HTMLElement> {

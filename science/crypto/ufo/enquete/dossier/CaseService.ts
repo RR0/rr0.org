@@ -1,22 +1,16 @@
-import { DataService } from "../../../../../data/DataService"
+import { AllDataService } from "../../../../../data/AllDataService"
 import { RR0Case } from "./RR0Case"
 import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext"
 import path from "path"
 import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
-import { RR0DataFactory } from "../../../../../data/RR0DataFactory"
+import { AbstractDataService } from "../../../../../data/AbstractDataService"
+import { CaseFactory } from "./CaseFactory"
 
-export class CaseService {
+export class CaseService extends AbstractDataService<RR0Case> {
 
-  constructor(protected dataService: DataService, protected readonly timeElementFactory: TimeElementFactory,
-              readonly type = "case") {
-  }
-
-  get factory(): RR0DataFactory<RR0Case> {
-    return this.dataService.factories.find(factory => factory.type === this.type) as RR0DataFactory<RR0Case>
-  }
-
-  async get(path: string): Promise<RR0Case[] | undefined> {
-    return this.dataService.getFromDir<RR0Case>(path, [this.type, undefined], [this.type + ".json"])
+  constructor(dataService: AllDataService, factory: CaseFactory,
+              protected readonly timeElementFactory: TimeElementFactory) {
+    super(dataService, factory)
   }
 
   getLink(context: HtmlRR0SsgContext, aCase: RR0Case): HTMLElement {
@@ -53,4 +47,5 @@ export class CaseService {
     span.append(link)
     return span
   }
+
 }

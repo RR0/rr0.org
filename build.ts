@@ -1,6 +1,5 @@
 import { TimeContext } from "./time/TimeContext"
 import { CaseDirectoryStep } from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep"
-import { promise as glob } from "glob-promise"
 import { GooglePlaceService } from "./place/GooglePlaceService"
 import { OrganizationService } from "./org/OrganizationService"
 import { HtmlRR0SsgContext, RR0SsgContextImpl } from "./RR0SsgContext"
@@ -57,7 +56,7 @@ import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
-import { DataService } from "./data/DataService"
+import { AllDataService } from "./data/AllDataService"
 import { DataAnchorHandler } from "./anchor/DataAnchorHandler"
 import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer"
 import { EventReplacer, EventReplacerFactory } from "./time/EventReplacerFactory"
@@ -81,11 +80,12 @@ import { PeopleFactory } from "./people/PeopleFactory"
 import { OrganizationFactory } from "./org/OrganizationFactory"
 import { APIFactory } from "./tech/info/soft/APIFactory"
 import { RR0EventFactory } from "./event/RR0EventFactory"
-import { DefaultDataFactory } from "./data/DefaultDataFactory"
+import { TypedDataFactory } from "./data/TypedDataFactory"
 import { NoteRenderer } from "./note/NoteRenderer"
 import { PeopleDirectoryFactory } from "./people/PeopleDirectoryFactory"
 import { TimeTextBuilder } from "./time/TimeTextBuilder"
 import { Time } from "./time/Time"
+import { CaseFactory } from "./science/crypto/ufo/enquete/dossier/CaseFactory"
 
 interface RR0BuildArgs {
   /**
@@ -186,26 +186,37 @@ const htAccessToNetlifyConfig: ContentStepConfig = {
     return path.join(outDir, "netlify.toml")
   }
 }
-const timeTextBuilder = new TimeTextBuilder(timeFormat)
-const timeService = new TimeService(timeTextBuilder)
-timeService.getFiles().then(async (timeFiles) => {
-  const timeElementFactory = new TimeElementFactory(timeService.renderer)
-  context.setVar("timeFilesCount", timeFiles.length)
-  const peopleFiles = await glob("people/?/*")
-  const eventFactory = new RR0EventFactory()
-  const sightingFactory = new DefaultDataFactory(eventFactory, "sighting", ["index"])
-  const orgFactory = new OrganizationFactory(eventFactory)
-  const caseFactory = new DefaultDataFactory(eventFactory, "case")
-  const peopleFactory = new PeopleFactory(eventFactory)
-  const apiFactory = new APIFactory(eventFactory)
-  const bookFactory = new DefaultDataFactory(eventFactory, "book")
-  const articleFactory = new DefaultDataFactory(eventFactory, "article")
-  const dataService = new DataService(
-    [orgFactory, caseFactory, peopleFactory, bookFactory, articleFactory, sightingFactory, apiFactory])
+const eventFactory = new RR0EventFactory()
+const sightingFactory = new TypedDataFactory(eventFactory, "sighting", ["index"])
+const orgFactory = new OrganizationFactory(eventFactory)
+const caseFactory = new CaseFactory(eventFactory)
+const peopleFactory = new PeopleFactory(eventFactory)
+const apiFactory = new APIFactory(eventFactory)
+const bookFactory = new TypedDataFactory(eventFactory, "book")
+const articleFactory = new TypedDataFactory(eventFactory, "article")
+const dataService = new AllDataService(
+  [orgFactory, caseFactory, peopleFactory, bookFactory, articleFactory, sightingFactory, apiFactory])
 
+const timeTextBuilder = new TimeTextBuilder(timeFormat)
+const timeService = new TimeService(dataService, timeTextBuilder)
+
+const peopleService = new PeopleService(dataService, peopleFactory)
+
+const apiKey = process.env.GOOGLE_MAPS_API_KEY
+if (!apiKey) {
+  throw Error("GOOGLE_MAPS_API_KEY is required")
+}
+context.setVar("mapsApiKey", apiKey)
+const placeService = new GooglePlaceService("place", apiKey)
+
+const orgService = new OrganizationService([], "org", undefined)
+
+timeService.getFiles().then(async (timeFiles) => {
+  context.setVar("timeFilesCount", timeFiles.length)
+  const timeElementFactory = new TimeElementFactory(timeService.renderer)
+  const caseService = new CaseService(dataService, caseFactory, timeElementFactory)
   const timeReplacer = new TimeReplacer(timeElementFactory)
-  const caseService = new CaseService(dataService, timeElementFactory)
-  const peopleService = new PeopleService(peopleFiles, dataService, peopleFactory)
+  const peopleFiles = await peopleService.getFiles()
   context.setVar("peopleFilesCount", peopleFiles.length)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
@@ -220,15 +231,6 @@ timeService.getFiles().then(async (timeFiles) => {
     return rootDirs
   }, [])).map(dir => path.join(dir, "people.json")))
   await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
-
-  const apiKey = process.env.GOOGLE_MAPS_API_KEY
-  if (!apiKey) {
-    throw Error("GOOGLE_MAPS_API_KEY is required")
-  }
-  context.setVar("mapsApiKey", apiKey)
-  const placeService = new GooglePlaceService("place", apiKey)
-
-  const orgService = new OrganizationService([], "org", undefined)
 
   const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false},
     timeTextBuilder)
@@ -322,7 +324,6 @@ timeService.getFiles().then(async (timeFiles) => {
       searchCommand
     ]
     ssg.add(new RR0ContentStep([
-      htAccessToNetlifyConfig,
       {
         roots: contentRoots,
         replacements: contentReplacements,

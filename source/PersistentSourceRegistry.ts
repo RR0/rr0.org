@@ -1,5 +1,5 @@
 import { Source } from "./Source"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { HttpSource } from "../time/datasource/HttpSource"
 import { SourceRegistry } from "./SourceRegistry"
 import { FileContents } from "ssg-api"
@@ -9,7 +9,7 @@ import { FileContents } from "ssg-api"
  */
 export class PersistentSourceRegistry extends SourceRegistry {
 
-  constructor(dataService: DataService, http: HttpSource, baseUrl: string, protected fileName: string,
+  constructor(dataService: AllDataService, http: HttpSource, baseUrl: string, protected fileName: string,
               options: Intl.DateTimeFormatOptions) {
     super(dataService, http, baseUrl, options)
     const registryFileContents = FileContents.read(fileName, "utf-8").contents

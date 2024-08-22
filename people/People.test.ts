@@ -2,7 +2,7 @@ import { People } from "./People"
 import { PeopleService } from "./PeopleService"
 import { beforeAll, describe, expect, test } from "@javarome/testscript"
 import { promise as glob } from "glob-promise"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 
 describe("People", () => {
 
@@ -10,7 +10,7 @@ describe("People", () => {
 
   beforeAll(async () => {
     const peopleFiles = await glob("people/*/*")
-    service = new PeopleService(peopleFiles, new DataService([], []), peopleFactory)
+    service = new PeopleService(peopleFiles, new AllDataService([], []), peopleFactory)
   })
 
   test("age", async () => {

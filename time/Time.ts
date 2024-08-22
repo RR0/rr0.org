@@ -5,7 +5,7 @@ import { StringUtil } from "../util/string/StringUtil"
 
 export class Time {
 
-  static readonly timeRegex = /time\/(-)?(\d)\/(\d)\/(\d)\/(\d)\/?(\d{2})?\/?(\d{2})?\/?(index(_[a-z]{2})?.html)?/
+  static readonly timePathRegex = /time\/(-)?(\d)\/(\d)\/(\d)\/(\d)\/?(\d{2})?\/?(\d{2})?\/?(index(_[a-z]{2})?.html)?/
 
   /**
    * Instantiate a Date object matching an ISO date ("1972-08-12 16:34" for instance).
@@ -23,7 +23,7 @@ export class Time {
   }
 
   static parseFileName(fileName: string): RegExpExecArray | null {
-    return Time.timeRegex.exec(fileName)
+    return Time.timePathRegex.exec(fileName)
   }
 
   static titleFromFile(context: HtmlRR0SsgContext, fileName: string,

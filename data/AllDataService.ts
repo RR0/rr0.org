@@ -1,12 +1,12 @@
 import { sync as glob } from "glob-promise"
 import { FileContents } from "ssg-api"
 import { RR0Data } from "./RR0Data"
-import { DefaultDataFactory } from "./DefaultDataFactory"
+import { TypedDataFactory } from "./TypedDataFactory"
 
 /**
  * Fetch RR0 data from JSON files.
  */
-export class DataService {
+export class AllDataService {
 
   readonly pathToData = new Map<string, RR0Data[]>()
 
@@ -14,13 +14,13 @@ export class DataService {
    *
    * @param factories The factories to instantiate different RR0Data types.
    */
-  constructor(readonly factories: DefaultDataFactory<RR0Data>[]) {
+  constructor(readonly factories: TypedDataFactory<RR0Data>[]) {
   }
 
-  async getFromDir<T extends RR0Data = RR0Data>(dirName: string, types: string[],
-                                                fileNames: string[] = this.factories.reduce(
-                                                  (allFileNames, factory) => factory.fileNames.concat(allFileNames),
-                                                  [])): Promise<T[]> {
+  async getFromDir<T extends RR0Data = RR0Data>(
+    dirName: string, types: string[],
+    fileNames: string[] = this.factories.reduce((allFileNames, factory) => factory.fileNames.concat(allFileNames), [])
+  ): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
     if (dataList === undefined) {

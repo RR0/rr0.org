@@ -4,10 +4,10 @@ import { Book } from "./Book"
 import { BookService } from "./BookService"
 import { PeopleService } from "../people/PeopleService"
 import { promise as glob } from "glob-promise"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { PeopleFactory } from "../people/PeopleFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
-import { DefaultDataFactory } from "../data/DefaultDataFactory"
+import { TypedDataFactory } from "../data/TypedDataFactory"
 import path from "path"
 
 interface BookImportArgs {
@@ -20,8 +20,8 @@ const args = new CLI().getArgs<BookImportArgs>()
 const fileName = args.import
 const dry = args.dry === "true"
 const eventFactory = new RR0EventFactory()
-const bookFactory = new DefaultDataFactory(eventFactory, "book")
-const dataService = new DataService([bookFactory])
+const bookFactory = new TypedDataFactory(eventFactory, "book")
+const dataService = new AllDataService([bookFactory])
 
 glob("people/*/*").then(peopleFiles => {
   const peopleFactory = new PeopleFactory(new RR0EventFactory())

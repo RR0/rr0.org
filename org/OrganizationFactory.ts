@@ -1,8 +1,8 @@
 import { Organization } from "./Organization"
-import { DefaultDataFactory } from "../data/DefaultDataFactory"
+import { TypedDataFactory } from "../data/TypedDataFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
 
-export class OrganizationFactory extends DefaultDataFactory<Organization> {
+export class OrganizationFactory extends TypedDataFactory<Organization> {
 
   constructor(eventFactory: RR0EventFactory) {
     super(eventFactory, "org", ["index"])

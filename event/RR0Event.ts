@@ -12,5 +12,5 @@ export type RR0EventType =
   | "affiliate"
 
 export interface RR0Event extends RR0Data {
-
+  type: RR0EventType
 }

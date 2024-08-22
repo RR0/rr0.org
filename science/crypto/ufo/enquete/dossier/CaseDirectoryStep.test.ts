@@ -2,12 +2,12 @@ import { CaseDirectoryStep } from "./CaseDirectoryStep"
 import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
 import { FileContents, SsgConfig, SsgContext } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
-import { DataService } from "../../../../../data/DataService"
+import { AllDataService } from "../../../../../data/AllDataService"
 import { RR0Case } from "./RR0Case"
 import path from "path"
 import { CaseService } from "./CaseService"
 import { TimeRenderer } from "../../../../../time/TimeRenderer"
-import { DefaultDataFactory } from "../../../../../data/DefaultDataFactory"
+import { TypedDataFactory } from "../../../../../data/TypedDataFactory"
 import { RR0EventFactory } from "../../../../../event/RR0EventFactory"
 import { TimeTextBuilder } from "../../../../../time/TimeTextBuilder"
 import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
@@ -37,7 +37,7 @@ describe("DirectoryStep", () => {
 <!--#include virtual="/footer.html" -->`
     const context = rr0TestUtil.newContext("/science/crypto/ufo/enquete/dossier/index.html", template)
     const eventFactory = new RR0EventFactory()
-    const dataService = new DataService([new DefaultDataFactory<RR0Case>(eventFactory, "case")])
+    const dataService = new AllDataService([new TypedDataFactory<RR0Case>(eventFactory, "case")])
     const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
     const timeRenderer = new TimeRenderer([], timeTextBuilder)
     const timeElementFactory = new TimeElementFactory(timeRenderer)

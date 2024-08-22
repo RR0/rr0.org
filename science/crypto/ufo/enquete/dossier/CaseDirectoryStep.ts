@@ -2,9 +2,7 @@ import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
 import { StringUtil } from "../../../../../util/string/StringUtil"
 import { RR0Case } from "./RR0Case"
-import { RR0FileUtil } from "../../../../../util/file/RR0FileUtil"
 import { CaseService } from "./CaseService"
-import { DefaultDataFactory } from "../../../../../data/DefaultDataFactory"
 
 /**
  * Builds a directory page for UFO cases.
@@ -25,8 +23,7 @@ export class CaseDirectoryStep extends DirectoryStep {
   }
 
   static async create(outputFunc: OutputFunc, config: SsgConfig, caseService: CaseService): Promise<CaseDirectoryStep> {
-    const caseFactory = caseService.factory as DefaultDataFactory<RR0Case>
-    const rootDirs = RR0FileUtil.findDirectoriesContaining(caseFactory.fileNames[0] + ".json", "out")
+    const rootDirs = await caseService.getFiles()
     return new CaseDirectoryStep(caseService, rootDirs, ["science/crypto/ufo/enquete/dossier/canular"],
       "science/crypto/ufo/enquete/dossier/index.html", outputFunc, config)
   }

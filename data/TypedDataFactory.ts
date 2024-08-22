@@ -7,7 +7,7 @@ import { RR0EventFactory } from "../event/RR0EventFactory"
 /**
  * A RR0Data factory which can read either <someType>.json files of index.json with a "type": "<someType>" property.
  */
-export class DefaultDataFactory<T extends RR0Data> extends AbstractDataFactory<T> {
+export class TypedDataFactory<T extends RR0Data> extends AbstractDataFactory<T> {
 
   constructor(eventFactory: RR0EventFactory, readonly type: string, readonly fileNames: string[] = [type]) {
     super(eventFactory)

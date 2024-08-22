@@ -1,20 +1,29 @@
 import { People } from "./People"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import path from "path"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { CountryCode } from "../org/country/CountryCode"
 import { Occupation } from "./Occupation"
 import { Time } from "../time/Time"
 import { Gender } from "@rr0/common"
 import { PeopleFactory } from "./PeopleFactory"
 import { AbstractDataFactory } from "../data/AbstractDataFactory"
+import { promise as glob } from "glob-promise"
+import { AbstractDataService } from "../data/AbstractDataService"
 
-export class PeopleService {
+export class PeopleService extends AbstractDataService<People> {
 
   readonly cache = new Map<string, People>()
 
-  constructor(protected files: string[], protected readonly dataService: DataService,
-              protected factory: PeopleFactory) {
+  constructor(readonly dataService: AllDataService, protected peopleFactory: PeopleFactory) {
+    super(dataService, peopleFactory)
+  }
+
+  async getFiles(): Promise<string[]> {
+    if (!this.files) {
+      this.files = await glob("people/?/*")
+    }
+    return this.files
   }
 
   createFromFullName(fullName: string): People {
@@ -42,7 +51,7 @@ export class PeopleService {
     }
     let created: People
     if (dirName && !lastName && firstNames?.length <= 0) {
-      created = this.factory.createFromDirName(dirName)
+      created = this.peopleFactory.createFromDirName(dirName)
     } else {
       created = new People(firstNames, lastName, undefined, undefined, undefined, false, undefined, undefined,
         undefined, undefined, dirName)

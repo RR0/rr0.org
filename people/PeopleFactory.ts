@@ -1,11 +1,11 @@
 import { People } from "./People"
 import path from "path"
 import { StringUtil } from "../util/string/StringUtil"
-import { DefaultDataFactory } from "../data/DefaultDataFactory"
+import { TypedDataFactory } from "../data/TypedDataFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
 import { RR0Data } from "../data/RR0Data"
 
-export class PeopleFactory extends DefaultDataFactory<People> {
+export class PeopleFactory extends TypedDataFactory<People> {
 
   constructor(eventFactory: RR0EventFactory) {
     super(eventFactory, "people")

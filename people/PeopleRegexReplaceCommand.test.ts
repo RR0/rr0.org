@@ -3,13 +3,13 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { ClassDomReplaceCommand } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
 import { PeopleService } from "./PeopleService"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 
 describe("ClassDomReplaceCommand", () => {
 
   test("replaces", async () => {
     const command = new ClassDomReplaceCommand("people", new PeopleReplacerFactory(new PeopleService([],
-      new DataService([], []), peopleFactory)))
+      new AllDataService([], []), peopleFactory)))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", `<span class="people">Jérôme Beau</span>`)
     const file = await command.execute(context)
     expect(file.contents).toBe(

@@ -1,11 +1,17 @@
 {
-  "lastName": "Méheust",
-  "birthTime": "1947-07-12",
+  "title": "Bertrand Méheust",
+  "url": "http://bertrand.meheust.free.fr",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1947-07-12"
+    }
   ]
 }

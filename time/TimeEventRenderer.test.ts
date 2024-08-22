@@ -10,13 +10,13 @@ import { Source } from "../source/Source"
 import { SourceFactory } from "../source/SourceFactory"
 import { NoteRenderer } from "../note/NoteRenderer"
 import { NoteFileCounter } from "../note/NoteFileCounter"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { HttpSource } from "./datasource/HttpSource"
 import { TimeTextBuilder } from "./TimeTextBuilder"
 
 describe("TimeEventRenderer", () => {
 
-  const dataService = new DataService([])
+  const dataService = new AllDataService([])
   const baseUrl = "https://rr0.org"
   const http = new HttpSource()
   const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)

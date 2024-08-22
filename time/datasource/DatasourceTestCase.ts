@@ -9,7 +9,7 @@ import { SourceRenderer } from "../../source/SourceRenderer"
 import { NoteRenderer } from "../../note/NoteRenderer"
 import { SourceFactory } from "../../source/SourceFactory"
 import { NoteFileCounter } from "../../note/NoteFileCounter"
-import { DataService } from "../../data/DataService"
+import { AllDataService } from "../../data/AllDataService"
 import { HttpSource } from "./HttpSource"
 import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 import { rr0TestUtil } from "../../test/RR0TestUtil"
@@ -38,7 +38,7 @@ export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
     const sourceCases = await this.mapping.datasource.fetch(context)
     const dataDate = new Date("2024-08-12 00:00:00 GMT+1")
     const cases = sourceCases.map(sourceCase => this.mapping.mapper.map(context, sourceCase, dataDate))
-    const dataService = new DataService([])
+    const dataService = new AllDataService([])
     const baseUrl = "https://rr0.org"
     const http = new HttpSource()
     const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)

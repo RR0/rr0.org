@@ -1,13 +1,17 @@
 import { promise as glob } from "glob-promise"
 import { TimeRenderer } from "./TimeRenderer"
 import { TimeTextBuilder } from "./TimeTextBuilder"
+import { AbstractDataService } from "../data/AbstractDataService"
+import { RR0Event } from "../event/RR0Event"
+import { AllDataService } from "../data/AllDataService"
 
-export class TimeService {
+export class TimeService extends AbstractDataService<RR0Event> {
 
-  protected files: string[]
   protected _renderer: TimeRenderer
 
-  constructor(readonly textBuilder: TimeTextBuilder) {
+  constructor(dataService: AllDataService,
+              readonly textBuilder: TimeTextBuilder) {
+    super(dataService, null)
   }
 
   get renderer(): TimeRenderer {

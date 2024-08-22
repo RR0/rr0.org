@@ -11,6 +11,9 @@ export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T>
 
   static readonly defaultImageFileNames = ["portrait.jpg", "portrait.gif", "portrait.png", "portrait.webp"]
 
+  /**
+   * @param eventFactory The factory to create sub-events.
+   */
   constructor(protected eventFactory: RR0EventFactory) {
   }
 

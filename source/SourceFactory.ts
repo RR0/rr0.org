@@ -4,7 +4,7 @@ import path from "path"
 import { TimeContext } from "../time/TimeContext"
 import { FileContents } from "ssg-api"
 import { JSDOM } from "jsdom"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { HttpSource } from "../time/datasource/HttpSource"
 
 /**
@@ -12,7 +12,7 @@ import { HttpSource } from "../time/datasource/HttpSource"
  */
 export class SourceFactory {
 
-  constructor(protected dataService: DataService, protected http: HttpSource, protected baseUrl: string,
+  constructor(protected dataService: AllDataService, protected http: HttpSource, protected baseUrl: string,
               protected options: Intl.DateTimeFormatOptions) {
   }
 

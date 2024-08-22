@@ -3,6 +3,7 @@ import { StringUtil } from "../util/string/StringUtil"
 import { Gender } from "@rr0/common"
 import { CountryCode } from "../org/country/CountryCode"
 import { RR0Data } from "../data/RR0Data"
+import { RR0Event } from "../event/RR0Event"
 
 export class People implements RR0Data {
   readonly type = "people"
@@ -38,7 +39,7 @@ export class People implements RR0Data {
     readonly dirName?: string,
     public image?: string,
     readonly url?: string,
-    readonly events: RR0Data[] = []
+    readonly events: RR0Event[] = []
   ) {
     this.lastAndFirstName = this.getLastAndFirstName()
     this.title = this.firstAndLastName

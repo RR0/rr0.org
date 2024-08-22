@@ -1,4 +1,4 @@
-import { DataService } from "./data/DataService"
+import { AllDataService } from "./data/AllDataService"
 import { TimeElementFactory } from "./time/TimeElementFactory"
 import { ContentVisitor } from "./RR0ContentStep"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
@@ -11,7 +11,7 @@ import assert from "assert"
 
 export class DefaultContentVisitor implements ContentVisitor {
 
-  constructor(protected service: DataService, protected eventRenderer: EventRenderer<RR0Data>,
+  constructor(protected service: AllDataService, protected eventRenderer: EventRenderer<RR0Data>,
               protected timeElementFactory: TimeElementFactory) {
   }
 

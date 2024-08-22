@@ -1,6 +1,6 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { Source } from "./Source"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { HttpSource } from "../time/datasource/HttpSource"
 import { SourceFactory } from "./SourceFactory"
 
@@ -11,7 +11,7 @@ export class SourceRegistry extends SourceFactory {
 
   protected registry = {}
 
-  constructor(dataService: DataService, http: HttpSource, baseUrl: string, options: Intl.DateTimeFormatOptions) {
+  constructor(dataService: AllDataService, http: HttpSource, baseUrl: string, options: Intl.DateTimeFormatOptions) {
     super(dataService, http, baseUrl, options)
   }
 

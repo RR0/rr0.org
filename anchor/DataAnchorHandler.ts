@@ -1,6 +1,6 @@
 import { AnchorHandler } from "./AnchorHandler"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { DataService } from "../data/DataService"
+import { AllDataService } from "../data/AllDataService"
 import { RR0Data } from "../data/RR0Data"
 
 export class DataAnchorHandler implements AnchorHandler {
@@ -10,7 +10,7 @@ export class DataAnchorHandler implements AnchorHandler {
    */
   protected number = 0
 
-  constructor(protected dataService: DataService) {
+  constructor(protected dataService: AllDataService) {
   }
 
   async handle(context: HtmlRR0SsgContext, linkEl: HTMLAnchorElement, pathToSearch: string): Promise<void> {

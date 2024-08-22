@@ -3,12 +3,12 @@ import { rr0TestUtil } from "../test/RR0TestUtil"
 import { PeopleService } from "./PeopleService"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { describe, expect, test } from "@javarome/testscript"
-import { DataService } from "../data/DataService"
-import { DefaultDataFactory } from "../data/DefaultDataFactory"
+import { AllDataService } from "../data/AllDataService"
+import { TypedDataFactory } from "../data/TypedDataFactory"
 
 describe("PeopleReplacer", () => {
 
-  const peopleFactory = new DefaultDataFactory("people")
+  const peopleFactory = new TypedDataFactory("people")
 
   function createPeopleElement(context: HtmlRR0SsgContext, content: string, title?: string): HTMLSpanElement {
     const peopleElement = context.file.document.createElement("span") as HTMLSpanElement
@@ -21,7 +21,7 @@ describe("PeopleReplacer", () => {
 
   test("ignore brackets", async () => {
     const dirs = ["people/h/HynekJosefAllen"]
-    const dataService = new DataService([peopleFactory])
+    const dataService = new AllDataService([peopleFactory])
     const replacer = new PeopleReplacer(new PeopleService(dirs, dataService, peopleFactory))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")
     {
@@ -42,7 +42,7 @@ describe("PeopleReplacer", () => {
 
   test("replace people tags", async () => {
     const dirs = ["people/b/BeauJerome", "people/r/ReaganRonald"]
-    const dataService = new DataService([peopleFactory])
+    const dataService = new AllDataService([peopleFactory])
     const replacer = new PeopleReplacer(
       new PeopleService(dirs, dataService, peopleFactory))
     const context = rr0TestUtil.newHtmlContext("time/1/9/9/0/08/index.html", "")

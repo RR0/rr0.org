@@ -1,9 +1,15 @@
 {
-  "birthTime": "1958-11-19",
   "occupations": [
     "astronaut"
   ],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1958-11-19",
+      "place": "Longeville-lès-Metz (Moselle)"
+    }
   ]
 }

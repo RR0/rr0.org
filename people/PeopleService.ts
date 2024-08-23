@@ -8,20 +8,23 @@ import { Time } from "../time/Time"
 import { Gender } from "@rr0/common"
 import { PeopleFactory } from "./PeopleFactory"
 import { AbstractDataFactory } from "../data/AbstractDataFactory"
-import { promise as glob } from "glob-promise"
 import { AbstractDataService } from "../data/AbstractDataService"
+import { RR0FileUtil } from "../util/file/RR0FileUtil"
+import { glob } from "glob"
 
 export class PeopleService extends AbstractDataService<People> {
 
   readonly cache = new Map<string, People>()
 
-  constructor(readonly dataService: AllDataService, protected peopleFactory: PeopleFactory) {
+  constructor(dataService: AllDataService, protected peopleFactory: PeopleFactory) {
     super(dataService, peopleFactory)
   }
 
   async getFiles(): Promise<string[]> {
     if (!this.files) {
-      this.files = await glob("people/?/*")
+      const peopleDirs = await glob("people/?/*/")
+      const dirsWithPeople = RR0FileUtil.findDirectoriesContaining("people*.json", "out")
+      this.files = Array.from(new Set(peopleDirs.concat(dirsWithPeople)))
     }
     return this.files
   }
@@ -58,6 +61,11 @@ export class PeopleService extends AbstractDataService<People> {
     }
     this.cache.set(lastName, created)
     return created
+  }
+
+  async getAll(): Promise<People[]> {
+    const dirNames = await this.getFiles()
+    return this.getFromDirs(dirNames)
   }
 
   async getFromDirs(dirNames: string[]): Promise<People[]> {

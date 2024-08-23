@@ -1,10 +1,11 @@
-import { ConsoleLogger, HtmlFileContents, Logger } from "ssg-api"
-import { promise as glob } from "glob-promise"
+import { ConsoleLogger, HtmlFileContents, Logger, SsgConfig, SsgContext } from "ssg-api"
 import { CLI } from "./util/cli/CLI"
 import { CSVFileReader } from "./CSVFileReader"
 import fs from "fs"
 import { TimeContext } from "./time/TimeContext"
 import { RR0SsgContextImpl } from "./RR0SsgContext"
+import { glob } from "glob"
+import path from "path"
 
 interface WordFinderArgs {
   contents: string
@@ -39,23 +40,22 @@ class Dictionary {
   }
 }
 
-const timeFormat: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  weekday: "long",
-  hour: "2-digit",
-  minute: "2-digit"
+const outDir = "out"
+const config: SsgConfig = {
+  getOutputPath(context: SsgContext): string {
+    return path.join(outDir, context.file.name)
+  }
 }
+
 const timeContext = new TimeContext()
-const context = new RR0SsgContextImpl("fr", timeContext, "out")
+const context = new RR0SsgContextImpl("fr", timeContext, config)
 
 glob(inputPattern).then(async (inputFiles) => {
   const dictionary = new Dictionary(logger)
   const dictWords = await dictionary.read(dictionaryFile)
   logger.debug("Looking for files", inputPattern)
   for (const inputFile of inputFiles) {
-    const file = HtmlFileContents.read(context, inputFile)
+    const file = HtmlFileContents.read(inputFile)
     const contents = file.contents
     let pos: number
     let errorToFix: boolean

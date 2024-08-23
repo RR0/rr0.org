@@ -20,7 +20,7 @@ export class PeopleDirectoryStep extends DirectoryStep {
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    let peopleList = await this.service.getFromDirs(dirNames)
+    let peopleList = await this.service.getAll()
     const outputPath = this.config.getOutputPath(context)
     const output = context.newOutput(outputPath)
     if (this.filterOccupations.length > 0) {

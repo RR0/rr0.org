@@ -196,6 +196,9 @@ const bookFactory = new TypedDataFactory(eventFactory, "book")
 const articleFactory = new TypedDataFactory(eventFactory, "article")
 const dataService = new AllDataService(
   [orgFactory, caseFactory, peopleFactory, bookFactory, articleFactory, sightingFactory, apiFactory])
+dataService.getFromDir("", ["people", "case"]).then(data => {
+  console.debug(data)
+})
 
 const timeTextBuilder = new TimeTextBuilder(timeFormat)
 const timeService = new TimeService(dataService, timeTextBuilder)
@@ -216,8 +219,8 @@ timeService.getFiles().then(async (timeFiles) => {
   const timeElementFactory = new TimeElementFactory(timeService.renderer)
   const caseService = new CaseService(dataService, caseFactory, timeElementFactory)
   const timeReplacer = new TimeReplacer(timeElementFactory)
-  const peopleFiles = await peopleService.getFiles()
-  context.setVar("peopleFilesCount", peopleFiles.length)
+  const peopleList = await peopleService.getAll()
+  context.setVar("peopleFilesCount", peopleList.length)
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
@@ -230,7 +233,8 @@ timeService.getFiles().then(async (timeFiles) => {
     rootDirs.push(...peopleStep.config.rootDirs)
     return rootDirs
   }, [])).map(dir => path.join(dir, "people.json")))
-  await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"), JSON.stringify(peopleFiles), "utf-8")
+  await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"),
+    JSON.stringify(peopleList.map(people => people.dirName)), "utf-8")
 
   const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false},
     timeTextBuilder)

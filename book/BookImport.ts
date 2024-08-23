@@ -3,12 +3,12 @@ import { CLI } from "../util/cli/CLI"
 import { Book } from "./Book"
 import { BookService } from "./BookService"
 import { PeopleService } from "../people/PeopleService"
-import { promise as glob } from "glob-promise"
 import { AllDataService } from "../data/AllDataService"
 import { PeopleFactory } from "../people/PeopleFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
 import { TypedDataFactory } from "../data/TypedDataFactory"
 import path from "path"
+import { glob } from "glob"
 
 interface BookImportArgs {
   import: string
@@ -31,7 +31,7 @@ glob("people/*/*").then(peopleFiles => {
       return path.join(outDir, context.file.name)
     }
   }
-  const books = new BookService(logger, dry, new PeopleService(peopleFiles, dataService, peopleFactory), config)
+  const books = new BookService(logger, dry, new PeopleService(dataService, peopleFactory), config)
   books.import(fileName).then((result: Book[]) => {
       logger.log("Wrote", result.length, "books")
     }

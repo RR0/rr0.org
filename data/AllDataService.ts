@@ -1,7 +1,7 @@
-import { sync as glob } from "glob-promise"
 import { FileContents } from "ssg-api"
 import { RR0Data } from "./RR0Data"
 import { TypedDataFactory } from "./TypedDataFactory"
+import { glob } from "glob"
 
 /**
  * Fetch RR0 data from JSON files.
@@ -19,7 +19,8 @@ export class AllDataService {
 
   async getFromDir<T extends RR0Data = RR0Data>(
     dirName: string, types: string[],
-    fileNames: string[] = this.factories.reduce((allFileNames, factory) => factory.fileNames.concat(allFileNames), [])
+    fileNames: string[] = this.factories.reduce(
+      (allFileNames, factory) => Array.from(new Set(allFileNames.concat(factory.fileNames))), [])
   ): Promise<T[]> {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
@@ -33,7 +34,7 @@ export class AllDataService {
   protected async read(dirName: string, fileNames: string[]): Promise<RR0Data[]> {
     const dataList: RR0Data[] = []
     const p = dirName + "/*(" + fileNames.join("|") + ")"
-    const files = glob(p)
+    const files = await glob(p)
     for (const file of files) {
       try {
         const dataFile = FileContents.read(file, "utf-8")

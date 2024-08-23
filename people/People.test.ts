@@ -1,16 +1,17 @@
 import { People } from "./People"
 import { PeopleService } from "./PeopleService"
 import { beforeAll, describe, expect, test } from "@javarome/testscript"
-import { promise as glob } from "glob-promise"
 import { AllDataService } from "../data/AllDataService"
+import { PeopleFactory } from "./PeopleFactory"
+import { RR0EventFactory } from "../event/RR0EventFactory"
 
 describe("People", () => {
 
   let service: PeopleService
 
   beforeAll(async () => {
-    const peopleFiles = await glob("people/*/*")
-    service = new PeopleService(peopleFiles, new AllDataService([], []), peopleFactory)
+    const peopleFactory = new PeopleFactory(new RR0EventFactory())
+    service = new PeopleService(new AllDataService([]), peopleFactory)
   })
 
   test("age", async () => {

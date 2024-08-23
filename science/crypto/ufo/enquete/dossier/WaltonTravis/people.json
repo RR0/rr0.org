@@ -1,6 +1,5 @@
 {
   "title": "Walton, Travis",
-  "birthTime": "1953-02-10",
   "occupations": [
     "logger",
     "ufoWitness"
@@ -8,5 +7,12 @@
   "discredited": true,
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953-02-10",
+      "place": "Arizona (USA)"
+    }
   ]
 }

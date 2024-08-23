@@ -1,4 +1,4 @@
-import { promise as glob } from "glob-promise"
+import { globSync } from "glob"
 
 export class RR0FileUtil {
 
@@ -6,7 +6,8 @@ export class RR0FileUtil {
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index
     }
-    return (glob.sync(`!(${exclude})/**/${fileName}`))
+
+    return (globSync(`!(${exclude})/**/${fileName}`))
       .map(path => path.substring(0, path.lastIndexOf("/")))
       .filter(onlyUnique)
   }

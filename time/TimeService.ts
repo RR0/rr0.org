@@ -1,9 +1,9 @@
-import { promise as glob } from "glob-promise"
 import { TimeRenderer } from "./TimeRenderer"
 import { TimeTextBuilder } from "./TimeTextBuilder"
 import { AbstractDataService } from "../data/AbstractDataService"
 import { RR0Event } from "../event/RR0Event"
 import { AllDataService } from "../data/AllDataService"
+import { glob } from "glob"
 
 export class TimeService extends AbstractDataService<RR0Event> {
 

@@ -1,9 +1,9 @@
 import { Occupation } from "./Occupation"
-import { promise as glob } from "glob-promise"
 import { OutputFunc, SsgConfig } from "ssg-api"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { PeopleService } from "./PeopleService"
 import { PeopleDirectoryStep } from "./PeopleDirectoryStep"
+import { glob } from "glob"
 
 /**
  * Scan directories for people information, then populates a template with collected data.

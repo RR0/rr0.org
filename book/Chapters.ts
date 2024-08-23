@@ -1,7 +1,7 @@
-import { promise as glob } from "glob-promise"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { LinkType } from "ssg-api"
 import path from "path"
+import { glob } from "glob"
 
 export class Chapter {
 
@@ -14,7 +14,7 @@ export class Chapter {
   }
 
   async scan() {
-    this.context.getInputFrom(this.startFileName)
+    this.context.read(this.startFileName)
     const dir = path.dirname(this.context.file.name)
     const fileName = path.basename(this.context.file.name)
     const subFileNames = await glob(path.join(dir, '*/', fileName));

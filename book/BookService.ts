@@ -6,7 +6,6 @@ import { TimeUrlBuilder } from "../time/TimeUrlBuilder"
 import * as path from "path"
 import { StringUtil } from "../util/string/StringUtil"
 import { Book } from "./Book"
-import { RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
 import { People } from "../people/People"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { PeopleService } from "../people/PeopleService"
@@ -60,9 +59,8 @@ export class BookService {
         const authorLastFirst = result[COLUMN_AUTHOR_LAST_FIRST]
         const authorsNames = author ? author.split(",") : [authorLastFirst]
         const authors: People[] = []
-        const context = new RR0SsgContextImpl("fr", new TimeContext(), this.config)
         for (const authorName of authorsNames) {
-          const authorFound = await this.findPeople(context, authorName)
+          const authorFound = await this.findPeople(authorName)
           if (authorFound) {
             authors.push(authorFound)
           }
@@ -75,15 +73,20 @@ export class BookService {
         const parentDir = TimeUrlBuilder.fromContext(time)
         const bookDir = path.join(parentDir, dirName)
         const id = result[COLUMN_ISBN]
-        const book: Book = new Book(id)
-        book.title = title
-        book.authors = authorsNames
-        book.subTitle = result[COLUMN_SUBTITLE]
-        book.series = result[COLUMN_SERIES]
-        book.publication = {time, publisher}
-        book.dirName = bookDir
-        book.summary = summary
-        book.variants = []
+        const book: Book = {
+          type: "book",
+          events: [],
+          previousSourceRefs: [],
+          id,
+          title,
+          authors: authorsNames,
+          subTitle: result[COLUMN_SUBTITLE],
+          series: result[COLUMN_SERIES],
+          publication: {time, publisher},
+          dirName: bookDir,
+          summary,
+          variants: []
+        }
         const authorStr = authors?.map(author => author.dirName)
         if (fs.existsSync(bookDir)) {
           this.logger.log("Book directory", bookDir, "already exists, with authors", authorStr)
@@ -106,7 +109,7 @@ export class BookService {
     return books
   }
 
-  protected async findPeople(context: RR0SsgContext, fullName: string): Promise<People | undefined> {
+  protected async findPeople(fullName: string): Promise<People | undefined> {
     if (this.peopleList.length <= 0) {
       const peopleDirectories = RR0FileUtil.findDirectoriesContaining("people*.json")
       this.peopleList = await this.peopleService.getFromDirs(peopleDirectories)

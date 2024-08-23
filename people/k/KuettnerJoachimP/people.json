@@ -1,11 +1,23 @@
 {
-  "birthTime": "1909-09-21",
-  "deathTime": "2011-02-24",
+  "title": "Joachim P. Kuettner",
+  "url": "https://www.ofps.ucar.edu/joss_psg/staff/kuettner.html",
   "occupations": [
     "meteorologist"
   ],
   "countries": [
     "de",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1909-09-21",
+      "place": "Wrocław (Allemagne)"
+    },
+    {
+      "type": "death",
+      "time": "2011-02-24",
+      "place": "Boulder (Colorado)"
+    }
   ]
 }

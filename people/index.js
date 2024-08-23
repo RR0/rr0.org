@@ -36,7 +36,7 @@ if (form) {
       }
     }
     const output = form.querySelector("output")
-    output.textContent = `${found > 0 ? found : "Aucune"} noms${found > 1 ? "s" : ""} / ${list.children.length}`
+    output.textContent = `${found > 0 ? found : "Aucune"} nom${found > 1 ? "s" : ""} / ${list.children.length}`
   }
 
   window.setAll = function (type, value) {

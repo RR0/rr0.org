@@ -1,17 +1,2 @@
-type,events,url,place,time,description,sources,id,place.name,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent,place.org.parent.parent
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-01,,1980-01,en,"",1980-01
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-02,,1980-02,en,"",1980-02
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-03,,1980-03,en,"",1980-03
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-04,,1980-04,en,"",1980-04
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-05,,1980-05,en,"",1980-05
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-06,,1980-06,en,"",1980-06
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-07,,1980-07,en,"",1980-07
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-08,,1980-08,en,"",1980-08
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-09,,1980-09,en,"",1980-09
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-10,,1980-10,en,"",1980-10
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-11,,1980-11,en,"",1980-11
-case,"",https://rr0.org/time/1/9/8/0/index.html#1980-12,,1980-12,en,"",1980-12
-case,"",https://rr0.org/time/1/9/8/0/index.html,,1980,Vague d'observations en Chine. 98 signalements parviennent à la CURO.,"",1980
-case,"",https://rr0.org/time/1/9/8/0/index.html,,1980,"A Porto Rico, observation de créatures aux oreilles pointues et aux pieds palmés.","",1980
-case,"",https://rr0.org/time/1/9/8/0/index.html,,1980,"Le mot extra-terrestre entre dans le Petit Larousse Illustré, avec la définition suivante : Extérieur à l'atmosphère terrestre et substantif Habitant supposé d'une autre planète que la Terre.","",1980
-case,"",https://rr0.org/time/1/9/8/0/index.html,,1980,"Paul Bennewitz enquête pour l'APRO sur un cas d'enlèvement de la fin des années 1970s, impliquant une femme et son fils. Le docteur Leo Sprinkle leur fait faire une regression sous hypnose, où la femme indique qu'une assiette d'acier a été implantée dans son cerveau gauche pour leur protection.",""""",Howe,s1,"""",L. (1989). An Alien Harvest. Littleton. Linda Moulton-Howe Productions. p. 355,,""""",1980
+type,events,url,place,time,description,sources,id,place.name,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent,place.place,place.org.parent.parent.parent
+case,"",https://rr0.org/time/1/9/8/index.html#1980,,1980,en,"",1980

@@ -82,7 +82,7 @@ import { APIFactory } from "./tech/info/soft/APIFactory"
 import { RR0EventFactory } from "./event/RR0EventFactory"
 import { TypedDataFactory } from "./data/TypedDataFactory"
 import { NoteRenderer } from "./note/NoteRenderer"
-import { PeopleDirectoryFactory } from "./people/PeopleDirectoryFactory"
+import { PeopleDirectoryStepFactory } from "./people/PeopleDirectoryStepFactory"
 import { TimeTextBuilder } from "./time/TimeTextBuilder"
 import { Time } from "./time/Time"
 import { CaseFactory } from "./science/crypto/ufo/enquete/dossier/CaseFactory"
@@ -224,7 +224,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const bookMeta = new Map<string, HtmlMeta>()
   const bookLinks = new Map<string, HtmlLinks>()
   const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
-  const peopleDirectoryFactory = new PeopleDirectoryFactory(outputFunc, config, peopleService)
+  const peopleDirectoryFactory = new PeopleDirectoryStepFactory(outputFunc, config, peopleService)
   const peopleSteps = await peopleDirectoryFactory.create()
   // Publish case.json files so that vraiufo.com will find them
   copies.push(...(ufoCasesStep.config.rootDirs).map(dir => path.join(dir, "case.json")))

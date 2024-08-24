@@ -36,11 +36,10 @@ export class SourceRenderer {
     const pubItems: (HTMLElement | string)[] = []
     const title = source.title
     if (title) {
-      if ((source as Source).url) {   // Online source?
-        const onlineSource = source as Source
+      if (source.url) {   // Online source?
         const sourceLink = doc.createElement("a") as HTMLAnchorElement
         sourceLink.innerHTML = title
-        sourceLink.href = onlineSource.url
+        sourceLink.href = source.url
         pubItems.push(sourceLink)
       } else {
         pubItems.push(title)

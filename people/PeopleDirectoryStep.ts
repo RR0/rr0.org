@@ -8,24 +8,28 @@ import { PeopleService } from "./PeopleService"
 import { CountryCode } from "../org/country/CountryCode"
 import { Gender } from "@rr0/common"
 
+export type PeopleFilter = (p: People) => boolean
+
+export function peopleOccupationFilter(filterOccupations: Occupation[]): PeopleFilter {
+  return (p: People) => p.occupations.some(o => filterOccupations.includes(o))
+}
+
 /**
  * Scan directories for people information, then populates a template with collected data.
  */
 export class PeopleDirectoryStep extends DirectoryStep {
 
-  constructor(rootDirs: string[], excludedDirs: string[], templateFileName: string, protected outputFunc: OutputFunc,
-              config: SsgConfig, protected filterOccupations: Occupation[], protected service: PeopleService,
-              name = "people directory") {
+  constructor(name: string, rootDirs: string[], excludedDirs: string[], templateFileName: string,
+              protected outputFunc: OutputFunc, config: SsgConfig, protected service: PeopleService,
+              protected filter: PeopleFilter = (_people: People) => true) {
     super({rootDirs, excludedDirs, templateFileName, getOutputPath: config.getOutputPath}, name)
   }
 
   protected async processDirs(context: HtmlRR0SsgContext, dirNames: string[]): Promise<void> {
-    let peopleList = await this.service.getAll()
+    const allPeopleList = await this.service.getAll()
+    let peopleList = allPeopleList.filter(this.filter)
     const outputPath = this.config.getOutputPath(context)
     const output = context.newOutput(outputPath)
-    if (this.filterOccupations.length > 0) {
-      peopleList = peopleList.filter((p: People) => p.occupations.some(o => this.filterOccupations.includes(o)))
-    }
     const pseudoPeopleList = peopleList.reduce((prevPeopleList: People[], peopleInfo: People) => {
       if (peopleInfo.pseudonyms?.length > 0) {
         for (const pseudonym of peopleInfo.pseudonyms) {
@@ -88,7 +92,8 @@ export class PeopleDirectoryStep extends DirectoryStep {
   protected toListItem(context: HtmlRR0SsgContext, people: People, pseudoPeopleList: People[],
                        allCountries: Set<CountryCode>, occupations: Set<Occupation>) {
     const ref = this.service.getLink(context, people, pseudoPeopleList, allCountries, occupations,
-      this.filterOccupations)
+      /*this.filter*/ // TODO: Restore removal of already-known (as from people occupation subset) occupation
+    )
     const item = context.file.document.createElement("li")
     item.appendChild(ref)
     return item

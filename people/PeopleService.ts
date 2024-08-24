@@ -90,7 +90,7 @@ export class PeopleService extends AbstractDataService<People> {
 
   getLink(context: HtmlRR0SsgContext,
           people: People, pseudoPeopleList: People[], allCountries: Set<CountryCode>,
-          occupations: Set<Occupation>, filterOccupations: Occupation[], content?: string): HTMLElement {
+          occupations: Set<Occupation>, filterOccupations: Occupation[] = [], content?: string): HTMLElement {
     const dirName = people.dirName
     const titles = []
     const classList = ["data-resolved", "people-resolved"]

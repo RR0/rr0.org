@@ -84,7 +84,6 @@ export const usaRegions: Region[] = [
   vermont,
   virginIslands,
   washington,
-  usaRegion(UsaStates.wi, Place.fromLocation(47.466667, 0.833333)),
   westVirginia,
   wisconsin,
   wyoming

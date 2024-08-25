@@ -14,7 +14,7 @@ import { Chapter } from "./Chapters"
 export class BookDirectoryStep extends DirectoryStep {
 
   constructor(rootDirs: string[], templateFileName: string, protected outputFunc: OutputFunc,
-              config: SsgConfig, protected outDir: string, name: string,
+              config: SsgConfig, name: string,
               protected bookMeta: Map<string, HtmlMeta>, protected bookLinks: Map<string, HtmlLinks>) {
     super({rootDirs, excludedDirs: [], templateFileName, getOutputPath: config.getOutputPath}, name)
   }
@@ -22,7 +22,7 @@ export class BookDirectoryStep extends DirectoryStep {
   static async create(outputFunc: OutputFunc, config: SsgConfig, bookMeta: Map<string, HtmlMeta>,
                       bookLinks: Map<string, HtmlLinks>): Promise<BookDirectoryStep> {
     const dirs = RR0FileUtil.findDirectoriesContaining("book*.json")
-    return new BookDirectoryStep(dirs, "book/index.html", outputFunc, config, config.outDir, "all books", bookMeta,
+    return new BookDirectoryStep(dirs, "book/index.html", outputFunc, config, "all books", bookMeta,
       bookLinks)
   }
 

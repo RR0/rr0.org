@@ -24,6 +24,7 @@ import { algeria } from "../dz/Algeria"
 import { panama } from "../pa/Panama"
 import { taiwan } from "../tw/Taiwan"
 import { tunisia } from "../tn/Tunisia"
+import { israel } from "../il/Israel"
 
 export class CountryService extends OrganizationService<Country> {
 }
@@ -50,7 +51,7 @@ const countries: Country[] = [
   new Country(CountryCode.gr),
   new Country(CountryCode.hu),
   new Country(CountryCode.ie),
-  new Country(CountryCode.il),
+  israel,
   india,
   new Country(CountryCode.ir),
   new Country(CountryCode.it),

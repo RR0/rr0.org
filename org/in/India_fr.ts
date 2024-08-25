@@ -2,9 +2,10 @@ import { CountryMessages } from "../country/CountryMessages"
 import { IndiaMessages } from "./IndiaMessages"
 import { maharashtraMessages } from "./region/mh/MaharashtraMessages"
 import { telanganaMessages } from "./region/tg/TelanganaMessages"
+import { IndiaRegionCode } from "./region/IndiaRegionCode"
 
 export const india_fr = CountryMessages.create<IndiaMessages>("Inde", {
-    mh: maharashtraMessages,
-    tg: telanganaMessages
+  [IndiaRegionCode.mh]: maharashtraMessages,
+  [IndiaRegionCode.tg]: telanganaMessages
   }
 )

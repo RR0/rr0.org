@@ -1,4 +1,3 @@
-import { IndiaRegionCode } from "../../in/IndiaRegionCode"
 import { Place } from "../../../place/Place"
 import { UsaStates } from "../../us/region/UsaStates"
 import { CanadaRegionCode } from "../../ca/region/CanadaRegionCode"
@@ -17,6 +16,7 @@ import { NewZealandRegionCode } from "../../nz/region/NewZealandRegionCode"
 import { UkRegionCode } from "../../uk/region/UkRegionCode"
 import { RegionMessages } from "./RegionMessages"
 import { TitleMessage } from "../../index"
+import { IndiaRegionCode } from "../../in/region/IndiaRegionCode"
 
 export type RegionCode =
   | AustraliaRegionCode

@@ -1,8 +1,19 @@
 {
-  "birthTime": "1959-11-22",
-  "deathTime": "2021-12-13",
-  "occupations": ["ufologist"],
+  "url": "https://glenn-campbell.com",
+  "occupations": [
+    "ufologist"
+  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1959-11-22"
+    },
+    {
+      "type": "death",
+      "time": "2021-12-13"
+    }
   ]
 }

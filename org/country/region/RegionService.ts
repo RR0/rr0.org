@@ -1,5 +1,4 @@
 import { Country } from "../Country"
-import { indiaRegions } from "../../in/IndiaRegions"
 import { usaRegions } from "../../us/region/UsaRegions"
 import { canadaRegions } from "../../ca/region/CanadaRegions"
 import { australiaRegions } from "../../au/region/AustraliaRegions"
@@ -8,6 +7,7 @@ import { europeRegions } from "../../eu/EuropeRegions"
 import { Region } from "./Region"
 import { OrganizationService } from "../../OrganizationService"
 import { countryService } from "../CountryService"
+import { indiaRegions } from "../../in/region/IndiaRegions"
 
 export class RegionService extends OrganizationService<Region, Country> {
 }

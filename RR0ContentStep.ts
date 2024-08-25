@@ -9,7 +9,7 @@ export interface ContentVisitor {
 export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
 
   constructor(contentConfigs: ContentStepConfig[], outputFunc: OutputFunc,
-              protected contentVisitors: ContentVisitor[] = []) {
+              protected contentVisitors: ContentVisitor[] = [], protected force: boolean) {
     super(contentConfigs, outputFunc)
   }
 
@@ -45,8 +45,13 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
     return super.write(context, outputFile)
   }
 
-  protected async shouldProcess(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): Promise<boolean> {
-    const should = true   // TODO: Don't process unmodified files
+  protected async shouldProcessFile(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): Promise<boolean> {
+    return this.force || await super.shouldProcessFile(context, _contentsConfig)
+  }
+
+  protected async shouldProcessContent(context: HtmlRR0SsgContext,
+                                       _contentsConfig: ContentStepConfig): Promise<boolean> {
+    const should = this.force || await super.shouldProcessContent(context, _contentsConfig)
     if (should) {
       for (const contentVisitor of this.contentVisitors) {
         await contentVisitor.visit(context)

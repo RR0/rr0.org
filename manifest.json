@@ -1,0 +1,56 @@
+{
+  "short_name": "RR0",
+  "name": "R.R.0.",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/apple-touch-icon_400x400.png",
+      "type": "image/png",
+      "sizes": "400x400"
+    }
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#3367D6",
+  "display": "minimal-ui",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "Chronologie",
+      "short_name": "Historique",
+      "description": "Chronologie des événements",
+      "url": "/time?source=pwa",
+      "icons": [
+        {
+          "src": "/images/today.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Cas ufologiques",
+      "short_name": "Dossiers",
+      "description": "Dossier détaillant des cas ufologiques et leur enquête",
+      "url": "/science/crypto/ufo/enquete/dossier/",
+      "icons": [
+        {
+          "src": "/images/tomorrow.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "description": "UFO data for french-reading people",
+  "screenshots": [
+    {
+      "src": "/screenshot1.jpg",
+      "type": "image/jpg",
+      "sizes": "2048x1089"
+    }
+  ]
+}

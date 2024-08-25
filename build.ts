@@ -108,6 +108,11 @@ interface RR0BuildArgs {
    * Comma-separated list of file patterns to books to generate TOCs for.
    */
   books?: string
+
+  /**
+   * Force re-generation even if file has not changed.
+   */
+  force?: string
 }
 
 console.time("ssg")
@@ -260,7 +265,6 @@ timeService.getFiles().then(async (timeFiles) => {
     return title
   }
   const pageReplaceCommands = [
-    new SsiIncludeReplaceCommand(),
     new BaseReplaceCommand("/"),
     new LanguageReplaceCommand(),
     new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
@@ -298,16 +302,11 @@ timeService.getFiles().then(async (timeFiles) => {
   ]
   const ssg = new Ssg(config)
   const getOutputPath = (context: SsgContext): string => path.join(outDir, context.file.name)
-  const structuralStep = new RR0ContentStep([
-    htAccessToNetlifyConfig,
-    {
-      roots: contentRoots,
-      replacements: [
-        new SsiIncludeReplaceCommand()
-      ],
-      getOutputPath
-    }
-  ], outputFunc, [])
+  const force = args.force === "true"
+  const structuralStep = new RR0ContentStep(
+    [htAccessToNetlifyConfig, {roots: contentRoots, replacements: [new SsiIncludeReplaceCommand()], getOutputPath}],
+    outputFunc, [], force
+  )
   ssg.add(structuralStep)
   ssg.add(ufoCasesStep)
   ssg.add(...peopleSteps)
@@ -327,13 +326,8 @@ timeService.getFiles().then(async (timeFiles) => {
       new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder),
       searchCommand
     ]
-    ssg.add(new RR0ContentStep([
-      {
-        roots: contentRoots,
-        replacements: contentReplacements,
-        getOutputPath
-      }
-    ], outputFunc, contentVisitors))
+    ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: contentReplacements, getOutputPath}],
+      outputFunc, contentVisitors, force))
   }
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))

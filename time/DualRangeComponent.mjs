@@ -119,9 +119,9 @@ export class DualRangeComponent extends HTMLElement {
   setPos (el, slider, value) {
     const scale = slider.max - slider.min
     const deltaValue = value - slider.min
-    console.log("deltaValue", deltaValue)
+    // console.log("deltaValue", deltaValue)
     const pos = deltaValue * 100 / scale
-    console.log("pos", pos)
+    // console.log("pos", pos)
     el.style.left = `calc(${pos}% + ${(sliderWidth / 2) - pos * 0.65}px)`
   }
 

@@ -1,0 +1,42 @@
+.source {
+  display: inline;
+  vertical-align: baseline;
+  font-variant: normal;
+  font-style: normal;
+}
+
+.source-id {
+  text-decoration: none;
+  padding: .2rem .3rem;
+  color: #069;
+  vertical-align: super;
+  font-size: smaller;
+  line-height: normal;
+
+  &:hover {
+    color: var(--link-color);
+
+    .source-contents {
+      position: absolute;
+      margin-top: 1em;
+      margin-left: -0.25em;
+      display: inline-block;
+      padding: 0.35em 0.5em;
+      color: var(--color);
+      background: var(--background-color);
+      box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
+      border: 1px outset var(--icon-color);
+      border-radius: 0.25em;
+      z-index: 2;
+    }
+  }
+}
+
+.source-contents {
+  color: grey;
+  display: none;
+}
+
+.anchor:target + .source-contents {
+  display: inline-block;
+}

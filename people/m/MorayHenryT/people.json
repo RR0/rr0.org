@@ -1,10 +1,21 @@
 {
-  "birthTime": "1892-08-28",
-  "deathTime": "1974-05",
+  "title": "Thomas Henry Moray",
   "occupations": [
     "engineer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1892-08-28",
+      "place": "Salt Lake City (Utah)"
+    },
+    {
+      "type": "death",
+      "time": "1974-05",
+      "place": "Salt Lake City (Utah)"
+    }
   ]
 }

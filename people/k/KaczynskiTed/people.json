@@ -1,0 +1,32 @@
+{
+  "title": "Theodore Kaczynski",
+  "surname": "Ted",
+  "occupations": [
+    "chemist",
+    "physicist"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-05-22",
+      "place": "Chicago (Illinois)"
+    },
+    {
+      "type": "death",
+      "time": "2023-06-10",
+      "place": "Butner (comté de Durham, Caroline du Nord)",
+      "notes": [
+        "Par suicide, il souffrait d'un cancer en phase terminale"
+      ],
+      "sources": [
+        {
+          "url": "https://www.lemonde.fr/international/article/2023/06/10/etats-unis-theodore-kaczynski-dit-unabomber-est-mort-en-prison_6177078_3210.html"
+        }
+      ]
+    }
+  ],
+  "image": "time/1/9/9/6/Kaczynski.jpg"
+}

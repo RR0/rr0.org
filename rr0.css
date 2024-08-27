@@ -6,6 +6,8 @@
 @import "section.css";
 @import "table.css";
 @import "nav.css";
+@import "source/index.css";
+@import "link.css";
 
 :root {
   --mobile-nav-height: 2rem;
@@ -16,7 +18,6 @@
   --icon-color: grey;
   --background-color: white;
   --color: black;
-  --link-color: lightblue;
   --font-family: system-ui;
   --transform: none;
 }
@@ -205,7 +206,7 @@ form {
   font-variant: small-caps
 }
 
-.explanation, .mois, .note, .source {
+.explanation, .mois, .note {
   font-variant: normal
 }
 
@@ -353,18 +354,18 @@ p {
   hyphens: auto
 }
 
-a, details summary, .toggle, form label {
+details summary, .toggle, form label {
   text-decoration: none;
   padding: .2rem .3rem;
   margin: -.2rem -.3rem
 }
 
-.note-id, .source-id {
+.note-id {
   text-decoration: none;
   padding: .2rem .3rem;
 }
 
-a, details summary, .toggle, .note-id, .source-id {
+details summary, .toggle, .note-id {
   color: #069;
 }
 
@@ -428,7 +429,7 @@ a:hover, details summary:hover, .indexed li:hover, .multilang:hover {
   overflow: auto;
 }
 
-.exergue .source {
+.exergue {
   vertical-align: baseline
 }
 
@@ -575,7 +576,7 @@ span.answer::after, span.answer::before {
   text-align: left
 }
 
-.exergue .source {
+.exergue {
   display: inline
 }
 
@@ -655,23 +656,22 @@ pre code {
   border-bottom: medium solid #D7E2EA;
 }
 
-.explanation, .heure, .note, .source {
+.explanation, .heure, .note {
   font-style: normal
 }
 
-.disappeared::after, .meprise::after, .misinterpretation::after, .note, .source {
+.disappeared::after, .meprise::after, .misinterpretation::after, .note {
   vertical-align: super
 }
 
-.source-id, .note-id {
+.note-id {
   color: #069;
 }
 
-.source-id:hover, .note-id:hover {
+.note-id:hover {
   color: var(--link-color);
 }
 
-.source-id:hover .source-contents,
 .note-id:hover .note-contents {
   position: absolute;
   margin-top: 1em;
@@ -760,7 +760,7 @@ a[target="_blank"]::after {
   color: #666
 }
 
-#notes, #sources, .footer, .note, .source {
+#notes, #sources, .footer, .note {
   font-size: .8em
 }
 
@@ -788,10 +788,6 @@ footer iframe {
   text-align: right
 }
 
-.note, .source {
-  line-height: normal
-}
-
 .note-id {
   vertical-align: super;
   font-size: smaller;
@@ -807,21 +803,6 @@ footer iframe {
   display: inline-block;
 }
 
-.source-id {
-  vertical-align: super;
-  font-size: smaller;
-  line-height: normal;
-}
-
-.source-contents {
-  color: grey;
-  display: none;
-}
-
-.anchor:target + .source-contents {
-  display: inline-block;
-}
-
 .foot:target {
   background: #bbb;
   color: #fff
@@ -829,10 +810,6 @@ footer iframe {
 
 #notes, #sources, .note, .source {
   color: #666
-}
-
-.note, .source {
-  display: none
 }
 
 #notes {
@@ -1109,7 +1086,7 @@ a:hover {
     background: linear-gradient(135deg, #555555 0, rgba(255, 255, 255, 0) 79%)
   }
 
-  a, .toggle {
+  .toggle {
     color: var(--link-color);
   }
 
@@ -1120,6 +1097,7 @@ a:hover {
   #main-header h1 {
     color: lightgrey;
     text-shadow: none;
+    view-transition-name: title;
   }
 
   .place, .plac {

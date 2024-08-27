@@ -1,0 +1,22 @@
+{
+  "title": "Clyde Clark McClelland",
+  "occupations": [
+    "engineer",
+    "astronaut"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-05-26",
+      "place": "Sligo (Pennsylvanie)"
+    },
+    {
+      "type": "death",
+      "time": "2001-07-07",
+      "place": "Aspinwall (Pennsylvanie)"
+    }
+  ]
+}

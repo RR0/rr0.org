@@ -1,10 +1,22 @@
 {
-  "birthTime": "1941-10-04",
-  "deathTime": "2021-01-30",
+  "title": "Willard Thomas Ury",
+  "surname": "Tom",
   "occupations": [
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1941-10-04",
+      "place": "comté de Wood (Virginie Occidentale)"
+    },
+    {
+      "type": "death",
+      "time": "2021-01-30",
+      "place": "hôpital Holzer de Gallipolis"
+    }
   ]
 }

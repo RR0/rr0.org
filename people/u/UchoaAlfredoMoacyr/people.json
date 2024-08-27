@@ -1,10 +1,20 @@
 {
-  "birthTime": "1906-01",
-  "deathTime": "1996-03-05",
+  "title": "Alfredo Moacyr de Mendonça Uchôa",
   "occupations": [
-    "military"
+    "military",
+    "ufoWitness"
   ],
   "countries": [
     "br"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1906-01"
+    },
+    {
+      "type": "death",
+      "time": "1996-03-05"
+    }
   ]
 }

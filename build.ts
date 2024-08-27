@@ -147,6 +147,8 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
   "people/index.js", "people/index.css", "people/witness/index.css",
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
+  "source/index.css",
+  "link.css",
   "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/divin/theisme/mono/livre/islam/coran/index.js"

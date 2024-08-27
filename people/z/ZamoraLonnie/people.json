@@ -1,13 +1,34 @@
 {
-  "title": "Zamora, Dionicio",
-  "pseudonyms": [
-    "Zamora, Lonnie"
-  ],
+  "title": "Dionicio Eduardo Zamora",
+  "surname": "Lonnie",
   "occupations": [
+    "military",
     "policeman",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "place": "Magdalena (comté de Socorro, Nouveau-Mexique)",
+      "time": "1933-09-07",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/43968220/dionicio_eduardo-zamora"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "place": "Socorro (comté de Socorro, Nouveau-Mexique)",
+      "time": "2009-11-02",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/43968220/dionicio_eduardo-zamora"
+        }
+      ]
+    }
   ]
 }

@@ -42,7 +42,7 @@ import { TimeReplacerFactory } from "./time/TimeReplacerFactory"
 import { MetaLinkReplaceCommand } from "./MetaLinkReplaceCommand"
 import { OutlineReplaceCommand } from "./outline/OutlineReplaceCommand"
 import { ImageCommand } from "./ImageCommand"
-import { SearchCommand } from "./search/SearchCommand"
+import { SearchVisitor } from "./search/SearchVisitor"
 import { SearchIndexStep } from "./search/SearchIndexStep"
 import { BaseReplaceCommand } from "./BaseReplaceCommand"
 import { OpenGraphCommand } from "./OpenGraphCommand"
@@ -241,7 +241,7 @@ timeService.getFiles().then(async (timeFiles) => {
   await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"),
     JSON.stringify(peopleList.map(people => people.dirName)), "utf-8")
 
-  const searchCommand = new SearchCommand({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false},
+  const searchVisitor = new SearchVisitor({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false},
     timeTextBuilder)
   const sourceRenderer = new SourceRenderer(timeTextBuilder)
   const sourceRegistryFileName = "source/index.json"
@@ -305,14 +305,14 @@ timeService.getFiles().then(async (timeFiles) => {
   const force = args.force === "true"
   const structuralStep = new RR0ContentStep(
     [htAccessToNetlifyConfig, {roots: contentRoots, replacements: [new SsiIncludeReplaceCommand()], getOutputPath}],
-    outputFunc, [], force
+    outputFunc, [], [], force
   )
   ssg.add(structuralStep)
   ssg.add(ufoCasesStep)
   ssg.add(...peopleSteps)
   if (contentRoots) {
     const contentVisitor = new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory)
-    const contentVisitors: ContentVisitor[] = [contentVisitor]
+    const contentVisitors: ContentVisitor[] = [contentVisitor, searchVisitor]
     if (args.books) {
       contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))
     }
@@ -323,18 +323,17 @@ timeService.getFiles().then(async (timeFiles) => {
       new AnchorReplaceCommand(siteBaseUrl,
         [new CaseAnchorHandler(caseService, timeTextBuilder), new DataAnchorHandler(dataService)]),
       new ImageCommand(outDir, 275, 500),
-      new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder),
-      searchCommand
+      new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder)
     ]
     ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: contentReplacements, getOutputPath}],
-      outputFunc, contentVisitors, force))
+      outputFunc, [], contentVisitors, force))
   }
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))
   }
   const reindex = args.reindex?.split(",")
   if (reindex?.includes("search")) {
-    ssg.add(new SearchIndexStep("search/index.json", searchCommand))
+    ssg.add(new SearchIndexStep("search/index.json", searchVisitor))
   }
   if (reindex?.includes("sources")) {
     ssg.add(new SourceIndexStep(sourceRegistryFileName, sourceFactory))

@@ -1,10 +1,20 @@
 {
-  "birthTime": "1911-07-04",
-  "deathTime": "2008-03-02",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1911-07-04",
+      "place": "San Francisco (Californie)"
+    },
+    {
+      "type": "death",
+      "time": "2008-03-02",
+      "place": "New York"
+    }
   ]
 }

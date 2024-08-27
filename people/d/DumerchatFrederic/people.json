@@ -1,7 +1,12 @@
 {
-  "birthTime": "1954",
   "occupations": ["ufologist"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1954"
+    }
   ]
 }

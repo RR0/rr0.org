@@ -1,4 +1,4 @@
-import { ContentStep, ContentStepConfig, FileContents, OutputFunc } from "ssg-api"
+import { ContentStep, ContentStepConfig, ContentStepResult, FileContents, OutputFunc } from "ssg-api"
 import { HtmlRR0SsgContext } from "./RR0SsgContext"
 import { TimeContext } from "./time/TimeContext"
 
@@ -6,9 +6,16 @@ export interface ContentVisitor {
   visit(context: HtmlRR0SsgContext): Promise<void>
 }
 
+export interface FileVisitor {
+  visit(context: HtmlRR0SsgContext, processFile: boolean): Promise<void>
+
+  contentStepEnd(): Promise<void>
+}
+
 export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
 
   constructor(contentConfigs: ContentStepConfig[], outputFunc: OutputFunc,
+              protected fileVisitors: FileVisitor[] = [],
               protected contentVisitors: ContentVisitor[] = [], protected force: boolean) {
     super(contentConfigs, outputFunc)
   }
@@ -46,7 +53,11 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
   }
 
   protected async shouldProcessFile(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): Promise<boolean> {
-    return this.force || await super.shouldProcessFile(context, _contentsConfig)
+    const processFile = this.force || await super.shouldProcessFile(context, _contentsConfig)
+    for (const fileVisitor of this.fileVisitors) {
+      await fileVisitor.visit(context, processFile)
+    }
+    return processFile
   }
 
   protected async shouldProcessContent(context: HtmlRR0SsgContext,
@@ -58,5 +69,14 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
       }
     }
     return should
+  }
+
+
+  protected async postExecute(result: ContentStepResult): Promise<ContentStepResult> {
+    await super.postExecute(result)
+    for (const fileVisitor of this.fileVisitors) {
+      await fileVisitor.contentStepEnd()
+    }
+    return result
   }
 }

@@ -1,5 +1,5 @@
 :root {
-  --link-color: lightblue;
+  --link-color: steelblue;
 }
 
 a {
@@ -11,4 +11,8 @@ a {
   &:active {
     view-transition-name: title;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  --link-color: lightblue;
 }

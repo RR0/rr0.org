@@ -1,0 +1,21 @@
+{
+  "title": "Keith Leon Moore",
+  "occupations": [
+    "teacher",
+    "physician"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1925-10-05",
+      "place": "Brantford (Ontario, Canada)"
+    },
+    {
+      "type": "death",
+      "time": "2019-11-25"
+    }
+  ]
+}

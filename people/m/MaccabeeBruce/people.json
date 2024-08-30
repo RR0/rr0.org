@@ -1,11 +1,33 @@
 {
-  "birthTime": "1942-05-06",
-  "deathTime": "2024-05-09",
+  "title": "Bruce Sargent Maccabee",
+  "url": "https://brumac.8k.com",
   "occupations": [
     "physicist",
     "ufologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-05-06",
+      "place": "Rutland (Vermont)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Maccabee parlant à une conférence"
+    },
+    {
+      "type": "death",
+      "time": "2024-05-09",
+      "place": "Shawnee (Ohio)",
+      "sources": [
+        {
+          "url": "https://x.com/IWANTTOKNOWUK/status/1789751602783437025"
+        }
+      ]
+    }
   ]
 }

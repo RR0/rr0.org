@@ -1,0 +1,24 @@
+{
+  "title": "Karl Raimund Popper (Sir)",
+  "occupations": [
+    "teacher",
+    "psychologist",
+    "philosopher"
+  ],
+  "countries": [
+    "at",
+    "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1902-07-28",
+      "place": "Vienne (Autriche)"
+    },
+    {
+      "type": "death",
+      "time": "1994-09-17",
+      "place": "Kenley (UK)"
+    }
+  ]
+}

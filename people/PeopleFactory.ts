@@ -33,8 +33,14 @@ export class PeopleFactory extends TypedDataFactory<People> {
     const people = this.createFromDirName(data.dirName)
     data.name = people.name
     Object.assign(people, super.createFromData(data))
-    const title = data.title
+    let title = data.title
+    let qualifier: string | undefined
     if (title) {
+      const qualifStart = title.indexOf("(")
+      if (qualifStart > 0) {
+        qualifier = title.substring(qualifStart + 1, title.indexOf(")"))
+        title = title.substring(0, qualifStart).trim()
+      }
       const names = title.split(",")
       if (names.length > 1) {
         people.lastName = names.splice(0, 1)[0].trim()
@@ -48,7 +54,7 @@ export class PeopleFactory extends TypedDataFactory<People> {
         people.lastAndFirstName = title
       }
     }
-    people.title = people.firstAndLastName
+    people.title = people.firstAndLastName + (qualifier ? ` (${qualifier})` : "")
     return people
   }
 }

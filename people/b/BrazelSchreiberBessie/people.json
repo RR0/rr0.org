@@ -1,6 +1,5 @@
 {
-  "birthTime": "1932-12-17",
-  "deathTime": "2008-11-02",
+  "title": "Bessie Irene Schreiber",
   "occupations": [
     "farmer",
     "ufoWitness2"
@@ -8,5 +7,21 @@
   "countries": [
     "us"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1932-12-17",
+      "place": "Oscura (Nouveau-Mexique)"
+    },
+    {
+      "type": "death",
+      "time": "2008-11-02",
+      "sources": [
+        {
+          "url": "https://obits.columbian.com/us/obituaries/columbian/name/bessie-schreiber-obituary?pid=120988380"
+        }
+      ]
+    }
+  ]
 }

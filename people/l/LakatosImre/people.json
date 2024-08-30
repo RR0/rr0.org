@@ -1,6 +1,8 @@
 {
-  "birthTime": "1922-11-09",
-  "deathTime": "1974-02-02",
+  "title": "Imre Lipschitz",
+  "pseudonyms": [
+    "Imre Lakatos"
+  ],
   "occupations": [
     "writer",
     "mathematician",
@@ -11,5 +13,19 @@
     "hu",
     "au",
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1922-11-09",
+      "place": "Debrecen (Hongrie)"
+    },
+    {
+      "type": "death",
+      "time": "1974-02-02",
+      "notes": [
+        "d'une hémorragie cérébrale"
+      ]
+    }
   ]
 }

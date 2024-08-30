@@ -22,7 +22,3 @@
 .with-lang-selector {
   position: relative;
 }
-
-#lang-aside {
-  z-index: -1;
-}

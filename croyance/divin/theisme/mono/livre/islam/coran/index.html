@@ -1,251 +1,258 @@
 <!--#include virtual="/header-start.html" -->
 <title>Coran</title>
 <!--#include virtual="/header-end.html" -->
-<p><time>622/</time> (an 1 de l'<a href="../Hegire.html">Hégire</a>), <span class="people"
-  title="Mohammed">Mahomet</span>
-  énonce la parole du <q>Dieu unique</q> (<i lang="ar">Allah</i>) au fil de nombreuses révélations qui s'expriment par
-  une agitation de tout son corps.</p>
+<p><time>610/</time> <span class="people"
+  title="Mohammed">Mahomet</span> énonce la parole du <q>Dieu unique</q> (<i lang="ar">Allah</i>) au fil de nombreuses
+  révélations qui s'expriment par une agitation de tout son corps.</p>
+<aside style="text-align: right">
+  <script>
+    function changeOrder (event) {
+      const list = document.querySelector("ol.links")
+      const items = Array.from(list.querySelectorAll("li"))
+      const comparator = event.target.value === "trad"
+        ? (item1, item2) => item1.id > item2.id ? 1 : -1
+        : (item1, item2) => item1.dataset.order > item2.dataset.order ? 1 : -1
+      items.sort(comparator)
+      list.replaceChildren(...items)
+    }
+  </script>
+  <form id="order-form">
+    <label>Ordre traditionnel <input checked name="order" onchange="changeOrder(event)" type="radio"
+      value="trad"></label> <label>Ordre chronologique <input name="order" onchange="changeOrder(event)" type="radio"
+    value="time"></label>
+  </form>
+</aside>
 <div class="with-lang-selector">
   <!--#include virtual="/lang/form.html" -->
   <!--#echo var="directories" -->
   <ol class="links">
-    <li><a href="001"> <span lang="fr">Prologue</span> <span lang="ar">الفاتحة</span> <span
-      lang="ar-Latn">Al-Fatiha</span> </a></li>
-    <li><a href="002"> <span lang="fr">La vache</span> <span lang="ar">البقرة</span> <span
+    <li data-order="5" id="1"><a href="001"> <span lang="fr">Prologue</span> <span lang="ar">الفاتحة</span> <span
+      lang="ar-Latn">Al-Fatiha</span></a></li>
+    <li data-order="87" id="2"><a href="002"> <span lang="fr">La vache</span> <span lang="ar">البقرة</span> <span
       lang="ar-Latn">Al-Baqarah</span> </a></li>
-    <li><a href="003"> <span lang="fr">La famille d'Imran</span> <span lang="ar">آل عمران</span> <span lang="ar-Latn">Al-Imran</span>
-    </a></li>
-    <li><a href="004/index.html"> <span lang="fr">Les femmes</span> <span lang="ar">النساء</span> <span
-      lang="ar-Latn">An-Nisa'</span> </a></li>
-    <li><a href="005"> <span lang="fr">La table servie</span> <span lang="ar">المائدة</span> <span lang="ar-Latn">An-Maidah</span>
-    </a></li>
-    <li><a href="006"> <span lang="fr">Les bestiaux</span> <span lang="ar">الأنعام</span> <span
+    <li data-order="89" id="3"><a href="003"> <span lang="fr">La famille d'Imran</span> <span lang="ar">آل
+      عمران</span> <span lang="ar-Latn">Al-Imran</span></a></li>
+    <li data-order="92" id="4"><a href="004/index.html"> <span lang="fr">Les femmes</span> <span lang="ar">النساء
+    </span> <span lang="ar-Latn">An-Nisa'</span></a></li>
+    <li data-order="112" id="5"><a href="005"> <span lang="fr">La table servie</span> <span lang="ar">المائدة</span>
+      <span lang="ar-Latn">An-Maidah</span></a></li>
+    <li data-order="55" id="6"><a href="006"> <span lang="fr">Les bestiaux</span> <span lang="ar">الأنعام</span> <span
       lang="ar-Latn">Al-Anam</span> </a></li>
-    <li><a href="007"> <span lang="fr">Les murailles</span> <span lang="ar">الأعراف</span> <span
-      lang="ar-Latn">Al-Araf</span> </a></li>
-    <li><a href="008"><span lang="fr">Le butin</span> <span lang="ar">الأنفال</span> <span
-      lang="ar-Latn">Al-anfal</span> </a></li>
-    <li><a href="009/index.html"><span lang="fr">Le repentir</span> <span lang="ar">التوبة</span> <span lang="ar-Latn">Al
-    -tawbah</span></a></li>
-    <li><a href="010"><span lang="fr">Jonas</span> <span lang="ar">يونس</span> <span lang="ar-Latn">Yunus</span></a>
-    </li>
-    <li><a href="011"><span lang="fr">Hud</span> <span lang="ar">هود</span> <span lang="ar-Latn">Hud</span> </a></li>
-    <li><a href="012"><span lang="fr">Joseph</span> <span lang="ar">يوسف</span> <span lang="ar-Latn">Yusuf</span> </a>
-    </li>
-    <li><a href="013"> <span lang="fr">Le tonnerre</span> <span lang="ar">الرعد</span> <span
-      lang="ar-Latn">Ar-raad</span> </a></li>
-    <li><a href="014"> <span lang="fr">Abraham</span> <span lang="ar">إبراهيم</span> <span lang="ar-Latn">Ibrahim</span>
-    </a></li>
-    <li><a href="015"> <span lang="fr">Al-hijr</span> <span lang="ar">الحجر</span> <span lang="ar-Latn">Al-hijr</span>
-    </a></li>
-    <li><a href="016"> <span lang="fr">Les abeilles</span> <span lang="ar">النحل</span> <span
-      lang="ar-Latn">An-nahl</span> </a></li>
-    <li><a href="017"> <span lang="fr">Le voyage nocturne</span> <span lang="ar">الإسراء</span> <span lang="ar-Latn">Al-isra</span>
-    </a></li>
-    <li><a href="018"> <span lang="fr">La caverne</span> <span lang="ar">الكهف</span> <span
-      lang="ar-Latn">Al-Kahf</span> </a></li>
-    <li><a href="019"> <span lang="fr">Marie</span> <span lang="ar">مريم</span> <span lang="ar-Latn">Maryam</span> </a>
-    </li>
-    <li><a href="020"> <span lang="fr">Ta-ha</span> <span lang="ar">طه</span> <span lang="ar-Latn">Ta-ha</span> </a>
-    </li>
-    <li><a href="021/index.html"><span lang="fr">Les prophètes</span> <span lang="ar">الأنبياء</span> <span
-      lang="ar-Latn">Al-anbyia</span></a></li>
-    <li><a href="022"> <span lang="fr">Le pélerinage</span> <span lang="ar">الحج</span> <span
-      lang="ar-Latn">Al-hajj</span> </a></li>
-    <li><a href="023"><span lang="fr">Les croyants</span> <span lang="ar">المؤمنون</span> <span
-      lang="ar-Latn">Al-miminune</span> </a></li>
-    <li><a href="024"><span lang="fr">La lumière</span> <span lang="ar">النور</span> <span lang="ar-Latn">An-nur</span>
-    </a></li>
-    <li><a href="025"><span lang="fr">Le discernement</span> <span lang="ar">الفرقان</span> <span lang="ar-Latn">Al-furqane</span>
-    </a></li>
-    <li><a href="026"><span lang="fr">Les poètes</span> <span lang="ar">الشعراء</span> <span
-      lang="ar-Latn">As-Shuaraa</span> </a></li>
-    <li><a href="027"> <span lang="fr">Les fourmis</span> <span lang="ar">النمل</span> <span
-      lang="ar-Latn">An-naml</span> </a></li>
-    <li><a href="028"> <span lang="fr">Le récit</span> <span lang="ar">القصص</span> <span lang="ar-Latn">Al-qasas</span>
-    </a></li>
-    <li><a href="029"> <span lang="fr">L'araignée</span> <span lang="ar">العنكبوت</span> <span
-      lang="ar-Latn">Al-ankabut</span> </a></li>
-    <li><a href="030"> <span lang="fr">Les romains</span> <span lang="ar">الروم</span> <span
-      lang="ar-Latn">Ar-rum</span> </a></li>
-    <li><a href="031"> <span lang="fr">Luqman</span> <span lang="ar">لقمان</span> <span lang="ar-Latn">Luqman</span>
-    </a>
-    </li>
-    <li><a href="032"> <span lang="fr">La prosternation</span> <span lang="ar">السجدة</span> <span
-      lang="ar-Latn">As-sajda</span> </a></li>
-    <li><a href="033"> <span lang="fr">Les coalisés</span> <span lang="ar">الأحزاب</span> <span
-      lang="ar-Latn">Al-ahzab</span> </a></li>
-    <li><a href="034"> <span lang="fr">Saba</span> <span lang="ar">سبأ</span> <span lang="ar-Latn">Saba</span> </a></li>
-    <li><a href="035"> <span lang="fr">Le créateur</span> <span lang="ar">فاطر</span> <span lang="ar-Latn">Fatir</span>
-    </a></li>
-    <li><a href="036"> <span lang="fr">Yassine</span> <span lang="ar">يس</span> <span lang="ar-Latn">Yas-in</span> </a>
-    </li>
-    <li><a href="037"> <span lang="fr">Les rangés</span> <span lang="ar">الصافات</span> <span
-      lang="ar-Latn">As-saffat</span> </a></li>
-    <li><a href="038"> <span lang="fr">Sad</span> <span lang="ar">ص</span> <span lang="ar-Latn">Sad</span> </a></li>
-    <li><a href="039"> <span lang="fr">Les groupes</span> <span lang="ar">الزمر</span> <span
-      lang="ar-Latn">Al-zumar</span> </a></li>
-    <li><a href="040"> <span lang="fr">Le pardonneur</span> <span lang="ar">غافر</span> <span
-      lang="ar-Latn">Gafir</span> </a></li>
-    <li><a href="041"> <span lang="fr">Les versets détaillés</span> <span lang="ar">فصلت</span> <span lang="ar-Latn">Fussilat</span>
-    </a></li>
-    <li><a href="042"> <span lang="fr">La consultation</span> <span lang="ar">الشورى</span> <span
-      lang="ar-Latn">Ash shura</span> </a></li>
-    <li><a href="043"> <span lang="fr">L'ornement</span> <span lang="ar">الزخرف</span> <span
-      lang="ar-Latn">Azzukhruf</span> </a></li>
-    <li><a href="044"> <span lang="fr">La fumée</span> <span lang="ar">الدخان</span> <span
+    <li data-order="39" id="7"><a href="007"> <span lang="fr">Les murailles</span> <span lang="ar">الأعراف</span> <span
+      lang="ar-Latn">Al-Araf</span></a></li>
+    <li data-order="88" id="8"><a href="008"><span lang="fr">Le butin</span> <span lang="ar">الأنفال</span> <span
+      lang="ar-Latn">Al-anfal</span></a></li>
+    <li data-order="113" id="9"><a href="009/index.html"><span lang="fr">Le repentir</span> <span lang="ar">التوبة
+    </span> <span lang="ar-Latn">Al-tawbah</span></a></li>
+    <li data-order="51" id="10"><a href="010"><span lang="fr">Jonas</span> <span lang="ar">يونس</span> <span
+      lang="ar-Latn">Yunus</span></a></li>
+    <li data-order="52" id="11"><a href="011"><span lang="fr">Hud</span> <span lang="ar">هود</span> <span
+      lang="ar-Latn">Hud</span></a></li>
+    <li data-order="53" id="12"><a href="012"><span lang="fr">Joseph</span> <span lang="ar">يوسف</span> <span
+      lang="ar-Latn">Yusuf</span></a></li>
+    <li data-order="96" id="13"><a href="013"> <span lang="fr">Le tonnerre</span> <span lang="ar">الرعد</span> <span
+      lang="ar-Latn">Ar-raad</span></a></li>
+    <li data-order="72" id="14"><a href="014"> <span lang="fr">Abraham</span> <span lang="ar">إبراهيم</span> <span
+      lang="ar-Latn">Ibrahim</span></a></li>
+    <li data-order="54" id="15"><a href="015"> <span lang="fr">Al-hijr</span> <span lang="ar">الحجر</span> <span
+      lang="ar-Latn">Al-hijr</span></a></li>
+    <li data-order="70" id="16"><a href="016"> <span lang="fr">Les abeilles</span> <span lang="ar">النحل</span> <span
+      lang="ar-Latn">An-nahl</span></a></li>
+    <li data-order="50" id="17"><a href="017"><span lang="fr">Le voyage nocturne</span> <span lang="ar">الإسراء</span>
+      <span lang="ar-Latn">Al-isra</span></a></li>
+    <li data-order="60" id="18"><a href="018"> <span lang="fr">La caverne</span> <span lang="ar">الكهف</span> <span
+      lang="ar-Latn">Al-Kahf</span></a></li>
+    <li data-order="44" id="19"><a href="019"> <span lang="fr">Marie</span> <span lang="ar">مريم</span> <span
+      lang="ar-Latn">Maryam</span></a></li>
+    <li data-order="45" id="20"><a href="020"> <span lang="fr">Ta-ha</span> <span lang="ar">طه</span> <span
+      lang="ar-Latn">Ta-ha</span></a></li>
+    <li data-order="73" id="21"><a href="021/index.html"><span lang="fr">Les prophètes</span> <span lang="ar">
+      الأنبياء</span> <span lang="ar-Latn">Al-anbyia</span></a></li>
+    <li data-order="103" id="22"><a href="022"> <span lang="fr">Le pélerinage</span> <span lang="ar">الحج</span> <span
+      lang="ar-Latn">Al-hajj</span></a></li>
+    <li data-order="74" id="23"><a href="023"><span lang="fr">Les croyants</span> <span lang="ar">المؤمنون</span> <span
+      lang="ar-Latn">Al-miminune</span></a></li>
+    <li data-order="102" id="24"><a href="024"><span lang="fr">La lumière</span> <span lang="ar">النور</span> <span
+      lang="ar-Latn">An-nur</span></a></li>
+    <li data-order="42" id="25"><a href="025"><span lang="fr">Le discernement</span> <span lang="ar">الفرقان</span>
+      <span lang="ar-Latn">Al-furqane</span></a></li>
+    <li data-order="47" id="26"><a href="026"><span lang="fr">Les poètes</span> <span lang="ar">الشعراء</span> <span
+      lang="ar-Latn">As-Shuaraa</span></a></li>
+    <li data-order="48" id="27"><a href="027"><span lang="fr">Les fourmis</span> <span lang="ar">النمل</span> <span
+      lang="ar-Latn">An-naml</span></a></li>
+    <li data-order="49" id="28"><a href="028"> <span lang="fr">Le récit</span> <span lang="ar">القصص</span> <span
+      lang="ar-Latn">Al-qasas</span></a></li>
+    <li data-order="85" id="29"><a href="029"> <span lang="fr">L'araignée</span> <span lang="ar">العنكبوت</span> <span
+      lang="ar-Latn">Al-ankabut</span></a></li>
+    <li data-order="84" id="30"><a href="030"> <span lang="fr">Les romains</span> <span lang="ar">الروم</span> <span
+      lang="ar-Latn">Ar-rum</span></a></li>
+    <li data-order="57" id="31"><a href="031"> <span lang="fr">Luqman</span> <span lang="ar">لقمان</span> <span
+      lang="ar-Latn">Luqman</span></a></li>
+    <li data-order="75" id="32"><a href="032"> <span lang="fr">La prosternation</span> <span lang="ar">السجدة</span>
+      <span lang="ar-Latn">As-sajda</span></a></li>
+    <li data-order="90" id="33"><a href="033"> <span lang="fr">Les coalisés</span> <span lang="ar">الأحزاب</span> <span
+      lang="ar-Latn">Al-ahzab</span></a></li>
+    <li data-order="58" id="34"><a href="034"> <span lang="fr">Saba</span> <span lang="ar">سبأ</span> <span
+      lang="ar-Latn">Saba</span></a></li>
+    <li data-order="43" id="35"><a href="035"> <span lang="fr">Le créateur</span> <span lang="ar">فاطر</span> <span
+      lang="ar-Latn">Fatir</span></a></li>
+    <li data-order="41" id="36"><a href="036"> <span lang="fr">Yassine</span> <span lang="ar">يس</span> <span
+      lang="ar-Latn">Yas-in</span></a></li>
+    <li data-order="56" id="37"><a href="037"> <span lang="fr">Les rangés</span> <span lang="ar">الصافات</span> <span
+      lang="ar-Latn">As-saffat</span></a></li>
+    <li data-order="38" id="38"><a href="038"> <span lang="fr">Sad</span> <span lang="ar">ص</span> <span
+      lang="ar-Latn">Sad</span></a></li>
+    <li data-order="59" id="39"><a href="039"> <span lang="fr">Les groupes</span> <span lang="ar">الزمر</span> <span
+      lang="ar-Latn">Al-zumar</span></a></li>
+    <li data-order="60" id="40"><a href="040"> <span lang="fr">Le pardonneur</span> <span lang="ar">غافر</span> <span
+      lang="ar-Latn">Gafir</span></a></li>
+    <li data-order="61" id="41"><a href="041"> <span lang="fr">Les versets détaillés</span> <span lang="ar">فصلت
+    </span> <span lang="ar-Latn">Fussilat</span></a></li>
+    <li data-order="62" id="42"><a href="042"> <span lang="fr">La consultation</span> <span lang="ar">الشورى</span>
+      <span lang="ar-Latn">Ash shura</span></a></li>
+    <li data-order="63" id="43"><a href="043"> <span lang="fr">L'ornement</span> <span lang="ar">الزخرف</span> <span
+      lang="ar-Latn">Azzukhruf</span></a></li>
+    <li data-order="64" id="44"><a href="044"> <span lang="fr">La fumée</span> <span lang="ar">الدخان</span> <span
       lang="ar-Latn">Ad-dukhan</span> </a></li>
-    <li><a href="045"> <span lang="fr">L'agenouillée</span> <span lang="ar">الجاثية</span> <span
-      lang="ar-Latn">Al-jathya</span> </a></li>
-    <li><a href="046"> <span lang="fr">Al-ahqaf</span> <span lang="ar">الأحقاف</span> <span
-      lang="ar-Latn">Al-ahqaf</span> </a></li>
-    <li><a href="047"> <span lang="fr">Mohammed</span> <span lang="ar">محمد</span> <span lang="ar-Latn">Mohammed</span>
-    </a></li>
-    <li><a href="048"> <span lang="fr">La victoire éclatante</span> <span lang="ar">الفتح</span> <span lang="ar-Latn">Al-fath</span>
-    </a></li>
-    <li><a href="049"> <span lang="fr">Les appartements</span> <span lang="ar">الحجرات</span> <span lang="ar-Latn">Al-hujurat</span>
-    </a></li>
-    <li><a href="050"> <span lang="fr">Qaf</span> <span lang="ar">ق</span> <span lang="ar-Latn">Qaf</span> </a></li>
-    <li><a href="051"> <span lang="fr">Qui éparpillent</span> <span lang="ar">الذاريات</span> <span lang="ar-Latn">Ad-dariyat</span>
-    </a></li>
-    <li><a href="052"> <span lang="fr">Al-tur</span> <span lang="ar">الطور</span> <span lang="ar-Latn">Al-tur</span>
-    </a>
-    </li>
-    <li><a href="053"> <span lang="fr">L'étoile</span> <span lang="ar">النجم</span> <span lang="ar-Latn">Al-najm</span>
-    </a></li>
-    <li><a href="054"> <span lang="fr">La Lune</span> <span lang="ar">القمر</span> <span lang="ar-Latn">Al-Qamar</span>
-    </a></li>
-    <li><a href="055"> <span lang="fr">Le tout miséricordieux</span> <span lang="ar">الرحمن</span> <span lang="ar-Latn">Al-rahman</span>
-    </a></li>
-    <li><a href="056"> <span lang="fr">L'événement</span> <span lang="ar">الواقعة</span> <span
-      lang="ar-Latn">Al-waq'ia</span> </a></li>
-    <li><a href="057"> <span lang="fr">Le fer</span> <span lang="ar">الحديد</span> <span lang="ar-Latn">Al-hadid</span>
-    </a></li>
-    <li><a href="058"> <span lang="fr">La discussion</span> <span lang="ar">المجادلة</span> <span lang="ar-Latn">Al-mujadalah</span>
-    </a></li>
-    <li><a href="059"> <span lang="fr">Al-hasr</span> <span lang="ar">الحشر</span> <span lang="ar-Latn">L'exode</span>
-    </a></li>
-    <li><a href="060"> <span lang="fr">L'éprouvée</span> <span lang="ar">الممتحنة</span> <span lang="ar-Latn">Al-mumtanahah</span>
-    </a></li>
-    <li><a href="061"> <span lang="fr">Le rang</span> <span lang="ar">الصف</span> <span lang="ar-Latn">As-saff</span>
-    </a>
-    </li>
-    <li><a href="062"> <span lang="fr">Le vendredi</span> <span lang="ar">الجمعة</span> <span
-      lang="ar-Latn">Aj-jumua</span> </a></li>
-    <li><a href="063"> <span lang="fr">Les hypocrites</span> <span lang="ar">المنافقون</span> <span lang="ar-Latn">Al-munafiqun</span>
-    </a></li>
-    <li><a href="064"> <span lang="fr">La grande perte</span> <span lang="ar">التغابن</span> <span lang="ar-Latn">At-tagabun</span>
-    </a></li>
-    <li><a href="065/index.html"> <span lang="fr">Le divorce</span> <span lang="ar">الطلاق</span> <span
-      lang="ar-Latn">At-talaaq</span> </a></li>
-    <li><a href="066"> <span lang="fr">L'interdiction</span> <span lang="ar">التحريم</span> <span
-      lang="ar-Latn">At-tahrim</span> </a></li>
-    <li><a href="067"> <span lang="fr">La royauté</span> <span lang="ar">الملك</span> <span
-      lang="ar-Latn">Al-mulk</span> </a></li>
-    <li><a href="068"><span lang="fr">La plume</span> <span lang="ar">القلم</span> <span
+    <li data-order="65" id="45"><a href="045"> <span lang="fr">L'agenouillée</span> <span lang="ar">الجاثية</span> <span
+      lang="ar-Latn">Al-jathya</span></a></li>
+    <li data-order="66" id="46"><a href="046"> <span lang="fr">Al-ahqaf</span> <span lang="ar">الأحقاف</span> <span
+      lang="ar-Latn">Al-ahqaf</span></a></li>
+    <li data-order="95" id="47"><a href="047"> <span lang="fr">Mohammed</span> <span lang="ar">محمد</span> <span
+      lang="ar-Latn">Mohammed</span></a></li>
+    <li data-order="111" id="48"><a href="048"> <span lang="fr">La victoire éclatante</span> <span lang="ar">الفتح
+    </span> <span lang="ar-Latn">Al-fath</span></a></li>
+    <li data-order="106" id="49"><a href="049"> <span lang="fr">Les appartements</span> <span lang="ar">الحجرات</span>
+      <span lang="ar-Latn">Al-hujurat</span></a></li>
+    <li data-order="34" id="50"><a href="050"> <span lang="fr">Qaf</span> <span lang="ar">ق</span> <span
+      lang="ar-Latn">Qaf</span></a></li>
+    <li data-order="67" id="51"><a href="051"> <span lang="fr">Qui éparpillent</span> <span lang="ar">الذاريات</span>
+      <span lang="ar-Latn">Ad-dariyat</span></a></li>
+    <li data-order="76" id="52"><a href="052"> <span lang="fr">Al-tur</span> <span lang="ar">الطور</span> <span
+      lang="ar-Latn">Al-tur</span></a></li>
+    <li data-order="23" id="53"><a href="053"> <span lang="fr">L'étoile</span> <span lang="ar">النجم</span> <span
+      lang="ar-Latn">Al-najm</span></a></li>
+    <li data-order="37" id="54"><a href="054"> <span lang="fr">La Lune</span> <span lang="ar">القمر</span> <span
+      lang="ar-Latn">Al-Qamar</span></a></li>
+    <li data-order="97" id="55"><a href="055"> <span lang="fr">Le tout miséricordieux</span> <span
+      lang="ar">الرحمن</span> <span lang="ar-Latn">Al-rahman</span></a></li>
+    <li data-order="46" id="56"><a href="056"> <span lang="fr">L'événement</span> <span lang="ar">الواقعة</span> <span
+      lang="ar-Latn">Al-waq'ia</span></a></li>
+    <li data-order="94" id="57"><a href="057"> <span lang="fr">Le fer</span> <span lang="ar">الحديد</span> <span
+      lang="ar-Latn">Al-hadid</span></a></li>
+    <li data-order="105" id="58"><a href="058"> <span lang="fr">La discussion</span> <span lang="ar">المجادلة</span>
+      <span lang="ar-Latn">Al-mujadalah</span></a></li>
+    <li data-order="101" id="59"><a href="059"> <span lang="fr">Al-hasr</span> <span lang="ar">الحشر</span> <span
+      lang="ar-Latn">L'exode</span></a></li>
+    <li data-order="91" id="60"><a href="060"> <span lang="fr">L'éprouvée</span> <span lang="ar">الممتحنة</span> <span
+      lang="ar-Latn">Al-mumtanahah</span></a></li>
+    <li data-order="109" id="61"><a href="061"> <span lang="fr">Le rang</span> <span lang="ar">الصف</span> <span
+      lang="ar-Latn">As-saff</span></a></li>
+    <li data-order="110" id="62"><a href="062"> <span lang="fr">Le vendredi</span> <span lang="ar">الجمعة</span> <span
+      lang="ar-Latn">Aj-jumua</span></a></li>
+    <li data-order="104" id="63"><a href="063"> <span lang="fr">Les hypocrites</span> <span lang="ar">المنافقون</span>
+      <span lang="ar-Latn">Al-munafiqun</span></a></li>
+    <li data-order="108" id="64"><a href="064"> <span lang="fr">La grande perte</span> <span lang="ar">التغابن</span>
+      <span lang="ar-Latn">At-tagabun</span></a></li>
+    <li data-order="99" id="65"><a href="065/index.html"> <span lang="fr">Le divorce</span> <span lang="ar">الطلاق
+    </span> <span lang="ar-Latn">At-talaaq</span></a></li>
+    <li data-order="107" id="66"><a href="066"> <span lang="fr">L'interdiction</span> <span lang="ar">التحريم</span>
+      <span lang="ar-Latn">At-tahrim</span></a></li>
+    <li data-order="77" id="67"><a href="067"> <span lang="fr">La royauté</span> <span lang="ar">الملك</span> <span
+      lang="ar-Latn">Al-mulk</span></a></li>
+    <li data-order="2" id="68"><a href="068"><span lang="fr">La plume</span> <span lang="ar">القلم</span> <span
       lang="ar-Latn">Al-qalam</span></a></li>
-    <li><a href="069"><span lang="fr">Celle qui montre la vérité</span> <span lang="ar">الحاقة</span> <span
-      lang="ar-Latn">Al-haqqah</span></a></li>
-    <li><a href="070"><span lang="fr">Les voies d'ascension</span> <span lang="ar">المعارج</span> <span lang="ar-Latn">Al-maarij</span></a>
-    </li>
-    <li><a href="071"><span lang="fr">Noé</span> <span lang="ar">نوح</span> <span lang="ar-Latn">Nuh</span></a></li>
-    <li><a href="072"><span lang="fr">Les <a href="/croyance/Djinns.html">djinns</a></span> <span lang="ar">الجن</span>
-      <span
-        lang="ar-Latn">Al-jinn</span></a></li>
-    <li><a href="073"><span lang="fr">L'enveloppé</span> <span lang="ar">المزّمِّل</span> <span
+    <li data-order="78" id="69"><a href="069"><span lang="fr">Celle qui montre la vérité</span> <span lang="ar">
+      الحاقة</span> <span lang="ar-Latn">Al-haqqah</span></a></li>
+    <li data-order="79" id="70"><a href="070"><span lang="fr">Les voies d'ascension</span> <span lang="ar">المعارج
+    </span> <span lang="ar-Latn">Al-maarij</span></a></li>
+    <li data-order="71" id="71"><a href="071"><span lang="fr">Noé</span> <span lang="ar">نوح</span> <span
+      lang="ar-Latn">Nuh</span></a></li>
+    <li data-order="40" id="72"><a href="072"><span lang="fr">Les <a href="/croyance/Djinns.html">djinns</a></span>
+      <span lang="ar">الجن</span> <span lang="ar-Latn">Al-jinn</span></a></li>
+    <li data-order="3" id="73"><a href="073"><span lang="fr">L'enveloppé</span> <span lang="ar">المزّمِّل</span> <span
       lang="ar-Latn">Al-muzzamil</span></a></li>
-    <li><a href="074"><span lang="fr">Le revêtu d'un manteau</span> <span lang="ar">المدّثر</span> <span lang="ar-Latn">Al-muddattir</span></a>
-    </li>
-    <li><a href="075"><span lang="fr">La résurrection</span> <span lang="ar">القيامة</span> <span lang="ar-Latn">Al
-    -qiyamah</span></a></li>
-    <li><a href="076"><span lang="fr">L'homme</span> <span lang="ar">الإنسان</span> <span
+    <li data-order="4" id="74"><a href="074"><span lang="fr">Le revêtu d'un manteau</span> <span lang="ar">المدّثر
+    </span> <span lang="ar-Latn">Al-muddattir</span></a></li>
+    <li data-order="31" id="75"><a href="075"><span lang="fr">La résurrection</span> <span lang="ar">القيامة</span>
+      <span lang="ar-Latn">Al-qiyamah</span></a></li>
+    <li data-order="98" id="76"><a href="076"><span lang="fr">L'homme</span> <span lang="ar">الإنسان</span> <span
       lang="ar-Latn">Al-insan</span></a></li>
-    <li><a href="077"><span lang="fr">Les envoyés</span> <span lang="ar">المرسلات</span> <span lang="ar-Latn">Al
-    -mursalate</span></a></li>
-    <li><a href="078"><span lang="fr">La nouvelle</span> <span lang="ar">النبأ</span> <span
-      lang="ar-Latn">An-naba</span></a>
-    </li>
-    <li><a href="079"><span lang="fr">Les anges qui arrachent les âmes</span> <span lang="ar">النازعات</span> <span
-      lang="ar-Latn">An-naziate</span></a></li>
-    <li><a href="080"><span lang="fr">Il s'est renfrogné</span> <span lang="ar">عبس</span> <span lang="ar-Latn">Abasa
-  </span></a></li>
-    <li><a href="081"><span lang="fr">L'obscurcissement</span> <span lang="ar">التكوير</span> <span lang="ar-Latn">At-takwir</span></a>
-    </li>
-    <li><a href="082"><span lang="fr">La rupture</span> <span lang="ar">الانفطار</span> <span
+    <li data-order="33" id="77"><a href="077"><span lang="fr">Les envoyés</span> <span lang="ar">المرسلات</span> <span
+      lang="ar-Latn">Al-mursalate</span></a></li>
+    <li data-order="80" id="78"><a href="078"><span lang="fr">La nouvelle</span> <span lang="ar">النبأ</span> <span
+      lang="ar-Latn">An-naba</span></a></li>
+    <li data-order="81" id="79"><a href="079"><span lang="fr">Les anges qui arrachent les âmes</span> <span
+      lang="ar">النازعات</span> <span lang="ar-Latn">An-naziate</span></a></li>
+    <li data-order="24" id="80"><a href="080"><span lang="fr">Il s'est renfrogné</span> <span lang="ar">عبس</span> <span
+      lang="ar-Latn">Abasa</span></a></li>
+    <li data-order="7" id="81"><a href="081"><span lang="fr">L'obscurcissement</span> <span lang="ar">التكوير</span>
+      <span lang="ar-Latn">At-takwir</span></a></li>
+    <li data-order="82" id="82"><a href="082"><span lang="fr">La rupture</span> <span lang="ar">الانفطار</span> <span
       lang="ar-Latn">Al-infitar</span></a></li>
-    <li><a href="083"><span lang="fr">Les fraudeurs</span> <span lang="ar">المطففين</span> <span lang="ar-Latn">Al-mutaffifune</span></a>
-    </li>
-    <li><a href="084"><span lang="fr">La déchirure</span> <span lang="ar">الانشقاق</span> <span lang="ar-Latn">Al
-    -insiqaq</span></a></li>
-    <li><a href="085"><span lang="fr">Les constellations</span> <span lang="ar">البروج</span> <span lang="ar-Latn">Al-buruj</span></a>
-    </li>
-    <li><a href="086"><span lang="fr">L'astre nocturne</span> <span lang="ar">الطارق</span> <span lang="ar-Latn">At
-    -tariq</span></a></li>
-    <li><a href="087"><span lang="fr">Le très haut</span> <span lang="ar">الأعلى</span> <span lang="ar-Latn">Al
-    -ala</span></a></li>
-    <li><a href="088"><span lang="fr">L'enveloppante</span> <span lang="ar">الغاشية</span> <span lang="ar-Latn">Al
-    -gasiyah</span></a></li>
-    <li><a href="089"><span lang="fr">L'aube</span> <span lang="ar">الفجر</span> <span lang="ar-Latn">Al-fajr</span></a>
-    </li>
-    <li><a href="090"><span lang="fr">La cité</span> <span lang="ar">البلد</span> <span
-      lang="ar-Latn">Al-balad</span></a>
-    </li>
-    <li><a href="091"><span lang="fr">Le Soleil</span> <span lang="ar">الشمس</span> <span
-      lang="ar-Latn">Ach-chams</span></a>
-    </li>
-    <li><a href="092"><span lang="fr">La nuit</span> <span lang="ar">الليل</span> <span
-      lang="ar-Latn">Al-layl</span></a>
-    </li>
-    <li><a href="093"><span lang="fr">Le jour montant</span> <span lang="ar">الضحى</span> <span lang="ar-Latn">Ad
-    -duha</span></a></li>
-    <li><a href="094"><span lang="fr">L'ouverture</span> <span lang="ar">الشرح</span> <span
-      lang="ar-Latn">As-sarh</span></a>
-    </li>
-    <li><a href="095"><span lang="fr">Le figuier</span> <span lang="ar">التين</span> <span
+    <li data-order="86" id="83"><a href="083"><span lang="fr">Les fraudeurs</span> <span lang="ar">المطففين</span> <span
+      lang="ar-Latn">Al-mutaffifune</span></a></li>
+    <li data-order="83" id="84"><a href="084"><span lang="fr">La déchirure</span> <span lang="ar">الانشقاق</span> <span
+      lang="ar-Latn">Al-insiqaq</span></a></li>
+    <li data-order="27" id="85"><a href="085"><span lang="fr">Les constellations</span> <span lang="ar">البروج</span>
+      <span lang="ar-Latn">Al-buruj</span></a></li>
+    <li data-order="36" id="86"><a href="086"><span lang="fr">L'astre nocturne</span> <span lang="ar">الطارق</span>
+      <span lang="ar-Latn">At-tariq</span></a></li>
+    <li data-order="8" id="87"><a href="087"><span lang="fr">Le très haut</span> <span lang="ar">الأعلى</span> <span
+      lang="ar-Latn">Al-ala</span></a></li>
+    <li data-order="68" id="88"><a href="088"><span lang="fr">L'enveloppante</span> <span lang="ar">الغاشية</span> <span
+      lang="ar-Latn">Al-gasiyah</span></a></li>
+    <li data-order="10" id="89"><a href="089"><span lang="fr">L'aube</span> <span lang="ar">الفجر</span> <span
+      lang="ar-Latn">Al-fajr</span></a></li>
+    <li data-order="35" id="90"><a href="090"><span lang="fr">La cité</span> <span lang="ar">البلد</span> <span
+      lang="ar-Latn">Al-balad</span></a></li>
+    <li data-order="26" id="91"><a href="091"><span lang="fr">Le Soleil</span> <span lang="ar">الشمس</span> <span
+      lang="ar-Latn">Ach-chams</span></a></li>
+    <li data-order="9" id="92"><a href="092"><span lang="fr">La nuit</span> <span lang="ar">الليل</span> <span
+      lang="ar-Latn">Al-layl</span></a></li>
+    <li data-order="11" id="93"><a href="093"><span lang="fr">Le jour montant</span> <span lang="ar">الضحى</span> <span
+      lang="ar-Latn">Ad-duha</span></a></li>
+    <li data-order="12" id="94"><a href="094"><span lang="fr">L'ouverture</span> <span lang="ar">الشرح</span> <span
+      lang="ar-Latn">As-sarh</span></a></li>
+    <li data-order="28" id="95"><a href="095"><span lang="fr">Le figuier</span> <span lang="ar">التين</span> <span
       lang="ar-Latn">At-tin</span></a></li>
-    <li><a href="096"><span lang="fr">L'adhérence</span> <span lang="ar">العلق</span> <span
-      lang="ar-Latn">Al-alaq</span></a>
-    </li>
-    <li><a href="097"><span lang="fr">La destinée</span> <span lang="ar">القدر</span> <span
-      lang="ar-Latn">Al-qadr</span></a>
-    </li>
-    <li><a href="098"><span lang="fr">La preuve</span> <span lang="ar">البينة</span> <span
+    <li data-order="1" id="96"><a href="096"><span lang="fr">L'adhérence</span> <span lang="ar">العلق</span> <span
+      lang="ar-Latn">Al-alaq</span></a></li>
+    <li data-order="25" id="97"><a href="097"><span lang="fr">La destinée</span> <span lang="ar">القدر</span> <span
+      lang="ar-Latn">Al-qadr</span></a></li>
+    <li data-order="100" id="98"><a href="098"><span lang="fr">La preuve</span> <span lang="ar">البينة</span> <span
       lang="ar-Latn">Al-bayyinah</span></a></li>
-    <li><a href="099"><span lang="fr">La secousse</span> <span lang="ar">الزلزلة</span> <span lang="ar-Latn">Az
-    -zalzalah</span></a></li>
-    <li><a href="100"><span lang="fr">Les coursiers</span> <span lang="ar">العاديات</span> <span lang="ar-Latn">Al
-    -adiyate</span></a></li>
-    <li><a href="101"><span lang="fr">Le fracas</span> <span lang="ar">القارعة</span> <span
+    <li data-order="93" id="99"><a href="099"><span lang="fr">La secousse</span> <span lang="ar">الزلزلة</span> <span
+      lang="ar-Latn">Az-zalzalah</span></a></li>
+    <li data-order="14" id="100"><a href="100"><span lang="fr">Les coursiers</span> <span lang="ar">العاديات</span>
+      <span lang="ar-Latn">Al-adiyate</span></a></li>
+    <li data-order="30" id="101"><a href="101"><span lang="fr">Le fracas</span> <span lang="ar">القارعة</span> <span
       lang="ar-Latn">Al-qariah</span></a></li>
-    <li><a href="102"><span lang="fr">La course aux richesses</span> <span lang="ar">التكاثر</span> <span
-      lang="ar-Latn">Al-takatur</span></a>
-    </li>
-    <li><a href="103"><span lang="fr">Le temps</span> <span lang="ar">العصر</span> <span
-      lang="ar-Latn">Al-asr</span></a>
-    </li>
-    <li><a href="104"><span lang="fr">Les calomniateurs</span> <span lang="ar">الهُمَزَة</span> <span lang="ar-Latn">Al-humazah</span></a>
-    </li>
-    <li><a href="105"><span lang="fr">L'éléphant</span> <span lang="ar">الفيل</span> <span
+    <li data-order="16" id="102"><a href="102"><span lang="fr">La course aux richesses</span> <span lang="ar">التكاثر
+    </span> <span lang="ar-Latn">Al-takatur</span></a></li>
+    <li data-order="13" id="103"><a href="103"><span lang="fr">Le temps</span> <span lang="ar">العصر</span> <span
+      lang="ar-Latn">Al-asr</span></a></li>
+    <li data-order="32" id="104"><a href="104"><span lang="fr">Les calomniateurs</span> <span lang="ar">الهُمَزَة
+    </span> <span lang="ar-Latn">Al-humazah</span></a></li>
+    <li data-order="19" id="105"><a href="105"><span lang="fr">L'éléphant</span> <span lang="ar">الفيل</span> <span
       lang="ar-Latn">Al-fil</span></a></li>
-    <li><a href="106"><span lang="fr">Coraïsh</span> <span lang="ar">قريش</span> <span lang="ar-Latn">Coraïsh</span></a>
-    </li>
-    <li><a href="107"><span lang="fr">L'ustensile</span> <span lang="ar">الماعون</span> <span
+    <li data-order="29" id="106"><a href="106"><span lang="fr">Coraïsh</span> <span lang="ar">قريش</span> <span
+      lang="ar-Latn">Coraïsh</span></a></li>
+    <li data-order="17" id="107"><a href="107"><span lang="fr">L'ustensile</span> <span lang="ar">الماعون</span> <span
       lang="ar-Latn">Al-maun</span></a></li>
-    <li><a href="108"><span lang="fr">L'abondance</span> <span lang="ar">الكوثر</span> <span
+    <li data-order="15" id="108"><a href="108"><span lang="fr">L'abondance</span> <span lang="ar">الكوثر</span> <span
       lang="ar-Latn">Al-kawtar</span></a></li>
-    <li><a href="109"><span lang="fr">Les infidèles</span> <span lang="ar">الكافرون</span> <span lang="ar-Latn">Al
-    -kafirune</span></a></li>
-    <li><a href="110"><span lang="fr">Les secours</span> <span lang="ar">النصر</span> <span
-      lang="ar-Latn">Al-nasr</span></a>
-    </li>
-    <li><a href="111"><span lang="fr">Les fibres</span> <span lang="ar">المسد</span> <span
-      lang="ar-Latn">Al-masad</span></a>
-    </li>
-    <li><a href="112"><span lang="fr">Le monothéisme pur</span> <span lang="ar">الإخلاص</span> <span lang="ar-Latn">Al
-    -ihlas</span></a></li>
-    <li><a href="113"><span lang="fr">L'aube naissante</span> <span lang="ar">الفلق</span> <span
-      lang="ar-Latn">Al-falaq</span></a></li>
-    <li><a href="114"><span lang="fr">Les humains</span> <span lang="ar">الناس</span> <span
+    <li data-order="18" id="109"><a href="109"><span lang="fr">Les infidèles</span> <span lang="ar">الكافرون</span>
+      <span lang="ar-Latn">Al-kafirune</span></a></li>
+    <li data-order="114" id="110"><a href="110"><span lang="fr">Les secours</span> <span lang="ar">النصر</span> <span
+      lang="ar-Latn">Al-nasr</span></a></li>
+    <li data-order="6" id="111"><a href="111"><span lang="fr">Les fibres</span> <span lang="ar">المسد</span> <span
+      lang="ar-Latn">Al-masad</span></a></li>
+    <li data-order="22" id="112"><a href="112"><span lang="fr">Le monothéisme pur</span> <span lang="ar">الإخلاص
+    </span> <span lang="ar-Latn">Al-ihlas</span></a></li>
+    <li data-order="20" id="113"><a href="113"><span lang="fr">L'aube naissante</span> <span lang="ar">الفلق</span>
+      <span lang="ar-Latn">Al-falaq</span></a></li>
+    <li data-order="21" id="114"><a href="114"><span lang="fr">Les humains</span> <span lang="ar">الناس</span> <span
       lang="ar-Latn">An-nas</span></a></li>
   </ol>
 </div>
@@ -262,11 +269,11 @@
     <p>Afin de résoudre ces contradictions, la doctrine du Coran a évolué au fil du temps pour désigner certains versets
       comme en abrogeant d'autres, car supposés antérieurs <span class="note">alors qu'on ne sait vraiment leur ordre
         chronologique</span> ou simplement plus "durs". Ces abrogations sont elles-mêmes justifiées dans le Coran <a
-        class="source" href="croyance/divin/theisme/mono/livre/islam/coran/002/index.html#106"></a> <a
-        class="source" href="croyance/divin/theisme/mono/livre/islam/coran/016/index.html#101"></a> <span
+        class="source" href="/croyance/divin/theisme/mono/livre/islam/coran/002/index.html#106"></a> <a
+        class="source" href="/croyance/divin/theisme/mono/livre/islam/coran/016/index.html#101"></a> <span
         class="note">Dans tous les cas, cela remet en question de la "perfection" du Coran de par son origine
         divine, puisque sa rédaction aurait donc été soit incohérente (donc imparfaite), soit variante et opportuniste
-        (donc non appliquable en tout temps et en tout lieu)</span>.</p>
+        (donc non applicable en tout temps et en tout lieu)</span>.</p>
     <section>
       <h4>Les "versets sataniques"</h4>
       <p>Pour se rallier les Mecquois rétifs à sa prédication, <time>~615/616</time>, <span
@@ -476,7 +483,7 @@
           href="https://data.bnf.fr/15023136/claude_galien_de_la_formation_du_f_tus/">De la formation du
           fœtus</a>", traduit du grec au syriaque sur ordre de <span class="people">Khosro Ier</span> (<i lang="gr">
           Chosroès</i> en grec) à <span class="place">Gundishapur</span>, puis repris par <span
-          class="people">Al Harith Ibn Kalada</span>, ami du Prophète, qui avait étudié dans cette école de
+          class="people">Al Harith Ibn Kalada</span>, oncle du Prophète, qui avait étudié dans cette école de
         Gundishapur</span> contredit l'embryologie moderne où l'ensemble de ces éléments se forme en même temps (c.-à-d.
         on n'observe jamais d'abord que des os, puis de la chair ajoutée).</p>
     </section>

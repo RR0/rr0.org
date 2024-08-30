@@ -1,6 +1,5 @@
 {
-  "birthTime": "1930-10-05",
-  "deathTime": "2009-09-30",
+  "title": "Pavel Romanovitch Popovitch",
   "occupations": [
     "military",
     "astronaut"
@@ -8,5 +7,20 @@
   "countries": [
     "ua",
     "ru"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1930-10-05",
+      "place": "Ouzine (Ukraine)",
+      "notes": [
+        "alors état de l'<a href=\"/org/su\">URSS</a>"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2009-09-30",
+      "place": "Hourzouf (Ukraine)"
+    }
   ]
 }

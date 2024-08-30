@@ -148,7 +148,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "people/index.js", "people/index.css", "people/witness/index.css",
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
   "source/index.css",
-  "link.css",
+  "link.css", "quote.css",
   "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/divin/theisme/mono/livre/islam/coran/index.js"
@@ -305,11 +305,13 @@ timeService.getFiles().then(async (timeFiles) => {
   const ssg = new Ssg(config)
   const getOutputPath = (context: SsgContext): string => path.join(outDir, context.file.name)
   const force = args.force === "true"
-  const structuralStep = new RR0ContentStep(
+  const toProcess = new Set<string>(
+    ["people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"])
+  const includeStep = new RR0ContentStep(
     [htAccessToNetlifyConfig, {roots: contentRoots, replacements: [new SsiIncludeReplaceCommand()], getOutputPath}],
-    outputFunc, [], [], force
+    outputFunc, [], [], force, "content includes", toProcess
   )
-  ssg.add(structuralStep)
+  ssg.add(includeStep)
   ssg.add(ufoCasesStep)
   ssg.add(...peopleSteps)
   if (contentRoots) {
@@ -328,7 +330,7 @@ timeService.getFiles().then(async (timeFiles) => {
       new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder)
     ]
     ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: contentReplacements, getOutputPath}],
-      outputFunc, [], contentVisitors, force))
+      outputFunc, [], contentVisitors, force, "contents replacements", toProcess))
   }
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))

@@ -1,0 +1,61 @@
+:root {
+  --quote-color: rgba(250, 255, 6, .1);
+}
+
+blockquote {
+  margin: 0 0 0 1.5em;
+
+  p {
+    background: repeat-x var(--quote-color);
+  }
+}
+
+blockquote.answer {
+  display: inline;
+  margin-left: 0;
+
+  p:first-child:before {
+    content: "—\00a0";
+  }
+
+  p:first-child:after {
+    content: "";
+  }
+}
+
+blockquote ol > li, blockquote ul > li, q {
+  background: repeat-x var(--quote-color);
+}
+
+blockquote ol > li:before, blockquote p:before, blockquote ul > li:before {
+  content: "«\00a0"
+}
+
+blockquote ol > li.question:before, blockquote p.question:before, blockquote ul > li.question:before {
+  content: "—\00a0"
+}
+
+blockquote ol > li.question:after, blockquote p.question:after, blockquote ul > li.question:after {
+  content: ""
+}
+
+blockquote ol > li.answer:before, blockquote p.answer:before, blockquote ul > li.answer:before {
+  content: "—\00a0"
+}
+
+blockquote ol > li.answer:after, blockquote ol > li:after, blockquote p.answer:after, blockquote p:after, blockquote ul > li.answer:after, blockquote ul > li:after {
+  content: ""
+}
+
+blockquote ol > li.question, blockquote p.question, blockquote ul > li.question {
+  font-weight: bolder;
+  margin-bottom: 0
+}
+
+blockquote ol > li.answer, blockquote p.answer, blockquote ul > li.answer {
+  margin-top: .5em
+}
+
+blockquote ol > li:last-child:after, blockquote p:last-child:after, blockquote ul > li:last-child:after {
+  content: "\00a0»"
+}

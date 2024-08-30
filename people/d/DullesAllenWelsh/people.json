@@ -1,0 +1,24 @@
+{
+  "title": "Allen Welsh Dulles",
+  "occupations": [
+    "politician"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1893-04-07",
+      "place": "Watertown (New York)",
+      "notes": [
+        "un nom de ville qui a pu inspirer son surnom à la <a href=\"/org/us/dod/af/base/Area51/index.html\">Zone 51</a> qu'il créera plus tard"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1969-01-28"
+    }
+  ],
+  "image": "time/1/9/5/4/01/25/BerlinOuest_DullesJohnFoster.jpg"
+}

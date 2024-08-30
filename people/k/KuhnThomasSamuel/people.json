@@ -1,10 +1,21 @@
 {
-  "birthTime": "1922-07-18",
-  "deathTime": "1996-06-17",
+  "title": "Thomas Samuel Kuhn",
   "occupations": [
     "historian"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1922-07-18",
+      "place": "Cincinnati (Ohio)"
+    },
+    {
+      "type": "death",
+      "time": "1996-06-17",
+      "place": "Cambridge (Massachusetts)"
+    }
   ]
 }

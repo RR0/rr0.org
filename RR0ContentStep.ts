@@ -14,10 +14,11 @@ export interface FileVisitor {
 
 export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
 
-  constructor(contentConfigs: ContentStepConfig[], outputFunc: OutputFunc,
-              protected fileVisitors: FileVisitor[] = [],
-              protected contentVisitors: ContentVisitor[] = [], protected force: boolean) {
-    super(contentConfigs, outputFunc)
+  constructor(
+    contentConfigs: ContentStepConfig[], outputFunc: OutputFunc, protected fileVisitors: FileVisitor[] = [],
+    protected contentVisitors: ContentVisitor[] = [], protected force: boolean, name: string,
+    protected toProcess: Set<string>) {
+    super(contentConfigs, outputFunc, name)
   }
 
   static setTimeFromPath(context: HtmlRR0SsgContext, filePath: string): TimeContext | undefined {
@@ -52,8 +53,13 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
     return super.write(context, outputFile)
   }
 
-  protected async shouldProcessFile(context: HtmlRR0SsgContext, _contentsConfig: ContentStepConfig): Promise<boolean> {
-    const processFile = this.force || await super.shouldProcessFile(context, _contentsConfig)
+  protected async shouldProcessFile(context: HtmlRR0SsgContext, contentsConfig: ContentStepConfig): Promise<boolean> {
+    const fileHasChanged = await super.shouldProcessFile(context, contentsConfig)
+    const fileIsForced = this.toProcess.has(context.file.name)
+    const processFile = this.force || fileIsForced || fileHasChanged
+    if (processFile) {
+      this.toProcess.add(context.file.name)
+    }
     for (const fileVisitor of this.fileVisitors) {
       await fileVisitor.visit(context, processFile)
     }
@@ -61,8 +67,10 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
   }
 
   protected async shouldProcessContent(context: HtmlRR0SsgContext,
-                                       _contentsConfig: ContentStepConfig): Promise<boolean> {
-    const should = this.force || await super.shouldProcessContent(context, _contentsConfig)
+                                       contentsConfig: ContentStepConfig): Promise<boolean> {
+    const fileIsForced = this.toProcess.has(context.file.name)
+    const showProcess = await super.shouldProcessContent(context, contentsConfig)
+    const should = this.force || fileIsForced || showProcess
     if (should) {
       for (const contentVisitor of this.contentVisitors) {
         await contentVisitor.visit(context)
@@ -70,7 +78,6 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
     }
     return should
   }
-
 
   protected async postExecute(result: ContentStepResult): Promise<ContentStepResult> {
     await super.postExecute(result)

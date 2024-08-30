@@ -10,7 +10,24 @@
     {
       "type": "birth",
       "time": "1982-09-13",
-      "place": "Libreville (Gabon)"
+      "place": "Libreville (Gabon)",
+      "sources": [
+        {
+          "url": "https://uapafrique.com/2024/04/16/jann-halexander-fondateur-du-reseau-uap-afrique/"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2023-11-04",
+      "sources": [
+        {
+          "authors": [
+            "Halexander, Jann"
+          ],
+          "title": "La question des Ovnis en Afrique Centrale (Gabon, République du Congo, République Démocratique du Congo)"
+        }
+      ]
     }
   ]
 }

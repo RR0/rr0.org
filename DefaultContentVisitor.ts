@@ -23,7 +23,7 @@ export class DefaultContentVisitor implements ContentVisitor {
       for (const data of dataList) {
         switch (data.type) {
           case "people":
-            context.people = data
+            context.people = data as People
             break
         }
         await this.process(context, data)
@@ -57,12 +57,12 @@ export class DefaultContentVisitor implements ContentVisitor {
           doc.append(eventP)
       }
     }
-    const minTime = context.time.min
+    /*const minTime = context.time.min
     if (minTime) {
       const timeScript = doc.createElement("script")
       timeScript.textContent = `customElements.whenDefined('rr0-dual-range').then(() => initTime("${minTime.getYear()}","${context.time.max.getYear()}"))`
       doc.documentElement.append(timeScript)
-    }
+    }*/
     context.file.contents = context.file.serialize()
   }
 
@@ -72,13 +72,13 @@ export class DefaultContentVisitor implements ContentVisitor {
     const eventContext = context.clone()
     const eventTime = eventContext.time = event.time
     assert.ok(eventTime, `Event of type "${event.type}" has no time`)
-    const time = context.time
+    /*const time = context.time
     if (!time.min || eventTime.isBefore(time.min)) {
       time.min = eventTime
     }
     if (!time.max || eventTime.isAfter(time.max)) {
       time.max = eventTime
-    }
+    }*/
     eventP.dataset.time = eventTime.toString()
     const timeEl = this.timeElementFactory.create(eventContext, context)
     return {eventP, timeEl}
@@ -158,7 +158,6 @@ export class DefaultContentVisitor implements ContentVisitor {
       const bookEl = doc.createElement("p")
       const people = context.people as unknown as People
       const birthContext = context.clone()
-      const birthTimeStr = bookData.time
       const bookDateEl = this.timeElementFactory.create(birthContext, context)
       bookEl.append(bookDateEl, " ")
       bookEl.append((people.gender === "female" ? "elle" : "il") + " écrit un livre")
@@ -178,7 +177,6 @@ export class DefaultContentVisitor implements ContentVisitor {
   }
 
   protected processURL(context: HtmlRR0SsgContext, data: RR0Data) {
-    const doc = context.file.document
     const url = data.url
     if (url && !context.file.meta.url) {
       context.file.meta.url = url as unknown as string

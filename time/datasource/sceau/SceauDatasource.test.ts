@@ -1,20 +1,19 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { rr0TestCases } from "./RR0TestCases"
 import { DatasourceTestCase } from "../DatasourceTestCase"
-import { rr0FileDatasource, rr0Mapper } from "./RR0Mapping"
-import { RR0CaseSummary } from "./RR0CaseSummary"
+import { SceauCaseSummary } from "./SceauCaseSummary"
 import { TimeContext } from "../../TimeContext"
 import { Source } from "../../../source/Source"
 import { HtmlTag } from "../../../util/HtmlTag"
-import { RR0CaseMapping } from "./RR0CaseMapping"
-import { RR0Datasource } from "./RR0Datasource"
-import { Datasource } from "../Datasource"
+import { SceauCaseMapping } from "./SceauCaseMapping"
+import { SceauDatasource } from "./SceauDatasource"
 import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
 import { TimeTextBuilder } from "../../TimeTextBuilder"
+import { rr0TestUtil } from "../../../test/RR0TestUtil"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
+import { sceauDatasource, sceauRR0Mapper } from "./SceauRR0Mapping"
+import { sceauTestCases } from "./SceauTestCases"
 
-export class RR0TestDatasource extends RR0Datasource implements Datasource<RR0CaseSummary> {
+export class SceauTestDatasource extends SceauDatasource {
 
   timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
 
@@ -22,41 +21,40 @@ export class RR0TestDatasource extends RR0Datasource implements Datasource<RR0Ca
     super()
   }
 
-  protected async readCases(_context: HtmlRR0SsgContext): Promise<RR0CaseSummary[]> {
-    return rr0TestCases
-  }
+  /*protected async readCases(_context: HtmlRR0SsgContext): Promise<SceauCaseSummary[]> {
+    return sceauTestCases
+  }*/
 }
 
-export class RR0TestMapping implements RR0CaseMapping<RR0CaseSummary> {
-  readonly datasource = new RR0TestDatasource()
-  readonly backupDatasource = rr0FileDatasource
-  readonly mapper = rr0Mapper
+export class SceauTestMapping implements SceauCaseMapping {
+  readonly datasource = sceauDatasource // new SceauTestDatasource()
+  readonly mapper = sceauRR0Mapper
 
   constructor(readonly actions: ChronologyReplacerActions) {
   }
 }
 
 
-describe("RR0CaseSource", () => {
+describe("SCEAUCaseSource", () => {
 
-  const testCase = new class extends DatasourceTestCase<RR0CaseSummary> {
-    constructor(mapping: RR0CaseMapping<RR0CaseSummary>, sourceCases: RR0CaseSummary[]) {
+  const testCase = new class extends DatasourceTestCase<SceauCaseSummary> {
+    constructor(mapping: SceauCaseMapping, sourceCases: SceauCaseSummary[]) {
       super(mapping, sourceCases)
     }
 
-    protected getTime(c: RR0CaseSummary): TimeContext {
+    protected getTime(c: SceauCaseSummary): TimeContext {
       return c.time
     }
 
-    protected sortComparator(c1: RR0CaseSummary, c2: RR0CaseSummary): number {
+    protected sortComparator(c1: SceauCaseSummary, c2: SceauCaseSummary): number {
       return !c1.time || c2.time && c1.time.isBefore(
         c2.time) ? -1 : !c2.time || c1.time.isAfter(c2.time) ? 1 : 0
     }
 
     /**
-     * Specialization of sources for RR0 cases
+     * Specialization of sources for SCEAU cases
      */
-    protected expectedSourceStr(context: HtmlRR0SsgContext, expectedSources: Source[], _nativeCase: RR0CaseSummary) {
+    protected expectedSourceStr(context: HtmlRR0SsgContext, expectedSources: Source[], _nativeCase: SceauCaseSummary) {
       return expectedSources.map(source => {
         const sourceItems: string[] = []
         let authorStr = source.authors.map(author => `<span class="people">${author}</span>`).join(" &amp; ")
@@ -85,7 +83,7 @@ describe("RR0CaseSource", () => {
         return " " + HtmlTag.toString("span", authorStr + sourceItems.join(", "), {class: "source"})
       }).join("")
     }
-  }(new RR0TestMapping({read: ["fetch"], write: []}), rr0TestCases)
+  }(new SceauTestMapping({read: ["fetch"], write: []}), sceauTestCases)
 
   let context: HtmlRR0SsgContext
 

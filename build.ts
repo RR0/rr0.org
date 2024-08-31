@@ -52,7 +52,6 @@ import path from "path"
 import { IndexedReplacerFactory } from "./index/IndexedReplacerFactory"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory"
 import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory"
-import { rr0Mapping } from "./time/datasource/rr0/RR0Mapping"
 import { PeopleService } from "./people/PeopleService"
 import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep"
 import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler"
@@ -86,6 +85,7 @@ import { PeopleDirectoryStepFactory } from "./people/PeopleDirectoryStepFactory"
 import { TimeTextBuilder } from "./time/TimeTextBuilder"
 import { Time } from "./time/Time"
 import { CaseFactory } from "./science/crypto/ufo/enquete/dossier/CaseFactory"
+import { RR0Mapping } from "./time/datasource/rr0/RR0Mapping"
 
 interface RR0BuildArgs {
   /**
@@ -253,8 +253,10 @@ timeService.getFiles().then(async (timeFiles) => {
   const noteCounter = new NoteFileCounter()
   const noteRenderer = new NoteRenderer(noteCounter)
   const caseRenderer = new CaseSummaryRenderer(noteRenderer, sourceFactory, sourceRenderer)
-  const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
+  // const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
   // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
+  const actions: ChronologyReplacerActions = {read: ["fetch"], write: ["backup"]}
+  const rr0Mapping = new RR0Mapping(actions)
   const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
     new ChronologyReplacerFactory(timeService,
       [rr0Mapping /*new GeipanRR0Mapping(actions)

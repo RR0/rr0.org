@@ -13,6 +13,7 @@ import { NoteFileCounter } from "../note/NoteFileCounter"
 import { AllDataService } from "../data/AllDataService"
 import { HttpSource } from "./datasource/HttpSource"
 import { TimeTextBuilder } from "./TimeTextBuilder"
+import { HautsDeSeineCityCode } from "../org/eu/fr/region/idf/92/HautsDeSeineCityCode"
 
 describe("TimeEventRenderer", () => {
 
@@ -26,12 +27,17 @@ describe("TimeEventRenderer", () => {
 
   test("render event", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")
-    const city = franceCity(92000, Place.fromLocation(48.891944, 2.207222))
+    const city = franceCity(HautsDeSeineCityCode.Nanterre, Place.fromLocation(48.891944, 2.207222))
     const dep = city.parent
-    const villeMessages = context.messages.country.fr.region[dep.parent.id].department[dep.id].city[city.id]
+    const region = dep.parent
+    const countryMessages = context.messages.country
+    const franceMessages = countryMessages.fr
+    const idfMessages = franceMessages.region[region.id]
+    const hautsDeSeineMessages = idfMessages.department[dep.id]
+    const cityMessages = hautsDeSeineMessages.city[city.id]
     const namedPlace: NamedPlace = {
       place: city.places[0],
-      name: villeMessages.toTitle(context, city)
+      name: cityMessages.toTitle(context, city)
     }
     const source1: Source = {
       events: [], previousSourceRefs: [],
@@ -50,8 +56,10 @@ describe("TimeEventRenderer", () => {
       place: namedPlace,
       description: "some sighting", sources
     }
-    const elem = await renderer.render(context, c)
+    const outDoc = context.file.document
+    const elem = outDoc.createElement("li")
+    await renderer.renderContent(context, c, elem)
     expect(elem.innerHTML).toBe(
-      `<time>1970-03</time> À <span class="place">Nanterre (Hauts-de-Seine, France)</span>, some sighting <span class="source">Some Author: <span><a href="https://somesite.com/case1">Case 1</a>, <i>Some site</i>, 1970-03</span></span>`)
+      `<time datetime="1970-03">mars 1970</time> À <span class="place">Nanterre (Hauts-de-Seine, France)</span>, some sighting <span class="source">Some Author: <span><a href="https://somesite.com/case1">Case 1</a>, <i>Some site</i>, 1970-03</span></span>`)
   })
 })

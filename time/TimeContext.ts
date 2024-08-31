@@ -37,6 +37,12 @@ export class TimeContext {
     return this._year
   }
 
+  static fromStr(timeStr: string): TimeContext {
+    const timeContext = new TimeContext()
+    timeContext.updateFromStr(timeStr)
+    return timeContext
+  }
+
   updateFromStr(timeStr: string) {
     if (timeStr) {
       const intervalDelimiter = timeStr.indexOf("/")

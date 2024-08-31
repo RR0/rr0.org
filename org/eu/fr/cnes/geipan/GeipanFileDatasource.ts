@@ -12,7 +12,8 @@ import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext"
 export class GeipanFileDatasource extends GeipanDatasource implements Datasource<GeipanCaseSummary>, FileDatasource<GeipanCaseSummary> {
 
   protected readonly file = new CsvFileSource<GeipanCase>("latin1", ";")
-  private writeMapper = new GeipanSummaryToCaseMapper(geipanHttpDatasource.baseUrl,
+
+  protected writeMapper = new GeipanSummaryToCaseMapper(geipanHttpDatasource.baseUrl,
     geipanHttpDatasource.searchPath,
     geipanHttpDatasource.authors)
 

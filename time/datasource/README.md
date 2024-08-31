@@ -10,7 +10,7 @@ RR0 time data can be **imported** from external [Datasources](Datasource.ts), su
 * [Base OVNI France](baseovnifrance)
 * [Essex Police](essex-police)
 * [FUFORA](fufora)
-* [GEIPAN](geipan)
+* [GEIPAN](../../org/eu/fr/cnes/geipan)
 * [NUFORC](nuforc)
 * [ufo-search](ufo-search)
 * [RR0](rr0) itself, as static HTML to parse

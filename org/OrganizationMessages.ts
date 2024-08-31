@@ -7,6 +7,7 @@ export interface OrganizationMessageOptions {
 }
 
 export class OrganizationMessages {
+
   readonly titles: string[]
 
   /**
@@ -22,7 +23,7 @@ export class OrganizationMessages {
     return this.titles[0]
   }
 
-  toTitle(context: RR0SsgContext, org: Organization, options: OrganizationMessageOptions): string {
+  toTitle(context: RR0SsgContext, org: Organization, options: OrganizationMessageOptions = {parent: true}): string {
     const orgMessages = org.getMessages(context)
     assert.ok(orgMessages,
       `Could not find name of city with ZIP code "${org.id}" in departement "${org.parent?.id}"`)
@@ -36,7 +37,8 @@ export class OrganizationMessages {
       const parent = org.parent
       if (parent) {
         const depMessages = parent.getMessages(context)
-        str += ` (${depMessages.toTitle(context, parent, options)})`
+        const parentStr = depMessages.toTitle(context, parent, options)
+        str += ` (${parentStr})`
       }
     }
     return str

@@ -5,10 +5,6 @@ import { JSDOM } from "jsdom"
 import { FuforaCaseSummary } from "./FuforaCaseSummary"
 import { FuforaDatasource } from "./FuforaDatasource"
 
-interface QueryParameters {
-  sid: string
-}
-
 interface FormData {
   /**
    * Start day
@@ -155,7 +151,7 @@ export class FuforaHttpDatasource extends FuforaDatasource {
 
   async fetch(context: RR0SsgContext): Promise<FuforaCaseSummary[]> {
     const {formData, searchUrl} = this.queryUrl(context)
-    const page = await this.http.submitForm<string>(searchUrl.href, formData)
+    const page = await this.http.submitForm<string>(searchUrl, formData)
     const doc = new JSDOM(page).window.document.documentElement
     const rowEls = doc.querySelectorAll(".udb_u_taulukko .rivi")
     const rows = Array.from(rowEls)
@@ -194,7 +190,7 @@ export class FuforaHttpDatasource extends FuforaDatasource {
     const classification = fields[3].textContent
     return {
       id,
-      url,
+      url: url.href,
       sightingPlace,
       city,
       dateTime,

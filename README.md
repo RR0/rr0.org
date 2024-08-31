@@ -34,11 +34,25 @@ RR0 has been designed in different ways over the years:
 
 So today the design is basically about converting page templates to final HTML, including a bit of client-side JS when interactivity is supported.
 
-### Replacers
+### Steps
+
+The SSG steps to build RR0 are (in order):
+
+1. the include step, which replaces all includes (header and footer, notably) by their contents;
+1. the directory steps which generate directory pages:
+    1. UFO cases
+    1. People (by occupation, typically)
+1. the content step, which replaces tags in the pages contents;
+1. Books directory
+1. Rebuild of the search index
+1. Rebuild of the sources index
+1. the copy step, which copies resources files (CSS, etc.)
+
+#### Content step replacers
 
 During website generation, a number of tags are replaced by specific HTML:
 
-#### time ###
+##### time
 
 This is an override of the standard `<time>` HTML5 tag that aims to automate the rendering of a full human-readable
 date (including day of week) or duration.
@@ -46,7 +60,7 @@ date (including day of week) or duration.
 For both, a slash `/` can be used to express intervals (starting and end date, minimum and maximum duration,
 respectively, as stated in the [ISO_8601 standard](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals).
 
-#### Dates ####
+###### Dates
 
 By default, rendered dates add a `checkedLink` towards a possible page documenting this date (all examples below using a
 french locale):
@@ -74,7 +88,7 @@ this new time. For example :
 
 `<time datetime="05"></time>` will be rendered as `Samedi 5 Juillet 1952`, if stated after the latest date above.
 
-##### Durations ####
+###### Durations ####
 
 According to the HTML5 specification, Durations can be expressed in the datetime attribute if starting with a `P`.
 
@@ -91,11 +105,11 @@ as `<time datetime="P15M20S" class="duration">1 jour, 15 minutes et 20 secondes<
 
 `<time datetime="P2H/3H"></time>` renders as `<time datetime="P2H/3H" class="duration">2 à 3 heures</time>`.
 
-#### place ###
+##### place
 
 This is a class-restricted directive that aims to provide additional information on a given place.
 
-##### Examples ####
+###### Examples ####
 
 `<span class="place">Hasselbach (Allemagne)</time>`
 
@@ -108,11 +122,11 @@ A click on the rendered element will trigger the display of a Google Map zoomed 
 latitude/longitude (as geocoded by
 the Google Geocoding API).
 
-### people
+#### people
 
 This is a class-restricted directive that aims to provide a link to a people's bio.
 
-#### Examples
+##### Examples
 
 `<span class="people">Claude Poher</time>`
 
@@ -143,9 +157,9 @@ In case the last name contain multiple words, just write it in camel case, like 
 
 `<span class="people">Werner VonBraun</time>`
 
-### section
+#### section
 
-#### Contextual effects
+##### Contextual effects
 
 * Adds a hierarchical entry (depending on the depth of the section, possibly in other sections) in the 'Contents'
   contextual menu.
@@ -164,7 +178,7 @@ In case the last name contain multiple words, just write it in camel case, like 
   The subdirectories represent date components in the form `Y/Y/Y/Y/MM/DD/`
 - `croyance/` hosts beliefs data, that is, opinions that do not rely on proof.
   This includes religion, conspirationism, occultism and other cults.
-- `org/` hosts data about all kinds of human organizations, from countries to towns, including state agencies,
+- [`org/`](org/README.md) hosts data about all kinds of human organizations, from countries to towns, including state agencies,
   universities, etc.
 - `org/` hosts data about people, regardless of their nationalities, occupations, etc.
 

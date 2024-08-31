@@ -16,7 +16,7 @@ describe("BaseOvniFranceCaseSource", () => {
     }
 
     protected getTime(c: BaseOvniFranceCaseSummary): TimeContext {
-      return c.dateTime
+      return c.time
     }
 
     protected sortComparator(c1: BaseOvniFranceCaseSummary, c2: BaseOvniFranceCaseSummary): number {

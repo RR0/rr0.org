@@ -6,7 +6,7 @@ export type FinlandRegionsMessagesList = { [key in FinlandRegionCode]: RegionMes
 
 export class FinlandMessages extends CountryMessages<FinlandRegionsMessagesList> {
 
-  cityName(cityStr: string): string {
+  OrganizationcityName(cityStr: string): string {
     let base = super.cityName(cityStr)
     let kuntaPos = base.toLowerCase().indexOf("enkunta")  // "Municipality" suffix
     if (kuntaPos > 0) {

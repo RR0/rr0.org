@@ -11,10 +11,9 @@ import { SourceFactory } from "../../source/SourceFactory"
 import { NoteFileCounter } from "../../note/NoteFileCounter"
 import { AllDataService } from "../../data/AllDataService"
 import { HttpSource } from "./HttpSource"
-import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
 import { rr0TestUtil } from "../../test/RR0TestUtil"
 
-export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
+export abstract class DatasourceTestCase<S> {
 
   timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
 
@@ -44,8 +43,13 @@ export abstract class DatasourceTestCase<S extends RR0CaseSummary> {
     const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)
     const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
       new SourceRenderer(this.timeTextBuilder))
-    const itemsPromises = cases.map(c => eventRenderer.render(context, c))
-    const items = await Promise.all(itemsPromises)
+    const items = []
+    for (const c of cases) {
+      const outDoc = context.file.document
+      const item = outDoc.createElement("li")
+      await eventRenderer.renderContent(context, c, item)
+      items.push(item)
+    }
     expect(items.length).toBe(sourceCases.length)
     for (let i = 0; i < sourceCases.length; i++) {
       this.checkCaseHTML(context, sourceCases[i], items[i], dataDate)

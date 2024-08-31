@@ -13,13 +13,10 @@ export const rr0Mapper = new RR0CaseSummaryMapper(rr0HttpDatasource.baseUrl, rr0
   rr0HttpDatasource.authors)
 
 export class RR0Mapping implements RR0CaseMapping<RR0CaseSummary> {
-  readonly datasource = rr0HttpDatasource
-  readonly backupDatasource = rr0FileDatasource
-  readonly mapper = rr0Mapper
 
-  constructor(readonly actions: ChronologyReplacerActions) {
+  constructor(
+    readonly actions: ChronologyReplacerActions, readonly datasource = rr0HttpDatasource,
+    readonly mapper = rr0Mapper, readonly backupDatasource = rr0FileDatasource
+  ) {
   }
 }
-
-const actions: ChronologyReplacerActions = {read: ["fetch"], write: ["backup"]}
-export const rr0Mapping = new RR0Mapping(actions)

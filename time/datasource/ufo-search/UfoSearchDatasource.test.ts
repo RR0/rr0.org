@@ -16,7 +16,7 @@ describe("UfoSearchCaseSource", () => {
     }
 
     protected getTime(c: UfoSearchCase): TimeContext {
-      return c.dateTime
+      return c.time
     }
 
     protected sortComparator(c1: UfoSearchCase, c2: UfoSearchCase): number {

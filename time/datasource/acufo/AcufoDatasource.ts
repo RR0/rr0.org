@@ -9,9 +9,6 @@ import { NuforcCountry } from "../nuforc/NuforcCountry"
 import { NuforcShape } from "../nuforc/NuforcShape"
 import { AbstractDatasource } from "../AbstractDatasource"
 
-interface QueryParameters {
-}
-
 export class AcufoDatasource extends AbstractDatasource<AcufoCase> {
 
   protected http = new HttpSource()

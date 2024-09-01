@@ -7,13 +7,14 @@ import {
 } from "./GeipanCaseClassification"
 import { GeipanDatasource } from "./GeipanDatasource"
 import { HttpSource } from "../../../../../time/datasource/HttpSource"
-import { RR0SsgContext } from "../../../../../RR0SsgContext"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
 import { UrlUtil } from "../../../../../util/url/UrlUtil"
 import { FranceDepartementCode } from "../../region/FranceDepartementCode"
 import { FranceRegionCode } from "../../region/FranceRegionCode"
 import { CountryCode } from "../../../../country/CountryCode"
 import { TimeContext } from "../../../../../time/TimeContext"
 import { ObjectUtil } from "../../../../../util/ObjectUtil"
+import { RR0ContextFilter } from "../../../../../time/datasource/rr0/RR0Datasource"
 
 interface QueryParameters {
   /**
@@ -51,6 +52,11 @@ export class GeipanHttpDatasource extends GeipanDatasource {
 
   constructor(readonly baseUrl: URL, readonly searchPath: string) {
     super()
+  }
+
+  protected createFilter(context: HtmlRR0SsgContext) {
+    // TODO: Use GEIPAN-specific filter
+    return new RR0ContextFilter(context)
   }
 
   protected async readCases(context: RR0SsgContext): Promise<GeipanCaseSummary[]> {

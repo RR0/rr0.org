@@ -3,7 +3,7 @@ import { AbstractDatasource } from "../AbstractDatasource"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext"
 import { ContextFilter } from "../ContextFilter"
 
-class RR0ContextFilter extends ContextFilter<RR0CaseSummary> {
+export class RR0ContextFilter extends ContextFilter<RR0CaseSummary> {
 
   constructor(context: RR0SsgContext) {
     super(context)

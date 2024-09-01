@@ -25,7 +25,7 @@ export class DataAnchorHandler implements AnchorHandler {
           this.handleProduct(context, data, linkEl)
           break
         case "org":
-          //  this.handleOrg(context, data, linkEl)
+          this.handleOrg(context, data, linkEl)
           break
       }
     }
@@ -51,15 +51,16 @@ export class DataAnchorHandler implements AnchorHandler {
   }
 
   protected handleApi(context: HtmlRR0SsgContext, data: RR0Data, linkEl: HTMLAnchorElement) {
-    const deprecated = data.deprecated
+    const next = data.next
     if (linkEl.classList.contains("deprecated")) {
       return
     }
-    if (deprecated) {
+    if (next) {
       linkEl.classList.add("deprecated")
-    }
-    const note = data.note
-    if (note) {
+      let note = data.note
+      if (!note) {
+        note = `Remplacé par ${next}`
+      }
       this.handleNote(context, linkEl, note)
     }
   }

@@ -3,18 +3,18 @@
 <!--#include virtual="/header-end.html" -->
 <p><i lang="en">Digital signature</i>.</p>
 <section>
-  <h2>Besoin</h2>
+  <h2>Motivation</h2>
   <p>Authentifier l'émetteur d'un message.</p>
 </section>
 <section>
   <h2>Analyse</h2>
-  <p>En théorie la signature d'un message consiste à envoyer 2 informations : </p>
+  <p>En théorie la signature d'un message consiste à envoyer 2 informations :</p>
   <ol>
     <li>le message en clair</li>
     <li>le même message signé avec la <a href="/tech/info/soft/sec/auth/PrivateKey.html">clé privée</a> de l'auteur du
       message.</li>
   </ol>
-  <p>Ensuite le destinataire :</p>
+  <p>Ensuite le destinataire :</p>
   <ul>
     <li>déchiffre le message signé à l'aide de la <a href="/tech/info/soft/sec/auth/PublicKey.html">clé publique</a> de
       l'émetteur</li>
@@ -33,7 +33,7 @@
       jusqu'à parvenir à la clé publique d'un auteur dont l'identité est incontestable (une <a
         href="/tech/info/soft/sec/auth/cert/CA.html">Autorité de Certification</a>).</li>
   </ul>
-  <p>En pratique donc, l'envoi d'un message signé (mais non crypté) consiste à :</p>
+  <p>En pratique donc, l'envoi d'un message signé (mais non crypté) consiste à :</p>
   <ol>
     <li>générer un <a href="/tech/info/soft/sec/integrity/digest">condensé du message</a> qu'on souhaite envoyer
     </li>
@@ -56,7 +56,7 @@
   <p>Dans le monde <a href="/org/us/company/oracle/sun/ptf/java">Java</a>, le concept de signature peut être appliqué
     dans divers buts :</p>
   <ul>
-    <li><b>signer (auto-signer) un <a href="/tech/info/soft/sec/auth/cert">certificat</a></b> : L'outil
+    <li><b>signer (auto-signer) un <a href="/tech/info/soft/sec/auth/cert">certificat</a></b> : L'outil
       <code>keytool </code> de Java [1.2+] ne permet que de générer des certificats auto-signés. Parce que le rôle d'un
       certificat est d'authentifier, la signature d'un certificat requiert la clé privée de l'identité certifiante. Si
       vous n'en disposez pas déjà, vous pouvez générer votre paire de clés et un certificat par défaut (auto-signé) à
@@ -76,7 +76,8 @@
         <code>keytool</code> génère une paire de clés et un certificat auto-signé et l'insère dans la base de clés sous
         l'alias spécifié.</p>
     </li>
-    <li><b>signer un objet Java</b> : Les signatures se font à l'aide d'un objet de type <span class="code"><code>java.security.Signature</code></span>,
+    <li><b>signer un objet Java</b> : Les signatures se font à l'aide d'un objet de type <span class="code"><code>
+      java.security.Signature</code></span>,
       récupérable via un mécanisme de fabrique permettant de spécifier la combinaison d'algorithmes utilisée :
       <p><code>import java.security.*;</code></p>
       <p><code>Signature maSignature = Signature.getInstance ("SHA1withDSA");</code></p>

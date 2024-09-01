@@ -60,9 +60,10 @@ export interface RR0Data {
   time?: TimeContext
 
   /**
-   * If this data is not more relevant, not the latest version, or state of art.
+   * If this data is not more relevant, not the latest version, or state of art,
+   * this will hold the dirname (or name) of its successor.
    */
-  deprecated?: boolean
+  next?: string
 
   /**
    * A possible note about this data.

@@ -12,6 +12,8 @@ import { NoteFileCounter } from "../../note/NoteFileCounter"
 import { AllDataService } from "../../data/AllDataService"
 import { HttpSource } from "./HttpSource"
 import { rr0TestUtil } from "../../test/RR0TestUtil"
+import { TimeElementFactory } from "../TimeElementFactory"
+import { TimeRenderer } from "../TimeRenderer"
 
 export abstract class DatasourceTestCase<S> {
 
@@ -41,13 +43,14 @@ export abstract class DatasourceTestCase<S> {
     const baseUrl = "https://rr0.org"
     const http = new HttpSource()
     const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)
+    const timeElementFactory = new TimeElementFactory(new TimeRenderer([], this.timeTextBuilder))
     const eventRenderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
-      new SourceRenderer(this.timeTextBuilder))
+      new SourceRenderer(this.timeTextBuilder), timeElementFactory)
     const items = []
     for (const c of cases) {
       const outDoc = context.file.document
       const item = outDoc.createElement("li")
-      await eventRenderer.renderContent(context, c, item)
+      await eventRenderer.render(context, c, item)
       items.push(item)
     }
     expect(items.length).toBe(sourceCases.length)

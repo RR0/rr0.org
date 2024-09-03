@@ -2,6 +2,7 @@ import { SceauCaseSummary } from "./SceauCaseSummary"
 import { AbstractDatasource } from "../AbstractDatasource"
 import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext"
 import { ContextFilter } from "../ContextFilter"
+import { TimeContext } from "../../TimeContext"
 
 export type CaseMapping = { [key in keyof SceauCaseSummary]: string }
 
@@ -17,7 +18,9 @@ export class SceauContextFilter extends ContextFilter<SceauCaseSummary> {
   }
 
   filter(c: SceauCaseSummary): boolean {
-    const sightingTime = c.dateCas
+    const dateStr = c.dateCas || c.datePubli || c.dateEnquete
+    const isoCaseDate = dateStr.toUpperCase()
+    const sightingTime = TimeContext.fromString(isoCaseDate)
     const time = this.context.time
     const day = time.getDayOfMonth()
     const month = time.getMonth()

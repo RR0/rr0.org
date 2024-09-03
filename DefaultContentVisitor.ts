@@ -11,7 +11,7 @@ import assert from "assert"
 
 export class DefaultContentVisitor implements ContentVisitor {
 
-  constructor(protected service: AllDataService, protected eventRenderer: EventRenderer<RR0Data>,
+  constructor(protected service: AllDataService, protected eventRenderer: EventRenderer<RR0Event>,
               protected timeElementFactory: TimeElementFactory) {
   }
 
@@ -53,35 +53,21 @@ export class DefaultContentVisitor implements ContentVisitor {
           break
         default:
           const {eventP, timeEl} = this.timeParagraph(context, event)
-          await this.eventRenderer.renderContent(context, event, eventP)
+          await this.eventRenderer.render(context, event, eventP)
           doc.append(eventP)
       }
     }
-    /*const minTime = context.time.min
-    if (minTime) {
-      const timeScript = doc.createElement("script")
-      timeScript.textContent = `customElements.whenDefined('rr0-dual-range').then(() => initTime("${minTime.getYear()}","${context.time.max.getYear()}"))`
-      doc.documentElement.append(timeScript)
-    }*/
     context.file.contents = context.file.serialize()
   }
 
-
   protected timeParagraph(context: HtmlRR0SsgContext, event: RR0Data) {
-    const eventP = context.file.document.createElement("p")
+    const container = context.file.document.createElement("p")
     const eventContext = context.clone()
     const eventTime = eventContext.time = event.time
     assert.ok(eventTime, `Event of type "${event.type}" has no time`)
-    /*const time = context.time
-    if (!time.min || eventTime.isBefore(time.min)) {
-      time.min = eventTime
-    }
-    if (!time.max || eventTime.isAfter(time.max)) {
-      time.max = eventTime
-    }*/
-    eventP.dataset.time = eventTime.toString()
+    container.dataset.time = eventTime.toString()
     const timeEl = this.timeElementFactory.create(eventContext, context)
-    return {eventP, timeEl}
+    return {eventP: container, timeEl}
   }
 
   protected async processImage(context: HtmlRR0SsgContext, imageData: RR0Data) {

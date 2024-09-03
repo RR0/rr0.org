@@ -1,5 +1,5 @@
 import * as fs from "fs"
-import { CSVFileReader } from "../CSVFileReader"
+import { CSVFileReader } from "../../../@javarome/ssg-api/src/file/CSVFileReader"
 import { FileUtil, Logger, SsgConfig } from "ssg-api"
 import { TimeContext } from "../time/TimeContext"
 import { TimeUrlBuilder } from "../time/TimeUrlBuilder"

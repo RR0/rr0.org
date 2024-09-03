@@ -22,7 +22,7 @@
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
-    "test-one": "tsx time/datasource/sceau/SceauDatasource.test.ts"
+    "test-one": "tsx util/html/HtmlTable.test.ts"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.0",
@@ -33,7 +33,6 @@
     "glob": "^11.0.0",
     "image-size": "^1.1.1",
     "jsdom": "^24.1.0",
-    "csv": "^6.3.9",
     "selenium-webdriver": "^4.22.0"
   },
   "devDependencies": {
@@ -45,12 +44,13 @@
     "https-browserify": "^1.0.0",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
-    "ssg-api": "^1.15.0",
+    "ssg-api": "^1.16.1",
     "stream-http": "^3.2.0",
     "ts-loader": "^9.5.1",
     "tsx": "~4.16.0",
     "typescript": "^5.5.3",
-    "url": "^0.11.3"
+    "url": "^0.11.3",
+    "edtf": "^4.6.0"
   },
   "keywords": [
     "ufo",

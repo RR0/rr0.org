@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/org/int/asso/iso/86/index.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/org/us/region/Counties.csv">
           <value>
             <Attribute>

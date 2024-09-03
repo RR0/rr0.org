@@ -23,6 +23,7 @@ import {
   SsiEchoVarReplaceCommand,
   SsiIfReplaceCommand,
   SsiIncludeReplaceCommand,
+  SsiIncludeReplaceCommandTransformer,
   SsiLastModifiedReplaceCommand,
   SsiSetVarReplaceCommand,
   StringEchoVarReplaceCommand
@@ -86,6 +87,9 @@ import { TimeTextBuilder } from "./time/TimeTextBuilder"
 import { Time } from "./time/Time"
 import { CaseFactory } from "./science/crypto/ufo/enquete/dossier/CaseFactory"
 import { RR0Mapping } from "./time/datasource/rr0/RR0Mapping"
+import { CsvMapper } from "./time/datasource/CsvMapper"
+import fs from "fs"
+import { HtmlTable } from "./util/html/HtmlTable"
 
 interface RR0BuildArgs {
   /**
@@ -252,7 +256,7 @@ timeService.getFiles().then(async (timeFiles) => {
   const sourceFactory = new PersistentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName, timeFormat)
   const noteCounter = new NoteFileCounter()
   const noteRenderer = new NoteRenderer(noteCounter)
-  const caseRenderer = new CaseSummaryRenderer(noteRenderer, sourceFactory, sourceRenderer)
+  const caseRenderer = new CaseSummaryRenderer(noteRenderer, sourceFactory, sourceRenderer, timeElementFactory)
   // const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
   // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
   const actions: ChronologyReplacerActions = {read: ["fetch"], write: ["backup"]}
@@ -309,8 +313,23 @@ timeService.getFiles().then(async (timeFiles) => {
   const force = args.force === "true"
   const toProcess = new Set<string>(
     ["people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"])
+  const csvTransformer = new class implements SsiIncludeReplaceCommandTransformer {
+    transform(context: SsgContext, file: FileContents): string | undefined {
+      const fileName = file.name
+      if (!fileName.endsWith(".csv")) {
+        return undefined
+      }
+      const csv = fs.readFileSync(fileName, {encoding: "utf-8"})
+      const obj: any[] = new CsvMapper().parse(csv)
+      return HtmlTable.create(obj)
+    }
+  }()
   const includeStep = new RR0ContentStep(
-    [htAccessToNetlifyConfig, {roots: contentRoots, replacements: [new SsiIncludeReplaceCommand()], getOutputPath}],
+    [htAccessToNetlifyConfig, {
+      roots: contentRoots,
+      replacements: [new SsiIncludeReplaceCommand([csvTransformer])],
+      getOutputPath
+    }],
     outputFunc, [], [], force, "content includes", toProcess
   )
   ssg.add(includeStep)

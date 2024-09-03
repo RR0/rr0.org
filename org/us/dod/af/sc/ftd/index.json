@@ -1,5 +1,4 @@
 {
   "type": "org",
-  "deprecated": true,
-  "note": "Deviendra le <abbr title='Foreign Technology Center'>FTC</abbr> au sein de l'<abbr title='Air Force Intelligence Command'>AFIC</abbr>"
+  "next": "<abbr title='Foreign Technology Center'>FTC</abbr> au sein de l'<abbr title='Air Force Intelligence Command'>AFIC</abbr>"
 }

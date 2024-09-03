@@ -22,7 +22,7 @@ export class EventReplacer<D extends RR0Data> {
     if (data.length <= 0) {
       throw new Error("Could not find metadata in " + href)
     }
-    await this.renderer.renderContent(context, data[0], container)
+    await this.renderer.render(context, data[0], container)
   }
 }
 

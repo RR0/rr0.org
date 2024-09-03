@@ -1,6 +1,6 @@
 import { ConsoleLogger, HtmlFileContents, Logger, SsgConfig, SsgContext } from "ssg-api"
 import { CLI } from "./util/cli/CLI"
-import { CSVFileReader } from "./CSVFileReader"
+import { CSVFileReader } from "../../@javarome/ssg-api/src/file/CSVFileReader"
 import fs from "fs"
 import { TimeContext } from "./time/TimeContext"
 import { RR0SsgContextImpl } from "./RR0SsgContext"

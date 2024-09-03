@@ -1,5 +1,4 @@
 {
   "type": "org",
-  "next": true,
-  "note": "Remplacé par la <a href='/org/us/dod/af/sc/ftd/index.html'><abbr title='Foreign Technology Division'>FTD</abbr></a>"
+  "next": "<a href='/org/us/dod/af/sc/ftd/index.html'><abbr title='Foreign Technology Division'>FTD</abbr></a>"
 }

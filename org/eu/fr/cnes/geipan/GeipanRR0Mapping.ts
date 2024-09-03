@@ -8,7 +8,7 @@ import { RR0CaseMapping } from "../../../../../time/datasource/rr0/RR0CaseMappin
 import { ChronologyReplacerActions } from "../../../../../time/datasource/ChronologyReplacerActions"
 
 export const geipanHttpDatasource = new GeipanHttpDatasource(new URL("https://geipan.fr"), "fr/recherche/cas")
-export const geipanFileDatasource = new GeipanFileDatasource("time/datasource/geipan/export_cas_pub_20210219111412.csv",
+export const geipanFileDatasource = new GeipanFileDatasource("org/eu/fr/cnes/geipan/export_cas_pub_20210219111412.csv",
   "latin1")
 
 export const geipanRR0Mapper = new GeipanCaseSummaryRR0Mapper(cityService, geipanHttpDatasource.baseUrl,

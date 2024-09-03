@@ -3,7 +3,7 @@ import { DirectoryStep, FileContents, HtmlLinks, HtmlMeta, OutputFunc, SsgConfig
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { Book } from "./Book"
 import { StringUtil } from "../util/string/StringUtil"
-import { HtmlTag } from "../util/HtmlTag"
+import { HtmlTag } from "../util/html/HtmlTag"
 import fs from "fs"
 import path from "path"
 import { Chapter } from "./Chapters"

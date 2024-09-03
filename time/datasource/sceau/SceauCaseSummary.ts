@@ -1,10 +1,8 @@
-import { TimeContext } from "../../TimeContext"
-
 export interface SceauCaseSummary {
   readonly id?: string
-  readonly datePubli?: TimeContext
-  readonly dateCas: TimeContext
-  readonly dateEnquete?: TimeContext
+  readonly datePubli?: string
+  readonly dateCas: string
+  readonly dateEnquete?: string
   readonly enqueteur?: string
   readonly pays?: string
   readonly ville?: string

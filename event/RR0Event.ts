@@ -1,4 +1,5 @@
 import { RR0Data } from "../data/RR0Data"
+import { People } from "../people/People"
 
 export type RR0EventType =
   "birth"
@@ -7,10 +8,8 @@ export type RR0EventType =
   | "book"
   | "article"
   | "sighting"
-  | "move"
-  | "degree"
-  | "affiliate"
 
 export interface RR0Event extends RR0Data {
   type: RR0EventType
+  subject: People
 }

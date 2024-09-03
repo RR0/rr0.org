@@ -85,27 +85,25 @@ classDiagram
 
 ### Data
 
-The goal is to map datasources-specific data to the following target model:
+The goal is to map datasources-specific data to a target model.
+
+In the case of RR0, that target model is [RR0 Data](../../data/README.md) or more precisely
+(since almost all external datasources only store sightings/cases data), [RR0 Event](../../event/README.md)s.
 
 ```mermaid
 classDiagram
     class RR0Data {
-        id: string
-        type: string
-        url?: URL
-        name: string
-        title: string
-        time: TimeContext
     } 
+    class RR0Event {
+    } 
+    RR0Event --|> RR0Data
     RR0Data --> Place: place?
-    RR0Data --> People: people?
-    RR0Data --> RR0Data: events[]
     class Sighting {
     }
-    RR0Data <|-- Sighting
+    RR0Event <|-- Sighting
     class People {
     }
-    RR0Data <|-- People
+    RR0Event <|-- People
     class Place {
     }
     RR0Data <|-- Place
@@ -114,10 +112,10 @@ classDiagram
     RR0Data <|-- Case
     class Source {
     }
-    RR0Data <|-- Source
+    RR0Event <|-- Source
     class Investigation {
     }
-    RR0Data <|-- Investigation
+    RR0Event <|-- Investigation
 ```
 
 ### Case data

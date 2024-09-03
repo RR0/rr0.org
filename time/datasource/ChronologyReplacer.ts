@@ -52,7 +52,7 @@ export class ChronologyReplacer implements DomReplacement<HtmlRR0SsgContext, HTM
           for (const c of allCases) {
             const outDoc = context.file.document
             const eventEl = outDoc.createElement("li")
-            await this.renderer.renderContent(context, c, eventEl)
+            await this.renderer.render(context, c, eventEl)
             element.append(eventEl)
           }
         }

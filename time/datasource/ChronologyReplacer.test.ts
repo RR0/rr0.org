@@ -24,7 +24,7 @@ describe("ChronologyReplacer", () => {
     const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)
     const timeTextBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
     const caseRenderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
-      new SourceRenderer(timeTextBuilder))
+      new SourceRenderer(timeTextBuilder), timeElementFactory)
     chronologyReplacer = new ChronologyReplacer([urecatRR0Mapping], caseRenderer)
     context = rr0TestUtil.newHtmlContext("time/index.html")
     context.time.setYear(undefined)

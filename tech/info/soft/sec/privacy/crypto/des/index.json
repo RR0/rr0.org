@@ -1,5 +1,4 @@
 {
   "type": "api",
-  "deprecated": true,
-  "note": "Remplacé par <a href='/tech/info/soft/sec/privacy/crypto/aes'>AES</a>"
+  "deprecated": "<a href='/tech/info/soft/sec/privacy/crypto/aes'>AES</a>"
 }

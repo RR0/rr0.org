@@ -5,21 +5,19 @@ import { Source } from "../source/Source"
 import { SourceFactory } from "../source/SourceFactory"
 import { NoteRenderer } from "../note/NoteRenderer"
 import { NamedPlace } from "./datasource/rr0/RR0CaseSummary"
+import { TimeElementFactory } from "./TimeElementFactory"
+import assert from "assert"
+import { RR0Event } from "../event/RR0Event"
 
 /**
  * Render a case summary as HTML.
  */
-export class EventRenderer<D extends RR0Data> {
+export class EventRenderer<E extends RR0Event> {
 
-  constructor(protected noteRenderer: NoteRenderer, protected sourceFactory: SourceFactory,
-              readonly sourceRenderer: SourceRenderer) {
-  }
-
-  async render(context: HtmlRR0SsgContext, data: D): Promise<HTMLLIElement> {
-    const outDoc = context.file.document
-    const item = outDoc.createElement("li")
-    await this.renderContent(context, data, item)
-    return item
+  constructor(
+    protected noteRenderer: NoteRenderer, protected sourceFactory: SourceFactory,
+    readonly sourceRenderer: SourceRenderer, protected timeElementFactory: TimeElementFactory
+  ) {
   }
 
   placeElement(context: HtmlRR0SsgContext, namedPlace: NamedPlace) {
@@ -42,30 +40,24 @@ export class EventRenderer<D extends RR0Data> {
     container.append(".")
   }
 
-  async renderContent(context: HtmlRR0SsgContext, data: D, container: HTMLElement) {
-    const outDoc = context.file.document
-    const time = data.time
-    const timeEl = outDoc.createElement("time") as HTMLTimeElement
-    const timeValue = timeEl.dateTime = time.toString()
-    const dataContext = context.clone()
-    if (typeof timeValue === "string") {
-      dataContext.time.updateFromStr(timeValue)
-    } else {
-      Object.assign(dataContext.time, timeValue)
-    }
-    timeEl.textContent = this.sourceRenderer.timeTextBuilder.build(dataContext)
+  async render(context: HtmlRR0SsgContext, event: E, container: HTMLElement) {
+    const eventContext = context.clone()
+    const eventTime = eventContext.time = event.time
+    assert.ok(eventTime, `Event of type "${event.type}" has no time`)
+    container.dataset.time = eventTime.toString()
+    const timeEl = this.timeElementFactory.create(eventContext, context)
     container.append(timeEl)
-    const place = data.place
+    const place = event.place
     if (place) {
       container.append(" À ")
       container.append(this.placeElement(context, place))
     }
-    container.append(", ", data.description)
-    const notes = data.notes
+    container.append(", ", event.description)
+    const notes = event.notes
     if (notes) {
       await this.renderNotes(context, notes, container)
     }
-    const sources = data.sources
+    const sources = event.sources
     if (sources) {
       await this.renderSources(context, sources, container)
     }

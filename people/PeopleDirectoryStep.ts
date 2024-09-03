@@ -1,7 +1,7 @@
 import { Occupation } from "./Occupation"
 import { People } from "./People"
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { HtmlTag } from "../util/HtmlTag"
+import { HtmlTag } from "../util/html/HtmlTag"
 import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
 import { StringUtil } from "../util/string/StringUtil"
 import { PeopleService } from "./PeopleService"

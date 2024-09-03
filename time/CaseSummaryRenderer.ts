@@ -3,13 +3,15 @@ import { EventRenderer } from "./EventRenderer"
 import { SourceRenderer } from "../source/SourceRenderer"
 import { SourceFactory } from "../source/SourceFactory"
 import { NoteRenderer } from "../note/NoteRenderer"
+import { TimeElementFactory } from "./TimeElementFactory"
 
 /**
  * Render a case summary as HTML.
  */
 export class CaseSummaryRenderer extends EventRenderer<RR0CaseSummary> {
 
-  constructor(noteRenderer: NoteRenderer, sourceFactory: SourceFactory, sourceRenderer: SourceRenderer) {
-    super(noteRenderer, sourceFactory, sourceRenderer)
+  constructor(noteRenderer: NoteRenderer, sourceFactory: SourceFactory, sourceRenderer: SourceRenderer,
+              timeElementFactory: TimeElementFactory) {
+    super(noteRenderer, sourceFactory, sourceRenderer, timeElementFactory)
   }
 }

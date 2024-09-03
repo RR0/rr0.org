@@ -27,8 +27,7 @@ export class SceauHttpDatasource extends SceauDatasource {
     const day = context.time.getDayOfMonth()
     const month = context.time.getMonth()
     const year = context.time.getYear()
-    const searchUrl = new URL(path.join(this.searchPath, fondPath), this.baseUrl)
-    return searchUrl
+    return new URL(path.join(this.searchPath, fondPath), this.baseUrl)
   }
 
   protected async readCases(context: RR0SsgContext): Promise<SceauCaseSummary[]> {

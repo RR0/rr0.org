@@ -1,6 +1,7 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { Time } from "./Time"
 import { TimeParseResult } from "./TimeReplacer"
+import edtf, { Date } from "edtf"
 
 /**
  * Time context for a RR0 page.
@@ -37,7 +38,7 @@ export class TimeContext {
     return this._year
   }
 
-  static fromStr(timeStr: string): TimeContext {
+  static fromString(timeStr: string): TimeContext {
     const timeContext = new TimeContext()
     timeContext.updateFromStr(timeStr)
     return timeContext
@@ -95,6 +96,12 @@ export class TimeContext {
   }
 
   static updateTimeFromStr(context: TimeContext, timeStr: string): TimeContext {
+    try {
+      const date = edtf(timeStr)
+      console.log(date)
+    } catch (e) {
+      console.error(e)
+    }
     const result = TimeContext.parseDateTime(timeStr)
     if (result) {
       const {approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result

@@ -23,7 +23,7 @@ describe("TimeEventRenderer", () => {
   const sourceFactory = new SourceFactory(dataService, http, baseUrl, rr0TestUtil.intlOptions)
   const textBuilder = new TimeTextBuilder(rr0TestUtil.intlOptions)
   const renderer = new CaseSummaryRenderer(new NoteRenderer(new NoteFileCounter()), sourceFactory,
-    new SourceRenderer(textBuilder))
+    new SourceRenderer(textBuilder), timeElementFactory)
 
   test("render event", async () => {
     const context = rr0TestUtil.newHtmlContext("time/1/9/7/0/03/index.html")
@@ -58,7 +58,7 @@ describe("TimeEventRenderer", () => {
     }
     const outDoc = context.file.document
     const elem = outDoc.createElement("li")
-    await renderer.renderContent(context, c, elem)
+    await renderer.render(context, c, elem)
     expect(elem.innerHTML).toBe(
       `<time datetime="1970-03">mars 1970</time> À <span class="place">Nanterre (Hauts-de-Seine, France)</span>, some sighting <span class="source">Some Author: <span><a href="https://somesite.com/case1">Case 1</a>, <i>Some site</i>, 1970-03</span></span>`)
   })

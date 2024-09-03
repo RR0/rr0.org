@@ -1,0 +1,12 @@
+{
+  "type": "org",
+  "title": "US Navy",
+  "name": "USN",
+  "url": "https://www.navy.mil",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1794-03-27"
+    }
+  ]
+}

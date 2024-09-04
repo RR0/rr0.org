@@ -77,13 +77,15 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
    * Converts CSV contents to a list of cases.
    *
    * @param data
+   * @param headers The headers info to fill, to keep CSV columns order.
    */
-  parse(data: string): S[] {
+  parse(data: string, headers: string[] = []): S[] {
     let eol = data.indexOf("\n")
     const header = data.substring(0, eol)
     data = data.substring(eol + 1).replaceAll(`""`, "''")
     this.fields.clear()
     const columns = header.split(this.sep)
+    headers.push(...columns)
     columns.forEach(column => this.fields.add(column))
     const records: S[] = []
     let regex = new RegExp(`(?:${this.escapeStr}(.*?)${this.escapeStr}(?:${this.sep}|\n))|(?:(.*?)(?:${this.sep}|\n))`,

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @import "map.css";
 @import "search/search.css";
 @import "figure.css";
@@ -7,6 +8,7 @@
 @import "table.css";
 @import "nav.css";
 @import "source/index.css";
+@import "note/index.css";
 @import "link.css";
 @import "quote.css";
 
@@ -207,7 +209,7 @@ form {
   font-variant: small-caps
 }
 
-.explanation, .mois, .note {
+.explanation, .mois {
   font-variant: normal
 }
 
@@ -349,12 +351,7 @@ details summary, .toggle, form label {
   margin: -.2rem -.3rem
 }
 
-.note-id {
-  text-decoration: none;
-  padding: .2rem .3rem;
-}
-
-details summary, .toggle, .note-id {
+details summary, .toggle {
   color: #069;
 }
 
@@ -591,33 +588,12 @@ pre code {
   border-bottom: medium solid #D7E2EA;
 }
 
-.explanation, .heure, .note {
+.explanation, .heure {
   font-style: normal
 }
 
-.disappeared::after, .meprise::after, .misinterpretation::after, .note {
+.disappeared::after, .meprise::after, .misinterpretation::after {
   vertical-align: super
-}
-
-.note-id {
-  color: #069;
-}
-
-.note-id:hover {
-  color: var(--link-color);
-}
-
-.note-id:hover .note-contents {
-  position: absolute;
-  margin-top: 1em;
-  display: inline-block;
-  padding: 0.35em 0.5em;
-  color: var(--color);
-  background: var(--background-color);
-  box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
-  border: 1px outset var(--icon-color);
-  border-radius: 0.25em;
-  z-index: 2;
 }
 
 .mois {
@@ -629,7 +605,7 @@ pre code {
   font-weight: 700
 }
 
-.explanation, .note, .source {
+.explanation, .source {
   font-weight: 400
 }
 
@@ -695,7 +671,7 @@ a[target="_blank"]::after {
   color: #666
 }
 
-#notes, #sources, .footer, .note {
+.footer {
   font-size: .8em
 }
 
@@ -723,36 +699,9 @@ footer iframe {
   text-align: right
 }
 
-.note-id {
-  vertical-align: super;
-  font-size: smaller;
-  line-height: normal;
-}
-
-.note-contents {
-  color: grey;
-  display: none;
-}
-
-.anchor:target + .note-contents {
-  display: inline-block;
-}
-
 .foot:target {
   background: #bbb;
   color: #fff
-}
-
-#notes, #sources, .note, .source {
-  color: #666
-}
-
-#notes {
-  list-style-type: lower-alpha
-}
-
-#notes li.note {
-  margin: 0 0 5px
 }
 
 .book a, .book details summary, details .book summary {

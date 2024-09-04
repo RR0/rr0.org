@@ -1,0 +1,37 @@
+.note-id {
+  position: relative;
+  text-decoration: none;
+  padding: .2rem .3rem;
+  font-style: normal;
+  vertical-align: super;
+  color: #069;
+  font-size: smaller;
+  line-height: normal;
+  z-index: 1;
+}
+
+.note-contents {
+  color: grey;
+  display: none;
+}
+
+.note-id:hover {
+  color: var(--link-color);
+}
+
+.note-id:hover .note-contents {
+  position: absolute;
+  margin-top: 1em;
+  display: inline-block;
+  padding: 0.35em 0.5em;
+  color: var(--color);
+  background: var(--background-color);
+  box-shadow: var(--icon-color) 0.15em 0.15em 0.3em;
+  border: 1px outset var(--icon-color);
+  border-radius: 0.25em;
+  z-index: 2;
+}
+
+.anchor:target + .note-contents {
+  display: inline-block;
+}

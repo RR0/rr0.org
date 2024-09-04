@@ -1,0 +1,15 @@
+Niveau,0,1,2
+Norme,ISO-8601-1,ISO-8601-2,ISO-8601-2
+Date exacte,<code>YYYY-MM-DD</code>,<code>YYYY-MM-DD</code><br><code>-YYYY-MM-DD</code>,<code>YYYY-MM-DD</code><br><code>-YYYY-MM-DD</code>
+Date & heure,<code>YYYY-MM-DDTHH:MM:SS</code>,<code>YYYY-MM-DDTHH:MM:SS</code>,<code>YYYY-MM-DDTHH:MM:SS</code>
+Date & heure UTC,<code>YYYY-MM-DDTHH:MM:SSZ</code>,<code>YYYY-MM-DDTHH:MM:SSZ</code>,<code>YYYY-MM-DDTHH:MM:SSZ</code>
+Date & heure & timezone,<code>YYYY-MM-DDTHH:MM:SS-HH</code><br><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code>,<code>YYYY-MM-DDTHH:MM:SS-HH</code><br><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code>,<code>YYYY-MM-DDTHH:MM:SS-HH</code><br><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code>
+Intervalle,<code>YYYY/YYYY</code><br><code>YYYY-MM-DD/YYYY</code>,<code>YYYY/YYYY</code><br><code>YYYY-MM-DD/YYYY</code><br><code>YYYY-21</code><span class='note'>Printemps</span><br><code>YYYY-22</code><span class='note'>Été</span><br><code>YYYY-23</code><span class='note'>Automne</span><br><code>YYYY-24</code><span class='note'>Hiver</span>,"<code>YYYY/YYYY</code><br><code>YYYY-MM-DD/YYYY</code><br><code>YYYY-21</code><span class='note'>Printemps</span><br><code>YYYY-22</code><span class='note'>Été</span><br><code>YYYY-23</code><span class='note'>Automne</span><br><code>YYYY-24</code><span class='note'>Hiver</span><br><code>YYYY-33</code><span class='note'>1er trimestre</span>, etc"
+Grande année,-,<code>Y1234567</code><br><code>Y-20000000</code>,<code>Y1234567</code><br><code>Y-20000000</code><br><code>Y12E7</code>
+Incertitude (peut-être),-,<code>YYYY?</code>,<code>YYYY?</code><br><code>YYYY-MM?-DD</code>
+"Approximation (environ, autour de)",-,<code>YYYY~</code>,<code>YYYY~</code><br><code>YYYYS2</code><br><code>YYYY-MM~-DD</code><br><code>YYYY-~MM-DD</code>
+Incertain et approximatif (peut-être autour de),-,<code>YYYY%</code>,<code>YYYY%</code><br><code>YYYY-MM%</code><br><code>YYYY-%MM</code>
+Chiffres incertains (à droite),-,<code>201X</code><br><code>2012-XX</code><br><code>2012-04-XX</code><br><code>2012-XX-XX</code>,<code>201X</code><br><code>2012-XX</code><br><code>2012-04-XX</code><br><code>2012-XX-XX</code><br><code>1X2X</code>
+À partir de,-,<code>1972/</code><br><code>1972/..</code>,<code>1972/</code><br><code>1972/..</code>
+Jusqu'à,-,<code>/2024</code><br><code>../2024</code>,<code>/2024</code><br><code>../2024</code>
+Ensemble,-,-,"<code>[1972,2024]</code><span class='note'>Un seul parmi n</span><br><code>{1972,2024}</code><span class='note'>Tous les éléments</span>"

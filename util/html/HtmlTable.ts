@@ -2,13 +2,16 @@ import { HtmlTag } from "./HtmlTag"
 
 export class HtmlTable {
 
-  static create(objects: object[]): string {
-    const headColumns = Object.keys(objects[0]).map(key => HtmlTag.toString("th", key)).join("")
+  static create(objects: object[], headers: string[] = Object.keys(objects[0])): string {
+    const headColumns = headers.map(key => HtmlTag.toString("th", key)).join("")
     const headRow = HtmlTag.toString("tr", headColumns)
     const tableHead = HtmlTag.toString("thead", headRow)
     const bodyRows = []
     for (const obj of objects) {
-      const bodyColumns = Object.values(obj).map(key => HtmlTag.toString("td", key)).join("")
+      let bodyColumns = ""
+      for (const header of headers) {
+        bodyColumns += HtmlTag.toString("td", obj[header])
+      }
       const row = HtmlTag.toString("tr", bodyColumns)
       bodyRows.push(row)
     }

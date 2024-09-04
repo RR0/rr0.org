@@ -151,7 +151,7 @@ const copies = copiesArg ? copiesArg.split(",") : [
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
   "people/index.js", "people/index.css", "people/witness/index.css",
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
-  "source/index.css",
+  "source/index.css", "note/index.css",
   "link.css", "quote.css",
   "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
@@ -320,8 +320,9 @@ timeService.getFiles().then(async (timeFiles) => {
         return undefined
       }
       const csv = fs.readFileSync(fileName, {encoding: "utf-8"})
-      const obj: any[] = new CsvMapper().parse(csv)
-      return HtmlTable.create(obj)
+      const headers = []
+      const obj: any[] = new CsvMapper().parse(csv, headers)
+      return HtmlTable.create(obj, headers)
     }
   }()
   const includeStep = new RR0ContentStep(

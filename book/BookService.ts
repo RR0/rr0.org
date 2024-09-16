@@ -1,5 +1,4 @@
 import * as fs from "fs"
-import { CSVFileReader } from "../../../@javarome/ssg-api/src/file/CSVFileReader"
 import { FileUtil, Logger, SsgConfig } from "ssg-api"
 import { TimeContext } from "../time/TimeContext"
 import { TimeUrlBuilder } from "../time/TimeUrlBuilder"
@@ -9,6 +8,7 @@ import { Book } from "./Book"
 import { People } from "../people/People"
 import { RR0FileUtil } from "../util/file/RR0FileUtil"
 import { PeopleService } from "../people/PeopleService"
+import { CSVFileReader } from "../CSVFileReader"
 
 export class BookService {
 
@@ -40,12 +40,7 @@ export class BookService {
     const columns = [COLUMN_TITLE, "Original Title", COLUMN_SUBTITLE, COLUMN_SERIES, "Volume", COLUMN_AUTHOR, COLUMN_AUTHOR_LAST_FIRST, COLUMN_PUBLISHER, COLUMN_YEAR_PUBLISHED, "Original Year Published", "Genre", COLUMN_SUMMARY, "Number of Pages", "Language", COLUMN_ISBN, "Rating", "Notes", "Google VolumeID", "Uploaded Image URL"]
     const readStream = fs.createReadStream(fileName)
     const csvSeparator = ","
-    const reader = new CSVFileReader<Record<string, string>>(
-      readStream,
-      this.logger,
-      columns,
-      csvSeparator
-    )
+    const reader = new CSVFileReader<Record<string, string>>(readStream, this.logger, columns, csvSeparator)
     const results = await reader.read()
     const books: Book[] = []
     for (const result of results) {
@@ -60,16 +55,25 @@ export class BookService {
         const authorsNames = author ? author.split(",") : [authorLastFirst]
         const authors: People[] = []
         for (const authorName of authorsNames) {
-          const authorFound = await this.findPeople(authorName)
-          if (authorFound) {
-            authors.push(authorFound)
+          const author = await this.findPeople(authorName)
+          if (author) {
+            authors.push(author)
           }
         }
         const publisher = result[COLUMN_PUBLISHER]
-        const authorsLastNames = authors.map(author => author.lastName).join("-")
-        const dirName = (authorsLastNames.length > 0 ? authorsLastNames : authorsNames.map(StringUtil.textToCamel))
-          + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(title.toLowerCase()))
-          + "_" + StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
+        const authorsLastNames = authors.map(author => author.lastName)
+        const titleStr = StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(title.toLowerCase()))
+        const publisherStr = StringUtil.capitalizeFirstLetter(StringUtil.textToCamel(publisher))
+        let authorsStr = (authorsLastNames.length > 0 ? authorsLastNames : authorsNames.map(
+          StringUtil.textToCamel)).join("-")
+        let dirName: string
+        const andAl = "-and-al"
+        do {
+          dirName = StringUtil.removeAccents(`${authorsStr}_${titleStr}_${publisherStr}`)
+          if (dirName.length >= 255) {
+            authorsStr = authorsStr.substring(0, authorsStr.length - andAl.length - 1) + andAl
+          }
+        } while (dirName.length >= 255)
         const parentDir = TimeUrlBuilder.fromContext(time)
         const bookDir = path.join(parentDir, dirName)
         const id = result[COLUMN_ISBN]
@@ -87,11 +91,11 @@ export class BookService {
           summary,
           variants: []
         }
-        const authorStr = authors?.map(author => author.dirName)
+        const authorDir = authors?.map(author => author.dirName)
         if (fs.existsSync(bookDir)) {
-          this.logger.log("Book directory", bookDir, "already exists, with authors", authorStr)
+          this.logger.log("Book directory", bookDir, "already exists, with authors", authorDir)
         } else {
-          this.logger.log("Creating book directory", bookDir, "with authors", authorStr)
+          this.logger.log("Creating book directory", bookDir, "with authors", authorDir)
           if (!this.dry) {
             fs.mkdirSync(bookDir)
           }
@@ -111,8 +115,7 @@ export class BookService {
 
   protected async findPeople(fullName: string): Promise<People | undefined> {
     if (this.peopleList.length <= 0) {
-      const peopleDirectories = RR0FileUtil.findDirectoriesContaining("people*.json")
-      this.peopleList = await this.peopleService.getFromDirs(peopleDirectories)
+      this.peopleList = await this.peopleService.getAll()
     }
     return this.peopleList.find(people => people.firstAndLastName === fullName)
   }

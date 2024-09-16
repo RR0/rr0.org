@@ -25,14 +25,14 @@ export class AllDataService {
     const key = dirName + "$" + fileNames.join("$")
     let dataList = this.pathToData.get(key)
     if (dataList === undefined) {
-      dataList = await this.read(dirName, fileNames)
+      dataList = await this.read<T>(dirName, fileNames)
       this.pathToData.set(key, dataList)
     }
     return dataList.filter(data => types.includes(data.type)) as T[]
   }
 
-  protected async read(dirName: string, fileNames: string[]): Promise<RR0Data[]> {
-    const dataList: RR0Data[] = []
+  protected async read<T extends RR0Data = RR0Data>(dirName: string, fileNames: string[]): Promise<T[]> {
+    const dataList: T[] = []
     const p = dirName + "/*(" + fileNames.join("|") + ")"
     const files = await glob(p)
     for (const file of files) {

@@ -1,0 +1,81 @@
+<!--#include virtual="/header.html" -->
+<p><i lang="en">Java Network Launching Protocol</i> : protocole Java de démarrage réseau. </p>
+<section>
+  <h2>Conception</h2>
+  <p>JNLP est une extension de <a href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a>.</p>
+  <table>
+    <tr>
+      <th rowspan="2">Session</th>
+      <td>JNLP</td>
+    </tr>
+    <tr>
+      <td>
+        <div><a href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a></div>
+      </td>
+    </tr>
+    <tr>
+      <th>Transport</th>
+      <td>
+        <div><a href="/tech/info/soft/net/protocole/4/tcp">TCP</a></div>
+      </td>
+    </tr>
+    <tr>
+      <th>Réseau</th>
+      <td>
+        <div><a href="/tech/info/soft/net/protocole/3/IP.html">IP</a></div>
+      </td>
+    </tr>
+  </table>
+  <p>JNLP ajoute deux nouveaux types MIME :</p>
+  <ul>
+    <li>application/x-java-jnlp-file .jnlp</li>
+    <li>application/x-java-archive-diff .jardiff</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemple</h2>
+  <p>&lt;jnlp codebase="...</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>
+      <table>
+        <tr>
+          <td colspan="2" rowspan="2"> JWS</td>
+          <th> Version</th>
+          <th colspan="3"> 1</th>
+          <th rowspan="3"> Commentaire</th>
+        </tr>
+        <tr>
+          <th> Release</th>
+          <th> 0</th>
+          <th><a href="https://java.sun.com/products/jdk/1.1/docs/index.html">1</a></th>
+          <th><a href="https://java.sun.com/products/jdk/1.2/docs/index.html">2</a></th>
+        </tr>
+        <tr>
+          <th>Domaine</th>
+          <th>Technologie</th>
+          <th> Fixpack</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="2"></th>
+          <td class="non"></td>
+          <td class="oui" colspan="2"></td>
+          <td></td>
+        </tr>
+      </table>
+    </li>
+    <li>Livré avec <a href="/org/us/company/oracle/sun/ptf/java/api/se">J2SE</a> 1.4.</li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li><a href="https://www.jcp.org/en/jsr/detail?id=56">JSR 56 - JNL Protocol and API</a> par JavaSoft</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

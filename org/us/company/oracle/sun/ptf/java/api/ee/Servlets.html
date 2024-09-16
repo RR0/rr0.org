@@ -17,12 +17,12 @@
   <p>Les servlets écoutent des requêtes réseau sur un port donné et retournent des réponses. Les requêtes attendues
     peuvent être de divers type mais dans les faits sont presque toujours de type Web. Dans ce cas les servlets sont des
     servlets particulières, adaptées au décodage de requêtes Web (protocole <a
-      href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>).</p>
+      href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a>).</p>
 </section>
 <section>
   <h2>Implémentation</h2>
   <h3>Servlets Web</h3>
-  <p>C'est le cas le plus courant. Une servlet <a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> hérite
+  <p>C'est le cas le plus courant. Une servlet <a href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a> hérite
     de <code>javax.servlet.http.HttpServlet</code>. Elle en <a
         href="/tech/info/soft/proj/impl/lang/oo/Overriding.html">redéfinit</a> :
   </p>
@@ -33,13 +33,13 @@
       <ul>
         <li><q><code>void </code></q><code><b>doGet</b></code><b><code> </code></b><code>(<strong>HttpServletRequest,
           HttpServletResponse</strong>)</code> pour traiter les requêtes <a
-          href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> de type <code>GET</code></li>
+          href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a> de type <code>GET</code></li>
         <li><q><code>void </code></q><code><b>doPost</b></code><code>(<b>HttpServletRequest</b>,
           <b>HttpServletResponse</b>)</code> pour traiter les requêtes <a
-          href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> de type <code>POST</code></li>
+          href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a> de type <code>POST</code></li>
         <li><q><code>void </code></q><code><b>service</b></code><b><code> </code></b><code>(<b>HttpServletRequest</b>,
           <b>HttpServletResponse</b>)</code> pour traiter tout type de requête <a
-          href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>.</li>
+          href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a>.</li>
       </ul>
     </li>
   </ul>
@@ -49,11 +49,11 @@
   <p>Des exemples de servlets sont :</p>
   <ul>
     <li>une servlet <a href="/tech/info/soft/proj/design/arch/web/index.html">Web</a> écoutant des requêtes <a
-      href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a> et retournant des pages Web (<a
+      href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a> et retournant des pages Web (<a
         href="/tech/info/soft/data/doc/html">HTML</a>) dans ses réponses <a
-      href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a></li>
-    <li>une servlet <a href="/tech/info/soft/reseau/webservice/index.html">Service Web</a> écoutant des requêtes <a
-      href="/tech/info/soft/reseau/protocole/5/rpc/xml/soap">SOAP</a>/HTTP et retournant des réponses SOAP/HTTP</li>
+      href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a></li>
+    <li>une servlet <a href="/tech/info/soft/net/webservice/index.html">Service Web</a> écoutant des requêtes <a
+      href="/tech/info/soft/net/protocole/5/rpc/xml/soap">SOAP</a>/HTTP et retournant des réponses SOAP/HTTP</li>
     <li>une servlet <a href="/org/us/company/oracle/sun/ptf/java/api/se/RMI.html">RMI</a> écoutant des requêtes JRMP et
       retournant des réponses JRMP</li>
     <li>une servlet <a href="/tech/info/soft/prod/orb/corba/index.html">CORBA</a> écoutant des requêtes <a
@@ -71,7 +71,7 @@
      */ </span><br> public void <b>doPost</b> (<b>HttpServletRequest</b> someRequest, <b>HttpServletResponse</b>
     someResponse) {<br> someResponse.<b>setContentType</b> (<span class="codeString">"text/html"</span>); <span
         class="codeComment">//
-  Type <a href="/tech/info/soft/reseau/protocole/6/MIME.html">MIME</a> d'une page <a
+  Type <a href="/tech/info/soft/net/protocole/6/MIME.html">MIME</a> d'une page <a
           href="/tech/info/soft/data/doc/html">HTML</a></span><br> java.io.PrintWriter output = someResponse.<b>getWriter</b>();
     <span class="codeComment">// Flux d'écriture de la réponse</span><br> <br> output.println (<span class="codeString">"&lt;html&gt;"</span>);<br>
     output.println (<span class="codeString">" &lt;head&gt;"</span>); <br> output.println (<span class="codeString">"  &lt;title&gt;Bienvenue

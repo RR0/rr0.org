@@ -16,7 +16,7 @@
   },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",
-    "books": "tsx book/BookImport.ts",
+    "books": "tsx book/BookImport.ts --import book/BookBuddy.csv",
     "word-finder": "tsx WordFinder.ts",
     "build": "tsx build.ts",
     "preview": "vite preview --host",
@@ -28,6 +28,7 @@
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@rr0/common": "^1.0.1",
     "@rr0/lang": "^0.1.11",
+    "@rr0/time": "^0.4.0",
     "canvas": "^2.11.2",
     "csv-parser": "^3.0.0",
     "glob": "^11.0.0",
@@ -49,8 +50,7 @@
     "ts-loader": "^9.5.1",
     "tsx": "~4.16.0",
     "typescript": "^5.5.3",
-    "url": "^0.11.3",
-    "edtf": "^4.6.0"
+    "url": "^0.11.3"
   },
   "keywords": [
     "ufo",

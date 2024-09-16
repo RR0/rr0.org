@@ -28,7 +28,7 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
       context.time.setYear(newTimeContext.getYear())
       context.time.setMonth(newTimeContext.getMonth())
       context.time.setDayOfMonth(newTimeContext.getDayOfMonth())
-      context.time.from = context.time
+      // context.time.from = context.time
     }
     return newTimeContext
   }

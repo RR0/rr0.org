@@ -1,0 +1,37 @@
+<!--#include virtual="/header-start.html" -->
+<title>VTAM</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Virtual Telecommunications Access Method</i>.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>API de communication avec des périphériques électroniques.</p>
+</section>
+<section>
+  <h2>Structure</h2>
+  <p>VTAM est une partie de <a href="/tech/info/soft/net/protocole/SNA.html">SNA</a> which in turn became part of the
+    more comprehensive <a href="/org/us/company/ibm/product/SAA.html">SAA</a>. As the computer industry turned to open
+    standard architectures, IBM began to deemphasize its proprietary architectures in favor of becoming a participant
+    and leader in developing open standard architectures. However, most of its customer base retains a large investment
+    in legacy applications and system skills based on VTAM, SNA, and SAA. </p>
+  <p>VTAM's interface consists of "macro instructions" that set up connection control blocks and then do SENDs to
+    devices and either synchronous or asynchronous READs from them. Typically, programs written in Common Business
+    Oriented Language, PL/1, and assembler language use VTAM to communicate with interactive devices and their users.
+    Programs that use VTAM macro instructions are generally exchanging text strings (for example, online forms and the
+    user's form input) and the most common interactive device used with VTAM programs was the 3270 Information Display
+    System. </p></section>
+<section>
+  <h2>Caractéristiques</h2>
+  <ul>
+    <li>Utilisé en <a href="/tech/info/soft/proj/impl/lang/cobol">COBOL</a> via l'API fournie par CICS ;</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>CICS est disponible sur :</p>
+  <ul>
+    <li>OS/390</li>
+    <li><a href="/tech/info/soft/prod/os/unix">Unix</a></li>
+    <li>PC Intel</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

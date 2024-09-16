@@ -1,18 +1,25 @@
 import { HtmlRR0SsgContext } from "../RR0SsgContext"
 import { Time } from "./Time"
 import { TimeParseResult } from "./TimeReplacer"
-import edtf, { Date } from "edtf"
+import {
+  Level2Date as EdtfDate,
+  Level2Duration as EdtfDuration,
+  Level2Interval as EdtfInterval,
+  Level2Timeshift
+} from "@rr0/time"
 
 /**
  * Time context for a RR0 page.
  */
 export class TimeContext {
 
-  static readonly durationRegexp = new RegExp("P(:?(\\d+)D)?(:?(\\d+)H)?(:?(\\d+)M)?(:?(\\d+)S)?")
-
   static readonly dateTimeRegexp = new RegExp(
     "^(~)?(-?\\d{3,})?(?:-?([0-1]\\d)(?!\:))?(?:-?([0-3]\\d{1,2}(?!\:)))?(?:[T ]?(?:([0-2]\\d):([0-5]\\d))?)?(?: ?([A-Z]{3}))?"
   )
+
+  date: EdtfDate | undefined
+  interval: EdtfInterval | undefined
+  duration: EdtfDuration | undefined
 
   static parseDateTime(timeStr: string): TimeParseResult {
     const dateTimeValues = TimeContext.dateTimeRegexp.exec(timeStr)
@@ -24,18 +31,50 @@ export class TimeContext {
   }
 
   constructor(
-    protected _year?: number,
-    protected _month?: number, protected _dayOfMonth?: number, protected _hour?: number,
-    protected _minutes?: number, protected _timeZone?: string, public approximate: boolean = false,
-    public approximateTime: boolean = false,
+    _year?: number,
+    _month?: number,
+    _dayOfMonth?: number,
+    _hour?: number,
+    _minutes?: number,
+    _timeZone?: string,
+    approximate: boolean = false,
+    approximateTime: boolean = false,
+    /** @deprecated */
     public from: TimeContext | undefined = undefined,
+    /** @deprecated */
     public to: TimeContext | undefined = undefined,
-    public duration: number | undefined = undefined
+    duration: number | undefined = undefined
   ) {
+    if (from) {
+      this.interval = new EdtfInterval(from?.date, to?.date)
+    } else if (duration) {
+      this.duration = new EdtfDuration(duration)
+    } else {
+      this.date = new EdtfDate(
+        {year: _year, month: _month, day: _dayOfMonth, hour: _hour, minutes: _minutes, timeZone: _timeZone})
+      if (approximate) {
+        this.date.year.approximate = true
+      }
+      if (approximateTime) {
+        if (this.date.hour) {
+          this.date.hour.approximateComponent = true
+        }
+        if (this.date.minutes) {
+          this.date.minutes.approximateComponent = true
+        }
+        if (this.date.seconds) {
+          this.date.seconds.approximateComponent = true
+        }
+      }
+    }
   }
 
-  getYear(): number | undefined {
-    return this._year
+  get approximate(): boolean {
+    return this.date?.approximate || this.interval?.approximate || this.duration?.approximate
+  }
+
+  get approximateTime(): boolean {
+    return this.approximate || this.date?.hour?.approximate || this.date?.minute?.approximate || this.date?.second?.approximate
   }
 
   static fromString(timeStr: string): TimeContext {
@@ -46,27 +85,24 @@ export class TimeContext {
 
   updateFromStr(timeStr: string) {
     if (timeStr) {
-      const intervalDelimiter = timeStr.indexOf("/")
-      this.reset()
-      if (intervalDelimiter >= 0) {
-        const startStr = timeStr.substring(0, intervalDelimiter)
-        const endStr = timeStr.substring(intervalDelimiter + 1)
-        if (startStr) {
-          this.from = this.clone()
-          TimeContext.updateValueFromStr(this.from, startStr)
-          if (endStr) {
-            this.to = this.clone()
-            TimeContext.updateValueFromStr(this.to, endStr)
-          } else {
-            this.to = undefined
+      try {
+        this.date = EdtfDate.fromString(timeStr)
+        this.duration = undefined
+        this.interval = undefined
+      } catch (e) {
+        try {
+          this.interval = EdtfInterval.fromString(timeStr)
+          this.date = undefined
+          this.duration = undefined
+        } catch (e) {
+          try {
+            this.duration = EdtfDuration.fromString(timeStr)
+            this.interval = undefined
+            this.date = undefined
+          } catch (e) {
+            console.warn("Could not resolve time string", timeStr, e.message)
           }
-        } else {
-          this.from = undefined
-          this.to = this.clone()
-          TimeContext.updateValueFromStr(this.to, endStr)
         }
-      } else {
-        TimeContext.updateValueFromStr(this, timeStr)
       }
     }
   }
@@ -75,125 +111,92 @@ export class TimeContext {
   static readonly HOUR = 60 * TimeContext.MINUTE
   static readonly DAY = 24 * TimeContext.HOUR
 
-  static updateValueFromStr(context: TimeContext, timeStr: string) {
-    const durationValues = TimeContext.durationRegexp.exec(timeStr)
-    if (durationValues && durationValues[0]) {
-      const map = durationValues.slice(1)
-      const [daysStr, hoursStr, minutesStr, secondsStr] = map.reduce((reduced: string[], current: string, i) => {
-        if (i % 2 !== 0) {
-          reduced.push(current)
-        }
-        return reduced
-      }, [])
-      const days = parseInt(daysStr, 10) || 0
-      const hours = parseInt(hoursStr, 10) || 0
-      const minutes = parseInt(minutesStr, 10) || 0
-      const seconds = parseInt(secondsStr, 10) || 0
-      context.duration = seconds + (minutes * TimeContext.MINUTE) + (hours * TimeContext.HOUR) + (days * TimeContext.DAY)
-    } else {
-      TimeContext.updateTimeFromStr(context, timeStr)
-    }
-  }
-
-  static updateTimeFromStr(context: TimeContext, timeStr: string): TimeContext {
-    try {
-      const date = edtf(timeStr)
-      console.log(date)
-    } catch (e) {
-      console.error(e)
-    }
-    const result = TimeContext.parseDateTime(timeStr)
-    if (result) {
-      const {approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone} = result
-      context.approximate = Boolean(approximate)
-      context.setYear(parseInt(yearStr, 10))
-      if (monthStr) {
-        context.setMonth(parseInt(monthStr, 10))
-      }
-      if (dayOfMonthStr) {
-        context.setDayOfMonth(parseInt(dayOfMonthStr, 10))
-      }
-      if (hour) {
-        context.setHour(parseInt(hour, 10))
-      }
-      if (minutes) {
-        context.setMinutes(parseInt(minutes, 10))
-      }
-      if (timeZone) {
-        context.setTimeZone(timeZone)
-      }
-    }
-    return context
+  getYear(): number | undefined {
+    return this.date?.year?.value
   }
 
   setYear(year: number | undefined, print = true) {
-    if (year != this._year && print) {
+    if (year != this.date?.year?.value && print) {
       this.setMonth(undefined, print)
     }
-    this._year = year
+    this.date = this.date || new EdtfDate()
+    this.date.year = year
     return this
   }
 
   getMonth(): number | undefined {
-    return this._month
+    return this.date?.month?.value
   }
 
   setMonth(month: number | undefined, print = true) {
-    if (month != this._month && print) {
+    if (month != this.date?.month?.value && print) {
       this.setDayOfMonth(undefined, print)
     }
-    this._month = month
+    this.date = this.date || new EdtfDate()
+    this.date.month = month
     return this
   }
 
   getDayOfMonth(): number | undefined {
-    return this._dayOfMonth
+    return this.date?.day?.value
   }
 
   setDayOfMonth(dayOfMonth: number | undefined, print = true) {
-    if (dayOfMonth != this._dayOfMonth && print) {
+    if (dayOfMonth != this.date?.day?.value && print) {
       this.setHour(undefined, print)
     }
-    this._dayOfMonth = dayOfMonth
+    this.date = this.date || new EdtfDate()
+    this.date.day = dayOfMonth
     return this
   }
 
   getHour(): number | undefined {
-    return this._hour
+    return this.date?.hour?.value
   }
 
   setHour(hour: number | undefined, print = true) {
-    if (hour != this._hour && print) {
+    if (hour != this.date?.hour?.value && print) {
       this.setMinutes(undefined)
     }
-    this._hour = hour
+    this.date = this.date || new EdtfDate()
+    this.date.hour = hour
     return this
   }
 
   getMinutes(): number | undefined {
-    return this._minutes
+    return this.date?.minute?.value
   }
 
   setMinutes(minutes: number | undefined) {
-    this._minutes = minutes
+    this.date = this.date || new EdtfDate()
+    this.date.minute = minutes
     return this
   }
 
   getTimeZone(): string | undefined {
-    return this._timeZone
+    return this.date?.timeshift?.toString()
   }
 
   setTimeZone(timeZone: string | undefined) {
-    this._timeZone = timeZone
+    this.date = this.date || new Level2Timeshift()
+    try {
+      this.date.timeshift = Level2Timeshift.fromString(timeZone)
+    } catch (e) {
+      console.warn("Could not resolve time zone", timeZone, e.message)
+    }
     return this
   }
 
   isDefined(): boolean {
-    return this._year != undefined
-      || this._month != undefined
-      || this._dayOfMonth != undefined
-      || this._hour != undefined
-      || this._minutes != undefined
+    const date = this.date
+    if (!date) {
+      return false
+    }
+    return date.year?.value != undefined
+      || date.month?.value != undefined
+      || date.day?.value != undefined
+      || date.hour?.value != undefined
+      || date.minute?.value != undefined
   }
 
   static fromDate(date: Date): TimeContext {
@@ -202,20 +205,14 @@ export class TimeContext {
   }
 
   clone(): TimeContext {
-    return new TimeContext(this._year, this._month, this._dayOfMonth, this._hour, this._minutes, this._timeZone,
+    return new TimeContext(this.date?.year?.value, this.date?.month?.value, this.date?.day?.value,
+      this.date?.hour?.value, this.date?.minutes?.value, this.date?.timeshift?.value,
       this.approximate, this.approximateTime, this.from, this.to, this.duration)
   }
 
   reset(): this {
-    this.setYear(undefined)
-    this.setMonth(undefined)
-    this.setDayOfMonth(undefined)
-    this.setHour(undefined)
-    this.setMinutes(undefined)
-    this.approximate = false
-    this.approximateTime = false
-    this.from = undefined
-    this.to = undefined
+    this.date = undefined
+    this.interval = undefined
     this.duration = undefined
     return this
   }
@@ -265,28 +262,7 @@ export class TimeContext {
   }
 
   toString(): string {
-    const year = this.getYear()
-    let s = this.approximate ? "~" : ""
-    if (this.isSet(year)) {
-      s += String(year)
-    }
-    const month = this.getMonth()
-    if (this.isSet(month)) {
-      s += "-" + String(month).padStart(2, "0")
-    }
-    const day = this.getDayOfMonth()
-    if (this.isSet(day)) {
-      s += "-" + String(day).padStart(2, "0")
-    }
-    const hour = this.getHour()
-    if (this.isSet(hour)) {
-      s += "T" + String(hour).padStart(2, "0")
-    }
-    const minutes = this.getMinutes()
-    if (this.isSet(minutes)) {
-      s += ":" + String(minutes).padStart(2, "0")
-    }
-    return s
+    return this.date ? this.date.toString() : ""
   }
 
   toJSON() {

@@ -1,0 +1,73 @@
+<!--#include virtual="/header-start.html" -->
+<title>NAT</title>
+<meta content="https://www.faqs.org/ftp/rfc/rfc1631.txt" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">Network Address Translator</i> (ou <i lang="en">Translation</i>) : traducteur (traduction) d'adresses
+  réseau.</p>
+<section>
+  <h2>Besoin</h2>
+  <ul>
+    <li>Mutualiser les adresses <a href="/tech/info/soft/net/protocole/3/IP.html">IP</a> publiques</li>
+    <li>Masquer les adresses <a href="/tech/info/soft/net/protocole/3/IP.html">IP</a> des appelants</li>
+  </ul>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Un périphérique (routeur, machine) constitue une interface entre :</p>
+  <ul>
+    <li>le <strong>réseau public</strong> (Internet typiquement) où les machines ont des adresses publiques déposées
+    </li>
+    <li> le <strong>réseau privé</strong> ou <em>stub domain</em> (un LAN typiquement) où les machines ont des adresses
+      privées utilisées uniquement en interne.</li>
+  </ul>
+  <p>Le NAT peut être :</p>
+  <ul>
+    <li><strong>statique</strong> : remplacement d'une adresse publique par une adresse privée. Utile pour les machines
+      qui doivent être contactées depuis l'extérieur.</li>
+    <li><strong>dynamique</strong> : remplacement d'une adresse publique par une adresse privée non utilisée dans un
+      groupe d'adresses privées disponibles.
+      <ul>
+        <li><strong>surcharge</strong> (<em>overloading</em>) : remplacement d'une adresse publique par une adresse
+          privée vers un port non utilisé dans un groupe de ports disponibles sur cette adresses privée. Cette méthode
+          utilise la fonctionnalité multiplexage de <a href="/tech/info/soft/net/protocole/4/tcp">TCP</a>/<a
+            href="/tech/info/soft/net/protocole/3/IP.html">IP</a>.</li>
+      </ul>
+    </li>
+    <li><strong>recouvrement</strong> (<em>overlapping</em>) : remplacement d'une adresse publique par une adresse
+      privée selon une table de conversion.</li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Développé par Cisco <time>1994</time>.</li>
+    <li>Défini par la <a href="https://www.faqs.org/ftp/rfc/rfc1631.txt">RFC 1631</a></li>
+    <li>On utilise souvent les termes "natter" ou "naté(e)(s)" en français.</li>
+    <li>Intéressant quand de nombreux postes ne nécessitent rien d'autre qu'un accès externe.</li>
+    <li>Souvent utilisé comme moyen de sécurité via à son "obscurcissement" des infos.</li>
+    <li>Très bien adapté avec DHCP (qui distribue des adresses internes à volonté).</li>
+    <li>Différents des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurProxy.html">serveurs proxies</a> car
+      opérant au niveau réseau (OSI 3) et non transport (OSI 4). Cela le rend
+      <ul>
+        <li>plus performant </li>
+        <li>plus transparent (pas de configuration nécessaire pour le client), simplifiant ainsi l'administration réseau
+          :
+          <ul>
+            <li>on peut changer l'adresse réelle/physique d'une machine accédée sans changer l'adresse accédée par les
+              clients).</li>
+            <li>les adresses internes peuvent varier sans dépendances au réseau public</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Rend impossible certaines opérations (XWindows par exemple)</li>
+    <li>souvent substitut à une bonne conception de réseau (plus facile à mettre en place pour faire de la sécurité que
+      de configurer correctement un réseau par exemple).</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

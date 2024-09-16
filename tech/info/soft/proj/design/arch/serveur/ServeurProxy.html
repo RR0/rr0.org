@@ -9,12 +9,13 @@
   <h2>Analyse</h2>
   <p>On distingue plusieurs types de proxys :</p>
   <ul>
-    <li><strong><a href="../web/index.html">Web</a></strong> (<a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>)
+    <li><strong><a href="../web/index.html">Web</a></strong> (<a
+      href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a>)
     </li>
-    <li><strong><a href="/tech/info/soft/reseau/protocole/7/HTTP.html">FTP</a></strong></li>
-    <li><strong><a href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a></strong> : de moins en moins utilisée de
+    <li><strong><a href="/tech/info/soft/net/protocole/7/HTTP.html">FTP</a></strong></li>
+    <li><strong><a href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a></strong> : de moins en moins utilisée de
       par la démocratisation de <a
-        href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> qui est aujourd'hui implémenté dans de nombreux
+        href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a> qui est aujourd'hui implémenté dans de nombreux
       clients réseaux (navigateurs notamment), l'un des avantages de ce protocole est de pouvoir être exploité de
       manière transparente pour l'utilisateur.</li>
   </ul>
@@ -22,9 +23,9 @@
 <section>
   <h2>Implémentation</h2>
   <section>
-    <h3><a href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a></h3>
+    <h3><a href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a></h3>
     <p>Depuis Java 1.1, il est possible de configurer l'utilisation d'un proxy pour les requêtes <a
-      href="/tech/info/soft/reseau/protocole/7/HTTP.html">HTTP</a>.</p>
+      href="/tech/info/soft/net/protocole/7/HTTP.html">HTTP</a>.</p>
     <p>La classe abstraite <code>java.net.HttpURLConnection</code> dispose en effet d'une méthode
       <code>usingProxy()</code> indiquant si la connection passe par un proxy HTTP, et la classe privée <code>sun.net.www.http.HttpClient</code>
       sait gérer</p>
@@ -33,22 +34,22 @@
     </p>
   </section>
   <section>
-    <h3><a href="/tech/info/soft/reseau/protocole/7/HTTP.html">FTP</a></h3>
+    <h3><a href="/tech/info/soft/net/protocole/7/HTTP.html">FTP</a></h3>
     <p>Depuis Java 1.1, il est possible de configurer l'utilisation d'un proxy pour les requêtes FTP.</p>
     <p>Il faut pour cela effectuer une configuration via les propriétés système Java <code>ftpProxyHost</code> et <code>ftpProxyPort</code>.
     </p></section>
   <section>
     <h3>SOCKS</h3>
     <p>l'implémentation par défaut des sockets (classe non publique <code>java.net.PlainSocketImpl</code>) supporte le
-      protocole <a href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> version 4, et peut être paramétrée pour
+      protocole <a href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a> version 4, et peut être paramétrée pour
       contacter un serveur SOCKS en fixant la valeur de la propriété Java <code>socksProxyHost</code>, et éventuellement
       <code>socksProxyPort</code> si le port de ce serveur est différent de 1080 (le port <a
-        href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> par défaut). <span
+        href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a> par défaut). <span
         class="note">La propriété </span><span
         class="note"><code>user.name</code>
   sera également utilisée dans ce protocole.</span></p>
     <p>Cette implémentation par défaut peut aussi être remplacée par une autre (des sockets <a
-      href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a>, des sockets compressant leurs données...) </p>
+      href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a>, des sockets compressant leurs données...) </p>
     <ul>
       <li>grâce à une fabrique de sockets (classe dérivant de <code>java.net.SocketFactory</code> et fournissant une
         spécialisation de <code>java.net.SocketImpl</code>). Cet possibilité est cependant limitée, dans la mesure où
@@ -67,14 +68,14 @@
     <li>SOCKS
       <ul>
         <li><strong>SOCKSCap</strong> (<i lang="en">SOCKS Capabilities</i>) : disponible sur Win32, il permet
-          d'exploiter <a href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> sans changer le code ni paramétrer
+          d'exploiter <a href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a> sans changer le code ni paramétrer
           ses logiciels (<a href="../web/client/index.html">navigateurs</a> par exemple) qui ne connaissent pas <a
-            href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> à l'origine. Il suffit de soumettre
+            href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a> à l'origine. Il suffit de soumettre
           l'application à exécuter à SocksCap, qui se charge de remplacer la pile TCP-IP vue par l'application cliente.
-          En fait, la pile <a href="/tech/info/soft/reseau/protocole/4/tcp">TCP</a>-IP de SocksCap convertit de
+          En fait, la pile <a href="/tech/info/soft/net/protocole/4/tcp">TCP</a>-IP de SocksCap convertit de
           manière transparente les appels de l'application cliente en appels <a
-            href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a>, adressés au serveur <a
-            href="/tech/info/soft/reseau/protocole/SOCKS.html">SOCKS</a> local (dont l'adresse et le port sont à
+            href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a>, adressés au serveur <a
+            href="/tech/info/soft/net/protocole/SOCKS.html">SOCKS</a> local (dont l'adresse et le port sont à
           configurer dans SocksCap).</li>
       </ul>
     </li>

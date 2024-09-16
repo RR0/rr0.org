@@ -5,7 +5,7 @@ import { TypedDataFactory } from "../data/TypedDataFactory"
 export class ArticleFactory extends TypedDataFactory<Article> {
 
   constructor() {
-    super("article")
+    super(eventFactory, "article", ["index", "article"])
   }
 
   createFromData(data: RR0Data): Article {

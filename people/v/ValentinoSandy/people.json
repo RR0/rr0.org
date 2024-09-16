@@ -1,0 +1,16 @@
+{
+  "occupations": [
+    "artist",
+    "ufoWitness"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1973-07-08",
+      "place": "Paris"
+    }
+  ]
+}

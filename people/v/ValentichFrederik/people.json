@@ -1,11 +1,19 @@
 {
-  "birthTime": "1958-06-09",
-  "deathTime": "1978-10-21",
   "occupations": [
     "pilot",
     "ufoWitness"
   ],
   "countries": [
     "au"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1958-06-09"
+    },
+    {
+      "type": "death",
+      "time": "1978-10-21"
+    }
   ]
 }

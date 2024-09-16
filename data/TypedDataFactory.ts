@@ -16,10 +16,11 @@ export class TypedDataFactory<T extends RR0Data> extends AbstractDataFactory<T> 
   create(file: FileContents): T | undefined {
     const data = JSON.parse(file.contents) as RR0Data
     const basename = path.basename(file.name)
+    if (!data.type) {
+      data.type = basename.substring(0, basename.indexOf(".")).toLowerCase()
+    }
     let datum: T | undefined
-    if (data.type === this.type || this.fileNames.reduce(
-      (hasIt: boolean, fileName) => basename.startsWith(fileName) ? true : hasIt,
-      false)) {
+    if (data.type === this.type) {
       data.dirName = path.dirname(file.name)
       datum = this.createFromData(data)
     }

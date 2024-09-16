@@ -3,17 +3,17 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/book/BookBuddy.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/org/eu/fr/cnes/geipan/export_cas_pub_20210219111412.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/org/int/asso/iso/86/index.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
@@ -1207,6 +1207,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/5/1/7/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/5/1/9/BeauJerome_RR0.csv">
           <value>
             <Attribute>
@@ -1242,7 +1249,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/5/3/7/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/5/4/0/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/1/5/4/7/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/1/5/4/8/BeauJerome_RR0.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -2131,6 +2159,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/7/9/0/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/7/9/3/BeauJerome_RR0.csv">
           <value>
             <Attribute>
@@ -2551,6 +2586,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/8/6/8/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/8/6/9/BeauJerome_RR0.csv">
           <value>
             <Attribute>
@@ -2670,6 +2712,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/8/8/6/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/8/8/7/BeauJerome_RR0.csv">
           <value>
             <Attribute>
@@ -2720,6 +2769,13 @@
           </value>
         </entry>
         <entry key="/time/1/8/9/5/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/1/8/9/6/10/BeauJerome_RR0.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -9685,6 +9741,13 @@
           </value>
         </entry>
         <entry key="/time/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/Catalogues.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

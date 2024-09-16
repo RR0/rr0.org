@@ -1,6 +1,13 @@
 {
-  "title": "Charles Frambach Berlitz",
-  "occupations": ["ufologist", "writer"],
+  "title": "Charles Berlitz",
+  "firstNames": [
+    "Charles",
+    "Frambach"
+  ],
+  "occupations": [
+    "ufologist",
+    "writer"
+  ],
   "countries": [
     "us"
   ],

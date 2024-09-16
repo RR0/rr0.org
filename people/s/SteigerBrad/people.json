@@ -1,5 +1,9 @@
 {
-  "title": "Eugene E. Olson",
+  "lastName": "Olson",
+  "firstNames": [
+    "Eugene",
+    "E."
+  ],
   "occupations": [
     "ufologist",
     "writer"

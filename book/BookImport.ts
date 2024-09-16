@@ -8,7 +8,6 @@ import { PeopleFactory } from "../people/PeopleFactory"
 import { RR0EventFactory } from "../event/RR0EventFactory"
 import { TypedDataFactory } from "../data/TypedDataFactory"
 import path from "path"
-import { glob } from "glob"
 
 interface BookImportArgs {
   import: string
@@ -19,21 +18,19 @@ const logger = new ConsoleLogger("rr0-books")
 const args = new CLI().getArgs<BookImportArgs>()
 const fileName = args.import
 const dry = args.dry === "true"
+const peopleFactory = new PeopleFactory(new RR0EventFactory())
 const eventFactory = new RR0EventFactory()
-const bookFactory = new TypedDataFactory(eventFactory, "book")
-const dataService = new AllDataService([bookFactory])
+const bookFactory = new TypedDataFactory<Book>(eventFactory, "book")
+const dataService = new AllDataService([bookFactory, peopleFactory])
 
-glob("people/*/*").then(peopleFiles => {
-  const peopleFactory = new PeopleFactory(new RR0EventFactory())
-  const outDir = "out"
-  const config: SsgConfig = {
-    getOutputPath(context: SsgContext): string {
-      return path.join(outDir, context.file.name)
-    }
+const outDir = "out"
+const config: SsgConfig = {
+  getOutputPath(context: SsgContext): string {
+    return path.join(outDir, context.file.name)
   }
-  const books = new BookService(logger, dry, new PeopleService(dataService, peopleFactory), config)
-  books.import(fileName).then((result: Book[]) => {
-      logger.log("Wrote", result.length, "books")
-    }
-  )
-})
+}
+const books = new BookService(logger, dry, new PeopleService(dataService, peopleFactory), config)
+books.import(fileName).then((result: Book[]) => {
+    logger.log("Wrote", result.length, "books")
+  }
+)

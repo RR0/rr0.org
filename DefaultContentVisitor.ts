@@ -18,7 +18,8 @@ export class DefaultContentVisitor implements ContentVisitor {
   async visit(context: HtmlRR0SsgContext) {
     const dirName = path.dirname(context.file.name)
     const dataList = await this.service.getFromDir(dirName,
-      ["people", "case", "sighting", "api", "product", "org"], ["index.json", "case.json", "people.json"])
+      ["people", "case", "sighting", "api", "product", "org"],
+      ["index.json", "case.json", "people.json", "api.json", "org.json"])
     if (dataList.length > 0) {
       for (const data of dataList) {
         switch (data.type) {

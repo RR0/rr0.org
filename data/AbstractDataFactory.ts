@@ -32,7 +32,7 @@ export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T>
 
   createFromData(data: RR0Data): T {
     data.time = this.createTimeFromString(data.time as any)
-    const events = data.events || []
+    const events: RR0Event[] = data.events || []
     const birthTime = (data as any).birthTime as unknown as string
     if (birthTime) {
       delete (data as any).birthTime

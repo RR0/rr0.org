@@ -1,0 +1,129 @@
+<!--#include virtual="/header-start.html" -->
+<title>UDP</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">User Datagram Protocol</i> : protocole de datagramme utilisateur.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Protocole réseau standard pour l'échange de documents sur le Web (pages <a
+    href="/tech/info/soft/data/doc/html">HTML</a>).</p>
+</section>
+<section>
+  <h2>Principes</h2>
+  <p>UDP est basé sur <a href="/tech/info/soft/net/protocole/3/IP.html">IP</a> (encapsulé dans les datagrammes IP).
+  </p>
+  <table>
+    <tr>
+      <th>Transport</th>
+      <td>
+        <div>UDP</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Réseau</th>
+      <td>
+        <div><a href="/tech/info/soft/net/protocole/3/IP.html">IP</a></div>
+      </td>
+    </tr>
+  </table>
+  <p>Un segment UDP contient :</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Section</th>
+      <th>Octet</th>
+      <th>
+        <div>Contenu</div>
+      </th>
+      <th>Commentaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td rowspan="4">En-tête</td>
+      <td>0-1</td>
+      <td> Port source</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>2-3</td>
+      <td> Port destination</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>4-7</td>
+      <td>Longueur du message</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>8-9</td>
+      <td>Somme de contrôle</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Données</td>
+      <td>24-</td>
+      <td>Données</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <h3>Java</h3>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Des exemples d'applications utilisant UDP sont :</p>
+  <form id="port-form">
+    <input disabled placeholder="Activez Javascript" type="search">
+  </form>
+  <table id="port-table">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>Port</th>
+      <th>Statut</th>
+      <th class="tcp">TCP</th>
+      <th class="udp">UDP</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <style>.tcp, .udp {
+    display: none
+  }</style>
+  <script type="module">import { portSearchLoad } from "../../index.js"
+
+  portSearchLoad(rec => rec.udp === true ? rec : undefined)</script>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Non connecté</li>
+    <li>Permet le broadcast</li>
+    <li>Taille des données limitée (64 Ko)</li>
+    <li>Envois parallèles facilités par rapport à TCP</li>
+    <li>Plus léger et rapide que TCP</li>
+    <li>Utilise la notion de port (16 bits) pour faire communiquer 2 applications sur des machines.</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Les messages sont bufferisés par l'OS. Si l'application n'est pas assez rapide, des messages peuvent être
+      perdus.</li>
+    <li>Pas de séquencement</li>
+    <li>Non fiable</li>
+  </ul>
+</section>
+<section>
+  <h2>Références</h2>
+  <ul>
+    <li><em>Unix Network Programming </em>de Richard Stevens (Addison-Wesley)</li>
+    <li><em>Internetworking with TCP/IP Vol. 1, 3ᵉ Edition</em> de Douglas Corner (Prentice Hall)</li>
+    <li><em>Internetworking with TCP/IP Vol. 3</em> de Douglas Corner (Prentice Hall)</li>
+    <li><em>TCP/IP Illustrated </em>de Richard Stevens (Addison Wesley)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

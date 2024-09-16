@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0"
+     xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" version="1.2" width="209.9mm" height="296.68mm"
+     viewBox="7000 9000 8990 2668" preserveAspectRatio="xMidYMid"
+     fill-rule="evenodd" stroke-width="28.222"
+     stroke-linejoin="round"
+     xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+ <g class="SlideGroup">
+  <g>
+   <g id="container-id1">
+    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+     <g class="Page">
+
+      <g class="com.sun.star.drawing.LineShape">
+       <g id="id75">
+        <rect class="BoundingBox" stroke="none" fill="none" x="10744" y="12718" width="2396" height="51"/>
+           <path fill="none" stroke="rgb(0,0,0)" stroke-width="50" stroke-linejoin="round"
+                 d="M 10769,12743 L 13114,12743"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id76">
+        <rect class="BoundingBox" stroke="none" fill="none" x="13096" y="12633" width="351" height="231"/>
+           <path fill="rgb(0,0,0)" stroke="none" d="M 13097,12863 L 13446,12753 13097,12633 13097,12863 Z"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.LineShape">
+       <g id="id77">
+        <rect class="BoundingBox" stroke="none" fill="none" x="10024" y="12210" width="772" height="561"/>
+           <path fill="none" stroke="rgb(0,0,0)" stroke-width="50" stroke-linejoin="round"
+                 d="M 10770,12745 L 10049,12235"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id78">
+        <rect class="BoundingBox" stroke="none" fill="none" x="9786" y="12057" width="350" height="290"/>
+           <path fill="rgb(0,0,0)" stroke="none" d="M 10135,12168 L 9787,12057 10008,12346 10135,12168 Z"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.LineShape">
+       <g id="id79">
+        <rect class="BoundingBox" stroke="none" fill="none" x="10756" y="11206" width="27" height="1517"/>
+           <path fill="none" stroke="rgb(0,0,0)" stroke-width="25" stroke-linejoin="round" stroke-linecap="round"
+                 d="M 10769,12709 L 10769,11219"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.LineShape">
+       <g id="id80">
+        <rect class="BoundingBox" stroke="none" fill="none" x="9787" y="11448" width="975" height="619"/>
+           <path fill="none" stroke="rgb(0,0,0)" stroke-width="16" stroke-linejoin="round" stroke-linecap="round"
+                 d="M 10753,11456 L 9795,12058"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.LineShape">
+       <g id="id81">
+        <rect class="BoundingBox" stroke="none" fill="none" x="9483" y="12701" width="1338" height="815"/>
+           <path fill="none" stroke="rgb(0,0,0)" stroke-width="50" stroke-linejoin="round"
+                 d="M 10795,12726 L 9508,13490"/>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id82">
+        <rect class="BoundingBox" stroke="none" fill="none" x="9245" y="13378" width="349" height="273"/>
+           <path fill="rgb(0,0,0)" stroke="none" d="M 9482,13378 L 9245,13650 9593,13565 9482,13378 Z"/>
+       </g>
+      </g>
+         <g class="TextShape">
+       <g id="id84">
+        <rect class="BoundingBox" stroke="none" fill="none" x="10389" y="11901" width="423" height="472"/>
+           <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="10389" y="12278"><tspan font-family="TimesNewRoman, serif" font-size="423px" font-weight="700" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">v </tspan></tspan></tspan></text>
+       </g>
+      </g>
+         <g class="TextShape">
+       <g id="id85">
+        <rect class="BoundingBox" stroke="none" fill="none" x="10185" y="13145" width="435" height="472"/>
+           <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="10185" y="13522"><tspan font-family="TimesNewRoman, serif" font-size="423px" font-weight="700" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">H </tspan></tspan></tspan></text>
+       </g>
+      </g>
+         <g class="TextShape">
+       <g id="id86">
+        <rect class="BoundingBox" stroke="none" fill="none" x="11447" y="12163" width="423" height="472"/>
+           <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="11447" y="12540"><tspan font-family="TimesNewRoman, serif" font-size="423px" font-weight="700" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">v </tspan></tspan></tspan></text>
+       </g>
+      </g>
+         <g class="TextShape">
+       <g id="id87">
+        <rect class="BoundingBox" stroke="none" fill="none" x="11769" y="12188" width="389" height="434"/>
+           <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="11769" y="12539"><tspan font-family="Arial, sans-serif" font-size="390px" font-weight="400" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">x</tspan></tspan></tspan></text>
+       </g>
+      </g>
+         <g class="com.sun.star.drawing.LineShape">
+       <g id="id88">
+        <rect class="BoundingBox" stroke="none" fill="none" x="9782" y="12053" width="27" height="1272"/>
+           <path fill="none" stroke="rgb(0,0,0)" stroke-width="25" stroke-linejoin="round" stroke-linecap="round"
+                 d="M 9795,12066 L 9795,13311"/>
+       </g>
+      </g>
+         <g class="TextShape">
+       <g id="id89">
+        <rect class="BoundingBox" stroke="none" fill="none" x="11963" y="12163" width="541" height="472"/>
+           <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="11963" y="12540"><tspan font-family="TimesNewRoman, serif" font-size="423px" font-weight="400" fill="rgb(0,0,0)" stroke="none" style="white-space: pre"> </tspan><tspan
+                   font-family="TimesNewRoman, serif" font-size="423px" font-weight="700" fill="rgb(0,0,0)"
+                   stroke="none" style="white-space: pre">H </tspan></tspan></tspan></text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

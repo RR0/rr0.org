@@ -8,11 +8,16 @@
   "events": [
     {
       "type": "birth",
-      "time": "~570"
+      "time": "~570",
+      "place": "La Mecque",
+      "notes": [
+        "Selon la tradition islamique"
+      ]
     },
     {
       "type": "death",
-      "time": "632-06-06"
+      "time": "632-06-06",
+      "place": "Médine"
     }
   ]
 }

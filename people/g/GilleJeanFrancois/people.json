@@ -1,7 +1,43 @@
 {
-  "occupations": ["ufologist"],
-  "pseudonyms": ["John F. Gille"],
+  "title": "Jean-François Gille",
+  "firstNames": [
+    "Jean-François",
+    "Georges",
+    "Robert"
+  ],
+  "surname": "John F.",
+  "occupations": [
+    "ufologist"
+  ],
+  "pseudonyms": [
+    "John F. Gille"
+  ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-05-25",
+      "place": "Paris",
+      "sources": [
+        {
+          "url": "https://avis-deces.linternaute.com/nom/famille-gille"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2023-09-08",
+      "place": "Éguilles (Bouches-du-Rhône)",
+      "notes": [
+        "d'un arrêt cardiaque"
+      ],
+      "sources": [
+        {
+          "url": "https://www.simplifia.fr/avis-de-deces/jean-francois-georges-robert-gille-eguilles"
+        }
+      ]
+    }
   ]
 }

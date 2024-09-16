@@ -1,6 +1,10 @@
 {
-  "birthTime": "1926-08-12",
-  "deathTime": "2005-11-19",
+  "Lastname": "Pratt",
+  "firstNames": [
+    "Robert",
+    "Vance"
+  ],
+  "surname": "Bob",
   "occupations": [
     "ufologist",
     "journalist",
@@ -8,5 +12,15 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "tile": "1926-08-12"
+    },
+    {
+      "type": "death",
+      "time": "2005-11-19"
+    }
   ]
 }

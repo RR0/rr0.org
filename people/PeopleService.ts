@@ -80,7 +80,7 @@ export class PeopleService extends AbstractDataService<People> {
   async getFromDir(dirName: string): Promise<People[]> {
     let peopleList: People[] = []
     const fileSpec = ["people*.json"]
-    const peopleDataList = await this.dataService.getFromDir(dirName, ["people", undefined], fileSpec) as People[]
+    const peopleDataList = await this.dataService.getFromDir<People>(dirName, ["people", undefined], fileSpec)
     for (const peopleData of peopleDataList) {
       const people = this.factory.createFromData(peopleData)
       peopleList.push(people)

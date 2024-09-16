@@ -1,0 +1,62 @@
+<!--#include virtual="/header-start.html" -->
+<title>S/MIME</title>
+<!--#include virtual="/header-end.html" -->
+<p><i>Secure/<a href="/tech/info/soft/net/protocole/6/MIME.html">MIME</a> </i>: <a
+  href="/tech/info/soft/net/protocole/6/MIME.html">MIME</a> sécurisé.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>Permettre à des e-mails au format <a href="/tech/info/soft/net/protocole/6/MIME.html">MIME</a> de bénéficier
+    de services :</p>
+  <ul>
+    <li>d'<a href="../../sec/auth">authentification</a></li>
+    <li> de <a href="../../sec/privacy">confidentialité</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>S/MIME ajoute au format de courrier standard :</p>
+  <ul>
+    <li>les <a href="/tech/info/soft/sec/auth/sign">signatures</a> d'identité numérique</li>
+    <li> le chiffrage des courriers.</li>
+  </ul>
+  <p>Cette standardisation garantit aux utilisateurs l'intéropérabilité entre les logiciels de courrier électronique du
+    marché. Pour émettre et recevoir des courriers électroniques utilisant un Certificat d'Identité Numérique et le
+    chiffrement, il est nécessaire d'utiliser un logiciel supportant S/MIME.</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <p>Le protocole S/MIME se situe au-dessus de <a href="/tech/info/soft/net/protocole/5/SMTP.html">SMTP</a>, et est
+    basé sur :</p>
+  <ul>
+    <li><a href="/tech/info/soft/net/protocole/6/MIME.html">MIME</a></li>
+    <li><a href="/tech/info/soft/sec/privacy/crypto/pkcs">PKCS</a></li>
+    <li>les <a href="../../sec/auth/cert">certificats</a> <a href="../../sec/auth/cert/X509.html">X.509</a>.
+    </li>
+  </ul>
+  <p>S/MIME définit comment l'en-tête du courrier électronique (<i>e-mail</i>) doit être structuré. Il exploite la
+    technique d'<a href="#enveloppe">enveloppe électronique</a>, pour laquelle il recommande les algorithmes symétriques
+    <a href="../../sec/privacy/crypto/des">DES</a>, <a href="/tech/info/soft/sec/privacy/crypto/des/3DES.html">3DES</a>
+    et <a
+      href="/tech/info/soft/sec/privacy/crypto/RC2.html">RC2</a> (40 bits seulement pour conformité avec l'exportation
+    hors des USA) et l'algorithme de clé publique <a href="/org/us/company/RSA.html">RSA</a>.</p></section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>relativement bien adapté au commerce électronique.</li>
+    <li>De par sa souplesse et son support des <a href="../../sec/auth/cert">certificats</a> (contrairement à <a
+      href="/tech/info/soft/sec/privacy/PGP.html">PGP</a>), des attachements binaires (contrairement à <a
+      href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a>), S/MIME est à préférer à ses concurrents <a
+      href="/tech/info/soft/sec/privacy/PGP.html">PGP</a>, <a href="/tech/info/soft/sec/auth/cert/PEM.html">PEM</a> et
+      <a href="/tech/info/soft/sec/privacy/crypto/MOSS.html">MOSS</a>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>RFC <a href="https://www.imc.org/rfc2311">S/MIME Message Specification</a> (soumises à l'<a
+      href="/org/int/iab/IETF.html">IETF</a>)</li>
+    <li>RFC <a href="https://www.imc.org/rfc2312">S/MIME Certificate Handling</a> (soumises à l'<a
+      href="/org/int/iab/IETF.html">IETF</a>)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

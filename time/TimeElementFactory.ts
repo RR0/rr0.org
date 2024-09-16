@@ -1,6 +1,6 @@
 import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
 import { TimeRenderer, TimeRenderOptions } from "./TimeRenderer"
-import { TimeParseResult, TimeReplacer } from "./TimeReplacer"
+import { TimeReplacer } from "./TimeReplacer"
 import { TimeContext } from "./TimeContext"
 
 /**
@@ -9,36 +9,6 @@ import { TimeContext } from "./TimeContext"
 export class TimeElementFactory {
 
   constructor(readonly renderer: TimeRenderer) {
-  }
-
-  static setTimeContextFrom(timeContext: TimeContext, parsed: TimeParseResult) {
-    if (parsed.yearStr) {
-      const year = parseInt(parsed.yearStr, 10)
-      if (!Number.isNaN(year)) {
-        timeContext.setYear(year)
-      }
-    }
-    if (parsed.monthStr) {
-      const month = parseInt(parsed.monthStr, 10)
-      if (!Number.isNaN(month)) {
-        timeContext.setMonth(month)
-      }
-    }
-    if (parsed.dayOfMonthStr) {
-      const dayOfMonth = parseInt(parsed.dayOfMonthStr, 10)
-      if (!Number.isNaN(dayOfMonth)) {
-        timeContext.setDayOfMonth(dayOfMonth)
-      }
-    }
-    if (parsed.hour) {
-      timeContext.setHour(parseInt(parsed.hour, 10))
-    }
-    if (parsed.minutes) {
-      timeContext.setMinutes(parseInt(parsed.minutes, 10))
-    }
-    if (parsed.timeZone) {
-      timeContext.setTimeZone(parsed.timeZone)
-    }
   }
 
   create(context: HtmlRR0SsgContext, previousContext: HtmlRR0SsgContext | undefined,

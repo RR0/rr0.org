@@ -8,7 +8,6 @@ import { Place } from "../../../place/Place"
 import { Publication, Source } from "../../../source/Source"
 import { CityService } from "../../../org/country/region/department/city/CityService"
 import { Organization } from "../../../org/Organization"
-import { TimeElementFactory } from "../../TimeElementFactory"
 
 export class RR0HttpDatasource extends RR0Datasource {
 
@@ -91,7 +90,33 @@ export class RR0HttpDatasource extends RR0Datasource {
       let publisher: string
       if (parsedTime) {
         time = new TimeContext()
-        TimeElementFactory.setTimeContextFrom(time, parsedTime)
+        if (parsedTime.yearStr) {
+          const year = parseInt(parsedTime.yearStr, 10)
+          if (!Number.isNaN(year)) {
+            time.setYear(year)
+          }
+        }
+        if (parsedTime.monthStr) {
+          const month = parseInt(parsedTime.monthStr, 10)
+          if (!Number.isNaN(month)) {
+            time.setMonth(month)
+          }
+        }
+        if (parsedTime.dayOfMonthStr) {
+          const dayOfMonth = parseInt(parsedTime.dayOfMonthStr, 10)
+          if (!Number.isNaN(dayOfMonth)) {
+            time.setDayOfMonth(dayOfMonth)
+          }
+        }
+        if (parsedTime.hour) {
+          time.setHour(parseInt(parsedTime.hour, 10))
+        }
+        if (parsedTime.minutes) {
+          time.setMinutes(parseInt(parsedTime.minutes, 10))
+        }
+        if (parsedTime.timeZone) {
+          time.setTimeZone(parsedTime.timeZone)
+        }
         pubItems.pop()
       }
       publisher = pubItems.splice(1, pubItems.length - 1).map(item => item.trim()).join(", ").trim()

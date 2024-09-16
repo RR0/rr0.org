@@ -32,7 +32,7 @@ export interface RR0Data {
   /**
    * The data type ("people", "place", "org", "book", "case", "sighting"...)
    */
-  readonly type?: string
+  type?: string
 
   /**
    * Parent data.

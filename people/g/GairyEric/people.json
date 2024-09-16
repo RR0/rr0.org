@@ -1,0 +1,23 @@
+{
+  "title": "Eric Gairy",
+  "occupations": [
+    "politician"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1922-02-18",
+      "place": "Dunfermline (Paroisse de Saint Andrew, Grenade)"
+    },
+    {
+      "type": "death",
+      "time": "1997-08-27",
+      "place": "Grand Anse (Grenade)",
+      "sources": [
+        {
+          "url": "/time/1/9/9/7/08/24/GrenadaSirEricGairyUfoEnthusiastDeadAt75/index_fr.html"
+        }
+      ]
+    }
+  ]
+}

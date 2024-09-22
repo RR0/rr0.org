@@ -1,95 +1,79 @@
-<html>
-<head>
-  <title>WSDL</title>
-  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-  <link href="/rr0.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-<h1><span class="sourceIdent1"></span> <span class="warning"></span> <span class="titre4"><a
-    href="https://www.w3.org/TR/SOAP">W.
-  S. D. L.</a></span></h1>
-<table>
-  <tr>
-    <th colspan="4"><a href="javascript:history.go(-1)">Retour</a> | <a href="../../../index.html">Home</a> | <a
-        href="../../../Contact.html">Contact</a></th>
-  </tr>
-</table>
-
-<p><i> <a href="index.html">Web Services</a> Description Language</i> : langage de description de <a href="index.html">services
-  Web</a>.</p>
-<h2>Besoin</h2>
-<p>Décrire l'interface proposée par un <a href="index.html">service Web</a>.</p>
-<h2>Analyse</h2>
-<p>WSDL décrit pour chaque opération que le client peut appeler.</p>
-<h2>Exemples</h2>
-<p>Un exemple de description WSDL est :</p>
-<blockquote><code>&lt;<strong>definitions </strong>xmlns:xsd=<span class="codeString">"https://www.w3.org/2000/10/XMLSchema"</span>
-  xmlns:soap=<span class="codeString">"https://schemas.xmlsoap.org/wsdl/soap/"</span>&gt;<br> <br>
-  &lt;<strong>types</strong>&gt;<br>
-  &lt;xsd:schema&gt;<br>
-  &lt;xsd:element name=<span class="codeString">"Action"</span>&gt;<br>
-  &lt;xsd:sequence&gt;<br>
-  &lt;xsd:element name=<span class="codeString">"nomEntreprise"</span> type=<span class="codeString">"xsd:string"</span>
-  /&gt;<br>
-  &lt;xsd:element name=<span class="codeString">"cours"</span> type=<span class="codeString">"xsd:float"</span>
-  /&gt;<br>
-  &lt;/xsd:sequence&gt; <br>
-  &lt;/xsd:element&gt; <br>
-  &lt;/xsd:schema&gt; <br>
-  &lt;/<strong>types</strong>&gt;<br> <br>
-  &lt;<strong>message name</strong>=<span class="codeString">"getCoursInput"</span>&gt;<br>
-  &lt;<strong>part name</strong>=<span class="codeString">"nomEntreprise"</span> <strong>type</strong>=<span
+<!--#include virtual="/header-start.html" -->
+<title>WSDL</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en"><a href="index.html">Web Services</a> Description Language</i> : langage de description de <a
+  href="index.html">services Web</a>.</p>
+<section>
+  <h2>Besoin</h2>
+  <p>DÃ©crire l'interface proposÃ©e par un <a href="index.html">service Web</a>.</p></section>
+<section>
+  <h2>Analyse</h2>
+  <p>WSDL dÃ©crit pour chaque opÃ©ration que le client peut appeler.</p></section>
+<section>
+  <h2>Exemples</h2>
+  <p>Un exemple de description WSDL est :</p>
+  <blockquote><code>&lt;<strong>definitions </strong>xmlns:xsd=<span class="codeString">"https://www.w3.org/2000/10/XMLSchema"</span>
+    xmlns:soap=<span class="codeString">"https://schemas.xmlsoap.org/wsdl/soap/"</span>&gt;<br> <br>
+    &lt;<strong>types</strong>&gt;<br>
+    &lt;xsd:schema&gt;<br>
+    &lt;xsd:element name=<span class="codeString">"Action"</span>&gt;<br>
+    &lt;xsd:sequence&gt;<br>
+    &lt;xsd:element name=<span class="codeString">"nomEntreprise"</span> type=<span
       class="codeString">"xsd:string"</span> /&gt;<br>
-  &lt;/<strong>message</strong>&gt;<br> <br>
-  &lt;<strong>message name</strong>=<span class="codeString">"getCoursOutput"</span>&gt;<br>
-  &lt;<strong>part name</strong>=<span class="codeString">"coursAction"</span> <strong>type</strong>=<span
+    &lt;xsd:element name=<span class="codeString">"cours"</span> type=<span class="codeString">"xsd:float"</span>
+    /&gt;<br>
+    &lt;/xsd:sequence&gt; <br>
+    &lt;/xsd:element&gt; <br>
+    &lt;/xsd:schema&gt; <br>
+    &lt;/<strong>types</strong>&gt;<br> <br>
+    &lt;<strong>message name</strong>=<span class="codeString">"getCoursInput"</span>&gt;<br>
+    &lt;<strong>part name</strong>=<span class="codeString">"nomEntreprise"</span> <strong>type</strong>=<span
+      class="codeString">"xsd:string"</span> /&gt;<br>
+    &lt;/<strong>message</strong>&gt;<br> <br>
+    &lt;<strong>message name</strong>=<span class="codeString">"getCoursOutput"</span>&gt;<br>
+    &lt;<strong>part name</strong>=<span class="codeString">"coursAction"</span> <strong>type</strong>=<span
       class="codeString">"xsd:float"</span> /&gt;<br>
-  &lt;/<strong>message</strong>&gt;<br> <br>
-  &lt;<strong>portType name</strong>=<span class="codeString">"BoursePortType"</span>&gt;<br>
-  &lt;<strong>operation name</strong>=<span class="codeString">"getCours"</span>&gt;<br>
-  &lt;<strong>input message</strong>=<span class="codeString">"getCoursInput"</span> /&gt; <br>
-  &lt;<strong>output message</strong>=<span class="codeString">"getCoursOutput"</span> /&gt; <br>
-  &lt;/<strong>operation</strong>&gt;<br>
-  &lt;/<strong>portType</strong>&gt; <br> <br>
-  &lt;<strong>binding name</strong>=<span class="codeString">"BourseSoapBinding"</span> <strong>type</strong>=<span
+    &lt;/<strong>message</strong>&gt;<br> <br>
+    &lt;<strong>portType name</strong>=<span class="codeString">"BoursePortType"</span>&gt;<br>
+    &lt;<strong>operation name</strong>=<span class="codeString">"getCours"</span>&gt;<br>
+    &lt;<strong>input message</strong>=<span class="codeString">"getCoursInput"</span> /&gt; <br>
+    &lt;<strong>output message</strong>=<span class="codeString">"getCoursOutput"</span> /&gt; <br>
+    &lt;/<strong>operation</strong>&gt;<br>
+    &lt;/<strong>portType</strong>&gt; <br> <br>
+    &lt;<strong>binding name</strong>=<span class="codeString">"BourseSoapBinding"</span> <strong>type</strong>=<span
       class="codeString">"BoursePortType"</span>&gt;<br>
-  &lt;soap:<strong>binding style</strong>=<span class="codeString">"rpc"</span> <strong>transport</strong>=<span
+    &lt;soap:<strong>binding style</strong>=<span class="codeString">"rpc"</span> <strong>transport</strong>=<span
       class="codeString">"https://schemas.xmlsoap.org/soap/http"
   </span>/&gt; <br>
-  &lt;<strong>operation name</strong>=<span class="codeString">"getCours"</span>&gt;<br>
-  &lt;soap:<strong>operation soapAction</strong>=<span class="codeString">"urn:Bourse"</span> /&gt;<br>
-  &lt;<strong>input</strong>&gt;<br>
-  &lt;soap:<strong>body use</strong>=<span class="codeString">"encoded"</span> <strong>encodingStyle</strong>=<span
+    &lt;<strong>operation name</strong>=<span class="codeString">"getCours"</span>&gt;<br>
+    &lt;soap:<strong>operation soapAction</strong>=<span class="codeString">"urn:Bourse"</span> /&gt;<br>
+    &lt;<strong>input</strong>&gt;<br>
+    &lt;soap:<strong>body use</strong>=<span class="codeString">"encoded"</span> <strong>encodingStyle</strong>=<span
       class="codeString">"https://..."</span> /&gt;<br>
-  &lt;/<strong>input</strong>&gt;
-  <br>
-  &lt;<strong>output</strong>&gt;<br>
-  &lt;soap:<strong>body use</strong>=<span class="codeString">"encoded"</span> <strong>encodingStyle</strong>=<span
+    &lt;/<strong>input</strong>&gt;
+    <br>
+    &lt;<strong>output</strong>&gt;<br>
+    &lt;soap:<strong>body use</strong>=<span class="codeString">"encoded"</span> <strong>encodingStyle</strong>=<span
       class="codeString">"https://..."</span> /&gt;<br>
-  &lt;/<strong>output</strong>&gt;
-  <br>
-  &lt;/<strong>operation</strong>&gt;<br>
-  &lt;/soap:<strong>binding</strong>&gt; <br>
-  &lt;/<strong>binding</strong>&gt;<br> <br>
-  &lt;<strong>service name</strong>=<span class="codeString">"Bourse"</span>&gt;<br>
-  &lt;<strong>port name</strong>=<span class="codeString">"BoursePortType"</span> <strong>binding</strong>=<span
+    &lt;/<strong>output</strong>&gt;
+    <br>
+    &lt;/<strong>operation</strong>&gt;<br>
+    &lt;/soap:<strong>binding</strong>&gt; <br>
+    &lt;/<strong>binding</strong>&gt;<br> <br>
+    &lt;<strong>service name</strong>=<span class="codeString">"Bourse"</span>&gt;<br>
+    &lt;<strong>port name</strong>=<span class="codeString">"BoursePortType"</span> <strong>binding</strong>=<span
       class="codeString">"BourseSoapBinding"</span>&gt;<br>
-  &lt;soap:<strong>address location</strong>=<span class="codeString">"https://www.javarome.org/Bourse"</span> /&gt;<br>
-  &lt;/<strong>port</strong>&gt;<br>
-  &lt;/<strong>service</strong>&gt;<br> <br>
-  &lt;/<strong>definitions</strong>&gt;</code></blockquote>
-<h2>Notes</h2>
-<ul>
-  <li>Description <a href="/time/doc/xml/XML.html">XML</a> indépendante d'un langage de programmation.</li>
-  <li>Elaboré par le <a href="../../../../../org/int/asso/w3c/index.html">W3C</a></li>
-</ul>
-<table>
-  <tr>
-    <th colspan="4"><a href="javascript:history.go(-1)">Retour</a> | <a href="../../../index.html">Home</a> | <a
-        href="../../../Contact.html">Contact</a></th>
-  </tr>
-</table>
-
-</body>
-</html>
+    &lt;soap:<strong>address location</strong>=<span class="codeString">"https://www.javarome.org/Bourse"</span>
+    /&gt;<br>
+    &lt;/<strong>port</strong>&gt;<br>
+    &lt;/<strong>service</strong>&gt;<br> <br>
+    &lt;/<strong>definitions</strong>&gt;</code></blockquote>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Description <a href="/tech/info/soft/data/doc/xml">XML</a> indÃ©pendante d'un langage de programmation.</li>
+    <li>ElaborÃ© par le <a href="/org/int/asso/w3c/index.html">W3C</a></li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

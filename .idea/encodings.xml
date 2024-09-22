@@ -16,10 +16,16 @@
     <file url="file://$PROJECT_DIR$/org/us/company/oracle/sun/ptf/java/api/se/jws/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/company/oracle/sun/ptf/java/vm/profile/jvm/ti/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/amc/oar/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/dod/af/base/DyessAFB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/base/EdwardsAFB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/base/LoringAFB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/dod/af/base/Marshall_AFB.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/dod/af/base/MaxwellAFB.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/dod/af/base/NewCastle_AFB.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/dod/af/base/NortonAFB.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/dod/af/base/OakRidgeAFB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/ic/cia/FSA.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/org/us/ic/cia/OCB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/ic/cia/PSB.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/ic/cia/SOD.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/ic/cia/TSS.html" charset="UTF-8" />
@@ -32,12 +38,15 @@
     <file url="file://$PROJECT_DIR$/org/us/region/wa/Brookings/projet/brook-2_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/wa/Brookings/projet/brook-3_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/wa/Brookings/projet/brooking_fr.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/people/d/DeferreGaston/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/people/m/McMullenClements/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/politique/Immigration.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Kinross/TwoMoreTruaxFliersMissing_StateJournal_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Kinross/USAF_Report.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/science/crypto/ufo/enquete/dossier/Kinross/USAF_Report_2.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/science/crypto/ufo/observation/projet/Guetteur.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/science/discipline/hard/nat/univ/astro/UniteAstronomique.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/aero/appareil/VARIG.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/aero/appareil/helicoptere/CH-45.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/1944.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/1946.html" charset="UTF-8" />
@@ -59,8 +68,40 @@
     <file url="file://$PROJECT_DIR$/tech/info/1970.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/1971.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/1972.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1973.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1974.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1975.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1976.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1977.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1978.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1979.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1980.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1981.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1984.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1985.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1986.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1987.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1988.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1989.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1990.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1991.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1992.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1993.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1994.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1995.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1996.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/1997.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/2000.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/2001.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/2002.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/2003.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/3270.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/Informatique.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/tech/info/cv.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/hard/cpu/CISC.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/hard/cpu/RISC.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/Hack.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/IMHO.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/IMS.html" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/MIDP.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/Metadata.html" charset="UTF-8" />
@@ -68,8 +109,17 @@
     <file url="file://$PROJECT_DIR$/tech/info/soft/PCMCIA.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/Pooling.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/Progiciel.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/SDK.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/SPI.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/Shockwave.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/WYSIWYG.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/WebDAV.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/net/protocole/5/rpc/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/net/webservice/UDDI.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/net/webservice/WSDL.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/net/webservice/WSFL.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/proj/design/arch/web/DHTML.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/proj/design/arch/web/Flash.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/sec/auth/Realm.html" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/sec/privacy/crypto/RC5.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/sec/privacy/crypto/RC6.html" charset="UTF-8" />

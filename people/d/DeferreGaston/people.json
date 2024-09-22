@@ -1,0 +1,18 @@
+{
+  "occupations": [
+    "politician"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1910"
+    },
+    {
+      "type": "death",
+      "time": "1984"
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+<!--#include virtual="/header-start.html" -->
+<title>MySQL</title>
+<meta content="https://www.mysql.com" name="url"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Besoin</h2>
+  <p>Fournir un <a href="index.html">SGBDR</a> pour les sites <a
+    href="../../../../proj/design/arch/web/index.html">Web</a> <a href="/tech/info/soft/prod/licence/oss">Open
+    Source</a>.
+  </p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>MySQL supporte divers moteurs de <a href="/tech/info/soft/proj/impl/lang/oo/Persistance.html">persistance</a> :</p>
+  <ul>
+    <li><strong>InnoDB</strong>, supportant les <a href="/tech/info/soft/proj/impl/algo/tx/">transactions</a> ACID et
+      les contraintes d'intégrité référentielle (clés étrangères) via un verrouillage au niveau ligne.</li>
+    <li><strong>MyISAM</strong>, ne supportant pas les <a href="/tech/info/soft/proj/impl/algo/tx/">transactions</a>
+      mais plus performant</li>
+    <li><strong>BDB </strong>(Berkeley DataBase), supportant les <a
+      href="/tech/info/soft/proj/impl/algo/tx/">transactions</a></li>
+  </ul>
+  <p>La version <strong>standard </strong>(<a href="/tech/info/soft/prod/licence/oss/GPL.html">GPL</a>) de MySQL est
+    déclinée en versions :</p>
+  <ul>
+    <li><strong>Pro</strong> (licence commerciale)</li>
+    <li><strong>Max</strong>, ajoutant des fonctionnalités avancées (BDB, <a
+      href="/tech/info/soft/sec/privacy/crypto/SSL.html">SSL</a>, répartition de tables sur plusieurs fichiers)</li>
+    <li><strong>Classic</strong> (licence commerciale) sans InnoDB.</li>
+  </ul>
+</section>
+<section>
+  <h2>Implémentation</h2>
+  <table>
+    <thead>
+    <tr>
+      <td colspan="2" rowspan="2"> MySQL</td>
+      <th> Version</th>
+      <th>3</th>
+      <th colspan="2">4</th>
+      <th>5</th>
+      <th rowspan="3"> Commentaire</th>
+    </tr>
+    <tr>
+      <th> Release</th>
+      <th>2</th>
+      <th>0</th>
+      <th>1</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>Domaine</th>
+      <th>Elément</th>
+      <th>FixPack</th>
+      <th>3</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Concepts</th>
+      <th>VIEW</th>
+      <th></th>
+      <td class="non" colspan="3">Non</td>
+      <td class="oui">Oui</td>
+      <td>Vues</td>
+    </tr>
+    <tr>
+      <th>Mots-clés</th>
+      <th>IN</th>
+      <th>SELECT ()</th>
+      <td class="non" colspan="2">Non</td>
+      <td class="oui" colspan="2">Oui</td>
+      <td>Sous-SELECTs</td>
+    </tr>
+    <tr>
+      <th rowspan="25">Types</th>
+      <th rowspan="8">Caractères</th>
+      <th>CHAR (longueur)<br></th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Entre 0 et 255 caractères.</td>
+    </tr>
+    <tr>
+      <th>VARCHAR (longueur)<br></th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Entre 1 et 255 caractères. Les caractères de fin de chaîne sont supprimés (contrairement à la norme <a
+        href="/tech/info/soft/data/dbms/r/sql">SQL</a> <a href="/org/us/ANSI.html">ANSI</a>)
+      </td>
+    </tr>
+    <tr>
+      <th>ENUM</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Valeur parmi n</td>
+    </tr>
+    <tr>
+      <th>SET</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Valeurs parmi n</td>
+    </tr>
+    <tr>
+      <th>TINYTEXT</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Entre 0 et 255 caractères</td>
+    </tr>
+    <tr>
+      <th>TEXT</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Entre 256 et 65535 caractères</td>
+    </tr>
+    <tr>
+      <th>MEDIUMTEXT</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Entre 65536 et 16777215 caractères</td>
+    </tr>
+    <tr>
+      <th>LONGTEXT<br></th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Entre 16777216 et 4294967295 caractères</td>
+    </tr>
+    <tr>
+      <th rowspan="12">Nombres</th>
+      <th>INT</th>
+      <td class="oui" colspan="4">32 bits, signé</td>
+      <td> De -2147483648 à 2147483647</td>
+    </tr>
+    <tr>
+      <th>TINYINT</th>
+      <td class="oui" colspan="4">8 bits, signé</td>
+      <td>De -128 à 127</td>
+    </tr>
+    <tr>
+      <th>MEDIUMINT</th>
+      <td class="oui" colspan="4">24 bits, signé</td>
+      <td>De -8388608 à 8388607</td>
+    </tr>
+    <tr>
+      <th>BIGINT</th>
+      <td class="oui" colspan="4">64 bits, signé</td>
+      <td>De -9223372036854775808 à 9223372036854775807</td>
+    </tr>
+    <tr>
+      <th>SMALLINT</th>
+      <td class="oui" colspan="4">16 bits, signé</td>
+      <td>De -32768 à 32767</td>
+    </tr>
+    <tr>
+      <th>NUMERIC (précision, échelle)</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td rowspan="3">Nombre décimal</td>
+    </tr>
+    <tr>
+      <th>DEC (précision, échelle)</th>
+      <td class="oui" colspan="4">Oui</td>
+    </tr>
+    <tr>
+      <th>DECIMAL (précision, échelle)</th>
+      <td class="oui" colspan="4">Oui</td>
+    </tr>
+    <tr>
+      <th>FLOAT (précision</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Nombre à virgule flottante</td>
+    </tr>
+    <tr>
+      <th>REAL</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Nombre à virgule flottante à faible précision</td>
+    </tr>
+    <tr>
+      <th>DOUBLE</th>
+      <td class="oui" colspan="4"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DOUBLE PRECISION</th>
+      <td class="oui" colspan="4">Oui</td>
+      <td>Nombre à virgule flottante à grande précision</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Temps</th>
+      <th>DATE</th>
+      <td class="oui" colspan="4"><code>'0000-00-00'</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>TIME (précision)</th>
+      <td class="oui" colspan="4"><code>'00:00:00'</code></td>
+      <td>Heure</td>
+    </tr>
+    <tr>
+      <th>TIMESTAMP (précision)</th>
+      <td class="oui" colspan="4"><code>00000000000000</code></td>
+      <td>La longueur dépend de la taille d'affichage.</td>
+    </tr>
+    <tr>
+      <th>DATETIME</th>
+      <td class="oui" colspan="4"><code>'0000-00-00 00:00:00'</code></td>
+      <td>Date et heure</td>
+    </tr>
+    <tr>
+      <th>YEAR</th>
+      <td class="oui" colspan="4"><code>0000</code></td>
+      <td>Année</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Largement utilisé sur le Web (ce qui a orienté ses fonctionnalités dans ce sens), proposé par la plupart des
+      hébergeurs gratuits, au côté de <a href="/tech/info/soft/proj/impl/lang/php">PHP</a>.</li>
+    <li>Aujourd'hui de plus en plus utilisé dans d'autres contextes (entreprise).</li>
+  </ul>
+</section>
+<section>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Ne supporte pas <a href="/tech/info/soft/data/dbms/r/sql">SQL</a> dans sa totalité
+      <ul>
+        <li>pas de requêtes imbriquées (<code>select key from table where key <strong>in</strong> (select otherKey from
+          otherTable)</code>), qui sont pourtant le fondement du terme <a href="/tech/info/soft/data/dbms/r/sql">SQL</a>
+          (Structured QL).</li>
+      </ul>
+    </li>
+    <li>Pas de vues</li>
+    <li>Il faut choisir entre une version pour la "<a href="/tech/info/Performance.html">performance</a>" et une pour
+      les "fonctionnalités" (XA notamment)</li>
+  </ul>
+</section>
+<section>
+  <h2>Voir</h2>
+  <ul>
+    <li>Téléchargement
+      <ul>
+        <li>3.23</li>
+        <li><a href="https://www.mysql.com/downloads/mysql-4.1.html" target="_blank">4.1</a></li>
+        <li>5</li>
+      </ul>
+    </li>
+    <li><a href="https://www.mysql.com/doc/en/index.html" target="_blank">Documentation</a></li>
+    <li>Pilote <a href="/org/us/company/oracle/sun/ptf/java/api/se/JDBC.html">JDBC</a> <a
+      href="https://www.mysql.com/downloads/api-jdbc.html" target="_blank">MySQL Connector/J</a> (ex <a
+      href="https://mmmysql.sourceforge.net" target="_blank">MM.MySQL</a>) (LGPL)</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->

@@ -1,10 +1,26 @@
 {
-  "birthTime": "1918-05-11",
-  "deathTime": "1988-02-15",
+  "title": "Richard P. Feynman",
+  "url": "https://www.feynman.com",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1918-05-11",
+      "place": "Brooklyn (New York)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "2 affiches de Feynman sont utilisées pour illustrer la campagne \"Think Different\" de Apple"
+    },
+    {
+      "type": "death",
+      "time": "1988-02-15"
+    }
   ]
 }

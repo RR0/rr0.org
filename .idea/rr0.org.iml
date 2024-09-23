@@ -19,5 +19,8 @@
     <orderEntry type="library" name="mathjax" level="application" />
     <orderEntry type="library" name="embed" level="application" />
     <orderEntry type="library" name="Python 3.11 interpreter library" level="application" />
+    <orderEntry type="library" name="jsxgraphcore" level="application" />
+    <orderEntry type="library" name="jsxgraph" level="application" />
+    <orderEntry type="library" name="ei" level="application" />
   </component>
 </module>

@@ -1,16 +1,14 @@
 <!--#include virtual="/header-start.html" -->
-<title>Matrice de phénomènes connus</title>
+<title>Matrice de phénomènes connus de Poher</title>
 <link rel="stylesheet" href="matrix.css" type="text/css"/>
 <meta content="https://universons.com/ovni_gbFr/gepan/matrice_phenomenes_connus.html" name="url">
 <!--#include virtual="/header-end.html" -->
 <p><time>1977</time>, au moment de la création du <a href="/org/eu/fr/cnes/gepan/index.html">GEPAN</a>, <span
   class="people">Claude Poher</span> réalise un <strong>aide-mémoire</strong> destiné à aider les enquêteurs à
   mettre rapidement en évidence les <a href="/science/crypto/ufo/enquete/meprise">phénomènes connus</a> qui pouvaient
-  être à l'origine d'un témoignage.
-</p>
+  être à l'origine d'un témoignage.</p>
 <p>A chaque possibilité d'explication en abscisse, est attribué un indice de probabilité en ordonnée pour chaque
-  caractéristique de l'observation :
-</p>
+  caractéristique de l'observation :</p>
 <ul>
   <li>1 : Très possible</li>
   <li>0,5 : Possible avec réserves</li>
@@ -34,39 +32,32 @@ Autres formats :
   <p>Voici un programme fournissant les résultats de la matrice de Poher. Il calcule la probabilité d'explications en
     temps réel.
   </p>
-  <p>Les avantages d'un tel programme sont :</p>
+  <p>Les avantages d'un tel programme sont :</p>
   <ul>
     <li>Il <strong>évite les erreurs</strong> en automatisant les calculs et permettant de mieux qualifier les réponses
-      autorisées (choix parmi n, choix multiple).
-    </li>
+      autorisées (choix parmi n, choix multiple).</li>
     <li>Il peut afficher les <a href="/science/crypto/ufo/enquete/meprise/index.html">méprises</a> exclues <strong>mais
-      aussi l'inverse</strong> (méprises les plus probables).
-    </li>
+      aussi l'inverse</strong> (méprises les plus probables).</li>
     <li>Il peut <strong>prendre divers fichiers de données en entrée </strong>(du moment qu'ils respectent le même
       format) via le paramètre <code>fileName</code>. Le fichier utilisé ici est celui de M. Poher, mais d'autres
       matrices (avec d'autres pondérations, voire d'autres libellés, des critères supplémentaires, etc.) sont tout aussi
-      utilisables.
-    </li>
+      utilisables.</li>
     <li>Il <strong>peut être exécuté comme programme autonome</strong> (depuis une ligne de commande, ouvrant une
-      fenêtre) ou comme ici être encapsulé dans une page <a href="/tech/info/soft/proj/design/arch/web">Web</a>.
-    </li>
+      fenêtre) ou comme ici être encapsulé dans une page <a href="/tech/info/soft/proj/design/arch/web">Web</a>.</li>
     <li>Il est <strong>internationalisé</strong>, c'est-à-dire que ses messages s'affichent dans la langue de
       l'utilisateur (français et anglais par défaut sont supportés ici) telle qu'elle est spécifiée sur votre machine.
       Ajouter le support d'une nouvelle langue se résume à ajouter un fichier contenant décrivant les versions des
-      messages dans cette langue.
-    </li>
+      messages dans cette langue.</li>
     <li>Il offre en plus un <strong>calcul de différents facteurs de crédibilité, étrangeté, information</strong>, issus
-      de l'<a href="/science/crypto/ufo/enquete/methode/Ballester-Guasp.html">évaluation Ballester-Guasp</a>.
-    </li>
+      de l'<a href="/science/crypto/ufo/enquete/methode/Ballester-Guasp.html">évaluation Ballester-Guasp</a>.</li>
   </ul>
   <section>
     <h3>Javascript</h3>
     <p>L'avantage d'une <a href="https://github.com/RR0/KnownPhenomenaMatrix/tree/master/time/1/9/7/7/Poher_Matrice">version
       Javascript</a> est d'être exécutable facilement sur pratiquement tous les navigateurs, sans ajout d'un module
-      supplémentaire.
-    </p>
+      supplémentaire.</p>
     <figure style="width: 100%; height: 24em">
-      <figcaption> Evaluation d'explications en termes de phénomènes connus</figcaption>
+      <figcaption>Évaluation d'explications en termes de phénomènes connus</figcaption>
       <p class="codepen" data-default-tab="result" data-height="401.12109375" data-slug-hash="xrBOrr"
         data-user="Javarome"
         style="height: 401.12109375px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">

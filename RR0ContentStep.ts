@@ -22,12 +22,13 @@ export class RR0ContentStep extends ContentStep<HtmlRR0SsgContext> {
   }
 
   static setTimeFromPath(context: HtmlRR0SsgContext, filePath: string): TimeContext | undefined {
-    context.time.reset()
+    const time = context.time
+    time.reset()
     const newTimeContext = TimeContext.fromFileName(context, filePath)
     if (newTimeContext) {
-      context.time.setYear(newTimeContext.getYear())
-      context.time.setMonth(newTimeContext.getMonth())
-      context.time.setDayOfMonth(newTimeContext.getDayOfMonth())
+      time.setYear(newTimeContext.getYear())
+      time.setMonth(newTimeContext.getMonth())
+      time.setDayOfMonth(newTimeContext.getDayOfMonth())
       // context.time.from = context.time
     }
     return newTimeContext

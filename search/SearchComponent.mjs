@@ -1,6 +1,6 @@
 const template = document.createElement("template")
 const html = `
-<input list="values" type="search" part="input">
+<input id="search-input" list="values" type="search" part="input">
 <datalist id="values">
 </datalist>`
 const style = `
@@ -32,7 +32,7 @@ export class SearchComponent extends HTMLElement {
 
   connectedCallback () {
     this.onmouseover = this.#siteSearchLoad.bind(this)
-    const input = this.shadow.querySelector("input")
+    const input = this.shadow.getElementById("search-input")
     input.oninput = this.#siteSearchChange.bind(this)
     input.placeholder = this.getAttribute("placeholder") || "Recherche"
   }

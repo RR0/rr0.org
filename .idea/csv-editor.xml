@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/org/int/asso/iso/86/01/iso8601.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/org/us/region/Counties.csv">
           <value>
             <Attribute>
@@ -1312,6 +1319,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/5/5/8/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/5/6/0/BeauJerome_RR0.csv">
           <value>
             <Attribute>
@@ -1600,6 +1614,13 @@
           </value>
         </entry>
         <entry key="/time/1/6/3/8/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/1/6/3/9/BeauJerome_RR0.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -1964,6 +1985,13 @@
           </value>
         </entry>
         <entry key="/time/1/7/4/1/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/1/7/4/3/BeauJerome_RR0.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

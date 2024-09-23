@@ -65,7 +65,7 @@ export class SearchVisitor implements FileVisitor {
       const indexedPages = this.index.pages
       const titleIndexed = indexedPages.find(page => page.title === title && page.url !== url)
       if (titleIndexed) {
-        context.warn(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`)
+        throw new Error(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`)
       }
       const indexContext = context.clone()
       const time = this.timeTextBuilder.build(indexContext, true,
@@ -98,7 +98,7 @@ export class SearchVisitor implements FileVisitor {
       html: contents
     }
     const prefix = this.contentStream.bytesWritten === 0 ? "[\n" : ",\n"
-    let str = prefix + JSON.stringify(contentsRecord)
+    const str = prefix + JSON.stringify(contentsRecord)
     this.contentStream.write(str)
   }
 

@@ -22,12 +22,20 @@ export class TimeContext {
   duration: EdtfDuration | undefined
 
   static parseDateTime(timeStr: string): TimeParseResult {
-    const dateTimeValues = TimeContext.dateTimeRegexp.exec(timeStr)
-    if (dateTimeValues && dateTimeValues[0]) {
-      const [approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone] = dateTimeValues.slice(1)
-      return {approximate, yearStr, monthStr, dayOfMonthStr, hour, minutes, timeZone}
+    try {
+      const date = EdtfDate.fromString(timeStr)
+      return {
+        approximate: date?.approximate,
+        yearStr: date.year?.toString(),
+        monthStr: date.month?.toString(),
+        dayOfMonthStr: date.day?.toString(),
+        hour: date.hour?.toString(),
+        minutes: date.minutes?.toString(),
+        timeZone: date.timeZone?.toString()
+      }
+    } catch (e) {
+      return undefined
     }
-    return undefined
   }
 
   constructor(

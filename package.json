@@ -28,7 +28,7 @@
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@rr0/common": "^1.0.1",
     "@rr0/lang": "^0.1.11",
-    "@rr0/time": "^0.4.0",
+    "@rr0/time": "^0.4.1",
     "canvas": "^2.11.2",
     "csv-parser": "^3.0.0",
     "glob": "^11.0.0",

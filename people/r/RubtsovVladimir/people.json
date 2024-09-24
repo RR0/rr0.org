@@ -1,6 +1,9 @@
 {
-  "birthTime": "1948-12-10",
-  "deathTime": "2013-05-06",
+  "url": "https://www.facebook.com/RubtsovTunguska",
+  "firstNames": [
+    "Vladimir",
+    "V."
+  ],
   "occupations": [
     "ufologist",
     "writer",
@@ -8,5 +11,16 @@
   ],
   "countries": [
     "ru"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1948-12-10",
+      "place": "Kharkov (URSS, aujourd'hui Ukraine)"
+    },
+    {
+      "type": "birth",
+      "time": "2013-05-06"
+    }
   ]
 }

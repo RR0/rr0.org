@@ -1,4 +1,4 @@
-type,events,url,place,time,description,sources,id
-case,"",https://rr0.org/time/0/2/index.html,,200,234,"",200
-case,"",https://rr0.org/time/0/2/index.html,,200,235,"",200
-case,"",https://rr0.org/time/0/2/index.html,,200,251,"",200
+description,events,id,place,sources,time,type,url
+234,"",200,,"",200,case,https://rr0.org/time/0/2/index.html
+235,"",200,,"",200,case,https://rr0.org/time/0/2/index.html
+251,"",200,,"",200,case,https://rr0.org/time/0/2/index.html

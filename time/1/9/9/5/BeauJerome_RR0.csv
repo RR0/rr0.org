@@ -1,16 +1,16 @@
-type,events,url,place,time,description,sources,id,place.name,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-01,,1995-01,en,"",1995-01
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-02,,1995-02,en,"",1995-02
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-03,,1995-03,en,"",1995-03
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-04,,1995-04,en,"",1995-04
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-05,,1995-05,en,"",1995-05
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-06,,1995-06,en,"",1995-06
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-07,,1995-07,en,"",1995-07
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-08,,1995-08,en,"",1995-08
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-09,,1995-09,en,"",1995-09
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-11,,1995-11,en,"",1995-11
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-11,,1995-11,en,"",1995-11
-case,"",https://rr0.org/time/1/9/9/5/index.html#1995-12,,1995-12,en,"",1995-12
-case,"",https://rr0.org/time/1/9/9/5/index.html,,1995,"Robert Durand entame une édifiante étude statistique des enlèvements extraterrestres. Son rapport indique que 5 millions d'Américains prétendent avoir été enlevés au cours des 50 dernières années... ce qui signifie 274 enlèvements par jour, impliquant une équipe de 1644 extraterrestres : en effet, 6 extraterrestres en moyenne participent au kidnapping décrit par les ""enlevés"".","",1995
-case,"",https://rr0.org/time/1/9/9/5/index.html,,1995,L'équipe de la mission STS80 La video de la NASA montrant des ovnis depuis la navette spatiale de la mission STS80 La video de la NASA (ci-contre) montrant des ovnis depuis la navette spatiale de la mission STS80 (photo équipe ci-contre).,"",1995
-case,"",https://rr0.org/time/1/9/9/5/index.html,,1995,"Une bande vidéo issue d'une caméra de sécurité de la base de l'USAF de Nellis est communiquée clandestinement à des ufologues. Sur cette vidéo, on voit un engin métallique s'élevant dans le ciel. Ces images seront authentifiées par plusieurs analystes militaires, experts dans les questions de défense, notamment par Bill Sweetman, spécialiste de la technologie des avions furtifs.","",1995
+description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.kind,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent.places,place.org.parent.parent.parent.type,place.org.parent.parent.places,place.org.parent.parent.type,place.org.parent.places,place.org.parent.type,place.org.places,place.org.type,place.org.parent.parent,place.org.parent,place.place,place.org.parent.parent.parent
+en,"",1995-01,,"",1995-01,case,https://rr0.org/time/1/9/9/5/index.html#1995-01
+en,"",1995-02,,"",1995-02,case,https://rr0.org/time/1/9/9/5/index.html#1995-02
+en,"",1995-03,,"",1995-03,case,https://rr0.org/time/1/9/9/5/index.html#1995-03
+en,"",1995-04,,"",1995-04,case,https://rr0.org/time/1/9/9/5/index.html#1995-04
+en,"",1995-05,,"",1995-05,case,https://rr0.org/time/1/9/9/5/index.html#1995-05
+en,"",1995-06,,"",1995-06,case,https://rr0.org/time/1/9/9/5/index.html#1995-06
+en,"",1995-07,,"",1995-07,case,https://rr0.org/time/1/9/9/5/index.html#1995-07
+en,"",1995-08,,"",1995-08,case,https://rr0.org/time/1/9/9/5/index.html#1995-08
+en,"",1995-09,,"",1995-09,case,https://rr0.org/time/1/9/9/5/index.html#1995-09
+en,"",1995-11,,"",1995-11,case,https://rr0.org/time/1/9/9/5/index.html#1995-11
+en,"",1995-11,,"",1995-11,case,https://rr0.org/time/1/9/9/5/index.html#1995-11
+en,"",1995-12,,"",1995-12,case,https://rr0.org/time/1/9/9/5/index.html#1995-12
+"Robert Durand entame une édifiante étude statistique des enlèvements extraterrestres. Son rapport indique que 5 millions d'Américains prétendent avoir été enlevés au cours des 50 dernières années... ce qui signifie 274 enlèvements par jour, impliquant une équipe de 1644 extraterrestres : en effet, 6 extraterrestres en moyenne participent au kidnapping décrit par les ""enlevés"".","",1995,,"",1995,case,https://rr0.org/time/1/9/9/5/index.html
+L'équipe de la mission STS80 La video de la NASA montrant des ovnis depuis la navette spatiale de la mission STS80 La video de la NASA (ci-contre) montrant des ovnis depuis la navette spatiale de la mission STS80 (photo équipe ci-contre).,"",1995,,"",1995,case,https://rr0.org/time/1/9/9/5/index.html
+"Une bande vidéo issue d'une caméra de sécurité de la base de l'USAF de Nellis est communiquée clandestinement à des ufologues. Sur cette vidéo, on voit un engin métallique s'élevant dans le ciel. Ces images seront authentifiées par plusieurs analystes militaires, experts dans les questions de défense, notamment par Bill Sweetman, spécialiste de la technologie des avions furtifs.","",1995,,"",1995,case,https://rr0.org/time/1/9/9/5/index.html

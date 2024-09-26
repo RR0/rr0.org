@@ -1,2 +1,2 @@
-type,events,url,place,time,description,sources,id
-case,"",https://rr0.org/time/1/9/3/index.html#1930,,1930,en,"",1930
+description,events,id,place,sources,time,type,url
+en,"",1930,,"",1930,case,https://rr0.org/time/1/9/3/index.html#1930

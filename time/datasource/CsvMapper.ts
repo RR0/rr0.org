@@ -48,7 +48,8 @@ export class CsvMapper<S> implements CaseMapper<RR0SsgContext, S, string> {
    * @param sourceTime
    */
   map(context: RR0SsgContext, sourceCase: S, sourceTime: Date): string {
-    return Object.entries(sourceCase).map(entry => this.fieldMapper(context, entry[0], entry[1], sourceTime)).join(
+    const entries = Array.from(Object.entries(sourceCase)).sort((entry1, entry2) => entry1[0].localeCompare(entry2[0]))
+    return entries.map(entry => this.fieldMapper(context, entry[0], entry[1], sourceTime)).join(
       this.sep)
   }
 

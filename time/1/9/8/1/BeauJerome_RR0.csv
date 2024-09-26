@@ -1,15 +1,15 @@
-type,events,url,place,time,description,sources,id,place.name,place.org,place.place.id,place.place.events,place.place.locations,place.place.elevation,place.place.dirName,place.org.type,place.org.dirName,place.org.events,place.org.id,place.org.places,place.org.kind,place.org.parent,place.place,place.org.parent.type,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.places,place.org.parent.kind,place.org.parent.parent.type,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.places,place.org.parent.parent.kind,place.org.parent.parent.parent,place.org.parent.parent.parent.type,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.places,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-01,,1981-01,en,"",1981-01
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-02,,1981-02,en,"",1981-02
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-03,,1981-03,en,"",1981-03
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-04,,1981-04,en,"",1981-04
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-05,,1981-05,en,"",1981-05
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-06,,1981-06,en,"",1981-06
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-07,,1981-07,en,"",1981-07
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-08,,1981-08,en,"",1981-08
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-09,,1981-09,en,"",1981-09
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-10,,1981-10,en,"",1981-10
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-11,,1981-11,en,"",1981-11
-case,"",https://rr0.org/time/1/9/8/1/index.html#1981-12,,1981-12,en,"",1981-12
-case,"",https://rr0.org/time/1/9/8/1/index.html,,1981,"Aux USA, Mike Lewis aura un rêve récurrent sur une expérience lorsqu'il avait 5 ans, et se souvint sous hypnose un enlèvement et un examen lors duquel une aiguille inséra ou enleva quelque chose de son nez.",""""",(1981) ""UFO Contactees"",s1,""""""Sprinkle, Ronald Leo"""""",""APRO Bulletin, 29(5):8 & 29(6):6-7 < Bullard. Thomas E.: 1987), """"UFO Abductions:The Measure of a Mystery - Part 2"""", Washington"",-196,""""",1981
-case,"",https://rr0.org/time/1/9/8/1/index.html,,1981,"William L. Moore rencontre la principale victime de sa campagne de désinformation, Paul Frederick Bennewitz.","",1981
+description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.kind,place.org.parent.parent.parent.dirName,place.org.parent.parent.parent.events,place.org.parent.parent.parent.id,place.org.parent.parent.parent.kind,place.org.parent.parent.parent.parent,place.org.parent.parent.parent.places,place.org.parent.parent.parent.type,place.org.parent.parent.places,place.org.parent.parent.type,place.org.parent.places,place.org.parent.type,place.org.places,place.org.type,place.org.parent.parent,place.org.parent,place.place,place.org.parent.parent.parent
+en,"",1981-01,,"",1981-01,case,https://rr0.org/time/1/9/8/1/index.html#1981-01
+en,"",1981-02,,"",1981-02,case,https://rr0.org/time/1/9/8/1/index.html#1981-02
+en,"",1981-03,,"",1981-03,case,https://rr0.org/time/1/9/8/1/index.html#1981-03
+en,"",1981-04,,"",1981-04,case,https://rr0.org/time/1/9/8/1/index.html#1981-04
+en,"",1981-05,,"",1981-05,case,https://rr0.org/time/1/9/8/1/index.html#1981-05
+en,"",1981-06,,"",1981-06,case,https://rr0.org/time/1/9/8/1/index.html#1981-06
+en,"",1981-07,,"",1981-07,case,https://rr0.org/time/1/9/8/1/index.html#1981-07
+en,"",1981-08,,"",1981-08,case,https://rr0.org/time/1/9/8/1/index.html#1981-08
+en,"",1981-09,,"",1981-09,case,https://rr0.org/time/1/9/8/1/index.html#1981-09
+en,"",1981-10,,"",1981-10,case,https://rr0.org/time/1/9/8/1/index.html#1981-10
+en,"",1981-11,,"",1981-11,case,https://rr0.org/time/1/9/8/1/index.html#1981-11
+en,"",1981-12,,"",1981-12,case,https://rr0.org/time/1/9/8/1/index.html#1981-12
+"Aux USA, Mike Lewis aura un rêve récurrent sur une expérience lorsqu'il avait 5 ans, et se souvint sous hypnose un enlèvement et un examen lors duquel une aiguille inséra ou enleva quelque chose de son nez.","",1981,,"""""""Sprinkle, Ronald Leo"""""","""",s1,"""",""APRO Bulletin, 29(5):8 & 29(6):6-7 < Bullard. Thomas E.: 1987), """"UFO Abductions:The Measure of a Mystery - Part 2"""", Washington"",-196,(1981) ""UFO Contactees""",1981,case,https://rr0.org/time/1/9/8/1/index.html
+"William L. Moore rencontre la principale victime de sa campagne de désinformation, Paul Frederick Bennewitz.","",1981,,"",1981,case,https://rr0.org/time/1/9/8/1/index.html

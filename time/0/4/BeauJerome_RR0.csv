@@ -1,6 +1,6 @@
-type,events,url,place,time,description,sources,id
-case,"",https://rr0.org/time/0/4/index.html,,400,RR0,"",400
-case,"",https://rr0.org/time/0/4/index.html,,400,,"",400
-case,"",https://rr0.org/time/0/4/index.html,,400,,"",400
-case,"",https://rr0.org/time/0/4/index.html,,400,,"",400
-case,"",https://rr0.org/time/0/4/index.html,,400,Carte,"",400
+description,events,id,place,sources,time,type,url
+RR0,"",400,,"",400,case,https://rr0.org/time/0/4/index.html
+,"",400,,"",400,case,https://rr0.org/time/0/4/index.html
+,"",400,,"",400,case,https://rr0.org/time/0/4/index.html
+,"",400,,"",400,case,https://rr0.org/time/0/4/index.html
+Carte,"",400,,"",400,case,https://rr0.org/time/0/4/index.html

@@ -1,7 +1,7 @@
-type,events,url,place,time,description,sources,id
-case,"",https://rr0.org/time/1/6/index.html,,1600,la méthode expérimentale de Francis Bacon,"",1600
-case,"",https://rr0.org/time/1/6/index.html,,1600,les observations instrumentées de Galilée,"",1600
-case,"",https://rr0.org/time/1/6/index.html,,1600,l'ardoise vierge de John Locke avant l'expérience du monde,"",1600
-case,"",https://rr0.org/time/1/6/index.html,,1600,l'adhésion de Isaac Newton,"",1600
-case,"",https://rr0.org/time/1/6/index.html,,1600,Mill,"",1600
-case,"",https://rr0.org/time/1/6/index.html,,1600,le scepticisme de David Hume,"",1600
+description,events,id,place,sources,time,type,url
+la méthode expérimentale de Francis Bacon,"",1600,,"",1600,case,https://rr0.org/time/1/6/index.html
+les observations instrumentées de Galilée,"",1600,,"",1600,case,https://rr0.org/time/1/6/index.html
+l'ardoise vierge de John Locke avant l'expérience du monde,"",1600,,"",1600,case,https://rr0.org/time/1/6/index.html
+l'adhésion de Isaac Newton,"",1600,,"",1600,case,https://rr0.org/time/1/6/index.html
+Mill,"",1600,,"",1600,case,https://rr0.org/time/1/6/index.html
+le scepticisme de David Hume,"",1600,,"",1600,case,https://rr0.org/time/1/6/index.html

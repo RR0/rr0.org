@@ -6,6 +6,7 @@ import fs from "fs"
  * Saves the index file collected by the SearchCommand.
  */
 export class SearchIndexStep implements SsgStep {
+
   protected encoding: BufferEncoding = "utf8"
 
   /**

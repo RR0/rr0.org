@@ -1,9 +1,47 @@
 {
-  "birthTime": "1942-01-20",
+  "title": "Theodore R. Phillips Jr.",
+  "name": "Ted Phillips",
+  "lastName": "Philips",
+  "firstNames": [
+    "Theodore",
+    "R."
+  ],
+  "surname": "Ted",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-01-20",
+      "place": "Sedalia (Missouri)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "Official UFO </i>vol. 1, n° 6, p. 24, 1976-02"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2020-03-10",
+      "sources": [
+        {
+          "url": "https://www.legacy.com/us/obituaries/sedaliademocrat/name/theodore-phillips-obituary?id=16524355"
+        },
+        {
+          "url": "https://kevinrandle.blogspot.com/2020/03/ted-phillips-has-died.html"
+        },
+        {
+          "url": "https://www.abovetopsecret.com/forum/thread1259127/pg1"
+        }
+      ]
+    }
   ]
 }

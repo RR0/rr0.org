@@ -93,20 +93,25 @@ import { HtmlTable } from "./util/html/HtmlTable"
 
 interface RR0BuildArgs {
   /**
+   * Configuration file
+   */
+  config?: string
+
+  /**
    * If the search index must be regenerated or not.
    * For ex: "pages,sources"
    */
-  reindex: string
+  reindex?: string[]
 
   /**
    * Comma-separated list of file patterns to parse as contents.
    */
-  contents?: string
+  contents?: string[]
 
   /**
    * Comma-separated list of file patterns to copy to out dir.
    */
-  copies?: string
+  copies?: string[]
 
   /**
    * Comma-separated list of file patterns to books to generate TOCs for.
@@ -120,12 +125,16 @@ interface RR0BuildArgs {
 }
 
 console.time("ssg")
-const args = new CLI().getArgs<RR0BuildArgs>()
+let args = new CLI().getArgs<RR0BuildArgs>()
+const configFile = args.config
+if (configFile) {
+  args = JSON.parse(FileContents.read(configFile).contents)
+}
 const cliContents = args.contents
 console.debug("contents", cliContents)
 const mandatoryRoots = ["people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
 const contentRoots = cliContents
-  ? cliContents.split(",").concat(mandatoryRoots)
+  ? cliContents.concat(mandatoryRoots)
   : [
     "croyance/**/*.html",
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
@@ -142,7 +151,7 @@ const contentRoots = cliContents
     "js/**/*.html"
   ]
 const copiesArg = args.copies
-const copies = copiesArg ? copiesArg.split(",") : [
+const copies = copiesArg ? copiesArg : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
   "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
@@ -247,8 +256,9 @@ timeService.getFiles().then(async (timeFiles) => {
   await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"),
     JSON.stringify(peopleList.map(people => people.dirName)), "utf-8")
 
-  const searchVisitor = new SearchVisitor({notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false},
-    timeTextBuilder)
+  const searchVisitor = new SearchVisitor(
+    {notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false}, timeTextBuilder
+  )
   const sourceRenderer = new SourceRenderer(timeTextBuilder)
   const sourceRegistryFileName = "source/index.json"
   const baseUrl = "https://rr0.org"
@@ -351,13 +361,13 @@ timeService.getFiles().then(async (timeFiles) => {
       new ImageCommand(outDir, 275, 500),
       new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder)
     ]
-    ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: contentReplacements, getOutputPath}],
+    ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: [], getOutputPath}],
       outputFunc, [], contentVisitors, force, "contents replacements", toProcess))
   }
   if (args.books) {
     ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))
   }
-  const reindex = args.reindex?.split(",")
+  const reindex = args.reindex
   if (reindex?.includes("search")) {
     ssg.add(new SearchIndexStep("search/index.json", searchVisitor))
   }

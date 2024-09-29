@@ -9,10 +9,35 @@
   border: 0;
   padding: 0;
   transition: transform .3s ease;
+  z-index: 1;
+
+  h1 {
+    display: none
+  }
+}
+
+.map-toggle {
+  order: 100;
+  flex: 1;
+  text-align: right;
+  font-size: 0.9rem;
+  display: none;
+}
+
+body.with-map .map {
+  transform: translateX(0);
 }
 
 #map-canvas, #map-canvas iframe {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+@media (min-width: 80em) {
+
+  .map {
+    left: auto;
+    width: var(--map-width);
+  }
 }

@@ -61,10 +61,6 @@ html, body {
   vertical-align: sub
 }
 
-.map h1 {
-  display: none
-}
-
 * {
   line-height: 1.7;
   box-sizing: border-box
@@ -787,19 +783,13 @@ dl.bullet dd {
   transform: var(--transform)
 }
 
-.map-toggle {
-  order: 100;
-  flex: 1;
-  text-align: right;
-}
-
 .toggle {
   appearance: none;
   border: none;
   background-color: transparent;
 }
 
-.map-toggle .toggle {
+.toggle {
   font-size: 0.9rem;
   display: none;
 }
@@ -885,16 +875,7 @@ dl.bullet dd {
   }
 }
 
-body.with-map .map {
-  transform: translateX(0);
-}
-
 @media (min-width: 80em) {
-
-  .map {
-    left: auto;
-    width: var(--map-width);
-  }
 
   body {
     padding-top: var(--header-height);

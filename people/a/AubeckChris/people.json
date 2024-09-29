@@ -1,7 +1,16 @@
 {
-  "birthTime": "1971",
+  "surname": "Chris",
+  "firstNames": [
+    "Christopher"
+  ],
   "occupations": ["ufologist"],
   "countries": [
     "es"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1971"
+    }
   ]
 }

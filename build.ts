@@ -43,7 +43,7 @@ import { TimeReplacerFactory } from "./time/TimeReplacerFactory"
 import { MetaLinkReplaceCommand } from "./MetaLinkReplaceCommand"
 import { OutlineReplaceCommand } from "./outline/OutlineReplaceCommand"
 import { ImageCommand } from "./ImageCommand"
-import { SearchVisitor } from "./search/SearchVisitor"
+import { PageInfo, SearchVisitor } from "./search/SearchVisitor"
 import { SearchIndexStep } from "./search/SearchIndexStep"
 import { BaseReplaceCommand } from "./BaseReplaceCommand"
 import { OpenGraphCommand } from "./OpenGraphCommand"
@@ -361,7 +361,7 @@ timeService.getFiles().then(async (timeFiles) => {
       new ImageCommand(outDir, 275, 500),
       new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder)
     ]
-    ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: [], getOutputPath}],
+    ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: contentReplacements, getOutputPath}],
       outputFunc, [], contentVisitors, force, "contents replacements", toProcess))
   }
   if (args.books) {

@@ -1,7 +1,5 @@
 {
-  "title": "Peña, José Luis Jordán",
-  "birthTime": "1931-10-13",
-  "deathTime": "2014-09-09",
+  "title": "José Luis Jordán Peña",
   "occupations": [
     "ufoWitness",
     "engineer"
@@ -9,5 +7,17 @@
   "countries": [
     "es"
   ],
-  "discredited": true
+  "discredited": true,
+  "events": [
+    {
+      "type": "birth",
+      "time": "1931-10-13",
+      "place": "Alicante (Spain)"
+    },
+    {
+      "type": "death",
+      "time": "2014-09-09",
+      "place": "Madrid (Spain)"
+    }
+  ]
 }

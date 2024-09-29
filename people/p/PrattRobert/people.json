@@ -16,7 +16,7 @@
   "events": [
     {
       "type": "birth",
-      "tile": "1926-08-12"
+      "time": "1926-08-12"
     },
     {
       "type": "death",

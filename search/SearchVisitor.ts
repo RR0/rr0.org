@@ -65,7 +65,7 @@ export class SearchVisitor implements FileVisitor {
       const indexedPages = this.index.pages
       const titleIndexed = indexedPages.find(page => page.title === title && page.url !== url)
       if (titleIndexed) {
-        throw new Error(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`)
+        this.handleAlreadyIndexed(title, url, titleIndexed)
       }
       const indexContext = context.clone()
       const time = this.timeTextBuilder.build(indexContext, true,
@@ -78,6 +78,10 @@ export class SearchVisitor implements FileVisitor {
     if (this.config.indexContent) {
       this.indexContent(context, file)
     }
+  }
+
+  protected handleAlreadyIndexed(title: string, url: string, titleIndexed: PageInfo) {
+    throw new Error(`Title "${title}" with URL ${url} is already indexed with URL ${titleIndexed.url}`)
   }
 
   protected getContents(doc: Document) {

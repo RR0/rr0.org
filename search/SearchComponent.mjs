@@ -27,7 +27,11 @@ export class SearchComponent extends HTMLElement {
 
   #loading = false
 
-  #minChar = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 5 : 1
+  /**
+   * @readonly
+   * @type {number}
+   */
+  #maxResultCount = 100
 
   constructor () {
     super()
@@ -45,12 +49,6 @@ export class SearchComponent extends HTMLElement {
   #siteSearchChange (e) {
     const value = e.target.value.trim()
     const pages = this.#siteIndex?.pages || []
-    if (value?.length < this.#minChar) {
-      this.#setDataList([])
-    } else if (value?.length >= this.#minChar) {
-      const lowValue = value.toLowerCase()
-      this.#setDataList(pages.filter(page => page.title.toLowerCase().indexOf(lowValue) >= 0))
-    }
     if (e.inputType === "insertReplacementText" || e.inputType == null) {
       const pageIndex = pages.findIndex(page => page.title === value)
       if (pageIndex >= 0) {
@@ -58,6 +56,9 @@ export class SearchComponent extends HTMLElement {
         window.location.href = "/" + page.url
       }
     }
+    const lowValue = value.toLowerCase()
+    const dataList = pages.filter(page => page.title.toLowerCase().indexOf(lowValue) >= 0)
+    this.#setDataList(dataList.length <= this.#maxResultCount ? dataList : [])
   }
 
   #siteSearchLoad () {

@@ -20,9 +20,14 @@ export class SearchComponent extends HTMLElement {
    */
   static NAME = "rr0-search"
 
+  /**
+   * @type SearchIndex
+   */
   #siteIndex
 
   #loading = false
+
+  #minChar = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 5 : 1
 
   constructor () {
     super()
@@ -38,11 +43,18 @@ export class SearchComponent extends HTMLElement {
   }
 
   #siteSearchChange (e) {
+    const value = e.target.value.trim()
+    const pages = this.#siteIndex?.pages || []
+    if (value?.length < this.#minChar) {
+      this.#setDataList([])
+    } else if (value?.length >= this.#minChar) {
+      const lowValue = value.toLowerCase()
+      this.#setDataList(pages.filter(page => page.title.toLowerCase().indexOf(lowValue) >= 0))
+    }
     if (e.inputType === "insertReplacementText" || e.inputType == null) {
-      const value = e.target.value.trim()
-      const pageIndex = this.#siteIndex.pages.findIndex(page => page.title === value)
+      const pageIndex = pages.findIndex(page => page.title === value)
       if (pageIndex >= 0) {
-        const page = this.#siteIndex.pages[pageIndex]
+        const page = pages[pageIndex]
         window.location.href = "/" + page.url
       }
     }
@@ -52,22 +64,27 @@ export class SearchComponent extends HTMLElement {
     if (!this.#siteIndex && !this.#loading) {
       this.#loading = true
       fetch("/search/index.json").then(async (response) => {
-        const datalist = this.shadow.querySelector("#values")
         if (response.ok) {
           this.#siteIndex = await response.json()
-          const pages = this.#siteIndex.pages
-          for (let i = 0; i < pages.length; i++) {
-            const page = pages[i]
-            const option = document.createElement("option")
+          for (const page of this.#siteIndex.pages) {
             const timeStr = page.time
             const title = page.title
             page.title += (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
-            option.value = page.title
-            datalist.append(option)
           }
         }
         this.#loading = false
       })
+    }
+  }
+
+  #setDataList (pages) {
+    const datalist = this.shadow.getElementById("values")
+    datalist.innerHTML = ""
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i]
+      const option = document.createElement("option")
+      option.value = page.title
+      datalist.append(option)
     }
   }
 }

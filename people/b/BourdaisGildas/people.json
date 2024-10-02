@@ -1,10 +1,27 @@
 {
-  "birthTime": "1939-06-13",
+  "url": "https://bourdais.blogspot.com",
   "occupations": [
     "ufologist",
     "artist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1939-06-13",
+      "place": "Nantes"
+    },
+    {
+      "type": "death",
+      "time": "2024-09-25",
+      "places": "Paris 13e",
+      "sources": [
+        {
+          "url": "https://roc-eclerc.com/avis-de-deces/paris/paris-13e-arrondissement/Gildas-BOURDAIS_f92cfe3e-7f27-11ef-abd1-06fd8bb86fb2"
+        }
+      ]
+    }
   ]
 }

@@ -1,13 +1,26 @@
 {
-  "birthTime": "1949",
+  "title": "Johnathan Grace",
+  "surname": "John",
   "occupations": [
-    "ufologist"
+    "ufologist",
+    "writer"
   ],
   "countries": [
     "us"
   ],
   "pseudonyms": [
     "Val Valerian",
-    "Val Valerian"
+    "Valdamar Valerian",
+    "O. H. Krill"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1949"
+    },
+    {
+      "type": "death",
+      "time": "~2021"
+    }
   ]
 }

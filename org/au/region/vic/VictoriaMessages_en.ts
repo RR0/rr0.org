@@ -1,7 +1,7 @@
-import { melbourneVicMessages } from "./melbourne/MelbourneMessages"
-import { VictoriaCityCode } from "./VictoriaCityCode"
-import { OrganizationMessages } from "../../../OrganizationMessages"
-import { OrganizationType } from "../../../Organization"
+import { melbourneVicMessages } from "./melbourne/MelbourneMessages.js"
+import { VictoriaCityCode } from "./VictoriaCityCode.js"
+import { OrganizationMessages } from "../../../OrganizationMessages.js"
+import { OrganizationType } from "../../../Organization.js"
 
 export const victoria_en = new OrganizationMessages("Victoria")
 victoria_en[OrganizationType.city] = {

@@ -1,5 +1,5 @@
-import { describe, expect, test } from '@javarome/testscript';
-import {StringUtil} from "./StringUtil"
+import { describe, expect, test } from "@javarome/testscript"
+import { StringUtil } from "./StringUtil.js"
 
 describe("StringUtil", () => {
 

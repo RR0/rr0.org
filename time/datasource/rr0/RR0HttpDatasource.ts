@@ -1,13 +1,13 @@
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { HttpSource } from "../HttpSource"
-import { UrlUtil } from "../../../util/url/UrlUtil"
-import { RR0Datasource } from "./RR0Datasource"
-import { TimeContext } from "../../TimeContext"
-import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary"
-import { Place } from "../../../place/Place"
-import { Publication, Source } from "../../../source/Source"
-import { CityService } from "../../../org/country/region/department/city/CityService"
-import { Organization } from "../../../org/Organization"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { HttpSource } from "../HttpSource.js"
+import { UrlUtil } from "../../../util/url/UrlUtil.js"
+import { RR0Datasource } from "./RR0Datasource.js"
+import { TimeContext } from "../../TimeContext.js"
+import { NamedPlace, RR0CaseSummary } from "./RR0CaseSummary.js"
+import { Place } from "../../../place/Place.js"
+import { Publication, Source } from "../../../source/Source.js"
+import { CityService } from "../../../org/country/region/department/city/CityService.js"
+import { Organization } from "../../../org/Organization.js"
 
 export class RR0HttpDatasource extends RR0Datasource {
 

@@ -1,7 +1,7 @@
-import { TarnEtGaronneCityCode } from "./TarnEtGaronneCityCode"
-import { touffaillesMessages } from "./touffailles/TouffaillesMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { TarnEtGaronneCityCode } from "./TarnEtGaronneCityCode.js"
+import { touffaillesMessages } from "./touffailles/TouffaillesMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
 
 const tarnEtGaronneCityMessages: { [key in TarnEtGaronneCityCode]: OrganizationMessages } = {
   [TarnEtGaronneCityCode.Touffailles]: touffaillesMessages

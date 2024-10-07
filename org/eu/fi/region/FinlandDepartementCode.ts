@@ -1,4 +1,4 @@
-import { SouthSavoDepartmentCode } from "./ss/SouthSavoDepartmentCode"
+import { SouthSavoDepartmentCode } from "./ss/SouthSavoDepartmentCode.js"
 
 export enum FinlandDepartementCode {
   /**

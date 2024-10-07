@@ -1,4 +1,4 @@
-import { TimeContext } from "../../TimeContext"
+import { TimeContext } from "../../TimeContext.js"
 
 export interface FuforaCaseSummary {
   readonly id: string

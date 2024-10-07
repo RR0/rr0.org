@@ -1,8 +1,8 @@
-import { CorrezeCityCode } from "./CorrezeCityCode"
-import { larochePresFeytMessages } from "./LarochePresFeyt/LarochePresFeytMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { briveLaGaillardeMessages } from "./BriveLaGaillarde/BriveLaGaillardeMessages"
+import { CorrezeCityCode } from "./CorrezeCityCode.js"
+import { larochePresFeytMessages } from "./LarochePresFeyt/LarochePresFeytMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { briveLaGaillardeMessages } from "./BriveLaGaillarde/BriveLaGaillardeMessages.js"
 
 type CorrezeCityMessagesList = { [key in CorrezeCityCode]: OrganizationMessages }
 export const correzeMessages = DepartmentMessages.create<CorrezeCityMessagesList>("Corrèze", {

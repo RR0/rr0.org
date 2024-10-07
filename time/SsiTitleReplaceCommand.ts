@@ -1,5 +1,5 @@
-import {RegexReplacer, SsiEchoVarReplaceCommand, StringContextHandler} from "ssg-api"
-import {HtmlRR0SsgContext} from "../RR0SsgContext"
+import { RegexReplacer, SsiEchoVarReplaceCommand, StringContextHandler } from "ssg-api"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 /**
  * Replaces the SSI expression "<!--#echo var="title" -->" by the page's <title> content,

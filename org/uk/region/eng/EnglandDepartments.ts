@@ -1,5 +1,5 @@
-import { Department } from "../../../country/region/department/Department"
-import { sussex } from "./sussex/Sussex"
+import { Department } from "../../../country/region/department/Department.js"
+import { sussex } from "./sussex/Sussex.js"
 
 export const englandDepartments: Department[] = [
   sussex

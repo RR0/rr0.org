@@ -29,33 +29,36 @@
     <li>un serveur (<i lang="en">back end</i>, <span class="place">service provider</span>) hébergeant des ressources
       protégées</li>
   </ol>
-  <p>OAuth définit clairement le 3ᵉ rôle :</p>
+  <p>OAuth définit un 3ᵉ rôle :</p>
   <ol start="3">
     <li><b>propriétaire de ressource</b> (<i lang="en">resource owner</i>) ou "utilisateur final" (<i
-      lang="en">end user</i>) vers qui on se tournera pour lui demander s'il autorise un accès, sans pour autant
-      dévoiler son identité.</li>
+      lang="en">end user</i>) vers qui on se tournera pour demander si un accès est autorisé, sans pour autant dévoiler
+      son identité.</li>
   </ol>
   <p>Il définit 2 processus :</p>
   <ul>
     <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
     <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
   </ul>
-<section>
-  <h2>Implémentation</h2>
-  <p><a href="https://oauthdebugger.com/">Debugger</a></p>
-</section>
-<section>
-  <h2>Notes</h2>
-  <p>Stabilisé <time>2007-10</time>, revisé <time>2009-06</time> (<a href="http://oauth.net/core/1.0a">révision
-    A</a>).</p>
-  <p><a href="../oidc">OpenID Connect</a> étend OAuth 2.x en ajoutant des fonctionnalités standards d'identification.
-  </p>
-</section>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/+esm'
+  <section>
+    <h2>Implémentation</h2>
+    <p>OAuth est rarement implémenté manuellement, mais intégré via des <a href="https://oauth.net/code/nodejs/">bibliothèques</a>
+      (côté client et serveur) ou des fournisseurs (Auth0 par ex) dédiés. Ces implémentations seront évidemment
+      différentes selon la version OAuth supportée (1 ou 2).</p>
+    <p><a href="https://oauthdebugger.com/">Debugger</a></p>
+  </section>
+  <section>
+    <h2>Notes</h2>
+    <p>Stabilisé <time>2007-10</time>, revisé <time>2009-06</time> (<a href="http://oauth.net/core/1.0a">révision A</a>).
+    </p>
+    <p><a href="../oidc">OpenID Connect</a> étend OAuth 2.x en ajoutant des fonctionnalités standards d'identification.
+    </p>
+  </section>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.0/+esm.js"
 
-  mermaid.initialize({
-    securityLevel: 'loose'
-  })
-</script>
-<!--#include virtual="/footer.html" -->
+    mermaid.initialize({
+      securityLevel: "loose"
+    })
+  </script>
+  <!--#include virtual="/footer.html" -->

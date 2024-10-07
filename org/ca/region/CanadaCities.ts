@@ -1,8 +1,8 @@
-import { City } from "../../country/region/department/city/City"
-import { britishColumbiaCities } from "./bc/BritishColumbiaCities"
-import { manitobaCities } from "./mb/ManitobaCities"
-import { quebecCities } from "./qc/QuebecCities"
-import { albertaCities } from "./ab/AlbertaCities"
+import { City } from "../../country/region/department/city/City.js"
+import { britishColumbiaCities } from "./bc/BritishColumbiaCities.js"
+import { manitobaCities } from "./mb/ManitobaCities.js"
+import { quebecCities } from "./qc/QuebecCities.js"
+import { albertaCities } from "./ab/AlbertaCities.js"
 
 export const canadaCities: City[] = [
   ...albertaCities,

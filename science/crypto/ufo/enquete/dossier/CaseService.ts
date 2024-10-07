@@ -1,10 +1,10 @@
-import { AllDataService } from "../../../../../data/AllDataService"
-import { RR0Case } from "./RR0Case"
-import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext"
+import { AllDataService } from "../../../../../data/AllDataService.js"
+import { RR0Case } from "./RR0Case.js"
+import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext.js"
 import path from "path"
-import { TimeElementFactory } from "../../../../../time/TimeElementFactory"
-import { AbstractDataService } from "../../../../../data/AbstractDataService"
-import { CaseFactory } from "./CaseFactory"
+import { TimeElementFactory } from "../../../../../time/TimeElementFactory.js"
+import { AbstractDataService } from "../../../../../data/AbstractDataService.js"
+import { CaseFactory } from "./CaseFactory.js"
 
 export class CaseService extends AbstractDataService<RR0Case> {
 

@@ -1,5 +1,5 @@
 import { FileUtil, SsgContext, SsgStep } from "ssg-api"
-import { SourceRegistry } from "./SourceRegistry"
+import { SourceRegistry } from "./SourceRegistry.js"
 
 /**
  * Saves the index file collected by the SourceCommand.

@@ -1,8 +1,8 @@
-import { Country } from "../country/Country"
-import { CountryCode } from "../country/CountryCode"
-import { Place } from "../../place/Place"
-import { NewZealandRegionCode } from "./region/NewZealandRegionCode"
-import { Region } from "../country/region/Region"
+import { Country } from "../country/Country.js"
+import { CountryCode } from "../country/CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { NewZealandRegionCode } from "./region/NewZealandRegionCode.js"
+import { Region } from "../country/region/Region.js"
 
 export const newZealand = new Country(CountryCode.nz)
 

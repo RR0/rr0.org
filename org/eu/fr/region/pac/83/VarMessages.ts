@@ -1,9 +1,9 @@
-import { VarCityCode } from "./VarCityCode"
-import { foxAmphouxMessages } from "./FoxAmphoux/FoxAmphouxMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { carcesMessages } from "./Carces/CarcesMessages"
-import { grimaudMessages } from "./Grimaud/GrimaudMessages"
+import { VarCityCode } from "./VarCityCode.js"
+import { foxAmphouxMessages } from "./FoxAmphoux/FoxAmphouxMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { carcesMessages } from "./Carces/CarcesMessages.js"
+import { grimaudMessages } from "./Grimaud/GrimaudMessages.js"
 
 type VarCityList<T> = { [key in VarCityCode]: T }
 const varCityMessages: VarCityList<OrganizationMessages> = {

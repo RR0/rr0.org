@@ -1,11 +1,11 @@
-import { RR0Data } from "./RR0Data"
-import { TimeContext } from "../time/TimeContext"
+import { RR0Data } from "./RR0Data.js"
+import { TimeContext } from "../time/TimeContext.js"
 
-import { RR0DataFactory } from "./RR0DataFactory"
+import { RR0DataFactory } from "./RR0DataFactory.js"
 import path from "path"
 import fs from "fs"
-import { RR0Event } from "../event/RR0Event"
-import { RR0EventFactory } from "../event/RR0EventFactory"
+import { RR0Event } from "../event/RR0Event.js"
+import { RR0EventFactory } from "../event/RR0EventFactory.js"
 
 export class AbstractDataFactory<T extends RR0Data> implements RR0DataFactory<T> {
 

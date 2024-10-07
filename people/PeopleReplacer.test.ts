@@ -1,10 +1,10 @@
-import { PeopleReplacer } from "./PeopleReplacer"
-import { rr0TestUtil } from "../test/RR0TestUtil"
-import { PeopleService } from "./PeopleService"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { PeopleReplacer } from "./PeopleReplacer.js"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
+import { PeopleService } from "./PeopleService.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 import { describe, expect, test } from "@javarome/testscript"
-import { AllDataService } from "../data/AllDataService"
-import { TypedDataFactory } from "../data/TypedDataFactory"
+import { AllDataService } from "../data/AllDataService.js"
+import { TypedDataFactory } from "../data/TypedDataFactory.js"
 
 describe("PeopleReplacer", () => {
 

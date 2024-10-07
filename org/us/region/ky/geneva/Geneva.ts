@@ -1,6 +1,6 @@
-import { UsaCountyCode } from "../../UsaCountyCode"
-import { Place } from "../../../../../place/Place"
-import { Department } from "../../../../country/region/department/Department"
-import { kentucky } from "../Kentucky"
+import { UsaCountyCode } from "../../UsaCountyCode.js"
+import { Place } from "../../../../../place/Place.js"
+import { Department } from "../../../../country/region/department/Department.js"
+import { kentucky } from "../Kentucky.js"
 
 export const geneva = Department.create(UsaCountyCode.geneva, kentucky, Place.fromLocation(48, 0.316667))

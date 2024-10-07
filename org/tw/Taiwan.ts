@@ -1,8 +1,8 @@
-import { Country } from "../country/Country"
-import { CountryCode } from "../country/CountryCode"
-import { Place } from "../../place/Place"
-import { Region } from "../country/region/Region"
-import { TaiwanRegionCode } from "./region/TaiwanRegionCode"
+import { Country } from "../country/Country.js"
+import { CountryCode } from "../country/CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { Region } from "../country/region/Region.js"
+import { TaiwanRegionCode } from "./region/TaiwanRegionCode.js"
 
 export const taiwan = new Country(CountryCode.tw)
 

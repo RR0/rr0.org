@@ -1,4 +1,4 @@
-import { NouvelleCaledonieCityCode } from "./NouvelleCaledonieCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { NouvelleCaledonieCityCode } from "./NouvelleCaledonieCityCode.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
 
 export type NouvelleCaledonieCityMessages = { [key in NouvelleCaledonieCityCode]: OrganizationMessages }

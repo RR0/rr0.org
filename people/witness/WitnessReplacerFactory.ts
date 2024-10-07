@@ -1,6 +1,6 @@
 import { DomReplacer, ReplacerFactory } from "ssg-api"
-import { WitnessReplacer } from "./WitnessReplacer"
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
+import { WitnessReplacer } from "./WitnessReplacer.js"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
 
 /**
  * Creates replacers for caviarded HTML in a given context.

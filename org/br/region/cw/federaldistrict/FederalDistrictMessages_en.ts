@@ -1,7 +1,7 @@
-import { FederalDistrictCityCode } from "./FederalDistrictCityCode"
-import { brasiliaMessages_en } from "./70000-000/BrasiliaMessages_en"
-import { OrganizationMessages } from "../../../../OrganizationMessages"
-import { OrganizationType } from "../../../../Organization"
+import { FederalDistrictCityCode } from "./FederalDistrictCityCode.js"
+import { brasiliaMessages_en } from "./70000-000/BrasiliaMessages_en.js"
+import { OrganizationMessages } from "../../../../OrganizationMessages.js"
+import { OrganizationType } from "../../../../Organization.js"
 
 export const federalDistrictMessages_en = new OrganizationMessages("Federal District")
 federalDistrictMessages_en[OrganizationType.city] = {

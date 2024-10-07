@@ -1,7 +1,7 @@
-import { SourceRenderer } from "./SourceRenderer"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { SourceFactory } from "./SourceFactory"
-import { ReferenceGenerator } from "../ReferenceGenerator"
+import { SourceRenderer } from "./SourceRenderer.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { SourceFactory } from "./SourceFactory.js"
+import { ReferenceGenerator } from "../ReferenceGenerator.js"
 
 /**
  * Replaces a source tag with the actual source web UI.

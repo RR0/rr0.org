@@ -1,7 +1,7 @@
-import { AveyronCityCode } from "./AveyronCityCode"
-import { espalionMessages } from "./Espalion/EspalionMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { AveyronCityCode } from "./AveyronCityCode.js"
+import { espalionMessages } from "./Espalion/EspalionMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
 
 type DepCityMessages = { [key in AveyronCityCode]: OrganizationMessages }
 const depCityMessages: DepCityMessages = {

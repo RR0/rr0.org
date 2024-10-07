@@ -1,7 +1,7 @@
-import { northKareliaDepartments } from "./region/nk/NorthKareliaDepartments"
-import { Organization } from "../../Organization"
-import { pirkanmaaDepartments } from "./region/p/PirkanmaaDepartments"
-import { southSavoDepartments } from "./region/ss/SouthSavoDepartments"
+import { northKareliaDepartments } from "./region/nk/NorthKareliaDepartments.js"
+import { Organization } from "../../Organization.js"
+import { pirkanmaaDepartments } from "./region/p/PirkanmaaDepartments.js"
+import { southSavoDepartments } from "./region/ss/SouthSavoDepartments.js"
 
 export const finlandDepartments: Organization[] = [
   ...northKareliaDepartments,

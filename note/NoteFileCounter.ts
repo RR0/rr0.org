@@ -1,5 +1,5 @@
-import { PerFileCounter } from "../PerFileCounter"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { PerFileCounter } from "../PerFileCounter.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 export class NoteFileCounter extends PerFileCounter<HtmlRR0SsgContext> {
 

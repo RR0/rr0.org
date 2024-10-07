@@ -1,8 +1,8 @@
-import { CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages"
-import { placeMessages_fr } from "../place/PlaceMessages_fr"
-import { peopleMessages_fr } from "../people/PeopleMessages_fr"
-import { countryMessageList_fr } from "../org/CountryMessageList_fr"
-import { orgMessages_fr } from "../org/OrgRR0Messages_fr"
+import { CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages.js"
+import { placeMessages_fr } from "../place/PlaceMessages_fr.js"
+import { peopleMessages_fr } from "../people/PeopleMessages_fr.js"
+import { countryMessageList_fr } from "../org/CountryMessageList_fr.js"
+import { orgMessages_fr } from "../org/OrgRR0Messages_fr.js"
 
 const caseConclusion_fr: CaseConclusionMessages = {
   unknown: "inexpliqué",

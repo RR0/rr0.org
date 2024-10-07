@@ -1,4 +1,4 @@
-import { ContentHandler } from "./ContentHandler.js"
+import { ContentHandler } from "./ContentHandler.js.js"
 
 if (typeof browser == "undefined") {
   // Chrome does not support the browser namespace yet.

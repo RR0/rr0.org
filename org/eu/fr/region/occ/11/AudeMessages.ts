@@ -1,7 +1,7 @@
-import { AudeCityCode } from "./AudeCityCode"
-import { cucugnanMessages } from "./cucugnan/CucugnanMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { AudeCityCode } from "./AudeCityCode.js"
+import { cucugnanMessages } from "./cucugnan/CucugnanMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
 
 type AudeCityMessages = { [key in AudeCityCode]: OrganizationMessages }
 const audeCityMessages: AudeCityMessages = {

@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { pontLEveque14 } from "./PontLEveque/PontLEveque"
-import { saintAubinSurMer14 } from "./SaintAubinSurMer/SaintAubinSurMer"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { pontLEveque14 } from "./PontLEveque/PontLEveque.js"
+import { saintAubinSurMer14 } from "./SaintAubinSurMer/SaintAubinSurMer.js"
 
 export const calvadosCities: City[] = [
   pontLEveque14,

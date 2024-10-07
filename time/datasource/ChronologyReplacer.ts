@@ -1,10 +1,10 @@
-import { DomReplacement } from "../DomReplacement"
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
-import { RR0CaseSummary } from "./rr0/RR0CaseSummary"
-import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
-import { RR0HttpDatasource } from "./rr0/RR0HttpDatasource"
-import { HttpSource } from "./HttpSource"
+import { DomReplacement } from "../DomReplacement.js"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
+import { CaseSummaryRenderer } from "../CaseSummaryRenderer.js"
+import { RR0CaseSummary } from "./rr0/RR0CaseSummary.js"
+import { RR0CaseMapping } from "./rr0/RR0CaseMapping.js"
+import { RR0HttpDatasource } from "./rr0/RR0HttpDatasource.js"
+import { HttpSource } from "./HttpSource.js"
 
 /**
  * Replaces a (ul) tag from (chronology) files with case summaries from external datasources.

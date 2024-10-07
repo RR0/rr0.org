@@ -1,7 +1,7 @@
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { DomReplacement } from "./DomReplacement"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { DomReplacement } from "./DomReplacement.js"
 import { ObjectUtils } from "@rr0/common"
-import { TimeElementFactory } from "./TimeElementFactory"
+import { TimeElementFactory } from "./TimeElementFactory.js"
 
 export type TimeParseResult = {
   approximate: string

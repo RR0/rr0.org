@@ -1,7 +1,7 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { IlleEtVilaineCityCode } from "./IlleEtVilaineCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { pleineFougeresMessages } from "./pleinefougeres/PleineFougeresMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { IlleEtVilaineCityCode } from "./IlleEtVilaineCityCode.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { pleineFougeresMessages } from "./pleinefougeres/PleineFougeresMessages.js"
 
 type IlleEtVilaineCityMessagesList = { [key in IlleEtVilaineCityCode]: OrganizationMessages }
 const illeEtVilaineCityMessages: IlleEtVilaineCityMessagesList = {

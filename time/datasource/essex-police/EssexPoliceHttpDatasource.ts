@@ -1,10 +1,10 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
 import { JSDOM } from "jsdom"
-import { TimeContext } from "../../TimeContext"
-import { HttpSource } from "../HttpSource"
+import { TimeContext } from "../../TimeContext.js"
+import { HttpSource } from "../HttpSource.js"
 import assert from "assert"
-import { EssexPoliceDatasource } from "./EssexPoliceDatasource"
-import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
+import { EssexPoliceDatasource } from "./EssexPoliceDatasource.js"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary.js"
 import { By } from "selenium-webdriver"
 
 export class EssexPoliceHttpDatasource extends EssexPoliceDatasource {

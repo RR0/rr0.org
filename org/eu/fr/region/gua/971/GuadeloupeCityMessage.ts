@@ -1,4 +1,4 @@
-import { GuadeloupeCityCode } from "./GuadeloupeCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { GuadeloupeCityCode } from "./GuadeloupeCityCode.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
 
 export type GuadeloupeCityMessage = { [key in GuadeloupeCityCode]: OrganizationMessages }

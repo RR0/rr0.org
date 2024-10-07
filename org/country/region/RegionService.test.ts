@@ -1,9 +1,9 @@
 import { describe, expect, test } from "@javarome/testscript"
-import { regionService } from "./RegionService"
-import { ileDeFrance } from "../../eu/fr/region/idf/Idf"
-import { france } from "../../eu/fr/France"
-import { alabama } from "../../us/region/al/Alabama"
-import { usa } from "../../us/Usa"
+import { regionService } from "./RegionService.js"
+import { ileDeFrance } from "../../eu/fr/region/idf/Idf.js"
+import { france } from "../../eu/fr/France.js"
+import { alabama } from "../../us/region/al/Alabama.js"
+import { usa } from "../../us/Usa.js"
 
 describe("RegionService", () => {
 

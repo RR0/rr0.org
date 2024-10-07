@@ -1,11 +1,11 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpSource } from "../HttpSource"
-import { UrlUtil } from "../../../util/url/UrlUtil"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { HttpSource } from "../HttpSource.js"
+import { UrlUtil } from "../../../util/url/UrlUtil.js"
 import { JSDOM } from "jsdom"
-import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
-import { TimeContext } from "../../TimeContext"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
 import assert from "assert"
-import { BaseOvniFranceDatasource } from "./BaseOvniFranceDatasource"
+import { BaseOvniFranceDatasource } from "./BaseOvniFranceDatasource.js"
 
 enum ListType {
   perMonth = 20

@@ -1,5 +1,5 @@
-import { carbon } from "./carbon/Carbon"
-import { Organization } from "../../../Organization"
+import { carbon } from "./carbon/Carbon.js"
+import { Organization } from "../../../Organization.js"
 
 export const wyomingCounties: Organization[] = [
   carbon

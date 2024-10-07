@@ -1,8 +1,8 @@
 import { HtmlFileContents } from "ssg-api"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 import fs from "fs"
-import { TimeTextBuilder } from "../time/TimeTextBuilder"
-import { FileVisitor } from "../RR0ContentStep"
+import { TimeTextBuilder } from "../time/TimeTextBuilder.js"
+import { FileVisitor } from "../RR0ContentStep.js"
 
 export type PageInfo = {
   title: string

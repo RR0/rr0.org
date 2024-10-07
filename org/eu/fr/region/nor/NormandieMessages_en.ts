@@ -1,8 +1,8 @@
-import { RegionMessages } from "../../../../country/region/RegionMessages"
-import { calvadosMessages } from "./14/CalvadosMessages"
-import { NormandieDepartmentCode } from "./NormandieDepartmentCode"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { seineMaritimeMessages } from "./76/SeineMaritimeMessages"
+import { RegionMessages } from "../../../../country/region/RegionMessages.js"
+import { calvadosMessages } from "./14/CalvadosMessages.js"
+import { NormandieDepartmentCode } from "./NormandieDepartmentCode.js"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages.js"
+import { seineMaritimeMessages } from "./76/SeineMaritimeMessages.js"
 
 const normandyMessageList: { [key in NormandieDepartmentCode]: DepartmentMessages<any> } = {
   [NormandieDepartmentCode.Calvados]: calvadosMessages,

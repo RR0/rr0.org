@@ -1,7 +1,7 @@
-import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { AbstractDatasource } from "../../../../../time/datasource/AbstractDatasource"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
-import { RR0ContextFilter } from "../../../../../time/datasource/rr0/RR0Datasource"
+import { GeipanCaseSummary } from "./GeipanCaseSummary.js"
+import { AbstractDatasource } from "../../../../../time/datasource/AbstractDatasource.js"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext.js"
+import { RR0ContextFilter } from "../../../../../time/datasource/rr0/RR0Datasource.js"
 
 export abstract class GeipanDatasource extends AbstractDatasource<GeipanCaseSummary> {
 

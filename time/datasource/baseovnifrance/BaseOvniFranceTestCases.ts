@@ -1,6 +1,6 @@
-import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
-import { TimeContext } from "../../TimeContext"
-import { baseOvniFranceDatasource } from "./BaseOvniFranceRR0Mapping"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
+import { baseOvniFranceDatasource } from "./BaseOvniFranceRR0Mapping.js"
 
 export const baseOvniFranceTestCases: BaseOvniFranceCaseSummary[] = [
   {

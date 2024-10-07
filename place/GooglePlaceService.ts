@@ -1,8 +1,8 @@
 import { Client, Status } from "@googlemaps/google-maps-services-js"
 
-import { Elevation } from "./Place"
-import { PlaceService } from "./PlaceService"
-import { PlaceLocation } from "./PlaceLocation"
+import { Elevation } from "./Place.js"
+import { PlaceService } from "./PlaceService.js"
+import { PlaceLocation } from "./PlaceLocation.js"
 
 export class GooglePlaceService extends PlaceService {
 

@@ -1,13 +1,13 @@
-import { PlaceReplacer } from "./PlaceReplacer"
-import { PlaceService } from "./PlaceService"
-import { Elevation, Place } from "./Place"
-import { OrganizationService } from "../org/OrganizationService"
+import { PlaceReplacer } from "./PlaceReplacer.js"
+import { PlaceService } from "./PlaceService.js"
+import { Elevation, Place } from "./Place.js"
+import { OrganizationService } from "../org/OrganizationService.js"
 import { SsgContext } from "ssg-api"
-import { rr0TestUtil } from "../test/RR0TestUtil"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
 import { describe, expect, test } from "@javarome/testscript"
-import { PlaceLocation } from "./PlaceLocation"
-import { Organization } from "../org/Organization"
-import { RR0Messages_fr } from "../lang/RR0Messages_fr"
+import { PlaceLocation } from "./PlaceLocation.js"
+import { Organization } from "../org/Organization.js"
+import { RR0Messages_fr } from "../lang/RR0Messages_fr.js"
 
 class MockPlaceService extends PlaceService {
 

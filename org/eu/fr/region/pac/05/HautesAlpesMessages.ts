@@ -1,7 +1,7 @@
-import { brianconMessages } from "./briancon/BrianconMessages"
-import { HautesAlpesCityCode } from "./HautesAlpesCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { brianconMessages } from "./briancon/BrianconMessages.js"
+import { HautesAlpesCityCode } from "./HautesAlpesCityCode.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
 
 type HautesAlpesCityList<T> = { [key in HautesAlpesCityCode]: T }
 const hautesAlpesCityMessages: HautesAlpesCityList<OrganizationMessages> = {

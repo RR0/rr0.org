@@ -1,7 +1,7 @@
-import { CountryCode } from "../country/CountryCode"
-import { Place } from "../../place/Place"
-import { BrazilRegionCode } from "./region/BrazilRegionCode"
-import { Organization, OrganizationType } from "../Organization"
+import { CountryCode } from "../country/CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { BrazilRegionCode } from "./region/BrazilRegionCode.js"
+import { Organization, OrganizationType } from "../Organization.js"
 
 export const brazil = new Organization(CountryCode.br, [], OrganizationType.country)
 

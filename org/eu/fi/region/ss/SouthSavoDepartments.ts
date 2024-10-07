@@ -1,5 +1,5 @@
-import { Department } from "../../../../country/region/department/Department"
-import { pieksamakiDep } from "./Pieksamaki/PieksamakiDep"
+import { Department } from "../../../../country/region/department/Department.js"
+import { pieksamakiDep } from "./Pieksamaki/PieksamakiDep.js"
 
 export const southSavoDepartments: Department[] = [
   pieksamakiDep

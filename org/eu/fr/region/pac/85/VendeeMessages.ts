@@ -1,7 +1,7 @@
-import { VendeeCityCode } from "./VendeeCityCode"
-import { chantonnayMessages } from "./Chantonnay/ChantonnayMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { VendeeCityCode } from "./VendeeCityCode.js"
+import { chantonnayMessages } from "./Chantonnay/ChantonnayMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
 
 type DepCityList<T> = { [key in VendeeCityCode]: T }
 const depCityMessages: DepCityList<OrganizationMessages> = {

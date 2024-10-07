@@ -1,9 +1,9 @@
-import { TimeReplacer } from "./TimeReplacer"
-import { rr0TestUtil } from "../test/RR0TestUtil"
+import { TimeReplacer } from "./TimeReplacer.js"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
 import { describe, expect, test } from "@javarome/testscript"
-import { TimeRenderer } from "./TimeRenderer"
-import { TimeElementFactory } from "./TimeElementFactory"
-import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeRenderer } from "./TimeRenderer.js"
+import { TimeElementFactory } from "./TimeElementFactory.js"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
 
 describe("TimeReplacer", () => {
 

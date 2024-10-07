@@ -1,6 +1,6 @@
 import { HtmlSsgContext, ReplaceCommand } from "ssg-api"
-import { StringUtil } from "../util/string/StringUtil"
-import { LocalAnchor } from "../LocalAnchor"
+import { StringUtil } from "../util/string/StringUtil.js"
+import { LocalAnchor } from "../LocalAnchor.js"
 import path from "path"
 
 /**

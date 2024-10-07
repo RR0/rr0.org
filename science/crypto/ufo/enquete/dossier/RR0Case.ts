@@ -1,4 +1,4 @@
-import { RR0CaseSummary } from "../../../../../time/datasource/rr0/RR0CaseSummary"
+import { RR0CaseSummary } from "../../../../../time/datasource/rr0/RR0CaseSummary.js"
 
 
 enum HynekClassification {

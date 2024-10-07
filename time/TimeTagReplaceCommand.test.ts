@@ -1,9 +1,9 @@
-import { TimeReplacerFactory } from "./TimeReplacerFactory"
-import { rr0TestUtil } from "../test/RR0TestUtil"
+import { TimeReplacerFactory } from "./TimeReplacerFactory.js"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
 import { HtmlTagReplaceCommand } from "ssg-api"
 import { describe, expect, test } from "@javarome/testscript"
-import { TimeRenderer } from "./TimeRenderer"
-import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeRenderer } from "./TimeRenderer.js"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
 
 describe("HtmlTagReplaceCommand", () => {
 

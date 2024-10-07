@@ -1,6 +1,6 @@
-import { RR0SsgContext } from "../RR0SsgContext"
+import { RR0SsgContext } from "../RR0SsgContext.js"
 import assert from "assert"
-import { Organization } from "./Organization"
+import { Organization } from "./Organization.js"
 
 export interface OrganizationMessageOptions {
   parent: boolean

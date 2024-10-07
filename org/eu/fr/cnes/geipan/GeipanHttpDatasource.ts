@@ -1,20 +1,20 @@
-import { GeipanCaseSummary, GeipanZoneCode } from "./GeipanCaseSummary"
+import { GeipanCaseSummary, GeipanZoneCode } from "./GeipanCaseSummary.js"
 import assert from "assert"
 import {
   GeipanCaseClassification,
   GeipanCaseClassification_calc,
   GeipanCaseClassification_minus
 } from "./GeipanCaseClassification"
-import { GeipanDatasource } from "./GeipanDatasource"
-import { HttpSource } from "../../../../../time/datasource/HttpSource"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
-import { UrlUtil } from "../../../../../util/url/UrlUtil"
-import { FranceDepartementCode } from "../../region/FranceDepartementCode"
-import { FranceRegionCode } from "../../region/FranceRegionCode"
-import { CountryCode } from "../../../../country/CountryCode"
-import { TimeContext } from "../../../../../time/TimeContext"
-import { ObjectUtil } from "../../../../../util/ObjectUtil"
-import { RR0ContextFilter } from "../../../../../time/datasource/rr0/RR0Datasource"
+import { GeipanDatasource } from "./GeipanDatasource.js"
+import { HttpSource } from "../../../../../time/datasource/HttpSource.js"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext.js"
+import { UrlUtil } from "../../../../../util/url/UrlUtil.js"
+import { FranceDepartementCode } from "../../region/FranceDepartementCode.js"
+import { FranceRegionCode } from "../../region/FranceRegionCode.js"
+import { CountryCode } from "../../../../country/CountryCode.js"
+import { TimeContext } from "../../../../../time/TimeContext.js"
+import { ObjectUtil } from "../../../../../util/ObjectUtil.js"
+import { RR0ContextFilter } from "../../../../../time/datasource/rr0/RR0Datasource.js"
 
 interface QueryParameters {
   /**

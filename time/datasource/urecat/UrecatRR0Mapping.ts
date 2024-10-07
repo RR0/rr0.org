@@ -1,8 +1,8 @@
-import { UrecatRR0Mapper } from "./UrecatRR0Mapper"
-import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
-import { cityService } from "../../../org/Cities"
-import { countryService } from "../../../org/country/CountryService"
-import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
+import { UrecatRR0Mapper } from "./UrecatRR0Mapper.js"
+import { UrecatHttpDatasource } from "./UrecatHttpDatasource.js"
+import { cityService } from "../../../org/Cities.js"
+import { countryService } from "../../../org/country/CountryService.js"
+import { ChronologyReplacerActions } from "../ChronologyReplacerActions.js"
 
 export const urecatDatasource = new UrecatHttpDatasource(new URL("https://ufologie.patrickgross.org"), "ce3")
 

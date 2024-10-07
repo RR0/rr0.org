@@ -1,10 +1,10 @@
-import { RR0CaseSummaryMapper } from "./RR0CaseSummaryMapper"
-import { RR0HttpDatasource } from "./RR0HttpDatasource"
-import { cityService } from "../../../org/Cities"
-import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
-import { RR0CaseMapping } from "./RR0CaseMapping"
-import { RR0CaseSummary } from "./RR0CaseSummary"
-import { RR0FileDatasource } from "./RR0FileDatasource"
+import { RR0CaseSummaryMapper } from "./RR0CaseSummaryMapper.js"
+import { RR0HttpDatasource } from "./RR0HttpDatasource.js"
+import { cityService } from "../../../org/Cities.js"
+import { ChronologyReplacerActions } from "../ChronologyReplacerActions.js"
+import { RR0CaseMapping } from "./RR0CaseMapping.js"
+import { RR0CaseSummary } from "./RR0CaseSummary.js"
+import { RR0FileDatasource } from "./RR0FileDatasource.js"
 
 export const rr0HttpDatasource = new RR0HttpDatasource(new URL("https://rr0.org"), "time", cityService)
 export const rr0FileDatasource = new RR0FileDatasource()

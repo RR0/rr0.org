@@ -1,6 +1,6 @@
 import { DomReplacer, ReplacerFactory } from "ssg-api"
-import { IndexedReplacer } from "./IndexedReplacer"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { IndexedReplacer } from "./IndexedReplacer.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 export class IndexedReplacerFactory implements ReplacerFactory<DomReplacer> {
 

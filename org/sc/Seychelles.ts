@@ -1,8 +1,8 @@
-import { Country } from "../country/Country"
-import { CountryCode } from "../country/CountryCode"
-import { Place } from "../../place/Place"
-import { Region } from "../country/region/Region"
-import { SeychellesRegionCode } from "./region/SeychellesRegionCode"
+import { Country } from "../country/Country.js"
+import { CountryCode } from "../country/CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { Region } from "../country/region/Region.js"
+import { SeychellesRegionCode } from "./region/SeychellesRegionCode.js"
 
 export const seychelles = new Country(CountryCode.sc)
 

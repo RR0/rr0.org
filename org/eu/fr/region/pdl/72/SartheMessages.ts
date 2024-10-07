@@ -1,10 +1,10 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { SartheCityCode } from "./SartheCityCode"
-import { leMansMessages } from "./LeMans/LeMansMessages"
-import { steCerotteMessages } from "./SteCerotte/SteCerotteMessages"
-import { bazogeMessages } from "./bazoge/BazogeMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { sougeLeGanelonMessages } from "./SougeLeGanelon/SougeLeGanelonMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { SartheCityCode } from "./SartheCityCode.js"
+import { leMansMessages } from "./LeMans/LeMansMessages.js"
+import { steCerotteMessages } from "./SteCerotte/SteCerotteMessages.js"
+import { bazogeMessages } from "./bazoge/BazogeMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
+import { sougeLeGanelonMessages } from "./SougeLeGanelon/SougeLeGanelonMessages.js"
 
 type SartheCityMessagesList = { [key in SartheCityCode]: CityMessages }
 const sartheCityMessages: SartheCityMessagesList = {

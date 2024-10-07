@@ -1,4 +1,4 @@
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 import { LinkType } from "ssg-api"
 import path from "path"
 import { glob } from "glob"

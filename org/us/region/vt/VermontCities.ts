@@ -1,5 +1,5 @@
-import { rutlandCities } from "./rutland/RutlandCities"
-import { City } from "../../../country/region/department/city/City"
+import { rutlandCities } from "./rutland/RutlandCities.js"
+import { City } from "../../../country/region/department/city/City.js"
 
 export const vermontCities: City[] = [
   ...rutlandCities

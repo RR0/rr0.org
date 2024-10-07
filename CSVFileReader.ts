@@ -1,6 +1,6 @@
 import { Logger } from "ssg-api"
 
-import csv from "csv-parser"
+import csv from "csv-parser.js"
 import fs from "fs"
 
 export type ReadResultFactory<T> = (data: any) => T

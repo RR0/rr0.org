@@ -1,6 +1,6 @@
-import { CaseMapping } from "../CaseMapping"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { RR0CaseSummary } from "./RR0CaseSummary"
+import { CaseMapping } from "../CaseMapping.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { RR0CaseSummary } from "./RR0CaseSummary.js"
 
 /**
  * Maps some datasource case to a RR0 case.

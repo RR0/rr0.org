@@ -1,7 +1,7 @@
-import { RegionMessages } from "../../../../country/region/RegionMessages"
-import { CollectiviteOutreMerDepartementCode } from "./CollectiviteOutreMerDepartementCode"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { nouvelleCaledonie_fr } from "./988/NouvelleCaledonie_fr"
+import { RegionMessages } from "../../../../country/region/RegionMessages.js"
+import { CollectiviteOutreMerDepartementCode } from "./CollectiviteOutreMerDepartementCode.js"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages.js"
+import { nouvelleCaledonie_fr } from "./988/NouvelleCaledonie_fr.js"
 
 const collectiviteOutreMerCityMessages: { [key in CollectiviteOutreMerDepartementCode]: DepartmentMessages<any> } = {
   [CollectiviteOutreMerDepartementCode.NouvelleCaledonie]: nouvelleCaledonie_fr

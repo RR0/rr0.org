@@ -1,9 +1,9 @@
-import { RR0CaseSummary } from "./datasource/rr0/RR0CaseSummary"
-import { EventRenderer } from "./EventRenderer"
-import { SourceRenderer } from "../source/SourceRenderer"
-import { SourceFactory } from "../source/SourceFactory"
-import { NoteRenderer } from "../note/NoteRenderer"
-import { TimeElementFactory } from "./TimeElementFactory"
+import { RR0CaseSummary } from "./datasource/rr0/RR0CaseSummary.js"
+import { EventRenderer } from "./EventRenderer.js"
+import { SourceRenderer } from "../source/SourceRenderer.js"
+import { SourceFactory } from "../source/SourceFactory.js"
+import { NoteRenderer } from "../note/NoteRenderer.js"
+import { TimeElementFactory } from "./TimeElementFactory.js"
 
 /**
  * Render a case summary as HTML.

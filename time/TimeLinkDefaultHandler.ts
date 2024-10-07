@@ -1,8 +1,8 @@
-import { LinkHandler } from "../MetaLinkReplaceCommand"
-import { Time } from "./Time"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { LinkHandler } from "../MetaLinkReplaceCommand.js"
+import { Time } from "./Time.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 import { Link, LinkType } from "ssg-api"
-import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
 
 export class TimeLinkDefaultHandler implements LinkHandler<HtmlRR0SsgContext> {
 

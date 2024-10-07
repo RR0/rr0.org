@@ -1,8 +1,8 @@
-import { vallonEnSullyMessages } from "./valonensully/VallonEnSullyMessages"
-import { AllierCityCode } from "./AllierCityCode"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { montmaraultMessages } from "./montmarault/MontmaraultMessages"
+import { vallonEnSullyMessages } from "./valonensully/VallonEnSullyMessages.js"
+import { AllierCityCode } from "./AllierCityCode.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
+import { montmaraultMessages } from "./montmarault/MontmaraultMessages.js"
 
 const allierCityMessages: { [key in AllierCityCode]: CityMessages } = {
   [AllierCityCode.VallonEnSully]: vallonEnSullyMessages,

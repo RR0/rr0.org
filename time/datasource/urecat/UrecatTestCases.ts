@@ -1,6 +1,6 @@
-import { UrecatCase } from "./UrecatCase"
-import { TimeContext } from "../../TimeContext"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
+import { UrecatCase } from "./UrecatCase.js"
+import { TimeContext } from "../../TimeContext.js"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
 
 const noWeekdayOptions = {...rr0TestUtil.intlOptions}
 noWeekdayOptions.weekday = undefined

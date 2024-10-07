@@ -1,5 +1,5 @@
-import { City } from "../../../../country/region/department/city/City"
-import { charlotteAmalie } from "./CharlotteAmalie/CharlotteAmalie"
+import { City } from "../../../../country/region/department/city/City.js"
+import { charlotteAmalie } from "./CharlotteAmalie/CharlotteAmalie.js"
 
 export const stThomasCities: City[] = [
   charlotteAmalie

@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { ouhans } from "./Ouhans/Ouhans"
-import { amathayVesigneux } from "./AmathayVesigneux/AmathayVesigneux"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { ouhans } from "./Ouhans/Ouhans.js"
+import { amathayVesigneux } from "./AmathayVesigneux/AmathayVesigneux.js"
 
 export const doubsCities: City[] = [
   amathayVesigneux,

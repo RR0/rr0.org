@@ -1,8 +1,8 @@
-import { CalvadosCityCode } from "./CalvadosCityCode"
-import { pontLeveque14Messages } from "./PontLEveque/PontLevequeMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { saintAubinSurMer14Messages } from "./SaintAubinSurMer/SaintAubinSurMerMessages"
+import { CalvadosCityCode } from "./CalvadosCityCode.js"
+import { pontLeveque14Messages } from "./PontLEveque/PontLevequeMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { saintAubinSurMer14Messages } from "./SaintAubinSurMer/SaintAubinSurMerMessages.js"
 
 type CalvadosCityMessagesList = { [key in CalvadosCityCode]: OrganizationMessages }
 export const calvadosMessages = DepartmentMessages.create<CalvadosCityMessagesList>("Calvados", {

@@ -1,7 +1,7 @@
-import { cotesDArmor } from "./22/CotesDArmor"
-import { Department } from "../../../../country/region/department/Department"
-import { illeEtVilaine } from "./35/IlleEtVilaine"
-import { finistere } from "./29/Finistere"
+import { cotesDArmor } from "./22/CotesDArmor.js"
+import { Department } from "../../../../country/region/department/Department.js"
+import { illeEtVilaine } from "./35/IlleEtVilaine.js"
+import { finistere } from "./29/Finistere.js"
 
 export const bretagneDepartments: Department[] = [
   cotesDArmor,

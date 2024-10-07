@@ -1,5 +1,5 @@
-import { kalamazooCities } from "./kalamazoo/KalamazooCities"
-import { City } from "../../../country/region/department/city/City"
+import { kalamazooCities } from "./kalamazoo/KalamazooCities.js"
+import { City } from "../../../country/region/department/city/City.js"
 
 export const puertoRicoCities: City[] = [
   ...kalamazooCities

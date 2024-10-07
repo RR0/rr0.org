@@ -1,4 +1,4 @@
-import { HtmlTag } from "./HtmlTag"
+import { HtmlTag } from "./HtmlTag.js"
 
 export class HtmlTable {
 

@@ -1,10 +1,10 @@
-import { Occupation } from "./Occupation"
+import { Occupation } from "./Occupation.js"
 import { OutputFunc, SsgConfig } from "ssg-api"
-import { RR0FileUtil } from "../util/file/RR0FileUtil"
-import { PeopleService } from "./PeopleService"
-import { PeopleDirectoryStep, peopleOccupationFilter } from "./PeopleDirectoryStep"
+import { RR0FileUtil } from "../util/file/RR0FileUtil.js"
+import { PeopleService } from "./PeopleService.js"
+import { PeopleDirectoryStep, peopleOccupationFilter } from "./PeopleDirectoryStep.js"
 import { glob } from "glob"
-import { People } from "./People"
+import { People } from "./People.js"
 import path from "path"
 
 /**

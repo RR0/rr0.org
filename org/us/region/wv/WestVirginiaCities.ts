@@ -1,6 +1,6 @@
-import { City } from "../../../country/region/department/city/City"
-import { fayetteCities } from "./fayette/FayetteCities"
-import { masonCities } from "./mason/MasonCities"
+import { City } from "../../../country/region/department/city/City.js"
+import { fayetteCities } from "./fayette/FayetteCities.js"
+import { masonCities } from "./mason/MasonCities.js"
 
 export const westVirginiaCities: City[] = [
   ...fayetteCities,

@@ -1,4 +1,4 @@
-import { HtmlSsgContext } from "ssg-api/dist/src/HtmlSsgContext"
+import { HtmlSsgContext } from "ssg-api/dist/src/HtmlSsgContext.js"
 
 export interface ReferenceGenerator<C extends HtmlSsgContext> {
 

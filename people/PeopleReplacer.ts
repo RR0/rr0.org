@@ -1,8 +1,8 @@
-import { PeopleService } from "./PeopleService"
-import { DomReplacement } from "../time/DomReplacement"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { Occupation } from "./Occupation"
-import { CountryCode } from "../org/country/CountryCode"
+import { PeopleService } from "./PeopleService.js"
+import { DomReplacement } from "../time/DomReplacement.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { Occupation } from "./Occupation.js"
+import { CountryCode } from "../org/country/CountryCode.js"
 
 export class PeopleReplacer implements DomReplacement<HtmlRR0SsgContext> {
 

@@ -1,9 +1,9 @@
-import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { geipanHttpDatasource } from "./GeipanRR0Mapping"
-import { GeipanCaseClassification, GeipanCaseClassification_calc } from "./GeipanCaseClassification"
-import { GeipanZoneType } from "./GeipanCase"
-import { FranceDepartementCode } from "../../region/FranceDepartementCode"
-import { TimeContext } from "../../../../../time/TimeContext"
+import { GeipanCaseSummary } from "./GeipanCaseSummary.js"
+import { geipanHttpDatasource } from "./GeipanRR0Mapping.js"
+import { GeipanCaseClassification, GeipanCaseClassification_calc } from "./GeipanCaseClassification.js"
+import { GeipanZoneType } from "./GeipanCase.js"
+import { FranceDepartementCode } from "../../region/FranceDepartementCode.js"
+import { TimeContext } from "../../../../../time/TimeContext.js"
 
 export const geipanTestCaseSummaries: GeipanCaseSummary[] = [
   {

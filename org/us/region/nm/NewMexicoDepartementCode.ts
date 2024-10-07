@@ -1,4 +1,4 @@
-import { UsaCountyCode } from "../UsaCountyCode"
+import { UsaCountyCode } from "../UsaCountyCode.js"
 
 export enum NewMexicoDepartementCode {
   chaves = UsaCountyCode.chaves

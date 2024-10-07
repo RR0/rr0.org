@@ -1,7 +1,7 @@
 import { DomReplaceCommand, DomReplacer } from "ssg-api"
-import { AnchorReplacer } from "./AnchorReplacer"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { AnchorHandler } from "./AnchorHandler"
+import { AnchorReplacer } from "./AnchorReplacer.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { AnchorHandler } from "./AnchorHandler.js"
 
 /**
  * Contextual replacement of anchors (`<a>` tags).

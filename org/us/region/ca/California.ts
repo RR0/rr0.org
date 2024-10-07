@@ -1,6 +1,6 @@
-import { UsaStates } from "../UsaStates"
-import { Place } from "../../../../place/Place"
-import { usaRegion } from "../../Usa"
+import { UsaStates } from "../UsaStates.js"
+import { Place } from "../../../../place/Place.js"
+import { usaRegion } from "../../Usa.js"
 
 export const california = usaRegion(
   UsaStates.ca,

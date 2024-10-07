@@ -1,5 +1,5 @@
-import { City } from "../../../country/region/department/city/City"
-import { cataloniaCities } from "./cat/CataloniaCities"
+import { City } from "../../../country/region/department/city/City.js"
+import { cataloniaCities } from "./cat/CataloniaCities.js"
 
 export const spainCities: City[] = [
   ...cataloniaCities

@@ -1,5 +1,5 @@
-import { HtmlSsgContext } from "ssg-api/dist/src/HtmlSsgContext"
-import { ReferenceGenerator } from "../ReferenceGenerator"
+import { HtmlSsgContext } from "ssg-api/dist/src/HtmlSsgContext.js"
+import { ReferenceGenerator } from "../ReferenceGenerator.js"
 
 /**
  * Count sources in the whole website.

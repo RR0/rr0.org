@@ -1,6 +1,6 @@
-import { CountryCode } from "./CountryCode"
-import { Place } from "../../place/Place"
-import { Organization, OrganizationType } from "../Organization"
+import { CountryCode } from "./CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { Organization, OrganizationType } from "../Organization.js"
 
 export class Country extends Organization {
 

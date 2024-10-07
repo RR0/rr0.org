@@ -1,5 +1,5 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { noumea } from "./noumea/Noumea"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { noumea } from "./noumea/Noumea.js"
 
 export const nouvelleCaledonieCities: City[] = [
   noumea

@@ -1,5 +1,5 @@
-import { City } from "../../../country/region/department/city/City"
-import { honoluluCities } from "./honolulu/HonoluluCities"
+import { City } from "../../../country/region/department/city/City.js"
+import { honoluluCities } from "./honolulu/HonoluluCities.js"
 
 export const hawaiiCities: City[] = [
   ...honoluluCities

@@ -1,10 +1,10 @@
-import { usaCounties } from "../../../us/region/UsaCounties"
-import { OrganizationService } from "../../../OrganizationService"
-import { Department } from "./Department"
-import { Region } from "../Region"
-import { ukDepartments } from "../../../uk/region/UkDepartments"
-import { europeDepartments } from "../../../eu/EuropeDepartments"
-import { regionService } from "../RegionService"
+import { usaCounties } from "../../../us/region/UsaCounties.js"
+import { OrganizationService } from "../../../OrganizationService.js"
+import { Department } from "./Department.js"
+import { Region } from "../Region.js"
+import { ukDepartments } from "../../../uk/region/UkDepartments.js"
+import { europeDepartments } from "../../../eu/EuropeDepartments.js"
+import { regionService } from "../RegionService.js"
 
 export class DepartmentService extends OrganizationService<Department, Region> {
 }

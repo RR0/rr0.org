@@ -1,7 +1,7 @@
-import { Elevation, Place } from "./Place"
+import { Elevation, Place } from "./Place.js"
 import fs from "fs"
 import { FileUtil } from "ssg-api"
-import { PlaceLocation } from "./PlaceLocation"
+import { PlaceLocation } from "./PlaceLocation.js"
 
 export abstract class PlaceService {
 

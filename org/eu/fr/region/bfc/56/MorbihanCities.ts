@@ -1,5 +1,5 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { locmine } from "./Locmine/Locmine"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { locmine } from "./Locmine/Locmine.js"
 
 export const morbihanCities: City[] = [
   locmine

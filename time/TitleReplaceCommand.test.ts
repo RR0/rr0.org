@@ -1,9 +1,9 @@
-import { SsiTitleReplaceCommand } from "./SsiTitleReplaceCommand"
-import { rr0TestUtil } from "../test/RR0TestUtil"
+import { SsiTitleReplaceCommand } from "./SsiTitleReplaceCommand.js"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
 import { describe, expect, test } from "@javarome/testscript"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { Time } from "./Time"
-import { TimeTextBuilder } from "./TimeTextBuilder"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { Time } from "./Time.js"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
 
 describe("TitleReplaceCommand", () => {
 

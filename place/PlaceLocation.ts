@@ -1,4 +1,4 @@
-import { RR0SsgContext } from "../RR0SsgContext"
+import { RR0SsgContext } from "../RR0SsgContext.js"
 import assert from "assert"
 
 export type DMS = {

@@ -1,8 +1,8 @@
-import { cannesMessages } from "./cannes/CannesMessages"
-import { AlpesMaritimesCityCode } from "./AlpesMaritimesCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { cagnesSurMerMessages } from "./cagnessurmer/CagnesSurMerMessages"
+import { cannesMessages } from "./cannes/CannesMessages.js"
+import { AlpesMaritimesCityCode } from "./AlpesMaritimesCityCode.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { cagnesSurMerMessages } from "./cagnessurmer/CagnesSurMerMessages.js"
 
 export type alpesMaritimesCityList<T> = { [key in AlpesMaritimesCityCode]: T }
 export const alpesMaritimesCityMessages: alpesMaritimesCityList<OrganizationMessages> = {

@@ -1,5 +1,5 @@
-import { cos } from "./cos/Cos"
-import { City } from "../../../../../country/region/department/city/City"
+import { cos } from "./cos/Cos.js"
+import { City } from "../../../../../country/region/department/city/City.js"
 
 export const ariegeCities: City[] = [
   cos

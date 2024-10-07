@@ -1,8 +1,8 @@
-import { CaseMapper } from "../CaseMapper"
-import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { TimeContext } from "../../TimeContext"
-import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { CaseMapper } from "../CaseMapper.js"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary.js"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { TimeContext } from "../../TimeContext.js"
+import { BaseOvniFranceCase } from "./BaseOvniFranceCase.js"
 
 /**
  * Maps a Base OVNI France CSV case to a Base OVNI France case.

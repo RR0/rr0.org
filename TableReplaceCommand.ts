@@ -1,7 +1,7 @@
 import path from "path"
-import { RegexReplaceCommand } from "../../RegexReplaceCommand.js"
-import { RegexReplacer } from "../../RegexReplacer.js"
-import { SsgContext } from "../../../../../SsgContext.js"
+import { RegexReplaceCommand } from "../../RegexReplaceCommand.js.js"
+import { RegexReplacer } from "../../RegexReplacer.js.js"
+import { SsgContext } from "../../../../../SsgContext.js.js"
 import { FileContents } from "../../../../../util/index.js"
 
 /**

@@ -1,9 +1,9 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { Datasource } from "../Datasource"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { Datasource } from "../Datasource.js"
 import { FileContents } from "ssg-api"
-import { UfoSearchDatasource } from "./UfoSearchDatasource"
-import { JsonMapper } from "../JsonMapper"
-import { UfoSearchCase } from "./UfoSearchCase"
+import { UfoSearchDatasource } from "./UfoSearchDatasource.js"
+import { JsonMapper } from "../JsonMapper.js"
+import { UfoSearchCase } from "./UfoSearchCase.js"
 
 class FileMapper extends JsonMapper<UfoSearchCase> {
   parse(context: RR0SsgContext, data: string): UfoSearchCase[] {

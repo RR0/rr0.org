@@ -1,5 +1,5 @@
-import { geneva } from "./geneva/Geneva"
-import { Organization } from "../../../Organization"
+import { geneva } from "./geneva/Geneva.js"
+import { Organization } from "../../../Organization.js"
 
 export const alabamaCounties: Organization[] = [
   geneva

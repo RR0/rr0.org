@@ -1,7 +1,7 @@
 import fs from "fs"
-import { Organization } from "./Organization"
-import { StringUtil } from "../util/string/StringUtil"
-import { RR0SsgContext } from "../RR0SsgContext"
+import { Organization } from "./Organization.js"
+import { StringUtil } from "../util/string/StringUtil.js"
+import { RR0SsgContext } from "../RR0SsgContext.js"
 import assert from "assert"
 
 export class OrganizationService<O extends Organization = Organization, P extends Organization = undefined> {

@@ -1,5 +1,5 @@
-import { frant } from "./frant/Frant"
-import { City } from "../../../../country/region/department/city/City"
+import { frant } from "./frant/Frant.js"
+import { City } from "../../../../country/region/department/city/City.js"
 
 export const sussexCities: City[] = [
   frant

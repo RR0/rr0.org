@@ -1,7 +1,7 @@
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { Datasource } from "./Datasource"
-import { CsvMapper } from "./CsvMapper"
-import { FileSource } from "./FileSource"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
+import { Datasource } from "./Datasource.js"
+import { CsvMapper } from "./CsvMapper.js"
+import { FileSource } from "./FileSource.js"
 import { HtmlSsgContext } from "ssg-api"
 
 export class CsvFileSource<S> extends FileSource {

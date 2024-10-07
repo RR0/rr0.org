@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { UrecatCase } from "./UrecatCase"
-import { urecatRR0Mapping } from "./UrecatRR0Mapping"
-import { urecatTestCases } from "./UrecatTestCases"
-import { DatasourceTestCase } from "../DatasourceTestCase"
-import { UrecatHttpDatasource } from "./UrecatHttpDatasource"
-import { TimeContext } from "../../TimeContext"
-import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { UrecatCase } from "./UrecatCase.js"
+import { urecatRR0Mapping } from "./UrecatRR0Mapping.js"
+import { urecatTestCases } from "./UrecatTestCases.js"
+import { DatasourceTestCase } from "../DatasourceTestCase.js"
+import { UrecatHttpDatasource } from "./UrecatHttpDatasource.js"
+import { TimeContext } from "../../TimeContext.js"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping.js"
 
 describe("UrecatCaseSource", () => {
 

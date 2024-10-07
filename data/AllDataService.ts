@@ -1,6 +1,6 @@
 import { FileContents } from "ssg-api"
-import { RR0Data } from "./RR0Data"
-import { TypedDataFactory } from "./TypedDataFactory"
+import { RR0Data } from "./RR0Data.js"
+import { TypedDataFactory } from "./TypedDataFactory.js"
 import { glob } from "glob"
 
 /**

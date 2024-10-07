@@ -1,7 +1,7 @@
-import { stAndreDeCubzac } from "./StAndreDeCubzac/StAndreDeCubzac"
-import { City } from "../../../../../country/region/department/city/City"
-import { etauliers } from "./Etauliers/Etauliers"
-import { cestas } from "./Cestas/Cestas"
+import { stAndreDeCubzac } from "./StAndreDeCubzac/StAndreDeCubzac.js"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { etauliers } from "./Etauliers/Etauliers.js"
+import { cestas } from "./Cestas/Cestas.js"
 
 export const girondeCities: City[] = [
   cestas,

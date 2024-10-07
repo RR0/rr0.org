@@ -1,6 +1,6 @@
-import { CaseMapper } from "../CaseMapper"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { RR0CaseSummary } from "./RR0CaseSummary"
+import { CaseMapper } from "../CaseMapper.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { RR0CaseSummary } from "./RR0CaseSummary.js"
 
 export class RR0CaseSummaryMapper implements CaseMapper<HtmlRR0SsgContext, RR0CaseSummary, RR0CaseSummary> {
 

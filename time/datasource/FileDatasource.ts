@@ -1,5 +1,5 @@
-import { HtmlRR0SsgContext } from "RR0SsgContext"
-import { Datasource } from "./Datasource"
+import { HtmlRR0SsgContext } from "RR0SsgContext.js"
+import { Datasource } from "./Datasource.js"
 
 export interface FileDatasource<S> extends Datasource<S> {
 

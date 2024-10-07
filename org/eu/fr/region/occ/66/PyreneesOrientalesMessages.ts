@@ -1,9 +1,9 @@
-import { PyreneesOrientalesCityCode } from "./PyreneesOrientalesCityCode"
-import { portePuymorensMessages } from "./PortePuymorens/PortePuymorensMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { thuirMessages } from "./Thuir/ThuirMessages"
-import { planesMessages } from "./Planes/PlanesMessages"
+import { PyreneesOrientalesCityCode } from "./PyreneesOrientalesCityCode.js"
+import { portePuymorensMessages } from "./PortePuymorens/PortePuymorensMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { thuirMessages } from "./Thuir/ThuirMessages.js"
+import { planesMessages } from "./Planes/PlanesMessages.js"
 
 type DepMessages = { [key in PyreneesOrientalesCityCode]: OrganizationMessages }
 export const pyreneesOrientalesMessages = DepartmentMessages.create<DepMessages>("Pyrénées-Orientales", {

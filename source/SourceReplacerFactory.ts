@@ -1,6 +1,6 @@
 import { DomReplacer, ReplacerFactory } from "ssg-api"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { SourceReplacer } from "./SourceReplacer"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { SourceReplacer } from "./SourceReplacer.js"
 
 /**
  * Creates replacers for sources HTML in a given context.

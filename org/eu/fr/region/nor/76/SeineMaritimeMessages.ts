@@ -1,10 +1,10 @@
-import { SeineMaritimeCityCode } from "./SeineMaritimeCityCode"
-import { londeMessages } from "./Londe/LondeMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { crielSurMerMessages } from "./CrielSurMer/CrielSurMerMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { dieppeMessages } from "./Dieppe/DieppeMessages"
-import { saintAubinSurMer76Messages } from "./SaintAubinSurMer/SaintAubinSurMerMessages"
+import { SeineMaritimeCityCode } from "./SeineMaritimeCityCode.js"
+import { londeMessages } from "./Londe/LondeMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { crielSurMerMessages } from "./CrielSurMer/CrielSurMerMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
+import { dieppeMessages } from "./Dieppe/DieppeMessages.js"
+import { saintAubinSurMer76Messages } from "./SaintAubinSurMer/SaintAubinSurMerMessages.js"
 
 type SeineMaritimeCityMessagesList = { [key in SeineMaritimeCityCode]: CityMessages }
 export const seineMaritimeMessages = new DepartmentMessages<SeineMaritimeCityMessagesList>(

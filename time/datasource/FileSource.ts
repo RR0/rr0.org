@@ -1,5 +1,5 @@
-import { Datasource } from "./Datasource"
-import { StringUtil } from "../../util/string/StringUtil"
+import { Datasource } from "./Datasource.js"
+import { StringUtil } from "../../util/string/StringUtil.js"
 import path from "path"
 import fs from "fs"
 import { FileContents, HtmlSsgContext } from "ssg-api"

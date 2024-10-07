@@ -1,5 +1,5 @@
-import { Datasource } from "./Datasource"
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
+import { Datasource } from "./Datasource.js"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
 
 /**
  * Cache cases which were already fetched, and filter out cases in memory according to (time) context.

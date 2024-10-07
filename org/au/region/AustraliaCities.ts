@@ -1,8 +1,8 @@
-import { City } from "../../country/region/department/city/City"
-import { victoriaCities } from "./vic/VictoriaCities"
-import { westmorelandCities } from "../../us/region/pa/westmoreland/WestmorelandCities"
-import { southAustraliaCities } from "./sa/SouthAustraliaCities"
-import { newSouthWalesCities } from "./nsw/NewSouthWalesCities"
+import { City } from "../../country/region/department/city/City.js"
+import { victoriaCities } from "./vic/VictoriaCities.js"
+import { westmorelandCities } from "../../us/region/pa/westmoreland/WestmorelandCities.js"
+import { southAustraliaCities } from "./sa/SouthAustraliaCities.js"
+import { newSouthWalesCities } from "./nsw/NewSouthWalesCities.js"
 
 export const australiaCities: City[] = [
   ...newSouthWalesCities,

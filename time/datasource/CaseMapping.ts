@@ -1,8 +1,8 @@
-import { Datasource } from "./Datasource"
-import { CaseMapper } from "./CaseMapper"
-import { FileDatasource } from "./FileDatasource"
+import { Datasource } from "./Datasource.js"
+import { CaseMapper } from "./CaseMapper.js"
+import { FileDatasource } from "./FileDatasource.js"
 
-import { ChronologyReplacerActions } from "./ChronologyReplacerActions"
+import { ChronologyReplacerActions } from "./ChronologyReplacerActions.js"
 
 /**
  * @param C The context type to use.

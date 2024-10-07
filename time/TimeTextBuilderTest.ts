@@ -1,6 +1,6 @@
-import { TimeTextBuilder } from "./TimeTextBuilder"
-import { TimeContext } from "./TimeContext"
-import { RR0SsgContextImpl } from "../RR0SsgContext"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
+import { TimeContext } from "./TimeContext.js"
+import { RR0SsgContextImpl } from "../RR0SsgContext.js"
 import { describe, expect, test } from "@javarome/testscript"
 
 describe("TimeTextBuilder", () => {

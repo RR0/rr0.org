@@ -1,5 +1,5 @@
 import { FileUtil, SsgContext, SsgStep } from "ssg-api"
-import { SearchIndex, SearchVisitor } from "./SearchVisitor"
+import { SearchIndex, SearchVisitor } from "./SearchVisitor.js"
 import fs from "fs"
 
 /**

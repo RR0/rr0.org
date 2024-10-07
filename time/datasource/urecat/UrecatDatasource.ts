@@ -1,6 +1,6 @@
-import { UrecatCase } from "./UrecatCase"
-import { Datasource } from "../Datasource"
-import { RR0SsgContext } from "../../../RR0SsgContext"
+import { UrecatCase } from "./UrecatCase.js"
+import { Datasource } from "../Datasource.js"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
 
 export abstract class UrecatDatasource implements Datasource<UrecatCase> {
   readonly authors = ["Gross, Patrick"]

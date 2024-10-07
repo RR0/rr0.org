@@ -1,7 +1,7 @@
-import { NouvelleCaledonieCityCode } from "./NouvelleCaledonieCityCode"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { noumeaMessages } from "./noumea/NoumeaMessages"
-import { NouvelleCaledonieCityMessages } from "./NouvelleCaledonieMessages"
+import { NouvelleCaledonieCityCode } from "./NouvelleCaledonieCityCode.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { noumeaMessages } from "./noumea/NoumeaMessages.js"
+import { NouvelleCaledonieCityMessages } from "./NouvelleCaledonieMessages.js"
 
 const guadeloupeCityMessages: NouvelleCaledonieCityMessages = {
   [NouvelleCaledonieCityCode.Noumea]: noumeaMessages

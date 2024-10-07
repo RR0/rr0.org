@@ -1,6 +1,6 @@
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { Time } from "./Time"
-import { TimeParseResult } from "./TimeReplacer"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { Time } from "./Time.js"
+import { TimeParseResult } from "./TimeReplacer.js"
 import {
   Level2Date as EdtfDate,
   Level2Duration as EdtfDuration,

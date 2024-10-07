@@ -1,5 +1,5 @@
-import { slocomb } from "./slocomb/Slocomb"
-import { City } from "../../../../country/region/department/city/City"
+import { slocomb } from "./slocomb/Slocomb.js"
+import { City } from "../../../../country/region/department/city/City.js"
 
 export const genevaCities: City[] = [
   slocomb

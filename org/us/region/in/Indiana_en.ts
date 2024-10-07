@@ -1,8 +1,8 @@
-import { monroe_en } from "./monroe/Monroe_en"
-import { elkhart_en } from "./elkhart/Elkhart_en"
-import { RegionMessages } from "../../../country/region/RegionMessages"
-import { IndianaMessages } from "./IndianaMessages"
-import { whitley_en } from "./whitley/Whitley_en"
+import { monroe_en } from "./monroe/Monroe_en.js"
+import { elkhart_en } from "./elkhart/Elkhart_en.js"
+import { RegionMessages } from "../../../country/region/RegionMessages.js"
+import { IndianaMessages } from "./IndianaMessages.js"
+import { whitley_en } from "./whitley/Whitley_en.js"
 
 export const indiana_en = RegionMessages.create<IndianaMessages>("Indiana", {
   elkhart: elkhart_en,

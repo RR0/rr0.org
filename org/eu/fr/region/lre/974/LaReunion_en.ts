@@ -1,11 +1,11 @@
-import { LaReunionCityCode } from "./LaReunionCityCode"
-import { steMarie974Messages } from "./SainteMarie/SteMarieMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { stBenoit974Messages } from "./SaintBenoit/SaintBenoitMessages"
-import { saintPierre974Messages } from "./SaintPierre/SaintPierreMessages"
-import { LaReunionMessages } from "./LaReunionMessages"
-import { saintDenis974Messages } from "./SaintDenis/SaintPierreMessages"
-import { saintPaul974Messages } from "./SaintPaul/SaintPaulMessages"
+import { LaReunionCityCode } from "./LaReunionCityCode.js"
+import { steMarie974Messages } from "./SainteMarie/SteMarieMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { stBenoit974Messages } from "./SaintBenoit/SaintBenoitMessages.js"
+import { saintPierre974Messages } from "./SaintPierre/SaintPierreMessages.js"
+import { LaReunionMessages } from "./LaReunionMessages.js"
+import { saintDenis974Messages } from "./SaintDenis/SaintPierreMessages.js"
+import { saintPaul974Messages } from "./SaintPaul/SaintPaulMessages.js"
 
 export const laReunion974Messages_en = DepartmentMessages.create<LaReunionMessages>("Réunion", {
   [LaReunionCityCode.StBenoit]: stBenoit974Messages,

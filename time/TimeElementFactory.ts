@@ -1,7 +1,7 @@
-import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
-import { TimeRenderer, TimeRenderOptions } from "./TimeRenderer"
-import { TimeReplacer } from "./TimeReplacer"
-import { TimeContext } from "./TimeContext"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext.js"
+import { TimeRenderer, TimeRenderOptions } from "./TimeRenderer.js"
+import { TimeReplacer } from "./TimeReplacer.js"
+import { TimeContext } from "./TimeContext.js"
 
 /**
  * Creates <time> elements from time strings.

@@ -1,4 +1,4 @@
-import { ContentHandler } from "../ContentHandler.js"
+import { ContentHandler } from "../ContentHandler.js.js"
 
 let loading = false
 

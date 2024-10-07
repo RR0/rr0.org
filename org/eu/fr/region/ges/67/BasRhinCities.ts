@@ -1,6 +1,6 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { urmatt } from "./Urmatt/Urmatt"
-import { bischwiller } from "./Bischwiller/Bischwiller"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { urmatt } from "./Urmatt/Urmatt.js"
+import { bischwiller } from "./Bischwiller/Bischwiller.js"
 
 export const basRhinCities: City[] = [
   bischwiller,

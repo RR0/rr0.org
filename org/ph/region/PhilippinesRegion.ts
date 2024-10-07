@@ -1,7 +1,7 @@
-import { philippines } from "../Philippines"
-import { PhilippinesRegionCode } from "./PhilippinesRegionCode"
-import { Region } from "../../country/region/Region"
-import { Place } from "../../../place/Place"
+import { philippines } from "../Philippines.js"
+import { PhilippinesRegionCode } from "./PhilippinesRegionCode.js"
+import { Region } from "../../country/region/Region.js"
+import { Place } from "../../../place/Place.js"
 
 export function philippinesRegion(code: PhilippinesRegionCode, place: Place) {
   return new Region(code, philippines, [place])

@@ -1,8 +1,8 @@
-import { UfoSearchHttpDatasource } from "./UfoSearchHttpDatasource"
-import { UfoSearchFileDatasource } from "./UfoSearchFileDatasource"
-import { UfoSearchCaseRR0Mapper } from "./UfoSearchCaseRR0Mapper"
-import { cityService } from "../../../org/Cities"
-import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
+import { UfoSearchHttpDatasource } from "./UfoSearchHttpDatasource.js"
+import { UfoSearchFileDatasource } from "./UfoSearchFileDatasource.js"
+import { UfoSearchCaseRR0Mapper } from "./UfoSearchCaseRR0Mapper.js"
+import { cityService } from "../../../org/Cities.js"
+import { ChronologyReplacerActions } from "../ChronologyReplacerActions.js"
 
 export const ufoSearchHttpDatasource = new UfoSearchHttpDatasource("https://www.ufo-search.com", "timeline/search.html")
 export const ufoSearchFileDatasource = new UfoSearchFileDatasource("time/datasource/ufo-search/majestic.json")

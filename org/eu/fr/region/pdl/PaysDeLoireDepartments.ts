@@ -1,8 +1,8 @@
-import { sarthe } from "./72/Sarthe"
-import { maineEtLoire } from "./49/MaineEtLoire"
-import { loireAtlantique } from "./44/LoireAtlantique"
-import { Department } from "../../../../country/region/department/Department"
-import { mayenne } from "./53/Mayenne"
+import { sarthe } from "./72/Sarthe.js"
+import { maineEtLoire } from "./49/MaineEtLoire.js"
+import { loireAtlantique } from "./44/LoireAtlantique.js"
+import { Department } from "../../../../country/region/department/Department.js"
+import { mayenne } from "./53/Mayenne.js"
 
 export const paysDeLoireDepartments: Department[] = [
   loireAtlantique,

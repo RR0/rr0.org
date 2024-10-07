@@ -1,9 +1,9 @@
 import { DomReplacer, ReplacerFactory } from "ssg-api"
-import { ChronologyReplacer } from "./ChronologyReplacer"
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { CaseSummaryRenderer } from "../CaseSummaryRenderer"
-import { TimeService } from "../TimeService"
-import { RR0CaseMapping } from "./rr0/RR0CaseMapping"
+import { ChronologyReplacer } from "./ChronologyReplacer.js"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
+import { CaseSummaryRenderer } from "../CaseSummaryRenderer.js"
+import { TimeService } from "../TimeService.js"
+import { RR0CaseMapping } from "./rr0/RR0CaseMapping.js"
 
 export class ChronologyReplacerFactory implements ReplacerFactory<DomReplacer> {
 

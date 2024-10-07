@@ -1,4 +1,4 @@
-import { LaReunionCityCode } from "./LaReunionCityCode"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { LaReunionCityCode } from "./LaReunionCityCode.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
 
 export type LaReunionMessages = { [key in LaReunionCityCode]: OrganizationMessages }

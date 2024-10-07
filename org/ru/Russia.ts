@@ -1,8 +1,8 @@
-import { Country } from "../country/Country"
-import { CountryCode } from "../country/CountryCode"
-import { Place } from "../../place/Place"
-import { Region } from "../country/region/Region"
-import { RussiaRegionCode } from "./region/RussiaRegionCode"
+import { Country } from "../country/Country.js"
+import { CountryCode } from "../country/CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { Region } from "../country/region/Region.js"
+import { RussiaRegionCode } from "./region/RussiaRegionCode.js"
 
 export const russia = new Country(CountryCode.ru)
 

@@ -1,11 +1,11 @@
-import { Occupation } from "./Occupation"
-import { People } from "./People"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { HtmlTag } from "../util/html/HtmlTag"
+import { Occupation } from "./Occupation.js"
+import { People } from "./People.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { HtmlTag } from "../util/html/HtmlTag.js"
 import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
-import { StringUtil } from "../util/string/StringUtil"
-import { PeopleService } from "./PeopleService"
-import { CountryCode } from "../org/country/CountryCode"
+import { StringUtil } from "../util/string/StringUtil.js"
+import { PeopleService } from "./PeopleService.js"
+import { CountryCode } from "../org/country/CountryCode.js"
 import { Gender } from "@rr0/common"
 
 export type PeopleFilter = (p: People) => boolean

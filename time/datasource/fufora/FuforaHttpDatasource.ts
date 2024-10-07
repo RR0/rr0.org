@@ -1,9 +1,9 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpSource } from "../HttpSource"
-import { UrlUtil } from "../../../util/url/UrlUtil"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { HttpSource } from "../HttpSource.js"
+import { UrlUtil } from "../../../util/url/UrlUtil.js"
 import { JSDOM } from "jsdom"
-import { FuforaCaseSummary } from "./FuforaCaseSummary"
-import { FuforaDatasource } from "./FuforaDatasource"
+import { FuforaCaseSummary } from "./FuforaCaseSummary.js"
+import { FuforaDatasource } from "./FuforaDatasource.js"
 
 interface FormData {
   /**

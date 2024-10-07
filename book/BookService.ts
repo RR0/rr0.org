@@ -1,14 +1,13 @@
 import * as fs from "fs"
 import { FileUtil, Logger, SsgConfig } from "ssg-api"
-import { TimeContext } from "../time/TimeContext"
-import { TimeUrlBuilder } from "../time/TimeUrlBuilder"
+import { TimeContext } from "../time/TimeContext.js"
+import { TimeUrlBuilder } from "../time/TimeUrlBuilder.js"
 import * as path from "path"
-import { StringUtil } from "../util/string/StringUtil"
-import { Book } from "./Book"
-import { People } from "../people/People"
-import { RR0FileUtil } from "../util/file/RR0FileUtil"
-import { PeopleService } from "../people/PeopleService"
-import { CSVFileReader } from "../CSVFileReader"
+import { StringUtil } from "../util/string/StringUtil.js"
+import { Book } from "./Book.js"
+import { People } from "../people/People.js"
+import { PeopleService } from "../people/PeopleService.js"
+import { CSVFileReader } from "../CSVFileReader.js"
 
 export class BookService {
 

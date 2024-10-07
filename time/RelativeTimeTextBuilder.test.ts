@@ -1,11 +1,11 @@
-import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder"
-import { TimeContext } from "./TimeContext"
-import { RR0SsgContextImpl } from "../RR0SsgContext"
-import { rr0TestUtil } from "../test/RR0TestUtil"
+import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder.js"
+import { TimeContext } from "./TimeContext.js"
+import { RR0SsgContextImpl } from "../RR0SsgContext.js"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
 import { describe, expect, test } from "@javarome/testscript"
 import { SsgConfig, SsgContext } from "ssg-api"
 import path from "path"
-import { TimeTextBuilder } from "./TimeTextBuilder"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
 
 describe("RelativeTimeTextBuilder", () => {
 

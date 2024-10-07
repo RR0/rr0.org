@@ -1,4 +1,4 @@
-import { CountryCode } from "../../country/CountryCode"
-import { Country } from "../../country/Country"
+import { CountryCode } from "../../country/CountryCode.js"
+import { Country } from "../../country/Country.js"
 
 export const spain = new Country(CountryCode.es, [])

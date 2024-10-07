@@ -1,4 +1,4 @@
-import { TimeContext } from "../../TimeContext"
+import { TimeContext } from "../../TimeContext.js"
 
 export type UrecatCaseHistoryRedaction = {
   mainAuthor: string

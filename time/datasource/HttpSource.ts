@@ -1,7 +1,7 @@
 import { Browser, Builder, By, ITimeouts, WebDriver } from "selenium-webdriver"
 import { JSDOM } from "jsdom"
-import { FetchHttpFetcher } from "./FetchHttpFetcher"
-import { ArchiveHttpFetcher } from "./ArchiveHttpFetcher"
+import { FetchHttpFetcher } from "./FetchHttpFetcher.js"
+import { ArchiveHttpFetcher } from "./ArchiveHttpFetcher.js"
 
 export class MimeType {
   static readonly csv: string = "text/csv"

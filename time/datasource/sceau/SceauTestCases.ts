@@ -1,6 +1,6 @@
-import { TimeContext } from "../../TimeContext"
-import { sceauDatasource } from "./SceauRR0Mapping"
-import { SceauCaseSummary } from "./SceauCaseSummary"
+import { TimeContext } from "../../TimeContext.js"
+import { sceauDatasource } from "./SceauRR0Mapping.js"
+import { SceauCaseSummary } from "./SceauCaseSummary.js"
 
 export const sceauTestCases: SceauCaseSummary[] = [
   {

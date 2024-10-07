@@ -1,4 +1,4 @@
-import { UrlUtil } from "./UrlUtil"
+import { UrlUtil } from "./UrlUtil.js"
 import { describe, expect, test } from "@javarome/testscript"
 
 describe("UrlUtil", function () {

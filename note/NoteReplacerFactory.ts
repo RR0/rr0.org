@@ -1,6 +1,6 @@
-import { DomReplacer, HtmlSsgContext, ReplacerFactory } from "ssg-api"
-import { NoteReplacer } from "./NoteReplacer"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { DomReplacer, ReplacerFactory } from "ssg-api"
+import { NoteReplacer } from "./NoteReplacer.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 /**
  * Creates replacers for notes HTML in a given context.

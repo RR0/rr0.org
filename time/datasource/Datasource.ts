@@ -1,4 +1,4 @@
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
 
 /**
  * A source for cases.

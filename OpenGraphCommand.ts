@@ -1,10 +1,10 @@
-import { ReplaceCommand } from "ssg-api/dist/src/step/content/replace/ReplaceCommand"
-import { HtmlRR0SsgContext } from "./RR0SsgContext"
+import { ReplaceCommand } from "ssg-api/dist/src/step/content/replace/ReplaceCommand.js"
+import { HtmlRR0SsgContext } from "./RR0SsgContext.js"
 import { Canvas, CanvasRenderingContext2D, createCanvas, loadImage } from "canvas"
 import fs from "fs"
 import path from "path"
-import { TimeTextBuilder } from "./time/TimeTextBuilder"
-import { RR0ContentStep } from "./RR0ContentStep"
+import { TimeTextBuilder } from "./time/TimeTextBuilder.js"
+import { RR0ContentStep } from "./RR0ContentStep.js"
 import assert from "assert"
 
 /**

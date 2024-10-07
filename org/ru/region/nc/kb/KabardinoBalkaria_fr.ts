@@ -1,7 +1,7 @@
-import { KabardinoBalkariaCityCode } from "./KabardinoBalkariaCityCode"
-import { elbrusMessages_fr } from "./elbrus/ElbrusMessages_fr"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { KabardinoBalkariaCityMessagesList } from "./KabardinoBalkariaMessages"
+import { KabardinoBalkariaCityCode } from "./KabardinoBalkariaCityCode.js"
+import { elbrusMessages_fr } from "./elbrus/ElbrusMessages_fr.js"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages.js"
+import { KabardinoBalkariaCityMessagesList } from "./KabardinoBalkariaMessages.js"
 
 const kabardinoBalkariaCityMessages: KabardinoBalkariaCityMessagesList = {
   [KabardinoBalkariaCityCode.Elbrus]: elbrusMessages_fr

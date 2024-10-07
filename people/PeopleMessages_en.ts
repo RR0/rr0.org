@@ -1,6 +1,6 @@
 import { Gender } from "@rr0/common"
 
-import { PeopleMessages } from "./PeopleMessages"
+import { PeopleMessages } from "./PeopleMessages.js"
 
 export let peopleMessages_en: PeopleMessages = {
   birth: " was born ",

@@ -1,6 +1,6 @@
-import { RR0Data } from "../data/RR0Data"
-import { PlaceLocation } from "./PlaceLocation"
-import { RR0Event } from "../event/RR0Event"
+import { RR0Data } from "../data/RR0Data.js"
+import { PlaceLocation } from "./PlaceLocation.js"
+import { RR0Event } from "../event/RR0Event.js"
 
 export type Elevation = {
   elevation: number,

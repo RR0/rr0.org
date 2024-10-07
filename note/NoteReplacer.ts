@@ -1,5 +1,5 @@
-import { NoteRenderer } from "./NoteRenderer"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { NoteRenderer } from "./NoteRenderer.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 export class NoteReplacer {
 

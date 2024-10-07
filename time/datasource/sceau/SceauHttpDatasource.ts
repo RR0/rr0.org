@@ -1,8 +1,8 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpSource } from "../HttpSource"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { HttpSource } from "../HttpSource.js"
 import { JSDOM } from "jsdom"
-import { SceauDatasource } from "./SceauDatasource"
-import { SceauCaseSummary } from "./SceauCaseSummary"
+import { SceauDatasource } from "./SceauDatasource.js"
+import { SceauCaseSummary } from "./SceauCaseSummary.js"
 import path from "path"
 
 export class SceauHttpDatasource extends SceauDatasource {

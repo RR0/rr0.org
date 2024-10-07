@@ -1,7 +1,7 @@
-import { RR0SsgContext } from "../../../../../RR0SsgContext"
-import { OrganizationService } from "../../../../OrganizationService"
-import { Department } from "../Department"
-import { City } from "./City"
+import { RR0SsgContext } from "../../../../../RR0SsgContext.js"
+import { OrganizationService } from "../../../../OrganizationService.js"
+import { Department } from "../Department.js"
+import { City } from "./City.js"
 
 export class CityService extends OrganizationService<City, Department> {
 

@@ -1,5 +1,5 @@
-import { UfoCaseFilter } from "./UfoCaseFilter"
-import { RR0SsgContext } from "../../RR0SsgContext"
+import { UfoCaseFilter } from "./UfoCaseFilter.js"
+import { RR0SsgContext } from "../../RR0SsgContext.js"
 
 export abstract class ContextFilter<T> implements UfoCaseFilter<T> {
   /**

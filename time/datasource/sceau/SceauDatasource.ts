@@ -1,8 +1,8 @@
-import { SceauCaseSummary } from "./SceauCaseSummary"
-import { AbstractDatasource } from "../AbstractDatasource"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext"
-import { ContextFilter } from "../ContextFilter"
-import { TimeContext } from "../../TimeContext"
+import { SceauCaseSummary } from "./SceauCaseSummary.js"
+import { AbstractDatasource } from "../AbstractDatasource.js"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext.js"
+import { ContextFilter } from "../ContextFilter.js"
+import { TimeContext } from "../../TimeContext.js"
 
 export type CaseMapping = { [key in keyof SceauCaseSummary]: string }
 

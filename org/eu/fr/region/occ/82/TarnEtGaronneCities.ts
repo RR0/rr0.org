@@ -1,5 +1,5 @@
-import { touffailles } from "./touffailles/Touffailles"
-import { City } from "../../../../../country/region/department/city/City"
+import { touffailles } from "./touffailles/Touffailles.js"
+import { City } from "../../../../../country/region/department/city/City.js"
 
 export const tarnEtGaronneCities: City[] = [
   touffailles

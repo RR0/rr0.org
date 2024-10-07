@@ -1,12 +1,12 @@
 import assert from "assert"
-import { CaseMapper } from "../CaseMapper"
-import { UrecatCase } from "./UrecatCase"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
-import { TimeContext } from "../../TimeContext"
-import { CityService } from "../../../org/country/region/department/city/CityService"
-import { CountryService } from "../../../org/country/CountryService"
-import { Source } from "../../../source/Source"
+import { CaseMapper } from "../CaseMapper.js"
+import { UrecatCase } from "./UrecatCase.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
+import { CityService } from "../../../org/country/region/department/city/CityService.js"
+import { CountryService } from "../../../org/country/CountryService.js"
+import { Source } from "../../../source/Source.js"
 
 export class UrecatRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UrecatCase, RR0CaseSummary> {
 

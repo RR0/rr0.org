@@ -1,13 +1,13 @@
 import assert from "assert"
-import { CaseMapper } from "../CaseMapper"
-import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
-import { TimeContext } from "../../TimeContext"
-import { CityService } from "../../../org/country/region/department/city/CityService"
-import { Organization } from "../../../org/Organization"
-import { france } from "../../../org/eu/fr/France"
-import { Source } from "../../../source/Source"
+import { CaseMapper } from "../CaseMapper.js"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
+import { CityService } from "../../../org/country/region/department/city/CityService.js"
+import { Organization } from "../../../org/Organization.js"
+import { france } from "../../../org/eu/fr/France.js"
+import { Source } from "../../../source/Source.js"
 
 export class EssexPoliceCaseSummaryRR0Mapper implements CaseMapper<HtmlRR0SsgContext, EssexPoliceCaseSummary, RR0CaseSummary> {
 

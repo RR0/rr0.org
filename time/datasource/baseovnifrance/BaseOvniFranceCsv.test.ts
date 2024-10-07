@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { CsvMapper } from "../CsvMapper"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
-import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { CsvMapper } from "../CsvMapper.js"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary.js"
+import { baseOvniFranceTestCases } from "./BaseOvniFranceTestCases.js"
 import fs from "fs"
-import { baseOvniFranceDatasource, baseOvniFranceSortComparator } from "./BaseOvniFranceRR0Mapping"
-import { BaseOvniFranceCaseSummaryMapper } from "./BaseOvniFranceCaseSummaryMapper"
-import { BaseOvniFranceCase } from "./BaseOvniFranceCase"
+import { baseOvniFranceDatasource, baseOvniFranceSortComparator } from "./BaseOvniFranceRR0Mapping.js"
+import { BaseOvniFranceCaseSummaryMapper } from "./BaseOvniFranceCaseSummaryMapper.js"
+import { BaseOvniFranceCase } from "./BaseOvniFranceCase.js"
 
 describe("Base OVNI France CSV mapping", () => {
 

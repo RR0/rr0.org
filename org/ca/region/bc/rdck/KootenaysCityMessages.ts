@@ -1,6 +1,6 @@
-import { castlegarMessages } from "./Castlegar/CastegarMessages"
-import { CityMessagesList } from "../../../../country/region/department/city/CityMessagesList"
-import { KootenaysCityCode } from "./KootenaysCityCode"
+import { castlegarMessages } from "./Castlegar/CastegarMessages.js"
+import { CityMessagesList } from "../../../../country/region/department/city/CityMessagesList.js"
+import { KootenaysCityCode } from "./KootenaysCityCode.js"
 
 export const kootenaysCityMessages: CityMessagesList = {
   [KootenaysCityCode.Castegar]: castlegarMessages

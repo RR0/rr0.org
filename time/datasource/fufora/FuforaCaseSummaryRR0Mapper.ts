@@ -1,11 +1,11 @@
 import assert from "assert"
-import { CaseMapper } from "../CaseMapper"
-import { FuforaCaseSummary } from "./FuforaCaseSummary"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
-import { TimeContext } from "../../TimeContext"
-import { CityService } from "../../../org/country/region/department/city/CityService"
-import { Source } from "../../../source/Source"
+import { CaseMapper } from "../CaseMapper.js"
+import { FuforaCaseSummary } from "./FuforaCaseSummary.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
+import { CityService } from "../../../org/country/region/department/city/CityService.js"
+import { Source } from "../../../source/Source.js"
 
 /**
  * Maps FUFORA cases to RR0 cases.

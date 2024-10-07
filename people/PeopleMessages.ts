@@ -1,4 +1,4 @@
-import { OccupationMessages } from "./OccupationMessages"
+import { OccupationMessages } from "./OccupationMessages.js"
 
 export type PeopleMessages = {
   occupation: OccupationMessages

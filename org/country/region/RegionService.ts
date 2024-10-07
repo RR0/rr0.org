@@ -1,13 +1,13 @@
-import { Country } from "../Country"
-import { usaRegions } from "../../us/region/UsaRegions"
-import { canadaRegions } from "../../ca/region/CanadaRegions"
-import { australiaRegions } from "../../au/region/AustraliaRegions"
-import { brazilRegions } from "../../br/region/BrazilRegions"
-import { europeRegions } from "../../eu/EuropeRegions"
-import { Region } from "./Region"
-import { OrganizationService } from "../../OrganizationService"
-import { countryService } from "../CountryService"
-import { indiaRegions } from "../../in/region/IndiaRegions"
+import { Country } from "../Country.js"
+import { usaRegions } from "../../us/region/UsaRegions.js"
+import { canadaRegions } from "../../ca/region/CanadaRegions.js"
+import { australiaRegions } from "../../au/region/AustraliaRegions.js"
+import { brazilRegions } from "../../br/region/BrazilRegions.js"
+import { europeRegions } from "../../eu/EuropeRegions.js"
+import { Region } from "./Region.js"
+import { OrganizationService } from "../../OrganizationService.js"
+import { countryService } from "../CountryService.js"
+import { indiaRegions } from "../../in/region/IndiaRegions.js"
 
 export class RegionService extends OrganizationService<Region, Country> {
 }

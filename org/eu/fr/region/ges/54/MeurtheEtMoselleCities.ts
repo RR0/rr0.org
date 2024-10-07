@@ -1,7 +1,7 @@
-import { cosnesEtRomain } from "./CosnesEtRomain/CosnesEtRomain"
-import { nancy } from "./Nancy/Nancy"
-import { Organization } from "../../../../../Organization"
-import { neuvesMaisons } from "./NeuvesMaisons/NeuvesMaisons"
+import { cosnesEtRomain } from "./CosnesEtRomain/CosnesEtRomain.js"
+import { nancy } from "./Nancy/Nancy.js"
+import { Organization } from "../../../../../Organization.js"
+import { neuvesMaisons } from "./NeuvesMaisons/NeuvesMaisons.js"
 
 export const meurtheEtMoselleCities: Organization[] = [
   cosnesEtRomain,

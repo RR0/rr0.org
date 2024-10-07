@@ -1,6 +1,6 @@
-import { NuforcCaseSummary } from "./NuforcCaseSummary"
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { AbstractDatasource } from "../AbstractDatasource"
+import { NuforcCaseSummary } from "./NuforcCaseSummary.js"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { AbstractDatasource } from "../AbstractDatasource.js"
 
 export abstract class NuforcDatasource extends AbstractDatasource<NuforcCaseSummary> {
 

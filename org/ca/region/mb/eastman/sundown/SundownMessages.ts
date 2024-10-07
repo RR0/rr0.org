@@ -1,3 +1,3 @@
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
 
 export const sundownessages = new OrganizationMessages("Sundown")

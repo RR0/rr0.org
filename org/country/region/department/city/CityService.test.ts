@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { RR0SsgContext } from "../../../../../RR0SsgContext"
-import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
-import { hautsDeSeine } from "../../../../eu/fr/region/idf/92/HautsDeSeine"
-import { sanDiego } from "../../../../us/region/ca/sandiego/SanDiego"
-import { cityService } from "../../../../Cities"
-import { nanterre92 } from "../../../../eu/fr/region/idf/92/Nanterre/Nanterre"
-import { oceanSide } from "../../../../us/region/ca/sandiego/oceanside/OceanSide"
+import { RR0SsgContext } from "../../../../../RR0SsgContext.js"
+import { rr0TestUtil } from "../../../../../test/RR0TestUtil.js"
+import { hautsDeSeine } from "../../../../eu/fr/region/idf/92/HautsDeSeine.js"
+import { sanDiego } from "../../../../us/region/ca/sandiego/SanDiego.js"
+import { cityService } from "../../../../Cities.js"
+import { nanterre92 } from "../../../../eu/fr/region/idf/92/Nanterre/Nanterre.js"
+import { oceanSide } from "../../../../us/region/ca/sandiego/oceanside/OceanSide.js"
 
 describe("Ville", () => {
 

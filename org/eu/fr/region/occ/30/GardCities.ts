@@ -1,6 +1,6 @@
-import { ledignan } from "./ledignan/Ledignan"
-import { Organization } from "../../../../../Organization"
-import { stGilles } from "./SaintGilles/StGilles"
+import { ledignan } from "./ledignan/Ledignan.js"
+import { Organization } from "../../../../../Organization.js"
+import { stGilles } from "./SaintGilles/StGilles.js"
 
 export const gardCities: Organization[] = [
   ledignan,

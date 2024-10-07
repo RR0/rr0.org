@@ -1,5 +1,5 @@
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { ReferenceGenerator } from "../ReferenceGenerator"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { ReferenceGenerator } from "../ReferenceGenerator.js"
 
 export class NoteRenderer {
 

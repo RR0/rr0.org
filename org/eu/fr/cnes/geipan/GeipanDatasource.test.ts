@@ -1,12 +1,12 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
-import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { geipanTestCaseSummaries } from "./GeipanTestCases"
-import { geipanRR0Mapping } from "./GeipanRR0Mapping"
-import { DatasourceTestCase } from "../../../../../time/datasource/DatasourceTestCase"
-import { RR0CaseMapping } from "../../../../../time/datasource/rr0/RR0CaseMapping"
-import { TimeContext } from "../../../../../time/TimeContext"
-import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext"
-import { rr0TestUtil } from "../../../../../test/RR0TestUtil"
+import { GeipanCaseSummary } from "./GeipanCaseSummary.js"
+import { geipanTestCaseSummaries } from "./GeipanTestCases.js"
+import { geipanRR0Mapping } from "./GeipanRR0Mapping.js"
+import { DatasourceTestCase } from "../../../../../time/datasource/DatasourceTestCase.js"
+import { RR0CaseMapping } from "../../../../../time/datasource/rr0/RR0CaseMapping.js"
+import { TimeContext } from "../../../../../time/TimeContext.js"
+import { HtmlRR0SsgContext } from "../../../../../RR0SsgContext.js"
+import { rr0TestUtil } from "../../../../../test/RR0TestUtil.js"
 
 describe("GeipanCaseSource", () => {
 

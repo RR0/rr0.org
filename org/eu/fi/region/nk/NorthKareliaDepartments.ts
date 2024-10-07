@@ -1,5 +1,5 @@
-import { Organization } from "../../../../Organization"
-import { pk } from "./pk/Pk"
+import { Organization } from "../../../../Organization.js"
+import { pk } from "./pk/Pk.js"
 
 export const northKareliaDepartments: Organization[] = [
   pk

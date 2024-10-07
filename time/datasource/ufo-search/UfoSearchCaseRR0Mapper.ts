@@ -1,11 +1,11 @@
 import assert from "assert"
-import { CaseMapper } from "../CaseMapper"
-import { UfoSearchCase } from "./UfoSearchCase"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
-import { TimeContext } from "../../TimeContext"
-import { CityService } from "../../../org/country/region/department/city/CityService"
-import { Source } from "../../../source/Source"
+import { CaseMapper } from "../CaseMapper.js"
+import { UfoSearchCase } from "./UfoSearchCase.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
+import { CityService } from "../../../org/country/region/department/city/CityService.js"
+import { Source } from "../../../source/Source.js"
 
 export class UfoSearchCaseRR0Mapper implements CaseMapper<HtmlRR0SsgContext, UfoSearchCase, RR0CaseSummary> {
 

@@ -1,8 +1,8 @@
-import { AllDataService } from "./AllDataService"
-import { TypedDataFactory } from "./TypedDataFactory"
-import { RR0Data } from "./RR0Data"
-import { RR0Case } from "../science/crypto/ufo/enquete/dossier/RR0Case"
-import { RR0FileUtil } from "../util/file/RR0FileUtil"
+import { AllDataService } from "./AllDataService.js"
+import { TypedDataFactory } from "./TypedDataFactory.js"
+import { RR0Data } from "./RR0Data.js"
+import { RR0Case } from "../science/crypto/ufo/enquete/dossier/RR0Case.js"
+import { RR0FileUtil } from "../util/file/RR0FileUtil.js"
 
 export abstract class AbstractDataService<T extends RR0Data> {
   protected files: string[]

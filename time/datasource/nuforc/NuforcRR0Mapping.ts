@@ -1,8 +1,8 @@
-import { NuforcRR0Mapper } from "./NuforcRR0Mapper"
-import { NuforcHttpDatasource } from "./NuforcHttpDatasource"
-import { cityService } from "../../../org/Cities"
-import { countryService } from "../../../org/country/CountryService"
-import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
+import { NuforcRR0Mapper } from "./NuforcRR0Mapper.js"
+import { NuforcHttpDatasource } from "./NuforcHttpDatasource.js"
+import { cityService } from "../../../org/Cities.js"
+import { countryService } from "../../../org/country/CountryService.js"
+import { ChronologyReplacerActions } from "../ChronologyReplacerActions.js"
 
 export const nuforcDatasource = new NuforcHttpDatasource()
 

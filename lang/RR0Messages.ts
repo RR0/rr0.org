@@ -1,8 +1,8 @@
-import { PlaceMessages } from "../place/PlaceMessages"
-import { CountryMessagesList } from "../org/CountryMessagesList"
-import { CaseConclusion } from "../science/crypto/ufo/enquete/dossier/RR0Case"
-import { PeopleMessages } from "../people/PeopleMessages"
-import { OrgRR0Messages } from "../org/OrgRR0Messages"
+import { PlaceMessages } from "../place/PlaceMessages.js"
+import { CountryMessagesList } from "../org/CountryMessagesList.js"
+import { CaseConclusion } from "../science/crypto/ufo/enquete/dossier/RR0Case.js"
+import { PeopleMessages } from "../people/PeopleMessages.js"
+import { OrgRR0Messages } from "../org/OrgRR0Messages.js"
 
 export class MessageUtils {
 

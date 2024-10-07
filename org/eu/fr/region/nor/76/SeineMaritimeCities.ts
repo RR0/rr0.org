@@ -1,8 +1,8 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { londe76 } from "./Londe/Londe"
-import { crielSurMer } from "./CrielSurMer/CrielSurMer"
-import { dieppe } from "./Dieppe/Dieppe"
-import { saintAubinSurMer76 } from "./SaintAubinSurMer/SaintAubinSurMer"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { londe76 } from "./Londe/Londe.js"
+import { crielSurMer } from "./CrielSurMer/CrielSurMer.js"
+import { dieppe } from "./Dieppe/Dieppe.js"
+import { saintAubinSurMer76 } from "./SaintAubinSurMer/SaintAubinSurMer.js"
 
 export const seineMaritimeCities: City[] = [
   crielSurMer,

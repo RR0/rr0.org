@@ -1,4 +1,4 @@
-import { PlaceReplacer } from "./PlaceReplacer"
+import { PlaceReplacer } from "./PlaceReplacer.js"
 import { DomReplacer, HtmlSsgContext, ReplacerFactory } from "ssg-api"
 
 /**

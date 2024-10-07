@@ -1,7 +1,7 @@
-import { HautesPyreneesCityCode } from "./HautesPyreneesCityCode"
-import { tarbesMessages } from "./Tarbes/TarbesMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
+import { HautesPyreneesCityCode } from "./HautesPyreneesCityCode.js"
+import { tarbesMessages } from "./Tarbes/TarbesMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
 
 type DepCityMessages = { [key in HautesPyreneesCityCode]: OrganizationMessages }
 export const hautesPyreneesMessages = DepartmentMessages.create<DepCityMessages>("Hautes-Pyrénées", {

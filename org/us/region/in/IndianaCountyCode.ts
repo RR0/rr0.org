@@ -1,4 +1,4 @@
-import { UsaCountyCode } from "../UsaCountyCode"
+import { UsaCountyCode } from "../UsaCountyCode.js"
 
 export enum IndianaCountyCode {
   elkhart = UsaCountyCode.elkhart,

@@ -1,7 +1,7 @@
-import { hautevilleLompnesMessages } from "./HautevilleLompnes/HautevilleLompnesMessages"
-import { AinCityCode } from "./AinCityCode"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { hautevilleLompnesMessages } from "./HautevilleLompnes/HautevilleLompnesMessages.js"
+import { AinCityCode } from "./AinCityCode.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
 
 const allierCityMessages: { [key in AinCityCode]: CityMessages } = {
   [AinCityCode.HautevilleLompnes]: hautevilleLompnesMessages

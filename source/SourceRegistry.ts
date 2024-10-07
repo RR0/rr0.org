@@ -1,8 +1,8 @@
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { Source } from "./Source"
-import { AllDataService } from "../data/AllDataService"
-import { HttpSource } from "../time/datasource/HttpSource"
-import { SourceFactory } from "./SourceFactory"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { Source } from "./Source.js"
+import { AllDataService } from "../data/AllDataService.js"
+import { HttpSource } from "../time/datasource/HttpSource.js"
+import { SourceFactory } from "./SourceFactory.js"
 
 /**
  * Create Source objects and register them.

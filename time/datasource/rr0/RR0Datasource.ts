@@ -1,7 +1,7 @@
-import { RR0CaseSummary } from "./RR0CaseSummary"
-import { AbstractDatasource } from "../AbstractDatasource"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext"
-import { ContextFilter } from "../ContextFilter"
+import { RR0CaseSummary } from "./RR0CaseSummary.js"
+import { AbstractDatasource } from "../AbstractDatasource.js"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../RR0SsgContext.js"
+import { ContextFilter } from "../ContextFilter.js"
 
 export class RR0ContextFilter extends ContextFilter<RR0CaseSummary> {
 

@@ -1,8 +1,8 @@
-import { TimeContext } from "./time/TimeContext"
+import { TimeContext } from "./time/TimeContext.js"
 import { ssgMessages } from "./lang"
-import { RR0Messages } from "./lang/RR0Messages"
+import { RR0Messages } from "./lang/RR0Messages.js"
 import { ConsoleLogger, FileContents, HtmlSsgContext, SsgConfig, SsgContext, SsgContextImpl } from "ssg-api"
-import { People } from "./people/People"
+import { People } from "./people/People.js"
 
 export interface RR0SsgContext extends SsgContext {
 

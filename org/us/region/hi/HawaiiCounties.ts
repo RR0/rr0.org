@@ -1,5 +1,5 @@
-import { Department } from "../../../country/region/department/Department"
-import { honolulu } from "./honolulu/Honolulu"
+import { Department } from "../../../country/region/department/Department.js"
+import { honolulu } from "./honolulu/Honolulu.js"
 
 export const hawaiiCounties: Department[] = [
   honolulu

@@ -1,12 +1,12 @@
 import assert from "assert"
-import { CaseMapper } from "../CaseMapper"
-import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary"
-import { TimeContext } from "../../TimeContext"
-import { DepartmentService } from "../../../org/country/region/department/DepartmentService"
-import { CityService } from "../../../org/country/region/department/city/CityService"
-import { Source } from "../../../source/Source"
+import { CaseMapper } from "../CaseMapper.js"
+import { BaseOvniFranceCaseSummary } from "./BaseOvniFranceCaseSummary.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { NamedPlace, RR0CaseSummary } from "../rr0/RR0CaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
+import { DepartmentService } from "../../../org/country/region/department/DepartmentService.js"
+import { CityService } from "../../../org/country/region/department/city/CityService.js"
+import { Source } from "../../../source/Source.js"
 
 /**
  * Maps a Base OVNI France case to a RR0 case.

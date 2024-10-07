@@ -1,4 +1,4 @@
-import { UkDepartementCode } from "../UkDepartementCode"
+import { UkDepartementCode } from "../UkDepartementCode.js"
 
 export enum EnglandDepartementCode {
   Sussex = UkDepartementCode.Sussex

@@ -1,5 +1,5 @@
-import { TimeReplacer } from "./TimeReplacer"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { TimeReplacer } from "./TimeReplacer.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 import { DomReplacer, ReplacerFactory } from "ssg-api"
 
 export class TimeReplacerFactory implements ReplacerFactory<DomReplacer> {

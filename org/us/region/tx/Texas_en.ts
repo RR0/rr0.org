@@ -1,8 +1,8 @@
-import { tarrant_en } from "./tarrant/Tarrant_en"
-import { RegionMessages } from "../../../country/region/RegionMessages"
-import { OrganizationType } from "../../../Organization"
-import { houstonMessages } from "./houston/HoustonMessages"
-import { houstonCityCode } from "./houston/Houston"
+import { tarrant_en } from "./tarrant/Tarrant_en.js"
+import { RegionMessages } from "../../../country/region/RegionMessages.js"
+import { OrganizationType } from "../../../Organization.js"
+import { houstonMessages } from "./houston/HoustonMessages.js"
+import { houstonCityCode } from "./houston/Houston.js"
 
 const texasCityMessages = {
   [houstonCityCode]: houstonMessages

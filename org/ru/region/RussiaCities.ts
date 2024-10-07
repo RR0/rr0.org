@@ -1,7 +1,7 @@
-import { City } from "../../country/region/department/city/City"
-import { Department } from "../../country/region/department/Department"
-import { Place } from "../../../place/Place"
-import { northCaucasusCities } from "./nc/NorthCaucasusCities"
+import { City } from "../../country/region/department/city/City.js"
+import { Department } from "../../country/region/department/Department.js"
+import { Place } from "../../../place/Place.js"
+import { northCaucasusCities } from "./nc/NorthCaucasusCities.js"
 
 export const russiaCities: City[] = [
   ...northCaucasusCities

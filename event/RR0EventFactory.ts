@@ -1,6 +1,6 @@
-import { RR0Event } from "./RR0Event"
-import { AbstractDataFactory } from "../data/AbstractDataFactory"
-import { RR0Data } from "../data/RR0Data"
+import { RR0Event } from "./RR0Event.js"
+import { AbstractDataFactory } from "../data/AbstractDataFactory.js"
+import { RR0Data } from "../data/RR0Data.js"
 
 export class RR0EventFactory extends AbstractDataFactory<RR0Event> {
 

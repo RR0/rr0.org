@@ -1,10 +1,10 @@
-import { TimeContext } from "../../../../../time/TimeContext"
-import { GeipanCaseClassification_calc } from "./GeipanCaseClassification"
-import { GeipanSightingType } from "./GeipanSightingType"
-import { GeipanZoneType } from "./GeipanCase"
-import { FranceDepartementCode } from "../../region/FranceDepartementCode"
-import { FranceRegionCode } from "../../region/FranceRegionCode"
-import { CountryCode } from "../../../../country/CountryCode"
+import { TimeContext } from "../../../../../time/TimeContext.js"
+import { GeipanCaseClassification_calc } from "./GeipanCaseClassification.js"
+import { GeipanSightingType } from "./GeipanSightingType.js"
+import { GeipanZoneType } from "./GeipanCase.js"
+import { FranceDepartementCode } from "../../region/FranceDepartementCode.js"
+import { FranceRegionCode } from "../../region/FranceRegionCode.js"
+import { CountryCode } from "../../../../country/CountryCode.js"
 
 export type GeipanZoneCode = FranceDepartementCode | FranceRegionCode | CountryCode.fr
 

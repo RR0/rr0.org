@@ -1,7 +1,7 @@
-import { GeipanCaseSummary } from "./GeipanCaseSummary"
-import { GeipanCase } from "./GeipanCase"
-import { CaseMapper } from "../../../../../time/datasource/CaseMapper"
-import { RR0SsgContext } from "../../../../../RR0SsgContext"
+import { GeipanCaseSummary } from "./GeipanCaseSummary.js"
+import { GeipanCase } from "./GeipanCase.js"
+import { CaseMapper } from "../../../../../time/datasource/CaseMapper.js"
+import { RR0SsgContext } from "../../../../../RR0SsgContext.js"
 
 /**
  * Maps a GEIPAN CSV case to a GEIPAN summary case.

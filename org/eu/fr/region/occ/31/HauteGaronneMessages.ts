@@ -1,9 +1,9 @@
-import { HauteGaronneCityCode } from "./HauteGaronneCityCode"
-import { loudetMessages } from "./loudet/LoudetMessages"
-import { stPlancardMessages } from "./stplancard/StPlancardMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { toulouseMessages } from "./toulouse/ToulouseMessages"
+import { HauteGaronneCityCode } from "./HauteGaronneCityCode.js"
+import { loudetMessages } from "./loudet/LoudetMessages.js"
+import { stPlancardMessages } from "./stplancard/StPlancardMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { toulouseMessages } from "./toulouse/ToulouseMessages.js"
 
 type HauteGaronneCityMessages = { [key in HauteGaronneCityCode]: OrganizationMessages }
 const hauteGaronneCityMessages: HauteGaronneCityMessages = {

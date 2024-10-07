@@ -1,4 +1,4 @@
-import { GeipanCaseClassification, GeipanCaseClassification_minus } from "./GeipanCaseClassification"
+import { GeipanCaseClassification, GeipanCaseClassification_minus } from "./GeipanCaseClassification.js"
 
 export enum GeipanZoneType {
   Aerial = "(A) Aérien",

@@ -1,5 +1,5 @@
 import { DomReplaceCommand, DomReplacer } from "ssg-api"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 /**
  * Determine page language and ddd links to page language variants,
@@ -7,7 +7,7 @@ import { HtmlRR0SsgContext } from "../RR0SsgContext"
 export class LanguageReplaceCommand extends DomReplaceCommand<HTMLElement, HtmlRR0SsgContext> {
 
   constructor() {
-    super("#alternate")
+    super("#alternate", undefined)
   }
 
   protected async createReplacer(context: HtmlRR0SsgContext): Promise<DomReplacer> {

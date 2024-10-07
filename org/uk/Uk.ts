@@ -1,8 +1,8 @@
-import { Country } from "../country/Country"
-import { CountryCode } from "../country/CountryCode"
-import { Place } from "../../place/Place"
-import { Region } from "../country/region/Region"
-import { UkRegionCode } from "./region/UkRegionCode"
+import { Country } from "../country/Country.js"
+import { CountryCode } from "../country/CountryCode.js"
+import { Place } from "../../place/Place.js"
+import { Region } from "../country/region/Region.js"
+import { UkRegionCode } from "./region/UkRegionCode.js"
 
 export const uk = new Country(CountryCode.uk)
 

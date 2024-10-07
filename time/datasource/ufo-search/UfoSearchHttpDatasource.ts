@@ -1,12 +1,12 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { UfoSearchDatasource } from "./UfoSearchDatasource"
-import { UrlUtil } from "../../../util/url/UrlUtil"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { UfoSearchDatasource } from "./UfoSearchDatasource.js"
+import { UrlUtil } from "../../../util/url/UrlUtil.js"
 import { JSDOM } from "jsdom"
-import { TimeContext } from "../../TimeContext"
-import { HttpSource } from "../HttpSource"
+import { TimeContext } from "../../TimeContext.js"
+import { HttpSource } from "../HttpSource.js"
 import { By } from "selenium-webdriver"
 import assert from "assert"
-import { UfoSearchCase, UfoSearchCaseType } from "./UfoSearchCase"
+import { UfoSearchCase, UfoSearchCaseType } from "./UfoSearchCase.js"
 
 interface QueryParameters {
   sy?: number

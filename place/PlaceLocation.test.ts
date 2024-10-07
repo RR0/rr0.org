@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@javarome/testscript"
-import { PlaceLocation } from "./PlaceLocation"
-import { rr0TestUtil } from "../test/RR0TestUtil"
+import { PlaceLocation } from "./PlaceLocation.js"
+import { rr0TestUtil } from "../test/RR0TestUtil.js"
 
 describe("PlaceLocation", () => {
 

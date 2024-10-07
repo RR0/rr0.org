@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@javarome/testscript"
-import { TimeContext } from "./TimeContext"
+import { TimeContext } from "./TimeContext.js"
 
 describe("TimeContext", () => {
 

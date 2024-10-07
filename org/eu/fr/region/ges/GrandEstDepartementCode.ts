@@ -1,4 +1,4 @@
-import { FranceDepartementCode } from "../FranceDepartementCode"
+import { FranceDepartementCode } from "../FranceDepartementCode.js"
 
 export enum GrandEstDepartementCode {
   Ardennes = FranceDepartementCode.Ardennes,

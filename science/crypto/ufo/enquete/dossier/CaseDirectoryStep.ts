@@ -1,8 +1,8 @@
 import { DirectoryStep, OutputFunc, SsgConfig } from "ssg-api"
-import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext"
-import { StringUtil } from "../../../../../util/string/StringUtil"
-import { RR0Case } from "./RR0Case"
-import { CaseService } from "./CaseService"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../../../../../RR0SsgContext.js"
+import { StringUtil } from "../../../../../util/string/StringUtil.js"
+import { RR0Case } from "./RR0Case.js"
+import { CaseService } from "./CaseService.js"
 
 /**
  * Builds a directory page for UFO cases.

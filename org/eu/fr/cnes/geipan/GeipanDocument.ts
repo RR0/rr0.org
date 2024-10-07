@@ -1,4 +1,4 @@
-import { GeipanDocumentType } from "./GeipanDocumentType"
+import { GeipanDocumentType } from "./GeipanDocumentType.js"
 
 export type GeipanDocument = {
   type: GeipanDocumentType

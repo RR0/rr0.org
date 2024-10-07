@@ -1,8 +1,8 @@
-import { mauriacMessages } from "./mauriac/MauriacMessages"
-import { CantalCityCode } from "./CantalCityCode"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { pierrefortMessages } from "./pierrefort/PierrefortMessages"
+import { mauriacMessages } from "./mauriac/MauriacMessages.js"
+import { CantalCityCode } from "./CantalCityCode.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
+import { pierrefortMessages } from "./pierrefort/PierrefortMessages.js"
 
 const cantalCityMessages: { [key in CantalCityCode]: CityMessages } = {
   [CantalCityCode.Mauriac]: mauriacMessages,

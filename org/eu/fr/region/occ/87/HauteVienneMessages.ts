@@ -1,7 +1,7 @@
-import { HauteVienneCityCode } from "./HauteVienneCityCode"
-import { jabreillesMessages } from "./jabreilles/JabreillesMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
+import { HauteVienneCityCode } from "./HauteVienneCityCode.js"
+import { jabreillesMessages } from "./jabreilles/JabreillesMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
 
 const hauteVienneCityMessages: { [key in HauteVienneCityCode]: OrganizationMessages } = {
   [HauteVienneCityCode.Jabreilles]: jabreillesMessages

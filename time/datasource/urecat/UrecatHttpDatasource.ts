@@ -1,13 +1,13 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { HttpSource } from "../HttpSource"
-import { UrlUtil } from "../../../util/url/UrlUtil"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { HttpSource } from "../HttpSource.js"
+import { UrlUtil } from "../../../util/url/UrlUtil.js"
 import { JSDOM } from "jsdom"
-import { UrecatCase, UrecatWitness } from "./UrecatCase"
-import { TimeTextBuilder } from "../../TimeTextBuilder"
-import { MessageUtils } from "../../../lang/RR0Messages"
-import { ObjectUtil } from "../../../util/ObjectUtil"
-import { UrecatDatasource } from "./UrecatDatasource"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
+import { UrecatCase, UrecatWitness } from "./UrecatCase.js"
+import { TimeTextBuilder } from "../../TimeTextBuilder.js"
+import { MessageUtils } from "../../../lang/RR0Messages.js"
+import { ObjectUtil } from "../../../util/ObjectUtil.js"
+import { UrecatDatasource } from "./UrecatDatasource.js"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
 
 export class UrecatHttpDatasource extends UrecatDatasource {
 

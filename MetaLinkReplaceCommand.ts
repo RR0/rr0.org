@@ -1,5 +1,5 @@
 import { HtmlSsgContext, Link, ReplaceCommand } from "ssg-api"
-import { HtmlRR0SsgContext } from "./RR0SsgContext"
+import { HtmlRR0SsgContext } from "./RR0SsgContext.js"
 
 export interface LinkHandler<C extends HtmlSsgContext> {
 

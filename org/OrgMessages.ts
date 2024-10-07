@@ -1,8 +1,8 @@
 import assert from "assert"
-import { RR0SsgContext } from "../RR0SsgContext"
+import { RR0SsgContext } from "../RR0SsgContext.js"
 
-import { Organization } from "./Organization"
-import { OrganizationMessageOptions } from "./OrganizationMessages"
+import { Organization } from "./Organization.js"
+import { OrganizationMessageOptions } from "./OrganizationMessages.js"
 
 export class OrgMessages {
 

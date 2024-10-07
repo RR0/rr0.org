@@ -1,7 +1,7 @@
-import { SommeCityCode } from "./SommeCityCode"
-import { bernavilleMessages } from "./bernaville/BernavilleMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { SommeCityCode } from "./SommeCityCode.js"
+import { bernavilleMessages } from "./bernaville/BernavilleMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
 
 type SommeCityMessagesList = { [key in SommeCityCode]: CityMessages }
 const sommeCityMessages: SommeCityMessagesList = {

@@ -1,8 +1,8 @@
-import { RegionMessages } from "../../../country/region/RegionMessages"
-import { OrganizationType } from "../../../Organization"
-import { SofalaDepartmentCityList } from "./SofalaMessages"
-import { beiraCityCode } from "./beira/Beira"
-import { beiraMessages } from "./beira/BeiraMessages"
+import { RegionMessages } from "../../../country/region/RegionMessages.js"
+import { OrganizationType } from "../../../Organization.js"
+import { SofalaDepartmentCityList } from "./SofalaMessages.js"
+import { beiraCityCode } from "./beira/Beira.js"
+import { beiraMessages } from "./beira/BeiraMessages.js"
 
 export const sofalaMessages_en = new RegionMessages(["Sofala"])
 const cities: SofalaDepartmentCityList = {

@@ -1,8 +1,8 @@
-import { couxMessages } from "./Coux/CouxMessages"
-import { ArdecheCityCode } from "./ArdecheCityCode"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { largentiereMessages } from "./Largentiere/LargentiereMessages"
-import { vernouxEnVivaraisMessages } from "./VernouxEnVivarais/VernouxEnVivaraisMessages"
+import { couxMessages } from "./Coux/CouxMessages.js"
+import { ArdecheCityCode } from "./ArdecheCityCode.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { largentiereMessages } from "./Largentiere/LargentiereMessages.js"
+import { vernouxEnVivaraisMessages } from "./VernouxEnVivarais/VernouxEnVivaraisMessages.js"
 
 export const ardecheMessages = DepartmentMessages.create("Ardèche", {
   [ArdecheCityCode.Coux]: couxMessages,

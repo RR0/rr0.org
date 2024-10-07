@@ -1,8 +1,8 @@
-import { CaseClassificationMessages, CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages"
-import { placeMessages_en } from "../place/PlaceMessages_en"
-import { countryMessageList_en } from "../org/CountryMessageList_en"
-import { peopleMessages_en } from "../people/PeopleMessages_en"
-import { orgMessages_en } from "../org/OrgRR0Messages_en"
+import { CaseClassificationMessages, CaseConclusionMessages, MessageUtils, RR0Messages } from "./RR0Messages.js"
+import { placeMessages_en } from "../place/PlaceMessages_en.js"
+import { countryMessageList_en } from "../org/CountryMessageList_en.js"
+import { peopleMessages_en } from "../people/PeopleMessages_en.js"
+import { orgMessages_en } from "../org/OrgRR0Messages_en.js"
 
 const caseClassification_en: CaseClassificationMessages = {
   hynek: {

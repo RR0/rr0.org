@@ -1,4 +1,4 @@
-import { PeruDepartementCode } from "../PeruDepartementCode"
+import { PeruDepartementCode } from "../PeruDepartementCode.js"
 
 export enum LesserPolandDepartementCode {
   Sucha = PeruDepartementCode.Sucha,

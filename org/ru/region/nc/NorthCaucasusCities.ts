@@ -1,5 +1,5 @@
-import { City } from "../../../country/region/department/city/City"
-import { kabardinoBalkariaCities } from "./kb/KabardinoBalkariaCities"
+import { City } from "../../../country/region/department/city/City.js"
+import { kabardinoBalkariaCities } from "./kb/KabardinoBalkariaCities.js"
 
 export const northCaucasusCities: City[] = [
   ...kabardinoBalkariaCities

@@ -1,9 +1,9 @@
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { Datasource } from "../Datasource"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { Datasource } from "../Datasource.js"
 import { FileContents } from "ssg-api"
-import { EssexPoliceDatasource } from "./EssexPoliceDatasource"
-import { JsonMapper } from "../JsonMapper"
-import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
+import { EssexPoliceDatasource } from "./EssexPoliceDatasource.js"
+import { JsonMapper } from "../JsonMapper.js"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary.js"
 
 export class EssexPoliceFileDatasource extends EssexPoliceDatasource implements Datasource<EssexPoliceCaseSummary> {
 

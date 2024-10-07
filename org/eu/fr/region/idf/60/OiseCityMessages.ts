@@ -1,12 +1,12 @@
-import { OiseCityCode } from "./OiseCityCode"
-import { pontLEveque60Messages } from "./PontLEveque/PontLEvequeMessages"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { compiegneMessages } from "./compiegne/CompiegneMessages"
-import { neuillyEnThelleMessages } from "./NeuillyEnThelle/NeuillyEnThelleMessages"
-import { ribecourtDreslincourtMessages } from "./RibecourtDreslincourt/RibecourtDreslincourtMessages"
-import { morlincourtMessages } from "./morlincourt/MorlincourtMessages"
-import { pontSainteMaxenceMessages } from "./PontSainteMaxence/PontSainteMaxenceMessages"
+import { OiseCityCode } from "./OiseCityCode.js"
+import { pontLEveque60Messages } from "./PontLEveque/PontLEvequeMessages.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
+import { compiegneMessages } from "./compiegne/CompiegneMessages.js"
+import { neuillyEnThelleMessages } from "./NeuillyEnThelle/NeuillyEnThelleMessages.js"
+import { ribecourtDreslincourtMessages } from "./RibecourtDreslincourt/RibecourtDreslincourtMessages.js"
+import { morlincourtMessages } from "./morlincourt/MorlincourtMessages.js"
+import { pontSainteMaxenceMessages } from "./PontSainteMaxence/PontSainteMaxenceMessages.js"
 
 const oiseCityMessages: { [key in OiseCityCode]: CityMessages } = {
   [OiseCityCode.Compiegne]: compiegneMessages,

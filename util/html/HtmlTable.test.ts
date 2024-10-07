@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@javarome/testscript"
-import { HtmlTable } from "./HtmlTable"
+import { HtmlTable } from "./HtmlTable.js"
 
 describe("HtmlTable", () => {
 

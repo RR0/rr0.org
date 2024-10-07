@@ -1,9 +1,9 @@
-import { finlandCities } from "./fi/FinlandCities"
-import { City } from "../country/region/department/city/City"
-import { spainCities } from "./es/region/SpainCities"
-import { polandCities } from "./pl/region/PolandCities"
-import { denmarkCities } from "./dk/DenmarkCities"
-import { franceCities } from "./fr/region/FranceCities"
+import { finlandCities } from "./fi/FinlandCities.js"
+import { City } from "../country/region/department/city/City.js"
+import { spainCities } from "./es/region/SpainCities.js"
+import { polandCities } from "./pl/region/PolandCities.js"
+import { denmarkCities } from "./dk/DenmarkCities.js"
+import { franceCities } from "./fr/region/FranceCities.js"
 
 export const europeCities: City[] = [
   ...denmarkCities,

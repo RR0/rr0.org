@@ -1,9 +1,9 @@
-import { FranceRegionCode } from "./fr/region/FranceRegionCode"
-import { FinlandRegionCode } from "./fi/region/FinlandRegionCode"
-import { SpainRegionCode } from "./es/region/SpainRegionCode"
-import { PolandRegionCode } from "./pl/region/PolandRegionCode"
-import { DenmarkRegionCode } from "./dk/region/DenmarkRegionCode"
-import { GermanyRegionCode } from "./de/region/GermanyRegionCode"
+import { FranceRegionCode } from "./fr/region/FranceRegionCode.js"
+import { FinlandRegionCode } from "./fi/region/FinlandRegionCode.js"
+import { SpainRegionCode } from "./es/region/SpainRegionCode.js"
+import { PolandRegionCode } from "./pl/region/PolandRegionCode.js"
+import { DenmarkRegionCode } from "./dk/region/DenmarkRegionCode.js"
+import { GermanyRegionCode } from "./de/region/GermanyRegionCode.js"
 
 export type EuropeRegionCode =
   FranceRegionCode

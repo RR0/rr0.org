@@ -1,5 +1,5 @@
-import { DomReplacement } from "../time/DomReplacement"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { DomReplacement } from "../time/DomReplacement.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 /**
  * Adds an index anchor element with the index id.

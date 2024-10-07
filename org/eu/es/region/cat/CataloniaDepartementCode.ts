@@ -1,4 +1,4 @@
-import { SpainDepartementCode } from "../SpainDepartementCode"
+import { SpainDepartementCode } from "../SpainDepartementCode.js"
 
 export enum CataloniaDepartementCode {
   Lleida = SpainDepartementCode.Lerida,

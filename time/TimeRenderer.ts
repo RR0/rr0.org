@@ -1,9 +1,9 @@
-import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext"
-import { TimeUrlBuilder } from "./TimeUrlBuilder"
-import { TimeTextBuilder } from "./TimeTextBuilder"
-import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder"
-import { UrlUtil } from "../util/url/UrlUtil"
-import { TimeReplacer } from "./TimeReplacer"
+import { HtmlRR0SsgContext, RR0SsgContext } from "../RR0SsgContext.js"
+import { TimeUrlBuilder } from "./TimeUrlBuilder.js"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
+import { RelativeTimeTextBuilder } from "./RelativeTimeTextBuilder.js"
+import { UrlUtil } from "../util/url/UrlUtil.js"
+import { TimeReplacer } from "./TimeReplacer.js"
 
 export interface TimeRenderOptions {
   url: boolean

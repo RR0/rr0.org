@@ -1,6 +1,6 @@
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
-import { GuilfordCityCode } from "./GuilfordCityCode"
-import { greensboroMessages } from "./greensboro/GreensboroMessages"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages.js"
+import { GuilfordCityCode } from "./GuilfordCityCode.js"
+import { greensboroMessages } from "./greensboro/GreensboroMessages.js"
 
 export const guilford_en = DepartmentMessages.create("Guilford", {
     [GuilfordCityCode.Greensboro]: greensboroMessages

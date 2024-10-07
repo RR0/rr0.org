@@ -18,32 +18,25 @@
     <li>vérifier l'autorisation conférée au propriétaire de ressource</li>
     <li>vérifier l'identité du client faisant une requête</li>
   </ul>
-  <p>OAuth définit 3 rôles :</p>
+  <p>OAuth 1.x ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client
+    /serveur</a> :</p>
   <ol>
-    <li>le <b>client</b> (<i lang="en">front end</i> ou <i lang="en">consumer</i>)</li>
-    <li>le <b>serveur</b> (<i lang="en">back end</i>) hébergeant des ressources</li>
+    <li>le <i>client</i> (<i lang="en">front end</i>) ou consommateur (<i lang="en">consumer</i>) qui n'est pas
+      propriétaire de la resource, mais agit en son nom accède aux ressources contrôlées par le propriétaire de
+      ressource ;</li>
+    <li>le <i>serveur</i> (<i lang="en">back end</i>) hébergeant des ressources protégées</li>
     <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>) ou "utilisateur final" (<i
-      lang="en">end user</i>) vers qui on se tournera pour lui demander s'il autorise u, accès, sans pour autant
+      lang="en">end user</i>) vers qui on se tournera pour lui demander s'il autorise un accès, sans pour autant
       dévoiler son identité.</li>
   </ol>
-</section>
-<section>
-  <h2>Conception</h2>
-  <p>OAuth 1.x ajoute un 3ᵉ rôle à l'architecture <a href="/tech/info/soft/proj/design/arch/ClientServeur.html">client
-    /serveur</a> :
-  </p>
-  <ul>
-    <li>le <b>propriétaire de ressource</b> (<i lang="en">resource owner</i>, <i lang="en">end user</i>) qui a le
-      contrôle d'accès aux ressources du serveur</li>
-    <li>le <b>serveur</b> (<span class="place">service provider</span>) héberge les ressources protégées</li>
-    <li>le <b>client</b> ou consommateur (<i lang="en">consumer</i>) qui n'est pas propriétaire de la resource, mais
-      agit en son nom  accède aux ressources contrôlées par le propriétaire de ressource ;</li>
-  </ul>
   <p>Il définit 2 processus :</p>
   <ul>
     <li>une redirection par le <i lang="en">user agent</i> pour autoriser un client à accéder à des ressources ;</li>
     <li>des requêtes HTTP authentifiant le client et le propriétaire de ressource ayant autorisé la requête</li>
   </ul>
+</section>
+<section>
+  <h2>Conception</h2>
   <pre class="mermaid">
 sequenceDiagram
     Title OAuth 1.x worfklow
@@ -80,14 +73,14 @@ sequenceDiagram
 </section>
 <section>
   <h2>Notes</h2>
-  <p>Stabilisé <time>2007-10</time>, revisé <time>2009-06</time> (<a href="http://oauth.net/core/1.0a">révision
-    A</a>).</p>
+  <p>Stabilisé <time>2007-10</time>, revisé <time>2009-06</time> (<a href="http://oauth.net/core/1.0a">révision A</a>).
+  </p>
 </section>
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/+esm'
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.0/+esm.js"
 
   mermaid.initialize({
-    securityLevel: 'loose'
+    securityLevel: "loose"
   })
 </script>
 <!--#include virtual="/footer.html" -->

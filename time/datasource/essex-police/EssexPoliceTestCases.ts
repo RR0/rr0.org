@@ -1,5 +1,5 @@
-import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
-import { TimeContext } from "../../TimeContext"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary.js"
+import { TimeContext } from "../../TimeContext.js"
 
 export const essexPoliceTestCases: EssexPoliceCaseSummary[] = [
   {

@@ -1,9 +1,9 @@
-import { FuforaHttpDatasource } from "./FuforaHttpDatasource"
-import { FuforaCaseSummaryRR0Mapper } from "./FuforaCaseSummaryRR0Mapper"
-import { cityService } from "../../../org/Cities"
-import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
-import { FuforaCaseSummary } from "./FuforaCaseSummary"
-import { ChronologyReplacerActions } from "../ChronologyReplacerActions"
+import { FuforaHttpDatasource } from "./FuforaHttpDatasource.js"
+import { FuforaCaseSummaryRR0Mapper } from "./FuforaCaseSummaryRR0Mapper.js"
+import { cityService } from "../../../org/Cities.js"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping.js"
+import { FuforaCaseSummary } from "./FuforaCaseSummary.js"
+import { ChronologyReplacerActions } from "../ChronologyReplacerActions.js"
 
 export const fuforaDatasource = new FuforaHttpDatasource(new URL("https://www.fufora.fi"), "ufodb2/ufohaku.php")
 

@@ -1,7 +1,7 @@
-import { TimeTextBuilder } from "./TimeTextBuilder"
-import { TimeContext } from "./TimeContext"
-import { HtmlRR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
-import { StringUtil } from "../util/string/StringUtil"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
+import { TimeContext } from "./TimeContext.js"
+import { HtmlRR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext.js"
+import { StringUtil } from "../util/string/StringUtil.js"
 
 export class Time {
 

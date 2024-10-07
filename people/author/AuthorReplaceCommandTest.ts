@@ -1,9 +1,9 @@
-import { AuthorReplaceCommand } from "./AuthorReplaceCommand"
-import { rr0TestUtil } from "../../test/RR0TestUtil"
+import { AuthorReplaceCommand } from "./AuthorReplaceCommand.js"
+import { rr0TestUtil } from "../../test/RR0TestUtil.js"
 import { describe, expect, test } from "@javarome/testscript"
-import { RelativeTimeTextBuilder } from "../../time/RelativeTimeTextBuilder"
-import { TimeService } from "../../time/TimeService"
-import { TimeTextBuilder } from "../../time/TimeTextBuilder"
+import { RelativeTimeTextBuilder } from "../../time/RelativeTimeTextBuilder.js"
+import { TimeService } from "../../time/TimeService.js"
+import { TimeTextBuilder } from "../../time/TimeTextBuilder.js"
 
 describe("AuthorReplaceCommand", () => {
 

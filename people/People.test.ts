@@ -1,9 +1,9 @@
-import { People } from "./People"
-import { PeopleService } from "./PeopleService"
+import { People } from "./People.js"
+import { PeopleService } from "./PeopleService.js"
 import { beforeAll, describe, expect, test } from "@javarome/testscript"
-import { AllDataService } from "../data/AllDataService"
-import { PeopleFactory } from "./PeopleFactory"
-import { RR0EventFactory } from "../event/RR0EventFactory"
+import { AllDataService } from "../data/AllDataService.js"
+import { PeopleFactory } from "./PeopleFactory.js"
+import { RR0EventFactory } from "../event/RR0EventFactory.js"
 
 describe("People", () => {
 

@@ -1,6 +1,6 @@
 import { RegexReplacer, SsiEchoVarReplaceCommand } from "ssg-api"
-import { HtmlRR0SsgContext } from "../../RR0SsgContext"
-import { TimeService } from "../../time/TimeService"
+import { HtmlRR0SsgContext } from "../../RR0SsgContext.js"
+import { TimeService } from "../../time/TimeService.js"
 
 /**
  * Replaces "<!--#echo var="author" -->" and "<!--#echo var="copyright" -->"

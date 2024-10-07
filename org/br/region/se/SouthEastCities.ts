@@ -1,5 +1,5 @@
-import { rioDeJaneiroCities } from "./riodejaneiro/RioDeJaneiroCities"
-import { Organization } from "../../../Organization"
+import { rioDeJaneiroCities } from "./riodejaneiro/RioDeJaneiroCities.js"
+import { Organization } from "../../../Organization.js"
 
 export const southEastCities: Organization[] = [
   ...rioDeJaneiroCities

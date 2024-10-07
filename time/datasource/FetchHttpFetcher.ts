@@ -1,4 +1,4 @@
-import { HttpFetcher, HttpSourceError, MimeType } from "./HttpSource"
+import { HttpFetcher, HttpSourceError, MimeType } from "./HttpSource.js"
 
 export interface FetchHttpFetcherOptions {
   userAgents: string[]

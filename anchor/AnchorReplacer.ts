@@ -1,6 +1,6 @@
 import { HtmlSsgContext } from "ssg-api"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
-import { AnchorHandler } from "./AnchorHandler"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
+import { AnchorHandler } from "./AnchorHandler.js"
 
 export class AnchorReplacer {
 

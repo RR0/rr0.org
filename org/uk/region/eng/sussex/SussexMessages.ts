@@ -1,7 +1,7 @@
-import { SussexCityCode } from "./SussexCityCode"
-import { CityMessages } from "../../../../country/region/department/city/CityMessages"
-import { frantMessages } from "./frant/FrantMessages"
-import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages"
+import { SussexCityCode } from "./SussexCityCode.js"
+import { CityMessages } from "../../../../country/region/department/city/CityMessages.js"
+import { frantMessages } from "./frant/FrantMessages.js"
+import { DepartmentMessages } from "../../../../country/region/department/DepartmentMessages.js"
 
 type SussexCityMessagesList = { [key in SussexCityCode]: CityMessages }
 const sussexCityMessages: SussexCityMessagesList = {

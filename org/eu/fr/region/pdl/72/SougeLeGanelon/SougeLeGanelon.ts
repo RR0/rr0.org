@@ -1,5 +1,5 @@
-import { franceCity } from "../../../FranceCity"
-import { Place } from "../../../../../../../place/Place"
-import { SartheCityCode } from "../SartheCityCode"
+import { franceCity } from "../../../FranceCity.js"
+import { Place } from "../../../../../../../place/Place.js"
+import { SartheCityCode } from "../SartheCityCode.js"
 
 export const sougeLeGanelon = franceCity(SartheCityCode.SougeLeGanelon, Place.fromDMS("8°19′05″N,0°01′50″W"))

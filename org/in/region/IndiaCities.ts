@@ -1,6 +1,6 @@
-import { City } from "../../country/region/department/city/City"
-import { telanganaCities } from "./tg/TelanganaCities"
-import { maharashtraCities } from "./mh/MaharashtraCities"
+import { City } from "../../country/region/department/city/City.js"
+import { telanganaCities } from "./tg/TelanganaCities.js"
+import { maharashtraCities } from "./mh/MaharashtraCities.js"
 
 export const indiaCities: City[] = [
   ...maharashtraCities,

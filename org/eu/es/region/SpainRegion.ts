@@ -1,7 +1,7 @@
-import { Place } from "../../../../place/Place"
-import { europeanRegion } from "../../Region_eu"
-import { spain } from "../Spain"
-import { SpainRegionCode } from "./SpainRegionCode"
+import { Place } from "../../../../place/Place.js"
+import { europeanRegion } from "../../Region_eu.js"
+import { spain } from "../Spain.js"
+import { SpainRegionCode } from "./SpainRegionCode.js"
 
 export function spainRegion(code: SpainRegionCode, place: Place) {
   return europeanRegion(code, spain, place)

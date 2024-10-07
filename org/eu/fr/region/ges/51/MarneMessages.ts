@@ -1,7 +1,7 @@
-import { MarneCityCode } from "./MarneCityCode"
-import { reimsMessages } from "./Reims/ReimsMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { OrganizationType } from "../../../../../Organization"
+import { MarneCityCode } from "./MarneCityCode.js"
+import { reimsMessages } from "./Reims/ReimsMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { OrganizationType } from "../../../../../Organization.js"
 
 export const marneMessages = new OrganizationMessages("Marne")
 marneMessages[OrganizationType.city] = {

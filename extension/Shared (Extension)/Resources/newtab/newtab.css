@@ -1,4 +1,4 @@
-@import "../index.css";
+@import "../index.css.js";
 
 :root {
   --header-height: 4em;

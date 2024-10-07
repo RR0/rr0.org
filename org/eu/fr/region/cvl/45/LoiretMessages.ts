@@ -1,8 +1,8 @@
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { LoiretCityCode } from "./LoiretCityCode"
-import { chateaurenardMessages } from "./chateaurenard/ChateaurenardMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
-import { bouMessages } from "./bou/BouMessages"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { LoiretCityCode } from "./LoiretCityCode.js"
+import { chateaurenardMessages } from "./chateaurenard/ChateaurenardMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
+import { bouMessages } from "./bou/BouMessages.js"
 
 type IndreCityMessagesList = { [key in LoiretCityCode]: CityMessages }
 const loiretCityMessages: IndreCityMessagesList = {

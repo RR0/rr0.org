@@ -1,7 +1,7 @@
-import { nanterre92 } from "./Nanterre/Nanterre"
-import { City } from "../../../../../country/region/department/city/City"
-import { colombes } from "./Colombes/Colombes"
-import { boisColombes } from "./BoisColombes/BoisColombes"
+import { nanterre92 } from "./Nanterre/Nanterre.js"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { colombes } from "./Colombes/Colombes.js"
+import { boisColombes } from "./BoisColombes/BoisColombes.js"
 
 export const hautsDeSeineCities: City[] = [
   boisColombes,

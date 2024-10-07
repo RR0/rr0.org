@@ -1,5 +1,5 @@
-import { describe, expect, test } from '@javarome/testscript';
-import {CLI} from "./CLI"
+import { describe, expect, test } from "@javarome/testscript"
+import { CLI } from "./CLI.js"
 
 interface MyArgs {
   argString: string;

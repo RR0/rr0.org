@@ -1,5 +1,5 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { pleineFougeres } from "./pleinefougeres/PleineFougeres"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { pleineFougeres } from "./pleinefougeres/PleineFougeres.js"
 
 export const illeEtVilaineCities: City[] = [
   pleineFougeres

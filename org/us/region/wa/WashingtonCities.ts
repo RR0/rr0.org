@@ -1,5 +1,5 @@
-import { pierceCities } from "./pierce/PierceCities"
-import { City } from "../../../country/region/department/city/City"
+import { pierceCities } from "./pierce/PierceCities.js"
+import { City } from "../../../country/region/department/city/City.js"
 
 export const washingtonCities: City[] = [
   ...pierceCities

@@ -1,5 +1,5 @@
-import { City } from "../../../../../country/region/department/city/City"
-import { chantonnay } from "./Chantonnay/Chantonnay"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { chantonnay } from "./Chantonnay/Chantonnay.js"
 
 export const vendeeCities: City[] = [
   chantonnay

@@ -1,5 +1,5 @@
-import {GooglePlaceService} from "./GooglePlaceService"
-import { describe, expect, test, beforeEach, beforeAll } from '@javarome/testscript';
+import { GooglePlaceService } from "./GooglePlaceService.js"
+import { beforeAll, beforeEach, describe, expect, test } from "@javarome/testscript"
 
 describe("PlaceService", () => {
 

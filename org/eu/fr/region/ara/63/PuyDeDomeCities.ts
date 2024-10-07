@@ -1,7 +1,7 @@
-import { riom63 } from "./Riom/Riom"
-import { City } from "../../../../../country/region/department/city/City"
-import { billom } from "./Billom/Billom"
-import { chatelGuyon } from "./ChatelGuyon/ChatelGuyon"
+import { riom63 } from "./Riom/Riom.js"
+import { City } from "../../../../../country/region/department/city/City.js"
+import { billom } from "./Billom/Billom.js"
+import { chatelGuyon } from "./ChatelGuyon/ChatelGuyon.js"
 
 export const puyDeDomeCities: City[] = [
   riom63,

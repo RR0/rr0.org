@@ -1,12 +1,12 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { france_fr } from "../eu/fr/France_fr"
-import { rr0TestUtil } from "../../test/RR0TestUtil"
-import { RR0SsgContext } from "../../RR0SsgContext"
-import { france_en } from "../eu/fr/France_en"
-import { usa_fr } from "../us/Usa_fr"
-import { usa_en } from "../us/Usa_en"
-import { france } from "../eu/fr/France"
-import { usa } from "../us/Usa"
+import { france_fr } from "../eu/fr/France_fr.js"
+import { rr0TestUtil } from "../../test/RR0TestUtil.js"
+import { RR0SsgContext } from "../../RR0SsgContext.js"
+import { france_en } from "../eu/fr/France_en.js"
+import { usa_fr } from "../us/Usa_fr.js"
+import { usa_en } from "../us/Usa_en.js"
+import { france } from "../eu/fr/France.js"
+import { usa } from "../us/Usa.js"
 
 describe("CountryMessages", () => {
 

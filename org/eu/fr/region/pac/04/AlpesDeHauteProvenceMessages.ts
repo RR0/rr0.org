@@ -1,9 +1,9 @@
-import { AlpesDeHauteProvenceCityCode } from "./AlpesDeHauteProvenceCityCode"
-import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages"
-import { barcelonnetteMessages } from "./Barcelonnette/BarcelonnetteMessages"
-import { lauzetUbayeMessages } from "./LauzetUbaye/LauzetUbayeMessages"
-import { entrevauxMessages } from "./Entrevaux/EntrevauxMessages"
-import { CityMessages } from "../../../../../country/region/department/city/CityMessages"
+import { AlpesDeHauteProvenceCityCode } from "./AlpesDeHauteProvenceCityCode.js"
+import { DepartmentMessages } from "../../../../../country/region/department/DepartmentMessages.js"
+import { barcelonnetteMessages } from "./Barcelonnette/BarcelonnetteMessages.js"
+import { lauzetUbayeMessages } from "./LauzetUbaye/LauzetUbayeMessages.js"
+import { entrevauxMessages } from "./Entrevaux/EntrevauxMessages.js"
+import { CityMessages } from "../../../../../country/region/department/city/CityMessages.js"
 
 type DepMessages = { [key in AlpesDeHauteProvenceCityCode]: CityMessages }
 export const alpesDeHauteProvenceMessages = DepartmentMessages.create<DepMessages>("Alpes-de-Haute-Provence", {

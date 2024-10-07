@@ -1,12 +1,12 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { UfoSearchCase } from "./UfoSearchCase"
-import { DatasourceTestCase } from "../DatasourceTestCase"
-import { ufoSearchTestCases } from "./UfoSearchTestCases"
-import { TimeContext } from "../../TimeContext"
-import { ufoSearchRR0Mapping } from "./UfoSearchMapping"
-import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { UfoSearchCase } from "./UfoSearchCase.js"
+import { DatasourceTestCase } from "../DatasourceTestCase.js"
+import { ufoSearchTestCases } from "./UfoSearchTestCases.js"
+import { TimeContext } from "../../TimeContext.js"
+import { ufoSearchRR0Mapping } from "./UfoSearchMapping.js"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping.js"
 
 describe("UfoSearchCaseSource", () => {
 

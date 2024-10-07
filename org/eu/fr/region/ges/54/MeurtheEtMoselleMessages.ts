@@ -1,9 +1,9 @@
-import { MeurtheEtMoselleCityCode } from "./MeurtheEtMoselleCityCode"
-import { cosnesEtRomainMessages } from "./CosnesEtRomain/CosnesEtRomainMessages"
-import { nancyMessages } from "./Nancy/NancyMessages"
-import { OrganizationMessages } from "../../../../../OrganizationMessages"
-import { OrganizationType } from "../../../../../Organization"
-import { neuvesMaisonsMessages } from "./NeuvesMaisons/NeuvesMaisonsMessages"
+import { MeurtheEtMoselleCityCode } from "./MeurtheEtMoselleCityCode.js"
+import { cosnesEtRomainMessages } from "./CosnesEtRomain/CosnesEtRomainMessages.js"
+import { nancyMessages } from "./Nancy/NancyMessages.js"
+import { OrganizationMessages } from "../../../../../OrganizationMessages.js"
+import { OrganizationType } from "../../../../../Organization.js"
+import { neuvesMaisonsMessages } from "./NeuvesMaisons/NeuvesMaisonsMessages.js"
 
 export const meurtheEtMoselleMessages = new OrganizationMessages("Meurthe-et-Moselle")
 meurtheEtMoselleMessages[OrganizationType.city] = {

@@ -1,5 +1,5 @@
-import { HttpFetcher, HttpSourceError, MimeType } from "./HttpSource"
-import { FetchHttpFetcher } from "./FetchHttpFetcher"
+import { HttpFetcher, HttpSourceError, MimeType } from "./HttpSource.js"
+import { FetchHttpFetcher } from "./FetchHttpFetcher.js"
 
 export interface ArchiveSnapshot {
   available: boolean

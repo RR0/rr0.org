@@ -1,7 +1,7 @@
-import { Place } from "../../../../../../place/Place"
-import { ScottsBluffCityCode } from "../ScottsBluffCityCode"
-import { usaCity } from "../../../UsaCity"
-import { scottsbluffCounty } from "../ScottsbluffCounty"
+import { Place } from "../../../../../../place/Place.js"
+import { ScottsBluffCityCode } from "../ScottsBluffCityCode.js"
+import { usaCity } from "../../../UsaCity.js"
+import { scottsbluffCounty } from "../ScottsbluffCounty.js"
 
 export let scottsbluffCity = usaCity(ScottsBluffCityCode.Scottsbluff, scottsbluffCounty,
   Place.fromDMS("41°52′02″N,103°39′39″O"))

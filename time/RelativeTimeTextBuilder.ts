@@ -1,5 +1,5 @@
-import { TimeTextBuilder } from "./TimeTextBuilder"
-import { RR0SsgContext } from "../RR0SsgContext"
+import { TimeTextBuilder } from "./TimeTextBuilder.js"
+import { RR0SsgContext } from "../RR0SsgContext.js"
 
 export class RelativeTimeTextBuilder {
 

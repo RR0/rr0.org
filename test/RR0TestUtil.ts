@@ -1,5 +1,5 @@
-import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext"
-import { TimeContext } from "../time/TimeContext"
+import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext.js"
+import { TimeContext } from "../time/TimeContext.js"
 import { FileContents, HtmlFileContents } from "ssg-api"
 
 class RR0TestUtil {

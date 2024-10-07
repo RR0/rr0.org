@@ -1,12 +1,12 @@
 import { beforeEach, describe, test } from "@javarome/testscript"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { HtmlRR0SsgContext } from "../../../RR0SsgContext"
-import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary"
-import { DatasourceTestCase } from "../DatasourceTestCase"
-import { essexPoliceTestCases } from "./EssexPoliceTestCases"
-import { TimeContext } from "../../TimeContext"
-import { essexPoliceRR0Mapping } from "./EssexPoliceMapping"
-import { RR0CaseMapping } from "../rr0/RR0CaseMapping"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
+import { HtmlRR0SsgContext } from "../../../RR0SsgContext.js"
+import { EssexPoliceCaseSummary } from "./EssexPoliceCaseSummary.js"
+import { DatasourceTestCase } from "../DatasourceTestCase.js"
+import { essexPoliceTestCases } from "./EssexPoliceTestCases.js"
+import { TimeContext } from "../../TimeContext.js"
+import { essexPoliceRR0Mapping } from "./EssexPoliceMapping.js"
+import { RR0CaseMapping } from "../rr0/RR0CaseMapping.js"
 
 describe("EssexPoliceCaseSource", () => {
 

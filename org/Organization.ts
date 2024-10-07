@@ -1,11 +1,11 @@
-import { RR0Data } from "../data/RR0Data"
-import { Place } from "../place/Place"
+import { RR0Data } from "../data/RR0Data.js"
+import { Place } from "../place/Place.js"
 import path from "path"
-import { RR0SsgContext } from "../RR0SsgContext"
+import { RR0SsgContext } from "../RR0SsgContext.js"
 import assert from "assert"
-import { OrganizationMessageOptions, OrganizationMessages } from "./OrganizationMessages"
-import { TitleMessage } from "./index"
-import { RR0Event } from "../event/RR0Event"
+import { OrganizationMessageOptions, OrganizationMessages } from "./OrganizationMessages.js"
+import { TitleMessage } from "./index.js"
+import { RR0Event } from "../event/RR0Event.js"
 
 export enum OrganizationType {
   country = "country",

@@ -1,7 +1,7 @@
-import { PeopleReplacer } from "./PeopleReplacer"
+import { PeopleReplacer } from "./PeopleReplacer.js"
 import { DomReplacer, ReplacerFactory } from "ssg-api"
-import { PeopleService } from "./PeopleService"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { PeopleService } from "./PeopleService.js"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 /**
  * Creates replacers for people HTML in a given context.

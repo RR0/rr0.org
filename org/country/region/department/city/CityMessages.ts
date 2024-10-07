@@ -1,4 +1,4 @@
-import { OrganizationMessages } from "../../../../OrganizationMessages"
+import { OrganizationMessages } from "../../../../OrganizationMessages.js"
 
 export class CityMessages extends OrganizationMessages {
   /**

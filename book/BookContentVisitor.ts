@@ -1,6 +1,6 @@
-import { ContentVisitor } from "../RR0ContentStep"
+import { ContentVisitor } from "../RR0ContentStep.js"
 import { HtmlLinks, HtmlMeta } from "ssg-api"
-import { HtmlRR0SsgContext } from "../RR0SsgContext"
+import { HtmlRR0SsgContext } from "../RR0SsgContext.js"
 
 export class BookContentVisitor implements ContentVisitor {
 

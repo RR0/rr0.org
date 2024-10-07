@@ -1,5 +1,5 @@
 import { DomReplaceCommand, DomReplacer } from "ssg-api"
-import { HtmlRR0SsgContext } from "./RR0SsgContext"
+import { HtmlRR0SsgContext } from "./RR0SsgContext.js"
 
 import path from "path"
 

@@ -1,5 +1,5 @@
-import { CountryCode } from "./country/CountryCode"
-import { CountryMessages } from "./country/CountryMessages"
+import { CountryCode } from "./country/CountryCode.js"
+import { CountryMessages } from "./country/CountryMessages.js"
 
 export type CountryMessagesList
   = { [key in CountryCode]: CountryMessages<any> }

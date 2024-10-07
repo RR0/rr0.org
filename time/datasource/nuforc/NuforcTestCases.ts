@@ -1,9 +1,9 @@
-import { NuforcCaseSummary } from "./NuforcCaseSummary"
-import { nuforcDatasource } from "./NuforcRR0Mapping"
-import { TimeContext } from "../../TimeContext"
-import { NuforcState } from "./NuforcState"
-import { NuforcCountry } from "./NuforcCountry"
-import { NuforcShape } from "./NuforcShape"
+import { NuforcCaseSummary } from "./NuforcCaseSummary.js"
+import { nuforcDatasource } from "./NuforcRR0Mapping.js"
+import { TimeContext } from "../../TimeContext.js"
+import { NuforcState } from "./NuforcState.js"
+import { NuforcCountry } from "./NuforcCountry.js"
+import { NuforcShape } from "./NuforcShape.js"
 
 export const nuforcTestCases: NuforcCaseSummary[] = [
   {

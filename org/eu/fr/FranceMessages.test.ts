@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@javarome/testscript"
-import { FranceMessages } from "./FranceMessages"
+import { FranceMessages } from "./FranceMessages.js"
 
 describe("FranceMessages", () => {
 

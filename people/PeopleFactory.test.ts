@@ -1,5 +1,5 @@
-import { PeopleService } from "./PeopleService"
-import { People } from "./People"
+import { PeopleService } from "./PeopleService.js"
+import { People } from "./People.js"
 import { describe, expect, test } from "@javarome/testscript"
 
 describe('PeopleFactory', () => {

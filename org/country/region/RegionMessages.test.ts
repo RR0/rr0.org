@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, test } from "@javarome/testscript"
-import { RR0SsgContext } from "../../../RR0SsgContext"
-import { rr0TestUtil } from "../../../test/RR0TestUtil"
-import { idfRegionMessages_fr } from "../../eu/fr/region/idf/IdfMessages"
-import { ileDeFrance } from "../../eu/fr/region/idf/Idf"
+import { RR0SsgContext } from "../../../RR0SsgContext.js"
+import { rr0TestUtil } from "../../../test/RR0TestUtil.js"
+import { idfRegionMessages_fr } from "../../eu/fr/region/idf/IdfMessages.js"
+import { ileDeFrance } from "../../eu/fr/region/idf/Idf.js"
 
 describe("RegionMessages", () => {
 

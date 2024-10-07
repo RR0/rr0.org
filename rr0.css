@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
-@import "map.css.js";
-@import "search/search.css.js";
-@import "figure.css.js";
-@import "people/index.css.js";
-@import "section.css.js";
-@import "table.css.js";
-@import "nav.css.js";
-@import "source/index.css.js";
-@import "note/index.css.js";
-@import "link.css.js";
-@import "quote.css.js";
+@import "map.css";
+@import "search/search.css";
+@import "figure.css";
+@import "people/index.css";
+@import "section.css";
+@import "table.css";
+@import "nav.css";
+@import "source/index.css";
+@import "note/index.css";
+@import "link.css";
+@import "quote.css";
 
 :root {
   --mobile-nav-height: 2rem;

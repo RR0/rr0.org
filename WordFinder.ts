@@ -3,9 +3,8 @@ import path from "path"
 import { glob } from "glob"
 import { CLI } from "./util/cli/CLI"
 import { ConsoleLogger, HtmlFileContents, Logger, SsgConfig, SsgContext } from "ssg-api"
-import { RR0SsgContextImpl } from "./RR0SsgContext.js"
 import { CSVFileReader } from "./CSVFileReader.js"
-import { TimeContext } from "./time/TimeContext"
+import { RR0SsgContextImpl, TimeContext } from "@rr0/cms"
 
 interface WordFinderArgs {
   contents: string

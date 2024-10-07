@@ -1,13 +1,15 @@
 import { ConsoleLogger, SsgConfig, SsgContext } from "ssg-api"
 import { CLI } from "../util/cli/CLI.js"
-import { Book } from "./Book.js"
-import { BookService } from "./BookService.js"
-import { PeopleService } from "../people/PeopleService.js"
-import { AllDataService } from "../data/AllDataService.js"
-import { PeopleFactory } from "../people/PeopleFactory.js"
-import { RR0EventFactory } from "../event/RR0EventFactory.js"
-import { TypedDataFactory } from "../data/TypedDataFactory.js"
 import path from "path"
+import {
+  AllDataService,
+  Book,
+  BookService,
+  PeopleFactory,
+  PeopleService,
+  RR0EventFactory,
+  TypedDataFactory
+} from "@rr0/cms"
 
 interface BookImportArgs {
   import: string

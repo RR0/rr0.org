@@ -1,9 +1,3 @@
-import { TimeContext } from "./time/TimeContext.js"
-import { CaseDirectoryStep } from "./science/crypto/ufo/enquete/dossier/CaseDirectoryStep.js"
-import { GooglePlaceService } from "./place/GooglePlaceService.js"
-import { OrganizationService } from "./org/OrganizationService.js"
-import { HtmlRR0SsgContext, RR0SsgContextImpl } from "./RR0SsgContext.js"
-import { CLI } from "./util/cli/CLI.js"
 import {
   AngularExpressionReplaceCommand,
   ClassDomReplaceCommand,
@@ -28,68 +22,79 @@ import {
   SsiSetVarReplaceCommand,
   StringEchoVarReplaceCommand
 } from "ssg-api"
-import { LanguageReplaceCommand } from "./lang/LanguageReplaceCommand.js"
-import { SsiTitleReplaceCommand } from "./time/SsiTitleReplaceCommand.js"
-import { PeopleReplacerFactory } from "./people/PeopleReplacerFactory.js"
-import { SourceReplacerFactory } from "./source/SourceReplacerFactory.js"
-import { NoteReplacerFactory } from "./note/NoteReplacerFactory.js"
 import { WitnessReplacerFactory } from "./people/witness/WitnessReplacerFactory.js"
-import { AnchorReplaceCommand } from "./anchor/AnchorReplaceCommand.js"
-import { TimeLinkDefaultHandler } from "./time/TimeLinkDefaultHandler.js"
 import { AuthorReplaceCommand } from "./people/author/AuthorReplaceCommand.js"
 import { rr0DefaultCopyright } from "./RR0DefaultCopyright.js"
-import { PlaceReplacerFactory } from "./place/PlaceReplacerFactory.js"
-import { TimeReplacerFactory } from "./time/TimeReplacerFactory.js"
 import { MetaLinkReplaceCommand } from "./MetaLinkReplaceCommand.js"
-import { OutlineReplaceCommand } from "./outline/OutlineReplaceCommand.js"
 import { ImageCommand } from "./ImageCommand.js"
-import { SearchVisitor } from "./search/SearchVisitor.js"
-import { SearchIndexStep } from "./search/SearchIndexStep.js"
 import { BaseReplaceCommand } from "./BaseReplaceCommand.js"
-import { OpenGraphCommand } from "./OpenGraphCommand.js"
 import { DescriptionReplaceCommand } from "./DescriptionReplaceCommand.js"
-import { BookDirectoryStep } from "./book/BookDirectoryStep.js"
 import path from "path"
-import { IndexedReplacerFactory } from "./index/IndexedReplacerFactory.js"
 import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory.js"
-import { ChronologyReplacerFactory } from "./time/datasource/ChronologyReplacerFactory.js"
-import { PeopleService } from "./people/PeopleService.js"
-import { ContentVisitor, RR0ContentStep } from "./RR0ContentStep.js"
-import { CaseAnchorHandler } from "./anchor/CaseAnchorHandler.js"
-import { AllDataService } from "./data/AllDataService.js"
-import { DataAnchorHandler } from "./anchor/DataAnchorHandler.js"
-import { CaseSummaryRenderer } from "./time/CaseSummaryRenderer.js"
-import { EventReplacer, EventReplacerFactory } from "./time/EventReplacerFactory.js"
-import { HttpSource } from "./time/datasource/HttpSource.js"
-import { SourceRenderer } from "./source/SourceRenderer.js"
-import { TimeService } from "./time/TimeService.js"
-import { CaseService } from "./science/crypto/ufo/enquete/dossier/CaseService.js"
-import { TimeReplacer } from "./time/TimeReplacer.js"
-import { BookContentVisitor } from "./book/BookContentVisitor.js"
-import { ChronologyReplacerActions } from "./time/datasource/ChronologyReplacerActions.js"
-import { SourceReplacer } from "./source/SourceReplacer.js"
-import { NoteReplacer } from "./note/NoteReplacer.js"
-import { NoteFileCounter } from "./note/NoteFileCounter.js"
-import { PersistentSourceRegistry } from "./source/PersistentSourceRegistry.js"
-import { SourceIndexStep } from "./source/SourceIndexStep.js"
-import { SourceFileCounter } from "./source/SourceFileCounter.js"
-import { TimeElementFactory } from "./time/TimeElementFactory.js"
 import { DefaultContentVisitor } from "./DefaultContentVisitor.js"
-import { PeopleFactory } from "./people/PeopleFactory.js"
-import { OrganizationFactory } from "./org/OrganizationFactory.js"
-import { APIFactory } from "./tech/info/soft/APIFactory.js"
-import { RR0EventFactory } from "./event/RR0EventFactory.js"
-import { TypedDataFactory } from "./data/TypedDataFactory.js"
-import { NoteRenderer } from "./note/NoteRenderer.js"
-import { PeopleDirectoryStepFactory } from "./people/PeopleDirectoryStepFactory.js"
-import { TimeTextBuilder } from "./time/TimeTextBuilder.js"
-import { Time } from "./time/Time.js"
-import { CaseFactory } from "./science/crypto/ufo/enquete/dossier/CaseFactory.js"
-import { RR0Mapping } from "./time/datasource/rr0/RR0Mapping.js"
-import { CsvMapper } from "./time/datasource/CsvMapper.js"
 import fs from "fs"
-import { HtmlTable } from "./util/html/HtmlTable.js"
-import { UnitReplaceCommand } from "@rr0/cms"
+import {
+  AllDataService,
+  AnchorReplaceCommand,
+  APIFactory,
+  BookContentVisitor,
+  BookDirectoryStep,
+  CaseAnchorHandler,
+  CaseDirectoryStep,
+  CaseFactory,
+  CaseService,
+  CaseSummaryRenderer,
+  ChronologyReplacerActions,
+  ChronologyReplacerFactory,
+  CLI,
+  ContentVisitor,
+  CsvMapper,
+  DataAnchorHandler,
+  EventReplacer,
+  EventReplacerFactory,
+  GooglePlaceService,
+  HtmlRR0SsgContext,
+  HtmlTable,
+  HttpSource,
+  IndexedReplacerFactory,
+  LanguageReplaceCommand,
+  NoteFileCounter,
+  NoteRenderer,
+  NoteReplacer,
+  NoteReplacerFactory,
+  OpenGraphCommand,
+  OrganizationFactory,
+  OrganizationService,
+  OutlineReplaceCommand,
+  PeopleDirectoryStepFactory,
+  PeopleFactory,
+  PeopleReplacerFactory,
+  PeopleService,
+  PersistentSourceRegistry,
+  PlaceReplacerFactory,
+  RR0ContentStep,
+  RR0EventFactory,
+  RR0Mapping,
+  RR0SsgContextImpl,
+  SearchIndexStep,
+  SearchVisitor,
+  SourceFileCounter,
+  SourceIndexStep,
+  SourceRenderer,
+  SourceReplacer,
+  SourceReplacerFactory,
+  SsiTitleReplaceCommand,
+  Time,
+  TimeContext,
+  TimeElementFactory,
+  TimeLinkDefaultHandler,
+  TimeReplacer,
+  TimeReplacerFactory,
+  TimeService,
+  TimeTextBuilder,
+  TypedDataFactory,
+  UnitReplaceCommand
+} from "@rr0/cms"
 
 interface RR0BuildArgs {
   /**

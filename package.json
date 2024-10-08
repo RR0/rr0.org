@@ -29,30 +29,22 @@
     "@rr0/common": "^1.0.1",
     "@rr0/lang": "^0.1.11",
     "@rr0/time": "^0.5.0",
-    "@rr0/cms": "^0.1.13",
+    "@rr0/cms": "^0.1.14",
     "canvas": "^2.11.2",
     "csv-parser": "^3.0.0",
     "glob": "^11.0.0",
     "image-size": "^1.1.1",
     "jsdom": "^24.1.0",
-    "netlify-cli": "^17.36.4",
     "selenium-webdriver": "^4.22.0",
     "ssg-api": "^1.16.1"
   },
   "devDependencies": {
+    "netlify-cli": "^17.36.4",
     "@javarome/testscript": "^0.10.7",
-    "@playwright/test": "^1.45.1",
     "@types/jsdom": "~21.1.7",
     "@types/selenium-webdriver": "^4.1.24",
-    "buffer": "^6.0.3",
-    "https-browserify": "^1.0.0",
-    "path-browserify": "^1.0.1",
-    "process": "^0.11.10",
-    "stream-http": "^3.2.0",
-    "ts-loader": "^9.5.1",
     "tsx": "~4.16.0",
-    "typescript": "^5.5.4",
-    "url": "^0.11.3"
+    "typescript": "^5.5.4"
   },
   "keywords": [
     "ufo",

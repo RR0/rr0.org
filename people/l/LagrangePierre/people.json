@@ -1,7 +1,13 @@
 {
-  "birthTime": "1963-12-12",
   "occupations": ["ufologist", "sociologist"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1963-12-12",
+      "place": "Auch"
+    }
   ]
 }

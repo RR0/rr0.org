@@ -1,10 +1,20 @@
 {
-  "birthTime": "1886-08-26",
-  "deathTime": "1984-09-10",
+  "title": "Jerome Clarke Hunsaker",
   "occupations": [
     "engineer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1886-08-26",
+      "place": "Creston (Iowa)"
+    },
+    {
+      "type": "death",
+      "time": "1984-09-10"
+    }
   ]
 }

@@ -1,9 +1,15 @@
 {
-  "birthTime": "1953-11-19",
+  "url": "https://alistair.cockburn.us",
   "occupations": [
     "softwareEngineer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953-11-19"
+    }
   ]
 }

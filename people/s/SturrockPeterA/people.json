@@ -1,5 +1,6 @@
 {
-  "birthTime": "1924-03-20",
+  "title": "Peter Andrew Sturrock",
+  "url": "https://www.stanford.edu/group/Sturrock/Peter",
   "occupations": [
     "mathematician",
     "physicist",
@@ -8,5 +9,21 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924-03-20",
+      "place": "Stifford (Royaume-Uni)"
+    },
+    {
+      "type": "death",
+      "time": "2024-08-12",
+      "sources": [
+        {
+          "url": "https://physics.stanford.edu/news/peter-andrew-sturrock-1924-2024"
+        }
+      ]
+    }
   ]
 }

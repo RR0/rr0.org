@@ -1,6 +1,6 @@
-import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl } from "../RR0SsgContext.js"
-import { TimeContext } from "../time/TimeContext.js"
-import { FileContents, HtmlFileContents } from "ssg-api"
+import { FileContents, HtmlFileContents, SsgConfig, SsgContext } from "ssg-api"
+import { HtmlRR0SsgContext, RR0SsgContext, RR0SsgContextImpl, TimeContext } from "@rr0/cms"
+import path from "path"
 
 class RR0TestUtil {
 
@@ -14,8 +14,18 @@ class RR0TestUtil {
     timeZoneName: "short"
   }
 
+  readonly config: SsgConfig
+
+  constructor(readonly outDir = "out") {
+    this.config = {
+      getOutputPath(context: SsgContext): string {
+        return path.join(this.outDir, context.file.name)
+      }
+    }
+  }
+
   newContext(inputFileName: string, contents?: string): RR0SsgContext {
-    const context = new RR0SsgContextImpl("fr", new TimeContext(), {outDir: "out"})
+    const context = new RR0SsgContextImpl("fr", new TimeContext(), this.config)
     if (contents !== undefined && contents != null) {
       const langInfo = FileContents.getLang(inputFileName)
       context.file = new FileContents(inputFileName, "utf8", contents, new Date(), langInfo)

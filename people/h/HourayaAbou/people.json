@@ -1,0 +1,26 @@
+{
+  "title": "Abou Houraya",
+  "occupations": [
+    "priest"
+  ],
+  "pseudonyms": [
+    "Abou Huraira",
+    "Abu Huraira",
+    "Abu Hurayra"
+  ],
+  "countries": [
+    "sa"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "602",
+      "place": "Tihama (Arabie Saoudite)"
+    },
+    {
+      "type": "death",
+      "time": "679",
+      "place": "Wadi al-'Aqiq (d) (Califat omeyyade)"
+    }
+  ]
+}

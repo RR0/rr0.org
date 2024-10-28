@@ -1,7 +1,5 @@
 {
-  "title": "Hunt-Williamson, George",
-  "birthTime": "1926-12-09",
-  "deathTime": "1986-01",
+  "title": "George Hunt-Williamson",
   "occupations": [
     "ufologist",
     "writer",
@@ -12,5 +10,16 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1926-12-09",
+      "place": "Chicago (comté de Cook, Illinois)"
+    },
+    {
+      "type": "death",
+      "time": "1986-01"
+    }
   ]
 }

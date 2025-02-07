@@ -1,10 +1,17 @@
 {
-  "birthTime": "1924",
+  "title": "Philippe Schneyder",
   "occupations": [
     "ufologist",
     "librarian"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924",
+      "place": "Hanoï"
+    }
   ]
 }

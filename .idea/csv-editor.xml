@@ -9789,6 +9789,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/calendar/calendar.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

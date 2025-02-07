@@ -1,11 +1,22 @@
 {
-  "birthTime": "1947-04-23",
-  "deathTime": "1996-01-17",
+  "title": "Philip Schneider",
+  "surname": "Phil",
   "occupations": [
     "astronaut",
     "geologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1947-04-23",
+      "place": "Bethesda Navy Hospital"
+    },
+    {
+      "type": "death",
+      "time": "1996-01-17"
+    }
   ]
 }

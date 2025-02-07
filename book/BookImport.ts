@@ -1,15 +1,8 @@
-import { ConsoleLogger, SsgConfig, SsgContext } from "ssg-api"
-import { CLI } from "../util/cli/CLI.js"
+import { ConsoleLogger, FileWriteConfig, SsgContext } from "ssg-api"
 import path from "path"
-import {
-  AllDataService,
-  Book,
-  BookService,
-  PeopleFactory,
-  PeopleService,
-  RR0EventFactory,
-  TypedDataFactory
-} from "@rr0/cms"
+import { Book, BookService, CLI, PeopleFactory, PeopleService, TimeServiceOptions, TimeUrlBuilder } from "@rr0/cms"
+import { testFilePath } from "../test/RR0TestUtil"
+import { AllDataService, RR0EventFactory, TypedDataFactory } from "@rr0/data"
 
 interface BookImportArgs {
   import: string
@@ -26,12 +19,18 @@ const bookFactory = new TypedDataFactory<Book>(eventFactory, "book")
 const dataService = new AllDataService([bookFactory, peopleFactory])
 
 const outDir = "out"
-const config: SsgConfig = {
+const config: FileWriteConfig = {
   getOutputPath(context: SsgContext): string {
     return path.join(outDir, context.file.name)
   }
 }
-const books = new BookService(logger, dry, new PeopleService(dataService, peopleFactory), config)
+const timeOptions: TimeServiceOptions = {
+  root: testFilePath("time"),
+  files: []
+}
+const timeUrlBuilder = new TimeUrlBuilder({rootDir: timeOptions.root})
+let files = []
+const books = new BookService(logger, dry, new PeopleService(dataService, peopleFactory, files), timeUrlBuilder, config)
 books.import(fileName).then((result: Book[]) => {
     logger.log("Wrote", result.length, "books")
   }

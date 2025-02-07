@@ -1,9 +1,9 @@
 import fs from "fs"
 import path from "path"
 import { glob } from "glob"
-import { ConsoleLogger, HtmlFileContents, Logger, SsgConfig, SsgContext } from "ssg-api"
-import { CSVFileReader } from "./CSVFileReader.js"
-import { CLI, RR0SsgContextImpl, TimeContext } from "@rr0/cms"
+import { ConsoleLogger, FileWriteConfig, HtmlFileContents, Logger, SsgContext } from "ssg-api"
+import { CLI, CSVFileReader, RR0ContextImpl } from "@rr0/cms"
+import { TimeContext } from "@rr0/time"
 
 interface WordFinderArgs {
   contents: string
@@ -34,7 +34,7 @@ class Dictionary {
 }
 
 const outDir = "out"
-const config: SsgConfig = {
+const config: FileWriteConfig = {
   getOutputPath(context: SsgContext): string {
     return path.join(outDir, context.file.name)
   }
@@ -99,7 +99,7 @@ class WordFinder {
 }
 
 const timeContext = new TimeContext()
-const context = new RR0SsgContextImpl("fr", timeContext, config)
+const context = new RR0ContextImpl("fr", timeContext, config)
 const logger = new ConsoleLogger("wordfinder")
 const args = new CLI().getArgs<WordFinderArgs>()
 const inputPattern = args.contents

@@ -1,99 +1,6 @@
-import {
-  AngularExpressionReplaceCommand,
-  ClassDomReplaceCommand,
-  ContentStepConfig,
-  CopyStep,
-  CopyStepConfig,
-  DomReplaceCommand,
-  FileContents,
-  FileUtil,
-  HtAccessToNetlifyConfigReplaceCommand,
-  HtmlLinks,
-  HtmlMeta,
-  OutputFunc,
-  Ssg,
-  SsgConfig,
-  SsgContext,
-  SsiEchoVarReplaceCommand,
-  SsiIfReplaceCommand,
-  SsiIncludeReplaceCommand,
-  SsiIncludeReplaceCommandTransformer,
-  SsiLastModifiedReplaceCommand,
-  SsiSetVarReplaceCommand,
-  StringEchoVarReplaceCommand
-} from "ssg-api"
-import { WitnessReplacerFactory } from "./people/witness/WitnessReplacerFactory.js"
-import { AuthorReplaceCommand } from "./people/author/AuthorReplaceCommand.js"
-import { rr0DefaultCopyright } from "./RR0DefaultCopyright.js"
-import { MetaLinkReplaceCommand } from "./MetaLinkReplaceCommand.js"
-import { ImageCommand } from "./ImageCommand.js"
-import { BaseReplaceCommand } from "./BaseReplaceCommand.js"
-import { DescriptionReplaceCommand } from "./DescriptionReplaceCommand.js"
-import path from "path"
-import { CodeReplacerFactory } from "./tech/info/soft/proj/impl/lang/CodeReplacerFactory.js"
-import { DefaultContentVisitor } from "./DefaultContentVisitor.js"
-import fs from "fs"
-import {
-  AllDataService,
-  AnchorReplaceCommand,
-  APIFactory,
-  BookContentVisitor,
-  BookDirectoryStep,
-  CaseAnchorHandler,
-  CaseDirectoryStep,
-  CaseFactory,
-  CaseService,
-  CaseSummaryRenderer,
-  ChronologyReplacerActions,
-  ChronologyReplacerFactory,
-  CLI,
-  ContentVisitor,
-  CsvMapper,
-  DataAnchorHandler,
-  EventReplacer,
-  EventReplacerFactory,
-  GooglePlaceService,
-  HtmlRR0SsgContext,
-  HtmlTable,
-  HttpSource,
-  IndexedReplacerFactory,
-  LanguageReplaceCommand,
-  NoteFileCounter,
-  NoteRenderer,
-  NoteReplacer,
-  NoteReplacerFactory,
-  OpenGraphCommand,
-  OrganizationFactory,
-  OrganizationService,
-  OutlineReplaceCommand,
-  PeopleDirectoryStepFactory,
-  PeopleFactory,
-  PeopleReplacerFactory,
-  PeopleService,
-  PersistentSourceRegistry,
-  PlaceReplacerFactory,
-  RR0ContentStep,
-  RR0EventFactory,
-  RR0Mapping,
-  RR0SsgContextImpl,
-  SearchIndexStep,
-  SearchVisitor,
-  SourceFileCounter,
-  SourceIndexStep,
-  SourceRenderer,
-  SourceReplacer,
-  SourceReplacerFactory,
-  SsiTitleReplaceCommand,
-  Time,
-  TimeElementFactory,
-  TimeLinkDefaultHandler,
-  TimeReplacer,
-  TimeReplacerFactory,
-  TimeService,
-  TimeTextBuilder,
-  TypedDataFactory,
-  UnitReplaceCommand
-} from "@rr0/cms"
+import { FileContents } from "@javarome/fileutil"
+import { CLI, PeopleDirectoryStepOptions, RR0Build, TimeServiceOptions } from "@rr0/cms"
+import { glob } from "glob"
 
 interface RR0BuildArgs {
   /**
@@ -136,6 +43,7 @@ if (configFile) {
 }
 const cliContents = args.contents
 console.debug("contents", cliContents)
+
 const mandatoryRoots = ["people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
 const contentRoots = cliContents
   ? cliContents.concat(mandatoryRoots)
@@ -170,26 +78,15 @@ const copies = copiesArg ? copiesArg : [
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/divin/theisme/mono/livre/islam/coran/index.js"
 ]
-
 const outDir = "out"
-
-const config: SsgConfig = {
-  getOutputPath(context: SsgContext): string {
-    return path.join(outDir, context.file.name)
-  }
+const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY
+if (!googleMapsApiKey) {
+  throw Error("GOOGLE_MAPS_API_KEY is required")
 }
-
-const outputFunc: OutputFunc
-  = async (context: SsgContext, outFile: FileContents): Promise<void> => {
-  try {
-    context.log("Writing", outFile.name)
-    await outFile.write()
-    context.file.contents = outFile.contents
-  } catch (e) {
-    context.error(outFile.name, e)
-  }
+const timeOptions: TimeServiceOptions = {
+  root: "time",
+  files: []
 }
-
 const timeFormat: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
@@ -198,204 +95,43 @@ const timeFormat: Intl.DateTimeFormatOptions = {
   hour: "2-digit",
   minute: "2-digit"
 }
-const timeContext = new TimeContext()
-const context = new RR0SsgContextImpl("fr", timeContext, config)
-context.setVar("mail", "rr0@rr0.org")
 
-const siteBaseUrl = "https://rr0.org/"
-const htAccessToNetlifyConfig: ContentStepConfig = {
-  replacements: [new HtAccessToNetlifyConfigReplaceCommand(siteBaseUrl)],
-  roots: [".htaccess"],
-  getOutputPath(_context: SsgContext): string {
-    return path.join(outDir, "netlify.toml")
-  }
+async function getTimeFiles(): Promise<string[]> {
+  const minusYearFiles = await glob("time/-?/?/?/?/index.html")
+  const year1Files = await glob("time/?/index.html")
+  const year2Files = await glob("time/?/?/index.html")
+  const year3Files = await glob("time/?/?/?/index.html")
+  const year4Files = await glob("time/?/?/?/?/index.html")
+  const monthFiles = await glob("time/?/?/?/?/??/index.html")
+  const dayFiles = await glob("time/?/?/?/?/??/??/index.html")
+  return year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
+    minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
 }
-const eventFactory = new RR0EventFactory()
-const sightingFactory = new TypedDataFactory(eventFactory, "sighting", ["index"])
-const orgFactory = new OrganizationFactory(eventFactory)
-const caseFactory = new CaseFactory(eventFactory)
-const peopleFactory = new PeopleFactory(eventFactory)
-const apiFactory = new APIFactory(eventFactory)
-const bookFactory = new TypedDataFactory(eventFactory, "book")
-const articleFactory = new TypedDataFactory(eventFactory, "article")
-const dataService = new AllDataService(
-  [orgFactory, caseFactory, peopleFactory, bookFactory, articleFactory, sightingFactory, apiFactory])
-dataService.getFromDir("", ["people", "case"]).then(data => {
-  console.debug(data)
-})
 
-const timeTextBuilder = new TimeTextBuilder(timeFormat)
-const timeService = new TimeService(dataService, timeTextBuilder)
-
-const peopleService = new PeopleService(dataService, peopleFactory)
-
-const apiKey = process.env.GOOGLE_MAPS_API_KEY
-if (!apiKey) {
-  throw Error("GOOGLE_MAPS_API_KEY is required")
-}
-context.setVar("mapsApiKey", apiKey)
-const placeService = new GooglePlaceService("place", apiKey)
-
-const orgService = new OrganizationService([], "org", undefined)
-
-timeService.getFiles().then(async (timeFiles) => {
-  context.setVar("timeFilesCount", timeFiles.length)
-  const timeElementFactory = new TimeElementFactory(timeService.renderer)
-  const caseService = new CaseService(dataService, caseFactory, timeElementFactory)
-  const timeReplacer = new TimeReplacer(timeElementFactory)
-  const peopleList = await peopleService.getAll()
-  context.setVar("peopleFilesCount", peopleList.length)
-  const bookMeta = new Map<string, HtmlMeta>()
-  const bookLinks = new Map<string, HtmlLinks>()
-  const ufoCasesStep = await CaseDirectoryStep.create(outputFunc, config, caseService)
-  const peopleDirectoryFactory = new PeopleDirectoryStepFactory(outputFunc, config, peopleService)
-  const peopleSteps = await peopleDirectoryFactory.create()
-  // Publish case.json files so that vraiufo.com will find them
-  copies.push(...(ufoCasesStep.config.rootDirs).map(dir => path.join(dir, "case.json")))
-  await FileUtil.writeFile(path.join(outDir, "casesDirs.json"), JSON.stringify(ufoCasesStep.config.rootDirs), "utf-8")
-  copies.push(...(peopleSteps.reduce((rootDirs, peopleStep) => {
-    rootDirs.push(...peopleStep.config.rootDirs)
-    return rootDirs
-  }, [])).map(dir => path.join(dir, "people.json")))
-  await FileUtil.writeFile(path.join(outDir, "peopleDirs.json"),
-    JSON.stringify(peopleList.map(people => people.dirName)), "utf-8")
-
-  const searchVisitor = new SearchVisitor(
-    {notIndexedUrls: ["404.html", "Referencement.html"], indexWords: false}, timeTextBuilder
-  )
-  const sourceRenderer = new SourceRenderer(timeTextBuilder)
+const directoryPages = [
+  "people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"
+]
+getTimeFiles().then(async (timeFiles) => {
   const sourceRegistryFileName = "source/index.json"
-  const baseUrl = "https://rr0.org"
-  const http = new HttpSource()
-  const sourceFactory = new PersistentSourceRegistry(dataService, http, baseUrl, sourceRegistryFileName, timeFormat)
-  const noteCounter = new NoteFileCounter()
-  const noteRenderer = new NoteRenderer(noteCounter)
-  const caseRenderer = new CaseSummaryRenderer(noteRenderer, sourceFactory, sourceRenderer, timeElementFactory)
-  // const actions: ChronologyReplacerActions = {read: ["backup", "fetch"], write: ["backup", "pages"]}
-  // const actions: ChronologyReplacerActions = {read: [], write: ["backup"]}
-  const actions: ChronologyReplacerActions = {read: ["fetch"], write: ["backup"]}
-  const rr0Mapping = new RR0Mapping(actions)
-  const databaseAggregationCommand = new DomReplaceCommand(".contents ul",
-    new ChronologyReplacerFactory(timeService,
-      [rr0Mapping /*new GeipanRR0Mapping(actions)
-        /*, baseOvniFranceRR0Mapping, fuforaRR0Mapping, nuforcRR0Mapping, urecatRR0Mapping*/
-      ], caseRenderer)
-  )
-  const timeDefaultHandler = (context: HtmlRR0SsgContext): string | undefined => {
-    let title: string | undefined
-    title = Time.titleFromFile(context, context.file.name, timeTextBuilder)
-    return title
+  const directoryOptions: PeopleDirectoryStepOptions = {
+    root: "people/index.html",
+    scientists: "people/scientifiques.html",
+    ufologists: "people/ufologues.html",
+    ufoWitnesses: "people/witness/index.html",
+    astronomers: "people/astronomes.html",
+    contactees: "people/contactes.html",
+    pilots: "people/pilotes.html",
+    military: "people/militaires.html",
+    softwareEngineers: "tech/info/Personnes.html",
+    politicians: "people/politicians.html",
+    rulers: "people/dirigeants.html"
   }
-  const pageReplaceCommands = [
-    new BaseReplaceCommand("/"),
-    new LanguageReplaceCommand(),
-    new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
-    new StringEchoVarReplaceCommand(),
-    new AngularExpressionReplaceCommand(),
-    new SsiIfReplaceCommand(),
-    new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-    new SsiSetVarReplaceCommand("url",
-      (_match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-    new SsiLastModifiedReplaceCommand(timeFormat),
-    new SsiTitleReplaceCommand([timeDefaultHandler]),
-    new DescriptionReplaceCommand("UFO data for french-reading people", "abstract"),
-    new AuthorReplaceCommand(timeService)
-  ]
-//  const sourceCounter = new SourceFileCounter()
-  const sourceCounter = new SourceFileCounter()
-  const sourceReplacer = new SourceReplacer(sourceRenderer, sourceFactory, sourceCounter)
-  const sourceReplacerFactory = new SourceReplacerFactory(sourceReplacer)
-  const noteReplacer = new NoteReplacer(noteRenderer)
-  const noteReplacerFactory = new NoteReplacerFactory(noteReplacer)
-  const eventReplacer = new EventReplacer(caseRenderer, dataService)
-  const contentsReplaceCommand = [
-    new ClassDomReplaceCommand(new EventReplacerFactory(eventReplacer), "event"),
-    new ClassDomReplaceCommand(sourceReplacerFactory, "source"),
-    new DomReplaceCommand("time", new TimeReplacerFactory(timeReplacer)),
-    new DomReplaceCommand("code", new CodeReplacerFactory()),
-    new ClassDomReplaceCommand(new PeopleReplacerFactory(peopleService), "people"),
-    new ClassDomReplaceCommand(new PlaceReplacerFactory(), "place"),
-    new ClassDomReplaceCommand(new WitnessReplacerFactory(), "temoin", "temoin1", "temoin2", "temoin3"),
-    new ClassDomReplaceCommand(noteReplacerFactory, "note"),
-    new ClassDomReplaceCommand(new IndexedReplacerFactory(), "indexed"),
-    new UnitReplaceCommand(),
-    new MetaLinkReplaceCommand(new TimeLinkDefaultHandler(timeFiles, timeTextBuilder)),
-    databaseAggregationCommand
-  ]
-  const ssg = new Ssg(config)
-  const getOutputPath = (context: SsgContext): string => path.join(outDir, context.file.name)
-  const force = args.force === "true"
-  const toProcess = new Set<string>(
-    ["people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"])
-  const csvTransformer = new class implements SsiIncludeReplaceCommandTransformer {
-    transform(context: SsgContext, file: FileContents): string | undefined {
-      const fileName = file.name
-      if (!fileName.endsWith(".csv")) {
-        return undefined
-      }
-      const csv = fs.readFileSync(fileName, {encoding: "utf-8"})
-      const headers = []
-      const obj: any[] = new CsvMapper().parse(csv, headers)
-      return HtmlTable.create(obj, headers)
-    }
-  }()
-  const includeStep = new RR0ContentStep(
-    [htAccessToNetlifyConfig, {
-      roots: contentRoots,
-      replacements: [new SsiIncludeReplaceCommand([csvTransformer])],
-      getOutputPath
-    }],
-    outputFunc, [], [], force, "content includes", toProcess
-  )
-  ssg.add(includeStep)
-  ssg.add(ufoCasesStep)
-  ssg.add(...peopleSteps)
-  if (contentRoots) {
-    const contentVisitor = new DefaultContentVisitor(dataService, caseRenderer, timeElementFactory)
-    const contentVisitors: ContentVisitor[] = [contentVisitor, searchVisitor]
-    if (args.books) {
-      contentVisitors.push(new BookContentVisitor(bookMeta, bookLinks))
-    }
-    const contentReplacements = [
-      ...pageReplaceCommands,
-      ...contentsReplaceCommand,
-      new OutlineReplaceCommand(),
-      new AnchorReplaceCommand(siteBaseUrl,
-        [new CaseAnchorHandler(caseService, timeTextBuilder), new DataAnchorHandler(dataService)]),
-      new ImageCommand(outDir, 275, 500),
-      new OpenGraphCommand(outDir, timeFiles, baseUrl, timeTextBuilder)
-    ]
-    ssg.add(new RR0ContentStep([{roots: contentRoots, replacements: contentReplacements, getOutputPath}],
-      outputFunc, [], contentVisitors, force, "contents replacements", toProcess))
-  }
-  if (args.books) {
-    ssg.add(await BookDirectoryStep.create(outputFunc, config, bookMeta, bookLinks))
-  }
-  const reindex = args.reindex
-  if (reindex?.includes("search")) {
-    ssg.add(new SearchIndexStep("search/index.json", searchVisitor))
-  }
-  if (reindex?.includes("sources")) {
-    ssg.add(new SourceIndexStep(sourceRegistryFileName, sourceFactory))
-  }
-  if (copies) {
-    const copyConfig: CopyStepConfig = {
-      getOutputPath,
-      sourcePatterns: copies,
-      options: {ignore: ["node_modules/**", "out/**"]}
-    }
-    ssg.add(new CopyStep(copyConfig))
-  }
-  try {
-    const result = await ssg.start(context)
-    context.log("Completed", result)
-  } catch (err) {
-    try {
-      context.error(err, context.file.name)
-    } catch (e) {
-      context.error(err)
-    }
-  } finally {
-    console.timeEnd("ssg")
-  }
+  const siteBaseUrl = "https://rr0.org/"
+  const mail = "rr0@rr0.org"
+  const build = new RR0Build(contentRoots, copies, outDir, "fr", googleMapsApiKey, mail, timeOptions,
+    siteBaseUrl, timeFormat, timeFiles, directoryPages,
+    "science/crypto/ufo/enquete/dossier/index.html",
+    ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
+    ["people/Astronomers_fichiers", "people/witness", "people/author"], directoryOptions)
+  await build.run(args)
 })

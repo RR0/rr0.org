@@ -46,7 +46,8 @@ class RR0TestUtil {
     context.file = new HtmlFileContents(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
     const htmlContext = context as HtmlRR0Context
-    Object.assign(htmlContext.time, Time.contextFromFileName(htmlContext, inputFileName))
+    const timeContext = Time.contextFromFileName(htmlContext, inputFileName)
+    Object.assign(htmlContext.time, timeContext)
     return htmlContext
   }
 }

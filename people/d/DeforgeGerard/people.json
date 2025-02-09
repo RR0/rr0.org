@@ -1,4 +1,6 @@
 {
+  "surname": "Gégé",
+  "url": "https://www.youtube.com/@deforgegerard3609",
   "occupations": ["ufologist", "teacher"],
   "countries": [
     "fr"
@@ -7,6 +9,23 @@
     {
       "type": "birth",
       "time": "1940"
+    },
+    {
+      "type": "book",
+      "time": "2022-02",
+      "sources": [
+        {
+          "title": "Ovnis & paranormal: Les différentes expressions de la \"réalité\"",
+          "place": "Atlantes",
+          "notes": [
+            "Préface de Sylvano Trotta"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2025-01-04"
     }
   ]
 }

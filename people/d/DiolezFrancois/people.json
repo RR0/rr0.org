@@ -1,0 +1,31 @@
+{
+  "title": "François Diolez",
+  "occupations": [
+    "engineer"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953-01-07",
+      "place": "Moyenmoutier (Vosges)",
+      "sources": [
+        {
+          "url": "https://www.avis-de-deces.com/persons/27839617/francois-bernard-diolez-22-12-2024"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2024-12-22",
+      "place": "Le Chesnay-Roquencourt (Yvelines)",
+      "sources": [
+        {
+          "url": "https://www.pfg.fr/avis-de-deces/francois-diolez-23205-24-000873"
+        }
+      ]
+    }
+  ]
+}

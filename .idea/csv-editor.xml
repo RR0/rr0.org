@@ -10,13 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/org/eu/fr/cnes/geipan/export_cas_pub_20210219111412.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/org/int/asso/iso/86/01/iso8601.csv">
           <value>
             <Attribute>

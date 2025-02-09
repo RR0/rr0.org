@@ -15,13 +15,13 @@ if (form) {
 
   window.findPeople = (_e) => {
     const value = normalize(textInput.value)
-    const list = document.querySelector("#searchForm + ul")
+    const listEl = document.querySelector("#searchForm + ul")
     let found = 0
     const selectedCountries = countryInputs.filter(countryInput => countryInput.checked)
       .map(countryInput => countryInput.id)
     const selectedOccupations = occupationInputs.filter(occupationInput => occupationInput.checked)
       .map(occupationInput => occupationInput.id)
-    for (const child of list.children) {
+    for (/** @type HTMLElement */ const child of listEl.children) {
       const classes = Array.from(child.querySelector(".people-resolved").classList)
       const countryClasses = classes.filter(c => c.startsWith("country-"))
       const occupationClasses = classes.filter(c => c.startsWith("occupation-"))
@@ -36,7 +36,7 @@ if (form) {
       }
     }
     const output = form.querySelector("output")
-    output.textContent = `${found > 0 ? found : "Aucune"} nom${found > 1 ? "s" : ""} / ${list.children.length}`
+    output.textContent = `${found > 0 ? found : "Aucune"} nom${found > 1 ? "s" : ""} / ${listEl.children.length}`
   }
 
   window.setAll = function (type, value) {

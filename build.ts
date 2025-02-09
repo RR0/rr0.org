@@ -128,10 +128,13 @@ getTimeFiles().then(async (timeFiles) => {
   }
   const siteBaseUrl = "https://rr0.org/"
   const mail = "rr0@rr0.org"
-  const build = new RR0Build(contentRoots, copies, outDir, "fr", googleMapsApiKey, mail, timeOptions,
+  const build = new RR0Build({
+    contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, timeOptions,
     siteBaseUrl, timeFormat, timeFiles, directoryPages,
-    "science/crypto/ufo/enquete/dossier/index.html",
-    ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
-    ["people/Astronomers_fichiers", "people/witness", "people/author"], directoryOptions)
+    ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
+    ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
+    directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author"],
+    directoryOptions
+  })
   await build.run(args)
 })

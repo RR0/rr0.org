@@ -31,7 +31,7 @@
     "@rr0/common": "^1.1.3",
     "@rr0/data": "^0.1.2",
     "@rr0/lang": "^0.1.12",
-    "@rr0/time": "^0.8.4",
+    "@rr0/time": "^0.8.5",
     "canvas": "^2.11.2",
     "csv-parser": "^3.0.0",
     "glob": "^11.0.0",
@@ -46,7 +46,8 @@
     "@types/selenium-webdriver": "^4.1.24",
     "netlify-cli": "^17.38.1",
     "tsx": "~4.16.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vite": "^6.1.0"
   },
   "keywords": [
     "ufo",

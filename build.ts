@@ -83,10 +83,6 @@ const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY
 if (!googleMapsApiKey) {
   throw Error("GOOGLE_MAPS_API_KEY is required")
 }
-const timeOptions: TimeServiceOptions = {
-  root: "time",
-  files: []
-}
 const timeFormat: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
@@ -128,9 +124,13 @@ getTimeFiles().then(async (timeFiles) => {
   }
   const siteBaseUrl = "https://rr0.org/"
   const mail = "rr0@rr0.org"
+  const timeOptions: TimeServiceOptions = {
+    root: "time",
+    files: timeFiles
+  }
   const build = new RR0Build({
     contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, timeOptions,
-    siteBaseUrl, timeFormat, timeFiles, directoryPages,
+    siteBaseUrl, timeFormat, directoryPages,
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
     directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author"],

@@ -1502,5 +1502,25 @@
       "publisher": null,
       "time": ""
     }
+  },
+  "https://uxmag.com/articles/effective-developer-experience": {
+    "title": "Effective Developer Experience (DX) - UX Magazine",
+    "url": "https://uxmag.com/articles/effective-developer-experience",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": "2021-10-25T19:32"
+    }
+  },
+  "https://www.nngroup.com/articles/definition-user-experience/": {
+    "title": "The Definition of User Experience (UX)",
+    "url": "https://www.nngroup.com/articles/definition-user-experience/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": "2024-01-19T16:08"
+    }
   }
 }

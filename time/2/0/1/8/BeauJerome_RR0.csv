@@ -1,2 +1,2 @@
-description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations
+description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent,place.org.places,place.org.type,place.place
 ,"",2018,,"",2018,sighting,https://rr0.org/time/2/0/1/8/index.html

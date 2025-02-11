@@ -10,6 +10,11 @@
   ],
   "events": [
     {
+      "type": "birth",
+      "time": "1931-08-04",
+      "place": "New York"
+    },
+    {
       "type": "image",
       "url": "portrait.jpg",
       "sources": [

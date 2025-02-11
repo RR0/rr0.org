@@ -1,10 +1,30 @@
 {
-  "birthTime": "1919-07-22",
-  "deathTime": "1975-12-10",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1919-07-22",
+      "place": "Tacoma (Pierce, Washington, USA)",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/536830/frederic-l-crisman"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1975-12-10",
+      "place": "Seattle (King, Washington, USA)",
+      "sources": [
+        {
+          "url": "https://fr.findagrave.com/memorial/536830/frederic-l-crisman"
+        }
+      ]
+    }
   ]
 }

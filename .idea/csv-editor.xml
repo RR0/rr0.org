@@ -1011,6 +1011,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/time/1/2/6/9/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/time/1/2/7/0/BeauJerome_RR0.csv">
           <value>
             <Attribute>
@@ -1404,6 +1411,13 @@
           </value>
         </entry>
         <entry key="/time/1/5/7/5/BeauJerome_RR0.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/time/1/5/7/6/BeauJerome_RR0.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

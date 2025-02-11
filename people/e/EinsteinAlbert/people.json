@@ -1,11 +1,20 @@
 {
-  "birthTime": "1879-03-14",
-  "deathTime": "1955-04-18",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "de",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1879-03-14",
+      "place": "Ulm (Allemagne)"
+    },
+    {
+      "type": "death",
+      "time": "1955-04-18"
+    }
   ]
 }

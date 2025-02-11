@@ -1,11 +1,42 @@
 {
-  "birthTime": "1929-03-21",
-  "deathTime": "2022-11-21",
   "occupations": [
     "pilot",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1929-03-21",
+      "place": "Nanticoke (Pennsylvanie)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Smith tenant une assiette à l'envers en expliquant à l'hôtesse Marty Morrow quel étrange disque il a vu  lors du vol UAL 105",
+      "sources": [
+        {
+          "title": "Keyhoe",
+          "time": "1967",
+          "sources": [
+            {
+              "title": "UPI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2022-11-21",
+      "place": "Tom River (New Jersey)",
+      "sources": [
+        {
+          "url": "https://www.dignitymemorial.com/obituaries/toms-river-nj/emil-smith-11028119"
+        }
+      ]
+    }
   ]
 }

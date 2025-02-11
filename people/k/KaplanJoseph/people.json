@@ -1,11 +1,21 @@
 {
-  "birthTime": "1902-09-08",
-  "deathTime": "1991-10-03",
+  "surname": "Joe",
   "occupations": [
     "chemist",
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1902-09-08",
+      "place": "Tapolcza (Autriche-Hongrie)"
+    },
+    {
+      "type": "death",
+      "time": "1991-10-03"
+    }
   ]
 }

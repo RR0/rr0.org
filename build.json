@@ -1,7 +1,7 @@
 {
   "force": "true",
   "contents": [
-    "org/**/*.html"
+    "people/**/*.html"
   ],
   "reindex": [
     "search",

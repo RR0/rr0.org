@@ -1,11 +1,26 @@
 {
-  "birthTime": "1904-04-22",
-  "deathTime": "1967-02-18",
+  "lastName": "Oppenheimer",
+  "firstNames": [
+    "Robert",
+    "Julius"
+  ],
   "occupations": [
     "physicist",
     "chemist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1904-04-22",
+      "place": "New York"
+    },
+    {
+      "type": "death",
+      "time": "1967-02-18",
+      "note": "D'un cancer de la gorge"
+    }
   ]
 }

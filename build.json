@@ -1,8 +1,4 @@
 {
-  "force": "true",
-  "contents": [
-    "*.html"
-  ],
   "reindex": [
     "search",
     "sources"

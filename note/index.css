@@ -13,10 +13,10 @@
 .note-contents {
   color: grey;
   display: none;
-}
 
-.note-id:hover {
-  color: var(--link-color);
+  &:hover {
+    color: var(--link-color);
+  }
 }
 
 .note-id:hover .note-contents {

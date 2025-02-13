@@ -1,5 +1,9 @@
 {
-  "title": "Walter Stratton Anderson",
+  "lastName": "Anderson",
+  "firstNames": [
+    "Walter",
+    "Stratton"
+  ],
   "occupations": [
     "military"
   ],

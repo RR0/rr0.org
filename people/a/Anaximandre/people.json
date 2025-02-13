@@ -1,0 +1,20 @@
+{
+  "occupations": [
+    "philosopher"
+  ],
+  "countries": [
+    "gr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "~-610",
+      "place": "Milet (Grèce antique)",
+      "note": "Turquie aujourd'hui"
+    },
+    {
+      "type": "death",
+      "time": "~-546"
+    }
+  ]
+}

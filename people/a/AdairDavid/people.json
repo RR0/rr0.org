@@ -1,5 +1,9 @@
 {
-  "title": "David John Adair",
+  "lastName": "Adair",
+  "firstNames": [
+    "David",
+    "John"
+  ],
   "occupations": [
     "physicist"
   ],

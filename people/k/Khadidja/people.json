@@ -1,4 +1,6 @@
 {
+  "title": "Khadija bint Khuwaylid",
+  "name": "Khadidja",
   "occupations": [
     "salesman"
   ],
@@ -9,11 +11,13 @@
   "events": [
     {
       "type": "birth",
-      "time": "555"
+      "time": "556",
+      "place": "La Mecque (Arabie Saoudite)"
     },
     {
       "type": "death",
-      "time": "619"
+      "time": "619-11-22",
+      "place": "La Mecque (Arabie Saoudite)"
     }
   ]
 }

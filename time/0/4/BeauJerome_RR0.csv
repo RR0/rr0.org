@@ -1,6 +1,6 @@
-description,events,id,place,sources,time,type,url
-RR0,"",400,,"",400,sighting,https://rr0.org/time/0/4/index.html
-,"",400,,"",400,sighting,https://rr0.org/time/0/4/index.html
-,"",400,,"",400,sighting,https://rr0.org/time/0/4/index.html
-,"",400,,"",400,sighting,https://rr0.org/time/0/4/index.html
-Carte,"",400,,"",400,sighting,https://rr0.org/time/0/4/index.html
+description,events,eventType,id,place,sources,time,type,url
+RR0,"",sighting,400$,,"",400,event,https://rr0.org/time/0/4/index.html
+,"",sighting,400$,,"",400,event,https://rr0.org/time/0/4/index.html
+,"",sighting,400$,,"",400,event,https://rr0.org/time/0/4/index.html
+,"",sighting,400$,,"",400,event,https://rr0.org/time/0/4/index.html
+Carte,"",sighting,400$,,"",400,event,https://rr0.org/time/0/4/index.html

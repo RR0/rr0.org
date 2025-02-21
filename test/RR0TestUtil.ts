@@ -1,6 +1,6 @@
 import path from "path"
 import { FileWriteConfig, HtmlFileContents, SsgContext } from "ssg-api"
-import { HtmlRR0Context, RR0Context, RR0ContextImpl, Time } from "@rr0/cms"
+import { HtmlRR0Context, RR0Context, RR0ContextImpl, TimeService } from "@rr0/cms"
 import { FileContents } from "@javarome/fileutil"
 import { TimeContext } from "@rr0/time"
 
@@ -17,6 +17,7 @@ class RR0TestUtil {
   }
 
   readonly config: FileWriteConfig
+  timeService: TimeService
 
   constructor(readonly rootDir = "test", readonly outDir = "out") {
     this.config = {
@@ -46,7 +47,7 @@ class RR0TestUtil {
     context.file = new HtmlFileContents(currentFile.name, currentFile.encoding, currentFile.contents,
       currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
     const htmlContext = context as HtmlRR0Context
-    const timeContext = Time.contextFromFileName(htmlContext, inputFileName)
+    const timeContext = this.timeService.contextFromFileName(htmlContext, inputFileName)
     Object.assign(htmlContext.time, timeContext)
     return htmlContext
   }

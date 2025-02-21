@@ -1,11 +1,26 @@
 {
-  "birthTime": "1927-01-16",
-  "deathTime": "1927-01-16",
   "occupations": [
     "engineer",
     "astronomer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1927-01-16",
+      "place": "Marseille (Bouches-du-Rhône)"
+    },
+    {
+      "type": "death",
+      "time": "2016-05-05",
+      "place": "Marseille (Bouches-du-Rhône)",
+      "sources": [
+        {
+          "url": "https://avis-deces.linternaute.com/nom/famille-viton"
+        }
+      ]
+    }
   ]
 }

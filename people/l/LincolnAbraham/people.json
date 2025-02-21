@@ -1,11 +1,24 @@
 {
-  "birthTime": "1809-02-12",
-  "deathTime": "1865-04-15",
   "occupations": [
     "politician",
     "leader"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1809-02-12",
+      "place": "Comté de LaRue (Kentucky)"
+    },
+    {
+      "type": "death",
+      "time": "1865-04-15",
+      "place": "Petersen House, Washington)",
+      "notes": [
+        "assassiné"
+      ]
+    }
   ]
 }

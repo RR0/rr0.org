@@ -33,20 +33,39 @@ export class SearchComponent extends HTMLElement {
    */
   #maxResultCount = 100
 
-  constructor () {
+  constructor() {
     super()
     this.shadow = this.attachShadow({ mode: "closed" })
     this.shadow.appendChild(template.content.cloneNode(true))
   }
 
-  connectedCallback () {
+  static get observedAttributes() {
+    return ["placeholder"]
+  }
+
+  /**
+   * @param {string} value
+   */
+  set placeholder(value) {
+    const input = this.shadow.getElementById("search-input")
+    input.placeholder = value
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    switch (name) {
+      case "placeholder":
+        this.placeholder = newValue
+    }
+  }
+
+  connectedCallback() {
     this.onmouseover = this.#siteSearchLoad.bind(this)
     const input = this.shadow.getElementById("search-input")
     input.oninput = this.#siteSearchChange.bind(this)
-    input.placeholder = this.getAttribute("placeholder") || "Recherche"
+    this.placeholder = "Recherche"
   }
 
-  #siteSearchChange (e) {
+  #siteSearchChange(e) {
     const value = e.target.value.trim()
     const pages = this.#siteIndex?.pages || []
     if (e.inputType === "insertReplacementText" || e.inputType == null) {
@@ -61,7 +80,7 @@ export class SearchComponent extends HTMLElement {
     this.#setDataList(dataList.length <= this.#maxResultCount ? dataList : [])
   }
 
-  #siteSearchLoad () {
+  #siteSearchLoad() {
     if (!this.#siteIndex && !this.#loading) {
       this.#loading = true
       fetch("/search/index.json").then(async (response) => {
@@ -78,7 +97,7 @@ export class SearchComponent extends HTMLElement {
     }
   }
 
-  #setDataList (pages) {
+  #setDataList(pages) {
     const datalist = this.shadow.getElementById("values")
     datalist.innerHTML = ""
     for (let i = 0; i < pages.length; i++) {

@@ -4,5 +4,18 @@
   ],
   "countries": [
     "br"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940"
+    },
+    {
+      "type": "death",
+      "time": "1997-10-02",
+      "notes": [
+        "suicide"
+      ]
+    }
   ]
 }

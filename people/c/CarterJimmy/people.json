@@ -1,13 +1,23 @@
 {
-  "birthTime": "1924-10-01",
+  "title": "James Earl Carter (Junior)",
+  "surname": "Jimmy",
   "occupations": [
     "politician",
     "leader"
   ],
-  "pseudonyms": [
-    "Jimmy Carter"
-  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924-10-01",
+      "place": "Plains (Georgie, USA)"
+    },
+    {
+      "type": "death",
+      "time": "2024-12-29",
+      "place": "Plains (Georgie, USA)"
+    }
   ]
 }

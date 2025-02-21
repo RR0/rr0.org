@@ -1,8 +1,9 @@
 import { ConsoleLogger, FileWriteConfig, SsgContext } from "ssg-api"
 import path from "path"
-import { Book, BookService, CLI, PeopleFactory, PeopleService, TimeServiceOptions, TimeUrlBuilder } from "@rr0/cms"
+import { Book, BookService, CLI, TimeServiceOptions, TimeUrlBuilder } from "@rr0/cms"
 import { testFilePath } from "../test/RR0TestUtil"
-import { AllDataService, RR0EventFactory, TypedDataFactory } from "@rr0/data"
+import { AllDataService, PeopleFactory, PeopleService, RR0EventFactory, TypedDataFactory } from "@rr0/data"
+import { BookJson } from "@rr0/cms/dist/book/BookJson"
 
 interface BookImportArgs {
   import: string
@@ -15,7 +16,7 @@ const fileName = args.import
 const dry = args.dry === "true"
 const peopleFactory = new PeopleFactory(new RR0EventFactory())
 const eventFactory = new RR0EventFactory()
-const bookFactory = new TypedDataFactory<Book>(eventFactory, "book")
+const bookFactory = new TypedDataFactory<Book, BookJson>(eventFactory, "book")
 const dataService = new AllDataService([bookFactory, peopleFactory])
 
 const outDir = "out"
@@ -30,7 +31,8 @@ const timeOptions: TimeServiceOptions = {
 }
 const timeUrlBuilder = new TimeUrlBuilder({rootDir: timeOptions.root})
 let files = []
-const books = new BookService(logger, dry, new PeopleService(dataService, peopleFactory, files), timeUrlBuilder, config)
+const peopleService = new PeopleService(dataService, peopleFactory, {files, rootDir: testFilePath("people")})
+const books = new BookService(logger, dry, peopleService, timeUrlBuilder, config)
 books.import(fileName).then((result: Book[]) => {
     logger.log("Wrote", result.length, "books")
   }

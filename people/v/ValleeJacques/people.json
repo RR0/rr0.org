@@ -1,6 +1,5 @@
 {
   "lastName": "Vallée",
-  "birthTime": "1939-09-24",
   "occupations": [
     "ufologist",
     "astronomer",
@@ -8,5 +7,12 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1939-09-24",
+      "place": "Pontoise (France)"
+    }
   ]
 }

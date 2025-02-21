@@ -1,10 +1,27 @@
 {
-  "birthTime": "1942",
+  "url": "http://www.timothygood.co.uk",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942",
+      "place": "Londres (Angleterre)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Good",
+      "sources": [
+        {
+          "title": "AFU"
+        }
+      ]
+    }
   ]
 }

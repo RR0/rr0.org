@@ -34,12 +34,6 @@
     summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : "Sommaire"
   }, { threshold: [0, 0.3, 1] })
   observer.observe(document.querySelector("#main-header"))
-  window.initTime = function (min, max) {
-    const timeDualRange = document.querySelector("rr0-dual-range")
-    timeDualRange.setMin(min)
-    timeDualRange.setMax(max)
-    console.log(timeDualRange)
-  }
   <!--#include virtual="/place/index.js" -->
 </script>
 <div aria-hidden="true" class="anchor" id="_top"></div>

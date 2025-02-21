@@ -1,6 +1,4 @@
 {
-  "birthTime": "1908-09-27",
-  "deathTime": "1908",
   "occupations": [
     "ufologist"
   ],
@@ -9,5 +7,17 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1908-09-27",
+      "place": "Poitiers"
+    },
+    {
+      "type": "death",
+      "time": "1967-06-24",
+      "place": "Bougival"
+    }
   ]
 }

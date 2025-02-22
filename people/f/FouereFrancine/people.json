@@ -1,7 +1,5 @@
 {
   "title": "Fouéré, Francine",
-  "birthTime": "1927-03-10",
-  "deathTime": "2018-05-26",
   "occupations": [
     "ufologist"
   ],
@@ -9,5 +7,15 @@
     "fr"
   ],
   "gender": "female",
-  "image": "/time/2/0/0/5/10/FouereFrancine_Chalons.jpg"
+  "image": "/time/2/0/0/5/10/FouereFrancine_Chalons.jpg",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1927-03-10"
+    },
+    {
+      "type": "death",
+      "time": "2018-05-26"
+    }
+  ]
 }

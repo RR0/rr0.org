@@ -27,9 +27,9 @@
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@javarome/fileutil": "0.3.6",
-    "@rr0/cms": "^0.3.6",
+    "@rr0/cms": "^0.3.12",
     "@rr0/common": "^1.1.3",
-    "@rr0/data": "^0.3.6",
+    "@rr0/data": "^0.3.10",
     "@rr0/lang": "^0.1.12",
     "@rr0/time": "^0.10.0",
     "canvas": "^2.11.2",
@@ -45,9 +45,9 @@
     "@types/jsdom": "~21.1.7",
     "@types/selenium-webdriver": "^4.1.24",
     "netlify-cli": "^17.38.1",
-    "tsx": "~4.16.0",
-    "typescript": "^5.5.4",
-    "vite": "^6.1.0"
+    "tsx": "~4.19.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1"
   },
   "keywords": [
     "ufo",

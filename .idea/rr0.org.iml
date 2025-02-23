@@ -22,5 +22,7 @@
     <orderEntry type="library" name="jsxgraphcore" level="application" />
     <orderEntry type="library" name="jsxgraph" level="application" />
     <orderEntry type="library" name="ei" level="application" />
+    <orderEntry type="module" module-name="cms" />
+    <orderEntry type="module" module-name="data" />
   </component>
 </module>

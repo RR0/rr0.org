@@ -1,4 +1,5 @@
 {
+  "url": "https://magoniax.blogspot.com",
   "surname": "Chris",
   "firstNames": [
     "Christopher"
@@ -10,7 +11,8 @@
   "events": [
     {
       "type": "birth",
-      "time": "1971"
+      "time": "1971",
+      "place": "Londres (Angleterre)"
     }
   ]
 }

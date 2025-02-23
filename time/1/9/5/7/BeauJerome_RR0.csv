@@ -1,18 +1,18 @@
-description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.kind,place.org.parent.parent.parent,place.org.parent.parent.places,place.org.parent.parent.type,place.org.parent.places,place.org.parent.type,place.org.places,place.org.type,place.org.parent,place.place,place.org.parent.parent
-en,"",1957-01,,"",1957-01,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-01
-en,"",1957-02,,"",1957-02,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-02
-en,"",1957-03,,"",1957-03,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-03
-en,"",1957-04,,"",1957-04,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-04
-en,"",1957-05,,"",1957-05,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-05
-en,"",1957-06,,"",1957-06,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-06
-en,"",1957-07,,"",1957-07,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-07
-en,"",1957-08,,"",1957-08,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-08
-en,"",1957-09,,"",1957-09,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-09
-en,"",1957-10,,"",1957-10,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-10
-en,"",1957-11,,"",1957-11,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-11
-en,"",1957-12,,"",1957-12,sighting,https://rr0.org/time/1/9/5/7/index.html#1957-12
-"Selon Leroy Gordon Cooper, une équipe de professionnels de l'audiovisuel filme l'atterrissage d'une soucoupe volante à la.","",1957,base de Edwards (Californie),,,,"",,"","",1957,sighting,https://rr0.org/time/1/9/5/7/index.html
-"A , la police constate que le pont de fer situé à l'entrée de la ville, long de 20 m, pesant plusieurs t, a disparu sans laisser de traces.","",1957,Hamilton (Canada),,,,"",,"","",1957,sighting,https://rr0.org/time/1/9/5/7/index.html
-"Au Sud de , 2 Stratojets entrent en collision avec un objet inconnu.","",1957,Cuba,,,,"",,"","",1957,sighting,https://rr0.org/time/1/9/5/7/index.html
-"Le mois suivant, un DC-6 manque de connaître le même sort.","",1957,,"",1957,sighting,https://rr0.org/time/1/9/5/7/index.html
-"L'étude de l'USAF sur les ovnis fête ses 10 années d'existence, avec grands renforts de publicité. L'ATIC déclare avoir reçu 701 rapports d'observation d'ovni dans les 3 mois suivant le lancement de Sputnik le 10-04. Il a aussi travaillé avec le Armstrong Circle Theater pour produire le show télévisé Enigma of the Skies , dont le capitaine George T. Gregory, alors directeur du projet Blue Book, produit le script de base pour le programme de 1 h.","",1957,,"",1957,sighting,https://rr0.org/time/1/9/5/7/index.html
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.org._parent,place.org.events,place.org.id,place.org.kind,place.org.places,place.org.type,place.org._parent._parent._parent._parent,place.org._parent._parent._parent.events,place.org._parent._parent._parent.id,place.org._parent._parent._parent.kind,place.org._parent._parent._parent.places,place.org._parent._parent._parent.type,place.org._parent._parent.events,place.org._parent._parent.id,place.org._parent._parent.kind,place.org._parent._parent.places,place.org._parent._parent.type,place.org._parent.events,place.org._parent.id,place.org._parent.kind,place.org._parent.places,place.org._parent.type,place.org._parent._parent._parent,place.org._parent._parent
+en,"",sighting,1957-01$,,"",1957-01,event,https://rr0.org/time/1/9/5/7/index.html#1957-01
+en,"",sighting,1957-02$,,"",1957-02,event,https://rr0.org/time/1/9/5/7/index.html#1957-02
+en,"",sighting,1957-03$,,"",1957-03,event,https://rr0.org/time/1/9/5/7/index.html#1957-03
+en,"",sighting,1957-04$,,"",1957-04,event,https://rr0.org/time/1/9/5/7/index.html#1957-04
+en,"",sighting,1957-05$,,"",1957-05,event,https://rr0.org/time/1/9/5/7/index.html#1957-05
+en,"",sighting,1957-06$,,"",1957-06,event,https://rr0.org/time/1/9/5/7/index.html#1957-06
+en,"",sighting,1957-07$,,"",1957-07,event,https://rr0.org/time/1/9/5/7/index.html#1957-07
+en,"",sighting,1957-08$,,"",1957-08,event,https://rr0.org/time/1/9/5/7/index.html#1957-08
+en,"",sighting,1957-09$,,"",1957-09,event,https://rr0.org/time/1/9/5/7/index.html#1957-09
+en,"",sighting,1957-10$,,"",1957-10,event,https://rr0.org/time/1/9/5/7/index.html#1957-10
+en,"",sighting,1957-11$,,"",1957-11,event,https://rr0.org/time/1/9/5/7/index.html#1957-11
+en,"",sighting,1957-12$,,"",1957-12,event,https://rr0.org/time/1/9/5/7/index.html#1957-12
+"Selon Leroy Gordon Cooper, une équipe de professionnels de l'audiovisuel filme l'atterrissage d'une soucoupe volante à la.","",sighting,1957$base de Edwards (Californie),,,"",,"",base de Edwards (Californie),"",1957,event,https://rr0.org/time/1/9/5/7/index.html
+"A , la police constate que le pont de fer situé à l'entrée de la ville, long de 20 m, pesant plusieurs t, a disparu sans laisser de traces.","",sighting,1957$Hamilton (Canada),,,"",,"",Hamilton (Canada),"",1957,event,https://rr0.org/time/1/9/5/7/index.html
+"Au Sud de , 2 Stratojets entrent en collision avec un objet inconnu.","",sighting,1957$Cuba,,,"",,"",Cuba,"",1957,event,https://rr0.org/time/1/9/5/7/index.html
+"Le mois suivant, un DC-6 manque de connaître le même sort.","",sighting,1957$,,"",1957,event,https://rr0.org/time/1/9/5/7/index.html
+"L'étude de l'USAF sur les ovnis fête ses 10 années d'existence, avec grands renforts de publicité. L'ATIC déclare avoir reçu 701 rapports d'observation d'ovni dans les 3 mois suivant le lancement de Sputnik le 10-04. Il a aussi travaillé avec le Armstrong Circle Theater pour produire le show télévisé Enigma of the Skies , dont le capitaine George T. Gregory, alors directeur du projet Blue Book, produit le script de base pour le programme de 1 h.","",sighting,1957$,,"",1957,event,https://rr0.org/time/1/9/5/7/index.html

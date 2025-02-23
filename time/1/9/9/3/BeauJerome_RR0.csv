@@ -1,15 +1,15 @@
-description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.kind,place.org.parent.parent.parent,place.org.parent.parent.places,place.org.parent.parent.type,place.org.parent.places,place.org.parent.type,place.org.places,place.org.type,place.org.parent,place.place,place.org.parent.parent
-en,"",1993-01,,"",1993-01,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-01
-en,"",1993-02,,"",1993-02,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-02
-en,"",1993-03,,"",1993-03,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-03
-en,"",1993-04,,"",1993-04,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-04
-en,"",1993-05,,"",1993-05,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-05
-en,"",1993-06,,"",1993-06,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-06
-en,"",1993-07,,"",1993-07,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-07
-en,"",1993-08,,"",1993-08,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-08
-en,"",1993-09,,"",1993-09,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-09
-en,"",1993-10,,"",1993-10,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-10
-en,"",1993-11,,"",1993-11,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-11
-en,"",1993-12,,"",1993-12,sighting,https://rr0.org/time/1/9/9/3/index.html#1993-12
-"Une information alarmante et inhabituelle est diffusée sur la fréquence radio de la police, dans les environs de. Elle annonce qu'un énorme ovni s'est écrasé dans un champ. Ne vous approchez pas ; il est peut-être radioactif, dit le message. En fait, ces informations sont diffusées par la police locale afin de piéger un groupe de pirates des ondes qui se branchait illégalement sur sa fréquence. Les auditeurs indésirables sont arrêtés lorsqu'ils arrivent sur le prétendu champ d'atterrissage.","",1993,"Warrington (Cheschire, Grande-Bretagne)",,,,"",,"","",1993,sighting,https://rr0.org/time/1/9/9/3/index.html
-"Un américain anonyme invente un générateur tachyon qui, non seulement pourrait produire de l'énergie librement, mais dont on dit qu'il permettrait également de voyager dans l'espace et le temps. Le brevet est refusé.","",1993,,"",1993,sighting,https://rr0.org/time/1/9/9/3/index.html
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.org._parent,place.org.events,place.org.id,place.org.kind,place.org.places,place.org.type,place.org._parent._parent._parent._parent,place.org._parent._parent._parent.events,place.org._parent._parent._parent.id,place.org._parent._parent._parent.kind,place.org._parent._parent._parent.places,place.org._parent._parent._parent.type,place.org._parent._parent.events,place.org._parent._parent.id,place.org._parent._parent.kind,place.org._parent._parent.places,place.org._parent._parent.type,place.org._parent.events,place.org._parent.id,place.org._parent.kind,place.org._parent.places,place.org._parent.type,place.org._parent._parent._parent,place.org._parent._parent
+en,"",sighting,1993-01$,,"",1993-01,event,https://rr0.org/time/1/9/9/3/index.html#1993-01
+en,"",sighting,1993-02$,,"",1993-02,event,https://rr0.org/time/1/9/9/3/index.html#1993-02
+en,"",sighting,1993-03$,,"",1993-03,event,https://rr0.org/time/1/9/9/3/index.html#1993-03
+en,"",sighting,1993-04$,,"",1993-04,event,https://rr0.org/time/1/9/9/3/index.html#1993-04
+en,"",sighting,1993-05$,,"",1993-05,event,https://rr0.org/time/1/9/9/3/index.html#1993-05
+en,"",sighting,1993-06$,,"",1993-06,event,https://rr0.org/time/1/9/9/3/index.html#1993-06
+en,"",sighting,1993-07$,,"",1993-07,event,https://rr0.org/time/1/9/9/3/index.html#1993-07
+en,"",sighting,1993-08$,,"",1993-08,event,https://rr0.org/time/1/9/9/3/index.html#1993-08
+en,"",sighting,1993-09$,,"",1993-09,event,https://rr0.org/time/1/9/9/3/index.html#1993-09
+en,"",sighting,1993-10$,,"",1993-10,event,https://rr0.org/time/1/9/9/3/index.html#1993-10
+en,"",sighting,1993-11$,,"",1993-11,event,https://rr0.org/time/1/9/9/3/index.html#1993-11
+en,"",sighting,1993-12$,,"",1993-12,event,https://rr0.org/time/1/9/9/3/index.html#1993-12
+"Une information alarmante et inhabituelle est diffusée sur la fréquence radio de la police, dans les environs de. Elle annonce qu'un énorme ovni s'est écrasé dans un champ. Ne vous approchez pas ; il est peut-être radioactif, dit le message. En fait, ces informations sont diffusées par la police locale afin de piéger un groupe de pirates des ondes qui se branchait illégalement sur sa fréquence. Les auditeurs indésirables sont arrêtés lorsqu'ils arrivent sur le prétendu champ d'atterrissage.","",sighting,"1993$Warrington (Cheschire, Grande-Bretagne)",,,"",,"","Warrington (Cheschire, Grande-Bretagne)","",1993,event,https://rr0.org/time/1/9/9/3/index.html
+"Un américain anonyme invente un générateur tachyon qui, non seulement pourrait produire de l'énergie librement, mais dont on dit qu'il permettrait également de voyager dans l'espace et le temps. Le brevet est refusé.","",sighting,1993$,,"",1993,event,https://rr0.org/time/1/9/9/3/index.html

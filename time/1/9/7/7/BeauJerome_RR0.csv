@@ -1,13 +1,13 @@
-description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.kind,place.org.parent.parent.parent,place.org.parent.parent.places,place.org.parent.parent.type,place.org.parent.places,place.org.parent.type,place.org.places,place.org.type,place.org.parent,place.place,place.org.parent.parent
-en,"",1977-01,,"",1977-01,sighting,https://rr0.org/time/1/9/7/7/index.html#1977-01
-en,"",1977-02,,"",1977-02,sighting,https://rr0.org/time/1/9/7/7/index.html#1977-02
-en mars en avril en mai Nombreuses observations d'ovnis autour des bases de l'USAF du nord des Etats-Unis.,"",1977,,"",1977,sighting,https://rr0.org/time/1/9/7/7/index.html
-"en juin en juillet en août La nuit À , des personnes observent dans le ciel un phénomène lumineux stationnaire qui se déplace ensuite à des vitesses irrégulières, en changeant de direction. Il disparaît ensuite à grande vitesse vers l'Ouest.","",1977,Pouzauges (Vendée),,,,"",,"","""Témoignage le 12 juillet 2009 < GEPAN"","""",s1,"""",,,",1977,sighting,https://rr0.org/time/1/9/7/7/index.html
-en,"",1977-09,,"",1977-09,sighting,https://rr0.org/time/1/9/7/7/index.html#1977-09
-en,"",1977-10,,"",1977-10,sighting,https://rr0.org/time/1/9/7/7/index.html#1977-10
-en,"",1977-11,,"",1977-11,sighting,https://rr0.org/time/1/9/7/7/index.html#1977-11
-en,"",1977-12,,"",1977-12,sighting,https://rr0.org/time/1/9/7/7/index.html#1977-12
-"Pendant sa campagne pour les élections présidentielles, Jimmy Carter promet de rendre publics tous les documents concernant les ovnis détenus par l'administration américaine.","",1977,,"",1977,sighting,https://rr0.org/time/1/9/7/7/index.html
-Sonde Vicking sur Mars.,"",1977,,"",1977,sighting,https://rr0.org/time/1/9/7/7/index.html
-"Dans The High Frontier, le physicien américain Gerard O'Neill explore le concept des villes orbitales.","",1977,,"",1977,sighting,https://rr0.org/time/1/9/7/7/index.html
-Sortie du film Rencontres du 3ᵉ type de Steven Allan Spielberg.,"",1977,,"",1977,sighting,https://rr0.org/time/1/9/7/7/index.html
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.org._parent,place.org.events,place.org.id,place.org.kind,place.org.places,place.org.type,place.org._parent._parent._parent._parent,place.org._parent._parent._parent.events,place.org._parent._parent._parent.id,place.org._parent._parent._parent.kind,place.org._parent._parent._parent.places,place.org._parent._parent._parent.type,place.org._parent._parent.events,place.org._parent._parent.id,place.org._parent._parent.kind,place.org._parent._parent.places,place.org._parent._parent.type,place.org._parent.events,place.org._parent.id,place.org._parent.kind,place.org._parent.places,place.org._parent.type,place.org._parent._parent._parent,place.org._parent._parent
+en,"",sighting,1977-01$,,"",1977-01,event,https://rr0.org/time/1/9/7/7/index.html#1977-01
+en,"",sighting,1977-02$,,"",1977-02,event,https://rr0.org/time/1/9/7/7/index.html#1977-02
+en mars en avril en mai Nombreuses observations d'ovnis autour des bases de l'USAF du nord des Etats-Unis.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+"en juin en juillet en août La nuit À , des personnes observent dans le ciel un phénomène lumineux stationnaire qui se déplace ensuite à des vitesses irrégulières, en changeant de direction. Il disparaît ensuite à grande vitesse vers l'Ouest.","",sighting,1977$Pouzauges (Vendée),,,"",,"",Pouzauges (Vendée),"""Témoignage le 12 juillet 2009 < GEPAN"","""",s1,"""",,,PAN classé C",1977,event,https://rr0.org/time/1/9/7/7/index.html
+en,"",sighting,1977-09$,,"",1977-09,event,https://rr0.org/time/1/9/7/7/index.html#1977-09
+en,"",sighting,1977-10$,,"",1977-10,event,https://rr0.org/time/1/9/7/7/index.html#1977-10
+en,"",sighting,1977-11$,,"",1977-11,event,https://rr0.org/time/1/9/7/7/index.html#1977-11
+en,"",sighting,1977-12$,,"",1977-12,event,https://rr0.org/time/1/9/7/7/index.html#1977-12
+"Pendant sa campagne pour les élections présidentielles, Jimmy Carter promet de rendre publics tous les documents concernant les ovnis détenus par l'administration américaine.","",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Sonde Vicking sur Mars.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+"Dans The High Frontier, le physicien américain Gerard O'Neill explore le concept des villes orbitales.","",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Sortie du film Rencontres du 3ᵉ type de Steven Allan Spielberg.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html

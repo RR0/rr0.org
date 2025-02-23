@@ -1,16 +1,16 @@
-description,events,id,place,sources,time,type,url,place.name,place.org,place.place.dirName,place.place.elevation,place.place.events,place.place.id,place.place.locations,place.org.dirName,place.org.events,place.org.id,place.org.kind,place.org.parent.dirName,place.org.parent.events,place.org.parent.id,place.org.parent.kind,place.org.parent.parent.dirName,place.org.parent.parent.events,place.org.parent.parent.id,place.org.parent.parent.kind,place.org.parent.parent.parent,place.org.parent.parent.places,place.org.parent.parent.type,place.org.parent.places,place.org.parent.type,place.org.places,place.org.type,place.org.parent,place.place,place.org.parent.parent
-en,"",1947-01,,"",1947-01,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-01
-en,"",1947-02,,"",1947-02,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-02
-en,"",1947-03,,"",1947-03,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-03
-en,"",1947-04,,"",1947-04,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-04
-en,"",1947-05,,"",1947-05,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-05
-en,"",1947-06,,"",1947-06,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-06
-en,"",1947-07,,"",1947-07,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-07
-en,"",1947-08,,"",1947-08,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-08
-en,"",1947-09,,"",1947-09,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-09
-en,"",1947-10,,"",1947-10,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-10
-en,"",1947-11,,"",1947-11,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-11
-en,"",1947-12,,"",1947-12,sighting,https://rr0.org/time/1/9/4/7/index.html#1947-12
-Création de l'accord UKUSA.,"",1947,,"",1947,sighting,https://rr0.org/time/1/9/4/7/index.html
-"Près de , Andreas Schulhof (roumain parlant allemand) voit à travers la fenêtre du train dans lequel il voyage 6 objets inhabituels voler en formation. Il estimera leur vitesse à 20 000 miles/h.","",1947,Oradea (Roumanie),,,,"",,"",""""","""",s1,"""",,1969,",1947,sighting,https://rr0.org/time/1/9/4/7/index.html
-James Vincent Forrestal est promu Secrétaire de la Défense américaine.,"",1947,,"",1947,sighting,https://rr0.org/time/1/9/4/7/index.html
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.org._parent,place.org.events,place.org.id,place.org.kind,place.org.places,place.org.type,place.org._parent._parent._parent._parent,place.org._parent._parent._parent.events,place.org._parent._parent._parent.id,place.org._parent._parent._parent.kind,place.org._parent._parent._parent.places,place.org._parent._parent._parent.type,place.org._parent._parent.events,place.org._parent._parent.id,place.org._parent._parent.kind,place.org._parent._parent.places,place.org._parent._parent.type,place.org._parent.events,place.org._parent.id,place.org._parent.kind,place.org._parent.places,place.org._parent.type,place.org._parent._parent._parent,place.org._parent._parent
+en,"",sighting,1947-01$,,"",1947-01,event,https://rr0.org/time/1/9/4/7/index.html#1947-01
+en,"",sighting,1947-02$,,"",1947-02,event,https://rr0.org/time/1/9/4/7/index.html#1947-02
+en,"",sighting,1947-03$,,"",1947-03,event,https://rr0.org/time/1/9/4/7/index.html#1947-03
+en,"",sighting,1947-04$,,"",1947-04,event,https://rr0.org/time/1/9/4/7/index.html#1947-04
+en,"",sighting,1947-05$,,"",1947-05,event,https://rr0.org/time/1/9/4/7/index.html#1947-05
+en,"",sighting,1947-06$,,"",1947-06,event,https://rr0.org/time/1/9/4/7/index.html#1947-06
+en,"",sighting,1947-07$,,"",1947-07,event,https://rr0.org/time/1/9/4/7/index.html#1947-07
+en,"",sighting,1947-08$,,"",1947-08,event,https://rr0.org/time/1/9/4/7/index.html#1947-08
+en,"",sighting,1947-09$,,"",1947-09,event,https://rr0.org/time/1/9/4/7/index.html#1947-09
+en,"",sighting,1947-10$,,"",1947-10,event,https://rr0.org/time/1/9/4/7/index.html#1947-10
+en,"",sighting,1947-11$,,"",1947-11,event,https://rr0.org/time/1/9/4/7/index.html#1947-11
+en,"",sighting,1947-12$,,"",1947-12,event,https://rr0.org/time/1/9/4/7/index.html#1947-12
+Création de l'accord UKUSA.,"",sighting,1947$,,"",1947,event,https://rr0.org/time/1/9/4/7/index.html
+"Près de , Andreas Schulhof (roumain parlant allemand) voit à travers la fenêtre du train dans lequel il voyage 6 objets inhabituels voler en formation. Il estimera leur vitesse à 20 000 miles/h.","",sighting,1947$Oradea (Roumanie),,,"",,"",Oradea (Roumanie),""""","""",s1,"""",,1969,",1947,event,https://rr0.org/time/1/9/4/7/index.html
+James Vincent Forrestal est promu Secrétaire de la Défense américaine.,"",sighting,1947$,,"",1947,event,https://rr0.org/time/1/9/4/7/index.html

@@ -1,6 +1,24 @@
 import { FileContents } from "@javarome/fileutil"
-import { CLI, PeopleDirectoryStepOptions, RR0Build, TimeServiceOptions } from "@rr0/cms"
+import {
+  BaseReplaceCommand,
+  CLI,
+  DescriptionReplaceCommand,
+  LanguageReplaceCommand,
+  PeopleDirectoryStepOptions,
+  RR0Build,
+  rr0DefaultCopyright,
+  RR0Mapping,
+  TimeServiceOptions
+} from "@rr0/cms"
 import { glob } from "glob"
+import {
+  AngularExpressionReplaceCommand,
+  SsiEchoVarReplaceCommand,
+  SsiIfReplaceCommand,
+  SsiLastModifiedReplaceCommand,
+  SsiSetVarReplaceCommand,
+  StringEchoVarReplaceCommand
+} from "ssg-api"
 
 interface RR0BuildArgs {
   /**
@@ -134,7 +152,21 @@ getTimeFiles().then(async (timeFiles) => {
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
     directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author"],
-    directoryOptions
+    directoryOptions,
+    mappings: [new RR0Mapping({read: ["fetch"], write: ["backup"]})],
+    contentReplacers: [
+      new BaseReplaceCommand("/"),
+      new LanguageReplaceCommand(),
+      new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
+      new StringEchoVarReplaceCommand(),
+      new AngularExpressionReplaceCommand(),
+      new SsiIfReplaceCommand(),
+      new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+      new SsiSetVarReplaceCommand("url",
+        (_match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+      new SsiLastModifiedReplaceCommand(timeFormat),
+      new DescriptionReplaceCommand("UFO data for french-reading people", "abstract")
+    ]
   })
   await build.run(args)
 })

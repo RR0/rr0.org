@@ -2,17 +2,25 @@ import { FileContents } from "@javarome/fileutil"
 import {
   BaseReplaceCommand,
   CLI,
+  CMSGenerator,
+  CodeReplacerFactory,
   DescriptionReplaceCommand,
+  IndexedReplacerFactory,
   LanguageReplaceCommand,
   PeopleDirectoryStepOptions,
-  RR0Build,
+  PlaceReplacerFactory,
+  RR0CaseMapping,
   rr0DefaultCopyright,
   RR0Mapping,
-  TimeServiceOptions
+  TimeOptions,
+  UnitReplaceCommand,
+  WitnessReplacerFactory
 } from "@rr0/cms"
 import { glob } from "glob"
 import {
   AngularExpressionReplaceCommand,
+  ClassDomReplaceCommand,
+  DomReplaceCommand,
   SsiEchoVarReplaceCommand,
   SsiIfReplaceCommand,
   SsiLastModifiedReplaceCommand,
@@ -20,7 +28,7 @@ import {
   StringEchoVarReplaceCommand
 } from "ssg-api"
 
-interface RR0BuildArgs {
+interface CMSGeneratorArgs {
   /**
    * Configuration file
    */
@@ -54,7 +62,7 @@ interface RR0BuildArgs {
 }
 
 console.time("ssg")
-let args = new CLI().getArgs<RR0BuildArgs>()
+let args = new CLI().getArgs<CMSGeneratorArgs>()
 const configFile = args.config
 if (configFile) {
   args = JSON.parse(FileContents.read(configFile).contents)
@@ -142,31 +150,41 @@ getTimeFiles().then(async (timeFiles) => {
   }
   const siteBaseUrl = "https://rr0.org/"
   const mail = "rr0@rr0.org"
-  const timeOptions: TimeServiceOptions = {
-    root: "time",
+  const timeOptions: TimeOptions = {
+    rootDir: "time",
     files: timeFiles
   }
-  const build = new RR0Build({
+  const mappings: RR0CaseMapping<any>[] = [
+    new RR0Mapping({read: ["fetch"], write: ["backup"]})
+  ]
+  const pageReplacers = [new BaseReplaceCommand("/"),
+    new LanguageReplaceCommand(),
+    new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
+    new StringEchoVarReplaceCommand(),
+    new AngularExpressionReplaceCommand(),
+    new SsiIfReplaceCommand(),
+    new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
+    new SsiSetVarReplaceCommand("url",
+      (_match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
+    new SsiLastModifiedReplaceCommand(timeFormat),
+    new DescriptionReplaceCommand("UFO data for french-reading people", "abstract")
+  ]
+  const contentsReplacers = [
+    new DomReplaceCommand("code", new CodeReplacerFactory()),
+    new ClassDomReplaceCommand(new PlaceReplacerFactory(), "place"),
+    new ClassDomReplaceCommand(new WitnessReplacerFactory(), "temoin", "temoin1", "temoin2", "temoin3"),
+    new ClassDomReplaceCommand(new IndexedReplacerFactory(), "indexed"),
+    new UnitReplaceCommand()
+  ]
+  const generator = new CMSGenerator({
     contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, timeOptions,
     siteBaseUrl, timeFormat, directoryPages,
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
     directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author"],
     directoryOptions,
-    mappings: [new RR0Mapping({read: ["fetch"], write: ["backup"]})],
-    contentReplacers: [
-      new BaseReplaceCommand("/"),
-      new LanguageReplaceCommand(),
-      new SsiEchoVarReplaceCommand("copyright", [rr0DefaultCopyright]),
-      new StringEchoVarReplaceCommand(),
-      new AngularExpressionReplaceCommand(),
-      new SsiIfReplaceCommand(),
-      new SsiSetVarReplaceCommand("title", (_match: string, ...args: any[]) => `<title>${args[0]}</title>`),
-      new SsiSetVarReplaceCommand("url",
-        (_match: string, ...args: any[]) => `<meta name="url" content="${args[0]}"/>`),
-      new SsiLastModifiedReplaceCommand(timeFormat),
-      new DescriptionReplaceCommand("UFO data for french-reading people", "abstract")
-    ]
+    mappings: mappings,
+    contentReplacers: [...pageReplacers, ...contentsReplacers]
   })
-  await build.run(args)
+  await generator.generate(args)
 })

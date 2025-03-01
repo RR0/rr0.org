@@ -1,10 +1,18 @@
 {
-  "birthTime": "1913-06-11",
-  "deathTime": "1997-09-13",
   "occupations": [
     "politician"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-06-11"
+    },
+    {
+      "type": "death",
+      "time": "1997-09-13"
+    }
   ]
 }

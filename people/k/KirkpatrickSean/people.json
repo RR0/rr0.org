@@ -1,9 +1,14 @@
 {
-  "birthTime": "1975-09-09",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1975-09-09"
+    }
   ]
 }

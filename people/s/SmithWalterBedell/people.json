@@ -1,10 +1,35 @@
 {
-  "birthTime": "1895-10-05",
-  "deathTime": "1961-08-09",
+  "lastName": "Smith",
+  "firstNames": [
+    "Walter",
+    "Bedell"
+  ],
+  "surname": "Beetle",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1895-10-05",
+      "place": "Indianapolis (Indiana, USA)"
+    },
+    {
+      "type": "image",
+      "name": "portrait.jpg",
+      "sources": [
+        {
+          "name": "National Archives"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1961-08-09",
+      "place": "Washington"
+    }
   ]
 }

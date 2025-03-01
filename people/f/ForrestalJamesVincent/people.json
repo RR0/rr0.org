@@ -1,11 +1,25 @@
 {
-  "birthTime": "1892-02-15",
-  "deathTime": "1949-05-22",
+  "lastName": "Forrestal",
+  "firstNames": [
+    "James",
+    "Vincent"
+  ],
   "occupations": [
     "politician",
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1892-02-15",
+      "place": "Beacon (comté de Dutchess, New York)"
+    },
+    {
+      "type": "death",
+      "time": "1949-05-22"
+    }
   ]
 }

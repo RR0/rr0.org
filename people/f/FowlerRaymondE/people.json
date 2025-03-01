@@ -1,7 +1,31 @@
 {
-  "birthTime": "1933-11-11",
+  "lastName": "Fowler",
+  "firstNames": [
+    "Raymond",
+    "E."
+  ],
+  "surname": "Ray",
   "occupations": ["ufologist", "writer"],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1933-11-11",
+      "place": "Salem (Massachusetts)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Fowler",
+      "time": "1977?"
+    },
+    {
+      "type": "image",
+      "url": "Fowler.jpg",
+      "name": "Fowler",
+      "time": "2004?"
+    }
   ]
 }

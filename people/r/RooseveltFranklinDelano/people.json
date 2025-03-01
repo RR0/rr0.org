@@ -1,11 +1,21 @@
 {
-  "birthTime": "1882-01-30",
-  "deathTime": "1945-04-12",
   "occupations": [
     "politician",
     "leader"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1882-01-30",
+      "place": "Hyde Park (New York)"
+    },
+    {
+      "type": "death",
+      "time": "1945-04-12",
+      "place": "Little White House (Géorgie)"
+    }
   ]
 }

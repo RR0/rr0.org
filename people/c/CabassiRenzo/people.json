@@ -1,7 +1,17 @@
 {
-  "birthTime": "1945",
   "occupations": ["ufologist"],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1945",
+      "place": "Trivero"
+    },
+    {
+      "type": "death",
+      "time": "2025-03-01"
+    }
   ]
 }

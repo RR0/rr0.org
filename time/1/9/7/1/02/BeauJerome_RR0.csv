@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type,sources,time,type,url,place
 Photographie du 12 le Les astronautes de Apollo 14 se posent près du cratère Fra Mauro.,"",sighting,1971-02-05$,,"",1971-02-05,event,https://rr0.org/time/1/9/7/1/02/index.html#1971-02-05
 le Fin de la mission Apollo 14.,"",sighting,1971-02-09$,,"",1971-02-09,event,https://rr0.org/time/1/9/7/1/02/index.html#1971-02-09
 le Observation (ci-contre).,"",sighting,1971-02-12$,,"",1971-02-12,event,https://rr0.org/time/1/9/7/1/02/index.html#1971-02-12

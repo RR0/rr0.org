@@ -1541,5 +1541,47 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://www.carnavalet.paris.fr/collections/declaration-des-droits-de-lhomme-et-du-citoyen": {
+    "title": "Déclaration des droits de l'homme et du citoyen. | Musée Carnavalet - Histoire de Paris",
+    "url": "https://www.carnavalet.paris.fr/collections/declaration-des-droits-de-lhomme-et-du-citoyen",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 1789,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 8,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 26,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 4,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -60
+        }
+      }
+    }
   }
 }

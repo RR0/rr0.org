@@ -9,9 +9,13 @@
     function changeOrder(event) {
       const list = document.querySelector("ol.links")
       const items = Array.from(list.querySelectorAll("li"))
-      const comparator = event.target.value === "trad"
-        ? (item1, item2) => item1.id > item2.id ? 1 : -1
-        : (item1, item2) => item1.dataset.order > item2.dataset.order ? 1 : -1
+      const timeSelected = items[0].id === "1"
+      let comparator
+      if (event.target.value === "trad" || !timeSelected) {
+        comparator = (item1, item2) => item1.id - item2.id
+      } else {
+        comparator = (item1, item2) => item1.dataset.order - item2.dataset.order
+      }
       items.sort(comparator)
       list.replaceChildren(...items)
     }
@@ -29,8 +33,7 @@
     <li data-order="5" id="1"><a href="001"> <span lang="fr">Prologue</span> <span lang="ar">الفاتحة</span> <span
       lang="ar-Latn">Al-Fatiha</span></a></li>
     <li data-order="87" id="2"><a href="002/index.html"> <span lang="fr">La vache</span> <span lang="ar">البقرة</span>
-      <span
-        lang="ar-Latn">Al-Baqarah</span> </a></li>
+      <span lang="ar-Latn">Al-Baqarah</span> </a></li>
     <li data-order="89" id="3"><a href="003"> <span lang="fr">La famille d'Imran</span> <span lang="ar">آل
       عمران</span> <span lang="ar-Latn">Al-Imran</span></a></li>
     <li data-order="92" id="4"><a href="004/index.html"> <span lang="fr">Les femmes</span> <span lang="ar">النساء
@@ -38,7 +41,7 @@
     <li data-order="112" id="5"><a href="005"> <span lang="fr">La table servie</span> <span lang="ar">المائدة</span>
       <span lang="ar-Latn">An-Maidah</span></a></li>
     <li data-order="55" id="6"><a href="006"> <span lang="fr">Les bestiaux</span> <span lang="ar">الأنعام</span> <span
-      lang="ar-Latn">Al-Anam</span> </a></li>
+      lang="ar-Latn">Al-Anam</span></a></li>
     <li data-order="39" id="7"><a href="007"> <span lang="fr">Les murailles</span> <span lang="ar">الأعراف</span> <span
       lang="ar-Latn">Al-Araf</span></a></li>
     <li data-order="88" id="8"><a href="008"><span lang="fr">Le butin</span> <span lang="ar">الأنفال</span> <span

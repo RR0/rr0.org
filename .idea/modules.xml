@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/../cms/.idea/cms.iml" filepath="$PROJECT_DIR$/../cms/.idea/cms.iml" />
       <module fileurl="file://$PROJECT_DIR$/../data/.idea/data.iml" filepath="$PROJECT_DIR$/../data/.idea/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rr0.org.iml" filepath="$PROJECT_DIR$/.idea/rr0.org.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../@javarome/ssg-api/.idea/ssg-api.iml" filepath="$PROJECT_DIR$/../../@javarome/ssg-api/.idea/ssg-api.iml" />
     </modules>
   </component>
 </project>

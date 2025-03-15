@@ -24,5 +24,6 @@
     <orderEntry type="library" name="ei" level="application" />
     <orderEntry type="module" module-name="cms" />
     <orderEntry type="module" module-name="data" />
+    <orderEntry type="module" module-name="ssg-api" />
   </component>
 </module>

@@ -1,9 +1,24 @@
 {
-  "birthTime": "1975",
+  "lastName": "Skafish",
+  "firstNames": [
+    "Peter",
+    "W."
+  ],
   "occupations": [
     "anthropologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1975",
+      "sources": [
+        {
+          "url": "https://radaris.com/~Peter-Skafish/1451697960"
+        }
+      ]
+    }
   ]
 }

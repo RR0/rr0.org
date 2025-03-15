@@ -1,5 +1,9 @@
 {
-  "birthTime": "1961",
+  "lastName": "Nolan",
+  "firstNames": [
+    "Garry",
+    "P."
+  ],
   "occupations": [
     "biologist",
     "ufologist"
@@ -7,5 +11,12 @@
   "countries": [
     "uk",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1961",
+      "place": "Royaume-Uni"
+    }
   ]
 }

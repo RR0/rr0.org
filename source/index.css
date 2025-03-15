@@ -8,6 +8,7 @@
 .source-id {
   text-decoration: none;
   padding: .2rem .3rem;
+  padding-bottom: 0.5em;
   color: #069;
   vertical-align: super;
   font-size: smaller;

@@ -1,5 +1,9 @@
 {
-  "birthTime": "1936-06-20",
+  "lastName": "Puthoff",
+  "firstNames": [
+    "Harold",
+    "E."
+  ],
   "occupations": [
     "physicist",
     "astrophysicist",
@@ -7,5 +11,11 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1936-06-20"
+    }
   ]
 }

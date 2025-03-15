@@ -1,9 +1,21 @@
 {
-  "birthTime": "1987",
+  "lastName": "Grusch",
+  "firstNames": [
+    "David",
+    "Charles"
+  ],
+  "url": "https://docs.house.gov/meetings/GO/GO06/20230726/116282/HHRG-118-GO06-Bio-GruschD-20230726.pdf",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1987",
+      "place": "Pittsburgh (Pennsylvanie)"
+    }
   ]
 }

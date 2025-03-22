@@ -1,0 +1,23 @@
+{
+  "lastName": "Roosevelt",
+  "firstNames": [
+    "Eleanor"
+  ],
+  "occupations": [
+    "politician"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1884",
+      "place": "New York"
+    },
+    {
+      "type": "death",
+      "time": "1962"
+    }
+  ]
+}

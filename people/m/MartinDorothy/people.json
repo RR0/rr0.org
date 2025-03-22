@@ -1,5 +1,4 @@
 {
-  "birthTime": "1950",
   "occupations": [
     "contactee",
     "houseWife"
@@ -10,5 +9,12 @@
   "countries": [
     "us"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1950",
+      "place": "près du Mont Shasta (Californie)"
+    }
+  ]
 }

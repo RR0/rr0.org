@@ -1,0 +1,26 @@
+footer {
+  --height: 2em;
+  padding: 0.5em;
+  font-size: .8em;
+  margin-top: 1.5em;
+  color: #666;
+  text-align: right;
+
+  iframe {
+    display: inline
+  }
+
+  img {
+    margin: 0;
+    cursor: inherit;
+    height: var(--height);
+    vertical-align: middle;
+    padding: 0.5em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    color: grey;
+  }
+}

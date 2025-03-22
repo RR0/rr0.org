@@ -1,4 +1,9 @@
 {
+  "lastName": "Roosevelt",
+  "firstNames": [
+    "Franklin",
+    "Delano"
+  ],
   "occupations": [
     "politician",
     "leader"
@@ -15,7 +20,10 @@
     {
       "type": "death",
       "time": "1945-04-12",
-      "place": "Little White House (Géorgie)"
+      "place": "Little White House (Géorgie)",
+      "notes": [
+        "d'une hémorragie cérébrale"
+      ]
     }
   ]
 }

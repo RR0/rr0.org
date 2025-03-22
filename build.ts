@@ -100,6 +100,7 @@ const copies = copiesArg ? copiesArg : [
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
   "source/index.css", "note/index.css",
   "link.css", "quote.css",
+  "footer.css", "images/facebook.svg", "images/instagram.svg", "images/medium.svg", "images/youtube.svg", "images/X_logo.svg", "images/github.svg", "images/email.svg", "images/tiktok.svg", "images/bluesky.svg",
   "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/divin/theisme/mono/livre/islam/coran/index.js"

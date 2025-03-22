@@ -11,6 +11,7 @@
 @import "note/index.css";
 @import "link.css";
 @import "quote.css";
+@import "footer.css";
 
 :root {
   --mobile-nav-height: 2rem;
@@ -628,7 +629,7 @@ dt, dd {
   background: linear-gradient(135deg, #eaeaf9 0, rgba(255, 255, 255, 0) 79%)
 }
 
-a[target="_blank"]::after {
+a:not(.raw)[target="_blank"]::after {
   content: " 🔗"
 }
 
@@ -667,19 +668,6 @@ a[target="_blank"]::after {
   color: #666
 }
 
-.footer {
-  font-size: .8em
-}
-
-footer {
-  margin-top: 2em;
-  line-height: 1em
-}
-
-footer iframe {
-  display: inline
-}
-
 .deceased::after {
   content: " †";
   color: grey;
@@ -687,12 +675,6 @@ footer iframe {
 
 .pseudonym {
   font-style: italic;
-}
-
-.footer {
-  line-height: 1.7em;
-  color: #666;
-  text-align: right
 }
 
 .foot:target {
@@ -928,10 +910,6 @@ a:hover {
     color-scheme: dark;
     --background-color: black;
     --color: lightgrey;
-  }
-
-  .footer {
-    color: grey;
   }
 
   details[open] summary {

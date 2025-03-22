@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type
 en,"",sighting,1976-01$,,"",1976-01,event,https://rr0.org/time/1/9/7/6/index.html#1976-01
 en,"",sighting,1976-02$,,"",1976-02,event,https://rr0.org/time/1/9/7/6/index.html#1976-02
 en mars en avril en mai Nombreuses observations d'ovnis autour des bases de l'USAF du nord des États-Unis.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html

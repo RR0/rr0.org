@@ -1,11 +1,19 @@
 {
-  "birthTime": "1951",
-  "deathTime": "2018-03-06",
   "occupations": [
     "ufologist",
     "librarian"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1951"
+    },
+    {
+      "type": "death",
+      "time": "2018-03-06"
+    }
   ]
 }

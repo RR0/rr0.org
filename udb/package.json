@@ -18,7 +18,7 @@
     "@rr0/udb": "^2.1.8"
   },
   "devDependencies": {
-    "vite": "^5.2.9",
+    "vite": "^6.2.2",
     "copyfiles": "^2.4.1"
   },
   "exports": "./index.js",

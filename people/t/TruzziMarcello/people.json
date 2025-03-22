@@ -1,6 +1,4 @@
 {
-  "birthTime": "1906",
-  "deathTime": "1997",
   "occupations": [
     "sociologist"
   ],
@@ -9,5 +7,34 @@
     "dk",
     "ru",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1935-09-06",
+      "place": "Copenhague (Danemark)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "Steven Kuzma"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2003-02-02",
+      "place": "Ann Arbor (Michigan)",
+      "sources": [
+        {
+          "url": "https://www.martiansgohome.com/smear/v50/ss030310.htm#truzzi"
+        },
+        {
+          "url": "https://www.anomalist.com/milestones/truzzi.html"
+        }
+      ]
+    }
   ]
 }

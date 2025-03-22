@@ -1,0 +1,15 @@
+{
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1934-04-11",
+      "place": "Chicago (USA)"
+    }
+  ]
+}

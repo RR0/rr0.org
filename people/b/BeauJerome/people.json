@@ -1,6 +1,11 @@
 {
-  "title": "Beau, Jérôme",
-  "birthTime": "1972-08-12",
+  "lastName": "Beau",
+  "firstNames": [
+    "Jérôme",
+    "Pierre"
+  ],
+  "title": "Jérôme Beau",
+  "url": "https://www.javarome.org",
   "occupations": [
     "ufologist",
     "softwareEngineer"
@@ -10,5 +15,12 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1972-08-12",
+      "place": "Châtillon (Hauts-de-Seine)"
+    }
   ]
 }

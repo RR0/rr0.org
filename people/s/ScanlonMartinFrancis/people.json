@@ -1,10 +1,25 @@
 {
-  "birthTime": "1889-08-11",
-  "deathTime": "1980-01-26",
+  "lastName": "Scanlon",
+  "firstNames": [
+    "Martin",
+    "Francis"
+  ],
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1889-08-11",
+      "place": "Scranton (Pennsylvanie)"
+    },
+    {
+      "type": "death",
+      "time": "1980-01-26",
+      "place": "Washington"
+    }
   ]
 }

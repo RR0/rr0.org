@@ -1,10 +1,25 @@
 {
-  "birthTime": "1903-09-09",
-  "deathTime": "1963-03-03",
+  "lastName": "Ramey",
+  "firstNames": [
+    "Roger",
+    "Maxwell"
+  ],
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1903-09-09",
+      "place": "Sulphur Springs (Texas)"
+    },
+    {
+      "type": "death",
+      "time": "1963-03-03",
+      "place": "Palos Verdes (Californie)"
+    }
   ]
 }

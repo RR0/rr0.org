@@ -1,10 +1,15 @@
 {
-  "birthTime": "1947-07",
   "occupations": [
     "chemist",
     "ufologist"
   ],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1947-07"
+    }
   ]
 }

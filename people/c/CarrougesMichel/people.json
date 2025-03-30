@@ -1,6 +1,8 @@
 {
   "lastName": "Couturier",
-  "firstNames": "Louis",
+  "firstNames": [
+    "Louis"
+  ],
   "pseudonyms": [
     "Michel Carrouges"
   ],
@@ -11,11 +13,13 @@
   "events": [
     {
       "type": "birth",
-      "tile": "1910-02-22"
-    }
+      "time": "1910-02-22",
+      "place": "Poitiers"
+    },
     {
       "type": "death",
-      "time": "1988-06-13"
+      "time": "1988-06-13",
+      "place": "Paris 15e"
     }
   ]
 }

@@ -32,7 +32,10 @@
     {
       "type": "death",
       "time": "2000-10-07",
-      "place": "Créteil (Val-de-Marne)"
+      "place": "Créteil (Val-de-Marne)",
+      "notes": [
+        "d'une infection suite à une première séance de traitement contre un cancer."
+      ]
     }
   ]
 }

@@ -1,8 +1,21 @@
 {
-  "birthTime": "1910-02-22",
-  "deathTime": "1988-06-13",
+  "lastName": "Couturier",
+  "firstNames": "Louis",
+  "pseudonyms": [
+    "Michel Carrouges"
+  ],
   "occupations": ["ufologist", "writer"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "tile": "1910-02-22"
+    }
+    {
+      "type": "death",
+      "time": "1988-06-13"
+    }
   ]
 }

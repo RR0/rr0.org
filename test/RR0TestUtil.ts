@@ -45,7 +45,7 @@ class RR0TestUtil {
     const title = titleExec && titleExec.length > 0 ? titleExec[1].trim() : undefined
     const currentFile = context.file
     context.file = new HtmlFileContents(currentFile.name, currentFile.encoding, currentFile.contents,
-      currentFile.lastModified, currentFile.lang, {author: []}, {}, title)
+      currentFile.lastModified, currentFile.lang)
     const htmlContext = context as HtmlRR0Context
     const timeContext = this.timeService.contextFromFileName(htmlContext, inputFileName)
     Object.assign(htmlContext.time, timeContext)

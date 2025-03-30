@@ -4,6 +4,7 @@ import {
   CLI,
   CMSGenerator,
   CodeReplacerFactory,
+  DataOptions,
   DescriptionReplaceCommand,
   IndexedReplacerFactory,
   LanguageReplaceCommand,
@@ -70,7 +71,7 @@ if (configFile) {
 const cliContents = args.contents
 console.debug("contents", cliContents)
 
-const mandatoryRoots = ["people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
+const mandatoryRoots = ["index.html", "people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
 const contentRoots = cliContents
   ? cliContents.concat(mandatoryRoots)
   : [
@@ -135,6 +136,7 @@ const directoryPages = [
   "people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"
 ]
 getTimeFiles().then(async (timeFiles) => {
+  const orgFiles = await glob("org/**/index.html")
   const sourceRegistryFileName = "source/index.json"
   const directoryOptions: PeopleDirectoryStepOptions = {
     root: "people/index.html",
@@ -151,9 +153,11 @@ getTimeFiles().then(async (timeFiles) => {
   }
   const siteBaseUrl = "https://rr0.org/"
   const mail = "rr0@rr0.org"
-  const timeOptions: TimeOptions = {
-    rootDir: "time",
-    files: timeFiles
+  const timeOptions: TimeOptions = {rootDir: "time", files: timeFiles}
+  const orgOptions: DataOptions = {rootDir: "org", files: orgFiles}
+  const dataOptions = {
+    time: timeOptions,
+    org: orgOptions
   }
   const mappings: RR0CaseMapping<any>[] = [
     new RR0Mapping({read: ["fetch"], write: ["backup"]})
@@ -178,7 +182,7 @@ getTimeFiles().then(async (timeFiles) => {
     new UnitReplaceCommand()
   ]
   const generator = new CMSGenerator({
-    contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, timeOptions,
+    contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, dataOptions,
     siteBaseUrl, timeFormat, directoryPages,
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,

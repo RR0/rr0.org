@@ -1,6 +1,6 @@
 import { ConsoleLogger, FileWriteConfig, SsgContext } from "ssg-api"
 import path from "path"
-import { Book, BookService, CLI, TimeServiceOptions, TimeUrlBuilder } from "@rr0/cms"
+import { Book, BookService, CLI, TimeOptions, TimeUrlBuilder } from "@rr0/cms"
 import { testFilePath } from "../test/RR0TestUtil"
 import { AllDataService, PeopleFactory, PeopleService, RR0EventFactory, TypedDataFactory } from "@rr0/data"
 import { BookJson } from "@rr0/cms/dist/book/BookJson"
@@ -25,11 +25,11 @@ const config: FileWriteConfig = {
     return path.join(outDir, context.file.name)
   }
 }
-const timeOptions: TimeServiceOptions = {
-  root: testFilePath("time"),
+const timeOptions: TimeOptions = {
+  rootDir: testFilePath("time"),
   files: []
 }
-const timeUrlBuilder = new TimeUrlBuilder({rootDir: timeOptions.root})
+const timeUrlBuilder = new TimeUrlBuilder(timeOptions)
 let files = []
 const peopleService = new PeopleService(dataService, peopleFactory, {files, rootDir: testFilePath("people")})
 const books = new BookService(logger, dry, peopleService, timeUrlBuilder, config)

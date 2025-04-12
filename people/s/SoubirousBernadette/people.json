@@ -1,6 +1,4 @@
 {
-  "birthTime": "1844-01-07",
-  "deathTime": "1879-04-16",
   "occupations": [
     "contactee",
     "priest"
@@ -8,5 +6,19 @@
   "countries": [
     "fr"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1844-01-07",
+      "place": "Moulin de Boly"
+    },
+    {
+      "type": "death",
+      "time": "1879-04-16",
+      "notes": [
+        "le mercredi de Pâques"
+      ]
+    }
+  ]
 }

@@ -5,9 +5,16 @@ This repository hosts both data and code for the [RR0 website](https://rr0.org).
 ## Motivation
 
 This website was created around 1998 as the publication of personal notes regarding the study of Unidentified Flying Objects (UFOs).
-It was further motivated by the lack of french-speaking resources about the subject, especially when it comes to cases synthesis, history and objective reporting.
+It was further motivated by the lack of french-speaking resources at the time about the subject, especially when it comes to cases synthesis, history and objective reporting. There was just too many cases, people, organizations, places, etc. to remember, and their relationships was hard to remember.
 
 ## Analysis
+
+### To do
+
+* User settings to customize rendering of directives (i18n, how to display people names, which units to use for
+  expressing measurements)
+
+## Design
 
 RR0 is:
 
@@ -18,13 +25,6 @@ RR0 is:
 * **Contextual** : Display rendering not only takes into account the semantic tags/classes/attributes,
   but also the ways they are assembled. For example a month tag can be resolved as in the context of a previous year
   tag.
-
-### To do
-
-* User settings to customize rendering of directives (i18n, how to display people names, which units to use for
-  expressing measurements)
-
-## Design
 
 RR0 has been designed in different ways over the years:
 
@@ -165,6 +165,43 @@ In case the last name contain multiple words, just write it in camel case, like 
   contextual menu.
 
 ## Implementation
+
+Below is a description of the directory structure.
+
+- [`.github`](.github) GitHub-related files such as sponsoring config. Maybe GiHub actions in the future.
+- [`.idea`](.idea) Configuration of the [WebStorm IDE](https://jetbrains.com/webstorm) used to edit `.html`, `.css` and `.js`/`.ts` files.
+- [`.netlify`](.netlify) Cache dir used by the [Netlify](https://netlify.com) [deploy tool](https://docs.netlify.com/cli/get-started/), which allows to deploy the website where it is hosted and served publicly.
+- [`blog`](blog) Directory to host future blog posts, migrated from medium in the future.
+- [`book`](book/README.md) Book directory and import facilities
+- [`croyance`](croyance) Belief-related pages, including religion, conspiracy theories and other superstitions.
+- [`Documents`](Documents) Legacy directory that used to contain various documents (articles, books) , which are now progressively migrated toward their own directories.
+- [`droit`](droit) Legal-related pages, mostly about freelancing and entrepreneurship.
+- `extension` Code for the RR0 [browser extension](https://medium.com/@javarome/implementation-web-browser-extension-9fccce983dea), with flavors for Safari (through an iOS app), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/rr0/) and Chrome.)
+- [`images`](images) A legacy directory that used to contain all images, which are now progressively migrated toward their own topic directories.
+- [`index`](index) Runtime `.js` code to enrich experience in pages containing indexed items (such as religious texts).
+- [`lang`](lang) Runtime `.js` code and language selection form to enrich experience in pages allowing live language switch and vocal synthesis (such as religious text). Also, the root of pages about spoken languages in general.
+- `node_modules` The set of installed Node dependencies, generated during setup's `npm install`
+- [`note`](note) Styling of inline page notes.
+- [`org`](org) The root directory for pages describing human organizations, from countries down to companies.
+- `out` The built website output to be published, generated when running `npm run build`.
+- [`people`](people) The root directory for pages about people, indexed by the first letter of the last name.
+- [`place`](place) The root directory for pages about geographical places. Not to be confused with organizations (Italy is considered a human organization, not a geographical place).
+- [`politique`](politique) The root directory for pages about politics and politicians. Related people still belong to the [`people/`](people) dir however, since people can have multiple occupations.
+- [`public`](public) A directory where the [ViteJS](https://vite.dev) build tool reads everything that must be accessible as raw files when deployed.
+- [`science`](science) The root directory for pages about both established and controversial "sciences", from physics to ufology. Also contains case studies for each one of them, so includes the studies for several ufological case for instance.
+- [`search`](search) Runtime code for the form and `.js` component (reused in the browser extension) allowing to search among pages. The pages are stored into an `index.json` file which is generated at website build time if the `reindex` option includes `search` (see [`build.json`](build.json)).
+- [`source`](source/README.md) Style to render inline sources in pages. Some sources info can be stored into an `index.json` file (to avoid fetching them at every build) which is generated at website build time if the `reindex` option includes `sources` (see [`build.json`](build.json)).
+- [`tech`](tech) The root directory for pages about both technology, from airlanes to computer science.
+- [`test`](test) Utility class to run RRO's unit tests.
+- [`time`](time) The root directory for pages relating a global chronology of facts. Indexed by year digit. All other pages reference such time pages when mentioning dates.
+- [`udb`](udb) A web interface to access the [udb database](https://github.com/RR0/uDb). Has its own package/build script.
+- [`.editorconfig`](.editorconfig) Code editing settings.
+- [`.eslintrc`](.eslintrc) Code convention settings
+- [`.gitignore`](.gitignore) Files that must not be versioned in the Git repository.
+- [`.htaccess`](.htaccess) The legacy rules for redirecting legacy URLs to new ones. The RR0 build should read it and convert it into a `netlify.toml` configuration file now.
+- [`.nvmrc`](.nvmrc) The Node version requirement. Allows to select it automatically when command lines open into this directory.
+- [`404.html`](404.html) The page to be displayed when a RR0 URL is not matching any existing page.
+- [`apple-touch-icon`](apple-touch-icon.png) RR0 Logo, used by search result page and page tabs icons.
 
 ### Setup
 

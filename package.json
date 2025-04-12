@@ -27,7 +27,7 @@
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@javarome/fileutil": "0.3.7",
-    "@rr0/cms": "^0.3.32",
+    "@rr0/cms": "^0.3.33",
     "@rr0/common": "^1.1.3",
     "@rr0/data": "^0.3.31",
     "@rr0/lang": "^0.1.12",

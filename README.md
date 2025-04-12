@@ -9,10 +9,6 @@ It was further motivated by the lack of french-speaking resources at the time ab
 
 ## Analysis
 
-### To do
-
-* User settings to customize rendering of directives (i18n, how to display people names, which units to use for
-  expressing measurements)
 
 ## Design
 
@@ -205,19 +201,8 @@ Below is a description of the directory structure.
 
 ### Setup
 
-1. Make sure [NodeJS](https://nodejs.org) 18+ is installed
+1. Make sure [NodeJS](https://nodejs.org) is installed (the version mentioned in [`.nvmrc`](.nvmrc) or above should be used)
 1. Install NodeJS packages required by this project: `npm install`
-
-### Directory structure
-
-- `time/` hosts chronological data. Chronology is the base data of other data (for instance, a UFO case photograph will
-  be hosted in its relevant time directory, and the case file will link to it).
-  The subdirectories represent date components in the form `Y/Y/Y/Y/MM/DD/`
-- `croyance/` hosts beliefs data, that is, opinions that do not rely on proof.
-  This includes religion, conspirationism, occultism and other cults.
-- [`org/`](org/README.md) hosts data about all kinds of human organizations, from countries to towns, including state agencies,
-  universities, etc.
-- `org/` hosts data about people, regardless of their nationalities, occupations, etc.
 
 ## Deployment
 

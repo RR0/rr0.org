@@ -72,8 +72,8 @@ const cliContents = args.contents
 console.debug("contents", cliContents)
 
 const mandatoryRoots = ["index.html", "people/*.html", "science/crypto/ufo/enquete/dossier/*.html"]
-const contentRoots = cliContents
-  ? cliContents.concat(mandatoryRoots)
+const contentRoots = (cliContents
+  ? cliContents
   : [
     "croyance/**/*.html",
     "index.html", "404.html", "googlebe03dcf00678bb7c.html", "Contact.html", "Copyright.html", "preambule.html", "FAQ.html", "Referencement.html",
@@ -88,7 +88,7 @@ const contentRoots = cliContents
     "tech/**/*.html",
     "udb/*.html",
     "js/**/*.html"
-  ]
+  ]).concat(mandatoryRoots)
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",

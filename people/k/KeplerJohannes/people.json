@@ -1,11 +1,27 @@
 {
-  "birthTime": "1571",
-  "deathTime": "1630",
   "occupations": [
     "astronomer",
     "mathematician"
   ],
   "countries": [
     "de"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1571",
+      "place": "Swabia (Wurtenberg, Allemagne)",
+      "notes": [
+        "dans le <i>Weil der Stadt</i>"
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1630",
+      "place": "Rosenburg",
+      "notes": [
+        "Rastibonne ?"
+      ]
+    }
   ]
 }

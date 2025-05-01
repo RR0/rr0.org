@@ -2015,7 +2015,12 @@
 
 [[redirects]]
   from = "/people/k/KissingerHenriAlfred/*"
-  to = "/people/k/KissingerHenri/:splat"
+  to = "/people/k/KissingerHenry/:splat"
+
+
+[[redirects]]
+  from = "/people/k/KissingerHenri/*"
+  to = "/people/k/KissingerHenry/:splat"
 
 
 [[redirects]]

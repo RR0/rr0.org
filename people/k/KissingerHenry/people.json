@@ -1,0 +1,31 @@
+{
+  "lastName": "Kissinger",
+  "firstNames": [
+    "Heinz",
+    "Alfred"
+  ],
+  "surname": "Henry",
+  "occupations": [
+    "diplomat",
+    "politician"
+  ],
+  "countries": [
+    "de",
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1923-05-27",
+      "place": "Fürth (Allemagne)"
+    },
+    {
+      "type": "death",
+      "time": "2023-11-29",
+      "place": "Kent (Connecticut)",
+      "notes": [
+        "dans sa maison"
+      ]
+    }
+  ]
+}

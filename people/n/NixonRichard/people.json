@@ -1,11 +1,26 @@
 {
-  "birthTime": "1913-01-09",
-  "deathTime": "1994-04-22",
+  "lastName": "Nixon",
+  "firstNames": [
+    "Richard",
+    "Milhous"
+  ],
   "occupations": [
     "politician",
     "leader"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-01-09",
+      "place": "Yorba Linda (Californie)"
+    },
+    {
+      "type": "death",
+      "time": "1994-04-22",
+      "place": "Washington Heights Family Health Center, New York"
+    }
   ]
 }

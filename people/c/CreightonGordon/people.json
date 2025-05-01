@@ -1,8 +1,23 @@
 {
-  "birthTime": "1908-04-26",
-  "deathTime": "2003-07-16",
   "occupations": ["ufologist"],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1908-04-26",
+      "place": "Rickmansworth (Grande-Bretagne)"
+    },
+    {
+      "type": "image",
+      "time": "2000",
+      "url": "portrait.jpg"
+    },
+    {
+      "type": "death",
+      "time": "2003-07-16",
+      "place": "Angleterre"
+    }
   ]
 }

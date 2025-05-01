@@ -1,11 +1,37 @@
 {
-  "birthTime": "1916-06-23",
-  "deathTime": "1981-02-17",
+  "lastName": "Frégnale",
+  "firstNames": [
+    "André",
+    "Victor",
+    "Henri"
+  ],
   "occupations": [
     "geologist",
     "ufoWitness"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1916-06-23",
+      "place": "Chamalières (Puy-de-Dôme)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "author": "Delmon, Alain",
+          "url": "https://web.archive.org/web/20171028230331/http://adelmon.free.fr/Lac_Chauvet_4.html"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1981-02-17",
+      "place": "Saint-Michel-d'Euzet"
+    }
   ]
 }

@@ -1,6 +1,4 @@
 {
-  "birthTime": "1913-03-06",
-  "deathTime": "1989-10-26",
   "pseudonyms": [
     "Laura Marxer"
   ],
@@ -10,5 +8,22 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-03-06",
+      "place": "Dorchester (Boston, Suffolk, Massachusetts, USA)"
+    },
+    {
+      "type": "death",
+      "time": "1989-10-26",
+      "place": "Dearborn Heights (Wayne, Michigan)",
+      "sources": [
+        {
+          "url": "https://www.wikitree.com/wiki/Mundo-10"
+        }
+      ]
+    }
   ]
 }

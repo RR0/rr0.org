@@ -1,10 +1,27 @@
 {
-  "birthTime": "1940-06-10",
+  "firstNames": [
+    "John",
+    "Clingman"
+  ],
+  "lastName": "Munday",
+  "qualifier": "Jr.",
   "occupations": [
     "biophysicist",
     "geographer"
   ],
   "countries": [
     "ca"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940-06-10",
+      "place": "Plainfield (New Jersey)",
+      "sources": [
+        {
+          "url": "http://www.avantrex.com/Vita2021.htm"
+        }
+      ]
+    }
   ]
 }

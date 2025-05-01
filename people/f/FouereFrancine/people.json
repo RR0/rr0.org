@@ -1,5 +1,8 @@
 {
-  "title": "Fouéré, Francine",
+  "lastName": "Fouéré",
+  "firstNames": [
+    "Francine"
+  ],
   "occupations": [
     "ufologist"
   ],
@@ -15,7 +18,8 @@
     },
     {
       "type": "death",
-      "time": "2018-05-26"
+      "time": "2018-05-26",
+      "place": "Hopital Bellan"
     }
   ]
 }

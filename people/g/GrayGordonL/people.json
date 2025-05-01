@@ -1,19 +1,20 @@
 {
   "occupations": [
-    "ufologist"
+    "politician"
   ],
   "countries": [
-    "fr"
+    "us"
   ],
   "events": [
     {
       "type": "birth",
-      "time": "1914"
-      ]
+      "time": "1909-05-30",
+      "place": "Baltimore"
     },
     {
       "type": "death",
-      "time": "1990"
+      "time": "1982-11-25",
+      "place": "Washington"
     }
   ]
 }

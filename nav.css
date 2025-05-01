@@ -166,7 +166,7 @@ nav > ul {
   #main-nav {
     position: fixed;
     width: var(--nav-width);
-    top: calc(var(--header-height) - 0.3rem);
+    top: calc(var(--head-height) - 0.3rem);
     margin: 0;
     left: 0;
   }

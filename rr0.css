@@ -15,7 +15,7 @@
 
 :root {
   --mobile-nav-height: 2rem;
-  --header-height: 6rem;
+  --head-height: 6rem;
   --nav-width: 18vw;
   --map-width: 18vw;
   --margin: 1rem;
@@ -75,7 +75,7 @@ time.duration {
 body {
   margin: 0;
   padding: 0;
-  padding-top: calc(var(--header-height) + var(--mobile-nav-height));
+  padding-top: calc(var(--head-height) + var(--mobile-nav-height));
   line-height: 1.5em;
 }
 
@@ -299,7 +299,7 @@ iframe .wide {
   border-style: ridge
 }
 
-p, td {
+p {
   text-align: justify
 }
 
@@ -758,7 +758,7 @@ dl.bullet dd {
 #main-header {
   position: sticky;
   top: -100%;
-  margin-top: calc(var(--header-height) * -1 - var(--mobile-nav-height));
+  margin-top: calc(var(--head-height) * -1 - var(--mobile-nav-height));
   background-size: cover !important;
   background-position: center !important;
   background-image: linear-gradient(to right, rgba(224, 224, 233, 0.5) 0, rgba(255, 255, 255, .5) 100%);
@@ -782,12 +782,12 @@ dl.bullet dd {
 
 .anchor {
   position: relative;
-  top: calc((var(--header-height) + 0.5rem) * -1);
+  top: calc((var(--head-height) + 0.5rem) * -1);
   cursor: default;
 }
 
 .index-anchor {
-  top: calc((var(--header-height) + 1.5rem) * -1);
+  top: calc((var(--head-height) + 1.5rem) * -1);
 }
 
 @media (pointer: coarse) {
@@ -851,7 +851,7 @@ dl.bullet dd {
   }
 
   body {
-    padding-top: var(--header-height);
+    padding-top: var(--head-height);
     margin-left: var(--nav-width);
     width: 76vw;
   }
@@ -860,7 +860,7 @@ dl.bullet dd {
 @media (min-width: 80em) {
 
   body {
-    padding-top: var(--header-height);
+    padding-top: var(--head-height);
     margin-left: 21vw;
     width: 57vw;
   }

@@ -1,6 +1,6 @@
 .map {
   position: fixed;
-  top: calc(var(--header-height) + var(--mobile-nav-height));
+  top: calc(var(--head-height) + var(--mobile-nav-height));
   right: 0;
   left: var(--nav-width);
   transform: translateX(100%);

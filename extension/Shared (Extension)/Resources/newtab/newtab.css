@@ -1,7 +1,7 @@
 @import "../index.css.js";
 
 :root {
-  --header-height: 4em;
+  --head-height: 4em;
 }
 
 * {
@@ -42,7 +42,7 @@ body {
 }
 
 .logo {
-  max-height: var(--header-height);
+  max-height: var(--head-height);
 }
 
 rr0-search {

@@ -1,23 +1,37 @@
-table tbody {
-  max-height: 80vh;
-  overflow: visible;
-  box-shadow: inset 0 .3em 1em 0 rgba(0, 0, 1, .21);
-  display: block;
-  overflow-y: auto;
-  overflow-x: hidden
+:root {
+}
+
+th, td {
+  text-align: left;
+  border: 1px solid #d3d3d3;
+}
+
+th {
+  --head-height: 41px;
+
+  background-color: var(--header-background-color);
+  color: #666;
+  position: sticky;
+  top: var(--head-height);
+  z-index: 10;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 table {
-  border-collapse: collapse;
-  border: none;
-  overflow: visible;
+  --header-background-color: light-dark(rgba(109, 110, 120, .1), #2f2f2f);
+
+  border-collapse: separate;
+  border-spacing: 0;
+  position: relative;
+  z-index: 1;
 }
 
-table tbody tr, table thead {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
+tbody {
+  max-height: 80vh;
   overflow: visible;
+  box-shadow: inset 0 .3em 1em 0 rgba(0, 0, 1, .21);
+  overflow-y: auto;
+  overflow-x: hidden
 }
 
 table.no-border {
@@ -39,26 +53,25 @@ table.no-border {
 td, th {
   width: auto;
   padding: .4em .7em;
-  border: 1px solid #d3d3d3;
-  overflow: visible;
-}
-
-th {
-  background-color: rgba(109, 110, 120, .1);
-  color: #666;
-  text-align: left
 }
 
 .image-container td, .left td, .left .side td, .right td, .right .side td {
   height: 100%
 }
 
+@media (min-width: 60em) {
+  th {
+    --head-height: 99px;
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   td, th {
-    border-color: grey
+    border-color: grey;
   }
 
-  thead {
+  th {
     background-color: #2f2f2f;
   }
 }

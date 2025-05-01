@@ -1,8 +1,27 @@
 {
-  "birthTime": "1913",
-  "deathTime": "1990",
+  "lastName": "Fuller",
+  "firstNames": [
+    "John",
+    "Grant"
+  ],
+  "qualifier": "Jr",
   "occupations": ["ufologist", "journalist"],
   "countries": [
-    "uk"
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-11-30",
+      "place": "Philadelphie (Pennsylvanie)"
+    },
+    {
+      "type": "death",
+      "time": "1990-11-07",
+      "place": "Norwalk (Connecticut)",
+      "notes": [
+        "d'un cancer des poumons"
+      ]
+    }
   ]
 }

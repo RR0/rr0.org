@@ -1,2 +1,2 @@
-description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type,sources,time,type,url,place
-"en En , observation d'une comète au sud-ouest.","",sighting,1680$Angleterre,,,"",,"",Angleterre,place,"""The Age of Wonders"","""",s1,"""",,or farther and particular Discriptton[sic] of the remarkable",1680,event,https://rr0.org/time/1/6/8/0/index.html#1680
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+"en En , observation d'une comète au sud-ouest.","",sighting,1680$Angleterre,,,"",,"",Angleterre,"",place,"""The Age of Wonders"","""",s1,"""",,or farther and particular Discriptton[sic] of the remarkable",1680,event,https://rr0.org/time/1/6/8/0/index.html#1680

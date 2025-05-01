@@ -7,5 +7,12 @@
   "countries": [
     "us"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-01-20",
+      "place": "Boise (Idaho)"
+    }
+  ]
 }

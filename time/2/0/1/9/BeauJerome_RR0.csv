@@ -1,3 +1,3 @@
-description,events,eventType,id,place,sources,time,type,url
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
 La Navy met en place un mécanisme de signalement standardisé des PANs.,"",sighting,2019$,,"""""""Preliminary Assessment"","""",s1,"""",,Unidentified Aerial Phenomena""",2019,event,https://rr0.org/time/2/0/1/9/index.html
 "le En Argentine, création du CIAE.","",sighting,2019-04-04$,,"",2019-04-04,event,https://rr0.org/time/2/0/1/9/index.html#2019-04-04

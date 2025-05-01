@@ -1,7 +1,7 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
 "en Un corps céleste s'approche de la Terre, du côté opposé à son sens de révolution. Son ombre provoque sur Londres une obscurité intense qui jette la panique parmi les citadins.","",sighting,1882-01$,,"",1882-01,event,https://rr0.org/time/1/8/8/2/index.html#1882-01
-en en 3 À observation de 2 triangles lumineux durant 3 mn.,"",sighting,1882-07$LebanonConnecticut,,,"",,"",Lebanon (Connecticut),place,""""","""",s1,"""",,Fort",1882-07,event,https://rr0.org/time/1/8/8/2/index.html#1882-07
+en en 3 À observation de 2 triangles lumineux durant 3 mn.,"",sighting,1882-07$LebanonConnecticut,,,"",,"",Lebanon (Connecticut),"",place,""""","""",s1,"""",,Fort",1882-07,event,https://rr0.org/time/1/8/8/2/index.html#1882-07
 "en Le corps céleste de janvier est retrouvé sur la partie inférieure du Soleil, ou il interpose sa masse.","",sighting,1882-10$,,"",1882-10,event,https://rr0.org/time/1/8/8/2/index.html#1882-10
-"en en 17 Depuis l', observation de Walter Maunder.","",sighting,1882-11$observatoireRoyalDeGreenwichAngleterre,,,"",,"",observatoire royal de Greenwich (Angleterre),place,"",1882-11,event,https://rr0.org/time/1/8/8/2/index.html#1882-11
-"Au , on observe un objet lumineux qui fend l'espace, de la taille de la pleine Lune.","",sighting,1882$Chili,,,"",,"",Chili,place,"",1882,event,https://rr0.org/time/1/8/8/2/index.html
-"Le corps céleste jette son ombre sur le , ce qui provoque une obscurité totale qui passe d'ouest en est.","",sighting,1882$regionwi,,,"",,"",,place,"",1882,event,https://rr0.org/time/1/8/8/2/index.html
+"en en 17 Depuis l', observation de Walter Maunder.","",sighting,1882-11$observatoireRoyalDeGreenwichAngleterre,,,"",,"",observatoire royal de Greenwich (Angleterre),"",place,"",1882-11,event,https://rr0.org/time/1/8/8/2/index.html#1882-11
+"Au , on observe un objet lumineux qui fend l'espace, de la taille de la pleine Lune.","",sighting,1882$Chili,,,"",,"",Chili,"",place,"",1882,event,https://rr0.org/time/1/8/8/2/index.html
+"Le corps céleste jette son ombre sur le , ce qui provoque une obscurité totale qui passe d'ouest en est.","",sighting,1882$regionwi,,,"",,"",,"",place,"",1882,event,https://rr0.org/time/1/8/8/2/index.html

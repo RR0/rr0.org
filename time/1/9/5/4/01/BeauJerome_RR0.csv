@@ -1,8 +1,8 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type
-"le À l', un pompier voit un objet rond et lumineux descendre lentement. Il appelle la tour de contrôle pour faire son rapport. Quand il ressort de sa tour, l'objet s'est envolé.","",sighting,1954-01-04T21:00$aeroportDeMarignaneFrance,,,"",,"",aéroport de Marignane (France),place,""""","""",s1,"""",,Guieu,""""""Vallée, Jacques"""""","""",s2,"""",,cas n° 1",1954-01-04T21:00,event,https://rr0.org/time/1/9/5/4/01/index.html#1954-01-04T21:00
-Observation à.,"",sighting,1954-01$ArrasFrance,,,"",,"",Arras (France),place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
-Observation à.,"",sighting,1954-01$LunevilleFrance,,,"",,"",Lunéville (France),place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
-Observation à.,"",sighting,1954-01$ConstantineAlgerie,,,"",,"",Constantine (Algérie),place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
-Observation à.,"",sighting,1954-01$SetifAlgerie,,,"",,"",Sétif (Algérie),place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
-Observation à.,"",sighting,1954-01$OuledDjellalAlgerie,,,"",,"",Ouled Djellal (Algérie),place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
-"le Wilhelm Reich observe durant 15 minutes 2 lumières brillantes se déplacer dans la vallée, devant la montagne.","",sighting,1954-01-28T10:15$RangeleyMaine,,,"",,"",Rangeley (Maine),place,""""","""",s3,"""",,Cas Blue Book non résolu",1954-01-28T10:15,event,https://rr0.org/time/1/9/5/4/01/index.html#1954-01-28T10:15
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+"le À l', un pompier voit un objet rond et lumineux descendre lentement. Il appelle la tour de contrôle pour faire son rapport. Quand il ressort de sa tour, l'objet s'est envolé.","",sighting,1954-01-04T21:00$aeroportDeMarignaneFrance,,,"",,"",aéroport de Marignane (France),"",place,""""","""",s1,"""",,Guieu,""""""Vallée, Jacques"""""","""",s2,"""",,cas n° 1",1954-01-04T21:00,event,https://rr0.org/time/1/9/5/4/01/index.html#1954-01-04T21:00
+Observation à.,"",sighting,1954-01$ArrasFrance,,,"",,"",Arras (France),"",place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
+Observation à.,"",sighting,1954-01$LunevilleFrance,,,"",,"",Lunéville (France),"",place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
+Observation à.,"",sighting,1954-01$ConstantineAlgerie,,,"",,"",Constantine (Algérie),"",place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
+Observation à.,"",sighting,1954-01$SetifAlgerie,,,"",,"",Sétif (Algérie),"",place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
+Observation à.,"",sighting,1954-01$OuledDjellalAlgerie,,,"",,"",Ouled Djellal (Algérie),"",place,"",1954-01,event,https://rr0.org/time/1/9/5/4/01/index.html
+"le Wilhelm Reich observe durant 15 minutes 2 lumières brillantes se déplacer dans la vallée, devant la montagne.","",sighting,1954-01-28T10:15$RangeleyMaine,,,"",,"",Rangeley (Maine),"",place,""""","""",s3,"""",,Cas Blue Book non résolu",1954-01-28T10:15,event,https://rr0.org/time/1/9/5/4/01/index.html#1954-01-28T10:15

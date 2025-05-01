@@ -1,10 +1,24 @@
 {
-  "birthTime": "1915-06-13",
-  "deathTime": "1986-03-25",
+  "lastName": "Henderson",
+  "firstNames": [
+    "Oliver",
+    "Wendell"
+  ],
+  "surname": "Pappy",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1915-06-13"
+    },
+    {
+      "type": "death",
+      "time": "1986-03-25"
+    }
   ]
 }

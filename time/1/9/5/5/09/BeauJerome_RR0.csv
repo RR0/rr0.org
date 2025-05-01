@@ -1,5 +1,5 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type
-le Observation à.,"",sighting,1955-09-03$BellinghamWashington,,,"",,"",Bellingham (Washington),place,""""","""",s1,"""",,",1955-09-03,event,https://rr0.org/time/1/9/5/5/09/index.html#1955-09-03
-le Observation à.,"",sighting,1955-09-07$WashingtonDC,,,"",,"","Washington, D. C.",place,""""","""",s2,"""",,",1955-09-07,event,https://rr0.org/time/1/9/5/5/09/index.html#1955-09-07
-le Observation à.,"",sighting,1955-09-09$RockGardenTennessee,,,"",,"",Rock Garden (Tennessee),place,""""","""",s3,"""",,",1955-09-09,event,https://rr0.org/time/1/9/5/5/09/index.html#1955-09-09
-Observation de Jean-Gabriel Greslé à.,"",sighting,1955-09$CapSaintJacquesVietnam,,,"",,"",Cap Saint Jacques (Vietnam),place,"",1955-09,event,https://rr0.org/time/1/9/5/5/09/index.html
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+le Observation à.,"",sighting,1955-09-03$BellinghamWashington,,,"",,"",Bellingham (Washington),"",place,""""","""",s1,"""",,",1955-09-03,event,https://rr0.org/time/1/9/5/5/09/index.html#1955-09-03
+le Observation à.,"",sighting,1955-09-07$WashingtonDC,,,"",,"","Washington, D. C.","",place,""""","""",s2,"""",,",1955-09-07,event,https://rr0.org/time/1/9/5/5/09/index.html#1955-09-07
+le Observation à.,"",sighting,1955-09-09$RockGardenTennessee,,,"",,"",Rock Garden (Tennessee),"",place,""""","""",s3,"""",,",1955-09-09,event,https://rr0.org/time/1/9/5/5/09/index.html#1955-09-09
+Observation de Jean-Gabriel Greslé à.,"",sighting,1955-09$CapSaintJacquesVietnam,,,"",,"",Cap Saint Jacques (Vietnam),"",place,"",1955-09,event,https://rr0.org/time/1/9/5/5/09/index.html

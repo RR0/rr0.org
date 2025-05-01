@@ -1,2 +1,2 @@
-description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type,sources,time,type,url,place
-en le lundi 23 janvier ou le mardi 24 janvier À.,"",sighting,1645-01$BoisLeDuc,,,"",,"",Bois le Duc,place,"""""""""""""""M. Chladni's New Catalogue of Aerolites"""""""", Annals of Philosophy, New Series 12"""""","""",s1,"""",,93",1645-01,event,https://rr0.org/time/1/6/4/5/index.html#1645-01
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+en le lundi 23 janvier ou le mardi 24 janvier À.,"",sighting,1645-01$BoisLeDuc,,,"",,"",Bois le Duc,"",place,"""""""""""""""M. Chladni's New Catalogue of Aerolites"""""""", Annals of Philosophy, New Series 12"""""","""",s1,"""",,93",1645-01,event,https://rr0.org/time/1/6/4/5/index.html#1645-01

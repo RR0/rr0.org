@@ -19,7 +19,9 @@
       "title": "Lebat",
       "sources": [
         {
-          "place": "Bulletin des Postes et Télécommunications"
+          "publication": {
+            "publisher": "Bulletin des Postes et Télécommunications"
+          }
         }
       ]
     },

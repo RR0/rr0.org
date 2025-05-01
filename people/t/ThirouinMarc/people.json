@@ -1,10 +1,20 @@
 {
-  "birthTime": "1911",
-  "deathTime": "1972-07-22",
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1911",
+      "place": "Chartres (Eure-et-Loir)"
+    },
+    {
+      "type": "death",
+      "time": "1972-07-22",
+      "place": "Valence"
+    }
   ]
 }

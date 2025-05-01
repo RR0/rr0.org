@@ -1,8 +1,4 @@
 {
-  "force": "true",
-  "contents": [
-    "croyance/**/*.html"
-  ],
   "reindex": [
     "search",
     "sources"

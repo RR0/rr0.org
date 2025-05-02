@@ -2,5 +2,12 @@
   "occupations": ["ufologist", "writer"],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1950-08-02",
+      "place": "Édimbourg (Écosse)"
+    }
   ]
 }

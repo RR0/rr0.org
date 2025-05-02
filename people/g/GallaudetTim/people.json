@@ -1,0 +1,22 @@
+{
+  "lastName": "Gallaudet",
+  "firstNames": [
+    "Timothy"
+  ],
+  "surname": "Tim",
+  "occupations": [
+    "military",
+    "ufologist",
+    "oceanographer"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1967-03-18",
+      "place": "Hollywood, Los Angeles (Californie)"
+    }
+  ]
+}

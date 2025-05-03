@@ -1,9 +1,25 @@
 {
-  "title": "Fontès, Olavo T.",
-  "birthTime": "1924-06-09",
-  "deathTime": "1968-05-09",
+  "lastName": "Fontès",
+  "firstNames": [
+    "Olavo",
+    "Teixeira"
+  ],
   "occupations": ["ufologist", "journalist"],
   "countries": [
     "br"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924-06-09",
+      "place": "Bahia (Brésil)"
+    },
+    {
+      "type": "death",
+      "time": "1968-05-09",
+      "notes": [
+        "d'un cancer galopant"
+      ]
+    }
   ]
 }

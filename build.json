@@ -1,4 +1,8 @@
 {
+  "force": "true",
+  "contents": [
+    "people/f/FordGerald/index.html"
+  ],
   "reindex": [
     "search",
     "sources"

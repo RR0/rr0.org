@@ -1,7 +1,7 @@
 {
   "force": "true",
   "contents": [
-    "people/f/FordGerald/index.html"
+    "org/us/nasa/**/*.html"
   ],
   "reindex": [
     "search",

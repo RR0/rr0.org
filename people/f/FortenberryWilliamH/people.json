@@ -1,8 +1,28 @@
 {
+  "lastName": "Fortenberry",
+  "firstNames": [
+    "William",
+    "H."
+  ],
+  "surname": "Bill",
   "occupations": [
     "pilot"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "death",
+      "time": "1957-11-09",
+      "notes": [
+        "dans le crash d'un Boeing B-377 <i lang=\"en\">Stratocruiser</i> dans l'Océan\n  Pacifique, comme tous les gens à bord."
+      ],
+      "sources": [
+        {
+          "url": "https://www.smithsonianmag.com/air-space-magazine/the-mystery-of-the-lost-clipper-5467157/"
+        }
+      ]
+    }
   ]
 }

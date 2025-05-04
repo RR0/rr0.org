@@ -7,7 +7,7 @@ footer {
   text-align: right;
 
   iframe {
-    display: inline
+    display: inline;
   }
 
   img {
@@ -16,6 +16,13 @@ footer {
     height: var(--height);
     vertical-align: middle;
     padding: 0.5em;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0.6;
+
+    &:hover {
+      transform: scale(1.5);
+      opacity: 1;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
-"en le vendredi 9 avril à 09:30 3 cercles dans le ciel, un fort grand de D 100°, centre près du zénith, un 4e beaucoup plus petit.","",sighting,1666-04$,,""""","""",s1,"""",,Journal des savans",1666-04,event,https://rr0.org/time/1/6/6/6/index.html#1666-04
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
+"vendredi 9 avril à 09:30 3 cercles dans le ciel, un fort grand de D 100°, centre près du zénith, un 4e beaucoup plus petit.","",sighting,1666-04$,,""""","""",s1,"""",,Journal des savans",1666-04,event,https://rr0.org/time/1/6/6/6/index.html#1666-04
 Peste,"",sighting,1666$,,"",1666,event,https://rr0.org/time/1/6/6/6/index.html
 Grand incendie de.,"",sighting,1666$Londres,,,"",,"",Londres,"",place,"",1666,event,https://rr0.org/time/1/6/6/6/index.html

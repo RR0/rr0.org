@@ -1,6 +1,9 @@
 {
-  "birthTime": "1911-02-06",
-  "deathTime": "2004-06-05",
+  "lastName": "Reagan",
+  "firstNames": [
+    "Ronald",
+    "Wilson"
+  ],
   "occupations": [
     "actor",
     "politician",
@@ -8,5 +11,20 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1911-02-06",
+      "place": "Tampico (Illinois)"
+    },
+    {
+      "type": "death",
+      "time": "2004-06-05",
+      "place": "Californie",
+      "notes": [
+        "chez lui"
+      ]
+    }
   ]
 }

@@ -1,8 +1,26 @@
 {
-  "birthTime": "1874-08-06",
-  "deathTime": "1932-05-03",
-  "occupations": ["ufologist", "writer"],
+  "lastName": "Fort",
+  "firstNames": [
+    "Charles",
+    "Hoy"
+  ],
+  "occupations": [
+    "ufologist",
+    "writer"
+  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1874-08-06",
+      "place": "Albany (États-Unis)"
+    },
+    {
+      "type": "death",
+      "time": "1932-05-03",
+      "place": "Bronx (New York)"
+    }
   ]
 }

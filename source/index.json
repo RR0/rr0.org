@@ -2144,5 +2144,61 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://www.smithsonianmag.com/air-space-magazine/the-mystery-of-the-lost-clipper-5467157/": {
+    "title": "The Mystery of the Lost Clipper | Smithsonian",
+    "url": "http://web.archive.org/web/20241203121206/https://www.smithsonianmag.com/air-space-magazine/the-mystery-of-the-lost-clipper-5467157/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "www.smithsonianmag.com",
+      "time": {
+        "year": {
+          "value": 2024,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 12,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 3,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 12,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -60
+        }
+      }
+    }
   }
 }

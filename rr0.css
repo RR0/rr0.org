@@ -936,7 +936,6 @@ a:hover {
   #main-header h1 {
     color: lightgrey;
     text-shadow: none;
-    view-transition-name: title;
   }
 
   .place, .plac {

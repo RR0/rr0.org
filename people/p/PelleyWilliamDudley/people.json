@@ -1,6 +1,9 @@
 {
-  "birthTime": "1890-03-12",
-  "deathTime": "1965-06-30",
+  "lastName": "Pelley",
+  "firstNames": [
+    "William",
+    "Dudley"
+  ],
   "occupations": [
     "contactee",
     "journalist",
@@ -8,5 +11,17 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1890-03-12",
+      "place": "Lynn (Massachusetts)"
+    },
+    {
+      "type": "death",
+      "time": "1965-06-30",
+      "place": "Noblesville (Indiana)"
+    }
   ]
 }

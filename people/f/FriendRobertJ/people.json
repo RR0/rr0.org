@@ -1,10 +1,32 @@
 {
-  "birthTime": "1920-02-29",
-  "deathTime": "2019-06-19",
+  "lastName": "Friend",
+  "firstNames": [
+    "Robert",
+    "J."
+  ],
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1920-02-29",
+      "place": "Caroline du Sud"
+    },
+    {
+      "type": "death",
+      "time": "2019-06-19",
+      "notes": [
+        "d'un sepsis"
+      ],
+      "sources": [
+        {
+          "url": "https://www.nytimes.com/2019/06/26/obituaries/robert-j-friend-dead.html"
+        }
+      ]
+    }
   ]
 }

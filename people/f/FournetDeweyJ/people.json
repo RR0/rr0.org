@@ -1,11 +1,27 @@
 {
-  "birthTime": "1921-11-29",
-  "deathTime": "2000-05-04",
+  "lastName": "Fournet",
+  "firstNames": [
+    "Dewey",
+    "J"
+  ],
+  "qualifier": "Jr",
   "occupations": [
     "military",
     "ufologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1921-11-29",
+      "place": "Louisiane"
+    },
+    {
+      "type": "death",
+      "time": "2000-05-04",
+      "place": "Caroline du Nord"
+    }
   ]
 }

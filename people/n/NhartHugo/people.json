@@ -1,6 +1,11 @@
 {
-  "birthTime": "1944",
-  "deathTime": "2022-08-23",
+  "lastName": "Varaez",
+  "firstNames": [
+    "Alain",
+    "Hubert",
+    "Marcel"
+  ],
+  "url": "http://editionsachene.free.fr",
   "occupations": [
     "writer",
     "musician",
@@ -8,9 +13,32 @@
     "ufologist"
   ],
   "pseudonyms": [
-    "Varaez, Alain"
+    "Hugo Nhart"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1944",
+      "place": "Bordeaux"
+    },
+    {
+      "type": "death",
+      "time": "2022-08-23",
+      "place": "Colombes (Hauts-de-Seine)",
+      "sources": [
+        {
+          "url": "https://www.libramemoria.com/defunts/varaez-alain/db56c3a3557e493b8225558bc4c6aa2e"
+        },
+        {
+          "url": "https://www.groupe-roc-eclerc.com/avis-de-deces/ile-de-france/hauts-de-seine-92/colombes/varaez-alain-2022-08-23-57APB0XYqa9qmDLbBlNadc/"
+        },
+        {
+          "name": "Acte numéro 417"
+        }
+      ]
+    }
   ]
 }

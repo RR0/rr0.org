@@ -7,10 +7,6 @@ a {
   text-decoration: none;
   padding: .2rem .3rem;
   margin: -.2rem -.3rem;
-
-  &:active {
-    view-transition-name: title;
-  }
 }
 
 @media (prefers-color-scheme: dark) {

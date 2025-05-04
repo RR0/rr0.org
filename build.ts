@@ -104,7 +104,8 @@ const copies = copiesArg ? copiesArg : [
   "footer.css", "images/facebook.svg", "images/instagram.svg", "images/medium.svg", "images/youtube.svg", "images/X_logo.svg", "images/github.svg", "images/email.svg", "images/tiktok.svg", "images/bluesky.svg",
   "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
-  "croyance/divin/theisme/mono/livre/islam/coran/index.js"
+  "croyance/divin/theisme/mono/livre/islam/coran/index.js",
+  "nav.js"
 ]
 const outDir = "out"
 const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY

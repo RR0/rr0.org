@@ -1,12 +1,26 @@
 {
-  "title": "LaPaz, Lincoln",
-  "birthTime": "1897-02-12",
-  "deathTime": "1985-10-19",
+  "lastName": "La Paz",
+  "firstNames": "Lincoln",
   "occupations": [
     "astronomer",
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1897-02-12",
+      "place": "Wichita (Kansas)"
+    },
+    {
+      "type": "death",
+      "time": "1985-10-19",
+      "place": "Albuquerque (Nouveau-Mexique)",
+      "notes": [
+        "de cause naturelle"
+      ]
+    }
   ]
 }

@@ -2200,5 +2200,79 @@
         }
       }
     }
+  },
+  "https://www.libramemoria.com/defunts/varaez-alain/db56c3a3557e493b8225558bc4c6aa2e": {
+    "title": "Avis de décès de Monsieur Alain VARAEZ paru le 23/08/2022 - département Hauts-de-Seine - Libra Memoria",
+    "url": "https://www.libramemoria.com/defunts/varaez-alain/db56c3a3557e493b8225558bc4c6aa2e",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.groupe-roc-eclerc.com/avis-de-deces/ile-de-france/hauts-de-seine-92/colombes/varaez-alain-2022-08-23-57APB0XYqa9qmDLbBlNadc/": {
+    "title": "Derniers avis de décès de Colombes",
+    "url": "https://www.groupe-roc-eclerc.com/avis-de-deces/ile-de-france/hauts-de-seine-92/colombes/varaez-alain-2022-08-23-57APB0XYqa9qmDLbBlNadc/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.nytimes.com/2019/06/26/obituaries/robert-j-friend-dead.html": {
+    "title": "Robert J. Friend, Tuskegee Pilot Who Led U.F.O. Project, Is Dead at 99 - The New York Times",
+    "url": "http://web.archive.org/web/20250212085900/https://www.nytimes.com/2019/06/26/obituaries/robert-j-friend-dead.html",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "www.nytimes.com",
+      "time": {
+        "year": {
+          "value": 2025,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 2,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 12,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 8,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 0,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 0,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -60
+        }
+      }
+    }
   }
 }

@@ -1,8 +1,24 @@
 {
-  "birthTime": "1902-03-02",
-  "deathTime": "1974-03-26",
+  "lastName": "Condon",
+  "firstNames": [
+    "Edward",
+    "Uhler"
+  ],
+  "surname": "Ed",
   "occupations": ["physicist"],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1902-03-02",
+      "place": "Alamogordo (Nouveau-Mexique)"
+    },
+    {
+      "type": "death",
+      "time": "1974-03-26",
+      "place": "Boulder (Colorado)"
+    }
   ]
 }

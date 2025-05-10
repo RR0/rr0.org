@@ -1,9 +1,20 @@
 {
-  "birthTime": "1923",
+  "lastName": "Saunders",
+  "firstNames": [
+    "David",
+    "Robertson"
+  ],
+  "surname": "Dave",
   "occupations": [
     "psychologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1923"
+    }
   ]
 }

@@ -1,9 +1,19 @@
 {
-  "birthTime": "1912",
+  "lastName": "Levine",
+  "firstNames": [
+    "Norman E."
+  ],
+  "surname": "Norm",
   "occupations": [
     "mathematician"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1912"
+    }
   ]
 }

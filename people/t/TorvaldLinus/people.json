@@ -1,9 +1,18 @@
 {
-  "birthTime": "1969-12-28",
+  "lastName": "Torvald",
+  "firstNames": [
+    "Linus"
+  ],
   "occupations": [
     "softwareEngineer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1969-12-28"
+    }
   ]
 }

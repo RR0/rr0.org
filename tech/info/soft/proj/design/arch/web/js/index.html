@@ -679,11 +679,11 @@
   </section>
   <section>
     <h3>Faire communiquer une applet Java avec JavaScript</h3>
-    <p> La communication entre JavaScript et une applet <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> est
+    <p>La communication entre JavaScript et une applet <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> est
       possible grâce à <i>LiveConnect,</i> qui est automatiquement fourni à partir de <a
         href="/org/us/company/netscape/Navigator.html">Netscape Navigator</a> 3.0 et activé par la double activation de
       <a href="/tech/info/soft/proj/impl/lang/oo">Java</a> et JavaScript dans la configuration du navigateur.</p>
-    <p> Une applet ne peut accéder à JavaScript et les objets que si elle importe le package
+    <p>Une applet ne peut accéder à JavaScript et les objets que si elle importe le package
       <code>netscape.javascript</code> qui définit les classes <code>JSObject</code> et <code>JSException</code> :</p>
     <blockquote><code>import netscape.javascript.*; </code></blockquote>
     <ul>
@@ -691,18 +691,18 @@
         <code>Program\java\classes</code> du navigateur. Ce répertoire doit donc être ajouté au <code>CLASSPATH</code>
         lors de la compilation de l'applet) </li>
     </ul>
-    <p> De l'autre côté, le document HTML intégrant cette applet doit autoriser celle-ci à communiquer avec JavaScript
+    <p>De l'autre côté, le document HTML intégrant cette applet doit autoriser celle-ci à communiquer avec JavaScript
       grâce au paramètre <code>mayscript</code> du tag <code>applet</code>. Par exemple :
     </p>
     <pre><code>
       <applet code="monApplet.class" height="100" mayscript width="100"></applet>
     </code></pre>
-    <p> La classe Java <code>JSObject</code> permet alors d'accéder aux objets JavaScript de la page, à commencer par
+    <p>La classe Java <code>JSObject</code> permet alors d'accéder aux objets JavaScript de la page, à commencer par
       l'objet window, récupérable à l'aide de la fonction <code>getWindow()</code> :</p>
     <pre><code>
       JSObject win = JSObject.getWindow (this);
     </code></pre>
-    <p> Tout sous-objet ou propriété peut ensuite être accédé via la fonction <code>getMember(<i>nomObjet</i>)</code>.
+    <p>Tout sous-objet ou propriété peut ensuite être accédé via la fonction <code>getMember(<i>nomObjet</i>)</code>.
       Par exemple :</p>
     <pre><code>
       JSObject doc = (JSObject) win.getMember (<span class="codeString">"document"</span>);
@@ -710,7 +710,7 @@
       JSObject caseACocher = (JSObject) formulaire.getMember (<span class="codeString">"testCheck"</span>);
       Boolean estCochee = (Boolean) caseACocher.getMember (<span class="codeString">"checked"</span>);
     </code></pre>
-    <p> Les méthodes JavaScript, qu'elles soient utilisateur ou système, peuvent alors être appelées de deux manières
+    <p>Les méthodes JavaScript, qu'elles soient utilisateur ou système, peuvent alors être appelées de deux manières
       différentes. Soit via la méthode <code>call()</code> de la classe <code>JSObject</code>, en passant en paramètres
       le nom de la méthode et un tableau de ses arguments (ne pouvant pas être <code>null</code> mais pouvant contenir
       une chaîne vide) :</p>
@@ -740,18 +740,18 @@
   <section>
     <h3>Faire communiquer JavaScript avec une applet Java
     </h3>
-    <p> La communication entre JavaScript et une applet Java est possible grâce à <i>LiveConnect,</i> qui est
+    <p>La communication entre JavaScript et une applet Java est possible grâce à <i>LiveConnect,</i> qui est
       automatiquement fournit à partir de Netscape 3.0 et activé par la double activation de Java et JavaScript dans la
       configuration du navigateur.</p>
-    <p> Les packages et classes Java font alors partie pour JavaScript de l'objet <code>Packages</code>. On peut alors
+    <p>Les packages et classes Java font alors partie pour JavaScript de l'objet <code>Packages</code>. On peut alors
       appeler la méthode d'une classe Java selon la syntaxe suivante :</p>
     <pre><code>
         Packages.nomPackage.nomClasse.nomMéthode(paramètres)
     </code></pre>
-    <p> (A noter que les alias <code>java</code>, <code>sun</code><code> </code>et <code>netscape</code><code> </code>désignent
+    <p>(A noter que les alias <code>java</code>, <code>sun</code><code> </code>et <code>netscape</code><code> </code>désignent
       respectivement <code>Packages.java</code>, <code>Packages.sun</code> et <code>Packages.netscape</code>).
     </p>
-    <p> Les applets Java présentes dans un document sont alors référençables à partir de l'objet document, selon les
+    <p>Les applets Java présentes dans un document sont alors référençables à partir de l'objet document, selon les
       syntaxes suivantes, au choix :</p>
     <ul>
       <li><code><strong>document</strong>.<i>nomApplet</i></code>
@@ -780,7 +780,7 @@
   </section>
   <section>
     <h3>Ecrire un cookie</h3>
-    <p> Un cookie est une chaîne de caractères de la forme :</p>
+    <p>Un cookie est une chaîne de caractères de la forme :</p>
     <pre><code>
       nom=valeur;expires=dateExpiration;
     </code></pre>
@@ -788,7 +788,7 @@
       <li>Stockée dans le document cookies.txt chez l'utilisateur et accessible depuis JavaScript via la chaîne <code>document.cookie</code>.
       </li>
     </ul>
-    <p> L'écriture d'un cookie peut s'effectuer par...</p>
+    <p>L'écriture d'un cookie peut s'effectuer par...</p>
   </section>
 </section>
 <section>

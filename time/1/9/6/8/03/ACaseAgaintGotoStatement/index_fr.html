@@ -34,12 +34,12 @@
   introduced by C.A.R.Hoare (case[i] of (A1, A2,.....,An)) or conditional expressions as introduced by J. McCarthy (B1 →
   E1, B2 → E2,....., Bn → En), the fact remains that the progress of the process remains characterized by a single
   textual index.</p>
-<p> As soon as we include in our language procedures we must admit that a single textual index is no longer sufficient:
+<p>As soon as we include in our language procedures we must admit that a single textual index is no longer sufficient:
   in the case that a textual index points to the interior of a procedure body the dynamic progress is only characterized
   when we also give to which call of the procedure we refer. With the inclusion of procedures we can characterize the
   progress of the process via a sequence of textual indices, the length of this sequence being equal to the dynamic
   depth of procedure calling.</p>
-<p> Let us now consider repetition clauses (like, while B repeat A or repeat A until B). Logically speaking, such
+<p>Let us now consider repetition clauses (like, while B repeat A or repeat A until B). Logically speaking, such
   clauses are now superfluous, because we can express repetition with the aid of recursive procedures. For reasons of
   realism I don't wish to exclude them: on the one hand repetition clauses can be implemented quite comfortably with
   present day finite equipment, on the other hand the reasoning pattern known as “induction” makes us well equipped to
@@ -65,12 +65,12 @@
   The difficulty is that such a coordinate, although unique, is utterly unhelpful: in such a coordinate system it
   becomes an extremely complicated affair to define all those points of progress where, say, n equals the number of
   persons in the room minus one!</p>
-<p> The go to statement as it stands is just too primitive, it is too much an invitation to make a mess of one's
+<p>The go to statement as it stands is just too primitive, it is too much an invitation to make a mess of one's
   program. One can regard and appreciate the clauses considered as bridling its use. I do not claim that the clauses
   mentioned are exhaustive in the sense that they will satisfy all needs; but whatever clauses are suggested (e.g.
   abortion clauses) they should satisfy the requirement that a programmer independent coordinate system can be
   maintained to describe the process in a helpful and manageable way.</p>
-<p> It is hard to end this article with a fair acknowledgement: am I to judge by whom my thinking has been influenced?
+<p>It is hard to end this article with a fair acknowledgement: am I to judge by whom my thinking has been influenced?
   It is fairly obvious that I am not uninfluenced by Peter Landin and Christopher Strachey, and that I do not regret
   their influence upon me. Finally I should like to record (as I remember it quite distinctly) how Heinz Zemanek at the
   pre-ALGOL meeting in early 1959 in Copenhagen quite explicitly expressed his doubts whether the go to statement should
@@ -82,7 +82,7 @@
   direction in motivating the case construction: “Like the conditional, it mirrors the dynamic structure of a program
   more clearly than go to statements and switches, and it eliminates the need for introducing a large number of labels
   in the program.”</p>
-<p> In [2] Guiseppe [sic] Jacopini seems to have proved the (logical) superfluousness of the go to statement. The
+<p>In [2] Guiseppe [sic] Jacopini seems to have proved the (logical) superfluousness of the go to statement. The
   exercise to translate an arbitrary flow diagram more or less mechanically into a jumpless one, however, is not to be
   recommended. Then the resulting flow diagram cannot be expected to be more transparent than the original one. </p>
 <p>REFERENCES: Wirth, Niklaus, and Hoare, C.A.R. A contribution to the development of ALGOL. Comm. ACM 9 (June 1966),

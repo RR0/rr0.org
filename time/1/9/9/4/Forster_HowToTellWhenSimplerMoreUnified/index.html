@@ -28,19 +28,19 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   <li> Appendix B: A Proof of a Special Case of Akaike&#146;s Theorem</li>
 </ol>
 <h2> Introduction</h2>
-<p> Curve fitting is a two-step process. First one selects a family of curves (or the form that the fitted curve must
+<p>Curve fitting is a two-step process. First one selects a family of curves (or the form that the fitted curve must
   take). Then one finds the curve in that family (or the curve of the required form) that most accurately fits the data.
   These two steps are universally supposed to answer to different standards. The second step requires some measure of
   goodness-of-fit. The first is the context in which simplicity is said to play a role. Intrinsic to this two-step
   picture is the idea that these different standards can come into conflict. Maximizing simplicity usually requires
   sacrifice in goodness-of-fit. And perfect goodness-of-fit can usually be achieved only by selecting a complex
   curve.</p>
-<p> This view of the curve fitting problem engenders two puzzles. The first concerns the nature and justification of
+<p>This view of the curve fitting problem engenders two puzzles. The first concerns the nature and justification of
   simplicity. What makes one curve simpler than another and why should the simplicity of a curve have any relevance to
   our opinions about which curves are true? The second concerns the relation of simplicity and goodness-of-fit. When
   these two desiderata conflict, how is a trade-off to be effected? A host of serious and inventive philosophical
   proposals notwithstanding, both these questions remain unanswered.</p>
-<p> If it could be shown that a single criterion for selecting a curve gives due weight to both simplicity and
+<p>If it could be shown that a single criterion for selecting a curve gives due weight to both simplicity and
   goodness-of-fit, then the two problems mentioned above for traditional analyses of the curve fitting problem would
   fall into place. It would become clear why simplicity matters (and how it should be measured). In addition, simplicity
   and goodness-of-fit would be rendered commensurable by representing each in a common currency. In what follows we
@@ -48,7 +48,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   treatment of the problem, in which simplicity and goodness-of-fit are both shown to contribute to a curve&#146;s
   expected accuracy in making predictions.1</p>
 <h2> Akaike wihtout tears</h2>
-<p> In this section, we present the basic concepts that are needed to formulate the curve-fitting problem and to solve
+<p>In this section, we present the basic concepts that are needed to formulate the curve-fitting problem and to solve
   it. To begin with, we need to describe the kinds of hypotheses that curves represent and the relationship of those
   curves to the data we have available. A &#145;deterministic&#146; curve is a line in the X/Y plane; it represents a
   function, which maps values of X (the independent variable) onto unique values of Y (the dependent variable).2 For
@@ -59,19 +59,19 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   Wallace and Freeman [1992]. While there are criteria in the literature that are quantitatively different from Akaike&#146;s,
   there is a measure of agreement in the way they define simplicity and goodness-of-fit. We have focused on Akaike&#146;s
   seminal work because he motivates his criterion in a general and perspicuous manner.</p>
-<p> 2 The idea that there is just one independent variable is a simplifying assumption adopted for ease of exposition.
+<p>2 The idea that there is just one independent variable is a simplifying assumption adopted for ease of exposition.
   The results we will describe generalize to any number of independent<br> variables.</p>
-<p> be obtained by fixing the values of the parameters &alpha;0 and &alpha;1 in the following<br> equation:</p>
-<p> Y = &alpha;0 + &alpha;1 X .</p>
-<p> The two curves in Figure 1 are equally simple, we might say, because each is a straight line and each is obtained
+<p>be obtained by fixing the values of the parameters &alpha;0 and &alpha;1 in the following<br> equation:</p>
+<p>Y = &alpha;0 + &alpha;1 X .</p>
+<p>The two curves in Figure 1 are equally simple, we might say, because each is a straight line and each is obtained
   from a functional form in which there are just two adjustable parameters. These two curves belong to a family of
   curves? namely, the set of all straight lines. We will be talking about both specific curves and families of curves in
   what follows, so it will be important to keep the distinction between them in mind. In fact, it will turn out that
   there is no need to define the simplicity of a specific curve; all that is needed is the notion of the simplicity of a
   family of curves, and this Akaike&#146;s approach provides.</p>
-<p> Observed value of X<br> Curve 2&#146;s prediction of Y<br> X<br> Y<br> Curve 2<br> Curve 1<br> The observed value of
+<p>Observed value of X<br> Curve 2&#146;s prediction of Y<br> X<br> Y<br> Curve 2<br> Curve 1<br> The observed value of
   Y<br> Curve 1&#146;s prediction of Y<br> FIGURE 1</p>
-<p> Suppose the true specific curve determined the outcomes of the observations we make. Then, if Curve 1 were true, the
+<p>Suppose the true specific curve determined the outcomes of the observations we make. Then, if Curve 1 were true, the
   set of data points we obtain would have to fall on a straight line (i.e., on the straight line depicted by Curve 1
   itself). But we will suppose that the observation process involves error. Even if Curve 1 were true, it is nonetheless
   quite possible that the data we obtain will not fall exactly on that curve. It may be impossible to say when any
@@ -80,16 +80,16 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   us how probable it is that the Y-value we observe for a given X-value will be &#145;close&#146; to the curve. The most
   probable outcome is to obtain a Y-value that falls exactly on the true curve. Locations that are further off the curve
   have lower probabilities (symmetrically above and below) of being what we observe.</p>
-<p> To make this idea concrete, suppose that we are interested in plotting the location of a planet as it moves across
+<p>To make this idea concrete, suppose that we are interested in plotting the location of a planet as it moves across
   the sky. In this case, the X-axis represents time and the Y-axis represents location. The true curve is the actual,
   unique trajectory of the planet. But our observation of the planet&#146;s motion is subject to error. Even if Curve 1
   in Figure 1 describes the planet&#146;s true trajectory, it nonetheless is possible that we should obtain data that
   fail to fall exactly on that<br> curve.</p>
-<p> So there are two factors that influence the observations we make. There is the planet&#146;s actual trajectory; and
+<p>So there are two factors that influence the observations we make. There is the planet&#146;s actual trajectory; and
   there is the process of observation, which is subject to error. If the planet&#146;s trajectory is a straight line, we
   can combine these two influences into a single expression:</p>
-<p> (LIN) Y = &alpha;0 + &alpha;1 X + &sigma; U.</p>
-<p> The last addend represents the influence of error. Here, of course, Y doesn&#146;t represent the planet&#146;s
+<p>(LIN) Y = &alpha;0 + &alpha;1 X + &sigma; U.</p>
+<p>The last addend represents the influence of error. Here, of course, Y doesn&#146;t represent the planet&#146;s
   actual location, but represents its apparent location.3<br> Now consider the data points depicted in Figure 1. If
   Curve 1 were true, it is possible that we should obtain the data before us. But the same is true of Curve 2; if it
   were true, it also could have generated the data at hand. Although this is a similarity between the two curves, there
@@ -110,9 +110,9 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   interpretation, if one wishes to represent the idea that nature itself is stochastic. In that case, Y would represent
   the planet&#146;s &#145;mean&#146; position. This difference in interpretation will not affect our subsequent
   discussion.</p>
-<p> 4 When random variables are continuous, the likelihood is defined in terms of probability densities rather than
+<p>4 When random variables are continuous, the likelihood is defined in terms of probability densities rather than
   probabilities. A lower case p is a probability density, while the upper case<br> P is reserved for probabilities.</p>
-<p> 5 The SOS value for a curve can&#146;t go down as the data set is enlarged; it would stay the same, if, improbably
+<p>5 The SOS value for a curve can&#146;t go down as the data set is enlarged; it would stay the same, if, improbably
   enough, the new data points fell exactly on the curve. Also note that a curve&#146;s likelihood will decline as the
   data set is enlarged, even if the new points fall exactly on the curve.</p>
 <p>passes exactly through those data points. The practice of science is to not do this. Even though a hypothesis with
@@ -137,7 +137,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   not tell us which curve we should regard as true. What we would like is a method for separating the &#145;trends&#146;
   in the data from the random deviations from those trends generated by error. A solution to the curve fitting problem
   will provide a method of this sort.</p>
-<p> X<br> Y<br> H<br> FIGURE 2</p>
+<p>X<br> Y<br> H<br> FIGURE 2</p>
 <p>To explain Akaike&#146;s proposal, we need to introduce a precise definition of how successful a curve is in
   identifying the trend behind the data. In addition to talking about a curve&#146;s distance from a particular data
   set, we need a way to measure a curve&#146;s distance from the true curve. A constraint on this new concept is already
@@ -163,10 +163,10 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   idea: Let&#146;s think of two data sets, D1 and D2, each generated by the true curve T. First, we find the specific
   curve within the family that fits D1 best. Then we compute the SOS of that curve relative to the second data set D2.
   Imagine carrying out this procedure</p>
-<p> 6 Statisticians mark this distinction by using the term &#145;expected value&#146; rather than &#145;average value.&#146;
+<p>6 Statisticians mark this distinction by using the term &#145;expected value&#146; rather than &#145;average value.&#146;
   We have chosen not to do this because the psychological connotations of the word &#145;expected&#146; may mislead some
   readers.</p>
-<p> 7 The X-arrays for the predicted data do not have to be the same as the X-array for the actual data, but both must
+<p>7 The X-arrays for the predicted data do not have to be the same as the X-array for the actual data, but both must
   be generated by the same stochastic process.</p>
 <p>again and again for different pairs of data sets. The average SOS obtained in this way is the family&#146;s distance
   from the truth:<br> Distance from the true curve (T) of family F = df<br> Average[SOS of L1(F), relative to data set
@@ -189,7 +189,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   So if (LIN) is true, so is (PAR) (but not conversely). This may lead one to 8 The definition of distance from the
   truth of a specific curve C is a special case of the definition for a family of curves F. A family is a set of curves;
   when a family contains just one curve, its best fitting member is just that curve itself.</p>
-<p> 9 In the kinds of example we consider, there will be a unique curve in a family that fits the data best when the
+<p>9 In the kinds of example we consider, there will be a unique curve in a family that fits the data best when the
   number of data points exceeds the number of adjustable parameters.</p>
 <p>10 A family can be literally true (by including the true curve) and still have a non-zero distance from the truth
   because other curves in the family (including L(F)) will be closer than the true curve to the actual data.</p>
@@ -219,11 +219,11 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   because of factor (a), but not if its decline is largely due to (b). If only we could correct the SOS value for
   overfitting, then the corrected SOS value would be an unbiased indication of what we are interested in?viz. the
   distance from the true curve.</p>
-<p> 11 This is the same overfitting problem that plagues general purpose learning devices like neural networks. Moody
+<p>11 This is the same overfitting problem that plagues general purpose learning devices like neural networks. Moody
   [1992] and Murata et al. [1992] are working on generalizing the Akaike<br> framework to apply to artificial neural
   networks. See Forster [1992b] for further details. It is interesting that there is such a fundamental connection
   between neural learning and the philosophy of science (Churchland [1989]).</p>
-<p> At this point, we will simply state Akaike&#146;s theorem, without attempting to work through the mathematical
+<p>At this point, we will simply state Akaike&#146;s theorem, without attempting to work through the mathematical
   argument that establishes its correctness. (See the Appendix A for a non-technical explanation of the assumptions
   needed, and Appendix B for the proof of the theorem in a special case. The most thorough, and accessible, technical
   treatment is found in Sakamoto et al.[1986].) Akaike [1973] discovered a way of estimating the size of the overfitting
@@ -247,7 +247,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   true value of the quantity being estimated. Note that an unbiased estimator can have a wide or narrow variance, which
   measures how much the estimate &#145;bounces around&#146; on average. Unbiasedness is only one desideratum for &#145;good&#146;
   estimators.</p>
-<p> 13 In our running example, (LIN) contains two adjustable parameters and (PAR) contains three.<br> The number of
+<p>13 In our running example, (LIN) contains two adjustable parameters and (PAR) contains three.<br> The number of
   adjustable parameters is not a merely linguistic feature of the way a family is represented. For example, Y = &alpha;
   + &beta; X + &gamma; X is one way of representing (LIN), but k is still 2, because there is a reparameterization (viz.
   &alpha;&prime; = &alpha;, &beta; &prime; = (&beta; + &gamma;), and &gamma; &prime; = (&beta; &minus; &gamma;)) such
@@ -274,15 +274,15 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   behave as randomly as if the world were indeterministic. From an epistemological point of view, this is all that
   matters. Forster [1988b] and Harper [1989] examine the role of this third kind of error (arising from the action of
   other variables) in the &#145;exact&#146; science of astronomy.</p>
-<p> 15 This average is computed as follows: Take a data set D1 generated by the true curve T, and note the predictive
+<p>15 This average is computed as follows: Take a data set D1 generated by the true curve T, and note the predictive
   accuracy of the best curve L1(F) in F relative to D1. Imagine that this procedure is repeated with new data sets D2,
   D3, ..., each time noting the predictive values of<br> the curves L2(F), L3(F), ... Now take the average of all these
   values.</p>
-<p> 16 The factor (1/N) arises from the fact that we prefer to define accuracy as the average per datum log-likelihood,
+<p>16 The factor (1/N) arises from the fact that we prefer to define accuracy as the average per datum log-likelihood,
   so that the accuracy of a hypothesis does not change when we consider the prediction of data sets of different
   sizes.</p>
-<p> 17 When &sigma;2 is treated as unknown, a curve (by itself) no longer confers a probability on the data.</p>
-<p> Literally speaking, a curve is a family of probability distributions?one for each numerical value of &sigma;2. From
+<p>17 When &sigma;2 is treated as unknown, a curve (by itself) no longer confers a probability on the data.</p>
+<p>Literally speaking, a curve is a family of probability distributions?one for each numerical value of &sigma;2. From
   now on we will understand a &#145;curve&#146; to be associated with some specific numerical value of &sigma;2. Also
   note that Akaike&#146;s estimate of predictive accuracy of a family of&#145;curves&#146; in which &sigma;2 is a free
   parameter is related to the least SOS value for the family by a different formula (Sakamoto et al. [1986], p.170):<br>
@@ -299,7 +299,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   quantity should be traded off against the other. We emphasize that Akaike&#146;s theorem solves the curve-fitting
   problem without attributing simplicity to specific curves; the quantity k, in the first instance, is a property of
   families.18</p>
-<p> A special case of Akaike&#146;s result is worth considering. Suppose one has a set of data that falls fairly evenly
+<p>A special case of Akaike&#146;s result is worth considering. Suppose one has a set of data that falls fairly evenly
   around a straight line. In this case the best fitting straight line will be very close to the best fitting parabola.
   So L(LIN) and L(PAR) will have almost the same SOS values. In this circumstance, Akaike&#146;s theorem says that the
   family with the smaller number of adjustable parameters is the one we should estimate to be closer to the truth. A
@@ -308,7 +308,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   make sense to prefer the more complex family. A slight improvement in goodness-of-fit will not be enough to justify
   the move to a more complex family. The improvement must be large enough to overcome the penalty for complexity
   (represented by k).</p>
-<p> Another feature of Akaike&#146;s theorem is that the relative weight we give to simplicity declines as the number of
+<p>Another feature of Akaike&#146;s theorem is that the relative weight we give to simplicity declines as the number of
   data points increases. Suppose that there is a slight parabolic bend in the data, reflected in the fact that the SOS
   value of L(PAR) is slightly lower than the SOS value of L(LIN). Recall that the absolute value of these quantities
   depends on the number of data points. With a large amount of data our estimate of how close a family is to the truth
@@ -317,30 +317,30 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   should that regularity be taken seriously. This is an intuitively plausible idea that Akaike&#146;s result
   explains.</p>
 <h2> 3 UNIFICATION AS A SCIENTIFIC GOAL</h2>
-<p> It is not at all standard to think that the curve fitting problem is related intimately</p>
+<p>It is not at all standard to think that the curve fitting problem is related intimately</p>
 <p>18 Thus, the problems of defining the simplicity of curves described by Priest [1976] do not undermine Akaike&#146;s
   proposal.</p>
-<p> to the problem of explaining why unified theories are preferable to disunified ones. The former problem usually is
+<p>to the problem of explaining why unified theories are preferable to disunified ones. The former problem usually is
   associated with &#145;inductive&#146; inference, the latter with &#145;inference to the best explanation.&#146; We are
   inclined to doubt that there really are such fundamentally different kinds of nondeductive inference (Forster [1986],
   [1988a], [1988b]; Sober [1988b], [1990a], [1990b]).19 In any case, Akaike&#146;s approach to curve fitting provides a
   ready characterization of the circumstances in which a unified model is preferable to two disunified models that cover
   the same domain.20</p>
-<p> It is always a substantive scientific question whether two data sets should be encompassed by a single theory or
+<p>It is always a substantive scientific question whether two data sets should be encompassed by a single theory or
   different theories should be constructed for each. Should celestial and terrestrial motion be given a unified
   treatment or do the two sets of phenomena obey different laws? In retrospect, it may seem obvious that these two kinds
   of motion should receive the same theoretical treatment. But this is the wisdom of hindsight; individual phenomena do
   not<br> have written on their sleeves the other phenomena with which they should be coalesced.<br> Traditional
   approaches to this problem make the allure of unification something of a mystery.21 Given two data sets D1 and D1, a
   unified model Mu</p>
-<p> 19 William Whewell [1840] described the process of curve fitting as a special case of a process of conceptualization
+<p>19 William Whewell [1840] described the process of curve fitting as a special case of a process of conceptualization
   called the &#145;colligation of facts&#146; (Forster [1988b]). He then referred to the process that leads to the
   unification of disparate curve fitting solutions as the &#145;consilience of inductions.&#146; On our view, both of
   these processes are seen as aspects of a single kind of inferential procedure. Bogen and Woodward [1988] argue that
   the inferential relationship of observation to theory has two parts: of observation to phenomena and of phenomena to
   theory.</p>
-<p> Again, it is not clear to us that these relationships are fundamentally different in kind.</p>
-<p> 20 We will follow statistical practice and reserve the term &#145;model&#146; for a family of hypotheses, in which
+<p>Again, it is not clear to us that these relationships are fundamentally different in kind.</p>
+<p>20 We will follow statistical practice and reserve the term &#145;model&#146; for a family of hypotheses, in which
   each hypothesis includes a specific statement about the distribution of errors (so that likelihoods are well defined).
   A model leaves the values of some parameters unspecified. In applying the term to astronomy, we need only assume that
   some assumption about the form of the error distribution is included (e. g. that the distribution is Gaussian, as was
@@ -348,7 +348,7 @@ and especially Peter Turney for helpful comments on an earlier draft.</span>
   of the distribution may be left as an adjustable parameter. The important point to notice is that distinguishing
   models from curves, or from abstract &#145;theories&#146;, is now critical to the philosophy of science, since Akaike&#146;s
   framework only provides a way of defining the simplicity of models.</p>
-<p> 21 Friedman [1983], like some of the authors he cites (p. 242), describes unification as the process of reducing the
+<p>21 Friedman [1983], like some of the authors he cites (p. 242), describes unification as the process of reducing the
   number of independent theoretical assumptions. Of course, a model that assumes principles A, B, and C is made more
   probable if these assumptions are whittled down to just A and B. However, as Friedman realizes, head counting will not
   deliver this verdict when the postulates of one model fail to be a subset of the postulates of the other.<br> Friedman

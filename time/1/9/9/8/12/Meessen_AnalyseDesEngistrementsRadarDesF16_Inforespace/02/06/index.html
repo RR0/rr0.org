@@ -2,7 +2,7 @@
 <title>L'extraction des échos recherchés et l'élimination des autres</title>
 <meta content="https://home.nordnet.fr/~phuleux/leradar.htm" name="url">
 <!--#include virtual="/header-end.html" -->
-<p> Il est vital pour le pilote qu'il puisse se fier à son radar. Ce système doit donc capter et présenter les échos
+<p>Il est vital pour le pilote qu'il puisse se fier à son radar. Ce système doit donc capter et présenter les échos
   provenant d'avions, en rejetant les échos anormaux. La figure 7 illustre la situation pour un vol horizontal. Le
   faisceau radar peut toucher par exemple l'avion 1 qui se trouve à une distance d du F-16 et qui s'en approche avec une
   vitesse relative v quand il est pourchassé. Nous savons qu'il peut y avoir des rétrodiffusions quand le faisceau radar
@@ -17,13 +17,13 @@
   rapport au sol. La probabilité de ce type de détection est la plus grande pour la partie S' du sol, située juste
   au-dessous de l'avion, puisque la distance à parcourir y est la plus courte. L'intensité du signal reçu varie en effet
   comme 1/d4 (à cause de la divergence des rayons émis et diffusés). La vitesse relative de S' est nulle.</p>
-<p> L'ordinateur analyse les signaux qu'il capte au fur et à mesure de leur arrivée, afin d'en extraire les informations
+<p>L'ordinateur analyse les signaux qu'il capte au fur et à mesure de leur arrivée, afin d'en extraire les informations
   utiles et d'en éliminer les échos perturbateurs. Puisque le chasseur F-16 peut se trouver en présence de plusieurs
   avions, il doit pouvoir séparer ces échos. Il le fait au moyen des paramètres mesurés : <em>la distance et la vitesse
     relative</em>. Pour un train d'onde donné, il s'agit de la distance ambiguë d et de la vitesse radiale v, comprise
   entre -vm et +vm. Le signe est positif pour une vitesse d'approche (closing speed). Le radar peut donc réaliser une
   classification des échos dans un plan d-v, comme le montre la figure 8.</p>
-<p> En fait, pour une orientation donnée du faisceau, le radar analyse d'abord la portion du signal qui a été renvoyée
+<p>En fait, pour une orientation donnée du faisceau, le radar analyse d'abord la portion du signal qui a été renvoyée
   le plus rapidement et ensuite, des portions qui arrivent de plus en plus tardivement. Cela correspond à des distances
   croissantes. L'échantillonnage est réalisé de telle manière que le domaine des distances possibles d est découpé en
   portions de même largeur d. Elle est déterminée par la largeur t des impulsions individuelles, puisqu'il est
@@ -40,7 +40,7 @@
   de même largeur. On obtient ainsi une certaine intensité du signal pour 64 <em>portes de vitesse</em>, en déterminant
   aussi le signe. On définit donc un ensemble de "cases" pour une portion limitée du plan d-v. Quelques-unes de ces
   cases sont indiquées dans le coin supérieur gauche de la figure 8.</p>
-<p> Les intensités du signal pour l'ensemble des cases créées dans le plan d-v définissent une <em>matrice</em> qui
+<p>Les intensités du signal pour l'ensemble des cases créées dans le plan d-v définissent une <em>matrice</em> qui
   contient toutes les informations reçues. La répartition des intensités peut présenter des maxima pour des cases qui
   correspondent à des "cibles" différentes. Les points 1 et 2 en sont des exemples, mais il y aura aussi une répartition
   d'intensités relativement importantes pour des réflecteurs situés au sol (ground clutter). Ce "fouillis" est
@@ -49,7 +49,7 @@
   l'ordinateur peut calculer la vitesse relative vs de l'endroit (S) où le lobe principal touche le sol, mais la
   distance peut dépendre du relief. On élimine donc tous les échos qui ont des vitesses assez proches de vs. Cela
   correspond à une bande verticale sur la figure 8. On écarte aussi une bande horizontale près de d = 0.</p>
-<p> En fait, on ne commence l'analyse qu'à partir d'une certaine distance et on impose une transposition (électronique)
+<p>En fait, on ne commence l'analyse qu'à partir d'une certaine distance et on impose une transposition (électronique)
   de tout le spectre des fréquences, de telle manière qu'il suffit de couper ensuite les fréquences proches de zéro. Ce
   filtrage se réalise d'une manière <em>dynamique</em>, en utilisant constamment la valeur instantanée de vs. Autrement
   dit, la bande verticale de la figure 8 est déplacée en fonction de la situation de l'avion en vol et de l'orientation
@@ -57,7 +57,7 @@
   provenant de réflecteurs mobiles (voitures, trains,...). Le filtrage est assuré par le "suiveur de fouillis" et le
   "suppresseur de fouillis", mais on prend des précautions pour ne pas éliminer des échos provenant d'avions, comme ce
   serait normalement le cas pour le point 3 de la figure 8.</p>
-<p> On réalise donc pour chaque ligne du plan (d,v) un filtrage plus subtil, régi par <em>un seuil adaptatif</em>. Pour
+<p>On réalise donc pour chaque ligne du plan (d,v) un filtrage plus subtil, régi par <em>un seuil adaptatif</em>. Pour
   cela, on groupe trois cases adjacentes et on retient le signal pour une des cases, s'il y est plus intense que la
   valeur moyenne dans les deux autres cases, multiplié par une constante modifiable. C'est une procédure générale qui
   réduit les effets du bruit et permet de maîtriser le fouillis des lobes secondaires. Pour lever l'ambiguïté des

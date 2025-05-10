@@ -1,7 +1,7 @@
 <!--#include virtual="/header-start.html" -->
 <title>The new science of simplicity</title>
 <meta content="https://philosophy.wisc.edu/Forster/papers/SciSimp.htm" name="url"/>
-<meta content="Journal of Scientific Exploration, vol. 21, n° 1, pp. 135-140, 2007" name="copyright"/>
+<meta content="Journal of Scientific Exploration, vol. 21, nï¿½ 1, pp. 135-140, 2007" name="copyright"/>
 <meta content="Forster, Malcolm R." name="author"/>
 <meta content="Arnold Zellner, Hugo Keuzenkamp, and Michael McAleer (eds.), Simplicity, Inference and Modelling, pp. 83-117. Cambridge: Cambridge University Press"
   name="author"/>
@@ -13,14 +13,14 @@
   am also grateful to the Vilas Foundation, the Graduate School, and sabbatical support
   from the University of Wisconsin-Madison.</span>
 <h2> The problem</h2>
-<p> No matter how often billiard balls have moved when struck in the past, the next billiard ball may not move when
+<p>No matter how often billiard balls have moved when struck in the past, the next billiard ball may not move when
   struck. For philosophers, this &#145;theoretical&#146; possibility of being wrong raises a problem about how to
   justify our theories and models of the world and their predictions. This is the problem of induction. In practice,
   nobody denies that the next billiard ball will move when struck, so many scientists see no practical problem. But in
   recent times, scientists have been presented with competing methods for comparing hypotheses or models (classical
   hypothesis testing, BIC, AIC, cross validation, and so on) which do not yield the same predictions. Here there is a
   problem.</p>
-<p> Model selection involves a tradeoff between simplicity and fit for reasons that are now fairly well understood (see
+<p>Model selection involves a tradeoff between simplicity and fit for reasons that are now fairly well understood (see
   Forster and Sober, 1994, for an elementary exposition). However, there are many ways of making this tradeoff, and this
   chapter will analyze the conditions under which one method will perform better than another. The main conclusions of
   the analysis are that (1) there is no method that is better than all the others under all conditions, even when some
@@ -28,26 +28,26 @@
   A is better than B, and there are other circumstance in which B will do better than A. Every method is fraught with
   some risk even in well-behaved situations in which nature is &#147;uniform.&#148; Scientists will do well to
   understand the risks.</p>
-<p> It is easy to be persuaded by the wrong reasons. If there is always a situation in which method A performs worse
+<p>It is easy to be persuaded by the wrong reasons. If there is always a situation in which method A performs worse
   than method B, then there is a computer simulation that will display this weakness. But if the analysis of this
   article is correct, then there is always a situation in which any method A will do worse. To be swayed by a single
   simulation to put all your money on the assumption that the examples of interest to you are the same in all relevant
   respects. One needs to understand what is relevant and what is not.</p>
-<p> Another spurious argument is the (frequently cited) claim that AIC is inconsistent?that AIC does not converge in the
+<p>Another spurious argument is the (frequently cited) claim that AIC is inconsistent?that AIC does not converge in the
   limit of large samples to what it is trying to estimate. That depends on what AIC is trying to estimate. Akaike (1973)
   designed AIC to estimate the expected loglikelihood, or equivalently, Kullback-Leibler discrepancy, or predictive
   accuracy (Forster and Sober, 1994). In section 7, I show that AIC is consistent in estimating this quantity. Whether
   it is the most efficient method is a separate question. I suspect that no method has a universally valid claim to that
   title. The bottom line is that the comparison of methods has no easy solution, and one should not be swayed by hasty
   conclusions.</p>
-<p> The way to avoid hasty conclusions is to analyze the problem in three steps:</p>
+<p>The way to avoid hasty conclusions is to analyze the problem in three steps:</p>
 <ol>
   <li> The specification of a goal. What goal can be reached or achieved?</li>
   <li> The specification of a means to the goal. What is the criterion, or method?</li>
   <li> An explanation of how a criterion works in achieving the goal.</li>
 </ol>
 <p>This chapter is an exercise in applying this three-step methodology to the problem of model selection.</p>
-<p> The chapter is organized as follows. Section 2 introduces scientific inference and its goals, while section 3 argues
+<p>The chapter is organized as follows. Section 2 introduces scientific inference and its goals, while section 3 argues
   that standard model selection procedures lack a clear foundation in even the <em>easiest</em> of examples. This
   motivates the need for a deeper analysis, and section 4 describes a framework in which the goal of predictive accuracy
   is precisely defined. The definition of predictive accuracy is completely general and assumption free, in contrast to
@@ -61,9 +61,9 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   for optimizing the goal of predictive accuracy when the normality assumption holds approximately, and explains the
   limitations in each method. The clear and precise definition of the goal is enough to defend AIC against the very
   common, but spurious, charge that it is inconsistent.</p>
-<p> I discuss this in section 7. Section 8 summarizes the main conclusions.</p>
+<p>I discuss this in section 7. Section 8 summarizes the main conclusions.</p>
 <h2> Preliminaries</h2>
-<p> A model is a set of equations, or functions, with one or more adjustable parameters. For example, suppose LIN is the
+<p>A model is a set of equations, or functions, with one or more adjustable parameters. For example, suppose LIN is the
   family of linear functions of a dependent variable y on a single independent variable x, {y = a0 + a1x + u | a0 &isin;
   ?, a1 &isin; ?}, where ? is the set of real numbers and u is an error term that has a specified probability
   distribution. The error distribution may be characterized by adjustable parameters of its own, such as a variance,
@@ -71,19 +71,19 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   each depend on several independent variables, which may depend on each other (as in causal modelling). The family LIN
   is characterized by two adjustable parameters, while PAR is a family of parabolic functions {y = a0 + a1x + a2 x2 + u
   | a0 &isin; ?, a1 &isin; ?, a2 &isin; ?}, characterized by at least three adjustable parameters.</p>
-<p> The distinction between variables and adjustable parameters is sometimes confusing since the adjustable parameters
+<p>The distinction between variables and adjustable parameters is sometimes confusing since the adjustable parameters
   are variables in a sense. The difference is that x and y vary within the context of each member of the family, while
   the parameters only vary from one member to the next. The empirical data specify pairs of (x, y) values, which do not
   include parameter values. Parameters are introduced theoretically for the purpose of distinguishing competing
   hypotheses within each model.</p>
-<p> A typical inferential problem is that of deciding, given a set of seen data (a set of number pairs, where the first
+<p>A typical inferential problem is that of deciding, given a set of seen data (a set of number pairs, where the first
   number is a measured x-value, and the second number is a measured y-value), whether to use LIN or PAR is better for
   the purpose of predicting new data (a set of unseen (x, y) pairs). Since LIN and PAR are competing models, the problem
   is a problem of model selection. After the model is selected, then standard statistical methods are used to estimate
   the parameter values to yield a single functional relation between x and y, which can be used to predict y-values for
   novel x-values. The second step is fairly well understood. Model selection is the more intriguing part of the process
   although model selection is usually based on the properties of the estimated parameter values.</p>
-<p> The philosophical problem is to understand exactly how scientists should compare models. Neither the problem, nor
+<p>The philosophical problem is to understand exactly how scientists should compare models. Neither the problem, nor
   its proposed solutions, are limited to curve-fitting problems. That is why econometricians or physicists, or anyone
   interested in prediction, should be interested in how to trade off fit with simplicity, or its close cousin,
   unification. For example, we may compare the solutions of Newton&#146;s equations with the solutions of Einstein&#146;s
@@ -96,7 +96,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   speed of light was already in use, though not in explaining planetary motions). It seems that the overall number of
   parameters is relevant here. These vague intuitions have swayed physicists for millennia. But physicists have not
   formalized them, nor explained them, nor understood them, even in very simple cases.</p>
-<p> Recent research in statistics has lead to a number numerically precise criteria for model selection. There is
+<p>Recent research in statistics has lead to a number numerically precise criteria for model selection. There is
   classical Neyman-Pearson hypothesis testing, the Bayesian BIC criterion (Schwarz 1978), the minimization of
   description length (MDL) criterion (Rissanen 1978, 1987; Wallace and Freeman 1987), Akaike&#146;s information
   criterion (AIC) (Akaike 1973, 1974, 1977, 1985; see also Sakamoto et al 1986, and<br> Forster and Sober 1994) , and
@@ -114,7 +114,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   work on simplicity makes use of weaker assumptions. An example of such an assumption is the &#145;normality assumption&#146;.
   It simply places constraints on how the estimated values of parameters are distributed around their true values
   without placing any constraints on the true values themselves.</p>
-<p> This is why it is so important not to confuse what I am calling the normality assumption, which is about the
+<p>This is why it is so important not to confuse what I am calling the normality assumption, which is about the
   distribution of repeated parameter estimates, with an assumption about the normality of error distributions. For
   example, in the case of a binary event like coin tossing, in which a random variable3 takes on the values 0 and 1,
   there is no sense in which the deviation of this random variable from the mean is normal. The error distribution is
@@ -122,7 +122,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   the propensity of the coin to land heads, is approximately normal. A normality assumption about errors is stronger and
   more restrictive than an assumption of normality for the repeated parameter estimates. It is the less restrictive
   assumption that is used in what follows.4</p>
-<p> It is true that models of model selection are a little different from standard scientific models. Scientific models
+<p>It is true that models of model selection are a little different from standard scientific models. Scientific models
   are descriptive, while models of model selection are what I will call weakly normative.5 For example, models of
   planetary motion describe or purport to describe planets. But models of model selection relate a model selection
   criterion to a goal. The goal might be predictive accuracy, empirical adequacy, truth, probable truth, or approximate
@@ -130,12 +130,12 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   inference and the goal. Of this list, predictive accuracy is the one epistemic goal (minimizing description length is
   a non-epistemic<br> goal) whose relationship with simplicity is reasonably well understood thanks to recent work in
   mathematical statistics. So, predictive accuracy is the goal considered in this paper.</p>
-<p> Bayesianism is the dominant approach to scientific inference in North America today, but what does it take as the
+<p>Bayesianism is the dominant approach to scientific inference in North America today, but what does it take as the
   goal of inference? Fundamentally, Bayesianism is a theory of decision making, and can consider any goal. It then
   defines the method of deciding between two competing models as the maximization of the expected payoff with<br> 3 A
   random variable is a variable whose possible values are assigned a probability.<br> 4 Kiessep&auml; (1997) shows that
   a normality assumption for the error distribution is not<br> always sufficient to ensure normality of the parameter
-  estimators. However, Cramér<br> (1946), especially chapters 32 and 33, explains how the conditions are met<br>
+  estimators. However, Cramï¿½r<br> (1946), especially chapters 32 and 33, explains how the conditions are met<br>
   asymptotically for large sample sizes in a very general class of cases.<br> 5 A strongly normative statement is one
   which says we should or we ought to do such<br> and such. A weakly normative statement is one that says we should do
   such and such<br> in order to optimize a given goal, without implying that it is a goal we should<br> optimize.<br> 88
@@ -226,7 +226,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   the best fitting<br> hypothesis in the family that best fits the seen data. This picks out a<br> single hypothesis
   which can be used for the prediction or explanation of<br> unseen data. While different statistical paradigms have
   different<br> definitions of &#145;best fit&#146;, those differences usually make little difference,<br> and I will
-  ignore them here. I will assume that everyone measures fit by<br> the likelihood (or log-likelihood). The naïve
+  ignore them here. I will assume that everyone measures fit by<br> the likelihood (or log-likelihood). The naï¿½ve
   empirical method that<br> ignores simplicity and goes by fit alone is called the method of maximum<br> likelihood
   (ML). In the case of M1 the maximum likelihood hypothesis<br> has to be &theta; = &frac12;, since there are no others
   that can do better. In the case<br> of M2 there is a well known result that tells us that the maximum<br> likelihood
@@ -362,7 +362,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   (1977), except he does not<br> derive the BIC approximation, which was derived by Schwarz (1978). MacKay<br> (1995)
   discusses the same version of Occam&#146;s razor in apparent ignorance of<br> previous work. Cheeseman (1990) also
   discusses the classical Bayesian approach<br> with even less sophistication and even fewer references.<br> The new
-  science of simplicity 97<br> just the fit with respect to the total data set, which reduces to the naïve<br>
+  science of simplicity 97<br> just the fit with respect to the total data set, which reduces to the naï¿½ve<br>
   empiricism of ML.<br> However, if the method is used to compare models rather than<br> particular hypotheses, then it
   has different properties. Each calibrating<br> data set produces a slightly different best fitting curve in the family
   and<br> there will be a penalty for large, complex, families of curves because<br> large families will tend to produce
@@ -507,7 +507,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   assumption and the geometry of parameter space<br> There is a very elegant geometrical interpretation of predictive
   accuracy<br> in the special case in which parameter estimates conform to a<br> probabilistic description that I shall
   refer to as the normality condition. It<br> is good to separate the condition from the question about what
-  justifies<br> the assumption. I will concentrate on its consequences and refer the<br> inter-ested reader to Cramér
+  justifies<br> the assumption. I will concentrate on its consequences and refer the<br> inter-ested reader to Cramï¿½r
   (1946, chs. 32-4) for the theory behind the<br> con-dition.<br> Consider the problem of predicting y from x in a
   specified domain of<br> prediction. As discussed in the previous section, there is a &#145;true&#146;<br> distribution
   p(x,y), which determines how the estimated parameter<br> values in our models vary from one possible data set to the
@@ -610,7 +610,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   section I will compare the performance of AIC and BIC in the<br> selection of two nested models differing by one
   adjustable parameter in<br> contexts in which the normality assumption holds. While the normality<br> condition will
   not hold for many examples, it is a central case in statistics<br> because the Central Limit theorems show that it
-  holds in a wide variety<br> of circumstances (see Cramér 1946, chapters 32 and 33). More<br> importantly, the
+  holds in a wide variety<br> of circumstances (see Cramï¿½r 1946, chapters 32 and 33). More<br> importantly, the
   arguments leveled against AIC in favor of BIC are<br> framed in this context. So, my analysis will enable us to
   analyze those<br> arguments in the next section.<br> The normality assumption also determines the stochastic behavior
   of<br> the log-likelihood of the seen data, and we can exploit this knowledge to<br> obtain a criterion of model
@@ -633,7 +633,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   rule goes to the opposite extreme and always selects the<br> more complex model no matter what the data, which I call
   the Always-<br> Complex rule. In the case of nested models, the Always-Complex rule<br> always selects the model with
   the best-fitting specification and is<br> therefore equivalent to a maximum likelihood (ML) rule. It is also a
-  rule<br> that philosophers might describe as a naïve form of empiricism, since it<br> gives no weight to simplicity.
+  rule<br> that philosophers might describe as a naï¿½ve form of empiricism, since it<br> gives no weight to simplicity.
   BIC and AIC are between these two rules:<br> BIC erring towards the Always-Simple side of the spectrum, while AIC<br>
   is closer to the ML rule.<br> Consider any two nested models that differ by one adjustable<br> parameter, and assume
   that normality conditions apply approximately.<br> Note we need not assume that the true hypothesis is in either model<br>
@@ -669,7 +669,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   expect AIC to perform better<br> than BIC, though neither will do better than ML.<br> These facts are confirmed by the
   results of computer computations<br> shown in figure 5.4. In that graph, the expected gain in predictive accuracy,<br>
   or what amounts to the same thing, the gain in expected predictive<br> accuracy, is plotted against the model bias
-  difference between the two<br> models in question. Higher is better. The expected performance of naïve<br> empiricist
+  difference between the two<br> models in question. Higher is better. The expected performance of naï¿½ve<br> empiricist
   method of ML is taken as a baseline, so the gain (or loss if the<br> gain is negative) is relative to ML. The
   performance is therefore<br> computed as follows. Imagine that a data set of size n is randomly<br> generated by the
   true distribution in a domain of prediction. The method<br> in question then selects its hypothesis. If it is the same
@@ -741,7 +741,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   special case, it is important to emphasize that<br> scientists do not know that they are in such a situation. If they
   did know,<br> there would be no need for any method of model selection?just pick the<br> simplest model. It is
   precisely because the context is unknown that<br> scien-tists want to use a selection rule. So, it would be wrong to
-  prefer<br> BIC solely on the basis of what happens in this special case.<br> The raison d&#146;être of model selection
+  prefer<br> BIC solely on the basis of what happens in this special case.<br> The raison d&#146;ï¿½tre of model selection
   is the possibility of facing the<br> situations represented further to the right on the x-axis in Figure 4. There<br>
   we quickly approach the neutral point at which all &#145;real&#146; methods<br> perform approximately the same. This
   point occurs when the model bias<br> difference equals the variance of the true distribution (of the parameter<br>
@@ -912,7 +912,7 @@ from the principle of maximum likelihood</span>. Even though the assumption is n
   an estimator of predictive accuracy, is biased<br> if the expected value of the estimate is not equal to the quantity
   being estimated.<br> This sense of &#145;bias&#146; has nothing to do with model bias.<br> 118 Malcolm R. Forster<br>
   Cheeseman, P. (1990). On finding the most probable model. In Jeff Shrager<br> and Pat Langley, Computational Models of
-  Scientific Discovery and<br> Theory Formation, pp.73-93. San Mateo, CA: Morgan Kaufmann Inc.<br> Cramér H. (1946).
+  Scientific Discovery and<br> Theory Formation, pp.73-93. San Mateo, CA: Morgan Kaufmann Inc.<br> Cramï¿½r H. (1946).
   Mathematical Methods of Statistics. Princeton, NJ:<br> Princeton University Press.<br> Earman, J. (1992). Bayes or
   Bust? A Critical Examination of Bayesian<br> Confirmation Theory, The MIT Press, Cambridge.<br> Forster, M. R. (1994).
   Non-Bayesian foundations for statistical estimation,<br> prediction, and the ravens example. Erkenntnis 40: 357 - 376.<br>

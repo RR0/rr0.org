@@ -1,12 +1,20 @@
 {
+  "lastName": "Petit",
   "firstNames": [
     "Jean-Pierre"
   ],
-  "birthTime": "1937-04-05",
+  "url": "https://www.jp-petit.org",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1937-04-05",
+      "place": "Choisy-le-Roi"
+    }
   ]
 }

@@ -1,3 +1,6 @@
+[build]
+  publish = "out"
+
 [[redirects]]
   from = "/data/*"
   to = "/time/:splat"
@@ -4486,4 +4489,3 @@
 [[redirects]]
   from = "/science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html"
   to = "/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html"
-

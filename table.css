@@ -1,24 +1,51 @@
 :root {
 }
 
+table {
+  --head-height: 41px;
+
+  caption {
+    font-size: 0.8em;
+    color: dimgray;
+    background-color: #d3d3d3;
+    margin: 0;
+    caption-side: top;
+    vertical-align: middle;
+    width: 0;
+    min-width: 100%;
+    position: sticky;
+    top: var(--head-height);
+    z-index: 10;
+  }
+}
+
 th, td {
   text-align: left;
   border: 1px solid #d3d3d3;
 }
 
 th {
-  --head-height: 41px;
-
   background-color: var(--header-background-color);
   color: #666;
-  position: sticky;
-  top: var(--head-height);
-  z-index: 10;
   border-bottom: 1px solid #d3d3d3;
 }
 
+thead {
+  th {
+    --th-height: var(--head-height);
+
+    position: sticky;
+    top: var(--th-height);
+    z-index: 10;
+  }
+}
+
+caption + thead th {
+  --th-height: calc(var(--head-height) + 1.2em);
+}
+
 table {
-  --header-background-color: light-dark(rgba(109, 110, 120, .1), #2f2f2f);
+  --header-background-color: light-dark(#e8e8e8, #2f2f2f);
 
   border-collapse: separate;
   border-spacing: 0;
@@ -60,11 +87,10 @@ td, th {
 }
 
 @media (min-width: 60em) {
-  th {
+  table {
     --head-height: 99px;
   }
 }
-
 
 @media (prefers-color-scheme: dark) {
   td, th {

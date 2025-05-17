@@ -38,7 +38,7 @@ figure:nth-child(odd), .right, figure.right, figure.right.side {
   margin-right: 0
 }
 
-caption, figcaption {
+figcaption {
   font-size: 0.8em;
   color: dimgray;
   margin: 0;

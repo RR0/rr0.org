@@ -1,11 +1,9 @@
 {
   "lastName": "Brown",
   "firstNames": [
-    "Harold",
-    "D."
+    "Matthew"
   ],
   "occupations": [
-    "physicist"
   ],
   "countries": [
     "us"
@@ -13,12 +11,8 @@
   "events": [
     {
       "type": "birth",
-      "time": "1927-01-21",
-      "place": "New York"
-    },
-    {
-      "type": "death",
-      "time": "1981-01-20"
+      "time": "",
+      "place": ""
     }
   ]
 }

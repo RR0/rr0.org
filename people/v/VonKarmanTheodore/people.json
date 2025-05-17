@@ -1,7 +1,12 @@
 {
-  "title": "Von Karman, Théodore",
-  "birthTime": "1881-05-11",
-  "deathTime": "1963-05-06",
+  "title": "Theodore von Karman",
+  "lastName": "Von Skolloskislaki Karman",
+  "firstNames": [
+    "Todor"
+  ],
+  "surname": [
+    "Théodore"
+  ],
   "occupations": [
     "engineer"
   ],
@@ -9,5 +14,17 @@
     "hu",
     "de",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1881-05-11",
+      "place": "quartier Jozsefvaros de Budapest (Hongrie)"
+    },
+    {
+      "type": "death",
+      "time": "1963-05-06",
+      "place": "Aix-la-Chapelle (Allemagne)"
+    }
   ]
 }

@@ -1,10 +1,24 @@
 {
-  "birthTime": "1905-03-18",
-  "deathTime": "1985-10",
+  "firstNames": [
+    "Thomas"
+  ],
+  "lastName": "Townsend Brown",
+  "image": "/time/1/9/5/8/TownsendBrown.jpg",
   "occupations": [
     "physicist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1905-03-18",
+      "place": "Zanesville (Ohio)"
+    },
+    {
+      "type": "death",
+      "time": "1985-10"
+    }
   ]
 }

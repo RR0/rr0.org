@@ -1,6 +1,8 @@
 {
   "lastName": "La Paz",
-  "firstNames": "Lincoln",
+  "firstNames": [
+    "Lincoln"
+  ],
   "occupations": [
     "astronomer",
     "ufoWitness"

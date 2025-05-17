@@ -2274,5 +2274,23 @@
         }
       }
     }
+  },
+  "https://www.soteria.com/brown/": {
+    "title": "https://www.soteria.com/brown/",
+    "url": "https://www.soteria.com/brown/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.youtube.com/watch?v=ZAxI-LDrDqA&ab_channel=JeremyCorbell": {
+    "title": "PART 1 : Immaculate Constellation - UFO Whistleblower Goes Public : WEAPONIZED : Episode #74 - YouTube",
+    "url": "https://www.youtube.com/watch?v=ZAxI-LDrDqA&ab_channel=JeremyCorbell",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

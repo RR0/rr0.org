@@ -1,5 +1,9 @@
 {
-  "birthTime": "1962-02-26",
+  "lastName": "Loeb",
+  "firstNames": [
+    "Abraham"
+  ],
+  "surname": "Avi",
   "occupations": [
     "astronomer",
     "astrophysicist"
@@ -7,5 +11,21 @@
   "countries": [
     "il",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1962-02-26",
+      "place": "Israël"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "url": "https://fr.timesofisrael.com/la-theorie-farfelue-dun-scientifique-israelien-confirmee-par-lus-space-command/"
+        }
+      ]
+    }
   ]
 }

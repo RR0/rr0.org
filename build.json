@@ -1,13 +1,7 @@
 {
   "force": "true",
   "contents": [
-    "time/1/0/**/*.html",
-    "time/1/1/**/*.html",
-    "time/1/2/**/*.html",
-    "time/1/3/**/*.html",
-    "time/1/4/**/*.html",
-    "time/1/6/**/*.html",
-    "time/1/5/**/*.html"
+    "science/**/*.html"
   ],
   "reindex": [
     "search",

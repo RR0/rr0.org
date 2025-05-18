@@ -2292,5 +2292,79 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://fr.timesofisrael.com/la-theorie-farfelue-dun-scientifique-israelien-confirmee-par-lus-space-command/": {
+    "title": "La théorie farfelue d'un scientifique israélien confirmée par l'US Space Command - The Times of Israël",
+    "url": "http://web.archive.org/web/20220927115013/https://fr.timesofisrael.com/la-theorie-farfelue-dun-scientifique-israelien-confirmee-par-lus-space-command/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "fr.timesofisrael.com",
+      "time": {
+        "year": {
+          "value": 2022,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 9,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 27,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 11,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 13,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 13,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://x.com/MickWest/status/1917992635849195688": {
+    "title": "https://x.com/MickWest/status/1917992635849195688",
+    "url": "https://x.com/MickWest/status/1917992635849195688",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://youtu.be/uHr3SzEtNdM?si=FGtrqkAmEL1l4jAj&t=827": {
+    "title": "$1 Billion Needed for UAP Scientific Study - Avi Loeb - YouTube",
+    "url": "https://youtu.be/uHr3SzEtNdM?si=FGtrqkAmEL1l4jAj&t=827",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

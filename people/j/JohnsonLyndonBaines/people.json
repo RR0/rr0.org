@@ -1,11 +1,26 @@
 {
-  "birthTime": "1913-07-14",
-  "deathTime": "1973-01-22",
+  "lastName": "Johnson",
+  "firstNames": [
+    "Lyndon",
+    "Baines"
+  ],
   "occupations": [
     "politician",
     "leader"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1913-07-14",
+      "place": "Stonewall (Texas)"
+    },
+    {
+      "type": "death",
+      "time": "1973-01-22",
+      "place": "Johnson City (Texas)"
+    }
   ]
 }

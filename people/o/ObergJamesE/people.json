@@ -1,5 +1,9 @@
 {
-  "birthTime": "1944-11-07",
+  "lastName": "Oberg",
+  "firstNames": [
+    "James",
+    "Edward"
+  ],
   "occupations": [
     "engineer",
     "mathematician",
@@ -7,5 +11,12 @@
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1944-11-07",
+      "place": "New York (USA)"
+    }
   ]
 }

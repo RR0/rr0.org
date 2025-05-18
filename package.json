@@ -28,7 +28,7 @@
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@javarome/fileutil": "0.3.7",
-    "@rr0/cms": "^0.3.44",
+    "@rr0/cms": "0.3.44",
     "@rr0/common": "^1.1.3",
     "@rr0/data": "^0.3.36",
     "@rr0/lang": "^0.1.12",
@@ -39,7 +39,7 @@
     "image-size": "^2.0.2",
     "jsdom": "^26.1.0",
     "selenium-webdriver": "^4.32.0",
-    "ssg-api": "^1.16.15"
+    "ssg-api": "1.16.15"
   },
   "devDependencies": {
     "@javarome/testscript": "^0.10.7",

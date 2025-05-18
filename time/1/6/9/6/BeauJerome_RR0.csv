@@ -1,2 +1,2 @@
-description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
 "Une substance fétide à l'apparence de gelée tombe sur de grandes zones de l'Irlande du sud. Selon l'Evêque de Cloyne c'était doux, moite et de couleur jaune sombre","",sighting,1696$,,"""""""Philosophical Transactions of the Royal Society of London, 19"""""","""",s1,"""",,224-253",1696,event,https://rr0.org/time/1/6/9/6/index.html

@@ -1,4 +1,8 @@
 {
+  "force": "true",
+  "contents": [
+    "people/**/*.html"
+  ],
   "reindex": [
     "search",
     "sources"

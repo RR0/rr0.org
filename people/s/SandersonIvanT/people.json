@@ -1,5 +1,9 @@
 {
-  "title": "Ivan T. Sanderson",
+  "lastName": "Sanderson",
+  "firstNames": [
+    "Ivan",
+    "T."
+  ],
   "occupations": [
     "ufologist",
     "cryptozoologist"

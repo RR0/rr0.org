@@ -1,0 +1,20 @@
+{
+  "lastName": "Salla",
+  "firstNames": [
+    "Michael",
+    "E."
+  ],
+  "occupations": [
+    "writer"
+  ],
+  "countries": [
+    "au"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1958-09-25",
+      "place": "Melbourne (Australie)"
+    }
+  ]
+}

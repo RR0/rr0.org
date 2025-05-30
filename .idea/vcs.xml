@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../@javarome/ssg-api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../@javarome/ssg-api/wiki" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../case" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../cms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../data" vcs="Git" />
   </component>

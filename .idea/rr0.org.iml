@@ -25,5 +25,6 @@
     <orderEntry type="module" module-name="cms" />
     <orderEntry type="module" module-name="data" />
     <orderEntry type="module" module-name="ssg-api" />
+    <orderEntry type="module" module-name="case" />
   </component>
 </module>

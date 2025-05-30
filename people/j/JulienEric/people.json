@@ -1,5 +1,8 @@
 {
-  "birthTime": "1961",
+  "lastName": "Julien",
+  "firstNames": [
+    "Éric"
+  ],
   "occupations": [
     "pilot",
     "contactee"
@@ -9,5 +12,12 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1961",
+      "place": "Toulon"
+    }
   ]
 }

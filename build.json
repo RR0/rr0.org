@@ -1,8 +1,4 @@
 {
-  "force": "true",
-  "contents": [
-    "science/crypto/ufo/enquete/dossier/Teheran/**/*.html"
-  ],
   "reindex": [
     "search",
     "sources"

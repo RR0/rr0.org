@@ -1,4 +1,8 @@
 {
+  "force": "true",
+  "contents": [
+    "science/**/*.html"
+  ],
   "reindex": [
     "search",
     "sources"

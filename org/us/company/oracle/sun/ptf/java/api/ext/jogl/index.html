@@ -10,27 +10,27 @@
   <p>Supporte <a href="/org/us/company/oracle/sun/ptf/java/api/se/ui/AWT.html">AWT</a> et <a
     href="/org/us/company/oracle/sun/ptf/java/api/se/ui/Swing.html">Swing</a>, NIO.</p>
   <p>pBuffers</p>
-  <p>Composable pipeline model pour débogage plus rapide que leur équivalent <a href="/tech/info/soft/proj/impl/lang/c">C</a>.
+  <p>Composable pipeline model pour dÃ©bogage plus rapide que leur Ã©quivalent <a href="/tech/info/soft/proj/impl/lang/c">C</a>.
   </p>
 </section>
 <section>
   <h2>Conception</h2>
-  <p>À la livraison, JOGL ne comporte que 150 lignes de code natif (dont 100 sont destinées à contourner des bugs des
-    pilotes OpenGL les plus anciens sur Windows). Le reste du code natif est <strong>auto-généré</strong> au cours du
+  <p>Ã€ la livraison, JOGL ne comporte que 150 lignes de code natif (dont 100 sont destinÃ©es Ã  contourner des bugs des
+    pilotes OpenGL les plus anciens sur Windows). Le reste du code natif est <strong>auto-gÃ©nÃ©rÃ©</strong> au cours du
     processus de construction par un <strong>GlueGen</strong>.</p>
-  <p>L'affichage s'effectue sur un <strong>GLCanvas</strong>, dont les événements du cycle de vie peuvent être reçus sur
-    un <code>GLEventListener</code>, tels que :</p>
+  <p>L'affichage s'effectue sur un <strong>GLCanvas</strong>, dont les Ã©vÃ©nements du cycle de vie peuvent Ãªtre reÃ§us sur
+    un <code>GLEventListener</code>, tels queÂ :</p>
   <ul>
-    <li><code>init</code>() : appelée une seule fois</li>
-    <li><code>display</code>() : à chaque fois qu'un affichage du canvas est requis</li>
-    <li><code>reshape</code>() : à chaque qu'un redimensionnement du canvas est requis</li>
-    <li><code>displayChanged</code>() : quand la configuration video a changé </li>
+    <li><code>init</code>() : appelÃ©e une seule fois</li>
+    <li><code>display</code>() : Ã  chaque fois qu'un affichage du canvas est requis</li>
+    <li><code>reshape</code>() : Ã  chaque qu'un redimensionnement du canvas est requis</li>
+    <li><code>displayChanged</code>() : quand la configuration video a changÃ© </li>
   </ul>
-  <p>Un <strong>Animator </strong>permet d'encapsuler des appels en boucle à <code>display</code>() tout en évitant de
+  <p>Un <strong>Animator </strong>permet d'encapsuler des appels en boucle Ã  <code>display</code>() tout en Ã©vitant de
     surcharger le <a href="/tech/info/hard/cpu/index.html">CPU</a>.</p>
 </section>
 <section>
-  <h2>Implémentation</h2>
+  <h2>ImplÃ©mentation</h2>
   <table>
     <tr>
       <td class="titleCorner" rowspan="3"></td>
@@ -79,8 +79,8 @@
   </table>
 </section>
 <section>
-  <h2>Déploiement</h2>
-  <p>JOGL est supporté sur :</p>
+  <h2>DÃ©ploiement</h2>
+  <p>JOGL est supportÃ© surÂ :</p>
   <ul>
     <li>Windows</li>
     <li>Linux</li>

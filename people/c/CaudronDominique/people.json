@@ -1,7 +1,14 @@
 {
-  "birthTime": "1946",
+  "url": "https://perso.wanadoo.fr/oncle.dom/",
   "occupations": ["ufologist"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946",
+      "place": "Le Cateau (France)"
+    }
   ]
 }

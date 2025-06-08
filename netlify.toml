@@ -2,11 +2,6 @@
   publish = "out"
   command = "Echo deploying..."
 
-[[headers]]
-  for = "/*.json"
-  [headers.values]
-    access-control-allow-origin = "*"
-
 [[redirects]]
   from = "/data/*"
   to = "/time/:splat"

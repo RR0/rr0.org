@@ -1,10 +1,24 @@
 {
-  "birthTime": "1920-12-17",
-  "deathTime": "1994-12-18",
+  "lastName": "Stringfield",
+  "firstNames": [
+    "Leonard",
+    "Harry"
+  ],
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1920-12-17",
+      "place": "Cincinnati (Ohio, États-Unis)"
+    },
+    {
+      "type": "death",
+      "time": "1994-12-18"
+    }
   ]
 }

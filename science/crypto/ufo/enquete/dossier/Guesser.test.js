@@ -5,8 +5,9 @@ import { Guesser } from "./Guesser.js"
 describe("Guesser", () => {
   let guesser
 
-  beforeEach(() => {
+  beforeEach(async () => {
     guesser = new Guesser()
+    await guesser.init()
   })
 
   test("guess", async () => {

@@ -6,6 +6,16 @@
   from = "/data/*"
   to = "/time/:splat"
 
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  from = "https://vraiufo.com"
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
 
 [[redirects]]
   from = "/personne/*"

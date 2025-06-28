@@ -1,5 +1,7 @@
 import OpenAI from "openai"
 import { RR0Case, RR0Catalog } from "@rr0/case"
+import { clearLine, cursorTo } from "node:readline"
+import { stdout as output } from "node:process"
 
 export class Guesser {
   /**
@@ -22,6 +24,8 @@ export class Guesser {
    */
   cases = []
 
+  rl
+
   constructor() {
     this.aiClient = new OpenAI()
     this.catalog = new RR0Catalog()
@@ -29,9 +33,16 @@ export class Guesser {
 
   async init() {
     this.cases = []
-    const cases = await this.catalog.getCases()
-    for (const caseFile of cases.files) {
-      this.cases.push(await cases.fetch(caseFile))
+    const casesCatalog = await this.catalog.getCases()
+    const casesFiles = casesCatalog.files
+    console.debug("Found ", casesFiles.length, "cases")
+    for await (const caseFile of casesFiles.map(f => casesCatalog.fetch(f))) {
+      this.cases.push(caseFile)
+      clearLine(output, 0)
+      cursorTo(output, 0, () => {
+        output.write(`Loaded case ${caseFile.title}(${(this.cases.length / casesFiles.length * 100).toFixed(1)}%)`)
+
+      })
     }
   }
 

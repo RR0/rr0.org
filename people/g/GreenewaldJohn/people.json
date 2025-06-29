@@ -1,0 +1,51 @@
+{
+  "lastName": "Greenewald",
+  "firstNames": [
+    "John"
+  ],
+  "occupations": [
+    "ufologist"
+  ],
+  "qualifier": "Jr",
+  "url": "https://www.theblackvault.com",
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1981-04-17",
+      "place": "Californie (USA)"
+    },
+    {
+      "type": "book",
+      "time": "2008",
+      "sources": [
+        {
+          "title": "Beyond UFO Secrecy: The Story of the Black Vault's Pursuit of the Truth",
+          "publisher": "Galde Press"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2019",
+      "sources": [
+        {
+          "title": "Inside The Black Vault: The Government's UFO Secrets Revealed",
+          "publisher": "Rowman & Littlefield"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2020-04-15",
+      "sources": [
+        {
+          "title": "Secrets from the Black Vault: The Army's Plan for a Military Base on the Moon and Other Declassified Documents that Rewrote History",
+          "publisher": "Rowman & Littlefield Publishers"
+        }
+      ]
+    }
+  ]
+}

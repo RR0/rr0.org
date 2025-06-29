@@ -2440,5 +2440,70 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://x.com/SunOfAbramelin/status/1930791280260550830": {
+    "title": "https://x.com/SunOfAbramelin/status/1930791280260550830",
+    "url": "https://x.com/SunOfAbramelin/status/1930791280260550830",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.wsj.com/politics/national-security/ufo-us-disinformation-45376f7e": {
+    "title": "The Pentagon Disinformation That Fueled America’s UFO Mythology - WSJ",
+    "url": "http://web.archive.org/web/20250628132730/https://www.wsj.com/politics/national-security/ufo-us-disinformation-45376f7e",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "www.wsj.com",
+      "time": {
+        "year": {
+          "value": 2025,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 28,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 13,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 30,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 30,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
   }
 }

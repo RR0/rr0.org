@@ -1,0 +1,27 @@
+{
+  "lastName": "Bell",
+  "firstNames": [
+    "Arthur",
+    "William"
+  ],
+  "qualifier": "III",
+  "surname": "Art",
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1945-06-17",
+      "place": "Jacksonville (Caroline du Nord)"
+    },
+    {
+      "type": "death",
+      "time": "2018-04-13",
+      "place": "Pahrump (Nevada)"
+    }
+  ]
+}

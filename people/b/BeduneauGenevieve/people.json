@@ -1,6 +1,5 @@
 {
-  "birthTime": "1947-03-30",
-  "deathTime": "2018-04-05",
+  "url": "https://reflexsurtempscourants.blogspot.fr",
   "occupations": [
     "ufologist",
     "writer"
@@ -11,5 +10,15 @@
   "pseudonyms": [
     "Anne Vève"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1947-03-30"
+    },
+    {
+      "type": "death",
+      "time": "2018-04-05"
+    }
+  ]
 }

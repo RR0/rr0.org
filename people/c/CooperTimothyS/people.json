@@ -1,9 +1,21 @@
 {
-  "birthTime": "1948-11-28",
+  "lastName": "Cooper",
+  "firstNames": [
+    "Timothy",
+    "S."
+  ],
+  "surname": "Tim",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1948-11-28",
+      "place": "El Paso (Texas)"
+    }
   ]
 }

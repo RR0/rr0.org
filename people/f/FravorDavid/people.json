@@ -1,9 +1,20 @@
 {
-  "birthTime": "",
+  "surname": "Dave 'Sex'",
+  "lastName": "Fravor",
+  "firstNames": [
+    "David"
+  ],
   "occupations": [
     "pilot"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "~1965",
+      "place": "Ohio"
+    }
   ]
 }

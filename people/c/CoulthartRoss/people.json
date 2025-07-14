@@ -1,0 +1,39 @@
+{
+  "lastName": "Coulthart",
+  "firstNames": [
+    "Ross"
+  ],
+  "occupations": [
+    "journalist"
+  ],
+  "countries": [
+    "uk",
+    "nz",
+    "au"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1962-08-30",
+      "place": "Grande-Bretagne"
+    },
+    {
+      "type": "book",
+      "time": "2021",
+      "sources": [
+        {
+          "title": "In Plain Sight: An Investigation into UFOs"
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "time": "2021",
+      "sources": [
+        {
+          "title": "Impossible Science"
+        }
+      ]
+    }
+  ]
+}

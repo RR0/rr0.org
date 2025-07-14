@@ -358,7 +358,11 @@ a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hov
   background: rgba(184, 197, 212, .19)
 }
 
-.canular, .hoax, .deprecated {
+.canular::after, .hoax::after {
+  content: " 🤥";
+}
+
+.deprecated {
   text-decoration: line-through
 }
 
@@ -589,10 +593,6 @@ pre code {
   font-style: normal
 }
 
-.disappeared::after, .meprise::after, .misinterpretation::after {
-  vertical-align: super
-}
-
 .mois {
   font-weight: bolder;
   color: #666
@@ -608,12 +608,6 @@ pre code {
 
 .heure {
   font-family: "Courier New", Courier, monospace
-}
-
-.disappeared:after {
-  color: #d3d3d3;
-  font-size: .5em;
-  content: " disparu"
 }
 
 dt, dd {
@@ -657,9 +651,7 @@ a:not(.raw)[target="_blank"]::after {
 }
 
 .meprise:after, .misinterpretation::after {
-  color: #d3d3d3;
-  font-size: .5em;
-  content: " m\E9prise"
+  content: " 😵‍💫"
 }
 
 .explanation {

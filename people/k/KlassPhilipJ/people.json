@@ -1,8 +1,28 @@
 {
-  "birthTime": "1919",
-  "deathTime": "2005-08-10",
-  "occupations": ["ufologist", "journalist", "writer"],
+  "lastName": "Klass",
+  "firstNames": [
+    "Philip",
+    "Julian"
+  ],
+  "occupations": [
+    "ufologist",
+    "journalist",
+    "writer",
+    "engineer",
+    "electronics"
+  ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1919-11-08",
+      "place": "Des Moines (Iowa)"
+    },
+    {
+      "type": "death",
+      "time": "2005-08-10"
+    }
   ]
 }

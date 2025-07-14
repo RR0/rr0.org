@@ -2505,5 +2505,14 @@
         }
       }
     }
+  },
+  "https://web.archive.org/web/20160305011126/http://apo.org.au/files/Resource/PolicyHistory_ReportOnASIS_Mar_1995_OCRClearScan.pdf": {
+    "title": "https://web.archive.org/web/20160305011126/http://apo.org.au/files/Resource/PolicyHistory_ReportOnASIS_Mar_1995_OCRClearScan.pdf",
+    "url": "https://web.archive.org/web/20160305011126/http://apo.org.au/files/Resource/PolicyHistory_ReportOnASIS_Mar_1995_OCRClearScan.pdf",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

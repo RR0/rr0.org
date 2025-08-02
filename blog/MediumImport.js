@@ -1,5 +1,5 @@
 import path from "path"
-import { ClassDomReplaceCommand, ContentStep, HtmlFileContents, Ssg, SsgContextImpl } from "ssg-api"
+import { ClassDomReplaceCommand, ContentStep, DomReplaceCommand, HtmlFileContents, Ssg, SsgContextImpl } from "ssg-api"
 import { FileContents } from "@javarome/fileutil"
 import fs from "fs"
 
@@ -11,31 +11,9 @@ import fs from "fs"
  */
 
 /**
- * @implements DomReplacement
- */
-export class ParagraphReplacer {
-  /**
-   *
-   * @param {HtmlSsgContext} context
-   * @param {HTMLElement} element
-   * @return {Promise<E>}
-   */
-  async replacement(context, element) {
-    element.removeAttribute("class")
-    element.removeAttribute("id")
-    if (element.nextSibling?.nodeType !== 3) {
-      element.insertAdjacentText("afterend", "\n")
-    }
-    return element
-  }
-}
-
-/**
  * @implements ReplacerFactory
  */
-class ParagraphReplacerFactory {
-
-  singleton
+class RemoveClassIdReplacerFactory {
 
   async create(context) {
     const instance = await this.getInstance()
@@ -46,7 +24,92 @@ class ParagraphReplacerFactory {
 
   async getInstance() {
     if (!this.singleton) {
-      this.singleton = new ParagraphReplacer()
+      /**
+       * @implements DomReplacement
+       */
+      this.singleton = new class {
+        /**
+         *
+         * @param {HtmlSsgContext} context
+         * @param {HTMLElement} element
+         * @return {Promise<E>}
+         */
+        async replacement(context, element) {
+          element.removeAttribute("class")
+          element.removeAttribute("id")
+          if (element.nextSibling?.nodeType !== 3) {
+            element.insertAdjacentText("afterend", "\n")
+          }
+          return element
+        }
+      }()
+    }
+    return this.singleton
+  }
+}
+/**
+ * @implements ReplacerFactory
+ */
+class FigureReplacerFactory {
+
+  async create(context) {
+    const instance = await this.getInstance()
+    return {
+      replace: (original) => instance.replacement(context, original)
+    }
+  }
+
+  async getInstance() {
+    if (!this.singleton) {
+      /**
+       * @implements DomReplacement
+       */
+      this.singleton = new class {
+        /**
+         *
+         * @param {HtmlSsgContext} context
+         * @param {HTMLElement} element
+         * @return {Promise<E>}
+         */
+        async replacement(context, element) {
+          element.remove()
+          return null
+        }
+      }()
+    }
+    return this.singleton
+  }
+}
+
+/**
+ * @implements ReplacerFactory
+ */
+class RemoveReplacerFactory {
+
+  async create(context) {
+    const instance = await this.getInstance()
+    return {
+      replace: (original) => instance.replacement(context, original)
+    }
+  }
+
+  async getInstance() {
+    if (!this.singleton) {
+      /**
+       * @implements DomReplacement
+       */
+      this.singleton = new class {
+        /**
+         *
+         * @param {HtmlSsgContext} context
+         * @param {HTMLElement} element
+         * @return {Promise<E>}
+         */
+        async replacement(context, element) {
+          element.remove()
+          return null
+        }
+      }()
     }
     return this.singleton
   }
@@ -74,11 +137,19 @@ export class MediumImport {
 
   async start(file) {
     const getOutputPath = (context) => path.join(options.outDir, context.file.name)
+    const removeReplacerFactory = new RemoveReplacerFactory()
+    const removeClassIdReplacerFactory = new RemoveClassIdReplacerFactory()
     /** @type ContentStepConfig */
     const contentConfigs = [{
       roots: [file],
       replacements: [
-        new ClassDomReplaceCommand(new ParagraphReplacerFactory(), "pw-post-body-paragraph")
+        new DomReplaceCommand("style", removeReplacerFactory),
+        new DomReplaceCommand("link", removeReplacerFactory),
+        new DomReplaceCommand("meta", removeReplacerFactory),
+        new DomReplaceCommand("script", removeReplacerFactory),
+        new ClassDomReplaceCommand(removeClassIdReplacerFactory, "pw-post-body-paragraph"),
+        new ClassDomReplaceCommand(removeReplacerFactory, "qd"),
+        new DomReplaceCommand("figure", removeClassIdReplacerFactory)
       ],
       getOutputPath
     }]

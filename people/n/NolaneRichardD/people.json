@@ -12,8 +12,7 @@
     "Richard Nolane",
     "Jeffrey Lord",
     "Don A. Seabury",
-    "Terence Corman",
-    "Jeffrey Lord"
+    "Terence Corman"
   ],
   "countries": [
     "fr"
@@ -21,7 +20,8 @@
   "events": [
     {
       "type": "birth",
-      "time": "1955-05-28"
+      "time": "1955-05-28",
+      "place": "France"
     }
   ]
 }

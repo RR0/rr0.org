@@ -1,10 +1,19 @@
 {
-  "birthTime": "1958-08-08",
+  "lastName": "Thouanel",
+  "firstNames": [
+    "Bernard"
+  ],
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1958-08-08"
+    }
   ]
 }

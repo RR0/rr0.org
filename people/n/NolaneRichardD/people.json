@@ -1,11 +1,15 @@
 {
-  "birthTime": "1955-05-28",
+  "url": "https://www.richardnolane.com",
+  "lastName": "Raynaud",
+  "firstNames": [
+    "Olivier"
+  ],
   "occupations": [
     "ufologist",
     "writer"
   ],
   "pseudonyms": [
-    "Olivier Raynaud",
+    "Richard Nolane",
     "Jeffrey Lord",
     "Don A. Seabury",
     "Terence Corman",
@@ -13,5 +17,11 @@
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1955-05-28"
+    }
   ]
 }

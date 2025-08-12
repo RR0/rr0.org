@@ -1,11 +1,28 @@
 {
-  "birthTime": "1901-09-29",
-  "deathTime": "1954-11-28",
+  "lastName": "Fermi",
+  "firstNames": [
+    "Enrico"
+  ],
   "occupations": [
     "physicist"
   ],
   "countries": [
     "it",
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1901-09-29",
+      "place": "Rome (Italie)"
+    },
+    {
+      "type": "death",
+      "time": "1954-11-28",
+      "place": "Chicago (Illinois)",
+      "notes": [
+        "d'un cancer de l'estomac"
+      ]
+    }
   ]
 }

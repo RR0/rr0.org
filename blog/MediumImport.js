@@ -1,13 +1,15 @@
 import path from "path"
 import { ClassDomReplaceCommand, ContentStep, DomReplaceCommand, HtmlFileContents, Ssg, SsgContextImpl } from "ssg-api"
-import { FileContents } from "@javarome/fileutil"
-import fs from "fs"
+import { Level2Date as EdtfDate } from "@rr0/time"
+import { TimeUrlBuilder } from "@rr0/cms"
+import { getRR0Options } from "../RR0Options.js"
 
 /**
  * @typedef MediumImportOptions
  * @property {string} outDir
  * @property {string} outputFunc
  * @property {string} contentRoots
+ * @property {{RR0Options}} rr0Options
  */
 
 /**
@@ -47,6 +49,7 @@ class RemoveClassIdReplacerFactory {
     return this.singleton
   }
 }
+
 /**
  * @implements ReplacerFactory
  */
@@ -126,6 +129,9 @@ export class MediumImport {
    */
   constructor(options) {
     this.options = options
+    const rr0Options = options.rr0Options
+    const timeOptions = rr0Options.dataOptions.time
+    this.timeUrlBuilder = new TimeUrlBuilder(timeOptions)
     const outDir = options.outDir
     const config = {
       getOutputPath(context) {
@@ -135,13 +141,38 @@ export class MediumImport {
     this.ssg = new Ssg(config)
   }
 
+  /**
+   *
+   * @param {HtmlFileContents} file
+   * @return {Promise<SsgResult>}
+   */
   async start(file) {
+    const options = this.options
     const getOutputPath = (context) => path.join(options.outDir, context.file.name)
+    const doc = file.document
+    const h1 = doc.querySelector(".pw-post-title")
+    h1.parentElement.remove()
+    const author = doc.querySelector("meta[name='author']").content
+    const time = EdtfDate.fromString(doc.querySelector("meta[property='article:published_time']").content)
+    const timeUrl = this.timeUrlBuilder.fromEdtf(time)
+    const titleStr = doc.querySelector("title").textContent
+    const url = doc.querySelector("meta[property='og:url']").textContent
+    const sep = titleStr.indexOf(" |")
+    const title = titleStr.substring(0, sep)
+    file.contents = `<!--#include virtual="/header-start.html" -->
+<title>${title}</title>
+<meta name="author" content="${author}">
+<meta name="url" content="${url}">
+<!--#include virtual="/header-end.html" -->
+${file.contents}
+<!--#include virtual="/footer.html" -->`
+
+    await file.write()
     const removeReplacerFactory = new RemoveReplacerFactory()
     const removeClassIdReplacerFactory = new RemoveClassIdReplacerFactory()
     /** @type ContentStepConfig */
     const contentConfigs = [{
-      roots: [file],
+      roots: [file.name],
       replacements: [
         new DomReplaceCommand("style", removeReplacerFactory),
         new DomReplaceCommand("link", removeReplacerFactory),
@@ -163,13 +194,17 @@ export class MediumImport {
     const toFetch = typeof url === "string" ? new URL(url) : url
     const fileName = toFetch.pathname.substring(0, toFetch.pathname.lastIndexOf("-")) + ".html"
     const fetched = path.join(inDir, fileName)
-    if (!fs.existsSync(fetched)) {
+    /** @type HtmlFileContents */
+    let file
+    try {
+      file = HtmlFileContents.read(fetched)
+    } catch (e) {
       const fileRes = await fetch(toFetch)
       const fileTxt = await fileRes.text()
-      const file = new FileContents(fetched, "utf-8", fileTxt)
+      file = new HtmlFileContents(fetched, "utf-8", fileTxt)
       await file.write()
     }
-    const converted = await this.start(fetched)
+    const converted = await this.start(file)
     return { fetched, converted }
   }
 }
@@ -177,24 +212,32 @@ export class MediumImport {
 /**
  * @type {MediumImportOptions}
  */
-const options = {
-  outDir: path.join(process.cwd(), "./out"),
-  outputFunc: async (context, outFile) => {
-    try {
-      if (context.file instanceof HtmlFileContents) {
-        context.file.contents = context.file.serialize()
+async function getOptions() {
+  const rr0Options = await getRR0Options()
+  return {
+    outDir: path.join(process.cwd(), "./out"),
+    outputFunc: async (context, outFile) => {
+      try {
+        if (context.file instanceof HtmlFileContents) {
+          context.file.contents = context.file.serialize()
+        }
+        context.log("Writing", outFile.name)
+        await outFile.write()
+        context.file.contents = outFile.contents
+      } catch (e) {
+        context.error(outFile.name, e)
       }
-      context.log("Writing", outFile.name)
-      await outFile.write()
-      context.file.contents = outFile.contents
-    } catch (e) {
-      context.error(outFile.name, e)
-    }
+    },
+    rr0Options
   }
 }
 
-new MediumImport(options)
-  .fetch("https://kalkorff.medium.com/arts-parts-was-first-exposed-in-1996-in-this-book-get-over-it-4bad11fefdf6")
-  .then(({ fetched, converted }) => {
+getOptions()
+  .then(async (options) => {
+    const importer = new MediumImport(options)
+    const {
+      fetched,
+      converted
+    } = await importer.fetch("https://kalkorff.medium.com/arts-parts-was-first-exposed-in-1996-in-this-book-get-over-it-4bad11fefdf6")
     console.log("Imported", fetched, "and converted it to", converted.content.processedFiles[0])
   })

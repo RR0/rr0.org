@@ -1,0 +1,26 @@
+{
+  "lastName": "Tombaugh",
+  "firstNames": [
+    "Clyde",
+    "William"
+  ],
+  "occupations": [
+    "astronomer",
+    "ufoWitness"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1906-02-04",
+      "place": "Streator (Illinois)"
+    },
+    {
+      "type": "death",
+      "time": "1997-01-17",
+      "place": "Las Cruces (Nouveau-Mexique)"
+    }
+  ]
+}

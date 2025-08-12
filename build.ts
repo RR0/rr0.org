@@ -4,20 +4,16 @@ import {
   CLI,
   CMSGenerator,
   CodeReplacerFactory,
-  DataOptions,
   DescriptionReplaceCommand,
   IndexedReplacerFactory,
   LanguageReplaceCommand,
-  PeopleDirectoryStepOptions,
   PlaceReplacerFactory,
   RR0CaseMapping,
   rr0DefaultCopyright,
   RR0Mapping,
-  TimeOptions,
   UnitReplaceCommand,
   WitnessReplacerFactory
 } from "@rr0/cms"
-import { glob } from "glob"
 import {
   AngularExpressionReplaceCommand,
   ClassDomReplaceCommand,
@@ -28,6 +24,7 @@ import {
   SsiSetVarReplaceCommand,
   StringEchoVarReplaceCommand
 } from "ssg-api"
+import { getRR0Options } from "./RR0Options"
 
 interface CMSGeneratorArgs {
   /**
@@ -121,45 +118,10 @@ const timeFormat: Intl.DateTimeFormatOptions = {
   minute: "2-digit"
 }
 
-async function getTimeFiles(): Promise<string[]> {
-  const minusYearFiles = await glob("time/-?/?/?/?/index.html")
-  const year1Files = await glob("time/?/index.html")
-  const year2Files = await glob("time/?/?/index.html")
-  const year3Files = await glob("time/?/?/?/index.html")
-  const year4Files = await glob("time/?/?/?/?/index.html")
-  const monthFiles = await glob("time/?/?/?/?/??/index.html")
-  const dayFiles = await glob("time/?/?/?/?/??/??/index.html")
-  return year1Files.concat(year2Files).concat(year3Files).concat(year4Files).concat(
-    minusYearFiles).concat(monthFiles).concat(dayFiles).sort()
-}
-
 const directoryPages = [
   "people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"
 ]
-getTimeFiles().then(async (timeFiles) => {
-  const orgFiles = await glob("org/**/index.html")
-  const sourceRegistryFileName = "source/index.json"
-  const directoryOptions: PeopleDirectoryStepOptions = {
-    root: "people/index.html",
-    scientists: "people/scientifiques.html",
-    ufologists: "people/ufologues.html",
-    ufoWitnesses: "people/witness/index.html",
-    astronomers: "people/astronomes.html",
-    contactees: "people/contactes.html",
-    pilots: "people/pilotes.html",
-    military: "people/militaires.html",
-    softwareEngineers: "tech/info/Personnes.html",
-    politicians: "people/politicians.html",
-    rulers: "people/dirigeants.html"
-  }
-  const siteBaseUrl = "https://rr0.org/"
-  const mail = "rr0@rr0.org"
-  const timeOptions: TimeOptions = {rootDir: "time", files: timeFiles}
-  const orgOptions: DataOptions = {rootDir: "org", files: orgFiles}
-  const dataOptions = {
-    time: timeOptions,
-    org: orgOptions
-  }
+getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileName, directoryOptions}) => {
   const mappings: RR0CaseMapping<any>[] = [
     new RR0Mapping({read: ["fetch"], write: ["backup"]})
   ]

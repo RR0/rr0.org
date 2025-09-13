@@ -1,9 +1,14 @@
 {
-  "birthTime": "1933",
   "occupations": [
     "military"
   ],
   "countries": [
     "il"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1933"
+    }
   ]
 }

@@ -1,8 +1,26 @@
 {
-  "birthTime": "1473",
-  "deathTime": "1543",
+  "firstNames": [
+    "Mikolaj"
+  ],
+  "lastName": "Kopernik",
   "occupations": ["astronomer"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1473",
+      "place": "Torun (Pologne)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Clarissimus et doctimus doctor Nicolaus Copernicus taurunensis canonicus warmiensis astronomus incomparabilis"
+    },
+    {
+      "type": "death",
+      "time": "1543"
+    }
   ]
 }

@@ -3,6 +3,7 @@ import { ClassDomReplaceCommand, ContentStep, DomReplaceCommand, HtmlFileContent
 import { Level2Date as EdtfDate } from "@rr0/time"
 import { TimeUrlBuilder } from "@rr0/cms"
 import { getRR0Options } from "../RR0Options.js"
+import { FileContentsLang } from "@javarome/fileutil"
 
 /**
  * @typedef MediumImportOptions
@@ -148,25 +149,26 @@ export class MediumImport {
    */
   async start(file) {
     const options = this.options
-    const getOutputPath = (context) => path.join(options.outDir, context.file.name)
     const doc = file.document
     const h1 = doc.querySelector(".pw-post-title")
     h1.parentElement.remove()
     const author = doc.querySelector("meta[name='author']").content
     const time = EdtfDate.fromString(doc.querySelector("meta[property='article:published_time']").content)
     const timeUrl = this.timeUrlBuilder.fromEdtf(time)
-    const titleStr = doc.querySelector("title").textContent
+    const title = this.getTitle(doc)
     const url = doc.querySelector("meta[property='og:url']").textContent
-    const sep = titleStr.indexOf(" |")
-    const title = titleStr.substring(0, sep)
-    file.contents = `<!--#include virtual="/header-start.html" -->
+    doc.q
+    const contents = `<!--#include virtual="/header-start.html" -->
 <title>${title}</title>
 <meta name="author" content="${author}">
 <meta name="url" content="${url}">
 <!--#include virtual="/header-end.html" -->
 ${file.contents}
 <!--#include virtual="/footer.html" -->`
-
+    const vars = undefined
+    const logger = undefined
+    const context = new SsgContextImpl(file.lang.lang, vars, file.name, logger, file)
+    file = new HtmlFileContents(path.join(options.outDir, timeUrl, context.file.name), "utf-8", contents, time, new FileContentsLang())
     await file.write()
     const removeReplacerFactory = new RemoveReplacerFactory()
     const removeClassIdReplacerFactory = new RemoveClassIdReplacerFactory()
@@ -182,12 +184,24 @@ ${file.contents}
         new ClassDomReplaceCommand(removeReplacerFactory, "qd"),
         new DomReplaceCommand("figure", removeClassIdReplacerFactory)
       ],
-      getOutputPath
+      getOutputPath: (context) => context.file.name
     }]
-    const context = new SsgContextImpl()
     return this.ssg
-      .add(new ContentStep(contentConfigs, options.outputFunc))
+      .add(new class extends ContentStep {
+        shouldProcessFile() {
+          return true
+        }
+      }(contentConfigs, options.outputFunc))
       .start(context)
+  }
+
+  getTitle(doc) {
+    let title = doc.querySelector("title").textContent
+    const tubePos = title.indexOf(" |")
+    if (tubePos > 0) {
+      title = title.substring(0, tubePos)
+    }
+    return title
   }
 
   async fetch(url, inDir = ".") {
@@ -201,7 +215,7 @@ ${file.contents}
     } catch (e) {
       const fileRes = await fetch(toFetch)
       const fileTxt = await fileRes.text()
-      file = new HtmlFileContents(fetched, "utf-8", fileTxt)
+      file = new HtmlFileContents(fetched, "utf-8", fileTxt, new Date(), new FileContentsLang())
       await file.write()
     }
     const converted = await this.start(file)

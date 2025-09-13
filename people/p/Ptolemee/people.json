@@ -1,6 +1,9 @@
 {
+  "firstNames": [
+    "Claúdios"
+  ],
+  "lastName": "Ptolemaîos",
   "title": "Ptolémée",
-  "birthTime": "1940",
   "occupations": [
     "astronomer",
     "mathematician",
@@ -9,5 +12,17 @@
   ],
   "countries": [
     "gr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "~100",
+      "place": "Canope (Égypte)"
+    },
+    {
+      "type": "death",
+      "time": "~168",
+      "place": "Canope (Égypte)"
+    }
   ]
 }

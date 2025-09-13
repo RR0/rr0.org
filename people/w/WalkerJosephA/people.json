@@ -1,10 +1,25 @@
 {
-  "birthTime": "1921-02-20",
-  "deathTime": "1966-06-08",
+  "lastName": "Walker",
+  "firstNames": [
+    "Joseph",
+    "A."
+  ],
   "occupations": [
     "pilot"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1921-02-20",
+      "place": "Washington (Pennsylvanie)"
+    },
+    {
+      "type": "death",
+      "time": "1966-06-08",
+      "place": "Barstow (Californie)"
+    }
   ]
 }

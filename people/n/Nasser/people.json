@@ -1,6 +1,9 @@
 {
-  "birthTime": "1918-01-15",
-  "deathTime": "1970-09-28",
+  "lastName": "Nasser",
+  "firstNames": [
+    "Gamal",
+    "Abdel"
+  ],
   "occupations": [
     "politician",
     "military",
@@ -8,5 +11,20 @@
   ],
   "countries": [
     "eg"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1918-01-15",
+      "place": "Bacos (Égypte)"
+    },
+    {
+      "type": "death",
+      "time": "1970-09-28",
+      "place": "Le Caire (Égypte)",
+      "notes": [
+        "d'une crise cardiaque"
+      ]
+    }
   ]
 }

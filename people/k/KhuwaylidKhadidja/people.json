@@ -1,6 +1,8 @@
 {
-  "title": "Khadija bint Khuwaylid",
-  "name": "Khadidja",
+  "lastName": "bint Khuwaylid",
+  "firstNames": [
+    "Khadidja"
+  ],
   "occupations": [
     "salesman"
   ],

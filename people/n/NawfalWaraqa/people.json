@@ -1,0 +1,20 @@
+{
+  "lastName": "ibn Nawfal",
+  "firstNames": [
+    "Waraqa"
+  ],
+  "occupations": [
+    "judge",
+    "teacher"
+  ],
+  "countries": [
+    "sa"
+  ],
+  "events": [
+    {
+      "type": "death",
+      "time": "~610",
+      "place": "La Mecque (Arabie Saoudite)"
+    }
+  ]
+}

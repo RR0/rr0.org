@@ -1,0 +1,20 @@
+{
+  "occupations": [
+    "military"
+  ],
+  "countries": [
+    "sa"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "581",
+      "place": "Arabie"
+    },
+    {
+      "type": "death",
+      "time": "629",
+      "place": "Mu'tah"
+    }
+  ]
+}

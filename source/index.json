@@ -2579,5 +2579,70 @@
         }
       }
     }
+  },
+  "http://sahihboukhari.free.fr/": {
+    "title": " Sahih Al Boukhari",
+    "url": "http://sahihboukhari.free.fr/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2011,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 3,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 14,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 59,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 59,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://archive.org/details/SahihAlBoukhariTome4_20160328/Sahih%20Al-Boukhari%20Tome%201%20-%20partie%201/mode/2up": {
+    "title": "Sahih Al Boukhari (4 tomes) - arabe-français : Free Download, Borrow, and Streaming : Internet Archive",
+    "url": "https://archive.org/details/SahihAlBoukhariTome4_20160328/Sahih%20Al-Boukhari%20Tome%201%20-%20partie%201/mode/2up",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

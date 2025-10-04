@@ -1,9 +1,21 @@
 {
-  "birthTime": "1931-04-04",
+  "lastName": "Inman",
+  "firstNames": [
+    "Robert",
+    "Ray"
+  ],
+  "surname": "Bobby",
   "occupations": [
     "military"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1931-04-04",
+      "place": "Rhonesboro (Texas)"
+    }
   ]
 }

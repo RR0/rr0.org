@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://images-na.ssl-images-amazon.com/images/S/sash/IgQguYLSKkkAXwm.html -->
+<html class=" nqramdnkg idc0_350" lang="en">
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+
+  <!-- APE SafeFrame v1.50.d327519 -- 2022-02-22T20:30:21+0000 -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="public" http-equiv="Cache-Control">
+  <meta content="NOINDEX" name="ROBOTS">
+  <meta content="NOFOLLOW" name="ROBOTS">
+  <meta content="NOARCHIVE" name="ROBOTS">
+  <meta content="NOSNIPPET" name="ROBOTS">
+  <meta content="NOODP " name="ROBOTS">
+  <title></title>
+  <style type="text/css">
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body marginheight="0" marginwidth="0">
+<script>
+  var impressionState = {
+    hasFired: false
+  }
+  !function i(o, s, c) {
+    function d(t, e) {
+      if (!s[t]) {
+        if (!o[t]) {
+          var n = "function" == typeof require && require
+          if (!e && n)
+            return n(t, !0)
+          if (l)
+            return l(t, !0)
+          var a = new Error("Cannot find module '" + t + "'")
+          throw a.code = "MODULE_NOT_FOUND",
+            a
+        }
+        var r = s[t] = {
+          exports: {}
+        }
+        o[t][0].call(r.exports, function (e) {
+          return d(o[t][1][e] || e)
+        }, r, r.exports, i, o, s, c)
+      }
+      return s[t].exports
+    }
+
+    for (var l = "function" == typeof require && require, e = 0; e < c.length; e++)
+      d(c[e])
+    return d
+  }({
+    1: [function (e, t, n) {
+      var a = e("./lib/replace")
+        , r = e("./lib/getSlotPlaceholder").getSlotPlaceholder
+        , i = e("./lib/getSlotPlaceholder").getClickTrackingParamWithSlotId
+      t.exports.replace = a,
+        t.exports.getSlotPlaceholder = r,
+        t.exports.getClickTrackingParamWithSlotId = i
+    }
+      , {
+        "./lib/getSlotPlaceholder": 2,
+        "./lib/replace": 4
+      }],
+    2: [function (e, t, n) {
+      var a = e("./globals")
+        , r = "data-val"
+
+      function i(e) {
+        if ("string" != typeof e || "" === e)
+          return ""
+        var t = a.getDocument().getElementById("ape_" + e + "_placement_ClickTracking")
+        if (!(t && t.hasAttribute && "function" == typeof t.hasAttribute && t.hasAttribute(r) && t.getAttribute && "function" == typeof t.getAttribute))
+          return ""
+        var n = t.getAttribute(r)
+        return "string" != typeof n ? "" : n
+      }
+
+      t.exports.getSlotPlaceholder = function (e, t, n) {
+        return i([e, n, t].join("_"))
+      }
+        ,
+        t.exports.getClickTrackingParamWithSlotId = i
+    }
+      , {
+        "./globals": 3
+      }],
+    3: [function (e, t, n) {
+      t.exports.getDocument = function () {
+        return document
+      }
+    }
+      , {}],
+    4: [function (e, t, n) {
+      var u = new RegExp(/((&#[0-9]{2};)|(&#[0-9]{3};)|(&#[0-9]{4};)|(&[a-z]{2};)|(&[a-z]{3};)|(&[a-z]{4};)|(&[a-z]{5};)|(&[a-z]{6};)|(&[a-z]{7};)|(%[a-fA-F0-9]{2})|(\W))pd_rd_plhdr(=|%3D)t((&#[0-9]{2};)|(&#[0-9]{3};)|(&#[0-9]{4};)|(&[a-z]{2};)|(&[a-z]{3};)|(&[a-z]{4};)|(&[a-z]{5};)|(&[a-z]{6};)|(&[a-z]{7};)|(%[a-fA-F0-9]{2})|(\W))/)
+        , p = "$1"
+        , f = "$14"
+      t.exports = function (e, t) {
+        var n = t
+          , a = e
+        if ("string" != typeof e || "&pd_rd_plhdr=t" === e || "" === e.trim())
+          return n;
+        (a = a.replace(/&amp;/g, "&")).startsWith("&") && (a = a.replace(/^&+/, "")),
+        a.endsWith("&") && (a = a.replace(/&+$/, ""))
+        try {
+          var r, i = 0
+          do {
+            if (i++,
+              !(r = n.match(u)))
+              break
+            var o = r[1]
+              , s = r[14]
+              , c = r[13]
+              , d = o.startsWith("&") && o.endsWith(";") || s.startsWith("&") && s.endsWith(";")
+              , l = o.startsWith("%") && s.startsWith("%") && "%3D" === c
+            n = d ? n.replace(u, p + a.replace(/&/g, "&amp;") + f) : l ? n.replace(u, p + encodeURIComponent(a) + f) : n.replace(u, p + a + f)
+          } while (r && i < 10)
+        } catch (e) {
+          return t
+        }
+        return n
+      }
+    }
+      , {}],
+    5: [function (e, t, n) {
+      var a = e("./lib/addJSONQueryParamToURL").addJSONQueryParamToURL
+      t.exports.addJSONQueryParamToURL = a
+    }
+      , {
+        "./lib/addJSONQueryParamToURL": 6
+      }],
+    6: [function (e, t, n) {
+      var s = e("./globals")
+        , p = "{}"
+        , f = "?"
+        , m = "&"
+        , E = "="
+
+      function g(e, t) {
+        var n = {}
+        for (var a in e)
+          n[a] = e[a]
+        for (var r in t)
+          n[r] = t[r]
+        return n
+      }
+
+      t.exports.addJSONQueryParamToURL = function (t, n, a) {
+        if ("string" != typeof t || "" === t)
+          throw new Error("Invalid url input to addJSONQueryParamToURL: " + JSON.stringify({
+            url: t
+          }))
+        if ("string" != typeof n || "" === n)
+          throw new Error("Invalid queryParamKey input to addJSONQueryParamToURL: " + JSON.stringify({
+            queryParamKey: n
+          }))
+        if ("object" != typeof a)
+          throw new Error("Invalid queryParamValueObject input to addJSONQueryParamToURL: " + JSON.stringify({
+            queryParamValueObject: a
+          }))
+        try {
+          var e = new (s.getURLInterface())(t)
+            , r = e.searchParams.get(n) ? e.searchParams.get(n) : p
+            , i = JSON.parse(r)
+          if ("object" != typeof i)
+            throw new Error("Existing query param value was not an object: " + JSON.stringify({
+              existingJSONObject: i
+            }))
+          var o = g(i, a)
+          return e.searchParams.set(n, JSON.stringify(o)),
+            e.toString()
+        } catch (e) {
+          return function (e, t, n) {
+            var a, r = e.indexOf(f), i = {}
+            if (0 < r) {
+              a = e.substring(0, r)
+              var o = decodeURIComponent(e.substring(r + 1))
+              o.split(m).forEach(function (e) {
+                if (e) {
+                  var t = e.split(E)
+                  i[t[0]] = t[1]
+                }
+              })
+              var s = i[t] ? i[t] : p
+                , c = JSON.parse(s)
+              if ("object" != typeof c)
+                throw new Error("Existing query param value was not an object: " + JSON.stringify({
+                  existingJSONObject: c
+                }))
+              var d = g(c, n)
+              i[t] = JSON.stringify(d)
+            } else
+              a = e,
+                i[t] = JSON.stringify(n)
+            var l = []
+            for (var u in i)
+              l.push(encodeURIComponent(u) + E + encodeURIComponent(i[u]))
+            return a + f + l.join(m)
+          }(t, n, a)
+        }
+      }
+    }
+      , {
+        "./globals": 7
+      }],
+    7: [function (e, t, n) {
+      t.exports.getURLInterface = function () {
+        return URL
+      }
+    }
+      , {}],
+    8: [function (e, t, n) {
+      var a = e("../components/sfCounters")
+        , r = e("./messenger/sfMsgHandler")
+        , i = r.messenger
+        , o = a.IMPRESSION_COUNTERS.LEGACY_IMPRESSION_COUNTER
+        , s = !1
+      t.exports.fireImpression = function (e) {
+        i.fireImpressionPixel(e.measurementMethod, e.isNoInventory)
+      }
+        ,
+        t.exports.fireMetricsForLegacyImpression = function (e) {
+          var t = i.options.adCreativeMetaData.adProgramId ? i.options.adCreativeMetaData.adProgramId : "unknown"
+            , n = r.prepareCreativeTemplateNameForTagging(i.options.adCreativeMetaData.adCreativeTemplateName)
+          s || (s = !0,
+            i.client.countMetric(o, 1, !1),
+            i.client.countMetric(o, 1, !0),
+            i.client.countMetric(o + ":program:" + t, 1, !0),
+            i.client.countMetric(o + ":template:" + n, 1, !0))
+        }
+    }
+      , {
+        "../components/sfCounters": 15,
+        "./messenger/sfMsgHandler": 11
+      }],
+    9: [function (e, t, n) {
+      var a = e("../../components/util")
+        , l = e("../../components/sfCounters").BTR_COUNTERS
+        , u = e("./measurementMethods").MEASUREMENT_METHODS
+        ,
+        p = ["ape_impression", "ape_ni_impression", "ape_measurability", "ape_viewability_amzn", "ape_viewability_iab", "ape_viewability_groupm", "ape_ni_viewability_amzn", "ape_ni_viewability_iab", "ape_ni_viewability_groupm"]
+      t.exports.evaluateImpressionMeasurementMethod = function (c, d) {
+        var e = function () {
+          for (var e = document.getElementsByTagName("img"), t = [], n = 0; n < e.length; n++)
+            -1 === p.indexOf(e[n].id) && t.push(e[n])
+          var a = 0
+            , r = 0
+            , i = 0
+            , o = u.COUNT_ON_DOWNLOAD_CLIENT
+          for (n = 0; n < t.length; n++) {
+            var s = t[n]
+            s.complete && 0 < s.naturalHeight && 0 < s.naturalWidth ? 1 === s.naturalHeight && 1 === s.naturalWidth ? r++ : (1 < s.naturalHeight || 1 < s.naturalWidth) && i++ : a++
+          }
+          0 === t.length ? (c.countMetric(l.NO_IMAGES, 1, !1),
+            c.countMetric(l.NO_IMAGES, 1, !0)) : 0 < a ? (c.countMetric(l.ERROR, 1, !1),
+            c.countMetric(l.ERROR, 1, !0)) : 0 === i && 0 < r ? (c.countMetric(l.PIXELS, 1, !1),
+            c.countMetric(l.PIXELS, 1, !0)) : 0 < i && (c.countMetric(l.LOADED, 1, !1),
+            c.countMetric(l.LOADED, 1, !0),
+            o = u.BEGIN_TO_RENDER_CLIENT),
+            d(o)
+        }
+        "complete" === document.readyState ? e() : a.addWindowListener("load", function () {
+          e()
+        })
+      }
+    }
+      , {
+        "../../components/sfCounters": 15,
+        "../../components/util": 17,
+        "./measurementMethods": 10
+      }],
+    10: [function (e, t, n) {
+      t.exports.MEASUREMENT_METHODS = {
+        BEGIN_TO_RENDER_CLIENT: "btr_client",
+        COUNT_ON_DOWNLOAD_CLIENT: "cod_client"
+      }
+    }
+      , {}],
+    11: [function (i, e, t) {
+      function r(e, t) {
+        "undefined" != typeof console && console.error && console.error(e, t)
+      }
+
+      function S(e) {
+        return e ? e.toLowerCase().replace(/[^0-9a-z]/g, "") : "unknown"
+      }
+
+      e.exports.messenger = new function (e, t, n) {
+        var g = this
+          , d = i("@amzn/apejs-url-query-params")
+          , v = i("../../components/sfCounters")
+          , R = i("../../components/sfEvents")
+          , l = i("./measurementMethods").MEASUREMENT_METHODS
+          , u = v.AD_LOAD_COUNTERS
+          , p = v.IMPRESSION_COUNTERS.GLOBAL_IMPRESSION_FIRED_COUNTER
+          , f = v.BTR_COUNTERS
+          , m = R.AD_LOAD_EVENTS
+          , E = i("../../components/pixel")
+          , T = {}
+        this.client = e || {},
+          this.options = t || {},
+          this.msgListeners = n || {},
+          this.tagRenderFlow = function () {
+            if (g.options && g.options.adCreativeMetaData && g.options.adCreativeMetaData.adProgramId && g.options.adCreativeMetaData.adCreativeId) {
+              var e = S(g.options.adCreativeMetaData.adCreativeTemplateName)
+              g.client.addCsmTag("adrender"),
+                g.client.addCsmTag("adrender:safeframe"),
+                g.client.addCsmTag("adrender", "creativeid:" + g.options.adCreativeMetaData.adCreativeId),
+                g.client.addCsmTag("adrender", "programid:" + g.options.adCreativeMetaData.adProgramId),
+                g.client.addCsmTag("adrender", "creativetemplatename:" + e),
+                g.sendMessage("addCsaEntity", {
+                  adrender: "true",
+                  creativeId: g.options.adCreativeMetaData.adCreativeId.toString(),
+                  adProgramId: g.options.adCreativeMetaData.adProgramId.toString(),
+                  creativeTemplateName: e,
+                  isLightAds: "false"
+                }),
+              void 0 !== g.options.isCardsFlow && g.sendMessage("addCsaEntity", {
+                isCardsFlow: g.options.isCardsFlow.toString()
+              })
+            } else
+              g.client.addCsmTag("noadrender"),
+                g.sendMessage("addCsaEntity", {
+                  adrender: "false"
+                })
+          }
+          ,
+          this.produceClientAPIs = function (e) {
+            function s(e, t, n, a) {
+              return function () {
+                try {
+                  return n && (g.sendMessage("logAPIInvocation", {
+                    apiName: t,
+                    apiParams: arguments
+                  }),
+                    g.sendMessage("logCsaEvent", {
+                      metricName: R.MESSENGER_EVENTS.API + t
+                    })),
+                    e.apply(this, arguments)
+                } catch (e) {
+                  return "function" == typeof a && a("API Call Failed", e),
+                    null
+                }
+              }
+            }
+
+            g.client = function e(t, n) {
+              var a = {}
+              for (var r in t)
+                if (t.hasOwnProperty(r)) {
+                  var i = t[r]
+                    , o = n ? n + "." + r : r
+                  "function" == typeof i ? a[r] = new s(i, o) : i.hasOwnProperty("apiFunc") ? a[r] = new s(i.apiFunc, o, i.logInvocation) : "object" == typeof i && (a[r] = e(i, o))
+                }
+              return a
+            }(e, "")
+          }
+          ,
+          this.sendMessage = function (e, t) {
+            if (g.options !== {}) {
+              var n = {
+                command: e,
+                arid: g.options.arid,
+                data: t || {}
+              }
+              try {
+                parent.postMessage(JSON.stringify(n), g.options.hostDomain)
+              } catch (e) {
+                r("Post Message unsupported ", e)
+              }
+            }
+          }
+          ,
+          this.receiveMessage = function (t) {
+            if (g.options !== {} && g.client !== {}) {
+              var e
+              try {
+                if (e = JSON.parse(t.data),
+                t.origin !== g.options.hostDomain || "object" != typeof e.data)
+                  throw "Invalid Message"
+              } catch (e) {
+                var n = "Received Error: " + t.data
+                return void g.client.logError(n, e)
+              }
+              try {
+                g.options.debug && "undefined" != typeof console && console.log("SF Message received ", t)
+                for (var a = e.command ? e.command.split(".") : [], r = g.client[a[0]], i = 1; i < a.length && r; i++)
+                  r = r[a[i]]
+                if ("customMessage" === e.command) {
+                  var o = e.data.key
+                    , s = e.data.data
+                  if ("function" == typeof g.msgListeners[o])
+                    try {
+                      g.msgListeners[o](s)
+                    } catch (e) {
+                      g.client.logError("Custom Message Listener Error", e)
+                    }
+                } else
+                  r && r(e.data)
+              } catch (e) {
+                return void g.client.logError("Error with " + JSON.parse(t.data).command, e)
+              }
+            }
+          }
+
+        var I = function (e, t, n) {
+          return e + t + JSON.stringify(n)
+        }
+          , M = function (e) {
+          return "Image" === e || "Image - mobile O&O" === e
+        }
+          , a = !1
+        this.fireImageLoaded = function (e) {
+          if (!a && M(e)) {
+            var t = document.getElementsByClassName("ad-background-image")
+            if ((t = t && t[0]) && "img" === t.tagName.toLowerCase())
+              if (t.complete)
+                g.client.countMetric("imageLoaded", 1, !0),
+                  g.client.countMetric("imageLoaded:adid:" + g.options.adCreativeMetaData.adId, 1, !0),
+                  a = !0
+              else {
+                var n = t.onload
+                t.onload = function () {
+                  n && n(),
+                    g.client.countMetric("imageLoaded", 1, !0),
+                    g.client.countMetric("imageLoaded:adid:" + g.options.adCreativeMetaData.adId, 1, !0),
+                    a = !0
+                }
+              }
+          }
+        }
+          ,
+          this.fireImpressionPixel = function (measurementMethod, isNoDelivery) {
+            if (g.options !== {} && g.client !== {}) {
+              if (isNoDelivery) {
+                var n = I(g.options.aaxInstrPixelUrl, "nii/", {
+                  ni: !0
+                })
+                E.firePixel(g.client, n, "ape_ni_impression", u.UNSERVED_IMP, m.UNSERVED_IMP)
+              } else {
+                var impPixelUrl = g.options.aaxImpPixelUrl,
+                  r = g.options.adCreativeMetaData.adProgramId ? g.options.adCreativeMetaData.adProgramId : "unknown",
+                  i = g.options.adCreativeMetaData.adCreativeTemplateName, o = S(i),
+                  s = g.options.adCreativeMetaData.adId, c = !1
+                var loadedPixelUrl = g.options.paetsLoadedPixelUrl
+                // Only fire PAETS loaded pixel for "cod_client" measurement method
+                var pixelToFire = (measurementMethod === l.COUNT_ON_DOWNLOAD_CLIENT && loadedPixelUrl) || impPixelUrl
+                E.firePixel(g.client, pixelToFire, "ape_impression", u.IMP, m.IMP) && (g.client.countMetric(p, 1, !0),
+                  g.client.countMetric(p + ":program:" + r, 1, !0),
+                  g.client.countMetric(p + ":template:" + o, 1, !0),
+                c && (g.client.countMetric(f.IMPRESSION, 1, !1),
+                  g.client.countMetric(f.IMPRESSION, 1, !0),
+                  g.client.countMetric(f.IMPRESSION + ":program:" + r, 1, !0),
+                  g.client.countMetric(f.IMPRESSION + ":template:" + o, 1, !0)),
+                M(i) && g.client.countMetric(p + ":adid:" + s, 1, !0))
+                impressionState.hasFired = true
+              }
+            }
+          }
+          ,
+          this.fireMeasurabilityPixel = function (e) {
+            // if (g.options !== {} && g.client !== {} && g.options.aaxInstrPixelUrl) {
+            //     var t = "ape_measurability";
+            //     if (!T[t]) {
+            //         var n = {};
+            //         n.atf = e.atf;
+            //         var a = I(g.options.aaxInstrPixelUrl, "atf/", n);
+            //         E.firePixel(g.client, a, t, u.MEASURABILITY, m.MEASURABILITY),
+            //         T[t] = !0
+            //     }
+            // }
+          }
+          ,
+          this.fireViewablePixels = function (o, s, e, c) {
+            if (g.options !== {} && g.client !== {} && g.options.aaxInstrPixelUrl && e) {
+              for (var t = function (e) {
+                var t, n, a = e.p, r = e.t, i = e.def
+                !T[i].viewed && (n = a,
+                (t = o) && (n <= 100 * t && 0 !== n || n < 100 * t && 0 === n)) ? T[i].timeout || (T[i].timeout = setTimeout(function () {
+                  T[i].viewed = !0,
+                    function (e) {
+                      s.v = e,
+                        s.ptv = void 0 !== g.options.aPageStart ? (Date.now() - g.options.aPageStart) / 1e3 : 0,
+                        s.ttv = void 0 !== g.options.adStartTime ? (Date.now() - g.options.adStartTime) / 1e3 : 0,
+                      c && (s.niv = !0)
+                      var t, n = {}
+                      n.viewableInfo = s,
+                        n.aaxInstrPixelUrl = g.options.aaxInstrPixelUrl,
+                        n.viewablePercentage = o,
+                        c ? (t = I(g.options.aaxInstrPixelUrl, "niv/", s),
+                          E.firePixel(g.client, t, "ape_ni_viewability_" + e.def, u.UNSERVED_VIEWABILITY, m.UNSERVED_VIEWABILITY, e.def, n)) : (t = I(g.options.aaxInstrPixelUrl, "v/", s),
+                          E.firePixel(g.client, t, "ape_viewability_" + e.def, u.VIEWABILITY, m.VIEWABILITY, e.def, n))
+                    }(e)
+                }, 1e3 * r)) : T[i].timeout && (clearTimeout(T[i].timeout),
+                  T[i].timeout = null)
+              }, n = 0; n < e.length; n++) {
+                var a = e[n].def
+                a && (T[a] = T[a] || {},
+                  T[a].viewed = void 0 !== T[a].viewed && T[a].viewed,
+                  T[a].timeout = void 0 === T[a].timeout ? null : T[a].timeout)
+              }
+              for (n = 0; n < e.length; n++)
+                t(e[n])
+            }
+          }
+          ,
+          this.handleNoAdContent = function () {
+            g.options.isNoInventory = !0,
+              g.tagRenderFlow(),
+              g.sendMessage("startPixelTracking", {
+                isNoInventory: g.options.isNoInventory
+              })
+          }
+
+        var _ = function (e, t, n, a, r, i) {
+          window[n] = t,
+            window[r] = a,
+            i(["<scr", "ipt type='text/javascript', src='", e, "', onerror='", r + "()", "'></scr", "ipt>"].join(""))
+        }
+        this.createXspRequest = function (e, n, a, t, r) {
+          var i, o, s = v.AD_FETCH_COUNTERS, c = R.AD_FETCH_EVENTS, d = g.client.handleFallbackBehavior,
+            l = g.client.countMetric, u = g.client.logCsaEvent, p = g.client.logError, f = g.client.sendAdBarTrace
+          l(s.REQUEST_START, 1),
+            u(c.REQUEST_START)
+          try {
+            var m = "aax_xsp_render_ad"
+              , E = (i = m,
+              -1 === (o = e.replace(/getAd/, "getAdj")).indexOf("?") ? o + "?callback=" + i : o + "&callback=" + i)
+            f("aaxCall", {
+              jsonpUrl: E,
+              XSPCallSetupComplete: !0
+            }),
+              _(E, function (e) {
+                var t = {
+                  callBackReceived: !0
+                }
+                if (t.errFallback = d.name,
+                e && 0 !== Object.keys(e).length) {
+                  switch (t.adContent = e,
+                    t.status = e.status,
+                    e.status) {
+                    case "punt":
+                      l(s.PUNT_RETURNED, 1),
+                        u(c.PUNT_RETURNED),
+                        n.aaxInstrPixelUrl = e.instrPixelURL,
+                        a(),
+                        t.aaxReturnedPunt = !0,
+                        f("aaxCall", t)
+                      break
+                    case "error":
+                      l(s.ERROR_RETURNED, 1),
+                        u(c.ERROR_RETURNED),
+                        d(),
+                        t.aaxReturnedError = !0,
+                        f("aaxCall", t)
+                      break
+                    default:
+                      try {
+                        n.aaxImpPixelUrl = e.impPixelURL,
+                          n.aaxInstrPixelUrl = e.instrPixelURL,
+                          n.htmlContent = e.creative,
+                          n.measurementHtml = e.aaxMeasurementTrackers && e.aaxMeasurementTrackers.html,
+                        n && n.adFeedbackInfo && (n.adFeedbackInfo.adProgramId = e.programId),
+                        n && n.adCreativeMetaData && (n.adCreativeMetaData.adProgramId = e.programId,
+                          n.adCreativeMetaData.adImpressionId = e.impPixelURL,
+                          n.adCreativeMetaData.adCreativeId = e.creativeId,
+                          n.adCreativeMetaData.adCreativeTemplateName = e.creativeTemplateName,
+                          n.adCreativeMetaData.adId = e.adId),
+                          t.aaxReturnedContent = !0,
+                          f("aaxCall", t),
+                          r(n.htmlContent, n.measurementHtml),
+                          l(s.RENDERED_AD, 1),
+                          u(c.RENDERED_AD)
+                      } catch (e) {
+                        d(),
+                          l(s.RENDER_ERROR, 1),
+                          u(c.RENDER_ERROR),
+                          t.error = "renderError",
+                          f("aaxCall", t)
+                      }
+                  }
+                  window.adReporterConfig && g.sendMessage("saveAdDetailsForAdReporter", n)
+                } else
+                  l(s.EMPTY_RESPONSE, 1),
+                    u(c.EMPTY_RESPONSE),
+                    d(),
+                    t.error = "emptyAAXResponse",
+                    f("aaxCall", t)
+              }, m, function () {
+                l(s.HTTP_ERROR, 1),
+                  u(c.HTTP_ERROR),
+                  p("Failed to Fetch Ad From AAX."),
+                  f("aaxCall", {
+                    error: "httpError"
+                  }),
+                  d()
+              }, "fetch_error_handler", t)
+          } catch (e) {
+            l(s.EXCEPTION, 1),
+              u(c.EXCEPTION),
+              p("Failed to create JSONP call."),
+              f("aaxCall", {
+                error: "failedToCreateJSONP"
+              }),
+              d(),
+              f("aaxCall", {
+                JSONPCreationException: {
+                  exception: e
+                }
+              })
+          }
+        }
+          ,
+          this.createXGetAdRequest = function (e, t, n, a) {
+            _(e, function (e) {
+              e && void 0 !== e.html && e.html ? a(e.html) : t()
+            }, "aax_render_ad", t, "fallback", n)
+          }
+      }
+        ,
+        e.exports.localErrorLog = r,
+        e.exports.isSecure = function (e) {
+          return /^https/.test(e)
+        }
+        ,
+        e.exports.replaceWithSecure = function (e) {
+          return e ? e.replace(/^http:/, "https:") : e
+        }
+        ,
+        e.exports.isOnAmazon = function (e) {
+          return /\.amazon\.(com?\.)?[a-z]{2,4}:?/i.test(e)
+        }
+        ,
+        e.exports.isOnAllowlistedPage = function (e) {
+          var t = ["ca", "mx", "br", "de", "uk", "fr", "it", "es", "in", "ae", "sa", "nl", "tr", "se", "jp", "au", "cn"].join("|")
+          return new RegExp("\\.amazon(\\.com?)?(\\.(" + t + "))?(:(\\d){1,6})?(/.*)?$", "i").test(e) || /\.(imdb|boxofficemojo|dpreview)\.com(:(\d){1,6})?(\/.*)?$/i.test(e)
+        }
+        ,
+        e.exports.prepareCreativeTemplateNameForTagging = S,
+        e.exports.handleVideoExperience = function (e, t, n) {
+          var a = i("../../components/sfCounters").AD_LOAD_COUNTERS
+            , r = i("../../components/sfEvents").AD_LOAD_EVENTS
+          try {
+            t.client.countMetric(a.RENDER_START, 1),
+              t.client.logCsaEvent(r.RENDER_START),
+              e.setupOMVideoPlayer(t.options, n),
+              t.client.countMetric(a.RENDER_END, 1),
+              t.client.logCsaEvent(r.RENDER_END)
+          } catch (e) {
+            t.client.handleFallbackBehavior()
+          }
+        }
+    }
+      , {
+        "../../components/pixel": 13,
+        "../../components/sfCounters": 15,
+        "../../components/sfEvents": 16,
+        "./measurementMethods": 10,
+        "@amzn/apejs-url-query-params": 5
+      }],
+    12: [function (K, Z, e) {
+      window.SFClient = function (a, r) {
+        var i = K("@amzn/apejs-click-tracking")
+          , e = K("../components/sfCounters")
+          , t = K("../components/sfEvents")
+          , o = K("../components/util")
+          , n = K("../components/sfAPI")
+          , s = K("./messenger/sfMsgHandler")
+          , c = K("./messenger/evaluateImpressionMeasurementMethod").evaluateImpressionMeasurementMethod
+          , d = K("./clientAPI")
+          , l = s.messenger
+          , u = s.localErrorLog
+          , p = s.isSecure
+          , f = s.replaceWithSecure
+          , m = s.isOnAmazon
+          , E = s.isOnAllowlistedPage
+          , g = s.handleVideoExperience
+          , v = l.fireImageLoaded
+          , R = l.handleNoAdContent
+          , T = o.decodeBase64
+          , I = l.createXspRequest
+          , M = l.createXGetAdRequest
+          , _ = o.ABP_STATUS
+          , S = e.AD_LOAD_COUNTERS
+          , N = t.AD_LOAD_EVENTS
+          , C = e.GET_QUERY_PARAM_COUNTER
+        if (!E(r.referrer))
+          return null
+        var h = a.$sf = n.produce()
+          , y = {
+          sendAdBarTrace: function (e, t) {
+            l.sendMessage("sendAdBarTrace", {
+              field: e,
+              traceInfo: t
+            })
+          },
+          changeSize: function (e, t) {
+            l.sendMessage("changeSize", {
+              width: e,
+              height: t
+            })
+          },
+          collapseSlot: function () {
+            l.sendMessage("collapseSlot")
+          },
+          handleFallbackBehavior: function () {
+            (l.client.forceFallback || l.client.collapseSlot)()
+          },
+          logError: function (e, t, n) {
+            l.sendMessage("logError", {
+              message: e,
+              error: t
+            })
+          },
+          logCsaEvent: function (e) {
+            l.sendMessage("logCsaEvent", {
+              metricName: e
+            })
+          },
+          addCsaEntity: function (e) {
+            l.sendMessage("addEntity", e)
+          },
+          sendCsmLatencyMetric: function (e, t) {
+            l.sendMessage("sendCsmLatencyMetric", {
+              metric: e,
+              metricMsg: t,
+              timestamp: o.now()
+            })
+          },
+          markCsaLatencyMetric: function (e) {
+            l.sendMessage("markCsaLatencyMetric", {
+              metric: e,
+              timestamp: o.now()
+            })
+          },
+          countMetric: function (e, t, n) {
+            l.sendMessage("countMetric", {
+              metricMsg: e,
+              value: t,
+              isGlobal: n
+            })
+          },
+          addCsmTag: function (e, t, n) {
+            l.sendMessage("addCsmTag", {
+              tag: e,
+              msg: t,
+              isGlobal: n
+            })
+          },
+          fireViewableLatencyMetrics: function () {
+            l.sendMessage("fireViewableLatencyMetrics", {
+              adLoadedTimestamp: o.now()
+            })
+          },
+          customMessage: function (e, t) {
+            l.sendMessage("customMessage", {
+              key: e,
+              body: t
+            })
+          },
+          isSupported: function () {
+            return "function" == typeof parent.postMessage
+          },
+          getARID: function () {
+            return l.options.arid
+          },
+          isOnAmazon: function () {
+            return m(l.options.hostDomain)
+          },
+          getPageId: function () {
+            var e = l.client.getAanParams().match(/\bpid=([^;]+)\b/)
+            return e ? e[1] : null
+          },
+          getDebugInfo: function (e) {
+            var t = a.aanResponse || (r.aanResponse ? r.aanResponse[l.options.slotName + "adData"] : {})
+              , n = {
+              arid: l.options.arid,
+              slot: l.options.slot,
+              slotName: l.options.slotName,
+              shazamId: t.shazamId,
+              creativeId: t.creativeId || t.cid,
+              adId: t.adId || t.aid,
+              src: l.options.src,
+              iframeHtml: r.body.innerHTML || ""
+            }
+            l.client.customMessage(e.key, n)
+          },
+          getAanParams: {
+            apiFunc: function () {
+              return l.options.aanParams || ""
+            },
+            logInvocation: !0
+          },
+          sendAdInfo: function (e) {
+            e && l.options.adCreativeMetaData && (l.options.adCreativeMetaData.adCreativeDetails = e)
+          },
+          registerCustomMessageListener: function (e, t) {
+            l.msgListeners[e] = t
+          },
+          getQueryParam: {
+            apiFunc: function (e) {
+              l.client.countMetric(C + ":" + e, 1)
+              var t = ""
+              return void 0 !== l.options.queryParams && "string" == typeof e && (0 !== e.indexOf("sf-") && (t = "sf-" + e),
+                t = l.options.queryParams[t] || ""),
+                t
+            },
+            logInvocation: !0
+          },
+          getPlacementInfo: {
+            apiFunc: function () {
+              var e = {}
+              return e.slot = l.options.slot,
+                e.slotName = l.options.slotName,
+                e
+            },
+            logInvocation: !0
+          },
+          fireImpression: d.fireImpression,
+          fireMetricsForLegacyImpression: d.fireMetricsForLegacyImpression,
+          updateViewability: function (e) {
+            if (n.update(e),
+              l.options.aaxInstrPixelUrl) {
+              l.options.isNoInventory || void 0 === e.atf || l.fireMeasurabilityPixel(e)
+              var t = h.ext.geom()
+              l.fireViewablePixels(t && t.self && t.self.iv, e.payload, e.viewabilityStandards, l.options.isNoInventory)
+            }
+          },
+          loadAdFeedback: function () {
+            l.sendMessage("loadAdFeedback", l.options.adCreativeMetaData)
+          },
+          forceFallback: function () {
+            B(!0)
+          },
+          requestVideoAutoplay: function () {
+            l.sendMessage("requestVideoAutoplay")
+          },
+          releaseVideoAutoplay: function () {
+            l.sendMessage("releaseVideoAutoplay")
+          },
+          haveVideoAutoplayPermission: function () {
+            l.sendMessage("haveVideoAutoplayPermission")
+          },
+          logSafeframeResourceTimingData: function () {
+            l.sendMessage("logSafeframeResourceTimingData", {
+              resourceTimingData: performance.getEntriesByType("resource"),
+              navigationStartTime: performance.timing.navigationStart
+            })
+          }
+        }
+        l.produceClientAPIs(y)
+        var A = function (t, e, n, a, r) {
+          var i, o
+          try {
+            o = (i = r || new Error(t, e, n)).message + ": " + i.stack
+          } catch (e) {
+            i = null,
+              o = t
+          }
+          return l.client.isSupported() ? l.client.logError(o, i) : u("Error in Safeframe window ", o),
+            B(),
+            !0
+        }
+
+        function x() {
+          a.onerror = A,
+            a.$sf = h,
+            a.aaxInstrPixelUrl = l.options.aaxInstrPixelUrl
+        }
+
+        a.onerror = A
+        var P = r.open
+          , D = "function" == typeof P.apply ? function () {
+              return P.apply(r, arguments)
+            }
+            : function () {
+              return Function.apply.call(P, r, arguments)
+            }
+
+        r.open = function (e, t) {
+          D(e, t),
+            x()
+        }
+          ,
+          o.disableCookieAccess()
+        var O = r.write
+          , w = "function" == typeof O.apply ? function () {
+            return O.apply(r, arguments)
+          }
+          : function () {
+            return Function.apply.call(O, r, arguments)
+          }
+          , b = !1
+          , L = !1
+
+        function U(e) {
+          l.client.countMetric(S.RENDER_START, 1),
+            l.client.logCsaEvent(N.RENDER_START)
+          var t = {}
+          t.readyState = r.readyState,
+            l.client.sendAdBarTrace("renderHtmlContentStart", t),
+          "complete" === r.readyState && r.open(),
+            w(e),
+            x(),
+            r.close(),
+            b = !0,
+            o.addWindowListener("load", V),
+            o.addWindowListener("load", l.client.fireViewableLatencyMetrics),
+            o.addWindowListener("load", k),
+            setTimeout(done, 0)
+          // Retry done() on an interval until the impression fires
+          // See: https://t.corp.amazon.com/P242768451
+          var impInterval = setInterval(() => {
+            if (impressionState.hasFired) {
+              clearInterval(impInterval)
+              return
+            }
+            done()
+          }, 100)
+          // Guarantee interval cleanup after 10 seconds
+          setTimeout(() => {
+            if (impInterval) {
+              clearInterval(impInterval)
+            }
+          }, 10000)
+          l.client.countMetric(S.RENDER_END, 1),
+            l.client.logCsaEvent(N.RENDER_END),
+            t.readyState = r.readyState,
+            l.client.sendAdBarTrace("renderHtmlContentEnd", t)
+        }
+
+        function k() {
+          l.options.collectSafeframeRTD && performance && performance.getEntriesByType ? l.client.logSafeframeResourceTimingData() : (l.client.countMetric(e.RESOURCE_TIMING_DATA_COUNTERS.DEPENDENCIES_NOT_MET, 1),
+            l.client.logCsaEvent(t.RESOURCE_TIMING_DATA_EVENTS.DEPENDENCIES_NOT_MET))
+        }
+
+        r.write = U
+        var F = !1
+
+        function V() {
+          F || (F = !0,
+            l.client.sendCsmLatencyMetric("ld"),
+            l.client.markCsaLatencyMetric("loaded"))
+        }
+
+        function B(e) {
+          var t, n, a
+          b && !e || (l.options.fallbackStaticAdImgUrl && l.options.fallbackStaticAdClickUrl ? (t = l.options.fallbackStaticAdImgUrl,
+            n = l.options.fallbackStaticAdClickUrl,
+            a = l.options.fallbackStaticAdExtraStyle,
+            w("<a target=\"_top\" href=\"" + n + "\"><img src=\"" + t + "\" " + (a || "") + "></a>"),
+            x(),
+            o.ensureMessageListener(l.receiveMessage),
+            r.close(),
+            l.client.loadAdFeedback(),
+            b = L = !0) : l.client.collapseSlot())
+        }
+
+        function done() {
+          o.ensureMessageListener(l.receiveMessage)
+          var e = {}
+          if (!impressionState.hasFired) {
+            e.firstInvocation = true
+            L = !0
+            l.client.loadAdFeedback()
+            l.sendMessage("startPixelTrackingForLegacyImpression")
+            c(l.client, function (e) {
+              l.sendMessage("startPixelTracking", {
+                measurementMethod: e
+              })
+            })
+            l.options.adCreativeMetaData && v(l.options.adCreativeMetaData.adCreativeTemplateName)
+            l.client.countMetric(S.CREATIVE_WRITTEN, 1)
+            l.client.logCsaEvent(N.CREATIVE_WRITTEN)
+          } else {
+            e.firstInvocation = false
+          }
+          l.client.sendAdBarTrace("doneFunction", e)
+        }
+
+        a.addEventListener ? a.addEventListener("message", l.receiveMessage, !1) : a.attachEvent && a.attachEvent("message", l.receiveMessage)
+        try {
+          l.options = JSON.parse(a.name)
+        } catch (e) {
+          u("Could not parse name ", e)
+        }
+        a.name = ""
+        var H = a.addEventListener
+          , z = a.removeEventListener
+          , j = a.attachEvent
+          , J = a.detachEvent
+
+        function q(e) {
+          var t = String(e)
+          return "message" === (t = t.toLowerCase()) || "onmessage" === t
+        }
+
+        a.addEventListener && (a.addEventListener = function (e, t, n) {
+            H.call(a, e, t, n)
+          }
+            ,
+            a.removeEventListener = function (e, t, n) {
+              q(e) || z.call(a, e, t, n)
+            }
+        ),
+        a.attachEvent && (a.attachEvent = function (e, t) {
+            return j.call(a, e, t)
+          }
+            ,
+            a.detachEvent = function (e, t) {
+              return !q(e) && J.call(a, e, t)
+            }
+        ),
+          l.client.sendCsmLatencyMetric("be"),
+          l.client.markCsaLatencyMetric("bodyEnd"),
+          l.sendMessage("safeFrameReady"),
+          l.client.countMetric(S.IFRAME_INIT, 1),
+          l.client.logCsaEvent(N.IFRAME_INIT),
+        l.options.disableResizeFunc || l.sendMessage("resizeSafeFrameAd"),
+        l.options.resizePlacementStyle && l.sendMessage("setResizePlacementStyle")
+        var G = function (e, t) {
+          if (l.options.isNoInventory = !1,
+            l.tagRenderFlow(),
+            !b) {
+            var n = e
+            l.options.clickTracking && (n = i.replace(l.options.clickTracking, n)),
+            t && t.length && (l.client.countMetric(S.MEASUREMENT_HTML, 1),
+              l.client.logCsaEvent(N.MEASUREMENT_HTML)),
+              o.isVideo(l.options.mediaType) ? g(a, l, n) : ("string" == typeof t && (n = n.concat(t)),
+                U(n))
+          }
+        }
+        a.writeAdHandler = null
+        var Y = {}
+        if (Y.serverSide = l.options.serverSideFetchAd,
+        "true" !== l.options.abpAcceptable && l.options.enableFallbackForAbpStatuses && -1 < l.options.enableFallbackForAbpStatuses.indexOf(_[l.options.abpStatus]))
+          B(!0)
+        else if ("true" === l.options.serverSideFetchAd)
+          if (l.options.htmlContentEncoded) {
+            var Q = T(l.options.htmlContentEncoded)
+              , X = T(l.options.measurementHtmlEncoded ? l.options.measurementHtmlEncoded : "")
+            Y.htmlContent = Q,
+              a.writeAdHandler = function () {
+                G(Q, X)
+              }
+          } else
+            R(),
+              Y.noAdContent = !0
+        else {
+          var $ = p(l.options.hostDomain) ? f(l.options.src) : l.options.src;
+          (Y.adSource = $) && -1 !== $.indexOf("x/getad") ? (a.writeAdHandler = function () {
+            M($, B, w, r.write)
+          }
+            ,
+            Y.isXsp = !1) : (a.writeAdHandler = function () {
+            I($, l.options, R, w, G)
+          }
+            ,
+            Y.isXsp = !0)
+        }
+        return l.client.sendAdBarTrace("adRenderFlow", Y),
+          l.msgListeners.initAdReporter = function (e) {
+            try {
+              a.adReporterConfig = e
+              var t = r.createElement("script")
+              t.type = "text/javascript",
+                t.async = !0,
+                t.charset = "utf-8",
+                t.src = e && e.adReporterClientUrl ? e.adReporterClientUrl : "",
+                (r.getElementsByTagName("head")[0] || r.getElementsByTagName("body")[0]).appendChild(t),
+                l.sendMessage("saveAdDetailsForAdReporter")
+            } catch (e) {
+              u("Error appending adReporterClient script", e)
+            }
+          }
+          ,
+          Z.exports.done = done,
+          l.client
+      }(window, document),
+      "function" == typeof window.writeAdHandler && window.writeAdHandler()
+    }
+      , {
+        "../components/sfAPI": 14,
+        "../components/sfCounters": 15,
+        "../components/sfEvents": 16,
+        "../components/util": 17,
+        "./clientAPI": 8,
+        "./messenger/evaluateImpressionMeasurementMethod": 9,
+        "./messenger/sfMsgHandler": 11,
+        "@amzn/apejs-click-tracking": 1
+      }],
+    13: [function (e, t, n) {
+      var f = function (e, t, n) {
+        var a = e + t
+        return n && (a += "_" + n),
+          a
+      }
+      t.exports.firePixel = function (t, n, e, a, r, i, o) {
+        if (!t || !n || "string" != typeof n || n.length <= 0 || !e || "string" != typeof e)
+          return !1
+        try {
+          return null === document.getElementById(e) && (s = n,
+            c = e,
+            d = document.getElementsByTagName("body")[0],
+            l = function () {
+              t.countMetric(f(a, "loaded", i), 1),
+                t.logCsaEvent(f(r, "loaded", i)),
+                t.sendAdBarTrace("pixels", {
+                  loaded: {
+                    pixelUrl: n,
+                    additionalTrace: o
+                  }
+                })
+            }
+            ,
+            u = function () {
+              t.countMetric(f(a, "error", i), 1),
+                t.logCsaEvent(f(r, "error", i)),
+                t.sendAdBarTrace("pixels", {
+                  error: {
+                    pixelUrl: n,
+                    additionalTrace: o
+                  }
+                })
+            }
+            ,
+            (p = document.createElement("img")).id = c,
+            p.src = s,
+            p.style.display = "none",
+            p.onload = l,
+            p.onerror = u,
+            d.appendChild(p),
+            t.logCsaEvent(f(r, "fired", i)),
+            t.countMetric(f(a, "fired", i), 1),
+            t.sendAdBarTrace("pixels", {
+              fired: {
+                pixelUrl: n,
+                additionalTrace: o
+              }
+            }),
+            !0)
+        } catch (e) {
+          return t.logError("Error firing pixels: " + n, e),
+            !1
+        }
+        var s, c, d, l, u, p
+      }
+    }
+      , {}],
+    14: [function (e, t, n) {
+      var a = null
+        , r = null
+        , i = {
+        ext: {}
+      }
+      i.ext.inViewPercentage = function () {
+        return a = a || 0,
+          Math.round(100 * a)
+      }
+        ,
+        i.ext.geom = function () {
+          return r = r || {}
+        }
+        ,
+        t.exports.produce = function () {
+          return i
+        }
+        ,
+        t.exports.update = function (e) {
+          null === (a = e && e.geom && e.geom.self.iv) && delete i.ext.inViewPercentage,
+          null === (r = e && e.geom) && delete i.ext.geom
+        }
+    }
+      , {}],
+    15: [function (e, t, n) {
+      t.exports.AD_LOAD_COUNTERS = {
+        IFRAME_INIT: "adload:iframeinitialized",
+        RENDER_START: "adload:renderstart",
+        RENDER_END: "adload:renderend",
+        CREATIVE_WRITTEN: "adload:creativewritten",
+        IMP: "adload:impression",
+        UNSERVED_IMP: "adload:unservedimpression",
+        VIEWABILITY: "adload:viewability",
+        UNSERVED_VIEWABILITY: "adload:unservedviewability",
+        MEASURABILITY: "adload:measurability",
+        MEASUREMENT_HTML: "adload:measurementhtml"
+      },
+        t.exports.AD_FETCH_COUNTERS = {
+          REQUEST_START: "adfetch:request",
+          PUNT_RETURNED: "adfetch:punt",
+          ERROR_RETURNED: "adfetch:error",
+          EMPTY_RESPONSE: "adfetch:noad",
+          RENDERED_AD: "adfetch:renderad",
+          RENDER_ERROR: "adfetch:rendererror",
+          HTTP_ERROR: "adfetch:httperror",
+          EXCEPTION: "adfetch:exception"
+        },
+        t.exports.RESOURCE_TIMING_DATA_COUNTERS = {
+          DEPENDENCIES_NOT_MET: "ResourceTimingData.DependenciesNotMet"
+        },
+        t.exports.GET_QUERY_PARAM_COUNTER = "getqueryparam",
+        t.exports.IMPRESSION_COUNTERS = {
+          LEGACY_IMPRESSION_COUNTER: "imp:legacy",
+          GLOBAL_IMPRESSION_FIRED_COUNTER: "impressionFired"
+        },
+        t.exports.BTR_COUNTERS = {
+          LOADED: "btr:loaded",
+          ERROR: "btr:error",
+          IMPRESSION: "btr:impression",
+          NO_IMAGES: "btr:noimages",
+          PIXELS: "btr:pixels"
+        }
+    }
+      , {}],
+    16: [function (e, t, n) {
+      t.exports.AD_LOAD_EVENTS = {
+        IFRAME_INIT: "adload_iframeinitialized",
+        RENDER_START: "adload_renderstart",
+        RENDER_END: "adload_renderend",
+        CREATIVE_WRITTEN: "adload_creativewritten",
+        IMP: "impression",
+        UNSERVED_IMP: "unservedimpression",
+        VIEWABILITY: "viewability",
+        UNSERVED_VIEWABILITY: "unservedviewability",
+        MEASURABILITY: "measurability",
+        MEASUREMENT_HTML: "measurementhtml"
+      },
+        t.exports.MESSENGER_EVENTS = {
+          API: "messenger_"
+        },
+        t.exports.AD_FETCH_EVENTS = {
+          REQUEST_START: "adfetch_request",
+          PUNT_RETURNED: "adfetch_punt",
+          ERROR_RETURNED: "adfetch_error",
+          EMPTY_RESPONSE: "adfetch_noad",
+          RENDERED_AD: "adfetch_renderad",
+          RENDER_ERROR: "adfetch_rendererror",
+          HTTP_ERROR: "adfetch_httperror",
+          EXCEPTION: "adfetch_exception"
+        },
+        t.exports.RESOURCE_TIMING_DATA_EVENTS = {
+          DEPENDENCIES_NOT_MET: "resourceTimingData_DependenciesNotMet",
+          DEPENDENCIES_MET: "resourceTimingData_DependenciesMet"
+        }
+    }
+      , {}],
+    17: [function (e, u, t) {
+      /*
+@license
+Underscore.js 1.8.3
+http://underscorejs.org
+(c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+Underscore may be freely distributed under the MIT license.
+*/
+      var a = function () {
+        return window.P && window.P.AUI_BUILD_DATE
+      }
+      u.exports.throttle = function (n, a, r) {
+        var i, o, s, c = null, d = 0
+        r || (r = {})
+        var l = function () {
+          d = !1 === r.leading ? 0 : u.exports.now(),
+            c = null,
+            s = n.apply(i, o),
+          c || (i = o = null)
+        }
+        return function () {
+          var e = u.exports.now()
+          d || !1 !== r.leading || (d = e)
+          var t = a - (e - d)
+          return i = this,
+            o = arguments,
+            t <= 0 || a < t ? (c && (clearTimeout(c),
+              c = null),
+              d = e,
+              s = n.apply(i, o),
+            c || (i = o = null)) : c || !1 === r.trailing || (c = setTimeout(l, t)),
+            s
+        }
+      }
+        ,
+        u.exports.now = function () {
+          return Date.now ? Date.now() : (new Date).getTime()
+        }
+        ,
+        u.exports.addListener = function (e, t, n) {
+          e.addEventListener ? e.addEventListener(t, n, !1) : window.attachEvent && e.attachEvent("on" + t, n)
+        }
+        ,
+        u.exports.removeListener = function (e, t, n) {
+          e.removeEventListener && e.removeEventListener(t, n, !1)
+        }
+        ,
+        u.exports.addWindowListener = function (e, t) {
+          u.exports.addListener(window, e, t)
+        }
+        ,
+        u.exports.removeWindowListener = function (e, t) {
+          window.removeEventListener ? window.removeEventListener(e, t, !1) : window.detachEvent && window.detachEvent("on" + e, t)
+        }
+        ,
+        u.exports.ensureMessageListener = function (e) {
+          u.exports.removeWindowListener("message", e),
+            u.exports.addWindowListener("message", e)
+        }
+        ,
+        u.exports.decodeBase64 = function (e) {
+          var t, n, a, r, i, o, s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", c = "", d = 0
+          for (e = e.replace(/[^A-Za-z0-9\+\/\=]/g, ""); d < e.length;)
+            t = s.indexOf(e.charAt(d++)) << 2 | (r = s.indexOf(e.charAt(d++))) >> 4,
+              n = (15 & r) << 4 | (i = s.indexOf(e.charAt(d++))) >> 2,
+              a = (3 & i) << 6 | (o = s.indexOf(e.charAt(d++))),
+              c += String.fromCharCode(t),
+            64 != i && (c += String.fromCharCode(n)),
+            64 != o && (c += String.fromCharCode(a))
+          return c = function (e) {
+            for (var t = "", n = 0, a = 0, r = 0, i = 0; n < e.length;)
+              (a = e.charCodeAt(n)) < 128 ? (t += String.fromCharCode(a),
+                n++) : 191 < a && a < 224 ? (r = e.charCodeAt(n + 1),
+                t += String.fromCharCode((31 & a) << 6 | 63 & r),
+                n += 2) : (r = e.charCodeAt(n + 1),
+                i = e.charCodeAt(n + 2),
+                t += String.fromCharCode((15 & a) << 12 | (63 & r) << 6 | 63 & i),
+                n += 3)
+            return t
+          }(c)
+        }
+        ,
+        u.exports.createScript = function (e, t, n, a, r) {
+          if (!document.getElementById(n)) {
+            var i = document.createElement("script")
+            return i.async = !0,
+              i.setAttribute("crossorigin", "anonymous"),
+              i.src = e,
+              i.type = t,
+              i.id = n,
+              i.onerror = a,
+              i.onload = r,
+              i
+          }
+        }
+        ,
+        u.exports.isAUIAvailable = a,
+        u.exports.safeFunctionWrapper = function (e, t, n) {
+          return a() && "function" == typeof window.P.guardError ? P.guardError("APE-SafeFrame", e) : function () {
+            try {
+              e.apply(this, arguments)
+            } catch (e) {
+              "function" == typeof t && n && t(n, e)
+            }
+          }
+        }
+        ,
+        u.exports.getCookie = function (e) {
+          var t = e + "="
+          try {
+            for (var n = decodeURIComponent(document.cookie).split(";"), a = 0; a < n.length; a++) {
+              for (var r = n[a]; " " == r.charAt(0);)
+                r = r.substring(1)
+              if (0 == r.indexOf(t))
+                return r.substring(t.length, r.length)
+            }
+          } catch (e) {}
+          return ""
+        }
+        ,
+        u.exports.disableCookieAccess = function () {
+          try {
+            Object && Object.defineProperty && "function" == typeof Object.defineProperty ? Object.defineProperty(document, "cookie", {
+              get: function () {
+                return ""
+              },
+              set: function () {}
+            }) : (document.__defineGetter__("cookie", function () {
+              return ""
+            }),
+              document.__defineSetter__("cookie", function () {}))
+          } catch (e) {}
+        }
+        ,
+        u.exports.setObjectStyles = function (e, t) {
+          if (e && t)
+            for (var n in t)
+              e.style[n] = t[n]
+          return e
+        }
+        ,
+        u.exports.ABP_STATUS = {
+          1: "Enabled",
+          0: "NotEnabled",
+          "-1": "Unknown"
+        },
+        u.exports.hasHostname = function (e) {
+          var t = ""
+          return e && (t = -1 < e.indexOf("//") ? e.split("/")[2] : e.split("/")[0]),
+          0 != t.length
+        }
+        ,
+        u.exports.isVideo = function (e) {
+          return "V" === e
+        }
+    }
+      , {}]
+  }, {}, [12])
+</script>
+<style>body {
+  background: transparent;
+}</style>
+<script src="./blank_pixel._V137875076_.gif" type="data-doubleclick"></script>
+<script>document.defaultAd = { h: 50, w: 320 }
+document.ad = document.defaultAd
+document.adSlotConfig = { allowFadeIn: true, resizeIframe: true }</script>
+
+
+<style>
+  @font-face {
+    font-family: 'Amazon Ember';
+    src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rg-cc7ebaa05a2cd3b02c0929ac0475a44ab30b7efa._V2_.woff2) format('woff2'),
+  }
+
+  @font-face {
+    font-family: 'Amazon Ember';
+    font-style: italic;
+    src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rgit-9cc1bb64eb270135f1adf3a4881c2ee5e7c37be5._V2_.woff2) format('woff2'),
+  }
+
+  @font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 700;
+    src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bd-46b91bda68161c14e554a779643ef4957431987b._V2_.woff2) format('woff2'),
+  }
+
+  @font-face {
+    font-family: 'Amazon Ember';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bdit-80ff7aba37dd1ff5a6b90233a19e3a780a96dc2f._V2_.woff2) format('woff2'),
+  }
+
+  @font-face {
+    font-family: 'Amazon Ember';
+    font-display: swap;
+    font-weight: 300;
+    src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_lt-245045fa7de5df027437f47209a5add3b48108a1.woff2) format('woff2');
+  }
+
+  body, html {
+    margin: 0;
+    font-family: 'Amazon Ember', arial, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<title></title>
+
+
+<div id="ad" style="width: 100%; height: 100%;">
+  <div style="overflow:hidden;width:100%;height:100%"><span aria-hidden="true" id="adLink-label"
+    style="position:absolute;left:0;z-index:-1;opacity:0;user-select:none;clip-path:inset(50%);height:1px;overflow:hidden;white-space:nowrap;width:1px">Publicité sponsorisée.
+Logo de la marque.
+Image du produit.
+Camera d'intérieur Blink Mini, Vidéo HD 1080p, détection de mouvements, Audio bidirectionnel…
+22.59</span>
+    <div style="position:absolute;width:100%;height:100%;overflow:hidden;pointer-events:auto">
+      <div style="z-index:-2;background:#fff;position:absolute;width:100%;height:100%"></div>
+      <a aria-labelledby="adLink adLink-label" href="https://www.amazon.fr/dp/B07X37DT9M?aref=p7o7vXFRwk&amp;aaxitk=8d654179b3a4946458af501f189f6543&amp;language=fr_FR&amp;smid=A1X6FK5RDHNB96&amp;ref=dacx_dp_576652196298727456_578938314543120570"
+        id="adLink"
+        style="background:transparent url(&quot;https://m.media-amazon.com/images/G/01/d16g/kpw/transparent-1x1.png&quot;) repeat 0 0;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0;z-index:2;display:block;width:100%;height:100%;pointer-events:auto;border:1px solid #ccc;box-sizing:border-box"
+        target="_top"></a></div>
+    <div data-csa-c-item-type="asin" data-csa-c-owner="azkaban" data-csa-c-posx="1" data-csa-c-type="item"
+      style="display:grid;height:100%;width:100%;font-size:100%;box-sizing:border-box;position:relative;grid-template-areas:&quot; Image-Logo BuyBox-BUY_BOX_TWO&quot;;grid-template-rows:100%;grid-template-columns:25% 75%"
+      test-id="grid-layout">
+      <div style="width:100%;height:100%;grid-area:Image-Logo;opacity:1;transition:all 1000ms;transform:translateY(0%)">
+        <div data-acei-id="prod-img" style="transform:var(--pt4ymu0);--pt4ymu0:scale(0.82);display:contents">
+          <picture>
+            <source srcset="https://m.media-amazon.com/images/I/31y37iCnqoL._AC_PT0_BL0_SX160_SY100_FMwebp_QL95_.jpg"
+              type="image/webp">
+            <source srcset="https://m.media-amazon.com/images/I/31y37iCnqoL._AC_PT0_BL0_SX160_SY100_FMjpg_QL95_.jpg"
+              type="image/jpg">
+            <img alt="Image du produit" loading="eager"
+              src="./31y37iCnqoL._AC_PT0_BL0_SX160_SY100_.jpg"
+              style="width:100%;height:100%;object-fit:scale-down;object-position:center;box-sizing:border-box;padding:2px;transform:var(--pt4ymu1);--pt4ymu1:scale(0.79);position:relative"></picture>
+          <div></div>
+        </div>
+      </div>
+      <div
+        style="width:100%;height:100%;grid-area:Image-Logo;opacity:0;transition:all 1000ms;transform:translateY(-100%)">
+        <div data-acei-id="brnd-logo" style="width:100%;height:100%">
+          <picture>
+            <source
+              srcset="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/e829a12d-4dc0-491b-a57e-bcefa11dc95a._AC_PT0_BL0_SX160_SY100_FMwebp_QL95_.png"
+              type="image/webp">
+            <source
+              srcset="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/e829a12d-4dc0-491b-a57e-bcefa11dc95a._AC_PT0_BL0_SX160_SY100_FMjpg_QL95_.png"
+              type="image/jpg">
+            <img alt="Logo de la marque" loading="eager"
+              src="./e829a12d-4dc0-491b-a57e-bcefa11dc95a._AC_PT0_BL0_SX160_SY100_.png"
+              style="width:100%;height:100%;object-fit:contain;object-position:center;transform:var(--_18454ub0);transform-origin:var(--_18454ub1);--_18454ub0:scale(0.8)"></picture>
+          <div></div>
+        </div>
+      </div>
+      <div
+        style="width:100%;height:100%;grid-area:BuyBox-BUY_BOX_TWO;opacity:1;transition:all 1000ms;transform:translateY(0%)">
+        <div id="dynamic-bb" lang="fr"
+          style="display: grid; height: 100%; width: 100%; visibility: var(--_1mmj4tg0); --_1mmj4tg0: hidden;">
+          <div
+            style="box-sizing: border-box; width: 100%; height: 100%; display: grid; justify-items: start; align-content: center; row-gap: 2px; padding: 0px 4px;">
+            <div
+              style="display: flex; flex-direction: column; justify-content: center; align-items: start; gap: 2px; grid-area: 1 / 1 / auto / span 1;">
+              <div data-testid="product-description"
+                style="color: rgb(15, 17, 17); overflow: hidden; text-align: var(--_1g2mm5f0); font-size: 0.6875rem; line-height: 0.6875rem; --_1g2mm5f1: 2; --_1g2mm5f0: start; display: -webkit-box; -webkit-line-clamp: var(--_1g2mm5f1); -webkit-box-orient: vertical; word-break: break-word;">
+                Camera d'intérieur Blink Mini, Vidéo HD 1080p, détection de mouvements, Audio bidirectionnel…
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="width:100%;height:100%;grid-area:BuyBox-BUY_BOX_TWO;opacity:0;transition:all 1000ms;transform:translateY(-100%)">
+        <div id="dynamic-bb" lang="fr"
+          style="display: grid; height: 100%; width: 100%; visibility: var(--_1mmj4tg0); --_1mmj4tg0: hidden;">
+          <div
+            style="box-sizing: border-box; width: 100%; height: 100%; display: grid; justify-items: start; align-content: center; row-gap: 2px; padding: 0px 4px;">
+            <div
+              style="display: flex; flex-direction: column; justify-content: center; align-items: start; gap: 2px; grid-area: 1 / 1 / auto / span 1;">
+              <a aria-labelledby="adLink adLink-label" href="https://www.amazon.fr/product-reviews/B07X37DT9M?aref=p7o7vXFRwk&amp;aaxitk=8d654179b3a4946458af501f189f6543&amp;language=fr_FR"
+                id="adLink"
+                style="background: url(&quot;https://m.media-amazon.com/images/G/01/d16g/kpw/transparent-1x1.png&quot;) 0px 0px repeat transparent; inset: 0px; cursor: pointer; position: relative; z-index: 1000; text-decoration: none;"
+                target="_top">
+                <div aria-label="4.3 étoiles sur 5., 5&#8239;252 commentaires clients." data-acei-id="rtg" role="img"
+                  style="color: rgb(86, 89, 89); display: flex; flex-flow: wrap; overflow: hidden; width: 100%; justify-content: var(--ry2ze80); font-size: 0.625rem; line-height: 0.75rem; --ry2ze80: start;">
+                  <svg aria-hidden="true" focusable="false" height="0.75rem" shape-rendering="geometricPrecision"
+                    version="1.1" viewBox="0 0 19 19" width="0.75rem" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: url(&quot;#_starGradient_5pm7gjqod&quot;);"></path>
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: none; stroke: rgb(162, 106, 0); stroke-width: 1;"></path>
+                    <defs>
+                      <lineargradient gradientTransform="matrix(7.07124e-16,11.5482,-11.5482,7.07124e-16,9.4995,5.53952)" gradientUnits="userSpaceOnUse" id="_starGradient_5pm7gjqod" x1="0" x2="1"
+                        y1="0"
+                        y2="0">
+                        <stop offset="0" style="stop-color: rgb(255, 206, 0); stop-opacity: 1;"></stop>
+                        <stop offset="1" style="stop-color: rgb(255, 167, 0); stop-opacity: 1;"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
+                  <svg aria-hidden="true" focusable="false" height="0.75rem" shape-rendering="geometricPrecision"
+                    version="1.1" viewBox="0 0 19 19" width="0.75rem" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: url(&quot;#_starGradient_5pm7gjqod&quot;);"></path>
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: none; stroke: rgb(162, 106, 0); stroke-width: 1;"></path>
+                    <defs>
+                      <lineargradient gradientTransform="matrix(7.07124e-16,11.5482,-11.5482,7.07124e-16,9.4995,5.53952)" gradientUnits="userSpaceOnUse" id="_starGradient_5pm7gjqod" x1="0" x2="1"
+                        y1="0"
+                        y2="0">
+                        <stop offset="0" style="stop-color: rgb(255, 206, 0); stop-opacity: 1;"></stop>
+                        <stop offset="1" style="stop-color: rgb(255, 167, 0); stop-opacity: 1;"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
+                  <svg aria-hidden="true" focusable="false" height="0.75rem" shape-rendering="geometricPrecision"
+                    version="1.1" viewBox="0 0 19 19" width="0.75rem" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: url(&quot;#_starGradient_5pm7gjqod&quot;);"></path>
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: none; stroke: rgb(162, 106, 0); stroke-width: 1;"></path>
+                    <defs>
+                      <lineargradient gradientTransform="matrix(7.07124e-16,11.5482,-11.5482,7.07124e-16,9.4995,5.53952)" gradientUnits="userSpaceOnUse" id="_starGradient_5pm7gjqod" x1="0" x2="1"
+                        y1="0"
+                        y2="0">
+                        <stop offset="0" style="stop-color: rgb(255, 206, 0); stop-opacity: 1;"></stop>
+                        <stop offset="1" style="stop-color: rgb(255, 167, 0); stop-opacity: 1;"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
+                  <svg aria-hidden="true" focusable="false" height="0.75rem" shape-rendering="geometricPrecision"
+                    version="1.1" viewBox="0 0 19 19" width="0.75rem" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: url(&quot;#_starGradient_5pm7gjqod&quot;);"></path>
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: none; stroke: rgb(162, 106, 0); stroke-width: 1;"></path>
+                    <defs>
+                      <lineargradient gradientTransform="matrix(7.07124e-16,11.5482,-11.5482,7.07124e-16,9.4995,5.53952)" gradientUnits="userSpaceOnUse" id="_starGradient_5pm7gjqod" x1="0" x2="1"
+                        y1="0"
+                        y2="0">
+                        <stop offset="0" style="stop-color: rgb(255, 206, 0); stop-opacity: 1;"></stop>
+                        <stop offset="1" style="stop-color: rgb(255, 167, 0); stop-opacity: 1;"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
+                  <svg aria-hidden="true" focusable="false" height="0.75rem" shape-rendering="geometricPrecision"
+                    version="1.1" viewBox="0 0 19 19" width="0.75rem" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: white;"></path>
+                    <path d="M9.49,1.345L9.49,14.565L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.49,1.345Z"
+                      style="fill: url(&quot;#_starGradient_5pm7gjqod&quot;);"></path>
+                    <path
+                      d="M9.5,1.325L12.104,6.581L17.922,7.423L13.711,11.511L14.706,17.286L9.5,14.56L4.293,17.286L5.288,11.511L1.077,7.423L6.895,6.581L9.5,1.325Z"
+                      style="fill: none; stroke: rgb(162, 106, 0); stroke-width: 1;"></path>
+                    <defs>
+                      <lineargradient gradientTransform="matrix(7.07124e-16,11.5482,-11.5482,7.07124e-16,9.4995,5.53952)" gradientUnits="userSpaceOnUse" id="_starGradient_5pm7gjqod" x1="0" x2="1"
+                        y1="0"
+                        y2="0">
+                        <stop offset="0" style="stop-color: rgb(255, 206, 0); stop-opacity: 1;"></stop>
+                        <stop offset="1" style="stop-color: rgb(255, 167, 0); stop-opacity: 1;"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
+                  <div aria-hidden="true"
+                    style="color: rgb(86, 89, 89); overflow: hidden; padding-left: 4px; text-align: var(--ry2ze80); margin-top: 1px; font-size: 0.625rem; line-height: 0.75rem; --ry2ze80: start;">
+                    5&#8239;252
+                  </div>
+                </div>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div data-size-str="320x50" style="display: none;"></div>
+
+
+<script src="./41qDlz8InOL.js"></script>
+<script src="./714+3hZjzaL.js"></script>
+<script charset="UTF-8" src="./A1zG+6fI3qL.js"></script>
+<script>
+  ReactDOM.hydrate(AdaptiveRenderer.default({
+      "creativeInformation": {
+        "variation": "reviews",
+        "customImages": { "square": null, "wide": null, "tall": null },
+        "logoImgUrl": "https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/e829a12d-4dc0-491b-a57e-bcefa11dc95a.png",
+        "isPreview": false,
+        "priceInformation": {
+          "price": 22.59,
+          "fullPrice": 25.99,
+          "pricePerUnit": "",
+          "basisPrice": {
+            "currency": { "amount": 25.99, "currencyCode": "EUR", "displayString": "€25.99" },
+            "currencyRange": {},
+            "pricePerUnit": { "baseValueAmount": 0 },
+            "type": "LIST",
+            "label": "Prix conseillé :",
+            "shortLabel": "Conseillé :",
+            "addToCartUrl": "https://www.amazon.fr/advertising/atc?ie=UTF8&token=08DCE797FC02E2926BD390FCB4A75069E7DD533E&time=1758369113246&merchantId=A1X6FK5RDHNB96&asin=B07X37DT9M&program=dads&adPrice=25.99&offerListingId=xoSGv6n6iMk%252Bvs0Wqz%252BVIZIRyLinSsrEGwSiToCFoAE%252Fskn1dwgNRtytn8i9E39bFHDtCkSILqOXGZ95SXV16x5aXbXqp0bWA6%252BeQMT%252FmpxS4phbDGElTwbb7DA1sPtHd%252FnNVZjjFEc%253D",
+            "suppressedByMAP": false
+          },
+          "currencyCode": "EUR",
+          "savings": {
+            "currency": { "amount": 3.4, "currencyCode": "EUR", "displayString": "€3.4" },
+            "percentageDisplayString": "13 %",
+            "percentageAmount": 13
+          }
+        },
+        "isPrimeEligible": false,
+        "productDescription": "Camera d'intérieur Blink Mini, Vidéo HD 1080p, détection de mouvements, Audio bidirectionnel…",
+        "ratings": { "stars": 4.3, "amount": 5252 },
+        "climatePledgeFriendlyBadge": { "attributeCount": 0, "certCount": 0 },
+        "dealBadge": {},
+        "aapiBrandName": null,
+        "ctaText": "",
+        "productGroupType": "gl_vdo_devices",
+        "resolvedAceiData": {
+          "renderFeatureFlags": {
+            "EnableAceiIncentivesPed": false,
+            "EnableAceiBestSellerBadge": false,
+            "EnableAceiIncentivesCoupon": false
+          }, "renderLogData": { "eligibleSCE": [], "metrics": [] }, "aceiExperimentsToRecord": {}
+        },
+        "type": "DISPLAY",
+        "productImg": {
+          "url": "https://m.media-amazon.com/images/I/31y37iCnqoL.jpg",
+          "altText": "",
+          "colorTreatment": "default"
+        },
+        "components": ["Image", "BuyBox", "Logo"],
+        "border": true,
+        "clickThroughInfo": {
+          "impressionUrls": [],
+          "isOffsite": false,
+          "adLink": "https://www.amazon.fr/dp/B07X37DT9M?aref=p7o7vXFRwk&aaxitk=8d654179b3a4946458af501f189f6543&language=fr_FR&smid=A1X6FK5RDHNB96&ref=dacx_dp_576652196298727456_578938314543120570",
+          "reviewLink": "https://www.amazon.fr/product-reviews/B07X37DT9M?aref=p7o7vXFRwk&aaxitk=8d654179b3a4946458af501f189f6543&language=fr_FR",
+          "clickUrls": ["https://aax-events-cell01-cf.eu-west.ono.axp.amazon-adsystem.com/x/c/JDVaEoc7BT6ro7yfo2zMAbgAAAGZZxZtggMAAADKAUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICD9ZGxC/clv1_CEuOPUxokZAIinrVYcgL5DDRGjZhTIcHk45C9g7Tp7lkx38MpkaIA_018HFItlG1gqQxmp9anrWmAEnDHyNAAHNjJTq_LtPuEV8vI0N7bkSLAa8ERVQE89Il9AfjLfm-EsjLNhP9s9RSA0MhlFD1a1sJOldNDd93Q1piUbI6XVeDyfnNkkszRVC7PITyOqgoCHBLaoni0btJb3xHef5zfNdU2s6HisMGLjL8Hp4D1Ckij7tKvYqdfGgUhE-2_mZEPETQaMD1gUhJ-UMwFOleaDOIQ1efrlSdEt24ppLQcNARAX6C84q6_jqpRDb6KYC-964Up80zdfDvmpTdI9yIO-VTj7wvVBYjhocTw_4xQJxz8XVfI2KF4S632L87YFyQYwQwpWeAtE8d_BfLLreQYTxeRZfJv9taVLxIDh4pmlJ-Ic4F6UcbRzkyu9FzJQgifuLOb5Lq5OfiBXMcCTrWypccCA7Z3RW5OCc1cdYn-YK6UxWXZy1VeZU1gio53GMINF2UKu0ma2m3Y_l8VItrrHVD6Lvj78GjyFNFNiOPfLfsMHr_fnUghCBFTAyvJCDkVr0hvcRmNW7fhrBQsN4bCk_BNg1ujSt3141Vuo64hkwQooO6gq0UYRL34wOHN_T_EXo6RZczPF9R_vNZcckB8hwxzp75JgtyTj0nkdRGlbQrYXQvcCuikVgjnBmZZP9c3dxO-pIE7LpC0OMNaF2KFWg9x4jbFcG3iPeHC2chMBn9oUHCbsBa6RBtw_EAY_G7lIlVKB7Jk1Ku5yL4Km7oJAVi_SHhBkJCheiwFJhQARyo3mQEEtJdnZWSYJTQWClXXEBklgdstOo/"],
+          "cascadingIntent": "amazonmobile://intent?intent=https%3A%2F%2Fwww.amazon.fr%2Fdp%2FB07X37DT9M%3Faref%3Dp7o7vXFRwk%26aaxitk%3D8d654179b3a4946458af501f189f6543%26language%3Dfr_FR%26smid%3DA1X6FK5RDHNB96%26ref%3Ddacx_dp_576652196298727456_578938314543120570&intent=com.amazon.mobile.shopping.web%3A%2F%2Fwww.amazon.fr%2Fdp%2FB07X37DT9M%3Faref%3Dp7o7vXFRwk%26aaxitk%3D8d654179b3a4946458af501f189f6543%26language%3Dfr_FR%26smid%3DA1X6FK5RDHNB96%26ref%3Ddacx_dp_576652196298727456_578938314543120570",
+          "originUrlDomain": "www.imdb.com",
+          "isExternalLink": false
+        },
+        "pixelUrl": "https://aax-eu.amazon-adsystem.com/x/px/JDVaEoc7BT6ro7yfo2zMAbgAAAGZZxZtggMAAADKAUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICD9ZGxC/"
+      },
+      "renderingContext": {
+        "isMirrorCSlot": false,
+        "deviceType": "desktop",
+        "slotName": "mediaviewer_banner",
+        "pageName": "mediaviewer",
+        "locale": "FR",
+        "language": "fr",
+        "slotSize": { "width": 320, "height": 50 },
+        "is1p": true,
+        "stage": "prod",
+        "region": "eu",
+        "templateKey": "DACXDynamicTemplates-DynamicEcommerceTemplate_1.0",
+        "impressionId": "SGNOzi2.rvUZOq-kZ182yg",
+        "bidId": "NVoShzsFPqujvJ-jbMwBuA",
+        "isPreview": false,
+        "templateName": "Responsive eCommerce",
+        "creativeVariation": "default",
+        "creativeFormat": "reviews",
+        "deviceId": "unavailable",
+        "isAdBlockerPresent": false,
+        "isHomePage": false,
+        "suppInf": {
+          "source": { "acSi": "202", "rcSsi": "202", "bcSi": "202" },
+          "size": { "adSizeH": 50, "adSizeW": 320, "modelSize": "320x50" },
+          "flags": { "isBcPresent": true, "isRcPresent": true }
+        }
+      }
+    },
+    {
+      weblabs: {
+        "homePageRefresh": false,
+        "useExternalCss": false,
+        "optimizeImagesWithAvifFirst": false,
+        "optimizeImagesWithWebpFirst": false,
+        "optimizeImageQualityOnly": false,
+        "onsiteRefresh": false,
+        "useResizeObserver": false,
+        "useIMDBILM_C": false,
+        "useIMDBILM_T1": false,
+        "useIMDBILM_T2": false,
+        "useIMDBILM_T3": false,
+        "EnableRioStylingT1": false,
+        "EnableRioStylingT2": false,
+        "EnableRioStylingT3": false,
+        "EnableRioStylingT4": false,
+        "EnableUpgradedFlow": false,
+        "EnableRenderscriptMigration": false,
+        "EnableNativeInventoryMigration": false,
+        "EnableNativeCreativeFetchFlow": false,
+        "EnableAceiIncentivesPed": false,
+        "EnableAceiBestSellerBadge": false,
+        "EnableAceiIncentivesCoupon": false,
+        "RemoveCustomImages": false,
+        "EnableAnimatedImagesWithPDP": false,
+        "EnableAnimatedImagesWithCustomImage": false
+      },
+      creativeId: "576652196298727456",
+      publisherWeblabInfo: { "fullLayoutPublisherWeblabMap": {}, "eligiblePublisherWeblabs": [] },
+      layoutSpecificInfo: { "layoutWeblabs": {}, "eligibleLayouts": ["default"] },
+      layoutId: "default"
+    }), document.getElementById("ad"))
+</script>
+
+
+<script src="./saved_resource"></script>
+
+<div data-flowtype="pubTech" id="mediaviewer_banner_webbug" style="display:none;">
+
+</div>
+
+<script defer="">setTimeout(function () {SFClient.getDebugInfo({ key: "updateAdDetails" }) }, 0)</script>
+<script defer="">setTimeout(function () {
+  SFClient.customMessage("sendMetrics", JSON.stringify({
+    "slot": "mediaviewer_banner",
+    "event": "fireload"
+  }))
+}, 0)</script>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+function extractPayloadParam() {
+    const doc = typeof window !== 'undefined' ? window.document : document;
+    const scriptUrl = new URL(doc.currentScript.src);
+
+    // Extracting payload params from script url
+    const params = new URLSearchParams(scriptUrl.search);
+    const payloadParam = params.has('p') ? JSON.parse(decodeURIComponent(params.get('p'))) : null;
+    const trafficParam = params.has('s') ? JSON.parse(decodeURIComponent(params.get('s'))) : null;
+    const payload = Object.assign({}, payloadParam, trafficParam);
+
+    return payload;
+}
+
+function constructScriptUrl(baseUrl, params) {
+    baseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+
+    // Construct query parameters
+    var queryParams = '';
+    for (var key in params) {
+        if (params.hasOwnProperty(key)) {
+            queryParams += encodeURIComponent(key) + '=' + encodeURIComponent((typeof params[key] === "object") ? JSON.stringify(params[key]) : params[key]) + '&';
+        }
+    }
+    // Append query parameters to baseUrl
+    return baseUrl + '?' + queryParams.slice(0, -1);
+}
+
+function injectTag(tag, scriptUrl) {
+    if (tag === 'script') {
+        const script = document.createElement('script');
+        script.src = scriptUrl;
+        if (!document.body) {
+            document.body = document.createElement('body');
+        }
+        document.body.appendChild(script);
+    } else if (tag === 'iframe') {
+        const iframe = document.createElement('iframe');
+        iframe.src = scriptUrl;
+        iframe.style.display = 'none';
+        if (!document.body) {
+            document.body = document.createElement('body');
+        }
+        document.body.appendChild(iframe);
+    }
+}
+
+function init() {
+    const payload = extractPayloadParam();
+    if (payload.hasOwnProperty('ep') && payload.ep.length > 0) {
+        const enabledPartners = payload.ep;
+        if (enabledPartners.includes('vue')) {
+            var baseUrl = 'https://ts.amazon-adsystem.com/tg/resources/vue/web-display/mrc/csm.js';
+            var scriptUrl = constructScriptUrl(baseUrl, payload);
+            injectTag('script', scriptUrl);
+
+            //forensics script
+            baseUrl = 'https://ts.amazon-adsystem.com/tg/resources/tq-forensics/adforensics_basic.js';
+            scriptUrl = constructScriptUrl(baseUrl, payload);
+            injectTag('script', scriptUrl);
+        }
+        if(enabledPartners.includes('ara')) {
+            var baseUrl = 'https://d37unsldgykj8z.cloudfront.net/ara.js';
+            var scriptUrl =  constructScriptUrl(baseUrl, payload);
+            injectTag('script', scriptUrl);
+        }
+    }
+}
+init();

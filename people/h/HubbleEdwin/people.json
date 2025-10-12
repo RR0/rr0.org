@@ -1,0 +1,25 @@
+{
+  "lastName": "Hubble",
+  "firstNames": [
+    "Edwin",
+    "Powell"
+  ],
+  "occupations": [
+    "astronomer"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1889-11-20",
+      "place": "Marshfield (Missouri)"
+    },
+    {
+      "type": "death",
+      "time": "1953-09-28",
+      "place": "San Marino (Californie)"
+    }
+  ]
+}

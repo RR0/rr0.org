@@ -1,0 +1,25 @@
+{
+  "lastName": "Lemaître",
+  "firstNames": [
+    "Georges"
+  ],
+  "occupations": [
+    "priest",
+    "astronomer"
+  ],
+  "countries": [
+    "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1884-07-17",
+      "place": "Charleroi (Belgique)"
+    },
+    {
+      "type": "death",
+      "time": "1966-06-20",
+      "place": "Louvain (Belgique)"
+    }
+  ]
+}

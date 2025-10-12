@@ -1,0 +1,25 @@
+{
+  "occupations": [
+    "astronomer"
+  ],
+  "countries": [
+    "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1941-10-27",
+      "place": "Waremme (Belgique)"
+    },
+    {
+      "type": "death",
+      "time": "2021-02-18",
+      "place": "Seraing (Belgique)",
+      "sources": [
+        {
+          "url": "https://www.enaos.be/P1220.aspx?IdPer=654794&LgTrv=3"
+        }
+      ]
+    }
+  ]
+}

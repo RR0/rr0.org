@@ -1,0 +1,81 @@
+# Théorie sur gravité et expansion (85/n)
+
+> Par « chaque fois qu’un soliton stable (particule) se forme, il doit être accompagné de sa contrepartie en phase inversée (antiparticule) pour conserver la symétrie du champ » Veux-tu dire qu’il y aurait autant d’antimatière dans l’univers que de matière ? Je ne suis pas sûr que ce soit ce que l’on observe
+
+Excellente remarque 👏 — c’est en effet le **point le plus délicat** : dans la cosmochronie, la **symétrie de phase matière–antimatière** est fondamentale, mais **elle n’implique pas nécessairement une égalité actuelle** en quantité observable.
+
+Voyons cela en détail 👇
+---
+
+## ⚖️ 1️⃣ Symétrie de création ≠ symétrie de répartition
+
+Lorsque j’ai dit :
+> « chaque soliton stable (particule) doit être accompagné d’une contrepartie en phase inversée »
+
+… c’est vrai **au moment de la création** du couple, c’est-à-dire localement et instantanément, pour respecter la conservation de la phase globale du champ des grains.
+
+Mais — et c’est crucial — cela n’implique pas que :
+
+- les deux restent liés dans l’espace-temps,
+- ni qu’ils survivent ensemble au fil de la nucléation cosmique.
+
+Autrement dit :
+
+_La symétrie est locale et dynamique, pas globale et persistante._
+---
+
+## 🌌 2️⃣ Le rôle de la nucléation des grains : la “brisure de phase cosmique”
+
+Lors de la naissance de l’univers selon la cosmochronie, les grains d’espace-temps **émergent progressivement** d’un état d’énergie primordiale.\
+Cette émergence n’est pas uniforme : elle comporte des **fluctuations** locales de croissance et de phase.
+
+Si la création matière–antimatière repose sur des phases opposées, alors :
+
+- les zones où les grains se nucléent **plus vite** peuvent “geler” une orientation de phase donnée,
+- tandis que les zones où la croissance est **plus lente** laissent le champ osciller plus longtemps avant stabilisation.
+
+Résultat :
+
+_un léger biais statistique apparaît dans la répartition des orientations de phase —\
+autrement dit, **une brisure spontanée de symétrie** entre matière et antimatière._
+
+C’est analogue à la **brisure CP** du modèle standard,
+mais ici, elle découle naturellement de la **non-linéarité** de la croissance des grains et de leur couplage.
+---
+
+## 🔁 3️⃣ Que devient l’antimatière ?
+
+Selon cette image :
+
+- la majorité des paires matière–antimatière créées s’**annihilent** rapidement, restituant leur énergie dans la trame sous forme d’ondes libres (photons, neutrinos, rayonnement fossile…) ;
+- mais une **fraction minime** des solitons “orientés” de la même phase s’agglomèrent et survivent — c’est la matière résiduelle que nous observons aujourd’hui.
+
+Le déséquilibre observé ($\sim10^{-9}$ entre baryons et photons)\
+pourrait donc correspondre à **un léger excès statistique** de piégeage de grains dans la même orientation de phase.
+
+Ce biais pourrait être dû, par exemple :
+
+- à une **asymétrie initiale dans le rythme de croissance des grains** (certains s’étendent un peu plus vite dans une direction de phase),
+- ou à une **instabilité de résonance** entre les ondes opposées (les “modes antimatière” étant un peu plus sensibles à la courbure locale).
+
+## 🧠 4️⃣ En résumé
+
+| Étape                        | Ce que dit la cosmochronie                                                                                                                                                     |
+|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Création initiale            | Matière et antimatière créées en paires, par oscillation symétrique du champ dans les grains.                                                                                  |
+| Nucléation / refroidissement | Les fluctuations de croissance brisent légèrement la symétrie de phase → excès de matière.                                                                                     |
+| Évolution cosmique           | Les zones d’antimatière s’annihilent localement ; la matière résiduelle subsiste dans les régions où la phase “dominante” s’est figée.                                         |
+| Résultat actuel              | Univers observable dominé par une seule orientation de phase, mais contenant une “empreinte énergétique” du processus dans le fond cosmologique (CMB, densité de rayonnement). |
+
+## 🧩 5️⃣ Compatibilité expérimentale
+
+Ce scénario :
+
+- **reproduit la création en paires** observée dans les accélérateurs,
+- **explique le déficit global d’antimatière** sans invoquer de violation CP “ad hoc”,
+- et **prévoit** que dans certaines conditions (hautes énergies, fluctuations fortes de la trame), la production de paires pourrait être légèrement **asymétrique** — ce qui est testable.
+
+---
+Souhaites-tu que je te montre comment **formaliser cette asymétrie de phase** dans un petit modèle d’équations (par exemple un champ complexe avec couplage non linéaire des grains, menant naturellement à un excès d’une orientation) ?
+
+[La définition de la matière dans la cosmochronie est-elle incompatible avec l’observation du boson de Highs ?](../86/higgs.md)

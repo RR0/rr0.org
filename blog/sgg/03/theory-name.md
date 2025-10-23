@@ -1,0 +1,62 @@
+# Théorie sur gravité et expansion (3/n)
+
+> Commençons par 5 (pour fixer le nom de ce dont nous discutons) puis 4 (car ce qui fait la force d'une théorie c'est sa capacité à prédire/être vérifiée/confirmée)
+
+Excellents choix. Donnons d'abord une **identité claire** à ta théorie (point 5), puis nous passerons à **la visualisation pédagogique** (point 4) pour illustrer ses effets observables.
+
+## 🧾 5. Trouver un nom pour ta théorie
+
+Un bon nom doit :
+
+- être **mémorable** ;
+- **évoquer l’idée centrale** ;
+- **s’intégrer dans le vocabulaire scientifique ou philosophique** existant (sans en abuser) ;
+- éventuellement **s’abréger facilement**.
+
+### ✳️ Mots-clés à envisager :
+
+| Idée centrale	         | Mots associés                                  |
+|------------------------|------------------------------------------------|
+| Grains d’espace        | quanta, cellule, voxel, spin-net, micro-espace |
+| Agrandissement         | expansion, croissance, dilatation, inflation   |
+| Temps comme émergent   | temps, chronos, diachronie, émergence          | 
+| Gravité comme tension	 | tension, inertie, contraction                  |         
+| Origine quantique	     | quantique, boucle, réseau, granularité         |  
+| Modèle cosmologique    | 	cosmologie, structure, dynamique, métrique    |    
+
+### 🧪 Propositions de noms
+
+| Nom	                                    | Sens et avantage                                                                                                                                                  |
+|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cosmochronie	                           | (néologisme) de cosmos + chronie (du grec khronos, temps) — met en avant le lien intime entre espace cosmique et naissance du temps. Élégant, quasi scientifique. |
+| Granumétrie	                            | de granum (grain, en latin) + métrie : modèle basé sur la métrique variable des grains d’espace. Techno, un peu brutal.                                           |
+| Dynamique diachronique                  | 	souligne le passage du temps comme une dynamique émergente de la structure de l’espace. Abstrait mais poétique.                                                  |
+| Chronoexpansion	                        | mot-valise clair : l'expansion crée le temps. Simple, mémorisable.                                                                                                |
+| Théorie de la tension spatio-temporelle | 	met en avant l’idée de gravité comme tension — mais plus longue.                                                                                                 |
+| Modèle d’expansion granulaire	          | purement descriptif, sobre, clair.                                                                                                                                |
+| Chronogénèse spatiale	                  | évoque la naissance du temps à partir de la croissance de l’espace. Noble et un peu mystique.                                                                     |
+| Tempoquantisme                          | 	mot-valise temps + quantum. Moderne, mais très inventé.                                                                                                          |
+| Théorie de l’inertie du temps	          | reprenant tes mots exacts, très personnel.                                                                                                                        |
+| Tessiture quantique du temps            | poétique et un peu SF, mais très suggestif.                                                                                                                       |
+
+### 💡 Ma sélection personnelle
+
+Si tu veux une **touche savante et mémorable** :
+
+_Cosmochronie_
+
+Si tu veux quelque chose de **plus descriptif et clair** :
+
+_Modèle d’expansion granulaire du temps_
+
+Si tu veux garder **l’expression qui t’est propre**, tu peux baptiser :
+
+_Théorie de l’inertie du temps_
+
+Souhaites-tu que je t’aide à choisir, affiner ou composer un nom à partir de plusieurs ? Ou bien un nom en anglais aussi ?
+
+---
+
+Souhaites-tu valider un de ces noms maintenant, ou qu'on affine avant de passer à la visualisation pédagogique (point 4) ?
+
+> Non pardon [je voulais dire 3](../04/compare-with-standard-model.md) (tu aurais pu le deviner lorsque je parlais de vérifier une théorie)

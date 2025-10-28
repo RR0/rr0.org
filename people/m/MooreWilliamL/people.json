@@ -1,6 +1,10 @@
 {
+  "lastName": "Moore",
+  "firstNames": [
+    "William",
+    "Leonard"
+  ],
   "surname": "Bill",
-  "title": "William Leonard Moore",
   "occupations": [
     "ufologist",
     "writer"
@@ -11,7 +15,8 @@
   "events": [
     {
       "type": "birth",
-      "time": "1943-10-31"
+      "time": "1943-10-31",
+      "place": "Sewickley (Pennsylvanie)"
     }
   ]
 }

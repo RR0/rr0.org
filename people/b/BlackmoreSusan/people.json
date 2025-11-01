@@ -1,0 +1,23 @@
+{
+  "lastName": "Blackmore",
+  "firstNames": [
+    "Susan",
+    "Jane"
+  ],
+  "url": "https://www.susanblackmore.uk",
+  "occupations": [
+    "writer",
+    "parapsychologist"
+  ],
+  "gender": "female",
+  "countries": [
+    "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1951-07-29",
+      "place": "Londres (Royaume-Uni)"
+    }
+  ]
+}

@@ -1,10 +1,19 @@
 {
-  "birthTime": "1953-05-06",
+  "lastName": "Blair",
+  "firstNames": "Anthony Charles Lynton",
+  "surname": "Tony",
   "occupations": [
     "politician",
     "leader"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953-05-06",
+      "place": "Edimburgh (Ecosse)"
+    }
   ]
 }

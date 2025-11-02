@@ -1,9 +1,18 @@
 {
-  "birthTime": "1711-05-07",
+  "lastName": "Hume",
+  "firstNames": [
+    "David"
+  ],
   "occupations": [
     "philosopher"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1711-05-07"
+    }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "occupations": [
+    "priest"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1877-03-18",
+      "place": "près de Beverly (comté de Christian, Kentucky)"
+    },
+    {
+      "type": "death",
+      "time": "1945-01-03",
+      "place": "Virginia Beach (Virginie)"
+    }
+  ]
+}

@@ -18,6 +18,12 @@
       "type": "birth",
       "time": "1951-07-29",
       "place": "Londres (Royaume-Uni)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Blackmore",
+      "time": "2014"
     }
   ]
 }

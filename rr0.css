@@ -901,7 +901,7 @@ a:hover {
   :root {
     color-scheme: dark;
     --background-color: black;
-    --color: lightgrey;
+    --color: rgb(200, 200, 200);
   }
 
   details[open] summary {

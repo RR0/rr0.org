@@ -1,6 +1,10 @@
 {
   "lastName": "Blair",
-  "firstNames": "Anthony Charles Lynton",
+  "firstNames": [
+    "Anthony",
+    "Charles",
+    "Lynton"
+  ],
   "surname": "Tony",
   "occupations": [
     "politician",

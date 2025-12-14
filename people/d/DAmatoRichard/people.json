@@ -1,0 +1,23 @@
+{
+  "firstNames": [
+    "Richard",
+    "Charles"
+  ],
+  "lastName": "d'Amato",
+  "surname": "Dick",
+  "occupations": [
+    "diplomat",
+    "ufologist",
+    "military"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "place": "Hackensack (New Jersey)",
+      "time": "1942-09-28"
+    }
+  ]
+}

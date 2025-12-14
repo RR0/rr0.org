@@ -1,0 +1,25 @@
+{
+  "lastName": "Maxwell",
+  "firstNames": [
+    "James",
+    "Clerk"
+  ],
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1831-06-13",
+      "place": "Édimbourg (Écosse)"
+    },
+    {
+      "type": "death",
+      "time": "1879-11-05",
+      "place": "Cambridge (Angleterre)"
+    }
+  ]
+}

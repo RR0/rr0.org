@@ -26,5 +26,6 @@
     <orderEntry type="module" module-name="data" />
     <orderEntry type="module" module-name="ssg-api" />
     <orderEntry type="module" module-name="case" />
+    <orderEntry type="library" name="index" level="application" />
   </component>
 </module>

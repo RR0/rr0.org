@@ -1,11 +1,20 @@
 {
-  "birthTime": "1926-12-02",
-  "deathTime": "2006-12-30",
   "occupations": [
     "ufologist",
     "engineer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1926-12-02",
+      "place": "Fullerton (Californie)"
+    },
+    {
+      "type": "death",
+      "time": "2006-12-30"
+    }
   ]
 }

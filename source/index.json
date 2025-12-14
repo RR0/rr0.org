@@ -2653,5 +2653,70 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/iframe": {
+    "title": "<iframe> : l'élément de cadre intégré - HTML | MDN",
+    "url": "https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/iframe",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2025,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 12,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 2,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 34,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 34,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -60
+        }
+      }
+    }
+  },
+  "https://www.cisu.org/morto-ignacio-darnaude-rojas-marcos-1931-2018/": {
+    "title": "Ignacio Darnaude Rojas-Marcos (1931-2018) - CISU - Centro Italiano Studi Ufologici",
+    "url": "https://www.cisu.org/morto-ignacio-darnaude-rojas-marcos-1931-2018/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

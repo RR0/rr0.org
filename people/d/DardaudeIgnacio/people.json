@@ -1,8 +1,30 @@
 {
-  "birthTime": "1931-01-18",
-  "deathTime": "2018-06-26",
-  "occupations": ["ufologist"],
+  "firstNames": [
+    "Ignacio"
+  ],
+  "lastName": "Darnaude Rojas-Marcos",
+  "occupations": [
+    "ufologist"
+  ],
+  "url": "https://www.ignaciodarnaude.com",
   "countries": [
     "es"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1931-01-18",
+      "place": "Séville (Espagne)"
+    },
+    {
+      "type": "death",
+      "time": "2018-06-26",
+      "place": "Cabeza del Rey Don Pedro, 9 (2º B) 41004 - Seville, Espagne",
+      "sources": [
+        {
+          "url": "https://www.cisu.org/morto-ignacio-darnaude-rojas-marcos-1931-2018/"
+        }
+      ]
+    }
   ]
 }

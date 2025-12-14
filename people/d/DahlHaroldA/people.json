@@ -1,0 +1,24 @@
+{
+  "firstNames": [
+    "Harold",
+    "Albert"
+  ],
+  "lastName": "Dahl",
+  "occupations": [
+    "policeman"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "place": "Cosmopolis",
+      "time": "1912"
+    },
+    {
+      "type": "death",
+      "time": "1982-01-30"
+    }
+  ]
+}

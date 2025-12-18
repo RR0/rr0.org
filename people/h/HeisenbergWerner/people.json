@@ -1,34 +1,30 @@
 {
   "firstNames": [
-    "Max",
-    "Karl",
-    "Ernst",
-    "Ludwig"
+    "Werner"
   ],
-  "lastName": "Planck",
+  "lastName": "Heisenberg",
   "occupations": [
     "physicist"
   ],
   "countries": [
-    "dk",
     "de"
   ],
   "events": [
     {
       "type": "birth",
-      "time": "1858-04-23",
-      "place": "Kiel (duché de Schleswig, Danemark)"
+      "place": "Wurtzbourg (Empire allemand)",
+      "time": "1901-12-05"
     },
     {
       "type": "image",
       "url": "portrait.jpg",
       "time": "1933",
-      "name": "Planck en 1933"
+      "name": "Heisenberg en 1933"
     },
     {
       "type": "death",
-      "time": "1947-10-04",
-      "place": "Göttingen (Allemagne)"
+      "place": "Munich (Allemagne de l'Ouest), ",
+      "time": "1976-02-01"
     }
   ]
 }

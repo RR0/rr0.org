@@ -1,0 +1,30 @@
+{
+  "firstNames": [
+    "Erwin"
+  ],
+  "lastName": "Schrödinger",
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "at"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "place": "Vienne (Autriche-Hongrie)",
+      "time": "1887-08-12"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "time": "1933",
+      "name": "Schrödinger en 1933"
+    },
+    {
+      "type": "death",
+      "place": "Vienne (Autriche)",
+      "time": "1961-01-04"
+    }
+  ]
+}

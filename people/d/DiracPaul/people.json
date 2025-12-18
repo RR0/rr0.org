@@ -1,0 +1,27 @@
+{
+  "firstNames": [
+    "Paul",
+    "Adrien",
+    "Maurice"
+  ],
+  "lastName": "Dirac",
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "uk",
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "place": "Bristol (Angleterre)",
+      "time": "1902-08-08"
+    },
+    {
+      "type": "death",
+      "place": "Tallahassee (Floride)",
+      "time": "1984-10-20"
+    }
+  ]
+}

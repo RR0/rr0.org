@@ -1,11 +1,33 @@
 {
+  "firstNames": [
+    "Erich"
+  ],
   "lastName": "VonDäniken",
-  "birthTime": "1935-04-14",
   "occupations": [
     "ufologist",
     "writer"
   ],
   "countries": [
     "ch"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1935-04-14",
+      "place": "Zofingue (Suisse)"
+    },
+    {
+      "type": "death",
+      "time": "2026-01-10",
+      "place": "Interlaken (Berne, Suisse)",
+      "sources": [
+        {
+          "url": "https://www.blick.ch/people-tv/schweiz/familie-bestaetigt-schweizer-autor-und-publizist-erich-von-daeniken-ist-tot-id21587740.html"
+        },
+        {
+          "url": "https://www.tagesanzeiger.ch/erich-von-daeniken-ist-gestorben-440874260050"
+        }
+      ]
+    }
   ]
 }

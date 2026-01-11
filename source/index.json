@@ -2774,5 +2774,70 @@
         }
       }
     }
+  },
+  "https://www.blick.ch/people-tv/schweiz/familie-bestaetigt-schweizer-autor-und-publizist-erich-von-daeniken-ist-tot-id21587740.html": {
+    "title": "https://www.blick.ch/people-tv/schweiz/familie-bestaetigt-schweizer-autor-und-publizist-erich-von-daeniken-ist-tot-id21587740.html",
+    "url": "https://www.blick.ch/people-tv/schweiz/familie-bestaetigt-schweizer-autor-und-publizist-erich-von-daeniken-ist-tot-id21587740.html",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.tagesanzeiger.ch/erich-von-daeniken-ist-gestorben-440874260050": {
+    "title": "Erich von Däniken ist 90-jährig gestorben",
+    "url": "http://web.archive.org/web/20260111124951/https://www.tagesanzeiger.ch/erich-von-daeniken-ist-gestorben-440874260050",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "www.tagesanzeiger.ch",
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 1,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 11,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 12,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 51,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 51,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -60
+        }
+      }
+    }
   }
 }

@@ -17,7 +17,7 @@
   <ul><li>une fonction hypothèse `h = θ_0 + θ_1x + ... θ_nx^n`</li><li>une <a
       href="../cost">fonction de coût</a> `J(θ)`</li></ul>
   <p>à changer (simultanément) les `θ_n` en fonction de la pente (<a
-      href="/science/discipline/hard/form/math/ens/rel/func/deriv">dérivée</a>) induite par le coût :</p>
+    href="/science/discipline/hard/form/math/set/rel/func/deriv">dérivée</a>) induite par le coût :</p>
   <p><strong>Itérer</strong> jusqu'à convergence {<br/>
     &nbsp;&nbsp;`θ_j:=θ_j−α∂/(∂θ_j) J(θ)`<br/> }
   </p>
@@ -45,7 +45,7 @@
     </li>
     <li>Afin d'éviter toutes erreurs de descente, on pourra aussi mettre en place une "vérification de gradient" (<i
         lang="en">gradient checking</i>) qui permettra de contrôler la valeur de la pente (<a
-        href="/science/discipline/hard/form/math/ens/rel/func/deriv">dérivée</a>) trouvée. En effet si l'on considère un
+      href="/science/discipline/hard/form/math/set/rel/func/deriv">dérivée</a>) trouvée. En effet si l'on considère un
       `ε` petit (`10^-4` par ex) : `d/(dθ) J(θ) ~~ (J(θ+ε)-J(θ-ε))/(2ε)`. Bien sûr cette vérification ne devra être
       utilisée que lors d'une phase de mise au point, puis désactivée une fois le gradient vérifié.</li>
     <li>D'autres algorithmes (plus complexes) d'optimisation évitent ces problèmes : un bon `α` est déterminé

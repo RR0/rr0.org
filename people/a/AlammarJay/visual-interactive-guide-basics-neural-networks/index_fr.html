@@ -102,7 +102,7 @@
     </div>
     <p>Ceci une forme de prédiction. Il s'agit d'un modèle prédictif simple qui prend une entrée, effectue un calcul, et
       fournit une sortie (la sortie pouvant être des valeurs continues, la terme technique pour ce que nous avons serait
-      un "modèle de <a href="/science/discipline/hard/form/math/stat/regress">régression</a>").</p>
+      un "modèle de <a href="/science/discipline/hard/formal/math/stat/regress">régression</a>").</p>
     <p>Essayons de visualiser ce processus (à des fins de simplicité, changeons notre unité de prix de 1 $ à 1000 $.
       Notre poids est maintenant de 0,180 plutôt que 180):</p>
     <div class="img-div-large">
@@ -172,7 +172,7 @@
       point, l'erreur est mesurée par la différence entre la valeur réelle et la valeur prédite, élevée à la puissance
       2. On appelle ça l'<a href="https://fr.wikipedia.org/wiki/Erreur_quadratique_moyenne">erreur quadratique
         moyenne</a>. L'utiliser comme guide pour entraîner notre modèle en fait notre <a
-          href="/science/discipline/hard/form/math/stat/regress/cost"><strong>fonction de coût</strong> (ou encore
+        href="/science/discipline/hard/formal/math/stat/regress/cost"><strong>fonction de coût</strong> (ou encore
         <strong>fonction de perte</strong>)</a>.
     </p>
     <p>Maintenant que nous avons défini notre instrument de mesure de ce qui fait un meilleur modèle, expérimentons
@@ -210,7 +210,7 @@
     <h2>Entraînez votre dragon</h2>
     <p>Que diriez-vous d'essayer d'entraîner notre <a href="/tech/info/soft/data/science/ml/nn">réseau de neurones</a>
       d'exemple ? Minimisez la <a
-          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a> en ajustant les curseurs de
+        href="/science/discipline/hard/formal/math/stat/regress/cost">fonction de coût</a> en ajustant les curseurs de
       poids et de biais. Pouvez-vous obtenir une erreur en-dessous de 799 ?</p>
     <div class="training-chart" id="training-one-chart"></div>
     <table class="training-table" id="training-one">
@@ -239,9 +239,9 @@
     <p>Félicitations pour avoir entraîné manuellement votre premier <a href="/tech/info/soft/data/science/ml/nn">réseau
       de neurones</a> ! Regardons maintenant comment automatiser ce processus d'entraînement. Ci-dessous se trouve un
       autre exemple avec une fonctionnalité supplémentaire d'auto-pilotage. Il s'agit des boutons Itération DG. Ils
-      utilisent un algorithme appelé "<a href="/science/discipline/hard/form/math/stat/regress/gradient">Descente de
+      utilisent un algorithme appelé "<a href="/science/discipline/hard/formal/math/stat/regress/gradient">Descente de
         Gradient</a>" pour essayer d'itérer vers les valeurs correctes de poids et biais corrects qui minimise la <a
-          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a>.
+        href="/science/discipline/hard/formal/math/stat/regress/cost">fonction de coût</a>.
     </p>
     <div class="figure">
       <div class="col graphs">
@@ -285,14 +285,15 @@
     <p>Les 2 nouveaux graphiques sont là pour vous aider à suivre les valeurs d'erreur à mesure que vous bidouillez les
       paramètres (poids et biais) du modèle. Il est important de garder une trace de l'erreur car le processus
       d'entraînement vise à réduire cette erreur autant que possible.</p>
-    <p>Comment la <a href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> sait-elle
+    <p>Comment la <a href="/science/discipline/hard/formal/math/stat/regress/gradient">descente de gradient</a>
+      sait-elle
       où devrait être sa prochaine itération ? Par calcul : en connaissant la fonction que l'on minimise (notre <a
-          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a>, la moyenne de `("y_" - y)^2`
+        href="/science/discipline/hard/formal/math/stat/regress/cost">fonction de coût</a>, la moyenne de `("y_" - y)^2`
       pour l'ensemble de nos points de données), et en connaissant ses entrées à un moment donné (des poids et biais
-      donnés), les <a href="/science/discipline/hard/form/math/set/rel/func/deriv">dérivées</a> de la <a
-          href="/science/discipline/hard/form/math/stat/regress/cost">fonction de coût</a> nous indiquent dans quelle
+      donnés), les <a href="/science/discipline/hard/formal/math/set/rel/func/deriv">dérivées</a> de la <a
+        href="/science/discipline/hard/formal/math/stat/regress/cost">fonction de coût</a> nous indiquent dans quelle
       direction pousser `W` et `b` afin de minimiser l'erreur.</p>
-    <p>Vous en apprendrez plus sur la <a href="/science/discipline/hard/form/math/stat/regress/gradient">descente de
+    <p>Vous en apprendrez plus sur la <a href="/science/discipline/hard/formal/math/stat/regress/gradient">descente de
       gradient</a> et comment l'utiliser pour calculer les nouveaux poids & biais dans les premiers exposés du <a
         href="https://www.coursera.org/learn/machine-learning">cours sur l'apprentissage automatique de Coursera</a>.
     </p>
@@ -423,7 +424,7 @@
         <div class="nn-graph-area" id="neural-network-two-graph"></div>
       </div>
     </div>
-    <p>Notre fidèle <a href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> nous
+    <p>Notre fidèle <a href="/science/discipline/hard/formal/math/stat/regress/gradient">descente de gradient</a> nous
       aide encore une fois. Elle reste utile pour nous aider à trouver les bons poids et biais.</p>
   </section>
   <section>
@@ -431,7 +432,7 @@
     <p>Maintenant que vous avez vu des <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> avec 1 ou 2
       paramètres, vous pouvez deviner comment ajouter des paramètres et les utiliser pour calculer vos predictions. Le
       nombre de poids continuera d'augmenter, et notre <a href="/tech/info/soft/proj/impl">implémentation</a> de la <a
-          href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> devra être ajustée à
+        href="/science/discipline/hard/formal/math/stat/regress/gradient">descente de gradient</a> devra être ajustée à
       chaque fois que l'on ajoute un paramètre, afin qu'elle puisse mettre à jour les nouveaux poids associés aux
       nouveaux paramètres.</p>
     <p>Il est important de noter ici que l'on n'alimente pas aveuglément le réseau avec tout ce que l'on sait de nos
@@ -520,7 +521,7 @@
       pour évaluer votre modèle une fois que vous l'aurez entraîné – essayant ainsi de s'assurer que votre modèle capte
       les conditions qui font qu'elle aime les caractéristiques d'une maison.</p>
     <p>Les <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> sur lesquels nous nous sommes exercés
-      jusqu'à maintenant faisaient tous des "<a href="/science/discipline/hard/form/math/stat/regress">regressions</a>"
+      jusqu'à maintenant faisaient tous des "<a href="/science/discipline/hard/formal/math/stat/regress">regressions</a>"
       – ils calculaient et sortaient une valeur "continue" (la sortie peut être 4, ou 100,6 ou 2143,342343). En
       pratique, cependant, les <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> sont plus souvent
       utilisés dans les problèmes de type "classement". Dans ces problèmes, la sortie du <a
@@ -628,13 +629,13 @@
       l'intro et apprendre à un <a href="/tech/info/soft/data/science/ml/nn">réseaux de neurones</a> à reconnaître des
       chiffres manuscripts.</p>
     <p>Vous devriez aussi poursuivre votre formation en apprendre les sous-jacents théoriques et <a
-        href="/science/discipline/hard/form/math">mathématiques</a> des concepts que nous avons discutés ici. Parmi les
+      href="/science/discipline/hard/formal/math">mathématiques</a> des concepts que nous avons discutés ici. Parmi les
       bonnes questions à poser maintenant se trouvent :</p>
     <ul>
-      <li>Quels autres types de <a href="/science/discipline/hard/form/math/stat/regress/cost">fonctions de coût</a>
+      <li>Quels autres types de <a href="/science/discipline/hard/formal/math/stat/regress/cost">fonctions de coût</a>
         existent ? Quelles sont les plus adaptées à quelles applications ?</li>
       <li>Quel est l'algorithme pour calculer concrètement les nouveaux poids en utilisant la <a
-          href="/science/discipline/hard/form/math/stat/regress/gradient">descente de gradient</a> ?</li>
+        href="/science/discipline/hard/formal/math/stat/regress/gradient">descente de gradient</a> ?</li>
       <li>Quelles sont les applications de l'<a href="/tech/info/soft/data/science/ml">apprentissage automatique</a>
         dans les domaines que vous connaissez déjà ? Quelle nouvelle magie pouvez-vous insuffler en mixant ce pouvoir
         avec d'autres dans votre livre de sorts ?</li>

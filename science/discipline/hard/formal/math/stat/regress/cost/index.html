@@ -1,0 +1,52 @@
+<!--#include virtual="/header-start.html" -->
+<title>Fonction de coût</title>
+<!--#include virtual="/header-end.html" -->
+<p><i lang="en">cost function</i>) ou "fonction de perte" (<i class="en">loss function</i>) de précision.</p>
+<section>
+  <h2>Motivation</h2>
+  <p>Déterminer si une modélisation (<a href="/science/discipline/hard/formal/math/stat/regress">régression</a>, <a
+    href="/tech/info/soft/data/science/ml/nn">NN</a>) est proche de la réalité.</p>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <p>En supposant `Θ` comme le vecteur des paramètres à tester, on détermine une "fonction de coût" comme suit :
+  </p>
+  <ol>
+    <li>Pour chacune des valeurs (`i` de 1 à `m`), on calcule l'<strong>erreur</strong> entre valeur prédite
+      `h_Θ(x^((i)))` et une valeur réelle/connue `y^((i))`</li>
+    <li>on prend la <strong>moyenne</strong> de ces erreurs en divisant par `m`</li>
+  </ol>
+  <p>Autrement dit :</p>
+  <p>`J(Θ) = 1/m sum_(i=1)^m "cost"(h_Θ(x^((i)), y^((i))))`</p>
+  <p>où `"cost"` est la fonction de coût partielle (pour une ligne de données `i`).</p>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <p>Les fonctions de coût sont utilisées dans divers algorithmes de <a href="/tech/info/soft/data/science/ml">ML</a> :
+  </p>
+  <ul>
+    <li><a href="/science/discipline/hard/formal/math/stat/regress/linear/index.html#Cout">régression linéaire</a></li>
+    <li><a href="/science/discipline/hard/formal/math/stat/regress/non-linear/index.html#Cout">régression
+      non-linéaire</a>
+    </li>
+    <li><a href="/science/discipline/hard/formal/math/stat/regress/logistic/index.html#Cout">régression logistique</a>
+    </li>
+    <li><a href="/tech/info/soft/data/science/ml/nn/index.html#Cout">réseau de neurones</a></li>
+  </ul>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Attention, un coût nul ne signifie pas forcément que l'hypothèse est excellente. Cela peut plutôt paraître
+      suspect et demande une vérification qu'il ne s'agit pas d'un cas de <strong><em><a
+        href="/science/discipline/hard/formal/math/stat/regress/overfit">surapprentissage</a></em></strong>.
+    </li>
+    <li>Une fonction de coût est en fait une "fonction d'objectif" visant à être minimisée. Il peut exister d'autres
+      fonctions dont l'objectif est de les maximiser par exemple.</li>
+  </ul>
+</section>
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+<!--#include virtual="/footer.html" -->

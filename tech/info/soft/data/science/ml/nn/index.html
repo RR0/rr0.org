@@ -5,15 +5,15 @@
 <section>
   <h2>Motivation</h2>
   <p><a href="..">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
-    href="/science/discipline/hard/form/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
+    href="/science/discipline/hard/formal/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
 </section>
 <section>
   <h2>Analyse</h2>
   <p>Lorsque le nombre de critères est trop grand (<a href="../ir">IR</a> par ex), <a
-    href="/science/discipline/hard/form/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse
+    href="/science/discipline/hard/formal/math/stat/regress/non-linear">l'approche polynomiale</a> devient trop coûteuse
     en calcul (autant de <i lang="en">features</i> que de pixels) et il devient plus intéressant d'utiliser une
     alternative comme un réseau de neurones.</p>
-  <p>À l'image des <a href="/science/discipline/hard/nat/vie/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un
+  <p>À l'image des <a href="/science/discipline/hard/nature/life/bio/anat/nerv/brain/neuro">neurones biologiques</a>, un
     neurone artificiel possède :</p>
   <ul>
     <li>des <strong>entrées</strong> :
@@ -35,7 +35,7 @@
         cachée est nécessaire, il est généralement recommandé qu'elles aient le même nombre de neurones. Enfin, plus le
         réseau sera complexe, plus il demandera du temps de calcul (amoindrissant la rapidité de réponse donc) et plus
         il sera susceptible de faire du <a
-          href="/science/discipline/hard/form/math/stat/regress/overfit">surapprentissage</a>.
+          href="/science/discipline/hard/formal/math/stat/regress/overfit">surapprentissage</a>.
       </li>
       <li>couche de `s_L` <strong>sorties</strong> (typiquement constituée de `n` neurones de sorties si la prédiction
         recherchée à `n` possibilités de réponses, par exemple 26 s'il s'agit de reconnaître une lettre de l'alphabet)
@@ -54,7 +54,7 @@
     matrice de poids `Θ_j` :</p>
   <p>`z_i^((j))=Θ_(i,0)^((j-1)) x_0 + Θ_(i,1)^((j-1)) x_1 + Θ_(i,2)^((j-1)) x_2 + Θ_(i,3)^((j-1)) x_3`</p>
   <p>et l'on définit alors la <strong>fonction d'activation</strong> comme une fonction <a
-    href="/science/discipline/hard/form/math/set/rel/func/sigmoid/logistic">logistique</a> `g` :</p>
+    href="/science/discipline/hard/formal/math/set/rel/func/sigmoid/logistic">logistique</a> `g` :</p>
   <p>`a_i^((j))=g(z_i^((j)))`</p>
   <p>et l'on considère la sortie `h_Θ(x)` comme `a_1^(3)` par exemple (s'il y a 3 couches), recevant la couche 2 comme
     `X` (i.e. `x_i = a_i`) :</p>
@@ -95,7 +95,7 @@
 <section>
   <h2>Notes</h2>
   <ul>
-    <li>Inspiré des <a href="/science/discipline/hard/nat/vie/bio/anat/nerv/brain/neuro">neurones biologiques</a>.
+    <li>Inspiré des <a href="/science/discipline/hard/nature/life/bio/anat/nerv/brain/neuro">neurones biologiques</a>.
     </li>
     <li>L'apprentissage d'un RN peut être long. Une méthode plus rapide peut être la <a
       href="/tech/info/soft/data/science/ml/svm">SVM</a>.</li>

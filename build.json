@@ -1,7 +1,7 @@
 {
   "force": "true",
   "contents": [
-    "science/crypto/ufo/enquete/dossier/*.html"
+    "place/**/*.html"
   ],
   "reindex": [
     "search",

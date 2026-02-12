@@ -5,7 +5,7 @@
 <section>
   <h2>Motivation</h2>
   <p><a href="../deep">Apprendre</a> à partir de nombreux critères (trouver des hypothèses <a
-      href="/science/discipline/hard/form/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
+    href="/science/discipline/hard/formal/math/stat/regress/non-linear">non-linéaires</a> complexes).</p>
 </section>
 <section>
   <h2>Analyse</h2>
@@ -19,13 +19,13 @@
   <section>
     <h5>Coût</h5>
     <p>Pour calculer le coût pour un réseau neuronal, on généralise celui de la <a
-        href="/science/discipline/hard/form/math/stat/regress/logistic">régression logistique</a> non pas pour une seule
+      href="/science/discipline/hard/formal/math/stat/regress/logistic">régression logistique</a> non pas pour une seule
       sortie y mais pour `K` sorties en insérant une somme supplémentaire pour tenir compte des `K` noeuds de sortie
       ainsi que des `S_l` unités (y compris le noeud de biais) de chaque couche :</p>
     <p>`J(Θ) = -1/m sum_(i=1)^m sum_(k=1)^K [y_k^((i)) log(h_θ(x^((i)))_k)+(1−y_k^((i)))log(1−h_θ(x^((i)))_k)] + λ/(2m)
       sum_(l=1)^(L-1) sum_(i=1)^(S_l) sum_(j=1)^(S_l+1) (θ_(j,i)^((l)))^2`</p>
     <p>Pour minimiser ce coût, nous allons chercher à minimiser la <a
-      href="/science/discipline/hard/form/math/set/rel/func/deriv">dérivée</a> de cette fonction (i.e. plus la pente
+      href="/science/discipline/hard/formal/math/set/rel/func/deriv">dérivée</a> de cette fonction (i.e. plus la pente
       du coût est faible, plus on s'approche de la solution).</p>
   </section>
 </section>

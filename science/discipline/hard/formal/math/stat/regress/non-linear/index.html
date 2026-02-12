@@ -1,0 +1,65 @@
+<!--#include virtual="/header-start.html" -->
+<title>Régression non linéaire</title>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Motivation</h2>
+  <ul>
+    <li>Déterminer si une variable quantitative (y) à une influence sur une autre (x)</li>
+    <li><strong>Prédire</strong> une valeur de y en fonction d'une valeur de x</li>
+  </ul>
+</section>
+<section>
+  <h2>Analyse</h2>
+  <figure class="right side">
+    <figcaption>Exemple de régression non-linéaire à partir de points</figcaption>
+    <img src="exemple.png" alt="Exemple de régression non-linéaire à partir de points"/>
+  </figure>
+  <p>Soit :</p>
+  <ul>
+    <li>`X` une matrice de `m xx n` caractéristiques (<em>features</em>)</li>
+    <li>`y` un vecteur de données résultantes connues</li>
+  </ul>
+  <p>Ce type de <a href="/science/discipline/hard/formal/math/stat/regress">régression</a> consiste à déterminer la
+    fonction <strong>hypothèse</strong> `h_Θ(x) = Θ_0 + xΘ_1` dont les points sont les moins éloignés des valeurs
+    réelles. Autrement dit déterminer les <strong>paramètres</strong> `Θ_0` et `Θ_1` qui permettent à la fonction
+    linéaire h d'avoir des points ayant une distance/différence minimale avec les points "réels" (connus).</p>
+</section>
+<section>
+  <h2>Conception</h2>
+  <ol>
+    <li>On détermine une <a href="../cost">fonction de <strong>coût</strong></a> permettant de calculer la différence
+      entre h et y</li>
+    <li>On cherche à trouver `Θ_0` et `Θ_1` selon une méthode adaptée :
+      <ul>
+        <li><a href="/science/discipline/hard/formal/math/stat/regress/gradient">Descente de gradient</a> si `n` est
+          grand
+        </li>
+        <li><a href="/science/discipline/hard/formal/math/stat/regress/normal">Equation normale</a> si `n` est
+          relativement petit (< 1000) et si la matrice X est inversible (i.e. si m > n)</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+<section>
+  <h2>Notes</h2>
+  <ul>
+    <li>Avant tout travail de modélisation, une approche descriptive ou exploratoire est nécessaire pour dépister au
+      plus tôt des difficultés dans les données : dissymétrie des distributions, valeurs atypiques, liaison non linéaire
+      entre les variables.</li>
+    <li>Le modèle suppose implicitement une notion préalable de <strong>causalité</strong> dans le sens où Y dépend de X
+      car le modèle n’est pas symétrique (i.e. X ne dépend pas forcément de Y).</li>
+  </ul>
+</section>
+<section>
+  <h2>Exemples</h2>
+  <ul>
+    <li>"<a
+      href="https://help.xlstat.com/customer/fr/portal/articles/2062236-r%C3%A9gression-non-lin%C3%A9aire-dans-excel?b_id=9283">Régression
+      non linéaire dans Excel</a>", 2017-10-20</li>
+  </ul>
+</section>
+<!--#include virtual="/footer.html" -->
+<style>.mjx-math * {
+  line-height: 0;
+}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>

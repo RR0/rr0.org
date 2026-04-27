@@ -1,7 +1,16 @@
 {
-  "birthTime": "1957",
+  "lastName": "Boedec",
+  "firstName": [
+    "Jean-François"
+  ],
   "occupations": ["ufologist"],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1957"
+    }
   ]
 }

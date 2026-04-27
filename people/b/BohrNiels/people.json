@@ -1,0 +1,26 @@
+{
+  "lastName": "Bohr",
+  "firstNames": [
+    "Niels",
+    "Henrik",
+    "David"
+  ],
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "dk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1885-10-07",
+      "place": "Copenhague (Danemark)"
+    },
+    {
+      "type": "death",
+      "time": "1962-11-18",
+      "place": "Copenhague (Danemark)"
+    }
+  ]
+}

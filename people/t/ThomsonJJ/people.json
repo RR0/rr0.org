@@ -1,0 +1,25 @@
+{
+  "lastName": "Thomson",
+  "firstNames": [
+    "Joseph",
+    "John"
+  ],
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1856-12-18",
+      "place": "Cheetham Hill (Manchester)"
+    },
+    {
+      "type": "death",
+      "time": "1940-08-30",
+      "place": "Cambridge (UK)"
+    }
+  ]
+}

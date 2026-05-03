@@ -1,0 +1,25 @@
+{
+  "lastName": "Bell",
+  "firstNames": [
+    "John",
+    "Stewart"
+  ],
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "ie"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1928-07-28",
+      "place": "Belfast (Irlande du Nord)"
+    },
+    {
+      "type": "death",
+      "time": "1990-10-01",
+      "place": "Genève (Suisse)"
+    }
+  ]
+}

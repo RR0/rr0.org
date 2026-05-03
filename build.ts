@@ -89,7 +89,7 @@ const contentRoots = (cliContents
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg : [
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
-  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css",
+  "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css", "math.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "tech/info/soft/reseau/protocole/index.js", "tech/info/soft/reseau/protocole/ports.json", "tech/info/soft/reseau/protocole/index.css",

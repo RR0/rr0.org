@@ -1,0 +1,20 @@
+body {
+  counter-reset: equation;
+}
+
+.equation {
+  display: flex;
+
+  > * {
+    flex: 1;
+    text-align: center;
+  }
+
+  align-items: center;
+}
+
+.equation::after {
+  flex: 0;
+  counter-increment: equation;
+  content: "(" counter(equation) ")";
+}

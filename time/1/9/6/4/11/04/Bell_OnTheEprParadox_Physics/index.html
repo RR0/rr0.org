@@ -1,72 +1,90 @@
 <!--#include virtual="/header-start.html" -->
 <title>On the Einstein-Podolsky-Rosen Paradox</title>
 <meta content="Physics vol. 1, #3, pp. 195-290" name="copyright"/>
+<meta content="./PhysicsPhysiqueFizika.1.195.pdf" name="url"/>
 <meta content="Bell, John S. (Department of Physics, University of Wisconsin, Madison, Wisconsin)" name="author"/>
+<link href="/math.css" rel="stylesheet" type="text/css"/>
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>I. Introduction</h2>
-  <p>THE paradox of <span class="people" title="Albert Einstein">Einstein</span>, Podolsky and Rosen [1] was advanced as
-    an argument that quantum mechanics could not be a complete theory but should be supplemented by additional
-    variables. These additional variables were to restore to the theory causality and locality [2]. In this note that
-    idea will be formulated mathematically and shown to be incompatible with the statistical predictions of quantum
+  <p>THE paradox of <span class="people" title="Albert Einstein">Einstein</span>, Podolsky and Rosen <span
+    class="source">A. EINSTEIN, N. ROSEN and B. PODOLSKY, Phys. Rev. 47, 777 (1935); see also N. BOHR, Ibid. 48, 696 (1935), W.
+    H. FURRY, Ibid. 49, 393 and 476 (1936), and D. R. INGLIS, Rev. Mod. Phys. 33, 1 (1961).</span> was advanced as an
+    argument that quantum mechanics could not be a complete theory but should be supplemented by additional variables.
+    These additional variables were to restore to the theory causality and locality <span class="note"><q>But on one
+      supposition we should, in my opinion, absolutely hold fast: the real factual situation of the system
+    S2 is independent of what is done with the system Sx, which is spatially separated from the former</q> <span
+      class="source">A. EINSTEIN in <span class="people">Albert Einstein</span>, Philosopher Scientist, (Edited by P.
+      A. SCHILP) p. 85, Library of Living Philosophers, Evanston, Illinois (1949)</span>.</span>. In this note that idea
+    will be formulated mathematically and shown to be incompatible with the statistical predictions of quantum
     mechanics. It is the requirement of locality, or more precisely that the result of a measurement on one system be
     unaffected by operations on a distant system with which it has interacted in the past, that creates the essential
-    difficulty. There have been attempts [3] to show that even without such a separability or locality requirement no
-    "hidden variable" interpretation of quantum mechanics is possible. These attempts have been examined elsewhere [4]
-    and found wanting. Moreover, a hidden variable interpretation of elementary quantum theory [5] has been explicitly
-    constructed. That particular interpretation has indeed a grossly nonlocal structure. This is characteristic,
-    according to the result to be proved here, of any such theory which reproduces exactly the quantum mechanical
-    predictions.</p>
+    difficulty. There have been attempts <span class="source">J. VON NEUMANN, Mathematishe Grundlagen der Quanten-mechanik. Verlag Julius-Springer, Berlin (1932), [English
+    translation: Princeton University Press (1955)]; J. M. JAUCH and C. PIRON, Helv. Phys. Acta 36, 827 (1963).</span>
+    to show that even without such a separability or locality requirement no "hidden variable" interpretation of quantum
+    mechanics is possible. These attempts have been examined elsewhere <span
+      class="source">J. S. BELL, to be published.</span> and found wanting. Moreover, a hidden variable interpretation
+    of elementary quantum theory <span class="source">D. BOHM, Phys. Rev. 85, 166 and 180 (1952).</span> has been
+    explicitly constructed. That particular interpretation has indeed a grossly nonlocal structure. This is
+    characteristic, according to the result to be proved here, of any such theory which reproduces exactly the quantum
+    mechanical predictions.</p>
 </section>
 <section>
   <h2>II. Formulation</h2>
   <p>With the example advocated by Bohm and Aharonov [6], the EPR argument is the following. Consider a pair of spin
     one-half particles formed somehow in the singlet spin state and moving freely in opposite directions. Measurements
-    can be made, say by Stern-Gerlach magnets, on selected components of the spins o x and o 2 • If measurement of the
-    component o x *3, where 3 is some unit vector, yields the value + 1 then, according to quantum mechanics,
-    measurement of o 2 ° 3 must yield the value -1 and vice versa. Now we make the hypothesis [2], and it seems one at
-    least worth considering, that if the two measurements are made at places remote from one another the orientation of
-    one magnet does not influence the result obtained with the other. Since we can predict in advance the result of
-    measuring any chosen component of o 2, by previously measuring the same component of o 1, it follows that the result
-    of any such measurement must actually be predetermined. Since the initial quantum mechanical wave function does not
-    determine the result of an individual measurement, this predetermination implies the possibility of a more complete
-    specification of the state.</p>
-  <p>Let this more complete specification be effected by means of parameters A. It is a matter of indifference in the
-    following whether A denotes a single variable or a set, or even a set of functions, and whether the variables are
-    discrete or continuous. However, we write as if A were a single continuous parameter. The result A of measuring o 1
-    *3 is then determined by 3 and*A, and the result B of measuring o 2*% in the same instance is determined by t and A,
-    and (1)</p>
-  <p>The vital assumption [2] is that the result B for particle 2 does not depend on the setting a, of the magnet for
-    particle 1, nor A on t.</p>
-  <p>If p(A) is the probability distribution of A then the expectation value of the product of the two components o 1 .
-    a and o 2%b is</p>
-  <p>(2)</p>
-  <p>This should equal the quantum mechanical expectation value, which for the singlet state is (3)</p>
+    can be made, say by Stern-Gerlach magnets, on selected components of the spins $\vec{\sigma}_1$ and
+    $\vec{\sigma}_2$. If measurement of the component $\vec{\sigma}_1 \cdot \vec{a}$, where $\vec{a}$ is some unit
+    vector, yields the value $+1$ then, according to quantum mechanics, measurement of $\vec{\sigma}_2 \cdot \vec{a}$
+    must yield the value $-1$ and vice versa. Now we make the hypothesis [2], and it seems one at least worth
+    considering, that if the two measurements are made at places remote from one another the orientation of one magnet
+    does not influence the result obtained with the other. Since we can predict in advance the result of measuring any
+    chosen component of $\vec{\sigma}_2$, by previously measuring the same component of $\vec{\sigma}_1$, it follows
+    that the result of any such measurement must actually be predetermined. Since the initial quantum mechanical wave
+    function does not determine the result of an individual measurement, this predetermination implies the possibility
+    of a more complete specification of the state.</p>
+  <p>Let this more complete specification be effected by means of parameters $\lambda$. It is a matter of indifference
+    in the following whether $\lambda$ denotes a single variable or a set, or even a set of functions, and whether the
+    variables are discrete or continuous. However, we write as if $\lambda$ were a single continuous parameter. The
+    result $\lambda$ of measuring $\vec{\sigma}_1~\cdot \vec{a}$ then determined by $\vec{a}$ and <span
+      class="note">Work supported in part by the U.S. Atomic Energy Commission</span> $\lambda$, and the result $B$ of
+    measuring $\vec{\sigma}_2 \cdot \vec{b}$ in the same instance is determined by $\vec{b}$ and $\lambda$, and</p>
+  <p class="equation">$A(\vec{a}, \lambda) = \pm 1, B(\vec{b}, \lambda) = \pm 1.$</p>
+  <p>The vital assumption [2] is that the result $B$ for particle $2$ does not depend on the setting $\vec{a}$, of the
+    magnet for particle 1, nor $A$ on $\vec{b}$.</p>
+  <p>If $\rho(\lambda)$ is the probability distribution of $\lambda$ then the expectation value of the product of the
+    two components $\vec{\sigma}_1 \cdot \vec{a}$ and $\vec{\sigma}_2 \cdot \vec{b}$ is</p>
+  <p class="equation">$P(\vec{a}, \vec{b}) = \int d \lambda\rho(\lambda)A(\vec{a}, \lambda)B(\vec{b}, \lambda).$</p>
+  <p>This should equal the quantum mechanical expectation value, which for the singlet state is</p>
+  <p class="equation">$\langle \vec{\sigma}_1 \cdot \vec{a} \quad \vec{\sigma}_2 \cdot \vec{b} \rangle = - \vec{a} \cdot
+    {b}.$</p>
   <p>But it will be shown that this is not possible.</p>
-  <p>Some might prefer a formulation in which the hidden variables fall into two sets, with A dependent on one and B on
-    the other; this possibility is contained in the above, since A stands for any number of variables and the
-    dependences thereon of A and B are unrestricted. In a complete physical theory of the type envisaged by <span
-      class="people">Einstein</span>, the hidden variables would have dynamical significance and laws of motion; our A
-    can then be thought of as initial values of these variables at some suitable instant.</p>
+  <p>Some might prefer a formulation in which the hidden variables fall into two sets, with $A$ dependent on one and $B$
+    on the other; this possibility is contained in the above, since $\lambda$ stands for any number of variables and the
+    dependences thereon of $A$ and $B$ are unrestricted. In a complete physical theory of the type envisaged by <span
+      class="people">Einstein</span>, the hidden variables would have dynamical significance and laws of motion; our
+    $\lambda$ can then be thought of as initial values of these variables at some suitable instant.</p>
 </section>
 <section>
   <h2>III. Illustration</h2>
   <p>The proof of the main result is quite simple. Before giving it, however, a number of illustrations may serve to put
     it in perspective.</p>
-  <p>Firstly, there is no difficulty in giving a hidden variable account of spin measurements on a single particle^
-    Suppose we have a spin half particle in a pure spin state with polarization denoted by a unit vector p. Let the
-    hidden variable be (for example) a unit vector X with uniform probability distribution over the hemisphere A •p > 0.
-    Specify that the result of measurement of a component a • a is</p>
-  <p>(4)</p>
-  <p>where a is a unit vector depending on a and p in a way to be specified, and the sign function is +1 or - 1
-    according to the sign of its argument. Actually this leaves the result undetermined when A • a' = Or but as the
-    probability of this is zero we will not make special prescriptions for it. Averaging over A the expectation value
-    is</p>
-  <p>(5)</p>
-  <p>where 6 is the angle between a and p . Suppose then that a1 is obtained from a by rotation towards p until</p>
-  <p>(6)</p>
-  <p>where 6 is the angle between a and p. Then we have the desired result</p>
-  <p>(7)</p>
+  <p>Firstly, there is no difficulty in giving a hidden variable account of spin measurements on a single particle.
+    Suppose we have a spin half particle in a pure spin state with polarization denoted by a unit vector $\vec{p}$. Let
+    the hidden variable be (for example) a unit vector $\vec{\lambda}$ with uniform probability distribution over the
+    hemisphere $\vec{\lambda} \cdot \vec{p} > 0$. Specify that the result of measurement of a component $\vec{\sigma}
+    \cdot \vec{a}$ is</p>
+  <p class="equation">$\text{sign } \vec{\lambda} \cdot \vec{a}'$</p>
+  <p>where $\vec{a}'$ is a unit vector depending on $\vec{a}$ and $\vec{p}$ in a way to be specified, and the sign
+    function is $+1$ or $-1$ according to the sign of its argument. Actually this leaves the result undetermined when
+    $\lambda \cdot a' = 0$, but as the probability of this is zero we will not make special prescriptions for it.
+    Averaging over $\lambda$ the expectation value is</p>
+  <p class="equation">$\langle \vec{\sigma} \cdot \vec{a} \rangle = 1 - 2 \theta' / \pi,$</p>
+  <p>where $\theta'$ is the angle between $\vec{a}'$ and $\vec{p}$. Suppose then that $\vec{a}'$ is obtained from
+    $\vec{a}$ by rotation towards $\vec{p}$ until</p>
+  <p class="equation">$1 - \frac{2\theta'}{\pi} = cos \; \theta$</p>
+  <p>where $\theta$ is the angle between $\vec{a}$ and $\vec{p}$. Then we have the desired result</p>
+  <p class="equation">$\langle \vec{\sigma} \cdot \vec{a} \rangle = cos \; \theta$</p>
   <p>So in this simple case there is no difficulty in the view that the result of every measurement is determined by the
     value of an extra variable, and that the statistical features of quantum mechanics arise because the value of this
     variable is unknown in individual instances.</p>
@@ -158,18 +176,16 @@
 </section>
 <section>
   <h2>References</h2>
-  <ol><li>A. EINSTEIN, N. ROSEN and B. PODOLSKY, Phys. Rev. 47, 777 (1935); see also N. BOHR, Ibid. 48, 696 (1935), W.
-    H. FURRY, Ibid. 49, 393 and 476 (1936), and D. R. INGLIS, Rev. Mod. Phys. 33, 1 (1961).</li>
-    <li>"But on one supposition we should, in my opinion, absolutely hold fast: the real factual situation of the system
-      S2 is independent of what is done with the system Sx, which is spatially separated from the former", A. EINSTEIN
-      in <span class="people">Albert Einstein</span>, Philosopher Scientist, (Edited by P. A. SCHILP) p. 85, Library of
-      Living Philosophers, Evanston, Illinois (1949).</li>
-    <li>J. VON NEUMANN, Mathematishe Grundlagen der Quanten-mechanik. Verlag Julius-Springer, Berlin (1932), [English
-      translation: Princeton University Press (1955)]; J. M. JAUCH and C. PIRON, Helv. Phys. Acta 36, 827 (1963).</li>
-    <li>J. S. BELL, to be published.</li>
-    <li>D. BOHM, Phys. Rev. 85, 166 and 180 (1952).</li>
+  <ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
     <li>D. BOHM and Y. AHARONOV, Phys. Rev. 108, 1070 (1957).</li>
     <li>P. A. M. DIRAC, The Principles of Quantum Mechanics (3rd Ed.) p. 37. The Clarendon Press, Oxford (1947).</li>
   </ol>
 </section>
+<script>MathJax = { tex: { inlineMath: { "[+]": [["$", "$"]] } }, svg: { fontCache: "global" } }</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 <!--#include virtual="/footer.html" -->

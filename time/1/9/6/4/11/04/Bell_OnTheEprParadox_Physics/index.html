@@ -54,7 +54,7 @@
     magnet for particle 1, nor $A$ on $\vec{b}$.</p>
   <p>If $\rho(\lambda)$ is the probability distribution of $\lambda$ then the expectation value of the product of the
     two components $\vec{\sigma}_1 \cdot \vec{a}$ and $\vec{\sigma}_2 \cdot \vec{b}$ is</p>
-  <p class="equation">$P(\vec{a}, \vec{b}) = \int d \lambda\rho(\lambda)A(\vec{a}, \lambda)B(\vec{b}, \lambda).$</p>
+  <p class="equation">\[ P(\vec{a}, \vec{b}) = \int d \lambda\rho(\lambda)A(\vec{a}, \lambda)B(\vec{b}, \lambda). \]</p>
   <p>This should equal the quantum mechanical expectation value, which for the singlet state is</p>
   <p class="equation">$\langle \vec{\sigma}_1 \cdot \vec{a} \quad \vec{\sigma}_2 \cdot \vec{b} \rangle = - \vec{a} \cdot
     {b}.$</p>
@@ -90,34 +90,44 @@
     variable is unknown in individual instances.</p>
   <p>Secondly, there is no difficulty in reproducing, in the form (2), the only features of (3) commonly used in verbal
     discussions of this problem:</p>
-  <p>(8)</p>
+  <p class="equation">\[ \left. \begin{aligned} P(\vec{a}, \vec{a}) &= - P(\vec{a}, -\vec{a}) = -1 \\ P(\vec{a},
+    \vec{b}) &= 0 \text{if } \vec{a} \cdot \vec{b} = 0 \end{aligned} \right\} \]</p>
   <p>For example, let A now be unit vector A, with uniform probability distribution over all directions, and take</p>
-  <p>(9)</p>
+  <p class="equation">\[ \left. \begin{aligned} A(\vec{a}, \vec{\lambda}) &= \text{sign } \vec{a} \cdot \vec{\lambda} \\
+    B(a, b) &= - \text{ sign } \vec{b} \cdot \vec{\lambda} \end{aligned} \right\} \]</p>
   <p>This gives</p>
-  <p>(10)</p>
-  <p>where Q is the angle between a and b, and (10) has the properties (8). For comparison, consider the result of a
-    modified theory [6] in which the pure singlet state is replaced in the course of time by an isotropic mixture of
-    product states; this gives the correlation function</p>
-  <p>(11)</p>
+  <p class="equation">$P(\vec{a}, \vec{b}) = -1 + \frac{2}{\pi} \theta,$</p>
+  <p>where $\theta$ is the angle between $a$ and $b$, and (10) has the properties (8). For comparison, consider the
+    result of a modified theory [6] in which the pure singlet state is replaced in the course of time by an isotropic
+    mixture of product states; this gives the correlation function</p>
+  <p class="equation">$- \frac{1}{3} \vec{a} \cdot \vec{b}$</p>
   <p>It is probably less easy, experimentally, to distinguish (10) from (3), than (11) from (3).</p>
-  <p>Unlike (3), the function (10) is not stationary at the minimum value - 1 (at 6 = 0). It will be seen that this is
-    characteristic of functions of type (2).</p>
-  <p>Thirdly, and finally, there is no difficulty in reproducing the quantum mechanical correlation (3) if the results A
-    and B in (2) are allowed to depend on and a respectively as well as on a and t. For example, replace a in (9) by a#,
-    obtained from a by rotation towards % until</p>
-  <p>where 6' is the angle between a* and %. However, for given values of the hidden variables, the results of
-    measurements with one magnet now depend on the setting of the distant magnet, which is just what we would wish to
-    avoid.</p>
+  <p>Unlike (3), the function (10) is not stationary at the minimum value - 1 (at $\theta$ = 0). It will be seen that
+    this is characteristic of functions of type (2).</p>
+  <p>Thirdly, and finally, there is no difficulty in reproducing the quantum mechanical correlation (3) if the results
+    $A$ and $B$ in (2) are allowed to depend on $\vec{b}$ and $\vec{a}$ respectively as well as on $\vec{a}$ and
+    $\vec{b}$. For example, replace $\vec{a}$ in (9) by $\vec{a'}$, obtained from a by rotation towards $\vec{b}$
+    until</p>
+  <p style="text-align: center">$1 - \frac{2}{\pi} = cos \; \theta$ ,</p>
+  <p>where $\theta'$ is the angle between $\vec{a'}$ and $\vec{b}$. However, for given values of the hidden variables,
+    the results of measurements with one magnet now depend on the setting of the distant magnet, which is just what we
+    would wish to avoid.</p>
 </section>
 <section>
   <h2>IV. Contradiction</h2>
   <p>The main result will now be proved. Because p is a normalized probability distribution,</p>
-  <p>(12)</p>
-  <p>and because of the properties (1), P in (2) cannot be less than - 1 . It can reach - 1 at a = t only if</p>
-  <p>(13)</p>
-  <p>except at a set of points A of zero probability. Assuming this, (2) can be rewritten</p>
-  <p>(14)</p>
+  <p class="equation">\[ \int d_\lambda \rho(\lambda) = 1 \]</p>
+  <p>and because of the properties (1), $P$ in (2) cannot be less than $-1$. It can reach $-1$ at $\vec{a} = \vec{b}$
+    only if</p>
+  <p class="equation">$A(\vec{a}, \lambda) = - B(\vec{a}, \lambda)$</p>
+  <p>except at a set of points $\lambda$ of zero probability. Assuming this, (2) can be rewritten</p>
+  <p class="equation">\[ P(\vec{a}, \vec{b}) = - \int d\lambda \rho(\lambda) \; A(\vec{a}, \lambda) \; A(\vec{b},
+    \lambda). \]</p>
   <p>It follows that c is another unit vector</p>
+  <p class="equation">\[ \begin{aligned} P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) &= - \int d_\lambda \rho(\lambda)\,
+    \bigl[A(\vec{a}, \lambda) A(\vec{b}, \lambda) - A(\vec{a}, \lambda) A(\vec{c}, \lambda)\bigr] \\ &= \int d_\lambda
+    \rho(\lambda)\, A(\vec{a}, \lambda) A(\vec{b}, \lambda)\, \bigl[A(\vec{b}, \lambda) A(\vec{c}, \lambda) - 1\bigr]
+    \end{aligned} \]</p>
   <p>using (1), whence</p>
   <p>The second term on the right is P(&, c), whence</p>
   <p>(15)</p>

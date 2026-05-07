@@ -124,24 +124,30 @@
   <p class="equation">\[ P(\vec{a}, \vec{b}) = - \int d\lambda \rho(\lambda) \; A(\vec{a}, \lambda) \; A(\vec{b},
     \lambda). \]</p>
   <p>It follows that c is another unit vector</p>
-  <p class="equation">\[ \begin{aligned} P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) &= - \int d_\lambda \rho(\lambda)\,
+  <p style="text-align: center">\[ \begin{aligned} P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) &= - \int d_\lambda
+    \rho(\lambda)\,
     \bigl[A(\vec{a}, \lambda) A(\vec{b}, \lambda) - A(\vec{a}, \lambda) A(\vec{c}, \lambda)\bigr] \\ &= \int d_\lambda
     \rho(\lambda)\, A(\vec{a}, \lambda) A(\vec{b}, \lambda)\, \bigl[A(\vec{b}, \lambda) A(\vec{c}, \lambda) - 1\bigr]
     \end{aligned} \]</p>
   <p>using (1), whence</p>
+  <p style="text-align: center">\[ \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right| \le \int d\lambda\,
+    \rho(\lambda)\, \bigl[1 - A(\vec{b}, \lambda)\, A(\vec{c}, \lambda)\bigr] \]</p>
   <p>The second term on the right is P(&, c), whence</p>
-  <p>(15)</p>
-  <p>Unless P is constant, the right hand side is in general of order | t - c | for small | 2 - c | . Thus P(2, c)
-    cannot be stationary at the minimum value (-1 at t = c) and cannot equal the quantum mechanical value (3).</p>
+  <p class="equation">$1 + P(\vec{b}, \vec{c}) \ge \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right|$</p>
+  <p>Unless $P$ is constant, the right hand side is in general of order $\left|\vec{b}-\vec{c}\right|$ for small
+    $\left|\vec{b}-\vec{c}\right|$. Thus $P(\vec{b}, \vec{c})$ cannot be stationary at the minimum value ($-1$ at
+    $\vec{b} = \vec{c}$) and cannot equal the quantum mechanical value (3).</p>
   <p>Nor can the quantum mechanical correlation (3) be arbitrarily closely approximated by the form (2). The formal
     proof of this may be set out as follows. We would not worry about failure of the approximation at isolated points,
     so let us consider instead of (2) and (3) the functions</p>
+  <p style="text-align: center">\[ \overline{P}(\vec{a}, \vec{b}) \quad \text{and} \quad -\, \vec{a} \cdot \vec{b}
+    \]</p>
   <p>where the bar denotes independent averaging of P(a, V) and -a* • t* over vectors a# and t* within specified small
     angles of a and t . Suppose that for all a and t the difference is bounded by e :</p>
-  <p>(16)</p>
-  <p>Then it will be shown that e cannot be made arbitrarily small.</p>
-  <p>Suppose that for all a and b</p>
-  <p>(17)</p>
+  <p class="equation">\[ \left| \overline{P}(\vec{a}, \vec{b}) + \vec{a} \cdot \vec{b} \right| \le \varepsilon \]</p>
+  <p>Then it will be shown that $\varepsilon$ cannot be made arbitrarily small.</p>
+  <p>Suppose that for all $a$ and $b$</p>
+  <p class="equation">\[ \left| \overline{\vec{a} \cdot \vec{b}} - \vec{a} \cdot \vec{b} \right| \le \delta \]</p>
   <p>Then from (16)</p>
   <p>(18)</p>
   From (2)

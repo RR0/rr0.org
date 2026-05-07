@@ -1,8 +1,12 @@
 {
-  "birthTime": "1940-01-10",
-  "deathTime": "2017-12-11",
   "occupations": ["ufologist", "pilot", "military"],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940-01-10"
+    }
   ]
 }

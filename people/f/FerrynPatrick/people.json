@@ -1,7 +1,13 @@
 {
-  "birthTime": "1946",
   "occupations": ["ufologist"],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946",
+      "place": "Belgique"
+    }
   ]
 }

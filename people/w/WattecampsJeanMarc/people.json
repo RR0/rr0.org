@@ -1,9 +1,19 @@
 {
-  "birthTime": "1965-03-07",
+  "lastName": "Wattecamps",
+  "firstNames": [
+    "Jean-Marc"
+  ],
   "occupations": [
     "ufologist"
   ],
   "countries": [
     "be"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1965-03-07",
+      "place": "Mons (Belgique)"
+    }
   ]
 }

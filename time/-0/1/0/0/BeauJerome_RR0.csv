@@ -1,3 +1,3 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.type
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
 "L'observation d'une torche ardente au-dessus de Tarquinium est suivie, au coucher du Soleil, par l'apparition d'un bouclier qui traverse les cieux d'Ouest en Est","",sighting,-100$,,""""","""",s1,"""",,Julius Obsequens",-100,event,https://rr0.org/time/-0/1/0/0/index.html
 "Un bouclier ardent traversa le ciel d'Ouest en Est, au coucher du Soleil, en lançant des étincelles, sous le consulat de Lucius Valerius et Caius Marius (-100).","",sighting,-100$,,""""","""",s2,"""",,Pline l'Ancien",-100,event,https://rr0.org/time/-0/1/0/0/index.html

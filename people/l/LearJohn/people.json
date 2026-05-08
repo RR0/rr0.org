@@ -1,10 +1,20 @@
 {
-  "birthTime": "1942-12-04",
+  "lastName": "Lear",
+  "firstNames": [
+    "John",
+    "Olsen"
+  ],
   "occupations": [
     "ufologist",
     "pilot"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "death",
+      "time": "1942-12-04"
+    }
   ]
 }

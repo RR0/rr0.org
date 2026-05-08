@@ -1,0 +1,232 @@
+<!--#include virtual="/header-start.html" -->
+<title>Sur le paradoxe Einstein-Podolsky-Rosen</title>
+<meta content="Physics vol. 1, #3, pp. 195-290" name="copyright"/>
+<meta content="./PhysicsPhysiqueFizika.1.195.pdf" name="url"/>
+<meta content="Bell, John S. (Département de Physique, Université du Wisconsin, Madison, Wisconsin)" name="author"/>
+<link href="/math.css" rel="stylesheet" type="text/css"/>
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>I. Introduction</h2>
+  <p>Le paradoxe d'<span class="people" title="Albert Einstein">Einstein</span>, Podolsky et Rosen <span
+    class="source">A. EINSTEIN, N. ROSEN et B. PODOLSKY, Phys. Rev. 47, 777 (1935) ; voir aussi <span class="people"
+    title="Neils Bohr">N. Bohr</span>, Ibid. 48, 696 (1935), W. H. FURRY, Ibid. 49, 393 et 476 (1936), et D. R.
+    Inglis, Rev. Mod. Phys. 33, 1 (1961).</span> a été avancé comme un argument selon lequel la mécanique quantique ne
+    pourrait pas être une théorie complète, mais qu’il faudrait lui ajouter des variables supplémentaires. Ces variables
+    additionnelles étaient destinées à restaurer dans la théorie la causalité et la localité <span class="note"><q>“Mais sur cette supposition, nous devrions absolument, selon mon
+      point de vue, tenir bon : la situation factuelle eﬀective du système $S_2$ est indépendante de ce qui est fait
+      avec le système $S_1$, qui est spatialement séparé du premier</q> <span
+      class="source">A. EINSTEIN in <span class="people">Albert Einstein</span>, Philosopher Scientist, (Edited by P.
+      A. SCHILP) p. 85, Library of Living Philosophers, Evanston, Illinois (1949)</span>.</span>. Dans cette note, cette
+    idée sera formulée mathématiquement et montrera qu’elle est incompatible avec les prédictions statistiques de la
+    mécanique quantique. C'est la contrainte de localité, ou plus précisément la contrainte que le résultat d’une mesure
+    sur un système ne soit pas aﬀectée par des opérations sur un système distant avec lequel il a interagi dans le
+    passé, qui crée la diﬃculté essentielle. Il y a eu des tentatives <span class="source">J. Von Neumann,
+      Mathematishe Grundlagen der Quanten-mechanik. Verlag Julius-Springer, Berlin (1932), [English
+    translation: Princeton University Press (1955)]; J. M. JAUCH et C. PIRON, Helv. Phys. Acta 36, 827 (1963).</span>
+    pour montrer que même sans de telles contraintes de séparabilité ou localité, aucune interprétation à "variables
+    cachées" de la mécanique quantique n’est possible. Ces tentatives ont été examinées ailleurs <span
+      class="source">J. S. BELL, à paraître.</span> et se sont révélées insatisfaisantes. De plus, une interprétation à
+    variables cachées de la théorie quantique élémentaire <span class="source">D. BOHM, Phys. Rev. 85, 166 et 180
+      (1952).</span> a été explicitement construite. Cette interprétation particulière a en eﬀet une structure
+    grossièrement non locale. Cela est caractéristique, selon le résultat qui sera prouvé ici, de n’importe quelle
+    théorie qui reproduit exactement les prédictions de la mécanique quantique.</p>
+</section>
+<section>
+  <h2>II. Formulation</h2>
+  <p>Avec l’exemple défendu par Bohm et Aharonov <span class="source">D. BOHM and Y. AHARONOV, Phys. Rev. 108, 1070 (1957).</span>,
+    l’argument EPR est le suivant. Considérons un état à un spin formé en quelque sorte d’une paire de particules de
+    spins un demi se déplaçant librement dans des directions opposées. Des mesures peuvent être effectuées, disons par
+    les aimants de Stern-Gerlach, sur des composants choisis des spins $\vec{\sigma}_1$ and $\vec{\sigma}_2$. Si la
+    mesure du composant $\vec{\sigma}_1 \cdot \vec{a}$, où $\vec{a}$ est un vecteur unité, fournit la valeur $+1$ alors,
+    selon la mécanique quantique, la mesure de $\vec{\sigma}_2 \cdot \vec{a}$ doit fournir la valeur $-1$ et <i
+      lang="lat">vice versa</i>. Maintenant, nous faisons l'hypothèse [2], et il semble, du moins cela vaut la peine
+    d’être considéré, que si les deux mesures sont effectuées en des endroits éloignés l’un de l’autre l’orientation
+    d’un aimant n’influence pas le résultat obtenu avec l’autre. Puisque l’on peut prédire à l’avance le résultat de la
+    mesure de n’importe quel composant choisi de $\vec{\sigma}_2$, en mesurant précédemment le même composant de
+    $\vec{\sigma}_1$, il s’ensuit de cela que le résultat de n’importe quelle mesure doit effectivement être
+    prédéterminé. Puisque la fonction d’onde de mécanique quantique initiale ne détermine pas le résultat d’une mesure
+    individuelle, cette prédétermination implique la possibilité d’une spécification plus complète de l’état.
+  </p>
+  <p>Effectuons cette spécification complète au moyen du paramètre $\lambda$. Cela n'a pas d’importance pour la suite
+    que $\lambda$ dénote une variable unique ou bien un ensemble de variables, ou même un ensemble de fonctions, et que
+    les variables soient discrètes ou continues. Pourtant, nous écrivons comme si $\lambda$ était un paramètre unique
+    continu. Le résultat $A$ de la mesure de $\vec{\sigma}_1~\cdot \vec{a}$ est alors déterminé par $\vec{a}$ and <span
+      class="note">Travail financé en partie par l'<a href="/org/us/AEC.html">AEC</a> américain</span> $\lambda$, et le
+    résultat $B$ de la mesure $\vec{\sigma}_2 \cdot \vec{b}$ dans la même instanciation est déterminé par $\vec{b}$ et
+    $\lambda$, et</p>
+  <p class="equation">$A(\vec{a}, \lambda) = \pm 1, B(\vec{b}, \lambda) = \pm 1.$</p>
+  <p>La supposition cruciale [2] est que le résultat $B$ pour la particule 2 ne dépend ni de la valeur $\vec{a}$, de
+    l’aimant pour la particule 1, ni de $A$ sur $\vec{b}$.</p>
+  <p>Si $\rho(\lambda)$ est la distribution de probabilité de $\lambda$ alors la valeur attendue du produit des deux
+    composants $\vec{\sigma}_1 \cdot \vec{a}$ et $\vec{\sigma}_2 \cdot \vec{b}$ est</p>
+  <p class="equation">\[ P(\vec{a}, \vec{b}) = \int d \lambda\rho(\lambda)A(\vec{a}, \lambda)B(\vec{b}, \lambda). \]</p>
+  <p>Elle devrait être égale à la valeur attendue en mécanique quantique, qui pour l’état unique est</p>
+  <p class="equation">$\langle \vec{\sigma}_1 \cdot \vec{a} \quad \vec{\sigma}_2 \cdot \vec{b} \rangle = - \vec{a} \cdot
+    {b}.$</p>
+  <p>Mais on montrera que cela n’est pas possible.</p>
+  <p>On peut préférer une formulation dans laquelle les variables cachées appartiennent à deux ensembles, avec $A$
+    dépendant de l’un et $B$ dépendant de l'autre ; cette possibilité est contenue dans la possibilité ci-dessus,
+    puisque $\lambda$ représente n’importe quel nombre de variables et que les dépendances là-dessus de $A$ et $B$ ne
+    sont pas restreintes. Dans une théorie physique complète du type envisagé par <span class="people">Einstein</span>,
+    les variables cachées auraient une signification dynamique et des lois de mouvement ; nos $\lambda$ peuvent être
+    pensés comme les valeurs initiales de ces variables à un instant convenable.</p>
+</section>
+<section>
+  <h2>III. Illustration</h2>
+  <p>La preuve du résultat principal est assez simple. Avant de la donner, pourtant, un certain nombre d’illustrations
+    peuvent servir à la mettre en perspective.</p>
+  <p>Premièrement, il n’y a pas de difficulté à utiliser une variable cachée pour compter les mesures de spin d’une
+    particule simple. Supposons que nous ayons une particule de demi spin dans un état pur de spin avec une polarisation
+    dénotée par un vecteur unitaire $\vec{p}$. Soit une variable cachée qui est (par exemple) un vecteur unitaire
+    $\vec{\lambda}$ avec une distribution de probabilité uniforme sur l'hémisphère $\vec{\lambda} \cdot \vec{p} > 0$.
+    Spécifions que le résultat de la mesure d’un composant $\vec{\sigma} \cdot \vec{a}$ est</p>
+  <p class="equation">$\text{sign } \vec{\lambda} \cdot \vec{a}'$</p>
+  <p>où $\vec{a}'$ est un vecteur unité dépendant de $\vec{a}$ and $\vec{p}$ d’une manière à spécifier, et que la
+    fonction signe est $+1$ ou $-1$ selon le signe de son argument. Effectivement, cela laisse le résultat indéterminé
+    quand $\lambda \cdot a' = 0$, mais comme la probabilité de cela est zéro, nous ne ferons pas de prescriptions
+    particulières pour elle. En calculant la moyenne sur $\lambda$ la valeur attendue est</p>
+  <p class="equation">$\langle \vec{\sigma} \cdot \vec{a} \rangle = 1 - 2 \theta' / \pi,$</p>
+  <p>où $\theta'$ est l'angle entre $\vec{a}'$ et $\vec{p}$. Supposons alors que $\vec{a}'$ est obtenu à partir de
+    $\vec{a}$ par rotation vers $\vec{p}$ jusqu’à ce que</p>
+  <p class="equation">$1 - \frac{2\theta'}{\pi} = cos \; \theta$</p>
+  <p>où $\theta$ est l'angle entre $\vec{a}$ et $\vec{p}$. Alors, nous avons le résultat souhaité</p>
+  <p class="equation">$\langle \vec{\sigma} \cdot \vec{a} \rangle = cos \; \theta$</p>
+  <p>Donc dans ce cas simple, il n’y a pas de difficulté au sens où le résultat de toute mesure est déterminé par la
+    valeur d’une variable supplémentaire, et où les caractéristiques statistiques de la mécanique quantique émergent
+    parce que la valeur de cette variable est inconnue dans les instances individuelles.</p>
+  <p>Deuxièmement, il n’y a pas de difficulté à reproduire, selon la forme (2), les seules caractéristiques de (3)
+    utilisées communément dans les discussions verbales de ce problème :</p>
+  <p class="equation">\[ \left. \begin{aligned} P(\vec{a}, \vec{a}) &= - P(\vec{a}, -\vec{a}) = -1 \\ P(\vec{a},
+    \vec{b}) &= 0 \text{if } \vec{a} \cdot \vec{b} = 0 \end{aligned} \right\} \]</p>
+  <p>Par exemple, appelons maintenant $\lambda$ le vecteur unité $\vec{\lambda}$, avec une distribution de probabilité
+    uniforme dans toutes les directions, et prenons</p>
+  <p class="equation">\[ \left. \begin{aligned} A(\vec{a}, \vec{\lambda}) &= \text{sign } \vec{a} \cdot \vec{\lambda} \\
+    B(a, b) &= - \text{ sign } \vec{b} \cdot \vec{\lambda} \end{aligned} \right\} \]</p>
+  <p>Cela donne</p>
+  <p class="equation">$P(\vec{a}, \vec{b}) = -1 + \frac{2}{\pi} \theta,$</p>
+  <p>où $\theta$ est l’angle entre $a$ et $b$, et (10) a les propriétés (8). Pour comparaison, considérons le résultat
+    d’une théorie modifiée [6] dans laquelle l’état pur du singlet est remplacé au cours du temps par un mélange
+    isotropique d’états produits ; cela donne la fonction de corrélation</p>
+  <p class="equation">$- \frac{1}{3} \vec{a} \cdot \vec{b}$</p>
+  <p>Il est probablement moins facile, expérimentalement, de distinguer (10) de (3), que (11) de (3).</p>
+  <p>Différemment de ce qui se passe en (3), la fonction (10) n’est pas satisfaisante à la valeur minimum $-1$ (à
+    $\theta = 0$). On verra que cela est caractéristique des fonctions du type (2).</p>
+  <p>Troisièmement, et dernièrement, il n'y a pas de difficulté à reproduire la corrélation de mécanique quantique (3)
+    si les résultats $A$ et $B$ dans (2) sont autorisés à dépendre de $\vec{b}$ et $\vec{a}$ aussi bien respectivement
+    que $\vec{a}$ and $\vec{b}$. Par exemple, remplacer $\vec{a}$ dans (9) par $\vec{a'}$, obtenu de $\vec{a}$ par
+    rotation vers $\vec{b}$ jusqu'à</p>
+  <p style="text-align: center">$1 - \frac{2}{\pi} = cos \; \theta$ ,</p>
+  <p>où $\theta'$ est l'angle entre $\vec{a'}$ et $\vec{b}$. Pourtant, pour des valeurs données des variables cachées,
+    les résultats des mesures avec un aimant dépendent maintenant des réglages de l’aimant distant, ce qui est juste ce
+    que nous aurions souhaité éviter.</p>
+</section>
+<section>
+  <h2>IV. Contradiction</h2>
+  <p>Le résultat principal va maintenant être démontré. Parce que $\rho$ est une distribution de probabilité
+    normalisée,</p>
+  <p class="equation">\[ \int d_\lambda \rho(\lambda) = 1 \]</p>
+  <p>et à cause des propriétés (1), $P$ dans (2) ne peut être inférieur à $-1$. Il peut atteindre $-1$ à $\vec{a} =
+    \vec{b}$ seulement si</p>
+  <p class="equation">$A(\vec{a}, \lambda) = - B(\vec{a}, \lambda)$</p>
+  <p>excepté en un ensemble de points $\lambda$ de probabilité zéro. En supposant cela, (2) peut être réécrite</p>
+  <p class="equation">\[ P(\vec{a}, \vec{b}) = - \int d\lambda \rho(\lambda) \; A(\vec{a}, \lambda) \; A(\vec{b},
+    \lambda). \]</p>
+  <p>Il s’ensuit de cela que $\vec{c}$ est un autre vecteur unité</p>
+  <p style="text-align: center">\[ \begin{aligned} P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) &= - \int d_\lambda
+    \rho(\lambda)\, \bigl[A(\vec{a}, \lambda) A(\vec{b}, \lambda) - A(\vec{a}, \lambda) A(\vec{c}, \lambda)\bigr] \\ &=
+    \int d_\lambda \rho(\lambda)\, A(\vec{a}, \lambda) A(\vec{b}, \lambda)\, \bigl[A(\vec{b}, \lambda) A(\vec{c},
+    \lambda) - 1\bigr] \end{aligned} \]</p>
+  <p>en utilisant (1), d’où</p>
+  <p style="text-align: center">\[ \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right| \le \int d\lambda\,
+    \rho(\lambda)\, \bigl[1 - A(\vec{b}, \lambda)\, A(\vec{c}, \lambda)\bigr] \]</p>
+  <p>Le second terme sur la droite est $P(\vec{b}, \vec{c})$, d'où</p>
+  <p class="equation">$1 + P(\vec{b}, \vec{c}) \ge \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right|$</p>
+  <p>À moins que $P$ is constant, ne soit constant, le côté droit est en général d'ordre $\left|\vec{b}-\vec{c}\right|$
+    pour des petits $\left|\vec{b}-\vec{c}\right|$. Ainsi $P(\vec{b}, \vec{c})$ ne peut être stationnaire à la valeur
+    minimum ($-1$ en $\vec{b} = \vec{c}$) et ne peut être égal à la valeur de mécanique quantique (3).</p>
+  <p>De même, la corrélation de mécanique quantique (3) ne peut être approximée de façon arbitrairement précise par la
+    forme (2). La preuve formelle de cela peut être énoncée de la façon suivante. Nous ne nous préoccupons pas de
+    l’échec de l’approximation en des points isolés, considérons donc à la place de (2) et (3) les fonctions</p>
+  <p style="text-align: center">\[ \overline{P}(\vec{a}, \vec{b}) \quad \text{and} \quad -\, \vec{a} \cdot \vec{b}
+    \]</p>
+  <p>où la barre au-dessus des lettres dénote le fait de moyenner indépendamment $P(\vec{a'}, \vec{b'})$ et $-\vec{a'}
+    \cdot \vec{b'}$ sur les vecteurs $\vec{a'}$ et $\vec{b'}$ dans les petits angles spécifiés de $\vec{a}$ et
+    $\vec{b}$. Supposons que pour tout $\vec{a}$ and $\vec{b}$ la diﬀérence est bornée par $\varepsilon$:</p>
+  <p class="equation">\[ \left| \overline{P}(\vec{a}, \vec{b}) + \vec{a} \cdot \vec{b} \right| \le \varepsilon \]</p>
+  <p>Alors, on montrera qu'$\varepsilon$ ne peut pas être rendu arbitrairement petit.</p>
+  <p>Supposons que pour tout $a$ et $b$</p>
+  <p class="equation">\[ \left| \overline{\vec{a} \cdot \vec{b}} - \vec{a} \cdot \vec{b} \right| \le \delta \]</p>
+  <p>Alors à partir de (16)</p>
+  <p class="equation">\[ \left| \overline{P}(\vec{a}, \vec{b}) + \vec{a} \cdot \vec{b} \right| \le \varepsilon + \delta
+    \]</p>
+  <p>De (2)</p>
+  <p class="equation">\[ \overline{P}(\vec{a}, \vec{b}) = \int d\lambda\, \rho(\lambda)\, \overline{A}(\vec{a},
+    \lambda)\, \overline{B}(\vec{b}, \lambda) \]</p>
+  <p>où</p>
+  <p class="equation">\[ \left| \overline{A}(\vec{a}, \lambda) \right| \le 1 \quad \text{et} \quad \left|
+    \overline{B}(\vec{b}, \lambda) \right| \le 1 \]</p>
+  <p>De (18) et (19), avec $\vec{a} = \vec{b}$,</p>
+  <p class="equation">\[ \int d\lambda\, \rho(\lambda)\, \left[ \overline{A}(\vec{b}, \lambda)\, \overline{B}(\vec{b},
+    \lambda) + 1 \right] \le \varepsilon + \delta \]</p>
+  <p>De (19)</p>
+  <p style="text-align: center">
+    \[ \begin{aligned} \overline{P}(\vec{a}, \vec{b}) - \overline{P}(\vec{a}, \vec{c}) &= \int d\lambda\,
+    \rho(\lambda)\, \Bigl[ \overline{A}(\vec{a}, \lambda)\, \overline{B}(\vec{b}, \lambda) - \overline{A}(\vec{a},
+    \lambda)\, \overline{B}(\vec{c}, \lambda) \Bigr] \\ &= \int d\lambda\, \rho(\lambda)\, \overline{A}(\vec{a},
+    \lambda)\, \overline{B}(\vec{b}, \lambda)\, \Bigl[ 1 + \overline{A}(\vec{b}, \lambda)\, \overline{B}(\vec{c},
+    \lambda) \Bigr] \\ &\quad - \int d\lambda\, \rho(\lambda)\, \overline{A}(\vec{a}, \lambda)\, \overline{B}(\vec{c},
+    \lambda)\, \Bigl[ 1 + \overline{A}(\vec{b}, \lambda)\, \overline{B}(\vec{b}, \lambda) \Bigr] \end{aligned} \]
+  </p>
+  <p>En utilisant (20) alors</p>
+  <p style="text-align: center">\[ \begin{aligned} \left| \overline{P}(\vec{a}, \vec{b}) - \overline{P}(\vec{a},
+    \vec{c}) \right| \le\;& \int d\lambda\, \rho(\lambda)\, \Bigl[ 1 + \overline{A}(\vec{b}, \lambda)\,
+    \overline{B}(\vec{c}, \lambda) \Bigr] \\ &+ \int d\lambda\, \rho(\lambda)\, \Bigl[ 1 + \overline{A}(\vec{b},
+    \lambda)\, \overline{B}(\vec{b}, \lambda) \Bigr] \end{aligned} \]</p>
+  <p>Alors, en utilisant (19) et (21)</p>
+  <p style="text-align: center">\[ \left| \overline{P}(\vec{a}, \vec{b}) - \overline{P}(\vec{a}, \vec{c}) \right| \le 1
+    + \overline{P}(\vec{b}, \vec{c}) + \varepsilon + \delta \]</p>
+  <p>Finalement, en utilisant (18),</p>
+  <p style="text-align: center">\[ \left| \vec{a} \cdot \vec{c} - \vec{a} \cdot \vec{b} \right| - 2(\varepsilon +
+    \delta) \le 1 - \vec{b} \cdot \vec{c} + 2(\varepsilon + \delta) \]</p>
+  <p>ou</p>
+  <p class="equation">\[ 4(\varepsilon + \delta) \ge \left| \vec{a} \cdot \vec{c} - \vec{a} \cdot \vec{b} \right| +
+    \vec{b} \cdot \vec{c} - 1 \]</p>
+  <p>Prenons par exemple $\vec{a} \cdot \vec{c} = 0, \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{c} = 1/\sqrt{2} - 1$
+    Alors</p>
+  <p style="text-align: center">\[ 4(\varepsilon + \lambda) \ge \sqrt{2} - 1 \]</p>
+  <p>Par conséquent, de petits $\lambda$, $\varepsilon$ finis ne peuvent être arbitrairement petits.</p>
+  <p>Par conséquent, la valeur attendue en mécanique quantique ne peut pas être représentée, que ce soit précisément ou
+    de façon arbitrairement proche, sous la forme (2).</p>
+</section>
+<section>
+  <h2>V. Généralisation</h2>
+  <p>L’exemple considéré ci-dessus a l’avantage de ne nécessiter que peu d’imagination pour envisager les mesures
+    réalisées eﬀectivement. De manière plus formelle, en supposant [7] que tout opérateur avec un ensemble complet
+    d’états propres est un "observable", le résultat est facilement étendu à d’autres systèmes. Si les deux systèmes ont
+    des espaces d’états de dimension plus grande que 2, nous pouvons toujours considérer des sous-espaces de dimension
+    deux et définir, dans leur produit direct, les opérateurs $\vec{\sigma_1}$ et $\vec{\sigma_2}$ formellement
+    analogues à ceux utilisés ci-dessus et qui sont nuls pour les états en dehors du sous-espace produit. Alors, pour au
+    moins un état de mécanique quantique, l’état “singlet” dans les sous-espaces combinés, les prédictions statistiques
+    de la mécanique quantique sont incompatibles avec une prédétermination séparable.</p>
+</section>
+<section>
+  <h2>VI. Conclusion</h2>
+  <p>Dans une théorie dans laquelle des paramètres sont ajoutés à la mécanique quantique pour déterminer les résultats
+    de mesures individuelles, sans changer les prédictions statistiques, il doit y avoir un mécanisme selon lequel le
+    réglage d’un dispositif de mesure peut influencer la lecture d’un autre instrument, pourtant à distance. De plus, le
+    signal impliqué peut se propager, instantanément de telle façon qu’une telle théorie ne respecte pas l’invariance de
+    Lorentz.</p>
+  <p>Bien sûr, la situation est diﬀérente si les prédictions de la mécanique quantique sont d’une validité limitée.
+    Elles ne peuvent s’appliquer conceptuellement qu’à des expérimentations dans lesquelles les réglages des instruments
+    sont eﬀectués suﬃsamment à l’avance pour leur permettre d’atteindre une relation mutuelle par échange de signaux
+    avec une vitesse inférieure ou égale à celle de la lumière. Dans cette relation, les expérimentations du type
+    proposé par Bohm et Aharonov [6], dans lesquelles les réglages sont changés durant le voyage des particules sont
+    cruciales.</p>
+  <p><em>Je suis reconnaissant aux Drs. M. Bander et J. K. Perring pour de très utiles discussions de ce problème. Le
+    premier brouillon de cet article a été écrit durant un séjour à l’Université de Brandeis ; j’ai de la reconnaissance
+    envers les collègues rencontrés là-bas et à l’Université du Wisconsin pour leur intérêt et leur hospitalité.</em>
+  </p>
+</section>
+<script>MathJax = { tex: { inlineMath: { "[+]": [["$", "$"]] } }, svg: { fontCache: "global" } }</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+<!--#include virtual="/footer.html" -->

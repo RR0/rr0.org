@@ -7,13 +7,13 @@
 <!--#include virtual="/header-end.html" -->
 <section>
   <h2>I. Introduction</h2>
-  <p>THE paradox of <span class="people" title="Albert Einstein">Einstein</span>, Podolsky and Rosen <span
+  <p>The paradox of <span class="people" title="Albert Einstein">Einstein</span>, Podolsky and Rosen <span
     class="source">A. EINSTEIN, N. ROSEN and B. PODOLSKY, Phys. Rev. 47, 777 (1935); see also N. BOHR, Ibid. 48, 696 (1935), W.
     H. FURRY, Ibid. 49, 393 and 476 (1936), and D. R. INGLIS, Rev. Mod. Phys. 33, 1 (1961).</span> was advanced as an
     argument that quantum mechanics could not be a complete theory but should be supplemented by additional variables.
     These additional variables were to restore to the theory causality and locality <span class="note"><q>But on one
       supposition we should, in my opinion, absolutely hold fast: the real factual situation of the system
-    S2 is independent of what is done with the system Sx, which is spatially separated from the former</q> <span
+    $S_2$ is independent of what is done with the system $S_1$, which is spatially separated from the former</q> <span
       class="source">A. EINSTEIN in <span class="people">Albert Einstein</span>, Philosopher Scientist, (Edited by P.
       A. SCHILP) p. 85, Library of Living Philosophers, Evanston, Illinois (1949)</span>.</span>. In this note that idea
     will be formulated mathematically and shown to be incompatible with the statistical predictions of quantum
@@ -46,11 +46,12 @@
   <p>Let this more complete specification be effected by means of parameters $\lambda$. It is a matter of indifference
     in the following whether $\lambda$ denotes a single variable or a set, or even a set of functions, and whether the
     variables are discrete or continuous. However, we write as if $\lambda$ were a single continuous parameter. The
-    result $\lambda$ of measuring $\vec{\sigma}_1~\cdot \vec{a}$ then determined by $\vec{a}$ and <span
-      class="note">Work supported in part by the U.S. Atomic Energy Commission</span> $\lambda$, and the result $B$ of
-    measuring $\vec{\sigma}_2 \cdot \vec{b}$ in the same instance is determined by $\vec{b}$ and $\lambda$, and</p>
+    result $A$ of measuring $\vec{\sigma}_1~\cdot \vec{a}$ then determined by $\vec{a}$ and <span
+      class="note">Work supported in part by the U.S. <a href="/org/us/AEC.html" title="Atomic Energy Commission">AEC
+    </a></span> $\lambda$, and the result $B$ of measuring $\vec{\sigma}_2 \cdot \vec{b}$ in the same instance is
+    determined by $\vec{b}$ and $\lambda$, and</p>
   <p class="equation">$A(\vec{a}, \lambda) = \pm 1, B(\vec{b}, \lambda) = \pm 1.$</p>
-  <p>The vital assumption [2] is that the result $B$ for particle $2$ does not depend on the setting $\vec{a}$, of the
+  <p>The vital assumption [2] is that the result $B$ for particle 2 does not depend on the setting $\vec{a}$, of the
     magnet for particle 1, nor $A$ on $\vec{b}$.</p>
   <p>If $\rho(\lambda)$ is the probability distribution of $\lambda$ then the expectation value of the product of the
     two components $\vec{\sigma}_1 \cdot \vec{a}$ and $\vec{\sigma}_2 \cdot \vec{b}$ is</p>
@@ -92,7 +93,8 @@
     discussions of this problem:</p>
   <p class="equation">\[ \left. \begin{aligned} P(\vec{a}, \vec{a}) &= - P(\vec{a}, -\vec{a}) = -1 \\ P(\vec{a},
     \vec{b}) &= 0 \text{if } \vec{a} \cdot \vec{b} = 0 \end{aligned} \right\} \]</p>
-  <p>For example, let A now be unit vector A, with uniform probability distribution over all directions, and take</p>
+  <p>For example, let $\lambda$ now be unit vector $\vec{\lambda}$, with uniform probability distribution over all
+    directions, and take</p>
   <p class="equation">\[ \left. \begin{aligned} A(\vec{a}, \vec{\lambda}) &= \text{sign } \vec{a} \cdot \vec{\lambda} \\
     B(a, b) &= - \text{ sign } \vec{b} \cdot \vec{\lambda} \end{aligned} \right\} \]</p>
   <p>This gives</p>
@@ -102,12 +104,12 @@
     mixture of product states; this gives the correlation function</p>
   <p class="equation">$- \frac{1}{3} \vec{a} \cdot \vec{b}$</p>
   <p>It is probably less easy, experimentally, to distinguish (10) from (3), than (11) from (3).</p>
-  <p>Unlike (3), the function (10) is not stationary at the minimum value - 1 (at $\theta$ = 0). It will be seen that
+  <p>Unlike (3), the function (10) is not stationary at the minimum value $-1$ (at $\theta = 0$). It will be seen that
     this is characteristic of functions of type (2).</p>
   <p>Thirdly, and finally, there is no difficulty in reproducing the quantum mechanical correlation (3) if the results
     $A$ and $B$ in (2) are allowed to depend on $\vec{b}$ and $\vec{a}$ respectively as well as on $\vec{a}$ and
-    $\vec{b}$. For example, replace $\vec{a}$ in (9) by $\vec{a'}$, obtained from a by rotation towards $\vec{b}$
-    until</p>
+    $\vec{b}$. For example, replace $\vec{a}$ in (9) by $\vec{a'}$, obtained from $\vec{a}$ by rotation towards
+    $\vec{b}$ until</p>
   <p style="text-align: center">$1 - \frac{2}{\pi} = cos \; \theta$ ,</p>
   <p>where $\theta'$ is the angle between $\vec{a'}$ and $\vec{b}$. However, for given values of the hidden variables,
     the results of measurements with one magnet now depend on the setting of the distant magnet, which is just what we
@@ -115,7 +117,7 @@
 </section>
 <section>
   <h2>IV. Contradiction</h2>
-  <p>The main result will now be proved. Because p is a normalized probability distribution,</p>
+  <p>The main result will now be proved. Because $\rho$ is a normalized probability distribution,</p>
   <p class="equation">\[ \int d_\lambda \rho(\lambda) = 1 \]</p>
   <p>and because of the properties (1), $P$ in (2) cannot be less than $-1$. It can reach $-1$ at $\vec{a} = \vec{b}$
     only if</p>
@@ -123,7 +125,7 @@
   <p>except at a set of points $\lambda$ of zero probability. Assuming this, (2) can be rewritten</p>
   <p class="equation">\[ P(\vec{a}, \vec{b}) = - \int d\lambda \rho(\lambda) \; A(\vec{a}, \lambda) \; A(\vec{b},
     \lambda). \]</p>
-  <p>It follows that c is another unit vector</p>
+  <p>It follows that $\vec{c}$ is another unit vector</p>
   <p style="text-align: center">\[ \begin{aligned} P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) &= - \int d_\lambda
     \rho(\lambda)\, \bigl[A(\vec{a}, \lambda) A(\vec{b}, \lambda) - A(\vec{a}, \lambda) A(\vec{c}, \lambda)\bigr] \\ &=
     \int d_\lambda \rho(\lambda)\, A(\vec{a}, \lambda) A(\vec{b}, \lambda)\, \bigl[A(\vec{b}, \lambda) A(\vec{c},
@@ -131,7 +133,7 @@
   <p>using (1), whence</p>
   <p style="text-align: center">\[ \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right| \le \int d\lambda\,
     \rho(\lambda)\, \bigl[1 - A(\vec{b}, \lambda)\, A(\vec{c}, \lambda)\bigr] \]</p>
-  <p>The second term on the right is P(&, c), whence</p>
+  <p>The second term on the right is $P(\vec{b}, \vec{c})$, whence</p>
   <p class="equation">$1 + P(\vec{b}, \vec{c}) \ge \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right|$</p>
   <p>Unless $P$ is constant, the right hand side is in general of order $\left|\vec{b}-\vec{c}\right|$ for small
     $\left|\vec{b}-\vec{c}\right|$. Thus $P(\vec{b}, \vec{c})$ cannot be stationary at the minimum value ($-1$ at
@@ -141,8 +143,9 @@
     so let us consider instead of (2) and (3) the functions</p>
   <p style="text-align: center">\[ \overline{P}(\vec{a}, \vec{b}) \quad \text{and} \quad -\, \vec{a} \cdot \vec{b}
     \]</p>
-  <p>where the bar denotes independent averaging of P(a, V) and -a* • t* over vectors a# and t* within specified small
-    angles of a and t . Suppose that for all a and t the difference is bounded by e :</p>
+  <p>where the bar denotes independent averaging of $P(\vec{a'}, \vec{b'})$ and $-\vec{a'} \cdot \vec{b'}$ over vectors
+    $\vec{a'}$ et $\vec{b'}$ within specified small angles of $\vec{a}$ and $\vec{b}$. Suppose that for all $\vec{a}$
+    and $\vec{b}$ the difference is bounded by $\varepsilon$:</p>
   <p class="equation">\[ \left| \overline{P}(\vec{a}, \vec{b}) + \vec{a} \cdot \vec{b} \right| \le \varepsilon \]</p>
   <p>Then it will be shown that $\varepsilon$ cannot be made arbitrarily small.</p>
   <p>Suppose that for all $a$ and $b$</p>
@@ -187,7 +190,8 @@
   <p style="text-align: center">\[ 4(\varepsilon + \lambda) \ge \sqrt{2} - 1 \]</p>
   <p>Therefore, for small finite $\lambda$, $\varepsilon$ cannot be arbitrarily small.</p>
   <p>Thus, the quantum mechanical expectation value cannot be represented, either accurately or arbitrarily closely, in
-    the form (2).</p></section>
+    the form (2).</p>
+</section>
 <section>
   <h2>V. Generalization</h2>
   <p>The example considered above has the advantage that it requires little imagination to envisage the measurements

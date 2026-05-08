@@ -125,10 +125,9 @@
     \lambda). \]</p>
   <p>It follows that c is another unit vector</p>
   <p style="text-align: center">\[ \begin{aligned} P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) &= - \int d_\lambda
-    \rho(\lambda)\,
-    \bigl[A(\vec{a}, \lambda) A(\vec{b}, \lambda) - A(\vec{a}, \lambda) A(\vec{c}, \lambda)\bigr] \\ &= \int d_\lambda
-    \rho(\lambda)\, A(\vec{a}, \lambda) A(\vec{b}, \lambda)\, \bigl[A(\vec{b}, \lambda) A(\vec{c}, \lambda) - 1\bigr]
-    \end{aligned} \]</p>
+    \rho(\lambda)\, \bigl[A(\vec{a}, \lambda) A(\vec{b}, \lambda) - A(\vec{a}, \lambda) A(\vec{c}, \lambda)\bigr] \\ &=
+    \int d_\lambda \rho(\lambda)\, A(\vec{a}, \lambda) A(\vec{b}, \lambda)\, \bigl[A(\vec{b}, \lambda) A(\vec{c},
+    \lambda) - 1\bigr] \end{aligned} \]</p>
   <p>using (1), whence</p>
   <p style="text-align: center">\[ \left| P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) \right| \le \int d\lambda\,
     \rho(\lambda)\, \bigl[1 - A(\vec{b}, \lambda)\, A(\vec{c}, \lambda)\bigr] \]</p>
@@ -149,20 +148,44 @@
   <p>Suppose that for all $a$ and $b$</p>
   <p class="equation">\[ \left| \overline{\vec{a} \cdot \vec{b}} - \vec{a} \cdot \vec{b} \right| \le \delta \]</p>
   <p>Then from (16)</p>
-  <p>(18)</p>
-  From (2)
-  <p>(19)</p>
+  <p class="equation">\[ \left| \overline{P}(\vec{a}, \vec{b}) + \vec{a} \cdot \vec{b} \right| \le \varepsilon + \delta
+    \]</p>
+  <p>From (2)</p>
+  <p class="equation">\[ \overline{P}(\vec{a}, \vec{b}) = \int d\lambda\, \rho(\lambda)\, \overline{A}(\vec{a},
+    \lambda)\, \overline{B}(\vec{b}, \lambda) \]</p>
   <p>where</p>
-  <p>(20)</p>
-  <p>From (18) and (19), with a = t ,</p>
-  <p>(21)</p>
+  <p class="equation">\[ \left| \overline{A}(\vec{a}, \lambda) \right| \le 1 \quad \text{and} \quad \left|
+    \overline{B}(\vec{b}, \lambda) \right| \le 1 \]</p>
+  <p>From (18) and (19), with $\vec{a} = \vec{b}$,</p>
+  <p class="equation">\[ \int d\lambda\, \rho(\lambda)\, \left[ \overline{A}(\vec{b}, \lambda)\, \overline{B}(\vec{b},
+    \lambda) + 1 \right] \le \varepsilon + \delta \]</p>
   <p>From (19)</p>
+  <p style="text-align: center">
+    \[ \begin{aligned} \overline{P}(\vec{a}, \vec{b}) - \overline{P}(\vec{a}, \vec{c}) &= \int d\lambda\,
+    \rho(\lambda)\, \Bigl[ \overline{A}(\vec{a}, \lambda)\, \overline{B}(\vec{b}, \lambda) - \overline{A}(\vec{a},
+    \lambda)\, \overline{B}(\vec{c}, \lambda) \Bigr] \\ &= \int d\lambda\, \rho(\lambda)\, \overline{A}(\vec{a},
+    \lambda)\, \overline{B}(\vec{b}, \lambda)\, \Bigl[ 1 + \overline{A}(\vec{b}, \lambda)\, \overline{B}(\vec{c},
+    \lambda) \Bigr] \\ &\quad - \int d\lambda\, \rho(\lambda)\, \overline{A}(\vec{a}, \lambda)\, \overline{B}(\vec{c},
+    \lambda)\, \Bigl[ 1 + \overline{A}(\vec{b}, \lambda)\, \overline{B}(\vec{b}, \lambda) \Bigr] \end{aligned} \]
+  </p>
+  <p>Using (20) then</p>
+  <p style="text-align: center">\[ \begin{aligned} \left| \overline{P}(\vec{a}, \vec{b}) - \overline{P}(\vec{a},
+    \vec{c}) \right| \le\;& \int d\lambda\, \rho(\lambda)\, \Bigl[ 1 + \overline{A}(\vec{b}, \lambda)\,
+    \overline{B}(\vec{c}, \lambda) \Bigr] \\ &+ \int d\lambda\, \rho(\lambda)\, \Bigl[ 1 + \overline{A}(\vec{b},
+    \lambda)\, \overline{B}(\vec{b}, \lambda) \Bigr] \end{aligned} \]</p>
   <p>Then using (19) and (21)</p>
+  <p style="text-align: center">\[ \left| \overline{P}(\vec{a}, \vec{b}) - \overline{P}(\vec{a}, \vec{c}) \right| \le 1
+    + \overline{P}(\vec{b}, \vec{c}) + \varepsilon + \delta \]</p>
   <p>Finally, using (18),</p>
+  <p style="text-align: center">\[ \left| \vec{a} \cdot \vec{c} - \vec{a} \cdot \vec{b} \right| - 2(\varepsilon +
+    \delta) \le 1 - \vec{b} \cdot \vec{c} + 2(\varepsilon + \delta) \]</p>
   <p>or</p>
-  <p>(22)</p>
-  <p>Take for example a • c = 0, a • t = t • c = l/yJ2 Then</p>
-  <p>Therefore, for small finite 8, e cannot be arbitrarily small.</p>
+  <p class="equation">\[ 4(\varepsilon + \delta) \ge \left| \vec{a} \cdot \vec{c} - \vec{a} \cdot \vec{b} \right| +
+    \vec{b} \cdot \vec{c} - 1 \]</p>
+  <p>Take for example $\vec{a} \cdot \vec{c} = 0, \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{c} = 1/\sqrt{2} - 1$
+    Then</p>
+  <p style="text-align: center">\[ 4(\varepsilon + \lambda) \ge \sqrt{2} - 1 \]</p>
+  <p>Therefore, for small finite $\lambda$, $\varepsilon$ cannot be arbitrarily small.</p>
   <p>Thus, the quantum mechanical expectation value cannot be represented, either accurately or arbitrarily closely, in
     the form (2).</p></section>
 <section>
@@ -171,9 +194,10 @@
     involved actually being made. In a more formal way, assuming [7] that any Hermitian operator with a complete set of
     eigenstates is an "observable", the result is easily extended to other systems. If the two systems have state spaces
     of dimensionality greater than 2 we can always consider two dimensional subspaces and define, in their direct
-    product, operators o x and < j 2 formally analogous to those used above and which are zero for states outside the
-    product subspace. Then for at least one quantum mechanical state, the “singlet” state in the combined subspaces, the
-    statistical predictions of quantum mechanics are incompatible with separable predetermination.</p>
+    product, operators $\vec{\sigma_1}$ and $\vec{\sigma_2}$ formally analogous to those used above and which are zero
+    for states outside the product subspace. Then for at least one quantum mechanical state, the “singlet” state in the
+    combined subspaces, the statistical predictions of quantum mechanics are incompatible with separable
+    predetermination.</p>
 </section>
 <section>
   <h2>VI. Conclusion</h2>

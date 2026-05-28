@@ -66,7 +66,10 @@ Steps executed in order:
 
 During the content step, special tags are transformed:
 
-- **`<time datetime="...">` / `<time>`** — renders full human-readable dates (day of week, locale) with links to time pages. Supports ISO 8601 intervals (`1952-07-01/03`) and durations (`P1D`, `P15M`). Sets a contextual date so subsequent relative `<time>` tags resolve correctly.
+- **`<time datetime="...">` / `<time>`** — renders full human-readable dates (day of week, locale) with links to time
+  pages. Supports ISO 8601 intervals (`1952-07-01/03`, `1947/2026`) and durations (`P1D`, `P15M`). Sets a contextual
+  date so subsequent relative `<time>` tags resolve correctly. **All date ranges in text must use `<time>` with `/`
+  separator** — never write `1947-2026` as plain text.
 - **`<span class="place">City (Country)</span>`** — adds a click-to-map link via Google Maps Geocoding API.
 - **`<span class="people">First Last</span>`** — links to the person's bio page under `/people/`. Auto-renders subsequent mentions of the same last name.
 - **`<a class="source" href="https://...">label</a>`** — external source citation.
@@ -87,6 +90,16 @@ These rules apply when writing or editing any HTML content page:
 Prefer the abbreviated form over the full name in running text. If a dedicated page exists for the organisation or concept, link the abbreviation to it:
 ```html
 <a href="/org/us/ic/fbi"><abbr title="Federal Bureau of Investigation">FBI</abbr></a>
+```
+
+**Never write the expansion in the surrounding text when `<abbr title="...">` is already present** — the `title`
+attribute is the expansion. Writing both is redundant and forbidden:
+
+```html
+<!-- WRONG -->
+<abbr title="Federal Bureau of Investigation">FBI</abbr> (Federal Bureau of Investigation)
+<!-- CORRECT -->
+<abbr title="Federal Bureau of Investigation">FBI</abbr>
 ```
 
 **Foreign-language terms** — any word, phrase, or passage that is not French must be wrapped in `<i lang="...">`:

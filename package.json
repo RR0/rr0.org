@@ -12,7 +12,7 @@
     "url": "git+https://github.com/RR0/rr0.org.git"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "rebuild": "rm -Rf out && npm run build",

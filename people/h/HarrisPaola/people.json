@@ -1,6 +1,18 @@
 {
+  "firstNames": [
+    "Paola"
+  ],
+  "lastName": "Leopizzi-Harris",
+  "url": "https://www.paolaharris.com",
   "occupations": ["ufologist", "journalist"],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1956",
+      "place": "Rome (Italie)"
+    }
   ]
 }

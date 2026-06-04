@@ -1,5 +1,10 @@
 {
-  "birthTime": "1953-05-31",
+  "firstNames": [
+    "José",
+    "Jaime"
+  ],
+  "lastName": "Maussán Flota",
+  "url": "https://maussantelevision.com",
   "occupations": [
     "ufologist",
     "writer",
@@ -7,5 +12,12 @@
   ],
   "countries": [
     "mx"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1953-05-31",
+      "place": "Mexico (Mexique)"
+    }
   ]
 }

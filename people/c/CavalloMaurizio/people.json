@@ -1,10 +1,20 @@
 {
-  "birthTime": "1952",
   "occupations": [
     "contactee",
     "teacher"
   ],
   "countries": [
     "it"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1952"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Cavallo devant ses livres"
+    }
   ]
 }

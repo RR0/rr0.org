@@ -43,6 +43,7 @@ jobs:
         run: npm run build
         env:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          NODE_OPTIONS: --max_old_space_size=12288
 
       - name: Deploy to Netlify (production)
         run: npx netlify deploy --prod --dir out --site 89e010f5-aeca-4ea8-ba90-828553499998

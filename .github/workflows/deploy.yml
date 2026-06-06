@@ -15,6 +15,21 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so that git-restore-mtime can restore each file's commit date,
+          # allowing the build to diff against the cached out/ and only process changes.
+          fetch-depth: 0
+
+      - name: Restore file modification times
+        uses: chetan/git-restore-mtime-action@v2
+
+      - name: Restore out/ cache (incremental build)
+        uses: actions/cache@v4
+        with:
+          path: out
+          key: out-${{ github.sha }}
+          restore-keys: |
+            out-
 
       - uses: actions/setup-node@v4
         with:

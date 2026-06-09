@@ -1,0 +1,39 @@
+{
+  "surname": "Dave",
+  "firstNames": [
+    "David",
+    "Powell"
+  ],
+  "qualifier": "Sr",
+  "lastName": "MacDonald",
+  "occupations": [
+    "pilot",
+    "businessman",
+    "ufologist"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946-12-28",
+      "place": "Ludlow (Kentucky)"
+    },
+    {
+      "type": "image",
+      "url": "/time/2/0/1/4/McDonaldDavid_CAIPAN.JPG",
+      "time": "2014"
+    },
+    {
+      "type": "death",
+      "time": "2026-06-07",
+      "place": "Florence (Kentucky)",
+      "sources": [
+        {
+          "url": "https://www.ronaldbjones.com/obituaries/david-macdonald-sr"
+        }
+      ]
+    }
+  ]
+}

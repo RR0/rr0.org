@@ -3475,5 +3475,175 @@
         }
       }
     }
+  },
+  "https://www.sciencedaily.com/releases/2026/06/260602021631.htm": {
+    "title": "A stellar “Rosetta stone” reveals the source of mysterious cosmic signals | ScienceDaily",
+    "url": "https://www.sciencedaily.com/releases/2026/06/260602021631.htm",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 17,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 1,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 1,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.csiro.au/en/news/All/News/2026/June/Student-astronomer-discovers-mysterious-cosmic-signals": {
+    "title": "Student astronomer discovers ‘Rosetta stone’ for mysterious cosmic signals - CSIRO",
+    "url": "https://www.csiro.au/en/news/All/News/2026/June/Student-astronomer-discovers-mysterious-cosmic-signals",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 0,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://deadline.com/2026/06/jay-stratton-memoir-release-date-title-unveiled-1236938677/": {
+    "title": "Jay Stratton Memoir: Release Date, Title Unveiled",
+    "url": "https://deadline.com/2026/06/jay-stratton-memoir-release-date-title-unveiled-1236938677/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 0,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://x.com/jaystratton/status/2062157735425130814": {
+    "title": "https://x.com/jaystratton/status/2062157735425130814",
+    "url": "https://x.com/jaystratton/status/2062157735425130814",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 0,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.ronaldbjones.com/obituaries/david-macdonald-sr": {
+    "title": "David Powell MacDonald, Sr Obituary June 6, 2026 - Ronald B. Jones Funeral Home",
+    "url": "https://www.ronaldbjones.com/obituaries/david-macdonald-sr",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

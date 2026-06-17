@@ -1,0 +1,21 @@
+{
+  "occupations": [
+    "physicist",
+    "mathematician"
+  ],
+  "countries": [
+    "in"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1894-01-01",
+      "place": "Calcutta (Inde)"
+    },
+    {
+      "type": "death",
+      "time": "1974-02-04",
+      "place": "Calcutta (Inde)"
+    }
+  ]
+}

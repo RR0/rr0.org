@@ -4223,5 +4223,84 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://ligo.org/gwtc-5-0-updated-ligo-virgo-kagra-catalog-sets-new-records-in-precision-gravitational-wave-astronomy/": {
+    "title": "https://ligo.org/gwtc-5-0-updated-ligo-virgo-kagra-catalog-sets-new-records-in-precision-gravitational-wave-astronomy/",
+    "url": "https://ligo.org/gwtc-5-0-updated-ligo-virgo-kagra-catalog-sets-new-records-in-precision-gravitational-wave-astronomy/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 4,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.virgo-gw.eu/news/the-new-ligo-virgo-kagra-catalog-sets-new-records-in-precision-gravitational-astronomy/": {
+    "title": "The new LIGO–Virgo–KAGRA Catalog sets new records in precision gravitational astronomy – Virgo",
+    "url": "https://www.virgo-gw.eu/news/the-new-ligo-virgo-kagra-catalog-sets-new-records-in-precision-gravitational-astronomy/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 4,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.nature.com/articles/248030a0": {
+    "title": "Client Challenge",
+    "url": "https://www.nature.com/articles/248030a0",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

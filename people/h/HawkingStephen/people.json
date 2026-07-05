@@ -1,11 +1,21 @@
 {
-  "birthTime": "1942-01-08",
-  "deathTime": "2018-03-14",
   "occupations": [
     "physicist",
     "astrophysicist"
   ],
   "countries": [
     "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1942-01-08",
+      "place": "Oxford (Royaume-Uni)"
+    },
+    {
+      "type": "death",
+      "time": "2018-03-14",
+      "place": "Cambridge (Royaume-Uni)"
+    }
   ]
 }

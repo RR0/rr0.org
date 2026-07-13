@@ -1,13 +1,12 @@
 # Project exclude paths
-/dist/
-/node_modules/
+dist/
+node_modules/
 # Local Netlify folder
 .netlify
 /search/index.json
 /contentsIndex.json
-/udb/dist/
 /extension.zip
 /extension-firefox.zip
 /out/
-/.idea/workspace.xml
+.idea/
 .env

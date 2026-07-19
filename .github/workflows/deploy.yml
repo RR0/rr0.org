@@ -1,8 +1,7 @@
 name: Build & Deploy
 
 on:
-  push:
-    branches: [master]
+  # Disabled: deployment is done via Netlify, not GitHub Pages.
   workflow_dispatch:
 
 concurrency:

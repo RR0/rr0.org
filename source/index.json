@@ -4743,5 +4743,75 @@
         }
       }
     }
+  },
+  "https://www.newsnationnow.com/podcasts-newsnation/reality-check/ross-coulthart-qa-mars-face-debate-energy-weapons-defining-the-legacy-program-reality-check/": {
+    "title": "https://www.newsnationnow.com/podcasts-newsnation/reality-check/ross-coulthart-qa-mars-face-debate-energy-weapons-defining-the-legacy-program-reality-check/",
+    "url": "https://www.newsnationnow.com/podcasts-newsnation/reality-check/ross-coulthart-qa-mars-face-debate-energy-weapons-defining-the-legacy-program-reality-check/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://podcasts.apple.com/us/podcast/ross-coulthart-q-a-mars-face-debate-energy-weapons/id1837783062?i=1000777420608": {
+    "title": "https://podcasts.apple.com/us/podcast/ross-coulthart-q-a-mars-face-debate-energy-weapons/id1837783062?i=1000777420608",
+    "url": "https://podcasts.apple.com/us/podcast/ross-coulthart-q-a-mars-face-debate-energy-weapons/id1837783062?i=1000777420608",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
   }
 }

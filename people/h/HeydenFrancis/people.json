@@ -1,8 +1,8 @@
 {
-  "lastName": "Hewes",
+  "lastName": " Heyden",
   "firstNames": [
-    "Hayden",
-    "Cooper"
+    "Francis",
+    "J."
   ],
   "occupations": [
     "ufologist"
@@ -13,11 +13,11 @@
   "events": [
     {
       "type": "birth",
-      "time": "1943-12-29"
+      "time": "1907"
     },
     {
       "type": "death",
-      "time": "2017-06-15"
+      "time": "1991"
     }
   ]
 }

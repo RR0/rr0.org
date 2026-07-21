@@ -1,11 +1,28 @@
 {
-  "title": "Hill, Barney Jr.",
-  "birthTime": "1919-06-29",
-  "deathTime": "2004-10-17",
+  "lastName": "Hill",
+  "firstNames": [
+    "Barney"
+  ],
+  "qualifier": "Jr.",
   "occupations": [
     "ufoWitness"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1922-07-20",
+      "place": "Newport News (Virginie)"
+    },
+    {
+      "type": "death",
+      "time": "2004-10-17",
+      "place": "Portsmouth (New Hampshire)",
+      "notes": [
+        "D'un <abbr title=\"Accident Vasculaire-Cérébral\">AVC</abbr> (hémorragie cérébrale)."
+      ]
+    }
   ]
 }

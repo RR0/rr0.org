@@ -1,6 +1,9 @@
 {
-  "birthTime": "1932-09-19",
-  "deathTime": "2013-04-08",
+  "lastName": "Fish",
+  "firstNames": [
+    "Majorie",
+    "Eleanor"
+  ],
   "occupations": [
     "ufologist",
     "sociologist"
@@ -8,5 +11,21 @@
   "countries": [
     "us"
   ],
-  "gender": "female"
+  "gender": "female",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1932-09-19",
+      "place": "Cleveland (Ohio)"
+    },
+    {
+      "type": "death",
+      "time": "2013-04-08",
+      "sources": [
+        {
+          "url": "https://www.walkerfuneralhomes.com/obituaries/Marjorie-Eleanor-Fish?obId=12763273"
+        }
+      ]
+    }
+  ]
 }

@@ -11,6 +11,18 @@
       "type": "birth",
       "time": "1930-04-25",
       "place": "région parisienne"
+    },
+    {
+      "type": "death",
+      "time": "2026-07-21",
+      "sources": [
+        {
+          "url": "https://lebibliothecaire.blogspot.com/2026/07/rip-guy-tarade.html"
+        },
+        {
+          "url": "https://www.facebook.com/groups/257486464450393/posts/3205938146271862/"
+        }
+      ]
     }
   ]
 }

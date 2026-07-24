@@ -4822,5 +4822,70 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://lebibliothecaire.blogspot.com/2026/07/rip-guy-tarade.html": {
+    "title": "           Le Bibliothécaire: RIP GUY TARADE",
+    "url": "https://lebibliothecaire.blogspot.com/2026/07/rip-guy-tarade.html",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 23,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 18,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 2,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 2,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.facebook.com/groups/257486464450393/posts/3205938146271862/": {
+    "title": "Rennes- le- Château  Les 4 vérités | Guy Tarade nous Quitte mais que son œuvre vous Guide ",
+    "url": "https://www.facebook.com/groups/257486464450393/posts/3205938146271862/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

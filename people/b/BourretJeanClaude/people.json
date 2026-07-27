@@ -1,12 +1,21 @@
 {
+  "lastName": "Bourret",
   "firstNames": [
     "Jean-Claude"
   ],
-  "birthTime": "1941-07-17",
   "occupations": [
+    "journalist",
+    "writer",
     "ufologist"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1941-07-17",
+      "place": "Lyon"
+    }
   ]
 }

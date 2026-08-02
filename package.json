@@ -43,7 +43,7 @@
     "image-size": "^2.0.2",
     "jsdom": "^27.0.0",
     "selenium-webdriver": "^4.43.0",
-    "ssg-api": "1.17.4",
+    "ssg-api": "1.17.5",
     "openai": "^6.35.0"
   },
   "devDependencies": {

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "time": { "year": 1948, "month": 7, "day": 24, "hour": 2, "minute": 45 },
+  "place": [{ "lat": 32.3792, "lng": -86.3077 }],
+  "witnessId": "ChilesWhitted",
+  "timeline": {
+    "keyframes": [
+      { "t": 0, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 500, "y": 292, "width": 40, "height": 16 }, "color": "#163a8f", "angle": 0, "transparency": 0, "haloScale": 1, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 553, "y": 315, "width": 14, "height": 10 }, "color": "#ff5500", "angle": 0, "transparency": 0.1, "haloScale": 1.5, "selected": false } }
+      ] },
+      { "t": 800, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 402.5, "y": 219, "width": 55, "height": 22 }, "color": "#163a8f", "angle": 0, "transparency": 0, "haloScale": 1.2, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 462, "y": 250, "width": 16, "height": 10 }, "color": "#ff5500", "angle": 0, "transparency": 0.1, "haloScale": 1.6, "selected": false } }
+      ] },
+      { "t": 1600, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 300, "y": 154, "width": 80, "height": 32 }, "color": "#163a8f", "angle": 0, "transparency": 0, "haloScale": 1.6, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 366, "y": 189, "width": 18, "height": 12 }, "color": "#ff5500", "angle": 0, "transparency": 0.1, "haloScale": 1.8, "selected": false } }
+      ] },
+      { "t": 2000, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 247.5, "y": 129, "width": 105, "height": 42 }, "color": "#163a8f", "angle": 0, "transparency": 0, "haloScale": 2, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 319, "y": 168, "width": 22, "height": 14 }, "color": "#ff5500", "angle": 0, "transparency": 0.05, "haloScale": 2.2, "selected": false } }
+      ] },
+      { "t": 2400, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 252.5, "y": 91, "width": 95, "height": 38 }, "color": "#163a8f", "angle": 0, "transparency": 0, "haloScale": 1.8, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 315, "y": 133.5, "width": 20, "height": 13 }, "color": "#ff5500", "angle": 0, "transparency": 0.1, "haloScale": 2, "selected": false } }
+      ] },
+      { "t": 2800, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 305, "y": 36, "width": 70, "height": 28 }, "color": "#163a8f", "angle": 0, "transparency": 0.05, "haloScale": 1.5, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 347, "y": 75, "width": 16, "height": 10 }, "color": "#ff5500", "angle": 0, "transparency": 0.15, "haloScale": 1.6, "selected": false } }
+      ] },
+      { "t": 3400, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 395, "y": -10, "width": 50, "height": 20 }, "color": "#163a8f", "angle": 0, "transparency": 0.3, "haloScale": 1.2, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 424, "y": 26, "width": 12, "height": 8 }, "color": "#ff5500", "angle": 0, "transparency": 0.4, "haloScale": 1.2, "selected": false } }
+      ] },
+      { "t": 4000, "shapes": [
+        { "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 482.5, "y": -47, "width": 35, "height": 14 }, "color": "#163a8f", "angle": 0, "transparency": 0.85, "haloScale": 0.8, "selected": false } },
+        { "sourceId": "flame", "shape": { "kind": "oval", "bounds": { "x": 500.5, "y": -18, "width": 9, "height": 6 }, "color": "#ff5500", "angle": 0, "transparency": 0.9, "haloScale": 0.8, "selected": false } }
+      ] }
+    ]
+  }
+}

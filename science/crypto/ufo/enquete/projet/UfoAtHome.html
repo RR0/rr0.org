@@ -1,0 +1,59 @@
+<!--#include virtual="/header-start.html" -->
+<title>UFO@home</title>
+<!--#include virtual="/header-end.html" -->
+<p><em>UFO@home</em> vise à fournir aux témoins d'observations d'<a href="/science/crypto/ufo">ovnis</a> un outil de
+  témoignage visuel plutôt que seulement textuel : dessiner la forme observée, enregistrer son comportement (position,
+  couleur, transparence, halo) au cours du temps, puis le rejouer, un peu comme un magnétoscope de la scène décrite.
+  Cette approche suit les <a href="/time/1/9/6/8/07/29/Symposium/Shepard/index_fr.html">recommandations de Roger
+    Shepard</a>, pour qui la reconstitution visuelle d'un témoignage est plus fidèle qu'une reconstitution seulement
+  orale ou manuscrite.
+</p>
+<section>
+  <h2>Origines (2003-2008)</h2>
+  <p>En <time>2003</time>, <span class="people">Jérôme Beau</span> fonde le projet <abbr title="RR0 Information System">RR0
+    IS</abbr>, visant une 2<sup>nde</sup> génération dynamique de <a href="https://rr0.org">RR0.org</a>. <span
+        class="people">Pierre Lagrange</span> lui suggère d'orienter le projet vers un outil de témoignage visuel, dans
+    la droite ligne des recommandations de Shepard : le projet devient <em>UFO@home</em>.
+  </p>
+  <p>Développé alors comme une applet Java, l'outil permet de dessiner une forme d'ovni, de l'enregistrer et de la
+    rejouer.
+  </p>
+  <p>En <time>2005/2006</time>, Beau sépare plus clairement le projet RR0 IS en 2 : UFO@home (le témoignage visuel) et
+    <a href="https://github.com/RR0/Archipelago">Archipelago</a> (une méta-base de données pour l'interopérabilité des
+    bases de données ufologiques, chacune ayant son propre format) <span class="source">Beau, J. : "<a
+        href="https://github.com/RR0/Archipelago/wiki/Rationale_fr">UFO Archipelago</a>", <i>Inforespace</i> n° 112,
+      juin 2006, pp. 41-42.</span>.
+  </p>
+  <p>En <time>2008</time>, constatant l'absence de reproduction réaliste du ciel (position des astres à la date, heure,
+    lieu et orientation donnés), Beau travaille sur <i lang="en"><a href="https://stellarium4java.sf.net">Stellarium
+      for Java</a></i>, visant à poser les fondations d'un UFO@home plus réaliste — projet qui restera inutilisable
+    pour une plate-forme web.
+  </p>
+</section>
+<section>
+  <h2>Renaissance en TypeScript (2026)</h2>
+  <p>Resté en sommeil sous forme d'applet Java, le projet est réécrit intégralement en TypeScript à partir de <time>2026</time>,
+    sous forme de <i lang="en">Web Components</i> autonomes (sans dépendance à un <i lang="en">framework</i>), publiés
+    dans le paquet <a href="https://www.npmjs.com/package/@rr0/ufoathome"><code>@rr0/ufoathome</code></a> :
+  </p>
+  <ul>
+    <li><code>rr0-ufo-player</code> : lecture seule d'un enregistrement — le composant le plus léger, destiné aux pages
+      du site qui n'ont besoin que de rejouer un témoignage, comme <a
+          href="/science/crypto/ufo/enquete/dossier/ChilesWhitted/index.html">la reconstitution de l'observation de
+        Chiles et Whitted</a> ;
+    </li>
+    <li><code>rr0-ufo-recorder</code> : l'éditeur complet (forme, couleur, transparence, halo, enregistrement du
+      mouvement), utilisable ci-dessous.
+    </li>
+  </ul>
+  <p>Le code source est disponible sur <a href="https://github.com/RR0/UfoAtHome">GitHub</a>.</p>
+</section>
+<section>
+  <h2>Essayer l'éditeur</h2>
+  <p>Cliquez sur <strong>Record</strong>, déplacez le curseur sur le canevas pour dessiner le déplacement de l'ovni,
+    puis sur <strong>Stop</strong> et <strong>Play</strong> pour rejouer l'enregistrement.
+  </p>
+  <script src="/science/crypto/ufo/rr0-ufo-recorder.mjs" type="module"></script>
+  <rr0-ufo-recorder></rr0-ufo-recorder>
+</section>
+<!--#include virtual="/footer.html" -->

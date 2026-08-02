@@ -11,6 +11,6 @@ node_modules/
 .idea/
 .env
 # Synced from @rr0/ufoathome's node_modules by `npm run sync:ufoathome` (prebuild) — not hand-maintained
-/science/crypto/ufo/rr0-ufo-player.mjs
+/science/crypto/ufo/rr0-ufo.mjs
 /science/crypto/ufo/rr0-ufo-recorder.mjs
-/science/crypto/ufo/rr0-ufo-scene.mjs
+/science/crypto/ufo/rr0-scene.mjs

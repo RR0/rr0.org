@@ -109,6 +109,8 @@ attribute is the expansion. Writing both is redundant and forbidden:
 
 **Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it must always be linked. Do not leave known terms unlinked.
 
+**External project links** — when RR0 has a dedicated page for an external project/tool (e.g. its own GitHub repo, like `science/crypto/ufo/enquete/projet/UfoAtHome.html`), only that dedicated page should link directly to the external URL (GitHub, npm, etc.). Every other mention of that project anywhere else on the site must link to the dedicated RR0 page instead, not to the external URL directly.
+
 **Sources** — every claim must be supported by a source. Use `<a class="source">` for citations (see replacers above).
 
 **Immutable original documents** — articles and documents often exist in both their original language and a French translation, e.g.:

@@ -19,7 +19,7 @@
     "books": "tsx book/BookImport.ts --import book/BookBuddy.csv.js",
     "word-finder": "tsx WordFinder.ts",
     "prebuild": "npm run sync:ufoathome",
-    "sync:ufoathome": "mkdir -p science/crypto/ufo && cp node_modules/@rr0/ufoathome/dist-embed-player/rr0-ufo-player.mjs science/crypto/ufo/rr0-ufo-player.mjs && cp node_modules/@rr0/ufoathome/dist-embed/rr0-ufo-recorder.mjs science/crypto/ufo/rr0-ufo-recorder.mjs",
+    "sync:ufoathome": "mkdir -p science/crypto/ufo && cp node_modules/@rr0/ufoathome/dist-embed-player/rr0-ufo-player.mjs science/crypto/ufo/rr0-ufo-player.mjs && cp node_modules/@rr0/ufoathome/dist-embed/rr0-ufo-recorder.mjs science/crypto/ufo/rr0-ufo-recorder.mjs && cp node_modules/@rr0/ufoathome/dist-embed-scene/rr0-ufo-scene.mjs science/crypto/ufo/rr0-ufo-scene.mjs",
     "build": "tsx build.ts",
     "preview": "vite preview --host",
     "chapters": "tsx Chapters.ts",

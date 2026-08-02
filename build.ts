@@ -103,7 +103,7 @@ const copies = copiesArg ? copiesArg : [
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",
   "croyance/divin/theisme/mono/livre/islam/coran/index.js",
   "time/1/9/7/7/Poher_Matrice/app/dist/**/*.*",
-  "science/crypto/ufo/rr0-ufo-player.mjs", "science/crypto/ufo/rr0-ufo-recorder.mjs", "science/crypto/ufo/enquete/dossier/**/sighting.json",
+  "science/crypto/ufo/rr0-ufo-player.mjs", "science/crypto/ufo/rr0-ufo-recorder.mjs", "science/crypto/ufo/rr0-ufo-scene.mjs", "science/crypto/ufo/enquete/dossier/**/sighting.json",
   "nav.js"
 ]
 const outDir = "out"

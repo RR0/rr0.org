@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "time": { "year": 1964, "month": 4, "day": 24, "hour": 10, "minute": 0 },
+  "place": [{ "lat": 42.229, "lng": -76.181 }],
+  "witnessId": "wilcox",
+  "witnessName": "Gary T. Wilcox",
+  "caseId": "wilcox",
+  "timeline": {
+    "keyframes": [
+      { "t": 0, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 260, "y": 300, "width": 110, "height": 35 }, "color": "#c9c9c9", "angle": 0, "transparency": 0, "haloScale": 1.0, "selected": false } }] },
+      { "t": 4000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 260, "y": 298, "width": 110, "height": 35 }, "color": "#c9c9c9", "angle": 0, "transparency": 0, "haloScale": 1.0, "selected": false } }] },
+      { "t": 8000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 260, "y": 300, "width": 110, "height": 35 }, "color": "#c9c9c9", "angle": 0, "transparency": 0, "haloScale": 1.0, "selected": false } }] }
+    ]
+  }
+}

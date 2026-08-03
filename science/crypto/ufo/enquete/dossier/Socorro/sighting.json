@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "time": { "year": 1964, "month": 4, "day": 24, "hour": 17, "minute": 50 },
+  "place": [{ "lat": 34.058, "lng": -106.891 }],
+  "witnessId": "zamora",
+  "witnessName": "Lonnie Zamora",
+  "caseId": "socorro",
+  "timeline": {
+    "keyframes": [
+      { "t": 0, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 300, "y": 320, "width": 80, "height": 40 }, "color": "#f2f2f2", "angle": 0, "transparency": 0, "haloScale": 1.2, "selected": false } }] },
+      { "t": 3000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 300, "y": 280, "width": 80, "height": 40 }, "color": "#f2f2f2", "angle": 0, "transparency": 0, "haloScale": 1.8, "selected": false } }] },
+      { "t": 4500, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 420, "y": 150, "width": 60, "height": 28 }, "color": "#f2f2f2", "angle": -0.3, "transparency": 0.2, "haloScale": 1.4, "selected": false } }] },
+      { "t": 6000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 620, "y": 90, "width": 30, "height": 14 }, "color": "#f2f2f2", "angle": -0.3, "transparency": 0.5, "haloScale": 1.2, "selected": false } }] }
+    ]
+  }
+}

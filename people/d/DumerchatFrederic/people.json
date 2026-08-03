@@ -1,5 +1,12 @@
 {
-  "occupations": ["ufologist"],
+  "lastName": "Dumerchat",
+  "firstNames": [
+    "Frédéric"
+  ],
+  "occupations": [
+    "ufologist",
+    "historian"
+  ],
   "countries": [
     "fr"
   ],

@@ -1,0 +1,35 @@
+{
+  "lastName": "Dumas",
+  "firstNames": [
+    "Isabelle"
+  ],
+  "occupations": [
+    "ufologist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1966-04-03",
+      "place": "Epinal (Vosges)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "time": "2011",
+      "name": "Dumas à l'AG du SCEAU"
+    },
+    {
+      "type": "death",
+      "time": "2025-08-15",
+      "place": "Darnieulles, Épinal (Vosges)",
+      "sources": [
+        {
+          "url": "https://www.libramemoria.com/defunts/dumas-isabelle/d1d58e65d96b4e988c99ae55cca0644a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 {
-  "title": "Maurice G. Chatelain",
+  "lastName": "Chatelain",
+  "firstNames": [
+    "Maurice",
+    "G."
+  ],
   "occupations": [
     "engineer"
   ],

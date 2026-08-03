@@ -1,0 +1,38 @@
+{
+  "lastName": "Chausson",
+  "firstNames": [
+    "Yves"
+  ],
+  "occupations": [
+    "chemist",
+    "ufologist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1945-02-19",
+      "place": "Marsaz (Drôme)"
+    },
+    {
+      "type": "death",
+      "time": "2025-08-08",
+      "place": "Kavala (Grèce)",
+      "notes": [
+        "D'un AVC"
+      ],
+      "sources": [
+        {
+          "author": "Munsch, Gilles",
+          "title": "Nouvelle disparition",
+          "publication": {
+            "publisher": "Liste sceau_archives_ovni",
+            "time": "2026-08-03"
+          }
+        }
+      ]
+    }
+  ]
+}

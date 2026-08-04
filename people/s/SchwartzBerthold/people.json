@@ -1,0 +1,25 @@
+{
+  "lastName": "Schwartz",
+  "firstNames": [
+    "Berthold",
+    "Eric"
+  ],
+  "occupations": [
+    "psychiatrist",
+    "parapsychologist"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1924-10-24",
+      "place": "Jersey City (New Jersey)"
+    },
+    {
+      "type": "death",
+      "time": "2010-09-16"
+    }
+  ]
+}

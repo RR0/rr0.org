@@ -1,6 +1,11 @@
 {
-  "birthTime": "1916-09-24",
-  "deathTime": "1980-11-22",
+  "surname": "Paul",
+  "lastName": "Villa",
+  "firstNames": [
+    "Apolinar",
+    "Alberto"
+  ],
+  "qualifier": "Junior",
   "occupations": [
     "contactee",
     "mechanic"
@@ -10,5 +15,18 @@
   ],
   "pseudonyms": [
     "Paul Villa"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1916-09-24"
+    },
+    {
+      "type": "death",
+      "time": "1980-11-22",
+      "notes": [
+        "Il est enterré au Cimetière National de <span class=\"place\">Santa Fe (Nouveau-Mexique)</span>"
+      ]
+    }
   ]
 }

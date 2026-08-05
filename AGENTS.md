@@ -154,6 +154,13 @@ not match the canonical name used by the directory, provide that name in `title`
 <span class="people" title="Robert Oppenheimer">Oppenheimer</span>
 ```
 
+For a compound surname with a particle, attach the particle to the surname token in `title` so the people replacer
+resolves the correct directory. Keep normal spacing in the visible text:
+
+```html
+<span class="people" title="Louis DeBroglie">Louis de Broglie</span>
+```
+
 **Sources** — every claim must be supported by a source. Use `<a class="source">` for citations (see replacers above).
 
 **Immutable original documents** — articles and documents often exist in both their original language and a French

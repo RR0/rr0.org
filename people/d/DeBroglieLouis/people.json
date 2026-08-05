@@ -1,0 +1,45 @@
+{
+  "lastName": "de Broglie",
+  "firstNames": [
+    "Louis"
+  ],
+  "occupations": [
+    "physicist"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1892-08-15",
+      "place": "Dieppe (Seine-Maritime)",
+      "sources": [
+        {
+          "url": "https://www.nobelprize.org/prizes/physics/1929/broglie/facts/"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "De Broglie en 1929",
+      "time": "1929",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Louis_de_Broglie.jpg"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1987-03-19",
+      "place": "Paris (France)",
+      "sources": [
+        {
+          "url": "https://www.nobelprize.org/prizes/physics/1929/broglie/facts/"
+        }
+      ]
+    }
+  ]
+}

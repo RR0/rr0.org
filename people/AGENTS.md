@@ -17,3 +17,13 @@ step inserts it automatically. This applies to:
 
 Attach sources to the corresponding event in `people.json` whenever the schema supports them. Keep `index.html` for the
 sourced narrative and facts that are not generated from the metadata.
+
+## Compound surnames
+
+Treat a surname particle as part of the surname when naming the biography directory. For example, Louis de Broglie uses
+`people/d/DeBroglieLouis`, not a directory inferred from `Broglie` alone. References whose visible text contains normal
+spacing must use the canonical compact surname token in `title`:
+
+```html
+<span class="people" title="Louis DeBroglie">Louis de Broglie</span>
+```

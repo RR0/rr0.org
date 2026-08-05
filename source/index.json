@@ -5269,5 +5269,209 @@
         }
       }
     }
+  },
+  "https://commons.wikimedia.org/wiki/File:David_Bohm.jpg": {
+    "title": "File:David Bohm.jpg - Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:David_Bohm.jpg",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 22,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 15,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 29,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 29,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://commons.wikimedia.org/wiki/File:Louis_de_Broglie.jpg": {
+    "title": "File:Louis de Broglie.jpg - Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Louis_de_Broglie.jpg",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 22,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 15,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 30,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 30,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.acte-deces.fr/recherche-deces-famille-gatti": {
+    "title": "Acte de décès Familles Gatti",
+    "url": "https://www.acte-deces.fr/recherche-deces-famille-gatti",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.agoravox.fr/auteur/gatti-francis": {
+    "title": "Gatti Francis - AgoraVox le m�dia citoyen",
+    "url": "https://www.agoravox.fr/auteur/gatti-francis",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 8,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 16,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 18,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 18,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://forum-sceptique.com/viewtopic.php?t=3755": {
+    "title": "Voyage astral : enfin un outil concret ! - Forum Sceptique",
+    "url": "https://forum-sceptique.com/viewtopic.php?t=3755",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://zetetique.fr/protocole-experimental-radiesthesie/": {
+    "title": "Protocole expérimental : radiesthésie - Observatoire zététique",
+    "url": "https://zetetique.fr/protocole-experimental-radiesthesie/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
+  },
+  "https://www.radars-auto.com/emplacements/indre/ciron/241-radar-tourelle-leurre-d951/commentaires/": {
+    "title": "Radar D951 Ciron - Vos commentaires sur ce radar",
+    "url": "https://www.radars-auto.com/emplacements/indre/ciron/241-radar-tourelle-leurre-d951/commentaires/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null
+    }
   }
 }

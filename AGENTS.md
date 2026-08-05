@@ -33,9 +33,6 @@ GOOGLE_MAPS_API_KEY=<key> npm run build
 # Build and rebuild search/source indexes
 GOOGLE_MAPS_API_KEY=<key> npm run build -- --reindex search,sources
 
-# Full rebuild (rm -rf out/ first)
-GOOGLE_MAPS_API_KEY=<key> npm run rebuild
-
 # Run all tests
 npm test
 
@@ -45,6 +42,12 @@ npm run test-one
 # Deploy to Netlify
 npm run deploy
 ```
+
+**Règle d’or du build** — ne jamais exécuter `npm run rebuild` et ne jamais supprimer `out/`. Toujours utiliser
+`npm run build`, y compris pour forcer ou cibler une régénération.
+
+Pour les builds nécessitant davantage de pile Node, charger le fichier `.env` situé à la racine de ce dépôt. Ne jamais
+afficher ni recopier ses valeurs dans les sorties ou les fichiers suivis.
 
 `GOOGLE_MAPS_API_KEY` is required to run `build`. Build args can also be passed via `--config build.json`.
 
@@ -92,6 +95,10 @@ During the content step, special tags are transformed:
 ### Content authoring conventions
 
 These rules apply when writing or editing any HTML content page:
+
+**Chronological order** — arrange factual developments from oldest to newest throughout RR0 texts. Date a later
+statement, publication or retrospective claim by when it was made, and place it accordingly, even when it refers to an
+earlier event.
 
 Directory-specific authoring rules live in nested `AGENTS.md` files and apply in addition to this file. In particular,
 biographies under `people/` follow [`people/AGENTS.md`](people/AGENTS.md). Add further nested instruction files when a

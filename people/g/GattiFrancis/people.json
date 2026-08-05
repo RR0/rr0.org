@@ -1,7 +1,39 @@
 {
-  "occupations": ["ufologist", "parapsychologist"],
+  "url": "https://web.archive.org/web/20160403234756/http://casar.pagesperso-orange.fr/",
+  "occupations": [
+    "ufologist",
+    "parapsychologist"
+  ],
   "countries": [
     "it",
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1940-04-24",
+      "place": "Trieux (Meurthe-et-Moselle)",
+      "sources": [
+        {
+          "url": "https://www.acte-deces.fr/recherche-deces-famille-gatti"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2018-05-17",
+      "place": "Argenton-sur-Creuse (Indre)",
+      "sources": [
+        {
+          "url": "https://www.acte-deces.fr/recherche-deces-famille-gatti"
+        },
+        {
+          "url": "https://argentonsurcreuse.fr/wp-content/uploads/2024/08/Bulletin-Municipal-n11.pdf",
+          "title": "Bulletin municipal d'information d'Argenton-sur-Creuse",
+          "index": "n° 11",
+          "time": "2018-10"
+        }
+      ]
+    }
   ]
 }

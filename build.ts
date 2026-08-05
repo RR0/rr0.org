@@ -65,6 +65,11 @@ const configFile = args.config
 if (configFile) {
   args = JSON.parse(FileContents.read(configFile).contents)
 }
+const normalizeListArg = (value: string | string[] | undefined): string[] | undefined =>
+  value === undefined ? undefined : Array.isArray(value) ? value : [value]
+args.contents = normalizeListArg(args.contents)
+args.copies = normalizeListArg(args.copies)
+args.reindex = normalizeListArg(args.reindex)
 const cliContents = args.contents
 console.debug("contents", cliContents)
 

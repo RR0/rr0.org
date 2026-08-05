@@ -1,11 +1,38 @@
 {
-  "birthTime": "1903-01-27",
-  "deathTime": "1961-08-26",
+  "lastName": "Robertson",
+  "firstNames": [
+    "Howard",
+    "Percy"
+  ],
   "occupations": [
     "physicist",
     "mathematician"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1903-01-27",
+      "place": "Hoquiam (Washington, USA)"
+    },
+    {
+      "type": "image",
+      "url": "portrait.gif",
+      "sources": [
+        {
+          "title": "Caltech"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1961-08-26",
+      "place": "Pasadena (Californie)",
+      "notes": [
+        "ayant toujours conservé son poste à <a href=\"/org/us/region/ca/Caltech\">Caltech</a>."
+      ]
+    }
   ]
 }

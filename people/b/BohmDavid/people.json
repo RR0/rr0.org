@@ -1,0 +1,48 @@
+{
+  "lastName": "Bohm",
+  "firstNames": [
+    "David",
+    "Joseph"
+  ],
+  "occupations": [
+    "physicist",
+    "philosopher"
+  ],
+  "countries": [
+    "us",
+    "br",
+    "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1917-12-20",
+      "place": "Wilkes-Barre (Pennsylvanie)",
+      "sources": [
+        {
+          "url": "https://catalogues.royalsociety.org/CalmView/Record.aspx?id=NA6391&pos=1&src=CalmView.Persons"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Bohm",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:David_Bohm.jpg"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1992-10-27",
+      "place": "Londres (Royaume-Uni)",
+      "sources": [
+        {
+          "url": "https://catalogues.royalsociety.org/CalmView/Record.aspx?id=NA6391&pos=1&src=CalmView.Persons"
+        }
+      ]
+    }
+  ]
+}

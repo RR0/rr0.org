@@ -93,6 +93,10 @@ During the content step, special tags are transformed:
 
 These rules apply when writing or editing any HTML content page:
 
+Directory-specific authoring rules live in nested `AGENTS.md` files and apply in addition to this file. In particular,
+biographies under `people/` follow [`people/AGENTS.md`](people/AGENTS.md). Add further nested instruction files when a
+content domain develops conventions that do not apply to the rest of the repository.
+
 **Abbreviations and acronyms** — always use `<abbr>`:
 
 ```html
@@ -123,7 +127,32 @@ attribute is the expansion. Writing both is redundant and forbidden:
 ```
 
 **Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it
-must always be linked. Do not leave known terms unlinked.
+must always be linked. Before leaving one of these entities as plain text, search the repository for a matching page; do
+not assume that none exists. Use the semantic people markup described below for people and regular internal links for
+places, organisations and concepts.
+
+**Fields of study** — always treat a discipline or field of study (for example physics, astronomy, psychology or
+philosophy) as a linkable entity. Search for and link its RR0 page at each meaningful occurrence, including qualified
+forms such as theoretical physics or quantum physics. Do not substitute a merely adjacent topic when no dedicated page
+exists; leave the term unlinked until an appropriate page is created.
+
+**Mutual references** — whenever adding an internal link that expresses a factual relationship between two RR0 entities,
+make the relationship discoverable from both pages. Add a concise, sourced reciprocal reference on the target page when
+it does not already contain one. The reciprocal mention must follow the same semantic-linking rules; for example, an
+organisation page that mentions a biographical relationship uses `<span class="people">` to refer back to the person. A
+reciprocal reference must fit the target page's scope naturally and record a substantive relationship. Do not insert an
+isolated person into a broad overview or general classification merely to create a backlink. Prefer a more specific page
+where the person's contribution was significant; if none exists, omit the reciprocal addition and, when it would fill a
+real documentary gap, propose creating the appropriate page. A backlink is also unnecessary when the target already
+documents the relationship or when the original link is merely navigational or classificatory rather than factual.
+
+**People references** — always reference a person with `<span class="people">First Last</span>` rather than a manual
+link to their biography. The people replacer resolves the biography directory automatically. When the visible text does
+not match the canonical name used by the directory, provide that name in `title`:
+
+```html
+<span class="people" title="Robert Oppenheimer">Oppenheimer</span>
+```
 
 **Sources** — every claim must be supported by a source. Use `<a class="source">` for citations (see replacers above).
 

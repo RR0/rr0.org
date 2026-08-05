@@ -104,6 +104,7 @@ const copies = copiesArg ? copiesArg : [
   "croyance/divin/theisme/mono/livre/islam/coran/index.js",
   "time/1/9/7/7/Poher_Matrice/app/dist/**/*.*",
   "science/crypto/ufo/*.mjs", "science/crypto/ufo/*.js", "science/crypto/ufo/*.bin", "science/crypto/ufo/*.ogg", "science/crypto/ufo/*.wav", "science/crypto/ufo/enquete/dossier/**/sighting.json",
+  "science/crypto/ufo/enquete/dossier/**/witness-*.json", "science/crypto/ufo/enquete/dossier/**/witnesses-manifest.json",
   "nav.js"
 ]
 const outDir = "out"

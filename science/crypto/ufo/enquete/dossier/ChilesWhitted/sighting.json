@@ -2,7 +2,9 @@
   "version": 1,
   "time": { "year": 1948, "month": 7, "day": 24, "hour": 2, "minute": 45 },
   "place": [{ "lat": 32.3792, "lng": -86.3077 }],
-  "witnessId": "ChilesWhitted",
+  "witness": {
+    "id": "ChilesWhitted"
+  },
   "timeline": {
     "keyframes": [
       { "t": 0, "shapes": [

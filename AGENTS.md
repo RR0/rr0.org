@@ -133,6 +133,16 @@ attribute is the expansion. Writing both is redundant and forbidden:
 <i lang="en">close encounter</i>
 ```
 
+**Ordinal abbreviations** — write French ordinal abbreviations as plain text, never with HTML superscript markup. Prefer
+the concise forms used by RR0, notably `2de` rather than `2nde`:
+
+```html
+<!-- WRONG -->
+2<sup>nde</sup> Guerre mondiale
+<!-- CORRECT -->
+2de Guerre mondiale
+```
+
 **Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it
 must always be linked. Before leaving one of these entities as plain text, search the repository for a matching page; do
 not assume that none exists. Use the semantic people markup described below for people and regular internal links for

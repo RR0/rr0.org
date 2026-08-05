@@ -13,8 +13,10 @@
       "lng": -86.3077
     }
   ],
-  "witnessId": "whitted",
-  "witnessName": "John Whitted",
+  "witness": {
+    "id": "whitted",
+    "title": "John Whitted"
+  },
   "caseId": "ChilesWhitted",
   "timeline": {
     "keyframes": [

@@ -2,8 +2,10 @@
   "version": 1,
   "time": { "year": 1964, "month": 4, "day": 24, "hour": 10, "minute": 0 },
   "place": [{ "lat": 42.229, "lng": -76.181 }],
-  "witnessId": "wilcox",
-  "witnessName": "Gary T. Wilcox",
+  "witness": {
+    "id": "wilcox",
+    "title": "Gary T. Wilcox"
+  },
   "caseId": "wilcox",
   "timeline": {
     "keyframes": [

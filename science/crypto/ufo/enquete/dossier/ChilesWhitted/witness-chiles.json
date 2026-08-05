@@ -13,8 +13,10 @@
       "lng": -86.3077
     }
   ],
-  "witnessId": "chiles",
-  "witnessName": "Clarence Chiles",
+  "witness": {
+    "id": "chiles",
+    "title": "Clarence Chiles"
+  },
   "caseId": "ChilesWhitted",
   "timeline": {
     "keyframes": [

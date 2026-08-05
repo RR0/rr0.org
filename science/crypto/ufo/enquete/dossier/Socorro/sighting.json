@@ -2,8 +2,10 @@
   "version": 1,
   "time": { "year": 1964, "month": 4, "day": 24, "hour": 17, "minute": 50 },
   "place": [{ "lat": 34.058, "lng": -106.891 }],
-  "witnessId": "zamora",
-  "witnessName": "Lonnie Zamora",
+  "witness": {
+    "id": "zamora",
+    "title": "Lonnie Zamora"
+  },
   "caseId": "socorro",
   "timeline": {
     "keyframes": [

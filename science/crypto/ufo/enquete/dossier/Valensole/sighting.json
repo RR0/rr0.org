@@ -2,8 +2,10 @@
   "version": 1,
   "time": { "year": 1965, "month": 7, "day": 1, "hour": 5, "minute": 0 },
   "place": [{ "lat": 43.837, "lng": 5.993 }],
-  "witnessId": "masse",
-  "witnessName": "Maurice Masse",
+  "witness": {
+    "id": "masse",
+    "title": "Maurice Masse"
+  },
   "caseId": "valensole",
   "timeline": {
     "keyframes": [

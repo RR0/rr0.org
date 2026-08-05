@@ -6,44 +6,48 @@
   couleur, transparence, halo) au cours du temps, puis le rejouer, un peu comme un magnétoscope de la scène décrite.
   Cette approche suit les <a href="/time/1/9/6/8/07/29/Symposium/Shepard/index_fr.html">recommandations de Roger
     Shepard</a>, pour qui la reconstitution visuelle d'un témoignage est plus fidèle qu'une reconstitution seulement
-  orale ou manuscrite.
-</p>
+  orale ou manuscrite.</p>
 <section>
   <h2>Origines (2003-2008)</h2>
   <p>En <time>2003</time>, <span class="people">Jérôme Beau</span> fonde le projet <abbr title="RR0 Information System">RR0
     IS</abbr>, visant une 2<sup>nde</sup> génération dynamique de <a href="https://rr0.org">RR0.org</a>. <span
-        class="people">Pierre Lagrange</span> lui suggère d'orienter le projet vers un outil de témoignage visuel, dans
-    la droite ligne des recommandations de Shepard : le projet devient <em>UFO@home</em>.
+    class="people">Pierre Lagrange</span> lui suggère d'orienter le projet vers un outil de témoignage visuel, dans la
+    droite ligne des recommandations de <span class="people" title="Roger N. Shepard">Shepard</span> : le projet devient
+    <em>UFO @home</em>.
   </p>
-  <p>Développé alors comme une applet Java, l'outil permet de dessiner une forme d'ovni, de l'enregistrer et de la
-    rejouer.
+  <p>Développé alors comme une <a href="/org/us/company/oracle/sun/ptf/java/api/se/Applet.html">applet Java</a>, l'outil
+    permet de dessiner une forme d'ovni, de l'enregistrer et de la rejouer.
   </p>
-  <p>En <time>2005/2006</time>, Beau sépare plus clairement le projet RR0 IS en 2 : UFO@home (le témoignage visuel) et
+  <p>En <time>2005/2006</time>, Beau sépare plus clairement le projet RR0 IS en 2 : UFO@home (le témoignage visuel) et
     <a href="https://github.com/RR0/Archipelago">Archipelago</a> (une méta-base de données pour l'interopérabilité des
-    bases de données ufologiques, chacune ayant son propre format) <span class="source">Beau, J. : "<a
-        href="https://github.com/RR0/Archipelago/wiki/Rationale_fr">UFO Archipelago</a>", <i>Inforespace</i> n° 112,
+    bases de données ufologiques, chacune ayant son propre format) <span class="source">Beau, J. : "<a
+      href="https://github.com/RR0/Archipelago/wiki/Rationale_fr">UFO Archipelago</a>", <i>Inforespace</i> n° 112,
       juin 2006, pp. 41-42.</span>.
   </p>
   <p>En <time>2008</time>, constatant l'absence de reproduction réaliste du ciel (position des astres à la date, heure,
-    lieu et orientation donnés), Beau travaille sur <i lang="en"><a href="https://stellarium4java.sf.net">Stellarium
-      for Java</a></i>, visant à poser les fondations d'un UFO@home plus réaliste — projet qui restera inutilisable
-    pour une plate-forme web.
-  </p>
+    lieu et orientation donnés), Beau travaille sur <i lang="en"><a href="https://stellarium4java.sf.net">Stellarium for
+      Java</a></i>, visant à poser les fondations d'un UFO@home plus réaliste — projet qui restera inutilisable pour une
+    plate-forme web.</p>
 </section>
 <section>
   <h2>Renaissance en TypeScript (2026)</h2>
-  <p>Resté en sommeil sous forme d'applet Java, le projet est réécrit intégralement en TypeScript à partir de <time>2026</time>,
-    sous forme de <i lang="en">Web Components</i> autonomes (sans dépendance à un <i lang="en">framework</i>), publiés
-    dans le paquet <a href="https://www.npmjs.com/package/@rr0/ufoathome"><code>@rr0/ufoathome</code></a> :
+  <p>Resté en sommeil sous forme d'applet Java, le projet est réécrit intégralement en TypeScript à partir de
+    <time>2026</time>, sous forme de <i lang="en">Web Components</i> autonomes (sans dépendance à un <i lang="en">framework</i>),
+    publiés dans le paquet <a href="https://www.npmjs.com/package/@rr0/ufoathome"><code>@rr0/ufoathome</code></a> :
   </p>
   <ul>
-    <li><code>rr0-ufo-player</code> : lecture seule d'un enregistrement — le composant le plus léger, destiné aux pages
-      du site qui n'ont besoin que de rejouer un témoignage, comme <a
-          href="/science/crypto/ufo/enquete/dossier/ChilesWhitted/index.html">la reconstitution de l'observation de
-        Chiles et Whitted</a> ;
+    <li><code>rr0-ufo</code> : lecture seule de la forme (2D) d'un ovni — le composant le plus léger ;
     </li>
     <li><code>rr0-ufo-recorder</code> : l'éditeur complet (forme, couleur, transparence, halo, enregistrement du
-      mouvement), utilisable ci-dessous.
+      mouvement), utilisable ci-dessous ;
+    </li>
+    <li><code>rr0-scene</code> : le décor 3D (ciel, horizon, étoiles) calculé à partir d'une date, heure et lieu
+      réels ;
+    </li>
+    <li><code>rr0-eyewitness</code> : la vue standard d'un témoignage réel — un ou plusieurs témoins, toujours
+      replacé dans son décor (<code>rr0-scene</code>) — comme <a
+        href="/science/crypto/ufo/enquete/dossier/ChilesWhitted/index.html">la reconstitution de l'observation de
+        Chiles et Whitted</a>.
     </li>
   </ul>
   <p>Le code source est disponible sur <a href="https://github.com/RR0/UfoAtHome">GitHub</a>.</p>

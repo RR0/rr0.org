@@ -1,6 +1,7 @@
 {
   "version": 1,
   "time": { "year": 1964, "month": 4, "day": 24, "hour": 17, "minute": 50 },
+  "durationSeconds": 20,
   "place": [{ "lat": 34.058, "lng": -106.891 }],
   "witness": {
     "id": "zamora",

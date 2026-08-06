@@ -1,6 +1,7 @@
 {
   "version": 1,
   "time": { "year": 1948, "month": 7, "day": 24, "hour": 2, "minute": 45 },
+  "durationSeconds": 10,
   "place": [{ "lat": 32.3792, "lng": -86.3077 }],
   "witness": {
     "id": "ChilesWhitted"

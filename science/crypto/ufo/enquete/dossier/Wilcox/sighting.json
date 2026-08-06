@@ -1,6 +1,7 @@
 {
   "version": 1,
   "time": { "year": 1964, "month": 4, "day": 24, "hour": 10, "minute": 0 },
+  "durationSeconds": 7200,
   "place": [{ "lat": 42.229, "lng": -76.181 }],
   "witness": {
     "id": "wilcox",

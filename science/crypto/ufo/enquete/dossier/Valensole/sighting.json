@@ -1,6 +1,7 @@
 {
   "version": 1,
   "time": { "year": 1965, "month": 7, "day": 1, "hour": 5, "minute": 0 },
+  "durationSeconds": 270,
   "place": [{ "lat": 43.837, "lng": 5.993 }],
   "witness": {
     "id": "masse",

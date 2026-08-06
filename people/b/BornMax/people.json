@@ -1,0 +1,47 @@
+{
+  "lastName": "Born",
+  "firstNames": [
+    "Max"
+  ],
+  "occupations": [
+    "physicist",
+    "mathematician"
+  ],
+  "countries": [
+    "de",
+    "uk"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1882-12-11",
+      "place": "Breslau (Allemagne)",
+      "sources": [
+        {
+          "url": "https://www.nobelprize.org/prizes/physics/1954/born/facts/"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Born en 1954",
+      "time": "1954",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Max_Born_1954.jpg"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1970-01-05",
+      "place": "Göttingen (Allemagne)",
+      "sources": [
+        {
+          "url": "https://www.nobelprize.org/prizes/physics/1954/born/facts/"
+        }
+      ]
+    }
+  ]
+}

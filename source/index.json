@@ -5473,5 +5473,117 @@
     "publication": {
       "publisher": null
     }
+  },
+  "https://www.nobelprize.org/prizes/physics/1954/born/facts/": {
+    "title": "Max Born – Facts - NobelPrize.org",
+    "url": "https://www.nobelprize.org/prizes/physics/1954/born/facts/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 8,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 6,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 15,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://commons.wikimedia.org/wiki/File:Max_Born_1954.jpg": {
+    "title": "File:Max Born 1954.jpg - Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Max_Born_1954.jpg",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 7,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 23,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 15,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 5,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
   }
 }

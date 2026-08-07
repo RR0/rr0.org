@@ -36,7 +36,7 @@
     "@rr0/data": "^0.3.40",
     "@rr0/lang": "^0.1.12",
     "@rr0/time": "^0.11.2",
-    "@rr0/ufoathome": "^0.10.0",
+    "@rr0/ufoathome": "^0.10.1",
     "canvas": "^3.2.3",
     "csv-parser": "^3.2.0",
     "glob": "^11.0.3",

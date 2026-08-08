@@ -1,4 +1,4 @@
-description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
+description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
 IBM Système 32 (200 KF).,"",sighting,1975-01$,,"",1975-01,event,https://rr0.org/time/1/9/7/5/01/index.html#1975-01
 "Protocole d'accord pour fusionner Honneywell Bull et CII, ce qui donnera CII-Honeywell Bull (CII-HB), soutenue par l'état. Il est regrettable qu'on en soit arrivé là déclare Michel Debré, le promoteur du plan calcul.","",sighting,1975-01-12$,,"",1975-01-12,event,https://rr0.org/time/1/9/7/5/01/index.html#1975-01-12
 "Observation du commandant Michel Asseline sur le vol Air France New York-Paris, au sud de l'île de Jersey.","",sighting,1975-01-03T22:00$,,"",1975-01-03T22:00,event,https://rr0.org/time/1/9/7/5/01/index.html#1975-01-03T22:00

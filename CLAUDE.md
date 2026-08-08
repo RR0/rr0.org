@@ -113,6 +113,18 @@ attribute is the expansion. Writing both is redundant and forbidden:
 
 **Sources** — every claim must be supported by a source. Use `<a class="source">` for citations (see replacers above).
 
+**Filterable tags** — any block-level content element (typically `<li>`, `<p>`, or `<section>`) inside `.contents` may
+carry one or more `tag-<slug>` classes. Slugs are always in English, like every other identifier in this codebase (e.g.
+`tag-ufology`, `tag-astrophysics`), even though the page content itself is French — only the tag *label* shown to the
+reader is localized. The nav's `<rr0-tags>` widget (`tag/TagsComponent.mjs`) collects the tags present on the page, lets
+the reader toggle them on/off (hiding/showing the matching elements, selection remembered across pages via
+`localStorage`) and preview them on hover. Known slugs are translated in `tag/messages/TagsMessages_<lang>.mjs`;
+unlisted slugs fall back to an auto-humanized version of the slug. Do not reuse existing single-purpose classes
+(`source`, `people`, `place`, `note`, `event`, `temoin*`, `indexed`) as tags — always prefix with `tag-`. When tagging
+an item that already carries the older `class="tech"` marker (a square-bullet marker for spaceflight/space-tech news
+predating the tag system), replace it with `tag-spaceflight` rather than keeping both — `rr0.css` styles
+`.tag-spaceflight` with the same square bullet, so nothing is lost visually.
+
 **Immutable original documents** — articles and documents often exist in both their original language and a French translation, e.g.:
 - `article/index.html` — original (immutable)
 - `article/index_fr.html` — French translation

@@ -1,4 +1,8 @@
 {
+  "force": "true",
+  "contents": [
+    "time/1/9/7/7/12/*.html"
+  ],
   "reindex": [
     "search",
     "sources"

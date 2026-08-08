@@ -110,7 +110,7 @@ const copies = copiesArg ? copiesArg : [
   "time/1/9/7/7/Poher_Matrice/app/dist/**/*.*",
   "science/crypto/ufo/*.mjs", "science/crypto/ufo/*.js", "science/crypto/ufo/*.bin", "science/crypto/ufo/*.ogg", "science/crypto/ufo/*.wav", "science/crypto/ufo/enquete/dossier/**/sighting.json",
   "science/crypto/ufo/enquete/dossier/**/witness-*.json", "science/crypto/ufo/enquete/dossier/**/witnesses-manifest.json",
-  "nav.js"
+  "nav.js", "tag/**/*.mjs"
 ]
 const outDir = "out"
 const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY
@@ -157,7 +157,7 @@ getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileN
     siteBaseUrl, timeFormat, directoryPages,
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
-    directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author"],
+    directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author", "time/1/9/7/7/Poher_Matrice/app/dist"],
     directoryOptions,
     mappings: mappings,
     contentReplacers: [...pageReplacers, ...contentsReplacers]

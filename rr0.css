@@ -323,7 +323,7 @@ p {
   background-color: #FEE9EA
 }
 
-.tech {
+.tech, .tag-spaceflight {
   list-style-type: square;
 }
 
@@ -352,7 +352,7 @@ details summary, .toggle {
   color: #069;
 }
 
-a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover {
+a:hover, details summary:hover, .toggle:hover, .indexed li:hover, form label:hover, .multilang:hover, .previewed {
   border: none;
   border-radius: .2em;
   background: rgba(184, 197, 212, .19)
@@ -403,7 +403,7 @@ details[open] summary:hover {
   margin-right: 1em
 }
 
-a:hover, details summary:hover, .indexed li:hover, .multilang:hover {
+a:hover, details summary:hover, .indexed li:hover, .multilang:hover, .previewed {
   transition: background .2s ease-out
 }
 
@@ -908,7 +908,7 @@ a:hover {
     color: white;
   }
 
-  details[open] summary:hover, details summary:hover {
+  details[open] summary:hover, details summary:hover, .previewed {
     background-color: rgb(24, 37, 42);
   }
 

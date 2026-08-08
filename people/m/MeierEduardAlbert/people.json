@@ -1,5 +1,11 @@
 {
-  "birthTime": "1937-02-03",
+  "lastName": "Meier",
+  "firstNames": [
+    "Eduard",
+    "Albert"
+  ],
+  "surname": "Billy",
+  "url": "https://www.billymeier.com",
   "occupations": [
     "writer",
     "ufoWitness",
@@ -7,5 +13,12 @@
   ],
   "countries": [
     "ch"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1937-02-03",
+      "place": "Bülach (Suisse)"
+    }
   ]
 }

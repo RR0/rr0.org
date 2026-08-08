@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 ,"",sighting,1978-01$,,"",1978-01,event,https://rr0.org/time/1/9/7/8/index.html#1978-01
 ,"",sighting,1978-02$,,"",1978-02,event,https://rr0.org/time/1/9/7/8/index.html#1978-02
 ,"",sighting,1978-03$,,"",1978-03,event,https://rr0.org/time/1/9/7/8/index.html#1978-03
@@ -13,3 +13,7 @@ description,events,eventType,id,place,sources,time,type,url,place.dirName,place.
 ,"",sighting,1978-12$,,"",1978-12,event,https://rr0.org/time/1/9/7/8/index.html#1978-12
 L'ovni phographié à I-Petry en Crimée Photographie (ci-contre) d'un ovni à.,"",sighting,1978$IPetryCrimee,,,"",,"",I-Petry (Crimée),"",place,"",1978,event,https://rr0.org/time/1/9/7/8/index.html
 "En Stanton T. Friedman rencontre le directeur d'une chaîne de télévision qui lui suggère au cours d'une discussion de se mettre en rapport avec un certain Jesse A. Marcel, qui aurait eu entre les mains, lorsqu'il était à l'armée, des morceaux d'une soucoupe volante qui l'intéressent.","",sighting,1978$Louisianne,,,"",,"",Louisianne,"",place,"",1978,event,https://rr0.org/time/1/9/7/8/index.html
+Premier salon Comdex.,"",sighting,1978$,,"",1978,event,https://rr0.org/time/1/9/7/8/index.html
+Prototype Philips d'un disque optique numérique (DON) non effaçable au laser.,"",sighting,1978$,,"",1978,event,https://rr0.org/time/1/9/7/8/index.html
+Intel 8086. Le premier processeur à architecture x86.,"",sighting,1978$,,"",1978,event,https://rr0.org/time/1/9/7/8/index.html
+Test chez les clients de System/R.,"",sighting,1978$,,"",1978,event,https://rr0.org/time/1/9/7/8/index.html

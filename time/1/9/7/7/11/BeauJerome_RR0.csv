@@ -1,1 +1,2 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
+"Novembre : Annonce du VAX 11/780, le 1er mini 32 bits de DEC. Il est compatible PDP 11 et Decsystem 20.","",sighting,1977-11$,,"",1977-11,event,https://rr0.org/time/1/9/7/7/11/index.html

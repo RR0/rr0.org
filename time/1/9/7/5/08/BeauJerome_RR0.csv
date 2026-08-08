@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 "Début d'une série d'observations, où toutes les bases américaines du Nord et quelques bases canadiennes proches de la frontière seront visitées par des objets volants. Des documents du NORAD, déclassifiés dans les années 1980s en application du FOIA, attestent de cette activité. Des observations civiles confirment et complètent un tableau surprenant.","",sighting,1975-08$,,"",1975-08,event,https://rr0.org/time/1/9/7/5/08/index.html
 "Réunion à dans les locaux de la Défense Civile, au sujet des multilations de bétail.","",sighting,1975-08-18T10:00$FortMorganColorado,,,"",,"",Fort Morgan (Colorado),"",place,"",1975-08-18T10:00,event,https://rr0.org/time/1/9/7/5/08/index.html#1975-08-18T10:00
 Départ de Vicking 1 vers Mars.,"",sighting,1975-08-20$,,"",1975-08-20,event,https://rr0.org/time/1/9/7/5/08/index.html#1975-08-20

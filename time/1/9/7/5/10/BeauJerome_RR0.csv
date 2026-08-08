@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 Eric Gairy prend la parole au cours de la 30ᵉ session de l'Assemblée Générale de l'ONU.,"",sighting,1975-10-07$,,"",1975-10-07,event,https://rr0.org/time/1/9/7/5/10/index.html#1975-10-07
 Le Japon lance la 1ʳᵉ fusée N 1.,"",sighting,1975-10-09$,,"",1975-10-09,event,https://rr0.org/time/1/9/7/5/10/index.html#1975-10-09
 ", 9 observations sont transmises dans la nuit au NORA D.","",sighting,1975-10-16$city3032800,,,"",,"",,"",place,"",1975-10-16,event,https://rr0.org/time/1/9/7/5/10/index.html#1975-10-16

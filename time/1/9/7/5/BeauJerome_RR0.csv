@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 ,"",sighting,1975-01$,,"",1975-01,event,https://rr0.org/time/1/9/7/5/index.html#1975-01
 ,"",sighting,1975-03$,,"",1975-03,event,https://rr0.org/time/1/9/7/5/index.html#1975-03
 ,"",sighting,1975-04$,,"",1975-04,event,https://rr0.org/time/1/9/7/5/index.html#1975-04
@@ -10,3 +10,14 @@ Photographie en Suisse cette année-là,"",sighting,1975-08$,,"",1975-08,event,h
 ,"",sighting,1975-10$,,"",1975-10,event,https://rr0.org/time/1/9/7/5/index.html#1975-10
 ,"",sighting,1975-11$,,"",1975-11,event,https://rr0.org/time/1/9/7/5/index.html#1975-11
 Il échoit formellement à la gendarmerie la charge de recueillir systématiquement les rapports d'observations d'ovni.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+Création de Microsoft.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+Super-calculateur Cray 1.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+Micro-ordinateur Altaïr et Mits.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+"Microprocessus MOS 6502. Basé sur l'architecture 6800, qui équipera l'Apple II.","",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+Création du réseau ARPANet.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+L'AGL Maestro est conçu par la société allemande SoftLab d'après le cahier des charges réalisé par Boeing. L'éditeur choisit l'ordinateur P 7000 de Philips Data Systems comme support matériel dédié entièrement à son AGL.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+"Le Dr Wong développe Tiny BASIC, qui prend seulement 2K de mémoire, et fonctionne sur les machines Intel 8080 et Zilogs Z80. Tiny BASIC est le premier programme freeware connu, contenant les chaînes ""All Wrongs Reserved"" et ""Copyleft"".","",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+Bill Gates et Paul Allen écrivent une version de BASIC qu'ils vendent au MITS. Le MITS produit des microordinateurs Altair basés sur 8080.,"",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+"Scheme, dérivation du LISP.","",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+"Publication du Pascal-tutor, Pascal User Manual and Report (Jensen, Wirth).","",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html
+"Brian Kernigan décrit RATFOR (RATional FORtran), utilisé comme précompilateur pour FORTRAN.","",sighting,1975$,,"",1975,event,https://rr0.org/time/1/9/7/5/index.html

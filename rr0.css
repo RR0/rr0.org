@@ -315,14 +315,6 @@ p {
   font-weight: 400
 }
 
-.org {
-  background-color: #E9FFE5
-}
-
-.personne {
-  background-color: #FEE9EA
-}
-
 .tech, .tag-spaceflight {
   list-style-type: square;
 }

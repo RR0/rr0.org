@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 ,"",sighting,1976-01$,,"",1976-01,event,https://rr0.org/time/1/9/7/6/index.html#1976-01
 ,"",sighting,1976-02$,,"",1976-02,event,https://rr0.org/time/1/9/7/6/index.html#1976-02
 mars avril mai Nombreuses observations d'ovnis autour des bases de l'USAF du nord des États-Unis.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
@@ -10,3 +10,13 @@ mars avril mai Nombreuses observations d'ovnis autour des bases de l'USAF du nor
 "(ou l'année suivante) Tom, un patient, signale qu'un morceau osseux dur et hémisphérique est apparu dans sa narine droite au cours de la nuit. Un spécialiste oto-rhino l'examine alors qu'il voit Tom pour une opération de l'oreille, mais ne dira rien à Tom quant aux résultats de l'examen. Par la suite Tom témoignera d'une série d'enlèvements lors de régression sous hypnose.","",sighting,1976$,,""""","""",s2,"""",,Fiore",1976,event,https://rr0.org/time/1/9/7/6/index.html
 "Pendant sa campagne pour les élections présidentielles, Jimmy Carter promet de rendre publics tous les documents concernant les ovnis détenus par l'administration américaine.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
 Sonde Vicking sur Mars.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+"1er ordinateur à tolérance de panne chez Tandem, le T/16.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+"Microprocesseur Zilog Z80, au code compatible avec le Z80 d'Intel.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+Naissance du CXP.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+"Premier Cray One, à Los Alamos.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+Disquette 5 pouces Shugart.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+IBM Series 1.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+HP 1000.,"",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+"Apparition de l'architecture SNA de IBM, rapidement imitée par Digital avec son protocole réseau DECNet, et par NCR avec DCU.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+"le DoD commence ses expérimentations sur TCP/IP et décide rapidement de migrer le réseau ARPANET vers ce protocole. À cette époque, le réseau ARPANET est constitué de 111 ordinateurs. Dès lors, l'informatique devenant de plus en plus présente, de multiples solutions d'interconnexion d'équipement émergent, en fonction des besoins de chaque entreprise et organisme au détriment de leur compatibilité. Les grands comptes, gros consommateurs informatiques, virent très vite qu'une standardisation était ineluctable. Certains imposent alors aux constructeurs leurs propres spécifications, embryons de normes privés.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html
+"Design System Language, précédant PostScript.","",sighting,1976$,,"",1976,event,https://rr0.org/time/1/9/7/6/index.html

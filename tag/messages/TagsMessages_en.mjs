@@ -10,6 +10,7 @@ export const tagsMessages_en = {
     astronomy: "Astronomy",
     astrobiology: "Astrobiology",
     physics: "Physics",
-    spaceflight: "Spaceflight"
+    spaceflight: "Spaceflight",
+    computing: "Computing"
   }
 }

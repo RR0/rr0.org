@@ -1,6 +1,6 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 L'ovni photographié à Dalnegorsk (URSS) Photographie (ci-contre) à.,"",sighting,1989$DalnegorskURSS,,,"",,"",Dalnegorsk (URSS),"",place,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
-,"",sighting,1989-01$,,"",1989-01,event,https://rr0.org/time/1/9/8/9/index.html#1989-01
+"Riposte à l'OSF avec la création du Consortium Unix International, sous l'égide d'AT&T. Le ralliement se fera sous bannière X/Open. En juillet, l'OSF sortira une interface graphique interactive Motif vendue de 10 à 40 $.","",sighting,1989-01$,,"",1989-01,event,https://rr0.org/time/1/9/8/9/index.html#1989-01
 ,"",sighting,1989-02$,,"",1989-02,event,https://rr0.org/time/1/9/8/9/index.html#1989-02
 ,"",sighting,1989-03$,,"",1989-03,event,https://rr0.org/time/1/9/8/9/index.html#1989-03
 ,"",sighting,1989-04$,,"",1989-04,event,https://rr0.org/time/1/9/8/9/index.html#1989-04
@@ -8,8 +8,21 @@ L'ovni photographié à Dalnegorsk (URSS) Photographie (ci-contre) à.,"",sighti
 ,"",sighting,1989-06$,,"",1989-06,event,https://rr0.org/time/1/9/8/9/index.html#1989-06
 ,"",sighting,1989-07$,,"",1989-07,event,https://rr0.org/time/1/9/8/9/index.html#1989-07
 ,"",sighting,1989-08$,,"",1989-08,event,https://rr0.org/time/1/9/8/9/index.html#1989-08
-Automne Début des témoignages en évoquant des survols d'une plate-forme triangulaire équipée de divers feux lumineux et capable d'évoluer silencieusement et lentement à très basse altitude. octobre novembre,"",sighting,1989-09$Belgique,,,"",,"",Belgique,"",place,"",1989-09,event,https://rr0.org/time/1/9/8/9/index.html#1989-09
+"Automne Début des témoignages en évoquant des survols d'une plate-forme triangulaire équipée de divers feux lumineux et capable d'évoluer silencieusement et lentement à très basse altitude. Premier portable Apple : il sera équipé d'un écran plat N&B à matrice active (technologie TFT). octobre Bull rachète l'activité micro (1,4 milliard $) de l'américain Zenith. En portables, Bull devient n°2 mondial derrière Toshiba. novembre Création de la PCMCIA.","",sighting,1989-09$Belgique,,,"",,"",Belgique,"",place,"",1989-09,event,https://rr0.org/time/1/9/8/9/index.html#1989-09
 ,"",sighting,1989-12$,,"",1989-12,event,https://rr0.org/time/1/9/8/9/index.html#1989-12
 Stanton T. Friedman rencontre Glenn Dennis.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
 Dissolution du GEPAN et création du SEPRA.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
 Un couple australien du Queensland ramasse 600 petites sardines dans le jardin après une ondée.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+Novell Netware 3.0.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+se sépare en 2 : Cray Research et Cray Computer.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+Seagate achète les disques Imprimis de Control Data pour 450 M$,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+Le nombre d'ordinateurs dans le monde dépasse les 100 millions d'unités.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+Dun & Bradstreet achète MSA pour 333 M$.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+"Arrêt de ARPANet, premier site commercial.","",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+"Naissance du concept de ""réseaux intelligents"", intégrant informatique et réseau. Premiers pas du RNIS à large bande, un réseau numérique à hauts débits, prélude à l'ATM.","",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+Salon Networld à Dallas : l'accent est mis sur les messageries.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+IBM fait passer la vitesse du Token Ring de 4 à 16 Mbps.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+"Le constructeur français RCE et son président Rémi Després, l'un des pères du X25, lance les premiers hubs répéteurs Ethernet 10 Base T.","",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+Network General surveille et analyse le traffic des réseaux avec le produit Sniffer.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+dBase IV n'a plus que 45 % du marché.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html
+L'ISO valide la norme IEEE 802.3.,"",sighting,1989$,,"",1989,event,https://rr0.org/time/1/9/8/9/index.html

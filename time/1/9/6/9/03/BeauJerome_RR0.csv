@@ -1,2 +1,6 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 Couverture de Fate ce mois-là Prétendue récupération d'un ovni écrasé dans la région de Sverdlovsk en octobre 1968.,"",sighting,1969-03$,,"",1969-03,event,https://rr0.org/time/1/9/6/9/03/index.html
+1er vol du Concorde.,"",sighting,1969-03-02$,,"",1969-03-02,event,https://rr0.org/time/1/9/6/9/03/index.html#1969-03-02
+Lancement d'Apollo 9 en orbite terrestre.,"",sighting,1969-03-03$,,"",1969-03-03,event,https://rr0.org/time/1/9/6/9/03/index.html#1969-03-03
+Amerissage d'Apollo 9.,"",sighting,1969-03-13$,,"",1969-03-13,event,https://rr0.org/time/1/9/6/9/03/index.html#1969-03-13
+"Meteor 1, 1er satellite méteo soviétique.","",sighting,1969-03-26$,,"",1969-03-26,event,https://rr0.org/time/1/9/6/9/03/index.html#1969-03-26

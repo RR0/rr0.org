@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url,place
 ,"",sighting,1977-01$,,"",1977-01,event,https://rr0.org/time/1/9/7/7/index.html#1977-01
 ,"",sighting,1977-02$,,"",1977-02,event,https://rr0.org/time/1/9/7/7/index.html#1977-02
 mars avril mai Nombreuses observations d'ovnis autour des bases de l'USAF du nord des Etats-Unis.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
@@ -11,3 +11,13 @@ mars avril mai Nombreuses observations d'ovnis autour des bases de l'USAF du nor
 Sonde Vicking sur Mars.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
 "Dans The High Frontier, le physicien américain Gerard O'Neill explore le concept des villes orbitales.","",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
 Sortie du film Rencontres du 3ᵉ type de Steven Allan Spielberg.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Création d'Apple Computer qui lance l'Apple II.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Naissance d'Oracle.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Radio Shack (Tandy) TRS 80.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Commodore Pet 2001.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+"Choix des systèmes à commutation temporelle. Création d'EutelSat, une organisation européenne s'occupant des communications spatiales.","",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+MUMPS devient un standard ANSI. Il deviendra M.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Début du concours Honeywell pour les langages de programmation. L'équipe de Jean Ichbiahn gagne avec le langage Ada.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Kim Harris et ses partenaires établissent le FIG et développent le langage FIG-FORTRAN qu'ils vendent pour $20.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+"Kenneth Bowles publie le Pascal USCD, sur machine PDP-11 et Z80.","",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html
+Niklaus Wirth début Modula.,"",sighting,1977$,,"",1977,event,https://rr0.org/time/1/9/7/7/index.html

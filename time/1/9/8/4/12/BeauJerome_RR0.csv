@@ -1,2 +1,5 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 "(1986?) A , observation de 2 boules lumineuses tournantes et ne disposant pas de projecteur.","",sighting,1984-12-09$ErmontValDOise,,,"",,"",Ermont         (Val d'Oise),"",place,""""","""",s1,"""",,Gazette du Val-d'Oise",1984-12-09,event,https://rr0.org/time/1/9/8/4/12/index.html#1984-12-09
+Un film 35 mm contenant le document MJ de briefing du président Eisenhower est laissé sur le seuil de la porte de Jaime Shandera.,"",sighting,1984-12-11$,,"",1984-12-11,event,https://rr0.org/time/1/9/8/4/12/index.html#1984-12-11
+Lancement de la sonde Véga 1 vers Vénus. Elle survolera la comète de Halley.,"",sighting,1984-12-15$,,"",1984-12-15,event,https://rr0.org/time/1/9/8/4/12/index.html#1984-12-15
+Lancement de la sonde Véga 2 vers Vénus. Elle survolera la comète de Halley.,"",sighting,1984-12-21$,,"",1984-12-21,event,https://rr0.org/time/1/9/8/4/12/index.html#1984-12-21

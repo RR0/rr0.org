@@ -6,7 +6,9 @@
   ],
   "surname": "Dave",
   "occupations": [
-    "psychologist"
+    "psychologist",
+    "ufologist",
+    "philosopher"
   ],
   "countries": [
     "us"
@@ -14,7 +16,7 @@
   "events": [
     {
       "type": "birth",
-      "time": "1923"
+      "time": "1923-09"
     }
   ]
 }

@@ -1,1 +1,5 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
+Le module Spektr s'amarre à Mir.,"",sighting,1995-06-02$,,"",1995-06-02,event,https://rr0.org/time/1/9/9/5/06/index.html#1995-06-02
+"Sur la chaîne française TF1, diffusion d'extraits du film de l'autopsie de Roswell.","",sighting,1995-06-21$,,"",1995-06-21,event,https://rr0.org/time/1/9/9/5/06/index.html#1995-06-21
+", des gendarmes en surveillance de nuit observent quand ils voient le passage très rapide de 1 boule lumineuse très brillante avant de disparaître (Il s'agit probablement d'une rentrée atmosphérique).","",sighting,1995-06-25T23:45$GrancyleChateauCoteDOr,,,"",,"",Grancy-le-Château (Côte d'Or),"",place,"""SEPRA"","""",s1,"""",,PAN classé B",1995-06-25T23:45,event,https://rr0.org/time/1/9/9/5/06/index.html#1995-06-25T23:45
+Une navette américaine s'amarre pour la 1ère fois à Mir.,"",sighting,1995-06-27$,,"",1995-06-27,event,https://rr0.org/time/1/9/9/5/06/index.html#1995-06-27

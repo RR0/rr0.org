@@ -6740,5 +6740,96 @@
       "publisher": "phys.org",
       "time": "2026-08-05"
     }
+  },
+  "https://noirlab.edu/public/news/noirlab2619/": {
+    "title": "Astronomers Catch Massive Star’s Death From the First Explosive Moment | NOIRLab",
+    "url": "https://noirlab.edu/public/news/noirlab2619/",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 8,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 41,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
+  },
+  "https://www.kyoto-u.ac.jp/en/research-news/2026-08-05": {
+    "title": "Searching for dark matter with the world's biggest detector | KYOTO UNIVERSITY",
+    "url": "https://www.kyoto-u.ac.jp/en/research-news/2026-08-05",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": null,
+      "time": {
+        "year": {
+          "value": 2026,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "month": {
+          "value": 8,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "day": {
+          "value": 9,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "hour": {
+          "value": 10,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "minute": {
+          "value": 40,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "second": {
+          "value": 40,
+          "uncertain": false,
+          "approximate": false,
+          "uncertainComponent": false,
+          "approximateComponent": false
+        },
+        "timeshift": {
+          "value": -120
+        }
+      }
+    }
   }
 }

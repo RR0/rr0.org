@@ -6670,5 +6670,75 @@
         }
       }
     }
+  },
+  "https://doi.org/10.1093/ptep/ptag097": {
+    "title": "Signature of Axion Dark Matter in Low-Frequency Terrestrial Electromagnetic Fields: Formulation and Predictions",
+    "url": "https://doi.org/10.1093/ptep/ptag097",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "Progress of Theoretical and Experimental Physics",
+      "time": "2026-05-23"
+    }
+  },
+  "https://doi.org/10.1093/ptep/ptag108": {
+    "title": "Axion Dark Matter Search from Terrestrial Magnetic Fields at Extremely Low Frequencies",
+    "url": "https://doi.org/10.1093/ptep/ptag108",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "Progress of Theoretical and Experimental Physics",
+      "time": "2026-06-08"
+    }
+  },
+  "https://doi.org/10.1103/kw4j-8v12": {
+    "title": "Searching for dark photon dark matter from terrestrial magnetic fields",
+    "url": "https://doi.org/10.1103/kw4j-8v12",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "Physical Review D",
+      "time": "2026-05-11"
+    }
+  },
+  "https://doi.org/10.1371/journal.pone.0353126": {
+    "title": "Making sense of the extraordinary – An investigation of the content and prevalence of appraisals of nonordinary experiences",
+    "url": "https://doi.org/10.1371/journal.pone.0353126",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "PLOS One",
+      "time": "2026-08-05"
+    }
+  },
+  "https://doi.org/10.3847/2041-8213/ae84ba": {
+    "title": "EP260321a/SN 2026gzf: The Faintest Shock Breakout Associated with a Broad-lined Supernova",
+    "url": "https://doi.org/10.3847/2041-8213/ae84ba",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "The Astrophysical Journal Letters",
+      "time": "2026-07-14"
+    }
+  },
+  "https://doi.org/10.3847/2041-8213/ae8a4b": {
+    "title": "A Multiwavelength View of the First Type Ic-BL Supernova with an Einstein Probe X-Ray Shock Breakout",
+    "url": "https://doi.org/10.3847/2041-8213/ae8a4b",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "The Astrophysical Journal Letters",
+      "time": "2026-08-05"
+    }
+  },
+  "https://phys.org/news/2026-08-humans-extraordinary-positive-term-effects.html": {
+    "title": "How humans process the extraordinary—most report positive long-term effects",
+    "url": "https://phys.org/news/2026-08-humans-extraordinary-positive-term-effects.html",
+    "events": [],
+    "previousSourceRefs": [],
+    "publication": {
+      "publisher": "phys.org",
+      "time": "2026-08-05"
+    }
   }
 }

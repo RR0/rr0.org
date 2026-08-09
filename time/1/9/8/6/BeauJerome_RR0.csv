@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 "Station IBM 6150, RISC et Unix.","",sighting,1986$,,"",1986,event,https://rr0.org/time/1/9/8/6/index.html
 Séparation de l'ARPANet en MilNet et NSFNet.,"",sighting,1986$,,"",1986,event,https://rr0.org/time/1/9/8/6/index.html
 IBM présente son logiciel de gestion de réseau NetView.,"",sighting,1986$,,"",1986,event,https://rr0.org/time/1/9/8/6/index.html

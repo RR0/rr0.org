@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 "Apple introduit le Power Mac (architecture RISC Power PC), compatible et 4 fois plus puissant.","",sighting,1994-01$,,"",1994-01,event,https://rr0.org/time/1/9/9/4/index.html#1994-01
 "La rapidité du Pentium ayant rendu caduques les anciens bus micro (ISA et VESA), Intel lance le bus PCI.","",sighting,1994-02$,,"",1994-02,event,https://rr0.org/time/1/9/9/4/index.html#1994-02
 Novell achète la société WordPerfect et le tableur Quattro Pro de Borland.,"",sighting,1994-03$,,"",1994-03,event,https://rr0.org/time/1/9/9/4/index.html#1994-03

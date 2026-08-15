@@ -68,7 +68,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1701.323
+              }
             }
           },
           {
@@ -86,7 +90,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1701.323
+              }
             }
           },
           {
@@ -104,7 +112,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1701.323
+              }
             }
           },
           {
@@ -122,7 +134,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1701.323
+              }
             }
           },
           {
@@ -140,7 +156,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1701.323
+              }
             }
           },
           {
@@ -158,7 +178,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1701.323
+              }
             }
           },
           {
@@ -176,7 +200,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 2.1,
+                "distanceM": 1701.323
+              }
             }
           }
         ]
@@ -221,7 +249,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1201.225
+              }
             }
           },
           {
@@ -239,7 +271,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1201.225
+              }
             }
           },
           {
@@ -257,7 +293,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1201.225
+              }
             }
           },
           {
@@ -275,7 +315,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1201.225
+              }
             }
           },
           {
@@ -293,7 +337,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1201.225
+              }
             }
           },
           {
@@ -311,7 +359,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 1201.225
+              }
             }
           },
           {
@@ -329,7 +381,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 2.1,
+                "distanceM": 1201.225
+              }
             }
           }
         ]
@@ -374,7 +430,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 701.245
+              }
             }
           },
           {
@@ -392,7 +452,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 701.245
+              }
             }
           },
           {
@@ -410,7 +474,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 701.245
+              }
             }
           },
           {
@@ -428,7 +496,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 701.245
+              }
             }
           },
           {
@@ -446,7 +518,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 701.245
+              }
             }
           },
           {
@@ -464,7 +540,11 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 701.245
+              }
             }
           },
           {
@@ -482,7 +562,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 2.1,
+                "distanceM": 701.245
+              }
             }
           }
         ]
@@ -527,7 +611,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 478.249
+              }
             }
           },
           {
@@ -545,7 +633,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 478.249
+              }
             }
           },
           {
@@ -563,7 +655,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 478.249
+              }
             }
           },
           {
@@ -581,7 +677,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 478.249
+              }
             }
           },
           {
@@ -599,7 +699,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 478.249
+              }
             }
           },
           {
@@ -617,7 +721,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 478.249
+              }
             }
           },
           {
@@ -635,7 +743,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 4.2,
+                "distanceM": 478.249
+              }
             }
           }
         ]
@@ -680,7 +792,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 259.663
+              }
             }
           },
           {
@@ -698,7 +814,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 259.663
+              }
             }
           },
           {
@@ -716,7 +836,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 259.663
+              }
             }
           },
           {
@@ -734,7 +858,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 259.663
+              }
             }
           },
           {
@@ -752,7 +880,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 259.663
+              }
             }
           },
           {
@@ -770,7 +902,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 259.663
+              }
             }
           },
           {
@@ -788,7 +924,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 10.5,
+                "distanceM": 259.663
+              }
             }
           }
         ]
@@ -833,7 +973,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 209.136
+              }
             }
           },
           {
@@ -851,7 +995,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 209.136
+              }
             }
           },
           {
@@ -869,7 +1017,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 209.136
+              }
             }
           },
           {
@@ -887,7 +1039,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 209.136
+              }
             }
           },
           {
@@ -905,7 +1061,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 209.136
+              }
             }
           },
           {
@@ -923,7 +1083,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 209.136
+              }
             }
           },
           {
@@ -941,7 +1105,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 15.0,
+                "distanceM": 209.136
+              }
             }
           }
         ]
@@ -986,7 +1154,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 182.551
+              }
             }
           },
           {
@@ -1004,7 +1176,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 182.551
+              }
             }
           },
           {
@@ -1022,7 +1198,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 182.551
+              }
             }
           },
           {
@@ -1040,7 +1220,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 182.551
+              }
             }
           },
           {
@@ -1058,7 +1242,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 182.551
+              }
             }
           },
           {
@@ -1076,7 +1264,11 @@
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 182.551
+              }
             }
           },
           {
@@ -1094,7 +1286,11 @@
               "transparency": 0.1,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 15.0,
+                "distanceM": 182.551
+              }
             }
           }
         ]
@@ -1139,7 +1335,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 374.166
+              }
             }
           },
           {
@@ -1157,7 +1357,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 374.166
+              }
             }
           },
           {
@@ -1175,7 +1379,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 374.166
+              }
             }
           },
           {
@@ -1193,7 +1401,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 374.166
+              }
             }
           },
           {
@@ -1211,7 +1423,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 374.166
+              }
             }
           },
           {
@@ -1229,7 +1445,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 374.166
+              }
             }
           },
           {
@@ -1247,7 +1467,11 @@
               "transparency": 0.95,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 15.0,
+                "distanceM": 374.166
+              }
             }
           }
         ]
@@ -1292,7 +1516,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1"
+              "title": "Hublot 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 784.411
+              }
             }
           },
           {
@@ -1310,7 +1538,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2"
+              "title": "Hublot 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 784.411
+              }
             }
           },
           {
@@ -1328,7 +1560,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3"
+              "title": "Hublot 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 784.411
+              }
             }
           },
           {
@@ -1346,7 +1582,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4"
+              "title": "Hublot 4",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 784.411
+              }
             }
           },
           {
@@ -1364,7 +1604,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5"
+              "title": "Hublot 5",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 784.411
+              }
             }
           },
           {
@@ -1382,7 +1626,11 @@
               "transparency": 0.85,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6"
+              "title": "Hublot 6",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 784.411
+              }
             }
           },
           {
@@ -1400,7 +1648,11 @@
               "transparency": 0.95,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Flamme arrière"
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 15.0,
+                "distanceM": 784.411
+              }
             }
           }
         ]

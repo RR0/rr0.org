@@ -3520,6 +3520,222 @@
                 "distanceM": 47.089
               }
             }
+          },
+          {
+            "sourceId": "pied-1",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 148.3,
+                "width": 12.0,
+                "height": 2.7
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 2.7
+                },
+                {
+                  "x": 1.0,
+                  "y": 2.7
+                },
+                {
+                  "x": 12.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 11.0,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 1"
+            }
+          },
+          {
+            "sourceId": "pied-2",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 145.3,
+                "width": 1.4,
+                "height": 5.8
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 5.8
+                },
+                {
+                  "x": 1.0,
+                  "y": 5.8
+                },
+                {
+                  "x": 1.4,
+                  "y": 0.0
+                },
+                {
+                  "x": 0.4,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 2"
+            }
+          },
+          {
+            "sourceId": "pied-3",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 360.9,
+                "y": 150.0,
+                "width": 11.3,
+                "height": 1.1
+              },
+              "points": [
+                {
+                  "x": 10.3,
+                  "y": 1.1
+                },
+                {
+                  "x": 11.3,
+                  "y": 1.1
+                },
+                {
+                  "x": 1.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 3"
+            }
+          },
+          {
+            "sourceId": "pied-4",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 361.1,
+                "y": 151.0,
+                "width": 11.1,
+                "height": 6.3
+              },
+              "points": [
+                {
+                  "x": 10.1,
+                  "y": 0.0
+                },
+                {
+                  "x": 11.1,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.0,
+                  "y": 6.3
+                },
+                {
+                  "x": 0.0,
+                  "y": 6.3
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 4"
+            }
+          },
+          {
+            "sourceId": "pied-5",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 151.0,
+                "width": 1.1,
+                "height": 9.1
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.1,
+                  "y": 9.1
+                },
+                {
+                  "x": 0.1,
+                  "y": 9.1
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 5"
+            }
+          },
+          {
+            "sourceId": "pied-6",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 151.0,
+                "width": 11.5,
+                "height": 4.7
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 11.5,
+                  "y": 4.7
+                },
+                {
+                  "x": 10.5,
+                  "y": 4.7
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 6"
+            }
           }
         ]
       },
@@ -3568,6 +3784,222 @@
                 "sizeM": 1.47,
                 "distanceM": 47.089
               }
+            }
+          },
+          {
+            "sourceId": "pied-1",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 148.3,
+                "width": 12.0,
+                "height": 2.7
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 2.7
+                },
+                {
+                  "x": 1.0,
+                  "y": 2.7
+                },
+                {
+                  "x": 12.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 11.0,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 1"
+            }
+          },
+          {
+            "sourceId": "pied-2",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 145.3,
+                "width": 1.4,
+                "height": 5.8
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 5.8
+                },
+                {
+                  "x": 1.0,
+                  "y": 5.8
+                },
+                {
+                  "x": 1.4,
+                  "y": 0.0
+                },
+                {
+                  "x": 0.4,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 2"
+            }
+          },
+          {
+            "sourceId": "pied-3",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 360.9,
+                "y": 150.0,
+                "width": 11.3,
+                "height": 1.1
+              },
+              "points": [
+                {
+                  "x": 10.3,
+                  "y": 1.1
+                },
+                {
+                  "x": 11.3,
+                  "y": 1.1
+                },
+                {
+                  "x": 1.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 3"
+            }
+          },
+          {
+            "sourceId": "pied-4",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 361.1,
+                "y": 151.0,
+                "width": 11.1,
+                "height": 6.3
+              },
+              "points": [
+                {
+                  "x": 10.1,
+                  "y": 0.0
+                },
+                {
+                  "x": 11.1,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.0,
+                  "y": 6.3
+                },
+                {
+                  "x": 0.0,
+                  "y": 6.3
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 4"
+            }
+          },
+          {
+            "sourceId": "pied-5",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 151.0,
+                "width": 1.1,
+                "height": 9.1
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.1,
+                  "y": 9.1
+                },
+                {
+                  "x": 0.1,
+                  "y": 9.1
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 5"
+            }
+          },
+          {
+            "sourceId": "pied-6",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 371.2,
+                "y": 151.0,
+                "width": 11.5,
+                "height": 4.7
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 11.5,
+                  "y": 4.7
+                },
+                {
+                  "x": 10.5,
+                  "y": 4.7
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 6"
             }
           }
         ]

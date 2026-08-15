@@ -54,6 +54,114 @@
             }
           },
           {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 330.2,
+                "y": 174.3,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 330.4,
+                "y": 174.3,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 330.7,
+                "y": 174.3,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 331.0,
+                "y": 174.3,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 331.3,
+                "y": 174.3,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 331.5,
+                "y": 174.3,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
             "sourceId": "flamme",
             "shape": {
               "kind": "oval",
@@ -99,6 +207,114 @@
             }
           },
           {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 331.8,
+                "y": 174.3,
+                "width": 0.4,
+                "height": 0.4
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 332.2,
+                "y": 174.3,
+                "width": 0.4,
+                "height": 0.4
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 332.6,
+                "y": 174.3,
+                "width": 0.4,
+                "height": 0.4
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 333.0,
+                "y": 174.3,
+                "width": 0.4,
+                "height": 0.4
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 333.4,
+                "y": 174.3,
+                "width": 0.4,
+                "height": 0.4
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 333.8,
+                "y": 174.3,
+                "width": 0.4,
+                "height": 0.4
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
             "sourceId": "flamme",
             "shape": {
               "kind": "oval",
@@ -141,6 +357,114 @@
                 "sizeM": 10.5,
                 "distanceM": 701.245
               }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 335.8,
+                "y": 174.2,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 336.4,
+                "y": 174.2,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 337.1,
+                "y": 174.2,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 337.8,
+                "y": 174.2,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 338.5,
+                "y": 174.2,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 339.1,
+                "y": 174.2,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
             }
           },
           {
@@ -951,6 +1275,114 @@
                 "sizeM": 30.0,
                 "distanceM": 784.411
               }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 363.8,
+                "y": 140.8,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 365.5,
+                "y": 140.8,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 367.2,
+                "y": 140.8,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 368.9,
+                "y": 140.8,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 370.6,
+                "y": 140.8,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 372.3,
+                "y": 140.8,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
             }
           },
           {

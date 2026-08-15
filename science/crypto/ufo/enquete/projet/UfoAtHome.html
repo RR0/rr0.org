@@ -57,7 +57,39 @@
   <p>Cliquez sur <strong>Record</strong>, déplacez le curseur sur le canevas pour dessiner le déplacement de l'ovni,
     puis sur <strong>Stop</strong> et <strong>Play</strong> pour rejouer l'enregistrement.
   </p>
+  <p>Un lien de la forme <code>ufoathome.org/&lt;chemin du sighting.json&gt;</code> — ou simplement
+    <code><a href="https://ufoathome.org/Socorro">ufoathome.org/Socorro</a></code> pour un dossier de ce site — ouvre
+    directement l'éditeur sur cette observation. C'est ce que propose le bouton <q>?</q> de chaque reconstitution.</p>
   <script src="/science/crypto/ufo/rr0-ufo-recorder.mjs" type="module"></script>
-  <rr0-ufo-recorder></rr0-ufo-recorder>
+  <rr0-ufo-recorder id="editor"></rr0-ufo-recorder>
+  <script type="module">
+    // ?sighting=<chemin> ouvre l'éditeur sur cette observation — c'est là qu'aboutissent les liens
+    // ufoathome.org/<chemin> (voir la redirection dans netlify.toml, qui passe le chemin en
+    // paramètre). Un nom seul, sans barre oblique, est développé selon la convention des dossiers
+    // de ce site, pour que ufoathome.org/Socorro suffise.
+    const requested = new URLSearchParams(location.search).get("sighting")
+    if (requested) {
+      const path = requested.includes("/")
+        ? (requested.includes("://") || requested.startsWith("/") ? requested : "/" + requested)
+        : `/science/crypto/ufo/enquete/dossier/${requested}/sighting.json`
+      const url = new URL(path, location.origin)
+      // Volontairement limité à ce site : un lien partagé ne doit pas pouvoir faire afficher, dans
+      // une page rr0.org, un enregistrement fabriqué ailleurs. Pour charger un fichier externe, le
+      // champ « Charger depuis une URL » de l'éditeur reste disponible — c'est un geste explicite.
+      if (url.origin === location.origin) {
+        const editor = document.getElementById("editor")
+        editor.setAttribute("src", url.pathname)
+        // Amener l'éditeur à l'écran : on arrive ici depuis un lien « éditer cette observation »,
+        // pas pour lire l'article. Refait après le chargement complet de la page, car le
+        // défilement fait pendant l'analyse du document est ensuite écrasé (restauration de
+        // position du navigateur, scripts de navigation du site).
+        const focusEditor = () => editor.scrollIntoView({ block: "start" })
+        focusEditor()
+        window.addEventListener("load", () => requestAnimationFrame(focusEditor), { once: true })
+      } else {
+        console.warn(`UFO@home : enregistrement externe ignoré (${url.origin})`)
+      }
+    }
+  </script>
 </section>
 <!--#include virtual="/footer.html" -->

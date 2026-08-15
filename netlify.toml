@@ -12,6 +12,17 @@
   from = "/lieu/*"
   to = "/place/:splat"
 
+[[redirects]]
+  from = "https://ufoathome.org/*"
+  to = "https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ufoathome.org/*"
+  to = "https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/lieux.html"
@@ -4487,3 +4498,10 @@
   from = "/science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html"
   to = "/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html"
 
+# The (?) panel of each reconstruction hands out a self-contained markup snippet meant to be
+# pasted into any other site: that page loads the module bundle AND the observation's own JSON
+# cross-origin, which needs these to be readable from anywhere. Both live under this one prefix.
+[[headers]]
+  for = "/science/crypto/ufo/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

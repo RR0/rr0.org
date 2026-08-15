@@ -1527,6 +1527,7 @@
         "weather": {
           "cloudCover": 0.4,
           "cloudDarkness": 0.15,
+          "cloudBaseM": 1800,
           "precipitationType": "none",
           "precipitationIntensity": 0,
           "windDirectionDeg": 220,

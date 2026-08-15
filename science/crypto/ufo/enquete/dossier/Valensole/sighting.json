@@ -20,7 +20,7 @@
     "title": "Maurice Masse"
   },
   "caseId": "valensole",
-  "description": "Vue de Maurice Masse depuis sa sortie de derrière le clapier (engin à 90 m) jusqu'au départ. Il s'approche en longeant la vigne jusqu'à 6 m, est immobilisé, puis l'engin se soulève, ses 6 pieds se mettent à tourner et il part en oblique. Dimensions rapportées : 3,5 m de large pour 2,5 m de haut, « du volume d'une Renault Dauphine », de couleur neutre et mate — jamais décrit comme lumineux. Les 2 êtres d'environ 1 m ne sont pas représentés : le format ne sait pas encore placer d'entités observées dans la scène.",
+  "description": "Vue de Maurice Masse depuis sa sortie de derrière le clapier (engin à 90 m) jusqu'au départ. Il s'approche en longeant la vigne jusqu'à 6 m, est immobilisé, puis l'engin se soulève, ses 6 pieds se mettent à tourner et il part en oblique — que le témoin suit des yeux sur quelques dizaines de mètres avant qu'il ne disparaisse « pire qu'un éclair ». Dimensions rapportées : 3,5 m de large pour 2,5 m de haut, « du volume d'une Renault Dauphine », de couleur neutre et mate — jamais décrit comme lumineux. Les 2 êtres d'environ 1 m ne sont pas représentés : le format ne sait pas encore placer d'entités observées dans la scène.",
   "tags": [
     "RR3",
     "atterrissage",
@@ -2157,10 +2157,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 236.5,
-                "y": 116.8,
-                "width": 167.0,
-                "height": 85.9
+                "x": 236.2,
+                "y": 134.5,
+                "width": 167.6,
+                "height": 86.2
               },
               "color": "#b8b3a6",
               "angle": 0,
@@ -2170,7 +2170,7 @@
               "title": "Engin",
               "physical": {
                 "sizeM": 3.5,
-                "distanceM": 6.532
+                "distanceM": 6.512
               }
             }
           },
@@ -2179,10 +2179,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 284.9,
-                "y": 106.5,
-                "width": 70.2,
-                "height": 34.4
+                "x": 284.8,
+                "y": 124.2,
+                "width": 70.4,
+                "height": 34.5
               },
               "color": "#cfd6da",
               "angle": 0,
@@ -2192,7 +2192,7 @@
               "title": "Coupole transparente",
               "physical": {
                 "sizeM": 1.47,
-                "distanceM": 6.532
+                "distanceM": 6.512
               }
             }
           },
@@ -2201,27 +2201,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 287.6,
-                "y": 202.9,
-                "width": 35.2,
-                "height": 27.1
+                "x": 287.4,
+                "y": 220.9,
+                "width": 35.4,
+                "height": 31.6
               },
               "points": [
                 {
-                  "x": 29.5,
+                  "x": 29.7,
                   "y": 0.0
                 },
                 {
-                  "x": 35.2,
+                  "x": 35.4,
                   "y": 0.0
                 },
                 {
                   "x": 5.7,
-                  "y": 27.1
+                  "y": 31.6
                 },
                 {
                   "x": 0.0,
-                  "y": 27.1
+                  "y": 31.6
                 }
               ],
               "color": "#8d8779",
@@ -2237,27 +2237,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 229.6,
-                "y": 202.9,
-                "width": 93.2,
-                "height": 19.1
+                "x": 229.2,
+                "y": 220.9,
+                "width": 93.7,
+                "height": 20.1
               },
               "points": [
                 {
-                  "x": 87.5,
+                  "x": 87.9,
                   "y": 0.0
                 },
                 {
-                  "x": 93.2,
+                  "x": 93.7,
                   "y": 0.0
                 },
                 {
                   "x": 5.7,
-                  "y": 19.1
+                  "y": 20.1
                 },
                 {
                   "x": 0.0,
-                  "y": 19.1
+                  "y": 20.1
                 }
               ],
               "color": "#8d8779",
@@ -2273,27 +2273,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 267.1,
-                "y": 202.9,
-                "width": 55.8,
-                "height": 12.2
+                "x": 266.9,
+                "y": 220.9,
+                "width": 56.0,
+                "height": 10.4
               },
               "points": [
                 {
-                  "x": 50.0,
+                  "x": 50.2,
                   "y": 0.0
                 },
                 {
-                  "x": 55.8,
+                  "x": 56.0,
                   "y": 0.0
                 },
                 {
                   "x": 5.7,
-                  "y": 12.2
+                  "y": 10.4
                 },
                 {
                   "x": 0.0,
-                  "y": 12.2
+                  "y": 10.4
                 }
               ],
               "color": "#8d8779",
@@ -2310,9 +2310,9 @@
               "kind": "polygon",
               "bounds": {
                 "x": 317.1,
-                "y": 202.9,
-                "width": 23.0,
-                "height": 10.9
+                "y": 220.9,
+                "width": 23.1,
+                "height": 8.5
               },
               "points": [
                 {
@@ -2324,12 +2324,12 @@
                   "y": 0.0
                 },
                 {
-                  "x": 23.0,
-                  "y": 10.9
+                  "x": 23.1,
+                  "y": 8.5
                 },
                 {
-                  "x": 17.3,
-                  "y": 10.9
+                  "x": 17.4,
+                  "y": 8.5
                 }
               ],
               "color": "#8d8779",
@@ -2346,9 +2346,9 @@
               "kind": "polygon",
               "bounds": {
                 "x": 317.1,
-                "y": 202.9,
-                "width": 81.8,
-                "height": 15.0
+                "y": 220.9,
+                "width": 82.2,
+                "height": 14.3
               },
               "points": [
                 {
@@ -2360,12 +2360,12 @@
                   "y": 0.0
                 },
                 {
-                  "x": 81.8,
-                  "y": 15.0
+                  "x": 82.2,
+                  "y": 14.3
                 },
                 {
-                  "x": 76.1,
-                  "y": 15.0
+                  "x": 76.4,
+                  "y": 14.3
                 }
               ],
               "color": "#8d8779",
@@ -2382,9 +2382,9 @@
               "kind": "polygon",
               "bounds": {
                 "x": 317.1,
-                "y": 202.9,
-                "width": 79.4,
-                "height": 23.7
+                "y": 220.9,
+                "width": 79.8,
+                "height": 26.8
               },
               "points": [
                 {
@@ -2396,12 +2396,277 @@
                   "y": 0.0
                 },
                 {
-                  "x": 79.4,
-                  "y": 23.7
+                  "x": 79.8,
+                  "y": 26.8
                 },
                 {
-                  "x": 73.6,
-                  "y": 23.7
+                  "x": 74.1,
+                  "y": 26.8
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 6"
+            }
+          }
+        ]
+      },
+      {
+        "t": 256000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 236.2,
+                "y": 135.7,
+                "width": 167.6,
+                "height": 86.2
+              },
+              "color": "#b8b3a6",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Engin",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 6.512
+              }
+            }
+          },
+          {
+            "sourceId": "coupole",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 284.8,
+                "y": 125.3,
+                "width": 70.4,
+                "height": 34.5
+              },
+              "color": "#cfd6da",
+              "angle": 0,
+              "transparency": 0.45,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Coupole transparente",
+              "physical": {
+                "sizeM": 1.47,
+                "distanceM": 6.512
+              }
+            }
+          },
+          {
+            "sourceId": "pied-1",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 287.4,
+                "y": 222.1,
+                "width": 35.5,
+                "height": 31.7
+              },
+              "points": [
+                {
+                  "x": 29.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 35.5,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.7,
+                  "y": 31.7
+                },
+                {
+                  "x": 0.0,
+                  "y": 31.7
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 1"
+            }
+          },
+          {
+            "sourceId": "pied-2",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 229.1,
+                "y": 222.1,
+                "width": 93.8,
+                "height": 20.2
+              },
+              "points": [
+                {
+                  "x": 88.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 93.8,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.7,
+                  "y": 20.2
+                },
+                {
+                  "x": 0.0,
+                  "y": 20.2
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 2"
+            }
+          },
+          {
+            "sourceId": "pied-3",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 266.9,
+                "y": 222.1,
+                "width": 56.0,
+                "height": 10.4
+              },
+              "points": [
+                {
+                  "x": 50.3,
+                  "y": 0.0
+                },
+                {
+                  "x": 56.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.7,
+                  "y": 10.4
+                },
+                {
+                  "x": 0.0,
+                  "y": 10.4
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 3"
+            }
+          },
+          {
+            "sourceId": "pied-4",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 317.1,
+                "y": 222.1,
+                "width": 23.1,
+                "height": 8.5
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 23.1,
+                  "y": 8.5
+                },
+                {
+                  "x": 17.4,
+                  "y": 8.5
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 4"
+            }
+          },
+          {
+            "sourceId": "pied-5",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 317.1,
+                "y": 222.1,
+                "width": 82.2,
+                "height": 14.3
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 82.2,
+                  "y": 14.3
+                },
+                {
+                  "x": 76.5,
+                  "y": 14.3
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 5"
+            }
+          },
+          {
+            "sourceId": "pied-6",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 317.1,
+                "y": 222.1,
+                "width": 79.9,
+                "height": 26.8
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 79.9,
+                  "y": 26.8
+                },
+                {
+                  "x": 74.1,
+                  "y": 26.8
                 }
               ],
               "color": "#8d8779",
@@ -2422,10 +2687,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 737.0,
-                "y": -435.3,
-                "width": 60.2,
-                "height": 31.0
+                "x": 309.7,
+                "y": 137.5,
+                "width": 98.2,
+                "height": 50.5
               },
               "color": "#b8b3a6",
               "angle": 0,
@@ -2435,7 +2700,7 @@
               "title": "Engin",
               "physical": {
                 "sizeM": 3.5,
-                "distanceM": 18.127
+                "distanceM": 11.112
               }
             }
           },
@@ -2444,10 +2709,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 754.5,
-                "y": -439.0,
-                "width": 25.3,
-                "height": 12.4
+                "x": 338.2,
+                "y": 131.4,
+                "width": 41.2,
+                "height": 20.2
               },
               "color": "#cfd6da",
               "angle": 0,
@@ -2457,7 +2722,7 @@
               "title": "Coupole transparente",
               "physical": {
                 "sizeM": 1.47,
-                "distanceM": 18.127
+                "distanceM": 11.112
               }
             }
           },
@@ -2466,26 +2731,26 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 768.1,
-                "y": -547.4,
-                "width": 121.0,
-                "height": 165.3
+                "x": 358.2,
+                "y": 182.5,
+                "width": 38.5,
+                "height": 4.6
               },
               "points": [
                 {
                   "x": 0.0,
-                  "y": 165.3
+                  "y": 4.6
                 },
                 {
-                  "x": 2.1,
-                  "y": 165.3
+                  "x": 3.4,
+                  "y": 4.6
                 },
                 {
-                  "x": 121.0,
+                  "x": 38.5,
                   "y": 0.0
                 },
                 {
-                  "x": 118.9,
+                  "x": 35.1,
                   "y": 0.0
                 }
               ],
@@ -2502,22 +2767,22 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 719.0,
-                "y": -406.4,
-                "width": 51.2,
-                "height": 24.3
+                "x": 333.5,
+                "y": 183.1,
+                "width": 28.0,
+                "height": 4.0
               },
               "points": [
                 {
-                  "x": 49.1,
-                  "y": 24.3
+                  "x": 24.6,
+                  "y": 4.0
                 },
                 {
-                  "x": 51.2,
-                  "y": 24.3
+                  "x": 28.0,
+                  "y": 4.0
                 },
                 {
-                  "x": 2.1,
+                  "x": 3.4,
                   "y": 0.0
                 },
                 {
@@ -2538,27 +2803,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 653.5,
-                "y": -382.2,
-                "width": 116.7,
-                "height": 99.3
+                "x": 307.2,
+                "y": 187.0,
+                "width": 54.3,
+                "height": 10.2
               },
               "points": [
                 {
-                  "x": 114.6,
+                  "x": 50.9,
                   "y": 0.0
                 },
                 {
-                  "x": 116.7,
+                  "x": 54.3,
                   "y": 0.0
                 },
                 {
-                  "x": 2.1,
-                  "y": 99.3
+                  "x": 3.4,
+                  "y": 10.2
                 },
                 {
                   "x": 0.0,
-                  "y": 99.3
+                  "y": 10.2
                 }
               ],
               "color": "#8d8779",
@@ -2574,27 +2839,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 697.1,
-                "y": -382.2,
-                "width": 73.1,
-                "height": 124.2
+                "x": 332.3,
+                "y": 187.0,
+                "width": 29.2,
+                "height": 20.7
               },
               "points": [
                 {
-                  "x": 71.0,
+                  "x": 25.9,
                   "y": 0.0
                 },
                 {
-                  "x": 73.1,
+                  "x": 29.2,
                   "y": 0.0
                 },
                 {
-                  "x": 2.1,
-                  "y": 124.2
+                  "x": 3.4,
+                  "y": 20.7
                 },
                 {
                   "x": 0.0,
-                  "y": 124.2
+                  "y": 20.7
                 }
               ],
               "color": "#8d8779",
@@ -2610,10 +2875,10 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 768.1,
-                "y": -382.2,
-                "width": 46.7,
-                "height": 49.0
+                "x": 358.2,
+                "y": 187.0,
+                "width": 23.0,
+                "height": 20.4
               },
               "points": [
                 {
@@ -2621,16 +2886,16 @@
                   "y": 0.0
                 },
                 {
-                  "x": 2.1,
+                  "x": 3.4,
                   "y": 0.0
                 },
                 {
-                  "x": 46.7,
-                  "y": 49.0
+                  "x": 23.0,
+                  "y": 20.4
                 },
                 {
-                  "x": 44.6,
-                  "y": 49.0
+                  "x": 19.6,
+                  "y": 20.4
                 }
               ],
               "color": "#8d8779",
@@ -2646,27 +2911,292 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 768.1,
-                "y": -488.7,
-                "width": 168.4,
-                "height": 106.5
+                "x": 358.2,
+                "y": 187.0,
+                "width": 55.7,
+                "height": 9.4
               },
               "points": [
                 {
                   "x": 0.0,
-                  "y": 106.5
-                },
-                {
-                  "x": 2.1,
-                  "y": 106.5
-                },
-                {
-                  "x": 168.4,
                   "y": 0.0
                 },
                 {
-                  "x": 166.3,
+                  "x": 3.4,
                   "y": 0.0
+                },
+                {
+                  "x": 55.7,
+                  "y": 9.4
+                },
+                {
+                  "x": 52.3,
+                  "y": 9.4
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 6"
+            }
+          }
+        ]
+      },
+      {
+        "t": 260000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 344.8,
+                "y": 140.3,
+                "width": 48.1,
+                "height": 24.8
+              },
+              "color": "#b8b3a6",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Engin",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 22.669
+              }
+            }
+          },
+          {
+            "sourceId": "coupole",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 358.7,
+                "y": 137.4,
+                "width": 20.2,
+                "height": 9.9
+              },
+              "color": "#cfd6da",
+              "angle": 0,
+              "transparency": 0.45,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Coupole transparente",
+              "physical": {
+                "sizeM": 1.47,
+                "distanceM": 22.669
+              }
+            }
+          },
+          {
+            "sourceId": "pied-1",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 368.9,
+                "y": 158.4,
+                "width": 23.3,
+                "height": 5.1
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 5.1
+                },
+                {
+                  "x": 1.7,
+                  "y": 5.1
+                },
+                {
+                  "x": 23.3,
+                  "y": 0.0
+                },
+                {
+                  "x": 21.6,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 1"
+            }
+          },
+          {
+            "sourceId": "pied-2",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 365.9,
+                "y": 154.8,
+                "width": 4.7,
+                "height": 8.7
+              },
+              "points": [
+                {
+                  "x": 3.1,
+                  "y": 8.7
+                },
+                {
+                  "x": 4.7,
+                  "y": 8.7
+                },
+                {
+                  "x": 1.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 2"
+            }
+          },
+          {
+            "sourceId": "pied-3",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 345.5,
+                "y": 163.5,
+                "width": 25.1,
+                "height": 1.1
+              },
+              "points": [
+                {
+                  "x": 23.4,
+                  "y": 0.0
+                },
+                {
+                  "x": 25.1,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.7,
+                  "y": 1.1
+                },
+                {
+                  "x": 0.0,
+                  "y": 1.1
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 3"
+            }
+          },
+          {
+            "sourceId": "pied-4",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 350.1,
+                "y": 163.5,
+                "width": 20.5,
+                "height": 12.8
+              },
+              "points": [
+                {
+                  "x": 18.8,
+                  "y": 0.0
+                },
+                {
+                  "x": 20.5,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.7,
+                  "y": 12.8
+                },
+                {
+                  "x": 0.0,
+                  "y": 12.8
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 4"
+            }
+          },
+          {
+            "sourceId": "pied-5",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 368.9,
+                "y": 163.5,
+                "width": 5.0,
+                "height": 15.7
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 5.0,
+                  "y": 15.7
+                },
+                {
+                  "x": 3.4,
+                  "y": 15.7
+                }
+              ],
+              "color": "#8d8779",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Pied 5"
+            }
+          },
+          {
+            "sourceId": "pied-6",
+            "shape": {
+              "kind": "polygon",
+              "bounds": {
+                "x": 368.9,
+                "y": 163.5,
+                "width": 25.0,
+                "height": 7.4
+              },
+              "points": [
+                {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "x": 1.7,
+                  "y": 0.0
+                },
+                {
+                  "x": 25.0,
+                  "y": 7.4
+                },
+                {
+                  "x": 23.4,
+                  "y": 7.4
                 }
               ],
               "color": "#8d8779",
@@ -2687,10 +3217,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 1496.1,
-                "y": -1384.4,
-                "width": 21.8,
-                "height": 11.2
+                "x": 356.6,
+                "y": 140.1,
+                "width": 28.0,
+                "height": 14.4
               },
               "color": "#b8b3a6",
               "angle": 0,
@@ -2700,7 +3230,7 @@
               "title": "Engin",
               "physical": {
                 "sizeM": 3.5,
-                "distanceM": 50.144
+                "distanceM": 38.996
               }
             }
           },
@@ -2709,10 +3239,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 1502.4,
-                "y": -1385.8,
-                "width": 9.1,
-                "height": 4.5
+                "x": 364.7,
+                "y": 138.3,
+                "width": 11.8,
+                "height": 5.8
               },
               "color": "#cfd6da",
               "angle": 0,
@@ -2722,7 +3252,7 @@
               "title": "Coupole transparente",
               "physical": {
                 "sizeM": 1.47,
-                "distanceM": 50.144
+                "distanceM": 38.996
               }
             }
           },
@@ -2731,26 +3261,26 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 1511.2,
-                "y": -1758.0,
-                "width": 307.9,
-                "height": 408.6
+                "x": 370.7,
+                "y": 149.7,
+                "width": 14.1,
+                "height": 3.4
               },
               "points": [
                 {
                   "x": 0.0,
-                  "y": 408.6
+                  "y": 3.4
                 },
                 {
                   "x": 1.0,
-                  "y": 408.6
+                  "y": 3.4
                 },
                 {
-                  "x": 307.9,
+                  "x": 14.1,
                   "y": 0.0
                 },
                 {
-                  "x": 306.9,
+                  "x": 13.1,
                   "y": 0.0
                 }
               ],
@@ -2767,26 +3297,26 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 1511.2,
-                "y": -1431.5,
-                "width": 4.7,
-                "height": 82.2
+                "x": 370.7,
+                "y": 146.4,
+                "width": 1.0,
+                "height": 6.7
               },
               "points": [
                 {
                   "x": 0.0,
-                  "y": 82.2
+                  "y": 6.7
                 },
                 {
                   "x": 1.0,
-                  "y": 82.2
+                  "y": 6.7
                 },
                 {
-                  "x": 4.7,
+                  "x": 1.0,
                   "y": 0.0
                 },
                 {
-                  "x": 3.7,
+                  "x": 0.0,
                   "y": 0.0
                 }
               ],
@@ -2803,27 +3333,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 1307.9,
-                "y": -1349.4,
-                "width": 204.4,
-                "height": 219.9
+                "x": 358.0,
+                "y": 152.2,
+                "width": 13.7,
+                "height": 0.9
               },
               "points": [
                 {
-                  "x": 203.4,
-                  "y": 0.0
+                  "x": 12.7,
+                  "y": 0.9
                 },
                 {
-                  "x": 204.4,
-                  "y": 0.0
+                  "x": 13.7,
+                  "y": 0.9
                 },
                 {
                   "x": 1.0,
-                  "y": 219.9
+                  "y": 0.0
                 },
                 {
                   "x": 0.0,
-                  "y": 219.9
+                  "y": 0.0
                 }
               ],
               "color": "#8d8779",
@@ -2839,27 +3369,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 1316.2,
-                "y": -1349.4,
-                "width": 196.0,
-                "height": 282.6
+                "x": 358.7,
+                "y": 153.1,
+                "width": 13.0,
+                "height": 7.7
               },
               "points": [
                 {
-                  "x": 195.0,
+                  "x": 12.0,
                   "y": 0.0
                 },
                 {
-                  "x": 196.0,
+                  "x": 13.0,
                   "y": 0.0
                 },
                 {
                   "x": 1.0,
-                  "y": 282.6
+                  "y": 7.7
                 },
                 {
                   "x": 0.0,
-                  "y": 282.6
+                  "y": 7.7
                 }
               ],
               "color": "#8d8779",
@@ -2875,10 +3405,10 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 1511.2,
-                "y": -1349.4,
-                "width": 1.3,
-                "height": 95.0
+                "x": 370.7,
+                "y": 153.1,
+                "width": 1.5,
+                "height": 10.7
               },
               "points": [
                 {
@@ -2890,12 +3420,12 @@
                   "y": 0.0
                 },
                 {
-                  "x": 1.3,
-                  "y": 95.0
+                  "x": 1.5,
+                  "y": 10.7
                 },
                 {
-                  "x": 0.3,
-                  "y": 95.0
+                  "x": 0.5,
+                  "y": 10.7
                 }
               ],
               "color": "#8d8779",
@@ -2911,27 +3441,27 @@
             "shape": {
               "kind": "polygon",
               "bounds": {
-                "x": 1511.2,
-                "y": -1624.3,
-                "width": 285.0,
-                "height": 274.9
+                "x": 370.7,
+                "y": 153.1,
+                "width": 13.9,
+                "height": 5.4
               },
               "points": [
                 {
                   "x": 0.0,
-                  "y": 274.9
+                  "y": 0.0
                 },
                 {
                   "x": 1.0,
-                  "y": 274.9
-                },
-                {
-                  "x": 285.0,
                   "y": 0.0
                 },
                 {
-                  "x": 284.0,
-                  "y": 0.0
+                  "x": 13.9,
+                  "y": 5.4
+                },
+                {
+                  "x": 12.9,
+                  "y": 5.4
                 }
               ],
               "color": "#8d8779",
@@ -2945,27 +3475,27 @@
         ]
       },
       {
-        "t": 266000,
+        "t": 262500,
         "shapes": [
           {
             "sourceId": "ufo-1",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 4894.0,
-                "y": -5908.1,
-                "width": 2.2,
-                "height": 1.1
+                "x": 359.6,
+                "y": 140.3,
+                "width": 23.2,
+                "height": 11.9
               },
               "color": "#b8b3a6",
               "angle": 0,
-              "transparency": 0.75,
+              "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
               "title": "Engin",
               "physical": {
                 "sizeM": 3.5,
-                "distanceM": 499.762
+                "distanceM": 47.089
               }
             }
           },
@@ -2974,10 +3504,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 4894.6,
-                "y": -5908.3,
-                "width": 0.9,
-                "height": 0.4
+                "x": 366.3,
+                "y": 138.9,
+                "width": 9.7,
+                "height": 4.8
               },
               "color": "#cfd6da",
               "angle": 0,
@@ -2987,224 +3517,8 @@
               "title": "Coupole transparente",
               "physical": {
                 "sizeM": 1.47,
-                "distanceM": 499.762
+                "distanceM": 47.089
               }
-            }
-          },
-          {
-            "sourceId": "pied-1",
-            "shape": {
-              "kind": "polygon",
-              "bounds": {
-                "x": 4901.6,
-                "y": -6451.6,
-                "width": 410.2,
-                "height": 548.4
-              },
-              "points": [
-                {
-                  "x": 0.0,
-                  "y": 548.4
-                },
-                {
-                  "x": 1.0,
-                  "y": 548.4
-                },
-                {
-                  "x": 410.2,
-                  "y": 0.0
-                },
-                {
-                  "x": 409.2,
-                  "y": 0.0
-                }
-              ],
-              "color": "#8d8779",
-              "angle": 0,
-              "transparency": 0.75,
-              "haloScale": 0.0,
-              "selected": false,
-              "title": "Pied 1"
-            }
-          },
-          {
-            "sourceId": "pied-2",
-            "shape": {
-              "kind": "polygon",
-              "bounds": {
-                "x": 4901.6,
-                "y": -6039.7,
-                "width": 81.4,
-                "height": 136.5
-              },
-              "points": [
-                {
-                  "x": 0.0,
-                  "y": 136.5
-                },
-                {
-                  "x": 1.0,
-                  "y": 136.5
-                },
-                {
-                  "x": 81.4,
-                  "y": 0.0
-                },
-                {
-                  "x": 80.4,
-                  "y": 0.0
-                }
-              ],
-              "color": "#8d8779",
-              "angle": 0,
-              "transparency": 0.75,
-              "haloScale": 0.0,
-              "selected": false,
-              "title": "Pied 2"
-            }
-          },
-          {
-            "sourceId": "pied-3",
-            "shape": {
-              "kind": "polygon",
-              "bounds": {
-                "x": 4624.5,
-                "y": -5903.2,
-                "width": 278.1,
-                "height": 349.9
-              },
-              "points": [
-                {
-                  "x": 277.1,
-                  "y": 0.0
-                },
-                {
-                  "x": 278.1,
-                  "y": 0.0
-                },
-                {
-                  "x": 1.0,
-                  "y": 349.9
-                },
-                {
-                  "x": 0.0,
-                  "y": 349.9
-                }
-              ],
-              "color": "#8d8779",
-              "angle": 0,
-              "transparency": 0.75,
-              "haloScale": 0.0,
-              "selected": false,
-              "title": "Pied 3"
-            }
-          },
-          {
-            "sourceId": "pied-4",
-            "shape": {
-              "kind": "polygon",
-              "bounds": {
-                "x": 4560.1,
-                "y": -5903.2,
-                "width": 342.5,
-                "height": 467.6
-              },
-              "points": [
-                {
-                  "x": 341.5,
-                  "y": 0.0
-                },
-                {
-                  "x": 342.5,
-                  "y": 0.0
-                },
-                {
-                  "x": 1.0,
-                  "y": 467.6
-                },
-                {
-                  "x": 0.0,
-                  "y": 467.6
-                }
-              ],
-              "color": "#8d8779",
-              "angle": 0,
-              "transparency": 0.75,
-              "haloScale": 0.0,
-              "selected": false,
-              "title": "Pied 4"
-            }
-          },
-          {
-            "sourceId": "pied-5",
-            "shape": {
-              "kind": "polygon",
-              "bounds": {
-                "x": 4830.1,
-                "y": -5903.2,
-                "width": 72.5,
-                "height": 134.0
-              },
-              "points": [
-                {
-                  "x": 71.5,
-                  "y": 0.0
-                },
-                {
-                  "x": 72.5,
-                  "y": 0.0
-                },
-                {
-                  "x": 1.0,
-                  "y": 134.0
-                },
-                {
-                  "x": 0.0,
-                  "y": 134.0
-                }
-              ],
-              "color": "#8d8779",
-              "angle": 0,
-              "transparency": 0.75,
-              "haloScale": 0.0,
-              "selected": false,
-              "title": "Pied 5"
-            }
-          },
-          {
-            "sourceId": "pied-6",
-            "shape": {
-              "kind": "polygon",
-              "bounds": {
-                "x": 4901.6,
-                "y": -6294.7,
-                "width": 319.8,
-                "height": 391.5
-              },
-              "points": [
-                {
-                  "x": 0.0,
-                  "y": 391.5
-                },
-                {
-                  "x": 1.0,
-                  "y": 391.5
-                },
-                {
-                  "x": 319.8,
-                  "y": 0.0
-                },
-                {
-                  "x": 318.8,
-                  "y": 0.0
-                }
-              ],
-              "color": "#8d8779",
-              "angle": 0,
-              "transparency": 0.75,
-              "haloScale": 0.0,
-              "selected": false,
-              "title": "Pied 6"
             }
           }
         ]
@@ -3217,20 +3531,20 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 6306.9,
-                "y": -8128.5,
-                "width": 0.4,
-                "height": 0.2
+                "x": 359.6,
+                "y": 140.3,
+                "width": 23.2,
+                "height": 11.9
               },
               "color": "#b8b3a6",
               "angle": 0,
-              "transparency": 0.75,
+              "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
               "title": "Engin",
               "physical": {
                 "sizeM": 3.5,
-                "distanceM": 3080.307
+                "distanceM": 47.089
               }
             }
           },
@@ -3239,10 +3553,10 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 6307.0,
-                "y": -8128.5,
-                "width": 0.1,
-                "height": 0.1
+                "x": 366.3,
+                "y": 138.9,
+                "width": 9.7,
+                "height": 4.8
               },
               "color": "#cfd6da",
               "angle": 0,
@@ -3252,7 +3566,7 @@
               "title": "Coupole transparente",
               "physical": {
                 "sizeM": 1.47,
-                "distanceM": 3080.307
+                "distanceM": 47.089
               }
             }
           }
@@ -3285,7 +3599,62 @@
         }
       },
       {
+        "t": 15000,
+        "pose": {
+          "lat": 43.837604,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 2.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 30000,
+        "pose": {
+          "lat": 43.837399,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 2.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 45000,
+        "pose": {
+          "lat": 43.837195,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 2.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
         "t": 55000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 2.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 120000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 2.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 200000,
         "pose": {
           "lat": 43.837058,
           "lng": 5.993,
@@ -3307,13 +3676,79 @@
         }
       },
       {
-        "t": 270000,
+        "t": 254000,
         "pose": {
           "lat": 43.837058,
           "lng": 5.993,
           "elevationM": 0,
           "headingDeg": 180.0,
-          "pitchDeg": 2.0,
+          "pitchDeg": 3.08,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 256000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 3.29,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 258000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 223.27,
+          "pitchDeg": 18.94,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 260000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 239.62,
+          "pitchDeg": 27.85,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 262000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 246.11,
+          "pitchDeg": 32.67,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 262500,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 247.8,
+          "pitchDeg": 33.47,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 270000,
+        "pose": {
+          "lat": 43.837058,
+          "lng": 5.993,
+          "elevationM": 0,
+          "headingDeg": 247.8,
+          "pitchDeg": 33.47,
           "fovDeg": 60.0
         }
       }

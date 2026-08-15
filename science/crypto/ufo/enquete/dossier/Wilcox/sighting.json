@@ -172,7 +172,7 @@
               "kind": "oval",
               "bounds": {
                 "x": 31.7,
-                "y": 45.3,
+                "y": 84.9,
                 "width": 576.6,
                 "height": 113.4
               },
@@ -199,7 +199,7 @@
               "kind": "oval",
               "bounds": {
                 "x": 235.1,
-                "y": -4.2,
+                "y": 132.5,
                 "width": 169.8,
                 "height": 33.4
               },
@@ -226,7 +226,7 @@
               "kind": "oval",
               "bounds": {
                 "x": 283.2,
-                "y": 20.9,
+                "y": 144.4,
                 "width": 73.7,
                 "height": 14.5
               },
@@ -253,7 +253,7 @@
               "kind": "oval",
               "bounds": {
                 "x": 307.5,
-                "y": 91.1,
+                "y": 160.7,
                 "width": 25.0,
                 "height": 4.9
               },
@@ -280,7 +280,7 @@
               "kind": "oval",
               "bounds": {
                 "x": 316.4,
-                "y": 144.6,
+                "y": 172.4,
                 "width": 7.2,
                 "height": 1.4
               },
@@ -318,7 +318,29 @@
         }
       },
       {
+        "t": 45000,
+        "pose": {
+          "lat": 42.229095,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
         "t": 90000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 3600000,
         "pose": {
           "lat": 42.229029,
           "lng": -76.181,
@@ -340,13 +362,57 @@
         }
       },
       {
+        "t": 7100000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 7.02,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 7120000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 22.59,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 7140000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 20.78,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 7170000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 12.4,
+          "fovDeg": 60.0
+        }
+      },
+      {
         "t": 7200000,
         "pose": {
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
           "headingDeg": 180.0,
-          "pitchDeg": 0.0,
+          "pitchDeg": 5.08,
           "fovDeg": 60.0
         }
       }

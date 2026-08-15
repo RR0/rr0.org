@@ -19,7 +19,7 @@
     "id": "ChilesWhitted"
   },
   "caseId": "ChilesWhitted",
-  "description": "Vue depuis le poste de pilotage du DC-3 à 1500 m d'altitude — d'où le sol, très bas, et le ciel de nuit du 24 juillet 1948. L'objet arrive de face sur une trajectoire de collision, passe sur la droite puis remonte et disparaît dans un nuage — il n'est pas effacé par un fondu : il passe réellement derrière la couche nuageuse, déclarée à 1800 m, soit 300 m au-dessus de l'avion. Longueur rapportée ~30 m ; sa longueur apparente croît à mesure qu'il se présente de profil. Le virage d'évitement de l'appareil n'est pas reproduit : le format ne sait pas encore incliner le point de vue (roulis).",
+  "description": "Vue depuis le poste de pilotage du DC-3 à 1500 m d'altitude — d'où le sol, très bas, et le ciel de nuit du 24 juillet 1948. L'objet arrive de face sur une trajectoire de collision, passe sur la droite puis remonte et disparaît dans un nuage — ce que le témoignage affirme et que l'enregistrement déclare (les formes se signalent derrière un nuage à partir de la 8ᵉ seconde), plutôt qu'un fondu ou une déduction tirée d'une distance. Couche déclarée à 1800 m, soit 300 m au-dessus de l'avion. Longueur rapportée ~30 m ; sa longueur apparente croît à mesure qu'il se présente de profil. Le virage d'évitement de l'appareil n'est pas reproduit : le format ne sait pas encore incliner le point de vue (roulis).",
   "tags": [
     "NL",
     "observation aérienne",
@@ -1316,7 +1316,8 @@
               "physical": {
                 "sizeM": 30.0,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1338,7 +1339,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1360,7 +1362,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1382,7 +1385,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1404,7 +1408,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1426,7 +1431,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1448,7 +1454,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1470,7 +1477,8 @@
               "physical": {
                 "sizeM": 15.0,
                 "distanceM": 374.166
-              }
+              },
+              "behindCloud": true
             }
           }
         ]
@@ -1497,7 +1505,8 @@
               "physical": {
                 "sizeM": 30.0,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1519,7 +1528,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1541,7 +1551,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1563,7 +1574,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1585,7 +1597,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1607,7 +1620,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1629,7 +1643,8 @@
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           },
           {
@@ -1651,7 +1666,8 @@
               "physical": {
                 "sizeM": 15.0,
                 "distanceM": 784.411
-              }
+              },
+              "behindCloud": true
             }
           }
         ]
@@ -1777,7 +1793,7 @@
       {
         "t": 0,
         "weather": {
-          "cloudCover": 0.7,
+          "cloudCover": 0.4,
           "cloudDarkness": 0.15,
           "cloudBaseM": 1800,
           "precipitationType": "none",

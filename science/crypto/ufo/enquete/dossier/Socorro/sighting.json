@@ -1,19 +1,961 @@
 {
   "version": 1,
-  "time": { "year": 1964, "month": 4, "day": 24, "hour": 17, "minute": 50 },
+  "time": {
+    "year": 1964,
+    "month": 4,
+    "day": 24,
+    "hour": 17,
+    "minute": 50
+  },
   "durationSeconds": 20,
-  "place": [{ "lat": 34.058, "lng": -106.891 }],
+  "utcOffsetHours": -7,
+  "place": [
+    {
+      "lat": 34.058,
+      "lng": -106.891
+    }
+  ],
   "witness": {
     "id": "zamora",
     "title": "Lonnie Zamora"
   },
   "caseId": "socorro",
+  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites.",
+  "tags": [
+    "RR3",
+    "atterrissage",
+    "trace",
+    "Blue Book 8729"
+  ],
   "timeline": {
     "keyframes": [
-      { "t": 0, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 300, "y": 320, "width": 80, "height": 40 }, "color": "#f2f2f2", "angle": 0, "transparency": 0, "haloScale": 1.2, "selected": false } }] },
-      { "t": 3000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 300, "y": 280, "width": 80, "height": 40 }, "color": "#f2f2f2", "angle": 0, "transparency": 0, "haloScale": 1.8, "selected": false } }] },
-      { "t": 4500, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 420, "y": 150, "width": 60, "height": 28 }, "color": "#f2f2f2", "angle": -0.3, "transparency": 0.2, "haloScale": 1.4, "selected": false } }] },
-      { "t": 6000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 620, "y": 90, "width": 30, "height": 14 }, "color": "#f2f2f2", "angle": -0.3, "transparency": 0.5, "haloScale": 1.2, "selected": false } }] }
+      {
+        "t": 0,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 302.6,
+                "y": 185.8,
+                "width": 34.9,
+                "height": 18.0
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 31.254
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 316.3,
+                "y": 191.8,
+                "width": 7.6,
+                "height": 6.1
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "physical": {
+                "sizeM": 0.76,
+                "distanceM": 31.254
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 314.1,
+                "y": 203.8,
+                "width": 12.0,
+                "height": 23.9
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 313.5,
+                "y": 219.0,
+                "width": 13.2,
+                "height": 9.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 2000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 302.6,
+                "y": 185.8,
+                "width": 34.9,
+                "height": 18.0
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 31.254
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 316.3,
+                "y": 191.8,
+                "width": 7.6,
+                "height": 6.1
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "physical": {
+                "sizeM": 0.76,
+                "distanceM": 31.254
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 314.1,
+                "y": 203.8,
+                "width": 12.0,
+                "height": 23.9
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 313.5,
+                "y": 219.0,
+                "width": 13.2,
+                "height": 9.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 3500,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 296.5,
+                "y": 165.5,
+                "width": 31.2,
+                "height": 16.0
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 34.989
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 308.7,
+                "y": 170.8,
+                "width": 6.8,
+                "height": 5.4
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "physical": {
+                "sizeM": 0.76,
+                "distanceM": 34.989
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 306.7,
+                "y": 181.6,
+                "width": 10.7,
+                "height": 21.4
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 306.2,
+                "y": 195.1,
+                "width": 11.8,
+                "height": 8.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 5000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 291.6,
+                "y": 149.1,
+                "width": 28.1,
+                "height": 14.4
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 38.874
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 302.6,
+                "y": 153.9,
+                "width": 6.1,
+                "height": 4.9
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "physical": {
+                "sizeM": 0.76,
+                "distanceM": 38.874
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 300.8,
+                "y": 163.6,
+                "width": 9.6,
+                "height": 19.2
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 300.3,
+                "y": 175.8,
+                "width": 10.6,
+                "height": 7.7
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 6500,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 288.5,
+                "y": 135.5,
+                "width": 25.7,
+                "height": 13.2
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 42.389
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 298.5,
+                "y": 139.9,
+                "width": 5.6,
+                "height": 4.5
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "physical": {
+                "sizeM": 0.76,
+                "distanceM": 42.389
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 296.9,
+                "y": 148.7,
+                "width": 8.8,
+                "height": 17.7
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 296.5,
+                "y": 159.9,
+                "width": 9.7,
+                "height": 7.1
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 8000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 285.8,
+                "y": 123.8,
+                "width": 23.7,
+                "height": 12.2
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 45.983
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 295.1,
+                "y": 127.9,
+                "width": 5.2,
+                "height": 4.1
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "physical": {
+                "sizeM": 0.76,
+                "distanceM": 45.983
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 293.6,
+                "y": 136.0,
+                "width": 8.1,
+                "height": 16.3
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 293.2,
+                "y": 146.3,
+                "width": 8.9,
+                "height": 6.5
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 9500,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 337.1,
+                "y": 136.9,
+                "width": 16.6,
+                "height": 8.6
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 65.553
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 342.6,
+                "y": 145.4,
+                "width": 5.7,
+                "height": 11.4
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 342.3,
+                "y": 152.6,
+                "width": 6.3,
+                "height": 4.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 11000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 364.7,
+                "y": 143.9,
+                "width": 12.7,
+                "height": 6.5
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 85.972
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 368.9,
+                "y": 150.4,
+                "width": 4.4,
+                "height": 8.7
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 368.6,
+                "y": 155.9,
+                "width": 4.8,
+                "height": 3.5
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 14000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 401.0,
+                "y": 133.0,
+                "width": 5.1,
+                "height": 2.6
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 213.666
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 402.7,
+                "y": 135.7,
+                "width": 1.8,
+                "height": 3.5
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 402.6,
+                "y": 137.9,
+                "width": 1.9,
+                "height": 1.4
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 17000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 416.2,
+                "y": 126.7,
+                "width": 1.9,
+                "height": 1.0
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.35,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 584.939
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 416.8,
+                "y": 127.7,
+                "width": 0.6,
+                "height": 1.3
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 416.8,
+                "y": 128.5,
+                "width": 0.7,
+                "height": 0.5
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      },
+      {
+        "t": 20000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 420.6,
+                "y": 123.2,
+                "width": 0.7,
+                "height": 0.4
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.9,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 3.5,
+                "distanceM": 1479.097
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 420.9,
+                "y": 123.6,
+                "width": 0.3,
+                "height": 0.5
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme"
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 420.9,
+                "y": 123.9,
+                "width": 0.3,
+                "height": 0.2
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme"
+            }
+          }
+        ]
+      }
+    ],
+    "order": [
+      "flamme",
+      "flamme-base",
+      "ufo-1",
+      "insigne"
+    ],
+    "groups": []
+  },
+  "witnessTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "pose": {
+          "lat": 34.058,
+          "lng": -106.891,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 2000,
+        "pose": {
+          "lat": 34.058,
+          "lng": -106.891,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 5000,
+        "pose": {
+          "lat": 34.058072,
+          "lng": -106.890989,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 8000,
+        "pose": {
+          "lat": 34.058135,
+          "lng": -106.890978,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 20000,
+        "pose": {
+          "lat": 34.058135,
+          "lng": -106.890978,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      }
     ]
-  }
+  },
+  "weatherTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "weather": {
+          "cloudCover": 0.15,
+          "cloudDarkness": 0.1,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 225,
+          "windSpeed": 8,
+          "storm": false
+        }
+      }
+    ]
+  },
+  "decor": [
+    {
+      "id": "patrol-car",
+      "kind": "vehicle",
+      "title": "Voiture de patrouille de Zamora",
+      "eastM": 0,
+      "northM": 8,
+      "headingDeg": 225,
+      "lit": false
+    },
+    {
+      "id": "dynamite-shack",
+      "kind": "building",
+      "title": "Abri à dynamite",
+      "eastM": -73.7,
+      "northM": -51.6,
+      "floors": 0,
+      "lit": false
+    }
+  ]
 }

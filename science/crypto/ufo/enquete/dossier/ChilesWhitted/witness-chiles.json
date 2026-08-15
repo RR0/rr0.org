@@ -8,6 +8,7 @@
     "minute": 45
   },
   "durationSeconds": 10,
+  "utcOffsetHours": -6,
   "place": [
     {
       "lat": 32.3792,
@@ -19,6 +20,12 @@
     "title": "Clarence Chiles"
   },
   "caseId": "ChilesWhitted",
+  "description": "Vue depuis le poste de pilotage du DC-3 à 1500 m d'altitude — d'où le sol, très bas, et le ciel de nuit du 24 juillet 1948. L'objet arrive de face sur une trajectoire de collision, passe sur la droite puis remonte et disparaît dans un nuage. Longueur rapportée ~30 m ; sa longueur apparente croît à mesure qu'il se présente de profil. Le virage d'évitement de l'appareil n'est pas reproduit : le format ne sait pas encore incliner le point de vue (roulis). Version du commandant Chiles, en place gauche.",
+  "tags": [
+    "NL",
+    "observation aérienne",
+    "Projet Sign"
+  ],
   "timeline": {
     "keyframes": [
       {
@@ -29,267 +36,129 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 500,
-                "y": 292,
-                "width": 40,
-                "height": 16
+                "x": 76.7,
+                "y": 172.2,
+                "width": 2.0,
+                "height": 0.8
               },
-              "color": "#163a8f",
+              "color": "#1c3f9c",
               "angle": 0,
-              "transparency": 0,
-              "haloScale": 1,
-              "selected": false
+              "transparency": 0.0,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 10.5,
+                "distanceM": 1601.406
+              }
             }
           },
           {
-            "sourceId": "flame",
+            "sourceId": "flamme",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 553,
-                "y": 315,
-                "width": 14,
-                "height": 10
+                "x": 78.6,
+                "y": 172.3,
+                "width": 0.4,
+                "height": 0.6
               },
-              "color": "#ff5500",
-              "angle": 0,
-              "transparency": 0.1,
-              "haloScale": 1.5,
-              "selected": false
-            }
-          }
-        ]
-      },
-      {
-        "t": 800,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 402.5,
-                "y": 219,
-                "width": 55,
-                "height": 22
-              },
-              "color": "#163a8f",
-              "angle": 0,
-              "transparency": 0,
-              "haloScale": 1.2,
-              "selected": false
-            }
-          },
-          {
-            "sourceId": "flame",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 462,
-                "y": 250,
-                "width": 16,
-                "height": 10
-              },
-              "color": "#ff5500",
+              "color": "#ff5a1f",
               "angle": 0,
               "transparency": 0.1,
               "haloScale": 1.6,
-              "selected": false
+              "selected": false,
+              "title": "Flamme arrière"
             }
           }
         ]
       },
       {
-        "t": 1600,
+        "t": 1500,
         "shapes": [
           {
             "sourceId": "ufo-1",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 300,
-                "y": 154,
-                "width": 80,
-                "height": 32
+                "x": 78.2,
+                "y": 172.3,
+                "width": 2.8,
+                "height": 1.1
               },
-              "color": "#163a8f",
+              "color": "#1c3f9c",
               "angle": 0,
-              "transparency": 0,
-              "haloScale": 1.6,
-              "selected": false
+              "transparency": 0.0,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 10.5,
+                "distanceM": 1151.172
+              }
             }
           },
           {
-            "sourceId": "flame",
+            "sourceId": "flamme",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 366,
-                "y": 189,
-                "width": 18,
-                "height": 12
+                "x": 80.9,
+                "y": 172.4,
+                "width": 0.6,
+                "height": 0.9
               },
-              "color": "#ff5500",
+              "color": "#ff5a1f",
               "angle": 0,
               "transparency": 0.1,
-              "haloScale": 1.8,
-              "selected": false
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
             }
           }
         ]
       },
       {
-        "t": 2000,
+        "t": 3000,
         "shapes": [
           {
             "sourceId": "ufo-1",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 247.5,
-                "y": 129,
-                "width": 105,
-                "height": 42
+                "x": 81.6,
+                "y": 172.4,
+                "width": 4.7,
+                "height": 1.8
               },
-              "color": "#163a8f",
+              "color": "#1c3f9c",
               "angle": 0,
-              "transparency": 0,
-              "haloScale": 2,
-              "selected": false
+              "transparency": 0.0,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 10.5,
+                "distanceM": 700.977
+              }
             }
           },
           {
-            "sourceId": "flame",
+            "sourceId": "flamme",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 319,
-                "y": 168,
-                "width": 22,
-                "height": 14
+                "x": 86.0,
+                "y": 172.6,
+                "width": 0.9,
+                "height": 1.4
               },
-              "color": "#ff5500",
-              "angle": 0,
-              "transparency": 0.05,
-              "haloScale": 2.2,
-              "selected": false
-            }
-          }
-        ]
-      },
-      {
-        "t": 2400,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 252.5,
-                "y": 91,
-                "width": 95,
-                "height": 38
-              },
-              "color": "#163a8f",
-              "angle": 0,
-              "transparency": 0,
-              "haloScale": 1.8,
-              "selected": false
-            }
-          },
-          {
-            "sourceId": "flame",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 315,
-                "y": 133.5,
-                "width": 20,
-                "height": 13
-              },
-              "color": "#ff5500",
+              "color": "#ff5a1f",
               "angle": 0,
               "transparency": 0.1,
-              "haloScale": 2,
-              "selected": false
-            }
-          }
-        ]
-      },
-      {
-        "t": 2800,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 305,
-                "y": 36,
-                "width": 70,
-                "height": 28
-              },
-              "color": "#163a8f",
-              "angle": 0,
-              "transparency": 0.05,
-              "haloScale": 1.5,
-              "selected": false
-            }
-          },
-          {
-            "sourceId": "flame",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 347,
-                "y": 75,
-                "width": 16,
-                "height": 10
-              },
-              "color": "#ff5500",
-              "angle": 0,
-              "transparency": 0.15,
               "haloScale": 1.6,
-              "selected": false
-            }
-          }
-        ]
-      },
-      {
-        "t": 3400,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 395,
-                "y": -10,
-                "width": 50,
-                "height": 20
-              },
-              "color": "#163a8f",
-              "angle": 0,
-              "transparency": 0.3,
-              "haloScale": 1.2,
-              "selected": false
-            }
-          },
-          {
-            "sourceId": "flame",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 424,
-                "y": 26,
-                "width": 12,
-                "height": 8
-              },
-              "color": "#ff5500",
-              "angle": 0,
-              "transparency": 0.4,
-              "haloScale": 1.2,
-              "selected": false
+              "selected": false,
+              "title": "Flamme arrière"
             }
           }
         ]
@@ -302,37 +171,862 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 482.5,
-                "y": -47,
-                "width": 35,
-                "height": 14
+                "x": 101.8,
+                "y": 171.3,
+                "width": 14.2,
+                "height": 2.7
               },
-              "color": "#163a8f",
+              "color": "#1c3f9c",
               "angle": 0,
-              "transparency": 0.85,
+              "transparency": 0.0,
               "haloScale": 0.8,
-              "selected": false
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 21.0,
+                "distanceM": 462.534
+              }
             }
           },
           {
-            "sourceId": "flame",
+            "sourceId": "hublot-1",
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 500.5,
-                "y": -18,
-                "width": 9,
-                "height": 6
+                "x": 103.2,
+                "y": 172.0,
+                "width": 1.1,
+                "height": 1.1
               },
-              "color": "#ff5500",
+              "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.9,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 105.3,
+                "y": 172.0,
+                "width": 1.1,
+                "height": 1.1
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 107.3,
+                "y": 172.0,
+                "width": 1.1,
+                "height": 1.1
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 109.3,
+                "y": 172.0,
+                "width": 1.1,
+                "height": 1.1
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 111.4,
+                "y": 172.0,
+                "width": 1.1,
+                "height": 1.1
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 113.4,
+                "y": 172.0,
+                "width": 1.1,
+                "height": 1.1
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 115.3,
+                "y": 171.6,
+                "width": 2.8,
+                "height": 2.2
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.1,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
+            }
+          }
+        ]
+      },
+      {
+        "t": 5000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 162.0,
+                "y": 168.2,
+                "width": 28.7,
+                "height": 5.5
+              },
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 0.0,
               "haloScale": 0.8,
-              "selected": false
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 21.0,
+                "distanceM": 228.114
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 164.8,
+                "y": 169.5,
+                "width": 2.3,
+                "height": 2.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 169.0,
+                "y": 169.5,
+                "width": 2.3,
+                "height": 2.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 173.1,
+                "y": 169.5,
+                "width": 2.3,
+                "height": 2.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 177.2,
+                "y": 169.5,
+                "width": 2.3,
+                "height": 2.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 181.4,
+                "y": 169.5,
+                "width": 2.3,
+                "height": 2.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 185.5,
+                "y": 169.5,
+                "width": 2.3,
+                "height": 2.3
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 184.9,
+                "y": 168.8,
+                "width": 14.4,
+                "height": 4.4
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.1,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
+            }
+          }
+        ]
+      },
+      {
+        "t": 5800,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 286.5,
+                "y": 113.6,
+                "width": 53.1,
+                "height": 7.1
+              },
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 30.0,
+                "distanceM": 176.097
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 292.5,
+                "y": 115.3,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 300.1,
+                "y": 115.3,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 307.8,
+                "y": 115.3,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.4,
+                "y": 115.3,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 323.1,
+                "y": 115.3,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 330.7,
+                "y": 115.3,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 329.0,
+                "y": 114.3,
+                "width": 26.6,
+                "height": 5.7
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.1,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
+            }
+          }
+        ]
+      },
+      {
+        "t": 6500,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 460.0,
+                "y": 45.0,
+                "width": 54.3,
+                "height": 7.2
+              },
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 30.0,
+                "distanceM": 172.337
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 466.1,
+                "y": 46.7,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 473.9,
+                "y": 46.7,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 481.7,
+                "y": 46.7,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 489.5,
+                "y": 46.7,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 497.4,
+                "y": 46.7,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 505.2,
+                "y": 46.7,
+                "width": 3.0,
+                "height": 3.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 503.4,
+                "y": 45.7,
+                "width": 27.1,
+                "height": 5.8
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.1,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
+            }
+          }
+        ]
+      },
+      {
+        "t": 8000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1009.3,
+                "y": -276.5,
+                "width": 18.4,
+                "height": 2.5
+              },
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 30.0,
+                "distanceM": 508.331
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1011.3,
+                "y": -275.9,
+                "width": 1.0,
+                "height": 1.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 1"
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1014.0,
+                "y": -275.9,
+                "width": 1.0,
+                "height": 1.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 2"
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1016.6,
+                "y": -275.9,
+                "width": 1.0,
+                "height": 1.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 3"
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1019.3,
+                "y": -275.9,
+                "width": 1.0,
+                "height": 1.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 4"
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1021.9,
+                "y": -275.9,
+                "width": 1.0,
+                "height": 1.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 5"
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1024.6,
+                "y": -275.9,
+                "width": 1.0,
+                "height": 1.0
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot 6"
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1024.0,
+                "y": -276.3,
+                "width": 9.2,
+                "height": 2.0
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.95,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
+            }
+          }
+        ]
+      },
+      {
+        "t": 10000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1265.8,
+                "y": -376.5,
+                "width": 5.1,
+                "height": 0.7
+              },
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 0.85,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 30.0,
+                "distanceM": 1849.324
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 1269.8,
+                "y": -376.4,
+                "width": 2.5,
+                "height": 0.5
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.95,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière"
             }
           }
         ]
       }
+    ],
+    "order": [
+      "flamme",
+      "ufo-1",
+      "hublot-1",
+      "hublot-2",
+      "hublot-3",
+      "hublot-4",
+      "hublot-5",
+      "hublot-6"
+    ],
+    "groups": []
+  },
+  "witnessTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "pose": {
+          "lat": 32.3792,
+          "lng": -86.3077,
+          "elevationM": 1500.0,
+          "headingDeg": 40.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 10000,
+        "pose": {
+          "lat": 32.3792,
+          "lng": -86.3077,
+          "elevationM": 1500.0,
+          "headingDeg": 40.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      }
     ]
-  }
+  },
+  "weatherTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "weather": {
+          "cloudCover": 0.4,
+          "cloudDarkness": 0.15,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 220,
+          "windSpeed": 5,
+          "storm": false
+        }
+      }
+    ]
+  },
+  "decor": []
 }

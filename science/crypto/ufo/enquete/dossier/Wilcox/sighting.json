@@ -1,18 +1,372 @@
 {
   "version": 1,
-  "time": { "year": 1964, "month": 4, "day": 24, "hour": 10, "minute": 0 },
+  "time": {
+    "year": 1964,
+    "month": 4,
+    "day": 24,
+    "hour": 10,
+    "minute": 0
+  },
   "durationSeconds": 7200,
-  "place": [{ "lat": 42.229, "lng": -76.181 }],
+  "utcOffsetHours": -5,
+  "place": [
+    {
+      "lat": 42.229,
+      "lng": -76.181
+    }
+  ],
   "witness": {
     "id": "wilcox",
     "title": "Gary T. Wilcox"
   },
   "caseId": "wilcox",
+  "description": "Wilcox approche de l'objet posé en lisière de forêt, s'en approche jusqu'à le toucher, puis le voit se soulever et s'éloigner vers le nord au bout d'environ 2 h. Dimensions rapportées : 20 pieds de long, 15-16 de large, 4 de haut, couleur aluminium. À bout de bras, un objet de 6 m occupe tout le champ de vision : c'est bien ce que dit le témoignage. Les 2 êtres d'environ 1,20 m et le tracteur ne sont pas représentés.",
+  "tags": [
+    "RR3",
+    "atterrissage",
+    "contact"
+  ],
   "timeline": {
     "keyframes": [
-      { "t": 0, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 260, "y": 300, "width": 110, "height": 35 }, "color": "#c9c9c9", "angle": 0, "transparency": 0, "haloScale": 1.0, "selected": false } }] },
-      { "t": 4000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 260, "y": 298, "width": 110, "height": 35 }, "color": "#c9c9c9", "angle": 0, "transparency": 0, "haloScale": 1.0, "selected": false } }] },
-      { "t": 8000, "shapes": [{ "sourceId": "ufo-1", "shape": { "kind": "oval", "bounds": { "x": 260, "y": 300, "width": 110, "height": 35 }, "color": "#c9c9c9", "angle": 0, "transparency": 0, "haloScale": 1.0, "selected": false } }] }
+      {
+        "t": 0,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 267.2,
+                "y": 181.7,
+                "width": 105.6,
+                "height": 20.8
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 18.014
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 45000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 230.5,
+                "y": 183.0,
+                "width": 179.0,
+                "height": 35.2
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 10.623
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 90000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 29.7,
+                "y": 191.1,
+                "width": 580.6,
+                "height": 114.2
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 3.276
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 3600000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 29.7,
+                "y": 191.1,
+                "width": 580.6,
+                "height": 114.2
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 3.276
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 7080000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 29.7,
+                "y": 191.1,
+                "width": 580.6,
+                "height": 114.2
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 3.276
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 7100000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 31.7,
+                "y": 45.3,
+                "width": 576.6,
+                "height": 113.4
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 3.298
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 7120000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 235.1,
+                "y": -4.2,
+                "width": 169.8,
+                "height": 33.4
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 11.2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 7140000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 283.2,
+                "y": 20.9,
+                "width": 73.7,
+                "height": 14.5
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 25.806
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 7170000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 307.5,
+                "y": 91.1,
+                "width": 25.0,
+                "height": 4.9
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 75.963
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 7200000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 316.4,
+                "y": 144.6,
+                "width": 7.2,
+                "height": 1.4
+              },
+              "color": "#bfc2c4",
+              "angle": 0,
+              "transparency": 0.7,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "physical": {
+                "sizeM": 6.1,
+                "distanceM": 264.826
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "order": [
+      "ufo-1"
+    ],
+    "groups": []
+  },
+  "witnessTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "pose": {
+          "lat": 42.229162,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 90000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 7080000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 7200000,
+        "pose": {
+          "lat": 42.229029,
+          "lng": -76.181,
+          "elevationM": 0,
+          "headingDeg": 180.0,
+          "pitchDeg": 0.0,
+          "fovDeg": 60.0
+        }
+      }
     ]
-  }
+  },
+  "weatherTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "weather": {
+          "cloudCover": 0.2,
+          "cloudDarkness": 0.1,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 270,
+          "windSpeed": 3,
+          "storm": false
+        }
+      }
+    ]
+  },
+  "decor": []
 }

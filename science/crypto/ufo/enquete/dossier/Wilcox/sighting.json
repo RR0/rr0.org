@@ -423,16 +423,48 @@
       {
         "t": 0,
         "weather": {
-          "cloudCover": 0.2,
-          "cloudDarkness": 0.1,
+          "cloudCover": 1,
+          "cloudDarkness": 0.6903846153846154,
+          "cloudBaseM": 800,
           "precipitationType": "none",
           "precipitationIntensity": 0,
-          "windDirectionDeg": 270,
-          "windSpeed": 3,
+          "windDirectionDeg": 162,
+          "windSpeed": 3.89,
+          "storm": false
+        }
+      },
+      {
+        "t": 3600000,
+        "weather": {
+          "cloudCover": 1,
+          "cloudDarkness": 0.6975247524752475,
+          "cloudBaseM": 850,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 163,
+          "windSpeed": 3.67,
+          "storm": false
+        }
+      },
+      {
+        "t": 7200000,
+        "weather": {
+          "cloudCover": 1,
+          "cloudDarkness": 0.6975247524752475,
+          "cloudBaseM": 913,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 161,
+          "windSpeed": 3.7,
           "storm": false
         }
       }
     ]
   },
-  "decor": []
+  "decor": [],
+  "weatherSource": {
+    "id": "era5",
+    "name": "ERA5 (Open-Meteo)",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=42.229162&longitude=-76.181&start_date=1964-04-24&end_date=1964-04-24&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
+  }
 }

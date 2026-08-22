@@ -20,7 +20,7 @@
     "title": "John Whitted"
   },
   "caseId": "ChilesWhitted",
-  "description": "Vue depuis le poste de pilotage du DC-3 à 1500 m d'altitude — d'où le sol, très bas, et le ciel de nuit du 24 juillet 1948. L'objet arrive de face sur une trajectoire de collision, passe sur la droite puis remonte et disparaît dans un nuage — ce que le témoignage affirme et que l'enregistrement déclare (les formes se signalent derrière un nuage à partir de la 8ᵉ seconde), plutôt qu'un fondu ou une déduction tirée d'une distance. Couche déclarée à 1800 m, soit 300 m au-dessus de l'avion. Longueur rapportée ~30 m ; sa longueur apparente croît à mesure qu'il se présente de profil. Le virage d'évitement de l'appareil n'est pas reproduit : le format ne sait pas encore incliner le point de vue (roulis). Version du copilote Whitted, en place droite.",
+  "description": "Version du copilote John B. Whitted, en place droite — le côté par lequel l'objet est passé, et le seul des deux à avoir vu la fin. Vue depuis le poste de pilotage du DC-3 à 1500 m — d'où le sol, très bas, et le ciel de nuit du 24 juillet 1948. Il voit l'arrivée de face, le passage à droite, la ressource abrupte, puis la phase finale que Chiles n'a pas vue : une ascension verticale courte et très rapide (ici ~14° d'arc en 1,2 s, de l'ordre des 1300 km/h estimés au sol depuis Robins) au terme de laquelle l'objet disparaît instantanément. Cette disparition est déclarée telle quelle et non « dans un nuage » : interrogé par McDonald en 1968, Whitted a explicitement démenti cette lecture des premiers interrogatoires. Distance : les deux hommes n'ont jamais pu s'accorder (l'un sous 1000 ft, l'autre plusieurs fois cela) ; la géométrie retenue est celle du relevé officiel, ~180 m au plus près. Forme d'après le dessin que Whitted lui-même a remis au projet Sign (Blue Book, rapport n° 14, cas 5) : un cylindre nettement plus épais, à bouts francs, portant deux rangées de trois ouvertures qu'il annote « fenêtres avec lumière blanche » au-dessus d'un dessous « noir » — là où Chiles n'a dessiné aucun hublot. Longueur rapportée ~30 m. Le virage d'évitement n'est pas reproduit : le format ne sait pas encore incliner le point de vue (roulis).",
   "tags": [
     "NL",
     "observation aérienne",
@@ -37,9 +37,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 330.0,
-                "y": 174.1,
+                "y": 174.0,
                 "width": 1.9,
-                "height": 0.7
+                "height": 0.9
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -59,7 +59,7 @@
               "kind": "oval",
               "bounds": {
                 "x": 330.2,
-                "y": 174.3,
+                "y": 174.1,
                 "width": 0.3,
                 "height": 0.3
               },
@@ -68,7 +68,7 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1701.323
@@ -80,8 +80,8 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 330.4,
-                "y": 174.3,
+                "x": 330.7,
+                "y": 174.1,
                 "width": 0.3,
                 "height": 0.3
               },
@@ -90,7 +90,7 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1701.323
@@ -102,8 +102,8 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 330.7,
-                "y": 174.3,
+                "x": 331.3,
+                "y": 174.1,
                 "width": 0.3,
                 "height": 0.3
               },
@@ -112,7 +112,7 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1701.323
@@ -124,8 +124,8 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 331.0,
-                "y": 174.3,
+                "x": 330.2,
+                "y": 174.5,
                 "width": 0.3,
                 "height": 0.3
               },
@@ -134,7 +134,7 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1701.323
@@ -146,8 +146,8 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 331.3,
-                "y": 174.3,
+                "x": 330.7,
+                "y": 174.5,
                 "width": 0.3,
                 "height": 0.3
               },
@@ -156,7 +156,7 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1701.323
@@ -168,8 +168,8 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 331.5,
-                "y": 174.3,
+                "x": 331.3,
+                "y": 174.5,
                 "width": 0.3,
                 "height": 0.3
               },
@@ -178,7 +178,7 @@
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1701.323
@@ -191,9 +191,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 331.9,
-                "y": 174.2,
+                "y": 174.1,
                 "width": 0.4,
-                "height": 0.6
+                "height": 0.8
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -218,9 +218,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 331.6,
-                "y": 174.0,
+                "y": 173.8,
                 "width": 2.7,
-                "height": 1.0
+                "height": 1.4
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -240,16 +240,16 @@
               "kind": "oval",
               "bounds": {
                 "x": 331.8,
-                "y": 174.3,
-                "width": 0.4,
-                "height": 0.4
+                "y": 173.9,
+                "width": 0.5,
+                "height": 0.5
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1201.225
@@ -261,17 +261,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 332.2,
-                "y": 174.3,
-                "width": 0.4,
-                "height": 0.4
+                "x": 332.6,
+                "y": 173.9,
+                "width": 0.5,
+                "height": 0.5
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1201.225
@@ -283,17 +283,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 332.6,
-                "y": 174.3,
-                "width": 0.4,
-                "height": 0.4
+                "x": 333.3,
+                "y": 173.9,
+                "width": 0.5,
+                "height": 0.5
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1201.225
@@ -305,17 +305,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 333.0,
-                "y": 174.3,
-                "width": 0.4,
-                "height": 0.4
+                "x": 331.8,
+                "y": 174.6,
+                "width": 0.5,
+                "height": 0.5
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1201.225
@@ -327,17 +327,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 333.4,
-                "y": 174.3,
-                "width": 0.4,
-                "height": 0.4
+                "x": 332.6,
+                "y": 174.6,
+                "width": 0.5,
+                "height": 0.5
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1201.225
@@ -349,17 +349,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 333.8,
-                "y": 174.3,
-                "width": 0.4,
-                "height": 0.4
+                "x": 333.3,
+                "y": 174.6,
+                "width": 0.5,
+                "height": 0.5
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 1201.225
@@ -372,9 +372,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 334.2,
-                "y": 174.1,
+                "y": 174.0,
                 "width": 0.5,
-                "height": 0.8
+                "height": 1.0
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -399,9 +399,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 335.5,
-                "y": 173.8,
+                "y": 173.5,
                 "width": 4.7,
-                "height": 1.8
+                "height": 2.4
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -421,16 +421,16 @@
               "kind": "oval",
               "bounds": {
                 "x": 335.8,
-                "y": 174.2,
-                "width": 0.7,
-                "height": 0.7
+                "y": 173.7,
+                "width": 0.8,
+                "height": 0.8
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 701.245
@@ -442,17 +442,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 336.4,
-                "y": 174.2,
-                "width": 0.7,
-                "height": 0.7
+                "x": 337.1,
+                "y": 173.7,
+                "width": 0.8,
+                "height": 0.8
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 701.245
@@ -464,17 +464,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 337.1,
-                "y": 174.2,
-                "width": 0.7,
-                "height": 0.7
+                "x": 338.5,
+                "y": 173.7,
+                "width": 0.8,
+                "height": 0.8
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 701.245
@@ -486,17 +486,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 337.8,
-                "y": 174.2,
-                "width": 0.7,
-                "height": 0.7
+                "x": 335.8,
+                "y": 174.9,
+                "width": 0.8,
+                "height": 0.8
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 701.245
@@ -508,17 +508,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 338.5,
-                "y": 174.2,
-                "width": 0.7,
-                "height": 0.7
+                "x": 337.1,
+                "y": 174.9,
+                "width": 0.8,
+                "height": 0.8
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 701.245
@@ -530,17 +530,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 339.1,
-                "y": 174.2,
-                "width": 0.7,
-                "height": 0.7
+                "x": 338.5,
+                "y": 174.9,
+                "width": 0.8,
+                "height": 0.8
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 1.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 701.245
@@ -553,9 +553,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 339.9,
-                "y": 173.9,
+                "y": 173.7,
                 "width": 0.9,
-                "height": 1.4
+                "height": 1.8
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -580,9 +580,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 339.6,
-                "y": 174.6,
+                "y": 174.2,
                 "width": 13.7,
-                "height": 2.6
+                "height": 3.5
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -601,17 +601,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 340.9,
-                "y": 175.2,
-                "width": 1.1,
-                "height": 1.1
+                "x": 340.8,
+                "y": 174.5,
+                "width": 1.3,
+                "height": 1.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 478.249
@@ -623,17 +623,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 342.9,
-                "y": 175.2,
-                "width": 1.1,
-                "height": 1.1
+                "x": 344.8,
+                "y": 174.5,
+                "width": 1.3,
+                "height": 1.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 478.249
@@ -645,17 +645,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 344.9,
-                "y": 175.2,
-                "width": 1.1,
-                "height": 1.1
+                "x": 348.7,
+                "y": 174.5,
+                "width": 1.3,
+                "height": 1.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 478.249
@@ -667,17 +667,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 346.9,
-                "y": 175.2,
-                "width": 1.1,
-                "height": 1.1
+                "x": 340.8,
+                "y": 176.1,
+                "width": 1.3,
+                "height": 1.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 478.249
@@ -689,17 +689,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 348.8,
-                "y": 175.2,
-                "width": 1.1,
-                "height": 1.1
+                "x": 344.8,
+                "y": 176.1,
+                "width": 1.3,
+                "height": 1.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 478.249
@@ -711,17 +711,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 350.8,
-                "y": 175.2,
-                "width": 1.1,
-                "height": 1.1
+                "x": 348.7,
+                "y": 176.1,
+                "width": 1.3,
+                "height": 1.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 478.249
@@ -734,9 +734,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 352.6,
-                "y": 174.9,
+                "y": 174.7,
                 "width": 2.7,
-                "height": 2.1
+                "height": 2.6
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -761,9 +761,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 324.4,
-                "y": 176.4,
+                "y": 175.6,
                 "width": 25.2,
-                "height": 4.8
+                "height": 6.5
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -782,17 +782,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 327.0,
-                "y": 177.5,
-                "width": 2.0,
-                "height": 2.0
+                "x": 326.9,
+                "y": 176.1,
+                "width": 2.3,
+                "height": 2.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 259.663
@@ -804,17 +804,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 330.6,
-                "y": 177.5,
-                "width": 2.0,
-                "height": 2.0
+                "x": 334.1,
+                "y": 176.1,
+                "width": 2.3,
+                "height": 2.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 259.663
@@ -826,17 +826,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 334.2,
-                "y": 177.5,
-                "width": 2.0,
-                "height": 2.0
+                "x": 341.4,
+                "y": 176.1,
+                "width": 2.3,
+                "height": 2.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 259.663
@@ -848,17 +848,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 337.8,
-                "y": 177.5,
-                "width": 2.0,
-                "height": 2.0
+                "x": 326.9,
+                "y": 179.3,
+                "width": 2.3,
+                "height": 2.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 259.663
@@ -870,17 +870,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 341.5,
-                "y": 177.5,
-                "width": 2.0,
-                "height": 2.0
+                "x": 334.1,
+                "y": 179.3,
+                "width": 2.3,
+                "height": 2.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 259.663
@@ -892,17 +892,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 345.1,
-                "y": 177.5,
-                "width": 2.0,
-                "height": 2.0
+                "x": 341.4,
+                "y": 179.3,
+                "width": 2.3,
+                "height": 2.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 259.663
@@ -915,9 +915,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 344.6,
-                "y": 176.9,
+                "y": 176.4,
                 "width": 12.6,
-                "height": 3.8
+                "height": 4.8
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -942,9 +942,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 329.6,
-                "y": 168.9,
+                "y": 167.8,
                 "width": 44.7,
-                "height": 6.0
+                "height": 8.1
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -963,17 +963,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 334.6,
-                "y": 170.4,
-                "width": 2.5,
-                "height": 2.5
+                "x": 334.4,
+                "y": 168.5,
+                "width": 2.9,
+                "height": 2.9
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 209.136
@@ -985,17 +985,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 341.0,
-                "y": 170.4,
-                "width": 2.5,
-                "height": 2.5
+                "x": 347.2,
+                "y": 168.5,
+                "width": 2.9,
+                "height": 2.9
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 209.136
@@ -1007,17 +1007,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 347.4,
-                "y": 170.4,
-                "width": 2.5,
-                "height": 2.5
+                "x": 360.1,
+                "y": 168.5,
+                "width": 2.9,
+                "height": 2.9
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 209.136
@@ -1029,17 +1029,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 353.9,
-                "y": 170.4,
-                "width": 2.5,
-                "height": 2.5
+                "x": 334.4,
+                "y": 172.3,
+                "width": 2.9,
+                "height": 2.9
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 209.136
@@ -1051,17 +1051,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 360.3,
-                "y": 170.4,
-                "width": 2.5,
-                "height": 2.5
+                "x": 347.2,
+                "y": 172.3,
+                "width": 2.9,
+                "height": 2.9
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 209.136
@@ -1073,17 +1073,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 366.8,
-                "y": 170.4,
-                "width": 2.5,
-                "height": 2.5
+                "x": 360.1,
+                "y": 172.3,
+                "width": 2.9,
+                "height": 2.9
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 209.136
@@ -1096,9 +1096,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 365.3,
-                "y": 169.5,
+                "y": 168.9,
                 "width": 22.4,
-                "height": 4.8
+                "height": 6.0
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -1123,9 +1123,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 344.7,
-                "y": 160.0,
+                "y": 158.8,
                 "width": 51.2,
-                "height": 6.8
+                "height": 9.2
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -1144,17 +1144,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 350.5,
-                "y": 161.7,
-                "width": 2.9,
-                "height": 2.9
+                "x": 350.3,
+                "y": 159.5,
+                "width": 3.3,
+                "height": 3.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 182.551
@@ -1166,17 +1166,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 357.9,
-                "y": 161.7,
-                "width": 2.9,
-                "height": 2.9
+                "x": 365.0,
+                "y": 159.5,
+                "width": 3.3,
+                "height": 3.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 182.551
@@ -1188,17 +1188,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 365.2,
-                "y": 161.7,
-                "width": 2.9,
-                "height": 2.9
+                "x": 379.8,
+                "y": 159.5,
+                "width": 3.3,
+                "height": 3.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 182.551
@@ -1210,17 +1210,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 372.6,
-                "y": 161.7,
-                "width": 2.9,
-                "height": 2.9
+                "x": 350.3,
+                "y": 164.0,
+                "width": 3.3,
+                "height": 3.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 182.551
@@ -1232,17 +1232,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 380.0,
-                "y": 161.7,
-                "width": 2.9,
-                "height": 2.9
+                "x": 365.0,
+                "y": 164.0,
+                "width": 3.3,
+                "height": 3.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 182.551
@@ -1254,17 +1254,17 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 387.4,
-                "y": 161.7,
-                "width": 2.9,
-                "height": 2.9
+                "x": 379.8,
+                "y": 164.0,
+                "width": 3.3,
+                "height": 3.3
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 182.551
@@ -1277,9 +1277,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 385.7,
-                "y": 160.7,
+                "y": 160.0,
                 "width": 25.6,
-                "height": 5.5
+                "height": 6.9
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -1304,9 +1304,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 358.2,
-                "y": 144.7,
+                "y": 144.1,
                 "width": 25.0,
-                "height": 3.3
+                "height": 4.5
               },
               "color": "#1c3f9c",
               "angle": 0,
@@ -1317,8 +1317,7 @@
               "physical": {
                 "sizeM": 30.0,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1326,22 +1325,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 361.0,
-                "y": 145.5,
-                "width": 1.4,
-                "height": 1.4
+                "x": 360.9,
+                "y": 144.5,
+                "width": 1.6,
+                "height": 1.6
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1349,22 +1347,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 364.6,
-                "y": 145.5,
-                "width": 1.4,
-                "height": 1.4
+                "x": 368.1,
+                "y": 144.5,
+                "width": 1.6,
+                "height": 1.6
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1372,22 +1369,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 368.2,
-                "y": 145.5,
-                "width": 1.4,
-                "height": 1.4
+                "x": 375.3,
+                "y": 144.5,
+                "width": 1.6,
+                "height": 1.6
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1395,22 +1391,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 371.8,
-                "y": 145.5,
-                "width": 1.4,
-                "height": 1.4
+                "x": 360.9,
+                "y": 146.6,
+                "width": 1.6,
+                "height": 1.6
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1418,22 +1413,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 375.4,
-                "y": 145.5,
-                "width": 1.4,
-                "height": 1.4
+                "x": 368.1,
+                "y": 146.6,
+                "width": 1.6,
+                "height": 1.6
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1441,22 +1435,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 379.0,
-                "y": 145.5,
-                "width": 1.4,
-                "height": 1.4
+                "x": 375.3,
+                "y": 146.6,
+                "width": 1.6,
+                "height": 1.6
               },
               "color": "#fff6d0",
               "angle": 0,
               "transparency": 0.0,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
                 "distanceM": 374.166
-              },
-              "behindCloud": true
+              }
             }
           },
           {
@@ -1465,9 +1458,9 @@
               "kind": "oval",
               "bounds": {
                 "x": 378.2,
-                "y": 145.0,
+                "y": 144.7,
                 "width": 12.5,
-                "height": 2.7
+                "height": 3.4
               },
               "color": "#ff5a1f",
               "angle": 0,
@@ -1478,8 +1471,369 @@
               "physical": {
                 "sizeM": 15.0,
                 "distanceM": 374.166
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 9200,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 365.7,
+                "y": 60.5,
+                "width": 10.0,
+                "height": 1.8
               },
-              "behindCloud": true
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 30.0,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 366.8,
+                "y": 60.6,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot haut 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 369.6,
+                "y": 60.6,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot haut 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 372.6,
+                "y": 60.6,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot haut 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 366.8,
+                "y": 61.5,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot bas 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 369.6,
+                "y": 61.5,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot bas 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 372.6,
+                "y": 61.5,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot bas 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 373.7,
+                "y": 60.6,
+                "width": 5.0,
+                "height": 1.4
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 0.1,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 15.0,
+                "distanceM": 935.415
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 9300,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 365.7,
+                "y": 60.5,
+                "width": 10.0,
+                "height": 1.8
+              },
+              "color": "#1c3f9c",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.8,
+              "selected": false,
+              "title": "Fuselage",
+              "physical": {
+                "sizeM": 30.0,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 366.8,
+                "y": 60.6,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot haut 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 369.6,
+                "y": 60.6,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot haut 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-3",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 372.6,
+                "y": 60.6,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot haut 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-4",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 366.8,
+                "y": 61.5,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot bas 1",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-5",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 369.6,
+                "y": 61.5,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot bas 2",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "hublot-6",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 372.6,
+                "y": 61.5,
+                "width": 0.7,
+                "height": 0.7
+              },
+              "color": "#fff6d0",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0.6,
+              "selected": false,
+              "title": "Hublot bas 3",
+              "physical": {
+                "sizeM": 1.68,
+                "distanceM": 935.415
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 373.7,
+                "y": 60.6,
+                "width": 5.0,
+                "height": 1.4
+              },
+              "color": "#ff5a1f",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Flamme arrière",
+              "physical": {
+                "sizeM": 15.0,
+                "distanceM": 935.415
+              }
             }
           }
         ]
@@ -1492,22 +1846,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 362.4,
-                "y": 140.4,
-                "width": 11.9,
-                "height": 1.6
+                "x": 365.7,
+                "y": 60.5,
+                "width": 10.0,
+                "height": 1.8
               },
               "color": "#1c3f9c",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.8,
               "selected": false,
               "title": "Fuselage",
               "physical": {
                 "sizeM": 30.0,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1515,22 +1868,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 363.8,
-                "y": 140.8,
+                "x": 366.8,
+                "y": 60.6,
                 "width": 0.7,
                 "height": 0.7
               },
               "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 1",
+              "title": "Hublot haut 1",
               "physical": {
                 "sizeM": 1.68,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1538,22 +1890,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 365.5,
-                "y": 140.8,
+                "x": 369.6,
+                "y": 60.6,
                 "width": 0.7,
                 "height": 0.7
               },
               "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 2",
+              "title": "Hublot haut 2",
               "physical": {
                 "sizeM": 1.68,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1561,22 +1912,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 367.2,
-                "y": 140.8,
+                "x": 372.6,
+                "y": 60.6,
                 "width": 0.7,
                 "height": 0.7
               },
               "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 3",
+              "title": "Hublot haut 3",
               "physical": {
                 "sizeM": 1.68,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1584,22 +1934,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 368.9,
-                "y": 140.8,
+                "x": 366.8,
+                "y": 61.5,
                 "width": 0.7,
                 "height": 0.7
               },
               "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 4",
+              "title": "Hublot bas 1",
               "physical": {
                 "sizeM": 1.68,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1607,22 +1956,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 370.6,
-                "y": 140.8,
+                "x": 369.6,
+                "y": 61.5,
                 "width": 0.7,
                 "height": 0.7
               },
               "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 5",
+              "title": "Hublot bas 2",
               "physical": {
                 "sizeM": 1.68,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1630,22 +1978,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 372.3,
-                "y": 140.8,
+                "x": 372.6,
+                "y": 61.5,
                 "width": 0.7,
                 "height": 0.7
               },
               "color": "#fff6d0",
               "angle": 0,
-              "transparency": 0.0,
+              "transparency": 1,
               "haloScale": 0.6,
               "selected": false,
-              "title": "Hublot 6",
+              "title": "Hublot bas 3",
               "physical": {
                 "sizeM": 1.68,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           },
           {
@@ -1653,22 +2000,21 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 372.0,
-                "y": 140.6,
-                "width": 6.0,
-                "height": 1.3
+                "x": 373.7,
+                "y": 60.6,
+                "width": 5.0,
+                "height": 1.4
               },
               "color": "#ff5a1f",
               "angle": 0,
-              "transparency": 0.1,
+              "transparency": 1,
               "haloScale": 1.6,
               "selected": false,
               "title": "Flamme arrière",
               "physical": {
                 "sizeM": 15.0,
-                "distanceM": 784.411
-              },
-              "behindCloud": true
+                "distanceM": 935.415
+              }
             }
           }
         ]
@@ -1794,17 +2140,33 @@
       {
         "t": 0,
         "weather": {
-          "cloudCover": 0.4,
-          "cloudDarkness": 0.15,
-          "cloudBaseM": 1800,
+          "cloudCover": 0.012499999999999997,
+          "cloudDarkness": 0.38000000000000006,
           "precipitationType": "none",
           "precipitationIntensity": 0,
-          "windDirectionDeg": 220,
-          "windSpeed": 5,
+          "windDirectionDeg": 162.75,
+          "windSpeed": 1.4425,
+          "storm": false
+        }
+      },
+      {
+        "t": 10000,
+        "weather": {
+          "cloudCover": 0.012361111111111114,
+          "cloudDarkness": 0.38,
+          "precipitationType": "none",
+          "precipitationIntensity": 0,
+          "windDirectionDeg": 162.7638888888889,
+          "windSpeed": 1.4426944444444443,
           "storm": false
         }
       }
     ]
   },
-  "decor": []
+  "decor": [],
+  "weatherSource": {
+    "id": "era5",
+    "name": "ERA5 (Open-Meteo)",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=32.3792&longitude=-86.3077&start_date=1948-07-24&end_date=1948-07-24&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
+  }
 }

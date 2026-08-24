@@ -20,7 +20,7 @@
     "title": "Lonnie Zamora"
   },
   "caseId": "socorro",
-  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites.",
+  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. La voiture de patrouille, à quelques mètres devant Zamora alors que l'engin est à une trentaine, masque ce qui passe derrière elle — elle ne le faisait pas jusqu'ici, et l'engin était peint par-dessus. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites.",
   "tags": [
     "RR3",
     "atterrissage",
@@ -48,9 +48,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 31.254
+              "angular": {
+                "widthDeg": 6.4071,
+                "heightDeg": 3.3071
               }
             }
           },
@@ -70,9 +70,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 31.254
+              "angular": {
+                "widthDeg": 1.3966,
+                "heightDeg": 1.121
               }
             }
           },
@@ -91,7 +91,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 2.205,
+                "heightDeg": 4.3901
+              }
             }
           },
           {
@@ -109,7 +113,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 2.4255,
+                "heightDeg": 1.7641
+              }
             }
           }
         ]
@@ -133,9 +141,9 @@
               "haloScale": 0.2,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 31.254
+              "angular": {
+                "widthDeg": 6.4071,
+                "heightDeg": 3.3071
               }
             }
           },
@@ -155,9 +163,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 31.254
+              "angular": {
+                "widthDeg": 1.3966,
+                "heightDeg": 1.121
               }
             }
           },
@@ -176,7 +184,11 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 2.205,
+                "heightDeg": 4.3901
+              }
             }
           },
           {
@@ -194,7 +206,11 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 2.4255,
+                "heightDeg": 1.7641
+              }
             }
           }
         ]
@@ -218,9 +234,9 @@
               "haloScale": 0.2,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 34.989
+              "angular": {
+                "widthDeg": 5.729,
+                "heightDeg": 2.9398
               }
             }
           },
@@ -240,9 +256,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 34.989
+              "angular": {
+                "widthDeg": 1.2496,
+                "heightDeg": 0.9924
               }
             }
           },
@@ -261,7 +277,11 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 1.9662,
+                "heightDeg": 3.9313
+              }
             }
           },
           {
@@ -279,7 +299,11 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 2.1683,
+                "heightDeg": 1.5804
+              }
             }
           }
         ]
@@ -303,9 +327,9 @@
               "haloScale": 0.2,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 38.874
+              "angular": {
+                "widthDeg": 5.1606,
+                "heightDeg": 2.6459
               }
             }
           },
@@ -325,9 +349,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 38.874
+              "angular": {
+                "widthDeg": 1.121,
+                "heightDeg": 0.9005
               }
             }
           },
@@ -346,7 +370,11 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 1.7641,
+                "heightDeg": 3.5274
+              }
             }
           },
           {
@@ -364,7 +392,11 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 1.9478,
+                "heightDeg": 1.415
+              }
             }
           }
         ]
@@ -388,9 +420,9 @@
               "haloScale": 0.2,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 42.389
+              "angular": {
+                "widthDeg": 4.7204,
+                "heightDeg": 2.4255
               }
             }
           },
@@ -410,9 +442,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 42.389
+              "angular": {
+                "widthDeg": 1.0291,
+                "heightDeg": 0.827
               }
             }
           },
@@ -431,7 +463,11 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 1.6171,
+                "heightDeg": 3.252
+              }
             }
           },
           {
@@ -449,7 +485,11 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 1.7825,
+                "heightDeg": 1.3048
+              }
             }
           }
         ]
@@ -473,9 +513,9 @@
               "haloScale": 0.2,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 45.983
+              "angular": {
+                "widthDeg": 4.3534,
+                "heightDeg": 2.2418
               }
             }
           },
@@ -495,9 +535,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 45.983
+              "angular": {
+                "widthDeg": 0.9556,
+                "heightDeg": 0.7535
               }
             }
           },
@@ -516,7 +556,11 @@
               "transparency": 0.15,
               "haloScale": 1.8,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 1.4885,
+                "heightDeg": 2.9949
+              }
             }
           },
           {
@@ -534,7 +578,11 @@
               "transparency": 0.2,
               "haloScale": 1.6,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 1.6355,
+                "heightDeg": 1.1945
+              }
             }
           }
         ]
@@ -558,9 +606,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 65.553
+              "angular": {
+                "widthDeg": 3.05,
+                "heightDeg": 1.5804
               }
             }
           },
@@ -580,9 +628,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 65.553
+              "angular": {
+                "widthDeg": 0.6616,
+                "heightDeg": 0.5329
               }
             }
           },
@@ -601,7 +649,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 1.0475,
+                "heightDeg": 2.0948
+              }
             }
           },
           {
@@ -619,7 +671,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 1.1578,
+                "heightDeg": 0.8454
+              }
             }
           }
         ]
@@ -643,9 +699,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 85.972
+              "angular": {
+                "widthDeg": 2.3336,
+                "heightDeg": 1.1945
               }
             }
           },
@@ -665,9 +721,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 85.972
+              "angular": {
+                "widthDeg": 0.5146,
+                "heightDeg": 0.4043
               }
             }
           },
@@ -686,7 +742,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.8086,
+                "heightDeg": 1.5988
+              }
             }
           },
           {
@@ -704,7 +764,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.8821,
+                "heightDeg": 0.6432
+              }
             }
           }
         ]
@@ -728,9 +792,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 213.666
+              "angular": {
+                "widthDeg": 0.9372,
+                "heightDeg": 0.4778
               }
             }
           },
@@ -750,9 +814,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 213.666
+              "angular": {
+                "widthDeg": 0.2022,
+                "heightDeg": 0.1654
               }
             }
           },
@@ -771,7 +835,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.3308,
+                "heightDeg": 0.6432
+              }
             }
           },
           {
@@ -789,7 +857,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.3492,
+                "heightDeg": 0.2573
+              }
             }
           }
         ]
@@ -813,9 +885,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 584.939
+              "angular": {
+                "widthDeg": 0.3492,
+                "heightDeg": 0.1838
               }
             }
           },
@@ -835,9 +907,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 584.939
+              "angular": {
+                "widthDeg": 0.0735,
+                "heightDeg": 0.0551
               }
             }
           },
@@ -856,7 +928,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.1103,
+                "heightDeg": 0.2389
+              }
             }
           },
           {
@@ -874,7 +950,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.1286,
+                "heightDeg": 0.0919
+              }
             }
           }
         ]
@@ -898,9 +978,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 3.5,
-                "distanceM": 1479.097
+              "angular": {
+                "widthDeg": 0.1286,
+                "heightDeg": 0.0735
               }
             }
           },
@@ -920,9 +1000,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Insigne rouge (taille rapportée, tracé approché)",
-              "physical": {
-                "sizeM": 0.76,
-                "distanceM": 1479.097
+              "angular": {
+                "widthDeg": 0.0368,
+                "heightDeg": 0.0184
               }
             }
           },
@@ -941,7 +1021,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Flamme"
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0551,
+                "heightDeg": 0.0919
+              }
             }
           },
           {
@@ -959,7 +1043,11 @@
               "transparency": 1.0,
               "haloScale": 0.0,
               "selected": false,
-              "title": "Base orange de la flamme"
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0551,
+                "heightDeg": 0.0368
+              }
             }
           }
         ]
@@ -1068,7 +1156,13 @@
       "eastM": 0,
       "northM": 8,
       "headingDeg": 225,
-      "lit": false
+      "lit": false,
+      "occludesSourceIds": [
+        "flamme",
+        "flamme-base",
+        "insigne",
+        "ufo-1"
+      ]
     },
     {
       "id": "dynamite-shack",

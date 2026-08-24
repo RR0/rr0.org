@@ -47,9 +47,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 18.014
+              "angular": {
+                "widthDeg": 19.2244,
+                "heightDeg": 3.8211
               }
             }
           }
@@ -74,9 +74,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 10.623
+              "angular": {
+                "widthDeg": 32.0345,
+                "heightDeg": 6.4621
               }
             }
           }
@@ -101,9 +101,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 3.276
+              "angular": {
+                "widthDeg": 85.9155,
+                "heightDeg": 20.7572
               }
             }
           }
@@ -128,9 +128,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 3.276
+              "angular": {
+                "widthDeg": 85.9155,
+                "heightDeg": 20.7572
               }
             }
           }
@@ -155,9 +155,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 3.276
+              "angular": {
+                "widthDeg": 85.9155,
+                "heightDeg": 20.7572
               }
             }
           }
@@ -182,9 +182,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 3.298
+              "angular": {
+                "widthDeg": 85.5205,
+                "heightDeg": 20.6149
               }
             }
           }
@@ -209,9 +209,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 11.2
+              "angular": {
+                "widthDeg": 30.4665,
+                "heightDeg": 6.1323
               }
             }
           }
@@ -236,9 +236,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 25.806
+              "angular": {
+                "widthDeg": 13.4818,
+                "heightDeg": 2.6643
               }
             }
           }
@@ -263,9 +263,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 75.963
+              "angular": {
+                "widthDeg": 4.5919,
+                "heightDeg": 0.9005
               }
             }
           }
@@ -290,9 +290,9 @@
               "haloScale": 0.0,
               "selected": false,
               "title": "Objet",
-              "physical": {
-                "sizeM": 6.1,
-                "distanceM": 264.826
+              "angular": {
+                "widthDeg": 1.3231,
+                "heightDeg": 0.2573
               }
             }
           }

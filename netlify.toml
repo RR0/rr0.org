@@ -1,3 +1,53 @@
+# THE PART OF netlify.toml THAT IS NOT DERIVED FROM .htaccess.
+#
+# Everything in netlify.toml below the banner is generated from .htaccess on every build. This file
+# is what comes before it, and it exists because Apache's Redirect and Header cannot say any of the
+# things below: a redirect carrying its own status, a redirect forced ahead of an existing file, a
+# redirect from an absolute URL on another domain, a header scoped to less than the whole site.
+#
+# These lines used to live in netlify.toml itself, and every full regeneration wiped them — twice
+# they went missing with nothing failing anywhere. Edit them HERE.
+
+# ufoathome.org is a domain of its own pointing at one page of this site, with the path it was asked
+# for handed on as the observation to open. `force` because Netlify would otherwise serve a file of
+# that name if one existed; 301 because the domain really has moved here for good.
+[[redirects]]
+  from = "https://ufoathome.org/*"
+  to = "https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ufoathome.org/*"
+  to = "https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat"
+  status = 301
+  force = true
+
+# READABLE FROM ANYWHERE, and across the whole site rather than under one prefix.
+#
+# Two things need it. The (?) panel of each reconstruction hands out a self-contained markup snippet
+# meant to be pasted into any other site: that page loads the module bundle AND the observation's own
+# JSON cross-origin. And the case CATALOG (@rr0/case, which vraiufo.com is built on) reads
+# /casesDirs.json at the root and then a case.json inside each of the 261 directories it names.
+#
+# Those directories are the reason this is not a prefix list. A case file lives NEXT TO THE PAGE IT
+# DOCUMENTS — under science/ for most, but also people/ for a witness's own file and time/ for one
+# dated 1608 — because that is how this site is arranged, and any new case may land anywhere in it.
+# A list of prefixes would be a list that has to be kept in step with a directory tree deliberately
+# left open, and it would fail silently the first time it fell out of step: exactly what happened
+# here, where the catalog's own index sat at the root and outside the one prefix listed.
+#
+# Nothing is given away by it. Every one of these files is already public, served to anyone who asks
+# over plain HTTP, with no session and no credentials anywhere near them — a browser refusing to hand
+# a script bytes it will happily render is protecting nothing here.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+# Everything below this line is generated from .htaccess on every build. Change it there — or, for
+# what .htaccess cannot say, in the preamble above. Editing it HERE will not survive the next build.
+
 [[redirects]]
   from = "/data/*"
   to = "/time/:splat"
@@ -12,17 +62,6 @@
   from = "/lieu/*"
   to = "/place/:splat"
 
-[[redirects]]
-  from = "https://ufoathome.org/*"
-  to = "https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.ufoathome.org/*"
-  to = "https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat"
-  status = 301
-  force = true
 
 [[redirects]]
   from = "/lieux.html"
@@ -4498,24 +4537,3 @@
   from = "/science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html"
   to = "/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html"
 
-# READABLE FROM ANYWHERE, and across the whole site rather than under one prefix.
-#
-# Two things need it. The (?) panel of each reconstruction hands out a self-contained markup snippet
-# meant to be pasted into any other site: that page loads the module bundle AND the observation's own
-# JSON cross-origin. And the case CATALOG (@rr0/case, which vraiufo.com is built on) reads
-# /casesDirs.json at the root and then a case.json inside each of the 261 directories it names.
-#
-# Those directories are the reason this is not a prefix list. A case file lives NEXT TO THE PAGE IT
-# DOCUMENTS — under science/ for most, but also people/ for a witness's own file and time/ for one
-# dated 1608 — because that is how this site is arranged, and any new case may land anywhere in it.
-# A list of prefixes would be a list that has to be kept in step with a directory tree deliberately
-# left open, and it would fail silently the first time it fell out of step: exactly what happened
-# here, where the catalog's own index sat at the root and outside the one prefix listed.
-#
-# Nothing is given away by it. Every one of these files is already public, served to anyone who asks
-# over plain HTTP, with no session and no credentials anywhere near them — a browser refusing to hand
-# a script bytes it will happily render is protecting nothing here.
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"

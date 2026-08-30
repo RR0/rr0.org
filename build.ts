@@ -155,6 +155,9 @@ getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileN
   const generator = new CMSGenerator({
     contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, dataOptions,
     siteBaseUrl, timeFormat, directoryPages,
+    // What netlify.toml needs and .htaccess cannot say — see the file's own header. Everything else
+    // in netlify.toml is generated from .htaccess on every build, and used to take these with it.
+    netlifyPreambleFile: "netlify.head.toml",
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
     directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author", "time/1/9/7/7/Poher_Matrice/app/dist"],

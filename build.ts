@@ -106,6 +106,12 @@ const copies = copiesArg ? copiesArg : [
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",
   "source/index.css", "note/index.css",
   "link.css", "quote.css",
+  // EVERY stylesheet, not just the site-wide ones listed above. A page may carry its own —
+  // Jessup's Varo edition needs varo.css to tell its three annotators apart by colour, which is
+  // the whole point of that transcription — and those never reached out/ at all, so varo.css has
+  // been answering 404 on the live site and every one of those pages has been showing its
+  // annotations in plain black.
+  "**/*.css",
   "footer.css", "images/facebook.svg", "images/instagram.svg", "images/medium.svg", "images/youtube.svg", "images/X_logo.svg", "images/github.svg", "images/email.svg", "images/tiktok.svg", "images/bluesky.svg",
   "time/DualRangeComponent.mjs",
   "index/index.js", "lang/form.js", "lang/form.css", "lang/speech.js", "lang/speech.css",

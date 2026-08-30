@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 1900s,"",sighting,1900$,,"",1900,event,https://rr0.org/time/1/9/index.html
 1910s,"",sighting,1900$,,"",1900,event,https://rr0.org/time/1/9/index.html
 1920s,"",sighting,1900$,,"",1900,event,https://rr0.org/time/1/9/index.html

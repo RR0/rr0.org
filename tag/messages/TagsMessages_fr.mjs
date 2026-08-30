@@ -15,6 +15,7 @@ export const tagsMessages_fr = {
     exoplanets: "Exoplanètes",
     seti: "SETI",
     astronomy: "Astronomie",
+    cosmology: "Cosmologie",
     astrobiology: "Astrobiologie",
     physics: "Physique",
     parapsychology: "Parapsychologie",

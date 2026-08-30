@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 "A Groom Lake, Le projet de construction OXCART est achevé et la population de la base atteint 1835 personnes.","",sighting,1965$,,""""","""",s1,"""",,McIninch",1965,event,https://rr0.org/time/1/9/6/5/index.html
 ,"",sighting,1965-01$,,"",1965-01,event,https://rr0.org/time/1/9/6/5/index.html#1965-01
 ,"",sighting,1965-03$,,"",1965-03,event,https://rr0.org/time/1/9/6/5/index.html#1965-03

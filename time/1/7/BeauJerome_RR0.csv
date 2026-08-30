@@ -1,4 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 00,"",sighting,1700$,,"",1700,event,https://rr0.org/time/1/7/index.html
 02,"",sighting,1700$,,"",1700,event,https://rr0.org/time/1/7/index.html
 04,"",sighting,1700$,,"",1700,event,https://rr0.org/time/1/7/index.html

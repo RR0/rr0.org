@@ -8,6 +8,7 @@ export const tagsMessages_en = {
     exoplanets: "Exoplanets",
     seti: "SETI",
     astronomy: "Astronomy",
+    cosmology: "Cosmology",
     astrobiology: "Astrobiology",
     physics: "Physics",
     parapsychology: "Parapsychology",

@@ -194,7 +194,7 @@ Below is a description of the directory structure.
 - [`.editorconfig`](.editorconfig) Code editing settings.
 - [`.eslintrc`](.eslintrc) Code convention settings
 - [`.gitignore`](.gitignore) Files that must not be versioned in the Git repository.
-- [`.htaccess`](.htaccess) The legacy rules for redirecting legacy URLs to new ones. The RR0 build should read it and convert it into a `netlify.toml` configuration file now.
+- [`.htaccess`](.htaccess) The legacy rules for redirecting legacy URLs to new ones. The RR0 build should read it and convert it into the `out/_redirects` Netlify reads from the deployed directory.
 - [`.nvmrc`](.nvmrc) The Node version requirement. Allows to select it automatically when command lines open into this directory.
 - [`404.html`](404.html) The page to be displayed when a RR0 URL is not matching any existing page.
 - [`apple-touch-icon`](apple-touch-icon.png) RR0 Logo, used by search result page and page tabs icons.

@@ -231,5 +231,5 @@ npm run build -- --contents "time/**/*.html" --force true
 
 ### Deployment
 
-Site is hosted on Netlify. The `netlify.toml` defines the publish directory (`out/`) and legacy URL redirects. Deploy
-with `npm run deploy` (calls `netlify deploy --prod --dir out`).
+Site is hosted on Netlify, and its configuration is BUILD OUTPUT, not a tracked file. `out/_redirects` is generated from `.htaccess` (plus `_redirects.head`, which holds what Apache cannot say: the ufoathome.org redirects, with their status and force). `out/_headers` is a copy of `_headers` and carries the sitewide CORS rule. Netlify reads both from the DEPLOYED directory, so neither has to be committed — unlike `netlify.toml`, which it reads from the clone before any build runs, and which this site no longer has. The publish directory and build command live in the Netlify project settings.
+Deploy with `npm run deploy` (calls `netlify deploy --prod --dir out`).

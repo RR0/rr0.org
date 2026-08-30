@@ -1,0 +1,13 @@
+# THE PART OF _redirects THAT IS NOT DERIVED FROM .htaccess.
+#
+# Everything in out/_redirects below the banner is generated from .htaccess on every build. This
+# file is what comes before it, and it exists because Apache's Redirect cannot say what these say:
+# a redirect from an absolute URL on another domain, carrying its own status, forced ahead of any
+# file that might share the path.
+#
+# `301!` is that force — the bang is Netlify's own way of saying "even if a file exists there".
+
+# ufoathome.org is a domain of its own pointing at one page of this site, with the path it was asked
+# for handed on as the observation to open.
+https://ufoathome.org/*      https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat  301!
+https://www.ufoathome.org/*  https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat  301!

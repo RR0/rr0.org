@@ -93,6 +93,9 @@ const contentRoots = (cliContents
   ]).concat(mandatoryRoots)
 const copiesArg = args.copies
 const copies = copiesArg ? copiesArg : [
+  // Netlify reads _headers from the DEPLOYED directory, never from the clone — which is the whole
+  // reason it is here rather than in netlify.toml. See the file's own header.
+  "_headers",
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
   "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css", "math.css",
   // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
@@ -155,9 +158,11 @@ getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileN
   const generator = new CMSGenerator({
     contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, dataOptions,
     siteBaseUrl, timeFormat, directoryPages,
-    // What netlify.toml needs and .htaccess cannot say — see the file's own header. Everything else
-    // in netlify.toml is generated from .htaccess on every build, and used to take these with it.
-    netlifyPreambleFile: "netlify.head.toml",
+    // Netlify's plain format rather than netlify.toml, and written into the PUBLISHED directory.
+    // netlify.toml is read from the clone before any build runs, so it would have to be committed —
+    // a generated file, tracked, inviting the hand-edit that overwrites itself. This is build output
+    // like everything else. The preamble holds what .htaccess cannot say; _headers is a copy.
+    netlify: {format: "redirects", outputPath: "out/_redirects", preambleFile: "_redirects.head"},
     ufoCaseDirectoryFile: "science/crypto/ufo/enquete/dossier/index.html",
     ufoCasesExclusions: ["science/crypto/ufo/enquete/dossier/canular"], sourceRegistryFileName,
     directoryExcluded: ["people/Astronomers_fichiers", "people/witness", "people/author", "time/1/9/7/7/Poher_Matrice/app/dist"],

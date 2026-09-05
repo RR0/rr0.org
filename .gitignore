@@ -11,9 +11,5 @@ node_modules/
 .idea/
 .env
 # Synced from @rr0/ufoathome's node_modules by `npm run sync:ufoathome` (prebuild) — not hand-maintained.
-# Globs (not exact names) because i18n message modules are split into separate, content-hashed
-# chunk files (e.g. UfoMessages_fr-XXXX.js) alongside the three named bundles.
-/science/crypto/ufo/*.mjs
-/science/crypto/ufo/*.js
 /blog/arts-parts-was-first-exposed-in-1996-in-this-book-get-over-it.html
 /blog/out/

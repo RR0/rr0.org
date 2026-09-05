@@ -7,12 +7,12 @@
     "hour": 17,
     "minute": 50
   },
-  "durationSeconds": 20,
+  "durationSeconds": 120,
   "utcOffsetHours": -7,
   "place": [
     {
-      "lat": 34.0425,
-      "lng": -106.897778
+      "lat": 34.052376,
+      "lng": -106.89344
     }
   ],
   "witness": {
@@ -20,7 +20,7 @@
     "title": "Lonnie Zamora"
   },
   "caseId": "socorro",
-  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. La voiture de patrouille, à quelques mètres devant Zamora alors que l'engin est à une trentaine, masque ce qui passe derrière elle — elle ne le faisait pas jusqu'ici, et l'engin était peint par-dessus. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites. Les deux objets de décor portent désormais leurs dimensions réelles plutôt que la boîte générique que l'outil dessinait pour tout véhicule et tout bâtiment : la voiture est cotée comme la Pontiac de 1964 que Zamora conduisait (5,44 × 2,02 × 1,42 m, dimensions publiées du modèle) ; l'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) — c'est une estimation assumée, pas une mesure, mais elle vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le modèle 3D de la voiture est un substitut assumé : une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), pas une Pontiac de 1964. Ce sont les DIMENSIONS qui sont celles du vrai modèle ; la forme n'est là que pour qu'une voiture se lise comme une voiture plutôt que comme un bâtiment, en attendant qu'un modèle exact existe. Le trajet de Zamora passe désormais à 2,6 m à l'est de sa voiture au lieu de la traverser : à t = 5 s il se tenait exactement à l'emplacement du véhicule, ce qui plaçait la caméra dans l'habitacle un instant. Il la contourne, puis s'arrête derrière elle — l'engin reste masqué par la voiture, comme le dit le rapport. Le lieu a été ré-identifié : 34°02′33″N 106°53′52″W (34,0425 ; −106,897778), au sud-est de Socorro près de High School Road, d'après la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu jusqu'ici, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, il n'offre que 23 m de dénivelé sur tout le carré de 1,8 km, contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. C'est un terrain qui a des collines, et le récit en exige.",
+  "description": "Tout le témoignage de Lonnie Zamora, d'un seul tenant : les six moments que le croquis du dossier Blue Book lettre A à F ne sont pas six extraits mais six repères posés sur un même enregistrement de deux minutes, que le lecteur traverse sans coupure — parce que c'est ainsi que Zamora l'a vécu. Ce qui est CALCULÉ. L'objet mesure 3,36 × 1,73 m, non pas décrété mais déduit des 6,41° × 3,31° que la phase rapprochée énonçait déjà à la trentaine de mètres du croquis (100 pieds). Le même objet à 800 pieds (244 m) fait alors 0,79° de large, et les deux silhouettes 0,31° de haut : deux traits de deux pixels à côté d'un objet d'une vingtaine. C'est ce que « il les a vues à 800 pieds » veut dire, et c'est ce qu'aucune illustration de ce cas ne montre. À cinq milles, l'objet fait 0,024°. L'axe d'approche se déduit lui aussi : Zamora voit l'engin au même azimut à 800 pieds qu'à 100, il a donc roulé droit dessus, et le trajet est porté par cette droite. Les distances viennent du croquis (800′, 100′, 5 milles). Ce qui est ASSUMÉ, et doit se lire comme tel. La répartition des six moments dans les deux minutes vient de l'ORDRE du récit, pas d'un chronomètre : aucune source ne minute cette séquence. L'élévation de l'objet à 800 pieds (−1,5°, interpolée jusqu'aux −7,7° que la phase rapprochée énonce) suppose qu'il est plus haut sur la pente qu'à la fin. Son cap est tenu à 200° du début à la fin. Et sa voiture est dessinée là où il l'a garée, non le long du trajet : le modèle ne sait pas encore dire « le témoin est à l'intérieur de cet objet » au fil du temps, et une voiture posée sur la caméra mettrait le lecteur dans la tôle. Le son suit le récit et rien d'autre : le rugissement entendu de loin, qui passe de l'aigu au grave puis s'arrête (B) — un keyframe « none » est un silence ÉNONCÉ, pas un enregistrement muet ; les deux bruits sourds avant le décollage, puis le rugissement qui monte et s'éteint pendant que l'objet part. Les deux silhouettes en combinaison blanche figurent enfin, à (D) et seulement là : Zamora ne les a vues qu'au premier regard, et elles avaient disparu quand il s'est approché. La voiture de patrouille masque ce qui passe derrière elle. Ses dimensions sont celles de la Pontiac de 1964 qu'il conduisait (5,44 × 2,02 × 1,42 m, cotes publiées du modèle) ; sa FORME est un substitut assumé, une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), le temps qu'un modèle exact existe. L'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) : une estimation assumée, mais qui vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le lieu est 34°02′33″N 106°53′52″W, au sud-est de Socorro près de High School Road, identifié par la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu auparavant, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, 23 m de dénivelé sur le carré de 1,8 km contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. Le récit exige des collines ; celui-là en a.",
   "tags": [
     "RR3",
     "atterrissage",
@@ -31,6 +31,1239 @@
     "keyframes": [
       {
         "t": 0,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.5,
+                "y": 179.8,
+                "width": 1.0,
+                "height": 0.5
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.1603,
+                "heightDeg": 0.0827
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.5,
+                "y": 179.8,
+                "width": 1.0,
+                "height": 0.5
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.1603,
+                "heightDeg": 0.0827
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 89.8,
+                "width": 0.3,
+                "height": 0.7
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0551,
+                "heightDeg": 0.1098
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 90.3,
+                "width": 0.4,
+                "height": 0.3
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0606,
+                "heightDeg": 0.0441
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 89.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 89.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 6000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.4,
+                "y": 179.7,
+                "width": 1.2,
+                "height": 0.6
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.1924,
+                "heightDeg": 0.0992
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.4,
+                "y": 179.7,
+                "width": 1.2,
+                "height": 0.6
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.1924,
+                "heightDeg": 0.0992
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 131.7,
+                "width": 0.4,
+                "height": 0.8
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0662,
+                "heightDeg": 0.1318
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 132.3,
+                "width": 0.4,
+                "height": 0.3
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0728,
+                "heightDeg": 0.0529
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 131.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 131.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 8000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.4,
+                "y": 179.7,
+                "width": 1.2,
+                "height": 0.6
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.2025,
+                "heightDeg": 0.1045
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.4,
+                "y": 179.7,
+                "width": 1.2,
+                "height": 0.6
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.2025,
+                "heightDeg": 0.1045
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 140.6,
+                "width": 0.4,
+                "height": 0.8
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0696,
+                "heightDeg": 0.1387
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 141.3,
+                "width": 0.5,
+                "height": 0.3
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0766,
+                "heightDeg": 0.0557
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 140.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 140.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 50000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 318.1,
+                "y": 179.0,
+                "width": 3.8,
+                "height": 2.0
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.6414,
+                "heightDeg": 0.3308
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 318.1,
+                "y": 179.0,
+                "width": 3.8,
+                "height": 2.0
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.6414,
+                "heightDeg": 0.3308
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.3,
+                "y": 148.7,
+                "width": 1.3,
+                "height": 2.6
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.2205,
+                "heightDeg": 0.4392
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.3,
+                "y": 150.8,
+                "width": 1.5,
+                "height": 1.1
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.2426,
+                "heightDeg": 0.1764
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 149.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 149.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 52000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.6,
+                "y": 157.8,
+                "width": 4.7,
+                "height": 2.4
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.7886,
+                "heightDeg": 0.4067
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.5,
+                "y": 158.6,
+                "width": 1.0,
+                "height": 0.8
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.1717,
+                "heightDeg": 0.1378
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.6,
+                "y": 178.8,
+                "width": 4.7,
+                "height": 2.4
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.7886,
+                "heightDeg": 0.4067
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.6,
+                "y": 178.8,
+                "width": 4.7,
+                "height": 2.4
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.7886,
+                "heightDeg": 0.4067
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 316.4,
+                "y": 158.4,
+                "width": 0.6,
+                "height": 1.8
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.1057,
+                "heightDeg": 0.3053
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 323.0,
+                "y": 158.4,
+                "width": 0.6,
+                "height": 1.8
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.1057,
+                "heightDeg": 0.3053
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 57000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.6,
+                "y": 157.8,
+                "width": 4.7,
+                "height": 2.4
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.7886,
+                "heightDeg": 0.4067
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.5,
+                "y": 158.6,
+                "width": 1.0,
+                "height": 0.8
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.1717,
+                "heightDeg": 0.1378
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.6,
+                "y": 178.8,
+                "width": 4.7,
+                "height": 2.4
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.7886,
+                "heightDeg": 0.4067
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.6,
+                "y": 178.8,
+                "width": 4.7,
+                "height": 2.4
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.7886,
+                "heightDeg": 0.4067
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.5,
+                "y": 158.4,
+                "width": 0.6,
+                "height": 1.8
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.1057,
+                "heightDeg": 0.3053
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 323.9,
+                "y": 158.4,
+                "width": 0.6,
+                "height": 1.8
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.1057,
+                "heightDeg": 0.3053
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 60000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.3,
+                "y": 163.5,
+                "width": 5.5,
+                "height": 2.8
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.9162,
+                "heightDeg": 0.4726
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.4,
+                "y": 164.5,
+                "width": 1.2,
+                "height": 1.0
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.1995,
+                "heightDeg": 0.1601
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.3,
+                "y": 178.6,
+                "width": 5.5,
+                "height": 2.8
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.9162,
+                "heightDeg": 0.4726
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.3,
+                "y": 178.6,
+                "width": 5.5,
+                "height": 2.8
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.9162,
+                "heightDeg": 0.4726
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 316.3,
+                "y": 164.2,
+                "width": 0.7,
+                "height": 2.1
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.1228,
+                "heightDeg": 0.3547
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 322.9,
+                "y": 164.2,
+                "width": 0.7,
+                "height": 2.1
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.1228,
+                "heightDeg": 0.3547
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 68000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.2,
+                "y": 178.1,
+                "width": 9.6,
+                "height": 5.0
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 1.6033,
+                "heightDeg": 0.827
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.0,
+                "y": 179.8,
+                "width": 2.1,
+                "height": 1.7
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.3492,
+                "heightDeg": 0.2803
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.2,
+                "y": 177.5,
+                "width": 9.6,
+                "height": 5.0
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 1.6033,
+                "heightDeg": 0.827
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.2,
+                "y": 177.5,
+                "width": 9.6,
+                "height": 5.0
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 1.6033,
+                "heightDeg": 0.827
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 316.1,
+                "y": 179.4,
+                "width": 1.3,
+                "height": 3.7
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.2149,
+                "heightDeg": 0.6207
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 322.7,
+                "y": 179.4,
+                "width": 1.3,
+                "height": 3.7
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.2149,
+                "heightDeg": 0.6207
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 73000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 307.2,
+                "y": 187.1,
+                "width": 25.6,
+                "height": 13.2
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 4.2739,
+                "heightDeg": 2.2051
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 317.2,
+                "y": 191.4,
+                "width": 5.6,
+                "height": 4.5
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.9311,
+                "heightDeg": 0.7473
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 307.2,
+                "y": 173.4,
+                "width": 25.6,
+                "height": 13.2
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 4.2739,
+                "heightDeg": 2.2051
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 307.2,
+                "y": 173.4,
+                "width": 25.6,
+                "height": 13.2
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 4.2739,
+                "heightDeg": 2.2051
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.0,
+                "y": 190.4,
+                "width": 3.4,
+                "height": 9.9
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.573,
+                "heightDeg": 1.6551
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 321.6,
+                "y": 190.4,
+                "width": 3.4,
+                "height": 9.9
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.573,
+                "heightDeg": 1.6551
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 75000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -119,11 +1352,55 @@
                 "heightDeg": 1.7641
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 2000,
+        "t": 77000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -212,11 +1489,55 @@
                 "heightDeg": 1.7641
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 3500,
+        "t": 78500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -305,11 +1626,55 @@
                 "heightDeg": 1.5804
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 5000,
+        "t": 80000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -398,11 +1763,55 @@
                 "heightDeg": 1.415
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 6500,
+        "t": 81500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -491,11 +1900,55 @@
                 "heightDeg": 1.3048
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 8000,
+        "t": 83000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -584,11 +2037,55 @@
                 "heightDeg": 1.1945
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 9500,
+        "t": 84500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -677,11 +2174,55 @@
                 "heightDeg": 0.8454
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 11000,
+        "t": 86000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -770,11 +2311,55 @@
                 "heightDeg": 0.6432
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 14000,
+        "t": 89000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -863,11 +2448,55 @@
                 "heightDeg": 0.2573
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 17000,
+        "t": 92000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -956,11 +2585,55 @@
                 "heightDeg": 0.0919
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       },
       {
-        "t": 20000,
+        "t": 95000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1049,6 +2722,461 @@
                 "heightDeg": 0.0368
               }
             }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 100000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 439.7,
+                "y": 117.0,
+                "width": 0.4,
+                "height": 0.2
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.0641,
+                "heightDeg": 0.0331
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 439.8,
+                "y": 117.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.014,
+                "heightDeg": 0.0112
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 179.9,
+                "width": 0.4,
+                "height": 0.2
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0641,
+                "heightDeg": 0.0331
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.8,
+                "y": 179.9,
+                "width": 0.4,
+                "height": 0.2
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0641,
+                "heightDeg": 0.0331
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 115000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 451.8,
+                "y": 114.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.0239,
+                "heightDeg": 0.0123
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 451.8,
+                "y": 114.1,
+                "width": 0.0,
+                "height": 0.0
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.0052,
+                "heightDeg": 0.0042
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 180.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0239,
+                "heightDeg": 0.0123
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 180.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0239,
+                "heightDeg": 0.0123
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 120000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 453.0,
+                "y": 114.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 0.0239,
+                "heightDeg": 0.0123
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 453.0,
+                "y": 114.1,
+                "width": 0.0,
+                "height": 0.0
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 0.0052,
+                "heightDeg": 0.0042
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 180.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 0.0239,
+                "heightDeg": 0.0123
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 180.0,
+                "width": 0.1,
+                "height": 0.1
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 0.0239,
+                "heightDeg": 0.0123
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1.0,
+              "haloScale": 0.0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              }
+            }
           }
         ]
       }
@@ -1066,8 +3194,8 @@
       {
         "t": 0,
         "pose": {
-          "lat": 34.0425,
-          "lng": -106.897778,
+          "lat": 34.052376,
+          "lng": -106.89344,
           "elevationM": 0,
           "headingDeg": 200.0,
           "pitchDeg": -5.0,
@@ -1075,7 +3203,73 @@
         }
       },
       {
-        "t": 2000,
+        "t": 8000,
+        "pose": {
+          "lat": 34.050688,
+          "lng": -106.894181,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 25000,
+        "pose": {
+          "lat": 34.047312,
+          "lng": -106.895665,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 45000,
+        "pose": {
+          "lat": 34.045201,
+          "lng": -106.896591,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 52000,
+        "pose": {
+          "lat": 34.044306,
+          "lng": -106.896985,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 68000,
+        "pose": {
+          "lat": 34.04326,
+          "lng": -106.897444,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 73000,
+        "pose": {
+          "lat": 34.042627,
+          "lng": -106.897722,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 75000,
         "pose": {
           "lat": 34.0425,
           "lng": -106.897778,
@@ -1086,7 +3280,18 @@
         }
       },
       {
-        "t": 5000,
+        "t": 77000,
+        "pose": {
+          "lat": 34.0425,
+          "lng": -106.897778,
+          "elevationM": 0,
+          "headingDeg": 200.0,
+          "pitchDeg": -5.0,
+          "fovDeg": 60.0
+        }
+      },
+      {
+        "t": 80000,
         "pose": {
           "lat": 34.042572,
           "lng": -106.89775,
@@ -1097,7 +3302,7 @@
         }
       },
       {
-        "t": 8000,
+        "t": 83000,
         "pose": {
           "lat": 34.042635,
           "lng": -106.89775,
@@ -1108,7 +3313,7 @@
         }
       },
       {
-        "t": 20000,
+        "t": 120000,
         "pose": {
           "lat": 34.042635,
           "lng": -106.89775,
@@ -1153,8 +3358,8 @@
       "id": "patrol-car",
       "kind": "vehicle",
       "title": "Voiture de patrouille de Zamora",
-      "eastM": 0,
-      "northM": 8,
+      "eastM": -400.2,
+      "northM": -1091.4,
       "headingDeg": 225,
       "lit": false,
       "occludesSourceIds": [
@@ -1176,8 +3381,8 @@
       "id": "dynamite-shack",
       "kind": "building",
       "title": "Abri à dynamite",
-      "eastM": -73.7,
-      "northM": -51.6,
+      "eastM": -473.9,
+      "northM": -1151.0,
       "floors": 0,
       "lit": false,
       "sizeM": {
@@ -1192,5 +3397,129 @@
     "name": "ERA5 (Open-Meteo)",
     "url": "https://archive-api.open-meteo.com/v1/archive?latitude=34.0425&longitude=-106.897778&start_date=1964-04-25&end_date=1964-04-25&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
   },
-  "instrument": "eye"
+  "instrument": "eye",
+  "soundTrack": {
+    "keyframes": [
+      {
+        "t": 0,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.55,
+          "pitchHz": 240
+        }
+      },
+      {
+        "t": 10000,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.4,
+          "pitchHz": 90
+        }
+      },
+      {
+        "t": 15000,
+        "sound": {
+          "kind": "none",
+          "volume": 0,
+          "pitchHz": 90
+        }
+      },
+      {
+        "t": 73800,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.35,
+          "pitchHz": 55
+        }
+      },
+      {
+        "t": 74400,
+        "sound": {
+          "kind": "none",
+          "volume": 0,
+          "pitchHz": 55
+        }
+      },
+      {
+        "t": 74900,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.35,
+          "pitchHz": 55
+        }
+      },
+      {
+        "t": 75500,
+        "sound": {
+          "kind": "none",
+          "volume": 0,
+          "pitchHz": 55
+        }
+      },
+      {
+        "t": 76000,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.9,
+          "pitchHz": 70
+        }
+      },
+      {
+        "t": 79000,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.95,
+          "pitchHz": 170
+        }
+      },
+      {
+        "t": 88000,
+        "sound": {
+          "kind": "rumble",
+          "volume": 0.25,
+          "pitchHz": 210
+        }
+      },
+      {
+        "t": 90000,
+        "sound": {
+          "kind": "none",
+          "volume": 0,
+          "pitchHz": 210
+        }
+      }
+    ]
+  },
+  "milestones": [
+    {
+      "t": 0,
+      "label": "A",
+      "note": "Zamora entend un rugissement et voit une flamme dans le ciel."
+    },
+    {
+      "t": 15000,
+      "label": "B",
+      "note": "Le son passe de la haute à la basse fréquence, puis s'arrête."
+    },
+    {
+      "t": 25000,
+      "label": "C",
+      "note": "Il quitte la route ; les roues dérapent sur la pente abrupte."
+    },
+    {
+      "t": 52000,
+      "label": "D",
+      "note": "Il voit l'objet et les petites silhouettes en combinaison blanche, qui semblent sauter. Environ 800 pieds."
+    },
+    {
+      "t": 75000,
+      "label": "E",
+      "note": "Sorti de sa voiture, il croit entendre deux bruits sourds, puis un rugissement ; il voit une flamme et un insigne rouge. Craignant une explosion, il court de l'autre côté de la route."
+    },
+    {
+      "t": 100000,
+      "label": "F",
+      "note": "L'objet s'éloigne au-dessus de la cabane, puis du canyon, sur cinq milles."
+    }
+  ]
 }

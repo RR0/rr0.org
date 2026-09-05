@@ -13,3 +13,4 @@ node_modules/
 # Synced from @rr0/ufoathome's node_modules by `npm run sync:ufoathome` (prebuild) — not hand-maintained.
 /blog/arts-parts-was-first-exposed-in-1996-in-this-book-get-over-it.html
 /blog/out/
+.DS_Store

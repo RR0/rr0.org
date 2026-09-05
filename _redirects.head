@@ -7,7 +7,8 @@
 #
 # `301!` is that force — the bang is Netlify's own way of saying "even if a file exists there".
 
-# ufoathome.org is a domain of its own pointing at one page of this site, with the path it was asked
-# for handed on as the observation to open.
-https://ufoathome.org/*      https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat  301!
-https://www.ufoathome.org/*  https://rr0.org/science/crypto/ufo/enquete/projet/UfoAtHome.html?sighting=:splat  301!
+# ufoathome.org used to be a domain of its own pointing at one page of this site, with the path it
+# was asked for handed on as the observation to open. Its DNS now points at the tool's own Netlify
+# site instead, so the two rules that did that could never fire again — a request for that host no
+# longer reaches this one. The convention itself is not lost: that site answers an unknown path by
+# opening its player on it, which is what these rules were for.

@@ -25,6 +25,14 @@ export class SearchComponent extends HTMLElement {
    */
   #siteIndex
 
+  /**
+   * One searchable entry per name: a page's title, plus each of the other names it is known by. A datalist filters on
+   * its options' own text, so a surname or a pseudonym is only reachable when it IS an option.
+   *
+   * @type {{label: string, url: string}[]}
+   */
+  #entries = []
+
   #loading = false
 
   /**
@@ -67,16 +75,15 @@ export class SearchComponent extends HTMLElement {
 
   #siteSearchChange(e) {
     const value = e.target.value.trim()
-    const pages = this.#siteIndex?.pages || []
+    const entries = this.#entries
     if (e.inputType === "insertReplacementText" || e.inputType == null) {
-      const pageIndex = pages.findIndex(page => page.title === value)
-      if (pageIndex >= 0) {
-        const page = pages[pageIndex]
-        window.location.href = "/" + page.url
+      const entry = entries.find(entry => entry.label === value)
+      if (entry) {
+        window.location.href = "/" + entry.url
       }
     }
     const lowValue = value.toLowerCase()
-    const dataList = pages.filter(page => page.title.toLowerCase().indexOf(lowValue) >= 0)
+    const dataList = entries.filter(entry => entry.label.toLowerCase().indexOf(lowValue) >= 0)
     this.#setDataList(dataList.length <= this.#maxResultCount ? dataList : [])
   }
 
@@ -86,24 +93,29 @@ export class SearchComponent extends HTMLElement {
       fetch("/search/index.json").then(async (response) => {
         if (response.ok) {
           this.#siteIndex = await response.json()
+          const entries = []
           for (const page of this.#siteIndex.pages) {
             const timeStr = page.time
             const title = page.title
             page.title += (timeStr && timeStr !== title.toLowerCase() ? ` (${timeStr})` : "")
+            entries.push({label: page.title, url: page.url})
+            for (const name of page.names || []) {
+              entries.push({label: name, url: page.url})
+            }
           }
+          this.#entries = entries
         }
         this.#loading = false
       })
     }
   }
 
-  #setDataList(pages) {
+  #setDataList(entries) {
     const datalist = this.shadow.getElementById("values")
     datalist.innerHTML = ""
-    for (let i = 0; i < pages.length; i++) {
-      const page = pages[i]
+    for (let i = 0; i < entries.length; i++) {
       const option = document.createElement("option")
-      option.value = page.title
+      option.value = entries[i].label
       datalist.append(option)
     }
   }

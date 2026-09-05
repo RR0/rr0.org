@@ -11,8 +11,8 @@
   "utcOffsetHours": -7,
   "place": [
     {
-      "lat": 34.058,
-      "lng": -106.891
+      "lat": 34.0425,
+      "lng": -106.897778
     }
   ],
   "witness": {
@@ -20,7 +20,7 @@
     "title": "Lonnie Zamora"
   },
   "caseId": "socorro",
-  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. La voiture de patrouille, à quelques mètres devant Zamora alors que l'engin est à une trentaine, masque ce qui passe derrière elle — elle ne le faisait pas jusqu'ici, et l'engin était peint par-dessus. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites. Les deux objets de décor portent désormais leurs dimensions réelles plutôt que la boîte générique que l'outil dessinait pour tout véhicule et tout bâtiment : la voiture est cotée comme la Pontiac de 1964 que Zamora conduisait (5,44 × 2,02 × 1,42 m, dimensions publiées du modèle) ; l'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) — c'est une estimation assumée, pas une mesure, mais elle vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le modèle 3D de la voiture est un substitut assumé : une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), pas une Pontiac de 1964. Ce sont les DIMENSIONS qui sont celles du vrai modèle ; la forme n'est là que pour qu'une voiture se lise comme une voiture plutôt que comme un bâtiment, en attendant qu'un modèle exact existe. Le trajet de Zamora passe désormais à 2,6 m à l'est de sa voiture au lieu de la traverser : à t = 5 s il se tenait exactement à l'emplacement du véhicule, ce qui plaçait la caméra dans l'habitacle un instant. Il la contourne, puis s'arrête derrière elle — l'engin reste masqué par la voiture, comme le dit le rapport.",
+  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. La voiture de patrouille, à quelques mètres devant Zamora alors que l'engin est à une trentaine, masque ce qui passe derrière elle — elle ne le faisait pas jusqu'ici, et l'engin était peint par-dessus. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites. Les deux objets de décor portent désormais leurs dimensions réelles plutôt que la boîte générique que l'outil dessinait pour tout véhicule et tout bâtiment : la voiture est cotée comme la Pontiac de 1964 que Zamora conduisait (5,44 × 2,02 × 1,42 m, dimensions publiées du modèle) ; l'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) — c'est une estimation assumée, pas une mesure, mais elle vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le modèle 3D de la voiture est un substitut assumé : une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), pas une Pontiac de 1964. Ce sont les DIMENSIONS qui sont celles du vrai modèle ; la forme n'est là que pour qu'une voiture se lise comme une voiture plutôt que comme un bâtiment, en attendant qu'un modèle exact existe. Le trajet de Zamora passe désormais à 2,6 m à l'est de sa voiture au lieu de la traverser : à t = 5 s il se tenait exactement à l'emplacement du véhicule, ce qui plaçait la caméra dans l'habitacle un instant. Il la contourne, puis s'arrête derrière elle — l'engin reste masqué par la voiture, comme le dit le rapport. Le lieu a été ré-identifié : 34°02′33″N 106°53′52″W (34,0425 ; −106,897778), au sud-est de Socorro près de High School Road, d'après la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu jusqu'ici, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, il n'offre que 23 m de dénivelé sur tout le carré de 1,8 km, contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. C'est un terrain qui a des collines, et le récit en exige.",
   "tags": [
     "RR3",
     "atterrissage",
@@ -1066,8 +1066,8 @@
       {
         "t": 0,
         "pose": {
-          "lat": 34.058,
-          "lng": -106.891,
+          "lat": 34.0425,
+          "lng": -106.897778,
           "elevationM": 0,
           "headingDeg": 200.0,
           "pitchDeg": -5.0,
@@ -1077,8 +1077,8 @@
       {
         "t": 2000,
         "pose": {
-          "lat": 34.058,
-          "lng": -106.891,
+          "lat": 34.0425,
+          "lng": -106.897778,
           "elevationM": 0,
           "headingDeg": 200.0,
           "pitchDeg": -5.0,
@@ -1088,8 +1088,8 @@
       {
         "t": 5000,
         "pose": {
-          "lat": 34.058072,
-          "lng": -106.890972,
+          "lat": 34.042572,
+          "lng": -106.89775,
           "elevationM": 0,
           "headingDeg": 200.0,
           "pitchDeg": -5.0,
@@ -1099,8 +1099,8 @@
       {
         "t": 8000,
         "pose": {
-          "lat": 34.058135,
-          "lng": -106.890972,
+          "lat": 34.042635,
+          "lng": -106.89775,
           "elevationM": 0,
           "headingDeg": 200.0,
           "pitchDeg": -5.0,
@@ -1110,8 +1110,8 @@
       {
         "t": 20000,
         "pose": {
-          "lat": 34.058135,
-          "lng": -106.890972,
+          "lat": 34.042635,
+          "lng": -106.89775,
           "elevationM": 0,
           "headingDeg": 200.0,
           "pitchDeg": -5.0,
@@ -1190,7 +1190,7 @@
   "weatherSource": {
     "id": "era5",
     "name": "ERA5 (Open-Meteo)",
-    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=34.058&longitude=-106.891&start_date=1964-04-25&end_date=1964-04-25&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=34.0425&longitude=-106.897778&start_date=1964-04-25&end_date=1964-04-25&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
   },
   "instrument": "eye"
 }

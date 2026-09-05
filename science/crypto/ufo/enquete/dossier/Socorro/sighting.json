@@ -20,7 +20,7 @@
     "title": "Lonnie Zamora"
   },
   "caseId": "socorro",
-  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. La voiture de patrouille, à quelques mètres devant Zamora alors que l'engin est à une trentaine, masque ce qui passe derrière elle — elle ne le faisait pas jusqu'ici, et l'engin était peint par-dessus. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites. Les deux objets de décor portent désormais leurs dimensions réelles plutôt que la boîte générique que l'outil dessinait pour tout véhicule et tout bâtiment : la voiture est cotée comme la Pontiac de 1964 que Zamora conduisait (5,44 × 2,02 × 1,42 m, dimensions publiées du modèle) ; l'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) — c'est une estimation assumée, pas une mesure, mais elle vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait.",
+  "description": "Phase rapprochée du rapport de Zamora : l'objet posé sur ses béquilles dans le ravin à une trentaine de mètres, le décollage au rugissement avec la flamme bleue à base orange, la montée d'environ 7 m jusqu'au niveau de sa voiture, puis le départ à l'horizontale par-dessus l'abri à dynamite. Positions et tailles calculées depuis les distances et dimensions du rapport, pas dessinées à l'œil. La voiture de patrouille, à quelques mètres devant Zamora alors que l'engin est à une trentaine, masque ce qui passe derrière elle — elle ne le faisait pas jusqu'ici, et l'engin était peint par-dessus. Les deux silhouettes en combinaison blanche ne figurent pas ici : Zamora ne les a vues que lors du premier regard, à 150-200 yards, avant de se rapprocher — elles avaient disparu au début des 20 s reproduites. Les deux objets de décor portent désormais leurs dimensions réelles plutôt que la boîte générique que l'outil dessinait pour tout véhicule et tout bâtiment : la voiture est cotée comme la Pontiac de 1964 que Zamora conduisait (5,44 × 2,02 × 1,42 m, dimensions publiées du modèle) ; l'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) — c'est une estimation assumée, pas une mesure, mais elle vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le modèle 3D de la voiture est un substitut assumé : une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), pas une Pontiac de 1964. Ce sont les DIMENSIONS qui sont celles du vrai modèle ; la forme n'est là que pour qu'une voiture se lise comme une voiture plutôt que comme un bâtiment, en attendant qu'un modèle exact existe.",
   "tags": [
     "RR3",
     "atterrissage",
@@ -1167,6 +1167,9 @@
         "widthM": 2.02,
         "lengthM": 5.44,
         "heightM": 1.42
+      },
+      "model": {
+        "id": "kenney-car-kit-police"
       }
     },
     {

@@ -20,10 +20,13 @@
     "title": "Lonnie Zamora"
   },
   "caseId": "socorro",
-  "description": "Tout le témoignage de Lonnie Zamora, d'un seul tenant : les six moments que le croquis du dossier Blue Book lettre A à F ne sont pas six extraits mais six repères posés sur un même enregistrement de deux minutes, que le lecteur traverse sans coupure — parce que c'est ainsi que Zamora l'a vécu. Ce qui est CALCULÉ. L'objet mesure 3,36 × 1,73 m, non pas décrété mais déduit des 6,41° × 3,31° que la phase rapprochée énonçait déjà à la trentaine de mètres du croquis (100 pieds). Le même objet à 800 pieds (244 m) fait alors 0,79° de large, et les deux silhouettes 0,31° de haut : deux traits de deux pixels à côté d'un objet d'une vingtaine. C'est ce que « il les a vues à 800 pieds » veut dire, et c'est ce qu'aucune illustration de ce cas ne montre. À cinq milles, l'objet fait 0,024°. L'axe d'approche se déduit lui aussi : Zamora voit l'engin au même azimut à 800 pieds qu'à 100, il a donc roulé droit dessus, et le trajet est porté par cette droite. Les distances viennent du croquis (800′, 100′, 5 milles). Ce qui est ASSUMÉ, et doit se lire comme tel. La répartition des six moments dans les deux minutes vient de l'ORDRE du récit, pas d'un chronomètre : aucune source ne minute cette séquence. L'élévation de l'objet à 800 pieds (−1,5°, interpolée jusqu'aux −7,7° que la phase rapprochée énonce) suppose qu'il est plus haut sur la pente qu'à la fin. Son cap est tenu à 200° du début à la fin. Sa voiture roule avec lui, décalée de 2,6 m sur le côté : la caméra est à son œil, et le modèle n'a pas d'intérieur où la mettre — le corps du véhicule est donc dessiné à côté de lui plutôt qu'autour, en attendant que le modèle sache dire « le témoin est à l'intérieur de cet objet » au fil du temps. Le son suit le récit et rien d'autre : le rugissement entendu de loin, qui passe de l'aigu au grave puis s'arrête (B) — un keyframe « none » est un silence ÉNONCÉ, pas un enregistrement muet ; les deux bruits sourds avant le décollage, puis le rugissement qui monte et s'éteint pendant que l'objet part. Les deux silhouettes en combinaison blanche figurent enfin, à (D) et seulement là : Zamora ne les a vues qu'au premier regard, et elles avaient disparu quand il s'est approché. La voiture de patrouille masque ce qui passe derrière elle. Ses dimensions sont celles de la Pontiac de 1964 qu'il conduisait (5,44 × 2,02 × 1,42 m, cotes publiées du modèle) ; sa FORME est un substitut assumé, une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), le temps qu'un modèle exact existe. L'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) : une estimation assumée, mais qui vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le lieu est 34°02′33″N 106°53′52″W, au sud-est de Socorro près de High School Road, identifié par la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu auparavant, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, 23 m de dénivelé sur le carré de 1,8 km contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. Le récit exige des collines ; celui-là en a. Ce qu'on voit du feu au moment (A) est son ÉBLOUISSEMENT, pas sa taille : 1,15 m de flamme à 1200 m font 0,055°, soit un tiers de pixel. Le voile est plancherisé, exactement comme l'est déjà le rayon d'une lampe de décor — ce qui atteint un œil depuis une lumière vive, c'est sa floraison et non son contour. La taille énoncée de la flamme, elle, n'a pas bougé.",
+  "description": {
+    "fr": "Tout le témoignage de Lonnie Zamora, d'un seul tenant : les six moments que le croquis du dossier Blue Book lettre A à F ne sont pas six extraits mais six repères posés sur un même enregistrement de deux minutes, que le lecteur traverse sans coupure — parce que c'est ainsi que Zamora l'a vécu. Ce qui est CALCULÉ. L'objet mesure 3,36 × 1,73 m, non pas décrété mais déduit des 6,41° × 3,31° que la phase rapprochée énonçait déjà à la trentaine de mètres du croquis (100 pieds). Le même objet à 800 pieds (244 m) fait alors 0,79° de large, et les deux silhouettes 0,31° de haut : deux traits de deux pixels à côté d'un objet d'une vingtaine. C'est ce que « il les a vues à 800 pieds » veut dire, et c'est ce qu'aucune illustration de ce cas ne montre. À cinq milles, l'objet fait 0,024°. L'axe d'approche se déduit lui aussi : Zamora voit l'engin au même azimut à 800 pieds qu'à 100, il a donc roulé droit dessus, et le trajet est porté par cette droite. Les distances viennent du croquis (800′, 100′, 5 milles). Ce qui est ASSUMÉ, et doit se lire comme tel. La répartition des six moments dans les deux minutes vient de l'ORDRE du récit, pas d'un chronomètre : aucune source ne minute cette séquence. L'élévation de l'objet à 800 pieds (−1,5°, interpolée jusqu'aux −7,7° que la phase rapprochée énonce) suppose qu'il est plus haut sur la pente qu'à la fin. Son cap est tenu à 200° du début à la fin. Sa voiture roule avec lui, décalée de 2,6 m sur le côté : la caméra est à son œil, et le modèle n'a pas d'intérieur où la mettre — le corps du véhicule est donc dessiné à côté de lui plutôt qu'autour, en attendant que le modèle sache dire « le témoin est à l'intérieur de cet objet » au fil du temps. Le son suit le récit et rien d'autre : le rugissement entendu de loin, qui passe de l'aigu au grave puis s'arrête (B) — un keyframe « none » est un silence ÉNONCÉ, pas un enregistrement muet ; les deux bruits sourds avant le décollage, puis le rugissement qui monte et s'éteint pendant que l'objet part. Les deux silhouettes en combinaison blanche figurent enfin, à (D) et seulement là : Zamora ne les a vues qu'au premier regard, et elles avaient disparu quand il s'est approché. La voiture de patrouille masque ce qui passe derrière elle. Ses dimensions sont celles de la Pontiac de 1964 qu'il conduisait (5,44 × 2,02 × 1,42 m, cotes publiées du modèle) ; sa FORME est un substitut assumé, une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), le temps qu'un modèle exact existe. L'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) : une estimation assumée, mais qui vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le lieu est 34°02′33″N 106°53′52″W, au sud-est de Socorro près de High School Road, identifié par la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu auparavant, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, 23 m de dénivelé sur le carré de 1,8 km contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. Le récit exige des collines ; celui-là en a. Ce qu'on voit du feu au moment (A) est son ÉBLOUISSEMENT, pas sa taille : 1,15 m de flamme à 1200 m font 0,055°, soit un tiers de pixel. Le voile est plancherisé, exactement comme l'est déjà le rayon d'une lampe de décor — ce qui atteint un œil depuis une lumière vive, c'est sa floraison et non son contour. La taille énoncée de la flamme, elle, n'a pas bougé.",
+    "en": "Lonnie Zamora's whole testimony, of a piece: the six moments the Blue Book file's sketch letters A to F are not six clips but six markers set on one two-minute recording, which the reader crosses without a cut — because that is how Zamora lived it. What is COMPUTED. The object is 3.36 × 1.73 m, not decreed but derived from the 6.41° × 3.31° the close phase already stated at the sketch's thirty-odd metres (100 feet). The same object at 800 feet (244 m) is then 0.79° wide, and the two figures 0.31° high: two two-pixel strokes beside an object of some twenty. That is what “he saw them at 800 feet” means, and it is what no illustration of this case shows. At five miles the object is 0.024°. The line of approach follows too: Zamora sees the craft at the same azimuth at 800 feet as at 100, so he drove straight at it, and the track is carried by that line. The distances come from the sketch (800′, 100′, 5 miles). What is ASSUMED, and must be read as such. The spread of the six moments across the two minutes comes from the ORDER of the account, not from a stopwatch: no source times this sequence. The object's elevation at 800 feet (−1.5°, interpolated to the −7.7° the close phase states) assumes it is higher up the slope than at the end. Its heading is held at 200° from first to last. His car drives with him, offset 2.6 m to the side: the camera is at his eye, and the model has no interior to put it in — so the vehicle's body is drawn beside him rather than around him, until the model can say “the witness is inside this object” over time. The sound follows the account and nothing else: the roar heard from far off, going from high to low and then stopping (B) — a “none” keyframe is a STATED silence, not a mute recording; the two thuds before the take-off, then the roar that rises and dies away as the object leaves. The two figures in white coveralls appear at (D) and only there: Zamora saw them at the first look alone, and they were gone when he came closer. The patrol car hides whatever passes behind it. Its dimensions are those of the 1964 Pontiac he drove (5.44 × 2.02 × 1.42 m, the model's published figures); its SHAPE is an acknowledged stand-in, a generic stylised patrol car (Kenney, Car Kit, CC0), until an exact model exists. The dynamite shack, whose dimensions no source gives, is brought down to those of an ordinary powder magazine of the period (3 × 2.4 × 2.2 m): an assumed estimate, but a better one than the 6 × 6 m shed the default shape gave it. The place is 34°02′33″N 106°53′52″W, south-east of Socorro near High School Road, identified by the match between the track network to the west and the file's sketch (re-oriented). The point held before, 1.7 km north, was on the flat: measured on the render's own relief source, 23 m of drop over the 1.8 km square against 64 m here, with the ground falling ten-odd metres away to the east and a ridge 100 m to the south. The account demands hills; this one has them. What is seen of the flame at moment (A) is its GLARE, not its size: 1.15 m of flame at 1,200 m is 0.055°, a third of a pixel. The veil has a floor, exactly as a decor lamp's beam already does — what reaches an eye from a bright light is its bloom, not its outline. The stated size of the flame itself has not moved."
+  },
   "tags": [
     "RR3",
-    "atterrissage",
+    "landing",
     "trace",
     "Blue Book 8729"
   ],
@@ -3361,7 +3364,10 @@
     {
       "id": "patrol-car",
       "kind": "vehicle",
-      "title": "Voiture de patrouille de Zamora",
+      "title": {
+        "fr": "Voiture de patrouille de Zamora",
+        "en": "Zamora's patrol car"
+      },
       "eastM": -400.2,
       "northM": -1091.4,
       "headingDeg": 225,
@@ -3449,7 +3455,10 @@
     {
       "id": "dynamite-shack",
       "kind": "building",
-      "title": "Abri à dynamite",
+      "title": {
+        "fr": "Abri à dynamite",
+        "en": "Dynamite shack"
+      },
       "eastM": -473.9,
       "northM": -1151.0,
       "floors": 0,
@@ -3579,32 +3588,50 @@
     {
       "t": 0,
       "label": "A",
-      "note": "Zamora entend un rugissement et voit une flamme dans le ciel."
+      "note": {
+        "fr": "Zamora entend un rugissement et voit une flamme dans le ciel.",
+        "en": "Zamora hears a roar and sees a flame in the sky."
+      }
     },
     {
       "t": 15000,
       "label": "B",
-      "note": "Le son passe de la haute à la basse fréquence, puis s'arrête."
+      "note": {
+        "fr": "Le son passe de la haute à la basse fréquence, puis s'arrête.",
+        "en": "The sound goes from high to low, then stops."
+      }
     },
     {
       "t": 25000,
       "label": "C",
-      "note": "Il quitte la route ; les roues dérapent sur la pente abrupte."
+      "note": {
+        "fr": "Il quitte la route ; les roues dérapent sur la pente abrupte.",
+        "en": "He leaves the road; the wheels skid on the steep slope."
+      }
     },
     {
       "t": 52000,
       "label": "D",
-      "note": "Il voit l'objet et les petites silhouettes en combinaison blanche, qui semblent sauter. Environ 800 pieds."
+      "note": {
+        "fr": "Il voit l'objet et les petites silhouettes en combinaison blanche, qui semblent sauter. Environ 800 pieds.",
+        "en": "He sees the object and the small figures in white coveralls, which seem to jump. About 800 feet."
+      }
     },
     {
       "t": 75000,
       "label": "E",
-      "note": "Sorti de sa voiture, il croit entendre deux bruits sourds, puis un rugissement ; il voit une flamme et un insigne rouge. Craignant une explosion, il court de l'autre côté de la route."
+      "note": {
+        "fr": "Sorti de sa voiture, il croit entendre deux bruits sourds, puis un rugissement ; il voit une flamme et un insigne rouge. Craignant une explosion, il court de l'autre côté de la route.",
+        "en": "Out of his car, he thinks he hears two thuds, then a roar; he sees a flame and a red insignia. Fearing an explosion, he runs to the other side of the road."
+      }
     },
     {
       "t": 100000,
       "label": "F",
-      "note": "L'objet s'éloigne au-dessus de la cabane, puis du canyon, sur cinq milles."
+      "note": {
+        "fr": "L'objet s'éloigne au-dessus de la cabane, puis du canyon, sur cinq milles.",
+        "en": "The object goes off over the shack, then the canyon, over five miles."
+      }
     }
   ]
 }

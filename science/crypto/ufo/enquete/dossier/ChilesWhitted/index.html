@@ -32,7 +32,11 @@
   le fameux pilote et président de leur compagnie, le capitaine Eddie Rickenbacker, comme <q>tout à fait fiables</q>.
 </p>
 <div class="wide" style="max-width: 100%; overflow: hidden">
-  <script src="https://ufoathome.org/lib/rr0-sighting.mjs" type="module"></script>
+  <!-- ?v= is a cache key, not a version selector: the entry module has no content hash in its
+       name, so a reader who visited before ufoathome.org shortened its cache could hold an older
+       component in front of a newer recording — which prints "[object Object]" where the account
+       should be. A URL nobody has cached settles it. -->
+  <script src="https://ufoathome.org/lib/rr0-sighting.mjs?v=0.46.0" type="module"></script>
   <rr0-sighting src="witnesses-manifest.json"></rr0-sighting>
 </div>
 <h2>Enquête</h2>

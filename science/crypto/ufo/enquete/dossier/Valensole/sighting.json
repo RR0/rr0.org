@@ -4585,1544 +4585,1028 @@
  },
  "decor": [
   {
+   "id": "clapier",
+   "kind": "mound",
+   "title": {
+    "fr": "Clapier",
+    "en": "Stone heap"
+   },
+   "eastM": 0.0,
+   "northM": 4.0,
+   "headingDeg": 49.0,
+   "sizeM": {
+    "widthM": 3.0,
+    "lengthM": 6.0,
+    "heightM": 2.0
+   }
+  },
+  {
+   "id": "tractor",
+   "kind": "vehicle",
+   "title": {
+    "fr": "Tracteur de Maurice Masse",
+    "en": "Maurice Masse's tractor"
+   },
+   "eastM": 1.5,
+   "northM": 9.0,
+   "headingDeg": 49.0,
+   "lit": false,
+   "sizeM": {
+    "widthM": 1.9,
+    "lengthM": 3.2,
+    "heightM": 2.4
+   }
+  },
+  {
+   "id": "vine-1",
+   "kind": "crop",
+   "title": {
+    "fr": "Vigne longée par le témoin",
+    "en": "The vine the witness walked along"
+   },
+   "eastM": 4.33,
+   "northM": 5.38,
+   "headingDeg": 139.0,
+   "sizeM": {
+    "widthM": 0.8,
+    "heightM": 1.1
+   }
+  },
+  {
+   "id": "vine-2",
+   "kind": "crop",
+   "title": {
+    "fr": "Vigne longée par le témoin",
+    "en": "The vine the witness walked along"
+   },
+   "eastM": -15.52,
+   "northM": 28.21,
+   "headingDeg": 139.0,
+   "sizeM": {
+    "widthM": 0.8,
+    "heightM": 1.1
+   }
+  },
+  {
+   "id": "vine-3",
+   "kind": "crop",
+   "title": {
+    "fr": "Vigne longée par le témoin",
+    "en": "The vine the witness walked along"
+   },
+   "eastM": -35.37,
+   "northM": 51.04,
+   "headingDeg": 139.0,
+   "sizeM": {
+    "widthM": 0.8,
+    "heightM": 1.1
+   }
+  },
+  {
    "id": "lavender-001",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": 7.0,
-   "headingDeg": 90
+   "eastM": -14.7,
+   "northM": 16.91,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-002",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": 7.0,
-   "headingDeg": 90
+   "eastM": -30.18,
+   "northM": -11.39,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-003",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": 5.6,
-   "headingDeg": 90
+   "eastM": -7.35,
+   "northM": 8.45,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-004",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": 5.6,
-   "headingDeg": 90
+   "eastM": -45.66,
+   "northM": -39.69,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-005",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": 4.2,
-   "headingDeg": 90
+   "eastM": -22.83,
+   "northM": -19.85,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-006",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": 4.2,
-   "headingDeg": 90
+   "eastM": 0.0,
+   "northM": 0.0,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-007",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": 2.8,
-   "headingDeg": 90
+   "eastM": 22.83,
+   "northM": 19.85,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-008",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": 2.8,
-   "headingDeg": 90
+   "eastM": -38.31,
+   "northM": -48.14,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-009",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": 1.4,
-   "headingDeg": 90
+   "eastM": -15.48,
+   "northM": -28.3,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-010",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": 1.4,
-   "headingDeg": 90
+   "eastM": 7.35,
+   "northM": -8.45,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-011",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -0.0,
-   "headingDeg": 90
+   "eastM": 30.18,
+   "northM": 11.39,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-012",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -0.0,
-   "headingDeg": 90
+   "eastM": -53.79,
+   "northM": -76.44,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-013",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -1.4,
-   "headingDeg": 90
+   "eastM": -30.96,
+   "northM": -56.6,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-014",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -1.4,
-   "headingDeg": 90
+   "eastM": -8.13,
+   "northM": -36.75,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-015",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -2.8,
-   "headingDeg": 90
+   "eastM": 14.7,
+   "northM": -16.91,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-016",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -2.8,
-   "headingDeg": 90
+   "eastM": -46.45,
+   "northM": -84.9,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-017",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -4.2,
-   "headingDeg": 90
+   "eastM": -23.62,
+   "northM": -65.05,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-018",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -4.2,
-   "headingDeg": 90
+   "eastM": -0.79,
+   "northM": -45.2,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-019",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -5.6,
-   "headingDeg": 90
+   "eastM": 22.04,
+   "northM": -25.36,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-020",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -5.6,
-   "headingDeg": 90
+   "eastM": -61.93,
+   "northM": -113.19,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-021",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -7.0,
-   "headingDeg": 90
+   "eastM": -39.1,
+   "northM": -93.35,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-022",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -7.0,
-   "headingDeg": 90
+   "eastM": -16.27,
+   "northM": -73.5,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-023",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -8.4,
-   "headingDeg": 90
+   "eastM": 6.56,
+   "northM": -53.66,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-024",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -8.4,
-   "headingDeg": 90
+   "eastM": 29.39,
+   "northM": -33.81,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-025",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -9.8,
-   "headingDeg": 90
+   "eastM": -77.41,
+   "northM": -141.49,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-026",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -9.8,
-   "headingDeg": 90
+   "eastM": -54.58,
+   "northM": -121.65,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-027",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -11.2,
-   "headingDeg": 90
+   "eastM": -31.75,
+   "northM": -101.8,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-028",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -11.2,
-   "headingDeg": 90
+   "eastM": -8.92,
+   "northM": -81.96,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-029",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -12.6,
-   "headingDeg": 90
+   "eastM": 13.91,
+   "northM": -62.11,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-030",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -12.6,
-   "headingDeg": 90
+   "eastM": 36.74,
+   "northM": -42.26,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-031",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -14.0,
-   "headingDeg": 90
+   "eastM": -70.06,
+   "northM": -149.95,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-032",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -14.0,
-   "headingDeg": 90
+   "eastM": -47.23,
+   "northM": -130.1,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-033",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -15.4,
-   "headingDeg": 90
+   "eastM": -24.4,
+   "northM": -110.25,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-034",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -15.4,
-   "headingDeg": 90
+   "eastM": -1.57,
+   "northM": -90.41,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-035",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -16.8,
-   "headingDeg": 90
+   "eastM": 21.26,
+   "northM": -70.56,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-036",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -16.8,
-   "headingDeg": 90
+   "eastM": 44.09,
+   "northM": -50.72,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-037",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -18.2,
-   "headingDeg": 90
+   "eastM": -85.54,
+   "northM": -178.24,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-038",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -18.2,
-   "headingDeg": 90
+   "eastM": -62.71,
+   "northM": -158.4,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-039",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -19.6,
-   "headingDeg": 90
+   "eastM": -39.88,
+   "northM": -138.55,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-040",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -19.6,
-   "headingDeg": 90
+   "eastM": -17.05,
+   "northM": -118.71,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-041",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -21.0,
-   "headingDeg": 90
+   "eastM": 5.78,
+   "northM": -98.86,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-042",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -21.0,
-   "headingDeg": 90
+   "eastM": 28.61,
+   "northM": -79.02,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-043",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -22.4,
-   "headingDeg": 90
+   "eastM": 51.44,
+   "northM": -59.17,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-044",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -22.4,
-   "headingDeg": 90
+   "eastM": -78.2,
+   "northM": -186.7,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-045",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -23.8,
-   "headingDeg": 90
+   "eastM": -55.37,
+   "northM": -166.85,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-046",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -23.8,
-   "headingDeg": 90
+   "eastM": -32.54,
+   "northM": -147.01,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-047",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -25.2,
-   "headingDeg": 90
+   "eastM": -9.71,
+   "northM": -127.16,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-048",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -25.2,
-   "headingDeg": 90
+   "eastM": 13.12,
+   "northM": -107.31,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-049",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -26.6,
-   "headingDeg": 90
+   "eastM": 35.95,
+   "northM": -87.47,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-050",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -26.6,
-   "headingDeg": 90
+   "eastM": -70.85,
+   "northM": -195.15,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-051",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -28.0,
-   "headingDeg": 90
+   "eastM": -48.02,
+   "northM": -175.3,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-052",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -28.0,
-   "headingDeg": 90
+   "eastM": -25.19,
+   "northM": -155.46,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-053",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -29.4,
-   "headingDeg": 90
+   "eastM": -2.36,
+   "northM": -135.61,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-054",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -29.4,
-   "headingDeg": 90
+   "eastM": 20.47,
+   "northM": -115.77,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-055",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -30.8,
-   "headingDeg": 90
+   "eastM": 43.3,
+   "northM": -95.92,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-056",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -30.8,
-   "headingDeg": 90
+   "eastM": -63.5,
+   "northM": -203.6,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-057",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -32.2,
-   "headingDeg": 90
+   "eastM": -40.67,
+   "northM": -183.76,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-058",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -32.2,
-   "headingDeg": 90
+   "eastM": -17.84,
+   "northM": -163.91,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-059",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -33.6,
-   "headingDeg": 90
+   "eastM": 4.99,
+   "northM": -144.06,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-060",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -33.6,
-   "headingDeg": 90
+   "eastM": 27.82,
+   "northM": -124.22,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-061",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -35.0,
-   "headingDeg": 90
+   "eastM": 50.65,
+   "northM": -104.37,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-062",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -35.0,
-   "headingDeg": 90
+   "eastM": -33.32,
+   "northM": -192.21,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-063",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -36.4,
-   "headingDeg": 90
+   "eastM": -10.49,
+   "northM": -172.36,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-064",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -36.4,
-   "headingDeg": 90
+   "eastM": 12.34,
+   "northM": -152.52,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-065",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -37.8,
-   "headingDeg": 90
+   "eastM": 35.17,
+   "northM": -132.67,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-066",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -37.8,
-   "headingDeg": 90
+   "eastM": 58.0,
+   "northM": -112.83,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-067",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -39.2,
-   "headingDeg": 90
+   "eastM": -25.98,
+   "northM": -200.66,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-068",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -39.2,
-   "headingDeg": 90
+   "eastM": -3.15,
+   "northM": -180.82,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-069",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -40.6,
-   "headingDeg": 90
+   "eastM": 19.68,
+   "northM": -160.97,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-070",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -40.6,
-   "headingDeg": 90
+   "eastM": 42.51,
+   "northM": -141.12,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-071",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -42.0,
-   "headingDeg": 90
+   "eastM": 65.34,
+   "northM": -121.28,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-072",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -42.0,
-   "headingDeg": 90
+   "eastM": 4.2,
+   "northM": -189.27,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-073",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -43.4,
-   "headingDeg": 90
+   "eastM": 27.03,
+   "northM": -169.42,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-074",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -43.4,
-   "headingDeg": 90
+   "eastM": 49.86,
+   "northM": -149.58,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-075",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -44.8,
-   "headingDeg": 90
+   "eastM": 72.69,
+   "northM": -129.73,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-076",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -44.8,
-   "headingDeg": 90
+   "eastM": 11.55,
+   "northM": -197.72,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-077",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -46.2,
-   "headingDeg": 90
+   "eastM": 34.38,
+   "northM": -177.88,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-078",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -46.2,
-   "headingDeg": 90
+   "eastM": 57.21,
+   "northM": -158.03,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-079",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -47.6,
-   "headingDeg": 90
+   "eastM": 41.73,
+   "northM": -186.33,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-080",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -47.6,
-   "headingDeg": 90
+   "eastM": 64.56,
+   "northM": -166.48,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-081",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -49.0,
-   "headingDeg": 90
+   "eastM": 49.08,
+   "northM": -194.78,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-082",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -49.0,
-   "headingDeg": 90
+   "eastM": 71.91,
+   "northM": -174.94,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-083",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -50.4,
-   "headingDeg": 90
+   "eastM": 56.42,
+   "northM": -203.23,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-084",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -50.4,
-   "headingDeg": 90
+   "eastM": 79.25,
+   "northM": -183.39,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-085",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": -15.12,
-   "northM": -51.8,
-   "headingDeg": 90
+   "eastM": 86.6,
+   "northM": -191.84,
+   "headingDeg": 49.0
   },
   {
    "id": "lavender-086",
    "kind": "crop",
    "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
+    "fr": "Champ de lavande",
+    "en": "Lavender field"
    },
-   "eastM": 15.12,
-   "northM": -51.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-087",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -53.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-088",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -53.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-089",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -54.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-090",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -54.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-091",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -56.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-092",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -56.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-093",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -57.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-094",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -57.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-095",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -58.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-096",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -58.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-097",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -60.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-098",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -60.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-099",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -61.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-100",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -61.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-101",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -63.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-102",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -63.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-103",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -64.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-104",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -64.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-105",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -65.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-106",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -65.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-107",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -67.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-108",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -67.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-109",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -68.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-110",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -68.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-111",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -70.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-112",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -70.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-113",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -71.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-114",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -71.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-115",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -72.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-116",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -72.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-117",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -74.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-118",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -74.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-119",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -75.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-120",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -75.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-121",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -77.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-122",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -77.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-123",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -78.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-124",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -78.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-125",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -79.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-126",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -79.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-127",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -81.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-128",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -81.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-129",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -82.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-130",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -82.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-131",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -84.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-132",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -84.0,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-133",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -85.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-134",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -85.4,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-135",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -86.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-136",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -86.8,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-137",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -88.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-138",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -88.2,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-139",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": -15.12,
-   "northM": -89.6,
-   "headingDeg": 90
-  },
-  {
-   "id": "lavender-140",
-   "kind": "crop",
-   "title": {
-    "fr": "Rang de lavande",
-    "en": "Lavender row"
-   },
-   "eastM": 15.12,
-   "northM": -89.6,
-   "headingDeg": 90
+   "eastM": 93.95,
+   "northM": -200.29,
+   "headingDeg": 49.0
   }
  ],
  "weatherSource": {

@@ -46,8 +46,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -73,8 +73,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -100,8 +100,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -127,8 +127,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -154,8 +154,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -175,14 +175,14 @@
               "kind": "oval",
               "bounds": {
                 "x": 63.4,
-                "y": 76.0,
+                "y": 76,
                 "width": 513.1,
                 "height": 123.7
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -208,8 +208,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -231,12 +231,12 @@
                 "x": 279.6,
                 "y": 140.8,
                 "width": 80.9,
-                "height": 16.0
+                "height": 16
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -262,8 +262,8 @@
               },
               "color": "#bfc2c4",
               "angle": 0,
-              "transparency": 0.0,
-              "haloScale": 0.0,
+              "transparency": 0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -282,7 +282,7 @@
             "shape": {
               "kind": "oval",
               "bounds": {
-                "x": 316.0,
+                "x": 316,
                 "y": 171.6,
                 "width": 7.9,
                 "height": 1.5
@@ -290,7 +290,7 @@
               "color": "#bfc2c4",
               "angle": 0,
               "transparency": 0.7,
-              "haloScale": 0.0,
+              "haloScale": 0,
               "selected": false,
               "title": "Objet",
               "angular": {
@@ -315,9 +315,9 @@
           "lat": 42.229162,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
-          "pitchDeg": 0.0,
-          "fovDeg": 60.0
+          "headingDeg": 180,
+          "pitchDeg": 0,
+          "fovDeg": 60
         }
       },
       {
@@ -326,9 +326,9 @@
           "lat": 42.229095,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
-          "pitchDeg": 0.0,
-          "fovDeg": 60.0
+          "headingDeg": 180,
+          "pitchDeg": 0,
+          "fovDeg": 60
         }
       },
       {
@@ -337,9 +337,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
-          "pitchDeg": 0.0,
-          "fovDeg": 60.0
+          "headingDeg": 180,
+          "pitchDeg": 0,
+          "fovDeg": 60
         }
       },
       {
@@ -348,9 +348,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
-          "pitchDeg": 0.0,
-          "fovDeg": 60.0
+          "headingDeg": 180,
+          "pitchDeg": 0,
+          "fovDeg": 60
         }
       },
       {
@@ -359,9 +359,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
-          "pitchDeg": 0.0,
-          "fovDeg": 60.0
+          "headingDeg": 180,
+          "pitchDeg": 0,
+          "fovDeg": 60
         }
       },
       {
@@ -370,9 +370,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
+          "headingDeg": 180,
           "pitchDeg": 7.02,
-          "fovDeg": 60.0
+          "fovDeg": 60
         }
       },
       {
@@ -381,9 +381,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
+          "headingDeg": 180,
           "pitchDeg": 22.59,
-          "fovDeg": 60.0
+          "fovDeg": 60
         }
       },
       {
@@ -392,9 +392,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
+          "headingDeg": 180,
           "pitchDeg": 20.78,
-          "fovDeg": 60.0
+          "fovDeg": 60
         }
       },
       {
@@ -403,9 +403,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
+          "headingDeg": 180,
           "pitchDeg": 12.4,
-          "fovDeg": 60.0
+          "fovDeg": 60
         }
       },
       {
@@ -414,9 +414,9 @@
           "lat": 42.229029,
           "lng": -76.181,
           "elevationM": 0,
-          "headingDeg": 180.0,
+          "headingDeg": 180,
           "pitchDeg": 5.08,
-          "fovDeg": 60.0
+          "fovDeg": 60
         }
       }
     ]
@@ -426,9 +426,40 @@
       {
         "t": 0,
         "weather": {
+          "cloudLayers": [
+            {
+              "id": "record-low",
+              "type": "unknown",
+              "baseM": 800,
+              "thicknessM": 650,
+              "coverage": 1,
+              "sizeM": 1400,
+              "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.04,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
+            }
+          ],
           "cloudCover": 1,
           "cloudDarkness": 0.6903846153846154,
           "cloudBaseM": 800,
+          "highCloudCover": 0,
+          "lowerCloudCover": 1,
           "precipitationType": "none",
           "precipitationIntensity": 0,
           "windDirectionDeg": 162,
@@ -439,9 +470,40 @@
       {
         "t": 3600000,
         "weather": {
+          "cloudLayers": [
+            {
+              "id": "record-low",
+              "type": "unknown",
+              "baseM": 850,
+              "thicknessM": 650,
+              "coverage": 1,
+              "sizeM": 1400,
+              "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.01,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
+            }
+          ],
           "cloudCover": 1,
           "cloudDarkness": 0.6975247524752475,
           "cloudBaseM": 850,
+          "highCloudCover": 0,
+          "lowerCloudCover": 1,
           "precipitationType": "none",
           "precipitationIntensity": 0,
           "windDirectionDeg": 163,
@@ -452,9 +514,40 @@
       {
         "t": 7200000,
         "weather": {
+          "cloudLayers": [
+            {
+              "id": "record-low",
+              "type": "unknown",
+              "baseM": 913,
+              "thicknessM": 650,
+              "coverage": 1,
+              "sizeM": 1400,
+              "density": 1
+            },
+            {
+              "id": "record-mid",
+              "type": "unknown",
+              "baseM": 3500,
+              "thicknessM": 800,
+              "coverage": 0.01,
+              "sizeM": 2500,
+              "density": 1
+            },
+            {
+              "id": "record-high",
+              "type": "cirrus",
+              "baseM": 8000,
+              "thicknessM": 400,
+              "coverage": 0,
+              "sizeM": 2200,
+              "density": 0.35
+            }
+          ],
           "cloudCover": 1,
           "cloudDarkness": 0.6975247524752475,
           "cloudBaseM": 913,
+          "highCloudCover": 0,
+          "lowerCloudCover": 1,
           "precipitationType": "none",
           "precipitationIntensity": 0,
           "windDirectionDeg": 161,

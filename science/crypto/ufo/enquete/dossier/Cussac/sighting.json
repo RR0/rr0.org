@@ -11330,6 +11330,26 @@
   }
  ],
  "instrument": "eye",
+ "references": [
+  {
+   "id": "vue-1968",
+   "kind": "photo",
+   "src": "https://rr0.org/time/1/9/6/8/08/Cussac_hebdo.jpg",
+   "title": {
+    "fr": "Prise de vue depuis le lieu de l'observation, avec la sphère et son envol dessinés, fin été 1968",
+    "en": "View from the spot, with the sphere and its climb drawn on, late summer 1968"
+   },
+   "credit": "Claude de Saint Etienne, LDLN n° 25",
+   "creditUrl": "https://rr0.org/science/crypto/ufo/enquete/dossier/Cussac/",
+   "drawing": true,
+   "opacity": 0.5,
+   "registration": {
+    "headingDeg": 275,
+    "pitchDeg": -1,
+    "fovDeg": 27
+   }
+  }
+ ],
  "soundTrack": {
   "keyframes": [
    {

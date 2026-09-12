@@ -32,11 +32,11 @@
   le fameux pilote et président de leur compagnie, le capitaine Eddie Rickenbacker, comme <q>tout à fait fiables</q>.
 </p>
 <div class="wide" style="max-width: 100%; overflow: hidden">
-  <!-- ?v= is a cache key, not a version selector: the entry module has no content hash in its
-       name, so a reader who visited before ufoathome.org shortened its cache could hold an older
-       component in front of a newer recording — which prints "[object Object]" where the account
-       should be. A URL nobody has cached settles it. -->
-  <script src="https://ufoathome.org/lib/rr0-sighting.mjs?v=0.46.0" type="module"></script>
+  <!-- The plain URL, with no ?v= cache key: ufoathome.org revalidates this module on every visit,
+       and the chunks it loads on demand (the French messages, the assessors) import it by this
+       exact name — with a query on it, the browser held two copies of the module, the page's and
+       the chunks', and a chunk bound to whichever copy it found. -->
+  <script src="https://ufoathome.org/lib/rr0-sighting.mjs" type="module"></script>
   <rr0-sighting src="witnesses-manifest.json"></rr0-sighting>
 </div>
 <h2>Enquête</h2>

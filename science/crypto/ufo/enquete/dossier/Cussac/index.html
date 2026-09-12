@@ -222,3 +222,11 @@
     n°10, <a href="/org/eu/fr/asso/cnegu/index.html">CNEGU</a></li>
 </ul>
 <!--#include virtual="/footer.html" -->
+<div class="wide" style="max-width: 100%; overflow: hidden">
+  <!-- The plain URL, with no ?v= cache key: ufoathome.org revalidates this module on every visit,
+       and the chunks it loads on demand (the French messages, the assessors) import it by this
+       exact name — with a query on it, the browser held two copies of the module, the page's and
+       the chunks', and a chunk bound to whichever copy it found. -->
+  <script src="https://ufoathome.org/lib/rr0-sighting.mjs" type="module"></script>
+  <rr0-sighting src="sighting.json"></rr0-sighting>
+</div>

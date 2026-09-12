@@ -11666,9 +11666,9 @@
    "drawing": true,
    "opacity": 0.5,
    "registration": {
-    "headingDeg": 275,
-    "pitchDeg": -1,
-    "fovDeg": 27
+    "headingDeg": 283,
+    "pitchDeg": -1.2,
+    "fovDeg": 47.3
    }
   }
  ],

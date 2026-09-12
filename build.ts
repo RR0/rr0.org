@@ -1,4 +1,7 @@
 import { FileContents } from "@javarome/fileutil"
+import { existsSync, readdirSync, renameSync, statSync } from "node:fs"
+import path from "node:path"
+import { glob } from "glob"
 import {
   BaseReplaceCommand,
   CLI,
@@ -98,7 +101,10 @@ const copies = copiesArg ? copiesArg : [
   "_headers",
   "favicon.ico", "manifest.json", "opensearch.xml", "apple-touch-icon.png", "apple-touch-icon_400x400.png", "screenshot1.jpg",
   "rr0.css", "map.css", "diagram.css", "print.css", "figure.css", "section.css", "table.css", "nav.css", "math.css",
-  // "**/*.png", "**/*.jpg", "**/*.gif", "**/*.webp", "!out/**/*",
+  // Images must be copied independently of their HTML processing: ImageCommand only
+  // registers images whose dimensions it computes itself, so images with explicit
+  // dimensions would otherwise be absent from the generated site.
+  "**/*.png", "**/*.jpg", "**/*.JPG", "**/*.jpeg", "**/*.JPEG", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "tech/info/soft/reseau/protocole/index.js", "tech/info/soft/reseau/protocole/ports.json", "tech/info/soft/reseau/protocole/index.css",
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
@@ -122,6 +128,28 @@ const copies = copiesArg ? copiesArg : [
   "nav.js", "tag/**/*.mjs"
 ]
 const outDir = "out"
+const filesToCopy = async (patterns: string[]): Promise<string[]> => {
+  const sourceFiles = await glob(patterns, {ignore: ["node_modules/**", "out/**"]})
+  if (args.force === "true") {
+    return sourceFiles
+  }
+  return sourceFiles.filter(sourceFile => {
+    const outputFile = path.join(outDir, sourceFile)
+    const outputDir = path.dirname(outputFile)
+    const outputName = path.basename(outputFile)
+    if (existsSync(outputDir)) {
+      const outputNameWithDifferentCase = readdirSync(outputDir)
+        .find(name => name !== outputName && name.toLowerCase() === outputName.toLowerCase())
+      if (outputNameWithDifferentCase) {
+        const incorrectlyCasedFile = path.join(outputDir, outputNameWithDifferentCase)
+        const temporaryFile = `${outputFile}.case-fix`
+        renameSync(incorrectlyCasedFile, temporaryFile)
+        renameSync(temporaryFile, outputFile)
+      }
+    }
+    return !existsSync(outputFile) || statSync(sourceFile).mtimeMs > statSync(outputFile).mtimeMs
+  })
+}
 const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY
 if (!googleMapsApiKey) {
   throw Error("GOOGLE_MAPS_API_KEY is required")
@@ -139,6 +167,7 @@ const directoryPages = [
   "people/index.html", "people/witness/index.html", "people/militaires.html", "people/scientifiques.html", "people/astronomes.html", "people/politicians.html", "people/dirigeants.html", "people/pilotes.html", "people/contactes.html", "people/ufologues.html", "tech/info/Personnes.html", "people/Contributeurs.html"
 ]
 getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileName, directoryOptions}) => {
+  const changedCopies = await filesToCopy(copies)
   const mappings: RR0CaseMapping<any>[] = [
     new RR0Mapping({read: ["fetch"], write: ["backup"]})
   ]
@@ -162,7 +191,13 @@ getRR0Options().then(async ({mail, dataOptions, siteBaseUrl, sourceRegistryFileN
     new UnitReplaceCommand()
   ]
   const generator = new CMSGenerator({
-    contentRoots, copies, outDir, locale: "fr", googleMapsApiKey, mail, dataOptions,
+    contentRoots,
+    copies: changedCopies,
+    outDir,
+    locale: "fr",
+    googleMapsApiKey,
+    mail,
+    dataOptions,
     siteBaseUrl, timeFormat, directoryPages,
     // Netlify's plain format rather than netlify.toml, and written into the PUBLISHED directory.
     // netlify.toml is read from the clone before any build runs, so it would have to be committed —

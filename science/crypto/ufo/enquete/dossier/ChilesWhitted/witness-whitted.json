@@ -5,9 +5,10 @@
     "month": 7,
     "day": 24,
     "hour": 2,
-    "minute": 45
+    "minute": 45,
+    "second": 3
   },
-  "durationSeconds": 10,
+  "durationSeconds": 7,
   "utcOffsetHours": -6,
   "place": [
     {
@@ -33,368 +34,6 @@
     "keyframes": [
       {
         "t": 0,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331,
-                "y": 173.4,
-                "width": 2.1,
-                "height": 1
-              },
-              "color": "#1c3f9c",
-              "angle": 0,
-              "transparency": 0,
-              "haloScale": 0.8,
-              "selected": false,
-              "title": "Fuselage",
-              "angular": {
-                "widthDeg": 0.3492,
-                "heightDeg": 0.1654
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331.2,
-                "y": 173.5,
-                "width": 0.3,
-                "height": 0.3
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot haut 1",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.0551
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-2",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331.8,
-                "y": 173.5,
-                "width": 0.3,
-                "height": 0.3
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot haut 2",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.0551
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-3",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 332.5,
-                "y": 173.5,
-                "width": 0.3,
-                "height": 0.3
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot haut 3",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.0551
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-4",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331.2,
-                "y": 173.9,
-                "width": 0.3,
-                "height": 0.3
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot bas 1",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.0551
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-5",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331.8,
-                "y": 173.9,
-                "width": 0.3,
-                "height": 0.3
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot bas 2",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.0551
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-6",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 332.5,
-                "y": 173.9,
-                "width": 0.3,
-                "height": 0.3
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot bas 3",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.0551
-              }
-            }
-          },
-          {
-            "sourceId": "flamme",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 333.1,
-                "y": 173.5,
-                "width": 0.3,
-                "height": 0.9
-              },
-              "color": "#ff5a1f",
-              "angle": 0,
-              "transparency": 0.1,
-              "haloScale": 1.6,
-              "selected": false,
-              "title": "Flamme arrière",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.147
-              }
-            }
-          }
-        ]
-      },
-      {
-        "t": 1500,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 332.8,
-                "y": 173.2,
-                "width": 3,
-                "height": 1.5
-              },
-              "color": "#1c3f9c",
-              "angle": 0,
-              "transparency": 0,
-              "haloScale": 0.8,
-              "selected": false,
-              "title": "Fuselage",
-              "angular": {
-                "widthDeg": 0.4962,
-                "heightDeg": 0.2573
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 333,
-                "y": 173.3,
-                "width": 0.6,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot haut 1",
-              "angular": {
-                "widthDeg": 0.0919,
-                "heightDeg": 0.0919
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-2",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 333.9,
-                "y": 173.3,
-                "width": 0.6,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot haut 2",
-              "angular": {
-                "widthDeg": 0.0919,
-                "heightDeg": 0.0919
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-3",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 334.7,
-                "y": 173.3,
-                "width": 0.6,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot haut 3",
-              "angular": {
-                "widthDeg": 0.0919,
-                "heightDeg": 0.0919
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-4",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 333,
-                "y": 174,
-                "width": 0.6,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot bas 1",
-              "angular": {
-                "widthDeg": 0.0919,
-                "heightDeg": 0.0919
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-5",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 333.9,
-                "y": 174,
-                "width": 0.6,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot bas 2",
-              "angular": {
-                "widthDeg": 0.0919,
-                "heightDeg": 0.0919
-              }
-            }
-          },
-          {
-            "sourceId": "hublot-6",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 334.7,
-                "y": 174,
-                "width": 0.6,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Hublot bas 3",
-              "angular": {
-                "widthDeg": 0.0919,
-                "heightDeg": 0.0919
-              }
-            }
-          },
-          {
-            "sourceId": "flamme",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 335.6,
-                "y": 173.4,
-                "width": 0.4,
-                "height": 1.1
-              },
-              "color": "#ff5a1f",
-              "angle": 0,
-              "transparency": 0.1,
-              "haloScale": 1.6,
-              "selected": false,
-              "title": "Flamme arrière",
-              "angular": {
-                "widthDeg": 0.0735,
-                "heightDeg": 0.1838
-              }
-            }
-          }
-        ]
-      },
-      {
-        "t": 3000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -575,7 +214,7 @@
         ]
       },
       {
-        "t": 4000,
+        "t": 1000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -756,7 +395,7 @@
         ]
       },
       {
-        "t": 5000,
+        "t": 2000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -937,7 +576,7 @@
         ]
       },
       {
-        "t": 5800,
+        "t": 2800,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1118,7 +757,7 @@
         ]
       },
       {
-        "t": 6500,
+        "t": 3500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1299,7 +938,7 @@
         ]
       },
       {
-        "t": 8000,
+        "t": 5000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1480,7 +1119,7 @@
         ]
       },
       {
-        "t": 9200,
+        "t": 6200,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1661,7 +1300,7 @@
         ]
       },
       {
-        "t": 9300,
+        "t": 6300,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1842,7 +1481,7 @@
         ]
       },
       {
-        "t": 10000,
+        "t": 7000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2040,28 +1679,6 @@
       {
         "t": 0,
         "pose": {
-          "lat": 32.3792,
-          "lng": -86.3077,
-          "elevationM": 1500,
-          "headingDeg": 40,
-          "pitchDeg": 0,
-          "fovDeg": 60
-        }
-      },
-      {
-        "t": 1500,
-        "pose": {
-          "lat": 32.380026,
-          "lng": -86.30688,
-          "elevationM": 1500,
-          "headingDeg": 40,
-          "pitchDeg": 0,
-          "fovDeg": 60
-        }
-      },
-      {
-        "t": 3000,
-        "pose": {
           "lat": 32.380852,
           "lng": -86.306059,
           "elevationM": 1500,
@@ -2071,7 +1688,7 @@
         }
       },
       {
-        "t": 4000,
+        "t": 1000,
         "pose": {
           "lat": 32.381402,
           "lng": -86.305512,
@@ -2082,7 +1699,7 @@
         }
       },
       {
-        "t": 5000,
+        "t": 2000,
         "pose": {
           "lat": 32.381953,
           "lng": -86.304965,
@@ -2093,7 +1710,7 @@
         }
       },
       {
-        "t": 5800,
+        "t": 2800,
         "pose": {
           "lat": 32.382393,
           "lng": -86.304528,
@@ -2104,7 +1721,7 @@
         }
       },
       {
-        "t": 6500,
+        "t": 3500,
         "pose": {
           "lat": 32.382778,
           "lng": -86.304145,
@@ -2115,7 +1732,7 @@
         }
       },
       {
-        "t": 8000,
+        "t": 5000,
         "pose": {
           "lat": 32.383604,
           "lng": -86.303324,
@@ -2126,7 +1743,7 @@
         }
       },
       {
-        "t": 10000,
+        "t": 7000,
         "pose": {
           "lat": 32.384705,
           "lng": -86.30223,
@@ -2184,7 +1801,7 @@
         }
       },
       {
-        "t": 10000,
+        "t": 7000,
         "weather": {
           "cloudLayers": [
             {

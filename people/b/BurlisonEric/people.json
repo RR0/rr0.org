@@ -1,0 +1,24 @@
+{
+  "title": "Eric Burlison",
+  "lastName": "Burlison",
+  "firstNames": [
+    "Eric",
+    "Wayne"
+  ],
+  "url": "https://burlison.house.gov/",
+  "occupations": [
+    "politician",
+    "softwareEngineer"
+  ],
+  "countries": [
+    "us"
+  ],
+  "gender": "male",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1976-10-02",
+      "place": "Springfield (Missouri, USA)"
+    }
+  ]
+}

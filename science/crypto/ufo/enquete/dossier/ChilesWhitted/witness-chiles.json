@@ -5,9 +5,10 @@
     "month": 7,
     "day": 24,
     "hour": 2,
-    "minute": 45
+    "minute": 45,
+    "second": 3
   },
-  "durationSeconds": 10,
+  "durationSeconds": 7,
   "utcOffsetHours": -6,
   "place": [
     {
@@ -33,148 +34,6 @@
     "keyframes": [
       {
         "t": 0,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331,
-                "y": 173.5,
-                "width": 2.1,
-                "height": 0.7
-              },
-              "color": "#1c3f9c",
-              "angle": 0,
-              "transparency": 0,
-              "haloScale": 0.8,
-              "selected": false,
-              "title": "Fuselage",
-              "angular": {
-                "widthDeg": 0.3492,
-                "heightDeg": 0.1103
-              }
-            }
-          },
-          {
-            "sourceId": "flamme",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 333.1,
-                "y": 173.6,
-                "width": 0.3,
-                "height": 0.7
-              },
-              "color": "#ff5a1f",
-              "angle": 0,
-              "transparency": 0.1,
-              "haloScale": 1.6,
-              "selected": false,
-              "title": "Flamme arrière",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.1103
-              }
-            }
-          },
-          {
-            "sourceId": "pare-brise",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 331,
-                "y": 173.6,
-                "width": 0.2,
-                "height": 0.6
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Pare-brise ?",
-              "angular": {
-                "widthDeg": 0.0368,
-                "heightDeg": 0.0919
-              }
-            }
-          }
-        ]
-      },
-      {
-        "t": 1500,
-        "shapes": [
-          {
-            "sourceId": "ufo-1",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 332.8,
-                "y": 173.5,
-                "width": 3,
-                "height": 0.9
-              },
-              "color": "#1c3f9c",
-              "angle": 0,
-              "transparency": 0,
-              "haloScale": 0.8,
-              "selected": false,
-              "title": "Fuselage",
-              "angular": {
-                "widthDeg": 0.4962,
-                "heightDeg": 0.147
-              }
-            }
-          },
-          {
-            "sourceId": "flamme",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 335.6,
-                "y": 173.5,
-                "width": 0.4,
-                "height": 0.9
-              },
-              "color": "#ff5a1f",
-              "angle": 0,
-              "transparency": 0.1,
-              "haloScale": 1.6,
-              "selected": false,
-              "title": "Flamme arrière",
-              "angular": {
-                "widthDeg": 0.0735,
-                "heightDeg": 0.147
-              }
-            }
-          },
-          {
-            "sourceId": "pare-brise",
-            "shape": {
-              "kind": "oval",
-              "bounds": {
-                "x": 332.8,
-                "y": 173.6,
-                "width": 0.3,
-                "height": 0.8
-              },
-              "color": "#fff6d0",
-              "angle": 0,
-              "transparency": 1,
-              "haloScale": 0.6,
-              "selected": false,
-              "title": "Pare-brise ?",
-              "angular": {
-                "widthDeg": 0.0551,
-                "heightDeg": 0.1286
-              }
-            }
-          }
-        ]
-      },
-      {
-        "t": 3000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -245,7 +104,7 @@
         ]
       },
       {
-        "t": 4000,
+        "t": 1000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -316,7 +175,7 @@
         ]
       },
       {
-        "t": 5000,
+        "t": 2000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -387,7 +246,7 @@
         ]
       },
       {
-        "t": 5800,
+        "t": 2800,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -458,7 +317,7 @@
         ]
       },
       {
-        "t": 6500,
+        "t": 3500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -529,7 +388,7 @@
         ]
       },
       {
-        "t": 8000,
+        "t": 5000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -600,7 +459,7 @@
         ]
       },
       {
-        "t": 8800,
+        "t": 5800,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -671,7 +530,7 @@
         ]
       },
       {
-        "t": 10000,
+        "t": 7000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -754,28 +613,6 @@
       {
         "t": 0,
         "pose": {
-          "lat": 32.3792,
-          "lng": -86.3077,
-          "elevationM": 1500,
-          "headingDeg": 40,
-          "pitchDeg": 0,
-          "fovDeg": 60
-        }
-      },
-      {
-        "t": 1500,
-        "pose": {
-          "lat": 32.380026,
-          "lng": -86.30688,
-          "elevationM": 1500,
-          "headingDeg": 40,
-          "pitchDeg": 0,
-          "fovDeg": 60
-        }
-      },
-      {
-        "t": 3000,
-        "pose": {
           "lat": 32.380852,
           "lng": -86.306059,
           "elevationM": 1500,
@@ -785,7 +622,7 @@
         }
       },
       {
-        "t": 4000,
+        "t": 1000,
         "pose": {
           "lat": 32.381402,
           "lng": -86.305512,
@@ -796,7 +633,7 @@
         }
       },
       {
-        "t": 5000,
+        "t": 2000,
         "pose": {
           "lat": 32.381953,
           "lng": -86.304965,
@@ -807,7 +644,7 @@
         }
       },
       {
-        "t": 5800,
+        "t": 2800,
         "pose": {
           "lat": 32.382393,
           "lng": -86.304528,
@@ -818,7 +655,7 @@
         }
       },
       {
-        "t": 6500,
+        "t": 3500,
         "pose": {
           "lat": 32.382778,
           "lng": -86.304145,
@@ -829,7 +666,7 @@
         }
       },
       {
-        "t": 8000,
+        "t": 5000,
         "pose": {
           "lat": 32.383604,
           "lng": -86.303324,
@@ -840,7 +677,7 @@
         }
       },
       {
-        "t": 10000,
+        "t": 7000,
         "pose": {
           "lat": 32.384705,
           "lng": -86.30223,
@@ -898,7 +735,7 @@
         }
       },
       {
-        "t": 10000,
+        "t": 7000,
         "weather": {
           "cloudLayers": [
             {

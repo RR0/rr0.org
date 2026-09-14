@@ -1775,7 +1775,7 @@
               "type": "unknown",
               "baseM": 3500,
               "thicknessM": 800,
-              "coverage": 0.010000000000000002,
+              "coverage": 0.009966666666666665,
               "sizeM": 2500,
               "density": 1
             },
@@ -1784,19 +1784,20 @@
               "type": "cirrus",
               "baseM": 8000,
               "thicknessM": 400,
-              "coverage": 0.0025000000000000005,
+              "coverage": 0.0024916666666666663,
               "sizeM": 2200,
               "density": 0.35
             }
           ],
-          "cloudCover": 0.012499999999999997,
-          "cloudDarkness": 0.38000000000000006,
-          "highCloudCover": 0.0025000000000000005,
-          "lowerCloudCover": 0.010000000000000002,
+          "cloudCover": 0.012458333333333335,
+          "cloudDarkness": 0.38,
+          "highCloudCover": 0.0024916666666666663,
+          "lowerCloudCover": 0.009966666666666665,
+          "relativeHumidity": 0.9,
           "precipitationType": "none",
           "precipitationIntensity": 0,
-          "windDirectionDeg": 162.75,
-          "windSpeed": 1.4425,
+          "windDirectionDeg": 162.7541666666666,
+          "windSpeed": 1.4425583333333334,
           "storm": false
         }
       },
@@ -1836,6 +1837,7 @@
           "cloudDarkness": 0.38,
           "highCloudCover": 0.002472222222222222,
           "lowerCloudCover": 0.009888888888888888,
+          "relativeHumidity": 0.9,
           "precipitationType": "none",
           "precipitationIntensity": 0,
           "windDirectionDeg": 162.7638888888889,
@@ -1849,7 +1851,7 @@
   "weatherSource": {
     "id": "era5",
     "name": "ERA5 (Open-Meteo)",
-    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=32.3792&longitude=-86.3077&start_date=1948-07-24&end_date=1948-07-24&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=32.380852&longitude=-86.306059&start_date=1948-07-24&end_date=1948-07-24&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
   },
   "instrument": "eye"
 }

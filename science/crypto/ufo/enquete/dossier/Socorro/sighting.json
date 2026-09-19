@@ -4804,8 +4804,8 @@
   ],
   "interpretation": {
     "title": {
-      "fr": "Un engin posé sur ses pieds, à cent pieds",
-      "en": "A craft standing on its legs, a hundred feet away"
+      "fr": "Un engin qui se pose derrière la colline dans une flamme, reste sur ses pieds, puis repart",
+      "en": "A craft that lands behind the hill in a flame, stands on its legs, then leaves"
     },
     "bodies": [
       {
@@ -4822,10 +4822,10 @@
         },
         "track": [
           {
-            "t": 52000,
-            "eastM": -571.57,
-            "northM": -965.47,
-            "onGround": true,
+            "t": 0,
+            "azimuthDeg": 210.6,
+            "altitudeDeg": 9.975,
+            "distanceM": 1195.8,
             "sizeM": {
               "widthM": 3.36,
               "lengthM": 3.38,
@@ -4833,7 +4833,48 @@
             },
             "attitude": {
               "headingDeg": 20
+            },
+            "flame": {
+              "lengthM": 2.43,
+              "widthM": 1.17,
+              "color": "#7fc4ff",
+              "tipColor": "#ff8a2b",
+              "luminanceCdM2": 20000
             }
+          },
+          {
+            "t": 6000,
+            "azimuthDeg": 212.1,
+            "altitudeDeg": 2.9833,
+            "distanceM": 995.3
+          },
+          {
+            "t": 10000,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 10
+          },
+          {
+            "t": 14000,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "onGround": true
+          },
+          {
+            "t": 15000,
+            "flame": {
+              "lengthM": 2.43,
+              "widthM": 1.17,
+              "color": "#7fc4ff",
+              "tipColor": "#ff8a2b",
+              "luminanceCdM2": 0
+            }
+          },
+          {
+            "t": 52000,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "onGround": true
           },
           {
             "t": 76000,

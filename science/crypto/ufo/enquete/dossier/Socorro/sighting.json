@@ -21,8 +21,8 @@
     "title": "Lonnie Zamora"
   },
   "description": {
-    "fr": "Tout le témoignage de Lonnie Zamora, d'un seul tenant : les six moments que le croquis du dossier Blue Book lettre A à F ne sont pas six extraits mais six repères posés sur un même enregistrement de deux minutes, que le lecteur traverse sans coupure — parce que c'est ainsi que Zamora l'a vécu. Ce qui est CALCULÉ. L'objet mesure 3,36 × 1,73 m, non pas décrété mais déduit des 6,41° × 3,31° que la phase rapprochée énonçait déjà à la trentaine de mètres du croquis (100 pieds). Le même objet à 800 pieds (244 m) fait alors 0,79° de large, et les deux silhouettes 0,31° de haut : deux traits de deux pixels à côté d'un objet d'une vingtaine. C'est ce que « il les a vues à 800 pieds » veut dire, et c'est ce qu'aucune illustration de ce cas ne montre. À cinq milles, l'objet fait 0,024°. L'axe d'APPROCHE se déduit : Zamora voit l'engin au même azimut à 800 pieds qu'à 100, il a donc roulé droit dessus — mais cette déduction ne porte que la dernière ligne, celle qui va du moment où il quitte la route jusqu'à l'engin, et le fichier l'étendait à tout le trajet. Le croquis Blue Book ne montre pas une droite : il montre la route de Socorro, DEUX embranchements pris à droite, puis une sortie de route vers la GAUCHE, et c'est là que les roues dérapent sur la pente (C). Le trajet a maintenant cette forme. Les deux virages sont à 12 s et 18 s, et leurs caps — 200°, puis 230°, puis 260° — sont lus sur la FORME du croquis, pas relevés sur un plan : le croquis est réorienté et sans échelle, et les pistes de 1964 ne sont pas celles qu'une photo d'aujourd'hui montre. Ce qui est tenu, c'est le site (E/F, inchangé) et l'axe d'approche déduit ; ce qui a bougé, c'est le point de départ, de 229 m vers l'est-nord-est — il était lui aussi porté par la droite qu'on vient de retirer. Son CAP suit la route tant qu'il conduit — un homme au volant regarde où il va — puis revient sur l'axe d'approche quand il quitte le bitume. Rien de ce qui est dessiné n'en dépend : entre la huitième et la cinquantième seconde, la flamme s'est éteinte et l'engin n'est pas encore visible, donc les deux virages ne déplacent que le ciel et le cône de la carte. Ils le peuvent parce que chaque forme énonce désormais sa direction (BaseShape.aim) : tourner la tête ne déplace plus ce qu'on regarde. Les distances viennent du croquis (800′, 100′, 5 milles). Ce qui est ASSUMÉ, et doit se lire comme tel. La répartition des six moments dans les deux minutes vient de l'ORDRE du récit, pas d'un chronomètre : aucune source ne minute cette séquence. L'élévation de l'objet à 800 pieds (−1,5°, interpolée jusqu'aux −7,7° que la phase rapprochée énonce) suppose qu'il est plus haut sur la pente qu'à la fin. Son cap suit son regard, et son regard le récit. Il fait face à l'engin à 200° pendant toute l'approche — c'est l'axe déduit plus haut — puis, au rugissement, il se retourne et court : le cap bascule sur celui de sa propre course, 10°, relevé sur les positions que la piste portait déjà et que rien ne lisait. Il revient à 191° à la seconde 84,5, et ce chiffre n'est pas choisi : c'est celui qui rend continu le saut de 9° que l'objet faisait jusqu'ici en travers du cadre à cet instant précis. Un saut de l'objet était en réalité un mouvement de tête. Pendant les six secondes où il a le dos tourné, l'objet n'est plus dans le cadre — et ce n'est plus une transparence posée à la main, c'est la GÉOMÉTRIE : chaque forme énonce maintenant sa direction (azimut et hauteur, voir BaseShape.aim), et une direction à 190° de l'axe n'est sur aucune image. C'est ce qui rend le cap éditable sans emporter le ciel avec lui, et ça dit ce que Zamora a dit : n'avoir rien vu de la montée, et s'être retourné une fois l'engin déjà au-dessus de l'abri. Sa voiture roule avec lui, décalée de 2,6 m sur le côté : la caméra est à son œil, et le modèle n'a pas d'intérieur où la mettre — le corps du véhicule est donc dessiné à côté de lui plutôt qu'autour, en attendant que le modèle sache dire « le témoin est à l'intérieur de cet objet » au fil du temps. Le son suit le récit et rien d'autre : le rugissement entendu de loin, qui passe de l'aigu au grave puis s'arrête (B) — un keyframe « none » est un silence ÉNONCÉ, pas un enregistrement muet ; les deux bruits sourds avant le décollage, puis le rugissement qui monte et s'éteint pendant que l'objet part. Les deux silhouettes en combinaison blanche figurent enfin, à (D) et seulement là : Zamora ne les a vues qu'au premier regard, et elles avaient disparu quand il s'est approché. La voiture de patrouille masque ce qui passe derrière elle. Ses dimensions sont celles de la Pontiac de 1964 qu'il conduisait (5,44 × 2,02 × 1,42 m, cotes publiées du modèle) ; sa FORME est un substitut assumé, une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), le temps qu'un modèle exact existe. L'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) : une estimation assumée, mais qui vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le lieu est 34°02′33″N 106°53′52″W, au sud-est de Socorro près de High School Road, identifié par la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu auparavant, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, 23 m de dénivelé sur le carré de 1,8 km contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. Le récit exige des collines ; celui-là en a. Ce qu'on voit du feu au moment (A) est son ÉBLOUISSEMENT, pas sa taille : 1,15 m de flamme à 1200 m font 0,055°, soit un tiers de pixel. Le voile est plancherisé, exactement comme l'est déjà le rayon d'une lampe de décor — ce qui atteint un œil depuis une lumière vive, c'est sa floraison et non son contour. La taille énoncée de la flamme, elle, n'a pas bougé.",
-    "en": "Lonnie Zamora's whole testimony, of a piece: the six moments the Blue Book file's sketch letters A to F are not six clips but six markers set on one two-minute recording, which the reader crosses without a cut — because that is how Zamora lived it. What is COMPUTED. The object is 3.36 × 1.73 m, not decreed but derived from the 6.41° × 3.31° the close phase already stated at the sketch's thirty-odd metres (100 feet). The same object at 800 feet (244 m) is then 0.79° wide, and the two figures 0.31° high: two two-pixel strokes beside an object of some twenty. That is what “he saw them at 800 feet” means, and it is what no illustration of this case shows. At five miles the object is 0.024°. The line of APPROACH follows: Zamora sees the craft at the same azimuth at 800 feet as at 100, so he drove straight at it — but that deduction carries only the last leg, the one from where he leaves the road to the craft, and the file stretched it over the whole drive. The Blue Book sketch shows no straight line: it shows the road out of Socorro, TWO forks taken to the right, then leaving the road to the LEFT, which is where the wheels skid on the slope (C). The track now has that shape. The two turns are at 12 s and 18 s, and their bearings — 200°, then 230°, then 260° — are read off the SHAPE of the sketch, not surveyed: the sketch is reoriented and to no scale, and the tracks of 1964 are not the ones a photograph shows today. What is held is the site (E/F, unmoved) and the deduced approach axis; what moved is the starting point, 229 m to the east-north-east — it too was carried by the straight line that has just been taken away. His HEADING follows the road while he is driving — a man at a wheel looks where he is going — and returns to the approach axis when he leaves the tarmac. Nothing drawn depends on it: between the eighth second and the fiftieth the flame has gone out and the craft is not visible yet, so the two turns move only the sky and the map's cone. They can, because every shape now states its own direction (BaseShape.aim): turning a head no longer moves what it is looking at. The distances come from the sketch (800′, 100′, 5 miles). What is ASSUMED, and must be read as such. The spread of the six moments across the two minutes comes from the ORDER of the account, not from a stopwatch: no source times this sequence. The object's elevation at 800 feet (−1.5°, interpolated to the −7.7° the close phase states) assumes it is higher up the slope than at the end. His heading follows his gaze, and his gaze the account. He faces the craft at 200° for the whole approach — the axis deduced above — then, at the roar, he turns and runs: the heading swings to his own running bearing, 10°, read off the positions the track already carried and nothing had ever read. He comes back to 191° at second 84.5, and that figure is not chosen: it is the one that makes continuous the 9° jump the object made across the frame at exactly that instant. A jump of the object was really a movement of a head. For the six seconds his back is turned the object is no longer in the frame — and not by a transparency set by hand any more, by GEOMETRY: every shape now states its own direction (azimuth and altitude, see BaseShape.aim), and a direction 190 degrees off the axis is on no picture at all. That is what makes the heading editable without carrying the sky along with it, and it says what Zamora said: that he saw nothing of the climb, and turned round only once the craft was already above the shack. His car drives with him, offset 2.6 m to the side: the camera is at his eye, and the model has no interior to put it in — so the vehicle's body is drawn beside him rather than around him, until the model can say “the witness is inside this object” over time. The sound follows the account and nothing else: the roar heard from far off, going from high to low and then stopping (B) — a “none” keyframe is a STATED silence, not a mute recording; the two thuds before the take-off, then the roar that rises and dies away as the object leaves. The two figures in white coveralls appear at (D) and only there: Zamora saw them at the first look alone, and they were gone when he came closer. The patrol car hides whatever passes behind it. Its dimensions are those of the 1964 Pontiac he drove (5.44 × 2.02 × 1.42 m, the model's published figures); its SHAPE is an acknowledged stand-in, a generic stylised patrol car (Kenney, Car Kit, CC0), until an exact model exists. The dynamite shack, whose dimensions no source gives, is brought down to those of an ordinary powder magazine of the period (3 × 2.4 × 2.2 m): an assumed estimate, but a better one than the 6 × 6 m shed the default shape gave it. The place is 34°02′33″N 106°53′52″W, south-east of Socorro near High School Road, identified by the match between the track network to the west and the file's sketch (re-oriented). The point held before, 1.7 km north, was on the flat: measured on the render's own relief source, 23 m of drop over the 1.8 km square against 64 m here, with the ground falling ten-odd metres away to the east and a ridge 100 m to the south. The account demands hills; this one has them. What is seen of the flame at moment (A) is its GLARE, not its size: 1.15 m of flame at 1,200 m is 0.055°, a third of a pixel. The veil has a floor, exactly as a decor lamp's beam already does — what reaches an eye from a bright light is its bloom, not its outline. The stated size of the flame itself has not moved."
+    "fr": "Tout le témoignage de Lonnie Zamora, d'un seul tenant : les six moments que le croquis du dossier Blue Book lettre A à F ne sont pas six extraits mais six repères posés sur un même enregistrement de deux minutes, que le lecteur traverse sans coupure — parce que c'est ainsi que Zamora l'a vécu. Ce qui est CALCULÉ. L'objet mesure 3,36 × 1,73 m, non pas décrété mais déduit des 6,41° × 3,31° que la phase rapprochée énonçait déjà à la trentaine de mètres du croquis (100 pieds). Le même objet à 800 pieds (244 m) fait alors 0,79° de large, et les deux silhouettes 0,31° de haut : deux traits de deux pixels à côté d'un objet d'une vingtaine. C'est ce que « il les a vues à 800 pieds » veut dire, et c'est ce qu'aucune illustration de ce cas ne montre. À cinq milles, l'objet fait 0,024°. L'axe d'APPROCHE se déduit : Zamora voit l'engin au même azimut à 800 pieds qu'à 100, il a donc roulé droit dessus — mais cette déduction ne porte que la dernière ligne, celle qui va du moment où il quitte la route jusqu'à l'engin, et le fichier l'étendait à tout le trajet. Le croquis Blue Book ne montre pas une droite : il montre la route de Socorro, DEUX embranchements pris à droite, puis une sortie de route vers la GAUCHE, et c'est là que les roues dérapent sur la pente (C). Le trajet a maintenant cette forme. Les deux virages sont à 12 s et 18 s, et leurs caps — 200°, puis 230°, puis 260° — sont lus sur la FORME du croquis, pas relevés sur un plan : le croquis est réorienté et sans échelle, et les pistes de 1964 ne sont pas celles qu'une photo d'aujourd'hui montre. Ce qui est tenu, c'est le site (E/F, inchangé) et l'axe d'approche déduit ; ce qui a bougé, c'est le point de départ, de 229 m vers l'est-nord-est — il était lui aussi porté par la droite qu'on vient de retirer. Son CAP suit la route tant qu'il conduit — un homme au volant regarde où il va — puis revient sur l'axe d'approche quand il quitte le bitume. Rien de ce qui est dessiné n'en dépend : entre la huitième et la cinquantième seconde, la flamme s'est éteinte et l'engin n'est pas encore visible, donc les deux virages ne déplacent que le ciel et le cône de la carte. Ils le peuvent parce que chaque forme énonce désormais sa direction (BaseShape.aim) : tourner la tête ne déplace plus ce qu'on regarde. Les distances viennent du croquis (800′, 100′, 5 milles). Ce qui est ASSUMÉ, et doit se lire comme tel. La répartition des six moments dans les deux minutes vient de l'ORDRE du récit, pas d'un chronomètre : aucune source ne minute cette séquence. L'élévation de l'objet à 800 pieds (−1,5°, interpolée jusqu'aux −7,7° que la phase rapprochée énonce) suppose qu'il est plus haut sur la pente qu'à la fin. Son cap suit son regard, et son regard le récit. Il fait face à l'engin à 200° pendant toute l'approche — c'est l'axe déduit plus haut — puis, au rugissement, il se retourne et court : le cap bascule sur celui de sa propre course, 10°, relevé sur les positions que la piste portait déjà et que rien ne lisait. Il revient à 191° à la seconde 87, et ce chiffre n'est pas choisi : c'est celui qui rend continu le saut de 9° que l'objet faisait jusqu'ici en travers du cadre à cet instant précis. Un saut de l'objet était en réalité un mouvement de tête. Pendant les six secondes où il a le dos tourné, l'objet n'est plus dans le cadre — et ce n'est plus une transparence posée à la main, c'est la GÉOMÉTRIE : chaque forme énonce maintenant sa direction (azimut et hauteur, voir BaseShape.aim), et une direction à 190° de l'axe n'est sur aucune image. C'est ce qui rend le cap éditable sans emporter le ciel avec lui, et ça dit ce que Zamora a dit : n'avoir rien vu de la montée, et s'être retourné une fois l'engin déjà au-dessus de l'abri. Sa voiture roule avec lui, décalée de 2,6 m sur le côté : la caméra est à son œil, et le modèle n'a pas d'intérieur où la mettre — le corps du véhicule est donc dessiné à côté de lui plutôt qu'autour, en attendant que le modèle sache dire « le témoin est à l'intérieur de cet objet » au fil du temps. Le son suit le récit et rien d'autre : le rugissement entendu de loin, qui passe de l'aigu au grave puis s'arrête (B) — un keyframe « none » est un silence ÉNONCÉ, pas un enregistrement muet ; les deux bruits sourds avant le décollage, puis le rugissement qui monte et s'éteint pendant que l'objet part. Les deux silhouettes en combinaison blanche figurent enfin, à (D) et seulement là : Zamora ne les a vues qu'au premier regard, et elles avaient disparu quand il s'est approché. La voiture de patrouille masque ce qui passe derrière elle. Ses dimensions sont celles de la Pontiac de 1964 qu'il conduisait (5,44 × 2,02 × 1,42 m, cotes publiées du modèle) ; sa FORME est un substitut assumé, une voiture de patrouille générique et stylisée (Kenney, Car Kit, CC0), le temps qu'un modèle exact existe. L'abri à dynamite, dont aucune source ne donne les cotes, est ramené à celles d'une poudrière ordinaire de l'époque (3 × 2,4 × 2,2 m) : une estimation assumée, mais qui vaut mieux que le hangar de 6 × 6 m que la forme par défaut lui donnait. Le lieu est 34°02′33″N 106°53′52″W, au sud-est de Socorro près de High School Road, identifié par la correspondance du réseau de pistes à l'ouest avec le croquis du dossier (réorienté). Le point retenu auparavant, 1,7 km au nord, était sur du plat : mesuré sur la source de relief du rendu, 23 m de dénivelé sur le carré de 1,8 km contre 64 m ici, avec le sol qui retombe d'une dizaine de mètres vers l'est et une crête 100 m au sud. Le récit exige des collines ; celui-là en a. Ce qu'on voit du feu au moment (A) est son ÉBLOUISSEMENT, pas sa taille : 1,15 m de flamme à 1200 m font 0,055°, soit un tiers de pixel. Le voile est plancherisé, exactement comme l'est déjà le rayon d'une lampe de décor — ce qui atteint un œil depuis une lumière vive, c'est sa floraison et non son contour. La taille énoncée de la flamme, elle, n'a pas bougé.",
+    "en": "Lonnie Zamora's whole testimony, of a piece: the six moments the Blue Book file's sketch letters A to F are not six clips but six markers set on one two-minute recording, which the reader crosses without a cut — because that is how Zamora lived it. What is COMPUTED. The object is 3.36 × 1.73 m, not decreed but derived from the 6.41° × 3.31° the close phase already stated at the sketch's thirty-odd metres (100 feet). The same object at 800 feet (244 m) is then 0.79° wide, and the two figures 0.31° high: two two-pixel strokes beside an object of some twenty. That is what “he saw them at 800 feet” means, and it is what no illustration of this case shows. At five miles the object is 0.024°. The line of APPROACH follows: Zamora sees the craft at the same azimuth at 800 feet as at 100, so he drove straight at it — but that deduction carries only the last leg, the one from where he leaves the road to the craft, and the file stretched it over the whole drive. The Blue Book sketch shows no straight line: it shows the road out of Socorro, TWO forks taken to the right, then leaving the road to the LEFT, which is where the wheels skid on the slope (C). The track now has that shape. The two turns are at 12 s and 18 s, and their bearings — 200°, then 230°, then 260° — are read off the SHAPE of the sketch, not surveyed: the sketch is reoriented and to no scale, and the tracks of 1964 are not the ones a photograph shows today. What is held is the site (E/F, unmoved) and the deduced approach axis; what moved is the starting point, 229 m to the east-north-east — it too was carried by the straight line that has just been taken away. His HEADING follows the road while he is driving — a man at a wheel looks where he is going — and returns to the approach axis when he leaves the tarmac. Nothing drawn depends on it: between the eighth second and the fiftieth the flame has gone out and the craft is not visible yet, so the two turns move only the sky and the map's cone. They can, because every shape now states its own direction (BaseShape.aim): turning a head no longer moves what it is looking at. The distances come from the sketch (800′, 100′, 5 miles). What is ASSUMED, and must be read as such. The spread of the six moments across the two minutes comes from the ORDER of the account, not from a stopwatch: no source times this sequence. The object's elevation at 800 feet (−1.5°, interpolated to the −7.7° the close phase states) assumes it is higher up the slope than at the end. His heading follows his gaze, and his gaze the account. He faces the craft at 200° for the whole approach — the axis deduced above — then, at the roar, he turns and runs: the heading swings to his own running bearing, 10°, read off the positions the track already carried and nothing had ever read. He comes back to 191° at second 87, and that figure is not chosen: it is the one that makes continuous the 9° jump the object made across the frame at exactly that instant. A jump of the object was really a movement of a head. For the six seconds his back is turned the object is no longer in the frame — and not by a transparency set by hand any more, by GEOMETRY: every shape now states its own direction (azimuth and altitude, see BaseShape.aim), and a direction 190 degrees off the axis is on no picture at all. That is what makes the heading editable without carrying the sky along with it, and it says what Zamora said: that he saw nothing of the climb, and turned round only once the craft was already above the shack. His car drives with him, offset 2.6 m to the side: the camera is at his eye, and the model has no interior to put it in — so the vehicle's body is drawn beside him rather than around him, until the model can say “the witness is inside this object” over time. The sound follows the account and nothing else: the roar heard from far off, going from high to low and then stopping (B) — a “none” keyframe is a STATED silence, not a mute recording; the two thuds before the take-off, then the roar that rises and dies away as the object leaves. The two figures in white coveralls appear at (D) and only there: Zamora saw them at the first look alone, and they were gone when he came closer. The patrol car hides whatever passes behind it. Its dimensions are those of the 1964 Pontiac he drove (5.44 × 2.02 × 1.42 m, the model's published figures); its SHAPE is an acknowledged stand-in, a generic stylised patrol car (Kenney, Car Kit, CC0), until an exact model exists. The dynamite shack, whose dimensions no source gives, is brought down to those of an ordinary powder magazine of the period (3 × 2.4 × 2.2 m): an assumed estimate, but a better one than the 6 × 6 m shed the default shape gave it. The place is 34°02′33″N 106°53′52″W, south-east of Socorro near High School Road, identified by the match between the track network to the west and the file's sketch (re-oriented). The point held before, 1.7 km north, was on the flat: measured on the render's own relief source, 23 m of drop over the 1.8 km square against 64 m here, with the ground falling ten-odd metres away to the east and a ridge 100 m to the south. The account demands hills; this one has them. What is seen of the flame at moment (A) is its GLARE, not its size: 1.15 m of flame at 1,200 m is 0.055°, a third of a pixel. The veil has a floor, exactly as a decor lamp's beam already does — what reaches an eye from a bright light is its bloom, not its outline. The stated size of the flame itself has not moved."
   },
   "tags": [
     "RR3",
@@ -1647,6 +1647,328 @@
         ]
       },
       {
+        "t": 75950,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 300.8,
+                "y": 186.4,
+                "width": 38.4,
+                "height": 19.8
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 6.4071,
+                "heightDeg": 3.3071
+              },
+              "aim": {
+                "azimuthDeg": 200,
+                "altitudeDeg": -7.7167
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.9,
+                "y": 193,
+                "width": 8.4,
+                "height": 6.7
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 1.3966,
+                "heightDeg": 1.121
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -7.725
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 313.5,
+                "y": 206.1,
+                "width": 13.2,
+                "height": 26.3
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 2.205,
+                "heightDeg": 4.3901
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -11.5417
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 312.8,
+                "y": 222.7,
+                "width": 14.6,
+                "height": 10.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 2.4255,
+                "heightDeg": 1.7641
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -13
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              },
+              "aim": {
+                "azimuthDeg": 200.0083,
+                "altitudeDeg": -5.0083
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              },
+              "aim": {
+                "azimuthDeg": 200.0083,
+                "altitudeDeg": -5.0083
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 76000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 300.8,
+                "y": 186.4,
+                "width": 38.4,
+                "height": 19.8
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 6.4071,
+                "heightDeg": 3.3071
+              },
+              "aim": {
+                "azimuthDeg": 200,
+                "altitudeDeg": -7.7167
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.9,
+                "y": 193,
+                "width": 8.4,
+                "height": 6.7
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 1.3966,
+                "heightDeg": 1.121
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -7.725
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 313.5,
+                "y": 206.1,
+                "width": 13.2,
+                "height": 26.3
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 2.205,
+                "heightDeg": 4.3901
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -11.5417
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 312.8,
+                "y": 222.7,
+                "width": 14.6,
+                "height": 10.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 2.4255,
+                "heightDeg": 1.7641
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -13
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              },
+              "aim": {
+                "azimuthDeg": 200.0083,
+                "altitudeDeg": -5.0083
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              },
+              "aim": {
+                "azimuthDeg": 200.0083,
+                "altitudeDeg": -5.0083
+              }
+            }
+          }
+        ]
+      },
+      {
         "t": 77000,
         "shapes": [
           {
@@ -1808,7 +2130,168 @@
         ]
       },
       {
-        "t": 78500,
+        "t": 79000,
+        "shapes": [
+          {
+            "sourceId": "ufo-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 300.8,
+                "y": 186.4,
+                "width": 38.4,
+                "height": 19.8
+              },
+              "color": "#e8e6df",
+              "angle": 0,
+              "transparency": 0,
+              "haloScale": 0.2,
+              "selected": false,
+              "title": "Objet",
+              "angular": {
+                "widthDeg": 6.4071,
+                "heightDeg": 3.3071
+              },
+              "aim": {
+                "azimuthDeg": 200,
+                "altitudeDeg": -7.7167
+              }
+            }
+          },
+          {
+            "sourceId": "insigne",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 315.9,
+                "y": 193,
+                "width": 8.4,
+                "height": 6.7
+              },
+              "color": "#b4231f",
+              "angle": 0,
+              "transparency": 0,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Insigne rouge (taille rapportée, tracé approché)",
+              "angular": {
+                "widthDeg": 1.3966,
+                "heightDeg": 1.121
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -7.725
+              }
+            }
+          },
+          {
+            "sourceId": "flamme",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 313.5,
+                "y": 206.1,
+                "width": 13.2,
+                "height": 26.3
+              },
+              "color": "#7fc4ff",
+              "angle": 0,
+              "transparency": 0.15,
+              "haloScale": 1.8,
+              "selected": false,
+              "title": "Flamme",
+              "angular": {
+                "widthDeg": 2.205,
+                "heightDeg": 4.3901
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -11.5417
+              }
+            }
+          },
+          {
+            "sourceId": "flamme-base",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 312.8,
+                "y": 222.7,
+                "width": 14.6,
+                "height": 10.6
+              },
+              "color": "#ff8a2b",
+              "angle": 0,
+              "transparency": 0.2,
+              "haloScale": 1.6,
+              "selected": false,
+              "title": "Base orange de la flamme",
+              "angular": {
+                "widthDeg": 2.4255,
+                "heightDeg": 1.7641
+              },
+              "aim": {
+                "azimuthDeg": 200.0167,
+                "altitudeDeg": -13
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-1",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (1)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              },
+              "aim": {
+                "azimuthDeg": 200.0083,
+                "altitudeDeg": -5.0083
+              }
+            }
+          },
+          {
+            "sourceId": "silhouette-2",
+            "shape": {
+              "kind": "oval",
+              "bounds": {
+                "x": 319.9,
+                "y": 179.9,
+                "width": 0.3,
+                "height": 0.3
+              },
+              "color": "#f2f2ee",
+              "angle": 0,
+              "transparency": 1,
+              "haloScale": 0,
+              "selected": false,
+              "title": "Silhouette en combinaison blanche (2)",
+              "angular": {
+                "widthDeg": 0.05,
+                "heightDeg": 0.05
+              },
+              "aim": {
+                "azimuthDeg": 200.0083,
+                "altitudeDeg": -5.0083
+              }
+            }
+          }
+        ]
+      },
+      {
+        "t": 81000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -1969,7 +2452,7 @@
         ]
       },
       {
-        "t": 80000,
+        "t": 82500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2130,7 +2613,7 @@
         ]
       },
       {
-        "t": 81500,
+        "t": 84000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2291,7 +2774,7 @@
         ]
       },
       {
-        "t": 83000,
+        "t": 85500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2452,7 +2935,7 @@
         ]
       },
       {
-        "t": 84500,
+        "t": 87000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2613,7 +3096,7 @@
         ]
       },
       {
-        "t": 86000,
+        "t": 88000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2774,7 +3257,7 @@
         ]
       },
       {
-        "t": 89000,
+        "t": 90500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -2935,7 +3418,7 @@
         ]
       },
       {
-        "t": 92000,
+        "t": 93000,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -3096,7 +3579,7 @@
         ]
       },
       {
-        "t": 95000,
+        "t": 95500,
         "shapes": [
           {
             "sourceId": "ufo-1",
@@ -3872,7 +4355,18 @@
         }
       },
       {
-        "t": 78500,
+        "t": 80000,
+        "pose": {
+          "lat": 34.0425,
+          "lng": -106.897778,
+          "elevationM": 0,
+          "headingDeg": 200,
+          "pitchDeg": -5,
+          "fovDeg": 60
+        }
+      },
+      {
+        "t": 81000,
         "pose": {
           "lat": 34.042536,
           "lng": -106.897764,
@@ -3883,7 +4377,7 @@
         }
       },
       {
-        "t": 80000,
+        "t": 82500,
         "pose": {
           "lat": 34.042572,
           "lng": -106.89775,
@@ -3894,7 +4388,7 @@
         }
       },
       {
-        "t": 83000,
+        "t": 85500,
         "pose": {
           "lat": 34.042635,
           "lng": -106.89775,
@@ -3905,7 +4399,7 @@
         }
       },
       {
-        "t": 84500,
+        "t": 87000,
         "pose": {
           "lat": 34.042635,
           "lng": -106.89775,
@@ -4233,7 +4727,7 @@
         }
       },
       {
-        "t": 79000,
+        "t": 81000,
         "sound": {
           "kind": "rumble",
           "volume": 0.95,
@@ -4241,7 +4735,7 @@
         }
       },
       {
-        "t": 88000,
+        "t": 89500,
         "sound": {
           "kind": "rumble",
           "volume": 0.25,
@@ -4249,7 +4743,7 @@
         }
       },
       {
-        "t": 90000,
+        "t": 91000,
         "sound": {
           "kind": "none",
           "volume": 0,
@@ -4342,10 +4836,7 @@
             }
           },
           {
-            "t": 77000,
-            "eastM": -571.57,
-            "northM": -965.47,
-            "onGround": true,
+            "t": 76000,
             "flame": {
               "lengthM": 2.43,
               "widthM": 1.17,
@@ -4355,13 +4846,37 @@
             }
           },
           {
-            "t": 83000,
+            "t": 79000,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "onGround": true
+          },
+          {
+            "t": 81000,
+            "azimuthDeg": 198.55,
+            "altitudeDeg": -3.8,
+            "distanceM": 33.6
+          },
+          {
+            "t": 82500,
+            "azimuthDeg": 197.3667,
+            "altitudeDeg": -0.6583,
+            "distanceM": 37.3
+          },
+          {
+            "t": 84000,
+            "azimuthDeg": 196.5917,
+            "altitudeDeg": 1.9167,
+            "distanceM": 40.8
+          },
+          {
+            "t": 85500,
             "azimuthDeg": 195.925,
             "altitudeDeg": 4.1083,
             "distanceM": 44.2
           },
           {
-            "t": 84500,
+            "t": 87000,
             "azimuthDeg": 204.6417,
             "altitudeDeg": 2.075,
             "distanceM": 63.1,
@@ -4374,25 +4889,25 @@
             }
           },
           {
-            "t": 86000,
+            "t": 88000,
             "azimuthDeg": 209.2667,
             "altitudeDeg": 0.9667,
             "distanceM": 82.5
           },
           {
-            "t": 89000,
+            "t": 90500,
             "azimuthDeg": 214.9,
             "altitudeDeg": 3.1417,
             "distanceM": 205.4
           },
           {
-            "t": 92000,
+            "t": 93000,
             "azimuthDeg": 217.1583,
             "altitudeDeg": 4.325,
             "distanceM": 551.3
           },
           {
-            "t": 95000,
+            "t": 95500,
             "azimuthDeg": 217.7667,
             "altitudeDeg": 4.9667,
             "distanceM": 1497.0

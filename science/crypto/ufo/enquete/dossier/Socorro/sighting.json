@@ -4636,6 +4636,276 @@
         "lengthM": 2.4,
         "heightM": 2.2
       }
+    },
+    {
+      "id": "greasewood-burnt-1",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood (brûlé)",
+        "en": "Greasewood (burnt)"
+      },
+      "eastM": -570.89,
+      "northM": -965.08,
+      "sizeM": {
+        "widthM": 1.1,
+        "lengthM": 1.1,
+        "heightM": 0.9
+      }
+    },
+    {
+      "id": "greasewood-burnt-2",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood (brûlé)",
+        "en": "Greasewood (burnt)"
+      },
+      "eastM": -572.33,
+      "northM": -965.51,
+      "sizeM": {
+        "widthM": 1.1,
+        "lengthM": 1.1,
+        "heightM": 0.9
+      }
+    },
+    {
+      "id": "greasewood-burnt-3",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood (brûlé)",
+        "en": "Greasewood (burnt)"
+      },
+      "eastM": -571.76,
+      "northM": -966.57,
+      "sizeM": {
+        "widthM": 1.1,
+        "lengthM": 1.1,
+        "heightM": 0.9
+      }
+    },
+    {
+      "id": "greasewood-burnt-4",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood (brûlé)",
+        "en": "Greasewood (burnt)"
+      },
+      "eastM": -568.23,
+      "northM": -964.77,
+      "sizeM": {
+        "widthM": 1.1,
+        "lengthM": 1.1,
+        "heightM": 0.9
+      }
+    },
+    {
+      "id": "greasewood-1",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -596.39,
+      "northM": -986.02,
+      "sizeM": {
+        "widthM": 0.76,
+        "lengthM": 0.76,
+        "heightM": 0.61
+      }
+    },
+    {
+      "id": "greasewood-2",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -606.1,
+      "northM": -966.95,
+      "sizeM": {
+        "widthM": 0.69,
+        "lengthM": 0.69,
+        "heightM": 0.55
+      }
+    },
+    {
+      "id": "greasewood-3",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -561.77,
+      "northM": -935.78,
+      "sizeM": {
+        "widthM": 0.93,
+        "lengthM": 0.93,
+        "heightM": 0.74
+      }
+    },
+    {
+      "id": "greasewood-4",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -576.41,
+      "northM": -933.48,
+      "sizeM": {
+        "widthM": 0.94,
+        "lengthM": 0.94,
+        "heightM": 0.75
+      }
+    },
+    {
+      "id": "greasewood-5",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -549.47,
+      "northM": -950.36,
+      "sizeM": {
+        "widthM": 1.13,
+        "lengthM": 1.13,
+        "heightM": 0.9
+      }
+    },
+    {
+      "id": "greasewood-6",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -542.66,
+      "northM": -946.55,
+      "sizeM": {
+        "widthM": 0.87,
+        "lengthM": 0.87,
+        "heightM": 0.7
+      }
+    },
+    {
+      "id": "greasewood-7",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -584.52,
+      "northM": -986.52,
+      "sizeM": {
+        "widthM": 0.97,
+        "lengthM": 0.97,
+        "heightM": 0.78
+      }
+    },
+    {
+      "id": "greasewood-8",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -559.02,
+      "northM": -979.35,
+      "sizeM": {
+        "widthM": 1.25,
+        "lengthM": 1.25,
+        "heightM": 1.0
+      }
+    },
+    {
+      "id": "greasewood-9",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -581.38,
+      "northM": -967.97,
+      "sizeM": {
+        "widthM": 0.8,
+        "lengthM": 0.8,
+        "heightM": 0.64
+      }
+    },
+    {
+      "id": "greasewood-10",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -544.57,
+      "northM": -992.81,
+      "sizeM": {
+        "widthM": 0.82,
+        "lengthM": 0.82,
+        "heightM": 0.66
+      }
+    },
+    {
+      "id": "greasewood-11",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -588.14,
+      "northM": -966.32,
+      "sizeM": {
+        "widthM": 1.1,
+        "lengthM": 1.1,
+        "heightM": 0.88
+      }
+    },
+    {
+      "id": "greasewood-12",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -561.89,
+      "northM": -952.31,
+      "sizeM": {
+        "widthM": 0.74,
+        "lengthM": 0.74,
+        "heightM": 0.59
+      }
+    },
+    {
+      "id": "greasewood-13",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -561.89,
+      "northM": -959.66,
+      "sizeM": {
+        "widthM": 0.64,
+        "lengthM": 0.64,
+        "heightM": 0.51
+      }
+    },
+    {
+      "id": "greasewood-14",
+      "kind": "shrub",
+      "title": {
+        "fr": "Greasewood",
+        "en": "Greasewood"
+      },
+      "eastM": -551.66,
+      "northM": -971.65,
+      "sizeM": {
+        "widthM": 0.98,
+        "lengthM": 0.98,
+        "heightM": 0.78
+      }
     }
   ],
   "weatherSource": {
@@ -4921,27 +5191,27 @@
           },
           {
             "t": 81000,
-            "azimuthDeg": 198.55,
-            "altitudeDeg": -3.8,
-            "distanceM": 33.6
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 1.5
           },
           {
             "t": 82500,
-            "azimuthDeg": 197.3667,
-            "altitudeDeg": -0.6583,
-            "distanceM": 37.3
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 3
           },
           {
             "t": 84000,
-            "azimuthDeg": 196.5917,
-            "altitudeDeg": 1.9167,
-            "distanceM": 40.8
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 5
           },
           {
             "t": 85500,
-            "azimuthDeg": 195.925,
-            "altitudeDeg": 4.1083,
-            "distanceM": 44.2,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 7,
             "flame": {
               "lengthM": 2.43,
               "widthM": 1.17,
@@ -4957,6 +5227,9 @@
           },
           {
             "t": 86500,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 7.5,
             "flame": {
               "lengthM": 2.43,
               "widthM": 1.17,
@@ -4967,16 +5240,16 @@
             }
           },
           {
-            "t": 87000,
-            "azimuthDeg": 204.6417,
-            "altitudeDeg": 2.075,
-            "distanceM": 63.1
+            "t": 87500,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "altitudeAboveGroundM": 7
           },
           {
-            "t": 88000,
-            "azimuthDeg": 209.2667,
-            "altitudeDeg": 0.9667,
-            "distanceM": 82.5
+            "t": 89000,
+            "eastM": -635,
+            "northM": -988.7,
+            "altitudeAboveGroundM": 3.1
           },
           {
             "t": 90500,
@@ -5010,6 +5283,80 @@
           }
         ],
         "outlineNode": "hull"
+      },
+      {
+        "id": "figure-1",
+        "title": {
+          "fr": "Personne en combinaison blanche (1)",
+          "en": "Person in white coveralls (1)"
+        },
+        "explains": [
+          "silhouette-1"
+        ],
+        "model": {
+          "id": "figure"
+        },
+        "track": [
+          {
+            "t": 52000,
+            "eastM": -569.22,
+            "northM": -966.33,
+            "onGround": true,
+            "sizeM": {
+              "widthM": 0.45,
+              "lengthM": 0.3,
+              "heightM": 1.3
+            },
+            "attitude": {
+              "headingDeg": 20
+            },
+            "appearance": {
+              "color": "#f2f2ee",
+              "albedo": 0.7
+            }
+          },
+          {
+            "t": 70000,
+            "present": false
+          }
+        ]
+      },
+      {
+        "id": "figure-2",
+        "title": {
+          "fr": "Personne en combinaison blanche (2)",
+          "en": "Person in white coveralls (2)"
+        },
+        "explains": [
+          "silhouette-2"
+        ],
+        "model": {
+          "id": "figure"
+        },
+        "track": [
+          {
+            "t": 52000,
+            "eastM": -573.92,
+            "northM": -964.61,
+            "onGround": true,
+            "sizeM": {
+              "widthM": 0.45,
+              "lengthM": 0.3,
+              "heightM": 1.3
+            },
+            "attitude": {
+              "headingDeg": 20
+            },
+            "appearance": {
+              "color": "#f2f2ee",
+              "albedo": 0.7
+            }
+          },
+          {
+            "t": 70000,
+            "present": false
+          }
+        ]
       }
     ],
     "smoke": {
@@ -5017,22 +5364,26 @@
         {
           "eastM": -570.89,
           "northM": -965.08,
-          "fromT": 77000
+          "fromT": 77000,
+          "halfLifeS": 20
         },
         {
           "eastM": -572.33,
           "northM": -965.51,
-          "fromT": 77000
+          "fromT": 77000,
+          "halfLifeS": 20
         },
         {
           "eastM": -571.76,
           "northM": -966.57,
-          "fromT": 77000
+          "fromT": 77000,
+          "halfLifeS": 20
         },
         {
           "eastM": -568.23,
           "northM": -964.77,
-          "fromT": 77000
+          "fromT": 77000,
+          "halfLifeS": 20
         }
       ],
       "basis": "assumed",

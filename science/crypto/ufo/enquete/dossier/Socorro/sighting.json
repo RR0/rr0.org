@@ -4307,5 +4307,97 @@
         "en": "The object goes off over the shack, then the canyon, over five miles."
       }
     }
-  ]
+  ],
+  "interpretation": {
+    "title": {
+      "fr": "Un engin posé sur ses pieds, à cent pieds",
+      "en": "A craft standing on its legs, a hundred feet away"
+    },
+    "bodies": [
+      {
+        "id": "craft",
+        "title": {
+          "fr": "L'engin",
+          "en": "The craft"
+        },
+        "explains": [
+          "ufo-1"
+        ],
+        "model": {
+          "id": "ellipsoid"
+        },
+        "track": [
+          {
+            "t": 52000,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "onGround": true,
+            "sizeM": {
+              "widthM": 3.36,
+              "lengthM": 3.36,
+              "heightM": 1.73
+            },
+            "appearance": {
+              "color": "#e8e6df",
+              "albedo": 0.7
+            }
+          },
+          {
+            "t": 77000,
+            "eastM": -571.57,
+            "northM": -965.47,
+            "onGround": true
+          },
+          {
+            "t": 83000,
+            "azimuthDeg": 195.925,
+            "altitudeDeg": 4.1083,
+            "distanceM": 44.2
+          },
+          {
+            "t": 84500,
+            "azimuthDeg": 204.6417,
+            "altitudeDeg": 2.075,
+            "distanceM": 63.1
+          },
+          {
+            "t": 86000,
+            "azimuthDeg": 209.2667,
+            "altitudeDeg": 0.9667,
+            "distanceM": 82.5
+          },
+          {
+            "t": 89000,
+            "azimuthDeg": 214.9,
+            "altitudeDeg": 3.1417,
+            "distanceM": 205.4
+          },
+          {
+            "t": 92000,
+            "azimuthDeg": 217.1583,
+            "altitudeDeg": 4.325,
+            "distanceM": 551.3
+          },
+          {
+            "t": 95000,
+            "azimuthDeg": 217.7667,
+            "altitudeDeg": 4.9667,
+            "distanceM": 1497.0
+          },
+          {
+            "t": 100000,
+            "azimuthDeg": 219.9833,
+            "altitudeDeg": 5.4833,
+            "distanceM": 3003.3
+          },
+          {
+            "t": 115000,
+            "azimuthDeg": 221.975,
+            "altitudeDeg": 5.9917,
+            "distanceM": 8055.0
+          }
+        ]
+      }
+    ]
+  }
 }

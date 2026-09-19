@@ -922,6 +922,7 @@ Redirect /science/crypto/ufo/enquete/dossier/1967-07-03_Woonsocket https://rr0.o
 Redirect /StatistiquesApplet.html https://rr0.org/science/crypto/ufo/analyse/statistique/StatistiquesApplet.html
 Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday.html https://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index.html
 Redirect /science/crypto/ufo/enquete/dossier/Roswell/Films/1999-01-17_HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday_fr.html https://rr0.org/time/1/9/9/9/01/17/HowSantillisAlienAutopsyTentFootageWasFaked_MailOnSunday/index_fr.html
+Redirect /people/c/CathalaFrançois https://rr0.org/people/c/CathalaFrancois
 
 # compress certain file types by extension:
 <files *.html>

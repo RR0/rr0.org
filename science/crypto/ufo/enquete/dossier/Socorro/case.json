@@ -4,5 +4,14 @@
   "classification": {
     "hynek": "CE3"
   },
-  "image": "/science/crypto/ufo/enquete/dossier/Socorro/Socorro_painting.jpg"
+  "image": "/science/crypto/ufo/enquete/dossier/Socorro/Socorro_painting.jpg",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1964-04-24 17:50",
+      "title": "Lonnie Zamora",
+      "url": "sighting.json"
+    }
+  ]
 }

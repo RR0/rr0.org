@@ -2,5 +2,21 @@
   "time": "1948",
   "classification": {
     "hynek": "NL"
-  }
+  },
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1948-07-24 02:45",
+      "title": "Clarence Chiles",
+      "url": "witness-chiles.json"
+    },
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1948-07-24 02:45",
+      "title": "John Whitted",
+      "url": "witness-whitted.json"
+    }
+  ]
 }

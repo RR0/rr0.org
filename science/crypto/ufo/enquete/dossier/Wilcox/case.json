@@ -3,5 +3,14 @@
   "time": "1964-04-24 10:00",
   "classification": {
     "hynek": "CE3"
-  }
+  },
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "1964-04-24 10:00",
+      "title": "Gary T. Wilcox",
+      "url": "sighting.json"
+    }
+  ]
 }

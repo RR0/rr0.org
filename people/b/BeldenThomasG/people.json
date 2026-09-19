@@ -1,0 +1,42 @@
+{
+  "lastName": "Belden",
+  "surname": "Tom",
+  "firstNames": [
+    "Thomas",
+    "Graham"
+  ],
+  "occupations": [
+    "engineer",
+    "historian",
+    "writer"
+  ],
+  "countries": [
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1919-06-15",
+      "place": "Peoria (Illinois)",
+      "sources": [
+        {
+          "title": "Thomas Graham Belden 1919-2002",
+          "publisher": "Ancestry",
+          "url": "https://www.ancestry.com/genealogy/records/thomas-graham-belden-24-p8c1ht"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "2002-12-27",
+      "place": "Silver Spring (Maryland)",
+      "sources": [
+        {
+          "title": "Thomas Graham Belden 1919-2002",
+          "publisher": "Ancestry",
+          "url": "https://www.ancestry.com/genealogy/records/thomas-graham-belden-24-p8c1ht"
+        }
+      ]
+    }
+  ]
+}

@@ -107,11 +107,64 @@ attribute is the expansion. Writing both is redundant and forbidden:
 <i lang="en">close encounter</i>
 ```
 
+Never use `<em>` for a foreign term: `<em>` is emphasis, not language. This includes names of organisations, book,
+journal and article titles (`<i lang="en">Congressional Research Service</i>`, `<i lang="en">Forbidden Science</i>`),
+and foreign quotes carry the language too: `<q lang="en">…</q>`.
+
 **Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it must always be linked. Do not leave known terms unlinked.
 
 **External project links** — when RR0 has a dedicated page for an external project/tool (e.g. its own GitHub repo, like `science/crypto/ufo/enquete/projet/UfoAtHome.html`), only that dedicated page should link directly to the external URL (GitHub, npm, etc.). Every other mention of that project anywhere else on the site must link to the dedicated RR0 page instead, not to the external URL directly.
 
-**Sources** — every claim must be supported by a source. Use `<a class="source">` for citations (see replacers above).
+**People references** — a person is always referenced with `<span class="people">First Last</span>`, never with an
+`<a href="/people/...">` link: the build resolves the URL, the portrait preview on hover and the descriptive `title`.
+When the displayed text differs from the resolvable name (nickname, short form), give the full name in `title`:
+`<span class="people" title="Thomas G. Belden">Tom Belden</span>`.
+
+**People pages** — a biography should have a `people.json` next to its `index.html`, holding names, occupations,
+countries and `events` (`birth`, `death`, `image`…). Each event's `place` is a plain string
+(`"place": "Peoria (Illinois)"`), not an object, and carries its own `sources` whenever possible (especially for a
+death). With a `people.json`, the page starts with `<!--#include virtual="/header.html" -->` alone (the build generates
+the title, the default portrait and the birth/death statements from the JSON), and the text continues right after the
+birth: never restate the birth or the death in the HTML. Nor restate the name at the start of the text: the title shows
+it, and the generated birth statement already uses the `surname` (nickname, e.g. `"surname": "Tom"`) if present, else
+the name. Start with what follows, e.g. `<p>Ingénieur de formation, il…</p>`.
+
+**Placing a paragraph** — a paragraph must be relevant to the title of its section, and ordered chronologically against
+the dates cited before and after it (e.g. "at the end of the 1980s" goes after a paragraph starting in 1984, not
+before). A paragraph fitting no section goes before the first section (right after the generated birth statement on a
+people page) or in a new, properly titled section. When inserting, read the whole section around the insertion point
+first; when a date is vague, look for the exact one (it often decides the placement).
+
+**Talking about a document** — don't restate its title in the text: say what the document is, what it contains, its
+role, and reference it in a source tag (where the title belongs). E.g. "he wrote a biography of X <source 1>, then one
+of Y <source 2>", not "he wrote *Title One* about X".
+
+**French typography** — high punctuation is preceded by a non-breaking Unicode space, never a plain space: U+00A0
+(no-break space) before `:`, U+202F (narrow no-break space) before `;`, `?`, `!`. Not in English text nor in source
+citations (`Author: Title`).
+
+**Organisation pages** — place an organisation under the one it depends on (e.g. a contractor created for and mainly
+funded by the DoD goes under `org/us/dod/`, not `org/us/`), as a directory with `index.html` + `index.json`
+(`{"type": "org", "title": "<acronym>"}`), the page starting with `<!--#include virtual="/header.html" -->`.
+
+**Entities** — write a plain `&` rather than `&amp;` wherever the parser accepts it (e.g.
+`Belden, Thomas G. & Belden, Marva R.`).
+
+**Event keys in `people.json`** — an event's date is `"time"`, never `"date"` (a `"date"` key is silently ignored and
+the build then asserts `Event of type "event" has no time for paragraph`). A source's authors are `"authors": [...]`
+and its publication date `"publication": {"publisher": ..., "time": ...}`.
+
+**Sources** — every claim must be supported by a source. Use `<a class="source">` for citations (see replacers above),
+with these caveats:
+
+- An external `<a class="source" href="https://...">` **ignores its content**: the build fetches the page and uses its
+  `<title>`. If the site blocks bots (403, e.g. academic.oup.com, cia.gov) the source renders empty, or the build
+  crashes; if the page title is poor, so is the source. For a precise citation, or such sites, write
+  `<span class="source">Author: <a href="https://...">Title</a>, Publication, <time data-context="none">1977-03</time></span>`,
+  whose content is kept as is.
+- A `<time>` inside a source must carry `data-context="none"`: otherwise it is rendered relative to the previous date of
+  the page and loses its year ("août" instead of "août 1956").
+- After building, read the rendered sources in `out/` to check none is empty or mistitled.
 
 **Filterable tags** — any block-level content element (typically `<li>`, `<p>`, or `<section>`) inside `.contents` may
 carry one or more `tag-<slug>` classes. Slugs are always in English, like every other identifier in this codebase (e.g.

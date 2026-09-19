@@ -1,11 +1,40 @@
 {
-  "birthTime": "1915-04-01",
-  "deathTime": "1992-06-22",
+  "firstNames": [
+    "Arthur",
+    "Charles"
+  ],
+  "modifier": "KBE",
+  "lastName": "Lundahl",
+  "surname": "Art",
   "occupations": [
     "ufologist",
     "engineer"
   ],
   "countries": [
     "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1915-04-01"
+    },
+    {
+      "type": "death",
+      "time": "1992-06-22",
+      "place": "Suburban Hospital de Bethesda (Maryland)",
+      "sources": [
+        {
+          "type": "article",
+          "title": "Arthur C. Lundahl, 77, Dies; Photo Interpreter for CIA",
+          "publication": {
+            "publisher": "The Washington Post, D4",
+            "time": "1992-06-25"
+          },
+          "authors": [
+            "Barnes, B."
+          ]
+        }
+      ]
+    }
   ]
 }

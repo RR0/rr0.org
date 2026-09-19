@@ -12,3 +12,9 @@
 # site instead, so the two rules that did that could never fire again — a request for that host no
 # longer reaches this one. The convention itself is not lost: that site answers an unknown path by
 # opening its player on it, which is what these rules were for.
+
+# A people directory renamed (CathalaFrançois -> CathalaFrancois, no cedilla, as every other one).
+# Percent-encoded, which is how a browser asks for it, and in both forms: the rule generated from
+# .htaccess carries the character raw and with a splat, and matched neither.
+/people/c/CathalaFran%C3%A7ois       /people/c/CathalaFrancois/       301!
+/people/c/CathalaFran%C3%A7ois/*     /people/c/CathalaFrancois/:splat 301!

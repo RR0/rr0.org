@@ -149,6 +149,10 @@ rr0-dual-range {
   content: "⇤";
 }
 
+#main-nav .contents:before {
+  content: "↑";
+}
+
 #main-nav .prev:before {
   content: "←";
 }

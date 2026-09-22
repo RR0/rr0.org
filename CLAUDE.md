@@ -147,6 +147,11 @@ citations (`Author: Title`).
 funded by the DoD goes under `org/us/dod/`, not `org/us/`), as a directory with `index.html` + `index.json`
 (`{"type": "org", "title": "<acronym>"}`), the page starting with `<!--#include virtual="/header.html" -->`.
 
+**Encoding** — every file is UTF-8, without BOM. A file found in Latin-1, Windows-1252 or any other encoding is
+converted (decode Windows-1252 for Latin-1 files: it is a superset, and old pages use its `’ “ ” … –`), and any charset
+declaration it carries (`<meta ... charset=iso-8859-1>`, `<?xml encoding=...?>`) is changed to UTF-8. Check with
+`iconv -f utf-8 -t utf-8 <file> >/dev/null`.
+
 **Entities** — write a plain `&` rather than `&amp;` wherever the parser accepts it (e.g.
 `Belden, Thomas G. & Belden, Marva R.`).
 

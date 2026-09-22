@@ -5,21 +5,21 @@
   Syndication</i> (0.94).</p>
 <section>
   <h2>Besoin</h2>
-  <p>Décrire des mises à jour d'informations par abonnement. Des flux RSS sont typiquement générés par des applications
+  <p>DÃ©crire des mises Ã  jour d'informations par abonnement. Des flux RSS sont typiquement gÃ©nÃ©rÃ©s par des applications
     (des <a href="/tech/info/soft/proj/design/arch/serveur/ServeurWeb.html">serveurs web</a>/<a
       href="/tech/info/soft/proj/design/arch/serveur/ServeurApplicatif.html">serveurs applicatifs</a>) pour d'autres
     applications (<i lang="en">news aggregators</i>).</p>
   <h2><a href="../../../java/ana">Analyse</a></h2>
-  <p>RSS définit un vocabulaire de métadonnées (description de données) de sites Web permettant de décrire des <strong>canaux</strong>
+  <p>RSS dÃ©finit un vocabulaire de mÃ©tadonnÃ©es (description de donnÃ©es) de sites Web permettant de dÃ©crire des <strong>canaux</strong>
     (<i lang="en">channels</i>) d'information pouvant contenir un certain nombre d'<strong>objets</strong> (<i
-      lang="en">items</i>) d'information. Les canaux comme les objets peuvent possèder un <strong>titre</strong>, un
+      lang="en">items</i>) d'information. Les canaux comme les objets peuvent possÃ¨der un <strong>titre</strong>, un
     <strong>lien</strong>, et une <strong>description</strong>.</p>
-  <p>Des éléments plus détaillés peuvent être définis par des <strong>modules</strong>.</p></section>
+  <p>Des Ã©lÃ©ments plus dÃ©taillÃ©s peuvent Ãªtre dÃ©finis par des <strong>modules</strong>.</p></section>
 <section>
   <h2>Conception</h2>
   <p>RSS utilise <a href="/tech/info/soft/data/doc/rdf">RDF</a>.</p></section>
 <section>
-  <h2>Implémentation</h2>
+  <h2>ImplÃ©mentation</h2>
   <table>
     <tr>
       <td class="titleCorner" rowspan="2"></td>
@@ -92,14 +92,14 @@
       <td></td>
     </tr>
     <tr>
-      <th>Date de génération</th>
+      <th>Date de gÃ©nÃ©ration</th>
       <td class="non">Non</td>
       <td class="oui" colspan="3"><code>lastBuildDate</code></td>
       <td class="oui" colspan="2">Modules</td>
       <td></td>
     </tr>
     <tr>
-      <th>Rédacteur responsable</th>
+      <th>RÃ©dacteur responsable</th>
       <td class="non">Non</td>
       <td class="oui" colspan="3"><code>managingEditor</code></td>
       <td class="oui" colspan="2">Modules</td>
@@ -120,14 +120,14 @@
       <td></td>
     </tr>
     <tr>
-      <th>Heures passées</th>
+      <th>Heures passÃ©es</th>
       <td class="non">Non</td>
       <td class="oui" colspan="3"><code>skipHours</code></td>
       <td class="oui" colspan="2">Modules</td>
       <td></td>
     </tr>
     <tr>
-      <th>Jours passés</th>
+      <th>Jours passÃ©s</th>
       <td class="non">Non</td>
       <td class="oui" colspan="3"><code>skipDays</code></td>
       <td class="oui" colspan="2">Modules</td>
@@ -148,18 +148,18 @@
       <td></td>
     </tr>
     <tr>
-      <th>Générateur</th>
+      <th>GÃ©nÃ©rateur</th>
       <td class="non" colspan="3">Non</td>
       <td class="oui"><code>generator</code></td>
       <td class="oui" colspan="2">Modules</td>
       <td></td>
     </tr>
     <tr>
-      <th>Durée de vie</th>
+      <th>DurÃ©e de vie</th>
       <td class="non" colspan="3">Non</td>
       <td class="oui"><code>ttl</code></td>
       <td class="oui" colspan="2">Modules</td>
-      <td><em>Time To Live</em> : durée de vie</td>
+      <td><em>Time To Live</em> : durÃ©e de vie</td>
     </tr>
     <tr>
       <th>A propos</th>
@@ -221,7 +221,7 @@
       <td></td>
     </tr>
     <tr>
-      <th>Catégorie</th>
+      <th>CatÃ©gorie</th>
       <td class="non" colspan="2">Non</td>
       <td class="oui" colspan="2"><code>category</code></td>
       <td class="oui" colspan="2">Modules</td>
@@ -354,21 +354,21 @@
   <p><code> &lt;<strong>item</strong>&gt;<br>
     &lt;<strong>title</strong>&gt;RSS&lt;/<strong>title</strong>&gt;<br>
     &lt;<strong>link</strong>&gt;https://javarome.net/RSS.html&lt;/<strong>link</strong>&gt;<br>
-    &lt;<strong>description</strong>&gt;Ajout de cette page consacrée au RDF Site
+    &lt;<strong>description</strong>&gt;Ajout de cette page consacrÃ©e au RDF Site
     Summary&lt;/<strong>description</strong>&gt;<br>
     &lt;/<strong>item</strong>&gt;</code></p>
   <p><code> &lt;/<strong>channel</strong>&gt;<br> </code><code>&lt;/<strong>rss</strong>&gt;</code></p>
 </pre>
   <p>Des exemples de sites utilisant RDF et/ou RSS sont :</p>
   <ul>
-    <li><a href="https://sourceforge.net">SourceForge.net</a> fournissant l'actualité de ses projets via RSS</li>
+    <li><a href="https://sourceforge.net">SourceForge.net</a> fournissant l'actualitÃ© de ses projets via RSS</li>
     <li>Canaux de <em>MyNetscape</em>.</li>
   </ul>
 </section>
 <section>
   <h2>Voir</h2>
   <ul>
-    <li> Spécification (<a href="https://purl.org/rss/1.0/spec">1.0)</a>
+    <li> SpÃ©cification (<a href="https://purl.org/rss/1.0/spec">1.0)</a>
       <ul>
         <li>Modules (<a href="https://purl.org/rss/1.0/modules/">1.0</a>)</li>
       </ul>

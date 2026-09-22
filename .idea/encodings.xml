@@ -6,7 +6,7 @@
     <file url="file://$PROJECT_DIR$/org/OrganismesOfficiels.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/eu/de/sap/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/eu/fr/Kelua.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/org/eu/fr/cnes/geipan/export_cas_pub_20210219111412.csv" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/org/eu/fr/cnes/geipan/export_cas_pub_20210219111412.csv" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/groupes.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/int/asso/iso/90/00/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/orgsCiviles.html" charset="UTF-8" />
@@ -33,7 +33,7 @@
     <file url="file://$PROJECT_DIR$/org/us/ic/cia/TSS.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/co/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/nh/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/org/us/region/nj/monmouth/FortMonmouth/index.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/org/us/region/nj/monmouth/FortMonmouth/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/nv/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/tx/ElPaso.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org/us/region/tx/index.html" charset="UTF-8" />
@@ -103,13 +103,13 @@
     <file url="file://$PROJECT_DIR$/tech/info/2002.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/2003.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/3270.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tech/info/Informatique.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/tech/info/Informatique.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/cv.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/hard/cpu/CISC.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/hard/cpu/RISC.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/Hack.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/IMHO.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tech/info/soft/IMS.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/IMS.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/MIDP.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/Metadata.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/Organisations.html" charset="UTF-8" />
@@ -127,7 +127,7 @@
     <file url="file://$PROJECT_DIR$/tech/info/soft/net/webservice/WSFL.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/proj/design/arch/web/DHTML.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/proj/design/arch/web/Flash.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tech/info/soft/sec/auth/Realm.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/tech/info/soft/sec/auth/Realm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/sec/privacy/crypto/RC5.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/sec/privacy/crypto/RC6.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tech/info/soft/sec/privacy/crypto/SSH.html" charset="UTF-8" />
@@ -149,7 +149,7 @@
     <file url="file://$PROJECT_DIR$/time/1/4/3/3/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/4/5/6/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/4/5/8/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/4/6/1/06_03_24_1709765760.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/4/6/1/06_03_24_1709765760.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/4/6/8/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/4/7/7/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/4/9/3/index.html" charset="UTF-8" />
@@ -441,7 +441,7 @@
     <file url="file://$PROJECT_DIR$/time/1/8/9/9/02/04/Texanettes/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/9/9/04/18/NewJerseyEveningTimes_Airship/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/8/9/9/04/18/NewJerseyEveningTimes_Airship/index_fr.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/9/0/2/04/14/StrangeBeing/index.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/9/0/2/04/14/StrangeBeing/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/2/04/14/StrangeBeing/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/2/06/19/VisionsOfAirshipExcitePopulation/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/2/06/19/VisionsOfAirshipExcitePopulation/index_fr.html" charset="UTF-8" />
@@ -502,7 +502,7 @@
     <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/21/MysteriousAirshipAwesBritishers/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/21/MysteriousAirshipAwesBritishers/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/21/ProbableSolutionOfTheMystery_Standard/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/21/ProbableSolutionOfTheMystery_Standard/index_fr.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/21/ProbableSolutionOfTheMystery_Standard/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/22/TheAirshipInNorfolk/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/22/TheAirshipInNorfolk/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/0/9/05/25/NewJerseyEveningTimes_Light/index.html" charset="UTF-8" />
@@ -557,7 +557,7 @@
     <file url="file://$PROJECT_DIR$/time/1/9/1/4/12/02/Farmer/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/5/01/07/WestRoadWMartinsburg/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/5/01/07/WestRoadWMartinsburg/index_fr.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/9/1/5/03/02/index.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/9/1/5/03/02/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/5/03/02/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/5/03/25/AirshipAtPortage/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/5/03/25/AirshipAtPortage/index_fr.html" charset="UTF-8" />
@@ -574,7 +574,7 @@
     <file url="file://$PROJECT_DIR$/time/1/9/1/6/03/04/SuperiorAirshipMysteryNoMyth/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/6/03/04/SuperiorAirshipMysteryNoMyth/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/6/03/14/LafayetteSeesMysteriousAirship/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/9/1/6/03/14/LafayetteSeesMysteriousAirship/index_fr.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/9/1/6/03/14/LafayetteSeesMysteriousAirship/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/6/05/02/Pickings/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/6/05/02/Pickings/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/1/6/09/13/TownTalkTopics/index.html" charset="UTF-8" />
@@ -668,7 +668,7 @@
     <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b1/c1/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b1/c2/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b1/c3/index_fr.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b1/index.html" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b1/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b2/c1/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b2/c2/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/5/3/Williamson_OtherTonguesOtherFlesh/b2/c3/index.html" charset="UTF-8" />
@@ -763,8 +763,8 @@
     <file url="file://$PROJECT_DIR$/time/1/9/7/3/11/23/Coyne_DispositionForm/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/7/3/11/23/Coyne_DispositionForm/index_fr.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/7/3/InformationTheoryAsAnExtensionOfTheMaximumLikelihoodPrinciple/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/time/1/9/7/7/01/05_03_24_1709672500.txt" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/time/1/9/7/7/03/05_03_24_1709676761.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/time/1/9/7/7/01/05_03_24_1709672500.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/time/1/9/7/7/03/05_03_24_1709676761.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/7/8/Westrum_TheCaseOfMeteorites_SocialStudiesOfScience/11/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/7/9/08/Hendry_TheUfoHandbook/02/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/time/1/9/7/9/08/Hendry_TheUfoHandbook/05/index.html" charset="UTF-8" />

@@ -22,11 +22,11 @@
    "rationale": "The dossier's own plan (Plan.kml, 'Enfants témoins, derrière le muret'): the witnesses' spot behind the dry-stone wall on the south side of the D57, 800 m west of Cussac at the lieu-dit Les Tuiles. The GEPAN measured everything else FROM this spot with a theodolite in 1978, so the sphere and the hedge are placed relative to it, not to a map."
   }
  ],
- "witness": {
+ "observer": {
   "id": "DelpeuchFrancois",
   "title": "François Delpeuch"
  },
- "testimony": {
+ "account": {
   "witnessAgeYears": 13,
   "source": "on-site",
   "followedUp": true
@@ -6525,7 +6525,7 @@
   ],
   "groups": []
  },
- "witnessTrack": {
+ "observerTrack": {
   "keyframes": [
    {
     "t": 0,
@@ -8745,7 +8745,7 @@
   },
   {
    "id": "anne-marie",
-   "kind": "witness",
+   "kind": "observer",
    "title": {
     "fr": "Anne-Marie Delpeuch (9 ans), 13 m à l'ouest",
     "en": "Anne-Marie Delpeuch (9), 13 m to the west"

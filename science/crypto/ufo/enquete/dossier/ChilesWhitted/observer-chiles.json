@@ -17,7 +17,7 @@
       "lng": -86.3077
     }
   ],
-  "witness": {
+  "observer": {
     "id": "ChilesClarence",
     "title": "Clarence Chiles"
   },
@@ -608,7 +608,7 @@
     ],
     "groups": []
   },
-  "witnessTrack": {
+  "observerTrack": {
     "keyframes": [
       {
         "t": 0,

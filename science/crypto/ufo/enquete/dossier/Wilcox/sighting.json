@@ -16,7 +16,7 @@
       "lng": -76.181
     }
   ],
-  "witness": {
+  "observer": {
     "id": "WilcoxGary",
     "title": "Gary T. Wilcox"
   },
@@ -307,7 +307,7 @@
     ],
     "groups": []
   },
-  "witnessTrack": {
+  "observerTrack": {
     "keyframes": [
       {
         "t": 0,

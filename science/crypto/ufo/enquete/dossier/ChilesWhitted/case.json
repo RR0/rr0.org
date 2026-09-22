@@ -10,14 +10,14 @@
       "eventType": "sighting",
       "time": "1948-07-24 02:45",
       "title": "Clarence Chiles",
-      "url": "witness-chiles.json"
+      "url": "observer-chiles.json"
     },
     {
       "type": "event",
       "eventType": "sighting",
       "time": "1948-07-24 02:45",
       "title": "John Whitted",
-      "url": "witness-whitted.json"
+      "url": "observer-whitted.json"
     }
   ]
 }

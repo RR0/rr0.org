@@ -20,7 +20,7 @@
    "rationale": "The memorial's own coordinates, at the roadside of the D6A in the lieu-dit L'Olivol, standing in for a landing point nobody publishes: the memorial was put where the public can reach it safely, and Masse's field is set back in private parcels still under lavender, whose growers ask that nobody walk into them. So this is the right lieu-dit and the right road, and some hundreds of metres out. Everything downstream survives that: across the 800 m square around this point no 40 m of ground exceeds 3.1% of slope (1.2% along the walk itself), so the field lies flat wherever in the parcel the true spot is, and 400 m moves every celestial azimuth by under a hundredth of a degree. The witness track and all 140 rows are laid out relative to this point, so they carry its error with them and none of their own."
   }
  ],
- "witness": {
+ "observer": {
   "id": "MasseMaurice",
   "title": "Maurice Masse"
  },
@@ -4384,7 +4384,7 @@
   ],
   "groups": []
  },
- "witnessTrack": {
+ "observerTrack": {
   "keyframes": [
    {
     "t": 0,

@@ -16,7 +16,7 @@
       "lng": -106.891693
     }
   ],
-  "witness": {
+  "observer": {
     "id": "ZamoraLonnie",
     "title": "Lonnie Zamora"
   },
@@ -4231,7 +4231,7 @@
     ],
     "groups": []
   },
-  "witnessTrack": {
+  "observerTrack": {
     "keyframes": [
       {
         "t": 0,

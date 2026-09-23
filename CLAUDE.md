@@ -201,6 +201,17 @@ Heiden)`.
 a `<p class="exergue">quote <cite>Author</cite></p>`. Keep `<blockquote>` for longer quoted texts and dialogues, and
 `<q>` for quotes within a sentence. Don't add `<em>` inside a blockquote to italicize it: its style already does.
 
+**Inline quotes** — `<q>…</q>` is only for words someone actually said or wrote (a witness's "ovoïde" or "100 m",
+an author's sentence, a newspaper's wording), without typing the quotation marks: the style adds them, so write
+`<q>Je soupçonne une fabrication</q>`. Everything else keeps typed quotation marks (`« … »` in French, `“…”` in
+English) and no `<q>`:
+
+- a term put at a distance or stressed ("experts", "son" cas), a general expression ("poursuite d'ovni", "cas de
+  Manises");
+- a title of a work or programme, which is `<i>` instead (`<i>Cinéma de minuit</i>`);
+- words in another language than the page's, which are `<i lang="…">` (`<i lang="es">La pocilga y el ovni</i>`),
+  unless they are part of a quotation already inside a `<q>`.
+
 **Filterable tags** — any block-level content element (typically `<li>`, `<p>`, or `<section>`) inside `.contents` may
 carry one or more `tag-<slug>` classes. Slugs are always in English, like every other identifier in this codebase (e.g.
 `tag-ufology`, `tag-astrophysics`), even though the page content itself is French — only the tag *label* shown to the

@@ -190,6 +190,12 @@ tags. It renders "de 1989 à 1994" after "de" and "entre 1989 et 1994" after "en
 relative to the previous one ("la veille", "l'année suivante"), read the rendered page and use `data-context="none"`
 where a relative rendering breaks the sentence.
 
+A moment EDTF cannot express stays a `<time>` but with `data-format="none"`, so that it is not interpreted:
+`<time data-format="none">Dans la nuit</time>`, `<time data-format="none">Fin du mois</time>`. Convert it
+instead whenever EDTF can say it: a season is `YYYY-21` (spring) to `YYYY-24` (winter), rendered "automne 1954";
+a day or month needs its year (`<time>1947-09-18</time>`, not `<time>09-18</time>`). A `<time>` only ever holds a
+moment: a name, a place or a title is never one (`<span class="people">`, `<span class="place">`, `<i>`).
+
 **Metadata, not text** — the page header and every citation are generated from the `author` (one meta per author,
 repeated), `copyright` and date metas: fill them rather than writing "Edited by X and Y, © Publisher" in the text.
 

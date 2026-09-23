@@ -196,6 +196,14 @@ instead whenever EDTF can say it: a season is `YYYY-21` (spring) to `YYYY-24` (w
 a day or month needs its year (`<time>1947-09-18</time>`, not `<time>09-18</time>`). A `<time>` only ever holds a
 moment: a name, a place or a title is never one (`<span class="people">`, `<span class="place">`, `<i>`).
 
+Within a dated context (a day page, or after a full date), the build completes partial values from the previous
+`<time>`: `<time>19</time>` is the 19th of the current month, `<time>21:00</time>` an hour of the current day,
+`<time>1517-05-22 21:00/22:00</time>` ends the same day and `23:00/03:00` the next one. Hour ranges use `/`, never
+`-` (`21:00-22:00` reads as a time zone offset); midnight is `00:00`, not `24:00`; a duration range is
+`<time>P10M/12M</time>`. Words around a value are kept as written: `<time>vers 21:00</time>`, and after a date or
+day with a `T`, `<time>1964-04-27Tle soir</time>`, `<time>18Tla nuit</time>` (a bare number followed by words,
+like "1 h après", is never read as a time).
+
 **Metadata, not text** — the page header and every citation are generated from the `author` (one meta per author,
 repeated), `copyright` and date metas: fill them rather than writing "Edited by X and Y, © Publisher" in the text.
 

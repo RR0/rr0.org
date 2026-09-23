@@ -185,7 +185,8 @@ with these caveats:
 text: `<time>2010-08-11</time>`, not `<time datetime="2010-08-11">August 11, 2010</time>`, so that a copy that does
 not resolve `<time>` stays readable (the build renders it in the page's language). This includes dates spelled out in
 the text ("August 16", "on the 15th") and ranges, which are a single interval: `<time>1989/1994</time>`, not two
-tags. In French, "de <time>1989/1994</time>" (rendered "de 1989 à 1994"), not "entre". Since a `<time>` renders
+tags. It renders "de 1989 à 1994" after "de" and "entre 1989 et 1994" after "entre" (likewise "from … to" /
+"between … and" in English), so keep the natural preposition. Since a `<time>` renders
 relative to the previous one ("la veille", "l'année suivante"), read the rendered page and use `data-context="none"`
 where a relative rendering breaks the sentence.
 

@@ -171,6 +171,35 @@ with these caveats:
   the page and loses its year ("août" instead of "août 1956").
 - After building, read the rendered sources in `out/` to check none is empty or mistitled.
 
+**Citing someone's work in their bio** — the form depends on where it goes:
+
+- In running text (a paragraph), the work is a source: `<a class="source" href="/time/…/index.html"></a>`, empty
+  body.
+- In a list of works or references (e.g. an "Auteur de" list), the item is the work's title as a direct hyperlink, in
+  the list's own format: `<li>"<a href="/time/…/index.html">Title</a>", <i lang="en">Book</i>, Publisher, date.</li>`.
+- Prefer the text form: a sentence saying what the person did, with whom and to what end, sourced by the work
+  ("In the late 2020s he works with YYY on xxx in order to zzz <source>"), adds more than a bare mention in a list.
+  Add the list item as well when the bio has such a list.
+
+**Dates in text** — every date is a `<time>` whose content is the ISO value, never a `datetime` attribute with free
+text: `<time>2010-08-11</time>`, not `<time datetime="2010-08-11">August 11, 2010</time>`, so that a copy that does
+not resolve `<time>` stays readable (the build renders it in the page's language). This includes dates spelled out in
+the text ("August 16", "on the 15th") and ranges, which are a single interval: `<time>1989/1994</time>`, not two
+tags. In French, "de <time>1989/1994</time>" (rendered "de 1989 à 1994"), not "entre". Since a `<time>` renders
+relative to the previous one ("la veille", "l'année suivante"), read the rendered page and use `data-context="none"`
+where a relative rendering breaks the sentence.
+
+**Metadata, not text** — the page header and every citation are generated from the `author` (one meta per author,
+repeated), `copyright` and date metas: fill them rather than writing "Edited by X and Y, © Publisher" in the text.
+
+**Unique titles** — no two pages of the site may share a `<title>` (the search index fails on duplicates). A generic
+title (a book part, "Introduction", "Foreword") gets a distinguishing suffix, e.g. `Case Studies (Ballester-Olmos &
+Heiden)`.
+
+**Epigraphs** — a quotation set as an epigraph (at the head of a page, chapter or section, or a book's dedication) is
+a `<p class="exergue">quote <cite>Author</cite></p>`. Keep `<blockquote>` for longer quoted texts and dialogues, and
+`<q>` for quotes within a sentence.
+
 **Filterable tags** — any block-level content element (typically `<li>`, `<p>`, or `<section>`) inside `.contents` may
 carry one or more `tag-<slug>` classes. Slugs are always in English, like every other identifier in this codebase (e.g.
 `tag-ufology`, `tag-astrophysics`), even though the page content itself is French — only the tag *label* shown to the

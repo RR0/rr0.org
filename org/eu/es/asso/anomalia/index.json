@@ -1,0 +1,14 @@
+{
+  "type": "org",
+  "kind": "nonprofit",
+  "title": "Fundación Anomalía",
+  "events": [
+    {
+      "type": "birth",
+      "time": "1996-07-12",
+      "place": {
+        "name": "Santander (Espagne)"
+      }
+    }
+  ]
+}

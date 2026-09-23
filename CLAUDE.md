@@ -199,7 +199,7 @@ Heiden)`.
 
 **Epigraphs** — a quotation set as an epigraph (at the head of a page, chapter or section, or a book's dedication) is
 a `<p class="exergue">quote <cite>Author</cite></p>`. Keep `<blockquote>` for longer quoted texts and dialogues, and
-`<q>` for quotes within a sentence.
+`<q>` for quotes within a sentence. Don't add `<em>` inside a blockquote to italicize it: its style already does.
 
 **Filterable tags** — any block-level content element (typically `<li>`, `<p>`, or `<section>`) inside `.contents` may
 carry one or more `tag-<slug>` classes. Slugs are always in English, like every other identifier in this codebase (e.g.

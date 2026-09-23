@@ -23,7 +23,7 @@
     "chapters": "tsx Chapters.ts",
     "test": "testscript",
     "test-one": "tsx science/crypto/ufo/enquete/dossier/Guesser.test.js",
-    "deploy": "netlify deploy --prod --dir out"
+    "deploy": "netlify deploy --prod --dir out --no-build"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.2",

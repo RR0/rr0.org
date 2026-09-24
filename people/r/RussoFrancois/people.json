@@ -1,0 +1,40 @@
+{
+  "lastName": "Russo",
+  "firstNames": [
+    "François"
+  ],
+  "occupations": [
+    "priest",
+    "historian",
+    "philosopher"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1909-06-28",
+      "place": "Paris",
+      "sources": [
+        {
+          "title": "Russo, François (1909-1998)",
+          "publisher": "BnF Catalogue général",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb11923147x"
+        }
+      ]
+    },
+    {
+      "type": "death",
+      "time": "1998-10-17",
+      "place": "Paris",
+      "sources": [
+        {
+          "title": "Russo, François (1909-1998)",
+          "publisher": "BnF Catalogue général",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb11923147x"
+        }
+      ]
+    }
+  ]
+}

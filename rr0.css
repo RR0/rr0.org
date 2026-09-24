@@ -67,6 +67,12 @@ html, body {
   box-sizing: border-box
 }
 
+/* MathJax lays out formulas with the line height it sets on its root (0): the rule above would give each part of a
+   fraction a full text line and stack the numerator onto the denominator. */
+.mjx-chtml * {
+  line-height: inherit
+}
+
 time.duration {
   font-weight: 400;
   font-family: monospace

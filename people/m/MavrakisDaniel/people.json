@@ -1,0 +1,35 @@
+{
+  "lastName": "Mavrakis",
+  "firstNames": [
+    "Daniel"
+  ],
+  "occupations": [
+    "physician",
+    "softwareEngineer",
+    "pilot"
+  ],
+  "countries": [
+    "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1960",
+      "place": "Aix-en-Provence",
+      "sources": [
+        {
+          "title": "The Reliability of UFO Witness Testimony",
+          "authors": [
+            "Vicente-Juan Ballester Olmos",
+            "Richard W. Heiden"
+          ],
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "https://www.academia.edu/101922617/The_Reliability_of_UFO_Witness_Testimony"
+        }
+      ]
+    }
+  ]
+}

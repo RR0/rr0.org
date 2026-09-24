@@ -216,7 +216,8 @@ form {
   -webkit-line-clamp: 2;
   font-family: inherit;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.25;
+  text-wrap: balance;
   padding: .7em;
   padding-left: 0.6em;
   max-height: 4em;

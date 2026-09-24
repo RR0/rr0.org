@@ -37,7 +37,11 @@
   const observer = new IntersectionObserver(function (entries) {
     summary.textContent = entries[0].intersectionRatio < 0.3 ? document.title : "Sommaire"
   }, { threshold: [0, 0.3, 1] })
-  observer.observe(document.querySelector("#main-header"))
+  const mainHeader = document.querySelector("#main-header")
+  observer.observe(mainHeader)
+  new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--head-height", mainHeader.getBoundingClientRect().height + "px")
+  }).observe(mainHeader)
   <!--#include virtual="/place/index.js" -->
 </script>
 <div aria-hidden="true" class="anchor" id="_top"></div>

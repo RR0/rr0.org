@@ -214,6 +214,10 @@ Heiden)`.
 **Epigraphs** — a quotation set as an epigraph (at the head of a page, chapter or section, or a book's dedication) is
 a `<p class="exergue">quote <cite>Author</cite></p>`. Keep `<blockquote>` for longer quoted texts and dialogues, and
 `<q>` for quotes within a sentence. Don't add `<em>` inside a blockquote to italicize it: its style already does.
+An epigraph is always in the language of its page, even when the document prints it in another one: translate it
+(using the document's own translation when it gives one) and keep the original in a note of the `<cite>`:
+`<p class="exergue">For Lucas: you were born small… <cite>V.J. Ballester-Olmos<span class="note">Original Spanish:
+<i lang="es">Para Lucas: naciste pequeño…</i></span></cite></p>`.
 
 **Inline quotes** — `<q>…</q>` is only for words someone actually said or wrote (a witness's "ovoïde" or "100 m",
 an author's sentence, a newspaper's wording), without typing the quotation marks: the style adds them, so write

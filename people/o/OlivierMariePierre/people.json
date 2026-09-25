@@ -3,6 +3,9 @@
   "firstNames": [
     "Marie-Pierre"
   ],
-  "occupations": [],
+  "occupations": [
+    "softwareEngineer",
+    "journalist"
+  ],
   "events": []
 }

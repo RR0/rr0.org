@@ -113,6 +113,11 @@ and foreign quotes carry the language too: `<q lang="en">…</q>`.
 
 **Hyperlinks** — if a term, concept, person, place, or organisation mentioned in the text has a dedicated RR0 page, it must always be linked. Do not leave known terms unlinked.
 
+**No restating** — what a linked page defines is not redefined in the page that links to it: the reader follows the
+link if interested. E.g. "il relève des rencontres rapprochées du <a href=".../rr/2/">2ᵉ</a> ou du
+<a href=".../rr/3/">3ᵉ type</a>", not "du 2ᵉ type quand il laisse des traces, du 3ᵉ type quand des occupants sont
+décrits". Link the most specific page (`rr/2`, `rr/3` rather than `rr/`).
+
 **External project links** — when RR0 has a dedicated page for an external project/tool (e.g. its own GitHub repo, like `science/crypto/ufo/enquete/projet/UfoAtHome.html`), only that dedicated page should link directly to the external URL (GitHub, npm, etc.). Every other mention of that project anywhere else on the site must link to the dedicated RR0 page instead, not to the external URL directly.
 
 **People references** — a person is always referenced with `<span class="people">First Last</span>`, never with an

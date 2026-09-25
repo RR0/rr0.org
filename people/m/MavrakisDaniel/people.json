@@ -6,7 +6,8 @@
   "occupations": [
     "physician",
     "softwareEngineer",
-    "pilot"
+    "pilot",
+    "ufologist"
   ],
   "countries": [
     "fr"
@@ -15,19 +16,19 @@
     {
       "type": "birth",
       "time": "1960",
-      "place": "Aix-en-Provence",
+      "place": "Aix-en-Provence (France)",
       "sources": [
         {
-          "title": "The Reliability of UFO Witness Testimony",
           "authors": [
-            "Vicente-Juan Ballester Olmos",
-            "Richard W. Heiden"
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
           ],
+          "title": "À propos des contributeurs",
           "publication": {
             "publisher": "UPIAR",
             "time": "2023-05"
           },
-          "url": "https://www.academia.edu/101922617/The_Reliability_of_UFO_Witness_Testimony"
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
         }
       ]
     }

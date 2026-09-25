@@ -1,11 +1,34 @@
 {
-  "birthTime": "1944-12-01",
   "occupations": [
     "ufologist",
     "writer",
-    "producer"
+    "producer",
+    "illusionist",
+    "journalist"
   ],
   "countries": [
-    "mx"
-  ]
+    "us"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1944-12-01",
+      "place": "West Liberty (Kentucky)",
+      "sources": [
+        {
+          "authors": [
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
+          ],
+          "title": "À propos des contributeurs",
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
+        }
+      ]
+    }
+  ],
+  "url": "https://www.joenickell.com"
 }

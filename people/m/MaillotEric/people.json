@@ -1,11 +1,54 @@
 {
   "title": "Maillot, Éric",
-  "birthTime": "1959-02-06",
   "occupations": [
     "ufologist",
-    "teacher"
+    "teacher",
+    "astronomer"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1959-02-06",
+      "place": "Saint-Gaudens (Haute-Garonne)",
+      "sources": [
+        {
+          "title": "Eric Maillot",
+          "publication": {
+            "publisher": "Copains d'Avant",
+            "time": "2020-10-27"
+          },
+          "url": "https://copainsdavant.linternaute.com/p/eric-maillot-13341852"
+        },
+        {
+          "authors": [
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
+          ],
+          "title": "À propos des contributeurs",
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "Eric Maillot",
+          "publication": {
+            "publisher": "Facebook",
+            "time": "2020-10-27"
+          },
+          "url": "https://www.facebook.com/photo?fbid=137722676680121&set=a.137722720013450"
+        }
+      ]
+    }
   ]
 }

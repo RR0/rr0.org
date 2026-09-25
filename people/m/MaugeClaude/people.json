@@ -1,12 +1,43 @@
 {
   "title": "Maugé, Claude",
-  "birthTime": "1946",
   "occupations": [
     "ufologist",
     "physicist",
-    "psychologist"
+    "psychologist",
+    "teacher"
   ],
   "countries": [
     "fr"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1946",
+      "place": "Foix (France)",
+      "sources": [
+        {
+          "authors": [
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
+          ],
+          "title": "À propos des contributeurs",
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "name": "Maugé à la conférence <i>Ufomania</i> de Castres le <time>2004-11-06</time>",
+      "sources": [
+        {
+          "title": "RUP"
+        }
+      ]
+    }
   ]
 }

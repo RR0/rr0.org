@@ -1,8 +1,31 @@
 {
+  "title": "Borraz Aymerich, Manuel",
   "occupations": [
-    "ufologist"
+    "ufologist",
+    "engineer"
   ],
   "countries": [
     "es"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1961",
+      "place": "Barcelone (Espagne)",
+      "sources": [
+        {
+          "authors": [
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
+          ],
+          "title": "À propos des contributeurs",
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
+        }
+      ]
+    }
   ]
 }

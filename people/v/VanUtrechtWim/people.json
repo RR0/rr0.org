@@ -1,9 +1,49 @@
 {
+  "lastName": "van Utrecht",
+  "firstNames": [
+    "Wim"
+  ],
   "occupations": [
     "ufologist",
-    "artist"
+    "artist",
+    "writer"
   ],
   "countries": [
     "be"
-  ]
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1959",
+      "place": "Turnhout (Belgique)",
+      "sources": [
+        {
+          "authors": [
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
+          ],
+          "title": "À propos des contributeurs",
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "portrait.jpg",
+      "sources": [
+        {
+          "title": "van Utrecht, Wim (Belgium)",
+          "publication": {
+            "publisher": "EuroUFO"
+          },
+          "url": "https://www.euroufo.net/2011/12/wim-van-utrecht-belgium/"
+        }
+      ]
+    }
+  ],
+  "url": "https://ufomeldpunt.be"
 }

@@ -5,7 +5,9 @@
   ],
   "occupations": [
     "ufologist",
-    "historian"
+    "historian",
+    "cryptozoologist",
+    "teacher"
   ],
   "countries": [
     "fr"
@@ -13,7 +15,24 @@
   "events": [
     {
       "type": "birth",
-      "time": "1954"
+      "time": "1954",
+      "sources": [
+        {
+          "authors": [
+            "Ballester-Olmos, Vicente-Juan",
+            "Heiden, Richard W."
+          ],
+          "title": "À propos des contributeurs",
+          "publication": {
+            "publisher": "UPIAR",
+            "time": "2023-05"
+          },
+          "url": "/time/2/0/2/3/05/Ballester-Olmos-Heiden_TheReliabilityOfUfoWitnessTestimony_UPIAR/10/index_fr.html"
+        }
+      ],
+      "notes": [
+        "dans les Deux-Sèvres (France)"
+      ]
     }
   ]
 }

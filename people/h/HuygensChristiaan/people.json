@@ -1,11 +1,21 @@
 {
-  "birthTime": "1629-04-14",
-  "deathTime": "1695-07-08",
   "occupations": [
     "astronomer",
     "mathematician"
   ],
   "countries": [
     "nl"
+  ],
+  "events": [
+    {
+      "type": "birth",
+      "time": "1629-04-14",
+      "place": "La Haye (Pays-Bas)"
+    },
+    {
+      "type": "death",
+      "time": "1695-07-08",
+      "place": "La Haye (Pays-Bas)"
+    }
   ]
 }

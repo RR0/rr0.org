@@ -1,1 +1,4 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
+Bikovsky vole 5 jours à bord de Vostok 5.,"",sighting,1963-06-14$,,"",1963-06-14,event,https://rr0.org/time/1/9/6/3/06/index.html#1963-06-14
+"Observation dans l'océan Indien (14' -17"" nord, 69' 57"" Est).","",sighting,1963-06-15$,,""""","""",s1,"""",,",1963-06-15,event,https://rr0.org/time/1/9/6/3/06/index.html#1963-06-15
+"15:30 A , Paul Villa photographie une ""soucoupe"" (ci-contre) en évolution près d'un lit de rivière asséché. Valentina Terechkova devient la 1ère femme de l'espace, à bord de Vostok 6.","",sighting,1963-06-16$PeraltaNouveauMexique,,,"",,"",Peralta (Nouveau-Mexique),"",place,"",1963-06-16,event,https://rr0.org/time/1/9/6/3/06/index.html#1963-06-16

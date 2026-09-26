@@ -1,0 +1,362 @@
+<!--#include virtual="/header-start.html" -->
+<title>Un peu d'acoustique (Fedoce)</title>
+<meta content="Fedoce, Gaelle" name="author">
+<meta content="Atelier CAIPAN, GEIPAN" name="copyright">
+<meta content="https://www.cnes-geipan.fr/sites/default/files/07_FEDOCE_full.pdf" name="url">
+<link href="../index.html" rel="start"
+  title="Prise en compte des composantes sonores dans l'analyse des témoignages de PAN">
+<link href="../index.html" rel="contents" title="Sommaire">
+<link href="../02/index.html" rel="next" title="Un peu de psychoacoustique">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Vibration et onde</h2>
+  <p>Son = <a href="/science/discipline/hard/nature/matter/physics/Onde.html">onde</a> de pression = propagation d'une
+    vibration, c'est-à-dire d'un <u>mouvement ou d'une pression</u></p>
+  <p>Vibration d'une corde :</p>
+  <figure>
+    <img alt="Quatre états successifs d'une corde vibrante et des particules d'air qu'elle comprime et détend"
+      src="fig01.webp">
+    <figcaption>[Vibration d'une corde] Source : <a href="http://acoustique.archi.free.fr/dossier.html">http://acoustique.archi.free.fr/dossier.html</a>
+    </figcaption>
+  </figure>
+  <p>Vibration d'une lame :</p>
+  <figure>
+    <img
+      alt="Lame encastrée oscillant entre deux positions, et les zones de compression et de détente de l'air qu'elle provoque"
+      src="fig02.webp">
+    <figcaption>[Vibration d'une lame]</figcaption>
+  </figure>
+  <p>⇨ Le son ne se propage qu'en présence de <a href="/science/discipline/hard/nature/matter/physics/Matiere.html">matière</a> !
+  </p>
+  <p>L'onde acoustique est :</p>
+  <ul>
+    <li>Transversale dans les solides (mouvement des particules perpendiculaire au sens de propagation)</li>
+    <li>Longitudinale dans les gaz et les liquides (mouvement des particules parallèle au sens de propagation)</li>
+  </ul>
+  <figure>
+    <img alt="Schémas d'une onde transversale sur une corde et d'une onde longitudinale dans un ressort"
+      src="fig03.webp">
+    <figcaption>Onde transversale / Onde longitudinale</figcaption>
+  </figure>
+  <p>On parle de propagation en champ libre lorsqu'aucun obstacle ne gêne la propagation. Dans ces conditions, le front
+    d'onde (ensemble des points atteints par l'onde en même temps) est sphérique. Ce n'est vrai qu'à proximité des
+    sources sonores et en altitude.</p>
+  <figure class="right side">
+    <img alt="Fronts d'onde sphériques concentriques autour d'une source, et fronts d'onde plans parallèles"
+      src="fig04.webp">
+    <figcaption>[Ondes sphériques et ondes planes]</figcaption>
+  </figure>
+  <p>Inversement, on parle de champs diffus lorsqu'il y a superposition d'une onde directe et d'ondes renvoyées
+    (réfléchies) par des parois.</p>
+  <p>Dans les calculs, les ondes sont généralement considérées planes (plans infinis parallèles entre eux et
+    perpendiculaires à la direction de propagation) ou sphériques et constituées de la somme d'ondes pures.</p>
+</section>
+<section>
+  <h2>Quelques définitions</h2>
+  <table class="right">
+    <caption>[Célérité du son selon le matériau]</caption>
+    <thead>
+    <tr>
+      <th>Matériaux</th>
+      <th>Célérité du son (en m/s)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Air</td>
+      <td>343</td>
+    </tr>
+    <tr>
+      <td>Eau</td>
+      <td>1 480</td>
+    </tr>
+    <tr>
+      <td>Glace</td>
+      <td>3 200</td>
+    </tr>
+    <tr>
+      <td>Verre</td>
+      <td>5 300</td>
+    </tr>
+    <tr>
+      <td>Acier</td>
+      <td>5 200</td>
+    </tr>
+    <tr>
+      <td>Plomb</td>
+      <td>1 200</td>
+    </tr>
+    <tr>
+      <td>Titane</td>
+      <td>4 950</td>
+    </tr>
+    <tr>
+      <td><abbr title="Polychlorure de vinyle">PVC</abbr> (Mou)</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>PVC (Dur)</td>
+      <td>1 700</td>
+    </tr>
+    <tr>
+      <td>Béton</td>
+      <td>3 100</td>
+    </tr>
+    <tr>
+      <td>Hêtre</td>
+      <td>3 300</td>
+    </tr>
+    <tr>
+      <td>Granit</td>
+      <td>6 200</td>
+    </tr>
+    <tr>
+      <td>Péridotite</td>
+      <td>7 700</td>
+    </tr>
+    <tr>
+      <td>Sable sec</td>
+      <td>10 à 300</td>
+    </tr>
+    </tbody>
+  </table>
+  <p>La célérité est la vitesse du son, c'est-à-dire la vitesse de déplacement du front d'onde. Elle dépend de la
+    densité et de l'élasticité (module de Young des solides) ou de la compressibilité adiabatique (liquides et gaz).</p>
+  <p>Le son se déplace plus vite dans les solides que dans les liquides, et encore moins vite dans les gaz.</p>
+  <p>Dans l'air, la vitesse du son (voisine de 340 m/s) dépend du taux d'humidité, de la pression atmosphérique, de la
+    température, … Penser au cas particulier du brouillard en présence duquel tous les sons sont amortis !</p>
+  <p>La fréquence `f` est le nombre d'oscillations par seconde, en Hz (Hertz). La période `T` est l'inverse de la
+    fréquence. La longueur d'onde `lambda` est la distance parcourue par l'onde pendant une période.</p>
+  <figure>
+    <img
+      alt="Deux sinusoïdes de longueurs d'onde différentes, et une échelle mettant en correspondance longueur d'onde en mètres et fréquence de 10 Hz à 10 kHz"
+      src="fig05.webp">
+    <figcaption>[Longueur d'onde en mètre et fréquence]</figcaption>
+  </figure>
+  <p>Remarques :</p>
+  <ul>
+    <li>En toute rigueur, il faut noter que la célérité augmente généralement avec la fréquence, mais l'évolution est
+      lente et généralement négligée.
+    </li>
+    <li>La majorité des matériaux « réels » sont amortissants (ou absorbants). L'amortissement (ou atténuation) ne
+      modifie pas la fréquence, mais diminue l'amplitude (la puissance). Il est approximativement proportionnel à la
+      fréquence et provoque une décroissance exponentielle de la puissance avec la distance. Les fréquences élevées
+      (sons aigus) sont donc très amortis et, plus la distance parcourue est élevée, plus le son résultant parait grave.
+      Dans l'air, l'amortissement diminue si l'humidité augmente. Pour exemple, à 4000Hz dans un air à 20°C et par une
+      humidité <abbr title="Humidité relative">HR</abbr> 30%, l'atténuation est de 50dB par km. Dans les solides et les
+      gaz, plus le matériau est « visqueux » ou « caoutchouteux », plus l'effet est important.
+    </li>
+  </ul>
+  <p>Un son pur est composé d'une fréquence unique, sinusoïdale.</p>
+  <p>Un son composé est périodique mais non sinusoïdal, et peut se décomposer (spectre) en une superposition de sons
+    purs.</p>
+  <p>Un son harmonique est un son composé dont les composantes (harmoniques) ont des fréquences proportionnelles à une
+    fréquence fondamentale.</p>
+  <p>Le bruit est un son composé de fréquences sans rapport entre elles et distribuées de façon continue dans une bande
+    de fréquences.</p>
+  <ul>
+    <li>Le bruit de fond est un bruit de spectre constant où toutes les fréquences d'une certaine « bande » sont
+      présentes.
+    </li>
+    <li>Un « bruit blanc » est un bruit de fond où toutes les fréquences ont même amplitude. Il est utilisé pour
+      « caractériser » certains environnements sonores (acoustique des salles).
+    </li>
+    <li>Un « bruit rose » est un bruit où l'amplitude est identique sur chaque octave. Il est utilisé en particulier
+      pour régler du matériel de sonorisation. Il est plus riche en fréquences basses qu'en sons aigus. Assez « proche »
+      du bruit d'une foule applaudissant en criant, par exemple dans un stade.
+    </li>
+    <li>Etc… Il est « courant » d'attribuer une « couleur » aux bruits ayant des décompositions spectrales
+      particulières. Bruit brun, rouge, bleu, …
+    </li>
+  </ul>
+  <p>L'amplitude d'un son se mesure généralement en dB (décibels), unité de mesure logarithmique.</p>
+  <p>Il s'ensuit, par exemple :</p>
+  <ul>
+    <li>une différence de 60 dB, signifie que le rapport d'intensité (ou de puissance) entre deux volumes sonores est de
+      1000
+    </li>
+    <li>une différence de 40 dB est dans le rapport de 100</li>
+    <li>une différence de 20 dB est dans le rapport de 10</li>
+    <li>une différence de 6dB est dans le rapport de 4</li>
+    <li>une différence de 3dB est dans le rapport 2</li>
+  </ul>
+  <p>Dans le cas d'une onde sphérique, en doublant la distance entre la source sonore et le point d'écoute, on augmente
+    par 4 la surface de la sphère de front d'onde représentative de l'énergie totale → la perte est de 6dB.</p>
+  <p>Dans le cas d'une onde plane en conditions de propagation idéales (pas d'amortissement), l'énergie est conservée →
+    perte théorique nulle.</p>
+  <p>En pratique, la perte est fortement liée à l'environnement et aux conditions de propagation : de 1 à 10 dB (voire
+    plus) à chaque fois que la distance est doublée.</p>
+  <p>Il existe une échelle de mesure pondérée par la sensibilité de l'oreille humaine à chaque fréquence. Ce sont les
+    dBA.</p>
+  <p>Attention : des niveaux sonores ne s'additionnent pas en dB !</p>
+  <figure>
+    <img
+      alt="Deux sources de 60 dB donnent 63 dB, deux sources de 60 et 70 dB donnent 70 dB, dix sources de 60 dB donnent 70 dB"
+      src="fig06.webp">
+    <figcaption>[Addition de niveaux sonores]</figcaption>
+  </figure>
+  <p>Si `L_1` et `L_2` sont les niveaux sonores respectifs, en dB, de deux sources indépendantes, le niveau sonore
+    résultant `L_I` est : `L_I = 10.log(10^(L_1/10) + 10^(L_2/10))`</p>
+  <p>Les courbes suivantes indiquent le niveau sonore résultant suivant les niveaux des sources. On constate que :</p>
+  <ul>
+    <li>Dans la plupart des cas, si le niveau de l'une des sources est supérieur de 10 dB à l'autre niveau sonore, le
+      niveau le plus faible est négligeable !
+    </li>
+    <li>Lorsque les deux sources produisent le même niveau d'intensité en un point donné, le niveau résultant est
+      augmenté de 3dB par rapport au niveau d'une seule source.
+    </li>
+  </ul>
+  <figure>
+    <img
+      alt="Courbe du niveau résultant L_I en fonction de L_2 pour L_1 = 80 dB : le bruit total égale le bruit ambiant sous 70 dB, et le bruit ajouté au-delà de 90 dB"
+      src="fig07.webp">
+    <figcaption>L<sub>I</sub> avec L<sub>1</sub> = 80dB</figcaption>
+  </figure>
+  <figure>
+    <img alt="Courbe de L_I - L_2 en fonction de L_1 - L_2 : 3 dB lorsque les deux sources ont le même niveau"
+      src="fig08.webp">
+    <figcaption>L<sub>I</sub> - L<sub>2</sub> en dB. Cas où les 2 sources ont des niveaux voisins</figcaption>
+  </figure>
+</section>
+<section>
+  <h2>Transmission et réflexion d'une onde sonore</h2>
+  <figure class="right side">
+    <img
+      alt="Onde incidente d'angle Θi à la normale, onde réfléchie d'angle Θr et onde transmise d'angle Θt dans un second milieu"
+      src="fig09.webp">
+    <figcaption>[Réflexion et transmission]</figcaption>
+  </figure>
+  <p>Tout comme la lumière, le son est réfléchi ou transmis (réfracté) par les parois, avec des caractéristiques
+    géométriques de transmission assez voisines de celles connues en optique. On note que :</p>
+  <ul>
+    <li>L'<a href="/science/discipline/hard/nature/matter/physics/Energie.html">énergie</a> incidente est égale à la
+      somme des énergies transmises et réfléchies,</li>
+    <li>Les valeurs des angles à la normale au plan de l'onde incidente et de l'onde réfléchie sont identiques.</li>
+    <li>La proportion entre l'énergie transmise et l'énergie réfléchie dépend de la fréquence et des caractéristiques
+      relatives des milieux / matériaux. Plus la différence est brutale, moins il y a d'énergie transmise.
+    </li>
+  </ul>
+  <p>Si la réflexion est quasi-totale et que l'onde « revient » à son point de départ, c'est le phénomène de l'écho qui
+    provoque par exemple une augmentation sonore de 3dB à 2m d'un mur plein.</p>
+  <p>Cas particulier : si l'angle incident est très élevé, il n'y a pas d'onde réfléchie, toute l'énergie est transmise
+    en une onde de surface (se propageant parallèlement à l'interface et n'allant pas en « profondeur »).</p>
+  <section>
+    <h3>Cas des parois minces</h3>
+    <p>Quelles que soient leurs caractéristiques, les parois minces ont peu d'influence sur la propagation des ondes
+      sonores tant que leur épaisseur reste trop faible devant la longueur d'onde. Or, pour mémoire, la longueur d'onde
+      d'un son de 20Hz est de 17m, alors que celle d'un son de 4000Hz est de 8,5cm et celles d'un son de 16kHz de 2cm.
+      Par suite, il est extrêmement difficile d'éviter la propagation des sons graves alors que les sons aigus sont
+      d'autant plus faciles à stopper que la plupart des matériaux les amortissent (les absorbent).</p>
+  </section>
+  <section>
+    <h3>Cas des vitres</h3>
+    <p>Un vitrage simple représente une atténuation sonore de l'ordre de 15 à 25 dB selon, par exemple, la qualité de la
+      vitre et de la menuiserie, alors qu'un vitrage à isolation phonique renforcée (double voire triple vitrage avec
+      gaz spécial) peut représenter une atténuation jusqu'à 37dB.</p>
+    <p>Dans une voiture, fermer les vitres aura un impact dépendant également de la qualité des joints. C'est en effet
+      moins la vitre elle-même qui crée l'atténuation que l'effet « caisson » de l'habitacle. Vitres fermées, il
+      constitue en effet une sorte de « poche » d'air dans laquelle l'onde a du mal à pénétrer. Cela se remarque
+      particulièrement par la différence entre vitre légèrement entrouverte et vitre totalement fermée. Suivant les
+      véhicules, l'atténuation peut également aller de 15 à plus de 30dB.</p>
+  </section>
+</section>
+<section>
+  <h2>Diffraction</h2>
+  <figure class="right side">
+    <img alt="Fronts d'onde plans rencontrant l'arête d'un obstacle et devenant circulaires derrière lui"
+      src="fig10.webp">
+    <figcaption>onde incidente / onde diffractée</figcaption>
+  </figure>
+  <p>Lorsqu'une onde sonore rencontre un objet présentant des arêtes, ces arêtes deviennent le centre d'ondes sphériques
+    se propageant dans de nouvelles directions.</p>
+</section>
+<section>
+  <h2>Ondes stationnaires</h2>
+  <p>En présence d'une ou plusieurs sources sonores permanentes de même fréquence, des conditions particulières de
+    fréquence et de propagation des ondes peuvent produire un phénomène dans lequel certains éléments sont fixes dans le
+    temps. Il n'y a plus, en apparence, de propagation d'une onde, mais vibration stationnaire.</p>
+</section>
+<section>
+  <h2>L'effet Doppler</h2>
+  <figure class="right side">
+    <img alt="Fronts d'onde circulaires resserrés devant un avion en mouvement et espacés derrière lui"
+      src="fig11.webp">
+    <figcaption>[Effet Doppler]</figcaption>
+  </figure>
+  <p>Explication classique : Imaginons une personne immobile sur une plage, les pieds dans l'eau. Une vague lui touche
+    les chevilles par exemple toutes les 3 secondes. Si la personne se déplace en courant vers le large, elle va à la
+    rencontre des vagues et se fait alors mouiller les chevilles plus souvent. Inversement, si elle revient vers le
+    sable, les vagues l'atteindront moins souvent.</p>
+  <p>Le phénomène est le même : les fronts d'ondes émis précédemment s'éloignent à vitesse identique dans toutes les
+    directions. Mais dans le même temps, la source sonore se déplace et les nouvelles ondes émises sont plus proches des
+    précédentes vers l'avant que vers l'arrière. La longueur d'onde est donc plus courte (fréquence élevée, son aigu)
+    vers l'avant que vers l'arrière (fréquence basse, son grave). Autrement dit, si la source sonore se rapproche, la
+    longueur d'onde résultante diminue et le son devient plus aigu. Si la source sonore s'éloigne, elle augmente et le
+    son devient plus grave.</p>
+</section>
+<section>
+  <h2>Interférences</h2>
+  <p>Particulièrement connues dans le cas des vagues.</p>
+  <figure>
+    <img
+      alt="Deux ondes en phase s'additionnent, deux ondes en opposition s'annulent ; photo d'interférences de vagues à la surface de l'eau"
+      src="fig12.webp">
+    <figcaption>[Interférences constructives et destructives]</figcaption>
+  </figure>
+  <figure class="right side">
+    <img alt="Siège d'avion équipé d'un dispositif d'antibruit actif" src="fig13.webp">
+    <figcaption>[Antibruit actif] Source : <a href="http://www.technofirst.com/">http://www.technofirst.com/</a>
+    </figcaption>
+  </figure>
+  <p>Les mouvements imposés aux particules par l'onde qui les atteint s'additionnent. Cela entraîne une augmentation du
+    mouvement global de la particule ou, inversement, une diminution de ce mouvement.</p>
+  <p>Utilisé volontairement dans le domaine de l'antibruit :</p>
+  <ul>
+    <li>Antibruit actif : Mesure du bruit ambiant dans une zone et émission d'un « contre-bruit ». Exemple de casques,
+      de cabines d'avions, … Voir par exemple les travaux de l'entreprise Technofirst <span class="source"><a
+        href="http://www.technofirst.com/">Technofirst</a>, Leader mondial de l'antibruit actif – Aubagne</span>.
+    </li>
+    <li>Antibruit passif : Géométrie permettant la création d'un « écho » créant des interférences. Exemple de casques,
+      de canalisations, de fossés antibruit, …
+    </li>
+  </ul>
+  <p>Remarque : il y a « battement » (sensation d'un bruit unique mais de niveau sonore variant régulièrement) en cas
+    d'interférence entre 2 sons se déplaçant dans la même direction et d'amplitudes voisines mais de fréquences
+    légèrement différentes. C'est le cas, par exemple, lors de l'approche d'un <a
+      href="/tech/aero/appareil/helicoptere/index.html">hélicoptère</a>.</p>
+</section>
+<section>
+  <h2>Les zones d'ombre</h2>
+  <p>Ce sont des zones où le son ne parvient que difficilement. Elles peuvent être dues à des écrans, talus, parois, …
+    Dans certains cas, ce sont des « fossés » qui vont constituer des écrans (difficile à concevoir mais constaté
+    parfois dans la nature).</p>
+  <figure>
+    <img
+      alt="Son d'une voiture diffusé, réfléchi, transmis et diffracté par un écran, laissant une zone d'ombre derrière lui ; ondes diffractées et réfléchies dans un creux du relief créant des interférences et une zone d'ombre"
+      src="fig14.webp">
+    <figcaption>[Zones d'ombre] diffusion, diffraction, transmission, réflexion, interférences, zone d'ombre
+    </figcaption>
+  </figure>
+  <figure class="right side">
+    <img alt="Ondes sonores s'engageant dans un conduit qui se resserre, diffractées et transmises dans les parois"
+      src="fig15.webp">
+    <figcaption>[« Trou noir » acoustique]</figcaption>
+  </figure>
+  <p>On constate également des effets de « trou noir » acoustique : au fur et à mesure de son « avancée » dans le
+    « trou », le son est diffracté et « dispersé » (ce qui peut de plus créer des interférences à effet antibruit) ou
+    transmis dans les parois sous forme d'ondes de surface. L'énergie parvenant à l'extrémité est quasiment nulle. Cela
+    peut se produire par exemple entre des immeubles ou dans des vallées de montagne.</p>
+</section>
+<section>
+  <h2>Les guides d'onde</h2>
+  <figure class="right side">
+    <img alt="Trajets d'ondes réfléchis successivement par les deux parois d'un guide" src="fig16.webp">
+    <figcaption>[Guide d'onde]</figcaption>
+  </figure>
+  <p>Phénomène « inverse » de la zone d'ombre, le principe du guide d'ondes est le même que celui des fibres optiques
+    pour la lumière. Le son est « ramené » au centre du guide. Ils sont classiques dans notre environnement : onde
+    sonore « longeant » un ruisseau, un groupe d'immeubles, des « couches » atmosphériques, … Une simple conversation
+    peu parfois être entendue à plusieurs kms.</p>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+<!--#include virtual="/footer.html" -->

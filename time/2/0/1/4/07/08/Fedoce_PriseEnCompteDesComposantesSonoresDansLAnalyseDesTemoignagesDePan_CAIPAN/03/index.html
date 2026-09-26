@@ -1,0 +1,148 @@
+<!--#include virtual="/header-start.html" -->
+<title>L'apport possible des mathématiques et de l'informatique (Fedoce)</title>
+<meta content="Fedoce, Gaelle" name="author">
+<meta content="Atelier CAIPAN, GEIPAN" name="copyright">
+<meta content="https://www.cnes-geipan.fr/sites/default/files/07_FEDOCE_full.pdf" name="url">
+<link href="../index.html" rel="start"
+  title="Prise en compte des composantes sonores dans l'analyse des témoignages de PAN">
+<link href="../index.html" rel="contents" title="Sommaire">
+<link href="../02/index.html" rel="prev" title="Un peu de psychoacoustique">
+<link href="../04/index.html" rel="next" title="Cas « étranges » classiques, analyse des témoignages de PAN">
+<!--#include virtual="/header-end.html" -->
+<section>
+  <h2>Imagerie acoustique, géolocalisation</h2>
+  <figure class="right side">
+    <img alt="Image échographique d'un fœtus" src="fig27.webp">
+    <figcaption>[Échographie]</figcaption>
+  </figure>
+  <p>L'industrie (au sens large) et la <a href="/science/discipline/hard/nature/life/med/index.html">médecine</a>
+    utilisent depuis très longtemps des techniques de propagation d'ondes pour le contrôle ou la caractérisation de
+    milieux traversés. On peut citer par exemple :</p>
+  <ul>
+    <li>Ondes sismiques utilisées en géologie et en particulier dans le domaine pétrolier,</li>
+    <li>Fréquences audibles pour le contrôle in-situ de l'évolution dans le temps des caractéristiques du béton ou la
+      caractérisation de certains matériaux utilisés dans le domaine acoustique, ainsi qu'en tomographie océanique pour
+      mesurer par exemple la température des eaux profondes,
+    </li>
+    <li>Ondes ultrasonores en Contrôles Non Destructifs (CND) afin de détecter des défauts (fissures) de petites
+      dimensions, en échographie médicale afin de visualiser des variations légères de densité des tissus, ou pour les
+      sonars sous-marins,
+    </li>
+    <li>Ondes électromagnétiques pour les <a href="/tech/aero/radar/index.html">radars</a>,</li>
+    <li>Etc.</li>
+  </ul>
+  <p>L'onde « initiale » étant parfaitement connue, ces techniques utilisent les modifications constatées sur ces ondes
+    durant leur propagation pour déterminer les caractéristiques du milieu traversé.</p>
+  <p>A noter l'exception de la tomographie acoustique océanique passive (voir par exemple les travaux de l'<abbr
+    title="Ecole Nationale Supérieure des Techniques Avancées">ENSTA</abbr> de Brest <span class="source"><a
+    href="http://www.ensta-bretagne.fr/">Ecole Nationale Supérieure des Techniques Avancées</a>
+      – Brest (Tomographie acoustique passive)</span>), technique de caractérisation du milieu n'utilisant pas un son
+    émis volontairement mais des sons naturellement présents dans l'environnement (cris de cétacés, bruits de navires,
+    …).</p>
+  <figure class="left side">
+    <img alt="Cartographie acoustique en couleurs superposée à l'avant d'un train Thalys" src="fig28.webp">
+    <figcaption>[Imagerie acoustique] Source : <a href="http://www.mescan.com/">http://www.mescan.com/</a></figcaption>
+  </figure>
+  <p>L'imagerie acoustique, quant à elle, se place dans des conditions connues de propagation (généralement en champ
+    proche pour n'utiliser que des ondes directes) pour identifier la source de bruit, tant en intensité et fréquence
+    qu'en localisation <span class="source"><a href="http://www.mesures.com/pdf/old/755solholographie.pdf">Imagerie
+      acoustique</a>, Revue « Mesures » de mai 2003</span>. Il est ainsi possible de cartographier les émissions sonores
+    d'un moteur, de vérifier les qualités d'une paroi isolante, de faire une étude environnementale en ville, etc.</p>
+  <p>Dans tous les cas, le principe est de mesurer l'onde en plusieurs points et d'appliquer à ces données des calculs
+    de rétro-propagation permettant d'en retrouver la source dans des conditions de propagation connues. Les techniques
+    diffèrent en terme de nombre de points de mesure (de 3 à plusieurs centaines), moyens de mesure et grandeurs prises
+    en compte (intensité, pression, …), algorithme de rétro-propagation utilisés, … et, évidemment, de coût et de
+    résultats, en particulier au niveau de la résolution (fréquence et positionnement).</p>
+  <p>Certaines ne sont applicables qu'à des sources sonores stationnaires (permanentes) mais le <i
+    lang="en">beamforming</i> et l'holographie acoustique <span class="source"><a
+    href="http://perso.univ-lemans.fr/~jcpascal/Cours/ENSIM3A_Master2_Antenne.pdf">Holographie acoustique en champ
+      proche</a>, ENSIM</span> permettent de cartographier des sources non stationnaires et font actuellement l'objet de
+    très nombreux travaux de développement (voir par exemple les travaux du <abbr
+      title="Laboratoire d'Acoustique de l'Université du Maine">LAUM</abbr> du Mans <span class="source"><a
+      href="http://laum.univ-lemans.fr/">Laboratoire d'Acoustique de l'Université du Maine</a> – Le Mans (Holographie
+      acoustique)</span>).</p>
+  <p>Radars, sonars, …, la géolocalisation d'une source sonore est donc une technique maîtrisée depuis des années.</p>
+  <p>A noter toutefois que la quasi-totalité de ces techniques n'utilisent que des champs proches ou des ondes directes,
+    c'est-à-dire que seule l'onde émise ou réfléchie par l'objet à caractériser et parvenant directement au capteur est
+    prise en compte, et qu'il est fait abstraction, au besoin à l'aide de filtres, des réflexions et autres « bruits »
+    venant parasiter le signal.</p>
+  <p>Pour des raisons initialement militaires (localisation d'un sous-marin en eaux peu profondes, …), puis
+    environnementales (réduction des pollutions sonores liées aux transports, …), les techniques de calcul en champ
+    lointain (et donc de prise en compte de l'environnement sur le signal reçu) ont énormément progressées depuis
+    quelques décennies.</p>
+  <p>La géolocalisation d'une source sonore est donc applicable dans de très nombreux cas, en utilisant les modèles
+    numériques de terrain (<abbr title="Modèles Numériques de Terrain">MNT</abbr>, cartes du relief) disponibles par
+    exemple auprès de l'<abbr title="Institut National de l'Information Géographique et forestière">IGN</abbr> <span
+      class="source"><a
+      href="http://professionnels.ign.fr/mnt">Institut National de l'Information Géographique et forestière</a> – St
+    Mandé (Modèles Numériques de Terrain)</span>, et des algorithmes de rétro-propagation prenant en compte l'effet de
+    la topographie et des conditions météorologiques (voir par exemple les travaux de l'<abbr
+      title="Institut National des Sciences Appliquées">INSA</abbr> de Strasbourg <span
+      class="source"><a href="http://www.insa-strasbourg.fr/">Institut National des Sciences Appliquées</a> – Strasbourg
+      (Acoustique environnementale)</span> et du <abbr
+      title="Laboratoire de Mécanique des Fluides et d'Acoustique">LMFA</abbr> de Lyon <span class="source"><a
+      href="http://lmfa.ec-lyon.fr/">Laboratoire
+      de Mécanique des Fluides et d'Acoustique</a> – Ecole Centrale – Lyon (Acoustique, psychoacoustique, …)</span> en
+    milieu terrestre, du <abbr title="Laboratoire de Mécanique et d'Acoustique">LMA</abbr> de Marseille <span
+      class="source"><a href="http://www.lma.cnrs-mrs.fr/">Laboratoire de
+      Mécanique et d'Acoustique</a> – <a href="/org/eu/fr/cnrs/index.html"><abbr
+      title="Centre National de la Recherche Scientifique">CNRS</abbr></a> – Marseille (Acoustique sous-marine, acoustique des salles, psychoacoustique,
+      …)</span> en milieu sous-marin).</p>
+  <p>Encore faut-il que l'on dispose de suffisamment de points de mesure, et d'enregistrements de qualité suffisante… Et
+    là est bien le frein principal de ces méthodes. Ainsi, en l'état actuel des techniques, il serait possible de :</p>
+  <ul>
+    <li>Calculer assez précisément la trajectoire d'un aéronef quelconque, lors d'un meeting aérien (ou autre cas
+      assimilable) en utilisant les enregistrements sonores divers réalisés par les spectateurs sur leurs caméscopes, ou
+      autres enregistrements de surveillance : nombre de points de mesure important, conditions de propagation simples
+      pour ne pas dire assimilables à un champ proche, …
+    </li>
+    <li>Dans des cas plus complexes, vérifier la cohérence entre des <a
+      href="/science/crypto/ufo/analyse/hypotheses/index.html">hypothèses</a> d'explication et les enregistrements
+      réalisés par quelques <a href="/people/witness/index.html">témoins</a>.
+    </li>
+  </ul>
+  <p>Sans oublier, bien sûr, les nombreux cas intermédiaires dans lesquels les calculs de rétro-propagation
+    permettraient d'approcher la trajectoire de l'objet afin d'écarter, ou de confirmer, certaines hypothèses
+    envisagées.</p>
+</section>
+<section>
+  <h2>Reconstitutions en réalité virtuelle</h2>
+  <figure class="left side">
+    <img alt="Vue aérienne en 3D d'un quartier de maisons reconstitué numériquement" src="fig29.webp">
+    <figcaption>[Reconstitution 3D d'un quartier] Source : <a href="http://www.3dcite.fr/">http://www.3dcite.fr/</a>
+    </figcaption>
+  </figure>
+  <p>Connue depuis quelques décennies, les techniques de réalité virtuelles sont de plus en plus diffusées et utilisées
+    <span class="source"><a href="http://www.cerv.fr/">Centre Européen de Réalité Virtuelle</a> – Brest</span> <span
+      class="source"><a href="http://www.realite-virtuelle.univmed.fr/">Centre de Réalité Virtuelle de la
+      Méditerranée</a> – Marseille</span> <span class="source"><a href="http://www.inria.fr/centre/sophia/">Institut
+      National de Recherche en Informatique et Automatisme</a> – Sophia Antipolis (Réalité virtuelle, son
+      spatialisé)</span>.</p>
+  <p>L'une de leurs applications récentes est l'urbanisme et l'aménagement du territoire <span class="source"><a
+    href="http://www.cstb.fr/">Centre Scientifique et Technique du Bâtiment</a> – Marne La Vallée (Utilisation de la
+    Réalité Virtuelle en Aménagement du Territoire)</span>, que ce soit en outil d'aide à la décision en particulier
+    dans le domaine des transports ou de simple présentation interactive <span class="source"><a
+      href="http://carte.cannes.fr/">Visite de la Ville de Cannes en 3D</a></span>, voire en reconstitution de lieux
+    historiques.</p>
+  <p>Suivant les cas, elles utilisent des environnements numériques entièrement reconstitués, ou se basent, en les
+    complétant, sur les <abbr title="Modèles Numériques de Terrain">MNT</abbr> déjà cités précédemment.</p>
+  <p>Du point de vue sonore, notons que les techniques proposées par les équipements audio grand public sont loin d'être
+    représentatives des possibilités offertes par les techniques dites de son spatialisé <span class="source"><a
+      href="http://www.ircam.fr/">Institut de Recherche et Coordination Acoustique Musique</a> – Paris
+      (Psychoacoustique, son spatialisé, …)</span>, et en particulier par l'écoute binaurale au casque <span
+      class="source"><a href="http://nouvoson.radiofrance.fr/">Site de Radio-France proposant quelques enregistrements
+      en son spatialisé binaural</a></span>. Cette technique vise à ce que les tympans de l'auditeur reçoivent des ondes
+    de pression similaires à celles reçues en situation réelle. Le principe repose sur la reproduction au niveau des
+    oreilles d'un auditeur de toutes les informations nécessaires pour la reproduction d'une image sonore
+    extra-crânienne. L'image sonore perçue, à l'image de la réalité est alors comprise par le cerveau comme étant en
+    trois dimensions et provoque ainsi un rendu de la réalité sonore fidèle. Il ne s'agit plus d'entendre avec les
+    oreilles, mais avec le cerveau <span class="source"><a
+      href="http://www.pourlascience.fr/ewb_pages/a/article-la-spatialisation-du-son-18507.php">La spatialisation du
+      son</a>, revue « Pour la Science » de Novembre 2008</span>.</p>
+  <p>A l'aide des <abbr title="Modèles Numériques de Terrain">MNT</abbr> et en utilisant divers algorithmes de
+    propagation acoustique prenant en compte la topographie, il serait donc parfaitement possible de réaliser des
+    reconstitutions en réalité virtuelle, tant en termes de composantes visuelles que acoustiques, que ce soit pour
+    discriminer diverses hypothèses ou d'en améliorer l'analyse en particulier dans sa perception subjective. Le seul
+    frein à ces possibilités est alors le coût, que ce soit en termes d'expertise ou de matériel nécessaire.</p>
+</section>
+<!--#include virtual="/footer.html" -->

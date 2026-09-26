@@ -1,2 +1,5 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 Communiqué de l'ATIC : Rien n'a permis de prouver qu'un seul des 7369 objets non-identifiés signalés depuis 1947 soit un véhicule extraterrestre.,"",sighting,1962-02-07$,,"",1962-02-07,event,https://rr0.org/time/1/9/6/2/02/index.html#1962-02-07
+Vol de Glenn à bord d'une capsule Mercury.,"",sighting,1962-02-20$,,"",1962-02-20,event,https://rr0.org/time/1/9/6/2/02/index.html#1962-02-20
+Observation à.,"",sighting,1962-02-25$KotzebueAlaska,,,"",,"",Kotzebue (Alaska),"",place,""""","""",s1,"""",,",1962-02-25,event,https://rr0.org/time/1/9/6/2/02/index.html#1962-02-25
+Le 1er A-12 Blackbird (#121) est amené à Groom par camion pour des essais.,"",sighting,1962-02-26$,,""""","""",s2,"""",,McIninch,"""","""",s3,"""",,Rich",1962-02-26,event,https://rr0.org/time/1/9/6/2/02/index.html#1962-02-26

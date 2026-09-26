@@ -1,2 +1,3 @@
-description,events,eventType,id,place,sources,time,type,url,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type
+description,events,eventType,id,place,place.dirName,place.elevation,place.events,place.id,place.locations,place.name,place.sources,place.type,sources,time,type,url
 "Selon certaines sources sujettes à caution, création du groupe Majestic 12 ?","",sighting,1948-09$,,"",1948-09,event,https://rr0.org/time/1/9/4/8/09/index.html
+"Sylvester Bentham et l'ancien colonel de l'Armée US Horace Eakins observent 2 objets. L'un est un rectangle grisâtre avec des lignes verticales, l'autre est une amibe translucide avec un point noir près du centre. Les bras de l'amibe ondulent. Les 2 objets se déplacent très rapidement.","",sighting,1948-09-23T12:00$SanPabloCalifornie,,,"",,"",San Pablo (Californie),"",place,""""","""",s1,"""",,",1948-09-23T12:00,event,https://rr0.org/time/1/9/4/8/09/index.html#1948-09-23T12:00

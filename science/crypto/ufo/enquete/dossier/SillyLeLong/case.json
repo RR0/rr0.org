@@ -1,0 +1,18 @@
+{
+ "title": "L'observation de Silly-le-Long",
+ "time": "2015-05-31 00:50",
+ "place": "Silly-le-Long (Oise)",
+ "classification": {
+  "hynek": "NL"
+ },
+ "conclusion": "misinterpretation",
+ "events": [
+  {
+   "type": "event",
+   "eventType": "sighting",
+   "time": "2015-05-31 00:50",
+   "title": "T1",
+   "url": "observer-silly-le-long.json"
+  }
+ ]
+}

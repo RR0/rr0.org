@@ -1,0 +1,18 @@
+{
+  "title": "L'observation de Maffliers",
+  "time": "2012-06-29 06:06",
+  "place": "Maffliers (Val-d'Oise)",
+  "classification": {
+    "hynek": "DD"
+  },
+  "conclusion": "unknown",
+  "events": [
+    {
+      "type": "event",
+      "eventType": "sighting",
+      "time": "2012-06-29 06:06",
+      "title": "Le promeneur",
+      "url": "observer-maffliers.json"
+    }
+  ]
+}

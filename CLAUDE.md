@@ -292,3 +292,26 @@ npm run build -- --contents "time/**/*.html" --force true
 ### Deployment
 
 Site is hosted on Netlify, and its configuration is BUILD OUTPUT, not a tracked file. `out/_redirects` is generated from `.htaccess` (plus `_redirects.head`, which holds what Apache cannot say: the ufoathome.org redirects, with their status and force). `out/_headers` is a copy of `_headers` and carries the sitewide CORS rule. Netlify reads both from the DEPLOYED directory, so neither has to be committed — unlike `netlify.toml`, which it reads from the clone before any build runs, and which this site no longer has. The publish directory and build command live in the Netlify project settings. Deploy with `npm run deploy` (calls `netlify deploy --prod --dir out`).
+
+#### Building and deploying from a Linux sandbox (Claude Cowork)
+
+Building and deploying from the Linux sandbox WORKS: never tell the user it needs their Mac. Before any build or
+deploy attempt, read the project memory notes `project_sandbox_build_deploy_method` and
+`project_sandbox_build_deploy_pitfalls`.
+In short:
+
+- Never run `node`/`tsx` against the mounted `node_modules`: it is the user's macOS tree (darwin binaries such as
+  `canvas`, `esbuild`). Create a fresh workdir in `/tmp` (not a stale one from another session), symlink every
+  top-level entry of the repo into it except `node_modules` and `.git` (symlink `out`, never create an empty one), then
+  `npm ci --ignore-scripts` and `npm rebuild canvas` there.
+- Build with Node 24 (arm64 tarball from nodejs.org), `node node_modules/tsx/dist/cli.mjs build.ts`, with
+  `NODE_OPTIONS="--max_old_space_size=2800 --preserve-symlinks --preserve-symlinks-main"` (the 16 GB from `.env`
+  exhausts the sandbox memory).
+- A bash call lasts about 3 minutes at most and background processes do not survive it: build only the changed pages,
+  `--reindex "" --force true --contents "a.html,b.html"` (at least two values; one heavy month page per call). Never
+  `--force true` without `--contents`. Afterwards, check that no generated page still contains `#echo var="title"`.
+- Deploy from the workdir with `NODE_OPTIONS= NETLIFY_AUTH_TOKEN=$NETLIFY_PAT node_modules/.bin/netlify deploy --prod
+  --no-build --dir <real mounted path>/out`: `--dir` must not be a symlink, or only one file gets published.
+- Commit only your own files (`git commit -- <paths>`), with one-off `GIT_AUTHOR_*`/`GIT_COMMITTER_*` env vars for
+  `javarome <javarome@gmail.com>`. Avoid needless git commands in the mount: they can leave an undeletable
+  `.git/index.lock`.

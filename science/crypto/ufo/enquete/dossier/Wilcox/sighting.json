@@ -21,8 +21,8 @@
     "title": "Gary T. Wilcox"
   },
   "description": {
-    "fr": "Wilcox approche de l'objet posé en lisière de forêt, s'en approche jusqu'à le toucher, puis le voit se soulever et s'éloigner vers le nord au bout d'environ 2 h. Dimensions rapportées : 20 pieds de long, 15-16 de large, 4 de haut, couleur aluminium. À bout de bras, un objet de 6 m occupe tout le champ de vision : c'est bien ce que dit le témoignage. Les 2 êtres d'environ 1,20 m et le tracteur ne sont pas représentés.",
-    "en": "Wilcox walks up to the object standing at the forest's edge, close enough to touch it, then sees it lift and move off north after about 2 h. Reported dimensions: 20 feet long, 15–16 wide, 4 high, aluminium coloured. At arm's length, a 6 m object fills the whole field of view: which is what the testimony says. The 2 beings of about 1.20 m and the tractor are not shown."
+    "fr": "Wilcox approche de l'objet posé en lisière de forêt, s'en approche jusqu'à le toucher, puis le voit se soulever et s'éloigner vers le nord au bout d'environ 2 h. Dimensions rapportées : 20 pieds de long, 15-16 de large, 4 de haut, couleur aluminium. À bout de bras, un objet de 6 m occupe tout le champ de vision : c'est bien ce que dit le compte rendu. Le compte rendu est désormais joué en 3D : l'engin est un ellipsoïde de 6,10 m sur 4,72 pour 1,22 de haut, aux dimensions que Wilcox donne lui-même, et sa distance en découle — ses 19,22° de large à l'instant zéro le mettent à 18,1 m, et sa marche, qui est dans le fichier, le laisse à 3,3 m quand il s'arrête. Les 2 êtres d'environ 1,20 m sont placés à côté de lui pendant les deux heures d'entretien ; où ils se tenaient exactement n'est dit nulle part et est supposé. Le tracteur n'est pas représenté. Ce que la 3D montre et que le dessin ne pouvait pas dire : à 3 m, un objet de 4,7 m de fond vu d'un œil à 1,60 m occupe deux fois la hauteur qu'il a dessinée.",
+    "en": "Wilcox walks up to the object standing at the forest's edge, close enough to touch it, then sees it lift and move off north after about 2 h. Reported dimensions: 20 feet long, 15–16 wide, 4 high, aluminium coloured. At arm's length, a 6 m object fills the whole field of view: which is what the account says. The account is now played in 3D: the craft is an ellipsoid 6.10 m by 4.72 and 1.22 high, the dimensions Wilcox gives himself, and its distance follows from them — 19.22° wide at the first instant puts it 18.1 m off, and his walk, which the file states, leaves him 3.3 m from it when he stops. The 2 beings of about 1.20 m stand beside him through the two hours of the conversation; where exactly they stood is nowhere stated and is assumed. The tractor is not shown. What the 3D says and the drawing could not: at 3 m, an object 4.7 m deep seen from an eye 1.60 m up takes twice the height he drew."
   },
   "tags": [
     "RR3",
@@ -566,5 +566,162 @@
     "name": "ERA5 (Open-Meteo)",
     "url": "https://archive-api.open-meteo.com/v1/archive?latitude=42.229162&longitude=-76.181&start_date=1964-04-24&end_date=1964-04-24&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
   },
-  "instrument": "eye"
+  "instrument": "eye",
+  "interpretation": {
+    "title": {
+      "fr": "Un engin d'aluminium de six mètres posé au bord du champ, et deux êtres d'un mètre vingt",
+      "en": "A six-metre aluminium craft standing at the field's edge, and two beings four feet tall"
+    },
+    "bodies": [
+      {
+        "id": "craft",
+        "title": {
+          "fr": "L'engin",
+          "en": "The craft"
+        },
+        "explains": [
+          "ufo-1"
+        ],
+        "model": {
+          "id": "ellipsoid"
+        },
+        "track": {
+          "value": [
+            {
+              "t": 0,
+              "eastM": 0,
+              "northM": -18.07,
+              "onGround": true,
+              "sizeM": {
+                "widthM": 4.72,
+                "lengthM": 6.1,
+                "heightM": 1.22
+              },
+              "attitude": {
+                "headingDeg": 90
+              },
+              "appearance": {
+                "color": "#c9ccce",
+                "albedo": 0.65
+              }
+            },
+            {
+              "t": 7080000,
+              "eastM": 0,
+              "northM": -18.07,
+              "onGround": true
+            },
+            {
+              "t": 7100000,
+              "azimuthDeg": 179.99,
+              "altitudeDeg": 14.05,
+              "distanceM": 3.3
+            },
+            {
+              "t": 7120000,
+              "azimuthDeg": 180,
+              "altitudeDeg": 28.22,
+              "distanceM": 11.2
+            },
+            {
+              "t": 7140000,
+              "azimuthDeg": 180.01,
+              "altitudeDeg": 25.98,
+              "distanceM": 25.81
+            },
+            {
+              "t": 7170000,
+              "azimuthDeg": 180,
+              "altitudeDeg": 15.5,
+              "distanceM": 76.07
+            },
+            {
+              "t": 7200000,
+              "azimuthDeg": 179.99,
+              "altitudeDeg": 6.36,
+              "distanceM": 264.1
+            }
+          ],
+          "basis": "derived",
+          "rationale": "The metres are Wilcox's own — 20 feet long, 15 to 16 wide, 4 high, aluminium coloured — and everything else here follows from them and from the angles the recording already states. Six point one metres seen across 19.22° puts the craft 18.1 m away, and 18.1 m due south of where he started is 3.3 m from where he stops walking, which is the \"close enough to touch\" of the account: the walk itself is what the file's own observer track says, so the distance is not a new claim but his figure read through his angles. That the long axis lies across his line of sight is read off the drawing, whose 19.22 by 3.82 degrees are in the ratio 5.0 of 20 feet to 4. On the ground it is his word; where exactly it rests on the relief is the relief's. The climb keeps his angles and takes its distance the same way, from the same 6.1 m, which is why the craft ends 264 m off: nobody measured that, the size did."
+        }
+      },
+      {
+        "id": "figure-1",
+        "title": {
+          "fr": "Être (1)",
+          "en": "Being (1)"
+        },
+        "model": {
+          "id": "figure"
+        },
+        "track": {
+          "value": [
+            {
+              "t": 90000,
+              "eastM": -1,
+              "northM": -16.6,
+              "onGround": true,
+              "sizeM": {
+                "widthM": 0.45,
+                "lengthM": 0.3,
+                "heightM": 1.2
+              },
+              "attitude": {
+                "headingDeg": 0
+              },
+              "appearance": {
+                "color": "#d9d6cd",
+                "albedo": 0.6
+              }
+            },
+            {
+              "t": 7080000,
+              "present": false
+            }
+          ],
+          "basis": "assumed",
+          "rationale": "Their height is Wilcox's, about four feet, and so is their being there through the two hours he says he spent talking to them. Where they stood is not: they are put between the craft and where he stopped, a metre either side of its axis, because the account has them come out from under it and stand with him, and a figure has to stand somewhere to be drawn at all. The recording draws neither of them, so neither explains anything of it."
+        }
+      },
+      {
+        "id": "figure-2",
+        "title": {
+          "fr": "Être (2)",
+          "en": "Being (2)"
+        },
+        "model": {
+          "id": "figure"
+        },
+        "track": {
+          "value": [
+            {
+              "t": 90000,
+              "eastM": 1,
+              "northM": -16.6,
+              "onGround": true,
+              "sizeM": {
+                "widthM": 0.45,
+                "lengthM": 0.3,
+                "heightM": 1.2
+              },
+              "attitude": {
+                "headingDeg": 0
+              },
+              "appearance": {
+                "color": "#d9d6cd",
+                "albedo": 0.6
+              }
+            },
+            {
+              "t": 7080000,
+              "present": false
+            }
+          ],
+          "basis": "assumed",
+          "rationale": "See the first: same height, same two hours, same guessed spot, a metre the other side."
+        }
+      }
+    ]
+  }
 }

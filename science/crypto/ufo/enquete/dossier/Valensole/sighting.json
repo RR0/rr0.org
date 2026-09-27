@@ -17,7 +17,7 @@
     "lng": 5.9632
    },
    "basis": "derived",
-   "rationale": "The memorial's own coordinates, at the roadside of the D6A in the lieu-dit L'Olivol, standing in for a landing point nobody publishes: the memorial was put where the public can reach it safely, and Masse's field is set back in private parcels still under lavender, whose growers ask that nobody walk into them. So this is the right lieu-dit and the right road, and some hundreds of metres out. Everything downstream survives that: across the 800 m square around this point no 40 m of ground exceeds 3.1% of slope (1.2% along the walk itself), so the field lies flat wherever in the parcel the true spot is, and 400 m moves every celestial azimuth by under a hundredth of a degree. The witness track and all 140 rows are laid out relative to this point, so they carry its error with them and none of their own."
+   "rationale": "The memorial's own coordinates, at the roadside of the D6A in the lieu-dit L'Olivol, standing in for a landing point nobody publishes: the memorial was put where the public can reach it safely, and Masse's field is set back in private parcels still under lavender, whose growers ask that nobody walk into them. So this is the right lieu-dit and the right road, and some hundreds of metres out. Everything downstream survives that: across the 800 m square around this point no 40 m of ground exceeds 3.1% of slope (1.2% along the walk itself), so the field lies flat wherever in the parcel the true spot is, and 400 m moves every celestial azimuth by under a hundredth of a degree. The observer track and all 140 rows are laid out relative to this point, so they carry its error with them and none of their own."
   }
  ],
  "observer": {
@@ -25,8 +25,8 @@
   "title": "Maurice Masse"
  },
  "description": {
-  "fr": "Vue de Maurice Masse depuis sa sortie de derrière le clapier (engin à 90 m) jusqu'au départ. Il s'approche en longeant la vigne jusqu'à 6 m, est immobilisé, puis l'engin se soulève, ses 6 pieds se mettent à tourner et il part en oblique — que le témoin suit des yeux sur quelques dizaines de mètres avant qu'il ne disparaisse « pire qu'un éclair ». Dimensions rapportées : 3,5 m de large pour 2,5 m de haut, « du volume d'une Renault Dauphine », de couleur neutre et mate — jamais décrit comme lumineux. Les 2 êtres d'environ 1 m ne sont pas représentés : le format ne sait pas encore placer d'entités observées dans la scène. Le lieu figuré est celui du mémorial, en bordure de la D6A : le point de poser exact est en retrait, dans des parcelles privées toujours cultivées.",
-  "en": "Maurice Masse's view, from coming out from behind the rabbit hutch (the craft 90 m off) to the departure. He walks up along the vine to within 6 m, is held motionless, then the craft lifts, its 6 legs begin to turn and it goes off at a slant — which the witness follows with his eyes over a few tens of metres before it vanishes “worse than a flash of lightning”. Reported dimensions: 3.5 m wide by 2.5 m high, “the size of a Renault Dauphine”, a neutral matte colour — never described as luminous. The 2 beings of about 1 m are not shown: the format cannot yet place observed entities in the scene. The place shown is the memorial's, at the edge of the D6A: the exact landing spot is set back, in private parcels still under cultivation."
+  "fr": "Vue de Maurice Masse depuis sa sortie de derrière le clapier (engin à 90 m) jusqu'au départ. Il s'approche en longeant la vigne jusqu'à 6 m, est immobilisé, puis le tube central rentre dans l'engin, ses 6 pieds se mettent à tourner, il s'élève et part en oblique — que le observateur suit des yeux sur quelques dizaines de mètres avant qu'il ne disparaisse « pire qu'un éclair ». Dimensions rapportées : 3,5 m de large pour 2,5 m de haut, « du volume d'une Renault Dauphine », de couleur neutre et mate — jamais décrit comme lumineux. Le compte rendu est joué en 3D : la machine est un modèle bâti d'après l'énoncé (coque ovale de 3,49 m, coupole transparente, six pieds obliques et le pivot central qui a percé le trou), sa distance déduite de sa largeur — 90 m au premier instant, 6,5 m quand il s'arrête —, et les 2 êtres d'environ 1 m se tiennent à côté d'elle jusqu'à ce qu'ils y remontent. Ce qui est comparé à l'ovale qu'il a dessiné est la coque seule, ni les pieds ni la coupole, qu'il a dessinés à part. Le lieu figuré est celui du mémorial, en bordure de la D6A : le point de poser exact est en retrait, dans des parcelles privées toujours cultivées.",
+  "en": "Maurice Masse's view, from coming out from behind the rabbit hutch (the craft 90 m off) to the departure. He walks up along the vine to within 6 m, is held motionless, then the central tube is drawn back into the craft, its 6 legs begin to turn, it rises and goes off at a slant — which the observer follows with his eyes over a few tens of metres before it vanishes “worse than a flash of lightning”. Reported dimensions: 3.5 m wide by 2.5 m high, “the size of a Renault Dauphine”, a neutral matte colour — never described as luminous. The account is played in 3D: the machine is a model built to the account (an oval hull 3.49 m across, a transparent cupola, six slanting legs and the central pivot that bored the hole), its distance read off its width — 90 m at the first instant, 6.5 m where he stops — and the 2 beings of about 1 m stand beside it until they climb back in. What is measured against the oval he drew is the hull alone, neither the legs nor the cupola, which he drew separately. The place shown is the memorial's, at the edge of the D6A: the exact landing spot is set back, in private parcels still under cultivation."
  },
  "tags": [
   "RR3",
@@ -4685,8 +4685,8 @@
    "id": "vine-1",
    "kind": "crop",
    "title": {
-    "fr": "Vigne longée par le témoin",
-    "en": "The vine the witness walked along"
+    "fr": "Vigne longée par le observateur",
+    "en": "The vine the observer walked along"
    },
    "eastM": 4.33,
    "northM": 5.38,
@@ -4701,8 +4701,8 @@
    "id": "vine-2",
    "kind": "crop",
    "title": {
-    "fr": "Vigne longée par le témoin",
-    "en": "The vine the witness walked along"
+    "fr": "Vigne longée par le observateur",
+    "en": "The vine the observer walked along"
    },
    "eastM": -15.52,
    "northM": 28.21,
@@ -4717,8 +4717,8 @@
    "id": "vine-3",
    "kind": "crop",
    "title": {
-    "fr": "Vigne longée par le témoin",
-    "en": "The vine the witness walked along"
+    "fr": "Vigne longée par le observateur",
+    "en": "The vine the observer walked along"
    },
    "eastM": -35.37,
    "northM": 51.04,
@@ -5767,5 +5767,183 @@
   "name": "ERA5 (Open-Meteo)",
   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.845508&longitude=5.9632&start_date=1965-07-01&end_date=1965-07-01&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
  },
- "instrument": "eye"
+ "instrument": "eye",
+ "interpretation": {
+  "title": {
+   "fr": "La machine ovale sur six pieds et son pivot, et les deux êtres d'un mètre",
+   "en": "The oval machine on six legs and its pivot, and the two beings a metre tall"
+  },
+  "bodies": [
+   {
+    "id": "craft",
+    "title": {
+     "fr": "L'engin",
+     "en": "The craft"
+    },
+    "explains": [
+     "ufo-1"
+    ],
+    "model": {
+     "id": "ufoathome-valensole-craft"
+    },
+    "outlineNode": "hull",
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "eastM": 0,
+       "northM": -89.9,
+       "onGround": true,
+       "sizeM": {
+        "widthM": 3.49,
+        "lengthM": 3.49,
+        "heightM": 2.42
+       },
+       "appearance": {
+        "color": "#b8b3a6",
+        "albedo": 0.35
+       }
+      },
+      {
+       "t": 246000,
+       "motions": {
+        "pivot-retract": 0
+       }
+      },
+      {
+       "t": 248000,
+       "motions": {
+        "pivot-retract": 1,
+        "legs-turn": 0
+       }
+      },
+      {
+       "t": 250000,
+       "eastM": 0,
+       "northM": -89.9,
+       "onGround": true,
+       "motions": {
+        "legs-turn": 1
+       }
+      },
+      {
+       "t": 254000,
+       "azimuthDeg": 179.99,
+       "altitudeDeg": 3.52,
+       "distanceM": 6.5
+      },
+      {
+       "t": 256000,
+       "azimuthDeg": 179.99,
+       "altitudeDeg": 3.5,
+       "distanceM": 6.5
+      },
+      {
+       "t": 258000,
+       "azimuthDeg": 230.35,
+       "altitudeDeg": 22.09,
+       "distanceM": 11.1
+      },
+      {
+       "t": 260000,
+       "azimuthDeg": 248.5,
+       "altitudeDeg": 32.83,
+       "distanceM": 22.6
+      },
+      {
+       "t": 262000,
+       "azimuthDeg": 255.3,
+       "altitudeDeg": 38.61,
+       "distanceM": 38.9,
+       "motions": {
+        "legs-turn": 7
+       }
+      },
+      {
+       "t": 262500,
+       "present": false
+      }
+     ],
+     "basis": "derived",
+     "rationale": "The metres are Masse's: 3.5 m across for 2.5 m high, \"the size of a Renault Dauphine\", six legs and a central pivot, a neutral matte colour never described as luminous — which is why it gives out no light of its own here and is seen, like the lavender around it, only by the morning that fell on it. The rest follows from those and from the angles the recording already draws. The hull's 3.49 m seen across 2.223° puts it 89.9 m due south of where he came out from behind the hutch, and the same 3.49 m across 30.09° puts him 6.5 m from it when he stops, which are the ninety metres and the six of the account: the walk between them is his own, in the recording's observer track, so the distance is his figure read through his angles and not a new claim. It stands on the relief while it stands at all, and from the lift-off it keeps his directions exactly, at the range that same width makes of each. What the model measures against his oval is the hull alone, not the legs and not the cupola: those he drew separately, and nothing here claims to be them."
+    }
+   },
+   {
+    "id": "etre-1",
+    "title": {
+     "fr": "Être (1)",
+     "en": "Being (1)"
+    },
+    "model": {
+     "id": "figure"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "eastM": -1.2,
+       "northM": -88,
+       "onGround": true,
+       "sizeM": {
+        "widthM": 0.4,
+        "lengthM": 0.28,
+        "heightM": 1
+       },
+       "attitude": {
+        "headingDeg": 0
+       },
+       "appearance": {
+        "color": "#6f7263",
+        "albedo": 0.28
+       }
+      },
+      {
+       "t": 60000,
+       "present": false
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "About a metre tall, two of them, on the ground beside the machine: that much is Masse's, and so is their going back inside once he had been held. Nothing else here is. Where they stood, which way they faced and what colour they were are not in the account in any form a body can be built from, and they are put a step in front of the craft on the side he was walking up. He drew neither of them, so neither explains anything of the recording; they are here because a reader who is shown the machine and not them is being shown a landing without the thing that made it a close encounter."
+    }
+   },
+   {
+    "id": "etre-2",
+    "title": {
+     "fr": "Être (2)",
+     "en": "Being (2)"
+    },
+    "model": {
+     "id": "figure"
+    },
+    "track": {
+     "value": [
+      {
+       "t": 0,
+       "eastM": 1.1,
+       "northM": -87.7,
+       "onGround": true,
+       "sizeM": {
+        "widthM": 0.4,
+        "lengthM": 0.28,
+        "heightM": 1.05
+       },
+       "attitude": {
+        "headingDeg": 0
+       },
+       "appearance": {
+        "color": "#6f7263",
+        "albedo": 0.28
+       }
+      },
+      {
+       "t": 60000,
+       "present": false
+      }
+     ],
+     "basis": "assumed",
+     "rationale": "About a metre tall, two of them, on the ground beside the machine: that much is Masse's, and so is their going back inside once he had been held. Nothing else here is. Where they stood, which way they faced and what colour they were are not in the account in any form a body can be built from, and they are put a step in front of the craft on the side he was walking up. He drew neither of them, so neither explains anything of the recording; they are here because a reader who is shown the machine and not them is being shown a landing without the thing that made it a close encounter."
+    }
+   }
+  ]
+ }
 }

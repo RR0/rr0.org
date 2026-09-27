@@ -10249,10 +10249,5 @@
         "en": "Off to the left and up, along its length, too fast to follow."
       }
     }
-  ],
-  "weatherSource": {
-    "id": "era5",
-    "name": "ERA5 (Open-Meteo)",
-    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=49.078927&longitude=2.327339&start_date=2012-06-29&end_date=2012-06-29&hourly=cloud_cover%2Ccloud_cover_low%2Ccloud_cover_mid%2Ccloud_cover_high%2Cprecipitation%2Csnowfall%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m%2Ctemperature_2m%2Cdew_point_2m&wind_speed_unit=ms&timezone=UTC"
-  }
+  ]
 }

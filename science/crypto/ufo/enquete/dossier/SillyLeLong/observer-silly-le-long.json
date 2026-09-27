@@ -23,6 +23,11 @@
   "id":"SillyLeLong-2015-T1",
   "title":"T1 (GEIPAN 2015-05-09194)"
  },
+ "vehicle":{
+  "kind":"van",
+  "windowsOpen":false,
+  "noise":1.5
+ },
  "account":{
   "observerOccupation":{
    "fr":"gendarme, conducteur du fourgon",

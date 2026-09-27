@@ -39176,9 +39176,9 @@
         "albedo":0.35
        },
        "lights":{
-        "front-white-left":30000,
-        "front-white-right":30000,
-        "front-red":30000,
+        "front-white-left":500,
+        "front-white-right":500,
+        "front-red":500,
         "rear-left":0,
         "rear-right":0
        }
@@ -39186,7 +39186,7 @@
       {
        "t":499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39204,13 +39204,13 @@
       {
        "t":1000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":1499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39228,13 +39228,13 @@
       {
        "t":2000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":2499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39252,13 +39252,13 @@
       {
        "t":3000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":3499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39276,13 +39276,13 @@
       {
        "t":4000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":4499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39300,13 +39300,13 @@
       {
        "t":5000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":5499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39324,13 +39324,13 @@
       {
        "t":6000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":6499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39348,13 +39348,13 @@
       {
        "t":7000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":7499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39372,13 +39372,13 @@
       {
        "t":8000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":8499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39396,13 +39396,13 @@
       {
        "t":9000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":9499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39420,13 +39420,13 @@
       {
        "t":10000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":10499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39444,13 +39444,13 @@
       {
        "t":11000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":11499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39468,13 +39468,13 @@
       {
        "t":12000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":12499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39492,13 +39492,13 @@
       {
        "t":13000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":13499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39516,13 +39516,13 @@
       {
        "t":14000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":14499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39540,13 +39540,13 @@
       {
        "t":15000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":15499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39564,13 +39564,13 @@
       {
        "t":16000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":16499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39588,13 +39588,13 @@
       {
        "t":17000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":17499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39612,13 +39612,13 @@
       {
        "t":18000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":18499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39636,13 +39636,13 @@
       {
        "t":19000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":19499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39660,13 +39660,13 @@
       {
        "t":20000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":20499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39684,13 +39684,13 @@
       {
        "t":21000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":21499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39708,13 +39708,13 @@
       {
        "t":22000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":22499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39732,13 +39732,13 @@
       {
        "t":23000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":23499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39756,13 +39756,13 @@
       {
        "t":24000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":24499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39780,13 +39780,13 @@
       {
        "t":25000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":25499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39804,13 +39804,13 @@
       {
        "t":26000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":26499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39828,13 +39828,13 @@
       {
        "t":27000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":27499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39852,13 +39852,13 @@
       {
        "t":28000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":28499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39876,13 +39876,13 @@
       {
        "t":29000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":29499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39900,13 +39900,13 @@
       {
        "t":30000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":30499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39924,13 +39924,13 @@
       {
        "t":31000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":31499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39948,13 +39948,13 @@
       {
        "t":32000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":32499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39972,13 +39972,13 @@
       {
        "t":33000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":33499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -39996,13 +39996,13 @@
       {
        "t":34000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":34499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40020,13 +40020,13 @@
       {
        "t":35000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":35499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40044,13 +40044,13 @@
       {
        "t":36000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":36499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40068,13 +40068,13 @@
       {
        "t":37000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":37499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40092,13 +40092,13 @@
       {
        "t":38000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":38499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40116,13 +40116,13 @@
       {
        "t":39000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":39499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40140,13 +40140,13 @@
       {
        "t":40000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":40499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40164,13 +40164,13 @@
       {
        "t":41000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":41499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40188,13 +40188,13 @@
       {
        "t":42000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":42499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40212,13 +40212,13 @@
       {
        "t":43000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":43499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40236,13 +40236,13 @@
       {
        "t":44000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":44499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40260,13 +40260,13 @@
       {
        "t":45000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":45499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40284,13 +40284,13 @@
       {
        "t":46000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":46499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40308,13 +40308,13 @@
       {
        "t":47000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":47499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40332,13 +40332,13 @@
       {
        "t":48000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":48499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40356,13 +40356,13 @@
       {
        "t":49000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":49499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40380,13 +40380,13 @@
       {
        "t":50000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":50499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40404,13 +40404,13 @@
       {
        "t":51000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":51499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40428,13 +40428,13 @@
       {
        "t":52000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":52499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40452,13 +40452,13 @@
       {
        "t":53000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":53499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40476,13 +40476,13 @@
       {
        "t":54000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":54499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40500,13 +40500,13 @@
       {
        "t":55000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":55499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40524,13 +40524,13 @@
       {
        "t":56000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":56499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40548,13 +40548,13 @@
       {
        "t":57000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":57499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40572,13 +40572,13 @@
       {
        "t":58000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":58499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40596,13 +40596,13 @@
       {
        "t":59000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":59499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40620,13 +40620,13 @@
       {
        "t":60000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":60499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40644,13 +40644,13 @@
       {
        "t":61000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":61499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40668,13 +40668,13 @@
       {
        "t":62000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":62499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40692,13 +40692,13 @@
       {
        "t":63000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":63499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40716,13 +40716,13 @@
       {
        "t":64000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":64499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40740,13 +40740,13 @@
       {
        "t":65000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":65499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40764,13 +40764,13 @@
       {
        "t":66000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":66499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40788,13 +40788,13 @@
       {
        "t":67000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":67499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40812,13 +40812,13 @@
       {
        "t":68000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":68499,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
@@ -40836,14 +40836,14 @@
       {
        "t":69000,
        "lights":{
-        "front-red":30000
+        "front-red":500
        }
       },
       {
        "t":69499,
        "lights":{
-        "front-white-left":30000,
-        "front-white-right":30000,
+        "front-white-left":500,
+        "front-white-right":500,
         "rear-left":0,
         "rear-right":0
        }

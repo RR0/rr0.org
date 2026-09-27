@@ -39134,8 +39134,8 @@
  ],
  "interpretation":{
   "title":{
-   "fr":"Un seul objet : un V aplati gris béton et ses feux",
-   "en":"One object: a flat concrete-grey V and its lights"
+   "fr":"Un seul objet : un triangle plat gris béton et ses feux",
+   "en":"One object: a flat concrete-grey triangle and its lights"
   },
   "bodies":[
    {
@@ -39165,11 +39165,11 @@
        "altitudeAboveGroundM":22.0,
        "sizeM":{
         "widthM":34,
-        "lengthM":20.09,
-        "heightM":5
+        "lengthM":20.12,
+        "heightM":2.4
        },
        "attitude":{
-        "headingDeg":200.0
+        "headingDeg":194.5
        },
        "appearance":{
         "color":"#9a9da0",
@@ -40859,15 +40859,15 @@
       {
        "t":69500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":71499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -40887,15 +40887,15 @@
       {
        "t":73500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":75499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -40915,15 +40915,15 @@
       {
        "t":77500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":79499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -40943,15 +40943,15 @@
       {
        "t":81500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":83499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -40971,15 +40971,15 @@
       {
        "t":85500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":87499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -40999,15 +40999,15 @@
       {
        "t":89500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":91499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41027,15 +41027,15 @@
       {
        "t":93500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":95499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41055,15 +41055,15 @@
       {
        "t":97500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":99499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41083,15 +41083,15 @@
       {
        "t":101500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":103499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41111,15 +41111,15 @@
       {
        "t":105500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":107499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41139,15 +41139,15 @@
       {
        "t":109500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":111499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41167,15 +41167,15 @@
       {
        "t":113500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":115499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41195,15 +41195,15 @@
       {
        "t":117500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":119499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41223,15 +41223,15 @@
       {
        "t":121500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":123499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41251,15 +41251,15 @@
       {
        "t":125500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":127499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41279,15 +41279,15 @@
       {
        "t":129500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":131499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41307,15 +41307,15 @@
       {
        "t":133500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":135499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41335,15 +41335,15 @@
       {
        "t":137500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":139499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41363,15 +41363,15 @@
       {
        "t":141500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":143499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41391,15 +41391,15 @@
       {
        "t":145500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":147499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41419,15 +41419,15 @@
       {
        "t":149500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":151499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41447,15 +41447,15 @@
       {
        "t":153500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":155499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41475,15 +41475,15 @@
       {
        "t":157500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":159499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41503,15 +41503,15 @@
       {
        "t":161500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":163499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41531,15 +41531,15 @@
       {
        "t":165500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":167499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41559,15 +41559,15 @@
       {
        "t":169500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":171499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41587,15 +41587,15 @@
       {
        "t":173500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":175499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41615,15 +41615,15 @@
       {
        "t":177500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":179499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41643,15 +41643,15 @@
       {
        "t":181500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":183499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41671,15 +41671,15 @@
       {
        "t":185500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":187499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41699,15 +41699,15 @@
       {
        "t":189500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":191499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41727,15 +41727,15 @@
       {
        "t":193500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":195499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41755,15 +41755,15 @@
       {
        "t":197500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
        "t":199499,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41783,8 +41783,8 @@
       {
        "t":201500,
        "lights":{
-        "rear-left":100,
-        "rear-right":100
+        "rear-left":30,
+        "rear-right":30
        }
       },
       {
@@ -41796,7 +41796,7 @@
       }
      ],
      "basis":"derived",
-     "rationale":"One object, where T1 placed it (RN2 PK 5+500, PV p.7) and as still as he said it was (CR p.5, 33). Its sizes are his: 34 m across, which is the 30 m he gave and what it measures, 32 to 35 m, all along the approach at the sizes the GEIPAN's reconstitution fitted to his pointings (CR p.49-54); branches square in section, 5 m, the least of his 5 to 8; 20 m front to back, ASSUMED between his 'plus large que longue, mais de très peu' and 'trois fois sa longueur'. Its underside 22 m above the ground puts it 20 to 26 m above his eye, which is what his elevations give at those distances. Its nose faces 200°, ASSUMED, towards the road he came along: the one heading from which he sees both its front ends all the way to the bridge, as he said he saw the three lights 'juste avant le pont'. Seen from the front and far, low over the horizon, a flat V is the dark bar of drawing 004; from behind and below, close, it is drawing 005, its rear face over its underside and its point down. What no heading does is hide the front lights from where he was once past the bridge: 3 s after he last saw them he is 40° further round, and the same faces still look at him. So they go out while the deck hides it, which is ASSUMED; he said only that he no longer saw them. The luminances of the lights are ASSUMED too: nothing measured them."
+     "rationale":"One object, where T1 placed it (RN2 PK 5+500, PV p.7) and as still as he said it was (CR p.5, 33). Its sizes are his: 34 m across, which is the 30 m he gave and what it measures, 32 to 35 m, all along the approach at the sizes the GEIPAN's reconstitution fitted to his pointings (CR p.49-54); 2.4 m thick, what both his drawings give (the bar of drawing 004, the rectangles of drawing 005 that take its full thickness), rather than the 5 to 8 of his questionnaire; 20 m front to back, ASSUMED between his 'plus large que longue, mais de très peu' and 'trois fois sa longueur'. A full triangle, not a chevron: its straight rear face carries the two rectangles parallel and alike, as he drew them, and the front, where a chevron would be hollow, he never saw. Its underside 22 m above the ground puts it 20 to 26 m above his eye, which is what his elevations give at those distances. Its nose faces 194.5°, ASSUMED, towards the road he came along: the one heading from which he sees both its front faces, and so all three lights, until a few seconds before the bridge, as he said he still saw them 'juste avant le pont'. Seen from the front and far, low over the horizon, a flat triangle is the dark bar of drawing 004; from behind and below, close, it is drawing 005: its straight rear face a band, its underside below running away to the point, further and so lower, a V point down. What no heading does is hide the front lights from where he was once past the bridge: 3 s after he last saw them he is 40° further round, and the same faces still look at him. So they go out while the deck hides it, which is ASSUMED; he said only that he no longer saw them. The luminances of the lights are ASSUMED too: nothing measured them."
     }
    }
   ]

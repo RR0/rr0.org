@@ -10206,6 +10206,10 @@
       "credit": "CNES/GEIPAN, enquête Maffliers 2012",
       "creditUrl": "https://www.cnes-geipan.fr/fr/cas/2012-06-08256",
       "opacity": 0.5,
+      "from": {
+        "lat": 49.078927,
+        "lng": 2.327339
+      },
       "registration": {
         "headingDeg": 353.68,
         "pitchDeg": 0.69,

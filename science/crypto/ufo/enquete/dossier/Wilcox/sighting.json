@@ -22,12 +22,37 @@
   },
   "description": {
     "fr": "Wilcox approche de l'objet posé en lisière de forêt, s'en approche jusqu'à le toucher, puis le voit se soulever et s'éloigner vers le nord au bout d'environ 2 h. Dimensions rapportées : 20 pieds de long, 15-16 de large, 4 de haut, couleur aluminium. À bout de bras, un objet de 6 m occupe tout le champ de vision : c'est bien ce que dit le compte rendu. Le compte rendu est désormais joué en 3D : l'engin est un ellipsoïde de 6,10 m sur 4,72 pour 1,22 de haut, aux dimensions que Wilcox donne lui-même, et sa distance en découle — ses 19,22° de large à l'instant zéro le mettent à 18,1 m, et sa marche, qui est dans le fichier, le laisse à 3,3 m quand il s'arrête. Les 2 êtres d'environ 1,20 m sont placés à côté de lui pendant les deux heures d'entretien ; où ils se tenaient exactement n'est dit nulle part et est supposé. Le tracteur n'est pas représenté. Ce que la 3D montre et que le dessin ne pouvait pas dire : à 3 m, un objet de 4,7 m de fond vu d'un œil à 1,60 m occupe deux fois la hauteur qu'il a dessinée.",
-    "en": "Wilcox walks up to the object standing at the forest's edge, close enough to touch it, then sees it lift and move off north after about 2 h. Reported dimensions: 20 feet long, 15–16 wide, 4 high, aluminium coloured. At arm's length, a 6 m object fills the whole field of view: which is what the account says. The account is now played in 3D: the craft is an ellipsoid 6.10 m by 4.72 and 1.22 high, the dimensions Wilcox gives himself, and its distance follows from them — 19.22° wide at the first instant puts it 18.1 m off, and his walk, which the file states, leaves him 3.3 m from it when he stops. The 2 beings of about 1.20 m stand beside him through the two hours of the conversation; where exactly they stood is nowhere stated and is assumed. The tractor is not shown. What the 3D says and the drawing could not: at 3 m, an object 4.7 m deep seen from an eye 1.60 m up takes twice the height he drew."
+    "en": "Wilcox walks up to the object standing at the forest's edge, close enough to touch it, then sees it lift and move off north after about 2 h. Reported dimensions: 20 feet long, 15–16 wide, 4 high, aluminium coloured. At arm's length, a 6 m object fills the whole field of view: which is what the account says. The account is now played in 3D: the craft is an ellipsoid 6.10 m by 4.72 and 1.22 high, the dimensions Wilcox gives himself, and its distance follows from them — 19.22° wide at the first instant puts it 18.1 m off, and his walk, which the file states, leaves him 3.3 m from it when he stops. The 2 beings of about 1.20 m stand beside him through the two hours of the conversation; where exactly they stood is nowhere stated and is assumed. The tractor is not shown. What the 3D says and the drawing could not: at 3 m, an object 4.7 m deep seen from an eye 1.60 m up takes twice the height he drew.",
+    "es": "Wilcox se acerca al objeto posado en la linde del bosque, lo bastante como para tocarlo, y luego lo ve elevarse y alejarse hacia el norte al cabo de unas 2 h. Dimensiones declaradas: 20 pies de largo, 15–16 de ancho, 4 de alto, color aluminio. Al alcance de la mano, un objeto de 6 m llena todo el campo visual: que es lo que dice el relato. El relato se reproduce ahora en 3D: la nave es un elipsoide de 6,10 m por 4,72 y 1,22 de alto, las dimensiones que da el propio Wilcox, y su distancia se deduce de ellas — 19,22° de ancho en el primer instante lo sitúan a 18,1 m, y su marcha, que el archivo enuncia, lo deja a 3,3 m cuando se detiene. Los 2 seres de 1,20 m aproximadamente permanecen a su lado durante las dos horas de la conversación; dónde estaban exactamente no se dice en ninguna parte y se supone. El tractor no se muestra. Lo que dice el 3D y el dibujo no podía decir: a 3 m, un objeto de 4,7 m de fondo visto desde un ojo a 1,60 m de altura ocupa el doble de la altura que él dibujó.",
+    "it": "Wilcox si avvicina all'oggetto posato al margine della foresta, abbastanza da poterlo toccare, poi lo vede sollevarsi e allontanarsi verso nord dopo circa 2 h. Dimensioni riportate: 20 piedi di lunghezza, 15–16 di larghezza, 4 di altezza, color alluminio. A distanza di un braccio, un oggetto di 6 m riempie tutto il campo visivo: che è proprio ciò che dice il resoconto. Il resoconto è ora riprodotto in 3D: il velivolo è un ellissoide di 6,10 m per 4,72 e alto 1,22, le dimensioni che Wilcox stesso fornisce, e la sua distanza ne deriva — 19,22° di larghezza al primo istante lo pongono a 18,1 m, e la sua camminata, che il fascicolo indica, lo lascia a 3,3 m quando si ferma. I 2 esseri di circa 1,20 m restano accanto a lui per le due ore della conversazione; dove stessero esattamente non è detto da nessuna parte ed è ipotizzato. Il trattore non è mostrato. Ciò che il 3D dice e il disegno non poteva dire: a 3 m, un oggetto profondo 4,7 m visto da un occhio a 1,60 m di altezza occupa il doppio dell'altezza che lui disegnò."
   },
   "tags": [
     "RR3",
     "landing",
     "contact"
+  ],
+  "sources":[
+    {
+      "type":"book",
+      "title":"UFO Dynamics",
+      "authors":[
+        "Schwarz, Berthold E."
+      ],
+      "publication":{
+        "publisher":"Rainbow Books",
+        "time":"1983"
+      },
+      "index":"p. 76 (rapport de police)"
+    },
+    {
+      "type":"article",
+      "title":"A Newark Valley Farmer's Trip Into the Twilight Zone",
+      "url":"https://www.tier.net/nvhistory/articles/2004/Newark%20Valley%20UFO.htm",
+      "publication":{
+        "publisher":"Newark Valley Historical Society",
+        "time":"2004"
+      }
+    }
   ],
   "timeline": {
     "keyframes": [
@@ -570,14 +595,18 @@
   "interpretation": {
     "title": {
       "fr": "Un engin d'aluminium de six mètres posé au bord du champ, et deux êtres d'un mètre vingt",
-      "en": "A six-metre aluminium craft standing at the field's edge, and two beings four feet tall"
+      "en": "A six-metre aluminium craft standing at the field's edge, and two beings four feet tall",
+      "es": "Una nave de aluminio de seis metros posada en el borde del campo, y dos seres de cuatro pies de alto",
+      "it": "Un velivolo d'alluminio di sei metri posato al margine del campo, e due esseri alti quattro piedi"
     },
     "bodies": [
       {
         "id": "craft",
         "title": {
           "fr": "L'engin",
-          "en": "The craft"
+          "en": "The craft",
+          "es": "La nave",
+          "it": "Il velivolo"
         },
         "explains": [
           "ufo-1"
@@ -650,7 +679,9 @@
         "id": "figure-1",
         "title": {
           "fr": "Être (1)",
-          "en": "Being (1)"
+          "en": "Being (1)",
+          "es": "Ser (1)",
+          "it": "Essere (1)"
         },
         "model": {
           "id": "figure"
@@ -688,7 +719,9 @@
         "id": "figure-2",
         "title": {
           "fr": "Être (2)",
-          "en": "Being (2)"
+          "en": "Being (2)",
+          "es": "Ser (2)",
+          "it": "Essere (2)"
         },
         "model": {
           "id": "figure"

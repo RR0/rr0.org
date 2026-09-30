@@ -25,7 +25,7 @@
  "centrales": [
   {
    "name": "Belleville",
-   "commune": "Belleville-sur-Loire",
+   "commune": "Belleville",
    "department": "Cher",
    "lat": 47.507221,
    "lon": 2.84996
@@ -95,7 +95,7 @@
   },
   {
    "name": "Dampierre",
-   "commune": "Dampierre-en-Burly",
+   "commune": "Dampierre",
    "department": "Loiret",
    "lat": 47.761336,
    "lon": 2.519807
@@ -137,7 +137,7 @@
   },
   {
    "name": "Nogent",
-   "commune": "Nogent-sur-Seine",
+   "commune": "Nogent",
    "department": "Aube",
    "lat": 48.492624,
    "lon": 3.498165
@@ -151,22 +151,22 @@
   },
   {
    "name": "Penly",
-   "commune": "Saint-Martin-en-Campagne",
+   "commune": "Saint-Martin-en-Campagne et Penly",
    "department": "Seine-Maritime",
    "lat": 49.957475,
    "lon": 1.222451
   },
   {
    "name": "Saint-Alban",
-   "commune": "Saint-Maurice-l'Exil",
+   "commune": "Saint-Alban",
    "department": "Isère",
    "lat": 45.270039,
    "lon": 5.332525
   },
   {
    "name": "Saint-Laurent",
-   "commune": "Saint-Laurent-Nouan",
-   "department": "Loir-et-Cher",
+   "commune": "Saint-Laurent",
+   "department": "Loir-et-cher",
    "lat": 47.748227,
    "lon": 0.867467
   },

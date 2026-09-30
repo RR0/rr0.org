@@ -4,6 +4,7 @@ class CentralesList {
     this.data = data
     this.year = year
     this.select = root.querySelector("select")
+    this.closedCheckbox = root.querySelector("input[type=checkbox]")
     this.summary = root.querySelector(".summary")
     this.list = root.querySelector("ul")
   }
@@ -15,8 +16,10 @@ class CentralesList {
       option.textContent = `${type.label} (${type.acronym})`
       this.select.append(option)
     }
-    this.select.addEventListener("change", () => this.display(this.select.value))
-    this.display("")
+    const refresh = () => this.display(this.select.value, this.closedCheckbox.checked)
+    this.select.addEventListener("change", refresh)
+    this.closedCheckbox.addEventListener("change", refresh)
+    refresh()
   }
 
   isClosed (reactor) {
@@ -96,19 +99,19 @@ class CentralesList {
     return li
   }
 
-  display (type) {
+  display (type, showClosed) {
     this.list.replaceChildren()
     let centraleCount = 0
     let activeCount = 0
     for (const centrale of this.data.centrales) {
-      const reactors = this.data.reactors.filter(r => r.centrale === centrale.name && (!type || r.type === type))
+      const reactors = this.data.reactors.filter(r => r.centrale === centrale.name && (!type || r.type === type) && (showClosed || !this.isClosed(r)))
       if (reactors.length > 0) {
         this.list.append(this.centraleElement(centrale, this.groupByType(reactors)))
         activeCount += reactors.filter(r => !this.isClosed(r) && r.start <= this.year).length
         centraleCount++
       }
     }
-    this.summary.textContent = `${activeCount} réacteurs${type ? " " + type : ""} en service, répartis sur ${centraleCount} centrales :`
+    this.summary.textContent = `${CentralesList.plural("réacteur", activeCount)}${type ? " " + type : ""} en service, réparti${activeCount > 1 ? "s" : ""} sur ${CentralesList.plural("centrale", centraleCount)} :`
   }
 }
 

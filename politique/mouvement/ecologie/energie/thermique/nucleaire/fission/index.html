@@ -101,11 +101,19 @@
   <span class="source">"<a href="https://www.sfen.org/energie-nucleaire/ca-marche/reacteurs-nucleaires">Les différents réacteurs nucléaires</a>", SFEN</span>
   <p>Une évolution technologie dépassant la technique de la fission est la <a href="../fusion">fusion</a>.</p>
   <p>En <a href="/org/eu/fr">France</a>, les centrales nucléaires sont :</p>
-  <p class="codepen" data-default-tab="result" data-height="550" data-slug-hash="rNwqvOV" data-theme-id="39722"
-      data-user="Javarome"
-      style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  </p>
-  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  <link href="centrales.css" rel="stylesheet">
+  <div id="centrales">
+    <form>
+      <label>Type <select>
+        <option value="">Tous</option>
+      </select></label>
+      <label><input type="checkbox"> Afficher les réacteurs arrêtés</label>
+    </form>
+    <p class="summary"></p>
+    <ul></ul>
+    <span class="source">"<a href="https://fr.wikipedia.org/wiki/Liste_des_r%C3%A9acteurs_nucl%C3%A9aires_en_France">Liste des réacteurs nucléaires en France</a>", Wikipedia</span>
+  </div>
+  <script async src="centrales.js"></script>
 </section>
 <section>
   <h2>Approvisionnement</h2>

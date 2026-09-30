@@ -107,6 +107,7 @@ const copies = copiesArg ? copiesArg : [
   "**/*.png", "**/*.jpg", "**/*.JPG", "**/*.jpeg", "**/*.JPEG", "**/*.gif", "**/*.webp", "!out/**/*",
   "**/*.cmmn", "**/*.bpmn",
   "tech/info/soft/reseau/protocole/index.js", "tech/info/soft/reseau/protocole/ports.json", "tech/info/soft/reseau/protocole/index.css",
+  "politique/mouvement/ecologie/energie/thermique/nucleaire/fission/centrales.js", "politique/mouvement/ecologie/energie/thermique/nucleaire/fission/centrales.json",
   "tech/info/soft/data/doc/index.js", "tech/info/soft/data/doc/index.json", "tech/info/soft/data/doc/index.css",
   "people/index.js", "people/index.css", "people/witness/index.css",
   "search/SearchComponent.mjs", "search/index.json", "search/search.css",

@@ -1,0 +1,7 @@
+#centrales .not-yet {
+  color: green;
+}
+
+#centrales .closed {
+  color: gray;
+}

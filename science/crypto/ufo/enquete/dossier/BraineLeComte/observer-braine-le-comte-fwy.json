@@ -1909,50 +1909,30 @@
    "t": 0,
    "label": "A",
    "note": {
-    "fr": "AKH repère le phénomène au sud-ouest, bas sur l'horizon, et alerte les autres.",
-    "en": "AKH spots the phenomenon in the south-west, low over the horizon, and calls the others.",
-    "es": "AKH ve el fenómeno al suroeste, bajo sobre el horizonte, y avisa a los demás.",
-    "it": "AKH nota il fenomeno a sud-ovest, basso sull'orizzonte, e avverte gli altri."
-   }
-  },
-  {
-   "t": 2000,
-   "label": "B",
-   "note": {
-    "fr": "BJN se retourne : il le voit à 42° de hauteur (temps estimé par les enquêteurs).",
-    "en": "BJN turns round and sees it 42° up (a time the investigators estimated).",
-    "es": "BJN se da la vuelta y lo ve a 42° de altura (tiempo estimado por los investigadores).",
-    "it": "BJN si volta e lo vede a 42° di altezza (tempo stimato dagli investigatori)."
+    "fr": "AKH dit de regarder : FWY regarde alors vers le nord-nord-ouest.",
+    "en": "AKH tells them to look: FWY is then looking north-north-west.",
+    "es": "AKH dice que miren: FWY mira entonces hacia el nornoroeste.",
+    "it": "AKH dice di guardare: FWY guarda allora verso nord-nord-ovest."
    }
   },
   {
    "t": 3000,
+   "label": "B",
+   "note": {
+    "fr": "Il se retourne, de tout le corps : il voit à l'ouest, à 20° de hauteur, une forme plus noire que le ciel portée par des lumières orange.",
+    "en": "He turns round, his whole body: he sees in the west, 20° up, a shape blacker than the sky carrying orange lights.",
+    "es": "Se da la vuelta, con todo el cuerpo: ve al oeste, a 20° de altura, una forma más negra que el cielo con luces naranjas.",
+    "it": "Si volta, con tutto il corpo: vede a ovest, a 20° di altezza, una forma più nera del cielo con luci arancioni."
+   }
+  },
+  {
+   "t": 8000,
    "label": "C",
    "note": {
-    "fr": "FWY se retourne, tout le corps : il le voit à l'ouest, à 20° de hauteur.",
-    "en": "FWY turns round, his whole body: he sees it in the west, 20° up.",
-    "es": "FWY se da la vuelta, con todo el cuerpo: lo ve al oeste, a 20° de altura.",
-    "it": "FWY si volta, con tutto il corpo: lo vede a ovest, a 20° di altezza."
-   }
-  },
-  {
-   "t": 6000,
-   "label": "D",
-   "note": {
-    "fr": "Le phénomène paraît au plus proche, selon BJN : à 60° de hauteur, presque à la verticale.",
-    "en": "The phenomenon looks closest, according to BJN: 60° up, almost overhead.",
-    "es": "El fenómeno parece lo más cercano, según BJN: a 60° de altura, casi en la vertical.",
-    "it": "Il fenomeno appare al punto più vicino, secondo BJN: a 60° di altezza, quasi allo zenit."
-   }
-  },
-  {
-   "t": 10000,
-   "label": "E",
-   "note": {
-    "fr": "Il disparaît de la vue derrière les toits des maisons d'en face, à une douzaine de degrés de hauteur.",
-    "en": "It disappears from view behind the roofs of the houses opposite, a dozen degrees up.",
-    "es": "Desaparece de la vista tras los tejados de las casas de enfrente, a una docena de grados de altura.",
-    "it": "Scompare alla vista dietro i tetti delle case di fronte, a una dozzina di gradi di altezza."
+    "fr": "Elle disparaît « comme ça », à 12° de hauteur, pendant qu'il cligne des yeux.",
+    "en": "It disappears “just like that”, 12° up, while he blinks.",
+    "es": "Desaparece «así, de golpe», a 12° de altura, mientras parpadea.",
+    "it": "Scompare «così», a 12° di altezza, mentre sbatte le palpebre."
    }
   }
  ],

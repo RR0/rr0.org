@@ -1,0 +1,774 @@
+{
+ "source": "https://docs.google.com/spreadsheets/d/1V_xO0Yj9xuti6TI4TiVrERyhY8I3Gde9yESFqUZ6BZ8",
+ "types": [
+  {
+   "acronym": "UNGG",
+   "label": "Uranium Naturel Graphite Gaz"
+  },
+  {
+   "acronym": "HWGCR",
+   "label": "Heavy Water Gas Cooled Reactor"
+  },
+  {
+   "acronym": "REP",
+   "label": "Réacteur à Eau Pressurisée"
+  },
+  {
+   "acronym": "RNR",
+   "label": "Réacteur à Neutrons Rapides"
+  },
+  {
+   "acronym": "EPR",
+   "label": "Evolutionary Power Reactor"
+  }
+ ],
+ "centrales": [
+  {
+   "name": "Belleville",
+   "commune": "Belleville-sur-Loire",
+   "department": "Cher",
+   "lat": 47.507221,
+   "lon": 2.84996
+  },
+  {
+   "name": "Blayais",
+   "commune": "Braud-et-Saint-Louis",
+   "department": "Gironde",
+   "lat": 45.247987,
+   "lon": -0.626174
+  },
+  {
+   "name": "Brennilis",
+   "commune": "Brennilis",
+   "department": "Finistère",
+   "lat": 48.3635188,
+   "lon": -3.8788298
+  },
+  {
+   "name": "Bugey",
+   "commune": "Saint-Vulbas",
+   "department": "Ain",
+   "lat": 45.832913,
+   "lon": 5.290324
+  },
+  {
+   "name": "Cattenom",
+   "commune": "Cattenom",
+   "department": "Moselle",
+   "lat": 49.406263,
+   "lon": 6.243668
+  },
+  {
+   "name": "Chinon",
+   "commune": "Avoine",
+   "department": "Indre-et-Loire",
+   "lat": 47.205697,
+   "lon": 0.181982
+  },
+  {
+   "name": "Chooz",
+   "commune": "Chooz",
+   "department": "Ardennes",
+   "lat": 50.102368,
+   "lon": 4.807117
+  },
+  {
+   "name": "Civaux",
+   "commune": "Civaux",
+   "department": "Vienne",
+   "lat": 46.444209,
+   "lon": 0.664866
+  },
+  {
+   "name": "Creys-Malville",
+   "commune": "Creys-Mépieu",
+   "department": "Isère",
+   "lat": 45.744499,
+   "lon": 5.434499
+  },
+  {
+   "name": "Cruas",
+   "commune": "Cruas",
+   "department": "Ardèche",
+   "lat": 44.656914,
+   "lon": 4.765255
+  },
+  {
+   "name": "Dampierre",
+   "commune": "Dampierre-en-Burly",
+   "department": "Loiret",
+   "lat": 47.761336,
+   "lon": 2.519807
+  },
+  {
+   "name": "Fessenheim",
+   "commune": "Fessenheim",
+   "department": "Haut-Rhin",
+   "lat": 47.914709,
+   "lon": 7.537626
+  },
+  {
+   "name": "Flamanville",
+   "commune": "Flamanville",
+   "department": "Manche",
+   "lat": 49.53207,
+   "lon": -1.865804
+  },
+  {
+   "name": "Golfech",
+   "commune": "Golfech",
+   "department": "Tarn-et-Garonne",
+   "lat": 44.114113,
+   "lon": 0.851985
+  },
+  {
+   "name": "Gravelines",
+   "commune": "Gravelines",
+   "department": "Nord",
+   "lat": 50.98707,
+   "lon": 2.125537
+  },
+  {
+   "name": "Marcoule",
+   "commune": "Chusclan",
+   "department": "Gard",
+   "lat": 44.1548709,
+   "lon": 4.6551658
+  },
+  {
+   "name": "Nogent",
+   "commune": "Nogent-sur-Seine",
+   "department": "Aube",
+   "lat": 48.492624,
+   "lon": 3.498165
+  },
+  {
+   "name": "Paluel",
+   "commune": "Paluel",
+   "department": "Seine-Maritime",
+   "lat": 49.832363,
+   "lon": 0.629065
+  },
+  {
+   "name": "Penly",
+   "commune": "Saint-Martin-en-Campagne",
+   "department": "Seine-Maritime",
+   "lat": 49.957475,
+   "lon": 1.222451
+  },
+  {
+   "name": "Saint-Alban",
+   "commune": "Saint-Maurice-l'Exil",
+   "department": "Isère",
+   "lat": 45.270039,
+   "lon": 5.332525
+  },
+  {
+   "name": "Saint-Laurent",
+   "commune": "Saint-Laurent-Nouan",
+   "department": "Loir-et-Cher",
+   "lat": 47.748227,
+   "lon": 0.867467
+  },
+  {
+   "name": "Tricastin",
+   "commune": "Pierrelatte",
+   "department": "Drôme",
+   "lat": 44.37775,
+   "lon": 4.696981
+  }
+ ],
+ "reactors": [
+  {
+   "name": "BELLEVILLE-1",
+   "centrale": "Belleville",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1310,
+   "start": 1988
+  },
+  {
+   "name": "BELLEVILLE-2",
+   "centrale": "Belleville",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1310,
+   "start": 1989
+  },
+  {
+   "name": "BLAYAIS-15",
+   "centrale": "Blayais",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1981
+  },
+  {
+   "name": "BLAYAIS-25",
+   "centrale": "Blayais",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1983
+  },
+  {
+   "name": "BLAYAIS-3",
+   "centrale": "Blayais",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1983
+  },
+  {
+   "name": "BLAYAIS-4",
+   "centrale": "Blayais",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1983
+  },
+  {
+   "name": "BUGEY-1",
+   "centrale": "Bugey",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 540,
+   "start": 1972,
+   "end": 1994
+  },
+  {
+   "name": "BUGEY-2",
+   "centrale": "Bugey",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 910,
+   "start": 1979
+  },
+  {
+   "name": "BUGEY-3",
+   "centrale": "Bugey",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 910,
+   "start": 1979
+  },
+  {
+   "name": "BUGEY-4",
+   "centrale": "Bugey",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 880,
+   "start": 1979
+  },
+  {
+   "name": "BUGEY-5",
+   "centrale": "Bugey",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 880,
+   "start": 1980
+  },
+  {
+   "name": "CATTENOM-1",
+   "centrale": "Cattenom",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1300,
+   "start": 1987
+  },
+  {
+   "name": "CATTENOM-2",
+   "centrale": "Cattenom",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1300,
+   "start": 1988
+  },
+  {
+   "name": "CATTENOM-3",
+   "centrale": "Cattenom",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1300,
+   "start": 1991
+  },
+  {
+   "name": "CATTENOM-4",
+   "centrale": "Cattenom",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1300,
+   "start": 1992
+  },
+  {
+   "name": "CHINON-A1/EDF1",
+   "centrale": "Chinon",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 70,
+   "start": 1963,
+   "end": 1973
+  },
+  {
+   "name": "CHINON-A2/EDF2",
+   "centrale": "Chinon",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 210,
+   "start": 1965,
+   "end": 1985
+  },
+  {
+   "name": "CHINON-A3/EDF3",
+   "centrale": "Chinon",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 480,
+   "start": 1966,
+   "end": 1990
+  },
+  {
+   "name": "CHINON-B-15",
+   "centrale": "Chinon",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 905,
+   "start": 1984
+  },
+  {
+   "name": "CHINON-B-25",
+   "centrale": "Chinon",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 905,
+   "start": 1984
+  },
+  {
+   "name": "CHINON-B-35",
+   "centrale": "Chinon",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 905,
+   "start": 1987
+  },
+  {
+   "name": "CHINON-B-45",
+   "centrale": "Chinon",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 905,
+   "start": 1988
+  },
+  {
+   "name": "CHOOZ-A",
+   "centrale": "Chooz",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 310,
+   "start": 1967,
+   "end": 1991
+  },
+  {
+   "name": "CHOOZ-B-1",
+   "centrale": "Chooz",
+   "palier": "N4",
+   "type": "REP",
+   "power": 1500,
+   "start": 2000
+  },
+  {
+   "name": "CHOOZ-B-2",
+   "centrale": "Chooz",
+   "palier": "N4",
+   "type": "REP",
+   "power": 1500,
+   "start": 2000
+  },
+  {
+   "name": "CIVAUX-1",
+   "centrale": "Civaux",
+   "palier": "N4",
+   "type": "REP",
+   "power": 1495,
+   "start": 2002
+  },
+  {
+   "name": "CIVAUX-2",
+   "centrale": "Civaux",
+   "palier": "N4",
+   "type": "REP",
+   "power": 1495,
+   "start": 2002
+  },
+  {
+   "name": "CRUAS-1",
+   "centrale": "Cruas",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 915,
+   "start": 1984
+  },
+  {
+   "name": "CRUAS-2",
+   "centrale": "Cruas",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 915,
+   "start": 1985
+  },
+  {
+   "name": "CRUAS-3",
+   "centrale": "Cruas",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 915,
+   "start": 1984
+  },
+  {
+   "name": "CRUAS-4",
+   "centrale": "Cruas",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 915,
+   "start": 1985
+  },
+  {
+   "name": "DAMPIERRE-15",
+   "centrale": "Dampierre",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 890,
+   "start": 1980
+  },
+  {
+   "name": "DAMPIERRE-25",
+   "centrale": "Dampierre",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 890,
+   "start": 1981
+  },
+  {
+   "name": "DAMPIERRE-35",
+   "centrale": "Dampierre",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 890,
+   "start": 1981
+  },
+  {
+   "name": "DAMPIERRE-45",
+   "centrale": "Dampierre",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 890,
+   "start": 1981
+  },
+  {
+   "name": "EL4",
+   "centrale": "Brennilis",
+   "palier": "HWGCR",
+   "type": "HWGCR",
+   "power": 70,
+   "start": 1967,
+   "end": 1985
+  },
+  {
+   "name": "FESSENHEIM-1",
+   "centrale": "Fessenheim",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 880,
+   "start": 1978,
+   "end": 2020
+  },
+  {
+   "name": "FESSENHEIM-2",
+   "centrale": "Fessenheim",
+   "palier": "CP0",
+   "type": "REP",
+   "power": 880,
+   "start": 1978,
+   "end": 2020
+  },
+  {
+   "name": "FLAMANVILLE-1",
+   "centrale": "Flamanville",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1986
+  },
+  {
+   "name": "FLAMANVILLE-2",
+   "centrale": "Flamanville",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1987
+  },
+  {
+   "name": "FLAMANVILLE-3",
+   "centrale": "Flamanville",
+   "palier": "EPR",
+   "type": "EPR",
+   "power": 1570,
+   "start": 2023
+  },
+  {
+   "name": "G1",
+   "centrale": "Marcoule",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 0,
+   "start": 1956,
+   "end": 1968
+  },
+  {
+   "name": "G2",
+   "centrale": "Marcoule",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 39,
+   "start": 1959,
+   "end": 1980
+  },
+  {
+   "name": "G3",
+   "centrale": "Marcoule",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 40,
+   "start": 1960,
+   "end": 1984
+  },
+  {
+   "name": "GOLFECH-1",
+   "centrale": "Golfech",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1310,
+   "start": 1991
+  },
+  {
+   "name": "GOLFECH-2",
+   "centrale": "Golfech",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1310,
+   "start": 1994
+  },
+  {
+   "name": "GRAVELINES-15",
+   "centrale": "Gravelines",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1980
+  },
+  {
+   "name": "GRAVELINES-25",
+   "centrale": "Gravelines",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1980
+  },
+  {
+   "name": "GRAVELINES-35",
+   "centrale": "Gravelines",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1981
+  },
+  {
+   "name": "GRAVELINES-45",
+   "centrale": "Gravelines",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1981
+  },
+  {
+   "name": "GRAVELINES-5",
+   "centrale": "Gravelines",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1985
+  },
+  {
+   "name": "GRAVELINES-6",
+   "centrale": "Gravelines",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 910,
+   "start": 1985
+  },
+  {
+   "name": "NOGENT-1",
+   "centrale": "Nogent",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1310,
+   "start": 1988
+  },
+  {
+   "name": "NOGENT-2",
+   "centrale": "Nogent",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1310,
+   "start": 1989
+  },
+  {
+   "name": "PALUEL-1",
+   "centrale": "Paluel",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1985
+  },
+  {
+   "name": "PALUEL-2",
+   "centrale": "Paluel",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1985
+  },
+  {
+   "name": "PALUEL-3",
+   "centrale": "Paluel",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1986
+  },
+  {
+   "name": "PALUEL-4",
+   "centrale": "Paluel",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1986
+  },
+  {
+   "name": "PENLY-1",
+   "centrale": "Penly",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1990
+  },
+  {
+   "name": "PENLY-2",
+   "centrale": "Penly",
+   "palier": "P'4",
+   "type": "REP",
+   "power": 1330,
+   "start": 1992
+  },
+  {
+   "name": "Phénix",
+   "centrale": "Marcoule",
+   "palier": "RNR",
+   "type": "RNR",
+   "power": 130,
+   "start": 1974,
+   "end": 2010
+  },
+  {
+   "name": "ST. ALBAN-1",
+   "centrale": "Saint-Alban",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1335,
+   "start": 1986
+  },
+  {
+   "name": "ST. ALBAN-2",
+   "centrale": "Saint-Alban",
+   "palier": "P4",
+   "type": "REP",
+   "power": 1335,
+   "start": 1987
+  },
+  {
+   "name": "ST. LAURENT-A1/EDF4",
+   "centrale": "Saint-Laurent",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 480,
+   "start": 1969,
+   "end": 1990
+  },
+  {
+   "name": "ST. LAURENT-A2/EDF5",
+   "centrale": "Saint-Laurent",
+   "palier": "UNGG",
+   "type": "UNGG",
+   "power": 515,
+   "start": 1971,
+   "end": 1992
+  },
+  {
+   "name": "ST. LAURENT-B-15",
+   "centrale": "Saint-Laurent",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 915,
+   "start": 1983
+  },
+  {
+   "name": "ST. LAURENT-B-25",
+   "centrale": "Saint-Laurent",
+   "palier": "CP2",
+   "type": "REP",
+   "power": 915,
+   "start": 1983
+  },
+  {
+   "name": "SUPERPHENIX",
+   "centrale": "Creys-Malville",
+   "palier": "RNR",
+   "type": "RNR",
+   "power": 1200,
+   "start": 1986,
+   "end": 1998
+  },
+  {
+   "name": "TRICASTIN-15",
+   "centrale": "Tricastin",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 915,
+   "start": 1980
+  },
+  {
+   "name": "TRICASTIN-25",
+   "centrale": "Tricastin",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 915,
+   "start": 1980
+  },
+  {
+   "name": "TRICASTIN-35",
+   "centrale": "Tricastin",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 915,
+   "start": 1981
+  },
+  {
+   "name": "TRICASTIN-45",
+   "centrale": "Tricastin",
+   "palier": "CP1",
+   "type": "REP",
+   "power": 915,
+   "start": 1981
+  }
+ ]
+}

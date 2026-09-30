@@ -4978,50 +4978,30 @@
    "t": 0,
    "label": "A",
    "note": {
-    "fr": "AKH repère le phénomène au sud-ouest, bas sur l'horizon, et alerte les autres.",
-    "en": "AKH spots the phenomenon in the south-west, low over the horizon, and calls the others.",
-    "es": "AKH ve el fenómeno al suroeste, bajo sobre el horizonte, y avisa a los demás.",
-    "it": "AKH nota il fenomeno a sud-ovest, basso sull'orizzonte, e avverte gli altri."
+    "fr": "Il repère le phénomène au sud-ouest, bas sur l'horizon, et alerte les deux autres.",
+    "en": "He spots the phenomenon in the south-west, low over the horizon, and calls the other two.",
+    "es": "Ve el fenómeno al suroeste, bajo sobre el horizonte, y avisa a los otros dos.",
+    "it": "Nota il fenomeno a sud-ovest, basso sull'orizzonte, e avverte gli altri due."
    }
   },
   {
-   "t": 2000,
+   "t": 8437,
    "label": "B",
    "note": {
-    "fr": "BJN se retourne : il le voit à 42° de hauteur (temps estimé par les enquêteurs).",
-    "en": "BJN turns round and sees it 42° up (a time the investigators estimated).",
-    "es": "BJN se da la vuelta y lo ve a 42° de altura (tiempo estimado por los investigadores).",
-    "it": "BJN si volta e lo vede a 42° di altezza (tempo stimato dagli investigatori)."
-   }
-  },
-  {
-   "t": 3000,
-   "label": "C",
-   "note": {
-    "fr": "FWY se retourne, tout le corps : il le voit à l'ouest, à 20° de hauteur.",
-    "en": "FWY turns round, his whole body: he sees it in the west, 20° up.",
-    "es": "FWY se da la vuelta, con todo el cuerpo: lo ve al oeste, a 20° de altura.",
-    "it": "FWY si volta, con tutto il corpo: lo vede a ovest, a 20° di altezza."
-   }
-  },
-  {
-   "t": 6000,
-   "label": "D",
-   "note": {
-    "fr": "Le phénomène paraît au plus proche, selon BJN : à 60° de hauteur, presque à la verticale.",
-    "en": "The phenomenon looks closest, according to BJN: 60° up, almost overhead.",
-    "es": "El fenómeno parece lo más cercano, según BJN: a 60° de altura, casi en la vertical.",
-    "it": "Il fenomeno appare al punto più vicino, secondo BJN: a 60° di altezza, quasi allo zenit."
+    "fr": "En s'éloignant vers le nord-ouest, à 31° de hauteur, il croit distinguer des petites lumières rouges fixes sur la tranche arrière.",
+    "en": "As it moves away to the north-west, 31° up, he seems to make out small steady red lights along the rear edge.",
+    "es": "Al alejarse hacia el noroeste, a 31° de altura, cree distinguir pequeñas luces rojas fijas en el canto trasero.",
+    "it": "Mentre si allontana verso nord-ovest, a 31° di altezza, gli sembra di distinguere piccole luci rosse fisse sul bordo posteriore."
    }
   },
   {
    "t": 10000,
-   "label": "E",
+   "label": "C",
    "note": {
-    "fr": "Il disparaît de la vue derrière les toits des maisons d'en face, à une douzaine de degrés de hauteur.",
-    "en": "It disappears from view behind the roofs of the houses opposite, a dozen degrees up.",
-    "es": "Desaparece de la vista tras los tejados de las casas de enfrente, a una docena de grados de altura.",
-    "it": "Scompare alla vista dietro i tetti delle case di fronte, a una dozzina di gradi di altezza."
+    "fr": "Il disparaît derrière les toits des maisons d'en face, à 13° de hauteur.",
+    "en": "It disappears behind the roofs of the houses opposite, 13° up.",
+    "es": "Desaparece tras los tejados de las casas de enfrente, a 13° de altura.",
+    "it": "Scompare dietro i tetti delle case di fronte, a 13° di altezza."
    }
   }
  ],

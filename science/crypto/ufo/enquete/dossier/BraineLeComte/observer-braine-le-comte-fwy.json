@@ -1,0 +1,2280 @@
+{
+ "version": 1,
+ "id": "2015-07-12-BraineLeComte-FWY",
+ "time": {
+  "value": {
+   "year": 2015,
+   "month": 7,
+   "day": 12,
+   "hour": 0,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+ },
+ "durationSeconds": {
+  "value": 10,
+  "basis": "derived",
+  "rationale": "the recording runs on the investigators' common clock (COBEPS report 20150712BraineleComte, table 2, T0 to T4 = 10 s); his own duration is 5 s, from his turning round (T2, 3 s) to 8 s"
+ },
+ "utcOffsetHours": {
+  "value": 2,
+  "basis": "derived",
+  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+ },
+ "timeZone": "Europe/Brussels",
+ "place": [
+  {
+   "value": {
+    "lat": 50.6,
+    "lng": 4.1,
+    "name": "Braine-le-Comte, Hainaut, Belgium"
+   },
+   "basis": "assumed",
+   "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  }
+ ],
+ "observer": {
+  "id": "BraineLeComte-2015-FWY",
+  "title": "FWY"
+ },
+ "account": {
+  "observerOccupation": {
+   "fr": "étudiant, filleul d'AKH",
+   "en": "student, AKH's godson",
+   "es": "estudiante, ahijado de AKH",
+   "it": "studente, figlioccio di AKH"
+  },
+  "source": {
+   "value": "interview",
+   "basis": "stated",
+   "rationale": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)"
+  },
+  "followedUp": {
+   "value": true,
+   "basis": "stated",
+   "rationale": "reconstruction on site, questions by e-mail in April 2016"
+  },
+  "observerAgeYears": {
+   "value": 17,
+   "basis": "stated",
+   "rationale": "17 at the time"
+  }
+ },
+ "description": {
+  "fr": "« [...] AKH a vu quelque chose et nous dit de regarder. Donc, le temps que je me retourne, et tout ça, je n'ai pas vu très longtemps, enfin deux ou trois secondes, une forme un peu plus noire que le ciel, mais il y avait des lumières orange, qui formaient, je vais faire une comparaison pour la forme : un boomerang. Donc, les lumières s'allumaient, comme une sorte de boomerang qui se dirigeait vers l'horizon. Et puis à un moment a disparu. » À l'entretien, il précise que l'ensemble était composé de cinq à sept sphères lumineuses orange, d'une luminosité uniforme et faible qu'il compare à du feu, régulièrement espacées, sur un support plus foncé que le ciel ; qu'il n'a pas fait attention à la forme mais à l'alignement ; qu'il ne s'éloignait pas quand il a disparu : il a dû cligner des yeux, et pendant ce clignement il n'y avait plus rien à observer.",
+  "en": "“[...] AKH saw something and told us to look. So, by the time I turned round and all that, I did not see for very long, well two or three seconds, a shape a bit blacker than the sky, but there were orange lights, which formed, to make a comparison for the shape: a boomerang. So the lights came on, like a sort of boomerang heading for the horizon. And then at some point it disappeared.” At the interview he adds that it was made of five to seven orange luminous spheres, of uniform and faint brightness, which he compares to fire, evenly spaced on a support darker than the sky; that he paid attention not to the shape but to the alignment; that it was not moving away when it disappeared: he must have blinked, and during that blink there was nothing left to see.",
+  "es": "«[...] AKH vio algo y nos dijo que miráramos. Así que, el tiempo de darme la vuelta y todo eso, no vi muy mucho, bueno dos o tres segundos, una forma un poco más negra que el cielo, pero había luces naranjas, que formaban, voy a hacer una comparación para la forma: un bumerán. O sea, las luces se encendían, como una especie de bumerán que se dirigía hacia el horizonte. Y luego en un momento desapareció.» En la entrevista precisa que el conjunto estaba compuesto de cinco a siete esferas luminosas naranjas, de luminosidad uniforme y débil que compara con fuego, espaciadas con regularidad, sobre un soporte más oscuro que el cielo; que no se fijó en la forma sino en la alineación; que no se alejaba cuando desapareció: debió de parpadear, y durante ese parpadeo ya no había nada que observar.",
+  "it": "«[...] AKH ha visto qualcosa e ci ha detto di guardare. Quindi, il tempo di voltarmi e tutto il resto, non ho visto molto a lungo, insomma due o tre secondi, una forma un po' più nera del cielo, ma c'erano luci arancioni, che formavano, faccio un paragone per la forma: un boomerang. Quindi le luci si accendevano, come una specie di boomerang che si dirigeva verso l'orizzonte. E poi a un certo punto è scomparso.» All'intervista precisa che l'insieme era composto da cinque a sette sfere luminose arancioni, di luminosità uniforme e debole che paragona al fuoco, regolarmente distanziate, su un supporto più scuro del cielo; che non ha badato alla forma ma all'allineamento; che non si allontanava quando è scomparso: deve aver sbattuto le palpebre, e durante quel battito non c'era più nulla da osservare."
+ },
+ "tags": [
+  "NL",
+  "GEIPAN D"
+ ],
+ "sources": [
+  {
+   "title": "Boomerang survolant Braine-le-Comte (N° COBEPS 20150712BraineleComte)",
+   "authors": [
+    "Jean-Marc Wattecamps",
+    "Karine Faucher",
+    "Philippe Perbet"
+   ],
+   "url": "http://www.cobeps.org/pdf/BraineLeComte_20150712.pdf",
+   "publication": {
+    "publisher": "COBEPS",
+    "time": "2016-02-12"
+   },
+   "index": "pp. 14-16, 18-21"
+  }
+ ],
+ "lightPollution": {
+  "value": 20.05,
+  "basis": "derived",
+  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+ },
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 337.5,
+      "basis": "stated",
+      "rationale": "\"FWY vers le NNO\" (§V.1.3)"
+     },
+     "pitchDeg": {
+      "value": 30,
+      "basis": "assumed",
+      "rationale": "looking for shooting stars: no height stated"
+     }
+    }
+   },
+   {
+    "t": 2200,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 337.5,
+     "pitchDeg": 30
+    }
+   },
+   {
+    "t": 3000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 270.0,
+     "pitchDeg": 20.0
+    }
+   },
+   {
+    "t": 3500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 272.39,
+     "pitchDeg": 19.32
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 274.75,
+     "pitchDeg": 18.61
+    }
+   },
+   {
+    "t": 4500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 277.1,
+     "pitchDeg": 17.87
+    }
+   },
+   {
+    "t": 5000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 279.43,
+     "pitchDeg": 17.1
+    }
+   },
+   {
+    "t": 5500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 281.73,
+     "pitchDeg": 16.31
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 284.02,
+     "pitchDeg": 15.49
+    }
+   },
+   {
+    "t": 6500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 286.29,
+     "pitchDeg": 14.65
+    }
+   },
+   {
+    "t": 7000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 288.54,
+     "pitchDeg": 13.79
+    }
+   },
+   {
+    "t": 7500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 290.78,
+     "pitchDeg": 12.9
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 293.0,
+     "pitchDeg": 12.0
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "order": [
+   "pan",
+   "feu-1",
+   "feu-2",
+   "feu-3",
+   "feu-4",
+   "feu-5"
+  ],
+  "groups": [
+   [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  ],
+  "keyframes": [
+   {
+    "t": 2850,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 270.0,
+         "altitudeDeg": 20.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 1.8649,
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 5.67,
+        "heightDeg": 2.893
+       },
+       "kind": "polygon",
+       "points": [
+        {
+         "x": 21.45,
+         "y": 14.37
+        },
+        {
+         "x": 32.87,
+         "y": 4.79
+        },
+        {
+         "x": 44.29,
+         "y": 0.0
+        },
+        {
+         "x": 55.71,
+         "y": 0.0
+        },
+        {
+         "x": 67.13,
+         "y": 4.79
+        },
+        {
+         "x": 78.55,
+         "y": 14.37
+        },
+        {
+         "x": 87.31,
+         "y": 21.8
+        },
+        {
+         "x": 93.41,
+         "y": 27.08
+        },
+        {
+         "x": 96.85,
+         "y": 30.2
+        },
+        {
+         "x": 97.63,
+         "y": 31.17
+        },
+        {
+         "x": 98.3,
+         "y": 32.2
+        },
+        {
+         "x": 98.86,
+         "y": 33.28
+        },
+        {
+         "x": 99.32,
+         "y": 34.42
+        },
+        {
+         "x": 99.67,
+         "y": 35.61
+        },
+        {
+         "x": 99.89,
+         "y": 36.82
+        },
+        {
+         "x": 100.0,
+         "y": 38.03
+        },
+        {
+         "x": 99.99,
+         "y": 39.26
+        },
+        {
+         "x": 99.85,
+         "y": 40.49
+        },
+        {
+         "x": 99.6,
+         "y": 41.69
+        },
+        {
+         "x": 99.23,
+         "y": 42.86
+        },
+        {
+         "x": 98.75,
+         "y": 43.98
+        },
+        {
+         "x": 98.15,
+         "y": 45.07
+        },
+        {
+         "x": 97.46,
+         "y": 46.08
+        },
+        {
+         "x": 96.68,
+         "y": 47.02
+        },
+        {
+         "x": 95.8,
+         "y": 47.88
+        },
+        {
+         "x": 94.83,
+         "y": 48.65
+        },
+        {
+         "x": 93.8,
+         "y": 49.32
+        },
+        {
+         "x": 92.72,
+         "y": 49.89
+        },
+        {
+         "x": 91.59,
+         "y": 50.34
+        },
+        {
+         "x": 90.39,
+         "y": 50.69
+        },
+        {
+         "x": 89.19,
+         "y": 50.92
+        },
+        {
+         "x": 87.97,
+         "y": 51.02
+        },
+        {
+         "x": 86.75,
+         "y": 51.01
+        },
+        {
+         "x": 85.51,
+         "y": 50.87
+        },
+        {
+         "x": 84.31,
+         "y": 50.62
+        },
+        {
+         "x": 83.15,
+         "y": 50.26
+        },
+        {
+         "x": 82.02,
+         "y": 49.77
+        },
+        {
+         "x": 80.93,
+         "y": 49.18
+        },
+        {
+         "x": 78.28,
+         "y": 47.19
+        },
+        {
+         "x": 74.08,
+         "y": 43.82
+        },
+        {
+         "x": 68.31,
+         "y": 39.06
+        },
+        {
+         "x": 60.99,
+         "y": 32.91
+        },
+        {
+         "x": 53.66,
+         "y": 29.84
+        },
+        {
+         "x": 46.34,
+         "y": 29.84
+        },
+        {
+         "x": 39.01,
+         "y": 32.91
+        },
+        {
+         "x": 31.69,
+         "y": 39.06
+        },
+        {
+         "x": 25.92,
+         "y": 43.82
+        },
+        {
+         "x": 21.72,
+         "y": 47.19
+        },
+        {
+         "x": 19.07,
+         "y": 49.18
+        },
+        {
+         "x": 17.98,
+         "y": 49.77
+        },
+        {
+         "x": 16.85,
+         "y": 50.26
+        },
+        {
+         "x": 15.69,
+         "y": 50.62
+        },
+        {
+         "x": 14.49,
+         "y": 50.87
+        },
+        {
+         "x": 13.25,
+         "y": 51.01
+        },
+        {
+         "x": 12.03,
+         "y": 51.02
+        },
+        {
+         "x": 10.81,
+         "y": 50.92
+        },
+        {
+         "x": 9.61,
+         "y": 50.69
+        },
+        {
+         "x": 8.41,
+         "y": 50.34
+        },
+        {
+         "x": 7.28,
+         "y": 49.89
+        },
+        {
+         "x": 6.2,
+         "y": 49.32
+        },
+        {
+         "x": 5.17,
+         "y": 48.65
+        },
+        {
+         "x": 4.2,
+         "y": 47.88
+        },
+        {
+         "x": 3.32,
+         "y": 47.02
+        },
+        {
+         "x": 2.54,
+         "y": 46.08
+        },
+        {
+         "x": 1.85,
+         "y": 45.07
+        },
+        {
+         "x": 1.25,
+         "y": 43.98
+        },
+        {
+         "x": 0.77,
+         "y": 42.86
+        },
+        {
+         "x": 0.4,
+         "y": 41.69
+        },
+        {
+         "x": 0.15,
+         "y": 40.49
+        },
+        {
+         "x": 0.01,
+         "y": 39.26
+        },
+        {
+         "x": 0.0,
+         "y": 38.03
+        },
+        {
+         "x": 0.11,
+         "y": 36.82
+        },
+        {
+         "x": 0.33,
+         "y": 35.61
+        },
+        {
+         "x": 0.68,
+         "y": 34.42
+        },
+        {
+         "x": 1.14,
+         "y": 33.28
+        },
+        {
+         "x": 1.7,
+         "y": 32.2
+        },
+        {
+         "x": 2.37,
+         "y": 31.17
+        },
+        {
+         "x": 3.15,
+         "y": 30.2
+        },
+        {
+         "x": 6.59,
+         "y": 27.08
+        },
+        {
+         "x": 12.69,
+         "y": 21.8
+        }
+       ],
+       "color": {
+        "value": "#05060a",
+        "basis": "stated",
+        "rationale": "\"une forme un peu plus noire que le ciel\""
+       },
+       "title": {
+        "fr": "Forme un peu plus noire que le ciel",
+        "en": "A shape a bit blacker than the sky",
+        "es": "Una forma un poco más negra que el cielo",
+        "it": "Una forma un po' più nera del cielo"
+       },
+       "haloScale": 0,
+       "selected": false,
+       "bounds": {
+        "x": 300,
+        "y": 170,
+        "width": 100,
+        "height": 51.02
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 269.905,
+        "altitudeDeg": 22.248
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       },
+       "kind": "oval",
+       "color": {
+        "value": "#eb3b1c",
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+       },
+       "haloScale": 0.6,
+       "brightness": 0,
+       "title": {
+        "fr": "Sphère lumineuse orange",
+        "en": "Orange luminous sphere",
+        "es": "Esfera luminosa naranja",
+        "it": "Sfera luminosa arancione"
+       },
+       "selected": false,
+       "bounds": {
+        "x": 320,
+        "y": 180,
+        "width": 2,
+        "height": 2
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 270.485,
+        "altitudeDeg": 20.972
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       },
+       "kind": "oval",
+       "color": {
+        "value": "#eb3b1c",
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+       },
+       "haloScale": 0.6,
+       "brightness": 0,
+       "title": {
+        "fr": "Sphère lumineuse orange",
+        "en": "Orange luminous sphere",
+        "es": "Esfera luminosa naranja",
+        "it": "Sfera luminosa arancione"
+       },
+       "selected": false,
+       "bounds": {
+        "x": 320,
+        "y": 180,
+        "width": 2,
+        "height": 2
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 271.066,
+        "altitudeDeg": 19.697
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       },
+       "kind": "oval",
+       "color": {
+        "value": "#eb3b1c",
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+       },
+       "haloScale": 0.6,
+       "brightness": 0,
+       "title": {
+        "fr": "Sphère lumineuse orange",
+        "en": "Orange luminous sphere",
+        "es": "Esfera luminosa naranja",
+        "it": "Sfera luminosa arancione"
+       },
+       "selected": false,
+       "bounds": {
+        "x": 320,
+        "y": 180,
+        "width": 2,
+        "height": 2
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 269.83,
+        "altitudeDeg": 18.938
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       },
+       "kind": "oval",
+       "color": {
+        "value": "#eb3b1c",
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+       },
+       "haloScale": 0.6,
+       "brightness": 0,
+       "title": {
+        "fr": "Sphère lumineuse orange",
+        "en": "Orange luminous sphere",
+        "es": "Esfera luminosa naranja",
+        "it": "Sfera luminosa arancione"
+       },
+       "selected": false,
+       "bounds": {
+        "x": 320,
+        "y": 180,
+        "width": 2,
+        "height": 2
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 268.593,
+        "altitudeDeg": 18.179
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       },
+       "kind": "oval",
+       "color": {
+        "value": "#eb3b1c",
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: lights \"Traffic orange\" RGB 235 59 28"
+       },
+       "haloScale": 0.6,
+       "brightness": 0,
+       "title": {
+        "fr": "Sphère lumineuse orange",
+        "en": "Orange luminous sphere",
+        "es": "Esfera luminosa naranja",
+        "it": "Sfera luminosa arancione"
+       },
+       "selected": false,
+       "bounds": {
+        "x": 320,
+        "y": 180,
+        "width": 2,
+        "height": 2
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 270.0,
+         "altitudeDeg": 20.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 1.8649,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 5.67,
+        "heightDeg": 2.893
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 269.905,
+        "altitudeDeg": 22.248
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 270.485,
+        "altitudeDeg": 20.972
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 271.066,
+        "altitudeDeg": 19.697
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 269.83,
+        "altitudeDeg": 18.938
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 268.593,
+        "altitudeDeg": 18.179
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.47,
+        "heightDeg": 1.47
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 3500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 272.387,
+        "altitudeDeg": 19.321
+       },
+       "angle": 1.8712,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 5.203,
+        "heightDeg": 2.655
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 272.314,
+        "altitudeDeg": 21.384
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.3489,
+        "heightDeg": 1.3489
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 272.836,
+        "altitudeDeg": 20.21
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.3489,
+        "heightDeg": 1.3489
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 273.359,
+        "altitudeDeg": 19.037
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.3489,
+        "heightDeg": 1.3489
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 272.225,
+        "altitudeDeg": 18.347
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.3489,
+        "heightDeg": 1.3489
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 271.09,
+        "altitudeDeg": 17.658
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.3489,
+        "heightDeg": 1.3489
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 274.753,
+        "altitudeDeg": 18.611
+       },
+       "angle": 1.8846,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 4.736,
+        "heightDeg": 2.417
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 274.714,
+        "altitudeDeg": 20.49
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.2279,
+        "heightDeg": 1.2279
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 275.172,
+        "altitudeDeg": 19.415
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.2279,
+        "heightDeg": 1.2279
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 275.631,
+        "altitudeDeg": 18.341
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.2279,
+        "heightDeg": 1.2279
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 274.594,
+        "altitudeDeg": 17.726
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.2279,
+        "heightDeg": 1.2279
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 273.557,
+        "altitudeDeg": 17.112
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.2279,
+        "heightDeg": 1.2279
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 277.1,
+        "altitudeDeg": 17.871
+       },
+       "angle": 1.8974,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 4.269,
+        "heightDeg": 2.178
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 277.087,
+        "altitudeDeg": 19.565
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.1068,
+        "heightDeg": 1.1068
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 277.485,
+        "altitudeDeg": 18.592
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.1068,
+        "heightDeg": 1.1068
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 277.884,
+        "altitudeDeg": 17.618
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.1068,
+        "heightDeg": 1.1068
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 276.946,
+        "altitudeDeg": 17.076
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.1068,
+        "heightDeg": 1.1068
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 276.008,
+        "altitudeDeg": 16.533
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.1068,
+        "heightDeg": 1.1068
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 279.426,
+        "altitudeDeg": 17.104
+       },
+       "angle": 1.9096,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 3.802,
+        "heightDeg": 1.94
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 279.434,
+        "altitudeDeg": 18.613
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.9857,
+        "heightDeg": 0.9857
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 279.777,
+        "altitudeDeg": 17.742
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.9857,
+        "heightDeg": 0.9857
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 280.119,
+        "altitudeDeg": 16.871
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.9857,
+        "heightDeg": 0.9857
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 279.281,
+        "altitudeDeg": 16.397
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.9857,
+        "heightDeg": 0.9857
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 278.443,
+        "altitudeDeg": 15.924
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.9857,
+        "heightDeg": 0.9857
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 281.734,
+        "altitudeDeg": 16.31
+       },
+       "angle": 1.9212,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 3.335,
+        "heightDeg": 1.702
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 281.757,
+        "altitudeDeg": 17.634
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.8646,
+        "heightDeg": 0.8646
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 282.046,
+        "altitudeDeg": 16.866
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.8646,
+        "heightDeg": 0.8646
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 282.336,
+        "altitudeDeg": 16.099
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.8646,
+        "heightDeg": 0.8646
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 281.599,
+        "altitudeDeg": 15.692
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.8646,
+        "heightDeg": 0.8646
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 280.862,
+        "altitudeDeg": 15.285
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.8646,
+        "heightDeg": 0.8646
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 284.022,
+        "altitudeDeg": 15.492
+       },
+       "angle": 1.9321,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 2.868,
+        "heightDeg": 1.463
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 284.055,
+        "altitudeDeg": 16.63
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.7436,
+        "heightDeg": 0.7436
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 284.295,
+        "altitudeDeg": 15.967
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.7436,
+        "heightDeg": 0.7436
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 284.536,
+        "altitudeDeg": 15.305
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.7436,
+        "heightDeg": 0.7436
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 283.901,
+        "altitudeDeg": 14.961
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.7436,
+        "heightDeg": 0.7436
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 283.266,
+        "altitudeDeg": 14.618
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.7436,
+        "heightDeg": 0.7436
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 286.292,
+        "altitudeDeg": 14.65
+       },
+       "angle": 1.9424,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 2.401,
+        "heightDeg": 1.225
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 286.329,
+        "altitudeDeg": 15.602
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.6225,
+        "heightDeg": 0.6225
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 286.524,
+        "altitudeDeg": 15.046
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.6225,
+        "heightDeg": 0.6225
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 286.719,
+        "altitudeDeg": 14.489
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.6225,
+        "heightDeg": 0.6225
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 286.186,
+        "altitudeDeg": 14.207
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.6225,
+        "heightDeg": 0.6225
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 285.654,
+        "altitudeDeg": 13.925
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.6225,
+        "heightDeg": 0.6225
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 288.545,
+        "altitudeDeg": 13.787
+       },
+       "angle": 1.9521,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.934,
+        "heightDeg": 0.987
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 288.582,
+        "altitudeDeg": 14.553
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.5014,
+        "heightDeg": 0.5014
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 288.734,
+        "altitudeDeg": 14.104
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.5014,
+        "heightDeg": 0.5014
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 288.886,
+        "altitudeDeg": 13.654
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.5014,
+        "heightDeg": 0.5014
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 288.456,
+        "altitudeDeg": 13.431
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.5014,
+        "heightDeg": 0.5014
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 288.026,
+        "altitudeDeg": 13.207
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.5014,
+        "heightDeg": 0.5014
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 7500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 290.78,
+        "altitudeDeg": 12.903
+       },
+       "angle": 1.9611,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.467,
+        "heightDeg": 0.749
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 290.814,
+        "altitudeDeg": 13.484
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.3803,
+        "heightDeg": 0.3803
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 290.926,
+        "altitudeDeg": 13.142
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.3803,
+        "heightDeg": 0.3803
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 291.037,
+        "altitudeDeg": 12.8
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.3803,
+        "heightDeg": 0.3803
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 290.711,
+        "altitudeDeg": 12.633
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.3803,
+        "heightDeg": 0.3803
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 290.385,
+        "altitudeDeg": 12.467
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.3803,
+        "heightDeg": 0.3803
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 293.0,
+         "altitudeDeg": 12.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: FWY's end, azimuth 293, elevation 12; 5 s after he turned round, his own duration"
+       },
+       "angle": 1.9648,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.0,
+        "heightDeg": 0.51
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.024,
+        "altitudeDeg": 12.396
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.099,
+        "altitudeDeg": 12.163
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.174,
+        "altitudeDeg": 11.929
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 292.952,
+        "altitudeDeg": 11.816
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 292.73,
+        "altitudeDeg": 11.704
+       },
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 8060,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 293.266,
+         "altitudeDeg": 11.892
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where FWY puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 1.9648,
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.0,
+        "heightDeg": 0.51
+       }
+      }
+     },
+     {
+      "sourceId": "feu-1",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.291,
+        "altitudeDeg": 12.288
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-2",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.366,
+        "altitudeDeg": 12.054
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-3",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.441,
+        "altitudeDeg": 11.821
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-4",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 293.219,
+        "altitudeDeg": 11.708
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     },
+     {
+      "sourceId": "feu-5",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 292.997,
+        "altitudeDeg": 11.595
+       },
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 0.2593,
+        "heightDeg": 0.2593
+       }
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "AKH repère le phénomène au sud-ouest, bas sur l'horizon, et alerte les autres.",
+    "en": "AKH spots the phenomenon in the south-west, low over the horizon, and calls the others.",
+    "es": "AKH ve el fenómeno al suroeste, bajo sobre el horizonte, y avisa a los demás.",
+    "it": "AKH nota il fenomeno a sud-ovest, basso sull'orizzonte, e avverte gli altri."
+   }
+  },
+  {
+   "t": 2000,
+   "label": "B",
+   "note": {
+    "fr": "BJN se retourne : il le voit à 42° de hauteur (temps estimé par les enquêteurs).",
+    "en": "BJN turns round and sees it 42° up (a time the investigators estimated).",
+    "es": "BJN se da la vuelta y lo ve a 42° de altura (tiempo estimado por los investigadores).",
+    "it": "BJN si volta e lo vede a 42° di altezza (tempo stimato dagli investigatori)."
+   }
+  },
+  {
+   "t": 3000,
+   "label": "C",
+   "note": {
+    "fr": "FWY se retourne, tout le corps : il le voit à l'ouest, à 20° de hauteur.",
+    "en": "FWY turns round, his whole body: he sees it in the west, 20° up.",
+    "es": "FWY se da la vuelta, con todo el cuerpo: lo ve al oeste, a 20° de altura.",
+    "it": "FWY si volta, con tutto il corpo: lo vede a ovest, a 20° di altezza."
+   }
+  },
+  {
+   "t": 6000,
+   "label": "D",
+   "note": {
+    "fr": "Le phénomène paraît au plus proche, selon BJN : à 60° de hauteur, presque à la verticale.",
+    "en": "The phenomenon looks closest, according to BJN: 60° up, almost overhead.",
+    "es": "El fenómeno parece lo más cercano, según BJN: a 60° de altura, casi en la vertical.",
+    "it": "Il fenomeno appare al punto più vicino, secondo BJN: a 60° di altezza, quasi allo zenit."
+   }
+  },
+  {
+   "t": 10000,
+   "label": "E",
+   "note": {
+    "fr": "Il disparaît de la vue derrière les toits des maisons d'en face, à une douzaine de degrés de hauteur.",
+    "en": "It disappears from view behind the roofs of the houses opposite, a dozen degrees up.",
+    "es": "Desaparece de la vista tras los tejados de las casas de enfrente, a una docena de grados de altura.",
+    "it": "Scompare alla vista dietro i tetti delle case di fronte, a una dozzina di gradi di altezza."
+   }
+  }
+ ],
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 0
+     },
+     "basis": "stated",
+     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+    }
+   }
+  ]
+ },
+ "decor": [
+  {
+   "id": "observer-akh",
+   "kind": "observer",
+   "title": {
+    "fr": "AKH, à 1,3 m",
+    "en": "AKH, 1.3 m away",
+    "es": "AKH, a 1,3 m",
+    "it": "AKH, a 1,3 m"
+   },
+   "eastM": 0.0,
+   "northM": -1.3,
+   "headingDeg": 215.0,
+   "sightingUrl": "observer-braine-le-comte-akh.json",
+   "sizeM": {
+    "widthM": 0.5,
+    "lengthM": 0.35,
+    "heightM": 1.7
+   }
+  },
+  {
+   "id": "observer-bjn",
+   "kind": "observer",
+   "title": {
+    "fr": "BJN, à 1,8 m",
+    "en": "BJN, 1.8 m away",
+    "es": "BJN, a 1,8 m",
+    "it": "BJN, a 1,8 m"
+   },
+   "eastM": 0.0,
+   "northM": 1.8,
+   "headingDeg": 45.0,
+   "sightingUrl": "observer-braine-le-comte-bjn.json",
+   "sizeM": {
+    "widthM": 0.5,
+    "lengthM": 0.35,
+    "heightM": 1.7
+   }
+  },
+  {
+   "id": "toit-1",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -38.65,
+   "northM": 10.3,
+   "headingDeg": 14.9,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-2",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -35.07,
+   "northM": 19.24,
+   "headingDeg": 28.8,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-3",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -29.45,
+   "northM": 27.07,
+   "headingDeg": 42.6,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-4",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -22.12,
+   "northM": 33.33,
+   "headingDeg": 56.4,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-5",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -13.51,
+   "northM": 37.65,
+   "headingDeg": 70.3,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-6",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -4.11,
+   "northM": 39.79,
+   "headingDeg": 84.1,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.2
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-7",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 5.53,
+   "northM": 39.62,
+   "headingDeg": 97.9,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.2
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-8",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 14.84,
+   "northM": 37.15,
+   "headingDeg": 111.8,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  },
+  {
+   "id": "toit-9",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 23.29,
+   "northM": 32.52,
+   "headingDeg": 125.6,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan",
+    "feu-1",
+    "feu-2",
+    "feu-3",
+    "feu-4",
+    "feu-5"
+   ]
+  }
+ ],
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [],
+     "cloudCover": 0,
+     "relativeHumidity": 0.82,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windDirectionDeg": 220,
+     "windSpeed": 3.6,
+     "storm": false
+    }
+   }
+  ]
+ },
+ "weatherSource": {
+  "id": "metar-ebcv",
+  "name": "METAR EBCV 112225Z AUTO 22007KT 9999 NCD 13/10 Q1020 (Chièvres, 25 min before)",
+  "url": "http://www.cobeps.org/pdf/BraineLeComte_20150712.pdf"
+ }
+}

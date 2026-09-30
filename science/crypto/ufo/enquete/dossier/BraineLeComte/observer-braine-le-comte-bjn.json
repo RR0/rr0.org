@@ -1,0 +1,1395 @@
+{
+ "version": 1,
+ "id": "2015-07-12-BraineLeComte-BJN",
+ "time": {
+  "value": {
+   "year": 2015,
+   "month": 7,
+   "day": 12,
+   "hour": 0,
+   "minute": 45,
+   "second": 0
+  },
+  "basis": "derived",
+  "rationale": "the report gives 00:30 to 01:00; the middle of it is taken, and it is the moment at which the report's own sky (Arcturus at azimuth 260, elevation 33) is right to the degree (22:45 UTC)"
+ },
+ "durationSeconds": {
+  "value": 10,
+  "basis": "stated",
+  "rationale": "\"La scène a duré environ 10 secondes\" (§V.1.2); table 1 says 12 s, table 2 retains 10 s"
+ },
+ "utcOffsetHours": {
+  "value": 2,
+  "basis": "derived",
+  "rationale": "Central European Summer Time on 2015-07-12; the report gives 22:30-23:00 UTC for 00:30-01:00"
+ },
+ "timeZone": "Europe/Brussels",
+ "place": [
+  {
+   "value": {
+    "lat": 50.6,
+    "lng": 4.1,
+    "name": "Braine-le-Comte, Hainaut, Belgium"
+   },
+   "basis": "assumed",
+   "rationale": "the report redacts the address and gives the place to a tenth of a degree only (50.6 N, 4.1 E, 89 m), a garden in a residential area near the Mons-Brussels railway"
+  }
+ ],
+ "observer": {
+  "id": "BraineLeComte-2015-BJN",
+  "title": "BJN"
+ },
+ "account": {
+  "observerOccupation": {
+   "fr": "professeur de musique (conservatoire), porte des lunettes",
+   "en": "music teacher (conservatoire), wears glasses",
+   "es": "profesor de música (conservatorio), lleva gafas",
+   "it": "insegnante di musica (conservatorio), porta gli occhiali"
+  },
+  "source": {
+   "value": "interview",
+   "basis": "stated",
+   "rationale": "cognitive interview on 2016-01-23, six months after (BJN's and FWY's also; AKH also wrote a form on 2015-07-13)"
+  },
+  "followedUp": {
+   "value": true,
+   "basis": "stated",
+   "rationale": "reconstruction on site, questions by e-mail in April 2016"
+  }
+ },
+ "description": {
+  "fr": "« Puis AKH a dit « regardez, c'est bizarre ! ». À cet instant, je me suis retourné et j'ai vu au loin un objet passer rapidement aux environs de 100 mètres de hauteur au-delà du chemin de fer (distance difficile à évaluer). La trajectoire était linéaire, direction sud-sud-ouest vers nord-nord-est. [...] L'objet était plus clair que noir avec une légère phosphorescence, ou une impression de presque vibration comme un écran de télévision (quelque chose d'électrique). La texture avait l'air d'un métal sombre. [...] La forme ressemblait à un cerf-volant, un deltaplane ou un boomerang avec un angle obtus. [...] Je n'ai vu aucun spot de lumière, ni de flash. La scène a duré environ 10 secondes, le temps de voir l'objet traverser tout le ciel. Il n'y a eu aucun bruit. »",
+  "en": "“Then AKH said ‘look, that's odd!’. At that moment I turned round and saw in the distance an object pass quickly at around 100 metres' height beyond the railway (a distance hard to judge). The path was linear, from south-south-west towards north-north-east. [...] The object was lighter than black with a slight phosphorescence, or an impression of almost vibrating like a television screen (something electric). The texture looked like a dark metal. [...] The shape looked like a kite, a hang glider or a boomerang with an obtuse angle. [...] I saw no spot of light, no flash. The scene lasted about 10 seconds, the time to see the object cross the whole sky. There was no noise.”",
+  "es": "«Entonces AKH dijo «¡mirad, qué raro!». En ese instante me di la vuelta y vi a lo lejos un objeto pasar rápidamente a unos 100 metros de altura más allá de la vía del tren (distancia difícil de evaluar). La trayectoria era lineal, de sur-suroeste a nor-noreste. [...] El objeto era más claro que negro, con una ligera fosforescencia, o una impresión de casi vibración como una pantalla de televisión (algo eléctrico). La textura parecía de un metal oscuro. [...] La forma se parecía a una cometa, un ala delta o un bumerán con un ángulo obtuso. [...] No vi ningún punto de luz ni destello. La escena duró unos 10 segundos, el tiempo de ver el objeto cruzar todo el cielo. No hubo ningún ruido.»",
+  "it": "«Poi AKH ha detto «guardate, è strano!». In quel momento mi sono voltato e ho visto in lontananza un oggetto passare velocemente a circa 100 metri di altezza oltre la ferrovia (distanza difficile da valutare). La traiettoria era lineare, da sud-sud-ovest verso nord-nord-est. [...] L'oggetto era più chiaro che nero, con una leggera fosforescenza, o un'impressione di quasi vibrazione come uno schermo televisivo (qualcosa di elettrico). La texture sembrava di un metallo scuro. [...] La forma somigliava a un aquilone, a un deltaplano o a un boomerang con un angolo ottuso. [...] Non ho visto nessun punto di luce, né lampi. La scena è durata circa 10 secondi, il tempo di vedere l'oggetto attraversare tutto il cielo. Non c'è stato alcun rumore.»"
+ },
+ "tags": [
+  "NL",
+  "GEIPAN D"
+ ],
+ "sources": [
+  {
+   "title": "Boomerang survolant Braine-le-Comte (N° COBEPS 20150712BraineleComte)",
+   "authors": [
+    "Jean-Marc Wattecamps",
+    "Karine Faucher",
+    "Philippe Perbet"
+   ],
+   "url": "http://www.cobeps.org/pdf/BraineLeComte_20150712.pdf",
+   "publication": {
+    "publisher": "COBEPS",
+    "time": "2016-02-12"
+   },
+   "index": "pp. 13-14, 18-21"
+  }
+ ],
+ "lightPollution": {
+  "value": 20.05,
+  "basis": "derived",
+  "rationale": "World Atlas of the artificial night sky brightness (Falchi et al. 2016, doi:10.1126/sciadv.1600377), SQM of the tile at 50.6 N, 4.1 E (50.604, 4.104): 0.86 mcd/m² artificial, zenith 20.05 mag/arcsec². The report says the Milky Way was \"particulièrement visible\" and that there were a few street lamps and the house's own lights"
+ },
+ "instrument": "eye",
+ "observerTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": {
+      "value": 45.0,
+      "basis": "stated",
+      "rationale": "\"BJN [regarde] vers le NE\" (§V.1.3)"
+     },
+     "pitchDeg": {
+      "value": 35,
+      "basis": "assumed",
+      "rationale": "looking at the stars, constellations (Cassiopeia, Orion): no height stated"
+     }
+    }
+   },
+   {
+    "t": 1200,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 45.0,
+     "pitchDeg": 35
+    }
+   },
+   {
+    "t": 2000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 217.5,
+     "pitchDeg": 42.0
+    }
+   },
+   {
+    "t": 2500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 223.24,
+     "pitchDeg": 46.49
+    }
+   },
+   {
+    "t": 3000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 229.98,
+     "pitchDeg": 50.65
+    }
+   },
+   {
+    "t": 3500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 237.94,
+     "pitchDeg": 54.34
+    }
+   },
+   {
+    "t": 4000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 247.33,
+     "pitchDeg": 57.41
+    }
+   },
+   {
+    "t": 4500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 258.18,
+     "pitchDeg": 59.67
+    }
+   },
+   {
+    "t": 5000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 270.22,
+     "pitchDeg": 60.92
+    }
+   },
+   {
+    "t": 5500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 282.79,
+     "pitchDeg": 61.04
+    }
+   },
+   {
+    "t": 6000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 295.0,
+     "pitchDeg": 60.0
+    }
+   },
+   {
+    "t": 6500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 312.22,
+     "pitchDeg": 58.09
+    }
+   },
+   {
+    "t": 7000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 326.87,
+     "pitchDeg": 54.17
+    }
+   },
+   {
+    "t": 7500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 338.58,
+     "pitchDeg": 48.8
+    }
+   },
+   {
+    "t": 8000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 347.86,
+     "pitchDeg": 42.49
+    }
+   },
+   {
+    "t": 8500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 355.35,
+     "pitchDeg": 35.57
+    }
+   },
+   {
+    "t": 9000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 1.62,
+     "pitchDeg": 28.27
+    }
+   },
+   {
+    "t": 9500,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 7.07,
+     "pitchDeg": 20.71
+    }
+   },
+   {
+    "t": 10000,
+    "pose": {
+     "lat": 50.6,
+     "lng": 4.1,
+     "elevationM": 0,
+     "fovDeg": 60,
+     "headingDeg": 12.0,
+     "pitchDeg": 13.0
+    }
+   }
+  ]
+ },
+ "timeline": {
+  "order": [
+   "pan"
+  ],
+  "groups": [
+   [
+    "pan"
+   ]
+  ],
+  "keyframes": [
+   {
+    "t": 1850,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 217.5,
+         "altitudeDeg": 42.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 0.76,
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 2.5,
+        "heightDeg": 1.276
+       },
+       "kind": "polygon",
+       "points": [
+        {
+         "x": 21.45,
+         "y": 14.37
+        },
+        {
+         "x": 32.87,
+         "y": 4.79
+        },
+        {
+         "x": 44.29,
+         "y": 0.0
+        },
+        {
+         "x": 55.71,
+         "y": 0.0
+        },
+        {
+         "x": 67.13,
+         "y": 4.79
+        },
+        {
+         "x": 78.55,
+         "y": 14.37
+        },
+        {
+         "x": 87.31,
+         "y": 21.8
+        },
+        {
+         "x": 93.41,
+         "y": 27.08
+        },
+        {
+         "x": 96.85,
+         "y": 30.2
+        },
+        {
+         "x": 97.63,
+         "y": 31.17
+        },
+        {
+         "x": 98.3,
+         "y": 32.2
+        },
+        {
+         "x": 98.86,
+         "y": 33.28
+        },
+        {
+         "x": 99.32,
+         "y": 34.42
+        },
+        {
+         "x": 99.67,
+         "y": 35.61
+        },
+        {
+         "x": 99.89,
+         "y": 36.82
+        },
+        {
+         "x": 100.0,
+         "y": 38.03
+        },
+        {
+         "x": 99.99,
+         "y": 39.26
+        },
+        {
+         "x": 99.85,
+         "y": 40.49
+        },
+        {
+         "x": 99.6,
+         "y": 41.69
+        },
+        {
+         "x": 99.23,
+         "y": 42.86
+        },
+        {
+         "x": 98.75,
+         "y": 43.98
+        },
+        {
+         "x": 98.15,
+         "y": 45.07
+        },
+        {
+         "x": 97.46,
+         "y": 46.08
+        },
+        {
+         "x": 96.68,
+         "y": 47.02
+        },
+        {
+         "x": 95.8,
+         "y": 47.88
+        },
+        {
+         "x": 94.83,
+         "y": 48.65
+        },
+        {
+         "x": 93.8,
+         "y": 49.32
+        },
+        {
+         "x": 92.72,
+         "y": 49.89
+        },
+        {
+         "x": 91.59,
+         "y": 50.34
+        },
+        {
+         "x": 90.39,
+         "y": 50.69
+        },
+        {
+         "x": 89.19,
+         "y": 50.92
+        },
+        {
+         "x": 87.97,
+         "y": 51.02
+        },
+        {
+         "x": 86.75,
+         "y": 51.01
+        },
+        {
+         "x": 85.51,
+         "y": 50.87
+        },
+        {
+         "x": 84.31,
+         "y": 50.62
+        },
+        {
+         "x": 83.15,
+         "y": 50.26
+        },
+        {
+         "x": 82.02,
+         "y": 49.77
+        },
+        {
+         "x": 80.93,
+         "y": 49.18
+        },
+        {
+         "x": 78.28,
+         "y": 47.19
+        },
+        {
+         "x": 74.08,
+         "y": 43.82
+        },
+        {
+         "x": 68.31,
+         "y": 39.06
+        },
+        {
+         "x": 60.99,
+         "y": 32.91
+        },
+        {
+         "x": 53.66,
+         "y": 29.84
+        },
+        {
+         "x": 46.34,
+         "y": 29.84
+        },
+        {
+         "x": 39.01,
+         "y": 32.91
+        },
+        {
+         "x": 31.69,
+         "y": 39.06
+        },
+        {
+         "x": 25.92,
+         "y": 43.82
+        },
+        {
+         "x": 21.72,
+         "y": 47.19
+        },
+        {
+         "x": 19.07,
+         "y": 49.18
+        },
+        {
+         "x": 17.98,
+         "y": 49.77
+        },
+        {
+         "x": 16.85,
+         "y": 50.26
+        },
+        {
+         "x": 15.69,
+         "y": 50.62
+        },
+        {
+         "x": 14.49,
+         "y": 50.87
+        },
+        {
+         "x": 13.25,
+         "y": 51.01
+        },
+        {
+         "x": 12.03,
+         "y": 51.02
+        },
+        {
+         "x": 10.81,
+         "y": 50.92
+        },
+        {
+         "x": 9.61,
+         "y": 50.69
+        },
+        {
+         "x": 8.41,
+         "y": 50.34
+        },
+        {
+         "x": 7.28,
+         "y": 49.89
+        },
+        {
+         "x": 6.2,
+         "y": 49.32
+        },
+        {
+         "x": 5.17,
+         "y": 48.65
+        },
+        {
+         "x": 4.2,
+         "y": 47.88
+        },
+        {
+         "x": 3.32,
+         "y": 47.02
+        },
+        {
+         "x": 2.54,
+         "y": 46.08
+        },
+        {
+         "x": 1.85,
+         "y": 45.07
+        },
+        {
+         "x": 1.25,
+         "y": 43.98
+        },
+        {
+         "x": 0.77,
+         "y": 42.86
+        },
+        {
+         "x": 0.4,
+         "y": 41.69
+        },
+        {
+         "x": 0.15,
+         "y": 40.49
+        },
+        {
+         "x": 0.01,
+         "y": 39.26
+        },
+        {
+         "x": 0.0,
+         "y": 38.03
+        },
+        {
+         "x": 0.11,
+         "y": 36.82
+        },
+        {
+         "x": 0.33,
+         "y": 35.61
+        },
+        {
+         "x": 0.68,
+         "y": 34.42
+        },
+        {
+         "x": 1.14,
+         "y": 33.28
+        },
+        {
+         "x": 1.7,
+         "y": 32.2
+        },
+        {
+         "x": 2.37,
+         "y": 31.17
+        },
+        {
+         "x": 3.15,
+         "y": 30.2
+        },
+        {
+         "x": 6.59,
+         "y": 27.08
+        },
+        {
+         "x": 12.69,
+         "y": 21.8
+        }
+       ],
+       "color": {
+        "value": "#2b2629",
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: surface \"Grey brown\" RGB 43 38 41; \"métal sombre\", \"plus clair que noir\""
+       },
+       "title": {
+        "fr": "Boomerang (ou cerf-volant, deltaplane)",
+        "en": "Boomerang (or kite, hang glider)",
+        "es": "Bumerán (o cometa, ala delta)",
+        "it": "Boomerang (o aquilone, deltaplano)"
+       },
+       "haloScale": 0,
+       "selected": false,
+       "bounds": {
+        "x": 300,
+        "y": 170,
+        "width": 100,
+        "height": 51.02
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 2000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 217.5,
+         "altitudeDeg": 42.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 0.76,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 2.5,
+        "heightDeg": 1.276
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 2500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 223.244,
+        "altitudeDeg": 46.492
+       },
+       "angle": 0.7823,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 2.896,
+        "heightDeg": 1.478
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 3000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 229.981,
+        "altitudeDeg": 50.645
+       },
+       "angle": 0.871,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 3.292,
+        "heightDeg": 1.68
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 3500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 237.943,
+        "altitudeDeg": 54.339
+       },
+       "angle": 0.9813,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 3.689,
+        "heightDeg": 1.882
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 247.329,
+        "altitudeDeg": 57.41
+       },
+       "angle": 1.116,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 4.085,
+        "heightDeg": 2.084
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 4500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 258.18,
+        "altitudeDeg": 59.669
+       },
+       "angle": 1.276,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 4.481,
+        "heightDeg": 2.287
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 270.223,
+        "altitudeDeg": 60.921
+       },
+       "angle": 1.457,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 4.877,
+        "heightDeg": 2.489
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 5500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 282.79,
+        "altitudeDeg": 61.036
+       },
+       "angle": 1.6474,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 5.274,
+        "heightDeg": 2.691
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 295.0,
+         "altitudeDeg": 60.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: BJN's \"au plus proche\", azimuth 295, elevation 60; COBEPS report 20150712BraineleComte, table 2 puts it at 6 s, half way through the time left after T1"
+       },
+       "angle": 1.7682,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 5.67,
+        "heightDeg": 2.893
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 6500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 312.225,
+        "altitudeDeg": 58.093
+       },
+       "angle": 1.9041,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 5.086,
+        "heightDeg": 2.595
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 7000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 326.875,
+        "altitudeDeg": 54.167
+       },
+       "angle": 2.1128,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 4.502,
+        "heightDeg": 2.297
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 7500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 338.584,
+        "altitudeDeg": 48.801
+       },
+       "angle": 2.2724,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 3.919,
+        "heightDeg": 2.0
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 8000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 347.855,
+        "altitudeDeg": 42.489
+       },
+       "angle": 2.3899,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 3.335,
+        "heightDeg": 1.702
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 8500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 355.352,
+        "altitudeDeg": 35.572
+       },
+       "angle": 2.4746,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 2.751,
+        "heightDeg": 1.404
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 9000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 1.624,
+        "altitudeDeg": 28.265
+       },
+       "angle": 2.5344,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 2.167,
+        "heightDeg": 1.106
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 9500,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "azimuthDeg": 7.074,
+        "altitudeDeg": 20.71
+       },
+       "angle": 2.5753,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.584,
+        "heightDeg": 0.808
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 10000,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 12.0,
+         "altitudeDeg": 13.0
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 2.5848,
+       "transparency": 0,
+       "angular": {
+        "widthDeg": 1.0,
+        "heightDeg": 0.51
+       }
+      }
+     }
+    ]
+   },
+   {
+    "t": 10300,
+    "shapes": [
+     {
+      "sourceId": "pan",
+      "shape": {
+       "aim": {
+        "value": {
+         "azimuthDeg": 14.955,
+         "altitudeDeg": 8.374
+        },
+        "basis": "stated",
+        "rationale": "COBEPS report 20150712BraineleComte, table 1: where BJN puts it at this moment (azimuth, elevation)"
+       },
+       "angle": 2.5848,
+       "transparency": 1,
+       "angular": {
+        "widthDeg": 1.0,
+        "heightDeg": 0.51
+       }
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "milestones": [
+  {
+   "t": 0,
+   "label": "A",
+   "note": {
+    "fr": "AKH repère le phénomène au sud-ouest, bas sur l'horizon, et alerte les autres.",
+    "en": "AKH spots the phenomenon in the south-west, low over the horizon, and calls the others.",
+    "es": "AKH ve el fenómeno al suroeste, bajo sobre el horizonte, y avisa a los demás.",
+    "it": "AKH nota il fenomeno a sud-ovest, basso sull'orizzonte, e avverte gli altri."
+   }
+  },
+  {
+   "t": 2000,
+   "label": "B",
+   "note": {
+    "fr": "BJN se retourne : il le voit à 42° de hauteur (temps estimé par les enquêteurs).",
+    "en": "BJN turns round and sees it 42° up (a time the investigators estimated).",
+    "es": "BJN se da la vuelta y lo ve a 42° de altura (tiempo estimado por los investigadores).",
+    "it": "BJN si volta e lo vede a 42° di altezza (tempo stimato dagli investigatori)."
+   }
+  },
+  {
+   "t": 3000,
+   "label": "C",
+   "note": {
+    "fr": "FWY se retourne, tout le corps : il le voit à l'ouest, à 20° de hauteur.",
+    "en": "FWY turns round, his whole body: he sees it in the west, 20° up.",
+    "es": "FWY se da la vuelta, con todo el cuerpo: lo ve al oeste, a 20° de altura.",
+    "it": "FWY si volta, con tutto il corpo: lo vede a ovest, a 20° di altezza."
+   }
+  },
+  {
+   "t": 6000,
+   "label": "D",
+   "note": {
+    "fr": "Le phénomène paraît au plus proche, selon BJN : à 60° de hauteur, presque à la verticale.",
+    "en": "The phenomenon looks closest, according to BJN: 60° up, almost overhead.",
+    "es": "El fenómeno parece lo más cercano, según BJN: a 60° de altura, casi en la vertical.",
+    "it": "Il fenomeno appare al punto più vicino, secondo BJN: a 60° di altezza, quasi allo zenit."
+   }
+  },
+  {
+   "t": 10000,
+   "label": "E",
+   "note": {
+    "fr": "Il disparaît de la vue derrière les toits des maisons d'en face, à une douzaine de degrés de hauteur.",
+    "en": "It disappears from view behind the roofs of the houses opposite, a dozen degrees up.",
+    "es": "Desaparece de la vista tras los tejados de las casas de enfrente, a una docena de grados de altura.",
+    "it": "Scompare alla vista dietro i tetti delle case di fronte, a una dozzina di gradi di altezza."
+   }
+  }
+ ],
+ "soundTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "sound": {
+     "value": {
+      "kind": "none",
+      "volume": 0,
+      "pitchHz": 0
+     },
+     "basis": "stated",
+     "rationale": "\"Pas le moindre bruit\" (all three); BJN could hear the cat go by"
+    }
+   }
+  ]
+ },
+ "decor": [
+  {
+   "id": "observer-akh",
+   "kind": "observer",
+   "title": {
+    "fr": "AKH, à 3,1 m",
+    "en": "AKH, 3.1 m away",
+    "es": "AKH, a 3,1 m",
+    "it": "AKH, a 3,1 m"
+   },
+   "eastM": 0.0,
+   "northM": -3.1,
+   "headingDeg": 215.0,
+   "sightingUrl": "observer-braine-le-comte-akh.json",
+   "sizeM": {
+    "widthM": 0.5,
+    "lengthM": 0.35,
+    "heightM": 1.7
+   }
+  },
+  {
+   "id": "observer-fwy",
+   "kind": "observer",
+   "title": {
+    "fr": "FWY, à 1,8 m",
+    "en": "FWY, 1.8 m away",
+    "es": "FWY, a 1,8 m",
+    "it": "FWY, a 1,8 m"
+   },
+   "eastM": 0.0,
+   "northM": -1.8,
+   "headingDeg": 337.5,
+   "sightingUrl": "observer-braine-le-comte-fwy.json",
+   "sizeM": {
+    "widthM": 0.5,
+    "lengthM": 0.35,
+    "heightM": 1.75
+   }
+  },
+  {
+   "id": "toit-1",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -38.65,
+   "northM": 10.3,
+   "headingDeg": 14.9,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-2",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -35.07,
+   "northM": 19.24,
+   "headingDeg": 28.8,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-3",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -29.45,
+   "northM": 27.07,
+   "headingDeg": 42.6,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-4",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -22.12,
+   "northM": 33.33,
+   "headingDeg": 56.4,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-5",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -13.51,
+   "northM": 37.65,
+   "headingDeg": 70.3,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.0
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-6",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": -4.11,
+   "northM": 39.79,
+   "headingDeg": 84.1,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.2
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-7",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 5.53,
+   "northM": 39.62,
+   "headingDeg": 97.9,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.2
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-8",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 14.84,
+   "northM": 37.15,
+   "headingDeg": 111.8,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  },
+  {
+   "id": "toit-9",
+   "kind": "building",
+   "title": {
+    "fr": "Maison d'en face (distance supposée)",
+    "en": "House opposite (distance assumed)",
+    "es": "Casa de enfrente (distancia supuesta)",
+    "it": "Casa di fronte (distanza supposta)"
+   },
+   "eastM": 23.29,
+   "northM": 32.52,
+   "headingDeg": 125.6,
+   "floors": 2,
+   "sizeM": {
+    "widthM": 10.5,
+    "lengthM": 9.0,
+    "heightM": 10.1
+   },
+   "occludesSourceIds": [
+    "pan"
+   ]
+  }
+ ],
+ "weatherTrack": {
+  "keyframes": [
+   {
+    "t": 0,
+    "weather": {
+     "cloudLayers": [],
+     "cloudCover": 0,
+     "relativeHumidity": 0.82,
+     "precipitationType": "none",
+     "precipitationIntensity": 0,
+     "windDirectionDeg": 220,
+     "windSpeed": 3.6,
+     "storm": false
+    }
+   }
+  ]
+ },
+ "weatherSource": {
+  "id": "metar-ebcv",
+  "name": "METAR EBCV 112225Z AUTO 22007KT 9999 NCD 13/10 Q1020 (Chièvres, 25 min before)",
+  "url": "http://www.cobeps.org/pdf/BraineLeComte_20150712.pdf"
+ }
+}
